@@ -1763,7 +1763,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "Charles!..";
 				link.l1 = "Che succede, Helen??";
@@ -1778,7 +1778,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_2":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "Una nave da guerra inglese! È stata avvistata poco fa. All’inizio non ci ho fatto caso, ma ora ci raggiungerà da un momento all’altro! Non ho mai visto un vascello così veloce.";
 				link.l1 = "Allora grazie per avermelo detto. Spero che ci sia tempo per prepararci prima che ci raggiunga. Helen, Charlie, ai posti di combattimento!";
@@ -1871,7 +1871,7 @@ void ProcessDialogEvent()
 			LAi_SetCheckMinHP(npchar, 10, true, "DTSG_KortniRanen");
 			LAi_SetImmortal(npchar, false);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", int(pchar.rank), ENGLAND, -1, false, "soldier"));
 			sld.name = "Brian";
 			sld.lastname = "Tasse";
 			GiveItem2Character(sld, "blade_20");
@@ -2138,7 +2138,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_2":
-			if (sti(pchar.reputation.nobility) > 70)
+			if (int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				dialog.text = "È... un rischio bello grosso. E non si tratta solo del fatto che possa fidarmi della tua parola. Ma anche se i miei compagni crederanno a quel che vedranno, quando troveranno un corpo che somiglia a quello di Charlie. E io, quel rischio... non lo correrò così, alla leggera.";
@@ -2162,7 +2162,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_4":
 			dialog.text = "Finalmente, al sodo. Un milione di pesos. Ultima offerta.";
-			if (sti(pchar.Money) >= 1000000)
+			if (int(pchar.Money) >= 1000000)
 			{
 				link.l1 = "Ti darò il denaro. Non pensare che sia un pezzente o che non tenga alla vita dei miei uomini. Non è affatto così. Prendilo.";
 				link.l1.go = "DTSG_Kortni_LT_7";
@@ -2396,7 +2396,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_Kech_2":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -2408,13 +2408,13 @@ void ProcessDialogEvent()
 				dialog.text = "Temo che costruirne uno di questi costi ben più dell’oro che abbiamo messo da parte per te. Ma mi hai strappato un sorriso, Charles. In senso buono.";
 				link.l1 = "Valeva la pena tentare.";
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 			}
 			link.l1.go = "DTSG_Kortni_Kech_3";
 		break;
 		
 		case "DTSG_Kortni_Kech_3":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				dialog.text = "Vedo che sai quello che vuoi e insegui le tue mete nella vita\nE va bene. Il ketch è tuo. Ma scordati i soldi – l’usuraio farà finta di non saper nulla.";
 				link.l1 = "Mi sta bene.";
@@ -2507,7 +2507,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_VizyvaemKnippel_9":
 			DialogExit();
 			
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 			sld.dialog.currentnode = "DTSG_Kortni_VizyvaemKnippel_10";
 			LAi_SetActorType(sld);

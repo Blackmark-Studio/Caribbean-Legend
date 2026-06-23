@@ -73,7 +73,7 @@ bool STH_CanUseFlag(int nation) {
 		ref companion = GetCharacter(companionIdx);
 		if (!IsFellowOurCrew(companion)) continue;
 
-		if (!CheckAttributeEqualTo(flags, "shipRank" + GetCharacterShipClass(companion), true)) return false;
+		if (!CheckAttributeEqualTo(flags, "shipRank" + GetCharacterShipClass(companion), string(true))) return false;
 	}
 
 	return true;

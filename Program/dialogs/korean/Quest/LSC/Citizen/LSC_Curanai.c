@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "창백한 얼굴의 개가 하얀 형제자매들을 다치게 했어. 나는 너랑 말 안 해. 가.";
 				link.l1 = "오...";

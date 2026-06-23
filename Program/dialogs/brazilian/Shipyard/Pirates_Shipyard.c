@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             Link.l2 = "Tenho uma pergunta.";
 			Link.l2.go = "quests"; //(пересылка в файл города)
 			// -->
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l3 = "Quero falar sobre finanças.";
 				link.l3.go = "LoanForAll";//(перессылка в файл города)
@@ -93,29 +93,29 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l2.go = "shipyard";
 			link.l3 = "Preciso de armas para o navio.";
 			link.l3.go = "Cannons";
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType != SHIP_CURSED_FDM)
+			if(RealShips[int(Pchar.Ship.Type)].BaseType != SHIP_CURSED_FDM)
 			{
 					link.l4 = "Quero mudar o visual das minhas velas.";
 					link.l4.go = "SailsGerald";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
+			if(RealShips[int(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 					link.l50 = "Meu navio é bem... especial. Gostaria de fazer algumas mudanças.";
 					link.l50.go = "FDM";
 			}
-			/*if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+			/*if(RealShips[int(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 			{
 					link.l50 = "Tenho mais baús para a reconstrução da cabine.";
 					link.l50.go = "FDM_cabin_pay";
 			}*/
 			// Xenon -->
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+			if(RealShips[int(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 			{
 					link.l50 = "Vim falar sobre a reconstrução do navio.";
 					link.l50.go = "FDM_hull_givemoney";
 			}
 
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmaterials")
+			if(RealShips[int(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmaterials")
 			{
 					link.l50 = "Vim falar sobre a reconstrução do navio.";
 					link.l50.go = "FDM_hull_checkmaterials";
@@ -164,7 +164,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		case "Al_ShipLetters_2":
 			s1 = "Let me take a look! It really looks to be freshly filled out. Well, luck is in your favor, sir! ";
-			s1 = s1 + "I actually needed a packet just like this. I, in turn, will offer you " + sti(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. What do you say?";
+			s1 = s1 + "I actually needed a packet just like this. I, in turn, will offer you " + int(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. What do you say?";
 			dialog.text = s1;
 			link.l1 = "Que generosidade real! Claro que eu concordo!";
 			link.l1.go = "Al_ShipLetters_3";
@@ -173,7 +173,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		case "Al_ShipLetters_3":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price5)); 
+			addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price5));
 			ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 			OfficersReaction("bad"); 
 			pchar.questTemp.different = "free";
@@ -189,7 +189,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 //*************************** Открывание двери ***************************
  		case "Step_Door_1":
 			dialog.text = "Isso mesmo. Se quiser passar por essa porta, vai ter que me pagar 20.000 pesos. Se não pagar, não vou abrir. Aqui não é casa de caridade. E nem recomendo que vá lá, de qualquer forma. Seria melhor pra você se não fosse...";
-			if(sti(pchar.money) >= 20000)
+			if(int(pchar.money) >= 20000)
 			{
     			link.l1 = "Aqui está o seu dinheiro. Abra.";
     			link.l1.go = "Step_Door_2";
@@ -341,7 +341,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "sandal": // бакаут
-			amount = sti(pchar.questTemp.AlexClock.Sandal);
+			amount = int(pchar.questTemp.AlexClock.Sandal);
 			iSan = GetSquadronGoods(pchar, GOOD_SANDAL);
 			iTemp = amount-iSan;
 			if (iTemp > 0) // ещё не все привез
@@ -371,7 +371,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "oil": // смолы
-			amount = sti(pchar.questTemp.AlexClock.Oil);
+			amount = int(pchar.questTemp.AlexClock.Oil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) // ещё не все привез
@@ -401,7 +401,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "shipsilk": // шёлк
-			amount = sti(pchar.questTemp.AlexClock.Shipsilk);
+			amount = int(pchar.questTemp.AlexClock.Shipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) // ещё не все привез
@@ -431,7 +431,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "ropes": // канаты
-			amount = sti(pchar.questTemp.AlexClock.Ropes);
+			amount = int(pchar.questTemp.AlexClock.Ropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) // ещё не все привез
@@ -675,20 +675,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FDM_cabin_pay":
 			iTemp = GetCharacterItem(pchar, "Chest");
-			amount = sti(npchar.quest.FDM_cabin.chest)-iTemp;
+			amount = int(npchar.quest.FDM_cabin.chest)-iTemp;
 			Log_Info("You have given chests to Master Alexus");
 			PlaySound("interface\important_item.wav");
 			if (amount <= 0) // всё принес
 			{
-				RemoveItems(pchar, "chest", sti(npchar.quest.FDM_cabin.chest));
-				dialog.text = "Então, você teve que me trazer "+FindRussianQtyString(sti(npchar.quest.FDM_cabin.chest))+" baús, você trouxe "+FindRussianQtyString(iTemp)+". Eu tenho o pagamento. Agora é minha vez. Vai dar uma volta. Não se preocupe, vou fazer o meu melhor.";
+				RemoveItems(pchar, "chest", int(npchar.quest.FDM_cabin.chest));
+				dialog.text = "Então, você teve que me trazer "+FindRussianQtyString(int(npchar.quest.FDM_cabin.chest))+" baús, você trouxe "+FindRussianQtyString(iTemp)+". Eu tenho o pagamento. Agora é minha vez. Vai dar uma volta. Não se preocupe, vou fazer o meu melhor.";
 				link.l1 = "Bom...";
 				link.l1.go = "FDM_cabin_do";
 			}
 			else
 			{
 				RemoveItems(pchar, "chest", iTemp);
-				dialog.text = "Então, você teve que me trazer "+FindRussianQtyString(sti(npchar.quest.FDM_cabin.chest))+" baús, você trouxe "+FindRussianQtyString(iTemp)+". "+FindRussianQtyString(amount)+" baús restantes.";
+				dialog.text = "Então, você teve que me trazer "+FindRussianQtyString(int(npchar.quest.FDM_cabin.chest))+" baús, você trouxe "+FindRussianQtyString(iTemp)+". "+FindRussianQtyString(amount)+" baús restantes.";
 				link.l1 = "Muito bem, mestre.";
 				link.l1.go = "FDM_cabin_wait";
 				npchar.quest.FDM_cabin.chest = amount;
@@ -703,7 +703,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RefreshLandTime();
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
-			shTo = &RealShips[sti(Pchar.Ship.Type)];
+			shTo = &RealShips[int(Pchar.Ship.Type)];
 			shTo.CabinType = npchar.quest.FDM_cabin.type;
 			if (CheckAttribute(npchar, "quest.FDM_sails")) npchar.quest.FDM_full = "done";
 			else DeleteAttribute(npchar, "quest.FDM_full");
@@ -712,7 +712,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FDM_sails":
 			dialog.text = "Claro, posso fazer isso! Pois bem... Isso significa que teremos que jogar fora todos os trapos velhos e colocar velas novas, limpas, feitas de algodão. Tem muito trabalho pela frente. Cem mil pesos pelo serviço e pelos materiais. Fechado?";
-			if (sti(Pchar.money) >= 100000)
+			if (int(Pchar.money) >= 100000)
 			{
 				link.l1 = "Claro, por mim tudo bem. Fechado!";
 				link.l1.go = "FDM_sails_do";
@@ -786,25 +786,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_checkmaterials":
 			dialog.text = "Muito bem! O que você trouxe pra mim hoje?";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) > 0 && sti(npchar.quest.FDMsandal) < 150)
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) > 0 && int(npchar.quest.FDMsandal) < 150)
 			{
 				iSan = GetSquadronGoods(pchar, GOOD_SANDAL);
 				link.l1 = "Ironwood na quantidade de "+FindRussianQtyString(iSan)+".";
 				link.l1.go = "FDM_sandal";
 			}
-			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 150)
+			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && int(npchar.quest.FDMoil) < 150)
 			{
 				iOil = GetSquadronGoods(pchar, GOOD_OIL);
 				link.l2 = "Resina na quantidade de "+FindRussianQtyString(iOil)+".";
 				link.l2.go = "FDM_oil";
 			}
-			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 150)
+			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && int(npchar.quest.FDMshipsilk) < 150)
 			{
 				iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 				link.l3 = "Enviar seda na quantidade de "+FindRussianQtyString(iSil)+".";
 				link.l3.go = "FDM_shipsilk";
 			}
-			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 150)
+			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && int(npchar.quest.FDMropes) < 150)
 			{
 				iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 				link.l4 = "Cordas na quantidade de "+FindRussianQtyString(iRop)+".";
@@ -815,7 +815,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_checkmaterials_1":
-			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 149 && sti(npchar.quest.FDMshipsilk) > 149 && sti(npchar.quest.FDMropes) > 149)
+			if (int(npchar.quest.FDMsandal) > 149 && int(npchar.quest.FDMoil) > 149 && int(npchar.quest.FDMshipsilk) > 149 && int(npchar.quest.FDMropes) > 149)
 			{
 				dialog.text = "Maravilha! Todos os materiais estão aqui. Agora, deixe esse monstro comigo. Finalmente, ele vai ter a aparência que merece.";
 				link.l1 = "Certo, chega de reclamação, mestre. Estou ansioso pelo resultado.";
@@ -832,7 +832,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_sandal": // бакаут
-			amount = 150 - sti(npchar.quest.FDMsandal);
+			amount = 150 - int(npchar.quest.FDMsandal);
 			iSan = GetSquadronGoods(pchar, GOOD_SANDAL);
 			iTemp = amount-iSan;
 			if (iTemp > 0) 
@@ -841,7 +841,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado! Em breve eu trago o resto pra você.";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_SANDAL, iSan);
-				npchar.quest.FDMsandal = sti(npchar.quest.FDMsandal) + iSan;
+				npchar.quest.FDMsandal = int(npchar.quest.FDMsandal) + iSan;
 				AddQuestRecord("renovate_fdm", "2");
 				AddQuestUserData("renovate_fdm", "sGood", "ironwood");
 				AddQuestUserData("renovate_fdm", "sQty", FindRussianQtyString(iTemp));
@@ -852,14 +852,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado!";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_SANDAL, amount);
-				npchar.quest.FDMsandal = sti(npchar.quest.FDMsandal) + amount;
+				npchar.quest.FDMsandal = int(npchar.quest.FDMsandal) + amount;
 				AddQuestRecord("renovate_fdm", "3");
 				AddQuestUserData("renovate_fdm", "sGood", "ironwood"); 
 			}
 		break;
 
 		case "FDM_oil": // смолы
-			amount = 150 - sti(npchar.quest.FDMoil);
+			amount = 150 - int(npchar.quest.FDMoil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) 
@@ -868,7 +868,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado! Em breve trago o restante para você.";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_OIL, iOil);
-				npchar.quest.FDMoil = sti(npchar.quest.FDMoil) + iOil;
+				npchar.quest.FDMoil = int(npchar.quest.FDMoil) + iOil;
 				AddQuestRecord("renovate_fdm", "2");
 				AddQuestUserData("renovate_fdm", "sGood", "resin");
 				AddQuestUserData("renovate_fdm", "sQty", FindRussianQtyString(iTemp));
@@ -879,14 +879,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado!";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_OIL, amount);
-				npchar.quest.FDMoil = makeint(npchar.quest.FDMoil) + amount;
+				npchar.quest.FDMoil = int(npchar.quest.FDMoil) + amount;
 				AddQuestRecord("renovate_fdm", "3");
 				AddQuestUserData("renovate_fdm", "sGood", "resin");
 			}
 		break;
 
 		case "FDM_shipsilk": // шёлк
-			amount = 150 - sti(npchar.quest.FDMshipsilk);
+			amount = 150 - int(npchar.quest.FDMshipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) 
@@ -895,7 +895,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado! Logo trago o resto pra você";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iSil);
-				npchar.quest.FDMshipsilk = sti(npchar.quest.FDMshipsilk) + iSil;
+				npchar.quest.FDMshipsilk = int(npchar.quest.FDMshipsilk) + iSil;
 				AddQuestRecord("renovate_fdm", "2");
 				AddQuestUserData("renovate_fdm", "sGood", "ship silk");
 				AddQuestUserData("renovate_fdm", "sQty", FindRussianQtyString(iTemp));
@@ -906,14 +906,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado!";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_SHIPSILK, amount);
-				npchar.quest.FDMshipsilk = sti(npchar.quest.FDMshipsilk) + amount;
+				npchar.quest.FDMshipsilk = int(npchar.quest.FDMshipsilk) + amount;
 				AddQuestRecord("renovate_fdm", "3");
 				AddQuestUserData("renovate_fdm", "sGood", "ship silk"); 
 			}
 		break;
 
 		case "FDM_ropes": // канаты
-			amount = 150 - sti(npchar.quest.FDMropes);
+			amount = 150 - int(npchar.quest.FDMropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) 
@@ -922,7 +922,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado! Vou trazer o resto em breve";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_ROPES, iRop);
-				npchar.quest.FDMropes = sti(npchar.quest.FDMropes) + iRop;
+				npchar.quest.FDMropes = int(npchar.quest.FDMropes) + iRop;
 				AddQuestRecord("renovate_fdm", "2");
 				AddQuestUserData("renovate_fdm", "sGood", "ropes");
 				AddQuestUserData("renovate_fdm", "sQty", FindRussianQtyString(iTemp));
@@ -933,7 +933,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Obrigado!";
 				link.l1.go = "FDM_hull_checkmaterials_1";
 				RemoveCharacterGoods(pchar, GOOD_ROPES, amount);
-				npchar.quest.FDMropes = sti(npchar.quest.FDMropes) + amount;
+				npchar.quest.FDMropes = int(npchar.quest.FDMropes) + amount;
 				AddQuestRecord("renovate_fdm", "3");
 				AddQuestUserData("renovate_fdm", "sGood", "ropes");
 			}
@@ -972,12 +972,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
 			
-			shTo = &RealShips[sti(pchar.Ship.Type)];
+			shTo = &RealShips[int(pchar.Ship.Type)];
 			object newShip;
 			aref arTuning;
 			CopyAttributes(&newShip, shTo);
 			
-			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, 0, pchar);
+			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, false, pchar);
 			
 			if(CheckAttribute(newShip, "Tuning"))
 			{
@@ -989,7 +989,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					UpgradeShipParameter(pchar, tuningName);
 				}
 			}
-			if(CheckAttribute(newShip, "Traits")) RealShips[sti(pchar.Ship.Type)].Traits = newShip.Traits;
+			if(CheckAttribute(newShip, "Traits")) RealShips[int(pchar.Ship.Type)].Traits = newShip.Traits;
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0);//White cotton sail
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);

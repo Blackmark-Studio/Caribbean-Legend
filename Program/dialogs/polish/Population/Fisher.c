@@ -38,11 +38,6 @@ void ProcessDialogEvent()
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 
-		case "":
-			dialog.text = " ";
-			link.l1 = " ";
-			link.l1.go = "_1";
-		break;
 		case "_1":
 			dialog.text = " ";
 			link.l1 = " ";

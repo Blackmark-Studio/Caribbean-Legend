@@ -5515,6 +5515,21 @@ TheFormerKnight.4
 We managed to track down and eliminate the former Knight of the Order. Durand was intent on killing the knight's woman, who was unfortunate enough to be in the house at the time. Naturally, I couldn't allow this. We crossed swords once again, and once again, I proved the stronger. Had I known earlier what a scoundrel he was, I would have finished him back at Levasseur's residence.
 }
 
+TheFormerKnight.5
+{
+I decided not to involve myself in the troubles of a disgraced officer and dismissed Claude Durand. Let him look for another captain.
+}
+
+TheFormerKnight.6
+{
+I could not come to terms with Claude’s behavior. A conflict flared between us, and I was forced to kill him. Rest in peace, mercenary.
+}
+
+TheFormerKnight.7
+{
+Claude Durand fell in battle, and now I shall never know how this story ends. Well then, rest in peace, mercenary.
+}
+
 Tichingitu
 {
 Tichingitu

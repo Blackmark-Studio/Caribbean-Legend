@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "I understand, Charles. I want to believe in perfect true love, but I suppose there is no such thing in this world.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Bastard! And my men? Are they alive to testify to what happened?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "They are all right, Excellency. A bit beaten, but they'll live.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Not all of them, Excellency. One gentleman didn't make it - de Chievous went to the trouble of bringing musketeers along. I couldn't do anything.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Yes, I've seen your ship, I must admit it truly is a sight to behold. Let's raise the stakes then - two ships against one. My frigate and flute with silver against your ship?";
 				link.l1 = "A worthy game! Madame Botot was wrong - THIS duel will live on in legend. Deal!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Look at this, our captain is a naughty boy! However, privateering is sacred. How about a warship then? A frigate, 48 guns. Faster than many corvettes – a product of royal shipyards, improved even further by the best shipwrights in the world. The culverins she carries have excellent range and accuracy. What say you?";
 					link.l1 = "Much better, I'm in! Let's go!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Game over, Captain, you got what you wanted. Gloat if you like. I suggest we discuss the terms of the buyout of my frigate tomorrow at noon.";
 					link.l1 = "That's it? I sincerely believe, as you do, that what is lost in a gamble cannot be bought back, only won back. Or I could sell her for lumber to the local fishermen and tell them all about your generous donation.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "So Fortune has had her say. This has turned out most curiously. Congratulations, Captain de Maure. I suggest we discuss the terms of the buyout of my frigate tomorrow at noon.";
 						link.l1 = "That soon? We are disappointing other guests, monsieur. If I recall correctly, you still have one more ship. I sincerely believe, as you do, that what is lost in a gamble cannot be bought back, only won back.";

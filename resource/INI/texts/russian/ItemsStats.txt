@@ -323,9 +323,9 @@ itm_stat_vodka {Стенка на стенку}
 itm_stat_weight {Вес}
 itm_stat_worldMapBonus {Радиус обзора}
 itm_stat_hat12 {Потомок Глубоководных}
-itm_stat_descr_hat12 {Скорость передвижения увеличивается на $percent(#f.2modifiers.MoveSpeed#), и еще на $percent(#f.2modifiers.aiming_walk_actionspeed#), если в руках двуручное огнестрельное оружие.}
+itm_stat_descr_hat12 {Скорость передвижения увеличивается на $percent($attr($context.modifiers.MoveSpeed)), и еще на $percent(#f.2modifiers.aiming_walk_actionspeed#), если в руках двуручное огнестрельное оружие.}
 itm_stat_secondary_hat12 {Герой нации}
-itm_stat_descr_secondary_hat12 {Критический урон огнестрельного оружия увеличивается на $percent(#f.2modifiers.gun_critDamage#), а урон от попадания в голову на $percent(#f.2modifiers.HeadshotDamage#).}
+itm_stat_descr_secondary_hat12 {Критический урон огнестрельного оружия увеличивается на $percent($attr($context.modifiers.gun_critDamage)), а урон от попадания в голову на $percent(#f.2modifiers.HeadshotDamage#).}
 itm_stat_blade_34 {Ядовитые наросты}
 itm_stat_descr_blade_34 {Коралловые наросты заносят болезни в раны, вызывая отравление с шансом в $percent(#f.2modifiers.poisonChance#)}
 itm_stat_secondary_blade_34 {Ненависть к слабым}
@@ -334,3 +334,7 @@ itm_stat_greenIdol {Культ}
 itm_stat_descr_greenIdol {Идол подчиняет себе окружающих, что увеличивает шанс сдачи вражеских кораблей, мощь эскадры и количество рекрутов в тавернах на $percent(0.30).}
 itm_stat_secondary_greenIdol {Шёпот древних}
 itm_stat_descr_secondary_greenIdol {Будучи экипированным, идол постоянно снижает мораль экипажа, сводя его с ума нечестивым шёпотом.}
+itm_stat_nocturlabe {Точное время}
+itm_stat_descr_nocturlabe {Увеличивает манёвренность корабля на 10%, и еще на 25% на кораблях 2 и 1 класса.}
+itm_stat_secondary_nocturlabe {Ночная навигация}
+itm_stat_descr_secondary_nocturlabe {Увеличивает $key(Perception) на #f.0modifiers.SpecialPerception#. Увеличивает шанс побега на глобальной карте на 25.}

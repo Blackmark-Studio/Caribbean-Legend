@@ -34,7 +34,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "guardoftruth_3":
 			dialog.text = "スペイン艦隊の、なかなかの切れ者の船長だったぜ！名乗ったのは……ああ……すっかり忘れちまった……あっ！ディエゴ旦那だ。名前はディエゴだったが、姓は……デ・モンターニャかデ・モントーヤだったかな。そんな感じだ。お前と同じように俺の話を聞いて、 礼を言って去っていった。それっきり一度も見てねえな。";
-			if (sti(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "なるほど。お話を聞かせてくれて本当にありがとう、すごく助かったぜ。感謝の気持ちにコインを受け取ってくれ。 じゃあな。";
 				AddMoneyToCharacter(pchar, -5000);

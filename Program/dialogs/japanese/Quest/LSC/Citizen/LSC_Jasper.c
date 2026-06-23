@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "俺にかまうな、旦那。俺は罪もない奴を傷つけるような連中とは話さねえ！お前の方がよっぽど悪党じゃねえか！";
 				link.l1 = "俺は……？";

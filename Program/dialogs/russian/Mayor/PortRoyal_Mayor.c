@@ -58,7 +58,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Mtraxx_2":
 			string sTemp = "этого";
-			if (sti(pchar.questTemp.Mtraxx.month == 1)) sTemp = "следующего";
+			if (int(pchar.questTemp.Mtraxx.month == 1)) sTemp = "следующего";
             dialog.text = "Хорошо, капитан. То, что вы рассказали - весьма и весьма серьёзно, и я обязан это проверить, даже если ваш информатор ошибся или сказал неправду. Я вышлю береговой патруль в указанное вами время. И если ваша информация подтвердится - вы можете рассчитывать на вознаграждение, ибо такого рода сделки надо строжайшим образом пресекать.";
 			link.l1 = "Я загляну к вам 16 числа "+sTemp+" месяца. Тогда уже наверняка всё прояснится.";
 			link.l1.go = "Mtraxx_3";
@@ -67,7 +67,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Mtraxx_3":
             DialogExit();
 			pchar.questTemp.Mtraxx = "silk_11";
-			int month = sti(pchar.questTemp.Mtraxx.month);
+			int month = int(pchar.questTemp.Mtraxx.month);
 			pchar.quest.mtr_silk_smuggler.over = "yes";
 			pchar.quest.mtr_silk_smuggler_over.over = "yes";
 			DeleteQuestCondition("Mtraxx_SilkCreateSmuggler");
@@ -79,7 +79,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.mtr_silk_smuggler_patrol.win_condition.l1.date.year  = GetAddingDataYear(0, month, 0);
 			pchar.quest.mtr_silk_smuggler_patrol.function = "Mtraxx_SilkSmugglerPatrol";
 			sTemp = "этого";
-			if (sti(pchar.questTemp.Mtraxx.month == 1)) sTemp = "следующего";
+			if (int(pchar.questTemp.Mtraxx.month == 1)) sTemp = "следующего";
 			AddQuestRecord("Roger_2", "19");
 			AddQuestUserData("Headhunt", "sDate", sTemp);
 			if (CharacterIsAlive("Mtr_Utreht"))

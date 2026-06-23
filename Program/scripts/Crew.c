@@ -77,7 +77,7 @@ string GetExpName(int iExp)
 // boal новый учёт зп 16.01.04 -->
 int GetMoneyForOfficer(ref Npchar)
 {
-	if (!CheckAttribute(Npchar, "Payment") || makeint(Npchar.Payment) != true) return 0;
+	if (!CheckAttribute(Npchar, "Payment") || int(Npchar.Payment) != true) return 0;
 
 	int sum = 0;
 	for (int i=1; i <= SKILL_QTY; i++)
@@ -88,7 +88,7 @@ int GetMoneyForOfficer(ref Npchar)
 	float mtp = 1.0 - LVL_GetCurrentLeadershipBonusMtp();
 	if (HasPerk(Npchar, "Trustworthy")) mtp -= PERK_VALUE_TRUSTWORTHY;
 
-	return makeint(MOD_SKILL_ENEMY_RATE * 7 * sum * mtp);
+	return int(MOD_SKILL_ENEMY_RATE * 7 * sum * mtp);
 }
 
 int GetMoneyForOfficerFull(ref Npchar)
@@ -99,7 +99,7 @@ int GetMoneyForOfficerFull(ref Npchar)
 	float okCommerce   = pow((oCommerce) / 10.0, 0.55) * 0.65; // 65% вес
 	float okLeadership = pow((oLeaderShip) / 10.0, 0.55) * 0.35; // 35% вес
 	float mSkillOficcer  = 1.0 - 0.35 * (okCommerce + okLeadership); 
-	return makeint(GetMoneyForOfficer(Npchar)*mSkillOficcer);
+	return int(GetMoneyForOfficer(Npchar)*mSkillOficcer);
 }
 
 int GetSalaryForShip(ref chref)
@@ -121,17 +121,17 @@ int GetSalaryForShip(ref chref)
 
 	float shClass = GetCharacterShipClass(chref);
 	if (shClass   < 1) shClass   = 7;
-	if (!GetRemovable(chref) && sti(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то вских сопровождаемых кормить!!!
+	if (!GetRemovable(chref) && int(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то вских сопровождаемых кормить!!!
 		
 	// экипаж
 	fExp = (GetCrewExp(chref, "Sailors") + GetCrewExp(chref, "Cannoners") + GetCrewExp(chref, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	nPaymentQ += makeint( fExp * stf((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/stf(shClass) * mSkillCrew );
-	nPaymentQ = makeint(makefloat(nPaymentQ) * SZN_GetModifierMtp(M_CREW_MAINTENANCE_COST, 1.0, 0.01));
+	nPaymentQ += int( fExp * float((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/float(shClass) * mSkillCrew );
+	nPaymentQ = int(float(nPaymentQ) * SZN_GetModifierMtp(M_CREW_MAINTENANCE_COST, 1.0, 0.01));
     
     // теперь самого капитана и его офицеров (тут  главный герой не считается) так что пассажиров и оффицеров ниже
-    if(sti(chref.index) != GetMainCharacterIndex())
+    if(int(chref.index) != GetMainCharacterIndex())
     {
-        nPaymentQ += makeint(GetMoneyForOfficer(chref)*2/(nLeaderShip + nCommerce) );
+        nPaymentQ += int(GetMoneyForOfficer(chref)*2/(nLeaderShip + nCommerce) );
         // офицеры
         for(i = 1; i < 4; i++)  // в к3 нет офов у компаньона :(
 	    {
@@ -141,12 +141,12 @@ int GetSalaryForShip(ref chref)
 			    offref = GetCharacter(cn);
 			    if (GetRemovable(offref)) // считаем только своих, а то вских сопровождаемых кормить!!!
 			    {
-			        nPaymentQ += makeint(GetMoneyForOfficerFull(offref));
+			        nPaymentQ += int(GetMoneyForOfficerFull(offref));
 			    }
 			}
 		}
 	}
-	if(sti(chref.index) == GetMainCharacterIndex()) // все пассажиры и офицеры для гл героя
+	if(int(chref.index) == GetMainCharacterIndex()) // все пассажиры и офицеры для гл героя
 	{
         iMax = GetPassengersQuantity(mchref);
 		for(i=0; i < iMax; i++)
@@ -161,9 +161,9 @@ int GetSalaryForShip(ref chref)
 			        {
                         if(CheckAttribute(offref,"prisoned"))
     		            {
-    			            if(sti(offref.prisoned)==true) continue;
+    			            if(int(offref.prisoned)==true) continue;
     		            }
-    			        nPaymentQ += makeint(GetMoneyForOfficerFull(offref));
+    			        nPaymentQ += int(GetMoneyForOfficerFull(offref));
 			        }
                 }
             }
@@ -180,7 +180,7 @@ int GetSalaryForShip(ref chref)
             {
                 if(IsCompanion(GetCharacter(cn)))
                 {
-                    if(chref.index == cn) nPaymentQ = makeint(nPaymentQ*0.85);
+                    if(chref.index == cn) nPaymentQ = int(nPaymentQ*0.85);
                 }
             }
         }
@@ -189,12 +189,12 @@ int GetSalaryForShip(ref chref)
 	if (IsEquipCharacterByItem(chref, "hat8"))
 	{
 		int iThreat = wdmGetSummaryThreat();
-		nPaymentQ = makeint(nPaymentQ * (1 - 0.02 * iThreat));
+		nPaymentQ = int(nPaymentQ * (1 - 0.02 * iThreat));
 	}
 
 	if (ShipBonus2Artefact(chref, SHIP_AMSTERDAM))
 	{
-		nPaymentQ = makeint(makefloat(nPaymentQ) * (1 - GetAmsterdamMtp("")));
+		nPaymentQ = int(float(nPaymentQ) * (1 - GetAmsterdamMtp("")));
 	}
 
 	return nPaymentQ;
@@ -208,7 +208,7 @@ int AddCrewMorale(ref chr, int add, bool withNotification = false)
 	if (add > 0) add = SZN_IncreaseIntByModifier(add, M_CREW_MORALE_MTP);
 
     int morale = MORALE_NORMAL;
-	if (CheckAttribute(chr, "Ship.Crew.Morale")) morale = sti(chr.Ship.Crew.Morale);
+	if (CheckAttribute(chr, "Ship.Crew.Morale")) morale = int(chr.Ship.Crew.Morale);
 	nameBefore = GetExpName(morale);
 	moraleBefore = morale;
     morale += add;
@@ -232,9 +232,9 @@ int GetCharacterRaiseCrewMoraleMoney(ref chr)
 {
 	float nLeaderShip = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP);
 	float nCommerce   = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // boal	
-	int nPaymentQ = makeint(15 + GetCrewQuantity(chr) * (30 + makeint(MOD_SKILL_ENEMY_RATE * GetCharacterCrewMorale(chr)/10.0) - nLeaderShip - nCommerce)); // boal
+	int nPaymentQ = int(15 + GetCrewQuantity(chr) * (30 + int(MOD_SKILL_ENEMY_RATE * GetCharacterCrewMorale(chr)/10.0) - nLeaderShip - nCommerce)); // boal
 	float fExp = (GetCrewExp(chr, "Sailors") + GetCrewExp(chr, "Cannoners") + GetCrewExp(chr, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	nPaymentQ = makeint(nPaymentQ * (fExp + 0.5));	
+	nPaymentQ = int(nPaymentQ * (fExp + 0.5));
 	if (nPaymentQ < 5) nPaymentQ = 5;
 	return nPaymentQ;
 }
@@ -246,12 +246,12 @@ float ChangeCrewExp(ref chr, string sType, float fNewExp, bool withNotification 
 	fNewExp *= isEquippedArtefactUse(chr, "totem_09", 1.0, 2.0);
 	if (IsCompanion(chr)) fNewExp *= SZN_GetModifierMtp(M_CREW_EXP_MTP, 1.0, 0.01);
 
-	chr.Ship.Crew.Exp.(sType) = (stf(chr.Ship.Crew.Exp.(sType)) + fNewExp);
-	if (stf(chr.Ship.Crew.Exp.(sType)) > 100) chr.Ship.Crew.Exp.(sType) = 100;
-	if (stf(chr.Ship.Crew.Exp.(sType)) < 1) chr.Ship.Crew.Exp.(sType)   = 1;
+	chr.Ship.Crew.Exp.(sType) = (float(chr.Ship.Crew.Exp.(sType)) + fNewExp);
+	if (float(chr.Ship.Crew.Exp.(sType)) > 100) chr.Ship.Crew.Exp.(sType) = 100;
+	if (float(chr.Ship.Crew.Exp.(sType)) < 1) chr.Ship.Crew.Exp.(sType)   = 1;
 	
 	if (withNotification && fNewExp > 0) notification(StringFromKey("food_20"), "Sailor");
-	return stf(chr.Ship.Crew.Exp.(sType));	
+	return float(chr.Ship.Crew.Exp.(sType));
 }
 
 float GetCrewExp(ref chr, string sType)
@@ -260,22 +260,22 @@ float GetCrewExp(ref chr, string sType)
 	
 	if(ShipBonus2Artefact(chr, SHIP_MEMENTO))
 	{
-		if(CheckAttribute(&RealShips[sti(chr.Ship.Type)], "DeadSailors.SailorsExpBonus"))
+		if(CheckAttribute(&RealShips[int(chr.Ship.Type)], "DeadSailors.SailorsExpBonus"))
 		{
-			float exp = stf(chr.Ship.Crew.Exp.(sType));
-			exp = exp + stf(RealShips[sti(chr.Ship.Type)].DeadSailors.SailorsExpBonus);
+			float exp = float(chr.Ship.Crew.Exp.(sType));
+			exp = exp + float(RealShips[int(chr.Ship.Type)].DeadSailors.SailorsExpBonus);
 			if(exp > 100.0) exp = 100.0;
 			
 			return exp;
 		}
 	}
 	
-	return stf(chr.Ship.Crew.Exp.(sType));	
+	return float(chr.Ship.Crew.Exp.(sType));
 }
 
 float GetCrewExpRate()
 {
-	return makefloat(50 + MOD_SKILL_ENEMY_RATE);
+	return float(50 + MOD_SKILL_ENEMY_RATE);
 }
 
 int GetCharacterCrewMorale(ref chr)
@@ -288,13 +288,13 @@ int GetCharacterCrewMorale(ref chr)
 	if(GetCharacterIndex(chr.id) == GetMainCharacterIndex())
 	{
 		int iShipBonus = 0;
-		int iCurCrewMorale = sti(chr.ship.crew.morale);
+		int iCurCrewMorale = int(chr.ship.crew.morale);
 		
 		if(ShipBonus2Artefact(chr, SHIP_MEMENTO))
 		{
-			if(CheckAttribute(&RealShips[sti(chr.Ship.Type)], "DeadSailors.SailorsMoraleBonus"))
+			if(CheckAttribute(&RealShips[int(chr.Ship.Type)], "DeadSailors.SailorsMoraleBonus"))
 			{
-				iShipBonus = sti(RealShips[sti(chr.Ship.Type)].DeadSailors.SailorsMoraleBonus);
+				iShipBonus = int(RealShips[int(chr.Ship.Type)].DeadSailors.SailorsMoraleBonus);
 			}
 		}
 		if(iShipBonus > 0)
@@ -305,7 +305,7 @@ int GetCharacterCrewMorale(ref chr)
 		{
 			if(CheckAttribute(chr, "ship.crew.morale.mementoBonus"))
 			{
-				iCurCrewMorale -= sti(chr.ship.crew.morale.mementoBonus);
+				iCurCrewMorale -= int(chr.ship.crew.morale.mementoBonus);
 				if(iCurCrewMorale < 0) iCurCrewMorale = 0;
 				DeleteAttribute(chr, "ship.crew.morale.mementoBonus");
 				chr.ship.crew.morale = iCurCrewMorale;
@@ -316,15 +316,15 @@ int GetCharacterCrewMorale(ref chr)
 		chr.ship.crew.morale = iCurCrewMorale;
 	}
 	
-	return sti(chr.ship.crew.morale);
+	return int(chr.ship.crew.morale);
 }
 
 // Получить базовый множитель рекрутов для таверны без учёта нации
 float GetBaseCrewMtpForTavern()
 {
-	float fKrank = 1.0 + (2.5 - 1.0) * (pow(stf(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
-	float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
-	float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+	float fKrank = 1.0 + (2.5 - 1.0) * (pow(float(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
+	float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(float(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
+	float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - int(pchar.reputation.nobility)));
 	float fSpecial = 1.0;
 	if (CheckAttribute(pchar, "GenQuest.Shipshine")) fSpecial += 1.25;
 	if (IsEquipCharacterByItem(pchar, "greenIdol")) fSpecial += 0.30;
@@ -339,11 +339,11 @@ float GetNationCrewMtpForTavern(int iNation)
 	float fKrelation = GetNationRelationCoef(ChangeCharacterNationReputation(pchar, iNation, 0));
 	if (iNation != PIRATE) return fKrelation;
 
-	ref ship = &RealShips[sti(pchar.Ship.Type)];
+	ref ship = &RealShips[int(pchar.Ship.Type)];
 	if (CheckAttribute(pchar, "questTemp.CharleePrince")) fKrelation += 0.5;
 	if (ShipBonus2Artefact(pchar, SHIP_MEMENTO));
 	{
-		if (CheckAttribute(ship, "DeadSailors.RecruitPiratesBonus")) fKrelation += stf(ship.DeadSailors.RecruitPiratesBonus);
+		if (CheckAttribute(ship, "DeadSailors.RecruitPiratesBonus")) fKrelation += float(ship.DeadSailors.RecruitPiratesBonus);
 	}
 
 	return fKrelation;
@@ -389,16 +389,16 @@ void UpdateCrewInColonies()
 		SaveCurrentNpcQuestDateParam(rTown, "CrewDate");
 
 		nPastQ = 0;
-		if (CheckAttribute(rTown,"ship.crew.quantity"))	nPastQ = sti(rTown.ship.crew.quantity);
-		iNation = sti(rTown.nation);
+		if (CheckAttribute(rTown,"ship.crew.quantity"))	nPastQ = int(rTown.ship.crew.quantity);
+		iNation = int(rTown.nation);
 
-		float cityMaxCrew = stf(GetAttributeValue(GetAttributeN(bonuses, iNation))) * 16.2; // Сколько было бы людей в таверне при идеальном броске кубика
-		nNeedCrew = makeint(cityMaxCrew * (0.6 + rand(40) * 0.01)); // hrand(40, rTown.id)  // фактическое от 60 до 100%
+		float cityMaxCrew = float(GetAttributeValue(GetAttributeN(bonuses, iNation))) * 16.2; // Сколько было бы людей в таверне при идеальном броске кубика
+		nNeedCrew = int(cityMaxCrew * (0.6 + rand(40) * 0.01)); // hrand(40, rTown.id)  // фактическое от 60 до 100%
 
-		int excessCrew = nPastQ - makeint(cityMaxCrew);
+		int excessCrew = nPastQ - int(cityMaxCrew);
 		if (excessCrew > 10)
 		{
-			nNeedCrew += makeint(makefloat(excessCrew) * 0.9);
+			nNeedCrew += int(float(excessCrew) * 0.9);
 			rTown.Ship.Crew.HasExcess = true; // отметка, чтобы показать эффект присутствия лишних матросов
 		}
 		else DeleteAttribute(&rTown, "Ship.Crew.HasExcess");
@@ -411,8 +411,8 @@ void UpdateCrewInColonies()
 		if (nPastQ > nNeedCrew)
 			nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
 		else
-			nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
-		nPastM = makeint(makefloat(nPastM) * SZN_GetModifierMtp(M_CREW_HIRE_MORALE_MTP, 1.0, 0.01, 2.0));
+			nPastM = MORALE_NORMAL/5 + rand(int(MORALE_NORMAL*1.5));
+		nPastM = int(float(nPastM) * SZN_GetModifierMtp(M_CREW_HIRE_MORALE_MTP, 1.0, 0.01, 2.0));
 		rTown.Ship.crew.morale = nPastM;
 
 		// пороги опыта от нации
@@ -461,11 +461,11 @@ int GetCrewPriceForTavern(string sColony)
 	
 	float fExp = (GetCrewExp(rTown, "Sailors") + GetCrewExp(rTown, "Cannoners") + GetCrewExp(rTown, "Soldiers")) / 100.00; // средний коэф опыта 0..3
 	float fSkill = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP) + GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // 0-20
-	int   nCrewCost = makeint((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*50 * (1.0 - fSkill / 40.0));
-	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = makeint(nCrewCost * 0.95);
+	int   nCrewCost = int((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*50 * (1.0 - fSkill / 40.0));
+	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = int(nCrewCost * 0.95);
 
-	nCrewCost = makeint(fExp*nCrewCost + 0.5);
-	nCrewCost = makeint(makefloat(nCrewCost) * SZN_GetModifierMtp(M_CREW_HIRE_COST, 1.0, 0.01));
+	nCrewCost = int(fExp*nCrewCost + 0.5);
+	nCrewCost = int(float(nCrewCost) * SZN_GetModifierMtp(M_CREW_HIRE_COST, 1.0, 0.01));
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 
 	return nCrewCost;
@@ -484,13 +484,13 @@ float GetNationRelationCoef(int rel)
 
 float GetReputationCoef(int rep)
 {
-	return Bring2Range(1.0, 1.35, 0.0, 50.0, makefloat(rep));
+	return Bring2Range(1.0, 1.35, 0.0, 50.0, float(rep));
 }
 
 int GetMaxCrewAble()
 {
 	float nLeaderShip = 0.5 + GetSummonSkillFromNameToOld(pchar, SKILL_LEADERSHIP);
-	return makeint(nLeaderShip*(55.0 + 10*(5-MOD_SKILL_ENEMY_RATE) + nLeaderShip * 15.0) + 2*nLeaderShip*abs(REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+	return int(nLeaderShip*(55.0 + 10*(5-MOD_SKILL_ENEMY_RATE) + nLeaderShip * 15.0) + 2*nLeaderShip*abs(REPUTATION_NEUTRAL - int(pchar.reputation.nobility)));
 }
 
 int GetCurCrewEscadr()
@@ -563,7 +563,7 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 			chref = GetCharacter(cn);
 			if (GetRemovable(chref)) // считаем только своих
 			{
-				ret += sti(chref.Money);
+				ret += int(chref.Money);
 				ret = ret + Partition_GetCargoValue(chref); // деньги на кармане и корабль
 				HowComp += 1; // ГГ тут же
 				HowCrew += GetCrewQuantity(chref);
@@ -584,10 +584,10 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 			{
 				if(CheckAttribute(chref, "prisoned"))
 				{
-					if(sti(chref.prisoned)==true) continue;
+					if(int(chref.prisoned)) continue;
 				}
 				
-				ret += sti(chref.Money);
+				ret += int(chref.Money);
 				HowOff += 1;
 			}
 		}
@@ -603,7 +603,7 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 			sTemp = "box" + i;
 			if (CheckAttribute(loc, sTemp + ".money"))
 			{
-				ret += sti(loc.(sTemp).money);
+				ret += int(loc.(sTemp).money);
 			}
 		}
 	}
@@ -620,26 +620,26 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 	Log_TestInfo("Partition_SetValue." + state + " Money " + ret + " Off " + HowOff + " Comp " + (HowComp -1) + " Crew " + HowCrew + " Gower " + HowGower);
 	if (state == "after" && CheckAttribute(Pchar, "Partition.before.Money"))
 	{
-		if (sti(Pchar.Partition.before.Money) < sti(Pchar.Partition.after.Money))
+		if (int(Pchar.Partition.before.Money) < int(Pchar.Partition.after.Money))
 		{  // Делим бабки	
 			if(bPartitionSet)
 			{
 				int    TotalAmount, iGowerPart;
 				float  fOffPart, fCrewPart, fHeroPart;
-				TotalAmount = sti(Pchar.Partition.after.Money) - sti(Pchar.Partition.before.Money);
+				TotalAmount = int(Pchar.Partition.after.Money) - int(Pchar.Partition.before.Money);
 				Log_TestInfo("Общий доход составил " + TotalAmount);
 				
-				iGowerPart = makeint(HowGower * TotalAmount/100.0);
+				iGowerPart = int(HowGower * TotalAmount/100.0);
 												
 				TotalAmount -= iGowerPart;  
 				
-				HowOff  = Pchar.Partition.before.HowOff;
-				HowComp = Pchar.Partition.before.HowComp;
-				HowCrew = Pchar.Partition.before.HowCrew;
+				HowOff  = Pchar.Partition.before.HowOff$int(0);
+				HowComp = Pchar.Partition.before.HowComp$int(0);
+				HowCrew = Pchar.Partition.before.HowCrew$int(0);
 								
 				HowCrew = HowCrew * Part_Crew;
 				HowOff  = HowOff * Part_Officer + HowComp * Part_Companion;
-				fHeroPart = stf(Pchar.Partition.before.HeroPart);
+				fHeroPart = float(Pchar.Partition.before.HeroPart);
 				
 				fCrewPart = HowCrew / (HowCrew + HowOff + fHeroPart);
 				fOffPart  = HowOff / (HowCrew + HowOff + fHeroPart);
@@ -650,20 +650,20 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 				if (!CheckAttribute(Pchar, "Partition.MonthPart.Hero"))      Pchar.Partition.MonthPart.Hero = 0;
 				if (!CheckAttribute(Pchar, "Partition.MonthPart.Gower"))     Pchar.Partition.MonthPart.Gower = 0;
 				
-				Pchar.Partition.MonthPart.Gower = sti(Pchar.Partition.MonthPart.Gower) + iGowerPart;
+				Pchar.Partition.MonthPart.Gower = int(Pchar.Partition.MonthPart.Gower) + iGowerPart;
 				
 				if (isMainCharacterPatented())
 				{
 					Log_TestInfo("Доля губернатора составила " + iGowerPart + " Долг перед губернатором " + Pchar.Partition.MonthPart.Gower);
 				}	
 				
-				ret = makeint(fCrewPart * TotalAmount);
-				Pchar.Partition.MonthPart.Crew     = sti(Pchar.Partition.MonthPart.Crew) + ret;
-				Pchar.Partition.MonthPart.Officers = sti(Pchar.Partition.MonthPart.Officers) + makeint(fOffPart * TotalAmount);
-				ret += makeint(fOffPart * TotalAmount);
+				ret = int(fCrewPart * TotalAmount);
+				Pchar.Partition.MonthPart.Crew     = int(Pchar.Partition.MonthPart.Crew) + ret;
+				Pchar.Partition.MonthPart.Officers = int(Pchar.Partition.MonthPart.Officers) + int(fOffPart * TotalAmount);
+				ret += int(fOffPart * TotalAmount);
 				
-				Pchar.Partition.MonthPart.Hero = sti(Pchar.Partition.MonthPart.Hero) + (TotalAmount - ret);
-				Pchar.Partition.MonthPart = sti(Pchar.Partition.MonthPart) + ret;
+				Pchar.Partition.MonthPart.Hero = int(Pchar.Partition.MonthPart.Hero) + (TotalAmount - ret);
+				Pchar.Partition.MonthPart = int(Pchar.Partition.MonthPart) + ret;
 				Log_TestInfo("Доля команды " + ret + ". Долг перед командой " + Pchar.Partition.MonthPart);			
 			}
 		}
@@ -689,36 +689,36 @@ int Partition_GetCargoValue(ref chref)
 	{
 		shref = GetRealShip(st);
 		
-		ret += sti(shref.Price) * 0.3; // 0.3 - понижение стоимости корабля для грабежа
+		ret += int(shref.Price) * 0.3; // 0.3 - понижение стоимости корабля для грабежа
 		// пушки считаем по бортам
-		if (sti(chref.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+		if (int(chref.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
 		{
-		    Cannon = GetCannonByType(sti(chref.Ship.Cannons.Type));
-			idx = GetCannonGoodsIdxByType(sti(chref.Ship.Cannons.Type)); // индекс орудия как товара
+		    Cannon = GetCannonByType(int(chref.Ship.Cannons.Type));
+			idx = GetCannonGoodsIdxByType(int(chref.Ship.Cannons.Type)); // индекс орудия как товара
 			sGood = Goods[idx].name;
 			if(CheckAttribute(pchar,"Goods." + (sGood)+ ".costCoeff")) 
 			{
-				costCoeff = stf(pchar.Goods.(sGood).costCoeff);
+				costCoeff = float(pchar.Goods.(sGood).costCoeff);
 			}
 			else costCoeff = 1.0;	
-		    ret += sti(Cannon.Cost) * 0.4 * costCoeff * GetCannonsNum(chref);
+		    ret += int(Cannon.Cost) * 0.4 * costCoeff * GetCannonsNum(chref);
 		}
 		for (i=0; i<GetArraySize(&Goods); i++)
 		{
 			sGood = Goods[i].name;
 			costCoeff = 1.0;
-			if(CheckAttribute(pchar,"Goods." + (sGood) + ".costCoeff")) costCoeff = stf(pchar.Goods.(sGood).costCoeff);
+			if(CheckAttribute(pchar,"Goods." + (sGood) + ".costCoeff")) costCoeff = float(pchar.Goods.(sGood).costCoeff);
 			if(i > GOOD_CANNON_3 - 1)
 			{
-				ret += makefloat(GetCargoGoods(chref, i) * sti(Goods[i].Cost) * 0.33 * costCoeff / stf(Goods[i].Units));  
+				ret += float(GetCargoGoods(chref, i) * int(Goods[i].Cost) * 0.33 * costCoeff / float(Goods[i].Units));
 			}
 			else
 			{
-				ret += makefloat(GetCargoGoods(chref, i) * sti(Goods[i].Cost) * 0.7 * costCoeff / stf(Goods[i].Units));  
+				ret += float(GetCargoGoods(chref, i) * int(Goods[i].Cost) * 0.7 * costCoeff / float(Goods[i].Units));
 			}	
 		}
 	}
-	return makeint(ret);
+	return int(ret);
 }
 
 void Partition_GetCargoCostCoeff(string state) // state = "before" || "after" - для сравнения было-стало
@@ -743,21 +743,21 @@ void Partition_GetCargoCostCoeff(string state) // state = "before" || "after" - 
 					if (GetRemovable(chref)) // считаем только своих
 					{
 						st = GetCharacterShipType(chref);
-						if (sti(chref.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+						if (int(chref.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
 						{
-							idx = GetCannonGoodsIdxByType(sti(chref.Ship.Cannons.Type));
+							idx = GetCannonGoodsIdxByType(int(chref.Ship.Cannons.Type));
 							if(idx == i) ret += GetCannonsNum(chref);
 						}
 					}
 				}
 			}			
 			pchar.partition.(state).(sGood) = GetSquadronGoods(pchar, i) + ret;
-			RecalculateCargoCostCoeff(pchar, state, sGood, sti(pchar.partition.(state).(sGood)));					
+			RecalculateCargoCostCoeff(pchar, state, sGood, int(pchar.partition.(state).(sGood)));
 		}
 		else
 		{
 			pchar.partition.(state).(sGood) = GetSquadronGoods(pchar, i);
-			RecalculateCargoCostCoeff(pchar, state, sGood, sti(pchar.partition.(state).(sGood)));		
+			RecalculateCargoCostCoeff(pchar, state, sGood, int(pchar.partition.(state).(sGood)));
 		}
 	}
 	
@@ -783,7 +783,7 @@ state = "after"  - перед выходом на сушу или после г�
 	{
 		if(CheckAttribute(_refCharacter,"Goods." + (_goodsName) + ".costCoeff"))
 		{
-			oldPriceCoeff = stf(_refCharacter.Goods.(_goodsName).costCoeff);
+			oldPriceCoeff = float(_refCharacter.Goods.(_goodsName).costCoeff);
 		}
 		else
 		{
@@ -796,14 +796,14 @@ state = "after"  - перед выходом на сушу или после г�
 				case "before" 	:
 					if(CheckAttribute(pchar,"partition.after." + (_goodsName)))
 					{
-						oldQty = sti(pchar.partition.after.(_goodsName));
+						oldQty = int(pchar.partition.after.(_goodsName));
 					}
 					else oldQty = 0;
 				break;
 				case "after"	:
 					if(CheckAttribute(pchar,"partition.before." + (_goodsName)))
 					{
-						oldQty = sti(pchar.partition.before.(_goodsName));
+						oldQty = int(pchar.partition.before.(_goodsName));
 					}	
 					else oldQty = 0;
 				break;

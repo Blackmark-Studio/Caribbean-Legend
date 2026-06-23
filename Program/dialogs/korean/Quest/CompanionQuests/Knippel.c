@@ -1763,7 +1763,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "찰스!..";
 				link.l1 = "헬렌, 무슨 일이야??";
@@ -1778,7 +1778,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_2":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "영국 군함이다! 좀 전에 발견됐어. 처음엔 신경 안 썼는데, 이제 곧 우리한테 닿을 거야! 그렇게 빠른 배는 처음 본다.";
 				link.l1 = "그럼 알려줘서 고맙다. 그녀가 다가오기 전에 준비할 시간이 있길 바란다. 헬렌, 찰리, 전투 준비!";
@@ -1871,7 +1871,7 @@ void ProcessDialogEvent()
 			LAi_SetCheckMinHP(npchar, 10, true, "DTSG_KortniRanen");
 			LAi_SetImmortal(npchar, false);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", int(pchar.rank), ENGLAND, -1, false, "soldier"));
 			sld.name = "Brian";
 			sld.lastname = "Tasse";
 			GiveItem2Character(sld, "blade_20");
@@ -2138,7 +2138,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_2":
-			if (sti(pchar.reputation.nobility) > 70)
+			if (int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				dialog.text = "이건... 큰 위험이야. 그리고 내가 네 말을 믿을 수 있느냐의 문제만이 아니지.\n동료들이 찰리와 닮은 시체를 보고 정말 믿을 수 있을지, 그게 더 문제야.\n그리고 나는... 그렇게 쉽게 그 위험을 감수하지 않을 거다.";
@@ -2162,7 +2162,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_4":
 			dialog.text = "드디어 본론이군. 백만 페소. 마지막 제안이다.";
-			if (sti(pchar.Money) >= 1000000)
+			if (int(pchar.Money) >= 1000000)
 			{
 				link.l1 = "돈은 내가 내겠다. 내가 가난하다거나 내 부하들의 목숨을 소중히 여기지 않는다고 생각하지 마라. 둘 다 사실이 아니니까. 받아라.";
 				link.l1.go = "DTSG_Kortni_LT_7";
@@ -2396,7 +2396,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_Kech_2":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -2408,13 +2408,13 @@ void ProcessDialogEvent()
 				dialog.text = "이런 걸 하나 짓는 데는 우리가 준비한 금보다 훨씬 더 많은 돈이 들어가. 그래도 너 때문에 재미있었어, 찰스. 좋은 의미로 말이야.";
 				link.l1 = "시도해볼 만했지.";
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 			}
 			link.l1.go = "DTSG_Kortni_Kech_3";
 		break;
 		
 		case "DTSG_Kortni_Kech_3":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				dialog.text = "네가 원하는 게 뭔지 알고, 인생의 목표를 향해 나아가는구나\n좋아, 케치는 네 거다. 하지만 돈은 잊어라 - 돈꾼은 아무것도 모른다고 할 거야.";
 				link.l1 = "그거면 나도 괜찮아.";
@@ -2507,7 +2507,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_VizyvaemKnippel_9":
 			DialogExit();
 			
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 			sld.dialog.currentnode = "DTSG_Kortni_VizyvaemKnippel_10";
 			LAi_SetActorType(sld);

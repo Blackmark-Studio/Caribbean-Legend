@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Rozumiem, Charles. Chcę wierzyć w doskonałą prawdziwą miłość, ale chyba nie ma czegoś takiego na tym świecie.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Dranie! A moi ludzie? Czy żyją, by zaświadczyć, co się stało?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Są w porządku, Ekscelencjo. Trochę poturbowani, ale przeżyją.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Nie wszyscy, Ekscelencjo. Jeden dżentelmen nie dotarł - de Chievous zadał sobie trud, by przyprowadzić muszkieterów. Nie mogłem nic zrobić.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Tak, widziałem twój statek, muszę przyznać, że to naprawdę widok do podziwiania. Podnieśmy więc tę stawkę - dwa statki przeciwko jednemu. Moja fregata i flauta z srebrem przeciwko twojemu statkowi?";
 				link.l1 = "Godna gra! Pani Botot się myliła - TEN pojedynek przejdzie do legend. Zgoda!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Spójrz na to, nasz kapitan to łobuz! Jednakże kaperstwo to święta rzecz. A co powiesz na okręt wojenny? Fregata, 48 dział. Szybsza niż wiele korwet - produkt królewskich stoczni, udoskonalony przez najlepszych szkutników na świecie. Niesie ze sobą kolubryny o doskonałym zasięgu i celności. Co ty na to?";
 					link.l1 = "Znacznie lepiej, wchodzę! Ruszajmy!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Gra skończona, Kapitanie, dostałeś to, czego chciałeś. Chełp się, jeśli chcesz. Sugeruję, abyśmy omówili warunki wykupu mojego fregaty jutro w południe.";
 					link.l1 = "To wszystko? Szczerze wierzę, tak jak ty, że co stracone w hazardzie, nie można odkupić, tylko odzyskać. Albo sprzedam ją rybakom na drewno i opowiem im o twojej hojnej darowiznie.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "Zatem Fortuna miała swoje zdanie. To wyszło nader osobliwie. Gratulacje. Kapitanie de Maure. Proponuję, abyśmy omówili warunki wykupu mojego fregaty jutro w południe.";
 						link.l1 = "Tak szybko? Rozczarowujemy innych gości, monsieur. Jeśli dobrze pamiętam, masz jeszcze jeden statek. Szczerze wierzę, podobnie jak ty, że to, co przegrałeś w hazardzie, nie może być odkupione, jedynie odzyskane.";

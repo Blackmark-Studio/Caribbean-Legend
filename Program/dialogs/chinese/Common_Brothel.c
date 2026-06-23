@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 	}
 	// 按城市调用对话框 <--
 	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
-	charWhoreCost = 2460 + sti(pchar.rank) * 40;
+	charWhoreCost = 2460 + int(pchar.rank) * 40;
 	
 	switch(Dialog.CurrentNode)
 	{
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 			}
 			//< —马提尼克教程
 			//Jason --> 讨厌的贵族
-			if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && makeint(environment.time) > 15.0 && makeint(environment.time) < 21.0 && sti(pchar.questTemp.HorseQty) > 4)
+			if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && int(environment.time) > 15.0 && int(environment.time) < 21.0 && int(pchar.questTemp.HorseQty) > 4)
 			{
 				dialog.text = "你真是个庄重的男人。 而且, 我的姑娘们都很喜欢你。 我想请你为我的场所帮个小忙。 ";
 				link.l5 = "我受宠若惊, 当然可以。 你需要我帮什么忙? ";
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
 				bool bOk = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-				if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && makeint(environment.time) > 6.0 && makeint(environment.time) < 22.0 && sti(pchar.rank) >= 7)
+				if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && int(environment.time) > 6.0 && int(environment.time) < 22.0 && int(pchar.rank) >= 7)
 				{
 					DelMapQuestMarkCity("marigo");
 					DelLandQuestMark(npchar);
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 			{
 				DelLandQuestMark(npchar);
 				dialog.text = "你和雨果谈过了吗, 船长先生? ";
-				if (sti(pchar.money) >= 10000)
+				if (int(pchar.money) >= 10000)
 				{
 					link.l1 = "不仅谈过, 夫人, 这是你的钱。 一切都进行得非常顺利... ";
 					link.l1.go = "Portugal_3";
@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution") && pchar.questTemp.Mtraxx.Retribution == "brothel_repeat" && npchar.location == "Tortuga_SecBrRoom")
 			{
 				dialog.text = "你准备好接受难忘的恢复治疗了吗, 我勇敢的海盗? ";
-				if (sti(pchar.money) >= 31000)
+				if (int(pchar.money) >= 31000)
 				{
 					link.l1 = "准备好了! 查理.普林斯从不废话, 花钱也一样, 哈哈! ";
 					link.l1.go = "mtraxx_R2";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // 没有夏莉的开始
 			{
-				if (sti(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - 如果既没有船也没有船员, 有什么意义? 
+				if (int(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - 如果既没有船也没有船员, 有什么意义?
 				{
 					link.l3 = "我的手下好久没放松过了。 我能为他们批量预订姑娘吗? ";
 					link.l3.go = "ForCrew";
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipLetters_2":
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "让我看看! 嗯... 某个船长弄丢了文件, 对吧? 我想你应该问问港口主管。 ";
 				link.l1 = "也许吧... ";
@@ -285,10 +285,10 @@ void ProcessDialogEvent()
 					break;
 				}
 				// < —传奇版
-				dialog.text = ""+ GetSexPhrase("好吧, 太棒了, 我的猛男! ","她们都非常擅长自己的工作, 毫无疑问。 ") +"我可以给你推荐一个非常好的姑娘, 她叫" + GetFullName(sld) + ", 现在有空。 那次享受将花费你" + FindRussianMoneyString(sti(sld.quest.price) + charWhoreCost) + "。 同意吗? ";
+				dialog.text = ""+ GetSexPhrase("好吧, 太棒了, 我的猛男! ","她们都非常擅长自己的工作, 毫无疑问。 ") +"我可以给你推荐一个非常好的姑娘, 她叫" + GetFullName(sld) + ", 现在有空。 那次享受将花费你" + FindRussianMoneyString(int(sld.quest.price) + charWhoreCost) + "。 同意吗? ";
 				Link.l1 = "不。 我想不是。 太贵了... ";
 				Link.l1.go = "exit";
-				if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+				if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 				{
 					Link.l2 = "当然, 我怎么能拒绝? ! ";
 					Link.l2.go = "Hostess_NotChoice_agree";	
@@ -303,8 +303,8 @@ void ProcessDialogEvent()
 		break;
 		
         case "Hostess_NotChoice_agree":
-			sld = &characters[sti(npchar.quest.choiceIdx)];
-			if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+			sld = &characters[int(npchar.quest.choiceIdx)];
+			if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 			{
 				dialog.text = "好的, "+ GetSexPhrase("帅哥","美女") +"。 " + sld.name + "会在二楼的私人房间等你。 ";
 				Link.l1 = ""+ GetSexPhrase("好的, 那我来了","好的, 那我来了") +"... ";
@@ -312,11 +312,11 @@ void ProcessDialogEvent()
 				// belamour 传奇版 只有没有勋章或舰队司令制服时才给钱
 				if(IsEquipTalisman9())
 				{
-					if(npchar.nation != FRANCE) AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+					if(npchar.nation != FRANCE) AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 				}
 				else
 				{
-					AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+					AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 				}
 				sld.dialog.currentnode = "Horse_ReadyFack";			
 				//--> 返回计时器, 以免无限等待
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 				
 				// belamour 传奇版 不给总督和舰队司令任务
 				bool MCGovernon = CheckAttribute(pchar, "questTemp.Patria.GenGovernor");
-				bool MCAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4;
+				bool MCAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4;
 				
 				if ((rand(4) == 1) && (pchar.questTemp.different == "free") && (!CheckCharacterItem(pchar, "CaptainBook")) && GetNpcQuestPastDayWOInit(npchar, "questShipLetters") > 10 && !MCGovernon && !MCAdmiral ) 
 				{					
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
 				if((rand(5) == 2) && !CheckAttribute(pchar, "questTemp.ReasonToFast") && GetNpcQuestPastDayWOInit(npchar, "questReasonToFast") > 20 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !MCGovernon && !MCAdmiral) // Addon-2016 Jason
 				{
 					iColony = FindColony(npchar.city);	
-					if( sti(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
+					if( int(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
 					{
 						pchar.questTemp.ReasonToFast = "Begin";
 						pchar.questTemp.ReasonToFast.city = npchar.city;
@@ -404,7 +404,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "哦, 你看, 问题是" + sld.name + "不是便宜的姑娘, 她的价格是" + FindRussianMoneyString(sti(sld.quest.price) + charWhoreCost) + "。 我看你现在根本付不起。 等你有钱了再来吧"+ GetSexPhrase(",亲爱的","") +"... ";
+				dialog.text = "哦, 你看, 问题是" + sld.name + "不是便宜的姑娘, 她的价格是" + FindRussianMoneyString(int(sld.quest.price) + charWhoreCost) + "。 我看你现在根本付不起。 等你有钱了再来吧"+ GetSexPhrase(",亲爱的","") +"... ";
 				Link.l1 = "我就这运气... ";
 				Link.l1.go = "exit";
 			}
@@ -456,9 +456,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ForCrew_1":
-		    if (sti(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
+		    if (int(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
 		    {
-		        AddMoneyToCharacter(Pchar, -makeint(GetCrewQuantity(pchar)*crewWhoreCost));
+		        AddMoneyToCharacter(Pchar, -int(GetCrewQuantity(pchar)*crewWhoreCost));
 	            AddCrewMorale(Pchar, 10, true);
 				ChangeCharacterComplexReputation(pchar,"authority", 1);
 	            LAi_Fade("", "");
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 			link.l1 = "闭嘴, 老巫婆。 ";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		
 		//寻找市长戒指
@@ -756,15 +756,15 @@ void ProcessDialogEvent()
 			}
 			//--> 访问次数
 			if (!CheckAttribute(npchar, "quest.sexHappend")) npchar.quest.sexHappend = 1;
-			else npchar.quest.sexHappend = sti(npchar.quest.sexHappend) + 1;
-			pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // 用于丹内克
+			else npchar.quest.sexHappend = int(npchar.quest.sexHappend) + 1;
+			pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // 用于丹内克
 			Achievment_SetStat(23, 1);
 			//< —访问次数
 			str = npchar.city;
 			pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 			pchar.quest.(str).win_condition.l1.location = pchar.location;
 			pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //计数器
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //计数器
 		break;
 		
 		case "Horse_Kiss":
@@ -935,7 +935,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeMayorsRing_S5":
-			if (rand(1) && sti(pchar.money)>5000)
+			if (rand(1) && int(pchar.money)>5000)
 			{
 				dialog.text = "好吧, 我把戒指还你, 但你要付我五千比索。 ";
 				link.l1 = "好的, 拿上你的钱, 把戒指给我。 ";
@@ -971,7 +971,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Badboy.Brothel.City = npchar.city; //任务发布者的城市
 			//log_info(pchar.GenQuest.Badboy.Brothel.City); // patch-6
 			pchar.GenQuest.Badboy.Brothel.nation = npchar.nation;
-			pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(sti(npchar.nation), "man");
+			pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(int(npchar.nation), "man");
 			dialog.text = "你看, 我们这里有个讨厌的顾客 - " + pchar.GenQuest.Badboy.Brothel.Name + "。 他每次来都让我们很烦恼! 首先在酒馆喝醉, 然后到这里来, 挑个姑娘大吵大闹\n最糟糕的是他是贵族出身! 他是我们总督的远亲, 所以我们不得不忍受他的所有荒唐行为。 也许你能让那个年轻的傲慢家伙... 嗯... 冷静一点... 让他不再光顾我的场所? ";
 			link.l1 = "你是说总督的亲戚? 嗯... 我不想与当局对抗。 真的很抱歉。 ";
 			link.l1.go = "exit";
@@ -986,9 +986,9 @@ void ProcessDialogEvent()
 			//创建花花公子
 			int iRank, iType, b;
 			string sBlade, sPistol;
-			if (sti(pchar.rank) < 6) iType = 0;
-			if (sti(pchar.rank) >= 6 && sti(pchar.rank) < 16) iType = 1;
-			if (sti(pchar.rank) >= 16) iType = 2;
+			if (int(pchar.rank) < 6) iType = 0;
+			if (int(pchar.rank) >= 6 && int(pchar.rank) < 16) iType = 1;
+			if (int(pchar.rank) >= 16) iType = 2;
 			switch (iType)
 			{
 				case 0:
@@ -998,20 +998,20 @@ void ProcessDialogEvent()
 					b = 25;
 				break;
 				case 1:
-					iRank = sti(pchar.rank)+10;
+					iRank = int(pchar.rank)+10;
 					sBlade = "blade_09";
 					sPistol = "pistol1";
 					b = 65;
 				break;
 				case 2:
-					iRank = sti(pchar.rank)+5;
+					iRank = int(pchar.rank)+5;
 					sBlade = "blade_14";
 					sPistol = "pistol1";
 					b = 40;
 				break;
 			}
 			sld = GetCharacter(NPC_GenerateCharacter("Badboy", "citiz_"+(7+rand(1)), "man", "man", iRank, HOLLAND, -1, true, "citizen"));
-			FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", makeint(iRank*5));
+			FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", int(iRank*5));
 			sld.name = pchar.GenQuest.Badboy.Brothel.Name;
 			sld.lastname = "";
 			sld.dialog.FileName = "Quest\Other_quests_NPC.c";
@@ -1042,7 +1042,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SexWithHostess_goToRoom");
 			SetTimerFunction("SexWithHostess_null", 0, 0, 1); 
 			DialogExit();
-			if (sti(pchar.GenQuest.Badboy.Brothel.Type) != 2)
+			if (int(pchar.GenQuest.Badboy.Brothel.Type) != 2)
 			{
 				DeleteAttribute(pchar, "GenQuest.Badboy");
 			}
@@ -1172,14 +1172,14 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_7S":
             DialogExit();
-			pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // 用于丹内克
+			pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // 用于丹内克
 			Achievment_SetStat(23, 1);
 			//< —访问次数
 			str = npchar.city;
 			pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 			pchar.quest.(str).win_condition.l1.location = pchar.location;
 			pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //计数器
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //计数器
 			AddDialogExitQuest("PlaySex_1");
 			// 从妓院获得的加成
 			if (CheckNPCQuestDate(pchar, "BrothelSex"))
@@ -1221,7 +1221,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_R1":
 			dialog.text = "啊, 查理.普林斯, 你的幽默和你的军刀一样锋利! 你差点让我不高兴... 姑娘们! 我们有客人, 特别的客人! 拿酒和食物来! ";
-			if (sti(pchar.money) >= 31000)
+			if (int(pchar.money) >= 31000)
 			{
 				link.l1 = "把这里每个漂亮姑娘都叫来! 我们要休息和娱乐! 哟吼吼! ..";
 				link.l1.go = "mtraxx_R2";
@@ -1244,13 +1244,13 @@ void ProcessDialogEvent()
 		break;
 		// belamour 夜间冒险家
 		case "NA_Girl":
-			dialog.text = "哦, 原来是个行家啊, 嘻嘻... 好吧, 好吧, 我有这样一个姑娘。 但她不便宜: " + makeint(pchar.GenQuest.NightAdventure_money) + " 比索。 "; 
+			dialog.text = "哦, 原来是个行家啊, 嘻嘻... 好吧, 好吧, 我有这样一个姑娘。 但她不便宜: " + int(pchar.GenQuest.NightAdventure_money) + " 比索。 ";
 			link.l1 = "成交。 ";
 			link.l1.go = "NA_Girl_1";
 		break;
 		
 		case "NA_Girl_1":
-			AddMoneyToCharacter(pchar, -makeint(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.NightAdventure_money));
 			dialog.text = "太好了, 亲爱的。 爱情女祭司会在楼上等你。 相信我, 你不会后悔的。 "; 
 			link.l1 = "我已经不后悔了。 ";
 			link.l1.go = "NA_Girl_2";
@@ -1266,7 +1266,7 @@ void ProcessDialogEvent()
 		
 		case "chicken_god":
 			dialog.text = "给你和阿圭巴纳大人? 当然可以。 船长, 这需要一万。 ";
-			if (sti(pchar.money) >= 10000) {
+			if (int(pchar.money) >= 10000) {
 				link.l1 = "等等, 不是这样的! .. 该死的! 不管了, 给你钱。 ";
 				link.l1.go = "chicken_god_pay";
 			} else {

@@ -41,16 +41,18 @@ void STH_SneakTo()
 
 ref VT_GetColony(ref ref_Id_Idx)
 {
-	switch (VarType(ref_Id_Idx))
+	switch (typeid(ref_Id_Idx))
 	{
-		case VAR_AREFERENCE: return ref_Id_Idx; break;
-		case VAR_INTEGER:
-			{
-				if (ref_Id_Idx < 0) return nullptr;
-				return GetColonyByIndex(ref_Id_Idx);
-			}
+		case typeid(aref):
+		case typeid(object):
+			return ref_Id_Idx;
+		case typeid(int):
+		{
+			if (ref_Id_Idx < 0) return nullptr;
+			return GetColonyByIndex(ref_Id_Idx);
+		}
 		break;
-		case VAR_STRING:
+		case typeid(string):
 		{
 			if (ref_Id_Idx == "") return nullptr;
 			int colonyIdx = FindColony(ref_Id_Idx);
@@ -94,7 +96,7 @@ int STH_GetColonyStatus(string sColony)
 	int iColony = FindColony(sColony);
 	if (iColony < 0) return STH_UNKNOWN;
 
-	int nation = sti(Colonies[iColony].nation);
+	int nation = int(Colonies[iColony].nation);
 	bool enemyNation = nation != PIRATE && GetRelation2BaseNation(nation) == RELATION_ENEMY;
 	
 	aref townInfo = GetAref(&StealthSystem, "colonies." +sColony);
@@ -111,7 +113,7 @@ int STH_GetColonyStatus(string sColony)
 // Проникли в город с боем
 void STH_AlarmTown(ref colony)
 {
-	int iNation = sti(colony.nation);
+	int iNation = int(colony.nation);
 	string sNation = GetNationNameByType(iNation);
 
 	LAi_group_AttackGroup(sNation + "_citizens", LAI_GROUP_PLAYER);
@@ -145,7 +147,7 @@ void STH_CheckShip(ref chr)
 	int status = STH_GetColonyStatus(sColony);
 	if (status == STH_ENEMY)
 	{
-		SetCharacterRelationBoth(sti(chr.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(chr.index), GetMainCharacterIndex(), RELATION_ENEMY);
 		DoQuestCheckDelay(NationShortName(GetBaseHeroNation()) + "_flag_rise", 0.1);
 	}
 }
@@ -188,7 +190,7 @@ void STH_TimerDelay()
 		return;
 	}
 
-	Log_AStr("" + sti(pchar.showTimer));
+	Log_AStr("" + int(pchar.showTimer));
 	if (GetAttributeInt(pchar, "showTimer") < 2)
 	{
 		Log_Clear();
@@ -219,7 +221,7 @@ void STH_DelayFortEnd(ref callback)
 	}
 
 	ref fortChr = GetCharacter(fortIdx);
-	if (sti(fortChr.fort.mode) == FORT_HOLD_FIRE) fortChr.fort.mode = FORT_NORMAL;
+	if (int(fortChr.fort.mode) == FORT_HOLD_FIRE) fortChr.fort.mode = FORT_NORMAL;
 }
 
 // Разрешаем быстрый переход, если есть лицензия или проникли через сторю

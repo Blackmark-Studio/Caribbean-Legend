@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Shadows", "5");
 			pchar.questTemp.Saga.Shadows = "islatesoro";
 			// в офицеры
-			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
+			npchar.quest.OfficerPrice = int(pchar.rank)*500;
 			npchar.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			npchar.CompanionDisable = true; //нельзя в компаньоны
 			npchar.loyality = MAX_LOYALITY;
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Нужно изменить тип боеприпаса для твоего огнестрельного оружия.";
 					Link.l3.go = "SetGunBullets";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -251,12 +251,12 @@ void ProcessDialogEvent()
 			dialog.text = "Я уже слишком стар для этих бесконечных морских сражений, хоть я и участвую в них лишь косвенно. У меня есть кое-какие сбережения, и я хотел бы сойти на берег. Заняться частной практикой. Надеюсь, вы не будете против?";
 			link.l1 = "Разумеется, нет, "+npchar.name+". Конечно, мне будет не хватать такого толкового офицера, как ты. Но я понимаю и уважаю твоё решение. Удачи тебе. Уверен, ты очень быстро станешь известным и уважаемым лекарем.";
 			link.l1.go = "SharlieEpilog_Baker_nothing";
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice))
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice))
 			{
 				link.l2 = "Ты поступаешь мудро, и я, разумеется, не имею ничего против. Я распоряжусь, чтобы тебе выдали месячное жалование сверх положенного - лишними они точно не будут. Ну, что тут ещё скажешь... удачи тебе в новой жизни.";
 				link.l2.go = "SharlieEpilog_Baker_salary";
 			}
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice) * 3)
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice) * 3)
 			{
 				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer")) // только если есть жена
 				{
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3":
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 			link.l1 = "В утробе? Не понимаю, о чём ты? У нас никто вроде не болеет морской болезнью.";
 			link.l1.go = "SharlieEpilog_Baker_salary_X3_2";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3_2":

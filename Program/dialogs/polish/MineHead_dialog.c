@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -23,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "Wróg w kopalni! Alarm!";
 				link.l1 = "Aaah, do diabła!";
@@ -63,9 +62,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "Señor, niestety, w tej chwili nie potrzebujemy więcej niewolników. Ale sytuacja może się zmienić w każdej chwili, więc sprawdź za kilka tygodni lub w innym czasie.";
 				link.l1 = "W porządku, señor, rozumiem. Nie potrzebujesz ich teraz, ale możesz potrzebować ich za jakiś czas.";
@@ -106,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "Señor, nie mam czasu na głupie żarty. Jeśli masz ochotę na żartowanie, idź do karczmy!";
@@ -121,9 +120,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "Niestety, señor, teraz nie potrzebujemy tak wielu niewolników. Kopalnia obecnie wymaga "+FindRussianQtyString(sti(location.quest.slaves.qty))+". Czy zamierzasz sprzedać tak wiele?";
+				dialog.text = "Niestety, señor, teraz nie potrzebujemy tak wielu niewolników. Kopalnia obecnie wymaga "+FindRussianQtyString(int(location.quest.slaves.qty))+". Czy zamierzasz sprzedać tak wiele?";
 				link.l1 = "Tak, oczywiście!";
 				link.l1.go = "slaves_max";
 				link.l2 = "Hmm... Chyba nie.";
@@ -136,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "Doskonale. Proszę kazać im przynieść ich pod bramy miasta. Wyślę po nich swoich ludzi.";
 			link.l1 = "Nie martw się, señor. Twoi niewolnicy zostaną dostarczeni na czas. Wydam wszystkie odpowiednie rozkazy natychmiast.";
 			link.l1.go = "slaves_calk";
@@ -153,7 +152,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

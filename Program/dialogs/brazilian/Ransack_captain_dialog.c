@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear()+"Eu sou seu prisioneiro, "+GetAddress_Form(NPChar)+". Mas eu quero que você saiba que "+NationNameNominative(sti(NPChar.nation))+" nunca paga pelo seu povo. Estamos todos por nossa conta.";
+				dialog.text = RandSwear()+"Eu sou seu prisioneiro, "+GetAddress_Form(NPChar)+". Mas eu quero que você saiba que "+NationNameNominative(int(NPChar.nation))+" nunca paga pelo seu povo. Estamos todos por nossa conta.";
 				link.l1 = "Bem... Vejo que não vou lucrar nada com você. Pelo menos posso entregar você como criminoso em qualquer colônia.";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear()+"Eu sou seu prisioneiro, "+GetAddress_Form(NPChar)+". "+NationNameNominative(sti(NPChar.nation))+" vou pagar um bom preço pela minha liberdade.";
+				dialog.text = RandSwear()+"Eu sou seu prisioneiro, "+GetAddress_Form(NPChar)+". "+NationNameNominative(int(NPChar.nation))+" vou pagar um bom preço pela minha liberdade.";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "Olha, você é um marinheiro habilidoso e eu preciso de gente como você. Gostaria de servir sob meu comando?";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "tip-off"
 						dialog.text = RandPhraseSimple("Capitão, gostaria de ouvir minha proposta para uma alternativa mais lucrativa ao meu resgate?","Eu entendo que aqui não há espaço para barganha, mas gostaria de ouvir minha proposta?");
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "Capitão, por que você simplesmente não me deixa ir? Você não precisa de mim. Virar pirata foi minha única opção, já que não tenho habilidades valiosas nem educação. Tudo o que eu queria era ganhar algum dinheiro e depois me aposentar.";
 					if (FindFreeRandomOfficer() > 0)
@@ -148,9 +148,9 @@ void ProcessDialogEvent()
 						dialog.text = RandPhraseSimple("Capitão, eu perdi a luta e imploro pela sua misericórdia. ","Capitão, peço pela sua generosidade. Entendo que não há motivo para me tratar como um prisioneiro de guerra, então peço que me poupe. Dou minha palavra de que evitarei encontrá-lo no mar.");
 						link.l2 = LinkRandPhrase("Não teste a minha paciência. Você já teve sorte de sair vivo.",RandPhraseSimple("Eu tenho meus próprios planos para você.","Suponho que você ainda possa me ser útil no futuro."),RandPhraseSimple("Você é meu prisioneiro e tenho todo o direito de fazer com você o que eu quiser. Sua opinião não tem valor aqui.","Você é... bem, você era capitão de um navio de guerra e sabia dos riscos. Não tente se fazer de santo aqui."));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "Olha, você é um lutador habilidoso e eu preciso de gente dura como você. Gostaria de ser meu oficial?";
 								link.l3.go = "free_to_officer";
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                         	ReleasePrisoner(offref); // освободили пленника
 							LAi_SetWarriorType(offref);
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 					sTmp = "I had an idea to rob him once but I have never had a single chance to do that.";
 				break;
 			}
-			dialog.text = "Certo. Isso já basta pra mim. Agora, direto ao assunto, em "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" é a casa de um comerciante rico "+NPChar.Hold_GenQuest.Name+". "+"Ele fez sua fortuna no navio dele '"+NPChar.Hold_GenQuest.ShipName+" vendendo "+GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" com rota : "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"Quando ele está com muita carga, paga por escolta."+sTmp+" Tenho certeza de que esta informação vale mais para você do que a vida de um só homem.";
+			dialog.text = "Certo. Isso já basta pra mim. Agora, direto ao assunto, em "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" é a casa de um comerciante rico "+NPChar.Hold_GenQuest.Name+". "+"Ele fez sua fortuna no navio dele '"+NPChar.Hold_GenQuest.ShipName+" vendendo "+GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" com rota : "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"Quando ele está com muita carga, paga por escolta."+sTmp+" Tenho certeza de que esta informação vale mais para você do que a vida de um só homem.";
 			link.l1 = "Duvido que essa informação vá me ser útil. Não vou caçar comerciantes pacíficos.";	
 			link.l1.go = "free_tip_off_0";
 			link.l2 = "Não sei se essa informação vai me servir de alguma coisa, mas dei minha palavra. O contramestre vai te colocar com minha tripulação e te soltar no porto mais próximo.";
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
@@ -573,7 +573,7 @@ void ProcessDialogEvent()
 		
 		case "free_by_hoard5":
 			dialog.text = "Meu agradecimento, capitão! Agora vejo o valor da palavra de um homem "+GetSexPhrase("cavalheiro!","senhora!");
-			link.l1 = "Vá e fique fora do meu caminho. Da próxima vez não vou te deixar escapar tão fácil.");
+			link.l1 = "Vá e fique fora do meu caminho. Da próxima vez não vou te deixar escapar tão fácil.";
 			link.l1.go = "free_by_hoard6";
 		break;
 		

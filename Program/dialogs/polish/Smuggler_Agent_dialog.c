@@ -11,8 +11,8 @@ void ProcessDialogEvent()
 	// Церковный квест № 2 -->
 	if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_2.Summ_To_Contra"))
 	{
-		iChurchQuest2_Summ = sti(PChar.rank)*100 + (rand(3)+1)*100;
-		PChar.GenQuest.ChurchQuest_2.Summ_To_Contra = sti(iChurchQuest2_Summ);
+		iChurchQuest2_Summ = int(PChar.rank)*100 + (rand(3)+1)*100;
+		PChar.GenQuest.ChurchQuest_2.Summ_To_Contra = int(iChurchQuest2_Summ);
 	}
 	// <-- Церковный квест № 2
 	
@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 
 	// belamour legendary edition
 	bool MCGovernon = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE;
-	bool MCAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+	bool MCAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
 
 	if (!CheckAttribute(npchar, "quest.trade_date"))
     {
@@ -39,7 +39,7 @@ void ProcessDialogEvent()
     }
 
 	//тереть нафиг аттрибут при прошествии дней (navy fix)
-	if (CheckAttribute(pchar, "GenQuest.contraTravel.days") && GetQuestPastDayParam("contraTravel") > sti(PChar.GenQuest.contraTravel.days))
+	if (CheckAttribute(pchar, "GenQuest.contraTravel.days") && GetQuestPastDayParam("contraTravel") > int(PChar.GenQuest.contraTravel.days))
 	{
 		DeleteAttribute(pchar, "GenQuest.contraTravel");
 		CloseQuestHeader("Gen_ContrabandTravel");
@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 			Pchar.quest.Contraband.active = true;
 			pchar.GenQuest.Contraband.GuardNation = npchar.nation;
 			pchar.GenQuest.Contraband.SmugglerId  = npchar.id;				
-			SetAllContraGoods(&Stores[sti(Pchar.GenQuest.Contraband.StoreIdx)], npchar);
+			SetAllContraGoods(&Stores[int(Pchar.GenQuest.Contraband.StoreIdx)], npchar);
 			ReOpenQuestHeader("Gen_Contraband");
             if (GetIslandByCityName(npchar.city) == "Mein")
             {
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 					if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 					{
 						pchar.GenQuest.CaptainComission.SpeakContra = true;
-						dialog.text = "Brak interesów dzisiaj. Patrole są na każdej zatoce, nasz gubernator szuka ładunku, który skonfiskował jakiś kapitan od"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" i zostało przez niego gdzieś schowane.";
+						dialog.text = "Brak interesów dzisiaj. Patrole są na każdej zatoce, nasz gubernator szuka ładunku, który skonfiskował jakiś kapitan od"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" i zostało przez niego gdzieś schowane.";
 						link.l1 = "A gdzie jest ten kapitan"+pchar.GenQuest.CaptainComission.Name+"?";
 						link.l1.go = "CapComission_1";
 						break;
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "Meeting_3";
 				}
 
-				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && sti(pchar.GenQuest.contraTravel.active) == true)
+				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && int(pchar.GenQuest.contraTravel.active) == true)
 					Link.l2 = "O podróży...";
 				else
 					Link.l2 = "Muszę dotrzeć do jednego miejsca.";
@@ -260,9 +260,9 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddQuestRecord("CaptainComission2", "38");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")));
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
+			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
 		break;
 		
 		case "CapComission_4":
@@ -270,13 +270,13 @@ void ProcessDialogEvent()
 			link.l1 = "Rozumiem... Miłego dnia.";
 			link.l1.go = "exit";
 			AddQuestRecord("CaptainComission2", "19");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		break;
 				
 		case "SM_ShipLetters_1":
 			pchar.questTemp.different.GiveShipLetters.speakSmuggler = true;
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "Dlaczego tak postanowiłeś? Jestem uczciwym przemytnikiem. Szukaj innego nabywcy.";
 				link.l1 = "Dzięki...";
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Dlaczego nie? Może znajdę zastosowanie dla twojego 'ładunku'. Weź te "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" monety i zapomnij o tym.";
+					dialog.text = "Dlaczego nie? Może znajdę zastosowanie dla twojego 'ładunku'. Weź te "+int(pchar.questTemp.different.GiveShipLetters.price2)+" monety i zapomnij o tym.";
 					link.l1 = "Nie, dziękuję.";
 					link.l1.go = "SM_ShipLetters_2";	
 					link.l2 = "Jak najbardziej, zaczynam o tym zapominać!";
@@ -294,17 +294,17 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "Dokładnie! Teraz jestem naprawdę ciekawy. Przypuszczam, że jeśli ci zapłacę "+sti(pchar.questTemp.different.GiveShipLetters.price3)+" monet nie będzie ci wcale zależało na tych papierach.";
+						dialog.text = "Dokładnie! Teraz jestem naprawdę ciekawy. Przypuszczam, że jeśli ci zapłacę "+int(pchar.questTemp.different.GiveShipLetters.price3)+" monet nie będzie ci wcale zależało na tych papierach.";
 						link.l1 = "Nie, dziękuję.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "I masz rację. Już o nich zapomniałem.";
 						link.l2.go = "SM_ShipLetters_3";
 					}
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "Teraz to jest szansa, żeby złapać tego bezczelnego faceta! Naprawdę, naprawdę jestem ciekaw. Słuchaj, zapłacę ci "+sti(pchar.questTemp.different.GiveShipLetters.price4)+" w złocie i całkowicie zapomnisz o dokumentach na stole?";
+						dialog.text = "Teraz to jest szansa, żeby złapać tego bezczelnego faceta! Naprawdę, naprawdę jestem ciekaw. Słuchaj, zapłacę ci "+int(pchar.questTemp.different.GiveShipLetters.price4)+" w złocie i całkowicie zapomnisz o dokumentach na stole?";
 						link.l1 = "Nie zrobię tego.";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "Dobrze, umowa stoi!";
@@ -322,30 +322,30 @@ void ProcessDialogEvent()
 		
 		case "SM_ShipLetters_3":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price3)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price3));
 				}
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price4)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price4));
 				}
 			}
 						
-			if((sti(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (sti(pchar.questTemp.different.GiveShipLetters.variant) == 2))
+			if((int(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (int(pchar.questTemp.different.GiveShipLetters.variant) == 2))
 			{	
 				ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 				OfficersReaction("bad"); 
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 				if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 				{
 					pchar.GenQuest.CaptainComission.SpeakContra = true;
-					dialog.text = "Nie ma dziś żadnych interesów. Patroluje każdą zatokę, nasz gubernator szuka ładunku, który został skonfiskowany przez pewnego kapitana."+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" a schował to gdzieś.";
+					dialog.text = "Nie ma dziś żadnych interesów. Patroluje każdą zatokę, nasz gubernator szuka ładunku, który został skonfiskowany przez pewnego kapitana."+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" a schował to gdzieś.";
 					link.l1 = "A gdzie jest ten kapitan"+pchar.GenQuest.CaptainComission.Name+"?";
 					link.l1.go = "CapComission_1";
 					break;
@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_2":
 			iChurchQuest2_Summ = PChar.GenQuest.ChurchQuest_2.Summ_To_Contra;
-			if(sti(PChar.money) >= iChurchQuest2_Summ)
+			if(int(PChar.money) >= iChurchQuest2_Summ)
 			{
 				dialog.text = "Daj mi swoje monety. I wiedz, że za taką sumę nie dostaniesz wiele.";
 				link.l1 = "Widzisz, tęskniłem za moimi przyjaciółmi. Spóźniłem się na spotkanie, a oni na mnie nie poczekali...";
@@ -562,12 +562,12 @@ void ProcessDialogEvent()
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);	
 				break;
 			}
-			bOk  = CheckAttribute(pchar, "GenQuest.contraTravel.active") && (sti(pchar.GenQuest.contraTravel.active) == true);
-			bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (sti(Pchar.quest.Contraband.Active) == true);
+			bOk  = CheckAttribute(pchar, "GenQuest.contraTravel.active") && (int(pchar.GenQuest.contraTravel.active) == true);
+			bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (int(Pchar.quest.Contraband.Active) == true);
 			bool bOk3 = CheckAttribute(Pchar, "questTemp.pirateStartQuest") && (Pchar.questTemp.pirateStartQuest == "3");
 			if (bOk)
 			{
-			    if (GetQuestPastDayParam("contraTravel") > sti(PChar.GenQuest.contraTravel.days))
+			    if (GetQuestPastDayParam("contraTravel") > int(PChar.GenQuest.contraTravel.days))
 				{  // просрочка
 					DeleteAttribute(PChar, "GenQuest.contraTravel");
 					CloseQuestHeader("Gen_ContrabandTravel");
@@ -650,13 +650,13 @@ void ProcessDialogEvent()
 			}
 //navy <--
 			//если нет корабля у ГГ и нет компаньонов все ок
-			if (sti(pchar.ship.type) == SHIP_NOTUSED && GetCompanionQuantity(pchar) == 1 && GetPassengersQuantity(pchar) == 0)
+			if (int(pchar.ship.type) == SHIP_NOTUSED && GetCompanionQuantity(pchar) == 1 && GetPassengersQuantity(pchar) == 0)
 			{
 				//случай если уже была инфа
-				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && sti(pchar.GenQuest.contraTravel.active) == true)
+				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && int(pchar.GenQuest.contraTravel.active) == true)
 				{
 					//платил уже
-					if (CheckAttribute(pchar, "GenQuest.contraTravel.payed") && sti(pchar.GenQuest.contraTravel.payed) == true)
+					if (CheckAttribute(pchar, "GenQuest.contraTravel.payed") && int(pchar.GenQuest.contraTravel.payed) == true)
 					{
 						Dialog.Text = "Miałem wrażenie, że już załatwiliśmy ten interes?";
 						Link.l2 = "Rzeczywiście!";
@@ -664,7 +664,7 @@ void ProcessDialogEvent()
 					//не платил, значит можно запалатить пока не вышел срок.
 					else
 					{
-						if(GetQuestPastDayParam("contraTravel") == sti(PChar.GenQuest.contraTravel.days))
+						if(GetQuestPastDayParam("contraTravel") == int(PChar.GenQuest.contraTravel.days))
 						{
 							Dialog.Text = "Czy przyniosłeś pieniądze?";
 							Link.l1 = "Tak.";
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{
-                            if (GetQuestPastDayParam("contraTravel") < sti(PChar.GenQuest.contraTravel.days))
+                            if (GetQuestPastDayParam("contraTravel") < int(PChar.GenQuest.contraTravel.days))
 							{
 								Dialog.Text = "Już ci wszystko powiedziałem.";
 								Link.l2 = "Dokładnie.";
@@ -704,12 +704,12 @@ void ProcessDialogEvent()
 						aref arTmp; makearef(arTmp, pchar.GenQuest.contraTravel);
 						SetSmugglersTravelDestination(arTmp);
 						//за сколько доставят 
-						pchar.GenQuest.contraTravel.price = (sti(PChar.rank)*250 + (100 - nRel)*10 + rand(30)*20) + sti(arTmp.destination.days)*100;
+						pchar.GenQuest.contraTravel.price = (int(PChar.rank)*250 + (100 - nRel)*10 + rand(30)*20) + int(arTmp.destination.days)*100;
 						
 						//если метро активно, и нет пассажиров у ГГ, и ещё сегодня не виделись, есть доступная бухта, и ранд ...
 						bOk = !bPauseContrabandMetro && CheckNPCQuestDate(npchar, "Travel_Talk") && 
 							Pchar.GenQuest.contraTravel.CurrentPlace != "None" && rand(50) < nRel;
-                        bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (sti(Pchar.quest.Contraband.Active) == true);
+                        bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (int(Pchar.quest.Contraband.Active) == true);
 						if (bOk && !bOk2)
 						{
 							nDay = 1 + rand(3);
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
 			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
-			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
+			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(int(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);
 
 			//активируем квест
@@ -785,8 +785,8 @@ void ProcessDialogEvent()
 		//ГГ согласен платить
 		case "Travel_pay":
 			//денег хватает?
-			Sum = sti(pchar.GenQuest.contraTravel.price);
-			if (sti(pchar.money) >= Sum)
+			Sum = int(pchar.GenQuest.contraTravel.price);
+			if (int(pchar.money) >= Sum)
 			{
 				AddMoneyToCharacter(pchar, -1*Sum);
 				//ставим флаг оплаты
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
 				//ставим контру.
 				PlaceSmugglersOnShore(PChar.GenQuest.contraTravel.CurrentPlace);
 				//корабль на волнах в бухте....
-				Sum = sti(pchar.GenQuest.contraTravel.destination.days);
+				Sum = int(pchar.GenQuest.contraTravel.destination.days);
 				sld = GetCharacter(NPC_GenerateCharacter("Abracham_Gray", "citiz_46", "man", "man", 5, PIRATE, Sum + 2, true, "hunter"));
 				//воскресим...
 				sld.nation = PIRATE;
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Shadowtrader", "sCity", XI_ConvertString("Colony"+pchar.questTemp.Shadowtrader.City+"Gen"));
 			SetFunctionTimerCondition("ShadowtraderTimeSmugglers_Over", 0, 0, 2, false);
 			int iNation = pchar.questTemp.Shadowtrader.nation;
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 			sld = GetCharacter(NPC_GenerateCharacter("ShadowAgent_1", "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, 2, true, "quest"));
 			SetFantomParamFromRank(sld, iRank, true);
 			GiveItem2Character(sld, "blade_04");
@@ -924,7 +924,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_1":
-			if (sti(pchar.money) >= 3002)
+			if (int(pchar.money) >= 3002)
 			{
 				dialog.text = "On zapłaci, ha! Mój czas nie jest tani, panie, kosztuje 3000 pesos plus ten obrzydliwy napój, który błędnie nazywają rumem.";
 				link.l1 = "Zgoda! Teraz opowiedz mi o jednym z twoich, który spędził pół roku w miejscowym więzieniu, a potem odszedł. Co się z nim stało?";
@@ -980,8 +980,8 @@ void ProcessDialogEvent()
 		
 		//Jason --> генератор сбыта бакаута
 		case "bakaut":
-			dialog.text = "Doprawdy? Dobrze. Mynheer Rosenkraft potrzebuje partii twardego drzewa, ale nie mniej niż "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+". Czy masz wystarczająco dużo ładunku?";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
+			dialog.text = "Doprawdy? Dobrze. Mynheer Rosenkraft potrzebuje partii twardego drzewa, ale nie mniej niż "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+". Czy masz wystarczająco dużo ładunku?";
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= int(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "Tak. Gdzie mogę znaleźć pana Rosenkrafta?";
 				link.l1.go = "bakaut_1";
@@ -1014,14 +1014,14 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Bakaut");
 			AddQuestRecord("Bakaut", "1");
 			AddQuestUserData("Bakaut", "sIsland", XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gen"));
-			AddQuestUserData("Bakaut", "sDays", FindRussianDaysString(sti(pchar.GenQuest.Bakaut.DaysQty)));
-			AddQuestUserData("Bakaut", "sQty", FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)));
+			AddQuestUserData("Bakaut", "sDays", FindRussianDaysString(int(pchar.GenQuest.Bakaut.DaysQty)));
+			AddQuestUserData("Bakaut", "sQty", FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)));
 			// таймер
 			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1 = "Timer";
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.hour  = sti(GetTime());
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.hour  = int(GetTime());
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
 			pchar.quest.Bakaut_Rozencraft_Find.function = "Bakaut_RozencraftRemove";
 		break;
 		// <-- генератор сбыта бакаута

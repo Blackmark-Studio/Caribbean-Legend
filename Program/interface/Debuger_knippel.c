@@ -287,7 +287,7 @@ void ProcCommand()
 /*
 float GetShipMaxNeededValue(int iShipType, string _param)
 {
-    float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
+    float NeededValue = float(GetBaseShipParamFromType(iShipType, _param));
     switch (_param)
     {
         case "speedrate":
@@ -346,7 +346,7 @@ void CalculateInfoDataF3()
 	GiveItem2Character(sld, "pirate_cutlass");
 	EquipCharacterbyItem(sld, "pirate_cutlass");
     LAi_SetImmortal(sld, false);
-    sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+    sld.quest.OfficerPrice = int(pchar.rank) * 500;
     sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 	DeleteAttribute(sld, "CompanionDisable");
 	DeleteAttribute(sld, "HalfImmortal");
@@ -381,7 +381,7 @@ void CalculateInfoDataF4()
     // -->
     totalInfo = descF4;
 	
-	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 20;
+	pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 20;
     
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -435,7 +435,7 @@ void CalculateInfoDataF5()
     AddItems(sld, "cartridge", 30);
     AddItems(sld, "GunEchin", 30);
     AddItems(sld, "GunPowder", 30);
-    sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+    sld.quest.OfficerPrice = int(pchar.rank) * 20;
     sld.OfficerWantToGo.DontGo = true;
     sld.CompanionDisable = true;
     sld.loyality = MAX_LOYALITY;
@@ -682,7 +682,7 @@ void CalculateInfoDataF14()
 
     AddItems(mc, "amulet_7", 1);
 
-    LAi_SetCharacterUseBullet(mc, "cartridge");
+    LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 
     SetAllPerksToChar(mc, false);
 	
@@ -756,7 +756,7 @@ void CalculateInfoDataF15()
 
     AddItems(mc, "amulet_7", 1);
 
-    LAi_SetCharacterUseBullet(mc, "cartridge");
+    LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 
     SetAllPerksToChar(mc, false);
 	
@@ -850,7 +850,7 @@ void CalculateInfoDataF20()
 	SetCrewQuantity(sld, 100);
 	SetCharacterGoods(sld, GOOD_FOOD, 1000);
 	SetCharacterGoods(sld, GOOD_MEDICAMENT, 1000);
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	SetCharacterRemovable(sld, true);
 	SetShipRemovable(sld, true);
 	sld.loyality = MAX_LOYALITY;
@@ -889,8 +889,8 @@ void CalculateInfoDataF21()
 
 void ShipRepair(ref chr)
 {
-    int hp = MakeInt(GetHullPercent(chr));
-    int sp = MakeInt(GetSailPercent(chr));
+    int hp = int(GetHullPercent(chr));
+    int sp = int(GetSailPercent(chr));
     trace("hp " + hp + " sp " + sp);
 
     // процент ремонта в день (при ремонте на глобальной карте)
@@ -924,7 +924,7 @@ void ShipRepair(ref chr)
     float matQ;
     int shMastFall = GetShipFallMastsQuantity(chr);
 
-    trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + makeint((timeHull / 4.0 + timeSail / 6.0)));
+    trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + int((timeHull / 4.0 + timeSail / 6.0)));
 
     if (shMastFall > 0)
     {
@@ -954,7 +954,7 @@ void ReloadByStr()
         {
             if (locations[i].type == "seashore" || locations[i].type == "mayak")
             {
-                setCharacterShipLocation(pchar, loc));
+                setCharacterShipLocation(pchar, loc);
                 setWDMPointXZ(loc);
             }
         }

@@ -141,8 +141,8 @@ void GoldenGirl_Start(string qName) // инициализация
 	sld.cirassId = Items_FindItemIdx("cirass1"); 
 	LAi_SetImmortal(sld, true);
 	sld.SuperShooter = true;
-	sld.MultiFighter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
-	sld.MultiShooter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiFighter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiShooter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
 	LAi_SetStayType(sld);
 	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 	// создаем баронета Кортни
@@ -192,8 +192,8 @@ void GoldenGirl_Start(string qName) // инициализация
 	TakeNItems(sld, "potion3", 5);
 	sld.cirassId = Items_FindItemIdx("cirass1"); 
 	sld.SuperShooter = true;
-	sld.MultiFighter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
-	sld.MultiShooter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiFighter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiShooter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
 	LAi_SetStayType(sld);
 	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 	//запуск ативной части
@@ -450,7 +450,7 @@ void GoldenGirl_SleepInBrothel() //
 	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 	// ориентируем на день
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 12;
 	if (iTime < 7) iAddTime = 12 - iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24  + 12 - iTime;
@@ -582,7 +582,7 @@ void GoldenGirl_GirlPrisoner() //
 	pchar.questTemp.GoldenGirl = "girl_prisoner";
 	//на таймер
 	pchar.quest.goldengirl_timerSP.win_condition.l1 = "Timer";
-	pchar.quest.goldengirl_timerSP.win_condition.l1.date.hour  = sti(GetTime());
+	pchar.quest.goldengirl_timerSP.win_condition.l1.date.hour  = int(GetTime());
 	pchar.quest.goldengirl_timerSP.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 	pchar.quest.goldengirl_timerSP.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 	pchar.quest.goldengirl_timerSP.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -683,7 +683,7 @@ void GoldenGirl_BasterSetFrigate(string qName) //
 	sld.Ship.name = StringFromKey("GoldenGirl_15");
 	SetBaseShipData(sld);
 	sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.Coastal_Captain = true;
@@ -812,7 +812,7 @@ void GoldenGirl_GirlReturn() //
 {
 	if (CheckAttribute(pchar, "questTemp.GoldenGirl.Helena")) sld = characterFromId("Helena");
 	else sld = characterFromId("Mary");
-	sld.quest.OfficerPrice = sti(pchar.rank)*500;
+	sld.quest.OfficerPrice = int(pchar.rank)*500;
 	sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 	sld.loyality = MAX_LOYALITY;
 	AddPassenger(pchar, sld, false);
@@ -1036,7 +1036,7 @@ void GoldenGirl_MaryBlockDelete() // fix 22-03-20 возвращаем Мэри 
 {
     DeleteAttribute(pchar, "questTemp.MarySexBlock");
 	pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
-	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
+	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = int(GetTime());
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 14);
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 14);
@@ -1178,18 +1178,18 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		sld.Ship.name = StringFromKey("GoldenGirl_15");
 		SetBaseShipData(sld);
 		sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
-		RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;
+		RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;
 		SetCrewQuantityOverMax(sld, 10);
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(sld, -1, sti(sld.index));
+		SetCompanionIndex(sld, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		pchar.questTemp.GoldenGirl = "duel";
 		sTemp = sld.name;
 		AddQuestRecord("GoldenGirl", "7");
 		AddQuestUserData("GoldenGirl", "sName", sTemp);
 		pchar.quest.goldengirl_duel.win_condition.l1 = "Timer";
-		pchar.quest.goldengirl_duel.win_condition.l1.date.hour  = sti(GetTime() + 8);
+		pchar.quest.goldengirl_duel.win_condition.l1.date.hour  = int(GetTime() + 8);
 		pchar.quest.goldengirl_duel.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 		pchar.quest.goldengirl_duel.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.goldengirl_duel.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -1284,7 +1284,7 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 			AddCharacterMaxHealth(pchar, 1.0);
 		}
 		else AddCharacterHealth(pchar, 6);
-		pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //счетчик
+		pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //счетчик
 	} 
 	else if (sQuestName == "GoldenGirl_AfterSexJulianna") 
 	{
@@ -1505,7 +1505,7 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		sld.lifeday = 0;
 		sld = characterFromId("Cortny");
 		RemovePassenger(pchar, sld);
-		int iCrew = makeint(sti(pchar.Ship.Crew.Quantity)*0.67); 
+		int iCrew = int(int(pchar.Ship.Crew.Quantity)*0.67);
 		SetCrewQuantityOverMax(pchar, iCrew); // сносим треть команды
 		setCharacterShipLocation(pchar, "shore27");
 		setWDMPointXZ("shore27"); // корабль на рейд

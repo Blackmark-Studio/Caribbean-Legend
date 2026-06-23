@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1 = "location";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1.location = "Shore53";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2 = "Timer";
-				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = sti(GetTime());
+				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = int(GetTime());
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.day   = GetAddingDataDay(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.month = GetAddingDataMonth(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.year  = GetAddingDataYear(0, 0, 3);
@@ -1063,12 +1063,12 @@ void ProcessDialogEvent()
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "Biliyordum. Ambarında ne kadar vardı?";
-			link.l1 = "Bulduğum şey "+FindRussianQtyString(sti(npchar.quest.bakaut))+" 'Oyster'da. ";
+			link.l1 = "Bulduğum şey "+FindRussianQtyString(int(npchar.quest.bakaut))+" 'Oyster'da. ";
 			link.l1.go = "saga_56";
 		break;
 		
 		case "saga_56":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp > 100)
 			{
 				dialog.text = "Vay canına! Depomda hiç bu kadarını görmemiştim. Kimler servetini kendi elleriyle bulmuş bak hele. Teşekkür ederim, "+pchar.name+", beni asla hayal kırıklığına uğratmıyorsun. Malları hemen satacağım, alıcımız hazır. Paranı yarın vereceğim.";
@@ -1112,11 +1112,11 @@ void ProcessDialogEvent()
 		case "saga_oust":
 			if (CheckAttribute(npchar, "quest.bakaut"))
 			{
-				if (sti(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
+				if (int(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
 				else 
 				{
 					SaveCurrentNpcQuestDateParam(npchar, "bakaut_date");
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(npchar.quest.bakaut));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(npchar.quest.bakaut));
 				}
 				pchar.questTemp.Saga = "removebakaut";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
 				}
 			} // есть ли у нас Устрица
 			dialog.text = "Bekle! 'Oyster'ı ele mi geçirdin?";
@@ -1162,10 +1162,10 @@ void ProcessDialogEvent()
 		
 		case "saga_57":
 			int idlt;
-			iTemp = sti(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
+			iTemp = int(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
 			if (iTemp > 1600)
 			{
-				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
+				idlt = int(iTemp-1500)/2; // доля Бонса :)
 				dialog.text = "Aldım "+iTemp+" bunun için para. Bin beş yüzü avukata, üstüne bir de altınlardan sana düşen pay - "+idlt+". Buyurun.";
 				link.l1 = "Takdire şayan! Artık Loxley'e kolayca yelken açabilirim.";
 				link.l1.go = "saga_58";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "Vay canına! Benim alıcılarım daha az ödüyor...";
-			link.l1 = "Genel olarak, Loxley için iki bin altınım var ve "+sti(npchar.quest.bakaut_sum)*2+" üstüne doubloon da cabası.";
+			link.l1 = "Genel olarak, Loxley için iki bin altınım var ve "+int(npchar.quest.bakaut_sum)*2+" üstüne doubloon da cabası.";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1208,8 +1208,8 @@ void ProcessDialogEvent()
 			dialog.text = "Pekala. O zaman ortadan ikiye böleceğiz.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "Buyur. Aldım işte "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "Buyur. Aldım işte "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1224,8 +1224,8 @@ void ProcessDialogEvent()
 			dialog.text = "Harika. Ne kadar getirdin?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "Al bakalım. Bende var "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "Al bakalım. Bende var "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1237,15 +1237,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_pay": // оплата
-			if (sti(npchar.quest.bakaut_sum) < sti(npchar.quest.bakaut_pay)) // полная сумма
+			if (int(npchar.quest.bakaut_sum) < int(npchar.quest.bakaut_pay)) // полная сумма
 			{
-				npchar.quest.bakaut_pay = sti(npchar.quest.bakaut_sum);
+				npchar.quest.bakaut_pay = int(npchar.quest.bakaut_sum);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
+			else iTemp = int(npchar.quest.bakaut_sum)-int(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
-			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.bakaut_pay));
+			Log_Info("You have given "+int(npchar.quest.bakaut_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -1255,7 +1255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Harika. Geri kalanını da getirecek misin "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" doubloon sonra?";
+				dialog.text = "Harika. Geri kalanını da getirecek misin "+FindRussianQtyString(int(npchar.quest.bakaut_sum))+" doubloon sonra?";
 				link.l1 = "Evet. Bu kadar büyük bir altın yığınını tek seferde taşıyamazdım.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1646,12 +1646,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
 			{
 				link.l4 = "Jan, demir ağacı sevkiyatlarının miktarını artırmak mümkün mü?";
 				link.l4.go = "UpgradeBakaut";
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
 			{
 				link.l4 = "Jan, üç bin altın topladım. Al, bu hediyeyi asalaklarımıza sunabilirsin. Sanırım bugün keyifleri yerinde olacak.";
 				link.l4.go = "UpgradeBakaut_Agreed";

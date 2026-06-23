@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 			if (PCharDublonsTotal() > 0)
 			{
 				npchar.quest.blade_pay = PCharDublonsTotal();
-				link.l1 = "Buyurun, lütfen. Benim var "+FindRussianQtyString(sti(npchar.quest.blade_pay))+".";
+				link.l1 = "Buyurun, lütfen. Benim var "+FindRussianQtyString(int(npchar.quest.blade_pay))+".";
 				link.l1.go = "blade_pay";
 			}
 			link.l2 = "Hm. Ne yazık ki şu anda yanımda yok. Ama sana mutlaka getireceğim ve konuşmamıza devam edeceğiz.";
@@ -184,15 +184,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "blade_pay": // оплата
-			if (sti(npchar.quest.blade_dublon) < sti(npchar.quest.blade_pay)) // полная сумма
+			if (int(npchar.quest.blade_dublon) < int(npchar.quest.blade_pay)) // полная сумма
 			{
-				npchar.quest.blade_pay = sti(npchar.quest.blade_dublon);
+				npchar.quest.blade_pay = int(npchar.quest.blade_dublon);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.blade_dublon)-sti(npchar.quest.blade_pay);
+			else iTemp = int(npchar.quest.blade_dublon)-int(npchar.quest.blade_pay);
 			npchar.quest.blade_dublon = iTemp; // запоминаем остаток
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.blade_pay));
-			Log_Info("You have given "+sti(npchar.quest.blade_pay)+" doubloons");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.blade_pay));
+			Log_Info("You have given "+int(npchar.quest.blade_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Pekâlâ. Dublonlarını kabul ediyorum. Bana getirmek zorundasın "+FindRussianQtyString(sti(npchar.quest.blade_dublon))+" daha fazla.";
+				dialog.text = "Pekâlâ. Dublonlarını kabul ediyorum. Bana getirmek zorundasın "+FindRussianQtyString(int(npchar.quest.blade_dublon))+" daha fazla.";
 				link.l1 = "Onları elime geçirdiğimde sana getireceğim.";
 				link.l1.go = "exit";
 				npchar.quest.blade_payseek = "true";
@@ -406,17 +406,17 @@ string SelectJurgenBladeDone(string _sType)
 	switch (_sType)
 	{
 		case "rapier":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_18"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_18";
 			else sBlade = "q_blade_16";
 		break;
 		
 		case "sabre":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_19"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_19";
 			else sBlade = "q_blade_10";
 		break;
 		
 		case "palash":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_21"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_21";
 			else sBlade = "q_blade_13";
 		break;
 	}

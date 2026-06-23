@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Entiendo, Charles. Quiero creer en el amor verdadero perfecto, pero supongo que no hay tal cosa en este mundo.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "¡Bastardo! ¿Y mis hombres? ¿Están vivos para testificar lo que ocurrió?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Están bien, Excelencia. Un poco golpeados, pero vivirán.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "No todos ellos, Excelencia. Un caballero no lo logró - de Chievous se tomó la molestia de traer mosqueteros. No pude hacer nada.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Sí, he visto tu barco, debo admitir que realmente es un espectáculo para contemplar. Entonces, elevémoslo, dos barcos contra uno. ¿Mi fragata y filibote con plata contra tu barco?";
 				link.l1 = "¡Un juego digno! La señora Botot estaba equivocada... ESTE duelo vivirá en las leyendas. ¡Trato hecho!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Mira esto, ¡nuestro capitán es un chico travieso! Sin embargo, el corso es sagrado. ¿Qué tal un buque de guerra entonces? Una fragata, 48 cañones. Más rápida que muchas corbetas - un producto de los astilleros reales, mejorada aún más por los mejores constructores navales del mundo. Los cañones culverinos que lleva tienen un excelente alcance y precisión. ¿Qué dices?";
 					link.l1 = "¡Mucho mejor, estoy dentro! ¡Vamos!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Juego terminado, Capitán, conseguiste lo que querías. Presume si quieres. Sugiero que discutamos los términos de la compra de mi fragata mañana al mediodía.";
 					link.l1 = "¿Eso es todo? Sinceramente creo, igual que tú, que lo que se pierde en una apuesta no se puede comprar, solo recuperar. O puedo venderla como leña a los pescadores locales y contarles todo sobre tu generosa donación.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "Así que la Fortuna tuvo su palabra. Esto resultó de lo más curioso. Felicitaciones, Capitán de Maure. Sugiero que discutamos los términos de la compra de mi fragata mañana al mediodía.";
 						link.l1 = "¿Tan pronto? Estamos decepcionando a otros huéspedes, monsieur. Si no recuerdo mal, todavía tenéis un barco más. Sinceramente creo, al igual que vos, que lo que se pierde en una apuesta no puede comprarse, solo recuperarse ganando.";

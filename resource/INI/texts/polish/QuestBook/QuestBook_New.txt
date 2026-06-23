@@ -1506,6 +1506,11 @@ OZ.12
 Pieniędzy Felipe Alarconowi nie oddałem. Takiego gestu nie docenił – rzucił się do ataku. Poradziłem sobie z nim bez trudu, ale z miasta, wygląda na to, będę musiał przebijać się walką.
 }
 
+OZ.13
+{
+Postanowiłem nie oddawać księgi kowalowi i sprzedałem ją Francuzowi, a skrytkę w grocie przeszukałem samotnie. Wygląda na to, że przedsięwzięcie okazało się bardzo zyskowne — powinienem częściej zwracać uwagę na miejskie plotki.
+}
+
 OZ.2
 {
 Teraz jasne jest, co spowodowało upadek ducha Sebastiana Cordoby. Przegrał bardzo ważną dla swojej pracy księgę – księgę rzemiosła kowalskiego. Jego sytuację komplikuje fakt, że Javier postanowił nie tracić czasu i sprzedać księgę francuskiemu mistrzowi broni. Jak to zwykle bywa, nieszczęścia chodzą parami. W przeddzień kowal otrzymał poważne zamówienie od admirała Eugenio de la Torre... Gdy ten tu przybędzie, z pewnością dowie się, z jakiego powodu jego zamówienie nie zostało wykonane. Dowiedziawszy się, że księga trafiła w ręce Francuzów, według słów kowala, potraktuje go bardzo surowo. Zgodził@<sSex> się pomóc biedakowi. Jeśli uda mi się odzyskać dla niego księgę, dostanie drugą szansę i, mam nadzieję, już więcej nie powtórzy swoich błędów, a ja zawsze będę mógł liczyć na usługi dobrego kowala. Zacznę od poszukiwań Javiera – zapewne teraz próbuje nabrać kogoś innego.

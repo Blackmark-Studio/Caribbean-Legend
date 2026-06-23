@@ -91,11 +91,16 @@ void SF_AddEffect(string effectType, ...)
 		break;
 		case SF_E_CUSTOM:
 			aref effects = GetAref(&StoryObject, "effects", true);
-			string valueType = Vartype(GetArg(1));
 			attributeName = GetArg(0) + "" + GetAttributesNum(effects);
-			if (valueType == VAR_STRING) SetAttribute(&effects, attributeName, GetArg(1));
-			else if (valueType == VAR_FLOAT) AddToAttributeFloat(&effects, attributeName, GetArg(1));
-
+			switch(typeid(GetArg(1)))
+			{
+				case typeid(string):
+					SetAttribute(&effects, attributeName, GetArg(1));
+				break;
+				case typeid(float):
+					AddToAttributeFloat(&effects, attributeName, GetArg(1));
+				break;
+			}
 			SetAttribute(effects, attributeName + ".type", GetArg(2)); // хороший или плохой?
 			return;
 		break;
@@ -124,17 +129,18 @@ void SF_AddEffect(string effectType, ...)
 // Строкое представление для аргументов в эффектах историй
 string _SF_EffectArgToString(ref argument)
 {
-	switch (VarType(argument))
+	switch (typeid(argument))
 	{
-		case VAR_FLOAT: return FloatToString(argument, 4); break;
-		case VAR_INTEGER: return its(argument); break;
-		case VAR_STRING: return argument; break;
-		case VAR_REFERENCE: return IsMainCharacter(argument) ? "pchar" : argument.name; break;
-		case VAR_AREFERENCE: return IsMainCharacter(argument) ? "pchar" : argument.name; break;
-		case VAR_OBJECT: return IsMainCharacter(argument) ? "pchar" : argument.name; break;
+		case typeid(float): return FloatToString(argument, 4); break;
+		case typeid(int): return string(argument); break;
+		case typeid(bool): return string(argument); break;
+		case typeid(string): return argument; break;
+		case typeid(ref): return IsMainCharacter(argument) ? "pchar" : argument.name; break;
+		case typeid(aref): return IsMainCharacter(argument) ? "pchar" : argument.name; break;
+		case typeid(object): return IsMainCharacter(argument) ? "pchar" : argument.name; break;
 	}
 
-	assert(false, "_SF_EffectArgToString error, wrong argument: " + VarType(argument));
+	assert(false, "_SF_EffectArgToString error, wrong argument: " + GetTypeNameByTypeID(typeid(argument)));
 	return "Error";
 }
 
@@ -146,7 +152,7 @@ void RE_AddLoyalityToAllOfficers(int value)
 	int fellowsQty = GetAttributesNum(&fellows);
 	for (int i=0; i < fellowsQty; i++)
 	{
-		ref fellow = FindChar_VT(sti(GetAttributeValue(GetAttributeN(&fellows, i))), true);
+		ref fellow = FindChar_VT(int(GetAttributeValue(GetAttributeN(&fellows, i))), true);
 		if (fellow == nullptr) continue;
 		ChangeOfficerLoyality(fellow, value);
 	}

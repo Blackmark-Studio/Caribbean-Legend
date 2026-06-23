@@ -103,7 +103,7 @@ void InitInterface_SB(string iniName, string tutorialName, bool bShowVideo)
 
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial")) 
 	{
-		curShowTutorial = sti(InterfaceStates.ShowTutorial);
+		curShowTutorial = int(InterfaceStates.ShowTutorial);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, curShowTutorial);
 	SetNodeUsing("TUTORIAL_CHECKBOX",!bGlobalTutor);
@@ -123,7 +123,7 @@ void IDoExit(int exitCode)
 {
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial"))
 	{
-		if(sti(InterfaceStates.ShowTutorial) != curShowTutorial) SaveGameOptions();
+		if(int(InterfaceStates.ShowTutorial) != curShowTutorial) SaveGameOptions();
 	}
 	EndAboveForm(true);
 	//LAi_SetPlayerType(pchar);

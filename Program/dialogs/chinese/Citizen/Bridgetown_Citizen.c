@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "info":
         // 替换为某些NPC的描述, 与任务相关
-            dialog.text = "你以为我是" + NationNameGenitive(sti(NPChar.nation)) + "的特工吗? ";
+            dialog.text = "你以为我是" + NationNameGenitive(int(NPChar.nation)) + "的特工吗? ";
             link.l1 = "嗯... 不。 那么再见。 ";
             link.l1.go = "exit";
             link.l2 = "那么, 还有其他问题吗? ";

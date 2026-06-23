@@ -86,7 +86,7 @@ void DWH_Bandit_6()
 	LAi_LocationDisableOfficersGen("Antigua_Grot", false);
 	locations[FindLocation("Antigua_Grot")].DisableEncounters = false;
 	
-	SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false)
+	SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false);
 	
 	sld = CharacterFromID("DWH_gypsy");
 	LAi_SetStayType(sld);
@@ -123,7 +123,7 @@ void DWH_Bandit_7()
 	}
 	for (i=3; i<=4; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 		if (i==4) sld.model = "citiz_49";
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -144,7 +144,7 @@ void DWH_gypsy_43()
 	sld.lifeday = 0;
 	LAi_CharacterDisableDialog(sld);
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
@@ -158,7 +158,7 @@ void DWH_gypsy_47()
 	
 	SetTimerFunction("DWH_Mangarosa", 0, 0, 30);
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
@@ -167,13 +167,13 @@ void DWH_Grot(string qName)
 {
 	LAi_SetActorType(pchar);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_1", "citiz_45", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_1", "citiz_45", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 	sld.name = StringFromKey("Neutral_1");
 	sld.lastname = "";
 	LAi_SetActorType(sld);
 	ChangeCharacterAddressGroup(sld, "Antigua_Grot", "goto", "ass2");
 	
-	sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_2", "citiz_43", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_2", "citiz_43", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 	sld.name = StringFromKey("Neutral_1");
 	sld.lastname = "";
 	LAi_SetActorType(sld);
@@ -342,7 +342,7 @@ bool DarkWatersOfHealing_QuestComplete(string sQuestName, string qname)
 		}
 		for (i=3; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 			if (i==4) sld.model = "citiz_49";
 			ChangeCharacterAddressGroup(sld, "Antigua_Grot", "reload", "reload1");
 			LAi_SetWarriorType(sld);

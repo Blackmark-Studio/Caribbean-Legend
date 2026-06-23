@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "나가! 거리에서 무고한 사람들을 공격하는 놈들에게는 술을 안 팔아!";
 				link.l1 = "음...";
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && PCharDublonsTotal() >= 1)
 				{
-					if (PCharDublonsTotal() >= sti(npchar.quest.ratmoney))
+					if (PCharDublonsTotal() >= int(npchar.quest.ratmoney))
 					{
 						if(!CheckAttribute(npchar, "quest.ratmoneyagain")) ChangeCharacterComplexReputation(pchar, "fame", 5);
 						link.l7 = "산초, 내 흉갑 가지러 왔어. 여기 돈이야.";
@@ -100,17 +100,17 @@ void ProcessDialogEvent()
 						link.l7.go = "rat_take_money_not_all";
 					}
 				}
-				if (makeint(pchar.money) >= 25)
+				if (int(pchar.money) >= 25)
 				{
 					link.l1 = "럼 좀 따라 줘, 산초.";
 					link.l1.go = "drink";
 				}
-				if (makeint(pchar.money) >= 20)
+				if (int(pchar.money) >= 20)
 				{
 					link.l2 = "방을 빌리고 싶어.";
 					link.l2.go = "room";
 				}
-				if (stf(environment.time) >= 6.0 && stf(environment.time) <= 18.0 && makeint(pchar.money) >= 300)
+				if (float(environment.time) >= 6.0 && float(environment.time) <= 18.0 && int(pchar.money) >= 300)
 				{
 					link.l9 = "심심해, 산초. 저녁이 올 때까지 여기서 와인 한 병과 함께 시간을 보내고 싶어...";
 					link.l9.go = "drink_sit";
@@ -132,12 +132,12 @@ void ProcessDialogEvent()
 		
 		case "meeting":
 			dialog.text = "나도 그래. 적어도 하루에 한 번쯤은 널 볼 수 있길 바라, 하하! 내 주점에 새로운 손님이 와서 진심으로 기쁘다.";
-			if (makeint(pchar.money) >= 25)
+			if (int(pchar.money) >= 25)
 			{
 				link.l1 = "럼 좀 따라 줘, 산초.";
 				link.l1.go = "drink";
 			}
-			if (makeint(pchar.money) >= 20)
+			if (int(pchar.money) >= 20)
 			{
 				link.l2 = "방을 빌리고 싶어.";
 				link.l2.go = "room";
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 		// пей до дна
 		case "drunk_fail":
 			dialog.text = "이봐, 친구, 나한테 빚진 거 없어. 이미 백 두블론이나 잃었잖아. 파지오보다 술 더 마시려다 그런 거지...";
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				link.l1 = "아니야, 아니야, 산초, 제발! 이 오백 페소를 가져가. 내가 기억하기로는 이 정도면 술값은 충분히 될 거야. 네게 빚지고 싶지 않아.";
 				AddMoneyToCharacter(pchar, -500);
@@ -427,10 +427,10 @@ void ProcessDialogEvent()
 			DialogExit();
 			GiveItem2Character(pchar, "cirass4");
 			RemoveItems(pchar, "talisman1", 1);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.ratmoney));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.ratmoney));
 			Log_Info("You have given away the talisman 'God of rats'");
 			Log_Info("You have received a Milanese armor");
-			Log_Info("You gave "+FindRussianDublonString(sti(npchar.quest.ratmoney))+"");
+			Log_Info("You gave "+FindRussianDublonString(int(npchar.quest.ratmoney))+"");
 			PlaySound("interface\important_item.wav");
 			DeleteAttribute(npchar, "quest.ratmoney");
 			if(CheckAttribute(npchar, "quest.ratmoneyagain"))
@@ -438,11 +438,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rat_take_money_not_all":
-			npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - PCharDublonsTotal();
+			npchar.quest.ratmoney = int(npchar.quest.ratmoney) - PCharDublonsTotal();
 			Log_Info("You gave "+FindRussianDublonString(PCharDublonsTotal())+"");
 			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
-			dialog.text = "넌 여전히 나를 놀라게 해\n "+FindRussianDublonString(sti(npchar.quest.ratmoney))+", "+pchar.name+".";
+			dialog.text = "넌 여전히 나를 놀라게 해\n "+FindRussianDublonString(int(npchar.quest.ratmoney))+", "+pchar.name+".";
 			link.l1 = "상기시키지 마!";
 			link.l1.go = "exit";
 		break;
@@ -512,7 +512,7 @@ void ProcessDialogEvent()
 		
 		//--> выпивка
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 4)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 4)
 			{
 				dialog.text = ""+pchar.name+", 이제 그만 마시는 게 좋겠어, 친구. 자칫하면 강도라도 당하거나 바다에 빠져 게밥이 될 수도 있으니까. 여기서는 술 너무 많이 마시면 목숨까지 잃을 수 있어, 조심해.";
 				link.l1 = "흠... 네 말이 맞는 것 같아, 산초 - 헉! - 이제 충분히 마셨지. 신경 써줘서 고마워.";			
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -546,8 +546,8 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
-				else LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				else LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
 			}
 		break;
 		

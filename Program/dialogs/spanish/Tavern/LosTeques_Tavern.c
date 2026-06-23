@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "¡Ajá, es mi viejo conocido, capitán "+GetFullName(pchar)+". Me alegra verte, viejo. ¿Algo de beber?";
-				if (makeint(pchar.money) >= 5)
+				if (int(pchar.money) >= 5)
 				{
 					link.l1 = "Sírveme un poco de ron, "+npchar.name+".";
 					link.l1.go = "drink";
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			dialog.text = "¡Oh, estoy tan feliz! Las caras nuevas son una rareza en nuestro asentamiento. ¿Qué tal si te sirvo un poco de ron y charlamos...?";
 			link.l1 = "Esta es mi primera vez aquí, y me gustaría saber un poco más sobre este asentamiento.";
 			link.l1.go = "info";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l2 = "Sírveme algo de ron, "+npchar.name+".";
 				link.l2.go = "drink";
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 3)
 			{
 				dialog.text = "Capitán, creo que sería mejor que te detuvieras. Dios no lo quiera, que causes un infierno mientras estás bajo la influencia del alcohol. Somos muy estrictos con eso aquí. Ni siquiera tu autoridad te ayudará.";
 				link.l1 = "Mm... Supongo que tienes razón, ya he tenido suficiente. ¡Gracias por la preocupación!";			
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -106,11 +106,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
 				DeleteAttribute(pchar, "chr_ai.drunk");
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
 				else
 				{
-					LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
-					Pchar.GenQuest.CamShuttle = makeint(sti(pchar.questTemp.Rum)/2); // Jason
+					LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
+					Pchar.GenQuest.CamShuttle = int(int(pchar.questTemp.Rum)/2); // Jason
 				}
 			}
 		break;
@@ -140,12 +140,12 @@ void ProcessDialogEvent()
 
 		case "room_day":
 			dialog.text = "Eso serán diez piezas de a ocho. ¿Te gustaría una chica para la habitación junto con eso? Sólo mil pesos por la moza.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "No, no necesito una chica. Aquí, toma esto por la habitación.";
 				link.l1.go = "room_day_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -160,12 +160,12 @@ void ProcessDialogEvent()
 
 		case "room_day_next":
 			dialog.text = "Serán diez piezas de a ocho. ¿Quieres una chica para la habitación también? Solo mil pesos por la moza.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "No, no necesito una chica. Aquí, toma esto por la habitación.";
 				link.l1.go = "room_day_wait_next";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -180,12 +180,12 @@ void ProcessDialogEvent()
 
 		case "room_night":
 			dialog.text = "Eso serán diez piezas de a ocho. ¿Quieres una chica para la habitación también? Solo mil pesos por la moza.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "No, no necesito una chica. Aquí, toma esto por la habitación.";
 				link.l1.go = "room_night_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{

@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "helendrinking_buy_rainbow_1":
 			dialog.text = "전부 해서 오만 실버입니다, 나리.";
-			if (sti(pchar.money) >= 55000) {
+			if (int(pchar.money) >= 55000) {
 				link.l1 = "얼, 얼마라고 했지? 오, 오만? 그래, 직접 세어 봐! 그리고 팁으로 오천 더 가져가. 가자!";
 				link.l1.go = "helendrinking_buy_rainbow_yes";
 			}

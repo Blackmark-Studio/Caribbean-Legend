@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -22,11 +22,11 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = makeint(makeint(Pchar.money)/20)*10;
+			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
-				"Have you heard that the local bandits attacked one captain? He was totally robbed, he lost " + FindRussianMoneyString(iMoney) + "!"), sti(npchar.nation), 5, 1);
+				"Have you heard that the local bandits attacked one captain? He was totally robbed, he lost " + FindRussianMoneyString(iMoney) + "!"), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase(RandPhraseSimple("Have you heard? That bandit " + GetFullName(npchar) + " has finally found justice. He and his boys tried to rob "+ GetSexPhrase("some captain, but he turned out to be","some lady captain, but she turned out to be") +" a tough nut. So our dear robber shited his pants, ha-ha! That will be a lesson for him! Robbing the local farmers is one thing, but a brave captain is a different story!", 
 				"Thank you, captain " + GetFullName(pchar) + ", for finally dealing with the gang of that bandit " + GetFullName(npchar) + ". Those rascals were really a pain in everyone's ass. We were scared to even send couriers to the farm for milk, they could have intercepted them and rob of all the money."), 
 				"Have you heard, "+ GetSexPhrase("finally, some captain","finally, some lady captain") +" stopped that rascal " + GetFullName(npchar) + ", who was in 'charge' of the jungle, terrorizing all the local farmers. I do hope, it will stop them from their dirty deeds for long enough...", 
-				"Have you heard that local bandit " + GetFullName(npchar) + " and his boys attempted to rob "+ GetSexPhrase("some captain","some lady captain") +"? Bah! Nothing of the sort! That captain turned out to be a tough nut. They say, he chased on these robbers over all the jungle like a shark chases flock of sardines. Thank God that there are still people who can stand up for us at time when the authorities do nothing, too busy with their dark deeds..."), sti(npchar.nation), 5, 1);
+				"Have you heard that local bandit " + GetFullName(npchar) + " and his boys attempted to rob "+ GetSexPhrase("some captain","some lady captain") +"? Bah! Nothing of the sort! That captain turned out to be a tough nut. They say, he chased on these robbers over all the jungle like a shark chases flock of sardines. Thank God that there are still people who can stand up for us at time when the authorities do nothing, too busy with their dark deeds..."), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Não se faça de bobo! Dinheiro na mão e talvez aí eu te deixe ir!","Você ainda não ouviu falar da taxa de passagem? Se não largar o ouro, vai largar a cabeça!","Heh, essa pequena aventura vai te custar uma bolsa... se eu não ficar bravo."),RandPhraseSimple("É muito simples. Você nos entrega todo o seu ouro e então está livre para ir embora, ou fica aqui e nós pegamos todo o seu ouro de qualquer jeito. Mas acho que essa última opção não é do seu interesse, he-he.","Não finja que não entende! Entregue sua bolsa se não quiser que eu a tire do seu cadáver!"),"Vou explicar, já que você é tão lerdo. Me dê todo o seu dinheiro, se valoriza a sua vida.");
-			Link.l1 = "Maldito seja, canalha! Eu só tenho "+makeint(makeint(Pchar.money)/20)*10+" pesos.";
+			Link.l1 = "Maldito seja, canalha! Eu só tenho "+int(int(Pchar.money)/20)*10+" pesos.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Quer o meu dinheiro? Venha pegar, e vamos ver quanto você vale!","Como você ousa, grosseirão! Vou te ensinar uma lição de bons modos!","Que autoconfiança! Bem, vamos ver como você se sai contra um verdadeiro "+GetSexPhrase("lobo do mar","Loba dos Mares")+"!"),LinkRandPhrase("Você deveria ser açoitado por tamanha afronta!","Seus canalhas! Rezem aos seus demônios por um lugar quente no inferno!","Vocês já deviam ter sido enforcados há muito tempo, bando de condenados! Pois bem, parece que vou ter que manchar meu sabre com o sangue de vocês!"),RandPhraseSimple("E o que te faz pensar que eu te daria o meu dinheiro?","E você não percebeu que estou bem armado e não vim aqui só para passear?"));
 			Link.l2.go = "CheckSkills";	
 		break;
 
 		case "Node_3":
-			bOk = makeint(pchar.reputation.nobility) < 11 || makeint(pchar.reputation.nobility) > 90;  
+			bOk = int(pchar.reputation.nobility) < 11 || int(pchar.reputation.nobility) > 90;
 			if(bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) == 100 || CheckCharacterPerk(pchar, "Trustworthy") || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				dialog.text = RandPhraseSimple("Droga! Tudo bem, pode ir embora. Mas nem pense em fazer barulho enquanto estiver aqui!","Dessa vez você teve sorte, mas da próxima vai nos dever o dobro! Não se esqueça de nos lembrar, heh-heh.");
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				bOk = makeint(pchar.reputation.nobility) < 51 && makeint(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - жесть!!! Надо было всего лишь убрать единичку!
+				bOk = int(pchar.reputation.nobility) < 51 && int(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - жесть!!! Надо было всего лишь убрать единичку!
 				if(!bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35)
 				{
 					dialog.text = RandPhraseSimple("Vamos te matar em silêncio, você nem vai conseguir soltar um pio.","Maldição! Vamos ter que te matar rápido antes que você dê o alarme.");
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("E por que eu deveria me importar com a sua patrulha? Eu pago eles. Então, me dá sua bolsa e para de falar besteira.","Você acha que pode me assustar? Eu mesmo sou a patrulha para gente como você nessa selva. Ninguém saiu daqui sem pagar uma taxa!");
-					Link.l1 = "Maldito seja, canalha! Eu só tenho "+makeint(makeint(Pchar.money)/20)*10+" pesos.";
+					Link.l1 = "Maldito seja, canalha! Eu só tenho "+int(int(Pchar.money)/20)*10+" pesos.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("Heh, não vou receber ordens de um frouxo como você.","Vou abrir uns buracos novos no seu crânio por tanta ousadia! Só pra ventilar um pouco esse seu cérebro.","Tanta ousadia não ficará sem punição!"),"Você não devia ter feito isso...");
 					Link.l2.go = "CheckSkills";
@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 		
 		case "CheckSkills":
 		    bool isStrong = (GetCharacterSkillToOld(Pchar, "FencingL") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingS") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingH") >= 7);
-			bool z_ok = (isStrong) && (makeint(Pchar.Rank) >= 8) && (Makeint(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 проверяем на оружие (новый вариант)
+			bool z_ok = (isStrong) && (int(Pchar.Rank) >= 8) && (int(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 проверяем на оружие (новый вариант)
 			if (z_ok || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				Diag.TempNode = "GetLost";
@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(makeint(makeint(Pchar.money)/20)*10 >= makeint(Pchar.rank)*100)
+			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("Beleza! Entregue isso e suma daqui!","Não é muito, mas ainda é melhor do que nada. É bom lidar com alguém inteligente! Você está livre para ir."),"Agora essa já é outra história! Como meu amigo costumava dizer, 'é sempre bom ouvir alguém inteligente, mas conversar com um tolo é muito melhor'! He-he!","Em troca do seu ouro, vou te dar um conselho: você não deveria andar pela selva se você "+GetSexPhrase("que covarde. Vai beber seu rum na taverna, assim você e sua bolsa ficam em segurança!","uma moça. Ser roubada não é o pior que poderia ter acontecido com você.")+".");

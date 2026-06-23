@@ -58,8 +58,8 @@ void ProcessDialogEvent()
 					if (!CheckCharacterItem(pchar, "suit1")) GiveItem2Character(pchar, "suit1");
 					GiveItem2Character(pchar, "patent_fra");
 					EquipCharacterbyItem(pchar, "patent_fra");
-					Items[sti(pchar.EquipedPatentId)].TitulCur = 2; 
-					Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+					Items[int(pchar.EquipedPatentId)].TitulCur = 2;
+					Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 					ChangeCharacterNationReputation(pchar, FRANCE, 100);
 					Patria_SetInspector();
 				}
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		
 		case "Puancie_Jail_9":
 			DialogExit();
-			LAi_SetActorType(sld);
+			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "Sharlie_GoFromPrison", 3.5);
 			NextDiag.CurrentNode = "First time";
 			locCameraFromToPos(-11.09, 0.65, 3.05, true, -12.59, 0.09, -4.66);
@@ -355,7 +355,7 @@ void ProcessDialogEvent()
 			LocatorReloadEnterDisable("Charles_townhall", "reload1_back", false);
 			dialog.text = "А-а, вот и сам Шарль де Мор собственной персоной! Очень, очень рад вас видеть. Вы, вероятно, явились обсудить со мной судьбу вашего брата?";
 			link.l1 = "Я готов оплатить долг Мишеля де Монпе перед Орденом и лично вами. Надеюсь, эта сумма с лихвой покроет все издержки.";
-			if (sti(pchar.money) >= 1000000) link.l1.go = "saga_1";
+			if (int(pchar.money) >= 1000000) link.l1.go = "saga_1";
 			else link.l1.go = "saga_exit";			
 		break;
 		
@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 		
 		case "saga_repeat":
 			dialog.text = "Вы принесли деньги, Шарль?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "Конечно! Надеюсь, эта сумма с лихвой покроет все издержки.";
 				link.l1.go = "saga_1";
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			CreateGriffondor();
 			sld = characterFromId("GriffOfficer");
 			SetCharacterRemovable(sld, true);
-			SetCompanionIndex(pchar, -1, sti(sld.index));
+			SetCompanionIndex(pchar, -1, int(sld.index));
 			sld.loyality = MAX_LOYALITY;
 			NextDiag.CurrentNode = "First time";
 			NextDiag.TempNode = "First time";
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8_1":
-			if (sti(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
+			if (int(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
 			else pchar.questTemp.Patria.NoMoney = "true";
 			dialog.text = "'Эклятон' затонул? Шарль, это же катастрофа! Что теперь скажет министр? Ох, как же вы меня подвели! Я был уверен в вашей опытности, а вы... Увы, но ответственность за это ляжет на вас. Я напишу рапорт, а вам лучше всего исчезнуть на время. Ни о какой дальнейшей службе, как вы понимаете, не может быть и речи.";
 			link.l1 = "Кхм... Очень жаль, месье. Вижу, что мне и в самом деле лучше залечь на дно на месяц-другой, пока гнев министра утихнет. До свидания, поверьте, мне очень жаль, что так нелепо получилось.";
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8":
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				dialog.text = "Замечательно!";
 				link.l1 = "Вот, примите, пожалуйста, триста тысяч.";
@@ -662,7 +662,7 @@ void ProcessDialogEvent()
 		
 		case "patria_8_4":
 			dialog.text = "Итак, Шарль, вы принесли полученный выкуп с Тринидада?";
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				link.l1 = "Да, так точно. Вот он.";
 				link.l1.go = "patria_9";
@@ -919,8 +919,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("Patria", "25");
 			pchar.questTemp.Patria = "epizode_5";
 			pchar.quest.Patria_CureerBackOver.over = "yes"; // снять таймер
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 4; 
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 4;
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1 = "Timer";
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.hour  = 8+rand(2);
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1+rand(1));
@@ -1094,8 +1094,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_55":
-			pchar.questTemp.Patria.Hunter = sti(pchar.questTemp.Patria.Hunter)+1;
-			if (sti(pchar.questTemp.Patria.Hunter) > 4) // все собрал
+			pchar.questTemp.Patria.Hunter = int(pchar.questTemp.Patria.Hunter)+1;
+			if (int(pchar.questTemp.Patria.Hunter) > 4) // все собрал
 			{
 				dialog.text = "Вы выполнили задание полностью, капитан. Благодарю за отличную службу! И вам полагается часть прибыли от продажи трофеев - двести тысяч песо.";
 				link.l1 = "Рад это слышать, месье!";
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Итак, вам осталось привести в наш порт ещё "+FindRussianQtyString(5-sti(pchar.questTemp.Patria.Hunter))+" голландских ост-индцев.";
+				dialog.text = "Итак, вам осталось привести в наш порт ещё "+FindRussianQtyString(5-int(pchar.questTemp.Patria.Hunter))+" голландских ост-индцев.";
 				link.l1 = "Так точно, шевалье!";
 				link.l1.go = "patria_56";
 			}
@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 		case "patria_56":
 			DialogExit();
 			AddQuestRecord("Patria", "35");
-			AddQuestUserData("Patria", "sQty", 5-sti(pchar.questTemp.Patria.Hunter));
+			AddQuestUserData("Patria", "sQty", 5-int(pchar.questTemp.Patria.Hunter));
 			DeleteAttribute(pchar, "questTemp.Patria.Hunter.GiveShip");
 		break;
 		
@@ -1345,8 +1345,8 @@ void ProcessDialogEvent()
 		
 		case "patria_80":
 			DialogExit();
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 5;
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.questTemp.Patria = "epizode_10_start";
 			AddQuestRecord("Patria", "52");
 			Patria_SlaveShipsStart();
@@ -1440,7 +1440,7 @@ void ProcessDialogEvent()
 		case "patria_coat_05":
 			LAi_Fade("", "");
 			if(LAi_GetCharacterHP(pchar) == LAi_GetCharacterMaxHP(pchar))
-			pchar.chr_ai.hp = stf(pchar.chr_ai.hp) - 1.0;
+			pchar.chr_ai.hp = float(pchar.chr_ai.hp) - 1.0;
 			GiveItem2Character(pchar, "potionwine");
 			DoCharacterUsedItem(pchar, "potionwine");
 			npchar.dialog.currentnode = "patria_coat_06";

@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
+				if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && 7-int(RealShips[int(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
 					dialog.text = "Buongiorno a te, mio figlio. Vorrei chiederti un favore. Pagherò, naturalmente.";
 					link.l1 = "Ti sto ascoltando, padre. Di cosa hai bisogno?";
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
 				{
 					dialog.text = "Saluti, mio figlio. Credo che tu sia un capitano. Quindi ho una proposta per te.";
 					link.l1 = "Sto ascoltando, padre.";
@@ -74,12 +74,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("Ho una domanda per te, padre.","Ho bisogno di informazioni.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
 				{
 					link.l3 = "Padre, ho delle persone sulla mia nave. Sono schiavi, sia cristiani che pagani non battezzati. Voglio che tu battizzi i pagani e amministri la comunione ai cristiani. Dopo li libererò tutti per la gloria di Dio e della nostra Chiesa.";
 					link.l3.go = "slaves";
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Padre, desidero che tu benedica la mia nave e offra una messa per il mio equipaggio. Quanto costerebbe?";
 					link.l4.go = "shipshine";
@@ -96,12 +96,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("Ho una domanda per te, padre.","Mi serve informazione.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
 					{
 						link.l3 = "Padre, ho delle persone sulla mia nave. Sono schiavi, sia cristiani che pagani non battezzati. Voglio che tu battezzi i pagani e amministri la comunione ai cristiani. Dopo li libererò tutti per la gloria di Dio e della nostra Chiesa.";
 						link.l3.go = "slaves";
 					}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Padre, voglio che benedica la mia nave e offra una messa per il mio equipaggio. Quanto costerebbe?";
 					link.l4.go = "shipshine";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "check":
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
 			{
 				pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
 				pchar.GenQuest.Monkletter.StartCity = npchar.city;//город квестодателя
@@ -125,11 +125,11 @@ void ProcessDialogEvent()
 				npchar.quest.monkletter = "true";
 				break;
 			}
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && sti(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && int(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
 			{
 				pchar.GenQuest.Churchbooks.StartCity = npchar.city;//город квестодателя
 				pchar.GenQuest.Churchbooks.Nation = npchar.nation;
-				dialog.text = "Mio figlio, saresti d'accordo ad aiutarmi in una questione urgente? La nostra chiesa sta rimanendo senza Bibbie e libri di preghiera che diamo a tutti coloro che ne hanno bisogno\nPotresti navigare fino alla colonia più vicina "+NationNameGenitive(sti(npchar.nation))+", per raccogliere alcune Bibbie e libri di preghiere dalla chiesa locale e portarli qui? E cerca di farlo in un mese, non ne abbiamo molti rimasti.";
+				dialog.text = "Mio figlio, saresti d'accordo ad aiutarmi in una questione urgente? La nostra chiesa sta rimanendo senza Bibbie e libri di preghiera che diamo a tutti coloro che ne hanno bisogno\nPotresti navigare fino alla colonia più vicina "+NationNameGenitive(int(npchar.nation))+", per raccogliere alcune Bibbie e libri di preghiere dalla chiesa locale e portarli qui? E cerca di farlo in un mese, non ne abbiamo molti rimasti.";
 				link.l1 = "Aiuterò volentieri la vostra chiesa. Posso ottenere questi libri da qualsiasi pastore?";
 				link.l1.go = "Churchbooks";
 				link.l2 = "Sarei felice di farlo, padre, ma non posso farlo ora.";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "Grazie per le monete, mio figlio! Andranno a una buona causa!";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_2":
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "Ti ringrazio, mio figlio. Questa somma aiuterà davvero la nostra missione parrocchiale. Dio ti benedica!";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_3":
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "Non avrei mai immaginato che tu fossi così generoso, mio figlio! Ti nominerò nella mia prossima lettera al nostro vescovo e pregheremo per te ogni giorno! Ti benedico e accetto i tuoi soldi con gratitudine!";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 40);
 				AddCrewMorale(pchar, 3);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 1);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 1);
 			}
 			else
 			{
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_4":
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				AddMoneyToCharacter(pchar, -10000);
 				dialog.text = "Cosa... Ti ho capito bene? Donerai davvero diecimila pesos!? Ti benedico e accetto il tuo denaro con gratitudine. Ti menzionerò nella mia prossima lettera al nostro vescovo e pregheremo per te ogni giorno! Questo è un enorme aiuto per la Chiesa!";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 60);
 				AddCrewMorale(pchar, 5);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 2);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 2);
 				ChangeCrewExp(pchar, "Sailors", 5);
 				ChangeCrewExp(pchar, "Cannoners", 5);
 				ChangeCrewExp(pchar, "Soldiers", 5);
@@ -295,19 +295,19 @@ void ProcessDialogEvent()
 				break;
 				case 2:
 					sTemp = "I have two ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
 					sTemp = "I have three ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
 					sTemp = "I have four ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
 					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "Tutto dipende dal numero totale di navi nella tua squadra e dalla loro dimensione.";
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_1":
-			dialog.text = "Ti costerà "+FindRussianMoneyString(sti(pchar.GenQuest.Shipshine.Money))+", mio figlio.";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Shipshine.Money))
+			dialog.text = "Ti costerà "+FindRussianMoneyString(int(pchar.GenQuest.Shipshine.Money))+", mio figlio.";
+			if (int(pchar.money) >= int(pchar.GenQuest.Shipshine.Money))
 			{
 				link.l1 = "Posso pagarti questa somma, padre. Prendi i soldi.";
 				link.l1.go = "shipshine_2";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_2":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Shipshine.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Shipshine.Money));
 			dialog.text = "Molto bene, mio figlio. Permettimi di raccogliere i vasi sacri e andremo al porto.";
 			link.l1 = "Seguimi, padre.";
 			link.l1.go = "shipshine_3";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		
 		case "capellan_1":
 			dialog.text = "Perché, è abbastanza ovvio. Prego Dio per te e il tuo equipaggio, celebro messa ogni giorno, benedico i tuoi uomini e ascolto le confessioni prima della battaglia. La parola di Dio concede forza alle mani e agli spiriti del tuo equipaggio. Il tuo equipaggio avrà l'opportunità di ricevere comunione e confessione regolarmente. Credimi, un marinaio in stato di grazia resisterà in situazioni in cui uno empio vacillerà\nNon chiedo molto per me: un pagamento unico di cinquantamila pesos per la mia parrocchia di origine, un semplice letto in una cabina e un pasto come quelli che hanno i tuoi ufficiali. Questo sarebbe tutto.";
-			if (sti(pchar.money) >= 50000)
+			if (int(pchar.money) >= 50000)
 			{
 				link.l1 = "Interessante... Hai ragione, un buon capitano deve preoccuparsi non solo dei corpi del suo equipaggio, ma anche delle loro anime. Benvenuto a bordo, padre!";
 				link.l1.go = "capellan_2";
@@ -420,11 +420,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "Mio "+GetSexPhrase("figlio","figlia")+", devo arrivare a "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" è acceso "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", per "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". Ti pagherò "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" per questo. Cosa ne dici?";
+				dialog.text = "Mio "+GetSexPhrase("figlio","figlia")+", devo arrivare a "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" è acceso "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", per "+FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty))+". Ti pagherò "+FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money))+" per questo. Cosa ne dici?";
 			}
 			else
 			{
-				dialog.text = "Mio "+GetSexPhrase("figlio","figlia")+", il Signore muove in modi misteriosi, e così cerco un capitano affidabile. Puoi aiutarmi a raggiungere "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", che si trova su "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? Capisco che è come un viaggio nella ardente Gehenna, dato che i nostri nemici non dormono mai. E capisco che tu non sei Gesù Cristo, ma nemmeno io sono un apostolo, e quindi ho dei risparmi. Verrai "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" ti basta?";
+				dialog.text = "Mio "+GetSexPhrase("figlio","figlia")+", il Signore muove in modi misteriosi, e così cerco un capitano affidabile. Puoi aiutarmi a raggiungere "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", che si trova su "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? Capisco che è come un viaggio nella ardente Gehenna, dato che i nostri nemici non dormono mai. E capisco che tu non sei Gesù Cristo, ma nemmeno io sono un apostolo, e quindi ho dei risparmi. Verrai "+FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money))+" ti basta?";
 			}
 			link.l1 = "Sono d'accordo, padre.";
 			link.l1.go = "passenger_1";
@@ -486,15 +486,15 @@ void ProcessDialogEvent()
 			AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			AddQuestUserData(sTitle, "sCity", sTemp);
-			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty)));
+			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty)));
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money)));
-			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money)));
+			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money)));
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			pchar.quest.Monkpassenger.win_condition.l1 = "location";
 			pchar.quest.Monkpassenger.win_condition.l1.location = pchar.GenQuest.Monkpassenger.City+"_town";
 			pchar.quest.Monkpassenger.function = "Monkpassenger_complete";
-			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, sti(pchar.GenQuest.Monkpassenger.DaysQty), false);
+			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, int(pchar.GenQuest.Monkpassenger.DaysQty), false);
 		break;
 		
 		case "passenger_3":
@@ -518,9 +518,9 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
 				AddCharacterExpToSkill(pchar, "Sneak", 50);
-				TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Monkpassenger.Money));
+				TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Monkpassenger.Money));
 			}
-			else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Monkpassenger.Money));
+			else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Monkpassenger.Money));
 			sTitle = npchar.index+"Citizpassenger";
 			AddQuestRecordEx(sTitle, "Citizpassenger", "3");
 			CloseQuestHeader(sTitle);
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Churchbooks":
-			dialog.text = "Sì. Puoi ottenerli in qualsiasi colonia "+NationNameGenitive(sti(npchar.nation))+". Porta tutti i libri che troverai al nostro pastore in chiesa. Dio ti benedica!";
+			dialog.text = "Sì. Puoi ottenerli in qualsiasi colonia "+NationNameGenitive(int(npchar.nation))+". Porta tutti i libri che troverai al nostro pastore in chiesa. Dio ti benedica!";
 			link.l1 = "Grazie! Riceverai i tuoi libri presto.";
 			link.l1.go = "Churchbooks_1";
 		break;
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			ReOpenQuestHeader("Churchbooks");
 			AddQuestRecord("Churchbooks", "1");
-			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(sti(pchar.GenQuest.Churchbooks.Nation)));
+			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(int(pchar.GenQuest.Churchbooks.Nation)));
 			AddQuestUserData("Churchbooks", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity));
 			SetFunctionTimerCondition("Churchbooks_Over", 0, 0, 30, false);
 			pchar.GenQuest.Churchbooks = "go";

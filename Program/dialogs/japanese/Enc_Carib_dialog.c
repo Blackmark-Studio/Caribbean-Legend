@@ -10,7 +10,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Carib" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
 			}
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				dialog.text = LinkRandPhrase("海の息子よ、ようこそ！お前のことは聞いているぜ。俺たちの土地を自由に歩いていいぞ。",""+npchar.name+" 蒼白い顔の兄弟よ、歓迎するぞ。お前が我々の客として来てくれて嬉しい。","「勇敢な色白の戦士よ、挨拶するぞ！」 "+npchar.name+" インディアンの友人に会えて嬉しい。安らかに行きなさい！");
 				link.l1 = RandPhraseSimple("「やあ、赤い肌の兄弟よ！狩りがうまくいくよう祈ってるぜ！」","ごきげんよう、勇敢な戦士よ！神々があなたとご家族を祝福されますように！");
@@ -87,10 +87,10 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("「お前の土地だと？消え失せろ、この赤ら顔のクズ野郎！」","あいつを見ろよ――しゃべる猿じゃねえか！さっさと失せろ！");
 				link.l1.go = "war_indian_1";
 				link.l2 = RandPhraseSimple("俺は和平のために来たんだ、赤い肌の戦士よ。無駄に争うべきじゃねえ。","俺はお前やお前の土地の敵じゃねえ、戦士よ。平和のために来たんだ。");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
 				else link.l2.go = "war_indian_2_2";
 				link.l3 = RandPhraseSimple("俺は取引に来たんだ、戦うためじゃねえ。","俺はインディアンとは戦わねえ。取引するんだ。");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+int(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
 				else link.l3.go = "war_indian_3_2";
 			}
 		break;
@@ -298,13 +298,13 @@ void ProcessDialogEvent()
 		
 		case "war_indian_trade_agree":
 			ChangeIndianRelation(1.00);
-			npchar.quest.count = sti(npchar.quest.count)+1;
+			npchar.quest.count = int(npchar.quest.count)+1;
 			TakeNItems(pchar, npchar.quest.item, iTotalTemp);
 			RemoveItems(pchar, npchar.quest.gun, 1);
 			Log_Info("You have given "+XI_ConvertString(npchar.quest.gun)+"");
 			Log_Info("You have received "+XI_ConvertString(npchar.quest.item)+" in amount of "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (sti(npchar.quest.count) > 3+hrand(2));
+			if (int(npchar.quest.count) > 3+hrand(2));
 			{
 				dialog.text = "よし。これがあんたの品だ。もう取引はしねえ。後でまた来な。もっといい火薬武器を持ってくりゃ、もっと渡してやる。 さあ、行け！";
 				link.l1 = "さらばだ、赤き肌の戦士よ。";
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_trade_bad":
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				DialogExit();
 				sGroup = "CaribGroup_" + locations[FindLocation(npchar.location)].index;

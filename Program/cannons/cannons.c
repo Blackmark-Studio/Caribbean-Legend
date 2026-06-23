@@ -13,7 +13,7 @@ void CannonsInit()
 	SetEventHandler(GET_CANNON_BY_TYPE_EVENT,"CannonGetByTypeEvent",0);
 }
 
-aref CannonGetByTypeEvent()
+ref CannonGetByTypeEvent()
 {
 	int iCannonType = GetEventData();
 	return &Cannon[iCannonType];
@@ -41,7 +41,7 @@ int GetCannonByTypeAndCaliber(string sCannonType, int iCaliber)
 		makeref(curCannon, Cannon[i]);
 		
 		int caliber = GetCannonCaliberNominal(i);
-		int type = sti(curCannon.type);
+		int type = int(curCannon.type);
 		
 		if (typeIdx == type && caliber <= iCaliber && caliber > maxCaliber)
 		{
@@ -87,7 +87,7 @@ string GetCannonType(int iCannon)
 {
 	if (iCannon != CANNON_TYPE_NONECANNON) //fix
 	{
-		int iCannonType = sti(Cannon[iCannon].type);
+		int iCannonType = int(Cannon[iCannon].type);
 
 		switch(iCannonType)
 		{
@@ -126,11 +126,11 @@ float GetCannonReloadTime(ref rCannon)
 {
 	if (!iArcadeSails)
 	{
-	    return  stf(rCannon.ReloadTime) * 3;
+	    return  float(rCannon.ReloadTime) * 3;
 	}
 	else
 	{
-	    return  stf(rCannon.ReloadTime);
+	    return  float(rCannon.ReloadTime);
 	}
 }
 
@@ -142,7 +142,7 @@ int GetCannonGoodsIdxByType(int iCannon)
 	{
 		if (CheckAttribute(&Goods[i], "CannonIdx"))
 		{
-			if (sti(Goods[i].CannonIdx) == iCannon) return i;
+			if (int(Goods[i].CannonIdx) == iCannon) return i;
 		}
 	}
 	return -1;	

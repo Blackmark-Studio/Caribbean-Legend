@@ -26,8 +26,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "胡安? 就这些? 先生, 你是喝醉了还是在跟我开愚蠢的玩笑? 你能记得他的姓氏或者至少他的船名吗? 看在上帝的份上, 这是西班牙殖民地。 你知道这里有多少个胡安吗? 没有任何细节我帮不了你。 ";
 			link.l1 = "我明白了。 抱歉打扰你了... ";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "不知为何, 我本想发表一番豪言壮语, 但他直接冲上去了。 ";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "我们为什么攻击他们? 那艘双桅船没有威胁, 也没运输货物。 当然, 关于格林的传言很多, 但只有奴隶贩子怕他。 今天死了很多人 —为了什么? ";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "... ";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "主要是噩梦。 但最糟糕的是我们有个人死于发烧。 一个年轻小伙子, 强壮如牛, 几小时内就烧得不行了。 ";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "那是医生的事。 "+sld.name+"知道该怎么做。 ";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				dialog.text = sld.name+"今天早上已经报告了。 我们失去了十一个人。 我们该怎么办? ";
 			}

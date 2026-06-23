@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Por algum motivo, achei que ele fosse fazer um grande discurso. Mas ele só avançou de uma vez.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "Por que atacamos eles? Aquele brigue não era uma ameaça, não carregava carga nenhuma. Claro, tinham vários boatos sobre o Grim, mas só os mercadores de escravos tinham medo dele. Muita gente morreu hoje — e pra quê?";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "...";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "Pesadelos, na maioria. Mas o pior é que um dos nossos morreu de febre. Um rapaz jovem, forte como um touro, e ele se consumiu em poucas horas.";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "Isso é para o doutor decidir. "+sld.name+" sabe o que faz.";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				dialog.text = sld.name+" já relatei isso esta manhã. Perdemos onze almas. O que faremos?";
 			}

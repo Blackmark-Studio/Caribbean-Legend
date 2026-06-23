@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "听说昨晚酒馆里有场斗殴... 但谁在打 —鬼才知道。 反正我脸还完好。 应该吧。 ";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "真该死... 我头痛得像礁石上的船体, 你却在这里问个不停。 我什么都没看见没听见。 你给几个比索, 比折磨一个老水手好过。 ";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "给你一百比索。 记住别喝得烂醉, 再中那个女招待的圈套, 嗯? ";
 				link.l1.go = "OS_Matros_7_harizma";

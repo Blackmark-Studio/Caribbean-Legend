@@ -9,7 +9,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	int iCGood;
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Slave_arest_1":
-			dialog.text = "Не прикидывайтесь овечкой, капитан! Ваши грязные делишки раскрыты. А за резню, что вы учинили, и за потопленный корабль " + NationNameGenitive(sti(npchar.nation)) + ", вы будете болтаться на ноке рея!";
+			dialog.text = "Не прикидывайтесь овечкой, капитан! Ваши грязные делишки раскрыты. А за резню, что вы учинили, и за потопленный корабль " + NationNameGenitive(int(npchar.nation)) + ", вы будете болтаться на ноке рея!";
 			link.l1 = "Ну раз так... то мне терять уже нечего, не так ли? Держитесь, псы!";
 			link.l1.go = "Slave_arest_2";
 		break;
@@ -160,11 +160,11 @@ void ProcessDialogEvent()
 /////----------------------------------------- Генераторы -----------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//--> Jason ------------------------ Сомнительное предложение -------------------------------------------	
-		int iCGood;
+
 		case "Contraoffer_patrol":
 			chrDisableReloadToLocation = false;
-			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-			pchar.GenQuest.Contraoffer.Trader.PatrolSumm = sti(pchar.GenQuest.Contraoffer.Trader.Summ)/3;
+			iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
+			pchar.GenQuest.Contraoffer.Trader.PatrolSumm = int(pchar.GenQuest.Contraoffer.Trader.Summ)/3;
 			dialog.text = "Так-так... Вот вы оба и попались, голубчики. Разве вы не в курсе, что оборот " + GetGoodsNameAlt(iCGood)+ " частными лицами в нашей колонии запрещён? Как всё это понимать?";
 			link.l1 = "Офицер, разве запрещён? Я впервые об этом слышу, честное слово. Это постановление приняли недавно, наверное?";
 			link.l1.go = "Contraoffer_patrol_1";
@@ -190,10 +190,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_pay1":
-			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
+			iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
 			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > hrand(120))
 			{
-				dialog.text = "Вот как... Ну что же, давайте посмотрим на ваши монеты... Тут прозвучала сумма в " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Поскольку у нас теперь не двухсторонний, а трёхсторонний договор, то я бы хотел увидеть " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". Это с вас. Столько же и от второго участника сделки.";
+				dialog.text = "Вот как... Ну что же, давайте посмотрим на ваши монеты... Тут прозвучала сумма в " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Поскольку у нас теперь не двухсторонний, а трёхсторонний договор, то я бы хотел увидеть " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". Это с вас. Столько же и от второго участника сделки.";
 				link.l1 = "Конечно, офицер. Вот мои блестящие монеты... А " + GetGoodsNameAlt(iCGood)+ " тут нет, хе-хе, я же говорил.";
 				link.l1.go = "Contraoffer_patrol_complete1";
 				link.l2 = "Ого! У вас неумеренные аппетиты, офицер. Вы никогда не слышали поговорки 'большая ложка рот дерёт'? Пожалуй, дешевле будет познакомить вас и ваших подчинённых с моей саблей.";
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_pay2":
-			dialog.text = "" + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". И только потому, что я сегодня добрый.";
+			dialog.text = "" + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm)) + ". И только потому, что я сегодня добрый.";
 			link.l1 = "Спасибо, офицер. Я правда не знал... Вот, я готов оплатить штраф.";
 			link.l1.go = "Contraoffer_patrol_complete2";
 			link.l2 = "Сдаётся мне, офицер, что вы нечисты на руку. Уж больно велик назначенный вами штраф. Думаю, что эта колония только выиграет, если я избавлю её от вашего присутствия.";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_complete":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm));
 			AddQuestRecord("Contraoffer", "6");
 			CloseQuestHeader("Contraoffer");
 			LAi_CharacterDisableDialog(npchar);
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 		case "Contraoffer_patrol_fight":
 			AddQuestRecord("Contraoffer", "7");
 			CloseQuestHeader("Contraoffer");
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), -5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), -5);
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 			LAi_SetWarriorTypeNoGroup(npchar);
             LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -257,7 +257,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_jail_exit":
-			GoToPrison(pchar.GenQuest.Contraoffer.Trader.City, sti(pchar.GenQuest.Contraoffer.Trader.Summ), 7);
+			GoToPrison(pchar.GenQuest.Contraoffer.Trader.City, int(pchar.GenQuest.Contraoffer.Trader.Summ), 7);
 			DialogExit();
 			AddQuestRecord("Contraoffer", "8");
 			CloseQuestHeader("Contraoffer");
@@ -273,10 +273,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1":
-			switch (sti(pchar.GenQuest.Device.Shipyarder.Chance3))
+			switch (int(pchar.GenQuest.Device.Shipyarder.Chance3))
 			{
 				case 0://выбросил
-				if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) != 1)
+				if (int(pchar.GenQuest.Device.Shipyarder.Chance2) != 1)
 				{
 					dialog.text = "Помилуйте, госпо"+GetSexPhrase("дин","жа")+"! Да, я стащил на верфи эту странную железку. Но я даже не смог её никому продать - никому она оказалась не нужна. Я её и выбросил. Пощадите, сударь, я просто очень хотел кушать... иначе я никогда бы не решился на кражу!";
 					link.l1 = "Вот незадача... Да ты-то сам мне не нужен. Мне нужно найти "+pchar.GenQuest.Device.Shipyarder.Type+". Говори, где выбросил?";
@@ -331,8 +331,8 @@ void ProcessDialogEvent()
 		
 		case "Device_poorman_1_1":
 			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+hrand(1000);
-			dialog.text = "Послушайте, вы случайно не об этом инструменте речь ведёте? Если об этом, то это моя вещь, и я её не крал! И отдавать вам её просто так вот не намерен! Если хотите её получить - заплатите мне " + FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm)) + ".";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))
+			dialog.text = "Послушайте, вы случайно не об этом инструменте речь ведёте? Если об этом, то это моя вещь, и я её не крал! И отдавать вам её просто так вот не намерен! Если хотите её получить - заплатите мне " + FindRussianMoneyString(int(pchar.GenQuest.Device.Shipyarder.Poorsumm)) + ".";
+			if (int(pchar.money) >= int(pchar.GenQuest.Device.Shipyarder.Poorsumm))
 			{
 				link.l1 = "Хм... Хорошо. Я заплачу тебе. Вот деньги, и давай сюда "+pchar.GenQuest.Device.Shipyarder.Type+"!";
 				link.l1.go = "Device_poorman_1_2";
@@ -347,19 +347,19 @@ void ProcessDialogEvent()
 			dialog.text = "Отличная сделка, капитан! Я думаю, мы оба в накладе не останемся, хе-хе... Забирайте.";
 			link.l1 = "Меньше болтай языком, воришка! Не думай, что я тебе поверил, просто шум лишний поднимать неохота. Да и всё равно тебе эти деньги во благо не пойдут. Всё, проваливай!";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Device.Shipyarder.Poorsumm));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Device.Shipyarder.Poorsumm));
 			TakeNItems(pchar, "Tool", 1);
 			//Log_Info("Вы получили украденный инструмент");
 			PlaySound("interface\important_item.wav");
 			AddQuestRecord("Device", "5");
-			AddQuestUserData("Device", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm)));
+			AddQuestUserData("Device", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Device.Shipyarder.Poorsumm)));
 			AddQuestUserData("Device", "sName", pchar.GenQuest.Device.Shipyarder.Type);
 			npchar.lifeday = 0;
 			LAi_CharacterDisableDialog(npchar);
 		break;
 		
 		case "Device_poorman_1_3":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
 			{
 				dialog.text = "Нет! Не надо стражи! Я... я отдам вам этот проклятый инструмент. Вот, забирайте!";
 				link.l1 = "Так-то лучше! А теперь можешь проваливать. Всё равно дорога тебе одна - на виселицу, это лишь вопрос времени.";
@@ -374,7 +374,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1_4":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
 			{
 				dialog.text = "Ай! Спасите! Убивают!";
 				link.l1 = "Стой, собака!";
@@ -404,7 +404,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_2_2":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 2)//тут уж как повезёт
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) < 2)//тут уж как повезёт
 			{
 				dialog.text = "Ну, чтобы отвести меня в комендатуру, надо сначала догнать...";
 				link.l1 = "Стой, собака!";
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_2":
-			dialog.text = "Полноте, капитан! Я что, похож на банального грабителя с большой дороги? Я деловой человек, и представляю интересы " + NationNameGenitive(sti(pchar.questTemp.WPU.Postcureer.EnemyNation)) + ". Я хочу предложить вам весьма выгодную сделку - но только не здесь. Давайте пройдём в комнату таверны, и с глазу на глаз, в спокойной обстановке всё обсудим. Это не займёт много времени.";
+			dialog.text = "Полноте, капитан! Я что, похож на банального грабителя с большой дороги? Я деловой человек, и представляю интересы " + NationNameGenitive(int(pchar.questTemp.WPU.Postcureer.EnemyNation)) + ". Я хочу предложить вам весьма выгодную сделку - но только не здесь. Давайте пройдём в комнату таверны, и с глазу на глаз, в спокойной обстановке всё обсудим. Это не займёт много времени.";
 			link.l1 = "Подозрительно всё это... Я не намерен иметь никаких дел с вами, сударь! Убирайтесь!";
 			link.l1.go = "PostAgent_getout";
 			link.l2 = "Хм... Ну, давайте посмотрим, что вы сможете мне предложить. Но даже и не пытайтесь напасть на меня. Пойдёмте, я после вас.";
@@ -629,8 +629,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_inTavern_3":
-			pchar.questTemp.WPU.Postcureer.AgentMoney = sti(pchar.rank)*3500;
-			dialog.text = "Капитан, к чему эти вопросы? Да, есть, или вы думаете, я здесь в игрушки играю? Я предлагаю вам "+ FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney))+" за возможность посмотреть эти бумаги, фактически - за просто так. Ну, так вы дадите наконец мне этот пакет?";
+			pchar.questTemp.WPU.Postcureer.AgentMoney = int(pchar.rank)*3500;
+			dialog.text = "Капитан, к чему эти вопросы? Да, есть, или вы думаете, я здесь в игрушки играю? Я предлагаю вам "+ FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney))+" за возможность посмотреть эти бумаги, фактически - за просто так. Ну, так вы дадите наконец мне этот пакет?";
 			link.l1 = "Держите. Только делайте всё аккуратно!";
 			link.l1.go = "PostAgent_inTavern_4";
 			link.l2 = "Знаете что, я не буду с вами сотрудничать. Не нравится мне всё это.";
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_inTavern_6":
-			dialog.text = "Ну вот и всё. Как я и говорил - всё сделано в лучшем виде. Получите ваш пакет и обещанные "+ FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney))+". Ну, а теперь нам пора проститься. Всего доброго, капитан, рад, что мы нашли общий язык.";
+			dialog.text = "Ну вот и всё. Как я и говорил - всё сделано в лучшем виде. Получите ваш пакет и обещанные "+ FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney))+". Ну, а теперь нам пора проститься. Всего доброго, капитан, рад, что мы нашли общий язык.";
 			link.l1 = "Прощайте...";
 			link.l1.go = "PostAgent_inTavern_7";
 		break;
@@ -667,14 +667,14 @@ void ProcessDialogEvent()
 			DialogExit();
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false; 
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Postcureer.AgentMoney));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Postcureer.AgentMoney));
 			GiveItem2Character(pchar, pchar.questTemp.WPU.Current.Item);
 			sld = characterFromID("PostAgent");        
 			LAi_SetActorType(sld);
 			LAi_ActorRunToLocation(sld, "reload", "reload1", "none", "", "", "", 2);
 			AddQuestRecord("Postcureer", "15");
 			AddQuestUserData("Postcureer", "sSex", GetSexPhrase("","а"));
-			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney)));
+			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney)));
 		break;
 		
 		case "PostAgent_inTavern_fight":
@@ -768,7 +768,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Badboy_2":
-			switch (sti(pchar.GenQuest.Badboy.Brothel.Type))
+			switch (int(pchar.GenQuest.Badboy.Brothel.Type))
 			{
 				case 0://или напугается, или будет быковать - от авторитета
 					if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 30)
@@ -862,7 +862,7 @@ void ProcessDialogEvent()
 			LAi_LocationDisableOfficersGen(pchar.GenQuest.Badboy.Brothel.City + "_ExitTown", true);//офицеров не пускать
 			locations[FindLocation(pchar.GenQuest.Badboy.Brothel.City + "_ExitTown")].DisableEncounters = true; //энкаутеры закроем
 			pchar.quest.BadboyDuelTimer.win_condition.l1 = "Timer";
-			pchar.quest.BadboyDuelTimer.win_condition.l1.date.hour  = sti(GetTime() + 2);
+			pchar.quest.BadboyDuelTimer.win_condition.l1.date.hour  = int(GetTime() + 2);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

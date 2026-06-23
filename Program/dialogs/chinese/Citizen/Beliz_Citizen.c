@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "info":
         // 替换为某些NPC的描述, 关于任务
-            dialog.text = "你以为我是" + NationNameGenitive(sti(NPChar.nation)) + "的特工吗? ";
+            dialog.text = "你以为我是" + NationNameGenitive(int(NPChar.nation)) + "的特工吗? ";
             link.l1 = "好吧... 不是。 那么再见。 ";
             link.l1.go = "exit";
             link.l2 = "那么, 还有其他问题吗? ";
@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "Exit";
             
             npchar.questTemp.PZ_Sotta = true;
-            pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+            pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
         
@@ -81,7 +81,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "Exit";
             
             npchar.questTemp.PZ_Sotta = true;
-            pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+            pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
         
@@ -91,7 +91,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "Exit";
             
             npchar.questTemp.PZ_Lutter = true;
-            pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+            pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
         
@@ -101,7 +101,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "Exit";
             
             npchar.questTemp.PZ_Lutter = true;
-            pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+            pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
         // <== 任务"导航星"
@@ -112,7 +112,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen");
 			pchar.questTemp.WildRose_Beliz_Citizen_2 = true;
-			npchar.quest.WildRose_Vopros;
+			touchattr(npchar.quest.WildRose_Vopros);
  		break;
 		
 		case "WildRose_Beliz_Citizen_2":
@@ -121,7 +121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");
 			pchar.questTemp.WildRose_Beliz_Citizen_3 = true;
-			npchar.quest.WildRose_Vopros;
+			touchattr(npchar.quest.WildRose_Vopros);
  		break;
 		
 		case "WildRose_Beliz_Citizen_3":

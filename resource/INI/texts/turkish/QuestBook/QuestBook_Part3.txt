@@ -5515,6 +5515,21 @@ TheFormerKnight.4
 Eski Tarikat Şövalyesi'nin izini sürüp onu ortadan kaldırmayı başardık. Durand, şövalyenin kadınına da kıymakta kararlıydı; zavallı kadın o sırada evde bulunacak kadar talihsizdi. Elbette buna izin veremezdim. Kılıçlarımız bir kez daha çarpıştı ve yine üstün gelen ben oldum. Onun ne aşağılık bir adam olduğunu önceden bilseydim, Levasseur'un konağında işini orada bitirirdim.
 }
 
+TheFormerKnight.5
+{
+Gözden düşmüş bir subayın dertleriyle uğraşmamaya karar verdim ve Claude Durand’ı kovdum. Gitsin kendine başka bir kaptan arasın.
+}
+
+TheFormerKnight.6
+{
+Claude’un davranışlarına katlanamadım. Aramızda bir çatışma patlak verdi ve onu öldürmek zorunda kaldım. Huzur içinde yat, paralı asker.
+}
+
+TheFormerKnight.7
+{
+Claude Durand savaşta öldü ve artık bu hikâyenin sonunu asla öğrenemeyeceğim. Ne diyelim, huzur içinde yat, paralı asker.
+}
+
 Tichingitu
 {
 Tichingitu

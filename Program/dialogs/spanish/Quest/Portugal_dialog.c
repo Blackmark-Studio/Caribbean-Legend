@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("Portugal", "3");
 		LAi_ActorRunToLocation(npchar, "reload", "houseF1", "Marigo_houseF1", "goto", "goto2", "", -1);
 		pchar.quest.Portugal_Cloves.win_condition.l1 = "Timer";
-		pchar.quest.Portugal_Cloves.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.Portugal_Cloves.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.Portugal_Cloves.win_condition.l1.date.day = GetAddingDataDay(0, 0, 1);
 		pchar.quest.Portugal_Cloves.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 		pchar.quest.Portugal_Cloves.win_condition.l1.date.year = GetAddingDataYear(0, 0, 1);
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 		pchar.quest.Portugal_ToAntiguaOver.over = "yes"; // снять таймер
 		pchar.questTemp.Portugal = "TreatmentStart";
 		pchar.quest.Portugal_Ill.win_condition.l1 = "Timer";
-		pchar.quest.Portugal_Ill.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.Portugal_Ill.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.Portugal_Ill.win_condition.l1.date.day = GetAddingDataDay(0, 0, 7);
 		pchar.quest.Portugal_Ill.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 		pchar.quest.Portugal_Ill.win_condition.l1.date.year = GetAddingDataYear(0, 0, 7);
@@ -929,7 +929,7 @@ void ProcessDialogEvent()
 		dialog.text = "Bueno, sé mucho... pero gracias a nuestro viaje, estoy en bancarrota otra vez. ¿Quizás tu necesidad de esta información valga unos cuantos pesos?";
 		link.l1 = "¡Hugo, sigues siendo un extorsionista y un canalla! Habla lo que tienes, toma 5000 pesos solo por el bien de nuestra vieja amistad.";
 		link.l1.go = "Avendel_Marigo_4_1";
-		if (sti(pchar.money) >= 10000)
+		if (int(pchar.money) >= 10000)
 		{
 			link.l2 = "De alguna manera no me sorprende. ¡Aquí, toma 10000 pesos y será mejor que esperes que tu información cueste tanto dinero!";
 			link.l2.go = "Avendel_Marigo_4_2";
@@ -941,7 +941,7 @@ void ProcessDialogEvent()
 	case "Avendel_Marigo_4_1":
 		pchar.questTemp.Portugal.AvMoney = 15000;
 		dialog.text = "No, capitán, ¡no va a funcionar así! Has arrebatado una gran suma con ese maldito portugués, estoy seguro. Así que considera eso como mi parte, no seas tan codicioso. ¡15000 monedas y ni un solo peso menos!";
-		if (sti(pchar.money) >= 15000)
+		if (int(pchar.money) >= 15000)
 		{
 			link.l1 = "¡Al diablo contigo, llévatelos!";
 			link.l1.go = "Avendel_Marigo_4_2";
@@ -951,7 +951,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Avendel_Marigo_4_2":
-		AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Portugal.AvMoney));
+		AddMoneyToCharacter(pchar, -int(pchar.questTemp.Portugal.AvMoney));
 		dialog.text = "¡Ahora ese es el premio para mí! ... Escucha, Vasquez navegaba conmigo en el mismo barco, sin embargo, mientras yo limpiaba las cubiertas como pago por el viaje, él descansaba en una cabina, así que gracias a Dios rara vez nos veíamos y no me reconoció. Pero he comenzado a seguir a este diablo de inmediato... Una historia interesante ha sucedido con él.";
 		link.l1 = "¡Adelante! ¿Qué está haciendo en el palacio del gobernador?";
 		link.l1.go = "Avendel_Marigo_5";
@@ -980,7 +980,7 @@ void ProcessDialogEvent()
 
 	case "Avendel_Marigo_4_3":
 		dialog.text = "¿Hablas en serio, capitán? ¿Qué te pasa? Me has ahuyentado apuntándome con una pistola en la cara y ahora vienes con tales propuestas?";
-		if (sti(pchar.money) >= 10000)
+		if (int(pchar.money) >= 10000)
 		{
 			link.l1 = "Olvida eso, no he sido yo mismo y lo siento, la codicia me consumió, supongo. Aquí, toma 10000 pesos y dime lo que sabes sobre Vásquez, tengo prisa.";
 			link.l1.go = "Avendel_Marigo_4_2";
@@ -995,7 +995,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Qué puedo decir... Aceptaré, pero solo después de recibir mi parte, capitán. ¿Diez por ciento, recuerdas? Has recibido dos mil por ese canalla, así que si me pides unirme a tu tripulación, será mejor que empieces por saldar tus deudas. ¡Diez por ciento y sin discusiones!";
 		link.l1 = "Eres un bribón, Hugo. No tengo tanto conmigo ahora, pero volveré pronto. Quédate aquí.";
 		link.l1.go = "Avendel_Marigo_wait";
-		if (sti(pchar.money) >= 20000)
+		if (int(pchar.money) >= 20000)
 		{
 			link.l2 = "¡Espero que justifiques mis expectativas con ese agarre para los negocios tuyo, ja! ¡Toma tu parte!";
 			link.l2.go = "Avendel_Marigo_4_2";
@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 
 	case "Avendel_Marigo_repeat":
 		dialog.text = "¿Ha cambiado de opinión, capitán? Entonces espero mi dinero.";
-		if (sti(pchar.money) >= sti(pchar.questTemp.Portugal.AvMoney))
+		if (int(pchar.money) >= int(pchar.questTemp.Portugal.AvMoney))
 		{
 			link.l1 = "¡Toma tus monedas, bribón ja-ja!";
 			link.l1.go = "Avendel_Marigo_4_2";
@@ -1031,7 +1031,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		LAi_SetImmortal(npchar, false); // patch-8
 		SetCharacterRemovable(npchar, true);
-		npchar.quest.OfficerPrice = sti(pchar.rank) * 1000;
+		npchar.quest.OfficerPrice = int(pchar.rank) * 1000;
 		Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
 		npchar.loyality = MAX_LOYALITY;
 		npchar.OfficerWantToGo.DontGo = true;
@@ -1082,7 +1082,7 @@ void ProcessDialogEvent()
 		LAi_SetStayType(sld);
 		ChangeCharacterAddressGroup(sld, "Villemstad_prison", "goto", "goto9");
 		sld = GetCharacter(NPC_GenerateCharacter("PortHolOfficer", "off_hol_4", "man", "man", 35, HOLLAND, 30, true, "soldier"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 10, 100, 100, "blade_19", "pistol3", "grapeshot", 100);
+		FantomMakeCoolFighter(sld, int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 10, 100, 100, "blade_19", "pistol3", "grapeshot", 100);
 	
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);

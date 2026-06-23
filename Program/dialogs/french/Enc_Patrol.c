@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Patrol" + locations[FindLocation(npchar.location)].index + "_";
 	string sGroup = "PatrolGroup_" + locations[FindLocation(npchar.location)].index;
 	string sTemp1, sTemp2;
@@ -60,15 +60,15 @@ void ProcessDialogEvent()
 				LAi_type_actor_Reset(sld);
 				LAi_RemoveCheckMinHP(sld);
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("Oh regarde, il semble que ce coquin ait donné l'alarme dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Heh, regarde ça ! Plusieurs "+NationNamePeople(sti(pchar.nation))+" réussir à être ennemis avec "+NationNameAblative(sti(npchar.nation))+"! Attrapez le vaurien!!!");
+					dialog.text = RandPhraseSimple("Oh regarde, il semble que ce coquin ait donné l'alarme dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Heh, regarde ça ! Plusieurs "+NationNamePeople(int(pchar.nation))+" réussir à être ennemis avec "+NationNameAblative(int(npchar.nation))+"! Attrapez le vaurien!!!");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("Agent ennemi proche "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Eh bien, regarde, "+NationNamePeople(sti(pchar.nation))+" se promènent presque dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Attrapez-le immédiatement!!!");
+					dialog.text = RandPhraseSimple("Agent ennemi proche "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! Seize h"+GetSexPhrase("suis","hein")+"!!","Eh bien, regarde, "+NationNamePeople(int(pchar.nation))+" se promènent presque dans "+XI_ConvertString("Colony"+npchar.city+"Cela")+"! Attrapez-le immédiatement!!!");
 				}
 				link.l1 = RandPhraseSimple("Eh bien, vous pouvez essayer. Nous sommes seuls ici...","Heh, personne ne vous prêtera main forte ici.");
 				link.l1.go = "exit_fight"; 				
@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			{				
 				// belamour legendary edition
 				sTemp1 = "";
-				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
+				if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
 				dialog.text = LinkRandPhrase("Permettez-moi de me présenter! Je suis un officier de patrouille de "+XI_ConvertString("Colony"+npchar.city+"Gen")+", nous recherchons un prisonnier évadé.","Bonjour, je suis le chef de cette patrouille. Nous recherchons un esclave échappé de "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","Salutations à vous, "+GetAddress_Form(NPChar)+". Mon détachement patrouille le territoire près de "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_12":
-			jewelType = sti(pchar.questTemp.ReasonToFast.p4);
+			jewelType = int(pchar.questTemp.ReasonToFast.p4);
 			pchar.questTemp.ReasonToFast.item = "jewelry" + jewelType;
 			sItem = "jewelry" + jewelType;
 			switch (jewelType)
@@ -196,10 +196,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_14":
-			dialog.text = "D'accord, alors tu me dois "+sti(pchar.questTemp.ReasonToFast.p5)+" pesos, comme nous l'avions convenu.";
+			dialog.text = "D'accord, alors tu me dois "+int(pchar.questTemp.ReasonToFast.p5)+" pesos, comme nous l'avions convenu.";
 			link.l1 = "Cela ne fait-il pas un peu trop?";
 			link.l1.go = "Reason_To_Fast_16";
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				link.l2 = "Voici pour toi.";
 				link.l2.go = "Reason_To_Fast_17";
@@ -240,15 +240,15 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_17":
 			pchar.questTemp.ReasonToFast = "PatrolSuccess_1";
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p5)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p5)));
 			pchar.GenQuest.CannotWait = 1; // лочим интерфейс отдыха
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.chain")) DeleteAttribute(pchar,"questTemp.ReasonToFast.chain");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.ShipName");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipTypeName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.TypeName");
-			switch (sti(pchar.questTemp.ReasonToFast.target))
+			switch (int(pchar.questTemp.ReasonToFast.target))
 			{
 				case 0: // корабль с товаром
-					sTemp1 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp1 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					iShipType = ReasonToFast_GetVictimShipType();
 					iShipGoods = ReasonToFast_GetVictimShipGoods();
 					dialog.text = "Excellent ! Maintenant, passons aux affaires. Nous avons intercepté cela "+GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName)+" '"+sTemp1+"' avec un chargement de "+GetGoodsNameAlt(iShipGoods)+", l'équipage est déjà détenu, et la 'cargaison' est toujours à bord. L'équipage a été recruté parmi les démunis dans le port, et ils n'entreront pas dans le port avant demain. Vous pouvez faire avec eux ce que vous voulez.";
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.questTemp.ReasonToFast.password = sTemp2;
-					sTemp2 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp2 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					dialog.text = "Excellent ! "+sTemp1+" gardé dans son boudoir. Le navire de courrier arrivera n'importe quel jour maintenant, mais vous devriez toujours gérer. Le laquais est 'notre' homme. Mot de passe: '"+pchar.questTemp.ReasonToFast.password+"', reponse: '"+sTemp2+"'.'";
 					link.l1 = "D'accord. Je passerai votre parole "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+".";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_18":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				dialog.text = "Essayes-tu de me tromper?! Espèce de chien!";
 				link.l1 = "Ferme ta putain de gueule!";
@@ -356,8 +356,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_ExitFight":
-			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation));
-			SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY); 
+			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation));
+			SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY);
 			
 			pchar.GenQuest.HunterScore2Pause = 1; //НЗГ не начисляются
 			pchar.GenQuest.ReputationNotChange = 1; //репутацию не менять

@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		//--> Сомнительное предложение
 		if (CheckAttribute(pchar, "GenQuest.Contraoffer.Jail"))
 		{
-			dialog.text = "Kaçak mal transferi ve satışı girişiminden dolayı gözaltına alındınız. Yetkililere yaptığınız yardım ve konumunuz göz önünde bulundurularak, hapiste sadece "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Üstelik, kaçakçılıkla kazandığın tüm o para da -"+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+"   alınacak ve kasabanın hazinesine konulacak. İyi eğlenceler, kaptan!";
+			dialog.text = "Kaçak mal transferi ve satışı girişiminden dolayı gözaltına alındınız. Yetkililere yaptığınız yardım ve konumunuz göz önünde bulundurularak, hapiste sadece "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Üstelik, kaçakçılıkla kazandığın tüm o para da -"+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+"   alınacak ve kasabanın hazinesine konulacak. İyi eğlenceler, kaptan!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			DeleteAttribute(pchar, "GenQuest.Contraoffer.Jail");
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		//<-- Сомнительное предложение
-			dialog.text = "Bir suç işlediğiniz için tutuklandınız ve   hapiste tutulacaksınız "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Ayrıca, bunun için ceza ödeyeceksiniz "+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+" . Keyifli vakitler geçirin, kaptan!";
+			dialog.text = "Bir suç işlediğiniz için tutuklandınız ve   hapiste tutulacaksınız "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Ayrıca, bunun için ceza ödeyeceksiniz "+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+" . Keyifli vakitler geçirin, kaptan!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			NextDiag.currentnode = "Jail_officer_free";

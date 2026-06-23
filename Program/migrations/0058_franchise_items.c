@@ -9,8 +9,8 @@ void InitMusket_0058()
 {
 	// Мушкет вождя по интеграции франшизы
 	ref mushket_indian = InitStdMusketCommon("mushket_indian", "mushket_indian", "ITEMS_42", 6, 0.0001, 1, 1831, 110.0, 145.0, 14.0, 1, B_UNIQUE, 55.0);
-	InitGunWithAmmoParams(mushket_indian, "t1", "cartridge", "",       127.0, 167.0, 0.0,  1, 0,  29, 0);
-	InitGunWithAmmoParams(mushket_indian, "t2", "bullet", "gunpowder", 110.0, 145.0, 0.0,  0, 0,  38, 1);
+	InitGunWithAmmoParams(mushket_indian, "t1", "cartridge", "",       127.0, 167.0, 0.0,  true, 0,  29, false);
+	InitGunWithAmmoParams(mushket_indian, "t2", "bullet", "gunpowder", 110.0, 145.0, 0.0,  false, 0,  38, true);
 	mushket_indian.PriceDublon = 450;
 }
 

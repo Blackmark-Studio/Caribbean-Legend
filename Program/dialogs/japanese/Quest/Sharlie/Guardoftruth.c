@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;//открыть локацию
 			AddQuestRecord("Guardoftruth", "5");
 			pchar.quest.GuardOT_mayak.win_condition.l1 = "Timer";
-			pchar.quest.GuardOT_mayak.win_condition.l1.date.hour  = sti(GetTime()-(rand(4)));
+			pchar.quest.GuardOT_mayak.win_condition.l1.date.hour  = int(GetTime()-(rand(4)));
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -412,7 +412,7 @@ void ProcessDialogEvent()
 			sld = ItemsFromID("specialletter");
 			sld.text = "Letter_Vincento";
 			dialog.text = "ほらよ。俺の手間賃に小銭をくれねえか？";
-			if (sti(Pchar.money) >= 2000)
+			if (int(Pchar.money) >= 2000)
 			{
 				link.l1 = "少し銀貨を取っておけ。正々堂々と稼いだんだ。";
 				link.l1.go = "vinsentoagent_2_1";	
@@ -653,9 +653,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_13":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			dialog.text = "バニラと輸送費を払える現金があるなら、取引成立だ。\n魅力的なアイルランドのことわざにあるだろう、「金を見せろ」ってな。";
-			if (sti(Pchar.money) >= iTemp)
+			if (int(Pchar.money) >= iTemp)
 			{
 				link.l1 = "ほら、見てみな。全部ここにあるぜ。";
 				link.l1.go = "gevarra_14";
@@ -674,9 +674,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_wait":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			dialog.text = "金は持ってきたか？";
-			if (sti(Pchar.money) >= iTemp)
+			if (int(Pchar.money) >= iTemp)
 			{
 				link.l1 = "ほら、見てみな。全部そろってるぜ。";
 				link.l1.go = "gevarra_14";
@@ -689,7 +689,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_14":
-			if (stf(environment.time) < 24.0)
+			if (float(environment.time) < 24.0)
 			{
 				sTemp = "tomorrow";
 				iTemp = 1;
@@ -699,7 +699,7 @@ void ProcessDialogEvent()
 				sTemp = "today";
 				iTemp = 0;
 			}
-			if (stf(environment.time) > 21.0 && stf(environment.time) < 7.0)
+			if (float(environment.time) > 21.0 && float(environment.time) < 7.0)
 			{
 				dialog.text = "素晴らしい！分別のある相手と取引するのは本当に楽しいね。また来てくれ\n "+sTemp+" 朝の十時までには。\nその頃には、我々の共通の友人ガイウスも正気に戻っていると思う。";
 				link.l1 = "素晴らしい！また後で会おう！";
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 				link.l1 = "よし！また後でな！";
 				link.l1.go = "gevarra_15";
 				pchar.quest.GuardOT_tradetimer.win_condition.l1 = "Timer";
-				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour  = sti(GetTime()+3);
+				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour  = int(GetTime()+3);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -726,7 +726,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_15":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			DialogExit();
 			NextDiag.currentnode = "gevarra_time";
 			npchar.DeckDialogNode = "gevarra_time";
@@ -964,7 +964,7 @@ void ProcessDialogEvent()
 		
 		case "belinda_18":
 			dialog.text = "教えてくれ、待たせるなよ！盗賊たちに会ったのか？";
-			if (sti(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "ほら、五万を返すよ。必要なかったんだ。それと、この指輪も受け取ってくれ。見覚えがあるはずだ。";
 				link.l1.go = "belinda_19_1";
@@ -1301,7 +1301,7 @@ void ProcessDialogEvent()
 			pchar.quest.GuardOT_sanantonio.function = "GuardOT_SanantonioArrive";
 			// на время, специально для дебилов, не читающих диалоги и СЖ
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1 = "Timer";
-			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour  = sti(GetTime()+6);
+			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour  = int(GetTime()+6);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

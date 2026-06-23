@@ -26,31 +26,31 @@ void ProcessDialogEvent()
 
 		//--> 相遇
 		case "DiegoDeLanda_Meeting":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "很悲伤的故事, 不是吗? ";
 				link.l1 = "你是谁? ";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "问候你, 船长。 ";
 				link.l1 = "等等! 我们以前见过! ";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "一。 二。 三。 ";
 				link.l1 = "让我们停止这场表演。 你到底是谁? ";
 				link.l1.go = "DiegoDeLanda_Meeting_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "四。";
 				link.l1 = "还剩两个?";
 				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 				
 			}
@@ -246,32 +246,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_1":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "告诉我... 为什么? 那既危险又愚蠢。 是什么驱使你, 船长? 你的火焰是什么? ";
 				link.l1 = "这不关你的事。 ";
 				link.l1.go = "DiegoDeLanda_leaving_First_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "第二次。 ";
 				link.l1 = "上次你说话像谜一样。 你会再这样吗? ";
 				link.l1.go = "DiegoDeLanda_leaving_Second_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "... ";
 				link.l1 = "等等, 德.兰达。 我不能就让你那样拿走东西离开。 ";
 				link.l1.go = "DiegoDeLanda_Leaving_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "全是暗示、做作,却没有行动…\n"+
 				"至少我这边是这样。你倒是行动充足。";
 				link.l1 = "我有个主意怎么解决这个问题。";
 				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 				
 			}

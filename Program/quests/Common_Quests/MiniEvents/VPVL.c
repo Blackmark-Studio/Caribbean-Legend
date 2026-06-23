@@ -57,11 +57,11 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 			
 			for (i=4; i<=5; i++)
 			{
-			sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_"+i, "citiz_" + (rand(9) + 21), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
-			FantomMakeCoolFighter(sld, 5, 20, 20, "blade_14", "none", "none", 20);
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyGroup");
-			ChangeCharacterAddressGroup(sld, "Shore39", "smugglers", LAi_FindRandomLocator("smugglers")););
+				sld = GetCharacter(NPC_GenerateCharacter("VPVL_contr_"+i, "citiz_" + (rand(9) + 21), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
+				FantomMakeCoolFighter(sld, 5, 20, 20, "blade_14", "none", "none", 20);
+				LAi_SetWarriorType(sld);
+				LAi_group_MoveCharacter(sld, "EnemyGroup");
+				ChangeCharacterAddressGroup(sld, "Shore39", "smugglers", LAi_FindRandomLocator("smugglers"));
 			}
 	}
 	
@@ -119,7 +119,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_group_SetRelation("EnemyGroup", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY); 
 		LAi_group_FightGroups("EnemyGroup", LAI_GROUP_PLAYER, true); 
 		LAi_SetFightMode(pchar, true);
-		LAi_group_SetCheck("EnemyGroup", "VPVL_Start_Generate_Pier")
+		LAi_group_SetCheck("EnemyGroup", "VPVL_Start_Generate_Pier");
 	}
 	
 	else if (sQuestName == "VPVL_Start_Generate_Pier") {
@@ -310,7 +310,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		
 		CloseQuestHeader("VPVL");
 		
-		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
@@ -343,9 +343,9 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "VPVL_SpawnVPVLcontrShip") {       // Ставим корабль
-		if (CheckAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip") && sti(pchar.questTemp.VPVL_DontSpawnSmugglersShip) == true)
+		if (CheckAttribute(pchar, "questTemp.VPVL_DontSpawnSmugglersShip") && int(pchar.questTemp.VPVL_DontSpawnSmugglersShip) == true)
 		{
-			if (CheckAttribute(pchar, "questTemp.VPVL_RumCap_DontSpawnSmugglersShipPier") && sti(pchar.questTemp.VPVL_DontSpawnSmugglersShipPier) == true)
+			if (CheckAttribute(pchar, "questTemp.VPVL_RumCap_DontSpawnSmugglersShipPier") && int(pchar.questTemp.VPVL_DontSpawnSmugglersShipPier) == true)
 			{
 				// Здесь может быть ваша реклама, andre39966
 			}
@@ -380,7 +380,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "VPVL_KillCapitanOfSmuggler") {
 		DeleteAttribute(pchar, "questTemp.VPVL_Magor_Dialogue");
 		DelLandQuestMark(characterFromId("FortFrance_Mayor"));
-		if (CheckAttribute(pchar, "questTemp.VPVL_ContersShipIsCreate") && sti(pchar.questTemp.VPVL_ContersShipIsCreate) == true)
+		if (CheckAttribute(pchar, "questTemp.VPVL_ContersShipIsCreate") && int(pchar.questTemp.VPVL_ContersShipIsCreate) == true)
 			{
 				sld = characterFromId("VPVL_Cap");
 				LAi_KillCharacter(sld); 

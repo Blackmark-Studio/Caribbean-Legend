@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 			{
 				dialog.Text = "Sadece   "+FindRussianMoneyString(iTreasureMapPesosCost)+"."; // Addon-2016 Jason
 				Link.l1 = "Pekâlâ. Ve güzel bir kumaşa sar.";
-				if (sti(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
+				if (int(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
 				{
 				   Link.l1.go = "map_treasure_buy";
 				}
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 			{
 				dialog.Text = "Sadece   "+NPChar.TreasureMoney+" dublon."; // Addon-2016 Jason
 				Link.l1 = "Pekala. Ve güzel bir kumaşa sar.";
-				if (PCharDublonsTotal() >= sti(NPChar.TreasureMoney)) // Addon-2016 Jason
+				if (PCharDublonsTotal() >= int(NPChar.TreasureMoney)) // Addon-2016 Jason
 				{
 				   Link.l1.go = "map_treasure_buy";
 				}
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Teşekkürler!";
 			Link.l1.go = "exit";
 			if(bPesosMap) AddMoneyToCharacter(pchar, -iTreasureMapPesosCost);
-			else RemoveDublonsFromPCharTotal(sti(NPChar.TreasureMoney));// Addon-2016 Jason
+			else RemoveDublonsFromPCharTotal(int(NPChar.TreasureMoney));// Addon-2016 Jason
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Temp_treasure";
 			npchar.LifeDay = 0; // продал и свалил, если дуэль, то продлится у него жизнь

@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Holl == "JacobTakeShip")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
 					dialog.text = "我告诉过你把船停泊好。 你是太蠢还是无知, 连直接的命令都不遵守? ";
 					link.l1 = "都不是, 先生。 我这就去。 ";
@@ -110,8 +110,8 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG) iMef = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG) iMef = 1;
 				}
 				}// 设置舰队中存在船只的标志。 
 				RemoveItems(PChar, "JacobJournal", 1);// 删除范伯格的日志
@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 					{
 						sld = GetCharacter(iTemp);
 						pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
 					}
 				}// 设置舰队中存在蜃楼号的标志。 
 				pchar.quest.ToAntiguaOver.over = "yes"; // 移除计时器
@@ -819,7 +819,7 @@ void ProcessDialogEvent()
 			}
 			link.l2 = "没有。 我到处找了, 但什么也没找到。 ";
 			link.l2.go = "Merdok_5";
-			DeleteAttribute("SentJons_TownCave", "box2");// 如果没找到密码 - 以后也找不到
+			DeleteAttribute(&Locations[FindLocation("SentJons_TownCave")], "box2");// 如果没找到密码 - 以后也找不到
 		break;
 		
 		case "Merdok_5":
@@ -938,7 +938,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Solomon");// 移除所罗门
 			sld.lifeday = 0;
 			pchar.quest.Lucas_quit.win_condition.l1 = "Timer";
-			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Lucas_quit.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
@@ -970,7 +970,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Solomon");// 移除所罗门
 			sld.lifeday = 0;
 			pchar.quest.Lucas_quit.win_condition.l1 = "Timer";
-			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Lucas_quit.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);

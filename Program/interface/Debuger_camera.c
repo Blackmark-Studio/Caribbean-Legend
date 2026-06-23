@@ -371,7 +371,7 @@ void ProcCommand()
 /*
 float GetShipMaxNeededValue(int iShipType, string _param)
 {
-    float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
+    float NeededValue = float(GetBaseShipParamFromType(iShipType, _param));
     switch (_param)
     {
         case "speedrate":
@@ -395,7 +395,7 @@ void CalculateInfoDataF1()
 {
     // тут высчитываем нужную информацию и выводим в totalInfo - Инициализация -->
     totalInfo = descF1;
-    Pchar.money = sti(Pchar.money) + 500000;
+    Pchar.money = int(Pchar.money) + 500000;
     AddItems(pchar, "gold_dublon", 100);
 
     //------- проверка ачивок ------------
@@ -462,18 +462,18 @@ void CalculateInfoDataF3()
         if (CheckAttribute(mc, "Ship.pos.x"))
         {
             totalInfo = totalInfo + NewStr() + mc.location + "     ship(x,z,y)= " + mc.Ship.pos.x + ", " + mc.Ship.pos.z + ", " + mc.Ship.Ang.y;
-            totalInfo = totalInfo + NewStr() + " Sea_Coord.X " + Sea_GetRealCoordX(makefloat(mc.Ship.pos.x)) + " Sea_Coord.Z " + Sea_GetRealCoordZ(makefloat(mc.Ship.pos.z));
+            totalInfo = totalInfo + NewStr() + " Sea_Coord.X " + Sea_GetRealCoordX(float(mc.Ship.pos.x)) + " Sea_Coord.Z " + Sea_GetRealCoordZ(float(mc.Ship.pos.z));
 
             if (false) //CheckAttribute(mc, "WMShip.Pos.x") && worldMap.island != "")
             {
                 string sTemp = mc.curIslandId;
-                float r1 = stf(worldMap.islands.(sTemp).GoMapRadius);
+                float r1 = float(worldMap.islands.(sTemp).GoMapRadius);
 
                 r1 *= WDM_MAP_TO_SEA_SCALE;
-                float d2 = GetDistance2D(stf(mc.Ship.Pos.x),
-                                         stf(mc.Ship.Pos.z),
-                                         stf(worldMap.islands.(sTemp).position.rx),
-                                         stf(worldMap.islands.(sTemp).position.rz));
+                float d2 = GetDistance2D(float(mc.Ship.Pos.x),
+                                         float(mc.Ship.Pos.z),
+                                         float(worldMap.islands.(sTemp).position.rx),
+                                         float(worldMap.islands.(sTemp).position.rz));
 
                 totalInfo = totalInfo + "         Координаты для карты radius= " + r1 + "   GetDistance2D= " + d2 + "      ";
             }
@@ -509,9 +509,9 @@ void CalculateInfoDataF3()
 */
     totalInfo = totalInfo + NewStr() + " MapShipX " + worldMap.playerShipX + " MapShipZ " + worldMap.playerShipZ + " X " + worldMap.island.x + " Z " + worldMap.island.z;
 
-    totalInfo = totalInfo + NewStr() + " Map_Coord.X " + Map_GetRealCoordX(makefloat(worldMap.playerShipX)) + " Map_Coord.Z " + Map_GetRealCoordZ(makefloat(worldMap.playerShipZ));
+    totalInfo = totalInfo + NewStr() + " Map_Coord.X " + Map_GetRealCoordX(float(worldMap.playerShipX)) + " Map_Coord.Z " + Map_GetRealCoordZ(float(worldMap.playerShipZ));
 
-    totalInfo = totalInfo + NewStr() + " Zero_Point_X " + makefloat(worldMap.zeroX) + " Zero_Point_Z " + makefloat(worldMap.zeroZ);
+    totalInfo = totalInfo + NewStr() + " Zero_Point_X " + float(worldMap.zeroX) + " Zero_Point_Z " + float(worldMap.zeroZ);
     // <
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -556,12 +556,12 @@ void CalculateInfoDataF5()
     // -->
     totalInfo = descF5;
 
-    pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
-    pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 25;
-    pchar.perks.FreePoints_ship = sti(pchar.perks.FreePoints_ship) + 25;
-	sld.perks.FreePoints_self = sti(sld.perks.FreePoints_self) + 25;
-	sld.perks.FreePoints_ship = sti(sld.perks.FreePoints_ship) + 25;	
-    // pchar.Perks.FreePerks = sti(pchar.perks.FreePoints_ship) + 15;
+    pchar.Skill.FreeSkill = int(pchar.Skill.FreeSkill) + 35;
+    pchar.perks.FreePoints_self = int(pchar.perks.FreePoints_self) + 25;
+    pchar.perks.FreePoints_ship = int(pchar.perks.FreePoints_ship) + 25;
+	sld.perks.FreePoints_self = int(sld.perks.FreePoints_self) + 25;
+	sld.perks.FreePoints_ship = int(sld.perks.FreePoints_ship) + 25;
+    // pchar.Perks.FreePerks = int(pchar.perks.FreePoints_ship) + 15;
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -839,12 +839,12 @@ void CalculateInfoDataF23()
     // -->
     DumpAttributes(&Camera);
 
-    float sinAx = sin(stf(Camera.ang.x));
-    float cosAx = cos(stf(Camera.ang.x));
-    float sinAy = sin(stf(Camera.ang.y));
-    float cosAy = cos(stf(Camera.ang.y));
-    float sinAz = sin(stf(Camera.ang.z));
-    float cosAz = cos(stf(Camera.ang.z));
+    float sinAx = sin(float(Camera.ang.x));
+    float cosAx = cos(float(Camera.ang.x));
+    float sinAy = sin(float(Camera.ang.y));
+    float cosAy = cos(float(Camera.ang.y));
+    float sinAz = sin(float(Camera.ang.z));
+    float cosAz = cos(float(Camera.ang.z));
 
     xx = cosAz * cosAy + sinAz * sinAx * sinAy;
     xy = sinAz * cosAx;
@@ -925,7 +925,7 @@ void CalculateInfoDataF26()
     trace("========================================");
 
     ref realShip;
-    int shipType = sti(characterRef.Ship.Type);
+    int shipType = int(characterRef.Ship.Type);
 
     if (shipType != SHIP_NOTUSED) // Есть ли корабль вообще
     {
@@ -958,10 +958,10 @@ void CalculateInfoDataF27()
 {
     totalInfo = descF27;
     // -->
-    /* if ( sti(pchar.reputation.nobility) > 1)
+    /* if ( int(pchar.reputation.nobility) > 1)
     {
-       pchar.reputation.nobility = sti(pchar.reputation.nobility) - 10;
-       if (sti(pchar.reputation.nobility) < 1)
+       pchar.reputation.nobility = int(pchar.reputation.nobility) - 10;
+       if (int(pchar.reputation.nobility) < 1)
        {
            pchar.reputation.nobility = 1;
        }
@@ -970,7 +970,7 @@ void CalculateInfoDataF27()
     ChangeCharacterComplexReputation(pchar, "authority", -5); // репутация-авторитет
     ChangeCharacterComplexReputation(pchar, "fame", -5); // репутация-известность
 
-    trace(" -- reputation " + sti(pchar.reputation.nobility));
+    trace(" -- reputation " + int(pchar.reputation.nobility));
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -985,10 +985,10 @@ void CalculateInfoDataF28()
 {
     totalInfo = descF28;
     // -->
-    /* if ( sti(pchar.reputation.nobility) > 1 && sti(pchar.reputation.nobility) < 100)
+    /* if ( int(pchar.reputation.nobility) > 1 && int(pchar.reputation.nobility) < 100)
     {
-       pchar.reputation.nobility = sti(pchar.reputation.nobility) + 10;
-       if (sti(pchar.reputation.nobility) > 100)
+       pchar.reputation.nobility = int(pchar.reputation.nobility) + 10;
+       if (int(pchar.reputation.nobility) > 100)
        {
            pchar.reputation.nobility = 100;
        }
@@ -996,7 +996,7 @@ void CalculateInfoDataF28()
     ChangeCharacterComplexReputation(pchar, "nobility", 10); // репутация-честь
     ChangeCharacterComplexReputation(pchar, "authority", 5); // репутация-авторитет
     ChangeCharacterComplexReputation(pchar, "fame", 5); // репутация-известность
-    trace(" ++ reputation " + sti(pchar.reputation.nobility));
+    trace(" ++ reputation " + int(pchar.reputation.nobility));
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1106,7 +1106,7 @@ void CalculateInfoDataF31()
 
     AddItems(mc, "amulet_7", 1);
 	
-    //LAi_SetCharacterUseBullet(mc, "cartridge");
+    //LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 
     SetAllPerksToChar(mc, false);
 	AddCharacterGoodsSimple(pchar, GOOD_FOOD, 3000);
@@ -1176,7 +1176,7 @@ void CalculateInfoDataF32()
     //mc.ship.SP = CalculateShipSP(mc);
 
     //    trace("fail masts " + GetShipFallMastsQuantity(mc) + " ship.sp " + mc.ship.SP);
-    //mc.ship.HP = sti(mc.ship.HP) - makeint(sti(mc.ship.HP) / 2);
+    //mc.ship.HP = int(mc.ship.HP) - int(int(mc.ship.HP) / 2);
 
     //    ShipRepair(mc);
 //
@@ -1237,18 +1237,18 @@ void CalculateInfoDataF32()
     AddItems(mc, "talisman7", 1);
     AddItems(mc, "amulet_7", 2);
 
-    //LAi_SetCharacterUseBullet(mc, "cartridge");
+    //LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 
         SetHalfPerksToChar(mc, false);
     // SetAllPerksToChar(mc, false);
 
     ref realShip;
-    int shipType = sti(mc.Ship.Type);
+    int shipType = int(mc.Ship.Type);
 
     if (shipType != SHIP_NOTUSED) // Есть ли корабль вообще
     {
         realShip = GetRealShip(shipType);
-        //        realShip.HP = sti(realShip.HP) - makeint(sti(realShip.HP)/5);
+        //        realShip.HP = int(realShip.HP) - int(int(realShip.HP)/5);
     }
 
     totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
@@ -1319,7 +1319,7 @@ void CalculateInfoDataF33()
     AddItems(mc, "bullet", 50);
     AddItems(mc, "gunpowder", 50);
     AddItems(mc, "grapeshot", 20);
-    LAi_SetCharacterUseBullet(mc, "cartridge");
+    LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
     
     SetAllPerksToChar(mc, false);*/
     SetCharacterGoods(mc, GOOD_SHIPSILK, 1000);
@@ -1341,8 +1341,8 @@ void CalculateInfoDataF33()
 
 void ShipRepair(ref chr)
 {
-    int hp = MakeInt(GetHullPercent(chr));
-    int sp = MakeInt(GetSailPercent(chr));
+    int hp = int(GetHullPercent(chr));
+    int sp = int(GetSailPercent(chr));
     trace("hp " + hp + " sp " + sp);
 
     // процент ремонта в день (при ремонте на глобальной карте)
@@ -1376,7 +1376,7 @@ void ShipRepair(ref chr)
     float matQ;
     int shMastFall = GetShipFallMastsQuantity(chr);
 
-    trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + makeint((timeHull / 4.0 + timeSail / 6.0)));
+    trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + int((timeHull / 4.0 + timeSail / 6.0)));
 
     if (shMastFall > 0)
     {
@@ -1406,7 +1406,7 @@ void ReloadByStr()
         {
             if (locations[i].type == "seashore" || locations[i].type == "mayak")
             {
-                setCharacterShipLocation(pchar, loc));
+                setCharacterShipLocation(pchar, loc);
                 setWDMPointXZ(loc);
             }
         }

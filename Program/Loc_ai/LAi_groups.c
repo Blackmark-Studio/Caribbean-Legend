@@ -367,7 +367,7 @@ void LAi_group_SetAlarmDown(string group1, string group2, float down)
 //------------------------------------------------------------------------------------------
 
 //Переместить персонажа в новую группу
-void LAi_group_MoveCharacter(aref chr, string groupName)
+void LAi_group_MoveCharacter(ref chr, string groupName)
 {
 	chr.chr_ai.group = groupName;
 	SendMessage(&LAi_grp_relations, "sis", "MoveChr", chr, groupName);	
@@ -496,7 +496,7 @@ void LAi_group_NotFightPlayerVSGroup(string group2)
 //------------------------------------------------------------------------------------------
 
 //Выбрать цель для данного персонажа
-int LAi_group_GetTarget(aref chr)
+int LAi_group_GetTarget(ref chr)
 {
 	int index = -1;
 	if(SendMessage(&LAi_grp_relations, "sie", "GetTrg", chr, &index) == 0)
@@ -526,13 +526,13 @@ int LAi_group_GetTarget(aref chr)
 }
 
 //Проверить цель
-bool LAi_group_ValidateTarget(aref chr, aref trg)
+bool LAi_group_ValidateTarget(ref chr, ref trg)
 {	
 	return (SendMessage(&LAi_grp_relations, "sii", "VldTrg", chr, trg) != 0);
 }
 
 //Враг ли данный персонаж
-bool LAi_group_IsEnemy(aref chr, aref trg)
+bool LAi_group_IsEnemy(ref chr, ref trg)
 {
 	return (SendMessage(&LAi_grp_relations, "sii", "IsEnemy", chr, trg) != 0);
 }
@@ -542,7 +542,7 @@ bool LAi_group_IsEnemy(aref chr, aref trg)
 //------------------------------------------------------------------------------------------
 
 //Реакция групп на атаку attack->hit
-bool LAi_group_Attack(aref attack, aref hit)
+bool LAi_group_Attack(ref attack, ref hit)
 {
 	if(attack.chr_ai.group == hit.chr_ai.group)
 	{
@@ -591,7 +591,7 @@ bool LAi_group_AttackGroup(string attack, string hit)
 }
 
 //Обновить список врагов персонажа
-void LAi_group_UpdateTargets(aref chr)
+void LAi_group_UpdateTargets(ref chr)
 {
 	SendMessage(&LAi_grp_relations, "si", "UpdChrTrg", chr);
 }
@@ -708,7 +708,7 @@ void LAi_group_RemoveCheck(string groupName)
 }
 
 //Проверить квест на убивание группы
-void LAi_group_CheckGroupQuest(aref chr)
+void LAi_group_CheckGroupQuest(ref chr)
 {
 	//Получим ветку с квестами
 	aref quests;
@@ -724,7 +724,7 @@ void LAi_group_CheckGroupQuest(aref chr)
 		return;
 	}
 	string group = chr.chr_ai.group;
-	int chridx = sti(chr.index);
+	int chridx = int(chr.index);
 	for(int i = 0; i < LAi_numloginedcharacters; i++)
 	{
 		int idx = LAi_loginedcharacters[i];
@@ -789,7 +789,7 @@ void LAi_group_UpdateAlarm()
 
 	/*if(CheckAttribute(pchar, "sneak.success"))
 	{
-		if(sti(pchar.sneak.success) == 1)
+		if(int(pchar.sneak.success) == 1)
 		{
 			LAi_grp_playeralarm = 0.0;
 			LAi_grp_alarmactive = false;

@@ -58,8 +58,8 @@ void ProcessDialogEvent()
 					if (!CheckCharacterItem(pchar, "suit1")) GiveItem2Character(pchar, "suit1");
 					GiveItem2Character(pchar, "patent_fra");
 					EquipCharacterbyItem(pchar, "patent_fra");
-					Items[sti(pchar.EquipedPatentId)].TitulCur = 2; 
-					Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+					Items[int(pchar.EquipedPatentId)].TitulCur = 2;
+					Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 					ChangeCharacterNationReputation(pchar, FRANCE, 100);
 					Patria_SetInspector();
 				}
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		
 		case "Puancie_Jail_9":
 			DialogExit();
-			LAi_SetActorType(sld);
+			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "Sharlie_GoFromPrison", 3.5);
 			NextDiag.CurrentNode = "First time";
 			locCameraFromToPos(-11.09, 0.65, 3.05, true, -12.59, 0.09, -4.66);
@@ -355,7 +355,7 @@ void ProcessDialogEvent()
 			LocatorReloadEnterDisable("Charles_townhall", "reload1_back", false);
 			dialog.text = "啊哈, 查尔斯.德.莫尔本人! 很高兴见到你。 我想你是来这里和我讨论你哥哥的命运的吧? ";
 			link.l1 = "我准备偿还米歇尔.德.蒙佩欠骑士团和您个人的债务。 ";
-			if (sti(pchar.money) >= 1000000) link.l1.go = "saga_1";
+			if (int(pchar.money) >= 1000000) link.l1.go = "saga_1";
 			else link.l1.go = "saga_exit";			
 		break;
 		
@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 		
 		case "saga_repeat":
 			dialog.text = "你把钱带来了吗, 查尔斯? ";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "当然! 我希望这笔钱能完全偿还你所有的花费。 ";
 				link.l1.go = "saga_1";
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			CreateGriffondor();
 			sld = characterFromId("GriffOfficer");
 			SetCharacterRemovable(sld, true);
-			SetCompanionIndex(pchar, -1, sti(sld.index));
+			SetCompanionIndex(pchar, -1, int(sld.index));
 			sld.loyality = MAX_LOYALITY;
 			NextDiag.CurrentNode = "First time";
 			NextDiag.TempNode = "First time";
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8_1":
-			if (sti(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
+			if (int(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
 			else pchar.questTemp.Patria.NoMoney = "true";
 			dialog.text = "‘辉煌’号沉没了? 查尔斯, 这是一场灾难! 部长现在会怎么说? 你让我失望了, 查尔斯! 我原以为可以依靠你的经验, 而你... 唉, 你要为此负责。 我会写一份报告, 你最好消失一段时间。 你在皇家海军的服役结束了。 ";
 			link.l1 = "嗯... 对不起, 先生。 看来我确实最好消失一两个月, 直到部长平息怒火。 再见, 再次为让你失望深感抱歉。 ";
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8":
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				dialog.text = "完美! ";
 				link.l1 = "给您, 这三十万比索。 ";
@@ -662,7 +662,7 @@ void ProcessDialogEvent()
 		
 		case "patria_8_4":
 			dialog.text = "那么, 查尔斯, 你从特立尼达带来赎金了吗? ";
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				link.l1 = "是的, 先生。 给您。 ";
 				link.l1.go = "patria_9";
@@ -919,8 +919,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("Patria", "25");
 			pchar.questTemp.Patria = "epizode_5";
 			pchar.quest.Patria_CureerBackOver.over = "yes"; // 移除计时器
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 4; 
-			Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 4;
+			Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1 = "Timer";
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.hour  = 8 + rand(2);
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1 + rand(1));
@@ -1094,8 +1094,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_55":
-			pchar.questTemp.Patria.Hunter = sti(pchar.questTemp.Patria.Hunter)+1;
-			if (sti(pchar.questTemp.Patria.Hunter) > 4) // все собрал
+			pchar.questTemp.Patria.Hunter = int(pchar.questTemp.Patria.Hunter)+1;
+			if (int(pchar.questTemp.Patria.Hunter) > 4) // все собрал
 			{
 				dialog.text = "你已完成任务, 船长。 感谢你出色的服务! 你应获得出售战利品的部分收入 —二十万比索。 ";
 				link.l1 = "很高兴听到这个, 先生! ";
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "那么, 你只剩" + FindRussianQtyString(5-sti(pchar.questTemp.Patria.Hunter)) + "艘荷兰船只需要带到我们港口了。 ";
+				dialog.text = "那么, 你只剩" + FindRussianQtyString(5-int(pchar.questTemp.Patria.Hunter)) + "艘荷兰船只需要带到我们港口了。 ";
 				link.l1 = "是的, 骑士先生! ";
 				link.l1.go = "patria_56";
 			}
@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 		case "patria_56":
 			DialogExit();
 			AddQuestRecord("Patria", "35");
-			AddQuestUserData("Patria", "sQty", 5-sti(pchar.questTemp.Patria.Hunter));
+			AddQuestUserData("Patria", "sQty", 5-int(pchar.questTemp.Patria.Hunter));
 			DeleteAttribute(pchar, "questTemp.Patria.Hunter.GiveShip");
 		break;
 		
@@ -1345,8 +1345,8 @@ void ProcessDialogEvent()
 		
 		case "patria_80":
 			DialogExit();
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 5;
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.questTemp.Patria = "epizode_10_start";
 			AddQuestRecord("Patria", "52");
 			Patria_SlaveShipsStart();
@@ -1440,7 +1440,7 @@ void ProcessDialogEvent()
 		case "patria_coat_05":
 			LAi_Fade("", "");
 			if(LAi_GetCharacterHP(pchar) == LAi_GetCharacterMaxHP(pchar))
-			pchar.chr_ai.hp = stf(pchar.chr_ai.hp) - 1.0;
+			pchar.chr_ai.hp = float(pchar.chr_ai.hp) - 1.0;
 			GiveItem2Character(pchar, "potionwine");
 			DoCharacterUsedItem(pchar, "potionwine");
 			npchar.dialog.currentnode = "patria_coat_06";

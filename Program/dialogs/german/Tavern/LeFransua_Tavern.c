@@ -36,7 +36,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "storehelper_1":
 			dialog.text = "Eintausend Achtstücke. Und es gibt nichts, was du tun musst, in einer Stunde werden deine Kandidaten für den Job in meiner Taverne sein, mehrere Kandidaten. Du wirst mit ihnen sprechen und den auswählen können, der dir mehr zusagt als die anderen.";
-			if (sti(Pchar.money) >= 1000)
+			if (int(Pchar.money) >= 1000)
 			{
 				link.l1 = "Ahh... Also gut, hier, nimm tausend!";
 				link.l1.go = "storehelper_2";

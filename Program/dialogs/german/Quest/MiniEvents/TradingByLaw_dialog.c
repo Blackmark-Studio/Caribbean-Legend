@@ -320,12 +320,12 @@ void ProcessDialogEvent()
 					NextDiag.TempNode = "Kristian_41";
 				}
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // Erweiterung des Lieferumfangs
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // Erweiterung des Lieferumfangs
 			{
 				link.l4 = "Christian, ich möchte mehr kaufen. Sagen wir, hundert Flaschen Rum und Wein monatlich.";
 				link.l4.go = "UpgradeVino";
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && sti(pchar.Money) >= 50000)
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && int(pchar.Money) >= 50000)
 			{
 				link.l4 = "Christian, ich möchte über eine Erweiterung der Liefermenge sprechen.";
 				link.l4.go = "UpgradeVino_Agreed";
@@ -354,7 +354,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.TPZ_TradeVinoAndRom");
 			SetFunctionTimerCondition("TPZ_KristianReturn", 0, 0, 1, false); // Timer
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
-			pchar.questTemp.TPZ_KritstianVinoAndRom = sti(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // Kaufzähler
+			pchar.questTemp.TPZ_KritstianVinoAndRom = int(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // Kaufzähler
 		break;
 
 		case "UpgradeVino":
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 
 		case "UpgradeVino_3":
 			dialog.text = "Leider nicht, Kapitän. Wenn man spart, läuft alles womöglich schief... und Probleme wollen weder Sie noch ich.";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "Hier ist Ihr Geld. Enttäuschen Sie mich nicht, Christian.";
 				link.l1.go = "UpgradeVino_5";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 
 		case "UpgradeVino_Agreed":
 			dialog.text = "Kapitän, das sind hervorragende Nachrichten! Sind Sie bereit, die fünfzigtausend Silberstücke sofort zu zahlen?";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "Hier ist Ihr Geld. Enttäuschen Sie mich nicht, Christian.";
 				link.l1.go = "UpgradeVino_5";

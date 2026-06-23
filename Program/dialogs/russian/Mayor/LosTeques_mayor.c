@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "Враг в резиденции! Тревога!!";
 				link.l1 = "А-ать, дьявол!";

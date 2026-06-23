@@ -44,7 +44,7 @@ void CreateCharacters()
 	ch.timescale = 1;
 	ch.pause = 0;
 	ch.shotgun = "0";
-	ch.Ship.Type = GenerateShipExt(SHIP_LUGGER, 0, ch); // переопределяется ниже по коду от выбора гг
+	ch.Ship.Type = GenerateShipExt(SHIP_LUGGER, false, ch); // переопределяется ниже по коду от выбора гг
 	ch.Ship.Name = "Быстрый вепрь";
 	ch.Ship.Stopped = true;
 	ch.FaceId = 1;
@@ -253,7 +253,7 @@ void CreateCharacters()
 
 		if(n > 1) rCharacter.FaceId = 0;
 
-		rCharacter.FaceId = makeint(rand(2) + 2);
+		rCharacter.FaceId = int(rand(2) + 2);
 		
 		FaceMaker(rCharacter);
 		CirassMaker(rCharacter);

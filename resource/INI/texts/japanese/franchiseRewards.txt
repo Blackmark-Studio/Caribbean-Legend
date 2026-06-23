@@ -8,6 +8,12 @@ condition_mushket_indian
 ライブラリに
 Caribbean Legend: Age of Piratesを所持している場合、このアイテムは高利貸しのもとに現れます
 }
+condition_nocturlabe
+{
+Um presente gratuito para a comunidade.
+ Procurem-no à venda com os agiotas.
+ Obrigado por jogar!
+}
 noRewardYetMessage
 {
 この報酬はまだ利用できません。

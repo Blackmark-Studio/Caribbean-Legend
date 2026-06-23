@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "Beyaz kardeş, baykuş gibi sezgili, yılan gibi kurnaz. Kızılderiliye bela geliyor. Beyaz adamların büyük-büyük kayığı köyüme geldi. Birçok Cayman’ı, halkımı aldılar, kayıklarına koyup Hepsinin Anası Sular’a götürdüler...";
 			link.l1 = "Bekle... yani diyorsun ki, senin halkını bir gemiden gelen beyaz adamlar köleleştirdi?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Tanrıların gözyaşlarının sana ait olmasına sevindim, Arawakların kardeşi!"," Kızılderili, teşekkür ederim, cesur beyaz yüz! ","Al bizim avımızı, beyaz kardeş!");
 			link.l1 = LinkRandPhrase("Sana yardım etmekten memnuniyet duyarım!","Teşekkürler, kızıl derili kardeşim!","Harika!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Canauri sana tekrar teşekkür ediyor, solgun yüzlü kardeşim! Tüm kanoları ve Kızılderilileri kurtardın! Canauri için her kanoyu kurtarmak çok önemli, çünkü kötü solgun yüzlülerin köleliğe götürdüğü Canauri'nin torununu da kurtardın. Torunum çocukken yüzmeyi çok severdi, Canauri ona boğulmasın diye bu tılsımlı muskayı vermişti. Şimdi torunum artık yüzmek istemiyor ve muskayı bana verdi ki ben de onu sana vereyim, solgun yüzlü kardeşim. Umarım tanrıların gözyaşları ve bu hediye, bir Arawak'ın hayatı için yeterli bir ödül olur. Ve şimdi veda ediyoruz - artık köyümüze dönme vakti geldi.";
 				link.l1 = "İyi şanslar, Cunauri! Torununun hayatta kalmasına çok sevindim! Bu kötülüğün bir daha başına gelmemesi için dua ediyorum!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

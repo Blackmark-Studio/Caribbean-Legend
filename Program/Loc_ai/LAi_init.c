@@ -65,7 +65,7 @@ void LocAi_Init(ref loc)
 		}
 		int idx;
 		//проверяем таймер запрета генерации офицеров в локацию. eddy
-		if (CheckAttribute(loc, "DisableOfficers.QtyDays") && GetNpcQuestPastDayParam(loc, "DisableOfficers") > sti(loc.DisableOfficers.QtyDays))
+		if (CheckAttribute(loc, "DisableOfficers.QtyDays") && GetNpcQuestPastDayParam(loc, "DisableOfficers") > int(loc.DisableOfficers.QtyDays))
 		{
 			DeleteAttribute(loc, "DisableOfficers"); //если есть и истек срок - сносим флаг запрета
 		}
@@ -81,7 +81,7 @@ void LocAi_Init(ref loc)
 					LAi_UseAtidoteBottle(&Characters[idx]);
 				}
 
-				if (Characters[idx].location == pchar.location)) continue; // fix
+				if (Characters[idx].location == pchar.location) continue; // fix
 				DeleteAttribute(&Characters[idx], "location");
 				Characters[idx].location = pchar.location;
 				Characters[idx].location.group = "officers";

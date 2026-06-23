@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "へっ！悪いな、船長。確かに、ルヴァスールの命令には騎士だけじゃなく、 その仲間全員を始末しろってはっきり書いてあったんだ。全員だぜ、わかるか？あいつらは甘く見ちゃいけねえし、 要求も真剣に受け止めるべきだ。俺の仕事の邪魔はしないでくれよ、船長。あと一つだけ汚れ仕事を片付けたら、 今度こそ最後まであんたに付き合うって誓うぜ！\n";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "くたばりやがれ！汚れ仕事は自分でやれ。お前の誓いは受け取ったぜ、命懸けで守るんだな。本当に分かってるか？";

@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "Weißer Bruder klug wie Eule, schlau wie Schlange. Ärger geschieht dem Indianer. Groß-großes Kanu der weißen Männer kommt zu meinem Dorf. Sie nehmen viele Cayman, mein Volk, setzen sie auf ihr Kanu und bringen sie zur Mutter aller Gewässer...";
 			link.l1 = "Warte... sagst du, dass dein Volk von weißen Männern von einem Schiff versklavt wurde?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Ich bin froh, dass die Tränen der Götter dir gehören, Bruder der Arawak!","Indianer danken dir, tapferes Bleichgesicht!","Nimm unseren Fang, weißer Bruder!");
 			link.l1 = LinkRandPhrase("Freut mich, dir zu helfen!","Danke, rothäutiger Bruder!","Großartig!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Canauri dankt dir nochmals, bleichgesichtiger Bruder! Du rettest alle Kanus mit dem Indianer! Für Canauri ist es sehr wichtig, alle Kanus zu retten, weil du auch den Enkel von Canauri rettest, den das böse Bleichgesicht in die Sklaverei nimmt. Als Kind liebte mein Enkel es sehr zu schwimmen, und Kanauri gab ihm dieses verzauberte Amulett, damit der Enkel nicht ertrinkt. Nun will der Enkel nicht mehr schwimmen und gibt das Amulett an mich, damit ich es dir geben kann, bleichgesichtiger Bruder. Ich hoffe, dass die Tränen der Götter und dieses Geschenk eine ausreichende Belohnung für das Leben der Arawak sein werden. Und jetzt verabschieden wir uns - es ist Zeit für uns, in unser Heimatdorf zurückzukehren.";
 				link.l1 = "Viel Glück, Cunauri! Schön, dass dein Enkel überlebt hat! Ich bete, dass dieses Übel dich nie wieder trifft!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

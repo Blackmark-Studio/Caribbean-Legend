@@ -4,7 +4,7 @@ bool SF_InitConditions(ref context, ref situation, bool fromStory = false)
 	if (curLocation == xiStr("Open Sea")) return false;
 
 	int crewQty = GetCrewQuantity(pchar);
-	int enemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.nation));
+	int enemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.nation));
 
 	if (crewQty >= 50) situation.a.a = 20;
 

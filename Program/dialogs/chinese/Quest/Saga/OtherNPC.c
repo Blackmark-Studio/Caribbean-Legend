@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_1_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_MoveCharacter(NPChar, "EnemyFight");
 			LAi_group_Attack(NPChar, Pchar);
 			LAi_group_SetCheck("EnemyFight", "Saga_KillGonsalesA");
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_3":
 			dialog.text = "哈哈, 看看这只无辜的羔羊! 我建议你赔偿我的损失, 因为你是罪魁祸首。 给我一万五千比索, 我就当你从没来过我家。 ";
-			if (sti(pchar.money) >= 15000)
+			if (int(pchar.money) >= 15000)
 			{
 				link.l1 = "你们都这么记仇... 这是你的钱。 记住, 如果有人发现我来过这个镇子, 我会回来找你。 ";
 				link.l1.go = "GonsalesA_3_4";
@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_6":
 			DialogExit();
-			iTemp = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
+			iTemp = int(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
 			for (i=1; i<=2; i++)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("SpSold"+i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", iTemp, SPAIN, 0, true, "soldier"));
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			dialog.text = "我看你喜欢我的弯刀。 如果你想要, 我可以卖给你。 我不会要太多, 我很想喝些朗姆酒, 但我口袋空空。 ";
 			link.l1 = "我到底为什么需要它? 森林魔鬼让我向你问好。 ";
 			link.l1.go = "GonsalesB_1_1";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l2 = "嗯, 是的。 你确实有一把好弯刀。 多少钱? ";
 				link.l2.go = "GonsalesB_2_1";
@@ -353,7 +353,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesB_3_4":
 			dialog.text = "在你曾经抢劫过的城市中间? 你什么也做不了。 所以, 总结一下... 我们这样做: 你现在给我... 比如说, 一万比索。 我想这足够一个月了。 然后你走你的路! 不管是去找你亲爱的亨利, 去斯文森那里, 还是去找你选择的任何其他魔鬼... 如果你不给, 我只需要大喊, 他们就会把你拖进一个专门准备的。 装满酷刑工具的私人房间。 ";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "该死的, 拿上你的一万比索, 从我的视线中消失! 上帝保佑, 我再也不想见到你。 ";
 				link.l1.go = "GonsalesB_3_5";
@@ -405,14 +405,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GonsalesB_3_10":
-			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
+			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && int(pchar.reputation.nobility) < 48)
 			{
 				dialog.text = "魔鬼! 查理.普林斯本人邀请我加入他的船员! 该死的, 我同意! 把我的刀和一万比索还给我。 从没想过会是这样! ";
 				link.l1 = "给。 闭上你的嘴: 这个城市里没人需要知道我是谁, 明白吗? ";
 				link.l1.go = "GonsalesB_3_11";
 				break;
 			}
-			if(makeint(pchar.reputation.nobility) > 47)
+			if(int(pchar.reputation.nobility) > 47)
 			{
 				dialog.text = "不。 你可能是个不错的船长, 但在我看来你有点太紧张了。 是的, 你曾经通过对卡塔赫纳的大胆突袭让西班牙人害怕 - 但那都是在马库斯.泰雷克斯的帮助下。 你没有勇气自己进行诚实的掠夺。 所以, 把钱交出来! ";
 			}
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "不。 你确实是个臭名昭著的海盗, 但作为船长, 你看起来并不令人印象深刻。 你只是在马库斯.泰雷克斯的帮助下才设法掠夺了殖民地 - 你自己甚至不敢登上一艘破旧的单桅帆船。 所以, 把钱交出来! ";
 			}
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "该死的, 拿上你的一万比索, 从我的视线中消失! 上帝保佑, 我再也不想见到你。 ";
 				link.l1.go = "GonsalesB_3_5";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 		case "saga_trap_1":
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//允许战斗
-			int n = makeint(MOD_SKILL_ENEMY_RATE/3);
+			int n = int(MOD_SKILL_ENEMY_RATE/3);
 			for (i=1; i<=3+n; i++)
 			{	
 				sld = characterFromId("sagatrap_sold_"+i);
@@ -1555,8 +1555,8 @@ void ProcessDialogEvent()
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
 			}
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
-			int iScl = 25+2*sti(pchar.rank);
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+			int iScl = 25+2*int(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
 			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
@@ -1583,7 +1583,7 @@ void ProcessDialogEvent()
 			dialog.text = "我想在你具有挑战性的事业中为你提供支持。 看这里! 一个魔法杯子和一种禁忌药膏。 杯子会帮助你在饮酒方面, 药膏会帮助你在爱情方面。 你会选哪个? 只要两千! ";
 			link.l1 = "我什么都不需要 —我已经给了你们这类人一大笔银子了。 ";
 			link.l1.go = "helendrinking_gypsy_refuse";
-			if (sti(pchar.money) >= 2000) {
+			if (int(pchar.money) >= 2000) {
 				link.l2 = "你说禁忌药膏? 好吧, 我承认我不是圣人。 给我。 ";
 				link.l2.go = "helendrinking_gypsy_fuck";
 				link.l3 = "一个杯子? 我看起来像个酒鬼吗? 好吧, 我是谁啊... 我要了! ";
@@ -1623,7 +1623,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "totem_03");
 			Log_Info("获得护身符'丘比特香膏'! ");
 			PlaySound("interface\important_item.wav");
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
@@ -2071,7 +2071,7 @@ void ProcessDialogEvent()
 		case "francois_sit_kill":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
@@ -2080,7 +2080,7 @@ void ProcessDialogEvent()
 		case "francois_sit_taunt":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);

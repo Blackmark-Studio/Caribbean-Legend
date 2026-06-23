@@ -54,9 +54,9 @@ void OZ_Kuznets_Agree()
 
 void OZ_GameCards()
 {
-	pchar.OZ_TrueMoney = sti(pchar.money); 
+	pchar.OZ_TrueMoney = int(pchar.money);
 	pchar.OZ_StartGameMoney = 100000; // фиксированная сумма для карточной игры
-	pchar.money = sti(pchar.OZ_StartGameMoney); 
+	pchar.money = int(pchar.OZ_StartGameMoney);
 
 	sld = CharacterFromID("OZ_Shuler");
 	sld.money = 100000;
@@ -69,12 +69,12 @@ void OZ_GameCards()
 	LaunchCardsGame();
 }
 
-void OZ_GameWin(string qName)
+void OZ_GameWin(string qName = "")
 {
 	if (CheckAttribute(pchar, "OZ_TrueMoney") && CheckAttribute(pchar, "OZ_StartGameMoney"))
 	{
-		int delta = sti(pchar.money) - sti(pchar.OZ_StartGameMoney);
-		pchar.money = sti(pchar.OZ_TrueMoney) + delta;
+		int delta = int(pchar.money) - int(pchar.OZ_StartGameMoney);
+		pchar.money = int(pchar.OZ_TrueMoney) + delta;
 
 		DeleteAttribute(pchar, "OZ_TrueMoney");
 		DeleteAttribute(pchar, "OZ_StartGameMoney");
@@ -91,8 +91,8 @@ void OZ_GameLoss(string qName)
 {
 	if (CheckAttribute(pchar, "OZ_TrueMoney") && CheckAttribute(pchar, "OZ_StartGameMoney"))
 	{
-			int delta = sti(pchar.money) - sti(pchar.OZ_StartGameMoney);
-			pchar.money = sti(pchar.OZ_TrueMoney) + delta;
+			int delta = int(pchar.money) - int(pchar.OZ_StartGameMoney);
+			pchar.money = int(pchar.OZ_TrueMoney) + delta;
 
 			if (delta < 0) 
 			{
@@ -131,14 +131,14 @@ void OZ_GameCards_Duel()
 	PChar.quest.OZ_Shuler_Bitva_3.function = "OZ_Shuler_Bitva_3";
 }
 
-void OZ_GameCards_Duel_2(string qName)
+void OZ_GameCards_Duel_2(string qName = "")
 {
 	LAi_LocationFightDisable(loadedLocation, true);
 	chrDisableReloadToLocation = false;
 	DoQuestCheckDelay("hide_weapon", 1.2);
 }
 
-void OZ_GameCards_Lose(string qName)
+void OZ_GameCards_Lose(string qName = "")
 {
 	chrDisableReloadToLocation = false;
 	AddQuestRecord("OZ", "4");
@@ -271,6 +271,7 @@ void OZ_Frantsuz_2()
 	{
 	AddQuestRecord("OZ", "9");
 	}
+	pchar.questTemp.OZ_BookSold = true;
 	sld = CharacterFromID("OZ_Blacksmith");
 	sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
 	sld.dialog.currentnode = "OZ_Kuznets_Fail";
@@ -293,7 +294,7 @@ void OZ_Kuznets_Nagrada()
 	if (!CheckAttribute(pchar, "questTemp.OZ_Dolg"))
 	{
 		CloseQuestHeader("OZ");
-		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
@@ -338,7 +339,7 @@ void OZ_Grot_2(string qName)
 	TakeItemFromCharacter(pchar, "OZ_letter");
 	ref sld = &locations[FindLocation("Trinidad_Grot")];
 	sld.box1 = Items_MakeTime(0, 0, 0, 2025);
-	if (CheckAttribute(pchar, "questTemp.OZ_Draka")){sld.box1.items.gold = 10000;} else {sld.box1.items.gold = 100000}
+	if (CheckAttribute(pchar, "questTemp.OZ_Draka")){sld.box1.items.gold = 10000;} else {sld.box1.items.gold = 100000;}
 	sld.box1.items.map_normal = 1;
 	sld.box1.items.pistol5 = 1;
 	sld.box1.items.GunPowder = 50;
@@ -346,7 +347,7 @@ void OZ_Grot_2(string qName)
 	sld.box1.items.potionwine = 2;
 	sld.box1.items.potion1 = 5;
 	sld.box1.items.potion3 = 1;
-	SetFunctionLocatorCondition("OZ_Grot_3", "Trinidad_Grot", "box", "box1", false)
+	SetFunctionLocatorCondition("OZ_Grot_3", "Trinidad_Grot", "box", "box1", false);
 }
 
 void OZ_Grot_3(string qName)
@@ -392,6 +393,17 @@ void OZ_Grot_5(string qName)
 		sld.dialog.currentnode = "OZ_Felip_11";
 		AddLandQuestMark(sld, "questmarkmain");
 		SetFunctionTimerCondition("OZ_Felip_timer", 0, 0, 3, false);
+		return;
+	}
+
+	if (CheckAttribute(pchar, "questTemp.OZ_BookSold"))
+	{
+		DeleteAttribute(pchar, "questTemp.OZ_BookSold");
+		AddQuestRecord("OZ", "13");
+		CloseQuestHeader("OZ");
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 }
 
@@ -407,7 +419,7 @@ void OZ_Felip_timer(string qName)
 	if (!CheckCharacterItem(pchar, "OZ_book"))
 	{
 		CloseQuestHeader("OZ");
-		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
@@ -422,7 +434,7 @@ void OZ_Felip_good()
 	if (!CheckCharacterItem(pchar, "OZ_book"))
 	{
 		CloseQuestHeader("OZ");
-		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
@@ -453,7 +465,7 @@ void OZ_Felip_bad_2(string qName)
 	if (!CheckCharacterItem(pchar, "OZ_book"))
 	{
 		CloseQuestHeader("OZ");
-		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}

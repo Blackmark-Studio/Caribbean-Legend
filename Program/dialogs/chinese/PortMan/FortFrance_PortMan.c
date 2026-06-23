@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// 杰森'长久而幸福'
 		case "LH_letter":
 			dialog.text = "是的, 你说得对 —有一个信封。 给你, 但首先你需要支付投递费 —一万两千银比索。 ";
-			if (sti(pchar.money) >= 12000)
+			if (int(pchar.money) >= 12000)
 			{
 				link.l1 = "我一直怀疑你的生意本质上是小偷行当, 但不知怎么的我错过了邮件, 嗯。 给你钱。 ";
 				link.l1.go = "LH_letter_1";

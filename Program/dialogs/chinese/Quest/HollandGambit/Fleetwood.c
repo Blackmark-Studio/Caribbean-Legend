@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 				}
 				if (pchar.questTemp.HWIC.Eng == "GotoPortoffice")
 				{
-					if (sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+					if (int(Pchar.Ship.Type) != SHIP_NOTUSED)
 					{
 						dialog.text = "我让你停泊你的船。 你甚至听我说吗? ";
 						link.l1 = "当然, 我听了。 我会处理的。 ";
@@ -53,16 +53,16 @@ void ProcessDialogEvent()
 						{
 							sld = GetCharacter(iTemp);
 							pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-							if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE)
+							if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE)
 							{
 							iMir = 1;
-							RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;//清洁船体
+							RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;//清洁船体
 							SetShipSailsFromFile(sld, "ships/parus_silk.tga");
 							SetSailsColor(sld, 0);//白色棉质帆
 							DeleteAttribute(sld, "ship.sails");//修理帆
 							DeleteAttribute(sld, "ship.masts");//返回桅杆
 							}
-							if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
+							if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
 						}
 					}//设置中队中船只存在的标志。 
 					if (iMir == 1 && iVal == 0)//失去瓦尔基里

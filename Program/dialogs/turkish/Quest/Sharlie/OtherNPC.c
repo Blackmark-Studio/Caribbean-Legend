@@ -289,13 +289,13 @@ void ProcessDialogEvent()
 		case "Sharlie_sailor_3":
 			dialog.text = "Were it only myself, I would sign on at once. But I have forty souls from the Ulysses with me. They have trusted me with their future; I must be sure you will not fail them\n"+
 			"What sort of vessel have you?";
-			link.l1 = "Bir gemi gemidir, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Name")))+" . Neden, bu gerçekten bu kadar mı önemli?";
+			link.l1 = "Bir gemi gemidir, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype),"Name")))+" . Neden, bu gerçekten bu kadar mı önemli?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
 			dialog.text = "Biliyor musunuz, Ulysses'ten sonra bir barka ya da tartanede hizmet etmek istemeyiz. Geminizi gördük, tayfa da onayladı\n"+"Şimdi, para meselesi. Önceden 4.800 peso istiyoruz. Sonrasında—her zamanki gibi paylaşıyoruz. Hiçbir abartı yok, emin olabilirsin. Bunu halledebilir misin?";
-			if (sti(Pchar.money) >= 4800)
+			if (int(Pchar.money) >= 4800)
 			{
 				link.l1 = "Çok iyi iş çıkardın! Al bakalım, paran burada.";
 				link.l1.go = "Sharlie_sailor_5";
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_again":
 			dialog.text = "Geri mi döndün, kaptan? Beni ve tayfamı işe almaya hazır mısın? Ceplerimiz hafiflemeye başladı, yüzümüzde tekrar deniz esintisini hissetmemiz gerek!";
-			if (sti(Pchar.money) < 4800)
+			if (int(Pchar.money) < 4800)
 			{
 				link.l1 = "Henüz değil, hâlâ her şeyi hazırlıyorum.";
 				link.l1.go = "exit";
@@ -471,9 +471,9 @@ void ProcessDialogEvent()
 			link.l1 = "Başka seçeneğim yoktu, satılık tek gemi buydu! Hem de bana bir servete patladı. Bildiğin gibi, şu an tamir edecek vaktimiz de yok... Denize açılmadan önce bir tavsiyen var mı?";
 			link.l1.go = "Folke_8";
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
+
 		case "Folke_8":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			if (bOk)
 			{
 				dialog.text = "Well, we are well supplied with powder and shot, Captain. This will do for now; only remember to replenish in time.";
@@ -522,6 +522,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_1":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			dialog.text = "Mühimmat alışverişini bitirdiniz mi, kaptan?";
 			if (bOk)
 			{
@@ -535,9 +536,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_1";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
+
 		case "Folke_10":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			if (bOk)
 			{
 				dialog.text = "Aferin, tayfan için yeterince silah aldın. Yeterli silahımız olmazsa, gemi baskınlarında çok daha fazla adam kaybederiz. Tanrı bizi bundan korusun. Ambarı sık sık kontrol etmeyi unutma\nİhtiyacımızdan biraz fazla silah bulundurmak akıllıca olur. Şu lanet fareler tahta kabzaları ve dipçikleri kemirmeye bayılıyor.";
@@ -560,6 +561,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_2":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			dialog.text = "Silahları almayı bitirdiniz mi, kaptan?";
 			if (bOk)
 			{
@@ -573,9 +575,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_2";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
+
 		case "Folke_11":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			if (bOk)
 			{
 				dialog.text = "Hayır, sanırım bu kadar. Yeterince yiyeceğimiz var, bir de tayfanın romunu da hallettin. Bu akıllıca, çünkü vardiyadan sonra güzel bir soğuk romdan daha iyi bir ilaç yoktur. Denizciler, onlara günlük rom payını veren kaptanları sever ve saygı duyar. Adamlarının 'Rom neden bitti?' diye sormasını asla istemezsin.";
@@ -598,6 +600,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_3":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			dialog.text = "Yiyeceklerimizi ve romumuzu aldın mı, kaptan?";
 			if (bOk)
 			{
@@ -622,7 +625,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13a":
-			Npchar.loyality = makeint(Npchar.loyality) - 5;
+			Npchar.loyality = int(Npchar.loyality) - 5;
 			ChangeCharacterComplexReputation(pchar,"authority", 5);
 			dialog.text = "O zaman beni dümenci olarak atayın, ben de güvertede yerimi alayım.";
 			link.l1 = "...";
@@ -630,7 +633,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13":
-			Npchar.loyality = makeint(Npchar.loyality) + 5;
+			Npchar.loyality = int(Npchar.loyality) + 5;
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
 			// <-- legendary edition
 			dialog.text = "O halde beni dümenci olarak atayın, ben de güvertede yerimi alayım.";
@@ -1033,7 +1036,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "Şifalı bir öz mü? O zaman 90 peso, evladım. Malzemeler için, tabii ki.";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "Teşekkür ederim, baba.";
 				link.l1.go = "potion_pay";
@@ -1049,7 +1052,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "Şifa veren bir iksir mi? 500 peso, evladım.";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "Teşekkür ederim, baba.";
 				link.l1.go = "potion_pay";
@@ -1065,7 +1068,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "Bir panzehir mi? 200 peso, evladım.";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "Teşekkür ederim, baba.";
 				link.l1.go = "potion_pay";
@@ -1081,7 +1084,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "Bitkisel bir karışım mı? 900 peso, evladım.";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "Teşekkür ederim, baba.";
 				link.l1.go = "potion_pay";
@@ -1094,8 +1097,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = " 'Çünkü sana sağlık vereceğim ve yaralarını iyileştireceğim, diyor Rab.' İşte ilacın. Dominus vobiscum! ";
@@ -1376,7 +1379,7 @@ case "Europe":
 			dialog.text = "Tanrıların gözyaşları. Siz onlara inci diyorsunuz. Birçok inci.";
 			link.l1 = "Kararımı verdim, Kakao Yaprağı. Burada bekle, silah tüccarına gidiyorum. İhtiyacım olanları alıp döneceğim.";
 			link.l1.go = "ZsI_ListKakao_Soglasen_5";
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				link.l2 = "Kararımı verdim, Kakao Yaprağı. İhtiyacın olan şey zaten bende var. Al bakalım.";
 				link.l2.go = "ZsI_ListKakao_Soglasen_2";
@@ -1415,7 +1418,7 @@ case "Europe":
 			LAi_SetOfficerType(sld);
 			sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 			sld.Dialog.CurrentNode = "Tichingitu_officer";
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_2":
@@ -1428,7 +1431,7 @@ case "Europe":
 			Log_Info("You have received 180 small pearls");
 			PlaySound("Interface\important_item.wav");
 			DeleteAttribute(pchar, "questTemp.ZsI_PokupaemPistolety");
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				RemoveCharacterEquip(PChar, GUN_ITEM_TYPE);
 				RemoveItems(PChar, "pistol1", 2);
@@ -1453,7 +1456,7 @@ case "Europe":
 			chrDisableReloadToLocation = false;
 			
 			ReturnOfficer_Tichingitu();
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_5":
@@ -1791,7 +1794,7 @@ case "Europe":
 			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Charles", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.CompanionEnemyEnable = true;
 			SetCrewQuantity(npchar, 35);
 			SetCharacterGoods(npchar, GOOD_ROPES, 30);
@@ -1869,12 +1872,12 @@ case "Europe":
 		
 		case "MOT_Barbie_109":
 			dialog.text = "On bin peso. Mütevazı bir meblağ, ama halatları kaçakçılara satarsak hatırı sayılır bir kazanç elde ederiz.";
-			if (sti(pchar.Money) >= 10000)
+			if (int(pchar.Money) >= 10000)
 			{
 				link.l1 = "Böyle bir fırsatı kaçırırsam kendimi asla affetmem. Gümüşü al ve malların hemen gemime teslim edilmesini sağla.";
 				link.l1.go = "MOT_Barbie_ContraSoglasen";
 			}
-			if (sti(pchar.Money) >= 7000)
+			if (int(pchar.Money) >= 7000)
 			{
 				link.l2 = "Bu iş oldukça riskli, dostum. Biraz orta yol bulalım, ne dersin? Halatlarını yedi bin karşılığında kabul edeceğim.";
 				link.l2.go = "MOT_Barbie_ContraTorg";
@@ -1925,7 +1928,7 @@ case "Europe":
 			{
 				Notification_Skill(false, 25, SKILL_COMMERCE);
 				dialog.text = "Yapamam, Kaptan. Mallarım ciddi ve ciddi bir yaklaşım gerektiriyor. Çoğu özgür kaptan stratejik mallarla ticaret yapmaya cesaret edemez. Ne yazık ki, burada pazarlık etmek yersiz.";
-				if (sti(pchar.Money) >= 10000)
+				if (int(pchar.Money) >= 10000)
 				{
 					link.l1 = "Böyle bir fırsatı kaçırırsam kendimi asla affetmem. Gümüşü al ve malların hemen gemime teslim edilmesini sağla.";
 					link.l1.go = "MOT_Barbie_ContraSoglasen";
@@ -2145,7 +2148,7 @@ case "Europe":
 		case "Del_hire":
 			if (CheckAttribute(pchar, "questTemp.Del_SniziliTsenu"))
 			{
-				if (sti(pchar.Money) >= 2500)
+				if (int(pchar.Money) >= 2500)
 				{
 					AddMoneyToCharacter(pchar, -2500);
 					NextDiag.TempNode = "OnboardSoon";
@@ -2163,7 +2166,7 @@ case "Europe":
 			}
 			else
 			{
-				if (sti(pchar.Money) >= 4000)
+				if (int(pchar.Money) >= 4000)
 				{
 					AddMoneyToCharacter(pchar, -4000);
 					NextDiag.TempNode = "Del_OnboardSoon";
@@ -2292,14 +2295,14 @@ case "Europe":
 		case "TK_Kapitan_Plen":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.DontRansackCaptain = true;
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", sti(PChar.rank), PIRATE, -1, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", int(PChar.rank), PIRATE, -1, false, "pirate"));
 			sld.name = "Daniel";
 			sld.lastname = "Montbars";
 			AddPassenger(pchar, sld, false);
@@ -2313,7 +2316,7 @@ case "Europe":
 		case "TK_Kapitan_Otpustil":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -2509,7 +2512,7 @@ case "Europe":
 		
 		case "VsD_Tsyganka_4":
 			dialog.text = "Yerel halkın kutsal saydığı güçlü bir tılsım var. Ahşap onun isteğine boyun eğer, marangozluktan anlamayanlar bile onu takınca usta kesilir. Sadece bin peso karşılığında senin olabilir, sevgili dostum.";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Pekala, anlaştık. Elimden gelen her yardıma ihtiyacım var.";
 				link.l1.go = "VsD_Tsyganka_Da";

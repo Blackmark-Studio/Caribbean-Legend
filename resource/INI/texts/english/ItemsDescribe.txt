@@ -1511,3 +1511,5 @@ itmname_blade_34 {Drowned One's Sword}
 itmdescr_blade_34 {This pirate sword, which you found aboard the frozen vessel, is encrusted with coral and polyps. It is long and heavy enough to deliver powerful thrusts and cuts from the third position with ease.}
 itmname_greenIdol {Green Stone Idol}
 itmdescr_greenIdol {This idol was carved by your own hand from stone in a dream. Its unnatural shapes and hideous symbols inspire revulsion and cloud the mind. At times, it seems to whisper something to you...}
+itmname_nocturlabe {Nocturlabe}
+itmdescr_nocturlabe {A clever instrument that allows one to determine the exact time by the stars. Greatly simplifies and speeds up sea voyages.}

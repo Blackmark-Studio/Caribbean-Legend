@@ -6,55 +6,55 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
     float	fDistance;
     bool    bSuccess = false;
 
-    //Log_SetStringToLog("Корабль " + rCharacter.Ship.Name + " cap="+rCharacter.id+" начинает абордаж " + Characters[sti(rCharacter.SeaAI.Task.Target)].Ship.Name+" cap="+Characters[sti(rCharacter.SeaAI.Task.Target)].id);
+    //Log_SetStringToLog("Корабль " + rCharacter.Ship.Name + " cap="+rCharacter.id+" начинает абордаж " + Characters[int(rCharacter.SeaAI.Task.Target)].Ship.Name+" cap="+Characters[int(rCharacter.SeaAI.Task.Target)].id);
     if (fMinEnemyDistance < 70)
     {
-	    int   bGrapplingProfessional  = sti(rCharacter.TmpPerks.GrapplingProfessional);
-        float fOurGrappling           = 10 * stf(rCharacter.TmpSkill.Grappling);
+	    int   bGrapplingProfessional  = int(rCharacter.TmpPerks.GrapplingProfessional);
+        float fOurGrappling           = 10 * float(rCharacter.TmpSkill.Grappling);
 	    float fOurMaxAbordageDistance = 15 + 7 * (bGrapplingProfessional + fOurGrappling);
 
 		//navy 18.02.08 Запрет абордажа
-		if (CheckAttribute(rCharacter, "Tasks.CanBoarding") && !sti(rCharacter.Tasks.CanBoarding)) return false;
+		if (CheckAttribute(rCharacter, "Tasks.CanBoarding") && !int(rCharacter.Tasks.CanBoarding)) return false;
 		if (CheckAttribute(rCharacter, "AutoBoardingDisable")) return false;
 
 		// Addon 2016-1 Jason Пиратская линейка
-		if (sti(RealShips[sti(rCharacter.ship.type)].basetype) == SHIP_POLACRE_QUEST && rCharacter.id == "Ignasio") return false;
+		if (int(RealShips[int(rCharacter.ship.type)].basetype) == SHIP_POLACRE_QUEST && rCharacter.id == "Ignasio") return false;
 		if (rCharacter.id == "Terrax") return false;
 
 		if (fMinEnemyDistance > fOurMaxAbordageDistance) return bSuccess;
 	    if (!CheckAttribute(rCharacter, "SeaAI.Task.Target")) return bSuccess;
 
-        ref  rShipCharacter = GetCharacter(sti(rCharacter.SeaAI.Task.Target));
+        ref  rShipCharacter = GetCharacter(int(rCharacter.SeaAI.Task.Target));
         if (LAi_IsDead(rShipCharacter)) return bSuccess;
 
         if (Ship_GetDistance2D(rCharacter, rShipCharacter) > 90) return bSuccess;// fix левых дистанций
 
-	    int  iRelation = SeaAI_GetRelation(sti(rCharacter.index), sti(rShipCharacter.index));
+	    int  iRelation = SeaAI_GetRelation(int(rCharacter.index), int(rShipCharacter.index));
 
-	    if (!Character_IsAbordageEnable(rShipCharacter) || sti(rShipCharacter.index) == GetMainCharacterIndex()) return bSuccess;
+	    if (!Character_IsAbordageEnable(rShipCharacter) || int(rShipCharacter.index) == GetMainCharacterIndex()) return bSuccess;
 
 		if (iRelation != RELATION_ENEMY) return bSuccess;
 		// решение об абордаже
-		if (sti(rCharacter.Ship.Crew.Quantity) < (stf(rShipCharacter.Ship.Crew.Quantity) * 0.6)) return bSuccess;
+		if (int(rCharacter.Ship.Crew.Quantity) < (float(rShipCharacter.Ship.Crew.Quantity) * 0.6)) return bSuccess;
 
 	    float fOurHP                = Ship_GetHP(rCharacter);
-	    float fOurFencing           = stf(rCharacter.TmpSkill.Grappling); //Fencing
-	    float fOurCrewFencing       = (0.1 + fOurFencing * stf(rCharacter.Ship.Crew.Quantity)*GetCrewExp(rCharacter, "Soldiers"));
+	    float fOurFencing           = float(rCharacter.TmpSkill.Grappling); //Fencing
+	    float fOurCrewFencing       = (0.1 + fOurFencing * float(rCharacter.Ship.Crew.Quantity)*GetCrewExp(rCharacter, "Soldiers"));
 
 	    if (IsCompanion(rCharacter))
 	    {           // учёт оружия
-	       fOurCrewFencing       = (0.1 + fOurFencing * GetWeaponCrew(rCharacter, sti(rCharacter.Ship.Crew.Quantity))*GetCrewExp(rCharacter, "Soldiers"));
+	       fOurCrewFencing       = (0.1 + fOurFencing * GetWeaponCrew(rCharacter, int(rCharacter.Ship.Crew.Quantity))*GetCrewExp(rCharacter, "Soldiers"));
 	    }
 	    float fMorale  = GetCharacterCrewMorale(rCharacter); 
         fOurCrewFencing = fOurCrewFencing * (0.5 + fMorale / MORALE_MAX);
 
 	    float fEnHP                = Ship_GetHP(rShipCharacter);
-	    float fEnFencing           = stf(rShipCharacter.TmpSkill.Grappling); //Fencing
-	    float fEnCrewFencing       = (0.1 + fEnFencing * stf(rShipCharacter.Ship.Crew.Quantity) *GetCrewExp(rShipCharacter, "Soldiers"));
+	    float fEnFencing           = float(rShipCharacter.TmpSkill.Grappling); //Fencing
+	    float fEnCrewFencing       = (0.1 + fEnFencing * float(rShipCharacter.Ship.Crew.Quantity) *GetCrewExp(rShipCharacter, "Soldiers"));
 
 	    if (IsCompanion(rShipCharacter))
 	    {   // учёт оружия
-	       fEnCrewFencing       = (0.1 + fEnFencing * GetWeaponCrew(rShipCharacter, sti(rShipCharacter.Ship.Crew.Quantity))*GetCrewExp(rShipCharacter, "Soldiers") );
+	       fEnCrewFencing       = (0.1 + fEnFencing * GetWeaponCrew(rShipCharacter, int(rShipCharacter.Ship.Crew.Quantity))*GetCrewExp(rShipCharacter, "Soldiers") );
 	    }
         fMorale  = GetCharacterCrewMorale(rShipCharacter); 
         fEnCrewFencing = fEnCrewFencing * (0.5 + fMorale / MORALE_MAX);
@@ -77,13 +77,13 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 			        Log_Info(XI_ConvertString("OtherShip") + rShipCharacter.Ship.Name + XI_ConvertString("Boarded"));
 					trace(XI_ConvertString("OtherShip") + rShipCharacter.Ship.Name + XI_ConvertString("Boarded"));
 			    }
-			    deadCrew = sti(rCharacter.Ship.Crew.Quantity) * fEnCrewFencing / (fOurCrewFencing*1.8);
+			    deadCrew = int(int(rCharacter.Ship.Crew.Quantity) * fEnCrewFencing / (fOurCrewFencing*1.8));
 				if (IsCompanion(rShipCharacter))
 				{
 					Statistic_AddValue(pchar, "Sailors_dead", deadCrew);
 					Achievment_SetStat(21, deadCrew);
 				}
-			    SetCrewQuantity(rCharacter, makeint(sti(rCharacter.Ship.Crew.Quantity) - deadCrew));
+			    SetCrewQuantity(rCharacter, int(int(rCharacter.Ship.Crew.Quantity) - deadCrew));
 			    if (IsCompanion(rCharacter))
 			    {
 			        RemoveCharacterGoodsSelf(rCharacter, GOOD_WEAPON, deadCrew);
@@ -94,13 +94,13 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 					SeaExchangeCharactersShips(rCharacter, rShipCharacter, true, true);
 				}
 				DoTakeAbordageGoods(rCharacter, rShipCharacter);
-				if (IsCompanion(rCharacter)) LeaveAbordageShipDrift(sti(rShipCharacter.index), sti(rCharacter.index));
-			    else ShipDead(sti(rShipCharacter.index),KILL_BY_ABORDAGE,sti(rCharacter.index));
+				if (IsCompanion(rCharacter)) LeaveAbordageShipDrift(int(rShipCharacter.index), int(rCharacter.index));
+			    else ShipDead(int(rShipCharacter.index),KILL_BY_ABORDAGE,int(rCharacter.index));
 				//navy <--
 
 				// ~!~ TO_DO: REF
 				// Победили - валим в сад
-			    Ship_SetTaskRunaway(SECONDARY_TASK, sti(rCharacter.index), -1);
+			    Ship_SetTaskRunaway(SECONDARY_TASK, int(rCharacter.index), -1);
 				DeleteAttribute(rCharacter, "SeaAI.Task.Target "); // Убрать цель
             }
             else
@@ -108,16 +108,16 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
                 if (IsCompanion(rCharacter))
 			    {
 			        Log_Info(XI_ConvertString("OurShip") + rCharacter.Ship.Name + XI_ConvertString("BoardLost"));
-					Statistic_AddValue(pchar, "Sailors_dead", sti(rCharacter.Ship.Crew.Quantity));
-					Achievment_SetStat(21, sti(rCharacter.Ship.Crew.Quantity));
+					Statistic_AddValue(pchar, "Sailors_dead", int(rCharacter.Ship.Crew.Quantity));
+					Achievment_SetStat(21, int(rCharacter.Ship.Crew.Quantity));
 			    }
 			    else
 			    {
 			        Log_Info(XI_ConvertString("OtherShip") + rCharacter.Ship.Name + XI_ConvertString("BoardLost"));
 					trace(XI_ConvertString("OtherShip") + rCharacter.Ship.Name + XI_ConvertString("BoardLost"));
 			    }
-			    deadCrew = sti(rShipCharacter.Ship.Crew.Quantity) * fOurCrewFencing/ (fEnCrewFencing*1.8);
-			    SetCrewQuantity(rShipCharacter, makeint(sti(rShipCharacter.Ship.Crew.Quantity) - deadCrew));
+			    deadCrew = int(int(rShipCharacter.Ship.Crew.Quantity) * fOurCrewFencing/ (fEnCrewFencing*1.8));
+			    SetCrewQuantity(rShipCharacter, int(int(rShipCharacter.Ship.Crew.Quantity) - deadCrew));
 			    if (IsCompanion(rShipCharacter))
 			    {
 			        RemoveCharacterGoodsSelf(rShipCharacter, GOOD_WEAPON, deadCrew);
@@ -128,8 +128,8 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 					SeaExchangeCharactersShips(rShipCharacter, rCharacter, true, true);
 				}
 				DoTakeAbordageGoods(rShipCharacter, rCharacter);
-				if (IsCompanion(rShipCharacter)) LeaveAbordageShipDrift(sti(rCharacter.index), sti(rShipCharacter.index));
-			    else ShipDead(sti(rCharacter.index),KILL_BY_ABORDAGE,sti(rShipCharacter.index));
+				if (IsCompanion(rShipCharacter)) LeaveAbordageShipDrift(int(rCharacter.index), int(rShipCharacter.index));
+			    else ShipDead(int(rCharacter.index),KILL_BY_ABORDAGE,int(rShipCharacter.index));
 				//navy <--
             }  
 		}
@@ -148,7 +148,7 @@ void SeaExchangeCharactersShips(ref rOneChr, ref rSecChr, bool _showLog, bool _s
 
 	//команда первого (основного) перса...
 	nMyCrew = GetCrewQuantity(rOneChr);
-    float fMor = stf(rOneChr.ship.crew.morale);
+    float fMor = float(rOneChr.ship.crew.morale);
     makearef(arCargoOne, rOneChr.Ship.Crew.Exp);
 	CopyAttributes(&oTmp, arCargoOne); // опыт
 	
@@ -193,9 +193,9 @@ void SeaExchangeCharactersShips(ref rOneChr, ref rSecChr, bool _showLog, bool _s
 	if (_showLog)
 	{
 		Log_Info(GetFullName(rOneChr) + XI_ConvertString("BShipChange") +
-						XI_ConvertString(RealShips[sti(rOneChr.Ship.Type)].BaseName) + " " + rOneChr.Ship.Name + ".");
+						XI_ConvertString(RealShips[int(rOneChr.Ship.Type)].BaseName) + " " + rOneChr.Ship.Name + ".");
 		trace(GetFullName(rOneChr) + XI_ConvertString("BShipChange") +
-						XI_ConvertString(RealShips[sti(rOneChr.Ship.Type)].BaseName) + " " + rOneChr.Ship.Name + ".");				
+						XI_ConvertString(RealShips[int(rOneChr.Ship.Type)].BaseName) + " " + rOneChr.Ship.Name + ".");
 	}
 }
 //сравнить два корабля
@@ -205,23 +205,23 @@ bool CheckChanceOfBetterShip(ref rChar, ref rTryChar)
 	ref  rShip;
 	ref  rTryShip;
 
-	rShip    = GetRealShip(sti(rChar.Ship.Type));
-	rTryShip = GetRealShip(sti(rTryChar.Ship.Type));
+	rShip    = GetRealShip(int(rChar.Ship.Type));
+	rTryShip = GetRealShip(int(rTryChar.Ship.Type));
 
 	//запрет меняться кораблями 18.02.08
-	if (CheckAttribute(rChar, "Tasks.CanChangeShipAfterBoarding") && !sti(rChar.Tasks.CanChangeShipAfterBoarding)) return false;
-    if (CheckAttribute(rChar, "Tasks.CanBoarding") && !sti(rChar.Tasks.CanBoarding)) return false;
+	if (CheckAttribute(rChar, "Tasks.CanChangeShipAfterBoarding") && !int(rChar.Tasks.CanChangeShipAfterBoarding)) return false;
+    if (CheckAttribute(rChar, "Tasks.CanBoarding") && !int(rChar.Tasks.CanBoarding)) return false;
     
 	// Addon 2016-1 Jason Пиратская линейка // правки релиза
-	//if (sti(RealShips[sti(rCharacter.ship.type)].basetype) == SHIP_POLACRE_QUEST && rCharacter.id == "Ignasio") return false;
+	//if (int(RealShips[int(rCharacter.ship.type)].basetype) == SHIP_POLACRE_QUEST && rCharacter.id == "Ignasio") return false;
 	//if (rCharacter.id == "Terrax") return false;
     
 	//заглушка для квестовых кораблей с 48ф пушками. 22.09.05
-	if (sti(rChar.Ship.Cannons.Type) == CANNON_TYPE_CANNON_LBS48 || sti(rTryChar.Ship.Cannons.Type) == CANNON_TYPE_CANNON_LBS48) return false;
+	if (int(rChar.Ship.Cannons.Type) == CANNON_TYPE_CANNON_LBS48 || int(rTryChar.Ship.Cannons.Type) == CANNON_TYPE_CANNON_LBS48) return false;
 
 	
 
-	fChance = (stf(rShip.Class) / stf(rTryShip.Class)) * 0.3; //при равных классах база 30%
+	fChance = (float(rShip.Class) / float(rTryShip.Class)) * 0.3; //при равных классах база 30%
 
 	//форс-мажор... тонем
 	if (GetHullPercent(rChar) < 10 && GetHullPercent(rTryChar) > 30)
@@ -230,12 +230,12 @@ bool CheckChanceOfBetterShip(ref rChar, ref rTryChar)
 	}
 
 	//пока взял примерно из опроса... в сумме 75% макс, может нужно будет добавить...
-	if (sti(rShip.SpeedRate) < sti(rTryShip.SpeedRate))				fChance += 0.2;
-	if (sti(rShip.TurnRate) < sti(rTryShip.TurnRate))				fChance += 0.15;
-	if (sti(rShip.CannonsQuantity) < sti(rTryShip.CannonsQuantity)) fChance += 0.1;
-	if (sti(rShip.MaxCrew) < sti(rTryShip.MaxCrew))					fChance += 0.1;
-	if (sti(rShip.Capacity) < sti(rTryShip.Capacity))				fChance += 0.1;
-	if (sti(rShip.Price) < sti(rTryShip.Price))
+	if (int(rShip.SpeedRate) < int(rTryShip.SpeedRate))				fChance += 0.2;
+	if (int(rShip.TurnRate) < int(rTryShip.TurnRate))				fChance += 0.15;
+	if (int(rShip.CannonsQuantity) < int(rTryShip.CannonsQuantity)) fChance += 0.1;
+	if (int(rShip.MaxCrew) < int(rTryShip.MaxCrew))					fChance += 0.1;
+	if (int(rShip.Capacity) < int(rTryShip.Capacity))				fChance += 0.1;
+	if (int(rShip.Price) < int(rTryShip.Price))
 	{
 		fChance += 0.1;
 	}
@@ -266,9 +266,9 @@ void DoTakeAbordageGoods(ref rOneChr, ref rSecChr)
 		for (i=0; i < GetArraySize(&Goods); i++)
 		{
 			itmp = GetCargoGoods(rSecChr, i);
-			if (itmp > 0 && sti(Goods[i].Cost) > maxPrice)
+			if (itmp > 0 && int(Goods[i].Cost) > maxPrice)
 			{
-				maxPrice = sti(Goods[i].Cost);
+				maxPrice = int(Goods[i].Cost);
 				iGood = i;
 			}
 		}
@@ -317,7 +317,7 @@ void PlaceCompanionCloneNearMChr(int _index, bool _isCampus)
 	aref arClone, arReal;
 
 	chr = GetCharacter(GetCompanionIndex(PChar, _index));
-	iTemp = NPC_GeneratePhantomCharacter("citizen", sti(chr.Nation), MAN, 0);  // создать клон
+	iTemp = NPC_GeneratePhantomCharacter("citizen", int(chr.Nation), MAN, 0);  // создать клон
 	if (iTemp != -1)
 	{
 		sld = &Characters[iTemp];
@@ -376,7 +376,7 @@ void CompanionSaveTasks()
 		chr = GetCharacter(GetCompanionIndex(PChar, i));
 		if (CheckAttribute(chr, "Tasks.Clone"))
 		{
-			sld = GetCharacter(sti(chr.Tasks.Clone));
+			sld = GetCharacter(int(chr.Tasks.Clone));
 
 			makearef(arReal, chr.Tasks);
 			makearef(arClone, sld.Tasks);
@@ -432,11 +432,11 @@ bool CheckEnemyCompanionDistance2GoAway(bool _loadForm)
 			for (i=0; i<iFortsNum; i++)
 			{
 				aFort = GetAttributeN(aForts, i);
-				iRelation = sti(aFort.relation);
+				iRelation = int(aFort.relation);
 
-				rFortCharacter = GetCharacter(sti(aFort.idx));
+				rFortCharacter = GetCharacter(int(aFort.idx));
 				if (LAi_IsDead(rFortCharacter)) { continue; }
-				iFortMode = sti(rFortCharacter.Fort.Mode);
+				iFortMode = int(rFortCharacter.Fort.Mode);
 
 				if (iFortMode == FORT_NORMAL || iFortMode == FORT_HOLD_FIRE)
 				{
@@ -457,8 +457,8 @@ bool CheckEnemyCompanionDistance2GoAway(bool _loadForm)
 			{
 				aShip = GetAttributeN(aShips, i);
 
-				rShipCharacter = GetCharacter(sti(aShip.idx));
-				iRelation = sti(aShip.relation);
+				rShipCharacter = GetCharacter(int(aShip.idx));
+				iRelation = int(aShip.relation);
 
 				if (LAi_IsDead(rShipCharacter)) { continue; }
 				if (iRelation != RELATION_ENEMY) { continue; }

@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_1_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_MoveCharacter(NPChar, "EnemyFight");
 			LAi_group_Attack(NPChar, Pchar);
 			LAi_group_SetCheck("EnemyFight", "Saga_KillGonsalesA");
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_3":
 			dialog.text = "하하, 이 순진한 양 좀 봐라! 내 손해를 네가 대신 갚는 게 어떻겠냐? 네가 책임이 있으니 말이지. 만오천 페소면 만족하겠다. 그리고 네가 내 집에 온 적 없던 걸로 해주지.";
-			if (sti(pchar.money) >= 15000)
+			if (int(pchar.money) >= 15000)
 			{
 				link.l1 = "정말들 앙심이 깊군... 자, 돈이다. 그리고 기억해둬라, 내가 이 마을에 있었다는 걸 누가 알게 되면, 반드시 너희를 찾아올 거다.";
 				link.l1.go = "GonsalesA_3_4";
@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_6":
 			DialogExit();
-			iTemp = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
+			iTemp = int(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
 			for (i=1; i<=2; i++)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("SpSold"+i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", iTemp, SPAIN, 0, true, "soldier"));
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			dialog.text = "내 커틀라스가 마음에 드는 모양이군. 원한다면 팔 수도 있지. 많이는 안 받을 거야, 럼주 한 잔이 간절한데 주머니가 텅 비었거든.";
 			link.l1 = "대체 내가 그걸 왜 필요로 하지? 숲의 악마가 너에게 안부 전해 달라고 했어.";
 			link.l1.go = "GonsalesB_1_1";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l2 = "그래, 맞아. 정말 멋진 커틀라스구나. 얼마지?";
 				link.l2.go = "GonsalesB_2_1";
@@ -353,7 +353,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesB_3_4":
 			dialog.text = "네가 한때 털었던 그 도시 한복판에서? 넌 아무것도 못 해. 그러니 결론을 내리자면... 이렇게 하자. 지금 당장 나한테... 글쎄, 만 페소쯤 주면 되겠군. 그 정도면 한 달은 충분하겠지. 그리고 넌 네 갈 길을 가라! 네가 사랑하는 헨리든, 스벤손이든, 아니면 네가 고를 다른 악마에게든 말이야... 만약 안 준다면, 내가 소리만 지르면, 널 고문 도구로 가득 찬 특별히 준비된 개인 방으로 끌고 갈 거다.";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "젠장, 만 냥 챙기고 내 눈앞에서 꺼져라! 그리고, 다시는 내 앞에 나타나지 마라, 제발.";
 				link.l1.go = "GonsalesB_3_5";
@@ -405,14 +405,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GonsalesB_3_10":
-			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
+			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && int(pchar.reputation.nobility) < 48)
 			{
 				dialog.text = "악마 같은 놈! 찰리 프린스 네가 직접 내게 선원 자리를 제안하다니! 젠장, 받아들이겠다! 내 칼이랑 만 페소 돌려줘. 이렇게 될 줄은 꿈에도 몰랐지!";
 				link.l1 = "여기 있어. 그리고 입 다물어라. 이 도시에서 내가 누군지 아무도 알 필요 없어, 알겠지?";
 				link.l1.go = "GonsalesB_3_11";
 				break;
 			}
-			if(makeint(pchar.reputation.nobility) > 47)
+			if(int(pchar.reputation.nobility) > 47)
 			{
 				dialog.text = "아니. 너 선장질은 제법 하는 것 같은데, 내 보기엔 너무 꽉 막혔어. 그래, 한때 카르타헤나에서 대담한 습격을 벌여 스페인 놈들 간담을 서늘하게 하긴 했지. 하지만 그건 전부 마커스 타이렉스 덕분이었잖아. 너 혼자 힘으론 제대로 약탈할 배짱도 없으면서. 그러니 돈이나 내놔!";
 			}
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "아니. 너야 악명 높은 해적이긴 한데, 선장으로서는 별로 대단해 보이지 않아. 마커스 타이렉스의 도움 덕분에 겨우 식민지를 약탈한 거잖아 – 너 혼자였으면 낡은 슬루프에도 감히 올라타지 못했을 거다. 그러니까 돈이나 내놔!\n";
 			}
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "젠장, 만 달러 가져가서 내 눈앞에서 꺼져! 그리고, 다시는 내 앞에 나타나지 마라, 제발.";
 				link.l1.go = "GonsalesB_3_5";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 		case "saga_trap_1":
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			int n = makeint(MOD_SKILL_ENEMY_RATE/3);
+			int n = int(MOD_SKILL_ENEMY_RATE/3);
 			for (i=1; i<=3+n; i++)
 			{	
 				sld = characterFromId("sagatrap_sold_"+i);
@@ -1555,8 +1555,8 @@ void ProcessDialogEvent()
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
 			}
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
-			int iScl = 25+2*sti(pchar.rank);
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+			int iScl = 25+2*int(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
 			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
@@ -1583,7 +1583,7 @@ void ProcessDialogEvent()
 			dialog.text = "당신의 힘든 도전에 지원을 해주고 싶소. 여기 보시오! 마법 머그잔과 금단의 연고가 있소. 머그잔은 술 마실 때 도움이 될 것이고, 연고는 사랑의 문제에 도움이 될 것이오. 무엇을 고르겠소? 단 이천!\n";
 			link.l1 = "나는 아무것도 필요 없어 - 이미 너희 같은 놈들에게 은을 한 무더기나 줬으니까.";
 			link.l1.go = "helendrinking_gypsy_refuse";
-			if (sti(pchar.money) >= 2000) {
+			if (int(pchar.money) >= 2000) {
 				link.l2 = "금지된 연고라고? 뭐, 내가 성인은 아니지. 이리 내놔.";
 				link.l2.go = "helendrinking_gypsy_fuck";
 				link.l3 = "머그잔? 내가 주정뱅이처럼 보여? 뭐, 나도 알지... 마시겠어!";
@@ -1623,7 +1623,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "totem_03");
 			Log_Info("Talisman 'Cupid's Balm' acquired!");
 			PlaySound("interface\important_item.wav");
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
@@ -2071,7 +2071,7 @@ void ProcessDialogEvent()
 		case "francois_sit_kill":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
@@ -2080,7 +2080,7 @@ void ProcessDialogEvent()
 		case "francois_sit_taunt":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);

@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Mudei de ideia...","Não tenho nada para conversar no momento."),"Ah, onde foi parar minha memória...","Sim, realmente é a terceira vez...","Não, que perguntas?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Цена чахотки
-			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
+			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && int(pchar.money) >= 3000)
 			{
 				link.l1 = "Ouvi dizer que a tuberculose está se espalhando pelo seu forte. Você acha que a epidemia vai chegar à cidade?";
 				link.l1.go = "Consumption";
@@ -139,8 +139,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Meu Deus, você vai falar disso de novo! Não, graças a Deus, não ouvi nada. Juro! Agora, vamos mudar de assunto. Por favor!";
 			link.l1 = "Tá bom, tá bom, não precisa ter um troço...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";
@@ -161,7 +161,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2":
 			dialog.text = "Bem, digamos apenas que ele tem bem menos amigos do que gente sonhando em torcer o pescoço dele. Mas se você quiser o nome de alguém que realmente pode influenciá-lo, isso vai te custar mil pesos. Pague – e eu conto tudo.";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Certo, pegue seu dinheiro, seu velho agiota.";
 				link.l1.go = "OZ_Tavern_3";
@@ -177,7 +177,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2_1":
 			dialog.text = "Capitão, trouxe os mil pesos?";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Tenho sim. Pegue, seu velho agiota.";
 				link.l1.go = "OZ_Tavern_3";

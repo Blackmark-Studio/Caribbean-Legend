@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // диалог от времени суток. лесник
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // диалог от времени суток. лесник
 			    {
 					dialog.text = TimeGreeting()+", "+pchar.name+"! The door is open, in case you want to see the boss.";
 					link.l1 = "Fine...";
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Want to see the boss? Hm, well, move along then.";
 			link.l1 = "Thanks for allowing me to...";
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 				{
 				dialog.text = TimeGreeting()+", "+pchar.name+"! The door is open, in case you want to see Eddie and Chimiset. They'll be glad to see you.";
 				link.l1 = "Fine...";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Do you want to see Eddie? Fine, move along, I suppose he'll spare a minute for you.";
 			link.l1 = "Thanks for allowing me to...";
@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				link.l1.go = "shark_guard_fight";
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00)
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00)
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // тока прибыл
 				{

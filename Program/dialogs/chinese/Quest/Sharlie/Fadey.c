@@ -163,12 +163,12 @@ void ProcessDialogEvent()
 						link.l1 = "我已经准备好了, Fadey先生! 这是您的75枚达布隆金币。";
 						link.l1.go = "pistols_4D";
 					}
-					if(sti(Pchar.money) >= 40000)
+					if(int(Pchar.money) >= 40000)
 					{
 						link.l2 = "我带来了, Fadey先生! 这是您的四万比索。";
 						link.l2.go = "pistols_4P";
 					}
-					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) 
+					if(PCharDublonsTotal() < 75 || int(Pchar.money) < 40000)
 					{
 						link.l3 = "不, 只是来看看。我还在找合适的价钱。";
 						link.l3.go = "exit";
@@ -192,12 +192,12 @@ void ProcessDialogEvent()
 						link.l1 = "拿上这三百枚达布隆。我会让水手们把这个箱子搬到我的船上。哎呀, 要不是有你, Fadey, 俺可怎么办啊? ! 你都不知道你帮了俺多大的忙! ";
 						link.l1.go = "pistols_5D";
 					}
-					if(sti(Pchar.money) >= 40000)
+					if(int(Pchar.money) >= 40000)
 					{
 						link.l2 = "拿去, 四万比索。我让水手们把这箱子搬到我的船上。哎呀, 要不是有你, Fadey, 老子可怎么办啊? ! 你根本不知道你帮了我多大的忙! ";
 						link.l2.go = "pistols_5P";
 					}
-					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+					if(PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 					{
 						link.l3 = "没呢, 刚过来。我还在凑够钱。";
 						link.l3.go = "exit";
@@ -777,12 +777,12 @@ void ProcessDialogEvent()
 				link.l1 = "把金币拿去吧, Fadey。正好老子身上现在就有几枚。";
 				link.l1.go = "pistols_4D";
 			}
-			if(sti(Pchar.money) >= 40000)
+			if(int(Pchar.money) >= 40000)
 			{
 				link.l2 = "俺的达布隆全花光了, 拿比索吧, Fadey。";
 				link.l2.go = "pistols_4P";
 			}
-			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "我要去找我的银行家, 马上回来! ";
 				link.l3.go = "exit";
@@ -823,12 +823,12 @@ void ProcessDialogEvent()
 				link.l1 = "拿着这三百枚达布隆。我会让我的人把武器搬到我的船上。要不是有你, Fadey, 老子可怎么办啊? 你根本不知道你帮了我多大的忙! ";
 				link.l1.go = "pistols_5D";
 			}
-			if(sti(Pchar.money) >= 40000)
+			if(int(Pchar.money) >= 40000)
 			{
 				link.l2 = "拿上四万比索吧。我会让我的人把武器搬到我的船上。要不是你, Fadey, 俺还真不知道该怎么办! 你根本不知道你帮了俺多大的忙! ";
 				link.l2.go = "pistols_5P";
 			}
-			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "该死, 我怎么能把钱忘了? 我很快就回来。";
 				link.l3.go = "exit";
@@ -1425,12 +1425,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.FadeyRopes) >= 1 && !CheckAttribute(pchar, "questTemp.FadeyRopesBlock")) // увеличить объём поставок канатами
+			if(int(pchar.questTemp.FadeyRopes) >= 1 && !CheckAttribute(pchar, "questTemp.FadeyRopesBlock")) // увеличить объём поставок канатами
 			{
 				link.l4 = "Fadey, 我们能不能扩大一下交易的规模? 我现在愿意从你这儿多买五倍的货! 我觉得这对咱们俩都有好处。你怎么看? ";
 				link.l4.go = "UpgradeRopes";
 			}
-			if(sti(pchar.questTemp.FadeyRopes) >= 1 && CheckAttribute(pchar, "questTemp.FadeyRopesPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок канатами, если в первый раз не принесли
+			if(int(pchar.questTemp.FadeyRopes) >= 1 && CheckAttribute(pchar, "questTemp.FadeyRopesPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок канатами, если в первый раз не принесли
 			{
 				link.l4 = "Fadey, 我把钱带来了! 三千枚金币达布隆, 按约定的数目。";
 				link.l4.go = "UpgradeRopes_Agreed";
@@ -1455,7 +1455,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(npchar, "quest.ropes");
 			SetFunctionTimerCondition("Ropes_FadeyAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 200);
-			pchar.questTemp.FadeyRopes = sti(pchar.questTemp.FadeyRopes) + 1; // счётчик покупок
+			pchar.questTemp.FadeyRopes = int(pchar.questTemp.FadeyRopes) + 1; // счётчик покупок
 		break;
 		
 		// уменьшение НЗГ
@@ -1497,7 +1497,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+			rate = wdmGetNationThreat(int(pchar.GenQuest.FadeyNation));
 			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", false);
 			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
 			if (rate < 2)
@@ -1552,7 +1552,7 @@ void ProcessDialogEvent()
             rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
-			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
+			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.FadeyNation));
 			npchar.quest.relation = "true";
 		break;
 		

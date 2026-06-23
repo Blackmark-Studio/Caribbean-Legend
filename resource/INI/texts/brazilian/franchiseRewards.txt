@@ -8,6 +8,12 @@ condition_mushket_indian
 Este item aparecerá com os agiotas se você tiver
 Caribbean Legend: Age of Pirates
 }
+condition_nocturlabe
+{
+Topluluk için ücretsiz bir hediye.
+ Tefecilerde satışta arayın.
+ Oynadığınız için teşekkürler!
+}
 noRewardYetMessage
 {
 Esta recompensa ainda não está disponível,

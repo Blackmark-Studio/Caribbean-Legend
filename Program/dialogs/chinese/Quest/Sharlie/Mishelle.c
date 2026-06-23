@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bool bFMQL = CheckAttribute(pchar,"questTemp.FMQL") && pchar.questTemp.FMQL != "fail" && pchar.questTemp.FMQL != "end";
 				if(bFMQM || bFMQN || bFMQT || bFMQP || bFMQG || bFMQL)
 				{
-					if (sti(pchar.rank) < 12)
+					if (int(pchar.rank) < 12)
 					{
 						dialog.text = "你好, 兄弟! 我欣赏你想把我从这里救出去的真诚热情, 但你还没准备好进行下一步。 我的计划需要一位经验丰富的船长。 继续探索加勒比海, 赚取奖励并学习! 等你准备好了, 我们再继续。 ";
 						link.l1 = "好吧, 不管你怎么说, 兄弟。 你坐在这儿, 又不是我。 ";
@@ -46,24 +46,24 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				if (sti(pchar.rank) < 12)
+				if (int(pchar.rank) < 12)
 				{
 					Log_info("需要12级");
 					dialog.text = "航海者查理! 听说了你的冒险经历! 你几乎准备好执行我计划的下一阶段了。 一旦你获得更多经验, 就回来。 ";
-					if (sti(pchar.rank) < 7)
+					if (int(pchar.rank) < 7)
 					{
 						dialog.text = "你好, 兄弟! 我欣赏你想把我从这里救出去的真诚热情, 但你还没准备好进行下一步。 我的计划需要一位经验丰富的船长。 继续探索加勒比海, 赚取奖励并学习! 等你准备好了, 我们再继续。 ";
 					} 
 					else 
 					{
-						if (sti(pchar.rank) < 10)
+						if (int(pchar.rank) < 10)
 						{
 							dialog.text = "很高兴见到你, 兄弟! 听说你在取得进步! 但你还没准备好我计划的下一步。 继续做你一直在做的事, 等你准备好了再回来找我。 ";
 						}
 					}
 					link.l1 = "好吧, 不管你怎么说, 兄弟。 你坐在这儿, 又不是我。 ";
 					link.l1.go = "exit";
-					if(sti(pchar.rank) > 8)
+					if(int(pchar.rank) > 8)
 					{
 						link.l2 = "我不这么认为, 兄弟。 也许你已经习惯了这个牢笼, 但我不打算在这里久留 —我们的父亲不能永远等下去。 说出来吧。 ";
 						link.l2.go = "gambitA";
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		
 		case "gambit":
 			dialog.text = "我能看出来, 亲爱的兄弟。 我能看到你的走路姿势和脸上的表情。 终于, 那个简直让我发疯的自负小男孩的面具从你身上融化了。 你的新生活显然已经让你受益了。 ";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "我不明白, 兄弟, 你的话是赞美还是侮辱。 但我会告诉你真相: 我对你在那边怎么看我不感兴趣。 我已经筹集了偿还你债务所需的一百万, 所以你很快就会自由了。 我在哪里可以找到德.潘西? ";
 				link.l1.go = "gambit_1_1";
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		
 		case "saga_2":
 			dialog.text = "你已经凑齐了所需的一百万比索吗? ";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "是的, 我现在拥有所需的金额。 ";
 				link.l1.go = "saga_3_1";

@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 				case 2: // 大珍珠
 					npchar.quest.item.qty = 25+hrand(25);
 					npchar.quest.item.price = 30+hrand(10);
-					dialog.text = "" + npchar.name+ "有神灵的眼泪。 大颗的, 白人兄弟。 数量为" + FindRussianQtyString(sti(npchar.quest.item.qty)) + "。 你想买吗? 我卖" + FindRussianMoneyString(sti(npchar.quest.item.price)) + "一个。 ";
+					dialog.text = "" + npchar.name+ "有神灵的眼泪。 大颗的, 白人兄弟。 数量为" + FindRussianQtyString(int(npchar.quest.item.qty)) + "。 你想买吗? 我卖" + FindRussianMoneyString(int(npchar.quest.item.price)) + "一个。 ";
 					link.l1 = "不, 我不感兴趣。 ";
 					link.l1.go = "exit";
 					link.l2 = "当然! 这么便宜我很乐意买。 ";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 				case 3: // 小珍珠
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 10+hrand(5);
-					dialog.text = "" + npchar.name+ "有神灵的眼泪。 小颗的, 白人兄弟。 数量为" + FindRussianQtyString(sti(npchar.quest.item.qty)) + "。 你想买吗? 我卖" + FindRussianMoneyString(sti(npchar.quest.item.price)) + "一个。 ";
+					dialog.text = "" + npchar.name+ "有神灵的眼泪。 小颗的, 白人兄弟。 数量为" + FindRussianQtyString(int(npchar.quest.item.qty)) + "。 你想买吗? 我卖" + FindRussianMoneyString(int(npchar.quest.item.price)) + "一个。 ";
 					link.l1 = "不, 我不感兴趣。 ";
 					link.l1.go = "exit";
 					link.l2 = "当然! 这么便宜我很乐意买。 ";
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 				case 4: // 金块
 					npchar.quest.item.qty = 20+hrand(20);
 					npchar.quest.item.price = 90+hrand(20);
-					dialog.text = "" + npchar.name+ "有你们白皮肤人很喜欢的黄色金属。 数量为" + FindRussianQtyString(sti(npchar.quest.item.qty)) + "。 我只卖" + FindRussianMoneyString(sti(npchar.quest.item.price)) + "一个。 ";
+					dialog.text = "" + npchar.name+ "有你们白皮肤人很喜欢的黄色金属。 数量为" + FindRussianQtyString(int(npchar.quest.item.qty)) + "。 我只卖" + FindRussianMoneyString(int(npchar.quest.item.price)) + "一个。 ";
 					link.l1 = "不, 我不感兴趣。 ";
 					link.l1.go = "exit";
 					link.l2 = "当然! 这么便宜我很乐意买。 ";
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 				case 5: // 银块
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 40+hrand(10);
-					dialog.text = "" + npchar.name+ "有你们白皮肤人很喜欢的白色金属。 数量为" + FindRussianQtyString(sti(npchar.quest.item.qty)) + "。 我只卖" + FindRussianMoneyString(sti(npchar.quest.item.price)) + "一个。 ";
+					dialog.text = "" + npchar.name+ "有你们白皮肤人很喜欢的白色金属。 数量为" + FindRussianQtyString(int(npchar.quest.item.qty)) + "。 我只卖" + FindRussianMoneyString(int(npchar.quest.item.price)) + "一个。 ";
 					link.l1 = "不, 我不感兴趣。 ";
 					link.l1.go = "exit";
 					link.l2 = "当然! 这么便宜我很乐意买。 ";
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -183,16 +183,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "我告诉过你我有多少眼泪。 你在和印第安人开玩笑吗, 白皮肤的? 那再见。 ";
 				link.l1 = "嗯... ";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = "" + iQty + "颗眼泪? 好吧。 你给我" + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = "" + iQty + "颗眼泪? 好吧。 你给我" + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "给你钱, 红皮肤的兄弟。 ";
 				link.l1.go = "big_pearl_1";
@@ -202,8 +202,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry52", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry52", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "拿去吧, 白人兄弟。 现在它们是你的了。 ";
 			link.l1 = "谢谢! ";
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -229,16 +229,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "我告诉过你我有多少眼泪。 你在和印第安人开玩笑吗, 白皮肤的? 那再见。 ";
 				link.l1 = "嗯... ";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = "" + iQty + "颗眼泪? 好吧。 你给我" + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = "" + iQty + "颗眼泪? 好吧。 你给我" + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "给你钱, 红皮肤的兄弟。 ";
 				link.l1.go = "small_pearl_1";
@@ -248,8 +248,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry53", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry53", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "拿去吧, 白人兄弟。 现在它们是你的了。 ";
 			link.l1 = "谢谢! ";
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -275,16 +275,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "我告诉过你我有多少。 你在和印第安人开玩笑吗, 白皮肤的? 那再见。 ";
 				link.l1 = "嗯... ";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = "" + iQty + "块? 好吧, 给我" + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = "" + iQty + "块? 好吧, 给我" + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "给你钱, 红皮肤的兄弟。 ";
 				link.l1.go = "gold_1";
@@ -294,8 +294,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry5", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry5", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "拿去吧, 白人兄弟。 现在它们是你的了。 ";
 			link.l1 = "谢谢! ";
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -321,16 +321,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "我告诉过你我有多少。 你在和印第安人开玩笑吗, 白皮肤的? 那再见。 ";
 				link.l1 = "嗯... ";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = "" + iQty + "块? 好吧, 给我" + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = "" + iQty + "块? 好吧, 给我" + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", 白人兄弟。 ";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "给你钱, 红皮肤的兄弟。 ";
 				link.l1.go = "silver_1";
@@ -340,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry6", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry6", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "拿去吧, 白人兄弟。 现在它们是你的了。 ";
 			link.l1 = "谢谢! ";

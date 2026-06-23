@@ -83,17 +83,17 @@ void ProcessDialogEvent()
 		    if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_A") 
 			{
 				// карты не было
-				dialog.text = "船長！そんなに気を揉むなよ！静かに逃げるのは無理だって最初から分かってたから、 地元の銀行家を訪ねて金庫を調べることにしたんだ。これがあんたの取り分だ― "+sti(pchar.questTemp.ReasonToFast.p9)+" ペソ……";
+				dialog.text = "船長！そんなに気を揉むなよ！静かに逃げるのは無理だって最初から分かってたから、 地元の銀行家を訪ねて金庫を調べることにしたんだ。これがあんたの取り分だ― "+int(pchar.questTemp.ReasonToFast.p9)+" ペソ……";
 			}
 			if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_B")
 			{
 				// карту отобрали
 				GiveItem2Character(pchar, pchar.questTemp.ReasonToFast.p6);
-				dialog.text = "船長！そんなに気を揉むなって！静かに逃げるのは無理だって最初から分かってたから、 地元の銀行家のところに寄って金庫を調べてきたんだ。質箱には立派な剣もあったぜ。これがあんたの取り分だ― "+sti(pchar.questTemp.ReasonToFast.p9)+" ペソと剣……";
+				dialog.text = "船長！そんなに気を揉むなって！静かに逃げるのは無理だって最初から分かってたから、 地元の銀行家のところに寄って金庫を調べてきたんだ。質箱には立派な剣もあったぜ。これがあんたの取り分だ― "+int(pchar.questTemp.ReasonToFast.p9)+" ペソと剣……";
 			}		
 			link.l1 = "よくやったな、野郎ども！よくやった！俺はお前たちを誇りに思うぜ。";
 			link.l1.go = "On_MyShip_Deck_End";
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.ReasonToFast.p9));			
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.ReasonToFast.p9));
 			pchar.Ship.Crew.Morale = MORALE_MAX;
 			chrDisableReloadToLocation = false; // Откроем выход
 			AddQuestRecord("ReasonToFast", "17");		
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 			LAi_SetCitizenType(NPChar); // Чтоб по палубе ходил
 			
 			NPChar = GetRealShip(GetCharacterShipType(CharacterFromID("MaryCelesteCapitan")));
-			NPChar.TurnRate = sti(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
+			NPChar.TurnRate = int(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
 			
 			chrDisableReloadToLocation = false; // Откроем выход
 			

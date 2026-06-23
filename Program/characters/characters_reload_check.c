@@ -22,7 +22,7 @@ bool chrEnableReloadLocator(string locationID, string reloadLocatorName, bool is
 		{
 			if(CheckAttribute(at,"disable")) 
 			{
-				disableVal = sti(at.disable);
+				disableVal = int(at.disable);
 			}
 			if(isEnable) 
 			{
@@ -60,17 +60,17 @@ bool chrCheckReload(ref loc, string reloadLocatorName)
 		at = GetAttributeN(rl, i);
 		if(at.name == reloadLocatorName)
 		{
-			if(CheckAttribute(at, "disable")) disableVal = sti(at.disable);
+			if(CheckAttribute(at, "disable")) disableVal = int(at.disable);
 			if(CheckAttribute(at, "close_for_alarm") && alarmed == 1) disableVal++;
-   			if(CheckAttribute(at, "close_for_night") && sti(at.close_for_night)>0 && !IsLocationCaptured(loc.id))//boal fix
+   			if(CheckAttribute(at, "close_for_night") && int(at.close_for_night)>0 && !IsLocationCaptured(loc.id))//boal fix
 			{
 				if(GetTime()>21.0 || GetTime()<6.0) disableVal++;
 			}
-			if(CheckAttribute(at, "open_for_night") && sti(at.open_for_night)>0 && !IsLocationCaptured(loc.id))
+			if(CheckAttribute(at, "open_for_night") && int(at.open_for_night)>0 && !IsLocationCaptured(loc.id))
 			{
 				if(GetTime()>5.0 && GetTime()<23.0) disableVal++;
 			}
-   			if(CheckAttribute(at, "open_for_day") && sti(at.open_for_day)>0)
+   			if(CheckAttribute(at, "open_for_day") && int(at.open_for_day)>0)
 			{
 				if(GetTime()<10.0 || GetTime()>19.0) disableVal++;
 			}
@@ -81,7 +81,7 @@ bool chrCheckReload(ref loc, string reloadLocatorName)
 }
 
 //locatorName
-bool chrCheckReloadLink(ref loc, string reloadLocatorName)
+int chrCheckReloadLink(ref loc, string reloadLocatorName)
 {
 	//Reload locator
 	aref rl, at;
@@ -104,7 +104,7 @@ bool chrCheckReloadLink(ref loc, string reloadLocatorName)
 				// boal <--
 				return 1;
 			}
-			int iShip = sti(mc.ship.type);
+			int iShip = int(mc.ship.type);
 			if(CheckAttribute(mc, "location.from_sea") && iShip != SHIP_NOTUSED)
 			{
 				if(mc.location.from_sea == mc.location) 
@@ -133,7 +133,7 @@ bool chrCheckAutoReload(ref loc, string reloadLocatorName)
 		if(at.name == reloadLocatorName)
 		{
 			if(CheckAttribute(at, "autoreload") == 0) return false;
-			return MakeInt(at.autoreload) != 0;
+			return int(at.autoreload) != 0;
 		}
 	}
 	return false;

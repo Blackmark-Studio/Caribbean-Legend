@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "", 4);
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			AddQuestRecord("Holl_Gambit", "1-3");
 			AddMapQuestMarkCity("Marigo", true);
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 			LAi_SetWarriorType(npchar);
             LAi_group_MoveCharacter(npchar, "SPAIN_CITIZENS");
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
             DialogExit();
 			AddDialogExitQuest("MainHeroFightModeOn");	
 			pchar.quest.HWIC_Fernando.win_condition.l1 = "NPC_Death";
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Drunkard_6":
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				dialog.text = "5000페소? 오... 편지 한 통 전달하는 것뿐인데?";
 				link.l1 = "아니. 다른 편지를 줄 거다. 그걸 선술집에 가져와서 여기 앉아 있어. 내가 받아가겠다. 멍청한 짓 하지 말고, 겁낼 필요도 없어 – 내가 널 지켜보고 곁에 있을 테니. 이 돈은 선불이니, 마음 편히 가지도록 해.";
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		
 		case "Drunkard_no_money":
 			dialog.text = "오천 가져왔나?";
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "그래. 여기 있다. 걱정하지 마라.";
 				link.l1.go = "Drunkard_7";
@@ -619,7 +619,7 @@ void ProcessDialogEvent()
 		
 		case "Cureer_abordage_3":
 			DialogExit();
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -928,7 +928,7 @@ void ProcessDialogEvent()
 		case "Stivesant_12":
 		//удаляем Мейфенг
 		DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-		if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+		if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 		{
 			pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 			pchar.Ship.name = "A boat";
@@ -943,10 +943,10 @@ void ProcessDialogEvent()
 			if(iTemp > 0)
 				{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 					{
 						pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-						sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+						sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 						RemoveCharacterCompanion(PChar, sld);
 						AddPassenger(PChar, sld, false);
 					}
@@ -1351,7 +1351,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Stivesant_49":
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				dialog.text = "나는 한 번도 의심하지 않았소, 샤를 드 모르 부제독 나리, 그대가 이 돈을 가져올 거라는 것을. 어쩌면 내가 그대에게 너무 적게 요구했을지도 모르지, 뭐... 남작은 그대의 다음 게임에서 그냥 졸에 불과하잖소? 지위와 돈만으로는 만족하지 못하고, 이제 드 푸앵시의 자리를 노리는 거요, 맞지? 인정해야 하오, 프랑스 식민지 총독 자리에 비하면 백만은 적은 돈이오! 그대의 강철 같은 통제력을 생각하면, 이 돈은 몇 달 만에 다시 벌 수 있을 테니.";
 				link.l1 = "자, 백만 길더 가져가시오, 마인헤르. 약속한 장부를 받고 싶소.";
@@ -1444,7 +1444,7 @@ void ProcessDialogEvent()
 		//удаление Мейфенг при провале квеста
 		case "TempOffGuard":
 			DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+			if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 			{
 				pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 				pchar.Ship.name = "A boat";
@@ -1459,10 +1459,10 @@ void ProcessDialogEvent()
 					if(iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 						{
 							pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-							sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+							sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
 						}

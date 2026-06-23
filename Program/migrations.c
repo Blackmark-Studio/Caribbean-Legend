@@ -183,7 +183,7 @@ void ApplyMigrationsForFolder(string migrationDir, string modName) {
 		//fileName = strcut(&fileName, 0, strlen(&fileName) - 3) + ".c";
 		
 		string numString = strcut(&fileName, 0, 3);
-		int migrationIndex = sti(numString);
+		int migrationIndex = int(numString);
 		
 		// индексы пусть с 1 начинаются, т.к. 0 - признак облома
 		if (migrationIndex < 1) {
@@ -264,7 +264,7 @@ void InitMigrationsForFolder(string migrationDir) {
 		//fileName = strcut(&fileName, 0, strlen(&fileName) - 3) + ".c";
 		
 		string numString = strcut(&fileName, 0, 3);
-		int migrationIndex = sti(numString);
+		int migrationIndex = int(numString);
 		
 		// индексы пусть с 1 начинаются, т.к. 0 - признак облома
 		if (migrationIndex < 1) {
@@ -317,7 +317,7 @@ void Migration_UnloadSegments(ref migrationState) {
 string GetModeNameByMigName(string currentMigName, int iteration){
   // если на конце уже не цифра, значит это и есть папка мода
   string lastChar = strcut(currentMigName, strlen(currentMigName) - 1, strlen(currentMigName) - 1);
-  if (lastChar != "0" && sti(lastChar) == 0) return currentMigName;
+  if (lastChar != "0" && int(lastChar) == 0) return currentMigName;
   
   // режем последний символ
   string tempName1 = strcut(currentMigName, 0, strlen(currentMigName) - 2);

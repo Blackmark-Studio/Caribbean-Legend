@@ -19,7 +19,7 @@ void SetCommonHeaderInfo()
 	{
 		XI_DeleteNode("WEIGHT_ICON");
 	}
-	SetFormatedText("Money", FindRussianMoneyString(sti(xi_refCharacter.money)));
+	SetFormatedText("Money", FindRussianMoneyString(int(xi_refCharacter.money)));
 
 	int dublonQty = GetCharacterItem(&xi_refCharacter, "gold_dublon");
 	if (IsMainCharacter(&xi_refCharacter))
@@ -77,7 +77,7 @@ bool CommonHeaderTooltip(string currentNode, ref header, ref text, ref badText, 
 			aref currentSeason = GetAref(&SeasonSystem, "current", true);
 			SZN_ShowModifiers(&currentSeason, &header, &text, &badText, &goodText, DLG_Convert("effects_current_title", "StoryFrames\Seasons\Common.txt"));
 			CreateTooltipWithConfig(currentNode, header, text, badText, goodText, "", "", "", "", 0, 0, "SZN_TooltipConfigWhite");
-			return true
+			return true;
 		break;
 	}
 

@@ -121,7 +121,7 @@ void BM_IronsClone5_function()
 	LAi_ActorRunToLocator(sld, "quest", "lay1", "BM_IronsCloneMushket", -1);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetImmortal(sld, false);
 	LAi_SetCurHPMax(sld);
 	LAi_SetWarriorType(sld);
@@ -177,7 +177,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		}*/
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("BM_Contra_"+i, "citiz_" + (rand(9) + 21), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("BM_Contra_"+i, "citiz_" + (rand(9) + 21), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 			LAi_SetActorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 			ChangeCharacterAddressGroup(sld, pchar.location, "smugglers",  "smuggler0"+i);
@@ -223,7 +223,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		locCameraFromToPos(-57.92, 4.97, -68.06, true, -42.71, 4.38, -69.22);
 		//LAi_SetStayType(pchar);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("BM_PatrolZhitel", "citiz_19", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("BM_PatrolZhitel", "citiz_19", "man", "man", int(pchar.rank), ENGLAND, -1, false, "soldier"));
 		sld.name = StringFromKey("BlackMark_3");
 		sld.lastname = StringFromKey("BlackMark_4");
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto5");
@@ -233,14 +233,14 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld.SaveItemsForDead = true;
 		sld.DontClearDead = true;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("BM_PatrolOff", "off_eng_2", "man", "man", sti(pchar.rank), ENGLAND, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("BM_PatrolOff", "off_eng_2", "man", "man", int(pchar.rank), ENGLAND, -1, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto5");
 		LAi_SetActorType(sld);
 		LAi_ActorRunToLocator(sld, "goto", "goto2", "", -1);
 		
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("BM_Patrol_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("BM_Patrol_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, -1, true, "soldier"));
 			ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto5");
 			LAi_SetActorType(sld);
 			LAi_ActorFollow(sld, characterFromID("BM_PatrolOff"), "", -1);
@@ -661,7 +661,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		if (!GetDLCenabled(DLC_APPID_3)) return;
 		if (GetCompanionQuantity(pchar) < 2)
 		{
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARQUE || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_BARKENTINE)
+			if (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_BARQUE || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_BARKENTINE)
 			{
 				if (pchar.nation == SPAIN || pchar.nation == HOLLAND)
 				{
@@ -743,7 +743,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		pchar.GenQuest.BlockDialogCamera = true;
 		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
 		
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc1");
 		LAi_SetActorType(sld);
 		
@@ -756,7 +756,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld.id = "IronsClone";
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc1");
 		
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsClone1";
 		LAi_SetActorType(sld);
@@ -915,7 +915,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_SearchGabeHouse") {
-		if (sti(pchar.reputation.nobility) >= 61)
+		if (int(pchar.reputation.nobility) >= 61)
 		{
 			AddQuestRecord("BlackMark", "9");
 			AddQuestUserData("BlackMark", "sSex1", GetSexPhrase(StringFromKey("BlackMark_9"),StringFromKey("BlackMark_10")));
@@ -946,7 +946,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			sld.name = StringFromKey("BlackMark_11");
 			sld.lastname = StringFromKey("BlackMark_12");
 			sld.dialog.filename = "Quest\BlackMark.c";
-			if (sti(pchar.reputation.nobility) > 61) sld.dialog.currentnode = "BM_GabeHouseGood1";
+			if (int(pchar.reputation.nobility) > 61) sld.dialog.currentnode = "BM_GabeHouseGood1";
 			else sld.dialog.currentnode = "BM_GabeHouseNeutral1";
 			FantomMakeCoolFighter(sld, 10, 50, 50, "blade_14", "pistol14", "bullet", 50);
 			ChangeCharacterAddressGroup(sld, "PortRoyal_houseSp3", "barmen", "bar1");

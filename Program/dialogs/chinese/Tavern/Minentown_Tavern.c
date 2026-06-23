@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "啊哈, 这是我的老熟人, " + GetFullName(pchar) + "船长! 很高兴见到你, 老朋友! 朗姆酒, 姑娘们? ";
-				if (makeint(pchar.money) >= 5)
+				if (int(pchar.money) >= 5)
 				{
 					link.l1 = "给我倒些朗姆酒, " + npchar.name + "。 ";
 					link.l1.go = "drink";
@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			dialog.text = "哦, 我太高兴了! 新面孔在我们城里很罕见。 我给你倒些朗姆酒, 我们聊聊天怎么样... ";
 			link.l1 = "这是我第一次来这里, 我想多了解一下这个定居点。 ";
 			link.l1.go = "info";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l2 = "给我倒些朗姆酒, " + npchar.name + "。 ";
 				link.l2.go = "drink";
@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 3)
 			{
 				dialog.text = "船长, 我认为你最好停下来。 上帝保佑你在酒精的影响下不要惹事。 我们这里对此非常严格。 即使你的权威也帮不了你。 ";
 				link.l1 = "嗯... 我想你是对的 —我已经喝够了。 谢谢你的关心! ";			
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -110,11 +110,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
 				DeleteAttribute(pchar, "chr_ai.drunk");
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
 				else
 				{
-					LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
-					Pchar.GenQuest.CamShuttle = makeint(sti(pchar.questTemp.Rum)/2); // 杰森
+					LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
+					Pchar.GenQuest.CamShuttle = int(int(pchar.questTemp.Rum)/2); // 杰森
 				}
 			}
 		break;
@@ -144,12 +144,12 @@ void ProcessDialogEvent()
 
 		case "room_day":
 			dialog.text = "那将是八块十。 你想要一个房间的女孩吗? 只要一千比索的荡妇。 ";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "不, 我不需要女孩。 给你, 这是房间的钱。 ";
 				link.l1.go = "room_day_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -164,12 +164,12 @@ void ProcessDialogEvent()
 
 		case "room_day_next":
 			dialog.text = "那将是八块十。 你想要一个房间的女孩吗? 只要一千比索的荡妇。 ";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "不, 我不需要女孩。 给你, 这是房间的钱。 ";
 				link.l1.go = "room_day_wait_next";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -184,12 +184,12 @@ void ProcessDialogEvent()
 
 		case "room_night":
 			dialog.text = "那将是八块十。 你想要一个房间的女孩吗? 只要一千比索的荡妇。 ";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "不, 我不需要女孩。 给你, 这是房间的钱。 ";
 				link.l1.go = "room_night_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{

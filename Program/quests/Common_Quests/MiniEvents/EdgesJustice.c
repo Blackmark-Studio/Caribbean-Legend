@@ -6,15 +6,15 @@ void GS_Start()
 	pchar.questTemp.GS_Portman = true;
 	AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // активировано событие
 }
 
 void GS_Peshera(string qName)
 {
 	chrDisableReloadToLocation = true;
 	
-	sld = GetCharacter(NPC_GenerateCharacter("GS_Naemnik", "citiz_60", "man", "man", sti(pchar.rank), PIRATE, -1, false, "pirate"));
-	FantomMakeCoolFighter(sld, sti(pchar.rank), 30, 30, "blade_15", "pistol6", "bullet", 60);
+	sld = GetCharacter(NPC_GenerateCharacter("GS_Naemnik", "citiz_60", "man", "man", int(pchar.rank), PIRATE, -1, false, "pirate"));
+	FantomMakeCoolFighter(sld, int(pchar.rank), 30, 30, "blade_15", "pistol6", "bullet", 60);
 	ChangeCharacterAddressGroup(sld, "Beliz_Cave", "goto", "goto5");
 	LAi_SetCheckMinHP(sld, 1, true, "GS_NaemnikRazgovor");
 	LAi_SetWarriorType(sld);
@@ -50,7 +50,7 @@ void GS_SoldatyDoma(string qName)
 	
 	for (i=1; i<=2; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("GS_soldier_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("GS_soldier_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, "Beliz_houseS5", "goto", "goto1");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -79,7 +79,7 @@ void GS_Naverh(string qName)
 	
 	sld = GetCharacter(CreateCharacterClone(CharacterFromID("Beliz_portman"), -1));
 	sld.id = "Beliz_portman_clone";
-	FantomMakeCoolFighter(sld, sti(pchar.rank), 50, 50, "blade_04", "pistol1", "bullet", 50);
+	FantomMakeCoolFighter(sld, int(pchar.rank), 50, 50, "blade_04", "pistol1", "bullet", 50);
 	ChangeCharacterAddressGroup(sld, "Beliz_houseS5_room2", "goto", "goto1");
 	sld.dialog.filename = "Quest\MiniEvents\EdgesJustice_dialog.c";
 	sld.dialog.currentnode = "Portman_1";
@@ -113,7 +113,7 @@ void GS_PortmanDead(string qName)
 	sld = CharacterFromID("Beliz_portman");
 	sld.model = "citiz_14";
 	SetRandomNameToCharacter(sld);
-	sld.quest.meeting = "0"
+	sld.quest.meeting = "0";
 }
 
 void GS_PolozhilZapiski()
@@ -183,7 +183,7 @@ void Naemnik_29()
 	AddQuestRecord("GS", "7");
 	CloseQuestHeader("GS");
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
@@ -211,7 +211,7 @@ void GS_Portman_10()
 	DeleteAttribute(pchar, "questTemp.GS_NaemnikMertv");
 	pchar.questTemp.GS_BelizSkidka = true;
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

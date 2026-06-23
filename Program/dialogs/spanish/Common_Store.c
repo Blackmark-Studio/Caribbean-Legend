@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		NPChar.CharToTransferGoodsID = FindStringAfterChar(attrLoc, "_");
 		Dialog.CurrentNode = "TransferGoods_Start";
 	}
-
+	int iCGood, amount;
 	switch (Dialog.CurrentNode)
 	{
 	case "First time":
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			link.l1.go = "fight";
 			break;
 		}
-		if (sti(pchar.GenQuest.Piratekill) > 20 && sti(npchar.nation) == PIRATE)
+		if (int(pchar.GenQuest.Piratekill) > 20 && int(npchar.nation) == PIRATE)
 		{
 			dialog.text = RandPhraseSimple("¡Eh, bastardo! ¿Crees que puedes tomar lo que quieras? ¡Ciertamente no! ¡Chicos! ¡A las armas! ¡Corten al loco!", "¡Si quieres algo, cómpralo, bestia! ¡Ahora te enseñaré quién manda aquí! ¡Chicos, agarren las armas! ¡Alerta!");
 			link.l1 = RandPhraseSimple("¿Eh? ¿Qué?", "Uh, ¿por qué estás haciendo esto?");
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		// belamour legendary edition Бесчестный конкурент -->
-		if (!CheckAttribute(pchar, "questTemp.Shadowtrader") && sti(npchar.nation) != PIRATE && npchar.location == "baster_store")
+		if (!CheckAttribute(pchar, "questTemp.Shadowtrader") && int(npchar.nation) != PIRATE && npchar.location == "baster_store")
 		{
 			dialog.text = "Capitán, quiero pedirle un favor. ¿Me ayudará?";
 			link.l1 = "¿Cómo puedo ayudarle?";
@@ -222,7 +222,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		// belamour legendary edition Бесчестный конкурент -->
-		if (!CheckAttribute(pchar, "questTemp.Shadowtrader") && sti(npchar.nation) != PIRATE && npchar.location == "baster_store")
+		if (!CheckAttribute(pchar, "questTemp.Shadowtrader") && int(npchar.nation) != PIRATE && npchar.location == "baster_store")
 		{
 			dialog.text = "Capitán, quiero pedirle un favor. ¿Me ayudará?";
 			link.l1 = "¿Cómo puedo ayudarle?";
@@ -237,7 +237,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "node_1":
-		dialog.text = NPCStringReactionRepeat(NPCharRepPhrase(npchar, pcharrepphrase(RandPhraseSimple("¡Todos a cubierta! ", "¡Alto para inspección! ") + LinkRandPhrase("¿Qué hace un " + GetSexPhrase("caballero", "caballero, oh, perdóneme eres una dama") + " de fortuna necesitan en mi tienda, je-je?", "¡Qué sorpresa para un pobre viejo tendero! ¡Je-je!", "Entonces, ¿qué buen viento te ha traído a mi tienda?"), LinkRandPhrase("¡Abrir los puertos!", "¡Ganchos a los lados!", "¡Navega recto!") + RandPhraseSimple(" Aquí encontrarás ", " Mi tienda tiene ") + LinkRandPhrase("los mejores precios de toda la isla.", "un excelente surtido de bienes.", "las mercancías de la mejor calidad disponible.") + RandPhraseSimple(" Estoy a su servicio", "Lo que quieras") + ", ¡capitán!"), pcharrepphrase(RandPhraseSimple("¿Algún producto para " + GetSexPhrase("caballeros", "caballeros y damas") + " de la fortuna! ¡Je-je! ¡Hasta que los cuelguen para secar al sol!", "El viento balancea a los ahorcados en el puerto y lleva el tintineo de las cadenas. Pero el dinero no tiene olor, ¿verdad?"), "¿Te gustaría " + LinkRandPhrase("comprar las mejores mercancías de " + NationNameGenitive(sti(NPChar.nation)), "comprar o vender tu cargamento", "? ¿Tienes un flete rentable?") + RandPhraseSimple(" ¿Estoy a su servicio?", " ¿Mi tienda está a su servicio?") + RandPhraseSimple(" ¡Encantado de verte", " ¡Tú mismo") + ", capitán!")), NPCharRepPhrase(npchar, pcharrepphrase("Si quieres mi consejo, capitán, no escatimes en metralla. Sabes, ¡a los muertos es mucho más fácil registrar!", "Me he dado cuenta enseguida de que eres " + GetSexPhrase("un astuto camarada", "una muchacha astuta") + ". " + RandPhraseSimple("Pero ahora puedo ver que eres un verdadero " + GetSexPhrase("héroe", "temerario") + ".", "Eres joven, pero " + RandPhraseSimple("mantén tu ingenio contigo.", "ciertamente no puedes ser engañado fácilmente."))), pcharrepphrase("Estoy dispuesto a comprarte toda la carga de los premios capturados. ¿Quieres en plata o en oro? Ese material siempre es costoso.", "La navegación comercial es un negocio lucrativo, capitán " + GetFullName(pchar) + ", ¿no es así?")), NPCharRepPhrase(npchar, RandPhraseSimple("¡Los envolvimos bien apretados en el foque con veinte vueltas de cabo y los lanzamos por la borda fuera de vista! ", RandPhraseSimple("¡Quince hombres sobre el cofre del muerto!", "¡Bebed y el diablo se encargará del resto!") + "¡Yo ho ho y una botella de ron!") + RandPhraseSimple("¿Qué tal, capitán?", "¿Busca comprar algo, capitán?"), pcharrepphrase("Veo que eres todo un regateador, capitán " + GetFullName(pchar) + " . ¡Dado que eres un cliente habitual, te ofrezco precios muy buenos!", "Está bien, capitán " + GetFullName(pchar) + ", en deferencia a usted puedo ofrecer un poquito más! ¿Qué le gustaría?")), NPCharRepPhrase(npchar, "Juro que hablar contigo me enferma. " + LinkRandPhrase("Compra un par de cacahuetes. A los cerdos les gusta esa cosa. ", "¿Esperas que alguien pula tus botas con ron aquí? ", pcharrepphrase("Conozco tu tipo. Te cargas de ron, y directo al patíbulo.", "¡Me pregunto cómo permitió tu madre que te convirtieras en marinero! ¡Un marinero! Serías un sastre mucho mejor...")), pcharrepphrase(RandPhraseSimple("Pensé que ", "Esperaba que ") + RandPhraseSimple("habías abandonado nuestra isla para siempre.", " Nunca te volvería a ver.") + RandPhraseSimple(" Los muertos cuelgan de tu cuello como piedras de molino...", " ¿Cuántos marineros has dejado pudrirse entre los corales?!"), "Capitán " + GetFullName(pchar) + ", ¡tu pasión por el comercio ha superado todas mis expectativas!" + RandPhraseSimple(" ¿Quieres hacer compras de última hora antes de zarpar?", " ¿Buscas algo especial?"))), "cycle", 10, npchar, Dialog.CurrentNode);
+		dialog.text = NPCStringReactionRepeat(NPCharRepPhrase(npchar, pcharrepphrase(RandPhraseSimple("¡Todos a cubierta! ", "¡Alto para inspección! ") + LinkRandPhrase("¿Qué hace un " + GetSexPhrase("caballero", "caballero, oh, perdóneme eres una dama") + " de fortuna necesitan en mi tienda, je-je?", "¡Qué sorpresa para un pobre viejo tendero! ¡Je-je!", "Entonces, ¿qué buen viento te ha traído a mi tienda?"), LinkRandPhrase("¡Abrir los puertos!", "¡Ganchos a los lados!", "¡Navega recto!") + RandPhraseSimple(" Aquí encontrarás ", " Mi tienda tiene ") + LinkRandPhrase("los mejores precios de toda la isla.", "un excelente surtido de bienes.", "las mercancías de la mejor calidad disponible.") + RandPhraseSimple(" Estoy a su servicio", "Lo que quieras") + ", ¡capitán!"), pcharrepphrase(RandPhraseSimple("¿Algún producto para " + GetSexPhrase("caballeros", "caballeros y damas") + " de la fortuna! ¡Je-je! ¡Hasta que los cuelguen para secar al sol!", "El viento balancea a los ahorcados en el puerto y lleva el tintineo de las cadenas. Pero el dinero no tiene olor, ¿verdad?"), "¿Te gustaría " + LinkRandPhrase("comprar las mejores mercancías de " + NationNameGenitive(int(NPChar.nation)), "comprar o vender tu cargamento", "? ¿Tienes un flete rentable?") + RandPhraseSimple(" ¿Estoy a su servicio?", " ¿Mi tienda está a su servicio?") + RandPhraseSimple(" ¡Encantado de verte", " ¡Tú mismo") + ", capitán!")), NPCharRepPhrase(npchar, pcharrepphrase("Si quieres mi consejo, capitán, no escatimes en metralla. Sabes, ¡a los muertos es mucho más fácil registrar!", "Me he dado cuenta enseguida de que eres " + GetSexPhrase("un astuto camarada", "una muchacha astuta") + ". " + RandPhraseSimple("Pero ahora puedo ver que eres un verdadero " + GetSexPhrase("héroe", "temerario") + ".", "Eres joven, pero " + RandPhraseSimple("mantén tu ingenio contigo.", "ciertamente no puedes ser engañado fácilmente."))), pcharrepphrase("Estoy dispuesto a comprarte toda la carga de los premios capturados. ¿Quieres en plata o en oro? Ese material siempre es costoso.", "La navegación comercial es un negocio lucrativo, capitán " + GetFullName(pchar) + ", ¿no es así?")), NPCharRepPhrase(npchar, RandPhraseSimple("¡Los envolvimos bien apretados en el foque con veinte vueltas de cabo y los lanzamos por la borda fuera de vista! ", RandPhraseSimple("¡Quince hombres sobre el cofre del muerto!", "¡Bebed y el diablo se encargará del resto!") + "¡Yo ho ho y una botella de ron!") + RandPhraseSimple("¿Qué tal, capitán?", "¿Busca comprar algo, capitán?"), pcharrepphrase("Veo que eres todo un regateador, capitán " + GetFullName(pchar) + " . ¡Dado que eres un cliente habitual, te ofrezco precios muy buenos!", "Está bien, capitán " + GetFullName(pchar) + ", en deferencia a usted puedo ofrecer un poquito más! ¿Qué le gustaría?")), NPCharRepPhrase(npchar, "Juro que hablar contigo me enferma. " + LinkRandPhrase("Compra un par de cacahuetes. A los cerdos les gusta esa cosa. ", "¿Esperas que alguien pula tus botas con ron aquí? ", pcharrepphrase("Conozco tu tipo. Te cargas de ron, y directo al patíbulo.", "¡Me pregunto cómo permitió tu madre que te convirtieras en marinero! ¡Un marinero! Serías un sastre mucho mejor...")), pcharrepphrase(RandPhraseSimple("Pensé que ", "Esperaba que ") + RandPhraseSimple("habías abandonado nuestra isla para siempre.", " Nunca te volvería a ver.") + RandPhraseSimple(" Los muertos cuelgan de tu cuello como piedras de molino...", " ¿Cuántos marineros has dejado pudrirse entre los corales?!"), "Capitán " + GetFullName(pchar) + ", ¡tu pasión por el comercio ha superado todas mis expectativas!" + RandPhraseSimple(" ¿Quieres hacer compras de última hora antes de zarpar?", " ¿Buscas algo especial?"))), "cycle", 10, npchar, Dialog.CurrentNode);
 		// belamour legendary edition на пару с Акулой -->
 		if (CheckAttribute(pchar, "questTemp.SharkGoldFleet") && npchar.location == "caracas_store")
 		{
@@ -400,7 +400,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "EncGirl_4":
-		if (sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
+		if (int(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 		{
 			dialog.text = "Oh, entonces eres " + GetSexPhrase("ese capitán, que trajo", "esa muchacha, que trajo") + " ¿mi hijo pródigo con una joven novia?";
 			link.l1 = "Sí, les ayudé a escapar.";
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "EncGirl_5_1":
-		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.EncGirl.sum));
+		AddMoneyToCharacter(pchar, int(pchar.GenQuest.EncGirl.sum));
 		GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item);
 		AddQuestRecord("JungleGirl", "18");
 		CloseQuestHeader("JungleGirl");
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 	case "TransferGoods":
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 
-		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 		{
 			dialog.text = LinkRandPhrase("...Ya está hecho. Ahora lo único que queda es decidir qué barco cargar.", "Tu tesorero ya ha hecho eso. Decidamos ahora, qué barco será cargado.", "Sí, " + PChar.name + ", lo sé. Ya me hizo una visita. Ahora, ¿qué barco vamos a cargar?");
 
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 						continue;
 
 					attrL = "l" + i;
-					Link.(attrL) = "It will be " + XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+					Link.(attrL) = "It will be " + XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 					Link.(attrL).go = "TransferGoodsTo_" + chref.id;
 				}
 			}
@@ -500,7 +500,7 @@ void ProcessDialogEvent()
 					continue; // Если квестовый - пропускаем
 
 				attrL = "l" + i;
-				Link.(attrL) = "It will be " + XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+				Link.(attrL) = "It will be " + XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 				Link.(attrL).go = "TransferGoodsTo_" + chref.id;
 			}
 		}
@@ -546,12 +546,12 @@ void ProcessDialogEvent()
 
 	case "trade_1":
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 		{
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
 			Pchar.PriceList.StoreManIdx = rColony.index; // boal 27.02.05
-			LaunchStore(sti(rColony.StoreNum));
+			LaunchStore(int(rColony.StoreNum));
 		}
 		else
 		{
@@ -562,11 +562,11 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_0":
-		NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage);
-		if (sti(NPChar.MoneyForStorage) > 0)
+		NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+		if (int(NPChar.MoneyForStorage) > 0)
 		{
-			dialog.text = "En cuanto al alquiler, todavía me debes " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ".";
-			if (sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			dialog.text = "En cuanto al alquiler, todavía me debes " + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + ".";
+			if (int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Está bien, pagaré el alquiler ahora.";
 				link.l1.go = "storage_3";
@@ -589,7 +589,7 @@ void ProcessDialogEvent()
 
 	case "storage_01":
 		NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
-		dialog.text = "Sí, tengo un almacén en el puerto, puede contener 50000 quintales de carga. Para " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + " por mes puedo proporcionar custodia de tus bienes. " + "Esto incluye la vigilancia, protección contra la humedad y luchar contra las ratas. ¿Qué dices? Además... necesitaré el pago de un mes por adelantado.";
+		dialog.text = "Sí, tengo un almacén en el puerto, puede contener 50000 quintales de carga. Para " + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + " por mes puedo proporcionar custodia de tus bienes. " + "Esto incluye la vigilancia, protección contra la humedad y luchar contra las ratas. ¿Qué dices? Además... necesitaré el pago de un mes por adelantado.";
 		link.l1 = "Traje. ¿Puedo echarle un vistazo? ¿Tienes muchas ratas allí?";
 		link.l1.go = "storage_1";
 		link.l2 = "No, solo estoy preguntando. Puedo usarlo cuando sea necesario...";
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 	case "storage_1":
 		NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 		dialog.text = "Como dije, requiero el pago de un mes por adelantado. ¡Y nada de ratas!";
-		if (sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+		if (int(pchar.money) >= int(NPChar.MoneyForStorage))
 		{
 			link.l1 = "Eres... bastante mercantil, debo decir. Aquí tienes tu dinero, alquilaré este cobertizo.";
 			link.l1.go = "storage_11";
@@ -612,30 +612,30 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_11":
-		AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForStorage));
+		AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 		NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 		NPChar.Storage.Activate = true;
 		Achievment_Set("ach_67"); // ugeen 2016
 		SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit();
-		LaunchStorage(sti(rColony.StoreNum));
+		LaunchStorage(int(rColony.StoreNum));
 		break;
 
 	case "storage_2":
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit();
-		LaunchStorage(sti(rColony.StoreNum));
+		LaunchStorage(int(rColony.StoreNum));
 		break;
 
 	case "storage_3":
-		AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage));
+		AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 		NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 		NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 		SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit();
-		LaunchStorage(sti(rColony.StoreNum));
+		LaunchStorage(int(rColony.StoreNum));
 		break;
 
 	case "storage_04":
@@ -647,11 +647,11 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_4":
-		NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage);
-		if (sti(NPChar.MoneyForStorage) > 0)
+		NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+		if (int(NPChar.MoneyForStorage) > 0)
 		{
-			dialog.text = "Y por el alquiler, todavía me debes " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ".";
-			if (sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			dialog.text = "Y por el alquiler, todavía me debes " + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + ".";
+			if (int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Bien.";
 				link.l1.go = "storage_5";
@@ -666,7 +666,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "storage_5":
-		LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
+		LeaveStorage(NPChar, rColony, int(NPChar.MoneyForStorage));
 		DialogExit();
 	break;
 	
@@ -679,7 +679,7 @@ void ProcessDialogEvent()
 		iTest = 0;
 
 		// Jason --> генератор Сомнительное предложение
-		/*if (hrand(3) == 1 && !CheckAttribute(pchar, "GenQuest.Contraoffer.Trader") && !CheckAttribute(pchar, "GenQuest.Contraoffer.Slaves.Yes") && sti(npchar.nation) != PIRATE && 7-sti(RealShips[sti(pchar.ship.type)].Class) > 0)
+		/*if (hrand(3) == 1 && !CheckAttribute(pchar, "GenQuest.Contraoffer.Trader") && !CheckAttribute(pchar, "GenQuest.Contraoffer.Slaves.Yes") && int(npchar.nation) != PIRATE && 7-int(RealShips[int(pchar.ship.type)].Class) > 0)
 		{
 			if (!CheckAttribute(npchar, "Contraoffer") || GetNpcQuestPastDayParam(npchar, "Contraoffer") >= 30)
 			{
@@ -697,7 +697,7 @@ void ProcessDialogEvent()
 			link.l5.go = "Contraoffer_check";
 		}
 
-		if (!CheckAttribute(pchar, "GenQuest.Contraoffer.Slaves") && sti(npchar.quest.Contraoffer.chance) == 2 && GetNpcQuestPastDayParam(npchar, "Contraoffer") >= 30) //единичный вариант за всю игру, ака 'пасхалка'
+		if (!CheckAttribute(pchar, "GenQuest.Contraoffer.Slaves") && int(npchar.quest.Contraoffer.chance) == 2 && GetNpcQuestPastDayParam(npchar, "Contraoffer") >= 30) //единичный вариант за всю игру, ака 'пасхалка'
 		{
 			dialog.text = "¡Oh! Llegas justo a tiempo, capitán. Necesito un favor especial.";
 			link.l5 = "Escuchemos.";
@@ -723,7 +723,7 @@ void ProcessDialogEvent()
 
 		// Jason --> генератор Место под солнцем
 		//  belamour legendary edition втречается чаще
-		if (!CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && !CheckAttribute(npchar, "quest.Sunplace") && sti(npchar.nation) != PIRATE && sti(pchar.rank) < 20 && hrand(2) == 2 && !CheckAttribute(pchar, "questTemp.Shadowtrader_Block"))
+		if (!CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && !CheckAttribute(npchar, "quest.Sunplace") && int(npchar.nation) != PIRATE && int(pchar.rank) < 20 && hrand(2) == 2 && !CheckAttribute(pchar, "questTemp.Shadowtrader_Block"))
 		{
 			dialog.text = "Capitán, me gustaría pedirle un favor y estoy dispuesto a pagarle generosamente, si acepta.";
 			link.l1 = "Interesante. Bueno, ¿cuál es el problema?";
@@ -734,7 +734,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && pchar.GenQuest.Sunplace.Trader == "complete" && npchar.location == pchar.GenQuest.Sunplace.Trader.City + "_store")
 		{
 			dialog.text = "Capitán, me alegra verte. Ya sé que has cumplido mi solicitud respecto a " + pchar.GenQuest.Sunplace.Trader.Enemyname + ".";
-			link.l1 = "¡Je! Ten por seguro que la " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))) + " de " + pchar.GenQuest.Sunplace.Trader.ShipName + " y su carga de " + GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods)) + ", ya no le pertenecen a tu rival.";
+			link.l1 = "¡Je! Ten por seguro que la " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))) + " de " + pchar.GenQuest.Sunplace.Trader.ShipName + " y su carga de " + GetGoodsNameAlt(int(pchar.GenQuest.Sunplace.Trader.Goods)) + ", ya no le pertenecen a tu rival.";
 			link.l1.go = "Sunplace_complete";
 			break;
 		}
@@ -750,7 +750,7 @@ void ProcessDialogEvent()
 
 		dialog.text = NPCharRepPhrase(npchar, "¿Qué negocio? ¡Cuéntamelo todo!", "Estoy escuchando. ¿De qué trato hablas?");
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 		{
 			if (CheckQuestAttribute("generate_trade_quest_progress", "begin") || CheckQuestAttribute("generate_trade_quest_progress", "failed"))
 			{
@@ -761,7 +761,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (!CheckQuestAttribute("generate_trade_quest_progress", "failed") && pchar.CargoQuest.GiveTraderID == npchar.id && GetNationRelation2MainCharacter(sti(characters[GetCharacterIndex(pchar.CargoQuest.TraderID)].nation)) == RELATION_ENEMY)
+					if (!CheckQuestAttribute("generate_trade_quest_progress", "failed") && pchar.CargoQuest.GiveTraderID == npchar.id && GetNationRelation2MainCharacter(int(characters[GetCharacterIndex(pchar.CargoQuest.TraderID)].nation)) == RELATION_ENEMY)
 					{
 						link.l1 = "Lamentablemente, me veo obligado a abandonar sus compromisos. La situación política no me permite entregar las mercancías.";
 						link.l1.go = "generate_quest_cannot_done";
@@ -784,7 +784,7 @@ void ProcessDialogEvent()
 			link.l22 = "Estoy en otro asunto.";
 			link.l22.go = "quests";
 			// --> на кредитный генератор
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l3 = pcharrepphrase(RandPhraseSimple(" Oh,  realmente me agoté en el mar... Bueno,  camarada,  el dinero es un verdadero problema para mí en este momento. ", "Está bien, viejo zorro, discutamos nuestros asuntos financieros."), RandPhraseSimple("Me gustaría discutir los asuntos financieros contigo.", "Hablemos de asuntos financieros, tenemos que hablar de ellos."));
 				,
@@ -825,7 +825,7 @@ void ProcessDialogEvent()
 			}
 			// <-- ugeen
 			// Jason --> квест губера на поиск дезертира
-			if (CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE)
+			if (CheckAttribute(pchar, "GenQuest.FindFugitive") && int(NPChar.nation) == PIRATE)
 			{
 				link.l8 = "Verás, estoy tratando de encontrar a mi compañero, " + pchar.GenQuest.FindFugitive.Name + " es su nombre. En Port-Royal, la gente en la taberna me dijo que se dirigía a tu asentamiento. ¿Lo has conocido, por casualidad?";
 				link.l8.go = "FindFugitiveSt";
@@ -843,7 +843,7 @@ void ProcessDialogEvent()
 			link.l22 = "Estoy en otro asunto.";
 			link.l22.go = "quests";
 			// --> на кредитный генератор
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l3 = pcharrepphrase(RandPhraseSimple("Oh, realmente estaba agotado en el mar... Bueno, camarada, el dinero es un verdadero problema para mí ahora mismo.", "Está bien, viejo zorro,   discutamos nuestros asuntos financieros."), RandPhraseSimple("Me gustaría discutir contigo los asuntos financieros.", "Discutamos asuntos financieros, tenemos que hablar."));
 				,
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 				link.l7.go = "IntelligenceForAll";
 			}
 			// Jason --> квест губера на поиск дезертира
-			if (CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE)
+			if (CheckAttribute(pchar, "GenQuest.FindFugitive") && int(NPChar.nation) == PIRATE)
 			{
 				link.l8 = "Verás, estoy tratando de encontrar a mi compañero, " + pchar.GenQuest.FindFugitive.Name + " es su nombre. En Port-Royal, la gente en la taberna me dijo que se dirigía a tu asentamiento. ¿Lo has encontrado, por casualidad?";
 				link.l8.go = "FindFugitiveSt";
@@ -871,9 +871,9 @@ void ProcessDialogEvent()
 		{
 			npchar.quest.trade_date = lastspeak_date;
 			// проверка враждебности нам страны торговца
-			if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
-				dialog.text = "¡No, no necesito tus servicios! Al menos, mientras seas enemigo de " + NationNameAblative(sti(NPChar.nation)) + ".";
+				dialog.text = "¡No, no necesito tus servicios! Al menos, mientras seas enemigo de " + NationNameAblative(int(NPChar.nation)) + ".";
 				link.l1 = "En ese caso, adiós.";
 				link.l1.go = "exit";
 			}
@@ -888,7 +888,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				// проверка на проф пригодность <--
-				int iTradeNation = GenerateNationTrade(sti(NPChar.nation));
+				int iTradeNation = GenerateNationTrade(int(NPChar.nation));
 
 				if (iTradeNation < 0)
 				{
@@ -902,12 +902,12 @@ void ProcessDialogEvent()
 					if (storeMan > 0)
 					{
 						// проверяем импорт/экспорт
-						iTradeGoods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE)); // Jason
+						iTradeGoods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE)); // Jason
 						// проверяем свободное место (при этом должно вмещаться по меньшей мере 100 единиц выбранного груза
 						RecalculateSquadronCargoLoad(pchar); // fix неверное место
 						iQuantityGoods = GetSquadronFreeSpace(pchar, iTradeGoods);
-						if (sti(Goods[iTradeGoods].Weight) / sti(Goods[iTradeGoods].Units) * sti(iQuantityGoods) > 1500)
-							iQuantityGoods = makeint(1500 / (sti(Goods[iTradeGoods].Weight) / sti(Goods[iTradeGoods].Units))); // Jason: больше 1500 массы не дадим - большие фрахты только через ПУ
+						if (int(Goods[iTradeGoods].Weight) / int(Goods[iTradeGoods].Units) * int(iQuantityGoods) > 1500)
+							iQuantityGoods = int(1500 / (int(Goods[iTradeGoods].Weight) / int(Goods[iTradeGoods].Units))); // Jason: больше 1500 массы не дадим - большие фрахты только через ПУ
 						if (iQuantityGoods < 100)																			   // это в шт. товара
 						{
 							dialog.text = NPCharRepPhrase(npchar, "Tu miserable vieja bañera no puede contener todo el lote, así que no habrá trato hoy.", "Lamentablemente, capitán " + GetFullName(pchar) + ", necesitaré un barco más espacioso para mi entrega.");
@@ -916,8 +916,8 @@ void ProcessDialogEvent()
 						}
 						else
 						{
-							iQuantityGoods = iQuantityGoods - rand(makeint(iQuantityGoods / 3)) - 10;
-							iMoney = makeint((iQuantityGoods * sti(Goods[iTradeGoods].Weight) / sti(Goods[iTradeGoods].Units)) * (4 + rand(3) + GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE)) + 0.5);
+							iQuantityGoods = iQuantityGoods - rand(int(iQuantityGoods / 3)) - 10;
+							iMoney = int((iQuantityGoods * int(Goods[iTradeGoods].Weight) / int(Goods[iTradeGoods].Units)) * (4 + rand(3) + GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE)) + 0.5);
 
 							pchar.CargoQuest.iTradeGoods = iTradeGoods;
 							pchar.CargoQuest.iQuantityGoods = iQuantityGoods;
@@ -936,7 +936,7 @@ void ProcessDialogEvent()
 							{
 								sTemp = ", que está en " + XI_ConvertString(pchar.CargoQuest.iTradeIsland + "Voc");
 							}
-							dialog.text = "¡Oh! Estaba a punto de pedirte un favor. Verás, necesito entregar una carga de " + GetGoodsNameAlt(iTradeGoods) + " en la cantidad de " + FindRussianQtyString(iQuantityGoods) + "  a la ciudad de " + sNation + sTemp + ", y cuanto antes mejor. Si logras hacerlo en menos de " + FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired)) + ", entonces al llegar recibirás " + FindRussianMoneyString(iMoney) + " como tu recompensa. ¿Qué dices?";
+							dialog.text = "¡Oh! Estaba a punto de pedirte un favor. Verás, necesito entregar una carga de " + GetGoodsNameAlt(iTradeGoods) + " en la cantidad de " + FindRussianQtyString(iQuantityGoods) + "  a la ciudad de " + sNation + sTemp + ", y cuanto antes mejor. Si logras hacerlo en menos de " + FindRussianDaysString(int(pchar.CargoQuest.iDaysExpired)) + ", entonces al llegar recibirás " + FindRussianMoneyString(iMoney) + " como tu recompensa. ¿Qué dices?";
 							link.l1 = "Creo que estoy de acuerdo.";
 							link.l1.go = "exit_trade";
 							link.l2 = "Esto probablemente no sea para mí.";
@@ -945,7 +945,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						dialog.text = "Las realidades políticas en el archipiélago no me permiten comerciar. " + XI_ConvertString(NationShortName(sti(NPChar.nation)) + "hunter") + " está en hostilidad con todos y me dejó solo en la tienda.";
+						dialog.text = "Las realidades políticas en el archipiélago no me permiten comerciar. " + XI_ConvertString(NationShortName(int(NPChar.nation)) + "hunter") + " está en hostilidad con todos y me dejó solo en la tienda.";
 						link.l1 = "¡Oh! Lo siento. Buena suerte.";
 						link.l1.go = "exit";
 					}
@@ -978,20 +978,20 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-			iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
+			iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+			iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
 
-			dialog.text = "¡De hecho! He estado esperando por ello bastante tiempo. Tienes que entregarme un cargamento de " + GetGoodsNameAlt(iTradeGoods) + " en cantidad de " + FindRussianQtyString(iQuantityGoods) + " y recibir por ello " + FindRussianMoneyString(sti(pchar.CargoQuest.iMoney)) + ".";
+			dialog.text = "¡De hecho! He estado esperando por ello bastante tiempo. Tienes que entregarme un cargamento de " + GetGoodsNameAlt(iTradeGoods) + " en cantidad de " + FindRussianQtyString(iQuantityGoods) + " y recibir por ello " + FindRussianMoneyString(int(pchar.CargoQuest.iMoney)) + ".";
 			link.l1 = "Exactamente.";
 			link.l1.go = "generate_quest_ready";
 		}
 		break;
 
 	case "generate_quest_ready":
-		iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-		iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
+		iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+		iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
 		// блок кидалова нас на бабки -->
-		if (rand(8) == 1 && sti(Goods[iTradeGoods].Cost) <= 44 && GetQuestPastDayParam("CargoQuest") > 5)
+		if (rand(8) == 1 && int(Goods[iTradeGoods].Cost) <= 44 && GetQuestPastDayParam("CargoQuest") > 5)
 		{
 			dialog.text = RandSwear() + "Debo disculparme contigo, " + GetAddress_Form(NPChar) + ".  Verás, el problema es que yo estaba " + RandPhraseSimple("en una situación embarazosa y no podré pagarte", "ya compré esa carga de otro vendedor por un mejor precio") + " . Como pago por tu carta de navegación, sugiero que te quedes con toda la carga que estabas entregando.";
 			link.l1 = RandSwear() + RandPhraseSimple("¡Y he estado protegiendo esa maldita carga de todos los peligros! ¡Maté doscientos ratas por ello!", "Me has puesto en un punto muerto, y tendré que aceptar.");
@@ -1031,10 +1031,10 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Leadership", 30);
 			AddCharacterExpToSkill(pchar, "COMMERCE", 100);
 
-			AddMoneyToCharacter(pchar, makeint(pchar.CargoQuest.iMoney));
+			AddMoneyToCharacter(pchar, int(pchar.CargoQuest.iMoney));
 			pchar.quest.generate_trade_quest_progress = "";
 			pchar.quest.generate_trade_quest.over = "yes";
-			RemoveCharacterGoods(pchar, makeint(pchar.CargoQuest.iTradeGoods), makeint(pchar.CargoQuest.iQuantityGoods));
+			RemoveCharacterGoods(pchar, int(pchar.CargoQuest.iTradeGoods), int(pchar.CargoQuest.iQuantityGoods));
 
 			OfficersReaction("good");
 
@@ -1046,13 +1046,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "generate_quest_failed":
-		iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-		iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
-		iMoney = 3 * makeint(iQuantityGoods * sti(Goods[iTradeGoods].Cost) / sti(Goods[iTradeGoods].Units));
+		iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+		iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
+		iMoney = 3 * int(iQuantityGoods * int(Goods[iTradeGoods].Cost) / int(Goods[iTradeGoods].Units));
 		dialog.text = "Está bien... La suma de " + FindRussianMoneyString(iMoney) + " cubrirá solo los daños causados por la violación de los términos de nuestro trato.";
 		link.l1 = "¡Vaya! ¡No, eso no servirá! ¡Nunca más volveré a entregar ninguna carga! ¡Ya hay suficiente de esa porquería en el mar!";
 		link.l1.go = "exit";
-		if (sti(pchar.Money) >= iMoney)
+		if (int(pchar.Money) >= iMoney)
 		{
 			link.l2 = "Aquí está la cantidad requerida";
 			link.l2.go = "generate_quest_failed_2";
@@ -1066,9 +1066,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "generate_quest_failed_2":
-		iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-		iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
-		iMoney = 3 * makeint(iQuantityGoods * sti(Goods[iTradeGoods].Cost) / sti(Goods[iTradeGoods].Units));
+		iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+		iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
+		iMoney = 3 * int(iQuantityGoods * int(Goods[iTradeGoods].Cost) / int(Goods[iTradeGoods].Units));
 		dialog.text = "Excelente. Ahora puedo decirles a mis colegas que todavía eres razonable para tratar.";
 		link.l1 = "¡Gracias! No te fallaré de nuevo.";
 		link.l1.go = "exit";
@@ -1089,8 +1089,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "generate_quest_not_closed":
-		iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-		iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
+		iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+		iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
 
 		dialog.text = "Hmm. He oído que no has cumplido con tus obligaciones estipuladas en el contrato anterior, ¿y estás pidiendo otro? Tenías que entregar la carga de " + GetGoodsNameSeaSection(&Goods[iTradeGoods]) + " a " + XI_ConvertString("Colony" + pchar.CargoQuest.iTradeColony) + ".";
 		link.l1 = "¡Sí, en efecto! ¡Tienes razón!";
@@ -1107,8 +1107,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "generate_quest_cannot_done_2":
-		iTradeGoods = makeint(pchar.CargoQuest.iTradeGoods);
-		iQuantityGoods = makeint(pchar.CargoQuest.iQuantityGoods);
+		iTradeGoods = int(pchar.CargoQuest.iTradeGoods);
+		iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
 		if (GetSquadronGoods(pchar, iTradeGoods) < iQuantityGoods)
 		{
 			dialog.text = "¡Espera! ¡No hay suficientes mercancías a bordo de tu barco! No tienes " + FindRussianQtyString(iQuantityGoods - GetSquadronGoods(pchar, iTradeGoods)) + " unidades de carga.";
@@ -1124,10 +1124,10 @@ void ProcessDialogEvent()
 
 			pchar.quest.generate_trade_quest_progress = "";
 			pchar.quest.generate_trade_quest.over = "yes";
-			RemoveCharacterGoods(pchar, makeint(pchar.CargoQuest.iTradeGoods), makeint(pchar.CargoQuest.iQuantityGoods));
+			RemoveCharacterGoods(pchar, int(pchar.CargoQuest.iTradeGoods), int(pchar.CargoQuest.iQuantityGoods));
 
 			AddQuestRecord("DELIVERY_TRADE_QUEST", "6");
-			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodQty", FindRussianQtyString(sti(pchar.CargoQuest.iQuantityGoods)));
+			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodQty", FindRussianQtyString(int(pchar.CargoQuest.iQuantityGoods)));
 			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodGen", GetGoodsNameAlt(iTradeGoods));
 			AddQuestUserData("DELIVERY_TRADE_QUEST", "sTargetColony", XI_ConvertString("Colony" + pchar.CargoQuest.iTradeColony + "Gen")); // belamour gen
 			CloseQuestHeader("DELIVERY_TRADE_QUEST");
@@ -1174,8 +1174,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Wine_Qty":
-		int iQty = sti(dialogEditStrings[4]);
-		pchar.questTemp.Wine.Qty = sti(iQty);
+		int iQty = int(dialogEditStrings[4]);
+		pchar.questTemp.Wine.Qty = int(iQty);
 		if (iQty < 20)
 		{
 			dialog.text = "No soy un buhonero, capitán. Según recuerdo, ¿no hablaba usted de un lote más grande?";
@@ -1190,9 +1190,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Wine_Price";
 			break;
 		}
-		pchar.questTemp.Wine.Summ = sti(iQty) * 500;
-		dialog.text = "" + sti(iQty) + " ¿Botellas? Bien. Eso te costará " + FindRussianMoneyString(sti(pchar.questTemp.Wine.Summ)) ".";
-		if (makeint(Pchar.money) >= sti(pchar.questTemp.Wine.Summ))
+		pchar.questTemp.Wine.Summ = int(iQty) * 500;
+		dialog.text = "" + int(iQty) + " ¿Botellas? Bien. Eso te costará " + FindRussianMoneyString(int(pchar.questTemp.Wine.Summ)) +".";
+		if (int(Pchar.money) >= int(pchar.questTemp.Wine.Summ))
 		{
 			link.l1 = "Aquí tienes.";
 			link.l1.go = "Wine_Qty_1";
@@ -1208,7 +1208,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Wine_Qty_1":
-		AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Wine.Summ));
+		AddMoneyToCharacter(pchar, -int(pchar.questTemp.Wine.Summ));
 		dialog.text = "Veamos... Todo parece en orden. Puedes recoger tu compra.";
 		link.l1 = "¡Gracias! ¡Buena suerte!";
 		link.l1.go = "Wine_Qty_2";
@@ -1217,7 +1217,7 @@ void ProcessDialogEvent()
 	case "Wine_Qty_2":
 		pchar.quest.Wine_wait.over = "yes"; // снять прерывание
 		DeleteAttribute(pchar, "questTemp.Wine.wait");
-		TakeNItems(pchar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+		TakeNItems(pchar, "potionwine", int(pchar.questTemp.Wine.Qty));
 		PlaySound("interface\important_item.wav");
 		Log_Info("Has recibido vino");
 		AddQuestRecord("Wine", "8");
@@ -1227,20 +1227,19 @@ void ProcessDialogEvent()
 		// <-- мини-квест Дефицитный товар
 
 		// Jason --> -------------------------генератор Сомнительное предложение----------------------------------------
-		int iCGood, amount;
 	case "Contraoffer":
 		pchar.GenQuest.Contraoffer.Trader.Goods = SelectContrabandGoods(pchar);
-		while (sti(pchar.GenQuest.Contraoffer.Trader.Goods) == -1)
+		while (int(pchar.GenQuest.Contraoffer.Trader.Goods) == -1)
 		{
 			pchar.GenQuest.Contraoffer.Trader.Goods = SelectContrabandGoods(pchar);
 		}
-		iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-		pchar.GenQuest.Contraoffer.Trader.Qty = makeint(15 * (sti(pchar.rank) + 30) / (sti(Goods[iCGood].Weight) / sti(Goods[iCGood].Units)) * (8 - sti(RealShips[sti(pchar.ship.type)].Class))); // количество
-		pchar.GenQuest.Contraoffer.Trader.Price = sti(Goods[iCGood].Cost) / sti(Goods[iCGood].Units) * 3;																						  // цена единицы товара
-		pchar.GenQuest.Contraoffer.Trader.Summ = sti(pchar.GenQuest.Contraoffer.Trader.Price) * sti(pchar.GenQuest.Contraoffer.Trader.Qty);														  // сумма
+		iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
+		pchar.GenQuest.Contraoffer.Trader.Qty = int(15 * (int(pchar.rank) + 30) / (int(Goods[iCGood].Weight) / int(Goods[iCGood].Units)) * (8 - int(RealShips[int(pchar.ship.type)].Class))); // количество
+		pchar.GenQuest.Contraoffer.Trader.Price = int(Goods[iCGood].Cost) / int(Goods[iCGood].Units) * 3;																						  // цена единицы товара
+		pchar.GenQuest.Contraoffer.Trader.Summ = int(pchar.GenQuest.Contraoffer.Trader.Price) * int(pchar.GenQuest.Contraoffer.Trader.Qty);														  // сумма
 		pchar.GenQuest.Contraoffer.Trader.Days = 30 + hrand(20);																																  // срок
 		pchar.GenQuest.Contraoffer.Trader.Chance = rand(5);																																		  // 17% вероятности, что патруль накроет
-		dialog.text = "Planeaba cerrar un buen trato, pero aún necesito una mercancía en particular para ello, " + GetGoodsNameAlt(iCGood) + ". El problema es que esta mercancía es un contrabando en nuestra colonia, así que no puedo contar con comprarla de los capitanes comerciantes\nTodo lo que necesito son " + FindRussianQtyString(sti(pchar.GenQuest.Contraoffer.Trader.Qty)) + " unidades de ello. ¿Quizás podrías entregármelo? Te pagaré bien, " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Price)) + " por unidad, lo que sumará a " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Oh, y lo necesito a más tardar en " + FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Trader.Days)) + "Entonces, ¿me ayudarás?";
+		dialog.text = "Planeaba cerrar un buen trato, pero aún necesito una mercancía en particular para ello, " + GetGoodsNameAlt(iCGood) + ". El problema es que esta mercancía es un contrabando en nuestra colonia, así que no puedo contar con comprarla de los capitanes comerciantes\nTodo lo que necesito son " + FindRussianQtyString(int(pchar.GenQuest.Contraoffer.Trader.Qty)) + " unidades de ello. ¿Quizás podrías entregármelo? Te pagaré bien, " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Price)) + " por unidad, lo que sumará a " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Oh, y lo necesito a más tardar en " + FindRussianDaysString(int(pchar.GenQuest.Contraoffer.Trader.Days)) + "Entonces, ¿me ayudarás?";
 		link.l1 = "Hmm... Suena interesante. ¡Estoy de acuerdo!";
 		link.l1.go = "Contraoffer_1";
 		link.l2 = "¿Entregando mercancías de contrabando? Lo siento, no estoy interesado.";
@@ -1253,7 +1252,7 @@ void ProcessDialogEvent()
 		link.l1 = "¡Pronto estaré de vuelta!";
 		link.l1.go = "exit";
 		rColony = GetColonyByIndex(FindColony(npchar.city));
-		SetNull2StoreGood(rColony, sti(pchar.GenQuest.Contraoffer.Trader.Goods)); // нулим товар
+		SetNull2StoreGood(rColony, int(pchar.GenQuest.Contraoffer.Trader.Goods)); // нулим товар
 		pchar.GenQuest.Contraoffer = "begin";
 		pchar.GenQuest.Contraoffer.Trader = "true";
 		pchar.GenQuest.Contraoffer.Trader.City = npchar.city;
@@ -1262,16 +1261,16 @@ void ProcessDialogEvent()
 		ReOpenQuestHeader("Contraoffer");
 		AddQuestRecord("Contraoffer", "1");
 		AddQuestUserData("Contraoffer", "sGoods", GetGoodsNameAlt(iCGood));
-		AddQuestUserData("Contraoffer", "sGoodQty", FindRussianQtyString(sti(pchar.GenQuest.Contraoffer.Trader.Qty)));
-		AddQuestUserData("Contraoffer", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)));
+		AddQuestUserData("Contraoffer", "sGoodQty", FindRussianQtyString(int(pchar.GenQuest.Contraoffer.Trader.Qty)));
+		AddQuestUserData("Contraoffer", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Summ)));
 		AddQuestUserData("Contraoffer", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Contraoffer.Trader.City + "Gen"));
-		AddQuestUserData("Contraoffer", "sDays", FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Trader.Days)));
-		SetFunctionTimerCondition("Contraoffer_Over", 0, 0, sti(pchar.GenQuest.Contraoffer.Trader.Days), false);
+		AddQuestUserData("Contraoffer", "sDays", FindRussianDaysString(int(pchar.GenQuest.Contraoffer.Trader.Days)));
+		SetFunctionTimerCondition("Contraoffer_Over", 0, 0, int(pchar.GenQuest.Contraoffer.Trader.Days), false);
 		break;
 
 	case "Contraoffer_check":
-		iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-		amount = sti(pchar.GenQuest.Contraoffer.Trader.Qty) - GetSquadronGoods(pchar, sti(pchar.GenQuest.Contraoffer.Trader.Goods));
+		iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
+		amount = int(pchar.GenQuest.Contraoffer.Trader.Qty) - GetSquadronGoods(pchar, int(pchar.GenQuest.Contraoffer.Trader.Goods));
 		if (amount > 0)
 		{
 			dialog.text = "¿Estás bromeando? ¡No tienes la cantidad completa de mercancías que necesito!";
@@ -1287,15 +1286,15 @@ void ProcessDialogEvent()
 		break;
 
 	case "Contraoffer_pay":
-		dialog.text = "Gracias por tu trabajo. Por favor, toma tu pago de " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ".";
+		dialog.text = "Gracias por tu trabajo. Por favor, toma tu pago de " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Summ)) + ".";
 		link.l1 = "¡Gracias! Un placer hacer negocios contigo.";
 		link.l1.go = "Contraoffer_complete";
 		break;
 
 	case "Contraoffer_complete":
 		pchar.quest.Contraoffer_Over.over = "yes";
-		RemoveCharacterGoods(pchar, sti(pchar.GenQuest.Contraoffer.Trader.Goods), sti(pchar.GenQuest.Contraoffer.Trader.Qty));
-		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Contraoffer.Trader.Summ));
+		RemoveCharacterGoods(pchar, int(pchar.GenQuest.Contraoffer.Trader.Goods), int(pchar.GenQuest.Contraoffer.Trader.Qty));
+		AddMoneyToCharacter(pchar, int(pchar.GenQuest.Contraoffer.Trader.Summ));
 		SaveCurrentNpcQuestDateParam(npchar, "Contraoffer");
 		npchar.quest.Contraoffer.chance = rand(2);		 // личный шанс торговца для 'пасхалки'
 		AddCharacterExpToSkill(pchar, "Sailing", 100);	 // навигация
@@ -1328,8 +1327,8 @@ void ProcessDialogEvent()
 		pchar.GenQuest.Contraoffer.Slaves.Price = 300;			// цена на рабов, пока фиксированная, можно подставить формулу
 		pchar.GenQuest.Contraoffer.Slaves.Qty = 300 + rand(50); // количество
 		pchar.GenQuest.Contraoffer.Slaves.Days = 14 + rand(6);	// срок
-		pchar.GenQuest.Contraoffer.Slaves.Money = sti(pchar.GenQuest.Contraoffer.Slaves.Qty) * sti(pchar.GenQuest.Contraoffer.Slaves.Price);
-		dialog.text = "Necesito urgentemente un lote de esclavos, " + sti(pchar.GenQuest.Contraoffer.Slaves.Qty) + " cabezas. Estoy listo para pagar " + sti(pchar.GenQuest.Contraoffer.Slaves.Price) + " monedas por alma, lo que ascenderá a " + sti(pchar.GenQuest.Contraoffer.Slaves.Money) + " pesos en total. En un plazo de " + FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Slaves.Days)) + ".";
+		pchar.GenQuest.Contraoffer.Slaves.Money = int(pchar.GenQuest.Contraoffer.Slaves.Qty) * int(pchar.GenQuest.Contraoffer.Slaves.Price);
+		dialog.text = "Necesito urgentemente un lote de esclavos, " + int(pchar.GenQuest.Contraoffer.Slaves.Qty) + " cabezas. Estoy listo para pagar " + int(pchar.GenQuest.Contraoffer.Slaves.Price) + " monedas por alma, lo que ascenderá a " + int(pchar.GenQuest.Contraoffer.Slaves.Money) + " pesos en total. En un plazo de " + FindRussianDaysString(int(pchar.GenQuest.Contraoffer.Slaves.Days)) + ".";
 		link.l1 = "Creo que voy a estar de acuerdo. Es un negocio molesto, pero muy lucrativo.";
 		link.l1.go = "Contraoffer_slaves_1";
 		link.l2 = "No estoy interesado.";
@@ -1345,15 +1344,15 @@ void ProcessDialogEvent()
 		pchar.GenQuest.Contraoffer.Slaves.City = npchar.city;
 		ReOpenQuestHeader("Contraoffer");
 		AddQuestRecord("Contraoffer", "4");
-		AddQuestUserData("Contraoffer", "sDays", FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Slaves.Days)));
-		AddQuestUserData("Contraoffer", "sGoodQty", FindRussianQtyString(sti(pchar.GenQuest.Contraoffer.Slaves.Qty)));
-		AddQuestUserData("Contraoffer", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Slaves.Money)));
+		AddQuestUserData("Contraoffer", "sDays", FindRussianDaysString(int(pchar.GenQuest.Contraoffer.Slaves.Days)));
+		AddQuestUserData("Contraoffer", "sGoodQty", FindRussianQtyString(int(pchar.GenQuest.Contraoffer.Slaves.Qty)));
+		AddQuestUserData("Contraoffer", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Slaves.Money)));
 		AddQuestUserData("Contraoffer", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Contraoffer.Slaves.City + "Gen"));
-		SetFunctionTimerCondition("Contraoffer_Over", 0, 0, sti(pchar.GenQuest.Contraoffer.Slaves.Days), false);
+		SetFunctionTimerCondition("Contraoffer_Over", 0, 0, int(pchar.GenQuest.Contraoffer.Slaves.Days), false);
 		break;
 
 	case "Contraoffer_slaves_check":
-		amount = sti(pchar.GenQuest.Contraoffer.Slaves.Qty) - GetSquadronGoods(pchar, GOOD_SLAVES);
+		amount = int(pchar.GenQuest.Contraoffer.Slaves.Qty) - GetSquadronGoods(pchar, GOOD_SLAVES);
 		if (amount > 0)
 		{
 			dialog.text = "¿Estás bromeando? ¡No tienes todos los esclavos que necesito!";
@@ -1369,7 +1368,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Contraoffer_slaves_pay":
-		dialog.text = "Gracias por tu trabajo. Por favor, toma tu pago de " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Slaves.Money)) + "Además, por favor, acepta esto. Estoy seguro de que lo encontrarás útil.";
+		dialog.text = "Gracias por tu trabajo. Por favor, toma tu pago de " + FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Slaves.Money)) + "Además, por favor, acepta esto. Estoy seguro de que lo encontrarás útil.";
 		link.l1 = "¡Gracias! Un placer hacer negocios contigo.";
 		link.l1.go = "Contraoffer_slaves_complete";
 		break;
@@ -1377,8 +1376,8 @@ void ProcessDialogEvent()
 	case "Contraoffer_slaves_complete":
 		DialogExit();
 		pchar.quest.Contraoffer_Over.over = "yes";
-		RemoveCharacterGoods(pchar, GOOD_SLAVES, sti(pchar.GenQuest.Contraoffer.Slaves.Qty));
-		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Contraoffer.Slaves.Money));
+		RemoveCharacterGoods(pchar, GOOD_SLAVES, int(pchar.GenQuest.Contraoffer.Slaves.Qty));
+		AddMoneyToCharacter(pchar, int(pchar.GenQuest.Contraoffer.Slaves.Money));
 		AddQuestRecord("Contraoffer", "5");
 		CloseQuestHeader("Contraoffer");
 		SaveCurrentNpcQuestDateParam(npchar, "Contraoffer");
@@ -1401,7 +1400,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Device_Trader_1":
-		if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) == 0)
+		if (int(pchar.GenQuest.Device.Shipyarder.Chance1) == 0)
 		{
 			dialog.text = "Mm... Sí, hubo un tipo extraño. Pero no me dijo qué era esa cosa, solo intentó vendérmela. Pero, ¿para qué la necesitaría si no tengo idea de para qué sirve? ¿Cómo la revendería? Así que simplemente me negué.";
 			link.l1 = "¿Y cómo lucía y a dónde fue? Necesito ese instrumento con urgencia.";
@@ -1432,22 +1431,22 @@ void ProcessDialogEvent()
 
 	case "Sunplace_1":
 		GetSunplaceShore();																					// бухта и остров
-		pchar.GenQuest.Sunplace.Trader.Enemyname = GenerateRandomName_Generator(sti(npchar.nation), "man"); // имя конкурента
+		pchar.GenQuest.Sunplace.Trader.Enemyname = GenerateRandomName_Generator(int(npchar.nation), "man"); // имя конкурента
 		pchar.GenQuest.Sunplace.Trader.Nation = npchar.nation;												// нация общая для торговца и конкурента
 		pchar.GenQuest.Sunplace.Trader.City = npchar.City;													// город квестодателя
 		pchar.GenQuest.Sunplace.Trader.CityT = findSunplaceCity(NPChar);									// город конкурента
 		pchar.GenQuest.Sunplace.Trader.Shiptype = Sunplace_Shiptype();										// тип корабля
-		pchar.GenQuest.Sunplace.Trader.ShipName = GenerateRandomNameToShip(sti(NPChar.nation));				// имя корабля
+		pchar.GenQuest.Sunplace.Trader.ShipName = GenerateRandomNameToShip(int(NPChar.nation));				// имя корабля
 		pchar.GenQuest.Sunplace.Trader.DaysQty = 5 + hrand(5);												// дни
-		pchar.GenQuest.Sunplace.Trader.Money = sti(pchar.GenQuest.Sunplace.Trader.Shiptype) * 3000;			// оплата
-		pchar.GenQuest.Sunplace.Trader.Goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));		// товар
-		dialog.text = "Muy bien. Entonces, el nombre de tu hombre es " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Recientemente fletó a su " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name") + "Acc")) + " '" + pchar.GenQuest.Sunplace.Trader.ShipName + "' con un cargamento de " + GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods)) + ". Pagó una suma bastante decente por ese cargamento, así que perderlo sería un golpe bastante fuerte para su bolsa.";
+		pchar.GenQuest.Sunplace.Trader.Money = int(pchar.GenQuest.Sunplace.Trader.Shiptype) * 3000;			// оплата
+		pchar.GenQuest.Sunplace.Trader.Goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));		// товар
+		dialog.text = "Muy bien. Entonces, el nombre de tu hombre es " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Recientemente fletó a su " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name") + "Acc")) + " '" + pchar.GenQuest.Sunplace.Trader.ShipName + "' con un cargamento de " + GetGoodsNameAlt(int(pchar.GenQuest.Sunplace.Trader.Goods)) + ". Pagó una suma bastante decente por ese cargamento, así que perderlo sería un golpe bastante fuerte para su bolsa.";
 		link.l1 = "¿Y podrías decirme, dónde exactamente buscar a ese 'amigo' tuyo?";
 		link.l1.go = "Sunplace_2";
 		break;
 
 	case "Sunplace_2":
-		dialog.text = "Mi 'amigo' se encuentra actualmente en su hogar en " + XI_ConvertString("Colony" + pchar.GenQuest.Sunplace.Trader.CityT + "Voc") + ". No lo necesitas a él, necesitas su barco, el cual, como descubrí después de aproximadamente " + FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty)) + " pasará cerca " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore + "Gen") + ". Puedes hundirlo, abordarlo, no importa. Lo principal es asegurarse de que el barco y la carga ya no sean propiedad de " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Y no me importa quién lo reclame, tú o el mar. Por ese trabajo te pagaré " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
+		dialog.text = "Mi 'amigo' se encuentra actualmente en su hogar en " + XI_ConvertString("Colony" + pchar.GenQuest.Sunplace.Trader.CityT + "Voc") + ". No lo necesitas a él, necesitas su barco, el cual, como descubrí después de aproximadamente " + FindRussianDaysString(int(pchar.GenQuest.Sunplace.Trader.DaysQty)) + " pasará cerca " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore + "Gen") + ". Puedes hundirlo, abordarlo, no importa. Lo principal es asegurarse de que el barco y la carga ya no sean propiedad de " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Y no me importa quién lo reclame, tú o el mar. Por ese trabajo te pagaré " + FindRussianMoneyString(int(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 		link.l1 = "Lo tengo. ¡Bien, es hora de partir entonces!";
 		link.l1.go = "Sunplace_3";
 		break;
@@ -1455,26 +1454,26 @@ void ProcessDialogEvent()
 	case "Sunplace_3":
 		DialogExit();
 		pchar.GenQuest.Sunplace.Trader = "true";
-		if (sti(pchar.GenQuest.Sunplace.Chance) == 1 && sti(pchar.rank) > 9)
+		if (int(pchar.GenQuest.Sunplace.Chance) == 1 && int(pchar.rank) > 9)
 			pchar.GenQuest.Sunplace.Bonus = "true";
 		ReOpenQuestHeader("Sunplace");
 		AddQuestRecord("Sunplace", "1");
-		AddQuestUserData("Sunplace", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods)));
-		AddQuestUserData("Sunplace", "sDay", FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty)));
-		AddQuestUserData("Sunplace", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)));
+		AddQuestUserData("Sunplace", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.Sunplace.Trader.Goods)));
+		AddQuestUserData("Sunplace", "sDay", FindRussianDaysString(int(pchar.GenQuest.Sunplace.Trader.DaysQty)));
+		AddQuestUserData("Sunplace", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Sunplace.Trader.Money)));
 		AddQuestUserData("Sunplace", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Sunplace.Trader.City + "Gen"));
-		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name") + "Acc")));
+		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name") + "Acc")));
 		AddQuestUserData("Sunplace", "sSName", pchar.GenQuest.Sunplace.Trader.ShipName);
 		AddQuestUserData("Sunplace", "sName", GetFullName(npchar));
 		AddQuestUserData("Sunplace", "sShore", XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore + "Gen"));
-		SetFunctionTimerCondition("Sunplace_Over", 0, 0, sti(pchar.GenQuest.Sunplace.Trader.DaysQty), false);
+		SetFunctionTimerCondition("Sunplace_Over", 0, 0, int(pchar.GenQuest.Sunplace.Trader.DaysQty), false);
 		pchar.quest.Sunplace_Trader.win_condition.l1 = "location";
 		pchar.quest.Sunplace_Trader.win_condition.l1.location = pchar.GenQuest.Sunplace.Trader.Island;
 		pchar.quest.Sunplace_Trader.win_condition.l2 = "Timer";
-		pchar.quest.Sunplace_Trader.win_condition.l2.date.hour = sti(GetTime());
-		pchar.quest.Sunplace_Trader.win_condition.l2.date.day = GetAddingDataDay(0, 0, makeint(sti(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
-		pchar.quest.Sunplace_Trader.win_condition.l2.date.month = GetAddingDataMonth(0, 0, makeint(sti(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
-		pchar.quest.Sunplace_Trader.win_condition.l2.date.year = GetAddingDataYear(0, 0, makeint(sti(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
+		pchar.quest.Sunplace_Trader.win_condition.l2.date.hour = int(GetTime());
+		pchar.quest.Sunplace_Trader.win_condition.l2.date.day = GetAddingDataDay(0, 0, int(int(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
+		pchar.quest.Sunplace_Trader.win_condition.l2.date.month = GetAddingDataMonth(0, 0, int(int(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
+		pchar.quest.Sunplace_Trader.win_condition.l2.date.year = GetAddingDataYear(0, 0, int(int(pchar.GenQuest.Sunplace.Trader.DaysQty) - 2));
 		pchar.quest.Sunplace_Trader.function = "Sunplace_CreateTraderShip";
 		break;
 
@@ -1485,7 +1484,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Sunplace_complete_1":
-		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Sunplace.Trader.Money));
+		AddMoneyToCharacter(pchar, int(pchar.GenQuest.Sunplace.Trader.Money));
 		AddQuestRecord("Sunplace", "12");
 		CloseQuestHeader("Sunplace");
 		pchar.GenQuest.Sunplace.Chance = rand(2);
@@ -1509,7 +1508,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Sunplace_complete_murder_2":
-		AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Sunplace.Trader.Money));
+		AddMoneyToCharacter(pchar, int(pchar.GenQuest.Sunplace.Trader.Money));
 		AddQuestRecord("Sunplace", "13");
 		AddQuestUserData("Sunplace", "sName", GetFullName(npchar));
 		CloseQuestHeader("Sunplace");
@@ -1523,7 +1522,7 @@ void ProcessDialogEvent()
 
 	// Jason --> поиск дезертира
 	case "FindFugitiveSt":
-		if (NPChar.city == pchar.GenQuest.FindFugitive.City && sti(pchar.GenQuest.FindFugitive.Chance) == 1)
+		if (NPChar.city == pchar.GenQuest.FindFugitive.City && int(pchar.GenQuest.FindFugitive.Chance) == 1)
 		{
 			dialog.text = NPCStringReactionRepeat("¿" + pchar.GenQuest.FindFugitive.Name + "? Sí, lo conozco. Me compró provisiones para su bote largo. Durante el día suele estar pescando en calas apartadas, pero cada noche se le puede encontrar en la taberna.", "¡Ya me has preguntado sobre ese hombre, y te dije todo lo que sabía!", "¿Te estás burlando de mí o eres realmente un idiota? ¡Ya estás haciendo todas las mismas preguntas por tercera vez!", "Solo pensar, cómo un idiota así se convirtió en capitán...", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("¡Gracias, me has ayudado inmensamente!", "Sí, sí, bien.", "Ahora, ahora, no te emociones tanto. Simplemente lo olvidé.", "Bueno, lo hizo, como puedes ver...", npchar, Dialog.CurrentNode);
@@ -1659,8 +1658,8 @@ void ProcessDialogEvent()
 
 	case "SharkGoldFleet_01":
 		pchar.questTemp.SharkGoldFleet = "buyincar";
-		dialog.text = "Regular... Entonces, trescientas unidades de café... Y la misma cantidad de cacao... Te costará..." + sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)) + " ¡pesos!";
-		if (pchar.money < sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
+		dialog.text = "Regular... Entonces, trescientas unidades de café... Y la misma cantidad de cacao... Te costará..." + int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)) + " ¡pesos!";
+		if (pchar.money < int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
 		{
 			link.l1 = "Hmm... Disculpe, parece que no tengo suficiente dinero. Espere, por favor: corro al barco por dinero ahora mismo, ¡y regresaré enseguida!";
 			link.l1.go = "exit";
@@ -1689,7 +1688,7 @@ void ProcessDialogEvent()
 
 	case "SharkGoldFleet_03":
 		DialogExit();
-		AddMoneyToCharacter(pchar, -sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
+		AddMoneyToCharacter(pchar, -int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
 			SetCharacterGoods(pchar, GOOD_COFFEE, GetCargoGoods(pchar, GOOD_COFFEE) + 300);
 		SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + 300);
 		AddQuestRecord("SharkGoldFleet", "4");
@@ -1698,7 +1697,7 @@ void ProcessDialogEvent()
 
 	case "SharkGoldFleet_again":
 		dialog.text = "Las mercancías te están esperando. ¿Trajiste dinero?";
-		if (pchar.money < sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
+		if (pchar.money < int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
 		{
 			link.l1 = "Aún no. Solo quería asegurarme de que tu oferta sigue en pie. Y el dinero llegará pronto.";
 			link.l1.go = "exit";
@@ -1741,7 +1740,7 @@ int findStoreMan(ref NPChar, int iTradeNation)
 		makeref(ch, Characters[n]);
 		if (CheckAttribute(ch, "Dialog.Filename") && ch.Dialog.Filename == "Common_Store.c") // магазин
 		{
-			if (sti(ch.nation) != iTradeNation)
+			if (int(ch.nation) != iTradeNation)
 				continue;
 			if (NPChar.id == ch.id)
 				continue;
@@ -1771,13 +1770,13 @@ int Sunplace_Shiptype() // new
 {
 	int i;
 
-	if (sti(pchar.rank) >= 1 && sti(pchar.rank) < 6)
+	if (int(pchar.rank) >= 1 && int(pchar.rank) < 6)
 		i = SHIP_SCHOONER;
-	if (sti(pchar.rank) >= 6 && sti(pchar.rank) < 11)
+	if (int(pchar.rank) >= 6 && int(pchar.rank) < 11)
 		i = SHIP_FLEUT;
-	if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 18)
+	if (int(pchar.rank) >= 11 && int(pchar.rank) < 18)
 		i = SHIP_PINNACE;
-	if (sti(pchar.rank) >= 18)
+	if (int(pchar.rank) >= 18)
 		i = SHIP_GALEON_L;
 
 	return i;
@@ -1792,7 +1791,7 @@ string findSunplaceCity(ref NPChar) // new
 
 	for (n = 0; n < MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(pchar.nation), int(colonies[n].nation));
 		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) // на свой остров
 		{
 			storeArray[howStore] = n;

@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "ああ、俺の古い知り合いだな、船長 "+GetFullName(pchar)+"！会えて嬉しいぜ、じいさん！ラム酒に女か？";
-				if (makeint(pchar.money) >= 5)
+				if (int(pchar.money) >= 5)
 				{
 					link.l1 = "ラムを注いでくれ。 "+npchar.name+".";
 					link.l1.go = "drink";
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			dialog.text = "ああ、嬉しいわ！この町じゃ新しい顔は珍しいのよ。ラムを注いで、ちょっとおしゃべりでもどうかしら…";
 			link.l1 = "ここは初めてなんだが、この入植地についてもう少し知りたいんだ。";
 			link.l1.go = "info";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l2 = "ラムを注いでくれ。 "+npchar.name+".";
 				link.l2.go = "drink";
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 3)
 			{
 				dialog.text = "船長、もうやめておいた方がいいと思いますぜ。酒に酔って騒ぎを起こすなんて、神様もお許しになりません。 ここじゃそういうのには本当に厳しいんだ。あんたの権威でも助けにならねえぜ。";
 				link.l1 = "ふむ……確かにそうだな、もう十分飲んだぜ。心配してくれてありがとな！";			
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -106,11 +106,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
 				DeleteAttribute(pchar, "chr_ai.drunk");
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
 				else
 				{
-					LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
-					Pchar.GenQuest.CamShuttle = makeint(sti(pchar.questTemp.Rum)/2); // Jason
+					LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
+					Pchar.GenQuest.CamShuttle = int(int(pchar.questTemp.Rum)/2); // Jason
 				}
 			}
 		break;
@@ -140,12 +140,12 @@ void ProcessDialogEvent()
 
 		case "room_day":
 			dialog.text = "十枚のエイトだぜ。部屋に女もどうだ？あの娘ならたった千ペソだぞ。";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "いや、女はいらねえ。ほら、部屋代だ。";
 				link.l1.go = "room_day_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -160,12 +160,12 @@ void ProcessDialogEvent()
 
 		case "room_day_next":
 			dialog.text = "十枚のエイトだぜ。部屋に女もどうだ？あの娘ならたった千ペソだ。";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "いや、女はいらねえ。ほら、部屋代だ。";
 				link.l1.go = "room_day_wait_next";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -180,12 +180,12 @@ void ProcessDialogEvent()
 
 		case "room_night":
 			dialog.text = "十枚のエイト硬貨だぜ。部屋に女も呼ぶかい？あの娘ならたった千ペソだぞ。";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "いや、女はいらねえ。ほら、部屋代だ。";
 				link.l1.go = "room_night_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{

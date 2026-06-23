@@ -216,8 +216,8 @@ void SF_ReactionWithRandomCheck(string actionName, bool autoLog)
 	if (reaction == nullptr) return; // что-то пошло не так
 
 	bool success = SF_PerformCheck();
-	bonus = sti(reaction.failPoints);
-	if (success) bonus = sti(reaction.winPoints);
+	bonus = int(reaction.failPoints);
+	if (success) bonus = int(reaction.winPoints);
 
 	if (autoLog) SF_Log(SF_Convert("log_" + !success));
 	aref action = SF_GetAction(actionName);

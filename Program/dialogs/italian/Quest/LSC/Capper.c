@@ -195,13 +195,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck("EnemyFight", "LSC_CapperDieAeva");
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
-		
-		case "Aeva_attack_2":
-			dialog.text = "... questa sarà una bevuta infernale. Quel dannato irlandese sogna questo whiskey da una vita, se lo tracannerà in un lampo. Dov’è l’arsenico? Versane ancora, per sicurezza... Poi il nostro buon Fazio porterà questa botte all’ammiraglio, come regalo dai Narvali, ah-ah! Non è vero, caro Giuseppe? Vuoi campare ancora un po’?\nDannazione! Guarda chi si vede! Che vuoi, scarto di balena? Sparisci prima che ti inchiodiamo!";
-			link.l1 = "Il tuo piano è andato in fumo, Kapper. Ho seguito le tue orme e so bene cosa tu e il tuo compare Ciclope avete in mente. Butta via l’arsenico! Non avvelenerai Squalo!";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
+
 		case "Aeva_attack_3":
 			dialog.text = "Ah, segugio! Allora sarai tu il primo a crepare! Ragazzi, alle armi!";
 			link.l1 = "...";

@@ -47,7 +47,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Я что, работаю на тайную агентурную сеть для "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Я что, работаю на тайную агентурную сеть для "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Ну ладно... тогда пока.";
 			link.l1.go = "exit";
 			link.l2 = "Тогда другой вопрос";
@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "Exit";
 			
 			npchar.questTemp.PZ_Sotta = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		
@@ -81,7 +81,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "Exit";
 			
 			npchar.questTemp.PZ_Sotta = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		
@@ -91,7 +91,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "Exit";
 			
 			npchar.questTemp.PZ_Lutter = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		
@@ -101,7 +101,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "Exit";
 			
 			npchar.questTemp.PZ_Lutter = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		// <== Квест "Путеводная звезда"
@@ -113,7 +113,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen");
 			pchar.questTemp.WildRose_Beliz_Citizen_2 = true;
-			npchar.quest.WildRose_Vopros;
+			touchattr(npchar.quest.WildRose_Vopros);
  		break;
 		
 		case "WildRose_Beliz_Citizen_2":
@@ -122,7 +122,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");
 			pchar.questTemp.WildRose_Beliz_Citizen_3 = true;
-			npchar.quest.WildRose_Vopros;
+			touchattr(npchar.quest.WildRose_Vopros);
  		break;
 		
 		case "WildRose_Beliz_Citizen_3":

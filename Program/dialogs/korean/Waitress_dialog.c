@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
 				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
+				if (int(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
 					dialog.text = "무엇을 원하십니까, 나리? 죄송합니다, 저는 그냥...'흑'... 아... 미안합니다.";
 					link.l1 = "왜 이렇게 속상해하십니까, 아가씨? 이렇게 고운 얼굴에 눈물이라니요? 무슨 일이 있었습니까?";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different.FackWaitress.Name = GetFullName(npchar); //запомним имя официантки
 			pchar.questTemp.different.FackWaitress.City = npchar.city;
 			//делаем клона официантки
-			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, sti(npchar.nation), 3, false, "citizen"));
+			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, int(npchar.nation), 3, false, "citizen"));
 			sld.name = npchar.name;
 			sld.lastname = npchar.lastname;
 			sld.dialog.Filename = "Quest\ForAll_dialog.c";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_3_1":
-			if(sti(pchar.reputation.nobility) > 36)
+			if(int(pchar.reputation.nobility) > 36)
 			{
 				Notification_Reputation(false, 36, "high");
 				dialog.text = "그게 '힌트'였나? 실례했소, 당신과 말한 건 내 실수였군! 안녕히, '카바예로'...";

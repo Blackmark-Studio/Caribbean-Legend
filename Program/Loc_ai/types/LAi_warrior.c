@@ -16,25 +16,25 @@
 
 
 //Установить войну командира
-void LAi_warrior_SetCommander(aref chr, aref commander)
+void LAi_warrior_SetCommander(ref chr, ref commander)
 {
 	chr.chr_ai.type.index = commander.index;
 }
 
 //Разрешить или запретить диалоги для война
-void LAi_warrior_DialogEnable(aref chr, bool isEnable)
+void LAi_warrior_DialogEnable(ref chr, bool isEnable)
 {
 	chr.chr_ai.type.dialog = isEnable;
 }
 
 //Сказать войну стоять при отсутствие целей
-void LAi_warrior_SetStay(aref chr, bool isStay)
+void LAi_warrior_SetStay(ref chr, bool isStay)
 {
 	chr.chr_ai.type.stay = isStay;
 }
 
 //Инициализация
-void LAi_type_warrior_Init(aref chr)
+void LAi_type_warrior_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	bool isNew = false;
@@ -73,7 +73,7 @@ void LAi_type_warrior_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_warrior_CharacterUpdate(ref chr, float dltTime)
 {
 	int trg = -1;
 	//Ссылка на ветку с параметрами
@@ -81,7 +81,7 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 	makearef(type, chr.chr_ai.type);
 
     // boal  лечимся -->
-	float fCheck = stf(chr.chr_ai.type.bottle) - dltTime;
+	float fCheck = float(chr.chr_ai.type.bottle) - dltTime;
 	if(fCheck < 0)
 	{
 		chr.chr_ai.type.bottle = 5.0;
@@ -92,8 +92,8 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 			if(LAi_GetCharacterRelHP(chr) < 0.75)
 			{
 				dhlt = LAi_GetCharacterMaxHP(chr) - LAi_GetCharacterHP(chr);
-				btl = FindHealthForCharacter(&Characters[sti(chr.index)], dhlt);
-				DoCharacterUsedItem(&Characters[sti(chr.index)], btl);
+				btl = FindHealthForCharacter(&Characters[int(chr.index)], dhlt);
+				DoCharacterUsedItem(&Characters[int(chr.index)], btl);
 				chr.chr_ai.type.bottle = 10.0;
 			}
 		}
@@ -106,7 +106,7 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 		//Воюем
 		bool isValidate = false;
 		trg = LAi_tmpl_fight_GetTarget(chr);
-		fCheck = stf(chr.chr_ai.type.checkTarget) - dltTime;
+		fCheck = float(chr.chr_ai.type.checkTarget) - dltTime;
 		chr.chr_ai.type.checkTarget = fCheck;
 		if(trg >= 0)
 		{			
@@ -115,7 +115,7 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 				if(!LAi_tmpl_fight_LostTarget(chr))
 				{
 					isValidate = true;
-					if (stf(LAi_grp_relations.distance) > 2.0 && fCheck < 0) //цель далеко, попробуем сменить на ближайшую
+					if (float(LAi_grp_relations.distance) > 2.0 && fCheck < 0) //цель далеко, попробуем сменить на ближайшую
 					{
 						isValidate = false;
 					}				
@@ -165,7 +165,7 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 				int num = FindNearCharacters(chr, 10.0, -1.0, 180.0, 0.01, true, true);
 				for(int i = 0; i < num; i++)
 				{
-					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
+					if(nMainCharacterIndex == int(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
 						if (bMainCharacterInBox && !HasPerk(pchar, "Quiet"))
@@ -188,31 +188,31 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_warrior_CharacterLogin(aref chr)
+bool LAi_type_warrior_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_warrior_CharacterLogoff(aref chr)
+bool LAi_type_warrior_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_warrior_TemplateComplite(aref chr, string tmpl)
+void LAi_type_warrior_TemplateComplite(ref chr, string tmpl)
 {
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_warrior_NeedDialog(aref chr, aref by)
+void LAi_type_warrior_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_warrior_CanDialog(aref chr, aref by)
+bool LAi_type_warrior_CanDialog(ref chr, ref by)
 {	
-	if(sti(chr.chr_ai.type.dialog) == 0) return false;
+	if(int(chr.chr_ai.type.dialog) == 0) return false;
 	//Если просто стоим, то согласимся
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY) return true;
 	if(chr.chr_ai.tmpl == LAI_TMPL_FOLLOW) return true;
@@ -221,7 +221,7 @@ bool LAi_type_warrior_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_warrior_StartDialog(aref chr, aref by)
+void LAi_type_warrior_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения	
 	LAi_CharacterSaveAy(chr);
@@ -230,7 +230,7 @@ void LAi_type_warrior_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_warrior_EndDialog(aref chr, aref by)
+void LAi_type_warrior_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_CharacterRestoreAy(chr);
@@ -244,10 +244,10 @@ void LAi_type_warrior_Fire(aref attack, aref enemy, float kDist, bool isFindedEn
 
 
 //Персонаж атакован
-void LAi_type_warrior_Attacked(aref chr, aref by)
+void LAi_type_warrior_Attacked(ref chr, ref by)
 {
 	//если наносящий удар уже таргет, нефиг крутить код и переназначать цель
-	if (LAi_tmpl_fight_GetTarget(chr) == sti(by.index)) return;
+	if (LAi_tmpl_fight_GetTarget(chr) == int(by.index)) return;
 	//Своих пропускаем
 	if(!LAi_group_IsEnemy(chr, by)) return;
 	LAi_group_UpdateTargets(chr);
@@ -265,13 +265,13 @@ void LAi_type_warrior_Attacked(aref chr, aref by)
 }
 
 //Переходим в режим ожидания
-void LAi_type_warrior_SetWateState(aref chr)
+void LAi_type_warrior_SetWateState(ref chr)
 {
-	if(sti(chr.chr_ai.type.stay) == 0)
+	if(int(chr.chr_ai.type.stay) == 0)
 	{
 		if(chr.chr_ai.type.index != "")
 		{
-			int cmd = sti(chr.chr_ai.type.index);
+			int cmd = int(chr.chr_ai.type.index);
 			if(cmd >= 0)
 			{
 				//Возвращаемся к командиру
@@ -293,7 +293,7 @@ void LAi_type_warrior_SetWateState(aref chr)
 	}
 }
 
-void LAi_type_warrior_PlaySound(aref chr)
+void LAi_type_warrior_PlaySound(ref chr)
 {
 	if(LAi_IsDead(chr) && !LAi_IsDead(pchar)) return;
 	string sname = "";

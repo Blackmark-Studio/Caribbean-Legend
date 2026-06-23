@@ -193,7 +193,7 @@ void ProcessDialogEvent()
             Link.l2.go = "Boal_Follow";
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Нужно изменить тип боеприпаса для твоего пистолета.";
 					Link.l3.go = "SetGunBullets";
@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l4 = "Нужно изменить тип боеприпаса для твоего мушкета.";
 					Link.l4.go = "SetMusketBullets";
@@ -219,7 +219,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -262,7 +262,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetMusketBullets2":
-			i = sti(NPChar.GenQuest.SetMusketBullets) + 1; 
+			i = int(NPChar.GenQuest.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = "Капитан, простить Тичингиту, но я вас не понимать.";
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "Tichingitu_officer";
 			npchar.quest.SharlieEpilog_FarewellOfficers = true;
 			pchar.questTemp.SharlieEpilog_Tichingitu = true;
-			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
+			pchar.questTemp.SharlieEpilog_Friends = int(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

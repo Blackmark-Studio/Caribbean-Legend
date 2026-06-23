@@ -22,10 +22,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "哇, 太好了! 我马上就下令处理。 ";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-10");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 			AddQuestRecord("Holl_Gambit", "2-6");
 			pchar.quest.GotoBridgetownOver.over = "yes";//移除计时器
@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.questTemp.HWIC.Eng = "SeekVanBerg";
 				pchar.quest.VanBergAttack_Check.win_condition.l1 = "MapEnter";
 				pchar.quest.VanBergAttack_Check.function = "VanBergAttackCheck";
-				//如果(RealShips[sti(pchar.ship.type)].basetype不等于SHIP_VALCIRIA 或者 GetCompanionQuantity(pchar) > 1) 则添加对话退出任务函数("FailVanBergInWorld");
+				//如果(RealShips[int(pchar.ship.type)].basetype不等于SHIP_VALCIRIA 或者 GetCompanionQuantity(pchar) > 1) 则添加对话退出任务函数("FailVanBergInWorld");
 				//否则添加对话退出任务函数("CreateVanBergInWorld");
 			}
 		break;

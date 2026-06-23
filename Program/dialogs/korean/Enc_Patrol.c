@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Patrol" + locations[FindLocation(npchar.location)].index + "_";
 	string sGroup = "PatrolGroup_" + locations[FindLocation(npchar.location)].index;
 	string sTemp1, sTemp2;
@@ -60,15 +60,15 @@ void ProcessDialogEvent()
 				LAi_type_actor_Reset(sld);
 				LAi_RemoveCheckMinHP(sld);
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("오, 봐라, 이 악당이 지금 에서 경보를 울린 것 같군 "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! 잡아라"+GetSexPhrase("","")+"!!","헤헤, 이것 좀 봐! 몇몇 "+NationNamePeople(sti(pchar.nation))+" 적이 되다 "+NationNameAblative(sti(npchar.nation))+" 저 악당을 잡아라!!!");
+					dialog.text = RandPhraseSimple("오, 봐라, 이 악당이 지금 에서 경보를 울린 것 같군 "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! 잡아라"+GetSexPhrase("","")+"!!","헤헤, 이것 좀 봐! 몇몇 "+NationNamePeople(int(pchar.nation))+" 적이 되다 "+NationNameAblative(int(npchar.nation))+" 저 악당을 잡아라!!!");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("적의 첩자가 근처에 있다 "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! 잡아라"+GetSexPhrase("나는","er")+"!!","이봐, 봐봐, "+NationNamePeople(sti(pchar.nation))+" 거의 ~ 안에서 돌아다니고 있어 "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! 당장 저놈을 잡아라!!!");
+					dialog.text = RandPhraseSimple("적의 첩자가 근처에 있다 "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! 잡아라"+GetSexPhrase("나는","er")+"!!","이봐, 봐봐, "+NationNamePeople(int(pchar.nation))+" 거의 ~ 안에서 돌아다니고 있어 "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! 당장 저놈을 잡아라!!!");
 				}
 				link.l1 = RandPhraseSimple("글쎄, 한번 해보시지. 여기엔 우리 둘뿐이니까...","헤, 여기서는 아무도 너를 도와주지 않을 거야.");
 				link.l1.go = "exit_fight"; 				
@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			{				
 				// belamour legendary edition
 				sTemp1 = "";
-				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
+				if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
 				dialog.text = LinkRandPhrase("자기소개를 하겠습니다! 나는 ...에서 온 순찰관이오 "+XI_ConvertString("Colony"+npchar.city+"Gen")+", 우리는 탈옥수를 찾고 있어.","안녕하시오, 나는 이 순찰대의 대장이오. 우리는 도망친 노예를 찾고 있소, "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","안녕하시오, "+GetAddress_Form(NPChar)+". 내 부대가 근처 지역을 순찰하고 있어 "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_12":
-			jewelType = sti(pchar.questTemp.ReasonToFast.p4);
+			jewelType = int(pchar.questTemp.ReasonToFast.p4);
 			pchar.questTemp.ReasonToFast.item = "jewelry" + jewelType;
 			sItem = "jewelry" + jewelType;
 			switch (jewelType)
@@ -196,10 +196,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_14":
-			dialog.text = "좋아, 그럼 너 나한테 빚진 거야 "+sti(pchar.questTemp.ReasonToFast.p5)+" 페소, 우리가 약속한 대로지.";
+			dialog.text = "좋아, 그럼 너 나한테 빚진 거야 "+int(pchar.questTemp.ReasonToFast.p5)+" 페소, 우리가 약속한 대로지.";
 			link.l1 = "그거 좀 지나친 거 아니야?";
 			link.l1.go = "Reason_To_Fast_16";
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				link.l2 = "자, 여기 있어.";
 				link.l2.go = "Reason_To_Fast_17";
@@ -240,15 +240,15 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_17":
 			pchar.questTemp.ReasonToFast = "PatrolSuccess_1";
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p5)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p5)));
 			pchar.GenQuest.CannotWait = 1; // лочим интерфейс отдыха
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.chain")) DeleteAttribute(pchar,"questTemp.ReasonToFast.chain");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.ShipName");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipTypeName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.TypeName");
-			switch (sti(pchar.questTemp.ReasonToFast.target))
+			switch (int(pchar.questTemp.ReasonToFast.target))
 			{
 				case 0: // корабль с товаром
-					sTemp1 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp1 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					iShipType = ReasonToFast_GetVictimShipType();
 					iShipGoods = ReasonToFast_GetVictimShipGoods();
 					dialog.text = "훌륭해! 이제 본격적으로 일에 들어가자. 우리가 그걸 가로챘어 "+GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName)+" '"+sTemp1+"'에 화물을 싣고 "+GetGoodsNameAlt(iShipGoods)+", 선원들은 이미 구금되어 있고, '화물'은 아직 선상에 있습니다. 선원들은 항구의 떠돌이들로 고용된 자들이라 내일까지는 항구에 들어오지 않을 겁니다. 그 자들을 어떻게 처리하든 당신 마음입니다.";
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.questTemp.ReasonToFast.password = sTemp2;
-					sTemp2 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp2 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					dialog.text = "훌륭하군! "+sTemp1+" 그는 자신의 부도아르에 보관하고 있소. 사절선이 곧 도착할 테지만, 그래도 네가 해낼 수 있을 거야. 하인은 '우리' 사람이야. 암호: '"+pchar.questTemp.ReasonToFast.password+"', reply: '"+sTemp2+"'.";
 					link.l1 = "알겠소. 전갈을 전하겠소 "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+".";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_18":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				dialog.text = "나를 속이려는 거냐?! 이 개놈아!";
 				link.l1 = "닥치라고!";
@@ -356,8 +356,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_ExitFight":
-			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation));
-			SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY); 
+			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation));
+			SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY);
 			
 			pchar.GenQuest.HunterScore2Pause = 1; //НЗГ не начисляются
 			pchar.GenQuest.ReputationNotChange = 1; //репутацию не менять

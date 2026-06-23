@@ -28,13 +28,13 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		//--------------------------------- леди в резиденции ---------------------------------
 		case "ResWoman":
 			NextDiag.TempNode = "ResWoman";
-			if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && sti(npchar.nation) == SPAIN) {
+			if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && int(npchar.nation) == SPAIN) {
 				link.chickengod = "Senora, please excuse me, but I was asked to tell you that you have... a date inside an old pagan pyramid.";
 				link.chickengod.go = "chickengod";
 			}
@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 			link.l1 = "닥쳐!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		//--------------------------------- слуга в резиденции ---------------------------------
 		case "ResMan":
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 			link.l1 = "입 닥쳐!";
 			link.l1.go = "fight";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		//--------------------------------- солдат в резиденции ---------------------------------
 		case "ResGuard":
@@ -99,8 +99,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "chickengod":
-			pchar.questTemp.ChickenGod.Tasks.o2.Counter = sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) + 1;
-			if (sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) >= 3) {
+			pchar.questTemp.ChickenGod.Tasks.o2.Counter = int(pchar.questTemp.ChickenGod.Tasks.o2.Counter) + 1;
+			if (int(pchar.questTemp.ChickenGod.Tasks.o2.Counter) >= 3) {
 				dialog.text = "아, 그래. 드디어! 이제 당신과 함께 갈 준비가 됐어, 선장.";
 				link.l1 = "그냥 이렇게요? 나리, 정말 이게 원하시는 건가요?";
 				link.l1.go = "chickengod_accept";

@@ -58,8 +58,8 @@ void ProcessDialogEvent()
 					if (!CheckCharacterItem(pchar, "suit1")) GiveItem2Character(pchar, "suit1");
 					GiveItem2Character(pchar, "patent_fra");
 					EquipCharacterbyItem(pchar, "patent_fra");
-					Items[sti(pchar.EquipedPatentId)].TitulCur = 2; 
-					Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+					Items[int(pchar.EquipedPatentId)].TitulCur = 2;
+					Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 					ChangeCharacterNationReputation(pchar, FRANCE, 100);
 					Patria_SetInspector();
 				}
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		
 		case "Puancie_Jail_9":
 			DialogExit();
-			LAi_SetActorType(sld);
+			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "Sharlie_GoFromPrison", 3.5);
 			NextDiag.CurrentNode = "First time";
 			locCameraFromToPos(-11.09, 0.65, 3.05, true, -12.59, 0.09, -4.66);
@@ -355,7 +355,7 @@ void ProcessDialogEvent()
 			LocatorReloadEnterDisable("Charles_townhall", "reload1_back", false);
 			dialog.text = "아하, 샤를 드 모르 자네가 직접 왔군! 만나서 반갑네. 자네, 오늘 여기 온 이유가 동생의 운명에 대해 나와 이야기하려는 것일세?";
 			link.l1 = "저는 미셸 드 몽페르가 기사단과 당신께 진 빚을 갚을 준비가 되어 있습니다.";
-			if (sti(pchar.money) >= 1000000) link.l1.go = "saga_1";
+			if (int(pchar.money) >= 1000000) link.l1.go = "saga_1";
 			else link.l1.go = "saga_exit";			
 		break;
 		
@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 		
 		case "saga_repeat":
 			dialog.text = "돈을 가져왔는가, Charles?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "물론이오! 이 금액이면 그대의 모든 비용을 충분히 충당할 수 있기를 바라오.";
 				link.l1.go = "saga_1";
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			CreateGriffondor();
 			sld = characterFromId("GriffOfficer");
 			SetCharacterRemovable(sld, true);
-			SetCompanionIndex(pchar, -1, sti(sld.index));
+			SetCompanionIndex(pchar, -1, int(sld.index));
 			sld.loyality = MAX_LOYALITY;
 			NextDiag.CurrentNode = "First time";
 			NextDiag.TempNode = "First time";
@@ -611,7 +611,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8_1":
-			if (sti(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
+			if (int(pchar.money) >= 300000) AddMoneyToCharacter(pchar, -300000);
 			else pchar.questTemp.Patria.NoMoney = "true";
 			dialog.text = "'에클라탕'이 침몰했다니? 샤를, 이건 참사요! 이제 장관께서 뭐라 하시겠소? 나를 실망시켰구려, 샤를! 나는 자네의 경험을 믿었건만, 자네는... 유감이오, 이 일에 대한 책임은 자네가 져야 하오. 내가 보고서를 올릴 테니, 당분간 자취를 감추는 게 좋겠구려. 자네의 왕립 해군 복무는 여기서 끝이오.";
 			link.l1 = "흠... 미안하오, 나리. 장관의 분노가 가라앉을 때까지 한두 달쯤 사라져 있는 게 정말 나을 것 같소. 안녕히 계시오, 그리고 다시 한 번, 실망시켜 드려 정말 죄송하오.";
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_8":
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				dialog.text = "완벽하오!";
 				link.l1 = "여기, 이 삼십만을 받아 주시오.";
@@ -662,7 +662,7 @@ void ProcessDialogEvent()
 		
 		case "patria_8_4":
 			dialog.text = "그래서, 샤를, 트리니다드에서 몸값을 가져왔는가?";
-			if (sti(pchar.money) >= 300000)
+			if (int(pchar.money) >= 300000)
 			{
 				link.l1 = "예, 나리. 여기 있습니다.";
 				link.l1.go = "patria_9";
@@ -919,8 +919,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("Patria", "25");
 			pchar.questTemp.Patria = "epizode_5";
 			pchar.quest.Patria_CureerBackOver.over = "yes"; // снять таймер
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 4; 
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 4;
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1 = "Timer";
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.hour  = 8+rand(2);
 			pchar.quest.Patria_SanMartin_wait.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1+rand(1));
@@ -1094,8 +1094,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_55":
-			pchar.questTemp.Patria.Hunter = sti(pchar.questTemp.Patria.Hunter)+1;
-			if (sti(pchar.questTemp.Patria.Hunter) > 4) // все собрал
+			pchar.questTemp.Patria.Hunter = int(pchar.questTemp.Patria.Hunter)+1;
+			if (int(pchar.questTemp.Patria.Hunter) > 4) // все собрал
 			{
 				dialog.text = "임무를 완수했군, 선장. 훌륭한 활약에 감사하오! 전리품 판매 수익 중 일부를 받을 자격이 있소—이십만 페소요.";
 				link.l1 = "기쁘게 들리는구려, 나리!";
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "그래서, 너에게 남은 것은 "+FindRussianQtyString(5-sti(pchar.questTemp.Patria.Hunter))+" 네덜란드 배들을 우리 항구로 끌고 오기만 하면 된다.";
+				dialog.text = "그래서, 너에게 남은 것은 "+FindRussianQtyString(5-int(pchar.questTemp.Patria.Hunter))+" 네덜란드 배들을 우리 항구로 끌고 오기만 하면 된다.";
 				link.l1 = "예, 푸앙시 나리!";
 				link.l1.go = "patria_56";
 			}
@@ -1112,7 +1112,7 @@ void ProcessDialogEvent()
 		case "patria_56":
 			DialogExit();
 			AddQuestRecord("Patria", "35");
-			AddQuestUserData("Patria", "sQty", 5-sti(pchar.questTemp.Patria.Hunter));
+			AddQuestUserData("Patria", "sQty", 5-int(pchar.questTemp.Patria.Hunter));
 			DeleteAttribute(pchar, "questTemp.Patria.Hunter.GiveShip");
 		break;
 		
@@ -1345,8 +1345,8 @@ void ProcessDialogEvent()
 		
 		case "patria_80":
 			DialogExit();
-			Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+			Items[int(pchar.EquipedPatentId)].TitulCur = 5;
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			pchar.questTemp.Patria = "epizode_10_start";
 			AddQuestRecord("Patria", "52");
 			Patria_SlaveShipsStart();
@@ -1440,7 +1440,7 @@ void ProcessDialogEvent()
 		case "patria_coat_05":
 			LAi_Fade("", "");
 			if(LAi_GetCharacterHP(pchar) == LAi_GetCharacterMaxHP(pchar))
-			pchar.chr_ai.hp = stf(pchar.chr_ai.hp) - 1.0;
+			pchar.chr_ai.hp = float(pchar.chr_ai.hp) - 1.0;
 			GiveItem2Character(pchar, "potionwine");
 			DoCharacterUsedItem(pchar, "potionwine");
 			npchar.dialog.currentnode = "patria_coat_06";

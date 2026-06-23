@@ -454,7 +454,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		//<-- блок реагирования на попытку залезть в сундук

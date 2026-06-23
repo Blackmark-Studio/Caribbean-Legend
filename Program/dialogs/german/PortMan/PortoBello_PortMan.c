@@ -119,8 +119,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LICENSE_AddViolation();
 			for (i=1; i<=2; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("Sold"+i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", sti(pchar.rank), SPAIN, 0, true, "soldier"));
-				SetFantomParamFromRank(sld, sti(pchar.rank), true);         
+				sld = GetCharacter(NPC_GenerateCharacter("Sold"+i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", int(pchar.rank), SPAIN, 0, true, "soldier"));
+				SetFantomParamFromRank(sld, int(pchar.rank), true);
 				ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto3");
 				LAi_SetWarriorType(sld); 
 				LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
@@ -201,7 +201,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "SharkGoldFleet_18":
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.SharkGoldFleet));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.SharkGoldFleet));
 			n = GetAddingDataDay(0,0,21);
 			if(n<21) i = GetAddingDataMonth(0,1,0);
 			else i = GetDataMonth();
@@ -217,7 +217,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			Lai_SetPlayerType(pchar);
 			chrDisableReloadToLocation = false;
 			bDisableFastReload = false;
-			dialog.text = "Es tut mir leid für die Wartezeit. Hier sind Ihre "+makeint(pchar.questTemp.SharkGoldFleet)+" Stücke von Acht. Und in diesem Fall werden sie selbst für die Antwort in Caracas bezahlen. Sag mir, dass ich es getan habe.";
+			dialog.text = "Es tut mir leid für die Wartezeit. Hier sind Ihre "+int(pchar.questTemp.SharkGoldFleet)+" Stücke von Acht. Und in diesem Fall werden sie selbst für die Antwort in Caracas bezahlen. Sag mir, dass ich es getan habe.";
 			link.l1 = "Gut, ich werde es weitergeben. Danke und viel Glück!";
 			link.l1.go = "exit";
 			pchar.questTemp.SharkGoldFleet = "LightVar";

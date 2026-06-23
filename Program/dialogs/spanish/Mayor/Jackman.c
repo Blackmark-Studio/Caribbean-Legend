@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 	{
 	// ----------------------------------- Диалог первый - первая встреча
 	case "First time":
-		if (sti(pchar.GenQuest.Piratekill) > 20)
+		if (int(pchar.GenQuest.Piratekill) > 20)
 		{
 			dialog.text = RandPhraseSimple("¿Estás loco? ¿Querías jugar a ser carnicero? Todos los piratas están enfadados contigo, muchacho, será mejor que abandones este lugar...", "  Parece que te volviste loco, muchacho. ¿Querías estirar un poco las manos? Sin ofender, pero no tienes nada que hacer aquí. ¡Piérdete!");
 			link.l1 = RandPhraseSimple("Escucha, quiero arreglar la situación...", " Ayúdame a resolver este problema... ");
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "I_know_you_good":
-		if (sti(pchar.GenQuest.Piratekill) > 20)
+		if (int(pchar.GenQuest.Piratekill) > 20)
 		{
 			dialog.text = RandPhraseSimple("¿Estás loco? ¿Querías jugar a ser carnicero? Todos los piratas están enfadados contigo, chico, será mejor que te largues de aquí...");
 			link.l1 = RandPhraseSimple("Escucha, quiero arreglar la situación...", "Ayúdame a resolver este problema...");
@@ -230,9 +230,9 @@ void ProcessDialogEvent()
 		LAi_group_SetCheck(LAI_GROUP_BRDENEMY, "Saga_AfterJackmanBoarding");
 		AddDialogExitQuest("MainHeroFightModeOn");
 		// подкрепление
-		int iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 12;
-		int iScl = 30 + 2 * sti(pchar.rank);
-		sld = GetCharacter(NPC_GenerateCharacter("Saga_JackmanCabinHelper", "citiz_58", "man", "man", iRank, sti(npchar.nation), 0, true, "quest"));
+		int iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 12;
+		int iScl = 30 + 2 * int(pchar.rank);
+		sld = GetCharacter(NPC_GenerateCharacter("Saga_JackmanCabinHelper", "citiz_58", "man", "man", iRank, int(npchar.nation), 0, true, "quest"));
 		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_21", "pistol4", "bullet", iScl * 2 + 100);
 		LAi_SetCheckMinHP(sld, 150, true, "Saga_DannyHurryHelp");
 		LAi_SetWarriorType(sld);
@@ -262,7 +262,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ah, al fin. Estaba pensando en venderlo a ese dueño de plantación de Barbados, él estará aquí en una o dos semanas... ¿Tienes un rescate?";
 			link.l1 = "Mira, hay un pequeño problema... En realidad, no tengo tanto dinero. Pero estoy listo para trabajar.";
 			link.l1.go = "CapComission2_2";
-			if (makeint(pchar.money) > 150000)
+			if (int(pchar.money) > 150000)
 			{
 				link.l2 = "Es bueno que no lo hayas vendido. Aquí están tus monedas - 150.000 pesos. ¿Dónde puedo encontrarlo?" link.l2.go = "CapComission2_3";
 			}
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 		link.l1 = "Nos vemos...";
 		link.l1.go = "exit";
 		AddQuestRecord("CaptainComission1", "10");
-			AddQuestUserData("CaptainComission1", "sName", "Jackman")); // belamour gen
+			AddQuestUserData("CaptainComission1", "sName", "Jackman"); // belamour gen
 			// AddQuestUserData("CaptainComission1", "sName", ChangeNameCase(NAMETYPE_MAIN, pchar.GenQuest.CaptainComission.PirateName, NAME_NOM));
 			CaptainComission_GenerateManager();
 			break;
@@ -314,8 +314,8 @@ void ProcessDialogEvent()
 
 	case "CapComission2_2_2":
 		CaptainComission_GetRandomShore();
-		pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-		pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+		pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+		pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 		pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 		sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Abl");
 		dialog.text = "Mm... Bueno, " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " ha convencido a algunos piratas de que su parte del botín está guardada en nuestro escondite no lejos de " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + ". Sus dos barcos '" + pchar.GenQuest.CaptainComission.ShipName1 + "' y '" + pchar.GenQuest.CaptainComission.ShipName2 + "' levantaron anclas hace poco y navegaron hacia " + sLoc + ". ¿Ahora ves por qué no puedo confiar en mis hombres para hacer ese trabajo?";
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 
 	case "CapComission2_2_4":
 		AddQuestRecord("CaptainComission1", "24");
-			AddQuestUserData("CaptainComission1", "sName", "Jackman")); // belamour gen
+			AddQuestUserData("CaptainComission1", "sName", "Jackman"); // belamour gen
 			// AddQuestUserData("CaptainComission1", "sName", ChangeNameCase(NAMETYPE_MAIN, pchar.GenQuest.CaptainComission.PirateName, NAME_NOM));
 			AddQuestUserData("CaptainComission1", "sShipName1", pchar.GenQuest.CaptainComission.ShipName1);
 			AddQuestUserData("CaptainComission1", "sShipName2", pchar.GenQuest.CaptainComission.ShipName2);
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Bajar el precio? ¡Acabo de perder mi alijo por tu incompetencia! ¡Y ahora puedo subir el precio! Puedes llevártelo por 200,000 pesos si quieres, o puedes largarte al infierno de aquí.";
 		link.l1 = "Es demasiado caro... Adiós...";
 		link.l1.go = "CapComission4_4";
-		if (sti(pchar.money) >= 200000)
+		if (int(pchar.money) >= 200000)
 		{
 			link.l2 = "Maldita sea, toma tus monedas.";
 			link.l2.go = "CapComission4_5";
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 		dialog.text = "¿Has traído el dinero, Charles? No estaba bromeando sobre vender al hombre a la plantación.";
 		link.l1 = "Escucha, " + NPChar.name + ", hay un problema... No tengo tanto dinero. Pero estoy listo para trabajar.";
 		link.l1.go = "CapComission2_2";
-		if (makeint(pchar.money) > 150000)
+		if (int(pchar.money) > 150000)
 		{
 			link.l2 = "Es bueno que no lo hayas vendido. Aquí están tus monedas - 150.000 pesos. ¿Dónde puedo encontrarlo?" link.l2.go = "CapComission2_3";
 		}
@@ -498,7 +498,7 @@ void ProcessDialogEvent()
 		link.l1.go = "AngryExitAgainWithOut";
 		if (CheckAttribute(npchar, "angry.terms")) // примиряемся с Джекменом через 10 дней.
 		{
-			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
 			{
 				dialog.text = "No me molestes con tus charlas baratas. La próxima vez no te gustará el resultado...";
 				link.l1 = "Lo tengo.";
@@ -508,13 +508,12 @@ void ProcessDialogEvent()
 		}
 		break;
 	case "AngryRepeat_2":
-		dialog.text = "Se acabó, no hay más que hablar."
-					  "No quiero hablar contigo más, así que será mejor que no me molestes.";
+		dialog.text = "Se acabó, no hay más que hablar."+"No quiero hablar contigo más, así que será mejor que no me molestes.";
 		link.l1 = RandPhraseSimple("Como desees...", "Está bien entonces...");
 		link.l1.go = "AngryExitAgain";
 		if (CheckAttribute(npchar, "angry.terms")) // примиряемся с Джекменом через 10 дней.
 		{
-			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
 			{
 				dialog.text = "¿Espero que muestres más respeto y dejes de ser grosero? De lo contrario, tendré que matarte. Eso sería muy desagradable.";
 				link.l1 = "Puedes estar seguro, Jackman, lo haré.";
@@ -535,7 +534,7 @@ void ProcessDialogEvent()
 	// <<<<<<<<<<<<============= блок нод angry =============================
 	case "pirate_town":
 		dialog.text = "¿Resolver el problema? ¿Entiendes lo que has hecho? De todas formas, tráeme un millón de pesos y persuadiré a los muchachos para que olviden tus 'hazañas'. Si no te gusta la idea, entonces puedes irte al infierno.";
-		if (sti(Pchar.money) >= 1000000)
+		if (int(Pchar.money) >= 1000000)
 		{
 			link.l1 = "Está bien, estoy listo para pagar.";
 			link.l1.go = "pirate_town_pay";

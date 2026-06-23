@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "meeting":
-			dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name) + "为你的人头悬赏了一笔可观的奖金, 我们必须把你送到它的任何一个殖民地, 不管你是死是活, 我们都会得到报酬。 ";
+			dialog.text = XI_ConvertString(Nations[int(NPChar.nation)].Name) + "为你的人头悬赏了一笔可观的奖金, 我们必须把你送到它的任何一个殖民地, 不管你是死是活, 我们都会得到报酬。 ";
 			Link.l1 = "听着, 如果你放过我, 我会付钱给你。 ";
 			Link.l1.go = "Cost_Head"; 
             // boal 08.04.04 -->
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
         break;
 
         case "Cost_Head2":
-            AddMoneyToCharacter(pchar, -sti(PChar.HunterCost));
+            AddMoneyToCharacter(pchar, -int(PChar.HunterCost));
 
             AddDialogExitQuest("GoAway_Hunters_Land"); 
             DialogExit();
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 
         case "Cost_Head":
 			dialog.text = "我认为" + PChar.HunterCost + "比索对我们来说很合适。 ";
-            if(makeint(Pchar.money) < sti(PChar.HunterCost))
+            if(int(Pchar.money) < int(PChar.HunterCost))
             {
 				Link.l1 = "但我没有这么多钱。 ";
                 Link.l1.go = "NoMoney";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 			dialog.text = "哦不, " + GetSexPhrase("我亲爱的朋友","我漂亮的女孩") + "。 那没用。 我们确定你拥有" + GetName( pchar.questTemp.ReasonToFast.mapIdx, pchar.questTemp.ReasonToFast.map, NAME_GEN) + "的地图。 他是个守财奴, 他的箱子都被钱撑破了。 所以我们不会空手而归。 ";
 			link.l1 = "你说得对。 箱子确实装满了。 但你们得不到它们。 你们可以去那个洞穴看看, 应该还剩下几个破桶。 ";
 			link.l1.go = "ReasonToFast_THunter_3";
-			if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-				&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+			if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+				&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 			{
 				link.l2 = "你说得对。 你可以拥有你的宝藏。 记住, 它不会让你快乐, 因为它沾满了鲜血。 ";
 				link.l2.go = "ReasonToFast_THunter_4";
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_THunter_GoAway":			
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		case "ReasonToFastTHunter_Fight":
 			sGroup = "LAND_HUNTER";
 			sTemp = "LandHunter0";
-			iTemp = sti(pchar.HunterCost.Qty);
+			iTemp = int(pchar.HunterCost.Qty);
 			chrDisableReloadToLocation = true;
 			LAi_SetPlayerType(pchar);
 			LAi_SetFightMode(pchar, true);
@@ -284,8 +284,8 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess")
 			{
 				dialog.text = "你从总督那里偷来的珠宝。 ";
-				if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-					&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+				if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+					&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 				{
 					link.l1 = "拿去吧, 向" + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + "问好。 告诉他我们很快会见面... ";
 					link.l1.go = "ReasonToFast_HunterShore12_2";
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore12_2":
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore21":
-			dialog.text = "根据他的身份不能。 你破坏了我们的行动, 因为你我们损失了" + sti(pchar.questTemp.ReasonToFast.p10) + "比索。 所以现在你有债务要偿还。 ";
+			dialog.text = "根据他的身份不能。 你破坏了我们的行动, 因为你我们损失了" + int(pchar.questTemp.ReasonToFast.p10) + "比索。 所以现在你有债务要偿还。 ";
 			link.l1 = "拿去吧, 向" + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + "问好。 告诉他我们很快会见面... ";
 			link.l1.go = "ReasonToFast_HunterShore22";
 			link.l2 = GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_NOM) + "如果认为我会为他火中取栗, 那就大错特错了。 ";
@@ -350,9 +350,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore22":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p10))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p10))
 			{
-				AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p10)));
+				AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p10)));
 				AddQuestRecord("ReasonToFast", "20");
 				AddQuestUserData("ReasonToFast", "sText", "money");
 				AddQuestUserData("ReasonToFast", "sName", GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_GEN));

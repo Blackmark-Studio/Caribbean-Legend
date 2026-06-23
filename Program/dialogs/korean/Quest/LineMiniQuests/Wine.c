@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "그래서, 선장님, 술 가져왔소?";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "그래, 있다.";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "성 아르눌프여, 우리를 위해 기도해 주십시오! 와인이 정말 많군! 훌륭하오! 유감스럽게도, 내가 말했듯이 우리는 겨우 예순 병만 살 수 있소; 아쉽게도 더 살 돈이 없소. 페소는 가져가시오, 이 예순 병은 내가 잘 보관하겠소. 나머지는 그냥 두시오.";
 				link.l1 = "고맙네. 자네와 군인 친구들이 내 건강을 위해 꼭 한잔 올려주게!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "돌아왔군. 어디 보자... 네가 가져온 것은 "+sti(pchar.questTemp.Wine.Qty)+" 병들이군. 좋아! 내가 가져갈게. 대금은\n "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "돌아왔군. 어디 보자... 네가 가져온 것은 "+int(pchar.questTemp.Wine.Qty)+" 병들이군. 좋아! 내가 가져갈게. 대금은\n "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "고맙소. 자네와 군인 친구들이 내 건강을 위해 한 잔 올려주게나!";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "물론 그렇게 하지. "+GetAddress_Form(NPChar)+"! 집합 북이 울리고 있어, 이제 가야 해. 잘 있어!";
 			link.l1 = "순풍과 잔잔한 바다를 빌어, 친구!";
 			link.l1.go = "Wine_take_2";

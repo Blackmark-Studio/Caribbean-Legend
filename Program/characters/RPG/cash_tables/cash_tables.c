@@ -86,7 +86,7 @@ void UpdateCashTablesFellows()
 	AddAllFellows(&fellows, pchar, false);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
-		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(&fellows, i))));
+		ref chr = GetCharacter(int(GetAttributeValue(GetAttributeN(&fellows, i))));
 		CT_UpdateCashTables(chr);
 	}
 	CT_UpdateCashTables(pchar); // гг ещё раз из-за бонуса от оффов

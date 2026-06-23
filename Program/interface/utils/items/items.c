@@ -56,7 +56,7 @@ string GetItemUpgradeStage(ref ref_Id_Idx)
 
 	string sKeyFile = "ItemsDescribe.txt";
 
-	return GetConvertStr("UpgradeStageInfo_" + refItem.id + "_" + sti(refItem.UpgradeStage), sKeyFile);
+	return GetConvertStr("UpgradeStageInfo_" + refItem.id + "_" + int(refItem.UpgradeStage), sKeyFile);
 }
 
 
@@ -125,11 +125,11 @@ void WeaponSetVisualDamages(ref weapon, ref min, ref max)
 	min += GetAttributeInt(damages, FORCE_STRIKE + ".min");
 	min += GetAttributeInt(damages, ROUND_STRIKE + ".min");
 	min += GetAttributeInt(damages, BREAK_STRIKE + ".min");
-	min = makeint(min*0.25);
+	min = int(min*0.25);
 
 	max += GetAttributeInt(damages, FAST_STRIKE + ".max");
 	max += GetAttributeInt(damages, FORCE_STRIKE + ".max");
 	max += GetAttributeInt(damages, ROUND_STRIKE + ".max");
 	max += GetAttributeInt(damages, BREAK_STRIKE + ".max");
-	max = makeint(max*0.25);
+	max = int(max*0.25);
 }

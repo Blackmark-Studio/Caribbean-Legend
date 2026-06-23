@@ -28,9 +28,9 @@ void ProcessDialogEvent()
 		// первая встреча
 		if (NPChar.quest.meeting == "0")
 		{
-			if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY) // проверка межнациональных отношений
+			if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY) // проверка межнациональных отношений
 			{
-				dialog.text = "Hm. Navegas bajo la bandera de " + NationNameGenitive(sti(pchar.nation)) + ", capitán. No tengo deseo de hablar con el enemigo de mi país. ¡Hm!";
+				dialog.text = "Hm. Navegas bajo la bandera de " + NationNameGenitive(int(pchar.nation)) + ", capitán. No tengo deseo de hablar con el enemigo de mi país. ¡Hm!";
 				link.l1 = "Ah, sí. Un verdadero patriota...";
 				link.l1.go = "exit";
 			}
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
 		else
 		{
 			// повторные обращения
-			if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
-				dialog.text = "¿Debería repetirme? No quiero que me sospechen como amigo de " + NationNameAblative(sti(pchar.nation)) + "¡Lárgate o llamaré a los guardias! Estarán encantados de hablar contigo.";
+				dialog.text = "¿Debería repetirme? No quiero que me sospechen como amigo de " + NationNameAblative(int(pchar.nation)) + "¡Lárgate o llamaré a los guardias! Estarán encantados de hablar contigo.";
 				link.l1 = "Está bien, está bien, cálmate. Me voy.";
 				link.l1.go = "exit";
 			}

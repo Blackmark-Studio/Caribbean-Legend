@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 			
 			if(NPChar.id == "ReasonToFast_Hunter")
 			{
-				if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > sti(pchar.questTemp.ReasonToFast.p2))
+				if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > int(pchar.questTemp.ReasonToFast.p2))
 				{
 					dialog.text = "Ej, na łodzi! Hic... Oczyśćcie tor - muszę pogadać z chłopakami...";
 					link.l1 = "Czy nie jesteś trochę skołowany, kumplu? Idź to odespać.";
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 		
 		case "Hold_GenQuest3":
 			sld = characterFromId(pchar.GenQuest.Hold_GenQuest.CapId);
-			pchar.GenQuest.Hold_GenQuest.RansomSum = makeint(3 * sti(sld.rank) * (800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L) * 100) + GetCharacterSkillToOld(sld, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500); 
+			pchar.GenQuest.Hold_GenQuest.RansomSum = int(3 * int(sld.rank) * (800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L) * 100) + GetCharacterSkillToOld(sld, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
 						
 			switch(hrand(3))
 			{
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest61":
-			dialog.text = "Źle mnie zrozumiałeś: jestem członkiem rady miejskiej. Pilnujemy przestrzegania karty."+"Straże!!! Straże! Aresztujcie go pod zarzutem handlu niewolnikami i plądrowania statków "+NationNameGenitive(sti(pchar.GenQuest.Hold_GenQuest.Nation))+"!";
+			dialog.text = "Źle mnie zrozumiałeś: jestem członkiem rady miejskiej. Pilnujemy przestrzegania karty."+"Straże!!! Straże! Aresztujcie go pod zarzutem handlu niewolnikami i plądrowania statków "+NationNameGenitive(int(pchar.GenQuest.Hold_GenQuest.Nation))+"!";
 			link.l1 = "No cóż, 'kamracie', pozwól mi tylko do ciebie dotrzeć...";
 			link.l1.go = "Hold_GenQuest62";
 		break;
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest73":
-			addMoneyToCharacter(pchar, sti(pchar.GenQuest.Hold_GenQuest.RansomSum));
+			addMoneyToCharacter(pchar, int(pchar.GenQuest.Hold_GenQuest.RansomSum));
 			AddQuestRecord("HoldQuest", "11");
 			AddQuestUserData("HoldQuest", "sNameChar", GetFullName(NPChar)); // belamour gen 
 			AddQuestUserData("HoldQuest", "sName", NPChar.Hold_GenQuest.Name); // belamour gen
@@ -362,7 +362,7 @@ void ProcessDialogEvent()
 		
 		case "Hold_GenQuest85":
 			dialog.text = "Prawda także... Dobrze, jestem gotów sprzedać ci to za "+pchar.GenQuest.Hold_GenQuest.Sum+"pesos. Nie odważę się i tak niepokoić zmarłych.";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.Hold_GenQuest.Sum) && !CheckCharacterItem(pchar,"mapQuest") && !CheckCharacterItem(pchar,"map_full"))
+			if(int(pchar.money) >= int(pchar.GenQuest.Hold_GenQuest.Sum) && !CheckCharacterItem(pchar,"mapQuest") && !CheckCharacterItem(pchar,"map_full"))
 			{
 				link.l1 = "Dobrze. Umowa stoi.";
 				link.l1.go = "Hold_GenQuest86";
@@ -373,7 +373,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Hold_GenQuest86":		
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Hold_GenQuest.Sum));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Hold_GenQuest.Sum));
 			GiveItem2Character(pchar, "mapQuest"); 
 			rItem = ItemsFromID("mapQuest");
 			Hold_GenQuest_GenerateTreasureMap(rItem);
@@ -412,34 +412,34 @@ void ProcessDialogEvent()
 		
 		case "ShipWreck_2":
 			pchar.GenQuest.ShipWreck.StartShipType = PiratesOnUninhabited_GenerateShipType(); 		
-			pchar.GenQuest.ShipWreck.ShipTypeName = GenerateRandomNameToShip(sti(pchar.GenQuest.ShipWreck.Nation));			
+			pchar.GenQuest.ShipWreck.ShipTypeName = GenerateRandomNameToShip(int(pchar.GenQuest.ShipWreck.Nation));
 			
 			if(rand(1) == 0)
 			{
-				dialog.text = RandPhraseSimple(" Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+", mój statek rozbił się na rafach niedaleko wybrzeża."+"Z całej załogi przeżyło tylko kilku marynarzy. Przypływ wyrzucił nas na ten opustoszały brzeg. Głodowaliśmy i pragnęliśmy "+(5+hRand(7))+"tygodnie do teraz","Cześć, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Nasz statek rozbił się niedaleko stąd."+"Udało nam się dotrzeć do tego brzegu na wrakach statków, ale to miejsce wydaje się niezamieszkałe. Byliśmy zmuszeni przetrwać na skorupiakach i owocach palm przez "+(5+hRand(7))+" tygodni do tej pory.");
+				dialog.text = RandPhraseSimple(" Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Acc"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+", mój statek rozbił się na rafach niedaleko wybrzeża."+"Z całej załogi przeżyło tylko kilku marynarzy. Przypływ wyrzucił nas na ten opustoszały brzeg. Głodowaliśmy i pragnęliśmy "+(5+hRand(7))+"tygodnie do teraz","Cześć, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitanie z "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+". Nasz statek rozbił się niedaleko stąd."+"Udało nam się dotrzeć do tego brzegu na wrakach statków, ale to miejsce wydaje się niezamieszkałe. Byliśmy zmuszeni przetrwać na skorupiakach i owocach palm przez "+(5+hRand(7))+" tygodni do tej pory.");
 				link.l1 = RandPhraseSimple("Ilu z was zostało?","Ilu z was udało się przeżyć?");
 				link.l1.go = "ShipWreck_3";
 			}
 			else
 			{						
 				pchar.GenQuest.ShipWreck.Mutiny = "true"; // belamour gen кавычки
-				pchar.GenQuest.ShipWreck.BadName = GenerateRandomName_Generator(sti(pchar.GenQuest.ShipWreck.Nation), "man");
-				pchar.GenQuest.ShipWreck.City = GetQuestNationsCity(sti(pchar.GenQuest.ShipWreck.Nation));
-				dialog.text = "O, kapitanie, nasze straty są naprawdę straszne... Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitan i właściciel "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+"Albo, powinienem rzec, były kapitanie i właścicielu."+"Ten drań "+pchar.GenQuest.ShipWreck.BadName+" którego wynająłem w "+XI_ConvertString("Colony"+pchar.GenQuest.ShipWreck.City+"Voc")+" sprowokował moją załogę do buntu. W końcu wylądowaliśmy w tym zagubionym miejscu. To się stało "+(5+hRand(7))+" tygodnie temu.";
+				pchar.GenQuest.ShipWreck.BadName = GenerateRandomName_Generator(int(pchar.GenQuest.ShipWreck.Nation), "man");
+				pchar.GenQuest.ShipWreck.City = GetQuestNationsCity(int(pchar.GenQuest.ShipWreck.Nation));
+				dialog.text = "O, kapitanie, nasze straty są naprawdę straszne... Witaj, jestem "+pchar.GenQuest.ShipWreck.Name+", kapitan i właściciel "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name+"Gen"))+" '"+pchar.GenQuest.ShipWreck.ShipTypeName+"Albo, powinienem rzec, były kapitanie i właścicielu."+"Ten drań "+pchar.GenQuest.ShipWreck.BadName+" którego wynająłem w "+XI_ConvertString("Colony"+pchar.GenQuest.ShipWreck.City+"Voc")+" sprowokował moją załogę do buntu. W końcu wylądowaliśmy w tym zagubionym miejscu. To się stało "+(5+hRand(7))+" tygodnie temu.";
 				link.l1 = "I co wtedy? Cała twoja załoga dołączyła do buntowników?";
 				link.l1.go = "ShipWreck_4";			
 			}
 		break;
 		
 		case "ShipWreck_3":
-			dialog.text = RandPhraseSimple("Z całej załogi tylko "+ShipWreck_GetStringQty(sti(pchar.GenQuest.ShipWreck.Qty))+" przeżyło. Inni zginęli; kilku z nich zmarło już tutaj z powodu ran i gorączki",
-				"Tylko " + ShipWreck_GetStringQty(sti(pchar.GenQuest.ShipWreck.Qty)) + " mieło szczęście. Inni spotkali swój koniec... albo w głębinach, albo na wydmach tego wybrzeża.");
+			dialog.text = RandPhraseSimple("Z całej załogi tylko "+ShipWreck_GetStringQty(int(pchar.GenQuest.ShipWreck.Qty))+" przeżyło. Inni zginęli; kilku z nich zmarło już tutaj z powodu ran i gorączki",
+				"Tylko " + ShipWreck_GetStringQty(int(pchar.GenQuest.ShipWreck.Qty)) + " mieło szczęście. Inni spotkali swój koniec... albo w głębinach, albo na wydmach tego wybrzeża.");
 			link.l1 = LinkRandPhrase("Tak, to godny pożałowania los. Ale taki jest los marynarza - każdy mógłby skończyć na twoim miejscu.","Widzę... Bóg trzyma każde życie, tylko że jest zbyt zajęty, by pamiętać o wszystkich.","Rzeczywiście. Człowiek proponuje, ale Bóg rozporządza.");
 			link.l1.go = "ShipWreck_5";	
 		break;
 		
 		case "ShipWreck_4":
-			dialog.text = "Oczywiście, że nie! Wielu odmówiło przyłączenia się do buntowników, ale ci łajdacy zdobyli arsenał, i dobrze, że nie stawialiśmy oporu, bo inaczej by nas po prostu zabili. Wielu już tutaj padło ofiarą gorączki i trucizn od jadowitych owadów, tylko "+ShipWreck_GetStringQty(sti(pchar.GenQuest.ShipWreck.Qty))+"przetrwałem. Dzięki Bogu, nasze próby wreszcie się skończyły.";
+			dialog.text = "Oczywiście, że nie! Wielu odmówiło przyłączenia się do buntowników, ale ci łajdacy zdobyli arsenał, i dobrze, że nie stawialiśmy oporu, bo inaczej by nas po prostu zabili. Wielu już tutaj padło ofiarą gorączki i trucizn od jadowitych owadów, tylko "+ShipWreck_GetStringQty(int(pchar.GenQuest.ShipWreck.Qty))+"przetrwałem. Dzięki Bogu, nasze próby wreszcie się skończyły.";
 			link.l1 = RandPhraseSimple("Tak, to z pewnością było uderzenie pecha.","O cóż, wiele dziwnych rzeczy może się zdarzyć w tych przez Boga zapomnianych miejscach.");
 			link.l1.go = "ShipWreck_5";			
 			link.l2 = "Zaczekaj, przyjacielu. A skąd mam wiedzieć, że nie wysadzono cię jako podżegaczy buntu?";
@@ -448,14 +448,14 @@ void ProcessDialogEvent()
 		
 		case "ShipWreck_5":
 			dialog.text = RandPhraseSimple("Kapitanie, mam nadzieję, że masz kilka wolnych schowków na swoim statku. Wszyscy mamy rodziny, które prawdopodobnie opłakują naszą stratę, podczas gdy my rozmawiamy. Bylibyśmy Ci bardzo wdzięczni.","Kapitanie, jesteśmy całkowicie zdesperowani, jesteś naszą jedyną nadzieją. Proszę, nie odmawiaj nam swojej pomocy, zabierz nas z tej przeklętej ziemi.");
-			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.ShipWreck.Qty) && GetPassengersQuantity(pchar) < PASSENGERS_MAX)
+			if(GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.ShipWreck.Qty) && GetPassengersQuantity(pchar) < PASSENGERS_MAX)
 			{
 				link.l1 = "Ohh... a dokąd chcesz, żebym cię zabrał?";
 				link.l1.go = "ShipWreck_7";			
 			}
 			link.l2 = RandPhraseSimple(RandPhraseSimple("Naprawdę przepraszam, ale nie ma ani jednej wolnej koi, nie wspominając o kajutach. Marynarze śpią na pokładzie, nie mogą nawet porządnie odpocząć po wachcie...","Naprawdę nie chciałbym cię rozczarować, ale statek jest przeładowany, a ludzie muszą spać w złej pogodzie. Gdyby wybuchła choroba, stracę połowę załogi."),RandPhraseSimple("Naprawdę przepraszam, ale na moim statku absolutnie nie ma wolnej przestrzeni dla załogi. Nie mogę wziąć na pokład więcej pasażerów.","Muszę cię rozczarować, ale mój statek jest przeciążony. Obawiam się epidemii."));
 			link.l2.go = "ShipWreck_8";	
-			if(stf(pchar.reputation.nobility) <= REPUTATION_NEUTRAL)
+			if(float(pchar.reputation.nobility) <= REPUTATION_NEUTRAL)
 			{
 				link.l3 = "Jesteś doświadczonym żeglarzem i powinieneś wiedzieć, że obecność kogoś, kto przeżył katastrofę morską, to bardzo zły znak. Moi marynarze po prostu wyrzucą was wszystkich za burtę.";
 				link.l3.go = "ShipWreck_9";
@@ -479,7 +479,7 @@ void ProcessDialogEvent()
 				if(rand(100) < 90)
 				{
 					pchar.GenQuest.ShipWreck.variant = "1";
-					dialog.text = "Do dowolnej osady "+NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation))+".";
+					dialog.text = "Do dowolnej osady "+NationNameGenitive(int(pchar.GenQuest.ShipWreck.Nation))+".";
 					link.l1 = "Cóż, mam wystarczająco wolnych schowków i hamaków. Wpakuj się na łódź.";
 					link.l1.go = "ShipWreck_10";
 					link.l2 = "Hmm... Przed nami bitwy, i nie wiem, gdzie będziesz bardziej bezpieczny, na pokładzie mojego statku czy w tej przytulnej zatoce.";
@@ -506,13 +506,13 @@ void ProcessDialogEvent()
 		break;		
 
 		case "ShipWreck_8":
-			pchar.GenQuest.ShipWreck.FoodQty = sti(pchar.GenQuest.ShipWreck.Qty) * 10 + rand(10);
-			pchar.GenQuest.ShipWreck.MedicamentQty = sti(pchar.GenQuest.ShipWreck.Qty) * 5 + rand(10);
-			pchar.GenQuest.ShipWreck.AmunitionQty = sti(pchar.GenQuest.ShipWreck.Qty) * 3 + rand(5);
-			pchar.GenQuest.ShipWreck.RumQty = sti(pchar.GenQuest.ShipWreck.Qty) * 7 + rand(10);
-			if(GetFreeCrewQuantity(pchar) < sti(pchar.GenQuest.ShipWreck.Qty))
+			pchar.GenQuest.ShipWreck.FoodQty = int(pchar.GenQuest.ShipWreck.Qty) * 10 + rand(10);
+			pchar.GenQuest.ShipWreck.MedicamentQty = int(pchar.GenQuest.ShipWreck.Qty) * 5 + rand(10);
+			pchar.GenQuest.ShipWreck.AmunitionQty = int(pchar.GenQuest.ShipWreck.Qty) * 3 + rand(5);
+			pchar.GenQuest.ShipWreck.RumQty = int(pchar.GenQuest.ShipWreck.Qty) * 7 + rand(10);
+			if(GetFreeCrewQuantity(pchar) < int(pchar.GenQuest.ShipWreck.Qty))
 			{
-				if(GetSquadronGoods(pchar, GOOD_FOOD) < sti(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < sti(pchar.GenQuest.ShipWreck.MedicamentQty))
+				if(GetSquadronGoods(pchar, GOOD_FOOD) < int(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < int(pchar.GenQuest.ShipWreck.MedicamentQty))
 				{
 					dialog.text = "Ale odmawiając, z pewnością skazujesz nas na śmierć! Cóż, spróbujemy przebić się do statku, nawet jeśli będzie to kosztować nas życie!";
 					link.l1 = "Co? Spójrzcie na siebie, ledwo stoicie na nogach...";
@@ -523,7 +523,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = "Ale nie możesz nas tu zostawić! Bez twojej pomocy wszyscy wkrótce zginiemy!";
-					if(GetSquadronGoods(pchar, GOOD_WEAPON) < sti(pchar.GenQuest.ShipWreck.AmunitionQty) || GetSquadronGoods(pchar, GOOD_RUM) < sti(pchar.GenQuest.ShipWreck.RumQty))
+					if(GetSquadronGoods(pchar, GOOD_WEAPON) < int(pchar.GenQuest.ShipWreck.AmunitionQty) || GetSquadronGoods(pchar, GOOD_RUM) < int(pchar.GenQuest.ShipWreck.RumQty))
 					{			
 						link.l1 = "Jedyne, co mogę dla ciebie zrobić, to zostawić ci wystarczająco dużo prowiantu i medykamentów oraz dać ci łódź. Przynajmniej nie umrzesz z głodu i pragnienia. Co do żeglugi, nie muszę cię tego uczyć.";
 						link.l1.go = "ShipWreck_8_2";
@@ -545,9 +545,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(stf(pchar.reputation.nobility) <= REPUTATION_NEUTRAL) // плохиш
+				if(float(pchar.reputation.nobility) <= REPUTATION_NEUTRAL) // плохиш
 				{
-					if(GetSquadronGoods(pchar, GOOD_FOOD) < sti(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < sti(pchar.GenQuest.ShipWreck.MedicamentQty))				
+					if(GetSquadronGoods(pchar, GOOD_FOOD) < int(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < int(pchar.GenQuest.ShipWreck.MedicamentQty))
 					{
 						dialog.text = "   Ale odmawiając, z pewnością skazujesz nas na śmierć! Cóż, spróbujemy przebić się do statku, nawet jeśli to nas kosztuje życie!   ";
 						link.l1 = "Co? Spójrzcie na siebie, ledwo stoicie na nogach...";
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 				}
 				else // кибальчиш
 				{
-					if(GetSquadronGoods(pchar, GOOD_FOOD) < sti(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < sti(pchar.GenQuest.ShipWreck.MedicamentQty))				
+					if(GetSquadronGoods(pchar, GOOD_FOOD) < int(pchar.GenQuest.ShipWreck.FoodQty) || GetSquadronGoods(pchar, GOOD_MEDICAMENT) < int(pchar.GenQuest.ShipWreck.MedicamentQty))
 					{
 						if(rand(1) == 0)
 						{
@@ -606,8 +606,8 @@ void ProcessDialogEvent()
 		case "ShipWreck_8_3":
 			ChangeCharacterComplexReputation(pchar,"nobility", -2);
 			AddCharacterExpToSkill(pchar, "Leadership", 25);
-			RemoveCharacterGoods(pchar, GOOD_FOOD, sti(pchar.GenQuest.ShipWreck.FoodQty));
-			RemoveCharacterGoods(pchar, GOOD_MEDICAMENT, sti(pchar.GenQuest.ShipWreck.MedicamentQty));			
+			RemoveCharacterGoods(pchar, GOOD_FOOD, int(pchar.GenQuest.ShipWreck.FoodQty));
+			RemoveCharacterGoods(pchar, GOOD_MEDICAMENT, int(pchar.GenQuest.ShipWreck.MedicamentQty));
 			Log_SetStringToLog("Oddałeś " + pchar.GenQuest.ShipWreck.FoodQty + " jednostek pożywienia.");
 			Log_SetStringToLog("Oddałeś " + pchar.GenQuest.ShipWreck.MedicamentQty + "jednostek lekarstw.");
 			DialogExit();
@@ -624,10 +624,10 @@ void ProcessDialogEvent()
 		case "ShipWreck_8_5":		
 			pchar.quest.ShipWreck_LocationExit.over = "yes";
 			AddCharacterExpToSkill(pchar, "Leadership", 50); 
-			RemoveCharacterGoods(pchar, GOOD_FOOD, sti(pchar.GenQuest.ShipWreck.FoodQty));
-			RemoveCharacterGoods(pchar, GOOD_MEDICAMENT, sti(pchar.GenQuest.ShipWreck.MedicamentQty));			
-			RemoveCharacterGoods(pchar, GOOD_WEAPON, sti(pchar.GenQuest.ShipWreck.AmunitionQty));
-			RemoveCharacterGoods(pchar, GOOD_RUM, sti(pchar.GenQuest.ShipWreck.RumQty));			
+			RemoveCharacterGoods(pchar, GOOD_FOOD, int(pchar.GenQuest.ShipWreck.FoodQty));
+			RemoveCharacterGoods(pchar, GOOD_MEDICAMENT, int(pchar.GenQuest.ShipWreck.MedicamentQty));
+			RemoveCharacterGoods(pchar, GOOD_WEAPON, int(pchar.GenQuest.ShipWreck.AmunitionQty));
+			RemoveCharacterGoods(pchar, GOOD_RUM, int(pchar.GenQuest.ShipWreck.RumQty));
 			Log_SetStringToLog("Oddałeś " + pchar.GenQuest.ShipWreck.FoodQty + " jednostek pożywienia.");
 			Log_SetStringToLog("Oddałeś " + pchar.GenQuest.ShipWreck.MedicamentQty + "jednostek lekarstw.");		
 			Log_SetStringToLog("Oddałeś " + pchar.GenQuest.ShipWreck.AmunitionQty + " jednostek broni.");
@@ -639,14 +639,14 @@ void ProcessDialogEvent()
 				AddQuestUserData("ShipWrecked", "sSex", GetSexPhrase("",""));
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 				AddQuestUserData("ShipWrecked", "sBadName", pchar.GenQuest.ShipWreck.BadName);			
-				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
+				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(int(pchar.GenQuest.ShipWreck.Nation)));
 			}
 			else
 			{
 				AddQuestRecord("ShipWrecked", "10");
 				AddQuestUserData("ShipWrecked", "sSex", GetSexPhrase("",""));
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
-				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
+				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(int(pchar.GenQuest.ShipWreck.Nation)));
 			}
 			DialogExit();
 			NextDiag.TempNode = "ShipWreck_8_6";
@@ -684,7 +684,7 @@ void ProcessDialogEvent()
 			link.l1 = "To świetnie. Mam nadzieję, że twoje próby wkrótce się skończą.";
 			link.l1.go = "ShipWreck_13";
 			pchar.quest.ShipWreck_DeliveToCity.win_condition.l1 = "Nation_City";
-			pchar.quest.ShipWreck_DeliveToCity.win_condition.l1.nation = sti(pchar.GenQuest.ShipWreck.Nation);
+			pchar.quest.ShipWreck_DeliveToCity.win_condition.l1.nation = int(pchar.GenQuest.ShipWreck.Nation);
 			pchar.quest.ShipWreck_DeliveToCity.function = "ShipWreck_DeliveToCity";
 			ReOpenQuestHeader("ShipWrecked");
 			if(CheckAttribute(pchar, "GenQuest.ShipWreck.Mutiny"))
@@ -692,7 +692,7 @@ void ProcessDialogEvent()
 				AddQuestRecord("ShipWrecked", "2");
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 				// --> belamour окончание по количеству персон
-				if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5)
+				if(int(pchar.GenQuest.ShipWreck.Qty) >= 5)
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailors");
 				}
@@ -702,14 +702,14 @@ void ProcessDialogEvent()
 				}
 				// <-- belamour
 				AddQuestUserData("ShipWrecked", "sBadName", pchar.GenQuest.ShipWreck.BadName);
-				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
+				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(int(pchar.GenQuest.ShipWreck.Nation)));
 			}
 			else
 			{
 				AddQuestRecord("ShipWrecked", "1");
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 				// --> belamour окончание по количеству персон
-				if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5)
+				if(int(pchar.GenQuest.ShipWreck.Qty) >= 5)
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailors");
 				}
@@ -718,11 +718,11 @@ void ProcessDialogEvent()
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailor");
 				}
 				// <-- belamour
-				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
+				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
 				AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);
-				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(sti(pchar.GenQuest.ShipWreck.Nation)));
+				AddQuestUserData("ShipWrecked", "sNation", NationNameGenitive(int(pchar.GenQuest.ShipWreck.Nation)));
 				// --> belamour: нужно разделить, иначе получается с потерпевшего крушение бригантины 
-				if(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
+				if(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
 				{
 					AddQuestUserData("ShipWrecked", "sText", "wrecked");
 				}
@@ -749,7 +749,7 @@ void ProcessDialogEvent()
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 				AddQuestUserData("ShipWrecked", "sBadName", pchar.GenQuest.ShipWreck.BadName);
 				// --> belamour окончание по количеству персон
-				if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5)
+				if(int(pchar.GenQuest.ShipWreck.Qty) >= 5)
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailors");
 				}
@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 				AddQuestRecord("ShipWrecked", "3");
 				AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 				// --> belamour окончание по количеству персон
-				if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5)
+				if(int(pchar.GenQuest.ShipWreck.Qty) >= 5)
 				{
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailors");
 				}
@@ -773,10 +773,10 @@ void ProcessDialogEvent()
 					AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " sailor");
 				}
 				// <-- belamour
-				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
+				AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
 				AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);
 				// --> belamour: нужно разделить, иначе получается с потерпевшего крушение бригантины 
-				if(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
+				if(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
 				{
 					AddQuestUserData("ShipWrecked", "sText", "wrecked");
 				}
@@ -792,7 +792,7 @@ void ProcessDialogEvent()
 			dialog.text = "Chodźże! Naprawdę, kapitanie?! Czyżbyśmy bali się śmierci?! Oszukaliśmy ją raz, możemy zrobić to ponownie. Po prostu nie chcemy stracić życia w taki sposób. Gnić tutaj, sami\nZ radością dołączylibyśmy do twojej załogi i walczyli pod twoją banderą dzielnie. Tylko nie zostawiaj nas tu...";
 			link.l1 = "Widzę, że jesteście gotowi zrobić wszystko, byle tylko stąd się wydostać. Ale spójrzcie na siebie, jakimi wy możecie być żeglarzami?";
 			link.l1.go = "ShipWreck_14";
-			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.ShipWreck.Qty))
+			if(GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.ShipWreck.Qty))
 			{
 				link.l2 = "To dobry pomysł. Przypuszczam, że mogę cię zatrudnić.";
 				link.l2.go = "ShipWreck_15";
@@ -812,10 +812,10 @@ void ProcessDialogEvent()
 			AddQuestUserData("ShipWrecked", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 			AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty);
-			AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
+			AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Gen"))); // belamour gen
 			AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);	
 			// --> belamour: нужно разделить, иначе получается с потерпевшего крушение бригантины
-			if(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
+			if(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
 			{
 				AddQuestUserData("ShipWrecked", "sText", "wrecked");
 			}
@@ -828,13 +828,13 @@ void ProcessDialogEvent()
 
 		case "ShipWreck_13": // берем пассажирами
 			pchar.GenQuest.ShipWreck = "SailorsSaved";
-			//Achievment_SetStat(29, sti(pchar.GenQuest.ShipWreck.Qty));
+			//Achievment_SetStat(29, int(pchar.GenQuest.ShipWreck.Qty));
 			if(CheckAttribute(pchar,"GenQuest.ShipWreck.variant"))
 			{
 				if(pchar.GenQuest.ShipWreck.variant == "1") ChangeCharacterComplexReputation(pchar,"nobility", 1);			
 				if(pchar.GenQuest.ShipWreck.variant == "2") ChangeCharacterComplexReputation(pchar,"nobility", 2);			
 			}	
-			for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+			for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 			{
 				rChar = CharacterFromID("ShipWreck_" + i);
 				if(i == 0) 
@@ -870,7 +870,7 @@ void ProcessDialogEvent()
 		
 		case "ShipWreck_16":
 			ChangeCharacterComplexReputation(pchar,"nobility", -3);
-			for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+			for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 			{
 				rChar = CharacterFromID("ShipWreck_" + i);
 				LAi_SetImmortal(rChar, false);
@@ -895,20 +895,20 @@ void ProcessDialogEvent()
 		case "ShipWreck_17": // принимаем в команду
 			if(pchar.GenQuest.ShipWreck.variant == "1") ChangeCharacterComplexReputation(pchar,"nobility", 1);			
 			if(pchar.GenQuest.ShipWreck.variant == "2") ChangeCharacterComplexReputation(pchar,"nobility", 2);			
-			for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+			for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 			{
 				rChar = CharacterFromID("ShipWreck_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
 				rChar.LifeDay = 0;			
 				rChar.Dialog.currentnode = "ShipWreck_17_again";
 			}
-			AddCharacterCrew(pchar, sti(pchar.GenQuest.ShipWreck.Qty));
+			AddCharacterCrew(pchar, int(pchar.GenQuest.ShipWreck.Qty));
 			// --> belamour gen по количеству персон
-			if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5) sText = "";	
+			if(int(pchar.GenQuest.ShipWreck.Qty) >= 5) sText = "";
 			else sText = "";
 			Log_Info("Your team has increased by " + pchar.GenQuest.ShipWreck.Qty + " man" + sText + ".");
 			// <-- belamour gen 
-			Achievment_SetStat(29, sti(pchar.GenQuest.ShipWreck.Qty));
+			Achievment_SetStat(29, int(pchar.GenQuest.ShipWreck.Qty));
 			pchar.quest.ShipWreck_LocExit.over = "yes"; // Снимаем прерывание на выход из локации			
 			DeleteAttribute(pchar, "GenQuest.ShipWreck");			
 			AddCharacterExpToSkill(pchar, "Leadership", 50); 			
@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("ShipWrecked", "ShoreName", UpperFirst(XI_ConvertString(pchar.location + "Gen"))); // belamour gen
 			AddQuestUserData("ShipWrecked", "sName", pchar.GenQuest.ShipWreck.Name);
 			// --> belamour окончание по количеству персон
-			if(sti(pchar.GenQuest.ShipWreck.Qty) >= 5)
+			if(int(pchar.GenQuest.ShipWreck.Qty) >= 5)
 			{
 				AddQuestUserData("ShipWrecked", "count", pchar.GenQuest.ShipWreck.Qty + " his sailors");
 			}
@@ -954,7 +954,7 @@ void ProcessDialogEvent()
 		
 		case "ShipWreck_20":
 			dialog.text = "Nie jesteśmy w stanie wydawać żadnych rozkazów. To zależy od ciebie, po prostu zabierz nas do jakiejkolwiek osady lub przyjmij nas do swojej załogi.";
-			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.ShipWreck.Qty))
+			if(GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.ShipWreck.Qty))
 			{
 				link.l1 = "Dobrze, przyjmę cię do mojej załogi. Ale żadnych głupstw! Na moim statku panuje surowa dyscyplina!";
 				link.l1.go = "ShipWreck_17";
@@ -988,7 +988,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipWreck_31":
-			//addMoneyToCharacter(pchar, sti(pchar.rank) * 200 + rand(2000));
+			//addMoneyToCharacter(pchar, int(pchar.rank) * 200 + rand(2000));
 			AddCharacterExpToSkill(pchar, "Commerce", 50);
 			AddCharacterExpToSkill(pchar, "Sailing", 100);
 			TakeNItems(pchar, "jewelry2", 15+hrand(10));
@@ -1126,7 +1126,7 @@ void ProcessDialogEvent()
 
 		case "ShipWreck_46":
 			ChangeCharacterComplexReputation(pchar,"nobility", 4);			
-			for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+			for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 			{
 				rChar = CharacterFromID("ShipWreck_" + i);
 				if(i == 0) 
@@ -1142,7 +1142,7 @@ void ProcessDialogEvent()
 			pchar.quest.ShipWreck_DeliveToCity.win_condition.l1.location_type = "town";
 			pchar.quest.ShipWreck_DeliveToCity.function = "ShipWreck_DeliveToCity";			
 			pchar.GenQuest.ShipWreck = "SailorsSaved";
-			if(CheckAttribute(pchar,"GenQuest.ShipWreck.Mutiny")) DeleteAttribute(pchar,"GenQuest.ShipWreck.Mutiny"));
+			if(CheckAttribute(pchar,"GenQuest.ShipWreck.Mutiny")) DeleteAttribute(pchar,"GenQuest.ShipWreck.Mutiny");
 			SetFunctionExitFromLocationCondition("ShipWreck_LocationExit", pchar.location, false);				
 			DialogExit();			
 		break;
@@ -1231,7 +1231,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_Begin":					
-			switch(sti(pchar.GenQuest.Convict.var))
+			switch(int(pchar.GenQuest.Convict.var))
 			{
 				case 0:
 					dialog.text = "Kapitanie, proszę, pomóż nam zdobyć statek lub długą łódź, tartanę, cokolwiek, to naprawdę nie ma znaczenia. Znajdujemy się w takich okolicznościach, że musimy uciekać z tego niegościnnego miejsca, ale nie możemy pojawić się w osadzie.";
@@ -1259,7 +1259,7 @@ void ProcessDialogEvent()
 		
 		case "Convict_11":
 			dialog.text = "Jesteśmy zbiegami... z "+GetStrSmallRegister(XI_ConvertString("MineType"+pchar.GenQuest.Convict.MineType+"Gen"))+". Wkrótce były pan zauważy... a wtedy na pewno zginiemy.";
-			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
+			if(GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.Convict.ConvictQty))
 			{
 				link.l1 = "Więc wiesz, jak zarządzać żaglami?";
 				link.l1.go = "Convict_11_1";
@@ -1270,7 +1270,7 @@ void ProcessDialogEvent()
 		
 		case "Convict_12":
 			dialog.text = "To nie jest dobry czas, by myśleć o rumie. Minął tydzień od naszej ucieczki, teraz ukrywamy się w dżungli i głodujemy.";
-			if(sti(pchar.money) >= 3000)
+			if(int(pchar.money) >= 3000)
 			{
 				link.l1 = "Cóż, przypuśćmy, że mogę dać ci pieniądze... i co wtedy? Zamierzasz się ukrywać, dopóki ostatecznie nie zostaniesz odkryty przez patrol?";
 				link.l1.go = "Convict_12_1";		
@@ -1282,7 +1282,7 @@ void ProcessDialogEvent()
 		break;		
 		
 		case "Convict_12_1":
-			if(hrand(1) == 0 && GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
+			if(hrand(1) == 0 && GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.Convict.ConvictQty))
 			{
 				dialog.text = "A co innego możemy zrobić? Chętnie zatrudnilibyśmy się jako marynarze, ale biorąc pod uwagę, że jesteśmy zbiegami, kto nas zatrudni?";
 				link.l1 = "Zatrudnię cię, jeśli wiesz, jak zarządzać żaglami i nie okażesz oznak tchórzostwa.";
@@ -1494,7 +1494,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_11_5":
-			if(makeint(pchar.reputation.nobility) < 11 || makeint(pchar.reputation.nobility) > 79) //макс. репутатция 90
+			if(int(pchar.reputation.nobility) < 11 || int(pchar.reputation.nobility) > 79) //макс. репутатция 90
 			{
 				dialog.text = "O, kapitanie, liczyliśmy na ciebie...";
 				link.l1 = "Nie ma problemu. Jeśli masz pieniądze, znajdziesz transport. Żegnaj.";
@@ -1519,7 +1519,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Convict", "1");
 			AddQuestUserData("Convict", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Convict", "sIslandType", XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Convict.city) + "Gen"));
-			AddQuestUserData("Convict", "sConvictNum", Convict_GetStringNum(sti(pchar.GenQuest.Convict.ConvictQty))); // belamour gen колво прописью
+			AddQuestUserData("Convict", "sConvictNum", Convict_GetStringNum(int(pchar.GenQuest.Convict.ConvictQty))); // belamour gen колво прописью
 			AddQuestUserData("Convict", "sShoreName", XI_ConvertString(pchar.GenQuest.Convict.ShoreLocation + "Gen"));	// belamour gen	
 			SetFunctionTimerCondition("Convict_SetTimerMeet", 0, 0, 1, false);	
 			locations[FindLocation(pchar.GenQuest.Convict.ShoreLocation)].DisableEncounters = true;			
@@ -1543,11 +1543,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_13_1":
-			pchar.GenQuest.Convict.Sum = (sti(pchar.rank)+10)*100+1000;
+			pchar.GenQuest.Convict.Sum = (int(pchar.rank)+10)*100+1000;
 			dialog.text = "Coś jest. Przeszukaliśmy skrzynie naszego szefa, ale potem zrobiło się zamieszanie, i musieliśmy przebić się walką. Tylko "+PChar.GenQuest.Convict.ConvictQty+" ludzie zdołali przeżyć.";
-			link.l1 = "Z uwagi na okoliczności, nie dam ci przejazdu taniej niż "+FindRussianMoneyString(sti(pchar.GenQuest.Convict.Sum))+"pesos za osobę.";
+			link.l1 = "Z uwagi na okoliczności, nie dam ci przejazdu taniej niż "+FindRussianMoneyString(int(pchar.GenQuest.Convict.Sum))+"pesos za osobę.";
 			link.l1.go = "Convict_13_2";
-			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty) && GetPassengersQuantity(pchar) < PASSENGERS_MAX)
+			if(GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.Convict.ConvictQty) && GetPassengersQuantity(pchar) < PASSENGERS_MAX)
 			{
 				link.l2 = "Widzę, że nie jesteście tchórzami. Dołączycie do mojej załogi?";
 				link.l2.go = "Convict_13_3";
@@ -1555,11 +1555,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_13_2":
-			dialog.text = "Czy mamy wybór? Dobrze, "+FindRussianMoneyString(sti(pchar.GenQuest.Convict.Sum))+"... ";
+			dialog.text = "Czy mamy wybór? Dobrze, "+FindRussianMoneyString(int(pchar.GenQuest.Convict.Sum))+"... ";
 			link.l1 = "W takim razie idź do "+XI_ConvertString(pchar.GenQuest.Convict.ShoreLocation+"To")+"Poślę po ciebie łódź po północy."; // belamour gen 
 			link.l1.go = "Convict_13_4";
 			pchar.GenQuest.Convict = "ToMayak";
-			pchar.GenQuest.Convict.Sum = sti(pchar.GenQuest.Convict.Sum) * sti(pchar.GenQuest.Convict.ConvictQty);
+			pchar.GenQuest.Convict.Sum = int(pchar.GenQuest.Convict.Sum) * int(pchar.GenQuest.Convict.ConvictQty);
 		break;
 		
 		case "Convict_13_3":
@@ -1575,7 +1575,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Convict", "8");					
 			AddQuestUserData("Convict", "sSex", GetSexPhrase("",""));		
 			AddQuestUserData("Convict", "sIslandType", XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Convict.city) + "Gen"));
-			AddQuestUserData("Convict", "sConvictNum", Convict_GetStringNum(sti(pchar.GenQuest.Convict.ConvictQty))); // belamour gen колво прописью
+			AddQuestUserData("Convict", "sConvictNum", Convict_GetStringNum(int(pchar.GenQuest.Convict.ConvictQty))); // belamour gen колво прописью
 			AddQuestUserData("Convict", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Convict.ToCity + "Gen"));
 			AddQuestUserData("Convict", "sSum", pchar.GenQuest.Convict.Sum);
 			AddQuestUserData("Convict", "sShoreName", XI_ConvertString(pchar.GenQuest.Convict.ShoreLocation + "Dat"));	// belamour gen	 	
@@ -1600,7 +1600,7 @@ void ProcessDialogEvent()
 			LAi_LockFightMode(pchar, false); 
 			LAi_SetFightMode(pchar, true);
 			chrDisableReloadToLocation = true;
-			iTemp = sti(PChar.GenQuest.Convict.ConvictQty);
+			iTemp = int(PChar.GenQuest.Convict.ConvictQty);
 			for(i = 0; i < iTemp; i++)
 			{
 				rChar = CharacterFromID("Convict_" + i);
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Więc, kapitanie? Zdobyłeś dla nas statek?","Witaj, kapitanie. A więc, co z naszą umową?","Cześć, kapitanie. Zaczęliśmy się już martwić. Wszystko poszło dobrze, jak mniemam?");
 			if(Convict_CheckShipType(SHIP_TARTANE) || Convict_CheckShipType(SHIP_WAR_TARTANE))
 			{
-				link.l1 = "Tak, oto twoja łajba. I nie zapomnij o zapłacie. Zapłaciłem "+pchar.GenQuest.Convict.ShipPrice+"monet za to, więc jesteś mi winien"+sti(pchar.GenQuest.Convict.ShipPrice)* 2+" , tak jak się umówiliśmy.";
+				link.l1 = "Tak, oto twoja łajba. I nie zapomnij o zapłacie. Zapłaciłem "+pchar.GenQuest.Convict.ShipPrice+"monet za to, więc jesteś mi winien"+int(pchar.GenQuest.Convict.ShipPrice)* 2+" , tak jak się umówiliśmy.";
 				link.l1.go = "Convict_15_1";
 			}	
 			link.l2 = "Nie, zmieniłem zdanie. Znajdź sobie innego pomocnika. Żegnaj...";
@@ -1628,7 +1628,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_15_1":
-			switch(sti(pchar.GenQuest.Convict.variant))
+			switch(int(pchar.GenQuest.Convict.variant))
 			{
 				case 1:
 					dialog.text = "Oczywiście! Odebrali nam wolność, ale nie sumienie! Proszę, przyjmij swoje pieniądze wraz z naszą nieograniczoną wdzięcznością. Naprawdę nam pomogłeś. Czy masz coś przeciwko, jeśli zapłacimy ci w srebrnych sztabach?";
@@ -1636,7 +1636,7 @@ void ProcessDialogEvent()
 					link.l1.go = "Convict_15_1_1End";
 					AddCharacterExpToSkill(pchar, "Leadership", 30);
 					AddCharacterExpToSkill(pchar, "Commerce", 30);
-					TakeNItems(pchar, "jewelry6", makeint(sti(pchar.GenQuest.Convict.ShipPrice)/50));
+					TakeNItems(pchar, "jewelry6", int(int(pchar.GenQuest.Convict.ShipPrice)/50));
 				break;
 				case 2:
 					dialog.text = "Kapitanie, wiesz, doszliśmy do wniosku, że pieniądze tak naprawdę nie są aż tak ważne w życiu. I, szczerze mówiąc, teraz potrzebujemy ich znacznie bardziej niż ty. Ale mamy jedną rzecz, którą ukradliśmy naszemu dawnemu szefowi. Może zainteresuje cię bardziej niż złoto. Chcesz rzucić okiem?...";
@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Convict", "3");
 			AddQuestUserData("Convict", "sSex", GetSexPhrase("",""));
 			CloseQuestHeader("Convict");
-			for(i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+			for(i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 			{
 				sld = CharacterFromID("Convict_" + i);
 				sld.LifeDay = 0;
@@ -1706,7 +1706,7 @@ void ProcessDialogEvent()
 				link.l2 = "Załaduj się na łódź, nie mam dużo czasu.";
 				link.l2.go = "Convict_16_2";			
 			}			
-			if(pchar.GenQuest.Convict == "ToShore" && GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
+			if(pchar.GenQuest.Convict == "ToShore" && GetFreeCrewQuantity(pchar) >= int(pchar.GenQuest.Convict.ConvictQty))
 			{
 				link.l2 = "Załadujcie się na łódź, nie mam dużo czasu.";
 				link.l2.go = "Convict_16_2";			
@@ -1734,7 +1734,7 @@ void ProcessDialogEvent()
 			if(pchar.GenQuest.Convict == "ToShore")
 			{
 				AddCharacterExpToSkill(pchar, "Leadership", 30);
-				AddCharacterCrew(pchar, sti(pchar.GenQuest.Convict.ConvictQty));
+				AddCharacterCrew(pchar, int(pchar.GenQuest.Convict.ConvictQty));
 				OfficersReaction("bad");
 				pchar.GenQuest.Convict = "close";
 				AddQuestRecord("Convict", "10");
@@ -1776,7 +1776,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_17_1":
-			switch(sti(pchar.GenQuest.Convict.variant))
+			switch(int(pchar.GenQuest.Convict.variant))
 			{
 				case 1:
 					dialog.text = "Oczywiście, co za pytania! Oto twoje pieniądze w sztabach złota i przyjmij nasze najszczersze podziękowania.";
@@ -1784,7 +1784,7 @@ void ProcessDialogEvent()
 					link.l1.go = "Convict_17_1_1End";
 					AddCharacterExpToSkill(pchar, "Sailing", 80);
 					AddCharacterExpToSkill(pchar, "Commerce", 80);
-					TakeNItems(pchar, "jewelry5", makeint(sti(pchar.GenQuest.Convict.Sum)/200));
+					TakeNItems(pchar, "jewelry5", int(int(pchar.GenQuest.Convict.Sum)/200));
 					break;
 				case 2:
 					dialog.text = "Kapitanie, wiecie, pomyśleliśmy, że pieniądze naprawdę nie są tak ważne w życiu. I, szczerze mówiąc, potrzebujemy ich teraz dużo bardziej niż wy. Ale mamy jedną rzecz, którą ukradliśmy naszemu byłemu szefowi. Może zainteresuje was to dużo bardziej niż złoto. Chcecie rzucić okiem?...";
@@ -1811,7 +1811,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Convict", "11");
 			AddQuestUserData("Convict", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("Convict", "sMayak", XI_ConvertString(pchar.GenQuest.Convict.Mayak + "Dat"));	//belamour gen			
-			AddQuestUserData("Convict", "sSum", makeint(pchar.GenQuest.Convict.Sum));
+			AddQuestUserData("Convict", "sSum", int(pchar.GenQuest.Convict.Sum));
 			CloseQuestHeader("Convict");
 			pchar.GenQuest.Convict = "close";
 			SetFunctionExitFromLocationCondition("Convict_LocExit", pchar.location, false);
@@ -1876,14 +1876,14 @@ void ProcessDialogEvent()
 		case "ReasonToFast_Fight":
 			LAi_SetPlayerType(pchar);
 			pchar.questTemp.ReasonToFast = "PatrolAngry";
-			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation));
-			SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY); 
+			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation));
+			SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY);
 			pchar.GenQuest.HunterScore2Pause = 1; //НЗГ не начисляются
 			pchar.GenQuest.ReputationNotChange = 1; //репутацию не менять
 			sTemp = "Patrol" + pchar.questTemp.ReasonToFast.LocIdx + "_";
 			sGroup = "PatrolGroup_" + pchar.questTemp.ReasonToFast.LocIdx;
 			LAi_LocationFightDisable(&locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)], false);	
-			iTemp = sti(pchar.questTemp.ReasonToFast.PatrolNum);
+			iTemp = int(pchar.questTemp.ReasonToFast.PatrolNum);
 			chrDisableReloadToLocation = true;
 			rChar = CharacterFromID("ReasonToFast_Hunter");
 			LAi_SetWarriorType(rChar);
@@ -1978,8 +1978,8 @@ void ProcessDialogEvent()
 				dialog.text = "Szybko teraz! Zabrać wszystko, co cenne, i uciekać!";
 				link.l1 = " Myślę, że powinieneś też uciekać.";
 				link.l1.go = "ReasonToFast_Lakey_exit";
-				TakeNItems(pchar,"icollection", sti(pchar.questTemp.ReasonToFast.p8));
-				TakeNItems(pchar,"Chest", sti(pchar.questTemp.ReasonToFast.p7));
+				TakeNItems(pchar,"icollection", int(pchar.questTemp.ReasonToFast.p8));
+				TakeNItems(pchar,"Chest", int(pchar.questTemp.ReasonToFast.p7));
 				pchar.questTemp.ReasonToFast = "LakeyExitSuccess";					
 				bDisableFastReload = true;		
 				//chrDisableReloadToLocation = true;			
@@ -2127,7 +2127,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Lover3":
-			pchar.GenQuest.EncGirl.LoverCity = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
+			pchar.GenQuest.EncGirl.LoverCity = GetQuestNationsCity(int(pchar.GenQuest.EncGirl.nation));
 			pchar.GenQuest.EncGirl.LoverIsland = GetIslandByCityName(pchar.GenQuest.EncGirl.LoverCity);
 			dialog.text = "O nie, nie możemy na to pozwolić! Kapitanie, wiesz, jestem w takiej głupiej sytuacji... Chciałem cię prosić, żebyś zabrał nas do "+XI_ConvertString(pchar.GenQuest.EncGirl.LoverIsland+"Acc")+" do miasta zwanego "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.LoverCity)+", ale teraz nie mam żadnych pieniędzy i wciąż nie znalazłem pracy. Mam zamożną rodzinę i obiecującą karierę w "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.LoverCity)+"Zapewniam cię, moi rodzice będą zachwyceni, widząc mnie z młodą narzeczoną i hojnie cię wynagrodzą. Więc, zgadzasz się?";
 			link.l1 = "...Słuchaj teraz, mam zupełnie inne plany. Mogę ci doradzić, żebyś znalazł pracę jako marynarz i wynajął kabinę dla swojej narzeczonej za swoją pensję. Ludzie w taki sposób dostają się do Europy, a ta twoja osada jest w zasięgu nocnego lotu ptaka.";
@@ -2249,7 +2249,7 @@ void ProcessDialogEvent()
 			else // "Operation 'Galleon'"
 			{			
 				CaptainComission_GaleonInit(NPChar);
-				dialog.text = "Proszę, powiedz kapitanowi patrolu "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Gen"))+"  '"+pchar.GenQuest.CaptainComission.ShipTypeName+"' "+pchar.GenQuest.CaptainComission.Name+", że nie powinien pokazywać się w "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Voc")+"... "+"Władze są świadome prawdziwych okoliczności jego śmierci "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Gen"))+" ' "+pchar.GenQuest.CaptainComission.VictimShipName+"... czas jest krótki, wkrótce zostanie aresztowany... płynie do "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Acc")+" z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City1+"Gen")+", podróż zajmie prawie piętnaście dni... ahh ... trzeba się pośpieszyć..."; // belamour gen
+				dialog.text = "Proszę, powiedz kapitanowi patrolu "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Gen"))+"  '"+pchar.GenQuest.CaptainComission.ShipTypeName+"' "+pchar.GenQuest.CaptainComission.Name+", że nie powinien pokazywać się w "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Voc")+"... "+"Władze są świadome prawdziwych okoliczności jego śmierci "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Gen"))+" ' "+pchar.GenQuest.CaptainComission.VictimShipName+"... czas jest krótki, wkrótce zostanie aresztowany... płynie do "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Acc")+" z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City1+"Gen")+", podróż zajmie prawie piętnaście dni... ahh ... trzeba się pośpieszyć..."; // belamour gen
 				link.l1 = RandPhraseSimple("Nic nie obiecuję, ale spróbuję przy okazji. Hej, przyjacielu...","Dobrze, powiem mu, jeśli będę miał czas. Hej, przyjacielu...");
 				link.l1.go = "CaptainComission_300";
 			}					
@@ -2450,7 +2450,7 @@ void ProcessDialogEvent()
 				if(pchar.GenQuest.CaptainComission.AfterTavernSpeak == "goodSpeak")
 				{
 					dialog.text = LinkRandPhrase("Witaj, kapitanie "+GetFullName(pchar)+" . Jakieś wieści?","Więc, kapitanie, czy już dostarczyłeś okup?","Witaj, mam nadzieję, że przybyłeś z dobrymi wieściami?");
-					if(makeint(pchar.money)>=150000)
+					if(int(pchar.money)>=150000)
 					{
 						link.l1 = "Niestety, moje plany się zmieniły, więc muszę zerwać naszą umowę.";
 						link.l1.go = "CaptainComission_7_1";
@@ -2557,13 +2557,13 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_32_1":
 			GetSlaveSpeciality();
-			dialog.text = "Ja wiem, ja wiem... Ale to i twoja wina. Jak mogłeś zatopić trzy skrzynie złota, które musieliśmy dosłownie wytrząsnąć ze skarbca, żeby "+NationNameNominative(sti(pchar.GenQuest.CaptainComission.Nation))+" mógłby mieć takiego specjalistę "+pchar.GenQuest.CaptainComission.SlaveSpeciality+"?";
+			dialog.text = "Ja wiem, ja wiem... Ale to i twoja wina. Jak mogłeś zatopić trzy skrzynie złota, które musieliśmy dosłownie wytrząsnąć ze skarbca, żeby "+NationNameNominative(int(pchar.GenQuest.CaptainComission.Nation))+" mógłby mieć takiego specjalistę "+pchar.GenQuest.CaptainComission.SlaveSpeciality+"?";
 			link.l1 = "Wiedz, że nie oddam go tobie bez odpowiedniej rekompensaty.";
 			link.l1.go = "CaptainComission_32_2";
 		break;
 		
 		case "CaptainComission_32_2":
-			dialog.text = "„Cóż, jesteś mądrym człowiekiem, z pewnością rozumiesz, że na targowanie się jest już za późno. Mogliśmy zatrzymać twój statek z ładunkiem.\nAle rekompensata została wcześniej zapewniona. Dlatego rząd "+NationNameGenitive(sti(pchar.GenQuest.CaptainComission.Nation))+" gratuluje ci udanej operacji i wręcza ci ten cenny podarunek oraz skromną nagrodę.";
+			dialog.text = "„Cóż, jesteś mądrym człowiekiem, z pewnością rozumiesz, że na targowanie się jest już za późno. Mogliśmy zatrzymać twój statek z ładunkiem.\nAle rekompensata została wcześniej zapewniona. Dlatego rząd "+NationNameGenitive(int(pchar.GenQuest.CaptainComission.Nation))+" gratuluje ci udanej operacji i wręcza ci ten cenny podarunek oraz skromną nagrodę.";
 			link.l1 = "Hmm... Cóż, wciąż lepsze niż nic. Weź swojego cennego specjalistę.";
 			link.l1.go = "CaptainComission_32_2End";
 		break;
@@ -2572,9 +2572,9 @@ void ProcessDialogEvent()
 			AddQuestRecord("CaptainComission1", "16");
 			AddQuestUserData("CaptainComission1", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("CaptainComission1", "sSpeciality", pchar.GenQuest.CaptainComission.SlaveSpeciality);
-			AddQuestUserData("CaptainComission1", "sNation", NationNameNominative(sti(pchar.GenQuest.CaptainComission.Nation)));
+			AddQuestUserData("CaptainComission1", "sNation", NationNameNominative(int(pchar.GenQuest.CaptainComission.Nation)));
 			CloseQuestHeader("CaptainComission1");			
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 15);			
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 15);
 			GiveItem2Character(pchar, pchar.GenQuest.CaptainComission.Item); 
 			TakeNItems(pchar, "jewelry5", 100);
 			PlaySound("interface\important_item.wav");
@@ -2658,7 +2658,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(rand(100) < makeint(sti(pchar.rank) + 0.75 * GetSummonSkillFromName(pchar, SKILL_FORTUNE)))
+				if(rand(100) < int(int(pchar.rank) + 0.75 * GetSummonSkillFromName(pchar, SKILL_FORTUNE)))
 				{
 					dialog.text = "Hmm... Mam nadzieję, że wiesz, za kim się wstawiasz?";
 					link.l1 = "Co masz na myśli?";
@@ -2681,7 +2681,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_11_1":
 			dialog.text = "Cena powinna być na liście cen. Tutaj. Wiesz, nie do końca to pojmuję. Inni niewolnicy sprzedawani są w rozsądnych cenach, ale ten jest sprzedawany za fortunę...";
-			if(sti(pchar.money) >= 150000)
+			if(int(pchar.money) >= 150000)
 			{
 				link.l1 = "Chyba rozumiem, o co tu chodzi... Dobra, oto pieniądze, a ja zabieram go ze sobą.";
 				link.l1.go = "CaptainComission_14";
@@ -2698,7 +2698,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_12_1":
 			dialog.text = "Z pewnością możesz. Pułkownik ustalił jego cenę - 200000 pesos, zgodnie z cennikiem.";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l1 = "O rany! Cóż, ten pułkownik musi wiedzieć, jakiego rodzaju osoba z tego niewolnika...";
 				link.l1.go = "CaptainComission_16";
@@ -2709,7 +2709,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_13":
 			dialog.text = "Ach, tak. Przepraszam. Pozwól mi zobaczyć cennik, który zostawił Biskup.\nAha, oto jest. Cóż. O!.. 150 000 pesos!..";
-			if(sti(pchar.money) >= 15000)
+			if(int(pchar.money) >= 15000)
 			{
 				link.l1 = "Najwyraźniej to jakiś błąd. Z pewnością zdajesz sobie sprawę, że żaden niewolnik nie może kosztować aż tyle. Przypuszczam, że jest jedno dodatkowe zero, a suma powinna wynosić 15000 pesos. I to wciąż za dużo, biorąc pod uwagę, że to obibok i idiota.";
 				link.l1.go = "CaptainComission_17";
@@ -2861,13 +2861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_202_1":
-			dialog.text = "Zatem moje podejrzenia się potwierdziły. Zostałeś zmuszony do tego przez "+NationNamePeople(sti(pchar.GenQuest.CaptainComission.Nation))+"?";
+			dialog.text = "Zatem moje podejrzenia się potwierdziły. Zostałeś zmuszony do tego przez "+NationNamePeople(int(pchar.GenQuest.CaptainComission.Nation))+"?";
 			link.l1 = "Tak, to "+pchar.GenQuest.CaptainComission.Name+" z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Gen")+".";
 			link.l1.go = "CaptainComission_202_2";
 		break;
 		
 		case "CaptainComission_202_2":
-			iNation = FindEnemyNation2NationWithoutPirates(sti(pchar.GenQuest.CaptainComission.Nation));	// mitrokosta 
+			iNation = FindEnemyNation2NationWithoutPirates(int(pchar.GenQuest.CaptainComission.Nation));	// mitrokosta
 			if(iNation == -1) iNation = rand(NON_PIRATES);
 			pchar.GenQuest.CaptainComission.SlaveCity = FindAlliedColonyForNation(iNation, true);
 			pchar.GenQuest.CaptainComission.EnemyNation = iNation;
@@ -2936,7 +2936,7 @@ void ProcessDialogEvent()
 			dialog.text = "Jezu! Co się dzieje?\nW porządku, kapitanie, dziękuję za udział. I proszę, zwróć pieniądze, które ci dałem.";
 			link.l1 = "Mój wydatek przekroczył wszelkie oczekiwania, więc zatrzymam twoje pieniądze... Żegnaj.";
 			link.l1.go = "CaptainComission_53";
-			if(sti(pchar.money) >= 150000)
+			if(int(pchar.money) >= 150000)
 			{
 				link.l2 = "Pewnie, weź to... Przepraszam, że nie udało mi się ci pomóc... Żegnaj.";
 				link.l2.go = "CaptainComission_54";
@@ -2979,7 +2979,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_61":
 			ChangeCharacterComplexReputation(pchar,"nobility", -2);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -15);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), -15);
 			AddQuestRecord("CaptainComission1", "32");
 			AddQuestUserData("CaptainComission1", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("CaptainComission1", "sName", pchar.GenQuest.CaptainComission.Name);
@@ -3100,13 +3100,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_93":
-			dialog.text = "Więc, moje podejrzenia się potwierdziły. Zostałeś zmuszony do tego przez "+NationNamePeople(sti(pchar.GenQuest.CaptainComission.Nation))+"?";
+			dialog.text = "Więc, moje podejrzenia się potwierdziły. Zostałeś zmuszony do tego przez "+NationNamePeople(int(pchar.GenQuest.CaptainComission.Nation))+"?";
 			link.l1 = "Tak, to "+pchar.GenQuest.CaptainComission.Name+" z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Generał")+".";
 			link.l1.go = "CaptainComission_94";
 		break;		
 		
 		case "CaptainComission_94":
-			iNation = FindEnemyNation2NationWithoutPirates(sti(pchar.GenQuest.CaptainComission.Nation));	// mitrokosta
+			iNation = FindEnemyNation2NationWithoutPirates(int(pchar.GenQuest.CaptainComission.Nation));	// mitrokosta
 			if(iNation == -1) iNation = rand(NON_PIRATES);
 			pchar.GenQuest.CaptainComission.SlaveCity = FindAlliedColonyForNation(iNation, true);
 			pchar.GenQuest.CaptainComission.EnemyNation = iNation;
@@ -3154,13 +3154,13 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_101":
 			GetSlaveSpeciality();
-			dialog.text = "Rzecz w tym, że jestem naukowcem, specjalistą od "+pchar.GenQuest.CaptainComission.SlaveSpeciality+" i "+NationNamePeople(sti(pchar.GenQuest.CaptainComission.EnemyNation))+" oferował mi współpracę już od dłuższego czasu,"+"ale jestem inżynierem wojskowym i dotrzymuję przysięgi wierności. Próbowali mnie porwać, choć prawdziwe kłopoty zaczęły się, gdy piraci dowiedzieli się o mojej prawdziwej tożsamości i znaczeniu\n"+"Na końcu udało im się mnie schwytać, lecz złoto było jedyną rzeczą, której pragnęli, nigdy nie potrzebowali mojej wiedzy. Moi przyjaciele i wrogowie nie zdążyli mnie wykupić na czas i zostałem sprzedany na plantacje. Resztę znasz.";
+			dialog.text = "Rzecz w tym, że jestem naukowcem, specjalistą od "+pchar.GenQuest.CaptainComission.SlaveSpeciality+" i "+NationNamePeople(int(pchar.GenQuest.CaptainComission.EnemyNation))+" oferował mi współpracę już od dłuższego czasu,"+"ale jestem inżynierem wojskowym i dotrzymuję przysięgi wierności. Próbowali mnie porwać, choć prawdziwe kłopoty zaczęły się, gdy piraci dowiedzieli się o mojej prawdziwej tożsamości i znaczeniu\n"+"Na końcu udało im się mnie schwytać, lecz złoto było jedyną rzeczą, której pragnęli, nigdy nie potrzebowali mojej wiedzy. Moi przyjaciele i wrogowie nie zdążyli mnie wykupić na czas i zostałem sprzedany na plantacje. Resztę znasz.";
 			link.l1 = "Tak, biada mądrości, jak to mówią, rzeczywiście.";	
 			link.l1.go = "CaptainComission_102";
 		break;
 		
 		case "CaptainComission_102":
-			switch(sti(pchar.GenQuest.CaptainComission.Speciality))
+			switch(int(pchar.GenQuest.CaptainComission.Speciality))
 			{
 				case 0:
 					sTemp = "protecting your ship and its crew during combat.";
@@ -3187,7 +3187,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("CaptainComission1", "21");
 			CloseQuestHeader("CaptainComission1");
 			// а теперь раздача слонов !!!!!!!
-			switch(sti(pchar.GenQuest.CaptainComission.Speciality))
+			switch(int(pchar.GenQuest.CaptainComission.Speciality))
 			{
 				case 0:
 					if(hrand(1) == 0) 
@@ -3226,11 +3226,11 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("CaptainComission2");
 			AddQuestRecord("CaptainComission2", "1");
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.CapName);
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //ПРАВКА
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //ПРАВКА
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
 			AddQuestUserData("CaptainComission2", "sCapName",  pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sCity1", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.City + "Voc")); // belamour gen
-			AddQuestUserData("CaptainComission2", "sShipTypeNom", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name"))));
+			AddQuestUserData("CaptainComission2", "sShipTypeNom", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name"))));
 			AddQuestUserData("CaptainComission2", "sCity2", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.City1 + "Gen"));
 			AddQuestUserData("CaptainComission2", "sCity11", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.City + "Gen"));			
 			SetFunctionLocationCondition("CaptainComission_GenerateQuestContinuation", GetArealByCityName(pchar.GenQuest.CaptainComission.City), false);
@@ -3250,7 +3250,7 @@ void ProcessDialogEvent()
 			{
 			pchar.quest.CaptainComission_TimeIsOver.over = "yes";
 			dialog.text = RandPhraseSimple("Ahoy, jestem kapitanem "+GetFullName(NPChar)+", co cię sprowadziło na pokład mojego statku '"+pchar.GenQuest.CaptainComission.ShipTypeName+"?","Ahoy, zawsze cieszę się z gości na moim statku. Kapitan "+GetFullName(NPChar)+" do usług.");
-			link.l1 = "Witaj, jestem kapitanem "+GetFullName(pchar)+", działając w imieniu jakiegoś kapitana "+pchar.GenQuest.CaptainComission.CapName+"Powiedział mi, żebym ci przekazał, że zostaniesz aresztowany w "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Voc")+"    Władze wiedzą o "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Generał"))+"."; // ПРАВКА + belamour gen
+			link.l1 = "Witaj, jestem kapitanem "+GetFullName(pchar)+", działając w imieniu jakiegoś kapitana "+pchar.GenQuest.CaptainComission.CapName+"Powiedział mi, żebym ci przekazał, że zostaniesz aresztowany w "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City+"Voc")+"    Władze wiedzą o "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Generał"))+"."; // ПРАВКА + belamour gen
 			link.l1.go = "CaptainComission_302";
 			break;
 			}
@@ -3283,8 +3283,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_305":
-			sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"));
-			dialog.text = "Dobrze, dam ci szczegóły\n"+"Podczas jednego z regularnych patroli spotkałem statek pod banderą "+NationNameGenitive(sti(pchar.GenQuest.CaptainComission.Nation))+"Zignorowali moje rozkazy, by się poddać."+"Kiedy po krótkim pościgu dogoniliśmy "+sTemp+"' "+pchar.GenQuest.CaptainComission.VictimShipName+" i tak podnieśli czarną flagę. Fort był dość daleko, więc musieliśmy walczyć sami. Zniszczyli nasz bukszpryt, dlatego nie mogliśmy uniknąć abordażu.\n"+"Było blisko, ale udało nam się zabić ich wszystkich dzięki Świętej Marii i oddziałowi muszkieterów. Wyobraź sobie naszą radość, gdy dowiedzieliśmy się, że "+sTemp+"było wypełnione."+"Zdecydowaliśmy, że to jest godziwa nagroda za nasze rany i śmierć naszych towarzyszy\nByło już ciemno, wzięliśmy "+sTemp+" do najbliższej zatoki i ukryj ładunek na brzegu. Potem wysadziliśmy "+sTemp+" i zgłosiłem o zatopionym statku pirackim. Oczywiście, nie wspomniałem o ładunku.";
+			sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"));
+			dialog.text = "Dobrze, dam ci szczegóły\n"+"Podczas jednego z regularnych patroli spotkałem statek pod banderą "+NationNameGenitive(int(pchar.GenQuest.CaptainComission.Nation))+"Zignorowali moje rozkazy, by się poddać."+"Kiedy po krótkim pościgu dogoniliśmy "+sTemp+"' "+pchar.GenQuest.CaptainComission.VictimShipName+" i tak podnieśli czarną flagę. Fort był dość daleko, więc musieliśmy walczyć sami. Zniszczyli nasz bukszpryt, dlatego nie mogliśmy uniknąć abordażu.\n"+"Było blisko, ale udało nam się zabić ich wszystkich dzięki Świętej Marii i oddziałowi muszkieterów. Wyobraź sobie naszą radość, gdy dowiedzieliśmy się, że "+sTemp+"było wypełnione."+"Zdecydowaliśmy, że to jest godziwa nagroda za nasze rany i śmierć naszych towarzyszy\nByło już ciemno, wzięliśmy "+sTemp+" do najbliższej zatoki i ukryj ładunek na brzegu. Potem wysadziliśmy "+sTemp+" i zgłosiłem o zatopionym statku pirackim. Oczywiście, nie wspomniałem o ładunku.";
 			link.l1 = "Najwyraźniej ktoś jednak puścił farbę...";	
 			link.l1.go = "CaptainComission_307";
 		break;
@@ -3355,7 +3355,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			AddQuestRecord("CaptainComission2", "7");
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ShoreLocation + "Gen"));
 			AddQuestUserData("CaptainComission2", "sShoreNameDat", XI_ConvertString(pchar.GenQuest.CaptainComission.ShoreLocation + "Dat"));
 			SetFunctionTimerCondition("CaptainComission_SailToShore", 0, 0, 1, false);
@@ -3400,10 +3400,10 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_319":
 			DialogExit();
-			for (i = 1; i <= sti(pchar.GenQuest.CaptainComission.SoldierQty); i++)
+			for (i = 1; i <= int(pchar.GenQuest.CaptainComission.SoldierQty); i++)
 			{
     			sTemp = "SoldierIDX" + i;
-				sld = GetCharacter(sti(pchar.GenQuest.CaptainComission.(sTemp)));
+				sld = GetCharacter(int(pchar.GenQuest.CaptainComission.(sTemp)));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "CoastalGuards");
             }
@@ -3419,15 +3419,15 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_320":
 		    pchar.quest.CaptainComission_Capitan_Cdoxul.over = "yes"; // лесник . снял событие если жив.
-			pchar.GenQuest.CaptainComission.GoodsQty = makeint((sti(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) - sti(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Capacity")) + rand(250)) / sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Weight));	
-			pchar.GenQuest.CaptainComission.GoodsQtyNorm = sti(pchar.GenQuest.CaptainComission.GoodsQty);
-			dialog.text = "Musimy się spieszyć, zanim przybędą posiłki. Załadunek zaraz się skończy, a twój udział to "+pchar.GenQuest.CaptainComission.GoodsQty+" jednostki "+GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name+"Generał"))+".";
+			pchar.GenQuest.CaptainComission.GoodsQty = int((int(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) - int(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Capacity")) + rand(250)) / int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Weight));
+			pchar.GenQuest.CaptainComission.GoodsQtyNorm = int(pchar.GenQuest.CaptainComission.GoodsQty);
+			dialog.text = "Musimy się spieszyć, zanim przybędą posiłki. Załadunek zaraz się skończy, a twój udział to "+pchar.GenQuest.CaptainComission.GoodsQty+" jednostki "+GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name+"Generał"))+".";
 			link.l1 = "Doskonałe. Czas się teraz wynosić. Miło było robić z tobą interesy.";
 			link.l1.go = "CaptainComission_321";
 		break;
 		
 		case "CaptainComission_321":		
-			iTmp = FindNonEnemyColonyForAdventure(sti(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);			
+			iTmp = FindNonEnemyColonyForAdventure(int(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);
 			sTemp = Colonies[iTmp].id;
 			pchar.GenQuest.CaptainComission.ConvoyIsland = GetArealByCityName(sTemp);
 			pchar.GenQuest.CaptainComission.ConvoyShore = SelectQuestShoreLocationFromSea(pchar.GenQuest.CaptainComission.ConvoyIsland);
@@ -3450,12 +3450,12 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(sld, "reload", LAi_FindNearestFreeLocator("reload", locx, locy, locz), "none", "", "", "OpenTheDoors", 5.0);
 			sld.lifeDay = 0; 	
 			CaptainComission_GenerateCoastalPatrol();
-			iGoods = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods)); 
-			if(iGoods < sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
-			SetCharacterGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods)) + sti(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
+			iGoods = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+			if(iGoods < int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
+			SetCharacterGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods)) + int(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
 			AddQuestRecord("CaptainComission2", "10");
 			AddQuestUserData("CaptainComission2", "sGoodsQuantity", pchar.GenQuest.CaptainComission.GoodsQty);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			CloseQuestHeader("CaptainComission2");	
 			DeleteAttribute(pchar, "GenQuest.CaptainComission");		
 			DialogExit();
@@ -3463,12 +3463,12 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_323":
 			sld = characterFromId("CapComission_1");
-			Fantom_SetCharacterGoods(sld, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoFreeSpace(sld), 1);
-			pchar.GenQuest.CaptainComission.ConvoyMoney = makeint((sti(pchar.rank)*100 + sti(NPChar.rank)*170 + hRand(30)*20) * 2.5);
+			Fantom_SetCharacterGoods(sld, int(pchar.GenQuest.CaptainComission.Goods), GetCargoFreeSpace(sld), true);
+			pchar.GenQuest.CaptainComission.ConvoyMoney = int((int(pchar.rank)*100 + int(NPChar.rank)*170 + hRand(30)*20) * 2.5);
 			pchar.GenQuest.CaptainComission.iDay  = 15 + hRand(10);
-			iGoods = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods)); 
-			if(iGoods < sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
-			SetCharacterGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods)) + sti(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
+			iGoods = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+			if(iGoods < int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
+			SetCharacterGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods)) + int(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
 			dialog.text = "Oczywiście. Za eskortę jestem gotów zapłacić  "+pchar.GenQuest.CaptainComission.ConvoyMoney+" pesos. Ale jest jeszcze jeden warunek, nie powinno to zająć więcej niż "+pchar.GenQuest.CaptainComission.iDay+" dni. To ważne.";	
 			link.l1 = "Umowa stoi. Wyruszamy natychmiast.";
 			link.l1.go = "CaptainComission_324";
@@ -3489,7 +3489,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("CaptainComission2", "11");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("CaptainComission2", "sGoodsQuantity", pchar.GenQuest.CaptainComission.GoodsQty);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));		
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore + "Gen"));
 			AddQuestUserData("CaptainComission2", "sShoreType", XI_ConvertString(GetIslandByCityName(pchar.GenQuest.CaptainComission.ConvoyCity) + "Voc")); // belamour gen
@@ -3540,7 +3540,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_329":
-			pchar.GenQuest.CaptainComission.GoodsSum = 2 * sti(pchar.GenQuest.CaptainComission.GoodsQtyNorm) * sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Cost);
+			pchar.GenQuest.CaptainComission.GoodsSum = 2 * int(pchar.GenQuest.CaptainComission.GoodsQtyNorm) * int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Cost);
 			dialog.text = "Masz rację. Gotówka w kwocie, powiedzmy, "+pchar.GenQuest.CaptainComission.GoodsSum+" pesos, uwolni nas od konieczności starcia z twoją załogą. Pamiętaj, że to pokrywa połowę naszego ładunku, więc wszystko jest uczciwe. Jeśli się na to zgadzasz, nikt nie zostanie skrzywdzony.";
 			link.l1 = "A co, jeśli odmówię?";
 			link.l1.go = "CaptainComission_330";
@@ -3550,7 +3550,7 @@ void ProcessDialogEvent()
 			dialog.text = "W takim razie przemoc jest nieunikniona. Będziesz pierwszą ofiarą i znajdziesz spokój w tej przytulnej zatoczce, a twoja załoga nie będzie w stanie przyjść ci na pomoc... Jak ci się to podoba?";
 			link.l1 = "Nie zostawiasz mi wyboru. No cóż, po prostu was wszystkich zabiję.";
 			link.l1.go = "CaptainComission_331";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.CaptainComission.GoodsSum))
+			if(int(pchar.money) >= int(pchar.GenQuest.CaptainComission.GoodsSum))
 			{
 				link.l2 = "Chyba nie mam wyboru. Dobrze, oto twoje pieniądze.";
 				link.l2.go = "CaptainComission_332";
@@ -3572,7 +3572,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_333":
 		    LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);// лесник - разрешить снова драться после сдачи денег. но после драки кулаками не машут ..как говориться))
-			addMoneyToCharacter(pchar, -sti(pchar.GenQuest.CaptainComission.GoodsSum));
+			addMoneyToCharacter(pchar, -int(pchar.GenQuest.CaptainComission.GoodsSum));
 			AddQuestRecord("CaptainComission2", "17");
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sShoreName", UpperFirst(XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore + "Gen")));
@@ -3588,7 +3588,7 @@ void ProcessDialogEvent()
 			sTemp = "Gang_";
 			sGroup = "GangGroup_0";			
 			LAi_LocationFightDisable(&locations[FindLocation(pchar.GenQuest.CaptainComission.ConvoyShore)], false);	
-			iTemp = sti(pchar.GenQuest.CaptainComission.GangNum);
+			iTemp = int(pchar.GenQuest.CaptainComission.GangNum);
 			chrDisableReloadToLocation = true;
 			rChar = CharacterFromID("CapComission_1");
 			LAi_SetWarriorType(rChar);
@@ -3624,7 +3624,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("CaptainComission2", "15");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("CaptainComission2", "sSex1", GetSexPhrase("",""));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")))); 
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name"))));
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			CloseQuestHeader("CaptainComission2");	
@@ -3661,7 +3661,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_Canoneer4":
 			dialog.text = "Co? Kolejny tropiciel? Mówię ci jeszcze raz, nie pamiętam żadnego kapitana "+pchar.GenQuest.CaptainComission.Name+" ! Jestem kontuzjowany, a mam zaświadczenie od doktora, które to potwierdza! Czego jeszcze potrzebujesz?!";
-			link.l1 = "Woah, nie podniecaj się tak. Wiesz... Było już za późno. Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" poprosił mnie, bym powiedział, że "+pchar.GenQuest.CaptainComission.Name+" nie powinien pokazywać się w tej osadzie, władze wiedzą o okolicznościach zniszczenia "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Przyznanie"))+" ' "+pchar.GenQuest.CaptainComission.VictimShipName+", a on zostanie aresztowany.";
+			link.l1 = "Woah, nie podniecaj się tak. Wiesz... Było już za późno. Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" poprosił mnie, bym powiedział, że "+pchar.GenQuest.CaptainComission.Name+" nie powinien pokazywać się w tej osadzie, władze wiedzą o okolicznościach zniszczenia "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Imię")+"Przyznanie"))+" ' "+pchar.GenQuest.CaptainComission.VictimShipName+", a on zostanie aresztowany.";
 			link.l1.go = "CaptainComission_Canoneer5";
 		break;
 		
@@ -3678,7 +3678,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_Canoneer7":
-			dialog.text = "Powiedziałem im, że zostałem poturbowany podczas abordażu i nic nie wiem o żadnym ładunku. Udawałem też, że jestem słabego umysłu, wiesz, dopiero co stanąłem na nogi, tuż przed przybyciem "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Acc"))+"Nie mogłem się poruszać prawidłowo, moja koordynacja była do kitu.";
+			dialog.text = "Powiedziałem im, że zostałem poturbowany podczas abordażu i nic nie wiem o żadnym ładunku. Udawałem też, że jestem słabego umysłu, wiesz, dopiero co stanąłem na nogi, tuż przed przybyciem "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Imię")+"Acc"))+"Nie mogłem się poruszać prawidłowo, moja koordynacja była do kitu.";
 			link.l1 = "Ej, ale kto w ogóle wygadał się o tajemnicy ładunku?";
 			link.l1.go = "CaptainComission_Canoneer8";
 		break;
@@ -3690,17 +3690,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_Canoneer9":
-			dialog.text = "Nie wiem. To był zwykły patrol i płynął zwykły statek pod banderą "+NationNameGenitive(sti(pchar.GenQuest.CaptainComission.Nation))+". Nie mam pojęcia, dlaczego kapitan postanowił to sprawdzić, ale nie zwrócili uwagi na strzał ostrzegawczy, a gdy ich dogoniliśmy, podnieśli 'Jolly Roger'. "+"Nie mieliśmy wsparcia z fortu, więc walka nie była łatwa. Potem abordaż. Nadal nie wiem, jak udało nam się ich pokonać.\n"+"Cóż, i widzieliśmy ten cały cenny ładunek. Diabeł sam musiał nam go zesłać. Musieliśmy ukryć ładunek na brzegu i wysadzić zdobyty statek w powietrze. Była zbyt uszkodzona.";
+			dialog.text = "Nie wiem. To był zwykły patrol i płynął zwykły statek pod banderą "+NationNameGenitive(int(pchar.GenQuest.CaptainComission.Nation))+". Nie mam pojęcia, dlaczego kapitan postanowił to sprawdzić, ale nie zwrócili uwagi na strzał ostrzegawczy, a gdy ich dogoniliśmy, podnieśli 'Jolly Roger'. "+"Nie mieliśmy wsparcia z fortu, więc walka nie była łatwa. Potem abordaż. Nadal nie wiem, jak udało nam się ich pokonać.\n"+"Cóż, i widzieliśmy ten cały cenny ładunek. Diabeł sam musiał nam go zesłać. Musieliśmy ukryć ładunek na brzegu i wysadzić zdobyty statek w powietrze. Była zbyt uszkodzona.";
 			link.l1 = "Czy nie boisz się, że wszystkie twoje wysiłki i poświęcenia pójdą na marne, jeśli ludzie gubernatora odkryją skrytkę?";	
 			link.l1.go = "CaptainComission_Canoneer10";
 		break;
 		
 		case "CaptainComission_Canoneer10":
-			iTmp = FindNonEnemyColonyForAdventure(sti(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);			
+			iTmp = FindNonEnemyColonyForAdventure(int(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);
 			pchar.GenQuest.CaptainComission.CanoneerCity = Colonies[iTmp].id;			
-			pchar.GenQuest.CaptainComission.Sum = 20000 + 2000 * sti(pchar.rank);
+			pchar.GenQuest.CaptainComission.Sum = 20000 + 2000 * int(pchar.rank);
 			dialog.text = "Nie znajdą tego. Wysadziłem wejście do jaskini w powietrze, w końcu byłem najlepszym ekspertem od materiałów wybuchowych w całej eskadrze. Tylko przemytnicy mogą znaleźć mój skarb, znają każdy cal tego miejsca.\n"+"Patrz, sam nie mam pojęcia, co zrobić z łupem. Nie mogę go ani sprzedać, ani samodzielnie przenieść. Poza tym, nikt nie zrobi interesu z rozbitą czaszką. Nie chcę zarabiać na śmierciach moich towarzyszy z załogi, ale mogę ci powiedzieć, gdzie jest skrytka na "+pchar.GenQuest.CaptainComission.Sum+"  pesos, jeśli zabierzesz mnie do "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.CanoneerCity)+".";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.CaptainComission.Sum))	
+			if(int(pchar.money) >= int(pchar.GenQuest.CaptainComission.Sum))
 			{
 				link.l1 = "Zgadzam się. Oto twoje pieniądze. Teraz mów.";	
 				link.l1.go = "CaptainComission_Canoneer11";
@@ -3715,17 +3715,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_Canoneer11":
-			addMoneyToCharacter(pchar, -sti(pchar.GenQuest.CaptainComission.Sum));
+			addMoneyToCharacter(pchar, -int(pchar.GenQuest.CaptainComission.Sum));
 			pchar.GenQuest.CaptainComission.ConvoyShore = SelectQuestShoreLocationFromSea(GetArealByCityName(pchar.GenQuest.CaptainComission.City));
-			pchar.GenQuest.CaptainComission.GoodsQty = makeint(sti(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) / sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Weight));
-			dialog.text = "No dobrze. Spotkaj się dziś wieczorem po północy w okolicach "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Generał")+". I upewnij się, że masz miejsce w ładowni na "+pchar.GenQuest.CaptainComission.GoodsQty+" szt. "+GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name+"Gen"))+". Szkoda byłoby coś z tego wyrzucić..."; // belamour gen
+			pchar.GenQuest.CaptainComission.GoodsQty = int(int(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) / int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Weight));
+			dialog.text = "No dobrze. Spotkaj się dziś wieczorem po północy w okolicach "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Generał")+". I upewnij się, że masz miejsce w ładowni na "+pchar.GenQuest.CaptainComission.GoodsQty+" szt. "+GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name+"Gen"))+". Szkoda byłoby coś z tego wyrzucić..."; // belamour gen
 			link.l1 = "Zajmę się tym. Do zobaczenia w zatoce...";
 			link.l1.go = "CaptainComission_Canoneer14";
 		break;
 		
 		case "CaptainComission_Canoneer12":
 			AddQuestRecord("CaptainComission2", "41");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //Gen лесник
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //Gen лесник
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);			
 			AddQuestUserData("CaptainComission2", "sSum", pchar.GenQuest.CaptainComission.Sum);
 			AddQuestUserData("CaptainComission2", "sName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
@@ -3739,10 +3739,10 @@ void ProcessDialogEvent()
 		case "CaptainComission_Canoneer13":
 			AddQuestRecord("CaptainComission2", "40");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);			
 			AddQuestUserData("CaptainComission2", "sName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
-			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"))); // belamour gen
+			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"))); // belamour gen
 			AddQuestUserData("CaptainComission2", "sShipNameQuest", pchar.GenQuest.CaptainComission.VictimShipName);
 			CloseQuestHeader("CaptainComission2");
 			LAi_CharacterDisableDialog(NPChar);
@@ -3754,23 +3754,23 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_Canoneer14":
 			AddQuestRecord("CaptainComission2", "43");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); 
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);			
 			AddQuestUserData("CaptainComission2", "sName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
-			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
+			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sShipNameQuest", pchar.GenQuest.CaptainComission.VictimShipName);
 			AddQuestUserData("CaptainComission2", "sSum", pchar.GenQuest.CaptainComission.GoodsQty);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore + "Dat"));	// belamour gen
 			LAi_CharacterDisableDialog(NPChar);
-			SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 			SetFunctionTimerCondition("CaptainComission_MeetCanoneerInShoreTimer", 0, 0, 1, false);
 			DialogExit();
 			AddDialogExitQuest("CaptainComission_exit_sit");
 		break;
 		
 		case "CaptainComission_Canoneer15":
-			if(sti(pchar.money) >= sti(pchar.GenQuest.CaptainComission.Sum))	
+			if(int(pchar.money) >= int(pchar.GenQuest.CaptainComission.Sum))
 			{
 				dialog.text = "A oto i ty, w końcu. Już zaczynałem się martwić. Myślałem, że po prostu oddasz mnie władzom.";
 				link.l1 = "Jeszcze nie oszalałem. Oto twoje pieniądze. Teraz twoje słowo.";
@@ -3835,7 +3835,7 @@ void ProcessDialogEvent()
 			sTemp = "Gang_";
 			sGroup = "GangGroup_0";			
 			LAi_LocationFightDisable(&locations[FindLocation(pchar.GenQuest.CaptainComission.ConvoyShore)], false);	
-			iTemp = sti(pchar.GenQuest.CaptainComission.GangNum);
+			iTemp = int(pchar.GenQuest.CaptainComission.GangNum);
 			chrDisableReloadToLocation = true;
 			if(pchar.GenQuest.CaptainComission.variant == "A2")
 			{
@@ -3901,7 +3901,7 @@ void ProcessDialogEvent()
 			NPChar.LifeDay = 0;
 			GiveItem2Character(pchar, pchar.GenQuest.CaptainComission.Prize);
 			AddQuestRecord("CaptainComission2", "48");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // лесник окончание
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // лесник окончание
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
 			AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_ABL));
 			AddQuestUserData("CaptainComission2", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.CanoneerCity + "Gen"));
@@ -3928,7 +3928,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_372":
 			dialog.text = "A dlaczego sądzisz, że miałbym na nie odpowiedzieć?";
-			link.l1 = "Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" poprosił mnie, bym cię ostrzegł, że okoliczności zniszczenia "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name")+"Acc"))+" '"+pchar.GenQuest.CaptainComission.VictimShipName+" stało się znane władzom, "+"ale nie złapałem twojego statku podczas podróży z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City1+"Gen")+".";
+			link.l1 = "Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" poprosił mnie, bym cię ostrzegł, że okoliczności zniszczenia "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name")+"Acc"))+" '"+pchar.GenQuest.CaptainComission.VictimShipName+" stało się znane władzom, "+"ale nie złapałem twojego statku podczas podróży z "+XI_ConvertString("Colony"+pchar.GenQuest.CaptainComission.City1+"Gen")+".";
 			link.l1.go = "CaptainComission_373";	
 		break;
 		
@@ -3939,7 +3939,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_374":
-			dialog.text = "Widzę... Więc tak to jest, co? Wiele rzeczy nabiera teraz sensu. Ktoś wygadał się, że złupiliśmy "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name")+"Gen"))+". "+"Prędzej czy później znajdą ładunek i powieszą mnie. Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" nie żyje, to znaczy, że nikt nie może mi pomóc\nZ wyjątkiem ciebie\n "+GetFullName(pchar)+", wyciągnij mnie stąd, a wynagrodzę ci to.";
+			dialog.text = "Widzę... Więc tak to jest, co? Wiele rzeczy nabiera teraz sensu. Ktoś wygadał się, że złupiliśmy "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name")+"Gen"))+". "+"Prędzej czy później znajdą ładunek i powieszą mnie. Kapitanie "+pchar.GenQuest.CaptainComission.CapName+" nie żyje, to znaczy, że nikt nie może mi pomóc\nZ wyjątkiem ciebie\n "+GetFullName(pchar)+", wyciągnij mnie stąd, a wynagrodzę ci to.";
 			if(!CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour"))
 			{
 				if(CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor"))
@@ -3969,8 +3969,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_375":
-			sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"));
-			dialog.text = "Wygląda na to, że będę musiał opowiedzieć ci całą historię.\n"+"Podczas jednego z regularnych patroli spotkałem statek pod banderą "+NationNameGenitive(sti(pchar.GenQuest.CaptainComission.Nation))+"Zignorowali moje rozkazy, by się poddać. "+"Osiągnęliśmy "+sTemp+"'"+pchar.GenQuest.CaptainComission.VictimShipName+"po krótkim pościgu i podnieśli czarną flagę. Fort był dość daleko, więc musieliśmy walczyć na własną rękę. Zniszczyli nasz bukszpryt, dlatego nie mogliśmy uniknąć abordażu.\n"+"Było blisko, ale udało nam się ich wszystkich zabić dzięki Świętej Maryi i oddziałowi muszkieterów. Wyobraź sobie nasze szczęście, gdy się dowiedzieliśmy, że "+sTemp+" był wypełniony kosztownościami. "+"Zdecydowaliśmy, że to przyzwoita nagroda za nasze rany i śmierć naszych ludzi\nJuż było ciemno, udało nam się wziąć "+sTemp+" do najbliższej zatoki i ukryj ładunek na brzegu. Potem spaliliśmy "+sTemp+" i zgłosiłem zatopiony statek piracki. Oczywiście, nie wspomniałem o ładunku.";		
+			sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen"));
+			dialog.text = "Wygląda na to, że będę musiał opowiedzieć ci całą historię.\n"+"Podczas jednego z regularnych patroli spotkałem statek pod banderą "+NationNameGenitive(int(pchar.GenQuest.CaptainComission.Nation))+"Zignorowali moje rozkazy, by się poddać. "+"Osiągnęliśmy "+sTemp+"'"+pchar.GenQuest.CaptainComission.VictimShipName+"po krótkim pościgu i podnieśli czarną flagę. Fort był dość daleko, więc musieliśmy walczyć na własną rękę. Zniszczyli nasz bukszpryt, dlatego nie mogliśmy uniknąć abordażu.\n"+"Było blisko, ale udało nam się ich wszystkich zabić dzięki Świętej Maryi i oddziałowi muszkieterów. Wyobraź sobie nasze szczęście, gdy się dowiedzieliśmy, że "+sTemp+" był wypełniony kosztownościami. "+"Zdecydowaliśmy, że to przyzwoita nagroda za nasze rany i śmierć naszych ludzi\nJuż było ciemno, udało nam się wziąć "+sTemp+" do najbliższej zatoki i ukryj ładunek na brzegu. Potem spaliliśmy "+sTemp+" i zgłosiłem zatopiony statek piracki. Oczywiście, nie wspomniałem o ładunku.";
 			link.l1 = " Myślę, że nie ma sensu mnie oszukiwać. Więc proponuję układ: pokaż mi skrytkę, a ja cię zabiorę, dokąd tylko zechcesz na archipelagu.";
 			link.l1.go = "CaptainComission_376";
 		break;
@@ -4044,8 +4044,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_381":
-			pchar.GenQuest.CaptainComission.GoodsQty = makeint(sti(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) / sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Weight));
-			dialog.text = "Masz rację, upewnij się, że masz wystarczająco dużo miejsca na "+pchar.GenQuest.CaptainComission.GoodsQty+" kawałki "+GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name+"Gen"))+"Byłoby szkoda stracić taki cenny łup, oblany taką ilością krwi. Nie dadzą nam drugiej szansy.";
+			pchar.GenQuest.CaptainComission.GoodsQty = int(int(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Capacity")) / int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Weight));
+			dialog.text = "Masz rację, upewnij się, że masz wystarczająco dużo miejsca na "+pchar.GenQuest.CaptainComission.GoodsQty+" kawałki "+GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name+"Gen"))+"Byłoby szkoda stracić taki cenny łup, oblany taką ilością krwi. Nie dadzą nam drugiej szansy.";
 			link.l1 = "Zajmę się tym.";
 			link.l1.go = "CaptainComission_382";
 		break;
@@ -4055,9 +4055,9 @@ void ProcessDialogEvent()
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore + "Gen")); // belamour gen
 			AddQuestUserData("CaptainComission2", "sGoodsQuantity", pchar.GenQuest.CaptainComission.GoodsQty);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			SetFunctionLocationCondition("CaptainComission_MeetInShore", pchar.GenQuest.CaptainComission.ConvoyShore, false); 
-			SetFunctionTimerConditionParam("CaptainComission_CapEscapeTimer", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("CaptainComission_CapEscapeTimer", 0, 0, 1, int(24 - GetHour()), false);
 			AddPassenger(pchar, npchar, false);
 			SetCharacterRemovable(npchar, false);
 			chrDisableReloadToLocation = false; // Откроем выход
@@ -4094,9 +4094,9 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_387":
 			LAi_LocationDisableOfficersGen(pchar.GenQuest.CaptainComission.ConvoyShore, false);
-			pchar.GenQuest.CaptainComission.MaxGoodsQty = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods));
-			if(sti(pchar.GenQuest.CaptainComission.MaxGoodsQty) > sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.MaxGoodsQty = pchar.GenQuest.CaptainComission.GoodsQty;
-			dialog.text = "Jesteśmy tutaj. Skrytka jest w niszy w tamtej skale. Wejście jest zablokowane kamieniami. W skrytce jest "+pchar.GenQuest.CaptainComission.GoodsQty+" jednostki "+GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name+"Generał"))+" Pamiętaj, że połowa należy do mnie?";
+			pchar.GenQuest.CaptainComission.MaxGoodsQty = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+			if(int(pchar.GenQuest.CaptainComission.MaxGoodsQty) > int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.MaxGoodsQty = pchar.GenQuest.CaptainComission.GoodsQty;
+			dialog.text = "Jesteśmy tutaj. Skrytka jest w niszy w tamtej skale. Wejście jest zablokowane kamieniami. W skrytce jest "+pchar.GenQuest.CaptainComission.GoodsQty+" jednostki "+GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name+"Generał"))+" Pamiętaj, że połowa należy do mnie?";
 			link.l1 = "Jasne, że tak. Mamy trochę czasu, gdy moi ludzie ładują towary. Porozmawiajmy, dokąd ty i twój ładunek musicie być przewiezieni.";
 			link.l1.go = "CaptainComission_388";
 			if (!CheckAttribute(pchar,"GenQuest.CaptainComission.MayorTalkGood"))
@@ -4115,27 +4115,27 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_388":
 		    pchar.quest.CaptainComission_Capitan_Cdoxul.over = "yes"; // лесник . снял событие ,иначе в СЖ не то пишут.
-			iTmp = FindNonEnemyColonyForAdventure(sti(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);			
+			iTmp = FindNonEnemyColonyForAdventure(int(pchar.GenQuest.CaptainComission.Nation),pchar.GenQuest.CaptainComission.City, true);
 			sTemp = Colonies[iTmp].id;
 			pchar.GenQuest.CaptainComission.ConvoyIsland = GetArealByCityName(sTemp);
 			pchar.GenQuest.CaptainComission.ConvoyShore = SelectQuestShoreLocationFromSea(pchar.GenQuest.CaptainComission.ConvoyIsland);
 			pchar.GenQuest.CaptainComission.ConvoyCity = sTemp;			
 			pchar.GenQuest.CaptainComission.iDay  = 20 + hRand(10);
-			iGoods = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods)); 
-			if(iGoods < sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
-			SetCharacterGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods)) + sti(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
+			iGoods = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+			if(iGoods < int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
+			SetCharacterGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods)) + int(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
 			dialog.text = "Muszę dostać się do "+XI_ConvertString(pchar.GenQuest.CaptainComission.ConvoyShore+"Rodzaj")+", przy "+XI_ConvertString(GetIslandByCityName(sTemp)+"Voc")+" dla "+pchar.GenQuest.CaptainComission.iDay+" dni. Moi ludzie musieli przygotować tam ładunek do sprzedaży."; // belamour gen
 			link.l1 = "Dobrze. W takim razie czas wyruszać.";
 			link.l1.go = "CaptainComission_391";
 		break;
 		case "CaptainComission_3899": // лесник . отдельный диалог в случае обмана всех.
 		    DeleteAttribute(pchar,"GenQuest.CaptainComission.MayorTalkGood");
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -10);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), -10);
 		    pchar.quest.CaptainComission_Capitan_Cdoxul.over = "yes"; // лесник . снял событие ,иначе в СЖ не то пишут.
 			dialog.text = "Racja. Zawsze trzeba ufać umysłowi, a nie sercu. Żyj i ucz się\nChoć się tego nie spodziewałem, zawsze jestem gotów do walki. Odpowiesz za swoją zdradę.";
 			link.l1 = "Cóż, jeśli masz szczęście...";
 			link.l1.go = "CaptainComission_390";
-			SetFunctionTimerConditionParam("CaptainComission_NaebalGubera", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("CaptainComission_NaebalGubera", 0, 0, 1, int(24 - GetHour()), false);
 		break;
 		
 		case "CaptainComission_389":
@@ -4175,12 +4175,12 @@ void ProcessDialogEvent()
 			GetCharacterPos(NPChar, &locx, &locy, &locz);
 			LAi_SetActorType(NPChar);
 			LAi_ActorGoToLocation(NPChar, "reload", LAi_FindNearestLocator("reload", locx, locy, locz), "none", "", "", "OpenTheDoors", 5.0);			
-			pchar.GenQuest.CaptainComission.CapGoodsQty = sti(pchar.GenQuest.CaptainComission.GoodsQty)/2;
-			if(sti(pchar.GenQuest.CaptainComission.CapGoodsQty) > sti(pchar.GenQuest.CaptainComission.MaxGoodsQty)) pchar.GenQuest.CaptainComission.CapGoodsQty = pchar.GenQuest.CaptainComission.MaxGoodsQty;
+			pchar.GenQuest.CaptainComission.CapGoodsQty = int(pchar.GenQuest.CaptainComission.GoodsQty)/2;
+			if(int(pchar.GenQuest.CaptainComission.CapGoodsQty) > int(pchar.GenQuest.CaptainComission.MaxGoodsQty)) pchar.GenQuest.CaptainComission.CapGoodsQty = pchar.GenQuest.CaptainComission.MaxGoodsQty;
 			if(CheckAttribute(pchar,"GenQuest.CaptainComission.MayorTalkGood"))AddQuestRecord("CaptainComission2", "53");// лесник. выбор записи в СЖ
 			else AddQuestRecord("CaptainComission2", "26");// смотря по какому пути пошел 
 			AddQuestUserData("CaptainComission2", "sGoodsQuantity", pchar.GenQuest.CaptainComission.MaxGoodsQty);
-			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+			AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 			AddQuestUserData("CaptainComission2", "sSum1", pchar.GenQuest.CaptainComission.CapGoodsQty);
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sDays", pchar.GenQuest.CaptainComission.iDay);
@@ -4190,7 +4190,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar,"GenQuest.CaptainComission.MayorTalkGood"))
 			{
 				ChangeCharacterComplexReputation(pchar,"nobility", -5);
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -10);
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), -10);
 			}
 			CaptainComission_GenerateCoastalPatrol();
 			pchar.GenQuest.CaptainComission = "GetGoodsEscape";
@@ -4206,9 +4206,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_393":
-			pchar.GenQuest.CaptainComission.GoodsPrice = makeint(sti(pchar.GenQuest.CaptainComission.CapGoodsQty) * 0.75 * sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Cost));
+			pchar.GenQuest.CaptainComission.GoodsPrice = int(int(pchar.GenQuest.CaptainComission.CapGoodsQty) * 0.75 * int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Cost));
 			dialog.text = "Kapitan "+GetFullName(pchar)+", wiem, że to trochę niezręczne, ale... czy mógłbyś dać mi równowartość mojej części w gotówce? Przypuszczam, "+pchar.GenQuest.CaptainComission.GoodsPrice+" pesos mogłoby być dobrym kompromisem.";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.CaptainComission.GoodsPrice))
+			if(int(pchar.money) >= int(pchar.GenQuest.CaptainComission.GoodsPrice))
 			{
 				link.l1 = "Tak, to uczciwa cena. Nie mam nic przeciwko. Oto twoje pieniądze, żegnaj.";
 				link.l1.go = "CaptainComission_394";
@@ -4218,7 +4218,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_394":
-			addMoneyToCharacter(pchar, -sti(pchar.GenQuest.CaptainComission.GoodsPrice));
+			addMoneyToCharacter(pchar, -int(pchar.GenQuest.CaptainComission.GoodsPrice));
 			dialog.text = "Zaczekaj, kapitanie. Chcę ci podziękować za moje ocalenie. Wiesz, prawie straciłem nadzieję... Tutaj, jestem pewien, że to cacko okaże się bardzo przydatne w wielu trudnych sytuacjach... Żegnaj teraz.";
 			link.l1 = "Dzięki. Nie spodziewałem się. Przyjemność robić z tobą interesy.";
 			link.l1.go = "CaptainComission_395";
@@ -4304,9 +4304,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainComission_403":
-			pchar.GenQuest.CaptainComission.GoodsPrice = makeint(sti(pchar.GenQuest.CaptainComission.CapGoodsQty) * 0.75 * sti(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Cost));
+			pchar.GenQuest.CaptainComission.GoodsPrice = int(int(pchar.GenQuest.CaptainComission.CapGoodsQty) * 0.75 * int(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Cost));
 			dialog.text = "Kapitana "+GetFullName(pchar)+", wiem, że to trochę niezręczne, ale... mógłbyś mi dać równowartość pieniężną mojej części? Przypuszczam, że "+pchar.GenQuest.CaptainComission.GoodsPrice+" pesos mogą być dobrym kompromisem.";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.CaptainComission.GoodsPrice))
+			if(int(pchar.money) >= int(pchar.GenQuest.CaptainComission.GoodsPrice))
 			{
 				pchar.quest.CaptainComission_Capitan_Cdox.over = "yes"; // на всякий случай .лесник
 				pchar.quest.CaptainComission_Capitan_Cdoxul.over = "yes"; // лесник
@@ -4329,10 +4329,10 @@ void ProcessDialogEvent()
 			    NPChar.reputation = 10 + rand(20); 
 				NPChar.alignment = "bad"; 			
 			}
-			if (NPChar.alignment == "good" && sti(pchar.reputation.nobility) > 50) bTemp = true; 
-			if (NPChar.alignment == "bad" && sti(pchar.reputation.nobility) <= 50) bTemp = true;
+			if (NPChar.alignment == "good" && int(pchar.reputation.nobility) > 50) bTemp = true;
+			if (NPChar.alignment == "bad" && int(pchar.reputation.nobility) <= 50) bTemp = true;
 			
-			addMoneyToCharacter(pchar, -sti(pchar.GenQuest.CaptainComission.GoodsPrice));
+			addMoneyToCharacter(pchar, -int(pchar.GenQuest.CaptainComission.GoodsPrice));
 			
 			if(!bTemp || FindFreeRandomOfficer() < 0)
 			{
@@ -4389,7 +4389,7 @@ void ProcessDialogEvent()
 			NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
 			NPChar.Dialog.CurrentNode = "hired";
             NPChar.greeting = "Gr_Officer"; 			
-			NPChar.quest.OfficerPrice = sti(pchar.rank)*500;	
+			NPChar.quest.OfficerPrice = int(pchar.rank)*500;
 			NPChar.loyality = MAX_LOYALITY;
 			DeleteAttribute(NPChar, "LifeDay");
 			NPChar.id = "GenChar_" + NPChar.index;// лесник . смена ИД при взятии в оффы. 
@@ -4464,10 +4464,10 @@ void ProcessDialogEvent()
 			ContraMeetManQuest_ContersGoQut();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ContraMeetMan.Money));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ContraMeetMan.Money));
 			sQuestTitle = PChar.GenQuest.ContraMeetMan.QuestTown + "ContraMeetManQuest";
 			AddQuestRecordEx(sQuestTitle, "ContraMeetManQuest", "4");
-			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(sti(PChar.GenQuest.ContraMeetMan.Money)));
+			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(int(PChar.GenQuest.ContraMeetMan.Money)));
 			CloseQuestHeader(sQuestTitle);
 			ChangeContrabandRelation(PChar, 5);
 			DeleteAttribute(PChar, "GenQuest.ContraMeetMan");
@@ -4476,10 +4476,10 @@ void ProcessDialogEvent()
 		case "ContraMeetManQuest_4":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ContraMeetMan.Money));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ContraMeetMan.Money));
 			sQuestTitle = PChar.GenQuest.ContraMeetMan.QuestTown + "ContraMeetManQuest";
 			AddQuestRecordEx(sQuestTitle, "ContraMeetManQuest", "5");
-			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(sti(PChar.GenQuest.ContraMeetMan.Money)));
+			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(int(PChar.GenQuest.ContraMeetMan.Money)));
 			CloseQuestHeader(sQuestTitle);
 			ContraMeetManQuest_ContraBeatMan();
 			ChangeContrabandRelation(PChar, 5);
@@ -4529,10 +4529,10 @@ void ProcessDialogEvent()
 		case "ContraMeetManQuest_10":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ContraMeetMan.Money));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ContraMeetMan.Money));
 			sQuestTitle = PChar.GenQuest.ContraMeetMan.QuestTown + "ContraMeetManQuest";
 			AddQuestRecordEx(sQuestTitle, "ContraMeetManQuest", "7");
-			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(sti(PChar.GenQuest.ContraMeetMan.Money)));
+			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(int(PChar.GenQuest.ContraMeetMan.Money)));
 			AddQuestUserData(sQuestTitle, "sDestination", XI_ConvertString(PChar.GenQuest.ContraMeetMan.ShoreID + "Dat"));
 			CloseQuestHeader(sQuestTitle);
 			ContraMeetManQuest_ContersGoQut();
@@ -4543,7 +4543,7 @@ void ProcessDialogEvent()
 		// Квест на доставку письма контрику -->
 		case "ContraDeliverQuest_Sold1":
 			dialog.text = "Heh! Spodziewasz się, że uwierzymy w te bzdury?! Chłopaki, złapcie tych dwóch szubieniczników!";
-			//if(80 > rand(100) || sti(PChar.skill.Fortune) > rand(100)) // Попытка отмазаться
+			//if(80 > rand(100) || int(PChar.skill.Fortune) > rand(100)) // Попытка отмазаться
 			//{
 				link.l1 = "Oficerze, popełniasz poważny błąd, próbując zatrzymać dwoje niewinnych ludzi. Wierz mi, nie znam tego człowieka i nic mnie on nie obchodzi."+" Jestem pewien, że twój komendant będzie bardzo niezadowolony z ciebie, jeśli zatrzymasz dwóch praworządnych obywateli...";
 				link.l1.go = "ContraDeliverQuest_Sold2_Liberty";
@@ -4591,7 +4591,7 @@ void ProcessDialogEvent()
 				}
 				else // Просто отдает деньги
 				{
-					dialog.text = "Świetnie. Dzięki za dostawę. Proszę, weź "+FindRussianMoneyString(iMoney)" I pamiętaj, że przemytnicy zawsze będą pamiętać dobrych ludzi...";
+					dialog.text = "Świetnie. Dzięki za dostawę. Proszę, weź "+FindRussianMoneyString(iMoney)+" I pamiętaj, że przemytnicy zawsze będą pamiętać dobrych ludzi...";
 					link.l1 = "Mam nadzieję, że tak będzie. Żegnaj.";
 					link.l1.go = "ContraDeliverQuest_GoWithMoney";
 					PChar.GenQuest.ContraDeliver.Money = iMoney;
@@ -4650,14 +4650,14 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ContraDeliverQuest_GoWithMoney": // Уходим с деньгами
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ContraDeliver.Money));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ContraDeliver.Money));
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			bDisableFastReload         = false;
 			sQuestTitle = PChar.GenQuest.ContraDeliver.QuestTown + "ContraDeliverQuest";
 			AddQuestRecordEx(sQuestTitle, "ContraDeliverQuest", "3");
-			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(sti(PChar.GenQuest.ContraDeliver.Money)));
+			AddQuestUserData(sQuestTitle, "sMoney", FindRussianMoneyString(int(PChar.GenQuest.ContraDeliver.Money)));
 			CloseQuestHeader(sQuestTitle);
 			DeleteAttribute(PChar, "GenQuest.ContraDeliver"); // Квест пройден - атрибуды потрем
 			LAi_ActorGoToLocation(NPChar, "reload", "reload1_back", "none", "", "", "", 3.0);
@@ -4844,24 +4844,24 @@ void ProcessDialogEvent()
 			break;
 			
 		case "Church_GenQuest_2_1":
-			if(sti(PChar.GenQuest.ChurchQuest_2.BanditsCount) == 1)
+			if(int(PChar.GenQuest.ChurchQuest_2.BanditsCount) == 1)
 			{
 				dialog.text = RandSwear()+"Nie powinieneś był tego mówić! Teraz będę musiał wysłać cię do Pana, abyś modlił się o przebaczenie moich grzechów!";
 			}
 			
-			if(sti(PChar.GenQuest.ChurchQuest_2.BanditsCount) == 2)
+			if(int(PChar.GenQuest.ChurchQuest_2.BanditsCount) == 2)
 			{
 				dialog.text = RandSwear()+"Nie powinieneś był tego mówić! Teraz będę musiał cię wysłać do Pana, abyś modlił się o przebaczenie naszych grzechów!";
 			}
 			
-			if(sti(PChar.GenQuest.ChurchQuest_2.BanditsCount) > 2)
+			if(int(PChar.GenQuest.ChurchQuest_2.BanditsCount) > 2)
 			{
 				dialog.text = RandSwear()+"Nie powinieneś był tego mówić! Teraz będę musiał cię wysłać do Pana, abyś modlił się o przebaczenie wszystkich naszych grzechów!";
 			}
 			
 				link.l1 = "Nie bardzo, kumplu. Każdy odpowie za siebie przed Bogiem!";
 				link.l1.go = "exit";
-				NPChar.money = sti(PChar.GenQuest.ChurchQuest_2.MoneyCount);
+				NPChar.money = int(PChar.GenQuest.ChurchQuest_2.MoneyCount);
 				LAi_LocationFightDisable(LoadedLocation, false);
 				AddDialogExitQuest("Church_GenQuest2_BanditsIsEnemies");
 			break;
@@ -4919,7 +4919,7 @@ void ProcessDialogEvent()
 		case "Church_GenQuest_2_ShoreBandit_7":
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
-			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 			for(i=0; i<iBanditsCount; i++)
 			{
 				rChar = CharacterFromID("Church_GenQuest2_Bandit_" + i);
@@ -4986,9 +4986,9 @@ void ProcessDialogEvent()
 			break;
 			
 		case "Church_GenQuest_2_ShoreBandit_Real_Band_2_2":
-			AddMoneyToCharacter(PChar, -sti(PChar.money)/2); // Забираем половину денег
+			AddMoneyToCharacter(PChar, -int(PChar.money)/2); // Забираем половину денег
 			PChar.GenQuest.ChurchQuest_2.Complete.Without_All = true; // Полностью проигрышный вариант. Остаемся ни с чем
-			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 			for(i=0; i<iBanditsCount; i++)
 			{
 				rChar = CharacterFromID("Church_GenQuest2_Bandit_" + i);
@@ -5009,9 +5009,9 @@ void ProcessDialogEvent()
 			break;
 			
 		case "Church_GenQuest_2_ShoreBandit_Real_Band_2_3":
-			iMoney = makeint(makeint(Pchar.money)/20)*10;
+			iMoney = int(int(Pchar.money)/20)*10;
 			dialog.text = "Nie potrzebuję też żadnych problemów, "+GetAddress_Form(pchar)+", ale teraz cena wzrosła. Za ten cenny kielich będę wymagał wszystkiego, co masz przy sobie.";
-			if(iMoney >= makeint(Pchar.rank)*300)
+			if(iMoney >= int(Pchar.rank)*300)
 			{
 				link.l1 = "Chciwy łajdaku! Mam tylko "+FindRussianMoneyString(iMoney)+" ze mną. Weź to i zmykaj!";
 				link.l1.go = "Church_GenQuest_2_ShoreBandit_Real_Band_2_3_1";
@@ -5027,9 +5027,9 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			ChurchGenQuest2_GiveCup();	// Даем чашу
-			AddMoneyToCharacter(PChar, -(makeint(makeint(Pchar.money)/20)*10));
+			AddMoneyToCharacter(PChar, -(int(int(Pchar.money)/20)*10));
 			PChar.GenQuest.ChurchQuest_2.Complete.Only_With_Cup = true;
-			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+			iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 			for(i=0; i<iBanditsCount; i++)
 			{
 				rChar = CharacterFromID("Church_GenQuest2_Bandit_" + i);
@@ -5084,7 +5084,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_2":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				LAi_SetImmortal(CharacterFromID("PirateOnUninhabited_" + i), false);
 			}
@@ -5120,9 +5120,9 @@ void ProcessDialogEvent()
 		case "PiratesOnUninhabited_4":
 			PChar.GenQuest.PiratesOnUninhabited.PiratesCount = 5 + hrand(5);
 			
-			dialog.text = RandPhraseSimple("Kapitanie, bądź tak dobry i pomóż  "+PiratesOnUninhabited_GetStringNum(sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))+" nędzarze. Jesteś naszą jedyną nadzieją, poza naszym najłaskawszym Panem.","Kapitanie, czy masz wolne schowki na swoim statku dla "+PiratesOnUninhabited_GetStringNum(sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))+"biedni ludzie?");
+			dialog.text = RandPhraseSimple("Kapitanie, bądź tak dobry i pomóż  "+PiratesOnUninhabited_GetStringNum(int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))+" nędzarze. Jesteś naszą jedyną nadzieją, poza naszym najłaskawszym Panem.","Kapitanie, czy masz wolne schowki na swoim statku dla "+PiratesOnUninhabited_GetStringNum(int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))+"biedni ludzie?");
 			
-			if(GetFreeCrewQuantity(PChar) >= sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) && GetPassengersQuantity(PChar) < PASSENGERS_MAX)
+			if(GetFreeCrewQuantity(PChar) >= int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) && GetPassengersQuantity(PChar) < PASSENGERS_MAX)
 			{
 				link.l1 = "Ohh... a dokąd chciałbyś, żebym cię zabrał?";
 				link.l1.go = "PiratesOnUninhabited_5";
@@ -5131,7 +5131,7 @@ void ProcessDialogEvent()
 			link.l2 = RandPhraseSimple(RandPhraseSimple("Naprawdę mi przykro, ale nie ma ani jednej wolnej koi, nie mówiąc już o kajutach. Marynarze śpią na pokładzie, nie mogą nawet porządnie odpocząć po wachcie...","Bardzo bym nie chciał cię rozczarować, ale statek jest przeładowany, a ludzie muszą spać w złej pogodzie. Jeśli wybuchnie epidemia, stracę połowę załogi."),RandPhraseSimple("Naprawdę mi przykro, ale na moim statku nie ma absolutnie żadnego wolnego miejsca dla załogi. Nie mogę zabrać na pokład więcej pasażerów.","Muszę cię rozczarować, ale mój statek jest przeładowany załogą. Obawiam się epidemii..."));
 			link.l2.go = "PiratesOnUninhabited_21";
 			
-			if(stf(PChar.reputation.nobility) <= REPUTATION_NEUTRAL)
+			if(float(PChar.reputation.nobility) <= REPUTATION_NEUTRAL)
 			{
 				link.l3 = "Jesteś doświadczonym żeglarzem i powinieneś wiedzieć, że obecność kogoś, kto przeżył katastrofę morską, to bardzo zły znak. Moi marynarze po prostu wyrzucą was wszystkich za burtę.";
 				link.l3.go = "PiratesOnUninhabited_7";
@@ -5172,7 +5172,7 @@ void ProcessDialogEvent()
 		case "PiratesOnUninhabited_9":
 			bTemp = CheckAttribute(PChar, "GenQuest.PiratesOnUninhabited.Shipwrecked");
 			
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -5188,7 +5188,7 @@ void ProcessDialogEvent()
 				}
 			}
 			
-			AddCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount));
+			AddCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount));
 			
 			Log_Info("Your crew was increased by " + PChar.GenQuest.PiratesOnUninhabited.PiratesCount + " men.");
 			OfficersReaction("bad");
@@ -5210,7 +5210,7 @@ void ProcessDialogEvent()
 		
 		// Берем их в пассажирами - держать курс на населенный остров
 		case "PiratesOnUninhabited_11":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -5221,7 +5221,7 @@ void ProcessDialogEvent()
 			
 			ChangeCharacterComplexReputation(pchar,"nobility", 3.0);
 			
-			AddCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
+			AddCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
 			OfficersReaction("good");
 			PChar.Quest.PiratesOnUninhabited_LocExit.over = "yes"; // Снимаем прерывание на выход из локации
 			
@@ -5238,9 +5238,9 @@ void ProcessDialogEvent()
 				if(CheckAttribute(PChar, "GenQuest.PiratesOnUninhabited.Shipwrecked"))
 				{
 					AddQuestRecordEx(sTitle, "PiratesOnUninhabited", "1");
-					AddQuestUserData(sTitle, "shipTypeName", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Gen"))); // belamour gen
+					AddQuestUserData(sTitle, "shipTypeName", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Gen"))); // belamour gen
 					// --> belamour gen: нужно разделить, иначе получается с потерпевшего крушение бригантины 
-					if(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_SCHOONER_W")
+					if(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_SCHOONER_W")
 					{
 						AddQuestUserData(sTitle, "sText", "wrecked pirate");
 					}
@@ -5259,9 +5259,9 @@ void ProcessDialogEvent()
 			else
 			{
 				AddQuestRecordEx(sTitle, "PiratesOnUninhabited", "5");
-				AddQuestUserData(sTitle, "shipTypeName", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Gen"))); // belamour gen
+				AddQuestUserData(sTitle, "shipTypeName", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Gen"))); // belamour gen
 				// --> belamour gen: нужно разделить, иначе получается с потерпевшего крушение бригантины 
-				if(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_SCHOONER_W")
+				if(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name == "SHIP_SCHOONER_W")
 				{
 					AddQuestUserData(sTitle, "sText", "wrecked pirate");
 				}
@@ -5322,13 +5322,13 @@ void ProcessDialogEvent()
 			}
 			
 			RemovePassenger(PChar, NPChar);
-			RemoveCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
+			RemoveCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
 		break;
 		
 		case "PiratesOnUninhabited_13":
 			AddItems(PChar, "jewelry4", 1);
 			
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -5367,7 +5367,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_16":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				
@@ -5392,14 +5392,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_17":
-			iMoney = sti(PChar.rank) * 500;
-			PChar.GenQuest.PiratesOnUninhabited.Money = iMoney * sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount);
+			iMoney = int(PChar.rank) * 500;
+			PChar.GenQuest.PiratesOnUninhabited.Money = iMoney * int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount);
 			
 			dialog.text = "No cóż, powiedz, "+iMoney+" peso dla każdego z nas byłoby w sam raz... Oczywiście, jeśli nie uważasz, że to odszkodowanie za cały nasz ból i cierpienie jest zbyt małe, he-he...";
 			link.l1 = RandPhraseSimple("Wręcz przeciwnie, jestem pewien, że to stanowczo za dużo... Pętla na szyi dla każdego z was byłaby najlepsza.","Powieszę cię jak małpy na palmach za takie pieniądze osobiście!");
 			link.l1.go = "PiratesOnUninhabited_18";
 			
-			if(sti(PChar.money) >= iMoney * sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))
+			if(int(PChar.money) >= iMoney * int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))
 			{
 				link.l2 = "Dobrze, weź to. Mam nadzieję, że niczego więcej ci nie jestem winien?";
 				link.l2.go = "PiratesOnUninhabited_19";
@@ -5418,14 +5418,14 @@ void ProcessDialogEvent()
 			link.l1 = "Mam nadzieję, że tak...";
 			link.l1.go = "PiratesOnUninhabited_20";
 			
-			iMoney = sti(PChar.GenQuest.PiratesOnUninhabited.Money);
+			iMoney = int(PChar.GenQuest.PiratesOnUninhabited.Money);
 			
 			AddMoneyToCharacter(PChar, -iMoney);
 			AddMoneyToCharacter(NPChar, iMoney);
 		break;
 		
 		case "PiratesOnUninhabited_20":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				
@@ -5456,7 +5456,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_21":
-			if(GetFreeCrewQuantity(PChar) >= sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))
+			if(GetFreeCrewQuantity(PChar) >= int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount))
 			{
 				// Игрок врет - свободное место есть
 				dialog.text = "O nie, kapitanie, co ty mówisz?! Na pewno zapalimy świecę w twoje imię, jeśli kiedykolwiek wejdziemy do kościoła... hah!";
@@ -5513,7 +5513,7 @@ void ProcessDialogEvent()
 			link.l3.go = "PiratesOnUninhabited_33";
 			
 			RemovePassenger(PChar, NPChar);
-			RemoveCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
+			RemoveCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
 		break;
 		
 		case "PiratesOnUninhabited_27":
@@ -5530,7 +5530,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_29":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				
@@ -5565,7 +5565,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_31":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				
@@ -5690,7 +5690,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_43":
-			iBanditsCount = sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount);
+			iBanditsCount = int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount);
 			iMoney = GetFreeCrewQuantity(PChar);
 			
 			dialog.text = "Cokolwiek sobie zażyczysz. To zależy od ciebie, zabierz nas do osady lub przyjmij do swojej załogi, wydajesz się być dobrym kapitanem.";
@@ -5722,13 +5722,13 @@ void ProcessDialogEvent()
 			sTitle = GenerateRandomNameToShip(PIRATE);
 			PChar.GenQuest.PiratesOnUninhabited.StartShipName = sTitle;
 			
-			dialog.text = "To można łatwo załatwić. On żegluje na "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].Name+"Voc"))+" '"+sTitle+" i handluje niewolnikami... Zróbmy tak: Jeśli go znajdziemy, ty dostaniesz ładunek, a my statek. Aha, i możesz go zapytać, czy wie o "+ChangeNameCase(NAMETYPE_NICK,PChar.GenQuest.PiratesOnUninhabited.MainPirateName,NAME_ACC)+" Mam nadzieję, że nie zrobi w spodnie, gdy usłyszy to imię, bo to mój statek..."; // belamour gen
+			dialog.text = "To można łatwo załatwić. On żegluje na "+GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].Name+"Voc"))+" '"+sTitle+" i handluje niewolnikami... Zróbmy tak: Jeśli go znajdziemy, ty dostaniesz ładunek, a my statek. Aha, i możesz go zapytać, czy wie o "+ChangeNameCase(NAMETYPE_NICK,PChar.GenQuest.PiratesOnUninhabited.MainPirateName,NAME_ACC)+" Mam nadzieję, że nie zrobi w spodnie, gdy usłyszy to imię, bo to mój statek..."; // belamour gen
 			link.l1 = "Dobrze, masz umowę.";
 			link.l1.go = "PiratesOnUninhabited_45";
 		break;
 		
 		case "PiratesOnUninhabited_45":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -5741,7 +5741,7 @@ void ProcessDialogEvent()
 			
 			ChangeCharacterComplexReputation(pchar,"nobility", 3.0);
 			
-			AddCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1)
+			AddCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1)
 			AddPassenger(PChar, NPChar, false); // Главного в пассажиры
 			SetCharacterRemovable(NPChar, false);
 			//NPChar.FaceId = 101; // лесник потом подобрать аву бандиту.   
@@ -5756,7 +5756,7 @@ void ProcessDialogEvent()
 			AddQuestUserDataForTitle(sTitle, "shoreName", sTemp);
 			AddQuestUserData(sTitle, "shoreName", sTemp);
 			// --> belamour окончание по количеству персон
-			if(sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) >= 5)
+			if(int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) >= 5)
 			{
 				AddQuestUserData(sTitle, "count", PChar.GenQuest.PiratesOnUninhabited.PiratesCount + " sailors");
 			}
@@ -5766,7 +5766,7 @@ void ProcessDialogEvent()
 			}
 			// <-- belamour
 			AddQuestUserData(sTitle, "badCapName", ChangeNameCase(NAMETYPE_ORIG, PChar.GenQuest.PiratesOnUninhabited.BadPirateName, NAME_ABL));
-			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Voc")) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'"); // belamour gen
+			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name + "Voc")) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'"); // belamour gen
 			
 			PChar.GenQuest.PiratesOnUninhabited.StartShore = PChar.location;
 			
@@ -5820,11 +5820,11 @@ void ProcessDialogEvent()
 			NPChar.location.locator = "";
 			
 			RemovePassenger(PChar, NPChar);
-			RemoveCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
+			RemoveCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
 			
 			sTitle = "PiratesOnUninhabited" + PChar.GenQuest.PiratesOnUninhabited.StartShore;
 			AddQuestRecordEx(sTitle, "PiratesOnUninhabited", "14");
-			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
+			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
 			CloseQuestHeader(sTitle);
 			
 			DeleteAttribute(PChar, "GenQuest.PiratesOnUninhabited");
@@ -5864,13 +5864,13 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				iMoney = sti(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].Price);
-				iMoney = MakeInt((iMoney / 1.2 + hrand(iMoney - (iMoney / 1.2))) * 1.2);
+				iMoney = int(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].Price);
+				iMoney = int((iMoney / 1.2 + hrand(iMoney - (iMoney / 1.2))) * 1.2);
 				dialog.text = "Kto tak walczy? Straciłeś taki statek! Czy masz pojęcie, ile mnie to kosztowało?"+FindRussianMoneyString(iMoney)+"! Teraz jesteś mi winien...";
 				link.l1 = "Czy to nie będzie dla ciebie za dużo? Nie zapominaj, że już raz ci przysługę oddałem.";
 				link.l1.go = "PiratesOnUninhabited_54";
 				
-				if(sti(PChar.money) >= iMoney)
+				if(int(PChar.money) >= iMoney)
 				{
 					link.l2 = "Niech cię diabli z tym przeklętym statkiem! Weź swoje pieniądze i nie pojawiaj się więcej na me oczy!";
 					link.l2.go = "PiratesOnUninhabited_55";
@@ -5879,7 +5879,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_53":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetImmortal(rChar, false);
@@ -5891,7 +5891,7 @@ void ProcessDialogEvent()
 			
 			sTitle = "PiratesOnUninhabited" + PChar.GenQuest.PiratesOnUninhabited.StartShore;
 			AddQuestRecordEx(sTitle, "PiratesOnUninhabited", "15");
-			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
+			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
 			CloseQuestHeader(sTitle);
 			
 			DeleteAttribute(PChar, "GenQuest.PiratesOnUninhabited");
@@ -5908,7 +5908,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PiratesOnUninhabited_55":
-			for(i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 			{
 				rChar = CharacterFromID("PirateOnUninhabited_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -5920,7 +5920,7 @@ void ProcessDialogEvent()
 			sTitle = "PiratesOnUninhabited" + PChar.GenQuest.PiratesOnUninhabited.StartShore;
 			AddQuestRecordEx(sTitle, "PiratesOnUninhabited", "16");
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
+			AddQuestUserData(sTitle, "ship", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'");
 			CloseQuestHeader(sTitle);
 			
 			DeleteAttribute(PChar, "GenQuest.PiratesOnUninhabited");
@@ -5964,7 +5964,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5":
-			for(i = 0; i < sti(PChar.GenQuest.JusticeOnSale.EncQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.JusticeOnSale.EncQty); i++)
 			{
 				rChar = CharacterFromID("JusticeOnSale_Jungle_" + i);
 				LAi_CharacterDisableDialog(rChar);
@@ -5976,7 +5976,7 @@ void ProcessDialogEvent()
 			PChar.GenQuest.JusticeOnSale.ShipName = GenerateRandomNameToShip(PIRATE);
 			PChar.GenQuest.JusticeOnSale.ShipType = PiratesOnUninhabited_GenerateShipType();
 			PChar.GenQuest.JusticeOnSale.RewardType = 0; // Подрякушки.
-			dialog.text = "Dziękujemy, kapitanie. Zrekompensujemy ci sumę kaucji oprócz twojej nagrody. Myślę, że powinieneś porozmawiać z komendantem o naszym kapitanie. Być może uda ci się go przekonać. Jak tylko go wyciągniesz, przyjdź do "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"Dat")+", tam nasz statek zarzucił kotwicę - "+LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name))+" '"+PChar.GenQuest.JusticeOnSale.ShipName+". Będziemy czekać na ciebie na brzegu."; // belamour gen
+			dialog.text = "Dziękujemy, kapitanie. Zrekompensujemy ci sumę kaucji oprócz twojej nagrody. Myślę, że powinieneś porozmawiać z komendantem o naszym kapitanie. Być może uda ci się go przekonać. Jak tylko go wyciągniesz, przyjdź do "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"Dat")+", tam nasz statek zarzucił kotwicę - "+LowerFirst(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.JusticeOnSale.ShipType)].name))+" '"+PChar.GenQuest.JusticeOnSale.ShipName+". Będziemy czekać na ciebie na brzegu."; // belamour gen
 			link.l1 = "... -> ";
 			link.l1.go = "JusticeOnSale_8";
 		break;
@@ -5986,13 +5986,13 @@ void ProcessDialogEvent()
 			PChar.GenQuest.JusticeOnSale.ShipType = PiratesOnUninhabited_GenerateShipType();
 			PChar.GenQuest.JusticeOnSale.RewardType = 1; // Монеты.
 			
-			dialog.text = "Dziękuję, kapitanie. Wynagrodzimy ci sumę kaucji oprócz twojej nagrody. Myślę, że powinieneś porozmawiać z komendantem o naszym kapitanie. Być może uda ci się go przekonać. Kiedy go wyciągniesz, przyjdź do "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"Tam")+", tam nasz statek zarzucił kotwicę - "+LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.JusticeOnSale.ShipType)].name))+" '"+PChar.GenQuest.JusticeOnSale.ShipName+"  Będziemy czekać na ciebie na brzegu."; // belamour gen
+			dialog.text = "Dziękuję, kapitanie. Wynagrodzimy ci sumę kaucji oprócz twojej nagrody. Myślę, że powinieneś porozmawiać z komendantem o naszym kapitanie. Być może uda ci się go przekonać. Kiedy go wyciągniesz, przyjdź do "+XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId+"Tam")+", tam nasz statek zarzucił kotwicę - "+LowerFirst(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.JusticeOnSale.ShipType)].name))+" '"+PChar.GenQuest.JusticeOnSale.ShipName+"  Będziemy czekać na ciebie na brzegu."; // belamour gen
 			link.l1 = "... ";
 			link.l1.go = "JusticeOnSale_8";
 		break;
 		
 		case "JusticeOnSale_8":
-			for(i = 0; i < sti(PChar.GenQuest.JusticeOnSale.EncQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.JusticeOnSale.EncQty); i++)
 			{
 				rChar = CharacterFromID("JusticeOnSale_Jungle_" + i);
 				LAi_CharacterDisableDialog(rChar);
@@ -6009,7 +6009,7 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_9":
 			if(hrand(1) == 0)
 			{
-				if(sti(PChar.GenQuest.JusticeOnSale.RewardType) == 0)
+				if(int(PChar.GenQuest.JusticeOnSale.RewardType) == 0)
 				{
 					// Награда побрякушками.
 					dialog.text = "Jesteśmy na miejscu, kapitanie! Świetnie ci poszło z tymi brzuchatymi biurokratami! Oto twoja nagroda. Chłopcy, przynieście świecidełka!";
@@ -6035,7 +6035,7 @@ void ProcessDialogEvent()
 		
 		case "JusticeOnSale_10":
 			DialogExit();
-			if(sti(PChar.GenQuest.JusticeOnSale.RewardType) == 0)
+			if(int(PChar.GenQuest.JusticeOnSale.RewardType) == 0)
 			{
 				if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.PrisonMoney"))
 				{
@@ -6050,14 +6050,14 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(PChar, "GenQuest.JusticeOnSale.PrisonMoney"))
 				{
-					AddMoneyToCharacter(PChar, sti(PChar.rank) * 700 + hrand(2000));
+					AddMoneyToCharacter(PChar, int(PChar.rank) * 700 + hrand(2000));
 				}
 				else
 				{
-					AddMoneyToCharacter(PChar, sti(PChar.rank) * 500 + hrand(1000));
+					AddMoneyToCharacter(PChar, int(PChar.rank) * 500 + hrand(1000));
 				}
 			}
-			for(i = 0; i < sti(PChar.GenQuest.JusticeOnSale.EncQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.JusticeOnSale.EncQty); i++)
 			{
 				rChar = CharacterFromID("JusticeOnSale_ShorePirate_" + i);
 				LAi_Type_Actor_Reset(rChar);
@@ -6070,7 +6070,7 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_11":
 			AddQuestRecord("JusticeOnSale", "4");
 			CloseQuestHeader("JusticeOnSale");
-			for(i = 0; i < sti(PChar.GenQuest.JusticeOnSale.EncQty); i++)
+			for(i = 0; i < int(PChar.GenQuest.JusticeOnSale.EncQty); i++)
 			{
 				rChar = CharacterFromID("JusticeOnSale_ShorePirate_" + i);
 				LAi_SetWarriorTypeNoGroup(rChar);
@@ -6090,7 +6090,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Unwantedpostor_room_1":
-			If(sti(pchar.reputation.fame) > 60)
+			If(int(pchar.reputation.fame) > 60)
 			{
 				dialog.text = " "+GetSexPhrase("Zdaje się, że o tobie słyszałem. Dobra, wygrałeś, odchodzę, chce jeszcze pożyć...","Hmm, wiele o tobie słyszałem. Przypuszczam, że nie tylko twój język jest ostry. Dobrze, nie gniewaj się, pokój jest twój.")+"";
 				link.l1 = ""+GetSexPhrase("Podjąłeś dobrą decyzję.","Dobry chłopiec.")+"";
@@ -6112,9 +6112,9 @@ void ProcessDialogEvent()
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false); //разрешить драться
 			chrDisableReloadToLocation = false; // открыть локацию
 			sTemp = 40*MOD_SKILL_ENEMY_RATE/2;
-			AddCharacterExpToSkill(pchar, "Fortune", sti(sTemp));
-			AddCharacterExpToSkill(pchar, "Sneak", sti(sTemp));
-			AddCharacterExpToSkill(pchar, "Leadership", sti(sTemp));
+			AddCharacterExpToSkill(pchar, "Fortune", int(sTemp));
+			AddCharacterExpToSkill(pchar, "Sneak", int(sTemp));
+			AddCharacterExpToSkill(pchar, "Leadership", int(sTemp));
 			AddDialogExitQuest("sleep_in_tavern");
 			TavernWaitDate("wait_day");
 		break;
@@ -6147,9 +6147,9 @@ void ProcessDialogEvent()
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false); //разрешить драться
 			chrDisableReloadToLocation = false; // открыть локацию
 			sTemp = 40*MOD_SKILL_ENEMY_RATE/2;
-			AddCharacterExpToSkill(pchar, "FencingL", sti(sTemp));
-			AddCharacterExpToSkill(pchar, "FencingS", sti(sTemp));
-			AddCharacterExpToSkill(pchar, "FencingH", sti(sTemp));
+			AddCharacterExpToSkill(pchar, "FencingL", int(sTemp));
+			AddCharacterExpToSkill(pchar, "FencingS", int(sTemp));
+			AddCharacterExpToSkill(pchar, "FencingH", int(sTemp));
 			AddDialogExitQuest("sleep_in_tavern");
 			TavernWaitDate("wait_day");
 		break;
@@ -6228,7 +6228,7 @@ void ProcessDialogEvent()
 			dialog.text = " Czemu nie? Już tęsknię za pokładem statku i szumem żagli wypełnionych świeżym wiatrem. Mogę również szkolić twoją załogę, jeśli zajdzie taka potrzeba. Ale od razu poproszę cię o tysiąc pesos, inaczej moje kieszenie są już puste. Zresztą jak reszta załogi. Jestem uczciwym człowiekiem.";
 			link.l1 = "Nie, prawdopodobnie odmówię. Jeśli wszyscy marynarze dostaną tysiąc pesos za najem, zbankrutuję. Nie obwiniaj mnie.";
 			link.l1.go = "ExpertSailor_nomoney";
-			if(GetFreeCrewQuantity(pchar) > 0 && sti(pchar.money) >= 1000)
+			if(GetFreeCrewQuantity(pchar) > 0 && int(pchar.money) >= 1000)
 			{
 				link.l2 = "Umowa stoi. Nie mam nic przeciwko tysiącu pesos za dobrego specjalistę. Poczekaj... prosze. Będe czekał na ciebie na statku.";
 				link.l2.go = "ExpertSailor_payS";
@@ -6264,7 +6264,7 @@ void ProcessDialogEvent()
 			dialog.text = "Dlaczego nie? Już tęsknię za pokładem artyleryjskim, zapachem palącego się prochu i hukiem salw armatnich. Mogę również poprowadzić twój zespół, jeśli zajdzie taka potrzeba. Ale od razu poproszę cię o tysiąc pesos, bo inaczej moje kieszenie już są puste. Wtedy, jak reszta załogi, jestem uczciwym człowiekiem.";
 			link.l1 = "Nie, prawdopodobnie odmówię. Jeśli wszystkim marynarzom płacą tysiąc pesos za zatrudnienie, to zbankrutuję. Nie obwiniaj mnie.";
 			link.l1.go = "ExpertSailor_nomoney";
-			if(GetFreeCrewQuantity(pchar) > 0 && sti(pchar.money) >= 1000)
+			if(GetFreeCrewQuantity(pchar) > 0 && int(pchar.money) >= 1000)
 			{
 				link.l2 = "Umowa stoi. Nie mam nic przeciwko tysiąc pesos za dobrego specjalistę. Poczekaj... tutaj. I czekam na ciebie na statku.";
 				link.l2.go = "ExpertSailor_payС";
@@ -6295,7 +6295,7 @@ void ProcessDialogEvent()
 			dialog.text = "Dlaczego nie? Już tęsknię za dźwiękiem szabel, trzaskiem statków zbliżających się do burt i adrenaliną bitwy. Mogę również trenować twoją załogę, jeśli zajdzie taka potrzeba. Ale od razu poproszę cię o tysiąc pesos, w przeciwnym razie moje kieszenie są już puste. Potem, jak reszta załogi, jestem uczciwym człowiekiem.";
 			link.l1 = "Nie, prawdopodobnie odmówię. Jeśli wszyscy marynarze dostaną tysiąc pesos za zatrudnienie, zbankrutuję. Nie obwiniaj.";
 			link.l1.go = "ExpertSailor_nomoney";
-			if(GetFreeCrewQuantity(pchar) > 0 && sti(pchar.money) >= 1000)
+			if(GetFreeCrewQuantity(pchar) > 0 && int(pchar.money) >= 1000)
 			{
 				link.l2 = "Układ. Nie mam nic przeciwko tysiącu pesos za dobrego specjalistę. Poczekaj... tutaj. I czekam na ciebie na statku.";
 				link.l2.go = "ExpertSailor_payA";
@@ -6502,8 +6502,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.quest.NightAdventure_Intavern.over = "yes";
 			iNation = npchar.nation
-			iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank);
-			iScl = 15 + 2*sti(pchar.rank);
+			iRank = MOD_SKILL_ENEMY_RATE+int(pchar.rank);
+			iScl = 15 + 2*int(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("NightAdventure_CardProf", "citiz_"+(rand(9)+11), "man", "man", iRank, iNation, 1, false, "soldier"));
 			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_04", "pistol1", "bullet", iScl*2);
 			sld.dialog.filename    = "GenQuests_Dialog.c";
@@ -6511,7 +6511,7 @@ void ProcessDialogEvent()
 			sld.greeting = "player";
 			sld.SaveItemsForDead = true;
 			sld.DontClearDead = true;
-			AddMoneyToCharacter(sld, sti(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(sld, int(pchar.GenQuest.NightAdventure_money));
 			GiveItem2Character(sld, "totem_13");
 			FreeSitLocator(pchar.location, "sit_front4");
 			ChangeCharacterAddressGroup(sld, pchar.location, "sit", "sit_front4");
@@ -6541,7 +6541,7 @@ void ProcessDialogEvent()
 		case "NightAdventure_CardProf_3":
 			if(pchar.GenQuest.NightAdventureVar == "NightAdventure_SailorShulerGiveMoney") // отдал деньги
 			{
-				AddMoneyToCharacter(pchar, makeint(pchar.GenQuest.NightAdventure_money));
+				AddMoneyToCharacter(pchar, int(pchar.GenQuest.NightAdventure_money));
 				dialog.text = "Dobrze, dobrze, spokojnie, kapitanie. No cóż, pobiłem pijaka i trochę oszukałem, a tak robi co drugi gracz. Oto jego pieniądze.";
 				link.l1 = "To lepiej. I mam nadzieję, że rozumiesz, że jeśli mój przyjaciel teraz powie, że to nie cała suma, to wrócę do ciebie?";
 				link.l1.go = "NightAdventure_CardProf_GiveMoney";
@@ -6577,14 +6577,14 @@ void ProcessDialogEvent()
 		break;
 		// матрос забирает свои деньги
 		case "NightAdventure_CardProf_GiveMoney_2":
-			AddMoneyToCharacter(pchar, - makeint(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(pchar, - int(pchar.GenQuest.NightAdventure_money));
 			dialog.text = "Ale... on n-nie chciał tego przyznać! Hic!..";
 			link.l1 = "Tak, próbował tego uniknąć. Oto, zatrzymaj swoje pieniądze.";
 			link.l1.go = "NightAdventure_CardProf_GiveMoney_3";
 		break;
 		
 		case "NightAdventure_CardProf_GiveMoney_3":
-			AddMoneyToCharacter(pchar, makeint(pchar.GenQuest.NightAdventure_money)/2);
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.NightAdventure_money)/2);
 			dialog.text = "K-kapitanie... hic!.. dzięki wielkie... pomogłeś mi! Ja...*wymiotuje na bok*... proszę... hic!.. To dla ciebie.";
 			link.l1 = "Chodź, ugh... nieważne... Nie pij już w ten sposób. Albo przynajmniej nie hazarduj się, kiedy jesteś pijany.";
 			link.l1.go = "NightAdventure_CardProf_GiveMoney_4";
@@ -6696,13 +6696,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NightAdventure_CardProf_Fight_7": // деньги есть
-			AddMoneyToCharacter(pchar, - makeint(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(pchar, - int(pchar.GenQuest.NightAdventure_money));
 			ChangeCharacterComplexReputation(pchar,"nobility", 3); 
 			ChangeOfficersLoyality("good", 1); 
 			dialog.text = "K-kapitanie... hik!.. dziękuję ci bardzo... pomogłeś mi! Ja... 'wymiotuje na bok'... proszę bardzo... hik!.. To dla ciebie.";
 			link.l1 = "Chodź, uch... nieważne... Nie pij już więcej w taki sposób. Albo przynajmniej nie graj w hazard, kiedy jesteś pijany.";
 			link.l1.go = "NightAdventure_CardProf_Fight_End";
-			AddMoneyToCharacter(pchar, makeint(pchar.GenQuest.NightAdventure_money)/2);
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.NightAdventure_money)/2);
 		break;
 		
 		case "NightAdventure_CardProf_Fight_End": 
@@ -6948,12 +6948,12 @@ void ProcessDialogEvent()
 			link.l1.go = "NightAdventure_End";
 			link.l2 = "Aj, do diabła z tobą. Dobrze, porozmawiam z naczelnikiem.";
 			link.l2.go = "NightAdventure_Citizen_1_5";
-			if(GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && !CheckNationLicence(HOLLAND))
+			if(GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && !CheckNationLicence(HOLLAND))
 			{
 				link.l2 = "Nie jestem pewien, czy strażnikowi spodoba się mój akcent. Po prostu zgłosi to później gubernatorowi. Więc idźcie bez mnie.";
 				link.l2.go = "NightAdventure_Citizen_RE";
 			}
-			if(ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -15)
+			if(ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -15)
 			{
 				link.l2 = "Obawiam się, przyjacielu, że droga do lokalnych kazamat jest dla mnie zablokowana. Strażnik trzyma mój portret niczym ikonę, a ja nie zamierzam osiedlać się w tych ich gościnnych apartamentach. Więc przykro mi, ale nie mogę ci pomóc.";
 				link.l2.go = "NightAdventure_Citizen_NR";
@@ -7183,7 +7183,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "NightAdventure_PirateCave_8A": // испугался
-			iMoney = sti(pchar.money)/3;
+			iMoney = int(pchar.money)/3;
 			dialog.text = "O, nie jesteśmy chciwi. Tylko "+FindRussianMoneyString(iMoney)+"."; 
 			link.l1 = "Obawiam się, że to był twój ostatni skarb w życiu.";
 			link.l1.go = "NightAdventure_PirateCave_9F";
@@ -7195,7 +7195,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NPChar.Dialog.currentnode = "NightAdventure_PirateCaveAgain";
 			SetFunctionExitFromLocationCondition("NightAdventure_KillPhant", pchar.location, false); 
-			iMoney = sti(pchar.money)/3;
+			iMoney = int(pchar.money)/3;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddMoneyToCharacter(npchar, iMoney);
 			npchar.SaveItemsForDead   = true; // сохранять на трупе вещи
@@ -7309,12 +7309,12 @@ void ProcessDialogEvent()
 		
 		case "NightAdventure_NobleGame_8": 
 			dialog.text = "Tak, zagrajmy! hik!.. Jakie zakłady?.."; 
-			if(sti(pchar.money) > 10000)
+			if(int(pchar.money) > 10000)
 			{
 				link.l1 = "Gramy za 1000 pesos."; 
 				link.l1.go = "NightAdventure_NobleGame_9_1";
 			}
-			if(sti(pchar.money) > 20000)
+			if(int(pchar.money) > 20000)
 			{
 				link.l2 = "Gramy za 2000 pesos."; 
 				link.l2.go = "NightAdventure_NobleGame_9_2";
@@ -7440,7 +7440,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.NA.Cards");
 			SetFunctionLocationCondition("NightAdventure_KillPhant", NPChar.City+"_town", false);
 			npchar.money = 0;
-			AddMoneyToCharacter(npchar, makeint(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(npchar, int(pchar.GenQuest.NightAdventure_money));
 			GiveItem2Character(npchar, "totem_13");
 			npchar.SaveItemsForDead   = true; // сохранять на трупе вещи
 			npchar.DontClearDead = true;  // не убирать труп через 200с
@@ -7707,7 +7707,7 @@ String PiratesOnUninhabited_GetStringNum(int _num)
 
 int PiratesOnUninhabited_GenerateShipType()
 {
-	int rank = sti(PChar.rank);
+	int rank = int(PChar.rank);
 	int retShipType;
 	
 	if(rank < 5)
@@ -7782,8 +7782,8 @@ void PiratesOnUninhabited_SetCapToMap()
 {
 	int temp;
 	String group = "PiratesOnUninhabited_SeaGroup";
-	ref character = GetCharacter(NPC_GenerateCharacter("PiratesOnUninhabited_BadPirate", "", "man", "man", sti(pchar.rank) + 5, PIRATE, -1, true, "soldier"));		
-	character.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType), true, character);
+	ref character = GetCharacter(NPC_GenerateCharacter("PiratesOnUninhabited_BadPirate", "", "man", "man", int(pchar.rank) + 5, PIRATE, -1, true, "soldier"));
+	character.Ship.Type = GenerateShipExt(int(PChar.GenQuest.PiratesOnUninhabited.StartShipType), true, character);
 	character.Ship.Name = PChar.GenQuest.PiratesOnUninhabited.StartShipName;
     SetBaseShipData(character);
     SetCrewQuantityFull(character);
@@ -7820,12 +7820,12 @@ void PiratesOnUninhabited_SetCapToMap()
 	
 	character.mapEnc.type = "trade";
 	character.mapEnc.worldMapShip = "quest_ship";
-	character.mapEnc.Name = LowerFirst(XI_ConvertString(ShipsTypes[sti(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'";
+	character.mapEnc.Name = LowerFirst(XI_ConvertString(ShipsTypes[int(PChar.GenQuest.PiratesOnUninhabited.StartShipType)].name)) + " '" + PChar.GenQuest.PiratesOnUninhabited.StartShipName + "'";
 	
 	Map_CreateTrader(character.fromShore, character.toShore, "PiratesOnUninhabited_BadPirate", GetMaxDaysFromIsland2Island(GetArealByCityName(character.toCity), GetArealByCityName(character.fromCity)) + 3);
 	
 	temp = GetCharacterFreeSpace(character, GOOD_SLAVES); // Сколько влезет рабов
-	AddCharacterGoodsSimple(character, GOOD_SLAVES, makeint(temp / 2 + hrand(temp / 2)) - 1);
+	AddCharacterGoodsSimple(character, GOOD_SLAVES, int(temp / 2 + hrand(temp / 2)) - 1);
 	
 	PChar.Quest.PiratesOnUninhabited_ShipSink.win_condition.l1 = "Character_sink";
 	PChar.Quest.PiratesOnUninhabited_ShipSink.win_condition.l1.character = "PiratesOnUninhabited_BadPirate";

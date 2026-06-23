@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 		case "fight_owner": // лесник . выход из диалога . если копался в сундуках. 
 			LAi_SetOwnerTypeNoGroup(NPChar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			NextDiag.CurrentNode = "First time";
 			DialogExit();
 		break;

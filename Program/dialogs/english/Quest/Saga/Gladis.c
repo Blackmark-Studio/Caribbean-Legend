@@ -257,7 +257,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", 5);
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 		break;
 		
 		case "Helena_hire":

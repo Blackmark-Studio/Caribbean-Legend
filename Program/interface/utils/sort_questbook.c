@@ -33,7 +33,7 @@ void SortQuests(ref sortedIdxs, ref original)
 			makearef(lQuest, original.(lQuestName));
 			makearef(rQuest, original.(rQuestName));
 
-			if (sti(lQuest.lastUpdate) > sti(rQuest.lastUpdate)) continue;
+			if (int(lQuest.lastUpdate) > int(rQuest.lastUpdate)) continue;
 
 			string q = sortedIdxs[j];
 			sortedIdxs[j] = "" + sortedIdxs[j+1];
@@ -66,8 +66,8 @@ int ParseHumandate(string date, ref monthNameToIndex)
 	if (CheckAttribute(&monthNameToIndex, monthName)) split.p1 = monthNameToIndex.(monthName);
 	else return 0;
 
-	if (sti(split.p0) < 10) split.p0 = "0" + split.p0;
-	if (sti(split.p1) < 10) split.p1 = "0" + split.p1;
+	if (int(split.p0) < 10) split.p0 = "0" + split.p0;
+	if (int(split.p1) < 10) split.p1 = "0" + split.p1;
 
 	string dateString = strleft(split.p3, 5) + " " + split.p0 + "." + split.p1 + "." + split.p2;
 	return DateStringToInt(dateString);

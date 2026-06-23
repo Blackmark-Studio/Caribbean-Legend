@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 			dialog.text = "문제가 하나 있소... 아빠트가 배달비는 받는 사람이 내야 한다고 했소. 그래서 자네가 9,200페소를 내야 하오.";
 			link.l1 = "그 정도 돈이면, 바다 한가운데서 내 선실까지 아침 커피와 함께 직접 가져다줬어야지! 편지는 네가 가지도록 해.";
 			link.l1.go = "cureer_6";
-			if (sti(pchar.money) >= 9200)
+			if (int(pchar.money) >= 9200)
 			{
 				link.l2 = "내가 왜 우편 배달 일을 안 했을까?! 해적질보다 훨씬 이득인데! 자, 여기 은화다, 자네. 봉투 내놔.";
 				link.l2.go = "cureer_4";
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spa_officer_1":
-			if(sti(pchar.reputation.nobility) > 80 || sti(pchar.reputation.nobility) < 20) // провести учёт чести и известности
+			if(int(pchar.reputation.nobility) > 80 || int(pchar.reputation.nobility) < 20) // провести учёт чести и известности
 			{
 				Notification_Reputation(true, 81, "low");
 				dialog.text = "그래, 자네에 대해 많은 이야기를 들었지. 그리고 자네가 고집을 부리더라도 도시를 피바다로 만들지 말라는 명확한 지시를 받았네. 통과해도 좋다. 하지만 빈첸토 신부께서... 불만스러워하실 거야. 이 점 명심하게.";
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		
 		// Ян Свенсон на Исла Тесоро
 		case "Svenson_2":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "드디어 왔군, Charles! 내 코르벳이 너보다 거의 하루 먼저 도착했어 – 자랑할 만한 일이잖아.";
 			link.l1 = "천만에, Jan. 그런데 Gladys랑 네 아내는 어디 있지?";
 			link.l1.go = "Svenson_3";
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 		case "Svenson_6":
 			DialogExit();
 			npchar.dialog.currentnode = "Svenson_6_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Svenson_6_1":
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Svenson_7":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "드디어 왔군! 마르티니크에서는 어땠어? 이제 네 인생이 영원히 바뀌었다고 느끼나?";
 			link.l1 = "훨씬 이전에 바뀌었어, 얀. 하지만 모든 게 놀랄 만큼 잘 풀렸지. 요한나는 어디 있고...";
 			link.l1.go = "Svenson_8";
@@ -755,7 +755,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_2":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "선장님, 다시 한 번 축하드립니다! 티칭기투는 지난번보다 이번 축하가 더 마음에 든다네요. 선장님은 친구를 잘 고르시는군요 - 여긴 진심이 더 많고, 위선과 가짜 머리카락은 훨씬 적으니까요.";
 			link.l1 = "고마워, 친구! 하지만 불술은 마시지 마라 – 여기서는 아주 독하거든.";
 			link.l1.go = "Tichingitu_4";
@@ -782,7 +782,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 			}
 		break;
 		
@@ -1030,7 +1030,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Terrax_3":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "샤를 드 모르와 결혼했다니... 아직도 익숙하지가 않아. 처음엔 스벤손, 이제는 너라니—그 다음은 뭐지? 말로 신부, 아니면 친절한 자크인가?";
 			link.l1 = "너는 호크스에 대해 잊었군. 그리고 너는 어때, 마커스? 혼자 바다를 떠도는 늑대 노릇, 이제 지겹지 않아?";
 			link.l1.go = "Terrax_4";
@@ -1064,7 +1064,7 @@ void ProcessDialogEvent()
 		case "Terrax_6":
 			DialogExit();
 			npchar.dialog.currentnode = "Terrax_6_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Terrax_7":
@@ -1096,7 +1096,7 @@ void ProcessDialogEvent()
 
 		// Натаниэль Хоук
 		case "Nathaniel":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "결혼한 드 모르 선장, 이렇게 진심으로 건배할 이유를 만난 적은 드물었소. 잔을 들어! 이건 평범한 양배추 술이 아니오. 동인도산 홍차와 진짜 페르시아 향신료가 들어갔으니!";
 			link.l1 = "그래서 목이 타는 것처럼 뜨거운 납을 마신 기분이 드는 이유가 뭔지 궁금했지. 뭐, 네이선, 건배...";
 			link.l1.go = "Nathaniel_1";
@@ -1117,7 +1117,7 @@ void ProcessDialogEvent()
 		case "Nathaniel_3":
 			DialogExit();
 			npchar.dialog.currentnode = "Nathaniel_3_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Nathaniel_3_1":
@@ -1252,14 +1252,6 @@ void ProcessDialogEvent()
 			LAi_ActorDialogDelay(sld, pchar, "", 0.5);
 		break;
 		
-		case "Nathaniel_18":
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sld = characterFromId("Helena");
-			else sld = characterFromId("Mary");
-			dialog.text = "우린 괜찮아, Charles! 내가 그녀를 풀어줄게. 항구에서 총소리가 들려 – 너랑 Nathan은 거기로 가야 해, 안 그러면 Barbazon이 우리 배를 전부 박살낼 거야. 시간 낭비하지 마!";
-			link.l1 = "내가 지노를 찾아서 여기로 보내겠어, 그가 도와줄 거야... 반드시 그래야 해! "+sld.name+", 자기야, 여기 있어, 둘 다 저 사람을 돌봐.";
-			link.l1.go = "Nathaniel_19";
-		break;
-		
 		case "Nathaniel_19":
 			dialog.text = "찰스, 서둘러! 어떻게 결정하든 지금은 시간이 금보다 더 귀해! 자크의 배들이 해안까지 돌파하면 모든 게 헛수고가 되고 말 거야!";
 			link.l1 = "그래, 알아. 젠장할 놈!";
@@ -1323,7 +1315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Danielle_2":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "Charles, 자리에 앉아. Nathan이랑 나는 네가 정말 기뻐! Marcus, Jan 그리고 내 남편이 너를 위해 뭔가를 준비했어 - 하지만 선물은 나중이야. 우선, 축하하고 행복을 빌어줄게! 네 사랑은 정말 대단한 사람이야! 그런데 말이야, Martinique에서 그녀에게 흰 드레스 입히는 데 성공하지는 못했지?";
 			link.l1 = "고마워, 대니. 그래, 그 드레스 사건은 꽤 웃겼지 – 우리 결혼식이 상류 사회에서 온갖 스캔들 소문을 불러일으켰을 거라고 확신해. 모두가 예의상 못 본 척, 아무 일도 없는 척했지. 예의라는 게 다 그렇지 뭐 – 하지만 나는 소문 따위 신경 안 써. 내가 그녀를 사랑한다는 게 가장 중요한 거니까.";
 			link.l1.go = "Danielle_3";
@@ -1338,7 +1330,7 @@ void ProcessDialogEvent()
 		case "Danielle_4":
 			DialogExit();
 			npchar.dialog.currentnode = "Danielle_4_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Danielle_4_1":
@@ -1537,7 +1529,7 @@ void ProcessDialogEvent()
 		
 		// Додсон
 		case "Dodson":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "찰스, 네 결혼 때문에 얼마나 많은 여자애들 마음이 부서졌는지 상상이나 해 봤어? 그래, 군도에 있는 여자애들 절반은 네 결혼식 끝나고 슬퍼했을 거다, 하하!";
 			link.l1 = "어쩔 수 없지 - 난 한 명만 필요했고, 그 애를 얻었으니까. 하지만 아직 여자애들이 속상해할 때는 아니야, 왜냐면 아직도 너, 스티븐이 있으니까.";
 			link.l1.go = "Dodson_1";
@@ -1552,7 +1544,7 @@ void ProcessDialogEvent()
 		case "Dodson_2":
 			DialogExit();
 			npchar.dialog.currentnode = "Dodson_2_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Dodson_2_1":
@@ -1563,7 +1555,7 @@ void ProcessDialogEvent()
 		
 		// Венсан
 		case "Vensan":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "찰스, 너 이번 결혼으로 얼마나 많은 여자애들 마음을 아프게 했는지 상상이나 해 봤어? 그래, 군도에 있는 여자애들 절반은 네 결혼식 끝나고 울었을 거다, 하하!";
 			link.l1 = "어쩌겠어 - 난 한 명만 필요했고, 그 애를 얻었지. 하지만 아직 여자애들이 속상해할 때는 아니야, 왜냐면 아직 너, 베르나르가 있으니까.";
 			link.l1.go = "Vensan_1";
@@ -1578,7 +1570,7 @@ void ProcessDialogEvent()
 		case "Vensan_2":
 			DialogExit();
 			npchar.dialog.currentnode = "Vensan_2_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Vensan_2_1":
@@ -1588,7 +1580,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Vensan_3":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "하, Charles, 너도 이제 결혼해서 재미없는 놈이 됐구나, 우리 옛날 Nathan처럼! 그 난잡한 연애질도 다 옛날일이지, 응? 이제 제대로 된 가장이네!";
 			link.l1 = "기다려, 베르나르! 내 아내는 집안 폐허 창가에 앉아 따분해할 여자가 아니야! 달라질 건 여기서부터 퀴라소까지 창녀들 지갑이 더 두둑해질 뿐이지!";
 			link.l1.go = "Vensan_4";
@@ -1603,7 +1595,7 @@ void ProcessDialogEvent()
 		case "Vensan_5":
 			DialogExit();
 			npchar.dialog.currentnode = "Vensan_5_1";
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Vensan_5_1":
@@ -1633,7 +1625,7 @@ void ProcessDialogEvent()
 
 		// Джино
 		case "Jino":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "선장님, 이 경사스러운 날에 진심으로 축하드립니다. 사랑하는 분과 함께 행복하시고 서로 아끼며 살아가시길 바랍니다!";
 			link.l1 = "고마워, 지노. 와 주기로 해서 기쁘다! 이곳의... 분위기가 불편하지 않았으면 좋겠는데?";
 			link.l1.go = "Jino_1";
@@ -1688,7 +1680,7 @@ void ProcessDialogEvent()
 					}
 				}
 			}
-			else if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			else if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Jino_3_1":
@@ -1754,7 +1746,7 @@ void ProcessDialogEvent()
 		
 		// Лонгвэй
 		case "Longway":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "'이국땅에 홀로 남아, 이방인인 듯한 기분으로, 이렇게 밝은 축제날에 더욱더 내 가족이 그리워진다'";
 			link.l1 = "Longway, 네가 말재주가 그렇게 뛰어난 줄은 몰랐어!";
 			link.l1.go = "Longway_1";
@@ -1808,7 +1800,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 			}
 		break;
 		
@@ -1820,7 +1812,7 @@ void ProcessDialogEvent()
 		
 		// Книппель
 		case "Knippel":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
 			{
 				dialog.text = "쇄탄을 쏴라! 우리 모두가 너를 축하한다! 발사는 어땠어?";
@@ -1893,7 +1885,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 			}
 		break;
 		
@@ -1905,7 +1897,7 @@ void ProcessDialogEvent()
 		
 		// Тонзаг
 		case "Tonzag":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "나는 한 번도 생각 못 했소, 선장님, 당신이 결혼하는 걸 보게 될 줄은. 우리가 택한 길은 보통 외로운 길 끝에 쓸쓸한 무덤으로 이어지니까. 내 기억 속에서 그걸 벗어난 사람은 당신이 처음이오. 이건 한 잔 더 올릴 만한 일 아니겠소?";
 			link.l1 = "이게 끝이야, 친구! 그리고 정말로, 내 인생에서 이 부분이 지나가서 기쁘다. 건배!";
 			link.l1.go = "Tonzag_1";
@@ -1959,7 +1951,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 			}
 		break;
 		
@@ -1971,7 +1963,7 @@ void ProcessDialogEvent()
 		
 		// Бейкер
 		case "Baker":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count)+1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count)+1;
 			dialog.text = "여기 우리 선장님 오셨네! 축하해, 너랑 네 아내 정말 잘 어울리는 한 쌍이야! 두 분 오래오래 행복하게 사시길 바라!";
 			link.l1 = "감사합니다, Raymond.";
 			link.l1.go = "Baker_1";
@@ -2006,7 +1998,7 @@ void ProcessDialogEvent()
 			}
 			else 
 			{
-				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+				if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 			}
 		break;
 		
@@ -2257,7 +2249,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "waitress_6":
-			if (sti(Pchar.money) >= 20000) AddMoneyToCharacter(pchar, -20000); 
+			if (int(Pchar.money) >= 20000) AddMoneyToCharacter(pchar, -20000);
 			dialog.text = "아니, 아니요, 선장님, 잠깐만요! 설득당했어요. 삼촌이 화내지 않게 뭔가 생각해볼게요. 안녕히 가세요! 그리고 먼 평원에서 온 나의 준마여, 너에게도 작별을! 다음에 오면 꼭 다시 찾아와요...";
 			link.l1 = "그래, 맞아. 동의해서 다행이군. 집에 가, 이쁜이.";
 			link.l1.go = "waitress_7";
@@ -2312,7 +2304,7 @@ void ProcessDialogEvent()
 		
 		// босс Ле Франсуа
 		case "JanDavid":
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+			if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("미쳤어? 도살자라도 되고 싶었던 거야? 모든 해적들이 너한테 화났으니, 친구야, 여기서 빨리 떠나는 게 좋을 거다.","이봐, 친구, 미친 거 아니냐. 손 좀 풀어보고 싶었어? 기분 나쁘게 듣지 마, 여기서 네가 할 일은 없어. 꺼져!");
 				link.l1 = RandPhraseSimple("들어봐, 내가 모든 걸 바로잡고 싶어...","문제를 해결하는 데 도와줘...");
@@ -2332,7 +2324,7 @@ void ProcessDialogEvent()
 					dialog.text = TimeGreeting()+" 보스. 르 프랑수아는 언제나처럼 아무 문제 없어. 왜 오신 거야? 뭔가 도와줄 일이라도 있어?";
 					link.l1 = "그냥 어떻게 지내나 들러봤어.";
 					link.l1.go = "JanDavid_1";
-					if (sti(pchar.questTemp.LongHappy.BaronMoney) > 0)
+					if (int(pchar.questTemp.LongHappy.BaronMoney) > 0)
 					{
 						link.l2 = "내 몫은 어쩔 건데?";
 						link.l2.go = "JanDavid_5";
@@ -2375,13 +2367,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JanDavid_5":
-			dialog.text = "기다리고 있었습니다, 보스. 그동안 당신을 위해 우리가 모아 두었소\n "+FindRussianMoneyString(sti(pchar.questTemp.LongHappy.BaronMoney))+". 가져가.";
+			dialog.text = "기다리고 있었습니다, 보스. 그동안 당신을 위해 우리가 모아 두었소\n "+FindRussianMoneyString(int(pchar.questTemp.LongHappy.BaronMoney))+". 가져가.";
 			link.l1 = "하, 나쁘지 않군. 잘했어, Jean.";
 			link.l1.go = "JanDavid_6";
 		break;
 		
 		case "JanDavid_6":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.LongHappy.BaronMoney));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.LongHappy.BaronMoney));
 			pchar.questTemp.LongHappy.BaronMoney = 0;
 			dialog.text = "최선을 다하겠습니다, 보스. 다음 달이나 원하실 때 언제든 다시 오십시오 - 당신의 돈은 저에게 맡기면 안전합니다.";
 			link.l1 = "좋아, 또 보자, Jean.";
@@ -2390,7 +2382,7 @@ void ProcessDialogEvent()
 		
 		case "pirate_town":
              dialog.text = "문제를 해결하라고? 네가 무슨 짓을 저질렀는지 알기나 해?\n어쨌든, 백만 페소를 가져와. 그러면 내가 녀석들을 설득해서 네 짓을 잊게 해주지. 그게 싫으면 지옥이나 가.";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "좋아, 돈 낼 준비 됐어.";
 				link.l1.go = "pirate_town_pay";

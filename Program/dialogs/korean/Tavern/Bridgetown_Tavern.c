@@ -49,10 +49,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "고맙다, 친구. 좋아... 앉을 자리를 좀 찾아볼게.";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-12");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 				AddQuestRecord("Holl_Gambit", "2-6");
 				pchar.questTemp.HWIC.Eng = "SeekVanBerg";
@@ -87,7 +87,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//Голландский гамбит /против всех/
 		case "Tonzag_check"://начинаем проверять нашего ГГ по всем статьям
-			if(sti(pchar.reputation.nobility) > 48)//высокая репа
+			if(int(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
 				Notification_Reputation(false, 48, "high");
@@ -289,7 +289,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
 			SetFunctionTimerCondition("FleetwoodJournalOver", 0, 0, 11, false);//таймер
 			pchar.quest.Fleetwood_Journal.win_condition.l1 = "Timer";
-			pchar.quest.Fleetwood_Journal.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Fleetwood_Journal.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 9);
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 9);
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 9);

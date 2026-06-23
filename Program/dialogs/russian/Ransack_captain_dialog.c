@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear() + "Я Ваш пленник, " + GetAddress_Form(NPChar) + ". Но должен сказать, что " + NationNameNominative(sti(NPChar.nation)) + " никогда не выкупает своих -  каждый сам за себя.";
+				dialog.text = RandSwear() + "Я Ваш пленник, " + GetAddress_Form(NPChar) + ". Но должен сказать, что " + NationNameNominative(int(NPChar.nation)) + " никогда не выкупает своих -  каждый сам за себя.";
 				link.l1 = "Н-да... На тебе не заработать, только если сдать тебя как преступника в каком-нибудь порту за выкуп.";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear() + "Я ваш пленник, " + GetAddress_Form(NPChar) + ". " + NationNameNominative(sti(NPChar.nation)) + " заплатит хорошую сумму за мою свободу.";
+				dialog.text = RandSwear() + "Я ваш пленник, " + GetAddress_Form(NPChar) + ". " + NationNameNominative(int(NPChar.nation)) + " заплатит хорошую сумму за мою свободу.";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "Послушайте, в морском деле вы дока, а мне нужны опытные моряки. Не желаете послужить под моим началом?";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "наводка"
 						dialog.text = RandPhraseSimple("Капитан, не сочтите за дерзость, не будет ли мне позволено предложить довольно выгодный вариант моего освобождения?",
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "Капитан, отпустили бы вы меня по-добру, по-здорову. Чего с меня взять? Я ведь не от доброй жизни в разбой подался - ничему больше и не обучен. Думал, деньжат на старость скопить, а вышло-то вон как.";
 					if (FindFreeRandomOfficer() > 0)
@@ -157,9 +157,9 @@ void ProcessDialogEvent()
 							RandPhraseSimple("Вы мой пленник, и я вправе поступить с вами, как сочту нужным, не учитывая ни вашего мнения, ни желания.",
 							"Вы  капитан военного судна и знали на что идёте. Нечего теперь из себя святого представлять."));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "Слушай, ты неплохой боец, а мне как раз нужны отчаянные головорезы. Не желаешь послужить у меня офицером?";
 								link.l3.go = "free_to_officer";
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                         	ReleasePrisoner(offref); // освободили пленника
 							LAi_SetWarriorType(offref);
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Хорошо. Этого достаточно. Теперь к делу - в " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + " живёт богатый купец " + NPChar.Hold_GenQuest.Name + ". " +  // belamour gen
-				"Он сколотил своё немалое состояние тем, что на судне '" + NPChar.Hold_GenQuest.ShipName + "' возит " + GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + " маршрутом " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + " - " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) +". " + 
+				"Он сколотил своё немалое состояние тем, что на судне '" + NPChar.Hold_GenQuest.ShipName + "' возит " + GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + " маршрутом " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + " - " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) +". " +
 				"Когда партия товара слишком велика для его трюма, он нанимает эскорт. " + sTmp + " Уверен, что эти сведения стоят для вас куда больше, чем свобода одного пленного.";
 			link.l1 = "Не думаю, что они могут быть для меня полезны. Я не стану охотиться на мирных торговцев.";	
 			link.l1.go = "free_tip_off_0";
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);

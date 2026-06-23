@@ -693,7 +693,7 @@ void ProcessDialogEvent()
 			
 			for (i=1; i<=5; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload2");
 				LAi_SetActorType(sld);
 				LAi_ActorFollow(sld, pchar, "", -1);
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
 			
 			for (i=6; i<=10; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload2");
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -923,7 +923,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_LongwayRazgovorOProshlom_6":
 			dialog.text = "I did. The thief was... Longway. He's very sorry, Lord Captain. Back then, he didn't know if he could fully trust you.";
-			if (sti(pchar.reputation.nobility) <= 60)
+			if (int(pchar.reputation.nobility) <= 60)
 			{
 				link.l1 = "You talk about friendship, but you steal from me behind my back? This is the first and last time, Longway. Do you understand?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
@@ -1522,7 +1522,7 @@ void ProcessDialogEvent()
 		case "PZ_Batavia_BitvaResidensia_AntoniOneDimen_6":
 			DialogExit();
 			
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_Sepp", "mercen_26", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_Sepp", "mercen_26", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 			sld.name = "Joep";
 			sld.lastname = "van der Vink";
 			GiveItem2Character(sld, "topor_04");
@@ -2615,7 +2615,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Helena_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "My captain, is everything well? I came as soon as Longway said you needed me.";
 				link.l1 = "I'm just trying to piece things together. Do you remember the name of that brig we saw off the island?";
@@ -2677,7 +2677,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_Helena_5":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "I've learned everything. Was everything alright while I was gone, my captain?";
 				link.l1 = "Yes, I'm fine, thank you, Helen. Tell me.";
@@ -2744,7 +2744,7 @@ void ProcessDialogEvent()
 			PChar.quest.PZ_Banten_PlyazhKapster.win_condition = "PZ_Banten_PlyazhKapster";
 			
 			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1 = "Timer";
-			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1.date.hour = sti(GetTime() + 7);
+			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1.date.hour = int(GetTime() + 7);
 			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			PChar.quest.PZ_Banten_PlyazhKapster_Proval.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -2832,7 +2832,7 @@ void ProcessDialogEvent()
 			
 			for (i=1; i<=4; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_Neznakomets_Bandit_"+i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_Neznakomets_Bandit_"+i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
 				ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload2");
@@ -3516,7 +3516,7 @@ void ProcessDialogEvent()
 			dialog.text = "Run. Somewhere Levasseur's men can't reach me. Change my name. Disguise myself...";
 			link.l1 = "I hope you succeed. I wish you all the best, Annabel.";
 			link.l1.go = "PZ_AnabelleLutter17";
-			if (sti(pchar.Money) >= 10000)
+			if (int(pchar.Money) >= 10000)
 			{
 				link.l2 = "You'll need money to arrange a passage. Take this. There are ten thousand pesos here.";
 				link.l2.go = "PZ_AnabelleLutter17_Peso";
@@ -3798,7 +3798,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_Longway_62";
 			
 			//заранее создаём заглушку для корабля
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_ShipStasis", "citiz_46", "man", "man", sti(pchar.rank), PIRATE, -1, false, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_ShipStasis", "citiz_46", "man", "man", int(pchar.rank), PIRATE, -1, false, "quest"));
 			SetSPECIAL(sld, 1, 1, 1, 1, 1, 1, 1);
 		break;
 		
@@ -3881,7 +3881,7 @@ void ProcessDialogEvent()
 				link.l1 = "Here. Two and a half thousand doubloons. As long as you bring me van der Vink's head on a platter of solid gold, ha ha ha ha!";
 				link.l1.go = "PZ_Longway_Dublons_1";
 			}
-			if (sti(pchar.Money) >= 300000)
+			if (int(pchar.Money) >= 300000)
 			{
 				link.l2 = "I don't carry that many doubloons, Longway. And I doubt I'd even have that many on the ship - it's a pile of gold you are talking about. But pesos, sure. Three hundred thousand is just what you need.";
 				link.l2.go = "PZ_Longway_Peso_1";
@@ -3974,10 +3974,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 						{
 							//pchar.questTemp.PZ.Mayfang.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Mayfang.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Mayfang.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4100,10 +4100,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_SCHOONER_W)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_SCHOONER_W)
 						{
 							//pchar.questTemp.PZ.SchoonerW.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.SchoonerW.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.SchoonerW.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4121,10 +4121,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_BRIG)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_BRIG)
 						{
 							//pchar.questTemp.PZ.Brig.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Brig.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Brig.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4142,10 +4142,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_CORVETTE)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_CORVETTE)
 						{
 							//pchar.questTemp.PZ.Corvette.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Corvette.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Corvette.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4163,10 +4163,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_POLACRE)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_POLACRE)
 						{
 							//pchar.questTemp.PZ.Polacre.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.Polacre.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.Polacre.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4184,10 +4184,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_XebekVML)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_XebekVML)
 						{
 							//pchar.questTemp.PZ.Xebek.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Xebek.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Xebek.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4205,10 +4205,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_BRIGANTINE)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_BRIGANTINE)
 						{
 							//pchar.questTemp.PZ.Brigantine.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Brigantine.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Brigantine.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4242,10 +4242,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 						{
 							//pchar.questTemp.PZ.Mayfang.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Mayfang.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Mayfang.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4292,10 +4292,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_POLACRE_QUEST)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_POLACRE_QUEST)
 						{
 							//pchar.questTemp.PZ.Torero.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.Torero.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.Torero.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -4333,10 +4333,10 @@ void ProcessDialogEvent()
 					if (iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_ELCASADOR)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_ELCASADOR)
 						{
 							//pchar.questTemp.PZ.ElCasador.CompanionIndex = sld.Index;
-							//sld = GetCharacter(sti(pchar.questTemp.PZ.ElCasador.CompanionIndex));
+							//sld = GetCharacter(int(pchar.questTemp.PZ.ElCasador.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
@@ -5371,7 +5371,7 @@ void ProcessDialogEvent()
 			
 			for (i=1; i<=2; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_PoP_Escort_"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, -1, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_PoP_Escort_"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, -1, true, "soldier"));
 				LAi_SetActorType(sld);
 				ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload1");
 			}
@@ -5760,7 +5760,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PZ_HelenaIslaTesoro1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				// ох, какой же костыль, м-м-мать...
 				sld = characterFromId("Mary");
@@ -6765,10 +6765,6 @@ void ProcessDialogEvent()
 			dialog.text = "Longway make it quick.";
 			link.l1 = "Good.";
 			link.l1.go = "PZ_Longway_SisterDialog7_1";
-		break;
-		
-		case "PZ_ChangShin26":
-			StartInstantDialog("СhangShin", "PZ_Longway_SisterDialog7_1", "Quest\CompanionQuests\Longway.c");
 		break;
 		
 		case "PZ_Longway_SisterDialog7_1":

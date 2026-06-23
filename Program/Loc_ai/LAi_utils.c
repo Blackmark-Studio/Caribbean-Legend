@@ -1,6 +1,6 @@
 
 //Проверить ссылку на персонажа
-bool LAi_CheckCharacter(aref chr, string out)
+bool LAi_CheckCharacter(ref chr, string out)
 {
 	if(!TestRef(chr))
 	{
@@ -26,7 +26,7 @@ bool LAi_CheckCharacter(aref chr, string out)
 }
 
 //Зарядилось ли используемое персонажем огнестрельное оружие
-bool LAi_CharacterCanFire(aref chr)
+bool LAi_CharacterCanFire(ref chr)
 {
 	if(!CharUseMusket(chr))
 	{
@@ -36,7 +36,7 @@ bool LAi_CharacterCanFire(aref chr)
 			chr.chr_ai.gun.charge = 0;
 			return false;
 		}
-		if(stf(chr.chr_ai.gun.charge) >= 1.0) return true;
+		if(float(chr.chr_ai.gun.charge) >= 1.0) return true;
 	}
 	else
 	{
@@ -46,7 +46,7 @@ bool LAi_CharacterCanFire(aref chr)
 			chr.chr_ai.musket.charge = 0;
 			return false;
 		}
-		if(stf(chr.chr_ai.musket.charge) >= 1.0) return true;
+		if(float(chr.chr_ai.musket.charge) >= 1.0) return true;
 	}
 	
 	return false;
@@ -57,7 +57,7 @@ bool LAi_LocationCanFight()
 {
 	if(IsEntity(&loadedLocation) != true) return true;
 	if(CheckAttribute(loadedLocation, "noFight") != true)  return true;
-	if(sti(loadedLocation.noFight) != false) return false;
+	if(int(loadedLocation.noFight) != false) return false;
 	return true;
 }
 
@@ -101,9 +101,9 @@ string LAi_FindFarLocator(string group, float x, float y, float z)
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float dx = x - stf(loc.x);
-		float dy = y - stf(loc.y);
-		float dz = z - stf(loc.z);
+		float dx = x - float(loc.x);
+		float dy = y - float(loc.y);
+		float dz = z - float(loc.z);
 		float d = dx*dx + dy*dy + dz*dz;
 		if(j >= 0)
 		{
@@ -136,9 +136,9 @@ string LAi_FindFarFreeLocator(string group, float x, float y, float z)
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float lx = stf(loc.x);
-		float ly = stf(loc.y);
-		float lz = stf(loc.z);
+		float lx = float(loc.x);
+		float ly = float(loc.y);
+		float lz = float(loc.z);
 		if(CheckLocationPosition(loadedLocation, lx, ly, lz))
 		{
 			float dx = x - lx;
@@ -177,9 +177,9 @@ string LAi_FindNearestFreeLocator(string group, float x, float y, float z)
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float lx = stf(loc.x);
-		float ly = stf(loc.y);
-		float lz = stf(loc.z);
+		float lx = float(loc.x);
+		float ly = float(loc.y);
+		float lz = float(loc.z);
 		if(CheckLocationPosition(loadedLocation, lx, ly, lz))
 		{
 			float dx = x - lx;
@@ -217,9 +217,9 @@ string LAi_FindNearestLocator(string group, float x, float y, float z)
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float dx = x - stf(loc.x);
-		float dy = y - stf(loc.y);
-		float dz = z - stf(loc.z);
+		float dx = x - float(loc.x);
+		float dy = y - float(loc.y);
+		float dz = z - float(loc.z);
 		float d = dx*dx + dy*dy + dz*dz;
 		if(j >= 0)
 		{
@@ -255,19 +255,19 @@ string LAi_FindFarLocator2Pchar(string group)
     return LAi_FindFarLocator(group, locx, locy, locz);
 }
 //Найти ближайшего видимого персонажа в заданном радиусе
-int LAi_FindNearestCharacter(aref chr, float radius)
+int LAi_FindNearestCharacter(ref chr, float radius)
 {
 	int res = FindNearCharacters(chr, radius, -1.0, -1.0, 0.01, false, true);
 	if(res <= 0) return -1;
-	return sti(chrFindNearCharacters[0].index);
+	return int(chrFindNearCharacters[0].index);
 }
 
 //Найти ближайшего видимого персонажа в заданном радиусе
-int LAi_FindNearestVisCharacter(aref chr, float radius)
+int LAi_FindNearestVisCharacter(ref chr, float radius)
 {
 	int res = FindNearCharacters(chr, radius, -1.0, -1.0, 0.01, true, true);
 	if(res <= 0) return -1;
-	return sti(chrFindNearCharacters[0].index);
+	return int(chrFindNearCharacters[0].index);
 }
 
 //Получить уровень драки приведёный к 0..1
@@ -286,7 +286,7 @@ float LAi_GetCharacterFightLevel(aref character)
 }
 // boal skill -->
 //Получить уровень pistol приведёный к 0..1
-float LAi_GetCharacterGunLevel(aref character)
+float LAi_GetCharacterGunLevel(ref character)
 {
 	//pistol skill
 	float fgtlevel = 0.0;
@@ -305,13 +305,13 @@ float LAi_GetCharacterLuckLevel(aref character)
 // boal skill <--
 
 //Применить повреждение к персонажу
-void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType, bool isCritical)
+void LAi_ApplyCharacterDamage(ref chr, int dmg, string DamageType, bool isCritical)
 {
 	// временная неуязвимость
 	if(IsInvulnerable(chr))
 		return;
 	
-	float damage    = MakeFloat(dmg);
+	float damage    = float(dmg);
 	bool  bIsOfficer = false;
 	//Офицерам ослабляем поврежрение
 	if(CheckAttribute(chr, "chr_ai.type"))
@@ -325,8 +325,8 @@ void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType, bool isCriti
 	//Получаем текущие параметры
 	if(!CheckAttribute(chr, "chr_ai.hp"))     chr.chr_ai.hp     = LAI_DEFAULT_HP;
 	if(!CheckAttribute(chr, "chr_ai.hp_max")) chr.chr_ai.hp_max = LAI_DEFAULT_HP_MAX;
-	float maxhp = stf(chr.chr_ai.hp_max);
-	float hp    = stf(chr.chr_ai.hp);
+	float maxhp = float(chr.chr_ai.hp_max);
+	float hp    = float(chr.chr_ai.hp);
 	// отображаем урон на полоске
 	if(bDrawBars)
 		SendMessage(chr, "lfl", MSG_CHARACTER_SMOOTHDMG, hp, isCritical);
@@ -353,41 +353,41 @@ void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType, bool isCriti
 		LaunchIncasFire(chr, false);
 	}	
 
-	if(sti(pchar.index) == sti(chr.index)) 
+	if(int(pchar.index) == int(chr.index))
 	{
 		// здоровье -->
-        pchar.Health.Damg      = stf(pchar.Health.Damg) + damage;
-	    pchar.Health.weekDamg  = stf(pchar.Health.weekDamg) + damage;
-        pchar.Health.TotalDamg = stf(pchar.Health.TotalDamg) + damage;
+        pchar.Health.Damg      = float(pchar.Health.Damg) + damage;
+	    pchar.Health.weekDamg  = float(pchar.Health.weekDamg) + damage;
+        pchar.Health.TotalDamg = float(pchar.Health.TotalDamg) + damage;
 		
-		Achievment_SetStat(6, makeint(damage));
+		Achievment_SetStat(6, int(damage));
         // здоровье <--
         return;
 	}
 	if (bIsOfficer)
     {
-        chr.Health.TotalDamg = stf(chr.Health.TotalDamg) + damage; // статистика
+        chr.Health.TotalDamg = float(chr.Health.TotalDamg) + damage; // статистика
         return;
     }
 	//Напишем о нанесённом повреждении
-	if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, dmg, MakeFloat(MakeInt(hp)), MakeFloat(MakeInt(maxhp)));
+	if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, dmg, float(int(hp)), float(int(maxhp)));
 }
 
 //Убить персонажа, если закончились hp
-void LAi_CheckKillCharacter(aref chr)
+void LAi_CheckKillCharacter(ref chr)
 {
 	if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "IsDead")) return;
 	if(!CheckAttribute(chr, "chr_ai.hp")) chr.chr_ai.hp = 0.0;
 	//Проверяем
-	if(stf(chr.chr_ai.hp) < 1.0)
+	if(float(chr.chr_ai.hp) < 1.0)
 	{
 		// belamour legendary edition -->
 		//Железная воля позволяет пережить смертельное ранение 
 		if(CheckCharacterPerk(chr, "IronWill") && !IsCharacterPerkOn(chr, "IronWill"))
 		{
-			if(sti(chr.index) == nMainCharacterIndex || IsOfficer(chr)) // только офицеры и ГГ
+			if(int(chr.index) == nMainCharacterIndex || IsOfficer(chr)) // только офицеры и ГГ
 			{
-				if(sti(chr.index) == nMainCharacterIndex)
+				if(int(chr.index) == nMainCharacterIndex)
 					SetInvulnerable(chr, 0.5);
 				
 				if(ShowCharString())
@@ -431,8 +431,8 @@ void LAi_CheckKillCharacter(aref chr)
 			Notification(XI_ConvertString("OfficerWounded1") + XI_ConvertString("OfficerWounded2"), GetMessagePortrait(&chr));
 			chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr);
 			chr.OfficerImmortal = "Injury";
-			chr.Health.HP = makefloat(chr.Health.HP) - 10.0;
-			if(makefloat(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
+			chr.Health.HP = float(chr.Health.HP) - 10.0;
+			if(float(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
 			SetCharacterTask_Dead(chr);
 			CT_UpdateCashTables(&chr);
 			if(!bSeaActive)
@@ -457,7 +457,7 @@ void LAi_CheckKillCharacter(aref chr)
 		//Убиваем, если смертен
 		if(CheckAttribute(chr, "chr_ai.immortal"))
 		{
-			if(sti(chr.chr_ai.immortal) != 0)
+			if(int(chr.chr_ai.immortal) != 0)
 			{
 				chr.chr_ai.hp = 1.0;
 				return;
@@ -544,7 +544,7 @@ void LAi_CheckKillCharacter(aref chr)
 				func = "LAi_type_" + func + "_Init";
 				call func(chr);
 			}
-			if(sti(chr.index) == nMainCharacterIndex)
+			if(int(chr.index) == nMainCharacterIndex)
 			{
 				//Если убили игрока, то запретим интерфейс
 				InterfaceStates.Launched = true;
@@ -556,7 +556,7 @@ void LAi_CheckKillCharacter(aref chr)
 		{
 				if(!IsOfficer(chr)) return;
 				Dead_DelLoginedCharacter(chr);//не обыскивается
-				ref rOff = GetCharacter(NPC_GenerateCharacter("Clon", "none", chr.sex, chr.model.animation, 1, sti(chr.nation), -1, false, "officer"));
+				ref rOff = GetCharacter(NPC_GenerateCharacter("Clon", "none", chr.sex, chr.model.animation, 1, int(chr.nation), -1, false, "officer"));
 				ChangeAttributesFromCharacter(rOff, chr, true);
 				rOff.id = chr.id;
 				chr.id = "Dead_" + chr.index; // mitrokosta чтоб не перекрывались id мертвяка и живого
@@ -564,7 +564,7 @@ void LAi_CheckKillCharacter(aref chr)
 				if (CheckAttribute(chr, "CompanionDisable")) { // mitrokosta общий фикс полубессмертных
 					rOff.CompanionDisable = chr.CompanionDisable;
 				}
-				int ihpm = sti(rOff.chr.chr_ai.hp_max)-40;
+				int ihpm = int(rOff.chr.chr_ai.hp_max)-40;
 				if (ihpm < 40) ihpm = 40;
 				LAi_SetHP(rOff, ihpm, ihpm); // штраф в НР
 				LAi_SetCurHPMax(rOff);
@@ -584,7 +584,7 @@ void LAi_CheckKillCharacter(aref chr)
 	else
 	{
 		if(CheckAttribute(chr,"DamageFromShot"))
-			DeleteAttribute(chr,"DamageFromShot"));
+			DeleteAttribute(chr,"DamageFromShot");
 	}
 }
 
@@ -724,7 +724,7 @@ string LAi_FindNPCLocator(string group)
 	if(GetCharacterPos(MnChar, &posX, &posY, &posZ))
 	{
 		// boal -->
-		if (sti(MnChar.GenQuestFort.FarLocator) == true)
+		if (int(MnChar.GenQuestFort.FarLocator) == true)
 		{
 			locator = LAi_FindFarFreeLocator(group, posX, posY, posZ);
 		}
@@ -783,7 +783,7 @@ void LAi_QuestDelayProcess(float dltTime)
 	for(int i = 0; i < num; i++)
 	{
 		atr = GetAttributeName(GetAttributeN(&lai_questdelays, i));
-		lai_questdelays.(atr) = stf(lai_questdelays.(atr)) - dltTime;
+		lai_questdelays.(atr) = float(lai_questdelays.(atr)) - dltTime;
 	}
 	//Проверяем исполнение и вызываем обработку
 	for(i = 0; i < num; i++)
@@ -794,7 +794,7 @@ void LAi_QuestDelayProcess(float dltTime)
 			Trace("LAi_QuestDelayProcess -> invalide attibute field: root!!!");
 			continue;
 		}
-		float time = stf(lai_questdelays.(atr));
+		float time = float(lai_questdelays.(atr));
 		if (time <= 0)
 		{
 			string quest = lai_questdelays.(atr).quest;
@@ -814,13 +814,13 @@ void LAi_QuestDelayProcess(float dltTime)
 	}
 }
 
-void LAi_ChangeReputation(aref chr, int repPoints)
+void LAi_ChangeReputation(ref chr, int repPoints)
 {
 	if(chr.reputation != "None")
 	{
 		if(chr.reputation != "")
 		{
-			int reput = sti(chr.reputation) + repPoints;
+			int reput = int(chr.reputation) + repPoints;
 			if(reput < REPUTATION_MIN) reput = REPUTATION_MIN;
 			if(reput > REPUTATION_MAX) reput = REPUTATION_MAX;
 			chr.reputation = reput;
@@ -829,12 +829,12 @@ void LAi_ChangeReputation(aref chr, int repPoints)
 
 }
 
-void LAi_CheckCharacterID(aref chr)
+void LAi_CheckCharacterID(ref chr)
 {
 	SendMessage(chr, "ss", "CheckID", chr.id);
 }
 
-void LAi_SetDefaultStayAnimation(aref chr)
+void LAi_SetDefaultStayAnimation(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -848,7 +848,7 @@ void LAi_SetDefaultStayAnimation(aref chr)
 	}
 }
 
-void LAi_SetDefaultDead(aref chr)
+void LAi_SetDefaultDead(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -858,7 +858,7 @@ void LAi_SetDefaultDead(aref chr)
 	}
 }
 
-void LAi_SetAfraidDead(aref chr)
+void LAi_SetAfraidDead(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -868,7 +868,7 @@ void LAi_SetAfraidDead(aref chr)
 	}
 }
 
-void LAi_SetDefaultSitAnimation(aref chr)
+void LAi_SetDefaultSitAnimation(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -884,7 +884,7 @@ void LAi_SetDefaultSitAnimation(aref chr)
 	}
 }
 
-void LAi_SetHuberSitAnimation(aref chr)
+void LAi_SetHuberSitAnimation(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -895,7 +895,7 @@ void LAi_SetHuberSitAnimation(aref chr)
 	}
 }
 
-void LAi_SetDefaultLayAnimation(aref chr)
+void LAi_SetDefaultLayAnimation(ref chr)
 {
 	if(IsEntity(&chr))
 	{
@@ -1022,7 +1022,7 @@ void LAi_FadeEx(float f_start, float f_duration, float f_end, string questFadeOu
 
 void LAi_FadeEx_end(string qName)
 {
-	float f_end = pchar.FadeEx.End;
+	float f_end = pchar.FadeEx.End$float(0.0);
 	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, f_end, true);
 }
 
@@ -1047,15 +1047,15 @@ void FadeDelay()    // относится к методу выше.
 }
 
 //Есть ли оружие у персонада
-bool LAi_IsSetBale(aref chr)
+bool LAi_IsSetBale(ref chr)
 {
 	return (SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "IsSetBalde") != 0);
 }
 
 //В режиме боя
-bool LAi_IsFightMode(aref chr)
+bool LAi_IsFightMode(ref chr)
 {
-	if (bLandInterfaceStart && CheckAttribute(chr, "equip.blade"))
+	if (bLandInterfaceStart && "equip.blade" in chr)
     {
         return (SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE);
     }
@@ -1079,23 +1079,23 @@ bool LAi_GetSGMode()
 	return globalSGMode;
 }
 
-bool LAi_IsBottleWork(aref chr)
+bool LAi_IsBottleWork(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.hp_bottle"))
 	{
-		if(stf(chr.chr_ai.hp_bottle) > 0.0) return true;
+		if(float(chr.chr_ai.hp_bottle) > 0.0) return true;
 	}
 	return false;
 }
 
 //Найти в близи врагов
-bool LAi_CanNearEnemy(aref chr, float radius)
+bool LAi_CanNearEnemy(ref chr, float radius)
 {
 	int num = FindNearCharacters(chr, radius, -1.0, -1.0, 0.001, false, false);
 	if(num <= 0) return false;
 	for(int i = 0; i < num; i++)
 	{
-		int idx = sti(chrFindNearCharacters[i].index);
+		int idx = int(chrFindNearCharacters[i].index);
 		/*if(characters[idx].id == pchar.id)   // to_do boal
 		{
 			if(LAi_grp_alarmactive == false)
@@ -1111,7 +1111,7 @@ bool LAi_CanNearEnemy(aref chr, float radius)
 object	Dead_Characters[MAX_CHARS_IN_LOC];
 int     Dead_Char_num = 0;
 
-void Dead_AddLoginedCharacter(aref chr)
+void Dead_AddLoginedCharacter(ref chr)
 {
 	float   x, y, z;
 	ref     chref, rItem;
@@ -1190,9 +1190,9 @@ void Dead_AddLoginedCharacter(aref chr)
 		    else
 		    // матрос с ЧЖ <--
 		    {
-    		    if (makeint(nLuck + 0.5) > rand(15))
+    		    if (int(nLuck + 0.5) > rand(15))
     			{
-    				chref.Money = rand(9) + rand(makeint(nLuck))*5 + rand(makeint(nLuck))*20;
+    				chref.Money = rand(9) + rand(int(nLuck))*5 + rand(int(nLuck))*20;
     			}
     		    // вернём саблю и пистоль -->
     		    if(CheckAttribute(chr, "equip.blade"))
@@ -1200,17 +1200,17 @@ void Dead_AddLoginedCharacter(aref chr)
 					if(rand(MOD_SKILL_ENEMY_RATE + 5) == 1 && chr.equip.blade != "unarmed") // 20% for 3+2=5
 					{
 						rItem = ItemsFromID(chr.equip.blade);
-						if(CheckAttribute(rItem,"quality") && sti(rItem.quality) < B_EXCELLENT) // ugeen --> на обычных трупах топовое оружие не даем !!!
+						if(CheckAttribute(rItem,"quality") && int(rItem.quality) < B_EXCELLENT) // ugeen --> на обычных трупах топовое оружие не даем !!!
 						{	// Даем трупу сгенеренное оружие
-							if(sti(rItem.quality) == B_POOR)
+							if(int(rItem.quality) == B_POOR)
 							{
 								AddItems(chref, GetGeneratedItem(chr.equip.blade), 1); 
 							}
-							if(sti(rItem.quality) == B_ORDINARY && sti(mchr.rank) >= 5)
+							if(int(rItem.quality) == B_ORDINARY && int(mchr.rank) >= 5)
 							{
 								AddItems(chref, GetGeneratedItem(chr.equip.blade), 1); 
 							}
-							if(sti(rItem.quality) == B_GOOD && sti(mchr.rank) >= 15)	
+							if(int(rItem.quality) == B_GOOD && int(mchr.rank) >= 15)
 							{
 								AddItems(chref, GetGeneratedItem(chr.equip.blade), 1); 
 							}
@@ -1249,10 +1249,10 @@ void Dead_AddLoginedCharacter(aref chr)
 						{
                             sBullet = LAi_GetCharacterBulletType(chr, MUSKET_ITEM_TYPE);
                             sGunPowder = LAi_GetCharacterGunpowderType(chr, MUSKET_ITEM_TYPE);
-							TakeNItems(chref, sBullet, makeint(GetCharacterItem(chr, sBullet)/2));// boal gun bullet											
+							TakeNItems(chref, sBullet, int(GetCharacterItem(chr, sBullet)/2));// boal gun bullet
 							if(sGunPowder != "")
 							{
-								AddItems(chref, sGunPowder, makeint(GetCharacterItem(chr, sGunPowder)/2)); // 21.03.09 Warship fix Порох
+								AddItems(chref, sGunPowder, int(GetCharacterItem(chr, sGunPowder)/2)); // 21.03.09 Warship fix Порох
 							}	
 						}
 					}
@@ -1284,10 +1284,10 @@ void Dead_AddLoginedCharacter(aref chr)
                         //attrName = name+".rare";
                         if (!CheckAttribute(typeRef, "rare") && MOD_BETTATESTMODE == "On") Log_Info("Error: Не найдёт RARE для предмета = "+itm.id + " тип = " + name);
 
-                        if ( rand(1000) < (((stf(typeRef.rare) + stf(typeRef.rare)*nLuck / 20.0) / makefloat(MOD_SKILL_ENEMY_RATE))*930.0))
+                        if ( rand(1000) < (((float(typeRef.rare) + float(typeRef.rare)*nLuck / 20.0) / float(MOD_SKILL_ENEMY_RATE))*930.0))
                         {
-                            value = sti(typeRef.min);
-                            value = value+rand(sti(typeRef.max) - value);
+                            value = int(typeRef.min);
+                            value = value+rand(int(typeRef.max) - value);
                             itemID = itm.id;
 							chref.items.(itemID) = value;
 							howI++;
@@ -1309,7 +1309,7 @@ void Dead_AddLoginedCharacter(aref chr)
 	    Dead_Char_num++;
 	}
 }
-void Dead_DelLoginedCharacter(aref chr)
+void Dead_DelLoginedCharacter(ref chr)
 {
 	aref arToChar;
 	aref arFromChar;
@@ -1335,8 +1335,8 @@ int Dead_FindCloseBody()
 	
     for(int i = 0; i < Dead_Char_num; i++)
 	{
-	    x1 = Dead_Characters[i].px;
-		z1 = Dead_Characters[i].pz;
+	    x1 = float(Dead_Characters[i].px);
+		z1 = float(Dead_Characters[i].pz);
 		rd = sqrt(sqr(x1 - x) + sqr(z1 - z));
 		if (rd < 1.8)
 		{
@@ -1363,13 +1363,13 @@ int Dead_FindCloseBodyExt(ref isEmpty)
 	GetCharacterPos(pchar, &x, &y, &z);
     for(int i = 0; i < Dead_Char_num; i++)
 	{
-	    x1 = Dead_Characters[i].px;
-		z1 = Dead_Characters[i].pz;
+	    x1 = float(Dead_Characters[i].px);
+		z1 = float(Dead_Characters[i].pz);
 		rd = sqrt(sqr(x1 - x) + sqr(z1 - z));
 		if (rd < 1.8)
 		{
             makearef(arItems, Dead_Characters[i].items);
-            bOk = CheckAttribute(&Dead_Characters[i], "money") && sti(Dead_Characters[i].money) > 0;
+            bOk = CheckAttribute(&Dead_Characters[i], "money") && int(Dead_Characters[i].money) > 0;
             bLoot = GetAttributesNum(arItems) > 0 || bOk;
 			if(bLoot)
 			{
@@ -1460,7 +1460,7 @@ void MakePoisonAttack(ref attack, ref enemy)
 	float poison = 0.0;
 	if(CheckAttribute(enemy, "chr_ai.poison"))
 	{
-		poison = stf(enemy.chr_ai.poison);
+		poison = float(enemy.chr_ai.poison);
 		if(poison < 1.0) poison = 1.0;
 	}
 	enemy.chr_ai.poison = poison + 30 + rand(20);
@@ -1496,9 +1496,9 @@ string LAi_FindFreeRandomLocator(string group)
 			index = index - num;
 		}
 		aref loc = GetAttributeN(grp, index);
-		float lx = stf(loc.x);
-		float ly = stf(loc.y);
-		float lz = stf(loc.z);
+		float lx = float(loc.x);
+		float ly = float(loc.y);
+		float lz = float(loc.z);
 		if(CheckLocationPosition(loadedLocation, lx, ly, lz))
 		{
 			if(loadedLocation.filespath.models == "locations\inside\tavern07\" && findsubstr(GetAttributeName(GetAttributeN(grp, index)), "sit_ground" , 0) != -1) continue;
@@ -1515,9 +1515,9 @@ bool LAi_CheckLocatorFree(string _group, string _locator)
 	if(!CheckAttribute(loadedLocation, at)) return false;
 	aref grp;
 	makearef(grp, loadedLocation.(at));
-	float lx = stf(grp.x);
-	float ly = stf(grp.y);
-	float lz = stf(grp.z);
+	float lx = float(grp.x);
+	float ly = float(grp.y);
+	float lz = float(grp.z);
 	if(CheckLocationPosition(loadedLocation, lx, ly, lz))
 	{
 		return true;
@@ -1525,7 +1525,7 @@ bool LAi_CheckLocatorFree(string _group, string _locator)
 	return false;
 }
 
-void LaunchBlood(aref chr, float addy, bool isBig, string DamageType)
+void LaunchBlood(ref chr, float addy, bool isBig, string DamageType)
 {
 	float x, y, z;
 	GetCharacterPos(chr, &x, &y, &z);
@@ -1571,7 +1571,7 @@ void LaunchBlood(aref chr, float addy, bool isBig, string DamageType)
 	}
 }
 
-void LaunchIncasFire(aref chr, bool isBig) // 280712
+void LaunchIncasFire(ref chr, bool isBig) // 280712
 {
 	float x, y, z;
 	GetCharacterPos(chr, &x, &y, &z);
@@ -1580,7 +1580,7 @@ void LaunchIncasFire(aref chr, bool isBig) // 280712
 	else CreateParticleSystem("incas_blood", x, y, z, 0,1.0,0,0);
 }
 
-void LaunchBlast(aref chr) // 280812
+void LaunchBlast(ref chr) // 280812
 {
 	float x, y, z;
 	GetCharacterPos(chr, &x, &y, &z);
@@ -1588,7 +1588,7 @@ void LaunchBlast(aref chr) // 280812
 	CreateParticleSystem("blast_inv", x, y, z, 0,1.0,0,0);
 }
 
-void LaunchBlastPellet(aref chr) // 
+void LaunchBlastPellet(ref chr) //
 {
 	float x, y, z;
 	GetCharacterPos(chr, &x, &y, &z);
@@ -1601,7 +1601,7 @@ void LaunchBlastPellet(aref chr) //
 	Play3DSound("pellet", x, y, z);
 }
 
-void LaunchBlastGrenade(aref chr) // 
+void LaunchBlastGrenade(ref chr) //
 {
 	float x, y, z;
 	GetCharacterPos(chr, &x, &y, &z);
@@ -1624,7 +1624,7 @@ void LAi_Explosion(ref chr, int damage)
 
 	for(int j = 0; j <= num; j++)	
 	{
-		int idx = sti(chrFindNearCharacters[j].index);	
+		int idx = int(chrFindNearCharacters[j].index);
 		ref findCh;
 		findCh = GetCharacter(idx);	
     
@@ -1632,7 +1632,7 @@ void LAi_Explosion(ref chr, int damage)
 		if(GetCharacterDistByChr3D(chr, findCh, &dist) && dist < 4)
 		{
 			LAi_ApplyCharacterDamage(findCh, damage, "fire", true);		
-			if (sti(LAi_GetCharacterHP(findCh)) < damage + 1) 
+			if (int(LAi_GetCharacterHP(findCh)) < damage + 1)
 			{ 
 				if(findCh.chr_ai.group != LAI_GROUP_PLAYER)  
 				{
@@ -1647,7 +1647,7 @@ void LAi_Explosion(ref chr, int damage)
 	}	
 
 	LAi_ApplyCharacterDamage(chr, damage, "fire", true);	
-	if (sti(LAi_GetCharacterHP(chr)) < damage + 1) Lai_KillCharacter(chr);
+	if (int(LAi_GetCharacterHP(chr)) < damage + 1) Lai_KillCharacter(chr);
 }
 
 //Экку Korsar - Вычисляем: Из "стокового" пиратского поселения ли персонаж?
@@ -1694,7 +1694,7 @@ bool IsInvulnerable(ref chr)
 }
 
 // Сдался, сидит на полу и не отсвечивает
-void SetSurrenderedAnimation(aref chr)
+void SetSurrenderedAnimation(ref chr)
 {
 	BeginChangeCharacterActions(chr);
 	chr.actions.idle.i1 = "Ground_sitting";

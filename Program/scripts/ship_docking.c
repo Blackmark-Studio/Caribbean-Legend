@@ -7,13 +7,13 @@ int GetPortManPrice(int Price, ref NPChar)
 	{
 		NPChar.PortManPrice = (0.06 + frnd()*0.1);
 	}
-	return makeint(Price * stf(NPChar.PortManPrice) /10 ) * 10;
+	return int(Price * float(NPChar.PortManPrice) /10 ) * 10;
 }
 
 // Расчёт цены стоянки
 int GetPortManPriceExt(ref NPChar, ref chref)
 {
-	int price = makeint( sti(RealShips[sti(chref.Ship.Type)].Price) * (7 + MOD_SKILL_ENEMY_RATE/2) * (3 + GetNationRelation2MainCharacter(sti(NPChar.nation)))/360.0 );
+	int price = int( int(RealShips[int(chref.Ship.Type)].Price) * (7 + MOD_SKILL_ENEMY_RATE/2) * (3 + GetNationRelation2MainCharacter(int(NPChar.nation)))/360.0 );
 	
 	// для высокой сложности - x2 цена
 	if (MOD_SKILL_ENEMY_RATE >= 6) price += price;
@@ -27,18 +27,18 @@ void PortmanCalculatePrices(ref NPChar, ref chref)
 	NPChar.MoneyForCrew = GetSalaryForShip(&chref);
 
 	// В Белизе скидка 50%
-	if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && NPChar.id == "Beliz_portman" && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+	if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && NPChar.id == "Beliz_portman" && !CheckAttribute(NPChar, "DontNullShipBeliz") && int(RealShips[int(chref.Ship.Type)].Class) > 1)
 	{
-		NPChar.MoneyForShip = sti(NPChar.MoneyForShip)/2;
+		NPChar.MoneyForShip = int(NPChar.MoneyForShip)/2;
 	}
 }
 
 // Оставляем корабль в порту с командой и офицером
 void LeaveShipInPortWithCrew(ref NPChar, ref chref)
 {
-	int summ = makeint(NPChar.MoneyForShip) + makeint(NPChar.MoneyForCrew);
+	int summ = int(NPChar.MoneyForShip) + int(NPChar.MoneyForCrew);
 	AddMoneyToCharacter(pchar, -summ);
-	chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+	chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 	chref.ShipInStockMan = NPChar.id;
 	chref.ShipInStockMan.MoneyForShip = summ;
 	// chref.ShipInStockMan.MoneyForCrew = NPChar.MoneyForCrew;
@@ -49,10 +49,10 @@ void LeaveShipInPortWithCrew(ref NPChar, ref chref)
 	chref.location = "";
 	chref.location.group = "";
 	chref.location.locator = "";
-	NPChar.Portman	= sti(NPChar.Portman) + 1;
-	pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+	NPChar.Portman	= int(NPChar.Portman) + 1;
+	pchar.ShipInStock = int(pchar.ShipInStock) + 1;
 
-	if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+	if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && int(RealShips[int(chref.Ship.Type)].Class) > 1)
 	{
 		chref.DontNullShip = true;
 		NPChar.DontNullShipBeliz = true;
@@ -66,7 +66,7 @@ void LeaveShipInPortWithCrew(ref NPChar, ref chref)
 void LeaveShipInPort(ref NPChar, ref chref)
 {
 	aref arTo, arFrom;
-	AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
+	AddMoneyToCharacter(pchar, -int(NPChar.MoneyForShip));
 	chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
 	chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
 	chref.loyality = MAX_LOYALITY; 
@@ -81,7 +81,7 @@ void LeaveShipInPort(ref NPChar, ref chref)
 	chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
 	SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
 
-	ref compref = GetCharacter(sti(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
+	ref compref = GetCharacter(int(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
 	compref.Ship.Crew.Quantity  = 0;
 	RemoveCharacterCompanion(pchar, compref);
 	makearef(arTo, chref.ship);
@@ -96,10 +96,10 @@ void LeaveShipInPort(ref NPChar, ref chref)
 	chref.location = "";
 	chref.location.group = "";
 	chref.location.locator = "";
-	NPChar.Portman	= sti(NPChar.Portman) + 1;
-	pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+	NPChar.Portman	= int(NPChar.Portman) + 1;
+	pchar.ShipInStock = int(pchar.ShipInStock) + 1;
 
-	if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
+	if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && int(RealShips[int(chref.Ship.Type)].Class) > 1)
 	{
 		chref.DontNullShip = true;
 		NPChar.DontNullShipBeliz = true;
@@ -109,7 +109,7 @@ void LeaveShipInPort(ref NPChar, ref chref)
 // Оставляем корабль на базе
 void LeaveShipIslaMona(ref NPChar)
 {
-	ref chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+	ref chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 	chref.ShipInStockMan = NPChar.id;
 	chref.ShipInStockMan.MoneyForShip = 0;
 	chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
@@ -118,14 +118,14 @@ void LeaveShipIslaMona(ref NPChar)
 	chref.location = "";
 	chref.location.group = "";
 	chref.location.locator = "";
-	if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
+	if(int(RealShips[int(chref.Ship.Type)].Class) < 2)
 	{
 		npchar.FstClassInHarbour = 1;
 	}
-	npchar.portman = sti(npchar.portman)+1;
-	pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+	npchar.portman = int(npchar.portman)+1;
+	pchar.ShipInStock = int(pchar.ShipInStock)+1;
 	ref colony = GetColonyByIndex(FindColony(loadedLocation.fastreload));
-	colony.Ship.crew.quantity = sti(colony.Ship.crew.quantity) + sti(chref.Ship.Crew.Quantity);
+	colony.Ship.crew.quantity = int(colony.Ship.crew.quantity) + int(chref.Ship.Crew.Quantity);
 	chref.Ship.Crew.Quantity = 0;
 }
 
@@ -155,7 +155,7 @@ void UpdateCrewInDockedShips()
 	for (int i=0; i < GetAttributesNum(&ships); i++)
 	{
 		aref capAttr = GetAttributeN(&ships, i);
-		captain = GetCharacter(sti(GetAttributeValue(&capAttr)));
+		captain = GetCharacter(int(GetAttributeValue(&capAttr)));
 		if (GetNpcQuestPastDayParam(&captain, "DockedShips") < 29 && CheckAttribute(&captain, "DockedShips.control_year")) continue;
 		SaveCurrentNpcQuestDateParam(&captain, "DockedShips");
 
@@ -167,8 +167,8 @@ void UpdateCrewInDockedShips()
 			continue;
 		}
 
-		float mtp = 0.85 + makefloat(rand(10)) * 0.01; // от 5 до 15% уходит
-		captain.Ship.Crew.Quantity = func_max(GetMinCrewQuantity(&captain), makeint(makefloat(sti(captain.Ship.Crew.Quantity)) * mtp + 0.5));
+		float mtp = 0.85 + float(rand(10)) * 0.01; // от 5 до 15% уходит
+		captain.Ship.Crew.Quantity = func_max(GetMinCrewQuantity(&captain), int(float(int(captain.Ship.Crew.Quantity)) * mtp + 0.5));
 		captain.ShipInStockMan.MoneyForCrew = GetSalaryForShip(&captain);
 	}
 }

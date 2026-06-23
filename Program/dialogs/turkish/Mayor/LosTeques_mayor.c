@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "Malikanemde düşman var! Alarm!!!";
 				link.l1 = "Kahretsin!";

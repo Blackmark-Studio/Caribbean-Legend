@@ -12,7 +12,7 @@ float GetItemsWeight(ref _chref)
 	{
 		return GetItemsWeightEx(&_chref);
 	}
-	return stf(_chref.ItemsWeight);
+	return float(_chref.ItemsWeight);
 }
 
  // Штраф перевеса, от -1 до -n при 200% перегрузе
@@ -22,7 +22,7 @@ int GetWeightSkillImpact(ref chr)
 	if (fOverload <= 1) return 0;
 
 	fOverload = fClamp(1, 2, fOverload);
-	int result = makeint((-OVERLOAD_MAX_SKILL_IMPACT * (fOverload-1)) - 0.5);
+	int result = int((-OVERLOAD_MAX_SKILL_IMPACT * (fOverload-1)) - 0.5);
 	return func_min(-1, result);
 }
 
@@ -38,7 +38,7 @@ float GetItemsWeightEx(ref chr)
 		makeref(itm,Items[j]);
 		if(!CheckAttribute(itm, "ID")) continue;
 		itemID = itm.id;
-		if (CheckAttribute(chr, "items."+itemID)) Amount += sti(chr.items.(itemID))*stf(itm.Weight);
+		if (CheckAttribute(chr, "items."+itemID)) Amount += int(chr.items.(itemID))*float(itm.Weight);
 	}
 	chr.ItemsWeight = Amount; // оптимицация тормозов в бою на море
 	return Amount;

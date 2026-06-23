@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_2")
 			{
-				if(sti(pchar.rank) < 10)
+				if(int(pchar.rank) < 10)
 				{
 					dialog.text = LinkRandPhrase("走吧, " + GetSexPhrase("伙计","姑娘") + "。 她最终会感谢我们的, 你知道的。 ",
 											 "滚开! 让先生们找点乐子。 ",
@@ -111,7 +111,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_3")
 			{
-				if(sti(pchar.rank) < 20)
+				if(int(pchar.rank) < 20)
 				{	
 					dialog.text = "走吧, " + GetSexPhrase("好人","年轻女士") + "。 没有你我们也能解决。 ";
 					link.l1 = "我不容忍任何暴力行为! ";
@@ -138,9 +138,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3":
-			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * sti(pchar.rank);
-			dialog.text = "你应该知道她花了我们不少钱! 如果你这么高尚, 可以用" + sti(pchar.GenQuest.EncGirl.price) + "比索带走她。 " + GetSexPhrase(" 你会和她玩得很开心的, 嘿嘿... ","") + "";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
+			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * int(pchar.rank);
+			dialog.text = "你应该知道她花了我们不少钱! 如果你这么高尚, 可以用" + int(pchar.GenQuest.EncGirl.price) + "比索带走她。 " + GetSexPhrase(" 你会和她玩得很开心的, 嘿嘿... ","") + "";
+			if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.price))
 			{
 				link.l1 = RandPhraseSimple("给你钱。 我带她走。 ","别咧嘴笑了。 我要带这个女孩走。 给你钱。 ");
 				link.l1.go = "Node_4";
@@ -153,7 +153,7 @@ void ProcessDialogEvent()
 		
 		case "Node_4": // 强盗离开, 女孩留下 - 主角从强盗手中赎回了她
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.price))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.price)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 7);
 			//pchar.quest.LandEnc_RapersBadExit.over = "yes";
 			sGlobalTemp = "Saved_CangGirl";
@@ -310,12 +310,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar2":
-			pchar.GenQuest.EncGirl.BerglarSum = makeint(sti(pchar.money)/5) + 5000;
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 0)
+			pchar.GenQuest.EncGirl.BerglarSum = int(int(pchar.money)/5) + 5000;
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 0)
 			{
-				dialog.text = "不。 只需支付" + sti(pchar.GenQuest.EncGirl.BerglarSum) + "比索的 modest 金额, 就可以帮你摆脱所有麻烦。 ";
-				if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.BerglarSum))
+				dialog.text = "不。 只需支付" + int(pchar.GenQuest.EncGirl.BerglarSum) + "比索的 modest 金额, 就可以帮你摆脱所有麻烦。 ";
+				if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.BerglarSum))
 				{
 					link.l1 = "好吧, 如今高尚的行为确实有点昂贵。 好吧, 拿去吧... ";
 					link.l1.go = "EncGirl_Berglar3";
@@ -334,7 +334,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar3":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.BerglarSum)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.BerglarSum)));
 			dialog.text = "很好。 滚吧。 ";
 			link.l1 = "祝你好运。 ";
 			link.l1.go = "exit";

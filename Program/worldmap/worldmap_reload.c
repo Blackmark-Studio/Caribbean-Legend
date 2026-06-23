@@ -43,7 +43,7 @@ void wdmReloadToSea()
 	//Удаляем атрибуты выделенных энкаунтеров
 	worldMap.deleteUpdate = "";
 	
-	if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType) // не в шторме, не в бою
+	if (int(wdmLoginToSea.storm) == 0 && !isShipEncounterType) // не в шторме, не в бою
 		MapToSea_CheckAutoSave();
 	else
 		WdmReloadStart(isShipEncounterType);
@@ -80,12 +80,12 @@ void WdmReloadStart(bool isShipEncounterType)
 	string imageName = "loading\sea_0" + rand(2) + ".tga";
 	if(isShipEncounterType)
 	{
-		imageName = RandPhraseSimple("loading\battle.tga", "loading\shipcannon.tga"));
+		imageName = RandPhraseSimple("loading\battle.tga", "loading\shipcannon.tga");
 	}
-	if(MakeInt(wdmLoginToSea.storm) != 0)
+	if(int(wdmLoginToSea.storm) != 0)
 	{
 		imageName = "loading\Storm.tga";
-		/*if(MakeInt(wdmLoginToSea.tornado) != 0)
+		/*if(int(wdmLoginToSea.tornado) != 0)
 		{
 			imageName = "loading\Twister.tga";
 		}*/ // boal пусть будет одна
@@ -147,15 +147,15 @@ void WdmEndFadeA()
 void WdmPrepareMapForAbordage(aref arPos)
 {
 	//Координаты игрока на карте
-	float psX = MakeFloat(worldMap.playerShipX);
-	float psZ = MakeFloat(worldMap.playerShipZ);
+	float psX = float(worldMap.playerShipX);
+	float psZ = float(worldMap.playerShipZ);
 	//Учитываем остров
 	if(worldMap.island != WDM_NONE_ISLAND)
 	{
 		//Island
 		wdmLoginToSea.island = worldMap.island;
-		float ix = MakeFloat(worldMap.island.x);
-		float iz = MakeFloat(worldMap.island.z);
+		float ix = float(worldMap.island.x);
+		float iz = float(worldMap.island.z);
 		int scale = WDM_MAP_TO_SEA_SCALE;
 		if (worldMap.island == "Cuba1" || worldMap.island == "Cuba2" || worldMap.island == "Beliz" || worldMap.island == "SantaCatalina"
 			|| worldMap.island == "PortoBello" || worldMap.island == "Cartahena" || worldMap.island == "Maracaibo"
@@ -183,8 +183,8 @@ void WdmPrepareMapForAbordage(aref arPos)
 void WdmAddPlayerGroup()
 {
 	//Координаты игрока на карте
-	float psX = MakeFloat(worldMap.playerShipX);
-	float psZ = MakeFloat(worldMap.playerShipZ);
+	float psX = float(worldMap.playerShipX);
+	float psZ = float(worldMap.playerShipZ);
 	//if (CheckAttribute(pchar, "questTemp.Sharlie.Sea"))//Jason
 	//{
 	//	psX = 600.524;
@@ -195,8 +195,8 @@ void WdmAddPlayerGroup()
 	{
 		//Island
 		wdmLoginToSea.island = worldMap.island;
-		float ix = MakeFloat(worldMap.island.x);
-		float iz = MakeFloat(worldMap.island.z);
+		float ix = float(worldMap.island.x);
+		float iz = float(worldMap.island.z);
 		int scale = WDM_MAP_TO_SEA_SCALE;
 		if (worldMap.island == "Cuba1" || worldMap.island == "Cuba2" || worldMap.island == "Beliz" || worldMap.island == "SantaCatalina"
 			|| worldMap.island == "PortoBello" || worldMap.island == "Cartahena" || worldMap.island == "Maracaibo" 
@@ -238,14 +238,14 @@ bool WdmAddEncountersData()
     }
 	int numEncounters = wdmGetNumberShipEncounters();
 
-    int  iPlayer = SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX);
+    int  iPlayer = int(SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX));
     int  iMapTarget = -1;
     int  iSort[2];
     bool bSort[2];
 
     if (CheckAttribute(&TEV, "iTarget"))
     {
-        iMapTarget = sti(TEV.iTarget);
+        iMapTarget = int(TEV.iTarget);
         DeleteAttribute(&TEV, "iTarget");
         if (iMapTarget >= 0)
         {
@@ -267,7 +267,7 @@ bool WdmAddEncountersData()
         {
             if (i == iPlayer) continue;
 
-            bSort[j] = SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i);
+            bSort[j] = bool(SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i));
             if (j != iMapTarget && bSort[j])
             {
                 iSort[idx] = j;
@@ -287,11 +287,11 @@ bool WdmAddEncountersData()
     }
 
 	//Позиция игрока на карте
-	float mpsX = MakeFloat(worldMap.playerShipX);
-	float mpsZ = MakeFloat(worldMap.playerShipZ);
+	float mpsX = float(worldMap.playerShipX);
+	float mpsZ = float(worldMap.playerShipZ);
 	//Позиция игрока в мире
-	float wpsX = MakeFloat(wdmLoginToSea.playerGroup.x);
-	float wpsZ = MakeFloat(wdmLoginToSea.playerGroup.z);
+	float wpsX = float(wdmLoginToSea.playerGroup.x);
+	float wpsZ = float(wdmLoginToSea.playerGroup.z);
     // Участники катавасии
     bool PickedByPlayer = false;
     string grp, attr;
@@ -314,7 +314,7 @@ bool WdmAddEncountersData()
             ref mapEncSlotRef = GetMapEncounterRef(mapEncSlot);
 
             if (BattleSecond != -1) BattleSecond = -1;
-            else BattleSecond = worldMap.encounter.attack;
+            else BattleSecond = worldMap.encounter.attack$int(0);
 
             bool bTaskLock;
 			aref encDataForSlot;
@@ -373,9 +373,9 @@ bool WdmAddEncountersData()
                     numLoadEnc++;
                 }
                 if (CheckAttribute(encDataForSlot, "NumMerchantShips"))
-                    numShips += sti(encDataForSlot.NumMerchantShips);
+                    numShips += int(encDataForSlot.NumMerchantShips);
                 if (CheckAttribute(encDataForSlot, "NumWarShips"))
-                    numShips += sti(encDataForSlot.NumWarShips);
+                    numShips += int(encDataForSlot.NumWarShips);
             }
 
 			CopyAttributes(mapEncSlotRef, encDataForSlot);
@@ -383,8 +383,8 @@ bool WdmAddEncountersData()
 			isShipEncounter = true;
 			//Описываем его параметры
 			grp = "group" + i;
-			float encX = MakeFloat(worldMap.encounter.x);
-			float encZ = MakeFloat(worldMap.encounter.z);
+			float encX = float(worldMap.encounter.x);
+			float encZ = float(worldMap.encounter.z);
 			wdmLoginToSea.encounters.(grp).x = wpsX + (encX - mpsX)*WDM_MAP_ENCOUNTERS_TO_SEA_SCALE;//WDM_MAP_TO_SEA_SCALE;
 			wdmLoginToSea.encounters.(grp).z = wpsZ + (encZ - mpsZ)*WDM_MAP_ENCOUNTERS_TO_SEA_SCALE;//WDM_MAP_TO_SEA_SCALE;
 			wdmLoginToSea.encounters.(grp).deltax = (encX - mpsX)*WDM_MAP_ENCOUNTERS_TO_SEA_SCALE;//WDM_MAP_TO_SEA_SCALE;
@@ -411,7 +411,7 @@ bool WdmAddEncountersData()
     // Катавасия
     object enemies;
     bool  playerPicked = false;
-    float pchPow = stf(PChar.Squadron.RawPower);
+    float pchPow = float(PChar.Squadron.RawPower);
     for (i = 0; i < numLoadEnc; i++)
     {
         aref CurEnc = GetAttributeN(&LoadEnc, i);
@@ -422,9 +422,9 @@ bool WdmAddEncountersData()
         int iEnemy = -1;
         float dist;
         float minD = -1.0;
-        idx  = sti(CurEnc.nation);
-		encX = stf(CurEnc.x);
-		encZ = stf(CurEnc.z);
+        idx  = int(CurEnc.nation);
+		encX = float(CurEnc.x);
+		encZ = float(CurEnc.z);
         if ((CurEnc.rel == "1") || (GetNationRelation2MainCharacter(idx) == RELATION_ENEMY && CurEnc.rel != "2"))
         {
             attr = "-2";
@@ -440,12 +440,12 @@ bool WdmAddEncountersData()
         {
             if (j == i) continue;
             aref CurEnemy = GetAttributeN(&LoadEnc, j);
-            if (GetNationRelation(idx, sti(CurEnemy.nation)) != RELATION_ENEMY) continue;
+            if (GetNationRelation(idx, int(CurEnemy.nation)) != RELATION_ENEMY) continue;
             HaveEnemy = true;
-            attr = j;
+            attr = string(j);
             enemies.(attr) = "";
             if (CurEnemy.picked == "1") continue;
-            dist = GetDistance2DRel(stf(CurEnemy.x), stf(CurEnemy.x), encX, encZ);
+            dist = GetDistance2DRel(float(CurEnemy.x), float(CurEnemy.x), encX, encZ);
             if (dist > minD && minD != -1.0) continue;
             else
             {
@@ -455,17 +455,17 @@ bool WdmAddEncountersData()
         }
         // Враги есть, но все заняты, берём случайного
         if (iEnemy == -1 && HaveEnemy)
-            iEnemy = sti(GetAttributeName(GetAttributeN(&enemies, hrand(GetAttributesNum(&enemies)-1, CurEnc.group))));
+            iEnemy = int(GetAttributeName(GetAttributeN(&enemies, hrand(GetAttributesNum(&enemies)-1, CurEnc.group))));
         // Нашёлся враг
         if (iEnemy != -1)
         {
             bool MorePower;
             if (iEnemy == -2)
-                MorePower = (stf(CurEnc.Power) > pchPow);
+                MorePower = (float(CurEnc.Power) > pchPow);
             else
             {
                 CurEnemy = GetAttributeN(&LoadEnc, iEnemy);
-                MorePower = (stf(CurEnc.Power) > stf(CurEnemy.Power));
+                MorePower = (float(CurEnc.Power) > float(CurEnemy.Power));
             }
             if (MorePower || CurEnc.type != "trade")
             {
@@ -486,14 +486,14 @@ bool WdmAddEncountersData()
                     CurEnemy.picked = "1";
                     grp = CurEnemy.group;
                 }
-                mapEncSlotRef = GetMapEncounterRef(sti(CurEnc.slot));
+                mapEncSlotRef = GetMapEncounterRef(int(CurEnc.slot));
                 mapEncSlotRef.Katavasia = "";
                 mapEncSlotRef.Task = AITASK_ATTACK;
                 mapEncSlotRef.Task.Target = grp;
                 if (iEnemy != -2 && CurEnemy.havetask == "0")
                 {
                     grp = CurEnc.group;
-                    mapEncSlotRef = GetMapEncounterRef(sti(CurEnemy.slot));
+                    mapEncSlotRef = GetMapEncounterRef(int(CurEnemy.slot));
                     if (!MorePower)
                     {   // Вызов принят
                         CurEnc.picked = "1";
@@ -520,7 +520,7 @@ bool WdmAddEncountersData()
 void WdmStormEncounter()
 {
 	wdmLoginToSea.storm = worldMap.playerInStorm;
-	if(MakeInt(wdmLoginToSea.storm) != 0)
+	if(int(wdmLoginToSea.storm) != 0)
 		wdmLoginToSea.tornado = worldMap.stormWhithTornado;
 	else
 		wdmLoginToSea.tornado = "0";

@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Contra_1":
 			dialog.text = "¿Quién eres tú, y qué demonios haces merodeando por aquí?!";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Tranquilo, camarada. Solo estoy de paso. No voy a interferir con tu... lo que sea que esto sea.";
 			}
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Contra_2":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "¡Lárgate de aquí! Si arruinas el trato espantando a un cliente, yo...";
 			}
@@ -837,7 +837,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Pyanitsa_6":
-			if (sti(pchar.basenation) == ENGLAND) sStr = "our";
+			if (int(pchar.basenation) == ENGLAND) sStr = "our";
 			else sStr = "your";
 			dialog.text = "Bueno, no es tan rápida como en sus mejores años, ¡como yo después de otro trago, ja-ja-ja! Pero un buen capitán aún puede sacar algo de esta vieja dama. Gabe también intenta no ponerla en la línea de fuego.";
 			link.l1 = "Entonces, ¿por qué no ha sido renombrado el barco? El Buque de Su Majestad Azote, tal vez, bajo "+sStr+"¿ antiguo régimen?";
@@ -930,10 +930,10 @@ void ProcessDialogEvent()
 			dialog.text = "¿Thomas, eres tú...?";
 			link.l1 = "Oh sí, Gabe. Y he venido a castigarte por lo que me hiciste aquel día.";
 			link.l1.go = "BM_IronsClone2";
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			CharacterTurnByChr(sld, CharacterFromID("IronsClone"));
 			sld = CharacterFromID("IronsClone");
-			CharacterTurnByChr(sld, &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
+			CharacterTurnByChr(sld, &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
 		break;
 		
 		case "BM_IronsClone2":
@@ -1826,7 +1826,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Necesito que dispares a algo diferente esta vez.";
 					Link.l3.go = "SetGunBullets";
@@ -1842,7 +1842,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l4 = "Cambia el tipo de munición de tu mosquete.";
 					Link.l4.go = "SetMusketBullets";
@@ -1875,7 +1875,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1887,7 +1887,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -1906,7 +1906,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1918,7 +1918,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = int(NPChar.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -2003,7 +2003,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = ""+GetSexPhrase("No deberías intentar hacer humor.","Aún tienes mucho que aprender de mí sobre el humor, muchacha. ¡Pero estás progresando!")+"";
@@ -2172,7 +2172,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Irons_salary_X3":
@@ -2180,7 +2180,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Irons_exit":

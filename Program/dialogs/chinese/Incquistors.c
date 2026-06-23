@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
 					dialog.text = RandPhraseSimple("弟兄们, 宗教裁判所里混进敌人了! ", "拉响警报, 弟兄们! ");
 					link.l1 = "确实, 宗教裁判所的敌人正在警觉... ";
@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(npchar, "protector.CheckAlways")) //摄像头守卫
 			{
-				if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{					
 					dialog.text = "拿起武器! 有间谍! 抓住他! ";
 					link.l1 = "该死! ";

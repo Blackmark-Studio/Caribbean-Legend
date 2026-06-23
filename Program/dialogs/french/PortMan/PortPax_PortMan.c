@@ -31,9 +31,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Beliz") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "Monseigneur ! Vous avez enfreint les règles de la régate et je dois vous disqualifier. Je suis désolé. Vous ne participez pas au prochain voyage. J'ai déjà préparé une dépêche pour Port-Royal.";
@@ -46,8 +46,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1+2 переход
-			dialog.text = "Allons vous enregistrer : Capitaine "+GetFullName(pchar)+", le navire est "+pchar.Ship.Name+"... Temps de régate en heures est "+sti(pchar.questTemp.Regata.SecondTransitionTime)+". C'est fait, votre résultat est enregistré, vous pouvez continuer votre chemin.";
+			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1+2 переход
+			dialog.text = "Allons vous enregistrer : Capitaine "+GetFullName(pchar)+", le navire est "+pchar.Ship.Name+"... Temps de régate en heures est "+int(pchar.questTemp.Regata.SecondTransitionTime)+". C'est fait, votre résultat est enregistré, vous pouvez continuer votre chemin.";
 			link.l1 = "Dis-moi mon rang.";
 			link.l1.go = "Regata_info";
 			}
@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp)));
-				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.SecondTransitionTime))
+				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < int(pchar.questTemp.Regata.SecondTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//имя ближайшего противника

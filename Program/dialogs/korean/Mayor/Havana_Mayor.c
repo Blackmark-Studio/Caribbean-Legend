@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 		
 		case "Slavetrader_HavanaAttack_2":
-			if (CheckAttribute(FortChref, "Fort.Mode") && sti(FortChref.Fort.Mode) != FORT_DEAD)//для особо хитрых - нефиг лезть с суши
+			if (CheckAttribute(FortChref, "Fort.Mode") && int(FortChref.Fort.Mode) != FORT_DEAD)//для особо хитрых - нефиг лезть с суши
 			{
 				dialog.text = "하! 네가 노예 때문에 여기 온 줄 알았다. 하지만 그들은 요새에 있다. 우리 증원군이 오고 있으니, 네 무리는 곧 전멸할 것이다.";
 				link.l1 = "젠장! 좋아, 여기 앉아서 꼼짝 말고 있어라... 이제 나가자! 젠장...";
@@ -57,7 +57,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "좋소, 어차피 그대가 이겼으니 우리는 그대의 폭력에 굴복할 수밖에 없구려. 하지만 그 강도질과 스페인 군함 두 척을 침몰시킨 일 이후에 정의의 심판을 피할 수 있을 거라 기대하지 마시오.";
 			link.l1 = "그렇게 뻐기다간 심장마비 올 수 있소. 여기 앉아서 꼼짝 말고 있으시오...";
 			link.l1.go = "Slavetrader_HavanaAttack_4";
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(npchar.Nation)) + "hunter", 50);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(npchar.Nation)) + "hunter", 50);
 			ChangeCharacterComplexReputation(pchar,"nobility", -8);
         break;
 		
@@ -66,7 +66,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             NextDiag.CurrentNode = "Cupture_after";
 			DialogExit();
 			SetReturn_Gover_Dialog_Exit(NPChar);
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_GrabbingTown", 1);
 			pchar.quest.Slavetrader_DieHardHavana.over = "yes";//теперь можно на карту
             SetCharacterGoods(pchar, GOOD_SLAVES, 5000+rand(500));// c перегрузом пойдёт
             Log_SetStringToLog("Slaves have been put onto your ship");
@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DialogExit();
 			SetReturn_Gover_Dialog_Exit(NPChar);
 			ChangeCharacterComplexReputation(pchar,"nobility", -8);
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_GrabbingTown", 1);
 			chrDisableReloadToLocation = false;
 			pchar.quest.Slavetrader_DieHardHavana.over = "yes";//можно на карту
 			pchar.quest.Slavetrader_HavanaAttack.over = "yes";//если из Сантьяго по суше пришёл - уберем корабли

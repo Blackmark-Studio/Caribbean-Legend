@@ -1458,7 +1458,7 @@ void InitIslands()
 		//Islands[n].ImmersionDistance = 4000;
 		//Islands[n].ImmersionDepth = 0;// ставим глубину погружения =0
 		Islands[n].maxviewdist = 5000.0; //ставим максимальную дистанцию видимости
-		Islands[n].TexturePath = "Bermudes"
+		Islands[n].TexturePath = "Bermudes";
 
 		Islands[n].reload.l1.label = "Pirates Port";
 		Islands[n].reload.l1.name = "reload_1";

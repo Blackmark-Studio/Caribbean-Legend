@@ -470,7 +470,7 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 	
 	refship.nation.england	= false;
-	refship.nation.france	= false
+	refship.nation.france	= false;
 	refship.nation.spain	= true;
 	refship.nation.holland	= false;
 	refship.nation.pirate	= true;
@@ -642,7 +642,7 @@ void InitShips()
 	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS3;
 	refShip.MaxCaliber      			= 3;
 	refShip.Weight						= Tonnes2CWT(300);
-	refShip.Capacity       				= 1650
+	refShip.Capacity       				= 1650;
 	refShip.CannonsQuantity				= 14; // 2,2,5,5     2,2,4,4
 	refShip.CannonsQuantityMin			= 12;
 	refShip.rcannon 					= 5;
@@ -650,7 +650,7 @@ void InitShips()
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;
 	refShip.MaxCrew         			= 50;
-	refShip.OptCrew         			= 40
+	refShip.OptCrew         			= 40;
 	refShip.MinCrew         			= 10;	
 	refShip.SpeedRate       			= 7.90;
 	refShip.TurnRate        			= 48.0;	
@@ -2367,7 +2367,7 @@ void InitShips()
 	refShip.CannonsQuantity		= 22;	//	4,2,6,6
 	refShip.CannonsQuantityMin	= 22;
 	refShip.rcannon 			= 8;
-	refShip.lcannon 			= 8
+	refShip.lcannon 			= 8;
 	refShip.fcannon 			= 4;
 	refShip.bcannon 			= 2;	
 	refShip.MaxCrew        		= 166;
@@ -2434,7 +2434,7 @@ void InitShips()
 	refShip.CannonsQuantity		= 26;	//	4,2,10,10
 	refShip.CannonsQuantityMin	= 26;
 	refShip.rcannon 			= 10;
-	refShip.lcannon 			= 10
+	refShip.lcannon 			= 10;
 	refShip.fcannon 			= 4;
 	refShip.bcannon 			= 2;	
 	refShip.MaxCrew        		= 228;
@@ -3498,7 +3498,7 @@ void InitShips()
 	refship.Track2.Speed	= "0.15, 0.25";
 	
 	refship.nation.england	= false;
-	refship.nation.france	= false
+	refship.nation.france	= false;
 	refship.nation.spain	= true;
 	refship.nation.holland	= false;
 	refship.nation.pirate	= true;
@@ -4236,20 +4236,20 @@ void InitShips()
 		}
 		else
 		{
-			int iClass = sti(refShip.Class);
+			int iClass = int(refShip.Class);
 			if (iClass > 7) { Trace("ERROR: Ship " + i + " class > 7"); }
 			if (iClass < 1) { Trace("ERROR: Ship " + i + " class < 1"); }
 		}
-		refship.InertiaAccelerationY = stf(refship.InertiaAccelerationY) / 6.0;
+		refship.InertiaAccelerationY = float(refship.InertiaAccelerationY) / 6.0;
 		// boal 10/11/05 пробить оптимальный экипаж
-		//refShip.OptCrew = sti(refShip.MaxCrew);
-		//refShip.MaxCrew = makeint(sti(refShip.MaxCrew) * 1.25 + 0.5); // перегруз
+		//refShip.OptCrew = int(refShip.MaxCrew);
+		//refShip.MaxCrew = int(int(refShip.MaxCrew) * 1.25 + 0.5); // перегруз
 		/// как говаривал мой папа - нахрена попу гармонь?  Приходится приводить к каноническому виду, править все буковки по файлу мне лень
 		refShip.cannonr  = refShip.rcannon;
 		refShip.cannonl  = refShip.lcannon;
 		refShip.cannonf  = refShip.fcannon;
 		refShip.cannonb  = refShip.bcannon;
         
-        //trace("name : " + refShip.name + " max : " + makeint(sti(refShip.MaxCrew) * 0.75) + " opt : " + makeint(sti(refShip.OptCrew) * 0.75) + " min : " + makeint(sti(refShip.MinCrew) * 0.75));
+        //trace("name : " + refShip.name + " max : " + int(int(refShip.MaxCrew) * 0.75) + " opt : " + int(int(refShip.OptCrew) * 0.75) + " min : " + int(int(refShip.MinCrew) * 0.75));
 	}
 }

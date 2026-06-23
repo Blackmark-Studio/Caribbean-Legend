@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -186,14 +186,14 @@ void ProcessDialogEvent()
 			link.l1 = "Zamknij się, suko!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		case "HouseWoman_2":
 			dialog.text = "Prosiłam cię, abyś opuścił nasz dom, ale ty po prostu nie chciałeś słuchać! Dość! Pomocy! Straże!";
 			link.l1 = "Zamknij się, głupia kobieto! Zwariowałaś?!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break; 
 		//--------------------------------- завсклад ---------------------------------		
 		case "SkladMan":
@@ -252,7 +252,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		
 		case "storage_rent1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "Jest dość przestronny, nawet jak na magazyn portowy. Może pomieścić, zdaje się... 50000 cetnarów ładunku. W cenie "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+"  za miesiąc mogę zapewnić Ci bezpieczne przechowywanie Twoich towarów. "+"Zapewnię Ci ochronę magazynu przez moich ludzi, ochronę towaru przed zamoczeniem i z dala od szczurów. Co ty na to? O, i dyskrecja też, to jest oczywiste.";
+			dialog.text = "Jest dość przestronny, nawet jak na magazyn portowy. Może pomieścić, zdaje się... 50000 cetnarów ładunku. W cenie "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+"  za miesiąc mogę zapewnić Ci bezpieczne przechowywanie Twoich towarów. "+"Zapewnię Ci ochronę magazynu przez moich ludzi, ochronę towaru przed zamoczeniem i z dala od szczurów. Co ty na to? O, i dyskrecja też, to jest oczywiste.";
 			link.l1 = "Przekonałeś mnie. Zabierzesz mnie tam? Chce się rozejrzeć";	
 			link.l1.go = "storage_rent2";
 			link.l2 = "To za dużo. Pewnie jest zalany i roi się tam od szczurów.";
@@ -261,7 +261,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		
 		case "storage_rent2":
 			dialog.text = "Pewnie, pewnie. Ale... potrzebuję zapłaty za miesiąc z góry. ";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Oto twoje pieniądze ... Biorę go.";
 				link.l1.go = "storage_11";
@@ -280,11 +280,11 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		break;
 		
 		case "storage_0":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "Nadal mi jesteś winien za czynsz "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+				dialog.text = "Nadal mi jesteś winien za czynsz "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "Dobrze, zapłacę.";
 					link.l1.go = "storage_3";
@@ -298,7 +298,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 			else
 			{ // лесник . если забыл с собой корабль то никак.
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "Kontynuuj.";
 				link.l1 = "Dzięki.";
@@ -327,7 +327,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		case "storage_1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
 			dialog.text = "Jak pewnie pamiętasz, jesteś mi winien miesięcznej zapłaty z góry.";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Oczywiście, pamiętam. Proszę bardzo.";
 				link.l1.go = "storage_11";
@@ -340,30 +340,30 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		break;
 		
 		case "storage_11":
-			AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			NPChar.Storage.Activate = true;
 			Achievment_Set("ach_67"); // ugeen 2016
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 				
 		case "storage_2":			
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 		
 		case "storage_3":			
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;		
 
 		case "storage_04":
@@ -375,11 +375,11 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		break;
 		
 		case "storage_4":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 			
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "A co do czynszu, nadal jesteś mi winien "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))			
+				dialog.text = "A co do czynszu, nadal jesteś mi winien "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "Dobrze.";
 					link.l1.go = "storage_5";
@@ -388,7 +388,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 			else
 			{ // лесник . если нет корабля то и товар не забрать
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "Przenieś swój ładunek, a ja zamknę magazyn.";
 				link.l1 = "W porządku.";
@@ -405,7 +405,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 		break;
 		
 		case "storage_5":
-			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
+			LeaveStorage(NPChar, rColony, int(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
@@ -422,7 +422,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 			link.l1.go = "ShipyardsMap_2";
 		break;
 		case "ShipyardsMap_2":
-			if (sti(pchar.questTemp.different.ShipyardsMap.skladFight))
+			if (int(pchar.questTemp.different.ShipyardsMap.skladFight))
 			{
 				dialog.text = "Spójrz na siebie! Hej! Straż, mamy tu złodzieja!!!";
 				link.l1 = "Jaki złodziej? Chcę tylko porozmawiać!";
@@ -446,10 +446,10 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 			link.l1.go = "ShipyardsMap_4";
 		break;
 		case "ShipyardsMap_4":
-			dialog.text = "Hmm, może lepiej będzie jeśli... W porządku! Przynieś mi "+FindRussianMoneyString(sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+", a ja zostawię otwarte drzwi do stoczni następnego dnia.";
+			dialog.text = "Hmm, może lepiej będzie jeśli... W porządku! Przynieś mi "+FindRussianMoneyString(int(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+", a ja zostawię otwarte drzwi do stoczni następnego dnia.";
 			link.l1 = "To za dużo. Muszę poradzić sobie bez tego...";
 			link.l1.go = "exit";
-			if (sti(pchar.money) >= (sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
+			if (int(pchar.money) >= (int(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
 			{
 				link.l2 = "Dobrze, zgadzam się. Weź te pieniądze i zrób tak jak się umówiliśmy.";
 				link.l2.go = "ShipyardsMap_5";
@@ -459,7 +459,7 @@ link.l7 = DLG_Convert("storageRent", "Dialogs.txt");
 			dialog.text = "Nie martw się, zajmę się tym.";
 			link.l1 = "Mam nadzieję...";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
 			AddQuestRecord("ShipyardsMap", "5");
 			AddQuestUserData("ShipyardsMap", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			//снимаем close_for_night

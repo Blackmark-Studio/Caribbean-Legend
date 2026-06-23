@@ -70,12 +70,12 @@ void ProcessDialogEvent()
 		case "rozencraft_3":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "Przyjacielu, mieliśmy umowę z Molliganem. To jest dobra cena, lepszej nie znajdziesz. Więc nie zachowuj się jak chłop w sklepie. Ile masz żelaznego drewna?";
-			link.l1 = ""+FindRussianQtyString(sti(npchar.quest.bakaut))+".";
+			link.l1 = ""+FindRussianQtyString(int(npchar.quest.bakaut))+".";
 			link.l1.go = "rozencraft_4";
 		break;
 		
 		case "rozencraft_4":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if(iTemp >= 90)
 			{
 				dialog.text = "Wspaniale. To więcej, niż się spodziewałem. Oto złoto. Jeśli zdobędziesz więcej żelaznego drewna, idź do tawerny w Saint Martin i porozmawiaj z... wiesz kim. On umówi nas na spotkanie. Widzę, że jesteś dużo lepszym partnerem niż ten idiota Molligan.";
@@ -107,14 +107,14 @@ void ProcessDialogEvent()
 		case "rozencraft_5":
 			DialogExit();
 			npchar.DontDeskTalk = true; // чтоб не доставал, в генераторе - снимаем
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp < 40) DeleteAttribute(npchar, "quest.bakaut");
 			else 
 			{
 				TakeNItems(pchar, "gold_dublon", iTemp*40);
 				RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 				// считаем, сколько мы должны Свенсону
-				int ibak = makeint((iTemp*40-2000)/2);
+				int ibak = int((iTemp*40-2000)/2);
 				sld = characterFromId("Svenson");
 				sld.quest.bakaut_sum = ibak; // доля Яна
 				AddQuestRecord("Testament", "9");
@@ -143,8 +143,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_0":
-			dialog.text = "Ile masz? Potrzebuję partii nie mniejszej niż "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+".";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
+			dialog.text = "Ile masz? Potrzebuję partii nie mniejszej niż "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+".";
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= int(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "Wiem o tym. Mam "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SANDAL))+"  z żelaznego drzewa, które tak chętnie pragniesz zdobyć.";
 				link.l1.go = "bakaut_1";
@@ -159,13 +159,13 @@ void ProcessDialogEvent()
 		case "bakaut_no":
 			if (!CheckAttribute(npchar, "quest.bakaut_angry"))
 			{
-				dialog.text = "Cholera jasna, nie ostrzegli cię? A może szczury zjadły drewno? Potrzebuję "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" i ani jednej sztuki mniej. Następnym razem przynieś mi tyle drewna, ile powie ci mój agent. Mam nadzieję, że mnie znów nie zawiedziesz, bo inaczej będę musiał odmówić twoich usług.";
+				dialog.text = "Cholera jasna, nie ostrzegli cię? A może szczury zjadły drewno? Potrzebuję "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+" i ani jednej sztuki mniej. Następnym razem przynieś mi tyle drewna, ile powie ci mój agent. Mam nadzieję, że mnie znów nie zawiedziesz, bo inaczej będę musiał odmówić twoich usług.";
 				link.l1 = "Dobrze, Mynheer, będę bardziej uważny w przyszłości.";
 				link.l1.go = "bakaut_no_1";
 			}
 			else
 			{
-				if (sti(npchar.quest.bakaut_angry) == 1)
+				if (int(npchar.quest.bakaut_angry) == 1)
 				{
 					dialog.text = "Robisz mnie w konia po raz drugi. Nie podoba mi się to. Wiedz, że to jest ostatnie ostrzeżenie, następnym razem odmówię twoich usług.";
 					link.l1 = "Przeklęte szczury uszkodziły moje towary! Obiecuję ci, Michale, że to był ostatni raz.";
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "rozencraft_no_repeat";
 			if (!CheckAttribute(npchar, "quest.bakaut_angry")) npchar.quest.bakaut_angry = 1;
-			else npchar.quest.bakaut_angry = sti(npchar.quest.bakaut_angry)+1;
+			else npchar.quest.bakaut_angry = int(npchar.quest.bakaut_angry)+1;
 			pchar.quest.Bakaut_Rozencraft_Reset.win_condition.l1 = "MapEnter";
 			pchar.quest.Bakaut_Rozencraft_Reset.function = "Bakaut_RozencraftRemove";
 			AddQuestRecord("Bakaut", "3");
@@ -204,12 +204,12 @@ void ProcessDialogEvent()
 		
 		case "bakaut_1":
 			iTemp = GetSquadronGoods(pchar, GOOD_SANDAL);
-			if (iTemp > sti(pchar.GenQuest.Bakaut.Value)+20)
+			if (iTemp > int(pchar.GenQuest.Bakaut.Value)+20)
 			{ // перебор
-				dialog.text = "O rany! Przykro mi, przyjacielu, ale mogę kupić tylko "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", nie mam pieniędzy na cały twój ładunek. Spodziewałem się partii "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" sztuk za czterdzieści dublonów każda...";
-				link.l1 = "Dobrze. Weź "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+" teraz, a resztę sprzedam ci następnym razem.";
+				dialog.text = "O rany! Przykro mi, przyjacielu, ale mogę kupić tylko "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+", nie mam pieniędzy na cały twój ładunek. Spodziewałem się partii "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+" sztuk za czterdzieści dublonów każda...";
+				link.l1 = "Dobrze. Weź "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+" teraz, a resztę sprzedam ci następnym razem.";
 				link.l1.go = "bakaut_2";
-				npchar.quest.bakaut = sti(pchar.GenQuest.Bakaut.Value)+20;
+				npchar.quest.bakaut = int(pchar.GenQuest.Bakaut.Value)+20;
 			}
 			else
 			{
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		
 		case "bakaut_3":
 			DialogExit();
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			TakeNItems(pchar, "gold_dublon", iTemp*40);
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 			npchar.DontDeskTalk = true;

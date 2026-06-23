@@ -2,7 +2,7 @@ bool IsQuestUsedItem(string itmID)
 {
 	aref arItm;
 	if( Items_FindItem(itmID,&arItm)<0 ) return false;
-	if( CheckAttribute(arItm,"price") && sti(arItm.price)>0 ) return false;
+	if( CheckAttribute(arItm,"price") && int(arItm.price)>0 ) return false;
 	return true;
 }
 
@@ -21,11 +21,11 @@ void DoCharacterUsedItem(ref chref, string itmID)
 	if(CheckAttribute(arItm,"potion.health") && LAi_GetCharacterHP(chref) < LAi_GetCharacterMaxHP(chref))
 	{
 		if(CheckAttribute(arItm,"potion.drunk") && GetCharacterEquipByGroup(chref, HAT_ITEM_TYPE) == "hat8")
-			LAi_UseHealthBottle(chref,stf(arItm.potion.health)*1.5);
+			LAi_UseHealthBottle(chref,float(arItm.potion.health)*1.5);
 		else
-			LAi_UseHealthBottle(chref,stf(arItm.potion.health));
+			LAi_UseHealthBottle(chref,float(arItm.potion.health));
 		
-		if(sti(chref.index)!=GetMainCharacterIndex())
+		if(int(chref.index)!=GetMainCharacterIndex())
 		{
 			if(!bDrawBars && ShowCharString()) Log_Chr(chref, XI_ConvertString("Health UpLog"));
 		}
@@ -36,7 +36,7 @@ void DoCharacterUsedItem(ref chref, string itmID)
 		// boal
 		if( CheckAttribute(arItm,"potion.health.speed") )
 		{
-			LAi_UseHealthBottleSpeed(chref, stf(arItm.potion.health.speed));
+			LAi_UseHealthBottleSpeed(chref, float(arItm.potion.health.speed));
 		}
 	}
 	
@@ -44,7 +44,7 @@ void DoCharacterUsedItem(ref chref, string itmID)
 	if(CheckAttribute(arItm,"potion.antidote") && LAi_IsPoison(chref) && !CheckAttribute(chref, "GenQuest.Hotwater")) // Addon 2016-1 Jason Пиратская линейка
 	{
 		LAi_UseAtidoteBottle(chref);
-		if(sti(chref.index)==GetMainCharacterIndex()) {
+		if(int(chref.index)==GetMainCharacterIndex()) {
 			//Log_SetStringToLog( XI_ConvertString("You are cured from poison") );
 		}
 		else{
@@ -55,22 +55,22 @@ void DoCharacterUsedItem(ref chref, string itmID)
 	
 	// ugeen --> плата в здоровье за пользование лечилками
 	// belamour legendary edition С Луженой глоткой не платим
-	if(CheckAttribute(arItm,"potion.penalty") && sti(chref.index) == GetMainCharacterIndex() && !IsEquipCharacterByArtefact(chref, "totem_01"))
+	if(CheckAttribute(arItm,"potion.penalty") && int(chref.index) == GetMainCharacterIndex() && !IsEquipCharacterByArtefact(chref, "totem_01"))
 	{
-		AddCharacterHealth(chref, -stf(arItm.potion.penalty));
+		AddCharacterHealth(chref, -float(arItm.potion.penalty));
 	}
 	
 	//navy --> алкоголь
 	if (CheckAttribute(arItm, "potion.drunk"))
 	{
-		LAi_AlcoholSetDrunk(chref, stf(arItm.potion.drunk), stf(arItm.potion.drunk.time));
-		if(sti(chref.index)==GetMainCharacterIndex())
+		LAi_AlcoholSetDrunk(chref, float(arItm.potion.drunk), float(arItm.potion.drunk.time));
+		if(int(chref.index)==GetMainCharacterIndex())
 		{
 			Log_SetStringToLog( XI_ConvertString("You're get drunk") );
 		}
 	}
 	//<--
-	if(sti(chref.index)==GetMainCharacterIndex()) PlaySound("Ambient\Tavern\glotok_001.wav");
+	if(int(chref.index)==GetMainCharacterIndex()) PlaySound("Ambient\Tavern\glotok_001.wav");
 	if( CheckAttribute(arItm,"potion.sound") )
 	{
 		PlaySound(arItm.potion.sound);
@@ -92,12 +92,12 @@ float MinHealthPotionForCharacter(ref chref)
 				{
 					if(isFinded)
 					{
-						if( stf(Items[n].potion.health)<ftmp )
+						if( float(Items[n].potion.health)<ftmp )
 						{
-							ftmp = stf(Items[n].potion.health);
+							ftmp = float(Items[n].potion.health);
 						}
 					}else{
-						ftmp = stf(Items[n].potion.health);
+						ftmp = float(Items[n].potion.health);
 						isFinded = true;
 					}
 				}
@@ -122,7 +122,7 @@ string FindHealthForCharacter(ref chref,float fHealth)
 			{
 				if( GetCharacterItem(chref,Items[n].id)>0 )
 				{
-					ftmp = stf(Items[n].potion.health);
+					ftmp = float(Items[n].potion.health);
 					if( ftmp<fHealth )	{ftmp = fHealth - ftmp;}
 					else	{ftmp = ftmp - fHealth;}
 					if(ftmp<fdelta)
@@ -187,8 +187,8 @@ int UseBestPotion(ref chref, bool needAntidote)
 	int newPotionHealAmt = 0;
 	bool potionTooGood = false;
 	bool bValidPot;
-	int reqHealAmt = LAi_GetCharacterMaxHP(chref) - LAi_GetCharacterHP(chref);
-	reqHealAmt = makeint(MakeFloat(reqHealAmt) * 1.2)
+	int reqHealAmt = int((LAi_GetCharacterMaxHP(chref) - LAi_GetCharacterHP(chref))* 1.2);
+
 	if (reqHealAmt <=0 && !needAntidote) 
 	{
 		return -1;
@@ -359,7 +359,7 @@ ref ItemFromIdx(int idx)
 // Получить предмет по ссылке/id/индексу
 ref FindItem_VT(ref entity)
 {
-	return FindObject_VT(entity, "ItemsFromID", "ItemFromIdx");
+	return FindObject_VT(entity, &ItemsFromID, &ItemFromIdx);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -376,7 +376,7 @@ void GenerateGenerableItems()
 		itemRef = &Items[i];	
 		if(CheckAttribute(itemRef, "id") && CheckAttribute(itemRef, "Generation.Qty") && !CheckAttribute(itemRef, "GeneratedAll"))
 		{
-			for(int j = 0; j < sti(itemRef.Generation.Qty); j++) 
+			for(int j = 0; j < int(itemRef.Generation.Qty); j++)
 			{
 				GenerateItem(itemRef.id);
 			}	
@@ -459,7 +459,7 @@ string GetBestGeneratedItem(string _itemId)
 			rItem1 = &Items[itemIndex1];
 			rItem2 = &Items[itemIndex2];
 		
-			if( stf(rItem1.Attack) > stf(rItem2.Attack) )
+			if( float(rItem1.Attack) > float(rItem2.Attack) )
 			{
 				tmpItem = generatedItems[j];
 				generatedItems[j] = generatedItems[j + 1];
@@ -468,9 +468,9 @@ string GetBestGeneratedItem(string _itemId)
 			}	
 			else
 			{
-				if(stf(rItem1.Attack) == stf(rItem2.Attack))
+				if(float(rItem1.Attack) == float(rItem2.Attack))
 				{
-					if( stf(rItem1.Weight) < stf(rItem2.Weight) )
+					if( float(rItem1.Weight) < float(rItem2.Weight) )
 					{
 						tmpItem = generatedItems[j];
 						generatedItems[j] = generatedItems[j + 1];
@@ -539,9 +539,9 @@ void SetItemPrice(String _itemId)
 			priceMod = 7;
 		break;
 	}
-	if(CheckAttribute(item, "Weight") && stf(item.Weight) > 0.0)
+	if(CheckAttribute(item, "Weight") && float(item.Weight) > 0.0)
 	{
-		item.price = priceMod * (stf(item.dmg_min) * stf(item.dmg_max)) / stf(item.Weight);
+		item.price = priceMod * (float(item.dmg_min) * float(item.dmg_max)) / float(item.Weight);
 	}	
 }
 */
@@ -598,21 +598,21 @@ string GenerateItem(string _itemId)
 	switch (realItem.FencingType)
 	{
 		case "FencingL":
-			if(sti(realItem.Generation.price)) 
+			if(int(realItem.Generation.price))
 			{
-				realItem.price  = makeint(35.0 * (1.0/stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 30.0));
+				realItem.price  = int(35.0 * (1.0/float(realItem.curve) + float(realItem.lenght)) * (float(realItem.Attack) * 2.0 - 30.0));
 			}	
 		break;
 		case "FencingS":
-			if(sti(realItem.Generation.price)) 
+			if(int(realItem.Generation.price))
 			{
-				realItem.price  = makeint(25.0 * (stf(realItem.curve) + stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 40.0));
+				realItem.price  = int(25.0 * (float(realItem.curve) + float(realItem.lenght)) * (float(realItem.Attack) * 2.0 - 40.0));
 			}	
 		break;
 		case "FencingH":
-			if(sti(realItem.Generation.price)) 
+			if(int(realItem.Generation.price))
 			{
-				realItem.price  = makeint(20.0 * ((stf(realItem.curve) + 1.0) * 1.0/stf(realItem.lenght)) * (stf(realItem.Attack) * 2.0 - 50.0));
+				realItem.price  = int(20.0 * ((float(realItem.curve) + 1.0) * 1.0/float(realItem.lenght)) * (float(realItem.Attack) * 2.0 - 50.0));
 			}	
 		break;
 	}
@@ -736,22 +736,32 @@ bool IsGenerableItem(String _itemID)
 	return false;
 }
 
-string SelectGeneratedItem(string TargetGroup, string Quality, string BladeType)
+string SelectGeneratedItem(int iTargetGroup, int iQuality, string BladeType)
 {
 	ref item;
 	int itemsQty = 0;
 	string generatedItems[TOTAL_ITEMS];
 	bool bOk1, bOk2, bOk3;
-	
-	if(TargetGroup == "" && Quality == "" && BladeType == "") return "";
+	string sTargetGroup;
+	string sQuality;
+	if (iTargetGroup >= 0)
+	{
+		sTargetGroup = string(iTargetGroup);
+	}
+
+	if (iQuality >= 0)
+	{
+		sQuality = string(iQuality);
+	}
+	if(sTargetGroup == "" && sQuality == "" && BladeType == "") return "";
 	
 	for(int i = 0; i < ITEMS_QUANTITY; i++)
 	{
 		item = &Items[i];
 		if(CheckAttribute(item, "groupID") && (item.groupID == BLADE_ITEM_TYPE))
 		{		
-			bOk1 = item.target == TargetGroup || TargetGroup == "";
-			bOk2 = item.quality == Quality || Quality == "";
+			bOk1 = item.target == sTargetGroup || sTargetGroup == "";
+			bOk2 = item.quality == sQuality || sQuality == "";
 			bOk3 = item.FencingType == BladeType || BladeType == "";
 		
 			if(bOk1 && bOk2 && bOk3)
@@ -865,11 +875,11 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		}
 	}*/
 	//======> детектор в тюрьме, вторжение без разрешения
-	if (_location.type == "jail" && !sti(pchar.questTemp.jailCanMove) && _locator == "detector1")
+	if (_location.type == "jail" && !int(pchar.questTemp.jailCanMove) && _locator == "detector1")
 	{	
 		pchar.questTemp.jailCanMove = true; //чтобы не срабатывало 2 раза
 		// belamour legendary edition адмиралу и губернатору можно проходить без разрешения
-		bool bAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetCityNation(_location.parent_colony) == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+		bool bAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetCityNation(_location.parent_colony) == int(Items[int(pchar.EquipedPatentId)].Nation);
 		bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetCityNation(_location.parent_colony) == GetBaseHeroNation();
 		
 		if (!LAi_grp_alarmactive && !IsLocationCaptured(_location.id) && !bAdmiral && !bGenGov)
@@ -935,7 +945,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		}
 	}
 	// проверка возможности погружения с платформы Феникс
-	if (_locator == "underwater" && CheckAttribute(pchar, "questTemp.LSC.immersion") && IsEquipCharacterByItem(pchar, "underwater") && stf(environment.time) >= 7.00 && stf(environment.time) < 21.00)
+	if (_locator == "underwater" && CheckAttribute(pchar, "questTemp.LSC.immersion") && IsEquipCharacterByItem(pchar, "underwater") && float(environment.time) >= 7.00 && float(environment.time) < 21.00)
 	{
 		PlaySound("Sea Battles\bolshoy_vsplesk_002.wav");
 		DoQuestReloadToLocation("underwater", "reload", "reload1", "");
@@ -1002,7 +1012,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 	{
 		if (CheckAttribute(pchar, "questTemp.Ksochitam.GuardMaskFire"))
 		{
-			if (_locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l1)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l2)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l3)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l4)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l5)))
+			if (_locator == "fire"+(int(pchar.questTemp.Ksochitam.GuardMaskFire.l1)) || _locator == "fire"+(int(pchar.questTemp.Ksochitam.GuardMaskFire.l2)) || _locator == "fire"+(int(pchar.questTemp.Ksochitam.GuardMaskFire.l3)) || _locator == "fire"+(int(pchar.questTemp.Ksochitam.GuardMaskFire.l4)) || _locator == "fire"+(int(pchar.questTemp.Ksochitam.GuardMaskFire.l5)))
 			{
 				LaunchIncasFire(pchar, true);
 				LAi_ApplyCharacterDamage(pchar, MOD_SKILL_ENEMY_RATE*30, "other", true);
@@ -1096,7 +1106,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		}
 		if (CheckAttribute(pchar, "questTemp.Mtraxx.HellSplash"))
 		{
-			if (_locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l1)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l2)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l3)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l4)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l5)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l6)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l7)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l8)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l9)) || _locator == "splash"+(sti(pchar.questTemp.Mtraxx.HellSplash.l10)))
+			if (_locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l1)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l2)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l3)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l4)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l5)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l6)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l7)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l8)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l9)) || _locator == "splash"+(int(pchar.questTemp.Mtraxx.HellSplash.l10)))
 			{
 				Mtraxx_RetributionHellSplashReaction();			
 			}		
@@ -1357,11 +1367,11 @@ bool ShipBonus2Artefact(ref chr, int shipType)
 	if(GetCharacterShipType(chr) == SHIP_NOTUSED) return false;
 	if(IsMainCharacter(chr))
 	{	
-		if(sti(RealShips[sti(chr.Ship.Type)].BaseType) == shipType) return true;
+		if(int(RealShips[int(chr.Ship.Type)].BaseType) == shipType) return true;
 	}
 	else
 	{
-		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == shipType)
+		if(int(RealShips[int(pchar.Ship.Type)].BaseType) == shipType)
 		{
 			return isOfficerInShip(chr, true);
 		}
@@ -1398,18 +1408,18 @@ void addBonusToBlade(aref _attack, aref _enemy)
 			Blade.KillerBonus = 0;
 			Blade.KillerBonus.Attack = 0.0;
 			Blade.KillerBonus.RangeBonus = 0.0;
-			Blade.KillerBonus.DefAttack = stf(Blade.Attack); // сохраним дефолтную атаку
+			Blade.KillerBonus.DefAttack = float(Blade.Attack); // сохраним дефолтную атаку
 		}
 
-		Blade.KillerBonus = sti(Blade.KillerBonus) + 1;
+		Blade.KillerBonus = int(Blade.KillerBonus) + 1;
 
-		if (sti(Blade.KillerBonus) % 10 == 0)
+		if (int(Blade.KillerBonus) % 10 == 0)
 		{
-			Blade.KillerBonus.Attack     = fClamp(0, 30, stf(Blade.KillerBonus.Attack) + 2.0);
-			Blade.KillerBonus.RangeBonus = fClamp(0, 15, stf(Blade.KillerBonus.RangeBonus) + 1.0);
-			Blade.Attack = stf(Blade.KillerBonus.DefAttack) + stf(Blade.KillerBonus.Attack);
+			Blade.KillerBonus.Attack     = fClamp(0, 30, float(Blade.KillerBonus.Attack) + 2.0);
+			Blade.KillerBonus.RangeBonus = fClamp(0, 15, float(Blade.KillerBonus.RangeBonus) + 1.0);
+			Blade.Attack = float(Blade.KillerBonus.DefAttack) + float(Blade.KillerBonus.Attack);
 
-			int currentDifference = sti(Blade.Attack) - sti(Blade.KillerBonus.DefAttack);
+			int currentDifference = int(Blade.Attack) - int(Blade.KillerBonus.DefAttack);
 			int addValue = currentDifference - GetAttributeInt(Blade, "KillerBonus.appliedBonus");
 			if (addValue == 0) return;
 
@@ -1439,8 +1449,8 @@ void addLiberMisBonus()
 	if(CheckAttribute(Liber,"QBonus.max")) return;
 	
 	if(!CheckAttribute(Liber,"QBonus")) Liber.QBonus = 0;
-	Liber.QBonus = sti(Liber.QBonus) + 1;
-	if(sti(Liber.QBonus) >= 5)
+	Liber.QBonus = int(Liber.QBonus) + 1;
+	if(int(Liber.QBonus) >= 5)
 	{
 		Liber.QBonus = 5;
 		Liber.QBonus.max = true;
@@ -1464,8 +1474,8 @@ void addArticlesBonus()
 	if(CheckAttribute(Articles,"QBonus.max")) return;
 	
 	if(!CheckAttribute(Articles,"QBonus")) Articles.QBonus = 0;
-	Articles.QBonus = sti(Articles.QBonus) + 1;
-	if(sti(Articles.QBonus) >= 10)
+	Articles.QBonus = int(Articles.QBonus) + 1;
+	if(int(Articles.QBonus) >= 10)
 	{
 		Articles.QBonus = 10;
 		Articles.QBonus.max = true;
@@ -1481,7 +1491,7 @@ float ArticlesBonus(ref chr)
 	if(!CheckAttribute(Articles, "QBonus")) return 0.0;
 	
 	if(CheckAttribute(Articles,"QBonus.max")) return 0.10;
-	else return 0.0 + wPercentFloat(stf(Articles.QBonus), 1.0);
+	else return 0.0 + wPercentFloat(float(Articles.QBonus), 1.0);
 
 	return 0.0;
 }
@@ -1496,7 +1506,7 @@ bool CanUpgradeMusketSP(ref chr, ref itm)
 	if(!CheckAttribute(mus, "UpgradeStage"))  return false;
 	if(!CheckAttribute(itm, "PartNumber")) return false;
 	
-	if(sti(itm.PartNumber) == sti(mus.UpgradeStage)) return true;
+	if(int(itm.PartNumber) == int(mus.UpgradeStage)) return true;
 	
 	return false;
 }
@@ -1508,8 +1518,8 @@ void UpgradeMusketSP(ref chr)
 	makeref(itm, items[FindItem("mushket9")]);
 	if(CheckAttribute(itm, "UpgradeStage"))
 	{
-		itm.UpgradeStage = sti(itm.UpgradeStage) + 1;
-		int iUpgradeStage = sti(itm.UpgradeStage);
+		itm.UpgradeStage = int(itm.UpgradeStage) + 1;
+		int iUpgradeStage = int(itm.UpgradeStage);
 		
 		switch (iUpgradeStage)
 		{
@@ -1628,7 +1638,7 @@ void PutItemToLocationBox(ref loc_id_or_Idx, string itemId, int qty, int boxInde
 	// костыль для private-сундуков
 	string boxAttributeName = "box";
 	if (location.id == SHIP_LOC_HOLD || location.id == SHIP_LOC_CAMPUS || location.id == SHIP_LOC_GUNDECK) boxAttributeName = "private";
-	boxAttributeName += boxIndex;
+	boxAttributeName += string(boxIndex);
 
 	if (!CheckAttribute(location, boxAttributeName))
 	{

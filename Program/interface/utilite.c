@@ -169,7 +169,7 @@ void SetSelectable(string _NodeName,int _Selectable)
 }
 int GetSelectable(string _NodeName)
 {
-	return SendMessage(&GameInterface,"ls", MSG_INTERFACE_GET_SELECTABLE, _NodeName);
+	return int(SendMessage(&GameInterface,"ls", MSG_INTERFACE_GET_SELECTABLE, _NodeName));
 }
 
 void SetClickable(string _NodeName, bool ClickStatus)
@@ -178,12 +178,12 @@ void SetClickable(string _NodeName, bool ClickStatus)
 }
 bool GetClickable(string _NodeName)
 {
-	return SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE,_NodeName,-1,2);
+	return bool(SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE,_NodeName,-1,2));
 }
 
 void DelFromScroll(string nodeName,int pnum)
 {
-	int qn = sti(GameInterface.(nodeName).ListSize)-1;
+	int qn = int(GameInterface.(nodeName).ListSize)-1;
 	aref inar,outar;
 	string attrName;
 	for(int i=pnum; i<qn; i++)
@@ -282,18 +282,18 @@ void SelectLineInFormatedText(string sNodeName, int line)
 //-------------------------------------------------------------------------------------------------------------
 int SelectedLineInFormatedText(string sNodeName)
 {
-	return SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,sNodeName, 11);
+	return int(SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,sNodeName, 11));
 }
 
 // Sith считаем сколько умещается строк в тексте по форме
 int GetNumberOfStringsInFormatedText (string sNodeName, string sText)
 {
-	return SendMessage( &GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE, sNodeName, 9, &sText );
+	return int(SendMessage( &GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE, sNodeName, 9, &sText));
 }
 
 int SetVAligmentFormatedText(string sNodeName)  // boal нарыл в ядре, что можно
 {
-	return SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,sNodeName, 5);
+	return int(SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,sNodeName, 5));
 }
 //-------------------------------------------------------------------------------------------------------------
 // Warship -->
@@ -308,7 +308,7 @@ int GetStringWidth(string str, string fontID, float fScale)
 {
 	if(!IsEntity(&GameInterface))
 		CreateEntity(&GameInterface,"xinterface");
-	return SendMessage(&GameInterface, "lssf", MSG_INTERFACE_GET_STRWIDTH, str, fontID, fScale);
+	return int(SendMessage(&GameInterface, "lssf", MSG_INTERFACE_GET_STRWIDTH, str, fontID, fScale));
 }
 
 string GetItemPictureName(string itemName)
@@ -318,7 +318,7 @@ string GetItemPictureName(string itemName)
 	{
 		if( CheckAttribute(arItm,"picIndex") )
 		{
-			return	"itm"+sti(arItm.picIndex);
+			return	"itm"+int(arItm.picIndex);
 		}
 	}
 	return "cannon back";
@@ -404,7 +404,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.navigator)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.navigator)].faceID);
 		}
 		
 		if (chref.Fellows.Passengers.boatswain == "-1")
@@ -413,7 +413,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.boatswain)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.boatswain)].faceID);
 		}
 		
 		if (chref.Fellows.Passengers.cannoner == "-1")
@@ -422,7 +422,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.cannoner)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.cannoner)].faceID);
 		}
 		
 		if (chref.Fellows.Passengers.doctor == "-1")
@@ -431,7 +431,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.doctor)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.doctor)].faceID);
 		}
 		
 		if (chref.Fellows.Passengers.treasurer == "-1")
@@ -440,7 +440,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.treasurer)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.treasurer)].faceID);
 		}
 		
 		if (chref.Fellows.Passengers.carpenter == "-1")
@@ -449,7 +449,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 		}
 		else
 		{
-			AddFaceGroup(strAccess,"FACE128_"+Characters[sti(chref.Fellows.Passengers.carpenter)].faceID);
+			AddFaceGroup(strAccess,"FACE128_"+Characters[int(chref.Fellows.Passengers.carpenter)].faceID);
 		}
 		
 		//fighters
@@ -502,7 +502,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 			cn = GetPassenger(chref,n);
 			if( cn>=0) 
 			{
-				if (!CheckAttribute(&characters[cn], "prisoned") || sti(characters[cn].prisoned) != true)
+				if (!CheckAttribute(&characters[cn], "prisoned") || int(characters[cn].prisoned) != true)
 				{
 					if(!CheckAttribute(&characters[cn], "isbusy"))
 					{
@@ -518,7 +518,7 @@ void FillFaceList(string strAccess, ref chref, int fillCode)
 }
 
 void AddShipPictureToList(string strAccess, ref chref) {
-	int shipIndex = sti(chref.ship.type);
+	int shipIndex = int(chref.ship.type);
 	if (shipIndex == SHIP_NOTUSED) return;
 	
 	ref realShip = GetRealShip(shipIndex);
@@ -541,7 +541,7 @@ void FillShipList(string strAccess, ref chref)
 		if(cn != -1)
 		{
 			iShipType = GetCharacterShipType(/*&*//*characters[cn]);
-			iShipType = sti(RealShips[iShipType].basetype);
+			iShipType = int(RealShips[iShipType].basetype);
 			sShip = ShipsTypes[iShipType].name;
 			AddFaceGroup(strAccess,"SHIPS_"+sShip);
 		}
@@ -558,7 +558,7 @@ void FillShipList(string strAccess, ref chref)
 	{
 		ref refShip;
 		makeref(refShip, ShipsTypes[n]);
-		if (CheckAttribute(refShip, "ShipHolder") && sti(refShip.ShipHolder))
+		if (CheckAttribute(refShip, "ShipHolder") && int(refShip.ShipHolder))
 		{
 			continue;
 		}
@@ -678,11 +678,11 @@ void UnloadIcons(string sControlName) {
 	string sAttr;
 	aref arPics;
 	makearef(arPics, GameInterface.(sControlName));
-	int iNumPics = sti(GameInterface.(sControlName).ListSize);
+	int iNumPics = int(GameInterface.(sControlName).ListSize);
 	
 	for (int i = 0; i < iNumPics; i++) {
 		sAttr = "pic" + (i + 1);
-		ReleaseTexture(sti(arPics.(sAttr).TexId));
+		ReleaseTexture(int(arPics.(sAttr).TexId));
 	}
 	
 	DeleteAttribute(&GameInterface, sControlName);
@@ -730,7 +730,7 @@ void CloseTooltip()
 	}
 	int nSaveNodeState = -1;
 	if( CheckAttribute(&InterfaceStates,"tooltip.savestate") ) {
-		nSaveNodeState = sti(InterfaceStates.tooltip.savestate);
+		nSaveNodeState = int(InterfaceStates.tooltip.savestate);
 	}
 	if( nSaveNodeState!=-1 ) {
 		XI_RestoreNodeLocks(nSaveNodeState);
@@ -759,12 +759,12 @@ void CreateTooltipWithConfig(string sNode, string header, string text1, string t
 	XI_MakeNode("", "TOOLTIP_TEXT" + whiteAttr, "tooltip_text4", 30004);
 
 	bool bWindRose = CheckAttributeEqualTo(&config, "windRose", "1");
-	if (bWindRose) = XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "WINDROSE_SPEED_RED", "tooltip_windrose", 30004);
+	if (bWindRose) XI_MakeNode("resource\ini\interfaces\defaultnode.ini", "WINDROSE_SPEED_RED", "tooltip_windrose", 30004);
 
 	int x1, y1, x2, y2;
 	GetNodePosition(sNode, &x1, &y1, &x2, &y2);
 	SendMessage(&GameInterface, "lsslslslslssslllllllll", MSG_INTERFACE_SET_TOOLTIP,
-				header, text1, makeint(config.color1), text2, makeint(config.color2), text3, makeint(config.color3), text4, makeint(config.color4),
+				header, text1, int(config.color1), text2, int(config.color2), text3, int(config.color3), text4, int(config.color4),
 				picTexture, picGroup, picImage, nPicWidth, nPicHeight, bWindRose ? 1 : 0,
 				x1, y1, x2, y2, TOOLTIP_WIDTH_MIN, TOOLTIP_WIDTH_MAX);
 }
@@ -910,20 +910,20 @@ bool XI_FindFoldersWithoutNetsave(string sFindTemplate,aref arFoldersList)
 	return bRetVal;
 }
 
-void ReadSavedOptionsEx(aref gopt, string fileName) {
+void ReadSavedOptionsEx(ref gopt, string fileName) {
 	SendMessage(&GameInterface, "lsa", MSG_INTERFACE_LOADOPTIONS, fileName, gopt);
 }
 
-void SaveSavedOptionsEx(aref gopt, string fileName) {
+void SaveSavedOptionsEx(ref gopt, string fileName) {
 	SendMessage(&GameInterface, "lsa", MSG_INTERFACE_SAVEOPTIONS, fileName, gopt);
 }
 
 // boal -->
-void ReadSavedOptionsGlobal(aref gopt) {
+void ReadSavedOptionsGlobal(ref gopt) {
 	ReadSavedOptionsEx(gopt, "options");
 }
 
-void SaveSavedOptionsGlobal(aref gopt) {
+void SaveSavedOptionsGlobal(ref gopt) {
 	SaveSavedOptionsEx(gopt, "options");
 }
 
@@ -961,7 +961,7 @@ void LoadStartGameParam()
 
     if (CheckAttribute(optref, "StartGameParam.MOD_SKILL_ENEMY_RATE"))
 	{
-    	MOD_SKILL_ENEMY_RATE = sti(optref.StartGameParam.MOD_SKILL_ENEMY_RATE);
+    	MOD_SKILL_ENEMY_RATE = int(optref.StartGameParam.MOD_SKILL_ENEMY_RATE);
 		if(MOD_SKILL_ENEMY_RATE < 1 || MOD_SKILL_ENEMY_RATE > 10) 
 		{
 			MOD_SKILL_ENEMY_RATE = 4; 
@@ -973,29 +973,29 @@ void LoadStartGameParam()
     }
     if (CheckAttribute(optref, "StartGameParam.bHardcoreGame"))
 	{
-    	bHardcoreGame = sti(optref.StartGameParam.bHardcoreGame);
+    	bHardcoreGame = bool(optref.StartGameParam.bHardcoreGame);
     }
     if (CheckAttribute(optref, "StartGameParam.bRechargePistolOnLine"))
 	{
-    	bRechargePistolOnLine = sti(optref.StartGameParam.bRechargePistolOnLine);
+    	bRechargePistolOnLine = bool(optref.StartGameParam.bRechargePistolOnLine);
     }	
 	if (CheckAttribute(optref, "StartGameParam.bSeaBattleSave"))
 	{
-    	bSeaBattleSave = sti(optref.StartGameParam.bSeaBattleSave);
+    	bSeaBattleSave = bool(optref.StartGameParam.bSeaBattleSave);
     }
 	if (CheckAttribute(optref, "StartGameParam.bPartitionSet"))
 	{
-    	bPartitionSet = sti(optref.StartGameParam.bPartitionSet);
+    	bPartitionSet = bool(optref.StartGameParam.bPartitionSet);
     }
 
 	if (CheckAttribute(optref, "StartGameParam.bRains"))
 	{
-    	bRains = sti(optref.StartGameParam.bRains);
+    	bRains = bool(optref.StartGameParam.bRains);
     }		
 	
     if (CheckAttribute(optref, "StartGameParam.iArcadeSails"))
 	{
-    	iArcadeSails = sti(optref.StartGameParam.iArcadeSails);
+    	iArcadeSails = int(optref.StartGameParam.iArcadeSails);
     }
 }
 
@@ -1016,7 +1016,7 @@ void LoadPlayerProfileDefault()
 // boal сложность -->
 string GetLevelComplexity(int _Level_Complexity)
 {
-	string level = _Level_Complexity;
+	string level = string(_Level_Complexity);
 	switch (_Level_Complexity)
 	{
 	    case 1 :
@@ -1084,7 +1084,7 @@ int GetChrIdxFromInterface(int charScrollIdx, string nodeName)
 	string currentPic = "pic" + (charScrollIdx + 1);
 	if (!CheckAttribute(&GameInterface, nodeName + "." + currentPic + ".character")) return -1;
  
-	return sti(GameInterface.(nodeName).(currentPic).character);
+	return int(GameInterface.(nodeName).(currentPic).character);
 }
 
 void GetTriggerFramePosition(string sNode, ref x1, ref y1, ref x2, ref y2)
@@ -1210,12 +1210,12 @@ void Event_NullTrigger()
 
 int GetSelectedColumn(string tableName)
 {
-	return SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 3);
+	return int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 3));
 }
 
 int GetSelectedRow(string tableName)
 {
-	return SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 1);
+	return int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 1));
 }
 
 // JOKERBACKLOG допилить функцию под Y координату
@@ -1307,14 +1307,14 @@ void InitTips()
     for (int i = 0; i < gTipsQty; i++)
     {
         gTipsPerm[i] = i;
-        gTips[i] = DLGO(GetConvertStr("Tip" + i, "GameTips.txt"), nullptr);
+        gTips[i] = "Tip" + i;
     }
     ShuffleArray(&gTipsPerm);
 }
 
 string GetCurTip()
 {
-    return gTips[gTipsPerm[gCurTipNum]];
+    return DLGO(GetConvertStr(gTips[gTipsPerm[gCurTipNum]], "GameTips.txt"), nullptr);
 }
 
 string GetNewTip()
@@ -1329,7 +1329,7 @@ string GetNewTip()
         ShuffleArray(&gTipsPerm);
         gCurTipNum = (gTipsPerm[0] == prev) ? 1 : 0;
     }
-    return gTips[gTipsPerm[gCurTipNum]];
+	return DLGO(GetConvertStr(gTips[gTipsPerm[gCurTipNum]], "GameTips.txt"), nullptr);
 }
 
 #event_handler("Tips_GetText", "Tips_GetText");

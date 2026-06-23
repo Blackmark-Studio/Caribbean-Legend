@@ -11,7 +11,8 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
+	int iMoney = 0;
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -210,9 +211,7 @@ void ProcessDialogEvent()
 			link.l1 = "Thanks, Layton. Told you I'd be back someday, ha-ha!";
 			link.l1.go = "return_1";
 		break;
-		
-		int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
-		int iMoney = 0;
+
 		case "return_1":
 			dialog.text = "All right. Do you have any food for sale? I'm prepared to buy at double the market rate.";
 			if (iTrade > 0)
@@ -265,7 +264,7 @@ void ProcessDialogEvent()
 			}
 			if (iTemp >= 15000) // лесник
 			{
-			 iTemp = (15000 - sti(npchar.quest.foodqty))	
+			 iTemp = (15000 - int(npchar.quest.foodqty))
              dialog.text = "Jesus Christ, that's too much for us! We'd never be able to eat it before it rotted. Right now I can't take more than "+iTemp+".";
 			 link.l1 = "Whatever you say.";
 			 link.l1.go = "trade_3";
@@ -280,7 +279,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_3": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 		    iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			dialog.text = "Deal. I'll pay you "+FindRussianMoneyString(iMoney)+" for the goods. Fair?";
 			link.l1 = "Fair! Nice doing business with you!";
@@ -290,15 +289,15 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_4": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "Damn my eyes! My storehouse is full! I won't need to buy provisions for the next half-year.";
@@ -319,11 +318,11 @@ void ProcessDialogEvent()
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "Excellent! My storehouse is full, now. I won't need to buy victuals for the next half-year.";
@@ -342,7 +341,7 @@ void ProcessDialogEvent()
 		
 		case "head": // стандартный диалог Декстера-адмирала
 			dialog.text = "A-ah, "+GetFullName(pchar)+"! Glad to see you! What do you want?";
-			if (iTrade > 0 && sti(npchar.quest.foodqty) < 15000)
+			if (iTrade > 0 && int(npchar.quest.foodqty) < 15000)
 			{
 				link.l1 = "Want to buy some provisions from me?";
 				link.l1.go = "trade";

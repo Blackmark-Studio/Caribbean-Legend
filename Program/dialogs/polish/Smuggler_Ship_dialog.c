@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 		
 		case "start2":
             ret = Pchar.name + ", Jestem przemytnikiem, nie gubernatorem, o jakiej pracy w ogóle mówisz?";
-            if (sti(Pchar.nation) == PIRATE)
+            if (int(Pchar.nation) == PIRATE)
             {
                 dialog.text = ret+"Sprawdź karczme Inness. Ona wie o każdym w mieście."+"  Idź do Urksena, on jest tutaj liderem. Ale najpierw porozmawiaj z lokalnymi piratami.";
             }
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			//Квест бук
 			AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 
 
 			LAi_SetPlayerType(PChar);

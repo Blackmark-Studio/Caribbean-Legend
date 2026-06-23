@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("考えが変わったんだ……","今は話すことは何もねえな。"),"うーん、俺の記憶はどこに行っちまったんだ……","「ああ、本当にこれで三度目だな……」","いや、何の質問だって…",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Цена чахотки
-			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
+			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && int(pchar.money) >= 3000)
 			{
 				link.l1 = "お前の砦で疫病が猛威を振るってるって聞いたぜ。町にも流行が広がると思うか？";
 				link.l1.go = "Consumption";
@@ -139,8 +139,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "ああ神様、またその話かよ！いや、ありがたいことに聞いてねえよ。誓うぜ！さあ、話題を変えよう。頼むから！";
 			link.l1 = "わかったよ、落ち着けって…";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";
@@ -161,7 +161,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2":
 			dialog.text = "そうだな、あいつの首を絞めてやりたいと思ってる奴の方が、友達よりずっと多いってことさ。\nだが、あいつに本当に影響を与えられる人物の名前が知りたいなら、千ペソかかるぜ。\n払うなら――全部教えてやるよ。";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "わかったよ、金を持ってけ、この強欲ジジイめ。";
 				link.l1.go = "OZ_Tavern_3";
@@ -177,7 +177,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2_1":
 			dialog.text = "船長、千ペソ持ってきたか？";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "あるぜ。受け取れ、この強欲じじい。";
 				link.l1.go = "OZ_Tavern_3";

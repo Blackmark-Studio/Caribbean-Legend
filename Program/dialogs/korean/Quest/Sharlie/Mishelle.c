@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bool bFMQL = CheckAttribute(pchar,"questTemp.FMQL") && pchar.questTemp.FMQL != "fail" && pchar.questTemp.FMQL != "end";
 				if(bFMQM || bFMQN || bFMQT || bFMQP || bFMQG || bFMQL)
 				{
-					if (sti(pchar.rank) < 12)
+					if (int(pchar.rank) < 12)
 					{
 						dialog.text = "안녕, 형제여! 나를 여기서 꺼내려는 네 진심 어린 열정은 고맙지만, 아직 다음 단계로 나아갈 준비가 안 되었구나. 내 계획에는 노련한 선장이 필요하다네. 계속해서 카리브를 탐험하고, 보상을 얻으며 배워라! 준비가 되면, 계속하자꾸나.";
 						link.l1 = "뭐, 형이 뭐라 하든 상관없어. 여기 갇혀 있는 건 형이지, 난 아니니까.";
@@ -46,24 +46,24 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				if (sti(pchar.rank) < 12)
+				if (int(pchar.rank) < 12)
 				{
 					Log_info("Level 12 is required");
 					dialog.text = "항해자 샤를! 자네의 모험담을 들었네! 이제 내 계획의 다음 단계에 거의 준비가 다 된 것 같군. 경험을 좀 더 쌓으면 바로 돌아오게.";
-					if (sti(pchar.rank) < 7)
+					if (int(pchar.rank) < 7)
 					{
 						dialog.text = "안녕, 형제여! 나를 여기서 꺼내려는 너의 진심 어린 열정은 고맙지만, 아직 다음 단계로 갈 준비가 되지 않았구나. 내 계획에는 노련한 선장이 필요하다네. 계속해서 카리브 해를 탐험하고, 보상을 얻으며 배워라! 준비가 되면, 우리가 계속할 것이네.";
 					} 
 					else 
 					{
-						if (sti(pchar.rank) < 10)
+						if (int(pchar.rank) < 10)
 						{
 							dialog.text = "형, 만나서 반갑군! 네가 진전을 이루고 있다고 들었어! 하지만 아직 내 계획의 다음 단계로 갈 준비는 안 됐지. 지금처럼 계속 해 보고, 준비가 되면 다시 찾아오게.";
 						}
 					}
 					link.l1 = "그래, 뭐라 하든 형이니까. 여기 앉아 있는 건 형이지, 난 아니거든.";
 					link.l1.go = "exit";
-					if(sti(pchar.rank) > 8)
+					if(int(pchar.rank) > 8)
 					{
 						link.l2 = "난 그렇게 생각하지 않아, 형. 너야 이 감옥에 이미 익숙해졌을지 몰라도, 난 오래 있을 생각 없어 – 우리 아버지는 영원히 기다려주지 않으시거든. 이제 말해.";
 						link.l2.go = "gambitA";
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		
 		case "gambit":
 			dialog.text = "보이네, 사랑하는 형제여. 네가 걷는 모습과 얼굴 표정이 보여. 결국 너를 미치게 만들었던 그 잘난 척하는 어린아이의 가면이 완전히 벗겨졌구나. 이제는 새로운 삶이 분명히 너에게 도움이 되었겠지.";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "형, 네 말이 칭찬인지 모욕인지 도무지 알 수가 없군. 하지만 진실을 말해주지. 네가 나를 어떻게 생각하든 나는 전혀 신경 쓰지 않아. 네 빚을 갚기 위해 필요한 백만을 이미 모았으니 곧 자유의 몸이 될 거야. 드 푸앵시를 어디서 찾을 수 있지?";
 				link.l1.go = "gambit_1_1";
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		
 		case "saga_2":
 			dialog.text = "이미 필요한 백만 페소를 마련했소?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "예, 지금 필요한 금액을 가지고 있습니다.";
 				link.l1.go = "saga_3_1";

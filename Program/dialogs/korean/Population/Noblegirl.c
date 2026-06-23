@@ -28,9 +28,9 @@ void ProcessDialogEvent()
 			//первая встреча
             if(NPChar.quest.meeting == "0")
 			{
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
-					dialog.text = "흠. 그대는 ~의 깃발 아래 항해하고 있군 "+NationNameGenitive(sti(pchar.nation))+", 선장. 나는 우리 나라의 적과 말하고 싶지 않소. 흠!";
+					dialog.text = "흠. 그대는 ~의 깃발 아래 항해하고 있군 "+NationNameGenitive(int(pchar.nation))+", 선장. 나는 우리 나라의 적과 말하고 싶지 않소. 흠!";
 					link.l1 = "아, 그렇지. 진정한 애국자군...";
 					link.l1.go = "exit";
 				}
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
 			else
 			{
 				//повторные обращения
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "내가 다시 말해야겠나? 나는 ~의 친구로 의심받고 싶지 않소 "+NationNameAblative(sti(pchar.nation))+"나가! 안 그러면 경비병을 부를 거야! 그들은 너와 한마디 하고 싶어할 테니.";
+					dialog.text = "내가 다시 말해야겠나? 나는 ~의 친구로 의심받고 싶지 않소 "+NationNameAblative(int(pchar.nation))+"나가! 안 그러면 경비병을 부를 거야! 그들은 너와 한마디 하고 싶어할 테니.";
 					link.l1 = "좋아, 좋아, 진정해. 나 간다.";
 					link.l1.go = "exit";
 				}

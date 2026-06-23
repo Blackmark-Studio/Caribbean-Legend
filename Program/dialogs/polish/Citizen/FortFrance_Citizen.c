@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Czy sądzisz, że pracuję dla tajnej służby "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Czy sądzisz, że pracuję dla tajnej służby "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Cóż... nie. Żegnaj zatem.";
 			link.l1.go = "exit";
 			link.l2 = "Jakieś inne pytanie, zatem?";
@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Бремя гасконца
 		case "Sharlie":
-			if (sti(pchar.questTemp.Sharlie.Citcount) == 3)
+			if (int(pchar.questTemp.Sharlie.Citcount) == 3)
 			{
 				dialog.text = "Hmm... Podejrzewam, że niedawno tu przybyłeś, skoro tak śmiało zadajesz takie pytania... Radzę ci przestać, jeśli nie chcesz kłopotów. Porozmawiaj z opatem, może ci pomóc 'oprzytomnieć'. Znajdziesz go w kościele.";
 				link.l1 = "Widzę...";

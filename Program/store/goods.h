@@ -112,7 +112,7 @@ int FindGood(string sGood)
 // Получить товар по ссылке/id/индексу
 ref FindGood_VT(ref ref_Id_Idx)
 {
-	return FindObject_VT(ref_Id_Idx, "GetGoodByID", "GetGoodByType");
+	return FindObject_VT(ref_Id_Idx, &GetGoodByID, &GetGoodByType);
 }
 
 ref GetGoodByID(string sGood)
@@ -129,16 +129,16 @@ ref GetGoodByID(string sGood)
 
 int GetGoodWeightByType(int iGoodType,int quantity)
 {
-	int unitSize = sti(Goods[iGoodType].Units);
+	int unitSize = int(Goods[iGoodType].Units);
 	int unitQuantity = (quantity+unitSize-1)/unitSize;
-	int weight = makeint(unitQuantity*stf(Goods[iGoodType].Weight) + 0.05);
+	int weight = int(unitQuantity*float(Goods[iGoodType].Weight) + 0.05);
 	return weight;
 }
 
 int GetGoodQuantityByWeight(int iGoodType,int weight)
 {
-	int unitSize = sti(Goods[iGoodType].Units);
-	int uqnt = makeint( weight / stf(Goods[iGoodType].Weight) );
+	int unitSize = int(Goods[iGoodType].Units);
+	int uqnt = int( weight / float(Goods[iGoodType].Weight) );
 	return unitSize*uqnt;
 }
 
@@ -167,7 +167,7 @@ int GetRandomGood(int typeFlags, int goodsFlags)
 			{
 				continue;
 			}
-			int curFlags = sti(refGood.Flags);
+			int curFlags = int(refGood.Flags);
 			if (!and(curFlags, goodsFlags))
 			{
 				continue;
@@ -179,7 +179,7 @@ int GetRandomGood(int typeFlags, int goodsFlags)
 			continue;
 		}
 
-		int type = sti(refGood.Type);
+		int type = int(refGood.Type);
 
 		if (!and(typeFlags, GetGoodTypeFlag(type)))
 		{
@@ -195,6 +195,6 @@ int GetRandomGood(int typeFlags, int goodsFlags)
 		return -1;
 	}
 
-	int goodIdx = rand(goodsCount - 1)
+	int goodIdx = rand(goodsCount - 1);
 	return goodsArr[goodIdx];
 }

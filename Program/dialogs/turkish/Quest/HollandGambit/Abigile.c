@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "Aman Tanrım, babamın parasını buldun mu? Gerçek mi bu? Ah, çok sevindim! Çabuk, babama git, seninle konuşmak istiyor. Hadi, onunla görüş!";
 					link.l1 = "Yoldayım, madam.";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 				{
 					DelLandQuestMark(npchar);
 					dialog.text = "Ah, Charles! Geri döndün! Çabuk söyle, adayı buldun mu? Daha fazla beklemeye dayanamıyorum!";
-					if (makeint(Pchar.money) >= 200000)
+					if (int(Pchar.money) >= 200000)
 					{
 						link.l1 = "Evet, Abi. Adayı ve babanın parasını buldum. Onu sana geri getirmek için buradayım.";
 						link.l1.go = "Abigile_GiveMoney";

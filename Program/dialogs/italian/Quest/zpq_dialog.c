@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "Non provare a fregarmi. Dammi solo i soldi – "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+" e puoi andartene per la tua strada. Oppure ce lo prenderemo con la forza.";
+			dialog.text = "Non provare a fregarmi. Dammi solo i soldi – "+FindRussianMoneyString(int(pchar.questTemp.zpq.sum))+" e puoi andartene per la tua strada. Oppure ce lo prenderemo con la forza.";
 			if (pchar.questTemp.zpq == "failed")
 			{
 				link.l1 = "Non lavori forse per quella carogna del forte? Allora ti porto buone nuove, l’ho già mandato all’inferno.";
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 				link.l1 = "Non lavori forse per quella carogna del forte? Digli che il denaro è finito in mani fidate, così può pure scordarsene.";
 			link.l1.go = "zpq_sld2_3";
 			}
-			if(makeint(Pchar.money) >= sti(pchar.questTemp.zpq.sum))
+			if(int(Pchar.money) >= int(pchar.questTemp.zpq.sum))
 			{
 				link.l2 = "Va bene, prendi i tuoi sporchi dobloni, bastardo!";
 				link.l2.go = "zpq_sld2_6";
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			dialog.text = "Bene. Dalli qui e sparisci, capitano!";
 			link.l1 = "...";
 			link.l1.go = "zpq_sld2_7";
-			AddMoneyToCharacter(Pchar, -makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(Pchar, -int(pchar.questTemp.zpq.sum));
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);
 			AddQuestRecord("zpq", "8");
 			AddQuestUserData("zpq", "sSex", GetSexPhrase("",""));

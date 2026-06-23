@@ -98,7 +98,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("PrimaryLand", "CharacterCamera_Forward", CI_GetKeyCode("VK_MWHEEL_UP"), 0, true);
 	MapControlToGroup("CharacterCamera_Forward", "FightModeControls");
 	CI_CreateAndSetControls("PrimaryLand", "CharacterCamera_Backward", CI_GetKeyCode("VK_MWHEEL_DOWN"), 0, true);
-	MapControlToGroup("CharacterCamera_Backward", "FightModeControls")
+	MapControlToGroup("CharacterCamera_Backward", "FightModeControls");
 
 	// CI_CreateAndSetControls( "PrimaryLand", "ChrCamNormalize", CI_GetKeyCode("KEY_Y"), 0, true );
 	// fight

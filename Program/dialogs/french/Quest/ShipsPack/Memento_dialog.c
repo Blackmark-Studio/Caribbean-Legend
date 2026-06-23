@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Je m’attendais à un discours pompeux de sa part. Mais non, il s’est jeté directement au combat.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "Pourquoi les avons-nous attaqués ? Cette goélette ne nous menaçait en rien, elle ne transportait rien d’important. Il y avait bien des rumeurs sur Grim, mais seuls les marchands d’esclaves le craignaient. Vous avez tué un paquet de gens aujourd’hui – et pour quoi, au juste ?";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "...";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "Des cauchemars, apparemment. Mais le pire, c’est qu’un de nos hommes est mort de fièvre. Un jeune gars, costaud, et pourtant il a brûlé en quelques heures.";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "C’est au médecin d’en juger. "+sld.name+" sait ce qu’il fait.";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -164,9 +164,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
-				dialog.text = ""sld.name+" vous en a déjà parlé ce matin. Nous avons perdu onze hommes. Que fait-on ?";
+				dialog.text = sld.name+" vous en a déjà parlé ce matin. Nous avons perdu onze hommes. Que fait-on ?";
 			}
 			else
 			{

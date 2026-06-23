@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					link.l4 = "又是我, 亨利克。 你的潜水服怎么样了? 修好没? ";
 					link.l4.go = "mechanic_20";
 				}
-				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= sti(pchar.questTemp.LSC.PtAddQty))
+				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= int(pchar.questTemp.LSC.PtAddQty))
 				{
 					link.l4 = "我有足够的金属, 就是你要的那种。 拿着吧。 ";
 					link.l4.go = "mechanic_23";
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mechanic_20":
-			if (sti(pchar.questTemp.LSC.PtAddQty) == 0)
+			if (int(pchar.questTemp.LSC.PtAddQty) == 0)
 			{
 				dialog.text = "是的。 我和尤尔根费了很大功夫, 你带来的数量足够完成修理。 潜水服已修好并准备就绪。 我只需要进行几次测试, 但我确定没问题。 明天上午10点来 —我会给罐子充好气, 你就可以做想做的事了。 ";
 				link.l1 = "太棒了! 我很期待。 明天见, 亨利克! ";
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "我不得不让你失望了, " +pchar.name+ "。 正如我所料, 金属不够。 我还需要" + FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty)) + "块才能完成修理。 我不得不再次请求你的帮助。 ";
+				dialog.text = "我不得不让你失望了, " +pchar.name+ "。 正如我所料, 金属不够。 我还需要" + FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty)) + "块才能完成修理。 我不得不再次请求你的帮助。 ";
 				link.l1 = "好吧, 我没料到会这样。 好的, 我会尽力找到你缺少的 Nuggets。 ";
 				link.l1.go = "mechanic_21";
 			}
@@ -271,11 +271,11 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.LSC = "platinum_add_wait";
 			AddQuestRecord("LSC", "9");
-			AddQuestUserData("LSC", "sQty", FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty)));
+			AddQuestUserData("LSC", "sQty", FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty)));
 		break;
 		
 		case "mechanic_23":
-			RemoveItems(pchar, "jewelry10", sti(pchar.questTemp.LSC.PtAddQty));
+			RemoveItems(pchar, "jewelry10", int(pchar.questTemp.LSC.PtAddQty));
 			dialog.text = "太好了! 现在潜水服将被修复。 我只需要进行几次测试, 但我确定没问题。 明天上午10点来 —我会给罐子充好气, 你就可以做想做的事了。 ";
 			link.l1 = "太棒了! 我很期待。 明天见, 亨利克! ";
 			link.l1.go = "mechanic_24";
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(npchar, "quest.guarantee")) // 需要押金
 			{
 				dialog.text = "是的, 当然。 潜水服已测试并充好气。 你带押金了吗? 50万比索? ";
-				if (sti(pchar.money) >= 500000)
+				if (int(pchar.money) >= 500000)
 				{
 					link.l1 = "是的, 当然。 给, 拿着。 ";
 					link.l1.go = "immersion_next_pay";

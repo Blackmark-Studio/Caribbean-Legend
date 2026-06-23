@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bool bFMQL = CheckAttribute(pchar,"questTemp.FMQL") && pchar.questTemp.FMQL != "fail" && pchar.questTemp.FMQL != "end";
 				if(bFMQM || bFMQN || bFMQT || bFMQP || bFMQG || bFMQL)
 				{
-					if (sti(pchar.rank) < 12)
+					if (int(pchar.rank) < 12)
 					{
 						dialog.text = "Saudações, irmão! Agradeço seu entusiasmo sincero para me tirar daqui, mas você ainda não está pronto para o próximo passo. Meu plano exige um capitão experiente. Continue explorando o Caribe, conquiste prêmios e aprenda! Quando estiver pronto, seguiremos em frente.";
 						link.l1 = "Bom, como quiser, irmão. Quem está aí dentro é você, não eu.";
@@ -46,24 +46,24 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				if (sti(pchar.rank) < 12)
+				if (int(pchar.rank) < 12)
 				{
 					Log_info("Level 12 is required");
 					dialog.text = "Charles, o Navegador! Ouvi falar das suas aventuras! Você está quase pronto para a próxima etapa do meu plano. Volte assim que ganhar mais experiência.";
-					if (sti(pchar.rank) < 7)
+					if (int(pchar.rank) < 7)
 					{
 						dialog.text = "Saudações, irmão! Agradeço seu entusiasmo sincero para me tirar daqui, mas você ainda não está pronto para o próximo passo. Meu plano exige um capitão experiente. Continue explorando o Caribe, conquiste prêmios e aprenda! Quando estiver pronto, seguiremos em frente.";
 					} 
 					else 
 					{
-						if (sti(pchar.rank) < 10)
+						if (int(pchar.rank) < 10)
 						{
 							dialog.text = "Que bom te ver, irmão! Ouvi dizer que você está avançando! Mas ainda não está pronto para a próxima etapa do meu plano. Continue fazendo o que tem feito e volte a me procurar quando estiver preparado.";
 						}
 					}
 					link.l1 = "Bem, como quiser, irmão. Quem está sentado aqui é você, não eu.";
 					link.l1.go = "exit";
-					if(sti(pchar.rank) > 8)
+					if(int(pchar.rank) > 8)
 					{
 						link.l2 = "Não acho, irmão. Talvez você já tenha se acostumado com essa cela, mas eu não pretendo ficar aqui por muito tempo – nosso pai não vai esperar para sempre. Fale logo.";
 						link.l2.go = "gambitA";
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		
 		case "gambit":
 			dialog.text = "Eu posso ver, meu caro irmão. Consigo ver seu jeito de andar e a expressão no seu rosto. Finalmente, a máscara daquele jovem convencido, que quase me enlouqueceu, desapareceu de você. Sua nova vida claramente já te fez bem.";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "Não sei, irmão, se suas palavras são elogio ou ofensa. Mas vou ser sincero: não me interessa o que você pensa de mim aí de dentro. Já consegui o milhão necessário para quitar sua dívida, então logo você estará livre. Onde posso encontrar o de Poincy?";
 				link.l1.go = "gambit_1_1";
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		
 		case "saga_2":
 			dialog.text = "Você já conseguiu juntar a quantia exigida de um milhão de pesos?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "Sim, atualmente possuo a quantia necessária.";
 				link.l1.go = "saga_3_1";

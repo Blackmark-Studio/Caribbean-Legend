@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 					iMassive = rand(9);
 					if (model[iMassive] != "")
 					{
-						iRank = sti(pchar.rank) - rand(5) + rand(5);
+						iRank = int(pchar.rank) - rand(5) + rand(5);
 						if (iRank < 1) iRank = 1; 
 						sld = GetCharacter(NPC_GenerateCharacter("CaveGandMan" + i, model[iMassive], "man", "man", iRank, PIRATE, 1, true, "marginal"));
 						SetFantomParamFromRank(sld, iRank, true);

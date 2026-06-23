@@ -22,8 +22,8 @@ void Rat_GenerateRat()
 	int iRatCount = 1; // Скока крыс будем генерить?
 	for(int i=1; i<=iRatCount; i++)
 	{
-		rChar = GetCharacter(NPC_GenerateCharacter("Test_Rat_"+i, "rat", "man", "rat", sti(PChar.rank)*5, PIRATE, -1, false, "citizen"));
-		SetFantomParamFromRank(rChar, sti(PChar.rank)*5, true); // Крутая крыса!
+		rChar = GetCharacter(NPC_GenerateCharacter("Test_Rat_"+i, "rat", "man", "rat", int(PChar.rank)*5, PIRATE, -1, false, "citizen"));
+		SetFantomParamFromRank(rChar, int(PChar.rank)*5, true); // Крутая крыса!
 		rChar.Dialog.FileName = "GenQuests_Dialog.c";
 		LAi_SetStayType(rChar); // ТИП ! От этого анимация и зависит как-раз.
 		ChangeCharacterAddressGroup(rChar, PChar.location, "reload", FindNearestFreeLocator("reload")); // Перенесем в локу к ГГ
@@ -44,9 +44,9 @@ void ContraDeliverQuest_EnterToTavernRoom(string sQuest) // Зашли в ком
 
 void ContraDeliverQuest_ReloadConterToRoom(string sQuest) // генерим клона контрабандиста
 {
-	ref rChar = GetCharacter(NPC_GenerateCharacter("ContraDeliverQuest_Contra_1", PChar.GenQuest.ContraDeliver.Model, "man", PChar.GenQuest.ContraDeliver.Model.Animation, sti(PChar.rank)*2, PIRATE, 0, true, "marginal"));
+	ref rChar = GetCharacter(NPC_GenerateCharacter("ContraDeliverQuest_Contra_1", PChar.GenQuest.ContraDeliver.Model, "man", PChar.GenQuest.ContraDeliver.Model.Animation, int(PChar.rank)*2, PIRATE, 0, true, "marginal"));
 	rChar.DontClearDead = true;
-	SetFantomParamFromRank(rChar, sti(PChar.rank)*2, true);
+	SetFantomParamFromRank(rChar, int(PChar.rank)*2, true);
 	rChar.Name = StringFromKey("GenQuests_1");
 	rChar.LastName = "";
 	rChar.greeting = "Gr_Smuggler Agent";
@@ -78,15 +78,15 @@ void ContraDeliverQuest_GeneratePatrolToRoom()
 {
 	ref rChar;
 	sGenLocation = PChar.GenQuest.ContraDeliver.ToColony;
-	int iNation = sti(characters[GetCharacterIndex(sGenLocation + " Fort Commander")].nation);
+	int iNation = int(characters[GetCharacterIndex(sGenLocation + " Fort Commander")].nation);
 	string sShortNation = NationShortName(iNation); // Для модельки
 	string sModel[3] = {"off_" + sShortNation + "_1", "sold_" + sShortNation + "_1", "sold_" + sShortNation + "_2"};
 	string sGenGroup[3] = {"reload", "Quest", "Quest"};
 	string sGenLocatorArroy[3] = {"reload1_back", "Quest1", "Quest2"};
 	for(int i=0; i<=2; i++)
 	{
-		rChar = GetCharacter(NPC_GenerateCharacter("ContraDeliverQuest_Soldier_" + i, sModel[i], "man", "man", sti(PChar.rank)*2, iNation, 0, true, "soldier"));
-		SetFantomParamFromRank(rChar, sti(PChar.rank)*2, true);
+		rChar = GetCharacter(NPC_GenerateCharacter("ContraDeliverQuest_Soldier_" + i, sModel[i], "man", "man", int(PChar.rank)*2, iNation, 0, true, "soldier"));
+		SetFantomParamFromRank(rChar, int(PChar.rank)*2, true);
 		rChar.Name = StringFromKey("GenQuests_2");
 		rChar.LastName = "";
 		rChar.Greeting = "soldier_arest";
@@ -156,8 +156,8 @@ void ContraMeetManQuest_EnterToShore(string sQuest) // Вошли в бухту
 	ref rChar;
 	if(!CheckAttribute(PChar, "GenQuest.ContraMeetMan.SoldiersInShore")) //Встречаем чела
 	{
-		rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_QuestMan", "citiz_"+(rand(9)+21), "man", "man", sti(PChar.rank)*2, PIRATE, -1, true, "citizen"));
-		SetFantomParamFromRank(rChar, sti(PChar.rank)*2, true);
+		rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_QuestMan", "citiz_"+(rand(9)+21), "man", "man", int(PChar.rank)*2, PIRATE, -1, true, "citizen"));
+		SetFantomParamFromRank(rChar, int(PChar.rank)*2, true);
 		rChar.Greeting = "cit_common";
 		LAi_SetCitizenType(rChar);
 		rChar.Dialog.FileName = "GenQuests_Dialog.c";
@@ -168,7 +168,7 @@ void ContraMeetManQuest_EnterToShore(string sQuest) // Вошли в бухту
 	else // Солдеры
 	{
 		sGenLocation = PChar.GenQuest.ContraMeetMan.QuestTown;
-		int iNation = sti(characters[GetCharacterIndex(sGenLocation + " Fort Commander")].nation);
+		int iNation = int(characters[GetCharacterIndex(sGenLocation + " Fort Commander")].nation);
 		string sShortNation = NationShortName(iNation); // Для модельки
 		int iSoldCount = 4+rand(2);
 		PChar.GenQuest.ContraMeetMan.SoldCount = iSoldCount; // Запомнит, т.к. потом их нужно удалять
@@ -177,15 +177,15 @@ void ContraMeetManQuest_EnterToShore(string sQuest) // Вошли в бухту
 			sGenlocator = LAi_FindRandomLocator("goto");
 			if(i==0) // Офицер
 			{
-				rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Officer_" + i, "off_"+sShortNation+"_1", "man", "man", sti(PChar.rank)*2, iNation, -1, true, "officer"));
-				SetFantomParamFromRank(rChar, sti(PChar.rank)*2, true);
+				rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Officer_" + i, "off_"+sShortNation+"_1", "man", "man", int(PChar.rank)*2, iNation, -1, true, "officer"));
+				SetFantomParamFromRank(rChar, int(PChar.rank)*2, true);
 				rChar.Name = StringFromKey("GenQuests_2");
 				rChar.LastName = "";
 			}
 			else // Солдаты
 			{
-				rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Soldier_" + i, "sold_"+sShortNation+"_1", "man", "man", sti(PChar.rank), iNation, -1, true, "soldier"));
-				SetFantomParamFromRank(rChar, sti(PChar.rank), true);
+				rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Soldier_" + i, "sold_"+sShortNation+"_1", "man", "man", int(PChar.rank), iNation, -1, true, "soldier"));
+				SetFantomParamFromRank(rChar, int(PChar.rank), true);
 				rChar.Name = StringFromKey("GenQuests_3");
 				rChar.LastName = "";
 			}
@@ -201,7 +201,7 @@ void ContraMeetManQuest_EnterToShore(string sQuest) // Вошли в бухту
 
 void ContraMeetManQuest_DeletePatrolFromShore()
 {
-	int iSoldCount = sti(PChar.GenQuest.ContraMeetMan.SoldCount);
+	int iSoldCount = int(PChar.GenQuest.ContraMeetMan.SoldCount);
 	ref rChar;
 	for(int i=0; i<=iSoldCount; i++)
 	{
@@ -252,8 +252,8 @@ void ContraMeetManQuest_ReloadConterToRoom(string sQuest)
 	string sGenLocatorArroy[2] = {"reload1_back", "Quest2"};
 	for(int i=0; i<=1; i++)
 	{
-		rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Contrick_" + i, "citiz_"+(rand(9)+41), "man", "man", sti(PChar.rank)*2, PIRATE, 0, true, "hunter"));
-		SetFantomParamFromRank(rChar, sti(PChar.rank)*2, true);
+		rChar = GetCharacter(NPC_GenerateCharacter("ContraMeetManQuest_Contrick_" + i, "citiz_"+(rand(9)+41), "man", "man", int(PChar.rank)*2, PIRATE, 0, true, "hunter"));
+		SetFantomParamFromRank(rChar, int(PChar.rank)*2, true);
 		rChar.Name = StringFromKey("GenQuests_1");
 		rChar.LastName = "";
 		rChar.Greeting = "Gr_Smuggler Agent";
@@ -473,7 +473,7 @@ void Church_GenQuest2_GenerateBandits(string sQuest)
 	if (iBanditsCount <= 0) iBanditsCount = 1;
 	if (iBanditsCount >= 4) iBanditsCount = 3 + rand(1);	// Чаще всего так и бывает
 	
-	iGenRank = GetCoffDiff(sti(PChar.rank), 1000);
+	iGenRank = GetCoffDiff(int(PChar.rank), 1000);
 	if (iGenRank < MOD_SKILL_ENEMY_RATE) iGenRank = MOD_SKILL_ENEMY_RATE;
 	
 	PChar.GenQuest.ChurchQuest_2.BanditsCount = iBanditsCount;
@@ -512,7 +512,7 @@ void Church_GenQuest2_GenerateBandits(string sQuest)
 
 void Church_GenQuest2_Dialog_With_Bandits(string sQuest)
 {
-	int iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+	int iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 	for(int i=0; i<iBanditsCount; i++)
 	{
 		ref rChar = CharacterFromID("Church_GenQuest2_Bandit_" + i);
@@ -551,7 +551,7 @@ void Church_GenQuest2_TimeIsLeft(string sQuest) // Не нашли бандюк�
 	// Если прерывание отработало, значит бандюки сгенерились, а значит не будет еррора, когда мы будем получать ссылку на них
 	if(!CheckAttribute(PChar, "Quest.Church_GenQuest2_GenerateBandits"))
 	{
-		int iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+		int iBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 		
 		for(int i=0; i<iBanditsCount; i++)
 		{
@@ -608,7 +608,7 @@ void ReasonToFast_MeetPatrolShore(string qName) // генерация патру
 	ref chr, rCharacter;
 	string encGroup, str, locator;
 	int num, i, iNation, n;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	ref pLoc;
 	bool bOk = false;
 
@@ -616,7 +616,7 @@ void ReasonToFast_MeetPatrolShore(string qName) // генерация патру
 	encGroup = LAi_FindRandomLocator("encdetector");
 	str = "locators." + encGroup;
 	makearef(grp, pLoc.(str));
-	iNation = sti(pchar.questTemp.ReasonToFast.GuardNation); // нация патруля
+	iNation = int(pchar.questTemp.ReasonToFast.GuardNation); // нация патруля
 	num = GetAttributesNum(grp); //кол-во человек в патруле
 	if (num <= 0) num = 1;
 	
@@ -635,7 +635,7 @@ void ReasonToFast_MeetPatrolShore(string qName) // генерация патру
 			SetFantomParamFromRank(chr, iRank + 2, true);
 			chr.greeting = "soldier_arest";
 			chr.dialog.filename = "Enc_Patrol.c";
-			if(sti(pchar.questTemp.ReasonToFast.p1) < GetCharacterSPECIAL(pchar, "LUCK") * 10)	
+			if(int(pchar.questTemp.ReasonToFast.p1) < GetCharacterSPECIAL(pchar, "LUCK") * 10)
 			{
 				chr.dialog.currentnode = "First Time";
 				pchar.questTemp.ReasonToFast = "MeetPatrolFail";
@@ -688,7 +688,7 @@ void ReasonToFast_DeletePatrolFromShore(string qName) //  прибъем пат�
 {
 	ref pLoc, rChar;
 	
-	int iPatrolCount = sti(pchar.questTemp.ReasonToFast.PatrolNum);
+	int iPatrolCount = int(pchar.questTemp.ReasonToFast.PatrolNum);
 	pLoc = &locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)];
 	string str = "Patrol"+ pLoc.index + "_";
 	string sTemp = "PatrolGroup_" + pchar.questTemp.ReasonToFast.LocIdx;
@@ -717,10 +717,10 @@ void ReasonToFast_GenerateHunter() // генерация ОЗГ
 {
 	ref chr;
 		
-	int iRank = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
+	int iRank = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
 	chr = GetCharacter(NPC_GenerateCharacter("ReasonToFast_Hunter", "mercen_"+(rand(14)+14), "man", "man", iRank, PIRATE, -1, true, "quest"));
 	FantomMakeCoolFighter(chr, iRank, 80, 80, "blade_06", "pistol3", "grapeshot", 50);
-	int jewelType = sti(pchar.questTemp.ReasonToFast.p4);
+	int jewelType = int(pchar.questTemp.ReasonToFast.p4);
 	string sItem = "jewelry" + jewelType; 
 	AddItems(chr, sItem, 15); 
 	chr.SaveItemsForDead = true;
@@ -740,7 +740,7 @@ void ReasonToFast_GenerateHunter() // генерация ОЗГ
 int ReasonToFast_GetVictimShipType()
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	int iShipType = SHIP_BARKENTINE;
 	
 	if(iRank < 6) iClass = 6;
@@ -787,12 +787,12 @@ int ReasonToFast_GetVictimShipGoods()
 void ReasonToFast_GenerateVictimShip(int iShipType, int iShipGoods) // генерация призового корабля
 {
 	int hcrew;
-	int iNation = sti(pchar.questTemp.ReasonToFast.GuardNation);
+	int iNation = int(pchar.questTemp.ReasonToFast.GuardNation);
 	
 	ref chref = GetCharacter(NPC_GenerateCharacter("VictimCap_1", "mercen_"+(rand(14)+1), "man", "man", 25, iNation, -1, true, "citizen"));
 
 	chref.Ship.Name = pchar.questTemp.ReasonToFast.ShipName;			
-    chref.Ship.Type = GenerateShipExt(iShipType, 1, chref);
+    chref.Ship.Type = GenerateShipExt(iShipType, true, chref);
     SetBaseShipData(chref);
 
     hcrew = GetMinCrewQuantity(chref);
@@ -807,7 +807,7 @@ void ReasonToFast_GenerateVictimShip(int iShipType, int iShipGoods) // гене�
     Fantom_SetBalls(chref, "trade");
 	
 	int iSpace = GetCharacterFreeSpace(chref, iShipGoods);
-	Fantom_SetCharacterGoods(chref, iShipGoods, iSpace, 1);
+	Fantom_SetCharacterGoods(chref, iShipGoods, iSpace, true);
 	
 	string sGroup = "Sea_Victim_1";
 	Group_DeleteGroup(sGroup);
@@ -876,12 +876,12 @@ void ReasonToFast_RemoveVictim()
 void ReasonToFast_PreparePirateShip(string qName) // генерация пиратского корабля
 {
 	ref sld;
-	int iRankPir = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+	int iRankPir = int(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
 	int iShipRank, iShipType;
 	string sTemp, sTemp1;
 	
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 5;
@@ -899,13 +899,13 @@ void ReasonToFast_PreparePirateShip(string qName) // генерация пира
 	sTemp = GenerateRandomNameToShip(PIRATE);
 	FantomMakeCoolSailor(sld, iShipType, sTemp, "", 50+rand(40), 50+rand(40), 50 + rand(40));
 	sld.cirassId = Items_FindItemIdx("cirass1");  // предмета нет, но влияение есть
-    FantomMakeCoolFighter(sld, makeint(pchar.rank) + rand(10) + 5, 60 + rand(30), 50, "blade_06", "pistol3","grapeshot", 80);
+    FantomMakeCoolFighter(sld, int(pchar.rank) + rand(10) + 5, 60 + rand(30), 50, "blade_06", "pistol3","grapeshot", 80);
 		
     sld.SuperShooter  = true;
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterPerk(sld, "Energaiser"); 					// скрытый перк даёт 1.5 к приросту энергии, даётся ГГ и боссам уровней
 	
-	LAi_SetHP(sld, 100 + makeint(pchar.rank) * 2, 100 + makeint(pchar.rank) * 2);
+	LAi_SetHP(sld, 100 + int(pchar.rank) * 2, 100 + int(pchar.rank) * 2);
 
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "quest_ship"; 
@@ -922,7 +922,7 @@ void ReasonToFast_PreparePirateShip(string qName) // генерация пира
 	Group_AddCharacter(sGroup, "PirateCapt");
     Group_SetGroupCommander(sGroup, "PirateCapt");
 
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
 	Group_SetTaskAttack(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
@@ -1100,7 +1100,7 @@ void ReasonToFast_SetTreasureBoxFromMap(string qName)
 		{
 			//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 			//{
-				//if(makeint(pchar.questTemp.SanBoxTarget) > 3)
+				//if(int(pchar.questTemp.SanBoxTarget) > 3)
 				//{
 					Achievment_SetStat(101, 1);
 				//}
@@ -1116,10 +1116,10 @@ void ReasonToFast_SetTreasureBoxFromMap(string qName)
         Items_FindItem("mapQuest", &item);
 		
 		itmName = "icollection"; // генерим сокровища
-		item.BoxTreasure.(itmName) = sti(pchar.questTemp.ReasonToFast.p8); 
+		item.BoxTreasure.(itmName) = int(pchar.questTemp.ReasonToFast.p8);
 		
 		itmName = "Chest"; // генерим сундуки
-		item.BoxTreasure.(itmName) = sti(pchar.questTemp.ReasonToFast.p7); 
+		item.BoxTreasure.(itmName) = int(pchar.questTemp.ReasonToFast.p7);
 
 		itmName = "mineral5"; // генерим ведра
 		item.BoxTreasure.(itmName) = rand(5) + 2;
@@ -1175,7 +1175,7 @@ int ReasonToFast_CheckTreasure(string ItmName, int ReqQty)
 	loc = &locations[FindLocation(pchar.questTemp.ReasonToFast.Treasure.Location)];
 	locatorName = pchar.questTemp.ReasonToFast.Treasure.Locator;
 	
-	makearef(arItems, loc.(locatorName).items)
+	makearef(arItems, loc.(locatorName).items);
 		
     int Qty = GetAttributesNum(arItems);
     for (int a = 0; a < Qty; a++)
@@ -1184,7 +1184,7 @@ int ReasonToFast_CheckTreasure(string ItmName, int ReqQty)
 		if(sName == ItmName)
 		{
 			arCur = GetAttributeN(arItems,a);
-			itemsQty = sti(GetAttributeValue(arCur));
+			itemsQty = int(GetAttributeValue(arCur));
 			return ReqQty - itemsQty;
 		}
     }
@@ -1268,7 +1268,7 @@ void ReasonToFast_GetTreasure(string ItmName, int ReqQty)
 	}
 }
 
-bool ReasonToFast_CreateResidenceNPC(aref loc)
+bool ReasonToFast_CreateResidenceNPC(ref loc)
 {
 	ref chr;
 	int iBaseCity = FindLocation(loc.fastreload + "_town");
@@ -1320,14 +1320,14 @@ void ReasonToFast_InitVariables()
 	pchar.questTemp.ReasonToFast.p5 = (110 - GetSummonSkillFromName(pchar, SKILL_FORTUNE)) * MOD_SKILL_ENEMY_RATE * 1000;	
 	pchar.questTemp.ReasonToFast.p6 = GenQuest_GenerateGoodBlade(); // генерация клинка
 	s1 = GetCharacterSPECIAL(pchar,"Charisma");
-	s1 = s1 - rand(makeint(s1/2));
+	s1 = s1 - rand(int(s1/2));
 	s2 = GetCharacterSPECIAL(pchar,"Intellect");
-	s2 = s2 - rand(makeint(s2/2));
+	s2 = s2 - rand(int(s2/2));
 	pchar.questTemp.ReasonToFast.p7 = s1;
 	pchar.questTemp.ReasonToFast.p8 = s2;	
 	s1 = GetCharacterSPECIAL(pchar,"Charisma");
 	s2 = GetCharacterSPECIAL(pchar,"Intellect");
-	pchar.questTemp.ReasonToFast.p9 = 50 * (5 + s1 - 2 * rand(makeint(s1/2)) + (s2 - 2 * rand(makeint(s2/2))) * 4) * (200 + GetSummonSkillFromName(pchar, SKILL_COMMERCE));
+	pchar.questTemp.ReasonToFast.p9 = 50 * (5 + s1 - 2 * rand(int(s1/2)) + (s2 - 2 * rand(int(s2/2))) * 4) * (200 + GetSummonSkillFromName(pchar, SKILL_COMMERCE));
 	pchar.questTemp.ReasonToFast.p10 = 4500000 * (s1 + 4 * s2)/(200 + GetSummonSkillFromName(pchar, SKILL_COMMERCE));
 	pchar.questTemp.ReasonToFast.target = rand(1);
 	if(rand(1) == 0) 
@@ -1364,7 +1364,7 @@ void BurntShipQuest_TimeIsOver(String _quest)
 // Warship 25.07.09 Генер "A burnt vessel". Начальные иниты для портмана - тип разыскиваемого судна, выдающаяся характеристика и т.д.
 void BurntShipQuest_FillStartParams(ref _npchar)
 {
-	int rank = sti(PChar.rank);
+	int rank = int(PChar.rank);
 	int shipType, temp;
 	float neededValue;
 	String shipAttribute;
@@ -1396,13 +1396,13 @@ void BurntShipQuest_FillStartParams(ref _npchar)
 	shipType = GetRandomShipType(iClassFlags, iTypeFlags, FLAG_SHIP_NATION_ANY);
 	makeref(refShip, ShipsTypes[shipType]);
 
-	if(sti(refShip.Spec) == SHIP_SPEC_RAIDER)
+	if(int(refShip.Spec) == SHIP_SPEC_RAIDER)
 	{
 		shipAttribute = "speedrate";
 	}
 	else
 	{
-		if(sti(refShip.Spec) == SHIP_SPEC_WAR)
+		if(int(refShip.Spec) == SHIP_SPEC_WAR)
 		{
 			shipAttribute = "turnrate";
 		}
@@ -1428,14 +1428,14 @@ void BurntShipQuest_FillStartParams(ref _npchar)
 	}
 	else
 	{
-		_npchar.Quest.BurntShip.ShipNeededValue = MakeInt(neededValue);
+		_npchar.Quest.BurntShip.ShipNeededValue = int(neededValue);
 	}
 }
 
 
 float BurntShipQuest_GetMaxNeededValue(int iShipType, string _param)
 {
-	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
+	float NeededValue = float(GetBaseShipParamFromType(iShipType, _param));
 	switch (_param)
 	{
 		case "speedrate":
@@ -1462,7 +1462,7 @@ void PiratesOnUninhabited_LocationExit(String _quest)
 {
 	int index;
 
-	for(int i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+	for(int i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 	{
 		index = GetCharacterIndex("PirateOnUninhabited_" + i);
 		
@@ -1478,7 +1478,7 @@ void PiratesOnUninhabited_LocationExit(String _quest)
 
 void PiratesOnUninhabited_LocationExit_Good(String _quest)
 {
-	for(int i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+	for(int i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 	{
 		ChangeCharacterAddressGroup(CharacterFromID("PirateOnUninhabited_" + i), "none", "", "");
 	}
@@ -1490,7 +1490,7 @@ void PiratesOnUninhabited_OnShore(String _quest)
 	
 	if(!CheckAttribute(LoadedLocation, "onUninhabitedIsland"))
 	{
-		for(int i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
+		for(int i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.PiratesQty); i++)
 		{
 			character = CharacterFromID("PirateOnUninhabited_" + i);
 			
@@ -1565,7 +1565,7 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 	{
 		//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 		//{
-			//if(makeint(pchar.questTemp.SanBoxTarget) > 3)
+			//if(int(pchar.questTemp.SanBoxTarget) > 3)
 			//{
 				Achievment_SetStat(101, 1);
 			//}
@@ -1576,11 +1576,11 @@ void PiratesOnUninhabited_InTreasureLoc(String _quest)
 	
 	if(!CheckAttribute(PChar, "GenQuest.PiratesOnUninhabited.TreasureLose"))
 	{
-		count = 2 + makeint(MOD_SKILL_ENEMY_RATE / 3) + hRand(1, location.id);
+		count = 2 + int(MOD_SKILL_ENEMY_RATE / 3) + hRand(1, location.id);
 		
 		PChar.GenQuest.PiratesOnUninhabited.ShorePiratesQty = count;
 		
-		rank = sti(PChar.rank);
+		rank = int(PChar.rank);
 		
 		while(i < count)
 		{
@@ -1703,7 +1703,7 @@ void PiratesOnUninhabited_ShoreTreasureLose(String _quest)
 	int index;
 	String boxId = PChar.GenQuest.PiratesOnUninhabited.TreasureBox;
 
-	for(int i = 0; i < sti(PChar.GenQuest.PiratesOnUninhabited.ShorePiratesQty); i++)
+	for(int i = 0; i < int(PChar.GenQuest.PiratesOnUninhabited.ShorePiratesQty); i++)
 	{
 		index = GetCharacterIndex("PirateOnUninhabited_ShorePirate" + i);
 		
@@ -1823,11 +1823,11 @@ void RemoveCrewEpidemy_GenQuest()
 		{
 			chref = GetCharacter(cn);
 			if (!GetRemovable(chref)) continue;
-			ShipType = sti(chref.Ship.Type);
-			crew = makeint(GetCrewQuantity(chref)/(20 - 10 * GetCrewQuantity(chref)/GetMaxCrewQuantity(chref) + GetCharacterSPECIAL(pchar,"Luck")));
-			if(ShipType != sti(pchar.GenQuest.ShipSituation.Epidemy.ShipType) && !IsMainCharacter(chref))
+			ShipType = int(chref.Ship.Type);
+			crew = int(GetCrewQuantity(chref)/(20 - 10 * GetCrewQuantity(chref)/GetMaxCrewQuantity(chref) + GetCharacterSPECIAL(pchar,"Luck")));
+			if(ShipType != int(pchar.GenQuest.ShipSituation.Epidemy.ShipType) && !IsMainCharacter(chref))
 			{
-				crew = makeint(crew/2);
+				crew = int(crew/2);
 			}
 			Log_SetStringToLog(StringFromKey("GenQuests_21", chref.Ship.Name, crew));
 			Statistic_AddValue(mainCh, "Sailors_dead", crew);
@@ -1842,15 +1842,15 @@ void RemoveCrewEpidemy_GenQuest()
 int CheckShipSituationDaily_GenQuest(ref refChar)
 {
 	int cn = 1;
-	int ShipType = sti(refChar.Ship.Type);
+	int ShipType = int(refChar.Ship.Type);
 	bool bOk;
 	
 	if(CheckAttribute(pchar,"GenQuest.ShipSituation.Epidemy"))
 	{
-		bOk = CheckAttribute(pchar,"GenQuest.ShipSituation.Epidemy.ShipType") && (ShipType == sti(pchar.GenQuest.ShipSituation.Epidemy.ShipType));
+		bOk = CheckAttribute(pchar,"GenQuest.ShipSituation.Epidemy.ShipType") && (ShipType == int(pchar.GenQuest.ShipSituation.Epidemy.ShipType));
 		if(bOk || IsMainCharacter(refChar))
 		{
-			switch(sti(pchar.GenQuest.ShipSituation.Epidemy))
+			switch(int(pchar.GenQuest.ShipSituation.Epidemy))
 			{
 				case ShipSituation_0:
 					cn = 1;
@@ -1907,16 +1907,16 @@ void CheckCaptainFreeQuestAboardSituation()
 		{
 			sld = CharacterFromID(pchar.GenQuest.ShipSituation.Epidemy.CapId);			
 			pchar.GenQuest.ShipSituation.Epidemy.ShipName = sld.Ship.Name;
-			pchar.GenQuest.ShipSituation.Epidemy.ShipType = sti(sld.Ship.Type);
+			pchar.GenQuest.ShipSituation.Epidemy.ShipType = int(sld.Ship.Type);
 			if(pchar.GenQuest.ShipSituation.Epidemy.CapState == "Died") // кэп помер - вот бедолага
 			{
 				SetCaptainDiedQuestAboardSituation(sld);
-				ShipSituation_SetConsequence(sti(pchar.GenQuest.ShipSituation.Epidemy));
+				ShipSituation_SetConsequence(int(pchar.GenQuest.ShipSituation.Epidemy));
 			}
 			if(pchar.GenQuest.ShipSituation.Epidemy.CapState == "Live") // кэп остался жить - недолго ему осталось
 			{
 				SetCaptainFreeQuestAboardSituation(sld);
-				ShipSituation_SetConsequence(sti(pchar.GenQuest.ShipSituation.Epidemy));
+				ShipSituation_SetConsequence(int(pchar.GenQuest.ShipSituation.Epidemy));
 			}	
 		}	
 	}	
@@ -1949,16 +1949,16 @@ void ShipSituation_SetConsequence(int iSituation)
 				pchar.GenQuest.ShipSituation.Epidemy.Days = 1;
 			break;
 		}
-		pchar.GenQuest.ShipSituation.Epidemy.DaysQty = sti(pchar.GenQuest.ShipSituation.Epidemy.Days);
+		pchar.GenQuest.ShipSituation.Epidemy.DaysQty = int(pchar.GenQuest.ShipSituation.Epidemy.Days);
 	}
 }
 
 void ShipSituation_CheckConsequence(int iSituation)
 {
 	int DayQty;
-	if(sti(pchar.GenQuest.ShipSituation.Epidemy.Days) > 0)
+	if(int(pchar.GenQuest.ShipSituation.Epidemy.Days) > 0)
 	{
-		DayQty = sti(pchar.GenQuest.ShipSituation.Epidemy.DaysQty) - sti(pchar.GenQuest.ShipSituation.Epidemy.Days);
+		DayQty = int(pchar.GenQuest.ShipSituation.Epidemy.DaysQty) - int(pchar.GenQuest.ShipSituation.Epidemy.Days);
 		if(DayQty == 0)
 		{
 			ReOpenQuestHeader("ShipEpidemy");
@@ -1968,20 +1968,20 @@ void ShipSituation_CheckConsequence(int iSituation)
 			case ShipSituation_0:
 				if(DayQty == 0)
 				{
-					pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*10; 
+					pchar.Health.Damg = float(pchar.chr_ai.hp_max)*10;
 					AddQuestRecord("ShipEpidemy","1");
 					AddQuestUserData("ShipEpidemy", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 					AddQuestUserData("ShipEpidemy", "sShipName", pchar.GenQuest.ShipSituation.Epidemy.ShipName);					
 				}
 				else
 				{
-					if(DayQty < 3) pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*5; 
+					if(DayQty < 3) pchar.Health.Damg = float(pchar.chr_ai.hp_max)*5;
 				}
 			break;
 			case ShipSituation_1:
 				if(DayQty == 0)
 				{
-					pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*10; 
+					pchar.Health.Damg = float(pchar.chr_ai.hp_max)*10;
 					ChangeOfficersLoyality("bad_all", 1);
 					AddQuestRecord("ShipEpidemy","3");
 					AddQuestUserData("ShipEpidemy", "sShipName", pchar.GenQuest.ShipSituation.Epidemy.ShipName);
@@ -1989,13 +1989,13 @@ void ShipSituation_CheckConsequence(int iSituation)
 				}
 				else
 				{
-					if(DayQty < 3) pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*5; 
+					if(DayQty < 3) pchar.Health.Damg = float(pchar.chr_ai.hp_max)*5;
 				}	
 			break;
 			case ShipSituation_2:
 				if(DayQty == 0)
 				{
-					pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*10; 
+					pchar.Health.Damg = float(pchar.chr_ai.hp_max)*10;
 					ChangeOfficersLoyality("bad_all", 1);
 					AddQuestRecord("ShipEpidemy","3");
 					AddQuestUserData("ShipEpidemy", "sShipName", pchar.GenQuest.ShipSituation.Epidemy.ShipName);	
@@ -2003,13 +2003,13 @@ void ShipSituation_CheckConsequence(int iSituation)
 				}
 				else
 				{
-					if(DayQty < 3) pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*5; 
+					if(DayQty < 3) pchar.Health.Damg = float(pchar.chr_ai.hp_max)*5;
 				}	
 			break;
 			case ShipSituation_3:
 				if(DayQty == 0)
 				{
-					pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*10; 
+					pchar.Health.Damg = float(pchar.chr_ai.hp_max)*10;
 					ChangeOfficersLoyality("bad_all", 2);
 					AddQuestRecord("ShipEpidemy","3");
 					AddQuestUserData("ShipEpidemy", "sShipName", pchar.GenQuest.ShipSituation.Epidemy.ShipName);	
@@ -2017,16 +2017,16 @@ void ShipSituation_CheckConsequence(int iSituation)
 				}
 				else
 				{
-					if(DayQty < 3) pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*5; 
+					if(DayQty < 3) pchar.Health.Damg = float(pchar.chr_ai.hp_max)*5;
 				}		
 			break;
 			case ShipSituation_4:
-				pchar.Health.Damg = stf(pchar.chr_ai.hp_max)*10;
+				pchar.Health.Damg = float(pchar.chr_ai.hp_max)*10;
 				AddQuestRecord("ShipEpidemy","1");
 				AddQuestUserData("ShipEpidemy", "sShipName", pchar.GenQuest.ShipSituation.Epidemy.ShipName);	
 			break;
 		}
-		pchar.GenQuest.ShipSituation.Epidemy.Days = sti(pchar.GenQuest.ShipSituation.Epidemy.Days) - 1;	
+		pchar.GenQuest.ShipSituation.Epidemy.Days = int(pchar.GenQuest.ShipSituation.Epidemy.Days) - 1;
 	}
 	else
 	{
@@ -2056,14 +2056,14 @@ void ShipSituation_CheckConsequence(int iSituation)
 // вражеский кэп помер от стали и свинца - выходим сразу в режим "море"
 void SetCaptainDiedQuestAboardSituation(ref chr)
 {
-	ShipDead(sti(chr.index), KILL_BY_ABORDAGE, sti(pchar.index));
+	ShipDead(int(chr.index), KILL_BY_ABORDAGE, int(pchar.index));
 }
 
 // отпустили кэпа при переходе из вражеской каюты в режим "море" 
 void SetCaptainFreeQuestAboardSituation(ref chr)
 {
 	aref    arTo, arFrom;	
-	ref sld = GetCharacter(NPC_GenerateCharacter(chr.id + "_free", "off_hol_2", "man", "man", 60, sti(chr.nation), 0, true, "citizen")); // фантом, на время 
+	ref sld = GetCharacter(NPC_GenerateCharacter(chr.id + "_free", "off_hol_2", "man", "man", 60, int(chr.nation), 0, true, "citizen")); // фантом, на время
 	ChangeAttributesFromCharacter(sld, chr, false);
 	DeleteAttribute(sld, "ship");
 	sld.ship = "";
@@ -2080,8 +2080,8 @@ void SetCaptainFreeQuestAboardSituation(ref chr)
 	if (bSeaActive)
 	{			
 		PostEvent("evntQuestsCheck", 400);
-		ShipTakenFree(sti(chr.index), KILL_BY_ABORDAGE, sti(pchar.index)); // тут умер реальный кэп, апдайтим ещё
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+		ShipTakenFree(int(chr.index), KILL_BY_ABORDAGE, int(pchar.index)); // тут умер реальный кэп, апдайтим ещё
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
 		UpdateRelations();
 		RefreshBattleInterface();
 		CheckQuestAboardCabinSituation(sld);
@@ -2106,10 +2106,10 @@ void ShipSituation_MakeDetonate(string qName)
 {
 	Log_TestInfo("Добро пожаловать в преисподнюю !!");
 	ref sld = CharacterFromID(pchar.GenQuest.ShipSituation.Explosion.CapId + "_free");
-	ref rBaseShip = GetRealShip(sti(sld.Ship.Type));
-	Event(SHIP_BRANDER_DETONATE,"l", sti(sld.index));
+	ref rBaseShip = GetRealShip(int(sld.Ship.Type));
+	Event(SHIP_BRANDER_DETONATE,"l", int(sld.index));
     PlaySound("Sea Battles\Vzriv_fort_001.wav");
-	Ship_SetTaskNone(SECONDARY_TASK, sti(sld.index));
+	Ship_SetTaskNone(SECONDARY_TASK, int(sld.index));
 	Log_Info("" + XI_ConvertString(rBaseShip.BaseName) + " '" + sld.Ship.Name + "' " + GetShipSexWord(rBaseShip.BaseName, StringFromKey("GenQuests_22"), StringFromKey("GenQuests_23")) + StringFromKey("GenQuests_24"));
 	bQuestDisableMapEnter = false;
 	RefreshBattleInterface();
@@ -2126,13 +2126,13 @@ void CheckQuestAboardCabinSituation(ref echar)
 		echar.lastname = "";
 		bQuestDisableMapEnter = true;
 
-		if(sti(pchar.GenQuest.ShipSituation.Explosion) == ShipSituation_1)
+		if(int(pchar.GenQuest.ShipSituation.Explosion) == ShipSituation_1)
 		{
 			DoQuestFunctionDelay("ShipSituation_MakeDetonate", 0.5);	
 		}
 		else
 		{
-			if(sti(pchar.GenQuest.ShipSituation.Explosion) == ShipSituation_0)
+			if(int(pchar.GenQuest.ShipSituation.Explosion) == ShipSituation_0)
 			{				
 				if(iArcadeSails == 1)
 				{
@@ -2159,8 +2159,8 @@ void CheckQuestAboardCabinSituation(ref echar)
 	if(CheckAttribute(pchar,"GenQuest.ShipSituation.Epidemy"))
 	{
 		pchar.GenQuest.ShipSituation.Epidemy.ShipName = echar.Ship.Name;
-		pchar.GenQuest.ShipSituation.Epidemy.ShipType = sti(echar.Ship.Type);
-		ShipSituation_SetConsequence(sti(pchar.GenQuest.ShipSituation.Epidemy));
+		pchar.GenQuest.ShipSituation.Epidemy.ShipType = int(echar.Ship.Type);
+		ShipSituation_SetConsequence(int(pchar.GenQuest.ShipSituation.Epidemy));
 	}	
 }
 //=====================================================================================================================================
@@ -2210,7 +2210,7 @@ void EncGirl_GenQuest_GetCoins(string qName)
 	ref sld = CharacterFromID("CangGirl");
 	ChangeCharacterAddress(sld, "None", ""); 
 	sld.lifeDay = 0; 
-	AddSimpleRumour(StringFromKey("GenQuests_26", pchar.GenQuest.EncGirl.name), sti(sld.nation), 5, 1); // belamour
+	AddSimpleRumour(StringFromKey("GenQuests_26", pchar.GenQuest.EncGirl.name), int(sld.nation), 5, 1); // belamour
 	ChangeCharacterComplexReputation(pchar,"nobility", -10);
 	AddQuestRecord("JungleGirl", "3");
 	AddQuestUserData("JungleGirl", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
@@ -2225,7 +2225,7 @@ void EncGirl_GenQuest_GetChestPlaceName()
 	switch (iTemp)
 	{
 		case 0: 
-			pchar.GenQuest.EncGirl.islandId = "Bermudes"
+			pchar.GenQuest.EncGirl.islandId = "Bermudes";
 			pchar.GenQuest.EncGirl.placeId = "Bermudes_Cavern";
 			pchar.GenQuest.EncGirl.shoreId = "Shore_ship1";
 		break;
@@ -2571,20 +2571,20 @@ void EncGirl_SpeakInRoomEnter(string qName)
 	ref sld = characterFromId("CangGirl");	
 	sld.dialog.filename = "Enc_RapersGirl_dialog.c";
 	sld.dialog.currentnode = "Node_228";
-	PlaceCharacter(sld, "goto", "random_must_be_near"));
+	PlaceCharacter(sld, "goto", "random_must_be_near");
 	LAi_SetActorTypeNoGroup(sld);
 	LAi_ActorDialog(sld, pchar, "", 5.0, 0);
 }	
 
 void EncGirl_SetBerglar(string qName)
 {
-	int iTemp = sti(pchar.rank) + rand(5);
+	int iTemp = int(pchar.rank) + rand(5);
 	ref sld = GetCharacter(NPC_GenerateCharacter("Berglar_EncGirl", "mercen_"+(rand(14)+14), "man", "man", iTemp, PIRATE, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iTemp, 50 + rand(30), 50 + rand(30), "topor_04", "pistol6", "bullet", 50);
 	sld.dialog.filename = "Enc_Rapers_dialog.c";
 	sld.dialog.currentnode = "EncGirl_Berglar";	
 	sld.greeting = "Enc_Raiders"; 
-	PlaceCharacter(sld, "goto", "random_must_be_near"));
+	PlaceCharacter(sld, "goto", "random_must_be_near");
 	LAi_SetActorType(sld);
 	LAi_group_MoveCharacter(sld, "EnemyFight");
 	LAi_ActorDialog(sld, pchar, "", 4.0, 0);
@@ -2659,7 +2659,7 @@ void EncGirl_GenQuest_GetBag(string qName)
 	sld.lifeDay = 0; 
 	AddSimpleRumour(RandPhraseSimple(StringFromKey("GenQuests_27"),  
 				StringFromKey("GenQuests_28")), 
-				sti(pchar.GenQuest.EncGirl.nation), 3, 1);
+				int(pchar.GenQuest.EncGirl.nation), 3, 1);
 	ChangeCharacterComplexReputation(pchar,"nobility", -8);
 	pchar.quest.EncGirl_GenerateBag.over = "yes";
 	pchar.quest.EncGirl_SpeakHorse.over = "yes";	
@@ -2703,8 +2703,8 @@ void EncGirl_DeliveToParents(string qName)
 
 void EncGirl_GenerateLover(string qName)
 {
-	int iTemp = sti(pchar.rank) + rand(5);
-	ref sld = GetCharacter(NPC_GenerateCharacter("Lover_EncGirl", "mercen_"+(rand(14)+1), "man", "man", iTemp, sti(pchar.GenQuest.EncGirl.nation), -1, true, "citizen"));
+	int iTemp = int(pchar.rank) + rand(5);
+	ref sld = GetCharacter(NPC_GenerateCharacter("Lover_EncGirl", "mercen_"+(rand(14)+1), "man", "man", iTemp, int(pchar.GenQuest.EncGirl.nation), -1, true, "citizen"));
 	sld.name = pchar.GenQuest.EncGirl.sLoverId;
 	sld.lastname = "";
 	FantomMakeCoolFighter(sld, iTemp, 80, 80, "topor_04", "pistol6", "bullet", 50);
@@ -2782,7 +2782,7 @@ void EncGirl_ToLoverParentsExit()
     ref sld = CharacterFromID("CangGirl");
 	pchar.quest.EncGirl_DeathSimple.over = "yes";
 	ChangeCharacterComplexReputation(pchar,"nobility", -3);
-	AddMoneyToCharacter(pchar, 500 * (sti(pchar.rank) + 10) + hrand(5000, sld.name));
+	AddMoneyToCharacter(pchar, 500 * (int(pchar.rank) + 10) + hrand(5000, sld.name));
 	AddQuestRecord("JungleGirl", "13");
 	AddQuestUserData("JungleGirl", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"), StringFromKey("GenQuests_67")));
 	CloseQuestHeader("JungleGirl");
@@ -2924,7 +2924,7 @@ void Set_TreasureBarrel()
 //=====================================================================================================================================
 void CaptainComission_GenerateSituation(ref chref)
 {
-	if (CheckAttribute(chref, "RealEncounterType") && sti(chref.RealEncounterType) != ENCOUNTER_TYPE_ALONE && !CheckAttribute(pchar,"GenQuest.CaptainComission"))
+	if (CheckAttribute(chref, "RealEncounterType") && int(chref.RealEncounterType) != ENCOUNTER_TYPE_ALONE && !CheckAttribute(pchar,"GenQuest.CaptainComission"))
 	{
 		aref chrShip;
 		makearef(chrShip, chref.Back.Ship);
@@ -2945,9 +2945,9 @@ void CaptainComission_GenerateSituation(ref chref)
 void CaptainComission_Init(ref chref)
 {
 	pchar.GenQuest.CaptainComission.Nation = chref.nation;
-	pchar.GenQuest.CaptainComission.City = GetQuestNationsCity(sti(chref.nation));
-	pchar.GenQuest.CaptainComission.Name = GenerateRandomName_Generator(sti(chref.nation), "man");
-	pchar.GenQuest.CaptainComission.SlaveName = GenerateRandomName_Generator(sti(chref.nation), "man");
+	pchar.GenQuest.CaptainComission.City = GetQuestNationsCity(int(chref.nation));
+	pchar.GenQuest.CaptainComission.Name = GenerateRandomName_Generator(int(chref.nation), "man");
+	pchar.GenQuest.CaptainComission.SlaveName = GenerateRandomName_Generator(int(chref.nation), "man");
 	pchar.GenQuest.CaptainComission.ShipName = chref.Back.Ship.Name;
 	pchar.GenQuest.CaptainComission.Speak_Tavern = false;
 	pchar.GenQuest.CaptainComission.variant = "A0";
@@ -2986,7 +2986,7 @@ void CaptainComission_EndTavern()
 
 void CaptainComission_GenerateChar(string qName)
 {
-	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_1" , "officer_12", "man", "man", 10, sti(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
+	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_1" , "officer_12", "man", "man", 10, int(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
 	FantomMakeCoolFighter(sld, 10, 30, 35, LinkRandPhrase("blade_05","blade_04","blade_07"), "pistol1", "bullet", 10);	
 	sld.name = pchar.GenQuest.CaptainComission.Name;
 	sld.lastname = "";
@@ -3062,14 +3062,14 @@ void CaptainComission_30DaysIsLeft(string qName) // прошло 30 дней п�
 			AddQuestUserData("CaptainComission1", "sSex2", GetSexPhrase(StringFromKey("GenQuests_62"),StringFromKey("GenQuests_63")));
 			AddQuestUserData("CaptainComission1", "sCharName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission1", "sCapName", pchar.GenQuest.CaptainComission.CapName);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.GenQuest.CaptainComission.Nation)) + "hunter", 50); // лесник - выдал охотников ибо 150к - это вам не копейки :D
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.GenQuest.CaptainComission.Nation)) + "hunter", 50); // лесник - выдал охотников ибо 150к - это вам не копейки :D
 		}
 		if(pchar.GenQuest.CaptainComission.AfterTavernSpeak == "badSpeak")
 		{
 			ChangeCharacterComplexReputation(pchar,"nobility", -3);
 			AddQuestRecord("CaptainComission1", "7");
 			AddQuestUserData("CaptainComission1", "sCharName", pchar.GenQuest.CaptainComission.Name);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.GenQuest.CaptainComission.Nation)) + "hunter", 50);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.GenQuest.CaptainComission.Nation)) + "hunter", 50);
 		}
 		CloseQuestHeader("CaptainComission1");
 		DeleteAttribute(pchar,"GenQuest.CaptainComission");
@@ -3169,7 +3169,7 @@ void CaptainComission_GenerateSlave(string qName)
 	
 	int iMassive = rand(6);
 	
-	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Slave", model[iMassive], "man", "man", rand(5) + 5, sti(pchar.GenQuest.CaptainComission.Nation), -1, true, "slave"));	
+	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Slave", model[iMassive], "man", "man", rand(5) + 5, int(pchar.GenQuest.CaptainComission.Nation), -1, true, "slave"));
 	sld.city = pchar.GenQuest.CaptainComission.City;
 	sld.name = pchar.GenQuest.CaptainComission.SlaveName;
 	sld.lastname = "";	
@@ -3203,7 +3203,7 @@ void CaptainComission_GenerateSlave(string qName)
 		for (int i = 0; i < 3; i++)
 		{		
 			sld = GetCharacter(NPC_GenerateCharacter("SlaveGuard_"+i, "sold_eng_"+(rand(7)+1), "man", "man", 10, ENGLAND, 1, true,"soldier"));
-			SetFantomParamFromRank(sld, sti(pchar.rank) + MOD_SKILL_ENEMY_RATE, true); // бравые орлы
+			SetFantomParamFromRank(sld, int(pchar.rank) + MOD_SKILL_ENEMY_RATE, true); // бравые орлы
             LAi_SetActorType(sld);
             LAi_SetStayType(sld); 
             LAi_group_MoveCharacter(sld, sTemp);
@@ -3216,7 +3216,7 @@ void CaptainComission_GenerateSlave(string qName)
 			sld.dialog.filename = "GenQuests_Dialog.c";
 			sld.dialog.currentnode = "CaptainComission_80";							
         }				
-		SetFunctionTimerConditionParam("CaptainComission_SlaveIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false); // прерывание на исчезновение раба  в течение суток
+		SetFunctionTimerConditionParam("CaptainComission_SlaveIsOver", 0, 0, 1, int(24 - GetHour()), false); // прерывание на исчезновение раба  в течение суток
 		pchar.quest.CapComission_SlaveDeath.win_condition.l1 = "NPC_Death";
 		pchar.quest.CapComission_SlaveDeath.win_condition.l1.character = "CapComission_Slave";
 		pchar.quest.CapComission_SlaveDeath.function = "CaptainComission_SlaveDeath";		
@@ -3234,7 +3234,7 @@ void CaptainComission_GeneratePassengerSlave()
 	
 	int iMassive = rand(2);
 	
-	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Slave", model[iMassive], "man", "man", rand(5) + 5, sti(pchar.GenQuest.CaptainComission.Nation), -1, true, "slave"));	
+	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Slave", model[iMassive], "man", "man", rand(5) + 5, int(pchar.GenQuest.CaptainComission.Nation), -1, true, "slave"));
 	sld.city = pchar.GenQuest.CaptainComission.City;	
 	sld.name = pchar.GenQuest.CaptainComission.SlaveName;
 	sld.lastname = "";	
@@ -3266,7 +3266,7 @@ void CaptainComission_GuardsAfter(string qName)
 		pchar.quest.CaptainComission_SlaveOnMayak.win_condition.l1.location = "Mayak2";
 		pchar.quest.CaptainComission_SlaveOnMayak.function = "CaptainComission_OnMayak";
 	
-		SetFunctionTimerConditionParam("CaptainComission_SlaveDeathJungles", 0, 0, 2, MakeInt(24 - GetHour()), false);
+		SetFunctionTimerConditionParam("CaptainComission_SlaveDeathJungles", 0, 0, 2, int(24 - GetHour()), false);
 	}	
 
 }
@@ -3346,7 +3346,7 @@ void CaptainComission_GeneratePatrol()
 	
 	str = "Patrol"+ pLoc.index + "_";
 	string sGroup = "PatrolGroup_" + pLoc.index; //имя группы
-	iRank = sti(pchar.rank);
+	iRank = int(pchar.rank);
 	if(MOD_SKILL_ENEMY_RATE > 5) num = 5;
 	else						 num = 3;	
 	
@@ -3457,10 +3457,10 @@ void CaptainComission_GeneratePirateShips(string qName)
 	// ==> Пиратские кэпы
 	for (i=1; i<=2; i++)
 	{
-		Rank = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
-		if(makeint(pchar.rank) > 13) { iShipRank = rand(2) + 3; }
-		if(makeint(pchar.rank) > 6 && makeint(pchar.rank) < 13) { iShipRank = rand(2); }	
-		if(makeint(pchar.rank) < 7) { iShipRank = rand(1); }
+		Rank = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
+		if(int(pchar.rank) > 13) { iShipRank = rand(2) + 3; }
+		if(int(pchar.rank) > 6 && int(pchar.rank) < 13) { iShipRank = rand(2); }
+		if(int(pchar.rank) < 7) { iShipRank = rand(1); }
 		switch (iShipRank)
 		{
 			case 0: 		 
@@ -3577,8 +3577,8 @@ void CaptainComission_PirateAttack_DieHard(string qName)
 void CaptainComission_GaleonInit(ref chref)
 {
 	pchar.GenQuest.CaptainComission.Nation = chref.nation;
-	pchar.GenQuest.CaptainComission.City = GetQuestNationsCity(sti(chref.nation));
-	pchar.GenQuest.CaptainComission.Name = GenerateRandomName_Generator(sti(chref.nation), "man");
+	pchar.GenQuest.CaptainComission.City = GetQuestNationsCity(int(chref.nation));
+	pchar.GenQuest.CaptainComission.Name = GenerateRandomName_Generator(int(chref.nation), "man");
 	pchar.GenQuest.CaptainComission.ShipName = chref.Back.Ship.Name;
 	pchar.GenQuest.CaptainComission.City1 = FindAlliedColonyForNationExceptColony(pchar.GenQuest.CaptainComission.City);
 	pchar.GenQuest.CaptainComission.Goods = CaptainComission_GetVictimShipGoods();
@@ -3590,7 +3590,7 @@ void CaptainComission_GaleonInit(ref chref)
 void CaptainComission_GenerateShips()
 {
 	int iShipType, iShipTypeVictim;
-	if(sti(pchar.rank) < 20)
+	if(int(pchar.rank) < 20)
 	{
 		switch(rand(1))
 		{
@@ -3621,7 +3621,7 @@ void CaptainComission_GenerateShips()
 	}
 	pchar.GenQuest.CaptainComission.ShipType = iShipType;
 	pchar.GenQuest.CaptainComission.ShipTypeVictim = iShipTypeVictim;
-	pchar.GenQuest.CaptainComission.ShipTypeName = GenerateRandomNameToShip(sti(pchar.GenQuest.CaptainComission.Nation));
+	pchar.GenQuest.CaptainComission.ShipTypeName = GenerateRandomNameToShip(int(pchar.GenQuest.CaptainComission.Nation));
 	pchar.GenQuest.CaptainComission.VictimShipName = GenerateRandomNameToShip(rand(3));
 }
 
@@ -3660,7 +3660,7 @@ void CaptainComission_TimeIsOver(string qName)
 			sld.LifeDay = 0;
 			AddQuestRecord("CaptainComission2", "44");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //лесник - на тип корабля. 
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //лесник - на тип корабля.
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
 			CloseQuestHeader("CaptainComission2");
@@ -3728,8 +3728,8 @@ void CaptainComission_GenerateQuestVariant()
 
 void CaptainComission_GenerateShip()
 {
-	int iRank = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
-	int iNation = sti(pchar.GenQuest.CaptainComission.Nation);
+	int iRank = int(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+	int iNation = int(pchar.GenQuest.CaptainComission.Nation);
 	ref chref = GetCharacter(NPC_GenerateCharacter("CapComission_1", "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, -1, true, "quest"));
 	
 	chref.name = pchar.GenQuest.CaptainComission.Name;
@@ -3740,10 +3740,10 @@ void CaptainComission_GenerateShip()
 	chref.dialog.currentnode   = "CaptainComission_301";
 		
 	chref.Ship.Name = pchar.GenQuest.CaptainComission.ShipTypeName;
-	FantomMakeCoolSailor(chref, sti(pchar.GenQuest.CaptainComission.ShipType), chref.Ship.Name, CANNON_TYPE_CULVERINE_LBS18, 90, 90, 90);	
-	FantomMakeCoolFighter(chref, makeint(pchar.rank) + rand(10) + 5, 90, 50, LinkRandPhrase("blade_06","blade_08","blade_10"), "pistol3", "grapeshot", 80);
+	FantomMakeCoolSailor(chref, int(pchar.GenQuest.CaptainComission.ShipType), chref.Ship.Name, CANNON_TYPE_CULVERINE_LBS18, 90, 90, 90);
+	FantomMakeCoolFighter(chref, int(pchar.rank) + rand(10) + 5, 90, 50, LinkRandPhrase("blade_06","blade_08","blade_10"), "pistol3", "grapeshot", 80);
 	chref.cirassId = Items_FindItemIdx("cirass1");  
-	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 5, 200 + makeint(pchar.rank) * 5);
+	LAi_SetHP(chref, 200 + int(pchar.rank) * 5, 200 + int(pchar.rank) * 5);
 
 	SetCharacterPerk(chref, "MusketsShoot");
 	SetCharacterPerk(chref, "Energaiser"); 	
@@ -3761,12 +3761,12 @@ void CaptainComission_GenerateShip()
 	Group_FindOrCreateGroup(sGroup);
     Group_SetType(sGroup, "war");
 	
-	SetCharacterRelationBoth(sti(chref.index), GetMainCharacterIndex(), RELATION_FRIEND);
+	SetCharacterRelationBoth(int(chref.index), GetMainCharacterIndex(), RELATION_FRIEND);
 	
 	int IslandID = FindIsland(GetArealByCityName(pchar.GenQuest.CaptainComission.City));
 	ref pLoc = &Islands[IslandID];
 	float x, y, z;
-	FindIslandLocatorXYZ(IslandID, "reload1", &x, &y, &z); 
+	FindIslandLocatorXYZ(pLoc.id, "reload1", &x, &y, &z);
 	string sLocator = GetSeaQuestShipFarLocator(pLoc, "Quest_ships", x, y, z);
 	
 	Group_AddCharacter(sGroup, "CapComission_1");
@@ -3774,7 +3774,7 @@ void CaptainComission_GenerateShip()
 	Group_SetAddress(sGroup, GetArealByCityName(pchar.GenQuest.CaptainComission.City),"quest_ships", sLocator);
 	Group_SetTaskNone(sGroup);
 	
-	SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+	SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 }
 
 void CaptainComission_ExitFromLoc(string qName)
@@ -3842,7 +3842,7 @@ void CaptainComission_CapIsOut(string qName) // свалили из боя
 	AddQuestRecord("CaptainComission2", "6");
 	AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_70"),StringFromKey("GenQuests_71")));
 	AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 	AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ShoreLocation + "Gen"));
 	CloseQuestHeader("CaptainComission2");	
 	DeleteAttribute(pchar, "GenQuest.CaptainComission");
@@ -3854,7 +3854,7 @@ void CaptainComission_CapIsDead(string qName)
 	AddQuestRecord("CaptainComission2", "5");
 	AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_70"),StringFromKey("GenQuests_71")));
 	AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 	AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ShoreLocation + "Gen"));
 	CloseQuestHeader("CaptainComission2");	
 	DeleteAttribute(pchar, "GenQuest.CaptainComission");
@@ -3878,14 +3878,14 @@ void CaptainComission_toShore() // вышвыриваем в бухту без �
 	CleanAllCabinBoxes();
 	
 	AddSimpleRumour(RandPhraseSimple(StringFromKey("GenQuests_38"), 
-				StringFromKey("GenQuests_39")), sti(pchar.GenQuest.CaptainComission.Nation), 5, 2);
+				StringFromKey("GenQuests_39")), int(pchar.GenQuest.CaptainComission.Nation), 5, 2);
 	pchar.quest.Munity = "Deads";
 	pchar.location.from_sea = pchar.GenQuest.CaptainComission.City + "_town";
 	
 	AddQuestRecord("CaptainComission2", "4");
 	AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 	AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 	AddQuestUserData("CaptainComission2", "sShoreName", XI_ConvertString(pchar.GenQuest.CaptainComission.ShoreLocation + "Gen"));
 	CloseQuestHeader("CaptainComission2");
 	
@@ -3953,9 +3953,9 @@ void CaptainComission_GenerateShorePatrol()
 
 	LAi_SetFightMode(pchar, false);
 	LAi_LockFightMode(pchar, true);
-	int iTemp = sti(pchar.GenQuest.CaptainComission.Nation);// Нация патруля
-	pchar.GenQuest.CaptainComission.SoldierQty = makeint(2 * GetOfficersQuantity(pchar) + 3);
-	for (int i = 2; i <= sti(pchar.GenQuest.CaptainComission.SoldierQty); i++)
+	int iTemp = int(pchar.GenQuest.CaptainComission.Nation);// Нация патруля
+	pchar.GenQuest.CaptainComission.SoldierQty = int(2 * GetOfficersQuantity(pchar) + 3);
+	for (int i = 2; i <= int(pchar.GenQuest.CaptainComission.SoldierQty); i++)
 	{
 		sld = SetFantomDefenceForts("", "", iTemp, "CoastalGuards");
 		attrName = "SoldierIDX" + i;
@@ -3972,7 +3972,7 @@ void CaptainComission_GenerateShorePatrol()
 	sld.Dialog.CurrentNode = "CaptainComission_317";
 	sld.greeting = "Gr_Costal_Guards";
 
-	LAi_ActorDialog(&Characters[makeint(pchar.GenQuest.CaptainComission.SoldierIDX1)], pchar, "", 35, 1);
+	LAi_ActorDialog(&Characters[int(pchar.GenQuest.CaptainComission.SoldierIDX1)], pchar, "", 35, 1);
 	LAi_group_SetCheck("CoastalGuards", "OpenTheDoors");	
 	LAi_group_SetCheckFunction("CoastalGuards", "CaptainComission_AfterShoreBattle"); 
 }
@@ -4004,22 +4004,22 @@ void CaptainComission_GenerateCoastalPatrol()
 {
 	ref CoastGuard;
 	int i;
-	int iNation = sti(pchar.GenQuest.CaptainComission.Nation);// Нация патруля
+	int iNation = int(pchar.GenQuest.CaptainComission.Nation);// Нация патруля
 	string Model;
 	
 	for (i = 1; i <= 3; i++)
     {
         Model = "off_" + NationShortName(iNation) + "_" + (rand(1) + 1);
-		CoastGuard = GetCharacter(NPC_GenerateCharacter("Coastal_Captain0" + i, Model, "man", "man", sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE), iNation, 3, true, "officer")); // 3 дня, потом сами пропадут
+		CoastGuard = GetCharacter(NPC_GenerateCharacter("Coastal_Captain0" + i, Model, "man", "man", int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE), iNation, 3, true, "officer")); // 3 дня, потом сами пропадут
 		SetFantomParam(CoastGuard);
 		SelectCoastalGuardShip(CoastGuard);
 		CoastGuard.AlwaysEnemy = true;
 		CoastGuard.DontRansackCaptain = true;
 		CoastGuard.AlwaysSandbankManeuver = true;
 		Group_AddCharacter("Coastal_Guards", CoastGuard.id);
-		SetCharacterRelationBoth(sti(CoastGuard.index), GetMainCharacterIndex(), RELATION_ENEMY);
-		if (makeint(pchar.rank) < 6 && i == 1 && GetCompanionQuantity(pchar) == 1) break;
-		if (makeint(pchar.rank) < 9 && i == 2 && GetCompanionQuantity(pchar) < 3) break;
+		SetCharacterRelationBoth(int(CoastGuard.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		if (int(pchar.rank) < 6 && i == 1 && GetCompanionQuantity(pchar) == 1) break;
+		if (int(pchar.rank) < 9 && i == 2 && GetCompanionQuantity(pchar) < 3) break;
     }
 	Group_SetGroupCommander("Coastal_Guards", "Coastal_Captain01");
 	Group_SetAddress("Coastal_Guards", Islands[GetCharacterCurrentIsland(Pchar)].id, "", "");
@@ -4032,9 +4032,9 @@ void CaptainComission_CapShip_Sink(string qName)
 {
 	pchar.quest.CaptainComission_MapEnter.over = "yes";
 	AddQuestRecord("CaptainComission2", "12");
-	AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")))); // belamour gen
+	AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name")))); // belamour gen
 	AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
-	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 	AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.CapName);
 	CloseQuestHeader("CaptainComission2");	
 	DeleteAttribute(pchar, "GenQuest.CaptainComission");
@@ -4048,7 +4048,7 @@ void CaptainComission_MapEnter(string qName)
 	pchar.quest.CaptainComission_Ship_Sink.win_condition.l1 = "Character_sink";
 	pchar.quest.CaptainComission_Ship_Sink.win_condition.l1.character = "CapComission_1";
 	pchar.quest.CaptainComission_Ship_Sink.function = "CaptainComission_Ship_Sink";
-	SetFunctionTimerCondition("CaptainComission_ConvoyTimeIsOut", 0, 0, sti(pchar.GenQuest.CaptainComission.iDay) * 2, false);
+	SetFunctionTimerCondition("CaptainComission_ConvoyTimeIsOut", 0, 0, int(pchar.GenQuest.CaptainComission.iDay) * 2, false);
 	SaveCurrentQuestDateParam("GenQuest.CaptainComission");
 }
 
@@ -4062,7 +4062,7 @@ void CaptainComission_ConvoyInShore(string qName)
 	
 	sld = characterFromId("CapComission_1");	
 	PlaceCharacter(sld, "goto", "random_must_be_near");
-	if(DaysIsLeft <= sti(pchar.GenQuest.CaptainComission.iDay))
+	if(DaysIsLeft <= int(pchar.GenQuest.CaptainComission.iDay))
 	{
 		LAi_SetActorTypeNoGroup(sld);
 		CaptainComission_GenerateGangInShore();
@@ -4175,7 +4175,7 @@ void CaptainComission_DialogInShore()
 
 	SetMainCharacterIndex(GetCharacterIndex("CapComission_1"));
 	pchar = GetMainCharacter();
-	locCameraTarget(pchar)
+	locCameraTarget(pchar);
 	locCameraFollow();
 	LAi_SetActorType(pchar);		
 	LAi_SetActorType(CharacterFromID("Gang_0"));
@@ -4215,7 +4215,7 @@ void CaptainComission_GangExit()
 	DoQuestCheckDelay("OpenTheDoors", 1.0);
 	LAi_SetPlayerType(pchar);
 	GetCharacterPos(pchar, &locx, &locy, &locz);
-    for (int i = 0; i < sti(pchar.GenQuest.CaptainComission.GangNum); i++)
+    for (int i = 0; i < int(pchar.GenQuest.CaptainComission.GangNum); i++)
 	{
 		sld = characterFromID("Gang_" + i);
 		LAi_SetActorType(sld); 
@@ -4252,19 +4252,19 @@ void CaptainComission_ExitFromShoreAfterGang(string qName)
 
 void CaptainComission_ChangeCaptain()
 {
-	int iRank = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
-	int iNation = sti(pchar.GenQuest.CaptainComission.Nation);
+	int iRank = int(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+	int iNation = int(pchar.GenQuest.CaptainComission.Nation);
 	aref	arShip1, arShip2;
 	ref chref, sld;
 	
 	chref = GetCharacter(NPC_GenerateCharacter("CapComission_2", "mercen_"+(rand(14)+1), "man", "man", iRank, iNation, -1, true, "hunter"));
-	chref.name = GenerateRandomName_Generator(sti(chref.nation), "man");
+	chref.name = GenerateRandomName_Generator(int(chref.nation), "man");
 	chref.lastname = "";
 	SetCharacterPerk(chref, "MusketsShoot");
 	SetCharacterPerk(chref, "Energaiser"); 	
-	FantomMakeCoolFighter(chref, makeint(pchar.rank) + rand(10) + 5, 90, 50, "blade_06", "pistol3", "grapeshot", 80);
+	FantomMakeCoolFighter(chref, int(pchar.rank) + rand(10) + 5, 90, 50, "blade_06", "pistol3", "grapeshot", 80);
 	chref.cirassId = Items_FindItemIdx("cirass1");  // предмета нет, но влияение есть
-	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 5, 200 + makeint(pchar.rank) * 5);
+	LAi_SetHP(chref, 200 + int(pchar.rank) * 5, 200 + int(pchar.rank) * 5);
 	
 	DeleteAttribute(chref, "ship"); 
 	chref.ship = ""; 
@@ -4295,7 +4295,7 @@ void CaptainComission_ChangeCaptain()
 	Ship_NationAgressivePatent(chref);
 	Ship_FlagRefresh(chref); //флаг на лету	
 	
-	SetCharacterRelationBoth(sti(chref.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(chref.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	DeleteAttribute(chref, "AlwaysFriend"); 
 	DeleteAttribute(chref,"Abordage.Enable");
 	
@@ -4355,9 +4355,9 @@ void CaptainComission_Ship_Sink(string qName)
 	pchar.quest.CaptainComission_ConvoyInShore.over = "yes"; 
 	pchar.quest.CaptainComission_ConvoyTimeIsOut.over = "yes";
 	AddQuestRecord("CaptainComission2", "13");
-	AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")))); 
+	AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name"))));
 	AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
-	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+	AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 	AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 	CloseQuestHeader("CaptainComission2");	
 	DeleteAttribute(pchar, "GenQuest.CaptainComission");
@@ -4366,7 +4366,7 @@ void CaptainComission_Ship_Sink(string qName)
 // ветка №2
 void CaptainComission_GenerateRumourCaptainPrison()
 {
-	string sShipType = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"));
+	string sShipType = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"));
 	AddSimpleRumourCity(LinkRandPhrase(StringFromKey("GenQuests_41", GetAddress_Form(pchar), sShipType, pchar.GenQuest.CaptainComission.Name),
 		StringFromKey("GenQuests_42", sShipType, pchar.GenQuest.CaptainComission.Name, GetAddress_Form(pchar)),
 		RandPhraseSimple(StringFromKey("GenQuests_43", pchar.GenQuest.CaptainComission.Name, GetAddress_Form(pchar)),
@@ -4379,11 +4379,11 @@ void CaptainComission_RumourCaptainPrison()
 	if(!CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour"))
 	{
 		AddQuestRecord("CaptainComission2", "18");
-		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); 
+		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);				
 		pchar.GenQuest.CaptainComission.GetRumour = true;
 		SaveCurrentQuestDateParam("GenQuest.CaptainComission.GetRumour");	
-		SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, MakeInt(24 - GetHour()), false);
+		SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, int(24 - GetHour()), false);
 	}
 }
 
@@ -4401,12 +4401,12 @@ void CaptainComission_GetSecretTimeIsOut(string qName)
 void CaptainComission_GenerateCaptainInPrison()
 {
 	
-	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_1" , "mercen_19", "man", "man", 10, sti(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
+	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_1" , "mercen_19", "man", "man", 10, int(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
 	SetSPECIAL(sld, 10,9,10,5,10,9,10);
 	SetRandSelfSkill(sld, 65, 95);
 	SetRandShipSkill(sld, 65, 95); 
 	//LAi_SetHP(sld, 100+MOD_SKILL_ENEMY_RATE*30, 100+MOD_SKILL_ENEMY_RATE*30);
-	FantomMakeCoolFighter(sld, sti(pchar.rank) + rand(15), 95, 95, LinkRandPhrase("blade_13","blade_14","blade_09"), "pistol2"," grapeshot", 10);	
+	FantomMakeCoolFighter(sld, int(pchar.rank) + rand(15), 95, 95, LinkRandPhrase("blade_13","blade_14","blade_09"), "pistol2"," grapeshot", 10);
 	sld.name = pchar.GenQuest.CaptainComission.Name;
 	sld.lastname = "";
 	sld.greeting = "Gr_prison";
@@ -4444,7 +4444,7 @@ void CaptainComission_CapEscapeTimer(string qName)
 void CaptainComission_GangDialogGetGoods()
 {
 	ref sld;
-	for (int i = 0; i < sti(pchar.GenQuest.CaptainComission.GangNum); i++)
+	for (int i = 0; i < int(pchar.GenQuest.CaptainComission.GangNum); i++)
 	{
 		sld = characterFromID("Gang_" + i);
 		LAi_SetActorType(sld); 	
@@ -4493,7 +4493,7 @@ void CaptainComission_CheckCaptainDied(string qName)
 		AddQuestUserData("CaptainComission2", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.City + "Gen"));
 		pchar.GenQuest.CaptainComission = "GetGoodsSuccess";
 		OfficersReaction("good");
-		SetFunctionTimerConditionParam("CaptainComission_SpeakMayorGoods", 0, 0, 1, MakeInt(24 - GetHour()), false);
+		SetFunctionTimerConditionParam("CaptainComission_SpeakMayorGoods", 0, 0, 1, int(24 - GetHour()), false);
 	}
 	else
 	{
@@ -4501,11 +4501,11 @@ void CaptainComission_CheckCaptainDied(string qName)
 		AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		AddQuestUserData("CaptainComission2", "sGoodsQuantity", pchar.GenQuest.CaptainComission.MaxGoodsQty);
-		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 		CloseQuestHeader("CaptainComission2");
-		int iGoods = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods)); 
-		if(iGoods < sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
-		SetCharacterGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods)) + sti(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
+		int iGoods = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+		if(iGoods < int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
+		SetCharacterGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods)) + int(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
 		OfficersReaction("bad");
 		ChangeCharacterComplexReputation(pchar,"nobility", -5);
 		CaptainComission_GenerateCoastalPatrol();
@@ -4538,7 +4538,7 @@ void CaptainComission_CapMeetInShore(string qName)
 	ref sld = characterFromId("CapComission_1");	
 	RemovePassenger(pchar, sld);	
 	PlaceCharacter(sld, "goto", "random_must_be_near");
-	if(DaysIsLeft <= sti(pchar.GenQuest.CaptainComission.iDay))
+	if(DaysIsLeft <= int(pchar.GenQuest.CaptainComission.iDay))
 	{
 		LAi_SetActorTypeNoGroup(sld);
 		CaptainComission_GenerateGangInShore();
@@ -4579,7 +4579,7 @@ void CaptainComission_BattleInShore(string qName)
 	string sTemp = "Gang_";
 	string sGroup = "GangGroup_0";			
 	LAi_LocationFightDisable(&locations[FindLocation(pchar.GenQuest.CaptainComission.ConvoyShore)], false);	
-	int iTemp = sti(pchar.GenQuest.CaptainComission.GangNum);
+	int iTemp = int(pchar.GenQuest.CaptainComission.GangNum);
 	chrDisableReloadToLocation = true;
 	sld = CharacterFromID("CapComission_1");
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -4634,7 +4634,7 @@ bool CaptainComission_CheckAllPassengersHired()
 // ветка №3
 void CaptainComission_GenerateRumourCaptainDeath()
 {
-	string sShipType = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"));
+	string sShipType = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"));
 	AddSimpleRumourCity(LinkRandPhrase(StringFromKey("GenQuests_46", GetAddress_Form(pchar), sShipType, pchar.GenQuest.CaptainComission.Name),
 		StringFromKey("GenQuests_47", GetAddress_Form(pchar), sShipType, pchar.GenQuest.CaptainComission.Name),
 		RandPhraseSimple(StringFromKey("GenQuests_48", GetAddress_Form(pchar)),
@@ -4648,7 +4648,7 @@ void CaptainComission_RumourCaptainDeath()
 	{
 		AddQuestRecord("CaptainComission2", "37");
 		AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
-		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
+		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);		
 		pchar.GenQuest.CaptainComission.GetRumour = true;
 		SaveCurrentQuestDateParam("GenQuest.CaptainComission.GetRumour");
@@ -4657,8 +4657,8 @@ void CaptainComission_RumourCaptainDeath()
 
 void CaptainComission_GenerateCanoneer(string qName)
 {
-	int Rank = sti(pchar.rank) + 3 + rand(10);
-	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Canoneer", "officer_15", "man", "man", 10, sti(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
+	int Rank = int(pchar.rank) + 3 + rand(10);
+	ref sld = GetCharacter(NPC_GenerateCharacter("CapComission_Canoneer", "officer_15", "man", "man", 10, int(pchar.GenQuest.CaptainComission.Nation), -1, true, "quest"));
 	FantomMakeCoolFighter(sld, Rank, 100, 90, "blade_09", "pistol3", "bullet", 150);
 	sld.name = GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM);
 	sld.lastname = "";
@@ -4718,7 +4718,7 @@ void CaptainComission_MeetCanoneerInShore(string qName)
 		sld.LifeDay = 0;
 		AddQuestRecord("CaptainComission2", "44");
 		AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
-		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //лесник - на тип корабля.
+		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); //лесник - на тип корабля.
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
 		CloseQuestHeader("CaptainComission2");
@@ -4740,7 +4740,7 @@ void CaptainComission_NoGangDialog(string qName)
 	LAi_SetActorType(sld); 
 	LAi_ActorGoToLocation(sld, "reload", sTemp, "none", "", "", "OpenTheDoors", -1.0);			
 	sld.LifeDay = 0;
-	for(int i = 0; i < sti(pchar.GenQuest.CaptainComission.GangNum); i++)
+	for(int i = 0; i < int(pchar.GenQuest.CaptainComission.GangNum); i++)
 	{
 		iTemp = GetCharacterIndex("Gang_" + i);
 		if (iTemp != -1)
@@ -4762,9 +4762,9 @@ void CaptainComission_NoGangDialog(string qName)
 void CaptainComission_CheckGangAfterBattle(string qName)
 {
 	ref sld;
-	int iGoods = GetSquadronFreeSpace(pchar, sti(pchar.GenQuest.CaptainComission.Goods)); 
-	if(iGoods < sti(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;	
-	SetCharacterGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, sti(pchar.GenQuest.CaptainComission.Goods)) + sti(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз	
+	int iGoods = GetSquadronFreeSpace(pchar, int(pchar.GenQuest.CaptainComission.Goods));
+	if(iGoods < int(pchar.GenQuest.CaptainComission.GoodsQty)) pchar.GenQuest.CaptainComission.GoodsQty = iGoods;
+	SetCharacterGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods), GetCargoGoods(pchar, int(pchar.GenQuest.CaptainComission.Goods)) + int(pchar.GenQuest.CaptainComission.GoodsQty));// перегруз
 	//if (GetCharacterIndex("CapComission_Canoneer") > 0) // канонир остался жив
 	sld = CharacterFromId("CapComission_Canoneer"); // лесник . изменил условие . прежнее не работало при смерти канонира.
 	 if (!LAi_IsDead(sld))
@@ -4780,7 +4780,7 @@ void CaptainComission_CheckGangAfterBattle(string qName)
 		AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		AddQuestUserData("CaptainComission2", "sSum", iGoods);
-		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 		AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_ACC));
 		AddQuestUserData("CaptainComission2", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.CanoneerCity));
 		SetFunctionLocationCondition("CaptainComission_DeleiveCanoneer", pchar.GenQuest.CaptainComission.CanoneerCity + "_town", false);
@@ -4792,10 +4792,10 @@ void CaptainComission_CheckGangAfterBattle(string qName)
 		AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 		AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_NOM));
-		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
+		AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 		AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);
 		AddQuestUserData("CaptainComission2", "sSum", iGoods);
-		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
+		AddQuestUserData("CaptainComission2", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.CaptainComission.Goods)].Name + "Gen")));
 		CloseQuestHeader("CaptainComission2");
 		OfficersReaction("bad");
 		ChangeCharacterComplexReputation(pchar,"nobility", -5);
@@ -4825,14 +4825,14 @@ void CaptainComission_EnterToSeaAfterShoreBattle()
 	for (int i = 1; i <= 3; i++)
     {
 		sld = GetCharacter(NPC_GenerateCharacter("Pirate_Captain0" + i, "mercen_"+(rand(14)+14), "man", "man", 5, PIRATE, 3, true, "quest")); 
-		FantomMakeCoolFighter(sld, makeint(pchar.rank) + rand(10) + 5, 90, 50, "blade_06", "pistol3","grapeshot", 80);
+		FantomMakeCoolFighter(sld, int(pchar.rank) + rand(10) + 5, 90, 50, "blade_06", "pistol3","grapeshot", 80);
 		SetFantomParam(sld);
 		SelectCoastalGuardShip(sld);
 		sld.AlwaysEnemy = true;
 		sld.DontRansackCaptain = true;
 		sld.AlwaysSandbankManeuver = true;
 		Group_AddCharacter("Pirate_Guards", sld.id);
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
     }
 	Group_SetGroupCommander("Pirate_Guards", "Pirate_Captain01");
 	Group_SetPursuitGroup("Pirate_Guards", PLAYER_GROUP);
@@ -4852,7 +4852,7 @@ void Convict_LocExit(string qName)
 	int i;
 	if(pchar.GenQuest.Convict == "close")
 	{
-		for(i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+		for(i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 		{
 			sld = CharacterFromID("Convict_" + i);
 			sld.LifeDay = 0;
@@ -4870,7 +4870,7 @@ void Convict_LocExit(string qName)
 	}
 	if(pchar.GenQuest.Convict == "ToShore" || pchar.GenQuest.Convict == "GetShip" || pchar.GenQuest.Convict == "ToMayak")
 	{
-		for(i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+		for(i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 		{
 			sld = CharacterFromID("Convict_" + i);
 			ChangeCharacterAddress(sld, "none", ""); 
@@ -4923,7 +4923,7 @@ void Convict_MeetInShore(string qName)
 	{
 		chrDisableReloadToLocation = true;
 		bDisableFastReload = true;	
-		for(i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+		for(i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 		{
 			sld = CharacterFromID("Convict_" + i);
 			PlaceCharacter(sld, "goto", pchar.location);
@@ -4952,7 +4952,7 @@ void Convict_MeetInShore(string qName)
 		AddQuestRecord("Convict", "3");
 		AddQuestUserData("Convict", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 		CloseQuestHeader("Convict");
-		for(i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+		for(i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 		{
 			sld = CharacterFromID("Convict_" + i);
 			sld.LifeDay = 0;
@@ -4969,7 +4969,7 @@ void Convict_SetTimer(string qName)
 	AddQuestRecord("Convict", "3");
 	AddQuestUserData("Convict", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 	CloseQuestHeader("Convict");
-	for(int i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 	{
 		sld = CharacterFromID("Convict_" + i);
 		sld.LifeDay = 0;
@@ -4996,7 +4996,7 @@ void Convict_MapEnter(string qName)
 	AddQuestRecord("Convict", "3");
 	AddQuestUserData("Convict", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
 	CloseQuestHeader("Convict");
-	for(int i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 	{
 		sld = CharacterFromID("Convict_" + i);
 		sld.LifeDay = 0;
@@ -5008,7 +5008,7 @@ void Convict_MapEnter(string qName)
 void Convict_DialogDisable()
 {
 	ref sld;
-	for(int i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 	{
 		sld = CharacterFromID("Convict_" + i);
 		LAi_CharacterDisableDialog(sld);
@@ -5019,7 +5019,7 @@ void Convict_DialogDisable()
 int Convict_GetShipPrice(int iShipType)
 {
 	ref sld, chr;
-	int price = sti(GetBaseShipParamFromType(iShipType, "price"));
+	int price = int(GetBaseShipParamFromType(iShipType, "price"));
 	sld = CharacterFromID("Convict_0");
 	if (CheckAttribute(sld, "city")) 
 	{
@@ -5041,7 +5041,7 @@ void Convict_OnMayak(string qName)
 		pchar.quest.Convict_OnMayak.over = "yes"; // затираем прерывание
 		DeleteAttribute(&Locations[FindLocation(pchar.GenQuest.Convict.Mayak)], "DisableEncounters");
 		
-		for(int i = 0; i < sti(pchar.GenQuest.Convict.ConvictQty); i++)
+		for(int i = 0; i < int(pchar.GenQuest.Convict.ConvictQty); i++)
 		{
 			sld = CharacterFromID("Convict_" + i);			
 			ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto" + (i + 1));
@@ -5072,7 +5072,7 @@ bool Convict_CheckShipType(int iShipType)
 		if(cn != -1)
 		{
 			sld = &characters[cn];
-			if (RealShips[sti(sld.Ship.Type)].basetype == iShipType)
+			if (RealShips[int(sld.Ship.Type)].basetype == iShipType)
 			{
 				pchar.GenQuest.Convict.CharShipId = sld.id;	
 				pchar.GenQuest.Convict.ShipPrice = Convict_GetShipPrice(iShipType);
@@ -5106,7 +5106,7 @@ void Convict_SetConvictToShip()
 		RemoveCharacterCompanion(pchar, chr);
 		AddPassenger(pchar, chr, false);
 		
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
 		
 		DeleteAttribute(pchar,"GenQuest.Convict.CharShipId");
 		
@@ -5127,7 +5127,7 @@ void ShipWreck_LocationExit(string _quest)
 	ref sld;
 	if(pchar.GenQuest.ShipWreck == "SailorsSaved")
 	{
-		for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+		for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 		{
 			index = GetCharacterIndex("ShipWreck_" + i);		
 			if(index != -1)
@@ -5139,7 +5139,7 @@ void ShipWreck_LocationExit(string _quest)
 	}
 	else
 	{
-		for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+		for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 		{
 			index = GetCharacterIndex("ShipWreck_" + i);		
 			if(index != -1)
@@ -5148,7 +5148,7 @@ void ShipWreck_LocationExit(string _quest)
 			}
 		}	
 		DeleteAttribute(pchar, "GenQuest.ShipWreck");
-		if(CheckAttribute(pchar,"GenQuest.ShipWreck.Mutiny")) DeleteAttribute(pchar,"GenQuest.ShipWreck.Mutiny"));
+		if(CheckAttribute(pchar,"GenQuest.ShipWreck.Mutiny")) DeleteAttribute(pchar,"GenQuest.ShipWreck.Mutiny");
 	}	
 }
 
@@ -5173,12 +5173,12 @@ void ShipWreck_SetCapToMap()
 {
 	int temp;
 	String group = "ShipWreck_SeaGroup";
-	ref character = GetCharacter(NPC_GenerateCharacter("ShipWreck_BadPirate", "", "man", "man", sti(pchar.rank) + 5, PIRATE, -1, true, "hunter"));
+	ref character = GetCharacter(NPC_GenerateCharacter("ShipWreck_BadPirate", "", "man", "man", int(pchar.rank) + 5, PIRATE, -1, true, "hunter"));
 		
 	character.name = pchar.GenQuest.ShipWreck.BadName;
 	character.lastname = "";
 	
-	character.Ship.Type = GenerateShipExt(sti(pchar.GenQuest.ShipWreck.StartShipType), true, character);
+	character.Ship.Type = GenerateShipExt(int(pchar.GenQuest.ShipWreck.StartShipType), true, character);
 	character.Ship.Name = pchar.GenQuest.ShipWreck.ShipTypeName;
 	SetCaptanModelByEncType(character, "pirate");
     SetBaseShipData(character);
@@ -5214,12 +5214,12 @@ void ShipWreck_SetCapToMap()
 	
 	character.mapEnc.type = "trade";
 	character.mapEnc.worldMapShip = "quest_ship";
-	character.mapEnc.Name = LowerFirst(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name)) + " '" + pchar.GenQuest.ShipWreck.ShipTypeName + "'";
+	character.mapEnc.Name = LowerFirst(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name)) + " '" + pchar.GenQuest.ShipWreck.ShipTypeName + "'";
 	
 	Map_CreateTrader(character.fromShore, character.toShore, "ShipWreck_BadPirate", GetMaxDaysFromIsland2Island(GetArealByCityName(character.toCity), GetArealByCityName(character.fromCity)) + 15);
 	
 	temp = GetCharacterFreeSpace(character, GOOD_SLAVES); // Сколько влезет рабов
-	AddCharacterGoodsSimple(character, GOOD_SLAVES, makeint(temp / 2 + hRand(temp / 2)) - 1); // hrand auto tagged
+	AddCharacterGoodsSimple(character, GOOD_SLAVES, int(temp / 2 + hRand(temp / 2)) - 1); // hrand auto tagged
 	
 	pchar.quest.ShipWreck_ShipSink.win_condition.l1 = "Character_sink";
 	pchar.quest.ShipWreck_ShipSink.win_condition.l1.character = "ShipWreck_BadPirate";
@@ -5235,7 +5235,7 @@ void ShipWreck_DeliveToCity(string qName)
 	{
 		chrDisableReloadToLocation = true;
 		Log_Info(StringFromKey("GenQuests_59")); // belamour gen
-		for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+		for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 		{
 			sld = CharacterFromID("ShipWreck_" + i);
 			PlaceCharacter(sld, "goto", "random_must_be_near");
@@ -5287,7 +5287,7 @@ void ShipWreck_GoOut()
 	float locx, locy, locz;
 	
 	GetCharacterPos(pchar, &locx, &locy, &locz);
-	for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 	{
 		sld = CharacterFromID("ShipWreck_" + i);
 		sld.LifeDay = 0;
@@ -5301,7 +5301,7 @@ void ShipWreck_GoOut()
 void ShipWreck_AfterBattle(string qName)
 {
 	int index;
-	for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 	{
 		index = GetCharacterIndex("ShipWreck_" + i);		
 		if(index != -1)
@@ -5328,7 +5328,7 @@ void ShipWreck_AfterBattle(string qName)
 void ShipWreck_DialogDisable()
 {
 	ref sld;
-	for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 	{
 		sld = CharacterFromID("ShipWreck_" + i);
 		LAi_CharacterDisableDialog(sld);
@@ -5349,10 +5349,10 @@ void ShipWreck_MeetInShore(string qName)
 	ref sld;
 	string sLocGroup;
 	
-	for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 	{
 		sld = CharacterFromID("ShipWreck_" + i);
-		if(GetFreeCrewQuantity(pchar) < sti(pchar.GenQuest.ShipWreck.Qty)) // нет места 
+		if(GetFreeCrewQuantity(pchar) < int(pchar.GenQuest.ShipWreck.Qty)) // нет места
 		{
 			ChangeCharacterAddress(sld, "None", "");
 		}
@@ -5420,14 +5420,14 @@ void ShipWreck_SetShipNew()
 	sld.Abordage.Enable = false; //нельзя брать на абордаж
 	SetCrewQuantity(sld, 15 + rand(10));
 	
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
 	pchar.GenQuest.ShipWreck = "close";
 	pchar.quest.ShipWreck_MapEnter.win_condition.l1 = "MapEnter";
 	pchar.quest.ShipWreck_MapEnter.function = "ShipWreck_LocationExit"; 			
 
 	AddQuestRecord("ShipWrecked", "18");
 	AddQuestUserData("ShipWrecked", "sSex", GetSexPhrase(StringFromKey("GenQuests_66"),StringFromKey("GenQuests_67")));
-	AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Acc"))); // belamour gen
+	AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name + "Acc"))); // belamour gen
 	AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);	
 	AddQuestUserData("ShipWrecked", "sName", pchar.GenQuest.ShipWreck.Name);																															   
 	CloseQuestHeader("ShipWrecked");
@@ -5436,7 +5436,7 @@ void ShipWreck_SetShipNew()
 void ShipWreck_ShipSink(string qName)
 {
 	ref sld;
-	for(int i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+	for(int i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 	{
 		sld = CharacterFromID("ShipWreck_" + i);
 		if(i == 0) 
@@ -5447,12 +5447,12 @@ void ShipWreck_ShipSink(string qName)
 	}
 	pchar.quest.prosralisrok.over = "yes"; // лесник сброс таймера.
 	AddQuestRecord("ShipWrecked", "19");
-	AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].Name)));
+	AddQuestUserData("ShipWrecked", "ShipType", GetStrSmallRegister(XI_ConvertString(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].Name)));
 	AddQuestUserData("ShipWrecked", "ShipName", pchar.GenQuest.ShipWreck.ShipTypeName);	
 	AddQuestUserData("ShipWrecked", "sName", pchar.GenQuest.ShipWreck.Name);
 	// --> belamour gen : нужно разделить, иначе получается бригантина утонул, а с ним и весь товар
 	string sText; 
-	if(ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[sti(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
+	if(ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_BRIGANTINE" || ShipsTypes[int(pchar.GenQuest.ShipWreck.StartShipType)].name == "SHIP_SCHOONER_W")
 	{
 		AddQuestUserData("ShipWrecked", "sText", StringFromKey("GenQuests_74"));
 	}
@@ -5492,16 +5492,16 @@ void Hold_GenQuest_Init(ref chref)
 
     TEV.TempTag = chref.id + chref.name; // Проверяется в GetQuestNationsCity
 
-	switch(sti(chref.Hold_GenQuest.variant))	
+	switch(int(chref.Hold_GenQuest.variant))
 	{
 		case 0: // "наводка"
 			chref.Hold_GenQuest.Goods = Hold_GenQuest_GetVictimShipGoods();
 			chref.Hold_GenQuest.Nation = FindEnemyNation2NationWithoutPirates(GetBaseHeroNation()); 
-			if(sti(chref.Hold_GenQuest.Nation) < 0) 
+			if(int(chref.Hold_GenQuest.Nation) < 0)
 			{
 				chref.Hold_GenQuest.Nation = rand(NON_PIRATES);
 			}	
-			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
+			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(int(chref.Hold_GenQuest.Nation), "man");
 			
 			sColony = Sea_FindNearColony();
 			if (sColony != "none") 
@@ -5510,26 +5510,26 @@ void Hold_GenQuest_Init(ref chref)
 			}
 			else
 			{
-				chref.Hold_GenQuest.ToCity = GetQuestNationsCity(sti(chref.Hold_GenQuest.Nation));
+				chref.Hold_GenQuest.ToCity = GetQuestNationsCity(int(chref.Hold_GenQuest.Nation));
 			}	
 			chref.Hold_GenQuest.FromCity = FindAlliedColonyForNationExceptColony(chref.Hold_GenQuest.ToCity);
-			chref.Hold_GenQuest.ShipName = GenerateRandomNameToShip(sti(chref.Hold_GenQuest.Nation));
+			chref.Hold_GenQuest.ShipName = GenerateRandomNameToShip(int(chref.Hold_GenQuest.Nation));
 			if(rand(1) == 0) 	chref.Hold_GenQuest.City = chref.Hold_GenQuest.ToCity;
 			else 				chref.Hold_GenQuest.City = chref.Hold_GenQuest.FromCity;
 		break;
 
 		case 1: // "подельник"
 			chref.Hold_GenQuest.Nation = rand(NON_PIRATES);
-			chref.Hold_GenQuest.City = GetQuestNationsCity(sti(chref.Hold_GenQuest.Nation));
-			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
+			chref.Hold_GenQuest.City = GetQuestNationsCity(int(chref.Hold_GenQuest.Nation));
+			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(int(chref.Hold_GenQuest.Nation), "man");
 			chref.Hold_GenQuest.PirateName = "l" + rand(GetNamesCount(NAMETYPE_VIP) - 1);
 		break;
 		
 		case 2: // "выкуп"			
 			chref.Hold_GenQuest.City = GetQuestNationsCity(rand(NON_PIRATES));							
 			rColony = GetColonyByIndex(FindColony(chref.Hold_GenQuest.City));
-			chref.Hold_GenQuest.Nation = sti(rColony.nation);
-			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(sti(chref.Hold_GenQuest.Nation), "man");
+			chref.Hold_GenQuest.Nation = int(rColony.nation);
+			chref.Hold_GenQuest.Name = GenerateRandomName_Generator(int(chref.Hold_GenQuest.Nation), "man");
 		break;			
 	}
 }
@@ -5586,22 +5586,22 @@ void Hold_GenQuest_SetMerchant(string qName)
 	ref chref, sld;
 	pchar.quest.Hold_GenQuest_MerchantOver.over = "yes";
 	
-	int iChar = NPC_GenerateCharacter("Hold_QuestMerchant", "off_spa_2", "man", "man", 5, sti(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "citizen");
+	int iChar = NPC_GenerateCharacter("Hold_QuestMerchant", "off_spa_2", "man", "man", 5, int(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "citizen");
 	makeref(chref, Characters[iChar]);
 	int iRank = SetShipTypeMerchant(chref); 
 	chref.Ship.Name = pchar.GenQuest.Hold_GenQuest.ShipName;
 	SetFantomParamHunter(chref); //крутые парни
 	
 	SetCaptanModelByEncType(chref, "trade");	
-	int iSpace = GetCharacterFreeSpace(chref, sti(pchar.GenQuest.Hold_GenQuest.Goods));
+	int iSpace = GetCharacterFreeSpace(chref, int(pchar.GenQuest.Hold_GenQuest.Goods));
     
-    float del = makefloat(7 - iRank + rand(1))/10; 
+    float del = float(7 - iRank + rand(1))/10;
     if (del > 1.0 ) del = 1;
-    Log_TestInfo("goods load = "+iSpace+"/"+makeint(iSpace*del));
-    iSpace = makeint(iSpace * del); // чтоб не так жирно было
-    Fantom_SetCharacterGoods(chref, sti(pchar.GenQuest.Hold_GenQuest.Goods), iSpace, 1);
+    Log_TestInfo("goods load = "+iSpace+"/"+int(iSpace*del));
+    iSpace = int(iSpace * del); // чтоб не так жирно было
+    Fantom_SetCharacterGoods(chref, int(pchar.GenQuest.Hold_GenQuest.Goods), iSpace, true);
 	
-	string sGroup = "Sea_" + chref.id
+	string sGroup = "Sea_" + chref.id;
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
     Group_SetType(sGroup, "trade");
@@ -5609,7 +5609,7 @@ void Hold_GenQuest_SetMerchant(string qName)
 	int IslandID = FindIsland(GetArealByCityName(pchar.GenQuest.Hold_GenQuest.City));
 	ref pLoc = &Islands[IslandID];
 	float x, y, z;
-	FindIslandLocatorXYZ(IslandID, "reload1", &x, &y, &z); 
+	FindIslandLocatorXYZ(pLoc.id, "reload1", &x, &y, &z);
 	string sLocator = GetSeaQuestShipFarLocator(pLoc, "Quest_ships", x, y, z);
 	
 	chref.DontRansackCaptain = true;
@@ -5628,16 +5628,16 @@ void Hold_GenQuest_SetMerchant(string qName)
     pchar.quest.Hold_GenQuest_CaptureMerchant.win_condition.l1.character = "Hold_QuestMerchant";
     pchar.quest.Hold_GenQuest_CaptureMerchant.function = "Hold_GenQuest_CaptureMerchant";  
 
-	SetFunctionTimerConditionParam("Hold_GenQuest_TimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+	SetFunctionTimerConditionParam("Hold_GenQuest_TimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 	
 	int gcount = rand(3)-1;
-    if (gcount < 0 || makeint(pchar.rank) < 5) gcount = 0;
+    if (gcount < 0 || int(pchar.rank) < 5) gcount = 0;
     
     for (int i = 0; i < gcount; i++) // генерим эскорт
     {
-        iChar = NPC_GenerateCharacter("Hold_QuestMerchantGuard_"+i, "off_spa_2", "man", "man", 5, sti(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "hunter"));
+        iChar = NPC_GenerateCharacter("Hold_QuestMerchantGuard_"+i, "off_spa_2", "man", "man", 5, int(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "hunter");
         makeref(sld, Characters[iChar]);
-        SetGuardsShips(sld, sti(RealShips[sti(chref.ship.type)].Class));
+        SetGuardsShips(sld, int(RealShips[int(chref.ship.type)].Class));
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.Ship.Mode = "war";
@@ -5652,7 +5652,7 @@ void Hold_GenQuest_MerchantOver(string qName) // время вышло
 	pchar.quest.Hold_GenQuest_SetMerchant.over = "yes";
 	AddQuestRecord("HoldQuest", "3");
 	AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
-	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen"))); 
+	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen")));
 	CloseQuestHeader("HoldQuest");
 	DeleteAttribute(pchar,"GenQuest.Hold_GenQuest");
 }
@@ -5663,7 +5663,7 @@ void Hold_GenQuest_SinkMerchant(string qName)
 	pchar.quest.Hold_GenQuest_TimeIsOver.over = "yes";
 	AddQuestRecord("HoldQuest", "5");
 	AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
-	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen"))); 
+	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen")));
 	CloseQuestHeader("HoldQuest");
 	DeleteAttribute(pchar,"GenQuest.Hold_GenQuest");	
 }
@@ -5674,7 +5674,7 @@ void Hold_GenQuest_CaptureMerchant(string qName)
 	pchar.quest.Hold_GenQuest_TimeIsOver.over = "yes";
 	AddQuestRecord("HoldQuest", "4");
 	AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
-	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen"))); 
+	AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Gen")));
 	CloseQuestHeader("HoldQuest");
 	DeleteAttribute(pchar,"GenQuest.Hold_GenQuest");		
 }
@@ -5694,8 +5694,8 @@ void Hold_GenQuest_TimeIsOver(string qName)
 
 void Hold_GenQuest_GenerateChar()
 {
-	int Rank = sti(pchar.rank) + rand(10);
-	ref sld = GetCharacter(NPC_GenerateCharacter("Hold_GenQuestChar", "trader_"+(rand(5)+1), "man", "man", 10, sti(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "quest"));
+	int Rank = int(pchar.rank) + rand(10);
+	ref sld = GetCharacter(NPC_GenerateCharacter("Hold_GenQuestChar", "trader_"+(rand(5)+1), "man", "man", 10, int(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "quest"));
 	FantomMakeCoolFighter(sld, Rank, 100, 90, "blade_09", "pistol3", "grapeshot", 50);
 	sld.name = pchar.GenQuest.Hold_GenQuest.Name;
 	sld.lastname = "";
@@ -5761,7 +5761,7 @@ void Hold_GenQuest_GetMapTimeIsOver(string qName)
 
 void Hold_GenQuest_GenerateMapChar()
 {
-	ref sld = GetCharacter(NPC_GenerateCharacter("Hold_GenQuestChar", "citiz_"+(rand(9)+21), "man", "man", 5, sti(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "hunter"));
+	ref sld = GetCharacter(NPC_GenerateCharacter("Hold_GenQuestChar", "citiz_"+(rand(9)+21), "man", "man", 5, int(pchar.GenQuest.Hold_GenQuest.Nation), 3, true, "hunter"));
 	sld.name = pchar.GenQuest.Hold_GenQuest.Name;
 	sld.lastname = "";
 	LAi_SetImmortal(sld, true);
@@ -5819,7 +5819,7 @@ void Hold_GenQuest_SetTreasureBoxFromMap(string qName)
 		{
 			//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 			//{
-				//if(makeint(pchar.questTemp.SanBoxTarget) > 3)
+				//if(int(pchar.questTemp.SanBoxTarget) > 3)
 				//{
 					Achievment_SetStat(101, 1);
 				//}
@@ -5828,7 +5828,7 @@ void Hold_GenQuest_SetTreasureBoxFromMap(string qName)
 
 		Items_FindItem("mapQuest", &item);
 		
-		if(sti(pchar.GenQuest.Hold_GenQuest.Treasure) == 0)
+		if(int(pchar.GenQuest.Hold_GenQuest.Treasure) == 0)
 		{
 			itmName = GenQuest_GeneratePrize();
 			item.BoxTreasure.(itmName) = 1;
@@ -5840,7 +5840,7 @@ void Hold_GenQuest_SetTreasureBoxFromMap(string qName)
 			}	
 			
 			itmName = "icollection"; // генерим сокровища
-			item.BoxTreasure.(itmName) = 1 + makeint(sti(pchar.rank)/6); 
+			item.BoxTreasure.(itmName) = 1 + int(int(pchar.rank)/6);
 			
 			itmName = "jewelry2";
 			item.BoxTreasure.(itmName) = rand(5) + 5;
@@ -6009,7 +6009,7 @@ void JusticeOnSale_ShoreEnterWithSmuggler(string _quest)
 	RemovePassenger(PChar, character);
 	character.LifeDay = 0;
 	
-	while(i < sti(PChar.GenQuest.JusticeOnSale.EncQty))
+	while(i < int(PChar.GenQuest.JusticeOnSale.EncQty))
 	{
 		if(i == 0)
 		{
@@ -6022,8 +6022,8 @@ void JusticeOnSale_ShoreEnterWithSmuggler(string _quest)
 		
 		if(model[curModel] != "")
 		{
-			character = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShorePirate_" + i, model[curModel], "man", "man", sti(PChar.rank), PIRATE, 0, true, "marginal"));
-			SetFantomParamFromRank(character, sti(PChar.rank), true);
+			character = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShorePirate_" + i, model[curModel], "man", "man", int(PChar.rank), PIRATE, 0, true, "marginal"));
+			SetFantomParamFromRank(character, int(PChar.rank), true);
 			ChangeCharacterAddressGroup(character, location.id, "goto", LAi_FindNearestFreeLocator2Pchar("goto"));
 			character.dialog.filename = "GenQuests_Dialog.c";
 			character.dialog.currentnode = "JusticeOnSale_9";
@@ -6061,11 +6061,11 @@ void JusticeOnSale_ShoreEnterFromMayor(string _quest)
 	ref character;
 	ref location = &Locations[FindLocation(PChar.GenQuest.JusticeOnSale.ShoreId)];
 	
-	while(i < sti(PChar.GenQuest.JusticeOnSale.EncQty))
+	while(i < int(PChar.GenQuest.JusticeOnSale.EncQty))
 	{
-		character = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShorePirate_" + i, "", "man", "man", sti(PChar.rank), PIRATE, 0, true, "marginal"));
+		character = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShorePirate_" + i, "", "man", "man", int(PChar.rank), PIRATE, 0, true, "marginal"));
 		SetModelPirate(character);
-		SetFantomParamFromRank(character, sti(PChar.rank) + 5, true);
+		SetFantomParamFromRank(character, int(PChar.rank) + 5, true);
 		ChangeCharacterAddressGroup(character, location.id, "goto", LAi_FindNearestFreeLocator2Pchar("goto"));
 		
 		LAi_SetWarriorTypeNoGroup(character);
@@ -6116,15 +6116,15 @@ void JusticeOnSale_DlgExitAfterMayor_1()
 	AddQuestRecord("JusticeOnSale", "5");
 	CloseQuestHeader("JusticeOnSale");
 	
-	AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
+	AddMoneyToCharacter(PChar, 1000 + int(PChar.rank) * 30 * hrand(10));
 	
 	DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
 }
 
 void JusticeOnSale_DlgExitAfterMayor_2()
 {
-	sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", sti(PChar.rank) + 5, PIRATE, -1, true, "quest"));
-	sld.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
+	sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", int(PChar.rank) + 5, PIRATE, -1, true, "quest"));
+	sld.Ship.Type = GenerateShipExt(int(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
 	sld.Ship.Name = PChar.GenQuest.JusticeOnSale.ShipName;
 	SetBaseShipData(sld);
 	SetCrewQuantityFull(sld);
@@ -6144,7 +6144,7 @@ void JusticeOnSale_DlgExitAfterMayor_2()
 	Group_LockTask("JusticeOnSaleGroup");
 	
 	sld.AlwaysFriend = true;
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
 	
 	SetCharacterShipLocation(sld, PChar.GenQuest.JusticeOnSale.ShoreId);
 
@@ -6212,7 +6212,7 @@ void JusticeOnSale_KillSmugglers(string _quest)
 		
 		character = CharacterFromID("JusticeOnSale_ShipPirate");
 		DeleteAttribute(character, "AlwaysFriend");
-		SetCharacterRelationBoth(sti(character.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(character.index), GetMainCharacterIndex(), RELATION_ENEMY);
 		
 		Log_TestInfo("Квест идёт по правильному варианту.");
 	}
@@ -6263,7 +6263,7 @@ void WaitressFack_Enter(string qName)
 	LAi_LockFightMode(pchar, true);
 	if (pchar.questTemp.different.FackWaitress.Kick == "0")
 	{	//подстава
-		iTemp = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
+		iTemp = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE);
 		sld = GetCharacter(NPC_GenerateCharacter("BerglarWairessQuest", "mercen_"+(rand(14)+14), "man", "man", iTemp, PIRATE, -1, true, "quest"));
 		FantomMakeCoolFighter(sld, iTemp, 80, 80, "blade_06", "pistol6", "bullet", 50);
 		sld.dialog.Filename = "Quest\ForAll_dialog.c";
@@ -6328,7 +6328,7 @@ void WaitressFack_fight()
 
 void WaitressFack_fack()
 {
-	pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1;
+	pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1;
 	DoQuestCheckDelay("PlaySex_1", 1.0);
 	pchar.questTemp.different = "FackWaitress_facking"; 
 }
@@ -6446,7 +6446,7 @@ void SexWithHostess_inRoom_2(string qName)
 
 void SexWithHostess_fack()
 {
-	pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1;
+	pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1;
 	DoQuestCheckDelay("PlaySex_1", 1.0);
 	pchar.questTemp.different = "HostessSex";
 }
@@ -6455,7 +6455,7 @@ void SexWithHostess_fack()
 void SetCapitainFromCityToSea(string qName) //помещаем в море кэпа, который сейчас ошивается в городе
 {
 	if (!CheckAttribute(pchar, "quest." + qName + ".CapId")) return;
-	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId)
+	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId);
 	if (capIndex != -1)
 	{		
 		sld = &characters[capIndex];
@@ -6472,11 +6472,11 @@ void SetCapitainFromCityToSea(string qName) //помещаем в море кэ�
 		Group_LockTask(sGroup);
 		Group_AddCharacter(sGroup, sld.id);
 		Group_SetGroupCommander(sGroup, sld.id);
-		SetRandGeraldSail(sld, sti(sld.Nation)); 
+		SetRandGeraldSail(sld, int(sld.Nation));
 		//записываем данные в структуру кэпа
 		sld.quest = "InMap"; //личный флаг рассеянного кэпа
 		sld.quest.targetCity = SelectNotEnemyColony(sld); //определим колонию, куда отправится кэп
-		sld.quest.stepsQty = sti(sld.quest.stepsQty) + 1; //количество выходов в море
+		sld.quest.stepsQty = int(sld.quest.stepsQty) + 1; //количество выходов в море
 		Log_TestInfo("Рассеянный кэп " + sld.id + " вышел из " + sld.city + " и направился в: " + sld.quest.targetCity);
 		//определим бухту, куда ставить энкаунтер. чтобы сразу не генерился перед ГГ у города
 		sTemp = GetArealByCityName(sld.city);
@@ -6486,9 +6486,9 @@ void SetCapitainFromCityToSea(string qName) //помещаем в море кэ�
 		Map_CreateTrader(sld.quest.baseShore, sld.quest.targetCity, sld.id, iTemp);
 		//даем общий слух, что кэп ушёл в другой город
 		// -- > belamour gen
-		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_78", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")), 
-			StringFromKey("GenQuests_79", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")), 
-			StringFromKey("GenQuests_80", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+sld.quest.targetCity+ "Acc"), GetFullName(sld))), 
+		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_78", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")),
+			StringFromKey("GenQuests_79", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")),
+			StringFromKey("GenQuests_80", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+sld.quest.targetCity+ "Acc"), GetFullName(sld))),
 			sld.city, iTemp, 1, "PortmansBook_DeliveryToCap", sld.id);
 		// <-- gen
 		//--> запись инфы по кэпу в базу местного портмана
@@ -6513,7 +6513,7 @@ void SetCapitainFromCityToSea(string qName) //помещаем в море кэ�
 void SetRobberFromSeaToMap(string qName) //помещаем в море кэпа-вора, который счас стоит на рейде в порту
 {
 	if (!CheckAttribute(pchar, "quest." + qName + ".CapId")) return;
-	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId)
+	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId);
 	if (capIndex != -1)
 	{		
 		sld = &characters[capIndex];
@@ -6526,7 +6526,7 @@ void SetRobberFromSeaToMap(string qName) //помещаем в море кэпа
 		Group_LockTask(sGroup);
 		Group_AddCharacter(sGroup, sld.id);
 		Group_SetGroupCommander(sGroup, sld.id);
-		SetRandGeraldSail(sld, sti(sld.Nation)); 
+		SetRandGeraldSail(sld, int(sld.Nation));
 		//записываем данные в структуру кэпа
 		sld.quest = "InMap"; //личный флаг рассеянного кэпа
 		sld.quest.targetCity = SelectAnyColony2(sld.city, sld.quest.cribCity); //определим колонию, куда отправится кэп
@@ -6536,9 +6536,9 @@ void SetRobberFromSeaToMap(string qName) //помещаем в море кэпа
 		Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, iTemp);
 		//даем общий слух, что кэп ушёл в другой город
 		// -- > belamour gen
-		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_81", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")), 
-			StringFromKey("GenQuests_82", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")), 
-			StringFromKey("GenQuests_83", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))), 
+		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_81", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")),
+			StringFromKey("GenQuests_82", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")),
+			StringFromKey("GenQuests_83", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+"Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))),
 			sld.city, iTemp, 1, "Portmans_SeekShip_rum", sld.id);
 		// <-- gen
 		//--> запись инфы по кэпу в базу местного портмана
@@ -6573,8 +6573,8 @@ void SeekShip_checkAbordage(string qName) //кэп-вор успешно або�
 		{
 			sld = &characters[iTemp];
 			if (sld.ship.name == rCharacter.quest.PortmansSeekShip.shipName && 
-				RealShips[sti(sld.ship.type)].BaseName == rCharacter.quest.PortmansSeekShip.shipTapeName &&
-				RealShips[sti(sld.Ship.Type)].basetype == rCharacter.quest.PortmansSeekShip.shipTape)
+				RealShips[int(sld.ship.type)].BaseName == rCharacter.quest.PortmansSeekShip.shipTapeName &&
+				RealShips[int(sld.Ship.Type)].basetype == rCharacter.quest.PortmansSeekShip.shipTape)
 			{
 				bOk = true;
 			}
@@ -6744,7 +6744,7 @@ void SCQ_CitizenIsDeath(string qName)
 void CitizCapFromSeaToMap(string qName) //помещаем на карту кэпа, разыскиваемого горожанами
 {
 	if (!CheckAttribute(pchar, "quest." + qName + ".CapId")) return;
-	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId)
+	int capIndex = GetCharacterIndex(pchar.quest.(qName).CapId);
 	if (capIndex != -1)
 	{		
 		sld = &characters[capIndex];
@@ -6758,7 +6758,7 @@ void CitizCapFromSeaToMap(string qName) //помещаем на карту кэ�
 		Group_LockTask(sGroup);
 		Group_AddCharacter(sGroup, sld.id);
 		Group_SetGroupCommander(sGroup, sld.id);
-		SetRandGeraldSail(sld, sti(sld.Nation)); 
+		SetRandGeraldSail(sld, int(sld.Nation));
 		//записываем данные в структуру кэпа
 		sld.quest = "InMap"; //личный флаг искомого кэпа
 		sld.quest.targetCity = SelectAnyColony2(sld.city, sld.quest.cribCity); //определим колонию, куда отправится кэп
@@ -6768,9 +6768,9 @@ void CitizCapFromSeaToMap(string qName) //помещаем на карту кэ�
 		Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, iTemp);
 		//даем общий слух, что кэп ушёл в другой город
 		// --> belamour gen
-		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_84", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")), 
-			StringFromKey("GenQuests_85", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+ "Acc")), 
-			StringFromKey("GenQuests_86", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))), 
+		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_84", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")),
+			StringFromKey("GenQuests_85", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+ "Acc")),
+			StringFromKey("GenQuests_86", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))),
 			sld.city, iTemp, 1, "Citiz_SeekCap_rum", sld.id);
 		// <-- gen
 		//--> запись инфы по кэпу в базу местного портмана
@@ -6830,10 +6830,10 @@ void Deliver_CreateTraderShips(string qName)//создание торговых 
 	Group_SetType("Trade_Attack", "trade");//тип группы
 	for (i=1; i<=2; i++)
 	{
-		if(makeint(pchar.rank) >= 21) { iShipRank = 3; }
-		if(makeint(pchar.rank) >= 12 && makeint(pchar.rank) < 21) { iShipRank = 2; }	
-		if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 12) { iShipRank = 1; }	
-		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
+		if(int(pchar.rank) >= 21) { iShipRank = 3; }
+		if(int(pchar.rank) >= 12 && int(pchar.rank) < 21) { iShipRank = 2; }
+		if(int(pchar.rank) >= 6 && int(pchar.rank) < 12) { iShipRank = 1; }
+		if(int(pchar.rank) < 5) { iShipRank = 0; }
 		switch (iShipRank)
 		{
 			case 0:  
@@ -6863,9 +6863,9 @@ void Deliver_CreateTraderShips(string qName)//создание торговых 
 			FantomMakeCoolSailor(sld, ShipType, sTemp2, -1, 44, 30, 30);//создание кораблей
 		}
 		sld.Ship.Mode = "trade";
-		iGoods = sti(pchar.questTemp.jailCanMove.Deliver.Goods);
+		iGoods = int(pchar.questTemp.jailCanMove.Deliver.Goods);
 		iSpace = GetCharacterFreeSpace(sld, iGoods);
-		iSpace = makeint(iSpace/2 + rand(iSpace/2));
+		iSpace = int(iSpace/2 + rand(iSpace/2));
 		SetCharacterGoods(sld, iGoods, iSpace);
 		Group_AddCharacter("Trade_Attack", "CaptainAttack_"+i);//добавление в группу
 		sld.AlwaysEnemy = true;
@@ -6928,7 +6928,7 @@ void Deliver_TraderShipsOver(string qName)//просроченный тайме�
 void Deliver_CreateCureerShips(string qName)//создание курьерского корабля
 {
 	int i, ShipType, Rank, iShipRank, iCannonType;
-	int iNation = sti(pchar.questTemp.jailCanMove.Deliver.Nation);
+	int iNation = int(pchar.questTemp.jailCanMove.Deliver.Nation);
 	ref sld;
 	string Blade, sTemp, sNation;
 	
@@ -6937,10 +6937,10 @@ void Deliver_CreateCureerShips(string qName)//создание курьерск�
     Island_SetReloadEnableGlobal(pchar.questTemp.jailCanMove.Deliver.Island, false);
     Group_FindOrCreateGroup("Cureer_Attack");
 	Group_SetType("Cureer_Attack", "war");
-		if(makeint(pchar.rank) >= 21) { iShipRank = 3; }
-		if(makeint(pchar.rank) >= 12 && makeint(pchar.rank) < 21) { iShipRank = 2; }	
-		if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 12) { iShipRank = 1; }	
-		if(makeint(pchar.rank) < 6) { iShipRank = 0; }
+		if(int(pchar.rank) >= 21) { iShipRank = 3; }
+		if(int(pchar.rank) >= 12 && int(pchar.rank) < 21) { iShipRank = 2; }
+		if(int(pchar.rank) >= 6 && int(pchar.rank) < 12) { iShipRank = 1; }
+		if(int(pchar.rank) < 6) { iShipRank = 0; }
 		switch (iShipRank)
 		{
 			case 0:  
@@ -7040,7 +7040,7 @@ void mOfficer_fc(string qName)
 	if (!CheckAttribute(pchar, "questTemp.MutinyOfficerIDX")) {
 		return;
 	}
-	ref sld = &Characters[sti(Pchar.questTemp.MutinyOfficerIDX)];
+	ref sld = &Characters[int(Pchar.questTemp.MutinyOfficerIDX)];
 	if (!CheckAttribute(sld, "quest.Mutiny")) { // mitrokosta если офф мёртв или уволен
 		DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
 		return;
@@ -7053,9 +7053,9 @@ void mOfficer_fc(string qName)
 
 	if (IsEntity(&worldMap))
     {
-		if(sti(sld.Payment) == true)
+		if(int(sld.Payment) == true)
 		{
-			if (sti(sld.ship.type) != SHIP_NOTUSED)
+			if (int(sld.ship.type) != SHIP_NOTUSED)
 			{
 				Log_SetStringToLog(StringFromKey("GenQuests_87", GetFullName(sld), sld.ship.name));
 				DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
@@ -7089,7 +7089,7 @@ void mOfficer_fc2(string qName)
 	if (!CheckAttribute(pchar, "questTemp.MutinyOfficerIDX")) {
 		return;
 	}
-	ref sld = &Characters[sti(Pchar.questTemp.MutinyOfficerIDX)];
+	ref sld = &Characters[int(Pchar.questTemp.MutinyOfficerIDX)];
 	if (!CheckAttribute(sld, "quest.Mutiny")) { // mitrokosta если офф мёртв или уволен
 		DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
 		return;
@@ -7100,9 +7100,9 @@ void mOfficer_fc2(string qName)
 		return;
 	}
 
-	if(sti(sld.Payment) == true)
+	if(int(sld.Payment) == true)
 	{
-		if (sti(sld.ship.type) != SHIP_NOTUSED)
+		if (int(sld.ship.type) != SHIP_NOTUSED)
 		{
 			Log_SetStringToLog(StringFromKey("GenQuests_87", GetFullName(sld), sld.ship.name));
 			DeleteAttribute(pchar, "questTemp.MutinyOfficerIDX");
@@ -7271,14 +7271,14 @@ void NightAdventure_PiratesInCave(string _quest)
 	
 	iBull = GetCharacterIndex(pchar.GenQuest.NightAdventureId);
 	//--> генерим ранг 
-	if (sti(pchar.rank) > 6) 
+	if (int(pchar.rank) > 6)
 	{
-		if (sti(pchar.rank) > 20) Rank = sti(pchar.rank) + sti(MOD_SKILL_ENEMY_RATE*4/3);
-		else Rank = sti(pchar.rank) + sti(MOD_SKILL_ENEMY_RATE*2.5/3);
+		if (int(pchar.rank) > 20) Rank = int(pchar.rank) + int(MOD_SKILL_ENEMY_RATE*4/3);
+		else Rank = int(pchar.rank) + int(MOD_SKILL_ENEMY_RATE*2.5/3);
 	}
 	else  
 	{	//казуалам зеленый свет на начало игры
-		if (sti(pchar.rank) > 3) Rank = sti(pchar.rank);
+		if (int(pchar.rank) > 3) Rank = int(pchar.rank);
 		else Rank = 1;
 	}	
 	//<-- генерим ранг 
@@ -7463,7 +7463,7 @@ void NoiseCemetery_toCrypt(string _quest)
 	pchar.quest.NoiseCemetery_toCrypt.over = "yes";
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
-	sld = GetCharacter(NPC_GenerateCharacter("CemeteryCouple_1", "citiz_8", "man", "man", 25, sti(pchar.questTemp.Lantern.nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("CemeteryCouple_1", "citiz_8", "man", "man", 25, int(pchar.questTemp.Lantern.nation), -1, true, "quest"));
 	sld.Dialog.Filename = "GenQuests_Dialog.c";
 	sld.dialog.currentnode = "CemeteryMan";
 	RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -7472,7 +7472,7 @@ void NoiseCemetery_toCrypt(string _quest)
 	LAi_SetStayType(sld);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto5");
 	
-	sld = GetCharacter(NPC_GenerateCharacter("CemeteryCouple_2", "women_10", "woman", "towngirl", 25, sti(pchar.questTemp.Lantern.nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("CemeteryCouple_2", "women_10", "woman", "towngirl", 25, int(pchar.questTemp.Lantern.nation), -1, true, "quest"));
 	GiveItem2Character(sld, "unarmed");
 	EquipCharacterbyItem(sld, "unarmed");
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto6");
@@ -7510,18 +7510,18 @@ void FrahtHunterOnSea()//охотники в акватории порта пр�
     Group_FindOrCreateGroup("Fraht_Attack");
 	Group_SetType("Fraht_Attack", "war");
 	iNation = PIRATE;
-	if (pchar.questTemp.WPU.Postcureer == "begin") iNation = pchar.questTemp.WPU.Postcureer.EnemyNation;
-	if (pchar.questTemp.WPU.Escort == "begin") iNation = pchar.questTemp.WPU.Escort.EnemyNation;
+	if (pchar.questTemp.WPU.Postcureer == "begin") iNation = pchar.questTemp.WPU.Postcureer.EnemyNation$int(0);
+	if (pchar.questTemp.WPU.Escort == "begin") iNation = pchar.questTemp.WPU.Escort.EnemyNation$int(0);
 	for (i=1; i<=2; i++)
 	{
-		iRank = sti(pchar.rank) + rand(5);
-		if(makeint(pchar.rank) >= 30) { iShipRank = 6; }
-		if(makeint(pchar.rank) >= 25 && makeint(pchar.rank) < 30) { iShipRank = 5; }
-		if(makeint(pchar.rank) >= 19 && makeint(pchar.rank) < 25) { iShipRank = 4; }	
-		if(makeint(pchar.rank) >= 13 && makeint(pchar.rank) < 18) { iShipRank = 3; }	
-		if(makeint(pchar.rank) >= 8 && makeint(pchar.rank) < 12) { iShipRank = 2; }	
-		if(makeint(pchar.rank) >= 5 && makeint(pchar.rank) < 8) { iShipRank = 1; }	
-		if(makeint(pchar.rank) < 5) { iShipRank = 0; }
+		iRank = int(pchar.rank) + rand(5);
+		if(int(pchar.rank) >= 30) { iShipRank = 6; }
+		if(int(pchar.rank) >= 25 && int(pchar.rank) < 30) { iShipRank = 5; }
+		if(int(pchar.rank) >= 19 && int(pchar.rank) < 25) { iShipRank = 4; }
+		if(int(pchar.rank) >= 13 && int(pchar.rank) < 18) { iShipRank = 3; }
+		if(int(pchar.rank) >= 8 && int(pchar.rank) < 12) { iShipRank = 2; }
+		if(int(pchar.rank) >= 5 && int(pchar.rank) < 8) { iShipRank = 1; }
+		if(int(pchar.rank) < 5) { iShipRank = 0; }
 
 		int iClassFlag = FLAG_SHIP_CLASS_5;
 		switch (iShipRank)
@@ -7596,7 +7596,7 @@ void EnemyNationHunterOnMap(bool _fast)//охотники вражеской н�
 	}
     for (i = 1; i <= GetCompanionQuantity(pchar); i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", sti(PChar.rank) + 5, iNation, 6, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", int(PChar.rank) + 5, iNation, 6, true, "hunter"));
         SetShipHunter(sld);
         SetFantomParamHunter(sld);
         SetCaptanModelByEncType(sld, "war");
@@ -7629,14 +7629,14 @@ void FrahtTime_FullOver(string qName)//прошли все разумные ср
 	pchar.questTemp.WPU.Fraht = "lost";
 	AddQuestRecord("Fraht", "5");
 	ChangeCharacterComplexReputation(pchar,"nobility", -10);
-	ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.WPU.Fraht.Nation)) + "hunter", 30);
+	ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.WPU.Fraht.Nation)) + "hunter", 30);
 	pchar.questTemp.WPU.Fraht.count = 0;//счетчик фрахтов в ноль
 	Group_DeleteGroup("Fraht_Attack");
 }
 
 void FrahtTimeLevelUp_Over(string qName)//опоздали доставить товар по фрахту 2 уровня
 {
-	pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)-3;//скрутим счетчик
+	pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)-3;//скрутим счетчик
 	DeleteAttribute(pchar, "questTemp.WPU.Fraht.LevelUp");
 	DeleteAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID");
 	pchar.questTemp.WPU.Fraht = "complete";
@@ -7665,7 +7665,7 @@ void PostcureerTime_FullOver(string qName)//прошли все сроки на 
 	{
 		AddQuestRecord("Postcureer", "7");
 		ChangeCharacterComplexReputation(pchar,"nobility", -12);
-		ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.WPU.Postcureer.Nation)) + "hunter", 35);
+		ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.WPU.Postcureer.Nation)) + "hunter", 35);
 	}
 	else
 	{
@@ -7699,7 +7699,7 @@ void EscortTime_FullOver(string qName)//прошли все сроки на со
 		{
 			if (GetCharacterIndex("EscortCaptain_1") == -1) RemoveCharacterCompanion(pchar, characterFromID("EscortCaptain_2"));
 			else RemoveCharacterCompanion(pchar, characterFromID("EscortCaptain_1"));
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -5);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -5);
 		}//если делать через цикл - определяет несуществующего НПС, вот и приходится такой огород городить
 	}
 	if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus"))
@@ -7712,7 +7712,7 @@ void EscortTime_FullOver(string qName)//прошли все сроки на со
 		
 		pchar.questTemp.WPU.Fraht.count = 0;//счетчик фрахтов в ноль
 		ChangeCharacterComplexReputation(pchar,"nobility", -15);
-		ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.WPU.Escort.Nation)) + "hunter", 35);
+		ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.WPU.Escort.Nation)) + "hunter", 35);
 		pchar.questTemp.WPU.Fraht.Nation = pchar.questTemp.WPU.Escort.Nation;
 		pchar.questTemp.WPU.Fraht.TargetPortmanID = pchar.questTemp.WPU.Escort.TargetPortmanID;
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
@@ -7723,7 +7723,7 @@ void EscortTime_FullOver(string qName)//прошли все сроки на со
 		AddQuestRecord("Escort", "5");
 		CloseQuestHeader("Escort");
 		ChangeCharacterComplexReputation(pchar,"nobility", -10);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -5);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -5);
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 		DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
 	}
@@ -7749,7 +7749,7 @@ void Escort_failed(string qName)//два корабля потоплены - п�
 	pchar.questTemp.WPU.Escort.count = 0;//счетчик эскортов в ноль
 	Group_DeleteGroup("Fraht_Attack");
 	ChangeCharacterComplexReputation(pchar,"nobility", -10);
-	ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -9);
+	ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -9);
 }
 //<--эскорт конец
 
@@ -7761,7 +7761,7 @@ void PostcureerGopHuntersOnLand(string qName)//охотники в порту п
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
 	for (i=1; i<=4; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("PostHunters"+i, "citiz_58", "man", "man", sti(PChar.rank) + 10, PIRATE, 1, true, "hunter"));
+		sld = GetCharacter(NPC_GenerateCharacter("PostHunters"+i, "citiz_58", "man", "man", int(PChar.rank) + 10, PIRATE, 1, true, "hunter"));
 		SetFantomParamHunter(sld);
 		SetModelPirate(sld);
 		LAi_SetActorType(sld);
@@ -7787,7 +7787,7 @@ void PostcureerProfHuntersOnLand(string qName)//наемники в порту �
 	LAi_group_Delete("EnemyFight");
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
-	int iRank = sti(PChar.rank) + 10;
+	int iRank = int(PChar.rank) + 10;
 	for (i=1; i<=2; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("PostHunters"+i, "citiz_58", "man", "man", iRank, PIRATE, 1, true, "hunter"));
@@ -7817,8 +7817,8 @@ void PostcureerAgent(string qName)//агент
 	LAi_group_Delete("EnemyFight");
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
-	int iRank = sti(PChar.rank) + 10;
-	int iNation = pchar.questTemp.WPU.Postcureer.EnemyNation;
+	int iRank = int(PChar.rank) + 10;
+	int iNation = pchar.questTemp.WPU.Postcureer.EnemyNation$int(0);
 	sld = GetCharacter(NPC_GenerateCharacter("PostAgent", "shipowner_"+(rand(6)+4), "man", "man", iRank, iNation, 2, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, 50, 50, "blade_16", "pistol5", "bullet", 50);
 	DeleteAttribute(sld, "SaveItemsForDead");
@@ -7835,7 +7835,7 @@ void PostcureerAgent(string qName)//агент
 
 void PostcureerAgent_ShipAttack(string qName)//агентский фрегат
 {
-	int iNation = pchar.questTemp.WPU.Postcureer.EnemyNation;
+	int iNation = pchar.questTemp.WPU.Postcureer.EnemyNation$int(0);
 	Group_FindOrCreateGroup("AgentFrigate");//создать группу
 	Group_SetType("AgentFrigate", "war");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("PostAgentCaptain", "citiz_41", "man", "man", 25, iNation, 1, true, "quest"));//создание кэпа
@@ -7864,7 +7864,7 @@ void PostcureerAgent_ShipAttack(string qName)//агентский фрегат
 //--> --------------------------------------задания 2 уровня эскорт--------------------------------------------
 void EscortArsenalShip_Over(string qName)//не пришли в срок
 {
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-2;//скрутим счетчик за то, что не пришёл
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-2;//скрутим счетчик за то, что не пришёл
 	AddQuestRecord("Escort", "21");
 	AddQuestUserData("Escort", "sTargetColony", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City));
 	CloseQuestHeader("Escort");
@@ -7880,7 +7880,7 @@ void EscortArsenalShipGo_Over(string qName)//не сопровождали, а �
 	RemoveCharacterCompanion(Pchar, characterFromID("ArsenalShipCaptain"));
 	sld = characterFromId("ArsenalShipCaptain");
 	sld.lifeday = 0;//на всякий случай
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 	AddQuestRecord("Escort", "22");
 	AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 	CloseQuestHeader("Escort");
@@ -7897,7 +7897,7 @@ void EscortArsenalShip_failed(string qName)//потеряли корабль
 	CloseQuestHeader("Escort");
 	pchar.questTemp.WPU.Escort.count = 1;//сильно скрутим счетчик за провал
 	ChangeCharacterComplexReputation(pchar,"nobility", -2);
-	ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -3);
+	ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -3);
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUpGo_0");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
@@ -7906,7 +7906,7 @@ void EscortArsenalShip_failed(string qName)//потеряли корабль
 
 void DesIsland_Over(string qName)//общее опоздание по всем приключениям у необитаек
 {
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-3;//скрутим счетчик за опоздание
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-3;//скрутим счетчик за опоздание
 	AddQuestRecord("Escort", "26");
 	AddQuestUserData("Escort", "sIsland", XI_ConvertString("Colony"+pchar.questTemp.WPU.Current.TargetIslandID));
 	CloseQuestHeader("Escort");
@@ -7945,14 +7945,14 @@ void CreateDisasterShip_WithoutMasts(string qName)//создаем покоца�
 {
     Group_FindOrCreateGroup("WMShip");
 	Group_SetType("WMShip", "trade");
-	int iShipType = sti(pchar.questTemp.WPU.Escort.ShipType);
+	int iShipType = int(pchar.questTemp.WPU.Escort.ShipType);
 	sTemp = pchar.questTemp.WPU.Escort.ShipName;
-	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "citiz_41", "man", "man", 10, sti(pchar.nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "citiz_41", "man", "man", 10, int(pchar.nation), -1, true, "quest"));
 	FantomMakeSmallSailor(sld, iShipType, sTemp, CANNON_TYPE_CANNON_LBS12, 40, 20, 25, 30, 20);
 	SetFantomParamFromRank(sld, 10, true); 
 	SetCaptanModelByEncType(sld, "trade");
 	sld.Ship.Mode = "trade";
-	sld.ship.HP = makeint(sti(sld.ship.HP)/5);
+	sld.ship.HP = int(int(sld.ship.HP)/5);
 	sld.ship.masts.mast3 = 1;
 	SetCrewQuantityOverMax(sld, 50+rand(10));
 	Group_AddCharacter("WMShip", "WMCaptain");//добавление в группу
@@ -7973,13 +7973,13 @@ void Escort_Shootfail(string qName)//утопили судно сами
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 	pchar.questTemp.WPU.Escort = "complete";
 	ChangeCharacterComplexReputation(pchar,"nobility", -5);
-	ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -50);
+	ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -50);
 }
 
 void WM_Captain_Over(string qName)//опоздали доставить бревна и тряпки
 {
 	pchar.quest.Escort_Shootfail.over = "yes"; //снять прерывание
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 	AddQuestRecord("Escort", "28");
 	AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 	CloseQuestHeader("Escort");
@@ -8032,7 +8032,7 @@ void RepairShip_Finished(string qName)//чинимся и добавляемся
 	Group_DelCharacter("WMShip", "WMCaptain");//иначе будет клон
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	pchar.quest.Escort_fail.win_condition.l1 = "NPC_Death";//прерывание на потопление сопровождаемого
 	pchar.quest.Escort_fail.win_condition.l1.character = "WMCaptain";
@@ -8053,7 +8053,7 @@ void DisasterShipWM_failed(string qName)//потеряли корабль по �
 	CloseQuestHeader("Escort");
 	pchar.questTemp.WPU.Escort.count = 1;//сильно скрутим счетчик за провал
 	ChangeCharacterComplexReputation(pchar,"nobility", -1);
-	ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -2);
+	ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -2);
 	if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1WM")) DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_1WM");
 	if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1VSP")) DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_1VSP");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp");
@@ -8068,7 +8068,7 @@ void DisasterShipWM_Over(string qName)//не шли домой, а маялис�
 	RemoveCharacterCompanion(Pchar, characterFromID("WMCaptain"));
 	sld = characterFromId("WMCaptain");
 	sld.lifeday = 0;//на всякий случай
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 	AddQuestRecord("Escort", "22");
 	AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 	CloseQuestHeader("Escort");
@@ -8103,15 +8103,15 @@ void CreateDisasterShip_VSPirate(string qName)//создаем потерявш�
     Group_FindOrCreateGroup("WMShip");
 	Group_SetType("WMShip", "trade");
     int iShipType, hcrew;
-	iShipType = sti(pchar.questTemp.WPU.Escort.ShipType);
+	iShipType = int(pchar.questTemp.WPU.Escort.ShipType);
 	sTemp = pchar.questTemp.WPU.Escort.ShipName;
-	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "citiz_41", "man", "man", sti(pchar.rank), sti(pchar.nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "citiz_41", "man", "man", int(pchar.rank), int(pchar.nation), -1, true, "quest"));
 	FantomMakeSmallSailor(sld, iShipType, sTemp, CANNON_TYPE_CANNON_LBS12, 40, 20, 25, 30, 20);
-	SetFantomParamFromRank(sld, sti(pchar.rank), true); 
+	SetFantomParamFromRank(sld, int(pchar.rank), true);
 	SetCaptanModelByEncType(sld, "trade");
-	sld.ship.HP = makeint(sti(sld.ship.HP)/1.3);
+	sld.ship.HP = int(int(sld.ship.HP)/1.3);
 	hcrew = GetMaxCrewQuantity(sld);
-	SetCrewQuantityOverMax(sld, makeint(hcrew/1.5));
+	SetCrewQuantityOverMax(sld, int(hcrew/1.5));
 	sld.ShipEnemyDisable = true; //при попадании не враждебен
 	sld.Ship.Mode = "trade";
     Group_AddCharacter("WMShip", "WMCaptain");
@@ -8137,12 +8137,12 @@ void CreateDisasterShip_VSPirate(string qName)//создаем потерявш�
 				iTemp = CANNON_TYPE_CANNON_LBS12;
             break;
 		}
-	    sld = GetCharacter(NPC_GenerateCharacter("PirateAttack_"+i, "citiz_"+(i + 40), "man", "man", sti(pchar.rank)+5, PIRATE, 1, true, "quest"));
+	    sld = GetCharacter(NPC_GenerateCharacter("PirateAttack_"+i, "citiz_"+(i + 40), "man", "man", int(pchar.rank)+5, PIRATE, 1, true, "quest"));
 	    FantomMakeSmallSailor(sld, iShipType, "", iTemp, 50+rand(10), 25+rand(10), 30+rand(10), 35+rand(10), 40+rand(10));
-	    SetFantomParamFromRank(sld, sti(pchar.rank)+5, true); 
-		sld.ship.HP = makeint(sti(sld.ship.HP)/(1.0+frand(0.5)));//этих тоже покоцаем немного
+	    SetFantomParamFromRank(sld, int(pchar.rank)+5, true);
+		sld.ship.HP = int(int(sld.ship.HP)/(1.0+frand(0.5)));//этих тоже покоцаем немного
 		hcrew = GetMaxCrewQuantity(sld);
-		SetCrewQuantityOverMax(sld, makeint(hcrew/(1.0+frand(0.5))));
+		SetCrewQuantityOverMax(sld, int(hcrew/(1.0+frand(0.5))));
 	    Group_AddCharacter("Pir_Attack", "PirateAttack_"+i);
     }       
 	Group_SetGroupCommander("Pir_Attack", "PirateAttack_1");
@@ -8201,7 +8201,7 @@ void DisasterShip_Sink(string qName)//утонул
 	AddQuestUserData("Escort", "sIsland", XI_ConvertString(pchar.questTemp.WPU.Current.TargetIslandID));
 	AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity));
 	pchar.questTemp.WPU.Escort = "sink";
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//скрутим счетчик
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//скрутим счетчик
 }
 
 void DisasterShip_DieHard(string qName)//сбежали
@@ -8221,7 +8221,7 @@ void DisasterShip_DieHard(string qName)//сбежали
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_1VSP");
 	pchar.questTemp.WPU.Escort = "complete";
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 }
 
 void CreateDisasterShip_Crew(string qName)//создаем потерпевших крушение
@@ -8229,13 +8229,13 @@ void CreateDisasterShip_Crew(string qName)//создаем потерпевши�
 	pchar.quest.DesIsland_Over.over = "yes";//снять таймер
 	for (i=1; i<=7; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("WMSailor"+i, "shipowner_"+i, "man", "man", sti(pchar.rank), sti(pchar.nation), -1, true, "citizen"));
+		sld = GetCharacter(NPC_GenerateCharacter("WMSailor"+i, "shipowner_"+i, "man", "man", int(pchar.rank), int(pchar.nation), -1, true, "citizen"));
 		LAi_SetCitizenType(sld);
 		LAi_CharacterDisableDialog(sld);
 		ChangeCharacterAddressGroup(sld, pchar.questTemp.WPU.Current.TargetIslandID.Shore, "goto", "goto"+i);
 	}
-	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "trader_"+(rand(9)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), -1, true, "quest")); 
-	FantomMakeCoolFighter(sld, sti(pchar.rank), 20, 20, "blade_04", "pistol6", "bullet", 30);
+	sld = GetCharacter(NPC_GenerateCharacter("WMCaptain", "trader_"+(rand(9)+1), "man", "man", int(pchar.rank), int(pchar.nation), -1, true, "quest"));
+	FantomMakeCoolFighter(sld, int(pchar.rank), 20, 20, "blade_04", "pistol6", "bullet", 30);
 	LAi_SetCitizenType(sld);
 	LAi_SetImmortal(sld, true);
 	ChangeCharacterAddressGroup(sld, pchar.questTemp.WPU.Current.TargetIslandID.Shore, "goto", "goto1");
@@ -8259,9 +8259,9 @@ void DisasterShipCrew_onBoard()//добавим моряков в нашу ко�
 	LAi_ActorRunToLocation(sld, "reload", "reload1_boat", "none", "", "", "", 10.0);
 	AddPassenger(pchar, sld, false);
 	SetCharacterRemovable(sld, false);
-	SetCrewQuantityOverMax(pchar, sti(PChar.Ship.Crew.Quantity)+55); 
+	SetCrewQuantityOverMax(pchar, int(PChar.Ship.Crew.Quantity)+55);
 	log_info(StringFromKey("GenQuests_91"));
-	if (sti(pchar.ship.Crew.Morale) < 90) pchar.ship.Crew.Morale = sti(pchar.ship.Crew.Morale)+10;//поднимем мораль
+	if (int(pchar.ship.Crew.Morale) < 90) pchar.ship.Crew.Morale = int(pchar.ship.Crew.Morale)+10;//поднимем мораль
 	ChangeCrewExp(pchar, "Sailors", 10);
 	ChangeCrewExp(pchar, "Cannoners", 10);
 	ChangeCrewExp(pchar, "Soldiers", 10);//увеличим умения команде
@@ -8288,7 +8288,7 @@ void DisasterShipCrew_IndianAttack(string qName)//атака индеев
 	//индеи
 	for (i=1; i<=7; i++)
     {
-		iTemp = sti(pchar.rank) + 10;
+		iTemp = int(pchar.rank) + 10;
 		sld = GetCharacter(NPC_GenerateCharacter("DisasterShipIndian_"+i, "Canib_"+(rand(5)+1), "man", "man", iTemp, PIRATE, -1, true, "marginal"));
 		LAi_SetWarriorType(sld);
         LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -8306,7 +8306,7 @@ void DisasterShip_AttackInShore(string qName)//атака пиратского �
 	bQuestDisableMapEnter = true;//иначе нет мотивации драться в этой ситуации
 	Group_FindOrCreateGroup("AttackInShore");
 	Group_SetType("AttackInShore", "pirate");
-	iTemp = sti(pchar.rank)+10;
+	iTemp = int(pchar.rank)+10;
 	if (iTemp > 40) iTemp = 40;
 	sld = GetCharacter(NPC_GenerateCharacter("AttackInShoreCaptain", "citiz_"+(rand(9)+41), "man", "man", iTemp, PIRATE, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_CORVETTE, "", CANNON_TYPE_CULVERINE_LBS18, 50, 50, 50);
@@ -8353,7 +8353,7 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
     Group_FindOrCreateGroup("CaravanShip");
 	Group_SetType("CaravanShip", "trade");
     int iShipType, hcrew;
-	int rank = sti(PChar.rank);
+	int rank = int(PChar.rank);
 	int iClassFlags = FLAG_SHIP_CLASS_5;
 
 	if(rank < 8)
@@ -8390,14 +8390,14 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
 		}
 
 		iShipType = GetRandomShipType(iClassFlags, iTypeFlag, FLAG_SHIP_NATION_ANY);
-		iTemp = GetCannonByTypeAndCaliber("cannon", sti(ShipsTypes[iShipType].MaxCaliber));
+		iTemp = GetCannonByTypeAndCaliber("cannon", int(ShipsTypes[iShipType].MaxCaliber));
 
-		sld = GetCharacter(NPC_GenerateCharacter("CaravanCaptain_"+i, "trader_"+(rand(9)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 3, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("CaravanCaptain_"+i, "trader_"+(rand(9)+1), "man", "man", int(pchar.rank), int(pchar.nation), 3, true, "quest"));
 		FantomMakeSmallSailor(sld, iShipType, "", iTemp, 50, 25, 25, 30, 25);
-		SetFantomParamFromRank(sld, sti(pchar.rank), true); 
-		sld.ship.HP = makeint(sti(sld.ship.HP)/(1.0+frand(0.5)));
+		SetFantomParamFromRank(sld, int(pchar.rank), true);
+		sld.ship.HP = int(int(sld.ship.HP)/(1.0+frand(0.5)));
 		hcrew = GetMaxCrewQuantity(sld);
-		SetCrewQuantityOverMax(sld, makeint(hcrew/(1.0+frand(0.5))));//попортим немного
+		SetCrewQuantityOverMax(sld, int(hcrew/(1.0+frand(0.5))));//попортим немного
 		sld.ShipEnemyDisable = true; //при попадании не враждебен
 		sld.AlwaysFriend = true; // mitrokosta fix aggro
 		sld.Ship.Mode = "trade";
@@ -8422,14 +8422,14 @@ void CreateCaravanNearIsland(string qName)//защита торговцев от
 		}
 
 		iShipType = GetRandomShipType(iClassFlags, iTypeFlag, FLAG_SHIP_NATION_ANY);
-		iTemp = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon", "culverine"), sti(ShipsTypes[iShipType].MaxCaliber));
+		iTemp = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon", "culverine"), int(ShipsTypes[iShipType].MaxCaliber));
 
-	    sld = GetCharacter(NPC_GenerateCharacter("PirateAttack_"+i, "citiz_"+(i+40), "man", "man", sti(pchar.rank)+10, PIRATE, 3, true, "quest"));
+	    sld = GetCharacter(NPC_GenerateCharacter("PirateAttack_"+i, "citiz_"+(i+40), "man", "man", int(pchar.rank)+10, PIRATE, 3, true, "quest"));
 	    FantomMakeSmallSailor(sld, iShipType, "", iTemp, 50+rand(10), 25+rand(10), 30+rand(10), 35+rand(10), 40+rand(10));
-	    SetFantomParamFromRank(sld, sti(pchar.rank)+10, true); 
-		sld.ship.HP = makeint(sti(sld.ship.HP)/(1.0+frand(0.5)));//этих тоже попортим
+	    SetFantomParamFromRank(sld, int(pchar.rank)+10, true);
+		sld.ship.HP = int(int(sld.ship.HP)/(1.0+frand(0.5)));//этих тоже попортим
 		hcrew = GetMaxCrewQuantity(sld);
-		SetCrewQuantityOverMax(sld, makeint(hcrew/(1.0+frand(0.5))));
+		SetCrewQuantityOverMax(sld, int(hcrew/(1.0+frand(0.5))));
 	    Group_AddCharacter("Pir_Attack", "PirateAttack_"+i);
     }       
 	Group_SetGroupCommander("Pir_Attack", "PirateAttack_1");
@@ -8484,7 +8484,7 @@ void CaravanShip_Sink(string qName)//поражение
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_2");
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-2;//скрутим счетчик
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-2;//скрутим счетчик
 }
 
 void CaravanShip_Fail(string qName)//сбежали
@@ -8501,14 +8501,14 @@ void CaravanShip_Fail(string qName)//сбежали
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_2");
 	ChangeCharacterComplexReputation(pchar,"nobility", -3);
-	ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), -1);
+	ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), -1);
 	ChangeOfficersLoyality("bad_all", 3);
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 }
 
 void CaravanNearIsland_Over(string qName)//засиделись на берегу
 {
-	pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
+	pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-4;//скрутим счетчик за провал
 	AddQuestRecord("Escort", "42");
 	CloseQuestHeader("Escort");
 	DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp");
@@ -8532,7 +8532,7 @@ void Tavern_SetBadHabitue()
 	}
 	rCharacter = characterFromID(pchar.questTemp.friend_in_tavern);
 	LAi_Fade("", "");
-	sld = GetCharacter(NPC_GenerateCharacter("Tavern_BadHabitue", sModel, "man", "man", sti(pchar.rank), sti(rCharacter.nation), 2, false, "citizen"));
+	sld = GetCharacter(NPC_GenerateCharacter("Tavern_BadHabitue", sModel, "man", "man", int(pchar.rank), int(rCharacter.nation), 2, false, "citizen"));
 	sld.dialog.filename = "Habitue_dialog.c";
 	sld.dialog.currentnode = "bad_habitue";
 	sld.greeting = "habitue";
@@ -8572,7 +8572,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Church_GenQuest2_BanditsIsEnemies")
 	{
 		sQuestTown = PChar.GenQuest.ChurchQuest_2.QuestTown;
-		iChurchGenBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount;
+		iChurchGenBanditsCount = PChar.GenQuest.ChurchQuest_2.BanditsCount$int(0);
 		for(i=0; i<iChurchGenBanditsCount; i++)
 		{
 			sld = CharacterFromID("Church_GenQuest2_Bandit_" + i);
@@ -8597,10 +8597,10 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "LandEnc_RaidersBegin") {
 		LAi_SetFightMode(pchar, false);
 		LAi_LockFightMode(pchar, true);
-		iTemp = sti(pchar.quest.(qname).EncQty);
+		iTemp = int(pchar.quest.(qname).EncQty);
 		sTemp = "Gang"+ pchar.quest.(qname).LocIdx + "_";
 		sld = characterFromId(sTemp + "0");
-		fTemp = (stf(locations[reload_location_index].locators_radius.encdetector)-3)/5;
+		fTemp = (float(locations[reload_location_index].locators_radius.encdetector)-3)/5;
 		LAi_SetActorTypeNoGroup(sld);
 		LAi_ActorDialog(sld, pchar, "", fTemp, 0); 
 		for(i = 1; i < iTemp; i++)
@@ -8643,14 +8643,14 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		Gun = "Raiders_" + attrName; 			
 		AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_94", GetFullName(pchar), pchar.GenQuest.(Gun).name), 
 			StringFromKey("GenQuests_95", GetFullName(pchar), pchar.GenQuest.(Gun).name), 
-			StringFromKey("GenQuests_96", pchar.GenQuest.(Gun).name, GetFullName(pchar))), sti(pchar.GenQuest.(Gun).nation), 5, 1);				
+			StringFromKey("GenQuests_96", pchar.GenQuest.(Gun).name, GetFullName(pchar))), int(pchar.GenQuest.(Gun).nation), 5, 1);
 		DeleteAttribute(pchar, "GenQuest." + Gun); //трем нацию и имя			
 		DeleteAttribute(&locations[FindLocation(pchar.GenQuest.LandEnc.LocId)], "fire");
 	}
 
 	else if (sQuestName == "LandEnc_RaidersOver") { //чистим за собой
 		sTemp = "EncRaiders_" + pchar.quest.(qname).LocIdx;
-		iTemp = sti(pchar.quest.(sTemp).EncQty);
+		iTemp = int(pchar.quest.(sTemp).EncQty);
 		sTemp = "Gang" + pchar.quest.(qname).LocIdx + "_";
 		for(i = 0; i < iTemp; i++)
 		{
@@ -8672,10 +8672,10 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "LandEnc_CaribBegin") {
 		LAi_SetFightMode(pchar, false);
 		LAi_LockFightMode(pchar, true);
-		iTemp = sti(pchar.quest.(qname).EncQty);
+		iTemp = int(pchar.quest.(qname).EncQty);
 		sTemp = "Carib"+ pchar.quest.(qname).LocIdx + "_";
 		sld = characterFromId(sTemp + "0");
-		fTemp = (stf(locations[reload_location_index].locators_radius.encdetector)-3)/5;
+		fTemp = (float(locations[reload_location_index].locators_radius.encdetector)-3)/5;
 		LAi_SetActorTypeNoGroup(sld);
 		LAi_ActorDialog(sld, pchar, "", fTemp, 0); 
 		for(i = 1; i < iTemp; i++)
@@ -8740,7 +8740,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 
 	else if (sQuestName == "LandEnc_CaribOver") { //чистим за собой
 		sTemp = "EncCarib_" + pchar.quest.(qname).LocIdx;
-		iTemp = sti(pchar.quest.(sTemp).EncQty);
+		iTemp = int(pchar.quest.(sTemp).EncQty);
 		sTemp = "Carib" + pchar.quest.(qname).LocIdx + "_";
 		for(i = 0; i < iTemp; i++)
 		{
@@ -8854,7 +8854,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 			ChangeCharacterComplexReputation(pchar,"nobility", -3);
 			AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_97", pchar.GenQuest.EncGirl.name), 
 				StringFromKey("GenQuests_98", GetFullName(pchar), pchar.GenQuest.EncGirl.name), 
-				StringFromKey("GenQuests_99", pchar.GenQuest.EncGirl.name)), sti(pchar.GenQuest.EncGirl.nation), 5, 1);			
+				StringFromKey("GenQuests_99", pchar.GenQuest.EncGirl.name)), int(pchar.GenQuest.EncGirl.nation), 5, 1);
 			for(i = 1; i <= 3; i++)
 			{
 				if (GetCharacterIndex("GangMan_" + i) == -1) continue;
@@ -8880,7 +8880,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 						ChangeCharacterComplexReputation(pchar,"nobility", 5);
 						AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_100", pchar.GenQuest.EncGirl.name), 
 							StringFromKey("GenQuests_101", GetFullName(pchar), pchar.GenQuest.EncGirl.name), 
-							StringFromKey("GenQuests_102", pchar.GenQuest.EncGirl.name, GetMainCharacterNameGen())), sti(pchar.GenQuest.EncGirl.nation), 3, 1);	
+							StringFromKey("GenQuests_102", pchar.GenQuest.EncGirl.name, GetMainCharacterNameGen())), int(pchar.GenQuest.EncGirl.nation), 3, 1);
 					}		
 				}	
 			}
@@ -8907,7 +8907,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 					ChangeCharacterComplexReputation(pchar,"nobility", -5);
 				}
 				AddSimpleRumour(RandPhraseSimple(StringFromKey("GenQuests_103", GetFullName(pchar), pchar.GenQuest.EncGirl.name), 
-					StringFromKey("GenQuests_104", pchar.GenQuest.EncGirl.name)), sti(pchar.GenQuest.EncGirl.nation), 5, 1);
+					StringFromKey("GenQuests_104", pchar.GenQuest.EncGirl.name)), int(pchar.GenQuest.EncGirl.nation), 5, 1);
 				DeleteAttribute(pchar, "GenQuest.EncGirl"); //трем нацию и имя	
 			}
 		}			
@@ -8919,17 +8919,17 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		{
 			AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_105", pchar.GenQuest.EncGirlF.name), 
 				StringFromKey("GenQuests_106", GetFullName(pchar), pchar.GenQuest.EncGirlF.name), 
-				StringFromKey("GenQuests_107", pchar.GenQuest.EncGirlF.name)), sti(pchar.GenQuest.EncGirlF.nation), 5, 1);
+				StringFromKey("GenQuests_107", pchar.GenQuest.EncGirlF.name)), int(pchar.GenQuest.EncGirlF.nation), 5, 1);
 		}
 	}
 	//------------------- патруль в джунглях -------------------------
 	else if (sQuestName == "LandEnc_PatrolBegin") {
 		LAi_SetFightMode(pchar, false);
 		LAi_LockFightMode(pchar, true);
-		iTemp = sti(pchar.quest.(qname).EncQty);
+		iTemp = int(pchar.quest.(qname).EncQty);
 		sTemp = "Patrol"+ pchar.quest.(qname).LocIdx + "_";
 		npchar = characterFromId(sTemp + "0");
-		fTemp = (stf(locations[reload_location_index].locators_radius.encdetector)-3)/5;
+		fTemp = (float(locations[reload_location_index].locators_radius.encdetector)-3)/5;
 		LAi_SetActorTypeNoGroup(npchar);
 		LAi_ActorDialog(npchar, pchar, "", fTemp, 0); 
 		for(i = 1; i < iTemp; i++)
@@ -8967,8 +8967,8 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		//слухи
 		AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_108"), 
 			StringFromKey("GenQuests_109"), 
-			StringFromKey("GenQuests_110")), sti(pchar.GenQuest.(attrName).nation), 5, 1);
-		AddSimpleRumour(StringFromKey("GenQuests_111", GetFullName(pchar), NationNameGenitive(sti(pchar.GenQuest.(attrName).nation)), NationNamePeople(sti(pchar.GenQuest.(attrName).nation))), sti(pchar.GenQuest.(attrName).nation)+10, 5, 1);
+			StringFromKey("GenQuests_110")), int(pchar.GenQuest.(attrName).nation), 5, 1);
+		AddSimpleRumour(StringFromKey("GenQuests_111", GetFullName(pchar), NationNameGenitive(int(pchar.GenQuest.(attrName).nation)), NationNamePeople(int(pchar.GenQuest.(attrName).nation))), int(pchar.GenQuest.(attrName).nation)+10, 5, 1);
 		DeleteAttribute(pchar, "GenQuest." + attrName); //трем нацию патруля, если есть
 	}
 
@@ -8977,7 +8977,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		//слухи
 		AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_112", GetMainCharacterNameGen()), 
 			StringFromKey("GenQuests_113"), 
-			StringFromKey("GenQuests_114")), sti(pchar.GenQuest.(sTemp).nation), 5, 1);
+			StringFromKey("GenQuests_114")), int(pchar.GenQuest.(sTemp).nation), 5, 1);
 		DeleteAttribute(pchar, "GenQuest." + sTemp); //трем нацию патруля, если есть
 		sTemp = "PatrolGroup_" + pchar.quest.(qname).LocIdx;
 		LAi_group_RemoveCheck(sTemp);
@@ -9025,14 +9025,14 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 			iTemp = GetAttributesNum(arAll); //кол-во человек в банде
 			if (iTemp <= 0 ) iTemp = 1; //если локаторов меньше четырёх
 			//--> генерим ранг 
-			if (sti(pchar.rank) > 6) 
+			if (int(pchar.rank) > 6)
 			{
-				if (sti(pchar.rank) > 20) Rank = sti(pchar.rank) + sti(MOD_SKILL_ENEMY_RATE*4/iTemp);
-				else Rank = sti(pchar.rank) + sti(MOD_SKILL_ENEMY_RATE*2.5/iTemp);
+				if (int(pchar.rank) > 20) Rank = int(pchar.rank) + int(MOD_SKILL_ENEMY_RATE*4/iTemp);
+				else Rank = int(pchar.rank) + int(MOD_SKILL_ENEMY_RATE*2.5/iTemp);
 			}
 			else  
 			{	//казуалам зеленый свет на начало игры
-				if (sti(pchar.rank) > 3) Rank = sti(pchar.rank);
+				if (int(pchar.rank) > 3) Rank = int(pchar.rank);
 				else 
 				{
 					Rank = 1;
@@ -9114,7 +9114,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		// слухи
 		AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_115", sTemp, GetMainCharacterNameDat(), GetFullName(arAll)), 
 			StringFromKey("GenQuests_116", GetFullName(arAll)), 
-			StringFromKey("GenQuests_117", GetMainCharacterNameDat(), GetFullName(arAll))), sti(characters[GetCharacterIndex(arAll.MayorId)].nation), 5, 1);
+			StringFromKey("GenQuests_117", GetMainCharacterNameDat(), GetFullName(arAll))), int(characters[GetCharacterIndex(arAll.MayorId)].nation), 5, 1);
 	}
 	////////////////////////////////////////////////////////////////////////
 	//  Конец    Уничтожение банды
@@ -9149,7 +9149,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		pchar.quest.ReasonToFast_SpeakMayor.function = "ReasonToFast_SpeakMayor";
 
 		DeleteAttribute(&Locations[FindLocation(pchar.questTemp.ReasonToFast.PatrolLocation)], "DisableEncounters");
-		SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), sti(pchar.questTemp.ReasonToFast.relation));
+		SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), int(pchar.questTemp.ReasonToFast.relation));
 		pchar.questTemp.ReasonToFast = "PatrolDied";
 		pchar.questTemp.ReasonToFast.speakAfterPatrolDied = false;
 		DeleteAttribute(pchar, "GenQuest.HunterScore2Pause"); //вертаем начисление нзг
@@ -9246,7 +9246,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "ReasonToFast_GoAway_Hunters_Land") {
 		DoQuestCheckDelay("OpenTheDoors", 4.0);
 		sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
-		for (i=1; i<= sti(pchar.HunterCost.Qty); i++)
+		for (i=1; i<= int(pchar.HunterCost.Qty); i++)
 		{
 			sld = characterFromID("LandHunter0" + i);
 			LAi_SetActorType(sld); 
@@ -9295,7 +9295,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		DeleteAttribute(pchar, "questTemp.jailCanMove.Name");
 		Pchar.quest.DeletePrisonGroup.win_condition.l1 = "ExitFromLocation";
 		Pchar.quest.DeletePrisonGroup.win_condition.l1.location = pchar.location;
-		Pchar.quest.DeletePrisonGroup.win_condition = "DeletePrisonGroup"
+		Pchar.quest.DeletePrisonGroup.win_condition = "DeletePrisonGroup";
 	}
 
 	else if (sQuestName == "GivePrisonFree_Over") {
@@ -9318,7 +9318,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 		DeleteAttribute(pchar, "questTemp.jailCanMove.City");
 		Pchar.quest.DeletePrisonGroup.win_condition.l1 = "ExitFromLocation";
 		Pchar.quest.DeletePrisonGroup.win_condition.l1.location = pchar.location;
-		Pchar.quest.DeletePrisonGroup.win_condition = "DeletePrisonGroup"
+		Pchar.quest.DeletePrisonGroup.win_condition = "DeletePrisonGroup";
 	}
 
 	else if (sQuestName == "DeliverToBander") {
@@ -9328,8 +9328,8 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 			chrDisableReloadToLocation = true;
 			pchar.quest.DeliverToBander.over = "yes";
 			pchar.quest.DeliverToBander_over.over = "yes";
-			if (sti(pchar.rank) > 6) Rank = 8+sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-			else Rank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+			if (int(pchar.rank) > 6) Rank = 8+int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+			else Rank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 			GetCharacterPos(pchar, &locx, &locy, &locz);
 			for (i=1; i<=2; i++)
 			{

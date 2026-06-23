@@ -2,7 +2,7 @@
 void InitSelectors(string optionName, string selectorName, ref curValue)
 {
 	if (CheckAttribute(&InterfaceStates, optionName)) {
-		curValue = sti(InterfaceStates.(optionName));
+		curValue = int(InterfaceStates.(optionName));
 	}
 	SetSelectorNewTextValue(optionName, selectorName, curValue);
 }

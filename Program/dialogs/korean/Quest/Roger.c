@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 			
 			if (GetDataDay() >= 10 && GetDataDay() <= 15)
 			{
-				int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;
+				int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;
 				if (iRank > 45) iRank = 45;
 				Group_FindOrCreateGroup("Mtr_Utreht");
 				sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
@@ -2979,7 +2979,7 @@ void ProcessDialogEvent()
 		
 	case "merida_head_8":
             dialog.text = "그 자는 예의를 차릴 생각이 없어. 저런 부류는 내가 잘 알지.";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
 			{
 				link.l1 = "(신뢰) (명예) (지도력) 오늘은 피를 충분히 봤다, 장. 이건 내가 직접 처리하지.";
 				link.l1.go = "merida_head_dobro_1";
@@ -2990,7 +2990,7 @@ void ProcessDialogEvent()
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
+				if (int(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "해. 나는 끼어들 생각 없어. 그리고 구경도 안 할 거야.";
@@ -3107,7 +3107,7 @@ void ProcessDialogEvent()
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
 			LAi_SetImmortal(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 		    pchar.quest.mtraxx_ignasio_sail.win_condition.l1 = "location";
 			pchar.quest.mtraxx_ignasio_sail.win_condition.l1.location = "Bridgetown_town";
@@ -3233,12 +3233,12 @@ void ProcessDialogEvent()
 		case "ignasio_14":
 			LAi_Fade("", "");
 			WaitDate("", 0, 0, 0, 3, 10); 
-			pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER)-sti(pchar.questTemp.Mtraxx.Silver);
-			pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY)-sti(pchar.questTemp.Mtraxx.Mahogany);
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 100)
+			pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER)-int(pchar.questTemp.Mtraxx.Silver);
+			pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY)-int(pchar.questTemp.Mtraxx.Mahogany);
+			if (int(pchar.questTemp.Mtraxx.Silver) < 100)
 			{
 				dialog.text = "선장님, 무슨 일이십니까? 우리 은화는 어디 있습니까? 혹시 우리가 잡은 배를 침몰시킨 겁니까?";
-				if (sti(pchar.questTemp.Mtraxx.Mahogany) < 200) 
+				if (int(pchar.questTemp.Mtraxx.Mahogany) < 200)
 				{
 					link.l1 = "흠...";
 					link.l1.go = "ignasio_15_1";
@@ -3250,14 +3250,14 @@ void ProcessDialogEvent()
 				}
 				break;
 			}
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 300 && sti(pchar.questTemp.Mtraxx.Silver) > 100)
+			if (int(pchar.questTemp.Mtraxx.Silver) < 300 && int(pchar.questTemp.Mtraxx.Silver) > 100)
 			{
 				dialog.text = "흠... 이거 참 별로군. 훨씬 더 많을 줄 알았는데.";
 				link.l1 = "우리에겐 가진 것밖에 없어.";
 				link.l1.go = "ignasio_15_2";
 				break;
 			}
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 700 && sti(pchar.questTemp.Mtraxx.Silver) > 300)
+			if (int(pchar.questTemp.Mtraxx.Silver) < 700 && int(pchar.questTemp.Mtraxx.Silver) > 300)
 			{
 				dialog.text = "나쁘지 않네, 나쁘지 않아. 하지만 더 많을 줄 알았는데.";
 				link.l1 = "우린 가진 게 이것뿐이야.";
@@ -3277,7 +3277,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_11":
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
 			dialog.text = "적어도 뭔가 건졌잖아... 얘들아! 가자!";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3285,8 +3285,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_2":
-			RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "뭐, 그럼 각자 길을 가자.";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3294,8 +3294,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_3":
-            RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+            RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "뭐, 괜찮네. 이제 각자 갈 길 가자고. 결국 성공했으니, 헤헷!";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3303,8 +3303,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_4":
-			RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "아주 이득이 큰 만남이었소. 아마 이번이 마지막으로 함께 거래하는 일은 아닐 것이오, 선장!";
 			link.l1 = "더 뚱뚱한 상인들 찾으면 불러, 헤헤!";
 			link.l1.go = "exit";
@@ -3557,7 +3557,7 @@ void ProcessDialogEvent()
 			link.l3 = "로드가, 내 배 중 하나를 여기 두고 싶어.";
 			if (CheckAttribute(npchar, "portman.info")) link.l3.go = "shipstock";
 			else link.l3.go = "shipstock_info";
-			if (CheckAttribute(npchar, "portman") && sti(npchar.portman > 0))
+			if (CheckAttribute(npchar, "portman") && int(npchar.portman > 0))
 			{
 				link.l4 = "Rodgar, 내 배 중 하나를 다시 가져가고 싶어.";
 				link.l4.go = "shipstockreturn";
@@ -3577,7 +3577,7 @@ void ProcessDialogEvent()
 				link.l6 = "Rodgar, 나는 팀 일부를 섬에 남겨두고 싶어.";
 				link.l6.go = "crew";
 			}
-			if (CheckAttribute(npchar, "crew") && sti(npchar.crew.qty) > 0)
+			if (CheckAttribute(npchar, "crew") && int(npchar.crew.qty) > 0)
 			{
 				link.l7 = "로드가, 내 선원들을 데리고 다시 바다로 나가고 싶어.";
 				link.l7.go = "crew_3";
@@ -3743,7 +3743,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("IslaMona", "3");
 			RemoveItems(pchar, "islamona_toolbox", 1);
 			pchar.questTemp.IslaMona = "rumours";
-			AddRumor("They say some criminals have been cast out to one of the uninhabited islands! It seems they're such fierce monsters that even the executioner and the holy fathers wouldn't want to deal with them! But why do they always bring such people to us?!", 1, "all", "none", 0, (2022 - STARTGAME_YEAR) * 365, "IslaMona_TerksRumour", "none");
+			AddRumor("They say some criminals have been cast out to one of the uninhabited islands! It seems they're such fierce monsters that even the executioner and the holy fathers wouldn't want to deal with them! But why do they always bring such people to us?!", "1", "all", "none", "0", string((2022 - STARTGAME_YEAR) * 365), "IslaMona_TerksRumour", "none");
 		break;
 		
 		case "IslaMona_12":
@@ -4418,7 +4418,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_96":
             dialog.text = "놀아볼까, 선장?";
-			if (sti(pchar.money) >= 20)
+			if (int(pchar.money) >= 20)
 			{
 				link.l1 = "시작해!";
 				link.l1.go = "IslaMona_97";
@@ -4431,7 +4431,7 @@ void ProcessDialogEvent()
             DialogExit();
 			pchar.questTemp.GoldenGirl.Game.IslaMona = "true"; // атрибут квестовой игры
 			npchar.money = 20;
-			pchar.questTemp.IslaMona.Money = sti(pchar.money);
+			pchar.questTemp.IslaMona.Money = int(pchar.money);
 			pchar.money = 20;
 			// вызов интерфейса игры
 			pchar.GenQuest.Cards.npcharIdx = npchar.index;
@@ -4495,7 +4495,7 @@ void ProcessDialogEvent()
             DialogExit();
 			DeleteAttribute(pchar, "questTemp.GoldenGirl.Game");
 			DeleteAttribute(pchar, "GenQuest.Cards");
-			pchar.money = sti(pchar.money)+sti(pchar.questTemp.IslaMona.Money);
+			pchar.money = int(pchar.money)+int(pchar.questTemp.IslaMona.Money);
 			DeleteAttribute(pchar, "questTemp.IslaMona.Money");
 			IslaMona_ChurchTavernStandUp();
 		break;
@@ -4556,7 +4556,7 @@ void ProcessDialogEvent()
 		case "shipstock":
 			if(CheckAttribute(pchar,"questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 			{
-				if(sti(npchar.portman) == 3)
+				if(int(npchar.portman) == 3)
 				{
 					dialog.text = "선장님, 이미 선장님의 배 세 척이 부두에 정박해 있습니다. 더 이상 자리가 없습니다.";
 					link.l1 = "맞아, 내가 깜빡했어.";
@@ -4565,7 +4565,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(CheckAttribute(npchar,"FstClassInHarbour") && sti(npchar.portman) > 0)
+					if(CheckAttribute(npchar,"FstClassInHarbour") && int(npchar.portman) > 0)
 					{
 						dialog.text = "선장님, 이미 일등급 함선이 부두에 정박해 있습니다. 더 이상 자리가 없습니다.";
 						link.l1 = "맞아, 내가 깜빡했어.";
@@ -4576,7 +4576,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(npchar.portman) == 2)
+				if (int(npchar.portman) == 2)
 				{
 					dialog.text = "선장님, 당신의 배 두 척이 이미 부두에 정박해 있습니다. 더 이상 자리가 없습니다.";
 					link.l1 = "네 말이 맞아, 내가 깜빡했어.";
@@ -4601,7 +4601,7 @@ void ProcessDialogEvent()
 					if (!GetRemovable(chref)) continue;
 
 					attrL = "l"+i;
-					Link.(attrL) = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+					Link.(attrL) = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 					Link.(attrL).go = "ShipStockMan_" + i;
 				}
 			}
@@ -4646,10 +4646,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_2":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+            chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			if(CheckAttribute(pchar,"questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 			{
-				if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2 && sti(npchar.portman) > 0)
+				if(int(RealShips[int(chref.Ship.Type)].Class) < 2 && int(npchar.portman) > 0)
 				{
 					dialog.text = "선장님, 전에 말씀드렸듯이 우리 정박지는 일등급 함선 한 척만 수용할 수 있습니다. 그 배는 이곳에 두기엔 너무 큽니다.";
 					Link.l1 = "네 말이 맞아, 내가 까먹었어.";
@@ -4659,7 +4659,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
+				if (int(RealShips[int(chref.Ship.Type)].Class) < 2)
 				{
 					dialog.text = "선장님, 일등급 함선은 우리 해안에 너무 큽니다. 이미 말씀드렸잖습니까.";
 					Link.l1 = "맞아, 내가 깜빡했어.";
@@ -4667,14 +4667,14 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
+			if (int(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "선장님, 장교 한 명을 제외하고 그녀의 모든 선원을 기함으로 데려가십시오.";
 				Link.l1 = "아, 맞다! 그렇게 할게!";
 				Link.l1.go = "carpenter_exit";
 				break;
 			}
-			dialog.Text = "그래서, 우리는 여기서 계속 있어야 하는가"+XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName+"Acc")+" '라는 이름의 '"+chref.Ship.Name+"'. 맞지?";
+			dialog.Text = "그래서, 우리는 여기서 계속 있어야 하는가"+XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName+"Acc")+" '라는 이름의 '"+chref.Ship.Name+"'. 맞지?";
 			Link.l1 = "그래.";
 			Link.l1.go = "ShipStock_3";
 			Link.l2 = "잠깐, 마음이 바뀌었어.";
@@ -4701,7 +4701,7 @@ void ProcessDialogEvent()
 						if (chref.ShipInStockMan == NPChar.id)
 						{
 							attrL = "l"+cn;
-							Link.(attrL)    = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+							Link.(attrL)    = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 							Link.(attrL).go = "ShipStockManBack_" + i;
 							cn++;
 						}
@@ -4725,7 +4725,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+            chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			dialog.Text = "그녀를 데려가는 거야?";
 			link.l1 = "그래.";
 			link.l1.go = "ShipStockManBack2";
@@ -4737,11 +4737,11 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.dialog.currentnode = "carpenter_17";
 			if(CheckAttribute(npchar,"FstClassInHarbour")) DeleteAttribute(npchar,"FstClassInHarbour");
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
-			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
-			npchar.portman = sti(npchar.portman)-1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)-1;
+			SetCompanionIndex(pchar, -1, int(NPChar.ShipToStoreIdx));
+			npchar.portman = int(npchar.portman)-1;
+            pchar.ShipInStock = int(pchar.ShipInStock)-1;
 		break;
 		
 		case "storadge":
@@ -6022,7 +6022,7 @@ void ProcessDialogEvent()
 				link.l1 = "나는 50두블론을 내겠다. 그게 더 이득이지.";
 				link.l1.go = "SlavesTrader_Dub";
 			}
-			if(sti(Pchar.money) >= 10000)
+			if(int(Pchar.money) >= 10000)
 			{
 				link.l2 = "나는 10,000페소를 내겠다.";
 				link.l2.go = "SlavesTrader_P";
@@ -6844,7 +6844,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		//<-- блок реагирования на попытку залезть в сундук

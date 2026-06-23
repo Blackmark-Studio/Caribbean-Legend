@@ -242,7 +242,7 @@ void Sharlie_CreateStorehelper()//создаем помощника торгов
 	LAi_SetImmortal(sld, true);
 	AddLandQuestMark(sld, "questmarkmain");
 	LAi_group_MoveCharacter(sld, "PIRATE_CITIZENS");
-	switch (sti(pchar.questTemp.Sharlie.Storehelper.Chance))
+	switch (int(pchar.questTemp.Sharlie.Storehelper.Chance))
 	{
 		case 0: //в таверне
 			sld.dialog.currentnode = "Storehelper";
@@ -273,7 +273,7 @@ void Sharlie_CreateStorehelper()//создаем помощника торгов
 
 void Tutorial_LandMap(string qName)
 {
-	LaunchTutorial("LandMap", 1);
+	LaunchTutorial("LandMap", true);
 }
 
 void StorehelperOver(string qName)
@@ -328,7 +328,7 @@ void Rum_CreateBarkas(string qName)//баркас у пирса
 	NullCharacterGoods(pchar);
 	AddCharacterGoods(pchar, GOOD_FOOD, 10);
 	AddCharacterGoods(pchar, GOOD_MEDICAMENT, 10);
-	ref shTo = &RealShips[sti(Pchar.Ship.Type)];
+	ref shTo = &RealShips[int(Pchar.Ship.Type)];
 	shTo.SpeedRate = 13.0;
 	SetCrewQuantityOverMax(PChar, 5);
 	pchar.Ship.Crew.Exp.Sailors = 50;
@@ -363,11 +363,11 @@ void Rum_FindLugger(string qName)//вышли в море - ставим люг�
 {
 	Weather.Wind.Speed = 16.0;
 	pchar.wind.speed = Weather.Wind.Speed;
-	fWeatherSpeed = stf(Weather.Wind.Speed);//халява первого выхода
+	fWeatherSpeed = float(Weather.Wind.Speed);//халява первого выхода
 	
 	Weather.Wind.Angle = 0.0;
 	pchar.wind.angle = Weather.Wind.Angle;
-	fWeatherAngle = stf(Weather.Wind.Angle);//халява первого выхода
+	fWeatherAngle = float(Weather.Wind.Angle);//халява первого выхода
 	
 	LAi_LocationFightDisable(&Locations[FindLocation("Deck_Near_Ship")], true);//запретить драться
 	pchar.quest.Rum_CreateBarkasOver.over = "yes"; //снять таймер
@@ -397,7 +397,7 @@ void Rum_FindLugger(string qName)//вышли в море - ставим люг�
 
 void Rum_NewGameTip0(string qName) // Обучение уехало в новый туториал 
 {
-	LaunchTutorial("Prologue_Navigation", 1);
+	LaunchTutorial("Prologue_Navigation", true);
     if(bGlobalTutor)
     {
         DontRefreshBLI = false;
@@ -420,14 +420,14 @@ void Rum_NewGameTip1(string qName) {
 
 void Rum_NewGameTip2(string qName) {
 	if(!SandBoxMode) DoQuestFunctionDelay("Rum_NewGameTip3", 1.0);
-	LaunchTutorial("OptKurs", 1);
+	LaunchTutorial("OptKurs", true);
 }
 
 void Rum_NewGameTip3(string qName) {
 	//if(!SandBoxMode) DoQuestFunctionDelay("Rum_NewGameTip4", 20.0);
 	//if(IsEquipCharacterByMap(pchar, "map_martiniqua")) 
-	//LaunchTutorial("LandMapAtSea", 0);
-	//LaunchTutorial("SeaTimeScaleUp", 1);
+	//LaunchTutorial("LandMapAtSea", false);
+	//LaunchTutorial("SeaTimeScaleUp", true);
 	pchar.questTemp.Sharlie.Rum.TipT = true;
 }
 
@@ -482,7 +482,7 @@ void MessageRum2(string qName)
 	DoQuestFunctionDelay("MessageRum2d", 5.0);
 	
 	sld = CharacterFromID("Rum_Cap");
-	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskRunAway(SECONDARY_TASK, int(sld.index), int(pchar.index));
 }
 
 void MessageRum2d(string qName) 
@@ -608,7 +608,7 @@ void Captive_CreatePirates(string qName)//устанавливаем пират�
 		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 		chrDisableReloadToLocation = true;//закрыть локацию
 		LAi_group_Delete("EnemyFight");
-		int n = makeint(MOD_SKILL_ENEMY_RATE/2);
+		int n = int(MOD_SKILL_ENEMY_RATE/2);
 		if (n <= 1) n = 2;
 		for (i=1; i<=n; i++)
 		{
@@ -702,7 +702,7 @@ void CaptiveSpain_removeGuard(string qName)// убрать сражников с
 	for (int j = 0; j < num; j++)
 	{
 		int idx = -1;
-		if(CheckAttribute(chrFindNearCharacters[j], "index")) idx = sti(chrFindNearCharacters[j].index);	
+		if(CheckAttribute(chrFindNearCharacters[j], "index")) idx = int(chrFindNearCharacters[j].index);
 		if(idx == -1) continue;
 		ref findCh;
 		findCh = GetCharacter(idx);
@@ -720,7 +720,7 @@ void CaptiveSpain_saveTip(string qName)// подсказка сохранить�
 
 void CaptiveSpain_saveTip2(string qName) 
 {
-	LaunchTutorial("Stealth", 1);
+	LaunchTutorial("Stealth", true);
 }
 
 void CaptiveSpain_reload(string qName)//телепорт, если ночь на дворе
@@ -874,7 +874,7 @@ void RescueDaughter_CreateProsper()//создаем Проспера
 	LAi_SetImmortal(sld, true);
 	//таймер на просрочку
 	pchar.quest.Sharlie_RescueDaughter.win_condition.l1 = "Timer";
-	pchar.quest.Sharlie_RescueDaughter.win_condition.l1.date.hour  = sti(GetTime()+2);
+	pchar.quest.Sharlie_RescueDaughter.win_condition.l1.date.hour  = int(GetTime()+2);
 	pchar.quest.Sharlie_RescueDaughter.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 	pchar.quest.Sharlie_RescueDaughter.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 	pchar.quest.Sharlie_RescueDaughter.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -981,7 +981,7 @@ void RescueDaughter_CreateIndiansLand(string qName)//бой с индеями у
 }
 
 void RescueDaughter_NewGameTip(string qName) {
-	LaunchTutorial("LandTimeScaleDown", 1);
+	LaunchTutorial("LandTimeScaleDown", true);
 }
 
 void RescueDaughter_CreateIndiansGrot(string qName)//бой с индеями в гроте
@@ -1058,7 +1058,7 @@ void RescueDaughter_CreateIndiansGrot(string qName)//бой с индеями в
 }
 
 void RescueDaughter_NewGameTip1(string qName) {
-	LaunchTutorial("OneToOneCave", 1);
+	LaunchTutorial("OneToOneCave", true);
 }
 
 void RescueDaughter_GoHome(string qName)//проводим домой
@@ -1225,18 +1225,18 @@ void SharlieSeabattle_ship(string qName)
 	
 	Weather.Wind.Speed = 16.0;
 	pchar.wind.speed = Weather.Wind.Speed;
-	fWeatherSpeed = stf(Weather.Wind.Speed);//халява первого выхода
+	fWeatherSpeed = float(Weather.Wind.Speed);//халява первого выхода
 	
 	Weather.Wind.Angle = 0.0;
 	pchar.wind.angle = Weather.Wind.Angle;
-	fWeatherAngle = stf(Weather.Wind.Angle);//халява первого выхода
+	fWeatherAngle = float(Weather.Wind.Angle);//халява первого выхода
 	
 	pchar.systeminfo.tutorial.secondboarding1 = true;
 }
 
 void SharlieSeabattle_NewGameTip1(string qName) {
 	DoQuestFunctionDelay("SharlieSeabattle_NewGameTip2", 10.0);
-	LaunchTutorial("SeaBattle", 1);
+	LaunchTutorial("SeaBattle", true);
 }
 
 void SharlieSeabattle_NewGameTip2(string qName) {
@@ -1770,8 +1770,8 @@ void VsD_AfterVzriv_5()
 
 void VsD_AfterVzriv_6()
 {
-	pchar.ship.HP = sti(pchar.ship.HP) / 2;
-	pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - sti(pchar.ship.Crew.Quantity) / 7;
+	pchar.ship.HP = int(pchar.ship.HP) / 2;
+	pchar.Ship.Crew.Quantity = int(pchar.ship.Crew.Quantity) - int(pchar.ship.Crew.Quantity) / 7;
 	AddCharacterGoodsSimple(pchar, GOOD_PLANKS, 100);
 }
 
@@ -2117,7 +2117,7 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 
 void Trial_TavernEnterSoldiers() //неверный путь в таверне
 {	
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	for (i=1; i<=3; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter("TTSold"+i, "sold_spa_"+(rand(1)+1), "man", "man", iRank, SPAIN, 0, true, "soldier"));
@@ -2326,8 +2326,8 @@ void Trial_NewPoormanInPortoBello() //новый нищий в Порто Бел
 
 void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбла' на карте
 {
-	int iRank = sti(pchar.rank);
-	int iScl = MOD_SKILL_ENEMY_RATE+sti(pchar.rank);
+	int iRank = int(pchar.rank);
+	int iScl = MOD_SKILL_ENEMY_RATE+int(pchar.rank);
     string sCapId = "PueblaCap";
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
@@ -2544,7 +2544,7 @@ void Del_Folke_DlgExit_2()
 	locCameraFollowEx(true);
 	chrDisableReloadToLocation = false;
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-	QuestOpenSeaExit()
+	QuestOpenSeaExit();
 	sld = CharacterFromID("Del_shturman");
 	sld.lifeday = 0;
 	AddQuestRecord("FolkeDeluc", "3");
@@ -2594,7 +2594,7 @@ void Del_Turma(string qName)
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
 	ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
 	LAi_SetActorType(sld);
@@ -2697,7 +2697,7 @@ void Tichingitu_SetTichingituJail()//ставим Тичингиту
 	AddLandQuestMark(sld, "questmarkmain");
 	SetFunctionLocationCondition("Tichingitu_AddQuestMark", "baster_prison", false);
 	QuestPointerToLoc("BasTer_town", "reload", "reload_jail");
-	ForceHeroAutolevel(sld)
+	ForceHeroAutolevel(sld);
 }
 
 void Tichingitu_AddQuestMark(string qName)
@@ -2769,7 +2769,7 @@ void Tichingitu_Hire()
 	sld = characterFromId("Tichingitu");
 	DeleteAttribute(sld, "LifeDay");
 	LAi_SetImmortal(sld, false);
-	sld.quest.OfficerPrice = sti(pchar.rank)*20;
+	sld.quest.OfficerPrice = int(pchar.rank)*20;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.CompanionDisable = true;
 	sld.loyality = MAX_LOYALITY;
@@ -2815,7 +2815,7 @@ void Tichingitu_NextQuest()
 	ChangeCharacterAddressGroup(sld, "BasTer_ExitTown", "item", "item3");
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
-	//LaunchTutorial("Fighter", 1);
+	//LaunchTutorial("Fighter", true);
 }
 // <== Миниквест "Тичингиту"
 
@@ -3156,7 +3156,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			DoQuestCheckDelay("hide_weapon", 1.2);
 			LAi_RemoveCheckMinHP(pchar); // вот где собака порылась 251116
 			sld = characterFromId("Guide");
-			if (sti(sld.quest.guide_win == 0)) sld.dialog.currentnode = "guide_57"; // с первого раза побил
+			if (int(sld.quest.guide_win == 0)) sld.dialog.currentnode = "guide_57"; // с первого раза побил
 			else sld.dialog.currentnode = "guide_58"; 
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
@@ -3168,11 +3168,11 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_group_Delete("EnemyFight");
 			DoQuestCheckDelay("hide_weapon", 0.5);
 			sld = characterFromId("Guide");
-			sld.quest.guide_win = sti(sld.quest.guide_win)+1;
-			if (sti(sld.quest.guide_win == 1)) sld.dialog.currentnode = "guide_59"; // один раз побили
+			sld.quest.guide_win = int(sld.quest.guide_win)+1;
+			if (int(sld.quest.guide_win == 1)) sld.dialog.currentnode = "guide_59"; // один раз побили
 			else 
 			{
-				if (sti(sld.quest.guide_win == 2)) sld.dialog.currentnode = "guide_60"; // два раза побили
+				if (int(sld.quest.guide_win == 2)) sld.dialog.currentnode = "guide_60"; // два раза побили
 				else sld.dialog.currentnode = "guide_61"; //три раза побили
 			}
 			LAi_SetActorType(sld);
@@ -3245,7 +3245,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			EndQuestMovie();
 			sld = characterFromId("GigoloGirl");
 			sld.lifeday = 0;
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //счетчик
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //счетчик
 			ChangeCharacterAddressGroup(sld, "none", "", "");
 	}
 	else if (sQuestName == "GigoloGirl_Sex2") 
@@ -3279,7 +3279,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	{
 			AddQuestRecord("SharlieA", "3");
 			pchar.quest.storehelper.win_condition.l1 = "Timer";
-			pchar.quest.storehelper.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.storehelper.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.storehelper.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 5);
 			pchar.quest.storehelper.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 5);
 			pchar.quest.storehelper.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 5);
@@ -3362,7 +3362,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 					pchar.BasTer_Orujeinek.id = characterRef.id;
 				}
 			}
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 	}
 	else if (sQuestName == "ZsI_Draka")
 	{
@@ -3409,11 +3409,11 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			for (i=1; i<=2; i++)
 			{
 				sTemp = "sold_fra_"+(rand(7)+1);					
-				sld = GetCharacter(NPC_GenerateCharacter("ZsI_Patrul_"+i, sTemp, "man", "man", sti(pchar.rank), FRANCE, -1, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("ZsI_Patrul_"+i, sTemp, "man", "man", int(pchar.rank), FRANCE, -1, true, "soldier"));
 				LAi_SetActorType(sld);
 				ChangeCharacterAddressGroup(sld, pchar.location, "item",  "item7");
 			}
-			sld = GetCharacter(NPC_GenerateCharacter("ZsI_Patrul_off", "off_fra_1", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("ZsI_Patrul_off", "off_fra_1", "man", "man", int(pchar.rank), FRANCE, -1, false, "soldier"));
 			GiveItem2Character(sld, "blade_08");
 			EquipCharacterByItem(sld, "blade_08");
 			GiveItem2Character(sld, "pistol1");
@@ -3600,14 +3600,14 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "TK_KapitanSidit_1")
 	{
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			LAi_SetActorType(sld);
 			LAi_ActorAnimation(sld, "Ground_SitDown", "1", 3.5);
 			DoQuestCheckDelay("TK_KapitanSidit_2", 3.5);
 	}
 	else if (sQuestName == "TK_KapitanSidit_2")
 	{
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			LAi_SetSitPoorAnimation(sld);
 			sld.lifeday = 0;
 			LAi_EnableReload();
@@ -3621,7 +3621,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			sld = GetCharacter(NPC_GenerateCharacter("TK_Genrih", "trader_6", "man", "man", 5, ENGLAND, -1, true, "quest"));
 			FantomMakeSmallSailor(sld, SHIP_BARQUE, StringFromKey("SharlieTrial_50"), CANNON_TYPE_CANNON_LBS3, 20, 25, 25, 20, 30);
 			sld.Ship.Mode = "trade";
-			realships[sti(sld.ship.type)].Capacity = 2200;
+			realships[int(sld.ship.type)].Capacity = 2200;
 			sld.Ship.Crew.Quantity = 40;
 			SetCharacterGoods(sld, GOOD_CHOCOLATE, 100 + rand(100));
 			SetCharacterGoods(sld, GOOD_SUGAR, 100 + rand(100));

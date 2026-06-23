@@ -24,7 +24,7 @@ void ProcessDialogEvent()
     // вызов диалога по городам <--
 	
 	ProcessCommonDialogRumors(NPChar, Link, NextDiag);
-	
+	sTemp = GuessText();
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -93,10 +93,9 @@ void ProcessDialogEvent()
 			link.l4 = "5000페소";
 			link.l4.go = "guess_rate_4";
 		break;
-		
-		sTemp = GuessText();
+
 		case "guess_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "아, 자네의 자비에 감사하네, 잘생긴 젊은 매야! 이제 잘 들어보게:  "+sTemp+"";
@@ -112,7 +111,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_2"://немного в везение или скрытность
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
 				dialog.text = "아, 고맙구나, 잘생긴 내 어린 매야! 이제 들어보아라:"+sTemp+"";
@@ -130,7 +129,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_3"://здоровье + везение или скрытность, харизма
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "아, 은화를 주어서 고맙구나, 잘생긴 젊은 매야! 이제 들어보거라:"+sTemp+"";
@@ -150,7 +149,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_4"://умения в оружие, везение+скрытность, здоровье, харизма
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "오라라! 이렇게 후하게 베풀어 주다니, 잘생긴 젊은 매야, 고맙구나! 이제 잘 들어봐:\n"+sTemp+"";
@@ -197,8 +196,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "오, 이렇게 잘생기고 용감한 남자라니! (속삭이며) 돈 내. "+sti(npchar.quest.poison_price)+" 두블룬.";
-			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
+			dialog.text = "오, 이렇게 잘생기고 용감한 남자라니! (속삭이며) 돈 내. "+int(npchar.quest.poison_price)+" 두블룬.";
+			if (PCharDublonsTotal() >= int(npchar.quest.poison_price))
 			{				
 				link.l1 = "비싸군... 이 물건, 제대로 효과가 있어야 할 텐데.";
 				link.l1.go = "get_poison_4";
@@ -218,7 +217,7 @@ void ProcessDialogEvent()
 		
 		case "get_poison_4" :
 			PlaySound("interface\important_item.wav");
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.poison_price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.poison_price));
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
@@ -226,7 +225,7 @@ void ProcessDialogEvent()
 
 	// --> Мангароса
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("식물을 보여줘, 얘야... 흠... 내가 너한테서 사도 되겠구나. 300피스의 에잇, 어때?","그쪽으로 안내해 줘, 잘생긴이... 흐흐... 좋아, 그걸 위해 이백오십을 낼 수 있어.","어디 보자... 오! 흥미로운 예시군! 이백 페소! 거래할까?")"";
+			dialog.text = LinkRandPhrase("식물을 보여줘, 얘야... 흠... 내가 너한테서 사도 되겠구나. 300피스의 에잇, 어때?","그쪽으로 안내해 줘, 잘생긴이... 흐흐... 좋아, 그걸 위해 이백오십을 낼 수 있어.","어디 보자... 오! 흥미로운 예시군! 이백 페소! 거래할까?");
 			link.l1 = LinkRandPhrase("오, 주님이시여... 까만 눈동자야, 나는 시골 촌뜨기가 아니야. 이 식물 알아. 망가로사야...","오, 정말이야?! 이건 완벽한 망가로사 표본이군. 나를 속이려고 하지 마라, 집시.","아하, 그리고 네가 이렇게 보잘것없는 돈에 이 망가로사를 내줄 거라고 생각하는 거냐.");
 			link.l1.go = "mangarosa_1";
 		break;
@@ -239,7 +238,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
+			if (int(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "흠... 뭐, 조금 이야기해 줘도 나쁠 건 없겠지. 이 식물은 특별한 기술 없이는 아무것도 할 수 없을 테니까.";
 				link.l1 = "듣고 있네.";
@@ -277,7 +276,7 @@ void ProcessDialogEvent()
 			link.l1 = LinkRandPhrase("그럼 너한테는 안됐군! 네 선원 중 다른 누군가가 어차피 나한테 말해줄 거야. 그리고 그 여자가 이 식물을 선물로 받게 될 거다. 또 보자!","왜 이렇게 고집을 부리나? 네가 말하지 않으면, 다른 사람이 말할 거다. 그리고 그 여자가 이 망가로사를 선물로 받게 되겠지. 잘 있어라.","너 입에서 마늘 냄새가 진동하는군. 결국 내가 원하는 건 얻게 될 거다. 네 동료 중 다른 놈은 더 말이 많고 식물도 공짜로 가져다주겠지. 또 보자.");
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
-			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
+			pchar.questTemp.Mangarosa.g_count = int(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":

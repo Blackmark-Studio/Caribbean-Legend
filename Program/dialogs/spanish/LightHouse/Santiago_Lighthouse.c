@@ -64,7 +64,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		sld.lifeday = 0;
 		pchar.questTemp.Guardoftruth = "mayak_wait";
 		SetFunctionTimerCondition("GuardOT_MayakNextStage", 0, 0, 2, false);
-		SetCharacterGoods(pchar, GOOD_CINNAMON, GetCargoGoods(pchar, GOOD_CINNAMON) + sti(pchar.questTemp.Guardoftruth.VanilleQty));
+		SetCharacterGoods(pchar, GOOD_CINNAMON, GetCargoGoods(pchar, GOOD_CINNAMON) + int(pchar.questTemp.Guardoftruth.VanilleQty));
 		AddQuestRecord("Guardoftruth", "21");
 		break;
 

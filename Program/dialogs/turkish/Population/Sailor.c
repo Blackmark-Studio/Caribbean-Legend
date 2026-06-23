@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (npchar.quest.meeting == "0")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
 				{
 					dialog.text = "İyi günler, "+GetAddress_Form(NPChar)+". Kendi geminin kaptanı olduğunu biliyorum. Sana bir teklifim var.";
 					link.l1 = "Dinliyorum, "+GetAddress_FormToNPC(NPChar)+". Ne tür bir anlaşma?";
@@ -83,14 +83,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_1":
-			switch (sti(npchar.quest.crew.type))
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: sTemp = "We are the best in working with sails and tackles. Not being overly modest, I'd say that we are professionals at ship handling, so don't worry, we won't let you down even in the strongest storms."; break;
 				case 1: sTemp = "Most of all we like to be on the gun deck. Few of us even served on real warships. We can load and fire cannons in the way no one in your crew can. You can count on us in every hard fight!"; break;
 				case 2: sTemp = "We're proper good boarders captain, did a few runs on privateers before this. We know the glitter of cutlasses and the smell of gunpowder and blood. That's our calling. It's not easy to defeat us in a hand-to-hand fight so you can always count on our blades, captain!"; break;
 			}
-			dialog.text = "Var "+sti(npchar.quest.crew.qty)+" aramızdayız ve sadece birlikte işe alınırız. Tüm temel denizci görevlerini yerine getirebiliriz."+sTemp+"";
-			if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+			dialog.text = "Var "+int(npchar.quest.crew.qty)+" aramızdayız ve sadece birlikte işe alınırız. Tüm temel denizci görevlerini yerine getirebiliriz."+sTemp+"";
+			if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
 			{
 				link.l1 = "Aradığım adamlara benziyorlar. Peki, avansınız ne olacak?";
 				link.l1.go = "crew_2";
@@ -105,9 +105,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_2":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
-			dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+" her biri için. Ve sonra sıradan bir denizcinin aylık ücreti. Fazlasını istemeyiz, kaptan.";
-			if (sti(pchar.money) >= iTemp)
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
+			dialog.text = ""+FindRussianMoneyString(int(npchar.quest.crew.money))+" her biri için. Ve sonra sıradan bir denizcinin aylık ücreti. Fazlasını istemeyiz, kaptan.";
+			if (int(pchar.money) >= iTemp)
 			{
 				link.l1 = "İşe alındın! Al paralarını. Şimdi gemime git, adı '"+pchar.ship.name+"', tam limanın içinde. Lostromos size tayfa kamarasında hamaklarınızı gösterecek ve yemek düzeninizi ayarlayacak.";
 				link.l1.go = "crew_3";
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_3":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
 			AddMoneyToCharacter(pchar, -iTemp);
 			dialog.text = "Başüstüne, kaptan! Adamları toplayıp hemen yola çıkacağız.";
 			link.l1 = "Çabuk ol, her an yelken açabiliriz.";
@@ -126,17 +126,17 @@ void ProcessDialogEvent()
 		
 		case "crew_4":
 			DialogExit();
-			AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+			AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
 			//увеличиваем опыт
-			iTemp = makeint(sti(npchar.quest.crew.qty)*50/sti(pchar.ship.crew.quantity));
-			switch (sti(npchar.quest.crew.type))
+			iTemp = int(int(npchar.quest.crew.qty)*50/int(pchar.ship.crew.quantity));
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: ChangeCrewExp(pchar, "Sailors", iTemp); break;
 				case 1: ChangeCrewExp(pchar, "Cannoners", iTemp); break;
 				case 2: ChangeCrewExp(pchar, "Soldiers", iTemp); break;
 			}
 			//увеличиваем мораль
-			iTemp = makeint(sti(npchar.quest.crew.qty)/10)+1;
+			iTemp = int(int(npchar.quest.crew.qty)/10)+1;
 			AddCrewMorale(pchar, iTemp);
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

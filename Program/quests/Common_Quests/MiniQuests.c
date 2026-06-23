@@ -163,8 +163,8 @@ void Contraoffer_Patrol() //нагрянул патруль
 {	
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight"); 
-	iTemp = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); //это ранг от сложности
-	int iNation = sti(pchar.GenQuest.Contraoffer.Trader.Nation);
+	iTemp = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); //это ранг от сложности
+	int iNation = int(pchar.GenQuest.Contraoffer.Trader.Nation);
 	for (i=1; i<=3; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter("Contraoffer_patrol"+i, "sold_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", iTemp, iNation, 0, true, "soldier"));
@@ -251,7 +251,7 @@ void Badboy_friends(string qName)
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight"); 
-	iTemp = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE;
+	iTemp = int(pchar.rank) + MOD_SKILL_ENEMY_RATE;
 	for (i=1; i<=4; i++)
     {
 		if (i == 1)
@@ -307,7 +307,7 @@ void Sunplace_Over(string qName)//опоздали до места встреч�
 {
 	pchar.quest.Sunplace_Trader.over = "yes";
 	AddQuestRecord("Sunplace", "2");
-	AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
+	AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
 	AddQuestUserData("Sunplace", "sSName", pchar.GenQuest.Sunplace.Trader.ShipName);
 	AddQuestUserData("Sunplace", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")); // belamour gen
 	pchar.GenQuest.Sunplace.Trader = "continue";
@@ -318,11 +318,11 @@ void Sunplace_CreateTraderShip(string qName)//создание торговог�
 {
 	pchar.quest.Sunplace_Over.over = "yes";
 	int i, iNation, iShipType, iCannonType, iGoods, iSpace;
-	iNation = sti(pchar.GenQuest.Sunplace.Trader.Nation);
-	iShipType = sti(pchar.GenQuest.Sunplace.Trader.Shiptype);
-	if (sti(pchar.rank) < 5) iCannonType = CANNON_TYPE_CULVERINE_LBS8;
+	iNation = int(pchar.GenQuest.Sunplace.Trader.Nation);
+	iShipType = int(pchar.GenQuest.Sunplace.Trader.Shiptype);
+	if (int(pchar.rank) < 5) iCannonType = CANNON_TYPE_CULVERINE_LBS8;
 	else iCannonType = CANNON_TYPE_CANNON_LBS16;
-	iTemp = sti(pchar.rank)+2+rand(MOD_SKILL_ENEMY_RATE);
+	iTemp = int(pchar.rank)+2+rand(MOD_SKILL_ENEMY_RATE);
 	sTemp = pchar.GenQuest.Sunplace.Trader.ShipName;
 	Group_FindOrCreateGroup("SunplaceTrader");//создать группу
 	Group_SetType("SunplaceTrader", "trade");//тип группы
@@ -359,7 +359,7 @@ void Sunplace_CreateTraderShip(string qName)//создание торговог�
 			FantomMakeSmallSailor(sld, iShipType, sTemp, CANNON_TYPE_CANNON_LBS20, 50+rand(10), 25+rand(10), 25+rand(10), 30+rand(10), 30+rand(10));
 			SetFantomParamFromRank(sld, iTemp, true);
 			SetCaptanModelByEncType(sld, "trade");
-			Fantom_SetCharacterGoods(sld, iGoods, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, iGoods, iSpace, true);
 			Group_AddCharacter("SunplaceTrader", "SunplaceCaptain_"+i);
 			DeleteAttribute(sld, "SaveItemsForDead");
 			DeleteAttribute(sld, "DontClearDead");
@@ -371,8 +371,8 @@ void Sunplace_CreateTraderShip(string qName)//создание торговог�
 			SetCharacterPerk(sld, "HardHitter");
 		}
 		AddQuestRecord("Sunplace", "14");
-		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
-		AddQuestUserData("Sunplace", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods)));
+		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
+		AddQuestUserData("Sunplace", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.Sunplace.Trader.Goods)));
 		AddQuestUserData("Sunplace", "sSName", pchar.GenQuest.Sunplace.Trader.ShipName);
 	}
 	else
@@ -381,10 +381,10 @@ void Sunplace_CreateTraderShip(string qName)//создание торговог�
 		FantomMakeSmallSailor(sld, iShipType, sTemp, iCannonType, 30+rand(10), 15+rand(10), 15+rand(10), 20+rand(10), 20+rand(10));
 		SetFantomParamFromRank(sld, iTemp, true); 
 		SetCaptanModelByEncType(sld, "trade");
-		iGoods = sti(pchar.GenQuest.Sunplace.Trader.Goods);
+		iGoods = int(pchar.GenQuest.Sunplace.Trader.Goods);
 		iSpace = GetCharacterFreeSpace(sld, iGoods);
-		iSpace = makeint(iSpace/2 + rand(iSpace/2));
-		Fantom_SetCharacterGoods(sld, iGoods, iSpace, 1);
+		iSpace = int(iSpace/2 + rand(iSpace/2));
+		Fantom_SetCharacterGoods(sld, iGoods, iSpace, true);
 		Group_AddCharacter("SunplaceTrader", "SunplaceCaptain_1");
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -394,7 +394,7 @@ void Sunplace_CreateTraderShip(string qName)//создание торговог�
 		SetCharacterPerk(sld, "Tireless");
 		SetCharacterPerk(sld, "HardHitter");
 		AddQuestRecord("Sunplace", "3");
-		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
+		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
 		AddQuestUserData("Sunplace", "sSName", pchar.GenQuest.Sunplace.Trader.ShipName);
 	}
 
@@ -433,13 +433,13 @@ void Sunplace_DieHard(string qName)//реакция на поражение
 	if (CheckAttribute(pchar, "GenQuest.Sunplace.Bonus") && GetCharacterIndex("SunplaceCaptain_3") == -1)
 	{
 		AddQuestRecord("Sunplace", "4");
-		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
+		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
 		pchar.GenQuest.Sunplace.Trader = "complete";
 	}
 	else
 	{
 		AddQuestRecord("Sunplace", "5");
-		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
+		AddQuestUserData("Sunplace", "sType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Sunplace.Trader.ShipType), "Name"))));
 		AddQuestUserData("Sunplace", "sSName", pchar.GenQuest.Sunplace.Trader.ShipName);
 		AddQuestUserData("Sunplace", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")); // belamour gen
 		pchar.GenQuest.Sunplace.Trader = "continue";
@@ -459,7 +459,7 @@ void SunplaceContinue_Over(string qName)//провалили все и окон�
 void Sunplace_CreateTrader(string qName)//создание конкурента в магазине
 {
 	ref chr = characterFromId(pchar.GenQuest.Sunplace.Trader.CityT + "_trader");
-	sld = GetCharacter(NPC_GenerateCharacter("SunplaceTrader", "trader_7", "man", "man", 10, sti(chr.nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("SunplaceTrader", "trader_7", "man", "man", 10, int(chr.nation), -1, true, "quest"));
 	FantomMakeCoolFighter(sld, 10, 10, 10, "", "", "bullet", 10);
 	sld.name = pchar.GenQuest.Sunplace.Trader.Enemyname;
 	sld.lastname = "";
@@ -496,8 +496,8 @@ void Sunplace_CreateTraderLugger(string qName)//создание люггера 
 {
 	pchar.quest.SunplaceContinue_Over.over = "yes";
 	int iNation;
-	iNation = sti(pchar.GenQuest.Sunplace.Trader.EnemyNation);
-	iTemp = sti(pchar.rank)+2+rand(MOD_SKILL_ENEMY_RATE);
+	iNation = int(pchar.GenQuest.Sunplace.Trader.EnemyNation);
+	iTemp = int(pchar.rank)+2+rand(MOD_SKILL_ENEMY_RATE);
 	Group_FindOrCreateGroup("SunplaceLugger");//создать группу
 	Group_SetType("SunplaceLugger", "trade");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("Sunplace_Trader", "trader_7", "man", "man", iTemp, iNation, -1, true, "quest"));
@@ -571,13 +571,13 @@ void GetEscortTraderShore()//выбор бухты для эскорта тор�
 void CreateTraderShipAndAdd(ref sld)//создаем корабль сопровождаемого торговца 
 {
 	int iGoods, iSpace;
-	int iShipType = sti(pchar.GenQuest.Escort.Trader.ShipType);
+	int iShipType = int(pchar.GenQuest.Escort.Trader.ShipType);
 	// --> mitrokosta fix lifeday & name change
-	int iRank = sti(pchar.rank) + 10;
+	int iRank = int(pchar.rank) + 10;
 	DeleteAttribute(sld, "CityType");
 	DeleteAttribute(sld, "City");
 	sld.rank = iRank;
-	sld.lifeday = sti(pchar.GenQuest.Escort.Trader.DaysQty) + 1;
+	sld.lifeday = int(pchar.GenQuest.Escort.Trader.DaysQty) + 1;
 	sld.PhantomType = "citizen";
 	SetFantomParamFromRank(sld, iRank, true);
 	// <--
@@ -586,12 +586,12 @@ void CreateTraderShipAndAdd(ref sld)//создаем корабль сопров
 	DeleteAttribute(sld, "DontClearDead");
 	SetCharacterGoods(sld, GOOD_FOOD, 300+rand(100));
 	SetCharacterGoods(sld, GOOD_MEDICAMENT, 60+rand(30));
-	iGoods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE)); // тэг из диалога
+	iGoods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE)); // тэг из диалога
 	iSpace = GetCharacterFreeSpace(sld, iGoods);
-	iSpace = makeint(iSpace/2 + rand(iSpace/2));
+	iSpace = int(iSpace/2 + rand(iSpace/2));
 	SetCharacterGoods(sld, iGoods, iSpace);
 	SetCharacterRemovable(sld, false);
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	sld.Abordage.Enable = false;
 	sld.AlwaysFriend = true;
@@ -619,7 +619,7 @@ void EscortTrader_failed(string qName)//потеряли сопровождае�
 	pchar.quest.EscortTrader_Over.over = "yes";
 	pchar.quest.EscortTrader_Attack.over = "yes";
 	ChangeCharacterComplexReputation(pchar,"nobility", -5);
-	ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.Escort.Trader.Nation), -5);
+	ChangeCharacterNationReputation(pchar, int(pchar.GenQuest.Escort.Trader.Nation), -5);
 	AddQuestRecord("TraderEscort", "3");
 	CloseQuestHeader("TraderEscort");
 	DeleteAttribute(pchar, "GenQuest.Escort.Trader");
@@ -634,9 +634,9 @@ void EscortTraderAttackInShore(string qName)//в бухте напали пир�
 	SelectLevelWarShipParameter();//автолевеллинг
     for (int i = 1; i <= 2; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter("TPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", sti(PChar.rank) + 8, PIRATE, 10, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter("TPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", int(PChar.rank) + 8, PIRATE, 10, true, "hunter"));
 		FantomMakeSmallSailor(sld, iGlobalTemp, "", iTotalTemp, 30+rand(5), 30+rand(5), 30+rand(5), 30+rand(5), 35+rand(5));
-		FantomMakeCoolFighter(sld, sti(PChar.rank)+5, 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
+		FantomMakeCoolFighter(sld, int(PChar.rank)+5, 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
         Group_AddCharacter("Pirate_Attack", "TPirate_"+i);
     }
     Group_SetGroupCommander("Pirate_Attack", "TPirate_1");
@@ -698,16 +698,16 @@ void Create_EnemyTraderFleut(string qName)//флейт торговца
 	Island_SetReloadEnableGlobal(pchar.GenQuest.Escort.Trader.EnIsland, false);//на остров нельзя
 	Group_DeleteGroup("Trade_Attack");
 	Group_FindOrCreateGroup("Trade_Attack");
-    sld = GetCharacter(NPC_GenerateCharacter("EnTrader", "trader_"+(rand(15)+1), "man", "man", sti(PChar.rank)+3, sti(pchar.GenQuest.Escort.Trader.Nation), 5, true, "quest"));
+    sld = GetCharacter(NPC_GenerateCharacter("EnTrader", "trader_"+(rand(15)+1), "man", "man", int(PChar.rank)+3, int(pchar.GenQuest.Escort.Trader.Nation), 5, true, "quest"));
 	sld.name = pchar.GenQuest.Escort.Trader.Enemyname;
 	sld.lastname = "";
 	FantomMakeSmallSailor(sld, SHIP_FLEUT, "", CANNON_TYPE_CANNON_LBS12, 20+rand(5), 15+rand(5), 20+rand(5), 15+rand(5), 15+rand(5));
-	SetFantomParamFromRank(sld, sti(PChar.rank)+3, true); 
+	SetFantomParamFromRank(sld, int(PChar.rank)+3, true);
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "trade";
-	int iGoods = sti(pchar.GenQuest.Escort.Trader.Goods);
+	int iGoods = int(pchar.GenQuest.Escort.Trader.Goods);
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
-	iSpace = makeint(iSpace - iSpace/10);
+	iSpace = int(iSpace - iSpace/10);
 	SetCharacterGoods(sld, iGoods, iSpace);
     Group_AddCharacter("Trade_Attack", "EnTrader");
 		
@@ -800,18 +800,18 @@ void DesIslandAttack(string qName)//нападение торговца-пира
 	sld.Abordage.Enable = true;
 	Ship_FlagRefresh(sld);
 	Ship_NationAgressivePatent(sld);
-	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(pchar.index));
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	RefreshBattleInterface();
 	UpdateRelations();
-	if (sti(pchar.GenQuest.Escort.Trader.Chance) == 2)
+	if (int(pchar.GenQuest.Escort.Trader.Chance) == 2)
 	{
 		SelectLevelWarShipParameter();//автолевеллинг
 		for (int i = 1; i <= 2; i++)
 		{
-        sld = GetCharacter(NPC_GenerateCharacter("TPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", sti(PChar.rank) + 5, PIRATE, 1, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter("TPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", int(PChar.rank) + 5, PIRATE, 1, true, "hunter"));
 		FantomMakeSmallSailor(sld, iGlobalTemp, "", iTotalTemp, 30+rand(5), 30+rand(5), 30+rand(5), 30+rand(5), 35+rand(5));
-		FantomMakeCoolFighter(sld, sti(PChar.rank), 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
+		FantomMakeCoolFighter(sld, int(PChar.rank), 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
         Group_AddCharacter("ETAttack", "TPirate_"+i);
 		}
 	}
@@ -833,7 +833,7 @@ void EscortTraderAttack_AfterBattle(string qName)//уничтожили враг
 	Group_DeleteGroup("Trade_Attack");
 	Island_SetReloadEnableGlobal(pchar.GenQuest.Escort.Trader.Island, true); // patch-8
 	DeleteAttribute(pchar, "GenQuest.Escort.Trader");
-	if (sti(pchar.GenQuest.Escort.Trader.Chance) == 2) AddQuestRecord("TraderEscort", "11");
+	if (int(pchar.GenQuest.Escort.Trader.Chance) == 2) AddQuestRecord("TraderEscort", "11");
 	else AddQuestRecord("TraderEscort", "14");
 	AddQuestUserData("TraderEscort", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_1"),StringFromKey("MiniQuests_2")));
 	CloseQuestHeader("TraderEscort");
@@ -849,7 +849,7 @@ void EscortTraderAttack_DieHard(string qName)//ушли на карту
 	Group_DeleteGroup("Trade_Attack");
 	Island_SetReloadEnableGlobal(pchar.GenQuest.Escort.Trader.Island, true); // patch-8
 	DeleteAttribute(pchar, "GenQuest.Escort.Trader");
-	if (sti(pchar.GenQuest.Escort.Trader.Chance) == 2) AddQuestRecord("TraderEscort", "11");
+	if (int(pchar.GenQuest.Escort.Trader.Chance) == 2) AddQuestRecord("TraderEscort", "11");
 	else AddQuestRecord("TraderEscort", "14");
 	AddQuestUserData("TraderEscort", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_1"),StringFromKey("MiniQuests_2")));
 	CloseQuestHeader("TraderEscort");
@@ -894,10 +894,10 @@ void MCRaceInTargetCity(string qName)//прибыл ГГ
 
 void TraderRaceInTargetCity(string qName)//прибыл торговец
 {
-	int iNation = sti(pchar.GenQuest.Racing.Go.Nation);
+	int iNation = int(pchar.GenQuest.Racing.Go.Nation);
 	if (!CheckAttribute(pchar, "GenQuest.Racing.Go.MCWin")) pchar.GenQuest.Racing.Go.TraderWin = "true";
 	sld = characterFromId("RaceTrader");
-	ref chr = GetCharacter(NPC_GenerateCharacter("RaceTraderSkiper", "mercen_"+(rand(29)+1), "man", "man", sti(PChar.rank) + 20, iNation, -1, true, "quest"));
+	ref chr = GetCharacter(NPC_GenerateCharacter("RaceTraderSkiper", "mercen_"+(rand(29)+1), "man", "man", int(PChar.rank) + 20, iNation, -1, true, "quest"));
 	FantomMakeSmallSailor(chr, SHIP_FLEUT, pchar.GenQuest.Racing.Go.ShipName, CANNON_TYPE_CANNON_LBS12, 100, 50, 50, 50, 50);
 	chr.name = StringFromKey("MiniQuests_10");
 	chr.lastname = GenerateRandomName_Generator(iNation, "man");
@@ -926,7 +926,7 @@ void Racing_failed(string qName)//если у кого-то хватит туп�
 	sld.lifeday = 0;
 	sld = characterFromId("RaceTraderSkiper");
 	sld.lifeday = 0;
-	ChangeCharacterHunterScore(PChar, NationShortName(sti(pchar.GenQuest.Racing.Go.Nation)) + "hunter", 90); //начислить НЗГ
+	ChangeCharacterHunterScore(PChar, NationShortName(int(pchar.GenQuest.Racing.Go.Nation)) + "hunter", 90); //начислить НЗГ
 	ChangeCharacterComplexReputation(pchar,"authority", -5);
 	ChangeOfficersLoyality("bad_all", 5);
 	DeleteAttribute(pchar, "GenQuest.Racing.Go");
@@ -1150,12 +1150,12 @@ void Noblepassenger_complete(string qName)//доставили пассажир�
 void Noblelombard_TookQuest()//взял квест
 {
 	ref sld = CharacterFromID(pchar.GenQuest.Noblelombard.id);
-	pchar.GenQuest.Noblelombard = "true"
+	pchar.GenQuest.Noblelombard = "true";
 	pchar.GenQuest.Noblelombard.Name = GetFullName(sld);
 	pchar.GenQuest.Noblelombard.City = sld.city;
 	pchar.GenQuest.Noblelombard.Money = 20000+hrand(60)*500;
-	pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money)*0.3);
-	pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money)+sti(pchar.GenQuest.Noblelombard.Percent);
+	pchar.GenQuest.Noblelombard.Percent = int(int(pchar.GenQuest.Noblelombard.Money)*0.3);
+	pchar.GenQuest.Noblelombard.Summ = int(pchar.GenQuest.Noblelombard.Money)+int(pchar.GenQuest.Noblelombard.Percent);
 	pchar.GenQuest.Noblelombard.Chance = hrand(9);
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_SetActorType(sld);
@@ -1216,7 +1216,7 @@ void Noblelombard_Usurer_bad()//обманули нас
 
 void Noblelombard_Usurer_good()//получили деньги
 {
-	AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Noblelombard.Regard));
+	AddMoneyToCharacter(pchar, int(pchar.GenQuest.Noblelombard.Regard));
 	AddQuestRecord("Noblelombard", "7");
 	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
 	CloseQuestHeader("Noblelombard");
@@ -1244,17 +1244,17 @@ void Marginpassenger_InWorld(string qName)//запускаем кораблик 
     string sGroup = "Sea_MarginCap1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 3*sti(pchar.rank)+10;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 3*int(pchar.rank)+10;
 	int iDays = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Marginpassenger.Targetcity), GetArealByCityName(pchar.GenQuest.Marginpassenger.City))+5;
-	int iShipType = pchar.GenQuest.Marginpassenger.ShipType;
+	int iShipType = pchar.GenQuest.Marginpassenger.ShipType$int(0);
 	sTemp = pchar.GenQuest.Marginpassenger.ShipName;
-	if (sti(pchar.rank) < 5) iTemp = CANNON_TYPE_CANNON_LBS3;
-	if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 8) iTemp = CANNON_TYPE_CANNON_LBS6;
-	if (sti(pchar.rank) >= 8 && sti(pchar.rank) < 12) iTemp = CANNON_TYPE_CANNON_LBS12;
-	if (sti(pchar.rank) >= 12 && sti(pchar.rank) < 15) iTemp = CANNON_TYPE_CANNON_LBS16;
-	if (sti(pchar.rank) >= 15) iTemp = CANNON_TYPE_CANNON_LBS20;
-	sld = GetCharacter(NPC_GenerateCharacter("MarginCap", "citiz_41", "man", "man", iRank, sti(pchar.GenQuest.Marginpassenger.Nation), iDays, true, "quest"));
+	if (int(pchar.rank) < 5) iTemp = CANNON_TYPE_CANNON_LBS3;
+	if (int(pchar.rank) >= 5 && int(pchar.rank) < 8) iTemp = CANNON_TYPE_CANNON_LBS6;
+	if (int(pchar.rank) >= 8 && int(pchar.rank) < 12) iTemp = CANNON_TYPE_CANNON_LBS12;
+	if (int(pchar.rank) >= 12 && int(pchar.rank) < 15) iTemp = CANNON_TYPE_CANNON_LBS16;
+	if (int(pchar.rank) >= 15) iTemp = CANNON_TYPE_CANNON_LBS20;
+	sld = GetCharacter(NPC_GenerateCharacter("MarginCap", "citiz_41", "man", "man", iRank, int(pchar.GenQuest.Marginpassenger.Nation), iDays, true, "quest"));
 	FantomMakeSmallSailor(sld, iShipType, sTemp, iTemp, iScl+10, iScl, iScl, iScl, iScl);
 	SetFantomParamFromRank(sld, iRank, true); 
 	SetCaptanModelByEncType(sld, "trade");
@@ -1278,7 +1278,7 @@ void Marginpassenger_InWorld(string qName)//запускаем кораблик 
 	DeleteAttribute(sld, "DontClearDead");
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "ranger";
-	sld.mapEnc.Name = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")))+" '"+pchar.GenQuest.Marginpassenger.ShipName + "'";
+	sld.mapEnc.Name = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name")))+" '"+pchar.GenQuest.Marginpassenger.ShipName + "'";
 	Group_AddCharacter(sGroup, "MarginCap");
 	Group_SetGroupCommander(sGroup, "MarginCap");
 	Map_CreateTrader(pchar.GenQuest.Marginpassenger.City, pchar.GenQuest.Marginpassenger.Targetcity, "MarginCap", iDays);
@@ -1316,7 +1316,7 @@ void Marginpassenger_InWorldFail(string qName)//потопили в бою
 
 void Marginpassenger_CreateNeedman()//создаем выкупателя
 {
-	sld = GetCharacter(NPC_GenerateCharacter("MarginNeed", "citiz_"+(rand(9)+11), "man", "man", 10, sti(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("MarginNeed", "citiz_"+(rand(9)+11), "man", "man", 10, int(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
 	sld.Dialog.Filename = "Quest\Marginpassenger.c";
 	sld.Dialog.currentnode = "MarginNeed";
 	sld.name = pchar.GenQuest.Marginpassenger.q2Name;
@@ -1346,13 +1346,13 @@ void Marginpassenger_Southshore(string qName)//бой в бухте
 	pchar.quest.Marginpassenger_SouthshoreOver.over = "yes"; //снять таймер
 	chrDisableReloadToLocation = true;
 	GetCharacterPos(pchar, &locx, &locy, &locz);
-	int iRank = sti(pchar.rank)+2;
-	int iScl = 15 + 2*sti(pchar.rank);
-	int n = 5+makeint(MOD_SKILL_ENEMY_RATE/2);
+	int iRank = int(pchar.rank)+2;
+	int iScl = 15 + 2*int(pchar.rank);
+	int n = 5+int(MOD_SKILL_ENEMY_RATE/2);
 	//наши
     for (i=1; i<=9; i++)
     {
-		sld = GetCharacter(NPC_GenerateCharacter("MPCrew_"+i, "citiz_"+(rand(9)+31), "man", "man", iRank, sti(pchar.nation), 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("MPCrew_"+i, "citiz_"+(rand(9)+31), "man", "man", iRank, int(pchar.nation), 0, true, "soldier"));
 		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_10", "pistol1", "bullet", iScl*2);
         LAi_SetWarriorType(sld);
         LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -1396,8 +1396,8 @@ void Marginpassenger_SouthshipInWorld(string qName)//запускаем кора
     string sGroup = "Sea_SouthshipCap1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 3*sti(pchar.rank)+10;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 3*int(pchar.rank)+10;
 	int iDays = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Marginpassenger.Southcity1), GetArealByCityName(pchar.GenQuest.Marginpassenger.Southcity))+5;
 	sTemp = pchar.GenQuest.Marginpassenger.ShipName1;
 	sld = GetCharacter(NPC_GenerateCharacter("SouthshipCap", "citiz_41"+(rand(9)), "man", "man", iRank, SPAIN, iDays, true, "quest"));
@@ -1418,7 +1418,7 @@ void Marginpassenger_SouthshipInWorld(string qName)//запускаем кора
 	SetCharacterPerk(sld, "AdvancedBattleState");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
 	SetCharacterPerk(sld, "ShipSpeedUp");
-	AddCharacterGoods(sld, sti(pchar.GenQuest.Marginpassenger.Goods), sti(pchar.GenQuest.Marginpassenger.GoodsQty));//положить в трюм древесину
+	AddCharacterGoods(sld, int(pchar.GenQuest.Marginpassenger.Goods), int(pchar.GenQuest.Marginpassenger.GoodsQty));//положить в трюм древесину
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "ranger";
 	sld.mapEnc.Name = StringFromKey("MiniQuests_13", pchar.GenQuest.Marginpassenger.ShipName1);
@@ -1484,9 +1484,9 @@ void Marginpassenger_SouthshipWin(string qName)//абордировали
 void MarchCap_Create(string qName)//ставим кораблик
 {
 	log_Testinfo("Прерывание отработало");
-	int iRank = sti(pchar.GenQuest.MarchCap.rank);
-	int iNation = sti(pchar.GenQuest.MarchCap.basenation);
-	int iShip = sti(pchar.GenQuest.MarchCap.shiptype);
+	int iRank = int(pchar.GenQuest.MarchCap.rank);
+	int iNation = int(pchar.GenQuest.MarchCap.basenation);
+	int iShip = int(pchar.GenQuest.MarchCap.shiptype);
 	sTemp = pchar.GenQuest.MarchCap.model;
 	pchar.GenQuest.MarchCap.begin = "true";
 	Group_FindOrCreateGroup("MarchGroup");
@@ -1532,18 +1532,18 @@ void MarchCap1_CreateConvoy(string qName)//конвой на боевой кар
 	pchar.quest.MarchCap_Attack_Over.over = "yes"; //снять прерывание
 	pchar.quest.MarchCap1_fail.over = "yes"; //снять прерывание
 	Island_SetReloadEnableGlobal(pchar.GenQuest.MarchCap.Island, false);//на остров нельзя
-	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
+	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
 	Group_DeleteGroup("MarchCap_Attack");
 	Group_FindOrCreateGroup("MarchCap_Attack");
-	int iNation = sti(pchar.GenQuest.MarchCap.Nation);
-	int iRank = sti(PChar.rank)+5;
-	int iGoods = sti(pchar.GenQuest.MarchCap.Goods);
+	int iNation = int(pchar.GenQuest.MarchCap.Nation);
+	int iRank = int(PChar.rank)+5;
+	int iGoods = int(pchar.GenQuest.MarchCap.Goods);
 	int iSpace;
 	//сопровождение
 	SelectLevelWarShipParameter();
 	sld = GetCharacter(NPC_GenerateCharacter("MrCGuard", "off_"+NationShortName(iNation)+"_"+(rand(5)+1), "man", "man", iRank+3, iNation, 2, true, "quest"));
 	SetFantomParamFromRank(sld, iRank+3, true);
-	sld.Ship.Type = GenerateShipExt(iGlobalTemp, 1, sld);
+	sld.Ship.Type = GenerateShipExt(iGlobalTemp, true, sld);
 	SetRandomNameToShip(sld);
 	SetBaseShipData(sld);
 	SetCrewQuantityFull(sld);
@@ -1558,7 +1558,7 @@ void MarchCap1_CreateConvoy(string qName)//конвой на боевой кар
     {
 		SelectLevelTradeShipParameter();
         sld = GetCharacter(NPC_GenerateCharacter("MrCTrade_"+i, "trader_"+(rand(15)+1), "man", "man", iRank, iNation, 2, true, "quest"));
-		sld.Ship.Type = GenerateShipExt(iGlobalTemp, 1, sld);
+		sld.Ship.Type = GenerateShipExt(iGlobalTemp, true, sld);
 		SetFantomParamFromRank(sld, iRank, true);
 		SetRandomNameToShip(sld);
 		SetBaseShipData(sld);
@@ -1568,8 +1568,8 @@ void MarchCap1_CreateConvoy(string qName)//конвой на боевой кар
 		sld.AlwaysEnemy = true;
 		sld.ship.mode = "trade";
 		iSpace = GetCharacterFreeSpace(sld, iGoods);
-		iSpace = makeint(iSpace/2 + (iSpace/2.5));
-		Fantom_SetCharacterGoods(sld, iGoods, iSpace, 1);
+		iSpace = int(iSpace/2 + (iSpace/2.5));
+		Fantom_SetCharacterGoods(sld, iGoods, iSpace, true);
         Group_AddCharacter("MarchCap_Attack", "MrCTrade_"+i);
     }
     Group_SetGroupCommander("MarchCap_Attack", "MrCGuard");
@@ -1720,9 +1720,9 @@ void MarchCap2_CreateConvoy(string qName)//конвой на карте
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iNation = sti(pchar.GenQuest.MarchCap.Nation);
-	int iRank = sti(PChar.rank)+5;
-	int iGoods = sti(pchar.GenQuest.MarchCap.Goods);
+	int iNation = int(pchar.GenQuest.MarchCap.Nation);
+	int iRank = int(PChar.rank)+5;
+	int iGoods = int(pchar.GenQuest.MarchCap.Goods);
 	int iDays = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.MarchCap.Finishcity), GetArealByCityName(pchar.GenQuest.MarchCap.Startcity))+5;
 	int iSpace;
 	for (int i = 1; i <= 3; i++)
@@ -1734,7 +1734,7 @@ void MarchCap2_CreateConvoy(string qName)//конвой на карте
 		if (i == 1)
 		{
 			SelectLevelWarShipParameter();
-			sld.Ship.Type = GenerateShipExt(iGlobalTemp, 1, sld);
+			sld.Ship.Type = GenerateShipExt(iGlobalTemp, true, sld);
 			SetCaptanModelByEncType(sld, "war");
 			sld.ship.mode = "war";
 			SetFantomParamHunter(sld); //крутые парни
@@ -1742,7 +1742,7 @@ void MarchCap2_CreateConvoy(string qName)//конвой на карте
 		else
 		{
 			SelectLevelTradeShipParameter();
-			sld.Ship.Type = GenerateShipExt(iGlobalTemp, 1, sld);
+			sld.Ship.Type = GenerateShipExt(iGlobalTemp, true, sld);
 			SetCaptanModelByEncType(sld, "trade");
 			sld.ship.mode = "trade";
 		}
@@ -1754,8 +1754,8 @@ void MarchCap2_CreateConvoy(string qName)//конвой на карте
 		if (i == 2 || i == 3)
 		{
 			iSpace = GetCharacterFreeSpace(sld, iGoods);
-			iSpace = makeint(iSpace/2 + (iSpace/2.5));
-			Fantom_SetCharacterGoods(sld, iGoods, iSpace, 1);
+			iSpace = int(iSpace/2 + (iSpace/2.5));
+			Fantom_SetCharacterGoods(sld, iGoods, iSpace, true);
 		}
 		sld.mapEnc.type = "war";
 		sld.mapEnc.worldMapShip = "quest_ship";
@@ -1798,7 +1798,7 @@ void MarchCap2_Attack_Over(string qName)//истекло время на нах�
 void MarchCap2_CheckBattle(string qName)//признак вступления в бой
 {
 	pchar.GenQuest.MarchCap.Battlestart = "true";//атрибут начатого боя
-	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
+	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
 	pchar.quest.MarchCap2_fail.over = "yes"; //снять прерывание
 	pchar.quest.MarchCap2_Attack_Over.over = "yes"; //снять таймер
 	sld = characterFromId("WorldMarchCap1");
@@ -1814,21 +1814,21 @@ void MarchCap2_CheckBattle(string qName)//признак вступления в
 
 void MarchCap3_CreatePirate(string qName)//пират с золотишком
 {
-	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
+	pchar.GenQuest.MarchCap.StartGoodsQty = GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods));//это столько целевого товара было в трюмах до боя, если было
 	pchar.quest.MarchCap_Attack_Over.over = "yes"; //снять таймер
 	pchar.quest.MarchCap1_fail.over = "yes"; //снять прерывание
 	Island_SetReloadEnableGlobal(pchar.GenQuest.MarchCap.Island, false);//закрыть остров
 	pchar.GenQuest.MarchCap.DieHard = "true"; //атрибут бегства
 	Group_DeleteGroup("MarchCap_Attack");
 	Group_FindOrCreateGroup("MarchCap_Attack");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 3*sti(pchar.rank)+10;
-	int iShipType = sti(pchar.GenQuest.MarchCap.ShipType);
-	int iCannon = sti(pchar.GenQuest.MarchCap.Cannon);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 3*int(pchar.rank)+10;
+	int iShipType = int(pchar.GenQuest.MarchCap.ShipType);
+	int iCannon = int(pchar.GenQuest.MarchCap.Cannon);
 	sld = GetCharacter(NPC_GenerateCharacter("MarchPirate", "mercen_"+(rand(27)+1), "man", "man", iRank, PIRATE, 1, true, "quest"));
 	FantomMakeCoolSailor(sld, iShipType, "", iCannon, iScl+25, iScl, iScl);
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_10", "pistol1", "bullet", iScl*2);
-	sld.name = GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM));
+	sld.name = GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM);
 	sld.lastname = "";
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
@@ -1844,7 +1844,7 @@ void MarchCap3_CreatePirate(string qName)//пират с золотишком
 	Group_AddCharacter("MarchCap_Attack", "MarchPirate");
 	sld.AlwaysEnemy = true;
 	sld.AnalizeShips = true;
-	AddCharacterGoods(sld, sti(pchar.GenQuest.MarchCap.Goods), sti(pchar.GenQuest.MarchCap.GoodsQty));//положить золото-серебро
+	AddCharacterGoods(sld, int(pchar.GenQuest.MarchCap.Goods), int(pchar.GenQuest.MarchCap.GoodsQty));//положить золото-серебро
 	Group_SetGroupCommander("MarchCap_Attack", "MarchPirate");
 	Group_SetTaskAttack("MarchCap_Attack", PLAYER_GROUP);
 	Group_SetAddress("MarchCap_Attack", pchar.GenQuest.MarchCap.Island, "Quest_Ships", "Quest_Ship_"+(3+rand(4)));
@@ -1871,11 +1871,11 @@ void TakePostcureer_CreateShip(string qName)
 	pchar.quest.AllMayorsQuests_Late.over = "yes"; //снимаем общий таймер
 	Island_SetReloadEnableGlobal(pchar.GenQuest.TakePostcureer.Island, false);//на остров нельзя
 	pchar.Cheats.SeaTeleport = true;
-	int iNation = sti(pchar.GenQuest.TakePostcureer.Nation);
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+2;
-	int iScl = 2*sti(pchar.rank)+10;
-	int iShipType = sti(pchar.GenQuest.TakePostcureer.ShipType);
-	int iCannon = sti(pchar.GenQuest.TakePostcureer.Cannon);
+	int iNation = int(pchar.GenQuest.TakePostcureer.Nation);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2)+2;
+	int iScl = 2*int(pchar.rank)+10;
+	int iShipType = int(pchar.GenQuest.TakePostcureer.ShipType);
+	int iCannon = int(pchar.GenQuest.TakePostcureer.Cannon);
 	string sShipName = pchar.GenQuest.TakePostcureer.ShipName;
 	Group_FindOrCreateGroup("ContraCureer");
 	Group_SetType("ContraCureer", "war");//тип группы
@@ -1939,13 +1939,13 @@ void TakeArsenalship_CreateShip(string qName)
 	pchar.quest.AllMayorsQuests_Late.over = "yes"; //снимаем общий таймер
 	Island_SetReloadEnableGlobal(pchar.GenQuest.TakeArsenalship.Island, false);//на остров нельзя
 	pchar.Cheats.SeaTeleport = true;
-	int iNation = sti(pchar.GenQuest.TakeArsenalship.Nation);
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+2;
-	int iScl = 2*sti(pchar.rank)+10;
-	int iShipType = sti(pchar.GenQuest.TakeArsenalship.ShipType);
-	int iShipTypeA = sti(pchar.GenQuest.TakeArsenalship.ShipTypeA);
-	int iCannon = sti(pchar.GenQuest.TakeArsenalship.Cannon);
-	int iCannonA = sti(pchar.GenQuest.TakeArsenalship.CannonA);
+	int iNation = int(pchar.GenQuest.TakeArsenalship.Nation);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2)+2;
+	int iScl = 2*int(pchar.rank)+10;
+	int iShipType = int(pchar.GenQuest.TakeArsenalship.ShipType);
+	int iShipTypeA = int(pchar.GenQuest.TakeArsenalship.ShipTypeA);
+	int iCannon = int(pchar.GenQuest.TakeArsenalship.Cannon);
+	int iCannonA = int(pchar.GenQuest.TakeArsenalship.CannonA);
 	string sShipName = pchar.GenQuest.TakeArsenalship.ShipName;
 	Group_FindOrCreateGroup("ContraCureer");
 	Group_SetType("ContraCureer", "war");//тип группы
@@ -1962,9 +1962,9 @@ void TakeArsenalship_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "war";
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
-	int iGoods = GOOD_BALLS + hrand(makeint(GOOD_BOMBS - GOOD_BALLS));
+	int iGoods = GOOD_BALLS + hrand(int(GOOD_BOMBS - GOOD_BALLS));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
-	iSpace = makeint(iSpace/4);
+	iSpace = int(iSpace/4);
 	AddCharacterGoods(sld, iGoods, iSpace);
 	AddCharacterGoods(sld, GOOD_POWDER, iSpace);
 	AddCharacterGoods(sld, GOOD_WEAPON, 1000+rand(1000));
@@ -2018,10 +2018,10 @@ void TakePirateship_CreateShip(string qName)
 	pchar.quest.AllMayorsQuests_Late.over = "yes"; //снимаем общий таймер
 	Island_SetReloadEnableGlobal(pchar.GenQuest.TakePirateship.Island, false);//на остров нельзя
 	pchar.Cheats.SeaTeleport = true;
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+5;
-	int iScl = 2*sti(pchar.rank)+15;
-	int iShipType = sti(pchar.GenQuest.TakePirateship.ShipType);
-	int iCannon = sti(pchar.GenQuest.TakePirateship.Cannon);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2)+5;
+	int iScl = 2*int(pchar.rank)+15;
+	int iShipType = int(pchar.GenQuest.TakePirateship.ShipType);
+	int iCannon = int(pchar.GenQuest.TakePirateship.Cannon);
 	string sShipName = pchar.GenQuest.TakePirateship.ShipName;
 	Group_FindOrCreateGroup("ContraCureer");
 	Group_SetType("ContraCureer", "pirate");//тип группы
@@ -2038,9 +2038,9 @@ void TakePirateship_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "pirate";
 	SetCharacterPerk(sld, "MusketsShoot");
-	int iGoods = GOOD_CHOCOLATE + hrand(makeint(GOOD_COTTON - GOOD_CHOCOLATE));
+	int iGoods = GOOD_CHOCOLATE + hrand(int(GOOD_COTTON - GOOD_CHOCOLATE));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
-	iSpace = makeint(iSpace/2);
+	iSpace = int(iSpace/2);
 	AddCharacterGoods(sld, iGoods, iSpace);
 	Group_AddCharacter("ContraCureer", "ContraCureerCap");
 	Group_SetGroupCommander("ContraCureer", "ContraCureerCap");
@@ -2083,12 +2083,12 @@ void ContraPirate_DieHard(string qName)//сбежали
 //--> ОЗГ - пассажир
 void TakePassenger_CreateShip(string qName)
 {
-	int iNation = sti(pchar.GenQuest.TakePassenger.Nation);
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+4;
-	int iScl = 2*sti(pchar.rank)+10;
-	int iShipType = sti(pchar.GenQuest.TakePassenger.ShipType);
-	int iCannon = sti(pchar.GenQuest.TakePassenger.Cannon);
-	int iDays = sti(pchar.GenQuest.TakePassenger.Terms2);
+	int iNation = int(pchar.GenQuest.TakePassenger.Nation);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2)+4;
+	int iScl = 2*int(pchar.rank)+10;
+	int iShipType = int(pchar.GenQuest.TakePassenger.ShipType);
+	int iCannon = int(pchar.GenQuest.TakePassenger.Cannon);
+	int iDays = int(pchar.GenQuest.TakePassenger.Terms2);
 	string sShipName = pchar.GenQuest.TakePassenger.ShipName;
 	string sCapId = "ContraPassCap";
     string sGroup = "Sea_" + sCapId + "1";
@@ -2103,9 +2103,9 @@ void TakePassenger_CreateShip(string qName)
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
-	int iGoods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+	int iGoods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 	int iSpace = GetCharacterFreeSpace(sld, iGoods);
-	iSpace = makeint(iSpace/4);
+	iSpace = int(iSpace/4);
 	AddCharacterGoods(sld, iGoods, iSpace);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "quest_ship";
@@ -2148,15 +2148,15 @@ void ContraPass_Sink(string qName)//провалили
 //--> Таможенный патруль
 void CustomPatrol_CreateShip(string qName)
 {
-	int iNation = sti(pchar.GenQuest.CustomPatrol.Nation);
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2)+1;
-	int iScl = 2*sti(pchar.rank)+5;
-	int iShipType = sti(pchar.GenQuest.CustomPatrol.ShipType);
-	int iShipTypeA = sti(pchar.GenQuest.CustomPatrol.ShipTypeA);
-	int iCannon = sti(pchar.GenQuest.CustomPatrol.Cannon);
-	int lcr = sti(pchar.GenQuest.CustomPatrol.Loginlocator);
+	int iNation = int(pchar.GenQuest.CustomPatrol.Nation);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2)+1;
+	int iScl = 2*int(pchar.rank)+5;
+	int iShipType = int(pchar.GenQuest.CustomPatrol.ShipType);
+	int iShipTypeA = int(pchar.GenQuest.CustomPatrol.ShipTypeA);
+	int iCannon = int(pchar.GenQuest.CustomPatrol.Cannon);
+	int lcr = int(pchar.GenQuest.CustomPatrol.Loginlocator);
 	int iDay = 1;
-	if (makeint(environment.time) > 20.0) iDay = 2;
+	if (int(environment.time) > 20.0) iDay = 2;
 	Group_FindOrCreateGroup("ContraCureer");
 	Group_SetType("ContraCureer", "pirate");//тип группы
 	sld = GetCharacter(NPC_GenerateCharacter("ContraCureerCap", "citiz_"+(rand(9)+51), "man", "man", iRank, iNation, iDay, true, "quest"));//кэп-сдатчик
@@ -2225,7 +2225,7 @@ void CustomPatrol_DieHard(string qName)//сбежали
 void FindFugitive_Over(string qName)//не пошёл сдавать пленника
 {
 	pchar.quest.FindFugitive1.over = "yes"; //снять прерывание
-	sld = &Characters[sti(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
+	sld = &Characters[int(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
 	ReleasePrisoner(sld); //освободили пленника
 	sld.lifeday = 0;
 	log_info(StringFromKey("MiniQuests_20", pchar.GenQuest.FindFugitive.Name));
@@ -2236,7 +2236,7 @@ void FindFugitive_Over(string qName)//не пошёл сдавать пленн�
 void FindFugitive_inResidence(string qName)//в резиденции
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
-	sld = &Characters[sti(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
+	sld = &Characters[int(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
 	GetCharacterPos(pchar, &locx, &locy, &locz);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
 	LAi_SetActorType(sld);
@@ -2276,7 +2276,7 @@ void Monk_Shipshine_function()//освящение кораблей через �
 	ChangeCharacterComplexReputation(pchar, "authority", 2);
 	AddCrewMorale(pchar, 10);
 	pchar.quest.Shipshine.win_condition.l1 = "Timer";
-	pchar.quest.Shipshine.win_condition.l1.date.hour  = sti(GetTime());
+	pchar.quest.Shipshine.win_condition.l1.date.hour  = int(GetTime());
 	pchar.quest.Shipshine.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 15);
 	pchar.quest.Shipshine.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 15);
 	pchar.quest.Shipshine.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 15);
@@ -2314,7 +2314,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		sld = characterFromID("ShadowAgent_1");   
 		sld.LSC_clan = true; // 110912 fix
 		LAi_SetImmortal(sld, false);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5; // 240912
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5; // 240912
 		sld = GetCharacter(NPC_GenerateCharacter("ShadowAgent_2", "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, 2, true, "citizen"));
 		SetFantomParamFromRank(sld, iRank, true);
 		sld.LSC_clan = true; // 110912 fix
@@ -2416,11 +2416,11 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "CitizSeekCap_GivePrisoner") {
-		sld = GetCharacter(NPC_GenerateCharacter(pchar.GenQuest.CitizSeekCap.label + "_" + pchar.GenQuest.CitizSeekCap.PrisonerCity, pchar.GenQuest.CitizSeekCap.model, pchar.GenQuest.CitizSeekCap.sex, pchar.GenQuest.CitizSeekCap.ani, 5, sti(pchar.GenQuest.CitizSeekCap.nation), -1, false, "citizen"));
+		sld = GetCharacter(NPC_GenerateCharacter(pchar.GenQuest.CitizSeekCap.label + "_" + pchar.GenQuest.CitizSeekCap.PrisonerCity, pchar.GenQuest.CitizSeekCap.model, pchar.GenQuest.CitizSeekCap.sex, pchar.GenQuest.CitizSeekCap.ani, 5, int(pchar.GenQuest.CitizSeekCap.nation), -1, false, "citizen"));
 		sld.name = pchar.GenQuest.CitizSeekCap.PrisonerName;
 		sld.lastname = pchar.GenQuest.CitizSeekCap.PrisonerLastname;
 		//pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(sld);
-		//SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+		//SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
 		AddPassenger(pchar, sld, false);//добавить пассажира
 		SetCharacterRemovable(sld, false);
 		log_info(StringFromKey("MiniQuests_21", sld.name)); // 170712
@@ -2488,7 +2488,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	
 	//выдача пассажира после абордажа
 	else if (sQuestName == "Marginpassenger_GivePrisoner") {
-		sld = GetCharacter(NPC_GenerateCharacter("MarginPass", pchar.GenQuest.Marginpassenger.model, pchar.GenQuest.Marginpassenger.sex, pchar.GenQuest.Marginpassenger.ani, 2, sti(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("MarginPass", pchar.GenQuest.Marginpassenger.model, pchar.GenQuest.Marginpassenger.sex, pchar.GenQuest.Marginpassenger.ani, 2, int(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
 		sld.Dialog.Filename = "Quest\Marginpassenger.c";
 		sld.dialog.currentnode = "MarginPass";
 		sld.name = pchar.GenQuest.Marginpassenger.q1Name;
@@ -2505,7 +2505,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Marginpassenger_Afterbattle") {
 		LAi_group_Delete("EnemyFight");
 		chrDisableReloadToLocation = false;
-		AddCharacterGoods(pchar, sti(pchar.GenQuest.Marginpassenger.Goods), sti(pchar.GenQuest.Marginpassenger.GoodsQty));
+		AddCharacterGoods(pchar, int(pchar.GenQuest.Marginpassenger.Goods), int(pchar.GenQuest.Marginpassenger.GoodsQty));
 		AddQuestRecord("Marginpassenger", "15");
 		AddQuestUserData("Marginpassenger", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_7"),StringFromKey("MiniQuests_8")));
 		AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore+"Dat"));
@@ -2521,8 +2521,8 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	//  Начало    Сопровождение торговца
 	////////////////////////////////////////////////////////////////////////
 	else if (sQuestName == "prepare_for_convoy_quest") {
-		iTemp = sti(colonies[FindColony(pchar.quest.destination)].nation);
-		sld = GetCharacter(NPC_GenerateCharacter("QuestTrader", "", "man", "man", makeint((sti(pchar.rank)+60)/4), iTemp, -1, true, "citizen"));
+		iTemp = int(colonies[FindColony(pchar.quest.destination)].nation);
+		sld = GetCharacter(NPC_GenerateCharacter("QuestTrader", "", "man", "man", int((int(pchar.rank)+60)/4), iTemp, -1, true, "citizen"));
 		SetCaptanModelByEncType(sld, "trade");
 		sld.reputation.nobility = (1 + rand(44) + rand(44));
 		sld.Dialog.Filename = "convoy_traider.c";
@@ -2552,7 +2552,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 			AddCharacterExpToSkill(pchar, "COMMERCE", 5);
 			AddQuestRecord("convoy_quest", "4");
 			CloseQuestHeader("convoy_quest");
-			AddMoneyToCharacter(pchar, sti(pchar.ConvoyQuest.convoymoney));
+			AddMoneyToCharacter(pchar, int(pchar.ConvoyQuest.convoymoney));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			RemoveCharacterCompanion(Pchar, characterFromID("QuestTrader"));
 			CloseQuestHeader("convoy_quest");
@@ -2567,7 +2567,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("convoy_quest", "2");
 		CloseQuestHeader("convoy_quest");            
 		sld = characterFromID("QuestTrader");
-		ChangeCharacterHunterScore(pchar, NationShortName(sti(sld.BakNation)) + "hunter", 5+rand(10));// награда
+		ChangeCharacterHunterScore(pchar, NationShortName(int(sld.BakNation)) + "hunter", 5+rand(10));// награда
 		RemoveCharacterCompanion(Pchar, sld);
 		OfficersReaction("bad");
 		ChangeCharacterComplexReputation(pchar,"nobility", -10);
@@ -2602,7 +2602,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		else
 		{
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(sld.BakNation)) + "hunter", 10+rand(10));// награда
+			ChangeCharacterHunterScore(pchar, NationShortName(int(sld.BakNation)) + "hunter", 10+rand(10));// награда
 			OfficersReaction("bad");
 			pchar.quest.generate_convoy_quest_progress = "";				
 			pchar.quest.generate_convoy_quest_failed.over = "yes";
@@ -2615,14 +2615,14 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 
 	else if (sQuestName == "convoy_agreeded") {
 		sld = characterFromID("QuestTrader");
-		CharacterIntoCompanionAndGoOut(pchar, sld, "reload", "reload1_back", 3.0, false);
+		CharacterIntoCompanionAndGoOut(pchar, sld, "reload", "reload1_back", 3, false);
 		ReOpenQuestHeader("convoy_quest");
 		AddQuestRecord("convoy_quest", "1");
 		AddQuestUserData("convoy_quest", "sSex", GetSexPhrase(StringFromKey("MiniQuests_1"),StringFromKey("MiniQuests_2")));
 		sTemp = XI_ConvertString("Colony" + pchar.quest.destination + "Gen") + StringFromKey("MiniQuests_23") + XI_ConvertString(GetIslandByCityName(pchar.quest.destination) + "Voc") + ","; // belamour gen
 		AddQuestUserData("convoy_quest", "sCity", sTemp);
-		AddQuestUserData("convoy_quest", "sDay", FindRussianDaysString(sti(pchar.ConvoyQuest.iDay)));
-		AddQuestUserData("convoy_quest", "sMoney", FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney)));
+		AddQuestUserData("convoy_quest", "sDay", FindRussianDaysString(int(pchar.ConvoyQuest.iDay)));
+		AddQuestUserData("convoy_quest", "sMoney", FindRussianMoneyString(int(pchar.ConvoyQuest.convoymoney)));
 		// по городу вернём его порт
 		attrName = GetPortByCityName(pchar.quest.destination);            
 		pchar.quest.generate_convoy_quest_completed.win_condition.l1 = "Location";
@@ -2638,8 +2638,8 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	//  Начало    Доставка пассажира
 	////////////////////////////////////////////////////////////////////////
 	else if (sQuestName == "prepare_for_passenger_quest") {
-		iTemp = sti(colonies[FindColony(sGlobalTemp)].nation);
-		Rank = NPC_GenerateCharacter("QuestPassanger", "", "man", "man", makeint((sti(pchar.rank)+60)/4), iTemp, -1, true, "citizen");
+		iTemp = int(colonies[FindColony(sGlobalTemp)].nation);
+		Rank = NPC_GenerateCharacter("QuestPassanger", "", "man", "man", int((int(pchar.rank)+60)/4), iTemp, -1, true, "citizen");
 		sld = &characters[Rank];
 		sld.id = sld.id + "_" + sld.index; //меняем ID на оригинальный
 		sld.reputation = (1 + rand(44) + rand(44));
@@ -2656,7 +2656,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	}
 
 	else if (sQuestName == "AllPassangersDead") { // торговец умер
-		sld = &characters[sti(pchar.quest.(qname).Idx)];
+		sld = &characters[int(pchar.quest.(qname).Idx)];
 		ChangeCharacterComplexReputation(pchar,"nobility", -5);
 		RemovePassenger(PChar, sld);
 		sTemp = sld.id + "_complited";
@@ -2674,7 +2674,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "AllPassangersTimeOver") {
-		sld = &characters[sti(pchar.quest.(qname).Idx)];
+		sld = &characters[int(pchar.quest.(qname).Idx)];
 		sTemp = sld.id;
 		Pchar.GenQuest.ConvoyPassenger.(sTemp) = sld.index; //в структуру недовольных
 		if (!CheckAttribute(Pchar, "quest.ConvoyMapPassenger"))
@@ -2691,7 +2691,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		for (i=0; i<iTemp; i++)
 		{
 			arPass = GetAttributeN(arAll, i);
-			sld = &characters[sti(GetAttributeValue(arPass))];				
+			sld = &characters[int(GetAttributeValue(arPass))];
 			ChangeCharacterAddress(sld, "Ship_deck", "goto4");
 			LAi_SetActorType(sld);
 			LAi_ActorDialog(sld, pchar, "", -1, 0); 
@@ -2705,7 +2705,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "AllPassangersComplited") {
-		sld = &characters[sti(pchar.quest.(qname).Idx)];
+		sld = &characters[int(pchar.quest.(qname).Idx)];
 		sTemp = sld.id + "_TimeOver";
 		pchar.quest.(sTemp).over = "yes";
 		sTemp = sld.id + "_dead";
@@ -2726,7 +2726,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	//////////////////////////////////////////////////////////////////////// 
 	else if (sQuestName == "ContraPass_GivePrisoner") {
 		chrDisableReloadToLocation = true;//закрыть локацию
-		sld = GetCharacter(NPC_GenerateCharacter("ContraPassTempsailor", "Alonso", "man", "man", 10, sti(pchar.Mation), 0, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("ContraPassTempsailor", "Alonso", "man", "man", 10, int(pchar.Mation), 0, true, "quest"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		sld.Dialog.Filename = "MayorQuests_dialog.c";
@@ -2759,7 +2759,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		GetCharacterPos(pchar, &locx, &locy, &locz);
 		LAi_LocationFightDisable(loadedLocation, false);
 		LAi_SetFightMode(pchar, true);
-		Rank = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+		Rank = int(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
 		LAi_group_Delete("EnemyFight");
 		for (i=1; i < 5; i++) 
 		{	
@@ -2893,7 +2893,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		SetMainCharacterIndex(1);
 		pchar = GetMainCharacter();
 		LAi_SetPlayerType(pchar);
-		locCameraTarget(pchar)
+		locCameraTarget(pchar);
 		locCameraFollow();
 		EndQuestMovie(); 	
 		ChangeShowIntarface();
@@ -2910,7 +2910,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	//////////////////////////////////////////////////////////////////////// 		
 	
 	else if (sQuestName == "ShipWreck_RemoveSailorsFromShore") {
-		for(i = 0; i < sti(pchar.GenQuest.ShipWreck.Qty); i++)
+		for(i = 0; i < int(pchar.GenQuest.ShipWreck.Qty); i++)
 		{
 			iTemp = GetCharacterIndex("ShipWreck_" + i);		
 			if(iTemp != -1)

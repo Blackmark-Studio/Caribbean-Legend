@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("Shadows", "5");
 		pchar.questTemp.Saga.Shadows = "islatesoro";
 		// в офицеры
-		npchar.quest.OfficerPrice = sti(pchar.rank) * 500;
+		npchar.quest.OfficerPrice = int(pchar.rank) * 500;
 		npchar.OfficerWantToGo.DontGo = true; // не пытаться уйти
 		npchar.CompanionDisable = true;		  // нельзя в компаньоны
 		npchar.loyality = MAX_LOYALITY;
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 		if (sGun != "")
 		{
 			rItm = ItemsFromID(sGun);
-			if (CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+			if (CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 			{
 				Link.l3 = "Cambia el tipo de munición para tu arma de fuego.";
 				Link.l3.go = "SetGunBullets";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 		sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		makearef(rType, rItm.type);
-		for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+		for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
 			sBullet = rItm.type.(sAttr).bullet;
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SetGunBullets2":
-		i = sti(NPChar.SetGunBullets) + 1;
+		i = int(NPChar.SetGunBullets) + 1;
 		sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		sAttr = "t" + i;
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3":
@@ -278,7 +278,7 @@ void ProcessDialogEvent()
 			link.l1 = "¿En el vientre? No entiendo. Que yo sepa, nadie sufre de mareo a bordo.";
 			link.l1.go = "SharlieEpilog_Baker_salary_X3_2";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3_2":

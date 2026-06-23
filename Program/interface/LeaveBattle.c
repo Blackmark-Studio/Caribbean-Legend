@@ -106,19 +106,19 @@ void CalculateInfoData()
 		totalInfo = XI_ConvertString("LeaveBattle21");
 		sEnd = XI_ConvertString("LeaveBattle22");
 	}
-	cn = sti(GetAttributeValue(GetAttributeN(rootItems, 0)));
+	cn = int(GetAttributeValue(GetAttributeN(rootItems, 0)));
 	if (cn != -1) 
 	{
 		chr = GetCharacter(cn);
-		totalInfo += XI_ConvertString(RealShips[sti(chr.Ship.Type)].BaseName) + " '" + chr.Ship.Name + "'";
+		totalInfo += XI_ConvertString(RealShips[int(chr.Ship.Type)].BaseName) + " '" + chr.Ship.Name + "'";
 	}
 	for (i = 1; i < GetAttributesNum(rootItems); i++)
 	{
-		cn = sti(GetAttributeValue(GetAttributeN(rootItems, i)));
+		cn = int(GetAttributeValue(GetAttributeN(rootItems, i)));
 		if (cn != -1) 
 		{
 			chr = GetCharacter(cn);
-			totalInfo += ", " + XI_ConvertString(RealShips[sti(chr.Ship.Type)].BaseName) + " '" + chr.Ship.Name + "'";
+			totalInfo += ", " + XI_ConvertString(RealShips[int(chr.Ship.Type)].BaseName) + " '" + chr.Ship.Name + "'";
 		}	
 	}
 	totalInfo += sEnd;  
@@ -133,7 +133,7 @@ void KillCompanions()
 	makearef(rootItems, pchar.CheckEnemyCompanionDistance);  // допущение, что один есть точно иначе форму не вызвать
 	for (i = 0; i < GetAttributesNum(rootItems); i++)
 	{
-		cn = sti(GetAttributeValue(GetAttributeN(rootItems, i)));
+		cn = int(GetAttributeValue(GetAttributeN(rootItems, i)));
 		if (cn != -1) 
 		{
 			chr = GetCharacter(cn);
@@ -147,7 +147,7 @@ void KillCompanions()
 			{
 				chr.PGGAi.IsPGG = true;
 				chr.RebirthPhantom = true;
-				chr.PGGAi.location.town = PGG_FindRandomTownByNation(sti(chr.nation));
+				chr.PGGAi.location.town = PGG_FindRandomTownByNation(int(chr.nation));
 				PGG_ChangeRelation2MainCharacter(chr, -40);
 			}
 	        chr.location = ""; // нафиг, нафиг..а то в таверне появлялся...

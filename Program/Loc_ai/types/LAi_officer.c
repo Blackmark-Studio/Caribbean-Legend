@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_officer_Init(aref chr)
+void LAi_type_officer_Init(ref chr)
 {
 	//Новый тип
 	DeleteAttribute(chr, "location.follower");
@@ -79,7 +79,7 @@ void LAi_type_officer_Init(aref chr)
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightWOWeapon", false);
 }
 
-void LAi_type_follower_Init(aref chr)
+void LAi_type_follower_Init(ref chr)
 {
 	//Новый тип
 	DeleteAttribute(chr, "location.follower");
@@ -92,12 +92,12 @@ void LAi_type_follower_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_officer_CharacterUpdate(ref chr, float dltTime)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return;
 	string btl = "";
 	//При отравлении детравимся
-	float fCheck = stf(chr.chr_ai.type.bottle) - dltTime;
+	float fCheck = float(chr.chr_ai.type.bottle) - dltTime;
 	if(CheckAttribute(chr, "chr_ai.poison"))
 	{
 		chr.chr_ai.type.bottle = 6.0;
@@ -106,22 +106,22 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 			bool antidotUse = false;
 			if(LAi_GetCharacterRelHP(chr) < 0.6)
 			{
-				if(GetCharacterItem(&Characters[sti(chr.index)], "potion4") > 0)
+				if(GetCharacterItem(&Characters[int(chr.index)], "potion4") > 0)
 				{
 					antidotUse = true;
-					DoCharacterUsedItem(&Characters[sti(chr.index)], "potion4");
+					DoCharacterUsedItem(&Characters[int(chr.index)], "potion4");
 				}
 			}
 			if(!antidotUse)
 			{
-				if(GetCharacterItem(&Characters[sti(chr.index)], "potion3") > 0)
+				if(GetCharacterItem(&Characters[int(chr.index)], "potion3") > 0)
 				{
-					DoCharacterUsedItem(&Characters[sti(chr.index)], "potion3");
+					DoCharacterUsedItem(&Characters[int(chr.index)], "potion3");
 				}
 			}
 		}
 	}
-	/*if(CheckAttribute(chr, "BerserkerCan") && LAi_GetCharacterRelHP(chr) < 0.8 && LAi_GetCharacterRelEnergy(chr) > 0.3 && GetCharacterItem(&Characters[sti(chr.index)], "berserker_potion") > 0)
+	/*if(CheckAttribute(chr, "BerserkerCan") && LAi_GetCharacterRelHP(chr) < 0.8 && LAi_GetCharacterRelEnergy(chr) > 0.3 && GetCharacterItem(&Characters[int(chr.index)], "berserker_potion") > 0)
 	{
 		chr.MultiFighter = 3.0;
 		sTotalTemp = chr.id;
@@ -132,8 +132,8 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 	// belamour legendary edition на будущее -->
 	if(CheckAttribute(chr,"IronWill.CoolDown"))
 	{
-		chr.IronWill.CoolDown = stf(chr.IronWill.CoolDown) - dltTime;
-		if(makefloat(chr.IronWill.CoolDown) <= 0.0)
+		chr.IronWill.CoolDown = float(chr.IronWill.CoolDown) - dltTime;
+		if(float(chr.IronWill.CoolDown) <= 0.0)
 		{
 			DeleteAttribute(chr,"IronWill.CoolDown");
 			/* Log_Info(GetFullName(chr)+ XI_ConvertString("IronWillOn"));
@@ -141,7 +141,7 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 		}
 		else
 		{
-			//if(!bBettaTestMode) Log_SetEternalString(GetFullName(chr) + XI_ConvertString("IronWillCd") + sti(chr.IronWill.CoolDown));
+			//if(!bBettaTestMode) Log_SetEternalString(GetFullName(chr) + XI_ConvertString("IronWillCd") + int(chr.IronWill.CoolDown));
 		}
 	}
 	// <--
@@ -157,8 +157,8 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 			if(LAi_GetCharacterRelHP(chr) < 0.7)
 			{
 				dhlt = LAi_GetCharacterMaxHP(chr) - LAi_GetCharacterHP(chr);
-				btl = FindHealthForCharacter(&Characters[sti(chr.index)], dhlt);
-				DoCharacterUsedItem(&Characters[sti(chr.index)], btl);
+				btl = FindHealthForCharacter(&Characters[int(chr.index)], dhlt);
+				DoCharacterUsedItem(&Characters[int(chr.index)], btl);
 			}
 		}
 	}
@@ -210,9 +210,9 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 				else
 				{
 					//пробуем сменить цель, может уже есть кто ближе
-					fCheck = stf(chr.chr_ai.type.checkTarget) - dltTime;
+					fCheck = float(chr.chr_ai.type.checkTarget) - dltTime;
 					chr.chr_ai.type.checkTarget = fCheck;
-					if (stf(LAi_grp_relations.distance) > 2.0 && fCheck < 0) //цель далеко, попробуем сменить на ближайшую
+					if (float(LAi_grp_relations.distance) > 2.0 && fCheck < 0) //цель далеко, попробуем сменить на ближайшую
 					{
 						LAi_type_officer_FindTarget(chr);
 					}
@@ -226,34 +226,34 @@ void LAi_type_officer_CharacterUpdate(aref chr, float dltTime)
 	}
 }
 
-void LAi_type_follower_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_follower_CharacterUpdate(ref chr, float dltTime)
 {
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_officer_CharacterLogin(aref chr)
+bool LAi_type_officer_CharacterLogin(ref chr)
 {
 	return true;
 }
 
-bool LAi_type_follower_CharacterLogin(aref chr)
+bool LAi_type_follower_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_officer_CharacterLogoff(aref chr)
+bool LAi_type_officer_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
-bool LAi_type_follower_CharacterLogoff(aref chr)
+bool LAi_type_follower_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_officer_TemplateComplite(aref chr, string tmpl)
+void LAi_type_officer_TemplateComplite(ref chr, string tmpl)
 {
 	if(chr.chr_ai.tmpl != LAI_TMPL_FOLLOW)
     {
@@ -265,23 +265,23 @@ void LAi_type_officer_TemplateComplite(aref chr, string tmpl)
     }
 }
 
-void LAi_type_follower_TemplateComplite(aref chr, string tmpl)
+void LAi_type_follower_TemplateComplite(ref chr, string tmpl)
 {
 	if(chr.chr_ai.tmpl != LAI_TMPL_FOLLOW) LAi_tmpl_SetFollow(chr, pchar, -1.0);
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_officer_NeedDialog(aref chr, aref by)
+void LAi_type_officer_NeedDialog(ref chr, ref by)
 {
 }
 
-void LAi_type_follower_NeedDialog(aref chr, aref by)
+void LAi_type_follower_NeedDialog(ref chr, ref by)
 {
 }
 
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_officer_CanDialog(aref chr, aref by)
+bool LAi_type_officer_CanDialog(ref chr, ref by)
 {
 	if(LAi_IsBoardingProcess()) return false;
 	//Если уже говорим, то откажем
@@ -291,7 +291,7 @@ bool LAi_type_officer_CanDialog(aref chr, aref by)
 	return true;
 }
 
-bool LAi_type_follower_CanDialog(aref chr, aref by)
+bool LAi_type_follower_CanDialog(ref chr, ref by)
 {
 	if(LAi_IsBoardingProcess()) return false;
 	//Если уже говорим, то откажем
@@ -302,7 +302,7 @@ bool LAi_type_follower_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_officer_StartDialog(aref chr, aref by)
+void LAi_type_officer_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	if(chr.location.locator != "sit1")
@@ -313,7 +313,7 @@ void LAi_type_officer_StartDialog(aref chr, aref by)
 	LAi_tmpl_SetActivatedDialog(chr, by);
 }
 
-void LAi_type_follower_StartDialog(aref chr, aref by)
+void LAi_type_follower_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -322,7 +322,7 @@ void LAi_type_follower_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_officer_EndDialog(aref chr, aref by)
+void LAi_type_officer_EndDialog(ref chr, ref by)
 {
 	LAi_CharacterRestoreAy(chr);
 	if(bCabinStarted && NeedCabinTmpl())
@@ -334,7 +334,7 @@ void LAi_type_officer_EndDialog(aref chr, aref by)
 	   LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
 }
 
-void LAi_type_follower_EndDialog(aref chr, aref by)
+void LAi_type_follower_EndDialog(ref chr, ref by)
 {
 	LAi_CharacterRestoreAy(chr);
 	LAi_tmpl_SetFollow(chr, pchar, -1.0);
@@ -349,10 +349,10 @@ void LAi_type_officer_Fire(aref attack, aref enemy, float kDist, bool isFindedEn
 
 
 //Персонаж атакован
-void LAi_type_officer_Attacked(aref chr, aref by)
+void LAi_type_officer_Attacked(ref chr, ref by)
 {
 	//если наносящий удар уже таргет, нефиг крутить код и переназначать цель
-	if (LAi_tmpl_fight_GetTarget(chr) == sti(by.index)) return;	
+	if (LAi_tmpl_fight_GetTarget(chr) == int(by.index)) return;
 	//Своих пропускаем
 	if(!LAi_group_IsEnemy(chr, by)) return;
 	float dist = -1.0;
@@ -385,7 +385,7 @@ void LAi_type_officer_Attacked(aref chr, aref by)
 }
 
 
-void LAi_type_officer_FindTarget(aref chr)
+void LAi_type_officer_FindTarget(ref chr)
 {
 	//Проверим наличие врагов
 	int trg = LAi_group_GetTarget(chr);
@@ -424,12 +424,12 @@ void LAi_type_officer_FindTarget(aref chr)
 	}
 }
 
-bool LAi_type_officer_CheckDists(aref chr, aref trg)
+bool LAi_type_officer_CheckDists(ref chr, ref trg)
 {
 	float dist = -1.0;
 	float searchDist = 10;
 	if(CheckAttribute(pchar, "OfficerAttRange")) {
-		searchDist = stf(pchar.OfficerAttRange);
+		searchDist = float(pchar.OfficerAttRange);
 	}
 	if(!GetCharacterDistByChr3D(pchar, trg, &dist)) dist = -1.0;
 	if(dist >= 0.0 && dist < searchDist)
@@ -443,7 +443,7 @@ bool LAi_type_officer_CheckDists(aref chr, aref trg)
 	return false;
 }
 
-void LAi_SetOfficerCabinSitAnimation(aref chr)
+void LAi_SetOfficerCabinSitAnimation(ref chr)
 {
 	if(IsEntity(&chr))
 	{

@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -186,14 +186,14 @@ void ProcessDialogEvent()
 			link.l1 = "黙れ、このアマ！";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		case "HouseWoman_2":
 			dialog.text = "丁寧に家を出てくれとお願いしたのに、あなたは全く聞こうとしなかった！もう我慢できません！助けて！衛兵！";
 			link.l1 = "黙れ、この愚かな女め！気でも狂ったのか！？";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break; 
 		//--------------------------------- завсклад ---------------------------------		
 		case "SkladMan":
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "港の倉庫にしてはかなり広いな。そうだな……5万センターの貨物が収容できるぜ。さて "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+"  月ごとにあなたの品物をお預かりできます。 "+"これには俺の部下と一緒に見張ったり、水浸しにならないように守ったり、ネズミと戦ったりすることも含まれるぜ。 どうだ？ああ、それと機密保持もな、言うまでもねえが。";
+			dialog.text = "港の倉庫にしてはかなり広いな。そうだな……5万センターの貨物が収容できるぜ。さて "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+"  月ごとにあなたの品物をお預かりできます。 "+"これには俺の部下と一緒に見張ったり、水浸しにならないように守ったり、ネズミと戦ったりすることも含まれるぜ。 どうだ？ああ、それと機密保持もな、言うまでもねえが。";
 			link.l1 = "承知しました。見せていただいてもよろしいですか？";	
 			link.l1.go = "storage_rent2";
 			link.l2 = "高すぎるぜ。それに、どうせ水浸しでネズミだらけなんだろうな。";
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent2":
 			dialog.text = "ああ、わかったよ。でもな…前金で一ヶ月分もらわねえと困るぜ。 ";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "あなたは……なかなかの商人ですね。はい、これが金だ……この小屋を借りるよ。";
 				link.l1.go = "storage_11";
@@ -280,11 +280,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_0":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "それから家賃についてだが、まだ俺に借りがあるぜ  "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+				dialog.text = "それから家賃についてだが、まだ俺に借りがあるぜ  "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "わかった、今すぐ家賃を払うよ。";
 					link.l1.go = "storage_3";
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 			else
 			{ // лесник . если забыл с собой корабль то никак.
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "どうぞ。";
 				link.l1 = "ありがとう。";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		case "storage_1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
 			dialog.text = "覚えているだろうが、前払いで一ヶ月分の報酬が必要なんだ。";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "もちろん、覚えているよ。はい、どうぞ。";
 				link.l1.go = "storage_11";
@@ -340,30 +340,30 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_11":
-			AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			NPChar.Storage.Activate = true;
 			Achievment_Set("ach_67"); // ugeen 2016
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 				
 		case "storage_2":			
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 		
 		case "storage_3":			
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;		
 
 		case "storage_04":
@@ -375,11 +375,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_4":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 			
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "それから家賃についてだが、まだ俺に借りがあるぞ "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))			
+				dialog.text = "それから家賃についてだが、まだ俺に借りがあるぞ "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "「いいだろう。」";
 					link.l1.go = "storage_5";
@@ -388,7 +388,7 @@ void ProcessDialogEvent()
 			else
 			{ // лесник . если нет корабля то и товар не забрать
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "荷物を集めてくれ、俺が倉庫を閉める。";
 				link.l1 = "「いいだろう。」";
@@ -405,7 +405,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
+			LeaveStorage(NPChar, rColony, int(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
@@ -422,7 +422,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_2";
 		break;
 		case "ShipyardsMap_2":
-			if (sti(pchar.questTemp.different.ShipyardsMap.skladFight))
+			if (int(pchar.questTemp.different.ShipyardsMap.skladFight))
 			{
 				dialog.text = "見ろよ！おい、衛兵ども、ここに泥棒がいるぞ！！！";
 				link.l1 = "「泥棒だって？俺はただ話がしたかっただけだ！」";
@@ -446,10 +446,10 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_4";
 		break;
 		case "ShipyardsMap_4":
-			dialog.text = "ふむ、これでよし……よし！さあ、渡してくれ "+FindRussianMoneyString(sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+"、それで翌日には造船所の扉を開けておくよ。";
+			dialog.text = "ふむ、これでよし……よし！さあ、渡してくれ "+FindRussianMoneyString(int(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+"、それで翌日には造船所の扉を開けておくよ。";
 			link.l1 = "それは高すぎるな。じゃあ、諦めるしかねえか……";
 			link.l1.go = "exit";
-			if (sti(pchar.money) >= (sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
+			if (int(pchar.money) >= (int(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
 			{
 				link.l2 = "よし、わかった。約束通りに金を受け取ってやる。";
 				link.l2.go = "ShipyardsMap_5";
@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 			dialog.text = "心配するな、必ずやってみせる。";
 			link.l1 = "そうだといいんだが……";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
 			AddQuestRecord("ShipyardsMap", "5");
 			AddQuestUserData("ShipyardsMap", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			//снимаем close_for_night

@@ -38,7 +38,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "storehelper_1":
             dialog.text = "一千枚八里亚尔银币。 你什么都不用做, 一个小时后, 你要找的候选人就会在我的酒馆里, 有好几个。 你可以和他们交谈, 选择你最喜欢的那个。 ";
-            if (sti(Pchar.money) >= 1000)
+            if (int(Pchar.money) >= 1000)
             {
                 link.l1 = "啊... 好吧, 给你, 拿一千! ";
                 link.l1.go = "storehelper_2";

@@ -7,11 +7,11 @@ float LAi_CalcExperienceForBlade(aref attack, aref enemy, string attackType, boo
 	float re = 1.0;
 	if(CheckAttribute(attack, "rank"))
 	{
-		ra = stf(attack.rank);
+		ra = float(attack.rank);
 	}
 	if(CheckAttribute(enemy, "rank"))
 	{
-		re = stf(enemy.rank);
+		re = float(enemy.rank);
 	}
 	if(ra < 1.0) ra = 1.0;
 	if(re < 1.0) re = 1.0;
@@ -34,9 +34,9 @@ float LAi_CalcExperienceForBlade(aref attack, aref enemy, string attackType, boo
 			dmg = dmg*1.5;
 		break;
 	}
-	if (stf(enemy.chr_ai.hp) < dmg)
+	if (float(enemy.chr_ai.hp) < dmg)
 	{
-       dmg = stf(enemy.chr_ai.hp);
+       dmg = float(enemy.chr_ai.hp);
 	}
 	return dmg;
 }
@@ -49,33 +49,33 @@ void ApplyExpFromStrike(ref attack, ref enemy, bool isDead, string attackType, s
 
 	if (weaponType == MUSKET_ITEM_TYPE)
 	{
-		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, Makefloat(exp*0.02));
-		else AddCharacterExpToSkill(attack, SKILL_PISTOL, Makefloat(exp*0.2));
+		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, float(exp*0.02));
+		else AddCharacterExpToSkill(attack, SKILL_PISTOL, float(exp*0.2));
 	}
 	else
 	{
-		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), Makefloat(exp*0.02));
-		else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), Makefloat(exp*0.2));
+		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), float(exp*0.02));
+		else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), float(exp*0.2));
 	}
 
 	if(!isDead) return;
 
 	float ra = 1.0;
 	float re = 1.0;
-	if (CheckAttribute(attack, "rank")) ra = stf(attack.rank);
-	if (CheckAttribute(enemy, "rank")) re = stf(enemy.rank);
+	if (CheckAttribute(attack, "rank")) ra = float(attack.rank);
+	if (CheckAttribute(enemy, "rank")) re = float(enemy.rank);
 
 	float kExpKill = EXP_FOR_KILL; // ИГРАЕМСЯ СКОРОСТЬЮ НАБОРА ОПЫТА ЗА УБИЙСТВО
 	
 	if (weaponType == MUSKET_ITEM_TYPE)
 	{
-		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
-		else AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);
+		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, float((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
+		else AddCharacterExpToSkill(attack, SKILL_PISTOL, float(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);
 	}
 	else
 	{
-		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
-		else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);	
+		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), float((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
+		else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), float(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);
 	}
 
 	AddCharacterExpToSkill(attack, SKILL_DEFENCE, 1);

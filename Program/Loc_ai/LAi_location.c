@@ -61,7 +61,7 @@ bool LAi_LocationIsMonstersGen(ref location)
 	//Проверим таймер на запрет генерации монстров
 	if(CheckAttribute(location, "monstersTimer"))
 	{
-		if (GetNpcQuestPastDayParam(location, "monstersTimer") <= sti(location.monstersTimer))
+		if (GetNpcQuestPastDayParam(location, "monstersTimer") <= int(location.monstersTimer))
 			return false;
 		else
 			DeleteAttribute(location, "monstersTimer");
@@ -73,8 +73,8 @@ bool LAi_LocationIsMonstersGen(ref location)
 	{
 		if(CheckAttribute(location, "monsters.etime"))
 		{
-			float start = stf(location.monsters.stime);
-			float end = stf(location.monsters.etime);
+			float start = float(location.monsters.stime);
+			float end = float(location.monsters.etime);
 			if(LAi_login_CheckTime(start, end)) return true;
 		}
 	}
@@ -95,7 +95,7 @@ void LAi_LocationFantomsGen(ref location, bool isEnable)
 bool LAi_LocationIsFantomsGen(ref location)
 {
 	if(CheckAttribute(location, "fantoms") == false) return false;
-	if(sti(location.fantoms) != true) return false;
+	if(int(location.fantoms) != true) return false;
 	return true;
 }
 

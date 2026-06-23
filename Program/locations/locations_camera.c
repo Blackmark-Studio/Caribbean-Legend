@@ -52,9 +52,9 @@ bool locCameraFollowEx(bool isTeleport)
 		LAi_CharacterEnableDialog(pchar);
 	bool res;
 	if(isTeleport)
-		res = SendMessage(&locCamera, "ll", MSG_CAMERA_FOLLOW, isTeleport);
+		res = bool(SendMessage(&locCamera, "ll", MSG_CAMERA_FOLLOW, isTeleport));
 	else
-		res = SendMessage(&locCamera, "l", MSG_CAMERA_FOLLOW);
+		res = bool(SendMessage(&locCamera, "l", MSG_CAMERA_FOLLOW));
 	locCameraCurMode = LOCCAMERA_FOLLOW;
 	locCameraSetFollowCamAngleToCharacterAngle();
 	return res;
@@ -74,7 +74,7 @@ bool locCameraIsFPVMode()
 {
 	if(IsEntity(&locCamera) == 0)
 		return false;
-	return SendMessage(&locCamera, "l", -9);
+	return bool(SendMessage(&locCamera, "l", -9));
 }
 
 void locCameraSetFollowCamAngleToCharacterAngle()
@@ -94,7 +94,7 @@ bool locCameraToPosEx(float x, float y, float z, bool isTeleport, float fMorphSp
 //	if(locCameraEnableFree == true) return true;
 	int delta = GetDeltaTime();
 	fMorphSpeed *= delta * 0.02;
-	bool res = SendMessage(&locCamera, "lffflf", MSG_CAMERA_TOPOS, x, y, z, isTeleport, fMorphSpeed);
+	bool res = bool(SendMessage(&locCamera, "lffflf", MSG_CAMERA_TOPOS, x, y, z, isTeleport, fMorphSpeed));
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;
 }
@@ -103,7 +103,7 @@ bool locCameraToPosEx(float x, float y, float z, bool isTeleport, float fMorphSp
 bool locCameraFree()
 {
 	if(IsEntity(&locCamera) == 0) return false;
-	bool res = SendMessage(&locCamera, "l", MSG_CAMERA_FREE);
+	bool res = bool(SendMessage(&locCamera, "l", MSG_CAMERA_FREE));
 	locCameraCurMode = LOCCAMERA_FREE;
 	return res;
 }
@@ -112,8 +112,7 @@ bool locCameraFree()
 bool locCameraLock(float ax)
 {
 	if(IsEntity(&locCamera) == 0) return false;
-	bool res = SendMessage(&locCamera, "lf", MSG_CAMERA_MOVE, ax);
-	return res;
+	return bool(SendMessage(&locCamera, "lf", MSG_CAMERA_MOVE, ax));
 }
 
 
@@ -165,7 +164,7 @@ bool locCameraFromToPos(float from_x,float from_y,float from_z, bool isTeleport,
 		return false;
 //	if(locCameraEnableFree == true)
 //		return true;
-	bool res = SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, true);
+	bool res = bool(SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, true));
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;
 }
@@ -176,7 +175,7 @@ bool locCameraFromToPosEx(float from_x, float from_y, float from_z, bool isTelep
 		return false;
 //	if(locCameraEnableFree == true)
 //		return true;
-	bool res = SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, targetChr);
+	bool res = bool(SendMessage(&locCamera, "lffflfffl", -4, from_x, from_y, from_z, isTeleport, to_x, to_y, to_z, targetChr));
 	locCameraCurMode = LOCCAMERA_TOPOS;
 	return res;
 }
@@ -413,7 +412,7 @@ void locCameraNextState()
 		return;
 	}
 	
-	time = sti(curCamera.time);
+	time = int(curCamera.time);
 	
 	Log_TestInfo("locCameraNextState() == " + curCamera.type); 
 }
@@ -450,86 +449,86 @@ void locCameraUpdate()
 	
 	float timeScale = GetTimeScale(); // Текущее ускорение времени
 	
-	if(iLocCameraCurState != -1 && !sti(InterfaceStates.Launched))
+	if(iLocCameraCurState != -1 && !int(InterfaceStates.Launched))
 	{
 		if(GetCharacterPos(PChar, &charX, &charY, &charZ))
 		{
 			curCameraState = &objLocCameraStates[iLocCameraCurState];
 			
-			time = stf(curCameraState.time);
+			time = float(curCameraState.time);
 			
 			bool bSetPoint = false;
 			
 			if(CheckAttribute(curCameraState, "speedpoints.cur"))
 			{
 				sPoint = "point" + curCameraState.speedpoints.cur;
-				accel = stf(curCameraState.speedpoints.(sPoint).accel);
-				kSpeedTimer = stf(curCameraState.speedpoints.(sPoint).timer);
+				accel = float(curCameraState.speedpoints.(sPoint).accel);
+				kSpeedTimer = float(curCameraState.speedpoints.(sPoint).timer);
 			}
 			
 			switch(curCameraState.type)
 			{
 				case LOCCAMERA_ROTATE:
-					rotateRadius = stf(curCameraState.rotateRadius);
-					rotateAngle = stf(curCameraState.angle);
+					rotateRadius = float(curCameraState.rotateRadius);
+					rotateAngle = float(curCameraState.angle);
 					
 					// X rotation
-					if(stf(curCameraState.rotateX) != 0.0)
+					if(float(curCameraState.rotateX) != 0.0)
 					{
-						curCameraState.rotateX = stf(curCameraState.rotateX) + accel * dltTime;
-						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + stf(curCameraState.offsetX);
-						curCameraState.curCameraZ = charZ + cos(rotateAngle) * rotateRadius + stf(curCameraState.offsetZ);
-						curCameraState.angle = rotateAngle + stf(curCameraState.rotateX) * timeScale;
+						curCameraState.rotateX = float(curCameraState.rotateX) + accel * dltTime;
+						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + float(curCameraState.offsetX);
+						curCameraState.curCameraZ = charZ + cos(rotateAngle) * rotateRadius + float(curCameraState.offsetZ);
+						curCameraState.angle = rotateAngle + float(curCameraState.rotateX) * timeScale;
 					}
 					else // Иначе просто обновление
 					{
-						curCameraState.curCameraX = charX + stf(curCameraState.offsetX);
-						curCameraState.curCameraZ = charZ + stf(curCameraState.offsetZ);
+						curCameraState.curCameraX = charX + float(curCameraState.offsetX);
+						curCameraState.curCameraZ = charZ + float(curCameraState.offsetZ);
 					}
 					
 					// Y rotation
-					if(stf(curCameraState.rotateY) != 0.0)
+					if(float(curCameraState.rotateY) != 0.0)
 					{
-						curCameraState.rotateY = stf(curCameraState.rotateY) + accel * dltTime;
-						curCameraState.curCameraY = charY + cos(rotateAngle) * rotateRadius + stf(curCameraState.offsetY);
-						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + stf(curCameraState.offsetX);
-						curCameraState.angle = rotateAngle + stf(curCameraState.rotateY) * timeScale;
+						curCameraState.rotateY = float(curCameraState.rotateY) + accel * dltTime;
+						curCameraState.curCameraY = charY + cos(rotateAngle) * rotateRadius + float(curCameraState.offsetY);
+						curCameraState.curCameraX = charX + sin(rotateAngle) * rotateRadius + float(curCameraState.offsetX);
+						curCameraState.angle = rotateAngle + float(curCameraState.rotateY) * timeScale;
 					}
 					else
 					{
-						curCameraState.curCameraY = charY + stf(curCameraState.offsetY);
+						curCameraState.curCameraY = charY + float(curCameraState.offsetY);
 					}
 				break;
 				
 				case LOCCAMERA_FLYTOPOS:
-					curCameraState.speedX = stf(curCameraState.speedX) + accel * dltTime;
-					curCameraState.speedY = stf(curCameraState.speedY) + accel * dltTime;
-					curCameraState.speedZ = stf(curCameraState.speedZ) + accel * dltTime;
-					curCameraState.curCameraX = stf(curCameraState.curCameraX) + stf(curCameraState.speedX) * timeScale;
-					curCameraState.curCameraY = stf(curCameraState.curCameraY) + stf(curCameraState.speedY) * timeScale;
-					curCameraState.curCameraZ = stf(curCameraState.curCameraZ) + stf(curCameraState.speedZ) * timeScale;
+					curCameraState.speedX = float(curCameraState.speedX) + accel * dltTime;
+					curCameraState.speedY = float(curCameraState.speedY) + accel * dltTime;
+					curCameraState.speedZ = float(curCameraState.speedZ) + accel * dltTime;
+					curCameraState.curCameraX = float(curCameraState.curCameraX) + float(curCameraState.speedX) * timeScale;
+					curCameraState.curCameraY = float(curCameraState.curCameraY) + float(curCameraState.speedY) * timeScale;
+					curCameraState.curCameraZ = float(curCameraState.curCameraZ) + float(curCameraState.speedZ) * timeScale;
 					if(CheckAttribute(curCameraState, "lookTo") && curCameraState.lookTo != LOCCAMERA_LOOKTOHERO)
 					{
 						if(curCameraState.lookTo == LOCCAMERA_LOOKTOANGLE)
 						{
-							curCameraState.lookTo.x = stf(curCameraState.curCameraX) + stf(curCameraState.lookTo.offsetX);
-							curCameraState.lookTo.y = stf(curCameraState.curCameraY) + stf(curCameraState.lookTo.offsetY);
-							curCameraState.lookTo.z = stf(curCameraState.curCameraZ) + stf(curCameraState.lookTo.offsetZ);
+							curCameraState.lookTo.x = float(curCameraState.curCameraX) + float(curCameraState.lookTo.offsetX);
+							curCameraState.lookTo.y = float(curCameraState.curCameraY) + float(curCameraState.lookTo.offsetY);
+							curCameraState.lookTo.z = float(curCameraState.curCameraZ) + float(curCameraState.lookTo.offsetZ);
 						}
 						//Log_TestInfo("camPos = " + curCameraState.curCameraX + ", " + curCameraState.curCameraY + ", " + curCameraState.curCameraZ + ", lookTo = " + curCameraState.lookTo.x + ", " + curCameraState.lookTo.y + ", " + curCameraState.lookTo.z);
-						locCameraFromToPosEx(stf(curCameraState.curCameraX), stf(curCameraState.curCameraY), stf(curCameraState.curCameraZ), true, stf(curCameraState.lookTo.x), stf(curCameraState.lookTo.y), stf(curCameraState.lookTo.z), false);
+						locCameraFromToPosEx(float(curCameraState.curCameraX), float(curCameraState.curCameraY), float(curCameraState.curCameraZ), true, float(curCameraState.lookTo.x), float(curCameraState.lookTo.y), float(curCameraState.lookTo.z), false);
 						bSetPoint = true;
 					}
 				break;
 				
 				case LOCCAMERA_NEARHERO:
-					offsetX = stf(curCameraState.offsetX);
-					offsetZ = stf(curCameraState.offsetZ);
+					offsetX = float(curCameraState.offsetX);
+					offsetZ = float(curCameraState.offsetZ);
 					
-					if(sti(curCameraState.canRotate) && GetCharacterAy(PChar, &charAY))
+					if(int(curCameraState.canRotate) && GetCharacterAy(PChar, &charAY))
 					{
-						curCameraState.curCameraX = charX + offsetX * sin(charAY + stf(curCameraState.offsetAY));
-						curCameraState.curCameraZ = charZ + offsetZ * cos(charAY + stf(curCameraState.offsetAY));
+						curCameraState.curCameraX = charX + offsetX * sin(charAY + float(curCameraState.offsetAY));
+						curCameraState.curCameraZ = charZ + offsetZ * cos(charAY + float(curCameraState.offsetAY));
 					}
 					else
 					{
@@ -537,12 +536,12 @@ void locCameraUpdate()
 						curCameraState.curCameraZ = charZ + offsetZ;
 					}
 					
-					curCameraState.curCameraY = charY + stf(curCameraState.offsetY);
+					curCameraState.curCameraY = charY + float(curCameraState.offsetY);
 				break;
 			}
 			
 			if(!bSetPoint)
-				locCameraToPos(stf(curCameraState.curCameraX), stf(curCameraState.curCameraY), stf(curCameraState.curCameraZ), true);
+				locCameraToPos(float(curCameraState.curCameraX), float(curCameraState.curCameraY), float(curCameraState.curCameraZ), true);
 			
 			if(time != -1.0)
 			{
@@ -555,9 +554,9 @@ void locCameraUpdate()
 				kSpeedTimer -= dltTime;
 				if(kSpeedTimer <= 0.0)
 				{
-					sPoint = "point" + (sti(curCameraState.speedpoints.cur) + 1);
+					sPoint = "point" + (int(curCameraState.speedpoints.cur) + 1);
 					if(CheckAttribute(curCameraState, "speedpoints."+sPoint))
-						curCameraState.speedpoints.cur = sti(curCameraState.speedpoints.cur) + 1;
+						curCameraState.speedpoints.cur = int(curCameraState.speedpoints.cur) + 1;
 					else
 						DeleteAttribute(curCameraState, "speedpoints");
 				}
@@ -573,12 +572,12 @@ void locCameraUpdate()
 			// Тут высчитываем попадание в нужную точку
 			if(time == -1.0 && curCameraState.type == LOCCAMERA_FLYTOPOS)
 			{
-				if(stf(curCameraState.curCameraX) + stf(curCameraState.speedX) * timeScale >= stf(curCameraState.endCameraX) &&
-					stf(curCameraState.curCameraX) - stf(curCameraState.speedX) * timeScale <= stf(curCameraState.endCameraX) &&
-					stf(curCameraState.curCameraY) + stf(curCameraState.speedY) * timeScale >= stf(curCameraState.endCameraY) &&
-					stf(curCameraState.curCameraY) - stf(curCameraState.speedY) * timeScale <= stf(curCameraState.endCameraY) &&
-					stf(curCameraState.curCameraZ) + stf(curCameraState.speedZ) * timeScale >= stf(curCameraState.endCameraZ) &&
-					stf(curCameraState.curCameraZ) - stf(curCameraState.speedZ) * timeScale <= stf(curCameraState.endCameraZ))
+				if(float(curCameraState.curCameraX) + float(curCameraState.speedX) * timeScale >= float(curCameraState.endCameraX) &&
+					float(curCameraState.curCameraX) - float(curCameraState.speedX) * timeScale <= float(curCameraState.endCameraX) &&
+					float(curCameraState.curCameraY) + float(curCameraState.speedY) * timeScale >= float(curCameraState.endCameraY) &&
+					float(curCameraState.curCameraY) - float(curCameraState.speedY) * timeScale <= float(curCameraState.endCameraY) &&
+					float(curCameraState.curCameraZ) + float(curCameraState.speedZ) * timeScale >= float(curCameraState.endCameraZ) &&
+					float(curCameraState.curCameraZ) - float(curCameraState.speedZ) * timeScale <= float(curCameraState.endCameraZ))
 				{
 					locCameraNextState();
 				}
@@ -594,7 +593,7 @@ void AimingActive()
 	
 	if(isActive)
 	{
-		locCameraSetRadius(stf(locCamera.maxRadius)*0.75);
+		locCameraSetRadius(float(locCamera.maxRadius)*0.75);
 		locCamera.zoom.lock = true;
 		BI_CrosshairSet();
 		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, true);
@@ -605,9 +604,9 @@ void AimingActive()
 			locCamera.zoom = 0.75;
 		if(CheckAttribute(locCamera, "zoom.lock"))
 			DeleteAttribute(&locCamera, "zoom.lock");
-		if(stf(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
+		if(float(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
 			locCameraSetFPVMode(true);
-		locCameraSetRadius(stf(locCamera.maxRadius)*stf(locCamera.zoom));
+		locCameraSetRadius(float(locCamera.maxRadius)*float(locCamera.zoom));
 		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, false);
 	}
 }

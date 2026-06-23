@@ -103,8 +103,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Servant_fight":
-		int iRank = sti(pchar.rank) + 5;
-		int iScl = 15 + 2 * sti(pchar.rank);
+		int iRank = int(pchar.rank) + 5;
+		int iScl = 15 + 2 * int(pchar.rank);
 		DialogExit();
 		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 		chrDisableReloadToLocation = true;
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		pchar.quest.Consumption3.win_condition.l2.finish.hour = 3;
 		pchar.quest.Consumption3.function = "Consumption_MeetSergio";
 		pchar.quest.Consumption4.win_condition.l1 = "Timer";
-		pchar.quest.Consumption4.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.Consumption4.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.Consumption4.win_condition.l1.date.day = GetAddingDataDay(0, 0, 1);
 		pchar.quest.Consumption4.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 		pchar.quest.Consumption4.win_condition.l1.date.year = GetAddingDataYear(0, 0, 1);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Sergio_24":
-		dialog.text = "Capitán, parece ser un hombre de confianza. Otra cosa muy significativa es que usted es "+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+" y tienes tu propio barco. Sugiero que concluyamos un acuerdo comercial.";
+		dialog.text = "Capitán, parece ser un hombre de confianza. Otra cosa muy significativa es que usted es "+GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"")+" y tienes tu propio barco. Sugiero que concluyamos un acuerdo comercial.";
 		link.l1 = "¡Suena prometedor! ¿Qué tipo de acuerdo?";
 		link.l1.go = "Sergio_25";
 		break;
@@ -439,12 +439,12 @@ void ProcessDialogEvent()
 				link.l1.go = "oil_trade_exit";
 			}
 		}
-		if (sti(pchar.questTemp.SergioOil) >= 1 && !CheckAttribute(pchar, "questTemp.SergioOilBlock")) // увеличить объём поставок смолами
+		if (int(pchar.questTemp.SergioOil) >= 1 && !CheckAttribute(pchar, "questTemp.SergioOilBlock")) // увеличить объём поставок смолами
 		{
 			link.l4 = "Señor Sergio, quiero comprar más resina. ¿Podría proporcionar lotes, digamos, cinco veces más grandes?";
 			link.l4.go = "UpgradeOil";
 		}
-		if (sti(pchar.questTemp.SergioOil) >= 1 && CheckAttribute(pchar, "questTemp.SergioOilPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок смолами, если в первый раз не принесли
+		if (int(pchar.questTemp.SergioOil) >= 1 && CheckAttribute(pchar, "questTemp.SergioOilPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок смолами, если в первый раз не принесли
 		{
 			link.l4 = "Aquí, como prometido, Señor Sergio, tres mil doblones, como solicitó. Estoy seguro de que con su previsión y mi inversión, esta empresa nos traerá considerables beneficios a ambos.";
 			link.l4.go = "UpgradeOil_Agreed";
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 		else
 			AddCharacterGoods(pchar, GOOD_OIL, 60);
 		AddCharacterExpToSkill(pchar, "Commerce", 200);
-		pchar.questTemp.SergioOil = sti(pchar.questTemp.SergioOil) + 1; // счётчик покупок
+		pchar.questTemp.SergioOil = int(pchar.questTemp.SergioOil) + 1; // счётчик покупок
 		break;
 
 	case "UpgradeOil":
@@ -593,7 +593,7 @@ void ProcessDialogEvent()
 	case "Juan_abordage_4":
 		DialogExit();
 		chrDisableReloadToLocation = true;
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		Lai_SetPlayerType(pchar);
 		LAi_RemoveCheckMinHP(sld);
 		LAi_SetImmortal(sld, true);

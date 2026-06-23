@@ -6,13 +6,13 @@
 #define DAY_TIME_DAY		"Day"
 #define DAY_TIME_EVENING	"Evening"
 
-float GetTime(){ return stf(Environment.time); }
-float GetHour(){ return stf(Environment.date.hour); }
-float GetMinute(){ return stf(Environment.date.min); }
-float GetSecond(){ return stf(Environment.date.sec); }
-int GetDataYear(){ return sti(Environment.date.year); }
-int GetDataMonth(){ return sti(Environment.date.month); }
-int GetDataDay(){ return sti(Environment.date.day); }
+float GetTime(){ return float(Environment.time); }
+float GetHour(){ return float(Environment.date.hour); }
+float GetMinute(){ return float(Environment.date.min); }
+float GetSecond(){ return float(Environment.date.sec); }
+int GetDataYear(){ return int(Environment.date.year); }
+int GetDataMonth(){ return int(Environment.date.month); }
+int GetDataDay(){ return int(Environment.date.day); }
 
 void SetDayTime(string name)
 {
@@ -164,7 +164,7 @@ int GetAddingDataDay(int addYear,int addMonth,int addDay)
 int GetAddingTimeDay(int hour,int minute)
 {
 	float curtime = GetTime();
-	float nexttime = curtime+hour+(makefloat(minute)/60.0);
+	float nexttime = curtime+hour+(float(minute)/60.0);
 	int addingDays = 0;
 	while(nexttime >= 24.0)
 	{
@@ -177,7 +177,7 @@ int GetAddingTimeDay(int hour,int minute)
 int AddTimeToCurrent(int hour,int minute)
 {
 	float curtime = GetTime();
-	float nexttime = curtime + hour + (makefloat(minute)/60.0);
+	float nexttime = curtime + hour + (float(minute)/60.0);
 	int addingDays = 0;
 	while(nexttime >= 24.0)
 	{
@@ -192,11 +192,11 @@ int AddTimeToCurrent(int hour,int minute)
                               AddDataToCurrent() с соответствующим вызовом события. navy. */
     Environment.oldtime = curtime;                          
 	Environment.time = nexttime;
-	Environment.date.hour = makeint(nexttime);
-	worldMap.date.hour = makeint(nexttime);
-	nexttime = (nexttime - stf(Environment.date.hour))*60.0;
-	Environment.date.min = makeint(nexttime);
-	worldMap.date.min = makeint(nexttime);
+	Environment.date.hour = int(nexttime);
+	worldMap.date.hour = int(nexttime);
+	nexttime = (nexttime - float(Environment.date.hour))*60.0;
+	Environment.date.min = int(nexttime);
+	worldMap.date.min = int(nexttime);
     Weather.Time.time = GetTime(); // новая погода
 
 	return addingDays; // boal верунть число дней, чтоб понять, что новый наступил
@@ -281,18 +281,18 @@ int GetPastTime(string timeUnit,
 	}
 	//if(timeUnit=="day")	return dayCount;
 
-	if(timeUnit=="hour") return dayCount*24 + makeint(dtime);
-	if(timeUnit=="minute") return dayCount*1440 + makeint(dtime*60.0);
+	if(timeUnit=="hour") return dayCount*24 + int(dtime);
+	if(timeUnit=="minute") return dayCount*1440 + int(dtime*60.0);
 	return dayCount;
 }
 
 void SetCurrentTime(int hour, int minutes)
 {
-	Environment.date.hour = makefloat(hour);
-	Environment.date.min = makefloat(minutes);
-	Environment.time = makefloat(hour) + makefloat(minutes)/60.0;
-	worldMap.date.hour = makefloat(hour);
-	worldMap.date.min = makefloat(minutes);
+	Environment.date.hour = float(hour);
+	Environment.date.min = float(minutes);
+	Environment.time = float(hour) + float(minutes)/60.0;
+	worldMap.date.hour = float(hour);
+	worldMap.date.min = float(minutes);
 	CreateWeatherEnvironment();
 	RefreshLandTime();
 }
@@ -329,7 +329,7 @@ string AddDaysToDateString(int addDays)
 			mon = 1;
 			Year++;
 			sYear = " "+Year;
-			if(LanguageGetLanguage() == "russian") Year += " года";
+			if(LanguageGetLanguage() == "russian") sYear += " года";
 		}
 	}
 	month = XI_ConvertString("MonthGen_" + Mon);
@@ -382,8 +382,8 @@ int GetFuterTime(string timeUnit,
 	}
 	//if(timeUnit=="day")	return dayCount;
 
-	if(timeUnit=="hour") return dayCount*24 + makeint(dtime);
-	if(timeUnit=="minute") return dayCount*1440 + makeint(dtime*60.0);
+	if(timeUnit=="hour") return dayCount*24 + int(dtime);
+	if(timeUnit=="minute") return dayCount*1440 + int(dtime*60.0);
 	return dayCount;
 } */
 
@@ -400,19 +400,19 @@ int DateStringToInt(string dateString) {
   if (HasSubStr(&dateString, "M")) pos += 3; // AM/PM
   date = strcut(&dateString, pos + 1, strlen(&dateString) - 1);
 
-  totalTime += sti(strcut(&date, 6, 9)) - STARTGAME_YEAR;
+  totalTime += int(strcut(&date, 6, 9)) - STARTGAME_YEAR;
   totalTime *= 365;
 
-  for (int i=1;i <= sti(strcut(&date, 3, 4)); i++) totalTime += GetMonthDays(i); // заливаем дни за прошедшие месяцы
+  for (int i=1;i <= int(strcut(&date, 3, 4)); i++) totalTime += GetMonthDays(i); // заливаем дни за прошедшие месяцы
 
-  totalTime += sti(strcut(&date, 0, 1));
+  totalTime += int(strcut(&date, 0, 1));
   totalTime *= 24;
 
-  totalTime += sti(strcut(&time, 0, 1));
+  totalTime += int(strcut(&time, 0, 1));
   if (HasSubStr(&dateString, "P")) totalTime += 12; // после полудня, накидываем ещё 12 часов
   totalTime *= 60;
 
-  totalTime += sti(strcut(&time, 3, 4));
+  totalTime += int(strcut(&time, 3, 4));
 
   return totalTime;
 }

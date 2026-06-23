@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 		case "prepare_convoy_quest_3":
 			LookShipConvoy();
 			GenerateConvoyQuest(npchar);
-			dialog.text = "나를 호위해서 데려다줘야 해 "+XI_ConvertString("Colony"+pchar.quest.destination+"Gen")+", 이(가) 위치한 곳은 "+XI_ConvertString(GetIslandByCityName(pchar.quest.destination)+"Dat")+", 에서 "+FindRussianDaysString(sti(pchar.ConvoyQuest.iDay))+", 그 대가로 내가 돈을 주지 "+FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney))+". 그래서, 결정했나?";
+			dialog.text = "나를 호위해서 데려다줘야 해 "+XI_ConvertString("Colony"+pchar.quest.destination+"Gen")+", 이(가) 위치한 곳은 "+XI_ConvertString(GetIslandByCityName(pchar.quest.destination)+"Dat")+", 에서 "+FindRussianDaysString(int(pchar.ConvoyQuest.iDay))+", 그 대가로 내가 돈을 주지 "+FindRussianMoneyString(int(pchar.ConvoyQuest.convoymoney))+". 그래서, 결정했나?";
 			link.l1 = "나도 끼겠어.";
 			link.l1.go = "convoy_agreeded";
 			link.l2 = "흥미로운 제안 같지 않군.";
@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 			//слухи
 			AddSimpleRumour(LinkRandPhrase("A merchant captain by the name of " + GetFullName(npchar) + " says that captain " + GetMainCharacterNameDat() + " can be trusted when one needs an escort.", 
 				"Negociant named " + GetFullName(npchar) + " says that captain " + GetMainCharacterNameDat() + " can be trusted. "+ GetSexPhrase("He","She") +" protected his ship in the best way possible while escorting him to " + XI_ConvertString("Colony" + pchar.quest.destination + "Gen") + ".", 
-				"I heard that you keep the word given to trader captains that ask you for an escort. A trader named " + GetFullName(npchar) + " speaks well about you."), sti(npchar.nation), 40, 1);
+				"I heard that you keep the word given to trader captains that ask you for an escort. A trader named " + GetFullName(npchar) + " speaks well about you."), int(npchar.nation), 40, 1);
 			pchar.quest.generate_convoy_quest_progress = "completed";
 			chrDisableReloadToLocation = false;
 			npchar.LifeDay = 0;
@@ -90,17 +90,17 @@ void GenerateConvoyQuest(ref npchar)
 	DeleteAttribute(NPChar, "Ship");
     int iShipCoef = SetShipConvoyQuest_Traider(NPChar);
 
-	iNation = GetRelation2BaseNation(sti(npchar.nation)); //если привезти нужно во вражеский город
+	iNation = GetRelation2BaseNation(int(npchar.nation)); //если привезти нужно во вражеский город
 	int daysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.ConvoyQuest.City), GetArealByCityName(pchar.quest.destination));
-	if (sti(daysQty) > 14) daysQty = 14;
-	pchar.ConvoyQuest.iDay = makeint(sti(daysQty)*(frand(1.3)+0.7));
-	iTradeMoney = (makeint(daysQty * 400 * stf(pchar.GenQuest.Convoy.Shipmod))) + (iShipCoef * 700);
+	if (int(daysQty) > 14) daysQty = 14;
+	pchar.ConvoyQuest.iDay = int(int(daysQty)*(frand(1.3)+0.7));
+	iTradeMoney = (int(daysQty * 400 * float(pchar.GenQuest.Convoy.Shipmod))) + (iShipCoef * 700);
 
-	//Log_Info(FindRussianDaysString(sti(daysQty)));
+	//Log_Info(FindRussianDaysString(int(daysQty)));
 	//Log_Info(pchar.quest.destination);
 	//Log_Info(pchar.ConvoyQuest.City);
 
-	SetTimerCondition("generate_convoy_quest_timer", 0, 0, sti(pchar.ConvoyQuest.iDay), false);
+	SetTimerCondition("generate_convoy_quest_timer", 0, 0, int(pchar.ConvoyQuest.iDay), false);
 
 	pchar.quest.generate_convoy_quest_progress = "begin";
 
@@ -111,7 +111,7 @@ void GenerateConvoyQuest(ref npchar)
 
 void LookShipConvoy()
 {
-	switch(sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(int(RealShips[int(Pchar.Ship.Type)].Class))
 	{
 		case 1:
 			pchar.GenQuest.GetPassenger.Shipmod = 1.0;
@@ -139,7 +139,7 @@ void LookShipConvoy()
 
 int SetShipConvoyQuest_Traider(ref _chr)
 {
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	int iShip, iShipCoef;
 	
 	if(iRank < 5)

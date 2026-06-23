@@ -11,7 +11,8 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
+	int iMoney = 0;
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -210,9 +211,7 @@ void ProcessDialogEvent()
 			link.l1 = "고마워, 레이튼. 언젠가 다시 올 거라고 했잖아, 하하!";
 			link.l1.go = "return_1";
 		break;
-		
-		int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
-		int iMoney = 0;
+
 		case "return_1":
 			dialog.text = "좋아. 혹시 팔 만한 음식이 있나? 시세의 두 배로 살 준비가 되어 있어.";
 			if (iTrade > 0)
@@ -265,7 +264,7 @@ void ProcessDialogEvent()
 			}
 			if (iTemp >= 15000) // лесник
 			{
-			 iTemp = (15000 - sti(npchar.quest.foodqty))	
+			 iTemp = (15000 - int(npchar.quest.foodqty))
              dialog.text = "예수 그리스도, 그건 우리한테 너무 많아! 저렇게 많으면 상하기 전에 절대 다 못 먹지. 지금은 더 이상 받을 수 없어 "+iTemp+".";
 			 link.l1 = "알겠소.";
 			 link.l1.go = "trade_3";
@@ -280,7 +279,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_3": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 		    iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			dialog.text = "거래지. 내가 돈 줄게 "+FindRussianMoneyString(iMoney)+" 물건값으로. 공정하지?";
 			link.l1 = "공정하군! 거래해서 좋았어!";
@@ -290,15 +289,15 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_4": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "제기랄! 내 창고가 꽉 찼군! 앞으로 반년은 식량을 살 필요도 없겠어.";
@@ -319,11 +318,11 @@ void ProcessDialogEvent()
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "훌륭하군! 이제 내 창고가 가득 찼어. 앞으로 반년 동안은 식량을 살 필요가 없겠어.";
@@ -342,7 +341,7 @@ void ProcessDialogEvent()
 		
 		case "head": // стандартный диалог Декстера-адмирала
 			dialog.text = "아-아, "+GetFullName(pchar)+"! 반갑군! 무슨 일이야?";
-			if (iTrade > 0 && sti(npchar.quest.foodqty) < 15000)
+			if (iTrade > 0 && int(npchar.quest.foodqty) < 15000)
 			{
 				link.l1 = "나한테 식량 좀 살래?";
 				link.l1.go = "trade";

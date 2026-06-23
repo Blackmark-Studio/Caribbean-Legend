@@ -1507,3 +1507,5 @@ itmname_blade_34 {익사자의 검}
 itmdescr_blade_34 {얼어붙은 선박 위에서 발견한 이 해적 검은 산호와 폴립이 잔뜩 달라붙어 있습니다. 충분히 길고 무거워서, 제3자세에서 강력한 찌르기와 베기를 손쉽게 날릴 수 있습니다.}
 itmname_greenIdol {녹색 돌 우상}
 itmdescr_greenIdol {이 우상은 당신이 꿈속에서 직접 돌을 깎아 만든 것입니다. 그 부자연스러운 형상과 소름 끼치는 문양은 혐오감과 정신의 혼탁을 불러옵니다. 때때로 그것이 무언가를 속삭이는 듯합니다...}
+itmname_nocturlabe {Notturnale}
+itmdescr_nocturlabe {Un ingegnoso strumento che permette di determinare l’ora esatta grazie alle stelle. Semplifica notevolmente e velocizza le traversate marittime.}

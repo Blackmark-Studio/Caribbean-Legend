@@ -3,7 +3,7 @@ void GenerateIslandShips(string sIslandID)
 {
 	//if (!TestRansackCaptain) return; // to_do
 	
-	int iColonyQuantity = sti(Islands[FindIsland(sIslandID)].colonyquantity);
+	int iColonyQuantity = int(Islands[FindIsland(sIslandID)].colonyquantity);
 	int iNation;
 	int iShipsQuantity;
 	int iChar;
@@ -18,14 +18,14 @@ void GenerateIslandShips(string sIslandID)
 				// belamour установить местных рыбаков -->
 				if(CheckAttribute(pchar,"GenQuest.FishingBoat"))
 				{
-					GenerateFishingBoat(sIslandID, sti(Colonies[i].nation));
+					GenerateFishingBoat(sIslandID, int(Colonies[i].nation));
 				}
 				// <-- рыбацкое судно			  
 				if (!CheckAttribute(&colonies[i], "GenShipDate") || GetNpcQuestPastDayParam(&colonies[i], "GenShipDate") > 0)
 				{
                     SaveCurrentNpcQuestDateParam(&colonies[i], "GenShipDate"); // дата заполнения
                     
-					iNation = sti(Colonies[i].nation);
+					iNation = int(Colonies[i].nation);
 					int seed = rand(99);
 					if (seed >= 95) return;                            // 5% что не будет
 					else if (seed >= 85) iShipsQuantity = 1+rand(1);   // 10% что будет 1-2
@@ -34,9 +34,9 @@ void GenerateIslandShips(string sIslandID)
 
 					// костыль для лимитинга кол-ва кораблей, если у ГГ эскадра, пока беда с локаторами
 					int playerShipsQty = GetCompanionQuantity(pchar);
-					if (playerShipsQty > 3) iShipsQuantity = func_fmin(2, iShipsQuantity);
-					else if (playerShipsQty > 2) iShipsQuantity = func_fmin(3, iShipsQuantity);
-					else if (playerShipsQty > 1) iShipsQuantity = func_fmin(4, iShipsQuantity);
+					if (playerShipsQty > 3) iShipsQuantity = int(func_fmin(2, iShipsQuantity));
+					else if (playerShipsQty > 2) iShipsQuantity = int(func_fmin(3, iShipsQuantity));
+					else if (playerShipsQty > 1) iShipsQuantity = int(func_fmin(4, iShipsQuantity));
 
 					while (iShipsQuantity > 0)
 					{
@@ -58,7 +58,7 @@ void GenerateIslandShips(string sIslandID)
 						{
 							characters[iChar].Ship.Mode = "trade";
 						}
-						if (rand(4) == 1 || GetCharacterShipClass(&characters[iChar]) == 1) SetRandGeraldSail(&characters[iChar], sti(characters[iChar].Nation));
+						if (rand(4) == 1 || GetCharacterShipClass(&characters[iChar]) == 1) SetRandGeraldSail(&characters[iChar], int(characters[iChar].Nation));
 						characters[iChar].AlwaysSandbankManeuver = true;  // тупым запрет тонуть об берег
 						characters[iChar].AnalizeShips = true; //анализить вражеские корабли
 						characters[iChar].location.from_sea = colonies[i].from_sea;
@@ -76,7 +76,7 @@ void GenerateIslandShips(string sIslandID)
 
 void PlaceCharacterShip(int iChar, int iNation, string sIslandID, int iColonyIdx)
 {
-	int iColonyNum = sti(colonies[iColonyIdx].num);
+	int iColonyNum = int(colonies[iColonyIdx].num);
 	
 	string sColonyID = colonies[iColonyIdx].id;
 	
@@ -105,7 +105,7 @@ void PlaceCharacterShip(int iChar, int iNation, string sIslandID, int iColonyIdx
 		//Group_SetTaskNone(sGroup);
 	}
 
-	if (sti(characters[iChar].nation) != PIRATE && GetNationRelation2Character(iNation, nMainCharacterIndex) == RELATION_ENEMY)
+	if (int(characters[iChar].nation) != PIRATE && GetNationRelation2Character(iNation, nMainCharacterIndex) == RELATION_ENEMY)
 	{
 		Group_SetTaskAttack(sGroup, PLAYER_GROUP);
 	}
@@ -143,7 +143,7 @@ void GenerateFishingBoat(string IslandID, int Nation)
 	sld.greeting = "fisher";
 	if(rand(1)==0)FantomMakeCoolSailor(sld, SHIP_TARTANE,"" ,-1 , 10, 10, 10);
 	else FantomMakeCoolSailor(sld, SHIP_LUGGER, "", CANNON_TYPE_CANNON_LBS3, 10, 10, 10);
-	sld.Ship.Crew.Quantity = sti(GetOptCrewQuantity(sld)/2);
+	sld.Ship.Crew.Quantity = int(GetOptCrewQuantity(sld)/2);
 	NullCharacterGoods(sld); // удалить товары
 	SetCharacterGoods(sld, GOOD_BALLS, 50);
 	SetCharacterGoods(sld, GOOD_POWDER, 50);

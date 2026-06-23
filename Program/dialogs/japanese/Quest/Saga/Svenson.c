@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1 = "location";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1.location = "Shore53";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2 = "Timer";
-				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = sti(GetTime());
+				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = int(GetTime());
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.day   = GetAddingDataDay(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.month = GetAddingDataMonth(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.year  = GetAddingDataYear(0, 0, 3);
@@ -1063,12 +1063,12 @@ void ProcessDialogEvent()
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "やっぱりな。奴の船倉にはどれだけ積んでたんだ？";
-			link.l1 = "見つけた "+FindRussianQtyString(sti(npchar.quest.bakaut))+" 「オイスター号」で。";
+			link.l1 = "見つけた "+FindRussianQtyString(int(npchar.quest.bakaut))+" 「オイスター号」で。";
 			link.l1.go = "saga_56";
 		break;
 		
 		case "saga_56":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp > 100)
 			{
 				dialog.text = "おおっ！そんなに倉庫に入ったことは今までなかったぜ。自分の手で大金を手に入れたやつがいるとはな。ありがとな、 "+pchar.name+"、あんたは本当に頼りになるな。すぐに品物を売ってくるぜ、もう買い手はついてるんだ。 明日には金を用意しておくからな。";
@@ -1112,11 +1112,11 @@ void ProcessDialogEvent()
 		case "saga_oust":
 			if (CheckAttribute(npchar, "quest.bakaut"))
 			{
-				if (sti(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
+				if (int(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
 				else 
 				{
 					SaveCurrentNpcQuestDateParam(npchar, "bakaut_date");
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(npchar.quest.bakaut));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(npchar.quest.bakaut));
 				}
 				pchar.questTemp.Saga = "removebakaut";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
 				}
 			} // есть ли у нас Устрица
 			dialog.text = "待て！「オイスター」を拿捕したのか？";
@@ -1162,10 +1162,10 @@ void ProcessDialogEvent()
 		
 		case "saga_57":
 			int idlt;
-			iTemp = sti(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
+			iTemp = int(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
 			if (iTemp > 1600)
 			{
-				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
+				idlt = int(iTemp-1500)/2; // доля Бонса :)
 				dialog.text = "受け取った "+iTemp+" そのための金貨だ。千五百は弁護士への支払い分で、さらにお前のドゥブロン分け前もある―― "+idlt+"。はい、どうぞ。";
 				link.l1 = "見事だ！これで安心してロクスリーへ出発できる。";
 				link.l1.go = "saga_58";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "おっと！俺の買い手たちはもっと安く払うんだが……";
-			link.l1 = "全体として、俺はロクスリーのために二千ゴールド手に入れたし\n "+sti(npchar.quest.bakaut_sum)*2+" その上にドゥブロン金貨もだ。";
+			link.l1 = "全体として、俺はロクスリーのために二千ゴールド手に入れたし\n "+int(npchar.quest.bakaut_sum)*2+" その上にドゥブロン金貨もだ。";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1208,8 +1208,8 @@ void ProcessDialogEvent()
 			dialog.text = "よし。じゃあ、半分ずつ分けよう。";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "はい、どうぞ。持ってきたぞ "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "はい、どうぞ。持ってきたぞ "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1224,8 +1224,8 @@ void ProcessDialogEvent()
 			dialog.text = "ごきげんよう。どれくらい持ってきたのですか？";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "ほら、持ってきたぞ。 "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "ほら、持ってきたぞ。 "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1237,15 +1237,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_pay": // оплата
-			if (sti(npchar.quest.bakaut_sum) < sti(npchar.quest.bakaut_pay)) // полная сумма
+			if (int(npchar.quest.bakaut_sum) < int(npchar.quest.bakaut_pay)) // полная сумма
 			{
-				npchar.quest.bakaut_pay = sti(npchar.quest.bakaut_sum);
+				npchar.quest.bakaut_pay = int(npchar.quest.bakaut_sum);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
+			else iTemp = int(npchar.quest.bakaut_sum)-int(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
-			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.bakaut_pay));
+			Log_Info("You have given "+int(npchar.quest.bakaut_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -1255,7 +1255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "素晴らしい。残りも持ってきてくれるか "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" あとでドゥブロン金貨か？";
+				dialog.text = "素晴らしい。残りも持ってきてくれるか "+FindRussianQtyString(int(npchar.quest.bakaut_sum))+" あとでドゥブロン金貨か？";
 				link.l1 = "はい。そんな大量の金貨を一度に運ぶなんて無理だったんだ。";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1646,12 +1646,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
 			{
 				link.l4 = "ヤン、鉄木の出荷量を増やすことは可能だろうか？";
 				link.l4.go = "UpgradeBakaut";
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
 			{
 				link.l4 = "ヤン、三千枚の金貨を集めたぞ。ほら、これを俺たちの寄生虫どもに贈り物として渡してくれ。 今日はあいつらにとっていい日になるだろうな。";
 				link.l4.go = "UpgradeBakaut_Agreed";

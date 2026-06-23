@@ -51,9 +51,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				if (sti(rColony.HeroOwn) == true) // наш горожанин
+				if (int(rColony.HeroOwn) == true) // наш горожанин
 				{
 				    dialog.text = RandPhraseSimple("Dizem que você manda nesta cidade, "+GetSexPhrase("senhor","senhorita")+".","Que encontro agradável, "+GetSexPhrase("senhor","senhorita")+"!");
 					link.l1 = RandPhraseSimple("Mudei de ideia. Boa sorte!","Só estou passeando pela cidade. Até logo.");
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(перессылка в файл города)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("Quero discutir questões financeiras.","Sobre as finanças...");
 							link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -72,7 +72,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{ // пираты, не наши
-					if (sti(pchar.GenQuest.Piratekill) > 20)
+					if (int(pchar.GenQuest.Piratekill) > 20)
 					{
 						dialog.text = RandPhraseSimple("Alarme! Um lunático armado está aqui! Às armas!","Às armas! Tem um louco armado aqui!");
 						link.l1 = RandPhraseSimple("O quê?!","O que você está fazendo?!");
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 						link.l2.go = "quests";//(перессылка в файл города)
 						if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 						{
-							if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+							if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 							{
 								link.l3 = RandPhraseSimple("Quero discutir questões financeiras.","Sobre finanças...");
 								link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -102,8 +102,8 @@ void ProcessDialogEvent()
 				NPChar.quest.meeting = "1";
 				// проверка наличия корабля в порту
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
+				if(int(Pchar.Ship.Type) != SHIP_NOTUSED && 4-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
+				if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
 				{
 					dialog.text = "Bom dia, "+GetAddress_Form(NPChar)+". Vejo que você é o capitão do seu próprio navio. Quero lhe pedir um favor...";
 					link.l1 = "Estou ouvindo, "+GetAddress_FormToNPC(NPChar)+". O que você quer?";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 				}	
 				if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 	            {
-	                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+	                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 	                {
 						link.l3 = RandPhraseSimple("Quero discutir questões financeiras.","Sobre finanças...");
 						link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 			}			
 			if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
             {
-                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
                 {
 					link.l3 = RandPhraseSimple("Quero discutir questões financeiras.","Sobre as finanças...");
 					link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Citizen_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
 			{
 				dialog.text = "Hm... Sim, eu vi um homem com esse objeto algumas horas atrás. Ele estava andando pelas ruas. Era uma ferramenta interessante.";
 				link.l1 = "Como ele era, e para onde estava indo? Eu realmente preciso de algo assim.";
@@ -347,11 +347,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Townpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{
-				dialog.text = "Capitão, preciso chegar à colônia chamada "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", assim que possível, está em "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Dat")+", em "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Seu navio parece bem mais robusto do que a maioria desses barquinhos que navegam por aqui. Posso lhe pagar "+FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money))+". O que me diz?";
+				dialog.text = "Capitão, preciso chegar à colônia chamada "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", assim que possível, está em "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Dat")+", em "+FindRussianDaysString(int(pchar.GenQuest.Townpassenger.DaysQty))+". Seu navio parece bem mais robusto do que a maioria desses barquinhos que navegam por aqui. Posso lhe pagar "+FindRussianMoneyString(int(pchar.GenQuest.Townpassenger.Money))+". O que me diz?";
 			}
 			else
 			{
-				dialog.text = "Capitão, preciso chegar à colônia "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", está em um "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Voc")+", em um "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Eu sei que isso parece extremamente arriscado, mas talvez "+FindRussianDublonString(sti(pchar.GenQuest.Townpassenger.Money))+" seria uma boa ajuda para você?";
+				dialog.text = "Capitão, preciso chegar à colônia "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", está em um "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Voc")+", em um "+FindRussianDaysString(int(pchar.GenQuest.Townpassenger.DaysQty))+". Eu sei que isso parece extremamente arriscado, mas talvez "+FindRussianDublonString(int(pchar.GenQuest.Townpassenger.Money))+" seria uma boa ajuda para você?";
 			}
 			link.l1 = "Hm. Também estou indo nessa direção, então estou pronto para te levar a bordo nessas condições.";
 			link.l1.go = "passenger_1";
@@ -412,14 +412,14 @@ void ProcessDialogEvent()
 			AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			AddQuestUserData(sTitle, "sCity", sTemp);
-			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty)));
+			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Townpassenger.DaysQty)));
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-            if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money)));
-			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Townpassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Townpassenger.Money)));
+			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Townpassenger.Money)));
 			pchar.quest.Townpassenger.win_condition.l1 = "location";
 			pchar.quest.Townpassenger.win_condition.l1.location = pchar.GenQuest.Townpassenger.City+"_town";
 			pchar.quest.Townpassenger.function = "Townpassenger_complete";
-			SetFunctionTimerCondition("Townpassenger_Over", 0, 0, sti(pchar.GenQuest.Townpassenger.DaysQty), false);
+			SetFunctionTimerCondition("Townpassenger_Over", 0, 0, int(pchar.GenQuest.Townpassenger.DaysQty), false);
 		break;
 		
 		case "passenger_3":
@@ -444,9 +444,9 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{
 				AddCharacterExpToSkill(pchar, "Sneak", 50);
-				TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Townpassenger.Money));
+				TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Townpassenger.Money));
 			}
-			else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Townpassenger.Money));
+			else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Townpassenger.Money));
 			sTitle = npchar.index+"Citizpassenger";
 			AddQuestRecordEx(sTitle, "Citizpassenger", "3");
 			CloseQuestHeader(sTitle);
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 
 		case "pirate_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_Attack(NPChar, Pchar);
 			DoQuestFunctionDelay("TownPirate_battle", 0.5);
 		break;

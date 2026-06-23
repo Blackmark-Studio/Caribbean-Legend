@@ -1507,6 +1507,11 @@ OZ.12
 Ich habe das Geld an Felipe Alarcón nicht zurückgegeben. Er hat diese Geste nicht geschätzt und griff mich an. Mit ihm bin ich leicht fertig geworden, aber nun muss ich mich offenbar mit Gewalt aus der Stadt freikämpfen.
 }
 
+OZ.13
+{
+Ich beschloss, das Buch dem Schmied nicht zurückzugeben und verkaufte es stattdessen an den Franzosen, dann durchsuchte ich das Versteck in der Grotte allein. Es scheint, dieses Unternehmen hat sich als sehr gewinnbringend erwiesen — ich sollte häufiger auf die Gerüchte in der Stadt achten.
+}
+
 OZ.2
 {
 Jetzt ist klar, was den Niedergang von Sebastián Córdoba verursacht hat. Er hat ein für seine Arbeit äußerst wichtiges Buch verspielt – ein Buch über die Schmiedekunst. Seine Lage wird dadurch erschwert, dass Javier beschlossen hat, keine Zeit zu verlieren und das Buch an einen französischen Waffenschmied zu verkaufen. Wie so oft kommt das Unglück nicht allein. Erst kürzlich erhielt der Schmied einen bedeutenden Auftrag vom Admiral Eugenio de la Torre... Wenn dieser hier eintrifft, wird er unweigerlich erfahren, warum sein Auftrag nicht ausgeführt wurde. Erfahrt er, dass das Buch in französische Hände geraten ist, wird er – so der Schmied – äußerst hart mit ihm umgehen. Ich habe zugestimm@<sSex>, dem armen Kerl zu helfen. Wenn es mir gelingt, ihm das Buch zurückzubringen, bekommt er eine zweite Chance, und hoffentlich wiederholt er seine Fehler nicht mehr. Außerdem kann ich dann jederzeit auf die Dienste eines guten Schmieds zählen. Ich beginne damit, Javier zu suchen – er versucht sicher gerade, jemand anderen übers Ohr zu hauen.

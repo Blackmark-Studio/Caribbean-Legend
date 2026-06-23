@@ -381,7 +381,7 @@ void ProcessDialogEvent()
 		case "wife_sex":
 			DialogExit();
 			LAi_SetActorType(npchar);
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1;
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1;
 			DoQuestCheckDelay("PlaySex_1", 1.0);
 			
 			// Rebbebion, 用于"导航星"
@@ -506,7 +506,7 @@ void ProcessDialogEvent()
 			// 任务钥匙从Kaleuche - 归还
 			GiveItem2Character(npchar, "kaleuche_key");
 			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key_FMQT");
-			i = makeint(MOD_SKILL_ENEMY_RATE/4);
+			i = int(MOD_SKILL_ENEMY_RATE/4);
 			pchar.questTemp.FMQT = "duel";
 			PChar.questTemp.duel.enemy = NPChar.id;
 			if (MOD_SKILL_ENEMY_RATE > 2) PChar.questTemp.duel.enemyQty = i;
@@ -582,7 +582,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.FMQT.Caution = "true";
 			FMQT_KeyNextDay();
 			pchar.quest.FMQT_late3.win_condition.l1 = "Timer";
-			pchar.quest.FMQT_late3.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.FMQT_late3.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.FMQT_late3.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.FMQT_late3.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.FMQT_late3.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);

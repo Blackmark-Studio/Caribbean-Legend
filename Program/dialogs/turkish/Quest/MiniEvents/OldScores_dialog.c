@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "Dün gece meyhanede bir kavga çıktığını söylüyorlar... Ama kimler dövüşüyordu — vallahi bilmiyorum. Suratım hâlâ sağlam. Sanırım.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "Şeytan alsın hepsini... Kafam kayalığa çarpan bir gemi gibi çatlıyor, sen de geldin şu lanet sorularınla. Ne gördüm, ne de bir şey duydum. Birkaç peso verip de tecrübeli bir denizciyi böyle sorguya çekmekten vazgeçsen daha iyi edersin.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Al bakalım, yüz peso. Sakın kendini içkiye kaptırıp yine o hizmetçi kızın büyüsüne kapılma, tamam mı?";
 				link.l1.go = "OS_Matros_7_harizma";

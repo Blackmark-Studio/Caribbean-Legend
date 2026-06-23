@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
 					dialog.text = RandPhraseSimple("Fratelli, c'è un nemico tra le file dell'Inquisizione!","Suonate l'allarme, fratelli!");
 					link.l1 = "Effettivamente, i nemici dell'Inquisizione sono all'erta...";
@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(npchar, "protector.CheckAlways")) //гарды на камерах
 			{
-				if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{					
 					dialog.text = "Alle armi! È una spia! Prendetelo!";
 					link.l1 = "Caspita!";

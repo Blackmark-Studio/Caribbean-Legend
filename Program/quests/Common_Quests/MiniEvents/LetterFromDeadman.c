@@ -157,7 +157,7 @@ void LFD_Marisa_4()
 	sld.box1.items.obereg_7 = 1;
 	sld.box1.items.amulet_11 = 1;
 	
-	SetFunctionLocatorCondition("LFD_Marisa_5", "PortoBello_cave", "box", "box1", false)
+	SetFunctionLocatorCondition("LFD_Marisa_5", "PortoBello_cave", "box", "box1", false);
 }
 
 void LFD_Ne_Ta_Peshera(string qName)
@@ -194,7 +194,7 @@ void LFD_Marisa_6()
 {
 	LAi_LocationFightDisable(loadedLocation, true);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("LFD_Naemnik", "citiz_58", "man", "man", sti(pchar.rank), PIRATE, -1, true, "hunter"));
+	sld = GetCharacter(NPC_GenerateCharacter("LFD_Naemnik", "citiz_58", "man", "man", int(pchar.rank), PIRATE, -1, true, "hunter"));
 	sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
 	sld.dialog.currentnode = "Naemnik_1";
 	ChangeCharacterAddressGroup(sld, "PortoBello_cave", "reload", "reload1");
@@ -303,7 +303,7 @@ void LFD_Marisa_In_Church()
 	QuestOpenSeaExit();
 	SetFunctionExitFromLocationCondition("LFD_Marisa_In_Church_2", PChar.location, false);
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

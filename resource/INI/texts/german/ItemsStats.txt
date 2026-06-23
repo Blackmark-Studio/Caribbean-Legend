@@ -333,3 +333,7 @@ itm_stat_greenIdol {Kult}
 itm_stat_descr_greenIdol {Das Götzenbild unterwirft die Umstehenden seinem Willen und erhöht die Chance auf Kapitulation feindlicher Schiffe, die Stärke der Eskadre und die Zahl der Rekruten in Tavernen um $percent(0.30).}
 itm_stat_secondary_greenIdol {Das Flüstern der Alten}
 itm_stat_descr_secondary_greenIdol {Solange das Götzenbild ausgerüstet ist, senkt es fortwährend die Moral der Besatzung und treibt sie mit seinem gotteslästerlichen Flüstern in den Wahnsinn.}
+itm_stat_nocturlabe {Genaue Zeit}
+itm_stat_descr_nocturlabe {Erhöht die Wendigkeit des Schiffs um 10% und um weitere 25% auf Schiffen der 2. und 1. Klasse.}
+itm_stat_secondary_nocturlabe {Nächtliche Navigation}
+itm_stat_descr_secondary_nocturlabe {Erhöht $key(Perception) um #f.0modifiers.SpecialPerception#. Erhöht die Fluchtchance auf der Weltkarte um 25.}

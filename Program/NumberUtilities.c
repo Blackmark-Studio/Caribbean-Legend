@@ -2,9 +2,6 @@
 #define PIm2 6.28318530
 #define PId2 1.57079632
 
-#define INT_MIN -2147483648
-#define INT_MAX  2147483647
-
 // Bit number n
 #define BIT_1 1
 #define BIT_2 2

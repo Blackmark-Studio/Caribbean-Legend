@@ -14,7 +14,7 @@ void FalseTrace_Prepare(string qName)//подготовка инициализа
 
 void FalseTrace_Begin(string qName)//инициализация квестодателя
 {
-	if (sti(pchar.rank) < 15)
+	if (int(pchar.rank) < 15)
 	{
 		DelMapQuestMarkCity(pchar.questTemp.FalseTrace.StartCity);
 		DoQuestFunctionDelay("FalseTrace_Prepare", 2.0);
@@ -26,7 +26,7 @@ void FalseTrace_Begin(string qName)//инициализация квестода
 		DoQuestFunctionDelay("FalseTrace_Prepare", 2.0);
 		return; // may-16
 	}
-	sld = GetCharacter(NPC_GenerateCharacter("Mugger", "AdamRainer", "man", "man", 20, sti(pchar.nation), -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("Mugger", "AdamRainer", "man", "man", 20, int(pchar.nation), -1, false, "quest"));
 	sld.name = StringFromKey("FalseTrace_1");
 	sld.lastname = StringFromKey("FalseTrace_2");
     sld.Dialog.Filename = "Quest\LineMiniQuests\FalseTrace.c";
@@ -113,13 +113,13 @@ void RemoveFalseTrace(string qName)//удалить Адама
 
 void CreateFalseTraceGaleonOnMap(string qName)//энкаунтер галеона на карте
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 10 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 10 + 2*int(pchar.rank);
     string sGroup = "Sea_FalseTrace1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
 	// Captain Beltrop, 14.02.2021, правка нации капитана галеона - несовпадение атрибутов
-	sld = GetCharacter(NPC_GenerateCharacter("FalseTraceCap", "q_eng_Cap_1", "man", "man", iRank, sti(pchar.questTemp.FalseTrace.Mation), sti(pchar.questTemp.FalseTrace.DayQty), true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("FalseTraceCap", "q_eng_Cap_1", "man", "man", iRank, int(pchar.questTemp.FalseTrace.Mation), int(pchar.questTemp.FalseTrace.DayQty), true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_FLEUT, pchar.questTemp.FalseTrace.ShipName, CANNON_TYPE_CANNON_LBS8, 70, iScl, iScl, iScl, iScl);
 	UpgradeShipParameter(sld, "Capacity");
 	SetCaptanModelByEncType(sld, "war");
@@ -154,7 +154,7 @@ void CreateFalseTraceGaleonOnMap(string qName)//энкаунтер галеон�
 	Group_SetGroupCommander(sGroup, "FalseTraceCap");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
-	Map_CreateTrader("Cartahena", pchar.questTemp.FalseTrace.TargetShore, "FalseTraceCap", sti(pchar.questTemp.FalseTrace.DayQty));//запуск энкаунтера
+	Map_CreateTrader("Cartahena", pchar.questTemp.FalseTrace.TargetShore, "FalseTraceCap", int(pchar.questTemp.FalseTrace.DayQty));//запуск энкаунтера
 	
 	pchar.quest.False_Trace_AfterBattle.win_condition.l1 = "Group_Death";
 	pchar.quest.False_Trace_AfterBattle.win_condition.l1.group = sGroup;
@@ -302,8 +302,8 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 	pchar.GenQuestBox.Shore55.box2.items.jewelry5 = 2061;//золото
 	pchar.GenQuestBox.Shore55.box2.items.jewelry6 = 889;//серебро
 	pchar.GenQuestBox.Shore55.box2.items.jewelry10 = 25;//платина
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 10 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 10 + 2*int(pchar.rank);
 	//ставим наших бойцов
 
 	object aCrewSoldier[9];
@@ -324,7 +324,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 		{
 			model = aCrewMushketer[0].model;
 			ani = aCrewMushketer[0].ani;
-			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, int(pchar.nation), 0, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		}
 		else
@@ -332,7 +332,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 			model = aCrewSoldier[nSoldierIndex].model;
 			ani = aCrewSoldier[nSoldierIndex].ani;
 			nSoldierIndex++;
-			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, model, "man", ani, iRank, int(pchar.nation), 0, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		ChangeCharacterAddressGroup(sld, "Shore55", "goto", "goto1");
@@ -368,8 +368,8 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 
 void FalseTrace_SollyBonanzaAdd()//ещё выскочили из засады
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 10 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 10 + 2*int(pchar.rank);
 	for (i=1; i<=8; i++)
 	{
 		if (i == 2)
@@ -394,9 +394,9 @@ void FalseTrace_SollyShip(string qName)//появился Солли
 {
 	Island_SetReloadEnableGlobal("SantaCatalina", false);//на остров нельзя
 	Group_FindOrCreateGroup("Solly_brig");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
-	if (sti(pchar.rank < 15)) iTemp = SHIP_BRIG;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
+	if (int(pchar.rank < 15)) iTemp = SHIP_BRIG;
 	else iTemp = SHIP_CORVETTE;
 	sld = GetCharacter(NPC_GenerateCharacter("Solly", "mercen_20", "man", "man", iRank, PIRATE, 0, true, "quest"));
 	sld.name = StringFromKey("FalseTrace_5");
@@ -435,7 +435,7 @@ void SollyShip_AfterBattle(string qName)//победили
 	{
 		//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 		//{
-			//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+			//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 			//{
 				pchar.questTemp.SanBoxTarget.FalseTrace = true;
 				ChangeCharacterComplexReputation(pchar, "fame", 25);
@@ -467,7 +467,7 @@ void FalseTrace_DeleteBox(string qName)//в сундуки - хлам
 void FalseTrace_GoldShip(string qName)//высадили в бухте Катерину, её кэпа и пленного Адама
 {
 	chrDisableReloadToLocation = true;
-	sld = &Characters[sti(Pchar.questTemp.FalseTrace.PrisonerIDX)];
+	sld = &Characters[int(Pchar.questTemp.FalseTrace.PrisonerIDX)];
 	sld.lifeday = 0;
 	LAi_CharacterEnableDialog(sld);//разрешение диалога
 	sld.Dialog.Filename = "Quest\LineMiniQuests\FalseTrace.c";
@@ -483,7 +483,7 @@ void FalseTrace_GoldShip(string qName)//высадили в бухте Кате�
 	LAi_SetActorType(chr);
 	ChangeCharacterAddressGroup(chr, pchar.location, "goto", "goto2");
 	LAi_ActorFollow(chr, sld, "", -1);
-	ref ch = &Characters[sti(Pchar.questTemp.FalseTrace.PrisonerAdamIDX)];
+	ref ch = &Characters[int(Pchar.questTemp.FalseTrace.PrisonerAdamIDX)];
 	ReleasePrisoner(ch); //освободили пленника
 	ch.lifeday = 0;
 	ChangeCharacterAddressGroup(ch, pchar.location, "goto", "goto2");
@@ -497,8 +497,8 @@ void CreateFalseTraceGoldShipOnMap(string qName)//создаем корабль 
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iNation = sti(pchar.questTemp.FalseTrace.ShipNation);
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iNation = int(pchar.questTemp.FalseTrace.ShipNation);
+	int iScl = 20 + 2*int(pchar.rank);
 	if (iScl > 90) iScl = 90;
 	for (int i = 1; i <= 2; i++)
     {
@@ -507,13 +507,13 @@ void CreateFalseTraceGoldShipOnMap(string qName)//создаем корабль 
 		SetRandomNameToShip(sld);
 		switch (i)
 		{
-			case 1: iTemp = SHIP_GALEON_H break;
+			case 1: iTemp = SHIP_GALEON_H; break;
 			case 2: 
-				if (sti(pchar.rank < 16)) iTemp = SHIP_CORVETTE;
+				if (int(pchar.rank < 16)) iTemp = SHIP_CORVETTE;
 				else iTemp = SHIP_FRIGATE;
 			break;
 		}
-		sld.Ship.Type = GenerateShipExt(iTemp, 1, sld);
+		sld.Ship.Type = GenerateShipExt(iTemp, true, sld);
 		SetBaseShipData(sld);
 		SetCaptanModelByEncType(sld, "war");
 		int hcrew = GetMaxCrewQuantity(sld);
@@ -595,7 +595,7 @@ void FalseTraceGoldCap_Abordage(string qName)//после абордажа
 	{
 		//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 		//{
-			//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+			//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 			//{
 				pchar.questTemp.SanBoxTarget.FalseTrace = true;
 				ChangeCharacterComplexReputation(pchar, "fame", 25);
@@ -666,9 +666,9 @@ void FalseTrace_PrepereCreateBandits(string qName)//установим прер�
 void FalseTrace_CreateBandits(string qName)//установим бандитов
 {
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 10 + 2*sti(pchar.rank);
-	if (sti(pchar.rank) < 16) sTemp = "pistol1";
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 10 + 2*int(pchar.rank);
+	if (int(pchar.rank) < 16) sTemp = "pistol1";
 	else sTemp = "pistol6";
 	for (i=1; i<=4; i++)
 	{
@@ -702,8 +702,8 @@ void FalseTrace_BanditsShip(string qName)//бандитский корабль
 {
 	Island_SetReloadEnableGlobal("Hispaniola2", false);//на остров нельзя
 	Group_FindOrCreateGroup("Band_brig");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 10 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 10 + 2*int(pchar.rank);
 	iTemp = SHIP_CARAVEL;
 	sld = GetCharacter(NPC_GenerateCharacter("BandCap", "mercen_2", "man", "man", iRank, FRANCE, 0, true, "quest"));
 	FantomMakeSmallSailor(sld,iTemp, "", CANNON_TYPE_CANNON_LBS16, 70, iScl, iScl, iScl, iScl);
@@ -741,7 +741,7 @@ void BandShip_AfterBattle(string qName)//победили
 	{
 		//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 		//{
-			//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+			//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 			//{
 				pchar.questTemp.SanBoxTarget.FalseTrace = true;
 				ChangeCharacterComplexReputation(pchar, "fame", 25);
@@ -782,7 +782,7 @@ bool FalseTrace_QuestComplete(string sQuestName, string qname)
 	
 	if (sQuestName == "FalseTrace_AfterFight")
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("FalseTraceWife", "CatRainer", "woman", "towngirl", 2, sti(pchar.questTemp.FalseTrace.Mation), -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("FalseTraceWife", "CatRainer", "woman", "towngirl", 2, int(pchar.questTemp.FalseTrace.Mation), -1, true, "quest"));
 		sld.name = StringFromKey("FalseTrace_8");
 		sld.lastname = StringFromKey("FalseTrace_9");
 		sld.Dialog.Filename = "Quest\LineMiniQuests\FalseTrace.c";
@@ -846,7 +846,7 @@ bool FalseTrace_QuestComplete(string sQuestName, string qname)
 	{
 		sld = characterFromId("FalseTraceWife");
 		ChangeCharacterAddressGroup(sld, "none", "", "");
-		chr = &Characters[sti(Pchar.questTemp.FalseTrace.PrisonerAdamIDX)];
+		chr = &Characters[int(Pchar.questTemp.FalseTrace.PrisonerAdamIDX)];
 		ChangeCharacterAddressGroup(chr, "none", "", "");
 		chrDisableReloadToLocation = false;
 	}

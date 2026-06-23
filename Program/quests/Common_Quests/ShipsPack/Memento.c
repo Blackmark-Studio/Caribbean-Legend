@@ -3,7 +3,7 @@ void Memento_init()
 	pchar.questTemp.Memento = true;
 	log_testinfo("Квест 'Мементо' стартовал");
 	pchar.questTemp.Memento.stage = 1; // стадии меняем при выходе на карту
-	pchar.questTemp.Memento.colony = Memento_findColony(sti(pchar.questTemp.Memento.stage)); // колонии меняем при заходе в порт
+	pchar.questTemp.Memento.colony = Memento_findColony(int(pchar.questTemp.Memento.stage)); // колонии меняем при заходе в порт
     ref sld, itm;
 	
 	// характеристики запишем после ТЗ
@@ -19,9 +19,9 @@ void Memento_init()
 	ChangeCrewExp(sld, "Soldiers",  100); 
 	sld.name = StringFromKey("Memento_2");
 	sld.lastname = StringFromKey("Memento_3");
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull  = "q";
-	RealShips[sti(sld.Ship.Type)].EmblemedSails.normalTex = "ships/parus_black0.tga";
-	RealShips[sti(sld.Ship.Type)].ShipSails.Gerald_Name = "pir6.tga.tx";
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull  = "q";
+	RealShips[int(sld.Ship.Type)].EmblemedSails.normalTex = "ships/parus_black0.tga";
+	RealShips[int(sld.Ship.Type)].ShipSails.Gerald_Name = "pir6.tga.tx";
 	sld.DontRansackCaptain = true; //квестовые не сдаются
 	AddBonusEnergyToCharacter(sld, 50000);
 	sld.SaveItemsForDead = true;
@@ -49,18 +49,18 @@ void Memento_init()
 	SetCharacterGoods(sld, GOOD_SHIPSILK, 50);
 	SetCharacterGoods(sld, GOOD_ROPES, 50);
 	
-	string sGroup = "Sea_"+sld.id
+	string sGroup = "Sea_"+sld.id;
 	Group_FindOrCreateGroup(sGroup);
 	Group_SetType(sGroup,"trade");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, sld.id);
 	Group_SetGroupCommander(sGroup, sld.id);
-	// SetRandGeraldSail(sld, sti(sld.Nation));
+	// SetRandGeraldSail(sld, int(sld.Nation));
 	
 	sld.quest = "InMap";
-	sld.city = Memento_findColony(sti(pchar.questTemp.Memento.stage));
-	sld.quest.targetCity = Memento_findColony(sti(pchar.questTemp.Memento.stage)+1);
+	sld.city = Memento_findColony(int(pchar.questTemp.Memento.stage));
+	sld.quest.targetCity = Memento_findColony(int(pchar.questTemp.Memento.stage)+1);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "memento";
 	sld.mapEnc.Name = GetShipName("Memento");
@@ -87,7 +87,7 @@ void Memento_ToCity(string sChar)
 {
 	if(!GetDLCenabled(DLC_APPID_6)) return;
 	if(!CharacterIsAlive(sChar)) {Log_testinfo("Капитан БРИГА умер"); return;}
-	pchar.questTemp.Memento.colony = Memento_findColony(sti(pchar.questTemp.Memento.stage)+1);
+	pchar.questTemp.Memento.colony = Memento_findColony(int(pchar.questTemp.Memento.stage)+1);
 	Log_testinfo("капитан брига сошёл в порту "+ pchar.questTemp.Memento.colony);
 	
 	DeleteQuestCheck("Memento_MapRelease");
@@ -110,35 +110,35 @@ void Memento_ToMap(string sQuest)
 	ref sld = characterFromId("Memento_cap");
 	sld.quest = "InMap";
 	
-	pchar.questTemp.Memento.stage = sti(pchar.questTemp.Memento.stage) + 1;
-	if(sti(pchar.questTemp.Memento.stage) >= 5)
+	pchar.questTemp.Memento.stage = int(pchar.questTemp.Memento.stage) + 1;
+	if(int(pchar.questTemp.Memento.stage) >= 5)
 	{		
 		pchar.questTemp.Memento.stage = 0;
 		sld.city = Memento_findColony(5);
 	}
 	else
 	{
-		sld.city = Memento_findColony(sti(pchar.questTemp.Memento.stage));
+		sld.city = Memento_findColony(int(pchar.questTemp.Memento.stage));
 	}
 	
 	if(CheckAttribute(pchar, "questTemp.BM_StartQuest") && !CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted"))
 	{
-		if(Memento_findColony(sti(pchar.questTemp.Memento.stage)+1) == "Shore36")
+		if(Memento_findColony(int(pchar.questTemp.Memento.stage)+1) == "Shore36")
 		{
-			pchar.questTemp.Memento.stage = sti(pchar.questTemp.Memento.stage) + 1;
-			Log_testInfo("Капитан БРИГА ПРОПУСТИЛ ЯМАЙКУ и направился в колонию: "+Memento_findColony(sti(pchar.questTemp.Memento.stage)+1));
+			pchar.questTemp.Memento.stage = int(pchar.questTemp.Memento.stage) + 1;
+			Log_testInfo("Капитан БРИГА ПРОПУСТИЛ ЯМАЙКУ и направился в колонию: "+Memento_findColony(int(pchar.questTemp.Memento.stage)+1));
 		}
 	}
 	if(CheckAttribute(pchar, "questTemp.Saga.BarbTemptation") && pchar.questTemp.Saga.BarbTemptation == "islatesoro")
 	{
-		if(Memento_findColony(sti(pchar.questTemp.Memento.stage)+1) == "Shoreship1")
+		if(Memento_findColony(int(pchar.questTemp.Memento.stage)+1) == "Shoreship1")
 		{
-			pchar.questTemp.Memento.stage = sti(pchar.questTemp.Memento.stage) + 1;
-			Log_testInfo("Капитан БРИГА ПРОПУСТИЛ ИСЛА-ТЕСОРО и направился в колонию: "+Memento_findColony(sti(pchar.questTemp.Memento.stage)+1));
+			pchar.questTemp.Memento.stage = int(pchar.questTemp.Memento.stage) + 1;
+			Log_testInfo("Капитан БРИГА ПРОПУСТИЛ ИСЛА-ТЕСОРО и направился в колонию: "+Memento_findColony(int(pchar.questTemp.Memento.stage)+1));
 		}
 	}
 	
-	sld.quest.targetCity = Memento_findColony(sti(pchar.questTemp.Memento.stage)+1);
+	sld.quest.targetCity = Memento_findColony(int(pchar.questTemp.Memento.stage)+1);
 	Log_testInfo("Капитан БРИГА направился в колонию: "+sld.quest.targetCity + " из колонии : "+sld.city);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "memento";
@@ -150,7 +150,7 @@ void CheckMemento()
 {
 	if(CharacterIsAlive("Memento_cap"))
 	{
-		ref sld = CharacterFromID("Memento_cap")
+		ref sld = CharacterFromID("Memento_cap");
 		if(CheckAttribute(sld,"quest") && sld.quest == "InMap")
 		{
 			//проверяем на карте
@@ -203,7 +203,7 @@ void Memento_PlayerAttack()
 	DeleteAttribute(sld, "AlwaysFriend");
 	sld.AlwaysEnemy = true;
 	pchar.questTemp.Memento.AttackFromMap = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Memento_cap")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Memento_cap")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Sea_Memento_cap", PLAYER_GROUP);
 	Group_LockTask("Sea_Memento_cap");
 	UpdateRelations();
@@ -234,9 +234,9 @@ void Memento_Book(string qName)
 //===============Абордаж Мементо, в каюте==============
 void Memento_MortimerGrimDead_function()
 {
-	if (CharacterIsAlive(&Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]))
+	if (!CharacterIsDead(Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)]))
 	{
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		LAi_KillCharacter(sld);
 	}
 	DoQuestFunctionDelay("Memento_MortimerGrimDead_Alonso", 0.5);
@@ -246,7 +246,7 @@ void Memento_MortimerGrimDead_Alonso(string qName)
 {
 	DoQuestCheckDelay("hide_weapon", 1.2);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -273,7 +273,7 @@ void Memento_MortimerGrimDead_Alonso_2()
 //===============Мементо, Этап Дичь==============
 void Memento_Dich(string qName)
 {
-	if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MEMENTO)
+	if (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MEMENTO)
 	{
 		DeleteQuestCondition("Memento_Dich");
 		if (IsEntity(worldMap))
@@ -320,7 +320,7 @@ void Memento_Dich_EtapOne_Paluba_4(string qName)
 	pchar.GenQuest.DontSetCabinOfficer = true;
 	chrDisableReloadToLocation = true;
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -375,7 +375,7 @@ void Memento_Dich_EtapTwo_Paluba_2(string qName)
 
 void Memento_Dich_EtapTwo_Paluba_3(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -429,7 +429,7 @@ void Memento_Dich_EtapThree_Paluba_2(string qName)
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -524,7 +524,7 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 	chrDisableReloadToLocation = true;
 	for (i=1; i<=6; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Memento_Skelet_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", sti(pchar.rank), PIRATE, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Memento_Skelet_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", int(pchar.rank), PIRATE, -1, true, "soldier"));
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Грима
 		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc"+i);
 		LAi_SetLayType(sld);
@@ -533,7 +533,7 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 		LAi_CharacterDisableDialog(sld);
 		sld.BlockSnore = true;
 	}	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Грима
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
@@ -582,7 +582,7 @@ void Memento_Dich_EtapThree_Paluba_8(string qName)
 {
 	LAi_LocationFightDisable(loadedLocation, true);
 	DoQuestCheckDelay("hide_weapon", 1.2);
-	SetFunctionLocatorCondition("Memento_Dich_EtapThree_Paluba_9", "My_Deck_Medium", "reload", "reload_cabin", false)
+	SetFunctionLocatorCondition("Memento_Dich_EtapThree_Paluba_9", "My_Deck_Medium", "reload", "reload_cabin", false);
 	QuestPointerToLoc("My_Deck_Medium", "reload", "reload_cabin");
 }
 
@@ -594,7 +594,7 @@ void Memento_Dich_EtapThree_Paluba_9(string qName)
 
 void Memento_Dich_EtapThree_Paluba_10()
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Cap_phantom", "mercen_19", "man", "man", sti(pchar.rank), PIRATE, -1, true, "soldier"));	
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Cap_phantom", "mercen_19", "man", "man", int(pchar.rank), PIRATE, -1, true, "soldier"));
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_SP_3low", "pistol4", "bullet", 0);
 	ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.55); // RB Грим
 	sld.name = StringFromKey("Memento_2");
@@ -718,7 +718,7 @@ void Memento_Dich_EtapThree_Paluba_18()
 void Memento_Dich_EtapThree_Paluba_21(string qName)
 {
 	//EndQuestMovie();
-	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull  = "1";	// с корабля исчезает шляпа
+	RealShips[int(pchar.Ship.Type)].ship.upgrades.hull  = "1";	// с корабля исчезает шляпа
 	DeleteAttribute(pchar, "questTemp.NoFast");
 	DoFunctionReloadToLocation("My_Campus", "sit", "sit6", "Memento_Dich_EtapThree_Paluba_22");
 }
@@ -733,7 +733,7 @@ void Memento_Dich_EtapThree_Paluba_22()
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, -1, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -776,7 +776,7 @@ void Memento_Dich_EtapThree_End()
 void Memento_Dominica_SpawnObereg()
 {
 	// в бухте Скотс Хед острова Доминика прячем Череп-оберег в сундуке
-	SetFunctionLocatorCondition("Memento_Dominica_DeLanda", "Shore27", "box", "box1", false)
+	SetFunctionLocatorCondition("Memento_Dominica_DeLanda", "Shore27", "box", "box1", false);
 }
 
 void Memento_Dominica_DeLanda(string qName)
@@ -790,7 +790,7 @@ void Memento_Dominica_DeLanda(string qName)
 		LAi_SetStayType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 		AddLandQuestMark(sld, "questmarkmain");
-		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
+		pchar.questTemp.ISawDiegoDeLanda = int(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_Memento = true;
 	}
 	sld = &Locations[FindLocation("Shore27")];

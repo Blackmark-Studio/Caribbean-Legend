@@ -11,7 +11,8 @@ void ProcessDialogEvent()
 	makeref(NPChar, CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-
+	int iTrade = GetSquadronGoods(pchar, GOOD_FOOD) - GetCrewQuantity(pchar);
+	int iMoney = 0;
 	switch (Dialog.CurrentNode)
 	{
 	case "First time":
@@ -212,8 +213,6 @@ void ProcessDialogEvent()
 		link.l1.go = "return_1";
 		break;
 
-		int iTrade = GetSquadronGoods(pchar, GOOD_FOOD) - GetCrewQuantity(pchar);
-		int iMoney = 0;
 	case "return_1":
 		dialog.text = "Muy bien. ¿Tienes alguna comida para vender? Estoy listo para comprártela por el doble del precio habitual.";
 		if (iTrade > 0)
@@ -266,7 +265,7 @@ void ProcessDialogEvent()
 		}
 		if (iTemp >= 15000) // лесник
 		{
-			iTemp = (15000 - sti(npchar.quest.foodqty))
+			iTemp = (15000 - int(npchar.quest.foodqty))
 						dialog.text = "¡Vaya, amigo, eso es demasiado para nosotros! No podremos comerlo antes de que se pudra. Ahora mismo no puedo llevar más de " + iTemp + ".";
 			link.l1 = "Lo que digas.";
 			link.l1.go = "trade_3";
@@ -281,7 +280,7 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "head";
 		break;
 	case "trade_3": // лесник
-		iTemp = (15000 - sti(npchar.quest.foodqty))
+		iTemp = (15000 - int(npchar.quest.foodqty))
 			iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		dialog.text = "Trato. Te pagaré " + FindRussianMoneyString(iMoney) + " para las mercancías. ¿Es suficiente?";
 		link.l1 = "¡Claro! ¡Buen comercio!";
@@ -291,18 +290,18 @@ void ProcessDialogEvent()
 		NextDiag.TempNode = "head";
 		break;
 	case "trade_4": // лесник
-		iTemp = (15000 - sti(npchar.quest.foodqty))
+		iTemp = (15000 - int(npchar.quest.foodqty))
 			iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		AddMoneyToCharacter(pchar, iMoney);
 		RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-		npchar.quest.foodqty = sti(npchar.quest.foodqty) + iTemp;
+		npchar.quest.foodqty = int(npchar.quest.foodqty) + iTemp;
 		if (!CheckAttribute(pchar, "Achievment.LSCfood"))
 			pchar.Achievment.LSCfood = iTemp;
 		else
-			pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-		if (sti(pchar.Achievment.LSCfood) >= 20000)
+			pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+		if (int(pchar.Achievment.LSCfood) >= 20000)
 			Achievment_Set("ach_CL_112");
-		if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+		if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 		{
 			SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 			dialog.text = "¡Maldita sea, mis ojos! ¡Mi almacén está lleno! No necesitaré comprar provisiones por los próximos seis meses.";
@@ -323,14 +322,14 @@ void ProcessDialogEvent()
 		iMoney = (50 + hrand(5, "&Slayer")) * iTemp;
 		AddMoneyToCharacter(pchar, iMoney);
 		RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-		npchar.quest.foodqty = sti(npchar.quest.foodqty) + iTemp;
+		npchar.quest.foodqty = int(npchar.quest.foodqty) + iTemp;
 		if (!CheckAttribute(pchar, "Achievment.LSCfood"))
 			pchar.Achievment.LSCfood = iTemp;
 		else
-			pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-		if (sti(pchar.Achievment.LSCfood) >= 20000)
+			pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+		if (int(pchar.Achievment.LSCfood) >= 20000)
 			Achievment_Set("ach_CL_112");
-		if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+		if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 		{
 			SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 			dialog.text = "¡Estupendo! Mi almacén está lleno ahora. No necesitaré comprar víveres durante el próximo medio año.";
@@ -349,7 +348,7 @@ void ProcessDialogEvent()
 
 	case "head": // стандартный диалог Декстера-адмирала
 		dialog.text = "A-ah, " + GetFullName(pchar) + "¡Encantado de verte! ¿Qué quieres?";
-		if (iTrade > 0 && sti(npchar.quest.foodqty) < 15000)
+		if (iTrade > 0 && int(npchar.quest.foodqty) < 15000)
 		{
 			link.l1 = "¿Quieres comprar algunas provisiones de mí?";
 			link.l1.go = "trade";

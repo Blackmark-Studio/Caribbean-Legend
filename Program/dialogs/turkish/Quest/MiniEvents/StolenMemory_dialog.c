@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Bir kolye mi? Doğrusu... Yakın zamanda böyle bir takı edindim. Ama söyle bakalım kaptan, bana ait olan bu mücevheri benden nasıl almayı düşünüyorsun?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Sana bu parça için beş bin peso teklif etmeye hazırım. Bu, sana en az onun kadar güzel, belki de daha gösterişli bir süs eşyası almana yetecek kadar cömert bir meblağ. Öte yandan, bu özel kolye, değeri parayla ölçülemeyecek kadar kıymet veren asıl sahibine kavuşmuş olacak.";
 				link.l1.go = "Captain_4_commerce";

@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 		SetMusic("music_teleport");
 		DeleteAttribute(npchar, "viper");
 		LAi_SetImmortal(npchar, false);
-		npchar.chr_ai.hp = stf(npchar.chr_ai.hp) + 100;
+		npchar.chr_ai.hp = float(npchar.chr_ai.hp) + 100;
 		LAi_SetWarriorType(npchar);
 		LAi_group_MoveCharacter(npchar, "EnemyFight");
 		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);

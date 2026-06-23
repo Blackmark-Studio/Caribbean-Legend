@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -57,9 +57,9 @@ void ProcessDialogEvent()
 		
 		// 守卫 - 护卫
 		case "plantation_protector":
-            if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+            if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
-				if (sti(pchar.nation) == PIRATE)
+				if (int(pchar.nation) == PIRATE)
 				{
 					PlaySound("Voice\English\soldier_arest_1.wav");
 					dialog.text = RandPhraseSimple("海盗? ! 抓住他! ", "他是海盗! 攻击! ");
@@ -68,15 +68,15 @@ void ProcessDialogEvent()
 					break;
 				}
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = RandPhraseSimple("哈哈, 你挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜! 我想我们的指挥官会很乐意和你聊聊! ", "嗯哼, 这里都能闻到" + NationNameAblative(sti(pchar.nation)) + "的味道! 间谍? ! 该让你和我们的指挥官谈谈了。 ");
+				dialog.text = RandPhraseSimple("哈哈, 你挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜! 我想我们的指挥官会很乐意和你聊聊! ", "嗯哼, 这里都能闻到" + NationNameAblative(int(pchar.nation)) + "的味道! 间谍? ! 该让你和我们的指挥官谈谈了。 ");
 				link.l1 = RandPhraseSimple("先尝尝我剑的厉害! ", "让你见识下我的刀锋! ");
 				link.l1.go = "fight"; 
 			}
 			else
 			{
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (GetNationRelation(int(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 				{
-					if (sti(pchar.nation) == PIRATE)
+					if (int(pchar.nation) == PIRATE)
 					{
 						PlaySound("Voice\English\soldier_arest_1.wav");
 						dialog.text = RandPhraseSimple("海盗? ! 抓住他! ", "他是海盗! 攻击! ");
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 		
 		case "Licence":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				PlaySound("Voice\English\soldier_arest_2.wav");
 				dialog.text = "许可证? 等一下... 哈哈, 真有趣! 我知道你是谁。 你是通缉犯, 伙计! 你的悬赏金很高! 抓住他! ";
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		
 		case "PegYou":
 			PlaySound("Voice\English\soldier_arest_2.wav");
-			dialog.text = "生意? 哈哈! 好吧, 真有趣! 你身上千里之外都能闻到" + NationNameAblative(sti(GetBaseHeroNation())) + "的味道! 是时候让你见见我们的指挥官了。 ";
+			dialog.text = "生意? 哈哈! 好吧, 真有趣! 你身上千里之外都能闻到" + NationNameAblative(int(GetBaseHeroNation())) + "的味道! 是时候让你见见我们的指挥官了。 ";
 			link.l1 = "不, 我想是时候让你见识一下我的剑了。 ";
 			link.l1.go = "fight";
 		break;
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "plant_2") // belamour legendary edition 
 			{
 				dialog.text = "有什么事吗, 先生? ";
-				link.l1 = TimeGreeting() + ",先生。 我有个生意想和你谈谈。 我有奴隶要卖。 " + FindRussianQtyString(sti(GetSquadronGoods(pchar, GOOD_SLAVES))) + "。 有兴趣吗? ";
+				link.l1 = TimeGreeting() + ",先生。 我有个生意想和你谈谈。 我有奴隶要卖。 " + FindRussianQtyString(int(GetSquadronGoods(pchar, GOOD_SLAVES))) + "。 有兴趣吗? ";
 				link.l1.go = "mtraxx";
 				break;
 			}
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
             DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddQuestRecord("Roger_3", "27");
 			sld = characterFromId("Mtr_plantation_boss");
 			sld.lifeday = 0;
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-			dialog.text = "五百箱咖啡? 嗯... 让我看看... (计算)我准备用" + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的咖啡。 成交吗? ";
+			dialog.text = "五百箱咖啡? 嗯... 让我看看... (计算)我准备用" + int(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + int(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的咖啡。 成交吗? ";
 			link.l1 = "嗯... 我原本希望条件更好些。 好吧, 谁在乎呢。 成交! ";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 106;
-			dialog.text = "五百箱香草? 嗯... 让我看看... (计算)我准备用" + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的香草。 成交吗? ";
+			dialog.text = "五百箱香草? 嗯... 让我看看... (计算)我准备用" + int(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + int(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的香草。 成交吗? ";
 			link.l1 = "嗯... 我原本希望条件更好些。 好吧, 谁在乎呢。 成交! ";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -321,7 +321,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-			dialog.text = "五百箱椰子干? 嗯... 让我看看... (计算)我准备用" + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的椰子干。 成交吗? ";
+			dialog.text = "五百箱椰子干? 嗯... 让我看看... (计算)我准备用" + int(pchar.questTemp.Mtraxx.PlantGood.Sugar) + "袋糖和" + int(pchar.questTemp.Mtraxx.PlantGood.Cocoa) + "箱可可交换你的椰子干。 成交吗? ";
 			link.l1 = "嗯... 我原本希望条件更好些... 好吧, 谁在乎呢。 成交! ";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))

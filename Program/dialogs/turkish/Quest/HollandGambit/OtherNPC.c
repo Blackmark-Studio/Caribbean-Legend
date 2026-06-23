@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "", 4);
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			AddQuestRecord("Holl_Gambit", "1-3");
 			AddMapQuestMarkCity("Marigo", true);
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 			LAi_SetWarriorType(npchar);
             LAi_group_MoveCharacter(npchar, "SPAIN_CITIZENS");
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
             DialogExit();
 			AddDialogExitQuest("MainHeroFightModeOn");	
 			pchar.quest.HWIC_Fernando.win_condition.l1 = "NPC_Death";
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Drunkard_6":
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				dialog.text = "5000 peso mu? Ah... Sadece bir mektup teslim etmek için mi?";
 				link.l1 = "Hayır. Sana başka bir mektup verilecek. Onu meyhaneye getirip burada oturacaksın. Mektubu senden ben alacağım. Aptalca bir şey yapma ve korkma – seni izleyeceğim ve yakınında olacağım. Şunu da avans olarak al, rahat olman için.";
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		
 		case "Drunkard_no_money":
 			dialog.text = "Beş bin getirdin mi?";
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "Evet. Buyurun. Merak etmeyin.";
 				link.l1.go = "Drunkard_7";
@@ -619,7 +619,7 @@ void ProcessDialogEvent()
 		
 		case "Cureer_abordage_3":
 			DialogExit();
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -928,7 +928,7 @@ void ProcessDialogEvent()
 		case "Stivesant_12":
 		//удаляем Мейфенг
 		DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-		if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+		if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 		{
 			pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 			pchar.Ship.name = "A boat";
@@ -943,10 +943,10 @@ void ProcessDialogEvent()
 			if(iTemp > 0)
 				{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 					{
 						pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-						sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+						sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 						RemoveCharacterCompanion(PChar, sld);
 						AddPassenger(PChar, sld, false);
 					}
@@ -1351,7 +1351,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Stivesant_49":
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				dialog.text = "I never doubted, Vice Admiral Charles de Maure, that you would bring me this money. Perhaps I even asked too little of you, but oh well... The Baron is just a pawn in your next game, isn't he? Rank and money are not enough for you; now you want to take de Poincy's place, am I right? You must admit, a million is a small sum for the post of Governor General of the French colonies! You'll get this money back in a matter of months, given your iron grip.";
 				link.l1 = "Al milyonunu al, Mynheer. Söz verdiğin defteri almak istiyorum.";
@@ -1444,7 +1444,7 @@ void ProcessDialogEvent()
 		//удаление Мейфенг при провале квеста
 		case "TempOffGuard":
 			DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+			if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 			{
 				pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 				pchar.Ship.name = "A boat";
@@ -1459,10 +1459,10 @@ void ProcessDialogEvent()
 					if(iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 						{
 							pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-							sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+							sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
 						}

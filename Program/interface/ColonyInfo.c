@@ -15,7 +15,7 @@ void InitInterface(string iniName)
     {
         // режим осады
         sCity    = pchar.GenQuestFort.ColonySiegeId;
-		iNation  = sti(pchar.GenQuestFort.ColonySiegeNation);
+		iNation  = int(pchar.GenQuestFort.ColonySiegeNation);
 		DeleteAttribute(Pchar, "GenQuestFort.ColonySiegeId");
 		DeleteAttribute(Pchar, "GenQuestFort.ColonySiegeNation");
 		
@@ -26,7 +26,7 @@ void InitInterface(string iniName)
 		}
 		else
 		{
-            iDay     = sti(pchar.GenQuestFort.ColonySiegeTime);
+            iDay     = int(pchar.GenQuestFort.ColonySiegeTime);
             DeleteAttribute(Pchar, "GenQuestFort.ColonySiegeTime");
 			CalculateSiegeCity();
 		}
@@ -35,7 +35,7 @@ void InitInterface(string iniName)
     {
 		// режим захвата города, не используется
 		sCity    = pchar.GenQuest.CapturedCity;
-		iNation  = sti(pchar.GenQuest.CaptureNation);
+		iNation  = int(pchar.GenQuest.CaptureNation);
 		CalculateCapturedCity();
 	}
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT",5);

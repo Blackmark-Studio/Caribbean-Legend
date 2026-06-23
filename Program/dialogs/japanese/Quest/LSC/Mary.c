@@ -558,7 +558,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // утро
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // утро
 			{
 				dialog.text = "「今日は忙しくなりそうだね、でしょ？」 "+pchar.name+"？幸運を祈るよ！";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -581,12 +581,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_1":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) //вечер
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) //вечер
 			{
 				dialog.text = ""+pchar.name+"、もう夕方だよ、何の話してるの？ここにいて、一緒に飲んでゆっくりしよう、でしょ？ 他のことは朝まで待てばいいんだから！";
 				link.l1 = "（笑いながら）もちろんよ、愛しい人、もう言わなくていいでしょ？";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "メアリー、今日は酒場に行こうぜ！";
 					link.l2.go = "LSC_tavern";
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 				link.l3.go = "LSC_love_2";
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) //день
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) //день
 			{
 				dialog.text = "夕方には必ず会いに来てよ。絶対にあたしを避けたりしないで、でしょ？";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		
 		case "rest_day":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 13 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 		
 		case "rest_evening":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 18 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // утро
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // утро
 			{
 				dialog.text = "もう行っちゃうの、でしょ？ "+pchar.name+"？幸運を祈ってるよ、でしょ？あたしのこと、忘れないでね……";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -714,19 +714,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_4":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) //вечер
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) //вечер
 			{
 				dialog.text = "もう夕方だね、 "+pchar.name+"……ここにいてくれない？あたし、あなたと一緒にいたいんだよ、でしょ？";
 				link.l1 = "わかったわ、あなた、あたしはここに残るよ…";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "メアリー、今日は酒場に行こう！";
 					link.l2.go = "LSC_tavern";
 				}
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) //день
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) //день
 			{
 				dialog.text = "幸運を祈ってるよ、そしてあたしのこと忘れないで…できたら夜に会いに来て、でしょ！";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -1196,8 +1196,8 @@ void ProcessDialogEvent()
 		// соглашаемся
 		case "adversary_hire":
 			// проход второй - смотрим, Элен может стать подругой или нет
-			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (sti(pchar.questTemp.Saga.HelenRelation) >= 6);
-			if (bOk || sti(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
+			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (int(pchar.questTemp.Saga.HelenRelation) >= 6);
+			if (bOk || int(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
 			{
 				dialog.text = "本当に？私を本気で自分の士官にしたかったの、でしょ？ "+pchar.name+"くそっ、どれだけ嬉しいか想像もできないでしょ！？あたし、あなたの士官になりたくてたまらないんだよ…でも、あの金髪と同じ船は絶対に嫌だからね！";
 				link.l1 = "メアリー、でもどうして！？";
@@ -1556,7 +1556,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;//закрыть локацию
-			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
+			if (int(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			if (npchar.chr_ai.type == "actor")
 			{
 				LAi_SetOfficerType(npchar);
@@ -1584,7 +1584,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "room_sex_goNS":
-		if(sti(pchar.reputation.fame) > 60)
+		if(int(pchar.reputation.fame) > 60)
 		{
 			ChangeCharacterComplexReputation(pchar,"authority", 2);
 			if (npchar.chr_ai.type == "actor")
@@ -2064,7 +2064,7 @@ void ProcessDialogEvent()
 		case "LongHappy_9c":
 			pchar.questTemp.LongHappy.MarryMoney = 100000;
 			pchar.questTemp.LongHappy.MarryRum = 100;
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				pchar.questTemp.LongHappy.MarryMoney = 200000;
 				pchar.questTemp.LongHappy.MarryRum = 150;
@@ -2074,7 +2074,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.LongHappy.MarryMoney = 300000;
 				pchar.questTemp.LongHappy.MarryRum = 200;
 			}
-			dialog.text = "あたしは思うんだけど、 "+sti(pchar.questTemp.LongHappy.MarryMoney)+" ペソで十分、でしょ。 "+sti(pchar.questTemp.LongHappy.MarryRum)+" ラム酒の樽――酒が切れるほど最悪なことはないよ！全部集めたら、すぐ酒場に来て、でしょ？あとはあたしが何とかするから。";
+			dialog.text = "あたしは思うんだけど、 "+int(pchar.questTemp.LongHappy.MarryMoney)+" ペソで十分、でしょ。 "+int(pchar.questTemp.LongHappy.MarryRum)+" ラム酒の樽――酒が切れるほど最悪なことはないよ！全部集めたら、すぐ酒場に来て、でしょ？あとはあたしが何とかするから。";
 			link.l1 = "いいわよ、ダーリン、そこで会おうね。";
 			link.l1.go = "LongHappy_9d";
 		break;
@@ -2668,7 +2668,7 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Mary_officer":
 			// если шлялся по борделям - устроит небольшой скандал 
-			if (sti(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
+			if (int(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
 			{
 				dialog.Text = ""+pchar.name+"！ちょっと話があるの、でしょ？本気なんだから！";
 				Link.l1 = "どうしたんだ、Mary？何か問題でもあるのか？";
@@ -2706,7 +2706,7 @@ void ProcessDialogEvent()
 				Link.l2 = RandPhraseSimple("ねえ、今すぐあなたが欲しいの。いいでしょ？","メアリー、しばらく…一緒に過ごさないか？二人きりで、でしょ？");
 				Link.l2.go = "cabin_sex";
 			}
-			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && sti(pchar.money) >= 10)
+			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && int(pchar.money) >= 10)
 			{
 				Link.l2 = RandPhraseSimple("メアリー、一緒に部屋を借りて泊まらないか？","愛しい人、二人きりで過ごしたいの…でしょ？\n部屋を借りて、数時間だけ全部忘れちゃわない？");
 				Link.l2.go = "room_sex";
@@ -2739,7 +2739,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "メアリー、火器の弾薬を交換してくれ。";
 					Link.l3.go = "SetGunBullets";
@@ -2752,7 +2752,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -2764,7 +2764,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;

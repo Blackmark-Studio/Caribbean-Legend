@@ -30,7 +30,7 @@ void InitLogInterface()
 	CreatePicInfoEnvironment();
 	CreateTimeSpeedEnvironment();
 	CreateLevelUpEnvironment();							
-	SendMessage(&ILogAndActions,"lll",LOG_AND_ACTIONS_INIT,sti(InterfaceStates.BattleShow.FastCommand),sti(InterfaceStates.BattleShow.LogString));
+	SendMessage(&ILogAndActions,"lll",LOG_AND_ACTIONS_INIT,int(InterfaceStates.BattleShow.FastCommand),int(InterfaceStates.BattleShow.LogString));
 	// SetEventHandler(EVENT_LOCATION_LOAD,"LI_LocationLoad",0);
 	SetEventHandler("BI_FastCommand","BI_FastCommand",0);
 	SetEventHandler(BI_EVENT_SET_VISIBLE,"SetLogInterfaceVisible",0);
@@ -71,7 +71,7 @@ void LI_SetWindowSize()
 {
 	int w = GetEventData();
 	int h = GetEventData();
-	int bTVused = GetEventData();
+	bool bTVused = bool(GetEventData());
 	if(bTVused)	SetShowWindowParameters(bTVused,w,h,40,24,w-40,h-24);
 	else	SetShowWindowParameters(bTVused,w,h,0,0,w,h);
 }
@@ -109,7 +109,7 @@ void CreateILogAndActions(int loadType)
 	{
 		CreateWorldMapActionsEnvironment();
 	}
-	SendMessage(&ILogAndActions,"lll",LOG_AND_ACTIONS_CHANGE,sti(InterfaceStates.BattleShow.FastCommand),sti(InterfaceStates.BattleShow.LogString));
+	SendMessage(&ILogAndActions,"lll",LOG_AND_ACTIONS_CHANGE,int(InterfaceStates.BattleShow.FastCommand),int(InterfaceStates.BattleShow.LogString));
 	Log_SetActiveAction(g_ActiveActionName);
 	CreatePicInfoEnvironment();
 	SendMessage(&ILogAndActions,"l", LOG_REFRESH_PIC);
@@ -134,12 +134,12 @@ void Log_SetActiveAction(string actionName)
 {
 	if(bMainMenu) return;
 	if(questMovieIsLockPlayerCtrl) return;
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	string sActionText, sTextFont;
 	float fFontScale;
 	int iTextWidth;
-	int iKeyWidth = makeint(20 * fHtRatio);
-	int iTextOffset = makeint(5 * fHtRatio);
+	int iKeyWidth = int(20 * fHtRatio);
+	int iTextOffset = int(5 * fHtRatio);
 	if("permanent_action" in pchar && actionName == "Nothing")
 		actionName = pchar.permanent_action;
 	if(ILogAndActions.type=="sea" && g_ActiveActionName!=actionName)
@@ -195,20 +195,20 @@ void Log_SetActiveAction(string actionName)
 		{
 			sActionText = ILogAndActions.ActiveActions.(actionName).Text;
 			sTextFont	= ILogAndActions.ActiveActions.text2.font;
-			fFontScale	= ILogAndActions.ActiveActions.text1.scale;
+			fFontScale	= ILogAndActions.ActiveActions.text1.scale$float(1.0);
 			iTextWidth	= GetStringWidth(sActionText, sTextFont, fFontScale);
 			if(actionName == "Closed")
             {
 				ILogAndActions.ActiveActions.text1.text = "";
-				ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
+				ILogAndActions.ActiveActions.text2.pos.x = int(showWindow.right)/2;
 			}
             else 
             {
                 cname = GetKeyByControl(FindControlFromActionName(actionName));
 				if(CheckAttribute(&objControlsState,"key_codes."+cname+".img"))
 					ILogAndActions.ActiveActions.text1.text = objControlsState.key_codes.(cname).img;
-				ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2 - makeint(iTextWidth/2) - iTextOffset;
-				ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2 + iKeyWidth + iTextOffset;
+				ILogAndActions.ActiveActions.text1.pos.x = int(showWindow.right)/2 - int(iTextWidth/2) - iTextOffset;
+				ILogAndActions.ActiveActions.text2.pos.x = int(showWindow.right)/2 + iKeyWidth + iTextOffset;
 			}
 			ILogAndActions.ActiveActions.text2.text = ILogAndActions.ActiveActions.(actionName).Text;
 		}
@@ -384,7 +384,7 @@ void Notification(string strLog, string ability)
 		case "None": IconIndex = 239; break;
 	}
 
-	if (HasSubStr(ability, "face_")) IconIndex = 180 + sti(FindStringAfterChar(ability, "_"));
+	if (HasSubStr(ability, "face_")) IconIndex = 180 + int(FindStringAfterChar(ability, "_"));
 
 	if(notificationsQty < 8)
 	{
@@ -405,11 +405,11 @@ void PushNotification()
 			if(!CheckAttribute(&Notifications[i],"printing"))
 			{
 				Notifications[i].printing = true;
-				Pic_Info( Notifications[i].str, makeint(Notifications[i].index));
-				//log_info(" Not "+Notifications[i].str+ " " +stf(Notifications[i].lt));
+				Pic_Info( Notifications[i].str, int(Notifications[i].index));
+				//log_info(" Not "+Notifications[i].str+ " " +float(Notifications[i].lt));
 			}
-			Notifications[i].lt = stf(Notifications[i].lt) - MakeFloat(GetDeltaTime()) * 0.001;
-			if(stf(Notifications[i].lt) < 0.1)
+			Notifications[i].lt = float(Notifications[i].lt) - float(GetDeltaTime()) * 0.001;
+			if(float(Notifications[i].lt) < 0.1)
 			{
 				DeleteAttribute(&Notifications[i],"str");
 				DeleteAttribute(&Notifications[i],"index");
@@ -421,7 +421,7 @@ void PushNotification()
 	if(CheckAttribute(&Notifications[1],"lt")) return;
 	if(CheckAttribute(&Notifications[2],"lt")) return;
 	
-	for( i = 3; i < 6; i++)
+	for(int i = 3; i < 6; i++)
 	{
 		if(CheckAttribute(&Notifications[i],"lt"))
 		{
@@ -429,10 +429,10 @@ void PushNotification()
 			if(!CheckAttribute(&Notifications[i],"printing"))
 			{
 				Notifications[i].printing = true;
-				Pic_Info( Notifications[i].str, makeint(Notifications[i].index));
+				Pic_Info( Notifications[i].str, int(Notifications[i].index));
 			}
-			Notifications[i].lt = stf(Notifications[i].lt) - MakeFloat(GetDeltaTime()) * 0.001;
-			if(stf(Notifications[i].lt) < 0.1)
+			Notifications[i].lt = float(Notifications[i].lt) - float(GetDeltaTime()) * 0.001;
+			if(float(Notifications[i].lt) < 0.1)
 			{
 				DeleteAttribute(&Notifications[i],"str");
 				DeleteAttribute(&Notifications[i],"index");
@@ -444,17 +444,17 @@ void PushNotification()
 	if(CheckAttribute(&Notifications[4],"lt")) return;
 	if(CheckAttribute(&Notifications[5],"lt")) return;
 	
-	for( i = 6; i < 9; i++)
+	for(int i = 6; i < 9; i++)
 	{
 		if(CheckAttribute(&Notifications[i],"lt"))
 		{
 			if(!CheckAttribute(&Notifications[i],"printing"))
 			{
 				Notifications[i].printing = true;
-				Pic_Info( Notifications[i].str, makeint(Notifications[i].index));
+				Pic_Info( Notifications[i].str, int(Notifications[i].index));
 			}
-			Notifications[i].lt = stf(Notifications[i].lt) - MakeFloat(GetDeltaTime()) * 0.001;
-			if(stf(Notifications[i].lt) < 0.1)
+			Notifications[i].lt = float(Notifications[i].lt) - float(GetDeltaTime()) * 0.001;
+			if(float(Notifications[i].lt) < 0.1)
 			{
 				DeleteAttribute(&Notifications[i],"str");
 				DeleteAttribute(&Notifications[i],"index");
@@ -466,7 +466,7 @@ void PushNotification()
 	if(CheckAttribute(&Notifications[7],"lt")) return;
 	if(CheckAttribute(&Notifications[8],"lt")) return;
 	
-	for(i = 0; i < 9; i++)
+	for(int i = 0; i < 9; i++)
 	{
 		if(CheckAttribute(&Notifications[i],"printing")) DeleteAttribute(&Notifications[i],"printing");
 	}
@@ -478,7 +478,7 @@ bool ShowExpNotifications()
 {
 	if(LAi_IsFightMode(pchar)) return false;
 	if(CheckAttribute(pchar,"systeminfo.InGameNotifications")) return true;
-	if(CheckAttribute(pchar,"chr_ai.type") &&  Pchar.chr_ai.type != "player")) return false;
+	if(CheckAttribute(pchar,"chr_ai.type") &&  Pchar.chr_ai.type != "player") return false;
 	if(CheckAttribute(pchar,"Ship.POS.Mode"))
 	{
 		if(pchar.Ship.POS.Mode == SHIP_WAR) return false;
@@ -517,7 +517,7 @@ void Log_Chr(ref chr, string sText)
 bool ShowCharString()
 {
 	//if (bBettaTestMode) return true;
-	if(CheckAttribute(&InterfaceStates,"ShowCharString") && sti(InterfaceStates.ShowCharString) > 0) return true;
+	if(CheckAttribute(&InterfaceStates,"ShowCharString") && int(InterfaceStates.ShowCharString) > 0) return true;
 	
 	return false;
 }
@@ -529,11 +529,11 @@ void Log_SetEternalString(string strLog)
 
 void CreateLogEnvironment()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	ILogAndActions.Log.width = sti(showWindow.right)/2;
-	ILogAndActions.Log.height = sti(showWindow.bottom)-makeint(80 * fHtRatio);
-	ILogAndActions.Log.right = sti(showWindow.right) - RecalculateHIcon(makeint(300 * fHtRatio));
-	ILogAndActions.Log.up = sti(showWindow.top) + makeint(16 * fHtRatio);
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	ILogAndActions.Log.width = int(showWindow.right)/2;
+	ILogAndActions.Log.height = int(showWindow.bottom)-int(80 * fHtRatio);
+	ILogAndActions.Log.right = int(showWindow.right) - RecalculateHIcon(int(300 * fHtRatio));
+	ILogAndActions.Log.up = int(showWindow.top) + int(16 * fHtRatio);
 	if(bBettaTestMode) {
 		ILogAndActions.Log.font = "interface_log";
 		ILogAndActions.Log.fontscale = 1.2 * (1.0 + (fHtRatio-1.0)*0.4);
@@ -542,7 +542,7 @@ void CreateLogEnvironment()
 		ILogAndActions.Log.fontscale = 1.5 * (1.0 + (fHtRatio-1.0)*0.4);
 	}
 	ILogAndActions.Log.color = argb(0,255,255,255);
-	ILogAndActions.Log.offsetString = makeint(24 * fHtRatio);
+	ILogAndActions.Log.offsetString = int(24 * fHtRatio);
 	ILogAndActions.Log.speed = 0.05;
 	ILogAndActions.Log.color_speed = 0.02;
 }
@@ -559,169 +559,169 @@ void CreatePicInfoEnvironment()
 	ILogAndActions.PicInfo.maxcolor, ILogAndActions.PicInfo.mincolor - максимальное(минимальное значение для альфа каналов (влияет на скорость затухания) 
 	ILogAndActions.PicInfo.right - можно менять на left и наоборот в зависимости от нужного равнения по краю */
 	
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	ILogAndActions.PicInfo.width = sti(showWindow.right)/2;
-	ILogAndActions.PicInfo.height = sti(showWindow.bottom)-makeint(350 * fHtRatio);
-	ILogAndActions.PicInfo.right = sti(showWindow.right) - RecalculateHIcon(makeint(75 * fHtRatio));
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	ILogAndActions.PicInfo.width = int(showWindow.right)/2;
+	ILogAndActions.PicInfo.height = int(showWindow.bottom)-int(350 * fHtRatio);
+	ILogAndActions.PicInfo.right = int(showWindow.right) - RecalculateHIcon(int(75 * fHtRatio));
 	if(iCompassPos) 
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfo.up = sti(showWindow.top) + makeint(425 * fHtRatio);
+			ILogAndActions.PicInfo.up = int(showWindow.top) + int(425 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfo.up = sti(showWindow.bottom)/2 + makeint(75 * fHtRatio);
+			ILogAndActions.PicInfo.up = int(showWindow.bottom)/2 + int(75 * fHtRatio);
 		}
 	}
 	else 
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfo.up = sti(showWindow.top) + makeint(165 * fHtRatio);
+			ILogAndActions.PicInfo.up = int(showWindow.top) + int(165 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfo.up = sti(showWindow.bottom)/2 + makeint(75 * fHtRatio);
+			ILogAndActions.PicInfo.up = int(showWindow.bottom)/2 + int(75 * fHtRatio);
 		}
 	}
 	ILogAndActions.PicInfo.font = "interface_normal";
 	ILogAndActions.PicInfo.fontscale = 1.4 * fHtRatio;
 	ILogAndActions.PicInfo.color = ARGB_Color("white");
-	ILogAndActions.PicInfo.offsetString = makeint(50 * fHtRatio);
+	ILogAndActions.PicInfo.offsetString = int(50 * fHtRatio);
 	ILogAndActions.PicInfo.color_speed = NOTIFICATIONS_SPEED;
 	ILogAndActions.PicInfo.maxcolor = argb(255,128,128,128);
 	ILogAndActions.PicInfo.mincolor = argb(0,128,128,128); // не менять!!! 
 	
 	ILogAndActions.PicInfoBack.TextureName = "interfaces\le\battle_interface\info_fader_r.tga.tx";
-	ILogAndActions.PicInfoBack.width = RecalculateHIcon(makeint(350 * fHtRatio));
-	ILogAndActions.PicInfoBack.height = RecalculateHIcon(makeint(40 * fHtRatio));
-	ILogAndActions.PicInfoBack.right = sti(showWindow.right) + RecalculateHIcon(makeint(5 * fHtRatio));
+	ILogAndActions.PicInfoBack.width = RecalculateHIcon(int(350 * fHtRatio));
+	ILogAndActions.PicInfoBack.height = RecalculateHIcon(int(40 * fHtRatio));
+	ILogAndActions.PicInfoBack.right = int(showWindow.right) + RecalculateHIcon(int(5 * fHtRatio));
 	if(iCompassPos)
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfoBack.top = sti(showWindow.top) + makeint(420 * fHtRatio);
+			ILogAndActions.PicInfoBack.top = int(showWindow.top) + int(420 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfoBack.top = sti(showWindow.bottom)/2 + makeint(70 * fHtRatio);
+			ILogAndActions.PicInfoBack.top = int(showWindow.bottom)/2 + int(70 * fHtRatio);
 		}
 	}
 	else 
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfoBack.top = sti(showWindow.top) + makeint(160 * fHtRatio);
+			ILogAndActions.PicInfoBack.top = int(showWindow.top) + int(160 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfoBack.top = sti(showWindow.bottom)/2 + makeint(70 * fHtRatio);
+			ILogAndActions.PicInfoBack.top = int(showWindow.bottom)/2 + int(70 * fHtRatio);
 		}
 	}
 	
 	ILogAndActions.PicInfoIcon.TextureName = "interfaces\le\battle_interface\MessageIcons.tga.tx";
 	ILogAndActions.PicInfoIcon.horzQ = 16;
 	ILogAndActions.PicInfoIcon.vertQ = 16;
-	ILogAndActions.PicInfoIcon.width = RecalculateHIcon(makeint(50 * fHtRatio));
-	ILogAndActions.PicInfoIcon.height = RecalculateHIcon(makeint(50 * fHtRatio));
-	ILogAndActions.PicInfoIcon.left = sti(showWindow.right) - RecalculateHIcon(makeint(60 * fHtRatio));
+	ILogAndActions.PicInfoIcon.width = RecalculateHIcon(int(50 * fHtRatio));
+	ILogAndActions.PicInfoIcon.height = RecalculateHIcon(int(50 * fHtRatio));
+	ILogAndActions.PicInfoIcon.left = int(showWindow.right) - RecalculateHIcon(int(60 * fHtRatio));
 	if(iCompassPos)
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfoIcon.top = sti(showWindow.top) + makeint(415 * fHtRatio);
+			ILogAndActions.PicInfoIcon.top = int(showWindow.top) + int(415 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfoIcon.top = sti(showWindow.bottom)/2 + makeint(65 * fHtRatio);
+			ILogAndActions.PicInfoIcon.top = int(showWindow.bottom)/2 + int(65 * fHtRatio);
 		}
 	}
 	else 
 	{
 		if(!isEntity(&WorldMap))
 		{
-			ILogAndActions.PicInfoIcon.top = sti(showWindow.top) + makeint(155 * fHtRatio);
+			ILogAndActions.PicInfoIcon.top = int(showWindow.top) + int(155 * fHtRatio);
 		}
 		else
 		{
-			ILogAndActions.PicInfoIcon.top = sti(showWindow.bottom)/2 + makeint(65 * fHtRatio);
+			ILogAndActions.PicInfoIcon.top = int(showWindow.bottom)/2 + int(65 * fHtRatio);
 		}
 	}
 }
 
 void CreateTimeSpeedEnvironment()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	
-	ILogAndActions.timespeedtext.left = sti(showWindow.right) - RecalculateHIcon(makeint(100 * fHtRatio));
-	ILogAndActions.timespeedtext.up = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(0 * fHtRatio));
+	ILogAndActions.timespeedtext.left = int(showWindow.right) - RecalculateHIcon(int(100 * fHtRatio));
+	ILogAndActions.timespeedtext.up = int(showWindow.bottom)/2 - RecalculateVIcon(int(0 * fHtRatio));
 	ILogAndActions.timespeedtext.font = "interface_normal";
 	ILogAndActions.timespeedtext.fontscale = 1.75 * fHtRatio;
 	ILogAndActions.timespeedtext.color = ARGB_Color("white");
 	
 	ILogAndActions.timespeedicon.TextureName = "interfaces\le\battle_interface\timescale.tga.tx";
-	ILogAndActions.timespeedicon.width = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.timespeedicon.height = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.timespeedicon.left = sti(showWindow.right) - RecalculateHIcon(makeint(100 * fHtRatio));
-	ILogAndActions.timespeedicon.top = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(0 * fHtRatio));		
+	ILogAndActions.timespeedicon.width = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.timespeedicon.height = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.timespeedicon.left = int(showWindow.right) - RecalculateHIcon(int(100 * fHtRatio));
+	ILogAndActions.timespeedicon.top = int(showWindow.bottom)/2 - RecalculateVIcon(int(0 * fHtRatio));
 	ILogAndActions.timespeedicon.color = argb(255,128,128,128);
 }
 
 void CreateLevelUpEnvironment()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	ILogAndActions.levelupstring.width = sti(showWindow.right)/2;
-	ILogAndActions.levelupstring.height = sti(showWindow.bottom)/2;
-	ILogAndActions.levelupstring.left = sti(showWindow.right)/2;
-	ILogAndActions.levelupstring.up = sti(showWindow.bottom)/2 - makeint(50 * fHtRatio);
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	ILogAndActions.levelupstring.width = int(showWindow.right)/2;
+	ILogAndActions.levelupstring.height = int(showWindow.bottom)/2;
+	ILogAndActions.levelupstring.left = int(showWindow.right)/2;
+	ILogAndActions.levelupstring.up = int(showWindow.bottom)/2 - int(50 * fHtRatio);
 	ILogAndActions.levelupstring.font = "interface_normal_bold";
 	ILogAndActions.levelupstring.fontscale = 1.4 * fHtRatio;
 	ILogAndActions.levelupstring.color = argb(0,255,255,255); // альфу не менять
 	ILogAndActions.levelupstring.color_speed = 0.05;
 	
-	ILogAndActions.leveluprank.width = sti(showWindow.right)/2;
-	ILogAndActions.leveluprank.height = sti(showWindow.bottom)/2;
-	ILogAndActions.leveluprank.left = sti(showWindow.right)/2;
-	ILogAndActions.leveluprank.up = sti(showWindow.bottom)/2 + makeint(0 * fHtRatio);
+	ILogAndActions.leveluprank.width = int(showWindow.right)/2;
+	ILogAndActions.leveluprank.height = int(showWindow.bottom)/2;
+	ILogAndActions.leveluprank.left = int(showWindow.right)/2;
+	ILogAndActions.leveluprank.up = int(showWindow.bottom)/2 + int(0 * fHtRatio);
 	ILogAndActions.leveluprank.font = "bold_numbers";
 	ILogAndActions.leveluprank.fontscale = 1.7 * fHtRatio;
 	ILogAndActions.leveluprank.color = argb(0,255,255,255);
 	//ILogAndActions.leveluprank.color_speed = 0.02;
 	
 	ILogAndActions.levelupback.TextureName = "interfaces\le\battle_interface\info_fader_c.tga.tx";
-	ILogAndActions.levelupback.width = RecalculateHIcon(makeint(450 * fHtRatio));
-	ILogAndActions.levelupback.height = RecalculateVIcon(makeint(100 * fHtRatio));
-	ILogAndActions.levelupback.left = sti(showWindow.right)/2 - RecalculateHIcon(makeint(225 * fHtRatio));
-	ILogAndActions.levelupback.top = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(50 * fHtRatio)); 
+	ILogAndActions.levelupback.width = RecalculateHIcon(int(450 * fHtRatio));
+	ILogAndActions.levelupback.height = RecalculateVIcon(int(100 * fHtRatio));
+	ILogAndActions.levelupback.left = int(showWindow.right)/2 - RecalculateHIcon(int(225 * fHtRatio));
+	ILogAndActions.levelupback.top = int(showWindow.bottom)/2 - RecalculateVIcon(int(50 * fHtRatio));
 	ILogAndActions.levelupback.color = argb(0,128,128,128); // альфу не менять
 }
 void CreateSeaActionsEnvironment()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 
 	ILogAndActions.type = "sea";
 	ILogAndActions.ActiveActions.TextureName = "interfaces\le\battle_interface\list_icons.tga";
 	ILogAndActions.ActiveActions.horzQ = 16;
 	ILogAndActions.ActiveActions.vertQ = 8;
-	ILogAndActions.ActiveActions.width = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.height = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.left = sti(showWindow.right) - RecalculateHIcon(makeint(100 * fHtRatio));
-	ILogAndActions.ActiveActions.top = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(62 * fHtRatio));
+	ILogAndActions.ActiveActions.width = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.height = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.left = int(showWindow.right) - RecalculateHIcon(int(100 * fHtRatio));
+	ILogAndActions.ActiveActions.top = int(showWindow.bottom)/2 - RecalculateVIcon(int(62 * fHtRatio));
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text1.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text2.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text2.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
 	
-	fTmp = sti(showWindow.right)/2;
-	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	fTmp = int(showWindow.right)/2;
+	fTmp2 = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 
 	ILogAndActions.ActiveActions.Moor.IconNum		= 13;
 	ILogAndActions.ActiveActions.Moor.Text			= XI_ConvertString("for_quick_action_Moor");//Причалить
@@ -751,38 +751,38 @@ void CreateSeaActionsEnvironment()
 	ILogAndActions.ActiveActions.Nothing.Text		= XI_ConvertString("for_quick_action");
 
 	ILogAndActions.ActiveActionsBack.TextureName = "interfaces\le\battle_interface\info_fader_b.tga.tx";
-	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(makeint(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
-	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(makeint(50 * fHtRatio));
-	ILogAndActions.ActiveActionsBack.centr = sti(showWindow.right)/2; // центр текстуры по Х
-	ILogAndActions.ActiveActionsBack.top = sti(showWindow.bottom) - RecalculateVIcon(makeint(205 * fHtRatio))
+	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(int(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
+	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(int(50 * fHtRatio));
+	ILogAndActions.ActiveActionsBack.centr = int(showWindow.right)/2; // центр текстуры по Х
+	ILogAndActions.ActiveActionsBack.top = int(showWindow.bottom) - RecalculateVIcon(int(205 * fHtRatio));
 	ILogAndActions.ActiveActionsBack.color = argb(255,128,128,128);
 }
 
 void CreateLandActionsEnvironment()
 {
-    float fHtRatio = stf(Render.screen_y) / iHudScale;
+    float fHtRatio = float(Render.screen_y) / iHudScale;
 	ILogAndActions.type = "land";
 	ILogAndActions.ActiveActions.TextureName = "interfaces\le\battle_interface\LandCommands.tga";
 	ILogAndActions.ActiveActions.horzQ = 16;
 	ILogAndActions.ActiveActions.vertQ = 4;
-	ILogAndActions.ActiveActions.width = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.height = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.left = sti(showWindow.right) - RecalculateHIcon(makeint(100 * fHtRatio));
-	ILogAndActions.ActiveActions.top = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(62 * fHtRatio));
+	ILogAndActions.ActiveActions.width = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.height = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.left = int(showWindow.right) - RecalculateHIcon(int(100 * fHtRatio));
+	ILogAndActions.ActiveActions.top = int(showWindow.bottom)/2 - RecalculateVIcon(int(62 * fHtRatio));
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text1.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text2.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text2.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
 
-	fTmp = sti(showWindow.right)/2;
-	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	fTmp = int(showWindow.right)/2;
+	fTmp2 = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 
 	ILogAndActions.ActiveActions.ToSea.IconNum			= 14;
 	ILogAndActions.ActiveActions.ToSea.Text				= XI_ConvertString("for_quick_action_ToSea");
@@ -858,38 +858,38 @@ void CreateLandActionsEnvironment()
 	ILogAndActions.ActiveActions.Nothing.Text			= XI_ConvertString("for_quick_action");
 	
 	ILogAndActions.ActiveActionsBack.TextureName = "interfaces\le\battle_interface\info_fader_b.tga.tx";
-	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(makeint(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
-	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(makeint(50 * fHtRatio));
-	ILogAndActions.ActiveActionsBack.centr = sti(showWindow.right)/2; // центр текстуры по Х
-	ILogAndActions.ActiveActionsBack.top = sti(showWindow.bottom) - RecalculateVIcon(makeint(205 * fHtRatio))
+	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(int(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
+	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(int(50 * fHtRatio));
+	ILogAndActions.ActiveActionsBack.centr = int(showWindow.right)/2; // центр текстуры по Х
+	ILogAndActions.ActiveActionsBack.top = int(showWindow.bottom) - RecalculateVIcon(int(205 * fHtRatio));
 	ILogAndActions.ActiveActionsBack.color = argb(255,128,128,128);
 }
 
 void CreateWorldMapActionsEnvironment()
 {
-    float fHtRatio = stf(Render.screen_y) / iHudScale;
+    float fHtRatio = float(Render.screen_y) / iHudScale;
 	ILogAndActions.type = "map";
 	ILogAndActions.ActiveActions.TextureName = "interfaces\le\battle_interface\WorldMapCommands.tga";
 	ILogAndActions.ActiveActions.horzQ = 8;
 	ILogAndActions.ActiveActions.vertQ = 2;
-	ILogAndActions.ActiveActions.width = RecalculateHIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.height = RecalculateVIcon(makeint(60 * fHtRatio));
-	ILogAndActions.ActiveActions.left = sti(showWindow.right) - RecalculateHIcon(makeint(280 * fHtRatio));
-	ILogAndActions.ActiveActions.top = sti(showWindow.top) + RecalculateVIcon(makeint(20 * fHtRatio));
+	ILogAndActions.ActiveActions.width = RecalculateHIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.height = RecalculateVIcon(int(60 * fHtRatio));
+	ILogAndActions.ActiveActions.left = int(showWindow.right) - RecalculateHIcon(int(280 * fHtRatio));
+	ILogAndActions.ActiveActions.top = int(showWindow.top) + RecalculateVIcon(int(20 * fHtRatio));
 
 	ILogAndActions.ActiveActions.text1.font = "keyboard_symbol";
 	ILogAndActions.ActiveActions.text1.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text1.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text1.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text1.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text1.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	// ILogAndActions.ActiveActions.text1.text = XI_ConvertString("Press_F3");
 	ILogAndActions.ActiveActions.text2.font = "interface_normal_bold";
 	ILogAndActions.ActiveActions.text2.scale = 1.0 * fHtRatio;
-	ILogAndActions.ActiveActions.text2.pos.x = sti(showWindow.right)/2;
-	ILogAndActions.ActiveActions.text2.pos.y = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	ILogAndActions.ActiveActions.text2.pos.x = int(showWindow.right)/2;
+	ILogAndActions.ActiveActions.text2.pos.y = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 	ILogAndActions.ActiveActions.text2.text = XI_ConvertString("for_quick_action");
 
-	fTmp = sti(showWindow.right)/2;
-	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(200 * fHtRatio));
+	fTmp = int(showWindow.right)/2;
+	fTmp2 = int(showWindow.bottom) - RecalculateVIcon(int(200 * fHtRatio));
 
 	ILogAndActions.ActiveActions.EnterToIsland.IconNum		= 8;
 	ILogAndActions.ActiveActions.EnterToIsland.Text			= XI_ConvertString("for_quick_action_EnterToIsland");
@@ -919,10 +919,10 @@ void CreateWorldMapActionsEnvironment()
 	ILogAndActions.ActiveActions.EnterToStorm.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActionsBack.TextureName = "interfaces\le\battle_interface\info_fader_b.tga.tx";
-	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(makeint(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
-	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(makeint(50 * fHtRatio));
-	ILogAndActions.ActiveActionsBack.centr = sti(showWindow.right)/2; // центр текстуры по Х
-	ILogAndActions.ActiveActionsBack.top = sti(showWindow.bottom) - RecalculateVIcon(makeint(205 * fHtRatio))
+	ILogAndActions.ActiveActionsBack.width = RecalculateHIcon(int(100 * fHtRatio)); // ширина текcтуры также зависит от длины текста
+	ILogAndActions.ActiveActionsBack.height = RecalculateVIcon(int(50 * fHtRatio));
+	ILogAndActions.ActiveActionsBack.centr = int(showWindow.right)/2; // центр текстуры по Х
+	ILogAndActions.ActiveActionsBack.top = int(showWindow.bottom) - RecalculateVIcon(int(205 * fHtRatio));
 }
 
 void DrawCharacterHP(float myHP,float enemyHP)
@@ -930,10 +930,10 @@ void DrawCharacterHP(float myHP,float enemyHP)
 	if(bYesBoardStatus==false)
 	{
 		CreateEntity(&IBoardingStatus,"IBoardingStatus");
-		IBoardingStatus.myLeft = sti(showWindow.left)+16;
-		IBoardingStatus.myTop = sti(showWindow.bottom)-140;
-		IBoardingStatus.enemyLeft = sti(showWindow.left)+16;
-		IBoardingStatus.enemyTop = sti(showWindow.bottom)-128;
+		IBoardingStatus.myLeft = int(showWindow.left)+16;
+		IBoardingStatus.myTop = int(showWindow.bottom)-140;
+		IBoardingStatus.enemyLeft = int(showWindow.left)+16;
+		IBoardingStatus.enemyTop = int(showWindow.bottom)-128;
 		IBoardingStatus.height = RecalculateVIcon(8);
 		IBoardingStatus.width = RecalculateHIcon(120);
 		IBoardingStatus.myColor = argb(255,0,0,128);
@@ -1023,7 +1023,7 @@ void BI_FastCommand()
 			case "Action": bEC = true; Item_OnUseItem(); break;
 			case "Talk":
 				bEC = true;
-				tmpi = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter");
+				tmpi = int(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter"));
 				if(tmpi>=0)	{Event("dlgReady","l",tmpi);}
 			break;
 			case "Reload":

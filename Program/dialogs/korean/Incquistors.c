@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
 					dialog.text = RandPhraseSimple("형제들아, 종교재판소 안에 적이 있다!","경보를 올려라, 형제들아!");
 					link.l1 = "확실히, 종교재판소의 적들이 경계하고 있군...";
@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(npchar, "protector.CheckAlways")) //гарды на камерах
 			{
-				if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{					
 					dialog.text = "무장하라! 저건 첩자다! 잡아라!";
 					link.l1 = "카라암바!";

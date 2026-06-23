@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "puancie":
 			dialog.text = "Ah, sim, estou ciente dessa dívida... Você trouxe a quantia necessária?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "É claro que sim. Como poderia ser diferente?";
 				link.l1.go = "puancie_1";

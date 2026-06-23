@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "Il y a beaucoup de Jones ici. Le plus renommé que je connaisse est un aide de camp sous le commandement du colonel Fox, Benjamin Jones. Il accueille généralement les visiteurs au quartier général du régiment.";
 				link.l1 = "A-t-il une soeur du nom de Molly ?";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("Hm, j'ai bien peur de ne pas pouvoir vous aider avec ça.","Non, je ne le connais pas.","Ha ! Si la Molly Jones que je connais est une rare beauté, alors le Colonel Fox est un curé de paroisse."),LinkRandPhrase("Je connais quelques Molly Jones. L'une d'elles a un frère mais... ce n'est pas celle que vous cherchez. Seul un homme ayant vécu avec des primates la qualifierait de 'beauté rare'.","Je suis désolé, mais tous les Jones que je connais n'ont pas de soeurs.","Je suis désolé, je ne peux pas vous aider. Demandez à quelqu'un d'autre."));
 			link.l1 = "Je vois. Désolé pour le dérangement.";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Pensez-vous que je travaille pour le service secret de "+NationNameGenitive(sti(NPChar.nation))+" ?";
+			dialog.text = "Pensez-vous que je travaille pour le service secret de "+NationNameGenitive(int(NPChar.nation))+" ?";
 			link.l1 = "Eh bien... non. Adieu alors.";
 			link.l1.go = "exit";
 			link.l2 = "Une autre question, alors ?";

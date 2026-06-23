@@ -80,7 +80,7 @@ void Island_SetReloadEnableLocal(string sIslandID, string sLocatorID, bool bEnab
 bool Island_isReloadEnableGlobal(string sIslandID)
 {
 	ref rIsland = GetIslandByID(sIslandID);
-	return sti(rIsland.reload_enable);
+	return bool(rIsland.reload_enable);
 }
 
 bool Island_isReloadFort(string sIslandID, string sLocatorID)
@@ -94,7 +94,7 @@ bool Island_isReloadEnableLocal(string sIslandID, string sLocatorID)
 {
 	aref arIslandReloadLocator = FindIslandReloadLocator(sIslandID, sLocatorID);
 	if (!CheckAttribute(arIslandReloadLocator,"enable")) return true;
-	return sti(arIslandReloadLocator.enable);
+	return bool(arIslandReloadLocator.enable);
 }
 
 void Island_SetGotoEnableLocal(string sIslandID, string sLocatorID, bool bEnable)
@@ -107,7 +107,7 @@ bool Island_isGotoEnableLocal(string sIslandID, string sLocatorID)
 {
 	aref arIslandReloadLocator = FindIslandReloadLocator(sIslandID, sLocatorID);
 	if (!CheckAttribute(arIslandReloadLocator,"goto_enable")) return true;
-	return sti(arIslandReloadLocator.goto_enable);
+	return bool(arIslandReloadLocator.goto_enable);
 }
 
 void Island_SetEncountersEnable(string sIslandID, bool bEnable)
@@ -120,7 +120,7 @@ bool Island_IsEncountersEnable(string sIslandID)
 {
 	ref rIsland = GetIslandByID(sIslandID);
 	if (!CheckAttribute(rIsland, "Enc_enable")) return true;
-	return sti(rIsland.Enc_enable);
+	return bool(rIsland.Enc_enable);
 }
 
 int FindIslandBySeaLocation(string locID)
@@ -161,7 +161,7 @@ bool FindIslandLocatorXYZ(string _islandId, string _locator, ref float_x, ref fl
 			{
 				if (CheckAttribute(at, "x"))
 				{
-					float_x = stf(at.x); float_y = stf(at.y); float_z = stf(at.z);
+					float_x = float(at.x); float_y = float(at.y); float_z = float(at.z);
 				}
 				else
 				{

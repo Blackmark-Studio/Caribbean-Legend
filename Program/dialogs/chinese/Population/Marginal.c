@@ -33,7 +33,7 @@ void ProcessDialogEvent()
             
             if (npchar.quest.meeting == "0")
             {
-                if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Marginpassenger"))//劫持乘客
+                if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Marginpassenger"))//劫持乘客
                 {
                     dialog.text = "嘿, 船长! 对, 就是你。 过来, 我有笔交易想和你谈... ";
                     link.l1 = "什么交易? ";
@@ -74,8 +74,8 @@ void ProcessDialogEvent()
         
         case "passenger_2":
             pchar.GenQuest.Marginpassenger.Dublon = 70+hrand(5)*10;
-            dialog.text = "欺骗你是很不明智的, 水手。 我住在这个镇上, 不想惹麻烦。 只要" + sti(pchar.GenQuest.Marginpassenger.Dublon) + "个达布隆, 我就提供完整的信息。 你会赚得更多。 ";
-            if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+            dialog.text = "欺骗你是很不明智的, 水手。 我住在这个镇上, 不想惹麻烦。 只要" + int(pchar.GenQuest.Marginpassenger.Dublon) + "个达布隆, 我就提供完整的信息。 你会赚得更多。 ";
+            if (PCharDublonsTotal() >= int(pchar.GenQuest.Marginpassenger.Dublon))
             {
                 link.l1 = "你说得有道理。 拿上金币, 开始说吧。 ";
                 link.l1.go = "passenger_4";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 
         case "passenger_repeat":
             dialog.text = "你把我的金币带来了吗? ";
-            if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+            if (PCharDublonsTotal() >= int(pchar.GenQuest.Marginpassenger.Dublon))
             {
                 link.l1 = "是的。 拿着。 现在别想撒谎... ";
                 link.l1.go = "passenger_4";
@@ -112,24 +112,24 @@ void ProcessDialogEvent()
         
         case "passenger_4"://设置参数
             pchar.quest.Marginpassenger_Over.over = "yes"; //移除可能的计时器
-            RemoveDublonsFromPCharTotal(sti(pchar.GenQuest.Marginpassenger.Dublon));
+            RemoveDublonsFromPCharTotal(int(pchar.GenQuest.Marginpassenger.Dublon));
             pchar.GenQuest.Marginpassenger.Name = GetFullName(npchar);
             pchar.GenQuest.Marginpassenger.City = npchar.city;
             pchar.GenQuest.Marginpassenger.Targetcity = SelectAnyColony(npchar.city); 
             pchar.GenQuest.Marginpassenger.Nation = npchar.nation;
             pchar.GenQuest.Marginpassenger.Days = 10+hrand(5);
-            pchar.GenQuest.Marginpassenger.ShipName = GenerateRandomNameToShip(sti(npchar.nation));
-            pchar.GenQuest.Marginpassenger.q2Name = GenerateRandomName(sti(npchar.nation), "man");
+            pchar.GenQuest.Marginpassenger.ShipName = GenerateRandomNameToShip(int(npchar.nation));
+            pchar.GenQuest.Marginpassenger.q2Name = GenerateRandomName(int(npchar.nation), "man");
             pchar.GenQuest.Marginpassenger.Chance = 0.8+frand(0.4);
             SelectMarginpassengerParameter();
             log_testinfo(pchar.GenQuest.Marginpassenger.Targetcity);
-            dialog.text = "保持火药干燥, 你很快就会需要它, 船长。 现在听着, 在" + FindRussianDaysString(sti(pchar.GenQuest.Marginpassenger.Days)) + "后, 有一艘船将从我们的殖民地起航, 这艘船是" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + ", 名为‘" + pchar.GenQuest.Marginpassenger.ShipName + "’, 它将前往" + XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Targetcity + "Gen") + "。 船上会有一名乘客 - " + pchar.GenQuest.Marginpassenger.Text + ", 名叫" + pchar.GenQuest.Marginpassenger.q1Name + "\n船长" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name") + "Gen")) + "像所有商人一样是个胆小鬼, 哈哈哈! 也许你甚至可以避免任何战斗。 只要让他感到恐惧, 他就应该会自己交出目标, 嘿嘿\n如你所知, " + pchar.GenQuest.Marginpassenger.Text1 + ", 你可能会得到你的硬币, 是的, 但之后当地当局会追杀你到死。 你最好把你的猎物带到" + XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Targetcity) + "。 你会在那里找到一个名叫" + pchar.GenQuest.Marginpassenger.q2Name + "的人\n" + pchar.GenQuest.Marginpassenger.Text2 + ", 你甚至不需要说出你的名字。 这是你决定在哪里赎回你的人, 但不要贪多嚼不烂... 但你肯定可以要" + sti(pchar.GenQuest.Marginpassenger.Dublon) * 4 + "个达布隆。 明白了吗? ";
+            dialog.text = "保持火药干燥, 你很快就会需要它, 船长。 现在听着, 在" + FindRussianDaysString(int(pchar.GenQuest.Marginpassenger.Days)) + "后, 有一艘船将从我们的殖民地起航, 这艘船是" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + ", 名为‘" + pchar.GenQuest.Marginpassenger.ShipName + "’, 它将前往" + XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Targetcity + "Gen") + "。 船上会有一名乘客 - " + pchar.GenQuest.Marginpassenger.Text + ", 名叫" + pchar.GenQuest.Marginpassenger.q1Name + "\n船长" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name") + "Gen")) + "像所有商人一样是个胆小鬼, 哈哈哈! 也许你甚至可以避免任何战斗。 只要让他感到恐惧, 他就应该会自己交出目标, 嘿嘿\n如你所知, " + pchar.GenQuest.Marginpassenger.Text1 + ", 你可能会得到你的硬币, 是的, 但之后当地当局会追杀你到死。 你最好把你的猎物带到" + XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Targetcity) + "。 你会在那里找到一个名叫" + pchar.GenQuest.Marginpassenger.q2Name + "的人\n" + pchar.GenQuest.Marginpassenger.Text2 + ", 你甚至不需要说出你的名字。 这是你决定在哪里赎回你的人, 但不要贪多嚼不烂... 但你肯定可以要" + int(pchar.GenQuest.Marginpassenger.Dublon) * 4 + "个达布隆。 明白了吗? ";
             link.l1 = "是的。 我要回到我的船上, 把它记在日志里。 ";
             link.l1.go = "passenger_5";
         break;
         
         case "passenger_5":
-            dialog.text = "没错! 正确的选择。 好的, 船长, 祝你在这个简单的任务中好运。 哦, 对了, 我差点忘了: " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + "不会从港口起航, 而是从附近的一个海湾起航。 所以注意了。 祝你好运, 谢谢你的金币! ";
+            dialog.text = "没错! 正确的选择。 好的, 船长, 祝你在这个简单的任务中好运。 哦, 对了, 我差点忘了: " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + "不会从港口起航, 而是从附近的一个海湾起航。 所以注意了。 祝你好运, 谢谢你的金币! ";
             link.l1 = "不客气。 别一夜之间就把它花光了。 ";
             link.l1.go = "exit_quest";
             npchar.lifeday = 0;
@@ -140,12 +140,12 @@ void ProcessDialogEvent()
             AddQuestUserData("Marginpassenger", "sName", pchar.GenQuest.Marginpassenger.Name);
             AddQuestUserData("Marginpassenger", "sName1", pchar.GenQuest.Marginpassenger.q1Name);
             AddQuestUserData("Marginpassenger", "sName2", pchar.GenQuest.Marginpassenger.q2Name);
-            AddQuestUserData("Marginpassenger", "sDay", FindRussianDaysString(sti(pchar.GenQuest.Marginpassenger.Days)));
-            AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name") + "Voc")));
+            AddQuestUserData("Marginpassenger", "sDay", FindRussianDaysString(int(pchar.GenQuest.Marginpassenger.Days)));
+            AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name") + "Voc")));
             AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName);
             AddQuestUserData("Marginpassenger", "sText", pchar.GenQuest.Marginpassenger.Text1);
             pchar.GenQuest.Marginpassenger = "begin";
-            SetFunctionTimerCondition("Marginpassenger_InWorld", 0, 0, sti(pchar.GenQuest.Marginpassenger.Days), false);
+            SetFunctionTimerCondition("Marginpassenger_InWorld", 0, 0, int(pchar.GenQuest.Marginpassenger.Days), false);
         break;
         
         // 市民类型角色对出鞘武器的评价
@@ -177,7 +177,7 @@ void SelectMarginpassengerParameter()
 {
     if (hrand(1) == 0)
     {
-        pchar.GenQuest.Marginpassenger.q1Name = GenerateRandomName(sti(pchar.GenQuest.Marginpassenger.Nation), "woman");
+        pchar.GenQuest.Marginpassenger.q1Name = GenerateRandomName(int(pchar.GenQuest.Marginpassenger.Nation), "woman");
         pchar.GenQuest.Marginpassenger.model = "women_" + (rand(5) + 11);
         pchar.GenQuest.Marginpassenger.sex = "woman";
         pchar.GenQuest.Marginpassenger.ani = "towngirl";
@@ -213,7 +213,7 @@ void SelectMarginpassengerParameter()
     }
     else
     {
-        pchar.GenQuest.Marginpassenger.q1Name = GenerateRandomName(sti(pchar.GenQuest.Marginpassenger.Nation), "man");
+        pchar.GenQuest.Marginpassenger.q1Name = GenerateRandomName(int(pchar.GenQuest.Marginpassenger.Nation), "man");
         pchar.GenQuest.Marginpassenger.model = "citiz_" + (rand(9) + 11);
         pchar.GenQuest.Marginpassenger.sex = "man";
         pchar.GenQuest.Marginpassenger.ani = "man";
@@ -247,9 +247,9 @@ void SelectMarginpassengerParameter()
                 break;
         }
     }
-    if (sti(pchar.rank) < 5) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
-    if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 10) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
-    if (sti(pchar.rank) >= 10 && sti(pchar.rank) < 17) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
-    if (sti(pchar.rank) >= 17 && sti(pchar.rank) < 26) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
-    if (sti(pchar.rank) >= 26) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+    if (int(pchar.rank) < 5) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+    if (int(pchar.rank) >= 5 && int(pchar.rank) < 10) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+    if (int(pchar.rank) >= 10 && int(pchar.rank) < 17) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+    if (int(pchar.rank) >= 17 && int(pchar.rank) < 26) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+    if (int(pchar.rank) >= 26) pchar.GenQuest.Marginpassenger.ShipType = GetRandomShipType(FLAG_SHIP_CLASS_2 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 }

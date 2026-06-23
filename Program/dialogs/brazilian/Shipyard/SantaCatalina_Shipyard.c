@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "helendrinking_buy_rainbow_1":
 			dialog.text = "Cinquenta mil pratas por tudo, senhor.";
-			if (sti(pchar.money) >= 55000) {
+			if (int(pchar.money) >= 55000) {
 				link.l1 = "Q-quanto você disse? C-cinquenta mil? Então, conte você mesmo! E leve mais cinco mil de gorjeta. Vamos!";
 				link.l1.go = "helendrinking_buy_rainbow_yes";
 			}

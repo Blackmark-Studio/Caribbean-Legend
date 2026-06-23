@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 			{
 				link.l2 = "O Capitão Svenson me disse que você quer navegar comigo. Fico grata pelo seu interesse, e a Sra. Gladys comentou que você sente falta do mar. Bem-vinda à minha tripulação, Sra. Helen Sharp!";
 				link.l2.go = "Helena_hire_2";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 2;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 2;
 			}
 		break;
 		
@@ -151,7 +151,7 @@ void ProcessDialogEvent()
 			link.l1 = "Helen, você é filha de Beatrice Sharp e a única herdeira da dinastia Sharp. Esta é metade do mapa que ficou guardada com a dona Gladys todos esses anos. É a prova do seu direito sobre Isla Tesoro. Não vai ser fácil, mas Jan Svenson e eu vamos fazer de tudo para te ajudar a herdar a ilha do seu avô.";
 			link.l1.go = "Helena_hire_3";
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 3;
 			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
@@ -293,11 +293,11 @@ void ProcessDialogEvent()
 	// --> разговор по итогам Саги
 		case "result":
 			//if (!CheckAttribute(pchar, "questTemp.Saga.Helena_friend")) // не друзья
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 11) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 11) {
 				Achievment_Set("ach_CL_83");
 			}
 			
-			if (sti(pchar.questTemp.Saga.HelenRelation) < 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) < 6)
 			{
 				dialog.text = "Bem, meu querido capitão... Chegou a hora de nos despedirmos. Meu serviço terminou, e agora preciso me acostumar a ser a Rainha Pirata de Isla Tesoro. Espero ser uma sucessora digna do meu tio. Obrigada pela sua ajuda.";
 				link.l1 = "É uma pena ter que me despedir de você, mas assim são os caprichos do destino. Agora você tem responsabilidades muito mais importantes do que servir no meu navio.";
@@ -663,7 +663,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = true;
 			//npchar.quest.daily_sex_room = true; // для первого раза в таверне чтобы счетчик запустить . лесник
 			//npchar.quest.daily_sex_cabin = true;
-			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
+			if (int(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			sld = CharacterFromID("Helena");
 			ChangeCharacterAddressGroup(sld, loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest3");
 			DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "LoveSex_Room_Go");
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Helena_officer";
 				break;
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && sti(pchar.GenQuest.BrothelCount) > 0 && !CheckAttribute(npchar, "quest.refusesex")) {
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && int(pchar.GenQuest.BrothelCount) > 0 && !CheckAttribute(npchar, "quest.refusesex")) {
 				dialog.text = "Querido, sobre suas visitas a prostitutas.";
 				npchar.quest.refusesex = true;
 				link.l1 = "O quê? Helen, você entendeu tudo errado! Eu só...";
@@ -715,7 +715,7 @@ void ProcessDialogEvent()
 				Link.l2 = "Helen, preciso te dar algumas ordens.";
 				Link.l2.go = "Companion_Tasks";
 				
-				sld = GetCharacter(sti(npchar.RealCompanionIdx));
+				sld = GetCharacter(int(npchar.RealCompanionIdx));
 				if (CheckAttribute(pchar, "questTemp.HelenDrinking.Rainbow") && sld.ship.type == pchar.questTemp.HelenDrinking.Rainbow && CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) {
 					DeleteAttribute(link, "");
 					dialog.text = "Você acha que isso é engraçado?";
@@ -741,12 +741,12 @@ void ProcessDialogEvent()
 				Link.l2 = RandPhraseSimple("Helen, vamos ficar juntos na cabine, só nós dois... por algumas horas? O que você acha?","Querido, que tal passarmos as próximas horas a sós? Gosta da ideia?");
 				Link.l2.go = "cabin_sex";
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "tavern" && sti(pchar.money) >= 10 && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - очередные исправления интима
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "tavern" && int(pchar.money) >= 10 && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - очередные исправления интима
 			{
 				Link.l2 = RandPhraseSimple("Helen, por que não alugamos um quarto e passamos um tempo a sós... só nós dois por algumas horas? O que acha disso?","Meu bem, que tal passarmos as próximas horas a sós? Podemos alugar um quarto... o que acha?");
 				Link.l2.go = "room_sex";
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "town" && sti(pchar.money) >= 1000 && GetNpcQuestPastDayWOInit(npchar, "special_sex_date") >= 30 && !CheckAttribute(npchar, "quest.refusesex"))
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "town" && int(pchar.money) >= 1000 && GetNpcQuestPastDayWOInit(npchar, "special_sex_date") >= 30 && !CheckAttribute(npchar, "quest.refusesex"))
 			{
 				Link.l2 = "Helen, querida, posso te convidar para passar um tempo na taverna?";
 				Link.l2.go = "special_sex";
@@ -844,7 +844,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Mude o tipo de munição das suas armas de fogo.";
 					Link.l3.go = "SetGunBullets";
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -869,7 +869,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -2091,10 +2091,10 @@ void ProcessDialogEvent()
 		case "drinking_my_background_12":
 			dialog.text = "... And then I gradually rose through the ranks, served at the captain's table in councils with my father and officers. Learned a lot. From the age of fifteen, they started taking me on military campaigns, and I killed a man in my very first battle. It was a disgusting campaign; we shouldn't have set sail on a Monday... Really shouldn't have!";
 			link.l1 = "Aos quinze? Você está me assustando, Helen.";
-			link.l1.go = "drinking_my_background_13";
+			link.l1.go = "drinking_my_background_12b";
 		break;
 		
-		case "drinking_my_background_12":
+		case "drinking_my_background_12b":
 			dialog.text = "Eu nem entendi o que aconteceu. O mercador holandês tinha sua vanguarda — mercenários da Companhia. Eles resolveram agir com ousadia e contra-atacaram nosso convés de popa. E eu, feito uma tola, sem medo nenhum pela minha vida, enfiei minha cabeça loira pra fora. Levei logo uma coronhada de pistola. Mas um instante antes disso, ainda consegui enfiar minha rapieira em algum idiota da Companhia.";
 			link.l1 = "Meu Deus, e o Sean? Como é que ele não te mandou pra terra firme depois disso?";
 			link.l1.go = "drinking_my_background_13";
@@ -2300,12 +2300,6 @@ void ProcessDialogEvent()
 			link.l1.go = "drinking_game_accept_11";
 		break;
 		
-		case "drinking_game_accept_10":
-			dialog.text = "Ai! Droga, Charles! (Bebe)";
-			link.l1 = "";
-			link.l1.go = "drinking_game_accept_11";
-		break;
-		
 		case "drinking_game_accept_11":
 			dialog.text = "Eu... Hic... não acredito nisso. Confesso, sou culpada – a pequena Rumba já gostou de uma bebida. Mas nunca estive na prisão!";
 			link.l1 = "Como você...?";
@@ -2436,7 +2430,7 @@ void ProcessDialogEvent()
 			
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 2;
 				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
@@ -2657,7 +2651,7 @@ void ProcessDialogEvent()
 				case "A":
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "Did you have to, Captain? Why so quick to fight? Well, one should not just a winner, I guess. Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
-						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+						pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "Kudos, my Captain, for trying to resolve the issue wisely before getting into a fight. Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
@@ -2669,7 +2663,7 @@ void ProcessDialogEvent()
 				
 				case "B":
 					dialog.text = "You skillfully fooled those fools, my Captain! I almost burst out laughing, honest! Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
-					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+					pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 					Notification_Approve(true, "Helena");
 					
 					link.l1 = "E aquele navio enorme encalhado na praia?";
@@ -2678,7 +2672,7 @@ void ProcessDialogEvent()
 				
 				case "C":
 					dialog.text = "Calma, deixa uma garota recuperar o fôlego! É você mesmo, Charlie Prince?";
-					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+					pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Houve um tempo assim na minha vida, sim. Está impressionado?";
@@ -2724,7 +2718,7 @@ void ProcessDialogEvent()
 		case "ambush_inresidence_sea":
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "Obrigada, meu capitão. Fico feliz em ouvir isso. É ainda melhor escutar pela segunda vez. Você me conhece bem.";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 3;
 				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "Obrigada, meu capitão. Fico feliz em ouvir isso.";
@@ -2747,7 +2741,7 @@ void ProcessDialogEvent()
 		case "ambush_inresidence_land":
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "Você acha que eu mereço? Nunca gastei dinheiro com essas bobagens, mas acho que sempre há uma primeira vez para tudo. Vejo que você não vai desistir de tentar me fazer esquecer do mar, hein, Capitão? Talvez você esteja certo...";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 3;
 				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "Você acha que eu mereço? Nunca gastei dinheiro com essas bobagens, mas acho que sempre tem uma primeira vez para tudo.";
@@ -2773,7 +2767,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ambush_inresidence_3":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6) {
 				dialog.text = "Nada mudou, meu capitão, mas muita coisa caiu sobre os ombros de uma pobre garota, haha! Não quis te ofender. Só preciso pensar em muita coisa agora. Sabe, essas reviravoltas na vida não acontecem todo dia. E ainda temos muito tempo juntos!";
 				link.l1 = "Que bom ouvir isso! Vamos sair daqui.";
 			} else {
@@ -2982,7 +2976,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shdn_ambush_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6) {
 				dialog.text = "Ha, a segunda opção parece mais tentadora, mas espero que você não seja convencido demais, Charles?";
 			} else {
 				dialog.text = "Não posso dizer que estou surpresa, Charles...";
@@ -3074,10 +3068,10 @@ void ProcessDialogEvent()
 		case "after_cave_duel":
 			dialog.text = "Uma pena que você caiu na armadilha deles. O coronel estava claramente obcecado, e o resto só queria um pouco de espetáculo e assunto para fofoca. Bem, não vou ficar te lembrando disso – você já passou por bastante hoje.";
 			link.l1 = "Sim, depois dos duelos, sempre fica uma sensação de vazio. Já chega de aventura por hoje. O que você quer fazer agora?";
-			if (sti(pchar.questTemp.Saga.HelenRelation) == 7 || sti(pchar.questTemp.Saga.HelenRelation) == 8) {
+			if (int(pchar.questTemp.Saga.HelenRelation) == 7 || int(pchar.questTemp.Saga.HelenRelation) == 8) {
 				link.l1.go = "after_cave_mild";
 			} else {
-				if (sti(pchar.questTemp.Saga.HelenRelation) < 7) {
+				if (int(pchar.questTemp.Saga.HelenRelation) < 7) {
 					link.l1.go = "after_cave_cold";
 				} else {
 					link.l1.go = "after_cave_lewd";
@@ -3094,10 +3088,10 @@ void ProcessDialogEvent()
 		case "after_cave_notduel_1":
 			dialog.text = "Sim, eu precisava disso. Só é uma pena que fosse um uniforme azul, e não um vermelho, mas pelo menos quem o vestia teve o que merecia.";
 			link.l1 = "Essa pessoa realmente não importa, eu admito. Já tivemos aventuras suficientes por hoje. O que você gostaria de fazer agora?";
-			if (sti(pchar.questTemp.Saga.HelenRelation) == 7 || sti(pchar.questTemp.Saga.HelenRelation) == 8) {
+			if (int(pchar.questTemp.Saga.HelenRelation) == 7 || int(pchar.questTemp.Saga.HelenRelation) == 8) {
 				link.l1.go = "after_cave_mild";
 			} else {
-				if (sti(pchar.questTemp.Saga.HelenRelation) < 7) {
+				if (int(pchar.questTemp.Saga.HelenRelation) < 7) {
 					link.l1.go = "after_cave_cold";
 				} else {
 					link.l1.go = "after_cave_lewd";
@@ -3544,7 +3538,7 @@ bool HelenDrinking_RobbedSvenson() {
 		return true;
 	}
 	
-	if (sti(sld.private1.items.chest) < 2) {
+	if (int(sld.private1.items.chest) < 2) {
 		return true;
 	}
 	

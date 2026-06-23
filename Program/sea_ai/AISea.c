@@ -84,10 +84,10 @@ void SeaAI_SailToEndFade()
 	{
 		case SAIL_TO_LOCATOR:
 			aref rIslLoc = FindIslandReloadLocator(pchar.Location, sSailToString);
-			SendMessage(&AISea,"lffff", AI_MESSAGE_SAIL_2_LOCATOR, stf(rIslLoc.x), stf(rIslLoc.y), stf(rIslLoc.z), stf(rIslLoc.ay));
+			SendMessage(&AISea,"lffff", AI_MESSAGE_SAIL_2_LOCATOR, float(rIslLoc.x), float(rIslLoc.y), float(rIslLoc.z), float(rIslLoc.ay));
 		break;
 		case SAIL_TO_CHARACTER:
-			SendMessage(&AISea, "laff", AI_MESSAGE_SAIL_2_CHARACTER, &Characters[sti(sSailToString)], 40.0 + frnd() * 60.0, frnd() * PIm2);
+			SendMessage(&AISea, "laff", AI_MESSAGE_SAIL_2_CHARACTER, &Characters[int(sSailToString)], 40.0 + frnd() * 60.0, frnd() * PIm2);
 		break;
 	}
 	//PauseParticles(false);
@@ -151,8 +151,8 @@ void SeaAI_SwapShipsAttributes(ref refMyCharacter, ref refEnemyCharacter) // to_
 	DeleteAttribute(arShipEnemy,"");
 	CopyAttributes(arShipEnemy,&oTmp);
 	// оставляем старую команду на месте, иначе херилась мораль
-	/*float fExp = stf(refMyCharacter.ship.crew.experience);
-	float fMor = stf(refMyCharacter.ship.crew.morale);
+	/*float fExp = float(refMyCharacter.ship.crew.experience);
+	float fMor = float(refMyCharacter.ship.crew.morale);
 
 	refMyCharacter.ship.crew.experience = refEnemyCharacter.ship.crew.experience;
 	refMyCharacter.ship.crew.morale = refEnemyCharacter.ship.crew.morale;
@@ -173,7 +173,7 @@ bool SeaAI_SwapShipAfterAbordage(ref refMyCharacter, ref refEnemyCharacter)
 
 void SeaAI_SetCompanionEnemy(ref rCharacter)
 {
-	int		iCharacterIndex = sti(rCharacter.index);
+	int		iCharacterIndex = int(rCharacter.index);
 	string	sGroupName = "cmpenemy_" + rCharacter.index;
 
 	RemoveCharacterCompanion(pchar, rCharacter);
@@ -206,7 +206,7 @@ void SeaAI_SetCaptainFree(ref rCharacter, ref refEnemyCharacter)
 	// метод склейка SeaAI_SetOfficer2ShipAfterAbordage    и SeaAI_SetCompanionEnemy   - в начале назначим офа, потом его поругаем :)
 	if (bSeaActive)
 	{
-        int		iCharacterIndex = sti(rCharacter.index);
+        int		iCharacterIndex = int(rCharacter.index);
 		if (CheckAttribute(refEnemyCharacter, "SeaAI.Group.Name")) // fix 01/08/06 группы может не быть
 		{
 			Group_DelCharacter(refEnemyCharacter.SeaAI.Group.Name, refEnemyCharacter.id);
@@ -241,8 +241,8 @@ void SeaAI_SetCaptainFree(ref rCharacter, ref refEnemyCharacter)
 
 bool SeaAI_SetOfficer2ShipAfterAbordage(ref refMyCharacter, ref refEnemyCharacter)
 {
-	int iMyCharacterIndex = sti(refMyCharacter.index);
-	int iEnemyCharacterIndex = sti(refEnemyCharacter.index);
+	int iMyCharacterIndex = int(refMyCharacter.index);
+	int iEnemyCharacterIndex = int(refEnemyCharacter.index);
 	if (bSeaActive)
 	{	
 		if (CheckAttribute(refEnemyCharacter, "SeaAI.Group.Name")) // fix 01/08/06 группы может не быть

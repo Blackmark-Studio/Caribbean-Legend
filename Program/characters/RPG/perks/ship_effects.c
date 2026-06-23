@@ -51,8 +51,8 @@ void DailyCheckIfQuartermaster(ref rchar)
 // Квартирмейстер
 int GetBonusCrewQuartermaster(ref rchar, int optCrew, int maxCrew)
 {
-	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return makeint(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
-	else if (HasPerk(rchar, "Quartermaster")) return makeint(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
+	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return int(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
+	else if (HasPerk(rchar, "Quartermaster")) return int(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
 	return maxCrew;
 }
 
@@ -66,7 +66,7 @@ float GetWeightMtpWithIntendant(ref chr)
 	return intendantMtp;
 }
 
-void CheckTradeConnections(aref location)
+void CheckTradeConnections(ref location)
 {
 	if (LAi_IsCapturedLocation) return;
 	if (location.type != "town" && location.id != "LaVega_port" && location.id != "PuertoPrincipe_town" && location.id != "Shore35") return;

@@ -20,7 +20,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "helendrinking_buy_rainbow_1":
 			dialog.text = "先生, 全部一共五万银币。 ";
-			if (sti(pchar.money) >= 55000) {
+			if (int(pchar.money) >= 55000) {
 				link.l1 = "你-你说多少? 五-五万? 好吧, 你自己数! 再拿五千当小费。 我们走! ";
 				link.l1.go = "helendrinking_buy_rainbow_yes";
 			}

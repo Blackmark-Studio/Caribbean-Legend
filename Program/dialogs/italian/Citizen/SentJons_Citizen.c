@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "Ci sono molti Jones qui. Il più rinomato che conosco è un aiutante di campo sotto il colonnello Fox, Benjamin Jones. Di solito accoglie i visitatori nel quartier generale del reggimento.";
 				link.l1 = "Ha una sorella di nome Molly?";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("Mh, temo di non poterti aiutare con questo.","No, non lo conosco.","Phah! Se la Molly Jones che conosco io è una rara bellezza allora il Colonnello Fox è un prete di parrocchia."),LinkRandPhrase("Conosco alcune Molly Jones'. Una di loro ha un fratello ma... non è quella che stai cercando. Solo un uomo che ha vissuto con le scimmie la chiamerebbe 'una rara bellezza'.","Mi dispiace, ma tutti i Jones che conosco non hanno sorelle.","Mi dispiace, non posso aiutarti. Chiedi a qualcun altro."));
 			link.l1 = "Capisco. Scusa per il disturbo.";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Pensi che io lavori per il servizio segreto di "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Pensi che io lavori per il servizio segreto di "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Beh... no. Allora addio.";
 			link.l1.go = "exit";
 			link.l2 = "Altre domande, allora?";

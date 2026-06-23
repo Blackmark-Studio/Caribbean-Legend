@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_5":
 			dialog.text = "Beni dinlemiyorsun galiba. Açıkça söyledim – parayı hemen şimdi istiyorum. Bir hafta sonra değil, bir ay sonra değil, demirci parayı denkleştirince hiç değil, tam şu anda. Bu lanet adadan bir an önce kurtulmayı düşünüyorum. Yani ya paranın tamamı şu an elimde olur, ya da defter Fransızlara gider ve kaptanlık onurunu amiralin celladına rehin bırakırsın.";
-			if (sti(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
+			if (int(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
 				link.l1 = "Şöyle yapalım: Oynayalım. Benim yüz binim kitaba karşı. Kazanırsan, adadan zengin bir adam olarak ayrılırsın. Kaybedersen – kitabı alırım. Yoksa sen sadece iskambil destesini hayatında ilk kez görenlerle mi oynuyorsun?";
 				link.l1.go = "OZ_Shuler_6";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Felip_11":
 			dialog.text = "Kaptan! Javier’in senin sayende öteki dünyaya gittiğini çoktan öğrendim. Oysa ona hemen kıymanı istememiştim! Umarım paramı geri getirdin?";
-			if (sti(pchar.Money) >= 100000)
+			if (int(pchar.Money) >= 100000)
 			{
 				link.l1 = "Aynen öyle. Onun sakladığı yeri bulmayı başardım, içinde yüz bin peso vardı. Sahip olduğu tüm para buydu.";
 				link.l1.go = "OZ_Felip_12";

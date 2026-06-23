@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "meeting":
-			dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name)+" お前の首にかなりの賞金がかけられてるんだ。どこの植民地に連れて行っても、 死んでいようが生きていようが報酬はもらえるってわけさ。";
+			dialog.text = XI_ConvertString(Nations[int(NPChar.nation)].Name)+" お前の首にかなりの賞金がかけられてるんだ。どこの植民地に連れて行っても、 死んでいようが生きていようが報酬はもらえるってわけさ。";
 			Link.l1 = "聞け、俺に構わず立ち去ってくれたら金を払うぞ。";
 			Link.l1.go = "Cost_Head"; 
             // boal 08.04.04 -->
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
         break;
 
         case "Cost_Head2":
-            AddMoneyToCharacter(pchar, -sti(PChar.HunterCost));
+            AddMoneyToCharacter(pchar, -int(PChar.HunterCost));
 
             AddDialogExitQuest("GoAway_Hunters_Land"); 
             DialogExit();
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 
         case "Cost_Head":
 			dialog.text = "私はそう思う "+PChar.HunterCost+" ペソで十分だぜ。";
-            if(makeint(Pchar.money) < sti(PChar.HunterCost))
+            if(int(Pchar.money) < int(PChar.HunterCost))
             {
                 Link.l1 = "でも、そんな金は持ってねえんだ。";
                 Link.l1.go = "NoMoney";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 			dialog.text = "「ああ、いやだ」 "+GetSexPhrase("親愛なる友よ","「俺の可愛い娘」")+"。それは通用しない。我々はお前がその地図を持っていたことを確かに知っているんだ "+GetName(pchar.questTemp.ReasonToFast.mapIdx,pchar.questTemp.ReasonToFast.map,NAME_GEN)+"。それに、あいつはとんでもない守銭奴で、金でいっぱいの箱が中からはち切れそうだったんだ。だから、 俺たちが手ぶらで帰るわけがねえだろう。";
 			link.l1 = "お前の言う通りだ。確かに宝箱は満杯だった。\nだが、お前には渡さねえ。あの洞窟に行ってみるといい、穴だらけのバケツが二つ三つまだ残ってるはずだぜ。";
 			link.l1.go = "ReasonToFast_THunter_3";
-			if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-				&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+			if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+				&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 			{
 				link.l2 = "あんたの言う通りだ。宝は好きにしな。だが覚えておけ、それは血で汚れているから幸せはもたらさねえぞ。";
 				link.l2.go = "ReasonToFast_THunter_4";
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_THunter_GoAway":			
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		case "ReasonToFastTHunter_Fight":
 			sGroup = "LAND_HUNTER";
 			sTemp = "LandHunter0";
-			iTemp = sti(pchar.HunterCost.Qty);
+			iTemp = int(pchar.HunterCost.Qty);
 			chrDisableReloadToLocation = true;
 			LAi_SetPlayerType(pchar);
 			LAi_SetFightMode(pchar, true);
@@ -284,8 +284,8 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess")
 			{
 				dialog.text = "お前が総督から盗んだ宝飾品だ。";
-				if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-					&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+				if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+					&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 				{
 					link.l1 = "これを持って、よろしく伝えてくれ "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+"……彼に、私たちがすぐに会うと伝えてくれ……";
 					link.l1.go = "ReasonToFast_HunterShore12_2";
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore12_2":
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore21":
-			dialog.text = "身分相応の扱いじゃない。お前のせいで作戦が台無しになり、俺たちは失った "+sti(pchar.questTemp.ReasonToFast.p10)+" お前のせいでペソを失った。だから今、お前には返すべき借りがあるんだ。";
+			dialog.text = "身分相応の扱いじゃない。お前のせいで作戦が台無しになり、俺たちは失った "+int(pchar.questTemp.ReasonToFast.p10)+" お前のせいでペソを失った。だから今、お前には返すべき借りがあるんだ。";
 			link.l1 = "受け取って、「よろしく」と伝えてくれ "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+"「……彼に、私たちはすぐに会うことになると伝えてくれ……」";
 			link.l1.go = "ReasonToFast_HunterShore22";
 			link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" 俺があいつのために火中の栗を拾うと思ってるなら、大間違いだぜ。";
@@ -350,9 +350,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore22":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p10))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p10))
 			{
-				AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p10)));
+				AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p10)));
 				AddQuestRecord("ReasonToFast", "20");
 				AddQuestUserData("ReasonToFast", "sText", "money");
 				AddQuestUserData("ReasonToFast", "sName", GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_GEN));

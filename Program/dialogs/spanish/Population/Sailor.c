@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 	case "First time":
 		if (npchar.quest.meeting == "0")
 		{
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew")) // найм в команду
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew")) // найм в команду
 			{
 				dialog.text = "Buen día, " + GetAddress_Form(NPChar) + ". Soy consciente de que eres el capitán de tu propio barco. Tengo un trato para ti.";
 				link.l1 = "Estoy escuchando, " + GetAddress_FormToNPC(NPChar) + ". ¿Qué tipo de trato?";
@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "crew_1":
-		switch (sti(npchar.quest.crew.type))
+		switch (int(npchar.quest.crew.type))
 		{
 		case 0:
 			sTemp = " Somos los mejores trabajando con velas y aparejos. Sin ser demasiado modesto, diría que somos profesionales en el manejo de barcos, así que no se preocupe, no le fallaremos ni en las tormentas más fuertes.";
@@ -101,8 +101,8 @@ void ProcessDialogEvent()
 			sTemp = " Somos buenos abordadores capitán, hicimos algunas carreras en corsarios antes de esto. Conocemos el brillo de los sables y el olor de la pólvora y la sangre. Esa es nuestra vocación. No es fácil derrotarnos en una lucha cuerpo a cuerpo, ¡así que siempre puede contar con nuestras espadas, capitán!";
 			break;
 		}
-		dialog.text = "Somos " + sti(npchar.quest.crew.qty) + " y para contratarnos tenemos que ir todos juntos. Podemos realizar todas las tareas básicas de marinero." + sTemp + "";
-		if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+		dialog.text = "Somos " + int(npchar.quest.crew.qty) + " y para contratarnos tenemos que ir todos juntos. Podemos realizar todas las tareas básicas de marinero." + sTemp + "";
+		if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
 		{
 			link.l1 = "Suena como los hombres que estoy buscando. ¿Qué hay de tu adelanto?";
 			link.l1.go = "crew_2";
@@ -117,9 +117,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "crew_2":
-		iTemp = sti(npchar.quest.crew.money) * sti(npchar.quest.crew.qty);
-		dialog.text = "" + FindRussianMoneyString(sti(npchar.quest.crew.money)) + " por cada uno. Y luego el sueldo mensual de un marinero común. No pediremos nada excesivo, capitán.";
-		if (sti(pchar.money) >= iTemp)
+		iTemp = int(npchar.quest.crew.money) * int(npchar.quest.crew.qty);
+		dialog.text = "" + FindRussianMoneyString(int(npchar.quest.crew.money)) + " por cada uno. Y luego el sueldo mensual de un marinero común. No pediremos nada excesivo, capitán.";
+		if (int(pchar.money) >= iTemp)
 		{
 			link.l1 = "¡Estás contratado! Toma tus monedas. Ahora ve a mi barco, se llama '" + pchar.ship.name + " , justo en el puerto. El contramaestre os asignará todas las hamacas en los camarotes de la tripulación y se encargará de vuestros desórdenes.";
 			link.l1.go = "crew_3";
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "crew_3":
-		iTemp = sti(npchar.quest.crew.money) * sti(npchar.quest.crew.qty);
+		iTemp = int(npchar.quest.crew.money) * int(npchar.quest.crew.qty);
 		AddMoneyToCharacter(pchar, -iTemp);
 		dialog.text = "¡A la orden, capitán! Reuniré a los muchachos y partiremos de inmediato.";
 		link.l1 = "Date prisa, zarpamos en cualquier momento.";
@@ -138,10 +138,10 @@ void ProcessDialogEvent()
 
 	case "crew_4":
 		DialogExit();
-		AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+		AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
 		// увеличиваем опыт
-		iTemp = makeint(sti(npchar.quest.crew.qty) * 50 / sti(pchar.ship.crew.quantity));
-		switch (sti(npchar.quest.crew.type))
+		iTemp = int(int(npchar.quest.crew.qty) * 50 / int(pchar.ship.crew.quantity));
+		switch (int(npchar.quest.crew.type))
 		{
 		case 0:
 			ChangeCrewExp(pchar, "Sailors", iTemp);
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		// увеличиваем мораль
-		iTemp = makeint(sti(npchar.quest.crew.qty) / 10) + 1;
+		iTemp = int(int(npchar.quest.crew.qty) / 10) + 1;
 		AddCrewMorale(pchar, iTemp);
 		LAi_SetActorType(npchar);
 		LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

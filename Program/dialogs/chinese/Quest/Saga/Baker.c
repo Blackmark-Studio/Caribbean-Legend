@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Shadows", "5");
 			pchar.questTemp.Saga.Shadows = "islatesoro";
 			// 加入军官
-			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
+			npchar.quest.OfficerPrice = int(pchar.rank)*500;
 			npchar.OfficerWantToGo.DontGo = true; // 不要试图离开
 			npchar.CompanionDisable = true; // 不能加入伙伴
 			npchar.loyality = MAX_LOYALITY;
@@ -178,7 +178,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "为你的火器更换弹药类型。 ";
 					Link.l3.go = "SetGunBullets";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Baker_exit");
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3":
@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 			link.l1 = "在腹中? 我没太明白你的意思。 我们这儿似乎没人晕船吧。";
 			link.l1.go = "SharlieEpilog_Baker_salary_X3_2";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Baker_salary_X3_2":

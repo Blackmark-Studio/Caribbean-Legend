@@ -4,7 +4,7 @@ void UV_Start()
 	AddQuestRecord("UV", "1");
 	pchar.questTemp.UV_Start = true;
 	
-	sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", int(pchar.rank), FRANCE, -1, false, "quest"));
 	sld.name = GetCharacterName("Julie");
 	sld.lastname = GetCharacterName("d'Armagnac");
 	sld.City = "PortPax";
@@ -56,8 +56,8 @@ void UV_GoldSeagull_RoomInTavern(string qName)
 	LocatorReloadEnterDisable("PortPax_tavern", "reload2_back", false);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("UV_GoldSeagull_cap", "mercen_1", "man", "man", 15, PIRATE, -1, false, "quest"));
-	sld.name = StringFromKey("Neutral_9"));
-	sld.lastname = StringFromKey("Neutral_10"));
+	sld.name = StringFromKey("Neutral_9");
+	sld.lastname = StringFromKey("Neutral_10");
 	FantomMakeCoolFighter(sld, 15, 50, 50, "blade_15", "pistol1", "bullet", 50);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
@@ -126,7 +126,7 @@ void UV_Juli_GoodEnd(string qName)
 	LAi_CharacterDisableDialog(sld);	
 	SetFunctionExitFromLocationCondition("UV_JuliInResidensia", PChar.location, false);
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
@@ -141,7 +141,7 @@ void UV_End(string qName)
 	
 	SetFunctionExitFromLocationCondition("UV_JuliInResidensia", PChar.location, false);
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

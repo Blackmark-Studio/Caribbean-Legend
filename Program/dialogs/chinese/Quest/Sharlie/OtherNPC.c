@@ -289,14 +289,14 @@ void ProcessDialogEvent()
 		case "Sharlie_sailor_3":
 			dialog.text = "如果只是我自己, 我会立刻签约。 但我有四十个来自‘尤利西斯号’的兄弟跟着我。 他们信任我给他们未来; 我必须确保你不会让他们失望\n"+
 			"你有什么样的船? ";
-			link.l1 = "船就是船, " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name"))) + "。 为什么, 这很重要吗? ";
+			link.l1 = "船就是船, " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype), "Name"))) + "。 为什么, 这很重要吗? ";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
 			dialog.text = "你知道, 在‘尤利西斯号’之后, 我们宁愿不服务于某些三桅帆船或小帆船。 我们已经看过你的船了, 伙计们同意\n"+
 			"现在, 钱。 我们要求预付4800比索。 之后 - 像往常一样分成。 我向你保证, 这并不过分。 你能处理吗? ";
-			if (sti(Pchar.money) >= 4800)
+			if (int(Pchar.money) >= 4800)
 			{
 				link.l1 = "很好, 成交! 这是你的钱。 ";
 				link.l1.go = "Sharlie_sailor_5";
@@ -350,7 +350,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_again":
 			dialog.text = "你回来了, 船长? 准备雇佣我和我的伙伴们吗? 我们的钱包开始变轻了, 需要再次感受海风! ";
-			if (sti(Pchar.money) < 4800)
+			if (int(Pchar.money) < 4800)
 			{
 				link.l1 = "还没有, 我还在准备一切。 ";
 				link.l1.go = "exit";
@@ -472,9 +472,9 @@ void ProcessDialogEvent()
 			link.l1 = "我没有选择, 这是唯一出售的船! 他们向我要了一大笔钱。 如你所知, 我们目前没有时间修理她... 在我们起航前, 你有什么建议吗? ";
 			link.l1.go = "Folke_8";
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
+
 		case "Folke_8":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			if (bOk)
 			{
 				dialog.text = "好吧, 我们的火药和炮弹供应充足, 船长。 目前这就够了; 只记得及时补充。 ";
@@ -523,6 +523,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_1":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			dialog.text = "你完成购买弹药了吗, 船长? ";
 			if (bOk)
 			{
@@ -536,9 +537,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_1";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
+
 		case "Folke_10":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			if (bOk)
 			{
 				dialog.text = "做得好, 你为船员购买了足够的武器。 如果我们没有足够的武器, 在登船行动中会损失更多人。 上帝保佑我们不要那样。 别忘了经常检查货舱里的数量\n谨慎起见, 多备一些武器比我们需要的更好。 该死的老鼠喜欢啃咬木柄和枪托。 ";
@@ -561,6 +562,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_2":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			dialog.text = "你完成购买武器了吗, 船长? ";
 			if (bOk)
 			{
@@ -574,9 +576,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_2";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
+
 		case "Folke_11":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			if (bOk)
 			{
 				dialog.text = "不, 我想就这样。 我们有足够的食物, 你也为船员准备了朗姆酒。 这很明智, 因为没有比轮班后一杯凉爽的朗姆酒更好的治疗所有疾病的方法了。 水手们喜欢并尊重给他们每日朗姆酒配给的船长。 你永远不想听到你的人问: ‘为什么朗姆酒没了? ’";
@@ -599,6 +601,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_3":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			dialog.text = "你完成购买我们的食物和朗姆酒了吗, 船长? ";
 			if (bOk)
 			{
@@ -623,7 +626,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13a":
-			Npchar.loyality = makeint(Npchar.loyality) - 5;
+			Npchar.loyality = int(Npchar.loyality) - 5;
 			ChangeCharacterComplexReputation(pchar,"authority", 5);
 			dialog.text = "那么把我设为领航员, 我会去甲板上我的位置。 ";
 			link.l1 = "... ";
@@ -631,7 +634,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13":
-			Npchar.loyality = makeint(Npchar.loyality) + 5;
+			Npchar.loyality = int(Npchar.loyality) + 5;
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
 			// < —legendary edition
 			dialog.text = "那么把我设为领航员, 我会去甲板上我的位置。 ";
@@ -1034,7 +1037,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "一瓶治疗精华? 90比索, 我的孩子。 当然是材料费。 ";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "谢谢你, 神父。 ";
 				link.l1.go = "potion_pay";
@@ -1050,7 +1053,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "一瓶强身健体的灵药? 500比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "谢谢你, 神父。 ";
 				link.l1.go = "potion_pay";
@@ -1066,7 +1069,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "一瓶解毒剂? 200比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "谢谢你, 神父。 ";
 				link.l1.go = "potion_pay";
@@ -1082,7 +1085,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "一瓶草药合剂? 900比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "谢谢你, 神父。 ";
 				link.l1.go = "potion_pay";
@@ -1095,8 +1098,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "‘因为我要使你痊愈, 医治你的创伤, 这是耶和华说的。 ’这是你的药。 愿主与你同在! ";
@@ -1377,7 +1380,7 @@ case "Europe":
 			dialog.text = "神的眼泪。 你们叫珍珠。 很多珍珠。 ";
 			link.l1 = "我决定了, 可可叶。 在这等着, 我去武器商人那里, 买完就回来。 ";
 			link.l1.go = "ZsI_ListKakao_Soglasen_5";
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				link.l2 = "我决定了, 可可叶。 我刚好有你需要的东西。 给你。 ";
 				link.l2.go = "ZsI_ListKakao_Soglasen_2";
@@ -1416,7 +1419,7 @@ case "Europe":
 			LAi_SetOfficerType(sld);
 			sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 			sld.Dialog.CurrentNode = "Tichingitu_officer";
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_2":
@@ -1429,7 +1432,7 @@ case "Europe":
 			Log_Info("你获得了180颗小珍珠");
 			PlaySound("Interface\important_item.wav");
 			DeleteAttribute(pchar, "questTemp.ZsI_PokupaemPistolety");
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				RemoveCharacterEquip(PChar, GUN_ITEM_TYPE);
 				RemoveItems(PChar, "pistol1", 2);
@@ -1454,7 +1457,7 @@ case "Europe":
 			chrDisableReloadToLocation = false;
 			
 			ReturnOfficer_Tichingitu();
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_5":
@@ -1792,7 +1795,7 @@ case "Europe":
 			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Charles", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.CompanionEnemyEnable = true;
 			SetCrewQuantity(npchar, 35);
 			SetCharacterGoods(npchar, GOOD_ROPES, 30);
@@ -1870,12 +1873,12 @@ case "Europe":
 		
 		case "MOT_Barbie_109":
 			dialog.text = "一万比索。 这是个适中数目, 将绳索转卖给走私者将获得丰厚回报。 ";
-			if (sti(pchar.Money) >= 10000)
+			if (int(pchar.Money) >= 10000)
 			{
 				link.l1 = "如果错过这样的机会, 我永远不会原谅自己。 拿上银币, 确保货物迅速送到我的船上。 ";
 				link.l1.go = "MOT_Barbie_ContraSoglasen";
 			}
-			if (sti(pchar.Money) >= 7000)
+			if (int(pchar.Money) >= 7000)
 			{
 				link.l2 = "这是一次冒险的尝试, 朋友。 我们各让一步, 如何? 我用七千比索买下你的绳索。 ";
 				link.l2.go = "MOT_Barbie_ContraTorg";
@@ -1926,7 +1929,7 @@ case "Europe":
 			{
 				Notification_Skill(false, 25, SKILL_COMMERCE);
 				dialog.text = "抱歉, 船长。 我的商品很重要, 需要认真对待。 大多数自由船长不敢交易战略物资。 遗憾的是, 这里没有讨价还价的余地。 ";
-				if (sti(pchar.Money) >= 10000)
+				if (int(pchar.Money) >= 10000)
 				{
 					link.l1 = "如果错过这样的机会, 我永远不会原谅自己。 拿上银币, 确保货物迅速送到我的船上。 ";
 					link.l1.go = "MOT_Barbie_ContraSoglasen";
@@ -2146,7 +2149,7 @@ case "Europe":
 		case "Del_hire":
 			if (CheckAttribute(pchar, "questTemp.Del_SniziliTsenu"))
 			{
-				if (sti(pchar.Money) >= 2500)
+				if (int(pchar.Money) >= 2500)
 				{
 					AddMoneyToCharacter(pchar, -2500);
 					NextDiag.TempNode = "OnboardSoon";
@@ -2164,7 +2167,7 @@ case "Europe":
 			}
 			else
 			{
-				if (sti(pchar.Money) >= 4000)
+				if (int(pchar.Money) >= 4000)
 				{
 					AddMoneyToCharacter(pchar, -4000);
 					NextDiag.TempNode = "Del_OnboardSoon";
@@ -2293,14 +2296,14 @@ case "Europe":
 		case "TK_Kapitan_Plen":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.DontRansackCaptain = true;
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", sti(PChar.rank), PIRATE, -1, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", int(PChar.rank), PIRATE, -1, false, "pirate"));
 			sld.name = "Daniel";
 			sld.lastname = "Montbars";
 			AddPassenger(pchar, sld, false);
@@ -2314,7 +2317,7 @@ case "Europe":
 		case "TK_Kapitan_Otpustil":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -2510,7 +2513,7 @@ case "Europe":
 		
 		case "VsD_Tsyganka_4":
 			dialog.text = "有一个当地人尊敬的强效护身符。 木材会听从它的意愿, 即使不熟悉木工的人戴上它也会变得熟练。 亲爱的, 只要一千比索, 它就是你的了。 ";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "很好, 成交。 我需要所有能得到的帮助。 ";
 				link.l1.go = "VsD_Tsyganka_Da";

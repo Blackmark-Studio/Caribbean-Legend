@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_2":
 			dialog.text = "Genau zehntausendvierhundertfünfzig Pesos, mein Herr. So wird seine Freiheit zu diesem Preis bewertet. Sind Sie bereit, es mir zu zahlen? Ich bin ein wenig überrascht...";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "Wundere dich nicht. Hier ist das Geld.";
 				link.l1.go = "Sharlie_3";
@@ -212,7 +212,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_repeat":
 			dialog.text = "Also, sind Sie bereit, seine Schuld zu begleichen?";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "Ja. Hier ist das Geld.";
 				link.l1.go = "Sharlie_3";

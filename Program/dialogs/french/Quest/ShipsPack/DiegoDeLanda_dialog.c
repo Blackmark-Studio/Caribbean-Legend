@@ -26,31 +26,31 @@ void ProcessDialogEvent()
 
 		//--> Встреча
 		case "DiegoDeLanda_Meeting":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "Triste histoire, n'est-ce pas ?";
 				link.l1 = "Qui êtes-vous ?";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "Bonjour, capitaine.";
 				link.l1 = "Attendez ! Nous nous sommes déjà rencontrés !";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "Un. Deux. Trois.";
 				link.l1 = "Mettons fin à cette mascarade. Qui êtes-vous vraiment ?";
 				link.l1.go = "DiegoDeLanda_Meeting_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "Quatre.";
 				link.l1 = "Plus que deux?";
 				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 
 			}
@@ -245,32 +245,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_1":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "Dites-moi... Pourquoi ? C'était dangereux et stupide. Quel est votre feu, capitaine ? Qu'est-ce qui vous pousse ?";
 				link.l1 = "Cela ne vous regarde pas.";
 				link.l1.go = "DiegoDeLanda_leaving_First_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "Le deuxième.";
 				link.l1 = "La dernière fois, vous parliez en énigmes. Ce sera encore le cas ?";
 				link.l1.go = "DiegoDeLanda_leaving_Second_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "...";
 				link.l1 = "Attendez, de Landa. Je ne peux pas juste vous laisser partir comme ça.";
 				link.l1.go = "DiegoDeLanda_Leaving_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "Que des allusions, du pathos et aucune action\n"+
 				"De ma part, en tout cas. Vous avez eu de l'action à revendre.";
 				link.l1 = "J'ai une idée pour remédier à cela.";
 				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 
 			}

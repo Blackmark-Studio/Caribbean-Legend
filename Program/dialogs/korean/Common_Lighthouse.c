@@ -118,18 +118,18 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//иногда продает корабельные товары // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 			npchar.quest.goodsqty = 50+hrand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
-			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//цена единицы товара
-			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//стоимость товара
+			if (int(npchar.quest.goods) == GOOD_EBONY || int(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
+			npchar.quest.goodsprice = int(int(Goods[int(npchar.quest.goods)].Cost)/4);//цена единицы товара
+			npchar.quest.goodscost = int(npchar.quest.goodsprice)*int(npchar.quest.goodsqty);//стоимость товара
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && int(GetCharacterFreeSpace(pchar, int(npchar.quest.goods))) > int(npchar.quest.goodsqty) && int(pchar.money) >= int(npchar.quest.goodscost) && ok)
 			{
-				dialog.text = "선장님, 최근에 많은 물자가 해안으로 떠밀려왔습니다 - "+GetGoodsNameAlt(sti(npchar.quest.goods))+". 일부는 바닷물에 망가졌지만, "+FindRussianQtyString(sti(npchar.quest.goodsqty))+" 나는 그것들을 아주 좋은 상태로 구해냈어. 좀 살래? 특별히 싸게 줄게, 바로 "+FindRussianMoneyString(sti(npchar.quest.goodsprice))+" 개당.";
+				dialog.text = "선장님, 최근에 많은 물자가 해안으로 떠밀려왔습니다 - "+GetGoodsNameAlt(int(npchar.quest.goods))+". 일부는 바닷물에 망가졌지만, "+FindRussianQtyString(int(npchar.quest.goodsqty))+" 나는 그것들을 아주 좋은 상태로 구해냈어. 좀 살래? 특별히 싸게 줄게, 바로 "+FindRussianMoneyString(int(npchar.quest.goodsprice))+" 개당.";
 				link.l1 = "아니. 최근에 모은 것들 좀 보여줘.";
 				link.l1.go = "Trade_lighthouse_double";
-				link.l2 = "흠... 정직한 제안이군, 동의하지. 이걸 다시 팔면 약간의 이익은 남길 수 있겠어. 어디 보자... 그럼 총합이 "+FindRussianMoneyString(sti(npchar.quest.goodscost))+". 맞습니까?";
+				link.l2 = "흠... 정직한 제안이군, 동의하지. 이걸 다시 팔면 약간의 이익은 남길 수 있겠어. 어디 보자... 그럼 총합이 "+FindRussianMoneyString(int(npchar.quest.goodscost))+". 맞습니까?";
 				link.l2.go = "Trade_goods";
 				SaveCurrentNpcQuestDateParam(npchar, "goods_date");
 			}
@@ -156,9 +156,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_goods":
-			AddCharacterGoods(pchar, sti(npchar.quest.goods), sti(npchar.quest.goodsqty));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.goodscost));
-			AddMoneyToCharacter(npchar, sti(npchar.quest.goodscost));
+			AddCharacterGoods(pchar, int(npchar.quest.goods), int(npchar.quest.goodsqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.goodscost));
+			AddMoneyToCharacter(npchar, int(npchar.quest.goodscost));
 			dialog.text = "맞아요, 선장님. 정말 좋은 거래였죠! 우리 둘 다 꽤 이득을 봤으니...";
 			link.l1 = "좋아, 그럼. 선원들을 보내서 화물을 내 배로 옮기게 하겠다. 이제, 네가 팔려고 모아온 것들을 보여 줘.";
 			link.l1.go = "Trade_lighthouse_double";
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_3":
-			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= sti(npchar.quest.artday))
+			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= int(npchar.quest.artday))
 			{
 			dialog.text = "그래, 가지고 있어. 100두블론 준비했나, 선장?"; // Addon-2016 Jason
 				// belamour legendary edition -->
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_SetOwnerType(NPChar); // belamour иначе обижается навсегда		   
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "아, 그럼 당신이 그 선장이군! 그래, 기다리고 있었소. 제라르도 기다렸지만, 급히 어떤 원정 때문에 떠나야 해서 나에게 당신에게 대금을 전달해 달라고 부탁했소. 반드시 오라고 하더군. 여기 90 더블룬이 있소, 받아가시오.");
+			dialog.text = "아, 그럼 당신이 그 선장이군! 그래, 기다리고 있었소. 제라르도 기다렸지만, 급히 어떤 원정 때문에 떠나야 해서 나에게 당신에게 대금을 전달해 달라고 부탁했소. 반드시 오라고 하더군. 여기 90 더블룬이 있소, 받아가시오.";
 			link.l1 = "고마워! 정직한 사람들과 거래하니 기분이 좋군.";
 			link.l1.go = "Trial_1";
 		break;

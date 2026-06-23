@@ -40,7 +40,7 @@ void SetModifierFromSourceDirect(ref rObject, string modifier, ref value, string
 	if (CheckAttribute(rObject, modifier + "." + sourceName)) 
 	{
 		float currentValue = GetAttributeFloat(rObject, modifier + "." + sourceName);
-		AddToAttributeFloat(rObject, modifier, value-currentValue);
+		AddToAttributeFloat(rObject, modifier, float(value)-currentValue);
 		SetAttribute(rObject, modifier + "." + sourceName, value);
 	}
 	else IncreaseModifierFromSourceDirect(rObject, modifier, value, sourceName);
@@ -49,8 +49,8 @@ void SetModifierFromSourceDirect(ref rObject, string modifier, ref value, string
 // Добавить модификатор чему-либо напрямую со складыванием значения и указанием источника
 void IncreaseModifierFromSourceDirect(ref rObject, string modifier, ref value, string sourceName)
 {
-	AddToAttributeFloat(rObject, modifier, value);
-	AddToAttributeFloat(rObject, modifier + "." + sourceName, value);
+	AddToAttributeFloat(rObject, modifier, float(value));
+	AddToAttributeFloat(rObject, modifier + "." + sourceName, float(value));
 }
 
 // Добавить модификатор чему-либо напрямую со складыванием значения
@@ -58,6 +58,27 @@ void IncreaseModifierDirect(ref rObject, string modifier, ref value)
 {
 	AddToAttributeFloat(rObject, modifier, value);
 }
+
+// Добавить умножаемый модификатор чему-либо напрямую, с перезаписью значения и указанием источника
+void SetModifierFromSourceDirectMul(ref rObject, string modifier, ref value, string sourceName)
+{
+	// если уже есть мод, выпиливаем
+	if (CheckAttribute(rObject, modifier + "." + sourceName))
+	{
+		float currentValue = GetAttributeFloat(rObject, modifier + "." + sourceName);
+		MulToAttributeFloat(rObject, modifier, float(value) / currentValue);
+		SetAttribute(rObject, modifier + "." + sourceName, value);
+	}
+	else IncreaseModifierFromSourceDirectMul(rObject, modifier, value, sourceName);
+}
+
+// Добавить умножаемый модификатор чему-либо напрямую с умножением значения и указанием источника
+void IncreaseModifierFromSourceDirectMul(ref rObject, string modifier, ref value, string sourceName)
+{
+	MulToAttributeFloat(rObject, modifier, float(value));
+	MulToAttributeFloat(rObject, modifier + "." + sourceName, float(value));
+}
+
 
 // Добавить коллбэк на предмет/навык и получить его
 aref AddCallback(ref rObject, string callerFunctionName, string callbackFunctionName)
@@ -126,8 +147,22 @@ void RemoveChrCallback(ref chr, string callbackPath)
 void MergeModifier(ref rObject, ref modifier, string modifierName, string sourceName)
 {
 	string modifierValue = GetAttributeValue(modifier);
-	rObject.(modifierName) = GetAttributeFloat(rObject, modifierName) + stf(modifierValue);
+	rObject.(modifierName) = GetAttributeFloat(rObject, modifierName) + float(modifierValue);
 	rObject.(modifierName).(sourceName) = modifierValue;
+}
+
+// Умножаем значения модификаторов
+void MergeModifierMul(ref rObject, ref modifier, string modifierName, string sourceName)
+{
+	string modifierValue = GetAttributeValue(modifier);
+	float fMod = 1.0;
+	if (modifierValue != "")
+	{
+		fMod = float(modifierValue);
+	}
+	float fOrigMod = rObject.(modifierName)$float(1.0);
+	rObject.(modifierName) = fOrigMod * fMod;
+	rObject.(modifierName).(sourceName) = fMod;
 }
 
 // Коллбэки дописываем
@@ -200,8 +235,8 @@ void RemoveModifiersFromSource(ref rObject, string sourceName)
 		if (!CheckAttribute(modifier, sourceName)) continue;
 
 		string modifierName = GetAttributeName(modifier);
-		float value = stf(modifier.(sourceName));
-		rObject.(modifierName) = stf(GetAttributeValue(modifier)) - value; // вычитаем эффект
+		float value = float(modifier.(sourceName));
+		rObject.(modifierName) = float(GetAttributeValue(modifier)) - value; // вычитаем эффект
 		DeleteAttribute(&modifier, sourceName);                            // убираем источник
 	}
 }
@@ -253,6 +288,6 @@ void SetTempChrModifier(ref chr, string modifierName, ref value, string sourceNa
 {
 	SetChrModifier(chr, modifierName, value, sourceName);
 	TEV.tempModifiers.(sourceName) = TMSTD_Timestamp(days);
-	TEV.tempModifiers.(sourceName).chrId = chr.id
+	TEV.tempModifiers.(sourceName).chrId = chr.id;
 	TEV.tempModifiers.(sourceName).table = CT_STATIC;
 }

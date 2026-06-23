@@ -44,9 +44,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "Hm... Złamałeś zasady regat i muszę cię zdyskwalifikować. Przykro mi. Nie bierzesz udziału w następnym rejsie. Już przygotowałem depeszę do Port-Royal.";
@@ -59,8 +59,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
-			dialog.text = "Zarejestrujmy się: kapitanie "+GetFullName(pchar)+", statek jest "+pchar.Ship.Name+"... czas regat w godzinach to "+sti(pchar.questTemp.Regata.FirstTransitionTime)+"Zrobione, twój wynik został zarejestrowany, możesz kontynuować swoją drogę.";
+			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
+			dialog.text = "Zarejestrujmy się: kapitanie "+GetFullName(pchar)+", statek jest "+pchar.Ship.Name+"... czas regat w godzinach to "+int(pchar.questTemp.Regata.FirstTransitionTime)+"Zrobione, twój wynik został zarejestrowany, możesz kontynuować swoją drogę.";
 			link.l1 = "Powiedz mi moją rangę.";
 			link.l1.go = "Regata_info";
 			}
@@ -83,7 +83,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FirstTransitionTime))
+				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FirstTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//имя ближайшего противника

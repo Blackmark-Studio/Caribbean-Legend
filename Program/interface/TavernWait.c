@@ -28,8 +28,8 @@ void InitInterface(string iniName)
 void ProcessFrame()
 {
 	string sDate, sTime;
-	int hour = sti(worldMap.date.hour);
-	int minute = sti(worldMap.date.min);
+	int hour = int(worldMap.date.hour);
+	int minute = int(worldMap.date.min);
 	bool addDays = true;
 
 	if(SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "TIME_CHECK", 3, 1))
@@ -115,8 +115,8 @@ void RefreshVariables()
 {
 	SetTimeSlider();
 	string sDate, sTime;
-	int hour = sti(worldMap.date.hour);
-	int minute = sti(worldMap.date.min);
+	int hour = int(worldMap.date.hour);
+	int minute = int(worldMap.date.min);
 	int addDays;
 	
 	if (days == false)
@@ -151,8 +151,8 @@ void ProcSlideChange()
 	float 	fVal 		= GetEventData(); // float GameInterface.nodes.<node_name>.value
 	sCurDayTime 		= GetDayTime();
 
-	int hour = sti(worldMap.date.hour);
-	int minute = sti(worldMap.date.min);
+	int hour = int(worldMap.date.hour);
+	int minute = int(worldMap.date.min);
 	int addDays;
 
 	SetFormatedText("RESTTIME_TEXT", "");
@@ -225,7 +225,7 @@ void SetVariable()
 
 void WaitProcess(int _iHour)
 {
-	int iCurrentTime = sti(environment.time);
+	int iCurrentTime = int(environment.time);
     int iAddtime = 0;
     int iOldDay = GetDataDay();
     if(SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "TIME_CHECK", 3, 1))

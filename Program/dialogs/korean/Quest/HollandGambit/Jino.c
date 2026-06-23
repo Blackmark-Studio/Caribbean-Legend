@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Portugal.Nomoney"))
 				{
 					dialog.text = "5,000페소 가져왔나, "+pchar.name+"?";
-					if (sti(pchar.money) >= 5000)
+					if (int(pchar.money) >= 5000)
 					{
 						link.l1 = "알겠소. 자, 여기 돈이니 필요한 건 모두 사시오.";
 						link.l1.go = "Portugal_3";
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 						DeleteAttribute(pchar, "questTemp.Portugal.Nomoney");
 						pchar.quest.Portugal_Ill1.over = "yes";
 						pchar.quest.Portugal_Ill.win_condition.l1 = "Timer";
-						pchar.quest.Portugal_Ill.win_condition.l1.date.hour  = sti(GetTime());
+						pchar.quest.Portugal_Ill.win_condition.l1.date.hour  = int(GetTime());
 						pchar.quest.Portugal_Ill.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 						pchar.quest.Portugal_Ill.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 						pchar.quest.Portugal_Ill.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Portugal") && pchar.questTemp.Portugal == "TreatmentStart")
 				{
 					dialog.text = "딱 맞는 때에 그를 데려왔군, "+pchar.name+". 그는 위독한 상태지만, 아직 희망은 있습니다.\n선장님, 약재가 거의 다 떨어졌고 정글에서 채집할 시간도 없습니다. 현지 약초상들에게서 전부 사야 하는데 5,000페소가 필요합니다. 그 돈을 마련해 주실 수 있습니까?";
-					if (sti(pchar.money) >= 5000)
+					if (int(pchar.money) >= 5000)
 					{
 					link.l1 = "알겠소. 자, 돈을 가져가서 필요한 건 모두 사시오.";
 					link.l1.go = "Portugal_3";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 						link.l1.go = "Portugal_nomoney";
 						pchar.quest.Portugal_Ill.over = "yes";
 						pchar.quest.Portugal_Ill1.win_condition.l1 = "Timer";
-						pchar.quest.Portugal_Ill1.win_condition.l1.date.hour  = sti(GetTime());
+						pchar.quest.Portugal_Ill1.win_condition.l1.date.hour  = int(GetTime());
 						pchar.quest.Portugal_Ill1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 						pchar.quest.Portugal_Ill1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 						pchar.quest.Portugal_Ill1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -543,7 +543,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			SaveCurrentQuestDateParam("questTemp.Portugal_threedays");
 			pchar.quest.Portugal_Ill2.win_condition.l1 = "Timer";
-			pchar.quest.Portugal_Ill2.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Portugal_Ill2.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Portugal_Ill2.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 5);
 			pchar.quest.Portugal_Ill2.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 5);
 			pchar.quest.Portugal_Ill2.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 5);
@@ -591,7 +591,7 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "SentJons_HouseF3_Room", "goto", "goto2", "Portugal_JinoNorm", -1);//Джино в свою комнату
 			DeleteAttribute(pchar, "GenQuest.CannotWait");//можно мотать время
 			pchar.quest.Portugal_Ill3.win_condition.l1 = "Timer";
-			pchar.quest.Portugal_Ill3.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Portugal_Ill3.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Portugal_Ill3.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 5);
 			pchar.quest.Portugal_Ill3.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 5);
 			pchar.quest.Portugal_Ill3.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 5);

@@ -60,8 +60,10 @@ void ApplyItemModifiers(ref chr, ref table, ref item, string itemType)
 	{
 		modifier = GetAttributeN(modifiers, i);
 		string modifierName = GetAttributeName(modifier);
+
 		if (modifierName == "callbacks") MergeCallbacks(&table, &modifier);
 		else if (modifierName == "has") MergeFlags(&table, &modifier);
+		else if (modifierName[ .. 4] == "mul_") MergeModifierMul(&table, &modifier, modifierName, itemType);
 		else MergeModifier(&table, &modifier, modifierName, itemType);
 	}
 }

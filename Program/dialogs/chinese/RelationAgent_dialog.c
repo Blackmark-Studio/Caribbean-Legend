@@ -50,8 +50,8 @@ void ProcessDialogEvent()
         i = findsubstr(attrLoc, "_" , 0);
         npchar.quest.relation      = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индeх в концe
 		// провeрка на ужe договор
-		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
-		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
+		attrLoc = "RelationAgent" + GetNationNameByType(int(npchar.quest.relation));
+		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && int(Pchar.GenQuest.(attrLoc)) == true)
 		{
 		    Dialog.CurrentNode = "RelationYet";
 		}
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 		break;
 		case "D_ShipLetters_2":
 			s1 = "让我看看! 是的, 这里的标记是有效的。 你是个幸运的" + GetSexPhrase("男人","女人") + "! ";
-			s1 = s1 + "我正好需要这样的文件包, 我可以给你" + sti(pchar.questTemp.different.GiveShipLetters.price5) + "比索。 你觉得怎么样? ";
+			s1 = s1 + "我正好需要这样的文件包, 我可以给你" + int(pchar.questTemp.different.GiveShipLetters.price5) + "比索。 你觉得怎么样? ";
 			dialog.text = s1;
 			link.l1 = "如此慷慨! 我当然同意! ";
 			link.l1.go = "D_ShipLetters_3";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		break;
 		case "D_ShipLetters_3":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price5)); 
+			addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price5));
 			OfficersReaction("bad"); 
 			pchar.questTemp.different = "free";
 			pchar.quest.GiveShipLetters_null.over = "yes"; // 移除计时器 
@@ -203,9 +203,9 @@ void ProcessDialogEvent()
 		
 		case "NationLicenceType2":
 			iSumm = LICENSE_GetPrice(npchar.LicenceType);
-			dialog.text = "那么, " + XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name + "Gen") + "的" + sti(npchar.LicenceType) + "天贸易许可证, 价格是" + FindRussianMoneyString(iSumm) + "。 ";
+			dialog.text = "那么, " + XI_ConvertString(Nations[int(npchar.LicenceNation)].Name + "Gen") + "的" + int(npchar.LicenceType) + "天贸易许可证, 价格是" + FindRussianMoneyString(iSumm) + "。 ";
 			link.l1 = "我同意。 ";
-			if(makeint(Pchar.money) < iSumm)
+			if(int(Pchar.money) < iSumm)
             {
 				Link.l1.go = "No_money";
 			}
@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 			link.l9 = "谢谢。 ";
 			link.l9.go = "exit";
 			AddMoneyToCharacter(pchar, -iSumm);
-			GiveNationLicence(sti(npchar.LicenceNation), sti(npchar.LicenceType));
+			GiveNationLicence(int(npchar.LicenceNation), int(npchar.LicenceType));
 		break;
 		
         case "No_money":
@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 		
         case "patent_0":
 			dialog.text = "太好了。 首先, 你必须通过为国家出色服务来证明你对国家的忠诚" + 
-						  "。 去任何" + //NationNameGenitive(sti(NPChar.nation)) +
+						  "。 去任何" + //NationNameGenitive(int(NPChar.nation)) +
 						  "的总督那里, 完成他的几个任务。 然后他会授予你许可证。 ";
 			link.l1 = "告诉我, " + GetAddress_FormToNPC(NPChar) + ", 我能绕过这个无聊的手续吗? ";
 			link.l1.go = "patent_1";
@@ -290,9 +290,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patent_2":
-            //pchar.PatentPrice = 8000 + (sti(NPChar.PatentPrice) * sti(pchar.rank));
-			pchar.PatentPrice = 350000 - GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) * 100 + (5000 + rand(1000)) * sti(pchar.rank) * MOD_SKILL_ENEMY_RATE;
-            switch (sti(NPChar.nation))
+            //pchar.PatentPrice = 8000 + (int(NPChar.PatentPrice) * int(pchar.rank));
+			pchar.PatentPrice = 350000 - GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) * 100 + (5000 + rand(1000)) * int(pchar.rank) * MOD_SKILL_ENEMY_RATE;
+            switch (int(NPChar.nation))
             {
 				case PIRATE :
 					dialog.text = "这是一个错误, 如果你看到它, 请联系ALexusB";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
                     break;
 			}
 
-            if(makeint(Pchar.money) < makeint(pchar.PatentPrice))
+            if(int(Pchar.money) < int(pchar.PatentPrice))
             {
 				Link.l1.go = "No_money";
 			}
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "patent_3":
-            pchar.PatentNation = NationShortName(sti(NPChar.nation));
+            pchar.PatentNation = NationShortName(int(NPChar.nation));
 			dialog.text = "我很高兴我们达成了协议。 ";
 			link.l1 = "再见, " + GetAddress_FormToNPC(NPChar);
 			link.l1.go = "exit";
@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 			iDiplomatPseudoGlobal = CalculateRelationContraSum(false);
 			dialog.Text = "好的。 这将花费你" + iDiplomatPseudoGlobal + "比索。 ";
 			Link.l1 = "我同意。 ";
-			if(makeint(Pchar.money) < iDiplomatPseudoGlobal)
+			if(int(Pchar.money) < iDiplomatPseudoGlobal)
 			{
 				Link.l1.go = "No_money";
 			}
@@ -362,10 +362,10 @@ void ProcessDialogEvent()
 		break;
         // boal <--
 		case "RelationAny_Done":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
 			dialog.text = "嗯... 我甚至不知道该说什么。 当然, 我可以帮你与" + XI_ConvertString(Nations[i].Name + "Abl") + "和解, 这将花费" + FindRussianMoneyString(iDiplomatPseudoGlobal) + "。 ";
-			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
+			if(int(pchar.money) >= iDiplomatPseudoGlobal)
 			{
 				link.l1 = "我认为我没有选择。 拿我的钱吧。 ";
 				link.l1.go = "relation3";
@@ -394,11 +394,11 @@ void ProcessDialogEvent()
 			dialog.Text = "你想讨论哪个殖民地的所有权? ";
 			for (i=0; i<MAX_COLONIES; i++)
 			{
-				if (sti(colonies[i].HeroOwn) == true && sti(colonies[i].isBought) == false)
+				if (int(colonies[i].HeroOwn) == true && int(colonies[i].isBought) == false)
 				{
 					sld = GetFortCommander(colonies[i].id);
 					attrLoc = "l" + i;
-					Link.(attrLoc) = GetCityName(colonies[i].id) + " - " + XI_ConvertString(GetNationNameByType(sti(sld.Default.nation)));
+					Link.(attrLoc) = GetCityName(colonies[i].id) + " - " + XI_ConvertString(GetNationNameByType(int(sld.Default.nation)));
 					Link.(attrLoc).go = "CityPay_" + i;
 				}
 			}
@@ -407,11 +407,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CityInfo":
-            i = sti(NPChar.quest.CityIdx);
+            i = int(NPChar.quest.CityIdx);
             sld = GetFortCommander(colonies[i].id);
             iSumm = TWN_CityCost(colonies[i].id);
-			dialog.Text = "殖民地" + GetCityName(colonies[i].id) + ", 属于" + XI_ConvertString(GetNationNameByType(sti(sld.Default.nation)) + "Gen") + ", 停止收复尝试的赎金是" + FindRussianMoneyString(iSumm) + "。 ";
-			if(sti(pchar.money) >= iSumm)
+			dialog.Text = "殖民地" + GetCityName(colonies[i].id) + ", 属于" + XI_ConvertString(GetNationNameByType(int(sld.Default.nation)) + "Gen") + ", 停止收复尝试的赎金是" + FindRussianMoneyString(iSumm) + "。 ";
+			if(int(pchar.money) >= iSumm)
 			{
 				Link.l1 = "是的, 正是我需要的。 ";
 				Link.l1.go = "City_Buy_End";
@@ -421,7 +421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "City_Buy_End":
-            i = sti(NPChar.quest.CityIdx);
+            i = int(NPChar.quest.CityIdx);
             TWN_RealeseForMoney(colonies[i].id, true);
 			dialog.Text = "好的, 交易正在进行中。 不会再有试图夺回" + GetCityName(colonies[i].id) + "的尝试了。 ";
 			Link.l2 = "谢谢。 祝你今天愉快。 ";

@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		}
 
-		if (npchar.city == sti(pchar.HeroParam.Location))
+		if (npchar.city == int(pchar.HeroParam.Location))
 		{
 			if (!CheckAttribute(PChar, "questTemp.pirateStartQuest"))
 			{
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 		link.l1.go = "AngryExitAgainWithOut";
 		if (CheckAttribute(npchar, "angry.terms")) // примиряемся с Мэнсфилдом через 30 дней.
 		{
-			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+			if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
 			{
 				dialog.text = "No me molestes, recuerda eso.";
 				link.l1 = "Lo tengo.";

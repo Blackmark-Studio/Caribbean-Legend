@@ -37,7 +37,7 @@ void Cabin_ReloadStartFade()
     // fix <--
 	DelEventHandler("FaderEvent_StartFade", "Cabin_ReloadStartFade");
 
-	fOldMaxSeaHeight = stf(Sea.MaxSeaHeight);
+	fOldMaxSeaHeight = float(Sea.MaxSeaHeight);
 	trace("fOldMaxSeaHeight : " + fOldMaxSeaHeight);
 	Sea.MaxSeaHeight = 1.2; // set maxinum sea height for ship abordage
 	
@@ -297,7 +297,7 @@ void Return2SeaClearNPC()
 	{
     	SetOfficersLocationToNone(); // офицеры в сад
     	SetPrisonerLocationToNone(); //пленных туда же
-    	SetOfficersInCampusToNone():
+    	SetOfficersInCampusToNone();
 		CompanionSaveTasks(); //компаньонов тоже.
     	DeleteQuestAttribute("SetNPCInShipDeck");
     	DeleteQuestAttribute("SetNPCInShipCabin");
@@ -341,8 +341,8 @@ void Cabin_ReloadEndFadeAfter()
 	// если бой, то ломаем корпус -->
 	if (bDisableMapEnter && !CheckAttribute(pchar, "GenQuest.MapClosedNoBattle")) //идёт бой 100712
 	{
-	    mchr.Ship.HP = makefloat(stf(mchr.Ship.HP) - GetCharacterShipHP(mchr) * 0.01);
-	    if (stf(mchr.Ship.HP) < 0) mchr.Ship.HP = 0;
+	    mchr.Ship.HP = float(float(mchr.Ship.HP) - GetCharacterShipHP(mchr) * 0.01);
+	    if (float(mchr.Ship.HP) < 0) mchr.Ship.HP = 0;
 	} 
 	// если бой, то ломаем корпус <--
 	
@@ -389,7 +389,7 @@ void Cabin_ReloadEndFadeAfter()
         SetCharacterRelationBoth(GetCharacterIndex(mchr.StartBattleMainCaptanId), GetMainCharacterIndex(), RELATION_ENEMY);
 	    Group_SetTaskAttack(mchr.StartBattleEncGroupName, PLAYER_GROUP);
 
-	    SetNationRelation2MainCharacter(sti(Characters[GetCharacterIndex(mchr.StartBattleMainCaptanId)].nation), RELATION_ENEMY);
+	    SetNationRelation2MainCharacter(int(Characters[GetCharacterIndex(mchr.StartBattleMainCaptanId)].nation), RELATION_ENEMY);
 	    UpdateRelations();
 	    RefreshBattleInterface();
 	    DeleteAttribute(mchr, "StartBattleAfterDeck"); // очищаем начало битвы
@@ -402,7 +402,7 @@ void Cabin_ReloadEndFadeAfter()
 		sld.nation = PIRATE;
 		Ship_NationAgressivePatent(sld);
 		Ship_FlagRefresh(sld); //флаг на лету
-		Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), 1);
+		Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), 1);
 		UpdateRelations();
 		RefreshBattleInterface();
 		DoQuestCheckDelay("NationUpdate", 0.1);
@@ -415,7 +415,7 @@ void Cabin_ReloadEndFadeAfter()
 		sld.nation = PIRATE;
 		Ship_NationAgressivePatent(sld);
 		Ship_FlagRefresh(sld); //флаг на лету
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 		Group_SetTaskAttack("Sea_CapComission_1", PLAYER_GROUP);
 		Group_LockTask("Sea_CapComission_1");
 		UpdateRelations();
@@ -627,13 +627,13 @@ void SetSailorDeck_Ships(ref Chref)
 	object aSoldierEnemy[1];
 	GenerateItemsForCharacter(Chref, ITEM_PACK_GENERIC, &aSoldierEnemy, nullptr);
 
-	int iRank = sti(pchar.rank);
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank);
+	int iScl = 20 + 2*int(pchar.rank);
 	// Warship 08.07.09 Пасхалка с бригантиной Мэри Селест
 	// Генерим нашего матроса, который скажет, что, мол, корабль пуст
 	if(characterID == "MaryCelesteCapitan")
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, sti(PChar.nation), 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, int(PChar.nation), 0, true, "soldier"));
 	    sld.name = Xi_ConvertString("Sailor");
 	    sld.lastname = "";
         sld.Dialog.Filename = "Quest\sailors_dialog.c";
@@ -671,7 +671,7 @@ void SetSailorDeck_Ships(ref Chref)
 	
 	if(CheckAttribute(pchar,"questTemp.ReasonToFast.canSpeakSailor") || CheckAttribute(pchar,"GenQuest.CaptainComission.canSpeakBoatswain"))
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, sti(PChar.nation), 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, int(PChar.nation), 0, true, "soldier"));
 		sld.name = Xi_ConvertString("boatswain");
 	    sld.lastname = "";
 		sld.Dialog.Filename = "Quest\sailors_dialog.c";
@@ -696,7 +696,7 @@ void SetSailorDeck_Ships(ref Chref)
 	
 	if(CheckAttribute(pchar,"GenQuest.Hold_GenQuest.canSpeakSailor"))
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, sti(PChar.nation), 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("saylor_0"+i, model, "man", ani, 10, int(PChar.nation), 0, true, "soldier"));
 		sld.name = Xi_ConvertString("boatswain");
 	    sld.lastname = "";
 		sld.Dialog.Filename = "Quest\sailors_dialog.c";
@@ -743,7 +743,7 @@ void SetSailorDeck_Ships(ref Chref)
 	    
 		CopyChref = GetCharacter(NPC_GenerateCharacter("FantomDeckCap", "none", "man", "man", 1, PIRATE, 0, false, "citizen"));
 		
-	    int NewCapIdx = sti(CopyChref.index);
+	    int NewCapIdx = int(CopyChref.index);
 		aref arToChar, arFromChar;
 		
 		DeleteAttribute(CopyChref, "");
@@ -815,7 +815,7 @@ void SetSailorDeck_Ships(ref Chref)
 		ChangeCharacterAddressGroup(Chref, "Deck_Near_Ship", "goto", "goto9");
 	}
 
-	if(CheckAttribute(pchar,"GenQuest.CaptainComission")) Rank = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); // чтобы жизнь медом не казалась
+	if(CheckAttribute(pchar,"GenQuest.CaptainComission")) Rank = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); // чтобы жизнь медом не казалась
 
 	object aBoardingModels2[4];
 	GenerateCrew(Chref, "soldier", &aBoardingModels2);
@@ -824,7 +824,7 @@ void SetSailorDeck_Ships(ref Chref)
     {
 		model = aBoardingModels2[i - 1].model;
 		ani = aBoardingModels2[i - 1].ani;
-		cn = NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, sti(Chref.nation), 0, true, "soldier");
+		cn = NPC_GenerateCharacter("saylor_0" + i, model, "man", ani, Rank, int(Chref.nation), 0, true, "soldier");
 		sld = &Characters[cn];
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldierEnemy, iScl*2);
         LAi_SetWarriorType(sld); // участвуют в расстреле - переинитим тип
@@ -884,7 +884,7 @@ void SetPrisonerLocationToNone()
             offref = GetCharacter(cn);
             if(CheckAttribute(offref,"prisoned"))
             {
-	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
 	            {
 			        offref.location = "none";
                 }
@@ -909,7 +909,7 @@ void SetPrisonerInHold()
             offref = GetCharacter(cn);
             if(CheckAttribute(offref,"prisoned"))
             {
-	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
 	            {
                     PlaceCharacter(offref, "goto", "random_must_be"); // mitrokosta всех в трюм
                 }
@@ -949,7 +949,7 @@ void SetOfficersInCampusToNone()
         if(cn != -1)
         {
             offref = GetCharacter(cn);
-            if (!CheckAttribute(offref,"prisoned") || sti(offref.prisoned) == false)
+            if (!CheckAttribute(offref,"prisoned") || int(offref.prisoned) == false)
             {
 	            if (GetRemovable(offref) && !IsOfficer(offref))  // не боевики и квестовые
 	            {
@@ -973,7 +973,7 @@ void SetOfficersInCampus()
         if(cn != -1)
         {
             offref = GetCharacter(cn);
-            if (!CheckAttribute(offref,"prisoned") || sti(offref.prisoned) == false)
+            if (!CheckAttribute(offref,"prisoned") || int(offref.prisoned) == false)
             {
 	            if (GetRemovable(offref) && !IsOfficer(offref))  // не боевики и квестовые
 	            {

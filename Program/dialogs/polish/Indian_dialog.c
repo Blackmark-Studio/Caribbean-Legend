@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "Mój mąż Tagofa to najlepszy myśliwy w plemieniu. Oh-ey! "+npchar.name+" jest dumna ze swojego męża. "+npchar.name+" często idzie z Tagofą do Selvy. Idź daleko. Tagofa wie, gdzie jest hiszpańska osada.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "Czy Tagofa zna drogę do hiszpańskiego miasta, które blade twarze nazywają Merida?";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Mój mąż nie idzie do dżungli, synu morza. On łowi ryby. Dobry rybak, oj-oj! ","Mój mąż dobry łowca, oh-ey, ale nie idzie do głębokiej dżungli."),RandPhraseSimple("Jaguar zranił mojego męża na polowaniu. Teraz siedzi we wsi, robi strzałki, oh-ey!","Sześć księżyców temu trzej Capongowie zaatakowali mojego męża. Teraz on nie chodzi na polowanie daleko od wioski. Nigdy! oh-ey!"));
-				link.l1 = LinkRandPhrase("Szkoda...","Szkoda...","Jaka szkoda..."));
+				link.l1 = LinkRandPhrase("Szkoda...","Szkoda...","Jaka szkoda...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "Nie, yalanaui. Białotwarz nigdy nie dotrzymuje słowa. Białotwarz mówi - a słowo natychmiast ucieka w próżnię. Kapong zabije Tagofę, a potem przyjdzie do naszej wioski, zabije Lokono.";
 			link.l1 = "Czy myślisz, że te Kapongi to wszystko, o co musisz się martwić? Bardzo się mylisz...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Brak zdolności", "Godny Zaufania");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "Lokono nie ufają Yalanaui. Yalanaui oszukują Indianina, czynią z Indianina niewolnika. Ale Lokono słyszał twoje imię, bladej twarzy. Moje zaufanie jest twoje. Przyjdź jutro po zachodzie słońca, synu morza. Będę z Tagofą w tamtej chacie. Zapytam go, czy pójdzie z tobą, czy nie.";
 			link.l1 = "Powiedz Tagofie, że dam mu mój najpiękniejszy pistolet. A dla ciebie mam wiele klejnotów.";
 			link.l1.go = "hayamee_2";
-			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("The Indians respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

@@ -118,18 +118,18 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//иногда продает корабельные товары // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 			npchar.quest.goodsqty = 50+hrand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
-			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//цена единицы товара
-			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//стоимость товара
+			if (int(npchar.quest.goods) == GOOD_EBONY || int(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
+			npchar.quest.goodsprice = int(int(Goods[int(npchar.quest.goods)].Cost)/4);//цена единицы товара
+			npchar.quest.goodscost = int(npchar.quest.goodsprice)*int(npchar.quest.goodsqty);//стоимость товара
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && int(GetCharacterFreeSpace(pchar, int(npchar.quest.goods))) > int(npchar.quest.goodsqty) && int(pchar.money) >= int(npchar.quest.goodscost) && ok)
 			{
-				dialog.text = "Kaptan, yakın zamanda bir miktar mal kıyıya vurdu - "+GetGoodsNameAlt(sti(npchar.quest.goods))+". Bazı kısımlar tuzlu suyla mahvolmuş, ama "+FindRussianQtyString(sti(npchar.quest.goodsqty))+" Onları çok iyi durumda kurtardım. Satın almak ister misin? Sadece senin için ucuza veririm "+FindRussianMoneyString(sti(npchar.quest.goodsprice))+" birim başına.";
+				dialog.text = "Kaptan, yakın zamanda bir miktar mal kıyıya vurdu - "+GetGoodsNameAlt(int(npchar.quest.goods))+". Bazı kısımlar tuzlu suyla mahvolmuş, ama "+FindRussianQtyString(int(npchar.quest.goodsqty))+" Onları çok iyi durumda kurtardım. Satın almak ister misin? Sadece senin için ucuza veririm "+FindRussianMoneyString(int(npchar.quest.goodsprice))+" birim başına.";
 				link.l1 = "Hayır. Son topladıklarını göster bana.";
 				link.l1.go = "Trade_lighthouse_double";
-				link.l2 = "Hm... Dürüst bir teklif, kabul ediyorum. Sanırım bunu biraz kârla tekrar satabilirim. Bakalım... Toplamda tutarı şu olacak "+FindRussianMoneyString(sti(npchar.quest.goodscost))+" . Doğru mu?";
+				link.l2 = "Hm... Dürüst bir teklif, kabul ediyorum. Sanırım bunu biraz kârla tekrar satabilirim. Bakalım... Toplamda tutarı şu olacak "+FindRussianMoneyString(int(npchar.quest.goodscost))+" . Doğru mu?";
 				link.l2.go = "Trade_goods";
 				SaveCurrentNpcQuestDateParam(npchar, "goods_date");
 			}
@@ -156,9 +156,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_goods":
-			AddCharacterGoods(pchar, sti(npchar.quest.goods), sti(npchar.quest.goodsqty));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.goodscost));
-			AddMoneyToCharacter(npchar, sti(npchar.quest.goodscost));
+			AddCharacterGoods(pchar, int(npchar.quest.goods), int(npchar.quest.goodsqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.goodscost));
+			AddMoneyToCharacter(npchar, int(npchar.quest.goodscost));
 			dialog.text = "Doğru bildiniz, kaptan. Harika bir anlaşma! İkimiz de bundan güzel bir kazanç sağladık...";
 			link.l1 = "Pekâlâ, o zaman. Tayfaları yükü gemime taşımaları için göndereceğim. Şimdi, satışa ne topladığını göster bana.";
 			link.l1.go = "Trade_lighthouse_double";
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_3":
-			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= sti(npchar.quest.artday))
+			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= int(npchar.quest.artday))
 			{
 			dialog.text = "Evet, bende var. Yüz dublon hazırladın mı, Kaptan?"; // Addon-2016 Jason
 				// belamour legendary edition -->
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_SetOwnerType(NPChar); // belamour иначе обижается навсегда		   
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "Ah, demek o kaptan sensin! Evet, seni bekliyordum. Gerard da bekliyordu ama acil bir keşif için ayrılması gerekti, bu yüzden ödemeyi sana teslim etmemi istedi. Mutlaka gelmen gerektiğini söyledi. Burada 90 dublon var, lütfen buyur.");
+			dialog.text = "Ah, demek o kaptan sensin! Evet, seni bekliyordum. Gerard da bekliyordu ama acil bir keşif için ayrılması gerekti, bu yüzden ödemeyi sana teslim etmemi istedi. Mutlaka gelmen gerektiğini söyledi. Burada 90 dublon var, lütfen buyur.";
 			link.l1 = "Teşekkür ederim! Dürüst insanlarla iş yapmak güzel.";
 			link.l1.go = "Trial_1";
 		break;

@@ -8,7 +8,6 @@
 #include "interface\utils\goods.c"
 #include "interface\utils\exchange_from_inventory.c"
 #include "interface\utils\common_character_scroll.c"
-#include "interface\utils\numbers_formatter.c"
 #include "interface\utilite.c"
 #include "interface\interface_utils.c"
 
@@ -151,7 +150,7 @@ void LaunchDeath()	// Интерфейс смерти
 
 void LaunchTutorial(string tutorialName, bool bShowVideo)	// Интерфейс окна обучения
 {
-	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 0 && !bGlobalTutor) return;
+	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && int(InterfaceStates.ShowTutorial) == 0 && !bGlobalTutor) return;
 	if(questMovieIsLockPlayerCtrl) return;
 	if(procInterfacePrepare(INTERFACE_TUTORIAL))
 	{
@@ -852,7 +851,7 @@ void LaunchMainMenu()
 
 	if(procEnableInterfaceLaunch(INTERFACE_MAINMENU)==false)
 	{
-		if( CheckAttribute(&InterfaceStates,"LaunchAnyway") && sti(InterfaceStates.LaunchAnyway)==true )
+		if( CheckAttribute(&InterfaceStates,"LaunchAnyway") && int(InterfaceStates.LaunchAnyway)==true )
 		{
 			PostEvent("LaunchIAfterFrame",1,"sl","I_MAINMENU",1);
 			InterfaceStates.LaunchAfterFrame = "I_MAINMENU";
@@ -1107,7 +1106,7 @@ void EndOkInterface()
 
 	if(nPrevInterface == INTERFACE_STORE)
 	{
-		int cn = GetCompanionIndex(pchar,sti(GameInterface.FourImage.current));
+		int cn = GetCompanionIndex(pchar,int(GameInterface.FourImage.current));
 		if(cn!=-1)
 		{
 			DeleteAttribute(&GameInterface,"");
@@ -1223,7 +1222,7 @@ void EndCancelInterface(bool bYesRelease)
 		/*
 		case RC_INTERFACE_TRANSFER_START_GOODS: 
 			InterfaceStates.Launched=false; 
-			LaunchTransferGoods(&Characters[sti(refObj1.index)],&Characters[sti(refObj2.index)]); 
+			LaunchTransferGoods(&Characters[int(refObj1.index)],&Characters[int(refObj2.index)]);
 			return; 
 		break;
 
@@ -1271,15 +1270,15 @@ void PushInterface(int iIndex,string iTitle,string iStartNod)
 	InterfaceStack.(StackSlot).index = iIndex;
 	InterfaceStack.(StackSlot).title = iTitle;
 	InterfaceStack.(StackSlot).start = iStartNod;
-	InterfaceStack.size = sti(InterfaceStack.size)+1;
+	InterfaceStack.size = int(InterfaceStack.size)+1;
 }
 bool PopInterface()
 {
 	if(!CheckAttribute(&InterfaceStack,"size"))	InterfaceStack.size = 0;
-	if(sti(InterfaceStack.size)<1) return false;
-	InterfaceStack.size = sti(InterfaceStack.size)-1;
+	if(int(InterfaceStack.size)<1) return false;
+	InterfaceStack.size = int(InterfaceStack.size)-1;
 	string StackSlot = "Slot"+InterfaceStack.size;
-	CurrentInterface = sti(InterfaceStack.(StackSlot).index);
+	CurrentInterface = int(InterfaceStack.(StackSlot).index);
 	/*switch(CurrentInterface)
 	{
 	case INTERFACE_STORE:
@@ -1335,7 +1334,7 @@ void StartPictureAsVideo( string picname, float time )
 	InterfaceStates.GameOverPicture = picname;
 	PostEvent( "DoInfoShower", 1, "sl", "Game Over Picture", true );
 	SetEventHandler("PictureAsVideoBreak","PictureAsVideoBreak",0);
-	PostEvent( "PictureAsVideoBreak", makeint(time * 1000) );
+	PostEvent( "PictureAsVideoBreak", int(time * 1000) );
 }
 void PictureAsVideoBreak()
 {
@@ -1374,7 +1373,7 @@ void StartVideo(string vidName)
 	PauseAllSounds();
  //ResetSoundScheme();
 	ResetSound(); // new
-	if(sti(InterfaceStates.Launched))
+	if(int(InterfaceStates.Launched))
 	{
 		InterfaceStates.InstantExit = true;
 		Event("exitCancel");
@@ -1466,7 +1465,7 @@ void _Procedure_EndVideoPlay()
 		LayerFreeze(SEA_REALIZE,false);
 		LayerFreeze(SEA_EXECUTE,false);
 	}
-	if(sti(InterfaceStates.Launched)) EngineLayersOffOn(false);
+	if(int(InterfaceStates.Launched)) EngineLayersOffOn(false);
 	if(CheckAttribute(&aviVideoObj,"afterQuestName"))
 	{
 		DoQuestCheckDelay(aviVideoObj.afterQuestName,0.1);
@@ -1484,7 +1483,7 @@ int GetCurrentInterface()
 
 bool procEnableInterfaceLaunch(int _interfaceCode)
 {
-	if(sti(InterfaceStates.Launched)==true) return false;
+	if(int(InterfaceStates.Launched)==true) return false;
 	if(IsEntity(reload_fader)) return false;
 	if(DialogRun!=0)
 	{
@@ -1546,7 +1545,7 @@ void ProcEndHelpChooser()
 
 void ReturnToMainMenu()
 {
-	/*if(sti(InterfaceStates.Buttons.Resume.enable)==true)
+	/*if(int(InterfaceStates.Buttons.Resume.enable)==true)
 	{
 		if(bSeaActive) return;
 		if(IsEntity(&worldMap)) return;
@@ -1566,7 +1565,7 @@ void ILaunchAfterFrame()
 	if( CheckAttribute(&InterfaceStates,"LaunchAfterFrame") && InterfaceStates.LaunchAfterFrame!=nodName ) {
 		return;
 	}
-	if(n>0 || sti(InterfaceStates.Launched))
+	if(n>0 || int(InterfaceStates.Launched))
 	{
 		PostEvent("LaunchIAfterFrame",1,"sl", nodName, n-1);
 		return;
@@ -1586,7 +1585,7 @@ void ILaunchAfterFrame()
 		case "TransferMain":
 			if( CheckAttribute(pchar,"TransferChar") )
 			{
-				LaunchTransferMain(pchar, GetCharacter(sti(pchar.TransferChar)), "Transfer");
+				LaunchTransferMain(pchar, GetCharacter(int(pchar.TransferChar)), "Transfer");
 				DeleteAttribute(pchar, "TransferChar");
 			}
 			return;
@@ -1673,7 +1672,7 @@ void ReloadAfterFortCapture()
 		return;
 	}
 	
-	int fortChr = sti(pchar.from_interface.fortCharacterIdx);
+	int fortChr = int(pchar.from_interface.fortCharacterIdx);
 	// boal -->
 	AfterTownBattle();//трем неоконченый захват
 
@@ -1719,7 +1718,7 @@ void ReloadAfterFortCapture()
     AddCharacterExpToSkillSquadron(GetMainCharacter(), "Sneak", 300);
 
     Statistic_AddValue(GetMainCharacter(), "Fort", 1);
-    Statistic_AddValue(GetMainCharacter(), NationShortName(sti(chref.nation)) + "_KillFort", 1);
+    Statistic_AddValue(GetMainCharacter(), NationShortName(int(chref.nation)) + "_KillFort", 1);
 	
 	Achievment_SetStat(22, 1);
     fOldMaxSeaHeight = 0.6; // fix потоп в порту ФФ boal 03.01.05
@@ -1731,7 +1730,7 @@ void ReloadAfterFortCapture()
 		Log_TestInfo("ReloadAfterFortCapture");
 		/*  //to_do boal
 		int iColony = FindColony(sColony);
-		if(sti(Colonies[iColony].capture_flag) == 1)
+		if(int(Colonies[iColony].capture_flag) == 1)
 		{
 			SetTownCapturedState(sColony,false);
 			//SetLocationCapturedState(sToLocation,false);
@@ -1765,7 +1764,7 @@ void ReloadAfterFortCapture()
 void IProcEventGameOver()
 {
 	string str = GetEventData();
-	if( sti(InterfaceStates.Launched) )
+	if( int(InterfaceStates.Launched) )
 	{
 		InterfaceStates.InstantExit = true;
 		Event("exitCancel");
@@ -1816,7 +1815,7 @@ void procInfoShow()
 
 	int prevQ = 0;
 	if( CheckAttribute(&objInfoList[nInfoIdx],"refr") && IsEntity(&objInfoList[nInfoIdx]) ) {
-		prevQ = sti(objInfoList[nInfoIdx].refr);
+		prevQ = int(objInfoList[nInfoIdx].refr);
 	}
 
 	if( nInfoSet!=0 ) prevQ++;
@@ -1897,7 +1896,7 @@ void InfoShowSetting()
 				if( i==5 )
 				{
 					if( g_ibVideoExecuting || !CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") ||
-						sti(InterfaceStates.Buttons.Resume.enable)==false )
+						int(InterfaceStates.Buttons.Resume.enable)==false )
 					{
 						bMakeSet = false;
 					}
@@ -1931,7 +1930,7 @@ void InfoShowSetting()
 				SetTimeScale(0.0);
 			} else {
 				if(IsPerkIntoList("TimeSpeed")) {
-					if( sti(InterfaceStates.Launched) == true ) {
+					if( int(InterfaceStates.Launched) == true ) {
 						SetTimeScale(GetSeaTimeScale());
 					} else { SetTimeScale(1.0); }
 				} else {SetTimeScale(1.0);}
@@ -2003,13 +2002,13 @@ void SetShowWindowParameters(bool TVused, int w,int h, int l,int t,int r,int b)
 	showWindow.bottom = h - RecalculateVIcon(h-b);
 	showWindow.sw = r-l;
 	showWindow.sh = b-t;
-	showWindow.scale =  makefloat(w) / 1024.0;
+	showWindow.scale =  float(w) / 1024.0;
 }
 
 void GetXYWindowOffset(ref offsetX, ref offsetY)
 {
 	float dwScreenHeight 		= 1080.0;
-	float dwScreenWidth 		= sti(showWindow.width) * dwScreenHeight/ sti(showWindow.height);
+	float dwScreenWidth 		= int(showWindow.width) * dwScreenHeight/ int(showWindow.height);
 	if(dwScreenWidth < 1920.0)  dwScreenWidth = 1920.0;
 	
 	float offX = (dwScreenWidth - 1920.0)/2.0;
@@ -2021,22 +2020,22 @@ void GetXYWindowOffset(ref offsetX, ref offsetY)
 
 int RecalculateHIcon(int curHSize)
 {
-	return makeint(0.5+curHSize);
+	return int(0.5+curHSize);
 }
 
 int RecalculateVIcon(int curVSize)
 {
-	return makeint(0.5+stf(showWindow.aspectRatio)*curVSize);
+	return int(0.5+float(showWindow.aspectRatio)*curVSize);
 }
 
 int RecalculateHIconScaled(int curHSize)
 {
-	return makeint(stf(showWindow.scale)*curHSize);
+	return int(float(showWindow.scale)*curHSize);
 }
 
 int RecalculateVIconScaled(int curVSize)
 {
-	return makeint(stf(showWindow.scale)*stf(showWindow.aspectRatio)*curVSize);
+	return int(float(showWindow.scale)*float(showWindow.aspectRatio)*curVSize);
 }
 
 string GetVideoFileName(string baseName)
@@ -2068,7 +2067,7 @@ void DisableMenuLaunch(bool bDisable)
 bool IsEnableMenuLaunch()
 {
 	if( CheckAttribute(&InterfaceStates,"LaunchDisable") ) {
-		return !sti(InterfaceStates.LaunchDisable);
+		return !int(InterfaceStates.LaunchDisable);
 	}
 	return true;
 }
@@ -2084,7 +2083,7 @@ void DisableFastTravel(bool bDisable)
 bool IsEnableFastTravel()
 {
 	if( CheckAttribute(&InterfaceStates,"DisFastTravel") ) {
-		return !sti(InterfaceStates.DisFastTravel);
+		return !int(InterfaceStates.DisFastTravel);
 	}
 	return true;
 }
@@ -2098,7 +2097,7 @@ void procPreLoad()
 void ProcBreakInterface()
 {
 	if( CheckAttribute(&InterfaceStates,"Launched") &&
-		sti(InterfaceStates.Launched)==true )
+		int(InterfaceStates.Launched)==true )
 	{
 		if( CurrentInterface == INTERFACE_RANSACK_MAIN || CurrentInterface == INTERFACE_FORTCAPTURE)
 			/*
@@ -2195,12 +2194,12 @@ void procMouseWeel()
 		if(dialogRun) return;
 		// if(LAi_IsFightMode(pchar)) return;
 		if(InterfaceStates.Launched != 0) return;
-        float radius = stf(locCamera.radius) - nWeelStep;
+        float radius = float(locCamera.radius) - nWeelStep;
     
 		if (bBettaTestMode) locCamera.radius = fClamp(3.0, 30.0, radius);
 		else 
 		{
-			float fratio = stf(showWindow.right)/stf(showWindow.bottom);
+			float fratio = float(showWindow.right)/float(showWindow.bottom);
 			locCamera.radius = fClamp(3.0, 3.5, radius);
 			if (fratio>2.0 && fratio<=3.0) locCamera.radius = fClamp(3.5, 4.5, radius);
 			if (fratio>3.0) locCamera.radius = fClamp(5.0, 7.0, radius);
@@ -2270,11 +2269,11 @@ void SetSkillShowEx(aref xi_refCharacter, string skillName, int skillVal, int sk
 		color = COLOR_RED;
 	}
 	SendMessage(&GameInterface,"lslsssllllllfl", MSG_INTERFACE_MSG_TO_NODE,"MAIN_WINDOW_STRINGS",0,
-		skillName, its(iResult), FONT_BOLD_NUMBERS,iX,iY, SetAlphaIntoColor(color,GetAlphaFromSkill(iResult)),0, 
+		skillName, string(iResult), FONT_BOLD_NUMBERS,iX,iY, SetAlphaIntoColor(color,GetAlphaFromSkill(iResult)),0,
 		SCRIPT_ALIGN_RIGHT, true, 0.7, 420);
 	
 	SendMessage(&GameInterface,"lslsssllllllfl", MSG_INTERFACE_MSG_TO_NODE,"MAIN_WINDOW_STRINGS",0,
-		sReal, its(skillTempVal), FONT_BOLD_NUMBERS,(iX+37),iY, SetAlphaIntoColor(COLOR_NORMAL,GetAlphaFromSkill(skillTempVal)),0, 
+		sReal, string(skillTempVal), FONT_BOLD_NUMBERS,(iX+37),iY, SetAlphaIntoColor(COLOR_NORMAL,GetAlphaFromSkill(skillTempVal)),0,
 		SCRIPT_ALIGN_RIGHT, true, 0.7, 420);
 }
 
@@ -2309,7 +2308,7 @@ void MakeQuickLoad()
 	// ugeen 2017 -->
 	int QuickSaveIndex = 1;
 	if( CheckAttribute(&PlayerProfile,"QuickSaveIndex") ) {
-		QuickSaveIndex = sti(PlayerProfile.QuickSaveIndex);
+		QuickSaveIndex = int(PlayerProfile.QuickSaveIndex);
 	}	
 	string curSave = GetClampedSaveName(XI_ConvertString("QuickSave"), QuickSaveIndex) + ".quick";
 	// <-- ugeen 2017
@@ -2357,7 +2356,7 @@ void QuickSaveContinue()
 	int QuickSaveIndex = 1;
 	if(CheckAttribute(&PlayerProfile,"QuickSaveIndex"))
 	{
-		QuickSaveIndex = sti(PlayerProfile.QuickSaveIndex);
+		QuickSaveIndex = int(PlayerProfile.QuickSaveIndex);
 		QuickSaveIndex++;
 	}
 	PlayerProfile.QuickSaveIndex = QuickSaveIndex;
@@ -2379,7 +2378,7 @@ bool MakeAutoSave()
 {
 	if( InterfaceStates.Launched != 0 ) {return false;}
 	// boal 12/04/24 тут нет проверок на диалог и прочее, т.к. это нельзя вызвать руками, а где в коде вызов, там считаем, что можно
-	bool bOk = CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode") && sti(InterfaceStates.EnabledAutoSaveMode) == 1;
+	bool bOk = CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode") && int(InterfaceStates.EnabledAutoSaveMode) == 1;
 	if(bOk) // сейв при выходе в море
 	{
 		aref arScrShoter;
@@ -2398,7 +2397,7 @@ bool MakeAutoSave2()
 {
 	if( InterfaceStates.Launched != 0 ) {return false;}
 	// boal 12/04/24 тут нет проверок на диалог и прочее, т.к. это нельзя вызвать руками, а где в коде вызов, там считаем, что можно
-	bool bOk = CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2") && sti(InterfaceStates.EnabledAutoSaveMode2) == 1;
+	bool bOk = CheckAttribute(&InterfaceStates,"EnabledAutoSaveMode2") && int(InterfaceStates.EnabledAutoSaveMode2) == 1;
 	if(bOk) // в абордаже это проверятся отдельно,тут делаю, чтоб не копипастить код проверки, а просто вызов автосейва
 	{
 		aref arScrShoter;
@@ -2455,7 +2454,7 @@ void Continue_Sea_AbordageLoadPre()
 Вариант №2 в одно прерывание, можно передать параметр в метод выполнения для сейва (пример от глоб карты)
 Разница evntSave и evntSaveGameAfter есть и очень важная. evntSaveGameAfter (новое прерывание) с гарантией будет после завершения записи файла. А evntSave идет вместе с записью на диск и потому нужно обновления кадра после ловить дополнительно
 
-if (sti(wdmLoginToSea.storm) == 0 && !isShipEncounterType && MakeAutoSave()) // не в шторме, не в бою
+if (int(wdmLoginToSea.storm) == 0 && !isShipEncounterType && MakeAutoSave()) // не в шторме, не в бою
 {
 	SetEventHandler("evntSaveGameAfter","WdmReloadAferSave", 0);
 }
@@ -2490,7 +2489,7 @@ void NewAutoSave(string sTag)
 		AddDialogExitQuestFunction("NewAutoSave_Defer");
 		return;
 	}
-	if(sti(InterfaceStates.Launched) == true)
+	if(int(InterfaceStates.Launched) == true)
 	{
 		PostEvent("Event_NewAutoSave", 1000, "s", sTag);
 		return;
@@ -2573,7 +2572,7 @@ void AutoSaveContinue()
 	
 	int idx = 0;
 	if(CheckAttribute(&NullCharacter, "AutoSaves." + sTag))
-		idx = sti(NullCharacter.AutoSaves.(sTag));
+		idx = int(NullCharacter.AutoSaves.(sTag));
 	string curSave = GetClampedSaveName(saveName, idx) + ".auto";
 
 	while(SendMessage(&GameInterface, "ls", MSG_INTERFACE_NEW_SAVE_FILE_NAME, curSave) == 1)
@@ -2657,7 +2656,7 @@ void DeleteAfterSaveFunction()
 bool CheckAutoSaveEnabled(string sType)
 {
 	string sAutoSave = "AutoSave_" + sType;
-	if(!CheckAttribute(&InterfaceStates, sAutoSave) || sti(InterfaceStates.(sAutoSave)) == 0)
+	if(!CheckAttribute(&InterfaceStates, sAutoSave) || int(InterfaceStates.(sAutoSave)) == 0)
 		return false;
 	return true;
 }
@@ -2667,7 +2666,7 @@ int GetMaxAutoSaves(string sType)
 	string sAutoSave = "AutoSave_" + sType;
 	if(!CheckAttribute(&InterfaceStates, sAutoSave))
 		return -1;
-	return sti(InterfaceStates.(sAutoSave));
+	return int(InterfaceStates.(sAutoSave));
 }
 
 string GetAutoSaveType(int index)
@@ -2744,30 +2743,30 @@ string GetSaveDataString(string label, string type)
 	else
 		fighter4 = GetFaceGroupName(GetOfficersIndex(pchar, 3));
 	// specials pictures
-	if(!CheckAttribute(pchar, "Fellows.Passengers.navigator") || sti(pchar.Fellows.Passengers.navigator) < 0)
+	if(!CheckAttribute(pchar, "Fellows.Passengers.navigator") || int(pchar.Fellows.Passengers.navigator) < 0)
 		navigator = "*";
 	else
-		navigator = GetFaceGroupName(sti(pchar.Fellows.Passengers.navigator));
-	if(!CheckAttribute(pchar, "Fellows.Passengers.boatswain") || sti(pchar.Fellows.Passengers.boatswain) < 0 )
+		navigator = GetFaceGroupName(int(pchar.Fellows.Passengers.navigator));
+	if(!CheckAttribute(pchar, "Fellows.Passengers.boatswain") || int(pchar.Fellows.Passengers.boatswain) < 0 )
 		boatswain = "*";
 	else
-		boatswain = GetFaceGroupName(sti(pchar.Fellows.Passengers.boatswain));
-	if(!CheckAttribute(pchar, "Fellows.Passengers.cannoner") || sti(pchar.Fellows.Passengers.cannoner) < 0)
+		boatswain = GetFaceGroupName(int(pchar.Fellows.Passengers.boatswain));
+	if(!CheckAttribute(pchar, "Fellows.Passengers.cannoner") || int(pchar.Fellows.Passengers.cannoner) < 0)
 		cannoner = "*";
 	else
-		cannoner = GetFaceGroupName(sti(pchar.Fellows.Passengers.cannoner));
-	if(!CheckAttribute(pchar, "Fellows.Passengers.doctor") || sti(pchar.Fellows.Passengers.doctor) < 0)
+		cannoner = GetFaceGroupName(int(pchar.Fellows.Passengers.cannoner));
+	if(!CheckAttribute(pchar, "Fellows.Passengers.doctor") || int(pchar.Fellows.Passengers.doctor) < 0)
 		doctor = "*";
 	else
-		doctor = GetFaceGroupName(sti(pchar.Fellows.Passengers.doctor));
-	if(!CheckAttribute(pchar, "Fellows.Passengers.treasurer") || sti(pchar.Fellows.Passengers.treasurer) < 0)
+		doctor = GetFaceGroupName(int(pchar.Fellows.Passengers.doctor));
+	if(!CheckAttribute(pchar, "Fellows.Passengers.treasurer") || int(pchar.Fellows.Passengers.treasurer) < 0)
 		treasurer = "*";
 	else
-		treasurer = GetFaceGroupName(sti(pchar.Fellows.Passengers.treasurer));
-	if(!CheckAttribute(pchar, "Fellows.Passengers.carpenter") || sti(pchar.Fellows.Passengers.carpenter) < 0)
+		treasurer = GetFaceGroupName(int(pchar.Fellows.Passengers.treasurer));
+	if(!CheckAttribute(pchar, "Fellows.Passengers.carpenter") || int(pchar.Fellows.Passengers.carpenter) < 0)
 		carpenter = "*";
 	else
-		carpenter = GetFaceGroupName(sti(pchar.Fellows.Passengers.carpenter));
+		carpenter = GetFaceGroupName(int(pchar.Fellows.Passengers.carpenter));
 	
 	object data;
 	data.locName = label;
@@ -2781,14 +2780,14 @@ string GetSaveDataString(string label, string type)
 	data.savetype = type;
 	data.location = GetCurLocationName();
 	UpdatePlayerSquadronPower();
-	data.SquadPower = makeint(sti(PChar.Squadron.ModPower));
+	data.SquadPower = int(int(PChar.Squadron.ModPower));
 	data.doubloons = GetCharacterItem(pchar, "gold_dublon") + CheckItemMyCabin("gold_dublon");
 	data.last_commit = GetLastCommit();
 	string idQuest = "";
 	if(CheckAttribute(pchar, "last_quest_record.uniqueID") && CheckAttribute(pchar, "last_quest_record.ID"))
 	{
 		idQuest = pchar.last_quest_record.uniqueID;
-		data.questUniqueID = idQuest
+		data.questUniqueID = idQuest;
 		data.questID = pchar.last_quest_record.ID;
 		if(CheckAttribute(pchar, "last_quest_record." + idQuest + ".UserData"))
 			data.questUserData = pchar.last_quest_record.(idQuest).UserData;
@@ -2801,7 +2800,7 @@ string GetSaveDataString(string label, string type)
 		data.questID = "";
 		data.questUserData = "";
 	}
-	if(CheckAttribute(pchar, "last_quest_record.closed") && sti(pchar.last_quest_record.closed) == true)
+	if(CheckAttribute(pchar, "last_quest_record.closed") && int(pchar.last_quest_record.closed) == true)
 		data.questClosed = true;
 	else
 		data.questClosed = false;
@@ -2874,7 +2873,7 @@ string GetCurLocationName()
 
 string GetPlayTime()
 {
-	int hours = sti( InterfaceStates.GameTime.hour );
+	int hours = int( InterfaceStates.GameTime.hour );
 	int days = hours / 24;
 	hours = hours - days*24;
 
@@ -2888,7 +2887,7 @@ string GetPlayTime()
 
 int GetPlayTimeHours() // ugeen 2016 - нужно для ачивки
 {
-	int hours = sti( InterfaceStates.GameTime.hour );
+	int hours = int( InterfaceStates.GameTime.hour );
 	//int days = hours / 24; 
 	//hours = hours - days*24;
 	
@@ -2897,14 +2896,14 @@ int GetPlayTimeHours() // ugeen 2016 - нужно для ачивки
 
 string GetStringTime(float time)
 {
-	int hour = makeint(time);
-	int minute = makeint((time - hour) * 60.0 + 0.01);
+	int hour = int(time);
+	int minute = int((time - hour) * 60.0 + 0.01);
 	string retVal;
-	if(hour<10) retVal = "0"+hour;
-	else retVal = its(hour);
+	if(hour<10) retVal = "0"+string(hour);
+	else retVal = string(hour);
 	retVal += ":";
-	if(minute<10) retVal += "0"+minute;
-	else retVal += its(minute);
+	if(minute<10) retVal += "0"+string(minute);
+	else retVal += string(minute);
 	return retVal;
 }
 
@@ -3024,7 +3023,7 @@ void CheckButton_SetDisable(string sControl, int iControlIndex, bool bDisableSta
 
 int CheckButton_GetState(string sControl, int iControlIndex)
 {
-	return SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sControl, 3, iControlIndex);
+	return int(SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, sControl, 3, iControlIndex));
 }
 
 void CheckButton_SetState(string sControl, int iControlIndex, bool bState)
@@ -3073,23 +3072,23 @@ void SetInterfaceGlobalsVariables()
 {
 	if(CheckAttribute(&InterfaceStates,"FontType")) 
 	{
-		iFontType = sti(InterfaceStates.FontType);
+		iFontType = int(InterfaceStates.FontType);
 	}
 	if(CheckAttribute(&InterfaceStates,"MoreInfo")) 
 	{
-		iMoreInfo = sti(InterfaceStates.MoreInfo);
+		iMoreInfo = int(InterfaceStates.MoreInfo);
 	}
 	if(CheckAttribute(&InterfaceStates,"ControlsMode")) 
 	{
-		iControlsMode = sti(InterfaceStates.ControlsMode);
+		iControlsMode = int(InterfaceStates.ControlsMode);
 	}
 	if(CheckAttribute(&InterfaceStates,"ControlsTips")) 
 	{
-		iControlsTips = sti(InterfaceStates.ControlsTips);
+		iControlsTips = int(InterfaceStates.ControlsTips);
 	}
 	if(CheckAttribute(&InterfaceStates,"CompassPos")) 
 	{
-		iCompassPos = sti(InterfaceStates.CompassPos);
+		iCompassPos = int(InterfaceStates.CompassPos);
 	}
 }
 

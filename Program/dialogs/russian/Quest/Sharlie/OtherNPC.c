@@ -290,14 +290,14 @@ void ProcessDialogEvent()
 		case "Sharlie_sailor_3":
 			dialog.text = "Если бы дело касалось только меня лично, то я бы к вам пошёл сразу, без всякой задней мысли. Но со мной - ещё сорок душ с 'Улисса'. Парни доверили мне своё будущее, и я должен быть уверен, что вы их не подведёте\n"+
 			"Что у вас за корабль?";
-			link.l1 = "Корабль как корабль, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". А это так важно?";
+			link.l1 = "Корабль как корабль, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype), "Name")))+". А это так важно?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
 			dialog.text = "Ну знаете, после 'Улисса' не хотелось бы служить на каком-то баркасе или тартане. Ваш корабль мы уже видели и парням он понравился\n"+
 			"Теперь денежный вопрос. Мы возьмём 4800 песо авансом. Ну а после - как везде. Лишнего не попросим, за это не беспокойтесь. Потянете?";
-			if (sti(Pchar.money) >= 4800)
+			if (int(Pchar.money) >= 4800)
 			{
 				link.l1 = "Ну что же, тогда - по рукам! Вот ваши монеты.";
 				link.l1.go = "Sharlie_sailor_5";
@@ -352,7 +352,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_again":
 			dialog.text = "Ну что, капитан, вы готовы нанять меня и моих товарищей на своё судно? Нам не терпится снова выйти в море! Да и в карманах уже начинает ветер гулять...";
-			if (sti(Pchar.money) < 4800)
+			if (int(Pchar.money) < 4800)
 			{
 				link.l1 = "Нет пока, я ещё подготавливаюсь.";
 				link.l1.go = "exit";
@@ -474,9 +474,9 @@ void ProcessDialogEvent()
 			link.l1 = "У меня не было выбора - на верфи предложили только эту посудину. Да ещё и содрали приличную сумму, а чинить её, понимаешь ли, времени у них нет... Какие-нибудь советы перед тем как отправиться в путь будут, Фульк?";
 			link.l1.go = "Folke_8";
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
+
 		case "Folke_8":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			if (bOk)
 			{
 				dialog.text = "Ну, боеприпасами вы запаслись достаточно, капитан. Этого арсенала нам хватит вполне, только не забывайте своевременно пополнять его.";
@@ -525,6 +525,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_1":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			dialog.text = "Вы закончили закупку амуниции, капитан?";
 			if (bOk)
 			{
@@ -543,9 +544,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_1";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
+
 		case "Folke_10":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			if (bOk)
 			{
 				dialog.text = "Оружия для команды вы закупили достаточно, и правильно сделали - не дай Бог рукопашная - не голыми же руками драться. Не забывайте проверять его количество, потому что безоружный матрос - это мёртвый матрос\nИ лучше держать оружие с запасом, ибо проклятые крысы любят грызть рукояти сабель и пистолей, приводя их в негодность.";
@@ -568,6 +569,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_2":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			dialog.text = "Вы закончили закупку оружия, капитан?";
 			if (bOk)
 			{
@@ -581,9 +583,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_2";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
+
 		case "Folke_11":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			if (bOk)
 			{
 				dialog.text = "Наверное, больше ничего. Провизии у нас достаточно, о роме для команды вы тоже позаботились - очень хорошо, так как нет лучшего лекарства от всех хворей, как добрая кружка рому после вахты. Матросы любят и уважают капитанов, выдающих ежедневные порции рома...";
@@ -606,6 +608,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_3":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			dialog.text = "Вы закончили закупку провизии и рома, капитан?";
 			if (bOk)
 			{
@@ -630,7 +633,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13a":
-			Npchar.loyality = makeint(Npchar.loyality) - 5;
+			Npchar.loyality = int(Npchar.loyality) - 5;
 			ChangeCharacterComplexReputation(pchar,"authority", 5);
 			dialog.text = "Тогда поставьте меня на должность штурмана и я отправлюсь на своё место на палубе.";
 			link.l1 = "...";
@@ -638,7 +641,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13":
-			Npchar.loyality = makeint(Npchar.loyality) + 5;
+			Npchar.loyality = int(Npchar.loyality) + 5;
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
 			// <-- legendary edition
 			dialog.text = "Тогда поставьте меня на должность штурмана и я отправлюсь на своё место на палубе.";
@@ -1041,7 +1044,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "Лечебную эссенцию? С тебя 90 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "Пожалуйста, отец Адриан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -1057,7 +1060,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "Целебный эликсир? С тебя 500 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "Пожалуйста, отец Адриан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -1073,7 +1076,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "Противоядие? С тебя 200 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "Пожалуйста, отец Адриан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -1089,7 +1092,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "Микстуру? С тебя 900 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "Пожалуйста, отец Адриан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -1102,8 +1105,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Пожалуйста. Держи своё лекарство. Да хранит тебя Господь!";
@@ -1390,7 +1393,7 @@ void ProcessDialogEvent()
 			dialog.text = "Слёзы богов. Вы называть их жемчуг. Много жемчуг.";
 			link.l1 = "Я принял решение, Лист Какао. Жди меня здесь, я иду к городскому торговцу оружием. Куплю необходимое, и сразу назад.";
 			link.l1.go = "ZsI_ListKakao_Soglasen_5";
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				link.l2 = "Я принял решение, Лист Какао. Так получилось, что у меня уже есть то, что тебе нужно. Держи.";
 				link.l2.go = "ZsI_ListKakao_Soglasen_2";
@@ -1429,7 +1432,7 @@ void ProcessDialogEvent()
 			LAi_SetOfficerType(sld);
 			sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 			sld.Dialog.CurrentNode = "Tichingitu_officer";
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_2":
@@ -1442,7 +1445,7 @@ void ProcessDialogEvent()
 			//Log_info("Вы получили 180 маленьких жемчужин");
 			PlaySound("Interface\important_item.wav");
 			DeleteAttribute(pchar, "questTemp.ZsI_PokupaemPistolety");
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				RemoveCharacterEquip(PChar, GUN_ITEM_TYPE);
 				RemoveItems(PChar, "pistol1", 2);
@@ -1466,7 +1469,7 @@ void ProcessDialogEvent()
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			ReturnOfficer_Tichingitu();
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_5":
@@ -1812,7 +1815,7 @@ void ProcessDialogEvent()
 			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Шарль", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.CompanionEnemyEnable = true;
 			SetCrewQuantity(npchar, 35);
 			SetCharacterGoods(npchar, GOOD_ROPES, 30);
@@ -1896,12 +1899,12 @@ void ProcessDialogEvent()
 		
 		case "MOT_Barbie_109":
 			dialog.text = "Десять тысяч песо. Это совсем небольшая сумма, а перепродажа канатов контрабандистам принесёт вам солидную прибыль.";
-			if (sti(pchar.Money) >= 10000)
+			if (int(pchar.Money) >= 10000)
 			{
 				link.l1 = "Никогда не прощу себе, если откажусь от такой возможности. Держите ваше серебро и проследите, чтобы товар был немедленно доставлен ко мне на корабль.";
 				link.l1.go = "MOT_Barbie_ContraSoglasen";
 			}
-			if (sti(pchar.Money) >= 7000)
+			if (int(pchar.Money) >= 7000)
 			{
 				link.l2 = "Это рискованное дело, коллега. Давайте пойдём друг другу навстречу? Я приму ваши канаты за семь тысяч.";
 				link.l2.go = "MOT_Barbie_ContraTorg";
@@ -1952,7 +1955,7 @@ void ProcessDialogEvent()
 			{
 				Notification_Skill(false, 25, SKILL_COMMERCE);
 				dialog.text = "Нет, капитан. Товар у нас серьёзный и требует самого серьёзного отношения. Большинство вольных капитанов даже мечтать не могут о реализации товаров стратегического назначения. Боюсь, торг здесь неуместен.";
-				if (sti(pchar.Money) >= 10000)
+				if (int(pchar.Money) >= 10000)
 				{
 					link.l1 = "Держите ваше серебро и проследите, чтобы товар был немедленно доставлен ко мне на корабль.";
 					link.l1.go = "MOT_Barbie_ContraSoglasen";
@@ -2172,7 +2175,7 @@ void ProcessDialogEvent()
 		case "Del_hire":
 			if (CheckAttribute(pchar, "questTemp.Del_SniziliTsenu"))
 			{
-				if (sti(pchar.Money) >= 2500)
+				if (int(pchar.Money) >= 2500)
 				{
 					AddMoneyToCharacter(pchar, -2500);
 					NextDiag.TempNode = "OnboardSoon";
@@ -2190,7 +2193,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.Money) >= 4000)
+				if (int(pchar.Money) >= 4000)
 				{
 					AddMoneyToCharacter(pchar, -4000);
 					NextDiag.TempNode = "Del_OnboardSoon";
@@ -2319,14 +2322,14 @@ void ProcessDialogEvent()
 		case "TK_Kapitan_Plen":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.DontRansackCaptain = true;
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", sti(PChar.rank), PIRATE, -1, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", int(PChar.rank), PIRATE, -1, false, "pirate"));
 			sld.name = "Даниэль";
 			sld.lastname = "Монбар";
 			AddPassenger(pchar, sld, false);
@@ -2340,7 +2343,7 @@ void ProcessDialogEvent()
 		case "TK_Kapitan_Otpustil":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -2536,7 +2539,7 @@ void ProcessDialogEvent()
 		
 		case "VsD_Tsyganka_4":
 			dialog.text = "Есть амулет хороший, местным народцем почитаем. Дерево его слушается, да и дела столярные с ним спорятся даже у тех, кто молотка-то в руках никогда не держал. Всего тысяча песо, "+GetSexPhrase("соколик","голубушка")+".";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Ладно, давай сюда амулет. Мне сейчас любая помощь пригодится.";
 				link.l1.go = "VsD_Tsyganka_Da";

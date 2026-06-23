@@ -412,7 +412,7 @@ void CalculateInfoDataF1()
 {
     totalInfo = descF1;
 
-    pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
+    pchar.Skill.FreeSkill = int(pchar.Skill.FreeSkill) + 35;
     
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -428,7 +428,7 @@ string descF2 = "Корабельные навыки +1 ";
 void CalculateInfoDataF2()
 {
 	 totalInfo = descF2;
-    pchar.perks.FreePoints_ship = sti(pchar.perks.FreePoints_ship) + 1;
+    pchar.perks.FreePoints_ship = int(pchar.perks.FreePoints_ship) + 1;
 	
     totalInfo = totalInfo + NewStr() + NewStr() + LanguageConvertString(idLngFile, "Cheat_success");
 
@@ -444,7 +444,7 @@ void CalculateInfoDataF3()
 {
     totalInfo = descF3;
 
-   pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 1;
+   pchar.perks.FreePoints_self = int(pchar.perks.FreePoints_self) + 1;
 
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -463,7 +463,7 @@ void CalculateInfoDataF4()
     LAi_SetHP(pchar, LAi_GetCharacterHP(pchar) + 10.0, LAi_GetCharacterMaxHP(pchar) + 10.0);
 	if(CheckAttribute(pchar, "chr_ai.hp_max_back"))
 	{
-		pchar.chr_ai.hp_max_back = stf(pchar.chr_ai.hp_max_back) + 10.0;
+		pchar.chr_ai.hp_max_back = float(pchar.chr_ai.hp_max_back) + 10.0;
 	}
     
     totalInfo = totalInfo + NewStr() + NewStr() +
@@ -481,7 +481,7 @@ void CalculateInfoDataF5()
     totalInfo = descF5;
 
     if(!CheckAttribute(pchar, "cheats.energyplus")) pchar.cheats.energyplus = 10.0;
-		else pchar.cheats.energyplus = stf(pchar.cheats.energyplus) + 10.0;
+		else pchar.cheats.energyplus = float(pchar.cheats.energyplus) + 10.0;
     
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -1097,7 +1097,7 @@ void ReloadByStr()
         {
             if (locations[i].type == "seashore" || locations[i].type == "mayak")
             {
-                setCharacterShipLocation(pchar, loc));
+                setCharacterShipLocation(pchar, loc);
                 setWDMPointXZ(loc);
             }
         }

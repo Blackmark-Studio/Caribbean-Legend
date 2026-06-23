@@ -189,8 +189,9 @@ void MM_InitFranchiseRewards()
 		if (status == 0) Log_Info("Error while checking your Steam subscription. Please try restarting the game");
 	}
 
-	SetNewGroupPicture("REWARD_ITEM_3","ITEMS_EMPTY", "empty");
-	Picture_SetColor("REWARD_ITEM_3", argb(220,50,50,50));
+	rewardsInfo.nocturlabe = true;
+	SetNewGroupPicture("REWARD_ITEM_3","ITEMS_42", "itm10");
+	SetNodeUsing("REWARD_AVAILABLE_3", true);
 	SetNewGroupPicture("REWARD_ITEM_4","ITEMS_EMPTY", "empty");
 	Picture_SetColor("REWARD_ITEM_4", argb(220,50,50,50));
 	SetNewGroupPicture("REWARD_ITEM_5","ITEMS_EMPTY", "empty");
@@ -207,6 +208,7 @@ void MM_ShowReward()
 	{
 		case "REWARD_ITEM_1": item = ItemsFromID("mushket_indian"); break;
 		case "REWARD_ITEM_2": item = ItemsFromID("legendGuide"); break;
+		case "REWARD_ITEM_3": item = ItemsFromID("nocturlabe"); break;
 		case "REWARD_CLOSE_BUTTON": 
 		{
 			MM_HideReward();
@@ -598,7 +600,7 @@ void MainMenu_CreateShip()
 	realShip.index = shipIndex;
 	
 	//int
-	iChar = GenerateCharacter(sti(currentShip.flag), WITHOUT_SHIP, "citizen", MAN, 0, WARRIOR);   //PIRATE
+	iChar = GenerateCharacter(int(currentShip.flag), WITHOUT_SHIP, "citizen", MAN, 0, WARRIOR);   //PIRATE
 	characters[iChar].id = "menuCharacter";
 	ref	rCharacter = &characters[iChar];
 	LAi_SetImmortal(rCharacter, true);
@@ -644,7 +646,7 @@ void MainMenu_CreateShip()
 	
 	SendMessage(&InterfaceBackScene, "lsa", 2, "ship", &rCharacter); // set ship position
 	CreateEntity(rCharacter, "ship");
-	ref rBaseShip = GetRealShip(sti(rCharacter.ship.type));
+	ref rBaseShip = GetRealShip(int(rCharacter.ship.type));
 	SendMessage(rCharacter, "laa", MSG_SHIP_CREATE, &rCharacter, &rBaseShip);
 }
 
@@ -698,9 +700,9 @@ void MainMenu_CreateCharacters() {
 			sld = CharacterFromID("MenuChar_gf");
 		}
 		
-		index = sti(sld.index);
+		index = int(sld.index);
 		//CopyAttributes(sld, character);
-		CopyCharacterAppearance(sld, character);
+		CopyCharacterAppearance(aref(sld), character);
 		sld.id = "MenuChar_gf";
 		sld.index = index;
 		// sld.model.animation = "main_menu_gf";
@@ -721,9 +723,9 @@ void MainMenu_CreateCharacters() {
 				sld = CharacterFromID("MenuChar_mc");
 			}
 			
-			index = sti(sld.index);
+			index = int(sld.index);
 			//CopyAttributes(sld, character);
-			CopyCharacterAppearance(sld, character);
+			CopyCharacterAppearance(aref(sld), character);
 			sld.id = "MenuChar_mc";
 			sld.index = index;
 			sld.model.animation = "main_menu_mc_" + gfId; // // main_menu_mc_mary или main_menu_mc_helena
@@ -746,9 +748,9 @@ void MainMenu_CreateCharacters() {
 				sld = CharacterFromID("MenuChar_mc");
 			}
 			
-			index = sti(sld.index);
+			index = int(sld.index);
 			//CopyAttributes(sld, character);
-			CopyCharacterAppearance(sld, character);
+			CopyCharacterAppearance(aref(sld), character);
 			sld.id = "MenuChar_mc";
 			sld.index = index;
 			sld.model.animation = "main_menu_mc"; // анимация для одного ГГ
@@ -776,9 +778,9 @@ void MainMenu_CreateCharacters() {
 			sld = CharacterFromID("MenuChar_" + attrName);
 		}
 		
-		index = sti(sld.index);
+		index = int(sld.index);
 		//CopyAttributes(sld, character);
-		CopyCharacterAppearance(sld, character);
+		CopyCharacterAppearance(aref(sld), character);
 		sld.id = "MenuChar_" + attrName;
 		sld.index = index;
 		sld.location = "MainMenu";
@@ -793,7 +795,7 @@ void MainMenu_CreateCharacters() {
 		aref locator;
 		makearef(locator, locations[FindLocation("MainMenu")].locators.locators.char2);
 		sld = CharacterFromID("MenuChar_mc");
-		TeleportCharacterToPos(sld, stf(locator.x), stf(locator.y), stf(locator.z));// перемещаем принудительно ГГ на нужный локатор
+		TeleportCharacterToPos(sld, float(locator.x), float(locator.y), float(locator.z));// перемещаем принудительно ГГ на нужный локатор
 	}
 	
 	if(bFire && Whr_IsNight()) MainMenu_CreateFire(); // костер с появлением персонажей
@@ -825,9 +827,9 @@ void MainMenu_CreateFire()
 	string sGroup = "locators";
 	string sLocator = "fire";
 	
-	float x = stf(rLoc.locators.(sGroup).(sLocator).x);
-	float y = stf(rLoc.locators.(sGroup).(sLocator).y);
-	float z = stf(rLoc.locators.(sGroup).(sLocator).z);
+	float x = float(rLoc.locators.(sGroup).(sLocator).x);
+	float y = float(rLoc.locators.(sGroup).(sLocator).y);
+	float z = float(rLoc.locators.(sGroup).(sLocator).z);
 
 	CreateParticleSystemX("Fire", x, y+0.15, z, x, y+0.15, z, 0); // Огонь
 	CreateParticleSystemX("Fire", x, y+0.3, z, x, y+0.3, z, 0); // Для пущей красоты создаем два партикла
@@ -899,12 +901,12 @@ void ICreateWeather()
 		WeatherParams.Rain.sMorning		= rand(5);
 		WeatherParams.Rain.sEvening		= 6;
 		WeatherParams.Rain.sNight		= rand(6);
-		WeatherParams.Rain.sTwilight 	= sti(WeatherParams.Rain.sNight);
+		WeatherParams.Rain.sTwilight 	= int(WeatherParams.Rain.sNight);
 		WeatherParams.Rain.Type			= rand(1);	
 		WeatherParams.Rain.year 		= GetDataYear();		
 		WeatherParams.Rain.month 		= GetDataMonth();
 		WeatherParams.Rain.day 			= GetDataDay();
-		WeatherParams.Rain.time 		= stf(WeatherParams.Rain.StartTime);
+		WeatherParams.Rain.time 		= float(WeatherParams.Rain.StartTime);
     }
     else
     {    
@@ -971,7 +973,7 @@ int CheckUpdates()
 bool ModelExists(string path) {
     object testModel;
     CreateEntity(&testModel, "MODELR");
-    bool result = SendMessage(&testModel, "ls", MSG_MODEL_LOAD_GEO, path);
+    bool result = bool(SendMessage(&testModel, "ls", MSG_MODEL_LOAD_GEO, path));
     DeleteClass(&testModel);
     return result;
 }

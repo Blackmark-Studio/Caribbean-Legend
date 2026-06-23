@@ -3,7 +3,7 @@ void BreachTheHull(ref targetCaptain, ref shooterCaptain, float ballDistance, fl
 {
 	if (ballDistance > 450.0 ) return;                           // навесом борта не пробиваем
 	if (GetAttributeInt(shooterCaptain, "TmpPerks.BeneathWaterline") != 1) return;  // перка нет
-	if (rand(35 - makeint(canonDmgMtp)) != 1) return;            // большой пушка – чаще дырка
+	if (rand(35 - int(canonDmgMtp)) != 1) return;            // большой пушка – чаще дырка
 
 	int curBreaches = GetAttributeInt(targetCaptain, "Ship.WaterlineBreaches");
 	if (curBreaches > 4) return;                                 // больше 5 пробоин не делаем
@@ -17,10 +17,10 @@ float GetShipBreachedImmersion(ref captain, ref ship, float baseImmersion, float
 {
 	float breachImmersion = 0;
 	int waterLineBreaches = 0;
-	if (CheckAttribute(ship, "breachImmersion")) breachImmersion = stf(ship.breachImmersion);       // текущий уровень погружения от пробоин
+	if (CheckAttribute(ship, "breachImmersion")) breachImmersion = float(ship.breachImmersion);       // текущий уровень погружения от пробоин
 	float resultImmersion = baseImmersion + breachImmersion;                                        // текущее погружение итого
 	if (rand(2) != 1) return resultImmersion;                                                       // процесс неравномерный, да и нам нет нужды каждую секунду всё пересчитывать
-	if (CheckAttribute(ship, "waterlineBreaches")) waterLineBreaches = sti(ship.waterlineBreaches); // текущее количество пробоин, макс. 5
+	if (CheckAttribute(ship, "waterlineBreaches")) waterLineBreaches = int(ship.waterlineBreaches); // текущее количество пробоин, макс. 5
 	if (breachImmersion == 0 && waterLineBreaches == 0) return resultImmersion;                     // всё починили
 
 	float targetImmersion = fClamp(0, 2.4 - (currentHP / baseHP) * 2, waterLineBreaches + 0.5);     // ограничиваем погружение целостностью корпуса в некоторой степени
@@ -33,7 +33,7 @@ float GetShipBreachedImmersion(ref captain, ref ship, float baseImmersion, float
 		ship.breachImmersion = breachImmersion + immersionStep; 
 		resultImmersion = resultImmersion + immersionStep;
 
-		int repair = makeint(50 - stf(captain.TmpSkill.Repair) * 50);
+		int repair = int(50 - float(captain.TmpSkill.Repair) * 50);
 		// экипаж не тратит время на выкачивание воды, а латает пробоину
 		if (rand(20 + repair) == 1) {
 			notification(StringFromKey("perks_2", ship.name), "Repair"); // на корабле n залатали пробоину
@@ -44,7 +44,7 @@ float GetShipBreachedImmersion(ref captain, ref ship, float baseImmersion, float
 	{
 		ship.breachImmersion = breachImmersion - 0.03; 
 		resultImmersion = resultImmersion - 0.03;
-		if (stf(ship.breachImmersion) <= 0) DeleteAttribute(ship, "breachImmersion");
+		if (float(ship.breachImmersion) <= 0) DeleteAttribute(ship, "breachImmersion");
 	}
 
 	return resultImmersion;

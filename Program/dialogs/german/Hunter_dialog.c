@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "meeting":
-			dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name)+" hat ein anständiges Kopfgeld für deinen Kopf ausgesetzt, wir müssen dich in eine seiner Kolonien liefern und wir werden bezahlt, egal ob du tot oder lebendig bist.";
+			dialog.text = XI_ConvertString(Nations[int(NPChar.nation)].Name)+" hat ein anständiges Kopfgeld für deinen Kopf ausgesetzt, wir müssen dich in eine seiner Kolonien liefern und wir werden bezahlt, egal ob du tot oder lebendig bist.";
 			Link.l1 = "Hör zu, ich werde dich bezahlen, wenn du mich in Ruhe lässt.";
 			Link.l1.go = "Cost_Head"; 
             // boal 08.04.04 -->
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
         break;
 
         case "Cost_Head2":
-            AddMoneyToCharacter(pchar, -sti(PChar.HunterCost));
+            AddMoneyToCharacter(pchar, -int(PChar.HunterCost));
 
             AddDialogExitQuest("GoAway_Hunters_Land"); 
             DialogExit();
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 
         case "Cost_Head":
 			dialog.text = "Ich denke, dass "+PChar.HunterCost+" Pesos werden uns gut passen.";
-            if(makeint(Pchar.money) < sti(PChar.HunterCost))
+            if(int(Pchar.money) < int(PChar.HunterCost))
             {
                 Link.l1 = "Aber ich habe solches Geld nicht.";
                 Link.l1.go = "NoMoney";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 			dialog.text = "Ach nein, "+GetSexPhrase("mein lieber Freund","mein hübsches Mädchen")+". Das wird nicht funktionieren. Wir wissen mit Sicherheit, dass du die Karte besessen hast von "+GetName(pchar.questTemp.ReasonToFast.mapIdx,pchar.questTemp.ReasonToFast.map,NAME_GEN)+". Und er war so ein Geizhals, dass seine Truhen von innen voller Geld platzten. Also werden wir nicht mit leeren Händen gehen.";
 			link.l1 = "Du hast recht. Die Truhen waren tatsächlich voll. Aber du wirst sie nicht bekommen. Du kannst versuchen, diese Höhle zu besuchen, ein paar löchrige Eimer sollten noch dort sein.";
 			link.l1.go = "ReasonToFast_THunter_3";
-			if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-				&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+			if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+				&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 			{
 				link.l2 = "Du hast recht. Du kannst deinen Schatz haben. Behalte nur im Hinterkopf, dass er dich nicht glücklich machen wird, da er mit Blut befleckt ist.";
 				link.l2.go = "ReasonToFast_THunter_4";
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_THunter_GoAway":			
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		case "ReasonToFastTHunter_Fight":
 			sGroup = "LAND_HUNTER";
 			sTemp = "LandHunter0";
-			iTemp = sti(pchar.HunterCost.Qty);
+			iTemp = int(pchar.HunterCost.Qty);
 			chrDisableReloadToLocation = true;
 			LAi_SetPlayerType(pchar);
 			LAi_SetFightMode(pchar, true);
@@ -284,8 +284,8 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.ReasonToFast == "LakeyExitSuccess")
 			{
 				dialog.text = "Schmuck, den du dem Gouverneur gestohlen hast.";
-				if(ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) 
-					&& ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+				if(ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8)
+					&& ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 				{
 					link.l1 = "Nimm es und sag hallo zu "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Sag ihm, dass wir uns bald treffen werden...";
 					link.l1.go = "ReasonToFast_HunterShore12_2";
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore12_2":
-			iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+			iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("icollection", iTemp );
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
 				PlayStereoSound("interface\important_item.wav");
 			}	
 			
-			iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+			iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 			if(iTemp > 0) 
 			{
 				ReasonToFast_GetTreasure("Chest", iTemp);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore21":
-			dialog.text = "Nicht seinem Rang entsprechend. Sie haben unsere Operation ruiniert und wir haben "+sti(pchar.questTemp.ReasonToFast.p10)+" Pesos verloren wegen dir. Also hast du jetzt eine Schuld zu begleichen.";
+			dialog.text = "Nicht seinem Rang entsprechend. Sie haben unsere Operation ruiniert und wir haben "+int(pchar.questTemp.ReasonToFast.p10)+" Pesos verloren wegen dir. Also hast du jetzt eine Schuld zu begleichen.";
 			link.l1 = "Nimm es und grüße "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+". Sag ihm, dass wir uns bald treffen werden...";
 			link.l1.go = "ReasonToFast_HunterShore22";
 			link.l2 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" ist schwer getäuscht, wenn er denkt, dass ich für ihn Kastanien aus dem Feuer ziehen werde.";
@@ -350,9 +350,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ReasonToFast_HunterShore22":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p10))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p10))
 			{
-				AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p10)));
+				AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p10)));
 				AddQuestRecord("ReasonToFast", "20");
 				AddQuestUserData("ReasonToFast", "sText", "money");
 				AddQuestUserData("ReasonToFast", "sName", GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_GEN));

@@ -329,3 +329,7 @@ itm_stat_greenIdol {狂信}
 itm_stat_descr_greenIdol {偶像は周囲の者を意のままに従わせ、敵船の降伏確率、艦隊の戦力、そして酒場での新兵数を $percent(0.30) 増加させる}
 itm_stat_secondary_greenIdol {古きものどもの囁き}
 itm_stat_descr_secondary_greenIdol {装備中、この偶像は絶えず乗組員の士気を低下させ、不敬なる囁きで彼らを狂気へと追い込む}
+itm_stat_nocturlabe {Hora exata}
+itm_stat_descr_nocturlabe {Aumenta a manobrabilidade do navio em 10%, e em mais 25% nos navios de 2ª e 1ª classe.}
+itm_stat_secondary_nocturlabe {Navegação noturna}
+itm_stat_descr_secondary_nocturlabe {Aumenta $key(Perception) em #f.0modifiers.SpecialPerception#. Aumenta a chance de fuga no mapa global em 25.}

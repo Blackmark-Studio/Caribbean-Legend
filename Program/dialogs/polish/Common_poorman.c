@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && int(Pchar.money) >= 2000)
 			{
 				dialog.text = "Spójrz, panie, może chciałbyś kupić jedną zabawną rzecz? To niedrogo, tylko kilka tysięcy peso...";
 				link.l1 = "Hmm. Pewnie ukradłeś to 'małe coś', a teraz próbujesz się tego pozbyć?";
@@ -106,8 +106,8 @@ void ProcessDialogEvent()
 		break;
 		case "Whants_2":
 			SaveCurrentNpcQuestDateParam(npchar, "wants_date");
-			int iTemp = sti(dialogEditStrings[2]);
-			if (iTemp <= 0 || sti(pchar.money) < iTemp)
+			int iTemp = int(dialogEditStrings[2]);
+			if (iTemp <= 0 || int(pchar.money) < iTemp)
 			{
 				dialog.text = "Drwienie z słabych i znużonych to grzech...";
 				link.l1 = "Ha-ha-ha! Myślałeś chociaż na moment, że dam ci pieniądze, ty szalony żebraku?!";
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 				dialog.text = "Dziękuję Ci za "+FindRussianMoneyString(iTemp)+", "+GetAddress_Form(NPChar)+". Teraz mogę kupić za te pieniądze chleb...";
 				link.l1 = "Tutaj, włóczęgo - idź się trochę umocnić.";
 				link.l1.go = "exit";
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 100 && iTemp <= 500)
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 				link.l1 = "Było miło pomóc.";
 				link.l1.go = "exit";
 				OfficersReaction("good");
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 500 && iTemp <= 1000)
@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 				link.l1 = "To naprawdę nie jest konieczne.";
 				link.l1.go = "exit";
 				ChangeCharacterComplexReputation(pchar,"nobility", iTemp/2000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 1000 && iTemp <= 5000)
@@ -146,8 +146,8 @@ void ProcessDialogEvent()
 				dialog.text = "Dziękuję Ci, szanowny "+GetSexPhrase("panie","pani")+" "+GetAddress_Form(NPChar)+". Niech Pan Bóg cię strzeże...";
 				link.l1 = "Tak, jego ochrona na pewno by nie zaszkodziła!";
 				link.l1.go = "exit";
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), iTemp/10000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), iTemp/10000.0+0.5);
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 5000 && iTemp <= 10000)
@@ -157,7 +157,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterExpToSkill(pchar, "Leadership", iTemp/5000.0);
 				AddCharacterExpToSkill(pchar, "Fortune", iTemp/5000.0);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
                  if (iTemp > 10000 && iTemp < 25000)
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 		
 		case "trial_7":
 			dialog.text = "Zrobiłem, señor, Zrobiłem. Nie jestem pewien, jak to wszystko zgadza się z tym, co mi powiedziałeś... Czy przyniosłeś pieniądze? Pięć tysięcy pesos.";
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				link.l1 = "Nie martw się. Oto twoje pieniądze. Teraz wykrztuś to.";
 				link.l1.go = "trial_8";

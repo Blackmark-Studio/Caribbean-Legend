@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makearef(NextDiag, NPChar.Dialog);
 
     // вызов диалога по городам -->
-    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(sti(NPChar.nation)) + "_Governor.c";
+    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(int(NPChar.nation)) + "_Governor.c";
     if (LoadSegment(NPChar.FileDialog2))
 	{
         ProcessCommonDialog(NPChar, Link, NextDiag);
@@ -30,9 +30,9 @@ void ProcessDialogEvent()
     int f, colony_money;
 
     int k = 1000;
-    if (CheckAttribute(Nations[sti(NPChar.nation)], "Fort"))
+    if (CheckAttribute(Nations[int(NPChar.nation)], "Fort"))
     {
-        k = (300 - sti(Nations[sti(NPChar.nation)].Fort)*10);
+        k = (300 - int(Nations[int(NPChar.nation)].Fort)*10);
     }
 	bool ok;
 	
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "Я слышал, что вы очень настойчиво просили аудиенции. Меня зовут " + GetFullName(npchar) +
-                              ". Я генерал-губернатор колоний " + NationNameGenitive(sti(NPChar.nation))+ ", наместник короны " + NationKingsName(npchar)+
+                              ". Я генерал-губернатор колоний " + NationNameGenitive(int(NPChar.nation))+ ", наместник короны " + NationKingsName(npchar)+
                               " в этих водах. А теперь соблаговолите сообщить цель вашего визита, " + GetAddress_Form(NPChar) + ".";
 				link.l1 = "Моё имя " + GetFullName(pchar) + ".";
 				link.l1.go = "node_1";
@@ -82,9 +82,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("А, это опять вы? По какому вопросу вам понадобился генерал-губернатор " + NationNameGenitive(sti(NPChar.nation))+ " на этот раз?",
+				dialog.text = RandPhraseSimple("А, это опять вы? По какому вопросу вам понадобился генерал-губернатор " + NationNameGenitive(int(NPChar.nation))+ " на этот раз?",
                               "Опять отрываете меня от важных государственных дел? Что вам угодно, " +GetAddress_Form(NPChar)+"?");
-				link.l1 = "Я хочу поговорить о работе на благо короны " + NationNameGenitive(sti(NPChar.nation));
+				link.l1 = "Я хочу поговорить о работе на благо короны " + NationNameGenitive(int(NPChar.nation));
 				link.l1.go = "work";
 				link.l2 = "Нужно поговорить с вами об одном деле.";
 				link.l2.go = "quests"; // файл нации
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "node_1":
 			dialog.text = "Так какая причина заставила вас прийти сюда и отвлекать меня от важных государственных дел?";
-			link.l1 = "Я хочу поговорить о работе на благо короны " + NationNameGenitive(sti(NPChar.nation));
+			link.l1 = "Я хочу поговорить о работе на благо короны " + NationNameGenitive(int(NPChar.nation));
 			link.l1.go = "work";
 			link.l2 = "Нужно поговорить с вами об одном деле.";
 			link.l2.go = "quests";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "Итак, вы приготовили 50 000 песо - взнос в призовой фонд?";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "Да, конечно. Вот, примите мой взнос.";
 				link.l1.go = "Regata_2";

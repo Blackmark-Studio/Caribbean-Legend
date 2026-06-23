@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 		//Jason --> мини-квест Дефицитный товар
 		case "Wine_ItemTrader":
 			dialog.text = "Claro. Setecentos pesos por garrafa.";
-			if (makeint(Pchar.money) >= 700)
+			if (int(Pchar.money) >= 700)
 			{
 				link.l1 = "Excelente. Pegue o dinheiro e entregue para mim.";
 				link.l1.go = "Wine_ItemTrader_1";
@@ -175,35 +175,13 @@ void ProcessDialogEvent()
 		
 		case "Wine_Bottles_1":
 			dialog.text = "Não, não é isso. Eu entendo aqui. Mas não vou revelar meu fornecedor assim tão fácil. Mas por mil pesos... talvez eu até contasse...";
-			if (makeint(Pchar.money) >= 1000)
+			if (int(Pchar.money) >= 1000)
             {
 				link.l1 = "Certo. Aqui está o seu mil – agora me diga, quem é o seu fornecedor.";
 				link.l1.go = "Wine_Bottles_2";
 			}
 			link.l2 = "Agora vocês, mercadores, ficaram ousados demais! Isso não seria bom demais pra vocês? Eu me viro muito bem sem o seu fornecedor, obrigado.";
 			link.l2.go = "Wine_Bottles_fail";
-		break;
-		
-		case "Wine_Bottles_free":
-			dialog.text = "Suponho que... muito bem então. Aqui está sua nota, e espero que retribua o favor no futuro.";
-			link.l1 = "...";
-			link.l1.go = "Wine_Bottles_free_1";
-		break;
-		
-		case "Wine_Bottles_free_1":
-			pchar.questTemp.Wine.TraderID = pchar.questTemp.Wine.City +"_trader";
-			sld = characterFromId(pchar.questTemp.Wine.TraderID);
-			pchar.questTemp.Wine.Name = GetFullName(sld);
-			pchar.questTemp.Wine.ItemTraderID = npchar.id;
-			dialog.text = "O nome do meu fornecedor de vinho é "+pchar.questTemp.Wine.Name+", ele é dono da loja local.";
-			link.l1 = "Entendi! Obrigado!";
-			link.l1.go = "exit";
-			//pchar.questTemp.Wine.Trader = "true";
-			DeleteAttribute(pchar, "questTemp.Wine.bottles");
-			pchar.questTemp.Wine.Repeat2 = "true";
-			TakeNItems(pchar, "letter_1", 1);
-			ChangeItemDescribe("letter_1", "itmdescr_letter_1");
-			PlaySound("interface\important_item.wav");
 		break;
 		
 		case "Wine_Bottles_2":
@@ -249,7 +227,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Repeat1_2":
 			dialog.text = "Eu já peguei mil de você pela informação. E pela carta, vai ter que pagar dois mil pesos à parte, e de qualquer jeito, não menos que isso.";
-			if (makeint(Pchar.money) >= 2000)
+			if (int(Pchar.money) >= 2000)
 			{
 				link.l1 = "Oh... Vocês mercadores são tão gananciosos. Não é à toa que ninguém gosta de vocês. Enfim, aqui está o seu dinheiro, então vá em frente e escreva o bilhete.";
 				link.l1.go = "Wine_Bottles_3";
@@ -335,12 +313,12 @@ void ProcessDialogEvent()
 		
 		case "ZsI_PokupaemPistolety_1":
 			dialog.text = "Claro! Clientes são sempre bem-vindos. Por três mil pesos, você leva pistolas confiáveis, balas e pólvora, como pediu.";
-			if (sti(pchar.Money) > 2999)
+			if (int(pchar.Money) > 2999)
 			{
 				link.l1 = "Caro, mas tudo bem. Eu vou levar.";
 				link.l1.go = "ZsI_PokupaemPistolety_2";
 			}
-			if (sti(pchar.Money) > 2299)
+			if (int(pchar.Money) > 2299)
 			{
 				link.l2 = "O preço parece injusto. Que tal um desconto para um amigo do Fadey, o Moscovita?";
 				link.l2.go = "ZsI_Torg";
@@ -391,7 +369,7 @@ void ProcessDialogEvent()
 			{
 				Notification_Skill(false, 19, SKILL_COMMERCE);
 				dialog.text = "Os amigos do Monsieur Fadey são sempre bem-vindos, mas os preços não têm amigos. Vai custar três mil pesos, Capitão.";
-				if (sti(pchar.Money) > 2999)
+				if (int(pchar.Money) > 2999)
 				{
 					link.l1 = "Caro, mas tudo bem. Eu vou levar.";
 					link.l1.go = "ZsI_PokupaemPistolety_2";
@@ -430,7 +408,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_ItemTrader_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+sti(pchar.GenQuest.Device.Shipyarder.Chance1))
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+int(pchar.GenQuest.Device.Shipyarder.Chance1))
 			{
 				dialog.text = "Hum... É, apareceu um sujeito estranho. Mas ele não me disse o que era aquilo, só tentou me vender. Mas pra que eu ia querer aquilo, se nem sabia pra que servia? Como é que eu ia revender? Então, só recusei."+NPCharSexPhrase(npchar,"","")+", e ele foi embora";
 				link.l1 = "E como ele era, e para onde foi? Eu preciso muito desse instrumento.";
@@ -448,7 +426,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
+			if (int(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "Mostre para mim... Sim, essa é uma planta interessante. E muito, muito rara. Chama-se Manga Rosa. Não sei para que serve, mas há um fato curioso sobre ela...";
 				link.l1 = "O que você quer dizer?";
@@ -464,7 +442,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_exit":
 			DialogExit();
-			pchar.questTemp.Mangarosa.m_count = sti(pchar.questTemp.Mangarosa.m_count)+1;
+			pchar.questTemp.Mangarosa.m_count = int(pchar.questTemp.Mangarosa.m_count)+1;
 			npchar.quest.mangarosa = "true";
 		break;
 		
@@ -489,7 +467,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
 			pchar.questTemp.UV_Lavochniki_2 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_2":
@@ -498,7 +476,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
 			pchar.questTemp.UV_Lavochniki_3 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_3":

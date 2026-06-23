@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Jason „олго и счастливо
 		case "LH_letter":
 			dialog.text = "Ja, du hast recht - es gibt einen Umschlag. Hier ist er, aber zuerst musst du für die Lieferung bezahlen - zwölftausend Silberpesos.";
-			if (sti(pchar.money) >= 12000)
+			if (int(pchar.money) >= 12000)
 			{
 				link.l1 = "Ich habe schon immer vermutet, dass Ihr Handel ursprünglich ein Diebesgeschäft war, aber irgendwie habe ich die Post verpasst, hm. Bitte, hier ist Ihr Geld.";
 				link.l1.go = "LH_letter_1";

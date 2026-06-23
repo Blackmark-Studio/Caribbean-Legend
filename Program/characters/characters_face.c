@@ -10,7 +10,7 @@ void SetRandomFaceToCharacter(ref rCharacter)
 	string sFaceID = "1";
 	if (rCharacter.sex == "man")
 	{
-		switch (sti(rCharacter.nation))
+		switch (int(rCharacter.nation))
 		{
 			case ENGLAND:	
 				sFaceID = GetRandSubString(sEnManFaces); 
@@ -34,10 +34,10 @@ void SetRandomFaceToCharacter(ref rCharacter)
 		sFaceID = "16";
 	}
 	
-	rCharacter.FaceId = sti(sFaceID);
+	rCharacter.FaceId = int(sFaceID);
 }
 
-void FaceMaker(aref rCharacter)
+void FaceMaker(ref rCharacter)
 {
 	// Warship 07.07.09 Пасхалка с кораблем "Мэри Селест" - за место лица кэпа - море с облаками
 	if(rCharacter.ID == "MaryCelesteCapitan")
@@ -381,7 +381,7 @@ void FaceMaker(aref rCharacter)
 		case "Claude_Durand":		rCharacter.FaceId = 309; 	break;		// Клод Дюран // may-16
 		
 		// Addon 2016-1 Jason Пиратская линейка
-		case "Billy_Pirt" 	:		rCharacter.FaceId = 310		break;		// Билли Пирт
+		case "Billy_Pirt" 	:		rCharacter.FaceId = 310;	break;		// Билли Пирт
 		case "Jan_Slave"	:		rCharacter.FaceId = 311;	break;		// Жан Пикар
 		case "Jan_Pikar"	:		rCharacter.FaceId = 311;	break;		// Жан Пикар
 		case "Jeffry"		:		rCharacter.FaceId = 312;	break;		// Джеффри Брук
@@ -394,7 +394,6 @@ void FaceMaker(aref rCharacter)
 		case "Boss_1"	 	:		rCharacter.FaceId = 331;	break;		// инспектор Ноэль Форже
 		case "Off_Fra_Z"	:		rCharacter.FaceId = 332;	break;		// капитан Эклятона
 		case "huber_9"		:		rCharacter.FaceId = 333;	break;		// д'Ойли
-		case "Fox"			:		rCharacter.FaceId = 244;	break;		// Фокс
 		case "Boss_2"		:		rCharacter.FaceId = 334;	break;		// начальник рудника
 		
 		// Jason Дороже золота
@@ -420,7 +419,6 @@ void FaceMaker(aref rCharacter)
 		case "Youngman":		rCharacter.FaceId = 420; break;
 		case "Blood5":			rCharacter.FaceId = 421; break;
 		case "blood_bomj":		rCharacter.FaceId = 421; break;
-		case "Mechanic":		rCharacter.FaceId = 422; break;
 		case "capitan_2":		rCharacter.FaceId = 423; break;
 		case "capitan_3":		rCharacter.FaceId = 424; break;
 		case "MusketeerEnglish_1":		rCharacter.FaceId = 425; break;
@@ -571,7 +569,7 @@ void FaceMaker(aref rCharacter)
 	}
 }
 
-void CirassMaker(aref rCharacter)
+void CirassMaker(ref rCharacter)
 {
 /*
 0 - ГГ
@@ -666,12 +664,12 @@ void SetCaptanModelByEncType(ref Chref, string sFantomType)
 	
 	int st = GetCharacterShipType(Chref);	
 
-	if (sti(Chref.nation) == PIRATE) sFantomType = "pirate"; // иначе баг
+	if (int(Chref.nation) == PIRATE) sFantomType = "pirate"; // иначе баг
 	
 	if(st != SHIP_NOTUSED) 	// есть корабль
 	{
-		ref rBaseShip = GetRealShip(sti(Chref.Ship.Type));
-		int shClass = sti(rBaseShip.Class);
+		ref rBaseShip = GetRealShip(int(Chref.Ship.Type));
+		int shClass = int(rBaseShip.Class);
 		switch (sFantomType)
 		{
 			case "trade":
@@ -687,17 +685,17 @@ void SetCaptanModelByEncType(ref Chref, string sFantomType)
 				Chref.PhantomType = "pirate";
 			break;
 			case "war":			
-				if(shClass >= 4) 				ModelPirate = "off_" + NationShortName(sti(Chref.nation)) + "_" + (rand(2) + 1);
-				if(shClass < 4 && shClass > 1)  ModelPirate = "off_" + NationShortName(sti(Chref.nation)) + "_" + (rand(1) + 4);
+				if(shClass >= 4) 				ModelPirate = "off_" + NationShortName(int(Chref.nation)) + "_" + (rand(2) + 1);
+				if(shClass < 4 && shClass > 1)  ModelPirate = "off_" + NationShortName(int(Chref.nation)) + "_" + (rand(1) + 4);
 				if(shClass == 1)
 				{
-						if(sti(RealShips[sti(Chref.ship.type)].basetype) == SHIP_FORT) // командующие фортами
+						if(int(RealShips[int(Chref.ship.type)].basetype) == SHIP_FORT) // командующие фортами
 						{
-							ModelPirate = "off_" + NationShortName(sti(Chref.nation)) + "_" + (rand(1) + 4);
+							ModelPirate = "off_" + NationShortName(int(Chref.nation)) + "_" + (rand(1) + 4);
 						}
 						else									// командующие линейными кораблями
 						{
-							ModelPirate = "off_" + NationShortName(sti(Chref.nation)) + "_6";
+							ModelPirate = "off_" + NationShortName(int(Chref.nation)) + "_6";
 						}	
 				}		
 				Chref.PhantomType = "officer";
@@ -727,7 +725,7 @@ void SetCaptanModelByEncType(ref Chref, string sFantomType)
 				Chref.PhantomType = "pirate";
 			break;
 			case "war":
-				ModelPirate = "off_" + NationShortName(sti(Chref.nation)) + "_" + (rand(2) + 1);
+				ModelPirate = "off_" + NationShortName(int(Chref.nation)) + "_" + (rand(2) + 1);
 				Chref.PhantomType = "officer";
 			break;			
 		}
@@ -775,14 +773,14 @@ string GetRandQuestMercenaryModel()
 // Jason: для солдат будем брать только от 1 до 9
 void SetRandNationSoldierModel(ref _character)
 {
-	_character.model = "sold_" + NationShortName(sti(_character.nation)) + "_" + (1 + rand(8));
+	_character.model = "sold_" + NationShortName(int(_character.nation)) + "_" + (1 + rand(8));
     FaceMaker(_character);
 	CirassMaker(_character);
 }
 
 void SetRandNationOfficerModel(ref _character)
 {
-	_character.model = "off_" + NationShortName(sti(_character.nation)) + "_" + (1 + rand(5));
+	_character.model = "off_" + NationShortName(int(_character.nation)) + "_" + (1 + rand(5));
     FaceMaker(_character);
 	CirassMaker(_character);
 }

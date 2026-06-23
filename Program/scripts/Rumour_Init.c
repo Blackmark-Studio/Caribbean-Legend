@@ -24,7 +24,7 @@ void SetRumourDefaults()// заполняем стек начальными - п
 		CurrentRumour.text = DEFAULT_TEXT[i];// Подгружаем начальные слухи в очередь
 		CurrentRumour.state = "1"; // Сколько раз может повторять ся один и тот же слух
 		CurrentRumour.tip = "citizen,capitan"; // типаж
-		CurrentRumour.rep = "none" // репутация
+		CurrentRumour.rep = "none"; // репутация
 		CurrentRumour.starttime = (DateToInt(0));// через сколько дней активировать слух
 		CurrentRumour.actualtime = (DateToInt(40));// Как долго могут ходить слухи = 40 дней
 		CurrentRumour.event = "none"; // Действие - нет
@@ -33,7 +33,7 @@ void SetRumourDefaults()// заполняем стек начальными - п
 	}	
 }
 
-void RumourInit();
+void RumourInit()
 {
 	//Log_SetStringToLog("Слухи!");
 	trace("Слухи!");

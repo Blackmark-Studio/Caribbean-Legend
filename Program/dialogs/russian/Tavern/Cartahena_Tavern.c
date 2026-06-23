@@ -37,18 +37,6 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Saga_Gonsales1.win_condition.l1.location = "Cartahena_houseF2";
 			pchar.quest.Saga_Gonsales1.function = "Saga_CreateGonsalesA";
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";	
-		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

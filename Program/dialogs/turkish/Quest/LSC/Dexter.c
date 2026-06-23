@@ -11,7 +11,8 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
+	int iMoney = 0;
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -210,9 +211,7 @@ void ProcessDialogEvent()
 			link.l1 = "Teşekkürler, Layton. Bir gün geri döneceğimi söylemiştim, ha-ha!";
 			link.l1.go = "return_1";
 		break;
-		
-		int iTrade = GetSquadronGoods(pchar, GOOD_FOOD)-GetCrewQuantity(pchar);
-		int iMoney = 0;
+
 		case "return_1":
 			dialog.text = "Pekala. Satılık yiyeceğiniz var mı? Piyasa fiyatının iki katını ödemeye hazırım.";
 			if (iTrade > 0)
@@ -265,7 +264,7 @@ void ProcessDialogEvent()
 			}
 			if (iTemp >= 15000) // лесник
 			{
-			 iTemp = (15000 - sti(npchar.quest.foodqty))	
+			 iTemp = (15000 - int(npchar.quest.foodqty))
              dialog.text = "İsa Mesih, bu bizim için fazla! Çürümeye başlamadan önce asla hepsini yiyemeyiz. Şu anda bundan fazlasını alamam "+iTemp+".";
 			 link.l1 = "Ne dersen de.";
 			 link.l1.go = "trade_3";
@@ -280,7 +279,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_3": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 		    iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			dialog.text = "Anlaştık. Sana ödeyeceğim "+FindRussianMoneyString(iMoney)+" mallar için. Anlaştık mı?";
 			link.l1 = "Adil! Seninle iş yapmak güzeldi!";
@@ -290,15 +289,15 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "head";
 		break;
 		case "trade_4": // лесник 
-		    iTemp = (15000 - sti(npchar.quest.foodqty))	
+		    iTemp = (15000 - int(npchar.quest.foodqty))
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "Gözlerim kör olsun! Ambarım tıka basa dolu! Önümüzdeki altı ay boyunca erzak almama gerek kalmayacak.";
@@ -319,11 +318,11 @@ void ProcessDialogEvent()
 			iMoney = (50+hrand(5, "&Slayer"))*iTemp;
 			AddMoneyToCharacter(pchar, iMoney);
 			RemoveCharacterGoods(pchar, GOOD_FOOD, iTemp);
-			npchar.quest.foodqty = sti(npchar.quest.foodqty)+iTemp;
+			npchar.quest.foodqty = int(npchar.quest.foodqty)+iTemp;
 			if(!CheckAttribute(pchar,"Achievment.LSCfood")) pchar.Achievment.LSCfood = iTemp;
-			else pchar.Achievment.LSCfood = sti(pchar.Achievment.LSCfood) + iTemp;
-			if(sti(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
-			if (sti(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
+			else pchar.Achievment.LSCfood = int(pchar.Achievment.LSCfood) + iTemp;
+			if(int(pchar.Achievment.LSCfood) >= 20000) Achievment_Set("ach_CL_112");
+			if (int(npchar.quest.foodqty) >= 15000) // склады затарены на полгода
 			{
 				SetFunctionTimerCondition("LSC_ClearFoodStorage", 0, 0, 180, false);
 				dialog.text = "Mükemmel! Ambarım şimdi dolu. Önümüzdeki altı ay boyunca erzak almama gerek kalmayacak.";
@@ -342,7 +341,7 @@ void ProcessDialogEvent()
 		
 		case "head": // стандартный диалог Декстера-адмирала
 			dialog.text = "A-ah, "+GetFullName(pchar)+"! Seni gördüğüme sevindim! Ne istiyorsun?";
-			if (iTrade > 0 && sti(npchar.quest.foodqty) < 15000)
+			if (iTrade > 0 && int(npchar.quest.foodqty) < 15000)
 			{
 				link.l1 = "Benden biraz erzak almak ister misin?";
 				link.l1.go = "trade";

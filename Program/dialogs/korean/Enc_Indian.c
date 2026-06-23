@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 				case 2: // жемчуг большой
 					npchar.quest.item.qty = 25+hrand(25);
 					npchar.quest.item.price = 30+hrand(10);
-					dialog.text = ""+npchar.name+" 신의 눈물이 있지. 큰 거야, 백인 형제. 그 양이 "+FindRussianQtyString(sti(npchar.quest.item.qty))+". 그걸 사고 싶어? 나는 가격이 "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 일단.";
+					dialog.text = ""+npchar.name+" 신의 눈물이 있지. 큰 거야, 백인 형제. 그 양이 "+FindRussianQtyString(int(npchar.quest.item.qty))+". 그걸 사고 싶어? 나는 가격이 "+FindRussianMoneyString(int(npchar.quest.item.price))+" 일단.";
 					link.l1 = "아니, 관심 없어.";
 					link.l1.go = "exit";
 					link.l2 = "물론이지! 그런 가격이라면 기꺼이 사겠어.";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 				case 3: // жемчуг малый
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 10+hrand(5);
-					dialog.text = ""+npchar.name+" 신의 눈물이 있지. 작은 것들이야, 하얀 형제여. 그 양은 "+FindRussianQtyString(sti(npchar.quest.item.qty))+". 그걸 사고 싶어? 나는 \n에 판다 "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 일단.";
+					dialog.text = ""+npchar.name+" 신의 눈물이 있지. 작은 것들이야, 하얀 형제여. 그 양은 "+FindRussianQtyString(int(npchar.quest.item.qty))+". 그걸 사고 싶어? 나는 \n에 판다 "+FindRussianMoneyString(int(npchar.quest.item.price))+" 일단.";
 					link.l1 = "아니, 난 관심 없어.";
 					link.l1.go = "exit";
 					link.l2 = "물론이지! 그런 가격이라면 기꺼이 사겠어.";
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 				case 4: //золотые самородки
 					npchar.quest.item.qty = 20+hrand(20);
 					npchar.quest.item.price = 90+hrand(20);
-					dialog.text = ""+npchar.name+" 노란 금속이 있지, 너희 창백한 얼굴들이 아주 좋아하는 거 말이야. 그 양이 "+FindRussianQtyString(sti(npchar.quest.item.qty))+". 나는 오직 ~만 받고 판다 "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 일단.";
+					dialog.text = ""+npchar.name+" 노란 금속이 있지, 너희 창백한 얼굴들이 아주 좋아하는 거 말이야. 그 양이 "+FindRussianQtyString(int(npchar.quest.item.qty))+". 나는 오직 ~만 받고 판다 "+FindRussianMoneyString(int(npchar.quest.item.price))+" 일단.";
 					link.l1 = "아니, 나는 관심 없어.";
 					link.l1.go = "exit";
 					link.l2 = "물론이지! 그런 가격이라면 기꺼이 사겠다.";
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 				case 5: // серебряные самородки
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 40+hrand(10);
-					dialog.text = ""+npchar.name+" 너희 백인들이 그렇게 좋아하는 흰 금속이 있지. 그 양이 "+FindRussianQtyString(sti(npchar.quest.item.qty))+". 나는 오직 ~에만 판다 "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 하나로.";
+					dialog.text = ""+npchar.name+" 너희 백인들이 그렇게 좋아하는 흰 금속이 있지. 그 양이 "+FindRussianQtyString(int(npchar.quest.item.qty))+". 나는 오직 ~에만 판다 "+FindRussianMoneyString(int(npchar.quest.item.price))+" 하나로.";
 					link.l1 = "아니, 관심 없어.";
 					link.l1.go = "exit";
 					link.l2 = "물론이오! 그런 가격이라면 기꺼이 사겠소.";
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -177,16 +177,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "내가 얼마나 많은 눈물을 흘렸는지 말했지. 인디언하고 농담하냐, 창백이? 그럼 잘 가라.";
 				link.l1 = "흠...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 눈물? 좋아. 그럼 네가 나한테 줘. "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", 백인 형제여.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 눈물? 좋아. 그럼 네가 나한테 줘. "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", 백인 형제여.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "여기 네 돈이다, 붉은 피부 형제여.";
 				link.l1.go = "big_pearl_1";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry52", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry52", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "가져가, 하얀 형제. 이제 네 거야.";
 			link.l1 = "고마워!";
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -223,16 +223,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "내가 얼마나 많은 눈물을 흘렸는지 말했지. 인디언이랑 농담하냐, 창백한 얼굴? 그럼 잘 가라.";
 				link.l1 = "흠...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 눈물이라고? 좋아. 그럼 네가 나한테 줘 "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", 백인 형제.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 눈물이라고? 좋아. 그럼 네가 나한테 줘 "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", 백인 형제.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "여기 네 돈이다, 붉은 피부의 형제여.";
 				link.l1.go = "small_pearl_1";
@@ -242,8 +242,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry53", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry53", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "가져가, 하얀 형제. 이제 네 거야.";
 			link.l1 = "고마워!";
@@ -260,7 +260,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -269,16 +269,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "내가 몇 명 있는지 말했잖아. 인디언을 놀리는 거냐, 창백한 얼굴? 그럼 잘 가라.";
 				link.l1 = "흠...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 덩어리들? 글쎄, 너한테서 "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", 백인 형제여.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 덩어리들? 글쎄, 너한테서 "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", 백인 형제여.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "여기 네 돈이 있다, 붉은 피부 형제여.";
 				link.l1.go = "gold_1";
@@ -288,8 +288,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry5", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry5", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "가져가라, 하얀 형제여. 이제 그것들은 네 것이야.";
 			link.l1 = "고마워!";
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -315,16 +315,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "내가 몇 명 있는지 말했잖아. 인디언이랑 장난치는 거야, 창백이? 그럼 잘 가라.";
 				link.l1 = "흠...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 덩어리들? 글쎄, 너한테서 "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", 백인 형제여.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 덩어리들? 글쎄, 너한테서 "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", 백인 형제여.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "여기 네 돈이다, 붉은 피부 형제여.";
 				link.l1.go = "silver_1";
@@ -334,8 +334,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry6", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry6", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "가져가, 백인 형제. 이제 네 거야.";
 			link.l1 = "고마워!";

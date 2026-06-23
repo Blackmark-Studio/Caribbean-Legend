@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Sence gizli servis için mi çalışıyorum "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Sence gizli servis için mi çalışıyorum "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Pekâlâ... hayır. O halde hoşça kal.";
 			link.l1.go = "exit";
 			link.l2 = "Başka sorunuz var mı, o zaman?";

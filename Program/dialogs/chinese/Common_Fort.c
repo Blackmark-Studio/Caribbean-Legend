@@ -40,13 +40,13 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
 				dialog.text = RandPhraseSimple("间谍! 放下武器跟我走! ", "敌方特工! 抓住他" + GetSexPhrase("他","她") + "! ");
 				link.l1 = RandPhraseSimple("闭嘴, 娘娘腔! ", "去你的! ");
@@ -55,20 +55,20 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy。 检查是否为敌人。 -->
-				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
+				if (GetRelation2BaseNation(int(npchar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
 				{
 					dialog.text = RandPhraseSimple("你是谁, 在这里做什么? ", "站住! 你是谁? 为什么试图进入堡垒? ");
 					//==> 按许可证
 					if (CheckNationLicence(HOLLAND))
 					{
-						link.l1 = "军官, 我有" + GetRusNameNationLicence(sti(npchar.nation)) + ", 所以我是合法来到这里的。 请看... ";
+						link.l1 = "军官, 我有" + GetRusNameNationLicence(int(npchar.nation)) + ", 所以我是合法来到这里的。 请看... ";
 						link.l1.go = "LicenceOk";
 					}
 					else
 					{
 						//==> 按旗帜
 						// 海盗占位符
-						if (sti(pchar.nation) == PIRATE)
+						if (int(pchar.nation) == PIRATE)
 						{
 							dialog.text = RandPhraseSimple("堡垒里有海盗? ! 抓住他" + GetSexPhrase("他","她") + "! ", "那是个海盗, 在我们的堡垒里窥探! 送进监狱!!! ");
 							link.l1 = RandPhraseSimple("是的, 我是海盗, 现在怎样? ", "呵, 有本事就来抓我... ");
@@ -77,14 +77,14 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) // 如果停泊在城市
 						{
-							link.l1 = "你没看到我船上飘扬的" + NationNameGenitive(sti(pchar.nation)) + "旗帜吗? ! ";
+							link.l1 = "你没看到我船上飘扬的" + NationNameGenitive(int(pchar.nation)) + "旗帜吗? ! ";
 						}
 						else // 如果停泊在非城市区域
 						{
-							link.l1 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近停泊, 船上升着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜! 还需要别的吗? ";
+							link.l1 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近停泊, 船上升着" + NationNameGenitive(int(pchar.nation)) + "的旗帜! 还需要别的吗? ";
 						}
 						// belamour传奇版 值得信赖的特质让玩家有机会欺骗守卫
-						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
+						if(int(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 						{
 							Notification_Perk(true, "Trustworthy");
 							link.l1.go = "NotPegYou";
@@ -106,9 +106,9 @@ void ProcessDialogEvent()
 				// < —eddy。 检查是否为敌人。 
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (int(NPChar.nation) == PIRATE)
 					{
-						if (sti(rColony.HeroOwn)) // 我们的市民
+						if (int(rColony.HeroOwn)) // 我们的市民
 						{
 							switch (rand(10))
 							{
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 					}
 					
 					//Jason --> 迷你任务 短缺商品
-					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && sti(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
+					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && int(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
 					{// Addon 2016-1 Jason 海盗线
 						string wineCity = "FortFrance";
 						if(SandboxMode)
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// 服役国家的舰队副司令 无需制服即可识别
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
@@ -270,31 +270,31 @@ void ProcessDialogEvent()
 
 							case 2: 
 								dialog.text = "舰队副司令, 这是我的荣幸! 我能为您做什么? ";
-								link.l1 = "为" + NationNameGenitive(sti(npchar.nation)) + "服务, 士兵! 这是你能做的最好的事。 ";
+								link.l1 = "为" + NationNameGenitive(int(npchar.nation)) + "服务, 士兵! 这是你能做的最好的事。 ";
 								link.l1.go = "exit";
 							break;
 						}
 						break;
 					}
 					// 有许可证的军官
-					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
 							case 0: 
-							dialog.text = "问候您, 船长! 如果您有任何指示, 请原谅: 虽然我为" + NationNameGenitive(sti(npchar.nation)) + "服务, 但我只听令于指挥官和总督。 "; 
+							dialog.text = "问候您, 船长! 如果您有任何指示, 请原谅: 虽然我为" + NationNameGenitive(int(npchar.nation)) + "服务, 但我只听令于指挥官和总督。 ";
 							link.l1 = "我有我的军官和船员听从我的指挥。 履行你的职责, 士兵。 ";
 							link.l1.go = "exit";
 							break;
 
 							case 1:
-								dialog.text = "船长, 你能带我到你的船上服役吗? 同样为" + NationNameGenitive(sti(npchar.nation)) + "服务, 但我更喜欢大海。 "; 
+								dialog.text = "船长, 你能带我到你的船上服役吗? 同样为" + NationNameGenitive(int(npchar.nation)) + "服务, 但我更喜欢大海。 ";
 								link.l1 = "你需要在指定的地方服役, 所以光荣地履行你的职责。 你一闭眼, 他们就会把你带到海上。 ";
 								link.l1.go = "exit";
 							break;
 
 							case 2: 
-								dialog.text = "哦, 你真幸运: 你是为" + NationNameGenitive(sti(npchar.nation)) + "服务的船长... 而我整天被困在这里。 "; 
+								dialog.text = "哦, 你真幸运: 你是为" + NationNameGenitive(int(npchar.nation)) + "服务的船长... 而我整天被困在这里。 ";
 								link.l1 = "你以为我刚到加勒比一周就成了船长吗? 这都是多年的辛勤工作... ";
 								link.l1.go = "exit";
 							break;
@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		break;
 		case "LicenceOk":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				dialog.text = "想想看! 如此无礼! 以商人的身份来到这里! 每个营房都贴着你的照片, 你这个混蛋! 这次你逃不掉了! 抓住他! ";
 				link.l1 = RandPhraseSimple("啊! ..", "好吧, 这是你们自找的... ");

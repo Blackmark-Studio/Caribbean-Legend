@@ -44,8 +44,8 @@
 #define GEN_ARCHETYPE_FREE "Free"
 
 // Параметр изменения пиратес
-#define GEN_FIXED_PIRATES 0
-#define GEN_RANDOM_PIRATES 1
+#define GEN_FIXED_PIRATES false
+#define GEN_RANDOM_PIRATES true
 
 // Параметры генератора
 #define GEN_SELF_PERKS_PENALTY -20 // Штраф в очки перков. Эмулирует наличие базовых умений с начала игры, за которые ГГ не получает очков

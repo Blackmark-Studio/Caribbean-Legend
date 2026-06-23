@@ -126,7 +126,7 @@ void SetPlayerShipLocation(int location_index)
 int Reload(aref reload_group, string locator_name, string current_location)
 {
     if(CheckAttribute(&Environment,"oldtime"))
-        reload_cur_time = Environment.oldtime;
+        reload_cur_time = float(Environment.oldtime);
     else
         reload_cur_time = GetTime();
     SetTimeScale(1.0);

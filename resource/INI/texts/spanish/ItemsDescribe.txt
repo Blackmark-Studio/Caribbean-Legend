@@ -1513,3 +1513,5 @@ itmname_blade_34 {La Espada del Ahogado}
 itmdescr_blade_34 {Esta espada pirata, hallada por ti a bordo del navío congelado, está cubierta de coral y pólipos. Es lo bastante larga y pesada como para lanzar sin esfuerzo poderosas estocadas y tajos desde la tercera posición.}
 itmname_greenIdol {Ídolo de Piedra Verde}
 itmdescr_greenIdol {Este ídolo fue tallado por ti mismo en piedra durante un sueño. Sus formas antinaturales y sus símbolos espantosos provocan repulsión y nublan la mente. A veces te parece que susurra algo...}
+itmname_nocturlabe {Nocturlabium}
+itmdescr_nocturlabe {Sprytne urządzenie pozwalające określić dokładny czas według gwiazd. Znacznie ułatwia i przyspiesza morskie podróże.}

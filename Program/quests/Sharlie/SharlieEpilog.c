@@ -116,7 +116,7 @@ void SharlieEpilog_SpawnPikar()
 	DeleteAttribute(pchar, "questTemp.SharlieEpilog_PU_Ulysse");
 	
 	// создаём Пикара
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Pikar", "Jan_Pikar", "man", "man", sti(pchar.rank), FRANCE, -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Pikar", "Jan_Pikar", "man", "man", int(pchar.rank), FRANCE, -1, true, "quest"));
 	sld.name = GetCharacterName("Jean");
 	sld.lastname = GetCharacterName("Picard");
 	if (CheckAttributeEqualTo(pchar, "questTemp.Mtraxx", "full_complete_end") || CheckAttributeEqualTo(pchar, "questTemp.Mtraxx", "full_complete"))
@@ -314,7 +314,7 @@ void SharlieEpilog_Alonso_exit()
 void SharlieEpilog_FrameInSea() // здесь запускается фейд
 {
 	if(MOD_SKILL_ENEMY_RATE > 9) Achievment_Set("ach_CL_103");
-	if(CheckAttribute(pchar,"questTemp.HorseQty") && sti(pchar.questTemp.HorseQty) < 1)
+	if(CheckAttribute(pchar,"questTemp.HorseQty") && int(pchar.questTemp.HorseQty) < 1)
 	{
 		if(!CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && !CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "quest.mtraxx_mirabella_life"))
 		{
@@ -357,12 +357,12 @@ void SharlieEpilog_UlysseInSea() // в Антлантическом океане
 	pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
 	pchar.Ship.name = GetShipName("Ulysse");
 	SetBaseShipData(pchar);
-	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
+	RealShips[int(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].WaterLine = 1.3;
-	realships[sti(pchar.ship.type)].Capacity = 6500;
-	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
-	realships[sti(pchar.ship.type)].TurnRate = 78.65;
+	realships[int(pchar.ship.type)].WaterLine = 1.3;
+	realships[int(pchar.ship.type)].Capacity = 6500;
+	realships[int(pchar.ship.type)].SpeedRate = 11.65;
+	realships[int(pchar.ship.type)].TurnRate = 78.65;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -576,14 +576,14 @@ void SharlieEpilog_UlysseInSea_9(string qName)
 	LAi_SetCitizenType(sld);
 	
 	//Старший матрос
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_HighSailor", "citiz_25", "man", "man", sti(pchar.rank), FRANCE, -1, true, "citizen"));
+	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_HighSailor", "citiz_25", "man", "man", int(pchar.rank), FRANCE, -1, true, "citizen"));
 	sld.dialog.filename = "Quest\Sharlie\Epilog.c";
 	sld.dialog.currentnode = "SharlieEpilog_HighSailor_1";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "reload", "reload_gundeck");
 	LAi_SetStayType(sld);
 	
 	//Боцман Моко
-	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Moko", "Tamango", "man", "man", sti(pchar.rank), FRANCE, -1, true, "citizen"));
+	sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Moko", "Tamango", "man", "man", int(pchar.rank), FRANCE, -1, true, "citizen"));
 	sld.name = GetCharacterName("Moko");
 	sld.lastname = "";
 	sld.dialog.filename = "Quest\Sharlie\Epilog.c";
@@ -2366,8 +2366,8 @@ void SharlieEpilog_SharlePreparingArmy_1()
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto2");
         if (i < 21) TeleportCharacterToPosAy(sld, 20.0 + i, 2.0, 21.0, 0.0);
-        else if (i < 41) TeleportCharacterToPosAy(sld, MakeFloat(i), 2.0, 22.0, 0.0);
-        else TeleportCharacterToPosAy(sld, MakeFloat(i - 20), 2.0, 23.0, 0.0);
+        else if (i < 41) TeleportCharacterToPosAy(sld, float(i), 2.0, 22.0, 0.0);
+        else TeleportCharacterToPosAy(sld, float(i - 20), 2.0, 23.0, 0.0);
 		
 		if (i >= 56 && i <= 60)
 		{
@@ -2483,11 +2483,11 @@ void SharlieEpilog_Refresh()
 	makearef(arColor, arImage.color);
 	makearef(arPos, arImage.pos);
 	float time, timer;
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 
 	// меняем цвет
-	int color_step = sti(arColor.step);
-	if(color_step <= sti(arColor.maxStep))
+	int color_step = int(arColor.step);
+	if(color_step <= int(arColor.maxStep))
 	{
 		int alpha_start, alpha_end;
 		switch(color_step)
@@ -2510,9 +2510,9 @@ void SharlieEpilog_Refresh()
 				timer = 2.0;
 			break;
 		}
-		time = stf(arColor.time);
+		time = float(arColor.time);
 		time += delta * 0.001;
-		int alpha = makeint(Bring2Range(alpha_start * 1.0, alpha_end * 1.0, 0.0, timer, time));
+		int alpha = int(Bring2Range(alpha_start * 1.0, alpha_end * 1.0, 0.0, timer, time));
 		arImage.color = argb(alpha, 128, 128, 128);
 		if(time >= timer)
 		{
@@ -2524,33 +2524,33 @@ void SharlieEpilog_Refresh()
 	}
 	
 	// меняем позицию
-	int pos_step = sti(arPos.step);
-	if(pos_step <= sti(arPos.maxStep))
+	int pos_step = int(arPos.step);
+	if(pos_step <= int(arPos.maxStep))
 	{
 		int x1_start, y1_start, x2_start, y2_start;
 		int x1_end, y1_end, x2_end, y2_end;
-		int addStart = makeint(400 * fHtRatio);
-		int addEnd = makeint(512 * fHtRatio);
+		int addStart = int(400 * fHtRatio);
+		int addEnd = int(512 * fHtRatio);
 		switch(pos_step)
 		{
 			case 1:
-				x1_start = sti(showWindow.right) / 2 - RecalculateHIcon(addStart);
-				y1_start = sti(showWindow.bottom) / 2 - RecalculateVIcon(addStart);
-				x2_start = sti(showWindow.right) / 2 + RecalculateHIcon(addStart);
-				y2_start = sti(showWindow.bottom) / 2 + RecalculateVIcon(addStart);
-				x1_end = sti(showWindow.right) / 2 - RecalculateHIcon(addEnd);
-				y1_end = sti(showWindow.bottom) / 2 - RecalculateVIcon(addEnd);
-				x2_end = sti(showWindow.right) / 2 + RecalculateHIcon(addEnd);
-				y2_end = sti(showWindow.bottom) / 2 + RecalculateVIcon(addEnd);
+				x1_start = int(showWindow.right) / 2 - RecalculateHIcon(addStart);
+				y1_start = int(showWindow.bottom) / 2 - RecalculateVIcon(addStart);
+				x2_start = int(showWindow.right) / 2 + RecalculateHIcon(addStart);
+				y2_start = int(showWindow.bottom) / 2 + RecalculateVIcon(addStart);
+				x1_end = int(showWindow.right) / 2 - RecalculateHIcon(addEnd);
+				y1_end = int(showWindow.bottom) / 2 - RecalculateVIcon(addEnd);
+				x2_end = int(showWindow.right) / 2 + RecalculateHIcon(addEnd);
+				y2_end = int(showWindow.bottom) / 2 + RecalculateVIcon(addEnd);
 				timer = 2.0;
 			break;
 		}
-		time = stf(arPos.time);
+		time = float(arPos.time);
 		time += delta * 0.001;
-		int x1 = makeint(Bring2Range(x1_start * 1.0, x1_end * 1.0, 0.0, timer, time));
-		int y1 = makeint(Bring2Range(y1_start * 1.0, y1_end * 1.0, 0.0, timer, time));
-		int x2 = makeint(Bring2Range(x2_start * 1.0, x2_end * 1.0, 0.0, timer, time));
-		int y2 = makeint(Bring2Range(y2_start * 1.0, y2_end * 1.0, 0.0, timer, time));
+		int x1 = int(Bring2Range(x1_start * 1.0, x1_end * 1.0, 0.0, timer, time));
+		int y1 = int(Bring2Range(y1_start * 1.0, y1_end * 1.0, 0.0, timer, time));
+		int x2 = int(Bring2Range(x2_start * 1.0, x2_end * 1.0, 0.0, timer, time));
+		int y2 = int(Bring2Range(y2_start * 1.0, y2_end * 1.0, 0.0, timer, time));
 		arImage.pos = x1 + "," + y1 + "," + x2 + "," + y2;
 		if(time >= timer)
 		{
@@ -2561,7 +2561,7 @@ void SharlieEpilog_Refresh()
 		arPos.time = time;
 	}
 	
-	if(color_step > sti(arColor.maxStep) && pos_step > sti(arPos.maxStep))
+	if(color_step > int(arColor.maxStep) && pos_step > int(arPos.maxStep))
 	{
 		SharlieEpilog_ShowLogo_End();
 		return;
@@ -2666,7 +2666,7 @@ void SharlieEpilog_TEST_Mary()
 	// Мэри:
 	pchar.questTemp.LSC.Mary_officer = "true";
 	sld = characterFromId("Mary");
-	sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+	sld.quest.OfficerPrice = int(pchar.rank) * 500;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.CompanionDisable = true;
 	sld.loyality = MAX_LOYALITY;
@@ -2710,7 +2710,7 @@ void SharlieEpilog_TEST_Helena()
     sld.greeting = "helena_hire";
 	sld.Dialog.Filename = "Quest\Saga\Helena.c";
 	sld.Dialog.CurrentNode = "Helena_officer";
-	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.quest.OfficerPrice = int(pchar.rank) * 20;
     sld.OfficerWantToGo.DontGo = true;
     sld.loyality = MAX_LOYALITY;
     AddPassenger(pchar, sld, false);
@@ -2755,7 +2755,7 @@ void SharlieEpilog_Test_Tichingitu()
     sld.greeting = "Tichingitu";
     sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 	sld.Dialog.CurrentNode = "Tichingitu_officer";
-	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.quest.OfficerPrice = int(pchar.rank) * 20;
     sld.OfficerWantToGo.DontGo = true;
     sld.CompanionDisable = true;
     sld.loyality = MAX_LOYALITY;

@@ -606,7 +606,7 @@ void ProcessDialogEvent()
 
 		if (GetDataDay() >= 10 && GetDataDay() <= 15)
 		{
-			int iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 2;
+			int iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 2;
 			if (iRank > 45)
 				iRank = 45;
 			Group_FindOrCreateGroup("Mtr_Utreht");
@@ -2992,7 +2992,7 @@ void ProcessDialogEvent()
 
 	case "merida_head_8":
 		dialog.text = "No hablará amablemente. Conozco a su tipo.";
-		if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
+		if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
 		{
 			link.l1 = "(Confiable) (Honor) (Liderazgo) Ya es suficiente sangre por hoy, Jean. Me encargaré de esto yo mismo.";
 			link.l1.go = "merida_head_dobro_1";
@@ -3004,7 +3004,7 @@ void ProcessDialogEvent()
 		{
 			if (!IsCharacterPerkOn(pchar, "Trustworthy"))
 				Notification_Perk(false, "Trustworthy");
-			if (sti(pchar.reputation.nobility) < 50)
+			if (int(pchar.reputation.nobility) < 50)
 				Notification_Reputation(false, 50, "low");
 			if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50)
 				notification("¡Prueba de habilidad fallida! (50)", SKILL_LEADERSHIP);
@@ -3123,7 +3123,7 @@ void ProcessDialogEvent()
 		SetCharacterRemovable(npchar, false);
 		npchar.CompanionEnemyEnable = false; // всегда друзья
 		LAi_SetImmortal(npchar, false);
-		SetCompanionIndex(pchar, -1, sti(npchar.index));
+		SetCompanionIndex(pchar, -1, int(npchar.index));
 		npchar.loyality = MAX_LOYALITY;
 		pchar.quest.mtraxx_ignasio_sail.win_condition.l1 = "location";
 		pchar.quest.mtraxx_ignasio_sail.win_condition.l1.location = "Bridgetown_town";
@@ -3251,12 +3251,12 @@ void ProcessDialogEvent()
 	case "ignasio_14":
 		LAi_Fade("", "");
 		WaitDate("", 0, 0, 0, 3, 10);
-		pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER) - sti(pchar.questTemp.Mtraxx.Silver);
-		pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY) - sti(pchar.questTemp.Mtraxx.Mahogany);
-		if (sti(pchar.questTemp.Mtraxx.Silver) < 100)
+		pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER) - int(pchar.questTemp.Mtraxx.Silver);
+		pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY) - int(pchar.questTemp.Mtraxx.Mahogany);
+		if (int(pchar.questTemp.Mtraxx.Silver) < 100)
 		{
 			dialog.text = "Capitán, ¿qué sucede? ¿Dónde está nuestra plata? ¿Hundiste nuestro premio?";
-			if (sti(pchar.questTemp.Mtraxx.Mahogany) < 200)
+			if (int(pchar.questTemp.Mtraxx.Mahogany) < 200)
 			{
 				link.l1 = "Mm...";
 				link.l1.go = "ignasio_15_1";
@@ -3268,14 +3268,14 @@ void ProcessDialogEvent()
 			}
 			break;
 		}
-		if (sti(pchar.questTemp.Mtraxx.Silver) < 300 && sti(pchar.questTemp.Mtraxx.Silver) > 100)
+		if (int(pchar.questTemp.Mtraxx.Silver) < 300 && int(pchar.questTemp.Mtraxx.Silver) > 100)
 		{
 			dialog.text = "Mm.. Esto es pobre. Pensé que habría mucho más.";
 			link.l1 = "Tenemos lo que tenemos.";
 			link.l1.go = "ignasio_15_2";
 			break;
 		}
-		if (sti(pchar.questTemp.Mtraxx.Silver) < 700 && sti(pchar.questTemp.Mtraxx.Silver) > 300)
+		if (int(pchar.questTemp.Mtraxx.Silver) < 700 && int(pchar.questTemp.Mtraxx.Silver) > 300)
 		{
 			dialog.text = "No está mal, no está mal. Aunque pensé que habría más.";
 			link.l1 = "Tenemos lo que tenemos.";
@@ -3295,7 +3295,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ignasio_15_11":
-		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany) / 2));
+		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany) / 2));
 		dialog.text = "Al menos conseguimos algo de esto... ¡Chicos! ¡Vámonos!";
 		link.l1 = "...";
 		link.l1.go = "exit";
@@ -3303,8 +3303,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "ignasio_15_2":
-		RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver) / 2));
-		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany) / 2));
+		RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver) / 2));
+		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany) / 2));
 		dialog.text = "Es algo.  Sigamos nuestros caminos.";
 		link.l1 = "...";
 		link.l1.go = "exit";
@@ -3312,8 +3312,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "ignasio_15_3":
-		RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver) / 2));
-		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany) / 2));
+		RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver) / 2));
+		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany) / 2));
 		dialog.text = "Es algo. Vamos a separarnos. Es un éxito después de todo, ¡jeh!";
 		link.l1 = "...";
 		link.l1.go = "exit";
@@ -3321,8 +3321,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "ignasio_15_4":
-		RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver) / 2));
-		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany) / 2));
+		RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver) / 2));
+		RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany) / 2));
 		dialog.text = "¡Hemos tenido una reunión muy provechosa! Quizás, no sea la última vez que hagamos negocios juntos, ¡capitán!";
 		link.l1 = "¡Llámame si encuentras más comerciantes gordos, je-je!";
 		link.l1.go = "exit";
@@ -3577,7 +3577,7 @@ void ProcessDialogEvent()
 			link.l3.go = "shipstock";
 		else
 			link.l3.go = "shipstock_info";
-		if (CheckAttribute(npchar, "portman") && sti(npchar.portman > 0))
+		if (CheckAttribute(npchar, "portman") && int(npchar.portman > 0))
 		{
 			link.l4 = "Rodgar, me gustaría recuperar uno de mis barcos.";
 			link.l4.go = "shipstockreturn";
@@ -3597,7 +3597,7 @@ void ProcessDialogEvent()
 			link.l6 = "Rodgar, quiero dejar a una parte de la tripulación en la isla.";
 			link.l6.go = "crew";
 		}
-		if (CheckAttribute(npchar, "crew") && sti(npchar.crew.qty) > 0)
+		if (CheckAttribute(npchar, "crew") && int(npchar.crew.qty) > 0)
 		{
 			link.l7 = "Rodgar, quiero llevarme a mis marineros de vuelta al mar.";
 			link.l7.go = "crew_3";
@@ -3764,7 +3764,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("IslaMona", "3");
 		RemoveItems(pchar, "islamona_toolbox", 1);
 		pchar.questTemp.IslaMona = "rumours";
-		AddRumor("¡Dicen que algunos criminales han sido expulsados a una de las islas deshabitadas! ¡Parece que son monstruos tan feroces que ni siquiera el verdugo y los santos padres querrían tratar con ellos! ¡¿Pero por qué siempre nos traen a gente así?!", 1, "all", "none", 0, (2022 - STARTGAME_YEAR) * 365, "IslaMona_TerksRumour", "none");
+		AddRumor("¡Dicen que algunos criminales han sido expulsados a una de las islas deshabitadas! ¡Parece que son monstruos tan feroces que ni siquiera el verdugo y los santos padres querrían tratar con ellos! ¡¿Pero por qué siempre nos traen a gente así?!", "1", "all", "none", "0", string((2022 - STARTGAME_YEAR) * 365), "IslaMona_TerksRumour", "none");
 		break;
 
 	case "IslaMona_12":
@@ -4439,7 +4439,7 @@ void ProcessDialogEvent()
 
 	case "IslaMona_96":
 		dialog.text = "¿Jugamos, capitán?";
-		if (sti(pchar.money) >= 20)
+		if (int(pchar.money) >= 20)
 		{
 			link.l1 = "¡Empiézalo!";
 			link.l1.go = "IslaMona_97";
@@ -4452,7 +4452,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		pchar.questTemp.GoldenGirl.Game.IslaMona = "true"; // атрибут квестовой игры
 		npchar.money = 20;
-		pchar.questTemp.IslaMona.Money = sti(pchar.money);
+		pchar.questTemp.IslaMona.Money = int(pchar.money);
 		pchar.money = 20;
 		// вызов интерфейса игры
 		pchar.GenQuest.Cards.npcharIdx = npchar.index;
@@ -4516,7 +4516,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		DeleteAttribute(pchar, "questTemp.GoldenGirl.Game");
 		DeleteAttribute(pchar, "GenQuest.Cards");
-		pchar.money = sti(pchar.money) + sti(pchar.questTemp.IslaMona.Money);
+		pchar.money = int(pchar.money) + int(pchar.questTemp.IslaMona.Money);
 		DeleteAttribute(pchar, "questTemp.IslaMona.Money");
 		IslaMona_ChurchTavernStandUp();
 		break;
@@ -4578,7 +4578,7 @@ void ProcessDialogEvent()
 	case "shipstock":
 		if (CheckAttribute(pchar, "questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 		{
-			if (sti(npchar.portman) == 3)
+			if (int(npchar.portman) == 3)
 			{
 				dialog.text = "Capitán, ya hay tres de sus barcos anclados en el muelle. No hay más espacio disponible.";
 				link.l1 = "Tienes razón, lo olvidé.";
@@ -4587,7 +4587,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(npchar, "FstClassInHarbour") && sti(npchar.portman) > 0)
+				if (CheckAttribute(npchar, "FstClassInHarbour") && int(npchar.portman) > 0)
 				{
 					dialog.text = "Capitán, ya hay un barco de primera categoría anclado en el muelle. No hay más espacio disponible.";
 					link.l1 = "Tienes razón, lo olvidé.";
@@ -4598,7 +4598,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (sti(npchar.portman) == 2)
+			if (int(npchar.portman) == 2)
 			{
 				dialog.text = "Capitán, dos de tus barcos ya están anclados en el muelle. No hay más espacio disponible.";
 				link.l1 = "Tienes razón, lo olvidé.";
@@ -4624,7 +4624,7 @@ void ProcessDialogEvent()
 					continue;
 
 				attrL = "l" + i;
-				Link.(attrL) = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+				Link.(attrL) = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 				Link.(attrL).go = "ShipStockMan_" + i;
 			}
 		}
@@ -4669,10 +4669,10 @@ void ProcessDialogEvent()
 		break;
 
 	case "ShipStock_2":
-		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+		chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 		if (CheckAttribute(pchar, "questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 		{
-			if (sti(RealShips[sti(chref.Ship.Type)].Class) < 2 && sti(npchar.portman) > 0)
+			if (int(RealShips[int(chref.Ship.Type)].Class) < 2 && int(npchar.portman) > 0)
 			{
 				dialog.text = "Capitán, he mencionado antes que nuestro fondeadero solo puede acomodar un barco de primera clase. Es demasiado grande para el espacio disponible.";
 				Link.l1 = "Tienes razón, lo olvidé.";
@@ -4682,7 +4682,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
+			if (int(RealShips[int(chref.Ship.Type)].Class) < 2)
 			{
 				dialog.text = "Capitán, los navíos de primera clase son demasiado grandes para nuestras costas. Ya te lo he dicho.";
 				Link.l1 = "Tienes razón, lo olvidé.";
@@ -4690,14 +4690,14 @@ void ProcessDialogEvent()
 				break;
 			}
 		}
-		if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
+		if (int(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 		{
 			dialog.text = "Capitán, lleva a toda su tripulación a tu buque insignia excepto a un oficial.";
 			Link.l1 = "¡Ah, cierto! ¡Haré eso!";
 			Link.l1.go = "carpenter_exit";
 			break;
 		}
-		dialog.Text = "Entonces, hemos de mantener aquí un" + XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName + "Acc") + " llamado '" + chref.Ship.Name + "'. ¿Verdad?";
+		dialog.Text = "Entonces, hemos de mantener aquí un" + XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName + "Acc") + " llamado '" + chref.Ship.Name + "'. ¿Verdad?";
 		Link.l1 = "Correcto.";
 		Link.l1.go = "ShipStock_3";
 		Link.l2 = "Espera, he cambiado de opinión.";
@@ -4724,7 +4724,7 @@ void ProcessDialogEvent()
 					if (chref.ShipInStockMan == NPChar.id)
 					{
 						attrL = "l" + cn;
-						Link.(attrL) = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+						Link.(attrL) = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 						Link.(attrL).go = "ShipStockManBack_" + i;
 						cn++;
 					}
@@ -4748,7 +4748,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 		}
-		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+		chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 		dialog.Text = "¿La estás llevando?";
 		link.l1 = "Sí.";
 		link.l1.go = "ShipStockManBack2";
@@ -4761,11 +4761,11 @@ void ProcessDialogEvent()
 		npchar.dialog.currentnode = "carpenter_17";
 		if (CheckAttribute(npchar, "FstClassInHarbour"))
 			DeleteAttribute(npchar, "FstClassInHarbour");
-		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+		chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 		DeleteAttribute(chref, "ShipInStockMan");
-		SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
-		npchar.portman = sti(npchar.portman) - 1;
-		pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
+		SetCompanionIndex(pchar, -1, int(NPChar.ShipToStoreIdx));
+		npchar.portman = int(npchar.portman) - 1;
+		pchar.ShipInStock = int(pchar.ShipInStock) - 1;
 		break;
 
 	case "storadge":
@@ -6055,7 +6055,7 @@ void ProcessDialogEvent()
 			link.l1 = "Pagaré 50 doblones. Es más rentable.";
 			link.l1.go = "SlavesTrader_Dub";
 		}
-		if (sti(Pchar.money) >= 10000)
+		if (int(Pchar.money) >= 10000)
 		{
 			link.l2 = "Pagaré 10 000 pesos.";
 			link.l2.go = "SlavesTrader_P";
@@ -6878,7 +6878,7 @@ void ProcessDialogEvent()
 		LAi_SetOwnerTypeNoGroup(npchar);
 		LAi_group_Attack(NPChar, Pchar);
 		if (rand(3) != 1)
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		//<-- блок реагирования на попытку залезть в сундук

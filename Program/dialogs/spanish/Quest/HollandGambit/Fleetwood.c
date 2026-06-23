@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Eng == "GotoPortoffice")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
 					dialog.text = "Te he pedido que atraques tu barco. ¿Acaso me escuchas?";
 					link.l1 = "Claro, lo hago. Me encargo de ello.";
@@ -53,16 +53,16 @@ void ProcessDialogEvent()
 					{
 						sld = GetCharacter(iTemp);
 						pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE)
 						{
 							iMir = 1;
-							RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1; // чистый корпус
+							RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1; // чистый корпус
 							SetShipSailsFromFile(sld, "ships/parus_silk.tga");
 							SetSailsColor(sld, 0);				// белый хлопковый парус
 							DeleteAttribute(sld, "ship.sails"); // починить паруса
 							DeleteAttribute(sld, "ship.masts"); // вернуть мачты
 						}
-						if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA)
+						if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA)
 							iVal = 1;
 					}
 				} // установили признак наличия кораблей в эскадре.

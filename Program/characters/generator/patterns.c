@@ -1,16 +1,16 @@
 void FillPersonTemplateTreasurer(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.BasicCommerce;
-		template.list.TrainedEye;
-		template.list.Intendant;
+		touchattr(template.list.BasicCommerce);
+		touchattr(template.list.TrainedEye);
+		touchattr(template.list.Intendant);
 	}
 	else
 	{
-		template.list.BasicCommerce;
-		template.list.ProfessionalCommerce;
-		template.list.Intendant;
+		touchattr(template.list.BasicCommerce);
+		touchattr(template.list.ProfessionalCommerce);
+		touchattr(template.list.Intendant);
 	}
 }
 
@@ -27,19 +27,19 @@ void FillPersonTemplateLeftovers(ref template, string exclude1, string exclude2)
 
 void FillPersonTemplateCannoner(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.HullDamageUp;
-		template.list.SailsDamageUp;
-		template.list.CrewDamageUp;
-		template.list.CannonProfessional;
+		touchattr(template.list.HullDamageUp);
+		touchattr(template.list.SailsDamageUp);
+		touchattr(template.list.CrewDamageUp);
+		touchattr(template.list.CannonProfessional);
 	}
 	else
 	{
-		template.list.FastReload;
-		template.list.ImmediateReload;
-		template.list.LongRangeShoot;
-		template.list.CannonProfessional;
+		touchattr(template.list.FastReload);
+		touchattr(template.list.ImmediateReload);
+		touchattr(template.list.LongRangeShoot);
+		touchattr(template.list.CannonProfessional);
 	}
 }
 void FillPersonTemplateFree(ref template)
@@ -50,202 +50,202 @@ void FillPersonTemplateFree(ref template)
 
 void FillPersonTemplateBoatswain(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.Ambuscade;
-		template.list.CoordinatedBoarding;
-		template.list.GrapplingProfessional;
+		touchattr(template.list.Ambuscade);
+		touchattr(template.list.CoordinatedBoarding);
+		touchattr(template.list.GrapplingProfessional);
 	}
 	else
 	{
-		template.list.BruteForce;
-		template.list.GrapplingProfessional;
+		touchattr(template.list.BruteForce);
+		touchattr(template.list.GrapplingProfessional);
 	}
 }
 
 void FillPersonTemplateCarpenter(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.AdvancedBattleState;
-		template.list.ShipDefenseProfessional;
+		touchattr(template.list.AdvancedBattleState);
+		touchattr(template.list.ShipDefenseProfessional);
 	}
 	else
 	{
-		template.list.Carpenter;
-		template.list.LightRepair;
-		template.list.Builder;
-		template.list.BasicBattleState;
-		template.list.AdvancedBattleState;
-		template.list.ShipDefenseProfessional;
+		touchattr(template.list.Carpenter);
+		touchattr(template.list.LightRepair);
+		touchattr(template.list.Builder);
+		touchattr(template.list.BasicBattleState);
+		touchattr(template.list.AdvancedBattleState);
+		touchattr(template.list.ShipDefenseProfessional);
 	}
 }
 
 void FillPersonTemplateNavigator(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.ShipSpeedUp;
-		template.list.LoneWolf;
-		template.list.Thrift;
-		template.list.SailingProfessional;
+		touchattr(template.list.ShipSpeedUp);
+		touchattr(template.list.LoneWolf);
+		touchattr(template.list.Thrift);
+		touchattr(template.list.SailingProfessional);
 	}
 	else
 	{
-		template.list.ShipTurnRateUp;
-		template.list.Turn180;
-		template.list.SailingProfessional;
+		touchattr(template.list.ShipTurnRateUp);
+		touchattr(template.list.Turn180);
+		touchattr(template.list.SailingProfessional);
 	}
 }
 
 void FillPersonTemplateDoctor(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.Moonshiner;
-		template.list.Quartermaster;
+		touchattr(template.list.Moonshiner);
+		touchattr(template.list.Quartermaster);
 	}
 	else
 	{
-		template.list.BoardingPrepare;
-		template.list.Quartermaster;
+		touchattr(template.list.BoardingPrepare);
+		touchattr(template.list.Quartermaster);
 	}
 }
 
 void FillPersonTemplatePirate(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.PerfectBalance;
-		template.list.Dragoon;
-		template.list.SabreHurricane;
-		template.list.OttomanGrip;
-		template.list.BladeDancer;
+		touchattr(template.list.PerfectBalance);
+		touchattr(template.list.Dragoon);
+		touchattr(template.list.SabreHurricane);
+		touchattr(template.list.OttomanGrip);
+		touchattr(template.list.BladeDancer);
 	}
 	else
 	{
-		template.list.Dragoon;
-		template.list.Flanking;
-		template.list.BladeDancer;
-		template.list.SabreHurricane;
-		template.list.OttomanGrip;
+		touchattr(template.list.Dragoon);
+		touchattr(template.list.Flanking);
+		touchattr(template.list.BladeDancer);
+		touchattr(template.list.SabreHurricane);
+		touchattr(template.list.OttomanGrip);
 	}
 }
 
 void FillPersonTemplateSoldier(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.AdvancedDefense;
-		template.list.HardHitter;
-		template.list.Medic;
-		template.list.PalaceGuard;
+		touchattr(template.list.AdvancedDefense);
+		touchattr(template.list.HardHitter);
+		touchattr(template.list.Medic);
+		touchattr(template.list.PalaceGuard);
 	}
 	else
 	{
-		template.list.Muscles;
-		template.list.Inertia;
-		template.list.IronWill;
-		template.list.PalaceGuard;
+		touchattr(template.list.Muscles);
+		touchattr(template.list.Inertia);
+		touchattr(template.list.IronWill);
+		touchattr(template.list.PalaceGuard);
 	}
 }
 
 void FillPersonTemplateDuelist(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.HeartBreaker;
-		template.list.Virtuosity;
-		template.list.Exhaustion;
-		template.list.Puncher;
-		template.list.Reaper;
+		touchattr(template.list.HeartBreaker);
+		touchattr(template.list.Virtuosity);
+		touchattr(template.list.Exhaustion);
+		touchattr(template.list.Puncher);
+		touchattr(template.list.Reaper);
 	}
 	else
 	{
-		template.list.Dodgy;
-		template.list.NeckStrike;
-		template.list.Sliding;
-		template.list.Reach;
-		template.list.Reaper;
+		touchattr(template.list.Dodgy);
+		touchattr(template.list.NeckStrike);
+		touchattr(template.list.Sliding);
+		touchattr(template.list.Reach);
+		touchattr(template.list.Reaper);
 	}
 }
 
 void FillPersonTemplateGunman(ref template)
 {
-	if (sti(template.seed) < 50)
+	if (int(template.seed) < 50)
 	{
-		template.list.Gunman;
-		template.list.KeenEye;
-		template.list.Chance;
-		template.list.LeadRain;
-		template.list.GunProfessional;
+		touchattr(template.list.Gunman);
+		touchattr(template.list.KeenEye);
+		touchattr(template.list.Chance);
+		touchattr(template.list.LeadRain);
+		touchattr(template.list.GunProfessional);
 	}
 	else
 	{
-		template.list.Gunman;
-		template.list.Chance;
-		template.list.ShootToKill;
-		template.list.Kern;
-		template.list.GunProfessional;
+		touchattr(template.list.Gunman);
+		touchattr(template.list.Chance);
+		touchattr(template.list.ShootToKill);
+		touchattr(template.list.Kern);
+		touchattr(template.list.GunProfessional);
 	}
 }
 
 void FillPersonTemplatePeasant(ref template)
 {
-	int seed = sti(template.seed);
+	int seed = int(template.seed);
 	if (seed < 40)
 	{
-		template.list.HPPlus;
-		template.list.AdvancedDefense;
-		template.list.Dragoon;
-		template.list.ByWorker;
-		template.list.Inertia;
-		template.list.IronWill;
-		template.list.Captain;
+		touchattr(template.list.HPPlus);
+		touchattr(template.list.AdvancedDefense);
+		touchattr(template.list.Dragoon);
+		touchattr(template.list.ByWorker);
+		touchattr(template.list.Inertia);
+		touchattr(template.list.IronWill);
+		touchattr(template.list.Captain);
 	}
 	else if (seed < 80)
 	{
-		template.list.EnergyPlus;
-		template.list.CriticalHit;
-		template.list.Virtuosity;
-		template.list.Trustworthy;
-		template.list.ByWorker;
-		template.list.Strychnine;
-		template.list.Captain;
+		touchattr(template.list.EnergyPlus);
+		touchattr(template.list.CriticalHit);
+		touchattr(template.list.Virtuosity);
+		touchattr(template.list.Trustworthy);
+		touchattr(template.list.ByWorker);
+		touchattr(template.list.Strychnine);
+		touchattr(template.list.Captain);
 	}
 	else if (seed < 90)
 	{
-		template.list.Practice;
-		template.list.ByWorker;
-		template.list.DarkHorse;
-		template.list.Captain;
-		template.list.Master;
-		template.list.Collection;
+		touchattr(template.list.Practice);
+		touchattr(template.list.ByWorker);
+		touchattr(template.list.DarkHorse);
+		touchattr(template.list.Captain);
+		touchattr(template.list.Master);
+		touchattr(template.list.Collection);
 	}
 	else
 	{
-		template.list.SharedExperience;
-		template.list.Grus;
-		template.list.Tiefit;
-		template.list.Captain;
-		template.list.Gossip;
-		template.list.Looting;
+		touchattr(template.list.SharedExperience);
+		touchattr(template.list.Grus);
+		touchattr(template.list.Tiefit);
+		touchattr(template.list.Captain);
+		touchattr(template.list.Gossip);
+		touchattr(template.list.Looting);
 	}
 }
 
 void FillPersonTemplateUtility(ref template)
 {
 	template.random = true;
-	template.list.HPPlus;
-	template.list.AdvancedDefense;
-	template.list.Dragoon;
-	template.list.Inertia;
-	template.list.IronWill;
-	template.list.EnergyPlus;
-	template.list.CriticalHit;
-	template.list.Virtuosity;
-	template.list.Trustworthy;
-	template.list.Strychnine;
+	touchattr(template.list.HPPlus);
+	touchattr(template.list.AdvancedDefense);
+	touchattr(template.list.Dragoon);
+	touchattr(template.list.Inertia);
+	touchattr(template.list.IronWill);
+	touchattr(template.list.EnergyPlus);
+	touchattr(template.list.CriticalHit);
+	touchattr(template.list.Virtuosity);
+	touchattr(template.list.Trustworthy);
+	touchattr(template.list.Strychnine);
 }
 
 void FillPersonTemplate(ref template, string type)

@@ -28,8 +28,8 @@ void ProcessDialogEvent()
 	if (npchar.quest.Meeting != LastSpeakDate())
 	{
 		npchar.quest.Meeting = LastSpeakDate();
-		npchar.money = 100 + rand(10) * makeint(50 * sti(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
-		if (sti(npchar.money) < 150) npchar.money = 150;
+		npchar.money = 100 + rand(10) * int(50 * int(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
+		if (int(npchar.money) < 150) npchar.money = 150;
         if (bBettaTestMode)
         {
             Dialog.CurrentNode = "Beta_test";
@@ -109,7 +109,7 @@ void ProcessDialogEvent()
 						link.l1 = "나는 늙은 뱃사람일지 몰라도, 그렇다고 해서 잡놈들 술까지 사줄 생각은 없어...";
 						link.l1.go = "exit";
 
-						if (makeint(pchar.money) >= 100 && ok) // только старые острова окучены на сесть
+						if (int(pchar.money) >= 100 && ok) // только старые острова окучены на сесть
 						{
 							link.l2 = "기꺼이 당신 일행에 합류하겠소.";
 							link.l2.go = "talk_with_alchogol";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 					case "1":
 	                    if (rand(3) != 1 && ok)
 	                    {
-							switch (sti(npchar.quest.last_theme_game))
+							switch (int(npchar.quest.last_theme_game))
 							{
 							    case 0 :
 									// Игра в карты boal 20/05/05 -->
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 									}
 			                        // Игра в кости boal 13/07/05 <--
 			                        //navy --> Дуэли
-									if (CheckAttribute(NPchar, "Quest.DiceCheats") && sti(NPchar.Quest.DiceCheats) >= 1) 
+									if (CheckAttribute(NPchar, "Quest.DiceCheats") && int(NPchar.Quest.DiceCheats) >= 1)
 									{
 					    				link.l9 = RandSwear()+" 너 속였잖아!!!";
 					    				link.l9.go = "outraged";
@@ -235,7 +235,7 @@ void ProcessDialogEvent()
 			    break;
 		    }
 		    
-			if (sti(PCHar.Money) < sti(iLa_Puesta)*3)
+			if (int(PCHar.Money) < int(iLa_Puesta)*3)
 		    {
                 dialog.text = "보아하니 돈이 하나도 없군, "+GetSexPhrase("친구","자기야")+". 부자가 되면 다시 오시오.";
                 link.l1 = "좋아.";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			    break;
 		    }
 		
-			if (sti(NPChar.Money) < sti(iLa_Puesta)*3)
+			if (int(NPChar.Money) < int(iLa_Puesta)*3)
 		    {
                 dialog.text = "나는 이미 가진 모든 것을 잃었어. 오늘은 운이 없는 날이군.";
                 link.l1 = "좋아.";
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		    }
 		else
 		{
-			if(sti(iLa_Puesta) < 50)
+			if(int(iLa_Puesta) < 50)
 			{
 				dialog.text = "나를 비웃는 거야, 뭐야?! 놀리는 거냐고 "+iLa_Puesta+" 페소라고?! 적당한 판돈으로 하자, 아니면 난 빠질 거야!";
 				link.l1 = "그래, 네 말이 맞아. 판을 좀 더 키워야겠어.";
@@ -262,7 +262,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			
-			if(sti(iLa_Puesta) > 1000)
+			if(int(iLa_Puesta) > 1000)
 			{
 				dialog.text = "그렇게 큰 돈을 걸고 하자고? 아니, 난 패스할게. 내기가 바뀌지 않는 한.";
 				link.l1 = "그래, 네 말이 맞아. 우리 판돈을 좀 줄여야겠어.";
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			link.l1 = "카드를 돌려라!";
 			link.l1.go = "Cards_begin_go";
 			pchar.GenQuest.Cards.npcharIdx = npchar.index;
-			pchar.GenQuest.Cards.iRate     = sti(iLa_Puesta);
+			pchar.GenQuest.Cards.iRate     = int(iLa_Puesta);
             pchar.GenQuest.Cards.SitType   = true;
 		}
 		break;
@@ -333,7 +333,7 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < sti(iLa_Puesta)*6)
+			if (int(pchar.Money) < int(iLa_Puesta)*6)
 		    {
                 dialog.text = "보니까 돈이 하나도 없군, "+GetSexPhrase("친구","여보")+". 부자가 되면 다시 오시오.";
                 link.l1 = "좋아.";
@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 			    break;
 		    }
 			
-			if (sti(npchar.Money) < sti(iLa_Puesta)*6)
+			if (int(npchar.Money) < int(iLa_Puesta)*6)
 		    {
                 dialog.text = "나는 이미 가진 모든 것을 잃었어. 오늘은 운이 정말 없는 날이군.";
                 link.l1 = "좋아.";
@@ -350,7 +350,7 @@ void ProcessDialogEvent()
 		    }
 		else
 		{
-			if(sti(iLa_Puesta) < 50)
+			if(int(iLa_Puesta) < 50)
 			{
 				dialog.text = "나를 비웃는 거야, 뭐야?! \n장난치는 거냐 "+iLa_Puesta+" 페소를 하루에?! 적당한 판돈으로 하자, 아니면 난 빠질 거야!";
 				link.l1 = "그래, 네 말이 맞아. 판을 좀 더 키워야겠어.";
@@ -360,7 +360,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			
-			if(sti(iLa_Puesta) > 1000)
+			if(int(iLa_Puesta) > 1000)
 			{
 				dialog.text = "이렇게 큰 돈을 걸고 주사위를 친다고? 아니, 난 패스하겠어, 내기를 바꾸지 않는 한.";
 				link.l1 = "그래, 네 말이 맞아. 판돈을 좀 줄여야겠어.";
@@ -373,7 +373,7 @@ void ProcessDialogEvent()
 			link.l1 = "가자!";
 			link.l1.go = "Dice_begin_go";
 			pchar.GenQuest.Dice.npcharIdx = npchar.index;
-			pchar.GenQuest.Dice.iRate     = sti(iLa_Puesta);
+			pchar.GenQuest.Dice.iRate     = int(iLa_Puesta);
             pchar.GenQuest.Dice.SitType   = true;
 		}
 		break;
@@ -477,7 +477,7 @@ void ProcessDialogEvent()
 			SetFunctionLocationCondition("Church_GenQuest2_GenerateBandits", sGenLocation, false);
 			locations[FindLocation(sGenLocation)].DisableEncounters = true;
 			PChar.GenQuest.ChurchQuest_2.WayOfShortVariant = true; // Нужно для проверки при убийстве банды
-			SetFunctionTimerConditionParam("Church_GenQuest2_TimeIsLeft", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("Church_GenQuest2_TimeIsLeft", 0, 0, 1, int(24 - GetHour()), false);
 			Log_TestInfo("The bandits who raided the church shall be in location - " + sGenLocation + " Time to search for them - 1 day");
 			sQuestTitle = PChar.GenQuest.ChurchQuest_2.QuestTown + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "2");
@@ -585,7 +585,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.HWIC.Self = "AttackMeifeng";
 			//ставим прерывание на выход в море Мейфенг
 			pchar.quest.HWIC_Meifeng.win_condition.l1 = "Timer";
-			pchar.quest.HWIC_Meifeng.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.HWIC_Meifeng.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.HWIC_Meifeng.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.HWIC_Meifeng.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.HWIC_Meifeng.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 			//Jason --> поиск дезертира
 		case "FindFugitiveHb":
 			npchar.quest.fugitive = "true";
-			if (npchar.location == pchar.GenQuest.FindFugitive.City+"_tavern" && sti(pchar.GenQuest.FindFugitive.Chance) == 2)
+			if (npchar.location == pchar.GenQuest.FindFugitive.City+"_tavern" && int(pchar.GenQuest.FindFugitive.Chance) == 2)
 			{
 				pchar.GenQuest.FindFugitive.Shore = SelectQuestShoreLocation();
 				dialog.text = "하! "+pchar.GenQuest.FindFugitive.Name+"? 나도 알아, 알아... 네 동료는 정말 말이 없는 사람이야. 말하자면 외로운 늑대지. 하루 종일 섬 해안을 따라 자기 작은 배를 몰고 다니다가 해질 때쯤 돌아오더군. 사람들은 그가 어부라고 생각하지만, 사실 진짜 진주 채취꾼이야... 허! 이건 내가 확실히 아는 사실이야!";
@@ -659,7 +659,7 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(pchar, "questTemp.Rum"))
 				{
-					pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+					pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 				}
 				else pchar.questTemp.Rum = 1;
 			}
@@ -673,11 +673,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
 				DeleteAttribute(pchar, "chr_ai.drunk");
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
 				else
 				{
-					LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
-					Pchar.GenQuest.CamShuttle = makeint(sti(pchar.questTemp.Rum)/2); // Jason
+					LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
+					Pchar.GenQuest.CamShuttle = int(int(pchar.questTemp.Rum)/2); // Jason
 				}
 			}
 			
@@ -694,7 +694,7 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("너는 "+GetSexPhrase("진정한 친구","대단한 아가씨")+"! 만나서 반갑다! 건배!","힉! 이거 끝내주는 럼이네! 힉... 건배!","당신의 건강과 너그러움에 건배!");
 			link.l1 = "헤헤, 정말 독한 럼이군. 좋아, 난 이제 가봐야겠어. 잘 즐겨!";
 			link.l1.go = "exit_sit";
-			if (makeint(pchar.money) >=2)
+			if (int(pchar.money) >=2)
 			{
 				link.l2 = "한 잔 더 해도 괜찮겠어?";
 				link.l2.go = "sit_3";
@@ -706,8 +706,8 @@ void ProcessDialogEvent()
 
 		case "sit_3":
 			int iSituation;
-			if(IsEquipCharacterByArtefact(pchar, "totem_01")) iSituation = makeint(rand(3));
-			else iSituation = makeint(rand(5));
+			if(IsEquipCharacterByArtefact(pchar, "totem_01")) iSituation = int(rand(3));
+			else iSituation = int(rand(5));
 			switch (iSituation)
 			{
 				case 0:
@@ -1059,7 +1059,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit_sit";
 			
 			npchar.questTemp.PZ_Sotta = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		
@@ -1075,7 +1075,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit_sit";
 			
 			npchar.questTemp.PZ_Lutter = true;
-			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
+			pchar.questTemp.PZ_BelizAskCitizens = int(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		

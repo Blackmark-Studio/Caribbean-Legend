@@ -12,7 +12,7 @@ void GEN_ApplyPlayerDifficulty(ref chr)
 	int difficultyLevel = GetNormalizedDifficultyLevel();
 	object temp;
 	SplitString(&temp, GEN_PLAYER_HP_BONUS, "|", 0);
-	int bonusHP = GetAttributeValue(GetAttributeN(&temp, difficultyLevel));
+	int bonusHP = int(GetAttributeValue(GetAttributeN(&temp, difficultyLevel)));
 	if (bonusHP != 0) SetChrModifier(chr, M_HP_PER_RANK, bonusHP, "difficulty");
 }
 
@@ -28,7 +28,7 @@ float GetFloatModifiedByDifficulty(float value, float min, float max)
 // 0 = лёгкий, 4 = классика
 int GetNormalizedDifficultyLevel()
 {
-	return makeint((MOD_SKILL_ENEMY_RATE-1) * 0.5);
+	return int((MOD_SKILL_ENEMY_RATE-1) * 0.5);
 }
 
 int GEN_GetHPBonus(int powerLvl, int chrtype, int difficultyLevel)
@@ -42,7 +42,7 @@ int GEN_GetHPBonus(int powerLvl, int chrtype, int difficultyLevel)
 		TEV.generator.difficulty.checkSumm = GEN_CHECK_SUM;
 	}
 
-	if (CheckAttribute(&TEV, attrName)) return sti(TEV.(attrName)); // уже считали
+	if (CheckAttribute(&TEV, attrName)) return int(TEV.(attrName)); // уже считали
 
 	object temp;
 	switch (chrtype)
@@ -72,5 +72,5 @@ int GEN_GetHPBonus(int powerLvl, int chrtype, int difficultyLevel)
 	}
 
 	TEV.(attrName) = GetAttributeValue(GetAttributeN(&temp, difficultyLevel));
-	return sti(TEV.(attrName));
+	return int(TEV.(attrName));
 }

@@ -39,7 +39,7 @@ void ApplyMigration(ref migrationState)
 		bOk = false;
 		if (!CheckAttribute(&RealShips[i], "BaseType")) continue;
 
-		switch (sti(RealShips[i].BaseType))
+		switch (int(RealShips[i].BaseType))
 		{
 			case SHIP_PINK:
 				bOk = true;
@@ -81,54 +81,54 @@ void ApplyMigration(ref migrationState)
 			{
 				if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
+					shTo.SpeedRate        = (float(shTo.SpeedRate) + float(shTo.SpeedRate)/5.0);
 				}
 				else
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (float(shTo.SpeedRate) - float(shTo.Bonus_SpeedRate)) * 1.2 + float(shTo.Bonus_SpeedRate);
 				}    
 			}
 			if(CheckAttribute(shTo, "Tuning.TurnRate"))
 			{
 				if(!CheckAttribute(shTo, "Bonus_TurnRate"))
 				{
-					shTo.TurnRate        = (stf(shTo.TurnRate) + stf(shTo.TurnRate)/5.0);
+					shTo.TurnRate        = (float(shTo.TurnRate) + float(shTo.TurnRate)/5.0);
 				}
 				else
 				{
-					shTo.TurnRate        = (stf(shTo.TurnRate) - stf(shTo.Bonus_TurnRate)) * 1.2 + stf(shTo.Bonus_TurnRate);
+					shTo.TurnRate        = (float(shTo.TurnRate) - float(shTo.Bonus_TurnRate)) * 1.2 + float(shTo.Bonus_TurnRate);
 				}
 			}
 			if(CheckAttribute(shTo, "Tuning.HP"))
 			{
 				if(!CheckAttribute(shTo, "Bonus_HP"))
 				{
-					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
+					shTo.HP        = int(shTo.HP) + int(int(shTo.HP)/5);
 				}
 				else
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					shTo.HP        = int((int(shTo.HP) - int(shTo.Bonus_HP)) * 1.2 + int(shTo.Bonus_HP));
 				}
 			}
 			if(CheckAttribute(shTo, "Tuning.Capacity"))
 			{
 				if(!CheckAttribute(shTo, "Bonus_Capacity"))
 				{
-					shTo.Capacity        = sti(shTo.Capacity) + makeint(sti(shTo.Capacity)/5);
+					shTo.Capacity        = int(shTo.Capacity) + int(int(shTo.Capacity)/5);
 				}
 				else
 				{
-					shTo.Capacity        = makeint((sti(shTo.Capacity) - sti(shTo.Bonus_Capacity)) * 1.2 + sti(shTo.Bonus_Capacity));
+					shTo.Capacity        = int((int(shTo.Capacity) - int(shTo.Bonus_Capacity)) * 1.2 + int(shTo.Bonus_Capacity));
 				}					
 			}	
 			if(CheckAttribute(shTo, "Tuning.MaxCrew"))
 			{
-				shTo.MaxCrew        = sti(shTo.MaxCrew) + makeint(sti(shTo.MaxCrew)/5);	
+				shTo.MaxCrew        = int(shTo.MaxCrew) + int(int(shTo.MaxCrew)/5);
 			}
 			if(CheckAttribute(shTo, "Tuning.MinCrew"))
 			{
-				shTo.MinCrew        = sti(shTo.MinCrew) - makeint(sti(shTo.MinCrew)/5);
-				if(sti(shTo.MinCrew) < 1) shTo.MinCrew = 1;
+				shTo.MinCrew        = int(shTo.MinCrew) - int(int(shTo.MinCrew)/5);
+				if(int(shTo.MinCrew) < 1) shTo.MinCrew = 1;
 			}	
 		}
     }

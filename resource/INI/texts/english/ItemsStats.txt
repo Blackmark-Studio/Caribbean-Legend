@@ -333,3 +333,7 @@ itm_stat_greenIdol {Cult}
 itm_stat_descr_greenIdol {The idol bends those nearby to its will, increasing the chance of enemy ships surrendering, squadron strength, and the number of recruits in taverns by $percent(0.30).}
 itm_stat_secondary_greenIdol {Whispers of the Ancients}
 itm_stat_descr_secondary_greenIdol {While equipped, the idol constantly lowers crew morale, driving them mad with its blasphemous whispering.}
+itm_stat_nocturlabe {Exact Time}
+itm_stat_descr_nocturlabe {Increases ship maneuverability by 10%, and by another 25% on class 2 and class 1 ships.}
+itm_stat_secondary_nocturlabe {Night Navigation}
+itm_stat_descr_secondary_nocturlabe {Increases $key(Perception) by #f.0modifiers.SpecialPerception#. Increases escape chance on the world map by 25.}

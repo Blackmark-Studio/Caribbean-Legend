@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "Dicono che ieri sera ci sia stata una rissa alla taverna... Ma chi stava litigando — non ne ho idea. La mia faccia è intatta. Credo.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "Maledetto tutto... La testa mi scoppia come una chiglia sugli scogli, e tu vieni qui con le tue dannate domande. Non ho visto né sentito un accidente. Faresti meglio a mollare qualche peso invece di tormentare un vecchio lupo di mare con questo interrogatorio.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Ecco cento pesos. Sta' attento a non tracannare fino a perdere il senno e finire di nuovo sotto l'incantesimo di quella servetta, eh?";
 				link.l1.go = "OS_Matros_7_harizma";

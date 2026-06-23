@@ -17,7 +17,7 @@ void TPZ_SpawnShip(string qName)
 	PChar.quest.TPZ_AttackSea.win_condition.l1.location = "Guadeloupe";
 	PChar.quest.TPZ_AttackSea.function = "TPZ_AttackSea";
 	
-	sld = GetCharacter(NPC_GenerateCharacter("TPZ_Pirate", "mercen_17", "man", "man", sti(PChar.rank), PIRATE, -1, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("TPZ_Pirate", "mercen_17", "man", "man", int(PChar.rank), PIRATE, -1, true, "pirate"));
 	FantomMakeSmallSailor(sld, SHIP_BRIG, "", CANNON_TYPE_CANNON_LBS16, 40, 40, 40, 40, 40);
 	LAi_SetHP(sld, 200.0, 200.0);
 	sld.AlwaysEnemy = true;
@@ -65,7 +65,7 @@ void TPZ_Abordage(string qName)
 	sld.dialog.currentnode = "Kristian_41";
 	pchar.questTemp.TPZ_TradeVinoAndRom = true;
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
@@ -84,7 +84,7 @@ void TPZ_Potopil(string qName)
 	sld.dialog.currentnode = "Kristian_41";
 	pchar.questTemp.TPZ_TradeVinoAndRom = true;
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

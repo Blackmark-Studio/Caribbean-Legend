@@ -52,7 +52,7 @@
 // indexes for items` array
 //#define TOTAL_ITEMS				  1008 // Warship 08.05.09 - Новая система предметов
 int TOTAL_ITEMS = 1134;   //
-int ITEMS_QUANTITY = 610; // не забываем менять номер
+int ITEMS_QUANTITY = 611; // не забываем менять номер
 #define MAX_BUTTONS               64
 #define RANDITEMS_QUANTITY    	  45
 #define BUTTON_ACTIVATION_TIME	  1000

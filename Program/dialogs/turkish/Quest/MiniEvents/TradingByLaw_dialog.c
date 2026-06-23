@@ -320,12 +320,12 @@ void ProcessDialogEvent()
 					NextDiag.TempNode = "Kristian_41";
 				}
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // увеличить объём поставок вина и рома
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // увеличить объём поставок вина и рома
 			{
 				link.l4 = "Christian, aylık siparişimi artırmak istiyorum. Tam olarak her ay yüz şişe rom ve yüz şişe şarap.";
 				link.l4.go = "UpgradeVino";
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && sti(pchar.Money) >= 50000) // увеличить объём поставок вина и рома, если в первый раз не принесли
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && int(pchar.Money) >= 50000) // увеличить объём поставок вина и рома, если в первый раз не принесли
 			{
 				link.l4 = "Christian, anlaşmamızı genişletmeyi yeniden düşünmek istiyorum.";
 				link.l4.go = "UpgradeVino_Agreed";
@@ -354,7 +354,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.TPZ_TradeVinoAndRom");
 			SetFunctionTimerCondition("TPZ_KristianReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
-			pchar.questTemp.TPZ_KritstianVinoAndRom = sti(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // счётчик покупок
+			pchar.questTemp.TPZ_KritstianVinoAndRom = int(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // счётчик покупок
 		break;
 
 		case "UpgradeVino":
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 
 		case "UpgradeVino_3":
 			dialog.text = "Derin bir üzüntüyle söylüyorum Kaptan, bu miktarın kesinlikle en alt sınır olduğunu belirtmek zorundayım. Eğer işin kolayına kaçılırsa, girişimimiz... nasıl desem, felaketle sonuçlanabilir. Böyle bir felaketin ne sizin çıkarınıza ne de benimkine hizmet edeceğini söyleyebilirim.";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "İşte ödemenin tamamı. Böyle bir güvene layık olduğunu göster, Hristiyan.";
 				link.l1.go = "UpgradeVino_5";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 		
 		case "UpgradeVino_Agreed":
 			dialog.text = "Kaptan, harika haberlerim var! Elli bin gümüşü getirdiniz mi, hemen devam edebilir miyiz?";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "İşte ödemenin tamamı. Böyle bir güvene layık olduğunu göster, Christian.";
 				link.l1.go = "UpgradeVino_5";

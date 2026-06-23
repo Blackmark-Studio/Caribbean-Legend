@@ -43,7 +43,7 @@ void SetUIAttributesItem(ref ref_Id_Idx, ref result, ref chr)
 {
 	ref item = FindItem_VT(&ref_Id_Idx);
 
-	SetFormatedText("ITEM_WEIGHT_VALUE", FloatToString(stf(item.weight), 1));
+	SetFormatedText("ITEM_WEIGHT_VALUE", FloatToString(float(item.weight), 1));
 	if (HasDescriptor(item, "healPotion" )) SetUIAttributesHealPotion(item, result, chr);
 	if (!CheckAttribute(item, "groupID")) return;
 	
@@ -194,7 +194,7 @@ void SetUIAttributesGun(ref item, ref result, ref chr)
 	// оружия в руках персонажа, подставляем выбранный заряд
 	if (GetCharacterEquipByGroup(chr, item.groupId) == item.id)
 	{
-		string ammoType = LAi_GetCharacterBulletType(chr, item.groupId)
+		string ammoType = LAi_GetCharacterBulletType(chr, item.groupId);
 		if (IsBulletGrape(ammoType))
 		{
 			dmgMin = GetAttributeInt(chr, "chr_ai." + item.groupId + ".shards");
@@ -210,14 +210,14 @@ void SetUIAttributesGun(ref item, ref result, ref chr)
 	}
 	else if (IsBulletGrape(item.type.t1.bullet)) // иначе дефолт
 	{
-		dmgMin = sti(item.type.t1.dmgmin);
-		dmgMax = sti(item.type.t1.dmgmax);
+		dmgMin = int(item.type.t1.dmgmin);
+		dmgMax = int(item.type.t1.dmgmax);
 		result.gunDamage.value = dmgMin + "-" + DmgMax + " " + xiStr("ye.");
 	}
 	else
 	{
-		dmgMin = sti(item.dmg_min);
-		dmgMax = sti(item.dmg_max);
+		dmgMin = int(item.dmg_min);
+		dmgMax = int(item.dmg_max);
 		result.gunDamage.value = dmgMin + "-" + DmgMax + " " + xiStr("ye.");
 	}
 
@@ -272,7 +272,7 @@ void CropTableColsFrameByElementsQty(string tableName, int count, int width)
 		target = x1;
 	}
 
-	int result = makeint(target + (width * count));
+	int result = int(target + (width * count));
 	SetTriggerFramePosition(tableName, x1, y1, result, y2);
 }
 
@@ -293,6 +293,6 @@ void FixEmptyGunStats(ref item, ref result)
 		result.reloadTime.type = "float";
 		result.reloadTime.rawValue = item.type.(typeName).chargespeed;
 		result.reloadTime.value = ToHumanNumber(result.reloadTime.rawValue) + " " + xiStr("sec.");
-		result.gunDamage.value = sti(item.type.(typeName).dmgmin) + "-" + sti(item.type.(typeName).dmgmax) + " " + xiStr("ye.");
+		result.gunDamage.value = int(item.type.(typeName).dmgmin) + "-" + int(item.type.(typeName).dmgmax) + " " + xiStr("ye.");
 	}
 }

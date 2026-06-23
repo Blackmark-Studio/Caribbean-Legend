@@ -198,7 +198,7 @@ void LongHappy_MarryGoToBenua() //
 {
 	if (CheckAttribute(pchar, "questTemp.LongHappy.MarryRum")) // праздник в Сен-Пьер
 	{
-		AddQuestUserData("LongHappy", "sGoods", StringFromKey("LongHappy_3", sti(pchar.questTemp.LongHappy.MarryRum), sti(pchar.questTemp.LongHappy.MarryMoney)));
+		AddQuestUserData("LongHappy", "sGoods", StringFromKey("LongHappy_3", int(pchar.questTemp.LongHappy.MarryRum), int(pchar.questTemp.LongHappy.MarryMoney)));
 	}
 	else
 	{
@@ -328,7 +328,7 @@ void LongHappy_MarryComplete() //
 	chrDisableReloadToLocation = false;
 	// ориентируем на ночь
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 1;
 	if (iTime < 7) iAddTime = iTime + 13;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24 - iTime + 1;
@@ -504,7 +504,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 	sld.Ship.Crew.Exp.Cannoners = 95;
 	sld.Ship.Crew.Exp.Soldiers = 95;
 	SetCharacterPerk(sld, "MusketsShoot");
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	Group_AddCharacter("Barons_SeaGroup", "LH_Svenson_sea");
 	// фрегат Тиракса
 	Group_FindOrCreateGroup("Barons_SeaGroup");
@@ -529,7 +529,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 	sld.Ship.Crew.Exp.Cannoners = 95;
 	sld.Ship.Crew.Exp.Soldiers = 95;
 	SetCharacterPerk(sld, "MusketsShoot");
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	Group_AddCharacter("Barons_SeaGroup", "LH_Terrax_sea");
 	// фрегат Додсона
 	if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
@@ -538,26 +538,26 @@ void LongHappy_IslaTesoroSetShips(string qName)
 		if(CheckAttribute(pchar, "questTemp.SharkGoldFleet.KGBB"))
 		{
 			FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, pchar.questTemp.SharkGoldFleet.KGBB, CANNON_TYPE_CANNON_LBS36, 105, 105, 105);
-			if(CheckAttribute(&RealShips[sti(sld.Ship.Type)], "Tuning.Capacity"))
-			DeleteAttribute(&RealShips[sti(sld.Ship.Type)], "Tuning.Capacity")); 
-			RealShips[sti(sld.Ship.Type)].MaxCaliber = 36;
-			RealShips[sti(sld.Ship.Type)].CannonsQuantity = 50;
-			RealShips[sti(sld.Ship.Type)].CannonsQuantityMin = 50;
-			RealShips[sti(sld.Ship.Type)].CannonsQuantityMax = 50;
-			RealShips[sti(sld.Ship.Type)].CannonDiff = 0;
+			if(CheckAttribute(&RealShips[int(sld.Ship.Type)], "Tuning.Capacity"))
+				DeleteAttribute(&RealShips[int(sld.Ship.Type)], "Tuning.Capacity");
+			RealShips[int(sld.Ship.Type)].MaxCaliber = 36;
+			RealShips[int(sld.Ship.Type)].CannonsQuantity = 50;
+			RealShips[int(sld.Ship.Type)].CannonsQuantityMin = 50;
+			RealShips[int(sld.Ship.Type)].CannonsQuantityMax = 50;
+			RealShips[int(sld.Ship.Type)].CannonDiff = 0;
 			SetShipCannonsDamagesNull(sld);
-			RealShips[sti(sld.Ship.Type)].SpeedRate = 10.5;
-			RealShips[sti(sld.Ship.Type)].TurnRate = 35.0;
-			RealShips[sti(sld.Ship.Type)].MinCrew = 50; 
-			RealShips[sti(sld.Ship.Type)].OptCrew = 408; 
-			RealShips[sti(sld.Ship.Type)].MaxCrew = 510; 
-			RealShips[sti(sld.Ship.Type)].HP = 6000;
-			RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+			RealShips[int(sld.Ship.Type)].SpeedRate = 10.5;
+			RealShips[int(sld.Ship.Type)].TurnRate = 35.0;
+			RealShips[int(sld.Ship.Type)].MinCrew = 50;
+			RealShips[int(sld.Ship.Type)].OptCrew = 408;
+			RealShips[int(sld.Ship.Type)].MaxCrew = 510;
+			RealShips[int(sld.Ship.Type)].HP = 6000;
+			RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 			sld.ship.HP = 6000;
 			SetSailsColor(sld, 8);//черный парус
 			UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 			UpgradeShipParameter(sld, "Capacity");//апгрейдить трюм
-			RealShips[sti(sld.Ship.Type)].Capacity = 6000;
+			RealShips[int(sld.Ship.Type)].Capacity = 6000;
 		}
 		else
 		{
@@ -701,7 +701,7 @@ void LongHappy_IslaTesoroToVineGo()
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 	// ориентируем на ночь
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 1;
 	if (iTime < 7) iAddTime = iTime + 13;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24 - iTime + 1;
@@ -1198,16 +1198,16 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 		LAi_KillCharacter(sld);
 		sld = characterFromId("LH_Svenson_sea");
 		hcrew = GetMaxCrewQuantity(sld);
-		iCrew = sti((0.3+frand(0.1))*hcrew);
+		iCrew = int((0.3+frand(0.1))*hcrew);
 		SetCrewQuantityOverMax(sld, iCrew);
-		sld.ship.HP = sti(sld.ship.HP)/2;
+		sld.ship.HP = int(sld.ship.HP)/2;
 		if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
 		{
 			sld = characterFromId("LH_Dodson_sea");
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti((0.3+frand(0.1))*hcrew);
+			iCrew = int((0.3+frand(0.1))*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)/2;
+			sld.ship.HP = int(sld.ship.HP)/2;
 		}
 	}
 	else
@@ -1215,21 +1215,21 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 		AddQuestRecord("LongHappy", "20");
 		sld = characterFromId("LH_Terrax_sea");
 		hcrew = GetMaxCrewQuantity(sld);
-		iCrew = sti((0.5+frand(0.1))*hcrew);
+		iCrew = int((0.5+frand(0.1))*hcrew);
 		SetCrewQuantityOverMax(sld, iCrew);
-		sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/4);
+		sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/4);
 		sld = characterFromId("LH_Svenson_sea");
 		hcrew = GetMaxCrewQuantity(sld);
-		iCrew = sti((0.5+frand(0.1))*hcrew);
+		iCrew = int((0.5+frand(0.1))*hcrew);
 		SetCrewQuantityOverMax(sld, iCrew);
-		sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/4);
+		sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/4);
 		if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
 		{
 			sld = characterFromId("LH_Dodson_sea");
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti((0.5+frand(0.1))*hcrew);
+			iCrew = int((0.5+frand(0.1))*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/4);
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/4);
 		}
 	}
 	// эскадра ГГ fix 26-03-20 убрано
@@ -1293,15 +1293,15 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "grapeshot");
 			TakeNItems(sld, "grapeshot", 5);
 			AddItems(sld, "gunpowder", 5);
-			RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;
+			RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;
 			SetSailsColor(sld, 8);//черный парус
 			UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 			UpgradeShipParameter(sld, "TurnRate");//маневренность
 			UpgradeShipParameter(sld, "Rig");//бейд
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti(0.9*hcrew);
+			iCrew = int(0.9*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/10);
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/10);
 			sld.SaveItemsForDead = true;
 			sld.DontClearDead = true;
 			AddItems(sld, "potion2", 3);
@@ -1311,9 +1311,9 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 		else
 		{
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti((0.7+frand(0.2))*hcrew);
+			iCrew = int((0.7+frand(0.2))*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/(5+rand(5)));
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/(5+rand(5)));
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector"))
 			{
 				if (pchar.questTemp.HWIC.Detector == "eng_win" && GetCharacterIndex("Knippel") != -1) 
@@ -1321,9 +1321,9 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 					if (i == 2)
 					{
 						hcrew = GetMaxCrewQuantity(sld);
-						iCrew = sti(0.5*hcrew);
+						iCrew = int(0.5*hcrew);
 						SetCrewQuantityOverMax(sld, iCrew);
-						sld.ship.HP = sti(sld.ship.HP)/2;
+						sld.ship.HP = int(sld.ship.HP)/2;
 					}
 				}
 			}
@@ -1384,26 +1384,26 @@ void LongHappy_BaronsShipsCommand(string qName) //
 	sld = CharacterFromID("LH_Svenson_sea");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
-	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(chr.index));
+	Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(chr.index));
 	if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
 	{
 		sld = CharacterFromID("LH_Dodson_sea");
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
-		Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(chr.index));
+		Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(chr.index));
 	}
 	if (!CheckAttribute(pchar, "questTemp.LongHappy.Terrax.Prisoner"))
 	{
 		sld = CharacterFromID("LH_Terrax_sea");
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
-		Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(chr.index));
+		Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(chr.index));
 	}
 }
 
@@ -1572,7 +1572,7 @@ void LongHappy_IslaTesoroClear()
 	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
 	{
 		pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
-		pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 14);
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 14);
@@ -1662,7 +1662,7 @@ void LongHappy_GiveBaronPart()
 {
 	int iMoney;
 	iMoney = hrand(50000) + 50000;
-	pchar.questTemp.LongHappy.BaronMoney = sti(pchar.questTemp.LongHappy.BaronMoney)+iMoney;
+	pchar.questTemp.LongHappy.BaronMoney = int(pchar.questTemp.LongHappy.BaronMoney)+iMoney;
 }
 
 void LongHappy_ReturnOfficersToNormal()
@@ -2029,7 +2029,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "LongHappy_InSPComplete") //
 	{
 		chrDisableReloadToLocation = false;
-		iTime = sti(environment.time);
+		iTime = int(environment.time);
 		if (iTime >= 21) iAddTime = 24 - iTime + 12;
 		if (iTime < 7) iAddTime = 12 - iTime;
 		if (iTime >= 7 && iTime < 21) iAddTime = 24  + 12 - iTime;
@@ -2147,7 +2147,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 			ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "tables", "stay3"); // fix 01-04-20
 			LAi_SetCheckMinHP(sld, 10, true, ""); // скрытое бессмертие
 			LAi_SetStayType(sld); // fix 01-04-20
-			pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+			pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 		} 
 		// при большой свадьбе
 		if (CheckAttribute(pchar, "questTemp.LongHappy.BigMarry"))
@@ -2163,7 +2163,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 					sld.Dialog.Filename = "Quest\LongHappy.c";
 					ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "sit", "sit4");
 					LAi_SetSitType(sld);
-					pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+					pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 				}
 				if (pchar.questTemp.HWIC.Detector == "eng_win" && GetCharacterIndex("Knippel") != -1) 
 				{
@@ -2173,7 +2173,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 					sld.Dialog.Filename = "Quest\LongHappy.c";
 					ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "sit", "sit4");
 					LAi_SetSitType(sld);
-					pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+					pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 				}
 				if (pchar.questTemp.HWIC.Detector == "self_win" && GetCharacterIndex("Tonzag") != -1)
 				{
@@ -2183,7 +2183,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 					sld.Dialog.Filename = "Quest\LongHappy.c";
 					ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "sit", "sit4");
 					LAi_SetSitType(sld);
-					pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+					pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 				}
 			}
 			// Бейкер
@@ -2195,7 +2195,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 				LAi_SetCheckMinHP(sld, 10, true, ""); // скрытое бессмертие
 				ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "sit", "sit9");
 				LAi_SetSitType(sld);
-				pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+				pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 			}
 			// Венсан при Додсоне
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie"))
@@ -2213,7 +2213,7 @@ bool LongHappy_QuestComplete(string sQuestName, string qname)
 				LAi_SetCheckMinHP(sld, 10, true, ""); // скрытое бессмертие
 				ChangeCharacterAddressGroup(sld, "Pirates_Tavern", "sit", "sit7");
 				LAi_SetSitType(sld);
-				pchar.questTemp.LongHappy.CountNeed = sti(pchar.questTemp.LongHappy.CountNeed)+1;
+				pchar.questTemp.LongHappy.CountNeed = int(pchar.questTemp.LongHappy.CountNeed)+1;
 			}
 		}
 	}

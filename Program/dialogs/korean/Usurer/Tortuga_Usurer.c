@@ -22,8 +22,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tonzag_bail_2":
-			dialog.text = "물론입니다만, 다만 비용이 조금 더 들 것입니다. 정확히 말씀드리자면... "+pchar.questTemp.TonzagQuest.Bail+" 두블룬이 될 것이오 "+sti(pchar.questTemp.TonzagQuest.Bail)* 150+" 페소입니다.";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail) || sti(pchar.money) >= sti(pchar.questTemp.TonzagQuest.Bail) * 150) {
+			dialog.text = "물론입니다만, 다만 비용이 조금 더 들 것입니다. 정확히 말씀드리자면... "+pchar.questTemp.TonzagQuest.Bail+" 두블룬이 될 것이오 "+int(pchar.questTemp.TonzagQuest.Bail)* 150+" 페소입니다.";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.TonzagQuest.Bail) || int(pchar.money) >= int(pchar.questTemp.TonzagQuest.Bail) * 150) {
 				link.l1 = "조금 더 비싸다고요? 여기 있습니다, 필요한 전액입니다.";
 				link.l1.go = "tonzag_bail_give";
 			} else {
@@ -39,10 +39,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			
 			NextDiag.TempNode = "First time";
 			
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail)) {
-				RemoveDublonsFromPCharTotal(sti(pchar.questTemp.TonzagQuest.Bail));
+			if (PCharDublonsTotal() >= int(pchar.questTemp.TonzagQuest.Bail)) {
+				RemoveDublonsFromPCharTotal(int(pchar.questTemp.TonzagQuest.Bail));
 			} else {
-				AddMoneyToCharacter(pchar, -(sti(pchar.questTemp.TonzagQuest.Bail) * 150));
+				AddMoneyToCharacter(pchar, -(int(pchar.questTemp.TonzagQuest.Bail) * 150));
 			}
 			sld = CharacterFromID("TortugaJailOff");
 			LAi_CharacterEnableDialog(sld);
@@ -61,11 +61,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.loans.tortuga.StartMonth = GetDataMonth();
 			pchar.quest.loans.tortuga.StartYear = GetDataYear();
 			pchar.quest.loans.tortuga.StartTime = GetTime();
-			SetTimerCondition("Loans_Tortuga", 0, makeint(pchar.quest.loans.tortuga.period), 0, false);
+			SetTimerCondition("Loans_Tortuga", 0, int(pchar.quest.loans.tortuga.period), 0, false);
 			pchar.quest.Loans_Tortuga.CityId = "Tortuga";
 			pchar.quest.Loans_Tortuga.win_condition = "LoansForAll";
 			
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.TonzagQuest.Bail) * 150);
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.TonzagQuest.Bail) * 150);
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

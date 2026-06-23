@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Non voglio parlare con te. Attacchi la gente pacifica senza motivo e li provochi a menar le mani. Sparisci dai piedi!";
 				link.l1 = "Uhm...";
@@ -151,12 +151,6 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("SharkHunt", "36");
 			pchar.questTemp.Saga.SharkHunt = "barmen_whiskey"; // флаг на таверну - поиск мышьяка
-		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
 		break;
 		
 		case "":

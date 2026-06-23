@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 		
 		case "Node_11":
 			Diag.TempNode = "Node_1Next";
-			addMoneyToCharacter(pchar, makeint((sti(pchar.rank))*25 + frand(2)*500));
+			addMoneyToCharacter(pchar, int((int(pchar.rank))*25 + frand(2)*500));
 			dialog.text = "제가 돈이 좀 있습니다. 부디 감사의 표시로 받아주십시오. 이제 모두에게 알리겠습니다, "+GetSexPhrase("정말 훌륭하고 고귀한 분이시군요","당신은 참으로 훌륭하고 고귀한 여인이로군")+".";
 			link.l1 = "물론 그렇게 할 거야. 고마워... 이제 그냥 집에 가.";
 			link.l1.go = "exit";
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_32":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "그의 이름은 "+pchar.GenQuest.EncGirl.sLoverId+", 그는 신참이야. 지금은 그 정착지에 머무르고 있어 "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", 거기서 일자리를 구해보려고 했지만, 요즘은 힘든 시기야. 모두가 위기라고들 하지... 이제는 어차피 집으로 돌아갈 수도 없어.";
 			link.l1 = "위기라고? 하... 진짜 해적에게 위기란, 지평선에 무역 선단이 보이는데 돛을 채울 바람이 없을 때지...";
 			link.l1.go = "Node_12Next";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 				pchar.quest.LandEnc_RapersBadExit.win_condition = "LandEnc_RapersBadExit";
 			}
 			pchar.GenQuest.EncGirl = "Begin_11";
-			switch(sti(pchar.GenQuest.EncGirl.variant))
+			switch(int(pchar.GenQuest.EncGirl.variant))
 			{
 				case 0:
 					if(rand(1) == 0)
@@ -302,7 +302,7 @@ void ProcessDialogEvent()
 		case "Node_131":
 			pchar.GenQuest.EncGirl.SmallCoins = rand(25) + 20;
 			pchar.GenQuest.EncGirl.BigCoins = rand(15) + 5;
-			dialog.text = "그 목걸이는 엄선된 진주로 만들어졌어, 그런 건 싸게 살 수 없는 거야. 있었다 "+sti(pchar.GenQuest.EncGirl.BigCoins)+" 큰 진주와 "+sti(pchar.GenQuest.EncGirl.SmallCoins)+" 작은 진주들이지. 만약 그 진주들을 찾는다면, 저 목걸이처럼 또 하나를 주문할 수 있을 텐데.";
+			dialog.text = "그 목걸이는 엄선된 진주로 만들어졌어, 그런 건 싸게 살 수 없는 거야. 있었다 "+int(pchar.GenQuest.EncGirl.BigCoins)+" 큰 진주와 "+int(pchar.GenQuest.EncGirl.SmallCoins)+" 작은 진주들이지. 만약 그 진주들을 찾는다면, 저 목걸이처럼 또 하나를 주문할 수 있을 텐데.";
 			link.l1 = "분명 이 일은 쉽지 않을 거야... 뭐, 네 주인 아가씨가 명령을 내렸다면 어쩔 수 없지. 진주를 찾아봐. 행운을 빈다.";
 			link.l1.go = "Node_131End";
 			link.l2 = "소용없어. 이 빽빽한 풀밭에서 진주를 찾는 것보다 건초더미에서 바늘을 찾는 게 더 쉬울 거야. 게다가 진주를 잃어버린 장소조차 네가 모르잖아...";
@@ -367,14 +367,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_4":
-			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * sti(pchar.rank);
+			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * int(pchar.rank);
 			dialog.text = "그거 솔깃한데... 그래서 그걸 얼마에 줄 수 있는데?";
-			link.l1 = "그게 그 이상 가치 있을 것 같진 않아 "+sti(pchar.GenQuest.EncGirl.mapPrice)+" 페소입니다.";
+			link.l1 = "그게 그 이상 가치 있을 것 같진 않아 "+int(pchar.GenQuest.EncGirl.mapPrice)+" 페소입니다.";
 			link.l1.go = "Node_132_5";
 		break;
 		
 		case "Node_132_5":
-			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (makeint(pchar.money) >= sti(pchar.GenQuest.EncGirl.mapPrice)))
+			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (int(pchar.money) >= int(pchar.GenQuest.EncGirl.mapPrice)))
 			{
 				dialog.text = "헤, 여자로 산다는 게 쉽지 않지... 좋아, 동의해. 드디어 이 악몽도 끝나겠군... 이 지도가 너한테 있는 게 제일 나을지도 몰라,"+GetSexPhrase(" 고귀한 신사","")+", 그 악당들보다는.";
 				link.l1 = "좋아. 여기 네 돈이야... 한 번에 다 써버리지만 마라.";
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_6":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.mapPrice))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.mapPrice)));
 			ref rMap = ItemsFromID("map_full"); // mitrokosta фикс пустой карты
 			FillMapForTreasure(rMap, "");
 			GiveItem2Character(pchar, "map_full");
@@ -564,7 +564,7 @@ void ProcessDialogEvent()
 			dialog.text = "하지만 내가 뭘 할 수 있겠소? 여주인님의 명령을 무시할 수는 없지, 그러다간 산 채로 가죽이 벗겨질 테니까.";
 			link.l1 = "정착지의 교회에서 나를 기다려라 "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", 내가 새 목걸이를 만들 진주를 가져올게.";
 			link.l1.go = "Node_133_1";
-			if(sti(pchar.money) >= 15000)
+			if(int(pchar.money) >= 15000)
 			{
 				link.l2 = "여기 있다. 이 15,000페소를 가져가라. 이 정도면 목걸이용 진주를 고르거나 새 목걸이를 사기에 충분하고도 남을 거다.";
 				link.l2.go = "Node_135";
@@ -591,15 +591,15 @@ void ProcessDialogEvent()
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("","")); 
 			AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name); 
 			AddQuestUserData("JungleGirl", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city));
-			AddQuestUserData("JungleGirl", "sText1", sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			AddQuestUserData("JungleGirl", "sText2", sti(pchar.GenQuest.EncGirl.SmallCoins)); 		
+			AddQuestUserData("JungleGirl", "sText1", int(pchar.GenQuest.EncGirl.BigCoins));
+			AddQuestUserData("JungleGirl", "sText2", int(pchar.GenQuest.EncGirl.SmallCoins));
 			DialogExit();
 			AddDialogExitQuest("pchar_back_to_player");			
 		break;
 		
 		case "Node_134":
 			dialog.text = RandPhraseSimple(""+GetSexPhrase("Captain","아가씨")+", 다시 만나서 정말 기뻐요! 목걸이용 진주를 모으는 데 성공했나요?","안녕하세요, 선장님! 진주를 가져오셨나요? 아시다시피, 제 여주인께서 꽤나 초조해하고 계십니다...");
-			if (GetCharacterItem(pchar, "jewelry52") >= sti(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= sti(pchar.GenQuest.EncGirl.SmallCoins))
+			if (GetCharacterItem(pchar, "jewelry52") >= int(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= int(pchar.GenQuest.EncGirl.SmallCoins))
 			{
 				link.l1 = "그래. 여기 진주들이 있다. 이것들을 네 주인에게 가져가서 다음엔 더 조심하라고 전해라.";
 				link.l1.go = "Node_134_1";
@@ -612,8 +612,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_134_1":
-			TakeNItems(pchar, "jewelry52", -sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			TakeNItems(pchar, "jewelry53", -sti(pchar.GenQuest.EncGirl.SmallCoins)); 
+			TakeNItems(pchar, "jewelry52", -int(pchar.GenQuest.EncGirl.BigCoins));
+			TakeNItems(pchar, "jewelry53", -int(pchar.GenQuest.EncGirl.SmallCoins));
 			pchar.quest.EncGirl_GetCoins.over = "yes";
 			pchar.quest.EncGirl_DeathSimple.over = "yes";
 			dialog.text = "오, "+GetSexPhrase("Captain","아가씨")+", 당신을 만나서 정말 기뻐요! 저를 위해 해주신 모든 일에 대한 감사의 표시로 이 장신구와 보석들을 드리고 싶어요. 유용하게 쓰시길 바랍니다.";
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 		
 		case "Node_209":
 			LAi_LocationDisableMonstersGen(pchar.location, false);
-			i = makeint(sti(pchar.GenQuest.EncGirl.price)/100.0);
+			i = int(int(pchar.GenQuest.EncGirl.price)/100.0);
 			TakeNItems(pchar, "jewelry6", i);
 			sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
 			LAi_SetActorType(npchar);
@@ -845,7 +845,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
 			{
-				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15)
+				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15)
 				{
 					dialog.text = "거긴 사람이 너무 많아. 개인실로 가자. 할 말이 있어.";
 					link.l1 = LinkRandPhrase("이미 너한테 해줄 만큼 다 해줬으니, 이제 작별이다.","내 호의를 남용하면 안 돼. 또 보자, 자기야.","이제부터 네 얘기는 필요 없어, 네가 알아서 다 해결해.");
@@ -911,7 +911,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_228":
-			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15) // душещипательная история о невинной девочке попавшей в бордель
+			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15) // душещипательная история о невинной девочке попавшей в бордель
 			{
 				DeleteAttribute(pchar, "GenQuest.EncGirl.BrothelCity");
 				dialog.text = "그래서, 아직도 내 이야기를 듣고 싶어?";
@@ -971,7 +971,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_233":
-			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
+			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(int(pchar.GenQuest.EncGirl.nation));
 			dialog.text = "내 가족은 정착지에 살고 있어 "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.Parents_City)+". 나는 우연히 여기 오게 되었어요. 약혼자가 저를 그의 부모님께 데려가려고 배에 태웠는데, 그 배가 해적들에게 붙잡혔어요. 배는 빼앗겼고, 승객들은 이곳에서 멀지 않은 만에 상륙시켰죠. 약혼자는 배에 해적들이 들이닥칠 때 죽었고, 저는 정글을 건너다가 심하게 병이 들었어요\n이 지역 사창가의 마담이 저를 간호해서 건강을 되찾게 해줬지만, 제가 일어설 수 있게 되자 치료비를 갚으라며 일을 시켰어요. 저는 창녀가 되었지만 마담의 마음에 들지 못해서, 그녀는 치료비라도 건지려고 저를 산적들에게 팔아넘겼어요. 그 뒤 이야기는 이미 아시잖아요.";
 			link.l1 = "그냥 그만두고 집에 가! 왜 놈들한테 노예처럼 당하고 있어?!";
 			link.l1.go = "Node_234";
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Node_235";
 			link.l2 = "여기서 기다려. 내가 네 여행 가방 가져올게.";
 			link.l2.go = "Node_236";													
-			if(sti(pchar.money) >= 5000) 
+			if(int(pchar.money) >= 5000)
 			{
 				link.l3 = "네 서류 따위 누가 신경 써? 집에 가려면 돈이 얼마나 필요해?";
 				link.l3.go = "Node_237";							
@@ -1079,7 +1079,7 @@ void ProcessDialogEvent()
 		
 		case "Node_242":
 			dialog.text = "정말로 내 가방을 찾았대?";
-			if(sti(pchar.money) >= 5000)
+			if(int(pchar.money) >= 5000)
 			{
 				link.l1 = "집에 돌아가려면 돈이 얼마나 필요하지?";
 				link.l1.go = "Node_237";
@@ -1147,17 +1147,17 @@ void ProcessDialogEvent()
 		
 		case "Node_237":
 			dialog.text = "글쎄요, 잘 모르겠어요... 어쩌면 지나가는 배를 기다려야 할지도 모르겠네요. 하지만 당신에게 돈을 달라고는 못 하겠어요.";
-			if(makeint(pchar.money)>=5000)
+			if(int(pchar.money)>=5000)
 			{
 				link.l1 = "알겠네. 좋아, 5000페소 가져가게. 그 정도면 충분하겠지.";
 				link.l1.go = "Node_237_1";
 			}
-			if(makeint(pchar.money)>=25000)
+			if(int(pchar.money)>=25000)
 			{
 				link.l2 = "알겠다. 좋아, 25,000페소를 가져가서 집으로 돌아가라.";
 				link.l2.go = "Node_237_2";
 			}
-			if(makeint(pchar.money)>=35000)
+			if(int(pchar.money)>=35000)
 			{
 				link.l3 = "알겠네. 좋아, 35,000페소를 가져가게. 그 정도면 배에서 제일 좋은 선실을 살 수 있을 거야.";
 				link.l3.go = "Node_237_3";
@@ -1196,7 +1196,7 @@ void ProcessDialogEvent()
 			if(pchar.GenQuest.EncGirl == "EncGirlFack_GetMoney") 
 			{
 				AddSimpleRumour(RandPhraseSimple("Have you heard? A whore was trying to sneak on board of a ship without documents, but she was caught and taken back to the brothel. They say she owed the madam quite a sum.",  
-				"Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?"), sti(pchar.GenQuest.EncGirl.nation), 3, 1);
+				"Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?"), int(pchar.GenQuest.EncGirl.nation), 3, 1);
 			}
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
 			DialogExit();
@@ -1209,7 +1209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_251":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "안 돼! 안 돼, 선장님, 나는 사랑해 "+pchar.GenQuest.EncGirl.sLoverId+" 그리고 나는 다른 남자와 결혼하지 않을 거야! 아버지도 아무 말도 듣고 싶어하지 않으셔! 아버지께서는 "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+" 여긴 그냥 방문객일 뿐이라서 절대 일자리를 구하지 못할 거고, 결국 가난하게 죽을 운명이에요, 저도 그와 함께요! 그 사람 곁에 있기만 하다면 세상 끝까지라도 따라갈 거예요! 제발 그 사람에게 데려다 주세요, 부탁드려요!";
 			link.l1 = "좋아, 가자. 너를 어떻게 할지 곧 알게 되겠지...";
 			link.l1.go = "Node_252";
@@ -1295,7 +1295,7 @@ void ProcessDialogEvent()
 				
 		case "ThanksForHelp_1":
 			Diag.TempNode = "ThanksAgain";
-			if(makeint(Pchar.reputation.nobility) >= 80)
+			if(int(Pchar.reputation.nobility) >= 80)
 			{
 				dialog.text = "저에게 약간의 돈이 있습니다... 제 감사의 표시로 받아 주십시오!";
 				Link.l1 = "감사합니다. 다음에는 더 조심하세요.";
@@ -1311,7 +1311,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					addMoneyToCharacter(Pchar, makeint(PChar.rank)*100);
+					addMoneyToCharacter(Pchar, int(PChar.rank)*100);
 					dialog.text = "저에게 약간의 돈이 있습니다... 제 감사의 표시로 받아 주십시오!";
 					Link.l1 = "고마워. 다음엔 좀 더 조심해.";
 					Link.l1.go = "exit";

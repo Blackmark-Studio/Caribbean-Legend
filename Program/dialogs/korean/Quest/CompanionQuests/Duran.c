@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "헤! 내 실수요, 선장. 맞아, 르바쇠르의 명령엔 기사뿐만 아니라 그 일행 전부를 처리하라고 분명히 적혀 있었지. 전부 말이오, 알겠소? 저 인간들은 만만하게 볼 상대가 아니니, 그 요구도 진지하게 받아들여야 해. 내 일 방해하지 마시오, 선장. 마지막 더러운 일 한 번만 더 하면, 그땐 끝까지 당신 곁에 있을 거라 맹세하오!\n";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "꺼져라! 네 더러운 일이나 해라. 네 맹세는 받아들이겠다, 하지만 죽을 각오로 지켜라. 서로 이해한 거지?";

@@ -8,6 +8,12 @@ condition_mushket_indian
 Этот предмет появится у ростовщиков, если у вас есть
 Caribbean Legend: Age of Pirates
 }
+condition_nocturlabe
+{
+Бесплатный подарок сообществу.
+ Ищите в продаже у ростовщиков.
+ Спасибо, что играете!
+}
 noRewardYetMessage
 {
 Этой награды еще нет,

@@ -43,7 +43,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 
 	case "let_s_duel":
 		//检查已开始的决斗
-		if (CheckAttribute(PChar, "questTemp.duel.Start") && sti(PChar.questTemp.duel.Start))
+		if (CheckAttribute(PChar, "questTemp.duel.Start") && int(PChar.questTemp.duel.Start))
 		{
 			Dialog.Text = "首先, 你先处理好和别人的事, 然后我们再谈。 ";
 			if (PChar.questTemp.duel.enemy == NPChar.id)
@@ -76,7 +76,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 			"你甚至能握住剑吗? ");
 		link.l1 = RandPhraseSimple("你会跪在地上求饶的。 ", "我会用这双手掐死你, 你这个无赖! ");
 		link.l1.go = "land_duel";
-		if (sti(pchar.Ship.Type) != SHIP_NOTUSED && sti(NPChar.Ship.Type) != SHIP_NOTUSED)
+		if (int(pchar.Ship.Type) != SHIP_NOTUSED && int(NPChar.Ship.Type) != SHIP_NOTUSED)
 		{
 			Dialog.Text = RandPhraseSimple(Dialog.Text + " 或者我们可以出海, 看看谁更厉害! ", 
 				"决斗? ! 哈, 我会像拍虫子一样打死你! 选择你想怎么死吧! ");
@@ -109,7 +109,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		iHour = 1 + rand(2);
 		if (GetTime() > 4.0 && GetTime() < 17.0)
 		{
-//			iHour = MakeInt(18.0 - GetTime()) + rand(2); //取消注释以仅在夜间进行决斗
+//			iHour = int(18.0 - GetTime()) + rand(2); //取消注释以仅在夜间进行决斗
 		}
 		pchar.questTemp.Duel.WaitTime = iHour;
 		Dialog.Text = RandSwear() + RandPhraseSimple("拔出剑来, 让我看看你的血是什么颜色的! ", "好吧, 如果你想找死... ");
@@ -163,7 +163,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.duel_move_opponent2place.win_condition.l1.location = pchar.questTemp.duel.place;
 			pchar.quest.duel_move_opponent2place.function = "Duel_Move_Opponent2Place";
 			//以防万一, 如果等不到, 一小时足够
-			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, sti(GetTime() + 0.5) + sti(pchar.questTemp.Duel.WaitTime) + 1, false);
+			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, int(GetTime() + 0.5) + int(pchar.questTemp.Duel.WaitTime) + 1, false);
 			pchar.quest.duel_move_opponentBack.function = "Duel_Move_OpponentBack";
 			if (CheckAttribute(NPChar, "CityType"))
 			{
@@ -172,7 +172,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 				if (!CheckAttribute(NPChar, "PGGAi")) 
 				{
 					if (!CheckAttribute(NPChar, "LifeDay")) npchar.LifeDay = 0;
-					npchar.LifeDay = sti(npchar.LifeDay) + 3; // 活到决斗
+					npchar.LifeDay = int(npchar.LifeDay) + 3; // 活到决斗
 				}
 			}
 		}

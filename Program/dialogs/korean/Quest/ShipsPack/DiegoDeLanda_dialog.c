@@ -26,31 +26,31 @@ void ProcessDialogEvent()
 
 		//--> Встреча
 		case "DiegoDeLanda_Meeting":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "슬픈 이야기지, 그렇지 않아?";
 				link.l1 = "너 누구야?";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "안녕하시오, 선장.";
 				link.l1 = "잠깐! 우리 전에 만난 적 있잖아!";
 				link.l1.go = "DiegoDeLanda_Meeting_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "하나. 둘. 셋.";
 				link.l1 = "이 연극은 그만두자. 너 누구야?";
 				link.l1.go = "DiegoDeLanda_Meeting_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "넷.";
 				link.l1 = "두 명 남았어?";
 				link.l1.go = "DiegoDeLanda_Meeting_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 				
 			}
@@ -246,32 +246,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DiegoDeLanda_Leaving_1":
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 1)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 1)
 			{
 				dialog.text = "말해 봐... 왜지? 그건 위험하고 어리석은 짓이었어. 대체 무엇이 널 움직이게 하지, 선장? 네 안의 불꽃은 뭐야?";
 				link.l1 = "네가 신경 쓸 일 아니야.";
 				link.l1.go = "DiegoDeLanda_leaving_First_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 			{
 				dialog.text = "둘째.";
 				link.l1 = "지난번엔 수수께끼만 늘어놨지. 또 그럴 거야?";
 				link.l1.go = "DiegoDeLanda_leaving_Second_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 			{
 				dialog.text = "...";
 				link.l1 = "잠깐, de Landa. 그냥 가져가고 떠나게 둘 수는 없어.";
 				link.l1.go = "DiegoDeLanda_Leaving_Third_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 4)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 4)
 			{
 				dialog.text = "힌트만 있고, 요란하기만 하며, 행동은 없군\n"+
 				"적어도 나는 그렇지. 너는 이미 충분히 싸웠잖아.";
 				link.l1 = "그걸 해결할 방법이 있어.";
 				link.l1.go = "DiegoDeLanda_Leaving_Fourth_2";
 			}
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) == 5)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) == 5)
 			{
 				
 			}

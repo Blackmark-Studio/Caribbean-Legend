@@ -376,7 +376,7 @@ string GetTitle(ref NPChar, bool address)
 {
 	string Title;
 
-    if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4)
+    if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4)
         Title = GlobalStringConvert("Title_ViceAdmiral");
 	else if (CheckAttribute(PChar, "questTemp.Patria.GenGovernor"))
         Title = GlobalStringConvert("Title_Ghovernor");

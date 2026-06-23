@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_5":
 			dialog.text = "내 말이 안 들리나 보군. 분명히 말했잖아 – 지금 당장 돈이 필요하다고. 일주일 뒤도, 한 달 뒤도, 대장장이가 돈을 모을 때도 아니고, 바로 지금이야. 이 썩은 섬에서 최대한 빨리 떠날 생각이거든. 그러니 전액을 지금 내 손에 쥐여주든가, 아니면 그 책은 프랑스 놈들한테 넘길 거다. 그러면 네 선장 체면은 제독의 형리한테 잡혀다 바치게 되겠지.";
-			if (sti(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
+			if (int(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
 				link.l1 = "이렇게 해보지: 한 판 하자고. 내 십만 대 책 한 권. 네가 이기면 이 섬을 부자로 떠날 수 있어. 네가 지면 내가 그 책을 가져간다. 아니면, 혹시 패 한 번 만져본 적도 없는 놈들이랑만 놀아?\n";
 				link.l1.go = "OZ_Shuler_6";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Felip_11":
 			dialog.text = "선장님! 자비에르가 당신 덕분에 벌써 저 세상으로 갔다는 소식은 이미 들었소. 내가 너무 일찍 죽이지 말라고 부탁했었는데! 내 돈을 돌려주러 온 거겠지?";
-			if (sti(pchar.Money) >= 100000)
+			if (int(pchar.Money) >= 100000)
 			{
 				link.l1 = "그래. 내가 그의 은닉처를 찾아냈는데, 거기엔 페소 10만이 들어 있었어. 그게 그가 가진 전부였지.";
 				link.l1.go = "OZ_Felip_12";

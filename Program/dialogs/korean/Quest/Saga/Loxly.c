@@ -22,8 +22,8 @@ void ProcessDialogEvent()
 		i = findsubstr(attrLoc, "_" , 0);
 		npchar.quest.relation = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
 		// проверка на уже договор
-		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
-		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
+		attrLoc = "RelationAgent" + GetNationNameByType(int(npchar.quest.relation));
+		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && int(Pchar.GenQuest.(attrLoc)) == true)
 		{
 			Dialog.CurrentNode = "RelationYet";
 		}
@@ -628,7 +628,7 @@ void ProcessDialogEvent()
 		
 		// --> снятие НЗГ
 		case "RelationAny_Done":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
 			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
 			if (iRate <= 10) sTemp = "Well, I wouldn't call that trouble. Just a little problem. I will settle the affair at once";
@@ -637,7 +637,7 @@ void ProcessDialogEvent()
 			if (iRate > 60 && iRate <= 90) sTemp = "And how did you do that, Sir? Your troubles are not just serious, they are really serious. The authorities are very eager to get you. I will have to put a lot of effort into settling your disagreements";
 			if (iRate > 90) sTemp = "Well... The situation is catastrophic - you are claimed to be the most bitter enemy. It will be tough but I am the best lawyer in the Caribbean after all, so I will settle your disagreements";
 			dialog.text = ""+sTemp+" 와 함께 "+XI_ConvertString(Nations[i].Name+"Abl")+". 대가를 치러야 할 거요 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
-			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "좋소, Loxley 나리, 동의하오. 여기 돈이니, 가능한 한 빨리 일을 정리하도록 하시오.";
 				link.l1.go = "relation";
@@ -648,7 +648,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "relation":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			dialog.text = "거래하게 되어 기쁩니다, 나리. 이제 다시 안심하셔도 됩니다. 당신의 문제는 앞으로 2주 안에 해결될 것입니다. 부디 충돌은 피하시길 바랍니다\n "+XI_ConvertString(Nations[i].Name+"Abl")+", 내가 협상 중일 때.";
 			link.l1 = "좋소, 경고는 명심하겠소. 고맙소, 그리고 안녕히 가시오!";
 			link.l1.go = "exit";
@@ -664,7 +664,7 @@ void ProcessDialogEvent()
 		case "contraband":
 			iLoxlyPseudoGlobal = CalculateRelationContraSum(true);
 			dialog.Text = "그런데 왜 그런 짓을 한 거지? 밀수꾼들도 나름대로는 괜찮은 녀석들이야, 자기들 방식대로는 솔직하지. 우리 모두 살아야 하고 먹고살아야 하잖아... 좋아, 큰일은 아니고 네게 드는 비용도 얼마 안 될 거야 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
-			if(sti(Pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(Pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				Link.l1 = "알겠소, Loxley 나리. 동의하오. 여기 돈이니, 가능한 한 빨리 일을 정리하도록 하시오.";
 				Link.l1.go = "Contraband_Agreed";

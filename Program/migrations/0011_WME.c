@@ -2,7 +2,7 @@ void ApplyMigration(ref migrationState)
 {
 	if (CheckAttribute(PChar, "worldmapencountersoff"))
     {
-		bEncOffGlobal = sti(PChar.worldmapencountersoff);
+		bEncOffGlobal = bool(PChar.worldmapencountersoff);
         DeleteAttribute(PChar, "worldmapencountersoff");
     }
 

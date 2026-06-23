@@ -10,7 +10,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Carib" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
 			}
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				dialog.text = LinkRandPhrase("Приветствовать тебя, "+GetSexPhrase("сын","дочь")+" моря! Я слыхать о тебе. Ступать спокойно по наш земля.",""+npchar.name+" приветствовать тебя, "+GetSexPhrase("бледнолицый брат","белая сестра")+". Мы рады видеть твоя гости у нас.","Привет тебе, "+GetSexPhrase("славный бледнолицый воин","славная белая воительница")+"! "+npchar.name+" рад встрече с друг индеец. Ступать с миром!");
 				link.l1 = RandPhraseSimple("Привет и тебе, краснокожий брат! Пусть будет удачна твоя охота!","Приветствую, храбрый воин! Да не обойдут боги вниманием тебя и твою семью!");
@@ -87,10 +87,10 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("Твой земля? А ну, прочь с дороги, краснорожая образина!","Ну надо же - обезьяна, а разговаривает! Пошёл прочь!");
 				link.l1.go = "war_indian_1";
 				link.l2 = RandPhraseSimple("Я приш"+GetSexPhrase("ёл","ла")+" с миром, краснокожий воин. Ни к чему нам развязывать бой не из-за чего.","Я не посягаю на твою землю, воин. Я приш"+GetSexPhrase("ёл","ла")+" с миром.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
 				else link.l2.go = "war_indian_2_2";
 				link.l3 = RandPhraseSimple("Я приш"+GetSexPhrase("ёл","ла")+" сюда не воевать с вами, а торговать.","Я не воюю с индейцами. Я с ними торгую.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+int(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
 				else link.l3.go = "war_indian_3_2";
 			}
 		break;
@@ -298,13 +298,13 @@ void ProcessDialogEvent()
 		
 		case "war_indian_trade_agree":
 			ChangeIndianRelation(1.00);
-			npchar.quest.count = sti(npchar.quest.count)+1;
+			npchar.quest.count = int(npchar.quest.count)+1;
 			TakeNItems(pchar, npchar.quest.item, iTotalTemp);
 			RemoveItems(pchar, npchar.quest.gun, 1);
 			//Log_Info("Вы отдали "+XI_ConvertString(npchar.quest.gun)+"");
 			//Log_Info("Вы получили "+XI_ConvertString(npchar.quest.item)+" в количестве "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (sti(npchar.quest.count) > 3+hrand(2));
+			if (int(npchar.quest.count) > 3+hrand(2));
 			{
 				dialog.text = "Хорошо. Вот твой товар. Больше мы не менять. Приносить потом. Чем лучше огненный оружие - тем дороже мы его купить. Ступай!";
 				link.l1 = "Прощай, краснокожий воин.";
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_trade_bad":
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				DialogExit();
 				sGroup = "CaribGroup_" + locations[FindLocation(npchar.location)].index;

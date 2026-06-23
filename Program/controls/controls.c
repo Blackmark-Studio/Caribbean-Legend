@@ -64,12 +64,12 @@ void RestoreKeysFromOptions(aref arControlsRoot)
 			state = 0;
 			if(CheckAttribute(arKey,"state"))
 			{
-				state = sti(arKey.state);
+				state = int(arKey.state);
 			}
 
 			ctrlName = GetAttributeName(arKey);
 			keyCode = CI_GetKeyCode(GetAttributeValue(arKey));
-			CI_CreateAndSetControls(grName, ctrlName, keyCode, state, arKey.remapping);
+			CI_CreateAndSetControls(grName, ctrlName, keyCode, state, bool(arKey.remapping));
 		}
 	}
 
@@ -116,7 +116,7 @@ void AddToContainer(string groupName, string containerName, string controlName, 
 	float fVal = objControlsContainer.(containerName);
 	string keyName = CI_GetKeyName(KeyCode);
 	if( CheckAttribute(&objControlsState,"key_codes."+keyName+".stick") &&
-		sti(objControlsState.key_codes.(keyName).stick) == true)
+		int(objControlsState.key_codes.(keyName).stick) == true)
 	{
 		fVal /= 15.0;
 	}
@@ -159,7 +159,7 @@ void CI_CreateAndSetControls(string groupName, string controlName, int keyCode, 
         objControlsState.map.controls.(controlName) = CreateControl(controlName);
 	}
 
-	int cntrlCode = sti(objControlsState.map.controls.(controlName));
+	int cntrlCode = int(objControlsState.map.controls.(controlName));
     if(groupName != "AltPressedGroup")
         MapControl(cntrlCode, keyCode, GetGroupIDX(groupName));
 
@@ -216,7 +216,7 @@ void MapControlToGroup(string controlName, string groupName)
             if(groupName != "AltPressedGroup")
             {
                 int keyCode   = CI_GetKeyCode(arGroup.(controlName));
-                int cntrlCode = sti(objControlsState.map.controls.(controlName));
+                int cntrlCode = int(objControlsState.map.controls.(controlName));
                 MapControl(cntrlCode, keyCode, GetGroupIDX(groupName));
 			}
             return;
@@ -251,7 +251,7 @@ void AddControlToSettingsGroups(string controlName)
 int CI_GetKeyCode(string keyName)
 {
 	if( CheckAttribute(&objControlsState,"key_codes."+keyName) )
-	{	return sti(objControlsState.key_codes.(keyName));
+	{	return int(objControlsState.key_codes.(keyName));
 	}
 
 	trace("Can`t key named as: " + keyName);
@@ -267,7 +267,7 @@ string CI_GetKeyName(int code)
 	for(int i=0; i<nq; i++)
 	{
 		arCur = GetAttributeN(arKeys,i);
-		if(sti(GetAttributeValue(arCur)) == code)
+		if(int(GetAttributeValue(arCur)) == code)
             return GetAttributeName(arCur);
 	}
 
@@ -278,7 +278,7 @@ int ControlNameToCode(string cname)
 {
 	if(CheckAttribute(&objControlsState,"map.controls."+cname))
 	{
-        return sti(objControlsState.map.controls.(cname));
+        return int(objControlsState.map.controls.(cname));
 	}
 	return -1;
 }
@@ -341,20 +341,20 @@ string GetCurControlGroup()
 	if(IsEntity(&aviVideoObj)) return "VideoPlayer";
 	//if(bRunHelpChooser) return "HelpChooser";
 
-	if(sti(InterfaceStates.Launched) == true) return "MainInterface";
+	if(int(InterfaceStates.Launched) == true) return "MainInterface";
 
 	if(DialogRun) return "DialogControls";
 
 	if(IsEntity(&worldMap))
 	{
-		if(CheckAttribute(&BattleInterface,"ComState") && sti(BattleInterface.ComState) != 0)
+		if(CheckAttribute(&BattleInterface,"ComState") && int(BattleInterface.ComState) != 0)
 			return "BattleInterfaceControls";
 		return "WorldMapControls";
 	}
 
 	if(bSeaActive && !bAbordageStarted)
 	{
-		if(CheckAttribute(&BattleInterface,"ComState") && sti(BattleInterface.ComState) != 0)
+		if(CheckAttribute(&BattleInterface,"ComState") && int(BattleInterface.ComState) != 0)
 			return "BattleInterfaceControls";
 
 		if(SeaCameras.Camera == "SeaDeckCamera" )
@@ -366,7 +366,7 @@ string GetCurControlGroup()
 		return "Sailing3Pers";
 	}
 
-	if(CheckAttribute(&objLandInterface,"ComState") && sti(objLandInterface.ComState) != 0)
+	if(CheckAttribute(&objLandInterface,"ComState") && int(objLandInterface.ComState) != 0)
 		return "BattleInterfaceControls";
 
 	if(SendMessage(&Characters[nMainCharacterIndex],"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE)
@@ -379,18 +379,18 @@ string SetCurControlGroup()
 {
     int iCurGroupIDX;
 	if(IsEntity(&aviVideoObj)) iCurGroupIDX = BIND_VIDEO_PLAYER;
-	else if(sti(InterfaceStates.Launched) == true) iCurGroupIDX = BIND_MAIN_INTERFACE;
+	else if(int(InterfaceStates.Launched) == true) iCurGroupIDX = BIND_MAIN_INTERFACE;
 	else if(DialogRun) iCurGroupIDX = BIND_DIALOG;
 	else if(IsEntity(&worldMap))
 	{
-		if(CheckAttribute(&BattleInterface,"ComState") && sti(BattleInterface.ComState) != 0)
+		if(CheckAttribute(&BattleInterface,"ComState") && int(BattleInterface.ComState) != 0)
 			iCurGroupIDX = BIND_BATTLE_INTERFACE;
 		else
             iCurGroupIDX = BIND_WORLD_MAP;
 	}
 	else if(bSeaActive && !bAbordageStarted)
 	{
-		if(CheckAttribute(&BattleInterface,"ComState") && sti(BattleInterface.ComState) != 0)
+		if(CheckAttribute(&BattleInterface,"ComState") && int(BattleInterface.ComState) != 0)
 			iCurGroupIDX = BIND_BATTLE_INTERFACE;
 		else if(SeaCameras.Camera == "SeaDeckCamera")
             iCurGroupIDX = BIND_SAILING_1PERS;
@@ -399,7 +399,7 @@ string SetCurControlGroup()
 		else
             iCurGroupIDX = BIND_SAILING_3PERS;
 	}
-	else if(CheckAttribute(&objLandInterface,"ComState") && sti(objLandInterface.ComState) != 0)
+	else if(CheckAttribute(&objLandInterface,"ComState") && int(objLandInterface.ComState) != 0)
     {
 		iCurGroupIDX = BIND_BATTLE_INTERFACE;
     }
@@ -464,7 +464,7 @@ void ControlsMakeInvert()
 {
 	int bInvert;
 	bool bAllInvert = false;
-	if( CheckAttribute(&InterfaceStates,"InvertCameras") && sti(InterfaceStates.InvertCameras)==true ) {
+	if( CheckAttribute(&InterfaceStates,"InvertCameras") && int(InterfaceStates.InvertCameras)==true ) {
 		bAllInvert = true;
 	}
 
@@ -474,13 +474,13 @@ void ControlsMakeInvert()
 	for(int n=0; n<q; n++)
 	{
 		arCur = GetAttributeN(arRoot,n);
-		if(bAllInvert) {bInvert = !sti(GetAttributeValue(arCur));}
-		else {bInvert = sti(GetAttributeValue(arCur));}
+		if(bAllInvert) {bInvert = !int(GetAttributeValue(arCur));}
+		else {bInvert = int(GetAttributeValue(arCur));}
 		XI_ControlMakeInvert( GetAttributeName(arCur), bInvert );
 	}
 
 /*
-	if (CheckAttribute(&InterfaceStates,"alwaysrun") && sti(InterfaceStates.alwaysrun) == false)
+	if (CheckAttribute(&InterfaceStates,"alwaysrun") && int(InterfaceStates.alwaysrun) == false)
 		CI_CreateAndSetControls("PrimaryLand", "ChrRun", CI_GetKeyCode("VK_SHIFT"), USE_AXIS_AS_BUTTON + INVERSE_CONTROL, true);
 	else
 		CI_CreateAndSetControls("PrimaryLand", "ChrRun", CI_GetKeyCode("VK_SHIFT"), USE_AXIS_AS_BUTTON, true);
@@ -499,9 +499,9 @@ void SetRealMouseSensitivity()
 	float fLoc = 0.5;
 	float fSea = 0.5;
 	if(CheckAttribute(InterfaceStates,"mouse.loc_sens"))
-		fLoc = stf(InterfaceStates.mouse.loc_sens);
+		fLoc = float(InterfaceStates.mouse.loc_sens);
 	if(CheckAttribute(InterfaceStates,"mouse.sea_sens"))
-		fSea = stf(InterfaceStates.mouse.sea_sens);
+		fSea = float(InterfaceStates.mouse.sea_sens);
 	float fRealMouseLocSens = Calculate_sensitivity(fLoc);
 	float fRealMouseSeaSens = Calculate_sensitivity(fSea);
 

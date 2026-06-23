@@ -43,23 +43,23 @@ int GetDistanceToColony2D(string _sColony) // Дистанция до колон
 	if(_sColony == "FortOrange") sColonyTown = "Shore36";
 	if(_sColony == "LaVega") sColonyTown = "LaVega_Port";
 	
-//	float X1 = makefloat(worldMap.playerShipX)+1000;
-//	float Z1 = -makefloat(worldMap.playerShipZ)+980;
+//	float X1 = float(worldMap.playerShipX)+1000;
+//	float Z1 = -float(worldMap.playerShipZ)+980;
         float X1, Z1;
 	if(IsEntity(&worldMap))
 	{
-		X1 =  stf(worldMap.playerShipX);
-		Z1 = -stf(worldMap.playerShipZ);
+		X1 =  float(worldMap.playerShipX);
+		Z1 = -float(worldMap.playerShipZ);
 	}
 	else
 	{
-		X1 =  GetSeaShipX(stf(pchar.Ship.Pos.X))+1000;
-		Z1 = -GetSeaShipZ(stf(pchar.Ship.Pos.Z))+1000;
+		X1 =  GetSeaShipX(float(pchar.Ship.Pos.X))+1000;
+		Z1 = -GetSeaShipZ(float(pchar.Ship.Pos.Z))+1000;
 	}
-	float X2 = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
-	float Z2 = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+	float X2 = float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+	float Z2 = -float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
 	
-	return makeint(GetDistance2D(X1, Z1, X2, Z2));
+	return int(GetDistance2D(X1, Z1, X2, Z2));
 }
 
 // Jason: функция возвращает id маяка на текущем острове. Работает только в городских локациях.
@@ -71,7 +71,7 @@ string Colony_GetLighthouseId(string _colony)
 	ref rCol = &Colonies[iColony];
 	if(CheckAttribute(rCol, "mayak"))
 	{
-		imay = sti(rCol.mayak);
+		imay = int(rCol.mayak);
 		sMayak = "mayak"+imay;
 		log_Testinfo(sMayak);
 	}

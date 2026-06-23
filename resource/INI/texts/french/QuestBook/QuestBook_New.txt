@@ -1504,6 +1504,11 @@ OZ.12
 Je n’ai pas rendu l’argent à Felipe Alarcón. Il n’a pas apprécié ce geste – il m’a attaqué. Je m’en suis débarrassé sans difficulté, mais il semble que je doive désormais me frayer un chemin hors de la ville en combattant.
 }
 
+OZ.13
+{
+J’ai décidé de ne pas rendre le livre au forgeron et de le vendre au Français à la place, puis j’ai fouillé seul la cachette dans la grotte. Il semble que cette affaire se soit révélée très profitable — je devrais prêter plus souvent attention aux rumeurs de la ville.
+}
+
 OZ.2
 {
 Il est désormais clair ce qui a causé l’abattement de Sebastián Córdoba. Il a perdu un livre essentiel à son métier – un livre sur l’art de la forge. Sa situation est aggravée par le fait que Javier a décidé de ne pas perdre de temps et de vendre le livre à un maître armurier français. Comme souvent, un malheur ne vient jamais seul. La veille, le forgeron a reçu une commande importante de l’amiral Eugenio de la Torre... Quand celui-ci arrivera, il saura forcément pourquoi sa commande n’a pas été exécutée. Apprenant que le livre est tombé entre les mains des Français, il se montrera, selon le forgeron, extrêmement sévère. J’ai accept@<sSex> d’aider ce pauvre homme. Si j’arrive à lui rendre son livre, il aura une seconde chance et, je l’espère, ne répétera plus ses erreurs, et je pourrai toujours compter sur les services d’un bon forgeron. Je commencerai par rechercher Javier, il essaie sûrement déjà de duper quelqu’un d’autre.

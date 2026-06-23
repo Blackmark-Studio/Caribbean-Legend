@@ -24,13 +24,13 @@ void InitInterface(string iniName)
 	pchar.debuger_weather.storm = false;
 	pchar.debuger_weather.globalSeaHeight = false;
 	pchar.debuger_weather.hideInterface = false;
-	pchar.debuger_weather.FoamEnable = sti(Sea.Sea2.FoamEnable);
+	pchar.debuger_weather.FoamEnable = int(Sea.Sea2.FoamEnable);
 
 	float fF, fX, fZ, fAY;
-	fF = stf(pchar.debuger_weather.windSpeed);		//сила ветра
-	fX = stf(pchar.debuger_weather.windAngle.x);	//направление x
-	fZ = stf(pchar.debuger_weather.windAngle.z);	//направление z
-	fAY = stf(pchar.debuger_weather.windAngle);
+	fF = float(pchar.debuger_weather.windSpeed);		//сила ветра
+	fX = float(pchar.debuger_weather.windAngle.x);	//направление x
+	fZ = float(pchar.debuger_weather.windAngle.z);	//направление z
+	fAY = float(pchar.debuger_weather.windAngle);
 
 	EngineLayersOffOn(true);
 	SetTimeScale(1.0);
@@ -52,7 +52,7 @@ void InitInterface(string iniName)
 	GameInterface.oldWeatherAngle = fWeatherAngle;
 	fWeatherSpeed = fF;
 	fWeatherAngle = GetAngleY(fX, fZ);
-	GameInterface.oldMaxSeaHeight = stf(Sea.MaxSeaHeight);
+	GameInterface.oldMaxSeaHeight = float(Sea.MaxSeaHeight);
 	GameInterface.oldGlobalFoamV = fGlobalFoamV;
 	WhrCreateSeaEnvironment();
 
@@ -101,10 +101,10 @@ void IDoExit(int exitCode)
 	}
 	DeleteAttribute(pchar, "debuger_weather"); //вышли из дебагера
 	CreateWeatherEnvironment();
-	fWeatherSpeed = stf(GameInterface.oldWeatherSpeed);
-	fWeatherAngle = stf(GameInterface.oldWeatherAngle);
-	Sea.MaxSeaHeight = stf(GameInterface.oldMaxSeaHeight);
-	fGlobalFoamV = stf(GameInterface.oldGlobalFoamV);
+	fWeatherSpeed = float(GameInterface.oldWeatherSpeed);
+	fWeatherAngle = float(GameInterface.oldWeatherAngle);
+	Sea.MaxSeaHeight = float(GameInterface.oldMaxSeaHeight);
+	fGlobalFoamV = float(GameInterface.oldGlobalFoamV);
 	WhrCreateSeaEnvironment();
 	DeleteAttribute(&GameInterface, "oldWeatherSpeed");
 	DeleteAttribute(&GameInterface, "oldWeatherAngle");
@@ -129,7 +129,7 @@ void IReadVariableAfterInit()
 	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "HIDEINTERFACE_CHECKBOX", 2, 1, false);
 	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "GLOBALSEAHEIGHT_CHECKBOX", 2, 1, false);
 	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "STORM_CHECKBOX", 2, 1, false);
-	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "FOAMENABLE_CHECKBOX", 2, 1, sti(pchar.debuger_weather.FoamEnable));
+	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, "FOAMENABLE_CHECKBOX", 2, 1, int(pchar.debuger_weather.FoamEnable));
 }
 
 void ProcessCommandExecute()
@@ -170,7 +170,7 @@ void procSlideChange()
 	}
 	if(sNodeName == "HOURS_SLIDE")
 	{
-		iHourWait = sti(fVal*24);
+		iHourWait = int(fVal*24);
 		CanWait();
 		SetFormatedText("INFO_TEXT", GetCorrectHourString(iHourWait));
 	}
@@ -190,7 +190,7 @@ void WaitProcess(int _iHour)
 	}
 
 	pchar.quest.waithours = _iHour;
-	WaitDate("", 0, 0, 0, sti(pchar.quest.waithours), 0);
+	WaitDate("", 0, 0, 0, int(pchar.quest.waithours), 0);
 	DeleteAttribute(pchar,"quest.waithours");
 	RecalculateJumpTable();
 	Whr_UpdateWeather();
@@ -242,9 +242,9 @@ string GetCorrectHourString(int _hour)
 
 void ChangeWindSpeed()
 {
-	float fCurWind = stf(GameInterface.nodes.WIND_SPEED_SLIDE.value);
+	float fCurWind = float(GameInterface.nodes.WIND_SPEED_SLIDE.value);
 
-	if(!CheckAttribute(&InterfaceStates, "WindSpeed") || stf(InterfaceStates.WindSpeed) != fCurWind)
+	if(!CheckAttribute(&InterfaceStates, "WindSpeed") || float(InterfaceStates.WindSpeed) != fCurWind)
 	{
 		InterfaceStates.WindSpeed = fCurWind;
 
@@ -264,7 +264,7 @@ void GetWindSpeedOptionsData()
 
 float GetWindSpeed(float wind)
 {
-	wind = makefloat(windMin + (wind * windMax));
+	wind = float(windMin + (wind * windMax));
 	if(wind > windMax) wind = windMax;
 	if(wind < windMin) wind = windMin;
 	return wind;
@@ -273,16 +273,16 @@ float GetWindSpeed(float wind)
 void ChangeWindAngle()
 {
 	float fX, fZ;
-	float fCurWind = stf(GameInterface.nodes.WIND_ANGLE_SLIDE.value);
+	float fCurWind = float(GameInterface.nodes.WIND_ANGLE_SLIDE.value);
 
-	if(!CheckAttribute(&InterfaceStates, "WindAngle") || stf(InterfaceStates.WindAngle) != fCurWind)
+	if(!CheckAttribute(&InterfaceStates, "WindAngle") || float(InterfaceStates.WindAngle) != fCurWind)
 	{
 		InterfaceStates.WindAngle = fCurWind;
 
 		pchar.debuger_weather.windAngle.x = cos(GetWindAngle(fCurWind));	//направление x
 		pchar.debuger_weather.windAngle.z = sin(GetWindAngle(fCurWind));	//направление z
-		fX = stf(pchar.debuger_weather.windAngle.x);
-		fZ = stf(pchar.debuger_weather.windAngle.z);
+		fX = float(pchar.debuger_weather.windAngle.x);
+		fZ = float(pchar.debuger_weather.windAngle.z);
 		fWeatherAngle = GetAngleY(fX, fZ);
 		UpdateSea();
 		SetFormatedText("WIND_ANGLE_STR", sWindAngle + " (" + FloatToString(Radian2Degree(GetWindAngle(fCurWind)), 1) + ")");	//Направление ветра
@@ -299,7 +299,7 @@ void GetWindAngleOptionsData()
 
 float GetWindAngle(float wind)
 {
-	wind = makefloat(0.0 + (wind * 360.0));
+	wind = float(0.0 + (wind * 360.0));
 	if(wind > 360.0) wind = 360.0;
 	if(wind < 0.0) wind = 0.0;
 	return Degree2Radian(wind);
@@ -314,7 +314,7 @@ void GetFoamOptionsData()
 
 float GetFoam(float foam)
 {
-	foam = makefloat(foamMin + (foam * foamMax * 0.4));	//хз почему 0.4, мне лень ломать голову над формулами
+	foam = float(foamMin + (foam * foamMax * 0.4));	//хз почему 0.4, мне лень ломать голову над формулами
 	if(foam > foamMax) foam = foamMax;
 	if(foam < foamMin) foam = foamMin;
 	return foam;
@@ -322,13 +322,13 @@ float GetFoam(float foam)
 
 void ChangeFoam()
 {
-	float fFoam = stf(GameInterface.nodes.FOAM_SLIDE.value);
+	float fFoam = float(GameInterface.nodes.FOAM_SLIDE.value);
 
-	if(!CheckAttribute(&InterfaceStates, "Foam") || stf(InterfaceStates.Foam) != fFoam)
+	if(!CheckAttribute(&InterfaceStates, "Foam") || float(InterfaceStates.Foam) != fFoam)
 	{
 		InterfaceStates.Foam = fFoam;
 
-		fGlobalFoamV = GetFoam(stf(InterfaceStates.Foam));
+		fGlobalFoamV = GetFoam(float(InterfaceStates.Foam));
 		UpdateSea();
 		SetFormatedText("FOAM_STR", sFoamHeight + " (" + FloatToString(fGlobalFoamV, 1) + ")");	//Высота пены
 	}
@@ -365,8 +365,8 @@ void procCheckBoxChange()
 void ChangeStormSea()
 {
 	float fX, fZ;
-	fX = stf(pchar.debuger_weather.windAngle.x);
-	fZ = stf(pchar.debuger_weather.windAngle.z);
+	fX = float(pchar.debuger_weather.windAngle.x);
+	fZ = float(pchar.debuger_weather.windAngle.z);
 
 	if(pchar.debuger_weather.storm == false)
 	{
@@ -374,7 +374,7 @@ void ChangeStormSea()
 		bWeatherIsStorm = true;
 		SelectStormByHour();
 		CreateWeatherEnvironment();
-		fWeatherSpeed = GetWindSpeed(stf(GameInterface.nodes.WIND_SPEED_SLIDE.value));
+		fWeatherSpeed = GetWindSpeed(float(GameInterface.nodes.WIND_SPEED_SLIDE.value));
 		fWeatherAngle = GetAngleY(fX, fZ);
 		bWeatherIsStorm = false;
 		UpdateSea();
@@ -383,7 +383,7 @@ void ChangeStormSea()
 	{
 		pchar.debuger_weather.storm = false;
 		CreateWeatherEnvironment();
-		fWeatherSpeed = GetWindSpeed(stf(GameInterface.nodes.WIND_SPEED_SLIDE.value));
+		fWeatherSpeed = GetWindSpeed(float(GameInterface.nodes.WIND_SPEED_SLIDE.value));
 		fWeatherAngle = GetAngleY(fX, fZ);
 		UpdateSea();
 	}
@@ -422,7 +422,7 @@ void ChangeGlobalSeaHeight()
 	if(pchar.debuger_weather.globalSeaHeight == false)
 	{
 		pchar.debuger_weather.globalSeaHeight = true;
-		pchar.debuger_weather.maxSeaHeight = stf(GameInterface.oldMaxSeaHeight);
+		pchar.debuger_weather.maxSeaHeight = float(GameInterface.oldMaxSeaHeight);
 		UpdateSea();
 	}
 	else
@@ -431,7 +431,7 @@ void ChangeGlobalSeaHeight()
 		pchar.debuger_weather.maxSeaHeight = MAX_SEA_HEIGHT;
 		UpdateSea();
 	}
-	Log_Info("Debug: MaxSeaHeight " + FloatToString(stf(pchar.debuger_weather.maxSeaHeight), 1));
+	Log_Info("Debug: MaxSeaHeight " + FloatToString(float(pchar.debuger_weather.maxSeaHeight), 1));
 }
 
 void ChangeHideInterface()
@@ -446,7 +446,7 @@ void ChangeHideInterface()
 		pchar.debuger_weather.hideInterface = false;
 		ChangeShowIntarface();
 	}
-	Log_Info("Debug: HideInterface == " + sti(pchar.debuger_weather.hideInterface));
+	Log_Info("Debug: HideInterface == " + int(pchar.debuger_weather.hideInterface));
 }
 
 void ChangeFoamEnable()
@@ -461,7 +461,7 @@ void ChangeFoamEnable()
 		pchar.debuger_weather.FoamEnable = false;
 		UpdateSea();		
 	}
-	Log_Info("Debug: FoamEnable == " + sti(Sea.Sea2.FoamEnable));
+	Log_Info("Debug: FoamEnable == " + int(Sea.Sea2.FoamEnable));
 }
 
 void UpdateSea()

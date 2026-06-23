@@ -15,6 +15,7 @@ int LocationInitBoarding(int n)
 	// Jason: дополнительные абордажные локации форта
 	//------------------------------------------ двор ---------------------------------------------------
 	Locations[n].id = "Boarding_fortyard";
+	Locations[n].id.label = "Fort inside";
 	Locations[n].image = "loading\FortShturm_" + rand(2) + ".tga";
 	LAi_LocationFantomsGen(&locations[n], false);
 	Locations[n].boarding.locatorNum = 15;
@@ -43,6 +44,7 @@ int LocationInitBoarding(int n)
 	
 	//------------------------------------------ бастион ---------------------------------------------------
 	Locations[n].id = "Boarding_bastion1";
+	Locations[n].id.label = "Fort inside";
 	Locations[n].image = "loading\FortShturm_" + rand(2) + ".tga";
 	LAi_LocationFantomsGen(&locations[n], false);
 	Locations[n].boarding.locatorNum = 15;
@@ -70,6 +72,7 @@ int LocationInitBoarding(int n)
 	
 	//------------------------------------------ бастион ---------------------------------------------------
 	Locations[n].id = "Boarding_bastion2";
+	Locations[n].id.label = "Fort inside";
 	Locations[n].image = "loading\FortShturm_" + rand(2) + ".tga";
 	LAi_LocationFantomsGen(&locations[n], false);
 	Locations[n].boarding.locatorNum = 15;

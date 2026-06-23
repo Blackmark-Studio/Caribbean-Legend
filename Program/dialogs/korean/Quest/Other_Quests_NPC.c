@@ -9,7 +9,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	int iCGood;
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Slave_arest_1":
-			dialog.text = "모른 척하지 마라, 선장! 네 더러운 짓거리가 이미 드러났어. 네가 저지른 학살과 그 배 때문에\n "+NationNameGenitive(sti(npchar.nation))+" 네가 침몰시킨 것 때문에, 우린 널 교수형에 처할 거다!";
+			dialog.text = "모른 척하지 마라, 선장! 네 더러운 짓거리가 이미 드러났어. 네가 저지른 학살과 그 배 때문에\n "+NationNameGenitive(int(npchar.nation))+" 네가 침몰시킨 것 때문에, 우린 널 교수형에 처할 거다!";
 			link.l1 = "그래, 그렇게 나오겠다 이거지... 엿이나 먹어라!";
 			link.l1.go = "Slave_arest_2";
 		break;
@@ -158,12 +158,11 @@ void ProcessDialogEvent()
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////----------------------------------------- Генераторы -----------------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//--> Jason ------------------------ Сомнительное предложение -------------------------------------------	
-		int iCGood;
+	//--> Jason ------------------------ Сомнительное предложение -------------------------------------------
 		case "Contraoffer_patrol":
 			chrDisableReloadToLocation = false;
-			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
-			pchar.GenQuest.Contraoffer.Trader.PatrolSumm = sti(pchar.GenQuest.Contraoffer.Trader.Summ)/3;
+			iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
+			pchar.GenQuest.Contraoffer.Trader.PatrolSumm = int(pchar.GenQuest.Contraoffer.Trader.Summ)/3;
 			dialog.text = "흠, 흠... 이게 누구냐? 우리 식민지에서 허가받지 않은 자들과, 또는 그들끼리 물건을 거래하는 건 금지된 거 몰랐나?";
 			link.l1 = "그래요, 장교? 솔직히 말해서, 그 이야기는 처음 듣는군. 이 칙령이 얼마 전에 통과된 거 맞지?";
 			link.l1.go = "Contraoffer_patrol_1";
@@ -189,10 +188,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_pay1":
-			iCGood = sti(pchar.GenQuest.Contraoffer.Trader.Goods);
+			iCGood = int(pchar.GenQuest.Contraoffer.Trader.Goods);
 			if (GetSummonSkillFromName(pchar, SKILL_FORTUNE) > hrand(120))
 			{
-				dialog.text = "이제야 말이 통하는군... 네 돈 좀 보자... 내가 꽤 구체적인 금액을 들은 것 같은데 - "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ))+". 이제 참가자가 셋이 되었으니 내가 받고 싶은 것은 "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm))+". 그건 네 몫이고, 네 친구도 마찬가지야.";
+				dialog.text = "이제야 말이 통하는군... 네 돈 좀 보자... 내가 꽤 구체적인 금액을 들은 것 같은데 - "+FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.Summ))+". 이제 참가자가 셋이 되었으니 내가 받고 싶은 것은 "+FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm))+". 그건 네 몫이고, 네 친구도 마찬가지야.";
 				link.l1 = "물론이지, 장교 나리. 여기 내 반짝이는 동전들, 아니, 이제는 나리의 반짝이는 동전들이지 – 방금 해변에 실수로 떨어뜨렸잖아... 그리고 여기에는 아무런\n "+GetGoodsNameAlt(iCGood)+" 여기 있지, 하하, 내가 말했잖아.";
 				link.l1.go = "Contraoffer_patrol_complete1";
 				link.l2 = "이봐! 너 너무 욕심 많잖아, 관리야. 네 어머니가 욕심 부리면 안 된다고 안 가르쳤냐? 내 생각엔 칼로 상대하는 게 더 싸게 먹히겠군.";
@@ -215,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_pay2":
-			dialog.text = ""+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm))+". 내 기분이 좋아서 그렇지.";
+			dialog.text = ""+FindRussianMoneyString(int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm))+". 내 기분이 좋아서 그렇지.";
 			link.l1 = "감사합니다, 장교님. 정말 전혀 몰랐습니다... 자, 벌금을 낼 준비가 되어 있습니다.";
 			link.l1.go = "Contraoffer_patrol_complete2";
 			link.l2 = "자네도 그리 정직한 사람은 아닌 것 같군, 경관. 벌금이 너무 비싸잖아. 이 식민지를 자네 같은 놈에게서 구해 주는 게 내가 도울 수 있는 일이겠지.";
@@ -229,7 +228,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_complete":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Contraoffer.Trader.PatrolSumm));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Contraoffer.Trader.PatrolSumm));
 			AddQuestRecord("Contraoffer", "6");
 			CloseQuestHeader("Contraoffer");
 			LAi_CharacterDisableDialog(npchar);
@@ -239,7 +238,7 @@ void ProcessDialogEvent()
 		case "Contraoffer_patrol_fight":
 			AddQuestRecord("Contraoffer", "7");
 			CloseQuestHeader("Contraoffer");
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), -5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), -5);
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 			LAi_SetWarriorTypeNoGroup(npchar);
             LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -256,7 +255,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_patrol_jail_exit":
-			GoToPrison(pchar.GenQuest.Contraoffer.Trader.City, sti(pchar.GenQuest.Contraoffer.Trader.Summ), 7);
+			GoToPrison(pchar.GenQuest.Contraoffer.Trader.City, int(pchar.GenQuest.Contraoffer.Trader.Summ), 7);
 			DialogExit();
 			AddQuestRecord("Contraoffer", "8");
 			CloseQuestHeader("Contraoffer");
@@ -272,10 +271,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1":
-			switch (sti(pchar.GenQuest.Device.Shipyarder.Chance3))
+			switch (int(pchar.GenQuest.Device.Shipyarder.Chance3))
 			{
 				case 0://выбросил
-				if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) != 1)
+				if (int(pchar.GenQuest.Device.Shipyarder.Chance2) != 1)
 				{
 					dialog.text = "제발 용서해 주십시오, 나리! 네, 제가 조선소에서 이 이상한 물건을 훔쳤습니다. 하지만 팔지 못했어요, 아무도 이런 물건을 원하지 않더군요. 그래서 그냥 버렸습니다. 제발 살려주십시오, 좋은 나리, 저를 탓하지 말고 제 배고픔을 탓해 주십시오... 아니었으면 절대 아무것도 훔치지 않았을 겁니다!";
 					link.l1 = "그게 문제군... 그리고 너도 필요 없어. 내가 찾아야 하는 건 그거야\n "+pchar.GenQuest.Device.Shipyarder.Type+". 말해 봐, 어디에 버렸지?";
@@ -330,8 +329,8 @@ void ProcessDialogEvent()
 		
 		case "Device_poorman_1_1":
 			pchar.GenQuest.Device.Shipyarder.Poorsumm = 1000+hrand(1000);
-			dialog.text = "이봐, 이 악기 말하는 거야? 이건 내 거고, 내가 훔친 게 아니야! 그리고 그냥 공짜로 줄 생각도 없어. 갖고 싶으면 돈 내. "+FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))+".";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Device.Shipyarder.Poorsumm))
+			dialog.text = "이봐, 이 악기 말하는 거야? 이건 내 거고, 내가 훔친 게 아니야! 그리고 그냥 공짜로 줄 생각도 없어. 갖고 싶으면 돈 내. "+FindRussianMoneyString(int(pchar.GenQuest.Device.Shipyarder.Poorsumm))+".";
+			if (int(pchar.money) >= int(pchar.GenQuest.Device.Shipyarder.Poorsumm))
 			{
 				link.l1 = "흠... 좋아. 돈 줄게. 여기 네 동전이다, 이제 악기를 내놔!";
 				link.l1.go = "Device_poorman_1_2";
@@ -346,19 +345,19 @@ void ProcessDialogEvent()
 			dialog.text = "좋은 거래였어, 선장! 우리 모두 이익을 나눠 갖겠지, 헤헤... 가져가.";
 			link.l1 = "말이 많군, 도둑놈! 네가 날 속였다고 생각하지 마라, 나는 그냥 조용히 문제 없이 끝내고 싶을 뿐이다. 이 동전들, 네게 아무 소용도 없어. 썩 꺼져!";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Device.Shipyarder.Poorsumm));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Device.Shipyarder.Poorsumm));
 			TakeNItems(pchar, "Tool", 1);
 			Log_Info("You have received the stolen instrument");
 			PlaySound("interface\important_item.wav");
 			AddQuestRecord("Device", "5");
-			AddQuestUserData("Device", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Device.Shipyarder.Poorsumm)));
+			AddQuestUserData("Device", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Device.Shipyarder.Poorsumm)));
 			AddQuestUserData("Device", "sName", pchar.GenQuest.Device.Shipyarder.Type);
 			npchar.lifeday = 0;
 			LAi_CharacterDisableDialog(npchar);
 		break;
 		
 		case "Device_poorman_1_3":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
 			{
 				dialog.text = "안 돼! 경비를 부르지 마! 나... 이 빌어먹을 악기를 줄게. 자, 가져가!";
 				link.l1 = "이제 훨씬 낫군! 썩 꺼져라! 아니면 교수대에 매달릴 테니, 시간문제다.";
@@ -373,7 +372,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_1_4":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance2) == 0)//если мы в городе
 			{
 				dialog.text = "아! 도와줘! 살인자다!";
 				link.l1 = "거기서 멈춰, 이 개놈아!";
@@ -403,7 +402,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_poorman_2_2":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 2)//тут уж как повезёт
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) < 2)//тут уж как повезёт
 			{
 				dialog.text = "글쎄, 날 지휘관 사무실로 데려가고 싶으면 먼저 날 잡아야 할걸 ...";
 				link.l1 = "거기 멈춰, 이 개놈아!";
@@ -568,7 +567,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_2":
-			dialog.text = "그만하시오, 선장! 내가 강도로 보이오? 나는 사업가이며, 그리고 나는 이해관계를 대표하고 있소 "+NationNameGenitive(sti(pchar.questTemp.WPU.Postcureer.EnemyNation))+". 아주 이득이 되는 거래를 제안하고 싶은데, 여기서는 곤란하오. 선술집 방으로 가서 이 일에 대해 이야기합시다. 오래 걸리진 않을 것이오.";
+			dialog.text = "그만하시오, 선장! 내가 강도로 보이오? 나는 사업가이며, 그리고 나는 이해관계를 대표하고 있소 "+NationNameGenitive(int(pchar.questTemp.WPU.Postcureer.EnemyNation))+". 아주 이득이 되는 거래를 제안하고 싶은데, 여기서는 곤란하오. 선술집 방으로 가서 이 일에 대해 이야기합시다. 오래 걸리진 않을 것이오.";
 			link.l1 = "그건 너무 수상하군... 나는 너랑은 거래 안 해, 나리! 썩 꺼져!";
 			link.l1.go = "PostAgent_getout";
 			link.l2 = "흠... 네가 나한테 뭘 내놓을 수 있는지 보자. 하지만 날 공격할 생각은 하지 마라 — 좋게 끝나지 않을 거다. 가자, 내가 따라갈 테니까.";
@@ -628,8 +627,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_inTavern_3":
-			pchar.questTemp.WPU.Postcureer.AgentMoney = sti(pchar.rank)*3500;
-			dialog.text = "왜 묻는 거요, 선장? 그래, 하나 있소. 내가 그냥 장난이나 치는 줄 아시오? 내가 당신에게 제안하는 건\n "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney))+" 이 서류들을 볼 기회를 주어서 고맙소. 그러니 이제 그 꾸러미를 내게 줄 수 있겠소? 제발.";
+			pchar.questTemp.WPU.Postcureer.AgentMoney = int(pchar.rank)*3500;
+			dialog.text = "왜 묻는 거요, 선장? 그래, 하나 있소. 내가 그냥 장난이나 치는 줄 아시오? 내가 당신에게 제안하는 건\n "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney))+" 이 서류들을 볼 기회를 주어서 고맙소. 그러니 이제 그 꾸러미를 내게 줄 수 있겠소? 제발.";
 			link.l1 = "가져가. 하지만 다시 돌려줘야 하고, 봉인된 채로여야 해!";
 			link.l1.go = "PostAgent_inTavern_4";
 			link.l2 = "있잖아, 안 할 거야. 마음에 안 들어.";
@@ -657,7 +656,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "PostAgent_inTavern_6":
-			dialog.text = "끝났소. 말했듯이, 가장 정확하게 처리했소. 약속한 대로 이 꾸러미를 가져가시오 "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney))+". 그리고 난 가봐야겠어. 행운을 빌어, 선장. 우리가 거래를 해서 기뻐.";
+			dialog.text = "끝났소. 말했듯이, 가장 정확하게 처리했소. 약속한 대로 이 꾸러미를 가져가시오 "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney))+". 그리고 난 가봐야겠어. 행운을 빌어, 선장. 우리가 거래를 해서 기뻐.";
 			link.l1 = "잘 가...";
 			link.l1.go = "PostAgent_inTavern_7";
 		break;
@@ -666,14 +665,14 @@ void ProcessDialogEvent()
 			DialogExit();
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false; 
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Postcureer.AgentMoney));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Postcureer.AgentMoney));
 			GiveItem2Character(pchar, pchar.questTemp.WPU.Current.Item);
 			sld = characterFromID("PostAgent");        
 			LAi_SetActorType(sld);
 			LAi_ActorRunToLocation(sld, "reload", "reload1", "none", "", "", "", 2);
 			AddQuestRecord("Postcureer", "15");
 			AddQuestUserData("Postcureer", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.AgentMoney)));
+			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.AgentMoney)));
 		break;
 		
 		case "PostAgent_inTavern_fight":
@@ -767,7 +766,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Badboy_2":
-			switch (sti(pchar.GenQuest.Badboy.Brothel.Type))
+			switch (int(pchar.GenQuest.Badboy.Brothel.Type))
 			{
 				case 0://или напугается, или будет быковать - от авторитета
 					if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 30)
@@ -861,7 +860,7 @@ void ProcessDialogEvent()
 			LAi_LocationDisableOfficersGen(pchar.GenQuest.Badboy.Brothel.City + "_ExitTown", true);//офицеров не пускать
 			locations[FindLocation(pchar.GenQuest.Badboy.Brothel.City + "_ExitTown")].DisableEncounters = true; //энкаутеры закроем
 			pchar.quest.BadboyDuelTimer.win_condition.l1 = "Timer";
-			pchar.quest.BadboyDuelTimer.win_condition.l1.date.hour  = sti(GetTime() + 2);
+			pchar.quest.BadboyDuelTimer.win_condition.l1.date.hour  = int(GetTime() + 2);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.BadboyDuelTimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

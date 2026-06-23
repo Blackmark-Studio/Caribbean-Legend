@@ -174,7 +174,7 @@ void GetItemFiltersBlade(ref rChar, string sType, ref rBladeTypeFlags, ref rQual
 {
 	string sPhantomType;
 	string blade;
-	int iRank = sti(rChar.rank);
+	int iRank = int(rChar.rank);
 	rBladeTypeFlags = ITEM_BLADE_TYPE_FLAG_ALL;
 	if(CheckAttribute(rChar, "PhantomType"))
 	{
@@ -364,7 +364,7 @@ void GetItemFiltersBlade(ref rChar, string sType, ref rBladeTypeFlags, ref rQual
 void GetItemFiltersItems(ref rChar, string sType, ref rQualityFlags)
 {
 	string sPhantomType;
-	int iRank = sti(rChar.rank);
+	int iRank = int(rChar.rank);
 
 	if (sType == ITEM_PACK_ELITE)
 	{
@@ -400,7 +400,7 @@ void GetItemFiltersItems(ref rChar, string sType, ref rQualityFlags)
 void GetMushketFiltersItems(ref rChar, string sType, ref rQualityFlags)
 {
 	string sPhantomType;
-	int iRank = sti(rChar.rank);
+	int iRank = int(rChar.rank);
 
 	if (sType == ITEM_PACK_ELITE)
 	{
@@ -436,7 +436,7 @@ void GetMushketFiltersItems(ref rChar, string sType, ref rQualityFlags)
 void GetBulletQuality(ref rChar, string sType, ref rQuality)
 {
 	string sPhantomType;
-	int iRank = sti(rChar.rank);
+	int iRank = int(rChar.rank);
 
 	if (sType == ITEM_PACK_ELITE)
 	{
@@ -510,7 +510,7 @@ void FindBlades(ref rArray, int iBladeTypeFlags, int iQualityFlags, int iGroupFl
 }
 
 
-void FindGuns(ref rArray, int iQualityFlags, int iItemType)
+void FindGuns(ref rArray, int iQualityFlags, string iItemType)
 {
 	int n = 0;
 	//trace("FindGuns: iQualityFlags = "+iQualityFlags+"; iItemType = "+iItemType);
@@ -602,6 +602,13 @@ string GetBestBulletWithLimit(ref rGun, int iMaxQuality)
 	for (int i = 0; i < iNum; i++)
 	{
 		aref arCur = GetAttributeN(rType, i);
+		if ("bullet" !in arCur)
+		{
+			//assert(0, rGun.id+": bullet type not found for elem "+i);
+			//trace(rGun.id+" attributes:");
+			//DumpAttributes(rGun);
+			continue;
+		}
 		string sBulletType = arCur.bullet;
 		if(AttributeIsTrue(arCur, "Default"))
 		{

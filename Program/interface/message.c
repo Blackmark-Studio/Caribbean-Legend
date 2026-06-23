@@ -35,7 +35,7 @@ void InitInterface_S(string iniName, string messageName)
 	
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial")) 
 	{
-		curShowTutorial = sti(InterfaceStates.ShowTutorial);
+		curShowTutorial = int(InterfaceStates.ShowTutorial);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, curShowTutorial);
 }
@@ -54,7 +54,7 @@ void IDoExit(int exitCode)
 {
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial"))
 	{
-		if(sti(InterfaceStates.ShowTutorial) != curShowTutorial) SaveGameOptions();
+		if(int(InterfaceStates.ShowTutorial) != curShowTutorial) SaveGameOptions();
 	}
 	EndAboveForm(true);
 	//LAi_SetPlayerType(pchar);

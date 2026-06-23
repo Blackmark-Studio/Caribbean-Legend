@@ -111,7 +111,7 @@ void shipsReInitNewSpeeds()
     {
         if (!CheckAttribute(&RealShips[i], "BaseType")) continue;
 
-        switch (sti(RealShips[i].BaseType))
+        switch (int(RealShips[i].BaseType))
         {
             // Квестовые, перезаписываем:
             case SHIP_PINK:           RealShips[i].SpeedRate = 8.60; break;  // Пинк "Принципио"

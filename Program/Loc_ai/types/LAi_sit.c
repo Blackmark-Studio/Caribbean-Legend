@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_sit_Init(aref chr)
+void LAi_type_sit_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -30,9 +30,9 @@ void LAi_type_sit_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_sit_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_sit_CharacterUpdate(ref chr, float dltTime)
 {
-	float time = stf(chr.chr_ai.type.wait) - dltTime; 
+	float time = float(chr.chr_ai.type.wait) - dltTime;
 	if (time < 0.0)
 	{		
 		ref chrTarget;
@@ -64,13 +64,13 @@ void LAi_type_sit_CharacterUpdate(aref chr, float dltTime)
 			int num = FindNearCharacters(chr, 2.3, -1.0, 0.0, 0.0, false, true);
 			for(i = 0; i < num; i++)
 			{
-				iTemp = chrFindNearCharacters[i].index;
+				iTemp = int(chrFindNearCharacters[i].index);
 				chrTarget = &characters[iTemp];
 				if(chrTarget.chr_ai.type == LAI_TYPE_SIT && chrFindNearCharacters[i].index != nMainCharacterIndex)
 				{
 					GetCharacterAy(chr, &fAng);
-					//xAng = stf(chrFindNearCharacters[i].dx) * cos(fAng) - stf(chrFindNearCharacters[i].dz) * sin(fAng);
-					zAng = stf(chrFindNearCharacters[i].dz) * cos(fAng) + stf(chrFindNearCharacters[i].dx) * sin(fAng);				
+					//xAng = float(chrFindNearCharacters[i].dx) * cos(fAng) - float(chrFindNearCharacters[i].dz) * sin(fAng);
+					zAng = float(chrFindNearCharacters[i].dz) * cos(fAng) + float(chrFindNearCharacters[i].dx) * sin(fAng);
 					if (zAng > -0.9 && zAng < 0.9)
 					{
 						if(LAi_Character_CanDialog(chr, chrTarget) && rand(1))
@@ -103,7 +103,7 @@ void LAi_type_sit_CharacterUpdate(aref chr, float dltTime)
 				num = FindNearCharacters(chr, 10.0, -1.0, 180.0, 0.01, true, true);
 				for(i = 0; i < num; i++)
 				{
-					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
+					if(nMainCharacterIndex == int(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
 						if (bMainCharacterInBox && !HasPerk(pchar, "Quiet"))
@@ -123,32 +123,32 @@ void LAi_type_sit_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_sit_CharacterLogin(aref chr)
+bool LAi_type_sit_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_sit_CharacterLogoff(aref chr)
+bool LAi_type_sit_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_sit_TemplateComplite(aref chr, string tmpl)
+void LAi_type_sit_TemplateComplite(ref chr, string tmpl)
 {
 	LAi_tmpl_player_InitTemplate(chr);
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_sit_NeedDialog(aref chr, aref by)
+void LAi_type_sit_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_sit_CanDialog(aref chr, aref by)
+bool LAi_type_sit_CanDialog(ref chr, ref by)
 {
-	if(sti(by.index) == nMainCharacterIndex && chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
+	if(int(by.index) == nMainCharacterIndex && chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
 		if(LAi_tmpl_dialog_StopNPC(chr)) return true;
 	}	
@@ -159,7 +159,7 @@ bool LAi_type_sit_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_sit_StartDialog(aref chr, aref by)
+void LAi_type_sit_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_tmpl_stay_InitTemplate(chr);
@@ -168,7 +168,7 @@ void LAi_type_sit_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_sit_EndDialog(aref chr, aref by)
+void LAi_type_sit_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	chr.chr_ai.type.wait = 15;
@@ -182,12 +182,12 @@ void LAi_type_sit_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy)
 
 
 //Персонаж атакован
-void LAi_type_sit_Attacked(aref chr, aref by)
+void LAi_type_sit_Attacked(ref chr, ref by)
 {
 	
 }
 
-int LAi_type_sit_FindEnemy(aref chr, int num)
+int LAi_type_sit_FindEnemy(ref chr, int num)
 {
 	if(num <= 0) return -1;
 	int i, idx;
@@ -195,7 +195,7 @@ int LAi_type_sit_FindEnemy(aref chr, int num)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
@@ -203,7 +203,7 @@ int LAi_type_sit_FindEnemy(aref chr, int num)
 	{		
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) return idx;
 		}
 	}

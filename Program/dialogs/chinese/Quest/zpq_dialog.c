@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "别想骗我。 把钱交出来 - " + FindRussianMoneyString(sti(pchar.questTemp.zpq.sum)) + " 然后你就可以走了。 否则我们就强取。 ";
+			dialog.text = "别想骗我。 把钱交出来 - " + FindRussianMoneyString(int(pchar.questTemp.zpq.sum)) + " 然后你就可以走了。 否则我们就强取。 ";
 			if (pchar.questTemp.zpq == "failed")
 			{
 				link.l1 = "你不是为那个堡垒里的老鼠工作吗? 那我有个好消息要告诉你, 我把他送进地狱了。 ";
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 				link.l1 = "你不是为那个堡垒里的老鼠工作吗? 告诉他钱已经交给可靠的人了, 让他别再惦记了。 ";
 			link.l1.go = "zpq_sld2_3";
 			}
-			if(makeint(Pchar.money) >= sti(pchar.questTemp.zpq.sum))
+			if(int(Pchar.money) >= int(pchar.questTemp.zpq.sum))
 			{
 				link.l2 = "好吧, 拿上你这脏钱, 混蛋! ";
 				link.l2.go = "zpq_sld2_6";
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			dialog.text = "很好。 把钱交出来然后滚, 船长! ";
 			link.l1 = "... ";
 			link.l1.go = "zpq_sld2_7";
-			AddMoneyToCharacter(Pchar, -makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(Pchar, -int(pchar.questTemp.zpq.sum));
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);
 			AddQuestRecord("zpq", "8");
 			AddQuestUserData("zpq", "sSex", GetSexPhrase("",""));

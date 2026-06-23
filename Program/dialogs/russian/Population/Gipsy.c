@@ -24,7 +24,7 @@ void ProcessDialogEvent()
     // вызов диалога по городам <--
 	
 	ProcessCommonDialogRumors(NPChar, Link, NextDiag);
-	
+	sTemp = GuessText();
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -92,10 +92,9 @@ void ProcessDialogEvent()
 			link.l4 = "5000 песо.";
 			link.l4.go = "guess_rate_4";
 		break;
-		
-		sTemp = GuessText();
+
 		case "guess_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "Ай, спасибо за эти несколько монет, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
@@ -111,7 +110,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_2"://немного в везение или скрытность
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
 				dialog.text = "Ай, спасибо, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
@@ -129,7 +128,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_3"://здоровье + везение или скрытность, харизма
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "Ай, спасибо за серебро, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
@@ -149,7 +148,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_4"://умения в оружие, везение+скрытность, здоровье, харизма
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "Ай, спасибо за твою щедрость, "+GetSexPhrase("соколик","голубушка")+"! Теперь слушай: "+sTemp+"";
@@ -198,8 +197,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "Ну ладно, выручу я тебя. Только не говори никому, что это я тебе отраву продала. С тебя "+sti(npchar.quest.poison_price)+" дублонов.";
-			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
+			dialog.text = "Ну ладно, выручу я тебя. Только не говори никому, что это я тебе отраву продала. С тебя "+int(npchar.quest.poison_price)+" дублонов.";
+			if (PCharDublonsTotal() >= int(npchar.quest.poison_price))
 			{				
 				link.l1 = "Дороговато, конечно... Ну да ладно, лишь бы помогло.";
 				link.l1.go = "get_poison_4";
@@ -219,7 +218,7 @@ void ProcessDialogEvent()
 		
 		case "get_poison_4" :
 			PlaySound("interface\important_item.wav");
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.poison_price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.poison_price));
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
@@ -227,7 +226,7 @@ void ProcessDialogEvent()
 
 	// --> Мангароса
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("Показывай, "+GetSexPhrase("соколик","голубушка")+", что там у тебя за травка... Хм... пожалуй, я куплю её у тебя. Три сотни песо тебя устроит?","Покажи мне её, "+GetSexPhrase("дружок","подруга")+"... Хе... ну, две с половиной сотни я тебе за неё, пожалуй, заплачу.","Давай посмотрим... О! Интересный экземпляр! Две сотни серебряных монет! По рукам?")"";
+			dialog.text = LinkRandPhrase("Показывай, "+GetSexPhrase("соколик","голубушка")+", что там у тебя за травка... Хм... пожалуй, я куплю её у тебя. Три сотни песо тебя устроит?","Покажи мне её, "+GetSexPhrase("дружок","подруга")+"... Хе... ну, две с половиной сотни я тебе за неё, пожалуй, заплачу.","Давай посмотрим... О! Интересный экземпляр! Две сотни серебряных монет! По рукам?");
 			link.l1 = LinkRandPhrase("Начинается... Чернобровая, я не "+GetSexPhrase("какой-нибудь деревенский простачок","какая-нибудь деревенская простачка")+". Я знаю, что это за травка. Это - мангароса...","Да что ты такое говоришь! Это же мангароса, причём отличный экземпляр. Не пытайся водить меня за нос.","Ага, вот прямо сейчас взял"+GetSexPhrase("","а")+" и отдал"+GetSexPhrase("","а")+" тебе мангаросу за эти гроши...");
 			link.l1.go = "mangarosa_1";
 		break;
@@ -240,7 +239,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
+			if (int(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Хм... Ну, пожалуй, никакого страху не будет, если я тебе расскажу немного о ней. Всё равно без специальных знаний у тебя ничего путного не выйдет.";
 				link.l1 = "Я в"+GetSexPhrase("есь","ся")+" внимание!";
@@ -278,7 +277,7 @@ void ProcessDialogEvent()
 			link.l1 = LinkRandPhrase("Ну и напрасно! Расскажет кто-нибудь другой из ваших. Он и получит мангаросу в подарок. Бывай!","Что за упрямство? Не расскажешь ты - расскажет другая. Ей я и подарю мангаросу. Прощай.","Что ты так ерепенишься? Я ведь всё равно своего добьюсь. Кто-нибудь из ваших окажется сговорчивей и получит эту мангаросу бесплатно. Пока!");
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
-			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
+			pchar.questTemp.Mangarosa.g_count = int(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":

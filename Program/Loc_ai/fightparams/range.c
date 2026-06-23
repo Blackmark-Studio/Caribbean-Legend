@@ -8,8 +8,8 @@ float LAi_GunCalcDamage(ref attacker, ref enemy, string sBullet, string sType, i
 		if(sBullet == "powder_pellet") LaunchBlastPellet(enemy);
 		if(sBullet == "grenade") LaunchBlastGrenade(enemy);
 		
-		min = stf(attacker.chr_ai.(sType).DmgMin);
-		max = stf(attacker.chr_ai.(sType).DmgMax);
+		min = float(attacker.chr_ai.(sType).DmgMin);
+		max = float(attacker.chr_ai.(sType).DmgMax);
 	}
 
 	float aSkill = DamageSkillMtp(attacker, "range"); //Учитываем скилы
@@ -17,7 +17,7 @@ float LAi_GunCalcDamage(ref attacker, ref enemy, string sBullet, string sType, i
 	float shotDamage;
 	if(IsBulletGrape(sBullet))
 	{
-		shotDamage = stf(attacker.chr_ai.(sType).basedmg) * nShots;
+		shotDamage = float(attacker.chr_ai.(sType).basedmg) * nShots;
 		shotDamage *= Bring2Range(0.75, 1.5, 0.0, 1.0, aSkill);
 	}
 	else
@@ -29,7 +29,7 @@ float LAi_GunCalcDamage(ref attacker, ref enemy, string sBullet, string sType, i
 //Расчитать полученный опыт при попадании из пистолета - evganat - переделал
 float LAi_GunCalcDamageExperience(ref attack, ref enemy, float dmg, bool isHeadShot)
 {
-	float hp = stf(enemy.chr_ai.hp);
+	float hp = float(enemy.chr_ai.hp);
 	if(dmg > hp)
 		dmg = hp;
 	float exp = dmg * 0.08;
@@ -45,8 +45,8 @@ float LAi_GunCalcKillExperience(ref attack, ref enemy)
 
 float LAi_GunCalcExperience(ref attack, ref enemy, float exp)
 {
-	int attackRank = sti(attack.rank);
-	int enemyRank = sti(enemy.rank);
+	int attackRank = int(attack.rank);
+	int enemyRank = int(enemy.rank);
 	float kRank = 1.0 + (enemyRank - attackRank) * 0.1;
 	if(kRank > 1.6)
 		kRank = 1.6;
@@ -65,11 +65,7 @@ float LAi_GunCalcExperience(ref attack, ref enemy, float exp)
 //Расчитаем текущую скорость перезарядки пистолета
 float LAi_GunReloadSpeed(ref chr, string sType)
 {
-	float charge_dlt = LAI_DEFAULT_DLTCHRG;
-	if (CheckAttribute(chr, "chr_ai." + sType + ".charge_dlt"))
-	{
-		charge_dlt = stf(chr.chr_ai.(sType).charge_dlt);
-	}
+	float charge_dlt = chr.chr_ai.(sType).charge_dlt$float(LAI_DEFAULT_DLTCHRG);
 
 	aref landTable = CT_GetTable(chr, CT_LAND);
 	charge_dlt *= GetReloadSpeed(landTable, sType);
@@ -94,10 +90,10 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 	//Аттака своей группы
 	if (!LAi_IsGroupDamagableEnemy(attacker, enemy)) return; // проверка ударов по своим
 
-	if (stf(attacker.chr_ai.(weaponType).EnergyP) > 0.0)
+	if (float(attacker.chr_ai.(weaponType).EnergyP) > 0.0)
 	{
-		if (sBullet != "powder_pellet") Lai_CharacterChangeEnergy(enemy, -stf(attacker.chr_ai.(weaponType).EnergyP));
-		else Lai_CharacterChangeEnergy(enemy, -stf(attacker.chr_ai.(weaponType).EnergyP));
+		if (sBullet != "powder_pellet") Lai_CharacterChangeEnergy(enemy, -float(attacker.chr_ai.(weaponType).EnergyP));
+		else Lai_CharacterChangeEnergy(enemy, -float(attacker.chr_ai.(weaponType).EnergyP));
 	}
 
 	float damageMtp = 1 + GetDamageMtp(&aTable, SHOT_STRIKE, weaponType); // множитель урона
@@ -113,7 +109,7 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 
 	if (!HasDescriptor(rAmmo, "PiercingAmmo")) damageMtp -= GetDamageReduction(&eTable); // вражеское снижение урона
 	damageMtp -= GetRangeDamageReduction(&eTable);                                      // вражеское снижение урона от огнестрела
-	int resultDamage = MakeInt(damage * func_fmax(0, damageMtp) + 0.5);                 // итого базовый урон * мультипликатор
+	int resultDamage = int(damage * func_fmax(0, damageMtp) + 0.5);                 // итого базовый урон * мультипликатор
 	if (resultDamage <= 0.0) return;
 
 	LAi_ApplyCharacterDamage(enemy, resultDamage, "fire", isCrit);

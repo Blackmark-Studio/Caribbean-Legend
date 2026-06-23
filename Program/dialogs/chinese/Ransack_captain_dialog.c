@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear() + "我是你的俘虏, " + GetAddress_Form(NPChar) + "。 但我想让你知道" + NationNameNominative(sti(NPChar.nation)) + "从不为自己人支付赎金。 我们都是为自己。 ";
+				dialog.text = RandSwear() + "我是你的俘虏, " + GetAddress_Form(NPChar) + "。 但我想让你知道" + NationNameNominative(int(NPChar.nation)) + "从不为自己人支付赎金。 我们都是为自己。 ";
 				link.l1 = "好吧... 看来我从你身上赚不到钱。 至少我可以在任何殖民地把你作为罪犯赎出去。 ";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear() + "我是你的俘虏, " + GetAddress_Form(NPChar) + "。 " + NationNameNominative(sti(NPChar.nation)) + "会为我的自由支付高价。 ";
+				dialog.text = RandSwear() + "我是你的俘虏, " + GetAddress_Form(NPChar) + "。 " + NationNameNominative(int(NPChar.nation)) + "会为我的自由支付高价。 ";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "看, 你是个熟练的水手, 我需要像你这样的人。 你愿意在我的指挥下服役吗? ";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "情报"
 						dialog.text = RandPhraseSimple("船长, 你想听听我关于赎金更有利方案的建议吗? ",
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "船长, 你为什么不直接放我走? 你不需要我。 选择当海盗是我唯一的选择, 因为我没有有价值的技能或教育。 我的愿望是赚些钱然后退休。 ";
 					if (FindFreeRandomOfficer() > 0)
@@ -157,9 +157,9 @@ void ProcessDialogEvent()
 							RandPhraseSimple("你是我的俘虏, 我有权对你做任何想做的事。 你的意见在这里没有价值。 ",
 							"你是... 嗯, 你曾是战船的船长, 你知道风险。 不要在这里把自己描绘成圣人。 "));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "看, 你是个熟练的战士, 我需要像你这样的亡命之徒。 你想成为我的军官吗? ";
 								link.l3.go = "free_to_officer";
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // 只设置幽灵
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // 只设置幽灵
         	            {
                         	ReleasePrisoner(offref); // 释放了俘虏
 							LAi_SetWarriorType(offref);
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "好的。 这对我来说足够了。 现在直奔主题, 在" + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.City + "Voc") + "住着一位富有的商人" + NPChar.Hold_GenQuest.Name + "。 " + 
-				"他在他的船'" + NPChar.Hold_GenQuest.ShipName + "上通过出售" + GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + "发了财, 航线是: " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + " - " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) +"。 " + 
+				"他在他的船'" + NPChar.Hold_GenQuest.ShipName + "上通过出售" + GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name + "Acc")) + "发了财, 航线是: " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.FromCity) + " - " + XI_ConvertString("Colony" + NPChar.Hold_GenQuest.ToCity) +"。 " +
 				"当他货物太多时, 他会支付护送费用。 " + sTmp + " 我相信这个信息对你来说比一个人的生命更有价值。 ";
 			link.l1 = "怀疑这个信息对我有用。 我不会追捕和平的商人。 ";	
 			link.l1.go = "free_tip_off_0";
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);

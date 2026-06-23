@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "俺を騙そうなんて思うな。ただ金を渡せ―― "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+" お前は好きに行っていいぜ。\nさもなくば、力ずくで奪い取るまでだ。";
+			dialog.text = "俺を騙そうなんて思うな。ただ金を渡せ―― "+FindRussianMoneyString(int(pchar.questTemp.zpq.sum))+" お前は好きに行っていいぜ。\nさもなくば、力ずくで奪い取るまでだ。";
 			if (pchar.questTemp.zpq == "failed")
 			{
 				link.l1 = "あの砦のネズミの手下じゃねえのか？だったらいい知らせがあるぜ、俺がそいつを地獄に送ってやったんだ。";
@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 				link.l1 = "あの砦のネズミの手下じゃねえのか？そいつに伝えろ、金は信頼できる奴の手に渡ったから、もう諦めろってな。";
 			link.l1.go = "zpq_sld2_3";
 			}
-			if(makeint(Pchar.money) >= sti(pchar.questTemp.zpq.sum))
+			if(int(Pchar.money) >= int(pchar.questTemp.zpq.sum))
 			{
 				link.l2 = "いいだろう、汚い金を持っていけ、この野郎！";
 				link.l2.go = "zpq_sld2_6";
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			dialog.text = "いいだろう。それを渡して、とっとと消えな、船長！";
 			link.l1 = "...";
 			link.l1.go = "zpq_sld2_7";
-			AddMoneyToCharacter(Pchar, -makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(Pchar, -int(pchar.questTemp.zpq.sum));
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);
 			AddQuestRecord("zpq", "8");
 			AddQuestUserData("zpq", "sSex", GetSexPhrase("",""));

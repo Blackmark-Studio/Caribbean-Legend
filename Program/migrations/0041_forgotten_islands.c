@@ -79,7 +79,7 @@ void MigrateStealthFlags_0041()
 
 		for (int x = maxClass; x <= 6; x++)
 		{
-			_STH_AddFlagToUse(i, x)
+			_STH_AddFlagToUse(i, x);
 		}
 	}
 }

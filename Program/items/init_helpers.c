@@ -196,5 +196,5 @@ void ReinitBladeDamage(ref blade)
 // Разброс урона генерируемого клинка от клинка-оригинала
 float GetGeneratableDamageFromOriginalBlade(ref blade)
 {
-	return stf(blade.attack) * (0.94 + fRandSmall(0.14));
+	return float(blade.attack) * (0.94 + fRandSmall(0.14));
 }

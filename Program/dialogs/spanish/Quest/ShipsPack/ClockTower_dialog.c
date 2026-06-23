@@ -341,7 +341,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Visser_24":
 			dialog.text = "Nacionalidad?";
-			link.l1 = ""+NationNameNominative(sti(pchar.baseNation))+".";
+			link.l1 = ""+NationNameNominative(int(pchar.baseNation))+".";
 			link.l1.go = "ClockTower_Visser_25";
 		break;
 
@@ -553,7 +553,7 @@ void ProcessDialogEvent()
 		
 		// Первое знакомство с ван Дорном
 		case "ClockTower_VanDoorn_1":
-			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
+			NationName = GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
 			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Tu barco: '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" cañones y "+GetMaxCrewQuantity(pchar)+" tripulantes.";
 			link.l1 = "Todo correcto.";
@@ -606,7 +606,7 @@ void ProcessDialogEvent()
 				link.l5 = "Acabas de registrar mi barco. ¿Crees que un capitán incompetente podría mantenerlo?";
 				link.l5.go = "ClockTower_VanDoorn_option_5";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_6") && sti(pchar.Money) >= 1000000)
+			if (!CheckAttribute(npchar, "ClockTower_option_6") && int(pchar.Money) >= 1000000)
 			{
 				link.l6 = "Me las arreglo bien, y el dinero crece en los árboles en el Caribe.";
 				link.l6.go = "ClockTower_VanDoorn_option_6";
@@ -1061,7 +1061,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddDialogExitQuestFunction("ClockTower_NightFree");
 			NextDiag.CurrentNode = "ClockTower_Johan_51";
-			// if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+			// if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 		break;
 		
 		case "ClockTower_Peter_50":
@@ -1433,7 +1433,7 @@ void ProcessDialogEvent()
 		
 		// Абордаж Амстердама, перед боем с Ван Дормом
 		case "ClockTower_VanDoorn_21":
-			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
+			NationName = GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
 			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Tu barco: '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" cañones y "+GetMaxCrewQuantity(pchar)+" tripulantes.";
 			link.l1 = "Es usted tan preciso como siempre, mynheer director.";
@@ -1575,7 +1575,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Visser_114":
 			dialog.text = "Nacionalidad?";
-			link.l1 = ""+NationNameNominative(sti(pchar.baseNation))+".";
+			link.l1 = ""+NationNameNominative(int(pchar.baseNation))+".";
 			link.l1.go = "ClockTower_Visser_115";
 		break;
 
@@ -1689,7 +1689,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
 
@@ -1702,7 +1702,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_audit_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 			if (CanUpgradeShip(sld, &sTemp, "Audit"))
 			{
@@ -1732,7 +1732,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_OfficeServices_audit_upgradeShip":
 			Achievment_Set("ach_CL_199");
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			RemoveDublonsFromPCharTotal(GetAuditShipCost(sld));
 			UpgradeShipAudit(sld);
 			dialog.text = "Listo.";
@@ -1761,7 +1761,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
 
@@ -1774,7 +1774,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_buffSpec_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 			if (CanUpgradeShip(sld, &sTemp, "SpecialityUpgrade"))
 			{
@@ -1804,7 +1804,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_OfficeServices_buffSpec_upgradeShip":
 			Achievment_Set("ach_CL_199");
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			RemoveDublonsFromPCharTotal(GetSpecialityUpgradeShipCost(sld));
 			UpgradeShipSpeciality(sld);
 			dialog.text = "Listo.";
@@ -1834,7 +1834,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
 
@@ -1847,7 +1847,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_changeTrait_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 
 			if (ShipTraitCanBeChanged(sld, &sTemp))
@@ -1877,7 +1877,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_changeTrait_upgradeShip":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			NextDiag.CurrentNode = "ClockTower_OfficeServices";
 			DialogExit();
 			LaunchChangeShipTraitScreen(sld);
@@ -1948,8 +1948,8 @@ void ClockTower_NoShipInPort(ref link)
 
 int ClockTower_PlaySound_rh2(string name)
 {
-    float x = stf(loadedLocation.locators.reload.houseO2.x);
-    float y = stf(loadedLocation.locators.reload.houseO2.y);
-    float z = stf(loadedLocation.locators.reload.houseO2.z);
-    return SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z);
+    float x = float(loadedLocation.locators.reload.houseO2.x);
+    float y = float(loadedLocation.locators.reload.houseO2.y);
+    float z = float(loadedLocation.locators.reload.houseO2.z);
+    return int(SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z));
 }

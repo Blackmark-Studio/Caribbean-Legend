@@ -18,7 +18,7 @@ void StealthCheckGates_Node1()
 		case "a":
 			bool anyPotion = StealthCheckGates_HasAnyPotion();
 			reaction = SF_AddReaction("b", "", "", SF_Icon("item", storyObject.temp.potion));
-			SF_SetResult(reaction, sti(storyObject.temp.potionPoints));
+			SF_SetResult(reaction, int(storyObject.temp.potionPoints));
 			SF_AddCondition(&reaction, anyPotion, SF_CONDITION_CUSTOM, SF_Convert("missingPotion"));
 		break;
 		case "b":
@@ -51,7 +51,7 @@ void StealthCheckGates_Node1()
 	SF_SetChance(action, GetSpecialAfterPenalty(pchar, SPECIAL_C) * 3, SPECIAL_C);
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_FORTUNE) / 2, SKILL_FORTUNE);
 	if (IsCharacterEquippedArtefact(pchar, "indian_11")) SF_SetChance(action, 15, "indian_11"); // если маска нгомбо
-	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
+	SF_SetChance(action, int(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon("story", "fail"));
 }

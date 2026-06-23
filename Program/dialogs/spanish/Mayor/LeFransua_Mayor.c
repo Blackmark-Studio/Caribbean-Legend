@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Ah, al fin. Estaba pensando en venderlo a ese dueño de plantación de Barbados, estará aquí en una semana o dos... ¿Tienes un rescate?" + GetSexPhrase("", "") + "?";
 			link.l1 = "Mira, " + NPChar.name + " , hay un pequeño problema... En realidad, no tengo tanto dinero. Pero estoy listo para trabajar.";
 			link.l1.go = "CapComission2_2";
-			if (makeint(pchar.money) > 150000)
+			if (int(pchar.money) > 150000)
 			{
 				link.l2 = "Es bueno que no lo hayas vendido. Aquí están tus monedas - 150.000 pesos. ¿Dónde puedo conseguirlo?" link.l2.go = "CapComission2_3";
 			}
@@ -110,8 +110,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "CapComission2_2_2":
 		CaptainComission_GetRandomShore();
-		pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-		pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+		pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+		pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 		pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 		dialog.text = "Mm.. Bueno " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " ha convencido a algunos piratas de que su parte del botín se guardará en nuestro escondite no lejos de " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + ". Sus dos barcos '" + pchar.GenQuest.CaptainComission.ShipName1 + "' y '" + pchar.GenQuest.CaptainComission.ShipName2 + " izó anclas no hace mucho y zarpó hacia " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Abl") + "¿Ahora ves por qué no puedo confiar en mis hombres para hacer ese trabajo?";
 		link.l1 = "Ya veo. ¿Cuánto tiempo tengo?";
@@ -196,7 +196,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "¿Bajar el precio?! ¡Acabo de perder mi alijo por tu incompetencia! ¡Ahora puedo subir el precio! Puedes llevártelo por 200.000 pesos si quieres, o puedes largarte al diablo de aquí.";
 		link.l1 = "Es demasiado caro... Adiós...";
 		link.l1.go = "CapComission4_4";
-		if (sti(pchar.money) >= 200000)
+		if (int(pchar.money) >= 200000)
 		{
 			link.l2 = "Maldita sea, está bien, toma tu moneda.";
 			link.l2.go = "CapComission4_5";
@@ -244,7 +244,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "¿Has traído el dinero, Charles? No estaba bromeando sobre vender a ese hombre a la plantación.";
 		link.l1 = "Escucha, " + NPChar.name + ", hay un problema... No tengo tanto dinero. Pero estoy listo para trabajar.";
 		link.l1.go = "CapComission2_2";
-		if (makeint(pchar.money) > 150000)
+		if (int(pchar.money) > 150000)
 		{
 			link.l2 = "Es bueno que no lo hayas vendido. Aquí están tus monedas - 150.000 pesos. ¿Dónde puedo conseguirlo?" link.l2.go = "CapComission2_3";
 		}
@@ -276,7 +276,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Marginpassenger_4":
-		int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon) * 2 * stf(pchar.GenQuest.Marginpassenger.Chance)) * 100;
+		int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon) * 2 * float(pchar.GenQuest.Marginpassenger.Chance)) * 100;
 		dialog.text = "Ya veo. Sería un buen negocio si no estás mintiendo. Supongo que puedo pagarte por este hombre, " + iTemp + " pesos, o darte alguna información interesante en su lugar. Es tu elección.";
 		link.l1 = "Mejor me llevo la moneda. Ya tuve bastante de este asunto...";
 		link.l1.go = "Marginpassenger_money";
@@ -291,7 +291,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Marginpassenger_money_1":
-		iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon) * 2 * stf(pchar.GenQuest.Marginpassenger.Chance)) * 100;
+		iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon) * 2 * float(pchar.GenQuest.Marginpassenger.Chance)) * 100;
 		dialog.text = "De nada, tráeme más... ¡Nos vemos!";
 		link.l1 = "Buena suerte...";
 		link.l1.go = "exit";

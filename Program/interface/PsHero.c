@@ -71,12 +71,12 @@ void FillTable()
     GameInterface.TABLE_HERO.hr.td2.scale = 0.85;
 	GameInterface.TABLE_HERO.hr.td3.str = "chr.rank";
 	GameInterface.TABLE_HERO.hr.td3.scale = 0.8;
-	GameInterface.TABLE_HERO).hr.td4.str = "nation";
+	GameInterface.TABLE_HERO.hr.td4.str = "nation";
 	GameInterface.TABLE_HERO.hr.td4.scale = 0.8;
 	GameInterface.TABLE_HERO.hr.td5.str = "корабль";
 	GameInterface.TABLE_HERO.hr.td5.scale = 0.8;
 	GameInterface.TABLE_HERO.hr.td6.str = "местоположение";
-	GameInterface.TABLE_HERO).hr.td6.scale = 0.8;
+	GameInterface.TABLE_HERO.hr.td6.scale = 0.8;
 	GameInterface.TABLE_HERO.hr.td7.str = "направление";
 	GameInterface.TABLE_HERO.hr.td7.scale = 0.8;
 
@@ -85,7 +85,7 @@ void FillTable()
 		chr = CharacterFromID("PsHero_" + i);
 
 		//временно либо офицер, либо компаньон... не работаем с ним.
-		//if (!sti(chr.PGGAi.IsPGG)) continue;
+		//if (!int(chr.PGGAi.IsPGG)) continue;
 		//помер, нефиг мёртвых качать.
 		//if (LAi_IsDead(chr)) continue;
 		
@@ -98,7 +98,7 @@ void FillTable()
 	    GameInterface.TABLE_HERO.(row).td2.scale = 0.8;
 	    GameInterface.TABLE_HERO.(row).td3.str = chr.rank;
 	    GameInterface.TABLE_HERO.(row).td3.scale = 0.8;
-	    GameInterface.TABLE_HERO.(row).td4.str = Nations[sti(chr.nation)].name;
+	    GameInterface.TABLE_HERO.(row).td4.str = Nations[int(chr.nation)].name;
 	    GameInterface.TABLE_HERO.(row).td4.scale = 0.8;
 	    if (GetCharacterShipType(chr) != SHIP_NOTUSED)
 	    {

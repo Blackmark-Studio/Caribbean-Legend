@@ -19,60 +19,6 @@ void ProcessDialogEvent()
             NextDiag.TempNode = "First time";
         break;
         
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
-        case "":
-            dialog.text = "";
-            link.l1 = "";
-            link.l1.go = "";            
-        break;
-        
         case "Exit":
             NextDiag.CurrentNode = NextDiag.TempNode;
             DialogExit();

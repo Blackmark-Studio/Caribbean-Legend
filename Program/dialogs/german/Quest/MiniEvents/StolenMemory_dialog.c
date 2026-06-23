@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Ein Halsband, sagt Ihr? Hm... Ja, ich habe eines. Und? Wie genau wollt Ihr es bekommen?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Ich bin bereit"+GetSexPhrase("","e")+" Euch fünftausend Pesos anzubieten. Davon könnt Ihr Euch ein ebenso edles Schmuckstück leisten. Doch dieses hier gehört jemandem, dem es wirklich am Herzen liegt.";
 				link.l1.go = "Captain_4_commerce";

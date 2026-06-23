@@ -412,7 +412,7 @@ void CalculateInfoDataF1()
 {
     // тут высчитываем нужную информацию и выводим в totalInfo - Инициализация -->
     totalInfo = descF1;
-    Pchar.money = sti(Pchar.money) + 500000;
+    Pchar.money = int(Pchar.money) + 500000;
 	
 	if(LanguageGetLanguage() == "russian")
 	{
@@ -504,7 +504,7 @@ void CalculateInfoDataF5()
     // -->
     totalInfo = descF5;
 
-    pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 35;
+    pchar.Skill.FreeSkill = int(pchar.Skill.FreeSkill) + 35;
     
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -519,7 +519,7 @@ string descF6 = "Корабельные навыки +1 ";
 void CalculateInfoDataF6()
 {
 	 totalInfo = descF6;
-    pchar.perks.FreePoints_ship = sti(pchar.perks.FreePoints_ship) + 1;
+    pchar.perks.FreePoints_ship = int(pchar.perks.FreePoints_ship) + 1;
 	
     totalInfo = totalInfo + NewStr() + NewStr() + LanguageConvertString(idLngFile, "Cheat_success");
 
@@ -537,7 +537,7 @@ void CalculateInfoDataF7()
     // -->
     totalInfo = descF7;
 
-   pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 1;
+   pchar.perks.FreePoints_self = int(pchar.perks.FreePoints_self) + 1;
 
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -552,11 +552,11 @@ void CalculateInfoDataF8()
 {
 	 totalInfo = descF8;
     // -->
-    if (sti(pchar.Fellows.Passengers.navigator) != -1)
+    if (int(pchar.Fellows.Passengers.navigator) != -1)
     {
-        ref chr = GetCharacter(sti(pchar.Fellows.Passengers.navigator));
+        ref chr = GetCharacter(int(pchar.Fellows.Passengers.navigator));
 
-        chr.Skill.FreeSkill = sti(chr.Skill.FreeSkill) + 35;
+        chr.Skill.FreeSkill = int(chr.Skill.FreeSkill) + 35;
     }
     else
     {
@@ -810,7 +810,7 @@ void CalculateInfoDataF21()
     // -->
     Weather.Wind.Speed = 14.5;
     pchar.wind.speed = Weather.Wind.Speed;
-    fWeatherSpeed = stf(Weather.Wind.Speed);
+    fWeatherSpeed = float(Weather.Wind.Speed);
 
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
@@ -824,7 +824,7 @@ void CalculateInfoDataF21()
 string descF22 = "Освятить корабль";
 void CalculateInfoDataF22()
 {
-    if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+    if (int(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 	{
 		totalInfo = descF22;
 		Pchar.GenQuest.Shipshine = true;
@@ -1084,7 +1084,7 @@ void ReloadByStr()
         {
             if (locations[i].type == "seashore" || locations[i].type == "mayak")
             {
-                setCharacterShipLocation(pchar, loc));
+                setCharacterShipLocation(pchar, loc);
                 setWDMPointXZ(loc);
             }
         }

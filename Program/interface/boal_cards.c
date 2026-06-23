@@ -17,7 +17,7 @@ int bStartGame;
 
 int iTurnGame;
 int iHeroLose, iHeroWin;
-int NArand = 3+rand(2); // belamour ночной приключенец
+int NArand = 3; // belamour ночной приключенец
 
 void InitInterface(string iniName)
 {
@@ -47,7 +47,7 @@ void InitInterface(string iniName)
 	
 	screen: -40..680 x -30..510  (720x540)
 	*/
-	r_delta = makeint(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
+	r_delta = int(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
     sgxy = 120;
     ssxy = 120;
     
@@ -64,14 +64,14 @@ void InitInterface(string iniName)
     
     pchar = GetMainCharacter();
     
-    iRate  = sti(pchar.GenQuest.Cards.iRate); // ставки золотых
+    iRate  = int(pchar.GenQuest.Cards.iRate); // ставки золотых
     
     //pchar.GenQuest.Cards.npcharIdx = GetCharacterIndex("Filosof"); // test
     
-    npchar = GetCharacter(sti(pchar.GenQuest.Cards.npcharIdx));
+    npchar = GetCharacter(int(pchar.GenQuest.Cards.npcharIdx));
     
-	iMoneyP = sti(pchar.Money); // mitrokosta теперь смотрим на реальные деньги только в начале и в конце
-	iMoneyN = sti(npchar.Money);
+	iMoneyP = int(pchar.Money); // mitrokosta теперь смотрим на реальные деньги только в начале и в конце
+	iMoneyN = int(npchar.Money);
     
 	// mitrokosta фикс опыта за некратные ставки -->
 	if (iRate >= 100) {
@@ -174,7 +174,7 @@ void Exit()
 		DelEventHandler("HideInfoWindow","HideInfoWindow");
 		DelEventHandler("MouseRClickUp","HideInfoWindow");
 
-        if (CheckAttribute(pchar,"GenQuest.Cards.SitType") && sti(pchar.GenQuest.Cards.SitType) == true)
+        if (CheckAttribute(pchar,"GenQuest.Cards.SitType") && int(pchar.GenQuest.Cards.SitType) == true)
     	{
 			if(npchar.id == "AffairOfHonor_WolvesAndSheeps_Man")
 			{
@@ -191,20 +191,20 @@ void Exit()
 		if(CheckAttribute(pchar, "questTemp.NA.Cards")) 
 		{
 			DoQuestCheckDelay("NightAdventure_GameRes", 0.6);
-			pchar.GenQuest.NightAdventure_money = abs(iMoneyP - sti(pchar.Money));
+			pchar.GenQuest.NightAdventure_money = abs(iMoneyP - int(pchar.Money));
 		}
 		
-		bool isWin = iMoneyP > sti(pchar.Money) && iMoneyN < iRate*3;
+		bool isWin = iMoneyP > int(pchar.Money) && iMoneyN < iRate*3;
 		
-		AddMoneyToCharacter(pchar, iMoneyP - sti(pchar.Money)); // mitrokosta раздача денег теперь в конце
-		AddMoneyToCharacter(npchar, iMoneyN - sti(npchar.Money));
+		AddMoneyToCharacter(pchar, iMoneyP - int(pchar.Money)); // mitrokosta раздача денег теперь в конце
+		AddMoneyToCharacter(npchar, iMoneyN - int(npchar.Money));
     	Statistic_AddValue(Pchar, "GameCards_Win", iHeroWin);
     	Statistic_AddValue(Pchar, "GameCards_WinMoney", iMoneyP);
 		if(!CheckAttribute(Pchar,"questTemp.hat7"))
 		{
 			if(Statistic_AddValue(Pchar, "GameDice_WinMoney", 0) + Statistic_AddValue(Pchar, "GameCards_WinMoney", 0) > 7776)
 			{
-				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+				if(int(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
 					PutItemToShip("My_deck", "hat7", 1);
 					Pchar.questTemp.hat7 = true;
@@ -424,10 +424,10 @@ void MoveImg()
 
     t = move_i / 50.0;
     t = t * t * (3.0 - 2.0 * t);	// ускорение в начале, замедление в конце
-    x = makeint((1.0 - t)*(1.0 - t)*x1 + 2.0*(1.0 - t)*t*x_rand + t*t*x2);
-    y = makeint((1.0 - t)*(1.0 - t)*y1 + 2.0*(1.0 - t)*t*y_rand + t*t*y2);
+    x = int((1.0 - t)*(1.0 - t)*x1 + 2.0*(1.0 - t)*t*x_rand + t*t*x2);
+    y = int((1.0 - t)*(1.0 - t)*y1 + 2.0*(1.0 - t)*t*y_rand + t*t*y2);
 	float scale = 1.0 + 0.1 * 4.0 * t * (1.0 - t);	// плавное увеличение карты к середине, уменьшение после середины
-	SetNodePosition("Blank", x, y, x + makeint(scx * scale), y + makeint(scy * scale));
+	SetNodePosition("Blank", x, y, x + int(scx * scale), y + int(scy * scale));
 	
 	string sCard;
 	if(t > 0.5)	// карты в руке плавно сдвигаются влево
@@ -438,7 +438,7 @@ void MoveImg()
 			{
 				x1 = 950 - (n - 1) * k / 2 + i * k;
 				x2 = 950 - n * k / 2 + i * k;
-				x = makeint(x1 + (x2 - x1) * (t - 0.5) * 2.0);
+				x = int(x1 + (x2 - x1) * (t - 0.5) * 2.0);
 				sCard = "c"+cardsP[i];
 				CreateImage("PCard"+i, "CARDS", NullCharacter.Cards.(sCard).pic, x, 740, x + scx, 740 + scy);
 			}
@@ -449,7 +449,7 @@ void MoveImg()
 			{
 				x1 = 950 - (n - 1) * k / 2 + i * k;
 				x2 = 950 - n * k / 2 + i * k;
-				x = makeint(x1 + (x2 - x1) * (t - 0.5) * 2.0);
+				x = int(x1 + (x2 - x1) * (t - 0.5) * 2.0);
 				CreateImage("PCard" + (18 + i), "CARDS", "blank", x, 50, x + scx, 50 + scy);
 			}
 		}
@@ -595,7 +595,7 @@ void SetNextTip()
 			for(int p = 1; p<=howCard; p++)
 			{
 				string sPNum = "c"+cardsPack[p];
-				int iPValue = sti(NullCharacter.Cards.(sPNum).count);
+				int iPValue = int(NullCharacter.Cards.(sPNum).count);
 				if((CountCardsP() + iPValue) != 21) continue;
 				if(iPValue<2) break;
 				cardsPack[howCard-1] = cardsPack[p];
@@ -620,7 +620,7 @@ void SetNextTip()
 			for(int i = 1; i<=howCard; i++)
 			{
 				string sNum = "c"+cardsPack[i];
-				int iValue = sti(NullCharacter.Cards.(sNum).count);
+				int iValue = int(NullCharacter.Cards.(sNum).count);
 				if((CountCardsN() + iValue) != 21) continue;
 				if(iValue<2) break;
 				cardsPack[howCard-1] = cardsPack[i];
@@ -646,7 +646,7 @@ int CountCardsP()
     for (i = 0; i < howPchar; i++)
     {
         sTemp = "c"+cardsP[i];
-        ret += sti(NullCharacter.Cards.(sTemp).count);
+        ret += int(NullCharacter.Cards.(sTemp).count);
     }
     return ret;
 }
@@ -660,7 +660,7 @@ int CountCardsN()
     for (i = 0; i < howNpchar; i++)
     {
         sTemp = "c"+cardsN[i];
-        ret += sti(NullCharacter.Cards.(sTemp).count);
+        ret += int(NullCharacter.Cards.(sTemp).count);
     }
     return ret;
 }
@@ -686,7 +686,7 @@ int NextCardPack()
     int ret;
     
     sTemp = "c"+cardsPack[howCard-1];
-    ret = sti(NullCharacter.Cards.(sTemp).count);
+    ret = int(NullCharacter.Cards.(sTemp).count);
     
     return ret;
 }
@@ -765,7 +765,7 @@ bool CheckGame()
 						bStartGame = 100;//признак запрета новой игры
 						sTemp += NewStr() + XI_ConvertString("CardsPhrase11");
 						// ГГ проиграл по "сумме встреч"
-						if(iMoneyP - sti(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;  
+						if(iMoneyP - int(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;
 						else pchar.questTemp.NA.Cards.Win = true;
 					}
 					else 
@@ -805,7 +805,7 @@ bool CheckGame()
 						bStartGame = 100;//признак запрета новой игры
 						sTemp += NewStr() + XI_ConvertString("CardsPhrase16");
 						// ГГ проиграл по "сумме встреч"
-						if(iMoneyP - sti(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;  
+						if(iMoneyP - int(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;
 						else pchar.questTemp.NA.Cards.Win = true;
 					}
 					else
@@ -877,13 +877,13 @@ bool CheckGame()
     {
         ok1 = (CountCardsN() > 16) && (CountCardsN() <22);
         // жухло!!!!! -->
-        if (!CheckAttribute(pchar, "questTemp.GoldenGirl.Game") && GetCharacterSkillToOld(pchar, SKILL_FORTUNE) + makeint(isEquippedArtefactUse(pchar, "totem_13", 0.0, 2.0)) < rand(12)) // Jason Дороже золота
+        if (!CheckAttribute(pchar, "questTemp.GoldenGirl.Game") && GetCharacterSkillToOld(pchar, SKILL_FORTUNE) + int(isEquippedArtefactUse(pchar, "totem_13", 0.0, 2.0)) < rand(12)) // Jason Дороже золота
         {
             if (ok1 && (CountCardsN() + NextCardPack()) <= 21)
             {
                 ok1 = false;
             }
-            if (GetCharacterSkillToOld(pchar, SKILL_FORTUNE) - makeint(isEquippedArtefactUse(pchar, "totem_13", 0.0, 2.0)) < rand(10) && CountCardsN() < 17 && (CountCardsN() + NextCardPack()) > 21)
+            if (GetCharacterSkillToOld(pchar, SKILL_FORTUNE) - int(isEquippedArtefactUse(pchar, "totem_13", 0.0, 2.0)) < rand(10) && CountCardsN() < 17 && (CountCardsN() + NextCardPack()) > 21)
             {
                 ok1 = true;
             }
@@ -965,7 +965,7 @@ void OpenCards();
 {
 	int iRes = 0; // Jason Дороже золота
     string sTemp;
-    if (CountCardsP() > makefloat(CountCardsN() + 0.1*dir_i_start)) // преимущество тому, кто сдает (те ходит последним)
+    if (CountCardsP() > float(CountCardsN() + 0.1*dir_i_start)) // преимущество тому, кто сдает (те ходит последним)
     {
         EndGameCount(1);
         sTemp = RandSwear() + XI_ConvertString("CardsPhrase29_1") + CountCardsP() + XI_ConvertString("CardsPhrase29_2") + CountCardsN()+"." ;
@@ -991,7 +991,7 @@ void OpenCards();
 					bStartGame = 100;//признак запрета новой игры
 					sTemp += NewStr() + XI_ConvertString("CardsPhrase31");
 					// ГГ проиграл по "сумме встреч"
-					if(iMoneyP - sti(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;  
+					if(iMoneyP - int(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;
 					else pchar.questTemp.NA.Cards.Win = true;
 				}
 				else 
@@ -1033,7 +1033,7 @@ void OpenCards();
 					bStartGame = 100;//признак запрета новой игры
 					sTemp += NewStr() + XI_ConvertString("CardsPhrase36");
 					// ГГ проиграл по "сумме встреч"
-					if(iMoneyP - sti(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;  
+					if(iMoneyP - int(pchar.Money) < 0) pchar.questTemp.NA.Cards.Fail = true;
 					else pchar.questTemp.NA.Cards.Win = true;
 				}
 				else 

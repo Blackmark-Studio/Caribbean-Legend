@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_1":
-			float fQty = stf(dialogEditStrings[6]);
+			float fQty = float(dialogEditStrings[6]);
 			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
@@ -232,8 +232,8 @@ void ProcessDialogEvent()
 				link.l1.go = "licence_r";
 				break;
 			}
-			dialog.text = "For "+FindRussianDaysString(sti(fQty))+"？　よろしい。それには費用がかかる "+FindRussianDublonString(sti(npchar.quest.lcc_summ))+"。これらの条件で納得いただけますか？";
-			if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
+			dialog.text = "For "+FindRussianDaysString(int(fQty))+"？　よろしい。それには費用がかかる "+FindRussianDublonString(int(npchar.quest.lcc_summ))+"。これらの条件で納得いただけますか？";
+			if (PCharDublonsTotal() >= int(npchar.quest.lcc_summ))
 			{
 				link.l1 = "ああ、そうだ。";
 				link.l1.go = "licence_2";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_2":
-			int iQty = sti(dialogEditStrings[6]);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.lcc_summ));
+			int iQty = int(dialogEditStrings[6]);
+			RemoveDublonsFromPCharTotal(int(npchar.quest.lcc_summ));
 			GiveNationLicence(HOLLAND, iQty);
 			// belamour legendary edition на пару с Акулой
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "start")
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.silk_info"))
 				{
-					if (sti(pchar.reputation.nobility) > 60)
+					if (int(pchar.reputation.nobility) > 60)
 					{
 						dialog.text = "あはは、カピテン "+GetFullName(pchar)+"！来てくれて嬉しいぜ。お前に商売の話があるんだ。";
 						link.l1 = "面白い！話を聞こう、旦那。";
@@ -451,12 +451,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
 			{
 				link.l4 = "Mijnheer "+npchar.name+"、絹の供給量を増やす可能性について話し合いたいのですが。";
 				link.l4.go = "UpgradeSilk";
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
 			{
 				link.l4 = "旦那、ドゥブロン金貨を持ってきたぜ\n "+npchar.name+"。どうぞお受け取りください。";
 				link.l4.go = "UpgradeSilk_Agreed";

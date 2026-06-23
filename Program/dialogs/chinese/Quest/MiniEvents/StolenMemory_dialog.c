@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "项链? 确实... 我最近得到了这样一件饰品。 请问船长, 你打算用什么方法让我交出这件理应属于我的珠宝? ";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "我准备出五千比索买这件东西。 这是一笔可观的数目, 足够你买一件同样好的饰品, 也许甚至更华丽。 同时, 这条项链将归还给一个比任何金钱都更珍视它的人 —远超过它的货币价值。 ";
 				link.l1.go = "Captain_4_commerce";

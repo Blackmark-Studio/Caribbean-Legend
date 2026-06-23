@@ -8,6 +8,12 @@ condition_mushket_indian
 Questo oggetto apparirà presso gli usurai se possiedi
 Caribbean Legend: Age of Pirates
 }
+condition_nocturlabe
+{
+コミュニティへの無料の贈り物だ。
+ 金貸したちのところで探してくれ。
+ 遊んでくれてありがとう！
+}
 noRewardYetMessage
 {
 Questa ricompensa non è ancora disponibile,

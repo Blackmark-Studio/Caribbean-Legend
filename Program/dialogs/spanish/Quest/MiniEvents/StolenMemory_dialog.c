@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "¿Un collar, eh? Hm... Sí, tengo uno. ¿Y qué? ¿Cómo piensa conseguirlo?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Estoy dispuest"+GetSexPhrase("o","a")+" a ofrecerle cinco mil pesos. Es suficiente para adquirir una joya igualmente digna. Este collar debe volver a quien lo valora con todo su corazón.";
 				link.l1.go = "Captain_4_commerce";

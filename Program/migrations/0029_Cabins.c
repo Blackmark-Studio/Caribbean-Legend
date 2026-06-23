@@ -366,15 +366,15 @@ void ApplyMigration(ref migrationState)
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-		if(sti(RealShips[i].BaseType) == SHIP_GALEON_H)
+		if(int(RealShips[i].BaseType) == SHIP_GALEON_H)
 			RealShips[i].CabinType = "Cabin_huge";
-		if(sti(RealShips[i].BaseType) == SHIP_GALEON_SM)
+		if(int(RealShips[i].BaseType) == SHIP_GALEON_SM)
 			RealShips[i].CabinType = "Cabin_huge";
-		if(sti(RealShips[i].BaseType) == SHIP_NAVIO)
+		if(int(RealShips[i].BaseType) == SHIP_NAVIO)
 			RealShips[i].CabinType = "Cabin_huge";
-		if(sti(RealShips[i].BaseType) == SHIP_ELCASADOR)
+		if(int(RealShips[i].BaseType) == SHIP_ELCASADOR)
 			RealShips[i].CabinType = "Cabin_huge";
-		if(sti(RealShips[i].BaseType) == SHIP_RENOVATED_FDM)
+		if(int(RealShips[i].BaseType) == SHIP_RENOVATED_FDM)
 		{
 			RealShips[i].Class						= 2;
 			RealShips[i].Cannon          			= CANNON_TYPE_CANNON_LBS32;

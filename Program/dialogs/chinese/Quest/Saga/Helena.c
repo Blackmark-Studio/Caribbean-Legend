@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 			{
 				link.l2 = "斯文森船长告诉我你想和我一起航行。 我很欣赏你的愿望, 而且格拉迪斯女士提到你想念大海。 欢迎加入我的船员, 海伦.夏普女士! ";
 				link.l2.go = "Helena_hire_2";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 2;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 2;
 			}
 		break;
 		
@@ -151,7 +151,7 @@ void ProcessDialogEvent()
 			link.l1 = "海伦, 你是Beatrice Sharp的女儿, 也是Sharp王朝唯一的继承人。 这是格拉迪斯女士保存多年的半张地图。 这是你对宝藏岛权利的证明。 这不会容易, 但我和扬.斯文森会尽力帮助你继承祖父的岛屿。 ";
 			link.l1.go = "Helena_hire_3";
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 3;
 			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
@@ -293,11 +293,11 @@ void ProcessDialogEvent()
 	// --> 传奇结局对话
 		case "result":
 			//if (!CheckAttribute(pchar, "questTemp.Saga.Helena_friend")) // 不是朋友
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 11) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 11) {
 				Achievment_Set("ach_CL_83");
 			}
 			
-			if (sti(pchar.questTemp.Saga.HelenRelation) < 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) < 6)
 			{
 				dialog.text = "好吧, 我亲爱的船长... 我们该说再见了。 我的服务结束了, 是时候习惯成为宝藏岛的海盗女王了。 希望我能成为我叔叔的合格继承者。 感谢你的帮助。 ";
 				link.l1 = "是的, 很遗憾与你分开, 但命运就是如此。 你现在有比在我船上服务更重要的责任。 ";
@@ -663,7 +663,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = true;
 			//npchar.quest.daily_sex_room = true; // 第一次在酒馆时启动计数器 。 伐木工
 			//npchar.quest.daily_sex_cabin = true;
-			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
+			if (int(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			sld = CharacterFromID("Helena");
 			ChangeCharacterAddressGroup(sld, loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest3");
 			DoFunctionReloadToLocation(loadedLocation.fastreload + "_tavern_upstairs", "quest", "quest4", "LoveSex_Room_Go");
@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Helena_officer";
 				break;
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && sti(pchar.GenQuest.BrothelCount) > 0 && !CheckAttribute(npchar, "quest.refusesex")) {
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && int(pchar.GenQuest.BrothelCount) > 0 && !CheckAttribute(npchar, "quest.refusesex")) {
 				dialog.text = "亲爱的, 关于你拜访妓女的事。 ";
 				npchar.quest.refusesex = true;
 				link.l1 = "什么? 海伦, 你完全搞错了! 我只是... ";
@@ -715,7 +715,7 @@ void ProcessDialogEvent()
 				Link.l2 = "海伦, 我需要给你几个命令。 ";
 				Link.l2.go = "Companion_Tasks";
 				
-				sld = GetCharacter(sti(npchar.RealCompanionIdx));
+				sld = GetCharacter(int(npchar.RealCompanionIdx));
 				if (CheckAttribute(pchar, "questTemp.HelenDrinking.Rainbow") && sld.ship.type == pchar.questTemp.HelenDrinking.Rainbow && CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) {
 					DeleteAttribute(link, "");
 					dialog.text = "你觉得这有趣吗? ";
@@ -741,12 +741,12 @@ void ProcessDialogEvent()
 				Link.l2 = RandPhraseSimple("海伦, 我们单独在船舱里待... 几个小时? 你觉得怎么样? ", "亲爱的, 我们单独待几个小时怎么样? 你喜欢这个主意吗? ");
 				Link.l2.go = "cabin_sex";
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "tavern" && sti(pchar.money) >= 10 && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - 亲密关系的后续修复
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "tavern" && int(pchar.money) >= 10 && GetNpcQuestPastDayWOInit(npchar, "sex_date") >= 1) // mitrokosta - 亲密关系的后续修复
 			{
 				Link.l2 = RandPhraseSimple("海伦, 我们为什么不租个房间, 私下待在那里... 接下来的几个小时? 你觉得怎么样? ", "亲爱的, 我们接下来几个小时单独待着怎么样? 我们租个房间... 你觉得呢? ");
 				Link.l2.go = "room_sex";
 			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "town" && sti(pchar.money) >= 1000 && GetNpcQuestPastDayWOInit(npchar, "special_sex_date") >= 30 && !CheckAttribute(npchar, "quest.refusesex"))
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && rLoc.type == "town" && int(pchar.money) >= 1000 && GetNpcQuestPastDayWOInit(npchar, "special_sex_date") >= 30 && !CheckAttribute(npchar, "quest.refusesex"))
 			{
 				Link.l2 = "海伦, 亲爱的, 我可以邀请你在酒馆度过一段美好时光吗? ";
 				Link.l2.go = "special_sex";
@@ -844,7 +844,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "更改你火器的弹药类型。 ";
 					Link.l3.go = "SetGunBullets";
@@ -857,7 +857,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -869,7 +869,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -2092,10 +2092,10 @@ void ProcessDialogEvent()
 		case "drinking_my_background_12":
 			dialog.text = "... 然后我逐渐晋升, 在父亲和军官的会议上担任船长桌的服务。 学到了很多。 从十五岁开始, 他们带我参加军事行动, 我在第一次战斗中杀了人。 那是一场令人作呕的战役; 我们不该在星期一起航... 真的不该! ";
 			link.l1 = "十五岁? 你吓到我了, 海伦。 ";
-			link.l1.go = "drinking_my_background_13";
+			link.l1.go = "drinking_my_background_12b";
 		break;
 		
-		case "drinking_my_background_12":
+		case "drinking_my_background_12b":
 			dialog.text = "我甚至不明白发生了什么。 荷兰商人有他的先头部队 - 公司的雇佣兵。 他们决定大胆反击我们的船尾甲板。 而我, 一个傻瓜, 毫无惧色地伸出了我金色的脑袋。 我立刻被手枪枪托击中。 但在那之前, 我设法把我的细剑插进了某个公司的傻瓜身上。 ";
 			link.l1 = "天哪, 肖恩呢? 他怎么没在那之后把你赶上岸? ";
 			link.l1.go = "drinking_my_background_13";
@@ -2301,12 +2301,6 @@ void ProcessDialogEvent()
 			link.l1.go = "drinking_game_accept_11";
 		break;
 		
-		case "drinking_game_accept_10":
-			dialog.text = "哎哟! 该死, 查尔斯! (喝酒)";
-			link.l1 = "";
-			link.l1.go = "drinking_game_accept_11";
-		break;
-		
 		case "drinking_game_accept_11":
 			dialog.text = "我... 嗝... 不敢相信。 我承认, 有罪 - 小伦巴曾经喝到见底。 但我从未进过监狱! ";
 			link.l1 = "你怎么... ?";
@@ -2437,7 +2431,7 @@ void ProcessDialogEvent()
 			
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 2;
 				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
@@ -2658,7 +2652,7 @@ void ProcessDialogEvent()
 				case "A":
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "你必须这样做吗, 船长? 为什么这么快就动手? 好吧, 大概不该评判胜利者。 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
-						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+						pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "恭喜你, 我的船长, 在动手之前尝试明智地解决问题。 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
@@ -2670,7 +2664,7 @@ void ProcessDialogEvent()
 				
 				case "B":
 					dialog.text = "你巧妙地愚弄了那些傻瓜, 我的船长! 我差点笑出来, 说真的! 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
-					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+					pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 					Notification_Approve(true, "Helena");
 					
 					link.l1 = "那艘被拖上岸的大船呢? ";
@@ -2679,7 +2673,7 @@ void ProcessDialogEvent()
 				
 				case "C":
 					dialog.text = "等一下, 让女孩喘口气! 你真的是查理.普林斯吗? ";
-					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+					pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 					Notification_Approve(true, "Helena");
 					
 					link.l1 = "我的传记中确实有那个时期, 是的。 你印象深刻吗? ";
@@ -2725,7 +2719,7 @@ void ProcessDialogEvent()
 		case "ambush_inresidence_sea":
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "谢谢你, 我的船长。 很高兴听到你这么说。 第二次听到尤其开心。 你很了解我。 ";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 3;
 				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "谢谢你, 我的船长。 很高兴听到你这么说。 ";
@@ -2748,7 +2742,7 @@ void ProcessDialogEvent()
 		case "ambush_inresidence_land":
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "你认为我值得吗? 我从未在这种琐事上花过钱, 但我想凡事都有第一次。 我看你不会停止试图让我忘记大海, 是吗, 船长? 也许你是对的... ";
-				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
+				pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 3;
 				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "你认为我值得吗? 我从未在这种琐事上花过钱, 但我想凡事都有第一次。 ";
@@ -2774,7 +2768,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ambush_inresidence_3":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6) {
 				dialog.text = "没什么变化, 我的船长, 但一个可怜的女孩肩上压了很多事, 哈哈! 我不是有意冒犯你。 我现在只是需要思考很多事情。 你知道, 生活中这样的急转弯不是每天都有的。 我们还有很多时间在一起! ";
 				link.l1 = "很高兴听到你这么说! 我们离开这里吧。 ";
 			} else {
@@ -2983,7 +2977,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shdn_ambush_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6) {
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6) {
 				dialog.text = "哈, 第二个选项听起来更诱人, 但我希望你不要太得意, 查尔斯? ";
 			} else {
 				dialog.text = "查尔斯, 我并不惊讶... ";
@@ -3075,10 +3069,10 @@ void ProcessDialogEvent()
 		case "after_cave_duel":
 			dialog.text = "可惜你落入了他们的圈套。 上校显然很着迷, 其他人只是想看热闹和找点八卦素材。 好吧, 我不会再提了 - 你今天已经受够了。 ";
 			link.l1 = "是的, 决斗之后, 总是有一种空虚感。 今天的冒险够多了。 你接下来想做什么? ";
-			if (sti(pchar.questTemp.Saga.HelenRelation) == 7 || sti(pchar.questTemp.Saga.HelenRelation) == 8) {
+			if (int(pchar.questTemp.Saga.HelenRelation) == 7 || int(pchar.questTemp.Saga.HelenRelation) == 8) {
 				link.l1.go = "after_cave_mild";
 			} else {
-				if (sti(pchar.questTemp.Saga.HelenRelation) < 7) {
+				if (int(pchar.questTemp.Saga.HelenRelation) < 7) {
 					link.l1.go = "after_cave_cold";
 				} else {
 					link.l1.go = "after_cave_lewd";
@@ -3095,10 +3089,10 @@ void ProcessDialogEvent()
 		case "after_cave_notduel_1":
 			dialog.text = "是的, 我需要那个。 可惜是蓝色制服, 不是红色的, 但至少穿它的人得到了应有的惩罚。 ";
 			link.l1 = "那个人确实无关紧要, 我承认。 今天的冒险够多了。 你接下来想做什么? ";
-			if (sti(pchar.questTemp.Saga.HelenRelation) == 7 || sti(pchar.questTemp.Saga.HelenRelation) == 8) {
+			if (int(pchar.questTemp.Saga.HelenRelation) == 7 || int(pchar.questTemp.Saga.HelenRelation) == 8) {
 				link.l1.go = "after_cave_mild";
 			} else {
-				if (sti(pchar.questTemp.Saga.HelenRelation) < 7) {
+				if (int(pchar.questTemp.Saga.HelenRelation) < 7) {
 					link.l1.go = "after_cave_cold";
 				} else {
 					link.l1.go = "after_cave_lewd";
@@ -3545,7 +3539,7 @@ bool HelenDrinking_RobbedSvenson() {
 		return true;
 	}
 	
-	if (sti(sld.private1.items.chest) < 2) {
+	if (int(sld.private1.items.chest) < 2) {
 		return true;
 	}
 	

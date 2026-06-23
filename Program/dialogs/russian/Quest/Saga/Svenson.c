@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1 = "location";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1.location = "Shore53";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2 = "Timer";
-				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = sti(GetTime());
+				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = int(GetTime());
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.day   = GetAddingDataDay(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.month = GetAddingDataMonth(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.year  = GetAddingDataYear(0, 0, 3);
@@ -1063,12 +1063,12 @@ void ProcessDialogEvent()
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "Я так и знал. Cколько дерева у него было в трюме?";
-			link.l1 = "Я обнаружил на 'Устрице' "+FindRussianQtyString(sti(npchar.quest.bakaut))+" товара.";
+			link.l1 = "Я обнаружил на 'Устрице' "+FindRussianQtyString(int(npchar.quest.bakaut))+" товара.";
 			link.l1.go = "saga_56";
 		break;
 		
 		case "saga_56":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp > 100)
 			{
 				dialog.text = "Ого! Столько у меня не было - это он уже сам где-то лишку раздобыл. Спасибо тебе, "+pchar.name+", ты как всегда молодец. Я реализую товар быстро, покупатель уже имеется. Деньги будут завтра.";
@@ -1112,11 +1112,11 @@ void ProcessDialogEvent()
 		case "saga_oust":
 			if (CheckAttribute(npchar, "quest.bakaut"))
 			{
-				if (sti(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
+				if (int(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
 				else 
 				{
 					SaveCurrentNpcQuestDateParam(npchar, "bakaut_date");
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(npchar.quest.bakaut));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(npchar.quest.bakaut));
 				}
 				pchar.questTemp.Saga = "removebakaut";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Уcтрицa") iUst = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Уcтрицa") iUst = 1;
 				}
 			} // есть ли у нас Устрица
 			dialog.text = "Подожди! А корабль, 'Устрицу', ты захватил?";
@@ -1162,10 +1162,10 @@ void ProcessDialogEvent()
 		
 		case "saga_57":
 			int idlt;
-			iTemp = sti(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
+			iTemp = int(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
 			if (iTemp > 1600)
 			{
-				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
+				idlt = int(iTemp-1500)/2; // доля Бонса :)
 				dialog.text = "Я получил за него "+iTemp+" дублонов. Полторы тысячи - это на адвоката. И сверх того твоя доля составляет "+idlt+" дублонов. Держи.";
 				link.l1 = "Просто замечательно! Теперь можно спокойно отправляться к Локсли.";
 				link.l1.go = "saga_58";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "Ого! Мои покупатели берут дешевле...";
-			link.l1 = "В общем, теперь у меня есть две тысячи золотых для Локсли, да и сверх того осталось "+sti(npchar.quest.bakaut_sum)*2+" дублонов.";
+			link.l1 = "В общем, теперь у меня есть две тысячи золотых для Локсли, да и сверх того осталось "+int(npchar.quest.bakaut_sum)*2+" дублонов.";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1208,8 +1208,8 @@ void ProcessDialogEvent()
 			dialog.text = "Очень хорошо. Тогда поделим их по-братски.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal());
-				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal());
+				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1224,8 +1224,8 @@ void ProcessDialogEvent()
 			dialog.text = "Очень хорошо. Сколько ты принёс?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal());
-				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal());
+				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1237,15 +1237,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_pay": // оплата
-			if (sti(npchar.quest.bakaut_sum) < sti(npchar.quest.bakaut_pay)) // полная сумма
+			if (int(npchar.quest.bakaut_sum) < int(npchar.quest.bakaut_pay)) // полная сумма
 			{
-				npchar.quest.bakaut_pay = sti(npchar.quest.bakaut_sum);
+				npchar.quest.bakaut_pay = int(npchar.quest.bakaut_sum);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
+			else iTemp = int(npchar.quest.bakaut_sum)-int(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
-			Log_Info("Вы отдали "+sti(npchar.quest.bakaut_pay)+" дублонов");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.bakaut_pay));
+			Log_Info("Вы отдали "+int(npchar.quest.bakaut_pay)+" дублонов");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -1255,7 +1255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Отлично. Остальные "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" ты принесёшь позже?";
+				dialog.text = "Отлично. Остальные "+FindRussianQtyString(int(npchar.quest.bakaut_sum))+" ты принесёшь позже?";
 				link.l1 = "Да. Просто я не смог притащить такую кучу золота сразу.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1647,12 +1647,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
 			{
 				link.l4 = "Ян, а нельзя ли увеличить размеры партий бакаута?";
 				link.l4.go = "UpgradeBakaut";
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
 			{
 				link.l4 = "Ян, я собрал"+GetSexPhrase("","а")+" три тысячи золотых. Держи, можешь преподнести этот подарок нашим нахлебничкам. Полагаю, у них сегодня будет счастливый день.";
 				link.l4.go = "UpgradeBakaut_Agreed";
@@ -1677,7 +1677,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(npchar, "quest.trade_bakaut");
 			SetFunctionTimerCondition("Bakaut_SvensonAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
-			pchar.questTemp.SvensonBakaut = sti(pchar.questTemp.SvensonBakaut) + 1; // счётчик покупок
+			pchar.questTemp.SvensonBakaut = int(pchar.questTemp.SvensonBakaut) + 1; // счётчик покупок
 		break;
 		
 		case "UpgradeBakaut": //

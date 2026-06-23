@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1 = "location";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1.location = "Shore53";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2 = "Timer";
-				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = sti(GetTime());
+				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = int(GetTime());
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.day   = GetAddingDataDay(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.month = GetAddingDataMonth(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.year  = GetAddingDataYear(0, 0, 3);
@@ -1063,12 +1063,12 @@ void ProcessDialogEvent()
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "我就知道。 他的货舱里有多少? ";
-			link.l1 = "我在‘牡蛎号’上找到了"+FindRussianQtyString(sti(npchar.quest.bakaut))+"。 ";
+			link.l1 = "我在‘牡蛎号’上找到了"+FindRussianQtyString(int(npchar.quest.bakaut))+"。 ";
 			link.l1.go = "saga_56";
 		break;
 		
 		case "saga_56":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp > 100)
 			{
 				dialog.text = "哇! 我的仓库里从来没有那么多。 看看谁自己拿到了一笔财富。 谢谢你, "+pchar.name+", 你从未让我失望。 我会立即出售产品, 我们已经有买家了。 明天我会把钱给你。 ";
@@ -1112,11 +1112,11 @@ void ProcessDialogEvent()
 		case "saga_oust":
 			if (CheckAttribute(npchar, "quest.bakaut"))
 			{
-				if (sti(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
+				if (int(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
 				else 
 				{
 					SaveCurrentNpcQuestDateParam(npchar, "bakaut_date");
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(npchar.quest.bakaut));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(npchar.quest.bakaut));
 				}
 				pchar.questTemp.Saga = "removebakaut";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
 				}
 			} // 我们有牡蛎号吗
 			dialog.text = "等等! 你捕获了‘牡蛎号’吗? ";
@@ -1162,10 +1162,10 @@ void ProcessDialogEvent()
 		
 		case "saga_57":
 			int idlt;
-			iTemp = sti(npchar.quest.bakaut)*30; // 扬每1个巴考特给30杜布隆
+			iTemp = int(npchar.quest.bakaut)*30; // 扬每1个巴考特给30杜布隆
 			if (iTemp > 1600)
 			{
-				idlt = makeint(iTemp-1500)/2; // 邦萨的份额 :)
+				idlt = int(iTemp-1500)/2; // 邦萨的份额 :)
 				dialog.text = "我为此收到了"+iTemp+"枚硬币。 一千五百给律师, 加上你那份杜布隆 - "+idlt+"。 给你。 ";
 				link.l1 = "值得称赞! 现在我可以轻松前往洛克斯利那里了。 ";
 				link.l1.go = "saga_58";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "哇! 我的买家付得更少... ";
-			link.l1 = "总的来说, 我为洛克斯利拿到了两千金币, 此外还有"+sti(npchar.quest.bakaut_sum)*2+"杜布隆。 ";
+			link.l1 = "总的来说, 我为洛克斯利拿到了两千金币, 此外还有"+int(npchar.quest.bakaut_sum)*2+"杜布隆。 ";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1208,8 +1208,8 @@ void ProcessDialogEvent()
 			dialog.text = "很好。 那么我们将它平分。 ";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
-				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
+				link.l1 = "给你。 我有"+FindRussianQtyString(int(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1224,8 +1224,8 @@ void ProcessDialogEvent()
 			dialog.text = "太好了。 你带来了多少? ";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
-				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
+				link.l1 = "给你。 我有"+FindRussianQtyString(int(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1237,15 +1237,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_pay": // 支付
-			if (sti(npchar.quest.bakaut_sum) < sti(npchar.quest.bakaut_pay)) // 全额
+			if (int(npchar.quest.bakaut_sum) < int(npchar.quest.bakaut_pay)) // 全额
 			{
-				npchar.quest.bakaut_pay = sti(npchar.quest.bakaut_sum);
+				npchar.quest.bakaut_pay = int(npchar.quest.bakaut_sum);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
+			else iTemp = int(npchar.quest.bakaut_sum)-int(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // 记住剩余
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
-			Log_Info("你已经给了"+sti(npchar.quest.bakaut_pay)+"杜布隆");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.bakaut_pay));
+			Log_Info("你已经给了"+int(npchar.quest.bakaut_pay)+"杜布隆");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -1255,7 +1255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "太好了。 你以后会把剩下的"+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+"杜布隆带来吗? ";
+				dialog.text = "太好了。 你以后会把剩下的"+FindRussianQtyString(int(npchar.quest.bakaut_sum))+"杜布隆带来吗? ";
 				link.l1 = "是的。 我只是不能一次搬运这么大量的黄金。 ";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1646,12 +1646,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // 增加巴考特供应量
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // 增加巴考特供应量
 			{
 				link.l4 = "扬, 有没有可能增加铁木的供应量? ";
 				link.l4.go = "UpgradeBakaut";
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // 增加巴考特供应量, 如果第一次没带来
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // 增加巴考特供应量, 如果第一次没带来
 			{
 				link.l4 = "扬, 我筹集了三千金币。 给, 你可以把这份礼物送给我们的寄生虫。 我想他们今天会很开心。 ";
 				link.l4.go = "UpgradeBakaut_Agreed";

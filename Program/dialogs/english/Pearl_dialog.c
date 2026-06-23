@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PearlMan_1";
 		break;
 		case "PearlMan_1":
-			dialog.text = "We're gathering pearls here, serving  "+NationNameGenitive(sti(npchar.nation))+", you know...";
+			dialog.text = "We're gathering pearls here, serving  "+NationNameGenitive(int(npchar.nation))+", you know...";
 			link.l1 = "Yeah, I know...";
 			link.l1.go = "exit";
 			link.l2 = "Hey, listen, is it possible to buy several of these little trinkets directly from the 'producer'? What would you say?";

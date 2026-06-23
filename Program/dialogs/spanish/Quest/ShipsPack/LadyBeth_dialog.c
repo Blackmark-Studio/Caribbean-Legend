@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -102,14 +102,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_StrongGroup":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40 || sti(pchar.rank) >= 12)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40 || int(pchar.rank) >= 12)
 			{
 				dialog.text = "¡Sí, Capitán!";
 				link.l1 = "¿Y la nave de Blackwood? ¿No causará problemas?";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
 				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40) Notification_Skill(true, 40, SKILL_LEADERSHIP);
-				if (sti(pchar.rank) >= 12) Notification_Level(true, 12);
+				if (int(pchar.rank) >= 12) Notification_Level(true, 12);
 			}
 			else
 			{
@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 				link.l2 = "Hmm... Bueno, necesito pensarlo bien. Quizá retomemos esta cuestión más adelante.";
 				link.l2.go = "AlonsoNaPalube_Exit";
 				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 40) Notification_Skill(false, 40, SKILL_LEADERSHIP);
-				if (sti(pchar.rank) < 12) Notification_Level(false, 12);
+				if (int(pchar.rank) < 12) Notification_Level(false, 12);
 			}
 		break;
 		
@@ -698,7 +698,7 @@ case "LadyBeth_Knippel_1": // Книппель
 		break;
 
 		case "LadyBeth_Alonso_2":
-			dialog.text = "¿Muertos? En esta aventura hemos perdido "+sti(pchar.SailorDiedInBattleInfo)+" hombres. No quiero ser insistente, capitán, pero... ¡le advertí!";
+			dialog.text = "¿Muertos? En esta aventura hemos perdido "+int(pchar.SailorDiedInBattleInfo)+" hombres. No quiero ser insistente, capitán, pero... ¡le advertí!";
 			link.l1 = "Ignoraré ese comentario porque hoy te has lucido, Alonso. ¿De dónde vienen tantos talentos?";
 			link.l1.go = "LadyBeth_Alonso_3";
 		break;
@@ -761,7 +761,7 @@ case "LadyBeth_Knippel_1": // Книппель
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Grot_MatrosySdautsya_2");
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) + 30;
+			pchar.Ship.Crew.Quantity = int(pchar.ship.Crew.Quantity) + 30;
 		break;
 
 		case "LadyBeth_MatrosyInGrot_PlusRaby":
@@ -863,7 +863,7 @@ case "LadyBeth_Knippel_1": // Книппель
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_ShipInShore_Vnutri_1");
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) + 12;
+			pchar.Ship.Crew.Quantity = int(pchar.ship.Crew.Quantity) + 12;
 		break;
 
 		case "LadyBeth_EnemyMatros_9":

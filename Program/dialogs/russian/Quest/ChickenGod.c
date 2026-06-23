@@ -502,10 +502,10 @@ void ProcessDialogEvent()
 					sTemp = "p3_" + (i + 1);
 				
 					chref = GetCharacter(questShips[i]);
-					sld = GetRealShip(sti(chref.ship.type));
+					sld = GetRealShip(int(chref.ship.type));
 					link.(sTemp) = "Ахой, Аруба! Забирай, " + GetStrSmallRegister(XI_ConvertString(sld.BaseName)) + " '" + chref.Ship.Name + "'.";
 					link.(sTemp).go = "joruba_p3_ship_" + questShips[i];
-					if (FindCompanionShips(SHIP_PINK) && sti(pchar.questTemp.ChickenGod.Tasks.Schyot) <= 1 && startHeroType != 4)
+					if (FindCompanionShips(SHIP_PINK) && int(pchar.questTemp.ChickenGod.Tasks.Schyot) <= 1 && startHeroType != 4)
 					{
 						link.(sTemp) = "Ахой, Аруба! Забирай, пинк '" + chref.Ship.Name + "'.";
 						link.(sTemp).go = "joruba_p3_PinkOtkaz";
@@ -670,7 +670,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p3":
-			sld = GetCharacter(sti(companion));
+			sld = GetCharacter(int(companion));
 			pchar.questTemp.ChickenGod.Tasks.p3.ship = sld.ship.type;
 			RemoveCharacterCompanion(pchar, sld);
 			AddPassenger(pchar, sld, false);
@@ -678,12 +678,12 @@ void ProcessDialogEvent()
 			npchar.ship.type = pchar.questTemp.ChickenGod.Tasks.p3.ship;
 			SetCharacterShipLocation(npchar, "Temple");
 					
-			sld = GetRealShip(sti(pchar.questTemp.ChickenGod.Tasks.p3.ship));
+			sld = GetRealShip(int(pchar.questTemp.ChickenGod.Tasks.p3.ship));
 					
 			dialog.text = "Отлично! Забираю!";
 			link.l1 = "Не умничай и гони награду!";
 			link.l1.go = "joruba_p3_1";
-			switch (sti(sld.BaseType)) {
+			switch (int(sld.BaseType)) {
 				case SHIP_MAYFANG:
 					dialog.text = "А что с остальными двумя? Не смог" + GetSexPhrase("","ла") + " приберечь для себя? Хе-хе.";
 				break;
@@ -703,7 +703,7 @@ void ProcessDialogEvent()
 				case SHIP_CORVETTE_QUEST:
 					sTemp = "приватир";
 					if (isMainCharacterPatented()) {
-						sTemp = GetStrSmallRegister(GetAddress_FormTitle(sti(Items[sti(pchar.EquipedPatentId)].Nation), sti(Items[sti(pchar.EquipedPatentId)].TitulCur)));
+						sTemp = GetStrSmallRegister(GetAddress_FormTitle(int(Items[int(pchar.EquipedPatentId)].Nation), int(Items[int(pchar.EquipedPatentId)].TitulCur)));
 					}
 					
 					dialog.text = "Вы только посмотрите на него! Вы опозорили свой патент, " + sTemp + "! Забираю.";
@@ -858,7 +858,7 @@ void ProcessDialogEvent()
 			link.l1 = "Всё? Давай поговорим о моей награде.";
 			link.l1.go = "joruba_p4_reward_1";
 			RemoveDublonsFromPCharTotal(3000);
-			pchar.questTemp.ChickenGod.Gold = sti(pchar.questTemp.ChickenGod.Gold) + 3000;
+			pchar.questTemp.ChickenGod.Gold = int(pchar.questTemp.ChickenGod.Gold) + 3000;
 		break;
 		
 		case "joruba_p4_other":
@@ -907,17 +907,17 @@ void ProcessDialogEvent()
 			
 			PlaySound("Ambient\Tavern\glotok_001.wav");
 			RemoveDublonsFromPCharTotal(25000);
-			pchar.questTemp.ChickenGod.Gold = sti(pchar.questTemp.ChickenGod.Gold) + 25000;
+			pchar.questTemp.ChickenGod.Gold = int(pchar.questTemp.ChickenGod.Gold) + 25000;
 			
-			if (sti(pchar.questTemp.ChickenGod.Gold) >= 30000) {
+			if (int(pchar.questTemp.ChickenGod.Gold) >= 30000) {
 				Achievment_Set("ach_CL_87");
 			}
 			
 			notification("+3 очка P.I.R.A.T.E.S.", "None");
 			PlaySound("Interface\new_level.wav");
 			pchar.skill.FreeSPECIAL = 3;
-			pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices = sti(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) + 5;
-			if (sti(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) >= 5) {
+			pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices = int(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) + 5;
+			if (int(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) >= 5) {
 				pchar.questTemp.ChickenGod.Tasks.o6.Completed = true;
 			}
 			
@@ -987,7 +987,7 @@ void ProcessDialogEvent()
 			PlaySound("Interface\new_level.wav");
 			ChickenGod_ModifyStats(10.0);
 			pchar.questTemp.ChickenGod.Tasks.o2.Completed = true;
-			pchar.questTemp.ChickenGod.Tasks.Schyot = sti(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
+			pchar.questTemp.ChickenGod.Tasks.Schyot = int(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
 			
 			sld = CharacterFromID(pchar.questTemp.ChickenGod.Tasks.o2.Lady);
 			RemovePassenger(pchar, sld);
@@ -1008,7 +1008,7 @@ void ProcessDialogEvent()
 			PlaySound("Interface\new_level.wav");
 			ChickenGod_ModifyStats(15.0);
 			pchar.questTemp.ChickenGod.Tasks.o3.Completed = true;
-			pchar.questTemp.ChickenGod.Tasks.Schyot = sti(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
+			pchar.questTemp.ChickenGod.Tasks.Schyot = int(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
 			
 			TakeItemFromCharacter(pchar, "cirass4");
 			
@@ -1026,7 +1026,7 @@ void ProcessDialogEvent()
 			PlaySound("Interface\new_level.wav");
 			ChickenGod_ModifyStats(15.0);
 			pchar.questTemp.ChickenGod.Tasks.o4.Completed = true;
-			pchar.questTemp.ChickenGod.Tasks.Schyot = sti(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
+			pchar.questTemp.ChickenGod.Tasks.Schyot = int(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
 			
 			if (ChickenGod_IsDone()) {
 				link.l1.go = "joruba_final";
@@ -1046,7 +1046,7 @@ void ProcessDialogEvent()
 			PlaySound("Interface\new_level.wav");
 			ChickenGod_ModifyStats(15.0);
 			pchar.questTemp.ChickenGod.Tasks.o5.Completed = true;
-			pchar.questTemp.ChickenGod.Tasks.Schyot = sti(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
+			pchar.questTemp.ChickenGod.Tasks.Schyot = int(pchar.questTemp.ChickenGod.Tasks.Schyot) + 1;
 			
 			if (ChickenGod_IsDone()) {
 				link.l1.go = "joruba_final";
@@ -1130,8 +1130,8 @@ void ProcessDialogEvent()
 			notification("+3 очка P.I.R.A.T.E.S.", "None");
 			PlaySound("Interface\new_level.wav");
 			pchar.skill.FreeSPECIAL = 3;
-			pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices = sti(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) + 5;
-			if (sti(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) >= 5) {
+			pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices = int(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) + 5;
+			if (int(pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices) >= 5) {
 				pchar.questTemp.ChickenGod.Tasks.o6.Completed = true;
 			}
 			
@@ -1349,7 +1349,7 @@ void ChickenGod_InitAmmo() {
 		
 	if(CheckAttribute(itm, "UpgradeStage"))
 	{
-		int iUpgradeStage = sti(itm.UpgradeStage);
+		int iUpgradeStage = int(itm.UpgradeStage);
 		
 		switch (iUpgradeStage)
 		{
@@ -1402,7 +1402,7 @@ bool ChickenGod_FindQuestShips() {
 		}
 		
 		sld = GetCharacter(index);
-		int shipIndex = sti(sld.ship.type);
+		int shipIndex = int(sld.ship.type);
 		if (shipIndex == SHIP_NOTUSED) {
 			continue;
 		}
@@ -1417,12 +1417,12 @@ bool ChickenGod_FindQuestShips() {
 		}
 		
 		if (CheckAttribute(pchar, "questTemp.HWIC.TakeQuestShip")) {
-			if (sti(realShip.BaseType) == SHIP_MAYFANG || sti(realShip.BaseType) == SHIP_MIRAGE || sti(realShip.BaseType) == SHIP_VALCIRIA) {
+			if (int(realShip.BaseType) == SHIP_MAYFANG || int(realShip.BaseType) == SHIP_MIRAGE || int(realShip.BaseType) == SHIP_VALCIRIA) {
 				continue;
 			}
 		}
 		
-		questShips[questShipsNum] = sti(sld.index);
+		questShips[questShipsNum] = int(sld.index);
 		questShipsNum++;
 	}
 	

@@ -91,5 +91,5 @@ void SF_ExitButton(string errorMessage)
 	link.iconName = "face";
 	link.func = "Crash";
 	link.tooltip_main = "\n\nSorry. Please report that to the developers with the logs and the last save file";
-	StoryObject.title = "Wait, what?"
+	StoryObject.title = "Wait, what?";
 }

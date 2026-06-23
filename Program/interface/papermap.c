@@ -1,6 +1,4 @@
 
-object ColonyList[2];
-SetArraySize(&ColonyList, MAX_COLONIES);
 int playership_x, playership_z;
 
 void InitInterface(string iniName)
@@ -13,11 +11,11 @@ void InitInterface(string iniName)
 	for(int i = 0; i < MAX_COLONIES; i++)
 	{
 		sColony = colonies[i].id;
-		x = sti(colonies[i].map.x);
-		y = sti(colonies[i].map.y);
+		x = int(colonies[i].map.x);
+		y = int(colonies[i].map.y);
 		if(colonies[i].nation != "none")
 		{
-			sPic = GetNationNameByType(sti(colonies[i].nation));
+			sPic = GetNationNameByType(int(colonies[i].nation));
 		}
 		else
 		{
@@ -39,9 +37,9 @@ void InitInterface(string iniName)
 		}
 	}
 	
-	x = sti(worldMap.playerShipX)/1.66;
+	x = int(worldMap.playerShipX)/1.66;
 	x = 1024 + x - 5;
-	y = sti(worldMap.playerShipZ)/1.66;
+	y = int(worldMap.playerShipZ)/1.66;
 	y = 1024 - y - 5;
 
 	GameInterface.MAP.imagelist.PShip.group = "FRENDLY";
@@ -106,19 +104,19 @@ void DoPostExit()
 
 void SelectRColony()
 {
-	float fMouseX = stf(GameInterface.mousepos.x) - 6.0 + 5;
-	float fMouseY = stf(GameInterface.mousepos.y) - 50.0 + 5;
+	float fMouseX = float(GameInterface.mousepos.x) - 6.0 + 5;
+	float fMouseY = float(GameInterface.mousepos.y) - 50.0 + 5;
 
 	//iMouseX = iMouseX * 1.6;
 
 	//SendMessage(&GameInterface,"lslff",MSG_INTERFACE_MSG_TO_NODE,"MAP", 10, iMouseX, iMouseY);
 
 	//определяем верхний левый угол картинки
-	float fOffsetX = stf(GameInterface.MAP.offset.x);
-	float fOffsetY = stf(GameInterface.MAP.offset.y);
+	float fOffsetX = float(GameInterface.MAP.offset.x);
+	float fOffsetY = float(GameInterface.MAP.offset.y);
 
-	fMouseX = fOffsetX + fMouseX * stf(GameInterface.MAP.scale.x);
-	fMouseY = fOffsetY + fMouseY * stf(GameInterface.MAP.scale.y);
+	fMouseX = fOffsetX + fMouseX * float(GameInterface.MAP.scale.x);
+	fMouseY = fOffsetY + fMouseY * float(GameInterface.MAP.scale.y);
 
 	string sColony;
 	for(int i = 0; i < MAX_COLONIES; i++)
@@ -126,13 +124,13 @@ void SelectRColony()
 		sColony = colonies[i].id;
 		if(CheckAttribute(&GameInterface, "MAP.imagelist." + sColony))
 		{
-			if(fMouseX >= stf(GameInterface.MAP.imagelist.(sColony).x))
+			if(fMouseX >= float(GameInterface.MAP.imagelist.(sColony).x))
 			{
-				if(fMouseX <= stf(GameInterface.MAP.imagelist.(sColony).x) + 12.0)
+				if(fMouseX <= float(GameInterface.MAP.imagelist.(sColony).x) + 12.0)
 				{
-					if(fMouseY >= stf(GameInterface.MAP.imagelist.(sColony).y))
+					if(fMouseY >= float(GameInterface.MAP.imagelist.(sColony).y))
 					{
-						if(fMouseY <= stf(GameInterface.MAP.imagelist.(sColony).y) + 12.0)
+						if(fMouseY <= float(GameInterface.MAP.imagelist.(sColony).y) + 12.0)
 						{
 							XI_WindowDisable("MAIN_WINDOW", true);
 							XI_WindowDisable("INFO_WINDOW", false);
@@ -160,7 +158,7 @@ void FillColonyInfo(int iColony)
 
 	SetFormatedText("INFO_CAPTION", XI_ConvertString("Colony"+sColony));
 
-	//string sNation = GetNationNameByType(sti(colonies[iColony].nation));
+	//string sNation = GetNationNameByType(int(colonies[iColony].nation));
 	//SetNewGroupPicture("INFO_NATION_PICTURE", "NATIONS", sNation);
 
 	string sNation = GameInterface.MAP.imagelist.(sColony).pic;
@@ -340,8 +338,8 @@ int CalculateDistance(int iColonyNumber)
 {
 	int playership_x, playership_z;
 
-	int iX = sti(worldMap.playerShipX)/1.66;
-	int iZ = sti(worldMap.playerShipZ)/1.66;
+	int iX = int(worldMap.playerShipX)/1.66;
+	int iZ = int(worldMap.playerShipZ)/1.66;
 
 	iX = 1024 + iX - 10;
 	iZ = 1024 - iZ - 10;
@@ -373,15 +371,15 @@ int CalculateDistance(int iColonyNumber)
 
 	int iDist = (ipX*ipX + ipZ*ipZ);
 
-	iDist = sti(sqrt(iDist)+0.5);
+	iDist = int(sqrt(iDist)+0.5);
 
 	iDist = iDist/100;
 
 	int iDistance = iDist;
 
-	float fDist = 1.0;//  + (0.1 * makefloat(MOD_SKILL_ENEMY_RATE));
+	float fDist = 1.0;//  + (0.1 * float(MOD_SKILL_ENEMY_RATE));
 
-	iDistance = makefloat(iDistance) * fDist;
+	iDistance = float(iDistance) * fDist;
 
 	iDistance = iDistance * 2.8;
 

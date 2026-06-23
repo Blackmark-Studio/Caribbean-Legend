@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Я не желать с тобой общаться. Ты нападать без причины на мирных граждан. Уходи прочь!";
 				link.l1 = "Гм...";
@@ -78,13 +78,7 @@ void ProcessDialogEvent()
 			}
 			LaunchItemsTrade(npchar, 0);
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
 			dialog.text = "Спрашивать, бледнолицый брат, Куранай отвечать.";

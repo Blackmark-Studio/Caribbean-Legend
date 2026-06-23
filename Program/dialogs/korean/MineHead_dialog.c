@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -23,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "광산에 적이 나타났다! 경보 울려라!";
 				link.l1 = "아아, 악마 놈!";
@@ -63,9 +62,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "나리, 유감스럽게도 지금은 노예가 더 필요하지 않소. 하지만 상황은 언제든 바뀔 수 있으니, 몇 주 후나 다른 때에 다시 찾아오시오.";
 				link.l1 = "알겠소, 나리. 지금은 그들이 필요 없겠지만, 언젠가는 필요할지도 모르지.";
@@ -106,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "나리, 나는 어리석은 농담에 쓸 시간이 없소. 농담할 기분이면 선술집에나 가시오!";
@@ -121,9 +120,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "유감이지만, 나리, 지금은 그렇게 많은 노예가 필요하지 않소. 현재 광산에서는\n "+FindRussianQtyString(sti(location.quest.slaves.qty))+". 그렇게 많이 팔 생각이오?";
+				dialog.text = "유감이지만, 나리, 지금은 그렇게 많은 노예가 필요하지 않소. 현재 광산에서는\n "+FindRussianQtyString(int(location.quest.slaves.qty))+". 그렇게 많이 팔 생각이오?";
 				link.l1 = "네, 물론이지!";
 				link.l1.go = "slaves_max";
 				link.l2 = "흠... 그런 것 같진 않군.";
@@ -136,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "훌륭하오. 그들을 마을 문으로 데려오라고 명령해 주시오. 내가 내 부하들을 보내겠소.";
 			link.l1 = "걱정 마시오, 나리. 노예들은 제때에 당신께 인도될 것이오. 내가 즉시 모든 관련 명령을 내리겠소.";
 			link.l1.go = "slaves_calk";
@@ -153,7 +152,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

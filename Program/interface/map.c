@@ -203,7 +203,7 @@ void wdmRecalcReloadToSea()
     }
 	int numEncounters = wdmGetNumberShipEncounters();
 
-    int  iPlayer = SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX);
+    int  iPlayer = int(SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX));
     int  iSort[2];
     bool bSort[2];
     if (iMapTarget >= 0)
@@ -227,7 +227,7 @@ void wdmRecalcReloadToSea()
         {
             if (i == iPlayer) continue;
 
-            bSort[j] = SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i);
+            bSort[j] = bool(SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i));
             if (j != iMapTarget && bSort[j])
             {
                 iSort[idx] = j;
@@ -271,7 +271,7 @@ void wdmRecalcReloadToSea()
 			aref rEncounter;
 			makearef(rEncounter, worldMap.encounters.(encID).encdata);
 
-			int iRealEncounterType = sti(rEncounter.RealEncounterType);
+			int iRealEncounterType = int(rEncounter.RealEncounterType);
 
 			if (isShipEncounterType > 1 && iRealEncounterType < ENCOUNTER_TYPE_BARREL)
 			{
@@ -282,11 +282,11 @@ void wdmRecalcReloadToSea()
 			int iNumWarShips = 0;
 			if(CheckAttribute(rEncounter, "NumMerchantShips"))
 			{
-				iNumMerchantShips = sti(rEncounter.NumMerchantShips);
+				iNumMerchantShips = int(rEncounter.NumMerchantShips);
 			}
 			if(CheckAttribute(rEncounter, "NumWarShips"))
 			{
-				iNumWarShips = sti(rEncounter.NumWarShips);
+				iNumWarShips = int(rEncounter.NumWarShips);
 			}
 
 			if (CheckAttribute(rEncounter, "CharacterID"))
@@ -395,14 +395,14 @@ void wdmRecalcReloadToSea()
                 }
 			}
 			
-			if(sti(rEncounter.Nation) < 0)
+			if(int(rEncounter.Nation) < 0)
 			{
         		totalInfo = totalInfo + "БАГА -1.";
       		}
 
 			if(iRealEncounterType != ENCOUNTER_TYPE_BARREL && iRealEncounterType != ENCOUNTER_TYPE_BOAT)
 			{
-				switch(sti(rEncounter.Nation))
+				switch(int(rEncounter.Nation))
 				{		        
 					case ENGLAND: totalInfo = totalInfo + XI_ConvertString("under english flag"); break;
 					case FRANCE:  totalInfo = totalInfo + XI_ConvertString("under french flag");  break;
@@ -412,7 +412,7 @@ void wdmRecalcReloadToSea()
 				}
 			}
 
-			if(bSort[iSort[i]] && GetNationRelation2MainCharacter(sti(rEncounter.Nation)) == RELATION_ENEMY)
+			if(bSort[iSort[i]] && GetNationRelation2MainCharacter(int(rEncounter.Nation)) == RELATION_ENEMY)
 			{   // Враждебный преследователь
 				isSkipable = false;
 			}
@@ -482,13 +482,13 @@ void wdmRecalcReloadToSea()
                         totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     break;
 
-                    //default:
+                    default:
                         if(CheckAttribute(rChar, "mapEnc.Marker"))
                         {
                             switch(rChar.mapEnc.Marker)
                             {
                                 case "Brigadier":
-                                    switch(sti(rEncounter.Nation))
+                                    switch(int(rEncounter.Nation))
                                     {
                                         case ENGLAND:	loadScr = "interfaces\le\worldmapenc\chm.tga";	break;
                                         case FRANCE:	loadScr = "interfaces\le\worldmapenc\gr.tga";	break;
@@ -511,7 +511,7 @@ void wdmRecalcReloadToSea()
                         }
                         else
                             totalInfo = XI_ConvertString("someone sails") + totalInfo;
-                    //break;
+                    break;
 				}
 			}
 			else
@@ -640,17 +640,18 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
         case ENCOUNTER_TYPE_PIRATE: sInfo = "PIRATE"; break;
         case ENCOUNTER_TYPE_BARREL: sInfo = "BARREL"; break;
         case ENCOUNTER_TYPE_BOAT: sInfo = "BOAT"; break;
-        //default:
+        default:
             sInfo = "UNKNOWN";
+		break;
     }
-    float pcharPower = stf(PChar.Squadron.RawPower);
+    float pcharPower = float(PChar.Squadron.RawPower);
     sInfo = NewStr() + NewStr() + "ENC LOG" + NewStr() + "Encounter: " + sInfo + NewStr();
-    sInfo += "Raw player power: " + fts(pcharPower, 2) + NewStr() + "Modified player power: " + fts(stf(PChar.Squadron.ModPower), 2) + NewStr();
+    sInfo += "Raw player power: " + fts(pcharPower, 2) + NewStr() + "Modified player power: " + fts(float(PChar.Squadron.ModPower), 2) + NewStr();
     if(pcharPower == 0.0) pcharPower = 1.0;
     if(CheckAttribute(rEncounter, "CurPower"))
-        sInfo += "Enc power: " + fts(stf(rEncounter.CurPower), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(stf(rEncounter.CurPower) / pcharPower * 0.9, 2);
+        sInfo += "Enc power: " + fts(float(rEncounter.CurPower), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(float(rEncounter.CurPower) / pcharPower * 0.9, 2);
     else if(CheckAttribute(rEncounter, "Power"))
-        sInfo += "Enc power: " + fts(stf(rEncounter.Power), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(stf(rEncounter.Power) / pcharPower * 0.9, 2);
+        sInfo += "Enc power: " + fts(float(rEncounter.Power), 2) + NewStr() + "Ratio (Enc * 0.9 / Raw): " + fts(float(rEncounter.Power) / pcharPower * 0.9, 2);
     else
         sInfo += "Enc power: UNKNOWN" + NewStr() + "Ratio: UNKNOWN";
     sInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter);
@@ -663,13 +664,14 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
         sInfo += NewStr() + NewStr() + "TEMPLATE LOG" + NewStr();
         sInfo += "WorldMap model: " + rTmpl.worldMapShip + NewStr();
         sInfo += "Type: ";
-        switch(sti(rTmpl.Type))
+        switch(int(rTmpl.Type))
         {
             case ENCOUNTER_TRADE:   sInfo += "Trade";   break;
             case ENCOUNTER_WAR:     sInfo += "War";     break;
             case ENCOUNTER_SPECIAL: sInfo += "Special"; break;
-            //default:
+            default:
                 sInfo += "UNKNOWN";
+			break;
         }
         // sInfo += NewStr() + "Chance: " + rTmpl.Chance + NewStr();
         if (iRealEncounterType < WorldMapRandomEncQty)
@@ -705,8 +707,9 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
                     case SHIP_SPEC_MERCHANT:  sInfo += "MERCHANT; ";  break;
                     case SHIP_SPEC_RAIDER:    sInfo += "RAIDER; ";    break;
                     case SHIP_SPEC_WAR:       sInfo += "WAR; ";       break;
-                    //default:
+                    default:
                         sInfo += "UNKNOWN; ";
+					break;
                 }
                 sInfo += "Qty " + (BitParams & LBITS_4) + " - " + ((BitParams >> 4) & LBITS_4) + "; ";
                 sInfo += "Cls " + ((BitParams >> 8) & LBITS_4) + " - " + ((BitParams >> 12) & LBITS_4) + "; ";
@@ -744,19 +747,19 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
                     for(i = 0; i < qty; i++)
                     {
                         aCharInfo = GetAttributeN(aCompanions, i);
-                        idx = sti(aCharInfo.index);
+                        idx = int(aCharInfo.index);
                         if(idx == -1) continue;
                         rChar = GetCharacter(idx);
                         if(LAi_IsDead(rChar)) continue;
-                        iShipType = sti(rChar.Ship.Type);
+                        iShipType = int(rChar.Ship.Type);
                         if(iShipType == SHIP_NOTUSED) continue;
                         rShip = GetRealShip(iShipType);
-                        rBaseShip = &ShipsTypes[sti(rShip.BaseType)];
+                        rBaseShip = &ShipsTypes[int(rShip.BaseType)];
 
                         num++;
                         sInfo += NewStr() + "    " + (num) + ") ";
                         sInfo += XI_ConvertString(rBaseShip.Name) + "; ";
-                        sInfo += wdmGetSpec(sti(rBaseShip.Spec)) + "; ";
+                        sInfo += wdmGetSpec(int(rBaseShip.Spec)) + "; ";
                         sInfo += rBaseShip.Class + " класс; ";
                         sInfo += fts(GetRealShipPower(rChar), 2) + " мощь";
                     }
@@ -779,7 +782,7 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
             num++;
             sInfo += NewStr() + "    " + (num) + ") ";
             sInfo += XI_ConvertString(rBaseShip.Name) + "; ";
-            sInfo += wdmGetSpec(sti(rBaseShip.Spec)) + "; ";
+            sInfo += wdmGetSpec(int(rBaseShip.Spec)) + "; ";
             sInfo += rBaseShip.Class + " класс; ";
             sInfo += fts(GetBaseShipPower(iShipType), 2) + " мощь";
         }
@@ -846,11 +849,11 @@ int CalculateEscapeChance()
         {
             iCompQty++;
             rChar = &Characters[idx];
-            iShipType = sti(rChar.Ship.Type);
+            iShipType = int(rChar.Ship.Type);
             if(iShipType == SHIP_NOTUSED) continue;
             rShip = GetRealShip(iShipType);
             // Тип
-            switch (sti(rShip.Spec))
+            switch (int(rShip.Spec))
             {
                 case SHIP_SPEC_MERCHANT:  iTrade  += tradeShipModifier; break;
                 case SHIP_SPEC_UNIVERSAL: iUniv   += 8;   break;
@@ -858,10 +861,10 @@ int CalculateEscapeChance()
                 case SHIP_SPEC_WAR:       iWar    += -10; break;
             }
             // Паруса
-            fTemp = stf(rChar.ship.SP) / stf(rShip.SP);
-            iSails += (MakeInt(100.0 - (fTemp * 100.0)) / 10) * -4;
+            fTemp = float(rChar.ship.SP) / float(rShip.SP);
+            iSails += (int(100.0 - (fTemp * 100.0)) / 10) * -4;
             // Загруженность
-            fTemp = MakeFloat(GetCargoLoad(rChar)) / MakeFloat(GetCargoMaxSpace(rChar));
+            fTemp = float(GetCargoLoad(rChar)) / float(GetCargoMaxSpace(rChar));
             int indendantBonus = GetIntByCondition(CheckOfficersPerk(pchar, "Intendant"), 0, PERK_VALUE_INTENDANT);
             if (fTemp <= 0.4) iLoadLight += 10 + indendantBonus;
             else if (fTemp >= 0.7) iLoadHard += -12 + indendantBonus; 
@@ -902,59 +905,65 @@ int CalculateEscapeChance()
     // Удача
     i = GetCharacterSPECIAL(PChar, SPECIAL_L) * 4;
     iPositive += i;
-    sGreenText = XI_ConvertString(SPECIAL_L) + ": " + i;
+    sGreenText = XI_ConvertString(SPECIAL_L) + ": " + ToHumanModifier(i);
     // Скрытность
-    i = MakeInt(90.0 * pow((MakeFloat(GetSkillAfterPenalty(PChar, SKILL_SNEAK))/100.0), 0.40));
+    i = int(90.0 * pow((float(GetSkillAfterPenalty(PChar, SKILL_SNEAK))/100.0), 0.40));
     iPositive += i;
-    sGreenText += NewStr() + XI_ConvertString(SKILL_SNEAK) + ": " + i;
+    sGreenText += NewStr() + XI_ConvertString(SKILL_SNEAK) + ": " + ToHumanModifier(i);
     // Навигация
     int iSailing = GetSkillAfterPenalty(PChar, SKILL_SAILING);
-    i = MakeInt(65.0 * pow((MakeFloat(iSailing)/100.0), 0.40));
+    i = int(65.0 * pow((float(iSailing)/100.0), 0.40));
     iPositive += i;
-    sGreenText += NewStr() + XI_ConvertString(SKILL_SAILING) + ": " + i;
+    sGreenText += NewStr() + XI_ConvertString(SKILL_SAILING) + ": " + ToHumanModifier(i);
     // Навигация выше порога
     i = 1 * (iSailing - GetShipClassNavySkill(GetCharacterShipClass(PChar)));
     if (i > 0)
     {
         iPositive += i;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_0") + i;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_0") + ToHumanModifier(i);
     }
     if (iRaider != 0)
     {
         iPositive += iRaider;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_1") + iRaider;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_1") + ToHumanModifier(iRaider);
         
     }
     if (iUniv != 0)
     {
         iPositive += iUniv;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_2") + iUniv;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_2") + ToHumanModifier(iUniv);
         
     }
     if (iLoadLight != 0)
     {
         iPositive += iLoadLight;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_3") + iLoadLight;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_3") + ToHumanModifier(iLoadLight);
     }
     if (CheckOfficersPerk(PChar, "SailingProfessional"))
     {
         iPositive += PERK_VALUE2_SAILING_PROFESSIONAL;
-        sGreenText += NewStr() + GetConvertStr("SailingProfessional", "AbilityDescribe.txt") + ": " + PERK_VALUE2_SAILING_PROFESSIONAL;
+        sGreenText += NewStr() + GetConvertStr("SailingProfessional", "AbilityDescribe.txt") + ": " + ToHumanModifier(PERK_VALUE2_SAILING_PROFESSIONAL);
     }
     if (CheckOfficersPerk(PChar, "LoneWolf") && GetCompanionQuantity(pchar) < 2)
     {
         iPositive += PERK_VALUE2_LONE_WOLF;
-        sGreenText += NewStr() + GetConvertStr("LoneWolf", "AbilityDescribe.txt") + ": " + PERK_VALUE2_LONE_WOLF;
+        sGreenText += NewStr() + GetConvertStr("LoneWolf", "AbilityDescribe.txt") + ": " + ToHumanModifier(PERK_VALUE2_LONE_WOLF);
     }
     if (CheckCharacterItem(PChar, GetMapByArea(worldMap.island)))
     {
         iPositive += 14;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_4") + 14;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_4") + ToHumanModifier(14);
     }
     if (iCompQty == 1 && GetCharacterShipClass(PChar) > 5)
     {
         iPositive += 15;
-        sGreenText += NewStr() + XI_ConvertString("EscapePos_5") + 15;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_5") + " " + ToHumanModifier(15);
+    }
+
+    if (IsEquipCharacterByItem(pchar, "nocturlabe"))
+    {
+        iPositive += 25;
+        sGreenText += NewStr() + GetItemName("nocturlabe") + ": " + ToHumanModifier(25);
     }
 
     EscapeSummary = iPositive + iNegative;
@@ -1041,7 +1050,7 @@ void SuccessEscape()
         AddCharacterExpToSkill(PChar, SKILL_SNEAK, 10);
         AddCharacterExpToSkill(PChar, SKILL_FORTUNE, 5);
         // Обновить скорость
-        float curSpeed = stf(worldMap.encounters.(sTargetId).kMaxSpeed);
+        float curSpeed = float(worldMap.encounters.(sTargetId).kMaxSpeed);
         SendMessage(&worldMap, "lsf", MSG_WORLDMAP_SET_SPEED, sTargetId, curSpeed * 0.7);
         worldMap.encounters.(sTargetId).kMaxSpeed = curSpeed * 0.7;
         // Процессирование

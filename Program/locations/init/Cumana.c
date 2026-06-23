@@ -27,7 +27,7 @@ int LocationInitCumana(int n)
 	locations[n].models.always.town.sea_reflection = 1;
 	locations[n].models.always.L1 = "Cumana_signsA";
 	locations[n].models.always.L2 = "Cumana_marsh";
-    locations[n].models.always.L2.tech = "DLightModel"
+    locations[n].models.always.L2.tech = "DLightModel";
 	locations[n].models.always.seabed = "Cumana_sb";
 	locations[n].models.always.locators = "Cumana_locators";
 	locations[n].models.always.grassPatch = "Cumana_grass";

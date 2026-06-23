@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // 对话根据一天中的时间。 护林员
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // 对话根据一天中的时间。 护林员
 			    {
 					dialog.text = TimeGreeting()+", "+pchar.name+"! 门是开着的, 如果你想见老板的话。 ";
 					link.l1 = "好的... ";
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
 			{
 			dialog.text = "想见老板? 嗯, 那就往前走吧。 ";
 			link.l1 = "谢谢你允许我... ";
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
 				{
 				dialog.text = TimeGreeting()+", "+pchar.name+"! 门是开着的, 如果你想见埃迪和奇米塞特的话。 他们会很高兴见到你。 ";
 				link.l1 = "好的... ";
@@ -535,7 +535,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // 护林员 。 对话根据一天中的时间 .
 			{
 			dialog.text = "你想见埃迪吗? 好的, 往前走, 我想他会为你抽出一分钟时间。 ";
 			link.l1 = "谢谢你允许我... ";
@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 				link.l1.go = "shark_guard_fight";
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00)
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00)
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // 刚刚到达
 				{

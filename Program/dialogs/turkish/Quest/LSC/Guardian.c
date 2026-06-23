@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // диалог от времени суток. лесник
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // диалог от времени суток. лесник
 			    {
 					dialog.text = TimeGreeting()+", "+pchar.name+"! Kapı açık, patronu görmek istersen içeri girebilirsin.";
 					link.l1 = "Peki...";
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Patronu mu görmek istiyorsun? Hm, peki, o zaman yoluna devam et.";
 			link.l1 = "Bana izin verdiğin için teşekkür ederim...";
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 				{
 				dialog.text = TimeGreeting()+", "+pchar.name+"! Kapı açık, Eddie ve Chimiset'i görmek istersen içeri girebilirsin. Seni gördüklerine sevineceklerdir.";
 				link.l1 = "Peki...";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Eddie'yi görmek mi istiyorsun? Peki, devam et, sanırım senin için bir dakikasını ayırır.";
 			link.l1 = "Bana izin verdiğin için teşekkür ederim...";
@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				link.l1.go = "shark_guard_fight";
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00)
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00)
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // тока прибыл
 				{

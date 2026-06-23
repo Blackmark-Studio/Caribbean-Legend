@@ -2,7 +2,7 @@
 
 float GetCharacterSkillToOld(ref _refCharacter, string skillName)
 {
-	return makefloat(GetCharacterSkill(_refCharacter, &skillName) / SKILL_TO_OLD);
+	return float(GetCharacterSkill(_refCharacter, &skillName) / SKILL_TO_OLD);
 }
 
 int GetCharacterSkill(ref chr, string skillName)
@@ -35,7 +35,7 @@ int GetSkillValue(ref chr, string type, string skillName)
 {
 	if (CheckAttribute(chr, type + "." + skillName))
 	{
-		return sti(chr.(type).(skillName));
+		return int(chr.(type).(skillName));
 	}
 	return 0;
 }

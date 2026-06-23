@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "아하, 내 오랜 지인인 선장이군 "+GetFullName(pchar)+"! 반갑다, 영감! 럼주, 여자?";
-				if (makeint(pchar.money) >= 5)
+				if (int(pchar.money) >= 5)
 				{
 					link.l1 = "럼 한 잔 따라줘. "+npchar.name+".";
 					link.l1.go = "drink";
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			dialog.text = "오, 정말 기쁘군! 우리 도시에는 새 얼굴이 드물거든. 럼주 한 잔 따라줄 테니, 우리 얘기 좀 해볼까...";
 			link.l1 = "여기 처음 와봤는데, 이 정착지에 대해 좀 더 알고 싶어.";
 			link.l1.go = "info";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l2 = "럼 좀 따라줘. "+npchar.name+".";
 				link.l2.go = "drink";
@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 3)
 			{
 				dialog.text = "선장님, 이제 그만 마시는 게 좋을 것 같소. 술에 취해 소란이라도 피우면 큰일 납니다. 우리 여기선 그런 일에 아주 엄격하오. 선장님의 권위도 소용없을 것이오.";
 				link.l1 = "흠... 네 말이 맞아 - 이미 충분히 마셨지. 걱정해줘서 고마워!";			
@@ -84,7 +84,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -106,11 +106,11 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
 				DeleteAttribute(pchar, "chr_ai.drunk");
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
 				else
 				{
-					LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
-					Pchar.GenQuest.CamShuttle = makeint(sti(pchar.questTemp.Rum)/2); // Jason
+					LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
+					Pchar.GenQuest.CamShuttle = int(int(pchar.questTemp.Rum)/2); // Jason
 				}
 			}
 		break;
@@ -140,12 +140,12 @@ void ProcessDialogEvent()
 
 		case "room_day":
 			dialog.text = "그건 8리알 10개야. 방에 여자도 들일래? 계집애는 천 페소면 돼.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "아니, 여자 필요 없어. 자, 방값으로 이거 받아.";
 				link.l1.go = "room_day_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -160,12 +160,12 @@ void ProcessDialogEvent()
 
 		case "room_day_next":
 			dialog.text = "그건 8리알 10개야. 방에 여자도 부를래? 계집애는 천 페소면 돼.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "아니, 여자 필요 없어. 자, 방값으로 이거 받아.";
 				link.l1.go = "room_day_wait_next";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{
@@ -180,12 +180,12 @@ void ProcessDialogEvent()
 
 		case "room_night":
 			dialog.text = "그건 8리알 10개야. 방에 계집애도 부를까? 계집애 값은 천 페소밖에 안 해.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "아니, 여자 필요 없어. 자, 이걸로 방값 치르지.";
 				link.l1.go = "room_night_wait";
 			}
-			if (makeint(pchar.money) >= 1010)
+			if (int(pchar.money) >= 1010)
 			{
 				if (IsOfficer(characterFromId("Mary")) || !bLock || !bLock1)
 				{

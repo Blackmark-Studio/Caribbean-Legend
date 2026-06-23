@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makearef(NextDiag, NPChar.Dialog);
 
 	// 按城市调用对话 -->
-    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(sti(NPChar.nation)) + "_Governor.c";
+    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(int(NPChar.nation)) + "_Governor.c";
     if (LoadSegment(NPChar.FileDialog2))
 	{
         ProcessCommonDialog(NPChar, Link, NextDiag);
@@ -30,9 +30,9 @@ void ProcessDialogEvent()
     int f, colony_money;
 
     int k = 1000;
-    if (CheckAttribute(Nations[sti(NPChar.nation)], "Fort"))
+    if (CheckAttribute(Nations[int(NPChar.nation)], "Fort"))
     {
-        k = (300 - sti(Nations[sti(NPChar.nation)].Fort)*10);
+        k = (300 - int(Nations[int(NPChar.nation)].Fort)*10);
     }
 	bool ok;
 	
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "我听说你一直坚持要求觐见。 我叫" + GetFullName(npchar) +
-                              "。 我是" + NationNameGenitive(sti(NPChar.nation)) + "殖民地的总督, 是" + NationKingsName(npchar) +
+                              "。 我是" + NationNameGenitive(int(NPChar.nation)) + "殖民地的总督, 是" + NationKingsName(npchar) +
                               "在这些海域的王室代表。 现在, 请你告诉我, " + GetAddress_Form(NPChar) + ", 你来访的目的是什么。 ";
 				link.l1 = "我叫" +GetFullName(pchar)+ "。 ";
 				link.l1.go = "node_1";
@@ -82,9 +82,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("哦, 又是你? 那么, 这次你想从" + NationNameGenitive(sti(NPChar.nation)) + "的总督这里得到什么? ",
+				dialog.text = RandPhraseSimple("哦, 又是你? 那么, 这次你想从" + NationNameGenitive(int(NPChar.nation)) + "的总督这里得到什么? ",
                               "你又来打扰我处理国家大事了? 你想要什么, " + GetAddress_Form(NPChar) + "? ");
-				link.l1 = "我想和你谈谈为" + NationNameGenitive(sti(NPChar.nation)) + "王室效力的事。 ";
+				link.l1 = "我想和你谈谈为" + NationNameGenitive(int(NPChar.nation)) + "王室效力的事。 ";
 				link.l1.go = "work";
 				link.l2 = "我需要和你谈一件重要的事。 ";
 				link.l2.go = "quests"; // 国家文件
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "node_1":
 			dialog.text = "那么, 你为什么来这里打扰我处理国家大事? ";
-			link.l1 = "我想和你谈谈为" + NationNameGenitive(sti(NPChar.nation)) + "王室效力的事。 ";
+			link.l1 = "我想和你谈谈为" + NationNameGenitive(int(NPChar.nation)) + "王室效力的事。 ";
 			link.l1.go = "work";
 			link.l2 = "我本来想和你谈一件重要的事。 ";
 			link.l2.go = "quests";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "你准备好50000比索的参赛费了吗? 这笔费用将用于奖金池。 ";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "是的, 当然。 请收下我的参赛费。 ";
 				link.l1.go = "Regata_2";

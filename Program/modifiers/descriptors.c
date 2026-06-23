@@ -99,7 +99,7 @@ void AddDescriptor(ref rObject, string descriptorId, int variant = -1)
 	}
 
 	if (variant >= 0) descriptorId += ("_" + variant);
-	rObject.descriptors.(descriptorId);
+	touchattr(rObject.descriptors.(descriptorId));
 	if (universalDescriptor) rObject.descriptors.(descriptorId).universal = true;
 }
 

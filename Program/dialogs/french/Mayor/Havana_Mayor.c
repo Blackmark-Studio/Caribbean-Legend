@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
 		
 		case "Slavetrader_HavanaAttack_2":
-			if (CheckAttribute(FortChref, "Fort.Mode") && sti(FortChref.Fort.Mode) != FORT_DEAD)//для особо хитрых - нефиг лезть с суши
+			if (CheckAttribute(FortChref, "Fort.Mode") && int(FortChref.Fort.Mode) != FORT_DEAD)//для особо хитрых - нефиг лезть с суши
 			{
 				dialog.text = "Ha ! J'ai soupçonné que vous étiez venu ici pour des esclaves. Mais ils sont situés dans le fort. Nos renforts arrivent maintenant et votre bande sera détruite en un rien de temps.";
 				link.l1 = "Merde ! Très bien, restez ici et ne bougez pas... Éloignons-nous d'ici ! Putain...";
@@ -57,7 +57,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Très bien, vous avez gagné de toute façon et nous devons céder à votre violence. Mais n'espérez pas échapper à la justice après ce pillage et après avoir coulé deux navires de guerre espagnols.";
 			link.l1 = "Ne te gonfle pas comme ça ou tu vas avoir une crise cardiaque. Assieds-toi ici et ne bouge pas...";
 			link.l1.go = "Slavetrader_HavanaAttack_4";
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(npchar.Nation)) + "hunter", 50);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(npchar.Nation)) + "hunter", 50);
 			ChangeCharacterComplexReputation(pchar,"nobility", -8);
         break;
 		
@@ -66,7 +66,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             NextDiag.CurrentNode = "Cupture_after";
 			DialogExit();
 			SetReturn_Gover_Dialog_Exit(NPChar);
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_GrabbingTown", 1);
 			pchar.quest.Slavetrader_DieHardHavana.over = "yes";//теперь можно на карту
             SetCharacterGoods(pchar, GOOD_SLAVES, 5000+rand(500));// c перегрузом пойдёт
             Log_SetStringToLog("Slaves have been put onto your ship");
@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DialogExit();
 			SetReturn_Gover_Dialog_Exit(NPChar);
 			ChangeCharacterComplexReputation(pchar,"nobility", -8);
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_GrabbingTown", 1);
 			chrDisableReloadToLocation = false;
 			pchar.quest.Slavetrader_DieHardHavana.over = "yes";//можно на карту
 			pchar.quest.Slavetrader_HavanaAttack.over = "yes";//если из Сантьяго по суше пришёл - уберем корабли

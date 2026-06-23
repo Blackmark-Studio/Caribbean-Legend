@@ -66,7 +66,7 @@ void ProcessDialogEvent()
                 link.l1.go = "patria_x";
                 break;
             }
-            if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
+            if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && int(pchar.money) >= 100000)
             {
                 dialog.text = "你把钱带来了吗? ";
                 link.l1 = "带来了。 ";
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
             link.l1.go = "exit";
             NextDiag.TempNode = "First time";
 			
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
             {
                 dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
                 link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
         break;
 
         case "I_know_you_good":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
             {
                 dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都在生你的气, 小子, 你最好离开这里... ", "看来你脑子坏了, 小子。 想活动下筋骨? 无意冒犯, 但你在这里无事可做, 滚吧! ");
                 link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个麻烦... ");
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
                 link.l1.go = "patria_x";
                 break;
             }
-            if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
+            if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && int(pchar.money) >= 100000)
             {
                 dialog.text = "你把钱带来了吗? ";
                 link.l1 = "带来了。 ";
@@ -281,7 +281,7 @@ void ProcessDialogEvent()
             link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
                     dialog.text = "别用你那些没用的话打扰我工作。 下次就不会这么便宜你了... ";
                     link.l1 = "知道了, 马库斯。 ";
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
             link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
                     dialog.text = "我希望你别再用空话烦我, 否则我不得不杀了你。 我是说, 我不想那么做。 ";
                     link.l1 = "你放心, 马库斯, 我不会的... ";
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 		
 		case "pirate_town":
             dialog.text = "解决问题? 你知道自己做了什么吗? 不管怎样, 给我一百万比索, 我会说服兄弟们忘记你的所作所为。 如果你不喜欢这个主意, 那就见鬼去吧。 ";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "好, 我愿意付钱。 ";
 				link.l1.go = "pirate_town_pay";
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour传奇版本: 如果没有, 则给予荷兰西印度公司旗帜和许可证 -->
-			bOk = IsCharacterPerkOn(pchar,"FlagSpa") || IsCharacterPerkOn(pchar,"FlagHol");
+			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -814,12 +814,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_8":
-			if (sti(pchar.questTemp.Mtraxx.JewQty) > GetCharacterItem(pchar, "jewelry7"))
+			if (int(pchar.questTemp.Mtraxx.JewQty) > GetCharacterItem(pchar, "jewelry7"))
 			{
 				PlaySound("interface\important_item.wav");
 				Log_Info("你上交了" + FindRussianQtyString(GetCharacterItem(pchar, "jewelry7")) + "块蓝琥珀");
 				RemoveItems(pchar, "jewelry7", GetCharacterItem(pchar, "jewelry7"));
-				dialog.text = "呵呵... 小子, 还记得我警告过你当叛徒的下场吗? 你当时怎么说的? 没人能指责你? 你觉得我很蠢吗, 小子? 我清楚地知道你在蚊子海岸掠夺了" + FindRussianQtyString(sti(pchar.questTemp.Mtraxx.JewQty)) + "块蓝琥珀。 现在滚吧, 小叛徒, 快滚, 祈祷我们再也别见面! ";
+				dialog.text = "呵呵... 小子, 还记得我警告过你当叛徒的下场吗? 你当时怎么说的? 没人能指责你? 你觉得我很蠢吗, 小子? 我清楚地知道你在蚊子海岸掠夺了" + FindRussianQtyString(int(pchar.questTemp.Mtraxx.JewQty)) + "块蓝琥珀。 现在滚吧, 小叛徒, 快滚, 祈祷我们再也别见面! ";
 				link.l1 = "该死! ";
 				link.l1.go = "AngryExitAgainWithOut";
 				pchar.questTemp.Mtraxx = "fail";
@@ -828,7 +828,7 @@ void ProcessDialogEvent()
 				// belamour传奇版本: 收回西班牙国旗
 				if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 				{
-					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 					STH_SetJokerFlag(SPAIN, false); 
 					log_info("你归还了西班牙国旗");
 				}
@@ -837,7 +837,7 @@ void ProcessDialogEvent()
 			{
 				PlaySound("interface\important_item.wav");
 				Log_Info("你上交了" + FindRussianQtyString(GetCharacterItem(pchar, "jewelry7")) + "块蓝琥珀");
-				RemoveItems(pchar, "jewelry7", sti(pchar.questTemp.Mtraxx.JewQty));
+				RemoveItems(pchar, "jewelry7", int(pchar.questTemp.Mtraxx.JewQty));
 				dialog.text = "干得漂亮, 小子! 你展现了自己最好的一面: 解决了难题, 还把掠夺的东西全带来了。 做得好! 很高兴我没看错你。 ";
 				link.l1 = "我的分成呢, 马库斯? ";
 				link.l1.go = "mtraxx_9";
@@ -845,14 +845,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_9":
-			i = sti(pchar.questTemp.Mtraxx.JewQty) / 2;
+			i = int(pchar.questTemp.Mtraxx.JewQty) / 2;
 			PlaySound("interface\important_item.wav");
 			Log_Info("你收到了" + FindRussianQtyString(i) + "块蓝琥珀");
 			TakeNItems(pchar, "jewelry7", i);
 			// belamour传奇版本: 收回西班牙国旗
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你归还了西班牙国旗");
 			}
@@ -1006,7 +1006,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour传奇版本: 若缺少则给予荷兰西印度公司旗帜和许可证 -->
-			bOk = IsCharacterPerkOn(pchar,"FlagSpa") || IsCharacterPerkOn(pchar,"FlagHol");
+			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1103,7 +1103,7 @@ void ProcessDialogEvent()
 			// belamour传奇版本: 收回西班牙国旗
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你归还了西班牙国旗");
 			}
@@ -1498,7 +1498,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_68":
             dialog.text = "吼吼! 干得好, 王子。 我的分成呢? ";
-			if (sti(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour传奇版
+			if (int(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour传奇版
 			{
 				link.l1 = "给, 拿着。 根据我们的约定: 25万比索和300枚达布隆。 ";
 				link.l1.go = "mtraxx_69";
@@ -1517,7 +1517,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_68_2":
             dialog.text = "你把我的分成带来了吗? ";
-			if (sti(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour传奇版
+			if (int(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour传奇版
 			{
 				link.l1 = "给, 拿着。 根据我们的约定: 25万比索和300枚达布隆。 ";
 				link.l1.go = "mtraxx_69";
@@ -1683,7 +1683,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Roger_8", "6");
 			pchar.questTemp.Mtraxx = "corrida_marko";
 			/*pchar.quest.mtraxx_corrida_landtimer.win_condition.l1 = "Timer";
-			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.hour  = sti(GetTime()+1);
+			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.hour  = int(GetTime()+1);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -1692,7 +1692,7 @@ void ProcessDialogEvent()
 			pchar.quest.mtraxx_corrida_checktime.win_condition.l1.location = "Hispaniola1";
 			pchar.quest.mtraxx_corrida_checktime.function = "Mtraxx_CorridaCheckTime";*/
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1 = "Timer";
-			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.hour  = sti(GetTime()+12);
+			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.hour  = int(GetTime()+12);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -1717,7 +1717,7 @@ void ProcessDialogEvent()
 			// 传奇版收回旗帜
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你已归还西班牙旗帜");
 			}
@@ -1795,7 +1795,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_board_3":
-			RemoveCharacterGoods(pchar, GOOD_GOLD, makeint(iTotalTemp/2));
+			RemoveCharacterGoods(pchar, GOOD_GOLD, int(iTotalTemp/2));
 			WaitDate("", 0, 0, 0, 3, 10);
 			LAi_Fade("", "");
             dialog.text = "... 就像我们在兄弟会中一直做的那样 —每人一份公平的分成。 你可以留着‘斗牛士’号, 她是你的战利品。 ";
@@ -1820,7 +1820,7 @@ void ProcessDialogEvent()
             npchar.dialog.currentnode = "mtraxx_board_6x";
 			npchar.DeckDialogNode = "mtraxx_board_6x";
 			npchar.DontDeskTalk = true;
-			Ship_SetTaskRunAway(SECONDARY_TASK, sti(npchar.index), sti(pchar.index));
+			Ship_SetTaskRunAway(SECONDARY_TASK, int(npchar.index), int(pchar.index));
 			bQuestDisableMapEnter = false;//打开地图
 			DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
 			pchar.quest.mtraxx_corrida_complete.win_condition.l1 = "MapEnter";
@@ -1829,7 +1829,7 @@ void ProcessDialogEvent()
 			// 传奇版收回旗帜
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("你已归还西班牙旗帜");
 			}
@@ -1872,21 +1872,21 @@ void ProcessDialogEvent()
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (RealShips[sti(pchar.Ship.Type)].Type.Merchant) // 商船
+			if (RealShips[int(pchar.Ship.Type)].Type.Merchant) // 商船
 			{
 				dialog.text = "王子, 你决定成为我的第二个卡特勒斯了吗? 为什么给我带一艘商船来? 我可是指望你的! 去弄一艘像样的战船来! 现在就去! ";
 				link.l1 = "好的, 好的! ";
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (sti(RealShips[sti(pchar.ship.type)].Class) > 3)
+			if (int(RealShips[int(pchar.ship.type)].Class) > 3)
 			{
 				dialog.text = "王子, 你让我惊讶。 我告诉过你带一艘战船! 你驾着这破船怎么帮我? 开一艘三级或二级船回来, 不能更低也不能更高! 现在就去! 我不会等任何人。 ";
 				link.l1 = "好的, 好的! ";
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "王子, 你为什么不把‘海洋主权号’带到这里来? 当我告诉你带一艘战船时, 我不是指带一艘该死的战列舰! 开一艘三级或二级船回来! 现在就去! 我不会等任何人。 ";
 				link.l1 = "好的, 好的! ";
@@ -2007,11 +2007,11 @@ void ProcessDialogEvent()
 			
 			Weather.Wind.Speed = 16.0;
 			pchar.wind.speed = Weather.Wind.Speed;
-			fWeatherSpeed = stf(Weather.Wind.Speed);//首次输出的福利
+			fWeatherSpeed = float(Weather.Wind.Speed);//首次输出的福利
 	
 			Weather.Wind.Angle = 0.0;
 			pchar.wind.angle = Weather.Wind.Angle;
-			fWeatherAngle = stf(Weather.Wind.Angle);//首次输出的福利
+			fWeatherAngle = float(Weather.Wind.Angle);//首次输出的福利
 			
             npchar.dialog.currentnode = "mtraxx_board_6x";
 			npchar.DeckDialogNode = "mtraxx_board_6x";
@@ -2027,7 +2027,7 @@ void ProcessDialogEvent()
 			Group_LockTask("Terrax_SeaGroup2");
 			sld = CharacterFromID("Cartahena Fort Commander");
 			LAi_SetImmortal(sld, false);
-			Ship_SetTaskAttack(SECONDARY_TASK, sti(npchar.index), sti(sld.index));
+			Ship_SetTaskAttack(SECONDARY_TASK, int(npchar.index), int(sld.index));
 			AddQuestRecord("Roger_9", "5");
 			DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
 			pchar.questTemp.Mtraxx.Cartahena.Fort = "true";
@@ -2073,7 +2073,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_107":
-            if (sti(Pchar.money) < 350000)
+            if (int(Pchar.money) < 350000)
 			{
 				dialog.text = "吼吼, 这才是我的好小子! 但钱在哪里? ";
 				link.l1 = RandSwear()+"我马上拿来! ";
@@ -2093,7 +2093,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_108":
-            if (sti(Pchar.money) < 350000)
+            if (int(Pchar.money) < 350000)
 			{
 				dialog.text = "那么? 别再玩了, 把钱拿到这里来! ";
 				link.l1 = "这就去! ";
@@ -2115,7 +2115,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_110":
-            dialog.text = "由于整个行动是我策划的, 再加上‘红龙号’承担了对付堡垒的最艰巨任务, 我和我的人将获得一半的战利品。 另一半将根据其他四艘船的船员数量在船长之间分配。 你有" + GetCrewQuantity(pchar) + "名船员, 你的份额是" + sti(pchar.questTemp.Mtraxx.Cartahena.Gold) + "单位黄金和" + sti(pchar.questTemp.Mtraxx.Cartahena.Money) + "比索。 ";
+            dialog.text = "由于整个行动是我策划的, 再加上‘红龙号’承担了对付堡垒的最艰巨任务, 我和我的人将获得一半的战利品。 另一半将根据其他四艘船的船员数量在船长之间分配。 你有" + GetCrewQuantity(pchar) + "名船员, 你的份额是" + int(pchar.questTemp.Mtraxx.Cartahena.Gold) + "单位黄金和" + int(pchar.questTemp.Mtraxx.Cartahena.Money) + "比索。 ";
 			link.l1 = "好吧, 既然大家都没问题, 我也没问题! ";
 			link.l1.go = "mtraxx_111";
 		break;
@@ -2215,7 +2215,7 @@ case "mtraxx_111":
 		
 		case "patria_x7":
 			dialog.text = "哈哈哈! 这真是个该死的诡计! 这场闹剧我该收你多少钱? 好吧, 10万成交。 把钱给我。 ";
-			if (sti(pchar.money) >= 100000) 
+			if (int(pchar.money) >= 100000)
 			{
 				link.l1 = "拿去吧。 ";
 				link.l1.go = "patria_x8";
@@ -2302,7 +2302,7 @@ case "mtraxx_111":
 		
 		case "patria_17":
 			dialog.text = "很好。 现在把钱交出来, 否则他就完了! 别想骗我们, 我们盯着你呢! ";
-			if (sti(pchar.money) >= 350000)
+			if (int(pchar.money) >= 350000)
 			{
 				link.l1 = "给你, 拿去吧。 ";
 				link.l1.go = "patria_18";

@@ -27,13 +27,13 @@ void ProcessDialogEvent()
 
     if (CheckAttribute(aData, "nation"))
     {
-	    sCap = NationShortName(sti(aData.nation))+"SiegeCap_";
+	    sCap = NationShortName(int(aData.nation))+"SiegeCap_";
 	    sGroup = "Sea_"+sCap+"1";
 	    
 	   // string myships  = GetCompanionQuantity(PChar);
        // string escships = Group_GetCharactersNum(sGroup);
         
-        switch(sti(aData.conation))
+        switch(int(aData.conation))
         {
             case 0:  fort = "English fort"; break;
             case 1:  fort = "French fort"; break;
@@ -41,7 +41,7 @@ void ProcessDialogEvent()
             case 3:  fort = "Dutch fort"; break;
             case 4:  fort = "Pirate fort"; break;
         }
-        int ifortPower = sti(colonies[FindColony(aData.colony)].FortValue);
+        int ifortPower = int(colonies[FindColony(aData.colony)].FortValue);
         int fortDamage = CheckFortInjuri();
         int SquadronDamage = CheckSquadronInjuri();
         
@@ -53,11 +53,11 @@ void ProcessDialogEvent()
     if (CheckNPCQuestDate(npchar, "Card_date"))
 	{
 		SetNPCQuestDate(npchar, "Card_date");
-		npchar.money = 3000 + rand(10) * makeint(100 * sti(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
+		npchar.money = 3000 + rand(10) * int(100 * int(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
 	}
 	else
 	{
-		if(sti(npchar.money) > CAP_MAX_MONEY || sti(npchar.money) < CAP_MIN_MONEY) 	
+		if(int(npchar.money) > CAP_MAX_MONEY || int(npchar.money) < CAP_MIN_MONEY)
 		{
 			npchar.money = CAP_MIN_MONEY + rand(CAP_NORM);
 		}
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1WM") && pchar.questTemp.WPU.Escort == "wait" && NPChar.id == "WMCaptain")
 				{
 					dialog.text = "내가 부탁한 재료를 가져왔나?";
-					if (sti(pchar.questTemp.WPU.Escort.Planks) - GetSquadronGoods(pchar, GOOD_PLANKS) <= 0 && sti(pchar.questTemp.WPU.Escort.Sailcloth) - GetSquadronGoods(pchar, GOOD_SAILCLOTH) <= 0 && sti(pchar.questTemp.WPU.Escort.Linen) - GetSquadronGoods(pchar, GOOD_COTTON) <= 0)
+					if (int(pchar.questTemp.WPU.Escort.Planks) - GetSquadronGoods(pchar, GOOD_PLANKS) <= 0 && int(pchar.questTemp.WPU.Escort.Sailcloth) - GetSquadronGoods(pchar, GOOD_SAILCLOTH) <= 0 && int(pchar.questTemp.WPU.Escort.Linen) - GetSquadronGoods(pchar, GOOD_COTTON) <= 0)
 					{
 						link.l1 = "그래. 네 배를 수리하는 데 필요한 건 전부 내 창고에 있다.";
 						link.l1.go = "WM_Captain_5";
@@ -111,7 +111,7 @@ void ProcessDialogEvent()
                     CalcBattleDifficulty();
                     if(iEncPow == -1) iEncPow = 0;
 					Pchar.GenQuest.MoneyForCaptureShip = (70 + hrand(60, "&CapSur"+NPChar.id)) * iEncPow;
-					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
+					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = int(int(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
 					dialog.text = "잠깐만, 이러다간 나 죽겠어. 나한테 뭘 원하는 거야?";
 					//выкуп
 					link.l1 = "이 문제를 평화롭게 해결합시다. 몸값이 아마도 최선의 선택일 것 같소. 금액은 "+Pchar.GenQuest.MoneyForCaptureShip+" 페소면 충분해, "+GetAddress_FormToNPC(NPChar)+". 그리고 나서 꺼져 버려라!";
@@ -185,7 +185,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				// вице адмирал
-				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && sti(Items[sti(pchar.EquipedPatentId)].Nation) == npchar.nation)
+				if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && int(Items[int(pchar.EquipedPatentId)].Nation) == npchar.nation)
 				{
 					Dialog.text = "내 배에 오신 것을 환영합니다, 부제독 나리! 무엇을 도와드릴까요?";
 					link.l1 = "너에게 맡길 일이 있다!";
@@ -195,7 +195,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				// Офицер с патентом
-				if(IsOfficerFullEquip() && sti(Items[sti(pchar.EquipedPatentId)].Nation) == npchar.nation)
+				if(IsOfficerFullEquip() && int(Items[int(pchar.EquipedPatentId)].Nation) == npchar.nation)
 				{
 					Dialog.text = "동료 일꾼을 만나서 반갑소, 선장! 무엇을 도와드릴까?";
 					link.l1 = "너에게 맡길 일이 있다!";
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
                 //homo 25/06/06
                 link.l1.go = "rumours_capitan";
                 //belamour legendary edition 
-				bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+				bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 				bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 				bOk = bOk1 || bOk2;
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은  "+GetFullName(characterFromID(NPChar.MainCaptanId))+", 그를 에서 찾을 수 있어 "+XI_ConvertString(RealShips[sti(characters[GetCharacterIndex(NPChar.MainCaptanId)].Ship.Type)].BaseName)+" '"+characters[GetCharacterIndex(NPChar.MainCaptanId)].Ship.Name+"'.";
+                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은  "+GetFullName(characterFromID(NPChar.MainCaptanId))+", 그를 에서 찾을 수 있어 "+XI_ConvertString(RealShips[int(characters[GetCharacterIndex(NPChar.MainCaptanId)].Ship.Type)].BaseName)+" '"+characters[GetCharacterIndex(NPChar.MainCaptanId)].Ship.Name+"'.";
                 link.l1 = "감사합니다. 말씀대로 하겠습니다.";
                 link.l1.go = "exit";
                 Diag.TempNode = "Go_away_Good";
@@ -367,14 +367,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cards_Node_100":
-		    if (sti(pchar.Money) < 300)
+		    if (int(pchar.Money) < 300)
 		    {
                 dialog.text = "장난하는 거야 뭐야? 돈도 없잖아!";
                 link.l1 = "그럴 수도 있지.";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 300)
+		    if (int(npchar.Money) < 300)
 		    {
                 dialog.text = "이제 그만해야겠어, 아니면 배를 유지할 돈이 부족하겠군...";
                 link.l1 = "안됐군.";
@@ -390,14 +390,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cards_Node_500":
-		    if (sti(pchar.Money) < 1500)
+		    if (int(pchar.Money) < 1500)
 		    {
                 dialog.text = "장난하는 거야 뭐야? 너 1,500페소도 없잖아!";
                 link.l1 = "내가 찾아낼 거야!";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 1500)
+		    if (int(npchar.Money) < 1500)
 		    {
                 dialog.text = "아니, 이런 내기가 분명 내 최후가 될 거야.";
                 link.l1 = "원하시는 대로 하겠습니다.";
@@ -466,7 +466,7 @@ void ProcessDialogEvent()
 
 		case "Dice_Node_100":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckDiceGameSmallRate() && !bOk)
@@ -477,14 +477,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 300)
+			if (int(pchar.Money) < 300)
 		    {
                 dialog.text = "장난하는 거야 뭐야? 돈도 없잖아!";
                 link.l1 = "그럴 수도 있지.";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 300)
+		    if (int(npchar.Money) < 300)
 		    {
                 dialog.text = "이제 됐다! 도박은 그만둘 거야 - 날 횡령꾼이라고 부르고 배에서 쫓아내기 전에.";
                 link.l1 = "안됐군.";
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 
 		case "Dice_Node_500":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckDiceGameSmallRate() && !bOk)
@@ -521,14 +521,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 1500)
+			if (int(pchar.Money) < 1500)
 		    {
                 dialog.text = "장난하는 거야 뭐야? 너 1,500페소도 없잖아!";
                 link.l1 = "내가 찾아낼 거야!";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 1500)
+		    if (int(npchar.Money) < 1500)
 		    {
                 dialog.text = "아니, 이 내기들 때문에 정말 망하게 생겼군.";
                 link.l1 = "원하시는 대로 하겠습니다.";
@@ -582,7 +582,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "price_2":
-            sld = &Characters[sti(pchar.PriceList.ShipStoreIdx)];
+            sld = &Characters[int(pchar.PriceList.ShipStoreIdx)];
 			SetPriceListByStoreMan(&Colonies[FindColony(sld.City)]);
 			Dialog.Text = "여기 있습니다... (가격표를 받으셨습니다)..";
 			Link.l1 = "정말 감사합니다!";
@@ -611,8 +611,8 @@ void ProcessDialogEvent()
                 {
                     if(iEncPow == -1) iEncPow = 0;
                     Pchar.GenQuest.MoneyForCaptureShip = (70 + hrand(60, "&CapSur"+NPChar.id)) * iEncPow;
-					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
-                    Dialog.text = RandSwear()+"그래, 네가 저지른 만행에 대해 많이 들었지. 좋다, 하지만 명심해라 "+XI_ConvertString(NationShortName(sti(NPChar.nation))+"사냥꾼")+" 그냥 넘어가지 않겠어!";
+					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = int(int(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
+                    Dialog.text = RandSwear()+"그래, 네가 저지른 만행에 대해 많이 들었지. 좋다, 하지만 명심해라 "+XI_ConvertString(NationShortName(int(NPChar.nation))+"사냥꾼")+" 그냥 넘어가지 않겠어!";
                     link.l1 = "훌륭하군. 총액은 "+Pchar.GenQuest.MoneyForCaptureShip+" 페소면 충분해, "+GetAddress_FormToNPC(NPChar)+".";
                     link.l1.go = "Capture";
                     link.l2 = "아, 신경 쓰지 마. 그냥 농담한 거야"+GetSexPhrase("","")+"!";
@@ -632,11 +632,11 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit";
 			sld = characterFromId(pchar.GenQuest.CaptainId);
             sld.talk_date_Go_away = lastspeakdate();
-			AddMoneyToCharacter(pchar, sti(Pchar.GenQuest.MoneyForCaptureShip));
+			AddMoneyToCharacter(pchar, int(Pchar.GenQuest.MoneyForCaptureShip));
 			ChangeCharacterComplexReputation(pchar,"nobility", -2); 		
 			ChangeCharacterComplexReputation(pchar,"authority", 1.0); 							
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
+			ChangeCharacterHunterScore(pchar, NationShortName(int(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
 		break;
 		
 		case "surrender_goaway":
@@ -688,10 +688,10 @@ void ProcessDialogEvent()
             Dialog.Text = "자, 가져가라 - 이제 나가!";
 			Link.l1 = "좋아!";
 			Link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, sti(Pchar.GenQuest.MoneyForCaptureShip));
+			AddMoneyToCharacter(pchar, int(Pchar.GenQuest.MoneyForCaptureShip));
 			ChangeCharacterComplexReputation(pchar,"nobility", -5);			
 			AddCharacterExpToSkill(pchar, "Leadership", 20);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
+			ChangeCharacterHunterScore(pchar, NationShortName(int(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 7 + rand(10), 3 + rand(5)));
         break;
 
         case "Boarding":
@@ -762,7 +762,7 @@ void ProcessDialogEvent()
 		//homo Наводка на купца
 		case "MerchantTrap_Abordage":
 
-			Dialog.Text = "~의 이름으로 "+NationKingsName(NPChar)+" 항복해, "+GetSexPhrase("더러운 해적","더러운 계집년!")+"! 그럼 네 목숨은 공정한 재판이 열릴 때까지는 살려두겠다. 그 자리에서 네 죄를 모두 심판받게 될 것이다 "+NationNameSK(sti(NPChar.nation))+"네가 약탈한 배들"+GetSexPhrase("","")+".";
+			Dialog.Text = "~의 이름으로 "+NationKingsName(NPChar)+" 항복해, "+GetSexPhrase("더러운 해적","더러운 계집년!")+"! 그럼 네 목숨은 공정한 재판이 열릴 때까지는 살려두겠다. 그 자리에서 네 죄를 모두 심판받게 될 것이다 "+NationNameSK(int(NPChar.nation))+"네가 약탈한 배들"+GetSexPhrase("","")+".";
 			Link.l1 = "꺼져라! 항복하는 게 좋을 거다!";
 			Link.l1.go = "exit";
 			LAi_SetCurHPMax(NPChar);
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && sti(Items[sti(pchar.EquipedPatentId)].Nation) == npchar.nation)
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && int(Items[int(pchar.EquipedPatentId)].Nation) == npchar.nation)
 					{
 						dialog.text = "부제독님! 저는 주의 깊게 듣고 있지만, 시간이 많지 않습니다. 우리는 지금 싸우고 있습니다: "+fort+", 그리고 나는 전투의 방향을 지휘해야 해.";
 					}
@@ -797,7 +797,7 @@ void ProcessDialogEvent()
             }
             else
             {
-                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은  "+GetFullName(rchar)+", 그를 찾으려면 "+XI_ConvertString(RealShips[sti(rchar.Ship.Type)].BaseName)+" ''"+rchar.Ship.Name+"''.";
+                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은  "+GetFullName(rchar)+", 그를 찾으려면 "+XI_ConvertString(RealShips[int(rchar.Ship.Type)].BaseName)+" ''"+rchar.Ship.Name+"''.";
                 link.l1 = "감사합니다. 말씀대로 하겠습니다.";
                 link.l1.go = "exit";
             
@@ -827,10 +827,10 @@ void ProcessDialogEvent()
 		case "Siegehelp_1":
             SiegeResult("");
 			// belamour legendary edition
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE;
 			bOk = bOk1 || bOk2;
-            if (sti(aData.win)==0 || bOk)
+            if (int(aData.win)==0 || bOk)
             {
                 dialog.text = "그럼 너는 전리품에서 얼마나 챙길 생각이냐?";
                 link.l1 = "반.";
@@ -853,7 +853,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "attack_fort_03":
-            if((sti(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) < 4000)
+            if((int(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) < 4000)
             {
                 dialog.text = "한편으로, 이번 전투에서 내 배들이 꽤 손상됐으니, 증원군이 오면 나쁠 것 없지. 만약 네가 동의한다면\n "+GetPart(4)+"그렇다면, 우리도 합의에 이를 수 있겠군.";
                 link.l1 = "그거 마음에 드는군, "+GetAddress_FormToNPC(NPChar)+". 내가 요새를 공격해 볼 테니, 자네는 배의 대포로 우리를 지원하게.";
@@ -869,7 +869,7 @@ void ProcessDialogEvent()
 		    Diag.TempNode = "Siegehelp_0";
 		break;
 		case "Big_part":
-            if( (sti(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) <= -1500)
+            if( (int(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) <= -1500)
             {
                 dialog.text = "요새 대포 때문에 내 배들이 심하게 손상됐고, 다가오는 전투에서 우리가 질 수도 있겠군. 네 도움을 받아들이고, 네 조건에 동의하겠다.";
                 link.l1 = "훌륭하군, "+GetAddress_FormToNPC(NPChar)+", 그렇다면 우리가 요새를 공격할 테니, 당신은 배의 대포로 우리를 지원해 주시오.";
@@ -879,7 +879,7 @@ void ProcessDialogEvent()
             else
             {
 				// belamour legendary edition
-				bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+				bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
 				bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE;
 				bOk = bOk1 || bOk2;
 				if(bOk)
@@ -908,7 +908,7 @@ void ProcessDialogEvent()
         break;
 
         case "Middle_part":
-            if((sti(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) <= -600)
+            if((int(aData.iSquadronPower)*SquadronDamage - (ifortPower)*fortDamage) <= -600)
             {
                 dialog.text = "네 조건에 동의할 생각이오. 함께 작전을 펼치면 이 싸움에서 이길 확률이 높아지겠지.\n모든 일이 계획대로 진행된다면, 전리품에서 몫을 받게 될 것이오.";
                 link.l1 = "합의에 도달해서 다행이군, "+GetAddress_FormToNPC(NPChar)+". 즉시 내 부하들에게 요새를 공격하라고 명령하겠다.";
@@ -916,7 +916,7 @@ void ProcessDialogEvent()
                 aData.PartAttaksFort = 3;
             }else{
 				// belamour legendary edition
-				bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+				bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
 				bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE;
 				bOk = bOk1 || bOk2;
 				if(bOk)
@@ -950,15 +950,15 @@ void ProcessDialogEvent()
             aData.win = 1;
             EndOfTheSiege("End");
             NPChar.location = "";
-            int ilt = makeint(sti(aData.loot)/sti(aData.PartAttaksFort));
-            dialog.text = "안녕하세요, 선장님! 정말 힘든 전투였지만, 우리는 마침내 마을 수비대의 거센 저항을 뚫었습니다. 우리는 약탈에 성공했습니다\n "+sti(aData.loot)+" 페소입니다. 우리 약속대로, 당신 몫은 "+ilt+". 이 돈을 받아 주십시오. 당신은 한 푼도 빠짐없이 받을 자격이 있습니다. 이제 실례하겠습니다. 제 일로 돌아가야 하거든요.";
+            int ilt = int(int(aData.loot)/int(aData.PartAttaksFort));
+            dialog.text = "안녕하세요, 선장님! 정말 힘든 전투였지만, 우리는 마침내 마을 수비대의 거센 저항을 뚫었습니다. 우리는 약탈에 성공했습니다\n "+int(aData.loot)+" 페소입니다. 우리 약속대로, 당신 몫은 "+ilt+". 이 돈을 받아 주십시오. 당신은 한 푼도 빠짐없이 받을 자격이 있습니다. 이제 실례하겠습니다. 제 일로 돌아가야 하거든요.";
             link.l1 = "그렇다면, 나는 그만 가보겠소, "+GetAddress_FormToNPC(NPChar)+". 잘 가라!";
             link.l1.go = "exit";
             //AddDialogExitQuest("End_Siege_and_Attaks_City");
 
             Diag.TempNode = "no_return_02";
             AddMoneyToCharacter(PChar, ilt);
-            ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
+            ChangeCharacterNationReputation(pchar, int(NPChar.nation), 20);
             ChangeCharacterComplexReputation(PChar,"nobility", 10);
             AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 80);
             AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 100);
@@ -966,10 +966,10 @@ void ProcessDialogEvent()
             AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 100);
             AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 100);
             AddCharacterExpToSkill(GetMainCharacter(), "Fortune", 80);
-            aData.loot = sti(aData.loot) - ilt;
+            aData.loot = int(aData.loot) - ilt;
             if (CheckAttribute(PChar, "quest.LeaveTown")) Pchar.quest.LeaveTown.over = "yes";
             //--> слухи
-            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(sti(aData.conation))+" colony - "+GetCityName(aData.Colony)+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", sti(aData.nation), -1, 30, 3);
+            SiegeRumour("I've been told that you had helped our squadron in the assault of the "+NationNameSK(int(aData.conation))+" colony - "+GetCityName(aData.Colony)+"! We're so thankfull to you, "+ GetAddress_Form(NPChar)+".", "", int(aData.nation), -1, 30, 3);
             //<-- слухи
 		break;
 
@@ -991,7 +991,7 @@ void ProcessDialogEvent()
             }
             else
             {
-                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은 "+GetFullName(rch)+", 그를 찾으려면 "+XI_ConvertString(RealShips[sti(rch.Ship.Type)].BaseName)+" ''"+rch.Ship.Name+"''.";
+                Dialog.text = "나는 너와 거래할 권한이 없다. 우리 함대의 지휘관에게 말해라. 그의 이름은 "+GetFullName(rch)+", 그를 찾으려면 "+XI_ConvertString(RealShips[int(rch.Ship.Type)].BaseName)+" ''"+rch.Ship.Name+"''.";
                 link.l1 = "고마워. 네 말대로 할게.";
                 link.l1.go = "exit";
 
@@ -1022,7 +1022,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort.Planks = 300 + hrand(5)*10;
 			pchar.questTemp.WPU.Escort.Sailcloth = 150 + hrand(10)*10;
 			pchar.questTemp.WPU.Escort.Linen = 70 + hrand(7)*10;
-			dialog.text = "나는 이미 이 모든 걸 파악했어. 우리가 이미 가진 걸 고려하면, 나는 필요해 "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Planks))+" 널빤지, "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Sailcloth))+" 돛천과\n "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Linen))+" 면화지. 이 재료만 있으면 일주일 안에 배를 수리할 수 있고, 그다음엔 출항할 수 있겠어.";
+			dialog.text = "나는 이미 이 모든 걸 파악했어. 우리가 이미 가진 걸 고려하면, 나는 필요해 "+FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Planks))+" 널빤지, "+FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Sailcloth))+" 돛천과\n "+FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Linen))+" 면화지. 이 재료만 있으면 일주일 안에 배를 수리할 수 있고, 그다음엔 출항할 수 있겠어.";
 			link.l1 = "좋아. 네가 필요한 모든 재료를 가져오겠다. 기다리고 있어라 - 열흘 안에 돌아올 테니.";
 			link.l1.go = "WM_Captain_4";
 		break;
@@ -1034,9 +1034,9 @@ void ProcessDialogEvent()
 			AddQuestRecord("Escort", "27");
 			AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 			AddQuestUserData("Escort", "sIsland", XI_ConvertString("Colony"+pchar.questTemp.WPU.Current.TargetIslandID));
-			AddQuestUserData("Escort", "sQty1", FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Planks)));
-			AddQuestUserData("Escort", "sQty2", FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Sailcloth)));
-			AddQuestUserData("Escort", "sQty3", FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.Linen)));
+			AddQuestUserData("Escort", "sQty1", FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Planks)));
+			AddQuestUserData("Escort", "sQty2", FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Sailcloth)));
+			AddQuestUserData("Escort", "sQty3", FindRussianQtyString(int(pchar.questTemp.WPU.Escort.Linen)));
 			Diag.TempNode = "WM_Captain_again";
 			SetFunctionTimerCondition("WM_Captain_Over", 0, 0, 11, false);
 			pchar.questTemp.WPU.Escort = "wait";
@@ -1088,9 +1088,9 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(sld, false);
 			LAi_SetActorType(sld);
 			LAi_ActorRunToLocation(sld, "reload", "reload1_back", "none", "", "", "", 5.0);
-			RemoveCharacterGoods(pchar, GOOD_PLANKS, sti(pchar.questTemp.WPU.Escort.Planks));
-			RemoveCharacterGoods(pchar, GOOD_SAILCLOTH, sti(pchar.questTemp.WPU.Escort.Sailcloth));
-			RemoveCharacterGoods(pchar, GOOD_COTTON, sti(pchar.questTemp.WPU.Escort.Linen));
+			RemoveCharacterGoods(pchar, GOOD_PLANKS, int(pchar.questTemp.WPU.Escort.Planks));
+			RemoveCharacterGoods(pchar, GOOD_SAILCLOTH, int(pchar.questTemp.WPU.Escort.Sailcloth));
+			RemoveCharacterGoods(pchar, GOOD_COTTON, int(pchar.questTemp.WPU.Escort.Linen));
 			DoQuestFunctionDelay("RepairShip_WithoutMasts", 5.0);
 		break;
 		
@@ -1119,14 +1119,14 @@ void ProcessDialogEvent()
 			pchar.quest.Escort_fail.over = "yes";
 			pchar.quest.DisasterShipWM_Over.over = "yes";//снимаем оба прерывания
 			RemoveCharacterCompanion(Pchar, characterFromID("WMCaptain"));//удаляем компаньона
-			pchar.questTemp.WPU.Escort.LevelUp_1Money = sti(pchar.questTemp.WPU.Escort.Planks)*15+sti(pchar.questTemp.WPU.Escort.Sailcloth)*9+sti(pchar.questTemp.WPU.Escort.Linen)*45;//деньги за материалы
-			dialog.text = "다시 한 번 감사드리고 싶습니다, 선장님 - 당신 덕분에 저와 제 선원들이 그 곤경에서 벗어날 수 있었습니다. 약속드린 대로, 제 배를 수리하는 데 필요한 자재에 대해 보상해 드리겠습니다. 여기 있습니다\n "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.LevelUp_1Money))+", 부디 가져가시오. 그리고 이것은 내 개인적인 선물이오.";
+			pchar.questTemp.WPU.Escort.LevelUp_1Money = int(pchar.questTemp.WPU.Escort.Planks)*15+int(pchar.questTemp.WPU.Escort.Sailcloth)*9+int(pchar.questTemp.WPU.Escort.Linen)*45;//деньги за материалы
+			dialog.text = "다시 한 번 감사드리고 싶습니다, 선장님 - 당신 덕분에 저와 제 선원들이 그 곤경에서 벗어날 수 있었습니다. 약속드린 대로, 제 배를 수리하는 데 필요한 자재에 대해 보상해 드리겠습니다. 여기 있습니다\n "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.LevelUp_1Money))+", 부디 가져가시오. 그리고 이것은 내 개인적인 선물이오.";
 			link.l1 = "도와드릴 수 있어서 기뻤습니다.";
 			link.l1.go = "WMShip_final_1";
 		break;
 		
 		case "WMShip_final_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.LevelUp_1Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.LevelUp_1Money));
 			TakeNItems(pchar, "obereg_"+(hrand(10)+1), 1);
 			dialog.text = "이제 작별 인사를 할 시간이오, 선장. 항만청에 꼭 들르시오 - 거기서 기다리고 있소. 또 보시오!";
 			link.l1 = "좋은 하루 보내시오, "+npchar.name+"!";
@@ -1143,7 +1143,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1WM")) AddQuestRecord("Escort", "31");
 			if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1VSP")) AddQuestRecord("Escort", "37");
 			if (CheckAttribute(PChar, "questTemp.WPU.Escort.LevelUp_1S")) AddQuestRecord("Escort", "40");
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.LevelUp_1Money)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.LevelUp_1Money)));
 			AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 			AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 		break;
@@ -1168,7 +1168,7 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(sld, false);
 			SetCharacterRemovable(sld, false);
 			sld.CompanionEnemyEnable = false; //всегда друзья
-			SetCompanionIndex(pchar, -1, sti(sld.index));
+			SetCompanionIndex(pchar, -1, int(sld.index));
 			sld.loyality = MAX_LOYALITY;
 			AddQuestRecord("Escort", "36");
 			AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
@@ -1196,16 +1196,16 @@ void ProcessDialogEvent()
 			pchar.quest.Escort_fail.over = "yes";
 			pchar.quest.DisasterShipWM_Over.over = "yes";//снимаем оба прерывания
 			RemoveCharacterCompanion(Pchar, characterFromID("WMCaptain"));//удаляем компаньона
-			pchar.questTemp.WPU.Escort.LevelUp_1Money = 10000+sti(pchar.rank)*200;
-			dialog.text = "다시 한 번 감사드리고 싶소, 선장님 – 당신 덕분에 나와 내 선원들이 이 곤경에서 벗어날 수 있었소. 여기 있소\n"+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.LevelUp_1Money))+". 선원 전원이 힘을 모았으니, 거절할 생각은 하지 마시오. 그리고 이건 내 개인적인 선물이오.";
+			pchar.questTemp.WPU.Escort.LevelUp_1Money = 10000+int(pchar.rank)*200;
+			dialog.text = "다시 한 번 감사드리고 싶소, 선장님 – 당신 덕분에 나와 내 선원들이 이 곤경에서 벗어날 수 있었소. 여기 있소\n"+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.LevelUp_1Money))+". 선원 전원이 힘을 모았으니, 거절할 생각은 하지 마시오. 그리고 이건 내 개인적인 선물이오.";
 			link.l1 = "도와드릴 수 있어서 기뻤습니다!";
 			link.l1.go = "WMShip_final_1";
 		break;
 		
 		case "SShip_final":
-			pchar.questTemp.WPU.Escort.LevelUp_1Money = 5000+sti(pchar.rank)*100;
+			pchar.questTemp.WPU.Escort.LevelUp_1Money = 5000+int(pchar.rank)*100;
 			RemovePassenger(Pchar, npchar);//удаляем пассажира
-			dialog.text = "다시 한 번 감사드리고 싶소, 선장님, 이 난관에서 우리를 구해주셔서. 자, 이 동전을 받아주시오 - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.LevelUp_1Money))+"  그리고 여기, 이 선물을 받아주시오. 많지는 않지만, 당신이 해준 일에 감사하는 내 마음을 전할 수 있는 건 이것뿐이오. 제발, 이 제안을 거절하지 마시오\n내 예전 선원들은 당신과 인디언, 해적들과의 전투에 모두 감탄하고 있소. 그들 모두가 당신과 함께하고 싶어 하오. 방금 배를 잃은 충직한 선원들의 충성을 받아주지 않겠소?";
+			dialog.text = "다시 한 번 감사드리고 싶소, 선장님, 이 난관에서 우리를 구해주셔서. 자, 이 동전을 받아주시오 - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.LevelUp_1Money))+"  그리고 여기, 이 선물을 받아주시오. 많지는 않지만, 당신이 해준 일에 감사하는 내 마음을 전할 수 있는 건 이것뿐이오. 제발, 이 제안을 거절하지 마시오\n내 예전 선원들은 당신과 인디언, 해적들과의 전투에 모두 감탄하고 있소. 그들 모두가 당신과 함께하고 싶어 하오. 방금 배를 잃은 충직한 선원들의 충성을 받아주지 않겠소?";
 			link.l1 = "당연히 아니지. 기꺼이 보관할게. 도와줄 수 있어서 기뻤어!";
 			link.l1.go = "WMShip_final_1";
 		break;
@@ -1268,7 +1268,7 @@ void ProcessDialogEvent()
 			Group_DelCharacter("Stivesant_Halleon", "Stivesant");
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = 40;
 			DeleteAttribute(npchar, "LifeDay");
 			pchar.quest.Seek_Piter.win_condition.l1 = "location";
@@ -1276,7 +1276,7 @@ void ProcessDialogEvent()
 			pchar.quest.Seek_Piter.win_condition.l2 = "Day";
 			pchar.quest.Seek_Piter.function = "StivesantOnStreet";
 			pchar.quest.Terms_Over.win_condition.l1 = "Timer";
-			pchar.quest.Terms_Over.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Terms_Over.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Terms_Over.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 15);
 			pchar.quest.Terms_Over.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 15);
 			pchar.quest.Terms_Over.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 15);
@@ -1354,9 +1354,9 @@ void ProcessDialogEvent()
 		case "FishingBoat_2":
 			if(GetDataDay() < 11) 
 			{
-				if(sti(RealShips[sti(npchar.ship.type)].basetype) == SHIP_TARTANE) iTemp = 100 + hrand(100);
+				if(int(RealShips[int(npchar.ship.type)].basetype) == SHIP_TARTANE) iTemp = 100 + hrand(100);
 				else iTemp = 200 + hrand(100);
-				iMoney = sti(GetCurrentIslandGoodsPrice(GOOD_FOOD)*0.66);
+				iMoney = int(GetCurrentIslandGoodsPrice(GOOD_FOOD)*0.66);
 				pchar.GenQuest.FishingBoatITemp = iTemp;
 				pchar.GenQuest.FishingBoatIMoney = iMoney;
 				
@@ -1389,10 +1389,10 @@ void ProcessDialogEvent()
 		
 		case "Количество вбитого провианта":
 			Diag.TempNode = "FishingBoat_1";
-			iQty = sti(dialogEditStrings[3]);
-			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
+			iQty = int(dialogEditStrings[3]);
+			iTemp = int(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
-			iMoney = makeint(pchar.GenQuest.FishingBoatIMoney);
+			iMoney = int(pchar.GenQuest.FishingBoatIMoney);
 			if(iQty > iTemp)
 			{
 				dialog.text = "너무 비싸... 그만한 돈 없어! 좀 덜 살 수 있나?";
@@ -1413,8 +1413,8 @@ void ProcessDialogEvent()
 			}
 			if(iQty > 0 && iQty <= iTemp)
 			{
-				dialog.text = "거래 성사! "+sti(iQty*iMoney)+" 페소입니다.";
-				if(sti(pchar.money) < iQty*iMoney)
+				dialog.text = "거래 성사! "+int(iQty*iMoney)+" 페소입니다.";
+				if(int(pchar.money) < iQty*iMoney)
 				{
 					link.l1 = "흠, 그 정도 돈은 없어. 다음에 하자.";
 					link.l1.go = "exit";
@@ -1431,10 +1431,10 @@ void ProcessDialogEvent()
 		
 		case "Количество вбитого провианта повтор":
 			Diag.TempNode = "FishingBoat_1";
-			iQty = sti(dialogEditStrings[3]);
-			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
+			iQty = int(dialogEditStrings[3]);
+			iTemp = int(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
-			iMoney = makeint(pchar.GenQuest.FishingBoatIMoney);
+			iMoney = int(pchar.GenQuest.FishingBoatIMoney);
 			if(iQty > iTemp)
 			{
 				dialog.text = "너무 많아... 그만한 돈 없어! 좀 덜 살 수 있겠어?";
@@ -1455,8 +1455,8 @@ void ProcessDialogEvent()
 			}
 			if(iQty > 0 && iQty <= iTemp)
 			{
-				dialog.text = "거래지! "+sti(iQty*iMoney)+" 페소입니다.";
-				if(sti(pchar.money) < iQty*iMoney)
+				dialog.text = "거래지! "+int(iQty*iMoney)+" 페소입니다.";
+				if(int(pchar.money) < iQty*iMoney)
 				{
 					link.l1 = "흠, 나한텐 그만한 돈이 없어. 다음에 하지.";
 					link.l1.go = "exit";
@@ -1474,8 +1474,8 @@ void ProcessDialogEvent()
 		case "Удачная покупка":
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
-			iQty = makeint(pchar.GenQuest.FishingBoatIQty);
-			iMoney = makeint(pchar.GenQuest.FishingBoatIMoney);
+			iQty = int(pchar.GenQuest.FishingBoatIQty);
+			iMoney = int(pchar.GenQuest.FishingBoatIMoney);
 			iTemp = iQty*iMoney;
 			DialogExit();
 			SetCharacterGoods(pchar, GOOD_FOOD, GetCargoGoods(pchar, GOOD_FOOD)+iQty);
@@ -1496,8 +1496,8 @@ void ProcessDialogEvent()
 		
 		case "Количество вбитых гарпунов":
    
-			iQty = sti(dialogEditStrings[3]);
-			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
+			iQty = int(dialogEditStrings[3]);
+			iTemp = int(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
 			Diag.TempNode = "FishingBoat_1";
 			if(iQty > iTemp)
@@ -1520,8 +1520,8 @@ void ProcessDialogEvent()
 			}
 			if(iQty > 0 && iQty <= iTemp)
 			{
-				dialog.text = "거래 성사! "+sti(iQty*100)+" 페소입니다.";
-				if(sti(pchar.money) < iQty*100)
+				dialog.text = "거래 성사! "+int(iQty*100)+" 페소입니다.";
+				if(int(pchar.money) < iQty*100)
 				{
 					link.l1 = "흠, 나한텐 그만한 돈이 없어. 다음에 하자.";
 					link.l1.go = "exit";
@@ -1537,8 +1537,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Количество вбитых гарпунов заново":
-			iQty = sti(dialogEditStrings[3]);
-			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
+			iQty = int(dialogEditStrings[3]);
+			iTemp = int(pchar.GenQuest.FishingBoatITemp);
 			pchar.GenQuest.FishingBoatIQty = iQty;
 			Diag.TempNode = "FishingBoat_1";
 			if(iQty > iTemp)
@@ -1561,8 +1561,8 @@ void ProcessDialogEvent()
 			}
 			if(iQty > 0 && iQty <= iTemp)
 			{
-				dialog.text = "거래 성사! "+sti(iQty*100)+" 페소입니다.";
-				if(sti(pchar.money) < iQty*100)
+				dialog.text = "거래 성사! "+int(iQty*100)+" 페소입니다.";
+				if(int(pchar.money) < iQty*100)
 				{
 					link.l1 = "흠, 나한텐 그 정도 돈이 없어. 다음에 하자.";
 					link.l1.go = "exit";
@@ -1581,7 +1581,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
-			iQty = makeint(pchar.GenQuest.FishingBoatIQty);
+			iQty = int(pchar.GenQuest.FishingBoatIQty);
 			TakeNItems(pchar, "slave_01", iQty);
 			AddMoneyToCharacter(pchar, -iQty*100);
 			
@@ -1655,7 +1655,7 @@ void ProcessDialogEvent()
 						iTemp = GOOD_SHIPSILK;
 						sTemp = "rolls of ship silk";
 					}
-					iQty = 20 + sti(rand(6)*5);
+					iQty = 20 + int(rand(6)*5);
 					pchar.GenQuest.FishingBoatITemp = iTemp;
 					pchar.GenQuest.FishingBoatIMoney = iMoney;
 					pchar.GenQuest.FishingBoatIQty = iQty;
@@ -1663,7 +1663,7 @@ void ProcessDialogEvent()
 					dialog.text = "음... 제가 여기 물건이 하나 있는데... 해변에서 우연히 발견한 거예요. 이것은 "+iQty+" "+sTemp+"입니다. 개당 가격은 "+iMoney+"입니다. 하지만 전부 한 번에만 팔 거고, 두 번은 제안하지 않을 거예요. 그리고 이 일을 다른 사람들이 알지 못하도록 해야 해요... 제 말 이해하시죠?";
 					link.l1 = "아니, 수상한 물건은 필요 없어, 고마워. 아무한테도 말하지 않을 테니 걱정 마.";
 					link.l1.go = "exit";
-					if(sti(pchar.money) >= iMoney*iQty)
+					if(int(pchar.money) >= iMoney*iQty)
 					{
 						link.l2 = "이해하네. 하지만 그 물건은 그만한 가치가 있지. 내가 가져가겠네. 그를 내 배로 데려오게.";
 						link.l2.go = "Купили стратегический товар";
@@ -1694,7 +1694,7 @@ void ProcessDialogEvent()
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
 				dialog.text = "그거야 "+GetItemName(sTemp)+". 손에 넣었지... 어디서인지는 묻지 마. 원래는 알아주는 감식가한테 팔려고 했어. 10,000페소에 넘길 테니, 살래?";
-				if(sti(pchar.money) > 9999)
+				if(int(pchar.money) > 9999)
 				{
 					link.l1 = "당연히 내가 가져가지! 물건이 그대로 있잖아. ";
 					link.l1.go = "Купили особый товар";
@@ -1725,9 +1725,9 @@ void ProcessDialogEvent()
 		case "Купили стратегический товар":
 			Diag.TempNode = "First time";
 			Diag.CurrentNode = "First time";
-			iQty = makeint(pchar.GenQuest.FishingBoatIQty);
-			iMoney = makeint(pchar.GenQuest.FishingBoatIMoney);
-			iTemp = makeint(pchar.GenQuest.FishingBoatITemp);
+			iQty = int(pchar.GenQuest.FishingBoatIQty);
+			iMoney = int(pchar.GenQuest.FishingBoatIMoney);
+			iTemp = int(pchar.GenQuest.FishingBoatITemp);
 			DialogExit();
 			SetCharacterGoods(pchar, iTemp, GetCargoGoods(pchar,iTemp)+iQty);
 			AddMoneyToCharacter(pchar, -iMoney*iQty);
@@ -1778,7 +1778,7 @@ int findPriceStoreMan(ref NPChar)
 		makeref(ch,Characters[n]);
 		if (CheckAttribute(ch, "Dialog.Filename") && ch.Dialog.Filename == "Common_Store.c") // магазин
 		{
-            //if (sti(ch.nation) !=  sti(NPChar.nation)) continue;
+            //if (int(ch.nation) !=  int(NPChar.nation)) continue;
             if (ch.location == "none") continue; // фикс для новых, невидимых до поры островов
             storeArray[howStore] = n;
             howStore++;
@@ -1803,7 +1803,7 @@ int CalcBattleDifficulty()
     UpdatePlayerSquadronPower();
 
     float encPow = 0.0;
-    float pchPow = stf(PChar.Squadron.RawPower);
+    float pchPow = float(PChar.Squadron.RawPower);
 
     string sTemp;
     if(CheckAttribute(CharacterRef, "SeaAI.Group.Name"))
@@ -1830,11 +1830,11 @@ int CalcBattleDifficulty()
     for(int i = 0; i < qty; i++)
     {
         aCharInfo = GetAttributeN(aCompanions, i);
-        idx = sti(aCharInfo.index);
+        idx = int(aCharInfo.index);
         if(idx == -1) continue;
         rChar = GetCharacter(idx);
         if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
-        iShipType = sti(rChar.Ship.Type);
+        iShipType = int(rChar.Ship.Type);
         if(iShipType == SHIP_NOTUSED) continue;
         rShip = GetRealShip(iShipType);
         encPow += GetRealShipPower(rChar);
@@ -1854,8 +1854,8 @@ int CalcBattleDifficulty()
     // От 50 шанс быстро падает к 0
     if(fRatio >= 1.0)
     {
-        return MakeInt(100 * 0.5 * pow((1.7 - fRatio) / 0.7, 2.5));
+        return int(100 * 0.5 * pow((1.7 - fRatio) / 0.7, 2.5));
     }
     // От 50 шанс медленно растёт к 100
-    return MakeInt(100 * (0.5 + 0.5 * pow((1 - fRatio), 0.5)));
+    return int(100 * (0.5 + 0.5 * pow((1 - fRatio), 0.5)));
 }

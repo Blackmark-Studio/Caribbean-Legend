@@ -94,7 +94,7 @@ int ScrollGetTexture()
 	string sScrollID = GetEventData();
 	
 	string sAttr = "pic" + (iPicIndex + 1);
-	int iTexture = sti(GameInterface.(sScrollID).(sAttr).TexId);
+	int iTexture = int(GameInterface.(sScrollID).(sAttr).TexId);
 
 	return iTexture;
 }
@@ -118,7 +118,7 @@ void CheckChangeSailStatus()
 	{
 		bNewValue = false;
 
-		int nEmblem = sti(GameInterface.SCROLL_GERALD.current);
+		int nEmblem = int(GameInterface.SCROLL_GERALD.current);
 
 		string sattr = "pic"+(nEmblem+1);
 		if (GameInterface.SCROLL_GERALD.(sattr).FileName != shref.ShipSails.Gerald_Name)
@@ -132,7 +132,7 @@ void CheckChangeSailStatus()
 
 void SetNewSailsGerald()
 {
-	int nEmblem = sti(GameInterface.SCROLL_GERALD.current);
+	int nEmblem = int(GameInterface.SCROLL_GERALD.current);
 
 	string sattr = "pic"+(nEmblem+1);
 	shref.ShipSails.Gerald_Name = GameInterface.SCROLL_GERALD.(sattr).FileName;

@@ -63,7 +63,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	case "Shadowtrader_begin":
 		pchar.questTemp.Shadowtrader = "true";
 		pchar.questTemp.Shadowtrader_Block = true;
-		pchar.questTemp.Shadowtrader.Guardername = GenerateRandomName_Generator(sti(npchar.nation), "man");
+		pchar.questTemp.Shadowtrader.Guardername = GenerateRandomName_Generator(int(npchar.nation), "man");
 		dialog.text = "¿Podrías ir a la taberna, buscar a un hombre llamado " + pchar.questTemp.Shadowtrader.Guardername + " y decirle que venga aquí lo antes posible? No puedo dejar la tienda, y ese cabeza hueca está en la taberna, atiborrándose de ron, y seguramente ni pensará en venir aquí, a pesar de estar de servicio.";
 		link.l1 = "Siempre estoy feliz de ayudar, camarada, y más aún porque iba a visitar la taberna de todos modos.";
 		link.l1.go = "Shadowtrader_begin_1";
@@ -78,9 +78,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1 = "No te preocupes. Lo resolveré a mi manera.";
 		link.l1.go = "exit";
 		pchar.questTemp.Shadowtrader.City = npchar.City;
-		pchar.questTemp.Shadowtrader.nation = sti(npchar.nation);
+		pchar.questTemp.Shadowtrader.nation = int(npchar.nation);
 		// создаем охранника
-		sld = GetCharacter(NPC_GenerateCharacter("ShadowGuarder", "officer_7", "man", "man", 10, sti(npchar.nation), 5, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("ShadowGuarder", "officer_7", "man", "man", 10, int(npchar.nation), 5, true, "quest"));
 		FantomMakeCoolFighter(sld, 20, 50, 50, "topor_2", "pistol3", "bullet", 50);
 		sld.name = pchar.questTemp.Shadowtrader.Guardername;
 		sld.lastname = "";

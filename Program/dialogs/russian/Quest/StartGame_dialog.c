@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 			                             "Не давайте себя ударить, перехватывайте удар противника колющим или парируйте. Но будьте осторожны, если попадётесь на финт - перехватят ваш колющий, да ещё и урон нанесут.",
 										 "Если энергия иссякнет - убегайте или отпрыгивайте, а противника доставайте финтом. Учтите, финтом удар так просто не отбить, но можно противника обмануть. И уж если попадётся он на вашу уловку, да попытается на ваш обманный замах ударом ответить - тут вы не только его клинок от себя отведёте, но и сами ему нанесёте урон.") +
 										 " Ну что, ещё раз?";
-			if (sti(pchar.rank) < 3) // чтоб не качались до упора
+			if (int(pchar.rank) < 3) // чтоб не качались до упора
 			{
 				link.l1     = "Ещё раз!";
 				link.l1.go  = "Teach_battle_1";
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 			sld = characterFromID("Sailor_2");
 			LAi_SetCitizenType(sld);
 			dialog.text = "Что же, неплохо. Одного противника вы одолели, но двое - не один. Тут сноровка нужна. Враги могут ведь втроём или вчетвером нападать. Повторим?";
-   			if (sti(pchar.rank) < 3) // чтоб не качались до упора
+   			if (int(pchar.rank) < 3) // чтоб не качались до упора
 			{
 				link.l1     = "Ещё раз!";
 				link.l1.go  = "Teach_battle_1";
@@ -481,8 +481,8 @@ void ProcessDialogEvent()
 		case "Epilog_Test_Start_Admiral":
 			GiveItem2Character(pchar, "patent_fra");
 			EquipCharacterbyItem(pchar, "patent_fra");
-            Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
-			Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+            Items[int(pchar.EquipedPatentId)].TitulCur = 5;
+			Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 			ChangeCharacterNationReputation(pchar, FRANCE, 100);
 			dialog.text = "Так точно, "+GetTitle(NPChar, false)+".";
 			link.l1     = "...";
@@ -528,7 +528,7 @@ void ProcessDialogEvent()
 		case "Epilog_Test_Start_Kino":
 			DialogExit();
 			pchar.questTemp.SharlieEpilog_gold_L = true;
-			sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Pikar", "Jan_Pikar", "man", "man", sti(pchar.rank), FRANCE, -1, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("SharlieEpilog_Pikar", "Jan_Pikar", "man", "man", int(pchar.rank), FRANCE, -1, true, "quest"));
 			sld.name = GetCharacterName("Jean");
 			sld.lastname = GetCharacterName("Picard");
 			//Телепорт

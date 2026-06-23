@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> калеуче
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && int(Pchar.money) >= 2000)
 			{
 				dialog.text = "이봐, 나리, 재미있는 물건 하나 안 사시겠소? 값도 싸고, 몇 천 페소면 충분하오...";
 				link.l1 = "흠. 아마 이 '작은 물건'을 훔쳐 놓고, 이제 떼어내려고 하는 거지?";
@@ -106,8 +106,8 @@ void ProcessDialogEvent()
 		break;
 		case "Whants_2":
 			SaveCurrentNpcQuestDateParam(npchar, "wants_date");
-			int iTemp = sti(dialogEditStrings[2]);
-			if (iTemp <= 0 || sti(pchar.money) < iTemp)
+			int iTemp = int(dialogEditStrings[2]);
+			if (iTemp <= 0 || int(pchar.money) < iTemp)
 			{
 				dialog.text = "약하고 지친 자를 조롱하는 것은 죄악이오...";
 				link.l1 = "하하하! 내가 너 같은 미친 거지한테 돈을 줄 거라고 진짜 생각했냐?!";
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 				dialog.text = "감사합니다 "+FindRussianMoneyString(iTemp)+", "+GetAddress_Form(NPChar)+"... 이제 이 돈으로 빵이라도 좀 살 수 있겠군...";
 				link.l1 = "여기 있다, 떠돌이놈아 - 가서 기운 좀 차려라.";
 				link.l1.go = "exit";
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 100 && iTemp <= 500)
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 				link.l1 = "도와드릴 수 있어 기뻤습니다.";
 				link.l1.go = "exit";
 				OfficersReaction("good");
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 500 && iTemp <= 1000)
@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 				link.l1 = "이건 굳이 필요하지 않아.";
 				link.l1.go = "exit";
 				ChangeCharacterComplexReputation(pchar,"nobility", iTemp/2000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 1000 && iTemp <= 5000)
@@ -146,8 +146,8 @@ void ProcessDialogEvent()
 				dialog.text = "감사합니다, 존경하는 분 "+GetSexPhrase("나리","아가씨")+" "+GetAddress_Form(NPChar)+"... 주님께서 그대를 지켜주시길...";
 				link.l1 = "그래, 그분의 보호가 있으면 나쁠 건 없지!";
 				link.l1.go = "exit";
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), iTemp/10000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), iTemp/10000.0+0.5);
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 5000 && iTemp <= 10000)
@@ -157,7 +157,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterExpToSkill(pchar, "Leadership", iTemp/5000.0);
 				AddCharacterExpToSkill(pchar, "Fortune", iTemp/5000.0);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
                  if (iTemp > 10000 && iTemp < 25000)
@@ -225,7 +225,7 @@ void ProcessDialogEvent()
 		
 		case "trial_7":
 			dialog.text = "했지, 나리, 했어. 당신이 말한 거랑 다 맞는지는 잘 모르겠는데... 돈 가져왔나? 오천 페소야.";
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				link.l1 = "걱정 마. 여기 네 돈이야. 이제 말해 봐.";
 				link.l1.go = "trial_8";

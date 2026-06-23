@@ -4,7 +4,7 @@
 
 
 //Инициализация
-void LAi_type_citizen_Init(aref chr)
+void LAi_type_citizen_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	bool isNew = false;
@@ -29,7 +29,7 @@ void LAi_type_citizen_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_citizen_CharacterUpdate(ref chr, float dltTime)
 {	
 	int idx, i;
 	int trg = -1;
@@ -51,7 +51,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			}
 		}else{
 			//Думаем о возможности поговорить	
-			time = stf(chr.chr_ai.type.notalk) - dltTime;
+			time = float(chr.chr_ai.type.notalk) - dltTime;
 			int num = FindNearCharacters(chr, 3.0, -1.0, -1.0, 0.001, true, true);	
 			//--> eddy. если квестовый ситизен, задача которого поговорить с ГГ
 			if(!CheckAttribute(chr,"quest.questflag.nochange"))
@@ -87,10 +87,10 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			{	
 				for(i = 0; i < num; i++)
 				{						
-					idx = sti(chrFindNearCharacters[i].index);
+					idx = int(chrFindNearCharacters[i].index);
 					if (idx == nMainCharacterIndex) //ищем ГГ
 					{					
-						if (sti(chr.talker) > rand(10) && LAi_Character_CanDialog(chr, pchar))
+						if (int(chr.talker) > rand(10) && LAi_Character_CanDialog(chr, pchar))
 						{
 							LAi_tmpl_SetDialog(chr, pchar, -1.0); //любое время можно ставить, с ГГ базар будет сразу
 							DeleteAttribute(chr, "talker");
@@ -102,11 +102,11 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			}
 			//<-- если квестовый ситизен, задача которого поговорить с ГГ
 			//--> проверяем не врагов, но дерущихся. 			
-			if (stf(chr.chr_ai.type.checkFight) < 0.0)
+			if (float(chr.chr_ai.type.checkFight) < 0.0)
 			{
 				for(i = 0; i < num; i++)
 				{
-					idx = sti(chrFindNearCharacters[i].index);
+					idx = int(chrFindNearCharacters[i].index);
 					by = &Characters[idx];
 					chr.chr_ai.type.checkFight = 1.5;
 					if (LAi_CheckFightMode(by) != CHR_MODE_PEACE && LAi_grp_playeralarm == 0) // patch-7
@@ -135,7 +135,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 			}
 			else 
 			{
-				chr.chr_ai.type.checkFight = stf(chr.chr_ai.type.checkFight) - dltTime;
+				chr.chr_ai.type.checkFight = float(chr.chr_ai.type.checkFight) - dltTime;
 			}
 			//<-- проверяем не врагов, но дерущихся.
 			if(time <= 0.0)
@@ -144,7 +144,7 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 				{
 					if (CheckAttribute(&chrFindNearCharacters[0], "index"))  //fix
 					{
-						idx = sti(chrFindNearCharacters[0].index);
+						idx = int(chrFindNearCharacters[0].index);
 						if(idx >= 0)
 						{							
 							by = &Characters[idx];
@@ -239,39 +239,39 @@ void LAi_type_citizen_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_citizen_CharacterLogin(aref chr)
+bool LAi_type_citizen_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_citizen_CharacterLogoff(aref chr)
+bool LAi_type_citizen_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_citizen_TemplateComplite(aref chr, string tmpl)
+void LAi_type_citizen_TemplateComplite(ref chr, string tmpl)
 {
 
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_citizen_NeedDialog(aref chr, aref by)
+void LAi_type_citizen_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_citizen_CanDialog(aref chr, aref by)
+bool LAi_type_citizen_CanDialog(ref chr, ref by)
 {
 	if(LAi_IsBoardingProcess()) return false;
 	if(LAi_CanNearEnemy(chr, 5.0)) return false;
 	//Если просто стоим, то согласимся на диалог
 	if(chr.chr_ai.tmpl == LAI_TMPL_WALK)
 	{
-		if(sti(by.index) != nMainCharacterIndex)
+		if(int(by.index) != nMainCharacterIndex)
 		{
-			if(stf(chr.chr_ai.type.notalk) <= 0.0)
+			if(float(chr.chr_ai.type.notalk) <= 0.0)
 			{
 				return true;
 			}
@@ -282,7 +282,7 @@ bool LAi_type_citizen_CanDialog(aref chr, aref by)
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY) return true;
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)	
 	{
-		if(sti(by.index) == nMainCharacterIndex)
+		if(int(by.index) == nMainCharacterIndex)
 		{
 			if(LAi_tmpl_dialog_StopNPC(chr)) return true;
 		}
@@ -291,7 +291,7 @@ bool LAi_type_citizen_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_citizen_StartDialog(aref chr, aref by)
+void LAi_type_citizen_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -300,7 +300,7 @@ void LAi_type_citizen_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_citizen_EndDialog(aref chr, aref by)
+void LAi_type_citizen_EndDialog(ref chr, ref by)
 {
 	LAi_CharacterRestoreAy(chr);
 	LAi_tmpl_walk_InitTemplate(chr);
@@ -315,7 +315,7 @@ void LAi_type_citizen_Fire(aref attack, aref enemy, float kDist, bool isFindedEn
 
 
 //Персонаж атакован
-void LAi_type_citizen_Attacked(aref chr, aref by)
+void LAi_type_citizen_Attacked(ref chr, ref by)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
@@ -325,7 +325,7 @@ void LAi_type_citizen_Attacked(aref chr, aref by)
 }
 
 
-int LAi_type_citizen_FindNearEnemy(aref chr)
+int LAi_type_citizen_FindNearEnemy(ref chr)
 {
 	if(LAi_grp_alarmactive == true)
 	{
@@ -338,7 +338,7 @@ int LAi_type_citizen_FindNearEnemy(aref chr)
 		int cnt = 0;
 		for(int i = 0; i < num; i++)
 		{
-			int idx = sti(chrFindNearCharacters[i].index);
+			int idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}

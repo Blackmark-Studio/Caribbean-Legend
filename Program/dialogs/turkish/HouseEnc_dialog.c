@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -186,14 +186,14 @@ void ProcessDialogEvent()
 			link.l1 = "Kapa çeneni, kaltak!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		case "HouseWoman_2":
 			dialog.text = "Sana evimizi kibarca terk etmeni söyledim, ama beni dinlemedin! Yeter! Yardım edin! Muhafızlar!";
 			link.l1 = "Kes sesini, aptal kadın! Deli misin?!";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break; 
 		//--------------------------------- завсклад ---------------------------------		
 		case "SkladMan":
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "Burası oldukça geniş, bir liman deposu için bile. Bakalım... 50.000 kentner yük alabilir. "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+"  ayda bir, mallarınızı güvenle saklayabilirim. "+"Bu, adamlarımla birlikte onu korumayı, su baskınından muhafaza etmeyi ve farelerle savaşmayı da kapsıyor. Ne dersin? Ha, bir de gizlilik var tabii, o zaten kendiliğinden anlaşılır.";
+			dialog.text = "Burası oldukça geniş, bir liman deposu için bile. Bakalım... 50.000 kentner yük alabilir. "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+"  ayda bir, mallarınızı güvenle saklayabilirim. "+"Bu, adamlarımla birlikte onu korumayı, su baskınından muhafaza etmeyi ve farelerle savaşmayı da kapsıyor. Ne dersin? Ha, bir de gizlilik var tabii, o zaten kendiliğinden anlaşılır.";
 			link.l1 = "Tabii. Ona bir bakabilir miyim?";	
 			link.l1.go = "storage_rent2";
 			link.l2 = "Bu çok fazla. Hem de eminim orası su basmış ve fare kaynıyordur.";
@@ -261,7 +261,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent2":
 			dialog.text = "Tabii, tabii. Ama... bir aylık ücreti peşin almam gerekecek. ";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Sen... gerçekten iyi bir tüccarsın, söylemeliyim. Al paranı ... bu kulübeyi kiralıyorum.";
 				link.l1.go = "storage_11";
@@ -280,11 +280,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_0":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "Ve kiraya gelince, hâlâ bana borcun var  "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+				dialog.text = "Ve kiraya gelince, hâlâ bana borcun var  "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "Pekala, şimdi kiranı ödeyeceğim.";
 					link.l1.go = "storage_3";
@@ -298,7 +298,7 @@ void ProcessDialogEvent()
 			else
 			{ // лесник . если забыл с собой корабль то никак.
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "Devam et.";
 				link.l1 = "Teşekkürler.";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		case "storage_1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
 			dialog.text = "Hatırlayacağın gibi, bir aylık ödemeyi peşin almam gerekiyor.";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "Tabii ki, hatırlıyorum. Buyurun.";
 				link.l1.go = "storage_11";
@@ -340,30 +340,30 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_11":
-			AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			NPChar.Storage.Activate = true;
 			Achievment_Set("ach_67"); // ugeen 2016
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 				
 		case "storage_2":			
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 		
 		case "storage_3":			
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;		
 
 		case "storage_04":
@@ -375,11 +375,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_4":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 			
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "Ve kiraya gelince, bana hâlâ borcun var "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))			
+				dialog.text = "Ve kiraya gelince, bana hâlâ borcun var "+FindRussianMoneyString(int(NPChar.MoneyForStorage))+".";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "Pekala.";
 					link.l1.go = "storage_5";
@@ -388,7 +388,7 @@ void ProcessDialogEvent()
 			else
 			{ // лесник . если нет корабля то и товар не забрать
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "Eşyalarını topla, ben de depoyu kapatacağım.";
 				link.l1 = "Pekala.";
@@ -405,7 +405,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
+			LeaveStorage(NPChar, rColony, int(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
@@ -422,7 +422,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_2";
 		break;
 		case "ShipyardsMap_2":
-			if (sti(pchar.questTemp.different.ShipyardsMap.skladFight))
+			if (int(pchar.questTemp.different.ShipyardsMap.skladFight))
 			{
 				dialog.text = "Sana bak hele! Hey, muhafızlar, burada bir hırsız var!!!";
 				link.l1 = "Hangi hırsız? Ben sadece konuşmak istemiştim!";
@@ -446,10 +446,10 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_4";
 		break;
 		case "ShipyardsMap_4":
-			dialog.text = "Hmm, bu daha iyi... Pekala! Hadi ver bakalım "+FindRussianMoneyString(sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+", ve ertesi gün tersanenin kapısını açık bırakacağım.";
+			dialog.text = "Hmm, bu daha iyi... Pekala! Hadi ver bakalım "+FindRussianMoneyString(int(pchar.questTemp.different.ShipyardsMap.sklad)*1000)+", ve ertesi gün tersanenin kapısını açık bırakacağım.";
 			link.l1 = "Bu çok pahalı. O zaman onsuz idare edeceğim...";
 			link.l1.go = "exit";
-			if (sti(pchar.money) >= (sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
+			if (int(pchar.money) >= (int(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
 			{
 				link.l2 = "Pekala, kabul ediyorum. Al paranı ve anlaştığımız gibi yap.";
 				link.l2.go = "ShipyardsMap_5";
@@ -459,7 +459,7 @@ void ProcessDialogEvent()
 			dialog.text = "Merak etme, halledilecek.";
 			link.l1 = "Umarım öyle olur...";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
 			AddQuestRecord("ShipyardsMap", "5");
 			AddQuestUserData("ShipyardsMap", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			//снимаем close_for_night

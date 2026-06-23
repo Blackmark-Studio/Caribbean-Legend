@@ -228,7 +228,7 @@ void ReinitGunsDamage()
 		
 		if(CheckAttribute(itm, "UpgradeStage"))
 		{
-			int iUpgradeStage = sti(itm.UpgradeStage);
+			int iUpgradeStage = int(itm.UpgradeStage);
 			
 			switch (iUpgradeStage)
 			{

@@ -1,6 +1,8 @@
+#include "internal.c"
 // BOAL 07.09.03  Mods on_off mode -->
 #include "_LSC_on_off.h"
 // BOAL 07.09.03  Mods on_off mode <--
+#include "interface\utils\numbers_formatter.c"
 #include "storm-engine\layers.h"
 #include "storm-engine\events.h"
 #include "globals.c"
@@ -85,8 +87,8 @@ native int GetTexture(string fileName);
 native void ReleaseTexture(int texId);
 native void SetCameraShake(float time, float i1, float i2, float r1, float r2, bool sc, bool ev, int fd);
 
-native int GetSteamEnabled();
-native int GetDLCenabled(int enable);
+native bool GetSteamEnabled();
+native bool GetDLCenabled(int enable);
 native int GetDLCCount();
 native int GetDLCData(int id);
 native int DLCStartOverlay(int id);
@@ -175,7 +177,6 @@ native int BeginCuratorCheckAsync(string sCuratorID, int iTimeOut);
 // "45734318" - Caribbean Legend (the game franchise)
 // "35094948" - Valkyrie Initiative (the publisher)
 // Results go into the event handler defined JUST BELOW THE OTHERS
-
 
 #libriary "script_libriary_test"
 #libriary "dx9render_script_libriary"
@@ -267,13 +268,13 @@ void ProcessCheat()
 		break;
 
 		case "Gold":
-			mc.money = sti(mc.money) + 100000;
+			mc.money = int(mc.money) + 100000;
 			Log_SetStringToLog(" + 100000 G");
 		break;
 		case "Skill":
 			mc.skill.freeskill = 1;
 	
-			mc.skill.freeskill = sti(mc.skill.freeskill) + 50;
+			mc.skill.freeskill = int(mc.skill.freeskill) + 50;
 			Log_SetStringToLog(" + 50 SP");
 		break;
 		case "Reputation":
@@ -318,7 +319,7 @@ void ProcessCameraPosAng()
 void proc_break_video()
 {
 	trace("proc_break_video()");
-	if (sti(InterfaceStates.videoIdx) != 1)
+	if (int(InterfaceStates.videoIdx) != 1)
 	{
 		//InterfaceStates.videoIdx = -1;
 		//Event("ievntEndVideo");
@@ -427,7 +428,7 @@ void Main_InitGame()
 
 void Main_LogoVideo()
 {
-	int i = sti(InterfaceStates.videoIdx);
+	int i = int(InterfaceStates.videoIdx);
 	switch(i)
 	{
 
@@ -446,12 +447,12 @@ void Main_LogoVideo()
 		StartPostVideo("Logos",1);
 	break;
 
-	//default:
+	default:
 		DelEventHandler(EVENT_END_VIDEO,"Main_LogoVideo");
 		DeleteClass(&aviVideoObj);
 		Event("DoInfoShower","sl","game prepare",true);
 		SetEventHandler("frame","Main_Start",1);
-	//break;
+	break;
 	}
 }
 
@@ -470,7 +471,7 @@ void Main_Start()
 	Environment.date.hour = worldMap.date.hour;
 	Environment.date.min = worldMap.date.min;
 	Environment.date.sec = worldMap.date.sec;
-	Environment.time = stf(worldMap.date.hour) + stf(worldMap.date.min)/60.0 + stf(worldMap.date.sec)/3600.0;
+	Environment.time = float(worldMap.date.hour) + float(worldMap.date.min)/60.0 + float(worldMap.date.sec)/3600.0;
 	Environment.date.year = worldMap.date.year;
 	Environment.date.month = worldMap.date.month;
 	Environment.date.day = worldMap.date.day;
@@ -481,11 +482,15 @@ void Main_Start()
 
 	StartLanguageSetting(LanguageGetLanguage());
  	LoadPlayerProfileDefault(); // boal
+	RunScriptTests();
 	LaunchMainMenu();
 
 	CharacterIsDead(GetMainCharacter());
-	
+
+
+	Event("LoadEvent");
 	ReloadProgressEnd();
+
 }
 
 void SaveGame()
@@ -570,7 +575,7 @@ void InterfaceDoExit()
 {
 	DelEventHandler("frame","InterfaceDoExit");
 	InterfaceStates.Launched=false;
-	if(sti(InterfaceStates.doUnFreeze)==true)
+	if(int(InterfaceStates.doUnFreeze)==true)
 	{
 		SendMessage(&GameInterface,"l",MSG_INTERFACE_RELEASE);
 		if(!IsEntity(&aviVideoObj))
@@ -606,7 +611,7 @@ void InterfaceDoExit()
 		break;
 		
 		case RC_INTERFACE_DO_LOAD_GAME:
-			if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && sti(InterfaceStates.Buttons.Resume.enable) == true)
+			if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && int(InterfaceStates.Buttons.Resume.enable) == true)
 			{
 				LaunchLoadGame(false);
 			}
@@ -621,7 +626,7 @@ void InterfaceDoExit()
 			break;
 
 		case RC_INTERFACE_DO_OPTIONS:
-			if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && sti(InterfaceStates.Buttons.Resume.enable) == true)
+			if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && int(InterfaceStates.Buttons.Resume.enable) == true)
 			{
 				LaunchOptionScreen(false);
 			}
@@ -675,7 +680,7 @@ void InterfaceDoExit()
 			makeref(NPChar,CharacterRef);
 			int iTest = FindColony(NPChar.City); // город магазина
 			ref rColony = GetColonyByIndex(iTest);
-			LaunchCannons(sti(rColony.StoreNum));
+			LaunchCannons(int(rColony.StoreNum));
 		break;
 		
 		case RC_INTERFACE_TO_SHIPYARD:
@@ -827,8 +832,6 @@ void OnLoad()
 	//Nation_InitAfterLoading();
 	ResetSound();
 
-	//CreateClass("dummy");
-
 	if(LoadSegment("Interface\BaseInterface.c"))
 	{
 		//InitBaseInterfaces_main();
@@ -922,9 +925,9 @@ void OnLoad()
     BattleInterface.battleborder.used = InterfaceStates.ShowBattleMode;
 
 /*	if( CheckAttribute(&InterfaceStates,"WorldSituationUpdateStep") &&
-		sti(InterfaceStates.WorldSituationUpdateStep) < 10 )
+		int(InterfaceStates.WorldSituationUpdateStep) < 10 )
 	{
-		Event("EvSituationsUpdate", "l", sti(InterfaceStates.WorldSituationUpdateStep));
+		Event("EvSituationsUpdate", "l", int(InterfaceStates.WorldSituationUpdateStep));
 	}	*/
 
 	actLoadFlag = 0;
@@ -964,6 +967,8 @@ void FranchiseCheck()
 	{
 		BeginCuratorCheckAsync("45734318", 10);
 	}
+
+	if (!CheckAttribute(&TEV, "franshise.nocturlabe")) TEV.franshise.nocturlabe.inStock = true;
 }
 
 void NewGame()
@@ -1010,7 +1015,7 @@ void NewGame_continue()
 	Environment.date.hour = worldMap.date.hour;
 	Environment.date.min = worldMap.date.min;
 	Environment.date.sec = worldMap.date.sec;
-	Environment.time = stf(worldMap.date.hour) + stf(worldMap.date.min)/60.0 + stf(worldMap.date.sec)/3600.0; //boal
+	Environment.time = float(worldMap.date.hour) + float(worldMap.date.min)/60.0 + float(worldMap.date.sec)/3600.0; //boal
 	Environment.date.year = worldMap.date.year;
 	Environment.date.month = worldMap.date.month;
 	Environment.date.day = worldMap.date.day;
@@ -1163,12 +1168,12 @@ bool bMenuEnter() // доступность меню F2
 	if(CharacterIsDead(GetMainCharacter())) return false;
 	if(bSeaActive && !bAbordageStarted) 
 	{
-		if(CheckAttribute(&BattleInterface,"ComState") && sti(BattleInterface.ComState) != 0) return false;
+		if(CheckAttribute(&BattleInterface,"ComState") && int(BattleInterface.ComState) != 0) return false;
 	} 
 	else 
 	{
 		if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != CHR_MODE_PEACE) return false;
-		if(CheckAttribute(&objLandInterface,"ComState") && sti(objLandInterface.ComState) != 0) return false;
+		if(CheckAttribute(&objLandInterface,"ComState") && int(objLandInterface.ComState) != 0) return false;
 	}
 	if(bDisableCharacterMenu) return false;// boal
 	if(bAbordageStarted && !bCabinStarted && !bDeckBoatStarted) return false;
@@ -1219,7 +1224,7 @@ void GameOver(string sName)
 	ClearPostEvents();
 	DeleteEntities();
 
-	if(sti(InterfaceStates.Launched)) {
+	if(int(InterfaceStates.Launched)) {
 		UnloadSegment(Interfaces[CurrentInterface].SectionName);
 	}
 
@@ -1313,12 +1318,6 @@ void GameOver(string sName)
 	LoadGameOptions();
 }
 
-string its(int iNumber)
-{
-	string sText = iNumber;
-	return sText;
-}
-
 // тяжкая игра - сайв токо в церкви 17.03.05 boal
 bool QuickSaveGameEnabledHardcore()
 {
@@ -1407,7 +1406,7 @@ int iCalculateSaveLoadCount(string _SaveLoad)
 	int iCount;
 	ref MChref = GetMainCharacter();
 	string sAttrName = _SaveLoad + "Count";	
-	iCount = sti(MChref.SystemInfo.(sAttrName));
+	iCount = int(MChref.SystemInfo.(sAttrName));
 	iCount++;
 	MChref.SystemInfo.(sAttrName) = iCount;
 	return iCount;
@@ -1461,7 +1460,7 @@ void SaveCurrentShipToCurrentProfile() {
 		aref ship;
 		makearef(ship, opt.ship);
 		
-		ref realShip = GetRealShip(sti(pchar.ship.type));
+		ref realShip = GetRealShip(int(pchar.ship.type));
 		CopyAttributes(ship, realShip);
 		ship.flag = pchar.nation;
 	}
@@ -1484,7 +1483,7 @@ object GetCurrentShipFromCurrentProfile() {
 	return ship;
 }
 
-void CopyCharacterAppearance(aref to, aref from) {
+void CopyCharacterAppearance(aref to, ref from) {
 	to.id = from.id;
 	to.sex = from.sex;
 	to.model = from.model;
@@ -1527,7 +1526,7 @@ void SaveCurrentCharactersToCurrentProfile() {
 		gfIdx = GetCharacterIndex("Helena");
 	}
 	// Log_info(""+gfIdx);
-	
+
 	for(int i = 1; i <= 3; i++) {
 		idx = GetOfficersIndex(pchar, i);
 		if (idx < 0 || idx == gfIdx) {
@@ -1551,7 +1550,7 @@ void SaveCurrentCharactersToCurrentProfile() {
 	}
 	
 	int passQty = GetPassengersQuantity(pchar);
-	for (i = 0; i < passQty; i++) {
+	for (int i = 0; i < passQty; i++) {
 		if (offCount >= 3) {
 			break;
 		}
@@ -1624,7 +1623,7 @@ void SaveCurrentMoneyToCurrentProfile() {
 	int money = 0;
 	if (CheckAttribute(pchar, "money")) {
 		trace("В карманах найдено " + pchar.money + " песо");
-		money += sti(pchar.money);
+		money += int(pchar.money);
 	}
 	
 	int dublon = 0;
@@ -1645,12 +1644,12 @@ void SaveCurrentMoneyToCurrentProfile() {
 				
 				if (CheckAttribute(box, "money")) {
 					trace("В каюте в " + boxId + " найдено " + box.money + " песо");
-					money += sti(box.money);
+					money += int(box.money);
 				}
 				
 				if (CheckAttribute(box, "items.gold_dublon")) {
 					trace("В каюте в " + boxId + " найдено " + box.items.gold_dublon + " дублонов");
-					dublon += sti(box.items.gold_dublon);
+					dublon += int(box.items.gold_dublon);
 				}
 			}
 		}
@@ -1668,10 +1667,10 @@ void SaveCurrentMoneyToCurrentProfile() {
 			if (CheckAttribute(deposit, "sum")) {
 				if(HasSubStr(depositName, "_type1")) {
 					trace("У ростовщика города " + GetCityName(deposit.City) + " найден вклад в размере " + deposit.sum + " песо");
-					money += sti(deposit.sum);
+					money += int(deposit.sum);
 				} else {
 					trace("У ростовщика города " + GetCityName(deposit.City) + " найден вклад в размере " + deposit.sum + " дублонов");
-					dublon += sti(deposit.sum);
+					dublon += int(deposit.sum);
 				}
 			}
 		}
@@ -1692,5 +1691,5 @@ int GetCurrentMoneyFromCurrentProfile() {
 		return 0;
 	}
 	
-	return sti(opt.money);
+	return int(opt.money);
 }

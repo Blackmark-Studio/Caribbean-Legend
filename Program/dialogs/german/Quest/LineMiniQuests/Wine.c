@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "Also, Kapitän, haben Sie den Wein mitgebracht?";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "Ja, habe ich.";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "Heiliger Sankt Arnulf, bete für uns! Das ist viel Wein! Hervorragend! Bedauerlicherweise, wie ich schon sagte, können wir uns nur sechzig Flaschen leisten, leider haben wir nicht genug Geld, um mehr zu kaufen. Nimm deine Pesos und ich werde gut auf diese sechzig Flaschen aufpassen. Bitte behalte den Rest.";
 				link.l1 = "Danke. Stellen Sie sicher, dass Sie und Ihre Soldatenfreunde auf meine Gesundheit anstoßen!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Willkommen zurück. Lassen wir mal sehen... Du hast gebracht "+sti(pchar.questTemp.Wine.Qty)+" Flaschen. Schön! Ich nehme sie. Die Bezahlung ist "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "Willkommen zurück. Lassen wir mal sehen... Du hast gebracht "+int(pchar.questTemp.Wine.Qty)+" Flaschen. Schön! Ich nehme sie. Die Bezahlung ist "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "Danke dir. Stell sicher, dass du und deine Soldatenfreunde auf meine Gesundheit anstoßt!";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "Wir werden sicherlich, "+GetAddress_Form(NPChar)+"! Die Trommel ruft zur Versammlung, ich muss jetzt gehen. Auf Wiedersehen!";
 			link.l1 = "Günstige Winde und folgende Meere, Kumpel!";
 			link.l1.go = "Wine_take_2";

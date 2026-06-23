@@ -9,7 +9,7 @@ void GetAllFellowsWithJob(ref result, ref captain, bool includeBoarders = true)
 	{
 		string job = JobByIdx(i);
 		if (!CheckAttribute(passengers, job)) continue;
-		AddFellow(result, sti(passengers.(job)));
+		AddFellow(result, int(passengers.(job)));
 	}
 
 	if (!includeBoarders) return;
@@ -18,7 +18,7 @@ void GetAllFellowsWithJob(ref result, ref captain, bool includeBoarders = true)
 	int officersQty = GetAttributesNum(officers);
 	for(i=0; i < officersQty; i++)
 	{
-		AddFellow(result, sti(GetAttributeValue(GetAttributeN(officers, i))));
+		AddFellow(result, int(GetAttributeValue(GetAttributeN(officers, i))));
 	}
 }
 
@@ -37,7 +37,7 @@ void AddAllFellows(ref result, ref captain, bool includeCaptain)
 	// Абордажники
 	for(int i=0; i < GetAttributesNum(officers); i++)
 	{
-		AddFellow(result, sti(GetAttributeValue(GetAttributeN(officers, i))));
+		AddFellow(result, int(GetAttributeValue(GetAttributeN(officers, i))));
 	}
 
 	// Корабельные офицеры
@@ -45,13 +45,13 @@ void AddAllFellows(ref result, ref captain, bool includeCaptain)
 	{
 		string job = JobByIdx(i);
 		if (!CheckAttribute(passengers, job)) continue;
-		AddFellow(result, sti(passengers.(job)));
+		AddFellow(result, int(passengers.(job)));
 	}
 
 	// Компаньоны
 	for (i=0; i < GetAttributesNum(companions); i++)
 	{
-		AddFellow(result, sti(GetAttributeValue(GetAttributeN(companions, i))));
+		AddFellow(result, int(GetAttributeValue(GetAttributeN(companions, i))));
 	}
 
 	// Пассажиры
@@ -59,7 +59,7 @@ void AddAllFellows(ref result, ref captain, bool includeCaptain)
 	{
 		string idAttr = "id" + i;
 		if (!CheckAttribute(passengers, idAttr)) continue;
-		AddFellow(result, sti(passengers.(idAttr)));
+		AddFellow(result, int(passengers.(idAttr)));
 	}
 }
 
@@ -157,7 +157,7 @@ bool IsFellow(ref chr)
 void FillFellowJobs(ref chrVT, ref result)
 {
 	ref chr = FindChar_VT(&chrVT);
-	int chrIdx = sti(chr.index);
+	int chrIdx = int(chr.index);
 	aref passengers;
 	makearef(passengers, pchar.Fellows.Passengers);
 
@@ -265,7 +265,7 @@ int RE_GetAllFellows(ref result)
 	{
 		ref fighter = GetCharacterSafe(GetOfficersIndex(pchar, i), true);
 		if (fighter == nullptr) continue;
-		if (chr.sex != "man") continue;
+		if (fighter.sex != "man") continue;
 
 		SetAttribute(result, fighter.id, fighter.id);
 	}

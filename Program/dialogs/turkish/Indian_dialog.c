@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "Kocam Tagofa, kabilenin en iyi avcısıdır. Oh-ey! "+npchar.name+" kocasıyla gurur duyuyor. "+npchar.name+" sık sık Tagofa ile Selva'ya gider. Uzaklara giderler. Tagofa, İspanyol yerleşiminin nerede olduğunu bilir.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "Tagofa, soluk yüzlülerin Merida dediği İspanyol şehrinin yolunu biliyor mu?";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Kocam selva'ya gitmez, denizin oğlu. Balık tutar. İyi balıkçı, oh-ey! ","Kocam iyi bir avcıdır, oh-ey, ama ormanın derinliklerine gitmez."),RandPhraseSimple("Bir jaguar avdayken kocamı yaraladı. Şimdi köyde oturup ok yapıyor, ah-hey!","Altı ay önce, üç Capong kocama saldırdı. Şimdi köyden uzağa avlanmaya gitmiyor. Asla! Oh-ey!"));
-				link.l1 = LinkRandPhrase("Yazık...","Ne yazık...","Ne yazık..."));
+				link.l1 = LinkRandPhrase("Yazık...","Ne yazık...","Ne yazık...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "Hayır, yalanaui. Soluk yüzlü asla sözünde durmaz. Soluk yüzlü konuşur – ve sözü hemen havaya uçar, kaybolur. Kapong önce Tagofa'yı öldürecek, sonra köyümüze gelip Lokono'yu öldürecek.";
 			link.l1 = "Sence endişelenmen gereken tek şey bu Kaponglar mı? Çok yanılıyorsun...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "Lokono, Yalanaui'ye güvenmez. Yalanaui, Hintliyi kandırır, Hintliyi köle yapar. Ama Lokono senin adını duydu, beyaz yüz. Sana güveniyorum. Yarın gün batımından sonra gel, denizin oğlu. O kulübede Tagofa ile olacağım. Ona, seninle gidip gitmeyeceğini soracağım.";
 			link.l1 = "Tagofa'ya en iyi tabancamı vereceğimi söyle. Ve senin için de birçok mücevherim var.";
 			link.l1.go = "hayamee_2";
-			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("The Indians respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

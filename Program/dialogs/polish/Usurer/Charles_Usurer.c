@@ -23,12 +23,6 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "":
 			dialog.text = " ";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
-		case "":
-			dialog.text = " ";
 			link.l1 = "Hello, Captain. How may I assist you today?";
 			link.l1.go = "";
 		break;

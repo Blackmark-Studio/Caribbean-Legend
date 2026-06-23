@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "¡Je! Mi error, Capitán. Es cierto, las órdenes de Levasseur decían claramente eliminar no solo al caballero, sino a todos sus compañeros. A todos, ¿entiendes? Con esta gente no se juega y sus demandas deben tomarse en serio. No me impidas hacer mi trabajo, Cap. Un último trabajo sucio y luego estaré contigo hasta el final, lo juro.";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "¡Al diablo contigo! Haz tu trabajo sucio. Acepto tu juramento, y será mejor que lo tomes mortalmente en serio. ¿Nos entendemos?";

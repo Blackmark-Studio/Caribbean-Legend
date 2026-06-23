@@ -18,7 +18,7 @@ bool PrepareSiege()
                 {
                     makeref(rColony, Colonies[iColony]);
                     aData.nation = iAtaker;
-                    aData.conation = sti(rColony.nation);
+                    aData.conation = int(rColony.nation);
                     aData.colony = rColony.id;
                     aData.island = rColony.island;
                     Log_TestInfo("рандом "+iColony);
@@ -30,7 +30,7 @@ bool PrepareSiege()
         {
             //ищем жертву по мах городу
             NationForceBalance(aData);
-            iNation = func_max_pos(sti(aData.nation_0), sti(aData.nation_1), sti(aData.nation_2), sti(aData.nation_3));
+            iNation = func_max_pos(int(aData.nation_0), int(aData.nation_1), int(aData.nation_2), int(aData.nation_3));
             iColony = SelectColonyForSiege(iNation);
             if (iColony != -1)
             {
@@ -39,7 +39,7 @@ bool PrepareSiege()
                 {
                     makeref(rColony, Colonies[iColony]);
                     aData.nation = iAtaker;
-                    aData.conation = sti(rColony.nation);
+                    aData.conation = int(rColony.nation);
                     aData.colony = rColony.id;
                     aData.island = rColony.island;
                     Log_TestInfo("мочим тех, у кого колоний много ");
@@ -77,7 +77,7 @@ bool CheckQuestColonyList(string sColony)
 	if(CheckAttribute(pchar, "questTemp.SantaMisericordia") && CharacterIsAlive("SantaMisericordia_cap"))
 	{
 		ref rCity = GetColonyRefByID(sColony);
-        if (sti(rCity.nation) == SPAIN) return false;
+        if (int(rCity.nation) == SPAIN) return false;
 	}
 	if(CheckAttribute(pchar, "questTemp.LadyBeth") && CharacterIsAlive("LadyBeth_cap"))
 	{
@@ -89,7 +89,7 @@ bool CheckQuestColonyList(string sColony)
 
     if (CheckAttribute(pchar, "questTemp.NationQuest")) // если взята национальная линейка квестов - таковых в ККС нет
     {
-        switch(sti(pchar.questTemp.NationQuest))
+        switch(int(pchar.questTemp.NationQuest))
         {
             case ENGLAND:               
             break;
@@ -120,8 +120,8 @@ void NationForceBalance(aref base)
 
     for (int i=0; i<MAX_COLONIES; i++)
 	{
-        nat = "nation_"+sti(Colonies[i].nation);
-        if (Colonies[i].nation != "none") base.(nat) = sti(base.(nat))+ 1;
+        nat = "nation_"+int(Colonies[i].nation);
+        if (Colonies[i].nation != "none") base.(nat) = int(base.(nat))+ 1;
 	}
 	Log_TestInfo("Eng = "+base.nation_0);
 	Log_TestInfo("Fra = "+base.nation_1);
@@ -141,8 +141,8 @@ int SelectColonyForSiege(int ination)  // выбираем колонию для
     {
         j = rand(MAX_COLONIES-1);
         makeref(AttakColony, Colonies[j]);
-        bb = sti(AttakColony.nation) == ination && !CheckAttribute(AttakColony, "HasNoFort");
-        aa = CheckAttribute(AttakColony, "FortValue") && sti(AttakColony.HeroOwn) == false;
+        bb = int(AttakColony.nation) == ination && !CheckAttribute(AttakColony, "HasNoFort");
+        aa = CheckAttribute(AttakColony, "FortValue") && int(AttakColony.HeroOwn) == false;
         if ( bb && aa && CheckQuestColonyList(AttakColony.id))
         {
             return j;
@@ -156,8 +156,8 @@ void BeginSiegeMap(string sChar)
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    SiegeRumourEx(StringFromKey("Siege_1", NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.nation)+10, -1, 2, 1, "citizen,habitue,trader,tavern");
-    int idist = makeint(GetDistanceToColony(aData.Colony));
+    SiegeRumourEx(StringFromKey("Siege_1", NationNameSK(int(aData.nation))), aData.Colony, int(aData.nation)+10, -1, 2, 1, "citizen,habitue,trader,tavern");
+    int idist = int(GetDistanceToColony(aData.Colony));
     if (idist != -1 && idist <= 100 )
     {
         Log_TestInfo("Squadron on the map!");
@@ -183,9 +183,9 @@ float GetDistanceToColony(string sColony);
 		string sIsland = Colonies[iCnum].island;
 		string sTemp = sColony+"_town";
 		
-        return GetDistance2D(stf(worldMap.playerShipX), stf(worldMap.playerShipZ),
-                            stf(worldMap.islands.(sIsland).(sTemp).position.x),
-                            stf(worldMap.islands.(sIsland).(sTemp).position.z));
+        return GetDistance2D(float(worldMap.playerShipX), float(worldMap.playerShipZ),
+                            float(worldMap.islands.(sIsland).(sTemp).position.x),
+                            float(worldMap.islands.(sIsland).(sTemp).position.z));
     }
     else
     {
@@ -193,10 +193,10 @@ float GetDistanceToColony(string sColony);
         if (locnum != -1 && CheckAttribute(&locations[locnum], "townsack") )
         {
             if (sColony == locations[locnum].townsack)
-            return makefloat(0);
+            return float(0);
         }
     }
-    return makefloat(-1);
+    return float(-1);
 }
 
 void EndSiegeMap()
@@ -204,13 +204,13 @@ void EndSiegeMap()
     aref aData;
     makearef(aData, NullCharacter.Siege);
     string sHead = FillSquadronGoods();
-    Map_CreateTrader(aData.Colony, colonies[FindNonEnemyColonyForNation(sti(aData.nation), true)].id, sHead, 4);
+    Map_CreateTrader(aData.Colony, colonies[FindNonEnemyColonyForNation(int(aData.nation), true)].id, sHead, 4);
     string sQuest = "ClearSiege";
     SetTimerCondition(sQuest, 0, 0, 5, false);
     pchar.quest.(sQuest).win_condition = "ClearSiege";
     pchar.quest.(sQuest).function= "SiegeClear";
     //--> слухи
-    SiegeRumourEx(StringFromKey("Siege_2", NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.conation), -1, 5, 3, "citizen,habitue,trader,tavern");
+    SiegeRumourEx(StringFromKey("Siege_2", NationNameSK(int(aData.nation))), aData.Colony, int(aData.conation), -1, 5, 3, "citizen,habitue,trader,tavern");
     //<-- слухи
 }
 
@@ -221,7 +221,7 @@ string FillSquadronGoods()
 
     makearef(aData, NullCharacter.Siege);
     Group_FreeAllDead();
-    string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
+    string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
 
     ref rGroup = Group_GetGroupByID(sGroup);
     rGroup.Task = AITASK_MOVE;
@@ -245,8 +245,8 @@ int MakeSiegeSquadron(int ination)
 
     aData.ishipcount = 5 + rand(2);
     aData.imanofwars = rand(1);
-    if (sti(aData.imanofwars) < 0) aData.imanofwars = 0;
-    int icon = sti(aData.ishipcount);
+    if (int(aData.imanofwars) < 0) aData.imanofwars = 0;
+    int icon = int(aData.ishipcount);
     for (int i = 1; i <= icon; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, ination, 30, true, "officer"));
@@ -256,35 +256,35 @@ int MakeSiegeSquadron(int ination)
 	    sld.DeckDialogNode = "Siegehelp";
 
         itmp = SetSiegeShip(sld);
-        aData.iSquadronPower = sti(aData.iSquadronPower) + itmp;
+        aData.iSquadronPower = int(aData.iSquadronPower) + itmp;
         SetFantomParamHunter(sld); //крутые парни
         SetCaptanModelByEncType(sld, "war");
         sld.mapEnc.type = "war";
         sld.mapEnc.worldMapShip = Nations[ination].worldMapShip+"_manowar";
         sld.mapEnc.Name = StringFromKey("Siege_3");
         Group_AddCharacter(sGroup, sCapId + i);
-        if (i == 1) SetRandGeraldSail(sld, sti(sld.Nation)); // homo Гербы
+        if (i == 1) SetRandGeraldSail(sld, int(sld.Nation)); // homo Гербы
     }
-    aData.iSquadronPower = sti(aData.iSquadronPower) - 19;
+    aData.iSquadronPower = int(aData.iSquadronPower) - 19;
     Log_TestInfo("Squadron Power: "+aData.iSquadronPower+"%");
-    Log_TestInfo("Colony Power: "+sti(colonies[FindColony(aData.colony)].FortValue)+"%");
+    Log_TestInfo("Colony Power: "+int(colonies[FindColony(aData.colony)].FortValue)+"%");
     
     Group_SetGroupCommander(sGroup, sCapId+ "1");
     ref rGroup = Group_GetGroupByID(sGroup);
     rGroup.Task = AITASK_MOVE;
     
-    return sti(aData.iSquadronPower);
+    return int(aData.iSquadronPower);
 }
 
 
 int SetSiegeShip(ref rChar)
 {
     int SiegeShips, hcrew, rez;
-	int Nation = sti(rChar.nation);
+	int Nation = int(rChar.nation);
     aref aData;
     makearef(aData, NullCharacter.Siege);
 
-    if (sti(aData.imanofwars) > 0)
+    if (int(aData.imanofwars) > 0)
     {
 		int iNationLineshipType = SHIP_LINESHIP;
 		switch (Nation)
@@ -304,7 +304,7 @@ int SetSiegeShip(ref rChar)
 		{
 			SiegeShips = GetRandomShipType(FLAG_SHIP_CLASS_1, FLAG_SHIP_TYPE_WAR, GetNationFlag(Nation));
 		}
-        aData.imanofwars = sti(aData.imanofwars) - 1;
+        aData.imanofwars = int(aData.imanofwars) - 1;
         rez = SiegeShips;
     }
     else
@@ -315,7 +315,7 @@ int SetSiegeShip(ref rChar)
 
     SetRandomNameToCharacter(rChar);
     SetRandomNameToShip(rChar);
-    rChar.Ship.Type = GenerateShipExt(SiegeShips, 1, rChar);
+    rChar.Ship.Type = GenerateShipExt(SiegeShips, true, rChar);
     SetBaseShipData(rChar);
     hcrew = GetMaxCrewQuantity(rChar);
     SetCrewQuantity(rChar, hcrew);
@@ -360,17 +360,17 @@ void CreateSiege(string tmp)
         DeleteAttribute(aData, "loot");
         DeleteAttribute(aData, "PlayerHelpMayor");
         DeleteAttribute(aData, "HelpColony");
-        string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
-        Log_TestInfo("CreateSiege "+NationShortName(sti(aData.nation)));
+        string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
+        Log_TestInfo("CreateSiege "+NationShortName(int(aData.nation)));
         makeref(rColony, Colonies[FindColony(aData.colony)]);
-        MakeSiegeSquadron(sti(aData.nation));
+        MakeSiegeSquadron(int(aData.nation));
         aData.SiegeHP = Group_GetPowerHP(sGroup);
         //Log_TestInfo
         trace("Attak "+aData.colony);
         //Log_TestInfo
         trace("SiegeHP: "+aData.SiegeHP);
         ClearIslandShips(aData.colony);
-        BeginSiegeMap(NationShortName(sti(aData.nation))+"SiegeCap_1");
+        BeginSiegeMap(NationShortName(int(aData.nation))+"SiegeCap_1");
         aData.isSiege = 1;
     }
 }
@@ -385,7 +385,7 @@ void SiegeProgress()
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    int i = sti(aData.progress);
+    int i = int(aData.progress);
     
     switch (i)
     {
@@ -407,9 +407,9 @@ int CheckSquadronInjuri()
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    float maxHP = stf(aData.SiegeHP);
-    string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
-    return makeint(Group_GetPowerHP(sGroup)*(100/maxHP));
+    float maxHP = float(aData.SiegeHP);
+    string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
+    return int(Group_GetPowerHP(sGroup)*(100/maxHP));
 }
 
 int CheckFortInjuri()
@@ -420,10 +420,10 @@ int CheckFortInjuri()
     float maxCannons = 10;
     if (CheckAttribute(FC, "fort.cannons.quantity"))
     {
-    	maxCannons = sti(FC.fort.cannons.quantity);
+    	maxCannons = int(FC.fort.cannons.quantity);
     }
-    if (CheckAttribute(FC, "Fort.Mode") && sti(FC.Fort.Mode) == FORT_DEAD) return 0;
-    return makeint(makeint(GetCurrentShipHP(FC)/100)*(100/maxCannons)));
+    if (CheckAttribute(FC, "Fort.Mode") && int(FC.Fort.Mode) == FORT_DEAD) return 0;
+    return int(int(GetCurrentShipHP(FC)/100)*(100/maxCannons));
 }
 
 void LeaveBattle(string tmp)
@@ -441,7 +441,7 @@ void LeaveTown(string tmp)
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    string sCap = NationShortName(sti(aData.nation))+"SiegeCap_";
+    string sCap = NationShortName(int(aData.nation))+"SiegeCap_";
     string sGroup = "Sea_"+sCap+"1";
     ref NPChar = Group_GetGroupCommander(sGroup);
     
@@ -456,12 +456,12 @@ void SiegeResult(string tmp)
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    int ifortPower = sti(colonies[FindColony(aData.colony)].FortValue);
+    int ifortPower = int(colonies[FindColony(aData.colony)].FortValue);
     int fortDamage = CheckFortInjuri();
     int SquadronDamage = CheckSquadronInjuri();
     Log_TestInfo("fortDamage: "+ fortDamage);
     Log_TestInfo("SquadronDamage: "+ SquadronDamage);
-    aData.win =((ifortPower)*fortDamage < sti(aData.iSquadronPower)*SquadronDamage );
+    aData.win =((ifortPower)*fortDamage < int(aData.iSquadronPower)*SquadronDamage );
     Log_TestInfo(" Win: "+aData.win);
     
     string sQuest = "LeaveBattle";
@@ -475,14 +475,14 @@ void CheckGroupCommander(string tmp)
 {
     aref aData;
     makearef(aData, NullCharacter.Siege);
-    string sCap = NationShortName(sti(aData.nation))+"SiegeCap_";
+    string sCap = NationShortName(int(aData.nation))+"SiegeCap_";
     string sGroup = "Sea_"+sCap+"1";
     ref rchar = Group_GetGroupCommander(sGroup);
     bool bhasCom = false;
     
     if ( !CharacterIsDead(rchar)) return;
     
-    int CapNum = sti(aData.ishipcount) + sti(aData.imanofwars);
+    int CapNum = int(aData.ishipcount) + int(aData.imanofwars);
     
     for(int k = 1; k <= CapNum ; k++)
     {
@@ -503,7 +503,7 @@ void BattleOfTheColony(string tmp)
     aref aData;
     ref rColony;
     makearef(aData, NullCharacter.Siege);
-    string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
+    string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
     
     if (CheckAttribute(PChar, "quest.BattleOfTheColony")) Pchar.quest.BattleOfTheColony.over = "yes";
     CheckGroupCommander("");
@@ -513,14 +513,14 @@ void BattleOfTheColony(string tmp)
     rColony.Siege = true;
     
     ref FC = GetFortCommander(aData.colony);
-    Group_SetTaskMove(sGroup, stf(FC.ship.pos.x), stf(FC.ship.pos.z));
+    Group_SetTaskMove(sGroup, float(FC.ship.pos.x), float(FC.ship.pos.z));
     Group_SetAddress(sGroup, aData.island, "Quest_ships", "reload_fort1_siege");//  to_do
 
     string sQuest = "EndOfTheSiege";
-    int ifort = sti(colonies[FindColony(aData.colony)].FortValue);
-    int btime = ifort - sti(aData.iSquadronPower);
-    aData.win =(ifort < sti(aData.iSquadronPower));
-    int SiegeTime = 14 - makeint((abs(btime))/10);
+    int ifort = int(colonies[FindColony(aData.colony)].FortValue);
+    int btime = ifort - int(aData.iSquadronPower);
+    aData.win =(ifort < int(aData.iSquadronPower));
+    int SiegeTime = 14 - int((abs(btime))/10);
     aData.SiegeTime = SiegeTime;
     Log_TestInfo("Siege period: "+SiegeTime);
     Log_TestInfo("Win: "+aData.win);
@@ -540,10 +540,10 @@ void BattleOfTheColony(string tmp)
     pchar.quest.(sQuest).function= "PlayerKillSquadron";
     
     SaveCurrentQuestDateParam("Siege_Start");
-    aData.tmpID1 = SiegeRumourEx(StringFromKey("Siege_4", NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.nation)+10, -1, sti(aData.SiegeTime)-2, 3, "citizen,habitue,trader,tavern");
-    aData.tmpID2 = SiegeRumour("OnSiege_1", "", sti(aData.conation)+10, sti(aData.nation)+10, sti(aData.SiegeTime)-2, 3);
-    aData.tmpID3 = SiegeRumour("OnSiege_2", "", sti(aData.nation), -1, sti(aData.SiegeTime)-2, 3);
-    aData.tmpID4 = SiegeRumour("OnSiege_3", "!"+aData.Colony, sti(aData.conation), -1, sti(aData.SiegeTime)-2, 3);
+    aData.tmpID1 = SiegeRumourEx(StringFromKey("Siege_4", NationNameSK(int(aData.nation))), aData.Colony, int(aData.nation)+10, -1, int(aData.SiegeTime)-2, 3, "citizen,habitue,trader,tavern");
+    aData.tmpID2 = SiegeRumour("OnSiege_1", "", int(aData.conation)+10, int(aData.nation)+10, int(aData.SiegeTime)-2, 3);
+    aData.tmpID3 = SiegeRumour("OnSiege_2", "", int(aData.nation), -1, int(aData.SiegeTime)-2, 3);
+    aData.tmpID4 = SiegeRumour("OnSiege_3", "!"+aData.Colony, int(aData.conation), -1, int(aData.SiegeTime)-2, 3);
 	
 	bool bShipAndDeposit = false;
 	string sQuest1, sQuest2;
@@ -567,7 +567,7 @@ void BattleOfTheColony(string tmp)
 	}	
 	if(bShipAndDeposit)
 	{
-		pchar.systeminfo.message.siegestring = XI_ConvertString(Nations[sti(aData.nation)].Name)+StringFromKey("Siege_27")+GetCityName(aData.colony);
+		pchar.systeminfo.message.siegestring = XI_ConvertString(Nations[int(aData.nation)].Name)+StringFromKey("Siege_27")+GetCityName(aData.colony);
 		DoQuestFunctionDelay("Message_siege", 1.0);
 		
 	}
@@ -579,7 +579,7 @@ void PlayerKillSquadron(string tmp)
     makearef(aData, NullCharacter.Siege);
     Log_TestInfo("Player Kill Squadron!");
     aData.win = 0;
-    if (GetNationRelation2MainCharacter(sti(aData.nation))) aData.PlayerHelpMayor = true;
+    if (GetNationRelation2MainCharacter(int(aData.nation))) aData.PlayerHelpMayor = true;
     EndOfTheSiege("End");
 }
 
@@ -596,10 +596,10 @@ void  EndOfTheSiege(string tmp)
     
     makearef(aData, NullCharacter.Siege);
     
-    string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
+    string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
     ref rColony = GetColonyByIndex(FindColony(aData.colony));
-    int ifortPower = sti(rColony.FortValue);
-    int idist = makeint(GetDistanceToColony(aData.Colony));
+    int ifortPower = int(rColony.FortValue);
+    int idist = int(GetDistanceToColony(aData.Colony));
     
     if(idist == -1 || idist > 60 || tmp != "")
     {
@@ -609,7 +609,7 @@ void  EndOfTheSiege(string tmp)
             tmpName = "tmpID"+l;
             if (CheckAttribute(aData, tmpName))
             {
-                f = FindRumour(sti(aData.(tmpName)));
+                f = FindRumour(int(aData.(tmpName)));
                 if (f != -1) Rumour[f].state = 0;
                 DeleteAttribute(aData, tmpName);
             }
@@ -634,9 +634,9 @@ void  EndOfTheSiege(string tmp)
         }
         if (CheckAttribute(PChar, "quest.SiegeResult")) Pchar.quest.SiegeResult.over = "yes";
         if (CheckAttribute(PChar, "quest.LeaveBattle")) Pchar.quest.LeaveBattle.over = "yes";
-        if (sti(aData.win) == 1)
+        if (int(aData.win) == 1)
         {
-            aData.loot = 200000+100000*makeint(ifortPower/30);
+            aData.loot = 200000+100000*int(ifortPower/30);
             Log_TestInfo("Siege loot ="+aData.loot);
             if (CheckSquadronInjuri()>= 70)
             {
@@ -664,43 +664,43 @@ void  EndOfTheSiege(string tmp)
 						}
                         else
 						{
-							sld.ship.SP = sti(sld.ship.SP) - 10*(rand(3)+1);
+							sld.ship.SP = int(sld.ship.SP) - 10*(rand(3)+1);
 						}
-    	                sld.ship.HP = sti(sld.ship.HP) - makeint(sti(sld.ship.HP)/(2+rand(2)));
+    	                sld.ship.HP = int(sld.ship.HP) - int(int(sld.ship.HP)/(2+rand(2)));
     	                qrew = GetMaxCrewQuantity(sld);
-    	                SetCrewQuantity(sld, qrew - makeint(qrew/(2+rand(1))));
+    	                SetCrewQuantity(sld, qrew - int(qrew/(2+rand(1))));
                     }
                 }
             }
             EndSiegeMap();
             if (ifortPower <= 60 ) //Решение о взятии колонии себе взвешивается очень тщательно!
             {
-                bcapt = (rand(3)==2)
+                bcapt = (rand(3)==2);
             }
             else
             {  // Если колония важная, то вероятность меньше
-               bcapt = sti(aData.iSquadronPower) > ifortPower && rand(abs(ifortPower-60)) == 0 ;
+               bcapt = int(aData.iSquadronPower) > ifortPower && rand(abs(ifortPower-60)) == 0 ;
             }
             if (!bWorldAlivePause && bcapt && !CheckAttribute(rColony, "notCaptured"))
             {
-                SetCaptureTownByNation(aData.colony, sti(aData.nation))
+                SetCaptureTownByNation(aData.colony, int(aData.nation));
                 
-                SiegeRumour(StringFromKey("Siege_5", NationNameGenitive(sti(aData.nation)), GetCityName(aData.Colony), NationNameSK(sti(aData.conation))), aData.Colony, sti(aData.nation), -1, 15, 3);
-                SiegeRumour(StringFromKey("Siege_6", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-                SiegeRumour(StringFromKey("Siege_7", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony)), "", sti(aData.conation), -1, 30, 3);
-                SiegeRumour(StringFromKey("Siege_8", NationNameGenitive(sti(aData.conation)), GetCityName(aData.Colony)), ("!"+aData.Colony), sti(aData.nation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_5", NationNameGenitive(int(aData.nation)), GetCityName(aData.Colony), NationNameSK(int(aData.conation))), aData.Colony, int(aData.nation), -1, 15, 3);
+                SiegeRumour(StringFromKey("Siege_6", NationNameSK(int(aData.nation)), NationNameSK(int(aData.conation)), GetCityName(aData.Colony), GetCityName(aData.Colony), NationNameSK(int(aData.nation))), "", int(aData.conation)+10, int(aData.nation)+10, 30, 3);
+                SiegeRumour(StringFromKey("Siege_7", NationNamePeople(int(aData.nation)), GetCityName(aData.Colony)), "", int(aData.conation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_8", NationNameGenitive(int(aData.conation)), GetCityName(aData.Colony)), ("!"+aData.Colony), int(aData.nation), -1, 30, 3);
                 
             }
             else
             {
-                SetNull2StoreMan(rColony)// нулим магазин при захвате города эскадрой
+                SetNull2StoreMan(rColony);// нулим магазин при захвате города эскадрой
                 SetNull2Deposit(aData.colony);// нулим ростовщиков
-				SetNull2ShipInStockMan(aData.colony)
+				SetNull2ShipInStockMan(aData.colony);
                 
-                SiegeRumourEx(StringFromKey("Siege_9", NationNameGenitive(sti(aData.conation)), NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
-                SiegeRumour(StringFromKey("Siege_10", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-                SiegeRumour(StringFromKey("Siege_11", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), NationNamePeople(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
-                SiegeRumour(StringFromKey("Siege_12", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
+                SiegeRumourEx(StringFromKey("Siege_9", NationNameGenitive(int(aData.conation)), NationNameSK(int(aData.nation))), aData.Colony, int(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
+                SiegeRumour(StringFromKey("Siege_10", NationNameSK(int(aData.nation)), NationNameSK(int(aData.conation)), GetCityName(aData.Colony), NationNameSK(int(aData.nation))), "", int(aData.conation)+10, int(aData.nation)+10, 30, 3);
+                SiegeRumour(StringFromKey("Siege_11", NationNamePeople(int(aData.nation)), GetCityName(aData.Colony), NationNamePeople(int(aData.nation))), "!"+aData.Colony, int(aData.conation), -1, 30, 3);
+                SiegeRumour(StringFromKey("Siege_12", NationNameSK(int(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, int(aData.nation), -1, 30, 3);
             }
             FortDestroy();// уничтожаем форт
             Group_SetAddressNone(sGroup);
@@ -708,10 +708,10 @@ void  EndOfTheSiege(string tmp)
         }
         else
         {
-            SiegeRumourEx(StringFromKey("Siege_13", NationNameSK(sti(aData.nation))), aData.Colony, sti(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
-            SiegeRumour(StringFromKey("Siege_14", NationNameSK(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "", sti(aData.conation)+10, sti(aData.nation)+10, 30, 3);
-            SiegeRumour(StringFromKey("Siege_15", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), NationNameSK(sti(aData.nation))), "!"+aData.Colony, sti(aData.conation), -1, 30, 3);
-            SiegeRumour(StringFromKey("Siege_16", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, sti(aData.nation), -1, 30, 3);
+            SiegeRumourEx(StringFromKey("Siege_13", NationNameSK(int(aData.nation))), aData.Colony, int(aData.conation), -1, 15, 3, "citizen,habitue,trader,tavern");
+            SiegeRumour(StringFromKey("Siege_14", NationNameSK(int(aData.nation)), NationNameSK(int(aData.conation)), GetCityName(aData.Colony)), "", int(aData.conation)+10, int(aData.nation)+10, 30, 3);
+            SiegeRumour(StringFromKey("Siege_15", NationNamePeople(int(aData.nation)), GetCityName(aData.Colony), NationNameSK(int(aData.nation))), "!"+aData.Colony, int(aData.conation), -1, 30, 3);
+            SiegeRumour(StringFromKey("Siege_16", NationNameSK(int(aData.conation)), GetCityName(aData.Colony)), "!"+aData.Colony, int(aData.nation), -1, 30, 3);
             SiegeClear("");
             Log_TestInfo("Siege Finish - Squadron defeat!");
         }
@@ -742,7 +742,7 @@ void FortDestroy()
 	FC.Fort.DieTime.Month = GetDataMonth();
 	FC.Fort.DieTime.Day = GetDataDay();
 	FC.Fort.DieTime.Time = GetTime();
-	Event(FORT_DESTROYED, "l", sti(FC.index));
+	Event(FORT_DESTROYED, "l", int(FC.index));
     Log_TestInfo("FORT_DEAD");
 }
 
@@ -764,7 +764,7 @@ void SiegeClear(string tmp)
         if (CheckAttribute(PChar, "quest.SiegeResult")) Pchar.quest.SiegeResult.over = "yes";
         if (CheckAttribute(PChar, "quest.PlayerKillSquadron")) Pchar.quest.PlayerKillSquadron.over = "yes";
         if (CheckAttribute(PChar, "Siege_Start")) DeleteAttribute(PChar, "Siege_Start");
-        string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
+        string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
         aData.progress = 1;
         Group_SetAddressNone(sGroup);
         Group_DeleteGroup(sGroup);
@@ -780,7 +780,7 @@ void SiegeSquadronOnMap(string _chrId)
 //////////////////////////////СЛУХИ////////////////////////////////////////////
 int SiegeRumour(string stext, string sCity, int nation1, int nation2, int terms, int qty)
 {
-   return SiegeRumourEX(stext, sCity, nation1, nation2, terms, qty, "all")
+   return SiegeRumourEX(stext, sCity, nation1, nation2, terms, qty, "all");
 }
 
 int SiegeRumourEX(string stext, string sCity, int nation1, int nation2, int terms, int qty, string tip)
@@ -852,7 +852,7 @@ string SiegeRumourText(int inum)
     
     makearef(aData, NullCharacter.Siege);
     
-    int iDays = sti(aData.SiegeTime) - GetQuestPastDayParam("Siege_Start");
+    int iDays = int(aData.SiegeTime) - GetQuestPastDayParam("Siege_Start");
     sDays = iDays+StringFromKey("Siege_21");
     
     if (iDays < 5) sDays = iDays+StringFromKey("Siege_22");
@@ -861,15 +861,15 @@ string SiegeRumourText(int inum)
     switch (inum)
     {
         case 1:
-        	return StringFromKey("Siege_24", NationNamePeople(sti(aData.nation)), NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), sDays);
+        	return StringFromKey("Siege_24", NationNamePeople(int(aData.nation)), NationNameSK(int(aData.conation)), GetCityName(aData.Colony), sDays);
         break;
 
         case 2:
-        	return StringFromKey("Siege_25", NationNameSK(sti(aData.conation)), GetCityName(aData.Colony), sDays);
+        	return StringFromKey("Siege_25", NationNameSK(int(aData.conation)), GetCityName(aData.Colony), sDays);
         break;
         
         case 3:
-        	return StringFromKey("Siege_26", NationNamePeople(sti(aData.nation)), GetCityName(aData.Colony), sDays);
+        	return StringFromKey("Siege_26", NationNamePeople(int(aData.nation)), GetCityName(aData.Colony), sDays);
         break;
     }
 }

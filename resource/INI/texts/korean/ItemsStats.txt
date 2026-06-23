@@ -333,3 +333,7 @@ itm_stat_greenIdol {숭배}
 itm_stat_descr_greenIdol {우상은 주변을 자기 뜻에 굴복시켜 적선의 항복 확률, 함대 전력, 그리고 선술집 모집 인원을 $percent(0.30) 증가시킵니다.}
 itm_stat_secondary_greenIdol {고대의 속삭임}
 itm_stat_descr_secondary_greenIdol {장착된 동안 우상은 끊임없이 선원들의 사기를 깎아내리며, 불경한 속삭임으로 그들을 광기로 몰아넣습니다.}
+itm_stat_nocturlabe {Tempo esatto}
+itm_stat_descr_nocturlabe {Aumenta la manovrabilità della nave del 10%, e di un ulteriore 25% sulle navi di 2ª e 1ª classe.}
+itm_stat_secondary_nocturlabe {Navigazione notturna}
+itm_stat_descr_secondary_nocturlabe {Aumenta $key(Perception) di #f.0modifiers.SpecialPerception#. Aumenta la probabilità di fuga sulla mappa globale di 25.}

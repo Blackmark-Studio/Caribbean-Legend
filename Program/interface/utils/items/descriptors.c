@@ -39,10 +39,10 @@ void SetDescriptorsTooltip(string sCurrentNode, ref header, ref text, ref badTex
 	if (!HasSubStr(sCurrentNode, "DESCRIPTOR_")) return;
 
 	aref descriptors = GetItemDescriptors(rObject);
-	int descriptorNum = sti(FindStringAfterChar(sCurrentNode, "_")) - 1;
+	int descriptorNum = int(FindStringAfterChar(sCurrentNode, "_")) - 1;
 	aref descriptor = GetAttributeN(descriptors, descriptorNum);
 	header = GetDescriptorName(descriptor, rObject);
-	text = GetDescriptorDescribe(descriptor, rObject)
+	text = GetDescriptorDescribe(descriptor, rObject);
 	badText = "";
 	goodText = "";
 }

@@ -19,7 +19,7 @@ void AIRunaway_GroupRunaway(string sGroupID, string sGroupAwayFrom)
 		return;
 	}
 
-	int iEnemyCommanderIndex = sti(rCommander.index);
+	int iEnemyCommanderIndex = int(rCommander.index);
 
 	int i = 0;
 	while (true)
@@ -28,6 +28,6 @@ void AIRunaway_GroupRunaway(string sGroupID, string sGroupAwayFrom)
 		if (iCharacterIndex < 0) break;
 		if (LAi_IsDead(&Characters[iCharacterIndex])) continue;
 		Characters[iCharacterIndex].SeaAI.Task.Target = iEnemyCommanderIndex;
-		Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, sti(Characters[iCharacterIndex].SeaAI.Task.Target));
+		Ship_SetTaskRunaway(SECONDARY_TASK, iCharacterIndex, int(Characters[iCharacterIndex].SeaAI.Task.Target));
 	}	
 }

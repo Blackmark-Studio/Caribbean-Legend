@@ -3,8 +3,8 @@ int GEN_SmoothBonusByRank(int bonus, int playerRank)
 {
 	if (bonus == 0) return 0;
 
-	float mdf = Bring2Range(0.4, 1.2, 3.0, 26.0, makefloat(playerRank));
-	return makeint(makefloat(bonus) * mdf + 0.5);
+	float mdf = Bring2Range(0.4, 1.2, 3.0, 26.0, float(playerRank));
+	return int(float(bonus) * mdf + 0.5);
 }
 
 // Суммируем очки умений, чтобы выдать нужное число очков навыков
@@ -19,14 +19,14 @@ void GEN_SummPerkPoints(ref chr, ref points)
 	for (int i = 1; i <= 7; i++)
 	{
 		skillName = GetSkillNameByTRIdx("SelfType", i);
-		self += sti(chr.skill.(skillName));
+		self += int(chr.skill.(skillName));
 
 		skillName = GetSkillNameByTRIdx("ShipType", i);
-		ship += sti(chr.skill.(skillName));
+		ship += int(chr.skill.(skillName));
 	}
 
-	points.self = makeint(self / selfRate);
-	points.ship = makeint(ship / shipRate);
+	points.self = int(self / selfRate);
+	points.ship = int(ship / shipRate);
 	points.self_left = self % selfRate;
 	points.ship_left = ship % shipRate;
 }
@@ -319,7 +319,7 @@ void ForceOldGenerateToNew(ref chr, int rank)
 
 	chr.personality.adaptiveRank = rank;
 	chr.personality.chrtype = GEN_TYPE_ENEMY;
-	chr.personality.powerLvl = GEN_BY_RANK
+	chr.personality.powerLvl = GEN_BY_RANK;
 	chr.personality.mainArchetype = GEN_ARCHETYPE_RANDOM;
 	chr.personality.secondaryArchetype = GEN_ARCHETYPE_RANDOM;
 	chr.personality.selfToShip = 0.6;
@@ -330,13 +330,13 @@ void ForceOldGenerateToNew(ref chr, int rank)
 int GEN_GetTargetRankFromFixed(int rank)
 {
 	float pcharRank = GetAttributeFloatOrDefault(pchar, "rank", 1.0);
-	return makeint(rank * pow((pcharRank / rank), 0.4));
+	return int(rank * pow((pcharRank / rank), 0.4));
 }
 
 // По сглаженному рангу получаем разряд персонажа
 int GEN_GetPowerLvlByRank(int rank)
 {
-	int pcharRank = sti(pchar.rank);
+	int pcharRank = int(pchar.rank);
 	int chrtype = GEN_COMMONER;
 	if (rank - pcharRank >= GEN_BOSS_RANK_OFFSET) chrtype = GEN_BOSS;
 	else if (rank - pcharRank >= GEN_MINIBOSS_RANK_OFFSET) chrtype = GEN_MINIBOSS;
@@ -350,7 +350,7 @@ void GEN_SetNavyFromShip(ref chr)
 	if (shipClass > 6) return;
 	int needSkill = GetShipClassNavySkill(shipClass);
 
-	int currentValue = sti(chr.skill.sailing);
+	int currentValue = int(chr.skill.sailing);
 	if (currentValue < needSkill) chr.skill.sailing = needSkill + rand(5);
 }
 

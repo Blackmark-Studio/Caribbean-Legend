@@ -22,8 +22,8 @@ void ProcessDialogEvent()
 		i = findsubstr(attrLoc, "_" , 0);
 		npchar.quest.relation = strcut(attrLoc, i+1, strlen(attrLoc)-1); // 索引在末尾
 		// 检查已有的协议
-		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
-		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
+		attrLoc = "RelationAgent" + GetNationNameByType(int(npchar.quest.relation));
+		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && int(Pchar.GenQuest.(attrLoc)) == true)
 		{
 			Dialog.CurrentNode = "RelationYet";
 		}
@@ -628,7 +628,7 @@ void ProcessDialogEvent()
 		
 		// --> 移除国家敌对状态
 		case "RelationAny_Done":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
 			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
 			if (iRate <= 10) sTemp = "好吧, 我不会称之为麻烦。 只是一个小问题。 我会立即解决这件事";
@@ -637,7 +637,7 @@ void ProcessDialogEvent()
 			if (iRate > 60 && iRate <= 90) sTemp = "先生, 你是怎么做到的? 你的麻烦不仅仅是严重, 而是真的很严重。 当局非常渴望抓住你。 我将不得不付出很多努力来解决你的分歧";
 			if (iRate > 90) sTemp = "嗯... 情况是灾难性的 - 你被认为是最激烈的敌人。 这将是艰难的, 但毕竟我是加勒比地区最好的律师, 所以我会解决你的分歧";
 			dialog.text = ""+sTemp+" 与 "+XI_ConvertString(Nations[i].Name+"Abl")+"。 这将花费你 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+"。 ";
-			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "很好, 洛克斯利先生, 我同意。 这是你的钱, 并尝试尽快解决问题。 ";
 				link.l1.go = "relation";
@@ -648,7 +648,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "relation":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			dialog.text = "与你做生意很愉快, 先生。 你可以再次自由呼吸, 你的问题将在未来两周内消失。 请避免与 "+XI_ConvertString(Nations[i].Name+"Abl") +" 发生任何对抗, 而我正在谈判中。 ";
 			link.l1 = "好的, 我会考虑你的警告。 谢谢你, 再见! ";
 			link.l1.go = "exit";
@@ -664,7 +664,7 @@ void ProcessDialogEvent()
 		case "contraband":
 			iLoxlyPseudoGlobal = CalculateRelationContraSum(true);
 			dialog.Text = "你为什么要那样做? 走私者是好孩子, 他们以自己的方式诚实。 我们都需要生活和吃饭... 好吧, 这不是什么大事, 只需要花费你 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+"。 ";
-			if(sti(Pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(Pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				Link.l1 = "很好, 洛克斯利先生, 我同意。 这是你的钱, 并尝试尽快解决问题。 ";
 				Link.l1.go = "Contraband_Agreed";

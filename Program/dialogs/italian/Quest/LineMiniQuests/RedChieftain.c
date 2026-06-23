@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "Fratello bianco saggio come gufo, furbo come serpe. Guai capitano all’indiano. Gran barcone d’uomini bianchi arriva al mio villaggio. Hanno preso tanti Cayman, la mia gente, li hanno messi sul loro barcone e portati via verso la Madre di Tutte le Acque...";
 			link.l1 = "Aspetta... stai dicendo che la tua gente è stata ridotta in schiavitù da uomini bianchi arrivati su una nave?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Sono lieto che le lacrime degli dèi siano tue, fratello degli Arawak!","Indiano ti ringrazia, coraggioso viso pallido!","Prendi il nostro bottino, fratello bianco!");
 			link.l1 = LinkRandPhrase("Felice di darti una mano!","Grazie, fratello dalla pelle rossa!","Grandioso!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Canauri ti ringrazia ancora, fratello dalla faccia pallida! Hai salvato tutte le canoe con l’indiano! Per Canauri è cosa assai importante salvare ogni canoa, perché così hai pure liberato il nipote di Canauri, che quei cani bianchi avevano strappato via in catene. Da fanciullo, il mio nipote amava nuotare più di ogni cosa, e Canauri gli diede quest’amuleto incantato perché non affogasse mai. Ora il ragazzo non vuole più saperne dell’acqua e mi ha restituito l’amuleto, così che io possa donarlo a te, fratello pallido. Spero che le lacrime degli dèi e questo dono bastino come ricompensa per la vita di un Arawak. E ora ci congediamo – è tempo per noi di far ritorno al nostro villaggio nativo.";
 				link.l1 = "Buona fortuna, Cunauri! Felice che tuo nipote sia sopravvissuto! Che questa maledizione non ti colpisca mai più, te lo giuro su tutti i santi!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

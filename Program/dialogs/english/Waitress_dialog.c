@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
 				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
+				if (int(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
 					dialog.text = "What do you wish, señor? I am sorry, I am just...'sobs'... oh... I'm sorry.";
 					link.l1 = "Why are you so upset, my lady? Tears on such a beautiful face? What has happened?";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different.FackWaitress.Name = GetFullName(npchar); //запомним имя официантки
 			pchar.questTemp.different.FackWaitress.City = npchar.city;
 			//делаем клона официантки
-			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, sti(npchar.nation), 3, false, "citizen"));
+			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, int(npchar.nation), 3, false, "citizen"));
 			sld.name = npchar.name;
 			sld.lastname = npchar.lastname;
 			sld.dialog.Filename = "Quest\ForAll_dialog.c";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_3_1":
-			if(sti(pchar.reputation.nobility) > 36)
+			if(int(pchar.reputation.nobility) > 36)
 			{
 				Notification_Reputation(false, 36, "high");
 				dialog.text = "Was that a 'hint'? Excuse me, it was my mistake to speak with you! Farewell, 'caballero'...";

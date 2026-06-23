@@ -134,7 +134,7 @@ bool GetNextLocationForPath(string outLocName, string goLocName, ref nextLocName
 			break;
 		}
 
-		goLocName = tbl.(goLocName).(outLocName)
+		goLocName = tbl.(goLocName).(outLocName);
 	}
 
 	if(nextLocName=="" || nextLocName==finalLocation) 
@@ -291,20 +291,20 @@ void PlayerFastTravel(int startLocIdx, string finishLocName, string locatorname)
 	}
 }
 
-int GetLocationNation(aref arLocation)
+int GetLocationNation(ref rLocation)
 {
-	if (CheckAttribute(arLocation,"ItsNation"))
-        return sti(arLocation.ItsNation);
-	if (CheckAttribute(arLocation,"fastreload"))
+	if (CheckAttribute(rLocation,"ItsNation"))
+        return int(rLocation.ItsNation);
+	if (CheckAttribute(rLocation,"fastreload"))
 	{
 		string islName,locName;
-		if (GetFortReloadFromTable(arLocation.fastreload, &islName, &locName))
+		if (GetFortReloadFromTable(rLocation.fastreload, &islName, &locName))
 		{
 			int chidx = Fort_FindCharacter(islName,"reload",locName);
 			if (chidx>=0)
 			{
 				ref chref = GetCharacter(chidx);
-				return sti(chref.nation);
+				return int(chref.nation);
 			}
 		}
 	}
@@ -486,7 +486,7 @@ bool IsLocationCaptured(string locationID)
 		arTown = GetAttributeN(arTownsList,i);
 		if(arTown.name == townName)
 		{
-			return sti(arTown.captured);
+			return int(arTown.captured);
 		}
 	}
 
@@ -534,9 +534,9 @@ void RecalculateHireCrew(int locIdx)
 	int nYear = 1;
 	int nMonth = 1;
 	int nDay = 1;
-	if( CheckAttribute(arData,"year") ) nYear = sti(arData.year);
-	if( CheckAttribute(arData,"month") ) nMonth = sti(arData.month);
-	if( CheckAttribute(arData,"day") ) nDay = sti(arData.day);
+	if( CheckAttribute(arData,"year") ) nYear = int(arData.year);
+	if( CheckAttribute(arData,"month") ) nMonth = int(arData.month);
+	if( CheckAttribute(arData,"day") ) nDay = int(arData.day);
 
 	int pastDays = GetPastTime( "day", nYear,nMonth,nDay,0.0,
 		GetDataYear(),GetDataMonth(),GetDataDay(),0.0 );
@@ -548,8 +548,8 @@ void RecalculateHireCrew(int locIdx)
 
 	int nPastQ = 0;
 	int nPastM = MORALE_NORMAL;
-	if(CheckAttribute(arTown,"crew.quantity"))	nPastQ = sti(arTown.crew.quantity);
-	if(CheckAttribute(arTown,"crew.morale"))	nPastM = sti(arTown.crew.morale);
+	if(CheckAttribute(arTown,"crew.quantity"))	nPastQ = int(arTown.crew.quantity);
+	if(CheckAttribute(arTown,"crew.morale"))	nPastM = int(arTown.crew.morale);
 
 	int nNeedCrew = 0;
 	int cn;
@@ -613,5 +613,5 @@ bool IsEnableLocToLocReload(string sFromLocName, string sToLocName, string locat
 	aref tbl;
 	makearef(tbl,objFastReloadTable.Paths.table);
 	if (!CheckAttribute(tbl,sFromLocName)) return false;
-	return chrCheckReload(&Locations[sti(tbl.(sFromLocName))], locatorName);
+	return chrCheckReload(&Locations[int(tbl.(sFromLocName))], locatorName);
 }

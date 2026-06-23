@@ -104,7 +104,7 @@ void InitInterface_R(string iniName, ref pStore)
 
  	if (refStore.Colony == "none")
 	{
-		SetNewPicture("OTHER_PICTURE", "interfaces\le\portraits\256\face_" + its(refShipChar.FaceId) + ".tga");
+		SetNewPicture("OTHER_PICTURE", "interfaces\le\portraits\256\face_" + string(refShipChar.FaceId) + ".tga");
 	}
 }
 
@@ -152,7 +152,7 @@ void IDoExit(int exitCode)
     // boal 27.02.05 -->
     if (CheckAttribute(pchar, "PriceList.StoreManIdx"))
     {
-    	SetPriceListByStoreMan(&Colonies[sti(pchar.PriceList.StoreManIdx)]);
+    	SetPriceListByStoreMan(&Colonies[int(pchar.PriceList.StoreManIdx)]);
     	DeleteAttribute(pchar, "PriceList.StoreManIdx");
     }
     // boal 27.02.05 <--
@@ -227,7 +227,7 @@ void DoPostExit()
 void CalculateInfoData()
 {
     AddToTable();
-	ShowGoodsInfo(sti(GameInterface.TABLE_LIST.tr1.index));
+	ShowGoodsInfo(int(GameInterface.TABLE_LIST.tr1.index));
 }
 
 void AddToTable()
@@ -260,7 +260,7 @@ void AddToTable()
 			sStoreQ = GetCargoGoods(refShipChar, i);
 		}
 
-		if(sti(sStoreQ) < 0)
+		if(int(sStoreQ) < 0)
 		{
 			sStoreQ = 0;
 			refGoods.quantity = 0;
@@ -268,8 +268,8 @@ void AddToTable()
 		if (sStoreQ == 0 && sShipQ == 0) continue; // только не нули
 
 		GameInterface.TABLE_LIST.(row).td1.str = sShipQ;
-		GameInterface.TABLE_LIST.(row).td2.str = GetGoodWeightByType(i, sti(sShipQ));
-		GameInterface.TABLE_LIST.(row).td6.str = GetGoodWeightByType(i, sti(sStoreQ));
+		GameInterface.TABLE_LIST.(row).td2.str = GetGoodWeightByType(i, int(sShipQ));
+		GameInterface.TABLE_LIST.(row).td6.str = GetGoodWeightByType(i, int(sStoreQ));
 		GameInterface.TABLE_LIST.(row).td7.str = sStoreQ;
 
 		switch(tradeType)
@@ -444,9 +444,9 @@ void ShowItemInfo()
 void RefreshTable()
 {
     PostEvent("RefreshTable", 100);
-    if (TableSelect != sti(GameInterface.TABLE_LIST.select))
+    if (TableSelect != int(GameInterface.TABLE_LIST.select))
     {
-        TableSelect = sti(GameInterface.TABLE_LIST.select);
+        TableSelect = int(GameInterface.TABLE_LIST.select);
         ChangePosTable();
     }
 }
@@ -459,7 +459,7 @@ void CS_TableSelectChange()
     string sRow = "tr" + (iSelected);
 	SetShipWeight();
 	SetVariable();
-	sortedGoodIndex = sti(GameInterface.TABLE_LIST.(sRow).index);
+	sortedGoodIndex = int(GameInterface.TABLE_LIST.(sRow).index);
 	ShowGoodsInfo(sortedGoodIndex);
 }
 
@@ -478,13 +478,13 @@ void SetVariable()
 {
 	string sText, sTextSecond;
 
-	int nShipType = sti(refCharacter.ship.type);
+	int nShipType = int(refCharacter.ship.type);
 	ref refBaseShip = GetRealShip(nShipType);
 
 	iShipCapacity = GetCargoMaxSpace(refCharacter);
 	sText  = iShipCapacity;
 
-	sText  = makeint(fShipWeight) + " / " + sText;
+	sText  = int(fShipWeight) + " / " + sText;
 	sText = sText;
 	SetFormatedText("CAPACITY", sText);
 
@@ -494,7 +494,7 @@ void SetVariable()
 	{
 		iTotalSpace = GetCargoMaxSpace(refShipChar);
 		sStoreName = GetFullName(refShipChar);
-		sMaxGoodsStore = makeint(fStoreWeight) + " / " + iTotalSpace;
+		sMaxGoodsStore = int(fStoreWeight) + " / " + iTotalSpace;
 	}
 	else
 	{
@@ -506,16 +506,16 @@ void SetVariable()
 	
 	if(refStore.Colony == "none")
 	{
-		sText = MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
+		sText = MakeMoneyShow(int(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
 		GameInterface.strings.Money_1 = sText;
-		sText = MakeMoneyShow(sti(refShipChar.Money), MONEY_SIGN,MONEY_DELIVER);
+		sText = MakeMoneyShow(int(refShipChar.Money), MONEY_SIGN,MONEY_DELIVER);
 		GameInterface.strings.Money_2 = sText;
 		SetFormatedText("CHARACTER_NAME", GetFullName(refCharacter));
 		SetNodeUsing("WEIGHTMONEY2", true);
 	}
 	else
 	{
-		sText = MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER);		
+		sText = MakeMoneyShow(int(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
 		SetFormatedText("OUR_GOLD", sText);
 		SetFormatedText("CHARACTER_NAME", GetFullName(refCharacter));
 		SetNodeUsing("WEIGHTMONEY2", false);
@@ -535,11 +535,11 @@ void ProcessFrame()
 {
 	if(GetCurrentNode() == "SHIPS_SCROLL")
 	{
-		if(sti(GameInterface.SHIPS_SCROLL.current)!=nCurScrollNum)
+		if(int(GameInterface.SHIPS_SCROLL.current)!=nCurScrollNum)
 		{
             XI_WindowDisable("QTY_WINDOW", false);
 			XI_WindowShow("QTY_WINDOW", true);
-			nCurScrollNum = sti(GameInterface.SHIPS_SCROLL.current);
+			nCurScrollNum = int(GameInterface.SHIPS_SCROLL.current);
 
 			SetDescription();
    			GameInterface.TABLE_LIST.select = 1;
@@ -553,7 +553,7 @@ void SetDescription()
 {
  	if(GetCurrentNode() == "SHIPS_SCROLL")
 	{
-		string attributeName = attributeName = "pic" + (nCurScrollNum+1);
+		string attributeName = "pic" + (nCurScrollNum+1);
 		if(CheckAttribute(&GameInterface, "SHIPS_SCROLL." + attributeName))
 		{
 			int iCharacter = GameInterface.SHIPS_SCROLL.(attributeName).companionIndex;
@@ -563,22 +563,22 @@ void SetDescription()
 		}
 	}
     CalculateInfoData();
-	SetNewPicture("MAIN_CHARACTER_PICTURE", "interfaces\le\portraits\256\face_" + its(refCharacter.FaceId) + ".tga");
+	SetNewPicture("MAIN_CHARACTER_PICTURE", "interfaces\le\portraits\256\face_" + string(refCharacter.FaceId) + ".tga");
 	SetVariable();
 }
 
 void SetShipWeight()
 {
-    if (CheckAttribute(refCharacter, "Ship.Cargo.RecalculateCargoLoad") && sti(refCharacter.Ship.Cargo.RecalculateCargoLoad))
+    if (CheckAttribute(refCharacter, "Ship.Cargo.RecalculateCargoLoad") && int(refCharacter.Ship.Cargo.RecalculateCargoLoad))
 	{   // остатки с моря
 		RecalculateCargoLoad(refCharacter);
 		refCharacter.Ship.Cargo.RecalculateCargoLoad = 0;
 	}
-	fShipWeight  = makeint(GetCargoLoad(refCharacter)+ 0.4);
+	fShipWeight  = int(GetCargoLoad(refCharacter)+ 0.4);
 
     if(refStore.Colony == "none")
 	{
-		fStoreWeight = makeint(GetCargoLoad(refShipChar)+ 0.4);
+		fStoreWeight = int(GetCargoLoad(refShipChar)+ 0.4);
 	}
 	else
 	{
@@ -596,17 +596,17 @@ void ShowGoodsInfo(int iGoodIndex)
     if (bBettaTestMode)
 	{
 		goodsDescr += NewStr() + "BaseNorm " + goods[iGoodIndex].Norm + " BaseCost " + goods[iGoodIndex].Cost + " StoreNorm " + refStore.Goods.(GoodName).Norm;
-		goodsDescr += NewStr() + "NormPrMod " + FloatToString(stf(refStore.Goods.(GoodName).NormPriceModify), 4) + " CurPrMod " +
-		                         FloatToString(stf(refStore.Goods.(GoodName).RndPriceModify), 4) + " Delta " +
-								 FloatToString(stf(stf(refStore.Goods.(GoodName).Quantity) / stf(refStore.Goods.(GoodName).Norm)), 3);
+		goodsDescr += NewStr() + "NormPrMod " + FloatToString(float(refStore.Goods.(GoodName).NormPriceModify), 4) + " CurPrMod " +
+		                         FloatToString(float(refStore.Goods.(GoodName).RndPriceModify), 4) + " Delta " +
+								 FloatToString(float(float(refStore.Goods.(GoodName).Quantity) / float(refStore.Goods.(GoodName).Norm)), 3);
 		goodsDescr += NewStr();
 	}
 	goodsDescr += GetAssembledString( GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHold") + " "  + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
-	iUnits  = sti(Goods[iGoodIndex].Units);
-	fWeight = stf(Goods[iGoodIndex].weight);
+	iUnits  = int(Goods[iGoodIndex].Units);
+	fWeight = float(Goods[iGoodIndex].weight);
 	if(checkAttribute(pchar, "ship.cargo.goods." + GoodName + ".isquest"))
 	{
 		string sTradeQ = pchar.ship.cargo.goods.(GoodName).isquest.quantity;
@@ -638,8 +638,8 @@ void ShowGoodsInfo(int iGoodIndex)
 		iStoreQty = GetCargoGoods(refShipChar, iGoodIndex);
 	}
 
-	SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty));
-	SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty));
+	SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty));
+	SetFormatedText("QTY_INFO_SHIP_QTY", string(iShipQty));
 	BuyOrSell = 0;
 
     // Продаёт игрок (PRICE_TYPE_SELL)
@@ -657,7 +657,7 @@ void ShowGoodsInfo(int iGoodIndex)
 		    iStorePrice /= 2;
 		    if (iStorePrice < 1) iStorePrice = 1;
 		}
-        SetFormatedText("QTY_INFO_STORE_PRICE", XI_ConvertString("Price sell") + NewStr() + its(iStorePrice));
+        SetFormatedText("QTY_INFO_STORE_PRICE", XI_ConvertString("Price sell") + NewStr() + string(iStorePrice));
 	}
 
     // Продаёт магазин (PRICE_TYPE_BUY)
@@ -669,7 +669,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	else
 	{
 		iShipPrice = GetStoreGoodsPrice(refStore, iGoodIndex, PRICE_TYPE_BUY, pchar, 1);
-		SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + its(iShipPrice));
+		SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + string(iShipPrice));
 	}
 
 	ShowFoodInfo();
@@ -680,21 +680,21 @@ void ShowFoodInfo()
 	if (iCurGoodsIdx == GOOD_FOOD)
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
-		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty + BuyOrSell*int(GameInterface.qty_edit.str));
 		SetFoodShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_FOOD, iShipQty);
 	}
 	else if (iCurGoodsIdx == GOOD_RUM) // Warship 11.07.09 На сколько хватит рому
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
-		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty + BuyOrSell*int(GameInterface.qty_edit.str));
 		SetRumShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_RUM, iShipQty);
 	}
 	else if (iCurGoodsIdx == GOOD_MEDICAMENT) // Warship 11.07.09 На сколько хватит рому
 	{
 		// чтоб прикинуть как оно будет, скинем на время колво на продажное
-		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str));
+		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty + BuyOrSell*int(GameInterface.qty_edit.str));
 		SetMedicamentShipInfo(refCharacter, "FOOD_SHIP");
 		SetCharacterGoods(refCharacter, GOOD_MEDICAMENT, iShipQty);
 	}
@@ -705,7 +705,7 @@ void TransactionOK()
 {
 	int nTradeQuantity, moneyback;
 	confirmChangeQTY_EDIT();
-	nTradeQuantity = sti(GameInterface.qty_edit.str);
+	nTradeQuantity = int(GameInterface.qty_edit.str);
 	if (BuyOrSell == 0)
 	{
 	    EndTooltip();
@@ -725,11 +725,11 @@ void TransactionOK()
 		}
 
 		AddCharacterGoods(refCharacter, iCurGoodsIdx, nTradeQuantity);
-		moneyback = makeint(iShipPrice*stf(GameInterface.qty_edit.str) / iUnits + 0.5);
-		pchar.money = sti(pchar.money)  - moneyback;		
+		moneyback = int(iShipPrice*float(GameInterface.qty_edit.str) / iUnits + 0.5);
+		pchar.money = int(pchar.money)  - moneyback;
 		if(refStore.Colony == "none" && CheckAttribute(refShipChar,"money"))
 		{			
-			refShipChar.money = sti(refShipChar.money) + moneyback;			
+			refShipChar.money = int(refShipChar.money) + moneyback;
 		}		
 		Statistic_AddValue(Pchar, "Money_spend", moneyback);
 		// boal  check skill -->
@@ -749,16 +749,16 @@ void TransactionOK()
 		}
 
 		RemoveCharacterGoods(refCharacter, iCurGoodsIdx, nTradeQuantity);
-		moneyback = makeint(iStorePrice*stf(GameInterface.qty_edit.str) / iUnits + 0.5);
-  		pchar.money = sti(pchar.money)  + moneyback;
+		moneyback = int(iStorePrice*float(GameInterface.qty_edit.str) / iUnits + 0.5);
+  		pchar.money = int(pchar.money)  + moneyback;
 		if(refStore.Colony == "none" && CheckAttribute(refShipChar,"money"))
 		{			
-			refShipChar.money = sti(refShipChar.money) - moneyback;			
+			refShipChar.money = int(refShipChar.money) - moneyback;
 		}
 		else if(HasShipTrait(pchar, "trait03") && moneyback >= 50000)
 		{
 			ref rColony = GetColonyRefByID(refStore.Colony);
-			ChangeCharacterNationReputation(pchar, sti(rColony.nation), moneyback/50000);
+			ChangeCharacterNationReputation(pchar, int(rColony.nation), moneyback/50000);
 		}
 		Statistic_AddValue(Pchar, "Money_get", moneyback);
 		Achievment_SetStat(39, moneyback);
@@ -783,11 +783,11 @@ void ChangeQTY_EDIT()
 {
 	int  iWeight;
 	SetShipWeight();
-	GameInterface.qty_edit.str = sti(GameInterface.qty_edit.str);
+	GameInterface.qty_edit.str = int(GameInterface.qty_edit.str);
 	
 	string GoodName = goods[iCurGoodsIdx].name;
 	
-	if (sti(GameInterface.qty_edit.str) == 0)
+	if (int(GameInterface.qty_edit.str) == 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 	    SetFormatedText("QTY_Result", "");
@@ -797,11 +797,11 @@ void ChangeQTY_EDIT()
 	}
 	else
 	{
-		if (sti(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
+		if (int(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
 		{
 			if (BuyOrSell != -1)
 			{
-		    	GameInterface.qty_edit.str = -sti(GameInterface.qty_edit.str);
+		    	GameInterface.qty_edit.str = -int(GameInterface.qty_edit.str);
 		    }
             BuyOrSell = -1;
             if (GetGoodTradeTypeAref(refStore, "Goods." + GoodName) == T_TYPE_CONTRABAND)
@@ -809,31 +809,31 @@ void ChangeQTY_EDIT()
                 GameInterface.qty_edit.str = 0;
             }
 		    // проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iShipQty)
+		    if (int(GameInterface.qty_edit.str) > iShipQty)
 		    {
 		        GameInterface.qty_edit.str = iShipQty;
 		    }
-		    iWeight = GetGoodWeightByType(iCurGoodsIdx, sti(GameInterface.qty_edit.str));
+		    iWeight = GetGoodWeightByType(iCurGoodsIdx, int(GameInterface.qty_edit.str));
 		    if ((fStoreWeight + iWeight) > iTotalSpace)
 		    {
 		        iWeight = iTotalSpace - fStoreWeight - fWeight;
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight * iUnits );
-		        iWeight = GetGoodWeightByType(iCurGoodsIdx, sti(GameInterface.qty_edit.str));
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight * iUnits ); // округдение
+		        GameInterface.qty_edit.str = int(iWeight / fWeight * iUnits );
+		        iWeight = GetGoodWeightByType(iCurGoodsIdx, int(GameInterface.qty_edit.str));
+		        GameInterface.qty_edit.str = int(iWeight / fWeight * iUnits ); // округдение
 		    }
 			if(refStore.Colony == "none" && CheckAttribute(refShipChar,"money"))
 			{			
-				if (makeint(iStorePrice*stf(GameInterface.qty_edit.str) + 0.5) > sti(refShipChar.money))
+				if (int(iStorePrice*float(GameInterface.qty_edit.str) + 0.5) > int(refShipChar.money))
 				{
-					GameInterface.qty_edit.str = makeint(sti(refShipChar.money) / iStorePrice);
-					iWeight = fWeight * sti(GameInterface.qty_edit.str);
+					GameInterface.qty_edit.str = int(int(refShipChar.money) / iStorePrice);
+					iWeight = fWeight * int(GameInterface.qty_edit.str);
 				}			
 			}	
 		    // проверка на колво доступное <--
 		    SetFormatedText("QTY_TypeOperation", XI_ConvertString("SELL"));
 			SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"QTY_BUYSELL_BUTTON", 0, "SELL");
 			SetNodeUsing("QTY_BUYSELL_BUTTON", true);
-		    SetFormatedText("QTY_Result", XI_ConvertString("Money") + " " + makeint(iStorePrice*stf(GameInterface.qty_edit.str) / iUnits + 0.5) +
+		    SetFormatedText("QTY_Result", XI_ConvertString("Money") + " " + int(iStorePrice*float(GameInterface.qty_edit.str) / iUnits + 0.5) +
 			                ", " + XI_ConvertString("weight") + " " + iWeight + " " + XI_ConvertString("cwt"));
 		}
 		else
@@ -845,34 +845,34 @@ void ChangeQTY_EDIT()
             }
 			BuyOrSell = 1;
          	// проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iStoreQty)
+		    if (int(GameInterface.qty_edit.str) > iStoreQty)
 		    {
 		        GameInterface.qty_edit.str = iStoreQty;
 		    }
-		    iWeight = GetGoodWeightByType(iCurGoodsIdx, sti(GameInterface.qty_edit.str));
+		    iWeight = GetGoodWeightByType(iCurGoodsIdx, int(GameInterface.qty_edit.str));
 		    if ((fShipWeight + iWeight) > iShipCapacity)
 		    {
 		        iWeight = iShipCapacity - fShipWeight - fWeight;
 				if (iWeight < 0) iWeight = 0;
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight * iUnits );
-		        iWeight = GetGoodWeightByType(iCurGoodsIdx, sti(GameInterface.qty_edit.str));
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight * iUnits ); // округление
+		        GameInterface.qty_edit.str = int(iWeight / fWeight * iUnits );
+		        iWeight = GetGoodWeightByType(iCurGoodsIdx, int(GameInterface.qty_edit.str));
+		        GameInterface.qty_edit.str = int(iWeight / fWeight * iUnits ); // округление
 		    }
-		    if (makeint(iShipPrice*stf(GameInterface.qty_edit.str) / iUnits + 0.5) > sti(pchar.money))
+		    if (int(iShipPrice*float(GameInterface.qty_edit.str) / iUnits + 0.5) > int(pchar.money))
 		    {
-		        GameInterface.qty_edit.str = makeint(sti(pchar.money)*iUnits / iShipPrice);
-		        iWeight = GetGoodWeightByType(iCurGoodsIdx, sti(GameInterface.qty_edit.str));
+		        GameInterface.qty_edit.str = int(int(pchar.money)*iUnits / iShipPrice);
+		        iWeight = GetGoodWeightByType(iCurGoodsIdx, int(GameInterface.qty_edit.str));
 		    }
 		    // проверка на колво доступное <--
 			SetFormatedText("QTY_TypeOperation", XI_ConvertString("BUY"));
 			SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"QTY_BUYSELL_BUTTON", 0, "BUY");
 			SetNodeUsing("QTY_BUYSELL_BUTTON", true);
-			SetFormatedText("QTY_Result", XI_ConvertString("Money") + " " + makeint(iShipPrice*stf(GameInterface.qty_edit.str) / iUnits + 0.5) +
+			SetFormatedText("QTY_Result", XI_ConvertString("Money") + " " + int(iShipPrice*float(GameInterface.qty_edit.str) / iUnits + 0.5) +
 			                ", " + XI_ConvertString("weight") + " " + iWeight + " " + XI_ConvertString("cwt"));
 		}
 	}
 	// если получили ноль Jason: или особо хитрожопые ввели минус
-	if (sti(GameInterface.qty_edit.str) <= 0)
+	if (int(GameInterface.qty_edit.str) <= 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 	    SetFormatedText("QTY_Result", "");
@@ -880,8 +880,8 @@ void ChangeQTY_EDIT()
 		SetNodeUsing("QTY_BUYSELL_BUTTON", false);
 	    BuyOrSell = 0;
 	}
-    SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty - BuyOrSell*sti(GameInterface.qty_edit.str)));
-    SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty + BuyOrSell*sti(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty - BuyOrSell*int(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_SHIP_QTY", string(iShipQty + BuyOrSell*int(GameInterface.qty_edit.str)));
     SetShipWeight();
     fShipWeight  = fShipWeight  + BuyOrSell * iWeight;
 	fStoreWeight = fStoreWeight - BuyOrSell * iWeight;
@@ -944,9 +944,9 @@ void AddOrRemove(int n)	// > 0 - Add, < 0 - Remove
     else
     {
   		if (BuyOrSell == 1)
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + n * iUnits);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + n * iUnits);
 		else
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - n * iUnits);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - n * iUnits);
 		BuyOrSell = 0;
 	}
 	ChangeQTY_EDIT();
@@ -1003,7 +1003,7 @@ void BulkSale(bool isSellAll)
 		// не продаём патроны, ром и медицину
 		if (!isSellAll)
 		{
-			if (sti(refGoods.Type) == T_TYPE_AMMUNITION) continue;
+			if (int(refGoods.Type) == T_TYPE_AMMUNITION) continue;
 			if (i == GOOD_RUM) continue;
 			if (i == GOOD_WEAPON) continue;
 			if (i == GOOD_POWDER) continue;
@@ -1017,7 +1017,7 @@ void BulkSale(bool isSellAll)
 		if (shipCargoQty <= 0) continue;                                          // нет товара на корабле
 
 		goodPrice = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
-		tradeSumm = makeint(makefloat(goodPrice*shipCargoQty) / sti(Goods[i].Units) + 0.5);
+		tradeSumm = int(float(goodPrice*shipCargoQty) / int(Goods[i].Units) + 0.5);
 		storeCargoQty = GetStoreGoodsQuantity(refStore, i);
 
 		if (i == GOOD_SLAVES) Achievment_SetStat(43, shipCargoQty);
@@ -1026,7 +1026,7 @@ void BulkSale(bool isSellAll)
 		resultSumm += tradeSumm;
 	}
 
-	pchar.money = sti(pchar.money) + resultSumm;
+	pchar.money = int(pchar.money) + resultSumm;
 	Statistic_AddValue(Pchar, "Money_get", resultSumm);
 	Achievment_SetStat(39, resultSumm);
 	AddCharacterExpToSkill(pchar, "Commerce", resultSumm / 1600.0);
@@ -1035,7 +1035,7 @@ void BulkSale(bool isSellAll)
 	if (HasShipTrait(pchar, "trait03") && resultSumm >= 50000)
 	{
 		ref rColony = GetColonyRefByID(refStore.Colony);
-		ChangeCharacterNationReputation(pchar, sti(rColony.nation), resultSumm/50000);
+		ChangeCharacterNationReputation(pchar, int(rColony.nation), resultSumm/50000);
 	}
 
 	AddToTable();

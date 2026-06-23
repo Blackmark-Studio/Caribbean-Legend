@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "嘿! 是我错了, 船长。 确实, 勒瓦瑟的命令明确要求不仅要除掉骑士, 还要解决他的所有同伴。 所有人, 明白吗? 这些人不好惹, 必须认真对待他们的要求。 别妨碍我工作, 船长。 最后一次脏活, 之后我发誓永远追随你! ";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "去你的! 干你的脏活吧。 我接受你的誓言, 你最好当真。 明白吗? ";

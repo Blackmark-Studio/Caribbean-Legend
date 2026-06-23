@@ -41,7 +41,7 @@ int GetQuestPastMonthParam(string _quest)
     aref  arQ;
     makearef(arQ, PChar.(_quest));
 
-    return GetPastTime("month", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), stf(arQ.control_time),GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    return GetPastTime("month", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), float(arQ.control_time),GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 }
 int GetQuestPastDayParam(string _quest)
 {
@@ -49,7 +49,7 @@ int GetQuestPastDayParam(string _quest)
     makearef(arQ, PChar.(_quest));
     if (CheckAttribute(PChar, _quest + ".control_year"))
     {
-    	return GetPastTime("day", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), stf(arQ.control_time),GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    	return GetPastTime("day", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), float(arQ.control_time),GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 	} 
 	return 0;   	
 }
@@ -59,7 +59,7 @@ int GetQuestPastTimeParam(string _quest)
     makearef(arQ, PChar.(_quest));
     if (CheckAttribute(PChar, _quest + ".control_year"))
     {
-    	return GetPastTime("hour", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), stf(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    	return GetPastTime("hour", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), float(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 	}  
 	return 0;
 }
@@ -71,7 +71,7 @@ int GetQuestPastMinutesParam(string _quest)
     makearef(arQ, PChar.(_quest));
     if (CheckAttribute(PChar, _quest + ".control_year"))
     {
-    	return GetPastTime("minute", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), stf(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    	return GetPastTime("minute", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), float(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 	}
 	return 0;
 }
@@ -96,7 +96,7 @@ int GetNpcQuestPastDayParam(ref _character, string _quest)
     makearef(arQ, _character.(_quest));
     if (CheckAttribute(_character, _quest + ".control_year"))
     {
-        return GetPastTime("day", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
+        return GetPastTime("day", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
     }
     else {return 0;}
 }
@@ -107,7 +107,7 @@ int GetNpcQuestPastDayWOInit(ref _character, string _quest)
     makearef(arQ, _character.(_quest));
     if (CheckAttribute(_character, _quest + ".control_year"))
     {
-        return GetPastTime("day", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
+        return GetPastTime("day", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
     }
     else {return 1000;}  // если нет ветки, то это значит черти когда было дело
 }
@@ -118,7 +118,7 @@ int GetNpcQuestPastTimeParam(ref _character, string _quest)
     makearef(arQ, _character.(_quest));
     if (CheckAttribute(_character, _quest + ".control_year"))
     {
-    	return GetPastTime("hour", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), sti(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    	return GetPastTime("hour", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), int(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 	}
 	return 0;
 }
@@ -128,7 +128,7 @@ int GetNpcQuestPastMinutesParam(ref _character, string _quest)
     makearef(arQ, _character.(_quest));
     if (CheckAttribute(_character, _quest + ".control_year"))
     {
-    	return GetPastTime("minute", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), stf(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
+    	return GetPastTime("minute", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), float(arQ.control_time), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 	}
 	return 0;
 }
@@ -139,7 +139,7 @@ int GetNpcQuestPastMonthParam(ref _character, string _quest)
     makearef(arQ, _character.(_quest));
     if (CheckAttribute(_character, _quest + ".control_year"))
     {
-        return GetPastTime("month", sti(arQ.control_year), sti(arQ.control_month), sti(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
+        return GetPastTime("month", int(arQ.control_year), int(arQ.control_month), int(arQ.control_day), 0,GetDataYear(), GetDataMonth(), GetDataDay(), 0);
     }
     else {return 0;}
 }
@@ -198,7 +198,7 @@ string GetBookData(int day, int mn, int year)
 // репутация плохого парня с границами
 bool isBadReputation(ref _pchar, int _rep)
 {
-    if (GetCharacterPerkUsing(_pchar, "Trustworthy") || sti(_pchar.reputation.nobility) >= _rep)
+    if (GetCharacterPerkUsing(_pchar, "Trustworthy") || int(_pchar.reputation.nobility) >= _rep)
     {
         return false;// good guy
     }
@@ -237,15 +237,15 @@ void FillQuestHoldBox(ref _location)
 {
 	_location.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()); // нужно, чтоб не перетерлось
 	
-	int nShipType = sti(pchar.ship.type);
+	int nShipType = int(pchar.ship.type);
 
 	if(CheckAttribute(pchar,"GenQuest.CaptainComission.CanFindChest"))
 	{
-		if(nShipType == sti(pchar.GenQuest.CaptainComission.ShipType) && !CheckAttribute(pchar,"GenQuest.CaptainComission.Treasure"))
+		if(nShipType == int(pchar.GenQuest.CaptainComission.ShipType) && !CheckAttribute(pchar,"GenQuest.CaptainComission.Treasure"))
 		{
 			Log_QuestInfo("Устанавливаем сундуки");
 			//DeleteAttribute(_location, "box1");
-			if(CheckAttribute(_location,"box1.items.chest")) _location.box1.items.chest = sti(_location.box1.items.chest)+3;
+			if(CheckAttribute(_location,"box1.items.chest")) _location.box1.items.chest = int(_location.box1.items.chest)+3;
 			else _location.box1.items.chest = 3;
 			pchar.GenQuest.CaptainComission.Treasure = true;
 		}	
@@ -317,13 +317,13 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	{
 	    aref aData, itm;
 	    makearef(aData, NullCharacter.Siege);
-	    string sGroup = "Sea_"+NationShortName(sti(aData.nation))+"SiegeCap_1";
+	    string sGroup = "Sea_"+NationShortName(int(aData.nation))+"SiegeCap_1";
 	    ref rchar = Group_GetGroupCommander(sGroup);  //поиск текущего командера, он меняется от убиеня
 	    Log_TestInfo( _npchar.id +" == "+ rchar.id);
 		if (_npchar.id == rchar.id && CheckAttribute(aData, "loot"))
 		{
 	        DeleteAttribute(_location, "box1");
-	        _location.box1.money = sti(aData.loot);
+	        _location.box1.money = int(aData.loot);
 	        _location.box1.items.potionrum = 3;
 	        _location.box1.items.potionwine = 1;
 	        string idmap = "map_"+aData.island;
@@ -336,7 +336,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				amap = SelectAdmiralMaps();
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
-			if (hrand(4, tag) == 2 && sti(RealShips[sti(_npchar.ship.type)].Class) < 2) _location.box1.items.Hat5 = 1;
+			if (hrand(4, tag) == 2 && int(RealShips[int(_npchar.ship.type)].Class) < 2) _location.box1.items.Hat5 = 1;
 
 	        ok = false;
 		}
@@ -1233,7 +1233,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
     	// код для всех
 		
     	iTemp = GetCharacterShipClass(_npchar);
-		iNation = sti(_npchar.nation);		
+		iNation = int(_npchar.nation);
 
 		if(iNation == PIRATE)
 		{
@@ -1247,7 +1247,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 			}
 			FillCabinBoxMap(_location, 200 - (8 - iTemp) * 5); 
 			if(rand(10) == 5) _location.box1.items.Chest_open = 1;
-			if(SandBoxMode && rand(9) == 7 && sti(pchar.rank) > 19) _location.box1.items.Hat8 = 1;
+			if(SandBoxMode && rand(9) == 7 && int(pchar.rank) > 19) _location.box1.items.Hat8 = 1;
 		}
 		else
 		{
@@ -1263,7 +1263,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				if(hrand(20, tag) == 15) _location.box1.items.rat_poison = 1;		
 			}
 			
-			if(rand(10) == 1 && sti(RealShips[sti(_npchar.ship.type)].Class) == 3) _location.box1.items.Hat6 = 1;
+			if(rand(10) == 1 && int(RealShips[int(_npchar.ship.type)].Class) == 3) _location.box1.items.Hat6 = 1;
 		}
 		else // все остальные
 		{
@@ -1274,7 +1274,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				_location.box1.items.gold_dublon = rand(5) + 2;			
 			}
 		}				
-		if (2-sti(RealShips[sti(_npchar.ship.type)].Class) > 0) // 1 класс
+		if (2-int(RealShips[int(_npchar.ship.type)].Class) > 0) // 1 класс
 		{
 			if (hrand(2, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
@@ -1282,7 +1282,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
 		}
-		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 2-sti(RealShips[sti(_npchar.ship.type)].Class) == 0) // военный 2 класс
+		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 2-int(RealShips[int(_npchar.ship.type)].Class) == 0) // военный 2 класс
 		{
 			if (hrand(4, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
@@ -1290,7 +1290,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
 		}
-		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 3-sti(RealShips[sti(_npchar.ship.type)].Class) == 0) // военный 3 класс
+		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war" && 3-int(RealShips[int(_npchar.ship.type)].Class) == 0) // военный 3 класс
 		{
 			if (hrand(6, tag) == 1 && CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
 			{
@@ -1298,7 +1298,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 				if (amap != "") _location.box1.items.(amap)	= 1;
 			}
 		}
-		if (CheckAttribute(pchar, "questTemp.Persian.skimitar") && hrand(20, tag) == 5 && 3-sti(RealShips[sti(_npchar.ship.type)].Class) >= 0) // 3 класс и выше. Скимитар - 5% 021012
+		if (CheckAttribute(pchar, "questTemp.Persian.skimitar") && hrand(20, tag) == 5 && 3-int(RealShips[int(_npchar.ship.type)].Class) >= 0) // 3 класс и выше. Скимитар - 5% 021012
 		{
 			_location.box1.items.blade_23 = 1;
 		}
@@ -1308,26 +1308,26 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		}
 		if (CheckAttribute(_npchar, "Ship.Mode") && _npchar.Ship.Mode == "war")
 		{
-			if(sti(pchar.rank) < 12)
+			if(int(pchar.rank) < 12)
 			{
-				if(hrand(10, "&SMW_hat" + tag) == 3)) _location.box1.items.hat1 = 1;
-				else if(hrand(10, "&SMW_hat" + tag) == 8)) _location.box1.items.hat3 = 1;
+				if(hrand(10, "&SMW_hat" + tag) == 3) _location.box1.items.hat1 = 1;
+				else if(hrand(10, "&SMW_hat" + tag) == 8) _location.box1.items.hat3 = 1;
 			}
 			else
 			{
-				if(hrand(10, "&SMW_hat" + tag) == 3)) _location.box1.items.hat2 = 1;
-				else if(hrand(10, "&SMW_hat" + tag) == 8)) _location.box1.items.hat4 = 1;
+				if(hrand(10, "&SMW_hat" + tag) == 3) _location.box1.items.hat2 = 1;
+				else if(hrand(10, "&SMW_hat" + tag) == 8) _location.box1.items.hat4 = 1;
 			}
 		}
 		// Озги
 		if (findsubstr(_npchar.id, "Hunter0" , 0) != -1)
 		{
-			if(rand(10) == 3 && sti(pchar.rank) > 11) _location.box1.items.hat7 = 1;
+			if(rand(10) == 3 && int(pchar.rank) > 11) _location.box1.items.hat7 = 1;
 		}
 		// Джентельмен удачи
 		if (findsubstr(_npchar.id, "Follower0" , 0) != -1)
 		{
-			if(rand(10) == 4 && sti(pchar.rank) > 11) _location.box1.items.hat7 = 1;
+			if(rand(10) == 4 && int(pchar.rank) > 11) _location.box1.items.hat7 = 1;
 		}
 
 		// Пиратские журналы по SP4
@@ -1356,7 +1356,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 // ugeen --> вычисление ранга квестовых проитвников в зависимости от ранга ГГ и уровня сложности
 int SetQuestCharacterRank()
 {
-	int rank = 25 + makeint(sti(pchar.rank)*(0.1 + MOD_SKILL_ENEMY_RATE));
+	int rank = 25 + int(int(pchar.rank)*(0.1 + MOD_SKILL_ENEMY_RATE));
 
 	return rank;
 }
@@ -1423,8 +1423,8 @@ void FantomMakeSmallSailor(ref _Character, int _ShipType, string _ShipName, int 
 	_Character.AlwaysSandbankManeuver = true;
 
     _Character.Ship.Type = GenerateShipExt(_ShipType, true, _Character);
-    if (_ShipName == "none" || _ShipName == "") {SetRandomNameToShip(_Character)}
-    else {_Character.Ship.Name = _ShipName}
+    if (_ShipName == "none" || _ShipName == "") {SetRandomNameToShip(_Character);}
+    else {_Character.Ship.Name = _ShipName;}
 
     SetBaseShipData(_Character);
     SetCrewQuantityFull(_Character);
@@ -1475,12 +1475,12 @@ void FantomMakeCoolFighter(ref _Character, int _Rank, int _Fencing, int _Pistol,
 {
 	_Character.rank = GetCoffDiff(_Rank, 1000);
 	_Character.skill.FencingS  = GetCoffDiff(_Fencing, SKILL_MAX);
-	_Character.Skill.FencingL  = GetCoffDiff(sti(_Character.skill.FencingL), SKILL_MAX);
-	_Character.Skill.FencingH  = GetCoffDiff(sti(_Character.skill.FencingH), SKILL_MAX);
+	_Character.Skill.FencingL  = GetCoffDiff(int(_Character.skill.FencingL), SKILL_MAX);
+	_Character.Skill.FencingH  = GetCoffDiff(int(_Character.skill.FencingH), SKILL_MAX);
 	_Character.skill.Pistol = GetCoffDiff(_Pistol, SKILL_MAX);
 	_Character.skill.Fortune = GetCoffDiff(_Pistol, SKILL_MAX); //zagolski. если умеет хорошо стрелять из пистоля, то умеет и хорошо от него защищаться
-	_Character.chr_ai.hp = stf(_Character.chr_ai.hp) + GetCoffDiff(_AddHP, 5000);
-	_Character.chr_ai.hp_max = stf(_Character.chr_ai.hp_max) + GetCoffDiff(_AddHP, 5000);
+	_Character.chr_ai.hp = float(_Character.chr_ai.hp) + GetCoffDiff(_AddHP, 5000);
+	_Character.chr_ai.hp_max = float(_Character.chr_ai.hp_max) + GetCoffDiff(_AddHP, 5000);
 	SetCharacterPerk(_Character, "Energaiser"); // скрытый перк даёт 1.5 к приросту энергии, даётся ГГ и боссам уровней
 	SetCharacterPerk(_Character, "AdvancedDefense");
 	SetCharacterPerk(_Character, "CriticalHit");
@@ -1499,7 +1499,7 @@ void FantomMakeCoolFighter(ref _Character, int _Rank, int _Fencing, int _Pistol,
 	if (_Gun != "")
 	{
 		ref rGun = ItemsFromID(_Gun);
-		int chrgQ = sti(rGun.chargeQ);
+		int chrgQ = int(rGun.chargeQ);
 		if (chrgQ >= 2)
 		{
 			SetCharacterPerk(_Character, "Gunman");
@@ -1556,7 +1556,7 @@ int GetCoffDiff(float _num, int _maxRange)
 	}
 	_num += 0.5;
 	if (_num > _maxRange) return _maxRange;
-	else return MakeInt(_num);
+	else return int(_num);
 }
 // заполнение сундуков и рандитема по квесту
 bool SetLocationQuestRandItem(int _index, aref _location, string _locatorName, aref al) // al - ветка локатора из модели, остальное тоже из обратотки локации
@@ -1564,7 +1564,7 @@ bool SetLocationQuestRandItem(int _index, aref _location, string _locatorName, a
 	string  lastSpawnTimeString;
     int     n;
 	string  itemId;
-	aref checkAref
+	aref checkAref;
 
 	/* Пример
  	pchar.GenQuestRandItem.QC_Port = true;
@@ -1621,7 +1621,7 @@ int SetRandItemShow(int _index, aref al, string _itemId)
     		return -1;
     	}
 	    Items_LoadModel(&randItemModels[_index],  randItem);
-    	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+    	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 
         return n;
     }
@@ -1790,7 +1790,7 @@ string NPCStringReactionRepeat(string _strNormal, string _strBad1, string _strBa
             _character.quest.repeat.(_Node).ans = 3;
         break;
         case "4":
-            strBack = "NPCStringReactionRepeat error!!!"
+            strBack = "NPCStringReactionRepeat error!!!";
         break;
 	}
     return strBack;
@@ -1800,7 +1800,7 @@ string HeroStringReactionRepeat(string _strNormal, string _strBad1, string _strB
 {
     _Node = stripblank(_Node); //fix spaces
 	string strBack;
-    int Temp = sti(_character.quest.repeat.(_Node).ans);
+    int Temp = int(_character.quest.repeat.(_Node).ans);
     switch(Temp)
 	{
         case "0":
@@ -1843,7 +1843,7 @@ string HeroStringReactionRepeat(string _strNormal, string _strBad1, string _strB
             }
         break;
         case "4":
-            strBack = "HeroStringReactionRepeat error!!!"
+            strBack = "HeroStringReactionRepeat error!!!";
         break;
 	}
     return strBack;
@@ -1854,14 +1854,14 @@ string HeroStringReactionRepeat(string _strNormal, string _strBad1, string _strB
 string DialogGoNodeRepeat(string _NormalNode, string _GoNode1, string _GoNode2, string _GoNode3, ref _character, string _Node)
 {
     _Node = stripblank(_Node); //fix spaces
-	string strBack, Temp;
-    Temp = sti(_character.quest.repeat.(_Node).ans);
+	string strBack;
+    int Temp = int(_character.quest.repeat.(_Node).ans);
     switch(Temp)
 	{
-        case "0":
+        case 0:
             strBack = _NormalNode;
         break;
-        case "1":
+        case 1:
             if (_GoNode1 == "none" || _GoNode1 == "")
             {
                 strBack = "exit";
@@ -1871,7 +1871,7 @@ string DialogGoNodeRepeat(string _NormalNode, string _GoNode1, string _GoNode2, 
                 strBack = _GoNode1;
             }
         break;
-        case "2":
+        case 2:
             if (_GoNode2 == "none" || _GoNode2 == "")
             {
                 strBack = "exit";
@@ -1881,7 +1881,7 @@ string DialogGoNodeRepeat(string _NormalNode, string _GoNode1, string _GoNode2, 
                 strBack = _GoNode2;
             }
         break;
-        case "3":
+        case 3:
             if (_GoNode3 == "none" || _GoNode3 == "")
             {
                 strBack = "exit";
@@ -1891,8 +1891,8 @@ string DialogGoNodeRepeat(string _NormalNode, string _GoNode1, string _GoNode2, 
                 strBack = _GoNode3;
             }
         break;
-        case "4":
-            strBack = "exit"
+        case 4:
+            strBack = "exit";
             Log_SetStringToLog("DialogGoNodeRepeat#4 error!!!");
         break;
     }
@@ -2137,7 +2137,7 @@ void SetNationToOfficers(int _nat)
 
 bool IsOfficerCompanion(ref _refCharacter)
 {
-	int findIdx = sti(_refCharacter.index);
+	int findIdx = int(_refCharacter.index);
 	ref mc = GetMainCharacter();
 	int ci, cn;
 	ref npc;
@@ -2185,7 +2185,7 @@ void SortItems(ref NPChar)
         attr = GetAttributeValue(curItem);
         if (attr != "") //патенты клинит
         {
-        	NPChar.Items.(attr) = sti(rObj.Items.(attr));
+        	NPChar.Items.(attr) = int(rObj.Items.(attr));
         }
     }
     // неоптимальная сортировка по индексу itm.SortIndex
@@ -2205,9 +2205,9 @@ void SortItems(ref NPChar)
 			
 			makeref(itm, Items[i]);
 			attr = itm.id;
-			if (CheckAttribute(rObj, "items."+attr) && CheckAttribute(itm, "SortIndex") && sti(itm.SortIndex) == iSortIndex)
+			if (CheckAttribute(rObj, "items."+attr) && CheckAttribute(itm, "SortIndex") && int(itm.SortIndex) == iSortIndex)
 			{
-                NPChar.Items.(attr) = sti(rObj.Items.(attr));
+                NPChar.Items.(attr) = int(rObj.Items.(attr));
 	   			ok = true;
 	      	}
 	    }
@@ -2226,7 +2226,7 @@ void SortItems(ref NPChar)
 		attr = itm.id;
 		if (CheckAttribute(rObj, "items."+attr) && !CheckAttribute(itm, "SortIndex"))
 		{
-   			NPChar.Items.(attr) = sti(rObj.Items.(attr));
+   			NPChar.Items.(attr) = int(rObj.Items.(attr));
    			ok = true;
       	}
     }
@@ -2551,11 +2551,11 @@ void SetQuestAboardCabinDialog(ref refChar)
 		{
 		    LAi_SetCheckMinHP(refChar, 1, false, "Memento_MortimerGrimDead");
 		}
-        else if (refChar.CaptanId == NationShortName(sti(refChar.nation)) + "Brigadier01") // Пожарная команда
+        else if (refChar.CaptanId == NationShortName(int(refChar.nation)) + "Brigadier01") // Пожарная команда
         {
             LAi_SetCheckMinHP(refChar, 1, true, "QuestAboardCabinDialog");
             refChar.Dialog.FileName = "Quest\FireBrigade.c";
-			refChar.Dialog.CurrentNode = "FireBrigade_" + NationShortName(sti(refChar.nation));	
+			refChar.Dialog.CurrentNode = "FireBrigade_" + NationShortName(int(refChar.nation));
         }
 		else if (refChar.CaptanId == "Map_Garpiya") // Гарпия
 		{
@@ -2595,7 +2595,7 @@ void SetQuestAboardCabinDialogSituation(ref refChar)
 void QuestAboardCabinDialogFree()
 {
 	ref sld;
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	Lai_SetPlayerType(pchar);
 	LAi_RemoveCheckMinHP(sld);
 	LAi_SetImmortal(sld, false);
@@ -2606,7 +2606,7 @@ void QuestAboardCabinDialogFree()
 void QuestAboardCabinDialogNotBattle()
 {
 	ref sld;
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	Lai_SetPlayerType(pchar);
 	LAi_RemoveCheckMinHP(sld);
 	LAi_SetImmortal(sld, false);
@@ -2618,7 +2618,7 @@ void QuestAboardCabinDialogExitWithBattle(string _questName)
 {
     QuestAboardCabinDialogFree(); // важный метод
 	ref sld;
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetFightMode(pchar, true);
 	LAi_SetFightMode(sld, true);
 	LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -2635,7 +2635,7 @@ void QuestAboardCabinDialogExitWithBattleNoParam()// homo тоже самое, �
 void QuestAboardCabinDialogSurrender()
 {
  	ref sld;
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	DeleteAttribute(sld, "DontRansackCaptain"); // если было зачем-то
 	pchar.GenQuest.QuestAboardCaptanSurrender = true;
 	Lai_SetPlayerType(pchar);
@@ -2649,7 +2649,7 @@ void QuestAboardCabinDialogSurrender()
 void QuestAboardCabinDialogQuestSurrender()
 {
 	ref sld;
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	sld.DontRansackCaptain = true; // чтоб не сдался второй раз
 	Lai_SetPlayerType(pchar);
 	LAi_RemoveCheckMinHP(sld);
@@ -2657,7 +2657,7 @@ void QuestAboardCabinDialogQuestSurrender()
 	//на форме убиваем LAi_SetCurHP(characterFromId(sld.CaptanId), 0.0); 
 	//sld.LifeDay = 0;
 	pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(sld);
-	SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+	SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
 	DoQuestCheckDelay("LAi_ReloadBoarding", 1.0);
 }
 
@@ -2670,7 +2670,7 @@ void SelectSlavetraderRendom() // работорговец, выбор горо�
 		int howStore = 0;
 		for(n=0; n<MAX_COLONIES; n++)
 		{			
-			if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && colonies[n].id != "FortOrange" && colonies[n].id != "Havana" && colonies[n].id != "Santiago" && colonies[n].id != "Portroyal" && colonies[n].id != "Villemstad" && colonies[n].id != "Charles" && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres")
+			if (colonies[n].nation != "none" && int(colonies[n].nation) != PIRATE && colonies[n].id != "FortOrange" && colonies[n].id != "Havana" && colonies[n].id != "Santiago" && colonies[n].id != "Portroyal" && colonies[n].id != "Villemstad" && colonies[n].id != "Charles" && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres")
 			{           
 				storeArray[howStore] = n;
 				howStore++;
@@ -3540,7 +3540,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 50);
 	AddItems(sld, "gunpowder", 50);
-	TakeNItems(sld, "potion2", 2+makeint(MOD_SKILL_ENEMY_RATE * 0.5));
+	TakeNItems(sld, "potion2", 2+int(MOD_SKILL_ENEMY_RATE * 0.5));
 	sld.location = "SanAugustineResidence";
 	sld.location.group = "goto";
 	sld.location.locator = "goto11";
@@ -4526,7 +4526,6 @@ string GetStrSmallRegister(string sBase)
 			case "Ę": sResult += "ę"; continue; break;
 			case "Ł": sResult += "ł"; continue; break;
 			case "Ń": sResult += "ń"; continue; break;
-			case "Ó": sResult += "ó"; continue; break;
 			case "Ś": sResult += "ś"; continue; break;
 			case "Ź": sResult += "ź"; continue; break;
 			case "Ż": sResult += "ż"; continue; break;
@@ -4719,7 +4718,7 @@ void QuestCheckTakeBoxes(ref itemsRef)
 	{
 		Log_Info(StringFromKey("QuestsUtilite_156"));
 		PlaySound("interface\notebook.wav");
-        iTemp = sti(itemsRef.Treasure); // Тир клада
+        iTemp = int(itemsRef.Treasure); // Тир клада
         AddCharacterExpToSkill(PChar, "Fortune", iTemp*3);
         // Ачивки
         if(!GetAchievement("ach_CL_151") && iTemp == 15) Achievment_Set("ach_CL_151");
@@ -4761,7 +4760,7 @@ void QuestCheckTakeBoxes(ref itemsRef)
 			else
 			{
 				// ОЗК (Выход из пещеры)
-				switch (sti(pchar.GenQuest.Treasure.Vario))
+				switch (int(pchar.GenQuest.Treasure.Vario))
 				{
 					case 2:  
 						pchar.quest.Treasure_evilcaptain.win_condition.l1 = "ExitFromLocation";
@@ -4780,7 +4779,7 @@ void QuestCheckTakeBoxes(ref itemsRef)
 		
 		if(CheckAttribute(itemsRef, "Hold_GenQuest_Treasure"))
 		{
-			if(sti(pchar.GenQuest.Hold_GenQuest.Treasure) == 0)
+			if(int(pchar.GenQuest.Hold_GenQuest.Treasure) == 0)
 			{
 				AddQuestRecord("HoldQuest", "18");
 				AddQuestUserData("HoldQuest", "sCapName", pchar.GenQuest.Hold_GenQuest.CapName); // belamour gen
@@ -4866,12 +4865,12 @@ int CheckItemsCRC(ref rChar)
 		rItm = ItemsFromID(sName);
 		if(rItm.id != "Gold")
 		{
-			ItmQty = sti(arItems.(sName));
+			ItmQty = int(arItems.(sName));
 			if(!CheckAttribute(rChar,"BaseCRC")) 
 			{
 				rChar.BaseCRC = 1 + rand(5);		
 			}	
-			BaseCRC += (sti(rItm.index) + sti(rChar.BaseCRC)) * ItmQty);	
+			BaseCRC += (int(rItm.index) + int(rChar.BaseCRC)) * ItmQty;
 		}			
 	}
 	return BaseCRC;
@@ -4887,7 +4886,7 @@ int AddItemToCRC(ref rChar, string itemName, int n)
 		{
 			rChar.BaseCRC = 1 + rand(5);		
 		}
-		BaseCRC = (sti(rItm.index) + sti(rChar.BaseCRC)) * n;
+		BaseCRC = (int(rItm.index) + int(rChar.BaseCRC)) * n;
 	}		
 	return BaseCRC;
 }
@@ -4918,7 +4917,7 @@ void GoToPrison(string _sCity, int _iStraff, int _iDay)//поместить ГГ
 		}
 	}
 	DeleteAttribute(location, "box1.QuestClosed");
-	location.box1.money = sti(PChar.money)-_iStraff;	
+	location.box1.money = int(PChar.money)-_iStraff;
 	location.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
 	RemoveAllCharacterItems(PChar, true);
 	
@@ -4927,7 +4926,7 @@ void GoToPrison(string _sCity, int _iStraff, int _iDay)//поместить ГГ
 	pchar.questTemp.JailTemp2 = _iDay;
 	
 	sld = characterFromId(_sCity+"_trader");
-	int iNation = sld.nation;
+	int iNation = sld.nation$int(0);
 	sld = GetCharacter(NPC_GenerateCharacter("Jail_officer", "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", 20, iNation, -1, true, "soldier"));
 	SetFantomParamFromRank(sld, 20, true); 
 	sld.name = StringFromKey("QuestsUtilite_161");
@@ -5020,7 +5019,7 @@ string FindFriendCityToMC(bool bRand) //Jason выбрать радномный 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		bool notSameIsland = (curIsland < 0) || (Islands[curIsland].id != colonies[n].island);
-		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_ENEMY) // mitrokosta фикс зависимости от флага
+		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, int(colonies[n].nation)) != RELATION_ENEMY) // mitrokosta фикс зависимости от флага
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -5046,7 +5045,7 @@ string FindEnemyCityToMC(bool bRand) //Jason выбрать радномный �
 	for(n=0; n<MAX_COLONIES; n++)
 	{
 		bool notSameIsland = (curIsland < 0) || (Islands[curIsland].id != colonies[n].island);
-		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, sti(colonies[n].nation)) == RELATION_ENEMY) // mitrokosta фикс зависимости от флага
+		if (notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none" && colonies[n].nation != PIRATE && GetNationRelation(nation, int(colonies[n].nation)) == RELATION_ENEMY) // mitrokosta фикс зависимости от флага
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -5077,7 +5076,7 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 	int n;
     int storeArray[MAX_COLONIES];
     int howStore = 0;
-	int nation = sti(ch.nation); 
+	int nation = int(ch.nation);
 	bool nationSort = true;
 	if(nation < 0 || nation > 4) nation = PIRATE;
 	if(_nation < 0 || _nation > 4)  
@@ -5094,11 +5093,11 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 		if(notSameIsland && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != "IslaMona" && colonies[n].nation != "none")
 		{
 			if(!bpirate && colonies[n].nation == PIRATE) continue;
-			if(relation == "enemy" && GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_ENEMY) continue;
-			if(relation == "friend" &&  GetNationRelation(nation, sti(colonies[n].nation)) == RELATION_ENEMY) continue;
-			if(relation == "friend_only" &&  GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_FRIEND) continue;
-			if(relation == "neutral" &&  GetNationRelation(nation, sti(colonies[n].nation)) != RELATION_NEUTRAL) continue;
-			if(nationSort && sti(colonies[n].nation) != _nation) continue;
+			if(relation == "enemy" && GetNationRelation(nation, int(colonies[n].nation)) != RELATION_ENEMY) continue;
+			if(relation == "friend" &&  GetNationRelation(nation, int(colonies[n].nation)) == RELATION_ENEMY) continue;
+			if(relation == "friend_only" &&  GetNationRelation(nation, int(colonies[n].nation)) != RELATION_FRIEND) continue;
+			if(relation == "neutral" &&  GetNationRelation(nation, int(colonies[n].nation)) != RELATION_NEUTRAL) continue;
+			if(nationSort && int(colonies[n].nation) != _nation) continue;
 			storeArray[howStore] = n;
 			howStore++;
 		}
@@ -5114,11 +5113,11 @@ string FindQuestCity(ref ch, string relation, int _nation, bool bpirate, bool bR
 void SelectLevelWarShipParameter()//Jason автолевеллинг на военные корабли противника
 {
 	int iShipRank;
-	if(sti(pchar.rank) >= 30) iShipRank = 4;
-	if(sti(pchar.rank) >= 21 && sti(pchar.rank) < 30) iShipRank = 3;
-	if(sti(pchar.rank) >= 12 && sti(pchar.rank) < 21) iShipRank = 2;
-	if(sti(pchar.rank) >= 6 && sti(pchar.rank) < 12) iShipRank = 1;
-	if(sti(pchar.rank) < 6) iShipRank = 0;
+	if(int(pchar.rank) >= 30) iShipRank = 4;
+	if(int(pchar.rank) >= 21 && int(pchar.rank) < 30) iShipRank = 3;
+	if(int(pchar.rank) >= 12 && int(pchar.rank) < 21) iShipRank = 2;
+	if(int(pchar.rank) >= 6 && int(pchar.rank) < 12) iShipRank = 1;
+	if(int(pchar.rank) < 6) iShipRank = 0;
 	
 	int iClassFlag = FLAG_SHIP_CLASS_6;
 	switch (iShipRank)
@@ -5156,11 +5155,11 @@ void SelectLevelWarShipParameter()//Jason автолевеллинг на вое
 void SelectLevelTradeShipParameter()//Jason автолевеллинг на торговые корабли противника
 {
 	int iShipRank;
-	if(sti(pchar.rank) >= 26) iShipRank = 4;
-	if(sti(pchar.rank) >= 17 && sti(pchar.rank) < 26) iShipRank = 3;	
-	if(sti(pchar.rank) >= 10 && sti(pchar.rank) < 17) iShipRank = 2;
-	if(sti(pchar.rank) >= 5 && sti(pchar.rank) < 10) iShipRank = 1;	
-	if(sti(pchar.rank) < 5) iShipRank = 0;
+	if(int(pchar.rank) >= 26) iShipRank = 4;
+	if(int(pchar.rank) >= 17 && int(pchar.rank) < 26) iShipRank = 3;
+	if(int(pchar.rank) >= 10 && int(pchar.rank) < 17) iShipRank = 2;
+	if(int(pchar.rank) >= 5 && int(pchar.rank) < 10) iShipRank = 1;
+	if(int(pchar.rank) < 5) iShipRank = 0;
 	switch (iShipRank)
 	{
 		case 0:  
@@ -5195,7 +5194,7 @@ void SelectLevelTradeShipParameter()//Jason автолевеллинг на то
 // Jason автолевеллинг на орудия - иногда надо
 int SelectLevelCannonParameter(int iShipType)
 {
-	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), sti(ShipsTypes[iShipType].MaxCaliber));
+	int iCannon = GetCannonByTypeAndCaliber(RandPhraseSimple("cannon","culverine"), int(ShipsTypes[iShipType].MaxCaliber));
 	return iCannon;
 }
 
@@ -5240,7 +5239,7 @@ int CheckShipTypeInSquadron(int iShipType) //Jason, есть ли такой т�
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == iShipType) iShip++;
+			if(int(RealShips[int(sld.ship.type)].basetype) == iShipType) iShip++;
 		}
 	}
 	return iShip;
@@ -5250,14 +5249,14 @@ bool LSC_CheckShips() // проверка, можно ли подойти к о�
 {
 	ref sld;
 	int iTemp;
-	if(4-sti(RealShips[sti(pchar.Ship.Type)].Class) > 0 || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FLEUT) return false;
+	if(4-int(RealShips[int(pchar.Ship.Type)].Class) > 0 || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_FLEUT) return false;
 	for(int i = 0; i < COMPANION_MAX; i++)
 	{
 		iTemp = GetCompanionIndex(PChar, i);
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(4-sti(RealShips[sti(sld.Ship.Type)].Class) > 0 || sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_FLEUT) return false;
+			if(4-int(RealShips[int(sld.Ship.Type)].Class) > 0 || int(RealShips[int(sld.ship.type)].basetype) == SHIP_FLEUT) return false;
 		}
 	}
 	return true;
@@ -5285,9 +5284,9 @@ void SetPassengerParameter(string _sIndex, bool bEnemy) //Jason, общие па
 	int DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.(_sIndex).City), GetArealByCityName(pchar.GenQuest.(_sIndex).StartCity));
 	if (DaysQty > 16) DaysQty = 16;
 	if (DaysQty < 1) DaysQty = 10; // оставлю на всяк пожарный пока
-	pchar.GenQuest.(_sIndex).DaysQty = makeint(sti(DaysQty)*(frand(1.5)+1.0)); //дни
+	pchar.GenQuest.(_sIndex).DaysQty = int(int(DaysQty)*(frand(1.5)+1.0)); //дни
 	float fShipIdx;
-	switch(7-sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(7-int(RealShips[int(Pchar.Ship.Type)].Class))
 	{
 		case 0: fShipIdx = 1.0; break;
 		case 1: fShipIdx = 1.2;	break;
@@ -5297,8 +5296,8 @@ void SetPassengerParameter(string _sIndex, bool bEnemy) //Jason, общие па
 		case 5:	fShipIdx = 4.5; break;
 		case 6:	fShipIdx = 5.0; break;
 	}
-	pchar.GenQuest.(_sIndex).Money = (sti(DaysQty)*500*stf(fShipIdx)+rand(100))*sti(DaysQty)/sti(pchar.GenQuest.(_sIndex).DaysQty);
-	if (bEnemy) pchar.GenQuest.(_sIndex).Money = makeint(sti(pchar.GenQuest.(_sIndex).Money) / 50); //оплата в дублонах
+	pchar.GenQuest.(_sIndex).Money = (int(DaysQty)*500*float(fShipIdx)+rand(100))*int(DaysQty)/int(pchar.GenQuest.(_sIndex).DaysQty);
+	if (bEnemy) pchar.GenQuest.(_sIndex).Money = int(int(pchar.GenQuest.(_sIndex).Money) / 50); //оплата в дублонах
 }
 
 void SetPassengerParameterToStatusCity(string _sIndex)
@@ -5314,9 +5313,9 @@ void SetPassengerParameterToStatusCity(string _sIndex)
 	int DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.(_sIndex).City), GetArealByCityName(pchar.GenQuest.(_sIndex).StartCity));
 	if (DaysQty > 16) DaysQty = 16;
 	if (DaysQty < 1) DaysQty = 10; // оставлю на всяк пожарный пока
-	pchar.GenQuest.(_sIndex).DaysQty = makeint(sti(DaysQty)*(frand(1.5)+1.0)); //дни
+	pchar.GenQuest.(_sIndex).DaysQty = int(int(DaysQty)*(frand(1.5)+1.0)); //дни
 	float fShipIdx;
-	switch(7-sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(7-int(RealShips[int(Pchar.Ship.Type)].Class))
 	{
 		case 0: fShipIdx = 1.0; break;
 		case 1: fShipIdx = 1.2;	break;
@@ -5326,7 +5325,7 @@ void SetPassengerParameterToStatusCity(string _sIndex)
 		case 5:	fShipIdx = 4.5; break;
 		case 6:	fShipIdx = 5.0; break;
 	}
-	pchar.GenQuest.(_sIndex).Money = (sti(DaysQty)*500*stf(fShipIdx)+rand(100))*sti(DaysQty)/sti(pchar.GenQuest.(_sIndex).DaysQty);
+	pchar.GenQuest.(_sIndex).Money = (int(DaysQty)*500*float(fShipIdx)+rand(100))*int(DaysQty)/int(pchar.GenQuest.(_sIndex).DaysQty);
 }
 
 string UpdateLSCClanParol() // Jason: обновление паролей кланов
@@ -5390,9 +5389,9 @@ int GetStoragePriceExt(ref NPChar, ref chref)
 	float fLeadership = 1.5 - GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/120.0; // учитываем авторитет
 	float fCommerce = 1.5 - GetSummonSkillFromName(pchar, SKILL_COMMERCE)/120.0; // учитываем торговлю
 	
-	int price = makeint(15000 * MOD_SKILL_ENEMY_RATE * fLeadership * fCommerce * 0.5);
+	int price = int(15000 * MOD_SKILL_ENEMY_RATE * fLeadership * fCommerce * 0.5);
 */
-	int price = makeint( 10000 * (2 + MOD_SKILL_ENEMY_RATE) * (3 + GetNationRelation2MainCharacter(sti(NPChar.nation)))/360.0 );
+	int price = int( 10000 * (2 + MOD_SKILL_ENEMY_RATE) * (3 + GetNationRelation2MainCharacter(int(NPChar.nation)))/360.0 );
 	
 	return price;
 }
@@ -5431,8 +5430,8 @@ void SetNull2ShipInStockMan(string _city)
 				sld = CharacterFromId(rColony.id + "_PortMan");
 				DeleteAttribute(chref, "ShipInStockMan");
 				chref.lifeDay = 0;
-				pchar.ShipInStock = sti(pchar.ShipInStock) - 1; 
-				sld.Portman    = sti(sld.Portman) - 1; 
+				pchar.ShipInStock = int(pchar.ShipInStock) - 1;
+				sld.Portman    = int(sld.Portman) - 1;
 			}
 		}	
 	}	
@@ -5441,7 +5440,7 @@ void SetNull2ShipInStockMan(string _city)
 
 bool Saga_CheckMarlinShip() // проверка полакра марлин - одинаковый юз в 2 местах
 {
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_POLACRE || GetCompanionQuantity(pchar) > 1) return false;
+	if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_POLACRE || GetCompanionQuantity(pchar) > 1) return false;
 	if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name != StringFromKey("QuestsUtilite_196")) return false;
 	if (!CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name != StringFromKey("QuestsUtilite_196")) return false;
 	return true;
@@ -5527,8 +5526,8 @@ void Tortuga_ShipGuardAttack() // 2015
 	{       
 		sld = characterFromId("TortugaGuardCap_"+i);
 		sld.AlwaysEnemy = true;
-		Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(pchar.index));
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	}
 	RefreshBattleInterface();
 	UpdateRelations();
@@ -5588,13 +5587,13 @@ void Tortuga_BranderGo(string qName) // 2015
 void Map_NationQuestHunter(int Nation)//квестовый энкаунтер-охотник
 {
     ref  sld;
-	int iRank = sti(PChar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = int(PChar.rank)+MOD_SKILL_ENEMY_RATE+5;
 	if (iRank > 42) iRank = 42;
     string sCapId = "FollowerQuest0";
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iNation = sti(Nation);
+	int iNation = int(Nation);
     for (int i = 1; i <= GetCompanionQuantity(pchar)+1; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 46, true, "hunter"));
@@ -5968,7 +5967,7 @@ void MakeHellSplashDamage() // Jason: урон водой на рифе
 	// belamour legendary edition оберег ловца скрытые свойства
 	if(!IsEquipCharacterByArtefact(pchar, "talisman10"))
 	{
-		LAi_ApplyCharacterDamage(pchar, 90+MOD_SKILL_ENEMY_RATE*6, "other", true));
+		LAi_ApplyCharacterDamage(pchar, 90+MOD_SKILL_ENEMY_RATE*6, "other", true);
 		LAi_CheckKillCharacter(pchar);
 		PlaySound("People Fight\Death_NPC_08.wav");
 	}
@@ -6236,12 +6235,12 @@ bool IsNationLineship(int iNation, int iShipType)
 	{
 		return false;
 	}
-	if (!sti(refShip.NationalLineShip))
+	if (!int(refShip.NationalLineShip))
 	{
 		return false;
 	}
 
-	return sti(refShip.NationExclusive) == iNation;
+	return int(refShip.NationExclusive) == iNation;
 }
 // поиск и определение линейных кораблей наций
 bool FindCompanionLineship(int iNation)
@@ -6264,7 +6263,7 @@ bool FindCompanionLineship(int iNation)
 			}
 
 			// Если в эскадре есть Эклятон и другой захваченный французский линкор, то прощения не будет.
-			int iShipType = sti(RealShips[sti(sld.ship.type)].basetype);
+			int iShipType = int(RealShips[int(sld.ship.type)].basetype);
 			bool bFound = IsNationLineship(iNation, iShipType);
 			if (bFound)
 			{
@@ -6283,7 +6282,7 @@ bool FindCompanionShips(int Type)
 		if(iTemp > 0)
 		{
 			ref sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == Type) return true;
+			if(int(RealShips[int(sld.ship.type)].basetype) == Type) return true;
 		}
 	}
 	return false;
@@ -6293,7 +6292,7 @@ bool LineShips_CheckAndIdentify(int iNation)
 {
 	if(GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat5") return false;
 
-	int iShipType = sti(RealShips[sti(pchar.ship.type)].basetype);
+	int iShipType = int(RealShips[int(pchar.ship.type)].basetype);
 	if (IsNationLineship(iNation, iShipType))
 	{
 		return true;
@@ -6316,7 +6315,7 @@ bool Companion_CheckShipType(int iShipType) // поиск любого конк�
 		if(cn != -1)
 		{
 			sld = &characters[cn];
-			if (RealShips[sti(sld.Ship.Type)].basetype == iShipType)
+			if (RealShips[int(sld.Ship.Type)].basetype == iShipType)
 			{
 				pchar.GenQuest.CompanionId = sld.id;
 				return true;
@@ -6349,7 +6348,7 @@ bool CheckTotalDepositsSum(ref _chref, int Sum)
     		{
 				if(HasSubStr(sQuestName, "_type1"))
 				{
-					TotalSum += sti(_chref.Quest.Deposits.(sQuestName).Sum);
+					TotalSum += int(_chref.Quest.Deposits.(sQuestName).Sum);
 				}
 							
 			}			
@@ -6556,11 +6555,11 @@ bool LongHappy_CheckGoods() //
 {
 	if (CheckAttribute(pchar, "questTemp.LongHappy.SmallMarry"))
 	{
-		if (GetSquadronGoods(pchar, GOOD_RUM) >= 50 && GetSquadronGoods(pchar, GOOD_WINE) >= 20 && sti(Pchar.money) >= 300000) return true;
+		if (GetSquadronGoods(pchar, GOOD_RUM) >= 50 && GetSquadronGoods(pchar, GOOD_WINE) >= 20 && int(Pchar.money) >= 300000) return true;
 	}
 	else
 	{
-		if (GetSquadronGoods(pchar, GOOD_RUM) >= 100 && GetSquadronGoods(pchar, GOOD_WINE) >= 50 && sti(Pchar.money) >= 500000) return true;
+		if (GetSquadronGoods(pchar, GOOD_RUM) >= 100 && GetSquadronGoods(pchar, GOOD_WINE) >= 50 && int(Pchar.money) >= 500000) return true;
 	}
 	return false;
 }
@@ -6574,7 +6573,7 @@ bool LongHappy_CheckSaga() //
 
 bool LongHappy_CheckTavernGoods() // 
 {
-	if (GetSquadronGoods(pchar, GOOD_RUM) >= sti(pchar.questTemp.LongHappy.MarryRum) && sti(Pchar.money) >= sti(pchar.questTemp.LongHappy.MarryMoney)) return true;
+	if (GetSquadronGoods(pchar, GOOD_RUM) >= int(pchar.questTemp.LongHappy.MarryRum) && int(Pchar.money) >= int(pchar.questTemp.LongHappy.MarryMoney)) return true;
 	return false;
 }
 
@@ -6620,7 +6619,7 @@ bool CheckFunctionalTreasurer() {
 // подсказки на старте игры
 // todo: дописать проверку на то, что они не отключены
 void NewGameTip(string sTip) {
-	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 1)
+	if(CheckAttribute(&InterfaceStates, "ShowTutorial") && int(InterfaceStates.ShowTutorial) == 1)
 	{
 		aref arFader;
 		if(GetEntity(arFader,"fader"))
@@ -6699,7 +6698,7 @@ bool QuestCheckReturn2SeaAfterCabin() {
 		} else {
 			PlaySound("interface\knock.wav");
 			//Log_Info("Назначьте Фулька Делюка своим штурманом в окне персонажа (F4)");
-			LaunchTutorial("Navigator", 1);
+			LaunchTutorial("Navigator", true);
 			return false;
 		}
 		pchar.systeminfo.tutorial.navigator = true;
@@ -6799,7 +6798,7 @@ bool IslaMona_CheckBacautSpace() //
 	ref strg = &stores[29];
 	int i, n;
 	i = GetStorageUsedWeight(strg); // вес того, что уже лежит
-	n = 7*sti(pchar.questTemp.IslaMona.Factory.Goods); // вес партии бакаута
+	n = 7*int(pchar.questTemp.IslaMona.Factory.Goods); // вес партии бакаута
 	if (50000-i-n >= 0) return true;
 	return false;
 }
@@ -6831,57 +6830,57 @@ void IslaMona_RemoveCandles()
 {
 	if(CheckAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget"))
 	{
-		int gn = sti(pchar.questTemp.IslamonaChurch.GoldNugget);
+		int gn = int(pchar.questTemp.IslamonaChurch.GoldNugget);
 		if(GetCharacterItem(pchar, "jewelry5") < gn)
 		{
-			pchar.questTemp.IslamonaChurch.GoldNugget = sti(pchar.questTemp.IslamonaChurch.GoldNugget) - GetCharacterItem(pchar, "jewelry5");
+			pchar.questTemp.IslamonaChurch.GoldNugget = int(pchar.questTemp.IslamonaChurch.GoldNugget) - GetCharacterItem(pchar, "jewelry5");
 			RemoveItems(pchar, "jewelry5", GetCharacterItem(pchar, "jewelry5"));
 		}
 		else
 		{
-			RemoveItems(pchar, "jewelry5", sti(pchar.questTemp.IslamonaChurch.GoldNugget));
+			RemoveItems(pchar, "jewelry5", int(pchar.questTemp.IslamonaChurch.GoldNugget));
 			DeleteAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget");
 		}
 	}
 	if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Candle"))
 	{
-		int can = sti(pchar.questTemp.IslamonaChurch.Candle);
+		int can = int(pchar.questTemp.IslamonaChurch.Candle);
 		if(GetCharacterItem(pchar, "mineral3") < can)
 		{
-			pchar.questTemp.IslamonaChurch.Candle = sti(pchar.questTemp.IslamonaChurch.Candle) - GetCharacterItem(pchar, "mineral3");
+			pchar.questTemp.IslamonaChurch.Candle = int(pchar.questTemp.IslamonaChurch.Candle) - GetCharacterItem(pchar, "mineral3");
 			RemoveItems(pchar, "mineral3", GetCharacterItem(pchar, "mineral3"));
 		}
 		else
 		{
-			RemoveItems(pchar, "mineral3", sti(pchar.questTemp.IslamonaChurch.Candle));
+			RemoveItems(pchar, "mineral3", int(pchar.questTemp.IslamonaChurch.Candle));
 			DeleteAttribute(pchar, "questTemp.IslamonaChurch.Candle");
 		}
 	}
 	if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Amber"))
 	{
-		int Amb = sti(pchar.questTemp.IslamonaChurch.Amber);
+		int Amb = int(pchar.questTemp.IslamonaChurch.Amber);
 		if(GetCharacterItem(pchar, "jewelry8") < Amb)
 		{
-			pchar.questTemp.IslamonaChurch.Amber = sti(pchar.questTemp.IslamonaChurch.Amber) - GetCharacterItem(pchar, "jewelry8");
+			pchar.questTemp.IslamonaChurch.Amber = int(pchar.questTemp.IslamonaChurch.Amber) - GetCharacterItem(pchar, "jewelry8");
 			RemoveItems(pchar, "jewelry8", GetCharacterItem(pchar, "jewelry8"));
 		}
 		else
 		{
-			RemoveItems(pchar, "jewelry8", sti(pchar.questTemp.IslamonaChurch.Amber));
+			RemoveItems(pchar, "jewelry8", int(pchar.questTemp.IslamonaChurch.Amber));
 			DeleteAttribute(pchar, "questTemp.IslamonaChurch.Amber");
 		}
 	}
 	if(CheckAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber"))
 	{
-		int BlueAmb = sti(pchar.questTemp.IslamonaChurch.BlueAmber);
+		int BlueAmb = int(pchar.questTemp.IslamonaChurch.BlueAmber);
 		if(GetCharacterItem(pchar, "jewelry7") < BlueAmb)
 		{
-			pchar.questTemp.IslamonaChurch.BlueAmber = sti(pchar.questTemp.IslamonaChurch.BlueAmber) - GetCharacterItem(pchar, "jewelry7");
+			pchar.questTemp.IslamonaChurch.BlueAmber = int(pchar.questTemp.IslamonaChurch.BlueAmber) - GetCharacterItem(pchar, "jewelry7");
 			RemoveItems(pchar, "jewelry7", GetCharacterItem(pchar, "jewelry7"));
 		}
 		else
 		{
-			RemoveItems(pchar, "jewelry7", sti(pchar.questTemp.IslamonaChurch.BlueAmber));
+			RemoveItems(pchar, "jewelry7", int(pchar.questTemp.IslamonaChurch.BlueAmber));
 			DeleteAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber");
 		}
 	}
@@ -6893,7 +6892,7 @@ bool BlackMark_CheckTimeInGabeHouse()
 {
 	int iTime;
 	
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	
 	if (iTime > 6 && iTime < 22) return false;
 	
@@ -6913,7 +6912,7 @@ bool IsShipInPort(string city)
 
 	ref rColony = GetColonyByIndex(idx);
 	bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	return sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
+	return int(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
 }
 
 // Отменить аренду склада, все товары на корабль, склад оставляем пустым
@@ -6921,7 +6920,7 @@ void LeaveStorage(ref storageChr, ref colony, int payment = 0)
 {
 	if (payment > 0) AddMoneyToCharacter(pchar, -payment);
 
-	ref store = &stores[sti(colony.StoreNum)];
+	ref store = &stores[int(colony.StoreNum)];
 	SetStorageGoodsToShip(store);
 	DeleteAttribute(storageChr, "Storage.Activate");
 	storageChr.Storage.NoActivate = true;

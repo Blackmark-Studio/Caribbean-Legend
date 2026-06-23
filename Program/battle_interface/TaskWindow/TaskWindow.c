@@ -9,29 +9,29 @@ object objTask;
 
 void TW_SetDefines()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	aref arDef;
 	makearef(arDef, objTask.defines);
 	
 	// основная точка, от которой рассчитываются все остальные
-	arDef.left = sti(showWindow.right) / 32;
-	arDef.top = sti(showWindow.bottom) / 2.5;
+	arDef.left = int(showWindow.right) / 32;
+	arDef.top = int(showWindow.bottom) / 2.5;
 	
 	// вертикальные расстояния
-	arDef.header = makeint(TW_DEF_HEADER * fHtRatio);
-	arDef.first_string = makeint(TW_DEF_FIRSTSTRING * fHtRatio);
-	arDef.interval = makeint(TW_DEF_INTERVAL * fHtRatio);
-	arDef.counter_offset = makeint(TW_DEF_COUNTERVOFFSET * fHtRatio);
-	arDef.mark_offset = makeint(TW_DEF_MARKOFFSET * fHtRatio);
-	arDef.bottom_space = makeint(TW_DEF_BOTTOMSPACE * fHtRatio);
+	arDef.header = int(TW_DEF_HEADER * fHtRatio);
+	arDef.first_string = int(TW_DEF_FIRSTSTRING * fHtRatio);
+	arDef.interval = int(TW_DEF_INTERVAL * fHtRatio);
+	arDef.counter_offset = int(TW_DEF_COUNTERVOFFSET * fHtRatio);
+	arDef.mark_offset = int(TW_DEF_MARKOFFSET * fHtRatio);
+	arDef.bottom_space = int(TW_DEF_BOTTOMSPACE * fHtRatio);
 	
 	// размеры картинок
-	arDef.caption = makeint(TW_DEF_CAPTIONHEIGHT * fHtRatio);
-	arDef.mark = makeint(TW_DEF_MARKSIZE * fHtRatio);
-	arDef.line = makeint(TW_DEF_LINEHEIGHT * fHtRatio);
+	arDef.caption = int(TW_DEF_CAPTIONHEIGHT * fHtRatio);
+	arDef.mark = int(TW_DEF_MARKSIZE * fHtRatio);
+	arDef.line = int(TW_DEF_LINEHEIGHT * fHtRatio);
 	
 	// отступы слева и справа
-	arDef.indent = makeint(TW_DEF_INDENT * fHtRatio);
+	arDef.indent = int(TW_DEF_INDENT * fHtRatio);
 }
 
 // Вычислить корректные координаты (каждый раз при открытии)
@@ -42,7 +42,7 @@ void TW_RecalculateLayout()
     aref arNode, arTask, arTexts;
     string sTask = objTask.current;
 	
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	
 	makearef(arTask, objTask.(sTask));
     makearef(arTexts, objTask.(sTask).texts);
@@ -50,9 +50,9 @@ void TW_RecalculateLayout()
     for(i=0; i<num; i++)
     {
         arNode = GetAttributeN(arTexts, i);
-        arNode.pos.y = sti(objTask.defines.top) + makeint(sti(arNode.base.pos.y) * fHtRatio);
+        arNode.pos.y = int(objTask.defines.top) + int(int(arNode.base.pos.y) * fHtRatio);
         if(CheckAttribute(arNode, "base.scale"))
-            arNode.scale = stf(arNode.base.scale) * fHtRatio;
+            arNode.scale = float(arNode.base.scale) * fHtRatio;
 		else
 			arNode.scale = fHtRatio;
     }
@@ -102,7 +102,7 @@ void TW_SetBack()
     int width  = 0;
     int height = 0;
     float scale;
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 
     aref arTextRoot, arText, arImage, arDef, arTask;
     string sTask = objTask.current;
@@ -114,8 +114,8 @@ void TW_SetBack()
     arImage.picture = "background";
 	
 	int base_x1, base_y1, base_x2, base_y2;
-	base_x1 = sti(arDef.left);
-	base_y1 = sti(arDef.top);
+	base_x1 = int(arDef.left);
+	base_y1 = int(arDef.top);
 	
 	int x1, y1, x2, y2;
 
@@ -135,7 +135,7 @@ void TW_SetBack()
             arText = GetAttributeN(arTextRoot, i);
             scale  = 1.0;
             if(CheckAttribute(arText, "scale")) 
-				scale = stf(arText.scale);
+				scale = float(arText.scale);
             iTemp = GetStringWidth(arText.text, arText.font, scale);
             if(iTemp > width)
 				width = iTemp;
@@ -147,7 +147,7 @@ void TW_SetBack()
 		for(i=0; i<num; i++)
         {
             arText = GetAttributeN(arTextRoot, i);
-            iTemp = sti(arText.pos.y);
+            iTemp = int(arText.pos.y);
             if(iTemp > maxY)
 				maxY = iTemp;
         }
@@ -158,15 +158,15 @@ void TW_SetBack()
 	
 	height = maxY - base_y1;
 
-	base_x2 = base_x1 + width + sti(arDef.indent) * 2;
+	base_x2 = base_x1 + width + int(arDef.indent) * 2;
 	int center = base_x1 + (base_x2 - base_x1) / 2;
 
     if(bFixH)
-        base_y2 = base_y1 + sti(objTask.(sTask).fixHeight);
+        base_y2 = base_y1 + int(objTask.(sTask).fixHeight);
     else
-        base_y2 = base_y1 + height + sti(arDef.bottom_space);
+        base_y2 = base_y1 + height + int(arDef.bottom_space);
 	
-	if(base_x2 - base_x1 > sti(arDef.first_string) + sti(arDef.interval) + sti(arDef.bottom_space))
+	if(base_x2 - base_x1 > int(arDef.first_string) + int(arDef.interval) + int(arDef.bottom_space))
 		arImage.group = "TUTORIAL_BACK2";
 
     arImage.pos = GetPosString(base_x1, base_y1, base_x2, base_y2);
@@ -178,7 +178,7 @@ void TW_SetBack()
 	x1 = base_x1;
 	x2 = base_x2;
 	y1 = base_y1;
-	y2 = base_y1 + sti(arDef.caption);
+	y2 = base_y1 + int(arDef.caption);
 	arImage.pos = GetPosString(x1, y1, x2, y2);
 	
 	// line - черта
@@ -187,18 +187,18 @@ void TW_SetBack()
     arImage.picture = "gline_hs";
 	x1 = base_x1;
 	x2 = base_x2;
-	y1 = base_y1 + sti(arDef.caption);
-	y2 = base_y1 + sti(arDef.caption) + sti(arDef.line);
+	y1 = base_y1 + int(arDef.caption);
+	y2 = base_y1 + int(arDef.caption) + int(arDef.line);
 	arImage.pos = GetPosString(x1, y1, x2, y2);
 	
 	// exclamation - восклицательный знак
 	makearef(arImage, objTask.(sTask).images.back_mark);
 	arImage.group = "MARKERS";
     arImage.picture = "exclamation";
-	x1 = center - sti(arDef.mark) / 2;
-	x2 = center + sti(arDef.mark) / 2;
-	y1 = base_y1 - sti(arDef.mark) + sti(arDef.mark_offset);
-	y2 = base_y1 + sti(arDef.mark_offset);
+	x1 = center - int(arDef.mark) / 2;
+	x2 = center + int(arDef.mark) / 2;
+	y1 = base_y1 - int(arDef.mark) + int(arDef.mark_offset);
+	y2 = base_y1 + int(arDef.mark_offset);
 	arImage.pos = GetPosString(x1, y1, x2, y2);
 	
 	string sAlign;
@@ -212,13 +212,13 @@ void TW_SetBack()
 		switch(sAlign)
 		{
 			case "left":	
-				arText.pos.x = base_x1 + sti(arDef.indent);
+				arText.pos.x = base_x1 + int(arDef.indent);
 				break;
 			case "center":
 				arText.pos.x = center;
 				break;
 			case "right":
-				arText.pos.x = base_x2 - sti(arDef.indent);
+				arText.pos.x = base_x2 - int(arDef.indent);
 				break;
 		}
 	}
@@ -344,8 +344,8 @@ bool TW_IncreaseCounter(string sTask, string sParent, int add)
 	if(abs(add) > 0)
 		TW_RestartTimer();
 
-    arCnt.count = sti(arCnt.count) + add;
-    if(sti(arCnt.count) >= sti(arCnt.max))
+    arCnt.count = int(arCnt.count) + add;
+    if(int(arCnt.count) >= int(arCnt.max))
     {
         arCnt.text = arCnt.max + "/" + arCnt.max;
         arCnt.count = arCnt.max;
@@ -383,8 +383,8 @@ bool TW_IncreasePercents(string sTask, string sParent, float add)
 	if(abs(add) > 0.0)
 		TW_RestartTimer();
 
-    arCnt.count = stf(arCnt.count) + add;
-    if(stf(arCnt.count) >= stf(arCnt.max))
+    arCnt.count = float(arCnt.count) + add;
+    if(float(arCnt.count) >= float(arCnt.max))
     {
         arCnt.text = "100%";
         arCnt.count = arCnt.max;
@@ -397,7 +397,7 @@ bool TW_IncreasePercents(string sTask, string sParent, float add)
         return true;
     }
 
-    arCnt.text = MakeInt(stf(arCnt.count) / stf(arCnt.max) * 100.0) + "%";
+    arCnt.text = int(float(arCnt.count) / float(arCnt.max) * 100.0) + "%";
     return false;
 }
 
@@ -423,7 +423,7 @@ void TW_RefreshTimer()
 	makearef(arTask, objTask.(sTask));
 	if(!CheckAttribute(arTask, "timer"))
 		return;
-	int iCurTimer = sti(arTask.timer);
+	int iCurTimer = int(arTask.timer);
 	Log_TestInfo("Таймер задачи " + GetAttributeValue(arTask) + " из раздела " + GetAttributeName(arTask) + ": " + iCurTimer);
 	iCurTimer--;
 	if(iCurTimer <= 0)
@@ -472,7 +472,7 @@ void TW_AddBottomText(string curText, string Text, string Color)
 
     arTextUp = TW_GetBottom(sTask);
     arText.font = arTextUp.font;
-    arText.base.pos.y = sti(arTextUp.base.pos.y) + TW_DEF_INTERVAL;
+    arText.base.pos.y = int(arTextUp.base.pos.y) + TW_DEF_INTERVAL;
     arText.base.scale = arTextUp.base.scale;
     arText.text = Text;
     TW_MarkBottom(sTask, curText);
@@ -512,7 +512,7 @@ aref TW_GetBottom(string sTask)
         for(int i = num-1; i>=0; i--)
         {
             arText = GetAttributeN(arTextRoot, i);
-            curH = sti(arText.base.pos.y);
+            curH = int(arText.base.pos.y);
             if(curH > height)
             {
                 makearef(arBottom, arText);
@@ -535,14 +535,14 @@ int TW_GetFixWidth(aref arTask)
 	int widthL = 0;
 	int	widthR = 0;
     float scale;
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
     int num = GetAttributesNum(arBase);
     for(int i=0; i<num; i++)
     {
         arText = GetAttributeN(arBase, i);
         scale  = fHtRatio;
         if(CheckAttribute(arText, "scale"))
-			scale = stf(arText.scale) * fHtRatio;
+			scale = float(arText.scale) * fHtRatio;
         iTemp = GetStringWidth(arText.text, arText.font, scale);
 		if(!CheckAttribute(arText, "align") || arText.align == "left")
 		{
@@ -556,7 +556,7 @@ int TW_GetFixWidth(aref arTask)
 		}
     }
 	if(widthR > 0)
-		return widthL + sti(objTask.defines.indent) + widthR;
+		return widthL + int(objTask.defines.indent) + widthR;
 	
 	return widthL;
 }

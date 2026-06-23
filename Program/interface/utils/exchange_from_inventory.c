@@ -4,7 +4,7 @@
 void OpenExchange()
 {
 	pchar.GenQuest.CallFunctionParam = "RunFellowExchange";
-	pchar.GenQuest.CallFunctionParam.ExchangeId = GetChrIdxFromInterface(sti(GameInterface.CHARACTERS_SCROLL.current), "CHARACTERS_SCROLL");
+	pchar.GenQuest.CallFunctionParam.ExchangeId = GetChrIdxFromInterface(int(GameInterface.CHARACTERS_SCROLL.current), "CHARACTERS_SCROLL");
 	pchar.GenQuest.CallFunctionParam.backScrollIdx = GameInterface.CHARACTERS_SCROLL.current;
 	DoQuestCheckDelay("CallFunctionParam", 0.1);
 	Event("exitCancel");
@@ -14,14 +14,14 @@ void OpenExchange()
 void RunFellowExchange()
 {
 	SetEventHandler("exitCancel","ReturnToFellowInventory",0);
-	LaunchCharacterItemChange(GetCharacter(sti(pchar.GenQuest.CallFunctionParam.ExchangeId)));
+	LaunchCharacterItemChange(GetCharacter(int(pchar.GenQuest.CallFunctionParam.ExchangeId)));
 }
 
 // Обмен закрыли, готовим открытие инвентаря
 void ReturnToFellowInventory()
 {
 	pchar.GenQuest.CallFunctionParam = "LaunchFellowInventory";
-	pchar.GenQuest.CallFunctionParam.backScrollIdx = GetChrIdxFromInterface(sti(GameInterface.CHARACTERS_SCROLL.current), "CHARACTERS_SCROLL");
+	pchar.GenQuest.CallFunctionParam.backScrollIdx = GetChrIdxFromInterface(int(GameInterface.CHARACTERS_SCROLL.current), "CHARACTERS_SCROLL");
 	DoQuestCheckDelay("CallFunctionParam", 0.1);
 	DelEventHandler("exitCancel","ReturnToFellowInventory");
 }
@@ -29,7 +29,7 @@ void ReturnToFellowInventory()
 // Возвращаемся в инвентарь с выбранным в обмене братишкой
 void LaunchFellowInventory()
 {
-	ref chr = GetCharacter(sti(pchar.GenQuest.CallFunctionParam.backScrollIdx));
+	ref chr = GetCharacter(int(pchar.GenQuest.CallFunctionParam.backScrollIdx));
 
 	// Переключаем на вкладку пассажиров, если надо
 	if (!IsOfficerInSHip(&chr, true) && !IsCompanion(&chr))
@@ -44,7 +44,7 @@ void LaunchFellowInventory()
 	aref scroll;
 	int newCurChar = 0;
 	makearef(scroll, GameInterface.CHARACTERS_SCROLL);
-	for (int i=1; i <= sti(scroll.listSize);i++)
+	for (int i=1; i <= int(scroll.listSize);i++)
 	{
 		string attrName = "pic"+i;
 		if (!CheckAttribute(&scroll, attrName) || scroll.(attrName).character != chr.index) continue;

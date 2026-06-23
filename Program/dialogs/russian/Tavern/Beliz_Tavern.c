@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "caleuche_3":
 			DialogExit();
 			AddQuestRecord("Caleuche", "8");
-			int iTerms = sti(pchar.questTemp.Caleuche.Belizterms);
+			int iTerms = int(pchar.questTemp.Caleuche.Belizterms);
 			SetFunctionTimerCondition("Caleuche_FergusCome", 0, 0, iTerms, false);
 			npchar.quest.Caleuche = "true";
 		break;

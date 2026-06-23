@@ -332,7 +332,7 @@ void SetVariable()
 
 	FillSkillTables();
 
-	if (sti(xi_refCharacter.Skill.FreeSkill) > 0)
+	if (int(xi_refCharacter.Skill.FreeSkill) > 0)
 	{
         SetFormatedText("FREE_SKILL", xi_refCharacter.Skill.FreeSkill);
     }
@@ -340,7 +340,7 @@ void SetVariable()
     {
         SetFormatedText("FREE_SKILL", "");
     }
-    if (sti(xi_refCharacter.Skill.FreeSPECIAL) > 0)
+    if (int(xi_refCharacter.Skill.FreeSPECIAL) > 0)
 	{
         SetFormatedText("FREE_SPECIAL", xi_refCharacter.Skill.FreeSPECIAL);
     }
@@ -354,15 +354,15 @@ void SetVariable()
 
 void ProcessFrame()
 {
-	if (sti(GameInterface.CHARACTERS_SCROLL.current)!=nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
+	if (int(GameInterface.CHARACTERS_SCROLL.current)!=nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
 	{
-		nCurScrollNum = sti(GameInterface.CHARACTERS_SCROLL.current);
+		nCurScrollNum = int(GameInterface.CHARACTERS_SCROLL.current);
 		SetButtonsState();
 		return;
 	}
-	if (sti(GameInterface.PASSENGERSLIST.current)!= nCurScrollOfficerNum && GetCurrentNode() == "PASSENGERSLIST")
+	if (int(GameInterface.PASSENGERSLIST.current)!= nCurScrollOfficerNum && GetCurrentNode() == "PASSENGERSLIST")
 	{
-		nCurScrollOfficerNum = sti(GameInterface.PASSENGERSLIST.current);
+		nCurScrollOfficerNum = int(GameInterface.PASSENGERSLIST.current);
 		SetOfficersSkills();
 		return;
 	}
@@ -381,7 +381,7 @@ void SetButtonsState()
 	HideSkillChanger();
 	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{
-		int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
+		int iCharacter = int(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
 		//WriteNewData();
 		xi_refCharacter = &characters[iCharacter];
 		//ReMappingSkills();
@@ -414,9 +414,9 @@ void ShowInfoWindow()
 			CloseTooltipNew();
 			picW = 256;
 			picH = 256;
-			nChooseNum = SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 );
+			nChooseNum = int(SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 ));
 			string attributeName = "pic" + (nChooseNum+1);
-			int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
+			int iCharacter = int(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
             sHeader = XI_ConvertString("passengership");
 			sText1 = "";
 			sText2 = "";
@@ -508,10 +508,10 @@ void ShowInfoWindow()
 						sText1 = GetCharacterFullName(Characters[iCharacter].id);
 						sHeader = XI_ConvertString("companionship");
 					}
-					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
+					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga";
 					if(CheckCharacterPerk(rchr, "ByWorker")) 
 					{
-						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
 					}
 				}
 			}
@@ -536,10 +536,10 @@ void ShowInfoWindow()
 							sText2 = GetRPGText("Prisoner_desc");
 						}
 					}
-					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga"
+					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga";
 					if(CheckCharacterPerk(rchar, "ByWorker")) 
 					{
-						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
 					}
 				}
 				else return;
@@ -556,7 +556,7 @@ void ShowInfoWindow()
 		
 		case "TABLE_SPECIAL":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SPECIAL", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SPECIAL", 1));
 			sRow = "tr"+nChooseNum;
 			if (nChooseNum > 0) SetSkillsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, sRow);
 			else return;
@@ -564,14 +564,14 @@ void ShowInfoWindow()
 		
 		case "TABLE_SKILL_1":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_1", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_1", 1));
 			sRow = "tr"+nChooseNum;
 			if (nChooseNum > 0) SetSkillsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, sRow);
 			else return;
 		break;
 		case "TABLE_SKILL_2":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_2", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_2", 1));
 			sRow = "tr"+nChooseNum;
 			if (nChooseNum > 0) SetSkillsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, sRow);
 			else return;
@@ -583,7 +583,7 @@ void ShowInfoWindow()
             {
                xi_refCharacter.perks.FreePoints_self_exp = 0;
             }
-            sText1	= sti(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter);		
+            sText1	= int(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter);
 		    sText1  = GetRPGText("Personal_abilities") + NewStr() + XI_ConvertString("Progress") + ": " + sText1;
 			sText2 	= GetRPGText("Attention_abilities");
 		    sText3  = GetRPGText("Abilities_available");
@@ -595,7 +595,7 @@ void ShowInfoWindow()
             {
                xi_refCharacter.perks.FreePoints_ship_exp = 0;
             }
-            sText1 = sti(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter);
+            sText1 = int(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter);
 		    sText1  = GetRPGText("Ship_abilities") + NewStr() + XI_ConvertString("Progress") + ": " + sText1;
 			sText2 	= GetRPGText("Attention_abilities");
 			sText3 	= GetRPGText("Abilities_available");
@@ -736,7 +736,7 @@ void FillSkillTables()
 		
 		if (skillVal < SKILL_MAX)
 		{
-			GameInterface.TABLE_SKILL_1.(row).td3.str = makeint(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / makefloat(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + " %";
+			GameInterface.TABLE_SKILL_1.(row).td3.str = int(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / float(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + " %";
 		}
 		else
 		{
@@ -799,7 +799,7 @@ void FillSkillTables()
 
 		if (skillVal < SKILL_MAX)
 		{
-			GameInterface.TABLE_SKILL_2.(row).td3.str = makeint(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / makefloat(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + " %";
+			GameInterface.TABLE_SKILL_2.(row).td3.str = int(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / float(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + " %";
 		}
 		else
 		{
@@ -846,7 +846,6 @@ void CS_TableSelectChange()
     NullSelectTable("TABLE_SKILL_1");
     NullSelectTable("TABLE_SKILL_2");
 
-    sti(xi_refCharacter.rank_exp)
 	if (CurTable == "TABLE_SKILL_1" || CurTable == "TABLE_SKILL_2")
 	{
         string skillName;
@@ -864,7 +863,7 @@ void SetSkillArrows()
    	bool ok;
 	ok = CurTable == "TABLE_SKILL_1" || CurTable == "TABLE_SKILL_2";
 					int start;
-	if (sti(xi_refCharacter.skill.freeskill) > 0 && ok)
+	if (int(xi_refCharacter.skill.freeskill) > 0 && ok)
 	{
 	    if (GetSkillValue(xi_refCharacter, SKILL_TYPE, GameInterface.(CurTable).(CurRow).UserData.ID) > 1)
         {
@@ -897,7 +896,7 @@ void SetSkillArrows()
         }
 	}
 	
-	ok = sti(xi_refCharacter.skill.freeskill) > 0 || sti(xi_refCharacter.skill.FreeSPECIAL) > 0;
+	ok = int(xi_refCharacter.skill.freeskill) > 0 || int(xi_refCharacter.skill.FreeSPECIAL) > 0;
 	if (ok && CurTable == "TABLE_SPECIAL")
 	{
 	    if (GetSkillValue(xi_refCharacter, SPECIAL_TYPE, GameInterface.(CurTable).(CurRow).UserData.ID) > 1)
@@ -1010,7 +1009,7 @@ void ChoosePerk(string perkName)
 
 	SetFormatedText("PERKWINDOW_CAPTION", GetConvertStrB(perkName, "AbilityDescribe.txt"));
 
-	string showingPrice = its(GetPerkPrice(perk));
+	string showingPrice = string(GetPerkPrice(perk));
 	if (IsAlreadyHave || reason == "disabled") showingPrice = "";
 	SetFormatedText("PERKPRICE", showingPrice);
 	SetNodeUsing("PERKON", isAlreadyHave); // галочка уже есть
@@ -1094,11 +1093,11 @@ void AcceptPerk()
 	string perkName = selectedPerk;
     if (ChrPerksList.list.(perkName).BaseType == "self")
     {
-		xi_refCharacter.perks.FreePoints_self = sti(xi_refCharacter.perks.FreePoints_self) - GetPerkPrice(perkName);
+		xi_refCharacter.perks.FreePoints_self = int(xi_refCharacter.perks.FreePoints_self) - GetPerkPrice(perkName);
 	}
 	else
 	{
-		xi_refCharacter.perks.FreePoints_ship = sti(xi_refCharacter.perks.FreePoints_ship) - GetPerkPrice(perkName);
+		xi_refCharacter.perks.FreePoints_ship = int(xi_refCharacter.perks.FreePoints_ship) - GetPerkPrice(perkName);
     }
     if (SetCharacterPerk(xi_refCharacter, perkName))
     {   // перерисуем персонажа
@@ -1322,7 +1321,7 @@ void TEST_Reroll(string nodeName)
 		case "REROLL_BUTTON_BOSS":     level = GEN_BOSS;     break;
 	}
 
-	int rank = sti(pchar.rank);
+	int rank = int(pchar.rank);
 	string mainArchetype = GEN_ARCHETYPE_RANDOM;
 	string secondaryArchetype = GEN_ARCHETYPE_RANDOM;
 
@@ -1355,15 +1354,15 @@ void TestRerollGiveOfficer()
 
 	int _iComIndex = GetEventData();
 	string sNodName = GetEventData();
-	int index = sti(strright(sNodName, 1)) + 7;
+	int index = int(strright(sNodName, 1)) + 7;
 	string job = GetTreeByIndex(index);
 
 	if (job == "Background") RemoveCaptainOfficers(xi_refCharacter);
 	else if (job == "Flags") GiveCaptainOfficers(xi_refCharacter, true);
 	else
 	{
-		int score = makeint(GetSkillSum(xi_refCharacter) / 11 + 0.5);
-		int perkPoints = makeint(score / 7);
+		int score = int(GetSkillSum(xi_refCharacter) / 11 + 0.5);
+		int perkPoints = int(score / 7);
 		perkPoints = 3+rand(10);
 		GiveCaptainVirtualOfficer(xi_refCharacter, perkPoints, score, job);
 	}
@@ -1379,18 +1378,18 @@ void UpdateFreePoints()
 
 	if (currentPerkTab == 1)
 	{
-		SetFormatedText("Personal_progress", sti(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter));
+		SetFormatedText("Personal_progress", int(xi_refCharacter.perks.FreePoints_self_exp)+ "/" + GetFreePoints_SelfRate(xi_refCharacter));
 		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Max   = GetFreePoints_SelfRate(xi_refCharacter);
 		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Min   = 0;
-		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_self_exp);	
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = int(xi_refCharacter.perks.FreePoints_self_exp);
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
 	}
 	else
 	{
-		SetFormatedText("Personal_progress", sti(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter));
+		SetFormatedText("Personal_progress", int(xi_refCharacter.perks.FreePoints_ship_exp)+ "/" + GetFreePoints_ShipRate(xi_refCharacter));
 		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Max   = GetFreePoints_ShipRate(xi_refCharacter);
 		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Min   = 0;
-		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = sti(xi_refCharacter.perks.FreePoints_ship_exp);	
+		GameInterface.StatusLine.PERSONAL_PROGRESSBAR.Value = int(xi_refCharacter.perks.FreePoints_ship_exp);
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"PERSONAL_PROGRESSBAR",0);
 	}
 }

@@ -8,6 +8,12 @@ condition_mushket_indian
 Kütüphanende
 Caribbean Legend: Age of Pirates varsa bu eşya tefecilerde görünecek
 }
+condition_nocturlabe
+{
+Un regalo gratuito para la comunidad.
+ Buscadlo a la venta con los usureros.
+ ¡Gracias por jugar!
+}
 noRewardYetMessage
 {
 Bu ödül henüz mevcut değil,

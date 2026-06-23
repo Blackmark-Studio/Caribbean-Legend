@@ -11,7 +11,7 @@ void Mtraxx_TerraxReset(int i) // общая функция при провал�
 	// belamour legendary edition забрать флаг обратно
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
-		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
@@ -176,7 +176,7 @@ void Mtraxx_JewelryGulf(string qName) // Кабаньяс в заливе
 	pchar.questTemp.Mtraxx.JewQty = 0;
 	Group_FindOrCreateGroup("Mtr_Jewhead");
 	Group_FindOrCreateGroup("Mtr_Jewwork");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 	if (iRank > 50) iRank = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("Cabanos", "off_spa_2", "man", "man", iRank, SPAIN, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_SCHOONER_W, StringFromKey("Roger_9"), CANNON_TYPE_CULVERINE_LBS8, 50, 50, 50);
@@ -250,17 +250,17 @@ void Mtraxx_PearlHelpHint(string qName) // подсказка как собир�
 
 void Mtraxx_PearlQuantityHint(string qName) // сколько лодочек собрали
 {
-	notification(StringFromKey("Roger_13", sti(pchar.questTemp.Mtraxx_SobralVsyo)), "Capacity");
+	notification(StringFromKey("Roger_13", int(pchar.questTemp.Mtraxx_SobralVsyo)), "Capacity");
 }
 
 void Mtraxx_JewelryResult(string qName) // считаем янтарь
 {
 	Island_SetReloadEnableGlobal("Santacatalina", true);
 	Group_DeleteGroup("Mtr_Jewwork");
-	if (sti(pchar.questTemp.Mtraxx_SobralVsyo) != 5)
+	if (int(pchar.questTemp.Mtraxx_SobralVsyo) != 5)
 	{
 		DeleteAttribute(pchar, "Cheats.SeaTeleport");
-		int i = sti(pchar.questTemp.Mtraxx.JewQty);
+		int i = int(pchar.questTemp.Mtraxx.JewQty);
 		if (i < 1)
 		{
 			AddQuestRecord("Roger_1", "14");
@@ -401,7 +401,7 @@ void Mtraxx_CreateBilly(string qName) // создаем Билли
 	LAi_SetImmortal(sld, true);
 	sld.AlwaysFriend = true;
 	sld.ShipEnemyDisable  = true;
-	sld.ship.HP = makeint(sti(sld.ship.HP)/2);
+	sld.ship.HP = int(int(sld.ship.HP)/2);
 	Group_AddCharacter("Mtr_Billi", "Siplyi");
 	Group_SetGroupCommander("Mtr_Billi", "Siplyi");
 	Group_SetAddress("Mtr_Billi", "Jamaica", "quest_ships", "quest_ship_7");
@@ -471,7 +471,7 @@ void Mtraxx_BillyTakeShip() // корабельный обмен
 	chr.ship.type = SHIP_NOTUSED;
 	RemoveCharacterCompanion(pchar, chr);
 	AddPassenger(pchar, chr, false);
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
 	SetCrewQuantityFull(sld);
 	DeleteAttribute(pchar,"GenQuest.CompanionId");
 	RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 1);
@@ -489,7 +489,7 @@ void Mtraxx_SilkRemoveBilly(string qName) // удаляем Билли
 
 void Mtraxx_SilkCreateSmuggler(string qName) // Утрехт отправляется из Кюрасао
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	if (iRank > 45) iRank = 45;
 	Group_FindOrCreateGroup("Mtr_Utreht");
 	sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
@@ -545,7 +545,7 @@ void Mtraxx_SilkSmugglerAfterBattle(string qName) // после боя с Утр
 void Mtraxx_SilkInShore(string qName) // высадились в бухте
 {
 	if (pchar.questTemp.Mtraxx == "fail") return;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 50) iRank = 50;
 	pchar.GenQuest.Hunter2Pause = true;
 	bQuestDisableMapEnter = false;
@@ -589,7 +589,7 @@ void Mtraxx_SilkSmugglerOver(string qName) // не нашли Утрехт
 {
 	if (pchar.questTemp.Mtraxx == "fail") return;
 	log_Testinfo("Опоздали!");
-	if (sti(pchar.questTemp.Mtraxx.month) < 1)
+	if (int(pchar.questTemp.Mtraxx.month) < 1)
 	{
 		log_Testinfo("На второй круг");
 		pchar.questTemp.Mtraxx.month = 1;
@@ -811,7 +811,7 @@ void Mtraxx_PlantCreatePelly(string qName) // ставим Пелли
 	pchar.GenQuest.MapClosedNoBattle = true;
 	Group_FindOrCreateGroup("PellyGroup");
 	Group_SetType("PellyGroup", "pirate");//тип группы
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 50) iRank = 50;
 	sld = GetCharacter(NPC_GenerateCharacter("Pelly_sea", "Tesak", "man", "man", iRank, ENGLAND, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Roger_26"), CANNON_TYPE_CANNON_LBS12, 65, 65, 65);
@@ -1254,9 +1254,9 @@ void Mtraxx_PlantPlantVykup_1(string qName)
 
 void Mtraxx_PlantPlantVykup_2(string qName = "")
 {
-	RemoveCharacterGoods(pchar, sti(pchar.questTemp.Mtraxx.PlantGood.Cargo), 500);
-	SetCharacterGoods(pchar, GOOD_SUGAR, GetCargoGoods(pchar, GOOD_SUGAR) + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar));
-	SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa));
+	RemoveCharacterGoods(pchar, int(pchar.questTemp.Mtraxx.PlantGood.Cargo), 500);
+	SetCharacterGoods(pchar, GOOD_SUGAR, GetCargoGoods(pchar, GOOD_SUGAR) + int(pchar.questTemp.Mtraxx.PlantGood.Sugar));
+	SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + int(pchar.questTemp.Mtraxx.PlantGood.Cocoa));
 	DeleteAttribute(pchar, "questTemp.Mtraxx.PlantGood");
 
 	Achievment_Set("ach_CL_144");
@@ -1289,7 +1289,7 @@ void Mtraxx_PlantWaitDay(string qName) // крутим время до 21 ч с�
 	bDisableCharacterMenu = true;//лочим F2
 	pchar.GenQuest.FrameLockEsc = true; // закрыть ESC
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime;
 	if (iTime < 7) iAddTime = 21 - iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 21 - iTime;
@@ -1348,7 +1348,7 @@ void Mtraxx_PlantPrepareMarch() // к походу
 	LocatorReloadEnterDisable("Maracaibo_ExitTown", "reload3_back", true); // закрыть вход в форт
 	pchar.quest.Mtraxx_TimerPlantMutiny.over = "yes"; // снимаем таймер на полночь
 	int i = 0;
-	if (stf(environment.time) < 24.00) i = 1;
+	if (float(environment.time) < 24.00) i = 1;
 	pchar.quest.Mtraxx_enterPlantMutiny.win_condition.l1 = "location";
 	pchar.quest.Mtraxx_enterPlantMutiny.win_condition.l1.location = "Maracaibo_Plantation";
 	pchar.quest.Mtraxx_enterPlantMutiny.function = "Mtraxx_PlantWaitMutiny";
@@ -1366,7 +1366,7 @@ void Mtraxx_PlantPrepareMarch() // к походу
 	pchar.quest.Mtraxx_TimerPlantMutiny2.win_condition.l1.locator = "detector3";
 	pchar.quest.Mtraxx_TimerPlantMutiny2.function = "Mtraxx_PlantMutinyAlarm";
 	
-	int n = 26 - sti(environment.time);
+	int n = 26 - int(environment.time);
 	SetLaunchFrameFormParam(StringFromKey("Roger_43"), "Mtraxx_PlantPrepareMarch", 0, 3);
 	LaunchFrameForm();
 	StoreDayUpdate();
@@ -1453,8 +1453,8 @@ void Mtraxx_PlantMutinyOver(string qName) // не пришёл до 4 часов
 void Mtraxx_PlantMutiny() // восстание на плантации
 {
 	DeleteAttribute(pchar, "questTemp.Mtraxx.Mutiny");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
-	int iScl = 30 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
+	int iScl = 30 + 2*int(pchar.rank);
 	chrDisableReloadToLocation = true;//закрыть локацию
 	pchar.GenQuest.FrameLockEsc = true; // закрыть ESC
 	bDisableCharacterMenu = true;//лочим F2
@@ -1485,10 +1485,10 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
 	// Жан Пикар и его команда, все расчеты тут
-	int iGun = sti(pchar.questTemp.Mtraxx.Weapon.Gun);
-	int iMush = sti(pchar.questTemp.Mtraxx.Weapon.Mushket);
-	int iPtn = sti(pchar.questTemp.Mtraxx.Weapon.Potion);
-	int iShot = sti(pchar.questTemp.Mtraxx.Weapon.Shot);
+	int iGun = int(pchar.questTemp.Mtraxx.Weapon.Gun);
+	int iMush = int(pchar.questTemp.Mtraxx.Weapon.Mushket);
+	int iPtn = int(pchar.questTemp.Mtraxx.Weapon.Potion);
+	int iShot = int(pchar.questTemp.Mtraxx.Weapon.Shot);
 	int iMptn = 0;
 	// Жан Пикар
 	sld = characterFromId("Mrt_Rocur");
@@ -1536,13 +1536,13 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 	}
 	if (iGun > 0) // расчет числа пистолей. iGun - то, что в сундуке, Gun - на выдачу, /4
 	{
-		int Gun = makeint(iGun/4);
+		int Gun = int(iGun/4);
 		if (Gun < 1) Gun = 1;
 		if (Gun > 7) Gun = 7;
 	}
 	if (iShot > 0) // расчет числа зарядов. Аналогично 
 	{
-		int Shot = makeint(iShot/4);
+		int Shot = int(iShot/4);
 		if (Shot < 1) Shot = 1;
 	}
 	if (iPtn >= 6 && iMush > 0)
@@ -1552,7 +1552,7 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 	}
 	if (iPtn > 0) // расчет числа зелий. Аналогично 
 	{
-		int Ptn = makeint(iPtn/4);
+		int Ptn = int(iPtn/4);
 		if (Ptn < 1) Ptn = 1;
 		if (Ptn > 21) Ptn = 21;
 	}
@@ -1597,7 +1597,7 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 			{
 				if (Shot >= 7)
 				{
-					TakeNItems(sld, "cartridge", makeint(Shot/7));
+					TakeNItems(sld, "cartridge", int(Shot/7));
 					LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
 					Shot = 0;
 				}
@@ -1610,7 +1610,7 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 			}
 			if (Ptn > 0)
 			{
-				int m = makeint(Ptn/7);
+				int m = int(Ptn/7);
 				LAi_SetHP(sld, LAi_GetCharacterHP(sld)+20*m, LAi_GetCharacterHP(sld)+20*m);
 				if (Ptn >= 7)
 				{
@@ -1706,8 +1706,8 @@ void Mtraxx_PlantMutinyFortAttack() // пришло подкрепление и�
 	pchar.questTemp.Mtraxx.PlantFort = "true"; // флаг - пришли из форта
 	pchar.quest.mtraxx_plant_exitopen.over = "yes";
 	PlaySound("interface\abordage_wining.wav");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
-	int iScl = 40 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	int iScl = 40 + 2*int(pchar.rank);
 	for (i=1; i<=15; i++)
 	{
 		if (i < 3) // мушкетеры, 2 шт
@@ -1875,10 +1875,10 @@ void Mtraxx_PlantSeaBattle(string qName) // бой с испанской эск�
 	pchar.nation = FRANCE;
 	// ставим три испанских корабля
 	Group_FindOrCreateGroup("Mtr_PlantSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	int Type, iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2;
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+	int iClass = int(RealShips[int(pchar.ship.type)].Class);
 	if (MOD_SKILL_ENEMY_RATE < 4) // халява
 	{
 		Type = 1;
@@ -1992,7 +1992,7 @@ void Mtraxx_PlantSeaBattle(string qName) // бой с испанской эск�
 	ref chr = characterFromId("Mtr_PlantSeaCap_1");
 	sld = characterFromId("Pelly_sea");
 	sld.nation = SPAIN;
-	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(chr.index));
+	Ship_SetTaskRunAway(SECONDARY_TASK, int(sld.index), int(chr.index));
 	
 	pchar.quest.mtraxx_plant_seabattlewin.win_condition.l1 = "NPC_Death";
 	pchar.quest.mtraxx_plant_seabattlewin.win_condition.l1.character = "Mtr_PlantSeaCap_1";
@@ -2043,7 +2043,7 @@ void Mtraxx_PlantGoHomeOver(string qName) // истекло время на во
 	// belamour legendary edition забрать флаг обратно
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
-		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
@@ -2080,7 +2080,7 @@ void Mtraxx_PasqualeBegin() // установка параметров
 	pchar.questTemp.Mtraxx.Crdn.minW1 = 0; // нижний предел интервала долготы
 	pchar.questTemp.Mtraxx.Crdn.minW2 = 60; // верхний предел интервала долготы
 	// тип целевого корабля тоже определим здесь
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+	int iClass = int(RealShips[int(pchar.ship.type)].Class);
 	pchar.questTemp.Mtraxx.Crdn.Ship = SHIP_PINNACE;
 	
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
@@ -2118,15 +2118,15 @@ void Mtraxx_PasqualeCheckCoordinates(string qName) // проверяем коо�
 {
 	if (CheckAttribute(pchar, "questTemp.Mtraxx.PasqFail")) return;
 	int degN, degW, minN1, minN2, minW1, minW2;
-	degN = sti(pchar.questTemp.Mtraxx.Crdn.degN); // градус широты
-	degW = sti(pchar.questTemp.Mtraxx.Crdn.degW); // градус долготы
-	minN1 = sti(pchar.questTemp.Mtraxx.Crdn.minN1); // нижний предел интервала широты
-	minN2 = sti(pchar.questTemp.Mtraxx.Crdn.minN2); // верхний предел интервала широты
-	minW1 = sti(pchar.questTemp.Mtraxx.Crdn.minW1); // нижний предел интервала долготы
-	minW2 = sti(pchar.questTemp.Mtraxx.Crdn.minW2); // верхний предел интервала долготы
+	degN = int(pchar.questTemp.Mtraxx.Crdn.degN); // градус широты
+	degW = int(pchar.questTemp.Mtraxx.Crdn.degW); // градус долготы
+	minN1 = int(pchar.questTemp.Mtraxx.Crdn.minN1); // нижний предел интервала широты
+	minN2 = int(pchar.questTemp.Mtraxx.Crdn.minN2); // верхний предел интервала широты
+	minW1 = int(pchar.questTemp.Mtraxx.Crdn.minW1); // нижний предел интервала долготы
+	minW2 = int(pchar.questTemp.Mtraxx.Crdn.minW2); // верхний предел интервала долготы
 	if (CheckAttribute(pchar, "Ship.pos.x") && !bDisableMapEnter)
 	{
-		if(GetSeaCoordDegreeZ(makefloat(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(makefloat(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) < minW2) 
+		if(GetSeaCoordDegreeZ(float(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(float(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(float(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(float(worldMap.playerShipX)) < minW2)
 		{	
 			log_Testinfo("Координаты найдены!");
 			bQuestDisableMapEnter = true;
@@ -2164,17 +2164,17 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 	PlaySound("interface\notebook.wav");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Mtr_PasqSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	int iShip[4], iSpace;
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	int iClass = int(RealShips[int(pchar.ship.type)].Class) + 1;
 	
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
 	if(iClass < 3) iClass = 3;
 	if(iClass > 6) iClass = 6;
 	
 	iShip[1] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
-	iShip[2] = sti(pchar.questTemp.Mtraxx.Crdn.Ship);
+	iShip[2] = int(pchar.questTemp.Mtraxx.Crdn.Ship);
 	iShip[3] = GetRandomShipType(GetClassFlag(iClass), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 	for (int i=1; i<=3; i++)
 	{
@@ -2196,8 +2196,8 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 		{
 			SetRandGeraldSail(sld, HOLLAND);
 			iSpace = GetCharacterFreeSpace(sld, GOOD_WHEAT);
-			iSpace = makeint(iSpace/2 + rand(iSpace/2));
-			Fantom_SetCharacterGoods(sld, GOOD_WHEAT, iSpace, 1);
+			iSpace = int(iSpace/2 + rand(iSpace/2));
+			Fantom_SetCharacterGoods(sld, GOOD_WHEAT, iSpace, true);
 		}
 		if (i == 2) 
 		{
@@ -2213,14 +2213,14 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 			AddCharacterGoods(sld, GOOD_MEDICAMENT, 150);
 			AddCharacterGoods(sld, GOOD_RUM, 50);
 			iSpace = GetCharacterFreeSpace(sld, GOOD_EBONY);
-			Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, true);
 			pchar.questTemp.Mtraxx.Crdn.Ebony = iSpace;
 		}
 		if (i == 3) 
 		{
 			iSpace = GetCharacterFreeSpace(sld, GOOD_FRUITS);
-			iSpace = makeint(iSpace/2 + rand(iSpace/2));
-			Fantom_SetCharacterGoods(sld, GOOD_FRUITS, iSpace, 1);
+			iSpace = int(iSpace/2 + rand(iSpace/2));
+			Fantom_SetCharacterGoods(sld, GOOD_FRUITS, iSpace, true);
 		}
 		Group_AddCharacter("Mtr_PasqSeaGroup", "Mtr_PasqCap_"+i);
 	}
@@ -2374,7 +2374,7 @@ void Mtraxx_PasqualeJanGonaiv(string qName) // встретились в бух�
 void Mtraxx_PasqualeNight() // ночной порой два жулика...
 {
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	iAddTime = 24 - iTime;
 	if (iAddTime < 1) iAddTime = 24;
 	SetLaunchFrameFormParam(StringFromKey("Roger_50"), "", 0, 3);
@@ -2698,7 +2698,7 @@ void Mtraxx_MirabellaLife(string qName) // поведение Мирабель �
 	sld = characterFromId("Mirabella");
 	sld.greeting = "mirabella";
 	LAi_SetStayType(sld);
-	if (stf(environment.time) > 7.99 && stf(environment.time) < 21.0) // днем внизу
+	if (float(environment.time) > 7.99 && float(environment.time) < 21.0) // днем внизу
 	{
 		ChangeCharacterAddressGroup(sld, "IslaMona_TwoFloorHouse", "goto", "goto3");
 	}
@@ -3119,7 +3119,7 @@ void Mtraxx_MeridaHayameeHardTagofa(string qName) // зашли в хижину
 		sld = GetCharacter(NPC_GenerateCharacter("Tagofa", "miskito_6", "man", "man", 25, SPAIN, -1, true, "native"));
 		SetFantomParamFromRank(sld, 25, true);
 		sld.name = StringFromKey("Roger_60");
-		sld.lastname = StringFromKey("Roger_61")
+		sld.lastname = StringFromKey("Roger_61");
 		sld.dialog.Filename = "Quest\Roger.c";
 		sld.dialog.currentnode = "tagofa";
 		sld.greeting = "indian_male";
@@ -3441,7 +3441,7 @@ void Mtraxx_MeridaHouseGuards(string qName) // выскочили мушкете
 			if (MOD_SKILL_ENEMY_RATE > 2)
 			{
 				sld.cirassId = Items_FindItemIdx("cirass1");
-				sld.MultiShooter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
+				sld.MultiShooter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
 				sld.MusketerDistance = 5;
 			}
 		}
@@ -3858,7 +3858,7 @@ void Mtraxx_IgnasioKitty(string qName) // ставим пинас Китти
 	SetCharacterPerk(sld, "MusketsShoot");
 	UpgradeShipParameter(sld, "Capacity");
 	int iSpace = GetCharacterFreeSpace(sld, GOOD_EBONY);
-	Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, 1);
+	Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, true);
 	sld.Abordage.Enable = false;
 	sld.AlwaysFriend = true;
 	sld.ShipEnemyDisable = true; 
@@ -3954,8 +3954,8 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 	{
 		SetCharacterPerk(sld, "MusketsShoot");
 		sld.cirassId = Items_FindItemIdx("cirass1");
-		sld.multifighter = 1.2 + stf(MOD_SKILL_ENEMY_RATE/10);
-		sld.MultiShooter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
+		sld.multifighter = 1.2 + float(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiShooter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
 	}
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -3981,7 +3981,7 @@ void Mtraxx_IgnasioAddMarko() // Игнасио - в эскадру
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	sld.Tasks.CanBoarding = false; // запрет идти на абордаж - дубль
 	sld.Tasks.CanChangeShipAfterBoarding = false; // запрет меняться кораблями - дубль
@@ -4040,11 +4040,11 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 	Island_SetReloadEnableGlobal("IslaDeCoche", false);
 	bQuestDisableMapEnter = true;//закрыть карту
 	Group_FindOrCreateGroup("Mtr_IgnasioSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
-	int iScl = 30 + 3*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
+	int iScl = 30 + 3*int(pchar.rank);
 	int Type, iSpace, iCrew, hcrew;
 	int n = 3;
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	int iClass = int(RealShips[int(pchar.ship.type)].Class) + 1;
 	
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
 	if(iClass < 3) iClass = 3;
@@ -4076,13 +4076,13 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 		if (i == 1) 
 		{
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti(0.8*hcrew);
+			iCrew = int(0.8*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
 			SetRandGeraldSail(sld, HOLLAND);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/6);
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/6);
 			AddCharacterGoods(sld, GOOD_SILVER, 350);
 			iSpace = GetCharacterFreeSpace(sld, GOOD_MAHOGANY);
-			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, true);
 			if (MOD_SKILL_ENEMY_RATE <= 6)
 			{
 				sld.ship.masts.mast1 = 1;
@@ -4092,22 +4092,22 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 		if (i == 2) 
 		{
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti(0.7*hcrew);
+			iCrew = int(0.7*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/5);
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/5);
 			AddCharacterGoods(sld, GOOD_SILVER, 275);
 			iSpace = GetCharacterFreeSpace(sld, GOOD_MAHOGANY);
-			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, true);
 		}
 		if (i == 3) 
 		{
 			hcrew = GetMaxCrewQuantity(sld);
-			iCrew = sti(0.6*hcrew);
+			iCrew = int(0.6*hcrew);
 			SetCrewQuantityOverMax(sld, iCrew);
-			sld.ship.HP = sti(sld.ship.HP)-makeint(sti(sld.ship.HP)/4);
+			sld.ship.HP = int(sld.ship.HP)-int(int(sld.ship.HP)/4);
 			AddCharacterGoods(sld, GOOD_SILVER, 175);
 			iSpace = GetCharacterFreeSpace(sld, GOOD_MAHOGANY);
-			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, GOOD_MAHOGANY, iSpace, true);
 		}
 		Group_AddCharacter("Mtr_IgnasioSeaGroup", "Mtr_IgnasioSeaCap_"+i);
 	}
@@ -4225,7 +4225,7 @@ void Mtraxx_IgnasioPrepareSpanish(string qName) // ставим убегающе
 
 void Mtraxx_IgnasioRandomShips()
 {
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class) + 1;
+	int iClass = int(RealShips[int(pchar.ship.type)].Class) + 1;
 	if (MOD_SKILL_ENEMY_RATE > 8) iClass -= 1;
 	if(iClass < 3) iClass = 3;
 	if(iClass > 5) iClass = 5;
@@ -4455,9 +4455,9 @@ void Mtraxx_WolfreekReadLogbook() // чтение судового журнал�
 			{
 				AddQuestRecord("Roger_8", "11");
 				AddQuestRecordInfo("Ignasio_Journal", "1");
-				AddQuestUserData("Ignasio_Journal", "sDay", sti(pchar.questTemp.Mtraxx.Corrida.Day));
-				AddQuestUserData("Ignasio_Journal", "sMonth", XI_ConvertString("MonthGen_" + sti(pchar.questTemp.Mtraxx.Corrida.Month)));
-				AddQuestUserData("Ignasio_Journal", "sYear", sti(pchar.questTemp.Mtraxx.Corrida.Year));
+				AddQuestUserData("Ignasio_Journal", "sDay", int(pchar.questTemp.Mtraxx.Corrida.Day));
+				AddQuestUserData("Ignasio_Journal", "sMonth", XI_ConvertString("MonthGen_" + int(pchar.questTemp.Mtraxx.Corrida.Month)));
+				AddQuestUserData("Ignasio_Journal", "sYear", int(pchar.questTemp.Mtraxx.Corrida.Year));
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Ignasio.Journal");
 				pchar.questTemp.Mtraxx.Ignasio.Signal = "true";
 				pchar.questTemp.Mtraxx.Ignasio.Ship = "true";
@@ -4899,8 +4899,8 @@ void Mtraxx_WolfreekMarch(string qName) // собираем штурмовую �
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 20 + 2*int(pchar.rank);
 
 	object aSoldier[1];
 	object aMushketers[1];
@@ -5338,7 +5338,7 @@ void Mtraxx_CorridaIgnasioFail() // провал перехвата Тореро
 	// belamour legendary edition забрать флаг обратно
 	if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 	{
-		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+		DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 		STH_SetJokerFlag(SPAIN, false); 
 		log_info(StringFromKey("Roger_1"));
 	}
@@ -5386,7 +5386,7 @@ void Mtraxx_CorridaIgnasioSink(string qName) // утопил - провал
 void Mtraxx_CorridaCheckPolacre() // проверяем правильность корабля
 {
 	DeleteAttribute(pchar, "questTemp.Mtraxx.Ignasio.Ship");
-	if (sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_POLACRE_QUEST || GetCompanionQuantity(pchar) > 1)
+	if (int(RealShips[int(pchar.ship.type)].basetype) != SHIP_POLACRE_QUEST || GetCompanionQuantity(pchar) > 1)
 	{
 		RemoveItems(pchar, "wolfreeks_book", 1);
 		AddQuestRecord("Roger_8", "16");
@@ -5422,13 +5422,13 @@ void Mtraxx_CorridaIgnasioRightFlag() //
 	AddQuestRecord("Roger_8", "14");
 	sld = CharacterFromID("Mtr_joker");
 	sld.lifeday = 0;
-	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskRunAway(SECONDARY_TASK, int(sld.index), int(pchar.index));
 	sld = CharacterFromID("Mtr_Vagrant");
 	sld.lifeday = 0;
-	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskRunAway(SECONDARY_TASK, int(sld.index), int(pchar.index));
 	sld = CharacterFromID("Mtr_vampire");
 	sld.lifeday = 0;
-	Ship_SetTaskRunAway(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskRunAway(SECONDARY_TASK, int(sld.index), int(pchar.index));
 	pchar.questTemp.Mtraxx.Corrida.Hispanios = "true"; // разрешение генерации испанского конвоя
 	pchar.questTemp.Mtraxx.Corrida.Barbazon = "true"; // для диалога
 }
@@ -5470,7 +5470,7 @@ void Mtraxx_CorridaCheckCoordinates(string qName) // проверяем мест
 	}
 	if (CheckAttribute(pchar, "Ship.pos.x") && !bDisableMapEnter)
 	{
-		if(GetSeaCoordDegreeZ(makefloat(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(makefloat(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) < minW2) 
+		if(GetSeaCoordDegreeZ(float(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(float(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(float(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(float(worldMap.playerShipX)) < minW2)
 		{	
 			if(bImCasual)
 			{
@@ -5538,7 +5538,7 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 	PlaySound("interface\notebook.wav");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Mtr_GoldSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+7;
 	if (iRank > 45) iRank = 45;
 	int iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2, iSpace;
 	
@@ -5616,8 +5616,8 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 		if (i == 1) 
 		{
 			iSpace = GetCharacterFreeSpace(sld, GOOD_PAPRIKA);
-			iSpace = makeint(iSpace/2 + rand(iSpace/2));
-			Fantom_SetCharacterGoods(sld, GOOD_PAPRIKA, iSpace, 1);
+			iSpace = int(iSpace/2 + rand(iSpace/2));
+			Fantom_SetCharacterGoods(sld, GOOD_PAPRIKA, iSpace, true);
 		}
 		if (i == 2) 
 		{
@@ -5639,8 +5639,8 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 		if (i == 3) 
 		{
 			iSpace = GetCharacterFreeSpace(sld, GOOD_TOBACCO);
-			iSpace = makeint(iSpace/2 + rand(iSpace/2));
-			Fantom_SetCharacterGoods(sld, GOOD_TOBACCO, iSpace, 1);
+			iSpace = int(iSpace/2 + rand(iSpace/2));
+			Fantom_SetCharacterGoods(sld, GOOD_TOBACCO, iSpace, true);
 		}
 		Group_AddCharacter("Mtr_GoldSeaGroup", "Mtr_GoldCap_"+i);
 	}
@@ -5653,7 +5653,7 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 	if (MOD_SKILL_ENEMY_RATE < 4) Hour = 1;
 	if (MOD_SKILL_ENEMY_RATE > 6) Hour = 3;
 	pchar.quest.mtraxx_corrida_boss.win_condition.l1 = "Timer";
-	pchar.quest.mtraxx_corrida_boss.win_condition.l1.date.hour  = sti(GetTime() + Hour);
+	pchar.quest.mtraxx_corrida_boss.win_condition.l1.date.hour  = int(GetTime() + Hour);
 	pchar.quest.mtraxx_corrida_boss.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 	pchar.quest.mtraxx_corrida_boss.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 	pchar.quest.mtraxx_corrida_boss.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -5760,14 +5760,14 @@ void Mtraxx_MarkusSetShipParameter()
 	sld = CharacterFromID("Terrax");
 	SetSelfSkill(sld, 90, 90, 90, 90, 90);
 	SetShipSkill(sld, 75, 90, 100, 100, 100, 100, 100, 100, 80);
-	RealShips[sti(sld.Ship.Type)].MaxCaliber = 36;
-	RealShips[sti(sld.Ship.Type)].CannonsQuantityMin = 56;
-	RealShips[sti(sld.Ship.Type)].MaxCrew = 800;
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 10.5;
-	RealShips[sti(sld.Ship.Type)].TurnRate = 29.5;
-	RealShips[sti(sld.Ship.Type)].MaxCrew = 800;
-	RealShips[sti(sld.Ship.Type)].HP = 8000;
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].MaxCaliber = 36;
+	RealShips[int(sld.Ship.Type)].CannonsQuantityMin = 56;
+	RealShips[int(sld.Ship.Type)].MaxCrew = 800;
+	RealShips[int(sld.Ship.Type)].SpeedRate = 10.5;
+	RealShips[int(sld.Ship.Type)].TurnRate = 29.5;
+	RealShips[int(sld.Ship.Type)].MaxCrew = 800;
+	RealShips[int(sld.Ship.Type)].HP = 8000;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
     sld.ship.HP = 8000;    //belamour текущее состояние корпуса в макс.
 	SetSailsColor(sld, 8);//черный парус
 	UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
@@ -5786,10 +5786,10 @@ void Mtraxx_CorridaMarkusCommand(string qName) //
 {
 	ref chr = CharacterFromID("Terrax");
 	sld = CharacterFromID("Mtr_GoldCap_1");
-	Ship_SetTaskAttack(SECONDARY_TASK, sti(chr.index), sti(sld.index));
+	Ship_SetTaskAttack(SECONDARY_TASK, int(chr.index), int(sld.index));
 	SetCharacterRemovable(chr, false);
 	chr.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(chr.index));
+	SetCompanionIndex(pchar, -1, int(chr.index));
 	chr.loyality = MAX_LOYALITY;
 }
 
@@ -5957,7 +5957,7 @@ void Mtraxx_CartahenaArrive(string qName) // прибыли в акватори�
 	sld.Fort.Mode = FORT_NORMAL;
 	// ставим испанскую эскадру
 	Group_FindOrCreateGroup("Mtr_CartahenaSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	int iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2, iSpace;
 	
 	switch (MOD_SKILL_ENEMY_RATE)
@@ -6103,7 +6103,7 @@ void Mtraxx_CartahenaDestroyScuadron(string qName) // потопили эска�
 	sld.AlwaysFriend = true;
 	sld.ShipEnemyDisable = true; 
 	ref chr = characterFromId("Mtr_Vensan");
-	Ship_SetTaskDefend(SECONDARY_TASK, sti(sld.index), sti(chr.index));
+	Ship_SetTaskDefend(SECONDARY_TASK, int(sld.index), int(chr.index));
 	sld = CharacterFromID("Terrax");
 	DeleteAttribute(sld, "DontDeskTalk");
 	sld.DeckDialogNode = "mtraxx_101";
@@ -6123,7 +6123,7 @@ void Mtraxx_CartahenaPrepareFortBattle() // готовим атаку форта
 	PlaySound("interface\notebook.wav");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_GTTown2.wav");
 	// расчет числа десанта
-	int iCrew1 = GetCrewQuantity(pchar) - GetMinCrewQuantity(pchar));
+	int iCrew1 = GetCrewQuantity(pchar) - GetMinCrewQuantity(pchar);
 	if (iCrew1 <= GetMinCrewQuantity(pchar)) iCrew1 = 0; // патч 17/1
 	int iCrew2 = GetCrewQuantity(characterFromId("Terrax")) - GetMinCrewQuantity(characterFromId("Terrax"));
 	if (iCrew2 <= GetMinCrewQuantity(characterFromId("Terrax"))) iCrew2 = 0; // патч 17/1
@@ -6137,10 +6137,10 @@ void Mtraxx_CartahenaPrepareFortBattle() // готовим атаку форта
 	log_info(StringFromKey("Roger_100", iCrew3));
 	log_info(StringFromKey("Roger_101", iCrew4));
 	pchar.questTemp.Mtraxx.Cartahena.Crew = iCrew;
-	pchar.questTemp.Mtraxx.Cartahena.Crewpercent1 = makeint(100*iCrew1/iCrew); // процент команды ГГ
-	pchar.questTemp.Mtraxx.Cartahena.Crewpercent2 = makeint(100*iCrew2/iCrew); // процент команды Тиракса
-	pchar.questTemp.Mtraxx.Cartahena.Crewpercent3 = makeint(100*iCrew3/iCrew); // процент команды Джеффри
-	pchar.questTemp.Mtraxx.Cartahena.Crewpercent4 = makeint(100*iCrew4/iCrew); // процент команды Тесака
+	pchar.questTemp.Mtraxx.Cartahena.Crewpercent1 = int(100*iCrew1/iCrew); // процент команды ГГ
+	pchar.questTemp.Mtraxx.Cartahena.Crewpercent2 = int(100*iCrew2/iCrew); // процент команды Тиракса
+	pchar.questTemp.Mtraxx.Cartahena.Crewpercent3 = int(100*iCrew3/iCrew); // процент команды Джеффри
+	pchar.questTemp.Mtraxx.Cartahena.Crewpercent4 = int(100*iCrew4/iCrew); // процент команды Тесака
 	DoQuestFunctionDelay("Mtraxx_CartahenaFortReload", 10.0);
 }
 
@@ -6265,22 +6265,22 @@ void Mtraxx_CartahenaGoFort(string qName) // перегруз в форт
 
 void Mtraxx_CartahenaFinal() // завершаем квест, грузим остатки команды кораблей
 {
-	pchar.ship.crew.quantity = GetMinCrewQuantity(pchar)+sti(pchar.questTemp.Mtraxx.Cartahena.AliveCrew1);
+	pchar.ship.crew.quantity = GetMinCrewQuantity(pchar)+int(pchar.questTemp.Mtraxx.Cartahena.AliveCrew1);
 	sld = CharacterFromID("Terrax");
     RemoveCharacterEquip(sld, GUN_ITEM_TYPE); 
     RemoveCharacterEquip(sld, TALISMAN_ITEM_TYPE);
     TakeItemFromCharacter(sld, "talisman3");        // belamour уберем остатки роскоши
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "", 10.0);
-	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Terrax"))+sti(pchar.questTemp.Mtraxx.Cartahena.AliveCrew2);
+	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Terrax"))+int(pchar.questTemp.Mtraxx.Cartahena.AliveCrew2);
 	sld = CharacterFromID("Jeffry");
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "", 10.0);
-	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Jeffry"))+sti(pchar.questTemp.Mtraxx.Cartahena.AliveCrew3);
+	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Jeffry"))+int(pchar.questTemp.Mtraxx.Cartahena.AliveCrew3);
 	sld = CharacterFromID("Pelly");
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "", 10.0);
-	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Pelly"))+sti(pchar.questTemp.Mtraxx.Cartahena.AliveCrew4);
+	sld.ship.crew.quantity = GetMinCrewQuantity(characterFromId("Pelly"))+int(pchar.questTemp.Mtraxx.Cartahena.AliveCrew4);
 	sld = CharacterFromID("Mtr_Vensan");
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "", 10.0);
@@ -6312,7 +6312,7 @@ void Mtraxx_CartahenaShipsGoAway(string qName) // вышли в море у Ка
 	pchar.quest.mtraxx_cartahena_tortuga.win_condition.l1 = "location";
 	pchar.quest.mtraxx_cartahena_tortuga.win_condition.l1.location = "Tortuga_town";
 	pchar.quest.mtraxx_cartahena_tortuga.function = "Mtraxx_RetributionStart";
-	int n = sti(pchar.questTemp.Mtraxx.Cartahena.TownCrew);
+	int n = int(pchar.questTemp.Mtraxx.Cartahena.TownCrew);
 	for (int i=1; i<=n; i++)
 	{
 		if (GetCharacterIndex("Mtr_CartahenaTownPirate_"+i) != -1)
@@ -6441,8 +6441,8 @@ void Mtraxx_RetributionCarataska(string qName) // прибыли в лагуну
 	//LAi_LocationDisableOfficersGen("Ruins", true);
 	for (i=1; i<=7; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_Sailor_"+i, "citiz_"+(30+i), "man", "man", sti(pchar.rank), sti(pchar.nation), -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank), 40, 40, "blade_14", "pistol1", "bullet", 30);
+		sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_Sailor_"+i, "citiz_"+(30+i), "man", "man", int(pchar.rank), int(pchar.nation), -1, false, "soldier"));
+		FantomMakeCoolFighter(sld, int(pchar.rank), 40, 40, "blade_14", "pistol1", "bullet", 30);
 		LAi_CharacterDisableDialog(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto6");
@@ -6616,8 +6616,8 @@ void Mtraxx_RetributionRuins(string qName) // вошли в подземелья
 	QuestPointerToLoc("Judgement_dungeon_05", "quest", "pelly");
 	// ставим Тесака и его приспешников у клетки с сокровищами
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
-	int iScl = 30 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
+	int iScl = 30 + 2*int(pchar.rank);
 	sld = characterFromId("Pelly");
 	sld.dialog.currentnode = "Pelly_30";
 	sld.greeting = "";
@@ -6630,15 +6630,15 @@ void Mtraxx_RetributionRuins(string qName) // вошли в подземелья
 	sld.protector = true;
 	if (MOD_SKILL_ENEMY_RATE > 2)
 	{
-		sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
-		sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
 	}
 	// предметы-призы
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	RemoveItems(sld, "potion2", GetCharacterItem(sld, "potion2"));
 	RemoveItems(sld, "potion3", GetCharacterItem(sld, "potion3"));
-	TakeNItems(sld, "potion2", makeint(MOD_SKILL_ENEMY_RATE/2));
+	TakeNItems(sld, "potion2", int(MOD_SKILL_ENEMY_RATE/2));
 	TakeNItems(sld, "potion3", 2);
 	TakeNItems(sld, "totem_02", 1);
 	TakeNItems(sld, "obereg_5", 1);
@@ -6655,8 +6655,8 @@ void Mtraxx_RetributionRuins(string qName) // вошли в подземелья
 		LAi_CharacterDisableDialog(sld);
 		if (MOD_SKILL_ENEMY_RATE > 4)
 		{
-			sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
-			sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
 		}
 	}
 }
@@ -6687,8 +6687,8 @@ void Mtraxx_RetributionSetJeffry(string qName) // ставим Джеффри в
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], true);//запретить драться
 	chrDisableReloadToLocation = true;
 	// ставим Джеффри и его пиратов
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 10 + sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 10 + int(pchar.rank);
 	sld = characterFromId("Jeffry");
 	sld.dialog.currentnode = "Jeffry_22";
 	LAi_CharacterEnableDialog(sld);
@@ -6700,15 +6700,15 @@ void Mtraxx_RetributionSetJeffry(string qName) // ставим Джеффри в
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 	if (MOD_SKILL_ENEMY_RATE > 6)
 	{
-		sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
-		sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
 	}
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	sld.money = 10400;
 	RemoveItems(sld, "potion2", GetCharacterItem(sld, "potion2"));
 	RemoveItems(sld, "potion3", GetCharacterItem(sld, "potion3"));
-	TakeNItems(sld, "potion2", makeint(MOD_SKILL_ENEMY_RATE/2));
+	TakeNItems(sld, "potion2", int(MOD_SKILL_ENEMY_RATE/2));
 	TakeNItems(sld, "potion3", 2);
 	TakeNItems(sld, "totem_12", 1);
 	TakeNItems(sld, "indian_1", 1);
@@ -6737,8 +6737,8 @@ void Mtraxx_RetributionSetJeffry(string qName) // ставим Джеффри в
 		LAi_CharacterDisableDialog(sld);
 		if (MOD_SKILL_ENEMY_RATE > 6)
 		{
-			sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
-			sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
 		}
 	}
 }
@@ -6819,8 +6819,8 @@ void Mtraxx_RetributionJeffryFight(string qName) // бой с Джеффри
 
 void Mtraxx_RetributionMushketers(string qName) // ставим 2 мушкетеров в шахте №3
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
-	int iScl = 30 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
+	int iScl = 30 + 2*int(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
 	for (int i=1; i<=2; i++)
@@ -6840,8 +6840,8 @@ void Mtraxx_RetributionMushketers(string qName) // ставим 2 мушкете
 
 void Mtraxx_RetributionNextMushketers(string qName) // ставим 2 мушкетеров в шахте №2
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
-	int iScl = 30 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+3;
+	int iScl = 30 + 2*int(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
 	for (int i=1; i<=2; i++)
@@ -6861,8 +6861,8 @@ void Mtraxx_RetributionNextMushketers(string qName) // ставим 2 мушке
 
 void Mtraxx_RetributionLastMushketers(string qName) // ставим 2 мушкетеров в шахте №1
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
-	int iScl = 35 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
+	int iScl = 35 + 2*int(pchar.rank);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
 	for (int i=1; i<=2; i++)
@@ -6883,8 +6883,8 @@ void Mtraxx_RetributionLastMushketers(string qName) // ставим 2 мушке
 void Mtraxx_RetributionSetLepricon(string qName) // ставим Леприкона // прогона 3
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_01")], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
-	int iScl = 30 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
+	int iScl = 30 + 2*int(pchar.rank);
 	sld = characterFromId("Lepricon");
 	sld.dialog.currentnode = "lepricon_13";
 	sld.greeting = "";
@@ -6899,15 +6899,15 @@ void Mtraxx_RetributionSetLepricon(string qName) // ставим Леприко�
 	sld.viper = true;
 	if (MOD_SKILL_ENEMY_RATE > 2)
 	{
-		sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
-		sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
+		sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/10);
 	}
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	sld.money = 2900;
 	RemoveItems(sld, "potion2", GetCharacterItem(sld, "potion2"));
 	RemoveItems(sld, "potion3", GetCharacterItem(sld, "potion3"));
-	TakeNItems(sld, "potion2", makeint(MOD_SKILL_ENEMY_RATE/2));
+	TakeNItems(sld, "potion2", int(MOD_SKILL_ENEMY_RATE/2));
 	TakeNItems(sld, "potion3", 2);
 	if (MOD_SKILL_ENEMY_RATE > 4) TakeNItems(sld, "potion4", 2);
 	TakeNItems(sld, "purse3", 1);
@@ -6926,8 +6926,8 @@ void Mtraxx_RetributionSetLepricon(string qName) // ставим Леприко�
 		LAi_CharacterDisableDialog(sld);
 		if (MOD_SKILL_ENEMY_RATE > 4)
 		{
-			sld.MultiFighter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
-			sld.MultiShooter = 1.0+stf(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiFighter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
+			sld.MultiShooter = 1.0+float(MOD_SKILL_ENEMY_RATE/20);
 		}
 		if (MOD_SKILL_ENEMY_RATE > 6) sld.viper = true;
 	}
@@ -7420,7 +7420,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_PlantTrading") // торгуем - обмен товарами
 	{
-		if (GetSquadronGoods(pchar, sti(pchar.questTemp.Mtraxx.PlantGood.Cargo)) < 500) // не хватило товара на торговлю - провал
+		if (GetSquadronGoods(pchar, int(pchar.questTemp.Mtraxx.PlantGood.Cargo)) < 500) // не хватило товара на торговлю - провал
 		{
 			chrDisableReloadToLocation = false;
 			DeleteAttribute(pchar, "questTemp.Mtraxx.PlantGood");
@@ -7437,9 +7437,9 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		else 
 		{
-			RemoveCharacterGoods(pchar, sti(pchar.questTemp.Mtraxx.PlantGood.Cargo), 500);
-			SetCharacterGoods(pchar, GOOD_SUGAR, GetCargoGoods(pchar, GOOD_SUGAR) + sti(pchar.questTemp.Mtraxx.PlantGood.Sugar));
-			SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa));
+			RemoveCharacterGoods(pchar, int(pchar.questTemp.Mtraxx.PlantGood.Cargo), 500);
+			SetCharacterGoods(pchar, GOOD_SUGAR, GetCargoGoods(pchar, GOOD_SUGAR) + int(pchar.questTemp.Mtraxx.PlantGood.Sugar));
+			SetCharacterGoods(pchar, GOOD_CHOCOLATE, GetCargoGoods(pchar, GOOD_CHOCOLATE) + int(pchar.questTemp.Mtraxx.PlantGood.Cocoa));
 			DeleteAttribute(pchar, "questTemp.Mtraxx.PlantGood");
 			sld = characterFromId("Mtr_plantation_boss");
 			sld.dialog.currentnode = "mtraxx_9";
@@ -7482,8 +7482,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
-		iRank = sti(pchar.rank)+2;
-		iScl = 30 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+2;
+		iScl = 30 + 2*int(pchar.rank);
 		for (i=1; i<=7; i++)
 		{
 			if (i == 7)
@@ -7575,7 +7575,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		Group_FindOrCreateGroup("Mtraxx_PlantCaravanGuadeloupe");
 		Group_SetType("Mtraxx_PlantCaravanGuadeloupe", "trade");
 		
-		iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+		iClass = int(RealShips[int(pchar.ship.type)].Class);
 	
 		if(iClass < 3) iClass = 3;
 		if(iClass > 5) iClass = 5;
@@ -7811,7 +7811,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	{
 		bDisableCharacterMenu = false;
 		DeleteAttribute(pchar, "GenQuest.FrameLockEsc");
-		n = makeint(sti(pchar.questTemp.Mtraxx.Merida.Antidote)/6);
+		n = int(int(pchar.questTemp.Mtraxx.Merida.Antidote)/6);
 		for (i=5; i<=9; i++) // ребята Леприкона
 		{
 			sld = characterFromId("Lepricons_pirate_"+i);
@@ -7828,8 +7828,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		iScl = 20 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		iScl = 20 + 2*int(pchar.rank);
 
 		for (i=1; i<=8; i++) // наши красавцы
 		{
@@ -8365,7 +8365,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaReloadInTavern") // телепорт в таверну
 	{
-		iTime = sti(environment.time);
+		iTime = int(environment.time);
 		if (iTime >= 21) iAddTime = 24 - iTime;
 		if (iTime < 7) iAddTime = 21 - iTime;
 		if (iTime >= 7 && iTime < 21) iAddTime = 21 - iTime;
@@ -8472,7 +8472,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		bDisableCharacterMenu = false;
 		InterfaceStates.Buttons.Save.enable = true;
 		locCameraResetState();
-		iTime = sti(environment.time);
+		iTime = int(environment.time);
 		WaitDate("", 0, 0, 0, 8, 5); //крутим время
 		RecalculateJumpTable();
 		StoreDayUpdate();
@@ -8522,7 +8522,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld.DontDeskTalk = true;
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		pchar.quest.mtraxx_ship_fail1.win_condition.l1 = "NPC_Death";
 		pchar.quest.mtraxx_ship_fail1.win_condition.l1.character = "Terrax";
@@ -8540,7 +8540,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		SetCharacterGoods(sld, GOOD_RUM, 200);
 		SetCharacterGoods(sld, GOOD_PLANKS, 100);
 		SetCharacterGoods(sld, GOOD_SAILCLOTH, 50);
-		RealShips[sti(sld.Ship.Type)].MaxCrew = 460;
+		RealShips[int(sld.Ship.Type)].MaxCrew = 460;
 		UpgradeShipParameter(sld, "MaxCrew");
 		int hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
@@ -8558,7 +8558,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld.DontDeskTalk = true;
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		// Тесак Пелли
 		sld = characterFromId("Pelly");
@@ -8573,7 +8573,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		SetCharacterGoods(sld, GOOD_RUM, 100);
 		SetCharacterGoods(sld, GOOD_PLANKS, 50);
 		SetCharacterGoods(sld, GOOD_SAILCLOTH, 20);
-		RealShips[sti(sld.Ship.Type)].SpeedRate = 10.2;
+		RealShips[int(sld.Ship.Type)].SpeedRate = 10.2;
 		SetRandGeraldSail(sld, PIRATE);
 		hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
@@ -8591,7 +8591,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld.DontDeskTalk = true;
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		// Бернар Венсан
 		sld = characterFromId("Mtr_Vensan");
@@ -8609,7 +8609,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld.DontDeskTalk = true;
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		// подготовим Картахену
 		i = FindColony("Cartahena");
@@ -8693,7 +8693,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_CartahenaFortFirstBattle") // бой в цитадели форта // патч 17/1
 	{
 		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
-		iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
+		iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
 		bDisableCharacterMenu = true; // лочим F2
 		InterfaceStates.Buttons.Save.enable = false; // запретить сохраняться
 		locations[FindLocation("Cartahena_Town")].QuestCapture = true;
@@ -8712,20 +8712,20 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			ChangeCharacterAddressGroup(sld, "BOARDING_FORT", "rld", "loc" + (i + 3));
 		}
 		// расчёт количества десанта, 45% от общего числа
-		iTotalTemp = makeint((sti(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.45);
+		iTotalTemp = int((int(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.45);
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 25) iTotalTemp = 25;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
 
-		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		iSharleCrew = (int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
 
 		SetArraySize(&aCrewSoldier, iSharleCrew);
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		iScl = 20 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		iScl = 20 + 2*int(pchar.rank);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
@@ -8853,7 +8853,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_CartahenaFortSecondBattle") // бой в бастионе
 	{
 		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
-		iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
+		iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
 		// наши
 		sld = CharacterFromID("Jeffry"); // Лысый
 		LAi_CharacterDisableDialog(sld);
@@ -8868,19 +8868,19 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			ChangeCharacterAddressGroup(sld, "Boarding_bastion1", "rld", "loc" + i);
 		}
 		// расчёт количества десанта, 28% от общего числа
-		iTotalTemp = makeint((sti(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.28);
+		iTotalTemp = int((int(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.28);
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 15) iTotalTemp = 15;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
-		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		iSharleCrew = (int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
 
 		SetArraySize(&aCrewSoldier, iSharleCrew);
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		iScl = 20 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		iScl = 20 + 2*int(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
 			if (i < 3) // мушкетеры, 2 шт
@@ -8999,7 +8999,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_CartahenaFortThirdBattle") // бой во дворе
 	{
 		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
-		iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
+		iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 5;
 		// наши
 		sld = CharacterFromID("Pelly"); // Тесак
 		LAi_CharacterDisableDialog(sld);
@@ -9014,19 +9014,19 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			ChangeCharacterAddressGroup(sld, "Boarding_fortyard", "rld", "loc" + i);
 		}
 		// расчёт количества десанта, 27% от общего числа
-		iTotalTemp = makeint((sti(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.27);
+		iTotalTemp = int((int(pchar.questTemp.Mtraxx.Cartahena.Crew) / 40) * 0.27);
 		if (iTotalTemp < 1) iTotalTemp = 1;
 		if (iTotalTemp > 15) iTotalTemp = 15;
 		log_Testinfo("Наших с оружием - " + iTotalTemp + " бойцов");
 
-		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		iSharleCrew = (int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
 		SetArraySize(&aCrewSoldier, iSharleCrew);
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		iScl = 20 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		iScl = 20 + 2*int(pchar.rank);
 		for (i = 1; i <= iTotalTemp; i++)
 		{
 			if (i <= iSharleCrew)
@@ -9108,7 +9108,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_CartahenaExittownBattle") // бой на выходе из города
 	{
 		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 		chrDisableReloadToLocation = true;
 		// наши
 		for (i=1; i<=3; i++) // офицеры ГГ
@@ -9192,7 +9192,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			sld.lifeday = 0; 
 		}
 		// суммируем всех оставшихся бойцов
-		iTotalTemp = sti(pchar.questTemp.Mtraxx.Cartahena.Fort1Crew) + sti(pchar.questTemp.Mtraxx.Cartahena.Fort2Crew) + sti(pchar.questTemp.Mtraxx.Cartahena.Fort3Crew);
+		iTotalTemp = int(pchar.questTemp.Mtraxx.Cartahena.Fort1Crew) + int(pchar.questTemp.Mtraxx.Cartahena.Fort2Crew) + int(pchar.questTemp.Mtraxx.Cartahena.Fort3Crew);
 		pchar.questTemp.Mtraxx.Cartahena.FortAliveCrew = iTotalTemp; // выживший десант в форте, из него идут на город
 	}
 	else if (sQuestName == "Mtraxx_CartahenaTownBattle") // бой в городе
@@ -9201,7 +9201,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("Cartahena_Poorman");
 		ChangeCharacterAddressGroup(sld, "none", "", "");
 		PlaySound("interface\" + LanguageGetLanguage() + "\_GTBoard2.wav");
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 		// считаем выживших бойцов. Участвует только 20 рыл. Их запоминаем.
 		if (iTotalTemp > 20) n = 20;
 		else n = iTotalTemp;
@@ -9237,15 +9237,15 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, "Cartahena_Town", "reload", "houseS2");
 		log_Testinfo("Наших с оружием - "+iTotalTemp+" бойцов");
 
-		iSharleCrew = (sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
+		iSharleCrew = (int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) * iTotalTemp) / 100;
 		SetArraySize(&aCrewSoldier, iSharleCrew);
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 		nSoldierIndex = 0;
 		GenerateCrew(pchar, "mushketer", &aCrewMushketer);
 
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		iScl = 20 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		iScl = 20 + 2*int(pchar.rank);
 		for (i=1; i<=iTotalTemp; i++)
 		{
 			if (i < 3) // мушкетеры, 2 шт
@@ -9377,11 +9377,11 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		log_Testinfo("В бою выжило - " + n + " наших бойцов");
 		int DeadCrew = iTotalTemp - n; // погибшие в городской боевке
 		// бои окончены, считаем всех выживших бойцов по итогу
-		int AliveCrew = sti(pchar.questTemp.Mtraxx.Cartahena.FortAliveCrew) - DeadCrew; // выжившие
-		pchar.questTemp.Mtraxx.Cartahena.AliveCrew1 = makeint(AliveCrew * 40 * sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) / 100) + 1; // команда ГГ
-		pchar.questTemp.Mtraxx.Cartahena.AliveCrew2 = makeint(AliveCrew * 40 * sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent2) / 100) + 1; // команда Тиракса
-		pchar.questTemp.Mtraxx.Cartahena.AliveCrew3 = makeint(AliveCrew * 40 * sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent3) / 100) + 1; // команда Лысого
-		pchar.questTemp.Mtraxx.Cartahena.AliveCrew4 = makeint(AliveCrew * 40 * sti(pchar.questTemp.Mtraxx.Cartahena.Crewpercent4) / 100) + 1; // команда Тесака
+		int AliveCrew = int(pchar.questTemp.Mtraxx.Cartahena.FortAliveCrew) - DeadCrew; // выжившие
+		pchar.questTemp.Mtraxx.Cartahena.AliveCrew1 = int(AliveCrew * 40 * int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent1) / 100) + 1; // команда ГГ
+		pchar.questTemp.Mtraxx.Cartahena.AliveCrew2 = int(AliveCrew * 40 * int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent2) / 100) + 1; // команда Тиракса
+		pchar.questTemp.Mtraxx.Cartahena.AliveCrew3 = int(AliveCrew * 40 * int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent3) / 100) + 1; // команда Лысого
+		pchar.questTemp.Mtraxx.Cartahena.AliveCrew4 = int(AliveCrew * 40 * int(pchar.questTemp.Mtraxx.Cartahena.Crewpercent4) / 100) + 1; // команда Тесака
 		// главарей - в кучу, Тиракса позже, во избежание сбоя
 		sld = CharacterFromID("Jeffry");
 		LAi_SetActorType(sld);
@@ -9503,16 +9503,16 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		int iCrew3 = GetCrewQuantity(characterFromId("Pelly"));
 		int iCrew4 = GetCrewQuantity(characterFromId("Mtr_Vensan"));
 		int iCrewT = iCrew1 + iCrew2 + iCrew3 + iCrew4;
-		pchar.questTemp.Mtraxx.Cartahena.Gold = makeint(iCrew1 * 100 / iCrewT) * 25; // золото ГГ
-		pchar.questTemp.Mtraxx.Cartahena.Money = makeint(iCrew1 * 100 / iCrewT) * 1500; // деньги ГГ
+		pchar.questTemp.Mtraxx.Cartahena.Gold = int(iCrew1 * 100 / iCrewT) * 25; // золото ГГ
+		pchar.questTemp.Mtraxx.Cartahena.Money = int(iCrew1 * 100 / iCrewT) * 1500; // деньги ГГ
 		LocatorReloadEnterDisable("Cartahena_Exittown", "reload3_back", false);
 	}
 	else if (sQuestName == "Mtraxx_CartahenaComplete") // в городе перед отплытием
 	{
 		bDisableCharacterMenu = false;
 		AddQuestRecord("Roger_9", "8");
-		AddQuestUserData("Roger_9", "sGold", sti(pchar.questTemp.Mtraxx.Cartahena.Gold));
-		AddQuestUserData("Roger_9", "sMoney", sti(pchar.questTemp.Mtraxx.Cartahena.Money));
+		AddQuestUserData("Roger_9", "sGold", int(pchar.questTemp.Mtraxx.Cartahena.Gold));
+		AddQuestUserData("Roger_9", "sMoney", int(pchar.questTemp.Mtraxx.Cartahena.Money));
 		chrDisableReloadToLocation = false;
 		for (i = 3; i <= 10; i++)
 		{
@@ -9520,8 +9520,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		LocatorReloadEnterDisable("Cartahena_town", "gate_back", true);
 		LocatorReloadEnterDisable("Cartahena_town", "reload_jail", true);
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.Mtraxx.Cartahena.Money));
-		SetCharacterGoods(pchar, GOOD_GOLD, GetCargoGoods(pchar, GOOD_GOLD) + sti(pchar.questTemp.Mtraxx.Cartahena.Gold));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.Mtraxx.Cartahena.Money));
+		SetCharacterGoods(pchar, GOOD_GOLD, GetCargoGoods(pchar, GOOD_GOLD) + int(pchar.questTemp.Mtraxx.Cartahena.Gold));
 		bQuestDisableMapEnter = false; // открыть карту
 		DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
 		for (i = 4; i <= 10; i++)
@@ -9623,7 +9623,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		bDisableCharacterMenu = false;
 		InterfaceStates.Buttons.Save.enable = true;
 		locCameraResetState();
-		iTime = sti(environment.time);
+		iTime = int(environment.time);
 		WaitDate("", 0, 0, 2, 6, 5); // крутим время
 		SetLaunchFrameFormParam(StringFromKey("Roger_122", NewStr()), "Reload_To_Location", 0, 5);
 		SetLaunchFrameReloadLocationParam("Tortuga_town", "reload", "reload9", "Mtraxx_RetributionTortugaStreets");
@@ -9805,7 +9805,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, -1, true, "soldier"));
 			LAi_SetImmortal(sld, true);
 			sld.name = GetCharacterName("Alonso");
 			sld.lastname = "";
@@ -9854,8 +9854,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=10; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, sti(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
+			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", int(pchar.rank), int(pchar.nation), 0, false, "soldier"));
+			FantomMakeCoolFighter(sld, int(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -9970,9 +9970,9 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		for (i=11; i<=25; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 0, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", int(pchar.rank), int(pchar.nation), 0, false, "soldier"));
 			LAi_SetImmortal(sld, true);
-			FantomMakeCoolFighter(sld, sti(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
+			FantomMakeCoolFighter(sld, int(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -10137,8 +10137,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=12; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_Sailor_"+i, "citiz_3"+(rand(8)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, sti(pchar.rank), 40, 40, "blade_14", "pistol1", "bullet", 30);
+			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_Sailor_"+i, "citiz_3"+(rand(8)+1), "man", "man", int(pchar.rank), int(pchar.nation), 0, false, "soldier"));
+			FantomMakeCoolFighter(sld, int(pchar.rank), 40, 40, "blade_14", "pistol1", "bullet", 30);
 			LAi_CharacterDisableDialog(sld);
 			ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
 			TeleportCharacterToPos(sld, -8.81, 5.22, -9.80);
@@ -10147,8 +10147,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		for (i=11; i<=26; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", sti(pchar.rank), sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, sti(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
+			sld = GetCharacter(NPC_GenerateCharacter("Mtraxx_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", int(pchar.rank), int(pchar.nation), 0, false, "soldier"));
+			FantomMakeCoolFighter(sld, int(pchar.rank), 50, 50, "blade_14", "pistol1", "bullet", 70);
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -10221,7 +10221,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_ActorAnimation(pchar, "hit_fire", "pchar_back_to_player", 0.8);
 		CreateLocationParticles("blood_big", "quest", "quest4", 2.0, 0, 0, "");
 		PlaySound("People Fight\Damage_NPC_03.wav");
-		i = makeint(LAi_GetCharacterHP(pchar)/2); // 3 прогона
+		i = int(LAi_GetCharacterHP(pchar)/2); // 3 прогона
 		LAi_ApplyCharacterDamage(pchar, i, "fire", true);
 		n = MOD_SKILL_ENEMY_RATE; // 3 прогона
 		AddCharacterHealth(pchar, -n);

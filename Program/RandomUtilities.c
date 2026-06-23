@@ -76,20 +76,20 @@ int WeightRandom(aref Lottery)
     for(int i = 0; i < num; i++)
     {
         participant = GetAttributeN(Lottery,i);
-        if(CheckAttribute(participant, "weight") && sti(participant.weight) > 0)
+        if(CheckAttribute(participant, "weight") && int(participant.weight) > 0)
         {
-            sNumber = k;
+            sNumber = string(k);
             LTR.LotteryProcess.(sNumber) = i;
-            iMassive[k] = sti(participant.weight);
+            iMassive[k] = int(participant.weight);
             k++;
         }
     }
     if(k == 0) return -1;
     SetArraySize(&iMassive, k);
-    sNumber = WeightRandomMethod(&iMassive);
+    sNumber = string(WeightRandomMethod(&iMassive));
     sNumber = LTR.LotteryProcess.(sNumber);
     DeleteAttribute(&LTR, "LotteryProcess");
-    return sti(sNumber);
+    return int(sNumber);
 }
 
 // Получить ссылку на победителя лотереи
@@ -132,7 +132,7 @@ string GetMaxWeightAttr(string sLottery)
     for(i = 0; i < num; i++)
     {
         participant = GetAttributeN(Lottery,i);
-        if(sti(participant.weight) > iMax) iMax = sti(participant.weight);
+        if(int(participant.weight) > iMax) iMax = int(participant.weight);
     }
     if(iMax <= 0) return "Error"; //Нет валидных участников
 
@@ -141,7 +141,7 @@ string GetMaxWeightAttr(string sLottery)
     for(i = 0; i < num; i++)
     {
         participant = GetAttributeN(Lottery,i);
-        if(sti(participant.weight) == iMax)
+        if(int(participant.weight) == iMax)
         {
             sTemp = k;
             LTR.LotteryProcess.(sTemp) = i; //Общий номер участника
@@ -153,7 +153,7 @@ string GetMaxWeightAttr(string sLottery)
     sTemp = LTR.LotteryProcess.(sTemp);
     DeleteAttribute(&LTR, "LotteryProcess");
 
-    sTemp = GetAttributeName(GetAttributeN(Lottery, sti(sTemp)));
+    sTemp = GetAttributeName(GetAttributeN(Lottery, int(sTemp)));
     CorrectWeightParameters(sLottery, sTemp, "GetMax");
     return sTemp;
 }
@@ -174,7 +174,7 @@ string GetMaxWeightAttr(string sLottery)
 
 void UpdateSeeds()
 {
-    GSeed = rand(INT_MAX);
+    GSeed = string(rand(INT_MAX));
     SetGlobalSeed(GSeed);
 }
 
@@ -189,7 +189,7 @@ int DateRandom(int n, string tag)
 int TagRandom(int n, string tag)
 {
     float fSeed = GetFractionByHash(Hash(tag + PChar.PersonalSeed));
-    return MakeInt(fSeed * (n + 1));
+    return int(fSeed * (n + 1));
 }
 
 // TO_DO: Сделать нормальную версию в C-API
@@ -244,29 +244,29 @@ void CorrectWeightParameters(string sLottery, string Winner, string sCase)
             {
                 participant = GetAttributeN(Lottery,i);
                 if(GetAttributeName(participant) == Winner)
-                    iTemp = sti(participant.weight) - sti(participant.decrease);
+                    iTemp = int(participant.weight) - int(participant.decrease);
                 else
-                    iTemp = sti(participant.weight) + sti(participant.increase);
-                participant.weight = iClamp(0, sti(participant.weight_max), iTemp);
+                    iTemp = int(participant.weight) + int(participant.increase);
+                participant.weight = iClamp(0, int(participant.weight_max), iTemp);
             }
             break;
 
         case "Treasure":
             // Выпавший тир
-            i = sti(Lottery.(Winner).weight) - 3;
+            i = int(Lottery.(Winner).weight) - 3;
             Lottery.(Winner).weight = iClamp(0, 20, i);
             // Соседи
-            iTemp = sti(Lottery.(Winner));
+            iTemp = int(Lottery.(Winner));
             if(iTemp != 1)
             {
                 sTemp = "T" + (iTemp-1);
-                i = sti(Lottery.(sTemp).weight) + 1;
+                i = int(Lottery.(sTemp).weight) + 1;
                 Lottery.(sTemp).weight = iClamp(0, 20, i);
             }
             if(iTemp != 15)
             {
                 sTemp = "T" + (iTemp+1);
-                i = sti(Lottery.(sTemp).weight) + 1;
+                i = int(Lottery.(sTemp).weight) + 1;
                 Lottery.(sTemp).weight = iClamp(0, 20, i);
             }
             break;

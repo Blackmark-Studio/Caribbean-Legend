@@ -42,7 +42,7 @@ void ProcessDialogEvent()
     switch(Dialog.CurrentNode)
     {
 		case "First time":
-        if (sti(pchar.GenQuest.Piratekill) > 20)
+        if (int(pchar.GenQuest.Piratekill) > 20)
             {
                 dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都对你很生气, 小子, 你最好离开这个地方。 ", "看来你发疯了, 小子。 想伸展一下你的手? 无意冒犯, 但你在这里无事可做。 滚! ");
                 link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个问题... ");
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
         break;
 
         case "I_know_you_good":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
             {
                 dialog.text = RandPhraseSimple("你疯了吗? 想当屠夫? 所有海盗都对你很生气, 小子, 所以你最好离开这个地方... ", "看来你发疯了, 小子。 想伸展一下你的手? 无意冒犯, 但你在这里无事可做。 滚! ");
                 link.l1 = RandPhraseSimple("听着, 我想解决这个问题... ", "帮我解决这个问题... ");
@@ -264,7 +264,7 @@ void ProcessDialogEvent()
 				dialog.text = "啊, 你终于来了。 我正打算把他卖给那个巴巴多斯的种植园主, 他一两周内就会到这儿... 你有赎金吗? ";
 				link.l1 = "听着, 有点小问题... 其实我没那么多钱。 但我可以干活抵账。 ";
 				link.l1.go = "CapComission2_2";
-				if (makeint(pchar.money) > 150000)
+				if (int(pchar.money) > 150000)
 				{
 					link.l2 = "幸好你还没卖掉他。 这是15万比索, 我去哪儿接他? ";
 					link.l2.go = "CapComission2_3";
@@ -317,8 +317,8 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Dat"); // 贝拉美尔生成
 			dialog.text = "嗯... 好吧, " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " 说服了一些海盗, 让他们以为我们藏在 " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + " 附近的藏匿点里有他们的战利品分成。 他们的两艘船‘" + pchar.GenQuest.CaptainComission.ShipName1 + "’和‘" + pchar.GenQuest.CaptainComission.ShipName2 + "’不久前起锚驶向 " + sLoc + " 了。 现在你明白为什么我不能信任我的人去做那件事了吧? ";
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 			dialog.text = "降价? ! 因为你的无能, 我刚丢了藏匿点! 现在我还能涨价! 如果你想要他, 就付20万比索, 否则就滚出这里。 ";
 			link.l1 = "太贵了... 再见... ";
 			link.l1.go = "CapComission4_4";
-			if (sti(pchar.money) >= 200000)
+			if (int(pchar.money) >= 200000)
 			{
 				link.l2 = "该死, 拿去吧。 ";
 				link.l2.go = "CapComission4_5";
@@ -486,7 +486,7 @@ void ProcessDialogEvent()
 			dialog.text = "你把赎金带来"+ GetSexPhrase("","啦") +"? 我之前说要把他卖给种植园主可不是开玩笑的。 ";			
 			link.l1 = "听着, " + Npchar.name+ ", 是这么回事... 总之, 我没有那么多钱。 但我准备"+ GetSexPhrase("","啊") +"干活抵账。 ";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "幸好你还没卖掉他。 这是15万比索, 你在哪儿能让我接到他? ";
 				link.l2.go = "CapComission2_3";
@@ -496,7 +496,7 @@ void ProcessDialogEvent()
 			dialog.text = "你把钱带来了吗? 我之前说要把那人卖给种植园主可不是开玩笑的。 ";			
 			link.l1 = "我没钱, " + Npchar.name+ ", 但我正在想办法。 ";
 			link.l1.go = "exit";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "幸好你还没卖掉他。 这是15万比索, 你在哪儿能让我接到他? ";
 				link.l2.go = "CapComission2_3";
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon) * 2 * stf(pchar.GenQuest.Marginpassenger.Chance)) * 100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon) * 2 * float(pchar.GenQuest.Marginpassenger.Chance)) * 100;
 			dialog.text = "我明白了... 如果你没撒谎, 这会是笔不错的交易。 我想我可以给你" + iTemp + "比索来买这个人, 或者给你一些有趣的情报作为交换。 你选吧。 ";
 			link.l1 = "我还是拿钱吧, 这生意我已经受够了... ";
 			link.l1.go = "Marginpassenger_money";
@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon) * 2 * stf(pchar.GenQuest.Marginpassenger.Chance)) * 100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon) * 2 * float(pchar.GenQuest.Marginpassenger.Chance)) * 100;
 			dialog.text = "不客气, 再给我带更多人来... 再见! ";
 			link.l1 = "祝你好运... ";
 			link.l1.go = "exit";
@@ -590,7 +590,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "13");
 			AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore + "Dat"));//护林员 - 在SGE中结束 // belamour gen: Abl - 这是到"湾", 需要与格
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen : 奇怪的是, 提示由扎卡里给出, 而SGE中默认是好人
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen : 奇怪的是, 提示由扎卡里给出, 而SGE中默认是好人
 			SetFunctionTimerCondition("Marginpassenger_SouthshoreOver", 0, 0, 7, false);
 			pchar.quest.Marginpassenger.win_condition.l1 = "location";
 			pchar.quest.Marginpassenger.win_condition.l1.location = pchar.GenQuest.Marginpassenger.Shore;
@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer_2":
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "16");
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen 
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen
 			AddQuestUserData("Marginpassenger", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Southcity + "Gen"));
 			AddQuestUserData("Marginpassenger", "sCity1", XI_ConvertString("Colony" + pchar.GenQuest.Marginpassenger.Southcity1 + "Acc")); // 护林员 - 在SGE中结束
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName1);
@@ -621,7 +621,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "别用你那廉价的话语来烦我。 下次你不会喜欢结果的... ";
         			link.l1 = "我知道了。 ";
@@ -637,7 +637,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "我希望你能表现出更多尊重, 不再粗鲁无礼? ";
         			link.l1 = "您放心, 牧师, 我会的。 ";
@@ -660,7 +660,7 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= 愤怒节点块 =============================
 		case "pirate_town":
             dialog.text = "解决问题? 你知道自己做了什么吗? 不管怎样, 给我一百万比索, 我会说服伙计们忘记你的行为。 如果不喜欢这个主意, 那你可以去死了。 ";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "好的, 我准备付钱。 ";
 				link.l1.go = "pirate_town_pay";

@@ -138,7 +138,7 @@ void OfficerRequestGood_Node0_b_b_action()
 	AddAllFellows(&fellows, pchar, false);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
-		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(&fellows, i))));
+		ref chr = GetCharacter(int(GetAttributeValue(GetAttributeN(&fellows, i))));
 		SF_AddEffect(SF_E_SKILL_EXP, chr, SKILL_LEADERSHIP, 50.0);
 	}
 	SF_Triumph("b_b");
@@ -208,15 +208,7 @@ void OfficerRequestGood_Node0_d_a_action()
 void OfficerRequestGood_Node0_d_b_action()
 {
 	SF_AddEffect(SF_E_MONEY, pchar, 10000);
-	object fellows;
-	AddAllFellows(&fellows, pchar, false);
-	int fellowsQty = GetAttributesNum(&fellows);
-	for (int i=0; i < fellowsQty; i++)
-	{
-		ref fellow = FindChar_VT(sti(GetAttributeValue(GetAttributeN(&fellows, i))), true);
-		if (fellow == nullptr) continue;
-		SF_AddEffect(SF_E_LOYALITY, fellow, 1);
-	}
+	SF_AddEffect(SF_E_LOYALITY_ALL, 1);
 	SF_AddEffect(SF_E_REPUTATION, pchar, "nobility", 10);
 	SF_Triumph("d_b");
 }

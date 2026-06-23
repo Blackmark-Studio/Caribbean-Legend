@@ -993,7 +993,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				Notification_Reputation(true, 66, "low");
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
@@ -1426,14 +1426,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Вот мерзавец! Как мои люди? Они живы, смогут засвидетельствовать произошедшее?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Да, они в порядке, Ваша Светлость. Слегка потрёпаны, но жить будут.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Не все, Ваша Светлость. Одному месье не повезло - де Шиво озаботился привести стрелков с мушкетами. Я ничего не смог сделать.";
 					link.l1.go = "governor_27_2";
@@ -1581,14 +1581,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Да, я видел ваше судно. Что ж - давайте повысим интерес - два корабля против одного, что скажете? Мой фрегат и флейт с серебром, против одного вашего?";
 				link.l1 = "Достойная партия! Мадам Бото была неправа, в легенду войдёт именно этот поединок. Сдавайте!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "А наш капитан, оказывается, шалун! Вы посмотрите только! Впрочем, каперство - святое дело. Тогда, как насчёт боевого корабля? Фрегат, по скорости не каждый корвет уйдёт - после королевских верфей его доводили до ума настоящие мастера своего дела. Оторваться можно лишь в крутой бейдевинд. Но у кулеврин отличная дальность и точность стрельбы. Что скажете на это?";
 					link.l1 = "Это звучит интереснее, принимаю! Приступим же!";
@@ -1616,7 +1616,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Игра закончилась, капитан, мы все получили что хотели. Можете даже позлорадствовать, если есть желание. Завтра в полдень, предлагаю обсудить цену выкупа за мой фрегат.";
 					link.l1 = "Вот так просто? Мы разочаровываем публику, месье. Видите ли, я, как и вы, считаю, что выигранное можно только отыграть обратно. Либо - продать на дрова местным рыбакам, всем рассказав, кто их так облагодетельствовал.";
@@ -1624,7 +1624,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "Итак, фортуна сказала своё слово. Вышло, надо признать, весьма любопытно. Поздравляю с победой... капитан, де Мор. Завтра в полдень, предлагаю обсудить цену выкупа за мой фрегат.";
 						link.l1 = "Так скоро? Мы разочаровываем публику, месье. Если мне не изменяет память, у вас остался ещё один корабль. Я, как и вы, считаю, что выигранное можно только отыграть обратно.";

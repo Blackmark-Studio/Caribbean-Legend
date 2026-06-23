@@ -5495,6 +5495,21 @@ TheFormerKnight.4
 Udało nam się wytropić i wyeliminować byłego Rycerza Zakonu. Durand miał zamiar zabić kobietę rycerza, która miała pecha, że ​​akurat była w domu. Oczywiście nie mogłem na to pozwolić. Ponownie skrzyżowaliśmy miecze i po raz kolejny okazałem się silniejszy. Gdybym wcześniej wiedział, jakim jest łobuzem, wykończyłbym go w rezydencji Levasseura.
 }
 
+TheFormerKnight.5
+{
+Postanowiłem nie mieszać się w problemy skompromitowanego oficera i zwolniłem Claude’a Duranda. Niech szuka sobie innego kapitana.
+}
+
+TheFormerKnight.6
+{
+Nie potrafiłem pogodzić się z zachowaniem Claude’a. Między nami wybuchł konflikt i musiałem go zabić. Spoczywaj w pokoju, najemniku.
+}
+
+TheFormerKnight.7
+{
+Claude Durand zginął w boju i teraz nigdy już nie poznam finału tej historii. Cóż, spoczywaj w pokoju, najemniku.
+}
+
 Tichingitu
 {
 Tichingitu

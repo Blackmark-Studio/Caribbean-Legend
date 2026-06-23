@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 		dialog.text = "Hay un problema... El abad dijo que la entrega sería pagada por el destinatario. Así que debes nueve mil doscientos pesos.";
 		link.l1 = "¡Por semejante cantidad de dinero, debería haber sido traído a mí en mar abierto directamente a la cabina, junto con el café de la mañana! Puedes quedarte la carta para ti.";
 		link.l1.go = "cureer_6";
-		if (sti(pchar.money) >= 9200)
+		if (int(pchar.money) >= 9200)
 		{
 			link.l2 = "¿Y por qué no me dediqué a la entrega de correo? ¡Esto es más rentable que la piratería! Aquí tienes tu plata, querida, dame el sobre.";
 			link.l2.go = "cureer_4";
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "spa_officer_1":
-		if (sti(pchar.reputation.nobility) > 80 || sti(pchar.reputation.nobility) < 20) // провести учёт чести и известности
+		if (int(pchar.reputation.nobility) > 80 || int(pchar.reputation.nobility) < 20) // провести учёт чести и известности
 		{
 			Notification_Reputation(true, 81, "low");
 			dialog.text = "Sí, he oído mucho sobre ti, y tengo instrucciones claras de no convertir la ciudad en un baño de sangre si te pones terco. Puedes pasar. Pero el padre Vincento estará... insatisfecho. Ten esto en cuenta.";
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 
 	// Ян Свенсон на Исла Тесоро
 	case "Svenson_2":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Aquí estás, finalmente, Charles! Mi corbeta te adelantó por casi un día... bastante motivo para estar orgulloso.";
 		link.l1 = "Eres bienvenido Jan, pero ¿dónde está Gladys, y tu esposa?";
 		link.l1.go = "Svenson_3";
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 	case "Svenson_6":
 		DialogExit();
 		npchar.dialog.currentnode = "Svenson_6_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Svenson_7":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Y aquí estás, finalmente! ¿Cómo te fue en Martinica? ¿Sientes que tu vida ha cambiado para siempre?";
 		link.l1 = "Ha cambiado mucho antes, Jan. Pero todo salió sorprendentemente bien. ¿Dónde está Joahnna y...?";
 		link.l1.go = "Svenson_8";
@@ -788,7 +788,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Tichingitu_2":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Capitán, enhorabuena otra vez! A Tichingitu le gusta esta celebración más que la anterior. El capitán sabe cómo elegir amigos: aquí hay más sinceridad, menos hipocresía y pelo falso.";
 		link.l1 = "¡Gracias, mi amigo! Solo no bebas el agua de fuego, es muy fuerte aquí.";
 		link.l1.go = "Tichingitu_4";
@@ -815,7 +815,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 				LongHappy_IslaTesoroToVine();
 		}
 		break;
@@ -1074,7 +1074,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Terrax_3":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Casada con Charles de Maure - todavía no puedo acostumbrarme... Primero Svenson, ahora tú, ¿y luego qué? ¿El pastor Marlow, o Jacques el Bondadoso?";
 		link.l1 = "Te olvidaste de los Hawks. ¿Y tú, Marcus? ¿No estás cansado de ser un lobo de mar solitario?";
 		link.l1.go = "Terrax_4";
@@ -1108,7 +1108,7 @@ void ProcessDialogEvent()
 	case "Terrax_6":
 		DialogExit();
 		npchar.dialog.currentnode = "Terrax_6_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1141,7 +1141,7 @@ void ProcessDialogEvent()
 
 	// Натаниэль Хоук
 	case "Nathaniel":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Capitán casado de Maure, pocas veces he encontrado razones más sinceras para un brindis! Levantad la copa - esto no es una bebida común de repollo. ¡Está infusionada con té negro de las Indias Orientales y sazonada con auténticas especias persas!";
 		link.l1 = "Y he estado pensando por qué me quema la garganta como si hubiera bebido plomo fundido. Bueno, Nathan, salud...";
 		link.l1.go = "Nathaniel_1";
@@ -1162,7 +1162,7 @@ void ProcessDialogEvent()
 	case "Nathaniel_3":
 		DialogExit();
 		npchar.dialog.currentnode = "Nathaniel_3_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1305,16 +1305,6 @@ void ProcessDialogEvent()
 		LAi_ActorDialogDelay(sld, pchar, "", 0.5);
 		break;
 
-	case "Nathaniel_18":
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
-			sld = characterFromId("Helena");
-		else
-			sld = characterFromId("Mary");
-		dialog.text = "¡Estamos bien, Charles! Voy a desatarla. Oigo disparos en el puerto, tú y Nathan deben ir allí, de lo contrario, Barbazon destruirá todos nuestros barcos. ¡No pierdan tiempo!";
-		link.l1 = "Encontraré a Gino y lo enviaré aquí, él ayudará... ¡debe hacerlo!" + sld.name + ", querida, quédate aquí, cuida de él, ambos ustedes.";
-		link.l1.go = "Nathaniel_19";
-		break;
-
 	case "Nathaniel_19":
 		dialog.text = "¡Charles, date prisa! ¡sea lo que sea que decidas, el tiempo ahora vale su peso en oro! ¡Si los barcos de Jacques llegan a la costa, todo será en vano!";
 		link.l1 = "Sí, lo sé. ¡Maldito bastardo!";
@@ -1380,7 +1370,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Danielle_2":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Charles, siéntate, ¡Nathan y yo estamos tan felices por ti! Marcus, Jan y mi esposo han preparado algo para ti - pero los regalos esperarán. Por ahora, permíteme felicitarte y desearte felicidad. ¡Tu elegida es simplemente un milagro! Dime, no lograste que ella llevara un vestido blanco allá en Martinica, ¿verdad?";
 		link.l1 = "Gracias, Dannie. Sí, resultó gracioso con el vestido - estoy seguro de que en la alta sociedad nuestra boda dio lugar a muchos rumores escandalosos. Todos honestamente desviaron la mirada y fingieron que no pasaba nada fuera de lo común. Modales y todo eso - pero no me importan los chismes, la amo y eso es lo más importante.";
 		link.l1.go = "Danielle_3";
@@ -1395,7 +1385,7 @@ void ProcessDialogEvent()
 	case "Danielle_4":
 		DialogExit();
 		npchar.dialog.currentnode = "Danielle_4_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1607,7 +1597,7 @@ void ProcessDialogEvent()
 
 	// Додсон
 	case "Dodson":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Charles, ¿puedes siquiera imaginar cuántos corazones de chicas rompiste con esta boda tuya? Sí, la mitad de las chicas del archipiélago deben haber llorado después de tu boda, ¡jaja!";
 		link.l1 = "¿Qué puedo hacer? Solo necesitaba una y la conseguí. Pero es demasiado temprano para que las chicas se molesten, porque todavía te tienen a ti, Stiven.";
 		link.l1.go = "Dodson_1";
@@ -1622,7 +1612,7 @@ void ProcessDialogEvent()
 	case "Dodson_2":
 		DialogExit();
 		npchar.dialog.currentnode = "Dodson_2_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1634,7 +1624,7 @@ void ProcessDialogEvent()
 
 	// Венсан
 	case "Vensan":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Charles, ¿puedes siquiera imaginar cuántos corazones de chicas rompiste con esta boda tuya? Sí, la mitad de las chicas del archipiélago debieron haber llorado tras tu boda, ¡jaja!";
 		link.l1 = "¿Qué puedo hacer? Solo necesitaba una y la conseguí. Pero es demasiado pronto para que las chicas se disgusten, porque aún te tienen a ti, Bernard.";
 		link.l1.go = "Vensan_1";
@@ -1649,7 +1639,7 @@ void ProcessDialogEvent()
 	case "Vensan_2":
 		DialogExit();
 		npchar.dialog.currentnode = "Vensan_2_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1660,7 +1650,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Vensan_3":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Ja, Charles, ¡así que tú también te has casado y te has vuelto aburrido, como nuestro viejo Nathan! Asuntos apasionantes y todo lo demás ahora están en el pasado, ¿eh? ¡Hombre de familia ejemplar!";
 		link.l1 = "¡Sigue esperando, Bernard! ¡Mi esposa no es de las que se aburrirá sentada bajo la ventana de un naufragio familiar! ¡Lo único que cambiará es la plenitud de las bolsas de las chicas del burdel desde aquí hasta Curazao!";
 		link.l1.go = "Vensan_4";
@@ -1675,7 +1665,7 @@ void ProcessDialogEvent()
 	case "Vensan_5":
 		DialogExit();
 		npchar.dialog.currentnode = "Vensan_5_1";
-		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+		if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 			LongHappy_IslaTesoroToVine();
 		break;
 
@@ -1706,7 +1696,7 @@ void ProcessDialogEvent()
 
 		// Джино
 		case "Jino":
-			pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+			pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 			dialog.text = "¡Capitán, permítame felicitarle de todo corazón a usted y a su amada en este día tan auspicioso! ¡Sean felices y cuídense mutuamente!";
 			link.l1 = "Gracias, Gino. ¡Me alegra que hayas decidido venir! Espero que mi color... no te moleste.";
 			link.l1.go = "Jino_1";
@@ -1761,7 +1751,7 @@ void ProcessDialogEvent()
 					}
 				}
 			}
-			else if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
+			else if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed)) LongHappy_IslaTesoroToVine();
 		break;
 		
 		case "Jino_3_1":
@@ -1827,7 +1817,7 @@ void ProcessDialogEvent()
 
 	// Лонгвэй
 	case "Longway":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "'Solo ahora en un país extraño, sintiéndome un forastero, en este brillante día de fiesta, siento doblemente nostalgia por mis parientes'.";
 		link.l1 = "¡Longway, nunca pensé que eras un maestro de la palabra!";
 		link.l1.go = "Longway_1";
@@ -1881,7 +1871,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 				LongHappy_IslaTesoroToVine();
 		}
 		break;
@@ -1894,7 +1884,7 @@ void ProcessDialogEvent()
 
 	// Книппель
 	case "Knippel":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		if (CheckAttribute(pchar, "questTemp.LongHappy.MarrySP"))
 		{
 			dialog.text = "¡Dame un disparo de cadena! ¡Todos nuestros muchachos te felicitan! ¿Cómo fue el servicio?";
@@ -1967,7 +1957,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 				LongHappy_IslaTesoroToVine();
 		}
 		break;
@@ -1980,7 +1970,7 @@ void ProcessDialogEvent()
 
 	// Тонзаг
 	case "Tonzag":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "Jamás pensé, capitán, que te vería casado. Normalmente, el camino que hemos elegido conduce por un sendero solitario directo a una tumba solitaria. En mi memoria, eres el primero que ha logrado salir de él. Vale la pena un brindis extra, ¿no es así?";
 		link.l1 = "¡Esto es todo, camarada! Y realmente, me alegra que esta parte de mi vida haya quedado atrás. ¡Salud!";
 		link.l1.go = "Tonzag_1";
@@ -2034,7 +2024,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 				LongHappy_IslaTesoroToVine();
 		}
 		break;
@@ -2047,7 +2037,7 @@ void ProcessDialogEvent()
 
 	// Бейкер
 	case "Baker":
-		pchar.questTemp.LongHappy.Count = sti(pchar.questTemp.LongHappy.Count) + 1;
+		pchar.questTemp.LongHappy.Count = int(pchar.questTemp.LongHappy.Count) + 1;
 		dialog.text = "¡Aquí está nuestro capitán! ¡Felicitaciones, tú y tu esposa son una hermosa pareja! ¡Qué viváis felices para siempre!";
 		link.l1 = "Gracias, Raymond.";
 		link.l1.go = "Baker_1";
@@ -2083,7 +2073,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && sti(pchar.questTemp.LongHappy.Count) >= sti(pchar.questTemp.LongHappy.CountNeed))
+			if (!CheckAttribute(pchar, "questTemp.LongHappy.Continue") && int(pchar.questTemp.LongHappy.Count) >= int(pchar.questTemp.LongHappy.CountNeed))
 				LongHappy_IslaTesoroToVine();
 		}
 		break;
@@ -2335,7 +2325,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "waitress_6":
-		if (sti(Pchar.money) >= 20000)
+		if (int(Pchar.money) >= 20000)
 			AddMoneyToCharacter(pchar, -20000);
 		dialog.text = "No no, capitán, ¡espera! Me has convencido. Idearé algo para que mi tío no se enfade. ¡Adiós! Y adiós a ti, mi corcel de las lejanas llanuras. Búscame la próxima vez que nos visites...";
 		link.l1 = "Eso es. Me alegra que estemos de acuerdo. Corre a casa, belleza.";
@@ -2391,7 +2381,7 @@ void ProcessDialogEvent()
 
 	// босс Ле Франсуа
 	case "JanDavid":
-		if (sti(pchar.GenQuest.Piratekill) > 20)
+		if (int(pchar.GenQuest.Piratekill) > 20)
 		{
 			dialog.text = RandPhraseSimple("¿Estás loco? ¿Querías jugar a ser carnicero? Todos los piratas están enfadados contigo, amigo, así que será mejor que dejes este lugar.", "Me parece, camarada, que te has vuelto loco. ¿Querías estirar un poco las manos? Sin ofender, pero no tienes nada que hacer aquí. ¡Lárgate!");
 			link.l1 = RandPhraseSimple("Escucha, quiero arreglar la situación...", "Ayúdame a resolver el problema...");
@@ -2411,7 +2401,7 @@ void ProcessDialogEvent()
 				dialog.text = TimeGreeting() + " jefe. Todo está bien en Le Francois, como siempre. ¿Por qué has venido? ¿Puedo ayudarte con algo?";
 				link.l1 = "Solo pasé a ver cómo van las cosas.";
 				link.l1.go = "JanDavid_1";
-				if (sti(pchar.questTemp.LongHappy.BaronMoney) > 0)
+				if (int(pchar.questTemp.LongHappy.BaronMoney) > 0)
 				{
 					link.l2 = "¿Qué hay de mi parte?";
 					link.l2.go = "JanDavid_5";
@@ -2454,13 +2444,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "JanDavid_5":
-		dialog.text = "Esperándote, jefe. Durante este tiempo hemos recogido para ti " + FindRussianMoneyString(sti(pchar.questTemp.LongHappy.BaronMoney)) + ". Tómalo.";
+		dialog.text = "Esperándote, jefe. Durante este tiempo hemos recogido para ti " + FindRussianMoneyString(int(pchar.questTemp.LongHappy.BaronMoney)) + ". Tómalo.";
 		link.l1 = "Ja, no está mal. Bien hecho, Jean.";
 		link.l1.go = "JanDavid_6";
 		break;
 
 	case "JanDavid_6":
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.LongHappy.BaronMoney));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.LongHappy.BaronMoney));
 		pchar.questTemp.LongHappy.BaronMoney = 0;
 		dialog.text = "Hago lo mejor que puedo, jefe. Vuelve el próximo mes o cuando quieras - tu dinero estará seguro conmigo.";
 		link.l1 = "Bien, nos vemos, Jean.";
@@ -2469,7 +2459,7 @@ void ProcessDialogEvent()
 
 	case "pirate_town":
 		dialog.text = "¿Resolver el problema? ¿Tienes alguna idea de lo que has hecho? De todos modos, tráeme un millón de pesos y persuadiré a los muchachos para que olviden tu fechoría. Si no te gusta la idea, entonces puedes irte al infierno.";
-		if (sti(Pchar.money) >= 1000000)
+		if (int(Pchar.money) >= 1000000)
 		{
 			link.l1 = "Bien, estoy listo para pagar.";
 			link.l1.go = "pirate_town_pay";

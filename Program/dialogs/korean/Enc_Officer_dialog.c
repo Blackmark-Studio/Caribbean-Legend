@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 					if(iTemp != -1)
 					{
 						sld = GetColonyByIndex(iTemp);
-						if(sti(sld.HeroOwn) == true && !CheckAttribute(sld, "OfficerIdx"))
+						if(int(sld.HeroOwn) == true && !CheckAttribute(sld, "OfficerIdx"))
 						{
 							NPChar.ColonyIdx = iTemp;
 							Link.l7 = "이 마을의 대리로 임명하겠소!";
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TransferGoodsEnable":
-			if(sti(PChar.Ship.Type) == SHIP_NOTUSED)
+			if(int(PChar.Ship.Type) == SHIP_NOTUSED)
 	        {
 				dialog.text = "선장님, 무슨 화물이요? 우선 배부터 구해야 합니다!";
 				Link.l1 = "그래, 네 말이 맞아.";
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar,"systeminfo.tutorial.Fighter") && Npchar.quest.officertype == "fighter")
 			{
 				DeleteAttribute(pchar,"systeminfo.tutorial.Fighter");
-				LaunchTutorial("Fighter", 1);
+				LaunchTutorial("Fighter", true);
 			}
 		break;
 
@@ -310,9 +310,9 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase(LinkRandPhrase("선장님, 있잖아요, 저... 음, 저를 그만두게 해주셨으면 합니다. 이제는 정착해서 결혼도 하고 아이도 낳고 싶습니다. 아직 제 집도 없고요. 나이 들면 물 한 잔 떠다줄 사람도 없을 것 같아요.","선장님, 제발 저를 그만두게 해주십시오. 수년 동안 전 세계를 떠돌았지만, 아직도 제대로 본 게 없는 것 같습니다. 이제는 새로운 삶을 살고 싶고, 닻을 내리고 세상을 다른 시각으로 바라보고 싶습니다.","선장님, 해군 복무도 분명 멋진 일이죠. 이익도 많고 모험도 있지만, 이제 저 자신을 생각할 때가 온 것 같습니다. 아시잖아요, 조용한 항구에 닻을 내리고, 집도 사고, 자식도 두고 싶습니다. 제발, 저를 보내주십시오."),LinkRandPhrase("선장님, 있잖아요, 정말 죄송하지만, 저는 이 모든 임무와 감시, 그리고 규율에 진절머리가 났어요. 그냥 잠시라도 자유롭게 살고 싶을 뿐인데, 선장님께서 저를 기다려주지 않으실 거란 것도 알아요, 그래서... 저를 제대시켜 주실 수 있겠습니까?","선장님, 있잖아요... 제가 살 수 있는 작은 배가 있어서요, 이제 제 사업을 시작할 때가 된 것 같습니다. 제발, 저를 떠나게 해주실 수 있겠습니까?","선장님, 방금 항구에서 일자리를 제안받았습니다. 사실, 한동안 닻을 내리고 결혼해서 정착하는 삶을 오래도록 꿈꿔왔습니다. 제발, 가게 해주십시오. 이런 기회를 놓칠 수는 없습니다."),LinkRandPhrase("선장님, 저 정말 뱃멀미가 심합니다. 의사들은 계속 저만의 특이체질이라고만 하네요. 제발, 신의 이름으로 부탁드리니 저를 풀어주십시오. 아니면 언젠가 그냥 바다에 뛰어들고 말 겁니다.","선장님, 이제는 정착해서 좀 더 조용한 곳을 찾아야 할 것 같습니다.\n알다시피, 저는 두렵습니다. 어딘가에서 날아오는 총알도, 백병전 중에 죽는 것도 무섭습니다.\n살아남게 해달라고 주님께 기도하지만, 눈을 감으면 제가 죽인 무고한 영혼들이 떠오릅니다.\n그들은 저에게 살려달라고 애원합니다...\n부디 자비를 베풀어 저를 놓아주십시오.","선장님, 오래된 상처들이 쑤시고, 최근에 입은 타박상도 매일 저를 괴롭힙니다.\n곧 저를 내보내실 텐데, 그 다음엔 누가 저를 써주겠습니까?\n부디 저를 보내주십시오. 제가 직접 치료하고 좀 더 조용한 곳을 찾아보겠습니다."));
 			Link.l1 = RandPhraseSimple(LinkRandPhrase("결국 모두 떠나게 마련이지. 좋아, 가도 된다.","그대의 생각은 이해하네. 모든 것은 언젠가 끝이 오지. 자, 가게... 내가 혹시라도 기분을 상하게 했다면 원망하지 말게나.","또 이러는 거야? 일부러 가장 곤란한 순간에 나를 떠나기로 한 거지? 뭐, 됐다. 잘 가라."),LinkRandPhrase("네가 하는 말을 믿기 힘들군... 좋아, 짐 챙기고 가.","너였어? 이럴 줄은 몰랐는데... 그 오랜 시간 함께 등을 맞대고 싸웠는데... 뭐, 널 막진 않겠다. 행운을 빈다.","진지하게 들리는군. 아무튼 행운을 빌고, 내가 너를 그리워할 거라는 걸 알아둬."));				
 			Link.l1.go = "WantToGo_free";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*250)
+			if (int(Pchar.money) >= int(NPChar.rank)*250)
 			{
-				Link.l2 = LinkRandPhrase("알겠군... 그런 거였어? 나는 너를 믿고 있었는데... 뭐, 이미 결심했다면 여기서 갈라서자. 가져가라\n "+sti(NPChar.rank)*250+" 충성스러운 봉사에 대한 페소다. 그리고 내가 혹시라도 너를 불쾌하게 했다면 원망하지 마라.","글쎄, 나는 원한도 없고, 잘못도 기억하지 않아. 그게 네가 내린 결정이라면, 가. 그리고 가져가라\n "+sti(NPChar.rank)*250+" 페소가 있으면 새 출발하는 데 확실히 도움이 될 거야.","알겠네... 뭐, 언젠가는 그렇게 될 운명이었지. 내가 자네에게 주겠네 "+sti(NPChar.rank)*250+" 네 목숨 값을 치를 페소다. 그리고 건강도 챙겨라, 해군 복무는 고생이 많으니..."); 
+				Link.l2 = LinkRandPhrase("알겠군... 그런 거였어? 나는 너를 믿고 있었는데... 뭐, 이미 결심했다면 여기서 갈라서자. 가져가라\n "+int(NPChar.rank)*250+" 충성스러운 봉사에 대한 페소다. 그리고 내가 혹시라도 너를 불쾌하게 했다면 원망하지 마라.","글쎄, 나는 원한도 없고, 잘못도 기억하지 않아. 그게 네가 내린 결정이라면, 가. 그리고 가져가라\n "+int(NPChar.rank)*250+" 페소가 있으면 새 출발하는 데 확실히 도움이 될 거야.","알겠네... 뭐, 언젠가는 그렇게 될 운명이었지. 내가 자네에게 주겠네 "+int(NPChar.rank)*250+" 네 목숨 값을 치를 페소다. 그리고 건강도 챙겨라, 해군 복무는 고생이 많으니...");
 				Link.l2.go = "Im_kind_A2_1";
 			}
 			Link.l3 = LinkRandPhrase("그래서 그렇게 말하는 거야... 지금 떠난다는 건 나를 배신하는 거라는 걸 모르겠어? 지금은 널 보낼 수 없어, 생각도 하지 마.","이거야말로 소식이군! 이런 일은 미리 나한테 알려야 하는 거 알지! 그러니 당분간 사생활은 잊어버려. 때가 되면 내가 은퇴하라고 알려줄 테니까.","사직은 없다. 모두 인원 파악되어 있다. 각자의 사정만으로 모두를 내보낼 수는 없다. 내가 휴가를 줄 자격이 있는지 고민하는 동안 복무하라.");	
@@ -320,7 +320,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Im_kind_A2_1":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*250)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*250)));
 			ChangeOfficersLoyality("good_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
@@ -340,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 	case "WantToGo_Stay_2":
-		dialog.text = LinkRandPhrase("글쎄, 그건 또 다른 이야기지. "+sti(NPChar.rank)*500+" 페소를 즉시 주면, 내가 너와 함께 있지.","글쎄, 아마도 "+sti(NPChar.rank)*500+" 페소만 있다면 머물 수도 있겠지, 아마.","글쎄, 그렇게 말한다면, "+sti(NPChar.rank)*500+" 페소만 있다면, 계속해서 봉사할 수 있겠소.");
-		if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+		dialog.text = LinkRandPhrase("글쎄, 그건 또 다른 이야기지. "+int(NPChar.rank)*500+" 페소를 즉시 주면, 내가 너와 함께 있지.","글쎄, 아마도 "+int(NPChar.rank)*500+" 페소만 있다면 머물 수도 있겠지, 아마.","글쎄, 그렇게 말한다면, "+int(NPChar.rank)*500+" 페소만 있다면, 계속해서 봉사할 수 있겠소.");
+		if (int(Pchar.money) >= int(NPChar.rank)*500)
 		{
 			Link.l1 = RandPhraseSimple("좋아, 동의하지.","알겠어. 그래도 좀 덜 요구할 수도 있었잖아.","식욕이 대단하군! 하지만 내가 약속했지, 그리고 그 약속은 반드시 지킬 거야.");	
 			Link.l1.go = "WantToGo_Stay_ForMoney";
@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 	break;
 	
 	case "WantToGo_Stay_force":
-		Npchar.loyality = makeint(Npchar.loyality) - 2;
+		Npchar.loyality = int(Npchar.loyality) - 2;
 		dialog.text = "좋아, 그렇게 말한다면 남겠어. 하지만 이렇게 하는 건 내 의지에 반하는 거라는 걸 알아둬.";
 		Link.l1 = LinkRandPhrase("아주 좋소. 임무로 돌아가시오, 이 대화는 나중에 계속하겠소.","배로 돌아가라. 그리고 다음에는 은퇴를 요청하기 전에 두 번 생각해라.","그렇지. 의무는 의무이니, 아직 네 환상에 빠질 때가 아니야.");
 		Link.l1.go = "exit";
@@ -362,8 +362,8 @@ void ProcessDialogEvent()
 		NPChar.greeting = "Gr_Officer";
 		if(NPChar.id == "Duran") NPChar.greeting = "Duran_officer";
 		ChangeCharacterComplexReputation(pchar,"authority", 0.2);
-		AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
-		Npchar.loyality = makeint(Npchar.loyality) + 1;    
+		AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
+		Npchar.loyality = int(Npchar.loyality) + 1;
 		Diag.CurrentNode = Diag.TempNode;
 		NPChar.quest.meeting = true;
 		DialogExit();
@@ -411,9 +411,9 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple(LinkRandPhrase("선장님, 양심에 어긋나는 짓을 하며 강도질에 가담하고 싶지 않습니다.","선장님, 더 이상 당신의 난동에 가담하고 싶지 않습니다. 저는 장교이지, 도살자가 아닙니다.","선장님, 당신의 도적 같은 방식으로는 제가 이 선원으로 남을 수 없습니다."),LinkRandPhrase("선장님, 솔직히 말씀드리자면 당신과 함께 일한 것은 실망스러운 실수였습니다. 어떤 돈을 준다 해도 제 명성을 희생할 생각은 없습니다.","선장님, 당신은 신세계에서 가장 악랄한 악당들을 모두 배에 모아 놓으셨군요. 제대로 된 사람이라면 저 놈들 쳐다보기도 역겹습니다. 이런 선원들과는 더 이상 함께 일하고 싶지 않습니다.","선장, 당신은 온통 악당들만으로 선원을 채웠군. 말 한마디 나눌 만한 제대로 된 놈이 하나도 없어. 이런 일은 정말 질색이야."))+" 안녕히 가십시오.";
 			Link.l1 = "뭐?! 여긴 군함이지, 예절 학교가 아니야! 그럼 지옥이나 가라!";
 			Link.l1.go = "exit_fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "나는 네가 곧 떠날 줄 알았지... 이 일은 너한테 맞지 않아. 하지만 나를 탓하지는 마라. 자, 여기 있어 "+sti(NPChar.rank)*500+" 페소야, 네 마음에 드는 일을 찾는 동안 유용하게 쓸 수 있을 거야.";
+				Link.l2 = "나는 네가 곧 떠날 줄 알았지... 이 일은 너한테 맞지 않아. 하지만 나를 탓하지는 마라. 자, 여기 있어 "+int(NPChar.rank)*500+" 페소야, 네 마음에 드는 일을 찾는 동안 유용하게 쓸 수 있을 거야.";
 				Link.l2.go = "Im_kind_A2";
 			}
 			Link.l3 = LinkRandPhrase("오, 이제 와서 그런 소리를 하는 거냐. 그럼 그동안 털었던 모든 약탈에서 네 몫은 어땠냐, 손에 불이라도 난 거냐? 아니면 죄를 용서받겠다고 수도원에 들어가 기도라도 할 생각이냐? 그럴 거면 우리도 좀 챙겨달라고 기도해 줘라! 하하하하하!","흠. 그거 참 심각한 말이군. 우리가 같이 상인들을 털 때 네 순수한 양심은 어디를 보고 있었지? 그걸 어떻게 깨끗이 씻을 건데? 아니면 우리를 밀고해서, 다 같이 교수대에서 멋진 동료들과 목매달리게 할 생각이야?","오, 잘했군! 네 주머니에 동전 한 푼 없이 썩은 선술집에서 내가 널 어떻게 찾아냈는지 벌써 잊은 모양이군. 참고로 말해두지, 너 같은 놈은 장교로서 구리 동전만큼의 값어치도 없어. 한마디로 쓸모없는 놈이지!");
@@ -424,9 +424,9 @@ void ProcessDialogEvent()
             dialog.text = RandPhraseSimple(LinkRandPhrase("선장, 나는 당신네 귀족들 장난이 정말 싫어. 그리고 당신 마음 편하라고 내 습관을 버릴 생각도 없어. 잘 가.","선장님, 더 이상 당신 밑에서 일할 수 없습니다. 나는 이미 너무 많은 시간을 허비했어요. 그냥 평범한 사략선장이었어도 벌써 큰돈을 벌었을 겁니다. 이제 떠나겠습니다.","선장, 당신 부하들은 정말 역겹군. 제대로 된 놈 하나 없고, 죄다 겉멋만 든 놈들뿐이야. 같이 술 한잔할 놈도 없어. 난 떠난다."),LinkRandPhrase("선장님, 저는 노련한 장교입니다만, 당신 배는 짐선처럼 보이는군요. 그런 배에서 복무하는 건 내키지 않습니다. 그럼 이만.","선장님, 당신 선원들 전부 멋만 부리고 있어. 같이 술 마시거나 얘기할 놈 하나도 없더군. 난 그런 근무는 딱 질색이야. 잘 있어.","선장님, 전에는 진짜 해적 밑에서 일한다고 생각했는데, 우리가 하는 건 자선뿐이잖아요! 더 이상 시간 낭비하고 싶지 않아요. 나 갑니다."));
 			Link.l1 = RandPhraseSimple("알겠소. 당신 태도를 보니 언젠가는 그렇게 될 줄 알았지. 좋아, 더는 붙잡지 않겠소.","그런 말씀 하실 줄 알았습니다. 솔직히, 저는 꽤 오랫동안 당신의 태도에 불만이 있었어요.")+" 행운을 빌어.";
 			Link.l1.go = "exit_fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "나는 네가 곧 떠날 줄 알았지... 이 일은 너와 맞지 않아. 하지만 나를 탓하지는 마라. 자, 여기 있어 "+sti(NPChar.rank)*500+" 페소인데, 새 일자리를 찾는 동안 유용하게 쓸 수 있을 거야.";
+				Link.l2 = "나는 네가 곧 떠날 줄 알았지... 이 일은 너와 맞지 않아. 하지만 나를 탓하지는 마라. 자, 여기 있어 "+int(NPChar.rank)*500+" 페소인데, 새 일자리를 찾는 동안 유용하게 쓸 수 있을 거야.";
 				Link.l2.go = "Im_kind_A2";
 			}
 			Link.l3 = RandPhraseSimple("흠. 그거 꽤 심각한 말이군. 하지만 아직 선불로 준 돈을 다 갚지 않았잖아. 그러니 네 행동은 갈취 시도로 볼 수 있겠지, 맞나?","아, 그렇군... 그럼 배의 규정에는 뭐라고 되어 있지? 여기, 2항을 보게: '허락 없이 떠나려는 자는 화약 한 자루, 물 한 병, 권총 한 자루, 그리고 탄환 한 발만 들려서 무인도에 버려진다.' 이제, 자네는 그게 어떤가?");
@@ -439,7 +439,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = LinkRandPhrase("나를 모욕하려 들지도 마! 나는 돈을 위해 일하지만, 그래도 내가 하고 싶은 일을 고를 권리는 있어!","나는 자유인이다! 그리고 내가 원할 때마다 새로운 일을 할 권리가 있다!","나는 먹을 것을 위해 일하는 노예가 아니니, 내 양심은 떳떳하다! 하지만 더 이상 약탈에는 가담하지 않겠다!");
 				Link.l1 = "음, 사실 너 착각하고 있군... 네가 선술집에서 술 마실 땐 무슨 일이든 골라 할 수 있었지... 하지만 내 배에 발을 들인 순간부터 네가 돌아갈 수 있는 길은 목이 산산조각 나는 포탄뿐이야... 그리고 네 혀도 뽑아버릴 거다, 다음 세상에서 아무 말도 못 하게 말이지...";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "WantToGo_stop_stay";
 				}
@@ -455,8 +455,8 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("나를 겁주려고도 하지 마! 나는 돈을 위해 일하지만, 그래도 내가 하고 싶은 일을 고를 권리는 있어!","나는 자유인이다! 그리고 나는 원할 때마다 새 일을 맡을 권리가 있다!","나는 너의 노예가 아니야! 그리고 네 낡은 배에서 이렇게 비참하게 계속 살 생각도 없어!");
 				Link.l1 = "음, 사실 너 착각하고 있군... 네가 선술집에서 술 마실 때는 원하는 일 골라잡을 수 있었지... 하지만 내 배에 발을 올리는 순간부터 네가 돌아갈 길은 목을 산산이 부수는 포탄뿐이야... 그리고 네 혀도 뽑아버릴 거다, 저승 가서 쓸데없는 소리 못 하게...";
 				// belamour legendary edition можно запугать офицера -->
-				//if (makeint(Pchar.Rank) > makeint(NPchar.Rank) || CheckCharacterPerk(pchar, "IronWill"))
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				//if (int(Pchar.Rank) > int(NPchar.Rank) || CheckCharacterPerk(pchar, "IronWill"))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "WantToGo_stop_stay";
 				}
@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition в ближайшее время не подойдет от страха
 			/* if(CheckCharacterPerk(pchar, "IronWill"))
 			{
-				Npchar.loyality = makeint(Npchar.loyality) + 3 + hrand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
+				Npchar.loyality = int(Npchar.loyality) + 3 + hrand(int(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
 				log_info(GetFullName(Npchar)+" increased his loyalty");
 				log_testinfo("Loyalty has become: " + Npchar.loyality + " of " + MAX_LOYALITY);
 			}
@@ -556,7 +556,7 @@ void ProcessDialogEvent()
 			dialog.text = "우리 합의할 수 있을 것 같군 "+Npchar.quest.OfficerPrice+" 페소입니다.";
 			if(Npchar.rank >= 15)
 			{
-				dialog.text = "우리 합의할 수 있을 것 같군 "+(makeint(Npchar.quest.OfficerPrice)/ 100+30)+" 두블룬.";
+				dialog.text = "우리 합의할 수 있을 것 같군 "+(int(Npchar.quest.OfficerPrice)/ 100+30)+" 두블룬.";
 			}	
 			Link.l1 = "그거 좀 심한 거 아니야?";
 			Link.l1.go = "trade";
@@ -567,13 +567,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "trade":
-			if (GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE) >= Rand(12) && (sti(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100) >= sti(Npchar.quest.OfficerLowPrice))// bug fix
+			if (GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE) >= Rand(12) && (int(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100) >= int(Npchar.quest.OfficerLowPrice))// bug fix
 			{
-				Npchar.quest.OfficerPrice = makeint(makeint(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100); // пусть будет коммерция перса голой
+				Npchar.quest.OfficerPrice = int(int(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100); // пусть будет коммерция перса голой
 				dialog.text = "좋아... 뭐, 나도 그 정도는 받아들일 수 있겠군 "+Npchar.quest.OfficerPrice+" 페소다. 어때?";
 				if(Npchar.rank >= 15)
 				{
-					dialog.text = "나도 그 점에는 동의할 수 있을 것 같군 "+(makeint(Npchar.quest.OfficerPrice)/ 100+30)+" 두블론이지. 어때?";
+					dialog.text = "나도 그 점에는 동의할 수 있을 것 같군 "+(int(Npchar.quest.OfficerPrice)/ 100+30)+" 두블론이지. 어때?";
 				}
 				Link.l1 = "이제야 됐군. 넌 들어왔어.";
 				Link.l1.go = "hire";				
@@ -594,17 +594,17 @@ void ProcessDialogEvent()
 			dialog.text = "돈이 부족한 것 같군, 선장! 미안하지만 외상은 안 돼.";
 			Link.l1 = "오, 젠장!";
 			Link.l1.go = "Exit";
-			if(Npchar.rank < 15 && makeint(Pchar.money) >= makeint(Npchar.quest.OfficerPrice))
+			if(Npchar.rank < 15 && int(Pchar.money) >= int(Npchar.quest.OfficerPrice))
 			{
-				AddMoneyToCharacter(Pchar, -(makeint(Npchar.quest.OfficerPrice)));
+				AddMoneyToCharacter(Pchar, -(int(Npchar.quest.OfficerPrice)));
 				Diag.TempNode = "OnboardSoon";
 				dialog.text = "감사합니다, 선장님. 이 선택, 후회하지 않으실 겁니다.";
 				Link.l1 = "그러길 바라오.";
 				Link.l1.go = "Exit_hire";								
 			}
-			if(Npchar.rank >= 15 && PCharDublonsTotal() >= makeint((makeint(Npchar.quest.OfficerPrice) / 100 + 30)))
+			if(Npchar.rank >= 15 && PCharDublonsTotal() >= int((int(Npchar.quest.OfficerPrice) / 100 + 30)))
 			{
-				RemoveDublonsFromPCharTotal(makeint((makeint(Npchar.quest.OfficerPrice) / 100 + 30)));
+				RemoveDublonsFromPCharTotal(int((int(Npchar.quest.OfficerPrice) / 100 + 30)));
 				Diag.TempNode = "OnboardSoon";
 				dialog.text = "감사합니다, 선장님. 당신의 선택을 후회하지 않을 것입니다.";
 				Link.l1 = "그러길 바란다.";
@@ -620,7 +620,7 @@ void ProcessDialogEvent()
 		break;
         
 		case "QMASTER_1":
-			if(sti(PChar.Ship.Type) == SHIP_NOTUSED)
+			if(int(PChar.Ship.Type) == SHIP_NOTUSED)
 			{
 				dialog.text = "선장님, 하지만 배가 없으시잖아요!";
 				Link.l1 = "상기시켜 줘서 고맙군...";
@@ -629,7 +629,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// Rebbebion, добавил фикс отображения знака процента
-			dialog.text = "항해 중 쥐의 활동이 최대치임 "+FloatToString(50.0 /(2.0+GetSummonSkillFromNameToOld(PChar,SKILL_REPAIR)+GetSummonSkillFromNameToOld(PChar,SKILL_SNEAK)),1)+"전체 화물량의 %%입니다. For "+GetCrewQuantity(PChar)+" 우리가 필요로 할 선원들 "+makeint((GetCrewQuantity(PChar)+6)/ 10)+" 하루 식량. 이는 운송 중인 노예는 포함하지 않습니다.";
+			dialog.text = "항해 중 쥐의 활동이 최대치임 "+FloatToString(50.0 /(2.0+GetSummonSkillFromNameToOld(PChar,SKILL_REPAIR)+GetSummonSkillFromNameToOld(PChar,SKILL_SNEAK)),1)+"전체 화물량의 %%입니다. For "+GetCrewQuantity(PChar)+" 우리가 필요로 할 선원들 "+int((GetCrewQuantity(PChar)+6)/ 10)+" 하루 식량. 이는 운송 중인 노예는 포함하지 않습니다.";
 			Link.l1 = "고맙다.";
 			Link.l1.go = "Exit";
 			Diag.TempNode = "Hired";
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l4 = "당신의 화기에 사용할 탄약 종류를 바꿔야 합니다.";
 					Link.l4.go = "SetGunBullets";
@@ -659,7 +659,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l5 = "당신의 머스킷에 사용할 탄환 종류를 바꿔야 하오.";
 					Link.l5.go = "SetMusketBullets";
@@ -674,7 +674,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -705,7 +705,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = int(NPChar.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -756,7 +756,7 @@ void ProcessDialogEvent()
 			link.l1.go = "TargetDistance_1";			
 		break;
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = "선장님, 괜찮으십니까?";
@@ -800,11 +800,11 @@ void ProcessDialogEvent()
 				}
 			}
 			// проверка на море <--
-			if (makeint(PChar.reputation.nobility) >= 41 && makeint(NPChar.reputation) < 41) //герой против злодея
+			if (int(PChar.reputation.nobility) >= 41 && int(NPChar.reputation) < 41) //герой против злодея
 			{
 				dialog.text = RandPhraseSimple(LinkRandPhrase("이거 참 새롭군!","왜, 하늘에서는?","무슨 이유인데?!"),RandPhraseSimple("선장님, 미치신 겁니까? 아무 이유 없이 그런 소식을 말하다니!","이런 젠장! 내가 뭘 잘못해서 너를 불쾌하게 한 거지?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("나는 선원들에게 질서를 세우기로 했어. 그리고 네가 동료들과 맺고 있는 관계는 마음에 들지 않아.","당신의 장점이 채용 때 논의했던 것만큼 좋지 않았소. 그래서,","내 선원 중에 깡패나 불량배들은 못 남겨두지! 그러니,"),LinkRandPhrase("내가 알기로 그대가 럼주를 훔치고, 몰래 내 선원들에게 술을 권해 사기를 떨어뜨리고 있더군. 그러므로,","나는 네 도적 같은 행실에 진저리가 나서 더는 참지 않을 거다. 그러니,","당신은 계속해서 중앙 선실에서 카드나 주사위를 하며 시간을 보내고, 다른 장교들이 임무를 수행하는 데 방해가 되고 있소. 이런 일이 계속될 수는 없소. 그러니,"))+" 짐 챙겨서 배에서 내려.";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "Get_out_A1_peace";
 				}
@@ -814,18 +814,18 @@ void ProcessDialogEvent()
 				}
 				break;	
 			}
-			if (makeint(PChar.reputation.nobility) >= 41 && makeint(NPChar.reputation) >= 41) // герой против героя
+			if (int(PChar.reputation.nobility) >= 41 && int(NPChar.reputation) >= 41) // герой против героя
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("그런 결정을 내린 이유를 여쭤봐도 되겠습니까?","분명히, 그런 결정은 충분히 근거가 있군."),RandPhraseSimple("변명해 보시오, 선장","그건 정말 뜻밖이군. 하지만 그래도 이유를 알고 싶어."));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("나는 네가 네 임무에 대해 보이는 태도에 전혀 만족하지 않는다.","안타깝지만, 너는 훌륭한 장교가 되지 못했고 앞으로도 될 가능성이 없어...","자네는 훌륭한 장교였고 근무도 성실했지. 하지만 이제 우리의 길은 갈라졌네. 왜 그런지 묻지 마라."),LinkRandPhrase("내가 경고했잖아, 럼주에 대한 네 집착이 널 망칠 거라고. 칼집에 칼도 제대로 못 꽂는 놈을 싸움에서 어떻게 믿겠어?","넌 형편없는 선원이자 장교야... 내 생각엔 바다보단 육지에서 더 오래 머물게 될 거다.","나는 네 자격에 만족하지 않지만, 이제야 마침내 적합한 대체자를 찾았어."));
 				Link.l1.go = "Get_out_A2";
 				break;	
 			}
-			if (makeint(PChar.reputation.nobility) < 41 && makeint(NPChar.reputation) >= 41) // злодей против героя 
+			if (int(PChar.reputation.nobility) < 41 && int(NPChar.reputation) >= 41) // злодей против героя
 			{		
 				dialog.text = RandPhraseSimple(RandPhraseSimple("흠... 이유를 여쭤봐도 되겠습니까?","그건 심각한 말씀인데요. 구체적으로 무엇이 불만이신지 여쭤봐도 되겠습니까?"),RandPhraseSimple("변명해 보시오, 선장.","분명히, 그런 말에는 충분한 근거가 있겠지?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("나는 당신의 자격에 전혀 만족하지 않으니, 그러므로","유감이지만, 그대는 훌륭한 장교임을 증명하지 못했소. 그래서,","네 고상한 태도에 진저리가 난다. 영원히 참아주진 않을 거야, 그러니까"),LinkRandPhrase("내가 알아낸 바로는 네가 선원들을 선동해서 불복종하게 만들고 있다더군. 내 배에서는 소란 따위 절대 용납하지 않는다! 그리고 지금까지 너를 바다에 던지지 않은 것에 대해 고마워할 필요도 없어. 그러니\n","그대의 고귀한 신념은 분명 칭찬할 만하오. 하지만 그것들은 자유로운 사략선의 무법한 삶과는 어긋나오. 그러니\n","나는 네가 네 임무에 대해 보이는 태도가 마음에 들지 않아. 그래서\n"))+" 짐 챙겨서 배에서 내려.";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "Get_out_A3_peace";
 				}
@@ -836,7 +836,7 @@ void ProcessDialogEvent()
 				break;
 	
 			}
-			if (makeint(PChar.reputation.nobility) < 41 && makeint(NPChar.reputation) < 41) // злодей против злодея
+			if (int(PChar.reputation.nobility) < 41 && int(NPChar.reputation) < 41) // злодей против злодея
 			{	
 				dialog.text = RandPhraseSimple(LinkRandPhrase("선장님, 정말 이렇게 될 줄은 몰랐습니다! 무슨 일이 벌어지고 있는지 설명해 주시겠습니까?","선장님, 무슨 걱정이라도 있으십니까?!","그게 무슨 뜻입니까, 선장님?!"),RandPhraseSimple("대체 뭐야, 선장?! 어제까지만 해도 다 괜찮아 보였는데, 지금 이게 뭐야, 무슨 일이 있었던 거야?","이런 젠장! 네가 뭘 했는지 설명해 볼래?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("너는 완전 게으름뱅이에 쓸모없는 바보야, 연안선의 견습 선원조차 너보다 낫겠다. 나는 너 때문에 너무 오래 고생했어. 그러니까\n","한동안 너를 해고할까 고민했는데, 이제야 마땅한 대체자를 찾았어. 그러니\n","내가 알기로 그대가 럼주를 훔치고, 몰래 내 선원들에게 술을 권해 사기를 떨어뜨리고 있더군. 그러므로\n"),LinkRandPhrase("내가 너를 고용할 때, 함대 전체에서 최고의 장교라고 큰소리치더니, 알고 보니 그냥 빈둥거리는 놈이었군, 그래서\n","네 술버릇이 결국 화를 부를 거라고 경고했잖아. 쓸모없는 주정뱅이를 내 배에 왜 두고 있어야 하지? 그러니까\n","일을 해야 할 때 자꾸 어딘가로 사라지거나, 카드나 주사위 놀이만 하고 있군. 이게 영원히 계속될 거라 생각한 건 아니겠지? 그래서"))+" 짐을 챙겨서 배에서 내려라.";
@@ -851,9 +851,9 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "그럼 평안히 가시오.";
 			Link.l2.go = "Exit_Fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "흥분하지 마. 내가 퇴직금 준비해 뒀어 - "+sti(NPChar.rank)*500+" 페소입니다. 이것으로 모든 문제가 해결되길 바랍니다.";
+				Link.l3 = "흥분하지 마. 내가 퇴직금 준비해 뒀어 - "+int(NPChar.rank)*500+" 페소입니다. 이것으로 모든 문제가 해결되길 바랍니다.";
 				Link.l3.go = "Get_out_А1_ForMoney";
 			}
 		break;
@@ -864,20 +864,20 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "다시 말하지만, 네 임무는 끝났다. 짐을 챙겨도 된다.";
 			Link.l2.go = "Get_out_A1_strife_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "흥분하지 마. 내가 준비해 놨어 "+sti(NPChar.rank)*500+" 당신에게 페소를 주겠소. 이것으로 모든 문제가 해결되길 바라오.";
+				Link.l3 = "흥분하지 마. 내가 준비해 놨어 "+int(NPChar.rank)*500+" 당신에게 페소를 주겠소. 이것으로 모든 문제가 해결되길 바라오.";
 				Link.l3.go = "Get_out_А1_ForMoney";
 			}
 		break;
 
 		case "Get_out_A1_strife_1":
-			dialog.text = RandPhraseSimple("사실 여기 머물고 싶은 마음은 없어. 하지만 보상 없이 떠나지도 않을 거야!","이제 네 그 낡은 배에 절대 머물 생각은 없지만, 먼저 나한테 보상부터 해라!")+" "+sti(NPChar.rank)*1000+" 페소만 주면, 서로 모르는 사이로 해주지.";
+			dialog.text = RandPhraseSimple("사실 여기 머물고 싶은 마음은 없어. 하지만 보상 없이 떠나지도 않을 거야!","이제 네 그 낡은 배에 절대 머물 생각은 없지만, 먼저 나한테 보상부터 해라!")+" "+int(NPChar.rank)*1000+" 페소만 주면, 서로 모르는 사이로 해주지.";
 			Link.l1 = "내가 좀 흥분했군... 부디, 내 사과를 받아주고 다시 임무로 돌아가 주시오.";
 			Link.l1.go = "exit_bad1";
 			Link.l2 = "네가 항상 네 몫을 제대로 받아왔는데 무슨 돈 타령이야? 이건 내 눈엔 갈취로밖에 안 보여!";
 			Link.l2.go = "Get_out_А1_strife_battle";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+			if (int(Pchar.money) >= int(NPChar.rank)*1000)
 			{
 				Link.l3 = "좋아. 장비를 돌려주면, 네가 원한 것을 주겠다.";
 				Link.l3.go = "Get_out_А1_chang";
@@ -885,7 +885,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Get_out_А1_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			dialog.text = "그건 또 다른 이야기지. 잘 가라!";
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
 
 		case "Get_out_А1_strife_battle":
 			dialog.text = LinkRandPhrase("이것을 정신적 피해에 대한 보상으로 생각하시오. 나는 그런 대우를 절대 용납하지 않을 것이며, impudently 나를 그렇게 대하는 자는 반드시 후회하게 될 것이오!","이건 협박이 아니라, 내 시간을 이렇게 멍청하게 낭비한 데 대한 보상이야! 그리고 무슨 수를 써서라도 받아낼 거다!","너 같은 겁쟁이 밑에서 너무 많은 시간을 허비했어. 상선들을 약탈했다면 큰돈을 벌 수 있었을 텐데. 그러니 잃어버린 이익을 보상받고 싶을 뿐이야.");
-			if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+			if (int(Pchar.money) >= int(NPChar.rank)*1000)
 			{
 				Link.l1 = "좋아. 여기 네 돈이다... 이제 꺼져!";
 				Link.l1.go = "Get_out_А1_ForMoney_angry";
@@ -914,7 +914,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Get_out_А1_ForMoney_angry":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			OfficersReaction("bad");
@@ -931,9 +931,9 @@ void ProcessDialogEvent()
 			Link.l2.go = "exit_fire_2";
 			Link.l3 = "잠깐만... 내가 너한테 좋은 장비를 챙겨줬잖아. 다 돌려줘, 내가 무리 전체를 챙겨줄 생각은 없으니까...";
 			Link.l3.go = "Return_items_A2";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l4 = "잠깐만... 빈손으로 보내고 싶지 않아. 자, 이걸 가져가. "+sti(NPChar.rank)*500+" 페소야. 새 일자리를 찾는 동안 요긴하게 쓸 수 있을 거야.";
+				Link.l4 = "잠깐만... 빈손으로 보내고 싶지 않아. 자, 이걸 가져가. "+int(NPChar.rank)*500+" 페소야. 새 일자리를 찾는 동안 요긴하게 쓸 수 있을 거야.";
 			}
 			Link.l4.go = "Im_kind_A2";
 		break;
@@ -946,7 +946,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Im_kind_A2":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeOfficersLoyality("good_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
@@ -963,15 +963,15 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "가, 가. 네 잔소리 없이도 난 괜찮아.";
 			Link.l2.go = "exit_fire_3";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "잠깐만. 내가 줄게 "+sti(NPChar.rank)*500+" 페소야. 네가 길바닥에서 죽는 걸 보고 내가 죄책감을 느끼는 일은 없었으면 해.";
+				Link.l3 = "잠깐만. 내가 줄게 "+int(NPChar.rank)*500+" 페소야. 네가 길바닥에서 죽는 걸 보고 내가 죄책감을 느끼는 일은 없었으면 해.";
 				Link.l3.go = "Get_out_А3_ForMoney";
 			}
 		break;
 
 		case "Get_out_А3_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			ChangeOfficersLoyality("good_all", 1);
@@ -984,9 +984,9 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("하지만 선장님, 그러면 저는 완전히 땅에 남겨지게 됩니다. 정말 저를 배에서 곧장 교구로 보내실 생각이십니까?","저에게 너무하십니다, 선장님. 하지만 제대로 보상만 해주신다면 원망하지 않겠습니다.","이게 내 전투 상처에 대한 너의 감사란 말이냐? 뭐, 금전적 보상 없이는 안 되겠군.");
 			Link.l1 = "좋아, 마음이 바뀌었어. 너는 있어도 돼. 하지만 이 얘기는 나중에 다시 하자.";
 			Link.l1.go = "exit_bad";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "아, 신경 쓰지 마. 여기 - "+sti(NPChar.rank)*500+" 페소다. 이걸로 내 배에서 보낸 시간에 대한 보상이 될 거야.";
+				Link.l2 = "아, 신경 쓰지 마. 여기 - "+int(NPChar.rank)*500+" 페소다. 이걸로 내 배에서 보낸 시간에 대한 보상이 될 거야.";
 				Link.l2.go = "Get_out_А3_ForMoney";
 				Link.l3 = "돈은 줄게. 그래도 내 덕분에 장비 잘 챙겼으니, 이제 그 물건들 나한테 돌려주는 게 공평하겠지.";
 				Link.l3.go = "Return_items_A3";
@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Return_items_A3":
-			dialog.text = "네가 그렇게 말할 줄 알았지, 하지만 내가 받을 때까지 네 장비는 돌려주지 않을 거야\n "+sti(NPChar.rank)*1000+" 페소다. 아니면 내 시체를 넘고 가져가야 할 거야!";
+			dialog.text = "네가 그렇게 말할 줄 알았지, 하지만 내가 받을 때까지 네 장비는 돌려주지 않을 거야\n "+int(NPChar.rank)*1000+" 페소다. 아니면 내 시체를 넘고 가져가야 할 거야!";
 			Link.l1 = "좋아, 그럼 돈 가져가.";
 			Link.l1.go = "Get_out_А3_chang";
 			Link.l2 = "미쳤어, 뭐야?! 공짜로 받은 걸 두고 그런 거금을 요구하다니?! 이제 보니 네 가식적인 선의보다 탐욕이 완전히 이긴 게 분명하군.";
@@ -1024,9 +1024,9 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_good";
 			Link.l2 = RandPhraseSimple("이제 꺼져. 오늘 내가 기분이 좋아서 다행인 줄 알아.","지금 당장 꺼져. 너 같은 장교는 똥으로 총알 만드는 것만큼이나 쓸모없어.");
 			Link.l2.go = "exit_fire_4";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "잠깐만. 내가 줄게 "+sti(NPChar.rank)*500+" 페소지. 네가 길바닥에서 죽는 걸 보고 내가 죄책감 느끼고 싶진 않으니까.";
+				Link.l3 = "잠깐만. 내가 줄게 "+int(NPChar.rank)*500+" 페소지. 네가 길바닥에서 죽는 걸 보고 내가 죄책감 느끼고 싶진 않으니까.";
 				Link.l3.go = "Get_out_А4_ForMoney";
 			}
 			Link.l4 = "잠깐만... 내가 너한테 제대로 장비를 줬으니, 내 물건 돌려줘.";
@@ -1034,7 +1034,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Get_out_А4_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			ChangeOfficersLoyality("good_all", 1);
@@ -1044,7 +1044,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Return_items_A4":
-			if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+			if (int(Pchar.Rank) > int(NPchar.Rank))
 			{
 				dialog.text = LinkRandPhrase("이제 내 장비까지 가져가는 거야! 젠장, 다 집어치워! 나 낚시나 하러 갈 거야, 진짜로...","내가 완전히 털릴 작정이군. 뭐, 이제 나한테 남은 길은 하나뿐이지, 처형장으로 가는 것뿐이야...","아, 정말 고맙군! 이제 나를 털기로 했구나. 아, 이 잔인한 운명이라니... 가져가라, 가져가! 내가 뭘 할 수 있겠어...");
 				Link.l1 = "지금 당장 꺼져. 네가 장교라면 똥으로 총알 만드는 거랑 다를 바 없지.";
@@ -1052,8 +1052,8 @@ void ProcessDialogEvent()
 			}
 			else	
 			{
-				dialog.text = RandPhraseSimple("원하시는 대로 하겠습니다, 선장님. 하지만 먼저, 제게 이것을 건네주시겠습니까? "+sti(NPChar.rank)*1000+" 페소다. 이걸로 정신적 피해에 대한 보상으로 삼으시오.","알겠어. 그래도 나는 받고 싶어 "+sti(NPChar.rank)*1000+" 내가 힘들고 성실하게 일한 대가로 주는 페소입니다.");
-				if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+				dialog.text = RandPhraseSimple("원하시는 대로 하겠습니다, 선장님. 하지만 먼저, 제게 이것을 건네주시겠습니까? "+int(NPChar.rank)*1000+" 페소다. 이걸로 정신적 피해에 대한 보상으로 삼으시오.","알겠어. 그래도 나는 받고 싶어 "+int(NPChar.rank)*1000+" 내가 힘들고 성실하게 일한 대가로 주는 페소입니다.");
+				if (int(Pchar.money) >= int(NPChar.rank)*1000)
 				{
 					Link.l1 = "정말 악당이군! 좋아, 여기 네 돈이다.";
 					Link.l1.go = "Get_out_А4_chang";
@@ -1095,7 +1095,7 @@ void ProcessDialogEvent()
 	    case "Get_out_А1_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_1";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
 			AddDialogExitQuestFunction("LandEnc_OfficerFired");
@@ -1123,7 +1123,7 @@ void ProcessDialogEvent()
 		case "Get_out_А3_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_3";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
 			AddDialogExitQuestFunction("LandEnc_OfficerFired");
@@ -1152,7 +1152,7 @@ void ProcessDialogEvent()
 		case "Get_out_А4_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_4";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
@@ -1166,14 +1166,14 @@ void ProcessDialogEvent()
 		break;
 
 	    case "exit_bad":
-			Npchar.loyality = makeint(Npchar.loyality) - 3;
+			Npchar.loyality = int(Npchar.loyality) - 3;
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = true;
 			DialogExit();
 		break;
 
 		case "exit_bad1":
-			Npchar.loyality = makeint(Npchar.loyality) - 2;
+			Npchar.loyality = int(Npchar.loyality) - 2;
 			ChangeOfficersLoyality("bad_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			ChangeCharacterComplexReputation(pchar,"authority", -1);
@@ -1183,7 +1183,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_good":
-			Npchar.loyality = makeint(Npchar.loyality) - 1;
+			Npchar.loyality = int(Npchar.loyality) - 1;
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = true;
 			DialogExit();
@@ -1331,14 +1331,14 @@ void ProcessDialogEvent()
         break;
 
         case "Exit_Gover_Hire":
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
             attr = sld.id + "_townhall";
 
             // снимем пассажира -->
-			CheckForReleaseOfficer(sti(NPChar.index));
+			CheckForReleaseOfficer(int(NPChar.index));
 			RemovePassenger(pchar, NPChar);
 			// снимем пассажира <--
-		    sld.OfficerIdx = sti(NPChar.index);
+		    sld.OfficerIdx = int(NPChar.index);
 			ChangeCharacterAddressGroup(NPChar, attr, "sit", "sit1");
 			LAi_SetHuberTypeNoGroup(NPChar);
             SaveCurrentNpcQuestDateParam(NPChar, "StartTaxDate");
@@ -1378,19 +1378,19 @@ void ProcessDialogEvent()
 
         case "Gover_Tax":
             iTemp = GetNpcQuestPastDayParam(NPChar, "StartTaxDate");
-            iTax  = makeint((GetCharacterSkillSimple(NPChar, SKILL_COMMERCE) + GetCharacterSkillSimple(NPChar, SKILL_LEADERSHIP)) / 2);
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            iTax  = int((GetCharacterSkillSimple(NPChar, SKILL_COMMERCE) + GetCharacterSkillSimple(NPChar, SKILL_LEADERSHIP)) / 2);
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
 			if (CheckAttribute(sld, "FortValue"))
 			{
-			    iFortValue = sti(sld.FortValue);
+			    iFortValue = int(sld.FortValue);
 			}
 			else
 			{
 			    iFortValue = 20;
 			}
 			NPChar.Gover_Tax_Sum = iFortValue*iTax*iTemp;
-			dialog.Text = "내 기술로 나는 모을 수 있어 "+FindRussianMoneyString(iFortValue*iTax)+" 하루에. 끝. "+FindRussianDaysString(iTemp)+" I "+NPCharSexPhrase(NPChar,"수집됨","수집됨")+" "+FindRussianMoneyString(sti(NPChar.Gover_Tax_Sum))+".";
-			if (sti(NPChar.Gover_Tax_Sum) > 0)
+			dialog.Text = "내 기술로 나는 모을 수 있어 "+FindRussianMoneyString(iFortValue*iTax)+" 하루에. 끝. "+FindRussianDaysString(iTemp)+" I "+NPCharSexPhrase(NPChar,"수집됨","수집됨")+" "+FindRussianMoneyString(int(NPChar.Gover_Tax_Sum))+".";
+			if (int(NPChar.Gover_Tax_Sum) > 0)
 			{
 			    Link.l1 = "모은 세금 전부를 가져가고 싶다.";
             	Link.l1.go = "Gover_Tax_Get";
@@ -1401,7 +1401,7 @@ void ProcessDialogEvent()
 
         case "Gover_Tax_Get":
             SaveCurrentNpcQuestDateParam(NPChar, "StartTaxDate");
-            AddMoneyToCharacter(Pchar, sti(NPChar.Gover_Tax_Sum));
+            AddMoneyToCharacter(Pchar, int(NPChar.Gover_Tax_Sum));
 
 			Diag.CurrentNode = "Gover_Main";
             DialogExit();
@@ -1412,7 +1412,7 @@ void ProcessDialogEvent()
             Link.l8 = "그거 좋군.";
             Link.l8.go = "exit_hire";
             Diag.TempNode = "Hired";
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
             DeleteAttribute(sld, "OfficerIdx");
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
@@ -1533,7 +1533,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CompanionTravel_PrepareStart":
-			dialog.Text = "알겠소. 다음에 "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" 가다 "+sti(characters[sti(NPChar.realcompanionidx)].CompanionTravel.Days)+" 며칠 뒤 도착하면 무엇을 해야 하지?";
+			dialog.Text = "알겠소. 다음에 "+XI_ConvertString("Colony"+characters[int(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" 가다 "+int(characters[int(NPChar.realcompanionidx)].CompanionTravel.Days)+" 며칠 뒤 도착하면 무엇을 해야 하지?";
 				Link.l1 = "식민지 항구 앞바다에 한 달 동안 정박하라.";
 				Link.l1.go = "CompanionTravel_PrepareStart_2";
 				Link.l2 = "있잖아, 그런 생각이 들었어. 나랑 같이 있어줘...";
@@ -1554,7 +1554,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "CompanionTravel_LastNode":
-			Dialog.text = RandPhraseSimple("오늘, 나는 다시 항해를 시작하겠어...","우리 만남이 있는 것을 잊지 마시오 "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Dat")+".");
+			Dialog.text = RandPhraseSimple("오늘, 나는 다시 항해를 시작하겠어...","우리 만남이 있는 것을 잊지 마시오 "+XI_ConvertString("Colony"+characters[int(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Dat")+".");
 				link.l2 = "...";
 				link.l2.go = "Exit";
 				Diag.TempNode = "CompanionTravel_LastNode";
@@ -1569,8 +1569,8 @@ void ProcessDialogEvent()
 					Diag.TempNode = "hired";
 					CompanionTravel_DeleteSpecialShipAttributes(NPChar);
 					Group_DeleteAtEnd(NPChar.CompanionTravel.GroupID); // Потрем группу
-					SetCompanionIndex(PChar, -1, sti(NPChar.index));
-					PChar.CompanionTravel = sti(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
+					SetCompanionIndex(PChar, -1, int(NPChar.index));
+					PChar.CompanionTravel = int(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
 					DeleteAttribute(NPChar, "CompanionTravel");
 			}
 			else
@@ -1592,8 +1592,8 @@ void ProcessDialogEvent()
 				Diag.TempNode = "hired";
 				CompanionTravel_DeleteSpecialShipAttributes(NPChar);
 				Group_DeleteAtEnd(NPChar.CompanionTravel.GroupID);
-				SetCompanionIndex(PChar, -1, sti(NPChar.index));
-				PChar.CompanionTravel = sti(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
+				SetCompanionIndex(PChar, -1, int(NPChar.index));
+				PChar.CompanionTravel = int(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
 				DeleteAttribute(NPChar, "CompanionTravel");
 			}
 			else
@@ -1660,14 +1660,14 @@ void ProcessDialogEvent()
 		case "SharlieEpilog_Folke_salary":
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Folke_salary_X3":
 			dialog.text = "하하, 아니야, 캡틴. 난 다시는 고리대금업자에게 발도 들이지 않을 거야. 하지만 선장이 되는 건… 흥미로운 생각이야. 솔직히 몇 번이나 생각해 본 적 있어. 어쩌면 진짜 그렇게 할지도 몰라.";
 			link.l1 = "그리고 한 가지 더. 탕헤른에서 작별 파티를 열려고 해. 네가 와주면 좋겠어. 우리 녀석들을 네 선원으로 영입할 좋은 기회가 될 거야.";
 			link.l1.go = "SharlieEpilog_Folke_salary_X3_2";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Folke_salary_X3_2":
@@ -1717,14 +1717,14 @@ void ProcessDialogEvent()
 		case "SharlieEpilog_Duran_salary":
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Duran_salary_X3":
 			dialog.text = "벌써 결심했어. 난 보물 사냥꾼이 될 거야. 거기엔 뭔가… 있어.";
 			link.l1 = "하하! 좋은 선택이야! 그리고 한 가지 더: 마지막으로 제대로 즐길 거야. 그러니까 함께 하고 싶다면 — 술집으로 와.";
 			link.l1.go = "SharlieEpilog_Duran_salary_X3_2";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Duran_salary_X3_2":

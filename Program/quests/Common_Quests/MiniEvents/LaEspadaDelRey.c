@@ -379,7 +379,7 @@ void LEDR_14()
 	CloseQuestHeader("LEDR");
 	AddQuestRecord("LEDR", "4");
 	pchar.questTemp.LEDR_QuestCompleted = true;
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	Achievment_Set("ach_CL_179"); // ачивка за LaEspadaDelRey
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий

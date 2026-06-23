@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_1":
 			dialog.text = "Uyandırdığım için üzgünüm, Kaptan...";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Pekâlâ, en azından kapıyı çaldın, bu da bir şey. Şimdi söyle bakalım—benden ne istiyorsun?";
 				link.l1.go = "Barmen_2";
@@ -2473,12 +2473,6 @@ void ProcessDialogEvent()
 			link.l1 = "Umarım bir gün Mary ve ben senin Günlüklerini okuruz, dostum. Al, bu da günlüğün—sakın kaybetme. Evet, artık gitme vakti. Belki bir gün tekrar karşılaşırız, dostum.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_21");
-		break;
-		
-		case "WildRose_Betancur_21":
-			dialog.text = "Çünkü burada değiller, "+pchar.name+" . O ikisi, Caspers ailesiyle birlikte kurtarıldıktan hemen sonraki gece öldüler.";
-			link.l1 = "İlginç. Hamile kadın bir hafta daha hayatta kaldı, ama Kraliyet Donanması’ndan iki denizci aniden öldü...";
-			link.l1.go = "WildRose_Betancur_22";
 		break;
 		
 		case "WildRose_Chimiset_21":

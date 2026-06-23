@@ -4,7 +4,7 @@
 
 
 //Инициализация
-void LAi_type_carrier_Init(aref chr)
+void LAi_type_carrier_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -42,7 +42,7 @@ void LAi_type_carrier_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_carrier_CharacterUpdate(ref chr, float dltTime)
 {	
 	float time;
 	float locx, locy, locz;
@@ -50,12 +50,12 @@ void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
 	{
 		if (chr.chr_ai.tmpl.state == "goto" && CheckAttribute(chr, "checkMove"))
 		{
-			time = stf(chr.chr_ai.tmpl.time) + dltTime;
+			time = float(chr.chr_ai.tmpl.time) + dltTime;
 			chr.chr_ai.tmpl.time = time;
 			if (time > 1.0)
 			{
 				GetCharacterPos(chr, &locx, &locy, &locz);
-				if (locx == stf(chr.checkMove.locx) && locy == stf(chr.checkMove.locy) && locz == stf(chr.checkMove.locz))
+				if (locx == float(chr.checkMove.locx) && locy == float(chr.checkMove.locy) && locz == float(chr.checkMove.locz))
 				{
 					ChangeCharacterAddressGroup(chr, chr.location, "reload", "gate");
 					LAi_tmpl_goto_Complite(chr);
@@ -88,7 +88,7 @@ void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
 		}
 		if (chr.chr_ai.tmpl.state == "stay")
 		{
-			time = stf(chr.chr_ai.tmpl.wait) + dltTime;
+			time = float(chr.chr_ai.tmpl.wait) + dltTime;
 			chr.chr_ai.tmpl.wait = time;
 			if (time > 40)
 			{
@@ -100,12 +100,12 @@ void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
 			}
 		}
 		//--> проверяем не врагов, но дерущихся. 
-		if (stf(chr.chr_ai.type.checkFight) < 0.0)
+		if (float(chr.chr_ai.type.checkFight) < 0.0)
 		{
 			int num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, false, true);				
 			for(int i = 0; i < num; i++)
 			{
-				int idx = sti(chrFindNearCharacters[i].index);
+				int idx = int(chrFindNearCharacters[i].index);
 				ref by = &Characters[idx];
 				chr.chr_ai.type.checkFight = 4.0;
 				if (by.chr_ai.tmpl == LAI_TMPL_FIGHT)
@@ -124,16 +124,16 @@ void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
 		}
 		else 
 		{
-			chr.chr_ai.type.checkFight = stf(chr.chr_ai.type.checkFight) - dltTime;
+			chr.chr_ai.type.checkFight = float(chr.chr_ai.type.checkFight) - dltTime;
 		}
 		//<-- проверяем не врагов, но дерущихся.
 	}
 	//не должно быть, но мало ли..
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
 	{
-		time = stf(chr.chr_ai.tmpl.wait) + dltTime;
+		time = float(chr.chr_ai.tmpl.wait) + dltTime;
 		chr.chr_ai.tmpl.wait = time;
-		if (time > stf(chr.firstLoc.timer))
+		if (time > float(chr.firstLoc.timer))
 		{
 			ChangeCharacterAddressGroup(chr, chr.location, "reload", chr.firstLoc);
 			LAi_tmpl_goto_InitTemplate(chr);
@@ -143,42 +143,42 @@ void LAi_type_carrier_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_carrier_CharacterLogin(aref chr)
+bool LAi_type_carrier_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_carrier_CharacterLogoff(aref chr)
+bool LAi_type_carrier_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_carrier_TemplateComplite(aref chr, string tmpl)
+void LAi_type_carrier_TemplateComplite(ref chr, string tmpl)
 {
 
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_carrier_NeedDialog(aref chr, aref by)
+void LAi_type_carrier_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_carrier_CanDialog(aref chr, aref by)
+bool LAi_type_carrier_CanDialog(ref chr, ref by)
 {
 	return false;
 }
 
 //Начать диалог
-void LAi_type_carrier_StartDialog(aref chr, aref by)
+void LAi_type_carrier_StartDialog(ref chr, ref by)
 {
 
 }
 
 //Закончить диалог
-void LAi_type_carrier_EndDialog(aref chr, aref by)
+void LAi_type_carrier_EndDialog(ref chr, ref by)
 {
 
 }
@@ -191,13 +191,13 @@ void LAi_type_carrier_Fire(aref attack, aref enemy, float kDist, bool isFindedEn
 
 
 //Персонаж атакован
-void LAi_type_carrier_Attacked(aref chr, aref by)
+void LAi_type_carrier_Attacked(ref chr, ref by)
 {
 
 }
 
 
-int LAi_type_carrier_FindNearEnemy(aref chr)
+int LAi_type_carrier_FindNearEnemy(ref chr)
 {
 	if(LAi_grp_alarmactive == true)
 	{
@@ -210,14 +210,14 @@ int LAi_type_carrier_FindNearEnemy(aref chr)
 		int cnt = 0;
 		for(int i = 0; i < num; i++)
 		{
-			int idx = sti(chrFindNearCharacters[i].index);
+			int idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
 	return -1;
 }
 
-void LAi_type_carrier_GoTo(aref chr)
+void LAi_type_carrier_GoTo(ref chr)
 {
 	if (!LAi_grp_alarmactive)
 	{
@@ -237,7 +237,7 @@ void LAi_type_carrier_GoTo(aref chr)
 	}
 }
 
-string LAi_type_carrier_SetPath(aref chr)
+string LAi_type_carrier_SetPath(ref chr)
 {
 	//определим маршрут
 	string locReload[7] = {"reload4", "reload5", "reload6", "reload7", "reload8", "reload10", "reload9"};

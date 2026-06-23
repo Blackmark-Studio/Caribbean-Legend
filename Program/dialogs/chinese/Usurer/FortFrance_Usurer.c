@@ -67,7 +67,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_2":
 			dialog.text = "确切地说是一万零四百五十比索, 先生。 所以他的自由标价为这个数额。 你愿意付给我吗? 我有点惊讶... ";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "别惊讶。 给你钱。 ";
 				link.l1.go = "Sharlie_3";
@@ -214,7 +214,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_repeat":
 			dialog.text = "那么, 你准备好偿还他的债务了吗? ";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "是的。 给你钱。 ";
 				link.l1.go = "Sharlie_3";

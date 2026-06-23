@@ -83,17 +83,17 @@ void ProcessDialogEvent()
 		    if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_A") 
 			{
 				// карты не было
-				dialog.text = "Capitaine ! Ne vous inquiétez pas ainsi ! Il était évident qu'il n'y avait aucun moyen de fuir en paix, alors nous avons décidé de rendre visite au banquier local pour vérifier ses coffres. Voici votre part - "+sti(pchar.questTemp.ReasonToFast.p9)+" pesos...";
+				dialog.text = "Capitaine ! Ne vous inquiétez pas ainsi ! Il était évident qu'il n'y avait aucun moyen de fuir en paix, alors nous avons décidé de rendre visite au banquier local pour vérifier ses coffres. Voici votre part - "+int(pchar.questTemp.ReasonToFast.p9)+" pesos...";
 			}
 			if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_B")
 			{
 				// карту отобрали
 				GiveItem2Character(pchar, pchar.questTemp.ReasonToFast.p6);
-				dialog.text = "Capitaine ! Ne vous inquiétez pas ainsi ! Il était évident qu'il n'y avait aucun moyen de fuir en paix, alors nous avons décidé de rendre visite au banquier local et de vérifier ses coffres. Il y avait aussi une belle épée dans la boîte de prêt. Voici votre part - "+sti(pchar.questTemp.ReasonToFast.p9)+" pesos et une épée...";
+				dialog.text = "Capitaine ! Ne vous inquiétez pas ainsi ! Il était évident qu'il n'y avait aucun moyen de fuir en paix, alors nous avons décidé de rendre visite au banquier local et de vérifier ses coffres. Il y avait aussi une belle épée dans la boîte de prêt. Voici votre part - "+int(pchar.questTemp.ReasonToFast.p9)+" pesos et une épée...";
 			}		
 			link.l1 = "Bien joué les gars ! Bien joué ! Je suis fier de vous.";
 			link.l1.go = "On_MyShip_Deck_End";
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.ReasonToFast.p9));			
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.ReasonToFast.p9));
 			pchar.Ship.Crew.Morale = MORALE_MAX;
 			chrDisableReloadToLocation = false; // Откроем выход
 			AddQuestRecord("ReasonToFast", "17");		
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 			LAi_SetCitizenType(NPChar); // Чтоб по палубе ходил
 			
 			NPChar = GetRealShip(GetCharacterShipType(CharacterFromID("MaryCelesteCapitan")));
-			NPChar.TurnRate = sti(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
+			NPChar.TurnRate = int(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
 			
 			chrDisableReloadToLocation = false; // Откроем выход
 			

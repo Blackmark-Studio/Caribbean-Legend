@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1 = "location";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l1.location = "Shore53";
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2 = "Timer";
-				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = sti(GetTime());
+				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.hour  = int(GetTime());
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.day   = GetAddingDataDay(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.month = GetAddingDataMonth(0, 0, 3);
 				pchar.quest.Saga_MinePrepareAttack.win_condition.l2.date.year  = GetAddingDataYear(0, 0, 3);
@@ -1063,12 +1063,12 @@ void ProcessDialogEvent()
 		case "saga_55":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "I knew it. How much did he have in his hold?";
-			link.l1 = "I have found "+FindRussianQtyString(sti(npchar.quest.bakaut))+" on the 'Oyster'.";
+			link.l1 = "I have found "+FindRussianQtyString(int(npchar.quest.bakaut))+" on the 'Oyster'.";
 			link.l1.go = "saga_56";
 		break;
 		
 		case "saga_56":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp > 100)
 			{
 				dialog.text = "Whoa! I've never had that much in my warehouse. Look who has got his own happy hands on a fortune. Thank you, "+pchar.name+", you never let me down. I'll sell the goods right away, we've already got a buyer. I'll have the money for you tomorrow.";
@@ -1112,11 +1112,11 @@ void ProcessDialogEvent()
 		case "saga_oust":
 			if (CheckAttribute(npchar, "quest.bakaut"))
 			{
-				if (sti(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
+				if (int(npchar.quest.bakaut) < 20) DeleteAttribute(npchar, "quest.bakaut");
 				else 
 				{
 					SaveCurrentNpcQuestDateParam(npchar, "bakaut_date");
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(npchar.quest.bakaut));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(npchar.quest.bakaut));
 				}
 				pchar.questTemp.Saga = "removebakaut";
 			}
@@ -1127,7 +1127,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == "Oyster") iUst = 1;
 				}
 			} // есть ли у нас Устрица
 			dialog.text = "Wait! Did you capture the 'Oyster'?";
@@ -1162,10 +1162,10 @@ void ProcessDialogEvent()
 		
 		case "saga_57":
 			int idlt;
-			iTemp = sti(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
+			iTemp = int(npchar.quest.bakaut)*30; // Ян за 1 шт бакаута даёт 30 дублонов
 			if (iTemp > 1600)
 			{
-				idlt = makeint(iTemp-1500)/2; // доля Бонса :)
+				idlt = int(iTemp-1500)/2; // доля Бонса :)
 				dialog.text = "I received "+iTemp+" coins for it. One thousand five hundred is for the lawyer, plus your share of the doubloons - "+idlt+". Here you go.";
 				link.l1 = "Commendable! Now I can easily set off for Loxley.";
 				link.l1.go = "saga_58";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		case "saga_60":
 			dialog.text = "Whoa! My buyers pay less...";
-			link.l1 = "Overall, I've got two thousand gold for Loxley and "+sti(npchar.quest.bakaut_sum)*2+" doubloons on top of that.";
+			link.l1 = "Overall, I've got two thousand gold for Loxley and "+int(npchar.quest.bakaut_sum)*2+" doubloons on top of that.";
 			link.l1.go = "saga_61";
 		break;
 		
@@ -1208,8 +1208,8 @@ void ProcessDialogEvent()
 			dialog.text = "Very well. Then we'll split it down the middle.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "Here you go. I've got "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "Here you go. I've got "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1224,8 +1224,8 @@ void ProcessDialogEvent()
 			dialog.text = "Jolly good. How much did you bring?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
-				link.l1 = "Here you go. I've got "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
+				npchar.quest.bakaut_pay = func_min(int(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
+				link.l1 = "Here you go. I've got "+FindRussianQtyString(int(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
 			else
@@ -1237,15 +1237,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_pay": // оплата
-			if (sti(npchar.quest.bakaut_sum) < sti(npchar.quest.bakaut_pay)) // полная сумма
+			if (int(npchar.quest.bakaut_sum) < int(npchar.quest.bakaut_pay)) // полная сумма
 			{
-				npchar.quest.bakaut_pay = sti(npchar.quest.bakaut_sum);
+				npchar.quest.bakaut_pay = int(npchar.quest.bakaut_sum);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
+			else iTemp = int(npchar.quest.bakaut_sum)-int(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
-			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.bakaut_pay));
+			Log_Info("You have given "+int(npchar.quest.bakaut_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -1255,7 +1255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Great. Will you bring the rest "+FindRussianQtyString(sti(npchar.quest.bakaut_sum))+" doubloons later?";
+				dialog.text = "Great. Will you bring the rest "+FindRussianQtyString(int(npchar.quest.bakaut_sum))+" doubloons later?";
 				link.l1 = "Yes. I just couldn't carry such a large heap of gold all in one go.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "bakaut_pay_wait";
@@ -1646,12 +1646,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && !CheckAttribute(pchar, "questTemp.SvensonBakautBlock")) // увеличить объём поставок бакаута
 			{
 				link.l4 = "Jan, would it be possible to increase the size of the ironwood shipments?";
 				link.l4.go = "UpgradeBakaut";
 			}
-			if(sti(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
+			if(int(pchar.questTemp.SvensonBakaut) >= 1 && CheckAttribute(pchar, "questTemp.SvensonBakautPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок бакаута, если в первый раз не принесли
 			{
 				link.l4 = "Jan, I've gathered three thousand gold coins. Here, you can present this gift to our parasites. I suppose they'll have a happy day today.";
 				link.l4.go = "UpgradeBakaut_Agreed";

@@ -64,7 +64,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, "SentJons_prison", "goto", "goto9");
 			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Killer", "sold_eng_10", "man", "man", sti(pchar.rank), PIRATE, -1, false, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Killer", "sold_eng_10", "man", "man", int(pchar.rank), PIRATE, -1, false, "quest"));
 			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 			sld.dialog.currentnode = "DTSG_Killer";
 			LAi_SetStayType(sld);

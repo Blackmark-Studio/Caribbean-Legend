@@ -25,7 +25,7 @@ void InitInterface(string iniName)
 
     CalculateInfoData();
     
-	SetEventHandler("InterfaceBreak","ProcessBreakExit",0)
+	SetEventHandler("InterfaceBreak","ProcessBreakExit",0);
 	SetEventHandler("exitCancel","ProcessCancelExit",0);
 	SetEventHandler("ievnt_command","ProcCommand",0);
 	SetEventHandler("evntDoPostExit","DoPostExit",0);
@@ -94,7 +94,7 @@ void ExecuteSailorPayment()
 	Statistic_AddValue(GetMainCharacter(), "PartitionPay", nPaymentQ);
 	ChangeCharacterComplexReputation(pchar,"authority", 1);
 	DeleteAttribute(GetMainCharacter(),"CrewPayment");
-	if(nPaymentQ >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, makefloat(nPaymentQ) / 3000.0);
+	if(nPaymentQ >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, float(nPaymentQ) / 3000.0);
 	pchar.paymentdate = GetDateString() + " " + GetTimeString();
 }
 
@@ -118,7 +118,7 @@ void SkipSailorPayment()
 			AddCrewMorale(chref, -nMoraleDecreaseQ, i==0);
 			if (i > 0 && CheckAttribute(chref, "loyality") && !CheckAttribute(chref, "OfficerWantToGo.DontGo") && !IsEquipCharacterByArtefact(chref, "totem_04"))
 			{
-			    chref.loyality = makeint(chref.loyality) - 1;
+			    chref.loyality = int(chref.loyality) - 1;
 			}
 		}
 	}
@@ -131,7 +131,7 @@ void SkipSailorPayment()
             chref = &Characters[iPassenger];
 			if (CheckAttribute(chref, "loyality") && !CheckAttribute(chref, "OfficerWantToGo.DontGo") && !IsEquipCharacterByArtefact(chref, "totem_04"))
 			{
-    			chref.loyality = makeint(chref.loyality) - 1;
+    			chref.loyality = int(chref.loyality) - 1;
 			}
 		}
 	}
@@ -166,7 +166,7 @@ void CalculateInfoData()
 	nPaymentQ = 0;
 	if( CheckAttribute(mchref,"CrewPayment") )
     {
-		nPaymentQ += makeint(mchref.CrewPayment); // а тут помним все до копейки!
+		nPaymentQ += int(mchref.CrewPayment); // а тут помним все до копейки!
 	}
 	
 	nMoraleDecreaseQ = 40-nLeaderShip;
@@ -175,7 +175,7 @@ void CalculateInfoData()
 
 	//CreateString(true,"payment",""+nPaymentQ,FONT_NORMAL,COLOR_NORMAL,320,390,SCRIPT_ALIGN_CENTER,1.0);
     SetFormatedText("INFO_TEXT3",MakeMoneyShow(nPaymentQ, MONEY_SIGN,MONEY_DELIVER));
-	if( sti(mchref.Money) < nPaymentQ )
+	if( int(mchref.Money) < nPaymentQ )
 	{
 		SetSelectable("B_OK",false);
 		SetCurrentNode("B_CANCEL");

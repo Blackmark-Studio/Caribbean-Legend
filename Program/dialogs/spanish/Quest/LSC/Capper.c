@@ -200,12 +200,6 @@ void ProcessDialogEvent()
 		AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
-	case "Aeva_attack_2":
-		dialog.text = "... esto va a ser una maldita bebida. Ese maldito irlandés ha estado soñando con este whisky durante mucho tiempo, así que se lo tragará todo en un segundo. ¿Dónde está el arsénico? Echa más, solo para estar seguro... Y luego nuestro amigo Fazio entregará este barril al almirante como un regalo de los Narvales, ¡ja-ja! ¿Tengo razón, querido Giuseppe? ¿Quieres vivir?\n¡Argh! ¡Mira, tenemos invitados! ¿Qué quieres, imbécil? ¡Lárgate antes de que te clavemos en el suelo!";
-		link.l1 = "Tu plan ha fallado, Kapper. Estaba siguiendo tus pasos y sé lo que tú y tu compinche Cíclope van a hacer. ¡Tira el arsénico! ¡No envenenarás a Shark!";
-		link.l1.go = "Aeva_attack_3";
-		break;
-
 	case "Aeva_attack_3":
 		dialog.text = "¡Ah, sabueso! ¡Bueno, entonces tú mueres primero! ¡Muchachos, a las armas!";
 		link.l1 = "...";

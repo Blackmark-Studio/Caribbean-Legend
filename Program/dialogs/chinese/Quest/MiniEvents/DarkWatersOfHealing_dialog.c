@@ -650,7 +650,7 @@ void ProcessDialogEvent()
 			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.DWH_QuestCompleted = true;
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1;
+			pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1;
 			
 			AddSimpleRumourCity("你听说了吗? "+GetFullName(pchar)+"为托马斯.莫里森的女儿弄到了一种药物, 奇迹般地恢复了这个可怜女孩的健康! ", "SentJons", 10, 1, "");
 			AddSimpleRumourCity("托马斯.莫里森每天在教区为"+GetFullName(pchar)+"的健康点蜡烛。 据说多亏了他 (她) 的努力, 托马斯的女儿才从长期疾病中康复。 ", "SentJons", 10, 1, "");

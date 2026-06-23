@@ -77,8 +77,8 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	switch(AffairOfHonor_GetCurQuest())
 	{
 		case "Cavalier":
-			modelFirst = GetRandQuestSoldierModel(sti(sld.nation));
-			modelSecond = GetRandQuestSoldierModel(sti(sld.nation));
+			modelFirst = GetRandQuestSoldierModel(int(sld.nation));
+			modelSecond = GetRandQuestSoldierModel(int(sld.nation));
 		break;
 		
 		case "HonorSlave":
@@ -107,8 +107,8 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 		break;
 		
 		case "CoatHonor":
-			modelFirst = GetRandQuestSoldierModel(sti(sld.nation));
-			modelSecond = GetRandQuestSoldierModel(sti(sld.nation));
+			modelFirst = GetRandQuestSoldierModel(int(sld.nation));
+			modelSecond = GetRandQuestSoldierModel(int(sld.nation));
 		break;
 		
 		case "GodJudgement":
@@ -122,7 +122,7 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	sld.protector = true; // Начать диалог.
 	sld.SpecialRole = "duelist";
 	sld.Dialog.CurrentNode = "AffairOfHonor_BeforeFight_1";
-	if(sti(pchar.rank) < 12)
+	if(int(pchar.rank) < 12)
 	{
 		GiveItem2Character(sld, "hat1");
 	}
@@ -135,16 +135,16 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	LAi_CharacterEnableDialog(sld);
 	LAi_RemoveLoginTime(sld);
 	
-	int Rank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
-	sld = GetCharacter(NPC_GenerateCharacter("AffairOfHonor_Helper_1", modelFirst, "man", "man", Rank, sti(sld.nation), -1, true, "soldier"));
+	int Rank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+	sld = GetCharacter(NPC_GenerateCharacter("AffairOfHonor_Helper_1", modelFirst, "man", "man", Rank, int(sld.nation), -1, true, "soldier"));
 	SetFantomParamFromRank(sld, Rank, true);
 	ChangeCharacterAddressGroup(sld, PChar.QuestTemp.AffairOfHonor.LighthouseId, "goto", "goto22");
 	LAi_SetActorType(sld);
 	LAi_ActorTurnToLocator(sld, "goto", "goto19");
 	LAi_SetImmortal(sld, true);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("AffairOfHonor_Helper_2", modelSecond, "man", "man", sti(PChar.rank) + rand(5), sti(sld.nation), -1, true, "soldier"));
-	SetFantomParamFromRank(sld, sti(PChar.rank) + rand(5), true);
+	sld = GetCharacter(NPC_GenerateCharacter("AffairOfHonor_Helper_2", modelSecond, "man", "man", int(PChar.rank) + rand(5), int(sld.nation), -1, true, "soldier"));
+	SetFantomParamFromRank(sld, int(PChar.rank) + rand(5), true);
 	ChangeCharacterAddressGroup(sld, PChar.QuestTemp.AffairOfHonor.LighthouseId, "goto", "goto23");
 	LAi_SetActorType(sld);
 	LAi_ActorTurnToCharacter(sld, PChar);
@@ -304,7 +304,7 @@ void AffairOfHonor_KillChar(string _quest)
 	sld.Dialog.CurrentNode = "AffairOfHonor_AfterFight_1";
 	LAi_ActorDialog(sld, PChar, "", -1, 5);
 	
-	PChar.QuestTemp.AffairOfHonor.FinishCount = sti(PChar.QuestTemp.AffairOfHonor.FinishCount) + 1;
+	PChar.QuestTemp.AffairOfHonor.FinishCount = int(PChar.QuestTemp.AffairOfHonor.FinishCount) + 1;
 	Achievment_SetStat(120, 1);
 	
 	DisableAllExits(false);

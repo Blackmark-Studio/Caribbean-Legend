@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Seninle konuşmak istemiyorum. Masum sivillere sebepsiz yere saldırıyor ve onları kavgaya kışkırtıyorsun. Hoşça kal!";
 				link.l1 = "Hm...";

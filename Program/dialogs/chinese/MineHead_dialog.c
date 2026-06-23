@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -27,7 +26,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
 				dialog.text = "矿场里有敌人! 警报! ";
 				link.l1 = "啊哈, 魔鬼! ";
@@ -67,9 +66,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // 每天增加1点需求
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // 需求最大值
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // 每天增加1点需求
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // 需求最大值
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "先生, 不幸的是, 目前我们不需要更多的奴隶了。 但情况随时可能改变, 所以过几周或其他时间再来看看。 ";
 				link.l1 = "好的, 先生, 我明白。 你现在不需要, 但将来可能需要。 ";
@@ -110,7 +109,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "先生, 我没时间开愚蠢的玩笑。 如果你想开玩笑, 就去酒馆! ";
@@ -125,9 +124,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "不幸的是, 先生, 目前我们不需要那么多奴隶。 矿场目前需要"+FindRussianQtyString(sti(location.quest.slaves.qty))+"。 你要卖那么多吗? ";
+				dialog.text = "不幸的是, 先生, 目前我们不需要那么多奴隶。 矿场目前需要"+FindRussianQtyString(int(location.quest.slaves.qty))+"。 你要卖那么多吗? ";
 				link.l1 = "是的, 当然! ";
 				link.l1.go = "slaves_max";
 				link.l2 = "嗯... 我想不卖了。 ";
@@ -140,7 +139,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "太好了。 请下令把他们带到城门。 我会派我的人去接他们。 ";
 			link.l1 = "别担心, 先生。 你的奴隶会及时送到的。 我马上就下达所有相关命令。 ";
 			link.l1.go = "slaves_calk";
@@ -157,7 +156,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

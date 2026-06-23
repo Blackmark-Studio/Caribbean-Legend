@@ -39,7 +39,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 
 	case "let_s_duel":
 		//проверка на начатые дуэли.
-		if (CheckAttribute(PChar, "questTemp.duel.Start") && sti(PChar.questTemp.duel.Start))
+		if (CheckAttribute(PChar, "questTemp.duel.Start") && int(PChar.questTemp.duel.Start))
 		{
 			Dialog.Text = "Erst regelst du deine Angelegenheiten mit anderen, und dann werden wir reden.";
 			if (PChar.questTemp.duel.enemy == NPChar.id)
@@ -71,7 +71,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		Dialog.Text = RandPhraseSimple("Das Duell, sagst du? Das ist mir recht. Schwerter und Pistolen werden unsere Waffen sein.","Kannst du überhaupt ein Schwert halten?");
 		link.l1 = RandPhraseSimple("Du wirst auf deinen Knien um Gnade betteln.","Ich werde dich mit meinen bloßen Händen würgen, du Schurke!");
 		link.l1.go = "land_duel";
-		if (sti(pchar.Ship.Type) != SHIP_NOTUSED && sti(NPChar.Ship.Type) != SHIP_NOTUSED)
+		if (int(pchar.Ship.Type) != SHIP_NOTUSED && int(NPChar.Ship.Type) != SHIP_NOTUSED)
 		{
 			Dialog.Text = RandPhraseSimple(Dialog.Text+"Oder wir können auslaufen und sehen, wer wer ist!","Das Duell?!! Ha, ich zermalme dich wie ein Insekt! Wähle, wie du sterben möchtest!");
 			link.l2 = RandPhraseSimple("Auf See bin ich der Beste da draußen.","Mein Schiff wird deine alte Kiste leicht versenken!");
@@ -103,7 +103,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		iHour = 1 + rand(2);
 		if (GetTime() > 4.0 && GetTime() < 17.0)
 		{
-//			iHour = MakeInt(18.0 - GetTime()) + rand(2); //раскоментировать для дуэлей только по ночам
+//			iHour = int(18.0 - GetTime()) + rand(2); //раскоментировать для дуэлей только по ночам
 		}
 		pchar.questTemp.Duel.WaitTime = iHour;
 		Dialog.Text = RandSwear()+RandPhraseSimple("Zieh Stahl, und lass uns sehen, welche Farbe dein Blut hat!","Nun, wenn du einen Todeswunsch hast...");
@@ -155,7 +155,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.duel_move_opponent2place.win_condition.l1.location = pchar.questTemp.duel.place;
 			pchar.quest.duel_move_opponent2place.function = "Duel_Move_Opponent2Place";
 			//на случай, если не дождется, часа вполне достаточно
-			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, sti(GetTime() + 0.5) + sti(pchar.questTemp.Duel.WaitTime) + 1, false);
+			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, int(GetTime() + 0.5) + int(pchar.questTemp.Duel.WaitTime) + 1, false);
 			pchar.quest.duel_move_opponentBack.function = "Duel_Move_OpponentBack";
 			if (CheckAttribute(NPChar, "CityType"))
 			{
@@ -164,7 +164,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 				if (!CheckAttribute(NPChar, "PGGAi")) 
 				{
 					if (!CheckAttribute(NPChar, "LifeDay")) npchar.LifeDay = 0;
-					npchar.LifeDay = sti(npchar.LifeDay) + 3; // чтоб до дуэли не помер
+					npchar.LifeDay = int(npchar.LifeDay) + 3; // чтоб до дуэли не помер
 				}
     		}
 		}

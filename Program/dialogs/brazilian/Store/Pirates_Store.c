@@ -47,16 +47,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "mtraxx_1":
-			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
+			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
             dialog.text = "Neste momento um "+sTemp+", o navio holandês chamado 'Rosbohom', está chegando às nossas águas acompanhado por um navio de escolta. Ela está carregada de ébano e partiu de Willemstad para encontrar outra escolta e garantir uma viagem segura até a Europa. Não sei qual rota ela vai seguir, se por Sint Maarten ou por Espanyol, mas sei as coordenadas do ponto de encontro deles\nSua missão é encontrar o navio holandês lá, abordar o mercante e trazer a carga para mim. Pagarei assim que a carga for entregue.";
 			link.l1 = "Entendi. Hora e local?";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-			int i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-			int n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
-            dialog.text = ""+sti(pchar.questTemp.Mtraxx.Crdn.degN)+" "+i+" Norte e "+sti(pchar.questTemp.Mtraxx.Crdn.degW)+" "+n+"Oeste. Deve estar em algum lugar ao sul ou sudoeste da Isla Tesoro. Não sou bom nisso, não sou marinheiro, mas você é. Você tem cerca de cinco dias para concluir o trabalho.";
+			int i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+			int n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+            dialog.text = ""+int(pchar.questTemp.Mtraxx.Crdn.degN)+" "+i+" Norte e "+int(pchar.questTemp.Mtraxx.Crdn.degW)+" "+n+"Oeste. Deve estar em algum lugar ao sul ou sudoeste da Isla Tesoro. Não sou bom nisso, não sou marinheiro, mas você é. Você tem cerca de cinco dias para concluir o trabalho.";
 			link.l1 = "Entendido... Já saquei. Então, sem perder tempo!";
 			link.l1.go = "mtraxx_3";
 		break;
@@ -70,13 +70,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "mtraxx_4":
            DialogExit();
 		   pchar.questTemp.Mtraxx = "pasq_convoy";
-		   i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-           n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+		   i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+           n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
 		   AddQuestRecord("Roger_4", "3");
-		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
-		   AddQuestUserData("Roger_4", "sdegN", sti(pchar.questTemp.Mtraxx.Crdn.degN));
+		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
+		   AddQuestUserData("Roger_4", "sdegN", int(pchar.questTemp.Mtraxx.Crdn.degN));
 		   AddQuestUserData("Roger_4", "sminN", i);
-		   AddQuestUserData("Roger_4", "sdegW", sti(pchar.questTemp.Mtraxx.Crdn.degW));
+		   AddQuestUserData("Roger_4", "sdegW", int(pchar.questTemp.Mtraxx.Crdn.degW));
 		   AddQuestUserData("Roger_4", "sminW", n);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeTimeConvoy", 0, 0, 6, false);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeConvoyOver", 0, 0, 7, false);
@@ -91,16 +91,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < makeint(sti(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
+			if (iTotalTemp < int(int(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
 			{
 				dialog.text = "Está brincando comigo, rapaz? Seu porão de carga só tem uns fiapos de ébano! Isso é um absurdo, uma enganação! Saia daqui! Vou avisar o Marcus sobre isso! Fora!!!";
 				link.l1 = "Hm...";
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < sti(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
+			if (iTotalTemp < int(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
 			{
-				dialog.text = "O Rosbohom tinha pelo menos "+FindRussianQtyString(sti(pchar.questTemp.Mtraxx.Crdn.Ebony))+" de ébano. Por que você trouxe menos?";
+				dialog.text = "O Rosbohom tinha pelo menos "+FindRussianQtyString(int(pchar.questTemp.Mtraxx.Crdn.Ebony))+" de ébano. Por que você trouxe menos?";
 				link.l1 = "Bem... sabe, tive que me livrar de parte dela durante a briga. E ainda tem os ratos, malditos...";
 				link.l1.go = "mtraxx_7";
 				break;

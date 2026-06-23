@@ -49,7 +49,7 @@ void ProcessDialogEvent()
                     break;
                 }
                 bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-                if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)// 修士乘客
+                if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && 7-int(RealShips[int(Pchar.Ship.Type)].Class) < 3)// 修士乘客
                 {
                     dialog.text = "日安, 我的孩子。 我想请你帮个忙, 当然我会付钱。 ";
                     link.l1 = "我在听, 神父。 你需要什么? ";
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
                     DeleteAttribute(npchar, "talker"); // 移除对话标记
                     break;
                 }
-                if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))// 船载牧师
+                if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))// 船载牧师
                 {
                     dialog.text = "问候你, 我的孩子。 我猜你是船长, 所以我有个提议给你。 ";
                     link.l1 = "我在听, 神父。 ";
@@ -74,12 +74,12 @@ void ProcessDialogEvent()
                 link.l1.go = "check";// 检查可能的任务发放
                 link.l2 = RandPhraseSimple("我有个问题问你, 神父。 ", "我需要信息。 ");
                 link.l2.go = "quests";// (转发到城市文件)
-                if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
+                if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
                 {
                     link.l3 = "神父, 我船上有人。 他们是奴隶, 既有基督徒也有未受洗的异教徒。 我希望你为异教徒施洗, 并为基督徒主持圣餐。 之后, 为了上帝和教会的荣耀, 我会释放他们所有人。 ";
                     link.l3.go = "slaves";
                 }
-                if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+                if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
                 {
                     link.l4 = "神父, 我希望你为我的船祝福, 并为我的船员主持弥撒。 这需要多少钱? ";
                     link.l4.go = "shipshine";
@@ -96,12 +96,12 @@ void ProcessDialogEvent()
                 link.l1.go = "check";// 检查可能的任务发放
                 link.l2 = RandPhraseSimple("我有个问题问你, 神父。 ", "我需要信息。 ");
                 link.l2.go = "quests";// (转发到城市文件)
-                if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
+                if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
                 {
                     link.l3 = "神父, 我船上有人。 他们是奴隶, 既有基督徒也有未受洗的异教徒。 我希望你为异教徒施洗, 并为基督徒主持圣餐。 之后, 为了上帝和教会的荣耀, 我会释放他们所有人。 ";
                     link.l3.go = "slaves";
                 }
-                if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+                if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
                 {
                     link.l4 = "神父, 我希望你为我的船祝福, 并为我的船员主持弥撒。 这需要多少钱? ";
                     link.l4.go = "shipshine";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
         break;
         
         case "check":
-            if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) // 教会急件
+            if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) // 教会急件
             {
                 pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
                 pchar.GenQuest.Monkletter.StartCity = npchar.city;// 任务发放城市
@@ -125,11 +125,11 @@ void ProcessDialogEvent()
                 npchar.quest.monkletter = "true";
                 break;
             }
-            if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && sti(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) // 运送祈祷书
+            if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && int(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) // 运送祈祷书
             {
                 pchar.GenQuest.Churchbooks.StartCity = npchar.city;// 任务发放城市
                 pchar.GenQuest.Churchbooks.Nation = npchar.nation;
-                dialog.text = "我的孩子, 你愿意帮我处理一件紧急的事情吗? 我们的教堂缺少圣经和祈祷书, 这些是我们提供给所有需要的人的。 \n你能航行到" + NationNameGenitive(sti(npchar.nation)) + "最近的殖民地, 从当地教堂取一些圣经和祈祷书并带到这里来吗? 请尽量在一个月内完成, 我们剩下的不多了。 ";
+                dialog.text = "我的孩子, 你愿意帮我处理一件紧急的事情吗? 我们的教堂缺少圣经和祈祷书, 这些是我们提供给所有需要的人的。 \n你能航行到" + NationNameGenitive(int(npchar.nation)) + "最近的殖民地, 从当地教堂取一些圣经和祈祷书并带到这里来吗? 请尽量在一个月内完成, 我们剩下的不多了。 ";
                 link.l1 = "我很乐意帮助你的教堂。 我可以从任何牧师那里得到这些书吗? ";
                 link.l1.go = "Churchbooks";
                 link.l2 = "我很乐意这么做, 神父, 但我现在不能。 ";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
         break;
         
         case "donation_rate_1":// 没有额外奖励
-            if (sti(pchar.money) >= 100)
+            if (int(pchar.money) >= 100)
             {
                 AddMoneyToCharacter(pchar, -100);
                 dialog.text = "感谢你的硬币, 我的孩子! 它们将用于正当的事业! ";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
         break;
         
         case "donation_rate_2":
-            if (sti(pchar.money) >= 1000)
+            if (int(pchar.money) >= 1000)
             {
                 AddMoneyToCharacter(pchar, -1000);
                 dialog.text = "我感谢你, 我的孩子。 这笔钱将真正帮助我们的教区使命。 愿你蒙福! ";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
         break;
         
         case "donation_rate_3":
-            if (sti(pchar.money) >= 5000)
+            if (int(pchar.money) >= 5000)
             {
                 AddMoneyToCharacter(pchar, -5000);
                 dialog.text = "我甚至无法想象你会如此慷慨, 我的孩子! 我会在给主教的下一封信中提到你, 我们每天都会为你祈祷! 我祝福你, 并感激地接受你的钱! ";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
                 AddCharacterExpToSkill(pchar, "Leadership", 40);
                 AddCrewMorale(pchar, 3);
                 ChangeCharacterComplexReputation(pchar, "nobility", 1);
-                ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 1);
+                ChangeCharacterNationReputation(pchar, int(npchar.Nation), 1);
             }
             else
             {
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
         break;
         
         case "donation_rate_4":
-            if (sti(pchar.money) >= 10000)
+            if (int(pchar.money) >= 10000)
             {
                 AddMoneyToCharacter(pchar, -10000);
                 dialog.text = "什么... 我没听错吧? 你真的要捐赠一万比索! ? 我祝福你, 并感激地接受你的钱。 我会在给主教的下一封信中提到你, 我们每天都会为你祈祷! 这对教会是巨大的帮助! ";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
                 AddCharacterExpToSkill(pchar, "Leadership", 60);
                 AddCrewMorale(pchar, 5);
                 ChangeCharacterComplexReputation(pchar, "nobility", 1);
-                ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 2);
+                ChangeCharacterNationReputation(pchar, int(npchar.Nation), 2);
                 ChangeCrewExp(pchar, "Sailors", 5);
                 ChangeCrewExp(pchar, "Cannoners", 5);
                 ChangeCrewExp(pchar, "Soldiers", 5);
@@ -295,19 +295,19 @@ void ProcessDialogEvent()
                 break;
                 case 2:
                     sTemp = "我的舰队中有两艘船, 最大的一艘是" + iTemp + "级。 ";
-                    pchar.GenQuest.Shipshine.Money = makeint(1.8 * (5000 * (7 - iTemp)));
+                    pchar.GenQuest.Shipshine.Money = int(1.8 * (5000 * (7 - iTemp)));
                 break;
                 case 3:
                     sTemp = "我的舰队中有三艘船, 最大的一艘是" + iTemp + "级。 ";
-                    pchar.GenQuest.Shipshine.Money = makeint(2.6 * (5000 * (7 - iTemp)));
+                    pchar.GenQuest.Shipshine.Money = int(2.6 * (5000 * (7 - iTemp)));
                 break;
                 case 4:
                     sTemp = "我的舰队中有四艘船, 最大的一艘是" + iTemp + "级。 ";
-                    pchar.GenQuest.Shipshine.Money = makeint(3.4 * (5000 * (7 - iTemp)));
+                    pchar.GenQuest.Shipshine.Money = int(3.4 * (5000 * (7 - iTemp)));
                 break;
                 case 5:
                     sTemp = "我的舰队中有五艘船, 最大的一艘是" + iTemp + "级。 ";
-                    pchar.GenQuest.Shipshine.Money = makeint(4.2 * (5000 * (7 - iTemp)));
+                    pchar.GenQuest.Shipshine.Money = int(4.2 * (5000 * (7 - iTemp)));
                 break;
             }
             dialog.text = "这取决于你舰队中船只的总数和它们的大小。 ";
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
         break;
         
         case "shipshine_1":
-            dialog.text = "这将花费你" + FindRussianMoneyString(sti(pchar.GenQuest.Shipshine.Money)) + ", 我的孩子。 ";
-            if (sti(pchar.money) >= sti(pchar.GenQuest.Shipshine.Money))
+            dialog.text = "这将花费你" + FindRussianMoneyString(int(pchar.GenQuest.Shipshine.Money)) + ", 我的孩子。 ";
+            if (int(pchar.money) >= int(pchar.GenQuest.Shipshine.Money))
             {
                 link.l1 = "我可以付这笔钱, 神父。 拿去吧。 ";
                 link.l1.go = "shipshine_2";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
         break;
         
         case "shipshine_2":
-            AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Shipshine.Money));
+            AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Shipshine.Money));
             dialog.text = "很好, 我的孩子。 让我收集圣器, 然后我们去港口。 ";
             link.l1 = "跟我来, 神父。 ";
             link.l1.go = "shipshine_3";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
         
         case "capellan_1":
             dialog.text = "这很明显。 我为你和你的船员向上帝祈祷, 每天举行弥撒, 为你的人祝福, 并在战斗前听取忏悔。 上帝的话语会给你船员的双手和精神带来力量。 你的船员将有机会定期领受圣餐和忏悔。 相信我, 处于恩典状态的水手在面对困境时会坚定不移, 而不敬虔的水手则会畏缩。 \n我对自己的要求不多: 为我的家乡教区一次性支付五万比索, 在船舱里有一个简单的铺位, 以及和你的军官一样的伙食。 就这样。 ";
-            if (sti(pchar.money) >= 50000)
+            if (int(pchar.money) >= 50000)
             {
                 link.l1 = "有趣... 你说得对, 一个好船长不仅要关心船员的身体, 还要关心他们的灵魂。 欢迎登船, 神父! ";
                 link.l1.go = "capellan_2";
@@ -420,11 +420,11 @@ void ProcessDialogEvent()
             else SetPassengerParameter("Monkpassenger", true);
             if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
             {
-                dialog.text = "我的" + GetSexPhrase("儿子", "女儿") + ", 我必须到达" + XI_ConvertString("Colony" + pchar.GenQuest.Monkpassenger.City) + ", 它在" + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City) + "Dat") + ", 行程" + FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty)) + "。 我会为此支付你" + FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money)) + "。 你觉得怎么样? ";
+                dialog.text = "我的" + GetSexPhrase("儿子", "女儿") + ", 我必须到达" + XI_ConvertString("Colony" + pchar.GenQuest.Monkpassenger.City) + ", 它在" + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City) + "Dat") + ", 行程" + FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty)) + "。 我会为此支付你" + FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money)) + "。 你觉得怎么样? ";
             }
             else
             {
-                dialog.text = "我的" + GetSexPhrase("儿子", "女儿") + ", 主的作为神秘莫测, 所以我在寻找一位可靠的船长。 你能帮我到达" + XI_ConvertString("Colony" + pchar.GenQuest.Monkpassenger.City) + "吗? 它在" + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City) + "Dat") + "。 我知道这就像前往炽热的地狱, 因为我们的敌人从不睡觉。 我知道你不是耶稣基督, 但我也不是使徒, 因此我有一些积蓄。 " + FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)) + "对你来说足够吗? ";
+                dialog.text = "我的" + GetSexPhrase("儿子", "女儿") + ", 主的作为神秘莫测, 所以我在寻找一位可靠的船长。 你能帮我到达" + XI_ConvertString("Colony" + pchar.GenQuest.Monkpassenger.City) + "吗? 它在" + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City) + "Dat") + "。 我知道这就像前往炽热的地狱, 因为我们的敌人从不睡觉。 我知道你不是耶稣基督, 但我也不是使徒, 因此我有一些积蓄。 " + FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money)) + "对你来说足够吗? ";
             }
             link.l1 = "我同意, 神父。 ";
             link.l1.go = "passenger_1";
@@ -486,15 +486,15 @@ void ProcessDialogEvent()
             AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
             AddQuestUserData(sTitle, "sName", GetFullName(npchar));
             AddQuestUserData(sTitle, "sCity", sTemp);
-            AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty)));
+            AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty)));
             AddQuestUserData(sTitle, "sSex", GetSexPhrase("", ""));
-            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money)));
-            else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money)));
+            else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money)));
             AddQuestUserData(sTitle, "sName", GetFullName(npchar));
             pchar.quest.Monkpassenger.win_condition.l1 = "location";
             pchar.quest.Monkpassenger.win_condition.l1.location = pchar.GenQuest.Monkpassenger.City + "_town";
             pchar.quest.Monkpassenger.function = "Monkpassenger_complete";
-            SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, sti(pchar.GenQuest.Monkpassenger.DaysQty), false);
+            SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, int(pchar.GenQuest.Monkpassenger.DaysQty), false);
         break;
         
         case "passenger_3":
@@ -518,9 +518,9 @@ void ProcessDialogEvent()
             if (CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
             {
                 AddCharacterExpToSkill(pchar, "Sneak", 50);
-                TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Monkpassenger.Money));
+                TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Monkpassenger.Money));
             }
-            else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Monkpassenger.Money));
+            else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Monkpassenger.Money));
             sTitle = npchar.index+"Citizpassenger";
             AddQuestRecordEx(sTitle, "Citizpassenger", "3");
             CloseQuestHeader(sTitle);
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
         break;
 
         case "Churchbooks":
-            dialog.text = "是的。 你可以在任何" + NationNameGenitive(sti(npchar.nation)) + "殖民地找到它们。 把你找到的所有书籍带给我们教堂的牧师。 愿上帝保佑你! ";
+            dialog.text = "是的。 你可以在任何" + NationNameGenitive(int(npchar.nation)) + "殖民地找到它们。 把你找到的所有书籍带给我们教堂的牧师。 愿上帝保佑你! ";
             link.l1 = "谢谢! 你很快就会收到你的书。 ";
             link.l1.go = "Churchbooks_1";
         break;
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
             DialogExit();
             ReOpenQuestHeader("Churchbooks");
             AddQuestRecord("Churchbooks", "1");
-            AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(sti(pchar.GenQuest.Churchbooks.Nation)));
+            AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(int(pchar.GenQuest.Churchbooks.Nation)));
             AddQuestUserData("Churchbooks", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity));
             SetFunctionTimerCondition("Churchbooks_Over", 0, 0, 30, false);
             pchar.GenQuest.Churchbooks = "go";

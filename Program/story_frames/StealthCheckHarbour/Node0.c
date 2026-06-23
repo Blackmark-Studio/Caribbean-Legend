@@ -25,7 +25,7 @@ void StealthCheckHarbour_Node0()
 	{
 		case "a":
 			reaction = SF_AddReaction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_COMMERCE));
-			SF_SetResult(reaction, makeint(GetSkillAfterPenalty(pchar, SKILL_COMMERCE) / 2));
+			SF_SetResult(reaction, int(GetSkillAfterPenalty(pchar, SKILL_COMMERCE) / 2));
 		break;
 		case "b":
 			reaction = SF_AddReaction("b", "", "", SF_Icon("perk", "Doctor1"));
@@ -47,13 +47,13 @@ void StealthCheckHarbour_Node0()
 			// ПРОВЕРКА. Шанс успеха 35+Харизма/2. При успехе результат 1 и +30, при провале результат 2 и -10.
 			reaction = SF_AddReaction("c", "", "", SF_Icon(SKILL_TYPE, SKILL_LEADERSHIP));
 			SF_SetChance(reaction, 35, "base");
-			SF_SetChance(reaction, makeint(GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2), SKILL_LEADERSHIP);
+			SF_SetChance(reaction, int(GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2), SKILL_LEADERSHIP);
 			SF_SetResults(reaction, -10, 30);
 		break;
 		case "b":
 			storyObject.temp.bribeCost = 5000;
 			reaction = SF_AddReaction("c", "", "", SF_Icon("perk", "basicCommerce"));
-			SF_AddCondition(&reaction, sti(pchar.money) > sti(storyObject.temp.bribeCost), SF_CONDITION_MONEY);
+			SF_AddCondition(&reaction, int(pchar.money) > int(storyObject.temp.bribeCost), SF_CONDITION_MONEY);
 			if (CheckOfficersPerkEnable("professionalCommerce")) bonus = 15;
 			else if (CheckOfficersPerkEnable("advancedCommerce")) bonus = 25;
 			else if (CheckOfficersPerkEnable("basicCommerce")) bonus = 35;
@@ -79,7 +79,7 @@ void StealthCheckHarbour_Node0()
 	SF_SetChance(action, ChangeCharacterNationReputation(pchar, StealthCheck_Nation(), 0), "relationship" + StealthCheck_Nation()); // отношения с нацией
 	if (CheckAttributeEqualTo(pchar, "questTemp.Trial", "spy")) SF_SetChance(action, 50, "questZpq"); // +если "неизвестный гасконец" - квестовый тег для карибских нравов
 	if (HasShipTrait(pchar, "trait05")) SF_SetChance(action, 15, "trait05"); // +если трейт Фальшивые документы
-	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
+	SF_SetChance(action, int(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_FENCING));
 	StealthCheck_CheckVerifyPapers("c");
@@ -113,7 +113,7 @@ void StealthCheckHarbour_Node0_c_a_reaction()
 void StealthCheckHarbour_Node0_c_b_reaction()
 {
 	SF_DefaultReaction("a");
-	AddMoneyToCharacter(pchar, -sti(storyObject.temp.bribeCost));
+	AddMoneyToCharacter(pchar, -int(storyObject.temp.bribeCost));
 }
 
 void StealthCheckHarbour_Node0_c_c_reaction()

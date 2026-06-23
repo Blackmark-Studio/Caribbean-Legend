@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "Allora, capitano, hai portato il vino?";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "Sì, ce l'ho.";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "Santo Arnolfo, pregate per noi! Quello è un mare di vino! Splendido! Purtroppo, come dicevo, possiamo permetterci solo sessanta bottiglie, non abbiamo abbastanza dobloni per acquistarne di più. Prendi i tuoi pesos e io custodirò queste sessanta bottiglie. Tieni pure il resto.";
 				link.l1 = "Grazie. Assicurati che tu e i tuoi compagni d'arme alziate un bicchiere alla mia salute!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Bentornato. Vediamo un po'... Hai portato "+sti(pchar.questTemp.Wine.Qty)+" bottiglie. Ottimo! Le prendo io. Ecco il pagamento: "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "Bentornato. Vediamo un po'... Hai portato "+int(pchar.questTemp.Wine.Qty)+" bottiglie. Ottimo! Le prendo io. Ecco il pagamento: "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "Grazie. Mi raccomando, tu e i tuoi compari d'arme alzate un boccale alla mia salute!";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "Ci puoi scommettere, "+GetAddress_Form(NPChar)+"! Il tamburo suona la raccolta, devo andare ora. Addio!";
 			link.l1 = "Venti propizi e mari favorevoli, compare!";
 			link.l1.go = "Wine_take_2";

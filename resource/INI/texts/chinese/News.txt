@@ -1,5 +1,5 @@
 key {none}
-News {简体中文测试版现已上线}
+News {1.8.2 Performance Update 现已推出！}
 News_Attention { }
 News_descr
 {

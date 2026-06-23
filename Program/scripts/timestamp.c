@@ -10,7 +10,7 @@
 int TMSTM_Timestamp(int plus)
 {
 	int result = TMSTD_Timestamp(0) * TMSTM_DAYS;                          // здесь всего дней в минутах
-	result += sti(Environment.date.hour) * 60 + sti(Environment.date.min); // добавляем минуты
+	result += int(Environment.date.hour) * 60 + int(Environment.date.min); // добавляем минуты
 	return result + plus;
 }
 
@@ -18,17 +18,17 @@ int TMSTM_Timestamp(int plus)
 int TMSTS_Timestamp(int plus)
 {
 	int result = TMSTD_Timestamp(0) * TMSTS_DAYS;                                 // здесь всего дней в секундах
-	result += sti(Environment.date.hour) * 3600 + sti(Environment.date.min) * 60; // добавляем минуты
-	result += sti(Environment.date.sec);                                          // добавляем секунды
+	result += int(Environment.date.hour) * 3600 + int(Environment.date.min) * 60; // добавляем минуты
+	result += int(Environment.date.sec);                                          // добавляем секунды
 	return result + plus;
 }
 
 // Timestamp в днях
 int TMSTD_Timestamp(int plus)
 {
-	int year = sti(Environment.date.year) - STARTGAME_YEAR; // не считаем годы до начала игры
-	int month = sti(Environment.date.month);
-	int day = sti(Environment.date.day);
+	int year = int(Environment.date.year) - STARTGAME_YEAR; // не считаем годы до начала игры
+	int month = int(Environment.date.month);
+	int day = int(Environment.date.day);
 	day += _TMST_GetMonthDaysPast(month); // дни за прошедшие месяцы
 	return year * 365 + day + plus;
 }

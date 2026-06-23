@@ -1,7 +1,7 @@
 void InitBaseCannons_CalcSpeedV0(ref rCannon, float fFireRange)
 {
 	rCannon.FireRange = fFireRange;
-	rCannon.SpeedV0 = sqrt(fFireRange * 9.81 / sin( 2.0 * MakeFloat(rCannon.FireAngMax)) );
+	rCannon.SpeedV0 = sqrt(fFireRange * 9.81 / sin( 2.0 * float(rCannon.FireAngMax)) );
 }
 
 void InitCannons()

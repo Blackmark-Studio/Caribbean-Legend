@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 					if(iTemp != -1)
 					{
 						sld = GetColonyByIndex(iTemp);
-						if(sti(sld.HeroOwn) == true && !CheckAttribute(sld, "OfficerIdx"))
+						if(int(sld.HeroOwn) == true && !CheckAttribute(sld, "OfficerIdx"))
 						{
 							NPChar.ColonyIdx = iTemp;
 							Link.l7 = "Ich mache dich zum Stellvertreter dieser Stadt!";
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TransferGoodsEnable":
-			if(sti(PChar.Ship.Type) == SHIP_NOTUSED)
+			if(int(PChar.Ship.Type) == SHIP_NOTUSED)
 	        {
 				dialog.text = "Kapitän, welche Güter? Wir müssen uns zuerst ein Schiff finden!";
 				Link.l1 = "Ja, du hast Recht.";
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 			if(CheckAttribute(pchar,"systeminfo.tutorial.Fighter") && Npchar.quest.officertype == "fighter")
 			{
 				DeleteAttribute(pchar,"systeminfo.tutorial.Fighter");
-				LaunchTutorial("Fighter", 1);
+				LaunchTutorial("Fighter", true);
 			}
 		break;
 
@@ -310,9 +310,9 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Kapitän, Sie wissen, ich... Nun, ich würde Sie bitten, mich zu entlassen. Es ist Zeit für mich, mich niederzulassen, zu heiraten und Kinder zu bekommen. Ich habe immer noch kein eigenes Zuhause, wenn ich alt werde, wird niemand da sein, um mir ein Glas Wasser zu bringen.","Kapitän, bitte, lass mich zurücktreten. All diese Jahre habe ich in der ganzen Welt herumgetrieben und ich habe immer noch nichts wirklich gesehen. Ich möchte nur ein neues Leben beginnen, den Anker werfen und die Welt aus einer anderen Perspektive sehen.","Kapitän, der Seefahrtsdienst ist sicherlich eine feine Sache, es gibt guten Gewinn und Abenteuer, aber die Zeit ist gekommen für mich, an mich selbst zu denken. Sie wissen, einen Anker in einem ruhigen Hafen werfen, ein Haus kaufen, Kinder haben. Bitte, lass mich gehen."),LinkRandPhrase("Kapitän, Sie wissen, es tut mir wirklich leid, aber ich habe genug von all diesen Pflichten, Wachen und Disziplin. Sie wissen, ich möchte wenigstens eine Weile ein freies Leben führen, aber ich verstehe, dass Sie nicht auf mich warten werden, also... Könnten Sie mich entlassen?","Kapitän, Sie wissen... Es gibt ein kleines Schiff, das ich mir leisten kann, also... Ich denke, es ist wahrscheinlich an der Zeit, dass ich mein eigenes Geschäft starte. Bitte, könnten Sie mich gehen lassen?","Kapitän, man hat mir gerade eine Stelle im Hafen angeboten. Tatsächlich sehne ich mich schon seit geraumer Zeit danach, den Anker zu werfen und mich auf ein verheiratetes Leben einzulassen. Bitte erlauben Sie mir zu gehen. Ich kann eine solche Gelegenheit wirklich nicht verpassen."),LinkRandPhrase("Kapitän, ich bin wirklich seekrank. Die Ärzte sagen mir ständig, es sei eine Eigenart. Bitte, um Gottes willen, lassen Sie mich gehen, oder ich werde irgendwann einfach über Bord springen.","Kapitän, ich glaube, es ist Zeit für mich, mich niederzulassen und einen ruhigeren Ort zu finden. Sie wissen, ich habe Angst. Angst vor verirrten Kugeln, Angst davor, während einer Entermannung zu sterben. Ich bete zum Herrn, dass er mich am Leben erhält, und wenn ich meine Augen schließe, sehe ich all die unschuldigen Seelen, die ich getötet habe. Sie flehen mich an, sie zu verschonen... Bitte, zeigen Sie etwas Mitgefühl und lassen Sie mich gehen.","Kapitän, meine alten Wunden schmerzen, und die jüngste Prellung erinnert sich jeden Tag an sich. Bald wirst du mich entlassen, und wer wird mich danach einstellen? Bitte lass mich gehen, ich werde mich flicken und einen ruhigeren Ort finden."));
 			Link.l1 = RandPhraseSimple(LinkRandPhrase("Sie alle gehen schließlich. Gut, du bist frei zu gehen.","Ich kann deine Beweggründe verstehen. Früher oder später geht alles zu Ende. Nun, geh dann... und hege keinen Groll, wenn ich dich jemals beleidigt habe.","Schon wieder? Du hast absichtlich den denkbar ungünstigsten Moment gewählt, um mich zu verlassen, nicht wahr? Was auch immer. Lebewohl."),LinkRandPhrase("Schwer zu glauben, was du mir erzählst... Gut, pack deine Sachen und geh.","Du? Ich hätte es nicht erwartet... Nach all dieser Zeit, Seite an Seite kämpfend... Nun, ich halte dich nicht auf. Gott mit dir.","Du klingst ernst. Nun, ich wünsche dir Glück, weiß, dass ich dich vermissen werde."));				
 			Link.l1.go = "WantToGo_free";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*250)
+			if (int(Pchar.money) >= int(NPChar.rank)*250)
 			{
-				Link.l2 = LinkRandPhrase("Ich verstehe... Also so ist es, hm? Und ich habe auf dich gezählt... Nun, wenn du dir bereits sicher bist, dann lass uns unsere Wege trennen. Nimm "+sti(NPChar.rank)*250+" Pesos für Ihre treue Dienste. Und hegen Sie keinen Groll, falls ich Sie jemals beleidigt habe.","Nun, ich trage keinen Groll und erinnere mich an kein Übel. Wenn das deine Entscheidung ist, dann geh. Und nimm "+sti(NPChar.rank)*250+" Pesos, um einen frischen Start zu bekommen, es wird definitiv nützlich sein.","Ich verstehe... Nun, früher oder später musste das passieren. Ich gebe dir "+sti(NPChar.rank)*250+" Pesos, um dein Leben zu regeln. Und kümmere dich auch um deine Gesundheit, der Marine Dienst ist voller Entbehrungen..."); 
+				Link.l2 = LinkRandPhrase("Ich verstehe... Also so ist es, hm? Und ich habe auf dich gezählt... Nun, wenn du dir bereits sicher bist, dann lass uns unsere Wege trennen. Nimm "+int(NPChar.rank)*250+" Pesos für Ihre treue Dienste. Und hegen Sie keinen Groll, falls ich Sie jemals beleidigt habe.","Nun, ich trage keinen Groll und erinnere mich an kein Übel. Wenn das deine Entscheidung ist, dann geh. Und nimm "+int(NPChar.rank)*250+" Pesos, um einen frischen Start zu bekommen, es wird definitiv nützlich sein.","Ich verstehe... Nun, früher oder später musste das passieren. Ich gebe dir "+int(NPChar.rank)*250+" Pesos, um dein Leben zu regeln. Und kümmere dich auch um deine Gesundheit, der Marine Dienst ist voller Entbehrungen...");
 				Link.l2.go = "Im_kind_A2_1";
 			}
 			Link.l3 = LinkRandPhrase("So sagst du... Begreifst du nicht, dass du mir einfach in den Rücken fällst, wenn du jetzt gehst? Ich kann dich jetzt nicht gehen lassen, denk nicht mal dran.","Das sind Neuigkeiten! Du weißt, die Leute sollten mich über solche Dinge vorher informieren! Also vergiss dein Privatleben für eine Weile. Wenn die Zeit gekommen ist, werde ich dir vorschlagen, wann du in den Ruhestand gehen sollst.","Keine Kündigungen. Ich habe jeden im Auge. Ich kann nicht jeden gehen lassen, nur wegen ihres persönlichen Wunsches. Dienet, während ich überlege, ob ihr einen Urlaub verdient.");	
@@ -320,7 +320,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Im_kind_A2_1":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*250)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*250)));
 			ChangeOfficersLoyality("good_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
@@ -340,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 	case "WantToGo_Stay_2":
-		dialog.text = LinkRandPhrase("Nun, das ist eine andere Geschichte. "+sti(NPChar.rank)*500+" Pesos auf den Nagel, und ich bleibe bei dir.","Nun, vielleicht für "+sti(NPChar.rank)*500+" Pesos könnte ich bleiben, schätze ich.","Nun, wenn du es so darstellst, für "+sti(NPChar.rank)*500+" Pesos, ich könnte meinen Dienst fortsetzen.");
-		if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+		dialog.text = LinkRandPhrase("Nun, das ist eine andere Geschichte. "+int(NPChar.rank)*500+" Pesos auf den Nagel, und ich bleibe bei dir.","Nun, vielleicht für "+int(NPChar.rank)*500+" Pesos könnte ich bleiben, schätze ich.","Nun, wenn du es so darstellst, für "+int(NPChar.rank)*500+" Pesos, ich könnte meinen Dienst fortsetzen.");
+		if (int(Pchar.money) >= int(NPChar.rank)*500)
 		{
 			Link.l1 = RandPhraseSimple("In Ordnung, abgemacht.","In Ordnung. Obwohl du weniger verlangen könntest.","Du hast ja einen ordentlichen Appetit, wie ich sehe! Aber, ich habe dir ein Versprechen gegeben, nicht wahr? Und ich werde zu meinem Wort stehen.");	
 			Link.l1.go = "WantToGo_Stay_ForMoney";
@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 	break;
 	
 	case "WantToGo_Stay_force":
-		Npchar.loyality = makeint(Npchar.loyality) - 2;
+		Npchar.loyality = int(Npchar.loyality) - 2;
 		dialog.text = "Gut, wenn du es so sagst, bleibe ich. Aber wisse, dass ich damit meinem eigenen Willen widerspreche.";
 		Link.l1 = LinkRandPhrase("Sehr gut. Kehren Sie zu Ihren Pflichten zurück, und wir werden dieses Gespräch später fortsetzen.","Kehre zum Schiff zurück. Und denke das nächste Mal nach, bevor du um Ruhestand bittest.","Jawohl. Die Pflicht ist die Pflicht, und du solltest dich noch nicht deinen Fantasien hingeben.");
 		Link.l1.go = "exit";
@@ -362,8 +362,8 @@ void ProcessDialogEvent()
 		NPChar.greeting = "Gr_Officer";
 		if(NPChar.id == "Duran") NPChar.greeting = "Duran_officer";
 		ChangeCharacterComplexReputation(pchar,"authority", 0.2);
-		AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
-		Npchar.loyality = makeint(Npchar.loyality) + 1;    
+		AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
+		Npchar.loyality = int(Npchar.loyality) + 1;
 		Diag.CurrentNode = Diag.TempNode;
 		NPChar.quest.meeting = true;
 		DialogExit();
@@ -411,9 +411,9 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple(LinkRandPhrase("Kapitän, ich möchte nicht gegen mein Gewissen handeln und mich am Brigantentum beteiligen.","Kapitän, ich möchte nicht länger an Ihren Ausschreitungen teilnehmen. Ich bin ein Offizier, kein Schlächter.","Kapitän, Ihre Banditenmethoden des Geschäftemachens machen meinen Aufenthalt in Ihrer Mannschaft unmöglich."),LinkRandPhrase("Kapitän, ich muss zugeben, dass meine Anstellung bei Ihnen ein enttäuschender Fehler war. Ich bin nicht bereit, meinen Ruf für irgendein Geld zu opfern.","Kapitän, Sie haben auf Ihrem Schiff alle abscheulichsten Schurken der Neuen Welt versammelt. Für einen anständigen Mann ist es ekelhaft, sie nur anzusehen. Ich möchte nicht mehr mit einer solchen Crew dienen.","Kapitän, Sie haben eine volle Crew von Gaunern angestellt, es gibt nicht einen einzigen anständigen Mann, mit dem man plaudern kann. Ich verabscheue solchen Dienst."))+"Auf Wiedersehen.";
 			Link.l1 = "Was?! Das ist ein Kriegsschiff, keine höhere Töchterschule! Du kannst zur Hölle fahren!";
 			Link.l1.go = "exit_fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "Ich wusste, dass du bald gehen würdest... dieser Dienst ist nichts für dich. Aber beschuldige mich nicht. Hier sind "+sti(NPChar.rank)*500+" Pesos, sie werden Ihnen nützlich sein, während Sie nach einem Job suchen, der Ihnen gefällt.";
+				Link.l2 = "Ich wusste, dass du bald gehen würdest... dieser Dienst ist nichts für dich. Aber beschuldige mich nicht. Hier sind "+int(NPChar.rank)*500+" Pesos, sie werden Ihnen nützlich sein, während Sie nach einem Job suchen, der Ihnen gefällt.";
 				Link.l2.go = "Im_kind_A2";
 			}
 			Link.l3 = LinkRandPhrase("Oh, also singst du jetzt so ein Lied. Und was ist mit deinem Anteil an jedem einzelnen Raubzug, brennen deine Hände? Oder planst du, dich in ein Kloster zurückzuziehen, um um Vergebung deiner Sünden zu beten? Dann sprich auch ein Wort für uns! Ha-ha-ha-ha-ha!","Hmm. Nun, das ist eine ernste Aussage. Und wo hat dein unschuldiges Gewissen hingeschaut, während wir zusammen Händler ausgeraubt haben? Wie willst du es reinwaschen? Oder wirst du uns verpfeifen, damit wir in anständiger Gesellschaft am Galgen hängen?","Oh, bravo! Anscheinend hast du vergessen, wie ich dich gefunden habe, in einer stinkenden Taverne ohne einen Kupfer in deiner Tasche. Zu deiner Information, als Offizier bist du keinen Pfifferling wert. Du bist wertlos!");
@@ -424,9 +424,9 @@ void ProcessDialogEvent()
             dialog.text = RandPhraseSimple(LinkRandPhrase("Kapitän, ich mag eure noblen Spielchen wirklich nicht und ich werde meine Gewohnheiten nicht für eure Ruhe aufgeben. Lebewohl.","Kapitän, ich kann nicht länger in Ihrem Dienst bleiben. Ich habe bereits so viel Zeit verschwendet. Als einfacher Freibeuter hätte ich bereits ein Vermögen gewonnen. Ich gehe.","Kapitän, deine Männer ekeln mich an. Nicht ein einziger anständiger Mann, nur feine Pinkel, keiner, mit dem man einen trinken könnte. Ich gehe."),LinkRandPhrase("Kapitän, ich bin ein Veteranenoffizier und Ihr Schiff sieht mehr wie ein Frachtschiff aus. Ich bin kein Fan von solch einem Dienst. Auf Wiedersehen.","Kapitän, deine gesamte Crew sind lauter feine Pinkel, es gibt nicht einen einzigen Mann, mit dem man trinken oder reden kann. Ich habe eine starke Abneigung gegen solchen Dienst. Lebewohl.","Kapitän, ich dachte, ich würde unter einem echten Korsar dienen, aber alles, was wir tun, ist nur Wohltätigkeit! Ich will meine Zeit nicht weiter verschwenden. Ich gehe."));
 			Link.l1 = RandPhraseSimple("Ich verstehe. Angesichts Ihrer Haltung sollte das früher oder später passieren. In Ordnung, ich werde Sie nicht aufhalten.","Deine Aussage war nicht unerwartet. Ehrlich gesagt, bin ich schon seit geraumer Zeit unzufrieden mit deiner Einstellung.")+"Viel Glück.";
 			Link.l1.go = "exit_fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "Ich wusste, dass du bald gehen würdest... dieser Dienst ist nichts für dich. Aber beschuldige mich nicht. Hier sind "+sti(NPChar.rank)*500+" Pesos, sie werden nützlich sein, während du nach einem neuen Job suchst.";
+				Link.l2 = "Ich wusste, dass du bald gehen würdest... dieser Dienst ist nichts für dich. Aber beschuldige mich nicht. Hier sind "+int(NPChar.rank)*500+" Pesos, sie werden nützlich sein, während du nach einem neuen Job suchst.";
 				Link.l2.go = "Im_kind_A2";
 			}
 			Link.l3 = RandPhraseSimple("Hmm. Nun, das ist eine ernste Aussage. Aber du hast das dir im Voraus gezahlte Geld noch nicht abgearbeitet. Also kann deine Demarche als Versuch der Erpressung angesehen werden, richtig?","Oh, ich verstehe... Was sagen die Schiffsvorschriften? Hier, Absatz zwei: 'Wer versucht, ohne Erlaubnis zu gehen, wird auf einer verlassenen Küste gelandet mit einem einzigen Beutel Pulver, einer Flasche Wasser, einer Pistole und einer einzigen Kugel.' Nun, wie würde dir das gefallen?");
@@ -439,7 +439,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = LinkRandPhrase("Versuch nicht mal, mich zu beleidigen! Ich arbeite zwar für Geld, aber ich habe immer noch das Recht, einen Job nach meinem Geschmack zu wählen!","Ich bin ein freier Mann! Und ich habe das Recht, wann immer ich will, einen neuen Job anzunehmen!","Ich bin kein Sklave, der für Essen arbeitet, also ist mein Gewissen rein! Aber ich werde nicht mehr an Raubzügen teilnehmen!");
 				Link.l1 = "Nun, tatsächlich liegt ihr falsch... Während ihr in der Taverne trankt, konntet ihr euch jede Arbeit aussuchen, die ihr mochtet... Aber sobald ihr an Bord meines Schiffes getreten seid, wurde euer einziger Rückweg eine Kanonenkugel, die euren Hals zerschmettert... Und mit herausgerissener Zunge, damit ihr in der nächsten Welt nichts ausplaudert...";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "WantToGo_stop_stay";
 				}
@@ -455,8 +455,8 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Versuch nicht mal, mich einzuschüchtern! Ich arbeite zwar für Geld, aber ich habe immer noch das Recht, mir einen Job auszusuchen, der mir gefällt!","Ich bin ein freier Mann! Und ich habe das Recht, wann immer ich will, einen neuen Job anzunehmen!","Ich bin nicht dein Sklave! Und ich werde nicht weiter ein elendes Leben auf deiner alten Tonne führen!");
 				Link.l1 = "Nun, eigentlich liegst du falsch... Als du noch in der Taverne getrunken hast, konntest du dir noch jeden Job aussuchen... Aber sobald du an Bord meines Schiffes getreten bist, wurde dein einziger Weg zurück eine Kanonenkugel, die dir den Hals zerfetzt... Und mit herausgerissener Zunge, damit du in der nächsten Welt nichts ausplauderst...";
 				// belamour legendary edition можно запугать офицера -->
-				//if (makeint(Pchar.Rank) > makeint(NPchar.Rank) || CheckCharacterPerk(pchar, "IronWill"))
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				//if (int(Pchar.Rank) > int(NPchar.Rank) || CheckCharacterPerk(pchar, "IronWill"))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "WantToGo_stop_stay";
 				}
@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition в ближайшее время не подойдет от страха
 			/* if(CheckCharacterPerk(pchar, "IronWill"))
 			{
-				Npchar.loyality = makeint(Npchar.loyality) + 3 + hrand(sti(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
+				Npchar.loyality = int(Npchar.loyality) + 3 + hrand(int(GetSummonSkillFromNameToOld(pchar,SKILL_FORTUNE)+GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP)));
 				log_info(GetFullName(Npchar)+" increased his loyalty");
 				log_testinfo("Loyalty has become: " + Npchar.loyality + " of " + MAX_LOYALITY);
 			}
@@ -556,7 +556,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ich denke, wir können uns darauf einigen "+Npchar.quest.OfficerPrice+" Pesos.";
 			if(Npchar.rank >= 15)
 			{
-				dialog.text = "Ich denke, wir können uns einigen auf "+(makeint(Npchar.quest.OfficerPrice)/ 100+30)+" Dublonen.";
+				dialog.text = "Ich denke, wir können uns einigen auf "+(int(Npchar.quest.OfficerPrice)/ 100+30)+" Dublonen.";
 			}	
 			Link.l1 = "Ist das nicht ein bisschen viel?";
 			Link.l1.go = "trade";
@@ -567,13 +567,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "trade":
-			if (GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE) >= Rand(12) && (sti(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100) >= sti(Npchar.quest.OfficerLowPrice))// bug fix
+			if (GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE) >= Rand(12) && (int(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100) >= int(Npchar.quest.OfficerLowPrice))// bug fix
 			{
-				Npchar.quest.OfficerPrice = makeint(makeint(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100); // пусть будет коммерция перса голой
+				Npchar.quest.OfficerPrice = int(int(Npchar.quest.OfficerPrice) - GetCharacterSkillToOld(Pchar, "commerce")*100); // пусть будет коммерция перса голой
 				dialog.text = "In Ordnung... Ich denke, ich könnte sogar zustimmen auf "+Npchar.quest.OfficerPrice+" Pesos. Was sagst du dazu?";
 				if(Npchar.rank >= 15)
 				{
-					dialog.text = "Ich denke, ich könnte sogar zustimmen auf "+(makeint(Npchar.quest.OfficerPrice)/ 100+30)+" Dublonen. Was sagst du dazu?";
+					dialog.text = "Ich denke, ich könnte sogar zustimmen auf "+(int(Npchar.quest.OfficerPrice)/ 100+30)+" Dublonen. Was sagst du dazu?";
 				}
 				Link.l1 = "Jetzt ist es besser. Du bist drin.";
 				Link.l1.go = "hire";				
@@ -594,17 +594,17 @@ void ProcessDialogEvent()
 			dialog.text = "Ich sehe, Ihnen fehlt das Geld, Kapitän! Es tut mir leid, aber ich arbeite nicht auf Kredit.";
 			Link.l1 = "Oh, Teufel!";
 			Link.l1.go = "Exit";
-			if(Npchar.rank < 15 && makeint(Pchar.money) >= makeint(Npchar.quest.OfficerPrice))
+			if(Npchar.rank < 15 && int(Pchar.money) >= int(Npchar.quest.OfficerPrice))
 			{
-				AddMoneyToCharacter(Pchar, -(makeint(Npchar.quest.OfficerPrice)));
+				AddMoneyToCharacter(Pchar, -(int(Npchar.quest.OfficerPrice)));
 				Diag.TempNode = "OnboardSoon";
 				dialog.text = "Danke, Kapitän. Sie werden Ihre Wahl nicht bereuen.";
 				Link.l1 = "Ich hoffe es.";
 				Link.l1.go = "Exit_hire";								
 			}
-			if(Npchar.rank >= 15 && PCharDublonsTotal() >= makeint((makeint(Npchar.quest.OfficerPrice) / 100 + 30)))
+			if(Npchar.rank >= 15 && PCharDublonsTotal() >= int((int(Npchar.quest.OfficerPrice) / 100 + 30)))
 			{
-				RemoveDublonsFromPCharTotal(makeint((makeint(Npchar.quest.OfficerPrice) / 100 + 30)));
+				RemoveDublonsFromPCharTotal(int((int(Npchar.quest.OfficerPrice) / 100 + 30)));
 				Diag.TempNode = "OnboardSoon";
 				dialog.text = "Danke, Kapitän. Sie werden Ihre Wahl nicht bereuen.";
 				Link.l1 = "Ich hoffe es.";
@@ -620,7 +620,7 @@ void ProcessDialogEvent()
 		break;
         
 		case "QMASTER_1":
-			if(sti(PChar.Ship.Type) == SHIP_NOTUSED)
+			if(int(PChar.Ship.Type) == SHIP_NOTUSED)
 			{
 				dialog.text = "Kapitän, aber Sie haben kein Schiff!";
 				Link.l1 = "Danke, dass du mich daran erinnert hast...";
@@ -629,7 +629,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// Rebbebion, добавил фикс отображения знака процента
-			dialog.text = "Höchste Aktivität der Ratten auf der Reise "+FloatToString(50.0 /(2.0+GetSummonSkillFromNameToOld(PChar,SKILL_REPAIR)+GetSummonSkillFromNameToOld(PChar,SKILL_SNEAK)),1)+"%% der Gesamtladungsmenge. Für "+GetCrewQuantity(PChar)+" Seeleute, die wir brauchen werden "+makeint((GetCrewQuantity(PChar)+6)/ 10)+" Nahrung pro Tag. Das berücksichtigt nicht den Transport von Sklaven.";
+			dialog.text = "Höchste Aktivität der Ratten auf der Reise "+FloatToString(50.0 /(2.0+GetSummonSkillFromNameToOld(PChar,SKILL_REPAIR)+GetSummonSkillFromNameToOld(PChar,SKILL_SNEAK)),1)+"%% der Gesamtladungsmenge. Für "+GetCrewQuantity(PChar)+" Seeleute, die wir brauchen werden "+int((GetCrewQuantity(PChar)+6)/ 10)+" Nahrung pro Tag. Das berücksichtigt nicht den Transport von Sklaven.";
 			Link.l1 = "Danke.";
 			Link.l1.go = "Exit";
 			Diag.TempNode = "Hired";
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l4 = "Wir müssen die Munitionsart für Ihre Feuerwaffe ändern.";
 					Link.l4.go = "SetGunBullets";
@@ -659,7 +659,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l5 = "Wir müssen die Munitionsart für dein Musketen ändern.";
 					Link.l5.go = "SetMusketBullets";
@@ -674,7 +674,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -705,7 +705,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = int(NPChar.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -756,7 +756,7 @@ void ProcessDialogEvent()
 			link.l1.go = "TargetDistance_1";			
 		break;
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = "Kapitän, geht es Ihnen gut?";
@@ -800,11 +800,11 @@ void ProcessDialogEvent()
 				}
 			}
 			// проверка на море <--
-			if (makeint(PChar.reputation.nobility) >= 41 && makeint(NPChar.reputation) < 41) //герой против злодея
+			if (int(PChar.reputation.nobility) >= 41 && int(NPChar.reputation) < 41) //герой против злодея
 			{
 				dialog.text = RandPhraseSimple(LinkRandPhrase("Jetzt ist das neu!","Warum, zum Himmel?","Was ist der Grund?!"),RandPhraseSimple("Kapitän, bist du wahnsinnig? Solche Nachrichten ohne Grund zu erzählen!","Wow! Und was habe ich getan, um dich zu verärgern?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("Ich habe beschlossen, Ordnung in die Mannschaft zu bringen. Und ich mag deine Beziehungen zu deinen Kollegen nicht","Deine Vorteile waren nicht so gut wie bei der Einstellung besprochen. Also,","Schurken und Taugenichtse in meiner Mannschaft werden nicht bleiben! Also,"),LinkRandPhrase("Es ist zu meinem Wissen gekommen, dass du heimlich Rum stiehlst, meine Crew an hartes Trinken gewöhnst und so die Moral senkst. Daher,","Ich habe genug von deinen Banditenmanieren und ich werde es nicht tolerieren. Also,","Verbringen Sie ständig Ihre Zeit in der Zentralkabine für ein Spiel mit Karten oder Würfeln, das die anderen Offiziere von der Pflichterfüllung ablenkt. Das kann nicht unbegrenzt so weitergehen. Also,"))+"Packe deine Habseligkeiten und verlasse das Schiff.";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "Get_out_A1_peace";
 				}
@@ -814,18 +814,18 @@ void ProcessDialogEvent()
 				}
 				break;	
 			}
-			if (makeint(PChar.reputation.nobility) >= 41 && makeint(NPChar.reputation) >= 41) // герой против героя
+			if (int(PChar.reputation.nobility) >= 41 && int(NPChar.reputation) >= 41) // герой против героя
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Darf ich den Grund für eine solche Entscheidung wissen?","Offensichtlich ist eine solche Entscheidung gut begründet?"),RandPhraseSimple("Erkläre dich, Kapitän","Das ist ziemlich unerwartet. Aber ich möchte dennoch den Grund wissen."));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("Ich bin völlig unzufrieden mit Ihrer Einstellung zu Ihren Pflichten.","Leider warst du kein guter Offizier und wirst es wahrscheinlich auch nie sein...","Du bist ein guter Offizier und dein Dienst war fair, aber nun haben sich unsere Wege getrennt. Frag mich nicht warum."),LinkRandPhrase("Ich habe dich gewarnt, dass die Leidenschaft zum Rum dich zerstören würde. Wie kann ich einem Mann in einem Kampf vertrauen, der nicht einmal in der Lage ist, sein Schwert in die Scheide zu stecken?","Du bist ein schrecklicher Seemann und Offizier... Ich denke, du wirst mehr an Land sein als auf See.","Ich bin nicht zufrieden mit deinen Qualifikationen, aber jetzt habe ich endlich einen anständigen Ersatz gefunden."));
 				Link.l1.go = "Get_out_A2";
 				break;	
 			}
-			if (makeint(PChar.reputation.nobility) < 41 && makeint(NPChar.reputation) >= 41) // злодей против героя 
+			if (int(PChar.reputation.nobility) < 41 && int(NPChar.reputation) >= 41) // злодей против героя
 			{		
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Hmm... Darf ich den Grund erfahren?","Das ist eine ernste Aussage. Darf ich wissen, mit was genau Sie unzufrieden sind?"),RandPhraseSimple("Erkläre dich, Kapitän.","Offensichtlich ist eine solche Aussage gut begründet?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("Ich bin völlig unzufrieden mit Ihrer Qualifikation, daher","Leider haben Sie sich nicht als anständiger Offizier erwiesen. Also,","Ich habe die Nase voll von deinen edlen Manieren. Ich werde sie nicht endlos tolerieren, also"),LinkRandPhrase("Es ist zu meiner Kenntnis gelangt, dass du die Mannschaft zur Ungehorsamkeit aufhetzt. Es wird keine Störungen auf meinem Schiff geben! Und bedank dich nicht, dass ich dich nicht schon früher weggeworfen habe. Also","Deine edlen Prinzipien ehren dich, aber sie stehen im Widerspruch zum Räuberleben eines freien Freibeuters. Also","Ich mag Ihre Beziehung zu Ihren Pflichten nicht. Also"))+"Packen Sie Ihre Sachen und verlassen Sie das Schiff.";
-				if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+				if (int(Pchar.Rank) > int(NPchar.Rank))
 				{
 					Link.l1.go = "Get_out_A3_peace";
 				}
@@ -836,7 +836,7 @@ void ProcessDialogEvent()
 				break;
 	
 			}
-			if (makeint(PChar.reputation.nobility) < 41 && makeint(NPChar.reputation) < 41) // злодей против злодея
+			if (int(PChar.reputation.nobility) < 41 && int(NPChar.reputation) < 41) // злодей против злодея
 			{	
 				dialog.text = RandPhraseSimple(LinkRandPhrase("Kapitän, das habe ich wirklich nicht erwartet! Vielleicht würden Sie mir erklären, was vor sich geht?","Kapitän, was frisst dich?!","Was meinen Sie damit, Kapitän?!"),RandPhraseSimple("Was zur Hölle, Kapitän?! Alles schien gestern noch in Ordnung zu sein, und jetzt sind wir hier, was ist passiert?","Wahnsinn! Vielleicht würdest du dich erklären?"));
 				Link.l1 = RandPhraseSimple(LinkRandPhrase("Du bist ein totaler Faulenzer und nutzloser Idiot, sogar ein Schiffsjunge auf einem Küstenschiff würde es besser machen. Ich habe wegen dir schon zu lange gelitten. Also","Ich habe schon eine Weile darüber nachgedacht, dich zu feuern, und jetzt habe ich endlich einen anständigen Ersatz gefunden. Also","Es ist mir zu Ohren gekommen, dass du heimlich Rum stiehlst, meine Mannschaft an hartes Trinken gewöhnt und so ihre Moral senkst. Deshalb"),LinkRandPhrase("Als ich dich einstellte, hast du geprahlt, du seist der beste Offizier der gesamten Flotte, aber es stellte sich heraus, dass du nur ein Faulenzer bist, also","Ich habe dich gewarnt, dass deine Trinkgewohnheit schlecht enden würde. Warum sollte ich einen nutzlosen Trunkenbold auf meinem Schiff behalten? Also","Anstatt zu dienen, streunst du ständig irgendwo herum oder spielst Karten oder Würfel. Hoffentlich hast du nicht gedacht, dass das ewig so weitergehen könnte? Also"))+"Pack deine Habseligkeiten und verlasse das Schiff.";
@@ -851,9 +851,9 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "Dann geh in Frieden.";
 			Link.l2.go = "Exit_Fire_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "Lass den Kopf nicht hängen. Ich habe für dich eine Abfindung vorbereitet - "+sti(NPChar.rank)*500+" Pesos. Ich hoffe, das klärt alle Fragen.";
+				Link.l3 = "Lass den Kopf nicht hängen. Ich habe für dich eine Abfindung vorbereitet - "+int(NPChar.rank)*500+" Pesos. Ich hoffe, das klärt alle Fragen.";
 				Link.l3.go = "Get_out_А1_ForMoney";
 			}
 		break;
@@ -864,20 +864,20 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "Ich wiederhole, Ihr Dienst ist vorbei. Sie können Ihre Sachen packen.";
 			Link.l2.go = "Get_out_A1_strife_1";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "Lass dich nicht aufregen. Ich habe vorbereitet "+sti(NPChar.rank)*500+" Pesos für dich. Ich hoffe, das klärt alle Fragen.";
+				Link.l3 = "Lass dich nicht aufregen. Ich habe vorbereitet "+int(NPChar.rank)*500+" Pesos für dich. Ich hoffe, das klärt alle Fragen.";
 				Link.l3.go = "Get_out_А1_ForMoney";
 			}
 		break;
 
 		case "Get_out_A1_strife_1":
-			dialog.text = RandPhraseSimple("Eigentlich brenne ich nicht vor Verlangen, hier zu bleiben. Aber ich werde auch nicht ohne Entschädigung gehen!","Nun, ich werde sicherlich nicht auf diesem alten Kutter von dir bleiben, aber zuerst wirst du mich entschädigen!")+" "+sti(NPChar.rank)*1000+" Pesos, und wir werden einander vergessen.";
+			dialog.text = RandPhraseSimple("Eigentlich brenne ich nicht vor Verlangen, hier zu bleiben. Aber ich werde auch nicht ohne Entschädigung gehen!","Nun, ich werde sicherlich nicht auf diesem alten Kutter von dir bleiben, aber zuerst wirst du mich entschädigen!")+" "+int(NPChar.rank)*1000+" Pesos, und wir werden einander vergessen.";
 			Link.l1 = "Ich habe mich etwas aufgeregt... Bitte, akzeptieren Sie meine Entschuldigungen und gehen Sie zurück zu Ihren Aufgaben.";
 			Link.l1.go = "exit_bad1";
 			Link.l2 = "Wovon redest du von Geld, wenn du immer deinen gerechten Anteil erhalten hast? Das sieht für mich nach Erpressung aus!";
 			Link.l2.go = "Get_out_А1_strife_battle";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+			if (int(Pchar.money) >= int(NPChar.rank)*1000)
 			{
 				Link.l3 = "In Ordnung. Gib die Ausrüstung zurück, und dann wirst du bekommen, was du gefragt hast.";
 				Link.l3.go = "Get_out_А1_chang";
@@ -885,7 +885,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Get_out_А1_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			dialog.text = "Das ist eine andere Geschichte. Lebewohl!";
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
 
 		case "Get_out_А1_strife_battle":
 			dialog.text = LinkRandPhrase("Betrachten Sie dies als eine Entschädigung für moralischen Schaden. Ich werde eine solche Behandlung nicht dulden und wer es wagt, mich so zu behandeln, wird es bereuen!","Das ist keine Erpressung, sondern eine Entschädigung für diese dumme Zeitverschwendung! Und ich werde sie bekommen, egal was es kostet!","Ich habe zu viel Zeit damit verschwendet, unter so einem Weichei wie dir zu dienen. Ich könnte ein Vermögen machen, indem ich Handelsschiffe plündere. Also möchte ich nur meinen verlorenen Gewinn ausgleichen.");
-			if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+			if (int(Pchar.money) >= int(NPChar.rank)*1000)
 			{
 				Link.l1 = "In Ordnung. Hier ist dein Geld... Und jetzt verschwinde!";
 				Link.l1.go = "Get_out_А1_ForMoney_angry";
@@ -914,7 +914,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Get_out_А1_ForMoney_angry":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			OfficersReaction("bad");
@@ -931,9 +931,9 @@ void ProcessDialogEvent()
 			Link.l2.go = "exit_fire_2";
 			Link.l3 = "Halt ein... Ich habe dich gut ausgerüstet. Gib sie zurück, ich bin nicht dabei, eine Horde auszurüsten...";
 			Link.l3.go = "Return_items_A2";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l4 = "Halt ... Ich will dich nicht mit leeren Händen gehen lassen. Hier, nimm "+sti(NPChar.rank)*500+" Pesos. Das wird dir nützlich sein, während du nach einem neuen Job suchst.";
+				Link.l4 = "Halt ... Ich will dich nicht mit leeren Händen gehen lassen. Hier, nimm "+int(NPChar.rank)*500+" Pesos. Das wird dir nützlich sein, während du nach einem neuen Job suchst.";
 			}
 			Link.l4.go = "Im_kind_A2";
 		break;
@@ -946,7 +946,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Im_kind_A2":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeOfficersLoyality("good_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
@@ -963,15 +963,15 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_bad";
 			Link.l2 = "Geh, geh. Mir geht's gut ohne deine Vorträge.";
 			Link.l2.go = "exit_fire_3";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "Halt ein. Ich gebe dir "+sti(NPChar.rank)*500+" Pesos. Ich will nicht, dass du im Rinnstein stirbst, damit ich mich schuldig fühle.";
+				Link.l3 = "Halt ein. Ich gebe dir "+int(NPChar.rank)*500+" Pesos. Ich will nicht, dass du im Rinnstein stirbst, damit ich mich schuldig fühle.";
 				Link.l3.go = "Get_out_А3_ForMoney";
 			}
 		break;
 
 		case "Get_out_А3_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			ChangeOfficersLoyality("good_all", 1);
@@ -984,9 +984,9 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Aber Kapitän, in diesem Fall bleibe ich auf Grund. Wollt Ihr mich wirklich vom Schiff direkt zum Parvis schicken?","Du bist unfair zu mir, Kapitän. Aber ich werde keinen Groll hegen, wenn ich eine anständige Entschädigung erhalte.","Und das ist dein Dank für all meine Kampfwunden? Nun, ich denke, ich kann nicht ohne finanzielle Entschädigung auskommen.");
 			Link.l1 = "Gut, ich habe meine Meinung geändert. Du kannst bleiben, aber wir werden auf dieses Gespräch zurückkommen.";
 			Link.l1.go = "exit_bad";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l2 = "Oh, mach dir keine Sorgen. Hier - "+sti(NPChar.rank)*500+" Pesos. Das wird deine Zeit auf meinem Schiff kompensieren.";
+				Link.l2 = "Oh, mach dir keine Sorgen. Hier - "+int(NPChar.rank)*500+" Pesos. Das wird deine Zeit auf meinem Schiff kompensieren.";
 				Link.l2.go = "Get_out_А3_ForMoney";
 				Link.l3 = "Ich gebe dir das Geld. Trotzdem hast du dich dank mir schön ausgestattet, und ich denke, es ist angemessen, die Sachen mir zurückzugeben.";
 				Link.l3.go = "Return_items_A3";
@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Return_items_A3":
-			dialog.text = "Ich wusste, dass du das sagen würdest, aber du bekommst deine Ausrüstung erst zurück, wenn ich "+sti(NPChar.rank)*1000+" Pesos. Ansonsten kannst du es nur über meinen toten Körper haben!";
+			dialog.text = "Ich wusste, dass du das sagen würdest, aber du bekommst deine Ausrüstung erst zurück, wenn ich "+int(NPChar.rank)*1000+" Pesos. Ansonsten kannst du es nur über meinen toten Körper haben!";
 			Link.l1 = "In Ordnung, nimm dann dein Geld.";
 			Link.l1.go = "Get_out_А3_chang";
 			Link.l2 = "Bist du wahnsinnig oder was?! Eine solche Summe für das zu verlangen, was dir kostenlos gegeben wurde?! Ich sehe jetzt, dass deine Gier eindeutig über dein vorgetäuschtes Wohltun gesiegt hat.";
@@ -1024,9 +1024,9 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit_good";
 			Link.l2 = RandPhraseSimple("Verschwinde jetzt. Und danke Gott, dass ich heute guter Laune bin.","Verschwind jetzt. Du bist so gut ein Offizier, wie Scheiße gut ist, um Kugeln zu machen.");
 			Link.l2.go = "exit_fire_4";
-			if (sti(Pchar.money) >= sti(NPChar.rank)*500)
+			if (int(Pchar.money) >= int(NPChar.rank)*500)
 			{
-				Link.l3 = "Halt ein. Ich gebe dir "+sti(NPChar.rank)*500+" Pesos. Ich möchte nicht, dass du in der Gosse stirbst, damit ich mich schuldig fühle.";
+				Link.l3 = "Halt ein. Ich gebe dir "+int(NPChar.rank)*500+" Pesos. Ich möchte nicht, dass du in der Gosse stirbst, damit ich mich schuldig fühle.";
 				Link.l3.go = "Get_out_А4_ForMoney";
 			}
 			Link.l4 = "Halt ein... Ich habe dich gut ausgestattet, gib mir meine Sachen zurück.";
@@ -1034,7 +1034,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Get_out_А4_ForMoney":
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*500)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*500)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			ChangeOfficersLoyality("good_all", 1);
@@ -1044,7 +1044,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Return_items_A4":
-			if (makeint(Pchar.Rank) > makeint(NPchar.Rank))
+			if (int(Pchar.Rank) > int(NPchar.Rank))
 			{
 				dialog.text = LinkRandPhrase("Und jetzt nimmst du auch noch meine Ausrüstung! Ach, zum Teufel damit! Ich geh angeln, das schwör ich...","Ich sehe, dass du dich entschieden hast, mich völlig auszunehmen. Na gut. Jetzt gibt es nur noch einen Weg für mich, zum Vorplatz...","Oh, vielen Dank! Jetzt hast du dich entschieden, mich auszurauben. Oh, welch grausames Schicksal... Nimm es dann, nimm es! Was kann ich sowieso tun...");
 				Link.l1 = "Verschwinde jetzt. Du bist so gut ein Offizier, wie Scheiße gut ist zum Kugeln machen.";
@@ -1052,8 +1052,8 @@ void ProcessDialogEvent()
 			}
 			else	
 			{
-				dialog.text = RandPhraseSimple("Wie Sie wünschen, Kapitän, aber bitte seien Sie so nett und geben Sie mir zuerst "+sti(NPChar.rank)*1000+" Pesos. Lassen Sie dies eine Entschädigung für den moralischen Schaden sein.","In Ordnung. Aber ich möchte immer noch erhalten "+sti(NPChar.rank)*1000+" Pesos als Entschädigung für meinen harten und treuen Dienst.");
-				if (sti(Pchar.money) >= sti(NPChar.rank)*1000)
+				dialog.text = RandPhraseSimple("Wie Sie wünschen, Kapitän, aber bitte seien Sie so nett und geben Sie mir zuerst "+int(NPChar.rank)*1000+" Pesos. Lassen Sie dies eine Entschädigung für den moralischen Schaden sein.","In Ordnung. Aber ich möchte immer noch erhalten "+int(NPChar.rank)*1000+" Pesos als Entschädigung für meinen harten und treuen Dienst.");
+				if (int(Pchar.money) >= int(NPChar.rank)*1000)
 				{
 					Link.l1 = "Was für ein Schurke! Also gut, hier ist dein Geld.";
 					Link.l1.go = "Get_out_А4_chang";
@@ -1095,7 +1095,7 @@ void ProcessDialogEvent()
 	    case "Get_out_А1_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_1";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
 			AddDialogExitQuestFunction("LandEnc_OfficerFired");
@@ -1123,7 +1123,7 @@ void ProcessDialogEvent()
 		case "Get_out_А3_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_3";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
 			AddDialogExitQuestFunction("LandEnc_OfficerFired");
@@ -1152,7 +1152,7 @@ void ProcessDialogEvent()
 		case "Get_out_А4_chang": // интерфейс обмена
 			Diag.TempNode = "Fired_4";
 			LAi_CharacterDisableDialog(NPChar);
-			AddMoneyToCharacter(Pchar, -(makeint(sti(NPChar.rank)*1000)));
+			AddMoneyToCharacter(Pchar, -(int(int(NPChar.rank)*1000)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 1);
 			ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex(Npchar.id);
@@ -1166,14 +1166,14 @@ void ProcessDialogEvent()
 		break;
 
 	    case "exit_bad":
-			Npchar.loyality = makeint(Npchar.loyality) - 3;
+			Npchar.loyality = int(Npchar.loyality) - 3;
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = true;
 			DialogExit();
 		break;
 
 		case "exit_bad1":
-			Npchar.loyality = makeint(Npchar.loyality) - 2;
+			Npchar.loyality = int(Npchar.loyality) - 2;
 			ChangeOfficersLoyality("bad_all", 1);
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			ChangeCharacterComplexReputation(pchar,"authority", -1);
@@ -1183,7 +1183,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_good":
-			Npchar.loyality = makeint(Npchar.loyality) - 1;
+			Npchar.loyality = int(Npchar.loyality) - 1;
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = true;
 			DialogExit();
@@ -1331,14 +1331,14 @@ void ProcessDialogEvent()
         break;
 
         case "Exit_Gover_Hire":
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
             attr = sld.id + "_townhall";
 
             // снимем пассажира -->
-			CheckForReleaseOfficer(sti(NPChar.index));
+			CheckForReleaseOfficer(int(NPChar.index));
 			RemovePassenger(pchar, NPChar);
 			// снимем пассажира <--
-		    sld.OfficerIdx = sti(NPChar.index);
+		    sld.OfficerIdx = int(NPChar.index);
 			ChangeCharacterAddressGroup(NPChar, attr, "sit", "sit1");
 			LAi_SetHuberTypeNoGroup(NPChar);
             SaveCurrentNpcQuestDateParam(NPChar, "StartTaxDate");
@@ -1378,19 +1378,19 @@ void ProcessDialogEvent()
 
         case "Gover_Tax":
             iTemp = GetNpcQuestPastDayParam(NPChar, "StartTaxDate");
-            iTax  = makeint((GetCharacterSkillSimple(NPChar, SKILL_COMMERCE) + GetCharacterSkillSimple(NPChar, SKILL_LEADERSHIP)) / 2);
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            iTax  = int((GetCharacterSkillSimple(NPChar, SKILL_COMMERCE) + GetCharacterSkillSimple(NPChar, SKILL_LEADERSHIP)) / 2);
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
 			if (CheckAttribute(sld, "FortValue"))
 			{
-			    iFortValue = sti(sld.FortValue);
+			    iFortValue = int(sld.FortValue);
 			}
 			else
 			{
 			    iFortValue = 20;
 			}
 			NPChar.Gover_Tax_Sum = iFortValue*iTax*iTemp;
-			dialog.Text = "Meine Fähigkeiten erlauben das Sammeln "+FindRussianMoneyString(iFortValue*iTax)+" Pro Tag. Über "+FindRussianDaysString(iTemp)+" Ich "+NPCharSexPhrase(NPChar,"gesammelt","gesammelt")+" "+FindRussianMoneyString(sti(NPChar.Gover_Tax_Sum))+".";
-			if (sti(NPChar.Gover_Tax_Sum) > 0)
+			dialog.Text = "Meine Fähigkeiten erlauben das Sammeln "+FindRussianMoneyString(iFortValue*iTax)+" Pro Tag. Über "+FindRussianDaysString(iTemp)+" Ich "+NPCharSexPhrase(NPChar,"gesammelt","gesammelt")+" "+FindRussianMoneyString(int(NPChar.Gover_Tax_Sum))+".";
+			if (int(NPChar.Gover_Tax_Sum) > 0)
 			{
 			    Link.l1 = "Ich will all das eingesammelte Steuergeld nehmen.";
             	Link.l1.go = "Gover_Tax_Get";
@@ -1401,7 +1401,7 @@ void ProcessDialogEvent()
 
         case "Gover_Tax_Get":
             SaveCurrentNpcQuestDateParam(NPChar, "StartTaxDate");
-            AddMoneyToCharacter(Pchar, sti(NPChar.Gover_Tax_Sum));
+            AddMoneyToCharacter(Pchar, int(NPChar.Gover_Tax_Sum));
 
 			Diag.CurrentNode = "Gover_Main";
             DialogExit();
@@ -1412,7 +1412,7 @@ void ProcessDialogEvent()
             Link.l8 = "Das ist gut.";
             Link.l8.go = "exit_hire";
             Diag.TempNode = "Hired";
-            sld = GetColonyByIndex(sti(NPChar.ColonyIdx));
+            sld = GetColonyByIndex(int(NPChar.ColonyIdx));
             DeleteAttribute(sld, "OfficerIdx");
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
@@ -1533,7 +1533,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CompanionTravel_PrepareStart":
-			dialog.Text = "Ich verstehe. Bis "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" zu gehen "+sti(characters[sti(NPChar.realcompanionidx)].CompanionTravel.Days)+" Tage, was mache ich bei der Ankunft?";
+			dialog.Text = "Ich verstehe. Bis "+XI_ConvertString("Colony"+characters[int(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Gen")+" zu gehen "+int(characters[int(NPChar.realcompanionidx)].CompanionTravel.Days)+" Tage, was mache ich bei der Ankunft?";
 				Link.l1 = "An der Hafenkolonie für einen Monat liegen bleiben.";
 				Link.l1.go = "CompanionTravel_PrepareStart_2";
 				Link.l2 = "Du weißt, ich habe es mir überlegt. Bleib bei mir...";
@@ -1554,7 +1554,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "CompanionTravel_LastNode":
-			Dialog.text = RandPhraseSimple("Heute werde ich wieder in See stechen...","Vergiss nicht unser Treffen in "+XI_ConvertString("Colony"+characters[sti(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Das")+".");
+			Dialog.text = RandPhraseSimple("Heute werde ich wieder in See stechen...","Vergiss nicht unser Treffen in "+XI_ConvertString("Colony"+characters[int(NPChar.realcompanionidx)].CompanionTravel.ToColonyID+"Das")+".");
 				link.l2 = "...";
 				link.l2.go = "Exit";
 				Diag.TempNode = "CompanionTravel_LastNode";
@@ -1569,8 +1569,8 @@ void ProcessDialogEvent()
 					Diag.TempNode = "hired";
 					CompanionTravel_DeleteSpecialShipAttributes(NPChar);
 					Group_DeleteAtEnd(NPChar.CompanionTravel.GroupID); // Потрем группу
-					SetCompanionIndex(PChar, -1, sti(NPChar.index));
-					PChar.CompanionTravel = sti(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
+					SetCompanionIndex(PChar, -1, int(NPChar.index));
+					PChar.CompanionTravel = int(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
 					DeleteAttribute(NPChar, "CompanionTravel");
 			}
 			else
@@ -1592,8 +1592,8 @@ void ProcessDialogEvent()
 				Diag.TempNode = "hired";
 				CompanionTravel_DeleteSpecialShipAttributes(NPChar);
 				Group_DeleteAtEnd(NPChar.CompanionTravel.GroupID);
-				SetCompanionIndex(PChar, -1, sti(NPChar.index));
-				PChar.CompanionTravel = sti(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
+				SetCompanionIndex(PChar, -1, int(NPChar.index));
+				PChar.CompanionTravel = int(PChar.CompanionTravel) - 1; // Этого компаньона взяли обратно в эскадру
 				DeleteAttribute(NPChar, "CompanionTravel");
 			}
 			else
@@ -1660,14 +1660,14 @@ void ProcessDialogEvent()
 		case "SharlieEpilog_Folke_salary":
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Folke_exit");
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Folke_salary_X3":
 			dialog.text = "Haha, nein, Käpt’n, ich mache keinen Schritt mehr zu einem Geldverleiher. Aber selbst Kapitän zu werden... das ist ein interessanter Gedanke. Ich gebe zu, ich habe schon öfter daran gedacht. Vielleicht mache ich es wirklich.";
 			link.l1 = "Noch etwas. Ich will in der Taverne eine Abschiedsparty schmeißen. Ich hoffe, du kommst vorbei. Wäre die perfekte Gelegenheit, ein paar unserer Jungs für deine eigene Crew anzuheuern.";
 			link.l1.go = "SharlieEpilog_Folke_salary_X3_2";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Folke_salary_X3_2":
@@ -1717,14 +1717,14 @@ void ProcessDialogEvent()
 		case "SharlieEpilog_Duran_salary":
 			DialogExit();
 			AddDialogExitQuestFunction("SharlieEpilog_Duran_exit");
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Duran_salary_X3":
 			dialog.text = "Ich hab mich schon entschieden. Ich werde Schatzsucher. Da steckt was drin...";
 			link.l1 = "Ha-ha! Gute Wahl! Und noch was: Ich habe vor, zum Abschied nochmal richtig die Sau rauszulassen. Wenn du mitmachen willst – komm in die Taverne.";
 			link.l1.go = "SharlieEpilog_Duran_salary_X3_2";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Duran_salary_X3_2":

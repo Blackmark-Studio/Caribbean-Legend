@@ -396,12 +396,12 @@ void ProcessDialogEvent()
 		
 		case "contra_1":
 			dialog.text = "Ah. Molto interessato. Soprattutto il mio cliente. Quanto si guadagna?";
-			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+" di legno di ferro, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+" di seta navale, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" di corda e "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" di resina.";
+			link.l1 = ""+FindRussianQtyString(int(pchar.questTemp.FMQL.Sanl))+" di legno di ferro, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Silk))+" di seta navale, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Rope))+" di corda e "+FindRussianQtyString(int(pchar.questTemp.FMQL.Oil))+" di resina.";
 			link.l1.go = "contra_2";
 		break;
 		
 		case "contra_2":// Addon 2016-1 Jason пиратская линейка
-			iTotalTemp = 2200*sti(pchar.questTemp.FMQL.Sanl)+1600*sti(pchar.questTemp.FMQL.Silk)+1000*sti(pchar.questTemp.FMQL.Rope)+900*sti(pchar.questTemp.FMQL.Oil);
+			iTotalTemp = 2200*int(pchar.questTemp.FMQL.Sanl)+1600*int(pchar.questTemp.FMQL.Silk)+1000*int(pchar.questTemp.FMQL.Rope)+900*int(pchar.questTemp.FMQL.Oil);
 			dialog.text = "Molto bene. 2200 pesos per ogni pezzo di legno di ferro, 900 pesos per la resina, 1600 pesos per la seta navale e 1000 pesos per le gomene. Vediamo un po'... Ebbene, ebbene."+iTotalTemp+" pesos. Affare fatto?";
 			link.l1 = "Affare fatto!";
 			link.l1.go = "contra_3";
@@ -410,7 +410,7 @@ void ProcessDialogEvent()
 		case "contra_3":
 			LAi_Fade("", "");
 			FMQL_CreateGuidesWarriors();
-			dialog.text = "Splendido! Portane ancora. Gli olandesi non smettono mai d’esser generosi coi pellirosse... E chi sono 'sti ospiti? Che diavolo?!";
+			dialog.text = "Splendido! Portane ancora. Gli olandesi non smettono mai d’esser generosi coi pellirosse... E chi sono 'int ospiti? Che diavolo?!";
 			link.l1 = "";
 			link.l1.go = "contra_4";
 		break;
@@ -464,6 +464,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload_sea", "none", "", "", "FMQL_PirateNormal", 10.0);
+			if (CheckAttributeEqualTo(pchar, "questTemp.FMQL", "end")) return;
 			sld = CharacterFromID("FMQL_Prosper");
 			sld.Dialog.currentnode = "prosper_11";
 			sld.MusketerDistance = 20;
@@ -475,7 +476,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "sea", "none", "", "", "FMQL_PirateNormal", 10.0);
-			if (sti(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
+			if (int(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
 			else
 			{
 				pchar.quest.FMQL_money_20k.win_condition.l1 = "Money";

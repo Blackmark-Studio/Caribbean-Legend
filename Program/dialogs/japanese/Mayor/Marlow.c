@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("気でも狂ったのか？屠殺屋ごっこがしたかったのか？海賊どもはみんなお前に怒ってるぜ、坊主、 さっさとここから出ていったほうがいいぞ…","どうやらお前、頭がおかしくなったみたいだな、坊主。ちょっと腕を伸ばしたかったのか？悪いが、 ここはお前の来る場所じゃねえ。とっとと失せろ！");
 				link.l1 = RandPhraseSimple("聞けよ、この状況を何とかしたいんだ…","この問題を解決するのを手伝ってくれ…");
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("気でも狂ったのか？屠殺屋ごっこがしたかったのか？海賊どもはみんなお前に怒ってるぜ、坊主、 さっさとここから出ていったほうがいいぞ…","どうやらお前、頭がおかしくなったみたいだな、坊主。ちょっと腕を伸ばしたかったのか？悪いが、 ここはお前の来る場所じゃねえ。とっとと失せろ！");
 				link.l1 = RandPhraseSimple("聞けよ、この状況を何とかしたいんだ…","この問題を解決するのを手伝ってくれ…");
@@ -264,7 +264,7 @@ void ProcessDialogEvent()
 				dialog.text = "ああ、やっと来たか。バルバドスのあのプランテーションの旦那にあいつを売ろうかと思ってたんだがな、 あいつは一週間か二週間でここに来る予定だ……身代金は持ってきたのか？";
 				link.l1 = "見てくれ、ちょっとした問題があるんだ……実は、そんなに金を持ってねえ。でも、働く気はあるぜ。";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "奴をまだ売ってねえのは助かるぜ。ほらよ、１５万ペソだ。奴はどこにいる？"link.l2.go ="CapComission2_3";
 				}	
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Dat"); // belamour gen
 			dialog.text = "ふむ……まあ、 "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+" 何人かの海賊に、戦利品の取り分が俺たちの隠し場所、つまり の近くに保管されていると信じ込ませやがった "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+"。奴らの二隻の船『"+pchar.GenQuest.CaptainComission.ShipName1+"「と」"+pchar.GenQuest.CaptainComission.ShipName2+"「'はついさっき錨を上げて出航し、」 "+sLoc+"。これで俺が部下どもにこの仕事を任せられねえ理由がわかっただろう？";
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 			dialog.text = "値下げしろだと！？お前の無能のせいで俺の隠し財産がパーになったんだぞ！だからこそ値上げしてやる！欲しけりゃ20万ペソ払え、嫌ならとっとと失せろ。";
 			link.l1 = "高すぎるな……じゃあな……";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "くそっ、金貨を持っていけ。";
 				link.l2.go = "CapComission4_5";
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 			dialog.text = "身代金を持ってきたのか "+GetSexPhrase("","ラ")+"？俺があいつをプランテーションの連中に売るって言ったのは冗談じゃなかったぜ。";			
 			link.l1 = "「聞け、」 "+NPChar.name+"…話があるんだが……そんな大金は持ってねえ。でも、俺はやる気はあるぜ"+GetSexPhrase("","「а」")+" 「ケリをつけるぜ。」";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "奴をまだ売ってねえのは助かるぜ。ほらよ、１５万ペソだ。奴はどこにいる？"link.l2.go ="CapComission2_3";
 			}			
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 			dialog.text = "金は持ってきたか？あの男をプランテーションに売るってのは冗談じゃねえぞ。";			
 			link.l1 = "「金はねえんだ」 "+NPChar.name+"、だが今取り組んでるところだ。";
 			link.l1.go = "exit";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "奴をまだ売ってねえのは助かるぜ。ほらよ、これがお前の金だ――十五万ペソだ。奴はどこにいる？"link.l2.go ="CapComission2_3";
 			}			
@@ -527,7 +527,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "なるほどな……嘘じゃねえなら、悪くねえ取引だ。こいつのために金を払ってやってもいいぜ "+iTemp+" ペソを払うか、面白い情報を差し出すかだ。好きにしろ。";
 			link.l1 = "ペソをもらった方がいいな。この仕事にはもううんざりだ……";
 			link.l1.go = "Marginpassenger_money";
@@ -542,7 +542,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "どういたしまして、もっと持ってこい……じゃあな！";
 			link.l1 = "…幸運を祈るぜ…";
 			link.l1.go = "exit";
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "13");
 			AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore+"Dat"));//лесник - окончание в СЖ // belamour gen: Abl - это к Залив"ом", нужен дательный
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
 			SetFunctionTimerCondition("Marginpassenger_SouthshoreOver", 0, 0, 7, false);
 			pchar.quest.Marginpassenger.win_condition.l1 = "location";
 			pchar.quest.Marginpassenger.win_condition.l1.location = pchar.GenQuest.Marginpassenger.Shore;
@@ -597,7 +597,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer_2":
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "16");
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen 
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen
 			AddQuestUserData("Marginpassenger", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity+"Gen"));
 			AddQuestUserData("Marginpassenger", "sCity1", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity1+"Acc")); // лесник - окончание в СЖ
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName1);
@@ -618,7 +618,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "くだらねえ話で俺に絡むな。次は痛い目見るぜ……";
         			link.l1 = "わかったぜ。";
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "もっと敬意を示して、無礼な態度をやめてくれるといいんだが？";
         			link.l1 = "安心しろよ、牧師。必ずやるぜ。";
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		case "pirate_town":
             dialog.text = "問題を解決しろだと？自分が何をやらかしたかわかってんのか？まあいい、とにかく百万ペソ持ってこい。 そうすりゃ俺が仲間どもを説得して、お前のやったことを忘れさせてやる。気に入らねえなら地獄へ行きな。";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "よし、払う準備はできてるぜ。";
 				link.l1.go = "pirate_town_pay";

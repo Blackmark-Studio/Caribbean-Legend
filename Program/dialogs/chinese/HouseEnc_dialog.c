@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -214,14 +214,14 @@ void ProcessDialogEvent()
 			link.l1 = "闭嘴, 婊子! ";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		case "HouseWoman_2":
 			dialog.text = "我友好地请你离开我们家, 但你就是不听! 够了! 救命! 卫兵! ";
 			link.l1 = "闭嘴, 你这个愚蠢的女人! 你疯了吗? ! ";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break; 
 		//------------------------------- —仓库管理员 ---------------------------------		
 		case "SkladMan":
@@ -290,7 +290,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "即使作为港口仓库, 它也相当宽敞, 可以容纳... 50000公担货物。 我可以为你提供货物保管服务, 每月" + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + "。 " +
+			dialog.text = "即使作为港口仓库, 它也相当宽敞, 可以容纳... 50000公担货物。 我可以为你提供货物保管服务, 每月" + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + "。 " +
 				"这包括我的人守卫。 防潮和灭鼠。 你觉得如何? 哦, 还有保密, 这是不言而喻的。 ";
 			link.l1 = "好的。 我可以看看吗? ";	
 			link.l1.go = "storage_rent2";
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		
 		case "storage_rent2":
 			dialog.text = "当然, 当然。 但是... 我需要提前支付一个月的租金。 ";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "你真是... 精于经商, 必须说。 给你钱... 我租这个棚子。 ";
 				link.l1.go = "storage_11";
@@ -319,11 +319,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_0":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "还有租金, 你还欠我" + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + "。 ";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+				dialog.text = "还有租金, 你还欠我" + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + "。 ";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "好的, 我现在付租金。 ";
 					link.l1.go = "storage_3";
@@ -337,7 +337,7 @@ void ProcessDialogEvent()
 			else
 			{ // 伐木工。 如果忘了带船就没办法.
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "去吧。 ";
 				link.l1 = "谢谢。 ";
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 		case "storage_1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
 			dialog.text = "你应该记得, 我需要提前支付一个月的租金。 ";
-			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
+			if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 			{
 				link.l1 = "当然, 我记得。 给你。 ";
 				link.l1.go = "storage_11";
@@ -379,30 +379,30 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_11":
-			AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			NPChar.Storage.Activate = true;
 			Achievment_Set("ach_67"); // ugeen 2016
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 				
 		case "storage_2":			
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;
 		
 		case "storage_3":			
-			AddMoneyToCharacter(pchar, -sti(NPChar.MoneyForStorage)); 
+			AddMoneyToCharacter(pchar, -int(NPChar.MoneyForStorage));
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar);
 			NPChar.Storage.MoneyForStorage = NPChar.MoneyForStorage;
 			SaveCurrentNpcQuestDateParam(NPChar, "Storage.Date");
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LaunchStorage(sti(rColony.StoreNum));			
+			LaunchStorage(int(rColony.StoreNum));
 		break;		
 
 		case "storage_04":
@@ -414,11 +414,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_4":
-			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
-			if(sti(NPChar.MoneyForStorage) > 0) 			
+			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * int(NPChar.Storage.MoneyForStorage);
+			if(int(NPChar.MoneyForStorage) > 0)
 			{
-				dialog.text = "还有租金, 你还欠我" + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + "。 ";
-				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))			
+				dialog.text = "还有租金, 你还欠我" + FindRussianMoneyString(int(NPChar.MoneyForStorage)) + "。 ";
+				if(int(pchar.money) >= int(NPChar.MoneyForStorage))
 				{
 					link.l1 = "好的。 ";
 					link.l1.go = "storage_5";
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 			else
 			{ // 伐木工。 如果没有船就无法取货
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{	
 				dialog.text = "收拾你的货物, 我会关闭仓库。 ";
 				link.l1 = "好的。 ";
@@ -444,7 +444,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "storage_5":
-			LeaveStorage(NPChar, rColony, sti(NPChar.MoneyForStorage));
+			LeaveStorage(NPChar, rColony, int(NPChar.MoneyForStorage));
 			DialogExit();
 		break;
 		
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_2";
 		break;
 		case "ShipyardsMap_2":
-			if (sti(pchar.questTemp.different.ShipyardsMap.skladFight))
+			if (int(pchar.questTemp.different.ShipyardsMap.skladFight))
 			{
 				dialog.text = "看看你! 嘿, 卫兵, 这里有个小偷!!! ";
 				link.l1 = "什么小偷? 我只是想谈谈! ";
@@ -485,10 +485,10 @@ void ProcessDialogEvent()
 			link.l1.go = "ShipyardsMap_4";
 		break;
 		case "ShipyardsMap_4":
-			dialog.text = "嗯, 这就对了... 好吧! 给我" + FindRussianMoneyString(sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000) + ", 我会在第二天把造船厂的门打开。 ";
+			dialog.text = "嗯, 这就对了... 好吧! 给我" + FindRussianMoneyString(int(pchar.questTemp.different.ShipyardsMap.sklad)*1000) + ", 我会在第二天把造船厂的门打开。 ";
 			link.l1 = "太贵了。 那我只好不用了... ";
 			link.l1.go = "exit";
-			if (sti(pchar.money) >= (sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
+			if (int(pchar.money) >= (int(pchar.questTemp.different.ShipyardsMap.sklad)*1000))
 			{
 				link.l2 = "好吧, 我同意。 拿你的钱, 按我们说的做。 ";
 				link.l2.go = "ShipyardsMap_5";
@@ -498,7 +498,7 @@ void ProcessDialogEvent()
 			dialog.text = "别担心, 会办妥的。 ";
 			link.l1 = "希望如此... ";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.ShipyardsMap.sklad)*1000);
 			AddQuestRecord("ShipyardsMap", "5");
 			AddQuestUserData("ShipyardsMap", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			// 移除close_for_night

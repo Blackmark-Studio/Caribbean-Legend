@@ -17,7 +17,7 @@ int CreateOtherCharacters(int n)
 	ch.activity_end = "24";
 	ch.experience = "0";
 	ch.Ship.Name = "Boat";
-	ch.Ship.Type = GenerateShip(SHIP_BOAT, 1);
+	ch.Ship.Type = GenerateShip(SHIP_BOAT, true);
 	ch.Ship.Stopped = true;
 	n = n + 1;
 

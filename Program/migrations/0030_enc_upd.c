@@ -12,7 +12,7 @@ void ApplyMigration(ref migrationState)
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-		if(sti(RealShips[i].BaseType) == SHIP_RENOVATED_FDM)
+		if(int(RealShips[i].BaseType) == SHIP_RENOVATED_FDM)
 		{
 			RealShips[i].Name = "NewFlyingdutchman1";  
 		}

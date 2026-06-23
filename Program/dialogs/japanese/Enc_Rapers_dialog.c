@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_2")
 			{
-				if(sti(pchar.rank) < 10)
+				if(int(pchar.rank) < 10)
 				{
 					dialog.text = LinkRandPhrase("「自分の道を行け」 "+GetSexPhrase("相棒","娘")+"。最終的には彼女も俺たちに感謝するさ、わかるだろう。","消え失せろ！旦那たちに楽しく過ごさせてやれ。","「お前には関係ねえことだ」 "+GetSexPhrase("見知らぬ者","娘")+"。ちょっと楽しむだけだ、それだけさ！！");
 					link.l1 = LinkRandPhrase("俺はこんなこと許さねえぞ！","今すぐその悪だくみをやめろ！","俺はどんな暴力も絶対に許さねえぞ！");
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_3")
 			{
-				if(sti(pchar.rank) < 20)
+				if(int(pchar.rank) < 20)
 				{	
 					dialog.text = "「自分の道を行け」 "+GetSexPhrase("いい男","お嬢さん")+"。お前がいなくても俺たちで何とかするさ。";
 					link.l1 = "俺は暴力は絶対に許さねえぞ！";
@@ -132,9 +132,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3":
-			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * sti(pchar.rank);
-			dialog.text = "あんたも知っておくべきだが、あの女はかなり金がかかったんだぜ！もしあんたがそんなに高貴なお方なら、 あの女をあんたに渡してやってもいいぜ "+sti(pchar.GenQuest.EncGirl.price)+" ペソ。"+GetSexPhrase(" 彼女と一緒なら楽しい時間を過ごせるぜ、へへ……","")+"";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
+			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * int(pchar.rank);
+			dialog.text = "あんたも知っておくべきだが、あの女はかなり金がかかったんだぜ！もしあんたがそんなに高貴なお方なら、 あの女をあんたに渡してやってもいいぜ "+int(pchar.GenQuest.EncGirl.price)+" ペソ。"+GetSexPhrase(" 彼女と一緒なら楽しい時間を過ごせるぜ、へへ……","")+"";
+			if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.price))
 			{
 				link.l1 = RandPhraseSimple("ほら、金だ。あの女は俺が連れていく。","歯を食いしばるのはやめろ。俺はこの娘を連れていくぜ。ほら、金だ。");
 				link.l1.go = "Node_4";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		
 		case "Node_4": // бандюки уходят, девица остаётся - ГГ ее выкупил у бандюков
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.price))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.price)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 7);
 			//pchar.quest.LandEnc_RapersBadExit.over = "yes";
 			sGlobalTemp = "Saved_CangGirl";
@@ -299,12 +299,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar2":
-			pchar.GenQuest.EncGirl.BerglarSum = makeint(sti(pchar.money)/5) + 5000;
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 0)
+			pchar.GenQuest.EncGirl.BerglarSum = int(int(pchar.money)/5) + 5000;
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 0)
 			{
-				dialog.text = "いいや。わずかな額でたった "+sti(pchar.GenQuest.EncGirl.BerglarSum)+" ペソがあんたをすべての面倒から救ってくれるぜ。";
-				if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.BerglarSum))
+				dialog.text = "いいや。わずかな額でたった "+int(pchar.GenQuest.EncGirl.BerglarSum)+" ペソがあんたをすべての面倒から救ってくれるぜ。";
+				if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.BerglarSum))
 				{
 					link.l1 = "まあ、最近は高貴な行いも結構金がかかるもんだな。よし、持っていけ…";
 					link.l1.go = "EncGirl_Berglar3";
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar3":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.BerglarSum)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.BerglarSum)));
 			dialog.text = "とてもいい。せいせいしたぜ。";
 			link.l1 = "幸運を祈る。";
 			link.l1.go = "exit";

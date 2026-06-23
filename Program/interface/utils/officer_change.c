@@ -19,7 +19,7 @@ void OfficerChange()
 	}
 	else if (GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{
-		int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
+		int iCharacter = int(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
 		xi_refCharacter = &characters[iCharacter];
 		if (isOfficerInShip(xi_refCharacter, true) && xi_refCharacter.id != pchar.id)
 		{
@@ -65,7 +65,7 @@ void AcceptAddOfficer()
 
     if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
     {
-		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
+		int iChar = int(GameInterface.PASSENGERSLIST.(attributeName2).character);
 
 		if (!CheckAttribute(&characters[iChar], "isbusy"))
 		{
@@ -73,7 +73,7 @@ void AcceptAddOfficer()
 		}
 		else
 		{
-		    characters[iChar].isbusy = sti(characters[iChar].isbusy) + 1; // совместители
+		    characters[iChar].isbusy = int(characters[iChar].isbusy) + 1; // совместители
 		}
 		bOk = (Characters[iChar].location != pchar.location);  // ниже локация перебивается на ГГ
 		switch (nCurScrollNum)
@@ -140,7 +140,7 @@ void AcceptAddOfficer()
 		GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 		
 		rChar = &characters[iChar];
-		Event("eSwitchPerks", "l", sti(rChar.index));
+		Event("eSwitchPerks", "l", int(rChar.index));
 	}
 	Event(EVENT_CT_UPDATE_FELLOW, "a", &Characters[iChar]);
 	ExitOfficerMenu();
@@ -154,10 +154,10 @@ void AcceptRemoveOfficer()
 	int iCurrentNode = nCurScrollNum;
 	string attributeName2 = "pic"+(nCurScrollNum+1);
 
-	int iChar = sti(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
+	int iChar = int(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
 
-	characters[iChar].isbusy = sti(characters[iChar].isbusy) - 1; // совместители
-	if (sti(characters[iChar].isbusy) <= 0)
+	characters[iChar].isbusy = int(characters[iChar].isbusy) - 1; // совместители
+	if (int(characters[iChar].isbusy) <= 0)
 	{
 		DeleteAttribute(&characters[iChar], "isbusy");
 	}
@@ -211,13 +211,13 @@ void AcceptRemoveOfficer()
 
 void SetOfficersSkills()
 {
-	string sCharacter = "pic" + (sti(GameInterface.PASSENGERSLIST.current) + 1);
+	string sCharacter = "pic" + (int(GameInterface.PASSENGERSLIST.current) + 1);
 	if (checkAttribute(&GameInterface, "PASSENGERSLIST." + sCharacter))
 	{
 		if (checkAttribute(&GameInterface, "PASSENGERSLIST." + sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
-			ref otherchr = &characters[sti(sCharacter)];
+			ref otherchr = &characters[int(sCharacter)];
 			SetSPECIALMiniTable("TABLE_SMALLSKILL", otherchr);
 			SetOTHERMiniTable("TABLE_SMALLOTHER", otherchr);
 			SetFormatedText("OFFICER_NAME", GetFullName(otherchr));

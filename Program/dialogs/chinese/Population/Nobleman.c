@@ -36,10 +36,10 @@ void ProcessDialogEvent()
     {
         case "First time":
             //--> 检查国家间关系
-            if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+            if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
             {
-                dialog.text = NPCStringReactionRepeat("哼。 你挂着"+NationNameGenitive(sti(pchar.nation))+"的旗帜航行, 伙计。 你到底在我们镇上干什么? 快滚! ", 
-                    "我可不想被怀疑是"+NationNameAblative(sti(pchar.nation))+"的朋友! 快滚, 否则我就叫卫兵了! ", 
+                dialog.text = NPCStringReactionRepeat("哼。 你挂着"+NationNameGenitive(int(pchar.nation))+"的旗帜航行, 伙计。 你到底在我们镇上干什么? 快滚! ",
+                    "我可不想被怀疑是"+NationNameAblative(int(pchar.nation))+"的朋友! 快滚, 否则我就叫卫兵了! ",
                     "这是你最后的机会。 否则你只能自食其果。 ",
                     "我警告过你了。 现在你要为你的无礼付出代价, 混蛋! ", "block", 1, npchar, Dialog.CurrentNode);
                 link.l1 = HeroStringReactionRepeat("真是个爱国者, 哈! ", 
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
             }
             
             //--> 检查声望 - 贵族鄙视声望极低的人
-            if (sti(pchar.reputation.nobility) < 10)
+            if (int(pchar.reputation.nobility) < 10)
             {
                 dialog.text = NPCStringReactionRepeat("看看这个! 我们的卫兵怎么能让你这样的混蛋在镇上闲逛? 简直难以置信... ", 
                     "滚远点, 我甚至不想和你说话! 刽子手... ", 
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
             {
                 // 检查港口是否有船
                 bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-                if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city)//贵族乘客
+                if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city)//贵族乘客
                 {
                     dialog.text = "你好, "+GetAddress_Form(NPChar)+"。 我看你是一艘坚固船只的船长。 我想请你帮个忙。 你可以接受也可以拒绝。 ";
                     link.l1 = "我在听, "+GetAddress_FormToNPC(NPChar)+"。 你是什么意思? ";
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
                     DeleteAttribute(npchar, "talker"); //移除对话标记
                     break;
                 }
-                if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//贵族乘客
+                if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//贵族乘客
                 {
                     dialog.text = "你好, "+GetAddress_Form(NPChar)+"。 我看你是一艘坚固船只的船长。 我想请你帮个忙。 你可以接受也可以拒绝。 ";
                     link.l1 = "我在听, "+GetAddress_FormToNPC(NPChar)+"。 你是什么意思? ";
@@ -170,11 +170,11 @@ void ProcessDialogEvent()
             else SetPassengerParameter("Noblepassenger", true);
             if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
             {
-                dialog.text = ""+GetSexPhrase("先生","女士")+", 我需要尽快到达"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"殖民地, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上, 还有"+FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty))+"。 与这里大多数小船相比, 你的船看起来坚固而快速。 我可以付给你"+FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money))+"。 你怎么说? "; // belamour gen
+                dialog.text = ""+GetSexPhrase("先生","女士")+", 我需要尽快到达"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"殖民地, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上, 还有"+FindRussianDaysString(int(pchar.GenQuest.Noblepassenger.DaysQty))+"。 与这里大多数小船相比, 你的船看起来坚固而快速。 我可以付给你"+FindRussianMoneyString(int(pchar.GenQuest.Noblepassenger.Money))+"。 你怎么说? "; // belamour gen
             }
             else
             {
-                dialog.text = "你好, "+GetSexPhrase("先生","女士")+"! 我需要去"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! 顺便说一下, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上。 是的, 是的, 我知道 —那些混蛋正等着我们出现在那里。 但我在那里有一个非常紧急和重要的会议! 我不是一个吝啬的人 —虽然我不喜欢付钱, 但我总是会付钱。 放下你手头的一切, 我们一到那里, 我就会给你"+FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money))+"。 ";
+                dialog.text = "你好, "+GetSexPhrase("先生","女士")+"! 我需要去"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! 顺便说一下, 它在"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+"上。 是的, 是的, 我知道 —那些混蛋正等着我们出现在那里。 但我在那里有一个非常紧急和重要的会议! 我不是一个吝啬的人 —虽然我不喜欢付钱, 但我总是会付钱。 放下你手头的一切, 我们一到那里, 我就会给你"+FindRussianDublonString(int(pchar.GenQuest.Noblepassenger.Money))+"。 ";
             }
             link.l1 = "嗯。 我也正往那个方向走, 所以我愿意以这些条件载你上船。 ";
             link.l1.go = "passenger_1";
@@ -235,15 +235,15 @@ void ProcessDialogEvent()
             AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
             AddQuestUserData(sTitle, "sName", GetFullName(npchar));
             AddQuestUserData(sTitle, "sCity", sTemp);
-            AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty)));
+            AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Noblepassenger.DaysQty)));
             AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-            if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money)));
-            else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Noblepassenger.Money)));
+            else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Noblepassenger.Money)));
             AddQuestUserData(sTitle, "sName", GetFullName(npchar));
             pchar.quest.Noblepassenger.win_condition.l1 = "location";
             pchar.quest.Noblepassenger.win_condition.l1.location = pchar.GenQuest.Noblepassenger.City+"_town";
             pchar.quest.Noblepassenger.function = "Noblepassenger_complete";
-            SetFunctionTimerCondition("Noblepassenger_Over", 0, 0, sti(pchar.GenQuest.Noblepassenger.DaysQty), false);
+            SetFunctionTimerCondition("Noblepassenger_Over", 0, 0, int(pchar.GenQuest.Noblepassenger.DaysQty), false);
         break;
         
         case "passenger_3":
@@ -268,9 +268,9 @@ void ProcessDialogEvent()
             if (CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
             {
                 AddCharacterExpToSkill(pchar, "Sneak", 50);
-                TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Noblepassenger.Money));
+                TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Noblepassenger.Money));
             }
-            else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Noblepassenger.Money));
+            else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Noblepassenger.Money));
             sTitle = npchar.index+"Citizpassenger";
             AddQuestRecordEx(sTitle, "Citizpassenger", "3");
             CloseQuestHeader(sTitle);
@@ -289,8 +289,8 @@ void ProcessDialogEvent()
         case "donation_1":
             iTemp = hrand(4)+1;
             pchar.GenQuest.Nobledonation.Money = iTemp*1000+rand(iTemp)*150;
-            dialog.text = "金额相当小, 是"+FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money))+"。 那么, 你能帮我吗? ";
-            if (sti(pchar.money) >= sti(pchar.GenQuest.Nobledonation.Money))
+            dialog.text = "金额相当小, 是"+FindRussianMoneyString(int(pchar.GenQuest.Nobledonation.Money))+"。 那么, 你能帮我吗? ";
+            if (int(pchar.money) >= int(pchar.GenQuest.Nobledonation.Money))
             {
                 link.l1 = "是的, 当然。 拿去吧。 ";
                 link.l1.go = "donation_2";
@@ -308,7 +308,7 @@ void ProcessDialogEvent()
         break;
         
         case "donation_2":
-            AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Nobledonation.Money));
+            AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Nobledonation.Money));
             dialog.text = "非常感谢, "+GetAddress_Form(NPChar)+"! 你救了我! 我在总督官邸有朋友, 我会告诉他们你的慷慨。 再次万分感谢! ";
             link.l1 = "不客气, 先生。 我相信如果你处在我的位置也会这么做的。 ";
             link.l1.go = "donation_3";
@@ -317,7 +317,7 @@ void ProcessDialogEvent()
         case "donation_3":
             DialogExit();
             ChangeOfficersLoyality("good_all", rand(2)+1);
-            ChangeCharacterNationReputation(pchar, sti(npchar.Nation), rand(1)+2);
+            ChangeCharacterNationReputation(pchar, int(npchar.Nation), rand(1)+2);
             LAi_CharacterDisableDialog(npchar);
             npchar.lifeday = 0;
             DeleteAttribute(pchar, "GenQuest.Nobledonation");
@@ -419,8 +419,8 @@ void ProcessDialogEvent()
         case "slaves":
             npchar.quest.slaves.price = 3+hrand(1);//奴隶价格 (杜布隆) 
             npchar.quest.slaves.qty = 50+hrand(5)*10;//数量
-            npchar.quest.slaves.money = sti(npchar.quest.slaves.qty)*sti(npchar.quest.slaves.price);
-            dialog.text = "我拥有一家"+LinkRandPhrase("工厂","矿山","种植园")+", 总是需要新鲜的奴隶。 这里的气候真的很折磨他们。 现在我需要"+sti(npchar.quest.slaves.qty)+"个。 我愿意订购一批。 我会为每个奴隶支付金币, "+sti(npchar.quest.slaves.price)+"杜布隆\n不着急, 如果你能弄到我需要的东西, 我不会给你限定时间。 当然, 也要合理, 别拖半年以上。 那么你怎么说? 成交吗? ";
+            npchar.quest.slaves.money = int(npchar.quest.slaves.qty)*int(npchar.quest.slaves.price);
+            dialog.text = "我拥有一家"+LinkRandPhrase("工厂","矿山","种植园")+", 总是需要新鲜的奴隶。 这里的气候真的很折磨他们。 现在我需要"+int(npchar.quest.slaves.qty)+"个。 我愿意订购一批。 我会为每个奴隶支付金币, "+int(npchar.quest.slaves.price)+"杜布隆\n不着急, 如果你能弄到我需要的东西, 我不会给你限定时间。 当然, 也要合理, 别拖半年以上。 那么你怎么说? 成交吗? ";
             link.l1 = "成交! 奴隶贸易是肮脏的生意, 但值得冒险。 ";
             link.l1.go = "slaves_1";
             link.l2 = "对不起, 但我不是奴隶贩子。 这不是我的行当。 ";
@@ -455,15 +455,15 @@ void ProcessDialogEvent()
             AddQuestUserDataForTitle(sTitle, "sCity", XI_ConvertString("Colony"+npchar.city+"Gen"));
             AddQuestUserData(sTitle, "sCity", XI_ConvertString("Colony"+npchar.city+"Gen"));
             AddQuestUserData(sTitle, "sName", GetFullName(npchar));
-            AddQuestUserData(sTitle, "sQty", sti(npchar.quest.slaves.qty));
-            AddQuestUserData(sTitle, "sMoney", sti(npchar.quest.slaves.money));
+            AddQuestUserData(sTitle, "sQty", int(npchar.quest.slaves.qty));
+            AddQuestUserData(sTitle, "sMoney", int(npchar.quest.slaves.money));
         break;
         
         case "slaves_3":
             if (GetNpcQuestPastDayParam(npchar, "slaves_date") < 180)
             {
-                dialog.text = "你带来了我要的"+sti(npchar.quest.slaves.qty)+"个奴隶了吗, 船长? ";
-                if (GetSquadronGoods(pchar, GOOD_SLAVES) >= sti(npchar.quest.slaves.qty))
+                dialog.text = "你带来了我要的"+int(npchar.quest.slaves.qty)+"个奴隶了吗, 船长? ";
+                if (GetSquadronGoods(pchar, GOOD_SLAVES) >= int(npchar.quest.slaves.qty))
                 {
                     link.l1 = "带来了。 整批货物都在我的货舱里。 我准备好把它们交给你了。 ";
                     link.l1.go = "slaves_4";
@@ -490,15 +490,15 @@ void ProcessDialogEvent()
         break;
         
         case "slaves_5":
-            dialog.text = "别担心, 我记得。 给你, 收下这笔钱, 每个奴隶"+sti(npchar.quest.slaves.price)+"杜布隆。 对我们双方来说都是一笔好交易, 不是吗? ";
+            dialog.text = "别担心, 我记得。 给你, 收下这笔钱, 每个奴隶"+int(npchar.quest.slaves.price)+"杜布隆。 对我们双方来说都是一笔好交易, 不是吗? ";
             link.l1 = "谢谢。 很高兴和你做生意。 ";
             link.l1.go = "slaves_6";
         break;
         
         case "slaves_6":
-            RemoveCharacterGoods(pchar, GOOD_SLAVES, sti(npchar.quest.slaves.qty));
-            TakeNItems(pchar, "gold_dublon", sti(npchar.quest.slaves.money));
-            Log_Info("你收到了"+FindRussianDublonString(sti(npchar.quest.slaves.money))+"");
+            RemoveCharacterGoods(pchar, GOOD_SLAVES, int(npchar.quest.slaves.qty));
+            TakeNItems(pchar, "gold_dublon", int(npchar.quest.slaves.money));
+            Log_Info("你收到了"+FindRussianDublonString(int(npchar.quest.slaves.money))+"");
             PlaySound("interface\important_item.wav");
             dialog.text = "我得说... 对不起, 我得走了。 再见! ";
             link.l1 = "祝你好运, "+GetAddress_FormToNPC(NPChar)+"。 ";
@@ -550,11 +550,11 @@ void ProcessDialogEvent()
             NextDiag.CurrentNode = NextDiag.TempNode;
             LAi_SetHP(NPChar, 400, 400);
             TakeNItems(NPChar, "potion2", 3);
-            SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+            SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
             LAi_group_MoveCharacter(NPChar, "TempFight");
             LAi_group_Attack(NPChar, Pchar);
             AddDialogExitQuest("MainHeroFightModeOn");
-            ChangeCharacterNationReputation(pchar, sti(npchar.nation), -3);
+            ChangeCharacterNationReputation(pchar, int(npchar.nation), -3);
         break;
     }
 }

@@ -172,13 +172,13 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(NPChar, "LSC_NARVAL");
 			pchar.questTemp.LSC.parol_nrv = "true";
 		break;
-		
+
 		case "check_parol_wrong":
 			dialog.text = "Hm... Les gars ! Nous avons de la compagnie !";
 			link.l1 = "Merde !";
 			link.l1.go = "check_parol_fight";
 		break;
-		
+
 		case "check_parol_fight":
 			DialogExit();
 			LAi_SetGuardianType(NPChar);
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // диалог от времени суток. лесник
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // диалог от времени суток. лесник
 			    {
 					dialog.text = TimeGreeting()+", "+pchar.name+" ! La porte est ouverte, au cas où tu voudrais voir le patron.";
 					link.l1 = "D'accord...";
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Tu veux voir le patron ? Hm, eh bien, avance alors.";
 			link.l1 = "Danke de m'avoir permis de...";
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+				if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 				{
 				dialog.text = TimeGreeting()+", "+pchar.name+" ! La porte est ouverte, au cas où tu voudrais voir Eddie et Chimiset. Ils seront heureux de te voir.";
 				link.l1 = "D'accord...";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "protector.CheckAlways");
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Tu veux voir Eddie ? Très bien, avance, je suppose qu'il te consacrera une minute.";
 			link.l1 = "D'accord pour permettre de...";
@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 				link.l1.go = "shark_guard_fight";
 				break;
 			}
-			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00)
+			if (float(environment.time) >= 6.00 && float(environment.time) < 21.00)
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // тока прибыл
 				{

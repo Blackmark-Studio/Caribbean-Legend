@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 		
 		case "Node_11":
 			Diag.TempNode = "Node_1Next";
-			addMoneyToCharacter(pchar, makeint((sti(pchar.rank))*25 + frand(2)*500));
+			addMoneyToCharacter(pchar, int((int(pchar.rank))*25 + frand(2)*500));
 			dialog.text = "Ho un po' di soldi, per favore, accettali come segno della mia gratitudine. Ora dirò a tutti, "+GetSexPhrase("che uomo buono e nobile sei","che donna buona e nobile sei")+".";
 			link.l1 = "Certo che lo farai. Grazie... Ora torna semplicemente a casa.";
 			link.l1.go = "exit";
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_32":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "Il suo nome è "+pchar.GenQuest.EncGirl.sLoverId+", è un novizio. Al momento si trova nell'insediamento di "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", ho provato a trovare un lavoro lì, ma sono tempi duri. Tutti parlano di una crisi... E ora per me non c'è più modo di tornare a casa, comunque.";
 			link.l1 = "Una crisi? Ah... Per un vero pirata, una crisi è quando c'è una carovana commerciale all'orizzonte, ma non c'è vento per gonfiare le vele...";
 			link.l1.go = "Node_12Next";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 				pchar.quest.LandEnc_RapersBadExit.win_condition = "LandEnc_RapersBadExit";
 			}
 			pchar.GenQuest.EncGirl = "Begin_11";
-			switch(sti(pchar.GenQuest.EncGirl.variant))
+			switch(int(pchar.GenQuest.EncGirl.variant))
 			{
 				case 0:
 					if(rand(1) == 0)
@@ -302,7 +302,7 @@ void ProcessDialogEvent()
 		case "Node_131":
 			pchar.GenQuest.EncGirl.SmallCoins = rand(25) + 20;
 			pchar.GenQuest.EncGirl.BigCoins = rand(15) + 5;
-			dialog.text = "Quella collana era composta da perle selezionate, quelle non possono essere comprate a buon mercato. C'erano "+sti(pchar.GenQuest.EncGirl.BigCoins)+" grandi perle e "+sti(pchar.GenQuest.EncGirl.SmallCoins)+" quelli più piccoli. Se quelle perle fossero trovate, potremmo commissionare un altro collana come quella.";
+			dialog.text = "Quella collana era composta da perle selezionate, quelle non possono essere comprate a buon mercato. C'erano "+int(pchar.GenQuest.EncGirl.BigCoins)+" grandi perle e "+int(pchar.GenQuest.EncGirl.SmallCoins)+" quelli più piccoli. Se quelle perle fossero trovate, potremmo commissionare un altro collana come quella.";
 			link.l1 = "Sicuramente non sarà un lavoro facile... Beh, se la tua padrona ti ha dato un ordine, allora non c'è molto che tu possa fare. Cerca di trovare le perle. Buona fortuna.";
 			link.l1.go = "Node_131End";
 			link.l2 = "È inutile. Sarebbe più facile trovare un ago in un pagliaio che le perle in questa erba fitta. Per non parlare del fatto che non conosci nemmeno il posto dove sono state perse le perle...";
@@ -367,14 +367,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_4":
-			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * sti(pchar.rank);
+			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * int(pchar.rank);
 			dialog.text = "Questo suona allettante... E quanto puoi offrirmi per questo?";
-			link.l1 = "Non credo che possa valere più di "+sti(pchar.GenQuest.EncGirl.mapPrice)+" pesos.";
+			link.l1 = "Non credo che possa valere più di "+int(pchar.GenQuest.EncGirl.mapPrice)+" pesos.";
 			link.l1.go = "Node_132_5";
 		break;
 		
 		case "Node_132_5":
-			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (makeint(pchar.money) >= sti(pchar.GenQuest.EncGirl.mapPrice)))
+			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (int(pchar.money) >= int(pchar.GenQuest.EncGirl.mapPrice)))
 			{
 				dialog.text = "Eh, essere una donna non è facile... Va bene, sono d'accordo. Finalmente questo incubo sarà finito... Forse, è meglio che questa mappa sia tua,"+GetSexPhrase("un nobile gentiluomo","")+", che a quei furfanti.";
 				link.l1 = "Bene. Ecco i tuoi soldi... cerca solo di non spenderli tutti in una volta.";
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_6":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.mapPrice))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.mapPrice)));
 			ref rMap = ItemsFromID("map_full"); // mitrokosta фикс пустой карты
 			FillMapForTreasure(rMap, "");
 			GiveItem2Character(pchar, "map_full");
@@ -564,7 +564,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ma cosa posso fare? Non posso ignorare gli ordini della mia padrona, mi scuoierebbe viva.";
 			link.l1 = "Aspettami nella chiesa del insediamento di "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+", ti porterò le perle per fare una nuova collana.";
 			link.l1.go = "Node_133_1";
-			if(sti(pchar.money) >= 15000)
+			if(int(pchar.money) >= 15000)
 			{
 				link.l2 = "Ecco. Prendi questi 15000 pesos. Dovrebbe essere più che sufficiente per selezionare le perle per la collana, o per comprarne una nuova.";
 				link.l2.go = "Node_135";
@@ -591,15 +591,15 @@ void ProcessDialogEvent()
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("","")); 
 			AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name); 
 			AddQuestUserData("JungleGirl", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city));
-			AddQuestUserData("JungleGirl", "sText1", sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			AddQuestUserData("JungleGirl", "sText2", sti(pchar.GenQuest.EncGirl.SmallCoins)); 		
+			AddQuestUserData("JungleGirl", "sText1", int(pchar.GenQuest.EncGirl.BigCoins));
+			AddQuestUserData("JungleGirl", "sText2", int(pchar.GenQuest.EncGirl.SmallCoins));
 			DialogExit();
 			AddDialogExitQuest("pchar_back_to_player");			
 		break;
 		
 		case "Node_134":
 			dialog.text = RandPhraseSimple(""+GetSexPhrase("Capitano","Giovane signora")+", sono così felice di rivederti! Sei riuscito a raccogliere le perle per la collana?","Ciao, capitano! Mi hai portato le perle? Sai, la mia padrona sta diventando così nervosa...");
-			if (GetCharacterItem(pchar, "jewelry52") >= sti(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= sti(pchar.GenQuest.EncGirl.SmallCoins))
+			if (GetCharacterItem(pchar, "jewelry52") >= int(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= int(pchar.GenQuest.EncGirl.SmallCoins))
 			{
 				link.l1 = "Sì. Ecco le tue perle. Portale alla tua padrona e dille di stare più attenta la prossima volta.";
 				link.l1.go = "Node_134_1";
@@ -612,8 +612,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_134_1":
-			TakeNItems(pchar, "jewelry52", -sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			TakeNItems(pchar, "jewelry53", -sti(pchar.GenQuest.EncGirl.SmallCoins)); 
+			TakeNItems(pchar, "jewelry52", -int(pchar.GenQuest.EncGirl.BigCoins));
+			TakeNItems(pchar, "jewelry53", -int(pchar.GenQuest.EncGirl.SmallCoins));
 			pchar.quest.EncGirl_GetCoins.over = "yes";
 			pchar.quest.EncGirl_DeathSimple.over = "yes";
 			dialog.text = "Oh, "+GetSexPhrase("Capitano","signorina")+", sono così felice di averti incontrato! Come segno della mia gratitudine per tutto quello che hai fatto per me, voglio darti questo monile e queste gemme. Spero davvero che tu li trovi utili.";
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 		
 		case "Node_209":
 			LAi_LocationDisableMonstersGen(pchar.location, false);
-			i = makeint(sti(pchar.GenQuest.EncGirl.price)/100.0);
+			i = int(int(pchar.GenQuest.EncGirl.price)/100.0);
 			TakeNItems(pchar, "jewelry6", i);
 			sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
 			LAi_SetActorType(npchar);
@@ -845,7 +845,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
 			{
-				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15)
+				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15)
 				{
 					dialog.text = "C'è troppa gente lì. Andiamo in camera privata. Ho bisogno di dirti qualcosa.";
 					link.l1 = LinkRandPhrase("Ho già fatto troppo per te, quindi ora ti dico addio.","Non dovresti abusare del mio favore. Ci vediamo, tesoro.","Non ho bisogno delle tue storie d'ora in poi, puoi capire tutto da solo.");
@@ -911,7 +911,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_228":
-			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15) // душещипательная история о невинной девочке попавшей в бордель
+			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15) // душещипательная история о невинной девочке попавшей в бордель
 			{
 				DeleteAttribute(pchar, "GenQuest.EncGirl.BrothelCity");
 				dialog.text = "Allora vuoi ancora ascoltare la mia storia?";
@@ -971,7 +971,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_233":
-			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
+			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(int(pchar.GenQuest.EncGirl.nation));
 			dialog.text = "La mia famiglia vive nel insediamento di "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.Parents_City)+". Sono arrivata qui per caso, sulla nave, sulla quale il mio sposo mi stava portando dai suoi genitori, ma è stata catturata dai pirati. La nave è stata portata via, e i passeggeri sono sbarcati nella baia non lontano da qui. Il mio sposo è stato ucciso durante l'abbordaggio della nave, ed io ero gravemente malata durante il passaggio attraverso la giungla\nLa padrona del bordello locale mi ha curato, e quando mi sono rimessa in piedi, ha richiesto di lavorare per ripagare il denaro speso per il trattamento. Ero una prostituta ma non piacevo alla Madame, e così la padrona mi ha venduto a dei banditi per guadagnare almeno un po' di soldi. L'altra parte della storia la conosci tu.";
 			link.l1 = "Allora smetti e torna a casa! Perché permetti loro di trattarti come uno schiavo?!";
 			link.l1.go = "Node_234";
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Node_235";
 			link.l2 = "Aspetta qui. Ti porterò la tua borsa da viaggio.";
 			link.l2.go = "Node_236";													
-			if(sti(pchar.money) >= 5000) 
+			if(int(pchar.money) >= 5000)
 			{
 				link.l3 = "A chi importano i tuoi documenti? Quanti soldi ti servono per tornare a casa?";
 				link.l3.go = "Node_237";							
@@ -1079,7 +1079,7 @@ void ProcessDialogEvent()
 		
 		case "Node_242":
 			dialog.text = "Hanno davvero trovato la mia borsa?";
-			if(sti(pchar.money) >= 5000)
+			if(int(pchar.money) >= 5000)
 			{
 				link.l1 = "Quanti soldi ti servono per tornare a casa?";
 				link.l1.go = "Node_237";
@@ -1147,17 +1147,17 @@ void ProcessDialogEvent()
 		
 		case "Node_237":
 			dialog.text = "Ebbene, non lo so... Forse, dovrò aspettare un passaggio. Ma non posso chiederti soldi.";
-			if(makeint(pchar.money)>=5000)
+			if(int(pchar.money)>=5000)
 			{
 				link.l1 = "Capisco. Bene, prendi 5000 pesos. Dovrebbe essere sufficiente.";
 				link.l1.go = "Node_237_1";
 			}
-			if(makeint(pchar.money)>=25000)
+			if(int(pchar.money)>=25000)
 			{
 				link.l2 = "Capisco. Bene, prendi 25000 pesos e torna a casa.";
 				link.l2.go = "Node_237_2";
 			}
-			if(makeint(pchar.money)>=35000)
+			if(int(pchar.money)>=35000)
 			{
 				link.l3 = "Capisco. Bene, prendi 35000 pesos. Dovrebbe essere abbastanza per comprare la miglior cabina sulla nave.";
 				link.l3.go = "Node_237_3";
@@ -1196,7 +1196,7 @@ void ProcessDialogEvent()
 			if(pchar.GenQuest.EncGirl == "EncGirlFack_GetMoney") 
 			{
 				AddSimpleRumour(RandPhraseSimple("Have you heard? A whore was trying to sneak on board of a ship without documents, but she was caught and taken back to the brothel. They say she owed the madam quite a sum.",  
-				"Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?"), sti(pchar.GenQuest.EncGirl.nation), 3, 1);
+				"Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?"), int(pchar.GenQuest.EncGirl.nation), 3, 1);
 			}
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
 			DialogExit();
@@ -1209,7 +1209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_251":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "No! No, capitano, amo "+pchar.GenQuest.EncGirl.sLoverId+" e non sposerò nessun altro uomo! E mio padre non vuole sentire nulla! Dice che "+XI_ConvertString("Colony"+pchar.GenQuest.EncGirl.city)+" è solo un visitatore qui, quindi non troverà mai un lavoro qui, ed è destinato a morire in povertà, e io con lui! E andrei con lui fino alla fine del mondo, solo per stare al suo fianco! Portami da lui, ti prego!";
 			link.l1 = "Bene, andiamo. Immagino che capirò cosa fare con te...";
 			link.l1.go = "Node_252";
@@ -1295,7 +1295,7 @@ void ProcessDialogEvent()
 				
 		case "ThanksForHelp_1":
 			Diag.TempNode = "ThanksAgain";
-			if(makeint(Pchar.reputation.nobility) >= 80)
+			if(int(Pchar.reputation.nobility) >= 80)
 			{
 				dialog.text = "Ho del denaro... Per favore, accettalo come segno della mia gratitudine!";
 				Link.l1 = "Grazie. Cerca di essere più attento la prossima volta.";
@@ -1311,7 +1311,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					addMoneyToCharacter(Pchar, makeint(PChar.rank)*100);
+					addMoneyToCharacter(Pchar, int(PChar.rank)*100);
 					dialog.text = "Ho un po' di soldi... Per favore, accettali come segno della mia gratitudine!";
 					Link.l1 = "Grazie. Cerca di stare più attento la prossima volta.";
 					Link.l1.go = "exit";

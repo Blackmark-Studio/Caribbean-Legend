@@ -52,7 +52,7 @@ void InitInterface_RS(string iniName, ref _context, string _storyName)
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
 	storyPath = SF_FormPath(&storyObject) + "\Node0.c";
-	_SF_FixYCoord()
+	_SF_FixYCoord();
 
 	if (!LoadSegment(storyPath))
 	{
@@ -61,7 +61,7 @@ void InitInterface_RS(string iniName, ref _context, string _storyName)
 	}
 	else _SF_NextFrame("Node0");
 
-	SetEventHandler("InterfaceBreak","ProcessBreakExit",0)
+	SetEventHandler("InterfaceBreak","ProcessBreakExit",0);
 	SetEventHandler("exitCancel","ProcessCancelExit",0);
 	SetEventHandler("ievnt_command","ProcCommand",0);
 	SetEventHandler("evntDoPostExit","DoPostExit",0);
@@ -70,11 +70,11 @@ void InitInterface_RS(string iniName, ref _context, string _storyName)
 	SetEventHandler("HideInfoWindow","HideHelpHint",0);
 	_SF_InitButtons();
 
-	SetNodeUsing("KEY_STRS", bBettaTestMode)
-	SetNodeUsing("KEY_BTNS", bBettaTestMode)
+	SetNodeUsing("KEY_STRS", bBettaTestMode);
+	SetNodeUsing("KEY_BTNS", bBettaTestMode);
 	SetCurrentNode("STORY_LOGS");
-	SetFormatedText("ACTIONS_TITLE", GetConvertStr("Actions", "StoryFrames\Common.txt"))
-	SetFormatedText("REACTIONS_TITLE", GetConvertStr("Reactions", "StoryFrames\Common.txt"))
+	SetFormatedText("ACTIONS_TITLE", GetConvertStr("Actions", "StoryFrames\Common.txt"));
+	SetFormatedText("REACTIONS_TITLE", GetConvertStr("Reactions", "StoryFrames\Common.txt"));
 
 	// дальше для дебага полезности
 	if (!bBettaTestMode) return;
@@ -127,7 +127,7 @@ bool _SF_NextFrame(string func)
 	FillStoryLogs(&lastText, &allText);                          // лог истории
 	FillButtons();                                               // кнопки
 	SetStoryIcon();                                              // иконка истории
-	if (func != "Node0") _SF_AdjustScroll(lastText, allText)     // двигаем скролл-бар
+	if (func != "Node0") _SF_AdjustScroll(lastText, allText);    // двигаем скролл-бар
 	_SF_ChangeFrameStyle();                                      // общий стиль фрейма
 	return true;
 }
@@ -150,7 +150,7 @@ void _SF_AdjustScroll(string lastText, string allText)
 	int allTextLength = strlen(allText);
 	if (lastTextLength > 400) scrollAdjast -= float(float(lastTextLength)/allTextLength) / 1.8;
 
-	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLLER_STORY_LOGS",10.0)
+	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLLER_STORY_LOGS",10.0);
 	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"STORY_LOGS",2,scrollAdjast);
 }
 
@@ -555,7 +555,7 @@ void SF_HumanCurrentChance(ref link, ref sHeader, ref text, ref badText, ref goo
 		aref reason = GetAttributeN(check, i);
 		string factorName = GetAttributeName(reason);
 		string reasonValue = GetAttributeValue(reason);
-		int value = sti(reasonValue);
+		int value = int(reasonValue);
 
 		string humanReason = "\n" + _SF_GetHumanReadableFactor(factorName) + ": " + ToHumanModifierPercent(value);
 		if (factorName == "base") addText += "\n" + _SF_GetHumanReadableFactor(factorName) + ": " + ToHumanPercent(value);

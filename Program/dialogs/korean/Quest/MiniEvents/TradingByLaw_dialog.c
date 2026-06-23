@@ -320,12 +320,12 @@ void ProcessDialogEvent()
 					NextDiag.TempNode = "Kristian_41";
 				}
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // увеличить объём поставок вина и рома
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // увеличить объём поставок вина и рома
 			{
 				link.l4 = "Christian, 월별로 럼주와 와인 각각 백 병씩 정기 주문을 늘리고 싶네. 정확히 그렇게 해 주게.";
 				link.l4.go = "UpgradeVino";
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && sti(pchar.Money) >= 50000) // увеличить объём поставок вина и рома, если в первый раз не принесли
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && int(pchar.Money) >= 50000) // увеличить объём поставок вина и рома, если в первый раз не принесли
 			{
 				link.l4 = "Christian, 우리 협약을 확장하는 것에 대해 다시 생각해보고 싶소.";
 				link.l4.go = "UpgradeVino_Agreed";
@@ -354,7 +354,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.TPZ_TradeVinoAndRom");
 			SetFunctionTimerCondition("TPZ_KristianReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
-			pchar.questTemp.TPZ_KritstianVinoAndRom = sti(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // счётчик покупок
+			pchar.questTemp.TPZ_KritstianVinoAndRom = int(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // счётчик покупок
 		break;
 
 		case "UpgradeVino":
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 
 		case "UpgradeVino_3":
 			dialog.text = "깊이 유감스럽지만, 선장님, 이 금액이 절대적인 최소치임을 강조드려야 하겠습니다. 비용을 줄이려 든다면, 우리의 사업이... 그러니까, 아주 심각하게 탈선할 수도 있습니다. 그런 불상사는 선장님이나 저 모두에게 결코 도움이 되지 않을 것이라 생각합니다.";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "여기 네 보수를 전부 주겠다. 이런 신뢰에 걸맞은 행동을 하도록 해라, 크리스천.";
 				link.l1.go = "UpgradeVino_5";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 		
 		case "UpgradeVino_Agreed":
 			dialog.text = "선장님, 정말 기쁜 소식입니다! 즉시 진행하려면 은화 오만 닢을 가져오셨습니까?";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "여기 네 보수 전액이다. 이런 신뢰에 걸맞은 자임을 증명해 보이거라, 기독교인.";
 				link.l1.go = "UpgradeVino_5";

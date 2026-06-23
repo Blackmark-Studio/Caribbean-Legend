@@ -86,9 +86,9 @@ void CalculateGoodStoreNorm(ref pRef, int goodIdx)
 			ref rIsland = GetIslandByIndex(islandIdx);
 			if(CheckAttribute(rIsland,"RndPriceModify"))
 			{
-				RndPriceModify = stf(rIsland.RndPriceModify);
+				RndPriceModify = float(rIsland.RndPriceModify);
 				if(CheckAttribute(rIsland,"RndPriceModifySign"))
-					RndPriceModifySign = stf(rIsland.RndPriceModifySign);
+					RndPriceModifySign = float(rIsland.RndPriceModifySign);
 			}
 			else
 			{
@@ -108,46 +108,46 @@ void CalculateGoodStoreNorm(ref pRef, int goodIdx)
 		}
 	}
 
-	switch(sti(pRef.Goods.(goodName).TradeType))
+	switch(int(pRef.Goods.(goodName).TradeType))
 	{
 		case T_TYPE_NORMAL:
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.75 + rand(sti(sti(pGood.Norm)*0.1)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.75 + rand(int(int(pGood.Norm)*0.1)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_EXPORT:
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.9 + rand(sti(sti(pGood.Norm)*0.2)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.9 + rand(int(int(pGood.Norm)*0.2)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_IMPORT:
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.4 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.4 + rand(int(int(pGood.Norm)*0.05)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_AGGRESSIVE:
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.1 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.1 + rand(int(int(pGood.Norm)*0.05)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_CONTRABAND:
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.1 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.1 + rand(int(int(pGood.Norm)*0.05)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_AMMUNITION:  //делаю все тоже, что и для нормального товара, а тип нужен, чтоб на корабле не скупали лишнее.
-			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.75 + rand(sti(sti(pGood.Norm)*0.1)));
+			pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.75 + rand(int(int(pGood.Norm)*0.1)));
 			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
 			break;
 
 		case T_TYPE_CANNONS:
-			if(sti(pGood.NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
+			if(int(pGood.NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
 			{
 				pRef.Goods.(goodName).Quantity = 0;
 			}
 			else
 			{
-				pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.4 + rand(sti(sti(pGood.Norm)*0.4)));
+				pRef.Goods.(goodName).Quantity = int(int(pGood.Norm)*0.4 + rand(int(int(pGood.Norm)*0.4)));
 			}
 			pRef.Goods.(goodName).RndPriceModify = (frnd() * 0.03 + RndPriceModify + 0.10) * RndPriceModifySign;
 			pRef.Goods.(goodName).canbecontraband = CONTRA_SELL; // все орудия можем продавать контрабандистам !!
@@ -156,11 +156,11 @@ void CalculateGoodStoreNorm(ref pRef, int goodIdx)
 
 	if (pRef.StoreSize == "medium")
 	{
-		pRef.Goods.(goodName).Quantity = makeint(sti(pRef.Goods.(goodName).Quantity) * stf(pGood.MediumNorm));
+		pRef.Goods.(goodName).Quantity = int(int(pRef.Goods.(goodName).Quantity) * float(pGood.MediumNorm));
 	}
 	if (pRef.StoreSize == "small")
 	{
-		pRef.Goods.(goodName).Quantity = makeint(sti(pRef.Goods.(goodName).Quantity) * stf(pGood.SmallNorm));
+		pRef.Goods.(goodName).Quantity = int(int(pRef.Goods.(goodName).Quantity) * float(pGood.SmallNorm));
 	}
 	// 24/01/08
 	pRef.Goods.(goodName).Norm            = pRef.Goods.(goodName).Quantity; 		// колво в начале, это норма магазина навсегда
@@ -179,9 +179,9 @@ void SetPriceForGoodByStoreMan(ref rchar, int i, bool single)
 
 	nulChr = &NullCharacter;
 
-	if (sti(rchar.StoreNum) >= 0)
+	if (int(rchar.StoreNum) >= 0)
 	{
-		refStore = &stores[sti(rchar.StoreNum)];
+		refStore = &stores[int(rchar.StoreNum)];
 		attr1 = rchar.id; // ветка, где храним цены
 		sGoods = "Gidx" + i;
 		tmpstr = Goods[i].name;
@@ -189,7 +189,7 @@ void SetPriceForGoodByStoreMan(ref rchar, int i, bool single)
 		if (CheckAttribute(refStore,"Goods."+tmpstr))
 		{
 		   makearef(refGoods, refStore.Goods.(tmpstr));
-		   tradeType = MakeInt(refGoods.TradeType);
+		   tradeType = int(refGoods.TradeType);
 		}
 		nulChr.PriceList.(attr1).(sGoods).tradeType = tradeType; // тип торговли
 		nulChr.PriceList.(attr1).(sGoods).Buy  = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY,  pchar, 1);
@@ -227,7 +227,7 @@ void AddStoreGoods(ref _refStore,int _Goods,int _Quantity)
 	string tmpstr = Goods[_Goods].name;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
 	int q = 0;
-	if( CheckAttribute(refGoods,"Quantity") ) {q = sti(refGoods.Quantity);}
+	if( CheckAttribute(refGoods,"Quantity") ) {q = int(refGoods.Quantity);}
 	refGoods.Quantity = q +_Quantity;
 }
 
@@ -237,7 +237,7 @@ void RemoveStoreGoods(ref _refStore,int _Goods,int _Quantity)
 	string tmpstr = Goods[_Goods].name;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
 	int q = 0;
-	if( CheckAttribute(refGoods,"Quantity") ) q = sti(refGoods.Quantity);
+	if( CheckAttribute(refGoods,"Quantity") ) q = int(refGoods.Quantity);
 	if(q < _Quantity) {refGoods.Quantity = 0;}
 	else {refGoods.Quantity = q - _Quantity;}
 }
@@ -247,7 +247,7 @@ int GetStoreGoodsQuantity(ref _refStore,int _Goods)
 	string tmpstr = Goods[_Goods].name;
 	int q = 0;
 	if( CheckAttribute(_refStore,"Goods."+tmpstr) )
-		q = sti(_refStore.Goods.(tmpstr).Quantity);
+		q = int(_refStore.Goods.(tmpstr).Quantity);
 	return q;
 }
 
@@ -256,7 +256,7 @@ int GetContrabandGoods(ref _refStore, int _Goods)
 	string tmpstr = Goods[_Goods].name;
 	if( CheckAttribute(_refStore,"Goods."+tmpstr+".canbecontraband") )
 	{
-		return sti(_refStore.Goods.(tmpstr).canbecontraband); // 1 or 2
+		return int(_refStore.Goods.(tmpstr).canbecontraband); // 1 or 2
 	}
 	return 0;	
 }
@@ -267,7 +267,7 @@ string GetStoreGoodsType(ref _refStore,int _Goods)
 	int tradeType = T_TYPE_NORMAL;
 	if( CheckAttribute(_refStore,"Goods."+tmpstr) )
 	{
-		tradeType = sti(_refStore.Goods.(tmpstr).TradeType);
+		tradeType = int(_refStore.Goods.(tmpstr).TradeType);
 	}
 
 	switch(tradeType)
@@ -302,9 +302,9 @@ bool GetStoreGoodsUsed(ref _refStore,int _Goods)
 {
 	string tmpstr = Goods[_Goods].name;
 	if( !CheckAttribute(_refStore,"Goods."+tmpstr) ) return false;
-	if( sti(_refStore.Goods.(tmpstr).NotUsed)==true ) return false;
+	if( int(_refStore.Goods.(tmpstr).NotUsed)==true ) return false;
 	// --> контрабанда
-	if( sti(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_SELL || sti(_refStore.Goods.(tmpstr).TradeType) == T_TYPE_CONTRABAND)
+	if( int(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_SELL || int(_refStore.Goods.(tmpstr).TradeType) == T_TYPE_CONTRABAND)
 	{
 		if( !CheckOfficersPerk(GetMainCharacter(),"Trustworthy") ) return false;
 	}	
@@ -320,11 +320,11 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	float _TradeSkill = GetSkillAfterPenalty(chref,SKILL_COMMERCE); // 0..100.0
 	aref refGoods;
 	string tmpstr = Goods[_Goods].name;
-	int basePrice = MakeInt(Goods[_Goods].Cost);
+	int basePrice = int(Goods[_Goods].Cost);
 	if (!CheckAttribute(_refStore,"Goods."+tmpstr) ) return 0;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
  	int tradeType = GetGoodTradeType(&refGoods);
-	int Type = MakeInt(refGoods.Type);	 
+	int Type = int(refGoods.Type);
 
 	float tradeModify 	= 1.0;
 	float costCoeff		= 1.0;
@@ -335,35 +335,35 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	switch (tradeType)
 	{	
 		case T_TYPE_NORMAL:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_EXPORT:
-			tradeModify = SZN_GetModifierMtp(M_EXPORT_PRICE_MTP, 0.75, 0.01) + stf(refGoods.RndPriceModify); 
+			tradeModify = SZN_GetModifierMtp(M_EXPORT_PRICE_MTP, 0.75, 0.01) + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_IMPORT:
-			tradeModify = SZN_GetModifierMtp(M_IMPORT_PRICE_MTP, 1.30, 0.01)  + stf(refGoods.RndPriceModify); 
+			tradeModify = SZN_GetModifierMtp(M_IMPORT_PRICE_MTP, 1.30, 0.01)  + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_AGGRESSIVE:
-			tradeModify = 1.40 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.40 + float(refGoods.RndPriceModify);
 			break;	
 		case T_TYPE_CONTRABAND:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_AMMUNITION:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify);
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;  
 		case T_TYPE_CANNONS:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;				
 	}
-	tradeModify = tradeModify * stf(refGoods.AddPriceModify);
+	tradeModify = tradeModify * float(refGoods.AddPriceModify);
 
 	float skillModify;
 	float cModify = 1.0;
 	
 	if(_PriceType == PRICE_TYPE_BUY) // цена покупки товара игроком
 	{
-		skillModify = 1.29 - 0.17 * pow(makefloat(_TradeSkill) / 100.0, 0.55); 
+		skillModify = 1.29 - 0.17 * pow(float(_TradeSkill) / 100.0, 0.55);
 		if(tradeType == T_TYPE_CANNONS) cModify = 3.0 + MOD_SKILL_ENEMY_RATE/5.0;
 		
 		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.92; }
@@ -373,7 +373,7 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	}
 	else	// цена продажи товара игроком
 	{
-		skillModify = 0.73 + 0.16 * pow(makefloat(_TradeSkill) / 100.0, 0.55);  
+		skillModify = 0.73 + 0.16 * pow(float(_TradeSkill) / 100.0, 0.55);
 		
 		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.08;}
 		else if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify *= 1.04; }
@@ -382,12 +382,11 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 						
 		if(CheckAttribute(mc,"Goods." + (tmpstr) + ".costCoeff"))
 		{
-			costCoeff = stf(mc.Goods.(tmpstr).costCoeff);
+			costCoeff = float(mc.Goods.(tmpstr).costCoeff);
 		}
 		if(skillModify > 0.96) skillModify = 0.96;
 	}
 
-	
 	if (costCoeff < 1.0)
 	{
 		if (IsCharacterEquippedArtefact(chref, "piratesJournal_2"))
@@ -401,10 +400,10 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	}
 
 	// boal 23.01.2004 -->
-	if (MakeInt(basePrice * tradeModify * skillModify * costCoeff + 0.5) < 1) return 1;
+	if (int(basePrice * tradeModify * skillModify * costCoeff + 0.5) < 1) return 1;
 	// boal 23.01.2004 <--
 	
-	float seasonGlobalModify = 1.0
+	float seasonGlobalModify = 1.0;
 	switch (Type)
 	{
 		case T_TYPE_NORMAL			:
@@ -436,7 +435,7 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 
 	if (_Goods == GOOD_MEDICAMENT) seasonGlobalModify += SZN_GetModifierMtp(M_MEDICAMENT_COST, 0.0);
 
-	return MakeInt(priceModify * basePrice * tradeModify * skillModify * _qty * costCoeff * cModify * seasonGlobalModify + 0.5);
+	return int(priceModify * basePrice * tradeModify * skillModify * _qty * costCoeff * cModify * seasonGlobalModify + 0.5);
 }
 
 // обратное преобразование цены в RndPriceModify
@@ -446,11 +445,11 @@ float GetStoreGoodsRndPriceModify(ref _refStore, int _Goods, int _PriceType, ref
 	float _TradeSkill = GetSummonSkillFromNameToOld(chref,SKILL_COMMERCE);
 	aref refGoods;
 	string tmpstr = Goods[_Goods].name;
-	int basePrice = MakeInt(Goods[_Goods].Cost);
+	int basePrice = int(Goods[_Goods].Cost);
 	if (!CheckAttribute(_refStore,"Goods."+tmpstr) ) return 0;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
- 	int tradeType = MakeInt(refGoods.TradeType);
-	int Type = MakeInt(refGoods.Type);
+ 	int tradeType = int(refGoods.TradeType);
+	int Type = int(refGoods.Type);
 
 	float tradeModify 	= 1.0;
 	float priceModify   = 1.0;
@@ -528,9 +527,9 @@ float GetStoreGoodsRndPriceModify(ref _refStore, int _Goods, int _PriceType, ref
 		if(skillModify > 0.99) skillModify = 0.99;
 	}
 	
-	tradeModify = makefloat(_price) / (basePrice*skillModify * priceModify * cModify);
+	tradeModify = float(_price) / (basePrice*skillModify * priceModify * cModify);
 	
-	tradeModify = tradeModify/stf(refGoods.AddPriceModify);
+	tradeModify = tradeModify/float(refGoods.AddPriceModify);
 	
 	switch (tradeType)
 	{
@@ -585,22 +584,22 @@ void UpdateStore(ref pStore)
 		makearef(curref, gref.(tmpstr));
 		TradeType 	= GetGoodTradeType(&curref);
 		delta = 0;
-		goodType = goodType = sti(Goods[i].type);
+		goodType = goodType = int(Goods[i].type);
 				
 		// -->>>  новая система затаривания товаром в магазинах 
 		Manufacture = 0.0;					// ежедневное производство
 		Consumption = 0.0;					// ежедневное потребление
-		oldQty 	= sti(curref.Quantity);		// текущее кол-во товара в магазине
-		Norm	= sti(curref.Norm);			// норма товара в магазине
+		oldQty 	= int(curref.Quantity);		// текущее кол-во товара в магазине
+		Norm	= int(curref.Norm);			// норма товара в магазине
 
 		// модификация количеств от модификаторов товара в глобальной экономике
-		if (goodType == T_TYPE_IMPORT) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_EUROPEAN_GOODS_STOCK));
-		else if (goodType == T_TYPE_EXPORT) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_CARIBBEAN_GOODS_STOCK));
-		else if (goodType == T_TYPE_UNIQUE) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_UNIQUE_GOODS_STOCK));
-		else if (goodType == T_TYPE_NORMAL) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_CONVENIENCE_GOODS_STOCK));
-		else if (goodType == T_TYPE_AMMUNITION) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_AMMO_GOODS_STOCK));
+		if (goodType == T_TYPE_IMPORT) Norm = int(float(Norm) * SZN_GetModifierMtp(M_EUROPEAN_GOODS_STOCK));
+		else if (goodType == T_TYPE_EXPORT) Norm = int(float(Norm) * SZN_GetModifierMtp(M_CARIBBEAN_GOODS_STOCK));
+		else if (goodType == T_TYPE_UNIQUE) Norm = int(float(Norm) * SZN_GetModifierMtp(M_UNIQUE_GOODS_STOCK));
+		else if (goodType == T_TYPE_NORMAL) Norm = int(float(Norm) * SZN_GetModifierMtp(M_CONVENIENCE_GOODS_STOCK));
+		else if (goodType == T_TYPE_AMMUNITION) Norm = int(float(Norm) * SZN_GetModifierMtp(M_AMMO_GOODS_STOCK));
 
-		if (TradeType == T_TYPE_CANNONS) Norm = makeint(stf(Norm) * SZN_GetModifierMtp(M_SHIPYARD_CANNONS_STOCK));
+		if (TradeType == T_TYPE_CANNONS) Norm = int(float(Norm) * SZN_GetModifierMtp(M_SHIPYARD_CANNONS_STOCK));
 
 		aim = frnd();
 		if(Aim < 0.25) { Aim = 1.0; } 		// товар привезли
@@ -612,24 +611,24 @@ void UpdateStore(ref pStore)
 		Aim = Aim * Norm * (frnd() * 0.2 + frnd() * 0.2 + 0.1);
 		
 		if(aim >= 0.0) 	     				{Manufacture = 0.2;} 	// производим в любой день, когда товар не вывозили
-        if(oldQty > makeint(0.25 * Norm)) 	{Consumption = 0.1;}	// потребляем
+        if(oldQty > int(0.25 * Norm)) 	{Consumption = 0.1;}	// потребляем
 
-        oldQty = oldQty + makeint(Aim); 						    // учли результаты от морской торговли
+        oldQty = oldQty + int(Aim); 						    // учли результаты от морской торговли
 		if(oldQty < 0)        				{oldQty = 0;}			// ибо нехер портить нам наполнение магазина! 
 
-        if(oldQty < makeint(1.75 * Norm)) 
+        if(oldQty < int(1.75 * Norm))
 		{
 			// проверили, как обстоят дела с лимитом, если всё пучком - обычный оборот
-			curref.Quantity = oldQty + makeint(( Manufacture - Consumption ) * Norm); 			
+			curref.Quantity = oldQty + int(( Manufacture - Consumption ) * Norm);
 		}	
         else
 		{
 			// колония только жрёт наличные запасы		
 			crunch = frnd();  
-            if(crunch < 0.15) 	curref.Quantity = makeint(Norm * frnd()); 	// самосвал или "к нам едет ревизор!!"
-            else				curref.Quantity = makeint(Norm * ( 1.75 + frnd() * 0.25 ));
+            if(crunch < 0.15) 	curref.Quantity = int(Norm * frnd()); 	// самосвал или "к нам едет ревизор!!"
+            else				curref.Quantity = int(Norm * ( 1.75 + frnd() * 0.25 ));
 		}
-		if(sti(curref.Quantity) < 0) curref.Quantity = 0;	// может быть и меньше 0
+		if(int(curref.Quantity) < 0) curref.Quantity = 0;	// может быть и меньше 0
 		// <<<--  новая система затаривания товаром в магазинах 
 		
 		// Обнуления, запреты на продажу
@@ -638,16 +637,16 @@ void UpdateStore(ref pStore)
 		else if (i == GOOD_SILVER && SZN_GetModifierState(M_GOLDSILVER_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
 		else if (i == GOOD_SLAVES && SZN_GetModifierState(M_SLAVES_GOODS_AVAILABLE) != 1) curref.Quantity = 0;
 		
-		Type 		= sti(pStore.Goods.(tmpstr).Type);	
+		Type 		= int(pStore.Goods.(tmpstr).Type);
 		
 		pStore.Goods.(tmpstr).canbecontraband = 0; 		// по умолчанию товаров для контры нет
 								
 		if( TradeType == T_TYPE_CANNONS )
 		{
 			pStore.Goods.(tmpstr).canbecontraband = CONTRA_SELL;
-			delta = makeint((oldQty - sti(curref.Norm))/7);
-			curref.Quantity = oldQty - delta + (rand(2) - 1)*rand(sti(sti(curref.Norm) * 3/100));
-			if(sti(Goods[i].NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
+			delta = int((oldQty - int(curref.Norm))/7);
+			curref.Quantity = oldQty - delta + (rand(2) - 1)*rand(int(int(curref.Norm) * 3/100));
+			if(int(Goods[i].NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
 			{
 				if (SZN_GetModifierState(M_BIG_CANNONS_AVAILABLE) != 1) curref.Quantity = 0; continue;
 			}		
@@ -656,11 +655,11 @@ void UpdateStore(ref pStore)
 		{
 			if(Type == T_TYPE_EXPORT || Type == T_TYPE_IMPORT )
 			{
-				if(sti(curref.Quantity) < makeint(0.80 * Norm)) // менее 0.80 нормы в магазине
+				if(int(curref.Quantity) < int(0.80 * Norm)) // менее 0.80 нормы в магазине
 				{
 					pStore.Goods.(tmpstr).canbecontraband = CONTRA_SELL; // можем продать ЛЮБОЙ товар контрабандистам за 0.7 магазинной цены
 				}				
-				if(sti(curref.Quantity) > makeint(1.20 * Norm))
+				if(int(curref.Quantity) > int(1.20 * Norm))
 				{
 					pStore.Goods.(tmpstr).canbecontraband = CONTRA_BUY; // можем купить товар у  контрабандистов по сниженной (относительно магазина) цене
 				}
@@ -672,9 +671,9 @@ void UpdateStore(ref pStore)
 			pStore.Goods.(tmpstr).canbecontraband = CONTRA_SELL;	
 		}
 				
-		if(stf(curref.Norm) > 0.0)
+		if(float(curref.Norm) > 0.0)
 		{
-			rateInc = stf(curref.Quantity) / stf(curref.Norm);
+			rateInc = float(curref.Quantity) / float(curref.Norm);
 			curref.AddPriceModify = AddPriceModify(rateInc);
 		}
 /*
@@ -683,7 +682,7 @@ void UpdateStore(ref pStore)
 			if(i == GOOD_FOOD )
 			{
 				trace("colony :" + pStore.Colony + " goods name : "+ tmpstr + 
-					" old_qty: " + oldQty + " Aim: " + Aim + " cur_qty: "+ curref.Quantity + " Norm: " + stf(curref.Norm) +
+					" old_qty: " + oldQty + " Aim: " + Aim + " cur_qty: "+ curref.Quantity + " Norm: " + float(curref.Norm) +
 					" cbc :" + pStore.Goods.(tmpstr).canbecontraband + " RndPriceModify: " + curref.RndPriceModify + " rateInc: " + rateInc);
 				trace("    цена покупки товара игроком : goods name " + tmpstr + " : " + GetStoreGoodsPrice(pStore, i, PRICE_TYPE_BUY,  pchar, 1))	
 				trace("    цена продажи товара игроком : goods name " + tmpstr + " : " + GetStoreGoodsPrice(pStore, i, PRICE_TYPE_SELL, pchar, 1))	
@@ -757,7 +756,7 @@ int FindStore(string sColony)
 	return -1;
 }
 
-void CheckForGoodsSpoil(aref chr)
+void CheckForGoodsSpoil(ref chr)
 {
 	int iGoodsQ = 0;
 	for(int i = 0; i < GetArraySize(&Goods); i++)
@@ -767,9 +766,9 @@ void CheckForGoodsSpoil(aref chr)
 		{
 			if(CheckAttribute(&Goods[i], "AfraidWater"))
 			{
-				if(sti(Goods[i].AfraidWater) > 0)
+				if(int(Goods[i].AfraidWater) > 0)
 				{
-					iGoodsQ = iGoodsQ - sti(Goods[i].AfraidWater);
+					iGoodsQ = iGoodsQ - int(Goods[i].AfraidWater);
 					if(iGoodsQ < 0)
 					{
 						iGoodsQ = 0;
@@ -781,14 +780,14 @@ void CheckForGoodsSpoil(aref chr)
 	}
 }
 
-int GetStoreFreeSpace(object refStore)
+int GetStoreFreeSpace(ref refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
 	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStoreGoodsQuantity(refStore, i);
-		iWeight = iWeight + iGoodsQ * stf(Goods[i].weight);
+		iWeight = int(iWeight + iGoodsQ * float(Goods[i].weight));
 	}
 	return iWeight;
 }
@@ -804,9 +803,9 @@ void SetPriceListByStoreMan(ref rchar)   //rchar - это колония
 
     nulChr = &NullCharacter;
 
-    if (sti(rchar.StoreNum) >= 0)
+    if (int(rchar.StoreNum) >= 0)
     {
-        refStore = &stores[sti(rchar.StoreNum)];
+        refStore = &stores[int(rchar.StoreNum)];
         attr1 = rchar.id; // ветка, где храним цены
         for (i = 0; i < GetArraySize(&Goods); i++)
         {
@@ -821,11 +820,11 @@ void SetNull2StoreMan(ref rchar)
 {
     ref refStore;
     int i;
-    string tmpstr
+    string tmpstr;
 
-    if (sti(rchar.StoreNum) >= 0)
+    if (int(rchar.StoreNum) >= 0)
     {
-        refStore = &stores[sti(rchar.StoreNum)];
+        refStore = &stores[int(rchar.StoreNum)];
 
         for (i = 0; i < GetArraySize(&Goods); i++)
         {
@@ -844,9 +843,9 @@ void SetNull2StoreGood(ref rchar, int iGood)
     ref refStore;
     string tmpstr;
 
-    if (sti(rchar.StoreNum) >= 0)
+    if (int(rchar.StoreNum) >= 0)
     {
-        refStore = &stores[sti(rchar.StoreNum)];
+        refStore = &stores[int(rchar.StoreNum)];
 		tmpstr = Goods[iGood].name;
         if( CheckAttribute(refStore,"Goods."+tmpstr) )
         {
@@ -860,18 +859,18 @@ void SetNull2StoreManPart(ref rchar, float part)
 {
     ref refStore;
     int i;
-    string tmpstr
+    string tmpstr;
 
-    if (sti(rchar.StoreNum) >= 0)
+    if (int(rchar.StoreNum) >= 0)
     {
-        refStore = &stores[sti(rchar.StoreNum)];
+        refStore = &stores[int(rchar.StoreNum)];
 
         for (i = 0; i < GetArraySize(&Goods); i++)
         {
             tmpstr = Goods[i].name;
         	if (CheckAttribute(refStore,"Goods."+tmpstr) )
         	{
-        		refStore.Goods.(tmpstr).Quantity = makeint(sti(refStore.Goods.(tmpstr).Quantity) / part);
+        		refStore.Goods.(tmpstr).Quantity = int(int(refStore.Goods.(tmpstr).Quantity) / part);
             }
         }
     }
@@ -912,7 +911,7 @@ float GetStorageGoodsCostCoeff(ref _refStore, int _Goods)
 	string tmpstr = Goods[_Goods].name;
 	if(CheckAttribute(_refStore,"Storage.Goods." + (tmpstr) + ".costCoeff" ))
 	{
-		costCoeff = stf(_refStore.Storage.Goods.(tmpstr).costCoeff);
+		costCoeff = float(_refStore.Storage.Goods.(tmpstr).costCoeff);
 	}
 	return costCoeff;
 }
@@ -923,7 +922,7 @@ void AddStorageGoods(ref _refStore,int _Goods,int _Quantity)
 	string tmpstr = Goods[_Goods].name;
 	makearef(refGoods,_refStore.Storage.Goods.(tmpstr));
 	int q = 0;
-	if( CheckAttribute(refGoods,"Quantity") ) {q = sti(refGoods.Quantity);}
+	if( CheckAttribute(refGoods,"Quantity") ) {q = int(refGoods.Quantity);}
 	refGoods.Quantity = q +_Quantity;
 }
 
@@ -933,7 +932,7 @@ void RemoveStorageGoods(ref _refStore,int _Goods,int _Quantity)
 	string tmpstr = Goods[_Goods].name;
 	makearef(refGoods,_refStore.Storage.Goods.(tmpstr));
 	int q = 0;
-	if( CheckAttribute(refGoods,"Quantity") ) q = sti(refGoods.Quantity);
+	if( CheckAttribute(refGoods,"Quantity") ) q = int(refGoods.Quantity);
 	if(q<_Quantity) {refGoods.Quantity = 0;}
 	else {refGoods.Quantity = q - _Quantity;}
 }
@@ -946,12 +945,12 @@ int GetStorageGoodsQuantity(ref _refStore,int _Goods)
 	int q = 0;
 	if( CheckAttribute(_refStore,"Storage.Goods."+tmpstr) && CheckAttribute(refGoods,"Quantity"))
 	{
-		q = sti(_refStore.Storage.Goods.(tmpstr).Quantity);
+		q = int(_refStore.Storage.Goods.(tmpstr).Quantity);
 	}	
 	return q;
 }
 
-int GetStorageUsedWeight(object refStore)
+int GetStorageUsedWeight(ref refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
@@ -983,20 +982,49 @@ float GetShipTraitTransaction(ref chr, ref rStore)
 	if(rStore.Colony == "none") return 0.0;
 	int iColony = FindColony(rStore.Colony);
 	ref rColony = GetColonyByIndex(iColony);
-	int nation = sti(rColony.nation);
+	int nation = int(rColony.nation);
 	
 	if(nation == PIRATE) return 0.0;
 	
 	int rep = ChangeCharacterNationReputation(chr, nation, 0);
 	if(rep < 20) return 0.0;
 	
-	return Bring2Range(0.0, 0.10, 20.0, 100.0, makefloat(rep));
+	return Bring2Range(0.0, 0.10, 20.0, 100.0, float(rep));
 }
 
 // Обычный tradeType, но с проверкой на случай влияния модификатора
 int GetGoodTradeType(ref good)
 {
-	int res = MakeInt(good.TradeType);
+	if (good is nullptr)
+	{
+		trace("GetGoodTradeType is nullptr");
+		CollectCallStack();
+		return T_TYPE_IMPORT;
+	}
+
+	if ("TradeType" !in good)
+	{
+		//rebuild store
+		aref arCol = parentattr(good);
+		if (arCol == nullptr)
+		{
+			trace("wrong good");
+			CollectCallStack();
+			DumpAttributes(good);
+			return T_TYPE_IMPORT;
+		}
+		string sColName = nameattr(arCol);
+		int iColIdx = FindColony(sColName);
+		if (iColIdx == -1)
+		{
+			trace("wrong colony: "+sColName);
+			CollectCallStack();
+			DumpAttributes(good);
+			return T_TYPE_IMPORT;
+		}
+		SetPriceListByStoreMan(&Colonies[iColIdx]);
+	}
+	int res = int(good.TradeType);
 	if (res != T_TYPE_CONTRABAND) return res;
 	if (SZN_GetModifierState(M_LEGAL_CONTRABAND) != 1) return res;
 

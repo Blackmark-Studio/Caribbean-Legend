@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 		
 		case "start2":
 			ret = Pchar.name+ ", 我是个走私犯, 不是总督, 你到底在说什么工作? ";
-            if (sti(Pchar.nation) == PIRATE)
+            if (int(Pchar.nation) == PIRATE)
             {
 				dialog.text = ret + "去英尼斯的酒馆看看。 她认识镇上的所有人。 "+
 							  "去找厄克森, 他是这里的首领。 但先和当地海盗谈谈。 ";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			//任务记录
 			AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 
 
 			LAi_SetPlayerType(PChar);

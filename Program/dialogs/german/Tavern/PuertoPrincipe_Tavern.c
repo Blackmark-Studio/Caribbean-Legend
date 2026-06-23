@@ -83,7 +83,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DeleteAttribute(pchar, "questTemp.OS_Tavern_1");
 			AddQuestRecord("OS", "2");
 			
-			sld = GetCharacter(NPC_GenerateCharacter("OS_Matros_1", "citiz_31", "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("OS_Matros_1", "citiz_31", "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 			sld.dialog.filename = "Quest\MiniEvents\OldScores_dialog.c";
 			sld.dialog.currentnode = "OS_Matros";
 			LAi_SetImmortal(sld, true);
@@ -125,7 +125,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DeleteAttribute(pchar, "questTemp.OS_Tavern_3");
 			ChangeShowIntarface();
 			
-			sld = GetCharacter(NPC_GenerateCharacter("OS_Zaharia", "Marlow", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("OS_Zaharia", "Marlow", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 			sld.name = GetCharacterName("Zachary");
 			sld.lastname = GetCharacterName("Marlow");
 			ChangeCharacterAddressGroup(sld, "PuertoPrincipe_tavern", "reload", "reload1");

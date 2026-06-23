@@ -10,7 +10,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Carib" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 				LAi_RemoveCheckMinHP(sld);
 				LAi_SetImmortal(sld, false);
 			}
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				dialog.text = LinkRandPhrase("바다의 아들아, 반갑다! 네 소문을 들었지. 우리 땅에서 자유롭게 다녀도 된다.",""+npchar.name+" 창백한 얼굴의 형제여, 그대가 우리 손님으로 와서 기쁘다.","용감한 창백한 얼굴의 전사여, 그대를 맞이하오! "+npchar.name+" 인디언들의 친구를 만나 기쁘다. 평안히 가라!");
 				link.l1 = RandPhraseSimple("붉은 피부의 형제여, 그대에게도 인사를! 사냥이 잘 되길 바라네!","용감한 전사여, 안녕하시오! 신들께서 그대와 그대 가족에게 축복을 내리시길 바라오!");
@@ -87,10 +87,10 @@ void ProcessDialogEvent()
 				link.l1 = RandPhraseSimple("네 땅이라고? 꺼져라, 이 붉은 얼굴 잡놈아!","저 놈 좀 봐라 - 말하는 원숭이잖아! 이제 꺼져라!");
 				link.l1.go = "war_indian_1";
 				link.l2 = RandPhraseSimple("나는 평화롭게 왔소, 붉은 피부의 전사여. 아무 이유 없이 싸울 필요는 없지.","나는 너나 네 땅의 적이 아니네, 전사여. 나는 평화를 위해 왔네.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/3)) > hrand(80)) link.l2.go = "war_indian_2_1";
 				else link.l2.go = "war_indian_2_2";
 				link.l3 = RandPhraseSimple("나는 싸우러 온 게 아니라 거래하러 왔어.","나는 인디언들과 싸우지 않아. 그들과 거래하지.");
-				if (sti(pchar.questTemp.Indian.relation)+(makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
+				if (int(pchar.questTemp.Indian.relation)+(int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP)/6)+int(GetSummonSkillFromName(pchar, SKILL_FORTUNE)/6)) > hrand(90)) link.l3.go = "war_indian_3_1";
 				else link.l3.go = "war_indian_3_2";
 			}
 		break;
@@ -298,13 +298,13 @@ void ProcessDialogEvent()
 		
 		case "war_indian_trade_agree":
 			ChangeIndianRelation(1.00);
-			npchar.quest.count = sti(npchar.quest.count)+1;
+			npchar.quest.count = int(npchar.quest.count)+1;
 			TakeNItems(pchar, npchar.quest.item, iTotalTemp);
 			RemoveItems(pchar, npchar.quest.gun, 1);
 			Log_Info("You have given "+XI_ConvertString(npchar.quest.gun)+"");
 			Log_Info("You have received "+XI_ConvertString(npchar.quest.item)+" in amount of "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (sti(npchar.quest.count) > 3+hrand(2));
+			if (int(npchar.quest.count) > 3+hrand(2));
 			{
 				dialog.text = "좋아. 여기 네 물건이다. 더 이상 거래하지 않겠다. 나중에 다시 와라. 더 좋은 화염 무기를 가져오면 더 많이 주지. 이제 가!";
 				link.l1 = "잘 가시오, 붉은 피부의 전사여.";
@@ -330,7 +330,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "war_indian_trade_bad":
-			if (sti(pchar.questTemp.Indian.relation) > 79)
+			if (int(pchar.questTemp.Indian.relation) > 79)
 			{
 				DialogExit();
 				sGroup = "CaribGroup_" + locations[FindLocation(npchar.location)].index;

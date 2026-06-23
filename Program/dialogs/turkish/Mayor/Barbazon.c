@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 	{
 	// ----------------------------------- Диалог первый - первая встреча---------------------------------------
 		case "First time":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("Sen deli misin? Kasap mı olmak istedin? Bütün korsanlar sana öfkeli, oğlum, buradan gitmen en iyisi...","Sen kafayı yemişsin galiba, oğlan. Biraz kolunu kanadını açmak mı istedin? Alınma ama burada işin yok. Kaybol!");
 				link.l1 = RandPhraseSimple("Dinle, durumu düzeltmek istiyorum...","Bu sorunu çözmeme yardım et...");
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+			if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("Sen deli misin? Kasapçılık mı oynamak istedin? Bütün korsanlar sana öfkeli, oğlum, buradan gitmen en iyisi...","Aklını kaçırmışsın, çocuk. Biraz kaslarını mı göstermek istedin? Alınma ama burada işin yok. Kaybol!");
 				link.l1 = RandPhraseSimple("Dinle, durumu düzeltmek istiyorum...","Bu sorunu çözmeme yardım et...");
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ah, sonunda. Onu Barbados'tan şu plantasyon sahibine satmayı düşünüyordum, bir iki haftaya burada olacak... Fidyen var mı?";
 				link.l1 = "Bak, ufak bir sorun var... Aslında o kadar param yok. Ama çalışmaya hazırım.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "Onu satmamış olman iyi. Al, paraların – 150.000 peso. Onu nerede bulabilirim?";
 					link.l2.go = "CapComission2_3";
@@ -465,8 +465,8 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Dat"); // belamour gen
 			dialog.text = "Hm... Pekala, "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+" bazı korsanları ganimet paylarının bizim gizli depomuzda, şuracıkta saklandığına inandırmış "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". İki gemileri '"+pchar.GenQuest.CaptainComission.ShipName1+"' ve '"+pchar.GenQuest.CaptainComission.ShipName2+"' demir aldıktan kısa bir süre sonra yelken açtı ve "+sLoc+". Şimdi bu işi adamlarıma neden emanet edemeyeceğimi anlıyorsun, değil mi?";
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 			dialog.text = "Fiyatı düşürmek mi?! Senin beceriksizliğin yüzünden malımı kaybettim! Şimdi ise fiyatı yükseltebilirim! İstersen onu 200.000 pesoya alırsın, istemiyorsan defolup gidersin.";
 			link.l1 = "Çok pahalı... Hoşça kal...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "Lanet olsun, al şu paralarını.";
 				link.l2.go = "CapComission4_5";
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 			dialog.text = "Fidyeyi getirdin mi "+GetSexPhrase("","ла")+"? Onu plantasyon sahiplerine satacağımı söylerken şaka yapmıyordum.";			
 			link.l1 = "Dinle, "+NPChar.name+", bak şimdi... O kadar param yok. Ama istekliyim"+GetSexPhrase("","а")+" çalışmak.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Onu satmamış olman iyi. Al bakalım, 150.000 peso. Nerede bulabilirim onu?"link.l2.go ="CapComission2_3";
 			}			
@@ -643,7 +643,7 @@ void ProcessDialogEvent()
 			dialog.text = "Parayı getirdin mi? O adamı plantasyona satmak konusunda şaka yapmıyordum.";			
 			link.l1 = "Param yok, "+NPChar.name+", ama üzerinde çalışıyorum.";
 			link.l1.go = "exit";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Onu satmamış olman iyi. Al, paraların burada – 150.000 peso. Onu nerede bulabilirim?"link.l2.go ="CapComission2_3";
 			}			
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Anladım... yalan söylemiyorsan bu adil bir takas olurdu. Sanırım bu adam için sana ödeme yapabilirim "+iTemp+" pesos, ya da istersen sana ilginç bir bilgi verebilirim. Seçim senin.";
 			link.l1 = "En iyisi peso alayım. Bu işten bıktım artık...";
 			link.l1.go = "Marginpassenger_money";
@@ -690,7 +690,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Rica ederim, bana daha fazlasını getir... Görüşürüz!";
 			link.l1 = "İyi şanslar...";
 			link.l1.go = "exit";
@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "13");
 			AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore+"Dat"));//лесник - окончание в СЖ // belamour gen
-			AddQuestUserData("Marginpassenger", "sName", "Jacques the Kindman"));
+			AddQuestUserData("Marginpassenger", "sName", "Jacques the Kindman");
 			SetFunctionTimerCondition("Marginpassenger_SouthshoreOver", 0, 0, 7, false);
 			pchar.quest.Marginpassenger.win_condition.l1 = "location";
 			pchar.quest.Marginpassenger.win_condition.l1.location = pchar.GenQuest.Marginpassenger.Shore;
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer_2":
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "16");
-			AddQuestUserData("Marginpassenger", "sName", "Jacques the Kindman"));
+			AddQuestUserData("Marginpassenger", "sName", "Jacques the Kindman");
 			AddQuestUserData("Marginpassenger", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity+"Gen"));
 			AddQuestUserData("Marginpassenger", "sCity1", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity1+"Acc")); // лесник - окончание в СЖ
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName1);
@@ -766,7 +766,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Beni ucuz laflarınla oyalama. Bir dahaki sefere, sonucu hiç beğenmeyeceksin...";
         			link.l1 = "Anladım.";
@@ -781,7 +781,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Umarım daha fazla saygı gösterir ve kaba davranmayı bırakırsın?";
         			link.l1 = "Emin olabilirsin, Jacques, yapacağım.";
@@ -804,7 +804,7 @@ void ProcessDialogEvent()
 		
 		case "pirate_town":
             dialog.text = " Sorunu çözmek mi? Ne yaptığının farkında mısın? Neyse, bana bir milyon peso getir, adamlara senin 'marifetlerini' unutturmaya çalışırım. Bu fikir hoşuna gitmediyse, defol git cehenneme.";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "Pekala, ödemeye hazırım.";
 				link.l1.go = "pirate_town_pay";

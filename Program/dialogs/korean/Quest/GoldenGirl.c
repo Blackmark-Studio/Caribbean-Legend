@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "알겠어, Charles. 나도 완벽하고 진정한 사랑을 믿고 싶지만, 이 세상엔 그런 건 없는 것 같아.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "이 자식아! 그리고 내 부하들은? 그놈들도 살아서 무슨 일이 있었는지 증언할 수 있나?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "모두 무사합니다, 각하. 좀 두들겨 맞긴 했지만, 살아남을 겁니다.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "전부는 아닙니다, 각하. 한 신사는 살아남지 못했습니다 - 드 시에부가 일부러 머스킷총병들을 데려왔거든요. 제가 어쩔 수가 없었습니다.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "그래, 네 배를 봤지. 인정해야겠군, 정말 장관이더라. 그럼 판을 키워보자고. 두 척 대 한 척, 내 프리깃과 플루트, 그리고 은화로 네 배에 맞서겠어?";
 				link.l1 = "훌륭한 승부였어! 보토 부인이 틀렸군 – 이 결투는 전설로 남을 거야. 거래지!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "이것 좀 봐, 우리 선장이 아주 말썽꾸러기잖아! 하지만 사략질은 신성하지. 그럼 전열함은 어때? 프리깃, 48문포. 웬만한 코르벳보다 빠르지 – 왕실 조선소에서 만든 작품이고, 세계 최고의 조선공들이 더 개선했어. 실은 이 배가 싣고 있는 컬버린포는 사거리도 길고 명중률도 뛰어나지. 어때, 한 번 해볼래?";
 					link.l1 = "훨씬 낫군, 나도 끼겠다! 가자!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "끝났군, 선장. 원하는 걸 얻었으니 실컷 자랑해도 되겠지. 내일 정오에 내 프리깃함 매입 조건을 논의하는 게 어떻겠소?";
 					link.l1 = "그게 다야? 나도 자네처럼 도박에서 잃은 건 다시 살 수 있는 게 아니라 이겨서 되찾아야 한다고 진심으로 믿지. 아니면 그 배를 마을 어부들에게 목재로 팔고, 자네의 후한 기부 이야기를 실컷 해줄 수도 있겠군.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "이제 운명의 여신이 말씀하셨군. 정말 기이한 결과로군. 축하하오, 드 모르 선장. 내일 정오에 내 프리깃함 매입 조건을 논의하는 것이 어떻겠소?";
 						link.l1 = "그렇게 빨리? 다른 손님들에게 실망을 안겨주고 있군, 나리. 내가 기억하기로는, 당신에겐 아직 배가 한 척 더 있지. 나 역시 당신처럼, 도박에서 잃은 것은 돈으로 되찾을 수 없고, 오직 다시 이겨야만 한다고 진심으로 믿소.";

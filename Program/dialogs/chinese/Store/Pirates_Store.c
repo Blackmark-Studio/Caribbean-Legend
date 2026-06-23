@@ -50,16 +50,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "mtraxx_1":
-			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
+			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
             dialog.text = "目前, 一艘名为‘罗斯博霍姆号’的荷兰" + sTemp + ", 正与一艘护卫船一同抵达我们的海域。 它装载着乌木, 从威廉斯塔德出发, 将与另一艘护卫船汇合, 以确保前往欧洲的航行安全。 我不知道它会走什么路线, 是经过圣马丁还是西班牙岛, 但我知道它们的 rendezvous 点坐标\n你的任务是在那里找到荷兰人, 登上那艘商船, 并把货物带给我。 货物一送到, 我就付款。 ";
 			link.l1 = "明白了。 时间和地点呢? ";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-			int i = sti(pchar.questTemp.Mtraxx.Crdn.minN2) - 10;
-			int n = sti(pchar.questTemp.Mtraxx.Crdn.minW2) - 10;
-            dialog.text = "" + sti(pchar.questTemp.Mtraxx.Crdn.degN) + " " + i + " 北, " + sti(pchar.questTemp.Mtraxx.Crdn.degW) + " " + n + " 西。 它一定在宝藏岛以南或西南的某个地方, 我不擅长这个, 我不是水手, 但你是。 你有大约五天的时间来完成这项任务。 ";
+			int i = int(pchar.questTemp.Mtraxx.Crdn.minN2) - 10;
+			int n = int(pchar.questTemp.Mtraxx.Crdn.minW2) - 10;
+            dialog.text = "" + int(pchar.questTemp.Mtraxx.Crdn.degN) + " " + i + " 北, " + int(pchar.questTemp.Mtraxx.Crdn.degW) + " " + n + " 西。 它一定在宝藏岛以南或西南的某个地方, 我不擅长这个, 我不是水手, 但你是。 你有大约五天的时间来完成这项任务。 ";
 			link.l1 = "记下了... 我知道了。 那就不浪费时间了! ";
 			link.l1.go = "mtraxx_3";
 		break;
@@ -73,13 +73,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "mtraxx_4":
            DialogExit();
 		   pchar.questTemp.Mtraxx = "pasq_convoy";
-		   i = sti(pchar.questTemp.Mtraxx.Crdn.minN2) - 10;
-           n = sti(pchar.questTemp.Mtraxx.Crdn.minW2) - 10;
+		   i = int(pchar.questTemp.Mtraxx.Crdn.minN2) - 10;
+           n = int(pchar.questTemp.Mtraxx.Crdn.minW2) - 10;
 		   AddQuestRecord("Roger_4", "3");
-		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name") + "Gen")));
-		   AddQuestUserData("Roger_4", "sdegN", sti(pchar.questTemp.Mtraxx.Crdn.degN));
+		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name") + "Gen")));
+		   AddQuestUserData("Roger_4", "sdegN", int(pchar.questTemp.Mtraxx.Crdn.degN));
 		   AddQuestUserData("Roger_4", "sminN", i);
-		   AddQuestUserData("Roger_4", "sdegW", sti(pchar.questTemp.Mtraxx.Crdn.degW));
+		   AddQuestUserData("Roger_4", "sdegW", int(pchar.questTemp.Mtraxx.Crdn.degW));
 		   AddQuestUserData("Roger_4", "sminW", n);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeTimeConvoy", 0, 0, 6, false);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeConvoyOver", 0, 0, 7, false);
@@ -94,16 +94,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < makeint(sti(pchar.questTemp.Mtraxx.Crdn.Ebony) / 4))
+			if (iTotalTemp < int(int(pchar.questTemp.Mtraxx.Crdn.Ebony) / 4))
 			{
 				dialog.text = "小子, 你在开玩笑吗? 你的货舱里只有几块乌木碎片! 这是无耻的欺骗! 滚出去! 我会把这件事告诉马库斯! 滚出去!! ";
 				link.l1 = "嗯... ";
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < sti(pchar.questTemp.Mtraxx.Crdn.Ebony) - 20)
+			if (iTotalTemp < int(pchar.questTemp.Mtraxx.Crdn.Ebony) - 20)
 			{
-				dialog.text = "‘罗斯博霍姆号’至少有" + FindRussianQtyString(sti(pchar.questTemp.Mtraxx.Crdn.Ebony)) + "乌木。 你为什么只给我带来这么少? ";
+				dialog.text = "‘罗斯博霍姆号’至少有" + FindRussianQtyString(int(pchar.questTemp.Mtraxx.Crdn.Ebony)) + "乌木。 你为什么只给我带来这么少? ";
 				link.l1 = "嗯... 你知道的, 战斗中不得不丢弃了一部分。 还有那些该死的老鼠... ";
 				link.l1.go = "mtraxx_7";
 				break;

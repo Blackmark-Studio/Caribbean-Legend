@@ -40,11 +40,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_1":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 5000;
 				dialog.text = "Now Monsieur, that isn't true! She is young, pretty, and experienced; my clients all but admire her. She will cost you a lot. Five thousand pesos for a night with her, and not a single peso less.";
-				if (sti(pchar.money) >= 5000)
+				if (int(pchar.money) >= 5000)
 				{
 					link.l1 = "Pahalı, ama pekâlâ. Al paran.";
 					link.l1.go = "Gigolo_3";
@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 2500;
 				dialog.text = "Ah, haklısınız Mösyö, genç ve güzel ama tecrübesiz. Müşterilerim genelde onu fark etmiyor, bu yüzden sordum. Ama gerçekten mütevazı kızlardan hoşlanıyorsanız, iyi bir seçim olur. Size iki bin beş yüz peso'ya mal olacak.";
-				if (sti(pchar.money) >= 2500)
+				if (int(pchar.money) >= 2500)
 				{
 					link.l1 = "Ne yazık ki, o işini gayet iyi yapacak. Al paranı.";
 					link.l1.go = "Gigolo_3";
@@ -73,11 +73,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_2":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 4500;
 				dialog.text = "İlk sen olmazsın, yakışıklı. Zaman zaman müşterilerim onun ilgisi için sıraya girer, çünkü o, adalarımızın esmer kızlarından çok farklıdır. Onun için dört bin beş yüz peso ödemen gerekir.";
-				if (sti(pchar.money) >= 4500)
+				if (int(pchar.money) >= 4500)
 				{
 					link.l1 = "Pahalı, ama çok iyi. Paranı al.";
 					link.l1.go = "Gigolo_3";
@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 3000;
 				dialog.text = "Gerçekten mi, Mösyö? Şimdiden memleket hasreti mi çekiyorsunuz? Benim Kreollerim ve özellikle melezlerim, bu rahat Parisli serseriden çok daha tutkuludur. Ama ne yazık ki, seçim sizin. O size üç bin peso'ya mal olacak.";
-				if (sti(pchar.money) >= 3000)
+				if (int(pchar.money) >= 3000)
 				{
 					link.l1 = "Pahalı, ama çok iyi. Al paranı.";
 					link.l1.go = "Gigolo_3";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_3":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Sharlie.Gigolo.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Sharlie.Gigolo.Money));
 			dialog.text = "Dilediğiniz gibi, sevgili. Lucille sizi akşam saat on birde sabırsızlıkla bekliyor olacak. Ayrıca, sabah yediden geç kalmamalı. Eğer gece yarısından önce gelmezseniz, başka bir müşteriyle ilgilenecek ve onu görmek için bir sonraki akşama kadar beklemeniz gerekecek. Ve sakın... ona zarar vermeye kalkmayın, yoksa pişman olursunuz. Benden söylemesi, sevgili.";
 			link.l1 = "Endişelenmeyin, ona bir zorba gibi değil, bir sevgili gibi davranacağım. Onu saat on birde alırım. Peki, o zamana kadar ne yapmalıyım?";
 			link.l1.go = "Gigolo_4a";

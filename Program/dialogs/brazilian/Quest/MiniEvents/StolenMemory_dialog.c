@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Um colar? De fato... Recentemente adquiri mesmo esse enfeite. E diga-me, capitão, como exatamente pretende tomar de mim esta joia que, por direito, me pertence?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Estou disposto a lhe oferecer cinco mil pesos pela peça. Uma quantia generosa que lhe permitiria comprar um ornamento igualmente belo, talvez até mais grandioso. Enquanto isso, este colar em especial seria devolvido a quem o valoriza acima de tudo—muito mais do que qualquer valor em dinheiro.";
 				link.l1.go = "Captain_4_commerce";

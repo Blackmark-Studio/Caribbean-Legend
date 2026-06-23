@@ -14,8 +14,8 @@ void Consumption_CommandantHouse(string qName)//создаем слугу и з�
 {
 	pchar.questTemp.Consumption.House = "true";//атрибут, что пришёл
 	chrDisableReloadToLocation = true;
-	int iRank = sti(pchar.rank)+10;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+10;
+	int iScl = 20 + 2*int(pchar.rank);
 	sld = GetCharacter(NPC_GenerateCharacter("Conservant_1", "citiz_5", "man", "man", iRank, SPAIN, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_10", "pistol1", "bullet", iScl*2);
 	sld.dialog.FileName = "Quest\LineMiniQuests\Consumption.c";
@@ -59,8 +59,8 @@ void ConsumptionFindLetter(string qName)//нашли письмо
 void Consumption_CreateSergio(string qName)//создаем Сержио
 {
 	chrDisableReloadToLocation = true;
-	int iRank = sti(pchar.rank)+8;
-	int iScl = 15 + 2*sti(pchar.rank); // patch-9
+	int iRank = int(pchar.rank)+8;
+	int iScl = 15 + 2*int(pchar.rank); // patch-9
 	sld = GetCharacter(NPC_GenerateCharacter("Sergio", "SerhioSaldo", "man", "man", iRank, SPAIN, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_13", "pistol1", "bullet", iScl*2);
 	sld.name = StringFromKey("Consumption_3");
@@ -124,8 +124,8 @@ void Consumption_FailSergio(string qName)//опоздали
 
 void Consumption_CreateBandits()//бандиты Хуана
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 10 + 2*sti(pchar.rank); // patch-9
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 10 + 2*int(pchar.rank); // patch-9
 	for (i=1; i<=3; i++)
 	{
 		if (i == 1)
@@ -158,10 +158,10 @@ void Consumption_CreateBandits()//бандиты Хуана
 void Consumption_CreateJuan(string qName)//галеон Хуана
 {
 	pchar.quest.Consumption6.over = "yes"; //снять прерывание
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE; // patch-9
-	int iScl = 15 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE; // patch-9
+	int iScl = 15 + 2*int(pchar.rank);
 	int iCannon, iShip;
-	if (sti(pchar.rank) < 11)
+	if (int(pchar.rank) < 11)
 	{
 		iShip = SHIP_GALEON_L;
 		iCannon = CANNON_TYPE_CANNON_LBS20;
@@ -169,7 +169,7 @@ void Consumption_CreateJuan(string qName)//галеон Хуана
 	else
 	{
 		iShip = SHIP_GALEON_H;
-		if (sti(pchar.rank) < 18) iCannon = CANNON_TYPE_CANNON_LBS24;
+		if (int(pchar.rank) < 18) iCannon = CANNON_TYPE_CANNON_LBS24;
 		else iCannon = CANNON_TYPE_CANNON_LBS32;
 	}
 	Island_SetReloadEnableGlobal("Trinidad", false);
@@ -178,7 +178,7 @@ void Consumption_CreateJuan(string qName)//галеон Хуана
 	sld.name = StringFromKey("Consumption_5");
     sld.lastname = StringFromKey("Consumption_6");
 	FantomMakeSmallSailor(sld, iShip, "", iCannon, iScl, iScl, iScl, iScl, iScl);
-	if(sti(pchar.rank) < 15 && MOD_SKILL_ENEMY_RATE < 9)
+	if(int(pchar.rank) < 15 && MOD_SKILL_ENEMY_RATE < 9)
 	{
 		SetCrewQuantity(sld, GetOptCrewQuantity(sld));
 	}
@@ -191,7 +191,7 @@ void Consumption_CreateJuan(string qName)//галеон Хуана
 	sld.Ship.Mode = "pirate";
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
-	if (sti(pchar.rank) > 14) SetCharacterPerk(sld, "CannonProfessional");
+	if (int(pchar.rank) > 14) SetCharacterPerk(sld, "CannonProfessional");
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("ConJuanShip", "ConJuan");
 	Group_SetGroupCommander("ConJuanShip", "ConJuan");

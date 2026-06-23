@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "昨夜、酒場で乱闘があったらしい……だが、誰が喧嘩してたのかなんて、俺にはさっぱりわからねえ。俺の顔はまだ無事だ。たぶんな。";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "くそったれ……頭が岩礁にぶつかった船体みてえに割れそうだってのに、てめえはまたその忌々しい質問かよ。何も見ちゃいねえし、 何も聞いちゃいねえ。こんな尋問でベテラン水夫を苦しめるより、ペソの何枚か恵んでくれたほうがよっぽどマシだぜ。";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "ほら、百ペソだ。いいか、また飲みすぎて酔いつぶれたり、あの給仕娘に惑わされたりするんじゃねえぞ？";
 				link.l1.go = "OS_Matros_7_harizma";

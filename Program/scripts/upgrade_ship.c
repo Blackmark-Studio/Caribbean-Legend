@@ -1,6 +1,6 @@
 float GetShipModifierBonus(ref chr, string modifier)
 {
-	ref realShip = &RealShips[sti(chr.Ship.Type)];
+	ref realShip = &RealShips[int(chr.Ship.Type)];
 	return GetAttributeFloat(realShip, "tuning.modifiers." + modifier);
 }
 
@@ -15,8 +15,8 @@ void UPGRD_RemoveShipModifier(ref realShip, string sourceName)
 		if (!CheckAttribute(modifier, sourceName)) continue;
 
 		string modifierName = GetAttributeName(modifier);
-		float value = stf(modifier.(sourceName));
-		modifiers.(modifierName) = stf(GetAttributeValue(modifier)) - value; // вычитаем эффект
+		float value = float(modifier.(sourceName));
+		modifiers.(modifierName) = float(GetAttributeValue(modifier)) - value; // вычитаем эффект
 		DeleteAttribute(modifier, sourceName);                               // убираем источник
 	}
 }
@@ -74,7 +74,7 @@ void UpgradeAmsterdam(ref realShip)
 void UpgradeShipSpeciality(ref chr)
 {
 	ref realShip = GetRealShip(GetCharacterShipType(chr));
-	int speciality = sti(realShip.Spec);
+	int speciality = int(realShip.Spec);
 	string sourceName = "SpecialityUpgrade";
 	string modifier;
 	float value;
@@ -205,7 +205,7 @@ void UpgradeShipFull(ref _chr)
 	UpgradeShipParameter(_chr, "MaxCrew");
 	UpgradeShipParameter(_chr, "MinCrew");
 	UpgradeShipParameter(_chr, "Cannons");
-	RealShips[sti(_chr.ship.type)].Tuning.All = true;
+	RealShips[int(_chr.ship.type)].Tuning.All = true;
 }
 
 // ugeen 03.06.09 - вероятность корабликов быть проапгрейженными на 1, 2 ...  все параметры
@@ -213,7 +213,7 @@ void Fantom_SetUpgrade(ref rFantom, string sFantomType)
 {
 	if (!CheckAttribute(rFantom, "ship.type")) return; // fix
     
-	int iShip = sti(rFantom.ship.type);
+	int iShip = int(rFantom.ship.type);
 	if (iShip == SHIP_NOTUSED) return; // fix
 	
 	// ship class
@@ -260,17 +260,17 @@ int GetPossibilityCannonsUpgrade(ref rFantom, bool isUpgrade)
 {
 	ref 	shTo;
 	
-	shTo = &RealShips[sti(rFantom.Ship.Type)];
+	shTo = &RealShips[int(rFantom.Ship.Type)];
 
-	int  cannonQ       = sti(shTo.CannonsQuantity);		
+	int  cannonQ       = int(shTo.CannonsQuantity);
 	int	 cannonMaxQ;	
-	int	 cannonMinQ    = sti(shTo.CannonsQuantityMin); 
+	int	 cannonMinQ    = int(shTo.CannonsQuantityMin);
 	
-	if(CheckAttribute(shTo,"CannonsQuantityMax")) 	cannonMaxQ = sti(shTo.CannonsQuantityMax); 
+	if(CheckAttribute(shTo,"CannonsQuantityMax")) 	cannonMaxQ = int(shTo.CannonsQuantityMax);
 	else
 	{		
-		cannonMaxQ = sti(shTo.CannonsQuantity); 
-		shTo.CannonsQuantityMax = sti(shTo.CannonsQuantity);
+		cannonMaxQ = int(shTo.CannonsQuantity);
+		shTo.CannonsQuantityMax = int(shTo.CannonsQuantity);
 	}	
 	
 	//trace("cannonQ :" + cannonQ + " cannonMaxQ :" + cannonMaxQ + " cannonMinQ :" + cannonMinQ);
@@ -288,7 +288,7 @@ int GetPossibilityCannonsUpgrade(ref rFantom, bool isUpgrade)
 
 void GenerateShipUpgradeParameters(ref rFantom)
 {
-	int iNation = sti(rFantom.nation);
+	int iNation = int(rFantom.nation);
 	
 	switch (iNation)
 	{

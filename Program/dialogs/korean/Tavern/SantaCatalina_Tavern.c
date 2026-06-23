@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Svenson_4":
 			dialog.text = "누가 알겠어... 일주일이 그리 긴 시간은 아니지만, 맥아더의 미망인은 딸에게 무슨 일이 생겼다고 확신하고 있고, 그걸 스벤손에게도 납득시켰지. 그래서 스벤손이 부하들을 불러 모아 직접 수색을 시작했지만, 아직 아무 소득도 없어. '레인보우'와 그 선원들은 그냥 사라져 버렸지\n글래디스를 어디서 찾을 수 있는지 알려줄 수 있지, 은화 천 닢만 주면.";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l1 = "자네 지식이 꽤 비싸군, 하지만 흥미가 생겼어. 돈은 여기 있다. 그녀는 어디에 있지?";
 				link.l1.go = "Svenson_5";

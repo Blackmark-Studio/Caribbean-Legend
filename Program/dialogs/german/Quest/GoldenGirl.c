@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Ich verstehe, Charles. Ich möchte an perfekte wahre Liebe glauben, aber ich vermute, es gibt so etwas nicht in dieser Welt.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Drecksack! Und meine Männer? Leben sie noch, um zu bezeugen, was passiert ist?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Sie sind in Ordnung, Exzellenz. Ein bisschen geschlagen, aber sie werden leben.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Nicht alle, Euer Exzellenz. Ein Gentleman hat es nicht geschafft - de Chievous hat sich die Mühe gemacht, Musketiere mitzubringen. Ich konnte nichts tun.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Ja, ich habe dein Schiff gesehen, ich muss zugeben, es ist wirklich ein Anblick zum Bewundern. Lassen wir es dann steigen - zwei Schiffe gegen eins. Meine Fregatte und Flöte mit Silber gegen dein Schiff?";
 				link.l1 = "Ein würdiges Spiel! Madame Botot lag falsch - DIESER Zweikampf wird in Legenden leben. Abgemacht!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Schau mal an, unser Kapitän ist ein unartiger Bursche! Jedoch ist das Freibeutertum heilig. Wie wäre es dann mit einem Kriegsschiff? Eine Fregatte, 48 Kanonen. Schneller als viele Korvetten - ein Produkt königlicher Werften, noch weiter verbessert von den besten Schiffsbauern der Welt. Die von ihr getragenen Kartaunen haben eine hervorragende Reichweite und Genauigkeit. Was sagst du dazu?";
 					link.l1 = "Viel besser, ich bin dabei! Los geht's!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Spiel vorbei, Kapitän, du hast bekommen, was du wolltest. Schwelge in deinem Triumph, wenn du willst. Ich schlage vor, wir besprechen die Bedingungen für den Kauf meines Fregattenschiffs morgen Mittag.";
 					link.l1 = "Das ist alles? Ich glaube aufrichtig, genau wie du, dass das, was beim Glücksspiel verloren geht, nicht herausgekauft werden kann, nur zurückgewonnen. Oder ich kann sie an lokale Fischer verkaufen und ihnen alles über deine großzügige Spende erzählen.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "So hat das Schicksal gesprochen. Das hat sich ganz merkwürdig entwickelt. Glückwunsch. Kapitän de Maure. Ich schlage vor, wir besprechen die Bedingungen für den Ankauf meiner Fregatte morgen Mittag.";
 						link.l1 = "So bald? Wir enttäuschen andere Gäste, Monsieur. Wenn ich mich richtig erinnere, haben Sie noch ein weiteres Schiff. Ich glaube aufrichtig, genau wie Sie, dass das, was im Spiel verloren geht, nicht ausgelöst werden kann, sondern nur zurückgewonnen werden kann.";

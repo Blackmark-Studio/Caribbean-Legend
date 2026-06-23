@@ -9,10 +9,10 @@ void RevokePerksPotionEffect(ref chr, ref item)
 	object temp;
 	GEN_SummPerkPoints(chr, &temp);
 
-	SetAttribute(chr, "perks.FreePoints_self", sti(temp.self));
-	SetAttribute(chr, "perks.FreePoints_ship", sti(temp.ship));
-	SetAttribute(chr, "perks.FreePoints_self_exp", sti(temp.self_left));
-	SetAttribute(chr, "perks.FreePoints_ship_exp", sti(temp.ship_left));
+	SetAttribute(chr, "perks.FreePoints_self", int(temp.self));
+	SetAttribute(chr, "perks.FreePoints_ship", int(temp.ship));
+	SetAttribute(chr, "perks.FreePoints_self_exp", int(temp.self_left));
+	SetAttribute(chr, "perks.FreePoints_ship_exp", int(temp.ship_left));
 	if (IsMainCharacter(chr))
 	{
 		pchar.questTemp.PerksPotionEffect = true;

@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_1":
-			float fQty = stf(dialogEditStrings[6]);
+			float fQty = float(dialogEditStrings[6]);
 			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
@@ -232,8 +232,8 @@ void ProcessDialogEvent()
 				link.l1.go = "licence_r";
 				break;
 			}
-			dialog.text = "有效期"+FindRussianDaysString(sti(fQty))+"天? 很好, 这将花费你"+FindRussianDublonString(sti(npchar.quest.lcc_summ))+"达布隆。 这些条款可接受吗? ";
-			if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
+			dialog.text = "有效期"+FindRussianDaysString(int(fQty))+"天? 很好, 这将花费你"+FindRussianDublonString(int(npchar.quest.lcc_summ))+"达布隆。 这些条款可接受吗? ";
+			if (PCharDublonsTotal() >= int(npchar.quest.lcc_summ))
 			{
 				link.l1 = "是的, 我接受。 ";
 				link.l1.go = "licence_2";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_2":
-			int iQty = sti(dialogEditStrings[6]);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.lcc_summ));
+			int iQty = int(dialogEditStrings[6]);
+			RemoveDublonsFromPCharTotal(int(npchar.quest.lcc_summ));
 			GiveNationLicence(HOLLAND, iQty);
 			// belamour传奇版本 与鲨鱼一起
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "start")
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.silk_info"))
 				{
-					if (sti(pchar.reputation.nobility) > 60)
+					if (int(pchar.reputation.nobility) > 60)
 					{
 						dialog.text = "啊哈, " +GetFullName(pchar)+ "船长! 你来得正好, 我有个商业提议给你。 ";
 						link.l1 = "有意思! 我听着, 先生。 ";
@@ -451,12 +451,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // 增加丝绸供应量
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // 增加丝绸供应量
 			{
 				link.l4 = ""+npchar.name+"先生, 我想讨论增加丝绸供应的可能性。 ";
 				link.l4.go = "UpgradeSilk";
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // 增加丝绸供应量, 如果第一次没带来
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // 增加丝绸供应量, 如果第一次没带来
 			{
 				link.l4 = "我把达布隆带来了, "+npchar.name+"先生, 请收下。 ";
 				link.l4.go = "UpgradeSilk_Agreed";

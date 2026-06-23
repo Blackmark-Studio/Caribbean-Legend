@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_2":
 			dialog.text = "ちょうど一万四百五十ペソでございます、旦那。つまり、彼の自由はこの金額ということになります。 私にこの額を支払うおつもりですか？少々驚きました……";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "驚かないでください。こちらがお金です。";
 				link.l1.go = "Sharlie_3";
@@ -212,7 +212,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_repeat":
 			dialog.text = "それで、彼の借金を支払う準備はできていますか？";
-			if (sti(pchar.money) >= 10450)
+			if (int(pchar.money) >= 10450)
 			{
 				link.l1 = "はい。こちらが金です。";
 				link.l1.go = "Sharlie_3";

@@ -19,7 +19,7 @@ void Process_Controls(string ControlName)
 	if (ControlName == "QuickLoad") { MakeQuickLoad(); }
 	
     if (dialogRun) return;
-	if (sti(InterfaceStates.Launched)==true) return;
+	if (int(InterfaceStates.Launched)==true) return;
 	
 	if (ControlName == "WhrPrevWeather")	{ Whr_LoadNextWeather(-1); }
 	if (ControlName == "WhrNextWeather")	{ Whr_LoadNextWeather(1); }
@@ -246,7 +246,7 @@ void Process_Controls(string ControlName)
 			if(!CheckAttribute(locCamera, "zoom"))
 				kZoom = 0.75;
 			else
-				kZoom = stf(locCamera.zoom);
+				kZoom = float(locCamera.zoom);
 			if(kZoom <= LOCCAMERA_ZOOM_MIN)
 				break;
 			kZoom -= 0.05;
@@ -256,7 +256,7 @@ void Process_Controls(string ControlName)
 				locCameraSetFPVMode(true);
 			}
 			locCamera.zoom = kZoom;
-			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);
+			locCameraSetRadius(float(locCamera.maxRadius)*kZoom);
 		break;
 
 		case "CharacterCamera_Backward":
@@ -265,7 +265,7 @@ void Process_Controls(string ControlName)
 			if(!CheckAttribute(locCamera, "zoom"))
 				kZoom = 0.75;
 			else
-				kZoom = stf(locCamera.zoom);
+				kZoom = float(locCamera.zoom);
 			if(kZoom <= LOCCAMERA_ZOOM_MIN)
 			{
 				locCameraSetFPVMode(false);
@@ -277,7 +277,7 @@ void Process_Controls(string ControlName)
 				if(kZoom > LOCCAMERA_ZOOM_MAX) kZoom = LOCCAMERA_ZOOM_MAX;
 			}
 			locCamera.zoom = kZoom;
-			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);
+			locCameraSetRadius(float(locCamera.maxRadius)*kZoom);
 		break;
 
         case "TimeScale":
@@ -535,24 +535,24 @@ void Process_Controls(string ControlName)
 		/* case "ChrBackward": //ChrStrafeLeft ChrStrafeRight
             if (bLandInterfaceStart && LAi_IsFightMode(pchar))
             {
-				pchar.chr_ai.energy = stf(pchar.chr_ai.energy) - 3;
- 				if (stf(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
+				pchar.chr_ai.energy = float(pchar.chr_ai.energy) - 3;
+ 				if (float(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
 	        }
 		break;
 		
 		case "ChrStrafeLeft":
             if (bLandInterfaceStart && LAi_IsFightMode(pchar))
             {
-				pchar.chr_ai.energy = stf(pchar.chr_ai.energy) - 3;
- 				if (stf(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
+				pchar.chr_ai.energy = float(pchar.chr_ai.energy) - 3;
+ 				if (float(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
 	        }
 		break;
 		
 		case "ChrStrafeRight":
             if (bLandInterfaceStart && LAi_IsFightMode(pchar))
             {
-				pchar.chr_ai.energy = stf(pchar.chr_ai.energy) - 3;
- 				if (stf(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
+				pchar.chr_ai.energy = float(pchar.chr_ai.energy) - 3;
+ 				if (float(pchar.chr_ai.energy) < 0) pchar.chr_ai.energy = 0;
 	        }
 		break; */
 		
@@ -636,7 +636,7 @@ void Process_Controls(string ControlName)
 			/*if(IsEntity(worldMap))
 			{		
 				Log_SetStringToLog("X = " + worldMap.playerShipX + " Z = " + worldMap.playerShipZ + " AY = " + worldMap.playerShipAY);
-				Log_SetStringToLog("Текущие координаты : " + Map_GetRealCoordZ(makefloat(worldMap.playerShipZ)) + "  " + Map_GetRealCoordX(makefloat(worldMap.playerShipX)));
+				Log_SetStringToLog("Текущие координаты : " + Map_GetRealCoordZ(float(worldMap.playerShipZ)) + "  " + Map_GetRealCoordX(float(worldMap.playerShipX)));
 			}	*/
 		break;
 
@@ -649,7 +649,7 @@ void Process_Controls(string ControlName)
 					//Log_SetStringToLog("X :" + pchar.ship.pos.x + " Y :" + pchar.ship.pos.y + " Z :" + pchar.ship.pos.z);
 					Log_SetStringToLog("aX :" + pchar.ship.ang.x + " aY :" + pchar.ship.ang.y + " aZ :" + pchar.ship.ang.z);
 					trace("aX :" + pchar.ship.ang.x + " aY :" + pchar.ship.ang.y + " aZ :" + pchar.ship.ang.z);
-					//Log_SetStringToLog("Текущие координаты : " + Sea_GetRealCoordZ(makefloat(pchar.Ship.pos.z)) + "  " + Sea_GetRealCoordX(makefloat(pchar.Ship.pos.x)));	
+					//Log_SetStringToLog("Текущие координаты : " + Sea_GetRealCoordZ(float(pchar.Ship.pos.z)) + "  " + Sea_GetRealCoordX(float(pchar.Ship.pos.x)));
 				}	
 			}	
 */			
@@ -828,9 +828,9 @@ void Process_Controls(string ControlName)
 		case "WindAngleIncrease": // смена угла ветра +
 			if(bBettaTestMode && bSeaActive && !bAbordageStarted)
 			{
-				Weather.Wind.Angle = stf(Weather.Wind.Angle) + 0.1;
+				Weather.Wind.Angle = float(Weather.Wind.Angle) + 0.1;
 				pchar.wind.angle = Weather.Wind.Angle;
-				fWeatherAngle = stf(Weather.Wind.Angle);
+				fWeatherAngle = float(Weather.Wind.Angle);
 				WhrCreateSeaEnvironment();
 			}
 		break;
@@ -838,9 +838,9 @@ void Process_Controls(string ControlName)
 		case "WindAngleDecrease": // смена угла ветра -
 			if(bBettaTestMode && bSeaActive && !bAbordageStarted)
 			{
-				Weather.Wind.Angle = stf(Weather.Wind.Angle) - 0.1;
+				Weather.Wind.Angle = float(Weather.Wind.Angle) - 0.1;
 				pchar.wind.angle = Weather.Wind.Angle;
-				fWeatherAngle = stf(Weather.Wind.Angle);
+				fWeatherAngle = float(Weather.Wind.Angle);
 				WhrCreateSeaEnvironment();
 			}
 		break;
@@ -848,9 +848,9 @@ void Process_Controls(string ControlName)
 		case "WindIncrease": // смена силы ветра +
 			if(bBettaTestMode && bSeaActive && !bAbordageStarted)
 			{
-				Weather.Wind.Speed = stf(Weather.Wind.Speed) + 1.0;
+				Weather.Wind.Speed = float(Weather.Wind.Speed) + 1.0;
 				pchar.wind.speed = Weather.Wind.Speed;
-				fWeatherSpeed = stf(Weather.Wind.Speed);
+				fWeatherSpeed = float(Weather.Wind.Speed);
 				WhrCreateSeaEnvironment();
 			}
 		break;
@@ -858,9 +858,9 @@ void Process_Controls(string ControlName)
 		case "WindDecrease": // смена силы ветра -
 			if(bBettaTestMode && bSeaActive && !bAbordageStarted)
 			{
-				Weather.Wind.Speed = stf(Weather.Wind.Speed) - 1.0;
+				Weather.Wind.Speed = float(Weather.Wind.Speed) - 1.0;
 				pchar.wind.speed = Weather.Wind.Speed;
-				fWeatherSpeed = stf(Weather.Wind.Speed);
+				fWeatherSpeed = float(Weather.Wind.Speed);
 				WhrCreateSeaEnvironment();
 			}
 		break;
@@ -892,7 +892,7 @@ void HKT_Button(string sHKB) // быстрый переход
 		string sNation = Colonies[FindColony(loadedLocation.fastreload)].nation;
 		if (sNation != "none")
 		{
-			i = sti(sNation);
+			i = int(sNation);
 			enemyCity = (GetNationRelation2MainCharacter(i) == RELATION_ENEMY) || GetRelation2BaseNation(i) == RELATION_ENEMY;
 			if (i == PIRATE) enemyCity = false;
 			else if (STH_IsEnableFastReload(sCityID)) enemyCity = false;
@@ -948,7 +948,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 				if(rItem.groupID != MUSKET_ITEM_TYPE) continue;
 				//if(!HasSubStr(rItem.id, "mushket")) continue;
 				if(!CheckAttribute(rItem,"chargeQ")) continue;
-				int chrgQ = sti(rItem.chargeQ);
+				int chrgQ = int(rItem.chargeQ);
 				bool bGP = and(chrgQ >= 2, IsCharacterPerkOn(pchar,"GunProfessional")) || chrgQ < 2;
 				if(!bGP) continue;
 				if(sItem != "") 
@@ -1061,7 +1061,7 @@ void BulletChanger() // боеприпас
 	if(MusketPriority(pchar)) sGunType = MUSKET_ITEM_TYPE;
 	//if(GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE) == "" && GetCharacterEquipByGroup(pchar, MUSKET_ITEM_TYPE) != "") sGunType = MUSKET_ITEM_TYPE;
 	
-	if(CheckAttribute(pchar, "chr_ai."+sGunType+".bulletNum") && sti(pchar.chr_ai.(sGunType).bulletNum) > 1)
+	if(CheckAttribute(pchar, "chr_ai."+sGunType+".bulletNum") && int(pchar.chr_ai.(sGunType).bulletNum) > 1)
 	{
 		int i, p;
 		int n = 0;
@@ -1072,7 +1072,7 @@ void BulletChanger() // боеприпас
 		if(sGun == "") return;
 		ref rItm = ItemsFromID(sGun);
 		makearef(arType, rItm.type);	
-		for (i = 0; i < sti(pchar.chr_ai.(sGunType).bulletNum); i++)
+		for (i = 0; i < int(pchar.chr_ai.(sGunType).bulletNum); i++)
 		{
 			string sTir = GetAttributeName(GetAttributeN(arType, i));
 			string sBullet = rItm.type.(sTir).bullet;
@@ -1088,7 +1088,7 @@ void BulletChanger() // боеприпас
 		LAi_SetCharacterUseBullet(pchar, sGunType, BulletType);
 		LAi_GunSetUnload(pchar, sGunType);
 		SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-		PlaySound("People Fight\reload1.wav")
+		PlaySound("People Fight\reload1.wav");
 		
 		// предупреждающие логи
 		string GunPowder = LAi_GetCharacterGunpowderType(pchar, sGunType);
@@ -1109,7 +1109,7 @@ void PotionChanger() // лечебные зелья
 	string PotionCur = "";
 	ref rItem;
 	aref Items, arItems;
-	string sItem
+	string sItem;
 	p = PtnNum();
 	
 	makearef(arItems, pchar.items);
@@ -1194,7 +1194,7 @@ int BulNum(string GunType)
 	string sGun = GetCharacterEquipByGroup(pchar, GunType);
 	ref rGun = ItemsFromID(sGun);
 	makearef(arType, rGun.type);	
-	for (int i = 0; i < sti(pchar.chr_ai.(GunType).bulletNum); i++)
+	for (int i = 0; i < int(pchar.chr_ai.(GunType).bulletNum); i++)
 	{
 		string sTir = GetAttributeName(GetAttributeN(arType, i));
 		string sBullet = rGun.type.(sTir).bullet;

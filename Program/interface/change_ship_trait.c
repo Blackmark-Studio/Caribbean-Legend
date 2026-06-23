@@ -21,7 +21,7 @@ void InitInterface_R(string iniName, ref _chr)
 	SetEventHandler("ievnt_command","ProcCommand",0);
 	SetEventHandler("evntDoPostExit","DoPostExit",0);
 
-	maxTraits = SetPossibleTraits(sti(realShip.Spec), &possibleTraits);
+	maxTraits = SetPossibleTraits(int(realShip.Spec), &possibleTraits);
 
 	string specName = GetShipSpecDesc(xi_refCharacter);
 	specName = DLG_Convert(specName, "ShipsPerksDescribe.txt");
@@ -127,23 +127,23 @@ int SetPossibleTraits(int spec, ref result)
 	switch (spec)
 	{
 		case SHIP_SPEC_MERCHANT:
-			result.trait01;
-			result.trait02;
-			result.trait03;
-			result.trait04;
-			result.trait05;
+			touchattr(result.trait01);
+			touchattr(result.trait02);
+			touchattr(result.trait03);
+			touchattr(result.trait04);
+			touchattr(result.trait05);
 		break;
 		case SHIP_SPEC_WAR:
-			result.trait11;
-			result.trait12;
-			result.trait13;
-			result.trait14;
+			touchattr(result.trait11);
+			touchattr(result.trait12);
+			touchattr(result.trait13);
+			touchattr(result.trait14);
 		break;
 		case SHIP_SPEC_RAIDER:
-			result.trait21;
-			result.trait22;
-			result.trait23;
-			result.trait24;
+			touchattr(result.trait21);
+			touchattr(result.trait22);
+			touchattr(result.trait23);
+			touchattr(result.trait24);
 		break;
 		case SHIP_SPEC_UNIVERSAL:
 			return 0;

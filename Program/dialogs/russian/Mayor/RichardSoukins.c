@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "First time";
 
 
-					if (npchar.city == sti(pchar.HeroParam.Location))
+					if (npchar.city == int(pchar.HeroParam.Location))
 					{
 						if(!CheckAttribute(PChar, "questTemp.pirateStartQuest"))
 						{

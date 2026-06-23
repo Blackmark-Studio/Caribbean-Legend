@@ -97,11 +97,11 @@ void ProcessDialogEvent()
 				rColony = GetColonyByIndex(iTest);
 			}
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 			{
 				dialog.text = "Ich freue mich, Sie zu treffen, Kapitän "+GetFullName(pchar)+". Dann lass uns anfangen. Du weißt bereits über die Grundlagen aus dem Brief, richtig? Nur Schaluppen, und sie muss das einzige Schiff in deinem Geschwader sein, um an der Regatta teilzunehmen. Hast du diese Anforderungen erfüllt?";
 				// belamour legendary edition допускаем курьерский люггер 
-				ok = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+				ok = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 				if((GetCompanionQuantity(pchar) > 1) || !ok)
 				{
 					link.l1 = "Noch nicht. Ich werde es jetzt tun und bald zurück sein.";
@@ -132,9 +132,9 @@ void ProcessDialogEvent()
 					rColony = GetColonyByIndex(iTest);
 				}
 				ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+				if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 				{
-					ok = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+					ok = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 					dialog.text = "Ach, du bist es wieder. Hast du alles getan, um die Anforderungen für die Regatta zu erfüllen?";
 					// belamour legendary edition допускаем курьерский люггер 
 					if ((GetCompanionQuantity(pchar) > 1) || !ok)
@@ -286,8 +286,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_rate_1":
-			int iQty = sti(dialogEditStrings[4]);
-			pchar.questTemp.Regata.Rate = sti(iQty);
+			int iQty = int(dialogEditStrings[4]);
+			pchar.questTemp.Regata.Rate = int(iQty);
 			if (iQty < 10000)
 			{
 				dialog.text = "Herr, das ist nicht lustig, noch ist es lustig. Ich werde nicht für so eine kleine Summe arbeiten.";
@@ -303,7 +303,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = ""+iQty+"? Das ist ein feiner Einsatz. Ich bin bereit, ihn zu akzeptieren. Ihr Geld, Herr?";
-			if (makeint(Pchar.money) >= sti(pchar.questTemp.Regata.Rate))
+			if (int(Pchar.money) >= int(pchar.questTemp.Regata.Rate))
 			{
 				link.l1 = "Bitte, nimm es.";
 				link.l1.go = "Regata_rate_2";
@@ -313,8 +313,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_rate_2":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Regata.Rate));
-			pchar.questTemp.Regata.Advantage = sti(pchar.questTemp.Regata.Rate)*(1.5+frand(1.5)); // dlc
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Regata.Rate));
+			pchar.questTemp.Regata.Advantage = int(pchar.questTemp.Regata.Rate)*(1.5+frand(1.5)); // dlc
 			dialog.text = "Hervorragend! Jetzt musst du nur noch der Erste sein und der Preis wird deiner sein. Sein endgültiger Wert könnte variieren, es hängt alles davon ab, wie viele Leute am Ende auf dich setzen werden.";
 			if (!CheckAttribute(pchar, "questTemp.Regata.Ratenext"))
 			{
@@ -365,7 +365,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Prepare_1":
-			if (sti(environment.time) < 12.0)
+			if (int(environment.time) < 12.0)
 			{
 				dialog.text = "Kapitän, die Regatta beginnt um 12 Uhr. Sie können sich jetzt ausruhen, wir bereiten das Fest vor. Kommen Sie mittags zurück, Ihre Wettbewerber werden das Gleiche tun.";
 				link.l1 = "Sehr gut, Herr! Ich werde auf den Start warten...";
@@ -438,7 +438,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_Shipyarder_3":
 			dialog.text = "Nur 15 000 Pesos. Sie müssen zugeben, dass dies ein sehr bescheidener Preis für eine... Situation wie diese ist.";
-			if (makeint(Pchar.money) >= 15000)
+			if (int(Pchar.money) >= 15000)
 			{
 				link.l1 = "Ich stimme zu. Ich kaufe diese neuen Segel für meinen Logger. Hier, nehmen Sie Ihr Geld, Herr. Würden Sie so freundlich sein, sie zu meinem Schiff zu liefern, während ich einchecke.";
 				link.l1.go = "Regata_Shipyarder_4";
@@ -459,10 +459,10 @@ void ProcessDialogEvent()
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) = sti(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp))+12;//выиграл 12 часов у всех
+				pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) = int(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp))+12;//выиграл 12 часов у всех
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp)));
 			}
-			RealShips[sti(Pchar.Ship.Type)].ship.upgrades.sails = 3;
+			RealShips[int(Pchar.Ship.Type)].ship.upgrades.sails = 3;
 			SetSailsColor(Pchar, 5);
 			AddQuestRecord("Regata", "28");
 		break;
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 			dialog.text = "Wie schade. Nun, es ist deine Wahl. Lebewohl, Kapitän.";
 			link.l1 = "Auf Wiedersehen!";
 			link.l1.go = "Shipyarder_exit";
-			pchar.questTemp.Regata.AdversarySecondTransition.Time.d = sti(pchar.questTemp.Regata.AdversarySecondTransition.Time.d)-16;//четвертый соперник выиграл 16 часов
+			pchar.questTemp.Regata.AdversarySecondTransition.Time.d = int(pchar.questTemp.Regata.AdversarySecondTransition.Time.d)-16;//четвертый соперник выиграл 16 часов
 			log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversarySecondTransition.Time.e));
 			AddQuestRecord("Regata", "29");
 		break;
@@ -497,7 +497,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Contra_2":
-			if (sti(pchar.questTemp.Regata.Index != 1))
+			if (int(pchar.questTemp.Regata.Index != 1))
 			{
 				sTemp = pchar.questTemp.Regata.ContraIndex;
 				dialog.text = "Wir wissen, dass es noch einen Teilnehmer vor Ihnen gibt - "+pchar.questTemp.Regata.AdversaryName.(sTemp)+" der "+pchar.questTemp.Regata.AdversaryShipName.(sTemp)+". Er hat den Hafen vor nicht allzu langer Zeit verlassen und wird bald am Kap von Gonaives vorbeisegeln.";
@@ -511,7 +511,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Contra_3":
-			if (sti(pchar.questTemp.Regata.Index != 1)) sTemp = "letting you pass ahead of him and take his position";
+			if (int(pchar.questTemp.Regata.Index != 1)) sTemp = "letting you pass ahead of him and take his position";
 			else sTemp = "therefore you will be taking a lead for a long time";
 			dialog.text = "Auf jeden Fall. Aber kommen wir zur Sache. Wir bieten Ihnen unsere Hilfe für Ihr Geld an. Wir haben vier Kanonen von unserem Schiff am Kap hinter der Bucht von Gonaives platziert. Jedes Regattaschiff muss es umfahren.\nDie Kanonen sind mit Kettenkugeln geladen. Wenn wir einen Deal machen, werde ich unseren Kanonenfreunden sagen, sie sollen die Segel deines Konkurrenten ruinieren, so dass er gezwungen sein wird, Zeit für die Reparatur zu verlieren, "+sTemp+".";
 			link.l1 = "Wie viel verlangst du für diesen Dienst?";
@@ -529,10 +529,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Contra_4":
-			if (sti(pchar.questTemp.Regata.Index != 1)) iTemp = 50000;
+			if (int(pchar.questTemp.Regata.Index != 1)) iTemp = 50000;
 			else iTemp = 30000;
 			dialog.text = "Nicht viel. Nur "+iTemp+" Pesos. Und einer Ihrer Wettbewerber wird fast zwei Tage wegen... eines Unfalls verlieren, ha-ha!";
-			if (makeint(Pchar.money) >= iTemp)
+			if (int(Pchar.money) >= iTemp)
 			{
 				link.l1 = "Heh! Du sprichst Klartext, mein Freund! Ich zahle. Aber welche Garantien habe ich, dass du deinen Job machst? Und dass du nicht auf mein Schiff schießt, wenn ich das Kap passiere?";
 				link.l1.go = "Regata_Contra_5";
@@ -553,17 +553,17 @@ void ProcessDialogEvent()
 			dialog.text = "Sie werden mit diesem Handel zufrieden sein, Kapitän. Und ich werde meine Kanonenjungen sofort darüber informieren. Viel Glück!";
 			link.l1 = "Gleichfalls...";
 			link.l1.go = "Contra_exit";
-			if (sti(pchar.questTemp.Regata.Index != 1))
+			if (int(pchar.questTemp.Regata.Index != 1))
 			{
 				AddMoneyToCharacter(pchar, -50000);
 				sTemp = pchar.questTemp.Regata.ContraIndex;
-				pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp) = sti(pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp))+48;//задержка на 48 часов
+				pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp) = int(pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp))+48;//задержка на 48 часов
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp)));
 			}
 			else
 			{
 				AddMoneyToCharacter(pchar, -30000);
-				pchar.questTemp.Regata.AdversaryThirdTransition.Time.b = sti(pchar.questTemp.Regata.AdversaryThirdTransition.Time.b)+36;//задержка на 36 часов
+				pchar.questTemp.Regata.AdversaryThirdTransition.Time.b = int(pchar.questTemp.Regata.AdversaryThirdTransition.Time.b)+36;//задержка на 36 часов
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryThirdTransition.Time.b));
 			}
 		break;
@@ -597,8 +597,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Padre_2":
-			iTemp = sti(dialogEditStrings[4]);
-			if (iTemp <= 0 || sti(pchar.money) < iTemp)
+			iTemp = int(dialogEditStrings[4]);
+			if (iTemp <= 0 || int(pchar.money) < iTemp)
 			{
 				dialog.text = "Das ist die falsche Einstellung, mein Sohn. Wir alle haben Sünden, vergiss deine Seele nicht. Du wirst vor unserem Schöpfer erscheinen müssen... und vielleicht bald.";
 				link.l1 = "Ich brauche deine Predigten nicht, heiliger Vater. Lebewohl.";
@@ -696,10 +696,10 @@ void ProcessDialogEvent()
 					pchar.questTemp.Regata.SpyIndex = 8;//выигрыш - 8 часов
 				}
 			}
-			dialog.text = "Hier, schau mal. Ich habe es von meinem Vater geerbt. Er war auch ein Seemann, genau wie du, und er hatte viele Navigationsdinge. Ich brauche es nicht, aber du wirst es sicher nützlich finden. Ich frage nur "+FindRussianMoneyString(sti(pchar.questTemp.Regata.SpyPrice))+" dafür.";
-			if (sti(pchar.money) >= sti(pchar.questTemp.Regata.SpyPrice))
+			dialog.text = "Hier, schau mal. Ich habe es von meinem Vater geerbt. Er war auch ein Seemann, genau wie du, und er hatte viele Navigationsdinge. Ich brauche es nicht, aber du wirst es sicher nützlich finden. Ich frage nur "+FindRussianMoneyString(int(pchar.questTemp.Regata.SpyPrice))+" dafür.";
+			if (int(pchar.money) >= int(pchar.questTemp.Regata.SpyPrice))
 			{
-				link.l1 = "Nun, nun..."+sTemp+"! Interessant! Ich sage, ich kaufe es dir ab. Für deine hübschen Augen. Also, willst du "+FindRussianMoneyString(sti(pchar.questTemp.Regata.SpyPrice))+" dafür? Bitte, nimm dein Geld.";
+				link.l1 = "Nun, nun..."+sTemp+"! Interessant! Ich sage, ich kaufe es dir ab. Für deine hübschen Augen. Also, willst du "+FindRussianMoneyString(int(pchar.questTemp.Regata.SpyPrice))+" dafür? Bitte, nimm dein Geld.";
 				link.l1.go = "Regata_Spyglass_3";
 			}
 			link.l2 = "Hm..."+sTemp+"? Nein, Mädchen, es tut mir leid, aber ich brauche es nicht. Ich habe bereits ein sehr schönes Fernrohr. Also... leider!";
@@ -707,7 +707,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Spyglass_3":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Regata.SpyPrice));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Regata.SpyPrice));
 			GiveItem2Character(pchar, pchar.questTemp.Regata.Spy);
 			dialog.text = "Danke, Kapitän. Ich hoffe, es wird Ihnen gut dienen. Ich freue mich, dass Sie es nützlich gefunden haben. Viel Glück bei der Regatta!";
 			link.l1 = "Danke, "+npchar.name+"! Auf Wiedersehen.";
@@ -719,8 +719,8 @@ void ProcessDialogEvent()
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) = sti(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp))+sti(pchar.questTemp.Regata.SpyIndex);//купил трубу - выиграл время
-				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp)));
+				pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) = int(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp))+int(pchar.questTemp.Regata.SpyIndex);//купил трубу - выиграл время
+				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp)$int(0)));
 			}
 		break;
 		
@@ -728,7 +728,7 @@ void ProcessDialogEvent()
 			dialog.text = "Wie schade, Kapitän. Ich hatte gehofft, dass es für Sie nützlich sein wird. Nun, ich werde versuchen, es jemand anderem zu verkaufen. Auf Wiedersehen!";
 			link.l1 = "Auf Wiedersehen, "+npchar.name+".";
 			link.l1.go = "Spyglass_exit";
-			pchar.questTemp.Regata.AdversaryFourthTransition.Time.c = sti(pchar.questTemp.Regata.AdversaryFourthTransition.Time.c)-sti(pchar.questTemp.Regata.SpyIndex);//третий соперник выиграл время
+			pchar.questTemp.Regata.AdversaryFourthTransition.Time.c = int(pchar.questTemp.Regata.AdversaryFourthTransition.Time.c)-int(pchar.questTemp.Regata.SpyIndex);//третий соперник выиграл время
 		break;
 		
 		case "Spyglass_exit":
@@ -812,7 +812,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_Hovernor_2":
-			switch (sti(Pchar.BaseNation))
+			switch (int(Pchar.BaseNation))
 			{
 				case ENGLAND: sTemp = "You are English , help us to save English citizens and what is important - women!" break;
 				case FRANCE: sTemp = "You are French, so you basically are our ally, help us to save English citizens and what is more important - women!" break;
@@ -848,7 +848,7 @@ void ProcessDialogEvent()
 		case "Hovernor_exit":
 			DialogExit();
 			pchar.quest.Regata_TH.over = "yes"; // belamour снять прерывание
-			pchar.questTemp.Regata.AdversaryFifthTransition.Time.e = sti(pchar.questTemp.Regata.AdversaryFifthTransition.Time.e)-36;//пятый противник выиграл 36 часов
+			pchar.questTemp.Regata.AdversaryFifthTransition.Time.e = int(pchar.questTemp.Regata.AdversaryFifthTransition.Time.e)-36;//пятый противник выиграл 36 часов
 			ChangeCharacterComplexReputation(pchar, "nobility", -8);
 			ChangeCharacterNationReputation(pchar, ENGLAND, -5);
 			//вертаем губера в норму
@@ -1025,7 +1025,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = true;//закрыть локацию
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
-			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
+			npchar.quest.OfficerPrice = int(pchar.rank)*500;
 			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
 			npchar.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			npchar.loyality = 25;
@@ -1040,8 +1040,8 @@ void ProcessDialogEvent()
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp) = sti(pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp))+18+(rand(18));//выигрыш до 1.5 суток
-				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp)));
+				pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp) = int(pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp))+18+(rand(18));//выигрыш до 1.5 суток
+				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp)$int(0)));
 			}
 			SetFunctionTimerCondition("SiegeSkiperOver", 0, 0, 15, false);//чтобы не присвоил офицера
 			DialogExit();
@@ -1055,12 +1055,12 @@ void ProcessDialogEvent()
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
 			//снимаем запреты
 			bQuestDisableMapEnter = false;//открыть карту
 			DeleteAttribute(pchar, "GenQuest.CannotWait");//можно мотать время
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Bridgetown") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 				dialog.text = "Sie haben die Regeln der Regatta auf der allerletzten Etappe gebrochen. Ihr Ergebnis wurde disqualifiziert. Ich habe Ihnen, Kapitän, nichts mehr zu sagen.";
@@ -1081,12 +1081,12 @@ void ProcessDialogEvent()
 					if (i==3) sTemp = "c";
 					if (i==4) sTemp = "d";
 					if (i==5) sTemp = "e";
-					if (pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FifthTransitionTime)) n++;
+					if (pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FifthTransitionTime)) n++;
 					pchar.questTemp.Regata.Result = n;//место в регате
 				}
 				if (n==1)
 				{
-					dialog.text = "Kapitän "+GetFullName(pchar)+", meine Gratulation! Es hat "+sti(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden, um die Regatta zu beenden und du hast alle deine Gegner weit hinter dir gelassen. Das ist ein bemerkenswertes Ergebnis!";
+					dialog.text = "Kapitän "+GetFullName(pchar)+", meine Gratulation! Es hat "+int(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden, um die Regatta zu beenden und du hast alle deine Gegner weit hinter dir gelassen. Das ist ein bemerkenswertes Ergebnis!";
 					link.l1 = "Danke für Ihre freundlichen Worte, Herr!";
 					link.l1.go = "First_result";
 				}
@@ -1094,7 +1094,7 @@ void ProcessDialogEvent()
 				{
 					if (n==6)
 					{
-						dialog.text = "Kapitän, ach, aber Ihr Ergebnis ist das schlechteste, Sie haben ausgegeben "+sti(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden. Sei nicht traurig, du hattest wirklich harte Gegner.";
+						dialog.text = "Kapitän, ach, aber Ihr Ergebnis ist das schlechteste, Sie haben ausgegeben "+int(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden. Sei nicht traurig, du hattest wirklich harte Gegner.";
 						link.l1 = "Ich bin nicht traurig, Herr. Ich freue mich, dass ich an der Regatta teilgenommen und meine Fähigkeiten erprobt habe.";
 						link.l1.go = "Other_result";
 						AddQuestRecord("Regata", "44");
@@ -1102,7 +1102,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-          				dialog.text = "Kapitän, Sie sind in "+n+"ter Platz. Herzlichen Glückwunsch zum erfolgreichen Ergebnis, Sie haben eine würdige Zeit gezeigt - "+sti(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden. Glückwunsch trotz deines Verlustes!";
+          				dialog.text = "Kapitän, Sie sind in "+n+"ter Platz. Herzlichen Glückwunsch zum erfolgreichen Ergebnis, Sie haben eine würdige Zeit gezeigt - "+int(pchar.questTemp.Regata.FifthTransitionTime)+" Stunden. Glückwunsch trotz deines Verlustes!";
 						link.l1 = "Es ist in Ordnung, Herr. Ich bin froh, dass ich in diesem harten Wettbewerb ein gutes Ergebnis erzielt habe.";
 						link.l1.go = "Other_result";
 						if (n==2) AddQuestRecord("Regata", "40");
@@ -1114,8 +1114,8 @@ void ProcessDialogEvent()
 				}
 			}
 			Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("SiegeSkiper");
-			sld = &Characters[sti(Pchar.questTemp.FiringOfficerIDX)];
-			CheckForReleaseOfficer(sti(Pchar.questTemp.FiringOfficerIDX));
+			sld = &Characters[int(Pchar.questTemp.FiringOfficerIDX)];
+			CheckForReleaseOfficer(int(Pchar.questTemp.FiringOfficerIDX));
 			RemovePassenger(Pchar, sld);
 			DeleteAttribute(sld, "Payment");
 			DeleteAttribute(Pchar, "questTemp.FiringOfficerIDX");//удаляем из офицеров
@@ -1206,13 +1206,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Give_advantage_1":
-			dialog.text = "Unter Berücksichtigung aller Einsätze ist Ihr endgültiger Preis "+FindRussianMoneyString(makeint(pchar.questTemp.Regata.Advantage))+". Bitte, nimm es. Herzlichen Glückwunsch!";
+			dialog.text = "Unter Berücksichtigung aller Einsätze ist Ihr endgültiger Preis "+FindRussianMoneyString(int(pchar.questTemp.Regata.Advantage))+". Bitte, nimm es. Herzlichen Glückwunsch!";
 			link.l1 = "Danke!";
 			link.l1.go = "Give_advantage_2";
 		break;
 		
 		case "Give_advantage_2":
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.Regata.Advantage));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Regata.Advantage));
 			dialog.text = "Sicher, Ihre Beliebtheit unter den Bürgern von Port Royal ist gewachsen. Ich denke, dass Sie das sehen können... aber ach, das Gedächtnis der Leute ist kurz. Also baden Sie im Ruhm, solange er noch so hell ist!";
 			link.l1 = "Sie sprechen von den schönsten Dingen, Herr... Nun, lassen Sie uns sehen, wie es ist, im Ruhm zu baden. Auf Wiedersehen! Es war ein Vergnügen.";
 			link.l1.go = "exit";
@@ -1224,7 +1224,7 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(pchar, "questTemp.Regata.Result"))
 				{
-					if (sti(pchar.questTemp.Regata.Result) == 1)
+					if (int(pchar.questTemp.Regata.Result) == 1)
 					{
 						dialog.text = "Herzlichen Glückwunsch zu Ihrem Sieg, Kapitän! Ein ausgezeichnetes Ergebnis!";
 						link.l1 = "Danke!";
@@ -1258,7 +1258,7 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(pchar, "questTemp.Regata.Result"))
 				{
-					if (sti(pchar.questTemp.Regata.Result) == 1)
+					if (int(pchar.questTemp.Regata.Result) == 1)
 					{
 						dialog.text = "Herzlichen Glückwunsch zu Ihrem Sieg, Kapitän! Ein hervorragendes Ergebnis!";
 						link.l1 = "Danke!";
@@ -1292,7 +1292,7 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(pchar, "questTemp.Regata.Result"))
 				{
-					if (sti(pchar.questTemp.Regata.Result) == 1)
+					if (int(pchar.questTemp.Regata.Result) == 1)
 					{
 						dialog.text = "Glückwunsch zu Ihrem Sieg, Kapitän! Ein ausgezeichnetes Ergebnis!";
 						link.l1 = "Danke dir!";
@@ -1341,6 +1341,6 @@ void CreateRegataAdversaries()
 	pchar.questTemp.Regata.AdversaryName.(sTemp) = GenerateRandomName_Generator(i, "man");
 	pchar.questTemp.Regata.AdversaryShipName.(sTemp) = GenerateRandomNameToShip(ENGLAND);
 	pchar.questTemp.Regata.AdversarySpeed.(sTemp) = 0.4+frand(0.9);
-	log_testinfo(FindRussianDaysString(stf(pchar.questTemp.Regata.AdversarySpeed.(sTemp))));
+	log_testinfo(FindRussianDaysString(float(pchar.questTemp.Regata.AdversarySpeed.(sTemp))));
 	}
 }

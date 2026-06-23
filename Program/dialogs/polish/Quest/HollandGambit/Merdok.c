@@ -664,7 +664,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
 				}
 			}//установили признак наличия Валькирии в эскадре.
 			if (iVal != 0)
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "3-36");
 			//установим таймер на генерацию энкаунтера
 			pchar.quest.HWIC_Cureer.win_condition.l1 = "Timer";
-			pchar.quest.HWIC_Cureer.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.HWIC_Cureer.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -1004,7 +1004,7 @@ void ProcessDialogEvent()
 			dialog.text = "Dwadzieścia tysięcy pesos. To bardzo dobry zestaw i szybko pokryje swoje koszty.";
 			link.l1 = "Drwisz ze mnie, prawda? Torebka ze szkłem za cenę lugra? Nie, podziękuję.";
 			link.l1.go = "alchemy_exit";
-			if (sti(pchar.money) >= 20000)
+			if (int(pchar.money) >= 20000)
 			{
 				link.l2 = "Zgadzam się. Myślę, że interesujące będzie spróbować zrobić coś własnymi rękoma.";
 				link.l2.go = "alchemy_5";

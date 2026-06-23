@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Nie zawracaj mi głowy swoimi tanimi gadkami. Następnym razem nie spodoba ci się wynik...";
         			link.l1 = "Zrozumiałem.";
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Mam nadzieję, że okażesz mi więcej szacunku i przestaniesz być niegrzeczny? W przeciwnym razie będę musiał cię zabić. To byłoby bardzo nieprzyjemne.";
         			link.l1 = "Zrozumiałem, kapitanie."+npchar.name+"Możesz być pewien, że tak zrobię.";

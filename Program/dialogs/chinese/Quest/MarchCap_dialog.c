@@ -45,10 +45,10 @@ void ProcessDialogEvent()
 						if (!isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island) || !isLocationFreeForQuests(pchar.GenQuest.MarchCap.Island.Shore)) pchar.GenQuest.MarchCap.Island.Shore = "";
 					}
 					pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island)+3;
-					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"附近航行, 离"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"不远。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 那么, 您加入吗? ";
+					dialog.text = "我发现"+FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(int(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"附近航行, 离"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"不远。 商人的货舱里有很多"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 那么, 您加入吗? ";
 					link.l1 = "听起来很诱人。 我同意! ";
 					link.l1.go = "MarchCap_1_1";
-					link.l2 = "一些"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";
+					link.l2 = "一些"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(int(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";
 					link.l2.go = "MarchCap_exit";
 				break;
 				
@@ -56,17 +56,17 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 					pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
 					pchar.GenQuest.MarchCap.DaysQty = 5+hrand(5);
-					dialog.text = "我发现"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将从"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+"航行到"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+"。 商人的货舱里有很多"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 最难的部分是在这两个殖民地之间的公海上找到他们。 那么, 您加入吗? ";
+					dialog.text = "我发现"+FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty))+"后, 一支挂着"+NationNameGenitive(int(pchar.GenQuest.MarchCap.Nation))+"旗帜的小型贸易护航队 —两艘商船和一艘护卫船, 将从"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen")+"航行到"+XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc")+"。 商人的货舱里有很多"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"。 船长, 不利用这个信息就太愚蠢了\n您和我可以轻松解决护卫队, 把货物据为己有。 最难的部分是在这两个殖民地之间的公海上找到他们。 那么, 您加入吗? ";
 					link.l1 = "听起来很诱人。 我同意! ";
 					link.l1.go = "MarchCap_2_1";
-					link.l2 = "一些"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";
+					link.l2 = "一些"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"不足以让我破坏与"+NationNameAblative(int(pchar.GenQuest.MarchCap.Nation))+"的关系。 不, 我不打算这么做! 再会, 先生, 别试图阻止我! ";
 					link.l2.go = "MarchCap_exit";
 				break;
 				
 				case 2: //海湾附近的单个海盗独桅帆船, 设置参数
-					pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(makeint(GOOD_SILVER - GOOD_GOLD));
-					pchar.GenQuest.MarchCap.GoodsQty = sti(pchar.rank)*50+170+rand(30);
-					if (sti(pchar.GenQuest.MarchCap.GoodsQty) > 1600) pchar.GenQuest.MarchCap.GoodsQty = 1500+rand(100);
+					pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(int(GOOD_SILVER - GOOD_GOLD));
+					pchar.GenQuest.MarchCap.GoodsQty = int(pchar.rank)*50+170+rand(30);
+					if (int(pchar.GenQuest.MarchCap.GoodsQty) > 1600) pchar.GenQuest.MarchCap.GoodsQty = 1500+rand(100);
 					pchar.GenQuest.MarchCap.Island = GetRandIslandId();
 					while(pchar.GenQuest.MarchCap.Island == pchar.GenQuest.MarchCap.Startisland)
 					{
@@ -82,8 +82,8 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island)+1;
 					pchar.GenQuest.MarchCap.PirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);//海盗
 					pchar.GenQuest.MarchCap.ShipType = SelectPirateShipType();
-					pchar.GenQuest.MarchCap.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.MarchCap.ShipType));
-					dialog.text = "我得到消息, 有个叫"+GetName( NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM)+"的海盗。 这个强盗最近劫持了"+RandPhraseSimple(RandPhraseSimple("英国","法国"), RandPhraseSimple("西班牙","荷兰"))+"的船只, 货舱里装满了"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"。 但遗憾的是, 他的"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.ShipType), "Name")+"Acc"))+"号船严重受损, 不得不花时间修理\n他目前在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"的"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"。 我想他需要大约"+FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty))+"来修理桅杆和船体的破洞。 如果我们抓紧时间, 就能及时赶到, 所有"+GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods))+"都将归我们所有\n我自己对付不了这个海盗, 他是个非常优秀的水手和战士, 但我们两人可以成功面对他, 不管他多有经验。 那么, 您加入吗? ";
+					pchar.GenQuest.MarchCap.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.MarchCap.ShipType));
+					dialog.text = "我得到消息, 有个叫"+GetName( NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM)+"的海盗。 这个强盗最近劫持了"+RandPhraseSimple(RandPhraseSimple("英国","法国"), RandPhraseSimple("西班牙","荷兰"))+"的船只, 货舱里装满了"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"。 但遗憾的是, 他的"+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.MarchCap.ShipType), "Name")+"Acc"))+"号船严重受损, 不得不花时间修理\n他目前在"+XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen")+"的"+XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen")+"。 我想他需要大约"+FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty))+"来修理桅杆和船体的破洞。 如果我们抓紧时间, 就能及时赶到, 所有"+GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods))+"都将归我们所有\n我自己对付不了这个海盗, 他是个非常优秀的水手和战士, 但我们两人可以成功面对他, 不管他多有经验。 那么, 您加入吗? ";
 					link.l1 = "听起来很诱人。 我同意! ";
 					link.l1.go = "MarchCap_3_1";
 					link.l2 = "嗯。 看来这个奖品不仅您够不着, 我们俩也够不着。 不, 我不打算这么做, 再会, 先生, 别试图阻止我! ";
@@ -102,20 +102,20 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "MarchCap_repeat";
 			Group_DelCharacter("MarchGroup", "MarchCap");
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			SetCharacterRemovable(npchar, false);
 			Character_SetAbordageEnable(npchar, false);
 			npchar.Tasks.CanBoarding = false; // 禁止进行登船攻击 // Addon 2016-1 Jason 海盗舰队
 			pchar.quest.MarchCap1_1.win_condition.l1 = "Timer";
-			pchar.quest.MarchCap1_1.win_condition.l1.date.hour  = sti(GetTime()+rand(10));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.hour  = int(GetTime()+rand(10));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
 			pchar.quest.MarchCap1_1.win_condition.l2 = "location";
 			pchar.quest.MarchCap1_1.win_condition.l2.location = pchar.GenQuest.MarchCap.Island;
 			pchar.quest.MarchCap1_1.function = "MarchCap1_CreateConvoy";
-			SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, sti(pchar.GenQuest.MarchCap.DaysQty)+2, false); //寻找计时器
+			SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, int(pchar.GenQuest.MarchCap.DaysQty)+2, false); //寻找计时器
 			pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
 			pchar.quest.MarchCap1_fail.win_condition.l1.character = "MarchCap";
 			pchar.quest.MarchCap1_fail.function = "MarchCap_fail";
@@ -123,8 +123,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("MarchCap", "1");
 			AddQuestUserData("MarchCap", "sShore", XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen"));
 			AddQuestUserData("MarchCap", "sIsland", XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen"));
-			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 			AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 		break;
 		
@@ -161,10 +161,10 @@ void ProcessDialogEvent()
 			if (pchar.GenQuest.MarchCap == "bad") AddQuestRecord("MarchCap", "5");
 			if (pchar.GenQuest.MarchCap == "poor" || pchar.GenQuest.MarchCap == "good" || pchar.GenQuest.MarchCap == "exellent")
 			{
-				iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods))-sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-				iTemp = iQty-sti(pchar.GenQuest.MarchCap.CapPart);
-				RemoveCharacterGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods), iQty);
-				AddCharacterGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods), iTemp);
+				iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods))-int(pchar.GenQuest.MarchCap.StartGoodsQty));
+				iTemp = iQty-int(pchar.GenQuest.MarchCap.CapPart);
+				RemoveCharacterGoods(pchar, int(pchar.GenQuest.MarchCap.Goods), iQty);
+				AddCharacterGoods(pchar, int(pchar.GenQuest.MarchCap.Goods), iTemp);
 				if (pchar.GenQuest.MarchCap == "poor") AddQuestRecord("MarchCap", "6");
 				if (pchar.GenQuest.MarchCap == "good") AddQuestRecord("MarchCap", "7");
 				if (pchar.GenQuest.MarchCap == "exellent") AddQuestRecord("MarchCap", "8");
@@ -175,9 +175,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarchCap_AfterBattle":
-			iTemp = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods))-sti(pchar.GenQuest.MarchCap.StartGoodsQty))*sti(Goods[sti(pchar.GenQuest.MarchCap.Goods)].Weight);
-			iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods))-sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-			pchar.GenQuest.MarchCap.CapPart = iQty/sti(pchar.GenQuest.MarchCap.Parts);
+			iTemp = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods))-int(pchar.GenQuest.MarchCap.StartGoodsQty))*int(Goods[int(pchar.GenQuest.MarchCap.Goods)].Weight);
+			iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods))-int(pchar.GenQuest.MarchCap.StartGoodsQty));
+			pchar.GenQuest.MarchCap.CapPart = iQty/int(pchar.GenQuest.MarchCap.Parts);
 			if (iTemp < 50)
 			{
 				dialog.text = "您真是个失败者, 船长! 我们一块都没拿到! 这都是因为您! 您是我们失败的原因, 该死的! ";
@@ -189,20 +189,20 @@ void ProcessDialogEvent()
 			if (iTemp > 50 && iTemp < 500)
 			{
 				dialog.text = "好吧, 这次突袭不如我预期的成功, 我们的奖品真的很少... 不管怎样, 船长, 我们分了这些残羹剩饭, 然后告别吧。 ";
-				link.l1 = "如果您不是在数天上的鸟, 而是帮我, 突袭本会成功... 拿走您的份额 - "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+", 然后消失! ";
+				link.l1 = "如果您不是在数天上的鸟, 而是帮我, 突袭本会成功... 拿走您的份额 - "+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+", 然后消失! ";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "poor";
 				break;
 			}
 			if (iTemp > 500 && iTemp < 1500)
 			{
-				dialog.text = "干得好, 船长! 正如我所说 - 清空那些商人的货舱相当容易, 哈哈... 奖品是"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+"。 ";
+				dialog.text = "干得好, 船长! 正如我所说 - 清空那些商人的货舱相当容易, 哈哈... 奖品是"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+"。 ";
 				link.l1 = "没错, "+npchar.name+"。 我没有异议。 长艇正在装货。 也许我们将来会再次一起突袭? 您看起来适合做我的同伴。 ";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "good";
 				break;
 			}
-			dialog.text = "太棒了, 船长! 正如我所说 - 清空那些商人的货舱相对容易, 哈哈... 奖品非常丰厚, 比我预期的多得多。 有"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+"。 ";
+			dialog.text = "太棒了, 船长! 正如我所说 - 清空那些商人的货舱相对容易, 哈哈... 奖品非常丰厚, 比我预期的多得多。 有"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+"。 ";
 			link.l1 = "没错, "+npchar.name+"。 我没有异议。 长艇正在装货。 也许我们将来会再次一起突袭? 您看起来适合做我的同伴。 ";
 			link.l1.go = "MarchCap_Deck_continue";
 			pchar.GenQuest.MarchCap = "exellent";
@@ -225,16 +225,16 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "MarchCap_repeat";
 			Group_DelCharacter("MarchGroup", "MarchCap");
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			SetCharacterRemovable(npchar, false);
 			Character_SetAbordageEnable(npchar, false);
 			npchar.Tasks.CanBoarding = false; // 禁止进行登船攻击 // Addon 2016-1 Jason 海盗舰队
 			pchar.quest.MarchCap1_1.win_condition.l1 = "Timer";
-			pchar.quest.MarchCap1_1.win_condition.l1.date.hour  = sti(GetTime()+rand(10));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-			pchar.quest.MarchCap1_1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.hour  = int(GetTime()+rand(10));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+			pchar.quest.MarchCap1_1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
 			pchar.quest.MarchCap1_1.function = "MarchCap2_CreateConvoy";
 			pchar.GenQuest.MarchCap.WdmEnc = "true";
 			pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
@@ -244,8 +244,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("MarchCap", "10");
 			AddQuestUserData("MarchCap", "sCity1", XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Startcity+"Gen"));
 			AddQuestUserData("MarchCap", "sCity2", XI_ConvertString("Colony"+pchar.GenQuest.MarchCap.Finishcity+"Acc"));
-			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 			AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 		break;
 		
@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "MarchCap_repeat";
 			Group_DelCharacter("MarchGroup", "MarchCap");
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			SetCharacterRemovable(npchar, false);
 			Character_SetAbordageEnable(npchar, false);
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 			pchar.quest.MarchCap1_1.win_condition.l1 = "location";
 			pchar.quest.MarchCap1_1.win_condition.l1.location = pchar.GenQuest.MarchCap.Island;
 			pchar.quest.MarchCap1_1.function = "MarchCap3_CreatePirate";
-			SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, sti(pchar.GenQuest.MarchCap.DaysQty), false); //计时器
+			SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, int(pchar.GenQuest.MarchCap.DaysQty), false); //计时器
 			pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
 			pchar.quest.MarchCap1_fail.win_condition.l1.character = "MarchCap";
 			pchar.quest.MarchCap1_fail.function = "MarchCap_fail";
@@ -276,8 +276,8 @@ void ProcessDialogEvent()
 			AddQuestRecord("MarchCap", "11");
 			AddQuestUserData("MarchCap", "sShore", XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore+"Gen"));
 			AddQuestUserData("MarchCap", "sIsland", XI_ConvertString(pchar.GenQuest.MarchCap.Island+"Gen"));
-			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+			AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+			AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 			AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 			AddQuestUserData("MarchCap", "sName1", GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM));
 		break;
@@ -295,9 +295,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarchCap_AfterBattleGold":
-			iTemp = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods))-sti(pchar.GenQuest.MarchCap.StartGoodsQty))*sti(Goods[sti(pchar.GenQuest.MarchCap.Goods)].Weight);
-			iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods))-sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-			pchar.GenQuest.MarchCap.CapPart = iQty/sti(pchar.GenQuest.MarchCap.Parts);
+			iTemp = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods))-int(pchar.GenQuest.MarchCap.StartGoodsQty))*int(Goods[int(pchar.GenQuest.MarchCap.Goods)].Weight);
+			iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods))-int(pchar.GenQuest.MarchCap.StartGoodsQty));
+			pchar.GenQuest.MarchCap.CapPart = iQty/int(pchar.GenQuest.MarchCap.Parts);
 			if (iTemp < 10)
 			{
 				dialog.text = "您真是个失败者, 船长! 我们一块奖品都没拿到! 这都是因为您! 您是我们失败的原因, 该死的! ";
@@ -309,20 +309,20 @@ void ProcessDialogEvent()
 			if (iTemp > 10 && iTemp < 100)
 			{
 				dialog.text = "好吧, 这次突袭不如我预期的成功, 我们的奖品真的很少... 不管怎样, 船长, 我们分了这些残羹剩饭, 然后告别吧。 ";
-				link.l1 = "如果您不是在数天上的鸟, 而是帮我, 突袭本会成功... 拿走您的份额 - "+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+", 然后消失! ";
+				link.l1 = "如果您不是在数天上的鸟, 而是帮我, 突袭本会成功... 拿走您的份额 - "+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+", 然后消失! ";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "poor";
 				break;
 			}
 			if (iTemp > 100 && iTemp < 500)
 			{
-				dialog.text = "干得好, 船长! 奖品是"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+"。 ";
+				dialog.text = "干得好, 船长! 奖品是"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+"。 ";
 				link.l1 = "没错, "+npchar.name+"。 我没有异议。 长艇正在装货。 也许我们会再见面... ";
 				link.l1.go = "MarchCap_Talk_exit";
 				pchar.GenQuest.MarchCap = "good";
 				break;
 			}
-			dialog.text = "太棒了, 船长! 正如我所说 - 相当容易, 哈哈... 奖品非常丰厚, 比我预期的多得多。 有"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart))+"。 ";
+			dialog.text = "太棒了, 船长! 正如我所说 - 相当容易, 哈哈... 奖品非常丰厚, 比我预期的多得多。 有"+FindRussianQtyString(iQty)+"件。 我的份额是"+FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart))+"。 ";
 			link.l1 = "没错, "+npchar.name+"。 我没有异议。 长艇正在装货。 也许我们将来会再次一起突袭? 您看起来适合做我的同伴。 ";
 			link.l1.go = "MarchCap_Deck_continue";
 			pchar.GenQuest.MarchCap = "exellent";
@@ -381,7 +381,7 @@ int SelectMarchCapGoods1()
 int SelectPirateShipType()
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 5;

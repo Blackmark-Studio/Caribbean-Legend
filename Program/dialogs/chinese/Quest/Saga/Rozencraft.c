@@ -70,12 +70,12 @@ void ProcessDialogEvent()
 		case "rozencraft_3":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "兄弟, 我和莫利根有协议。 这是个好价格, 你找不到更好的了。 所以别像店里的农夫一样。 你有多少铁木? ";
-			link.l1 = ""+FindRussianQtyString(sti(npchar.quest.bakaut))+"。 ";
+			link.l1 = ""+FindRussianQtyString(int(npchar.quest.bakaut))+"。 ";
 			link.l1.go = "rozencraft_4";
 		break;
 		
 		case "rozencraft_4":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if(iTemp >= 90)
 			{
 				dialog.text = "太棒了。 这比我预期的多。 给, 拿上金子。 如果你有更多铁木, 去圣马丁的酒馆找... 你知道是谁。 他会为我们安排会面。 我看你比那个白痴莫利根强多了。 ";
@@ -107,14 +107,14 @@ void ProcessDialogEvent()
 		case "rozencraft_5":
 			DialogExit();
 			npchar.DontDeskTalk = true; // 不再纠缠, 在生成器中移除
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp < 40) DeleteAttribute(npchar, "quest.bakaut");
 			else 
 			{
 				TakeNItems(pchar, "gold_dublon", iTemp*40);
 				RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 				// 计算我们该给斯文森多少
-				int ibak = makeint((iTemp*40-2000)/2);
+				int ibak = int((iTemp*40-2000)/2);
 				sld = characterFromId("Svenson");
 				sld.quest.bakaut_sum = ibak; // 扬的份额
 				AddQuestRecord("Testament", "9");
@@ -143,8 +143,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_0":
-			dialog.text = "你有多少? 我需要不少于"+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+"的批次。 ";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
+			dialog.text = "你有多少? 我需要不少于"+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+"的批次。 ";
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= int(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "我知道。 我有"+FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SANDAL))+"你急着要的铁木。 ";
 				link.l1.go = "bakaut_1";
@@ -159,13 +159,13 @@ void ProcessDialogEvent()
 		case "bakaut_no":
 			if (!CheckAttribute(npchar, "quest.bakaut_angry"))
 			{
-				dialog.text = "该死的, 他们没警告你吗? 还是老鼠吃了木头? 我需要"+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+"一根也不能少。 下次按我的代理人告诉你的数量带。 希望你不会再让我失望, 否则我不得不拒绝你的服务。 ";
+				dialog.text = "该死的, 他们没警告你吗? 还是老鼠吃了木头? 我需要"+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+"一根也不能少。 下次按我的代理人告诉你的数量带。 希望你不会再让我失望, 否则我不得不拒绝你的服务。 ";
 				link.l1 = "好的, 先生, 我以后会更注意。 ";
 				link.l1.go = "bakaut_no_1";
 			}
 			else
 			{
-				if (sti(npchar.quest.bakaut_angry) == 1)
+				if (int(npchar.quest.bakaut_angry) == 1)
 				{
 					dialog.text = "你第二次耍我了。 我不喜欢这样。 知道这是最后警告, 下次我会拒绝你的服务。 ";
 					link.l1 = "该死的老鼠损坏了我的货物! 我向你保证, 迈克尔, 这是最后一次。 ";
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "rozencraft_no_repeat";
 			if (!CheckAttribute(npchar, "quest.bakaut_angry")) npchar.quest.bakaut_angry = 1;
-			else npchar.quest.bakaut_angry = sti(npchar.quest.bakaut_angry)+1;
+			else npchar.quest.bakaut_angry = int(npchar.quest.bakaut_angry)+1;
 			pchar.quest.Bakaut_Rozencraft_Reset.win_condition.l1 = "MapEnter";
 			pchar.quest.Bakaut_Rozencraft_Reset.function = "Bakaut_RozencraftRemove";
 			AddQuestRecord("Bakaut", "3");
@@ -204,12 +204,12 @@ void ProcessDialogEvent()
 		
 		case "bakaut_1":
 			iTemp = GetSquadronGoods(pchar, GOOD_SANDAL);
-			if (iTemp > sti(pchar.GenQuest.Bakaut.Value)+20)
+			if (iTemp > int(pchar.GenQuest.Bakaut.Value)+20)
 			{ // 超额
-				dialog.text = "哇! 抱歉, 朋友, 但我只能买"+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", 我没有钱买你所有的货物。 我期望的是每批"+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+"件, 每件四十杜布隆... ";
-				link.l1 = "好的。 现在拿"+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", 剩下的下次再卖。 ";
+				dialog.text = "哇! 抱歉, 朋友, 但我只能买"+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+", 我没有钱买你所有的货物。 我期望的是每批"+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+"件, 每件四十杜布隆... ";
+				link.l1 = "好的。 现在拿"+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+", 剩下的下次再卖。 ";
 				link.l1.go = "bakaut_2";
-				npchar.quest.bakaut = sti(pchar.GenQuest.Bakaut.Value)+20;
+				npchar.quest.bakaut = int(pchar.GenQuest.Bakaut.Value)+20;
 			}
 			else
 			{
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		
 		case "bakaut_3":
 			DialogExit();
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			TakeNItems(pchar, "gold_dublon", iTemp*40);
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 			npchar.DontDeskTalk = true;

@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "我不想和你说话。 你无缘无故攻击和平的当地人, 还挑衅他们打架。 滚开, 无神论者! ";
 				link.l1 = "如你所愿... ";
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "一瓶药水? 90比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "拿去吧, 朱利安兄弟。 ";
 				link.l1.go = "potion_pay";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "一瓶灵药? 500比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "拿去吧, 朱利安兄弟。 ";
 				link.l1.go = "potion_pay";
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "一瓶解毒剂? 200比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "拿去吧, 朱利安兄弟。 ";
 				link.l1.go = "potion_pay";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "一瓶合剂? 900比索, 我的孩子。 ";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "拿去吧, 朱利安兄弟。 ";
 				link.l1.go = "potion_pay";
@@ -158,8 +158,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "给。 拿着你的药。 愿上帝指引你! ";

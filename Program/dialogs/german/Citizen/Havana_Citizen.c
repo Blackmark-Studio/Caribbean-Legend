@@ -11,7 +11,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Glauben Sie, ich arbeite für den Geheimdienst von "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Glauben Sie, ich arbeite für den Geheimdienst von "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Nun... nein. Dann leben Sie wohl.";
 			link.l1.go = "exit";
 			link.l2 = "Haben Sie noch eine andere Frage?";

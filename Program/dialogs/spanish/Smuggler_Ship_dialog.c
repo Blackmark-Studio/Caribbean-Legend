@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 
 	case "start2":
 		ret = Pchar.name + ", Soy contrabandista, no gobernador, ¿de qué tipo de trabajo estás hablando?";
-		if (sti(Pchar.nation) == PIRATE)
+		if (int(Pchar.nation) == PIRATE)
 		{
 			dialog.text = ret + "Revisa la taberna de Inness. Ella está al tanto de todos en el pueblo." + "  Ve a Urksen, él es el líder aquí. Pero primero habla con los piratas locales.";
 		}
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		// Квест бук
 		AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 
 			LAi_SetPlayerType(PChar);
 			// грузим ГГ куда нужно....

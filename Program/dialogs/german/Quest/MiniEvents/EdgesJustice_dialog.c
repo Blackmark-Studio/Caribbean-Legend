@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 
 		case "Naemnik_6":
 			dialog.text = "Den Namen sage ich dir nicht – ich kenne ihn selbst nicht. Aber es ist jemand, der unter diesem Dreckskerl gelitten hat. Jemand, der Gerechtigkeit oder Rache will. Nenn es, wie du willst, es macht keinen Unterschied. Fünfhundert Dublonen für den Kopf dieses faulen Beamten! Hilf mir, und wir teilen das Geld.";
-			link.l1 = "Genug geschwätzt! Du würdest alles erzählen, um deine jämmerliche Haut zu retten. Ich habe dich ausreden lassen"+GetSexPhrase("","")," jetzt ist Schluss.";
+			link.l1 = "Genug geschwätzt! Du würdest alles erzählen, um deine jämmerliche Haut zu retten. Ich habe dich ausreden lassen jetzt ist Schluss.";
 			link.l1.go = "Naemnik_7";
 			link.l2 = "Eine schöne Geschichte. Aber ich glaube dir nicht aufs Wort. Hast du Beweise, Zeugen? Oder ist das nur ein weiterer Trick, um dem Tod zu entgehen?";
 			link.l2.go = "Naemnik_8";

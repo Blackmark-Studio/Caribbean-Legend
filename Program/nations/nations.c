@@ -8,7 +8,7 @@ void Nation_InitAfterLoading()
 	// check version
 	int version_number = 099;
 	if( CheckAttribute(pchar,"version_number") ) {
-		version_number = pchar.version_number;
+		version_number = int(pchar.version_number);
 	}
 
 	if( version_number < 104 )
@@ -140,15 +140,15 @@ int GetNationRelation2Character(int iNation, int iCharacterIndex)
 
 	if (CheckAttribute(&rCharacter, "relation.UseOtherCharacter"))
 	{
-		if (sti(rCharacter.relation.UseOtherCharacter) >= 0)
+		if (int(rCharacter.relation.UseOtherCharacter) >= 0)
 		{
-			rCharacter = GetCharacter(sti(rCharacter.relation.UseOtherCharacter));
+			rCharacter = GetCharacter(int(rCharacter.relation.UseOtherCharacter));
 		}
 	}
 
 	int iMCI = GetMainCharacterIndex();
-	int iNation2 = sti(rCharacter.nation);
-	if (iMCI == sti(rCharacter.index))
+	int iNation2 = int(rCharacter.nation);
+	if (iMCI == int(rCharacter.index))
 	{
 		return NationsRelations2MainCharacter[iNation];
 	}
@@ -173,16 +173,16 @@ int GetRelation(int iCharacterIndex1, int iCharacterIndex2)
 
 	if (CheckAttribute(&rCharacter1, "relation.UseOtherCharacter"))
 	{
-		if (sti(rCharacter1.relation.UseOtherCharacter) >= 0)
+		if (int(rCharacter1.relation.UseOtherCharacter) >= 0)
 		{
-			rCharacter1 = GetCharacter(sti(rCharacter1.relation.UseOtherCharacter));
+			rCharacter1 = GetCharacter(int(rCharacter1.relation.UseOtherCharacter));
 		}
 	}
 	if (CheckAttribute(&rCharacter2, "relation.UseOtherCharacter"))
 	{
-		if (sti(rCharacter2.relation.UseOtherCharacter) >= 0)
+		if (int(rCharacter2.relation.UseOtherCharacter) >= 0)
 		{
-			rCharacter2 = GetCharacter(sti(rCharacter2.relation.UseOtherCharacter));
+			rCharacter2 = GetCharacter(int(rCharacter2.relation.UseOtherCharacter));
 		}
 	}
 
@@ -192,20 +192,20 @@ int GetRelation(int iCharacterIndex1, int iCharacterIndex2)
 	string sTemp = "relation." + rCharacter2.index;
 	if (CheckAttribute(&rCharacter1,sTemp))
 	{
-		return sti(rCharacter1.(sTemp));
+		return int(rCharacter1.(sTemp));
 	}
 	//Trace("iNation1 = " + iNation1 + ", iNation2 = " + iNation2);
 
-	int iNation1 = sti(rCharacter1.nation);
-	int iNation2 = sti(rCharacter2.nation);
+	int iNation1 = int(rCharacter1.nation);
+	int iNation2 = int(rCharacter2.nation);
 
 	// nation 2 character relation
-	if (iMCI == sti(rCharacter1.index))
+	if (iMCI == int(rCharacter1.index))
 	{
 		//Trace("iMainCharacterRelation = " + NationsRelations2MainCharacter[iNation2]);
 		return NationsRelations2MainCharacter[iNation2];
 	}
-	if (iMCI == sti(rCharacter2.index))
+	if (iMCI == int(rCharacter2.index))
 	{
 		//Trace("iMainCharacterRelation = " + NationsRelations2MainCharacter[iNation1]);
 		return NationsRelations2MainCharacter[iNation1];
@@ -340,7 +340,7 @@ string GetNationNameByType(int iNationType)
 	{
 		return Nations[iNationType].Name;
 	}
-	return -1;
+	return "error";
 }
 
 string GetShortNationNameByType(int iNationType)
@@ -349,7 +349,7 @@ string GetShortNationNameByType(int iNationType)
 	{
 		return Nations[iNationType].ShortName;
 	}
-	return -1;
+	return "error";
 }
 
 ref GetNationByType(int iNationType)
@@ -381,7 +381,7 @@ int FindNationExceptNationWithoutPirates(int iNation)
 		}
 	}
 	m = rand(m - 1);
-	int iResultNation = sti(RandNations[m].nation);
+	int iResultNation = int(RandNations[m].nation);
 	return iResultNation;
 }
 
@@ -403,7 +403,7 @@ int GetEnemyNationToMainCharacter()
 		return -1;
 	}
 	iStep = rand(iStep);
-	int iResult = sti(Relations[iStep].nation);
+	int iResult = int(Relations[iStep].nation);
 
 	return iResult;
 }

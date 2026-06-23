@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PearlMan_1";
 		break;
 		case "PearlMan_1":
-			dialog.text = "Nous rassemblons ici des perles, au service  "+NationNameGenitive(sti(npchar.nation))+", tu sais...";
+			dialog.text = "Nous rassemblons ici des perles, au service  "+NationNameGenitive(int(npchar.nation))+", tu sais...";
 			link.l1 = "Ouais, je sais...";
 			link.l1.go = "exit";
 			link.l2 = "Hé, écoute, est-il possible d'acheter plusieurs de ces petits bibelots directement auprès du 'producteur', que dirais-tu?";

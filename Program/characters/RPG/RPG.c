@@ -73,9 +73,9 @@ int ChangeCharacterHunterScore(ref chref, string _huntName, int incr)
 
 	if (_huntName == "pirhunter") return 0;
 	if (CheckAttribute(chref, "GenQuest.HunterScore2Pause")) incr = 0;
-	incr = makeint(makefloat(incr) * SZN_GetModifierMtp(M_NATIONS_REPUTATION_MTP, 1.0, 0.01));
+	incr = int(float(incr) * SZN_GetModifierMtp(M_NATIONS_REPUTATION_MTP, 1.0, 0.01));
 
-	if (CheckAttribute(chref, "reputation." + _huntName) )	prevVal = sti(chref.reputation.(_huntName));
+	if (CheckAttribute(chref, "reputation." + _huntName) )	prevVal = int(chref.reputation.(_huntName));
 
 	int newVal = prevVal + incr;
 	if (newVal < -100)  newVal = -100;
@@ -83,7 +83,7 @@ int ChangeCharacterHunterScore(ref chref, string _huntName, int incr)
 
 	chref.reputation.(_huntName) = newVal;
 
-	if( sti(chref.index) != GetMainCharacterIndex() ) return newVal;
+	if( int(chref.index) != GetMainCharacterIndex() ) return newVal;
 
 	if (newVal >= 10)
 	{
@@ -168,9 +168,17 @@ int GetBaseHeroNation()
 {
 	if (isMainCharacterPatented())
 	{
-	    return sti(Items[sti(pchar.EquipedPatentId)].Nation);
+	    return int(Items[int(pchar.EquipedPatentId)].Nation);
 	}
-	return sti(pchar.BaseNation);
+
+	if (!CheckAttribute(pchar, "BaseNation"))
+	{
+		trace("No BaseNation");
+		DumpAttributes(pchar);
+		CollectCallStack();
+
+	}
+	return int(pchar.BaseNation);
 }
 
 // Легаси бонусный шанс обмануть корабли/укрепления, пока оставляю на всякий

@@ -30,6 +30,9 @@
 #define M_MTP_ENERGY_MAX "mtpEnergyMax"    // процент макс энергия
 #define M_ENERGY_PER_RANK "energyPerRank"  // +энергия за уровень
 
+#define M_HP_RECOVERY_MLT "mul_hpReloadMlt"
+#define M_ENERGY_RECOVERY_MLT "mul_energyReloadMlt"
+
 #define MELEE "Melee"
 #define RANGE "Range"
 #define BULLET "bullet"

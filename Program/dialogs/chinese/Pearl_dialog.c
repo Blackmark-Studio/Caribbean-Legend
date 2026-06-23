@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PearlMan_1";
 		break;
 		case "PearlMan_1":
-			dialog.text = "我们在这里采集珍珠, 为" + NationNameGenitive(sti(npchar.nation)) + "效力, 你知道的... ";
+			dialog.text = "我们在这里采集珍珠, 为" + NationNameGenitive(int(npchar.nation)) + "效力, 你知道的... ";
 			link.l1 = "嗯, 我知道... ";
 			link.l1.go = "exit";
 			link.l2 = "嘿, 听着, 有没有可能直接从'生产者'手里买几颗这种小玩意儿, 你觉得呢? ";

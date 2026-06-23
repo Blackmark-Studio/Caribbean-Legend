@@ -70,12 +70,12 @@ void ProcessDialogEvent()
 		case "rozencraft_3":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
 			dialog.text = "이봐, 우리 몰리건이랑 약속했잖아. 이건 좋은 값이야, 이보다 나은 가격 못 구해. 그러니까 시장 바닥 촌놈처럼 굴지 마. 철목 얼마나 가져왔어?";
-			link.l1 = ""+FindRussianQtyString(sti(npchar.quest.bakaut))+".";
+			link.l1 = ""+FindRussianQtyString(int(npchar.quest.bakaut))+".";
 			link.l1.go = "rozencraft_4";
 		break;
 		
 		case "rozencraft_4":
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if(iTemp >= 90)
 			{
 				dialog.text = "훌륭하군. 기대했던 것보다 더 많아. 자, 금화를 가져가라. 철목을 더 구하면 생마르탱의 선술집에 가서... 누군지 알지? 그에게 말해라. 그가 우리 만남을 주선할 거다. 너, 그 멍청이 몰리건보다 훨씬 나은 동료로구나.";
@@ -107,14 +107,14 @@ void ProcessDialogEvent()
 		case "rozencraft_5":
 			DialogExit();
 			npchar.DontDeskTalk = true; // чтоб не доставал, в генераторе - снимаем
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			if (iTemp < 40) DeleteAttribute(npchar, "quest.bakaut");
 			else 
 			{
 				TakeNItems(pchar, "gold_dublon", iTemp*40);
 				RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 				// считаем, сколько мы должны Свенсону
-				int ibak = makeint((iTemp*40-2000)/2);
+				int ibak = int((iTemp*40-2000)/2);
 				sld = characterFromId("Svenson");
 				sld.quest.bakaut_sum = ibak; // доля Яна
 				AddQuestRecord("Testament", "9");
@@ -143,8 +143,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "bakaut_0":
-			dialog.text = "얼마나 가지고 있지? 나는 최소한 그만큼은 필요해\n "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+".";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
+			dialog.text = "얼마나 가지고 있지? 나는 최소한 그만큼은 필요해\n "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+".";
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= int(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "그건 알고 있소. 나는 가졌소 "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SANDAL))+"  네가 그토록 얻고 싶어 하는 철목으로 만든 것이지.";
 				link.l1.go = "bakaut_1";
@@ -159,13 +159,13 @@ void ProcessDialogEvent()
 		case "bakaut_no":
 			if (!CheckAttribute(npchar, "quest.bakaut_angry"))
 			{
-				dialog.text = "젠장, 경고 안 받았어? 아니면 쥐들이 나무라도 갉아먹은 거야? 나한텐 필요해\n "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" 한 조각도 덜어서는 안 된다. 다음번에는 내 대리인이 지시한 만큼의 목재를 가져오게. 다시는 나를 실망시키지 않길 바라오, 그렇지 않으면 자네의 서비스를 거절할 수밖에 없을 것이네.";
+				dialog.text = "젠장, 경고 안 받았어? 아니면 쥐들이 나무라도 갉아먹은 거야? 나한텐 필요해\n "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+" 한 조각도 덜어서는 안 된다. 다음번에는 내 대리인이 지시한 만큼의 목재를 가져오게. 다시는 나를 실망시키지 않길 바라오, 그렇지 않으면 자네의 서비스를 거절할 수밖에 없을 것이네.";
 				link.l1 = "좋소, 마인헤르. 앞으로는 더 주의하겠소.";
 				link.l1.go = "bakaut_no_1";
 			}
 			else
 			{
-				if (sti(npchar.quest.bakaut_angry) == 1)
+				if (int(npchar.quest.bakaut_angry) == 1)
 				{
 					dialog.text = "너 나한테 두 번째로 사기 치는 거야. 마음에 안 들어. 이번이 마지막 경고라는 걸 알아둬. 다음번엔 네 도움 따윈 거절할 거다.";
 					link.l1 = "빌어먹을 쥐들이 내 물건을 망가뜨렸어! 맹세코, 미셸, 이번이 마지막일 거야.";
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "rozencraft_no_repeat";
 			if (!CheckAttribute(npchar, "quest.bakaut_angry")) npchar.quest.bakaut_angry = 1;
-			else npchar.quest.bakaut_angry = sti(npchar.quest.bakaut_angry)+1;
+			else npchar.quest.bakaut_angry = int(npchar.quest.bakaut_angry)+1;
 			pchar.quest.Bakaut_Rozencraft_Reset.win_condition.l1 = "MapEnter";
 			pchar.quest.Bakaut_Rozencraft_Reset.function = "Bakaut_RozencraftRemove";
 			AddQuestRecord("Bakaut", "3");
@@ -204,12 +204,12 @@ void ProcessDialogEvent()
 		
 		case "bakaut_1":
 			iTemp = GetSquadronGoods(pchar, GOOD_SANDAL);
-			if (iTemp > sti(pchar.GenQuest.Bakaut.Value)+20)
+			if (iTemp > int(pchar.GenQuest.Bakaut.Value)+20)
 			{ // перебор
-				dialog.text = "이런 젠장! 미안하다, 친구야, 하지만 나는 살 수 있는 게 이것뿐이야 "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", 네 화물 전부를 살 만큼 돈이 부족하네. 나는 한 차례 물건만 기대하고 있었어\n "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" 한 조각에 40두블론씩...";
-				link.l1 = "좋아. 가져가라 "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+" 지금은 여기까지 팔고, 나머지는 다음에 팔아주지.";
+				dialog.text = "이런 젠장! 미안하다, 친구야, 하지만 나는 살 수 있는 게 이것뿐이야 "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+", 네 화물 전부를 살 만큼 돈이 부족하네. 나는 한 차례 물건만 기대하고 있었어\n "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value))+" 한 조각에 40두블론씩...";
+				link.l1 = "좋아. 가져가라 "+FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)+20)+" 지금은 여기까지 팔고, 나머지는 다음에 팔아주지.";
 				link.l1.go = "bakaut_2";
-				npchar.quest.bakaut = sti(pchar.GenQuest.Bakaut.Value)+20;
+				npchar.quest.bakaut = int(pchar.GenQuest.Bakaut.Value)+20;
 			}
 			else
 			{
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 		
 		case "bakaut_3":
 			DialogExit();
-			iTemp = sti(npchar.quest.bakaut);
+			iTemp = int(npchar.quest.bakaut);
 			TakeNItems(pchar, "gold_dublon", iTemp*40);
 			RemoveCharacterGoods(pchar, GOOD_SANDAL, iTemp);
 			npchar.DontDeskTalk = true;

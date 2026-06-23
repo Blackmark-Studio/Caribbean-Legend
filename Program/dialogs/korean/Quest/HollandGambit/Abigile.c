@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "맙소사, 아버지의 돈을 찾았나요? 정말인가요? 아, 정말 기뻐요! 어서 아버지께 가세요, 당신과 이야기하고 싶어 하세요. 어서 가서 뵈세요!";
 					link.l1 = "가고 있습니다, 부인.";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 				{
 					DelLandQuestMark(npchar);
 					dialog.text = "아, 샤를! 돌아왔구나! 어서 말해 보게, 섬을 찾았나? 더는 기다릴 수가 없네!";
-					if (makeint(Pchar.money) >= 200000)
+					if (int(Pchar.money) >= 200000)
 					{
 						link.l1 = "그래, 아비. 섬도 찾았고 네 아버지의 돈도 찾았어. 이제 그걸 네게 돌려주러 왔다.";
 						link.l1.go = "Abigile_GiveMoney";

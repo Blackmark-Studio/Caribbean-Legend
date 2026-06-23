@@ -67,7 +67,7 @@ ref procCheckCompanionBattleResult()
 	int nTask = FindCompanionBackTask( nChrIndex );
 	if( nTask < 0 ) // нет такой задачи
 		return &g_nTaskCheckRetResult;
-	int nDifficult = sti( g_objCompanionTask[nTask] );
+	int nDifficult = int( g_objCompanionTask[nTask] );
 
 	int nDice = rand(100);
 	int nCheck = 50; // стандартная проверка на исход битвы: 50/50
@@ -84,14 +84,14 @@ ref procCheckCompanionBattleResult()
 		nCheck = nCheck * 120 / 100; // 120% от нормальной
 	}
 		// удача капитана
-	nDice = nDice + sti( chref.skill.Sneak ) * 2;
+	nDice = nDice + int( chref.skill.Sneak ) * 2;
 		// умение капитана
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Leadership ), 5 );
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Sailing ), 3 );
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Defence ), 4 );
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Grappling ), 1 );
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Accuracy ), 3 );
-	nDice = nDice + BackgroundTask_SkillModificator( sti( chref.skill.Cannons ), 2 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Leadership ), 5 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Sailing ), 3 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Defence ), 4 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Grappling ), 1 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Accuracy ), 3 );
+	nDice = nDice + BackgroundTask_SkillModificator( int( chref.skill.Cannons ), 2 );
 
 	//============================================================
 	// собственно проверка
@@ -99,7 +99,7 @@ ref procCheckCompanionBattleResult()
 	if( nDice >= nCheck ) // проверка прошла успешно
 	{
 		g_nTaskCheckRetResult = true;
-		if( sti(g_objCompanionTask[nTask].nTaskType) == 1 ) // блокирование колоний
+		if( int(g_objCompanionTask[nTask].nTaskType) == 1 ) // блокирование колоний
 			BackgroundTaskMakeColonyWeaken( nChrIndex, nDifficult );
 		else // охота
 			BackgroundTaskAddLoot( nChrIndex, nDifficult );
@@ -212,7 +212,7 @@ int FindCompanionBackTask( int nChrIndex )
 
 	for( n=0; n<g_nCompanionTaskQuantity; n++ )
 	{
-		if( nChrIndex == sti(g_objCompanionTask[n].character) )
+		if( nChrIndex == int(g_objCompanionTask[n].character) )
 		{
 			break;
 		}
@@ -232,7 +232,7 @@ void RemoveCompanionBackTask( int nChrIndex )
 	int i;
 	for( i=0; i<g_nCompanionTaskQuantity; i++ )
 	{
-		if( nChrIndex == sti(g_objCompanionTask[i].character) )
+		if( nChrIndex == int(g_objCompanionTask[i].character) )
 		{
 			break;
 		}

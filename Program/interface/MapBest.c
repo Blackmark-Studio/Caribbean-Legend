@@ -29,11 +29,11 @@ string GetLangStr(string sParam)
 //float to str conversion with one decimal place
 string FloatToStr(float value)
 {
-	if(value == makeint(value))
-		return "" + makeint(value);
+	if(value == int(value))
+		return "" + int(value);
 	
     // LDH 12Jul17 - round value
-	return "" + makefloat(makeint((value+0.5)*10))/10;
+	return "" + float(int((value+0.5)*10))/10;
 }
 
 void AddImageToImageList(string sImgName, string sPicGroup, string sPic, float X, float Y, int Width, int Height)
@@ -51,8 +51,8 @@ void GetCorrectShipCoords(ref X, ref Y)
 {
 	if(IsEntity(&worldMap))
 	{
-		X = sti(worldMap.playerShipX);
-		Y = -sti(worldMap.playerShipZ);
+		X = int(worldMap.playerShipX);
+		Y = -int(worldMap.playerShipZ);
 	}
 		else
 	{
@@ -60,13 +60,13 @@ void GetCorrectShipCoords(ref X, ref Y)
 		// this cannot be implemented without modifying sea.c
 		if (!bSeaActive && CheckAttribute(pchar, "shipx"))
 		{
-			X = GetSeaShipX(stf(pchar.shipx));
-			Y = -GetSeaShipZ(stf(pchar.shipz));
+			X = GetSeaShipX(float(pchar.shipx));
+			Y = -GetSeaShipZ(float(pchar.shipz));
 		}
 		else
 		{
-			X = GetSeaShipX(stf(pchar.Ship.Pos.X));
-			Y = -GetSeaShipZ(stf(pchar.Ship.Pos.Z));
+			X = GetSeaShipX(float(pchar.Ship.Pos.X));
+			Y = -GetSeaShipZ(float(pchar.Ship.Pos.Z));
 		}
 	}
 	
@@ -85,11 +85,11 @@ int _GetDistanceToColony2D(string _sColony)
 	if(_sColony == "LaVega") sColonyTown = "LaVega_town";
 
 	float X1, Z1;
-	GetCorrectShipCoords(&X1, &Z1)
-	float X2 = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
-	float Z2 = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+	GetCorrectShipCoords(&X1, &Z1);
+	float X2 = float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+	float Z2 = -float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
 	
-	return makeint(GetDistance2D(X1, Z1, X2, Z2));
+	return int(GetDistance2D(X1, Z1, X2, Z2));
 }
 ///espkk. utils <--
 
@@ -131,12 +131,12 @@ void InitInterface(string iniName)
 			sPic = "Smuggler";
 		}
         else
-			sPic = GetNationNameByType(sti(rColony.nation));
+			sPic = GetNationNameByType(int(rColony.nation));
 			
 		if(sColony != "FortOrange" && sColony != "LaVega" && sColony != "IslaMona")
 		{
-			X = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
-			Y = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+			X = float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+			Y = -float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
 		}
 		
 		if(sColony == "FortOrange")
@@ -216,14 +216,14 @@ void InitInterface(string iniName)
 		}
 		
 		//Draw sieges
-		if(CheckAttribute(rColony, "siege") && sti(rColony.siege) != -1)
+		if(CheckAttribute(rColony, "siege") && int(rColony.siege) != -1)
 		{
 			sSiegeCol = "SiegeOn" + sColony;
 			AddImageToImageList(sSiegeCol, "ICONS_SPEC", "weapon button", X + 35, Y - 3, 24, 24);
 			
 			if(CheckAttribute(&NullCharacter, "siege.nation"))
 			{
-				string sSiegeNation = GetNationNameByType(sti(NullCharacter.Siege.nation));
+				string sSiegeNation = GetNationNameByType(int(NullCharacter.Siege.nation));
 				sSiegeCol = sSiegeCol + "NationPic" + sSiegeNation;
 				AddImageToImageList(sSiegeCol, "NATIONS_SMALL", sSiegeNation, X + 70, Y, 24, 24);
 			}
@@ -242,7 +242,7 @@ void InitInterface(string iniName)
 	{
 		SetNewPicture("BOUNDARIES", "interfaces\maps\" + LanguageGetLanguage() + "\" + "map_good_boundaries.tga");
 		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "BOUNDARIES", 4,
-			argb(makeint(255/(makefloat(100)/BOUNDARIES_OPACITY)), BOUNDARIES_R, BOUNDARIES_G, BOUNDARIES_B));
+			argb(int(255/(float(100)/BOUNDARIES_OPACITY)), BOUNDARIES_R, BOUNDARIES_G, BOUNDARIES_B));
 	}
 
 	CreateString(true,"DateTime", GetDateString() + " " + GetTimeString(), FONT_CAPTION, COLOR_NORMAL, 360, 20, SCRIPT_ALIGN_CENTER, 1.0);
@@ -318,15 +318,15 @@ void HideTable()
 void FillTable()
 {
 	if (!bBettaTestMode) return;
-	float fMouseX = stf(GameInterface.mousepos.x) - 250;
-	float fMouseY = stf(GameInterface.mousepos.y) + GetVerticalOffset();
+	float fMouseX = float(GameInterface.mousepos.x) - 250;
+	float fMouseY = float(GameInterface.mousepos.y) + GetVerticalOffset();
 	
 	//Getting correct image offsets
 	float fOffsetX, fOffsetY;
 	GetXYWindowOffset(&fOffsetX, &fOffsetY);
 
-	fMouseX = (fMouseX - fOffsetX) * stf(GameInterface.MAP.scale.x);
-	fMouseY = (fMouseY - fOffsetY) * stf(GameInterface.MAP.scale.y);
+	fMouseX = (fMouseX - fOffsetX) * float(GameInterface.MAP.scale.x);
+	fMouseY = (fMouseY - fOffsetY) * float(GameInterface.MAP.scale.y);
 
 
 	//Check if clicked on colony
@@ -338,13 +338,13 @@ void FillTable()
 		if(CheckAttribute(&GameInterface, "MAP.imagelist." + sColony))
 		{
 			// LDH 21Mar17 enlarge click spot by 10 each direction
-			if(fMouseX >= stf(GameInterface.MAP.imagelist.(sColony).x) + 30)	// 30
+			if(fMouseX >= float(GameInterface.MAP.imagelist.(sColony).x) + 30)	// 30
 			{
-				if(fMouseX <= stf(GameInterface.MAP.imagelist.(sColony).x) + 50.0)	// 50
+				if(fMouseX <= float(GameInterface.MAP.imagelist.(sColony).x) + 50.0)	// 50
 				{
-					if(fMouseY >= stf(GameInterface.MAP.imagelist.(sColony).y))	// 0
+					if(fMouseY >= float(GameInterface.MAP.imagelist.(sColony).y))	// 0
 					{
-						if(fMouseY <= stf(GameInterface.MAP.imagelist.(sColony).y) + 50.0)	// 50
+						if(fMouseY <= float(GameInterface.MAP.imagelist.(sColony).y) + 50.0)	// 50
 						{
 							if(sColony != "Panama" && sColony != "IslaMona" && sColony != "KhaelRoa" && sColony != "Caiman")
 							{
@@ -526,15 +526,15 @@ string CheckForIslandID(ref location)
 
 void SelectRColony()
 {
-	float fMouseX = stf(GameInterface.mousepos.x) + 250;
-	float fMouseY = stf(GameInterface.mousepos.y) + GetVerticalOffset();
+	float fMouseX = float(GameInterface.mousepos.x) + 250;
+	float fMouseY = float(GameInterface.mousepos.y) + GetVerticalOffset();
 	
 	//Getting correct image offsets
 	float fOffsetX, fOffsetY;
 	GetXYWindowOffset(&fOffsetX, &fOffsetY);
 
-	fMouseX = (fMouseX - fOffsetX) * stf(GameInterface.MAP.scale.x);
-	fMouseY = (fMouseY - fOffsetY) * stf(GameInterface.MAP.scale.y);
+	fMouseX = (fMouseX - fOffsetX) * float(GameInterface.MAP.scale.x);
+	fMouseY = (fMouseY - fOffsetY) * float(GameInterface.MAP.scale.y);
 
 
 	//Check if clicked on colony
@@ -545,13 +545,13 @@ void SelectRColony()
 		if(CheckAttribute(&GameInterface, "MAP.imagelist." + sColony))
 		{
 			// LDH 21Mar17 enlarge click spot by 10 each direction
-			if(fMouseX >= stf(GameInterface.MAP.imagelist.(sColony).x) + 30)	// 30
+			if(fMouseX >= float(GameInterface.MAP.imagelist.(sColony).x) + 30)	// 30
 			{
-				if(fMouseX <= stf(GameInterface.MAP.imagelist.(sColony).x) + 50.0)	// 50
+				if(fMouseX <= float(GameInterface.MAP.imagelist.(sColony).x) + 50.0)	// 50
 				{
-					if(fMouseY >= stf(GameInterface.MAP.imagelist.(sColony).y))	// 0
+					if(fMouseY >= float(GameInterface.MAP.imagelist.(sColony).y))	// 0
 					{
-						if(fMouseY <= stf(GameInterface.MAP.imagelist.(sColony).y) + 50.0)	// 50
+						if(fMouseY <= float(GameInterface.MAP.imagelist.(sColony).y) + 50.0)	// 50
 						{
 							if(sColony != "Panama" && sColony != "IslaMona")
 							{
@@ -707,7 +707,7 @@ void ShowColonyInfo(int iColony)
 	sText = XI_ConvertString("Colony" + sColony);
 	SetFormatedText("INFO_CAPTION", sText);
 
-	sText = GetNationNameByType(sti(rColony.nation));
+	sText = GetNationNameByType(int(rColony.nation));
 	SetNewGroupPicture("INFO_NATION_PICTURE", "NATIONS", sText);
 
 	SetFormatedText("EXPORT_CAPTION", GetLangStr("EXPORT"));
@@ -734,8 +734,8 @@ void ShowColonyInfo(int iColony)
 	
 	if(TRAVELTIME_MODE == 0)
 	{
-		int iDays1 = makeint(_GetDistanceToColony2D(sColony)/300 + 0.5); //min - sailing on deck
-		int iDays2 = makeint(_GetDistanceToColony2D(sColony)/100 + 0.5); //max - worldmap
+		int iDays1 = int(_GetDistanceToColony2D(sColony)/300 + 0.5); //min - sailing on deck
+		int iDays2 = int(_GetDistanceToColony2D(sColony)/100 + 0.5); //max - worldmap
 
 		if (iDays1 < 1)	iDays1 = 1;
 		if (iDays2 < 1) iDays2 = 1;
@@ -759,7 +759,7 @@ void ShowColonyInfo(int iColony)
 		
 		if(TRAVELTIME_MODE == 1)
 		{
-			iDistance = makeint(_GetDistanceToColony2D(sColony)/6.5 + 0.5)
+			iDistance = int(_GetDistanceToColony2D(sColony)/6.5 + 0.5);
 			
 			sText = GetLangStr("Distance") + " = " + iDistance + " ";
 			if (iDistance == 1)
@@ -790,7 +790,7 @@ void ShowColonyInfo(int iColony)
 		{
 			float AverageSpeed = TRAVELTIME_AVERAGE_SPEED;
 			if (iArcadeSails == 0) AverageSpeed *= 0.7;
-			iDistance = makeint(_GetDistanceToColony2D(sColony)/(TRAVELTIME_AVERAGE_SPEED * 6.5) + 0.5)
+			iDistance = int(_GetDistanceToColony2D(sColony)/(TRAVELTIME_AVERAGE_SPEED * 6.5) + 0.5);
 			
 			sText += iDistance + " ";
 			if (iDistance == 1)
@@ -822,7 +822,7 @@ void ShowColonyInfo(int iColony)
 	AddLineToFormatedText("COLONY_INFO_LABEL", sText);
 	sText = XI_ConvertString("SalaryQuantity");
 	AddLineToFormatedText("COLONY_INFO_TEXT", sText);
-	sText = sti(colonies[iColony].ship.crew.quantity);
+	sText = int(colonies[iColony].ship.crew.quantity);
 	AddLineToFormatedText("COLONY_INFO_TEXT2", sText);
 	sText = XI_ConvertString("Fort");
 	AddLineToFormatedText("COLONY_INFO_TEXT", sText);
@@ -834,7 +834,7 @@ void ShowColonyInfo(int iColony)
 		sld = CharacterFromID(sColony + " Fort Commander");
 		sText = XI_ConvertString("CrewQuantity");
 		AddLineToFormatedText("COLONY_INFO_TEXT", sText);
-		sText = sti(sld.ship.crew.quantity);
+		sText = int(sld.ship.crew.quantity);
 		AddLineToFormatedText("COLONY_INFO_TEXT2", sText);
 
 		sText = XI_ConvertString("Quantity_info");
@@ -892,7 +892,7 @@ void ShowColonyInfo(int iColony)
 			break;
 		}			
 		int i1, i2, i3, i4;
-		switch(sti(refStore.Goods.(sGood).TradeType))
+		switch(int(refStore.Goods.(sGood).TradeType))
 		{
 		case 3:
 			i1++;
@@ -947,7 +947,7 @@ void ShowColonyInfo(int iColony)
 			SendMessage( &GameInterface,"lslslllll",MSG_INTERFACE_MSG_TO_NODE,"GOODS_PICTURES", 0,sGood, argb(255, 128, 128, 128), iGoods_x4,iGoods_y4,iGoods_x4+28,iGoods_y4+28 );
 			break;
 		}
-		if(sti(refStore.Goods.(sGood).TradeType) == 8 && i4 > 0)
+		if(int(refStore.Goods.(sGood).TradeType) == 8 && i4 > 0)
 		SetFormatedText("AGGRESSIVE_CAPTION", GetLangStr("AGGRESSIVE"));
 		sText = XI_ConvertString("GoodsRelevance");
 		AddLineToFormatedText("COLONY_INFO_TEXT", sText);
@@ -967,7 +967,6 @@ void ShowColonyInfo(int iColony)
 	bFound = true;
 	if(TRADEASSISTANT_MODE == 0)
 	{
-		rootItems;
 		makearef(rootItems, NullCharacter.PriceList);
 		bFound = CheckAttribute(rootItems, sColony);
 	}
@@ -1060,7 +1059,7 @@ void ShowColonyInfo(int iColony)
 					nBuy = GetStoreGoodsPrice(refStore2, i, PRICE_TYPE_BUY, pchar, 1);
 			}
 			
-			fTemp = (nSell - nBuy) / stf(Goods[i].weight); //price per pound
+			fTemp = (nSell - nBuy) / float(Goods[i].weight); //price per pound
 			
 			//Sort
 			for(int k=0; k<TRADEASSISTANT_MAXGOODS; k++)
@@ -1164,7 +1163,7 @@ int GetMaxFortCannons(string _FortCommander)
 string GetMapDir16(float dir)      // N, NNE, NE
 {
 	dir = Normalize360(Radian2Degree(dir));
-	int index = makeint((dir / 22.5) + 0.5);   // round to nearest compass16 point
+	int index = int((dir / 22.5) + 0.5);   // round to nearest compass16 point
 	if (index >= 16) index = 0;
 
 	switch (index)
@@ -1191,7 +1190,7 @@ string GetMapDir16(float dir)      // N, NNE, NE
 string GetMapDir32(float dir)      // N, NbE, NNE
 {
 	dir = Normalize360(Radian2Degree(dir));
-	int index = makeint((dir / 11.25) + 0.5);   // round to nearest compass32 point
+	int index = int((dir / 11.25) + 0.5);   // round to nearest compass32 point
 	if (index >= 32) index = 0;
 
 	switch (index)
@@ -1241,9 +1240,9 @@ float _GetDirToColony(string _sColony)
 	if(_sColony == "LaVega") sColonyTown = "LaVega_town";
 
 	float X1, Z1;
-	GetCorrectShipCoords(&X1, &Z1)
-	float X2 = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
-	float Z2 = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+	GetCorrectShipCoords(&X1, &Z1);
+	float X2 = float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+	float Z2 = -float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
     
     if (Z2 > Z1)
         return PI + atan((X1-X2)/(Z2-Z1));
@@ -1263,7 +1262,7 @@ float Normalize360(float dir)
 // belamour поправка коэффициента от соотношения сторон
 float GetVerticalOffset()
 {
-    float ratio = stf(showWindow.width) /  stf(showWindow.height);
+    float ratio = float(showWindow.width) /  float(showWindow.height);
 	
     if (ratio >= 3.0)
         return -0.0;

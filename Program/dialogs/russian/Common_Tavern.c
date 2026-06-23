@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 	if(!CheckAttribute(pchar, "questTemp.TavernVisit."+(NPCCity) )) 
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
-		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
+		pchar.questTemp.TavernVisit.counter = int(pchar.questTemp.TavernVisit.counter) + 1;
 		notification("Первое посещение таверны " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
 		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 10.0);
 	}	
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (sti(pchar.GenQuest.Piratekill) > 20 && sti(npchar.nation) == PIRATE)
+			if (int(pchar.GenQuest.Piratekill) > 20 && int(npchar.nation) == PIRATE)
 			{
 				dialog.text = RandPhraseSimple("А, это ты, мерзавец! Думаешь, тебе здесь рому нальют? Как бы не так! Ребята! К оружию! Режь психа!", "Выпить захотел, скотина? Ан нет! Сейчас тебе покажут, где раки зимуют! Ребята, здесь больной псих с оружием! Тревога!");
 				link.l1 = RandPhraseSimple("А? Что?", "Э, ты чего это?!");
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			//Jason, Бремя гасконца
 			if(NPChar.City == "FortFrance")
 			{
-				if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && makeint(environment.time) > 5.0 && makeint(environment.time) < 19.0)
+				if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && int(environment.time) > 5.0 && int(environment.time) < 19.0)
 				{
 					link.l1 = "Месье, я ищу работу. Может, у вас есть какое-нибудь поручение, которое вы смогли бы поручить мне?";
 					link.l1.go = "Sharlie_rum";
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 				if(!CheckAttribute(pchar, "questTemp.TavernVisit."+(NPCCity) )) 
 				{
 					pchar.questTemp.TavernVisit.(NPCCity) = true;
-					pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
+					pchar.questTemp.TavernVisit.counter = int(pchar.questTemp.TavernVisit.counter) + 1;
 				}	
 */				if(startHeroType == 4 && NPChar.location == "SantaCatalina_tavern")
 				{
@@ -179,9 +179,9 @@ void ProcessDialogEvent()
 		        {
 		            if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.NoMoneyToBarmen"))
 		            {
-		            	iTemp = sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen);
+		            	iTemp = int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen);
 		            	dialog.Text = "Ну что кэп, вы принесли мне " + FindRussianMoneyString(iTemp) + ".";
-		            	if(sti(PChar.Money) >= iTemp)
+		            	if(int(PChar.Money) >= iTemp)
 		            	{
 							link.l1 = "Да, принёс"+ GetSexPhrase("","ла") +". Вот они...";
 							link.l1.go = "Tavern_ChurchGenQuest1_Node_4_1";
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "crew hire";
 				Link.l2 = "Я надеюсь, ты сможешь ответить на пару вопросов.";
 				Link.l2.go = "int_quests";
-				if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+				if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 				{
 					link.l21 = "Слушай, нам нужно поговорить о финансовых делах.";
 					link.l21.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "crew hire";
 			Link.l2 = NPChar.name + ", давай поговорим...";
 			Link.l2.go = "int_quests";
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l21 = "Слушай, нам нужно поговорить о финансовых делах.";
 				link.l21.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -377,7 +377,7 @@ void ProcessDialogEvent()
 		
 		case "crew hire":
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			ok = sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
+			ok = int(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
 			
 			if (!ok)
 			{
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			
-            if (makeint(environment.time) > 22.0 || makeint(environment.time) < 7.0)
+            if (int(environment.time) > 22.0 || int(environment.time) < 7.0)
 			{
 				Dialog.text = "Обычно у меня в таверне полно людей, желающих стать матросами, но сейчас слишком поздно, и они начнут появляться только утром. Может быть, вы хотите снять комнату, и подождать их?";
 				link.l1 = "Хорошо. У тебя есть свободные комнаты?";
@@ -397,7 +397,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-                if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+                if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
                 {
                     Dialog.text = "А ты думаешь, к тебе кто-то пойдёт, когда ты с нами во вражде? Скажи спасибо, что стражу не зову.";
 					link.l1 = "Спасибо.";
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 
 				if(pchar.GenQuest.CaptainComission.variant == "A2" && pchar.GenQuest.CaptainComission == "Begin_1")
 				{ // лесник окончание  - патрулного люггера,барка и т.д..........
-					link.l9 = "Скажи-ка, любезный, где может быть капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + ", " + pchar.GenQuest.CaptainComission.Name + "?";
+					link.l9 = "Скажи-ка, любезный, где может быть капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + ", " + pchar.GenQuest.CaptainComission.Name + "?";
 					link.l9.go = "CaptainComission_Tavern7";					
 				}				
 				if(pchar.GenQuest.CaptainComission.variant == "A3" && pchar.GenQuest.CaptainComission == "Begin_1")
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{		// лесник - изменеие предложения из за имени . 		
-						link.l9 = "Скажи-ка, любезный, тебе известен капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + ", " + pchar.GenQuest.CaptainComission.Name + "?";
+						link.l9 = "Скажи-ка, любезный, тебе известен капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + ", " + pchar.GenQuest.CaptainComission.Name + "?";
 						link.l9.go = "CaptainComission_Tavern1";
 						if(!CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour"))
 						{
@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 			}
 
 			// Jason --> квест губера на поиск дезертира
-			if(CheckAttribute(pchar, "GenQuest.FindFugitive") && pchar.GenQuest.FindFugitive != "Late" && sti(NPChar.nation) == PIRATE)
+			if(CheckAttribute(pchar, "GenQuest.FindFugitive") && pchar.GenQuest.FindFugitive != "Late" && int(NPChar.nation) == PIRATE)
 			{
 				link.l12 = "Послушай, я ищу своего старого друга, "+pchar.GenQuest.FindFugitive.Name+" его зовут. Один шкипер сказал мне, что он собирался направиться именно в ваше поселение. Не слыхал ничего об этом человеке?";
 				link.l12.go = "FindFugitiveTav";
@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hold_genquest1":
-			switch(sti(pchar.GenQuest.Hold_GenQuest.TavernVariant))
+			switch(int(pchar.GenQuest.Hold_GenQuest.TavernVariant))
 			{
 				case 0:
 					dialog.text = LinkRandPhrase("Как вы говорите? " + pchar.GenQuest.Hold_GenQuest.Name + "? Хм, никогда не слыхал о таком.",
@@ -639,7 +639,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("HoldQuest", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.City + "Gen")); 			
 			AddQuestUserData("HoldQuest", "sFoundChar", pchar.GenQuest.Hold_GenQuest.foundStr);
 			AddQuestUserData("HoldQuest", "sName", pchar.GenQuest.Hold_GenQuest.Name);
-			SetFunctionTimerConditionParam("Hold_GenQuest_FindCharTimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("Hold_GenQuest_FindCharTimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 			DialogExit();
 		break;
 		
@@ -654,7 +654,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hold_genquest5":
-			SetFunctionTimerConditionParam("Hold_GenQuest_GetMapTimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("Hold_GenQuest_GetMapTimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 			DialogExit();
 			AddDialogExitQuestFunction("Hold_GenQuest_GenerateMapChar");			
 		break;
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_Tavern6":
 			AddQuestRecord("CaptainComission2", "39");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); 
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_ABL));
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);			
@@ -750,9 +750,9 @@ void ProcessDialogEvent()
 			{
 				pchar.GenQuest.CaptainComission.GetRumour = true;
 				SaveCurrentQuestDateParam("GenQuest.CaptainComission.GetRumour");
-				SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, MakeInt(24 - GetHour()), false);
+				SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, int(24 - GetHour()), false);
 				AddQuestRecord("CaptainComission2", "19");
-				AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // лесник окончание
+				AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // лесник окончание
 				AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			}			
 			DialogExit();
@@ -783,7 +783,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_4":
-			if(sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
+			if(int(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 			{
 				dialog.text = "А, так вы и есть "+ GetSexPhrase("тот капитан, который привёз","та девушка, которая привезла") +" моего блудного сына с молодой невестой?";
 				link.l1 = "Да, это я помог"+ GetSexPhrase("","ла") +" им сбежать.";
@@ -810,7 +810,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_5_1":
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.EncGirl.sum));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.EncGirl.sum));
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item);
 			AddQuestRecord("JungleGirl", "18");
 			CloseQuestHeader("JungleGirl");
@@ -838,7 +838,7 @@ void ProcessDialogEvent()
 				
 		case "ShipLetters_4":
 			pchar.questTemp.different.GiveShipLetters.speakTavern = true;
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "Дайте-ка взглянуть ! Хм... Вы же сами - капитан. Думаю, Вам стоит зайти к начальнику порта.";
 				link.l1 = "Спасибо за совет.";
@@ -867,9 +867,9 @@ void ProcessDialogEvent()
 		
 		//zagolski. переделка
 		case "work":
-			if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
-				dialog.text = RandPhraseSimple("Мне без разницы кого обслуживать - деньги не имеют национальности. Но вот помогать тебе я не стану, так как ты приш"+ GetSexPhrase("ёл","ла") +" под флагом " + NationNameGenitive(sti(pchar.nation)) + ".", "Я всего лишь простой хозяин таверны, но сотрудничать с " + NationNameAblative(sti(pchar.nation)) + " никакого желания не имею.");
+				dialog.text = RandPhraseSimple("Мне без разницы кого обслуживать - деньги не имеют национальности. Но вот помогать тебе я не стану, так как ты приш"+ GetSexPhrase("ёл","ла") +" под флагом " + NationNameGenitive(int(pchar.nation)) + ".", "Я всего лишь простой хозяин таверны, но сотрудничать с " + NationNameAblative(int(pchar.nation)) + " никакого желания не имею.");
 				link.l1 = RandPhraseSimple("Хм, твоё право...", "Ну, как знаешь...");
 				link.l1.go = "exit";
 				break;
@@ -881,7 +881,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (sti(Pchar.Ship.Type) == SHIP_NOTUSED)
+			if (int(Pchar.Ship.Type) == SHIP_NOTUSED)
         	{
 				dialog.text = "А корабль твой где? Ты что - на собственном горбу пассажиров возить собрался?";
 				link.l1 = "Хм, и то верно...";
@@ -1032,7 +1032,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.different == "FackWaitress_toRoom")
 			{
 				dialog.text = "Вы хотите снять комнату? Не проблема. С вас 100 монет - и можете туда пройти.";
-				if (sti(pchar.money) >= 100)
+				if (int(pchar.money) >= 100)
 				{
 					link.l1 = "Забирай свои деньги, открывай комнату, приятель...";
 					link.l1.go = "exit";
@@ -1061,7 +1061,7 @@ void ProcessDialogEvent()
 				if(pchar.GenQuest.EncGirl == "EncGirl_ToTavern")
 				{
 					dialog.text = "Вы хотите снять комнату? Не проблема. С вас 100 монет - и можете туда пройти.";
-					if (sti(pchar.money) >= 100)
+					if (int(pchar.money) >= 100)
 					{
 						link.l1 = "Забирай свои деньги, открывай комнату, приятель...";
 						link.l1.go = "exit";
@@ -1087,7 +1087,7 @@ void ProcessDialogEvent()
 			// <-- квест "Девица в джунглях"
 			
 			// belamour постоялец -->
-			if (CheckAttribute(pchar, "GenQuest.Unwantedpostor") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && abs(50-sti(pchar.reputation.nobility)) > 20)
+			if (CheckAttribute(pchar, "GenQuest.Unwantedpostor") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && abs(50-int(pchar.reputation.nobility)) > 20)
 			{
 				if(pchar.GenQuest.Unwantedpostor == "start")
 				{
@@ -1140,7 +1140,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Это обойдётся вам в 5 песо.";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "Идёт. Вот твои деньги.";
 				link.l1.go = "room_day_wait";
@@ -1166,7 +1166,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Это обойдётся вам в 10 песо.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "Идёт. Вот твои деньги.";
 				link.l1.go = "room_day_wait_next";
@@ -1192,7 +1192,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "Это обойдётся вам в 5 песо.";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "Идёт. Вот твои деньги.";
 				link.l1.go = "room_night_wait";
@@ -1355,7 +1355,7 @@ void ProcessDialogEvent()
 			if(rand(1) == 0) // "Если он простой и сразу отдаёт"
 			{
 				dialog.text = FindRussianMoneyString(iTemp) + ", госпо"+ GetSexPhrase("дин","жа") +" капитан, и он оставил в залог церковные книги - это всё, что у него было при себе ценного.";
-				if(sti(PChar.money) >= iTemp)
+				if(int(PChar.money) >= iTemp)
 				{
 					link.l1 = "Держи монеты и давай сюда манускрипты. Да аккуратнее, это тебе не бочонок эля, а писания Божьих праведников!";
 					link.l1.go = "Tavern_ChurchGenQuest1_Node_4_1";
@@ -1377,7 +1377,7 @@ void ProcessDialogEvent()
 			
 		case "Tavern_ChurchGenQuest1_Node_4_1":
 			DialogExit();
-			AddMoneyToCharacter(PChar, -sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
+			AddMoneyToCharacter(PChar, -int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
 			AddItems(PChar, "Bible", 1);	// Даем рукописи
 			items[FindItem("Bible")].Name = "itmname_ChurchGenQuest1Bible";	// Меняем имя. Потом поменять обратно!
 			ChangeItemDescribe("Bible", "itmdescr_ChurchGenQuest1Bible"); // Меняем дескрайб. Потом поменять обратно!
@@ -1421,7 +1421,7 @@ void ProcessDialogEvent()
 			items[FindItem("Bible")].Name = "itmname_ChurchGenQuest1Bible";	// Меняем имя. Потом поменять обратно!
 			ChangeItemDescribe("Bible", "itmdescr_ChurchGenQuest1Bible"); // Меняем дескрайб. Потом поменять обратно!
 			items[FindItem("Bible")].City = XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Gen"); // Переменная. Потом удалить!
-			AddMoneyToCharacter(PChar, -sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
+			AddMoneyToCharacter(PChar, -int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_1.NeedToDialogWithBarmen");
 			sQuestTitle = PChar.GenQuest.ChurchQuest_1.QuestTown + "ChurchGenQuest1";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest1", "9");
@@ -1439,7 +1439,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Trader_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) == 6)
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) == 6)
 			{
 				dialog.text = "Хм... Да, приносил мне такую вещь один странный тип. Только он её никак не назвал, а просто пытался обменять на выпивку. Я ему отказал - мне эта штуковина ни к чему.";
 				link.l1 = "А как выглядел этот человек и куда пошёл? Мне очень нужен этот инструмент.";
@@ -1456,7 +1456,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> генератор Место под солнцем
 		case "Sunplace_Tavern":
-			if (makeint(environment.time) > 12.0 && makeint(environment.time) < 17.0)//в магазине
+			if (int(environment.time) > 12.0 && int(environment.time) < 17.0)//в магазине
 			{
 				dialog.text = ""+pchar.GenQuest.Sunplace.Trader.Enemyname+"? Он недавно был у меня, а сейчас вроде должен быть у своего компаньона - нашего лавочника. Зайдите в магазин, там вы его наверняка застанете.";
 				link.l1 = "Спасибо! Ты мне здорово помог!";
@@ -1513,7 +1513,7 @@ void ProcessDialogEvent()
 				dialog.text = "Да, я знаю этого благородного господина. Он должен быть где-то в городе - я недавно видел, как он проходил мимо моей таверны.";
 				link.l1 = "Спасибо! Поспешу на поиски!";
 				link.l1.go = "Fernando_Land";
-				/* if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//на улице
+				/* if (int(environment.time) > 10.0 && int(environment.time) < 18.0)//на улице
 				{
 					dialog.text = "Да, я знаю этого благородного господина. Он должен быть где-то в городе - я недавно видел, как он проходил мимо моей таверны.";
 					link.l1 = "Спасибо! Поспешу на поиски!";
@@ -1563,7 +1563,7 @@ void ProcessDialogEvent()
 		
 		case "Race_Advantage_1":
 			DialogExit();
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Racing.Go.Money)*2);
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.Racing.Go.Money)*2);
 			AddQuestRecord("Racing", "4");
 			AddQuestUserData("Racing", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.StartCity+"Gen"));
 			CloseQuestHeader("Racing");
@@ -1616,7 +1616,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> поиск дезертира
 		case "FindFugitiveTav":
-			if (NPChar.city == pchar.GenQuest.FindFugitive.City && sti(pchar.GenQuest.FindFugitive.Chance) == 0)
+			if (NPChar.city == pchar.GenQuest.FindFugitive.City && int(pchar.GenQuest.FindFugitive.Chance) == 0)
 			{
 				dialog.text = NPCStringReactionRepeat("Похоже, этот твой шкипер не солгал. "+pchar.GenQuest.FindFugitive.Name+" действительно недавно прибыл в наш посёлок. Ищи его на улицах днём, он часто слоняется без дела.", "Ты уже спрашивал меня об этом человеке, и я тебе всё рассказал!", "Ты что, издеваешься, или на самом деле тупой? Третий раз спрашиваешь одно и то же!", "Ох, и как только такой дурень капитаном стал...", "block", 1, npchar, Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Спасибо, дружище, ты мне очень помог!", "Да, да, хорошо.", "Тише, не кипятись. Я просто забыл.", "Ну ты же видишь - стал как-то...", npchar, Dialog.CurrentNode); 
@@ -1744,7 +1744,7 @@ void ProcessDialogEvent()
 				DialogExit();
 				chrDisableReloadToLocation = true; //закрыть локацию
 				LAi_LocationFightDisable(&Locations[FindLocation(pchar.location+"_upstairs")], true); //запретить драться
-				iTemp = sti(pchar.rank) + rand(5);
+				iTemp = int(pchar.rank) + rand(5);
 				sld = GetCharacter(NPC_GenerateCharacter("Berglar_Unwantedpostor", "citiz_5"+(rand(3)+1), "man", "man", iTemp, PIRATE, -1, true, "quest")); // "mercen_"+(rand(14)+14)
 				FantomMakeCoolFighter(sld, iTemp, 50 + rand(30), 50 + rand(30), "topor_04", "", "bullet", 50);
 				sld.dialog.filename = "GenQuests_Dialog.c";
@@ -1762,7 +1762,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_night":
 			dialog.text = "Понимаю. С тебя пять монет.";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "Конечно, держи.";
 				link.l1.go = "room_night_wait";
@@ -1773,7 +1773,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_day":
 			dialog.text = "Верное решение. Что ж, с тебя пять серебряных - и доброй ночи.";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "Вот, прошу. И спасибо - доброй ночи.";
 				link.l1.go = "room_day_wait";
@@ -1784,7 +1784,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_day_next":
 			dialog.text = "Само собой, Элен. Десять песо.";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "Да, конечно.";
 				link.l1.go = "room_day_wait_next";
@@ -1843,10 +1843,10 @@ string findTraderCity(ref NPChar)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(npchar.nation), int(colonies[n].nation));
 		if (colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
-			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
+			if (nation == RELATION_ENEMY || int(npchar.nation) == PIRATE)
 			{
 				storeArray[howStore] = n;
 				howStore++;
@@ -1867,10 +1867,10 @@ string findPassangerCity(ref NPChar)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(npchar.nation), int(colonies[n].nation));
 		if (colonies[n].nation != "none" && colonies[n].id != "Panama" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //не на свой остров
 		{
-			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
+			if (nation == RELATION_ENEMY || int(npchar.nation) == PIRATE)
 			{
 			storeArray[howStore] = n;
 			howStore++;

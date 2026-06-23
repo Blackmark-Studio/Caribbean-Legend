@@ -19,9 +19,9 @@ void ProcessDialogEvent()
 			//первая встреча
 			if (npchar.quest.meeting == "0")
 			{
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
-					dialog.text = "Stój. Żeglujesz pod banderą "+NationNameGenitive(sti(pchar.nation))+", szczurze pokładowy. Nie mam ochoty z tobą rozmawiać i nie chcę żadnych problemów... Spływaj!";
+					dialog.text = "Stój. Żeglujesz pod banderą "+NationNameGenitive(int(pchar.nation))+", szczurze pokładowy. Nie mam ochoty z tobą rozmawiać i nie chcę żadnych problemów... Spływaj!";
 					link.l1 = "I ty nazywasz siebie kapitanem...";
 					link.l1.go = "exit";
 					break;
@@ -43,9 +43,9 @@ void ProcessDialogEvent()
 			else
 			{
 				//повторные обращения
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "Czy mam się powtórzyć? Nie chcę być podejrzewany o przyjaźń z "+NationNameAblative(sti(pchar.nation))+". Zjeżdżaj, albo wezwę straż!";
+					dialog.text = "Czy mam się powtórzyć? Nie chcę być podejrzewany o przyjaźń z "+NationNameAblative(int(pchar.nation))+". Zjeżdżaj, albo wezwę straż!";
 					link.l1 = "Dobrze, dobrze, uspokój się. Odchodzę.";
 					link.l1.go = "exit";
 				}
@@ -79,16 +79,16 @@ void ProcessDialogEvent()
 				pchar.GenQuest.MarchCap.Startisland = Islands[GetCharacterCurrentIsland(PChar)].id;
 				pchar.GenQuest.MarchCap.Parts = GetCompanionQuantity(pchar)+1;
 				pchar.GenQuest.MarchCap.shiptype = SelectCaptainShipType();
-				pchar.GenQuest.MarchCap.shipname = GenerateRandomNameToShip(sti(npchar.nation));
-				pchar.GenQuest.MarchCap.nation = sti(npchar.Nation);
+				pchar.GenQuest.MarchCap.shipname = GenerateRandomNameToShip(int(npchar.nation));
+				pchar.GenQuest.MarchCap.nation = int(npchar.Nation);
 				pchar.GenQuest.MarchCap.model = npchar.model;
-				pchar.GenQuest.MarchCap.rank = sti(npchar.rank);
+				pchar.GenQuest.MarchCap.rank = int(npchar.rank);
 				pchar.GenQuest.MarchCap.name = npchar.name;
 				pchar.GenQuest.MarchCap.lastname = npchar.lastname;
 				pchar.GenQuest.MarchCap.BaseNation = npchar.nation;
 				pchar.GenQuest.MarchCap.Nation = hrand(NON_PIRATES);
 				pchar.GenQuest.MarchCap.basecity = npchar.city;
-				dialog.text = "Mój statek to "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.shiptype),"Name")))+" '"+pchar.GenQuest.MarchCap.shipname+". Jest teraz w porcie. Nie spóźnij się, kapitanie, wypływam za sześć godzin!";
+				dialog.text = "Mój statek to "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.MarchCap.shiptype),"Name")))+" '"+pchar.GenQuest.MarchCap.shipname+". Jest teraz w porcie. Nie spóźnij się, kapitanie, wypływam za sześć godzin!";
 				link.l1 = "Rozumiem, postaram się być na czas. Do zobaczenia!";
 				link.l1.go = "march_2";
 			break;
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 				LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 30.0);
 				npchar.lifeday = 0;
 				pchar.quest.MarchCapOver.win_condition.l1 = "Timer";
-				pchar.quest.MarchCapOver.win_condition.l1.date.hour  = sti(GetTime() + 6);
+				pchar.quest.MarchCapOver.win_condition.l1.date.hour  = int(GetTime() + 6);
 				pchar.quest.MarchCapOver.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 				pchar.quest.MarchCapOver.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 				pchar.quest.MarchCapOver.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -132,11 +132,11 @@ void ProcessDialogEvent()
 int SelectCaptainShipType()
 {
 	int iClassFlag = FLAG_SHIP_CLASS_6;
-	if (sti(pchar.rank) >= 19) iClassFlag = FLAG_SHIP_CLASS_2;	
-	if (sti(pchar.rank) >= 13 && sti(pchar.rank) < 19) iClassFlag = FLAG_SHIP_CLASS_3;	
-	if (sti(pchar.rank) >= 8 && sti(pchar.rank) < 12) iClassFlag = FLAG_SHIP_CLASS_4;
-	if (sti(pchar.rank) >= 5 && sti(pchar.rank) < 8) iClassFlag = FLAG_SHIP_CLASS_5;
-	if (sti(pchar.rank) < 5) iClassFlag = FLAG_SHIP_CLASS_6;
+	if (int(pchar.rank) >= 19) iClassFlag = FLAG_SHIP_CLASS_2;
+	if (int(pchar.rank) >= 13 && int(pchar.rank) < 19) iClassFlag = FLAG_SHIP_CLASS_3;
+	if (int(pchar.rank) >= 8 && int(pchar.rank) < 12) iClassFlag = FLAG_SHIP_CLASS_4;
+	if (int(pchar.rank) >= 5 && int(pchar.rank) < 8) iClassFlag = FLAG_SHIP_CLASS_5;
+	if (int(pchar.rank) < 5) iClassFlag = FLAG_SHIP_CLASS_6;
 	
 	return GetRandomShipType(iClassFlag, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 }

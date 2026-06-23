@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "白人兄弟像猫头鹰一样有洞察力, 像蛇一样狡猾。 印第安人遇到了麻烦。 白人的大独木舟来到我的村庄。 他们带走了许多开曼人, 我的人民, 把他们放在他们的独木舟上, 带到众水之母那里... ";
 			link.l1 = "等等... 你是说你的人民被船上的白人奴役了? ";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("我很高兴神之泪属于你, 阿拉瓦克的兄弟! ", "印第安人感谢你, 勇敢的白人! ", "拿着我们的收获吧, 白人兄弟! ");
 			link.l1 = LinkRandPhrase("很高兴帮助你! ", "谢谢, 红皮肤的兄弟! ", "太棒了! ");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "卡纳里再次感谢你, 白人兄弟! 你拯救了所有载有印第安人的独木舟! 对卡纳里来说, 拯救所有独木舟非常重要, 因为你还拯救了卡纳里的孙子, 他被邪恶的白人奴役。 小时候, 我的孙子非常喜欢游泳, 卡纳里给了他这个有魔力的护身符, 这样孙子就不会溺水。 现在孙子不再想游泳了, 把护身符给了我, 让我把它送给你, 白人兄弟。 我希望神之泪和这件礼物能充分回报你对阿拉瓦克生命的拯救。 现在我们说再见 —我们该回到我们的.native village了。 ";
 				link.l1 = "祝你好运, 库纳里! 很高兴你的孙子幸存下来! 我祈祷这种邪恶再也不会降临到你身上! ";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

@@ -90,7 +90,7 @@ void DTSG_Knippel_DlgExit_4()
 	ReturnOfficer_Knippel();
 	
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1 = "Timer";
-	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = sti(GetTime() + 2);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = int(GetTime() + 2);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -107,7 +107,7 @@ void DTSG_Knippel_DlgExit_5()
 {
 	bDisableFastReload = false;
 	chrDisableReloadToLocation = false;
-	QuestCloseSeaExit()
+	QuestCloseSeaExit();
 	
 	LocatorReloadEnterDisable("PortPax_town", "houseS2", false);
 	
@@ -159,7 +159,7 @@ void DTSG_Knippel_DlgExit_5()
 	PChar.quest.DTSG_Sosedi.win_condition = "DTSG_Sosedi";
 	
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1 = "Timer";
-	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = sti(GetTime() + 2);
+	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = int(GetTime() + 2);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 	PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -216,7 +216,7 @@ void DTSG_Killer_5()
 	
 	for (i=1; i<=3; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), PIRATE, 0, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, "SentJons_prison", "goto", "goto22");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -224,7 +224,7 @@ void DTSG_Killer_5()
 	
 	for (i=4; i<=7; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_AntiguaSoldTurma_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), PIRATE, 0, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, "SentJons_prison", "reload", "reload1");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -455,7 +455,7 @@ void DTSG_Knippel_103()
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -469,7 +469,7 @@ void DTSG_Knippel_103()
 
 void DTSG_Kortni_PkCh_7()
 {
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "officers", "stay2", "", "", "", "DTSG_Kortni_Vyprygnul", 7);
@@ -739,7 +739,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 			LAi_ActorFollow(sld, pchar, "", -1);
 		}
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_PiterAdams", "keeper_8", "man", "man_B", sti(pchar.rank), ENGLAND, -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_PiterAdams", "keeper_8", "man", "man_B", int(pchar.rank), ENGLAND, -1, true, "quest"));
 		sld.name = StringFromKey("Knippel_2");
 		sld.lastname = StringFromKey("Knippel_3");
 		LAi_SetHP(sld, 200+MOD_SKILL_ENEMY_RATE*10, 200+MOD_SKILL_ENEMY_RATE*10);
@@ -762,7 +762,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "DTSG_PiterAdams_VDom_2") {
 		LAi_SetPlayerType(pchar);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_JeinAdams", "girl_9", "woman", "woman", sti(pchar.rank), ENGLAND, 0, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_JeinAdams", "girl_9", "woman", "woman", int(pchar.rank), ENGLAND, 0, false, "quest"));
 		sld.name = StringFromKey("Knippel_4");
 		sld.lastname = StringFromKey("Knippel_5");
 		ChangeCharacterAddressGroup(sld, "PortPax_houseF1", "barmen", "bar1");
@@ -950,7 +950,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		LAi_SetStayType(sld);
 		sld.talker = 2;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_FrederikStouks", "mercen_26", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_FrederikStouks", "mercen_26", "man", "man", int(pchar.rank), ENGLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Knippel_7");
 		sld.lastname = StringFromKey("Knippel_8");
 		GiveItem2Character(sld, "blade_13");
@@ -971,7 +971,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("DTSG_RalfFaggl");
 		sld.lifeday = 0;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_RalfFaggl2", "citiz_53", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_RalfFaggl2", "citiz_53", "man", "man", int(pchar.rank), ENGLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Knippel_9");
 		sld.lastname = StringFromKey("Knippel_10");
 		GiveItem2Character(sld, "blade_12");
@@ -1256,7 +1256,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Killers_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Killers_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto23");
 			LAi_SetActorType(sld);
 			LAi_ActorFollow(sld, pchar, "", -1);
@@ -1308,7 +1308,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "DTSG_KnippelDoma_2") {
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_Kurier", "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_Kurier", "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_Kurier";
 		ChangeCharacterAddressGroup(sld, "SentJons_houseH1", "reload", "reload1");
@@ -1408,14 +1408,14 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "goto", "random_free");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
 		}
 		for (i=5; i<=8; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "citiz_"+(rand(9)+31), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "citiz_"+(rand(9)+31), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "goto", "random_free");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
@@ -1459,7 +1459,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	
 		for (i=1; i<=5; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "rld", "random");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
@@ -1469,7 +1469,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		}
 		for (i=6; i<=8; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "citiz_"+(rand(9)+31), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_ValkSold_"+i, "citiz_"+(rand(9)+31), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "rld", "random");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
@@ -1485,7 +1485,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=7; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_SasseksSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_SasseksSold_"+i, "sold_eng_"+(rand(7)+1), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "rld", "random");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
@@ -1496,7 +1496,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		}
 		for (i=8; i<=10; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_SasseksSold_"+i, "citiz_"+(rand(9)+31), "man", "man", sti(pchar.rank), ENGLAND, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_SasseksSold_"+i, "citiz_"+(rand(9)+31), "man", "man", int(pchar.rank), ENGLAND, 0, true, "soldier"));
 			PlaceCharacter(sld, "rld", "random");
 			LAi_SetWarriorType(sld);
 			LAi_CharacterDisableDialog(sld);
@@ -1586,7 +1586,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_Graf_Sheffild", "huber_0", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_Graf_Sheffild", "huber_0", "man", "man", int(pchar.rank), ENGLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Knippel_15");
 		sld.lastname = StringFromKey("Knippel_16");
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
@@ -1598,7 +1598,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		LAi_SetHP(sld, 250.0, 250.0);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_MicleUinti", "off_eng_4", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_MicleUinti", "off_eng_4", "man", "man", int(pchar.rank), ENGLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Knippel_17");
 		sld.lastname = StringFromKey("Knippel_18");
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc4");
@@ -1721,7 +1721,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("DTSG_Mrt_Rocur");
 		LAi_SetActorType(sld);
 		
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 		sld.dialog.currentnode = "DTSG_Kortni_1";
 		LAi_SetActorType(sld);
@@ -1794,7 +1794,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
 		
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.lifeday = 0;
 		ChangeCharacterAddressGroup(sld, "none", "", "");
 		
@@ -1803,7 +1803,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
 		CharacterTurnToLoc(sld, "rld", "loc1");
 		
-		sld = GetCharacter(NPC_GenerateCharacter("DTSG_KortniClone", "off_eng_5", "man", "man", sti(PChar.rank), ENGLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("DTSG_KortniClone", "off_eng_5", "man", "man", int(PChar.rank), ENGLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Knippel_12");
 		sld.lastname = StringFromKey("Knippel_13");
 		GiveItem2Character(sld, "blade_16");
@@ -1874,8 +1874,8 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 
 void DTSG_Knippel_GenerateParty()
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	int DTSG_PoP_MK;
 	if (MOD_SKILL_ENEMY_RATE == 2) DTSG_PoP_MK = 5;
 	if (MOD_SKILL_ENEMY_RATE == 4) DTSG_PoP_MK = 5;
@@ -1897,7 +1897,7 @@ void DTSG_Knippel_GenerateParty()
 	{
 		model = aCrewSoldier[i-1].model;
 		ani = aCrewSoldier[i-1].ani;
-		ref sld = GetCharacter(NPC_GenerateCharacter("DTSG_PoP_Matrosy_"+i, model, "man", ani, sti(pchar.rank)-5, sti(pchar.nation), -1, false, "quest"));
+		ref sld = GetCharacter(NPC_GenerateCharacter("DTSG_PoP_Matrosy_"+i, model, "man", ani, int(pchar.rank)-5, int(pchar.nation), -1, false, "quest"));
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload3");
 		LAi_SetActorType(sld);

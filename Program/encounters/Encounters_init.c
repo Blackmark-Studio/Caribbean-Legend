@@ -31,7 +31,7 @@ void InitEncounters()
 
     SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_MERCHANT,  1, 1, 6, 6);
     SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_UNIVERSAL, 1, 1, 6, 6);
-    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_SMALL, 1, 0, 0, 1);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_SMALL, true, false, false, true);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговый караван - Средний
@@ -43,7 +43,7 @@ void InitEncounters()
 
     SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 1, 5, 5);
     SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 5, 5);
-    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_MEDIUM, 1, 0, 0, 1);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_MEDIUM, true, false, false, true);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговый караван - Большой
@@ -165,7 +165,7 @@ void InitEncounters()
     SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 1, 6, 6);
     SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 1, 1, 6, 6);
     SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 6, 6);
-    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, 0, 1, 1, 1);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, false, true, true, true);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Бочонок

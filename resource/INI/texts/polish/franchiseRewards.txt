@@ -8,6 +8,12 @@ condition_mushket_indian
 Ten przedmiot pojawi się u bankierów, jeśli posiadasz
 Caribbean Legend: Age of Pirates
 }
+condition_nocturlabe
+{
+커뮤니티를 위한 무료 선물입니다.
+ 고리대금업자들에게서 구매할 수 있습니다.
+ 플레이해 주셔서 감사합니다!
+}
 noRewardYetMessage
 {
 Ta nagroda nie jest jeszcze dostępna,

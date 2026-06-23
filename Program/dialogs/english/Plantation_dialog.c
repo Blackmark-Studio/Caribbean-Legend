@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -57,9 +57,9 @@ void ProcessDialogEvent()
 		
 		// охрана - протектор
 		case "plantation_protector":
-            if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+            if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
-				if (sti(pchar.nation) == PIRATE)
+				if (int(pchar.nation) == PIRATE)
 				{
 					PlaySound("Voice\English\soldier_arest_1.wav");
     				dialog.text = RandPhraseSimple("Pirate?! Seize him!","He is a pirate! Attack!");
@@ -68,15 +68,15 @@ void ProcessDialogEvent()
 					break;
 				}
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = RandPhraseSimple("Ho-ho, you're sailing under the flag of "+NationNameGenitive(sti(pchar.nation))+"! I think our commandant will be glad to speak with you!","Well, well, it smells of "+NationNameAblative(sti(pchar.nation))+" here! A spy?! It's time for you to speak with our commandant.");
+				dialog.text = RandPhraseSimple("Ho-ho, you're sailing under the flag of "+NationNameGenitive(int(pchar.nation))+"! I think our commandant will be glad to speak with you!","Well, well, it smells of "+NationNameAblative(int(pchar.nation))+" here! A spy?! It's time for you to speak with our commandant.");
 				link.l1 = RandPhraseSimple("First, I'll send you to Hell!","It's time for you to speak to my blade!");
 				link.l1.go = "fight"; 
 			}
 			else
 			{
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (GetNationRelation(int(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 				{
-					if (sti(pchar.nation) == PIRATE)
+					if (int(pchar.nation) == PIRATE)
 					{
 						PlaySound("Voice\English\soldier_arest_1.wav");
 						dialog.text = RandPhraseSimple("Pirate?! Seize him!","He is a pirate! Attack!");
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 		
 		case "Licence":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				PlaySound("Voice\English\soldier_arest_2.wav");
 				dialog.text = "A license? Wait a second... Ha-ha, this is funny! I know who you are. You're wanted, pal! And the reward for your head is very big! Seize him!";
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		
 		case "PegYou":
 			PlaySound("Voice\English\soldier_arest_2.wav");
-            dialog.text = "Business? Ha-ha! Well, this is funny! You smell of "+NationNameAblative(sti(GetBaseHeroNation()))+" from a thousand miles! It's time for you to meet our commandant.";
+            dialog.text = "Business? Ha-ha! Well, this is funny! You smell of "+NationNameAblative(int(GetBaseHeroNation()))+" from a thousand miles! It's time for you to meet our commandant.";
 			link.l1 = "Nah, I think it's time for you to meet my blade.";
 			link.l1.go = "fight";
 		break;
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "plant_2") // belamour legendary edition 
 			{
 				dialog.text = "What's your business here, señor?";
-				link.l1 = TimeGreeting()+", señor. I have a business proposal for you. I have slaves to sell. "+FindRussianQtyString(sti(GetSquadronGoods(pchar,GOOD_SLAVES)))+". Interested?";
+				link.l1 = TimeGreeting()+", señor. I have a business proposal for you. I have slaves to sell. "+FindRussianQtyString(int(GetSquadronGoods(pchar,GOOD_SLAVES)))+". Interested?";
 				link.l1.go = "mtraxx";
 				break;
 			}
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
             DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddQuestRecord("Roger_3", "27");
 			sld = characterFromId("Mtr_plantation_boss");
 			sld.lifeday = 0;
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-            dialog.text = "Five hundred boxes of coffee? Well, well... Let's see... (counting) I am ready to exchange your coffee for "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
+            dialog.text = "Five hundred boxes of coffee? Well, well... Let's see... (counting) I am ready to exchange your coffee for "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
 			link.l1 = "Hmm... I was hoping for better terms. Well, who cares. Deal!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 106;
-            dialog.text = "Five hundred boxes of vanilla? Well, well... Let's see... (counting) I am ready to exchange your vanilla for "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
+            dialog.text = "Five hundred boxes of vanilla? Well, well... Let's see... (counting) I am ready to exchange your vanilla for "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
 			link.l1 = "Hmm... I was hoping for better terms. Well, who cares. Deal!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -321,7 +321,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-            dialog.text = "Five hundred boxes of copra? Well, well... Let's see... (counting) I am ready to exchange your copra for "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
+            dialog.text = "Five hundred boxes of copra? Well, well... Let's see... (counting) I am ready to exchange your copra for "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" sacks of sugar and "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  boxes of cacao. Deal?";
 			link.l1 = "Hmm... I was hoping for better terms... Well, who cares. Deal!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))

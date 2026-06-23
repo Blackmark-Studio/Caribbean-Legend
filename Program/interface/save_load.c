@@ -107,13 +107,13 @@ void ProcessCancelExit()
 {
 	if(CheckAttribute(&PlayerProfile, "old_name"))
 		PlayerProfile.name = PlayerProfile.old_name;		// бэкап профиля
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == 1)
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && int(InterfaceStates.showGameMenuOnExit) == 1)
 	{
 		IDoExit(RC_INTERFACE_LAUNCH_GAMEMENU);
 		return;
 	}
 	IDoExit(RC_INTERFACE_SAVELOAD_EXIT);
-	if(!CheckAttribute(&InterfaceStates,"InstantExit") || sti(InterfaceStates.InstantExit) == 0)
+	if(!CheckAttribute(&InterfaceStates,"InstantExit") || int(InterfaceStates.InstantExit) == 0)
 		ReturnToMainMenu();
 }
 
@@ -134,7 +134,7 @@ void IDoExit(int exitCode)
 	DeleteAttribute(&PlayerProfile,"old_name");
 	GameInterface.SavePath = "SAVE";
     interfaceResultCommand = exitCode;
-	if(CheckAttribute(&InterfaceStates,"InstantExit") && sti(InterfaceStates.InstantExit) == 1)
+	if(CheckAttribute(&InterfaceStates,"InstantExit") && int(InterfaceStates.InstantExit) == 1)
 		EndCancelInterface(false);
 	else
 		EndCancelInterface(true);
@@ -155,9 +155,9 @@ void ProcessCommandExecute()
 		if(sCommand == "click" || sCommand == "dblclick" || sCommand == "activate")
 		{
 			if(bFrame)
-				iSlot = sti(strright(sNode, strlen(sNode) - strlen(saveFrameTag))) - 1;
+				iSlot = int(strright(sNode, strlen(sNode) - strlen(saveFrameTag))) - 1;
 			else
-				iSlot = sti(strright(sNode, strlen(sNode) - strlen(saveButtonTag))) - 1;
+				iSlot = int(strright(sNode, strlen(sNode) - strlen(saveButtonTag))) - 1;
 			SelectSlot(iSlot);
 			if(bSaveButton || sCommand == "dblclick" || sCommand == "activate")
 			{
@@ -184,7 +184,7 @@ void ProcessCommandExecute()
 	}
 	if(IsStrLeft(sNode, deleteButtonTag))
 	{
-		iSlot = sti(strright(sNode, strlen(sNode) - strlen(deleteButtonTag))) - 1;
+		iSlot = int(strright(sNode, strlen(sNode) - strlen(deleteButtonTag))) - 1;
 		SelectSlot(iSlot);
 		ShowConfirmWindow(CONFIRMMODE_SAVE_DELETE);
 		return;
@@ -277,11 +277,11 @@ void InitSortState()
 	if(!CheckAttribute(&InterfaceStates, "ShowAutosaves"))
 		InterfaceStates.ShowAutosaves = bAuto;
 	else
-		bAuto = sti(InterfaceStates.ShowAutosaves);
+		bAuto = int(InterfaceStates.ShowAutosaves);
 	if(!CheckAttribute(&InterfaceStates, "ShowQuicksaves"))
 		InterfaceStates.ShowQuicksaves = bQuick;
 	else
-		bQuick = sti(InterfaceStates.ShowQuicksaves);
+		bQuick = int(InterfaceStates.ShowQuicksaves);
 	
 	CheckButton_SetState("SHOW_AUTOSAVES", 1, bAuto);
 	CheckButton_SetState("SHOW_QUICKSAVES", 1, bQuick);
@@ -321,7 +321,7 @@ void ScrollSaveSlot(bool bDown)
 	if(g_nCurrentSaveIndex + diff < 0)
 		return;
 	int newSlot = g_nCurrentSaveSlot + diff;
-	float fPos = makefloat(g_nFirstSaveIndex + diff) / makefloat(g_nSaveQuantity - g_SaveSlots + 1);
+	float fPos = float(g_nFirstSaveIndex + diff) / float(g_nSaveQuantity - g_SaveSlots + 1);
 	if(newSlot < 0)
 	{
 		newSlot = 0;
@@ -346,7 +346,7 @@ void ScrollPosChange()
 			return;
 		int oldPage = g_nFirstSaveIndex;
 		int n = g_nSaveQuantity - g_SaveSlots + 1; // количество страниц
-		int newPage = makeint(n * fPos);	// новая страница
+		int newPage = int(n * fPos);	// новая страница
 		if(newPage == n)
 			newPage -= 1;
 		int diff = newPage - oldPage;	// на сколько листнули
@@ -424,9 +424,9 @@ void InitSaveList()
 	int y_max = y2 - 110;
 	float kScreen = 1920.0 / 1080.0;
 	float kSpace = 0.5;
-	int height = makeint((y_max - y_base) / ((1.0 + kSpace) * MAX_SAVE_SLOTS));
-	int space = makeint(height * kSpace);
-	int width = makeint(height * kScreen);
+	int height = int((y_max - y_base) / ((1.0 + kSpace) * MAX_SAVE_SLOTS));
+	int space = int(height * kSpace);
+	int width = int(height * kScreen);
 	int y_cur;
 	int text_width = 280;
 	int button_width = height / 2;
@@ -644,7 +644,7 @@ void ReadScreenshotStep(int iSave)
 
 bool FindSaveFile(int nSaveNum, ref saveName, ref nSaveSize)
 {
-	return SendMessage(&GameInterface, "llee", MSG_INTERFACE_SAVE_FILE_FIND, nSaveNum, &saveName, &nSaveSize) != 0;
+	return bool(SendMessage(&GameInterface, "llee", MSG_INTERFACE_SAVE_FILE_FIND, nSaveNum, &saveName, &nSaveSize));
 }
 
 void FillSaveList(int nFirstSaveIndex)
@@ -664,7 +664,7 @@ void FillSaveList(int nFirstSaveIndex)
 		if(CheckAttribute(&g_oSaveContainer, attr))
 		{
 			if(CheckAttribute(&g_oSaveContainer, attr + ".screenshot") && CheckAttribute(&g_oSaveContainer, attr + ".savedata"))
-				LoadInfo(iSlot, iSaveIdx, g_oSaveContainer.(attr).savename, sti(g_oSaveContainer.(attr).screenshot), g_oSaveContainer.(attr).savedata);	// заполняем слот, если есть чем
+				LoadInfo(iSlot, iSaveIdx, g_oSaveContainer.(attr).savename, int(g_oSaveContainer.(attr).screenshot), g_oSaveContainer.(attr).savedata);	// заполняем слот, если есть чем
 			else
 				LoadInfo(iSlot, iSaveIdx, g_oSaveContainer.(attr).savename, -1, "");
 		}
@@ -738,7 +738,7 @@ void ReadSaveData(int iSlot, int iTexture, string sData)
 	int iPlayTimeIndex = iSlot * 3 + LIST_PLAYTIME;
 	StringCollection_SetText("SAVELIST_INFO", iPlayTimeIndex, playTime);
 	
-	if(!CheckAttributeHasValue(saveInfo, "SaveVer") || sti(saveInfo.SaveVer) != VERSION_NUM_PRE)
+	if(!CheckAttributeHasValue(saveInfo, "SaveVer") || int(saveInfo.SaveVer) != VERSION_NUM_PRE)
 		g_oSaveList[iSlot].bad = true;
 	else
 		DeleteAttribute(&g_oSaveList[iSlot], "bad");
@@ -746,7 +746,7 @@ void ReadSaveData(int iSlot, int iTexture, string sData)
 
 int Screenshoter_GetData(string sProfile, string sFile, ref sData)
 {
-	return SendMessage(scrshot, "lsse", MSG_SCRSHOT_READ, "SAVE\" + sProfile, sFile, &sData);
+	return int(SendMessage(scrshot, "lsse", MSG_SCRSHOT_READ, "SAVE\" + sProfile, sFile, &sData));
 }
 
 void Screenshoter_Release(string sFile)
@@ -773,12 +773,12 @@ void SelectSlot(int iSlot)
 	bool bNewSave = false;
 	if(bSave && iSlot == -1)
 		bNewSave = true;
-	if(!bNewSave && sti(g_oSaveList[iSlot].saveidx) == -1)
+	if(!bNewSave && int(g_oSaveList[iSlot].saveidx) == -1)
 		return;
 	g_nCurrentSaveSlot = iSlot;
 	
 	if(!bNewSave)
-		g_nCurrentSaveIndex = sti(g_oSaveList[iSlot].saveidx);
+		g_nCurrentSaveIndex = int(g_oSaveList[iSlot].saveidx);
 	else
 		g_nCurrentSaveIndex = -1;
 	
@@ -951,7 +951,7 @@ void SelectSlot(int iSlot)
 		StringCollection_ChangeColor("SAVE_INFO", SAVE_SQUADPOWER, argb(0,128,128,128));
 	if(CheckAttribute(saveInfo, "money") && saveInfo.money != "")
 	{
-		sInfo = "#" + FindRussianMoneyString(sti(saveInfo.money));	// песо
+		sInfo = "#" + FindRussianMoneyString(int(saveInfo.money));	// песо
 		StringCollection_SetText("SAVE_INFO", SAVE_MONEY, sInfo);
 		StringCollection_ChangeColor("SAVE_INFO", SAVE_MONEY, argb(255,255,255,255));
 	}
@@ -959,7 +959,7 @@ void SelectSlot(int iSlot)
 		StringCollection_ChangeColor("SAVE_INFO", SAVE_MONEY, argb(0,128,128,128));
 	if(CheckAttribute(saveInfo, "doubloons") && saveInfo.doubloons != "")
 	{
-		sInfo = "#" + FindRussianDublonString(sti(saveInfo.doubloons));	// дублоны
+		sInfo = "#" + FindRussianDublonString(int(saveInfo.doubloons));	// дублоны
 		StringCollection_SetText("SAVE_INFO", SAVE_DOUBLOONS, sInfo);
 		StringCollection_ChangeColor("SAVE_INFO", SAVE_DOUBLOONS, argb(255,255,255,255));
 	}
@@ -971,7 +971,7 @@ void SelectSlot(int iSlot)
 
 	if(CheckAttribute(saveInfo, "SaveVer") && saveInfo.SaveVer != "")
 	{
-		bBadSave = (sti(saveInfo.SaveVer) != VERSION_NUM_PRE);
+		bBadSave = (int(saveInfo.SaveVer) != VERSION_NUM_PRE);
 	}
 	else bBadSave = true;
 
@@ -1002,7 +1002,7 @@ void SelectSlot(int iSlot)
 		SendMessage(&GameInterface, "lsse", MSG_INTERFACE_GET_QUEST_NAME, saveInfo.questID, saveInfo.questUniqueID, &tag);
 		if(tag != "")
 		{
-			if(CheckAttribute(saveInfo, "questClosed") && sti(saveInfo.questClosed) == true)
+			if(CheckAttribute(saveInfo, "questClosed") && int(saveInfo.questClosed) == true)
 				sInfo = XI_ConvertString("QuestCompleted") + " - ";
 			else
 				sInfo = XI_ConvertString("QuestActive") + " - ";
@@ -1040,7 +1040,7 @@ void SelectSlot(int iSlot)
 		StringCollection_ChangeColor("PROFILE_INFO", PROFILE_HEROTYPE, argb(0,128,128,128));
 	if(CheckAttribute(saveInfo, "difficulty") && saveInfo.difficulty != "")
 	{
-		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + XiStr("m_Complexity_" + sti(saveInfo.difficulty)*2);	// сложность
+		sInfo = "#" + XI_ConvertString("Difficulty") + ": " + XiStr("m_Complexity_" + int(saveInfo.difficulty)*2);	// сложность
 		StringCollection_SetText("PROFILE_INFO", PROFILE_DIFFICULTY, sInfo);
 		StringCollection_ChangeColor("PROFILE_INFO", PROFILE_DIFFICULTY, argb(255,255,255,255));
 	}
@@ -1252,7 +1252,7 @@ void FillProfileListIntoTable()
 {
 	int q, n;
 	string src_attr, dst_attr, sCurProfile;
-	q = sti(PlayerProfile.profilesQuantity);
+	q = int(PlayerProfile.profilesQuantity);
 	n = 1;
 	if(CheckAttribute(&PlayerProfile,"name"))
 		sCurProfile = PlayerProfile.name;
@@ -1308,19 +1308,19 @@ void procProfileBtnAction()
 
 void ProcChooseProfile()
 {
-	string attr = "profile_" + (sti(GameInterface.PROFILE_WINDOW_LIST.select) - 1);
+	string attr = "profile_" + (int(GameInterface.PROFILE_WINDOW_LIST.select) - 1);
 	if(CheckAttribute(&PlayerProfile, attr))
 		SetCurrentProfile(PlayerProfile.(attr));
 }
 
 void ProcDeleteProfile()
 {
-	int selectProfile = sti(GameInterface.PROFILE_WINDOW_LIST.select) - 1;
+	int selectProfile = int(GameInterface.PROFILE_WINDOW_LIST.select) - 1;
 	string attr = "profile_" + selectProfile;
 	string sThisProfile = PlayerProfile.(attr);
 	DeleteProfile(sThisProfile);
 
-	int nProfilesQ = sti(PlayerProfile.profilesQuantity);
+	int nProfilesQ = int(PlayerProfile.profilesQuantity);
 	nProfilesQ--;
 	string attrSrc, attrDst;
 	for(int iProfile = selectProfile; iProfile < nProfilesQ; iProfile++)

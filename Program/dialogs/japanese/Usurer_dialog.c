@@ -47,7 +47,8 @@ void ProcessDialogEvent()
     {
         npchar.quest.FindCitizenNoShip = 0;
     }
-
+	int iSlaveMoney;
+	int amount;
 	switch(Dialog.CurrentNode)
 	{
 		case "Exit":
@@ -260,7 +261,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "GenQuest.Noblelombard.Giveregard") && npchar.city == pchar.GenQuest.Noblelombard.City)
 			{
-				link.l11 = "三か月前に会合があり、ある男の遺品について話しました。彼の名前は "+pchar.GenQuest.Noblelombard.Name+"。覚えていますか？彼は私の名義で預金口座を開かなければなりませんでした。金額は  "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Regard))+"...";
+				link.l11 = "三か月前に会合があり、ある男の遺品について話しました。彼の名前は "+pchar.GenQuest.Noblelombard.Name+"。覚えていますか？彼は私の名義で預金口座を開かなければなりませんでした。金額は  "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Regard))+"...";
 				link.l11.go = "Noblelombard_5";			
 			}
 			//<-- семейная реликвия
@@ -437,7 +438,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "GenQuest.Noblelombard.Giveregard") && npchar.city == pchar.GenQuest.Noblelombard.City)
 			{
-				link.l11 = "三か月前に会合があり、ある男の遺品について話しました。彼の名前は "+pchar.GenQuest.Noblelombard.Name+"。覚えていますか？彼は私の名義で預金口座を開設しなければなりませんでした。金額は  "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Regard))+"...";
+				link.l11 = "三か月前に会合があり、ある男の遺品について話しました。彼の名前は "+pchar.GenQuest.Noblelombard.Name+"。覚えていますか？彼は私の名義で預金口座を開設しなければなりませんでした。金額は  "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Regard))+"...";
 				link.l11.go = "Noblelombard_5";			
 			}
 			//<-- семейная реликвия
@@ -610,29 +611,29 @@ void ProcessDialogEvent()
 		case "ShipLetters_Usurer1":
 			pchar.questTemp.different.GiveShipLetters.speakUsurer = true;
 			dialog.text = "これらの書類を読むには私の多くの時間が必要ですし、私の時間は非常に高価なのです。";
-			link.l1 = "「あるいは、」 "+sti(pchar.questTemp.different.GiveShipLetters.price1)+" ペソがあなたの時間に見合う補償となりますかな？";
+			link.l1 = "「あるいは、」 "+int(pchar.questTemp.different.GiveShipLetters.price1)+" ペソがあなたの時間に見合う補償となりますかな？";
 			link.l1.go = "ShipLetters_Usurer2";
 			link.l2 = "かしこまりました。それでは、ごきげんよう！";
 			link.l2.go = "exit";
 		break;
 		
 		case "ShipLetters_Usurer2":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.GiveShipLetters.price1));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.GiveShipLetters.price1));
 			pchar.questTemp.different.GiveShipLetters.speakUsurer_1 = true;
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "見せてくれ！いや、この名前は見たことがないな。港長に見せてみな。";
 				link.l1 = "申し訳ありませんが、我々は取引をしたはずです！あなたはこの船長について教えてくれると約束しましたよ！";
 				link.l1.go = "ShipLetters_Usurer2_1";
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				s1 = "Well... I know the owner of this ship. He is not a very rich man, but he has some wealth.";
 				dialog.text = s1+" 彼は腕利きの密輸業者だそうです。それが聞きたかったことですか？";
 				link.l1 = "そのようですね……";
 				link.l1.go = "ShipLetters_Usurer2_2";
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				s1 = "Well... I am not sure that I can congratulate you for your found.";
 				dialog.text = s1+"これらの書類は我々の植民地巡回船のために署名されたものであり、その船長は強い信念で知られております。";
@@ -661,7 +662,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "EncGirl_4":
-			if(sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
+			if(int(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 			{
 				dialog.text = "ああ、あなたが私の放蕩息子とその若き花嫁を連れてきた船長ですね？";
 				link.l1 = "はい、彼らの脱出を手助けしたのは私です。";
@@ -688,7 +689,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_5_1":
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.EncGirl.sum));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.EncGirl.sum));
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item); 
 			AddQuestRecord("JungleGirl", "18");
 			CloseQuestHeader("JungleGirl");
@@ -720,7 +721,7 @@ void ProcessDialogEvent()
 		case "LoanUsurer":
 			if (npchar.id == "Panama_Usurer")
 			{
-				if (sti(pchar.reputation.nobility) > 70 && ChangeCharacterNationReputation(pchar, SPAIN, 0) >= 80 && !CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold"))
+				if (int(pchar.reputation.nobility) > 70 && ChangeCharacterNationReputation(pchar, SPAIN, 0) >= 80 && !CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold"))
 				{
 					dialog.text = "話し合いましょう。お聞きします。";
 				}
@@ -730,7 +731,7 @@ void ProcessDialogEvent()
 					link.l1 = "金に国籍はありませんよ、旦那銀行家。";
 					if (CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold"))
 					{
-						if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)) && makeint(Pchar.Quest.Deposits.(sDepositType1)) == true)
+						if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)) && int(Pchar.Quest.Deposits.(sDepositType1)) == true)
 						{
 							dialog.text = "「うむ、」 "+GetAddress_Form(NPChar)+"。お知らせしなければなりませんが、お預けいただいた保証金はもはや有効ではございません。";
 							Link.l1 = "「何の根拠で！？」";
@@ -744,7 +745,7 @@ void ProcessDialogEvent()
 							break;
 						}
 					}
-					if (sti(pchar.reputation.nobility) < 71 || ChangeCharacterNationReputation(pchar, SPAIN, 0) < 80)
+					if (int(pchar.reputation.nobility) < 71 || ChangeCharacterNationReputation(pchar, SPAIN, 0) < 80)
 					{
 						link.l1.go = "Panama_Deposit_NoReputation";
 						break;
@@ -753,13 +754,13 @@ void ProcessDialogEvent()
 			}
 			dialog.text = "話し合いましょう。お聞きします。";
 			//кредиты
-            if(CheckAttribute(Pchar, "Quest.Loans." + (NPC_Area)) && makeint(Pchar.Quest.Loans.(NPC_Area)) == true)
+            if(CheckAttribute(Pchar, "Quest.Loans." + (NPC_Area)) && int(Pchar.Quest.Loans.(NPC_Area)) == true)
 			{
-				iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Loans.(NPC_Area).StartYear),makeint(Pchar.Quest.Loans.(NPC_Area).StartMonth),makeint(Pchar.Quest.Loans.(NPC_Area).StartDay), makefloat(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
-				Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makefloat(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);// boal 23.01.2004
-				if(makeint(PChar.money) >= makeint(Pchar.Quest.Loans.(NPC_Area).Result))
+				iPastMonths = GetPastTime("Month", int(Pchar.Quest.Loans.(NPC_Area).StartYear),int(Pchar.Quest.Loans.(NPC_Area).StartMonth),int(Pchar.Quest.Loans.(NPC_Area).StartDay), float(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
+				Pchar.Quest.Loans.(NPC_Area).Result = int(Pchar.Quest.Loans.(NPC_Area).Sum) + ((int(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*float(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);// boal 23.01.2004
+				if(int(PChar.money) >= int(Pchar.Quest.Loans.(NPC_Area).Result))
 				{
-					Link.l5 = "あなたに借りがある "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).Result))+LinkRandPhrase("、私はあなたのお金を返す準備ができています","。借金を返済したいのです。","……ついに、清算の時が来ましたね。");
+					Link.l5 = "あなたに借りがある "+FindRussianMoneyString(int(Pchar.Quest.Loans.(NPC_Area).Result))+LinkRandPhrase("、私はあなたのお金を返す準備ができています","。借金を返済したいのです。","……ついに、清算の時が来ましたね。");
 					Link.l5.go = "loan_return";	
 					sTemp = "credit";
 				}					
@@ -768,7 +769,7 @@ void ProcessDialogEvent()
 			{
 				Link.l6 = LinkRandPhrase("少し金を借りたいのですが。","どうしてもペソが必要なんだ。","小さな貸付はいかがでしょうか？");
 				Link.l6.go = "loan";					
-				if(makeint(Pchar.money) >= 100)
+				if(int(Pchar.money) >= 100)
 				{
 					Link.l7 = LinkRandPhrase("利子を得るためにお金を預けたいのですが。","私の銀貨をいくつか袋ごと預かっていただけますか？","「万が一の時のために、銀貨をお預けしてもよろしいでしょうか？」"); // patch
 					Link.l7.go = "deposit";				
@@ -780,31 +781,31 @@ void ProcessDialogEvent()
 				}
 			}
 			
-			if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)) && makeint(Pchar.Quest.Deposits.(sDepositType1)) == true)
+			if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)) && int(Pchar.Quest.Deposits.(sDepositType1)) == true)
 			{
-				iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Deposits.(sDepositType1).StartYear),makeint(Pchar.Quest.Deposits.(sDepositType1).StartMonth),makeint(Pchar.Quest.Deposits.(sDepositType1).StartDay), makefloat(Pchar.Quest.Deposits.(sDepositType1).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
+				iPastMonths = GetPastTime("Month", int(Pchar.Quest.Deposits.(sDepositType1).StartYear),int(Pchar.Quest.Deposits.(sDepositType1).StartMonth),int(Pchar.Quest.Deposits.(sDepositType1).StartDay), float(Pchar.Quest.Deposits.(sDepositType1).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
 				if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)+ ".Rem"))
 				{
-					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makefloat(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths+sti(Pchar.Quest.Deposits.(sDepositType1).Rem);
+					Pchar.Quest.Deposits.(sDepositType1).Result = int(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((int(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*float(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths+int(Pchar.Quest.Deposits.(sDepositType1).Rem);
 				}
 				else
 				{
-					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makefloat(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths;
+					Pchar.Quest.Deposits.(sDepositType1).Result = int(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((int(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*float(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths;
 				}
 				Link.l9 = LinkRandPhrase("私の投資をペソで回収しに来たんだ。","そろそろ俺に借りている銀貨を返してもらおうか。","私の投資を利息も含めてペソで返してもらいたい。");
 				Link.l9.go = "Deposit_return";									
 			}
 			
-			if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType2)) && makeint(Pchar.Quest.Deposits.(sDepositType2)) == true)
+			if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType2)) && int(Pchar.Quest.Deposits.(sDepositType2)) == true)
 			{
-				iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Deposits.(sDepositType2).StartYear),makeint(Pchar.Quest.Deposits.(sDepositType2).StartMonth),makeint(Pchar.Quest.Deposits.(sDepositType2).StartDay), makefloat(Pchar.Quest.Deposits.(sDepositType2).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
+				iPastMonths = GetPastTime("Month", int(Pchar.Quest.Deposits.(sDepositType2).StartYear),int(Pchar.Quest.Deposits.(sDepositType2).StartMonth),int(Pchar.Quest.Deposits.(sDepositType2).StartDay), float(Pchar.Quest.Deposits.(sDepositType2).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
 				if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType2)+ ".Rem"))
 				{
-					Pchar.Quest.Deposits.(sDepositType2).Result = makeint(Pchar.Quest.Deposits.(sDepositType2).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType2).Sum)/100)*makeint(Pchar.Quest.Deposits.(sDepositType2).Interest))*iPastMonths+sti(Pchar.Quest.Deposits.(sDepositType2).Rem);
+					Pchar.Quest.Deposits.(sDepositType2).Result = int(Pchar.Quest.Deposits.(sDepositType2).Sum) + ((int(Pchar.Quest.Deposits.(sDepositType2).Sum)/100)*int(Pchar.Quest.Deposits.(sDepositType2).Interest))*iPastMonths+int(Pchar.Quest.Deposits.(sDepositType2).Rem);
 				}
 				else
 				{
-					Pchar.Quest.Deposits.(sDepositType2).Result = makeint(Pchar.Quest.Deposits.(sDepositType2).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType2).Sum)/100)*makeint(Pchar.Quest.Deposits.(sDepositType2).Interest))*iPastMonths;
+					Pchar.Quest.Deposits.(sDepositType2).Result = int(Pchar.Quest.Deposits.(sDepositType2).Sum) + ((int(Pchar.Quest.Deposits.(sDepositType2).Sum)/100)*int(Pchar.Quest.Deposits.(sDepositType2).Interest))*iPastMonths;
 				}
 				Link.l10 = LinkRandPhrase("ドゥブロンで投資した分を回収したいのです。","そろそろ俺に借りてる金を返してもらう時だ。","私の投資したドゥブロン金貨を、利息も含めて返してもらいたい。");
 				Link.l10.go = "Deposit_return_dub";									
@@ -827,10 +828,10 @@ void ProcessDialogEvent()
 		
 		//============== кредиты ===============
 		case "loan":
-            if (sti(NPChar.nation) == PIRATE)
+            if (int(NPChar.nation) == PIRATE)
             {
                 dialog.text = "いいえ、お力にはなれません。この厄介な場所では投資のみ受け付けております。\n銀ペソか金のドゥブロンで投資できます。";				
-                if(makeint(Pchar.money) >= 100)
+                if(int(Pchar.money) >= 100)
 				{
 	                Link.l1 = "ペソを投資したいので、金額について話そう。";
 	                Link.l1.go = "deposit";
@@ -864,9 +865,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "small":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 500*makeint(Pchar.rank)+125*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 500*int(Pchar.rank)+125*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI017";
-			dialog.text = "素晴らしい！少額の取引なら、いつでもずっと楽です――双方にとってリスクが少ないですから。ご提案できるのは "+FindRussianMoneyString(sti(Pchar.Quest.loans.(NPC_Area).sum))+"...";
+			dialog.text = "素晴らしい！少額の取引なら、いつでもずっと楽です――双方にとってリスクが少ないですから。ご提案できるのは "+FindRussianMoneyString(int(Pchar.Quest.loans.(NPC_Area).sum))+"...";
 			Link.l1 = "取引成立だ。それで、あんたの取り分はどうする？";
 			Link.l1.go = "Interest";
 			Link.l2 = "私にはうまくいきません。\n変えましょう。";
@@ -876,9 +877,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Medium":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 1500*makeint(Pchar.rank)+325*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 1500*int(Pchar.rank)+325*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI018";
-			dialog.text = "問題ありません。そう願っております "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).sum))+" あなたの問題解決にお力添えいたします。これはかなりの大金でございます。";
+			dialog.text = "問題ありません。そう願っております "+FindRussianMoneyString(int(Pchar.Quest.Loans.(NPC_Area).sum))+" あなたの問題解決にお力添えいたします。これはかなりの大金でございます。";
 			Link.l1 = "取引成立だ。で、お前の取り分はどうするんだ？";
 			Link.l1.go = "Interest";
 			Link.l2 = "私にはうまくいかない。\n変えましょう。";
@@ -888,9 +889,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Large":
-			Pchar.Quest.Loans.(NPC_Area).Sum = 4000*makeint(Pchar.rank)+600*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
+			Pchar.Quest.Loans.(NPC_Area).Sum = 4000*int(Pchar.rank)+600*GetSummonSkillFromName(pchar,SKILL_COMMERCE);
 			Dialog.snd = "voice\USDI\USDI019";
-			dialog.text = "うむ……危険だな。よろしい、あなたに貸付を認めましょう、その額は "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).sum))+"。ご理解いただきたいのですが、船長、これは本当に多額の金額でございます。どうか真剣にお考えください。";
+			dialog.text = "うむ……危険だな。よろしい、あなたに貸付を認めましょう、その額は "+FindRussianMoneyString(int(Pchar.Quest.Loans.(NPC_Area).sum))+"。ご理解いただきたいのですが、船長、これは本当に多額の金額でございます。どうか真剣にお考えください。";
 			Link.l1 = "取引成立だ。それで、あんたの取り分はどうするんだ？";
 			Link.l1.go = "Interest";
 			Link.l2 = "私にはうまくいかない。\n変えましょう。";
@@ -901,10 +902,10 @@ void ProcessDialogEvent()
 
 		case "Interest":
 			Pchar.Quest.Loans.(NPC_Area).Interest = GetCreditRate();
-			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - makeint(Pchar.skill.commerce);
+			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - int(Pchar.skill.commerce);
 			// Rebbebion, добавил фикс отображения знака процента
 			Dialog.snd = "voice\USDI\USDI020";
-			dialog.text = fts(stf(Pchar.Quest.Loans.(NPC_Area).Interest), 1)+"月利は%%です。あなたについて私が知っている限り、これ以上の条件はご提示できません。"; 
+			dialog.text = fts(float(Pchar.Quest.Loans.(NPC_Area).Interest), 1)+"月利は%%です。あなたについて私が知っている限り、これ以上の条件はご提示できません。";
 			Link.l1 = "問題ない。時間について話そう。";
 			Link.l1.go = "Period";
 			Link.l3 = "借金には近づかない方がよさそうだな。さらばだ。";
@@ -912,9 +913,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Period":
-			Pchar.Quest.Loans.(NPC_Area).Period = makeint(makeint(Pchar.reputation.nobility)/20) + 1;			
+			Pchar.Quest.Loans.(NPC_Area).Period = int(int(Pchar.reputation.nobility)/20) + 1;
 			Dialog.snd = "voice\USDI\USDI021";
-			dialog.text = "「私があなたについて知っていることを考慮すると、」 "+Pchar.name+"、この貸付金の返済をお待ちいたします "+FindRussianMonthString(sti(Pchar.Quest.Loans.(NPC_Area).Period))+"。その後、私が然るべき措置を取ります。ご理解いただけると幸いです。"; 
+			dialog.text = "「私があなたについて知っていることを考慮すると、」 "+Pchar.name+"、この貸付金の返済をお待ちいたします "+FindRussianMonthString(int(Pchar.Quest.Loans.(NPC_Area).Period))+"。その後、私が然るべき措置を取ります。ご理解いただけると幸いです。";
 			Link.l1 = "喜んであなたの条件……そしてお金もお受けいたします。";
 			Link.l1.go = "LoanGranted";
 			Link.l3 = "申し訳ありませんが、それは私には合いません。では、ごきげんよう。";
@@ -936,12 +937,12 @@ void ProcessDialogEvent()
 		break;
 
 		case "loan_return":
-			addMoneyToCharacter(Pchar, -(makeint(Pchar.Quest.Loans.(NPC_Area).Result)));
+			addMoneyToCharacter(Pchar, -(int(Pchar.Quest.Loans.(NPC_Area).Result)));
 			// boal 27.01.2004 -->
             if (npchar.quest.trade_date != lastspeak_date) // дыра с прокачкой была
             {
-    			AddCharacterExpToSkill(Pchar, "Commerce", makeint(Pchar.Quest.Loans.(NPC_Area).Result) / 350);
-    			AddCharacterExpToSkill(Pchar, "Leadership", makeint(Pchar.Quest.Loans.(NPC_Area).Result) / 700);
+    			AddCharacterExpToSkill(Pchar, "Commerce", int(Pchar.Quest.Loans.(NPC_Area).Result) / 350);
+    			AddCharacterExpToSkill(Pchar, "Leadership", int(Pchar.Quest.Loans.(NPC_Area).Result) / 700);
 			}
 			// boal 27.01.2004 <--
 			DeleteAttribute(PChar, "quest.Loans_" + NPC_Area); // bug fix
@@ -952,7 +953,7 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("素晴らしい！コインが必要な時はいつでも私のところへお越しください。いつでもお力になります。","感謝いたします。期日通りに借金を返済できる方とお取引できるのは、いつも喜ばしいことでございます。 時には事情もございますし、私も理解しておりますが……やはり問題は早めに解決していただきたいものです。","「ああ、あなたを信じて正解でした」 "+GetAddress_Form(NPChar)+"！これが私のサービスをご利用いただく最後にならないことを願っております。あなたが誠実な方だと分かりましたので、 今後はさらに有利なお取引をご提案できるかもしれません。");
 			Link.l1 = LinkRandPhrase("お金を借りたいのですが。","本当にペソが必要なんだ。","小さな貸付はいかがですか？");
 			Link.l1.go = "loan";			
-			if(makeint(PChar.money) >= 100)
+			if(int(PChar.money) >= 100)
 			{
 				Link.l2 = LinkRandPhrase("私の資金を投資したいのですが。","海賊の戦利品を取っておくつもりか？","「万が一の時のために、銀貨をお預けしてもよろしいでしょうか？」");
 				Link.l2.go = "deposit";				
@@ -976,7 +977,7 @@ void ProcessDialogEvent()
 		case "result":
 			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate("peso");
 			Pchar.QuestTemp.Deposits.(sDepositType1).Sum = dialogEditStrings[3];
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp <= 0)
 			{
 				dialog.text = "冗談かい？";
@@ -984,14 +985,14 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iTemp > sti(pchar.money))
+			if (iTemp > int(pchar.money))
 			{
 				dialog.text = "うーん、残念ながらそんな大金はお持ちでないようですね。真面目にいきましょう……";
 				link.l1 = "結構です。";
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "よろしいでしょう。私がご提案できるのは……そうですね……"+fts(stf(Pchar.QuestTemp.Deposits.(sDepositType1).Interest), 1)+" ％。もちろん月ごとです。";
+			dialog.text = "よろしいでしょう。私がご提案できるのは……そうですね……"+fts(float(Pchar.QuestTemp.Deposits.(sDepositType1).Interest), 1)+" ％。もちろん月ごとです。";
 			Link.l1 = "私には問題ありません。";
 			Link.l1.go = "Deposit_placed";
 			Link.l2 = "金額を変更したほうがよさそうですね。";
@@ -1007,9 +1008,9 @@ void ProcessDialogEvent()
 			    Pchar.Quest.Deposits.(sDepositType1).Result = 0;//fix
 			}
 			// boal limit
-			if ( (sti(Pchar.Quest.Deposits.(sDepositType1).Result) + sti(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > sti(NPChar.UsurerDeposit)*1000)
+			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "失礼します、船長。しかし、この金額は私の植民地銀行には大きすぎます。利息をお支払いすることができません。 それに、信頼できる護衛もおりませんので……ご理解いただければ幸いです。いずれにせよ、私がお引き受けできる最大の金額は\n "+FindRussianMoneyString(MakeMoneyShow(sti(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "失礼します、船長。しかし、この金額は私の植民地銀行には大きすぎます。利息をお支払いすることができません。 それに、信頼できる護衛もおりませんので……ご理解いただければ幸いです。いずれにせよ、私がお引き受けできる最大の金額は\n "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
 				Link.l1 = "残念だが、他の銀行家を探さなければならないな。";
 				Link.l1.go = "Exit";
 			}
@@ -1023,7 +1024,7 @@ void ProcessDialogEvent()
 		
 		case "Deposit_return":
 			Dialog.snd = "voice\USDI\USDI034";
-			dialog.text = "約束した利息と経過した時間を考慮すると、私はあなたに借りがある "+FindRussianMoneyString(sti(Pchar.Quest.Deposits.(sDepositType1).Result))+"…本当にその金を受け取ってよろしいのですか？";
+			dialog.text = "約束した利息と経過した時間を考慮すると、私はあなたに借りがある "+FindRussianMoneyString(int(Pchar.Quest.Deposits.(sDepositType1).Result))+"…本当にその金を受け取ってよろしいのですか？";
 			Link.l1 = "もちろんです。私にお渡しください。";			
 			Link.l1.go = "Deposit_return_1";		
 			Link.l2 = "私の金の一部を引き出したいのです。";			
@@ -1038,13 +1039,13 @@ void ProcessDialogEvent()
 			{
 				DeleteAttribute(Pchar,"Quest.Deposits." + (sDepositType1)+ ".Rem");
 			}
-			Pchar.Quest.Deposits.(sDepositType1).Interest = stf(Pchar.QuestTemp.Deposits.(sDepositType1).Interest);
-			Pchar.Quest.Deposits.(sDepositType1).Sum      = sti(Pchar.QuestTemp.Deposits.(sDepositType1).Sum);
+			Pchar.Quest.Deposits.(sDepositType1).Interest = float(Pchar.QuestTemp.Deposits.(sDepositType1).Interest);
+			Pchar.Quest.Deposits.(sDepositType1).Sum      = int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum);
 			Pchar.Quest.Deposits.(sDepositType1).city 	  = NPC_Area;	
 
-			AddMoneyToCharacter(Pchar, -(makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)));
+			AddMoneyToCharacter(Pchar, -(int(Pchar.Quest.Deposits.(sDepositType1).Sum)));
 			// общий долг
-			Pchar.Quest.Deposits.(sDepositType1).Sum = sti(Pchar.Quest.Deposits.(sDepositType1).Result) + sti(Pchar.Quest.Deposits.(sDepositType1).Sum);
+			Pchar.Quest.Deposits.(sDepositType1).Sum = int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.Quest.Deposits.(sDepositType1).Sum);
 			Pchar.Quest.Deposits.(sDepositType1) = true;
 			Pchar.Quest.Deposits.(sDepositType1).StartDay 	= getDataDay();
 			Pchar.Quest.Deposits.(sDepositType1).StartMonth = getDataMonth();
@@ -1062,7 +1063,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "result_part":
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			if (iTemp <= 0)
 			{
 				dialog.text = "「なんてくだらない冗談なんだ、旦那！」";			
@@ -1070,14 +1071,14 @@ void ProcessDialogEvent()
 				Link.l1.go = "Deposit_return_part";
 				break;
 			}
-			if (iTemp > sti(Pchar.Quest.Deposits.(sDepositType1).Result))
+			if (iTemp > int(Pchar.Quest.Deposits.(sDepositType1).Result))
 			{
 				dialog.text = "あなたの口座にはそれほど多くの金はありません。";			
 				link.l1 = "くそっ！俺のミスだ。金額を変更しよう。";	
 				Link.l1.go = "Deposit_return_part";
 				break;
 			}
-			if (iTemp == sti(Pchar.Quest.Deposits.(sDepositType1).Result))
+			if (iTemp == int(Pchar.Quest.Deposits.(sDepositType1).Result))
 			{
 				dialog.text = "全部ですか？わかりました、おっしゃる通りにいたします。こちらがお金です。";			
 				link.l1 = "ありがとうございます！";	
@@ -1091,12 +1092,12 @@ void ProcessDialogEvent()
 		
 		case "result_part_1":
 			DialogExit();
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			addMoneyToCharacter(Pchar, iTemp);
-			iRes = sti(Pchar.Quest.Deposits.(sDepositType1).Result)-iTemp; //остаток на счете
-			fPer = stf(Pchar.Quest.Deposits.(sDepositType1).Interest);
-			iDep = sti(Pchar.Quest.Deposits.(sDepositType1).Sum); //стартовая сумма
-			if (iRes <= sti(Pchar.Quest.Deposits.(sDepositType1).Sum)) // стало меньше начальной суммы
+			iRes = int(Pchar.Quest.Deposits.(sDepositType1).Result)-iTemp; //остаток на счете
+			fPer = float(Pchar.Quest.Deposits.(sDepositType1).Interest);
+			iDep = int(Pchar.Quest.Deposits.(sDepositType1).Sum); //стартовая сумма
+			if (iRes <= int(Pchar.Quest.Deposits.(sDepositType1).Sum)) // стало меньше начальной суммы
 			{
 				DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType1));
 				Pchar.Quest.Deposits.(sDepositType1).Interest = fPer;
@@ -1120,14 +1121,14 @@ void ProcessDialogEvent()
 		
 		case "Deposit_return_all":
 			DialogExit();
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			addMoneyToCharacter(Pchar, iTemp);
 			DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType1));
 		break;
 		//<-- забор денег по частям		
 		
 		case "Deposit_return_1":
-			addMoneyToCharacter(Pchar, makeint(Pchar.Quest.Deposits.(sDepositType1).Result));
+			addMoneyToCharacter(Pchar, int(Pchar.Quest.Deposits.(sDepositType1).Result));
 			Dialog.snd = "voice\USDI\USDI035";
 			dialog.text = "ああ……失うのは本当に辛いな。この金にはすっかり慣れてしまったよ。それでも、また来てくれ。";			
 			Link.l1 = "必要ならそうしよう。では、さらば。";			
@@ -1147,7 +1148,7 @@ void ProcessDialogEvent()
 			iTotalDublonQty = GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon");		
 			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = GetDepositRate("dublon");
 			Pchar.QuestTemp.Deposits.(sDepositType2).Sum = dialogEditStrings[3];
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp <= 0)
 			{
 				dialog.text = "冗談かい？";
@@ -1178,9 +1179,9 @@ void ProcessDialogEvent()
 			    Pchar.Quest.Deposits.(sDepositType2).Result = 0;//fix
 			}
 			// boal limit
-			if ( (sti(Pchar.Quest.Deposits.(sDepositType2).Result) + sti(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > sti(NPChar.UsurerDeposit)*10)
+			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "失礼いたします、船長。しかし、この金額は私の植民地銀行には大きすぎますので、 利息をお支払いすることができません。それに、信頼できる護衛もおりませんし……ご理解いただけると幸いです。いずれにせよ、私がお引き受けできる最大の金額は\n "+FindRussianDublonString(MakeMoneyShow(sti(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "失礼いたします、船長。しかし、この金額は私の植民地銀行には大きすぎますので、 利息をお支払いすることができません。それに、信頼できる護衛もおりませんし……ご理解いただけると幸いです。いずれにせよ、私がお引き受けできる最大の金額は\n "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
 				Link.l1 = "残念だが、別の銀行家を探さねばならんな。";
 				Link.l1.go = "Exit";
 			}
@@ -1194,7 +1195,7 @@ void ProcessDialogEvent()
 		
 		case "Deposit_return_dub":
 			Dialog.snd = "voice\USDI\USDI034";
-			dialog.text = "約束した利息と経過した時間を考慮すると、私はあなたに借りがある "+FindRussianDublonString(sti(Pchar.Quest.Deposits.(sDepositType2).Result))+"…本当にお金を受け取ってよろしいのですか？";
+			dialog.text = "約束した利息と経過した時間を考慮すると、私はあなたに借りがある "+FindRussianDublonString(int(Pchar.Quest.Deposits.(sDepositType2).Result))+"…本当にお金を受け取ってよろしいのですか？";
 			Link.l1 = "もちろんです。私にお渡しください。";			
 			Link.l1.go = "Deposit_return_dub_1";		
 			Link.l2 = "私の金の一部を引き出したい。";			
@@ -1209,24 +1210,24 @@ void ProcessDialogEvent()
 			{
 				DeleteAttribute(Pchar,"Quest.Deposits." + (sDepositType2)+ ".Rem");
 			}	
-			Pchar.Quest.Deposits.(sDepositType2).Interest = sti(Pchar.QuestTemp.Deposits.(sDepositType2).Interest);
-			Pchar.Quest.Deposits.(sDepositType2).Sum      = sti(Pchar.QuestTemp.Deposits.(sDepositType2).Sum);
+			Pchar.Quest.Deposits.(sDepositType2).Interest = int(Pchar.QuestTemp.Deposits.(sDepositType2).Interest);
+			Pchar.Quest.Deposits.(sDepositType2).Sum      = int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum);
 			Pchar.Quest.Deposits.(sDepositType2).city 	  = NPC_Area;	
 			
 			iTemp = GetCharacterItem(pchar,"gold_dublon");
-			if(iTemp > sti(Pchar.Quest.Deposits.(sDepositType2).Sum))
+			if(iTemp > int(Pchar.Quest.Deposits.(sDepositType2).Sum))
 			{
-				TakeNItems(pchar,"gold_dublon", -sti(Pchar.Quest.Deposits.(sDepositType2).Sum));
+				TakeNItems(pchar,"gold_dublon", -int(Pchar.Quest.Deposits.(sDepositType2).Sum));
 			}
 			else
 			{
-				TakeNItems(pchar,"gold_dublon", -iTemp));
-				iTemp = sti(Pchar.Quest.Deposits.(sDepositType2).Sum) - iTemp;
+				TakeNItems(pchar,"gold_dublon", -iTemp);
+				iTemp = int(Pchar.Quest.Deposits.(sDepositType2).Sum) - iTemp;
 				GetItemMyCabin("gold_dublon", iTemp);
 			}
 						
 			// общий долг
-			Pchar.Quest.Deposits.(sDepositType2).Sum = sti(Pchar.Quest.Deposits.(sDepositType2).Result) + sti(Pchar.Quest.Deposits.(sDepositType2).Sum);
+			Pchar.Quest.Deposits.(sDepositType2).Sum = int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.Quest.Deposits.(sDepositType2).Sum);
 			Pchar.Quest.Deposits.(sDepositType2) = true;
 			Pchar.Quest.Deposits.(sDepositType2).StartDay 	= getDataDay();
 			Pchar.Quest.Deposits.(sDepositType2).StartMonth = getDataMonth();
@@ -1244,7 +1245,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result_dub_part":
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			if (iTemp <= 0)
 			{
 				dialog.text = "なんと愚かな冗談だ、旦那！";			
@@ -1252,14 +1253,14 @@ void ProcessDialogEvent()
 				Link.l1.go = "Deposit_return_dub_part";
 				break;
 			}			
-			if (iTemp > sti(Pchar.Quest.Deposits.(sDepositType2).Result))
+			if (iTemp > int(Pchar.Quest.Deposits.(sDepositType2).Result))
 			{
 				dialog.text = "お客様の口座にはそれほど多くの金貨はございません、旦那。";			
 				link.l1 = "くそっ！俺のミスだ。金額を変えよう…";	
 				Link.l1.go = "Deposit_return_dub_part";
 				break;
 			}			
-			if (iTemp == sti(Pchar.Quest.Deposits.(sDepositType2).Result))
+			if (iTemp == int(Pchar.Quest.Deposits.(sDepositType2).Result))
 			{
 				dialog.text = "全部ですか？よろしい、仰せの通りに。こちらがお金です。";			
 				link.l1 = "ありがとう！";	
@@ -1273,12 +1274,12 @@ void ProcessDialogEvent()
 		
 		case "result_dub_part_1":
 			DialogExit();
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			TakeNItems(pchar,"gold_dublon", iTemp);
-			iRes = sti(Pchar.Quest.Deposits.(sDepositType2).Result)-iTemp; //остаток на счете
-			iPer = sti(Pchar.Quest.Deposits.(sDepositType2).Interest);
-			iDep = sti(Pchar.Quest.Deposits.(sDepositType2).Sum); //стартовая сумма
-			if (iRes <= sti(Pchar.Quest.Deposits.(sDepositType2).Sum)) // стало меньше начальной суммы
+			iRes = int(Pchar.Quest.Deposits.(sDepositType2).Result)-iTemp; //остаток на счете
+			iPer = int(Pchar.Quest.Deposits.(sDepositType2).Interest);
+			iDep = int(Pchar.Quest.Deposits.(sDepositType2).Sum); //стартовая сумма
+			if (iRes <= int(Pchar.Quest.Deposits.(sDepositType2).Sum)) // стало меньше начальной суммы
 			{
 				DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType2));
 				Pchar.Quest.Deposits.(sDepositType2).Interest = iPer;
@@ -1302,14 +1303,14 @@ void ProcessDialogEvent()
 		
 		case "Deposit_return_dub_all":
 			DialogExit();
-			iTemp = sti(dialogEditStrings[4]);
+			iTemp = int(dialogEditStrings[4]);
 			TakeNItems(pchar,"gold_dublon", iTemp);
 			DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType2));
 		break;
 		//<-- забор денег по частям		
 		
 		case "Deposit_return_dub_1":
-			TakeNItems(pchar,"gold_dublon", sti(Pchar.Quest.Deposits.(sDepositType2).Result));
+			TakeNItems(pchar,"gold_dublon", int(Pchar.Quest.Deposits.(sDepositType2).Result));
 			Dialog.snd = "voice\USDI\USDI035";
 			dialog.text = "ああ……失うのは本当に辛いな。この金にはすっかり慣れてしまったよ。それでも、またお越しください。";			
 			Link.l1 = "必要ならそうする。では、さらば。";			
@@ -1337,14 +1338,14 @@ void ProcessDialogEvent()
 		break;
 		// boal обратимость факапства -->
 		case "LoanRestore_1":
-            iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Loans.(NPC_Area).StartYear),makeint(Pchar.Quest.Loans.(NPC_Area).StartMonth),makeint(Pchar.Quest.Loans.(NPC_Area).StartDay), makefloat(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
-			Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makefloat(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);
+            iPastMonths = GetPastTime("Month", int(Pchar.Quest.Loans.(NPC_Area).StartYear),int(Pchar.Quest.Loans.(NPC_Area).StartMonth),int(Pchar.Quest.Loans.(NPC_Area).StartDay), float(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
+			Pchar.Quest.Loans.(NPC_Area).Result = int(Pchar.Quest.Loans.(NPC_Area).Sum) + ((int(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*float(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);
 			dialog.text = "「本当ですか？それで、ご心配とは何でしょうか？」";
-			Link.l1 = "本日は、私があなたに借りができました "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).Result))+"。そしてこの金をあなたにお渡しいたします。";
+			Link.l1 = "本日は、私があなたに借りができました "+FindRussianMoneyString(int(Pchar.Quest.Loans.(NPC_Area).Result))+"。そしてこの金をあなたにお渡しいたします。";
 			Link.l1.go = "DeadMotherFucker_1";
-            if (sti(Pchar.Money) >= 2*sti(Pchar.Quest.Loans.(NPC_Area).Result))
+            if (int(Pchar.Money) >= 2*int(Pchar.Quest.Loans.(NPC_Area).Result))
             {
-    			Link.l2 = "私はあなたとの良好な関係を再構築するために、私の借用証書をお渡しいたします。それは "+FindRussianMoneyString(2*sti(Pchar.Quest.Loans.(NPC_Area).Result))+".";
+    			Link.l2 = "私はあなたとの良好な関係を再構築するために、私の借用証書をお渡しいたします。それは "+FindRussianMoneyString(2*int(Pchar.Quest.Loans.(NPC_Area).Result))+".";
     			Link.l2.go = "LoanRestore_2";
 			}
 		break;
@@ -1354,10 +1355,10 @@ void ProcessDialogEvent()
 			Link.l1 = "ありがとう。もう二度とあなたを失望させません。";
 			Link.l1.go = "ExitDelLoan2";
 			NextDiag.TempNode = "First time";			
-			addMoneyToCharacter(Pchar, -2*sti(Pchar.Quest.Loans.(NPC_Area).Result));
+			addMoneyToCharacter(Pchar, -2*int(Pchar.Quest.Loans.(NPC_Area).Result));
 			DeleteAttribute(PChar, "quest.Loans_" + NPC_Area);
 			DeleteAttribute(PChar, "quest.Loans." + NPC_Area);
-			ChangeCharacterHunterScore(PChar, NationShortName(sti(NPChar.nation)) + "hunter", -30);
+			ChangeCharacterHunterScore(PChar, NationShortName(int(NPChar.nation)) + "hunter", -30);
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
 		break;
 
@@ -1377,7 +1378,7 @@ void ProcessDialogEvent()
         case "LoanGranted_exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 
-			AddMoneyToCharacter(Pchar, makeint(Pchar.Quest.Loans.(NPC_Area).Sum));
+			AddMoneyToCharacter(Pchar, int(Pchar.Quest.Loans.(NPC_Area).Sum));
 			Pchar.Quest.Loans.(NPC_Area) = true;
 			Pchar.Quest.Loans.(NPC_Area).StartDay = getDataDay();
 			Pchar.Quest.Loans.(NPC_Area).StartMonth = getDataMonth();
@@ -1385,7 +1386,7 @@ void ProcessDialogEvent()
 			Pchar.Quest.Loans.(NPC_Area).StartTime = getTime();
 
 			sTemp = "Loans_" + NPC_Area;			
-			SetTimerCondition(sTemp, 0, makeint(Pchar.Quest.Loans.(NPC_Area).Period), 0, false);
+			SetTimerCondition(sTemp, 0, int(Pchar.Quest.Loans.(NPC_Area).Period), 0, false);
 			pchar.quest.(sTemp).CityId = NPC_Area;
 			pchar.quest.(sTemp).win_condition = "LoansForAll";
 			
@@ -1394,11 +1395,9 @@ void ProcessDialogEvent()
 		break;
         
 		//работорговец
-		int iSlaveMoney;
-		int amount;
 		case "GiveTaskSlave":
 			pchar.questTemp.Slavetrader.iSlaveQuantity = 100;
-			pchar.questTemp.Slavetrader.iSlaveMoney = sti(pchar.questTemp.Slavetrader.iSlaveQuantity) * 250;
+			pchar.questTemp.Slavetrader.iSlaveMoney = int(pchar.questTemp.Slavetrader.iSlaveQuantity) * 250;
 			dialog.Text = "おいおい、勘弁してくれよ！俺たちは真面目な人間だろう？お前も俺も、 たった一枚のドゥブロン銀貨のために命を投げ出すような馬鹿どもよりずっと上等だぜ。 あいつらは二枚に増やそうとすらしねえんだからな\n俺は今、真剣な商売を持ちかけられる男を探している。勇敢で行動力があり、正直で時間も守るが……まあ、道徳的なジレンマにあまりこだわりすぎない、そんな男だ。そして俺は、お前こそがその男だと期待しているんだ。 ";
 			Link.l1 = "それは、あなたがどのような「取引」を私に提案されるかによります。";
 			Link.l1.go = "GiveTaskSlave_1";
@@ -1407,7 +1406,7 @@ void ProcessDialogEvent()
 		case "GiveTaskSlave_1":
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity(npchar.city);
-			dialog.Text = "よろしい、では聞いてくれ。今やカリブ海で最も儲かる商売は奴隷取引だ。私はプランターではないが、 信頼できる顧客がいるんだ\nだから、必要なのは次の数の奴隷だ―― "+pchar.questTemp.Slavetrader.iSlaveQuantity+" 首だ。1つにつき250ペソを支払う用意がある。信じてくれ、それは公正な値段だ。合計で君が得るのは "+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
+			dialog.Text = "よろしい、では聞いてくれ。今やカリブ海で最も儲かる商売は奴隷取引だ。私はプランターではないが、 信頼できる顧客がいるんだ\nだから、必要なのは次の数の奴隷だ―― "+pchar.questTemp.Slavetrader.iSlaveQuantity+" 首だ。1つにつき250ペソを支払う用意がある。信じてくれ、それは公正な値段だ。合計で君が得るのは "+FindRussianMoneyString(int(pchar.questTemp.Slavetrader.iSlaveMoney))+".";
 			Link.l1 = "いいえ、私は奴隷商人ではありません。良心を無視しない別の助手を探してください。";
 			Link.l1.go = "exit_slaves";
 			Link.l2 = "魅力的な提案だな。それをやってみたいぜ。奴隷はどれくらい早く必要なんだ？";
@@ -1430,13 +1429,13 @@ void ProcessDialogEvent()
 			AddQuestRecord("Slavetrader", "1");
 			AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 			AddQuestUserData("Slavetrader", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
-			AddQuestUserData("Slavetrader", "sQty", makeint(pchar.questTemp.Slavetrader.iSlaveQuantity));
-			AddQuestUserData("Slavetrader", "sSum", makeint(pchar.questTemp.Slavetrader.iSlaveMoney));
-			LAi_LocationDisableOfficersGen(&Locations[FindLocation(pchar.location)], true); // блокируем вход офицеров 2015
+			AddQuestUserData("Slavetrader", "sQty", int(pchar.questTemp.Slavetrader.iSlaveQuantity));
+			AddQuestUserData("Slavetrader", "sSum", int(pchar.questTemp.Slavetrader.iSlaveMoney));
+			LAi_LocationDisableOfficersGen(Locations[FindLocation(pchar.location)].id, true); // блокируем вход офицеров 2015
 		break;
 			
 		case "Checkslaves":
-			amount = GetSquadronGoods(Pchar, GOOD_SLAVES) - sti(pchar.questTemp.Slavetrader.iSlaveQuantity);
+			amount = GetSquadronGoods(Pchar, GOOD_SLAVES) - int(pchar.questTemp.Slavetrader.iSlaveQuantity);
 			dialog.Text = "「“黒い象牙”の積荷を手に入れることに成功しましたか？」";
             if (amount < 0)
 			{
@@ -1451,7 +1450,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Takeslaves":
-			amount = sti(pchar.questTemp.Slavetrader.iSlaveQuantity);
+			amount = int(pchar.questTemp.Slavetrader.iSlaveQuantity);
 			dialog.Text = "素晴らしい。私の部下が品物を引き取ります……税関や要塞の司令官のことはご心配なく。私はここで大規模な事業を運営しておりますので、問題は起こりませんし、 密輸の疑いをかけられることもありません。";
 			Link.l1 = "ここでかなり有利な立場を築いているようですね……それで、私の支払いはどうなりますか？";
             Link.l1.go = "Takeslaves_1";
@@ -1459,7 +1458,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Takeslaves_1":
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.Slavetrader.iSlaveMoney));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Slavetrader.iSlaveMoney));
 			dialog.Text = "ほら、これだ。私は無駄口は叩かんよ。私と取引を続ければ、船長、 すぐにガレオン船が必要なほどの金貨が手に入るだろう！";
 			Link.l1 = "それは素晴らしいな、はは……次はどうする？";
             Link.l1.go = "Takeslaves_2";
@@ -1476,7 +1475,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Takeslaves_3":
-			if (4-sti(RealShips[sti(pchar.ship.type)].Class) < 0)//проверка класса корабля
+			if (4-int(RealShips[int(pchar.ship.type)].Class) < 0)//проверка класса корабля
 			{
 				dialog.Text = "仕事はあるが、お前の船は弱すぎる。この任務に失敗してほしくないし、お前を死地に送りたくもない。 まだ時間はあるから、せめてバーケンティンやブリガンティン、ブリッグ、 フリュートのようなもっと大きな船を手に入れるんだ。\n時間を無駄にするなよ！";
 				Link.l1 = "なるほど、私が対処しましょう。それでは。";
@@ -1498,7 +1497,7 @@ void ProcessDialogEvent()
 		
 		case "Takeslaves_4":
 			Slavetrader_GetRandomShore();//выбор бухты
-			pchar.questTemp.Slavetrader.ShipName = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.questTemp.Slavetrader.ShipName = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.questTemp.Slavetrader.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			dialog.text = "実に素晴らしい。それでは聞いてくれ。この悪党の名は "+GetName(NAMETYPE_ORIG,pchar.questTemp.Slavetrader.UnknownPirateName,NAME_NOM)+"、アフリカから奴隷を連れてきて、停泊したのは "+XI_ConvertString(pchar.questTemp.Slavetrader.Island.Shore+"Gen")+"、それは「」という島にある "+XI_ConvertString(pchar.questTemp.Slavetrader.Island)+"。彼はそこで密輸業者を待っている。彼のガレオン船の名は『"+pchar.questTemp.Slavetrader.ShipName+"。どんな手を使っても、奴らの取引は潰さねばならん！";
 			link.l1 = "奴隷たちはどうするんだ？沈めてしまうのはもったいないじゃないか！";
@@ -1574,7 +1573,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Slavetrader.Nation = npchar.nation;
 			amount = 1600 - GetSquadronGoods(Pchar, GOOD_SLAVES);
 			sTemp = GetSquadronGoods(Pchar, GOOD_SLAVES);
-			iSlaveMoney = makeint(sTemp)*200;
+			iSlaveMoney = int(sTemp)*200;
 			if (amount < 0)
 			{
 				dialog.text = "やはりお前は俺の見立て通りだったな― "+GetSexPhrase(" あなたは粋なごろつきですね"," お前は勇ましい娘だ")+"！お前のような男が必要だ。任務は実に見事に果たしたな――なんと千五百人以上もの奴隷を連れてきたとは！\n残念だが、私が支払えるのは千六百人分だけだ。残りの分を払うだけの金貨はないので、自分で売るしかないぞ。 報酬は三十二万ペソだ。";
@@ -1593,12 +1592,12 @@ void ProcessDialogEvent()
 				dialog.text = "やはりお前は俺の思った通りだったな― "+GetSexPhrase(" あなたは粋なごろつきだ"," お前は勇ましい乙女だ")+"！お前のような男が必要だ。任務を見事に果たしてくれたな――私のもとに連れてきてくれた "+sTemp+" 奴隷たち。あなたの報酬は "+FindRussianMoneyString(iSlaveMoney)+".";
 				link.l1 = "ありがとうございます。お取引できて光栄でした。 "+npchar.name+"!";
 				link.l1.go = "Takeslaves_6_win";
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
+				AddMoneyToCharacter(pchar, int(iSlaveMoney));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "6");
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoney));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoney));
 				break;
 			}
 			if (amount >= 200 && amount < 600)
@@ -1606,12 +1605,12 @@ void ProcessDialogEvent()
 				dialog.text = "少なくとも、最も困難な状況を名誉を保ったまま生き延びましたね。賞金は私の期待より少ないですが、 それでも満足しております。あなたは持ち帰ってくれました "+sTemp+" 奴隷たち。あなたの報酬は "+FindRussianMoneyString(iSlaveMoney)+"";
 				link.l1 = "ありがとうございます。お取引できて光栄でした。 "+npchar.name+"!";
 				link.l1.go = "Takeslaves_6_win";
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
+				AddMoneyToCharacter(pchar, int(iSlaveMoney));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "6");
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoney));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoney));
 				break;
 			}
 			if (amount >= 600 && amount < 1100)
@@ -1619,12 +1618,12 @@ void ProcessDialogEvent()
 				dialog.text = "なるほど……それは理解できますが、私はもっと多くを期待していました。あなたが持ってきたのはたった "+sTemp+" 奴隷たちか。少なくとも、あなたは私の競争相手を排除してくれた、それだけでも価値がある。あなたへの報酬は  "+FindRussianMoneyString(iSlaveMoney)+".";
 				link.l1 = "感謝いたします。ご理解に感謝しております。 "+npchar.name+"!";
 				link.l1.go = "Takeslaves_6_win";
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
+				AddMoneyToCharacter(pchar, int(iSlaveMoney));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "6");
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoney));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoney));
 				break;
 			}
 			if (amount >= 1100 && amount < 1600)
@@ -1645,7 +1644,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "9");
 			CloseQuestHeader("Slavetrader");
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 30);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 30);
 			pchar.questTemp.Slavetrader = "End_quest";
 		break;
 			
@@ -1780,22 +1779,22 @@ void ProcessDialogEvent()
 			string sNum;
 			amount = 1100 - GetSquadronGoods(Pchar, GOOD_SLAVES);
 			sTemp = GetSquadronGoods(Pchar, GOOD_SLAVES);
-			iSlaveMoney = makeint(sTemp)*300;
+			iSlaveMoney = int(sTemp)*300;
 			sNum = GetSquadronGoods(Pchar, GOOD_SLAVES) - 1100;
-			iSlaveMoneyH = makeint(sNum)*100;
+			iSlaveMoneyH = int(sNum)*100;
 			if (amount < 0)
 			{
 				dialog.text = "はっ！お前は困難な任務をやり遂げただけでなく、俺が頼んだ以上の奴隷まで連れてきたじゃねえか― "+sTemp+" 奴隷。しかし "+sNum+" 奴隷たちはキュラソーから逃げ出していない。1人につき100ペソ支払おう。それで問題ないだろう。報酬は33万ペソであり\n "+FindRussianMoneyString(iSlaveMoneyH)+" 「過剰分についてだ、はは。」";
 				link.l1 = "ははっ！お前さんは絶対に騙されねえな。わかった、何でも言う通りにするぜ。 "+npchar.name+"!";
 				link.l1.go = "Escape_slaves_win_1";
 				AddMoneyToCharacter(pchar, 330000);
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoneyH));
+				AddMoneyToCharacter(pchar, int(iSlaveMoneyH));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "22_5");
 				AddQuestUserData("Slavetrader", "sSex", GetSexPhrase("",""));
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoneyH));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoneyH));
 				break;
 			}
 			if (amount < 101 && amount >= 0)
@@ -1803,12 +1802,12 @@ void ProcessDialogEvent()
 				dialog.text = "あなたはあの困難な任務を見事に成し遂げ、私のもとに持ち帰ってくれた "+sTemp+" 奴隷たち。あなたの報酬は "+FindRussianMoneyString(iSlaveMoney)+".";
 				link.l1 = "感謝いたします。お取引できて光栄です、 "+npchar.name+"!";
 				link.l1.go = "Escape_slaves_win_1";
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
+				AddMoneyToCharacter(pchar, int(iSlaveMoney));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "22_6");
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoney));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoney));
 				break;
 			}
 			if (amount >= 100 && amount < 600)
@@ -1816,12 +1815,12 @@ void ProcessDialogEvent()
 				dialog.text = "あの困難な任務を成し遂げましたね。報酬は思ったほど豪華ではありませんが、それでも満足しています。さて、 それをここに持ってきたのですね "+sTemp+" 奴隷たち。あなたの報酬は "+FindRussianMoneyString(iSlaveMoney)+".";
 				link.l1 = "ありがとうございます。お取引できて光栄でした。 "+npchar.name+"!";
 				link.l1.go = "Escape_slaves_win_1";
-				AddMoneyToCharacter(pchar, makeint(iSlaveMoney));
+				AddMoneyToCharacter(pchar, int(iSlaveMoney));
 				RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 				AddQuestRecord("Slavetrader", "22_6");
 				AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 				AddQuestUserData("Slavetrader", "sQty", sTemp);
-				AddQuestUserData("Slavetrader", "sMoney", makeint(iSlaveMoney));
+				AddQuestUserData("Slavetrader", "sMoney", int(iSlaveMoney));
 				break;
 			}
 			if (amount >= 600 && amount < 1100)
@@ -1853,9 +1852,9 @@ void ProcessDialogEvent()
 		case "Slaveshore_1":
 			pchar.questTemp.Slavetrader.Island = Islands[GetCharacterCurrentIsland(pchar)].id;
 			pchar.questTemp.Slavetrader.Island.Shore = GetIslandRandomShoreId(pchar.questTemp.Slavetrader.Island);
-			pchar.questTemp.Slavetrader.ShipName = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.questTemp.Slavetrader.ShipName = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.questTemp.Slavetrader.Nation = NPChar.nation;
-			dialog.text = "今回は非常に簡単です。本日、ピナス船が "+pchar.questTemp.Slavetrader.ShipName+"「の旗の下で」 "+NationNameGenitive(sti(npchar.nation))+" は投錨した "+XI_ConvertString(pchar.questTemp.Slavetrader.Island.Shore+"Gen")+" 湾だ。現地の密輸業者の手を借りて大量の「黒檀」を積み込んでいた。二千本、間違いない\n乗組員に兵士はいないし、船長は商人だ。全体的にまったく脅威ではない。船を拿捕して積荷を持ってこい。 いつも通り一本につき二百ペソだ。";
+			dialog.text = "今回は非常に簡単です。本日、ピナス船が "+pchar.questTemp.Slavetrader.ShipName+"「の旗の下で」 "+NationNameGenitive(int(npchar.nation))+" は投錨した "+XI_ConvertString(pchar.questTemp.Slavetrader.Island.Shore+"Gen")+" 湾だ。現地の密輸業者の手を借りて大量の「黒檀」を積み込んでいた。二千本、間違いない\n乗組員に兵士はいないし、船長は商人だ。全体的にまったく脅威ではない。船を拿捕して積荷を持ってこい。 いつも通り一本につき二百ペソだ。";
 			link.l1 = "ふむ……今回は前回の仕事とは違うな。俺に自分の国の船を襲えって言うのか！";
 			link.l1.go = "Slaveshore_2";
 		break;
@@ -1864,7 +1863,7 @@ void ProcessDialogEvent()
 			dialog.text = "「わからないな、」 "+pchar.name+"船の旗なんて関係あるのか？本当にそんなこと気にするのか？";
 			link.l1 = "俺が気にするか？いや、そんなことどうでもいいさ。金に国籍なんてねえからな。ただ、ちょっと意外だっただけだ……";
 			link.l1.go = "Slaveshore_3_yes";
-			link.l2 = "私は気にしています。持ちたくはありません "+NationNameAblative(sti(npchar.nation))+" 私の敵の中で。";
+			link.l2 = "私は気にしています。持ちたくはありません "+NationNameAblative(int(npchar.nation))+" 私の敵の中で。";
 			link.l2.go = "Slaveshore_3_no";
 		break;
 			
@@ -1913,7 +1912,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Slaveshore_7": //выбор острова, куда бригантина пойдёт
-			switch (sti(NPChar.nation))
+			switch (int(NPChar.nation))
             {
                 case HOLLAND :
 					pchar.questTemp.Slavetraderbrig.Island = "Curacao";
@@ -1928,7 +1927,7 @@ void ProcessDialogEvent()
 					pchar.questTemp.Slavetraderbrig.Island = "Jamaica";     
                 break;
 			}
-			pchar.questTemp.Slavetraderbrig.ShipName = GenerateRandomNameToShip(sti(NPChar.nation));//имя бригантины
+			pchar.questTemp.Slavetraderbrig.ShipName = GenerateRandomNameToShip(int(NPChar.nation));//имя бригантины
 			pchar.questTemp.Slavetrader.Nation = NPChar.nation;
 			dialog.text = "よく聞いてくれ。まだ望みはある。荷物はブリガンティン『"+pchar.questTemp.Slavetraderbrig.ShipName+"。それだけは確かです。書類は総督官邸に届けられています\n "+XI_ConvertString(pchar.questTemp.Slavetraderbrig.Island)+"。その船を拿捕して、乗り込んで、証拠となる品を見つけなければならん。";
 			link.l1 = "ここではあまり選択肢がないな。俺のためにも、お前自身のためにも祈ってくれ、 そして俺がそれを捕まえられることを願ってくれ。\n戻ったらまたこの件について話そう。俺が簡単に諦めると思うなよ。";
@@ -2076,7 +2075,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Slavetrader.Nation = npchar.nation;
 			amount = 3000 - GetSquadronGoods(Pchar, GOOD_SLAVES);
 			sTemp = GetSquadronGoods(Pchar, GOOD_SLAVES);
-			iSlaveMoney = makeint(sTemp)*200;
+			iSlaveMoney = int(sTemp)*200;
 			if(amount < 1) 
 			{
 				dialog.text = "ふう、今はもう気分が良くなった……あなたを信じて正解だった……この皮肉はどこから来たんだ？何か問題でも？";
@@ -2085,7 +2084,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-			dialog.text = "ガレオン船は見つけたのか？奴隷たちはどうした？三千人いるはずだ、間違いなく！くそっ、 みんな裏切り者でネズミばかりだ！お前だけは信じていたのに……お前は俺の最後の希望だったんだ\nいいだろう……誓ってやる、残った金をすべて使ってでもお前を滅ぼし、殺してやる！全艦隊を "+NationNameGenitive(sti(npchar.nation))+" お前を追い回すことになるぞ！ここから出て行け！";
+			dialog.text = "ガレオン船は見つけたのか？奴隷たちはどうした？三千人いるはずだ、間違いなく！くそっ、 みんな裏切り者でネズミばかりだ！お前だけは信じていたのに……お前は俺の最後の希望だったんだ\nいいだろう……誓ってやる、残った金をすべて使ってでもお前を滅ぼし、殺してやる！全艦隊を "+NationNameGenitive(int(npchar.nation))+" お前を追い回すことになるぞ！ここから出て行け！";
 				link.l1 = "「さて……」";
 				link.l1.go = "Wingalleon_goaway";
 			}
@@ -2094,7 +2093,7 @@ void ProcessDialogEvent()
 		case "Wingalleon_goaway":
 			AddQuestRecord("Slavetrader", "9");
 			CloseQuestHeader("Slavetrader");
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 70);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 70);
 			pchar.questTemp.Slavetrader = "End_quest";
 			DialogExit();
 		break;
@@ -2108,12 +2107,12 @@ void ProcessDialogEvent()
 		break;
 			
 		case "Wingalleon_no":
-			dialog.text = "そうか、やっとその気になったか！どうやら油断している "+npchar.name+" ただの搾取される牛に過ぎなかったのか、少しでも遅れればお前は俺を裏切り、勝手に動き出す。俺がお前に仕事を与え、 獲物の情報を教えたことを忘れたようだな\nよかろう……誓ってやる、残った金をすべて使ってでもお前を滅ぼし、殺してやる！艦隊全体が "+NationNameGenitive(sti(npchar.nation))+" 俺はお前を狩るつもりだぜ！俺の前から消えろ！";
+			dialog.text = "そうか、やっとその気になったか！どうやら油断している "+npchar.name+" ただの搾取される牛に過ぎなかったのか、少しでも遅れればお前は俺を裏切り、勝手に動き出す。俺がお前に仕事を与え、 獲物の情報を教えたことを忘れたようだな\nよかろう……誓ってやる、残った金をすべて使ってでもお前を滅ぼし、殺してやる！艦隊全体が "+NationNameGenitive(int(npchar.nation))+" 俺はお前を狩るつもりだぜ！俺の前から消えろ！";
 			link.l1 = "空っぽの金庫で俺を脅そうなんて、ふざけるなよ。お前の艦隊全部沈めて、カニの餌にしてやるぜ。";
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "9");
 			CloseQuestHeader("Slavetrader");
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 70);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 70);
 			pchar.questTemp.Slavetrader = "End_quest";
 		break;
 			
@@ -2132,19 +2131,19 @@ void ProcessDialogEvent()
 			AddQuestRecord("Slavetrader", "20");
 			AddQuestUserData("Slavetrader", "sName", GetFullName(npchar));
 			sTemp = GetSquadronGoods(Pchar, GOOD_SLAVES);
-			pchar.questTemp.Slavetrader.iSlaveMoney = makeint(sTemp)*200-120000;
+			pchar.questTemp.Slavetrader.iSlaveMoney = int(sTemp)*200-120000;
 			RemoveCharacterGoods(Pchar, GOOD_SLAVES, sTemp);
 			DialogExit();
 		break;
 	
 		case "FindRat":
-			dialog.text = "「約束した通り、」 "+pchar.name+"、お支払いの準備ができております。奴隷は売却され、依頼人も満足、我々も同様です。前金を差し引いた後、 あなたの報酬は"+FindRussianMoneyString(sti(pchar.questTemp.Slavetrader.iSlaveMoney))+"。どうぞ、お金をお受け取りください。";
+			dialog.text = "「約束した通り、」 "+pchar.name+"、お支払いの準備ができております。奴隷は売却され、依頼人も満足、我々も同様です。前金を差し引いた後、 あなたの報酬は"+FindRussianMoneyString(int(pchar.questTemp.Slavetrader.iSlaveMoney))+"。どうぞ、お金をお受け取りください。";
 			link.l1 = "「素晴らしい」 "+npchar.name+"……約束を守る男と取引できるのは気持ちがいいものです……";
 			link.l1.go = "FindRat_1";
 		break;
 			
 		case "FindRat_1":
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.Slavetrader.iSlaveMoney));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Slavetrader.iSlaveMoney));
 			dialog.text = "「私の言葉はいつでも信じていただけます」 "+pchar.name+"。私はあなたに疑われるようなことは一度もしていません。パートナー同士、正直であることが商売の要です\nさて、今度はインディアンの遺物について話しましょう。私のような収集家を待たせず、持っている品を見せてください。 ";
 			link.l1 = "ふむ……ご覧ください。";
 			link.l1.go = "FindRat_2";
@@ -2440,7 +2439,7 @@ void ProcessDialogEvent()
 		
 		case "Havana_Fort_yes_1":
 			sTemp = GetSquadronGoods(Pchar, GOOD_SLAVES);
-			iSlaveMoney = makeint(sTemp)*200;
+			iSlaveMoney = int(sTemp)*200;
 			dialog.text = "かしこまりました。私は奴隷を顧客に売りますので、彼が支払い、あなたは報酬を受け取ることになります。 前回と同じ流れです。さて、今回はあなたがここに連れてきたのは\n "+sTemp+" 奴隷。その金額は "+FindRussianMoneyString(iSlaveMoney)+"。1週間後に支払いを受け取りに来てください。";
 			link.l1 = "「結構です」 "+npchar.name+"、取引成立だ。一週間後にここへ来る。だが、くれぐれも用心してくれ……";
 			link.l1.go = "Havana_Fort_yes_2";
@@ -2521,24 +2520,24 @@ void ProcessDialogEvent()
 			pchar.questTemp.Slavetrader = "wait1";
 			pchar.questTemp.SanBoxTarget.Slavetrader = true;
 			ChangeCharacterComplexReputation(pchar, "fame", 25);
-			LAi_LocationDisableOfficersGen(&Locations[FindLocation(pchar.location)], false); // разблокируем вход офицеров 2015
+			LAi_LocationDisableOfficersGen(Locations[FindLocation(pchar.location)].id, false); // разблокируем вход офицеров 2015
 		break;
 	//<--работорговец	
 
 	//--> семейная реликвия
 		case "Noblelombard":
-			dialog.text = "ほう、そうか？どうやら本人は俺と話したくないようだな……まあいい、お前と話を進めようじゃねえか。 "+pchar.GenQuest.Noblelombard.Name+" 私に借りがある "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+": "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Money))+" そして私の利息も―― "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Percent))+" 三か月間だ。もし明日までに金を見せなければ、あいつの遺品は売り払うつもりだ。 その品があいつにとってどんな価値があろうと、私には関係ない。商売は商売だからな。";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.Noblelombard.Summ))
+			dialog.text = "ほう、そうか？どうやら本人は俺と話したくないようだな……まあいい、お前と話を進めようじゃねえか。 "+pchar.GenQuest.Noblelombard.Name+" 私に借りがある "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Summ))+": "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Money))+" そして私の利息も―― "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Percent))+" 三か月間だ。もし明日までに金を見せなければ、あいつの遺品は売り払うつもりだ。 その品があいつにとってどんな価値があろうと、私には関係ない。商売は商売だからな。";
+			if(int(pchar.money) >= int(pchar.GenQuest.Noblelombard.Summ))
 			{
-				link.l1 = "素晴らしい！それなら、私はすぐに全額と利子をまとめてお支払いしましょう―― "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Summ))+"。彼自身で遺物を受け取るでしょう。これがあなたのお金です。";
+				link.l1 = "素晴らしい！それなら、私はすぐに全額と利子をまとめてお支払いしましょう―― "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Summ))+"。彼自身で遺物を受け取るでしょう。これがあなたのお金です。";
 				link.l1.go = "Noblelombard_1";
 			}
-			if(sti(pchar.money) >= sti(pchar.GenQuest.Noblelombard.Percent)*2)
+			if(int(pchar.money) >= int(pchar.GenQuest.Noblelombard.Percent)*2)
 			{
-				link.l2 = "私の依頼人は三ヶ月後に金を用意します。取引をしましょう、過去三ヶ月分とこれから三ヶ月分の利息をお支払いします。 "+FindRussianMoneyString(sti(pchar.GenQuest.Noblelombard.Percent)*2)+"。そして借金そのものは後ほどお支払いします。";
+				link.l2 = "私の依頼人は三ヶ月後に金を用意します。取引をしましょう、過去三ヶ月分とこれから三ヶ月分の利息をお支払いします。 "+FindRussianMoneyString(int(pchar.GenQuest.Noblelombard.Percent)*2)+"。そして借金そのものは後ほどお支払いします。";
 				link.l2.go = "Noblelombard_2";
 			}
-			if(sti(pchar.money) >= sti(pchar.GenQuest.Noblelombard.Percent))
+			if(int(pchar.money) >= int(pchar.GenQuest.Noblelombard.Percent))
 			{
 				link.l3 = "私の顧客は三か月後に資金を用意できます。\nここ三か月分の利息をお支払いしますので、顧客が十分なお金を用意できるまでお待ちいただけませんか？";
 				link.l3.go = "Noblelombard_3";
@@ -2552,21 +2551,21 @@ void ProcessDialogEvent()
 			dialog.text = "素晴らしい！すべてうまくいった、金も手に入れたし "+pchar.GenQuest.Noblelombard.Name+" 彼は遺物を取り戻すことになる。";
 			link.l1 = "お取引できて光栄です "+npchar.name+"！それでは、しばしのお別れです。";
 			link.l1.go = "exit";
-			pchar.GenQuest.Noblelombard.Regard = sti(pchar.GenQuest.Noblelombard.Summ)*2;
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Noblelombard.Summ));
+			pchar.GenQuest.Noblelombard.Regard = int(pchar.GenQuest.Noblelombard.Summ)*2;
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Noblelombard.Summ));
 			pchar.GenQuest.Noblelombard = "full";
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
 	
 		break;
 		
 		case "Noblelombard_2":
-			if(sti(pchar.GenQuest.Noblelombard.Chance) < 7)
+			if(int(pchar.GenQuest.Noblelombard.Chance) < 7)
 			{
 				dialog.text = "ふむ……よかろう。これで構わん。だが、もし "+pchar.GenQuest.Noblelombard.Name+" 三か月以内に金を用意できなければ、これ以上の猶予は認めません。そのことを必ず彼に伝えてください。";
 				link.l1 = "承知しました！取引が成立して嬉しいです。それでは、さようなら。";
 				link.l1.go = "exit";
-				pchar.GenQuest.Noblelombard.Regard = sti(pchar.GenQuest.Noblelombard.Percent)*4;
-				AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Noblelombard.Percent)*2);
+				pchar.GenQuest.Noblelombard.Regard = int(pchar.GenQuest.Noblelombard.Percent)*4;
+				AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Noblelombard.Percent)*2);
 				pchar.GenQuest.Noblelombard = "maxpercent";
 				AddCharacterExpToSkill(pchar, "Leadership", 50);
 				AddCharacterExpToSkill(pchar, "Fortune", 70);
@@ -2583,13 +2582,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Noblelombard_3":
-			if(sti(pchar.GenQuest.Noblelombard.Chance) < 3)
+			if(int(pchar.GenQuest.Noblelombard.Chance) < 3)
 			{
 				dialog.text = "ふむ……よろしいでしょう。あなたの依頼人への敬意からのみ受け入れます。しかし、もし "+pchar.GenQuest.Noblelombard.Name+" 三か月以内に金を用意できなければ、これ以上の猶予は与えません。そのことを必ず彼に伝えてください。";
 				link.l1 = "もちろんです！取引が成立して嬉しいですよ。それでは、さようなら。";
 				link.l1.go = "exit";
-				pchar.GenQuest.Noblelombard.Regard = sti(pchar.GenQuest.Noblelombard.Percent)*2;
-				AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Noblelombard.Percent));
+				pchar.GenQuest.Noblelombard.Regard = int(pchar.GenQuest.Noblelombard.Percent)*2;
+				AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Noblelombard.Percent));
 				pchar.GenQuest.Noblelombard = "minpercent";
 				AddCharacterExpToSkill(pchar, "Leadership", 50);
 				AddCharacterExpToSkill(pchar, "Fortune", 150);
@@ -2610,7 +2609,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Noblelombard_5":
-			if(sti(pchar.GenQuest.Noblelombard.Chance) == 9)
+			if(int(pchar.GenQuest.Noblelombard.Chance) == 9)
 			{
 				dialog.text = "それは驚きだな！ "+pchar.GenQuest.Noblelombard.Name+" あなた名義の預金は開設しておりません。彼は我々の植民地にもいません――ヨーロッパへ航海して行きました。申し上げますが、あんな不誠実な男は見たことがありません。 私を騙そうとしましたが失敗しました――私にもいくつか手がありますので……";
 				link.l1 = "この野郎！あいつは俺に約束したんだ……";
@@ -2714,7 +2713,7 @@ bool CheckUseDublons(ref NPChar)
 	bool bOk1 = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea); 
 	bool bOk2 = (GetCharacterItem(pchar,"gold_dublon") > 10) || (CheckItemMyCabin("gold_dublon") > 10);
 	
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && bOk1 && bOk2) return true;
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && bOk1 && bOk2) return true;
 
 	return false;
 }
@@ -2760,7 +2759,7 @@ void SlavetraderGalleonInWorld()
 	Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, sld.id);
 	Group_SetGroupCommander(sGroup, sld.id);
-	SetRandGeraldSail(sld, sti(sld.Nation)); 
+	SetRandGeraldSail(sld, int(sld.Nation));
 	pchar.quest.SlaveHalleon_AfterBattle.win_condition.l1 = "Group_Death";
 	pchar.quest.SlaveHalleon_AfterBattle.win_condition.l1.group = "SlaveGalleon";
 	pchar.quest.SlaveHalleon_AfterBattle.function = "Slavetrader_SlaveHalleon_AfterBattle";

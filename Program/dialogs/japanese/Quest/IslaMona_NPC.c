@@ -75,13 +75,13 @@ void ProcessDialogEvent()
 			nationManName[2] = "If you are seeing this, it's a bug";
 			nationManName[3] = "Spaniard";
 			dialog.text = "すみません、旦那、お名前を聞きそびれてしまいました。あなたはイギリス人ですか？";
-			link.l1 = nationManName[sti(pchar.BaseNation)]+"。そんなに重要か？今は俺の名前なんて気にするな。";
+			link.l1 = nationManName[int(pchar.BaseNation)]+"。そんなに重要か？今は俺の名前なんて気にするな。";
 			link.l1.go = "Himenes_6";
 		break;
 		
 		case "Himenes_6":
 			dialog.text = "確かに、カトリックのスペイン教会から異端者と認定された俺たちは、 聖なる異端審問の正義の法廷に出頭しなきゃならねえ。だからこそ、あんたの国籍が俺たちにはとても重要なんだ。 スペイン人の船長だったら、俺たちを地元の役人に引き渡さなきゃならねえからな。そんな目にもう一度遭ったら、 生き延びられねえぜ！ハハッ！";
-			if (sti(pchar.BaseNation) == SPAIN) dialog.text = "ハハハハハハ！これが俺たちの運命だぜ。まあ、どうせ失うものなんて何もねえしな。 "+dialog.text;
+			if (int(pchar.BaseNation) == SPAIN) dialog.text = "ハハハハハハ！これが俺たちの運命だぜ。まあ、どうせ失うものなんて何もねえしな。 "+dialog.text;
 			link.l1 = "まあ、お前にとって幸運だったな、異端審問のことなんざ俺には関係ねえ。\nそれで？お前らは異教徒か？";
 			link.l1.go = "Himenes_7";
 		break;
@@ -591,7 +591,7 @@ void ProcessDialogEvent()
 				link.l4 = "ロドリゴ、最も貴重な専門家と設備は工場に届けられた。作業を始めていいぞ。";
 				link.l4.go = "Himenes_plantation_7";
 			}
-			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && sti(pchar.questTemp.IslaMona.Factory.Part) > 0)
+			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && int(pchar.questTemp.IslaMona.Factory.Part) > 0)
 			{
 				link.l4 = "ロドリゴ、俺は鉄木を取りに来たぞ。";
 				link.l4.go = "Himenes_bacaut";
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_harbour_2":
 			dialog.text = "ようこそ、船長。新しい港の居心地はどうだ？";
-			if (stf(environment.time) > 22.0 || stf(environment.time) < 5.0)
+			if (float(environment.time) > 22.0 || float(environment.time) < 5.0)
 			{
 				link.l1 = "暗いじゃねえか、ロドリゴ！お前の自慢の桟橋にぶつかりそうだったぞ！まあ、 せめて明かりをつけてくれたのは褒めてやるよ！";
 				link.l1.go = "Himenes_harbour_3";
@@ -843,8 +843,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_bacaut":
-			dialog.text = "もちろんだ、船長、持っていきな。次の出荷用に用意してあるバッチは以下の通りだ：\n "+sti(pchar.questTemp.IslaMona.Factory.Part)+"、それが "+sti(pchar.questTemp.IslaMona.Factory.Goods)+" 丸太だ。だから、お前は俺たちに借りがあるんだ "+sti(pchar.questTemp.IslaMona.Factory.Dublon)+" ドゥブロン金貨 "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" ラム酒の瓶、それに "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" ワインの瓶、全部そろってるか？";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= sti(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= sti(pchar.questTemp.IslaMona.Factory.Bottle))
+			dialog.text = "もちろんだ、船長、持っていきな。次の出荷用に用意してあるバッチは以下の通りだ：\n "+int(pchar.questTemp.IslaMona.Factory.Part)+"、それが "+int(pchar.questTemp.IslaMona.Factory.Goods)+" 丸太だ。だから、お前は俺たちに借りがあるんだ "+int(pchar.questTemp.IslaMona.Factory.Dublon)+" ドゥブロン金貨 "+int(pchar.questTemp.IslaMona.Factory.Bottle)+" ラム酒の瓶、それに "+int(pchar.questTemp.IslaMona.Factory.Bottle)+" ワインの瓶、全部そろってるか？";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= int(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= int(pchar.questTemp.IslaMona.Factory.Bottle))
 			{
 				link.l1 = "もちろんだ。これが報酬だ。";
 				link.l1.go = "Himenes_bacaut_1";
@@ -991,15 +991,15 @@ void ProcessDialogEvent()
 			string sAdd = "";
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Candle"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Amber"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget"))
 			{
-				sAdd += " "+ sti(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
+				sAdd += " "+ int(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber"))
 			{
@@ -1041,7 +1041,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_14":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "that we won't have to sit here for weeks waiting for events to unfold.";
 			else sTemp = "that not everyone will have to participate in the battle.";
 			dialog.text = "ハハハハハ……はあ。俺もそう思ったぜ、船長！ロドガーの言う通り、あんたがここにいるってことはすでに―― "+sTemp+"";
@@ -1066,7 +1066,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_17":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Defend.Force")) // решил проблему самостоятельно
 			{
 				dialog.text = "三人だけがこちらまでたどり着き、生き残ったのは一人だけだった。その一人が船長本人だ！ どうやらかなり高位の海軍士官らしい。しかし、まだ助けにならない――少なくともあと二、三日は寝たきりだろう。\nところで船長、俺たちは銃声を聞いたし、あんたの様子を見る限り、あんたも聞いたんだろう？";
@@ -1499,7 +1499,7 @@ void ProcessDialogEvent()
 		
 		case "FraOfficer_3":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "There are probably many more bandits than us - we saw tents on the shore. And besides tents, they also have a wall, gates, cannon!";
 			else sTemp = "There are probably not so many bandits, otherwise they would have kicked us out of here already, but they still have a wall, gates, cannon and plenty of time!";
 			dialog.text = "何が俺たちを止めたって！？俺たちにはフジリア兵が十二人、水夫が七人しかいねえ。全員くたびれてボロボロだ。 マスケット銃も五丁しか救えなかったし、せいぜい一発分の弾しかねえんだぞ！ "+sTemp+"";
@@ -1627,7 +1627,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_2":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1646,7 +1646,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_3":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 70, SKILL_LEADERSHIP);
@@ -1665,7 +1665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_4":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1927,7 +1927,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_man_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = RandPhraseSimple(RandPhraseSimple("無礼だとは思わないでくれ、旦那、だがここで暮らすのは無理だ。","異端審問官の牢屋に座っているよりは、何だってマシだ……"),RandPhraseSimple("助けてくれてありがとうございます、船長。","「こいつら……海賊はお前の仲間か？」"));
@@ -1984,7 +1984,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_woman_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = LinkRandPhrase("「ああ……こんにちは。」","旦那、あの……武器を持った荒くれ者たちは誰ですか？","助けてくれてありがとうございます、船長。");

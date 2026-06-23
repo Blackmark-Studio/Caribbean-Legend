@@ -49,7 +49,7 @@ void InitBattleLandInterface()
 
 void BLI_EnableShow()
 {
-	SetLandInterfaceShow( sti(InterfaceStates.BattleShow.Command) );
+	SetLandInterfaceShow( int(InterfaceStates.BattleShow.Command) );
 }
 
 void BLI_DisableShow()
@@ -259,11 +259,11 @@ void BLI_ExecuteCommand()
 		}
 	break;
 	case "BI_DialogStart":
-		tmpi = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter");
+		tmpi = int(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter"));
 		if(tmpi>=0)	Event("dlgReady","l",tmpi);
 	break;
 	case "BI_ItemsChange":
-		tmpi = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter");
+		tmpi = int(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter"));
         rChar = GetCharacter(tmpi);
 		if (tmpi>=0 && isOfficerInShip(rChar, true)) // fix вот дыра для обмена с матросом
         {
@@ -271,7 +271,7 @@ void BLI_ExecuteCommand()
         }
 		else if (tmpi>=0 && CheckAttribute(rChar, "IsCompanionClone")) // 1.2.4
         {
-            tmpi = rChar.RealCompanionIdx;
+            tmpi = int(rChar.RealCompanionIdx);
             LaunchCharacterItemChange(GetCharacter(tmpi));
         }
         else
@@ -378,7 +378,7 @@ void EndBattleLandInterface()
 
 void BLI_SetObjectData()
 {
-    float fHtRatio = stf(Render.screen_y) / iHudScale;
+    float fHtRatio = float(Render.screen_y) / iHudScale;
     int fTmp, fTmp2;
 	DeleteAttribute(&objLandInterface,"");
 
@@ -588,17 +588,17 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.backmccolor			= argb(255,128,128,128);
 	objLandInterface.ManSign.backmcuv				= "0.0,0.0,1.0,1.0";
 	objLandInterface.ManSign.backmcoffset			= "0,0"; //"0.0,0.0";
-	fTmp = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
     objLandInterface.ManSign.backmciconsize			= fTmp + "," + fTmp;
 	
 	objLandInterface.ManSign.manstatebacktexturename	= "interfaces\le\battle_interface\CharStateBackIcon.tga.tx";
 	objLandInterface.ManSign.manstatebackcolor		= argb(255,128,128,128);
 	objLandInterface.ManSign.manstatebackuv			= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(180.0 * fHtRatio);
-    fTmp2 = makeint(0.0 * fHtRatio);	
+	fTmp = int(180.0 * fHtRatio);
+    fTmp2 = int(0.0 * fHtRatio);
 	objLandInterface.ManSign.manstatebackoffset		= fTmp + "," + fTmp2;
-	fTmp = makeint(256.0 * fHtRatio);
-	fTmp2 = makeint(64.0 * fHtRatio);
+	fTmp = int(256.0 * fHtRatio);
+	fTmp2 = int(64.0 * fHtRatio);
     objLandInterface.ManSign.manstatebackiconsize	= fTmp + "," + fTmp2;
 	//<--
 	
@@ -608,16 +608,16 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.manmchpuv				= "0.1953,0.2187,0.9765,0.4687";
 	objLandInterface.ManSign.manmcenegryuv			= "0.1953,0.5937,0.9765,0.7812";
 	
-	fTmp = makeint(202.0 * fHtRatio);
-    fTmp2 = makeint(-10.0 * fHtRatio);
+	fTmp = int(202.0 * fHtRatio);
+    fTmp2 = int(-10.0 * fHtRatio);
     objLandInterface.ManSign.manmchpoffset			= fTmp + "," + fTmp2;
-	fTmp2 = makeint(12.0 * fHtRatio);
+	fTmp2 = int(12.0 * fHtRatio);
     objLandInterface.ManSign.manmcenegryoffset		= fTmp + "," + fTmp2;
 
-	fTmp = makeint(200.0 * fHtRatio);
-    fTmp2 = makeint(16.0 * fHtRatio);
+	fTmp = int(200.0 * fHtRatio);
+    fTmp2 = int(16.0 * fHtRatio);
     objLandInterface.ManSign.manvchpiconsize		= fTmp + "," + fTmp2;
-	fTmp2 = makeint(12.0 * fHtRatio);
+	fTmp2 = int(12.0 * fHtRatio);
     objLandInterface.ManSign.manmcenergyiconsize	= fTmp + "," + fTmp2;
 	//<--
 	
@@ -626,7 +626,7 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.backcolor				= argb(255,128,128,128);
 	objLandInterface.ManSign.backuv					= "0.0,0.0,1.0,1.0";
 	objLandInterface.ManSign.backoffset				= "0,0"; //"0.0,0.0";
-	fTmp = makeint(128.0 * fRes * fHtRatio);
+	fTmp = int(128.0 * fRes * fHtRatio);
     objLandInterface.ManSign.backiconsize			= fTmp + "," + fTmp;
 
 	objLandInterface.ManSign.manrankratetexturename		= "interfaces\le\battle_interface\CharStatexp.tga.tx";
@@ -634,34 +634,34 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.manrankratepuv				= "0.0,0.0,1.0,1.0";
 	objLandInterface.ManSign.manrankrate0offset			= "0.0,0.0"; 
 	objLandInterface.ManSign.manrankrateoffset			= "0.0,0.0"; 
-	fTmp = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
     objLandInterface.ManSign.manrankrate0iconsize		= fTmp + "," + fTmp;
-	fTmp = makeint(128.0 * fRes * fHtRatio);
+	fTmp = int(128.0 * fRes * fHtRatio);
     objLandInterface.ManSign.manrankrateiconsize		= fTmp + "," + fTmp;
 	
 	objLandInterface.ManSign.rankfontid			= "interface_normal";
 	objLandInterface.ManSign.rankfontcolor		= ARGB_Color("white");													 
 	objLandInterface.ManSign.rank0fontscale		= 1.2 * fHtRatio;
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(39.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(39.0 * fHtRatio);
     objLandInterface.ManSign.rank0fontoffset       = fTmp + "," + fTmp2;
 
 	objLandInterface.ManSign.rankfontscale		= 1.2 * fRes * fHtRatio;
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(36.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(36.0 * fHtRatio);
     objLandInterface.ManSign.rankfontoffset       = fTmp + "," + fTmp2;
 	
 	objLandInterface.ManSign.energyvaluefontid			= "interface_normal";
 	objLandInterface.ManSign.energyvaluefontcolor		= ARGB_Color("white");
-	fTmp = makeint(200.0 * fHtRatio);
-    fTmp2 = makeint(4.0 * fHtRatio);
+	fTmp = int(200.0 * fHtRatio);
+    fTmp2 = int(4.0 * fHtRatio);
 	objLandInterface.ManSign.energyvaluefontscale	= 1.0 * fHtRatio;
 	objLandInterface.ManSign.energyvaluefontoffset  = fTmp + "," + fTmp2;
 	
 	objLandInterface.ManSign.healthvaluefontid		= "interface_normal";
 	objLandInterface.ManSign.healthvaluefontcolor	= ARGB_Color("white");
-	fTmp = makeint(200.0 * fHtRatio);
-    fTmp2 = makeint(-18.0 * fHtRatio);
+	fTmp = int(200.0 * fHtRatio);
+    fTmp2 = int(-18.0 * fHtRatio);
 	objLandInterface.ManSign.healthvaluefontscale	= 1.1 * fHtRatio;
 	objLandInterface.ManSign.healthvaluefontoffset  = fTmp + "," + fTmp2;
 
@@ -672,20 +672,20 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.alarmdowntime			= 1.5;
 	objLandInterface.ManSign.alarmuv				= "0.0,0.0,1.0,1.0";
 	objLandInterface.ManSign.alarmoffset			= "0,0"; //"0.0,0.0";
-	fTmp = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
      objLandInterface.ManSign.alarmiconsize			= fTmp + "," + fTmp;
 
 	objLandInterface.ManSign.manstatetexturename	= "interfaces\le\battle_interface\CharState.tga.tx";
 	objLandInterface.ManSign.manstatecolor			= argb(255,128,128,128);
 	objLandInterface.ManSign.manhpuv				= "0.0,0.1601,0.5,0.875";
 	objLandInterface.ManSign.manenegryuv			= "0.5,0.1601,1.0,0.875";
-	fTmp = makeint(-28.0 * fHtRatio);
-    fTmp2 = makeint(2.0 * fHtRatio);
+	fTmp = int(-28.0 * fHtRatio);
+    fTmp2 = int(2.0 * fHtRatio);
     objLandInterface.ManSign.manhpoffset			= fTmp + "," + fTmp2;
-	fTmp = makeint(28.0 * fHtRatio);
+	fTmp = int(28.0 * fHtRatio);
     objLandInterface.ManSign.manenegryoffset		= fTmp + "," + fTmp2;
-	fTmp = makeint(60.0 * fHtRatio);
-    fTmp2 = makeint(83.0 * fHtRatio);
+	fTmp = int(60.0 * fHtRatio);
+    fTmp2 = int(83.0 * fHtRatio);
     objLandInterface.ManSign.manhpiconsize			= fTmp + "," + fTmp2;
     objLandInterface.ManSign.manenergyiconsize		= fTmp + "," + fTmp2;
 
@@ -694,39 +694,39 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.gunchargebackcolor		= argb(0,188,48,48); //argb(255,188,48,48);
 	objLandInterface.ManSign.gunchargebackuv		= "0.0,0.5,1.0,1.0";
 	objLandInterface.ManSign.gunchargeuv			= "0.0,0.0,1.0,0.5";
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(-53.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(-53.0 * fHtRatio);
     objLandInterface.ManSign.guncharge0offset	    = fTmp + "," + fTmp2;
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(-48.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(-48.0 * fHtRatio);
     objLandInterface.ManSign.gunchargeoffset	    = fTmp + "," + fTmp2;
-    fTmp = makeint(128.0 * 0.6 * fHtRatio);
-    fTmp2 = makeint(32.0 * 0.6 * fHtRatio);
+    fTmp = int(128.0 * 0.6 * fHtRatio);
+    fTmp2 = int(32.0 * 0.6 * fHtRatio);
     objLandInterface.ManSign.guncharge0iconsize		= fTmp + "," + fTmp2;
-    fTmp = makeint(128.0 * 0.6 * fRes * fHtRatio);
-    fTmp2 = makeint(32.0 * 0.6 * fRes * fHtRatio);
+    fTmp = int(128.0 * 0.6 * fRes * fHtRatio);
+    fTmp2 = int(32.0 * 0.6 * fRes * fHtRatio);
     objLandInterface.ManSign.gunchargeiconsize		= fTmp + "," + fTmp2;
 
 	objLandInterface.ManSign.gunchargeprogress		= "0.0, 0.234375, 0.40625, 0.59375, 0.765625, 0.985, 0.99"; //"0.0625, 0.211, 0.359, 0.5, 0.633, 0.765, 0.983";"0.0, 0.234375, 0.40625, 0.59375, 0.78125, 0.96, 0.99";
 
 	objLandInterface.ManSign.manfacecolor			= argb(255,128,128,128);
-	fTmp = makeint(0 * fHtRatio);
-    fTmp2 = makeint(15 * fHtRatio);
+	fTmp = int(0 * fHtRatio);
+    fTmp2 = int(15 * fHtRatio);
     objLandInterface.ManSign.manface0offset			= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
     objLandInterface.ManSign.manface0iconsize		= fTmp + "," + fTmp;
 
-	fTmp = makeint(0 * fHtRatio);
-    fTmp2 = makeint(15 * fRes * fHtRatio);
+	fTmp = int(0 * fHtRatio);
+    fTmp2 = int(15 * fRes * fHtRatio);
     objLandInterface.ManSign.manfaceoffset			= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * fRes * fHtRatio);
+	fTmp = int(128.0 * fRes * fHtRatio);
     objLandInterface.ManSign.manfaceiconsize		= fTmp + "," + fTmp;
 	
     objLandInterface.ManSign.commandlistverticaloffset0 = -30 * fHtRatio;
 	objLandInterface.ManSign.commandlistverticaloffset = 30 * fHtRatio;
 
-	fTmp = makeint(75.0 * fHtRatio);
-    fTmp2 = makeint(130.0 * fHtRatio);
+	fTmp = int(75.0 * fHtRatio);
+    fTmp2 = int(130.0 * fHtRatio);
 	
 	for(i = 1; i<=5; i++) 
 	{
@@ -735,111 +735,111 @@ void BLI_SetObjectData()
 	}
 	
 	// belamour блок снаряжения
-	fTmp = sti(showWindow.left) + RecalculateHIcon(makeint(180.0 * fHtRatio));
-	fTmp2 = sti(showWindow.bottom) - RecalculateVIcon(makeint(180.0 * fHtRatio));
+	fTmp = int(showWindow.left) + RecalculateHIcon(int(180.0 * fHtRatio));
+	fTmp2 = int(showWindow.bottom) - RecalculateVIcon(int(180.0 * fHtRatio));
 	objLandInterface.equipment.BIequipmentPos		= fTmp + "," + fTmp2;
 	
 	objLandInterface.equipment.Backtexturename		= "interfaces\le\battle_interface\items\equipment_back.tga";
 	objLandInterface.equipment.Backcolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Backuv				= "0.0,0.0,1.0,1.0";
 	objLandInterface.equipment.Backoffset			= "0.0,0.0"; 
-	fTmp = makeint(256.0 * fHtRatio);
+	fTmp = int(256.0 * fHtRatio);
     objLandInterface.equipment.Backiconsize	        = fTmp + "," + fTmp;
 	
 	objLandInterface.equipment.Bladetexturename		= "interfaces\le\battle_interface\items\blade_empty.tga";
 	objLandInterface.equipment.Bladecolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Bladeuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-64.0 * fHtRatio);
-	fTmp2 = makeint(0.0 * fHtRatio);
+	fTmp = int(-64.0 * fHtRatio);
+	fTmp2 = int(0.0 * fHtRatio);
 	objLandInterface.equipment.Bladeoffset			= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * 0.65 * fHtRatio);
+	fTmp = int(128.0 * 0.65 * fHtRatio);
     objLandInterface.equipment.Bladeiconsize		= fTmp + "," + fTmp;
 
 	objLandInterface.equipment.Guntexturename		= "interfaces\le\battle_interface\items\gun_empty.tga";
 	objLandInterface.equipment.Guncolor				= argb(255,128,128,128);
 	objLandInterface.equipment.Gunuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(0.0 * fHtRatio);
-	fTmp2 = makeint(-64.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+	fTmp2 = int(-64.0 * fHtRatio);
 	objLandInterface.equipment.Gunoffset			= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * 0.65 * fHtRatio);
+	fTmp = int(128.0 * 0.65 * fHtRatio);
     objLandInterface.equipment.Guniconsize			= fTmp + "," + fTmp;
 	
 	objLandInterface.equipment.Bullettexturename	= "interfaces\le\battle_interface\items\bullet_empty.tga";
 	objLandInterface.equipment.Bulletcolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Bulletuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(64.0 * fHtRatio);
-	fTmp2 = makeint(0.0 * fHtRatio);
+	fTmp = int(64.0 * fHtRatio);
+	fTmp2 = int(0.0 * fHtRatio);
 	objLandInterface.equipment.Bulletoffset			= fTmp + "," + fTmp2; 
-	fTmp = makeint(128.0 * 0.65 * fHtRatio);
+	fTmp = int(128.0 * 0.65 * fHtRatio);
 	objLandInterface.equipment.Bulleticonsize		= fTmp + "," + fTmp;
 
 	objLandInterface.equipment.Potiontexturename	= "interfaces\le\battle_interface\items\potion_empty.tga";
 	objLandInterface.equipment.Potioncolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Potionuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(0.0 * fHtRatio);
-	fTmp2 = makeint(64.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+	fTmp2 = int(64.0 * fHtRatio);
 	objLandInterface.equipment.Potionoffset			= fTmp + "," + fTmp2; 
-	fTmp = makeint(128.0 * 0.65 * fHtRatio);
+	fTmp = int(128.0 * 0.65 * fHtRatio);
     objLandInterface.equipment.Potioniconsize		= fTmp + "," + fTmp;
 	
 	objLandInterface.equipment.Lanterntexturename	= "interfaces\le\battle_interface\items\add\lantern.tga";
 	objLandInterface.equipment.Lanterncolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Lanternuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-140.0 * fHtRatio);
-	fTmp2 = makeint(45.0 * fHtRatio);
+	fTmp = int(-140.0 * fHtRatio);
+	fTmp2 = int(45.0 * fHtRatio);
 	objLandInterface.equipment.Lanternoffset		= fTmp + "," + fTmp2; 
-	fTmp = makeint(128.0 * 0.45 * fHtRatio);
+	fTmp = int(128.0 * 0.45 * fHtRatio);
     objLandInterface.equipment.Lanterniconsize		= fTmp + "," + fTmp;
 	objLandInterface.equipment.LanternOn            = CheckAttribute(pchar, "HandLight");
 	
 	objLandInterface.equipment.Rushtexturename		= "interfaces\le\battle_interface\items\add\berserker_potion.tga.tx";
 	objLandInterface.equipment.Rushcolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Rushuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-90.0 * fHtRatio);
-	fTmp2 = makeint(100.0 * fHtRatio);
+	fTmp = int(-90.0 * fHtRatio);
+	fTmp2 = int(100.0 * fHtRatio);
 	objLandInterface.equipment.Rushoffset			= fTmp + "," + fTmp2; 
-	fTmp = makeint(128.0 * 0.45 * fHtRatio);
+	fTmp = int(128.0 * 0.45 * fHtRatio);
     objLandInterface.equipment.Rushiconsize			= fTmp + "," + fTmp;
 	objLandInterface.equipment.RushOn           	=  0;
 	
 	objLandInterface.textinfo.RushTimer.font		= "interface_normal";
 	objLandInterface.textinfo.RushTimer.scale		= 1.3 * fHtRatio;
 	objLandInterface.textinfo.RushTimer.color		= ARGB_Color("white");
-	objLandInterface.textinfo.RushTimer.pos.x		= sti(showWindow.left) + RecalculateHIcon(makeint(80 * fHtRatio));
-	objLandInterface.textinfo.RushTimer.pos.y		= sti(showWindow.bottom)- RecalculateVIcon(makeint(108 * fHtRatio));
+	objLandInterface.textinfo.RushTimer.pos.x		= int(showWindow.left) + RecalculateHIcon(int(80 * fHtRatio));
+	objLandInterface.textinfo.RushTimer.pos.y		= int(showWindow.bottom)- RecalculateVIcon(int(108 * fHtRatio));
 	objLandInterface.textinfo.RushTimer.text		= "";
 	objLandInterface.textinfo.RushTimer.refreshable = true;
 	
 	objLandInterface.equipment.Antidotetexturename	= "interfaces\le\battle_interface\items\potion_empty.tga";
 	objLandInterface.equipment.Antidotecolor		= argb(255,128,128,128);
 	objLandInterface.equipment.Antidoteuv			= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(90.0 * fHtRatio);
-	fTmp2 = makeint(100.0 * fHtRatio);
+	fTmp = int(90.0 * fHtRatio);
+	fTmp2 = int(100.0 * fHtRatio);
 	objLandInterface.equipment.Antidoteoffset		= fTmp + "," + fTmp2; 
-	fTmp = makeint(128.0 * 0.45 * fHtRatio);
+	fTmp = int(128.0 * 0.45 * fHtRatio);
     objLandInterface.equipment.Antidoteiconsize		= fTmp + "," + fTmp;
 	objLandInterface.equipment.AntidoteOn           =  0;
 	
 	objLandInterface.equipment.PotionDesfontid		= "interface_normal";
 	objLandInterface.equipment.PotionDesfontcolor	= ARGB_Color("white");
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(130.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(130.0 * fHtRatio);
 	objLandInterface.equipment.PotionDesfontscale	= 1.5* fHtRatio;
 	objLandInterface.equipment.PotionDesfontoffset  = fTmp + "," + fTmp2;
 	objLandInterface.equipment.PotionDescribe		= "";
 	
 	objLandInterface.equipment.PotionQtyfontid		= "interface_normal";
 	objLandInterface.equipment.PotionQtyfontcolor	= ARGB_Color("white");
-	fTmp = makeint(20.0 * fHtRatio);
-    fTmp2 = makeint(70.0 * fHtRatio);
+	fTmp = int(20.0 * fHtRatio);
+    fTmp2 = int(70.0 * fHtRatio);
 	objLandInterface.equipment.PotionQtyfontscale	= 1.5* fHtRatio;
 	objLandInterface.equipment.PotionQtyfontoffset  = fTmp + "," + fTmp2;
 	objLandInterface.equipment.PotionQty		    = "";
 	
 	objLandInterface.equipment.BulletQtyfontid		= "interface_normal";
 	objLandInterface.equipment.BulletQtyfontcolor	= ARGB_Color("white");
- 	fTmp = makeint(80.0 * fHtRatio);
-	fTmp2 = makeint(10.0 * fHtRatio);
+ 	fTmp = int(80.0 * fHtRatio);
+	fTmp2 = int(10.0 * fHtRatio);
 	objLandInterface.equipment.BulletQtyfontscale	= 1.5* fHtRatio;
 	objLandInterface.equipment.BulletQtyfontoffset  = fTmp + "," + fTmp2;
 	objLandInterface.equipment.BulletQty		    = "";
@@ -849,11 +849,11 @@ void BLI_SetObjectData()
 	objLandInterface.equipment.gunreloadbackcolor	= argb(180, 128, 128, 128);
 	objLandInterface.equipment.gunreloadUV			= "0.0,0.0,1.0,1.0";
 
-	fTmp = makeint(0.0 * fHtRatio);
-	fTmp2 = makeint(-64.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+	fTmp2 = int(-64.0 * fHtRatio);
 	objLandInterface.equipment.gunreloadoffset		= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * fHtRatio);
-	fTmp2 = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
+	fTmp2 = int(128.0 * fHtRatio);
 	objLandInterface.equipment.gunreloadiconsize	= fTmp + "," + fTmp2;
 	objLandInterface.equipment.gunprogress        	= 0.0;
 	
@@ -861,40 +861,40 @@ void BLI_SetObjectData()
 	objLandInterface.equipment.potionstatuscolor 		= argb(180, 128, 128, 128);
 	objLandInterface.equipment.potionstatusbackcolor	= argb(180, 128, 128, 128);
 	objLandInterface.equipment.potionstatusUV			= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(0.0 * fHtRatio);
-	fTmp2 = makeint(64.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+	fTmp2 = int(64.0 * fHtRatio);
 	objLandInterface.equipment.potionstatusoffset	= fTmp + "," + fTmp2;
-	fTmp = makeint(128.0 * fHtRatio);
-	fTmp2 = makeint(128.0 * fHtRatio);
+	fTmp = int(128.0 * fHtRatio);
+	fTmp2 = int(128.0 * fHtRatio);
 	objLandInterface.equipment.potionstatusiconsize	= fTmp + "," + fTmp2;
 	objLandInterface.equipment.potionprogress       = 0.0;
 	
 	objLandInterface.equipment.Backmustexturename		= "interfaces\le\battle_interface\items\equipment_back1.tga";
 	objLandInterface.equipment.Backmuscolor			= argb(255,128,128,128);
 	objLandInterface.equipment.Backmusuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-100.0 * fHtRatio);
-	fTmp2 = makeint(-64.0 * fHtRatio);
+	fTmp = int(-100.0 * fHtRatio);
+	fTmp2 = int(-64.0 * fHtRatio);
 	objLandInterface.equipment.Backmusoffset			= fTmp + "," + fTmp2; 
-	fTmp = makeint(70.0 * fHtRatio);
+	fTmp = int(70.0 * fHtRatio);
     objLandInterface.equipment.Backmusiconsize	        = fTmp + "," + fTmp;
 	
 	objLandInterface.equipment.Mustexturename		= "interfaces\le\battle_interface\items\gun_empty.tga";
 	objLandInterface.equipment.Muscolor				= argb(255,128,128,128);
 	objLandInterface.equipment.Musnuv				= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-100.0 * fHtRatio);
-	fTmp2 = makeint(-64.0 * fHtRatio);
+	fTmp = int(-100.0 * fHtRatio);
+	fTmp2 = int(-64.0 * fHtRatio);
 	objLandInterface.equipment.Musoffset			= fTmp + "," + fTmp2;
-	fTmp = makeint(70.0 * 0.65 * fHtRatio);
+	fTmp = int(70.0 * 0.65 * fHtRatio);
     objLandInterface.equipment.Musiconsize			= fTmp + "," + fTmp;
 
 	objLandInterface.equipment.musreloadtexturename	= "interfaces\le\battle_interface\items\gun_charge.tga.tx";
 	objLandInterface.equipment.musreloadcolor 		= argb(180, 128, 128, 128);
 	objLandInterface.equipment.musreloadbackcolor	= argb(180, 128, 128, 128);
 	objLandInterface.equipment.musreloadUV			= "0.0,0.0,1.0,1.0";
-	fTmp = makeint(-100.0 * fHtRatio);
-	fTmp2 = makeint(-64.0 * fHtRatio);
+	fTmp = int(-100.0 * fHtRatio);
+	fTmp2 = int(-64.0 * fHtRatio);
 	objLandInterface.equipment.musreloadoffset		= fTmp + "," + fTmp2;
-	fTmp = makeint(70.0 * fHtRatio);
+	fTmp = int(70.0 * fHtRatio);
 	objLandInterface.equipment.musreloadiconsize	= fTmp + "," + fTmp;
 	objLandInterface.equipment.musprogress        	= 0.0;
 	objLandInterface.equipment.MusketOn           	=  0;
@@ -956,8 +956,8 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.islandname.font = "interface_normal_bold";
 		objLandInterface.textinfo.islandname.scale = 0.7 * fHtRatio;
 
-		objLandInterface.textinfo.islandname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio );
-		objLandInterface.textinfo.islandname.pos.y = RecalculateVIcon(24 * fHtRatio);
+		objLandInterface.textinfo.islandname.pos.x = int(showWindow.right) - RecalculateHIcon(int(124 * fHtRatio));
+		objLandInterface.textinfo.islandname.pos.y = RecalculateVIcon(int(24 * fHtRatio));
 		if (CheckAttribute(&locations[nLoc],"islandId"))
 		{
 			if (locations[nLoc].islandId != "Mein" && locations[nLoc].islandId != "Europe")
@@ -984,14 +984,14 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.villagename.font = "interface_normal_bold";
 		objLandInterface.textinfo.villagename.scale = 0.7 * fHtRatio;
 
-		objLandInterface.textinfo.villagename.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
-		objLandInterface.textinfo.villagename.pos.y = RecalculateVIcon(48 * fHtRatio);
+		objLandInterface.textinfo.villagename.pos.x = int(showWindow.right) - RecalculateHIcon(int(124 * fHtRatio));
+		objLandInterface.textinfo.villagename.pos.y = RecalculateVIcon(int(48 * fHtRatio));
 
 		objLandInterface.textinfo.locationname.font = "interface_normal_bold";
 		objLandInterface.textinfo.locationname.scale = 0.7 * fHtRatio;
 
-		objLandInterface.textinfo.locationname.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
-		objLandInterface.textinfo.locationname.pos.y = RecalculateVIcon(72 * fHtRatio);
+		objLandInterface.textinfo.locationname.pos.x = int(showWindow.right) - RecalculateHIcon(int(124 * fHtRatio));
+		objLandInterface.textinfo.locationname.pos.y = RecalculateVIcon(int(72 * fHtRatio));
 
 		if (!CheckAttribute(&locations[nLoc],"fastreload"))
 		{
@@ -1010,8 +1010,8 @@ void BLI_SetObjectData()
 	objLandInterface.textinfo.datatext.font = "interface_normal_bold";
 	objLandInterface.textinfo.datatext.scale = 0.7 * fHtRatio;
 
-	objLandInterface.textinfo.datatext.pos.x = sti(showWindow.right) - RecalculateHIcon(124 * fHtRatio);
-	objLandInterface.textinfo.datatext.pos.y = RecalculateVIcon(96 * fHtRatio);
+	objLandInterface.textinfo.datatext.pos.x = int(showWindow.right) - RecalculateHIcon(int(124 * fHtRatio));
+	objLandInterface.textinfo.datatext.pos.y = RecalculateVIcon(int(96 * fHtRatio));
 	objLandInterface.textinfo.datatext.text = GetQuestBookData();
 	// RefreshLandTime();
 	//objLandInterface.textinfo.datatext.text = XI_convertString("Date:") + GetQuestBookData(); //GetDataDay()+" "+XI_ConvertString("MonthGen_" + GetDataMonth())+" "+GetDataYear();
@@ -1032,8 +1032,8 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.(sAttrB).font = "Info_fader_rs";
 		objLandInterface.textinfo.(sAttrB).scale = 0.6 * fHtRatio;
 		objLandInterface.textinfo.(sAttrB).color = argb(155,255,255,255);
-		objLandInterface.textinfo.(sAttrB).pos.x = sti(showWindow.right) + RecalculateHIcon(makeint(210 * fHtRatio));
-		objLandInterface.textinfo.(sAttrB).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(boff * fHtRatio));
+		objLandInterface.textinfo.(sAttrB).pos.x = int(showWindow.right) + RecalculateHIcon(int(210 * fHtRatio));
+		objLandInterface.textinfo.(sAttrB).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(boff * fHtRatio));
 		objLandInterface.textinfo.(sAttrB).align = "right";
 		objLandInterface.textinfo.(sAttrB).text = "";
 		objLandInterface.textinfo.(sAttrB).refreshable = true;
@@ -1041,8 +1041,8 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.(sAttr).font = "KEYBOARD_SYMBOL";
 		objLandInterface.textinfo.(sAttr).scale = 0.9 * fHtRatio;
 		objLandInterface.textinfo.(sAttr).color = ARGB_Color("white");
-		objLandInterface.textinfo.(sAttr).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(85 * fHtRatio));
-		objLandInterface.textinfo.(sAttr).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(coff * fHtRatio));
+		objLandInterface.textinfo.(sAttr).pos.x = int(showWindow.right) - RecalculateHIcon(int(85 * fHtRatio));
+		objLandInterface.textinfo.(sAttr).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(coff * fHtRatio));
 		objLandInterface.textinfo.(sAttr).align = "left";
 		objLandInterface.textinfo.(sAttr).text = "";
 		objLandInterface.textinfo.(sAttr).refreshable = true;
@@ -1050,8 +1050,8 @@ void BLI_SetObjectData()
 		objLandInterface.textinfo.(sAttrDes).font = "interface_normal";
 		objLandInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		objLandInterface.textinfo.(sAttrDes).color = ARGB_Color("white");
-		objLandInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(95 * fHtRatio));
-		objLandInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
+		objLandInterface.textinfo.(sAttrDes).pos.x = int(showWindow.right) - RecalculateHIcon(int(95 * fHtRatio));
+		objLandInterface.textinfo.(sAttrDes).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(doff * fHtRatio));
 		objLandInterface.textinfo.(sAttrDes).align = "right";
 		objLandInterface.textinfo.(sAttrDes).text = "";
 		objLandInterface.textinfo.(sAttrDes).refreshable = true;
@@ -1060,16 +1060,16 @@ void BLI_SetObjectData()
 	objLandInterface.textinfo.GunCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.GunCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.GunCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.GunCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(180 * fHtRatio));
-	objLandInterface.textinfo.GunCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(212 * fHtRatio));
+	objLandInterface.textinfo.GunCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(180 * fHtRatio));
+	objLandInterface.textinfo.GunCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(212 * fHtRatio));
 	objLandInterface.textinfo.GunCtrl.text = "";
 	objLandInterface.textinfo.GunCtrl.refreshable = true;
 	
 	objLandInterface.textinfo.BladeCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.BladeCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.BladeCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.BladeCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(168 * fHtRatio));
-	objLandInterface.textinfo.BladeCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(192 * fHtRatio));
+	objLandInterface.textinfo.BladeCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(168 * fHtRatio));
+	objLandInterface.textinfo.BladeCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(192 * fHtRatio));
 	objLandInterface.textinfo.BladeCtrl.align = "right";
 	objLandInterface.textinfo.BladeCtrl.text = "";
 	objLandInterface.textinfo.BladeCtrl.refreshable = true;
@@ -1077,16 +1077,16 @@ void BLI_SetObjectData()
 	objLandInterface.textinfo.PotionCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.PotionCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.PotionCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.PotionCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(180 * fHtRatio));
-	objLandInterface.textinfo.PotionCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(168 * fHtRatio));
+	objLandInterface.textinfo.PotionCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(180 * fHtRatio));
+	objLandInterface.textinfo.PotionCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(168 * fHtRatio));
 	objLandInterface.textinfo.PotionCtrl.text = "";
 	objLandInterface.textinfo.PotionCtrl.refreshable = true;
 	
 	objLandInterface.textinfo.BulletCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.BulletCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.BulletCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.BulletCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(192 * fHtRatio));
-	objLandInterface.textinfo.BulletCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(192 * fHtRatio));
+	objLandInterface.textinfo.BulletCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(192 * fHtRatio));
+	objLandInterface.textinfo.BulletCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(192 * fHtRatio));
 	objLandInterface.textinfo.BulletCtrl.align = "left";
 	objLandInterface.textinfo.BulletCtrl.text = "";
 	objLandInterface.textinfo.BulletCtrl.refreshable = true;
@@ -1094,24 +1094,24 @@ void BLI_SetObjectData()
 	objLandInterface.textinfo.RushCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.RushCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.RushCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.RushCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(72 * fHtRatio));
-	objLandInterface.textinfo.RushCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(110 * fHtRatio));
+	objLandInterface.textinfo.RushCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(72 * fHtRatio));
+	objLandInterface.textinfo.RushCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(110 * fHtRatio));
 	objLandInterface.textinfo.RushCtrl.text = "";
 	objLandInterface.textinfo.RushCtrl.refreshable = true;
 	
 	objLandInterface.textinfo.AntidoteCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.AntidoteCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.AntidoteCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.AntidoteCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(252 * fHtRatio));
-	objLandInterface.textinfo.AntidoteCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(110 * fHtRatio));
+	objLandInterface.textinfo.AntidoteCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(252 * fHtRatio));
+	objLandInterface.textinfo.AntidoteCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(110 * fHtRatio));
 	objLandInterface.textinfo.AntidoteCtrl.text = "";
 	objLandInterface.textinfo.AntidoteCtrl.refreshable = true;
 	
 	objLandInterface.textinfo.MusCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.MusCtrl.scale = 0.6 * fHtRatio;
 	objLandInterface.textinfo.MusCtrl.color = ARGB_Color("white");
-	objLandInterface.textinfo.MusCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(50 * fHtRatio));
-	objLandInterface.textinfo.MusCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(256 * fHtRatio));
+	objLandInterface.textinfo.MusCtrl.pos.x = int(showWindow.left) + RecalculateHIcon(int(50 * fHtRatio));
+	objLandInterface.textinfo.MusCtrl.pos.y = int(showWindow.bottom)- RecalculateVIcon(int(256 * fHtRatio));
 	objLandInterface.textinfo.MusCtrl.text = "";
 	objLandInterface.textinfo.MusCtrl.refreshable = true;
 	
@@ -1122,20 +1122,20 @@ void BLI_SetObjectData()
 	objLandInterface.CommandList.CommandMaxIconQuantity = 10;
 	objLandInterface.CommandList.CommandIconSpace = 1;
 	objLandInterface.CommandList.CommandIconLeft = 150 * fHtRatio;//157;
-	objLandInterface.CommandList.CommandIconWidth = RecalculateHIcon(55 * fHtRatio);
-	objLandInterface.CommandList.CommandIconHeight = RecalculateVIcon(55 * fHtRatio);
+	objLandInterface.CommandList.CommandIconWidth = RecalculateHIcon(int(55 * fHtRatio));
+	objLandInterface.CommandList.CommandIconHeight = RecalculateVIcon(int(55 * fHtRatio));
 
 	objLandInterface.CommandList.CommandNoteFont = "interface_normal_bold";
 	objLandInterface.CommandList.CommandNoteColor = ARGB_Color("white");
 	objLandInterface.CommandList.CommandNoteScale = 0.65 * fHtRatio;
-	objLandInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(20 * fHtRatio);
+	objLandInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(int(20 * fHtRatio));
 
 	objLandInterface.CommandList.UDArrow_Texture = "interfaces\le\battle_interface\arrowly.tga";
 	objLandInterface.CommandList.UDArrow_UV_Up = "0.0,1.0,1.0,0.0";
 	objLandInterface.CommandList.UDArrow_UV_Down = "0.0,0.0,1.0,1.0";
-	objLandInterface.CommandList.UDArrow_Size = RecalculateHIcon(32 * fHtRatio) + "," + RecalculateVIcon(32 * fHtRatio);
-	objLandInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(-41 * fHtRatio) + "," + RecalculateVIcon(-30 * fHtRatio);
-	objLandInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(-41 * fHtRatio) + "," + RecalculateVIcon(46 * fHtRatio);
+	objLandInterface.CommandList.UDArrow_Size = RecalculateHIcon(int(32 * fHtRatio)) + "," + RecalculateVIcon(int(32 * fHtRatio));
+	objLandInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(int(-41 * fHtRatio)) + "," + RecalculateVIcon(int(-30 * fHtRatio));
+	objLandInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(int(-41 * fHtRatio)) + "," + RecalculateVIcon(int(46 * fHtRatio));
 	
 	// дебилы всё равно играть не будут, а нормальным лишнее не нужно boal
 	/*objLandInterface.CommandList.ActiveIcon_Texture = "interfaces\le\battle_interface\enter_list.tga";
@@ -1193,7 +1193,7 @@ void BLI_SetMessageParameters()
 	objLandInterface.MessageIcons.IconWidth = RecalculateHIcon(64);
 	objLandInterface.MessageIcons.IconHeight = RecalculateVIcon(24);
 	objLandInterface.MessageIcons.IconDist = RecalculateVIcon(2);
-	objLandInterface.MessageIcons.IconBottom = sti(showWindow.bottom)-RecalculateHIcon(80+40);
+	objLandInterface.MessageIcons.IconBottom = int(showWindow.bottom)-RecalculateHIcon(80+40);
 	objLandInterface.MessageIcons.IconMaxQuantity = 4;
 	objLandInterface.MessageIcons.BlendTime = 3.0;
 	objLandInterface.MessageIcons.FallSpeed = 22.0;
@@ -1219,7 +1219,7 @@ void BLI_UpdateObjectData()
 		objLandInterface.ManSign.alarmtexturename = "interfaces\le\battle_interface\alarmstealth.tga.tx";
 	}
 	bool bIsRiskAlarm = LAi_group_IsActivePlayerAlarm();
-	if(sti(objLandInterface.data.Alarm)!=bIsRiskAlarm) BLI_RefreshCommandMenu();
+	if(int(objLandInterface.data.Alarm)!=bIsRiskAlarm) BLI_RefreshCommandMenu();
 	objLandInterface.data.Alarm = bIsRiskAlarm;
 	//objLandInterface.data.alarmhighcolor	= argb(255,255,225,0);
 	//objLandInterface.data.alarmlowcolor	= argb(64,255,225,0); 
@@ -1304,7 +1304,7 @@ void BLI_SetPossibleCommands()
 		objLandInterface.Commands.FastReload.enable	= bFastEnable();
 		///// boal -->
 		i = -1;
-		if (CheckAttribute(pchar,"dialogready")) i=sti(pchar.dialogready);
+		if (CheckAttribute(pchar,"dialogready")) i=int(pchar.dialogready);
 		if (i>=0)
 		{
             if(LAi_Character_CanDialog(PChar, &Characters[i]))
@@ -1473,10 +1473,10 @@ void procFindDialogChar()
 {
 	int dlgChar = -1;
 	if(!LAi_IsBoardingProcess())
-		dlgChar = SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter");
+		dlgChar = int(SendMessage(pchar,"ls",MSG_CHARACTER_EX_MSG,"FindDialogCharacter"));
 
 	int oldDlgChar = -1;
-	if(CheckAttribute(pchar,"dialogready")) oldDlgChar = sti(pchar.dialogready);
+	if(CheckAttribute(pchar,"dialogready")) oldDlgChar = int(pchar.dialogready);
 
 	if(dlgChar!=oldDlgChar)
 	{
@@ -1497,7 +1497,7 @@ void BLI_ChrEnterToLocation()
 	aref locList,locCur;
 	int i,n;
 
-	if(sti(chr.index) != nMainCharacterIndex) return;
+	if(int(chr.index) != nMainCharacterIndex) return;
 
 	if(group=="reload")
 	{
@@ -1646,12 +1646,12 @@ bool SetReloadIcons()
 						if(locations[idxloc].lsc_inside == "rivados" && CheckAttribute(pchar, "GenQuest.RivadosConflict")) continue;
 					}
 					objLandInterface.UserIcons.(fastLocName).enable = true;
-					objLandInterface.UserIcons.(fastLocName).pic = sti(curloc.pic)+16;
+					objLandInterface.UserIcons.(fastLocName).pic = int(curloc.pic)+16;
 					objLandInterface.UserIcons.(fastLocName).selpic = curloc.pic;
-					objLandInterface.UserIcons.(fastLocName).tex = 1+sti(curloc.tex);
+					objLandInterface.UserIcons.(fastLocName).tex = 1+int(curloc.tex);
 					objLandInterface.UserIcons.(fastLocName).name = "reload"+i;
 					objLandInterface.UserIcons.(fastLocName).location = curloc.location;
-					objLandInterface.UserIcons.(fastLocName).note = GetNodeForIcon(11+sti(curloc.tex), sti(curloc.pic));
+					objLandInterface.UserIcons.(fastLocName).note = GetNodeForIcon(11+int(curloc.tex), int(curloc.pic));
 					// локаторы для перехода
 					if(i == 4)
 					{
@@ -1669,12 +1669,12 @@ bool SetReloadIcons()
 				else
 				{
 					objLandInterface.UserIcons.(fastLocName).enable = true;
-					objLandInterface.UserIcons.(fastLocName).pic = sti(curloc.pic)+16;
+					objLandInterface.UserIcons.(fastLocName).pic = int(curloc.pic)+16;
 					objLandInterface.UserIcons.(fastLocName).selpic = curloc.pic;
-					objLandInterface.UserIcons.(fastLocName).tex = 1+sti(curloc.tex);
+					objLandInterface.UserIcons.(fastLocName).tex = 1+int(curloc.tex);
 					objLandInterface.UserIcons.(fastLocName).name = "reload"+i;
 					objLandInterface.UserIcons.(fastLocName).location = curloc.location;
-					objLandInterface.UserIcons.(fastLocName).note = GetNodeForIcon(1+sti(curloc.tex), sti(curloc.pic));
+					objLandInterface.UserIcons.(fastLocName).note = GetNodeForIcon(1+int(curloc.tex), int(curloc.pic));
 				}
 				bUse = true;
 			}
@@ -1718,7 +1718,7 @@ void BLI_UpdateOfficers()
 int GetPotionPicture(aref arItm)
 {
 	if( CheckAttribute(arItm,"potion.pic") ) {
-		return sti(arItm.potion.pic);
+		return int(arItm.potion.pic);
 	}
 	trace("Item "+arItm.id+ " hav`t POTION.PIC attribute");
 	return 0;
@@ -1730,7 +1730,7 @@ int GetPotionTexture(aref arItm)
 		trace("Item "+arItm.id+ " hav`t POTION.TEX attribute");
 		return 0;
 	}
-	return sti(arItm.potion.tex);
+	return int(arItm.potion.tex);
 }
 
 // можем ли юзать хоть что то
@@ -1739,7 +1739,7 @@ bool CanBeUseItem(ref chref)
 	for(int i=0; i<ITEMS_QUANTITY; i++)
 	{
 		if( CheckAttribute(&Items[i],"potion") && CheckAttribute(chref,"items."+Items[i].id) ) {
-			if( EnablePotionUsing(chref,&Items[i]) ) {return true;}
+			if( EnablePotionUsing(chref,aref(&Items[i])) ) {return true;}
 		}
 	}
 	return false;
@@ -1795,15 +1795,15 @@ void SetCharacterIconData(int chrindex, aref arData)
 	
 	arData.shootMax = LAi_GetCharacterChargeQuant(chref, sType);
 	arData.shootCur = LAi_GetCharacterChargeCur(chref, sType);
-	float rankPoints = makefloat(makefloat(GetCharacterRankRateCur(chref))/makefloat(GetCharacterRankRate(chref)));
+	float rankPoints = float(float(GetCharacterRankRateCur(chref))/float(GetCharacterRankRate(chref)));
 	arData.rankrate = Bring2Range(0.2, 0.8, 0.0, 1.0, rankPoints);
-	arData.currank = sti(chref.rank);
+	arData.currank = int(chref.rank);
 	if(CheckAttribute(chref,"chr_ai.energyMax"))
-		arData.energyvalue = ""+sti(chref.chr_ai.energy)+"/"+sti(chref.chr_ai.energyMax)+"";
+		arData.energyvalue = ""+int(chref.chr_ai.energy)+"/"+int(chref.chr_ai.energyMax)+"";
 	if(CheckAttribute(chref,"chr_ai.hp_max"))
-		arData.healthvalue = ""+sti(chref.chr_ai.hp)+"/"+sti(chref.chr_ai.hp_max)+"";
+		arData.healthvalue = ""+int(chref.chr_ai.hp)+"/"+int(chref.chr_ai.hp_max)+"";
 	if(CheckAttribute(chref,"chr_ai.energyMax"))
-		arData.HideStates = sti(chref.chr_ai.energy) == sti(chref.chr_ai.energyMax) && sti(chref.chr_ai.hp) == sti(chref.chr_ai.hp_max) && !LAi_IsFightMode(pchar) && !iMoreInfo;
+		arData.HideStates = int(chref.chr_ai.energy) == int(chref.chr_ai.energyMax) && int(chref.chr_ai.hp) == int(chref.chr_ai.hp_max) && !LAi_IsFightMode(pchar) && !iMoreInfo;
 	if( CheckAttribute(chref,"FaceId") ) {
 		//arData.picture = chref.FaceId;
 		arData.texture = "interfaces\le\battle_interface\portraits\face_"+chref.FaceID+".tga";
@@ -1852,7 +1852,7 @@ void ControlsLandDesc()
 		int colorused	= argb(255,255,255,192);
 		int colorcd 	= argb(155,255,64,64);
 		int colorempty	= argb(155,255,255,255);
-		float fHtRatio = stf(Render.screen_y) / iHudScale;
+		float fHtRatio = float(Render.screen_y) / iHudScale;
 		bool bcompleted = false;
 		string stmp = "";
 		string cname = "";
@@ -2155,7 +2155,7 @@ void EquipmentDesc()
 		}
 		
 		objLandInterface.textinfo.BulletCtrl.text = "";
-		if(CheckAttribute(pchar, "chr_ai."+GunType+".bullet") && CheckAttribute(pchar, "chr_ai."+GunType+".bulletNum") && sti(pchar.chr_ai.(GunType).bulletNum) > 1)
+		if(CheckAttribute(pchar, "chr_ai."+GunType+".bullet") && CheckAttribute(pchar, "chr_ai."+GunType+".bulletNum") && int(pchar.chr_ai.(GunType).bulletNum) > 1)
 		{
 			if(!iMoreInfo && bInFight) objLandInterface.textinfo.BulletCtrl.text = GetKeyCodeImg("BulletChanger");
 			if(iMoreInfo) objLandInterface.textinfo.BulletCtrl.text = GetKeyCodeImg("BulletChanger");
@@ -2190,7 +2190,7 @@ string GetItemVis(string type)
 		case "Gun":
 			if(GetCharacterEquipByGroup(pchar, GunType) != "")
 			{
-				Itm = &Items[FindItem(GetCharacterEquipByGroup(pchar, GunType))]
+				Itm = &Items[FindItem(GetCharacterEquipByGroup(pchar, GunType))];
 				return Itm.picTexture+"_"+Itm.picIndex;
 			}
 		break;
@@ -2198,7 +2198,7 @@ string GetItemVis(string type)
 		case "Musket":
 			if(GetCharacterEquipByGroup(pchar, GunTypeRev) != "")
 			{
-				Itm = &Items[FindItem(GetCharacterEquipByGroup(pchar, GunTypeRev))]
+				Itm = &Items[FindItem(GetCharacterEquipByGroup(pchar, GunTypeRev))];
 				return Itm.picTexture+"_"+Itm.picIndex;
 			}
 		break;
@@ -2247,9 +2247,9 @@ string GetItemVis(string type)
 				objLandInterface.equipment.PotionQty = GetCharacterFreeItem(pchar, Itm.id);
 				if(CheckAttribute(Itm,"potion.drunk") && GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat8")
 				{
-					return GetItemName(Itm)+ " + "+sti(Itm.potion.health) * 15 / 10);
+					return GetItemName(Itm)+ " + "+int(Itm.potion.health) * 15 / 10;
 				}
-				return GetItemName(Itm)+ " + "+sti(Itm.potion.health));
+				return GetItemName(Itm)+ " + "+int(Itm.potion.health);
 			}	
 			else 
 			{
@@ -2300,28 +2300,28 @@ int UpdateStealthIndicator(int luck, int vigilance)
 // расчёт позиции по заданным оффсетам, ширине, высоте и точке отсчёта
 void BI_CrosshairSetPos(aref element, int x, int y, int w, int h)
 {
-	int ox = sti(showWindow.right)/2;
-	int oy = sti(showWindow.bottom)/2);
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	int left = makeint(ox + (x - w/2) * fHtRatio);
-	int right = makeint(ox + (x + w/2) * fHtRatio);
-	int top = makeint(oy + (y - h/2) * fHtRatio);
-	int bottom = makeint(oy + (y + h/2) * fHtRatio);
+	int ox = int(showWindow.right)/2;
+	int oy = int(showWindow.bottom)/2;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int left = int(ox + (x - w/2) * fHtRatio);
+	int right = int(ox + (x + w/2) * fHtRatio);
+	int top = int(oy + (y - h/2) * fHtRatio);
+	int bottom = int(oy + (y + h/2) * fHtRatio);
 	element.pos = left + "," + top + "," + right + "," + bottom;
 }
 
 // выставление параметров, зависящих от времени прицеливания
 void BI_CrosshairSetSteadyParams(aref element, int x1, int x2, int y1, int y2, int w1, int w2, int h1, int h2)
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	element.steady.offsetX.start	= makeint(x1 * fHtRatio);
-	element.steady.offsetX.end		= makeint(x2 * fHtRatio);
-	element.steady.offsetY.start	= makeint(y1 * fHtRatio);
-	element.steady.offsetY.end		= makeint(y2 * fHtRatio);
-	element.steady.width.start		= makeint(w1 * fHtRatio);
-	element.steady.width.end		= makeint(w2 * fHtRatio);
-	element.steady.height.start		= makeint(h1 * fHtRatio);
-	element.steady.height.end		= makeint(h2 * fHtRatio);
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	element.steady.offsetX.start	= int(x1 * fHtRatio);
+	element.steady.offsetX.end		= int(x2 * fHtRatio);
+	element.steady.offsetY.start	= int(y1 * fHtRatio);
+	element.steady.offsetY.end		= int(y2 * fHtRatio);
+	element.steady.width.start		= int(w1 * fHtRatio);
+	element.steady.width.end		= int(w2 * fHtRatio);
+	element.steady.height.start		= int(h1 * fHtRatio);
+	element.steady.height.end		= int(h2 * fHtRatio);
 	BI_CrosshairSetPos(element, x1, y1, w1, h1);
 }
 
@@ -2335,24 +2335,24 @@ void BI_CrosshairUpdatePos(aref element, float fSteady)
 	aref attr;
 	
 	makearef(attr, element.steady.width);
-	start = sti(attr.start);
-	end = sti(attr.end);
-	width = start + (end - start)*fSteady;
+	start = int(attr.start);
+	end = int(attr.end);
+	width = int(start + (end - start)*fSteady);
 	
 	makearef(attr, element.steady.height);
-	start = sti(attr.start);
-	end = sti(attr.end);
-	height = start + (end - start)*fSteady;
+	start = int(attr.start);
+	end = int(attr.end);
+	height = int(start + (end - start)*fSteady);
 	
 	makearef(attr, element.steady.offsetX);
-	start = sti(attr.start);
-	end = sti(attr.end);
-	offsetX = start + (end - start)*fSteady;
+	start = int(attr.start);
+	end = int(attr.end);
+	offsetX = int(start + (end - start)*fSteady);
 	
 	makearef(attr, element.steady.offsetY);
-	start = sti(attr.start);
-	end = sti(attr.end);
-	offsetY = start + (end - start)*fSteady;
+	start = int(attr.start);
+	end = int(attr.end);
+	offsetY = int(start + (end - start)*fSteady);
 	
 	BI_CrosshairSetPos(element, offsetX, offsetY, width, height);
 }

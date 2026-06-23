@@ -1,5 +1,6 @@
 void PZ_OsmatrivaemSunduk_0()
 {
+	ref sld;
 	if (CharacterIsAlive("Tichingitu") != -1 && CheckPassengerInCharacter(pchar, "Tichingitu"))
 	{
 		sld = CharacterFromID("Tichingitu");
@@ -21,6 +22,10 @@ void PZ_OsmatrivaemSunduk_0()
 		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_OsmatrivaemSunduk_0_1", 5);
 		return;
 	}
+
+	sld = CharacterFromID("PZ_Alonso");
+	LAi_SetActorType(pchar);
+	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_OsmatrivaemSunduk_0_1", 5);
 }
 
 void PZ_OsmatrivaemSunduk_1()
@@ -100,8 +105,8 @@ void PZ_Longway_78()
 	AddCharacterGoodsSimple(pchar, GOOD_RUM, 50);
 	AddCharacterGoodsSimple(pchar, GOOD_FOOD, 700);
 	SetCrewQuantityFull(pchar);
-	pchar.ship.HP = sti(pchar.ship.HP) / 2;
-	pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) / 2;
+	pchar.ship.HP = int(pchar.ship.HP) / 2;
+	pchar.Ship.Crew.Quantity = int(pchar.ship.Crew.Quantity) / 2;
 	AddCrewMorale(Pchar, 100);
 	ChangeCrewExp(pchar, "Sailors", 100);
 	ChangeCrewExp(pchar, "Cannoners", 100);
@@ -131,7 +136,7 @@ void PZ_Longway_78()
 	Group_SetGroupCommander("PZ_RM_Attack", "PZ_RobertMartin");
 	Group_SetTaskAttack("PZ_RM_Attack", PLAYER_GROUP);
 	Group_SetAddress("PZ_RM_Attack", "Hispaniola2", "quest_ships", "Quest_ship_1");
-	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(pchar.index));
 }
 
 void PZ_FinalKaznOnShip_DlgExit()
@@ -157,9 +162,9 @@ void PZ_FinalKaznOnShip_DlgExit()
 	
 	bQuestDisableMapEnter = false;
 	Island_SetReloadEnableGlobal("Hispaniola2", true);
-	Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
+	Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true);
 	Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
-	Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
+	Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true);
 	Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
 	DeleteAttribute(pchar, "GenQuest.CannotWait");
 	DeleteAttribute(pchar,"questTemp.TimeLock");
@@ -179,7 +184,7 @@ void PZ_FinalKaznOnShip_DlgExit()
 	
 	// Компаньон-заглушка входит в состав нашей экскадры
 	sld = CharacterFromID("PZ_ShipStasis");
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	SetCharacterRemovable(sld, true);
 	SetShipRemovable(sld, true);
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -189,12 +194,12 @@ void PZ_FinalKaznOnShip_DlgExit()
 	sld.loyality = MAX_LOYALITY;
 	sld.Dialog.CurrentNode = "hired";
 	sld.Payment = true;
-	sld.ship.HP = sti(sld.ship.HP) / 2;
+	sld.ship.HP = int(sld.ship.HP) / 2;
 	
 	//
 	aref arTmp;
 	makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
-	QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
+	QuestToSeaLogin_Prepare(float(arTmp.x), float(arTmp.z), arTmp.Island);
 	DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
 	QuestToSeaLogin_Launch();
 }
@@ -293,7 +298,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -339,7 +344,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 				GetCharacterPos(pchar, &locx, &locy, &locz);
 				for (i=1; i<=4; i++)
 				{	
-					sld = GetCharacter(NPC_GenerateCharacter("LigaInJungle_"+i, "killer_4", "man", "man", sti(pchar.rank), PIRATE, -1, true, "hunter"));
+					sld = GetCharacter(NPC_GenerateCharacter("LigaInJungle_"+i, "killer_4", "man", "man", int(pchar.rank), PIRATE, -1, true, "hunter"));
 					ChangeCharacterAddressGroup(sld, pchar.location, "goto",  LAi_FindFarLocator("goto", locx, locy, locz));
 					sld.viper = true;
 					if (i>=2 && i<=4)
@@ -352,7 +357,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 						sld.model = "killer_2";
 						sld.model.animation = "man";
 						Characters_RefreshModel(sld);
-						FantomMakeCoolFighter(sld, sti(pchar.rank)+5, 50, 50, "blade_13", "pistol3", "grapeshot", 100);
+						FantomMakeCoolFighter(sld, int(pchar.rank)+5, 50, 50, "blade_13", "pistol3", "grapeshot", 100);
 						sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 						sld.dialog.currentnode = "PZ_LigaInJungle_1";
 						LAi_SetActorType(sld);
@@ -495,12 +500,12 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_IshemLongway_Otryad") {
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, pchar.location, "rld",  "loc"+i);
 			LAi_SetHP(sld, 60.0, 60.0);
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 		LAi_SetActorType(sld);
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_BasTer_OtryadPeshera_1";
@@ -612,14 +617,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorFollow(sld, pchar, "", -1);
 			LAi_SetHP(sld, 60.0, 60.0);
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload2");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
 	}
 	
 	else if (sQuestName == "PZ_BasTer_MyUbilLongway_BadFinal") {
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPesheraOff", "off_fra_3", "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload2");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_BasTer_SOtryadom_UbiliLongway";
@@ -698,14 +703,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 			ChangeCharacterAddressGroup(sld, pchar.location, "reload",  "reload4");
 			TeleportCharacterToPosAy(sld, 0.74, 1.90, -1.86, 0.00);
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_SetHP(sld, 60.0, 60.0);
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera5", "mush_fra_"+(rand(2)+1), "man", "mushketer", sti(pchar.rank), FRANCE, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera5", "mush_fra_"+(rand(2)+1), "man", "mushketer", int(pchar.rank), FRANCE, 0, false, "soldier"));
 		ChangeCharacterAddressGroup(sld, pchar.location, "monsters", "monster8");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -717,7 +722,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.MusketerDistance = 0;
 		
 		// Босс мальтиец
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera6", "mush_fra_6", "man", "mushketer", sti(pchar.rank), FRANCE, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera6", "mush_fra_6", "man", "mushketer", int(pchar.rank), FRANCE, 0, false, "soldier"));
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -777,7 +782,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		DeleteQuestCondition("PZ_KorablBuhta_BadFinal");
 		
 		//Продолжение второго этапа
-		PChar.quest.PZ_LongwayRazgovorVKaute.win_condition.l1 = "EnterToSea"
+		PChar.quest.PZ_LongwayRazgovorVKaute.win_condition.l1 = "EnterToSea";
 		PChar.quest.PZ_LongwayRazgovorVKaute.win_condition = "PZ_LongwayRazgovorVKaute";
 	}
 	
@@ -830,7 +835,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=3; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTer_OtryadPeshera"+i, "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 			ChangeCharacterAddressGroup(sld, pchar.location, "quest",  "player");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1214,7 +1219,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		pchar.PriorityMode = 2;
 		
 		//Димен
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_12");
 		sld.lastname = StringFromKey("Longway_13");
 		GiveItem2Character(sld, "blade_17");
@@ -1232,7 +1237,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			if (i == 1)
 			{
 				//Сепп
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldPlantation_1", "mercen_26", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldPlantation_1", "mercen_26", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 				sld.name = StringFromKey("Longway_14");
 				sld.lastname = StringFromKey("Longway_15");
 				GiveItem2Character(sld, "topor_04");
@@ -1247,7 +1252,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldPlantation_"+i, "sold_hol_"+(rand(7)+1), "man", "man", sti(pchar.rank), HOLLAND, -1, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldPlantation_"+i, "sold_hol_"+(rand(7)+1), "man", "man", int(pchar.rank), HOLLAND, -1, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, "Batavia_plantation", "goto",  "goto18");
 				LAi_SetStayType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1309,7 +1314,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		locCameraFromToPos(1.95, 1.72, -2.27, false, -0.92, -0.60, 2.75);
 		chrDisableReloadToLocation = true;
 		//Сепп
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Sepp", "mercen_26", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Sepp", "mercen_26", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_14");
 		sld.lastname = StringFromKey("Longway_15");
 		GiveItem2Character(sld, "topor_04");
@@ -1332,7 +1337,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(sld, -0.95, 0.02, 3.26, -2.60);
 		LAi_SetActorType(sld);
 		//Люйтерс
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Rubbe", "flutist_11", "man", "musician", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Rubbe", "flutist_11", "man", "musician", int(pchar.rank), HOLLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_18");
 		sld.lastname = StringFromKey("Longway_19");
 		//GiveItem2Character(sld, "blade_06");
@@ -1345,7 +1350,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(sld, 1.34, 0.02, 3.14, 4.00);
 		LAi_SetFlutistStayAnimation(sld);
 		//Димен
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_12");
 		sld.lastname = StringFromKey("Longway_13");
 		GiveItem2Character(sld, "blade_17");
@@ -1439,7 +1444,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_SetFightMode(pchar, true);
 		for (i=1; i<=4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldResid_"+i, "sold_hol_"+(rand(7)+1), "man", "man", sti(pchar.rank), HOLLAND, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldResid_"+i, "sold_hol_"+(rand(7)+1), "man", "man", int(pchar.rank), HOLLAND, -1, true, "soldier"));
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto"+i);
@@ -1463,7 +1468,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_Batavia_BitvaResidensia_5") {
 		//LAi_SetFightMode(pchar, true);
 		chrDisableReloadToLocation = true;
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_12");
 		sld.lastname = StringFromKey("Longway_13");
 		GiveItem2Character(sld, "blade_17");
@@ -1538,7 +1543,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		chrDisableReloadToLocation = true;
 		for (i=1; i<=3; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_FormosaBandit_"+i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_FormosaBandit_"+i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 			ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto9");
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToLocator(sld, "goto", "goto7");
@@ -1969,7 +1974,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, "Kapstervil_Church", "barmen", "bar1");
 		LAi_CharacterDisableDialog(sld);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Kapstervil_Kurier", "citiz_7", "man", "man", sti(pchar.rank), FRANCE, 0, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Kapstervil_Kurier", "citiz_7", "man", "man", int(pchar.rank), FRANCE, 0, false, "quest"));
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_Kapstervil_Kurier_1";
 		ChangeCharacterAddressGroup(sld, "Kapstervil", "goto", "goto5");
@@ -2059,7 +2064,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
 			sld.name = StringFromKey("Longway_1");
 			sld.lastname = StringFromKey("Longway_2");
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -2115,14 +2120,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_Banten_Mayak4") {
 		chrDisableReloadToLocation = true;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTerJailOff_Clone", "off_fra_2", "man", "man", sti(pchar.rank), FRANCE, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_BasTerJailOff_Clone", "off_fra_2", "man", "man", int(pchar.rank), FRANCE, -1, true, "soldier"));
 		sld.name = StringFromKey("Longway_31");
 		sld.lastname = StringFromKey("Longway_32");
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto2");
 		LAi_SetActorType(sld);
 		TeleportCharacterToPosAy(sld, 0.97, 29.00, -9.06, 1.50);
 						
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Neznakomets", "officer_1", "man", "man", sti(pchar.rank), FRANCE, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Neznakomets", "officer_1", "man", "man", int(pchar.rank), FRANCE, -1, true, "soldier"));
 		sld.name = StringFromKey("Longway_33");
 		sld.lastname = StringFromKey("Longway_34");
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto2");
@@ -2186,7 +2191,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i=1; i<=6; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_PoterpKrushenie_"+i, "prizon_"+(rand(7)+1), "man", "man_B", sti(pchar.rank), PIRATE, -1, false, "marginal"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_PoterpKrushenie_"+i, "prizon_"+(rand(7)+1), "man", "man_B", int(pchar.rank), PIRATE, -1, false, "marginal"));
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto3");
 			if (i==1)
@@ -2302,7 +2307,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_LongwayBelizDialog") {
-		if (sti(pchar.questTemp.PZ_BelizAskCitizens) >= 3)
+		if (int(pchar.questTemp.PZ_BelizAskCitizens) >= 3)
 		{
 			DeleteAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta");
 			
@@ -2345,7 +2350,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("PZ_OhotaNaZvezdu_2", 2.5);
 		
 		// Клон-корабль на Сент-Кристофере
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSotta_Clone", "Rodriges", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSotta_Clone", "Rodriges", "man", "man", int(pchar.rank), FRANCE, -1, false, "soldier"));
 		sld.name = StringFromKey("Longway_37");
 		sld.lastname = StringFromKey("Longway_38");
 		FantomMakeCoolSailor(sld, SHIP_GALEON_H, StringFromKey("Longway_39"), CANNON_TYPE_CANNON_LBS32, 90, 90, 90);
@@ -2372,7 +2377,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("PZ_OhotaNaZvezdu_2", 2.5);
 		
 		// Клон-корабль на Ямайке
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSotta_Clone", "Rodriges", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSotta_Clone", "Rodriges", "man", "man", int(pchar.rank), ENGLAND, -1, false, "soldier"));
 		sld.name = StringFromKey("Longway_37");
 		sld.lastname = StringFromKey("Longway_38");
 		FantomMakeCoolSailor(sld, SHIP_GALEON_H, StringFromKey("Longway_39"), CANNON_TYPE_CANNON_LBS32, 90, 90, 90);
@@ -2497,7 +2502,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		// наши "пехотинцы"
 		for (i = 1; i <= 9; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_OurCrew" + i, "citiz_"+(rand(9) + 31), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_OurCrew" + i, "citiz_"+(rand(9) + 31), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 			LAi_SetWarriorType(sld);
 			if (i < 8) ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "quest", "quest1");
 			else ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "quest", "quest2");
@@ -2520,7 +2525,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew1_" + i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew1_" + i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, 0, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "goto", "goto2");
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -2543,7 +2548,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew2_" + i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew2_" + i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, 0, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "goto", "aloc8");
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -2566,7 +2571,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			}
 			else
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew3_" + i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, 0, true, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyCrew3_" + i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, 0, true, "soldier"));
 				ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "goto", "goto1");
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -2624,12 +2629,12 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_ZvezdaPobeda_3") {
 		TeleportCharacterToPosAy(pchar, -0.15, 4.68, -28.40, 3.10);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSott", "Rodriges", "man", "man", sti(pchar.rank), SPAIN, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_EdgardoSott", "Rodriges", "man", "man", int(pchar.rank), SPAIN, -1, false, "soldier"));
 		sld.name = StringFromKey("Longway_37");
 		sld.lastname = StringFromKey("Longway_38");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_Zvezda_DialogWithCapitan";
-		FantomMakeCoolFighter(sld, sti(pchar.rank), 80, 80, "blade_20", "pistol4", "grapeshot", 0);
+		FantomMakeCoolFighter(sld, int(pchar.rank), 80, 80, "blade_20", "pistol4", "grapeshot", 0);
 		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "stand");
 		LAi_SetActorType(sld);
 		SetActorDialogAny2Pchar(sld.id, "", -1, 0.0);
@@ -2660,7 +2665,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i = 1; i <= 15; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_Reinforcement" + i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_Reinforcement" + i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, -1, true, "soldier"));
 			LAi_SetWarriorType(sld);
 			if (i < 8) ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "quest", "quest3");
 			else ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "quest", "quest4");
@@ -2720,7 +2725,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld = characterFromID("PZ_EdgardoSott");
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Sotta_podmoga_1", "mercen_6", "man", "man", sti(pchar.rank), PIRATE, -1, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Sotta_podmoga_1", "mercen_6", "man", "man", int(pchar.rank), PIRATE, -1, false, "pirate"));
 		sld.CantLoot = true;
 		LAi_SetHP(sld, 60+MOD_SKILL_ENEMY_RATE*20, 60+MOD_SKILL_ENEMY_RATE*20); 
 		GiveItem2Character(sld, "blade_20");
@@ -2820,7 +2825,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition.l1 = "location";
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition.l1.location = "Charles_town";
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition = "PZ_LongwayCapstervilleDialog";
-		PChar.quest.PZ_ZvezdaNagrada.win_condition.l1 = "EnterToSea"
+		PChar.quest.PZ_ZvezdaNagrada.win_condition.l1 = "EnterToSea";
 		PChar.quest.PZ_ZvezdaNagrada.win_condition = "PZ_ZvezdaNagrada";
 		AddMapQuestMarkCity("Charles", false);
 		DelMapQuestMarkIsland("Nevis");
@@ -2837,7 +2842,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			SetCharacterGoods(pchar, GOOD_ROPES, GetCargoGoods(pchar, GOOD_ROPES)+350);
 			SetCharacterGoods(pchar, GOOD_OIL, GetCargoGoods(pchar, GOOD_OIL)+350);
 			
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - 100 + rand(50);
+			pchar.Ship.Crew.Quantity = int(pchar.ship.Crew.Quantity) - 100 + rand(50);
 		}
 	}
 	
@@ -3000,7 +3005,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_Etap5_NaverhuTavernBandits") {
 		for (i=1; i<=3; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_NaverhuTavernBandits_"+i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_NaverhuTavernBandits_"+i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, pchar.location, "quest",  "quest"+i);
 			LAi_ActorTurnToCharacter(sld, pchar);
@@ -3167,7 +3172,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		for (i=1; i<=3; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_MayakPiraty_"+i, "citiz_" + (rand(9) + 41), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_MayakPiraty_"+i, "citiz_" + (rand(9) + 41), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, "Mayak6", "smugglers",  "smuggler0"+i);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -3278,7 +3283,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_LocationFightDisable(loadedLocation, true);
 		chrDisableReloadToLocation = true;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_KlemanLebren", "citiz_56", "man", "man", sti(pchar.rank), PIRATE, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_KlemanLebren", "citiz_56", "man", "man", int(pchar.rank), PIRATE, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_54");
 		sld.lastname = StringFromKey("Longway_55");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
@@ -3302,7 +3307,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_ActorDialog(sld, pchar, "", 2, 0);
 		
 		// Клон-корабль в порту Тортуги
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_KlemanLebren_Clon", "citiz_56", "man", "man", sti(pchar.rank), FRANCE, -1, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_KlemanLebren_Clon", "citiz_56", "man", "man", int(pchar.rank), FRANCE, -1, false, "quest"));
 		sld.name = StringFromKey("Longway_54");
 		sld.lastname = StringFromKey("Longway_55");
 		FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, StringFromKey("Longway_56"), CANNON_TYPE_CANNON_LBS24, 80, 80, 80);
@@ -3405,7 +3410,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		RefreshWeather();
 		RefreshLandTime();
 
-		pchar.ship.HP = sti(pchar.ship.HP) / 4;
+		pchar.ship.HP = int(pchar.ship.HP) / 4;
 		pchar.ship.masts.mast3 = 1;
 		pchar.GenQuest.CabinLock = true;
 		Island_SetReloadEnableGlobal("Hispaniola2", false);
@@ -3430,7 +3435,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			//sld.MusketerDistance = 10;
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_RandomSailor", "citiz_39", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_RandomSailor", "citiz_39", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
 		sld.name 	= StringFromKey("Longway_58");
 		sld.lastname = StringFromKey("Longway_59");
 		ChangeCharacterAddressGroup(sld, Get_My_Cabin(), "reload", "reload1");
@@ -3467,9 +3472,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], true);
 		DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
 		Island_SetReloadEnableGlobal("Hispaniola2", true);
-		Island_SetReloadEnableLocal("Hispaniola2", "reload_2", false)
+		Island_SetReloadEnableLocal("Hispaniola2", "reload_2", false);
 		Island_SetGotoEnableLocal("Hispaniola2", "reload_2", false);
-		Island_SetReloadEnableLocal("Hispaniola2", "reload_3", false)
+		Island_SetReloadEnableLocal("Hispaniola2", "reload_3", false);
 		Island_SetGotoEnableLocal("Hispaniola2", "reload_3", false);
 		pchar.GenQuest.CannotWait = true;
 		pchar.questTemp.TimeLock = true;
@@ -3548,7 +3553,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.currentnode = "PZ_AnriTibo_9";
 		ChangeCharacterAddressGroup(sld, "PortPax_houseF1", "goto", "goto1");
 		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
+		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
 	
 	else if (sQuestName == "PZ_PoP_EscortToGuber") {
@@ -3653,7 +3658,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.currentnode = "PZ_Longway_71";
 		ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto8");
 		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", -1, 0)
+		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
 	
 	else if (sQuestName == "PZ_PoP_Pogonya") {
@@ -3756,7 +3761,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_RobertMartin_13";
 		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
+		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_6") {
@@ -3780,7 +3785,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_RobertMartin_16";
 		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
+		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_7") {
@@ -3816,7 +3821,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.currentnode = "PZ_RobertMartin_19";
 		LAi_SetActorType(sld);
 		//LAi_ActorSetGroundSitMode(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0)
+		LAi_ActorDialog(sld, pchar, "", 0, 0);
 	}
 	
 	else if (sQuestName == "PZ_AlonsoKazn") {
@@ -4117,7 +4122,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_CreateSoldier") {
 		chrDisableReloadToLocation = true;
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_FrenchSoldier", "sold_fra_" + (rand(7) + 1), "man", "man", sti(pchar.rank), FRANCE, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_FrenchSoldier", "sold_fra_" + (rand(7) + 1), "man", "man", int(pchar.rank), FRANCE, -1, true, "soldier"));
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_FrenchSoldier1";
 		ChangeCharacterAddressGroup(sld, "Tortuga_TownhallRoom", "reload", "reload2");
@@ -4239,7 +4244,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		{
 			for (i = 1; i <= 4; i++)
 			{
-				sld = GetCharacter(NPC_GenerateCharacter("PZ_EliteBrothelMercenary" + i, "citiz_" + (rand(9) + 51), "man", "man", sti(pchar.rank), FRANCE, -1, true, "quest"));
+				sld = GetCharacter(NPC_GenerateCharacter("PZ_EliteBrothelMercenary" + i, "citiz_" + (rand(9) + 51), "man", "man", int(pchar.rank), FRANCE, -1, true, "quest"));
 				ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto" + i);
 				LAi_SetImmortal(sld, true);
 				LAi_SetActorType(sld);
@@ -4273,7 +4278,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i = 1; i <= 4; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_EliteBrothelMercenary" + i, "citiz_" + (rand(9) + 51), "man", "man", sti(pchar.rank), FRANCE, -1, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_EliteBrothelMercenary" + i, "citiz_" + (rand(9) + 51), "man", "man", int(pchar.rank), FRANCE, -1, true, "quest"));
 			ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
 			if (i==3) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
 			if (i==4) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
@@ -4578,7 +4583,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		for (i = 1; i <= 3; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_TortugaSoldiers" + i, "sold_fra_" + (rand(7) + 1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_TortugaSoldiers" + i, "sold_fra_" + (rand(7) + 1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 			PlaceCharacter(sld, "goto", "random_must_be_near");
 			if (i == 1)
 			{
@@ -5330,12 +5335,12 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		TeleportCharacterToPosAy(sld, 3.46, 0.89, -4.01, -2.00);
 		LAi_SetActorType(sld);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldFra_1", "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldFra_1", "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, 4.55, 0.89, -4.51, -2.00);
 		
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldFra_2", "sold_fra_"+(rand(7)+1), "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_SoldFra_2", "sold_fra_"+(rand(7)+1), "man", "man", int(pchar.rank), FRANCE, 0, true, "soldier"));
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		TeleportCharacterToPosAy(sld, 3.70, 0.89, -2.92, -2.00);

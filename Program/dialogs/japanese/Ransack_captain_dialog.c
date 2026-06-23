@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear()+"「俺はお前の捕虜だ」 "+GetAddress_Form(NPChar)+"。しかし、あなたに知っておいてほしいのは "+NationNameNominative(sti(NPChar.nation))+" 「自分の仲間のために金なんて払わねえ。俺たちはみんな自分で何とかするしかねえんだ。」";
+				dialog.text = RandSwear()+"「俺はお前の捕虜だ」 "+GetAddress_Form(NPChar)+"。しかし、あなたに知っておいてほしいのは "+NationNameNominative(int(NPChar.nation))+" 「自分の仲間のために金なんて払わねえ。俺たちはみんな自分で何とかするしかねえんだ。」";
 				link.l1 = "ふん……お前からはもう儲けは出そうにねえな。せめてどこかの植民地で犯罪者として身代金を取ることはできそうだぜ。";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear()+"俺はお前の捕虜だ。 "+GetAddress_Form(NPChar)+". "+NationNameNominative(sti(NPChar.nation))+" 俺の自由のためなら、いい値で買ってくれるはずだぜ。";
+				dialog.text = RandSwear()+"俺はお前の捕虜だ。 "+GetAddress_Form(NPChar)+". "+NationNameNominative(int(NPChar.nation))+" 俺の自由のためなら、いい値で買ってくれるはずだぜ。";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "見ろよ、お前は腕の立つ船乗りだ。俺にはお前みたいな奴が必要なんだぜ。俺の指揮下で働く気はねえか？";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "tip-off"
 						dialog.text = RandPhraseSimple("船長、俺の身代金よりもっと儲かる提案を聞いてみないか？","ここで取引の余地がないのは承知していますが、私の提案を聞いてみませんか？");
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "船長、どうして俺を解放してくれないんだ？俺なんか必要ないだろう。海賊になるしか道がなかったんだ、 価値のある技能も学もないからさ。俺が望んだのは、少し金を稼いで引退することだけだったんだ。";
 					if (FindFreeRandomOfficer() > 0)
@@ -148,9 +148,9 @@ void ProcessDialogEvent()
 						dialog.text = RandPhraseSimple("船長、私は戦いに敗れました。どうかお慈悲をお与えください。 ","船長、どうかご慈悲をお願いします。私が戦争捕虜として扱われる理由がないことは承知しておりますので、 どうか命だけはお助けください。海であなたと再び会うことは決してありませんと誓います。");
 						link.l2 = LinkRandPhrase("俺の我慢を試すんじゃねえ。生きてるだけでもう運がいいんだぜ。",RandPhraseSimple("お前には俺なりの計画があるんだぜ。","将来、お前がまだ俺の役に立つかもしれねえな。"),RandPhraseSimple("お前は俺の囚人だ。俺にはお前に好きなことをする権利がある。\nお前自身の意見なんざ、ここじゃ何の価値もねえ。","お前は……いや、かつては軍艦の船長だったんだろうし、危険も承知していただろう。ここで聖人ぶるんじゃねえぞ。"));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "見ろよ、お前は腕の立つ戦士だし、俺にはお前みたいな荒くれ者が必要なんだ。俺の部下にならねえか？";
 								link.l3.go = "free_to_officer";
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                         	ReleasePrisoner(offref); // освободили пленника
 							LAi_SetWarriorType(offref);
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 					sTmp = "I had an idea to rob him once but I have never had a single chance to do that.";
 				break;
 			}
-			dialog.text = "よし。俺にはそれで十分だ。さて、本題に入ろう、\n "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" 裕福な商人が住んでいる "+NPChar.Hold_GenQuest.Name+". "+"奴は自分の船『"+NPChar.Hold_GenQuest.ShipName+" 販売 "+GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" 航路： "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"荷物が多すぎるときは護衛に金を払うんだ。"+sTmp+" この情報は、たった一人の命よりもあなたにとって価値があるはずだ。";
+			dialog.text = "よし。俺にはそれで十分だ。さて、本題に入ろう、\n "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" 裕福な商人が住んでいる "+NPChar.Hold_GenQuest.Name+". "+"奴は自分の船『"+NPChar.Hold_GenQuest.ShipName+" 販売 "+GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" 航路： "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"荷物が多すぎるときは護衛に金を払うんだ。"+sTmp+" この情報は、たった一人の命よりもあなたにとって価値があるはずだ。";
 			link.l1 = "この情報が俺に役立つとは思えねえ。俺は平和な商人を狩ったりしねえからな。";	
 			link.l1.go = "free_tip_off_0";
 			link.l2 = "この情報が俺に役立つかどうかは分からねえが、約束はしたからな。甲板長がお前を俺の船員たちのところに連れて行き、 一番近い港で解放してやる。";
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
@@ -573,7 +573,7 @@ void ProcessDialogEvent()
 		
 		case "free_by_hoard5":
 			dialog.text = "感謝するぜ、船長！これで男の言葉の重みがわかったよ "+GetSexPhrase("旦那！","お嬢さん！");
-			link.l1 = "さっさと行け、俺の邪魔をするな。次はこんなに甘くはしねえぞ。");
+			link.l1 = "さっさと行け、俺の邪魔をするな。次はこんなに甘くはしねえぞ。";
 			link.l1.go = "free_by_hoard6";
 		break;
 		

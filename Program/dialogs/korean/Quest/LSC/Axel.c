@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "난 너랑 말하고 싶지 않아, 이 친구야. 넌 아무 이유 없이 죄 없는 사람들을 공격하고 싸움을 부추기잖아. 꺼져!";
 				link.l1 = "음...";
@@ -158,13 +158,7 @@ void ProcessDialogEvent()
 			link.l1 = "";
 			link.l1.go = "";
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();

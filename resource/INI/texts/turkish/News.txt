@@ -1,20 +1,13 @@
-key {d24.04.2026}
-News {1.8 Maritime Update: açık beta}
+key {d23.06.2026}
+News {1.8.2 Performance Update artık hazır!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— 1.8 Maritime Update yaması artık erişilebilir
-— 1.7.3 arşive kaldırılıyor; Steam üzerinden sürümler arasında geçiş yapabilirsiniz
-— Yeni oyuna gerek yok
-— Maritime Stories DLC erişilebilir durumda
-— Karayipler’i büyük ölçüde değiştiren Mevsimler oyuna eklendi
-— Deniz topçuluğu yeniden elden geçirildi
-— Yeni yelken ve rota açısı sistemi
-— Çatışarak ele geçirme sistemi iyileştirildi
-— Dünya haritasının kullanım kolaylığı artırıldı
-— Deniz yapay zekâsı geliştirildi; gemi savaşları artık çok daha heyecanlı
-— Çok sayıda Quality of Life iyileştirmesi, denge düzenlemesi ve hata düzeltmesi
-— Ayrıntılı değişiklik listesini aşağıdaki düğmeyle haberlerde bulabilirsiniz
+— 1.8.2 Performance Update yaması artık mevcut
+— Yeni oyun başlatmanız gerekmiyor
+— Performans %40 arttı
+— Oyuna topluluk için yeni bir ödül eklendi
+— Ayrıntılı değişiklik listesini ve 2.0 yamasıyla ilgili haberleri aşağıdaki düğmeyle haberlerde bulabilirsiniz
 }

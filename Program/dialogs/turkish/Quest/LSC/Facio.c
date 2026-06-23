@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // у себя
 					dialog.text = "Ha? Neden yangın varmış gibi evime dalıyorsun? Sen kendini kim sanıyorsun??";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, hehe. "+sti(npchar.quest.price)+"  dublon ver, derdin bir günde çözülür.";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, hehe. "+int(npchar.quest.price)+"  dublon ver, derdin bir günde çözülür.";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Elbette, duydum olanları. Epeyce ortalığı karıştırdın, sevgili dostum. Ama bir çıkış yolu var. "+sti(npchar.quest.price)+" dublon ver, derdin bir günde çözülür.";
-				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+sti(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışırım.";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Elbette, duydum olanları. Epeyce ortalığı karıştırdın, sevgili dostum. Ama bir çıkış yolu var. "+int(npchar.quest.price)+" dublon ver, derdin bir günde çözülür.";
+				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+int(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışırım.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Al, paralarını ve hallet şunu.";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, he-he. "+sti(npchar.quest.price)+"  dublon ver, derdin bir günde çözülür.";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, he-he. "+int(npchar.quest.price)+"  dublon ver, derdin bir günde çözülür.";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Elbette, duydum. Epey bir karmaşa çıkardın, canım. Ama bir çıkış yolu var. "+sti(npchar.quest.price)+"  dubloonları ver, sorunun bir günde çözülür.";
-				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+sti(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışacağım.";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Elbette, duydum. Epey bir karmaşa çıkardın, canım. Ama bir çıkış yolu var. "+int(npchar.quest.price)+"  dubloonları ver, sorunun bir günde çözülür.";
+				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+int(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışacağım.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Al bakalım paralarını, kendin hallet.";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, hehe. "+sti(npchar.quest.price)+" dublon verin, sorununuz bir gün içinde çözülür.";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Pek de bir çatışma sayılmaz, sadece ufak bir yanlış anlaşılma, hehe. "+int(npchar.quest.price)+" dublon verin, sorununuz bir gün içinde çözülür.";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Elbette, duydum olanları. Epeyce karışıklık çıkardın, canım. Ama bir çıkış yolu var. "+sti(npchar.quest.price)+" dublon ver, derdin bir günde çözülür.";
-				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+sti(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışacağım.";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Elbette, duydum olanları. Epeyce karışıklık çıkardın, canım. Ama bir çıkış yolu var. "+int(npchar.quest.price)+" dublon ver, derdin bir günde çözülür.";
+				else dialog.text = "Tüm ada işlediğin katliamı biliyor. Sana yardım etmek kolay olmayacak, ama bir ihtimal var. "+int(npchar.quest.price)+" dublon ver, sorununu çözmeye çalışacağım.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Al, şu paraları ve işini hallet.";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("You have given "+sti(npchar.quest.price)+" doubloons");
+			Log_Info("You have given "+int(npchar.quest.price)+" doubloons");
 			dialog.text = "Harika. Şimdi otur ve biraz dinlen. Senin sorununu çözene kadar kabinimde kalman en iyisi olur. Durumu daha da kötüleştirmene gerek yok, canım.";
 			link.l1 = "Peki...";
 			link.l1.go = "peace";

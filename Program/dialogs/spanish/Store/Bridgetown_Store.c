@@ -26,10 +26,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "¡Maravilloso! Escuché que un nuevo filibote debería salir a la venta en el astillero cualquier día de estos. Esperaré y compraré ese barco. ¡Aunque he despojado todos los cañones de mi bergantín, todavía no hay suficiente espacio en mi bodega para todas estas mercancías! ¡Pasaré más tarde!";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-11");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 				AddQuestRecord("Holl_Gambit", "2-6");
 				pchar.questTemp.HWIC.Eng = "SeekVanBerg";

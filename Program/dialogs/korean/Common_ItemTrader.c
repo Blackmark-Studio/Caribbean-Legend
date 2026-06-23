@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 		//Jason --> мини-квест Дефицитный товар
 		case "Wine_ItemTrader":
 			dialog.text = "물론이지. 한 병에 칠백 페소야.";
-			if (makeint(Pchar.money) >= 700)
+			if (int(Pchar.money) >= 700)
 			{
 				link.l1 = "훌륭하군. 돈을 가져와서 내게 넘겨라.";
 				link.l1.go = "Wine_ItemTrader_1";
@@ -175,35 +175,13 @@ void ProcessDialogEvent()
 		
 		case "Wine_Bottles_1":
 			dialog.text = "아니, 그렇지 않아. 여기서 구하지. 하지만 그냥 내 공급자를 밝힐 순 없어. 하지만 천 페소라면... 어쩌면 말해줄 수도 있지...";
-			if (makeint(Pchar.money) >= 1000)
+			if (int(Pchar.money) >= 1000)
             {
 				link.l1 = "좋아. 여기 천이다 – 이제 네 공급자가 누구인지 말해.";
 				link.l1.go = "Wine_Bottles_2";
 			}
 			link.l2 = "이제 너희 장사치들이 너무 뻔뻔해졌군! 그 정도면 너희한테는 과분하지 않겠어? 네네 공급업자 없어도 나는 잘 살 수 있으니까, 됐어.";
 			link.l2.go = "Wine_Bottles_fail";
-		break;
-		
-		case "Wine_Bottles_free":
-			dialog.text = "알겠소... 좋소, 여기 당신의 쪽지요. 언젠가 나도 신세를 갚을 수 있길 바라오.";
-			link.l1 = "...";
-			link.l1.go = "Wine_Bottles_free_1";
-		break;
-		
-		case "Wine_Bottles_free_1":
-			pchar.questTemp.Wine.TraderID = pchar.questTemp.Wine.City +"_trader";
-			sld = characterFromId(pchar.questTemp.Wine.TraderID);
-			pchar.questTemp.Wine.Name = GetFullName(sld);
-			pchar.questTemp.Wine.ItemTraderID = npchar.id;
-			dialog.text = "내 와인 공급업자의 이름은 "+pchar.questTemp.Wine.Name+", 그는 이 지역 가게 주인이야.";
-			link.l1 = "알겠어! 고마워!";
-			link.l1.go = "exit";
-			//pchar.questTemp.Wine.Trader = "true";
-			DeleteAttribute(pchar, "questTemp.Wine.bottles");
-			pchar.questTemp.Wine.Repeat2 = "true";
-			TakeNItems(pchar, "letter_1", 1);
-			ChangeItemDescribe("letter_1", "itmdescr_letter_1");
-			PlaySound("interface\important_item.wav");
 		break;
 		
 		case "Wine_Bottles_2":
@@ -249,7 +227,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Repeat1_2":
 			dialog.text = "정보 값으로 천 페소를 받았지. 그리고 편지 값은 따로 이천 페소를 내야 해, 그 이하로는 절대 안 돼.";
-			if (makeint(Pchar.money) >= 2000)
+			if (int(Pchar.money) >= 2000)
 			{
 				link.l1 = "오... 너희 상인들은 정말 욕심이 끝이 없구나. 그러니 아무도 너희 같은 부류를 좋아하지 않는 거야. 뭐, 어쨌든 여기 돈이 있으니 어서 영수증이나 써 줘.";
 				link.l1.go = "Wine_Bottles_3";
@@ -335,12 +313,12 @@ void ProcessDialogEvent()
 		
 		case "ZsI_PokupaemPistolety_1":
 			dialog.text = "물론이죠! 손님은 언제나 환영입니다. 삼천 페소만 주시면, 요청하신 대로 믿을 수 있는 권총과 탄환, 화약을 드리겠습니다.";
-			if (sti(pchar.Money) > 2999)
+			if (int(pchar.Money) > 2999)
 			{
 				link.l1 = "비싸긴 한데, 좋아. 살게.";
 				link.l1.go = "ZsI_PokupaemPistolety_2";
 			}
-			if (sti(pchar.Money) > 2299)
+			if (int(pchar.Money) > 2299)
 			{
 				link.l2 = "가격이 너무 비싼 것 같군. 모스크바 사람 파데이의 친구에게는 할인 좀 해줄 수 있겠나?";
 				link.l2.go = "ZsI_Torg";
@@ -391,7 +369,7 @@ void ProcessDialogEvent()
 			{
 				Notification_Skill(false, 19, SKILL_COMMERCE);
 				dialog.text = "파데이 나리의 친구라면 언제든 환영이오. 하지만 값에는 친구가 없지. 삼천 페소입니다, 선장님.";
-				if (sti(pchar.Money) > 2999)
+				if (int(pchar.Money) > 2999)
 				{
 					link.l1 = "비싸긴 하지만, 좋아. 살게.";
 					link.l1.go = "ZsI_PokupaemPistolety_2";
@@ -430,7 +408,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_ItemTrader_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+sti(pchar.GenQuest.Device.Shipyarder.Chance1))
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+int(pchar.GenQuest.Device.Shipyarder.Chance1))
 			{
 				dialog.text = "흠... 그래, 이상한 녀석이 한 명 있었지. 근데 그게 뭔지 말도 안 해주고 그냥 나한테 팔려고만 하더라고. 근데 그게 뭔지도 모르는데 내가 그걸 왜 사? 어떻게 다시 팔겠어? 그래서 그냥 거절했지\n"+NPCharSexPhrase(npchar,"","")+", 그리고 그는 걸어갔다";
 				link.l1 = "그 사람은 어떻게 생겼고, 어디로 갔지? 그 기구가 정말 절실히 필요해.";
@@ -448,7 +426,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
+			if (int(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "나에게 보여줘... 그래, 흥미로운 식물이군. 그리고 아주, 아주 희귀한 거야. 망가 로사라고 불리지. 어디에 쓰는지는 모르겠지만, 이 식물에 관한 흥미로운 사실이 있어...";
 				link.l1 = "무슨 뜻이야?";
@@ -464,7 +442,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_exit":
 			DialogExit();
-			pchar.questTemp.Mangarosa.m_count = sti(pchar.questTemp.Mangarosa.m_count)+1;
+			pchar.questTemp.Mangarosa.m_count = int(pchar.questTemp.Mangarosa.m_count)+1;
 			npchar.quest.mangarosa = "true";
 		break;
 		
@@ -489,7 +467,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
 			pchar.questTemp.UV_Lavochniki_2 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_2":
@@ -498,7 +476,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
 			pchar.questTemp.UV_Lavochniki_3 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_3":

@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "Heh! Mój błąd, Kapitanie. Faktycznie, rozkazy Levasseura wyraźnie mówiły, by wyeliminować nie tylko rycerza, ale i wszystkich jego towarzyszy. Wszystkich, rozumiesz? Z tymi ludźmi nie ma żartów i ich żądania trzeba traktować poważnie. Nie powstrzymuj mnie przed wykonaniem mojej pracy, Kapitanie. Jeszcze jedno brudne zadanie i potem jestem z tobą do końca, przysięgam!";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Do diabła z tobą! Wykonaj swoją brudną robotę. Przyjmuję twoją przysięgę, i lepiej, żebyś traktował ją śmiertelnie poważnie. Czy się rozumiemy?";

@@ -52,13 +52,13 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 	InitBattleLandInterface();
 	//StartBattleLandInterface();
 	//Сохраним индекс врага
-	boarding_echr_index = sti(echr.index);
+	boarding_echr_index = int(echr.index);
 	//Параметры сражающихся сторон
 	int mclass = GetCharacterShipClass(pchar); // класс корабля ГГ
 	int mcrew = GetCrewQuantity(pchar); // число команды ГГ
 	
 	// Saving enemy captain rank for future use in CalculateAppropriateSkills (Gray 12.02.2005)
-	pchar.EnemyRank = echr.rank
+	pchar.EnemyRank = echr.rank;
 	
 	DeleteAttribute(pchar, "abordage_active");
 	Log_TestInfo("Наших до оружия " + mcrew);
@@ -144,9 +144,9 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 		
         if(mcrew > maxcrew)
 		{
-			rel = makefloat(mcrew) / makefloat(maxcrew);
+			rel = float(mcrew) / float(maxcrew);
 			mcrew = maxcrew;
-			ecrew = MakeInt(ecrew / rel + 0.5);
+			ecrew = int(ecrew / rel + 0.5);
 		}
 	}
 	else
@@ -157,9 +157,9 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 		// boal 30.01.2004 <--
         if(ecrew > maxcrew)
 		{       
-			rel = makefloat(ecrew) / makefloat(maxcrew);
+			rel = float(ecrew) / float(maxcrew);
 			ecrew = maxcrew;
-			mcrew = MakeInt(mcrew/rel + 0.5);
+			mcrew = int(mcrew/rel + 0.5);
 		}
 	}
 	if(mcrew < 1) mcrew = 1;
@@ -171,13 +171,13 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 	
 	//Jason: устанавливаем число тушек по разным палубам
 	// верхнюю палубу оставляем без изменений по количеству, но срезаем 15% HP у воинов противника, на нижних палубах будут добавочные враги, но это компенсация за разделенность сил противника относительно сил героя
-	inside_ecrew_1 = makeint(ecrew*0.3+0.5); // 30% - инсайд первого прохода
-	inside_ecrew_2 = makeint(ecrew*0.2+0.5); // 20% - инсайд второго прохода
+	inside_ecrew_1 = int(ecrew*0.3+0.5); // 30% - инсайд первого прохода
+	inside_ecrew_2 = int(ecrew*0.2+0.5); // 20% - инсайд второго прохода
 	if(IsFort) // на двор и бастион - поровну, по рез. тестов будем решать пропорции
 	{
-		inside_ecrew_1 = makeint(ecrew*0.3+0.5); // 30% - инсайд первого прохода
-		inside_ecrew_2 = makeint(ecrew*0.3+0.5); // 30% - инсайд второго прохода
-		ecrew = ecrew*0.6+0.5;
+		inside_ecrew_1 = int(ecrew*0.3+0.5); // 30% - инсайд первого прохода
+		inside_ecrew_2 = int(ecrew*0.3+0.5); // 30% - инсайд второго прохода
+		ecrew = int(ecrew*0.6+0.5);
 	}
 	if (inside_ecrew_1 < 1) inside_ecrew_1 = 1;
 	if (inside_ecrew_2 < 1) inside_ecrew_2 = 1;
@@ -202,10 +202,10 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 		}
 	}
 
-	BRD_InjectBalanceWithGenerator(pchar, boarding_enemy, boarding_player_base_crew, boarding_enemy_base_crew);
+	BRD_InjectBalanceWithGenerator(pchar, boarding_enemy, int(boarding_player_base_crew), int(boarding_enemy_base_crew));
 
-	boarding_player_crew_per_chr = makefloat(boarding_player_base_crew / makefloat(mcrew)); //приведение типа
-	boarding_enemy_crew_per_chr = makefloat(boarding_enemy_base_crew / makefloat(ecrew)); // Stone-D : For calculating final crew numbers
+	boarding_player_crew_per_chr = float(boarding_player_base_crew / float(mcrew)); //приведение типа
+	boarding_enemy_crew_per_chr = float(boarding_enemy_base_crew / float(ecrew)); // Stone-D : For calculating final crew numbers
 
 	//Выставим игроку и офицерам максимальную жизнь и запомним адреса
 	LAi_SetCurHPMax(pchar);
@@ -265,7 +265,7 @@ bool BRD_LoadNextDeck(string locationID, int locType)
 		
 		if (CheckAttribute(&Locations[locIndex], "boarding.locatorNum"))
 		{
-			maxLocators = sti(Locations[locIndex].boarding.locatorNum);
+			maxLocators = int(Locations[locIndex].boarding.locatorNum);
 		}
 		locI = 0;
 		locNum[locI] = rand(maxLocators-1);
@@ -413,10 +413,10 @@ bool LAi_ReloadEndFade()
 	//Пересчитываем команду игрока
 	float crew = boarding_player_crew * boarding_player_crew_per_chr; // ВЫЖИВШИЕ офицеры - это не мартросы не должны влиять
 	ref mchar       = GetMainCharacter();
-	float fDefenceSkill = 0.9 + MakeFloat(GetSummonSkillFromName(mchar, SKILL_DEFENCE)) / SKILL_MAX;
-	int deadCrew    = makeint((boarding_player_base_crew - crew) / fDefenceSkill + 0.3); // бонус выжившим
-	if (CheckAttribute(pchar, "questTemp.ShipCapellan.Yes")) deadCrew = makeint(deadCrew/2); //Jason, капеллан на борту - потери в 2 раза меньше
-	int deadCrewWOMedic = makeint(boarding_player_base_crew - crew); // без бонуса
+	float fDefenceSkill = 0.9 + float(GetSummonSkillFromName(mchar, SKILL_DEFENCE)) / SKILL_MAX;
+	int deadCrew    = int((boarding_player_base_crew - crew) / fDefenceSkill + 0.3); // бонус выжившим
+	if (CheckAttribute(pchar, "questTemp.ShipCapellan.Yes")) deadCrew = int(deadCrew/2); //Jason, капеллан на борту - потери в 2 раза меньше
+	int deadCrewWOMedic = int(boarding_player_base_crew - crew); // без бонуса
 	float leaderSkill = GetSummonSkillFromNameToOld(mchar, SKILL_LEADERSHIP);
 
 	BRD_ApplyMedicine(deadCrewWOMedic, &deadCrew); // расчёт медицины
@@ -430,22 +430,22 @@ bool LAi_ReloadEndFade()
 	Statistic_AddValue(mchar, "DeadCrewBoard", deadCrew);
 	AddMementoShipBonus(deadCrew);
 	Achievment_SetStat(21, deadCrew);
-	AddCharacterExpToSkill(mchar, "Defence", makeint(deadCrew / 3 + 0.5)); //качаем защиту
-	AddCharacterExpToSkill(mchar, "Grappling", makeint(deadCrew / 3 + 0.5));
+	AddCharacterExpToSkill(mchar, "Defence", int(deadCrew / 3 + 0.5)); //качаем защиту
+	AddCharacterExpToSkill(mchar, "Grappling", int(deadCrew / 3 + 0.5));
 
 	// после боя падает мораль
-	if (deadCrew > makeint(crew+0.3)) // погибло больше, чем выжило
+	if (deadCrew > int(crew+0.3)) // погибло больше, чем выжило
 	{
-		AddCrewMorale(mchar, sti(-20 / leaderSkill));
+		AddCrewMorale(mchar, int(-20 / leaderSkill));
 		ChangeCharacterComplexReputation(pchar,"authority", -0.5);
 	}
 	else
 	{  //растет, если потерь мало
-		AddCrewMorale(mchar, sti(leaderSkill));
+		AddCrewMorale(mchar, int(leaderSkill));
 		ChangeCharacterComplexReputation(pchar,"authority", 0.5);
 	}
 
-	int crewSurvived = MakeInt(crew + 0.3);
+	int crewSurvived = int(crew + 0.3);
 	// распределяем потери по кораблю ГГ и присоединившегося компаньона
 	if (CheckAttribute(&boarding_enemy, "CoordinatedCharIdx")) CoordinatedBoardingEnd(pchar, boarding_enemy.CoordinatedCharIdx, crewSurvived);
 	else SetCrewQuantityOverMax(pchar, crewSurvived); // десант весь ГГ как перегруз команды
@@ -469,7 +469,7 @@ bool LAi_ReloadEndFade()
 		Characters[idx].location.locator = boarding_adr[i].locator;
 	}
 	//Выгружаемся в интерфейс
-	return BRD_ExitToInterface(boarding_enemy, boarding_enemy_base_crew, IsFort, Surrendered);
+	return BRD_ExitToInterface(boarding_enemy, int(boarding_enemy_base_crew), IsFort, Surrendered);
 }
 
 //Разрешить перегрузку на следующую палубу

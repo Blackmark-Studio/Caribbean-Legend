@@ -397,7 +397,7 @@ void ChickenGod_RemovePrisoners() {
 		}
 		
 		sld = GetCharacter(idx);
-		if (!CheckAttribute(sld, "prisoned") || !sti(sld.prisoned) || !GetRemovable(sld)) {
+		if (!CheckAttribute(sld, "prisoned") || !int(sld.prisoned) || !GetRemovable(sld)) {
 			continue;
 		}
 		

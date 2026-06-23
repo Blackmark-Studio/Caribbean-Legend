@@ -15,7 +15,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		//--> Тёмные воды исцеления
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito? Dicono che la figlia di Thomas Morrison è a letto da sei mesi ormai. I medici sono completamente impotenti di fronte alla sua malattia. L'unica che può aiutarla è la zingara conosciuta per le sue pozioni che guariscono persino i gravemente malati. Ma ha rifiutato categoricamente di fare qualcosa per la povera ragazza.";
@@ -27,7 +27,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Тёмные воды исцеления
 		//--> Грани справедливости
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Due giorni fa, c'è stato un audace tentativo di assassinare il Capo del Porto! L'assassino in erba aspettava dietro la porta del suo ufficio, ma il Capo è riuscito a gridare aiuto. Un moschettiere è arrivato in fretta e ha ferito il malvivente, anche se il furfante è riuscito a fuggire dalle porte della città\nSi dice che il Capo del Porto stia offrendo una generosa taglia per la testa del mascalzone! Finora, nessuna anima coraggiosa si è fatta avanti.";
@@ -39,7 +39,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Грани справедливости
 		//--> Торговля по закону
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito la notizia?! È un dannato scandalo! Non c'è più una goccia di rum o vino nella taverna - come si suppone che uno trovi sollievo in questo caldo infernale? L'oste ci ha nutrito di promesse vuote per una settimana che la bevuta ricomincerà, ma non c'è stato niente! Ci si aspetta che ci dissetiamo la gola fino al Giorno del Giudizio?";
@@ -50,8 +50,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Торговля по закону
 		//--> Украденное воспоминание
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
 		if (bOk1 || bOk2)
 		{
 			dialog.text = "Si dice in porto che Julie d'Armagnac, la nipote del governatore, sia diventata solo un'ombra di quello che era. Un tempo radiosa e piena di vita, ora si aggira per le strade con un indiscutibile dolore impresso sul viso. La gente del posto sussurra e si chiede cosa le possa essere accaduto, ma nessuno conosce la verità. Forse qualche mascalzone le ha spezzato il cuore?"+GetSexPhrase(" Forse sei stato tu, capitano?","")+"";
@@ -63,7 +63,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		//--> В плену великого улова andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice che il pescatore Pierre Carno sia scomparso senza lasciare traccia. Due albe fa, si è imbarcato verso l'azzurro e da allora non si ha più notizia di lui. Sua moglie, Lea, è distrutta dal dolore. Di giorno e di notte, mantiene la sua veglia al molo, i suoi occhi fissi sulle acque infinite, pregando di scorgere la vela del suo amato.";
@@ -74,8 +74,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- В плену великого улова 
 		//--> Тайна Бетси Прайс
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Capitano, hai sentito? C'è una nuova cameriera che lavora nella nostra taverna. Dicono che sia una gran bellezza. Uomini da tutta la zona si sono precipitati solo per darle un'occhiata. Ma tre giorni fa, non si è presentata al lavoro, il che ha molto turbato il taverniere che stava guadagnando enormi profitti da quando è arrivata. Dicono che sia persino disposto a pagare chiunque possa trovare la ragazza.";
@@ -86,8 +86,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Тайна Бетси Прайс
 		//--> Оковы азарта
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il nostro fabbro ha perso a carte contro Javier Castillo, al punto che quello l’ha spogliato fino all’ultimo, costringendolo a mettere in gioco qualcosa di molto prezioso. Da allora il fabbro non riesce a riprendersi e non prende nuovi ordini – si dispera pensando che l’ammiraglio gli farà la pelle. Povero ingenuo, tutti qui sanno che con quel baro di Castillo non si deve giocare!";
@@ -99,7 +99,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Оковы азарта
 		//--> Письмо от покойника
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il capitano del fluyt 'Aquila' ha fatto un tale putiferio in taverna con il suo quartiermastro che tremavano le pareti! Pare che il capitano intendesse salpare con l’alta marea, ma il quartiermastro ha lasciato andare tutta la ciurma a terra. Ora i marinai si sono sparsi per la città e, se non tornano in tempo, la nave partirà senza di loro – il capitano non intende aspettare! Chissà per quale urgenza? Un carico redditizio, un affare vantaggioso, un incarico urgente dal governatore?";
@@ -153,7 +153,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		//--> Тёмные воды исцеления
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito? Dicono che la figlia di Thomas Morrison sia a letto da sei mesi. I dottori sono completamente impotenti di fronte alla sua malattia. L'unica che può aiutarla è la donna zingara conosciuta per le sue pozioni che curano anche i gravemente malati. Ma lei ha rifiutato categoricamente di fare qualcosa per la povera ragazza.";
@@ -165,7 +165,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Тёмные воды исцеления
 		//--> Грани справедливости
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Due giorni fa, c'è stato un audace tentativo di assassinare il Capo del Porto! Il presunto assassino si è nascosto vicino alla porta del suo ufficio, ma il Capo è riuscito a chiedere aiuto. Un moschettiere è arrivato in fretta e ha ferito il malfattore, sebbene il birbante sia riuscito a fuggire dalle porte della città\nSi dice che il Capo del Porto offra una generosa taglia per la testa del furfante! Finora, nessuna anima abbastanza coraggiosa si è fatta avanti. Ti dico, anche per mille dobloni - non rischierei la mia pelle...";
@@ -178,7 +178,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		//--> Торговля по закону
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito le notizie?! È un fottuto scandalo! Non c'è una goccia di rum o vino rimasta nella taverna - come si trova sollievo in questo maledetto caldo? L'oste ci sta imbottendo di promesse vuote da una settimana che le bevande torneranno a fluire, ma non c'è stato niente! Siamo forse attesi a dissetarci la gola fino al Giorno del Giudizio?";
@@ -190,8 +190,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Торговля по закону
 		
 		//--> Украденное воспоминание
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice in tutto il porto che Julie d'Armagnac, la nipote del governatore, è diventata solo un'ombra di quello che era. Un tempo radiosa e piena di vita, ora vaga per le strade con un dolore inconfondibile inciso sul volto. La gente del paese sussurra e si chiede cosa le possa essere accaduto, ma nessuno conosce la verità. Forse qualche mascalzone le ha spezzato il cuore?"+GetSexPhrase("Forse sei stato tu, capitano?","")+"";
@@ -204,7 +204,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		//--> В плену великого улова andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice che il pescatore Pierre Carno sia sparito senza lasciare traccia. Due albe fa, ha navigato verso l'azzurro e da allora non si è visto più. Sua moglie, Lea, è fuori di sé dal dolore. Al chiaro del giorno e alla luce delle lanterne, mantiene la sua veglia al molo, i suoi occhi fissati sulle acque infinite, pregando per intravedere la vela del suo amato.";
@@ -215,8 +215,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- В плену великого улова 
 		//--> Тайна Бетси Прайс
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Capitano, hai sentito? C'è una nuova cameriera che lavora nella nostra taverna. Dicono che sia una gran bellezza. Uomini da ogni parte sono accorsi solo per darle un'occhiata. Ma tre giorni fa, non si è presentata al lavoro, cosa che ha molto turbato il taverniere che stava guadagnando enormemente dalla sua arrivo. Dicono che sia addirittura disposto a pagare chiunque possa trovare la ragazza.";
@@ -227,8 +227,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Тайна Бетси Прайс
 		//--> Оковы азарта
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il nostro fabbro ha perso a carte contro Javier Castillo, al punto che quello l’ha spogliato fino all’ultimo, costringendolo a mettere in gioco qualcosa di molto prezioso. Da allora il fabbro non riesce a riprendersi e non prende nuovi ordini – si dispera pensando che l’ammiraglio gli farà la pelle. Povero ingenuo, tutti qui sanno che con quel baro di Castillo non si deve giocare!";
@@ -240,7 +240,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Оковы азарта
 		//--> Письмо от покойника
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il capitano del fluyt 'Aquila' ha fatto un tale putiferio in taverna con il suo quartiermastro che tremavano le pareti! Pare che il capitano intendesse salpare con l’alta marea, ma il quartiermastro ha lasciato andare tutta la ciurma a terra. Ora i marinai si sono sparsi per la città e, se non tornano in tempo, la nave partirà senza di loro – il capitano non intende aspettare! Chissà per quale urgenza? Un carico redditizio, un affare vantaggioso, un incarico urgente dal governatore?";
@@ -331,8 +331,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	case "rumours_nobleman":	
         srum = SelectRumourEx("nobleman", NPChar);
 		//--> Украденное воспоминание
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
 			if (bOk1 || bOk2){
 				
 			dialog.text = "Si dice in porto che Julie d'Armagnac, la nipote del governatore, sia diventata solo un'ombra di ciò che era. Un tempo radiosa e piena di vita, ora vaga per le strade con un inconfondibile dolore impresso sul viso. La gente del posto sussurra e si chiede cosa possa essere accaduto, ma nessuno conosce la verità. Forse qualche mascalzone le ha spezzato il cuore?"+GetSexPhrase(" Forse eri tu, capitano?","")+"";
@@ -379,8 +379,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	case "rumours_noblegirl":	
         srum = SelectRumourEx("noblegirl", NPChar);
 		//--> Украденное воспоминание
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice in giro per il porto che Julie d'Armagnac, la nipote del governatore, è diventata solo un'ombra di ciò che era una volta. Un tempo radiosa e piena di vita, ora si aggira per le strade con un inconfondibile dolore impresso sul viso. La gente del posto sussurra e si chiede cosa possa essere accaduto, ma nessuno conosce la verità. Forse qualche mascalzone le ha spezzato il cuore?"+GetSexPhrase(" Forse sei stato tu, capitano?","")+"";
@@ -428,7 +428,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 
 		//--> Грани справедливости
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Due giorni fa, c'è stato un audace tentativo di assassinare il Capo del Porto! Il presunto assassino si nascose in attesa dietro la porta del suo ufficio, ma il Capo è riuscito a gridare aiuto. Un moschettiere arrivò con urgenza e ferì il malfattore, sebbene il birbone sia riuscito a fuggire dalle porte della città. Si dice che il Capo del Porto sta offrendo una generosa taglia per la testa del rogue! Finora, nessuna anima abbastanza coraggiosa si è fatta avanti. Vous savez, même s'il offrait mille doublons - je n'accepterais pas...";
@@ -440,7 +440,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Грани справедливости
 		//--> Письмо от покойника
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il capitano del fluyt 'Aquila' ha fatto un tale putiferio in taverna con il suo quartiermastro che tremavano le pareti! Pare che il capitano intendesse salpare con l’alta marea, ma il quartiermastro ha lasciato andare tutta la ciurma a terra. Ora i marinai si sono sparsi per la città e, se non tornano in tempo, la nave partirà senza di loro – il capitano non intende aspettare! Chissà per quale urgenza? Un carico redditizio, un affare vantaggioso, un incarico urgente dal governatore?";
@@ -514,7 +514,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//Голландский Гамбит
 		
 		//--> поиск дезертира
-		if (CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE && !CheckAttribute(npchar, "quest.fugitive"))
+		if (CheckAttribute(pchar, "GenQuest.FindFugitive") && int(NPChar.nation) == PIRATE && !CheckAttribute(npchar, "quest.fugitive"))
         {
 			dialog.text = LinkRandPhrase("Sai, il rum fa amicizia tra gli uomini! Ah-ah!","Dopo un buon sorso di rum anche il boia sembrerà adorabile! Ah-ah!","Quando bevi dormi, quando dormi non peccare! Il rum e la birra ti porteranno in paradiso, quindi bevi, dannazione! Ah!");
             link.l1 = "Certo, condividiamo un drink... Dimmi, buon uomo, sai "+pchar.GenQuest.FindFugitive.Name+"? È un mio vecchio compagno di equipaggio. Alcuni ragazzi mi hanno detto che si è trasferito in questo posto...";
@@ -570,7 +570,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		//--> Тёмные воды исцеления
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.DWH_Start") && npchar.city == "SentJons";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito? Dicono che la figlia di Thomas Morrison sia confinata a letto da sei mesi. I medici sono completamente impotenti di fronte alla sua malattia. L'unica che può aiutarla è la donna zingara nota per le sue pozioni che curano anche i gravemente malati. Ma ha rifiutato categoricamente di fare qualcosa per la povera ragazza.";
@@ -584,7 +584,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Тёмные воды исцеления
 		//--> Грани справедливости
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.GS_Start") && npchar.city == "Beliz";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Due giorni fa, c'è stato un audace tentativo di assassinare il Capo del Porto! L'assassino in erba ha atteso dietro la porta del suo ufficio, ma il Capo è riuscito a gridare aiuto. Un moschettiere è arrivato in fretta e ha ferito il malfattore, sebbene il birbante sia riuscito a fuggire dalle porte della città\nSi dice che il Capo del Porto stia offrendo una generosa ricompensa per la testa del fuorilegge! Finora, nessuna anima coraggiosa si è fatta avanti. Credi, anche per mille dobloni - non rischierei il mio collo...";
@@ -598,7 +598,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Грани справедливости
 		//--> Торговля по закону
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_Start") && npchar.city == "BasTer";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito le notizie?! È un maledetto scandalo! Non c'è una goccia di rum o vino rimasta nella taverna - come si dovrebbe trovare sollievo in questo caldo maledetto? L'oste ci nutre di promesse vuote da una settimana che la bevuta scorrerà di nuovo, ma non c'è stato niente! Siamo forse attesi a seccare le nostre gole fino al Giorno del Giudizio?";
@@ -612,7 +612,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Торговля по закону
 		//--> Старые счёты
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice in giro per i moli che il nostro oste è nei guai! Qualcuno ha sgraffignato il suo gin! Non solo una bottiglia, capisci, ma un intero barile di roba - il tipo che non troverai da nessun'altra parte in queste isole! Portato direttamente dall'Europa, dicono. La vecchia volpe non dirà per chi lo stava tenendo, ma una cosa è certa: se quel barile non riappare presto, ci sarà da pagare un inferno per il povero disgraziato!";
@@ -625,8 +625,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Старые счёты
 		//--> Украденное воспоминание
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && sti(pchar.rank) >= 1 && sti(pchar.reputation.nobility) > 40;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.UV_Start") && npchar.city == "PortPax" && int(pchar.rank) >= 1 && int(pchar.reputation.nobility) > 40;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice in porto che Julie d'Armagnac, la nipote del governatore, è diventata un'ombra di se stessa. Un tempo radiosa e piena di vita, ora vaga per le strade con un dolore inconfondibile inciso sul volto. La gente del posto sussurra e si chiede cosa le possa essere accaduto, ma nessuno conosce la verità. Forse qualche furfante le ha spezzato il cuore?"+GetSexPhrase("Forse sei stato tu, capitano?","")+"";
@@ -640,7 +640,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Украденное воспоминание
 		//--> В плену великого улова andre39966
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.VPVL_Start") && npchar.city == "FortFrance";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Si dice che il pescatore Pierre Carno sia sparito senza lasciare traccia. Due albe fa, ha navigato nell'azzurro e nessun segno di lui da allora. Sua moglie, Lea, è fuori di sé dal dolore. Al chiaro del giorno e alla luce della lampada, tiene la sua veglia al molo, gli occhi fissi sulle acque infinite, pregando per intravedere la vela del suo amato.";
@@ -653,8 +653,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- В плену великого улова
 		//--> Тайна Бетси Прайс
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.TBP_Start") && npchar.city == "Villemstad" && int(pchar.rank) >= 1;
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Capitano, hai sentito? C'è una nuova cameriera che lavora nella nostra taverna. Dicono che sia una gran bellezza. Uomini da ogni parte stanno affluendo solo per darle un'occhiata. Ma tre giorni fa, non si è presentata al lavoro, cosa che ha molto turbato il locandiere che stava facendo enormi profitti da quando è arrivata. Dicono che sia addirittura disposto a pagare chiunque riesca a trovare la ragazza.";
@@ -668,8 +668,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Тайна Бетси Прайс
 		
 		//--> Оковы азарта
-		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && int(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il nostro fabbro ha perso a carte contro Javier Castillo, al punto che quello l’ha spogliato fino all’ultimo, costringendolo a mettere in gioco qualcosa di molto prezioso. Da allora il fabbro non riesce a riprendersi e non prende nuovi ordini – si dispera pensando che l’ammiraglio gli farà la pelle. Povero ingenuo, tutti qui sanno che con quel baro di Castillo non si deve giocare!";
@@ -683,7 +683,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Оковы азарта
 		//--> Письмо от покойника
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Avete sentito? Il capitano del fluyt 'Aquila' ha fatto un tale putiferio in taverna con il suo quartiermastro che tremavano le pareti! Pare che il capitano intendesse salpare con l’alta marea, ma il quartiermastro ha lasciato andare tutta la ciurma a terra. Ora i marinai si sono sparsi per la città e, se non tornano in tempo, la nave partirà senza di loro – il capitano non intende aspettare! Chissà per quale urgenza? Un carico redditizio, un affare vantaggioso, un incarico urgente dal governatore?";
@@ -697,7 +697,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Письмо от покойника
 		//--> LaEspadaDelRey
 		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
-		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
 		if (bOk1 || bOk2)
         {
 			dialog.text = "Hai sentito, "+GetSexPhrase("amico","amica")+"? C’è un vecchio rimbambito che va in giro per la città. Vaneggia di essere l’unico sopravvissuto al naufragio di quel relitto marcio nella baia di Sabu-Matilla, e dice che deve assolutamente tornarci. Ma da solo non ha il fegato. Spara cazzate su uno scheletro in abiti da indiano che ogni mattina lo sfida a duello. Io? *hic* Nemmeno per cinquecento dobloni ci andrei con lui. Chi lo sa che demoni ballano nella testa di quel cretino.";
@@ -756,7 +756,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 					link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Veramente, perché sto chiedendo a te? Posso chiedere a chiunque altro. Scusa per il disturbo.","Veramente, perché sto chiedendo a te? Posso chiedere a chiunque altro. Scusa per il disturbo."),"","","",npchar,Dialog.CurrentNode);
 					link.l1.go = HeroStringReactionRepeat("rumours_tavern_no", "first time", "first time", "first time", npchar, Dialog.CurrentNode);//"rumours_tavern_no";
 					NextDiag.CurrentNode = NextDiag.TempNode;
-					if (makeint(pchar.money) >= 1000)
+					if (int(pchar.money) >= 1000)
 					{
 						link.l2 = HeroStringReactionRepeat(RandPhraseSimple("Lo so, naturalmente. Ecco il mio pagamento.","Lo so, ovviamente. Ecco il mio pagamento."),"","","",npchar,Dialog.CurrentNode);
 						link.l2.go = HeroStringReactionRepeat("rumours_tavern_yes", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
@@ -774,7 +774,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 					link.l1 = HeroStringReactionRepeat(RandPhraseSimple(RandSwear()+"Non pago per una chiacchierata inutile.","Penserò a modi migliori per spendere questi soldi."),"Cambiamo argomento.","Cambiamo argomento.","Cambiamo argomento.",npchar,Dialog.CurrentNode);
 					link.l1.go = HeroStringReactionRepeat("rumours_tavern_no", "first time", "first time", "first time", npchar, Dialog.CurrentNode);//"rumours_tavern_no";
 					NextDiag.CurrentNode = NextDiag.TempNode;
-					if (makeint(pchar.money) >= 1000 )
+					if (int(pchar.money) >= 1000 )
 					{
 						link.l2 = HeroStringReactionRepeat(RandPhraseSimple("Li avrai se apprendo qualcosa di degno da te.","Pagherò se mi dai qualcosa di valore."),"","","",npchar,Dialog.CurrentNode);
 						link.l2.go = HeroStringReactionRepeat("rumours_tavern_yes", "exit", "exit", "exit", npchar, Dialog.CurrentNode);
@@ -854,7 +854,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 				break;
 			}
 			// Гаспар во фриплее 
-			if ((SandBoxMode) && npchar.city == "Tortuga" && (sti(pchar.reputation.nobility) < 41))
+			if ((SandBoxMode) && npchar.city == "Tortuga" && (int(pchar.reputation.nobility) < 41))
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				Dialog.Text = "La tua reputazione ti precede, capitano. Scommetto che spesso ti sei chiesto dove piazzare tutti quei gingilli e pietruzze luccicanti...";
@@ -923,7 +923,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 				Link.l1.go = "rumours_poor_2";
 				Link.l2 = RandPhraseSimple("Ebbene, addio.","Addio, compagno.");
 				Link.l2.go = "exit";
-				NPChar.quest.repeat.rumours_poor = sti(NPChar.quest.repeat.rumours_poor) + 1;
+				NPChar.quest.repeat.rumours_poor = int(NPChar.quest.repeat.rumours_poor) + 1;
 			}
 			else 
 			{
@@ -941,7 +941,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 				Link.l1.go = "rumours_poor";
 				Link.l2 = RandPhraseSimple("Ebbene, addio.","Addio, amico.");
 				Link.l2.go = "exit";
-				NPChar.quest.repeat.rumours_poor = sti(NPChar.quest.repeat.rumours_poor) + 1;
+				NPChar.quest.repeat.rumours_poor = int(NPChar.quest.repeat.rumours_poor) + 1;
 			}
 			else 
 			{
@@ -1019,7 +1019,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 				break;
 			}
 			
-			if (sti(pchar.questTemp.WPU.Postcureer.AgentChance) == 4)//раскрыли обман
+			if (int(pchar.questTemp.WPU.Postcureer.AgentChance) == 4)//раскрыли обман
 			{
 				dialog.text = "Hm. Mi scusi, ma il pacco è stato aperto prima! È cristallino per me. Il sigillo è stato ri-timbrato...";
 	        	link.l1 = ""+GetAddress_FormToNPC(NPChar)+", è il pacco che mi è stato dato all'ufficio del porto di "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen")+", e non ho idea...";
@@ -1029,16 +1029,16 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			if (pchar.questTemp.WPU.Postcureer == "late")//опоздали
 			{
-				int iTime = makeint(GetQuestPastDayParam("questTemp.Postcureer.Late"))+1;
-				pchar.questTemp.WPU.Postcureer.Money = makeint(sti(pchar.questTemp.WPU.Postcureer.Money)/(sti(iTime)+1));//сильно снижаем оплату
-				dialog.text = "Ti stavo aspettando. Ma tu sei "+FindRussianDaysString(iTime)+" in ritardo! Le informazioni che porti sono diventate molto meno utili... Hanno ancora un certo valore, ovviamente, quindi ti pagherò "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+". Per favore, prendi i soldi e addio.";
+				int iTime = int(GetQuestPastDayParam("questTemp.Postcureer.Late"))+1;
+				pchar.questTemp.WPU.Postcureer.Money = int(int(pchar.questTemp.WPU.Postcureer.Money)/(int(iTime)+1));//сильно снижаем оплату
+				dialog.text = "Ti stavo aspettando. Ma tu sei "+FindRussianDaysString(iTime)+" in ritardo! Le informazioni che porti sono diventate molto meno utili... Hanno ancora un certo valore, ovviamente, quindi ti pagherò "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+". Per favore, prendi i soldi e addio.";
 	        	link.l1 = "Grazie. Immagino.";
 	        	link.l1.go = "Postcureer_LevelUp_complete";
 				pchar.quest.PostcureerTime_FullOver.over = "yes";//снять второй таймер
-				pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)-1;//опоздавший рейс не засчитываем
+				pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)-1;//опоздавший рейс не засчитываем
 				AddQuestRecord("Postcureer", "8");
 				AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(iTime));
-				AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)));
+				AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money)));
 				AddQuestUserData("Postcureer", "sSex", GetSexPhrase("",""));
 				break;
 			}
@@ -1050,7 +1050,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	        	link.l1.go = "Postcureer_LevelUp_complete_bad";
 				break;
 			}
-			dialog.text = "Ti stavo aspettando. Sei arrivato giusto in tempo, le informazioni che mi hai portato saranno di grande utilità. Per favore, accetta questi soldi per il tuo lavoro - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+". Grazie per il tuo tempismo.";
+			dialog.text = "Ti stavo aspettando. Sei arrivato giusto in tempo, le informazioni che mi hai portato saranno di grande utilità. Per favore, accetta questi soldi per il tuo lavoro - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+". Grazie per il tuo tempismo.";
         	link.l1 = "Sei il benvenuto. Addio!";
         	link.l1.go = "Postcureer_LevelUp_complete";
 			pchar.quest.PostcureerTime_Over.over = "yes";//снять таймер
@@ -1059,7 +1059,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		case "Postcureer_LevelUp_complete":
 			RemoveItems(PChar, pchar.questTemp.WPU.Current.Item, 1);
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Postcureer.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Postcureer.Money));
 			CloseQuestHeader("Postcureer");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current");
@@ -1070,7 +1070,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddCharacterExpToSkill(pchar, "Leadership", 150);//авторитет
 			AddCharacterExpToSkill(pchar, "Fortune", 150);//везение
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Postcureer.Nation), 2);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Postcureer.Nation), 2);
 			Group_DeleteGroup("Fraht_Attack");
 			DialogExit();
 		break;
@@ -1081,7 +1081,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddQuestUserData("Postcureer", "sSex", GetSexPhrase("",""));
 			CloseQuestHeader("Postcureer");
 			ChangeCharacterComplexReputation(pchar,"nobility", 10);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Postcureer.Nation), 33);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Postcureer.Nation), 33);
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp");
@@ -1097,8 +1097,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			if (pchar.questTemp.WPU.Postcureer == "late") pchar.quest.PostcureerTime_FullOver.over = "yes";//снять второй таймер
 			CloseQuestHeader("Postcureer");
 			ChangeCharacterComplexReputation(pchar,"nobility", -2);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Postcureer.Nation), -2);
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Postcureer.Nation), -2);
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp");
@@ -1119,8 +1119,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddQuestUserData("Postcureer", "sSex", GetSexPhrase("",""));
 			CloseQuestHeader("Postcureer");
 			ChangeCharacterComplexReputation(pchar,"nobility", -10);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Postcureer.Nation), -2);
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Postcureer.Nation), -2);
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp");
@@ -1140,8 +1140,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		
 		case "Device_Common_1":
 			string sNation = pchar.GenQuest.Device.Shipyarder.Nation;
-			sld = GetCharacter(NPC_GenerateCharacter("Device_poorman", "panhandler_"+(rand(5)+1), "man", "man", sti(pchar.rank)+5, sNation, 20, true, "quest"));
-			SetFantomParamFromRank(sld, sti(pchar.rank)+5, true);         
+			sld = GetCharacter(NPC_GenerateCharacter("Device_poorman", "panhandler_"+(rand(5)+1), "man", "man", int(pchar.rank)+5, sNation, 20, true, "quest"));
+			SetFantomParamFromRank(sld, int(pchar.rank)+5, true);
 			GiveItem2Character(sld, "slave_02");
 			EquipCharacterbyItem(sld, "slave_02");
 			LAi_SetCitizenType(sld);
@@ -1149,7 +1149,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			sld.Dialog.Filename = "Quest\Other_Quests_NPC.c"; 
 			sld.dialog.currentnode = "Device_poorman"; 
 			sld.greeting = "Gr_poorman";
-			switch (sti(pchar.GenQuest.Device.Shipyarder.Chance2))
+			switch (int(pchar.GenQuest.Device.Shipyarder.Chance2))
 			{
 				case 0://в городе
 					sld = characterFromId("Device_poorman");
@@ -1208,7 +1208,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			GiveItem2Character(pchar, "sicretLetter");
 			AddCharacterExpToSkill(pchar, "Sneak", 200);
 			ref rItem = ItemsFromID("sicretLetter");
-			rItem.City = XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.Intelligence.MayorId)].city+"Gen")); 
+			rItem.City = XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.Intelligence.MayorId)].city+"Gen");
 			rItem.Mayor = GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId)); 
 			AddQuestRecord("MayorsQuestsList", "7");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.Intelligence.MayorId)].city+"Gen"));
@@ -1238,7 +1238,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		case "fight_owner":
 			LAi_SetOwnerTypeNoGroup(NPChar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			NextDiag.CurrentNode = "First time";
 			DialogExit();
 		break;

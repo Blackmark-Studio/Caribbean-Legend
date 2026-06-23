@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "", 4);
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 			AddQuestRecord("Holl_Gambit", "1-3");
 			AddMapQuestMarkCity("Marigo", true);
@@ -273,7 +273,7 @@ void ProcessDialogEvent()
 			LAi_SetWarriorType(npchar);
             LAi_group_MoveCharacter(npchar, "SPAIN_CITIZENS");
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
             DialogExit();
 			AddDialogExitQuest("MainHeroFightModeOn");	
 			pchar.quest.HWIC_Fernando.win_condition.l1 = "NPC_Death";
@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Drunkard_6":
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				dialog.text = "5000 Pesos? Oh.... Nur für die Zustellung eines Briefes?";
 				link.l1 = "Nein. Du bekommst einen anderen Brief. Du kommst damit in die Taverne und setzt dich hier hin. Ich nehme ihn dir ab. Mach keinen Unsinn und hab keine Angst - ich werde dich beobachten und in der Nähe bleiben. Nimm diese Summe als Vorschuss, damit du dich leichter fühlst.";
@@ -530,7 +530,7 @@ void ProcessDialogEvent()
 		
 		case "Drunkard_no_money":
 			dialog.text = "Haben Sie die fünftausend mitgebracht?";
-			if (makeint(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "Ja. Hier bist du. Mach dir keine Sorgen.";
 				link.l1.go = "Drunkard_7";
@@ -619,7 +619,7 @@ void ProcessDialogEvent()
 		
 		case "Cureer_abordage_3":
 			DialogExit();
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -928,7 +928,7 @@ void ProcessDialogEvent()
 		case "Stivesant_12":
 		//удаляем Мейфенг
 		DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-		if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+		if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 		{
 			pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 			pchar.Ship.name = "A boat";
@@ -943,10 +943,10 @@ void ProcessDialogEvent()
 			if(iTemp > 0)
 				{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 					{
 						pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-						sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+						sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 						RemoveCharacterCompanion(PChar, sld);
 						AddPassenger(PChar, sld, false);
 					}
@@ -1351,7 +1351,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Stivesant_49":
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				dialog.text = "Ich habe nicht einmal gezweifelt, Vizeadmiral Charles de Maure, dass Sie mir dieses Geld bringen würden. Vielleicht habe ich sogar zu wenig von Ihnen verlangt, aber na ja ... Der Baron ist nur eine Figur in Ihrem nächsten Spiel, nicht wahr? Der Rang und das Geld reichen Ihnen nicht, jetzt wollen Sie den Platz von de Poincy einnehmen, habe ich recht? Sie müssen zugeben, eine Million ist eine kleine Summe für den Posten des Generalgouverneurs der französischen Kolonien! Sie werden dieses Geld in wenigen Monaten zurückbekommen, angesichts Ihrer eisernen Hand.";
 				link.l1 = "Nehmen Sie Ihre Million, Mynheer. Ich möchte mein versprochenes Hauptbuch erhalten.";
@@ -1444,7 +1444,7 @@ void ProcessDialogEvent()
 		//удаление Мейфенг при провале квеста
 		case "TempOffGuard":
 			DeleteAttribute(pchar, "questTemp.HWIC.TakeQuestShip");//удаляем атрибут квестового корабля
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+			if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 			{
 				pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 				pchar.Ship.name = "A boat";
@@ -1459,10 +1459,10 @@ void ProcessDialogEvent()
 					if(iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 						{
 							pchar.questTemp.HWIC.Self.CompanionIndex = sld.Index;
-							sld = GetCharacter(sti(pchar.questTemp.HWIC.Self.CompanionIndex));
+							sld = GetCharacter(int(pchar.questTemp.HWIC.Self.CompanionIndex));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
 						}

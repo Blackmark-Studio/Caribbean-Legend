@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Per qualche motivo mi aspettav"+GetSexPhrase("o","a")+" un discorso pomposo da lui. E invece si è lanciato subito nella battaglia.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "Perché li abbiamo attaccati? Quel brigantino non rappresentava alcuna minaccia per noi, non trasportava merci. Su Grimm si dicevano molte cose, ma solo i trafficanti di schiavi lo temevano. Oggi avete fatto una strage – e per cosa, esattamente?";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "...";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "Incubi, a quanto pare. Ma il peggio è che uno dei nostri è morto di febbre. Un ragazzo giovane, forte — bruciato in poche ore.";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "Questo lo deciderà il medico. "+sld.name+" sa il fatto suo.";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -164,9 +164,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
-				dialog.text = ""sld.name+" vi ha già fatto rapporto stamattina. Abbiamo perso undici anime. Cosa facciamo?";
+				dialog.text = sld.name+" vi ha già fatto rapporto stamattina. Abbiamo perso undici anime. Cosa facciamo?";
 			}
 			else
 			{

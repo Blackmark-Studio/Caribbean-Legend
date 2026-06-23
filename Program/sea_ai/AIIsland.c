@@ -40,7 +40,7 @@ string Island_FindNearestLocator(string group, float x, float z)
 	for (i = 0; i < iNum; i++)
 	{
 		arLocator = GetAttributeN(arGroup, i);
-		fDist = GetDistance2D(x, z, stf(arLocator.x), stf(arLocator.z));
+		fDist = GetDistance2D(x, z, float(arLocator.x), float(arLocator.z));
 		if (fDist < fMin) 
 		{
 			fMin = fDist;
@@ -51,7 +51,7 @@ string Island_FindNearestLocator(string group, float x, float z)
 }
 string Island_FindNearestLocator2PChar(string group)
 {
-	return Island_FindNearestLocator(group, stf(pchar.Ship.Pos.x), stf(pchar.Ship.Pos.z))
+	return Island_FindNearestLocator(group, float(pchar.Ship.Pos.x), float(pchar.Ship.Pos.z));
 }
 //navy <--
 string Island_FindRandomLocator(string sIslandID, string group)

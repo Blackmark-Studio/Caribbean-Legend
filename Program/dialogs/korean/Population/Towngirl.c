@@ -51,9 +51,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				if (sti(rColony.HeroOwn) == true) // наш горожанин
+				if (int(rColony.HeroOwn) == true) // наш горожанин
 				{
 				    dialog.text = RandPhraseSimple("이 마을이 당신 소유라던데, "+GetSexPhrase("나리","아가씨")+".","이렇게 반가운 만남이라니! 이렇게 반가운 만남이라니! 총독님께서 직접 저와 말씀을 나누고 계시다니!");
 					link.l1 = RandPhraseSimple("생각이 바뀌었어. 행운을 빌어!","그냥 마을을 돌아다니는 중이야. 안녕.");
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(перессылка в файл города)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("재정 문제에 대해 논의하고 싶소.","재정에 관하여...");
 							link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(перессылка в файл города)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("재정 문제에 대해 논의하고 싶소.","재정에 관해서...");
 							link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 				}	
 				if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 	            {
-	                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+	                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 	                {
 						link.l3 = RandPhraseSimple("재정 문제에 대해 논의하고 싶소.","재정에 관하여...");
 						link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -151,7 +151,7 @@ void ProcessDialogEvent()
 				// Квестовый генератор священника. Квест №2. Warship -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	            {
-					link.l5 = LinkRandPhrase("알고 있나 ","알고 있소 ","들어봤나 ")+"최근에 이 지역 교회가 도둑맞았다는 소식 들었소?");
+					link.l5 = LinkRandPhrase("알고 있나 ","알고 있소 ","들어봤나 ")+"최근에 이 지역 교회가 도둑맞았다는 소식 들었소?";
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
 				// <-- Квестовый генератор священника. Квест №2.
@@ -197,7 +197,7 @@ void ProcessDialogEvent()
 			}			
 			if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
             {
-                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
                 {
 					link.l3 = RandPhraseSimple("재정 문제에 대해 논의하고 싶소.","재정에 관해서...");
 					link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 			// Квестовый генератор священника. Квест №2. Warship -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	        {
-				link.l5 = RandPhraseSimple("알고 있나 ","알고 있소 ","들어봤나 ")+" 최근에 이 지역 교회가 도둑맞았다는 사실을?");
+				link.l5 = RandPhraseSimple("알고 있나 ","알고 있소 ","들어봤나 ")+" 최근에 이 지역 교회가 도둑맞았다는 사실을?";
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
 			// <-- Квестовый генератор священника. Квест №2.
@@ -281,7 +281,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Citizen_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
 			{
 				dialog.text = "흠... 그래, 몇 시간 전에 그 물건을 가진 남자를 봤어. 거리를 따라 걷고 있었지. 흥미로운 도구였어.";
 				link.l1 = "그 사람은 어떻게 생겼고, 어디로 가고 있었지? 나한테 그런 정보가 정말 필요해.";

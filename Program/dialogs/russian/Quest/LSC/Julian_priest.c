@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Я не желаю с тобой общаться. Ты нападаешь без причины на мирных граждан, провоцируешь их на драку. Уходи прочь, безбожник!";
 				link.l1 = "Гм...";
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "Лечебную эссенцию? С тебя 90 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "Пожалуйста, брат Юлиан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "Целебный эликсир? С тебя 500 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "Пожалуйста, брат Юлиан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "Противоядие? С тебя 200 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "Пожалуйста, брат Юлиан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "Микстуру? С тебя 900 песо, "+GetSexPhrase("сын мой","дочь моя")+".";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "Пожалуйста, брат Юлиан. Вот деньги.";
 				link.l1.go = "potion_pay";
@@ -158,8 +158,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Пожалуйста. Держи своё лекарство. Да хранит тебя Господь!";
@@ -205,19 +205,7 @@ void ProcessDialogEvent()
 			link.l1 = "И вам спасибо, брат Юлиан.";
 			link.l1.go = "exit";
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
 			dialog.text = "Внимательно тебя слушаю.";

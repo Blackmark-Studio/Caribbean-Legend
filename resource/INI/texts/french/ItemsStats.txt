@@ -333,3 +333,7 @@ itm_stat_greenIdol {Culte}
 itm_stat_descr_greenIdol {L'idole asservit ceux qui l'entourent, augmentant de $percent(0.30) les chances de reddition des navires ennemis, la puissance de l'escadre et le nombre de recrues dans les tavernes.}
 itm_stat_secondary_greenIdol {Les Murmures des Anciens}
 itm_stat_descr_secondary_greenIdol {Tant qu'elle est équipée, l'idole réduit sans cesse le moral de l'équipage, le faisant sombrer dans la folie par ses murmures impies.}
+itm_stat_nocturlabe {Heure exacte}
+itm_stat_descr_nocturlabe {Augmente la manœuvrabilité du navire de 10%, et encore de 25% sur les navires de 2e et 1re classe.}
+itm_stat_secondary_nocturlabe {Navigation nocturne}
+itm_stat_descr_secondary_nocturlabe {Augmente $key(Perception) de #f.0modifiers.SpecialPerception#. Augmente les chances de fuite sur la carte globale de 25.}

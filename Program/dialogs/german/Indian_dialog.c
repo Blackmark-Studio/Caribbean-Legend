@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "Mein Mann Tagofa ist der beste Jäger des Stammes. Oh-ey!"+npchar.name+" ist stolz auf ihren Ehemann. "+npchar.name+" geht oft mit Tagofa in Selva. Geh weit weg. Tagofa weiß, wo die spanische Siedlung ist.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "Kennt Tagofa den Weg zur spanischen Stadt, die die Bleichgesichter Merida nennen?";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Mein Mann geht nicht in den Dschungel, Sohn des Meeres. Er fängt Fische. Guter Fischer, oh-ey!","Mein Mann guter Jäger, oh-ey, aber er geht nicht tief in den Dschungel."),RandPhraseSimple("Ein Jaguar hat meinen Mann auf der Jagd verwundet. Jetzt sitzt er im Dorf, macht Pfeile, oh-ey!","Sechs Monde zuvor haben drei Capongs meinen Mann angegriffen. Jetzt geht er nicht mehr weit vom Dorf jagen. Niemals! oh-ey!"));
-				link.l1 = LinkRandPhrase("Schade...","Zu schade...","Wie schade..."));
+				link.l1 = LinkRandPhrase("Schade...","Zu schade...","Wie schade...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "Nein, yalanaui. Der bleiche Gesicht hält nie sein Wort. Der bleiche Gesicht spricht - und das Wort fliegt sofort in die Leere. Die Kapong werden Tagofa töten und dann zu unserem Dorf kommen, die Lokono töten.";
 			link.l1 = "Glaubst du, dass diese Kapongs alles sind, worum du dich sorgen musst? Du liegst sehr falsch...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("Die Indianer respektieren dich nicht "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("Die Indianer respektieren dich nicht "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "Lokono vertrauen den Yalanaui nicht. Yalanaui täuschen den Indianer, machen den Indianer zum Sklaven. Aber Lokono hört deinen Namen, Bleichgesicht. Mein Vertrauen gehört dir. Komm morgen nach Sonnenuntergang, Sohn des Meeres. Ich werde bei Tagofa in dieser Hütte sein. Ich werde ihn fragen, ob er mit dir gehen wird oder nicht.";
 			link.l1 = "Sag Tagofa, dass ich ihm meine schönste Pistole geben werde. Und für dich habe ich viele Juwelen.";
 			link.l1.go = "hayamee_2";
-			notification("Die Indianer respektieren dich "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("Die Indianer respektieren dich "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

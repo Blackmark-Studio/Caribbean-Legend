@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 		
 		case "start2":
             ret = Pchar.name + ", I am a smuggler not a governor, what kind of job are you even talking about?";
-            if (sti(Pchar.nation) == PIRATE)
+            if (int(Pchar.nation) == PIRATE)
             {
                 dialog.text = ret+" 이네스의 선술집을 확인해 봐. 그 여자는 마을 사람들에 대해 모르는 게 없어."+"  우르크센에게 가. 여기가 그가 우두머리야. 하지만 먼저 이곳 해적들과 얘기 좀 해봐.";
             }
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			//Квест бук
 			AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 
 
 			LAi_SetPlayerType(PChar);

@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = ""+GetSexPhrase("Белый брат","Белая сестра")+" проницател"+GetSexPhrase("ен","ьна")+", как зме"+GetSexPhrase("й","я")+". С моим родом стрястись беда. К мой деревня прийти большой-большой каноэ белых людей. Они захватывать почти всех мужчин мой род в плен на свой каноэ и увезти в море...";
 			link.l1 = "Постой... ты хочешь сказать, что твоих соплеменников захватили в рабство белые с корабля?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Я радоваться, что слёзы богов достаться тебе!","Индеец благодарит тебя, "+GetSexPhrase("отважный бледнолицый","отважная белая скво")+"!","Возьми наш улов, "+GetSexPhrase("белый брат","белая сестра")+"!");
 			link.l1 = LinkRandPhrase("Рад"+GetSexPhrase("","а")+", что сумел"+GetSexPhrase("","а")+" помочь вам!","Спасибо, краснокожий брат!","Да, вы в долгу не останетесь!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Канаури ещё раз благодарит тебя, "+GetSexPhrase("бледнолицый брат","белая сестра")+"! Ты спасать все каноэ с индеец! Для Канаури это быть очень важно: на один каноэ быть внук Канаури, которого испанцы тоже захватить в рабство. Внук в детстве очень любить плавать, и Канаури подарить ему вот этот заговорённый оберег, чтобы внук не утонуть. Теперь внук больше не хотеть плавать и отдать оберег мне, чтобы я подарить его тебе, "+GetSexPhrase("бледнолицый брат","белая сестра")+". Я надеяться, что слёзы богов и этот подарок будут достаточной награда за жизнь индейцев. А теперь мы прощаться - нам пора в путь в родной селение.";
 				link.l1 = "Счастливо, Канаури! Рад"+GetSexPhrase("","а")+", что твой внук выжил! Не попадайте больше в рабство!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

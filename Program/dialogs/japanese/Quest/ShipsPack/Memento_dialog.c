@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "なぜか壮大な演説でもあるのかと思ってたが、奴はただ突っ込んできただけだった。";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "なぜ俺たちはあいつらを襲ったんだ？あのブリッグは脅威じゃなかったし、積み荷もなかった。 確かにグリムについてはいろんな噂があったが、奴を恐れていたのは奴隷商人くらいだ。今日は多くの人間が死んだ――それが一体何のためだったんだ？";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "...";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "悪夢ばかりさ。だが一番きついのは、仲間の一人が熱病で死んじまったことだ。若くて牛みたいに丈夫な奴だったのに、 数時間で焼けるように熱を出して逝っちまったんだ。";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "それは医者が決めることだ。 "+sld.name+" 腕は確かだ。";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				dialog.text = sld.name+" 今朝すでに報告しました。十一人の仲間を失いました。どうすればいいんだ？";
 			}

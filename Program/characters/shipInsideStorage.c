@@ -37,7 +37,7 @@ int CheckItemInAllBoxes(ref loc, string itemId, string boxAttributeName = "box",
 			aref boxItem = GetAttributeN(box, i);
 			if (GetAttributeName(boxItem) != itemId) continue;
 
-			qty += makeint(GetAttributeValue(boxItem));
+			qty += int(GetAttributeValue(boxItem));
 		}
 	}
 
@@ -63,13 +63,13 @@ int GetItemFromAllBoxes(ref loc, string itemId, int itemsToTakeQty, string boxAt
 			aref boxItem = GetAttributeN(box, i);
 			if (GetAttributeName(boxItem) != itemId) continue;
 
-			int inBoxQty = makeint(GetAttributeValue(boxItem));
+			int inBoxQty = int(GetAttributeValue(boxItem));
 			if (inBoxQty < 1) continue;
 
 			if (inBoxQty > itemsToTakeQty) // в боксе достаточно предметов
 			{
 				itemsTaken += itemsToTakeQty;
-				loc.(boxId).items.(itemId) = makeint(inBoxQty - itemsToTakeQty);
+				loc.(boxId).items.(itemId) = int(inBoxQty - itemsToTakeQty);
 				return itemsTaken;
 			}
 			else // берём сколько есть
@@ -115,7 +115,7 @@ void PutItemMyBox(string _Box, string _itemID, int _qty)
 		ref loc = &locations[FindLocation(Pchar.SystemInfo.CabinType)]; 
 		if(CheckAttribute(loc,_Box+".items."+_itemID))
 		{
-			loc.(_Box).items.(_itemID) = makeint(sti(loc.(_Box).items.(_itemID)) + _qty);
+			loc.(_Box).items.(_itemID) = int(int(loc.(_Box).items.(_itemID)) + _qty);
 		}
 		else
 		{
@@ -146,7 +146,7 @@ int CheckItemMyBox(string _Box, string _itemID)
 			attr = GetAttributeName(curItem);
 			if (attr == _itemID)
 			{
-				Qty += makeint(GetAttributeValue(curItem));
+				Qty += int(GetAttributeValue(curItem));
 			}
 		}			
 	}
@@ -176,12 +176,12 @@ int GetItemMyBox(string _Box, string _itemID, int _qty)
 			attr = GetAttributeName(curItem);
 			if (attr == _itemID)
 			{
-				Qty = makeint(GetAttributeValue(curItem));
+				Qty = int(GetAttributeValue(curItem));
 				if(Qty > 0)
 				{
 					if(Qty > _qty) 
 					{
-						loc.(_Box).items.(attr) = makeint(sti(loc.(_Box).items.(attr)) - _qty);
+						loc.(_Box).items.(attr) = int(int(loc.(_Box).items.(attr)) - _qty);
 						rQty += Qty;
 						return rQty;
 					}

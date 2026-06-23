@@ -36,7 +36,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "storehelper_1":
 			dialog.text = "千枚のエイト金貨だ。あんたがやることは何もねえよ。1時間もすりゃ、仕事を希望する連中が俺の酒場に集まる――何人もな。あんたはそいつらと話して、気に入った奴を選べばいいってわけさ。";
-			if (sti(Pchar.money) >= 1000)
+			if (int(Pchar.money) >= 1000)
 			{
 				link.l1 = "ああ…わかった、ほら、千枚持ってけ！";
 				link.l1.go = "storehelper_2";

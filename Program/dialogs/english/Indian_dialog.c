@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "My husband Tagofa is the best hunter of the tribe. Oh-ey! "+npchar.name+" is proud of her husband. "+npchar.name+" often goes with Tagofa in Selva. Goes far away. Tagofa knows where the Spanish settlement is.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "Does Tagofa know the way to the Spanish city the pale-faces call Merida?";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("My husband does not go to the selva, son of the sea. He catches fish. Good fisherman, oh-ey! ","My husband is a good hunter, oh-ey, but he does not go deep into the jungle."),RandPhraseSimple("A jaguar wounded my husband while hunting. Now he sits in the village making arrows, oh-ey!","Six moons ago, three Capongs attacked my husband. Now he does not go hunting far from the village. Never! Oh-ey!"));
-				link.l1 = LinkRandPhrase("Pity...","Too bad...","What a pity..."));
+				link.l1 = LinkRandPhrase("Pity...","Too bad...","What a pity...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "No, yalanaui. The paleface never keeps his word. The paleface speaks - and the word immediately flies away into the void. The Kapong will kill Tagofa and then come to our village, kill the Lokono.";
 			link.l1 = "Do you think these Kapongs are all you have to worry about? You are very wrong...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "Lokono do not trust the Yalanaui. Yalanaui deceive the Indian, make the Indian a slave. But Lokono have heard your name, paleface. My trust is yours. Come tomorrow after sunset, son of the sea. I will be with Tagofa in that hut. I will ask him whether he will go with you or not.";
 			link.l1 = "Tell Tagofa that I will give him my finest pistol. And for you, I have many jewels.";
 			link.l1.go = "hayamee_2";
-			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("The Indians respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

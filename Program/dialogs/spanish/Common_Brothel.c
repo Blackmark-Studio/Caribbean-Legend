@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 	}
 	// вызов диалога по городам <--
 	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
-	charWhoreCost = 2460 + sti(pchar.rank) * 40;
+	charWhoreCost = 2460 + int(pchar.rank) * 40;
 
 	switch (Dialog.CurrentNode)
 	{
@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		}
 		//<-- туториал Мартиника
 		// Jason --> Заносчивый аристократ
-		if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && makeint(environment.time) > 15.0 && makeint(environment.time) < 21.0 && sti(pchar.questTemp.HorseQty) > 4)
+		if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && int(environment.time) > 15.0 && int(environment.time) < 21.0 && int(pchar.questTemp.HorseQty) > 4)
 		{
 			dialog.text = "Eres un hombre tan distinguido. Además, a mis chicas les gustas mucho. Me gustaría pedirte un pequeño favor para mi establecimiento.";
 			link.l5 = "Me halaga, eso es seguro. ¿Con qué necesitas mi ayuda?";
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 		{
 			bool bOk = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-			if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && makeint(environment.time) > 6.0 && makeint(environment.time) < 22.0 && sti(pchar.rank) >= 7)
+			if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && int(environment.time) > 6.0 && int(environment.time) < 22.0 && int(pchar.rank) >= 7)
 			{
 				DelMapQuestMarkCity("marigo");
 				DelLandQuestMark(npchar);
@@ -99,7 +99,7 @@ void ProcessDialogEvent()
 		{
 			DelLandQuestMark(npchar);
 			dialog.text = "¿Ha hablado con Hugo, mi capitán señor?";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "Además, señora, aquí está su dinero. Todo salió de la manera más favorable...";
 				link.l1.go = "Portugal_3";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution") && pchar.questTemp.Mtraxx.Retribution == "brothel_repeat" && npchar.location == "Tortuga_SecBrRoom")
 		{
 			dialog.text = "¿Estás listo para un tratamiento restaurador inolvidable, mi valiente corsario?";
-			if (sti(pchar.money) >= 31000)
+			if (int(pchar.money) >= 31000)
 			{
 				link.l1 = "¡Lo estoy! Charlie Prince no malgasta palabras como malgasta dinero, ¡ja-ja!";
 				link.l1.go = "mtraxx_R2";
@@ -155,7 +155,7 @@ void ProcessDialogEvent()
 		}
 		if (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // не идёт старт Шарля
 		{
-			if (sti(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - а смысл, если нет как корабля, так и команды?
+			if (int(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - а смысл, если нет как корабля, так и команды?
 			{
 				link.l3 = "Hace un tiempo desde la última vez que mimé a mis hombres. ¿Puedo hacer un pedido grande de chicas para mis chicos?";
 				link.l3.go = "ForCrew";
@@ -206,7 +206,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ShipLetters_2":
-		if (sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+		if (int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 		{
 			dialog.text = "¡Déjame ver! Hmm... algún capitán ha perdido sus documentos, ¿verdad? Creo que deberías preguntarle al maestro del puerto sobre esto.";
 			link.l1 = "Quizás, quizás...";
@@ -280,10 +280,10 @@ void ProcessDialogEvent()
 				break;
 			}
 			// <-- legendary edition
-			dialog.text = "" + GetSexPhrase("¡Bueno, excelente, mi semental!", "Todos ellos son muy hábiles en lo que hacen, no tengas dudas.") + " Puedo ofrecerte a una chica muy bonita, su nombre es " + GetFullName(sld) + ", y ella está libre en este momento. Ese placer te costará " + FindRussianMoneyString(sti(sld.quest.price) + charWhoreCost) + ". ¿De acuerdo?";
+			dialog.text = "" + GetSexPhrase("¡Bueno, excelente, mi semental!", "Todos ellos son muy hábiles en lo que hacen, no tengas dudas.") + " Puedo ofrecerte a una chica muy bonita, su nombre es " + GetFullName(sld) + ", y ella está libre en este momento. Ese placer te costará " + FindRussianMoneyString(int(sld.quest.price) + charWhoreCost) + ". ¿De acuerdo?";
 			Link.l1 = "No. Supongo que no. Es demasiado caro...";
 			Link.l1.go = "exit";
-			if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+			if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 			{
 				Link.l2 = "¡Por supuesto!, ¿cómo podría negarme?";
 				Link.l2.go = "Hostess_NotChoice_agree";
@@ -298,8 +298,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Hostess_NotChoice_agree":
-		sld = &characters[sti(npchar.quest.choiceIdx)];
-		if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+		sld = &characters[int(npchar.quest.choiceIdx)];
+		if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 		{
 			dialog.text = "Bien, " + GetSexPhrase("guapo", "hermosa") + ". " + sld.name + " te estará esperando en una habitación privada en el segundo piso.";
 			Link.l1 = "" + GetSexPhrase("Bien, entonces voy", "Bien, entonces voy") + "...";
@@ -308,11 +308,11 @@ void ProcessDialogEvent()
 			if (IsEquipTalisman9())
 			{
 				if (npchar.nation != FRANCE)
-					AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+					AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 			}
 			else
 			{
-				AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+				AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 			}
 			sld.dialog.currentnode = "Horse_ReadyFack";
 			//--> таймер на возврат, чтобы не вечно ждали
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 
 			// belamour legendary edition не давать квесты губернатору и адмиралу
 			bool MCGovernon = CheckAttribute(pchar, "questTemp.Patria.GenGovernor");
-			bool MCAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4;
+			bool MCAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4;
 
 			if ((rand(4) == 1) && (pchar.questTemp.different == "free") && (!CheckCharacterItem(pchar, "CaptainBook")) && GetNpcQuestPastDayWOInit(npchar, "questShipLetters") > 10 && !MCGovernon && !MCAdmiral)
 			{
@@ -386,7 +386,7 @@ void ProcessDialogEvent()
 			if ((rand(5) == 2) && !CheckAttribute(pchar, "questTemp.ReasonToFast") && GetNpcQuestPastDayWOInit(npchar, "questReasonToFast") > 20 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !MCGovernon && !MCAdmiral) // Addon-2016 Jason
 			{
 				iColony = FindColony(npchar.city);
-				if (sti(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
+				if (int(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
 				{
 					pchar.questTemp.ReasonToFast = "Begin";
 					pchar.questTemp.ReasonToFast.city = npchar.city;
@@ -400,7 +400,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Oh, ves, el problema es que " + sld.name + " no es una chica barata, su precio es " + FindRussianMoneyString(sti(sld.quest.price) + charWhoreCost) + ". Y veo que simplemente no puedes permitírtela en este momento. Vuelve cuando seas rico" + GetSexPhrase(", querido", "") + "...";
+			dialog.text = "Oh, ves, el problema es que " + sld.name + " no es una chica barata, su precio es " + FindRussianMoneyString(int(sld.quest.price) + charWhoreCost) + ". Y veo que simplemente no puedes permitírtela en este momento. Vuelve cuando seas rico" + GetSexPhrase(", querido", "") + "...";
 			Link.l1 = "Esa es mi suerte...";
 			Link.l1.go = "exit";
 		}
@@ -452,9 +452,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "ForCrew_1":
-		if (sti(Pchar.money) >= GetCrewQuantity(pchar) * crewWhoreCost && GetCrewQuantity(pchar) > 0)
+		if (int(Pchar.money) >= GetCrewQuantity(pchar) * crewWhoreCost && GetCrewQuantity(pchar) > 0)
 		{
-			AddMoneyToCharacter(Pchar, -makeint(GetCrewQuantity(pchar) * crewWhoreCost));
+			AddMoneyToCharacter(Pchar, -int(GetCrewQuantity(pchar) * crewWhoreCost));
 			AddCrewMorale(Pchar, 10, true);
 			ChangeCharacterComplexReputation(pchar, "authority", 1);
 			LAi_Fade("", "");
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 		link.l1.go = "exit_setOwner";
 		LAi_group_Attack(NPChar, Pchar);
 		if (rand(3) != 1)
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 
 	// поиски кольца губернатора
@@ -733,15 +733,15 @@ void ProcessDialogEvent()
 		if (!CheckAttribute(npchar, "quest.sexHappend"))
 			npchar.quest.sexHappend = 1;
 		else
-			npchar.quest.sexHappend = sti(npchar.quest.sexHappend) + 1;
-		pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // для Данек
+			npchar.quest.sexHappend = int(npchar.quest.sexHappend) + 1;
+		pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // для Данек
 		Achievment_SetStat(23, 1);
 		//<-- кол-во посещений
 		str = npchar.city;
 		pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 		pchar.quest.(str).win_condition.l1.location = pchar.location;
 		pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-		pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; // счетчик
+		pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; // счетчик
 		break;
 
 	case "Horse_Kiss":
@@ -908,7 +908,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "TakeMayorsRing_S5":
-		if (rand(1) && sti(pchar.money) > 5000)
+		if (rand(1) && int(pchar.money) > 5000)
 		{
 			dialog.text = "Bueno, devolveré el anillo, pero me pagarás cinco mil pesos.";
 			link.l1 = "Bien, toma tu dinero y dame el anillo.";
@@ -944,7 +944,7 @@ void ProcessDialogEvent()
 		pchar.GenQuest.Badboy.Brothel.City = npchar.city; // город квестодателя
 		// log_info(pchar.GenQuest.Badboy.Brothel.City); // patch-6
 		pchar.GenQuest.Badboy.Brothel.nation = npchar.nation;
-		pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(sti(npchar.nation), "man");
+		pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(int(npchar.nation), "man");
 		dialog.text = "Verás, tenemos un cliente desagradable, " + pchar.GenQuest.Badboy.Brothel.Name + ". Y realmente nos molesta cada vez que viene! Primero se emborracha en la taberna, luego viene aquí, elige a una chica y hace un escándalo violento\nY lo peor de todo es que es de noble linaje! Es un pariente lejano de nuestro gobernador, así que estamos obligados a soportar todas sus travesuras. ¿Quizás podrías hacer que ese joven descarado... bueno... se calmara un poco... para que dejara de visitar mi establecimiento?";
 		link.l1 = "¿Pariente del gobernador, dices? Hmm... Preferiría no entrar en confrontación con las autoridades. Lo siento mucho.";
 		link.l1.go = "exit";
@@ -959,11 +959,11 @@ void ProcessDialogEvent()
 		// создаем дебошира
 		int iRank, iType, b;
 		string sBlade, sPistol;
-		if (sti(pchar.rank) < 6)
+		if (int(pchar.rank) < 6)
 			iType = 0;
-		if (sti(pchar.rank) >= 6 && sti(pchar.rank) < 16)
+		if (int(pchar.rank) >= 6 && int(pchar.rank) < 16)
 			iType = 1;
-		if (sti(pchar.rank) >= 16)
+		if (int(pchar.rank) >= 16)
 			iType = 2;
 		switch (iType)
 		{
@@ -974,20 +974,20 @@ void ProcessDialogEvent()
 			b = 25;
 			break;
 		case 1:
-			iRank = sti(pchar.rank) + 10;
+			iRank = int(pchar.rank) + 10;
 			sBlade = "blade_09";
 			sPistol = "pistol1";
 			b = 65;
 			break;
 		case 2:
-			iRank = sti(pchar.rank) + 5;
+			iRank = int(pchar.rank) + 5;
 			sBlade = "blade_14";
 			sPistol = "pistol1";
 			b = 40;
 			break;
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("Badboy", "citiz_" + (7 + rand(1)), "man", "man", iRank, HOLLAND, -1, true, "citizen"));
-		FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", makeint(iRank * 5));
+		FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", int(iRank * 5));
 		sld.name = pchar.GenQuest.Badboy.Brothel.Name;
 		sld.lastname = "";
 		sld.dialog.FileName = "Quest\Other_quests_NPC.c";
@@ -1018,7 +1018,7 @@ void ProcessDialogEvent()
 		AddDialogExitQuestFunction("SexWithHostess_goToRoom");
 		SetTimerFunction("SexWithHostess_null", 0, 0, 1);
 		DialogExit();
-		if (sti(pchar.GenQuest.Badboy.Brothel.Type) != 2)
+		if (int(pchar.GenQuest.Badboy.Brothel.Type) != 2)
 		{
 			DeleteAttribute(pchar, "GenQuest.Badboy");
 		}
@@ -1148,14 +1148,14 @@ void ProcessDialogEvent()
 
 	case "mtraxx_7S":
 		DialogExit();
-		pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // для Данек
+		pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // для Данек
 		Achievment_SetStat(23, 1);
 		//<-- кол-во посещений
 		str = npchar.city;
 		pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 		pchar.quest.(str).win_condition.l1.location = pchar.location;
 		pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-		pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; // счетчик
+		pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; // счетчик
 		AddDialogExitQuest("PlaySex_1");
 		// кач от борделя
 		if (CheckNPCQuestDate(pchar, "BrothelSex"))
@@ -1198,7 +1198,7 @@ void ProcessDialogEvent()
 
 	case "mtraxx_R1":
 		dialog.text = "¡Ah, Charlie Prince, tu humor es tan agudo como tu sable! Casi me haces enfadar... ¡Chicas! Tenemos un invitado, ¡un invitado especial! ¡Traed vino y comida!";
-		if (sti(pchar.money) >= 31000)
+		if (int(pchar.money) >= 31000)
 		{
 			link.l1 = "¡Llama a todas las muchachas bonitas aquí! ¡Vamos a descansar y divertirnos! ¡Yo-ho-ho!..";
 			link.l1.go = "mtraxx_R2";
@@ -1221,13 +1221,13 @@ void ProcessDialogEvent()
 		break;
 	// belamour ночной приключенец
 	case "NA_Girl":
-		dialog.text = "Oh, así que tenemos un conocedor aquí, jeje... Bueno, bueno, tengo a tal chica. Pero ella no viene barata: " + makeint(pchar.GenQuest.NightAdventure_money) + " pesos.";
+		dialog.text = "Oh, así que tenemos un conocedor aquí, jeje... Bueno, bueno, tengo a tal chica. Pero ella no viene barata: " + int(pchar.GenQuest.NightAdventure_money) + " pesos.";
 		link.l1 = "Trato hecho.";
 		link.l1.go = "NA_Girl_1";
 		break;
 
 	case "NA_Girl_1":
-		AddMoneyToCharacter(pchar, -makeint(pchar.GenQuest.NightAdventure_money));
+		AddMoneyToCharacter(pchar, -int(pchar.GenQuest.NightAdventure_money));
 		dialog.text = "Eso es genial, querido. La Sacerdotisa del Amor te estará esperando arriba. Créeme, no te arrepentirás.";
 		link.l1 = "Ya no lo hago.";
 		link.l1.go = "NA_Girl_2";
@@ -1243,7 +1243,7 @@ void ProcessDialogEvent()
 
 	case "chicken_god":
 		dialog.text = "¿Para usted y m'lord Agueybana? Claro que sí. Eso serán diez mil, capitán.";
-		if (sti(pchar.money) >= 10000)
+		if (int(pchar.money) >= 10000)
 		{
 			link.l1 = "¡Espera, no así!.. ¡Maldición! No importa, aquí está el pago.";
 			link.l1.go = "chicken_god_pay";

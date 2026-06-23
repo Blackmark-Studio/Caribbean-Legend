@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Patrol" + locations[FindLocation(npchar.location)].index + "_";
 	string sGroup = "PatrolGroup_" + locations[FindLocation(npchar.location)].index;
 	string sTemp1, sTemp2;
@@ -60,15 +60,15 @@ void ProcessDialogEvent()
 				LAi_type_actor_Reset(sld);
 				LAi_RemoveCheckMinHP(sld);
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("哦看, 好像这个恶棍在" + XI_ConvertString("Colony" + npchar.city + "Dat") + "拉响了警报! 抓住他" + GetSexPhrase("们","她") + "!! ", "嘿, 看看这个! 几个" + NationNamePeople(sti(pchar.nation)) + "竟然与" + NationNameAblative(sti(npchar.nation)) + "为敌! 抓住这个恶棍!! ");
+					dialog.text = RandPhraseSimple("哦看, 好像这个恶棍在" + XI_ConvertString("Colony" + npchar.city + "Dat") + "拉响了警报! 抓住他" + GetSexPhrase("们","她") + "!! ", "嘿, 看看这个! 几个" + NationNamePeople(int(pchar.nation)) + "竟然与" + NationNameAblative(int(npchar.nation)) + "为敌! 抓住这个恶棍!! ");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("在" + XI_ConvertString("Colony" + npchar.city + "Gen") + "附近有敌方特工! 抓住他" + GetSexPhrase("们","她") + "!! ", "嘿, 看, " + NationNamePeople(sti(pchar.nation)) + "几乎在" + XI_ConvertString("Colony" + npchar.city + "Dat") + "附近走动! 立即抓住他!! ");
+					dialog.text = RandPhraseSimple("在" + XI_ConvertString("Colony" + npchar.city + "Gen") + "附近有敌方特工! 抓住他" + GetSexPhrase("们","她") + "!! ", "嘿, 看, " + NationNamePeople(int(pchar.nation)) + "几乎在" + XI_ConvertString("Colony" + npchar.city + "Dat") + "附近走动! 立即抓住他!! ");
 				}
 				link.l1 = RandPhraseSimple("好吧, 你们可以试试。 这里只有我们... ", "嘿, 没人会在这里帮你们。 ");
 				link.l1.go = "exit_fight"; 				
@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			{				
 				// belamour传奇版
 				sTemp1 = "";
-				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "舰队副司令! ";
+				if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation)) sTemp1 = "舰队副司令! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "总督大人! ";
 				
 				dialog.text = LinkRandPhrase("请允许我介绍自己! 我是来自" + XI_ConvertString("Colony" + npchar.city + "Gen") + "的巡逻军官, 我们在寻找一名逃犯。 ",
@@ -167,7 +167,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_12":
-			jewelType = sti(pchar.questTemp.ReasonToFast.p4);
+			jewelType = int(pchar.questTemp.ReasonToFast.p4);
 			pchar.questTemp.ReasonToFast.item = "jewelry" + jewelType;
 			sItem = "jewelry" + jewelType;
 			switch (jewelType)
@@ -204,10 +204,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_14":
-			dialog.text = "好吧, 那么你欠我" + sti(pchar.questTemp.ReasonToFast.p5) + "比索, 正如我们约定的。 ";
+			dialog.text = "好吧, 那么你欠我" + int(pchar.questTemp.ReasonToFast.p5) + "比索, 正如我们约定的。 ";
 			link.l1 = "这是不是有点太多了? ";
 			link.l1.go = "Reason_To_Fast_16";
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				link.l2 = "给你。 ";
 				link.l2.go = "Reason_To_Fast_17";
@@ -248,15 +248,15 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_17":
 			pchar.questTemp.ReasonToFast = "PatrolSuccess_1";
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p5)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p5)));
 			pchar.GenQuest.CannotWait = 1; // 锁定休息界面
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.chain")) DeleteAttribute(pchar,"questTemp.ReasonToFast.chain");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.ShipName");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipTypeName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.TypeName");
-			switch (sti(pchar.questTemp.ReasonToFast.target))
+			switch (int(pchar.questTemp.ReasonToFast.target))
 			{
 				case 0: // 载有货物的船
-					sTemp1 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp1 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					iShipType = ReasonToFast_GetVictimShipType();
 					iShipGoods = ReasonToFast_GetVictimShipGoods();
 					dialog.text = "太好了! 现在我们来谈正事。 我们截获了那艘" + GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName) + "'" + sTemp1 + "', 船上载有" + GetGoodsNameAlt(iShipGoods) + "货物, 船员已经被拘留,'货物'还在船上。 船员是在港口的落魄者中雇佣的, 他们明天之前不会进港。 你可以随意处理他们。 ";
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.questTemp.ReasonToFast.password = sTemp2;
-					sTemp2 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp2 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					dialog.text = "太好了! " + sTemp1 + "放在他的闺房里。 信使船随时都会到达, 但你仍然需要处理。 仆人是'我们的'人。 密码:'" + pchar.questTemp.ReasonToFast.password + "', 回复:'" + sTemp2 + "'。 ";
 					link.l1 = "好的。 我会把你的话告诉" + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + "。 ";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_18":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				dialog.text = "你想骗我吗? ! 你这狗东西! ";
 				link.l1 = "闭嘴! ";
@@ -364,8 +364,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_ExitFight":
-			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation));
-			SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY); 
+			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation));
+			SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY);
 			
 			pchar.GenQuest.HunterScore2Pause = 1; // 猎人分数不增加
 			pchar.GenQuest.ReputationNotChange = 1; // 不改变声誉

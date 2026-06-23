@@ -91,7 +91,7 @@ void FillCharactersScroll()
 				pRef2.str1 = "#" + XI_ConvertString("carpenter");
 			break;
 		}
-		_curCharIdx = sti(pRef.(PsgAttrName));
+		_curCharIdx = int(pRef.(PsgAttrName));
 		if(_curCharIdx!=-1)
 		{
 			GameInterface.CHARACTERS_SCROLL.(attributeName).character = _curCharIdx;
@@ -181,11 +181,11 @@ void FillCharactersScroll()
 				pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
 				if(CheckAttribute(&Characters[_curCharIdx], "quest.OfficerPrice"))
 				{
-					//pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.OfficerPrice);
+					//pRef2.str4 = "#" + int(Characters[_curCharIdx].quest.OfficerPrice);
 				}
 				if(CheckAttribute(&Characters[_curCharIdx], "quest.convoyquest.money"))
 				{
-					//pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.convoyquest.money);
+					//pRef2.str4 = "#" + int(Characters[_curCharIdx].quest.convoyquest.money);
 				}
 				pRef2.str5 = "#" + Characters[_curCharIdx].rank;
 				if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
@@ -217,7 +217,7 @@ void FillCharactersScroll()
 			pRef2.str2 = "#" + Characters[_curCharIdx].name;
 			pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
 			pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-			if (CheckAttribute(&Characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == true)
+			if (CheckAttribute(&Characters[_curCharIdx], "prisoned") && int(characters[_curCharIdx].prisoned) == true)
 			{
 				//pRef2.str4 = "#" + CalculateRansomPrice(&characters[_curCharIdx]);
 				pRef2.str1 = "#" + XI_ConvertString("prisonership");
@@ -353,7 +353,7 @@ void FillCharactersScrollEx(bool bOfficers)
                     pRef2.str1 = "#" + XI_ConvertString("carpenter");
                 break;
             }
-            _curCharIdx = sti(pRef.(PsgAttrName));
+            _curCharIdx = int(pRef.(PsgAttrName));
             if(_curCharIdx!=-1)
             {
                 GameInterface.CHARACTERS_SCROLL.(attributeName).character = _curCharIdx;
@@ -453,11 +453,11 @@ void FillCharactersScrollEx(bool bOfficers)
                     pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
                     if(CheckAttribute(&Characters[_curCharIdx], "quest.OfficerPrice"))
                     {
-                        //pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.OfficerPrice);
+                        //pRef2.str4 = "#" + int(Characters[_curCharIdx].quest.OfficerPrice);
                     }
                     if(CheckAttribute(&Characters[_curCharIdx], "quest.convoyquest.money"))
                     {
-                        //pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.convoyquest.money);
+                        //pRef2.str4 = "#" + int(Characters[_curCharIdx].quest.convoyquest.money);
                     }
                     pRef2.str5 = "#" + Characters[_curCharIdx].rank;
                     if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
@@ -501,7 +501,7 @@ void FillCharactersScrollEx(bool bOfficers)
                 pRef2.str2 = "#" + Characters[_curCharIdx].name;
                 pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
                 pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-                if (CheckAttribute(&Characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == true)
+                if (CheckAttribute(&Characters[_curCharIdx], "prisoned") && int(characters[_curCharIdx].prisoned) == true)
                 {
                     //pRef2.str4 = "#" + CalculateRansomPrice(&characters[_curCharIdx]);
                     pRef2.str1 = "#" + XI_ConvertString("prisonership");
@@ -549,5 +549,5 @@ void FillCharactersScrollEx(bool bOfficers)
 int GetCurrentCharactersTab()
 {
 	if (!CheckAttribute(&InterfaceStates, "nCurScrollTab")) return 1;
-	return sti(InterfaceStates.nCurScrollTab);
+	return int(InterfaceStates.nCurScrollTab);
 }

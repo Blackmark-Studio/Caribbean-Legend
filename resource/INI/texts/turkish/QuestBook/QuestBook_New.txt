@@ -1504,6 +1504,11 @@ OZ.12
 Felipe Alarcon’a parayı geri vermedim. Bu jestimi takdir etmedi – hemen saldırıya geçti. Onunla kolayca başa çıktım, ama şimdi şehirden çıkmak için kılıçla yolumu açmam gerekecek gibi görünüyor.
 }
 
+OZ.13
+{
+Kitabı demirciye geri vermemeye karar verdim ve onu Fransıza sattım; ardından mağaradaki gizli yeri tek başıma aradım. Görünüşe bakılırsa bu iş oldukça kârlı çıktı — şehir söylentilerine daha sık kulak vermeliyim.
+}
+
 OZ.2
 {
 Artık Sebastian Cordoba’nın moralinin neden bozulduğunu anlıyorum. İşinde çok önemli bir kitabı – demircilik kitabını – kaybetmiş. Durumunu daha da kötüleştiren şey ise, Javier’in vakit kaybetmeden kitabı bir Fransız usta silahçıya satmaya karar vermesi. Her zamanki gibi, bela tek başına gelmez. Bir gün önce, demirci Amiral Eugenio de la Torre’dan ciddi bir sipariş almış... Amiral buraya geldiğinde, siparişinin neden yerine getirilmediğini mutlaka öğrenecek. Kitabın Fransızların eline geçtiğini duyarsa, demircinin dediğine göre ona çok sert davranacak. Zavallı adama yardım etmeyi kabul ettim. Eğer kitabı ona geri getirmeyi başarırsam, ikinci bir şansı olacak; umarım hatalarını tekrarlamaz ve ben de her zaman iyi bir demircinin hizmetine güvenebilirim. İlk olarak Javier’i aramaya başlayacağım, muhtemelen şu anda başka birini kandırmaya çalışıyordur.

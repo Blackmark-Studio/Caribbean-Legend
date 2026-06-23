@@ -13,7 +13,7 @@ void ApplyMigration(ref migrationState)
 	{
 		if (!CheckAttribute(&RealShips[i], "BaseType")) continue;
 
-		if (sti(RealShips[i].BaseType) == SHIP_MEMENTO) // "Мементо"
+		if (int(RealShips[i].BaseType) == SHIP_MEMENTO) // "Мементо"
 		{
 			RealShips[i].Type.Merchant = false;
 		}

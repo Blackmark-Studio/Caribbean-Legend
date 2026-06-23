@@ -7,7 +7,6 @@
 
 object randItemModels[MAX_LOADED_RANDITEMS];
 object itemModels[2];
-SetArraySize(&itemModels, ITEMS_QUANTITY);
 object buttonModels[MAX_BUTTONS];
 
 aref useLocators[MAX_BUTTONS];
@@ -228,7 +227,7 @@ void Item_OnPickItem()
 	Log_SetActiveAction("Nothing");
 	aref activeLocation;
 	ref chr = GetMainCharacter();
-	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
+	makearef(activeLocation, Locations[int(chr.itemLocationIndex)]);
 
 	string displayItemName, youvegotString;
 	youvegotString = GetSimpleItemKey("youve_gotNotif");
@@ -236,12 +235,12 @@ void Item_OnPickItem()
 
 	if (chr.activeRandItem == true)
 	{
-		string activeRandItemAttribute = "RandItemType"+sti(chr.activeItem);
+		string activeRandItemAttribute = "RandItemType"+int(chr.activeItem);
 		if (CheckAttribute(activeLocation, activeRandItemAttribute))
 		{
-			SendMessage(&randItemModels[sti(chr.activeItem)], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
-			GenerateAndAddItems(GetMainCharacter(), Items[sti(activeLocation.(activeRandItemAttribute))].id, 1);
-			displayItemName = GetItemName(&Items[sti(activeLocation.(activeRandItemAttribute))]);
+			SendMessage(&randItemModels[int(chr.activeItem)], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
+			GenerateAndAddItems(GetMainCharacter(), Items[int(activeLocation.(activeRandItemAttribute))].id, 1);
+			displayItemName = GetItemName(&Items[int(activeLocation.(activeRandItemAttribute))]);
 			//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 			//notification(youvegotString+" "+displayItemName+"", "BoxPlus");
 
@@ -250,7 +249,7 @@ void Item_OnPickItem()
 	}
 	else
 	{
-		int activeItem = sti(chr.activeItem);
+		int activeItem = int(chr.activeItem);
 		string locator = chr.activeLocator;
 		//Trace("ItemLogic: picking item "+Items[activeItem].id);
 		QuestPointerDelLoc(activeLocation.id, "item", locator);
@@ -266,7 +265,7 @@ void Item_OnPickItem()
 		
 		ref itemModel;
 		if (CheckAttribute(activeLocation, "itemShow." + locator + ".modelIndex")) {
-			itemModel = &newItemModels[sti(activeLocation.itemShow.(locator).modelIndex)];
+			itemModel = &newItemModels[int(activeLocation.itemShow.(locator).modelIndex)];
 			DeleteAttribute(activeLocation, "itemShow." + locator);
 		} else {
 			itemModel = &itemModels[activeItem];
@@ -290,8 +289,8 @@ void Item_OnUseItem()
 	aref aloc, an, al;
 	aref activeLocation;
 	ref chr = GetMainCharacter();
-	int activeItem = sti(chr.activeItem);
-	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
+	int activeItem = int(chr.activeItem);
+	makearef(activeLocation, Locations[int(chr.itemLocationIndex)]);
 
 	makearef (aloc, activeLocation.items);
 	// boal баг! нет предмета, а он работает!!!
@@ -309,7 +308,7 @@ void Item_OnUseItem()
 	Items_LoadModel(&itemModels[activeItem], &Items[activeItem]);
 
 	FindLocator(activeLocation.id, chr.activeLocator, &al, true);
-	SendMessage(&itemModels[activeItem], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+	SendMessage(&itemModels[activeItem], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 	SendMessage(&itemModels[activeItem], "lslff", MSG_MODEL_BLEND, "blenditem", 1000, 0.0, 1.0);
 
 	SetEventHandler("frame", "Item_OnUseFrame", 0);
@@ -339,9 +338,9 @@ void Item_OnUseFrame()
 	aref activeLocation;
 	ref chr = GetMainCharacter();
 
-    if (CheckAttribute(chr, "itemLocationIndex") && sti(chr.itemLocationIndex) > 0) // boal fix 230804
+    if (CheckAttribute(chr, "itemLocationIndex") && int(chr.itemLocationIndex) > 0) // boal fix 230804
     {
-    	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
+    	makearef(activeLocation, Locations[int(chr.itemLocationIndex)]);
 
     	makearef (aloc, activeLocation.items);
     	bool usedOnFrame=false;
@@ -353,7 +352,7 @@ void Item_OnUseFrame()
     			continue;
     		if (al.active != "1")
     			continue;
-    		int timePassed = sti(al.timePassed) + GetDeltaTime();
+    		int timePassed = int(al.timePassed) + GetDeltaTime();
     		al.timePassed = timePassed;
     		if (timePassed > BUTTON_ACTIVATION_TIME)
     		{
@@ -362,16 +361,16 @@ void Item_OnUseFrame()
     		}
 
     		usedOnFrame = true;
-    		float timeK = makefloat(timePassed) / makefloat(BUTTON_ACTIVATION_TIME);
-    		float deltaY = makefloat(an.deltaY) * timeK;
+    		float timeK = float(timePassed) / float(BUTTON_ACTIVATION_TIME);
+    		float deltaY = float(an.deltaY) * timeK;
 
-    		SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y)+deltaY, makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+    		SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y)+deltaY, float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 
     		for (int j=0; j<ITEMS_QUANTITY; j++) // TO_DO: ДИЧЬ
     		{
     			if (Items[j].useLocator == an.locator)
     			{
-    				SendMessage(&itemModels[j], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y)+makeFloat(an.itemDeltaY)+deltaY, makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+    				SendMessage(&itemModels[j], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y)+float(an.itemDeltaY)+deltaY, float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
     				break;
     			}
     		}
@@ -394,9 +393,9 @@ void Items_ShowButtons(string _locationName)
 		Items_LoadModel(&buttonModels[i], &useAttrs[i]);
 		al = useLocators[i];
 		if (useAttrs[i].trigged != "1")
-			SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+			SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 		else
-			SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y)+makefloat(useAttrs[i].deltaY), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+			SendMessage(&buttonModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y)+float(useAttrs[i].deltaY), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 	}
 }
 
@@ -405,7 +404,7 @@ void Items_ShowItem(int _itemN)
 	aref al;
 	aref activeLocation;
 	ref chr = GetMainCharacter();
-	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
+	makearef(activeLocation, Locations[int(chr.itemLocationIndex)]);
 
 	if (Items[_itemN].model == "")
 	{
@@ -424,7 +423,7 @@ void Items_ShowItem(int _itemN)
 		else
 		{	
 			Trace ("ItemLogic: showing item at "+al.x+", "+al.y+", "+al.z);
-			SendMessage(&itemModels[_itemN], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+			SendMessage(&itemModels[_itemN], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 		}	
 	}
 	else
@@ -439,7 +438,7 @@ void Items_ShowItem(int _itemN)
 			al = useLocators[i];
 			if (useAttrs[i].locator == Items[_itemN].useLocator)
 			{
-				SendMessage(&itemModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y)+makeFloat(useAttrs[i].itemDeltaY)+makeFloat(useAttrs[i].deltaY), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+				SendMessage(&itemModels[i], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y)+float(useAttrs[i].itemDeltaY)+float(useAttrs[i].deltaY), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 				return;
 			}
 		}
@@ -450,7 +449,7 @@ void Items_ShowItemNew(string locator, int _itemN) {
 	aref al;
 	aref activeLocation;
 	ref chr = GetMainCharacter();
-	makearef(activeLocation, Locations[sti(chr.itemLocationIndex)]);
+	makearef(activeLocation, Locations[int(chr.itemLocationIndex)]);
 	
 	int modelIndex = newItemModelsCount;
 	if (modelIndex >= 64) {
@@ -476,7 +475,7 @@ void Items_ShowItemNew(string locator, int _itemN) {
 		trace("ItemLogic: locator for item "+_itemN+" not found! ["+activeLocation.id+">>"+locator);
 	} else {
 		Trace ("ItemLogic: showing item at "+al.x+", "+al.y+", "+al.z);
-		SendMessage(&newItemModels[modelIndex], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+		SendMessage(&newItemModels[modelIndex], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 	}
 }
 
@@ -518,13 +517,13 @@ void RandItems_OnLoadLocation(ref _location)
     		{ // already spawned?
     			if (CheckAttribute(_location, randItemTypeString))
     			{
-    				if (sti(_location.(randItemTypeString)) != -1)
+    				if (int(_location.(randItemTypeString)) != -1)
     				{
     					RandItems_DrawRandItem(i, _location, randItemLocator);
     				}
     				else
     				{ //already picked up, try to respawn
-    					if ((stf(_location.(lastSpawnTimeString))+SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
+    					if ((float(_location.(lastSpawnTimeString))+SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
     					{
     						RandItems_SpawnRandItem(i, _location, randItemLocator);
     					}
@@ -532,7 +531,7 @@ void RandItems_OnLoadLocation(ref _location)
     			}
     			else
     			{ // nothing here
-    				if ((stf(_location.(lastSpawnTimeString))+SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
+    				if ((float(_location.(lastSpawnTimeString))+SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
     				{
     					RandItems_SpawnRandItem(i, _location, randItemLocator);
     				}
@@ -596,7 +595,7 @@ void RandItems_SpawnRandItem(int _index, aref _location, aref al)
 	}
 
 	Items_LoadModel(&randItemModels[_index],  randItem);
-	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 
 	lastSpawnTimeString = "RandItemType"+_index;
 	_location.(lastSpawnTimeString) = n;
@@ -605,7 +604,7 @@ void RandItems_SpawnRandItem(int _index, aref _location, aref al)
 void RandItems_DrawRandItem(int _index, aref _location, aref al)
 {
 	string randItemTypeString = "RandItemType"+_index;
-	int n = sti(_location.(randItemTypeString));
+	int n = int(_location.(randItemTypeString));
 	
     if (GetCharacterSkillToOld(GetMainCharacter(), SKILL_FORTUNE) < rand(15)) return; // boal fix
     
@@ -616,18 +615,18 @@ void RandItems_DrawRandItem(int _index, aref _location, aref al)
 	}
 	
 	Items_LoadModel(&randItemModels[_index],  &Items[n]);
-	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, makeFloat(al.x), makeFloat(al.y), makeFloat(al.z), makeFloat(al.vx.x), makeFloat(al.vx.y), -makeFloat(al.vx.z), makeFloat(al.vy.x), makeFloat(al.vy.y), -makeFloat(al.vy.z), makeFloat(al.vz.x), makeFloat(al.vz.y), -makeFloat(al.vz.z));
+	SendMessage(&randItemModels[_index], "lffffffffffff", MSG_MODEL_SET_POSITION, float(al.x), float(al.y), float(al.z), float(al.vx.x), float(al.vx.y), -float(al.vx.z), float(al.vy.x), float(al.vy.y), -float(al.vy.z), float(al.vz.x), float(al.vz.y), -float(al.vz.z));
 }
 
 void RandItem_OnEnterLocator(aref _location, string _locator)
 {
 
-    int randIndex = sti(strcut(_locator, 8, strlen(_locator)-1));
+    int randIndex = int(strcut(_locator, 8, strlen(_locator)-1));
 	string randItemAttribute = "RandItemType"+randIndex;
 	ref chr = GetMainCharacter();
 	if (CheckAttribute(_location, randItemAttribute))
 	{
-		int currentType = sti(_location.(RandItemAttribute));
+		int currentType = int(_location.(RandItemAttribute));
 		if (currentType != -1)
 		{
 			Log_SetActiveAction("Pick");
@@ -641,7 +640,7 @@ void RandItem_OnEnterLocator(aref _location, string _locator)
 }
 
 // ****************** BOXES ********************
-void Box_EnterToLocator(aref loc, string locName)
+void Box_EnterToLocator(ref loc, string locName)
 {
 	if(!CheckAttribute(loc,locName)) return;
 	
@@ -652,7 +651,7 @@ void Box_EnterToLocator(aref loc, string locName)
 			{
 			if(CheckAttribute(loc, locName+".key")) 
 			{
-				bool bOk = (CheckAttribute(loc, locName+".skel")) && (CheckCharacterItem(pchar, "keys_skel"))
+				bool bOk = (CheckAttribute(loc, locName+".skel")) && (CheckCharacterItem(pchar, "keys_skel"));
 				if(CheckCharacterItem(pchar, loc.(locName).key) || bOk) //проверяем ключ и отмычки
 				{
 					loc.(locName).opened = true;
@@ -719,7 +718,7 @@ void Box_EnterToLocator(aref loc, string locName)
 	BLI_RefreshCommandMenu();
 }
 
-void Box_ExitFromLocator(aref loc, string locName)
+void Box_ExitFromLocator(ref loc, string locName)
 {
 	DeleteAttribute(GetMainCharacter(),"boxname");
 	Log_SetActiveAction("Nothing");
@@ -834,7 +833,7 @@ void Box_OnLoadLocation(ref _location)
     		}
     		else
     		{
-    			if ((sti(_location.(locatorName)) + SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
+    			if ((int(_location.(locatorName)) + SPAWN_TIME) < Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear()))
     			{
     				needRespawn = true;
     				_location.(locatorName) = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
@@ -893,9 +892,9 @@ void Box_OnLoadLocation(ref _location)
     			string goodItemName;
     			int spawnItemsCount = OBJECTS_IN_BOX;
     			ref chr = GetMainCharacter();
-    			spawnItemsCount = spawnItemsCount + spawnItemsCount * GetCharacterSkillToOld(chr, "Fortune") / 10.0;
+    			spawnItemsCount = int(spawnItemsCount + spawnItemsCount * GetCharacterSkillToOld(chr, "Fortune") / 10.0);
 				// belamour legendary edition крафтовый инструментарий в сундук верфи -->
-				if(hrand(99, _location.id) <= makeint(1 + GetCharacterSPECIALSimple(chr, SPECIAL_L) - 4))
+				if(hrand(99, _location.id) <= int(1 + GetCharacterSPECIALSimple(chr, SPECIAL_L) - 4))
 				{
 					if(CheckAttribute(_location,"id.label") && _location.id.label == "Shipyard" && CheckAttribute(_location,"box1"))
 					{
@@ -914,7 +913,7 @@ void Box_OnLoadLocation(ref _location)
     					{
     						if (CheckAttribute(_location, locatorName+".items."+itemID))
     						{
-    							_location.(locatorName).items.(itemID) = sti(_location.(locatorName).items.(itemID)) + 1;
+    							_location.(locatorName).items.(itemID) = int(_location.(locatorName).items.(itemID)) + 1;
     						}
     						else
     						{
@@ -954,7 +953,7 @@ void FillGenerableItemsForChest(aref _chest)
 		
 		if(IsGenerableItem(itemID))
 		{
-			count = sti(chestItems.(itemID));
+			count = int(chestItems.(itemID));
 			DeleteAttribute(chestItems, itemID);
 			
 			itemID = GetGeneratedItem(itemID);
@@ -966,7 +965,7 @@ void FillGenerableItemsForChest(aref _chest)
 bool SpawnItem(ref _chr, ref _id, bool isAbordageBox, float luck)
 {
 	int i = rand(RANDITEMS_QUANTITY-1);
-	int chrRank = sti(_chr.rank);
+	int chrRank = int(_chr.rank);
 	int itemRank = 0;
 	aref randItem;
 	if (Items_FindItem(RandItems[i].id, &randItem) == -1)
@@ -975,7 +974,7 @@ bool SpawnItem(ref _chr, ref _id, bool isAbordageBox, float luck)
 	}
 	if (CheckAttribute(randItem, "minLevel"))
 	{
-		itemRank = sti(randItem.minLevel);
+		itemRank = int(randItem.minLevel);
 	}
 	if (itemRank > chrRank)
 	{
@@ -985,7 +984,7 @@ bool SpawnItem(ref _chr, ref _id, bool isAbordageBox, float luck)
 	float itemProb = 0.05;
 	if (CheckAttribute(randItem, "rare"))
 	{
-		itemProb = stf(randItem.rare);
+		itemProb = float(randItem.rare);
 	}
 	if (isAbordageBox)
 	{
@@ -1001,7 +1000,7 @@ bool SpawnItem(ref _chr, ref _id, bool isAbordageBox, float luck)
 		return false;
 	}
 	// отличные клинки в сундуках больше не генерятся <-- ugeen
-	if(CheckAttribute(randItem,"quality") && sti(randItem.quality) >= B_EXCELLENT)
+	if(CheckAttribute(randItem,"quality") && int(randItem.quality) >= B_EXCELLENT)
 	{
 		return false;
 	}

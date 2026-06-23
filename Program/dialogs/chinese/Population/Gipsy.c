@@ -24,7 +24,7 @@ void ProcessDialogEvent()
     // 按城市调用对话 <--
 	
 	ProcessCommonDialogRumors(NPChar, Link, NextDiag);
-	
+	sTemp = GuessText();
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -93,10 +93,9 @@ void ProcessDialogEvent()
 			link.l4 = "5000比索";
 			link.l4.go = "guess_rate_4";
 		break;
-		
-		sTemp = GuessText();
+
 		case "guess_rate_1"://没有任何加成
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "啊, 感谢你的慷慨, 我英俊的年轻猎鹰! 现在听着:   "+sTemp+"";
@@ -112,7 +111,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_2"://一点运气或隐匿能力
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
 				dialog.text = "啊, 谢谢你, 我英俊的年轻猎鹰! 现在听着: "+sTemp+"";
@@ -130,7 +129,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_3"://健康 + 运气或隐匿能力。 魅力
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "啊, 感谢你的银币, 我英俊的年轻猎鹰! 现在听着: "+sTemp+"";
@@ -150,7 +149,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_4"://武器技能。 运气+隐匿。 健康。 魅力
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "哦啦啦! 感谢你的慷慨, 我英俊的年轻猎鹰! 现在听着: "+sTemp+"";
@@ -199,8 +198,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "哦, 帅哥, 真是个勇敢的男人! (低语) 给我"+sti(npchar.quest.poison_price)+"杜布隆。 ";
-			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
+			dialog.text = "哦, 帅哥, 真是个勇敢的男人! (低语) 给我"+int(npchar.quest.poison_price)+"杜布隆。 ";
+			if (PCharDublonsTotal() >= int(npchar.quest.poison_price))
 			{				
 				link.l1 = "真贵... 这东西最好有用。 ";
 				link.l1.go = "get_poison_4";
@@ -220,7 +219,7 @@ void ProcessDialogEvent()
 		
 		case "get_poison_4" :
 			PlaySound("interface\important_item.wav");
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.poison_price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.poison_price));
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
@@ -228,7 +227,7 @@ void ProcessDialogEvent()
 
 	// --> 曼加罗莎
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("给我看看那植物, 亲爱的... 嗯... 我想我可以从你这买。 三百八里亚尔, 同意吗? ","给我看看, 帅哥... 嘿... 好吧, 我可以出二百五十。 ","让我看看... 哦! 一个有趣的样本! 二百比索! 成交? ")"";
+			dialog.text = LinkRandPhrase("给我看看那植物, 亲爱的... 嗯... 我想我可以从你这买。 三百八里亚尔, 同意吗? ","给我看看, 帅哥... 嘿... 好吧, 我可以出二百五十。 ","让我看看... 哦! 一个有趣的样本! 二百比索! 成交? ");
 			link.l1 = LinkRandPhrase("哦, 上帝... 黑眼睛的, 我不是什么乡巴佬。 我知道这植物。 这是曼加罗莎... ","哦, 真的吗? 这是完美的曼加罗莎样本。 别想骗我, 吉普赛人。 ","啊哈, 你以为我会为了这么点钱把这曼加罗莎给你。 ");
 			link.l1.go = "mangarosa_1";
 		break;
@@ -241,7 +240,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// 这里魅力值起作用
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
+			if (int(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "嗯... 我想如果我稍微告诉你一些关于它的事情也无妨。 没有特殊技能, 你用这种植物也做不了什么。 ";
 				link.l1 = "我在听。 ";
@@ -279,7 +278,7 @@ void ProcessDialogEvent()
 			link.l1 = LinkRandPhrase("那对你太可惜了! 反正你们族里的其他人会告诉我的。 她还会得到这株植物作为礼物。 再见! ", "为什么这么固执? 如果你不告诉我, 别人会的。 她还会免费得到这株曼加罗莎。 再见。 ", "你嘴里有大蒜味。 我最终会得到我想要的。 你们族里会有更健谈的人, 她会免费得到这株植物。 再见。 ");
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
-			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
+			pchar.questTemp.Mangarosa.g_count = int(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":

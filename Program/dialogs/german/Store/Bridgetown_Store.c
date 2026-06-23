@@ -26,10 +26,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Wunderbar! Ich habe gehört, dass jeden Tag eine neue Fluyt im Schiffswerft zum Verkauf stehen sollte. Ich werde warten und dieses Schiff kaufen. Obwohl ich alle Kanonen von meiner Brigg gestrippt habe, gibt es immer noch nicht genug Platz in meinem Laderaum für all diese Waren! Ich komme später vorbei!";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-11");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 				AddQuestRecord("Holl_Gambit", "2-6");
 				pchar.questTemp.HWIC.Eng = "SeekVanBerg";

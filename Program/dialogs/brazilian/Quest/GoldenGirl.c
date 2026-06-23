@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Eu entendo, Charles. Eu quero acreditar no amor verdadeiro e perfeito, mas acho que isso não existe neste mundo.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Desgraçado! E os meus homens? Eles estão vivos para testemunhar o que aconteceu?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Eles estão bem, Excelência. Um pouco machucados, mas vão sobreviver.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Nem todos, Excelência. Um cavalheiro não conseguiu - de Chievous fez questão de trazer mosqueteiros. Eu não pude fazer nada.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Sim, eu vi seu navio, devo admitir que é realmente algo impressionante. Então vamos aumentar a aposta – dois navios contra um. Minha fragata e um fluyt carregados de prata contra o seu navio?";
 				link.l1 = "Um jogo digno! Madame Botot estava enganada – ESTE duelo vai entrar para a lenda. Fechado!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Olha só, nosso capitão é um danadinho! Mas, corsar é coisa sagrada. Que tal então um navio de guerra? Uma fragata, 48 canhões. Mais rápida que muitas corvetas – obra dos estaleiros reais, ainda aprimorada pelos melhores construtores do mundo. Os culverins que ela carrega têm alcance e precisão excelentes. O que me diz?";
 					link.l1 = "Bem melhor, tô dentro! Vamos nessa!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Fim de jogo, Capitão, você conseguiu o que queria. Pode se gabar, se quiser. Sugiro que discutamos os termos da compra da minha fragata amanhã ao meio-dia.";
 					link.l1 = "É só isso? Sinceramente acredito, como você, que o que se perde em uma aposta não se pode comprar de volta, só ganhar de novo. Ou então posso vendê-la como madeira para os pescadores daqui e contar a todos sobre sua generosa doação.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "Então a sorte decidiu. Isso acabou sendo bem curioso. Parabéns, Capitão de Maure. Sugiro que discutamos os termos da compra da minha fragata amanhã ao meio-dia.";
 						link.l1 = "Tão cedo? Estamos desapontando outros convidados, monsieur. Se não me engano, você ainda tem mais um navio. Sinceramente acredito, assim como você, que o que se perde em uma aposta não pode ser comprado de volta, só recuperado com outra vitória.";

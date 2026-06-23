@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "分かるわ、Charles。私、本当の純愛を信じたいけれど、この世にそんなものは存在しないのでしょうね。";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "この野郎！それで俺の部下たちはどうした？あいつらは生きていて、何が起きたか証言できるのか？";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "皆無事でございます、閣下。少し傷を負っておりますが、命に別状はございません。";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "全員ではありません、閣下。一人の紳士は助かりませんでした――ド・シェヴィウスがわざわざ銃士たちを連れてきたのです。俺にはどうすることもできませんでした。";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "ああ、君の船は見たぜ、正直言って本当に見事なもんだ。じゃあ、賭けを上げようじゃねえか――二隻対一隻だ。俺のフリゲートとフルート、それに銀を君の船と勝負するってのはどうだ？";
 				link.l1 = "見事な勝負だ！ボトー夫人は間違っていたな――この決闘は伝説として語り継がれるぜ。取引成立だ！";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "見ろよ、うちの船長はずいぶんとやんちゃだな！だがな、私掠は神聖なもんだぜ。戦列艦はどうだ？フリゲート、 四十八門だ。多くのコルベットより速い――王立造船所の産物で、さらに世界一の船大工が改良したんだ。搭載してるカルバリン砲は射程も精度も抜群だぜ。どうだ、 乗ってみるか？\n";
 					link.l1 = "ずっといいぜ、俺も乗った！行こう！";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "ゲームオーバーだ、船長。お前の望み通りになったな。好きにほくそ笑むがいいさ。 俺のフリゲートの買収条件については、明日の正午に話し合おうじゃねえか。";
 					link.l1 = "それだけか？俺もあんたと同じく、賭けで失ったものは買い戻せず、勝ち取るしかねえと心から思ってるぜ。あるいは、 あの船を地元の漁師に材木として売り飛ばして、あんたの気前のいい寄付話でも聞かせてやろうか。";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "運命の女神が決着をつけたようだな。これは実に奇妙な展開になった。おめでとう、ド・モール船長。 私のフリゲート艦の買収条件については、明日の正午に話し合うことを提案しよう。";
 						link.l1 = "もうそんなに早く？他のお客様をがっかりさせてしまいますよ、旦那。私の記憶が正しければ、 あなたにはまだもう一隻船が残っています。私もあなたと同じく、賭けで失ったものは買い戻せず、 勝ち取るしかないと心から信じております。";

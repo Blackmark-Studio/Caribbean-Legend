@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // у себя
 					dialog.text = "어? 불이라도 난 것처럼 내 집에 막 들이닥치는 거야? 네가 누군데??";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "글쎄, 사실 갈등이라기보단 그냥 작은 오해일 뿐이야, 헤헤. "+sti(npchar.quest.price)+"  두블론만 있으면 네 문제는 하루 만에 해결될 거야.";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "글쎄, 사실 갈등이라기보단 그냥 작은 오해일 뿐이야, 헤헤. "+int(npchar.quest.price)+"  두블론만 있으면 네 문제는 하루 만에 해결될 거야.";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "그래, 그 얘기 들었지. 꽤나 소란을 피웠더군, 내 사랑. 하지만 빠져나갈 방법이 있어. "+sti(npchar.quest.price)+" 두블론만 내면 네 문제는 하루 만에 해결될 거야.";
-				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기 쉽지 않겠지만, 가능성은 있어. "+sti(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "그래, 그 얘기 들었지. 꽤나 소란을 피웠더군, 내 사랑. 하지만 빠져나갈 방법이 있어. "+int(npchar.quest.price)+" 두블론만 내면 네 문제는 하루 만에 해결될 거야.";
+				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기 쉽지 않겠지만, 가능성은 있어. "+int(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "여기, 동전이나 받아서 알아서 해.";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "글쎄, 사실 갈등이라고 할 것까진 없고, 그냥 작은 오해일 뿐이야, 헤헤. "+sti(npchar.quest.price)+"  두블룬만 있으면 네 문제는 하루 만에 해결될 거야.";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "글쎄, 사실 갈등이라고 할 것까진 없고, 그냥 작은 오해일 뿐이야, 헤헤. "+int(npchar.quest.price)+"  두블룬만 있으면 네 문제는 하루 만에 해결될 거야.";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "그래, 그 얘기 들었어. 꽤 소란을 피웠더군, 내 친구. 하지만 빠져나갈 방법이 있어. "+sti(npchar.quest.price)+"  두블론만 내면 네 문제는 하루 만에 해결될 거야.";
-				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기 쉽지 않겠지만, 가능성은 있어. "+sti(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "그래, 그 얘기 들었어. 꽤 소란을 피웠더군, 내 친구. 하지만 빠져나갈 방법이 있어. "+int(npchar.quest.price)+"  두블론만 내면 네 문제는 하루 만에 해결될 거야.";
+				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기 쉽지 않겠지만, 가능성은 있어. "+int(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "여기, 동전이나 받아서 알아서 해.";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "글쎄, 사실 갈등이라고 할 것도 없고, 그냥 작은 오해일 뿐이야, 헤헤. "+sti(npchar.quest.price)+" 두블룬만 내면 네 문제는 하루 만에 해결될 거야.";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "글쎄, 사실 갈등이라고 할 것도 없고, 그냥 작은 오해일 뿐이야, 헤헤. "+int(npchar.quest.price)+" 두블룬만 내면 네 문제는 하루 만에 해결될 거야.";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "그래, 들었지. 꽤 소란을 피웠더군, 내 친구. 하지만 빠져나갈 방법이 있어. "+sti(npchar.quest.price)+" 두블룬만 있으면 네 문제는 하루 만에 해결될 거야.";
-				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기는 쉽지 않겠지만, 가능성은 있어. "+sti(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "그래, 들었지. 꽤 소란을 피웠더군, 내 친구. 하지만 빠져나갈 방법이 있어. "+int(npchar.quest.price)+" 두블룬만 있으면 네 문제는 하루 만에 해결될 거야.";
+				else dialog.text = "네가 저지른 학살에 대해 정의의 섬 전체가 다 알고 있어. 도와주기는 쉽지 않겠지만, 가능성은 있어. "+int(npchar.quest.price)+" 두블론을 주면 네 문제를 해결해 보겠다.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "여기, 동전이나 받아서 알아서 해.";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("You have given "+sti(npchar.quest.price)+" doubloons");
+			Log_Info("You have given "+int(npchar.quest.price)+" doubloons");
 			dialog.text = "훌륭해. 이제 앉아서 좀 쉬어. 내가 네 문제를 해결할 때까지 내 선실에 머무르는 게 좋겠어. 더 이상 일을 악화시키지 않았으면 하거든, 내 사랑.";
 			link.l1 = "좋아...";
 			link.l1.go = "peace";

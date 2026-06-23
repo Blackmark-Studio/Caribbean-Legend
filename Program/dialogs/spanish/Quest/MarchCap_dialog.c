@@ -46,10 +46,10 @@ void ProcessDialogEvent()
 					pchar.GenQuest.MarchCap.Island.Shore = "";
 			}
 			pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island) + 3;
-			dialog.text = "Logré averiguar que en " + FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)) + " un pequeño convoy mercante bajo la bandera de " + NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation)) + ", dos barcos mercantes y un barco de guardia, navegarán cerca de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen") + ", esto no está lejos de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen") + "  Los comerciantes tienen mucho de  " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " en sus bodegas. Sería una tontería no usar esta información, capitán\nTú y yo podemos encargarnos de los guardias fácilmente y llevarnos la carga para nosotros. Entonces, ¿estás dentro?";
+			dialog.text = "Logré averiguar que en " + FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)) + " un pequeño convoy mercante bajo la bandera de " + NationNameGenitive(int(pchar.GenQuest.MarchCap.Nation)) + ", dos barcos mercantes y un barco de guardia, navegarán cerca de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen") + ", esto no está lejos de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen") + "  Los comerciantes tienen mucho de  " + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + " en sus bodegas. Sería una tontería no usar esta información, capitán\nTú y yo podemos encargarnos de los guardias fácilmente y llevarnos la carga para nosotros. Entonces, ¿estás dentro?";
 			link.l1 = "Suena tentador. ¡Diría que sí!";
 			link.l1.go = "MarchCap_1_1";
-			link.l2 = "Algunos" + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " no es suficiente para que yo arruine mis relaciones con " + NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation)) + " No, ¡no voy a hacer esto! ¡Adiós, señor, y ni siquiera intente detenerme!";
+			link.l2 = "Algunos" + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + " no es suficiente para que yo arruine mis relaciones con " + NationNameAblative(int(pchar.GenQuest.MarchCap.Nation)) + " No, ¡no voy a hacer esto! ¡Adiós, señor, y ni siquiera intente detenerme!";
 			link.l2.go = "MarchCap_exit";
 			break;
 
@@ -57,17 +57,17 @@ void ProcessDialogEvent()
 			pchar.GenQuest.MarchCap.Startcity = SelectAnyColony(pchar.GenQuest.MarchCap.basecity);
 			pchar.GenQuest.MarchCap.Finishcity = SelectAnyColony2(pchar.GenQuest.MarchCap.basecity, pchar.GenQuest.MarchCap.Startcity);
 			pchar.GenQuest.MarchCap.DaysQty = 5 + hrand(5);
-			dialog.text = "Logré averiguar que en " + FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)) + " un pequeño convoy mercante bajo la bandera de " + NationNameGenitive(sti(pchar.GenQuest.MarchCap.Nation)) + ", dos barcos mercantes y un barco de escolta, zarparán desde " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Startcity + "Gen") + " a " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Finishcity + "Acc") + ". Los comerciantes tienen mucho de " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " en sus bodegas. Sería tonto no usar esta información, capitán.\nTú y yo podemos ocuparnos fácilmente de los guardias y tomar la carga para nosotros. La parte más difícil es encontrarlos en el mar abierto entre estas dos colonias. Entonces, ¿estás dentro?";
+			dialog.text = "Logré averiguar que en " + FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)) + " un pequeño convoy mercante bajo la bandera de " + NationNameGenitive(int(pchar.GenQuest.MarchCap.Nation)) + ", dos barcos mercantes y un barco de escolta, zarparán desde " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Startcity + "Gen") + " a " + XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Finishcity + "Acc") + ". Los comerciantes tienen mucho de " + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + " en sus bodegas. Sería tonto no usar esta información, capitán.\nTú y yo podemos ocuparnos fácilmente de los guardias y tomar la carga para nosotros. La parte más difícil es encontrarlos en el mar abierto entre estas dos colonias. Entonces, ¿estás dentro?";
 			link.l1 = "Suena tentador. ¡Diría que sí!";
 			link.l1.go = "MarchCap_2_1";
-			link.l2 = "Algunos " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " no es suficiente para que arruine mis relaciones con " + NationNameAblative(sti(pchar.GenQuest.MarchCap.Nation)) + ". ¡No, no voy a hacer esto! ¡Adiós, señor, y ni siquiera intente detenerme!";
+			link.l2 = "Algunos " + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + " no es suficiente para que arruine mis relaciones con " + NationNameAblative(int(pchar.GenQuest.MarchCap.Nation)) + ". ¡No, no voy a hacer esto! ¡Adiós, señor, y ni siquiera intente detenerme!";
 			link.l2.go = "MarchCap_exit";
 			break;
 
 		case 2: // одиночный пиратский кулсейлор у бухты, установка параметров
-			pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(makeint(GOOD_SILVER - GOOD_GOLD));
-			pchar.GenQuest.MarchCap.GoodsQty = sti(pchar.rank) * 50 + 170 + rand(30);
-			if (sti(pchar.GenQuest.MarchCap.GoodsQty) > 1600)
+			pchar.GenQuest.MarchCap.Goods = GOOD_GOLD + hrand(int(GOOD_SILVER - GOOD_GOLD));
+			pchar.GenQuest.MarchCap.GoodsQty = int(pchar.rank) * 50 + 170 + rand(30);
+			if (int(pchar.GenQuest.MarchCap.GoodsQty) > 1600)
 				pchar.GenQuest.MarchCap.GoodsQty = 1500 + rand(100);
 			pchar.GenQuest.MarchCap.Island = GetRandomIslandId();
 			while (pchar.GenQuest.MarchCap.Island == pchar.GenQuest.MarchCap.Startisland)
@@ -85,8 +85,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.MarchCap.DaysQty = GetMaxDaysFromIsland2Island(pchar.GenQuest.MarchCap.Startisland, pchar.GenQuest.MarchCap.Island) + 1;
 			pchar.GenQuest.MarchCap.PirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1); // пират
 			pchar.GenQuest.MarchCap.ShipType = SelectPirateShipType();
-			pchar.GenQuest.MarchCap.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.MarchCap.ShipType));
-			dialog.text = "Me informaron sobre un pirata llamado " + GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM) + "Este bandido ha pellizcado recientemente " + RandPhraseSimple(RandPhraseSimple("Español", "Francés"), RandPhraseSimple("Español", "Holandés")) + " y cargó su bodega con " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + ". Pero, qué lástima, su barco " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.ShipType), "Name") + "Acc")) + " estaba gravemente dañada, así que tuvo que tomarse tiempo para repararla.\nActualmente está en " + XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen") + " de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen") + ". Creo que tomará alrededor de " + FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)) + " para que él repare los mástiles y los agujeros en el casco. Podemos llegar a tiempo si nos damos prisa y todos " + GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)) + " será nuestro\nNo podré lidiar con este pirata por mi cuenta, es un muy buen marinero y luchador, pero dos de nosotros podemos enfrentarlo con éxito a pesar de su experiencia. Entonces, ¿estás dentro o no?";
+			pchar.GenQuest.MarchCap.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.MarchCap.ShipType));
+			dialog.text = "Me informaron sobre un pirata llamado " + GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM) + "Este bandido ha pellizcado recientemente " + RandPhraseSimple(RandPhraseSimple("Español", "Francés"), RandPhraseSimple("Español", "Holandés")) + " y cargó su bodega con " + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + ". Pero, qué lástima, su barco " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.MarchCap.ShipType), "Name") + "Acc")) + " estaba gravemente dañada, así que tuvo que tomarse tiempo para repararla.\nActualmente está en " + XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen") + " de " + XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen") + ". Creo que tomará alrededor de " + FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)) + " para que él repare los mástiles y los agujeros en el casco. Podemos llegar a tiempo si nos damos prisa y todos " + GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)) + " será nuestro\nNo podré lidiar con este pirata por mi cuenta, es un muy buen marinero y luchador, pero dos de nosotros podemos enfrentarlo con éxito a pesar de su experiencia. Entonces, ¿estás dentro o no?";
 			link.l1 = "Suena tentador. ¡Diría que sí!";
 			link.l1.go = "MarchCap_3_1";
 			link.l2 = "Mm. Parece que este premio es inalcanzable no solo para ti, sino para ambos. No, no voy a hacer esto, adiós, señor, ¡y ni siquiera intentes detenerme!";
@@ -105,20 +105,20 @@ void ProcessDialogEvent()
 		DialogExit();
 		NextDiag.CurrentNode = "MarchCap_repeat";
 		Group_DelCharacter("MarchGroup", "MarchCap");
-		SetCompanionIndex(pchar, -1, sti(npchar.index));
+		SetCompanionIndex(pchar, -1, int(npchar.index));
 		npchar.loyality = MAX_LOYALITY;
 		SetCharacterRemovable(npchar, false);
 		Character_SetAbordageEnable(npchar, false);
 		npchar.Tasks.CanBoarding = false; // запрет идти на абордаж // Addon 2016-1 Jason Пиратская линейка
 		pchar.quest.MarchCap1_1.win_condition.l1 = "Timer";
-		pchar.quest.MarchCap1_1.win_condition.l1.date.hour = sti(GetTime() + rand(10));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.day = GetAddingDataDay(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.year = GetAddingDataYear(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.hour = int(GetTime() + rand(10));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.day = GetAddingDataDay(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.year = GetAddingDataYear(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
 		pchar.quest.MarchCap1_1.win_condition.l2 = "location";
 		pchar.quest.MarchCap1_1.win_condition.l2.location = pchar.GenQuest.MarchCap.Island;
 		pchar.quest.MarchCap1_1.function = "MarchCap1_CreateConvoy";
-		SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, sti(pchar.GenQuest.MarchCap.DaysQty) + 2, false); // таймер на нахождение
+		SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, int(pchar.GenQuest.MarchCap.DaysQty) + 2, false); // таймер на нахождение
 		pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
 		pchar.quest.MarchCap1_fail.win_condition.l1.character = "MarchCap";
 		pchar.quest.MarchCap1_fail.function = "MarchCap_fail";
@@ -126,8 +126,8 @@ void ProcessDialogEvent()
 		AddQuestRecord("MarchCap", "1");
 		AddQuestUserData("MarchCap", "sShore", XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen"));
 		AddQuestUserData("MarchCap", "sIsland", XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen"));
-		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 		AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 		break;
 
@@ -166,10 +166,10 @@ void ProcessDialogEvent()
 			AddQuestRecord("MarchCap", "5");
 		if (pchar.GenQuest.MarchCap == "poor" || pchar.GenQuest.MarchCap == "good" || pchar.GenQuest.MarchCap == "exellent")
 		{
-			iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods)) - sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-			iTemp = iQty - sti(pchar.GenQuest.MarchCap.CapPart);
-			RemoveCharacterGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods), iQty);
-			AddCharacterGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods), iTemp);
+			iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods)) - int(pchar.GenQuest.MarchCap.StartGoodsQty));
+			iTemp = iQty - int(pchar.GenQuest.MarchCap.CapPart);
+			RemoveCharacterGoods(pchar, int(pchar.GenQuest.MarchCap.Goods), iQty);
+			AddCharacterGoods(pchar, int(pchar.GenQuest.MarchCap.Goods), iTemp);
 			if (pchar.GenQuest.MarchCap == "poor")
 				AddQuestRecord("MarchCap", "6");
 			if (pchar.GenQuest.MarchCap == "good")
@@ -183,9 +183,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "MarchCap_AfterBattle":
-		iTemp = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods)) - sti(pchar.GenQuest.MarchCap.StartGoodsQty)) * sti(Goods[sti(pchar.GenQuest.MarchCap.Goods)].Weight);
-		iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods)) - sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-		pchar.GenQuest.MarchCap.CapPart = iQty / sti(pchar.GenQuest.MarchCap.Parts);
+		iTemp = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods)) - int(pchar.GenQuest.MarchCap.StartGoodsQty)) * int(Goods[int(pchar.GenQuest.MarchCap.Goods)].Weight);
+		iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods)) - int(pchar.GenQuest.MarchCap.StartGoodsQty));
+		pchar.GenQuest.MarchCap.CapPart = iQty / int(pchar.GenQuest.MarchCap.Parts);
 		if (iTemp < 50)
 		{
 			dialog.text = "Eres un perdedor, ¡capitán! ¡No conseguimos ni un trozo! ¡Y todo esto es por tu culpa! ¡Tú eres la razón de nuestro fracaso, maldito seas!";
@@ -197,20 +197,20 @@ void ProcessDialogEvent()
 		if (iTemp > 50 && iTemp < 500)
 		{
 			dialog.text = "Bueno, esta incursión no fue tan exitosa como esperaba, nuestro botín es realmente modesto... Como sea, capitán, compartamos estos restos y despidámonos.";
-			link.l1 = "Si hubieras estado ayudándome en vez de contar pájaros en el cielo, la incursión habría tenido éxito... Toma tu parte, " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + " ¡y piérdete!";
+			link.l1 = "Si hubieras estado ayudándome en vez de contar pájaros en el cielo, la incursión habría tenido éxito... Toma tu parte, " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + " ¡y piérdete!";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "poor";
 			break;
 		}
 		if (iTemp > 500 && iTemp < 1500)
 		{
-			dialog.text = "Bien hecho, capitán. Como dije, fue bastante fácil vaciar las bodegas de esos mercaderes, ja-ja... El premio es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + ".";
+			dialog.text = "Bien hecho, capitán. Como dije, fue bastante fácil vaciar las bodegas de esos mercaderes, ja-ja... El premio es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + ".";
 			link.l1 = "Es correcto, " + npchar.name + "  No tengo objeciones. Las chalupas están siendo cargadas en este momento. Quizás, hagamos otro ataque juntos en el futuro. Pareces un compañero adecuado para mí.";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "good";
 			break;
 		}
-		dialog.text = "¡Excelente, capitán! Como dije, fue relativamente fácil vaciar las bodegas de esos mercaderes, ja-ja... El botín es enorme, mucho más de lo que esperaba. Es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + ".";
+		dialog.text = "¡Excelente, capitán! Como dije, fue relativamente fácil vaciar las bodegas de esos mercaderes, ja-ja... El botín es enorme, mucho más de lo que esperaba. Es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + ".";
 		link.l1 = "Es correcto, " + npchar.name + ". No tengo objeciones. Las chalupas se están cargando ahora mismo. ¿Quizás, hagamos otra incursión juntos en el futuro? Pareces un compañero adecuado para mí.";
 		link.l1.go = "MarchCap_Deck_continue";
 		pchar.GenQuest.MarchCap = "exellent";
@@ -233,16 +233,16 @@ void ProcessDialogEvent()
 		DialogExit();
 		NextDiag.CurrentNode = "MarchCap_repeat";
 		Group_DelCharacter("MarchGroup", "MarchCap");
-		SetCompanionIndex(pchar, -1, sti(npchar.index));
+		SetCompanionIndex(pchar, -1, int(npchar.index));
 		npchar.loyality = MAX_LOYALITY;
 		SetCharacterRemovable(npchar, false);
 		Character_SetAbordageEnable(npchar, false);
 		npchar.Tasks.CanBoarding = false; // запрет идти на абордаж // Addon 2016-1 Jason Пиратская линейка
 		pchar.quest.MarchCap1_1.win_condition.l1 = "Timer";
-		pchar.quest.MarchCap1_1.win_condition.l1.date.hour = sti(GetTime() + rand(10));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.day = GetAddingDataDay(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
-		pchar.quest.MarchCap1_1.win_condition.l1.date.year = GetAddingDataYear(0, 0, sti(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.hour = int(GetTime() + rand(10));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.day = GetAddingDataDay(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
+		pchar.quest.MarchCap1_1.win_condition.l1.date.year = GetAddingDataYear(0, 0, int(pchar.GenQuest.MarchCap.DaysQty));
 		pchar.quest.MarchCap1_1.function = "MarchCap2_CreateConvoy";
 		pchar.GenQuest.MarchCap.WdmEnc = "true";
 		pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		AddQuestRecord("MarchCap", "10");
 		AddQuestUserData("MarchCap", "sCity1", XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Startcity + "Gen"));
 		AddQuestUserData("MarchCap", "sCity2", XI_ConvertString("Colony" + pchar.GenQuest.MarchCap.Finishcity + "Acc"));
-		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 		AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 		break;
 
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		NextDiag.CurrentNode = "MarchCap_repeat";
 		Group_DelCharacter("MarchGroup", "MarchCap");
-		SetCompanionIndex(pchar, -1, sti(npchar.index));
+		SetCompanionIndex(pchar, -1, int(npchar.index));
 		npchar.loyality = MAX_LOYALITY;
 		SetCharacterRemovable(npchar, false);
 		Character_SetAbordageEnable(npchar, false);
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 		pchar.quest.MarchCap1_1.win_condition.l1 = "location";
 		pchar.quest.MarchCap1_1.win_condition.l1.location = pchar.GenQuest.MarchCap.Island;
 		pchar.quest.MarchCap1_1.function = "MarchCap3_CreatePirate";
-		SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, sti(pchar.GenQuest.MarchCap.DaysQty), false); // таймер
+		SetFunctionTimerCondition("MarchCap_Attack_Over", 0, 0, int(pchar.GenQuest.MarchCap.DaysQty), false); // таймер
 		pchar.quest.MarchCap1_fail.win_condition.l1 = "NPC_Death";
 		pchar.quest.MarchCap1_fail.win_condition.l1.character = "MarchCap";
 		pchar.quest.MarchCap1_fail.function = "MarchCap_fail";
@@ -284,8 +284,8 @@ void ProcessDialogEvent()
 		AddQuestRecord("MarchCap", "11");
 		AddQuestUserData("MarchCap", "sShore", XI_ConvertString(pchar.GenQuest.MarchCap.Island.Shore + "Gen"));
 		AddQuestUserData("MarchCap", "sIsland", XI_ConvertString(pchar.GenQuest.MarchCap.Island + "Gen"));
-		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(sti(pchar.GenQuest.MarchCap.DaysQty)));
-		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(sti(pchar.GenQuest.MarchCap.Goods)));
+		AddQuestUserData("MarchCap", "sDays", FindRussianDaysString(int(pchar.GenQuest.MarchCap.DaysQty)));
+		AddQuestUserData("MarchCap", "sGoods", GetGoodsNameAlt(int(pchar.GenQuest.MarchCap.Goods)));
 		AddQuestUserData("MarchCap", "sName", GetFullName(npchar));
 		AddQuestUserData("MarchCap", "sName1", GetName(NAMETYPE_ORIG, pchar.GenQuest.MarchCap.PirateName, NAME_NOM));
 		break;
@@ -303,9 +303,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "MarchCap_AfterBattleGold":
-		iTemp = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods)) - sti(pchar.GenQuest.MarchCap.StartGoodsQty)) * sti(Goods[sti(pchar.GenQuest.MarchCap.Goods)].Weight);
-		iQty = makeint(GetSquadronGoods(pchar, sti(pchar.GenQuest.MarchCap.Goods)) - sti(pchar.GenQuest.MarchCap.StartGoodsQty));
-		pchar.GenQuest.MarchCap.CapPart = iQty / sti(pchar.GenQuest.MarchCap.Parts);
+		iTemp = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods)) - int(pchar.GenQuest.MarchCap.StartGoodsQty)) * int(Goods[int(pchar.GenQuest.MarchCap.Goods)].Weight);
+		iQty = int(GetSquadronGoods(pchar, int(pchar.GenQuest.MarchCap.Goods)) - int(pchar.GenQuest.MarchCap.StartGoodsQty));
+		pchar.GenQuest.MarchCap.CapPart = iQty / int(pchar.GenQuest.MarchCap.Parts);
 		if (iTemp < 10)
 		{
 			dialog.text = "¡Eres un perdedor, capitán! ¡No conseguimos ni una sola pieza de nuestro premio! ¡Y todo esto es por tu culpa! ¡Tú eres la razón de nuestro fracaso, maldición!";
@@ -317,20 +317,20 @@ void ProcessDialogEvent()
 		if (iTemp > 10 && iTemp < 100)
 		{
 			dialog.text = "Bueno, esta incursión no fue tan exitosa como esperaba, nuestro botín es realmente modesto... Como sea, capitán, repartamos estos restos y despidámonos.";
-			link.l1 = "Si me estuvieras ayudando en lugar de contar pájaros en el cielo, la incursión habría sido exitosa... Toma tu parte, " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + "¡y piérdete!";
+			link.l1 = "Si me estuvieras ayudando en lugar de contar pájaros en el cielo, la incursión habría sido exitosa... Toma tu parte, " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + "¡y piérdete!";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "poor";
 			break;
 		}
 		if (iTemp > 100 && iTemp < 500)
 		{
-			dialog.text = "¡Bien hecho, capitán! El premio es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + ".";
+			dialog.text = "¡Bien hecho, capitán! El premio es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + ".";
 			link.l1 = "Es correcto, " + npchar.name + ". No tengo objeciones. Los botes largos se están cargando ahora mismo. Quizás nos volvamos a encontrar...";
 			link.l1.go = "MarchCap_Talk_exit";
 			pchar.GenQuest.MarchCap = "good";
 			break;
 		}
-		dialog.text = "¡Espléndido, capitán! Como dije, fue bastante fácil, ja-ja... El botín es enorme, mucho más de lo que esperaba. Es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(sti(pchar.GenQuest.MarchCap.CapPart)) + ".";
+		dialog.text = "¡Espléndido, capitán! Como dije, fue bastante fácil, ja-ja... El botín es enorme, mucho más de lo que esperaba. Es " + FindRussianQtyString(iQty) + " piezas. Mi parte es " + FindRussianQtyString(int(pchar.GenQuest.MarchCap.CapPart)) + ".";
 		link.l1 = "Es correcto, " + npchar.name + "  No tengo objeciones. Los botes largos se están cargando ahora mismo. Quizás, haremos otro ataque juntos en el futuro. Pareces un compañero adecuado para mí.";
 		link.l1.go = "MarchCap_Deck_continue";
 		pchar.GenQuest.MarchCap = "exellent";
@@ -401,7 +401,7 @@ int SelectMarchCapGoods1()
 int SelectPirateShipType()
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 5;

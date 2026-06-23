@@ -21,7 +21,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan.Late")) // Addon 2016-1 Jason пиратская линейка 1
 			{
 				dialog.text = "Рад видеть тебя, "+GetSexPhrase("сын мой","дочь моя")+". Ты пришёл, чтобы вернуть мне займ?";
-				if (PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+				if (PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 				{
 					link.l1 = "Да, отче. Я готов"+GetSexPhrase("","а")+" отдать вам долг.";
 					link.l1.go = "FastStart_7";
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(npchar, "quest.relation_info")) link.l1.go = "help";
 				else link.l1.go = "help_start";
 			}
-			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 			{
 				link.l2 = "Да, отче. Я готов"+GetSexPhrase("","а")+" отдать вам долг.";
 				link.l2.go = "FastStart_7";
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			rate = wdmGetNationThreat(int(pchar.GenQuest.BenuaNation));
 			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
 			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
 			if (rate < 2)
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
             rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -673,14 +673,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_23_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "Э-э... кхм!";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_23_1";
 		break;
 		
 		case "LH_abbat_24_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "Кхм-кхм!";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_24_1";
@@ -769,7 +769,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_35":
-			if (sti(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(шепчет) Шарль, "+GetSexPhrase("сын мой","дочь моя")+", просто открывай рот, умоляю - ни звука...";
+			if (int(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(шепчет) Шарль, "+GetSexPhrase("сын мой","дочь моя")+", просто открывай рот, умоляю - ни звука...";
 			else sTemp = "";
 			dialog.text = "Молодожёны, опуститесь на колени, и помолимся вместе. Oratio fidelium. "+sTemp+"";
 			link.l1 = "";
@@ -1269,7 +1269,7 @@ void ProcessDialogEvent()
 		
 		case "SharlieEpilog_Benua_Money_4":
 			dialog.text = "В таком случае пожертвования в сто тысяч песо будет достаточно. На эти деньги мы сможем устраивать обеды для нуждающихся ещё многие месяцы. Если у тебя при себе есть нужная сумма, включая пожертвование церкви, мы можем приступить прямо сейчас.";
-			if (sti(pchar.Money) >= 10100000)
+			if (int(pchar.Money) >= 10100000)
 			{
 				link.l1 = "Разумеется. Вот, возьмите. Я рад помочь тем, кто в этом действительно нуждается, и уверен: под вашим присмотром эти деньги послужат делу с умом и честью.";
 				link.l1.go = "SharlieEpilog_Benua_Money_4_1";
@@ -1284,7 +1284,7 @@ void ProcessDialogEvent()
 		
 		case "SharlieEpilog_Benua_Money_5":
 			dialog.text = "В таком случае твоё пожертвование должно составить двести пятьдесят тысяч песо. Эти средства позволят нам построить приют для сирот, который будет прославлять твоё имя и обеспечивать его нужды хотя бы первое время. Если у тебя при себе есть нужная сумма, включая пожертвование церкви, мы можем приступить прямо сейчас.";
-			if (sti(pchar.Money) >= 25250000)
+			if (int(pchar.Money) >= 25250000)
 			{
 				link.l1 = "Разумеется. Вот, возьмите. Я рад помочь тем, кто в этом действительно нуждается, и уверен: под вашим присмотром эти деньги послужат делу с умом и честью.";
 				link.l1.go = "SharlieEpilog_Benua_Money_5_1";
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 		
 		case "SharlieEpilog_Benua_Money_6":
 			dialog.text = "Что ж, похоже, ты времени зря не терял, "+pchar.name+". Думаю, пожертвования в пятьсот тысяч песо будет вполне достаточно. Благодаря такому взносу мы сможем построить больницу и обеспечить её всем необходимым на долгие годы. Если у тебя при себе есть нужная сумма, включая пожертвование церкви, мы можем приступить прямо сейчас.";
-			if (sti(pchar.Money) >= 50500000)
+			if (int(pchar.Money) >= 50500000)
 			{
 				link.l1 = "Разумеется. Вот, возьмите. Я рад помочь тем, кто в этом действительно нуждается, и уверен: под вашим присмотром эти деньги послужат делу с умом и честью.";
 				link.l1.go = "SharlieEpilog_Benua_Money_6_1";

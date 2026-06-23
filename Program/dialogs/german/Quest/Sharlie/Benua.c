@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan.Late")) // Addon 2016-1 Jason пиратская линейка 1
 			{
 				dialog.text = "Es ist gut dich zu sehen, mein Sohn. Bist du hier, um deine Schulden zu begleichen?";
-				if (PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+				if (PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 				{
 					link.l1 = "Ja, Vater. Ich bin es.";
 					link.l1.go = "FastStart_7";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(npchar, "quest.relation_info")) link.l1.go = "help";
 				else link.l1.go = "help_start";
 			}
-			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 			{
 				link.l2 = "Ja, Vater. Ich bin es.";
 				link.l2.go = "FastStart_7";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			rate = wdmGetNationThreat(int(pchar.GenQuest.BenuaNation));
 			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
 			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
 			if (rate < 2)
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
             rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -672,14 +672,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_23_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "Ä-ä... Hm...";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_23_1";
 		break;
 		
 		case "LH_abbat_24_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "Ä-ä... Hm...";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_24_1";
@@ -769,7 +769,7 @@ void ProcessDialogEvent()
 		
 		case "LH_abbat_35":
 			string sTemp;
-			if (sti(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
+			if (int(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
 			else sTemp = "";
 			dialog.text = "Neuvermählte, kniet nieder und betet zusammen. Oratio fidelium. "+sTemp+"";
 			link.l1 = "";
@@ -1269,7 +1269,7 @@ void ProcessDialogEvent()
 		
 		case "SharlieEpilog_Benua_Money_4":
 			dialog.text = "In diesem Fall wird eine Spende von hunderttausend Pesos ausreichen. Mit diesem Geld können wir noch viele Monate lang Mahlzeiten für Bedürftige bereitstellen. Wenn du den erforderlichen Betrag, einschließlich der Spende für die Kirche, bei dir hast, können wir sofort beginnen.";
-			if (sti(pchar.Money) >= 10100000)
+			if (int(pchar.Money) >= 10100000)
 			{
 				link.l1 = "Selbstverständlich. Hier, bitte. Ich helfe gern denen, die es wirklich nötig haben, und bin sicher, dass dieses Geld unter eurer Aufsicht mit Weisheit und Ehre eingesetzt wird.";
 				link.l1.go = "SharlieEpilog_Benua_Money_4_1";
@@ -1284,7 +1284,7 @@ void ProcessDialogEvent()
 
 		case "SharlieEpilog_Benua_Money_5":
 			dialog.text = "In diesem Fall sollte deine Spende zweihundertfünfzigtausend Pesos betragen. Diese Mittel werden es uns ermöglichen, ein Waisenhaus zu errichten, das deinen Namen tragen und zumindest in der Anfangszeit für seine Bedürfnisse sorgen wird. Wenn du den erforderlichen Betrag, einschließlich der Spende für die Kirche, bei dir hast, können wir sofort beginnen.";
-			if (sti(pchar.Money) >= 25250000)
+			if (int(pchar.Money) >= 25250000)
 			{
 				link.l1 = "Selbstverständlich. Hier, bitte. Ich helfe gern denen, die es wirklich nötig haben, und bin sicher, dass dieses Geld unter eurer Aufsicht mit Weisheit und Ehre eingesetzt wird.";
 				link.l1.go = "SharlieEpilog_Benua_Money_5_1";
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 
 		case "SharlieEpilog_Benua_Money_6":
 			dialog.text = "Nun, es scheint, du hast deine Zeit nicht vergeudet, "+pchar.name+". Ich denke, eine Spende von fünfhunderttausend Pesos wird völlig ausreichend sein. Dank eines solchen Beitrags können wir ein Hospital errichten und es für viele Jahre mit allem Notwendigen ausstatten. Wenn du den erforderlichen Betrag, einschließlich der Spende für die Kirche, bei dir hast, können wir sofort beginnen.";
-			if (sti(pchar.Money) >= 50500000)
+			if (int(pchar.Money) >= 50500000)
 			{
 				link.l1 = "Selbstverständlich. Hier, bitte. Ich helfe gern denen, die es wirklich nötig haben, und bin sicher, dass dieses Geld unter eurer Aufsicht mit Weisheit und Ehre eingesetzt wird.";
 				link.l1.go = "SharlieEpilog_Benua_Money_6_1";

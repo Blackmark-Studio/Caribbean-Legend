@@ -3,7 +3,7 @@
 #define LAI_TMPL_WALK	"walk"
 
 
-bool LAi_tmpl_walk_InitTemplate(aref chr)
+bool LAi_tmpl_walk_InitTemplate(ref chr)
 {
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", false);
 	CharacterPlayAction(chr, "");
@@ -67,7 +67,7 @@ bool LAi_tmpl_walk_InitTemplate(aref chr)
 
 
 //Процессирование шаблона персонажа
-void LAi_tmpl_walk_CharacterUpdate(aref chr, float dltTime)
+void LAi_tmpl_walk_CharacterUpdate(ref chr, float dltTime)
 {
 	float time, maxtime;
 	int idx;
@@ -75,12 +75,12 @@ void LAi_tmpl_walk_CharacterUpdate(aref chr, float dltTime)
 	float dist;
 	makearef(tmpl, chr.chr_ai.tmpl);
 	//Смотрим текущее состояние шаблона
-	tmpl.time = stf(tmpl.time) + dltTime;
+	tmpl.time = float(tmpl.time) + dltTime;
 	if(tmpl.state == "stay")
 	{
 		//Повышаем желание пойти
-		time = stf(tmpl.time);
-		maxtime = stf(tmpl.maxtime);
+		time = float(tmpl.time);
+		maxtime = float(tmpl.maxtime);
 		if(time > maxtime)
 		{
 			//Пора идти
@@ -104,10 +104,10 @@ void LAi_tmpl_walk_CharacterUpdate(aref chr, float dltTime)
 	}else{
 		if(tmpl.state == "look")
 		{
-			tmpl.time = stf(tmpl.time) + dltTime;
-			time = stf(tmpl.state.time);
-			maxtime = stf(tmpl.state.maxtime);
-			idx = sti(tmpl.state.index);
+			tmpl.time = float(tmpl.time) + dltTime;
+			time = float(tmpl.state.time);
+			maxtime = float(tmpl.state.maxtime);
+			idx = int(tmpl.state.index);
 			if(GetCharacterDistByChr(chr, &Characters[idx], &dist) == false)
 			{
 				time = maxtime;
@@ -131,32 +131,32 @@ void LAi_tmpl_walk_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Персонаж выполнил команду  go to point
-void LAi_tmpl_walk_EndGoToPoint(aref chr)
+void LAi_tmpl_walk_EndGoToPoint(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж провалил команду  go to point
-void LAi_tmpl_walk_FailureGoToPoint(aref chr)
+void LAi_tmpl_walk_FailureGoToPoint(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 
 //Персонаж выполнил команду  run to point
-void LAi_tmpl_walk_EndRunToPoint(aref chr)
+void LAi_tmpl_walk_EndRunToPoint(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж провалил команду  run to point
-void LAi_tmpl_walk_FailureRunToPoint(aref chr)
+void LAi_tmpl_walk_FailureRunToPoint(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж не может добраться до точки назначения
-void LAi_tmpl_walk_BusyPos(aref chr, float x, float y, float z)
+void LAi_tmpl_walk_BusyPos(ref chr, float x, float y, float z)
 {
 	LAi_tmpl_walk_endgo(chr);
 	if(chr.chr_ai.tmpl.state == "stay")
@@ -166,76 +166,76 @@ void LAi_tmpl_walk_BusyPos(aref chr, float x, float y, float z)
 }
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_walk_FollowGo(aref chr)
+void LAi_tmpl_walk_FollowGo(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_walk_FollowStay(aref chr)
+void LAi_tmpl_walk_FollowStay(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж провалил команду  follow character
-void LAi_tmpl_walk_FailureFollow(aref chr)
+void LAi_tmpl_walk_FailureFollow(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_walk_FightGo(aref chr)
+void LAi_tmpl_walk_FightGo(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_walk_FightStay(aref chr)
+void LAi_tmpl_walk_FightStay(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж провалил команду  Fight
-void LAi_tmpl_walk_FailureFight(aref chr)
+void LAi_tmpl_walk_FailureFight(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Можно ли стрелять
-bool LAi_tmpl_walk_IsFire(aref chr)
+bool LAi_tmpl_walk_IsFire(ref chr)
 {
 	return false;
 }
 
 //Можно ли использовать оружие
-bool LAi_tmpl_walk_IsFight(aref chr)
+bool LAi_tmpl_walk_IsFight(ref chr)
 {
 	return false;
 }
 
 
 //Персонаж выполнил команду  escape
-void LAi_tmpl_walk_EndEscape(aref chr)
+void LAi_tmpl_walk_EndEscape(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж скользит вдоль патча
-void LAi_tmpl_walk_EscapeSlide(aref chr)
+void LAi_tmpl_walk_EscapeSlide(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонаж провалил команду  escape
-void LAi_tmpl_walk_FailureEscape(aref chr)
+void LAi_tmpl_walk_FailureEscape(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 
 //Персонаж толкается с другими персонажами
-void LAi_tmpl_walk_ColThreshold(aref chr)
+void LAi_tmpl_walk_ColThreshold(ref chr)
 {
 	if(chr.chr_ai.tmpl.state == "stay")
 	{
@@ -263,13 +263,13 @@ void LAi_tmpl_walk_ColThreshold(aref chr)
 
 
 //Персонаж закончил проигрывать анимацию
-void LAi_tmpl_walk_EndAction(aref chr)
+void LAi_tmpl_walk_EndAction(ref chr)
 {
 	LAi_tmpl_walk_endgo(chr);
 }
 
 //Персонажа просят освободить место
-void LAi_tmpl_walk_FreePos(aref chr, aref who)
+void LAi_tmpl_walk_FreePos(ref chr, aref who)
 {
 	LAi_tmpl_walk_go(chr);
 }
@@ -278,14 +278,14 @@ void LAi_tmpl_walk_FreePos(aref chr, aref who)
 //Внутреннии функции
 //------------------------------------------------------------------------------------------
 
-void LAi_tmpl_walk_go(aref chr)
+void LAi_tmpl_walk_go(ref chr)
 {
 	chr.chr_ai.tmpl.maxtime = 8 + rand(50);
 	chr.chr_ai.tmpl.time = 0;
 	LAi_tmpl_walk_go_notime(chr);
 }
 
-void LAi_tmpl_walk_go_notime(aref chr)
+void LAi_tmpl_walk_go_notime(ref chr)
 {
 	string loc;
 	if(rand(3) == 2)
@@ -319,9 +319,9 @@ void LAi_tmpl_walk_go_notime(aref chr)
 }
 
 
-void LAi_tmpl_walk_endgo(aref chr)
+void LAi_tmpl_walk_endgo(ref chr)
 {
-	if(stf(chr.chr_ai.tmpl.time) > stf(chr.chr_ai.tmpl.maxtime))
+	if(float(chr.chr_ai.tmpl.time) > float(chr.chr_ai.tmpl.maxtime))
 	{
 		//Проверяем ближних стоячих
 		if(LAi_tmpl_walk_neareststaycheck(chr))
@@ -338,7 +338,7 @@ void LAi_tmpl_walk_endgo(aref chr)
 	}
 }
 
-void LAi_tmpl_walk_nowstay(aref chr)
+void LAi_tmpl_walk_nowstay(ref chr)
 {
 	//Переходим в режим ожидания
 	chr.chr_ai.tmpl.time = 0;
@@ -351,14 +351,14 @@ void LAi_tmpl_walk_nowstay(aref chr)
 	}
 }
 
-bool LAi_tmpl_walk_neareststaycheck(aref chr)
+bool LAi_tmpl_walk_neareststaycheck(ref chr)
 {
 	int num = FindNearCharacters(chr, 4.0, -1.0, -1.0, 0.01, false, false);
 	if(num <= 0) return true;
 	int cnt = 0;
 	for(int i = 0; i < num; i++)
 	{
-		int idx = sti(chrFindNearCharacters[i].index);
+		int idx = int(chrFindNearCharacters[i].index);
 		if(CharacterGetTask(&Characters[idx]) == "Stay")
 		{
 			cnt++;

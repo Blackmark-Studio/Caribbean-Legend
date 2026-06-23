@@ -34,8 +34,8 @@ void InitShipLights()
 	rlights.(__default).corona.g = 1.0;
 	rlights.(__default).corona.b = 1.0;
 	rlights.(__default).corona.subtexture = 0;
-	rlights.(__default).corona.Range = 5.0
-	rlights.(__default).corona.Size = 1.0
+	rlights.(__default).corona.Range = 5.0;
+	rlights.(__default).corona.Size = 1.0;
 	rlights.(__default).SunRoadFlareFadeDistance = 600.0;
 
 	// cannon default light emitter
@@ -71,7 +71,7 @@ void InitShipLights()
 	rlights.flare.corona.g = 1.0;
 	rlights.flare.corona.b = 1.0;
 	rlights.flare.corona.subtexture = 0;
-	rlights.flare.corona.Range = 5.0
-	rlights.flare.corona.Size = 1.0
+	rlights.flare.corona.Range = 5.0;
+	rlights.flare.corona.Size = 1.0;
 	rlights.flare.SunRoadFlareFadeDistance = 600.0;
 }

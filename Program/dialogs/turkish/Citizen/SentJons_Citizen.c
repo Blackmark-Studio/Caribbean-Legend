@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "Burada çok sayıda Jones var. Bildiğim en ünlüsü, Albay Fox'un yaveri Benjamin Jones. Genellikle alayın karargâhında ziyaretçileri karşılar.";
 				link.l1 = "Onun Molly adında bir kız kardeşi var mı?";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("Hm, korkarım bu konuda sana yardımcı olamam.","Hayır, onu tanımıyorum.","Peh! Benim tanıdığım Molly Jones ender bir güzellikse, Albay Fox da mahalle papazıdır."),LinkRandPhrase("Ben birkaç Molly Jones tanıyorum. Onlardan birinin erkek kardeşi var ama... aradığın kişi o değil. Onu 'eşsiz bir güzellik' olarak ancak maymunlarla yaşamış biri tanımlar.","Üzgünüm, ama tanıdığım tüm Jones'ların kız kardeşi yok.","Üzgünüm, sana yardımcı olamam. Başkasına sor."));
 			link.l1 = "Anladım. Rahatsızlık verdiysem kusura bakmayın.";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Sence gizli serviste mi çalışıyorum "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Sence gizli serviste mi çalışıyorum "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Pekala... hayır. O halde hoşça kal.";
 			link.l1.go = "exit";
 			link.l2 = "Başka bir sorunuz var mı, peki?";

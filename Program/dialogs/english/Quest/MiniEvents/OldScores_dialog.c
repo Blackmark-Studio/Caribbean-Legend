@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "They say there was a brawl in the tavern last night... But who was fighting — damned if I know. My face's still intact. I think.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "Devil take it all... My head's splitting like a hull on a reef, and here you are with your infernal questions. I didn't see or hear a blasted thing. You'd do better to spare a few pesos than torment a seasoned sailor with this interrogation.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Here's a hundred pesos. Mind you don't drink yourself senseless and fall under that serving girl's spell again, eh?";
 				link.l1.go = "OS_Matros_7_harizma";

@@ -8,7 +8,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
     if (!CheckAttribute(rG1, "Task")) return;
 
 	// check for already attack
-	if (sti(rG1.Task) == AITASK_ATTACK)
+	if (int(rG1.Task) == AITASK_ATTACK)
 	{
 		if (rG1.Task.Target != sGroupAttacked)
             return;
@@ -33,7 +33,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
 				i++;
 				if (iCharacterIndex < 0) break;
                 ref rChar = &Characters[iCharacterIndex];
-				//SetCharacterRelationBoth(sti(rCharacter2.index), iCharacterIndex, RELATION_ENEMY);
+				//SetCharacterRelationBoth(int(rCharacter2.index), iCharacterIndex, RELATION_ENEMY);
 				if (LAi_IsDead(rChar)) continue;
 				if (CheckAttribute(rChar, "ShipTaskLock")) continue; // boal eddy
 
@@ -54,7 +54,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
 				if ("AnalizeShips" in rChar && "Bravery" !in rG1)
 				{
 					//если только что свалил от форта - не перебивать таск, а отправить в АИ на такты
-					if (CheckAttribute(rChar, "Tmp.fWatchFort.Qty") && sti(rChar.Tmp.fWatchFort.Qty) == 200)
+					if (CheckAttribute(rChar, "Tmp.fWatchFort.Qty") && int(rChar.Tmp.fWatchFort.Qty) == 200)
 					{
 						rChar.Tmp.fWatchFort = 199; //следующим тактом в АИ проверим форт
 						rChar.Ship.LastBallCharacter = iCharacterVictim;
@@ -66,7 +66,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
                             GetCrewQuantity(rChar) > GetCrewQuantity(&Characters[iCharacterVictim]))
 						{	//если есть шанс победить, то проверим количественное соотношение - не лезть на большие эскадры
 							if (fCharactersRatio > 0.5 ||
-                                int(RealShips[sti(rChar.ship.type)].Class) <= int(RealShips[sti(characters[iCharacterVictim].ship.type)].Class))
+                                int(RealShips[int(rChar.ship.type)].Class) <= int(RealShips[int(characters[iCharacterVictim].ship.type)].Class))
 							{
                                 Ship_SetTaskAttack(SECONDARY_TASK, iCharacterIndex, iCharacterVictim);
 							}
@@ -99,7 +99,7 @@ void AIAttack_GroupAttack(string sGroupAttacker, string sGroupAttacked, bool bAt
     if (!CheckAttribute(rG2, "Task")) return;
 	if (Group_isTaskLockR(rG2)) 
 	{ 
-		if (sti(rG2.Task) != AITASK_ATTACK) return;
+		if (int(rG2.Task) != AITASK_ATTACK) return;
 		if (rG2.Task.Target != sGroupAttacker) return;
 	}
 
@@ -159,7 +159,7 @@ void AIAttack_CheckTask(string sGroupID)
 
         // Врагов нет
         if (CheckAttribute(rG1, "Task.Target.Pos.x"))
-            Group_SetTaskMove(sGroupID, stf(rG1.Task.Target.Pos.x), stf(rG1.Task.Target.Pos.z));
+            Group_SetTaskMove(sGroupID, float(rG1.Task.Target.Pos.x), float(rG1.Task.Target.Pos.z));
         else if (FindSubStr(sGroupID, "IslandGroup", 0) == 0)
             Group_SetTaskDrift(sGroupID);
         else
@@ -203,7 +203,7 @@ void AIAttack_CheckTask(string sGroupID)
 
 	int nChar1Idx = -1;
 	if(CheckAttribute(rCharacter1, "index"))
-        nChar1Idx = sti(rCharacter1.index);
+        nChar1Idx = int(rCharacter1.index);
     
     int nNumChar = Group_GetCharactersNumR(rG1);
 	while (true)
@@ -221,8 +221,8 @@ void AIAttack_CheckTask(string sGroupID)
 
 		if (CheckAttribute(rCharacter, "SeaAI.Task.Target"))
 		{
-			if (sti(rCharacter.SeaAI.Task) != AITASK_ATTACK) continue;
-			if (!LAi_IsDead(&Characters[sti(rCharacter.SeaAI.Task.Target)])) continue;
+			if (int(rCharacter.SeaAI.Task) != AITASK_ATTACK) continue;
+			if (!LAi_IsDead(&Characters[int(rCharacter.SeaAI.Task.Target)])) continue;
 		}
 
         // TO_DO: Умный выбор, а не рандомного подвернувшегося

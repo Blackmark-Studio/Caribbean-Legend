@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Naszyjnik, mówisz? Hm... Tak, mam jeden. I co? W jaki sposób chcesz go zdobyć?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Jestem gotow"+GetSexPhrase("y","a")+" zapłacić ci pięć tysięcy peso. To wystarczająca suma, by kupić równie godny klejnot. Ten naszyjnik powinien wrócić do osoby, która ceni go całym sercem.";
 				link.l1.go = "Captain_4_commerce";

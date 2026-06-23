@@ -25,8 +25,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Juan? Sadece bu mu? Señor, sarhoş musunuz yoksa benimle alay mı ediyorsunuz? Bir soyadı ya da en azından gemisinin adını hatırlıyor musunuz? Burası bir İspanyol kolonisi, Tanrı aşkına. Burada kaç tane Juan dolaşıyor, biliyor musunuz? Hiçbir ayrıntı olmadan size yardımcı olamam.";
 			link.l1 = "Anladım. Rahatsız ettiğim için kusura bakmayın...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

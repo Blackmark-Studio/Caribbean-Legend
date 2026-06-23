@@ -90,48 +90,6 @@ string GetRandSubString(string sStr)
 	return   "";
 }
 
-// Warship 06.08.09 Строка от -999 до 999 прописью
-String GetRussianNumberString(int _num)
-{
-	if(_num < -999 || _num > 999) return "Error";
-	if(_num == 0) return XI_ConvertString("zero");
-	
-	String numString = its(abs(_num));
-	
-	int strLength = strlen(numString);
-	
-	String ones = GetSymbol(numString, strLength - 1);
-	String tens = GetSymbol(numString, strLength - 2) + "0";
-	String hundreds = GetSymbol(numString, strLength - 3) + "00";
-	
-	numString = "";
-	
-	if(_num < 0)
-	{
-		numString = XI_ConvertString("minus") + " ";
-	}
-	
-	if(tens == "10")
-	{
-		tens = "";
-		ones = "1" + ones;
-	}
-	
-	ones = XI_ConvertString(ones);
-	
-	if(tens != "")
-	{
-		tens = XI_ConvertString(tens) + " ";
-	}
-	
-	if(hundreds != "")
-	{
-		hundreds = XI_ConvertString(hundreds) + " ";
-	}
-	
-	return numString + hundreds + tens + ones;
-}
-
 float GetDotProduct(float fA1, float fA2)
 {
     return cos(fA2 - fA1); // boal
@@ -185,7 +143,7 @@ void ParseString()
 				sNumber = sNumber + sTmp;
 				i++;
 			}
-			sDst = sDst + sParams[sti(sNumber) - 1]; i--;
+			sDst = sDst + sParams[int(sNumber) - 1]; i--;
 			continue;
 		}
 		sDst = sDst + sChar;
@@ -251,14 +209,14 @@ void RotateAroundY(ref rX, ref rZ, float fCos, float fSin)
 
 int Tonnes2CWT(int iTonnes)
 {
-	int a = makeint(iTonnes * 19.685 + 99);
+	int a = int(iTonnes * 19.685 + 99);
 	return a;
 }
 
 int CWT2Tonnes(int iCWT)
 {
 	int a = iCWT - 99;
-	a = makeint(a / 19.685);
+	a = int(a / 19.685);
 	return a;
 }
 
@@ -273,7 +231,7 @@ int i_min(int a1, int a2)
 	int nDiv = pow(10,digit);
 	int n = rand(100000);
 	float fRes = fMin+(fMax-fMin)*n/100000.0;
-	fRes = makefloat( makeint(fRes*ndiv+0.5) )/nDiv;
+	fRes = float( int(fRes*ndiv+0.5) )/nDiv;
 	return fRes;
 }*/
 
@@ -308,9 +266,9 @@ void Log_TestInfo(string logtext)
 {
 	if (bBettaTestMode)
 	{
-		Log_SetStringToLog(logtext)
+		Log_SetStringToLog(logtext);
 		if (!CheckAttribute(&Environment, "date")) return;
-		trace("TestInfo: " + GetQuestBookDataDigit() + " " + logtext)
+		trace("TestInfo: " + GetQuestBookDataDigit() + " " + logtext);
 	}
 }
 void Log_QuestInfo(string _info)
@@ -380,7 +338,7 @@ void CalcLocalTime(float _inc) // TO_DO: DEL
 	if (locTmpTime >= _inc)
 	{
 		/*int hour = GetHour();
-		if (AddTimeToCurrent(0, makeint(locTmpTime / _inc)) > 0)
+		if (AddTimeToCurrent(0, int(locTmpTime / _inc)) > 0)
 		{
 			//вызов уже внутри метода времени PostEvent("NextDay", 20); // наступил новый день
 		}        */
@@ -400,7 +358,7 @@ void RefreshWeather()
 	if (bSeaActive && !bAbordageStarted)
 	{
 	    SetSchemeForSea();
-	    if (Whr_IsDay() && sti(pchar.Ship.Lights) == 1)
+	    if (Whr_IsDay() && int(pchar.Ship.Lights) == 1)
 	    {
 	        //выключаем фонари.
 			Ship_SetLightsOff(pchar, 15.0, true, true, false);
@@ -491,7 +449,7 @@ void Log_TestAStr(string _str)
 	if (bBettaTestMode)
 	{
 		Log_AStr(_str);
-		trace("TestInfo: " + GetQuestBookDataDigit() + " " + _str)
+		trace("TestInfo: " + GetQuestBookDataDigit() + " " + _str);
 	}
 }
 
@@ -568,11 +526,11 @@ void CopyAttributesSafe(aref to, aref from)
 }
 
 // mitrokosta сериализация/десериализация данных в сейвах
-string SerializeAttributes(aref attributes) {
+string SerializeAttributes(ref attributes) {
 	return SerializeAttributesInner(attributes, "");
 }
 
-string SerializeAttributesInner(aref attributes, string prefix) {
+string SerializeAttributesInner(ref attributes, string prefix) {
 	string serialized;
 	int numAttrs = GetAttributesNum(attributes);
 	
@@ -626,16 +584,16 @@ float GetRealDeltaTime()
 // Вернем обратно ссылку на объект/атрибут или найдем по id/индексу и вернем ссылку
 // Нужно для унификации вызовов из разных ситуаций, когда объект уже нашли или когда есть только id/индекс
 // Сам поиск объекта делаем по функции, переданной в handler
-ref FindObject_VT(ref someRef, string handlerId, string handlerIdx)
+ref FindObject_VT(ref someRef, fref handlerId, fref handlerIdx)
 {
-	switch (VarType(someRef))
+	switch (typeid(someRef))
 	{
-		case VAR_OBJECT: return someRef; break;
-		case VAR_AREFERENCE: return someRef; break;
-		case VAR_STRING:  return call handlerId(someRef);  break;
-		case VAR_INTEGER: return call handlerIdx(someRef); break;
+		case typeid(object): return someRef; break;
+		case typeid(aref): return someRef; break;
+		case typeid(string):  return handlerId(someRef);  break;
+		case typeid(int): return handlerIdx(someRef); break;
 	}
-	Log_WithTrace("Can't found object by Vartype. Handlers: " + handlerId + "/" + handlerIdx);
+	Log_WithTrace("Can't found object by Vartype. Handlers: " + string(handlerId) + "/" + string(handlerIdx));
 	return ErrorAttr(); // ~!~ nullptr
 }
 
@@ -647,16 +605,16 @@ ref FindObject_VT(ref someRef, string handlerId, string handlerIdx)
 @param handlerIdx функция поиска, если `someRef` это целочисленный idx
 @param ignoreNotFound передаём `true`, если отсутствие результата поиска является ожидаемым поведением
 */
-ref FindObjectSafe_VT(ref someRef, string handlerId, string handlerIdx, bool ignoreNotFound = false)
+ref FindObjectSafe_VT(ref someRef, fref handlerId, fref handlerIdx, bool ignoreNotFound = false)
 {
-	switch (VarType(someRef))
+	switch (typeid(someRef))
 	{
-		case VAR_OBJECT: return someRef; break;
-		case VAR_AREFERENCE: return someRef; break;
-		case VAR_STRING:  return call handlerId(someRef, ignoreNotFound);  break;
-		case VAR_INTEGER: return call handlerIdx(someRef, ignoreNotFound); break;
+		case typeid(object): return someRef; break;
+		case typeid(aref): return someRef; break;
+		case typeid(string): return handlerId(someRef, ignoreNotFound); break;
+		case typeid(int): return handlerIdx(someRef, ignoreNotFound); break;
 	}
-	assert(!ignoreNotFound, "Can't found object by Vartype. Handlers: " + handlerId + "/" + handlerIdx)
+	assert(!ignoreNotFound, "Can't found object by Vartype. Handlers: " + string(handlerId) + "/" + string(handlerIdx));
 	return nullptr;
 }
 
@@ -717,7 +675,7 @@ bool CheckAttributeEqualTo(ref rObject, string atrName, string value)
 bool AttributeIsTrue(ref rObject, string atrName)
 {
 	if (!CheckAttribute(rObject, atrName)) return false;
-	return sti(rObject.(atrName)) == 1;
+	return int(rObject.(atrName)) == 1;
 }
 
 // Получить int из атрибута, либо 0, если атрибута нет
@@ -730,7 +688,7 @@ int GetAttributeInt(ref rObject, string atrName)
 int GetAttributeIntOrDefault(ref rObject, string atrName, int defaultValue)
 {
 	if (!CheckAttribute(rObject, atrName)) return defaultValue;
-	return sti(rObject.(atrName));
+	return int(rObject.(atrName));
 }
 
 // Получить float из атрибута, либо 0, если атрибута нет
@@ -743,7 +701,7 @@ float GetAttributeFloat(ref rObject, string atrName)
 float GetAttributeFloatOrDefault(ref rObject, string atrName, float defaultValue)
 {
 	if (!CheckAttribute(rObject, atrName)) return defaultValue;
-	return stf(rObject.(atrName));
+	return float(rObject.(atrName));
 }
 
 // Установить значение атрибута. Нужно, чтобы не париться с записью через .(variable) при необходимости совместить в variable несколько строк
@@ -769,6 +727,13 @@ void AddToAttributeInt(ref rObject, string atrName, int value)
 void AddToAttributeFloat(ref rObject, string atrName, float value)
 {
 	rObject.(atrName) = GetAttributeFloat(rObject, atrName) + value;
+}
+
+// Увеличить значение float атрибута на value
+void MulToAttributeFloat(ref rObject, string atrName, float value)
+{
+	float fOrig = rObject.(atrName)$float(1.0);
+	rObject.(atrName) = fOrig * value;
 }
 
 // Вывести все атрибуты объекта текстом для дебага
@@ -831,15 +796,11 @@ string AtributesToTextAref(ref rObject, string attributeName)
 // Суровое приведение к строке
 string VarTypeToString(ref something)
 {
-	switch (VarType(something))
+	switch (typeid(something))
 	{
-		case VAR_FLOAT: return fts(something, 4); break; // вряд ли кому-то в строковых приколах понадобятся разряды дальше
-		case VAR_INTEGER: return its(something); break;
-		case VAR_STRING:  return something; break;
+		case typeid(float): return fts(something, 4); break; // вряд ли кому-то в строковых приколах понадобятся разряды дальше
+		default: return string(something);
 	}
-
-	trace("VartypeToString error with: " + something);
-	return "Error";
 }
 
 void DumpAttributesAref(ref rObject, string attributeName)

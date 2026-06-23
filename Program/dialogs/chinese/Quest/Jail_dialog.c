@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		//--> 可疑的提议
 		if (CheckAttribute(pchar, "GenQuest.Contraoffer.Jail"))
 		{
-			dialog.text = "你因试图转运和出售违禁品而被拘留。 鉴于你对当局的帮助和你的身份, 你将只在监狱里待" + FindRussianDaysString(sti(pchar.questTemp.JailTemp2)) + "。 此外, 你通过走私赚的所有钱 - " + FindRussianMoneyString(sti(pchar.questTemp.JailTemp1)) + " 将被没收并归入城镇国库。 祝你过得愉快, 船长! ";
+			dialog.text = "你因试图转运和出售违禁品而被拘留。 鉴于你对当局的帮助和你的身份, 你将只在监狱里待" + FindRussianDaysString(int(pchar.questTemp.JailTemp2)) + "。 此外, 你通过走私赚的所有钱 - " + FindRussianMoneyString(int(pchar.questTemp.JailTemp1)) + " 将被没收并归入城镇国库。 祝你过得愉快, 船长! ";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			DeleteAttribute(pchar, "GenQuest.Contraoffer.Jail");
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		//< —可疑的提议
-			dialog.text = "你因犯罪被拘留, 将在监狱里关押" + FindRussianDaysString(sti(pchar.questTemp.JailTemp2)) + "。 此外, 你将被罚款" + FindRussianMoneyString(sti(pchar.questTemp.JailTemp1)) + "。 祝你愉快, 船长! ";
+			dialog.text = "你因犯罪被拘留, 将在监狱里关押" + FindRussianDaysString(int(pchar.questTemp.JailTemp2)) + "。 此外, 你将被罚款" + FindRussianMoneyString(int(pchar.questTemp.JailTemp1)) + "。 祝你愉快, 船长! ";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			NextDiag.currentnode = "Jail_officer_free";

@@ -10,7 +10,7 @@ void SF_OnClose()
 
 	if (!CheckAttribute(&storyObject, "onClose")) return; 
 
-	string persistentFilePath = SF_FormPath(&storyObject) + "\OnClose.c"
+	string persistentFilePath = SF_FormPath(&storyObject) + "\OnClose.c";
 	if (LoadSegment(persistentFilePath))
 	{
 		aref onCloseCallbacks = GetAref(storyObject, "OnClose");

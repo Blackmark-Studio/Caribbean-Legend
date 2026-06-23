@@ -252,7 +252,7 @@ void wdmInitWorldMap()
 	worldMap.labels.KhaelRoa.id = "KhaelRoa";
 	worldMap.labels.KhaelRoa.locator = "KhaelRoa";
 	worldMap.labels.KhaelRoa.text = "";
-.
+
 	worldMap.labels.Providence.type = "Island";
 	worldMap.labels.Providence.id = "Providence";
 	worldMap.labels.Providence.locator = "Providence";

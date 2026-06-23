@@ -78,7 +78,7 @@ void SeaHunterCheck(int iNation)
             sld.mapEnc.Marker = "BountyHunter";
             sld.hunter = "hunter";
             Group_AddCharacter(sGroup, sCapId + i);
-            if (i == 1 || GetCharacterShipClass(sld) < 3) SetRandGeraldSail(sld, sti(sld.Nation));
+            if (i == 1 || GetCharacterShipClass(sld) < 3) SetRandGeraldSail(sld, int(sld.Nation));
         }
 
         Group_SetGroupCommander(sGroup, sCapId + "1");
@@ -98,7 +98,7 @@ void SetShipHunter(ref Hunter)
     if(!CheckAttribute(Hunter, "GenShip"))
     {
         ReGen:
-        iTemp = sti(PChar.rank);
+        iTemp = int(PChar.rank);
         if (iTemp >= 25)      ShipsHunter = GetRandomShipType(FLAG_SHIP_CLASS_3 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
         else if (iTemp >= 20) ShipsHunter = GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY - FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
         else if (iTemp >= 12) ShipsHunter = GetRandomShipType(FLAG_SHIP_CLASS_4 + FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_RAIDER + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY);
@@ -108,14 +108,14 @@ void SetShipHunter(ref Hunter)
     }
     else
     {
-        iTemp = sti(Hunter.GenShip.Class);
-        ShipsHunter = WME_GetShipTypeExt(iTemp, iTemp, Hunter.GenShip.Spec, sti(Hunter.nation), false);
+        iTemp = int(Hunter.GenShip.Class);
+        ShipsHunter = WME_GetShipTypeExt(iTemp, iTemp, Hunter.GenShip.Spec, int(Hunter.nation), false);
         if(ShipsHunter == INVALID_SHIP_TYPE) goto ReGen;
     }
 
     SetRandomNameToCharacter(Hunter);
     SetRandomNameToShip(Hunter);
-    Hunter.Ship.Type = GenerateShipExt(ShipsHunter, 1, Hunter);
+    Hunter.Ship.Type = GenerateShipExt(ShipsHunter, true, Hunter);
     SetBaseShipData(Hunter);
     hcrew = GetMaxCrewQuantity(Hunter);
     SetCrewQuantity(Hunter, hcrew);
@@ -218,7 +218,7 @@ void LandHunterReactionResult(ref loc)  // отработает после вх�
 				if (ok)
 	            {
 	                pchar.HunterCost = abs(ChangeCharacterNationReputation(pchar, j, 0));
-	                PChar.HunterCost = makeint(PChar.HunterCost)*2000 + rand(5000); //сразу генерим
+	                PChar.HunterCost = int(PChar.HunterCost)*2000 + rand(5000); //сразу генерим
 	                PChar.HunterCost.TempHunterType = typeHunter;
 	                PChar.HunterCost.Qty = i;
 	                //LAi_SetActorType(Pchar);
@@ -447,7 +447,7 @@ void FireBrigadeRefresh(ref rChar, int iNation, int Delay)
 
 void FireBrigadeInterruption(ref rCaptain)
 {
-    int iNation = sti(rCaptain.nation);
+    int iNation = int(rCaptain.nation);
     string sTemp;
     string sNation = NationShortName(iNation);
 
@@ -472,7 +472,7 @@ void FireBrigadeInterruption(ref rCaptain)
 
 void FireBrigadeEscape(string qName)
 {
-    int iNation = sti(PChar.quest.(qName).Nation);
+    int iNation = int(PChar.quest.(qName).Nation);
     string sTemp;
     string sNation = NationShortName(iNation);
 
@@ -493,7 +493,7 @@ void FireBrigadeEscape(string qName)
 
 void FireBrigadeSink(string qName)
 {
-    int iNation = sti(PChar.quest.(qName).Nation);
+    int iNation = int(PChar.quest.(qName).Nation);
     string sTemp;
     string sNation = NationShortName(iNation);
 
@@ -521,7 +521,7 @@ void FireBrigadeSink(string qName)
 
 void FireBrigadeCapture(string qName)
 {
-    int iNation = sti(PChar.quest.(qName).Nation);
+    int iNation = int(PChar.quest.(qName).Nation);
     string sTemp;
     string sNation = NationShortName(iNation);
 
@@ -549,8 +549,8 @@ void FireBrigadeCapture(string qName)
 
 void NationIntimidated(string qName)
 {
-    int iNation = sti(PChar.quest.(qName).Nation);
-    string attrNation = iNation;
+    int iNation = int(PChar.quest.(qName).Nation);
+    string attrNation = string(iNation);
     TEV.ThreatResetMsg.(attrNation) = abs(ChangeCharacterNationReputation(PChar, iNation, 0));
     // Без отложенного вызова не отобразит
     SetEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg", 0);
@@ -574,8 +574,8 @@ void ThreatResetMsg()
     for(int i=0; i < qty; i++)
     {
         aNation = GetAttributeN(aNations, i);
-        iNation = sti(GetAttributeName(aNation));
-        iChange = sti(GetAttributeValue(aNation)) - 5;
+        iNation = int(GetAttributeName(aNation));
+        iChange = int(GetAttributeValue(aNation)) - 5;
         SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
         ChangeCharacterNationReputation(PChar, iNation, iChange);
         sTemp = XI_ConvertString(GetNationNameByType(iNation) + "Gen");

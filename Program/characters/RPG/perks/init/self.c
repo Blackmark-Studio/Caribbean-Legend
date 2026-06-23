@@ -370,6 +370,11 @@ void initSelfPerks(ref list)
 	perks.TreasureHunter.HeroType = "HT2";
 	perks.TreasureHunter.cost = -1;
 
+	SetArefModifier(perks, "Energaiser", M_ENERGY_RECOVERY_MLT, 1.5);
+	SetArefModifier(perks, "Tireless", M_ENERGY_RECOVERY_MLT, 1 + PERK_VALUE_TIRELESS);
+	SetArefModifier(perks, "HT3", M_ENERGY_RECOVERY_MLT, 1.15);
+	SetArefModifier(perks, "Medic", M_HP_RECOVERY_MLT, 2.0);
+
 	for (int i = 0; i < GetAttributesNum(perks); i++)
 	{
 		aref perk = GetAttributeN(perks, i);

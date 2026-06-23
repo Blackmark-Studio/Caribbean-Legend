@@ -4,11 +4,11 @@ void CompanionTravel_SetTraveller(ref _NPChar)
 {
 	ref sld;
 	string sTemp, attrLoc, attr;
-	int fChance;
-	sld = &characters[sti(_NPChar.realcompanionidx)];
+	float fChance;
+	sld = &characters[int(_NPChar.realcompanionidx)];
 
 	if(!CheckAttribute(PChar, "CompanionTravel")) PChar.CompanionTravel = 0;
-	PChar.CompanionTravel = sti(PChar.CompanionTravel) + 1; // Сколько компаньонов уже отправили
+	PChar.CompanionTravel = int(PChar.CompanionTravel) + 1; // Сколько компаньонов уже отправили
 	for(iTemp=1; iTemp<=3; iTemp++) // Нужно, чтоб была свободная группа
 	{
 		if(Group_IsDead("CompanionTravel_Companion"+iTemp))
@@ -20,7 +20,7 @@ void CompanionTravel_SetTraveller(ref _NPChar)
 	
 	sTemp = _NPChar.ID;
 	PChar.CompanionTravel.(attr).ID = sld.ID ; // Запомним ID
-	PChar.CompanionTravel.(attr).Days = sti(sld.CompanionTravel.Days); // Сколько дней будет путешествовать
+	PChar.CompanionTravel.(attr).Days = int(sld.CompanionTravel.Days); // Сколько дней будет путешествовать
 	PChar.CompanionTravel.(attr).ToColonyID = sld.CompanionTravel.ToColonyID; // Где с ним назначена встреча
 	
 	fChance = CompanionTravel_CalculateSinkChance(sld, PChar.CompanionTravel.(attr).ToColonyID);
@@ -42,7 +42,7 @@ void CompanionTravel_SetTraveller(ref _NPChar)
 	/*ReOpenQuestHeader("CompanionTravel");
 	AddQuestRecord("CompanionTravel", "1");
 	AddQuestUserData("CompanionTravel", "sDays", PChar.CompanionTravel.(attr).Days);
-	AddQuestUserData("CompanionTravel", "sShipInfo", XI_ConvertString(RealShips[sti(sld.Ship.Type)].Basename + "Dat") + " '" + sld.Ship.name + "'");
+	AddQuestUserData("CompanionTravel", "sShipInfo", XI_ConvertString(RealShips[int(sld.Ship.Type)].Basename + "Dat") + " '" + sld.Ship.name + "'");
 	AddQuestUserData("CompanionTravel", "sColony", XI_ConvertString("Colony" + sld.CompanionTravel.ToColonyID + "Dat"));*/
 	
 	Log_TestInfo("=====" + attr + "=====");
@@ -75,7 +75,7 @@ void CompanionTravel_ProcessAllTravellers() // Этот метод вызыва�
 void CompanionTravel_DayUpdate(string sCompanion) // Обработка конкретного компаньона-путешественника
 {
 	string sID = PChar.CompanionTravel.(sCompanion).ID;
-	int iDays = sti(PChar.CompanionTravel.(sCompanion).Days);
+	int iDays = int(PChar.CompanionTravel.(sCompanion).Days);
 	ref rCompanion = CharacterFromID(sID);
 	CompanionTravel_SetExperienceToTraveller(rCompanion); // Начисляем экспу
 	if(!bNoEatNoRats)
@@ -108,7 +108,7 @@ void CompanionTravel_TimerToSetInColony(string sCompanion) // Таймер вы�
 	
 	string sID = PChar.CompanionTravel.(sCompanion).ID;
 	string sColony = PChar.CompanionTravel.(sCompanion).ToColonyID;
-	int iDays = sti(PChar.CompanionTravel.(sCompanion).Days);
+	int iDays = int(PChar.CompanionTravel.(sCompanion).Days);
 	ref sld = CharacterFromID(sID);
 	
 	if(CheckAttribute(PChar, "CompanionTravel."+sCompanion+".Sink")) // Не дошёл до места назначения
@@ -137,7 +137,7 @@ void CompanionTravel_DeleteCompanion(string sID, string sCompanion, bool WaitInC
 	// Поставить соответствующую ноду диалога
 	
 	Group_DeleteAtEnd("CompanionTravel_"+sCompanion);
-	PChar.CompanionTravel = sti(PChar.CompanionTravel) - 1; // Тут счетчик уменьшаем
+	PChar.CompanionTravel = int(PChar.CompanionTravel) - 1; // Тут счетчик уменьшаем
 }
 
 void CompanionTravel_SetCompanionToColony(string sColony, string sGroupID, string sID) // Поставим компаньона в колонию
@@ -164,14 +164,14 @@ float CompanionTravel_CalculateSinkChance(ref _NPC, String _sColony)
 	Log_TestInfo("=============== Рассчитываем шанс потопления ===============");
 	
 	float fChance = 5;
-	int iHPPercent = GetHullPercent(_NPC);
-	int iSPPercent = GetSailPercent(_NPC);
-	int iCrew = sti(_NPC.Ship.Crew.Quantity);
-	int iRealShipOptimalCrew = sti(RealShips[sti(_NPC.Ship.Type)].SailorCrew);
+	int iHPPercent = int(GetHullPercent(_NPC));
+	int iSPPercent = int(GetSailPercent(_NPC));
+	int iCrew = int(_NPC.Ship.Crew.Quantity);
+	int iRealShipOptimalCrew = int(RealShips[int(_NPC.Ship.Type)].SailorCrew);
 	int iSailSkill = GetSummonSkillFromNameSimple(_NPC, SKILL_SAILING);
 	int iShipClass = GetCharacterShipClass(_NPC);
 	int iNeedSailSkill = GetShipClassNavySkill(iShipClass);
-	int iDays = makeint(GetDistanceToColony2D(_sColony)/100); // Сколько дней идти до колонии
+	int iDays = int(GetDistanceToColony2D(_sColony)/100); // Сколько дней идти до колонии
 	
 	Log_TestInfo("База - "+fChance);
 	if(iHPPercent < 50) fChance = fChance+(50-iHPPercent)*1.5; // Проценты потопления за состояние корпуса
@@ -208,7 +208,7 @@ void CompanionTravel_DeleteSpecialShipAttributes(ref _NPChar)
 
 void CompanionTravel_SetExperienceToTraveller(ref _NPC)
 {
-	int iRank = sti(_NPC.Rank);
+	int iRank = int(_NPC.Rank);
 	int iExp = (rand(1)+1)+(iRank/2);
 	AddCharacterExpToSkill(_NPC, "Leadership", iExp);
 	AddCharacterExpToSkill(_NPC, "Fortune", iExp);
@@ -221,8 +221,8 @@ void CompanionTravel_SetExperienceToTraveller(ref _NPC)
 {
 	int iCrew = GetCrewQuantity(_NPC);
 	int iSlaves = GetCargoGoods(_NPC, GOOD_SLAVES);
-	int iCrewEat = makeint((iCrew+6) / 10);
-	int iSlavesEat = makeint((iCrew+6) / 20);
+	int iCrewEat = int((iCrew+6) / 10);
+	int iSlavesEat = int((iCrew+6) / 20);
 	int iRumQty = GetCargoGoods(_NPC, GOOD_RUM);
 	int iMedicamentQty = GetCargoGoods(_NPC, GOOD_MEDICAMENT);
 	int iTemp = iCrew/30;
@@ -234,7 +234,7 @@ void CompanionTravel_SetExperienceToTraveller(ref _NPC)
 		if(iCrew > 10)
 		{
 			_NPC.Ship.Crew.Quantity = iCrew - rand(9);
-			_NPC.Ship.Crew.Morale = sti(_NPC.Ship.Crew.Morale)-1;
+			_NPC.Ship.Crew.Morale = int(_NPC.Ship.Crew.Morale)-1;
 		}
 	}
 	else
@@ -245,28 +245,28 @@ void CompanionTravel_SetExperienceToTraveller(ref _NPC)
 	if(iRumQty >= iTemp)
 	{
 		RemoveCharacterGoodsSelf(_NPC, GOOD_RUM, iTemp);
-		_NPC.Ship.Crew.Morale = sti(_NPC.Ship.Crew.Morale)+1;
+		_NPC.Ship.Crew.Morale = int(_NPC.Ship.Crew.Morale)+1;
 	}
 	else
 	{
-		_NPC.Ship.Crew.Morale = sti(_NPC.Ship.Crew.Morale)-1;
+		_NPC.Ship.Crew.Morale = int(_NPC.Ship.Crew.Morale)-1;
 	}
 }*/
 
 void CompanionTravel_SetRandomEvent(ref _NPC) // Просто случайные события для компаньона
 {
 	int iRand = rand(4);
-	int iShipHP = sti(_NPC.Ship.HP);
-	int iShipHPMax = sti(RealShips[sti(_NPC.Ship.Type)].hp);
-	int iShipSP = GetSailPercent(_NPC);
+	int iShipHP = int(_NPC.Ship.HP);
+	int iShipHPMax = int(RealShips[int(_NPC.Ship.Type)].hp);
+	int iShipSP = int(GetSailPercent(_NPC));
 	int iCrew = GetCrewQuantity(_NPC);
-	int iMinCrew = sti(RealShips[sti(_NPC.Ship.Type)].mincrew)
+	int iMinCrew = int(RealShips[int(_NPC.Ship.Type)].mincrew);
 	
 	switch(iRand)
 	{
 		case 0: // Покоцался корпус
 			if(iShipHP <= iShipHPMax/10) break;
-			_NPC.Ship.HP = sti(_NPC.Ship.HP) - (iShipHPMax/30);
+			_NPC.Ship.HP = int(_NPC.Ship.HP) - (iShipHPMax/30);
 		break;
 		
 		case 1: // Покоцались паруса

@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "어젯밤 선술집에서 싸움이 있었다던데... 누가 싸웠는지는 나도 모르겠어. 내 얼굴은 아직 멀쩡하네. 아마도.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "빌어먹을... 머리가 암초에 부딪힌 선체처럼 쪼개질 것 같군, 그런데 네놈은 또 저주스러운 질문을 해대고 있잖아. 난 아무것도 못 봤고, 아무 소리도 못 들었어. 이런 심문으로 노련한 선원을 괴롭히지 말고 페소나 좀 쥐여주는 게 낫지 않겠냐.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "여기 백 페소다. 또 술에 취해 정신 못 차리고 그 시중드는 아가씨한테 홀리지 말라고, 알겠지?";
 				link.l1.go = "OS_Matros_7_harizma";

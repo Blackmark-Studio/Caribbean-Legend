@@ -40,13 +40,13 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
 				dialog.text = RandPhraseSimple("간첩이군! 무기를 내려놓고 나와 함께 가라!","적의 첩자다! 잡아라 "+GetSexPhrase("그를","그녀")+"!");
 				link.l1 = RandPhraseSimple("닥쳐, 겁쟁이!","꺼져!");
@@ -55,20 +55,20 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy. проверяем, не казачок ли. -->
-				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
+				if (GetRelation2BaseNation(int(npchar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
 				{
 					dialog.text = RandPhraseSimple("너는 누구고 여기서 뭐 하는 거야?","가만히 있어! 너 누구야? 왜 요새에 들어오려고 하는 거지?");
 					//==> по лицензии
 					if (CheckNationLicence(HOLLAND))
 					{
-						link.l1 = "장교님, 저는 "+GetRusNameNationLicence(sti(npchar.nation))+", 그래서 나는 합법적으로 여기 있는 것이오. 자, 이것을 한번 보시오...";
+						link.l1 = "장교님, 저는 "+GetRusNameNationLicence(int(npchar.nation))+", 그래서 나는 합법적으로 여기 있는 것이오. 자, 이것을 한번 보시오...";
 						link.l1.go = "LicenceOk";
 					}
 					else
 					{
 						//==> по флагу
 						// заглушка на пирата
-						if (sti(pchar.nation) == PIRATE)
+						if (int(pchar.nation) == PIRATE)
 						{
     						dialog.text = RandPhraseSimple("해적이 요새 안에 있다고?! 잡아라"+GetSexPhrase("그를","그녀의")+"!","저건 해적이야, 우리 요새를 기웃거리고 있어! 감옥으로 끌고 가!!!");
 							link.l1 = RandPhraseSimple("그래, 나 해적이다. 그래서 어쩔 건데?","헤헤, 잡을 수 있으면 잡아 봐라...");
@@ -77,14 +77,14 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l1 = "저 깃발이 안 보이나 "+NationNameGenitive(sti(pchar.nation))+" 내 배의 돛대에?!";
+							link.l1 = "저 깃발이 안 보이나 "+NationNameGenitive(int(pchar.nation))+" 내 배의 돛대에?!";
 						}
 						else //если причалил не в городе
 						{
-							link.l1 = "나는 근처에 닻을 내렸어 "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" 깃발 아래에서"+NationNameGenitive(sti(pchar.nation))+"! 또 필요한 거 있나?";
+							link.l1 = "나는 근처에 닻을 내렸어 "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" 깃발 아래에서"+NationNameGenitive(int(pchar.nation))+"! 또 필요한 거 있나?";
 						}
 						// belamour legendary edition вызываюий доверие даёт возможность обмануть стражу
-						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
+						if(int(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 						{
 							Notification_Perk(true, "Trustworthy");
 							link.l1.go = "NotPegYou";
@@ -106,9 +106,9 @@ void ProcessDialogEvent()
 				// <-- eddy. проверяем, не казачок ли.
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (int(NPChar.nation) == PIRATE)
 					{
-						if (sti(rColony.HeroOwn)) // наш горожанин
+						if (int(rColony.HeroOwn)) // наш горожанин
 						{
 			         		switch (rand(10))
 							{
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 					}
 					
 					//Jason --> мини-квест Дефицитный товар
-					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && sti(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
+					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && int(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
 					{// Addon 2016-1 Jason пиратская линейка
 						string wineCity = "FortFrance";
 						if(SandboxMode)
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// Вице-адмирал на службе нации узнается без мундира
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
@@ -270,31 +270,31 @@ void ProcessDialogEvent()
 
 							case 2: 
 								dialog.text = "부제독 나리, 저에게 이런 영광이! 무엇을 도와드릴까요?";
-								link.l1 = "Serve "+NationNameGenitive(sti(npchar.nation))+", 병사야! 그게 네가 할 수 있는 최선이야.";
+								link.l1 = "Serve "+NationNameGenitive(int(npchar.nation))+", 병사야! 그게 네가 할 수 있는 최선이야.";
 								link.l1.go = "exit";
 							break;
 						}
 						break;
 					}
 					// Офицер с патентом
-					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
 							case 0: 
-							dialog.text = "안녕하십니까, 선장님! 저에게 지시하실 일이 있으시다면, 실례를 무릅쓰고 말씀드리자면: 비록 제가 섬기고 있는 이는 "+NationNameGenitive(sti(npchar.nation))+", 나는 오직 사령관과 총독에게만 대답한다."; 
+							dialog.text = "안녕하십니까, 선장님! 저에게 지시하실 일이 있으시다면, 실례를 무릅쓰고 말씀드리자면: 비록 제가 섬기고 있는 이는 "+NationNameGenitive(int(npchar.nation))+", 나는 오직 사령관과 총독에게만 대답한다.";
 							link.l1 = "내 장교들과 선원들은 내 명령에 따르지. 임무를 다하라, 병사.";
 							link.l1.go = "exit";
 							break;
 
 							case 1:
-								dialog.text = "선장님, 당신의 배에서 일할 수 있겠습니까? 같은 조건으로 "+NationNameGenitive(sti(npchar.nation))+", 하지만 나는 바다가 더 좋아."; 
+								dialog.text = "선장님, 당신의 배에서 일할 수 있겠습니까? 같은 조건으로 "+NationNameGenitive(int(npchar.nation))+", 하지만 나는 바다가 더 좋아.";
 								link.l1 = "네가 배정받은 곳에서 필요하니, 명예롭게 임무를 수행하라. 잠시 눈을 감으면, 그들이 그것을 바다로 가져갈 것이다.";
 								link.l1.go = "exit";
 							break;
 
 							case 2: 
-								dialog.text = "오, 운이 좋군. 너는 의 소속 선박의 선장이잖아\n "+NationNameGenitive(sti(npchar.nation))+"... 그리고 나는 하루 종일 여기 갇혀 있어."; 
+								dialog.text = "오, 운이 좋군. 너는 의 소속 선박의 선장이잖아\n "+NationNameGenitive(int(npchar.nation))+"... 그리고 나는 하루 종일 여기 갇혀 있어.";
 								link.l1 = "내가 카리브에 막 도착해서 일주일 만에 선장이 됐다고 생각해? 이건 다 수년간의 고된 노력의 결과야...";
 								link.l1.go = "exit";
 							break;
@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		break;
 		case "LicenceOk":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				dialog.text = "생각 좀 해 봐라! 이런 무례가 어디 있냐! 상인 행세를 하며 여기까지 오다니! 네 얼굴은 모든 병영에 붙어 있다, 이 자식아! 이번엔 절대 못 빠져나간다! 잡아라!";
 				link.l1 = RandPhraseSimple("아르!..","그래, 네가 원한 거잖아...");

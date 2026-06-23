@@ -31,14 +31,14 @@ void Ship_Walk_Create()
 		return;
 	}
 
-	if(ch.id == "0" || sti(ch.ship.type) == SHIP_NOTUSED)
+	if(ch.id == "0" || int(ch.ship.type) == SHIP_NOTUSED)
 	{
 		trace("Ship_Walk_Create err: " + ch.id + " have invalid ship");
 		return;
 	}
 
-	int Index= sti(ch.ship.type);
-	int ri= sti(RealShips[Index].basetype);
+	int Index= int(ch.ship.type);
+	int ri= int(RealShips[Index].basetype);
 
 	if (!CheckAttribute(ch,"nation")) 
 	{

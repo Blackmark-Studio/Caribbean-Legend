@@ -17,7 +17,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "너랑 얘기하고 싶지 않아. 넌 아무 이유 없이 평화로운 주민들을 공격하고 싸움을 부추기잖아. 꺼져, 무신론자!";
 				link.l1 = "원하시는 대로...";
@@ -97,7 +97,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "물약? 90페소다, 아가야.";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "가져가시오, 줄리안 형제.";
 				link.l1.go = "potion_pay";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "엘릭서? 500페소다, 아가.";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "가져가시오, 줄리안 형제.";
 				link.l1.go = "potion_pay";
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "해독제? 200페소다, 아가.";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "가져가시오, 줄리안 형제.";
 				link.l1.go = "potion_pay";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "혼합물? 900페소다, 아들아.";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "가져가시오, 줄리안 형제.";
 				link.l1.go = "potion_pay";
@@ -158,8 +158,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "여기 있다. 약을 받아라. 신께서 인도해 주시길!";

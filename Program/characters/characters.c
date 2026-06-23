@@ -154,14 +154,14 @@ bool CreateCharacter(ref character)
 	if(actLoadFlag)
 	{	//После перезагрузки вернуть заряженность огнестрельного оружия персонажа
 		if(CheckAttribute(character,"chr_ai.gun.charge"))
-			fCurChargePistol = stf(character.chr_ai.gun.charge);
+			fCurChargePistol = float(character.chr_ai.gun.charge);
 		if(CheckAttribute(character,"chr_ai.musket.charge"))
-			fCurChargeMusket = stf(character.chr_ai.musket.charge);
+			fCurChargeMusket = float(character.chr_ai.musket.charge);
 	}
 	ExecuteCharacterEquip(character);
-	if(CheckAttribute(character,"chr_ai.gun.charge") && fCurChargePistol < stf(character.chr_ai.gun.charge))
+	if(CheckAttribute(character,"chr_ai.gun.charge") && fCurChargePistol < float(character.chr_ai.gun.charge))
 		character.chr_ai.gun.charge = fCurChargePistol;
-	if(CheckAttribute(character,"chr_ai.musket.charge") && fCurChargeMusket < stf(character.chr_ai.musket.charge))
+	if(CheckAttribute(character,"chr_ai.musket.charge") && fCurChargeMusket < float(character.chr_ai.musket.charge))
 		character.chr_ai.musket.charge = fCurChargeMusket;
 
 	//Set fight level
@@ -198,8 +198,8 @@ bool CreateCharacter(ref character)
 	SendMessage(character, "lss", MSG_CHARACTER_EX_MSG, "SetBarTexture", "LocEfx\\bars_back.tga");
 	GEN_OverrideAppearance(character, -1);
 	int iMass = 100;
-	if (HasPerk(character, "Dodgy")) iMass *= (1 + PERK_VALUE_DODGY);
-	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetMass", makeint(iMass));
+	if (HasPerk(character, "Dodgy")) iMass = int(iMass * (1 + PERK_VALUE_DODGY));
+	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetMass", int(iMass));
 	return true;
 }
 
@@ -211,17 +211,17 @@ bool DeleteCharacter(ref character)
 
 bool TeleportCharacterToPos(ref character, float x, float y, float z)
 {
-	return SendMessage(character, "lfff", MSG_CHARACTER_TELEPORT, x, y, z);
+	return bool(SendMessage(character, "lfff", MSG_CHARACTER_TELEPORT, x, y, z));
 }
 
 bool TeleportCharacterToPosAy(ref character, float x, float y, float z, float ay)
 {
-	return SendMessage(character, "lffff", MSG_CHARACTER_TELEPORT_AY, x, y, z, ay);
+	return bool(SendMessage(character, "lffff", MSG_CHARACTER_TELEPORT_AY, x, y, z, ay));
 }
 
 bool TeleportCharacterToLocator(ref character, string group, string locator)
 {
-	return SendMessage(character, "lss", MSG_CHARACTER_TELEPORT_TO_LOCATOR, group, locator);
+	return bool(SendMessage(character, "lss", MSG_CHARACTER_TELEPORT_TO_LOCATOR, group, locator));
 }
 
 bool CheckLocationPosition(ref location, float x, float y, float z)
@@ -255,12 +255,12 @@ bool GetCharacterAy(ref character, ref float_ay)
 
 bool PushCharacterAy(ref character)
 {
-	return SendMessage(character, "l", MSG_CHARACTER_TURNPUSH);
+	return bool(SendMessage(character, "l", MSG_CHARACTER_TURNPUSH));
 }
 
 bool PopCharacterAy(ref character)
 {
-	return SendMessage(character, "l", MSG_CHARACTER_TURNPOP);
+	return bool(SendMessage(character, "l", MSG_CHARACTER_TURNPOP));
 }
 
 int FindNearCharacters(ref character, float rad, float ax, float testAng, float nearDist, bool isVisibleTest, bool isSort)
@@ -279,7 +279,7 @@ int FindNearCharacters(ref character, float rad, float ax, float testAng, float 
 
 bool CharactersVisibleTest(ref character, ref lookTo)
 {
-	return SendMessage(character, "li", MSG_CHARACTER_VISIBLE, lookTo);
+	return bool(SendMessage(character, "li", MSG_CHARACTER_VISIBLE, lookTo));
 }
 
 //belamour проверка бега для стелса
@@ -682,12 +682,12 @@ void TeleportCharacterToLocatorIgnoreCollision(ref chr, string group, string loc
 	aref aloc;
 	makearef(aloc, loadedLocation.locators.(group).(locator));
 	
-	float x = stf(aloc.x);
-	float y = stf(aloc.y);
-	float z = stf(aloc.z);
+	float x = float(aloc.x);
+	float y = float(aloc.y);
+	float z = float(aloc.z);
 	
-	float vz = stf(aloc.vz.z);
-	float vx = stf(aloc.vz.x);
+	float vz = float(aloc.vz.z);
+	float vx = float(aloc.vz.x);
 	float l = vx * vx + vz * vz;
 	if (l > 0.0000001) {
 		vz = acos(vz / sqrt(l));
@@ -709,9 +709,9 @@ void CharacterTurnByLocInstant(ref character, string group, string locator) {
 	aref aloc;
 	makearef(aloc, loadedLocation.locators.(group).(locator));
 	
-	float lx = stf(aloc.x);
-	float ly = stf(aloc.y);
-	float lz = stf(aloc.z);
+	float lx = float(aloc.x);
+	float ly = float(aloc.y);
+	float lz = float(aloc.z);
 	
 	float dx = lx - x;
 	float dz = lz - z;
@@ -856,7 +856,7 @@ void SetCharacterActionAnimation(ref chr, string sAction, string sAnimation)
 // Для ручного управления
 void SetPCharRank(int val)
 {
-    int old = sti(PChar.rank);
+    int old = int(PChar.rank);
     PChar.rank = val;
     if (old < val) Event("PlayerLevelUp");
 }

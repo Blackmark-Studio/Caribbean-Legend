@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PearlMan_1";
 		break;
 		case "PearlMan_1":
-			dialog.text = "ここで真珠を集めて、奉公している  "+NationNameGenitive(sti(npchar.nation))+"……だよな……";
+			dialog.text = "ここで真珠を集めて、奉公している  "+NationNameGenitive(int(npchar.nation))+"……だよな……";
 			link.l1 = "ああ、知ってるさ…";
 			link.l1.go = "exit";
 			link.l2 = "おい、聞いてくれよ、こういう小物を何個か“作り手”から直接買うことってできるのか？どう思う？";

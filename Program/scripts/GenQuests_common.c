@@ -1,7 +1,7 @@
 //ugeen 12.01.10 --> отдельный файл для функций, общих для всех генераторов
 string GenQuest_GenerateGoodBlade() // генерация хороших клинков для призов и подарков
 {	
-	//return GetGeneratedItem(SelectGeneratedItem("", B_GOOD , ""));
+	//return GetGeneratedItem(SelectGeneratedItem(-1, B_GOOD , ""));
 	// Jason: вот место, по которому генерировались квестовые клинки в кладах!! 
 	// будет выбор вручную. 020912
 	string itemID;
@@ -135,7 +135,7 @@ string GenQuest_GeneratePrize() // клинок или артефакт
 	if(rand(12) > 4) itm = GenQuest_GenerateArtefact();
 	else
 	{
-		if (sti(pchar.rank) > 15) itm = GenQuest_GenerateBestBlade(); // may-16
+		if (int(pchar.rank) > 15) itm = GenQuest_GenerateBestBlade(); // may-16
 		else itm = GenQuest_GenerateGoodBlade();
 	}
 	return itm;

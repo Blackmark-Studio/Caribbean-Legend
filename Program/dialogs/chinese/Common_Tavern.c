@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 	if(!CheckAttribute(pchar, "questTemp.TavernVisit."+(NPCCity) )) 
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
-		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
+		pchar.questTemp.TavernVisit.counter = int(pchar.questTemp.TavernVisit.counter) + 1;
 		notification("首次酒馆访问 " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
 		AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 10.0);
 	}	
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (sti(pchar.GenQuest.Piratekill) > 20 && sti(npchar.nation) == PIRATE)
+			if (int(pchar.GenQuest.Piratekill) > 20 && int(npchar.nation) == PIRATE)
 			{
 				dialog.text = RandPhraseSimple("是你啊, 混蛋! 你以为我们会在这里给你倒朗姆酒吗? 当然不会! 伙计们! 拿起武器! 杀了这个恶棍! ", "想喝酒吗, 海盗? 哈! 不! 现在我们让你看看厉害! 伙计们, 拔出刀刃! ");
 				link.l1 = RandPhraseSimple("嗯? 什么? ", "住手! ");
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			//Jason, 加斯科涅的枷锁
 			if(NPChar.City == "FortFrance")
 			{
-				if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && makeint(environment.time) > 5.0 && makeint(environment.time) < 19.0)
+				if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && int(environment.time) > 5.0 && int(environment.time) < 19.0)
 				{
 					link.l1 = "先生, 我在找工作。 你有什么活计吗? ";
 					link.l1.go = "Sharlie_rum";
@@ -175,9 +175,9 @@ void ProcessDialogEvent()
 		        {
 		            if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.NoMoneyToBarmen"))
 		            {
-		            	iTemp = sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen);
+		            	iTemp = int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen);
 		            	dialog.Text = "那么, 船长, 你给我带来" + FindRussianMoneyString(iTemp) + "了吗。 ";
-		            	if(sti(PChar.Money) >= iTemp)
+		            	if(int(PChar.Money) >= iTemp)
 		            	{
 							link.l1 = "是的, 我带来了。 给你... ";
 							link.l1.go = "Tavern_ChurchGenQuest1_Node_4_1";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "crew hire";
 				Link.l2 = "我希望你能回答几个问题。 ";
 				Link.l2.go = "int_quests";
-				if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+				if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 				{
 					link.l21 = "我想谈谈财务方面的事。 ";
 					link.l21.go = "LoanForAll";//(转发到贷款生成器)
@@ -305,7 +305,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "crew hire";
 			Link.l2 = NPChar.name+ ", 我们谈谈... ";
 			Link.l2.go = "int_quests";
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l21 = "我想谈谈财务方面的事。 ";
 				link.l21.go = "LoanForAll";//(转发到贷款生成器)
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 		
 		case "crew hire":
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			ok = sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
+			ok = int(Pchar.Ship.Type) != SHIP_NOTUSED && ok;
 			
 			if (!ok)
 			{
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			
-            if (makeint(environment.time) > 22.0 || makeint(environment.time) < 7.0)
+            if (int(environment.time) > 22.0 || int(environment.time) < 7.0)
 			{
 				Dialog.text = "通常有很多人想成为水手, 但现在太晚了 - 他们早上才会开始出现。 也许你想租个房间等他们? ";
 				link.l1 = "好的。 你有空闲的房间吗? ";
@@ -392,7 +392,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-                if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+                if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
                 {
                     Dialog.text = "你认为我们这里接待通缉犯吗? 庆幸我没叫卫兵。 ";
 					link.l1 = "谢谢。 ";
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 
 				if(pchar.GenQuest.CaptainComission.variant == "A2" && pchar.GenQuest.CaptainComission == "Begin_1")
 				{
-					link.l9 = "你知道我在哪里可以找到" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的队长" + pchar.GenQuest.CaptainComission.Name + "吗? ";
+					link.l9 = "你知道我在哪里可以找到" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的队长" + pchar.GenQuest.CaptainComission.Name + "吗? ";
 					link.l9.go = "CaptainComission_Tavern7";					
 				}				
 				if(pchar.GenQuest.CaptainComission.variant == "A3" && pchar.GenQuest.CaptainComission == "Begin_1")
@@ -520,7 +520,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{					
-						link.l9 = "你知道" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的队长" + pchar.GenQuest.CaptainComission.Name + "的事吗? ";
+						link.l9 = "你知道" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的队长" + pchar.GenQuest.CaptainComission.Name + "的事吗? ";
 						link.l9.go = "CaptainComission_Tavern1";
 						if(!CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour"))
 						{
@@ -542,7 +542,7 @@ void ProcessDialogEvent()
 			}
 
 			// Jason --> 总督任务 寻找逃兵
-			if(CheckAttribute(pchar, "GenQuest.FindFugitive") && pchar.GenQuest.FindFugitive != "Late" && sti(NPChar.nation) == PIRATE)
+			if(CheckAttribute(pchar, "GenQuest.FindFugitive") && pchar.GenQuest.FindFugitive != "Late" && int(NPChar.nation) == PIRATE)
 			{
 				link.l12 = "听着, 我在找我的一个老朋友, " + pchar.GenQuest.FindFugitive.Name + "是他的名字。 一个船长朋友告诉我他正前往你的定居点。 你碰巧见过他吗? ";
 				link.l12.go = "FindFugitiveTav";
@@ -554,7 +554,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hold_genquest1":
-			switch(sti(pchar.GenQuest.Hold_GenQuest.TavernVariant))
+			switch(int(pchar.GenQuest.Hold_GenQuest.TavernVariant))
 			{
 				case 0:
 					dialog.text = LinkRandPhrase("你说什么? " + pchar.GenQuest.Hold_GenQuest.Name + "? 嗯... 从没听说过。 ",
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("HoldQuest", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.City + "Gen")); 			
 			AddQuestUserData("HoldQuest", "sFoundChar", pchar.GenQuest.Hold_GenQuest.foundStr);
 			AddQuestUserData("HoldQuest", "sName", pchar.GenQuest.Hold_GenQuest.Name);
-			SetFunctionTimerConditionParam("Hold_GenQuest_FindCharTimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("Hold_GenQuest_FindCharTimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 			DialogExit();
 		break;
 		
@@ -649,7 +649,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hold_genquest5":
-			SetFunctionTimerConditionParam("Hold_GenQuest_GetMapTimeIsOver", 0, 0, 1, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("Hold_GenQuest_GetMapTimeIsOver", 0, 0, 1, int(24 - GetHour()), false);
 			DialogExit();
 			AddDialogExitQuestFunction("Hold_GenQuest_GenerateMapChar");			
 		break;
@@ -712,7 +712,7 @@ void ProcessDialogEvent()
 		
 		case "CaptainComission_Tavern6":
 			AddQuestRecord("CaptainComission2", "39");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); 
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			AddQuestUserData("CaptainComission2", "sCharName", GetName( NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.CanoneerName, NAME_ABL));
 			AddQuestUserData("CaptainComission2", "sShipName", pchar.GenQuest.CaptainComission.ShipTypeName);			
@@ -745,9 +745,9 @@ void ProcessDialogEvent()
 			{
 				pchar.GenQuest.CaptainComission.GetRumour = true;
 				SaveCurrentQuestDateParam("GenQuest.CaptainComission.GetRumour");
-				SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, MakeInt(24 - GetHour()), false);
+				SetFunctionTimerConditionParam("CaptainComission_TimeIsOver", 0, 0, 2, int(24 - GetHour()), false);
 				AddQuestRecord("CaptainComission2", "19");
-				AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // 樵夫 结束
+				AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // 樵夫 结束
 				AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			}			
 			DialogExit();
@@ -778,7 +778,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_4":
-			if(sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
+			if(int(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 			{
 				dialog.text = "哦, 所以你是" + GetSexPhrase("那个船长, 带来了","那个姑娘, 带来了") + "我那不肖之子和一个年轻新娘? ";
 				link.l1 = "是的, 是我帮了忙。 ";
@@ -805,7 +805,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_5_1":
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.EncGirl.sum));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.EncGirl.sum));
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item);
 			AddQuestRecord("JungleGirl", "18");
 			CloseQuestHeader("JungleGirl");
@@ -833,7 +833,7 @@ void ProcessDialogEvent()
 				
 		case "ShipLetters_4":
 			pchar.questTemp.different.GiveShipLetters.speakTavern = true;
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "让我看看! 嗯... 但你自己也是船长。 我认为你应该去见港务长。 ";
 				link.l1 = "谢谢你的建议。 ";
@@ -862,9 +862,9 @@ void ProcessDialogEvent()
 		
 		//zagolski。 改写
 		case "work":
-			if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
-				dialog.text = RandPhraseSimple("我不在乎为谁服务, 因为金钱没有国籍。 但我不会帮助你, 因为你是打着" + NationNameGenitive(sti(pchar.nation)) + "的旗号来的。 ", "我只是个普通的酒馆老板, 但与" + NationNameAblative(sti(pchar.nation)) + "合作似乎不太吸引人。 ");
+				dialog.text = RandPhraseSimple("我不在乎为谁服务, 因为金钱没有国籍。 但我不会帮助你, 因为你是打着" + NationNameGenitive(int(pchar.nation)) + "的旗号来的。 ", "我只是个普通的酒馆老板, 但与" + NationNameAblative(int(pchar.nation)) + "合作似乎不太吸引人。 ");
 				link.l1 = RandPhraseSimple("好吧, 随你便... ", "好吧, 你喜欢就好... ");
 				link.l1.go = "exit";
 				break;
@@ -876,7 +876,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (sti(Pchar.Ship.Type) == SHIP_NOTUSED)
+			if (int(Pchar.Ship.Type) == SHIP_NOTUSED)
         	{
 				dialog.text = "你的船在哪里? 还是你打算背着乘客游泳? ";
 				link.l1 = "嘿, 你说得有道理... ";
@@ -1026,7 +1026,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.different == "FackWaitress_toRoom")
 			{
 				dialog.text = "你想租房间? 没问题。 100八里亚尔, 就是你的了。 ";
-				if (sti(pchar.money) >= 100)
+				if (int(pchar.money) >= 100)
 				{
 					link.l1 = "给你钱。 ";
 					link.l1.go = "exit";
@@ -1055,7 +1055,7 @@ void ProcessDialogEvent()
 				if(pchar.GenQuest.EncGirl == "EncGirl_ToTavern")
 				{
 					dialog.text = "你想租房间? 没问题。 100八里亚尔, 就是你的了。 ";
-					if (sti(pchar.money) >= 100)
+					if (int(pchar.money) >= 100)
 					{
 						link.l1 = "给你钱。 ";
 						link.l1.go = "exit";
@@ -1081,7 +1081,7 @@ void ProcessDialogEvent()
 			// < —任务"丛林中的少女"
 
 			// belamour 常住客 -->
-			if (CheckAttribute(pchar, "GenQuest.Unwantedpostor") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && abs(50-sti(pchar.reputation.nobility)) > 20)
+			if (CheckAttribute(pchar, "GenQuest.Unwantedpostor") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && abs(50-int(pchar.reputation.nobility)) > 20)
 			{
 				if(pchar.GenQuest.Unwantedpostor == "start")
 				{
@@ -1134,7 +1134,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "那要花你5八里亚尔。 ";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "成交。 给你。 ";
 				link.l1.go = "room_day_wait";
@@ -1160,7 +1160,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "那要花你10八里亚尔。 ";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "成交。 给你。 ";
 				link.l1.go = "room_day_wait_next";
@@ -1186,7 +1186,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			dialog.text = "那要花你5八里亚尔。 ";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "成交。 给你。 ";
 				link.l1.go = "room_night_wait";
@@ -1347,7 +1347,7 @@ void ProcessDialogEvent()
 			if(rand(1) == 0) // "如果他是个直率的人并立即付款"
 			{
 				dialog.text = FindRussianMoneyString(iTemp) + ", 船长先生/小姐, 他还典当了一些教堂书籍 - 这是他身上唯一有价值的东西。 ";
-				if(sti(PChar.money) >= iTemp)
+				if(int(PChar.money) >= iTemp)
 				{
 					link.l1 = "这是你的硬币。 把稿件交给我。 小心点 - 这不是淫秽的木刻画集, 而是圣经! ";
 					link.l1.go = "Tavern_ChurchGenQuest1_Node_4_1";
@@ -1369,7 +1369,7 @@ void ProcessDialogEvent()
 			
 		case "Tavern_ChurchGenQuest1_Node_4_1":
 			DialogExit();
-			AddMoneyToCharacter(PChar, -sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
+			AddMoneyToCharacter(PChar, -int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
 			AddItems(PChar, "Bible", 1);	// 给予手稿
 			items[FindItem("Bible")].Name = "itmname_ChurchGenQuest1Bible";	// 更改名称。 之后要改回来!
 			ChangeItemDescribe("Bible", "itmdescr_ChurchGenQuest1Bible"); // 更改描述。 之后要改回来!
@@ -1413,7 +1413,7 @@ void ProcessDialogEvent()
 			items[FindItem("Bible")].Name = "itmname_ChurchGenQuest1Bible";	// 更改名称。 之后要改回来!
 			ChangeItemDescribe("Bible", "itmdescr_ChurchGenQuest1Bible"); // 更改描述。 之后要改回来!
 			items[FindItem("Bible")].City = XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Gen"); // 变量。 之后删除!
-			AddMoneyToCharacter(PChar, -sti(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
+			AddMoneyToCharacter(PChar, -int(PChar.GenQuest.ChurchQuest_1.MoneyToBarmen));
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_1.NeedToDialogWithBarmen");
 			sQuestTitle = PChar.GenQuest.ChurchQuest_1.QuestTown + "ChurchGenQuest1";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest1", "9");
@@ -1431,7 +1431,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Trader_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) == 6)
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) == 6)
 			{
 				dialog.text = "嗯... 是的, 确实有一个奇怪的人给我带来了那个东西。 不过他没告诉我那是什么 - 只是想用它换酒。 当然, 我拒绝了 - 我不需要那个小玩意儿。 ";
 				link.l1 = "他长什么样, 去了哪里? 我非常需要那个工具。 ";
@@ -1448,7 +1448,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> 生成器 阳光下的地方
 		case "Sunplace_Tavern":
-			if (makeint(environment.time) > 12.0 && makeint(environment.time) < 17.0)//在商店
+			if (int(environment.time) > 12.0 && int(environment.time) < 17.0)//在商店
 			{
 				dialog.text = "" + pchar.GenQuest.Sunplace.Trader.Enemyname + "? 他最近在那里, 现在应该已经去找他的同伴 - 店主了。 试着在商店找他 - 他肯定在那里。 ";
 				link.l1 = "谢谢! 你帮了我大忙! ";
@@ -1505,7 +1505,7 @@ void ProcessDialogEvent()
 				dialog.text = "是的, 我认识那位先生。 他应该在镇上的某个地方 - 我最近刚看到他从我窗前走过。 ";
 				link.l1 = "谢谢你! 我会去找他! ";
 				link.l1.go = "Fernando_Land";
-				/* if (makeint(environment.time) > 10.0 && makeint(environment.time) < 18.0)//在街上
+				/* if (int(environment.time) > 10.0 && int(environment.time) < 18.0)//在街上
 				{
 					dialog.text = "是的, 我认识那位先生。 他应该在镇上的某个地方 - 我最近刚看到他从我窗前走过。 ";
 					link.l1 = "谢谢你! 我会去找他! ";
@@ -1555,7 +1555,7 @@ void ProcessDialogEvent()
 		
 		case "Race_Advantage_1":
 			DialogExit();
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Racing.Go.Money)*2);
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.Racing.Go.Money)*2);
 			AddQuestRecord("Racing", "4");
 			AddQuestUserData("Racing", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.StartCity+"Gen"));
 			CloseQuestHeader("Racing");
@@ -1607,7 +1607,7 @@ void ProcessDialogEvent()
 		
 		//Jason --> 寻找逃兵
 		case "FindFugitiveTav":
-			if (NPChar.city == pchar.GenQuest.FindFugitive.City && sti(pchar.GenQuest.FindFugitive.Chance) == 0)
+			if (NPChar.city == pchar.GenQuest.FindFugitive.City && int(pchar.GenQuest.FindFugitive.Chance) == 0)
 			{
 				dialog.text = NPCStringReactionRepeat("看来你的船长说的是实话。 " + pchar.GenQuest.FindFugitive.Name + "确实最近到达了我们的定居点。 白天在街上找他 - 他通常在那里消磨时间。 ", "你已经问过我那个人了, 我告诉了你我所知道的一切! ", "你是在开玩笑还是真的是个白痴? ! 你已经第三次问同样的问题了! ", "想想看, 这样的白痴怎么能成为船长... ", "block", 1, npchar, Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("谢谢你, 朋友, 你帮了我大忙! ", "是的, 是的, 很好。 ", "哇, 哇, 别这么激动。 我只是忘了。 ", "嗯, 如你所见... ", npchar, Dialog.CurrentNode); 
@@ -1735,7 +1735,7 @@ void ProcessDialogEvent()
 				DialogExit();
 				chrDisableReloadToLocation = true; //关闭地点
 				LAi_LocationFightDisable(&Locations[FindLocation(pchar.location+"_upstairs")], true); //禁止战斗
-				iTemp = sti(pchar.rank) + rand(5);
+				iTemp = int(pchar.rank) + rand(5);
 				sld = GetCharacter(NPC_GenerateCharacter("Berglar_Unwantedpostor", "citiz_5"+(rand(3)+1), "man", "man", iTemp, PIRATE, -1, true, "quest")); // "mercen_"+(rand(14)+14)
 				FantomMakeCoolFighter(sld, iTemp, 50 + rand(30), 50 + rand(30), "topor_04", "", "bullet", 50);
 				sld.dialog.filename = "GenQuests_Dialog.c";
@@ -1753,7 +1753,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_night":
 			dialog.text = "我知道了。 那要5银币。 ";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "当然, 给你。 ";
 				link.l1.go = "room_night_wait";
@@ -1764,7 +1764,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_day":
 			dialog.text = "明智的决定。 那要5银币, 晚安。 ";
-			if (makeint(pchar.money) >= 5)
+			if (int(pchar.money) >= 5)
 			{
 				link.l1 = "给你, 谢谢你 - 晚安。 ";
 				link.l1.go = "room_day_wait";
@@ -1775,7 +1775,7 @@ void ProcessDialogEvent()
 		
 		case "Helen_room_day_next":
 			dialog.text = "当然, 海伦。 那要10比索。 ";
-			if (makeint(pchar.money) >= 10)
+			if (int(pchar.money) >= 10)
 			{
 				link.l1 = "当然, 给你。 ";
 				link.l1.go = "room_day_wait_next";
@@ -1834,10 +1834,10 @@ string findTraderCity(ref NPChar)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(npchar.nation), int(colonies[n].nation));
 		if (colonies[n].id != "Panama" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //不在自己的岛屿
 		{
-			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
+			if (nation == RELATION_ENEMY || int(npchar.nation) == PIRATE)
 			{
 				storeArray[howStore] = n;
 				howStore++;
@@ -1858,10 +1858,10 @@ string findPassangerCity(ref NPChar)
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(npchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(npchar.nation), int(colonies[n].nation));
 		if (colonies[n].nation != "none" && colonies[n].id != "Panama" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //不在自己的岛屿
 		{
-			if (nation == RELATION_ENEMY || sti(npchar.nation) == PIRATE)
+			if (nation == RELATION_ENEMY || int(npchar.nation) == PIRATE)
 			{
 			storeArray[howStore] = n;
 			howStore++;

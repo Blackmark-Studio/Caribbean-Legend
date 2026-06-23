@@ -188,7 +188,7 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
 	if(sInterfaceType == INTERFACETYPE_DEADMAN && CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))	
 	{
-		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
+		iCurGoodsIdx = int(GameInterface.TABLE_LIST2.tr1.index);
 	}
 }
 
@@ -291,11 +291,11 @@ void SetCharacterMoneyToGold(aref rChar) // В интерфейсе оперир
 	if(bOk && !CheckAttribute(rChar, "ID"))
 	{				
 		if(!CheckAttribute(rChar, "Items.Gold")) rChar.Items.Gold = 0;
-		rChar.items.gold = sti(rChar.items.gold)+sti(GetAttrValue(rChar, "money")); // По квестам ложится сразу золото, а не деньги		
+		rChar.items.gold = int(rChar.items.gold)+int(GetAttrValue(rChar, "money")); // По квестам ложится сразу золото, а не деньги
 	}
 	else
 	{
-		rChar.items.gold = sti(GetAttrValue(rChar, "money"));
+		rChar.items.gold = int(GetAttrValue(rChar, "money"));
 	}
 }
 
@@ -505,7 +505,7 @@ void IDoExit(int exitCode)
 		
 				if(CheckAttribute(arCurChar, "RealCompanionIdx")) // 1.2.4 обмен с компаньоном
 				{
-					sld = GetCharacter(sti(arCurChar.RealCompanionIdx));
+					sld = GetCharacter(int(arCurChar.RealCompanionIdx));
 					ChangeAttributesFromCharacter(sld, arCurChar, false); //тут предметы и деньги
 				}			
 			}
@@ -521,7 +521,7 @@ void IDoExit(int exitCode)
 		}
 		if(CheckAttribute(pchar, "systeminfo.tutorial.OverLoad") && GetCharacterFreeItem(refToChar, "BoxOfBalls"))
 		{
-			if(GetItemsWeightEx(pchar) + sti(Items[GetItemIndex("BoxOfBalls")].weight) > GetMaxItemsWeight(pchar))
+			if(GetItemsWeightEx(pchar) + int(Items[GetItemIndex("BoxOfBalls")].weight) > GetMaxItemsWeight(pchar))
 			{
 				DeleteAttribute(pchar, "systeminfo.tutorial.OverLoad");
 				DoQuestFunctionDelay("Tutorial_Overload", 1.0);
@@ -768,7 +768,7 @@ void ProcCommand()
 			if(comName=="activate" || comName=="click")
 			{
 				SetNPCQuestDate(refCharacter, "AztecSkull"); //запомним день
-				OfficerReincarnation(&characters[sti(refToChar.index)]);
+				OfficerReincarnation(&characters[int(refToChar.index)]);
 				Dead_DelLoginedCharacter(refToChar);
 				ProcessCancelExit();
 			}
@@ -784,22 +784,22 @@ void procTabChange()
 	switch(nodName)
 	{
 		case "TABBTN_1":
-			SetControlsTabModeManual(1)
+			SetControlsTabModeManual(1);
 		break;
 		
 		case "TABBTN_2":
-			SetControlsTabModeManual(2)
+			SetControlsTabModeManual(2);
 		break;
 		
 		case "TABBTN_3":
-			SetControlsTabModeManual(3)
+			SetControlsTabModeManual(3);
 		break;
 		
 		case "TABBTN_4":
-			SetControlsTabModeManual(4)
+			SetControlsTabModeManual(4);
 		break;
 		case "TABBTN_5":
-			SetControlsTabModeManual(5)
+			SetControlsTabModeManual(5);
 		break;
 	}
 }
@@ -949,7 +949,7 @@ bool FilterItems(ref Item)
 		if (HasSubStr(sItem, "dublon"))  return false;
 		if (HasSubStr(sItem, "gold"))  return false;
 		if (HasSubStr(sItem, "collect"))  return false;
-		if (CheckAttribute(Item,"Price") && sti(Item.price) == 0) return false;
+		if (CheckAttribute(Item,"Price") && int(Item.price) == 0) return false;
 	}
 	if(currentTab == 5)
 	{
@@ -1048,7 +1048,7 @@ void AddToTable(ref rChar)
             GameInterface.TABLE_LIST.(sList).td1.line_space_modifier = 0.9;
             GameInterface.TABLE_LIST.(sList).td1.str = GetItemName(rItem);
             GameInterface.TABLE_LIST.(sList).index = i;
-            GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(stf(rItem.Weight) * iLeftQty, 1);
+            GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(float(rItem.Weight) * iLeftQty, 1);
             GameInterface.TABLE_LIST.(sList).td3.str = iLeftQty;
             iLinesCount++;
         }
@@ -1067,7 +1067,7 @@ void AddToTable(ref rChar)
             GameInterface.TABLE_LIST2.(sList2).td1.line_space_modifier = 0.9;
             GameInterface.TABLE_LIST2.(sList2).td1.str = GetItemName(rItem);
             GameInterface.TABLE_LIST2.(sList2).index = i;
-            GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
+            GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(float(rItem.Weight) * iRightQty, 1);
             GameInterface.TABLE_LIST2.(sList2).td3.str = iRightQty;
             iLinesCount2++;
         }
@@ -1085,7 +1085,7 @@ void AddToTable(ref rChar)
 
 		iLeftQty  = GetCharacterFreeItem(&refCharacter, sItem);
 		iRightQty = GetCharacterFreeItem(&rChar, sItem);
-		bool isHighlighted = IsItemForChar(&rItem, &refCharacter)
+		bool isHighlighted = IsItemForChar(&rItem, &refCharacter);
 		// Персонаж
 		if(iLeftQty > 0)
 		{
@@ -1099,7 +1099,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST.(sList).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST.(sList).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(sList).index = i;
-			GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(stf(rItem.Weight) * iLeftQty, 1);
+			GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(float(rItem.Weight) * iLeftQty, 1);
 			GameInterface.TABLE_LIST.(sList).td3.str = iLeftQty;
 			iLinesCount++;
 		}
@@ -1116,7 +1116,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST2.(sList2).td1.line_space_modifier = 0.9;
 			GameInterface.TABLE_LIST2.(sList2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(sList2).index = i;
-			GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
+			GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(float(rItem.Weight) * iRightQty, 1);
 			GameInterface.TABLE_LIST2.(sList2).td3.str = iRightQty;
 			iLinesCount2++;
 		}
@@ -1131,14 +1131,14 @@ void AddToTable(ref rChar)
 	{
 		if (iLinesCount < prevLineCountChar)
 		{
-			currentSelect = sti(GameInterface.TABLE_LIST.select);
+			currentSelect = int(GameInterface.TABLE_LIST.select);
 			if (currentSelect == iLinesCount)
 			{
 				targetSelect = currentSelect - 1;
 				GameInterface.TABLE_LIST.select = targetSelect;
 				sList = "tr" + targetSelect;
 
-				targetButtonsLine = targetSelect - 1 - sti(GameInterface.TABLE_LIST.top);
+				targetButtonsLine = targetSelect - 1 - int(GameInterface.TABLE_LIST.top);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY + 50 * targetButtonsLine, iTableAddAllBtnX + 35, iTableAddAllBtnY + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 50 * targetButtonsLine, iTableAddBtnX + 30, iTableAddBtnY + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY + 50 * targetButtonsLine, iTableRemoveBtnX + 30, iTableRemoveBtnY + 50 * targetButtonsLine + 45, 0);
@@ -1146,14 +1146,14 @@ void AddToTable(ref rChar)
 			}
 			else
 			{
-				targetSelect = sti(GameInterface.TABLE_LIST.select);
+				targetSelect = int(GameInterface.TABLE_LIST.select);
 				GameInterface.TABLE_LIST.select = targetSelect;
 				sList = "tr" + targetSelect;
 			}
 
 			if (CheckAttribute(&GameInterface, "TABLE_LIST." + sList + ".index"))
 			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+				iCurGoodsIdx = int(GameInterface.TABLE_LIST.(sList).index);
 				ShowGoodsInfo(iCurGoodsIdx);
 			}
 		}
@@ -1170,14 +1170,14 @@ void AddToTable(ref rChar)
 	{
 		if (iLinesCount2 < prevLineCountChest)
 		{
-			currentSelect = sti(GameInterface.TABLE_LIST2.select);
+			currentSelect = int(GameInterface.TABLE_LIST2.select);
 			if (currentSelect == iLinesCount2)
 			{
 				targetSelect = currentSelect - 1;
 				GameInterface.TABLE_LIST2.select = targetSelect;
 				sList2 = "tr" + targetSelect;
 
-				targetButtonsLine = targetSelect - 1 - sti(GameInterface.TABLE_LIST2.top);			
+				targetButtonsLine = targetSelect - 1 - int(GameInterface.TABLE_LIST2.top);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2 + 50 * targetButtonsLine, iTableAddAllBtnX2 + 35, iTableAddAllBtnY2 + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2 + 50 * targetButtonsLine, iTableAddBtnX2 + 30, iTableAddBtnY2 + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2 + 50 * targetButtonsLine, iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 50 * targetButtonsLine + 45, 0);
@@ -1185,14 +1185,14 @@ void AddToTable(ref rChar)
 			}
 			else
 			{
-				targetSelect = sti(GameInterface.TABLE_LIST2.select);
+				targetSelect = int(GameInterface.TABLE_LIST2.select);
 				GameInterface.TABLE_LIST2.select = targetSelect;
 				sList2 = "tr" + targetSelect;
 			}
 
 			if (CheckAttribute(&GameInterface, "TABLE_LIST2." + sList2 + ".index"))
 			{
-				iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.(sList2).index);
+				iCurGoodsIdx = int(GameInterface.TABLE_LIST2.(sList2).index);
 				ShowGoodsInfo(iCurGoodsIdx);
 			}
 		}
@@ -1311,11 +1311,11 @@ void ShowInfoWindow()
 	ref rItem;
 	if(sCurrentNode == "TABLE_LIST" || sCurrentNode == "TABLE_LIST2")
 	{
-		nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, sCurrentNode, 1);
+		nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, sCurrentNode, 1));
 		sRow = "tr" + nChooseNum;
 		if(nChooseNum > 0 && CheckAttribute(&GameInterface, sCurrentNode + "." + sRow + ".index"))
 		{
-			itemIdx = sti(GameInterface.(sCurrentNode).(sRow).index);
+			itemIdx = int(GameInterface.(sCurrentNode).(sRow).index);
 			rItem = ItemsFromID(Items[itemIdx].id);
 			sHeader = GetItemName(rItem);
 			sText1 = "";
@@ -1373,7 +1373,7 @@ void CS_TableSelectChange()
 	
 	if(CheckAttribute(&GameInterface, "TABLE_LIST.top"))
 	{
-		iSelLine = iSelected - sti(GameInterface.TABLE_LIST.top);
+		iSelLine = iSelected - int(GameInterface.TABLE_LIST.top);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY + 50 * (iSelLine - 1), iTableAddAllBtnX + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 50 * (iSelLine - 1), iTableAddBtnX + 30, iTableAddBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY + 50 * (iSelLine - 1), iTableRemoveBtnX + 30, iTableRemoveBtnY + 50 * (iSelLine - 1) + 45, 0);		
@@ -1381,7 +1381,7 @@ void CS_TableSelectChange()
 	}
 	if(CheckAttribute(&GameInterface, "TABLE_LIST2.top"))
 	{
-		iSelLine = iSelected - sti(GameInterface.TABLE_LIST2.top);
+		iSelLine = iSelected - int(GameInterface.TABLE_LIST2.top);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2 + 50 * (iSelLine - 1), iTableAddAllBtnX2 + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2 + 50 * (iSelLine - 1), iTableAddBtnX2 + 30, iTableAddBtnY2 + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2 + 50 * (iSelLine - 1), iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 50 * (iSelLine - 1) + 45, 0);		
@@ -1394,7 +1394,7 @@ void CS_TableSelectChange()
 	SetVariable();
 	validLineClicked = true;
 
-	sortedGoodIndex = sti(GameInterface.(CurTable).(sList).index);
+	sortedGoodIndex = int(GameInterface.(CurTable).(sList).index);
 	ShowGoodsInfo(sortedGoodIndex);
 }
 
@@ -1445,7 +1445,7 @@ void SetCharacterName()
 	ref rChar;
 	
 	string sAttr = "pic" + (nCurScrollNum + 1);
-	int iCurCharImageIndex = sti(GameInterface.CHARACTERS_SCROLL.(sAttr).character);
+	int iCurCharImageIndex = int(GameInterface.CHARACTERS_SCROLL.(sAttr).character);
 	string sCharacter = iCurCharImageIndex;
 	string sFullName = GetFullName(&characters[iCurCharImageIndex]);
 	string sJob = GetJobsList(&iCurCharImageIndex, " / ");
@@ -1459,14 +1459,14 @@ void ProcessFrame()
 {	
 	aref arCurCharFromImage;
 	string sInterfaceType = sGetInterfaceType();
-	if(sti(GameInterface.CHARACTERS_SCROLL.current) != nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
+	if(int(GameInterface.CHARACTERS_SCROLL.current) != nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
 	{
 		XI_WindowDisable("QTY_WINDOW", true);
 		XI_WindowShow("QTY_WINDOW", false);
 		SetNodeUsing("TRIGGER", true);
-		nCurScrollNum = sti(GameInterface.CHARACTERS_SCROLL.current);
+		nCurScrollNum = int(GameInterface.CHARACTERS_SCROLL.current);
 		string sAttr = "pic" + (nCurScrollNum + 1);
-		int iCurCharImageIndex = sti(GameInterface.CHARACTERS_SCROLL.(sAttr).character);
+		int iCurCharImageIndex = int(GameInterface.CHARACTERS_SCROLL.(sAttr).character);
 		
 		switch(sInterfaceType)
 		{
@@ -1560,7 +1560,7 @@ void onGetAllBtnClick()
 			if(iItemsQty < 1) continue;
 			
 			// Учет перегруза -->
-			maxItemsToAdd = GetMaxItemsToTake(true, itemID)
+			maxItemsToAdd = GetMaxItemsToTake(true, itemID);
 			
 			if(maxItemsToAdd < iItemsQty) iItemsQty = maxItemsToAdd;
 			// <-- Учет перегруза
@@ -1573,7 +1573,7 @@ void onGetAllBtnClick()
 			
 			bOk = true;
 				
-			weight = iItemsQty * stf(Items[i].weight);
+			weight = iItemsQty * float(Items[i].weight);
 			fCharWeight += weight; // Тут обновляем для метода GetMaxItemsToTake, иначе тормоза
 			fStoreWeight -= weight;
 		}
@@ -1593,7 +1593,7 @@ void onGetAllBtnClick()
 	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLL_LIST",0);
 	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLL_LIST2",0);
 	
-	iCurGoodsIdx = sti(GameInterface.TABLE_LIST.tr1.index);
+	iCurGoodsIdx = int(GameInterface.TABLE_LIST.tr1.index);
 	ShowGoodsInfo(iCurGoodsIdx);
 	
 	AddToTable(refToChar); // Рефреш таблицы
@@ -1745,7 +1745,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	AddRecipeKnownMarker(&arItm, &describeStr);
 	AddMapKnownMarker(&arItm, &describeStr);
 
-	fWeight = stf(Items[iCurGoodsIdx].weight);
+	fWeight = float(Items[iCurGoodsIdx].weight);
 
 	BuyOrSell = 0;
 	SetFormatedText("QTY_TypeOperation", "");
@@ -1759,8 +1759,8 @@ void ShowGoodsInfo(int iGoodIndex)
 	iCharQty 	= GetCharacterFreeItem(refCharacter, Items[iCurGoodsIdx].id);
 	iStoreQty 	= GetCharacterFreeItem(refToChar, Items[iCurGoodsIdx].id);
 		
-	SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty));
-	SetFormatedText("QTY_INFO_SHIP_QTY", its(iCharQty));
+	SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty));
+	SetFormatedText("QTY_INFO_SHIP_QTY", string(iCharQty));
 	BuyOrSell = 0;
 }
 
@@ -1769,7 +1769,7 @@ void TransactionOK()
 	int nTradeQuantity;
 	String list;
 	confirmChangeQTY_EDIT();
-	nTradeQuantity = sti(GameInterface.qty_edit.str);
+	nTradeQuantity = int(GameInterface.qty_edit.str);
 	if(BuyOrSell == 0)
 	{
 	    EndTooltip();
@@ -1806,8 +1806,8 @@ void ChangeQTY_EDIT()
 	float fRefCharWeight, fRefCharMaxWeight;
 	string sInterfaceType = sGetInterfaceType();
 	SetCharWeight();
-	GameInterface.qty_edit.str = sti(GameInterface.qty_edit.str);
-	if(sti(GameInterface.qty_edit.str) == 0)
+	GameInterface.qty_edit.str = int(GameInterface.qty_edit.str);
+	if(int(GameInterface.qty_edit.str) == 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 	    SetFormatedText("QTY_Result", "");
@@ -1815,17 +1815,17 @@ void ChangeQTY_EDIT()
 	}
 	else
 	{
-		if (sti(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
+		if (int(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
 		{
 			if (BuyOrSell != -1)
 			{
-		    	GameInterface.qty_edit.str = -sti(GameInterface.qty_edit.str);
+		    	GameInterface.qty_edit.str = -int(GameInterface.qty_edit.str);
 		    }
 			
 		    BuyOrSell = -1;
 			
 		    // проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iCharQty)
+		    if (int(GameInterface.qty_edit.str) > iCharQty)
 		    {
 		        GameInterface.qty_edit.str = iCharQty;
 		    }
@@ -1834,7 +1834,7 @@ void ChangeQTY_EDIT()
 		    {
 				fRefCharWeight = GetItemsWeightEx(refToChar);
 				fRefCharMaxWeight = GetMaxItemsWeightWithOverload(refToChar);
-				iWeight = (fWeight * sti(GameInterface.qty_edit.str));
+				iWeight = (fWeight * int(GameInterface.qty_edit.str));
 				if((fRefCharWeight + iWeight) > fRefCharMaxWeight)
 				{
 					iWeight = fRefCharMaxWeight - fRefCharWeight - 0.01; // чуть меньше
@@ -1844,9 +1844,9 @@ void ChangeQTY_EDIT()
 					}
 					else
 					{
-						GameInterface.qty_edit.str = makeint(iWeight / fWeight );
-						iWeight = fWeight * sti(GameInterface.qty_edit.str);
-						GameInterface.qty_edit.str = makeint(iWeight / fWeight ); // округление
+						GameInterface.qty_edit.str = int(iWeight / fWeight );
+						iWeight = fWeight * int(GameInterface.qty_edit.str);
+						GameInterface.qty_edit.str = int(iWeight / fWeight ); // округление
 					}		
 				}
 		    }
@@ -1864,20 +1864,20 @@ void ChangeQTY_EDIT()
 			BuyOrSell = 1;
 			
 	        // проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iStoreQty)
+		    if (int(GameInterface.qty_edit.str) > iStoreQty)
 		    {
 		        GameInterface.qty_edit.str = iStoreQty;
 		    }
-		    iWeight = (fWeight * sti(GameInterface.qty_edit.str));
+		    iWeight = (fWeight * int(GameInterface.qty_edit.str));
 		    if((fCharWeight + iWeight) > iCharCapacity)
 		    {
 		        iWeight = iCharCapacity - fCharWeight - 0.01; // чуть меньше
 				
 				if(iWeight < 0) iWeight = 0;
 				
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight );
-		        iWeight = fWeight * sti(GameInterface.qty_edit.str);
-		        GameInterface.qty_edit.str = makeint(iWeight / fWeight ); // округдение
+		        GameInterface.qty_edit.str = int(iWeight / fWeight );
+		        iWeight = fWeight * int(GameInterface.qty_edit.str);
+		        GameInterface.qty_edit.str = int(iWeight / fWeight ); // округдение
 		    }
 		    // проверка на колво доступное <--
 			
@@ -1885,13 +1885,13 @@ void ChangeQTY_EDIT()
 		}
 	}
 	// если получили ноль
-	if (sti(GameInterface.qty_edit.str) == 0)
+	if (int(GameInterface.qty_edit.str) == 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 	    BuyOrSell = 0;
 	}
-    SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty - BuyOrSell*sti(GameInterface.qty_edit.str)));
-    SetFormatedText("QTY_INFO_SHIP_QTY", its(iCharQty + BuyOrSell*sti(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty - BuyOrSell*int(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_SHIP_QTY", string(iCharQty + BuyOrSell*int(GameInterface.qty_edit.str)));
     SetCharWeight();
     fCharWeight  = fCharWeight  + BuyOrSell * iWeight;
 	fStoreWeight = fStoreWeight - BuyOrSell * iWeight;
@@ -1936,11 +1936,11 @@ void REMOVE_BUTTON()  // продать
 	{
 		if(BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) + 1);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + 1);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - 1);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - 1);
 		}
 		
 		BuyOrSell = 0;
@@ -1961,11 +1961,11 @@ void ADD_BUTTON()  // купить
 	{
 		if(BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + 1);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + 1);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - 1);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - 1);
 		}
 		
 		BuyOrSell = 0;
@@ -1990,14 +1990,14 @@ int GetMaxItemsToTake(bool take, String _item) {
 		maxWeight = GetMaxItemsWeightWithOverload(refToChar);
 	}
 	
-	float itemWeight = stf(Items[GetItemIndex(_item)].weight);
+	float itemWeight = float(Items[GetItemIndex(_item)].weight);
 	
 	// Это золото и прочая байда - лезла ошибка деления на нуль
 	if(itemWeight == 0) {
 		return 1000000000;
 	}
 	
-	maxItems = MakeInt((maxWeight - curWeight) / itemWeight);
+	maxItems = int((maxWeight - curWeight) / itemWeight);
 	if(maxItems < 0) {
 		return 0;
 	}	
@@ -2007,7 +2007,7 @@ int GetMaxItemsToTake(bool take, String _item) {
 
 void OfficerReincarnation(ref rPassanger);
 {
-	ref rOff = GetCharacter(NPC_GenerateCharacter("Clon", "none", rPassanger.sex, rPassanger.model.animation, 1, sti(rPassanger.nation), -1, false, "officer"));
+	ref rOff = GetCharacter(NPC_GenerateCharacter("Clon", "none", rPassanger.sex, rPassanger.model.animation, 1, int(rPassanger.nation), -1, false, "officer"));
 	ChangeAttributesFromCharacter(rOff, rPassanger, true);
 	rOff.id = rPassanger.id;
 	LAi_SetCurHPMax(rOff);
@@ -2030,12 +2030,12 @@ void OfficerReincarnation(ref rPassanger);
 bool CheckLastItemOnDead()
 {
 	if(CheckAttribute(&GameInterface, "TABLE_LIST2.tr1.index"))
-		iCurGoodsIdx = sti(GameInterface.TABLE_LIST2.tr1.index);
+		iCurGoodsIdx = int(GameInterface.TABLE_LIST2.tr1.index);
     if(iCurGoodsIdx < 1)
         return false;
 
     string itemID = Items[iCurGoodsIdx].id;
-    if(!CheckAttribute(refToChar, "Items." + itemID) || sti(refToChar.Items.(itemID)) < 1)
+    if(!CheckAttribute(refToChar, "Items." + itemID) || int(refToChar.Items.(itemID)) < 1)
         return false;
 
     return true;

@@ -4,7 +4,7 @@
 
 
 //Инициализация
-void LAi_type_horse_Init(aref chr)
+void LAi_type_horse_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -42,7 +42,7 @@ void LAi_type_horse_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_horse_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_horse_CharacterUpdate(ref chr, float dltTime)
 {	
 	if(chr.chr_ai.tmpl != LAI_TMPL_DIALOG)
 	{
@@ -54,30 +54,30 @@ void LAi_type_horse_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_horse_CharacterLogin(aref chr)
+bool LAi_type_horse_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_horse_CharacterLogoff(aref chr)
+bool LAi_type_horse_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_horse_TemplateComplite(aref chr, string tmpl)
+void LAi_type_horse_TemplateComplite(ref chr, string tmpl)
 {
 
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_horse_NeedDialog(aref chr, aref by)
+void LAi_type_horse_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_horse_CanDialog(aref chr, aref by)
+bool LAi_type_horse_CanDialog(ref chr, ref by)
 {
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return false;
@@ -87,7 +87,7 @@ bool LAi_type_horse_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_horse_StartDialog(aref chr, aref by)
+void LAi_type_horse_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -96,7 +96,7 @@ void LAi_type_horse_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_horse_EndDialog(aref chr, aref by)
+void LAi_type_horse_EndDialog(ref chr, ref by)
 {
 	LAi_CharacterRestoreAy(chr);
 	LAi_tmpl_stay_InitTemplate(chr);
@@ -110,7 +110,7 @@ void LAi_type_horse_Fire(aref attack, aref enemy, float kDist, bool isFindedEnem
 }
 
 //Персонаж атакован
-void LAi_type_horse_Attacked(aref chr, aref by)
+void LAi_type_horse_Attacked(ref chr, ref by)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
@@ -119,7 +119,7 @@ void LAi_type_horse_Attacked(aref chr, aref by)
 	}
 }
 
-int LAi_type_horse_FindNearEnemy(aref chr)
+int LAi_type_horse_FindNearEnemy(ref chr)
 {
 	if(LAi_grp_alarmactive == true)
 	{
@@ -132,7 +132,7 @@ int LAi_type_horse_FindNearEnemy(aref chr)
 		int cnt = 0;
 		for(int i = 0; i < num; i++)
 		{
-			int idx = sti(chrFindNearCharacters[i].index);
+			int idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
@@ -151,7 +151,7 @@ void LAi_SetHorseStayAnimation(ref chr)
 	for(i = 6; i < 11; i++)
 	{
 		Attr = "i"+i;
-		chr.actions.idle.(Attr) = "Horse_Stay_idle_"+sti(i-5);
+		chr.actions.idle.(Attr) = "Horse_Stay_idle_"+int(i-5);
 	}
 	chr.actions.idle.i11 = "Horse_Stay_idle_1";
 	EndChangeCharacterActions(chr);
@@ -169,12 +169,12 @@ void LAi_SetHorseSitAnimation(ref chr)
 	for(i = 5; i < 9; i++)
 	{
 		Attr = "i"+i;
-		chr.actions.idle.(Attr) = "Horse_Sit_idle_"+sti(i-4);
+		chr.actions.idle.(Attr) = "Horse_Sit_idle_"+int(i-4);
 	}
 	for(i = 9; i < 12; i++)
 	{
 		Attr = "i"+i;
-		chr.actions.idle.(Attr) = "Horse_Sit_idle_"+sti(i-8);
+		chr.actions.idle.(Attr) = "Horse_Sit_idle_"+int(i-8);
 	}
 	EndChangeCharacterActions(chr);
 }

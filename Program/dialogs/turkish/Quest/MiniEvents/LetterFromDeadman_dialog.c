@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		
 		case "Sailor_5":
 			dialog.text = "Bu mektup Porto Bello'dan Marisa Caldera adında birine gönderilmiş. Balmumu ile mühürlenmiş... İçimde bir his var – bu sıradan bir mesele değil. Belki bir kaptandan, belki bir tüccardan... ama kesinlikle benim gibi sıradan bir denizciden değil! Yalnız, alıcıyı bulacak vaktim yok – bizim kaptan şaka kaldırmaz.   Bunu benden almak istemez misin? Bin peso'ya bırakırım. Sen kaptansın, bu señorita'yı bulmak senin için zor olmaz. Kim bilir, belki seni altınla ya da başka bir şeyle ödüllendirir... ne demek istediğimi anladın mı?";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Pekala, belki Marisa'nı ben bulurum.  Her halükarda, kaybedecek bir şeyim yok. Bin peso dışında. Mektubu ver.";
 				link.l1.go = "Sailor_6";

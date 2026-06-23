@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "Więc, kapitanie, czy przyniosłeś wino?";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "Tak, mam.";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "Święty Arnulfie módl się za nami! Toż to mnóstwo wina! Doskonale! Niestety, jak już mówiłem, możemy sobie pozwolić tylko na sześćdziesiąt butelek, niestety nie mamy wystarczająco pieniędzy, by kupić więcej. Weź swoje pesos, a ja dobrze się zatroszczę o te sześćdziesiąt butelek. Proszę, zatrzymaj resztę.";
 				link.l1 = "Dziękuję. Upewnij się, że ty i twoi żołnierze wzniesiecie toast za moje zdrowie!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Witaj z powrotem. Zobaczmy... Przyniosłeś "+sti(pchar.questTemp.Wine.Qty)+" butelek. Ładnie! Wezmę je. Zapłata wynosi "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "Witaj z powrotem. Zobaczmy... Przyniosłeś "+int(pchar.questTemp.Wine.Qty)+" butelek. Ładnie! Wezmę je. Zapłata wynosi "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "Dziękuję. Upewnij się, że ty i twoi żołnierze wzniesiecie toast za moje zdrowie!";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "Z pewnością tak, "+GetAddress_Form(NPChar)+" ! Bęben wzywa do zbiórki, muszę teraz iść. Żegnaj!";
 			link.l1 = "Pomyslnych wiatrów i spokojnych mórz, kamracie!";
 			link.l1.go = "Wine_take_2";

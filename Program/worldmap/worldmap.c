@@ -82,8 +82,8 @@
 void wdmCreateMap(float x, float z, float ay)
 {
 	//Координаты острова с которого уплыли
-	float zeroX = MakeFloat(worldMap.zeroX);
-	float zeroZ = MakeFloat(worldMap.zeroZ);
+	float zeroX = float(worldMap.zeroX);
+	float zeroZ = float(worldMap.zeroZ);
 	float ShipX, ShipZ;
 	//Находим новыве координаты на карте
 	int scale = WDM_MAP_TO_SEA_SCALE;
@@ -117,56 +117,56 @@ float GetWorldMapDistanceBonus(ref chr)
     if (sSpyGlass == "") return 1.0;
 
     ref rItm = ItemsFromID(sSpyGlass);
-    return 1.0 + stf(rItm.worldMapBonus) * 0.01;
+    return 1.0 + float(rItm.worldMapBonus) * 0.01;
 }
 
 void wdmSetInterfaceParams()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	int	fOffX = makeint(50.0 * fHtRatio);
-	int	fOffY = makeint(50.0 * fHtRatio);
-	int cx = sti(showWindow.right) - makeint(64.0 * fHtRatio) - fOffX;
-	int cy = sti(showWindow.top) + makeint(64.0 * fHtRatio) + fOffY;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	int	fOffX = int(50.0 * fHtRatio);
+	int	fOffY = int(50.0 * fHtRatio);
+	int cx = int(showWindow.right) - int(64.0 * fHtRatio) - fOffX;
+	int cy = int(showWindow.top) + int(64.0 * fHtRatio) + fOffY;
 	float fRes = 1.0; // для ресайза
 	
 	fRes = 1.4;
 	worldMap.sky.texture     = "interfaces\le\battle_interface\worldmap\sky.tga.tx";
 	worldMap.sky.maskTexture = "interfaces\le\battle_interface\worldmap\sky_mask.tga.tx";
-	worldMap.sky.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.sky.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.sky.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.sky.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.sky.leftPos = cx - int(64.0 * fRes * fHtRatio);
+	worldMap.sky.topPos = cy - int(64.0 * fRes * fHtRatio);
+	worldMap.sky.width = int(128.0 * fRes * fHtRatio);
+	worldMap.sky.height = int(128.0 * fRes * fHtRatio);
 	worldMap.sky.color = argb(128,255,255,255);
 
 	fRes = 1.54;
 	worldMap.windPointer.texture = "interfaces\le\battle_interface\worldmap\wind_pointer.tga.tx";
-	worldMap.windPointer.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windPointer.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windPointer.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windPointer.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windPointer.leftPos = cx - int(64.0 * fRes * fHtRatio);
+	worldMap.windPointer.topPos = cy - int(64.0 * fRes * fHtRatio);
+	worldMap.windPointer.width = int(128.0 * fRes * fHtRatio);
+	worldMap.windPointer.height = int(128.0 * fRes * fHtRatio);
 	worldMap.windPointer.color = argb(255,255,255,255);
 
 	fRes = 1.21;
 	worldMap.windBar.texture     = "interfaces\le\battle_interface\worldmap\bar.tga.tx";
 	worldMap.windBar.maskTexture = "interfaces\le\battle_interface\worldmap\bar_mask.tga.tx";
-	worldMap.windBar.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.windBar.topPos = cy + makeint(5.0 * fRes * fHtRatio) ;
-	worldMap.windBar.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.windBar.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.windBar.leftPos = cx - int(64.0 * fRes * fHtRatio);
+	worldMap.windBar.topPos = cy + int(5.0 * fRes * fHtRatio) ;
+	worldMap.windBar.width = int(128.0 * fRes * fHtRatio);
+	worldMap.windBar.height = int(128.0 * fRes * fHtRatio);
 	worldMap.windBar.color = argb(255,255,255,255);
 
 	fRes = 1.6;
 	worldMap.frame.texture = "interfaces\le\battle_interface\worldmap\back.tga.tx";
-	worldMap.frame.leftPos = cx - makeint(64.0 * fRes * fHtRatio);
-	worldMap.frame.topPos = cy - makeint(64.0 * fRes * fHtRatio);
-	worldMap.frame.width = makeint(128.0 * fRes * fHtRatio);
-	worldMap.frame.height = makeint(128.0 * fRes * fHtRatio);
+	worldMap.frame.leftPos = cx - int(64.0 * fRes * fHtRatio);
+	worldMap.frame.topPos = cy - int(64.0 * fRes * fHtRatio);
+	worldMap.frame.width = int(128.0 * fRes * fHtRatio);
+	worldMap.frame.height = int(128.0 * fRes * fHtRatio);
 	worldMap.frame.color = argb(255,255,255,255);
 	
 	worldMap.seasons_ring.texture = "interfaces\le\battle_interface\worldmap\seasons_ring.tga.tx";
 	worldMap.seasons_ring.centerX = cx;
 	worldMap.seasons_ring.centerY = cy;
-	worldMap.seasons_ring.radius = makeint(74.0 * fRes * fHtRatio);
+	worldMap.seasons_ring.radius = int(74.0 * fRes * fHtRatio);
 	worldMap.seasons_ring.sector = Degree2Radian(100.0);
 	worldMap.seasons_ring.color = argb(255, 255, 255, 255);
 
@@ -174,7 +174,7 @@ void wdmSetInterfaceParams()
 	worldMap.windText.scale = 1.2 * fHtRatio;
 	worldMap.windText.color = argb(255,255,255,255);
 	worldMap.windText.pos.x = cx;
-	worldMap.windText.pos.y = cy + makeint(73.0 * fHtRatio);
+	worldMap.windText.pos.y = cy + int(73.0 * fHtRatio);
 	
 	worldMap.resizeRatio = fHtRatio;
 }
@@ -192,14 +192,14 @@ void wdmCreateWorldMap()
 		if(IsEquipCharacterByItem(pchar, "bussol")) fSpeedBonus += 0.02;
 		if(IsCharacterEquippedArtefact(pchar, "piratesJournal_1"))
 		{
-			if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_AMSTERDAM) fSpeedBonus += 0.06;
+			if (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_AMSTERDAM) fSpeedBonus += 0.06;
 			else fSpeedBonus += 0.03;
 		}
 		if(IsCharacterEquippedArtefact(pchar, "clock2")) fSpeedBonus += 0.03;
 	}
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FRIGATE_L) fSpeedBonus += 0.10;
+	if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_FRIGATE_L) fSpeedBonus += 0.10;
 	if(CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p3.Completed")) fSpeedBonus += 0.05;
-	if(CheckAttribute(&RealShips[sti(pchar.ship.type)], "Tuning.All")) fSpeedBonus += 0.05;
+	if(CheckAttribute(&RealShips[int(pchar.ship.type)], "Tuning.All")) fSpeedBonus += 0.05;
 	if(HasShipTrait(pchar, "trait01")) fSpeedBonus += 0.05;
 	if (HasAllMaps("common")) fSpeedBonus += PERK_VALUE3_WIND_CATCHER;
 	if (IsEquipCharacterByItem(pchar, "hat8"))
@@ -330,10 +330,10 @@ void wdmSetNationFlag()
 void wdmMarkDeleteEncounters()
 {
 	//Получаем дату
-	int year = sti(worldMap.date.year);
-	int month = sti(worldMap.date.month);
-	int day = sti(worldMap.date.day);
-	int hour = sti(worldMap.date.hour);
+	int year = int(worldMap.date.year);
+	int month = int(worldMap.date.month);
+	int day = int(worldMap.date.day);
+	int hour = int(worldMap.date.hour);
 	float days = wdmGetDays(year, month, day, hour);
 	int encYear, encMonth, encDay, encHour;
 	//Перебираем все энкаунтеры, помечая на удаление
@@ -350,25 +350,25 @@ void wdmMarkDeleteEncounters()
 		bool deleteMe = false;
 		if(CheckAttribute(enc, "year") != 0)
 		{
-			encYear = sti(enc.year);
+			encYear = int(enc.year);
 		}else{
 			deleteMe = true;
 		}
 		if(CheckAttribute(enc, "month") != 0)
 		{
-			encMonth = sti(enc.month);
+			encMonth = int(enc.month);
 		}else{
 			deleteMe = true;
 		}
 		if(CheckAttribute(enc, "day") != 0)
 		{
-			encDay = sti(enc.day);
+			encDay = int(enc.day);
 		}else{
 			deleteMe = true;
 		}
 		if(CheckAttribute(enc, "hour") != 0)
 		{
-			encHour = sti(enc.hour);
+			encHour = int(enc.hour);
 		}else{
 			deleteMe = true;
 		}
@@ -438,11 +438,11 @@ void wdmEncSpeedUpdate(string qName)
             DeleteAttribute(aEnc, encID);
             continue;
         }
-        aCurEnc.dLeft = sti(aCurEnc.dLeft) - 1;
-        curSpeed = stf(GetAttributeValue(aCurEnc)) * (0.7 + 0.1 * (3.0 - stf(aCurEnc.dLeft)));
+        aCurEnc.dLeft = int(aCurEnc.dLeft) - 1;
+        curSpeed = float(GetAttributeValue(aCurEnc)) * (0.7 + 0.1 * (3.0 - float(aCurEnc.dLeft)));
         if (bWdmActive) SendMessage(&worldMap, "lsf", MSG_WORLDMAP_SET_SPEED, encID, curSpeed);
         worldMap.encounters.(encID).kMaxSpeed = curSpeed;
-        if (sti(aCurEnc.dLeft) == 0) DeleteAttribute(aEnc, encID);
+        if (int(aCurEnc.dLeft) == 0) DeleteAttribute(aEnc, encID);
     }
 
     SetFunctionTimerCondition("wdmEncSpeedUpdate", 0, 0, 1, true);
@@ -487,7 +487,7 @@ void LogEncWeight()
     Log_Info("Пираты: " + EncWeightCur[ENCOUNTER_TYPE_PIRATE]);
     Log_Info("");
     string sEnc;
-    switch (sti(TEV.LastEnc))
+    switch (int(TEV.LastEnc))
     {
         case ENCOUNTER_TYPE_MERCHANT_SMALL: sEnc = "Торговцы малые"; break;
         case ENCOUNTER_TYPE_MERCHANT_MEDIUM: sEnc = "Торговцы средние"; break;
@@ -505,7 +505,7 @@ void LogEncWeight()
         case -2: sEnc = "Сражение"; break;
     }
     Log_Info(sEnc + " " + __DebugEncCnt + " раз подряд");
-	int numShips = wdmGetNumberShipEncounters() - sti(pchar.worldmap.shipcounter);
+	int numShips = wdmGetNumberShipEncounters() - int(pchar.worldmap.shipcounter);
     Log_Info("Кол-во: " + numShips + " / 8");
     Log_Info("Таймер (Сражения): " + wdmTimeOfLastWarring + " / 1000");
     Log_Info("Таймер (Одиночки): " + wdmTimeOfLastRandom  + " / 1000");

@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "おお、若いの、あんたかい？何かいい知らせはないのかい？ またキリスト教徒がこの哀れな年寄りユダヤ人を質問攻めにしに来たのか？\n";
 					if (CheckCharacterItem(pchar, "SkullAztec"))

@@ -56,7 +56,7 @@ void InitInterface(string iniName)
 
 	//DSENC_TIMEOUT = GetFPS() * DSENC_SECONDS_TIMEOUT;
 	DSENC_TIMEOUT = 60 * DSENC_SECONDS_TIMEOUT;
-	DSENC_TIMEOUT2 = makeint(DSENC_TIMEOUT / 4);
+	DSENC_TIMEOUT2 = int(DSENC_TIMEOUT / 4);
 	grpTNnum = 0;
 }
 
@@ -171,15 +171,15 @@ void assignByID(string eID)
 
     if(CheckAttribute(encDataForSlot, "NumMerchantShips"))
     {
-        iNumMerchantShips = sti(encDataForSlot.NumMerchantShips);
+        iNumMerchantShips = int(encDataForSlot.NumMerchantShips);
     }
     if(CheckAttribute(encDataForSlot, "NumWarShips"))
     {
-        iNumWarShips = sti(encDataForSlot.NumWarShips);
+        iNumWarShips = int(encDataForSlot.NumWarShips);
     }
-    x 	= stf(rRawGroup.x) * dstScale;
-    z 	= stf(rRawGroup.z) * dstScale;
-    ay 	= stf(rRawGroup.ay);
+    x 	= float(rRawGroup.x) * dstScale;
+    z 	= float(rRawGroup.z) * dstScale;
+    ay 	= float(rRawGroup.ay);
 }
 
 int doDescribe(int gNum)
@@ -199,7 +199,7 @@ int doDescribe(int gNum)
     }
     grpTrans[gNum].grpID = rEncounter.GroupName;
     grpTrans[gNum].grpIDTrn = rEncounter.GroupName;
-    iEncounterType = sti(rEncounter.RealEncounterType);
+    iEncounterType = int(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
 	bool bPowerCompare = true;
 	SetNodeUsing("POWER_LINES",false);
@@ -223,7 +223,7 @@ int doDescribe(int gNum)
             }
             else
             {
-                totalInfo = totalInfo + "'" + rChar.ship.name + "'."
+                totalInfo = totalInfo + "'" + rChar.ship.name + "'.";
             }
         }
     }
@@ -294,14 +294,14 @@ int doDescribe(int gNum)
             totalInfo = totalInfo + XI_ConvertString("ShipWreck");
         }
     }
-    if(sti(rEncounter.Nation) < 0)
+    if(int(rEncounter.Nation) < 0)
     {
         totalInfo = totalInfo + "Error: rEncounter.Nation < 0.";
     }
 	
 	if(iRealEncounterType != ENCOUNTER_TYPE_BARREL && iRealEncounterType != ENCOUNTER_TYPE_BOAT)
 	{
-		switch(sti(rEncounter.Nation))
+		switch(int(rEncounter.Nation))
 		{		        
 			case ENGLAND:		
 				totalInfo = totalInfo + XI_ConvertString("under english flag");
@@ -321,7 +321,7 @@ int doDescribe(int gNum)
 		}
 	}	
 
-    if(GetNationRelation2MainCharacter(sti(rEncounter.Nation)) != RELATION_ENEMY)
+    if(GetNationRelation2MainCharacter(int(rEncounter.Nation)) != RELATION_ENEMY)
     {
         isSkipable = true;
     }
@@ -400,7 +400,7 @@ int doDescribe(int gNum)
                         totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     break;
 
-                    //default:
+                    default:
                         SetNewPicture("INFO_PICTURE", loadScr); 
                         if(CheckAttribute(rChar, "Brigadier")) // TO_DO: Тут всё устарело, переделать по образцу map.c
                         {
@@ -410,7 +410,7 @@ int doDescribe(int gNum)
                         }
                         else
                             totalInfo = XI_ConvertString("someone sails") + totalInfo;
-                    //break;
+                    break;
 				}
 			}
 			else
@@ -456,7 +456,7 @@ int doDescribe(int gNum)
 void GetBearing()
 {
     encounterbearing = GetAngleY(x - RTplayerShipX, z - RTplayerShipZ);
-	float offShip = encounterbearing - stf(pchar.Ship.Ang.y);
+	float offShip = encounterbearing - float(pchar.Ship.Ang.y);
 
 	int nBear = ClosestDirE(offShip);
 	switch(nBear)
@@ -524,14 +524,14 @@ void locDirSail(int evtID)
     {
         return;
     }
-    iEncounterType = sti(rEncounter.RealEncounterType);
+    iEncounterType = int(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
 
 	int iFantomIndex;
     int iAloneCharIndex = -1;
 
-    x = stf(pchar.Ship.Pos.x) + 2500 * sin(encounterbearing);
-    z = stf(pchar.Ship.Pos.z) + 2500 * cos(encounterbearing);
+    x = float(pchar.Ship.Pos.x) + 2500 * sin(encounterbearing);
+    z = float(pchar.Ship.Pos.z) + 2500 * cos(encounterbearing);
 
     encStringID = "encounters." + encID;
     if(!CheckAttribute(&worldMap, encStringID + ".quest"))
@@ -578,7 +578,7 @@ void locDirSail(int evtID)
             }
         }
         Group_SetGroupCommander(sGName, characters[iAloneCharIndex].id);
-        if(GetNationRelation2MainCharacter(sti(characters[iAloneCharIndex].nation)) == RELATION_ENEMY)
+        if(GetNationRelation2MainCharacter(int(characters[iAloneCharIndex].nation)) == RELATION_ENEMY)
         {
             Group_SetTaskAttack(sGName, PLAYER_GROUP);
             Group_LockTask(sGName);
@@ -639,9 +639,9 @@ void locDirSail(int evtID)
         rGroup.Task.Target.Pos.x = rEncounter.Task.Pos.x;
         rGroup.Task.Target.Pos.z = rEncounter.Task.Pos.z;
     }
-    if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) Group_LockTask(sGName);
+    if (CheckAttribute(rEncounter, "Lock") && int(rEncounter.Lock)) Group_LockTask(sGName);
 
-    int iNation = sti(rEncounter.Nation);
+    int iNation = int(rEncounter.Nation);
     int iNumFantomShips = Fantom_SetEncounterShips(rEncounter, sGName);
 
     if (iNumFantomShips)
@@ -703,11 +703,11 @@ void locDirSail(int evtID)
             DeleteAttribute(rFantom, "ShipSails.gerald_name");
             if (j == 0 || GetCharacterShipClass(rFantom) == 1)
             {
-                SetRandGeraldSail(rFantom, sti(rFantom.Nation));
+                SetRandGeraldSail(rFantom, int(rFantom.Nation));
             }
             // add fantom
             Group_AddCharacter(sGName, rFantom.id);
-			Ship_Add2Sea(iFantomIndex, 0, rEncounter.Type, false);
+			Ship_Add2Sea(iFantomIndex, false, rEncounter.Type, false);
 /*
             if(!Ship_Add2Sea(iFantomIndex, 0, rEncounter.Type, false)) 
 			{
@@ -739,7 +739,7 @@ void locDirSail(int evtID)
             }
 		}
 		// set task
-		switch (sti(rGroup.Task))
+		switch (int(rGroup.Task))
 		{
 			case AITASK_RUNAWAY:
 				Group_SetTaskRunAway(sGroupID, sTranTrg); 
@@ -750,18 +750,18 @@ void locDirSail(int evtID)
 			case AITASK_MOVE:
 				if (CheckAttribute(rGroup, "Task.Target.Pos"))
 				{
-				    Group_SetTaskMove(sGroupID, stf(rGroup.Task.Target.Pos.x), stf(rGroup.Task.Target.Pos.z));
+				    Group_SetTaskMove(sGroupID, float(rGroup.Task.Target.Pos.x), float(rGroup.Task.Target.Pos.z));
 				}
 				else
 				{
-					x = 10000.0 * sin(stf(rGroup.Pos.ay));
-					z = 10000.0 * cos(stf(rGroup.Pos.ay));
+					x = 10000.0 * sin(float(rGroup.Pos.ay));
+					z = 10000.0 * cos(float(rGroup.Pos.ay));
 					Group_SetTaskMove(sGName, x, z);
 				}
 			break;
 		}
 		rCharacter = Group_GetGroupCommanderR(rGroup);
-		int iRelation = GetRelation(nMainCharacterIndex, sti(rCharacter.index));
+		int iRelation = GetRelation(nMainCharacterIndex, int(rCharacter.index));
 
 		// set relations to all characters in this group
 		int qq = 0;
@@ -860,18 +860,18 @@ void findWarring(string fType)
 
         if(CheckAttribute(encDataForSlot, "NumMerchantShips"))
         {
-            iNumMerchantShips = sti(encDataForSlot.NumMerchantShips);
+            iNumMerchantShips = int(encDataForSlot.NumMerchantShips);
             tShips += iNumMerchantShips;
         }
         if(CheckAttribute(encDataForSlot, "NumWarShips"))
         {
-            iNumWarShips = sti(encDataForSlot.NumWarShips);
+            iNumWarShips = int(encDataForSlot.NumWarShips);
             tShips += iNumWarShips;
         }
         if(tShips > MAX_SHIPS_IN_LOCATION) continue;
-        x = stf(rRawGroup.x) * dstScale;
-		z = stf(rRawGroup.z)* dstScale;
-		ay = stf(rRawGroup.ay);
+        x = float(rRawGroup.x) * dstScale;
+		z = float(rRawGroup.z)* dstScale;
+		ay = float(rRawGroup.ay);
         dist = GetDistance2DRel(origX, origZ, x, z);
 
         if(dist > DIR_SAIL_WAR_DIST)

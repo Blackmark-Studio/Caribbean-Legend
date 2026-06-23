@@ -36,7 +36,7 @@ void ProcessDialogEvent()
     if (CheckNPCQuestDate(npchar, "Card_date"))
 	{
 		SetNPCQuestDate(npchar, "Card_date");
-		npchar.money = 5000 + (rand(10)+1) * makeint(100 * sti(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
+		npchar.money = 5000 + (rand(10)+1) * int(100 * int(PChar.rank) * (10.0 / MOD_SKILL_ENEMY_RATE));
 	}
 	// генератор ИДХ по кейсу -->
 	attrLoc   = Dialog.CurrentNode;
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			} 
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
             {
 				if (CheckAttribute(pchar, "GenQuest.CaptainComission") && CheckAttribute(pchar, "GenQuest.CaptainComission.PiratesCity") && NPChar.city == pchar.GenQuest.CaptainComission.PiratesCity)
 				{
@@ -107,11 +107,11 @@ void ProcessDialogEvent()
 					link.l1 = "Ну и ладно.";
 					link.l1.go = "Exit";
             }
-			if (sti(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(sti(NPChar.nation)) + "hunter", 0) > 10)
+			if (int(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0) > 10)
             {
-				iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(sti(NPChar.nation)) + "hunter", 0);
+				iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0);
                 dialog.text = "О! Кто пришёл! Это же сам"+ GetSexPhrase("","а") +" " + GetFullName(pchar) + ". Мы как раз недавно высылали охотников за головами, чтобы они привели вас сюда. И знаете, это уже встало нам в кругленькую сумму.";
-                if (sti(pchar.Money) >= iTotalTemp*6000)
+                if (int(pchar.Money) >= iTotalTemp*6000)
                 {
                     link.l1 = "Я как раз хочу уладить наши разногласия.";
 				    link.l1.go = "arestFree_1";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 
                     makearef(aData, NullCharacter.Siege);
                     
-                    if (CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                    if (CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                     {
                         dialog.text = "Мы вроде всё уже обсудили, не так ли?";
                         link.l1 = "Всё верно - не стану вас более задерживать.";
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
                     }
                     else
                     {
-                        dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(sti(aData.nation))+". И мне необходимо организовать оборону города.";
+                        dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(int(aData.nation))+". И мне необходимо организовать оборону города.";
                         link.l1 = "Так я как раз хотел"+ GetSexPhrase("","а") +" предложить свою помощь в обороне форта.";
                         link.l1.go = "siege_task";
                         link.l2 = "Тогда не стану вас более задерживать.";
@@ -262,29 +262,29 @@ void ProcessDialogEvent()
                 else
                 {//->
                     makearef(aData, NullCharacter.Siege);
-                    if (CheckAttribute(aData, "PlayerHelpMayor") && sti(aData.PlayerHelpMayor) == true
-                    && CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                    if (CheckAttribute(aData, "PlayerHelpMayor") && int(aData.PlayerHelpMayor) == true
+                    && CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                     {
-                        AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*1500));
-                        ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
+                        AddMoneyToCharacter(Pchar,(int(aData.iSquadronPower)*1500));
+                        ChangeCharacterNationReputation(pchar, int(NPChar.nation), 20);
                         ChangeCharacterComplexReputation(pchar,"nobility", 10);
                         AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 180);
                         AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 200);
                         AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 200);
                         AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                         //--> слухи
-                        SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(sti(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
+                        SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(int(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, int(aData.conation), -1, 15, 3);
 			            //<-- слухи
                         DeleteAttribute(aData, "PlayerHelpMayor");
                         DeleteAttribute(aData, "HelpColony");
-                        dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(sti(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(sti(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
+                        dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(int(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(int(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
                         link.l1 = "Спасибо, " + GetAddress_FormToNPC(NPChar) + ", приятно иметь с вами дело!";
                         link.l1.go = "exit";
                     }
                     else
                     {
    						//--> дача квеста найти кольцо в борделе
-						if (rand(4) == 4 && pchar.questTemp.different == "free" && GetNpcQuestPastDayWOInit(npchar, "questTakeRing") > 365 && sti(pchar.questTemp.HorseQty) > 10)
+						if (rand(4) == 4 && pchar.questTemp.different == "free" && GetNpcQuestPastDayWOInit(npchar, "questTakeRing") > 365 && int(pchar.questTemp.HorseQty) > 10)
 						{// Addon-2016 Jason
 							if (npchar.city == "Bridgetown" || npchar.city == "Charles" || npchar.city == "FortFrance" || npchar.city == "Marigo" || npchar.city == "Panama" || npchar.city == "PortRoyal" || npchar.city == "SantoDomingo" || npchar.city == "Tortuga")
 							{
@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 						dialog.text = RandPhraseSimple("А, это опять вы? По какому вопросу на этот раз?","Опять отрываете меня от дел управления городом? Что вам угодно, "+GetAddress_Form(NPChar)+"?");
 						if (npchar.city != "Panama") // Addon-2016 Jason
 						{
-							link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(sti(NPChar.nation))+".";
+							link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(int(NPChar.nation))+".";
 							link.l1.go = "work";
 							
 						}
@@ -323,21 +323,21 @@ void ProcessDialogEvent()
 						{
 							if(pchar.GenQuest.CaptainComission == "Begin_1" && !CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor")) 
 							{
-								link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
+								link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
 								link.l12.go = "CapComission_Mayor1";
 							}	
 							if(CheckAttribute(pchar,"GenQuest.CaptainComission.PrisonFree"))
 							{
-								link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
+								link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
 								link.l12.go = "CapComission_Mayor9";
 							}
 							if(pchar.GenQuest.CaptainComission == "GetGoodsSuccess")
 							{
-								link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
+								link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
 								link.l12.go = "CapComission_Mayor13";
 							}
 						}
-						if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25  && sti(npchar.nation) == sti(pchar.GenQuest.ShipWreck.Nation))
+						if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25  && int(npchar.nation) == int(pchar.GenQuest.ShipWreck.Nation))
 						{
 							if(!CheckAttribute(pchar,"GenQuest.ShipWreck.SpeakMayor"))
 							{
@@ -363,7 +363,7 @@ void ProcessDialogEvent()
         				}
         				if (npchar.Default  == npchar.location) // если не в тюрьме
         				{
-        					if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+        					if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
         					{
         						link.l4 = "Мне нужно прояснить с вами ряд финансовых вопросов.";
         						link.l4.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 		// Warship Генер "Пираты на необитайке"
 		case "PiratesOnUninhabited_1":
 			offref = CharacterFromID("PirateOnUninhabited_0");
-			qty = makeint(sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) * (sti(offref.rank) * (800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L) * 100) + GetCharacterSkillToOld(offref, "Leadership") * 500 + GetCharacterSkillToOld(PChar, "commerce") * 500) / 20);
+			qty = int(int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) * (int(offref.rank) * (800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L) * 100) + GetCharacterSkillToOld(offref, "Leadership") * 500 + GetCharacterSkillToOld(PChar, "commerce") * 500) / 20);
 			
 			PChar.GenQuest.PiratesOnUninhabited.MoneyForPirates = qty;
 			
@@ -441,10 +441,10 @@ void ProcessDialogEvent()
 		case "PiratesOnUninhabited_2":
 			offref = CharacterFromID("PirateOnUninhabited_0");
 			
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.MoneyForPirates));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.PiratesOnUninhabited.MoneyForPirates));
 			
 			RemovePassenger(PChar, offref);
-			RemoveCharacterCrew(PChar, sti(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
+			RemoveCharacterCrew(PChar, int(PChar.GenQuest.PiratesOnUninhabited.PiratesCount) - 1);
 			
 			sTemp = "PiratesOnUninhabited" + PChar.GenQuest.PiratesOnUninhabited.StartShore;
 			AddQuestRecordEx(sTemp, "PiratesOnUninhabited", "12");
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 		case "ReasonToFast_Mayor1":
 			dialog.text = "Я внимательно слушаю вас, капитан.";
 			link.l1 = "Я хочу доложить о преступном сговоре офицера вашего гарнизона и пиратов... (излагает обстоятельства дела)";
-			if(sti(pchar.reputation.nobility) < 41)
+			if(int(pchar.reputation.nobility) < 41)
 			{
 				link.l1.go = "ReasonToFast_BMayor";			
 			}
@@ -605,7 +605,7 @@ void ProcessDialogEvent()
 		
 		case "CapComission_Mayor3":
 			dialog.text = "Один из пострадавших прислал донесение, в котором подробно изложен инцидент с указанием даты, названия потерпевшего судна и количества конфискованного товара. " +
-				"Поверьте, там фигурируют весьма солидные цифры. В этот день патрульный " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name"))) + " этого капитана действительно нёс дежурство. Капитан в своём рапорте изложил этот инцидент как стычку с пиратским судном, но ни слова не упомянул о грузе.";
+				"Поверьте, там фигурируют весьма солидные цифры. В этот день патрульный " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name"))) + " этого капитана действительно нёс дежурство. Капитан в своём рапорте изложил этот инцидент как стычку с пиратским судном, но ни слова не упомянул о грузе.";
 			link.l1 = "А был ли груз вообще?";
 			link.l1.go = "CapComission_Mayor4";
 			pchar.GenQuest.CaptainComission.SpeakMayor = true;
@@ -622,7 +622,7 @@ void ProcessDialogEvent()
 		
 		case "CapComission_Mayor5":
 			AddQuestRecord("CaptainComission2", "49");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 			ChangeCharacterComplexReputation(pchar,"nobility", -2);
 			pchar.GenQuest.CaptainComission = "MayorTalkBad";
@@ -646,14 +646,14 @@ void ProcessDialogEvent()
 			AddQuestRecord("CaptainComission2", "50");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("ся","ась"));
 			AddQuestUserData("CaptainComission2", "sSex1", GetSexPhrase("","а"));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);			
 			AddQuestUserData("CaptainComission2", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.CaptainComission.City + "Gen"));
 			OfficersReaction("good");
 			pchar.GenQuest.CaptainComission.MayorTalkGood = true;
 			pchar.GenQuest.CaptainComission = "MayorTalkGood";
 			pchar.quest.CaptainComission_TimeIsOver.over = "yes";
-			SetFunctionTimerConditionParam("CaptainComission_GetSecretTimeIsOut", 0, 0, 2, MakeInt(24 - GetHour()), false);
+			SetFunctionTimerConditionParam("CaptainComission_GetSecretTimeIsOut", 0, 0, 2, int(24 - GetHour()), false);
 			CaptainComission_GenerateCaptainInPrison();
 			DialogExit();
 		break;
@@ -720,7 +720,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("CaptainComission2");
 			GiveItem2Character(pchar, pchar.GenQuest.CaptainComission.Prize);
 			ChangeCharacterComplexReputation(pchar,"nobility", 4);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 10);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 10);
 			OfficersReaction("good");
 			DeleteAttribute(pchar,"GenQuest.CaptainComission.MayorTalkGood");
 			DeleteAttribute(pchar, "GenQuest.CaptainComission");
@@ -754,7 +754,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipWreck3":
-			addMoneyToCharacter(pchar, sti(pchar.rank) * 300 + 3000 + rand(3000));
+			addMoneyToCharacter(pchar, int(pchar.rank) * 300 + 3000 + rand(3000));
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
 			AddQuestRecord("ShipWrecked", "14");
 			AddQuestUserData("ShipWrecked", "sSex", GetSexPhrase("","а"));
@@ -811,7 +811,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different.TakeMayorsRing = "toBrothel";
 			pchar.questTemp.different.TakeMayorsRing.Id = GetFullName(npchar);
 			pchar.questTemp.different.TakeMayorsRing.city = npchar.city;	
-			pchar.questTemp.different.TakeMayorsRing.price = sti(pchar.rank)*100+1000;
+			pchar.questTemp.different.TakeMayorsRing.price = int(pchar.rank)*100+1000;
 			sld = ItemsFromID("MayorsRing");
 			sld.CityName = XI_ConvertString("Colony" + npchar.city + "Gen");
 			//ложим кольцо в итем
@@ -853,10 +853,10 @@ void ProcessDialogEvent()
 			link.l1 = "Хм, буду иметь в виду...";
 			link.l1.go = "exit";
 			ChangeCharacterComplexReputation(pchar,"nobility", 5);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 10);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 10);
 			AddCharacterExpToSkill(pchar, "Leadership", 50);
 			AddCharacterExpToSkill(pchar, "Fortune", 50);
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.different.TakeMayorsRing.price));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.different.TakeMayorsRing.price));
 			pchar.questTemp.different = "free";
 			pchar.quest.TakeMayorsRing_null.over = "yes"; //снимаем таймер
 			AddQuestRecord("SeekMayorsRing", "7");
@@ -875,9 +875,9 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			TakeItemFromCharacter(pchar, "MayorsRing");
 			ChangeCharacterComplexReputation(pchar,"nobility", 3);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 3);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 3);
 			AddCharacterExpToSkill(pchar, "Leadership", 50);
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.different.TakeMayorsRing.price));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.different.TakeMayorsRing.price));
 			pchar.questTemp.different = "free";
 			pchar.quest.TakeMayorsRing_null.over = "yes"; //снимаем таймер
 			AddQuestRecord("SeekMayorsRing", "7");
@@ -895,7 +895,7 @@ void ProcessDialogEvent()
                 makearef(aData, NullCharacter.Siege);
                 
 
-                if (CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                if (CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                 {
                     dialog.text = "Мы вроде всё уже обсудили, не так ли?";
                     link.l1 = "Всё верно - не стану вас более задерживать.";
@@ -904,7 +904,7 @@ void ProcessDialogEvent()
                 }
                 else
                 {
-                    dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(sti(aData.nation))+". И мне необходимо организовать оборону города.";
+                    dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(int(aData.nation))+". И мне необходимо организовать оборону города.";
                     link.l1 = "Так я как раз хотел"+ GetSexPhrase("","а") +" предложить свою помощь в обороне форта.";
                     link.l1.go = "siege_task";
                     link.l2 = "Тогда не стану вас более задерживать.";
@@ -914,22 +914,22 @@ void ProcessDialogEvent()
             else
             {//->
                 makearef(aData, NullCharacter.Siege);
-                if (CheckAttribute(aData, "PlayerHelpMayor") && sti(aData.PlayerHelpMayor) == true
-                && CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                if (CheckAttribute(aData, "PlayerHelpMayor") && int(aData.PlayerHelpMayor) == true
+                && CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                 {
-                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*1500));
-                    ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
+                    AddMoneyToCharacter(Pchar,(int(aData.iSquadronPower)*1500));
+                    ChangeCharacterNationReputation(pchar, int(NPChar.nation), 20);
                     ChangeCharacterComplexReputation(pchar,"nobility", 10);
                     AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 180);
                     AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> слухи
-                    SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(sti(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
+                    SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(int(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, int(aData.conation), -1, 15, 3);
 		            //<-- слухи
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
-                    dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(sti(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(sti(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
+                    dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(int(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(int(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
                     link.l1 = "Спасибо, " + GetAddress_FormToNPC(NPChar) + ", приятно иметь с вами дело!";
                     link.l1.go = "exit";
                 }
@@ -939,7 +939,7 @@ void ProcessDialogEvent()
 					dialog.text = "Так какая причина заставила вас прийти сюда и отвлекать меня от важных государственных дел?";
 					if (npchar.city != "Panama") // Addon-2016 Jason
 					{
-						link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(sti(NPChar.nation))+".";
+						link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(int(NPChar.nation))+".";
 						link.l1.go = "work";
 					}
 					// Warship Генер "Пираты на необитайке" - сдаём пиратов властям
@@ -962,21 +962,21 @@ void ProcessDialogEvent()
 					{
 						if(pchar.GenQuest.CaptainComission == "Begin_1" && !CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor")) 
 						{
-							link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
+							link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
 							link.l12.go = "CapComission_Mayor1";
 						}	
 						if(CheckAttribute(pchar,"GenQuest.CaptainComission.PrisonFree"))
 						{
-							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
+							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
 							link.l12.go = "CapComission_Mayor9";
 						}
 						if(pchar.GenQuest.CaptainComission == "GetGoodsSuccess")
 						{
-							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
+							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
 							link.l12.go = "CapComission_Mayor13";
 						}
 					}
-					if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25 && sti(npchar.nation) == sti(pchar.GenQuest.ShipWreck.Nation))
+					if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25 && int(npchar.nation) == int(pchar.GenQuest.ShipWreck.Nation))
 					{
 						if(!CheckAttribute(pchar,"GenQuest.ShipWreck.SpeakMayor"))
 						{
@@ -1041,7 +1041,7 @@ void ProcessDialogEvent()
                 makearef(aData, NullCharacter.Siege);
                 
 
-                if (CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                if (CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                 {
                     dialog.text = "Мы вроде всё уже обсудили, не так ли?";
                     link.l1 = "Всё верно - не стану вас более задерживать.";
@@ -1050,7 +1050,7 @@ void ProcessDialogEvent()
                 }
                 else
                 {
-                    dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(sti(aData.nation))+". И мне необходимо организовать оборону города.";
+                    dialog.text = "Должен вас огорчить, но в данный момент у меня нет времени, чтобы принять вас. Как вы, наверное, уже знаете, на нашу колонию напали "+NationNamePeople(int(aData.nation))+". И мне необходимо организовать оборону города.";
                     link.l1 = "Так я как раз хотел"+ GetSexPhrase("","а") +" предложить свою помощь в обороне форта.";
                     link.l1.go = "siege_task";
                     link.l2 = "Тогда не стану вас более задерживать.";
@@ -1060,22 +1060,22 @@ void ProcessDialogEvent()
             else
             {//->
                 makearef(aData, NullCharacter.Siege);
-                if (CheckAttribute(aData, "PlayerHelpMayor") && sti(aData.PlayerHelpMayor) == true
-                && CheckAttribute(aData, "HelpColony") && sti(aData.HelpColony) == true )
+                if (CheckAttribute(aData, "PlayerHelpMayor") && int(aData.PlayerHelpMayor) == true
+                && CheckAttribute(aData, "HelpColony") && int(aData.HelpColony) == true )
                 {
-                    AddMoneyToCharacter(Pchar,(sti(aData.iSquadronPower)*1500));
-                    ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
+                    AddMoneyToCharacter(Pchar,(int(aData.iSquadronPower)*1500));
+                    ChangeCharacterNationReputation(pchar, int(NPChar.nation), 20);
                     ChangeCharacterComplexReputation(pchar,"nobility", 10);
                     AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 180);
                     AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Accuracy", 200);
                     AddCharacterExpToSkill(GetMainCharacter(), "Cannons", 200);
                     //--> слухи
-                    SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(sti(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, sti(aData.conation), -1, 15, 3);
+                    SiegeRumour("Поговаривают, что вы помогли нам отбиться от "+NationNameSK(int(aData.nation))+"ой эскадры - и отстоять нашу колонию! Мы так благодарны вам, "+ GetAddress_Form(NPChar)+".", aData.Colony, int(aData.conation), -1, 15, 3);
 		            //<-- слухи
                     DeleteAttribute(aData, "PlayerHelpMayor");
                     DeleteAttribute(aData, "HelpColony");
-                    dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(sti(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(sti(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
+                    dialog.text = "Ах, это вы, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+", рад вас видеть. Добрые вести для нашей колонии - мы отбились от "+NationNameSK(int(aData.nation))+"их захватчиков. В этом есть и ваша заслуга, вот ваша награда "+(int(aData.iSquadronPower)*1500)+" песо. Извольте получить.";
                     link.l1 = "Спасибо, " + GetAddress_FormToNPC(NPChar) + ", приятно иметь с вами дело!";
                     link.l1.go = "exit";
                 }
@@ -1085,7 +1085,7 @@ void ProcessDialogEvent()
                     dialog.text = "Что вас ко мне привело? Я думал, вы решаете все свои вопросы с вашим... покровителем. Но говорите - всегда рад.";
 					if (npchar.city != "Panama") // Addon-2016 Jason
 					{
-						link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(sti(NPChar.nation))+".";
+						link.l1 = "Я хочу поговорить о работе на благо короны "+ NationNameGenitive(int(NPChar.nation))+".";
 						link.l1.go = "work";
 					}
 					// Warship Генер "Пираты на необитайке" - сдаём пиратов властям
@@ -1108,21 +1108,21 @@ void ProcessDialogEvent()
 					{
 						if(pchar.GenQuest.CaptainComission == "Begin_1" && !CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor")) 
 						{
-							link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
+							link.l12 = "У вас капитаном патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " служит некий " + pchar.GenQuest.CaptainComission.Name + ", как я могу с ним повидаться?";
 							link.l12.go = "CapComission_Mayor1";
 						}	
 						if(CheckAttribute(pchar,"GenQuest.CaptainComission.PrisonFree"))
 						{
-							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
+							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " согласился открыть свой тайник властям.";
 							link.l12.go = "CapComission_Mayor9";
 						}
 						if(pchar.GenQuest.CaptainComission == "GetGoodsSuccess")
 						{
-							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
+							link.l12 = "Бывший капитан патрульного " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen")) + " " + pchar.GenQuest.CaptainComission.Name + " открыл мне свой тайник.";
 							link.l12.go = "CapComission_Mayor13";
 						}
 					}
-					if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25 && sti(npchar.nation) == sti(pchar.GenQuest.ShipWreck.Nation))
+					if(CheckAttribute(pchar,"GenQuest.ShipWreck") && pchar.GenQuest.ShipWreck == "SailorsOnShore" && GetQuestPastDayParam("GenQuest.ShipWreck") < 25 && int(npchar.nation) == int(pchar.GenQuest.ShipWreck.Nation))
 					{
 						if(!CheckAttribute(pchar,"GenQuest.ShipWreck.SpeakMayor"))
 						{
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 		
 		//  карты -->
         case "Card_Game":
-            if (!CheckNPCQuestDate(npchar, "Card_date_Yet") || sti(PChar.rank) < 4 || isBadReputation(pchar, 50) || GetCharacterSkillToOld(pchar, SKILL_LEADERSHIP) < rand(5))
+            if (!CheckNPCQuestDate(npchar, "Card_date_Yet") || int(PChar.rank) < 4 || isBadReputation(pchar, 50) || GetCharacterSkillToOld(pchar, SKILL_LEADERSHIP) < rand(5))
             {
                 SetNPCQuestDate(npchar, "Card_date_Yet");
 				// belamour legendary edition фикс проверки мундира с мушкетом
@@ -1248,7 +1248,7 @@ void ProcessDialogEvent()
 
 		case "Cards_Node_100":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckCardsGameSmallRate() && !bOk)
@@ -1259,14 +1259,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 3000)
+			if (int(pchar.Money) < 3000)
 		    {
                 dialog.text = "Изволите шутить, " + GetAddress_Form(NPChar) + "? У вас нет денег!";
                 link.l1 = "Бывает.";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 3000)
+		    if (int(npchar.Money) < 3000)
 		    {
                 dialog.text = "Всё! Нужно завязывать с картами, а то запишут в растратчики и сместят с поста...";
                 link.l1 = "Жаль.";
@@ -1283,7 +1283,7 @@ void ProcessDialogEvent()
 
 		case "Cards_Node_500":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckCardsGameSmallRate() && !bOk)
@@ -1303,14 +1303,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 15000)
+			if (int(pchar.Money) < 15000)
 		    {
                 dialog.text = "Изволите шутить, " + GetAddress_Form(npchar) + "? У вас нет 15000 песо!";
                 link.l1 = "Будут!";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 15000)
+		    if (int(npchar.Money) < 15000)
 		    {
                 dialog.text = "Нет, такие ставки не доведут до добра казну города.";
                 link.l1 = "Как угодно.";
@@ -1335,7 +1335,7 @@ void ProcessDialogEvent()
 
 	    //  Dice -->
         case "Dice_Game":
-            if (!CheckNPCQuestDate(npchar, "Dice_date_Yet") || sti(PChar.rank) < 4 || isBadReputation(pchar, 50) || GetCharacterSkillToOld(pchar, SKILL_LEADERSHIP) < rand(5))
+            if (!CheckNPCQuestDate(npchar, "Dice_date_Yet") || int(PChar.rank) < 4 || isBadReputation(pchar, 50) || GetCharacterSkillToOld(pchar, SKILL_LEADERSHIP) < rand(5))
             {
                 SetNPCQuestDate(npchar, "Dice_date_Yet");
 				// belamour legendary edition фикс проверки мундира с мушкетом
@@ -1383,7 +1383,7 @@ void ProcessDialogEvent()
 
 		case "Dice_Node_100":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckDiceGameSmallRate() && !bOk)
@@ -1394,14 +1394,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 3000)
+			if (int(pchar.Money) < 3000)
 		    {
                 dialog.text = "Изволите шутить, " + GetAddress_Form(NPChar) + "? У вас нет денег!";
                 link.l1 = "Бывает.";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 3000)
+		    if (int(npchar.Money) < 3000)
 		    {
                 dialog.text = "Всё! Нужно завязывать с играми, а то запишут в растратчики и сместят с поста...";
                 link.l1 = "Жаль.";
@@ -1418,7 +1418,7 @@ void ProcessDialogEvent()
 
 		case "Dice_Node_500":
 			//belamour legendary edition 
-			bOk1 = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, sti(Items[sti(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
+			bOk1 = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && GetNationRelation(npchar.nation, int(Items[int(pchar.EquipedPatentId)].Nation)) != RELATION_ENEMY;
 			bOk2 = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && GetNationRelation(npchar.nation, FRANCE) != RELATION_ENEMY;
 			bOk = bOk1 || bOk2;
             if (!CheckDiceGameSmallRate() && !bOk)
@@ -1438,14 +1438,14 @@ void ProcessDialogEvent()
 			    break;
 		    }
 
-			if (sti(pchar.Money) < 15000)
+			if (int(pchar.Money) < 15000)
 		    {
                 dialog.text = "Изволите шутить, " + GetAddress_Form(NPChar) + "? У вас нет 15000 песо!";
                 link.l1 = "Будут!";
 			    link.l1.go = "exit";
 			    break;
 		    }
-		    if (sti(npchar.Money) < 15000)
+		    if (int(npchar.Money) < 15000)
 		    {
                 dialog.text = "Нет, такие ставки не доведут до добра казну города.";
                 link.l1 = "Как угодно.";
@@ -1506,9 +1506,9 @@ void ProcessDialogEvent()
 				//-------- взят квест уничтожения банды ---------->>
 				if (QuestName == "DestroyGang")
 				{
+					makearef(arName, pchar.GenQuest.DestroyGang);
 					switch (pchar.GenQuest.DestroyGang)
 					{
-						makearef(arName, pchar.GenQuest.DestroyGang);
 						case "":
 							dialog.text = LinkRandPhrase("Задание на поиск бандита по имени " + GetFullName(arName) + " вами уже получено. Выполняйте!", 
 								"Вы уже имеете задание на поиск бандита по имени " + GetFullName(arName) + ". Я жду результатов!", 
@@ -1533,7 +1533,7 @@ void ProcessDialogEvent()
 							link.l1.go = "All_Execute";		
 							AddCharacterExpToSkill(PChar, "Leadership", 180);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 1);
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 1);
 						break;
 					}
 				}
@@ -1569,7 +1569,7 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Sneak", 150);
 							RemoveItems(pchar, "ContraPostLetters", 1);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 3);
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 3);
 						break;
 					}
 				}
@@ -1604,7 +1604,7 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Fortune", 300);
 							AddCharacterExpToSkill(PChar, "Sneak", 150);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 3);
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 3);
 						break;
 					}
 				}
@@ -1638,7 +1638,7 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Leadership", 250);
 							AddCharacterExpToSkill(PChar, "Fortune", 300);
 							AddCharacterExpToSkill(PChar, "Sneak", 150);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 2);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
 						break;
 					}
@@ -1674,8 +1674,8 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Fortune", 300);
 							AddCharacterExpToSkill(PChar, "Sneak", 200);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
-							sld = &Characters[sti(Pchar.GenQuest.TakePassenger.PrisonerIDX)];
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 2);
+							sld = &Characters[int(Pchar.GenQuest.TakePassenger.PrisonerIDX)];
 							ReleasePrisoner(sld); //освободили пленника
 							sld.lifeday = 0;
 						break;
@@ -1711,7 +1711,7 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Leadership", 200);
 							AddCharacterExpToSkill(PChar, "Fortune", 300);
 							AddCharacterExpToSkill(PChar, "Sneak", 300);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 1);
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 1);
 							ChangeCharacterComplexReputation(pchar,"authority", 1);
 						break;
 					}
@@ -1747,8 +1747,8 @@ void ProcessDialogEvent()
 							AddCharacterExpToSkill(PChar, "Fortune", 300);
 							AddCharacterExpToSkill(PChar, "Sneak", 200);
 							ChangeCharacterComplexReputation(pchar, "authority", 1);
-							ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
-							sld = &Characters[sti(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
+							ChangeCharacterNationReputation(pchar, int(NPChar.nation), 2);
+							sld = &Characters[int(Pchar.GenQuest.FindFugitive.PrisonerIDX)];
 							ReleasePrisoner(sld); //освободили пленника
 							LAi_SetActorType(sld);
 							sld.lifeday = 0;
@@ -1763,7 +1763,7 @@ void ProcessDialogEvent()
 					switch (pchar.GenQuest.Intelligence)
 					{
 						case "":
-							if (GetQuestPastDayParam("GenQuest.Intelligence") > sti(pchar.GenQuest.Intelligence.Terms))
+							if (GetQuestPastDayParam("GenQuest.Intelligence") > int(pchar.GenQuest.Intelligence.Terms))
 							{
 								dialog.text = RandPhraseSimple("Время, данное вам на доставку письма, вышло. И я так понимаю, что результата у вас нет.",
 									"Все сроки, предоставленные вам для доставки письма, вышли. Однако, как я понимаю, подвижек нет. В чём дело?");
@@ -1782,18 +1782,18 @@ void ProcessDialogEvent()
 						case "Execute":
 							dialog.text = RandPhraseSimple("Вы доставили ожидаемое мной письмо?", "Говорите же быстрей, пакет у вас?!");
 							link.l1 = "Да, я всё сделал"+ GetSexPhrase("","а") +". Как мы и договаривались - вручаю лично в руки.";
-							if (GetQuestPastDayParam("GenQuest.Intelligence") > sti(pchar.GenQuest.Intelligence.Terms))
+							if (GetQuestPastDayParam("GenQuest.Intelligence") > int(pchar.GenQuest.Intelligence.Terms))
 							{
 								link.l1.go = "Intelligence_ExecuteLate";
 								AddCharacterExpToSkill(PChar, "Sneak", 300);
-								ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 1);
+								ChangeCharacterNationReputation(pchar, int(NPChar.nation), 1);
 							}
 							else
 							{
 								link.l1.go = "All_Execute";		
 								AddCharacterExpToSkill(PChar, "Leadership", 100);
 								AddCharacterExpToSkill(PChar, "Sneak", 300);
-								ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 3);
+								ChangeCharacterNationReputation(pchar, int(NPChar.nation), 3);
 							}
 							TakeItemFromCharacter(pchar, "sicretLetter");
 							DeleteAttribute(ItemsFromID("sicretLetter"), "City");
@@ -1805,13 +1805,13 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(sti(pchar.reputation.nobility) > 41) {dialog.text = "Я всеми силами борюсь с беззаконием на вверенной мне земле, и у меня всегда найдётся поручение для достойных капитанов вроде вас. В каком роде заданий вы предпочитаете себя проявить?";}
+				if(int(pchar.reputation.nobility) > 41) {dialog.text = "Я всеми силами борюсь с беззаконием на вверенной мне земле, и у меня всегда найдётся поручение для достойных капитанов вроде вас. В каком роде заданий вы предпочитаете себя проявить?";}
 				else {dialog.text = "Я всеми силами стремлюсь поддерживать порядок на вверенной мне земле, и даже для людей с такой репутацией, как у вас, капитан, у меня найдётся поручение. В каком роде заданий вы желаете применить свои таланты?";}
 				link.l1 = "Я хотел бы сосредоточиться на внутренних делах колонии и прилегающих территорий.";
 				link.l1.go = "GovQuestGroup1";
 				link.l2 = "Предпочитаю участвовать в операциях, проводимых вне пределов ваших владений";
 				link.l2.go = "GovQuestGroup2";
-				link.l3 = "Меня интересуют рискованные задания, которые могут повлиять на международные отношения и укрепить позиции "+ NationNameGenitive(sti(NPChar.nation))+".";
+				link.l3 = "Меня интересуют рискованные задания, которые могут повлиять на международные отношения и укрепить позиции "+ NationNameGenitive(int(NPChar.nation))+".";
 				link.l3.go = "GovQuestGroup3";
 				link.l4 = "Прошу прощения — сейчас я не хотел бы брать на себя какие-либо обязательства.";
 				link.l4.go = "exit";
@@ -1842,7 +1842,7 @@ void ProcessDialogEvent()
 				break;
 						
 				case 1: // Таможенный патруль
-					if (CheckAttribute(npchar, "GenQuest.Governor.Group1.day") && sti(npchar.GenQuest.Governor.Group1.day) == GetDataDay())
+					if (CheckAttribute(npchar, "GenQuest.Governor.Group1.day") && int(npchar.GenQuest.Governor.Group1.day) == GetDataDay())
 					{
 						dialog.text = "Вы передумали, капитан? Контрабандисты всё ещё на свободе и, скорее всего, не отказались от своих намерений.";
 						link.l1 = "Прошу напомнить подробности этого задания, Ваша Светлось.";
@@ -1859,7 +1859,7 @@ void ProcessDialogEvent()
 				break;
 						
 				case 2: // Уничтожение банды
-					if (CheckAttribute(npchar, "GenQuest.Governor.Group1.day") && sti(npchar.GenQuest.Governor.Group1.day) == GetDataDay())
+					if (CheckAttribute(npchar, "GenQuest.Governor.Group1.day") && int(npchar.GenQuest.Governor.Group1.day) == GetDataDay())
 					{
 						dialog.text = "Вы всё же решили взяться за уничтожение разбойников, капитан? Они, увы, по-прежнему угрожают благополучию нашей колонии.";
 						link.l1 = "Прошу напомнить подробности этого задания, Ваша Светлось.";
@@ -1871,7 +1871,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.GenQuest.DestroyGang.Terms = hrand(2) + 2;
-					pchar.GenQuest.DestroyGang.Money = ((hrand(6)+4)*500)+5000+(sti(pchar.rank)*500);
+					pchar.GenQuest.DestroyGang.Money = ((hrand(6)+4)*500)+5000+(int(pchar.rank)*500);
 					makearef(arName, pchar.GenQuest.DestroyGang);
 					arName.nation = PIRATE;
 					arName.sex = "man";
@@ -1907,7 +1907,7 @@ void ProcessDialogEvent()
 				break;
 						
 				case 1:  // ОЗГ - захватить пассажира
-					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && sti(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && int(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
 					{
 						dialog.text = "Решили не упускать возможность проявить себя? Мне нужен этот подлец — живым и как можно скорее.";
 						link.l1 = "Прошу напомнить подробности этого задания, Ваша Светлось.";
@@ -1924,7 +1924,7 @@ void ProcessDialogEvent()
 				break;
 						
 				case 2: // Найти дезертира
-					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && sti(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && int(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
 					{
 						dialog.text = "Передумали, капитан? Решили всё же выследить беглеца?";
 						link.l1 = "Прошу напомнить подробности этого задания, Ваша Светлось.";
@@ -1941,7 +1941,7 @@ void ProcessDialogEvent()
 				break;
 						
 				case 3: // Уничтожить корабль пиратов
-					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && sti(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
+					if (CheckAttribute(npchar, "GenQuest.Governor.Group2.day") && int(npchar.GenQuest.Governor.Group2.day) == GetDataDay())
 					{
 						dialog.text = "Пират всё ещё грабит торговцев, капитан. Надеюсь, на этот раз вы готовы взяться за его устранение?";
 						link.l1 = "Прошу напомнить подробности этого задания, Ваша Светлось.";
@@ -2039,7 +2039,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.GenQuest.Intelligence.Terms = hrand(10) + (42 - MOD_SKILL_ENEMY_RATE);
-					pchar.GenQuest.Intelligence.Money = ((hrand(5)+11)*2000)+(sti(pchar.rank)*1500);
+					pchar.GenQuest.Intelligence.Money = ((hrand(5)+11)*2000)+(int(pchar.rank)*1500);
 					pchar.GenQuest.Intelligence.City = sTemp;
 					sTemp = ", что на " + XI_ConvertString(GetIslandByColony(&colonies[FindColony(pchar.GenQuest.Intelligence.City)])+"Voc");
 					dialog.text = "У меня есть для вас задание, сопряжённое с серьёзным риском. Мне нужно, чтобы вы пробрались в " + XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Acc") + sTemp + ", встретились там с указанным человеком и доставили мне то, что он вам даст.";
@@ -2063,10 +2063,10 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if(CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                             attrLoc = "l"+qty;
-                            link.(attrLoc)    = GetFullName(offref) + " - " + NationNameMan(sti(offref.nation)) + ".";
+                            link.(attrLoc)    = GetFullName(offref) + " - " + NationNameMan(int(offref.nation)) + ".";
                             link.(attrLoc).go = "GetPrisonerIdx_" + offref.index;
                             qty++;
                         }
@@ -2078,19 +2078,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "sell_prisoner_2":
-            offref = GetCharacter(sti(pchar.GenQuest.GetPrisonerIdx));
-            attrLoc =  "Итак, это капитан " + GetFullName(offref) + ", " + NationNameMan(sti(offref.nation))+ ".";
+            offref = GetCharacter(int(pchar.GenQuest.GetPrisonerIdx));
+            attrLoc =  "Итак, это капитан " + GetFullName(offref) + ", " + NationNameMan(int(offref.nation))+ ".";
             // цена зависит от губернатора
-            qty = makeint(sti(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
-			if(HasShipTrait(pchar, "trait14")) qty = makeint(qty * 1.35);
+            qty = int(int(offref.rank)*(800 + GetCharacterSPECIALSimple(NPChar, SPECIAL_L)*100) + GetCharacterSkillToOld(offref, "Leadership")*500 + GetCharacterSkillToOld(pchar, "commerce")*500);
+			if(HasShipTrait(pchar, "trait14")) qty = int(qty * 1.35);
 			qty = int(qty * GetAttributeFloatOrDefault(offref, "bonusCost", 1.0));
-            if (sti(offref.nation) == sti(NPChar.nation))
+            if (int(offref.nation) == int(NPChar.nation))
             {
                 attrLoc = attrLoc + " Я готов выкупить соотечественника за " + FindRussianMoneyString(qty) + ".";
             }
             else
             {
-                if (sti(offref.nation) == PIRATE)
+                if (int(offref.nation) == PIRATE)
                 {
                     qty = qty / 5;
                     attrLoc = attrLoc + " Я могу дать за этого висельника " + FindRussianMoneyString(qty) + ". И мы сразу же казним негодяя.";
@@ -2117,15 +2117,15 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			OfficersReaction("bad");
 
-			offref = GetCharacter(sti(pchar.GenQuest.GetPrisonerIdx));
-			AddMoneyToCharacter(pchar, sti(pchar.PrisonerSellPrice));
-			if (sti(offref.nation) == sti(NPChar.nation))
+			offref = GetCharacter(int(pchar.GenQuest.GetPrisonerIdx));
+			AddMoneyToCharacter(pchar, int(pchar.PrisonerSellPrice));
+			if (int(offref.nation) == int(NPChar.nation))
             {
                 AddCharacterExpToSkill(pchar, "Commerce", 25);
             }
             else
             {
-                if (sti(offref.nation) == PIRATE)
+                if (int(offref.nation) == PIRATE)
                 {
                     ChangeCharacterComplexReputation(pchar,"nobility", -2);
                 }
@@ -2161,7 +2161,7 @@ void ProcessDialogEvent()
 
                 NPChar.NoGiveMoney = true;
 
-            	ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(sti(NPChar.nation)) + "hunter", 20);
+            	ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(int(NPChar.nation)) + "hunter", 20);
                 // вернём диалог после разговора и спрячем
                 SetReturn_Gover_Dialog_Exit(NPChar);
 				break;
@@ -2169,7 +2169,7 @@ void ProcessDialogEvent()
 			SetNPCQuestDate(npchar, "GrabbingTownDate");
 			// fix от грабежа 5 раз на дню <--
 
-            if (CheckAttribute(FortChref, "Fort.Mode") && sti(FortChref.Fort.Mode) != FORT_DEAD)
+            if (CheckAttribute(FortChref, "Fort.Mode") && int(FortChref.Fort.Mode) != FORT_DEAD)
             { // а форт-то ЖИВ, значит с суши прошли
                 dialog.Text = "Какая неслыханная наглость! Скоро прибудет подкрепление из форта, и вам не поздоровится!";
                 Link.l2 = "Я не собираюсь торчать тут до его прихода. Заплати мне, и мы покинем этот город.";
@@ -2211,10 +2211,10 @@ void ProcessDialogEvent()
 					// восстановим нацию патента
 					PChar.nation = GetBaseHeroNation();
 					
-					dialog.Text = "Это неслыханная наглость! Как вы посмели напасть на колонию, принадлежащую " + NationNameGenitive(sti(NPChar.nation)) + "?! Вы дорого заплатите за кровь, бессмысленно пролитую вами, и за ущерб, нанесённый нашей державе.";
+					dialog.Text = "Это неслыханная наглость! Как вы посмели напасть на колонию, принадлежащую " + NationNameGenitive(int(NPChar.nation)) + "?! Вы дорого заплатите за кровь, бессмысленно пролитую вами, и за ущерб, нанесённый нашей державе.";
 	                Link.l1 = "С этого момента колония принадлежит мне, а если кто-то попытается в этом усомниться, то отправится прямиком на небеса.";
 	                Link.l1.go = "City_patent";
-	                Link.l2 = "Я представляю интересы " + NationNameGenitive(sti(PChar.nation)) + " и официально заявляю, что отныне эта колония принадлежит " + NationKingsCrown(PChar) + "!";
+	                Link.l2 = "Я представляю интересы " + NationNameGenitive(int(PChar.nation)) + " и официально заявляю, что отныне эта колония принадлежит " + NationKingsCrown(PChar) + "!";
 	                Link.l2.go = "City_nation";
 	                Link.l3 = "Нам следует обсудить размеры выкупа. Если же вы будете упрямствовать, то мы превратим ваш чудесный город в груду пепла, а вас повесим на городской площади.";
 	                Link.l3.go = "Summ_patent";
@@ -2244,13 +2244,13 @@ void ProcessDialogEvent()
 		// <-- Левассер
         
         case "City":
-            ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(sti(NPChar.nation)) + "hunter", 40);
+            ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(int(NPChar.nation)) + "hunter", 40);
             AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 400);
 
             Pchar.GenQuestFort.fortCharacterIdx = FortChref.index;
             AddDialogExitQuest("Residence_Captured_Any");
 
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_TakeTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_TakeTown", 1);
             // ремонт
             RepairAllShips();
             Log_Info("Все корабли отремонтированы.");
@@ -2282,7 +2282,7 @@ void ProcessDialogEvent()
         case "Exit_City":
 		    NextDiag.CurrentNode = "Exit_for_pay";
 		    Pchar.GenQuestFort.fortCharacterIdx = FortChref.index;
-		    if (sti(NPChar.NoGiveMoney) == false) // себе берем
+		    if (int(NPChar.NoGiveMoney) == false) // себе берем
 		    {
 				// вернём диалог после разговора и спрячем
 				SetReturn_Gover_Dialog_Exit(NPChar);
@@ -2297,11 +2297,11 @@ void ProcessDialogEvent()
             Link.l1.go = "Exit_City";
             NPChar.NoGiveMoney = false;
 
-            ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(sti(NPChar.nation)) + "hunter", 30);
+            ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(int(NPChar.nation)) + "hunter", 30);
             AddCharacterExpToSkill(GetMainCharacter(), SKILL_FORTUNE, 300);
             AddCharacterExpToSkill(GetMainCharacter(), "Commerce", 300);
 
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_GrabbingTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_GrabbingTown", 1);
             //  СЖ -->
 			ReOpenQuestHeader("Gen_CityCapture");
 	        AddQuestRecordInfo("Gen_CityCapture", "t2");
@@ -2326,29 +2326,29 @@ void ProcessDialogEvent()
             ChangeCharacterComplexReputation(GetMainCharacter(),"nobility", 5);
             AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 600);
             AddCharacterExpToSkill(GetMainCharacter(), "Sneak", 400);
-            SetNationRelationBoth(sti(PChar.nation), sti(NPChar.nation), RELATION_ENEMY);
+            SetNationRelationBoth(int(PChar.nation), int(NPChar.nation), RELATION_ENEMY);
 
             PChar.questTemp.DontSetNewDialogToMayor = true; // иначе может сменить диалог и сбойнуть
             PChar.questTemp.DontNullDeposit = true;    // чтоб не нулили ростовщика
-            SetCaptureTownByNation(NPChar.City, sti(PChar.nation));
+            SetCaptureTownByNation(NPChar.City, int(PChar.nation));
             DeleteAttribute(PChar, "questTemp.DontSetNewDialogToMayor");
             AddDialogExitQuestFunction("LaunchColonyInfoScreen"); // табличка
             //  СЖ -->
-	    	sTemp =  GetNationNameByType(sti(PChar.nation));
+	    	sTemp =  GetNationNameByType(int(PChar.nation));
 			ReOpenQuestHeader("Gen_CityCapture");
 	        AddQuestRecordInfo("Gen_CityCapture", "t1");
 			AddQuestUserData("Gen_CityCapture", "sCity", XI_ConvertString("colony" + NPChar.City));
 			AddQuestUserData("Gen_CityCapture", "sNation", XI_ConvertString(sTemp + "Gen"));
 			//  СЖ <--
-			AddTitleNextRate(sti(PChar.nation), 1);  // счетчик звания
-            SetCharacterRelationBoth(sti(FortChref.index), GetMainCharacterIndex(), RELATION_FRIEND);// нечего не даёт, тк работает OtherChar - а это губер, но он и так друг
+			AddTitleNextRate(int(PChar.nation), 1);  // счетчик звания
+            SetCharacterRelationBoth(int(FortChref.index), GetMainCharacterIndex(), RELATION_FRIEND);// нечего не даёт, тк работает OtherChar - а это губер, но он и так друг
             UpdateRelations();
 
             // 22.03.05  fix вернём диалог после разговора и спрячем
             //  внутри диалога не работало
             SetReturn_Gover_Dialog_Exit(NPChar);
 
-            Statistic_AddValue(Pchar, NationShortName(sti(NPChar.nation)) + "_TakeTown", 1);
+            Statistic_AddValue(Pchar, NationShortName(int(NPChar.nation)) + "_TakeTown", 1);
 	    break;
 	    
 	    case "Prison":
@@ -2373,7 +2373,7 @@ void ProcessDialogEvent()
     		    link.l1 = "Замечательно! Я очень рад. Вот, возьмите моё пожертвование.";
     		    link.l1.go = "Exit";
     		    AddMoneyToCharacter(pchar, -iTotalTemp*6000);
-    		    ChangeCharacterHunterScore(Pchar, NationShortName(sti(NPChar.nation)) + "hunter", -iTotalTemp);
+    		    ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", -iTotalTemp);
     		    AddCharacterExpToSkill(pchar, "Fortune", 100);
             }
             else
@@ -2401,14 +2401,14 @@ void ProcessDialogEvent()
 		/////////////////////////////////////////////////////////////////////////////////////////////////
 		case "DestroyGang":
 			npchar.GenQuest.Governor.Group1.day = GetDataDay();
-			dialog.text = "Разумеется. На выполнение этого задания я даю вам " + FindRussianDaysString(sti(pchar.GenQuest.DestroyGang.Terms)) + ", ваше вознаграждение за проделанную работу будет составлять " + FindRussianMoneyString(sti(pchar.GenQuest.DestroyGang.Money)) + ".";
+			dialog.text = "Разумеется. На выполнение этого задания я даю вам " + FindRussianDaysString(int(pchar.GenQuest.DestroyGang.Terms)) + ", ваше вознаграждение за проделанную работу будет составлять " + FindRussianMoneyString(int(pchar.GenQuest.DestroyGang.Money)) + ".";
 			link.l1 = "Хорошо, я берусь за это задание.";
 		    link.l1.go = "DestroyGang_agree";
 			link.l2 = "Хм... нет, пожалуй, я откажусь.";
 		    link.l2.go = "All_disagree";
 		break;
 		case "DestroyGang_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.questName = "DestroyGang"; //тип квеста
 			pchar.GenQuest.DestroyGang.Location = GetGangLocation(npchar); //определяем локацию,где банда
 			pchar.GenQuest.DestroyGang.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
@@ -2429,7 +2429,7 @@ void ProcessDialogEvent()
 				pchar.quest.DestroyGang.win_condition.l1.location = pchar.GenQuest.DestroyGang.Location;
 				pchar.quest.DestroyGang.win_condition = "DestroyGang_fight";
 				pchar.quest.DestroyGang.again = true; //тупо дожидаться своего часа бандиты не будут
-				SetTimerCondition("AllMayorsQuests_Late", 0, 0, sti(pchar.GenQuest.DestroyGang.Terms), false);
+				SetTimerCondition("AllMayorsQuests_Late", 0, 0, int(pchar.GenQuest.DestroyGang.Terms), false);
 				//==> энкаунтеров в квестовой локации не будет 
 				locations[FindLocation(pchar.GenQuest.DestroyGang.Location)].DisableEncounters = true;
 				ReOpenQuestHeader("MayorsQuestsList");
@@ -2438,8 +2438,8 @@ void ProcessDialogEvent()
 				AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 				makearef(arName, pchar.GenQuest.DestroyGang);
 				AddQuestUserData("MayorsQuestsList", "GangName", GetFullName(arName));
-				AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.DestroyGang.Terms)));
-				AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.DestroyGang.Money)));
+				AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(int(pchar.GenQuest.DestroyGang.Terms)));
+				AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.DestroyGang.Money)));
 			}
 		break;
 		/////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2449,13 +2449,13 @@ void ProcessDialogEvent()
 			//установка параметров
 			pchar.GenQuest.questName = "TakePostcureer"; //тип квеста
 			// belamour legendary edition враждебную нацию квестодателя, а не героя -->
-			pchar.GenQuest.TakePostcureer.Nation = FindEnemyNation2Character(sti(npchar.index)); //вражеская нация
+			pchar.GenQuest.TakePostcureer.Nation = FindEnemyNation2Character(int(npchar.index)); //вражеская нация
 			iTemp = 1;
-			while (iTemp < 10 && sti(pchar.GenQuest.TakePostcureer.Nation) == PIRATE) {
-				pchar.GenQuest.TakePostcureer.Nation = FindEnemyNation2Character(sti(npchar.index));
+			while (iTemp < 10 && int(pchar.GenQuest.TakePostcureer.Nation) == PIRATE) {
+				pchar.GenQuest.TakePostcureer.Nation = FindEnemyNation2Character(int(npchar.index));
 				iTemp += 1;
 			}
-			if (iTemp == 10 && sti(pchar.GenQuest.TakePostcureer.Nation) == PIRATE) {
+			if (iTemp == 10 && int(pchar.GenQuest.TakePostcureer.Nation) == PIRATE) {
 				dialog.text = LinkRandPhrase("Сегодня я уже ничего не могу предложить в качестве работы.", "На сегодня работы для вас уже нет.", "На сегодня уже всё, работы нет. Все вопросы по поводу работы - завтра.");
 				link.l1 = RandPhraseSimple("Жаль...", "Эх, очень жаль, "+ GetAddress_FormToNPC(NPChar) + ". ");
         		link.l1.go = "exit";
@@ -2468,17 +2468,17 @@ void ProcessDialogEvent()
 				
 				break;
 			}
-			pchar.GenQuest.TakePostcureer.City = FindQuestCity(npchar, "enemy",sti(pchar.GenQuest.TakePostcureer.Nation), false, false);
+			pchar.GenQuest.TakePostcureer.City = FindQuestCity(npchar, "enemy",int(pchar.GenQuest.TakePostcureer.Nation), false, false);
 			// <-- legendary edition
 			pchar.GenQuest.TakePostcureer.Island = GetArealByCityName(pchar.GenQuest.TakePostcureer.City);
 			pchar.GenQuest.TakePostcureer.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakePostcureer.Island)+5;
-			pchar.GenQuest.TakePostcureer.LoginDay = sti(pchar.GenQuest.TakePostcureer.Terms)-1;
+			pchar.GenQuest.TakePostcureer.LoginDay = int(pchar.GenQuest.TakePostcureer.Terms)-1;
 			pchar.GenQuest.TakePostcureer.ShipType = SelectCureerShipType();
-			pchar.GenQuest.TakePostcureer.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePostcureer.Nation));
-			pchar.GenQuest.TakePostcureer.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePostcureer.ShipType));
-			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6, "1")+42)*600)+(sti(pchar.rank)*1600);
+			pchar.GenQuest.TakePostcureer.ShipName = GenerateRandomNameToShip(int(pchar.GenQuest.TakePostcureer.Nation));
+			pchar.GenQuest.TakePostcureer.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.TakePostcureer.ShipType));
+			pchar.GenQuest.TakePostcureer.Money = ((hrand(5)+hrand(6, "1")+42)*600)+(int(pchar.rank)*1600);
 			npchar.GenQuest.Governor.Group3.day = GetDataDay();
-			dialog.text = "Конечно. Вам необходимо найти курьерский корабль "+NationNameGenitive(sti(pchar.GenQuest.TakePostcureer.Nation))+" под названием '"+pchar.GenQuest.TakePostcureer.ShipName+"', абордировать его и привезти мне бумаги, которые найдёте в капитанской каюте. Указанное мной судно будет проходить у "+XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen")+" примерно через "+FindRussianDaysString(pchar.GenQuest.TakePostcureer.Terms)+".";
+			dialog.text = "Конечно. Вам необходимо найти курьерский корабль "+NationNameGenitive(int(pchar.GenQuest.TakePostcureer.Nation))+" под названием '"+pchar.GenQuest.TakePostcureer.ShipName+"', абордировать его и привезти мне бумаги, которые найдёте в капитанской каюте. Указанное мной судно будет проходить у "+XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen")+" примерно через "+FindRussianDaysString(pchar.GenQuest.TakePostcureer.Terms)+".";
 			link.l1 = "Хорошо, я берусь за это задание. А что за бумаги следует искать?";
 		    link.l1.go = "TakePostcureer_agree";
 			link.l2 = "Хм... нет, пожалуй, я откажусь.";
@@ -2486,28 +2486,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakePostcureer_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.TakePostcureer.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "Почтовую корреспонденцию. Там, среди прочего, будут содержаться очень важные для меня документы. Но вам копаться в бумагах не нужно, просто доставьте мне весь пакет целиком. За эту услугу я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.TakePostcureer.Money))+"\nИтак, я жду вас у себя в резиденции с результатами работы.";
+			dialog.text = "Почтовую корреспонденцию. Там, среди прочего, будут содержаться очень важные для меня документы. Но вам копаться в бумагах не нужно, просто доставьте мне весь пакет целиком. За эту услугу я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.TakePostcureer.Money))+"\nИтак, я жду вас у себя в резиденции с результатами работы.";
 			link.l1 = "Полагаю, что не заставлю вас долго ждать, " + GetAddress_FormToNPC(NPChar) + ".";
 			link.l1.go = "exit";
 			pchar.quest.TakePostcureer.win_condition.l1 = "location";
 			pchar.quest.TakePostcureer.win_condition.l1.location = pchar.GenQuest.TakePostcureer.Island;
 			pchar.quest.TakePostcureer.win_condition.l2 = "Timer";
-			pchar.quest.TakePostcureer.win_condition.l2.date.hour  = sti(GetTime());
-			pchar.quest.TakePostcureer.win_condition.l2.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.TakePostcureer.LoginDay));
-			pchar.quest.TakePostcureer.win_condition.l2.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.TakePostcureer.LoginDay));
-			pchar.quest.TakePostcureer.win_condition.l2.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.TakePostcureer.LoginDay));
+			pchar.quest.TakePostcureer.win_condition.l2.date.hour  = int(GetTime());
+			pchar.quest.TakePostcureer.win_condition.l2.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.TakePostcureer.LoginDay));
+			pchar.quest.TakePostcureer.win_condition.l2.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.TakePostcureer.LoginDay));
+			pchar.quest.TakePostcureer.win_condition.l2.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.TakePostcureer.LoginDay));
 			pchar.quest.TakePostcureer.function = "TakePostcureer_CreateShip";
-			SetTimerCondition("AllMayorsQuests_Late", 0, 0, sti(pchar.GenQuest.TakePostcureer.Terms), false);
+			SetTimerCondition("AllMayorsQuests_Late", 0, 0, int(pchar.GenQuest.TakePostcureer.Terms), false);
 			ReOpenQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "3");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 			AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.TakePostcureer.City+"Gen"));
-			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.TakePostcureer.Terms)));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.TakePostcureer.Money)));
-			AddQuestUserData("MayorsQuestsList", "sNation", NationNameGenitive(sti(pchar.GenQuest.TakePostcureer.Nation)));
+			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(int(pchar.GenQuest.TakePostcureer.Terms)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.TakePostcureer.Money)));
+			AddQuestUserData("MayorsQuestsList", "sNation", NationNameGenitive(int(pchar.GenQuest.TakePostcureer.Nation)));
 			AddQuestUserData("MayorsQuestsList", "sShipName", pchar.GenQuest.TakePostcureer.ShipName);
 		break;
 		
@@ -2518,13 +2518,13 @@ void ProcessDialogEvent()
 			//установка параметров
 			pchar.GenQuest.questName = "TakeArsenalship"; //тип квеста
 			// belamour legendary edition враждебную нацию квестодателя, а не героя -->
-			pchar.GenQuest.TakeArsenalship.Nation = FindEnemyNation2Character(sti(npchar.index));
+			pchar.GenQuest.TakeArsenalship.Nation = FindEnemyNation2Character(int(npchar.index));
 			iTemp = 1;
-			while (iTemp < 10 && sti(pchar.GenQuest.TakeArsenalship.Nation) == PIRATE) {
-				pchar.GenQuest.TakeArsenalship.Nation = FindEnemyNation2Character(sti(npchar.index));
+			while (iTemp < 10 && int(pchar.GenQuest.TakeArsenalship.Nation) == PIRATE) {
+				pchar.GenQuest.TakeArsenalship.Nation = FindEnemyNation2Character(int(npchar.index));
 				iTemp += 1;
 			}
-			if (iTemp == 10 && sti(pchar.GenQuest.TakeArsenalship.Nation) == PIRATE) {
+			if (iTemp == 10 && int(pchar.GenQuest.TakeArsenalship.Nation) == PIRATE) {
 				dialog.text = LinkRandPhrase("Сегодня я уже ничего не могу предложить в качестве работы.", "На сегодня работы для вас уже нет.", "На сегодня уже всё, работы нет. Все вопросы по поводу работы - завтра.");
 				link.l1 = RandPhraseSimple("Жаль...", "Эх, очень жаль, "+ GetAddress_FormToNPC(NPChar) + ". ");
         		link.l1.go = "exit";
@@ -2537,19 +2537,19 @@ void ProcessDialogEvent()
 				
 				break;
 			}
-			pchar.GenQuest.TakeArsenalship.City = FindQuestCity(npchar, "enemy",sti(pchar.GenQuest.TakeArsenalship.Nation), false, false);
+			pchar.GenQuest.TakeArsenalship.City = FindQuestCity(npchar, "enemy",int(pchar.GenQuest.TakeArsenalship.Nation), false, false);
 			// <-- legendary edition
 			pchar.GenQuest.TakeArsenalship.Island = GetArealByCityName(pchar.GenQuest.TakeArsenalship.City);
 			pchar.GenQuest.TakeArsenalship.Terms = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, pchar.GenQuest.TakeArsenalship.Island)+5;
-			pchar.GenQuest.TakeArsenalship.LoginDay = sti(pchar.GenQuest.TakeArsenalship.Terms)-1;
+			pchar.GenQuest.TakeArsenalship.LoginDay = int(pchar.GenQuest.TakeArsenalship.Terms)-1;
 			pchar.GenQuest.TakeArsenalship.ShipType = SelectArsenalShipType(FLAG_SHIP_TYPE_RAIDER);
 			pchar.GenQuest.TakeArsenalship.ShipTypeA = SelectArsenalShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
-			pchar.GenQuest.TakeArsenalship.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakeArsenalship.Nation));
-			pchar.GenQuest.TakeArsenalship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipType));
-			pchar.GenQuest.TakeArsenalship.CannonA = SelectLevelCannonParameter(sti(pchar.GenQuest.TakeArsenalship.ShipTypeA)); // Addon 2016-1 Jason пиратская линейка
-			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6, "1")+36)*700)+(sti(pchar.rank)*1600);
+			pchar.GenQuest.TakeArsenalship.ShipName = GenerateRandomNameToShip(int(pchar.GenQuest.TakeArsenalship.Nation));
+			pchar.GenQuest.TakeArsenalship.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.TakeArsenalship.ShipType));
+			pchar.GenQuest.TakeArsenalship.CannonA = SelectLevelCannonParameter(int(pchar.GenQuest.TakeArsenalship.ShipTypeA)); // Addon 2016-1 Jason пиратская линейка
+			pchar.GenQuest.TakeArsenalship.Money = ((hrand(5)+hrand(6, "1")+36)*700)+(int(pchar.rank)*1600);
 			npchar.GenQuest.Governor.Group3.day = GetDataDay();
-			dialog.text = "Конечно. Вам будет необходимо найти военный транспорт "+NationNameGenitive(sti(pchar.GenQuest.TakeArsenalship.Nation))+", перевозящий порох и боеприпасы, судно под названием '"+pchar.GenQuest.TakeArsenalship.ShipName+"', и уничтожить его. Этим мы нанесём ущерб вражеской державе\nУказанный транспорт будет идти в составе эскорта в колонию "+XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City)+", и будет там примерно через "+FindRussianDaysString(pchar.GenQuest.TakeArsenalship.Terms)+", так что вам следует поторопиться.";
+			dialog.text = "Конечно. Вам будет необходимо найти военный транспорт "+NationNameGenitive(int(pchar.GenQuest.TakeArsenalship.Nation))+", перевозящий порох и боеприпасы, судно под названием '"+pchar.GenQuest.TakeArsenalship.ShipName+"', и уничтожить его. Этим мы нанесём ущерб вражеской державе\nУказанный транспорт будет идти в составе эскорта в колонию "+XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City)+", и будет там примерно через "+FindRussianDaysString(pchar.GenQuest.TakeArsenalship.Terms)+", так что вам следует поторопиться.";
 			link.l1 = "Хорошо, я берусь за это задание. Мне нужно потопить или захватить судно с арсеналом?";
 		    link.l1.go = "TakeArsenalship_agree";
 			link.l2 = "Хм... нет, пожалуй, я откажусь.";
@@ -2557,28 +2557,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeArsenalship_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.TakeArsenalship.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "Как хотите, для меня это значения не имеет. Главное - чтобы груз не пришёл по назначению. Если вы справитесь с этим поручением, я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.TakeArsenalship.Money))+"... Более не задерживаю вас, капитан.";
+			dialog.text = "Как хотите, для меня это значения не имеет. Главное - чтобы груз не пришёл по назначению. Если вы справитесь с этим поручением, я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.TakeArsenalship.Money))+"... Более не задерживаю вас, капитан.";
 			link.l1 = "Полагаю, что не заставлю вас долго ждать, " + GetAddress_FormToNPC(NPChar) + ".";
 			link.l1.go = "exit";
 			pchar.quest.TakeArsenalship.win_condition.l1 = "location";
 			pchar.quest.TakeArsenalship.win_condition.l1.location = pchar.GenQuest.TakeArsenalship.Island;
 			pchar.quest.TakeArsenalship.win_condition.l2 = "Timer";
-			pchar.quest.TakeArsenalship.win_condition.l2.date.hour  = sti(GetTime());
-			pchar.quest.TakeArsenalship.win_condition.l2.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.TakeArsenalship.LoginDay));
-			pchar.quest.TakeArsenalship.win_condition.l2.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.TakeArsenalship.LoginDay));
-			pchar.quest.TakeArsenalship.win_condition.l2.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.TakeArsenalship.LoginDay));
+			pchar.quest.TakeArsenalship.win_condition.l2.date.hour  = int(GetTime());
+			pchar.quest.TakeArsenalship.win_condition.l2.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.TakeArsenalship.LoginDay));
+			pchar.quest.TakeArsenalship.win_condition.l2.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.TakeArsenalship.LoginDay));
+			pchar.quest.TakeArsenalship.win_condition.l2.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.TakeArsenalship.LoginDay));
 			pchar.quest.TakeArsenalship.function = "TakeArsenalship_CreateShip";
-			SetTimerCondition("AllMayorsQuests_Late", 0, 0, sti(pchar.GenQuest.TakeArsenalship.Terms), false);
+			SetTimerCondition("AllMayorsQuests_Late", 0, 0, int(pchar.GenQuest.TakeArsenalship.Terms), false);
 			ReOpenQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "8");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 			AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.TakeArsenalship.City));
-			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.TakeArsenalship.Terms)));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.TakeArsenalship.Money)));
-			AddQuestUserData("MayorsQuestsList", "sNation", NationNameGenitive(sti(pchar.GenQuest.TakeArsenalship.Nation)));
+			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(int(pchar.GenQuest.TakeArsenalship.Terms)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.TakeArsenalship.Money)));
+			AddQuestUserData("MayorsQuestsList", "sNation", NationNameGenitive(int(pchar.GenQuest.TakeArsenalship.Nation)));
 			AddQuestUserData("MayorsQuestsList", "sShipName", pchar.GenQuest.TakeArsenalship.ShipName);
 		break;
 		
@@ -2594,8 +2594,8 @@ void ProcessDialogEvent()
 			pchar.GenQuest.TakePirateship.ShipType = SelectPirateShipType();
 			pchar.GenQuest.TakePirateship.ShipName = GenerateRandomNameToShip(PIRATE);
 			pchar.GenQuest.TakePirateship.Name = GenerateRandomName(PIRATE, "man");
-			pchar.GenQuest.TakePirateship.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePirateship.ShipType));
-			pchar.GenQuest.TakePirateship.Money = ((hrand(5) + hrand(6, "1")+4)*800)+13000+(sti(pchar.rank)*1250);
+			pchar.GenQuest.TakePirateship.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.TakePirateship.ShipType));
+			pchar.GenQuest.TakePirateship.Money = ((hrand(5) + hrand(6, "1")+4)*800)+13000+(int(pchar.rank)*1250);
 			npchar.GenQuest.Governor.Group2.day = GetDataDay();
 			dialog.text = "Разумеется. Меня буквально выводит из себя бурная деятельность одного пиратского капитана по имени "+pchar.GenQuest.TakePirateship.Name+". Мерзавец повадился грабить корабли наших купцов, и очень мешает торговле между колониями. Сейчас момент для расправы с этим негодяем как нельзя удачный, поскольку мне стало известно место, где он в данное время скрывается. Вы готовы отправиться в путь и покончить с врагом нашей короны?";
 			link.l1 = "Почту за честь! Где искать этого богоотступника?";
@@ -2605,22 +2605,22 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakePirateship_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.TakePirateship.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "В ближайшие "+FindRussianDaysString(pchar.GenQuest.TakePirateship.Terms)+" его корабль под названием '"+pchar.GenQuest.TakePirateship.ShipName+"' будет крейсировать у берегов недалеко от "+XI_ConvertString("Colony"+pchar.GenQuest.TakePirateship.City+"Gen")+". Найдите его и уничтожьте. Отправьте на корм рыбам вместе с кораблём, возьмите на абордаж - мне всё равно, лишь бы этот треклятый пират перестал осквернять землю своим присутствием\nЗа выполнение этой задачи я готов заплатить вам "+FindRussianMoneyString(sti(pchar.GenQuest.TakePirateship.Money))+". Не теряйте времени, капитан: негодяй не будет ждать вас у "+XI_ConvertString("Colony"+pchar.GenQuest.TakePirateship.City+"Gen")+" вечно. Ступайте, и да поможет вам Бог!";
+			dialog.text = "В ближайшие "+FindRussianDaysString(pchar.GenQuest.TakePirateship.Terms)+" его корабль под названием '"+pchar.GenQuest.TakePirateship.ShipName+"' будет крейсировать у берегов недалеко от "+XI_ConvertString("Colony"+pchar.GenQuest.TakePirateship.City+"Gen")+". Найдите его и уничтожьте. Отправьте на корм рыбам вместе с кораблём, возьмите на абордаж - мне всё равно, лишь бы этот треклятый пират перестал осквернять землю своим присутствием\nЗа выполнение этой задачи я готов заплатить вам "+FindRussianMoneyString(int(pchar.GenQuest.TakePirateship.Money))+". Не теряйте времени, капитан: негодяй не будет ждать вас у "+XI_ConvertString("Colony"+pchar.GenQuest.TakePirateship.City+"Gen")+" вечно. Ступайте, и да поможет вам Бог!";
 			link.l1 = "Уже поднимаю якоря, " + GetAddress_FormToNPC(NPChar) + "! Результат не заставит себя долго ждать!";
 			link.l1.go = "exit";
 			pchar.quest.TakePirateship.win_condition.l1 = "location";
 			pchar.quest.TakePirateship.win_condition.l1.location = pchar.GenQuest.TakePirateship.Island;
 			pchar.quest.TakePirateship.function = "TakePirateship_CreateShip";
-			SetTimerCondition("AllMayorsQuests_Late", 0, 0, sti(pchar.GenQuest.TakePirateship.Terms), false);
+			SetTimerCondition("AllMayorsQuests_Late", 0, 0, int(pchar.GenQuest.TakePirateship.Terms), false);
 			ReOpenQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "9");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 			AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.TakePirateship.City+"Gen"));
-			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.TakePirateship.Terms)));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.TakePirateship.Money)));
+			AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(int(pchar.GenQuest.TakePirateship.Terms)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.TakePirateship.Money)));
 			AddQuestUserData("MayorsQuestsList", "sName", pchar.GenQuest.TakePirateship.Name);
 			AddQuestUserData("MayorsQuestsList", "sShipName", pchar.GenQuest.TakePirateship.ShipName);
 		break;
@@ -2631,13 +2631,13 @@ void ProcessDialogEvent()
 		case "TakePassenger":
 			//установка параметров
 			pchar.GenQuest.questName = "TakePassenger"; //тип квеста
-			pchar.GenQuest.TakePassenger.Nation = FindEnemyNation2Character(sti(npchar.index));//вражеская нация
+			pchar.GenQuest.TakePassenger.Nation = FindEnemyNation2Character(int(npchar.index));//вражеская нация
 			iTemp = 1;
-			while (iTemp < 10 && sti(pchar.GenQuest.TakePassenger.Nation) == PIRATE) {
-				pchar.GenQuest.TakePassenger.Nation = FindEnemyNation2Character(sti(npchar.index));
+			while (iTemp < 10 && int(pchar.GenQuest.TakePassenger.Nation) == PIRATE) {
+				pchar.GenQuest.TakePassenger.Nation = FindEnemyNation2Character(int(npchar.index));
 				iTemp += 1;
 			}
-			if (iTemp == 10 && sti(pchar.GenQuest.TakePassenger.Nation) == PIRATE) {
+			if (iTemp == 10 && int(pchar.GenQuest.TakePassenger.Nation) == PIRATE) {
 				dialog.text = LinkRandPhrase("Сегодня я уже ничего не могу предложить в качестве работы.", "На сегодня работы для вас уже нет.", "На сегодня уже всё, работы нет. Все вопросы по поводу работы - завтра.");
 				link.l1 = RandPhraseSimple("Жаль...", "Эх, очень жаль, "+ GetAddress_FormToNPC(NPChar) + ". ");
         		link.l1.go = "exit";
@@ -2650,16 +2650,16 @@ void ProcessDialogEvent()
 				
 				break;
 			}
-			pchar.GenQuest.TakePassenger.City = FindQuestCity(npchar, "enemy", sti(pchar.GenQuest.TakePassenger.Nation), false, false); // belamour legendary edition
+			pchar.GenQuest.TakePassenger.City = FindQuestCity(npchar, "enemy", int(pchar.GenQuest.TakePassenger.Nation), false, false); // belamour legendary edition
 			pchar.GenQuest.TakePassenger.CityA = SelectAnyColony(pchar.GenQuest.TakePassenger.City);
 			pchar.GenQuest.TakePassenger.Terms1 = GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(PChar)].id, GetArealByCityName(pchar.GenQuest.TakePassenger.City));
 			pchar.GenQuest.TakePassenger.Terms2 = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.TakePassenger.City), GetArealByCityName(pchar.GenQuest.TakePassenger.CityA))+1;
-			pchar.GenQuest.TakePassenger.Terms = sti(pchar.GenQuest.TakePassenger.Terms1)+sti(pchar.GenQuest.TakePassenger.Terms2);
+			pchar.GenQuest.TakePassenger.Terms = int(pchar.GenQuest.TakePassenger.Terms1)+int(pchar.GenQuest.TakePassenger.Terms2);
 			pchar.GenQuest.TakePassenger.ShipType = SelectCureerShipType();
-			pchar.GenQuest.TakePassenger.ShipName = GenerateRandomNameToShip(sti(pchar.GenQuest.TakePassenger.Nation));
-			pchar.GenQuest.TakePassenger.Name = GenerateRandomName(sti(pchar.GenQuest.TakePassenger.Nation), "man");
-			pchar.GenQuest.TakePassenger.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.TakePassenger.ShipType));
-			pchar.GenQuest.TakePassenger.Money = ((hrand(5) + hrand(6, "1")+4)*500)+12500+(sti(pchar.rank)*1000);
+			pchar.GenQuest.TakePassenger.ShipName = GenerateRandomNameToShip(int(pchar.GenQuest.TakePassenger.Nation));
+			pchar.GenQuest.TakePassenger.Name = GenerateRandomName(int(pchar.GenQuest.TakePassenger.Nation), "man");
+			pchar.GenQuest.TakePassenger.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.TakePassenger.ShipType));
+			pchar.GenQuest.TakePassenger.Money = ((hrand(5) + hrand(6, "1")+4)*500)+12500+(int(pchar.rank)*1000);
 			npchar.GenQuest.Governor.Group2.day = GetDataDay();
 			string sText = SelectPassText();
 			dialog.text = "Безусловно. Речь пойдёт о мерзавце по имени "+pchar.GenQuest.TakePassenger.Name+". "+sText+" Я давно разыскиваю его, и, наконец, мне удалось получить достоверные сведения, где его искать. Мне нужно, чтобы вы доставили сюда этого человека, причём живым. Я хочу показательно вздёрнуть его на площади нашего города. Вы готовы взяться за это дело?";
@@ -2670,22 +2670,22 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakePassenger_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.TakePassenger.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "Буквально через "+FindRussianDaysString(pchar.GenQuest.TakePassenger.Terms1)+", он, в качестве пассажира, на корабле под названием '"+pchar.GenQuest.TakePassenger.ShipName+"', выйдет из "+XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.City+"Gen")+" и отправится в "+XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.CityA+"Acc")+". У вас в распоряжении не более "+FindRussianDaysString(pchar.GenQuest.TakePassenger.Terms)+", чтобы найти этот корабль на указанном отрезке пути, взять на абордаж и захватить уже известного вам мерзавца в плен. Если вы выполните это поручение, я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.TakePassenger.Money))+". Желаю удачи, капитан!";
+			dialog.text = "Буквально через "+FindRussianDaysString(pchar.GenQuest.TakePassenger.Terms1)+", он, в качестве пассажира, на корабле под названием '"+pchar.GenQuest.TakePassenger.ShipName+"', выйдет из "+XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.City+"Gen")+" и отправится в "+XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.CityA+"Acc")+". У вас в распоряжении не более "+FindRussianDaysString(pchar.GenQuest.TakePassenger.Terms)+", чтобы найти этот корабль на указанном отрезке пути, взять на абордаж и захватить уже известного вам мерзавца в плен. Если вы выполните это поручение, я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.TakePassenger.Money))+". Желаю удачи, капитан!";
 			link.l1 = "Не буду терять времени, " + GetAddress_FormToNPC(NPChar) + "! Немедленно отправляюсь в путь.";
 			link.l1.go = "exit";
-			SetFunctionTimerCondition("TakePassenger_CreateShip", 0, 0, sti(pchar.GenQuest.TakePassenger.Terms1), false);
-			SetTimerCondition("AllMayorsQuests_Late", 0, 0, sti(pchar.GenQuest.TakePassenger.Terms), false);
+			SetFunctionTimerCondition("TakePassenger_CreateShip", 0, 0, int(pchar.GenQuest.TakePassenger.Terms1), false);
+			SetTimerCondition("AllMayorsQuests_Late", 0, 0, int(pchar.GenQuest.TakePassenger.Terms), false);
 			ReOpenQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "10");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
 			AddQuestUserData("MayorsQuestsList", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.City+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "sCityA", XI_ConvertString("Colony"+pchar.GenQuest.TakePassenger.CityA+"Acc"));
-			AddQuestUserData("MayorsQuestsList", "sDay1", FindRussianDaysString(sti(pchar.GenQuest.TakePassenger.Terms1)));
-			AddQuestUserData("MayorsQuestsList", "sDay2", FindRussianDaysString(sti(pchar.GenQuest.TakePassenger.Terms)));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.TakePassenger.Money)));
+			AddQuestUserData("MayorsQuestsList", "sDay1", FindRussianDaysString(int(pchar.GenQuest.TakePassenger.Terms1)));
+			AddQuestUserData("MayorsQuestsList", "sDay2", FindRussianDaysString(int(pchar.GenQuest.TakePassenger.Terms)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.TakePassenger.Money)));
 			AddQuestUserData("MayorsQuestsList", "sName", pchar.GenQuest.TakePassenger.Name);
 			AddQuestUserData("MayorsQuestsList", "sShipName", pchar.GenQuest.TakePassenger.ShipName);
 		break;
@@ -2696,14 +2696,14 @@ void ProcessDialogEvent()
 		case "CustomPatrol":
 			//установка параметров
 			pchar.GenQuest.questName = "CustomPatrol"; //тип квеста
-			pchar.GenQuest.CustomPatrol.Nation = sti(npchar.nation);//нация
+			pchar.GenQuest.CustomPatrol.Nation = int(npchar.nation);//нация
 			pchar.GenQuest.CustomPatrol.Island = Islands[GetCharacterCurrentIsland(PChar)].id;
 			pchar.GenQuest.CustomPatrol.LoginDay = rand(2)+1;
 			pchar.GenQuest.CustomPatrol.Loginlocator = rand(3)+3;
 			pchar.GenQuest.CustomPatrol.ShipType = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_UNIVERSAL);
 			pchar.GenQuest.CustomPatrol.ShipTypeA = SelectCustomPatrolShipType(FLAG_SHIP_TYPE_RAIDER);
-			pchar.GenQuest.CustomPatrol.Cannon = SelectLevelCannonParameter(sti(pchar.GenQuest.CustomPatrol.ShipType));
-			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6, "1")+4)*450)+8200 + (sti(pchar.rank) * 750);
+			pchar.GenQuest.CustomPatrol.Cannon = SelectLevelCannonParameter(int(pchar.GenQuest.CustomPatrol.ShipType));
+			pchar.GenQuest.CustomPatrol.Money = ((hrand(5)+hrand(6, "1")+4)*450)+8200 + (int(pchar.rank) * 750);
 			npchar.GenQuest.Governor.Group1.day = GetDataDay();
 			dialog.text = "Я получил достоверные сведения о том, что некий капитан договорился о сделке с негодяями-контрабандистами о продаже партии рабов. Как вам должно быть известно, сделки такого рода частными лицами в нашей колонии являются контрабандой\nПроблема заключается в том, что я не знаю ни точного времени, ни даты, ни места, где контрабандисты будут встречаться. Известно лишь то, что преступная сделка будет совершена в течение ближайших трёх дней на нашем острове. Как назло, все мои патрульные корабли сейчас либо на ремонте, либо задействованы для других задач и не могут караулить негодяев\nЯ предлагаю вам заняться этим вопросом - выследить контрабандистов и разобраться с ними самыми радикальными методами, чтобы другим неповадно было. Вы готовы выполнить это поручение?";
 			link.l1 = "Готов, " + GetAddress_FormToNPC(NPChar) + ". Скажите, может, есть какие-то зацепки, например, имя капитана, тип или название его судна?";
@@ -2713,25 +2713,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CustomPatrol_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.CustomPatrol.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "Мой источник сказал лишь то, что сделка готовится и обязательно состоится. И это всё. Так что вам надлежит внимательно смотреть за всеми подозрительными кораблями, которые появятся в нашей акватории. Если вы успешно справитесь с этим, то я заплачу вам вознаграждение в размере "+FindRussianMoneyString(sti(pchar.GenQuest.CustomPatrol.Money))+"\nКроме того, учитывая сложившиеся обстоятельства, я разрешаю вам забрать себе весь контрабандный груз, который вы найдёте. Неофициально, конечно, и при условии, что вы не станете сбывать его в нашем городе.";
+			dialog.text = "Мой источник сказал лишь то, что сделка готовится и обязательно состоится. И это всё. Так что вам надлежит внимательно смотреть за всеми подозрительными кораблями, которые появятся в нашей акватории. Если вы успешно справитесь с этим, то я заплачу вам вознаграждение в размере "+FindRussianMoneyString(int(pchar.GenQuest.CustomPatrol.Money))+"\nКроме того, учитывая сложившиеся обстоятельства, я разрешаю вам забрать себе весь контрабандный груз, который вы найдёте. Неофициально, конечно, и при условии, что вы не станете сбывать его в нашем городе.";
 			link.l1 = "Ну что же, я приступаю к патрулированию вод вашей колонии, " + GetAddress_FormToNPC(NPChar) + ".";
 			link.l1.go = "exit";
 			SetTimerCondition("AllMayorsQuests_Late", 0, 0, 4, false);
 			pchar.quest.CustomPatrol.win_condition.l1 = "location";
 			pchar.quest.CustomPatrol.win_condition.l1.location = pchar.GenQuest.CustomPatrol.Island;
 			pchar.quest.CustomPatrol.win_condition.l2 = "Timer";
-			pchar.quest.CustomPatrol.win_condition.l2.date.hour  = sti(GetTime()+rand(8));
-			pchar.quest.CustomPatrol.win_condition.l2.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.CustomPatrol.LoginDay));
-			pchar.quest.CustomPatrol.win_condition.l2.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.CustomPatrol.LoginDay));
-			pchar.quest.CustomPatrol.win_condition.l2.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.CustomPatrol.LoginDay));
+			pchar.quest.CustomPatrol.win_condition.l2.date.hour  = int(GetTime()+rand(8));
+			pchar.quest.CustomPatrol.win_condition.l2.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.CustomPatrol.LoginDay));
+			pchar.quest.CustomPatrol.win_condition.l2.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.CustomPatrol.LoginDay));
+			pchar.quest.CustomPatrol.win_condition.l2.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.CustomPatrol.LoginDay));
 			pchar.quest.CustomPatrol.function = "CustomPatrol_CreateShip";
 			ReOpenQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "11");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.CustomPatrol.Money)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.CustomPatrol.Money)));
 		break;
 		
 		/////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2743,11 +2743,11 @@ void ProcessDialogEvent()
 			pchar.GenQuest.FindFugitive.Startcity = npchar.city;
 			pchar.GenQuest.FindFugitive.City = SelectFugitiveCity();
 			pchar.GenQuest.FindFugitive.Chance = rand(2);
-			pchar.GenQuest.FindFugitive.Name = GenerateRandomName(sti(npchar.Nation), "man");
-			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6, "1")+4)*600)+9600+(sti(pchar.rank)*900);
+			pchar.GenQuest.FindFugitive.Name = GenerateRandomName(int(npchar.Nation), "man");
+			pchar.GenQuest.FindFugitive.Money = ((hrand(5)+hrand(6, "1")+4)*600)+9600+(int(pchar.rank)*900);
 			sText = SelectFugitiveText();
 			log_testinfo(pchar.GenQuest.FindFugitive.City);
-			log_testinfo(FindRussianDaysString(sti(pchar.GenQuest.FindFugitive.Chance)));
+			log_testinfo(FindRussianDaysString(int(pchar.GenQuest.FindFugitive.Chance)));
 			npchar.GenQuest.Governor.Group2.day = GetDataDay();
 			dialog.text = "Расскажу в деталях. Случилась крайне некрасивая история - "+sText+". Опросив его сослуживцев и знакомых, мы не без оснований считаем, что дезертир укрылся среди пиратов в одном из их поселений\nЯ предлагаю вам посетить пиратские гнёзда, разыскать беглеца, арестовать и доставить сюда: дезертирство - тяжкий проступок, и не может остаться без наказания. Вы готовы взяться за это дело?";
 			link.l1 = "Готов, " + GetAddress_FormToNPC(NPChar) + ". Вы можете назвать имя дезертира?";
@@ -2757,9 +2757,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FindFugitive_agree":
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 			pchar.GenQuest.FindFugitive.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
-			dialog.text = "Да, конечно. Его зовут "+pchar.GenQuest.FindFugitive.Name+". Сомневаюсь, что он будет одет в свою военную форму, так что внимательней присматривайтесь ко всякому сброду. На поиски я отвожу вам один месяц, так как боюсь, что по истечении этого срока искать беглеца будет уже бессмысленно. Если вы успешно выполните это поручение, я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.FindFugitive.Money))+".";
+			dialog.text = "Да, конечно. Его зовут "+pchar.GenQuest.FindFugitive.Name+". Сомневаюсь, что он будет одет в свою военную форму, так что внимательней присматривайтесь ко всякому сброду. На поиски я отвожу вам один месяц, так как боюсь, что по истечении этого срока искать беглеца будет уже бессмысленно. Если вы успешно выполните это поручение, я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.FindFugitive.Money))+".";
 			link.l1 = "Не буду терять времени, " + GetAddress_FormToNPC(NPChar) + "! Немедленно отправляюсь в путь.";
 			link.l1.go = "exit";
 			SetTimerCondition("AllMayorsQuests_Late", 0, 0, 30, false);
@@ -2767,11 +2767,11 @@ void ProcessDialogEvent()
 			AddQuestRecord("MayorsQuestsList", "12");
 			AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony"+npchar.city+"Gen"));
 			AddQuestUserData("MayorsQuestsList", "MayorName", GetFullName(npchar));
-			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.FindFugitive.Money)));
+			AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.FindFugitive.Money)));
 			AddQuestUserData("MayorsQuestsList", "sName", pchar.GenQuest.FindFugitive.Name);
 			//создаем дезертира
-			sld = GetCharacter(NPC_GenerateCharacter("Fugitive", "citiz_"+(21+rand(9)), "man", "man", sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, sti(npchar.nation), 30, true, "soldier"));
-			SetFantomParamFromRank(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
+			sld = GetCharacter(NPC_GenerateCharacter("Fugitive", "citiz_"+(21+rand(9)), "man", "man", int(pchar.rank)+MOD_SKILL_ENEMY_RATE, int(npchar.nation), 30, true, "soldier"));
+			SetFantomParamFromRank(sld, int(pchar.rank)+MOD_SKILL_ENEMY_RATE, true);
 			sld.name = pchar.GenQuest.FindFugitive.Name;
 			sld.lastname = "";
 			sld.dialog.FileName = "MayorQuests_dialog.c";
@@ -2782,7 +2782,7 @@ void ProcessDialogEvent()
 		/////////////////////////////////////////////////////////////////////////////////////////////////
 		case "Intelligence":
 			npchar.GenQuest.Governor.Group3.day = GetDataDay();
-			dialog.text = "Я понимаю. Возможно, вознаграждение в " + FindRussianMoneyString(sti(pchar.GenQuest.Intelligence.Money)) + " станет для вас хорошим стимулом.";
+			dialog.text = "Я понимаю. Возможно, вознаграждение в " + FindRussianMoneyString(int(pchar.GenQuest.Intelligence.Money)) + " станет для вас хорошим стимулом.";
 			link.l1 = "Да, это хорошие деньги... Я берусь за это задание.";
 		    link.l1.go = "Intelligence_agree";
 			link.l2 = "Хм... нет, пожалуй, я откажусь - слишком опасно.";
@@ -2798,7 +2798,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
+				npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_complete";
 				pchar.GenQuest.questName = "Intelligence"; //тип квеста
 				sTemp = pchar.GenQuest.Intelligence.City;
 				switch (rand(4))
@@ -2811,7 +2811,7 @@ void ProcessDialogEvent()
 				}
 				pchar.GenQuest.Intelligence.SpyId = sTemp; //Id нашего шпиона в городе
 				dialog.text = "Прекрасно! Теперь по делу. В " + XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Dat") + " вам необходимо разыскать местного " + GetWorkTypeOfMan(&characters[GetCharacterIndex(sTemp)], "Gen") + 
-					", его зовут " + GetFullName(&characters[GetCharacterIndex(sTemp)]) + ". Ему вы назовёте моё имя, и получите пакет документов. На доставку этого пакета лично мне в руки я даю вам " + FindRussianDaysString(sti(pchar.GenQuest.Intelligence.Terms)) + ". И имейте в виду, что всё нужно сделать тихо. В случае вашего обнаружения в городе, агент не будет подвергать себя риску и не пойдёт на контакт. Вам всё ясно?";
+					", его зовут " + GetFullName(&characters[GetCharacterIndex(sTemp)]) + ". Ему вы назовёте моё имя, и получите пакет документов. На доставку этого пакета лично мне в руки я даю вам " + FindRussianDaysString(int(pchar.GenQuest.Intelligence.Terms)) + ". И имейте в виду, что всё нужно сделать тихо. В случае вашего обнаружения в городе, агент не будет подвергать себя риску и не пойдёт на контакт. Вам всё ясно?";
 				link.l1 = "Да, я всё понял"+ GetSexPhrase("","а") +", " + GetAddress_FormToNPC(NPChar) + ". Немедленно приступаю к выполнению задания.";
 				link.l1.go = "exit";
 				pchar.GenQuest.Intelligence.MayorId  = npchar.id; //Id мэра, чтобы знать, кто дал квест
@@ -2824,21 +2824,21 @@ void ProcessDialogEvent()
 				AddQuestUserData("MayorsQuestsList", "sIsland", XI_ConvertString(GetIslandByColony(&colonies[FindColony(pchar.GenQuest.Intelligence.City)])+"Dat"));
 				AddQuestUserData("MayorsQuestsList", "sWho", GetWorkTypeOfMan(&characters[GetCharacterIndex(sTemp)], "Gen"));
 				AddQuestUserData("MayorsQuestsList", "SpyName", GetFullName(&characters[GetCharacterIndex(sTemp)]));			
-				AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(sti(pchar.GenQuest.Intelligence.Terms)));
-				AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Intelligence.Money)));
+				AddQuestUserData("MayorsQuestsList", "sDay", FindRussianDaysString(int(pchar.GenQuest.Intelligence.Terms)));
+				AddQuestUserData("MayorsQuestsList", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Intelligence.Money)));
 				AddQuestUserData("MayorsQuestsList", "sCity2", XI_ConvertString("Colony"+pchar.GenQuest.Intelligence.City+"Dat"));
 			}
 		break;
 		case "Intelligence_ExecuteLate":
 			QuestName = pchar.GenQuest.questName;
-			pchar.GenQuest.(QuestName).Money = sti(pchar.GenQuest.(QuestName).Money) / 2);
-			dialog.text = RandPhraseSimple("Это неплохо. Однако, вы не уложились в отведённые сроки, поэтому я вынужден уменьшить сумму вашего вознаграждения. Ваш гонорар теперь составляет " + FindRussianMoneyString(sti(pchar.GenQuest.(QuestName).Money)) + ". Извольте получить.", 
-				"Это хорошо. Однако вы не уложились в отведённое время, а я ждал это письма раньше. Вы спутали мои планы, поэтому я вынужден сократить сумму вашего гонорара. Итак, я всё же рад вручить вам положенное вознаграждение - " + FindRussianMoneyString(sti(pchar.GenQuest.(QuestName).Money))  + ". Извольте получить.");
+			pchar.GenQuest.(QuestName).Money = int(pchar.GenQuest.(QuestName).Money) / 2;
+			dialog.text = RandPhraseSimple("Это неплохо. Однако, вы не уложились в отведённые сроки, поэтому я вынужден уменьшить сумму вашего вознаграждения. Ваш гонорар теперь составляет " + FindRussianMoneyString(int(pchar.GenQuest.(QuestName).Money)) + ". Извольте получить.",
+				"Это хорошо. Однако вы не уложились в отведённое время, а я ждал это письма раньше. Вы спутали мои планы, поэтому я вынужден сократить сумму вашего гонорара. Итак, я всё же рад вручить вам положенное вознаграждение - " + FindRussianMoneyString(int(pchar.GenQuest.(QuestName).Money))  + ". Извольте получить.");
 			link.l1 = "Не сказал"+ GetSexPhrase("","а") +" бы, что мне это приятно, но, в конце концов, установленные сроки действительно были нарушены. Поэтому я претензий не имею, " + GetAddress_FormToNPC(NPChar) + ".";
 		    link.l1.go = "All_Execute_1";
 			//--> слухи
 			AddSimpleRumour(RandPhraseSimple("Вы знаете, губернатор " + GetFullName(npchar) + " не очень доволен расторопностью некоего капитана " + GetMainCharacterNameGen() + ".", 
-				"Губернатор " + GetFullName(npchar) + " не очень доволен капитаном " + GetMainCharacterNameDat() + ", т"+ GetSexPhrase("от","а") +" выполнил"+ GetSexPhrase("","а") +" его поручения, но не успел"+ GetSexPhrase("","а") +" в установленные сроки..."), sti(npchar.nation), 5, 1);
+				"Губернатор " + GetFullName(npchar) + " не очень доволен капитаном " + GetMainCharacterNameDat() + ", т"+ GetSexPhrase("от","а") +" выполнил"+ GetSexPhrase("","а") +" его поручения, но не успел"+ GetSexPhrase("","а") +" в установленные сроки..."), int(npchar.nation), 5, 1);
 			//<-- слухи
 		break;
 		
@@ -2868,13 +2868,13 @@ void ProcessDialogEvent()
 			//--> слухи
 			AddSimpleRumour(LinkRandPhrase("Вы знаете, губернатор " + GetFullName(npchar) + " очень недоволен капитаном " + GetMainCharacterNameDat() + ". Представляете, тот не успел выполнить его поручение!", 
 				"Губернатор " + GetFullName(npchar) + " несколько раздражён тем, что некий капитан " + GetFullName(pchar) + " взялся за дело, но не успел выполнить его в срок. Нехорошо...", 
-				"Я слышал, что губернатор " + GetFullName(npchar) + " очень недоволен вами, капитан " + GetFullName(pchar) + ", так как вы не успели выполнить его задание в установленный срок."), sti(npchar.nation), 5, 1);
+				"Я слышал, что губернатор " + GetFullName(npchar) + " очень недоволен вами, капитан " + GetFullName(pchar) + ", так как вы не успели выполнить его задание в установленный срок."), int(npchar.nation), 5, 1);
 			//<-- слухи
 			ChangeCharacterComplexReputation(pchar,"nobility", -4);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -1);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), -1);
 			DeleteAttribute(pchar, "GenQuest." + QuestName);
 			DeleteAttribute(pchar, "GenQuest.questName");
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; //реплику вертаем
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_common"; //реплику вертаем
 			SaveCurrentNpcQuestDateParam(npchar, "work_date"); //сразу ещё один не даем
 			CloseQuestHeader("MayorsQuestsList");
 		break;
@@ -2887,13 +2887,13 @@ void ProcessDialogEvent()
 			//--> слухи
 			AddSimpleRumour(LinkRandPhrase("Вы знаете, губернатор " + GetFullName(npchar) + " очень недоволен капитаном " + GetMainCharacterNameDat() + ". Представляете, "+ GetSexPhrase("он оказался форменным трусом","она оказалась форменной трусихой") +"!", 
 				"Губернатор " + GetFullName(npchar) + " несколько раздражён тем, что некий капитан " + GetFullName(pchar) + " взял"+ GetSexPhrase("ся","ась") +" за дело, но не сумел"+ GetSexPhrase("","а") +" его выполнить из-за собственной нерешительности. Хи-хи, какие капитаны пошли!", 
-				"Я слышал, что губернатор " + GetFullName(npchar) + " очень недоволен вами, капитан " + GetFullName(pchar) + ". Говорят, вы попросту трус"+ GetSexPhrase("","иха") +"..."), sti(npchar.nation), 5, 1);
+				"Я слышал, что губернатор " + GetFullName(npchar) + " очень недоволен вами, капитан " + GetFullName(pchar) + ". Говорят, вы попросту трус"+ GetSexPhrase("","иха") +"..."), int(npchar.nation), 5, 1);
 			//<-- слухи
 			ChangeCharacterComplexReputation(pchar,"nobility", -6);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), -1);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), -1);
 			DeleteAttribute(pchar, "GenQuest." + QuestName);
 			DeleteAttribute(pchar, "GenQuest.questName");
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; //реплику вертаем
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_common"; //реплику вертаем
 			SaveCurrentNpcQuestDateParam(npchar, "work_date"); //сразу ещё один не даем
 			CloseQuestHeader("MayorsQuestsList");
 			AddQuestRecord("MayorsQuestsList", "21");
@@ -2902,14 +2902,14 @@ void ProcessDialogEvent()
 		break;
 		case "All_Execute":
 			QuestName = pchar.GenQuest.questName;
-			dialog.text = RandPhraseSimple("Прекрасная новость! Ну что же, пора подвести итоги. Ваш гонорар составляет " + FindRussianMoneyString(sti(pchar.GenQuest.(QuestName).Money)) + ". Извольте получить.", 
-				"Великолепно! Так будет лучше для всех... Итак, рад вручить вам положенное вознаграждение - " + FindRussianMoneyString(sti(pchar.GenQuest.(QuestName).Money))  + ". Извольте получить.");
+			dialog.text = RandPhraseSimple("Прекрасная новость! Ну что же, пора подвести итоги. Ваш гонорар составляет " + FindRussianMoneyString(int(pchar.GenQuest.(QuestName).Money)) + ". Извольте получить.",
+				"Великолепно! Так будет лучше для всех... Итак, рад вручить вам положенное вознаграждение - " + FindRussianMoneyString(int(pchar.GenQuest.(QuestName).Money))  + ". Извольте получить.");
 			link.l1 = "Спасибо, " + GetAddress_FormToNPC(NPChar) + ", " + RandPhraseSimple("приятно иметь с вами дело!", "я приятно удивлен"+ GetSexPhrase("","а") +" чёткостью взаиморасчётов.");
 		    link.l1.go = "All_Execute_1";
 			//--> слухи
 			AddSimpleRumour(LinkRandPhrase("Вы знаете, губернатор " + GetFullName(npchar) + " очень хвалит за исполнительность нек"+ GetSexPhrase("оего капитана","ую девушку") +" " + GetMainCharacterNameGen() + ".", 
 				"Губернатор " + GetFullName(npchar) + " превозносит капитана " + GetMainCharacterNameGen() + ", т"+ GetSexPhrase("от","а") +" чётко выполняет все его поручения. Незаменимый человек для губернатора, я вам скажу...", 
-				"Я слышал, что губернатор " + GetFullName(npchar) + " очень доволен вами, капитан " + GetFullName(pchar) + ". Он характеризует вас как аккуратного и исполнительного офицера. Приятно это слышать, капитан..."), sti(npchar.nation), 5, 1);
+				"Я слышал, что губернатор " + GetFullName(npchar) + " очень доволен вами, капитан " + GetFullName(pchar) + ". Он характеризует вас как аккуратного и исполнительного офицера. Приятно это слышать, капитан..."), int(npchar.nation), 5, 1);
 			//<-- слухи
 		break;
 		case "All_Execute_1":
@@ -2917,21 +2917,21 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("Ну, вот и славно. Можете заходить ко мне ещё, возможно, я найду для вас работу.", "Ну что же, прекрасно! Пожалуй, я буду и впредь предлагать вам работу подобного рода.");
 			link.l1 = RandPhraseSimple("Отлично.", "Прекрасно.");
 		    link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.(QuestName).Money));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.(QuestName).Money));
 			CloseQuestHeader("MayorsQuestsList");
 			ChangeCharacterComplexReputation(pchar,"nobility", 4);
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 3);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 3);
 			AddCharacterExpToSkill(PChar, "Leadership", 180);
 			OfficersReaction("good"); // dlc
 			
 			DeleteAttribute(pchar, "GenQuest." + QuestName);
 			DeleteAttribute(pchar, "GenQuest.questName");
-			npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; //реплику вертаем
+			npchar.greeting = NationShortName(int(npchar.nation)) + "_gov_common"; //реплику вертаем
 			SaveCurrentNpcQuestDateParam(npchar, "work_date"); //сразу ещё один не даем
 			// инкремент в базу заданий мэров
 			sTemp = npchar.City;
 			if (!CheckAttribute(pchar, "GenQuest.MayorQuestsList." + sTemp)) pchar.GenQuest.MayorQuestsList.(sTemp) = 0;
-			pchar.GenQuest.MayorQuestsList.(sTemp) = sti(pchar.GenQuest.MayorQuestsList.(sTemp)) + 1;
+			pchar.GenQuest.MayorQuestsList.(sTemp) = int(pchar.GenQuest.MayorQuestsList.(sTemp)) + 1;
 		break;
 //<-- осады homo
 		case "siege_task":
@@ -3089,7 +3089,7 @@ void ProcessDialogEvent()
 			SetQuestHeader("TravlyaKrys");
 			AddQuestRecord("TravlyaKrys", "1");
 			
-			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter", "mercen_8", "man", "man", sti(PChar.rank), PIRATE, -1, true, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter", "mercen_8", "man", "man", int(PChar.rank), PIRATE, -1, true, "pirate"));
 			sld.name = "Даниэль";
 			sld.lastname = "Монбар";
 			FantomMakeSmallSailor(sld, SHIP_LUGGER, "Хейтер", CANNON_TYPE_CANNON_LBS3, 20, 40, 20, 25, 35);
@@ -3233,7 +3233,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_8":
-			AddMoneyToCharacter(PChar, sti(PChar.rank) * 300 + hrand(1000));
+			AddMoneyToCharacter(PChar, int(PChar.rank) * 300 + hrand(1000));
 			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
 			DialogExit();
 		break;
@@ -3242,7 +3242,7 @@ void ProcessDialogEvent()
 			//--> Jason регата
 		case "Regata":
 			// belamour legendary edition -->
-			if(sti(pchar.rank) < 15)
+			if(int(pchar.rank) < 15)
 			{
 				Notification_Level(false, 15);
 				dialog.text = "А-а, замечательно, рад вас видеть, капитан! Я наслышан о ваших талантах, но приходите, когда действительно будете готовы.";
@@ -3261,7 +3261,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "Итак, вы приготовили 50 000 песо - взнос в призовой фонд?";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "Да, конечно. Вот, примите мой взнос.";
 				link.l1.go = "Regata_2";
@@ -3446,7 +3446,7 @@ string GetSpyColony(ref NPChar)
 	for(int n=0; n<MAX_COLONIES; n++)
 	{
 		// Rebbebion, чуть изменил функцию, чтобы условно испанцы не просили пробраться к испанцам, французы к французам и т.д
-		if (colonies[n].nation != "none" && sti(colonies[n].nation) != PIRATE && GetRelation2BaseNation(sti(colonies[n].nation)) == RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != npchar.City && colonies[n].nation != npchar.nation)
+		if (colonies[n].nation != "none" && int(colonies[n].nation) != PIRATE && GetRelation2BaseNation(int(colonies[n].nation)) == RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].id != npchar.City && colonies[n].nation != npchar.nation)
 		{
 			storeArray[howStore] = n;
 			howStore++;
@@ -3459,7 +3459,7 @@ string GetSpyColony(ref NPChar)
 int SelectCureerShipType()
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);
@@ -3472,7 +3472,7 @@ int SelectCureerShipType()
 int SelectPirateShipType()
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 5;
@@ -3491,7 +3491,7 @@ int SelectCustomPatrolShipType(int iFlagType)
 	}
 	
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);
@@ -3504,7 +3504,7 @@ int SelectCustomPatrolShipType(int iFlagType)
 int SelectArsenalShipType(int iFlagType)
 {
 	int iClass = 6;
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	
 	if(iRank < 6) iClass = 6;
 	if(iRank >= 6 && iRank < 12) iClass = 6 - rand(1);

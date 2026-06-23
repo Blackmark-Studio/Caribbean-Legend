@@ -1503,3 +1503,5 @@ itmname_blade_34 {Das Schwert des Ertrunkenen}
 itmdescr_blade_34 {Dieses Piratenschwert, das ihr an Bord des eingefrorenen Schiffs gefunden habt, ist mit Korallen und Polypen überwuchert. Es ist lang und schwer genug, um aus der dritten Position mühelos kraftvolle Stiche und Hiebe auszuteilen.}
 itmname_greenIdol {Idol aus Grünem Stein}
 itmdescr_greenIdol {Dieses Götzenbild habt ihr im Traum eigenhändig aus Stein geschnitzt. Seine widernatürlichen Formen und grauenvollen Zeichen rufen Ekel hervor und trüben den Verstand. Manchmal scheint es euch, als flüstere es etwas...}
+itmname_nocturlabe {Nocturlabium}
+itmdescr_nocturlabe {Ein raffiniertes Instrument, mit dem sich anhand der Sterne die genaue Zeit bestimmen lässt. Vereinfacht und beschleunigt Seereisen erheblich.}

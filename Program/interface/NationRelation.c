@@ -2,7 +2,7 @@
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q и E
 #include "interface\utils\common_header.c"
 #include "interface\utils\stealth.c"
-ref xi_refCharacter
+ref xi_refCharacter;
 int curNationIdx;
 
 string CurTable, CurRow, CurCol;
@@ -29,7 +29,7 @@ void InitInterface(string iniName)
     /////////////	
     CalculateHunter();
 
-    curNationIdx = sti(chref.nation);
+    curNationIdx = int(chref.nation);
     SetNewNation(0, &curNationIdx);
     XI_RegistryExitKey("IExit_F2");
 	
@@ -53,7 +53,7 @@ void SetTradeLicenseInfo()
 	}
 	else
 	{
-		context.humanDaysLeft = its(daysLeft);
+		context.humanDaysLeft = string(daysLeft);
 	}
 
 	int violationsQty = LICENSE_GetViolations();
@@ -249,8 +249,8 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_SQUADRON":
 			CloseTooltipNew();
-			nChooseRow = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 1);
-			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 3);
+			nChooseRow = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 1));
+			nChooseCol = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 3));
 			nChooseRow++;
 			nChooseCol++;
 			sRow = "tr" + nChooseRow;
@@ -263,11 +263,11 @@ void ShowInfoWindow()
 			    refBaseShip = GetRealShip(iShip);
 				iChar = GameInterface.TABLE_SQUADRON.(sRow).(sCol).charId;
 				refChar = GetCharacter(iChar);
-			    sPicture = "interfaces\le\portraits\512\face_" + refChar.FaceId + ".tga"
+			    sPicture = "interfaces\le\portraits\512\face_" + refChar.FaceId + ".tga";
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText = XI_Convertstring("Captain") + " - " + GetFullName(refChar);
 				sText1 = sText + "\n\n" + GetShipDescr(refBaseShip);
-				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetModifiedBaseShipPower(refChar, sti(refBaseShip.BaseType)));
+				sText3 = XI_ConvertString("ShipPower") + ": " + int(GetRealShipPower(refChar)) + " / " + int(GetModifiedBaseShipPower(refChar, int(refBaseShip.BaseType)));
 			}
 		break; 
 		// sith --->
@@ -454,10 +454,10 @@ void SetNationThreatLevel()
 	float fBarLevel[6]  = {0.0, 8.0, 20.0, 38.0, 64.0, 100.0};
 	float fRealLevel[6] = {0.0, 10.0, 15.0, 20.0, 30.0, 50.0};
 	float fHunterScore[4];
-	fHunterScore[ENGLAND] = stf(pchar.reputation.enghunter);
-	fHunterScore[FRANCE]  = stf(pchar.reputation.frahunter);
-	fHunterScore[SPAIN]   = stf(pchar.reputation.spahunter);
-	fHunterScore[HOLLAND] = stf(pchar.reputation.holhunter);
+	fHunterScore[ENGLAND] = float(pchar.reputation.enghunter);
+	fHunterScore[FRANCE]  = float(pchar.reputation.frahunter);
+	fHunterScore[SPAIN]   = float(pchar.reputation.spahunter);
+	fHunterScore[HOLLAND] = float(pchar.reputation.holhunter);
 	
 	float fNationThreat[4];
 	float fMaxThreat = 0;
@@ -489,7 +489,7 @@ void SetNationThreatLevel()
 	
 	int x1, y1, x2, y2;
 	GetNodePosition("BAR_THREAT", &x1, &y1, &x2, &y2);
-	int x = x1 + makeint((x2 - x1) * stf(GameInterface.StatusLine.BAR_THREAT.Value) / stf(GameInterface.StatusLine.BAR_THREAT.Max));
+	int x = x1 + int((x2 - x1) * float(GameInterface.StatusLine.BAR_THREAT.Value) / float(GameInterface.StatusLine.BAR_THREAT.Max));
 	int y = y1;
 	GetNodePosition("POINTER_THREAT", &x1, &y1, &x2, &y2);
 	int width = x2 - x1;
@@ -540,8 +540,8 @@ void SetNationThreatLevel()
 			if(iCurLevel == 1)
 				left = minX;
 			else
-				left = minX + makeint((maxX - minX) * fBarLevel[iCurLevel - 1] * 0.01);
-			right = minX + makeint((maxX - minX) * fBarLevel[iCurLevel] * 0.01);
+				left = minX + int((maxX - minX) * fBarLevel[iCurLevel - 1] * 0.01);
+			right = minX + int((maxX - minX) * fBarLevel[iCurLevel] * 0.01);
 		}
 		if(n > 0)
 		{
@@ -552,9 +552,9 @@ void SetNationThreatLevel()
 					continue;
 				j++;
 				sNode = Nations[i].name + "_THREAT_FLAG";
-				x = left + makeint((right - left) * j / (n+1));
+				x = left + int((right - left) * j / (n+1));
 				GetNodePosition(sNode, &xt1, &yt1, &xt2, &yt2);
-				x1 = x - makeint((xt2 - xt1)/2.0);
+				x1 = x - int((xt2 - xt1)/2.0);
 				x2 = x1 + (xt2 - xt1);
 				y2 = y1 + (yt2 - yt1);
 				SetNodePosition(sNode, x1, y1, x2, y2);
@@ -583,7 +583,7 @@ void SetPiratesThreatLevel()
 	int xt1, yt1, xt2, yt2;
 	GetNodePosition("PIRATESRISKSPIC", &xt1, &yt1, &xt2, &yt2);
 	y2 = y1 + (yt2 - yt1);
-	x1 += makeint(x * width / 100.0) - makeint((xt2 - xt1)/2.0);
+	x1 += int(x * width / 100.0) - int((xt2 - xt1)/2.0);
 	x2 = x1 + (xt2 - xt1);
 	SetNodePosition("PIRATESRISKSPIC", x1, y1, x2, y2);
     if (iThreat == 0) SetNodeUsing("PIRATESRISKSPIC", false);
@@ -603,7 +603,7 @@ void SetSquadronTable()
 		if(iChar != -1)
 		{
 			rChar = GetCharacter(iChar);
-			iShipType = sti(rChar.ship.type);
+			iShipType = int(rChar.ship.type);
 			if(iShipType != SHIP_NOTUSED)
 			{
 				n++;	// количество кораблей
@@ -671,7 +671,7 @@ void SetSquadronTable()
 	float fBarLevel[6]  = {0.0, 0.08, 0.2, 0.38, 0.64, 1.0};
 	float fRealLevel[6] = {0.0, 200.0, 325.0, 475.0, 675.0, 925.0};
 
-	float fBarPower = func_fmin(925.0, stf(PChar.Squadron.ModPower));
+	float fBarPower = func_fmin(925.0, float(PChar.Squadron.ModPower));
 	for(int iLevel = 1; iLevel <= 5; iLevel++)
 	{
 		if(fBarPower > fRealLevel[iLevel - 1] && fBarPower <= fRealLevel[iLevel])
@@ -686,7 +686,7 @@ void SetSquadronTable()
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "BAR_POWER", 0);
 
 	GetNodePosition("BAR_POWER", &x1, &y1, &x2, &y2);
-	int x = x1 + makeint((x2 - x1) * fBarPower / stf(GameInterface.StatusLine.BAR_POWER.Max));
+	int x = x1 + int((x2 - x1) * fBarPower / float(GameInterface.StatusLine.BAR_POWER.Max));
 	int y = y1;
 	
 	GetNodePosition("POINTER_POWER", &x1, &y1, &x2, &y2);
@@ -706,8 +706,8 @@ void CalculateHunter()
     SetFormatedText("Eng_rep", GetNationReputation(pchar, ENGLAND));
     SetFormatedText("Spa_rep", GetNationReputation(pchar, SPAIN));
     SetFormatedText("Hol_rep", GetNationReputation(pchar, HOLLAND));
-    SetFormatedText("Ind_rep", GetFactionReputationName(sti(pchar.questTemp.Indian.relation))); // индейцы
-    SetFormatedText("Smg_rep", GetFactionReputationName(sti(pchar.questTemp.Contraband.relation))); // контрабандисты
+    SetFormatedText("Ind_rep", GetFactionReputationName(int(pchar.questTemp.Indian.relation))); // индейцы
+    SetFormatedText("Smg_rep", GetFactionReputationName(int(pchar.questTemp.Contraband.relation))); // контрабандисты
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"Fra_rep", 5 );
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"Eng_rep", 5 );
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"Spa_rep", 5 );
@@ -717,31 +717,31 @@ void CalculateHunter()
 
 	GameInterface.StatusLine.BAR_FRA.Max   = 100;
 	GameInterface.StatusLine.BAR_FRA.Min   = -100;
-	GameInterface.StatusLine.BAR_FRA.Value = -sti(pchar.reputation.frahunter);
+	GameInterface.StatusLine.BAR_FRA.Value = -int(pchar.reputation.frahunter);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_FRA", 0);
 	
 	GameInterface.StatusLine.BAR_ENG.Max   = 100;
 	GameInterface.StatusLine.BAR_ENG.Min   = -100;
-	GameInterface.StatusLine.BAR_ENG.Value = -sti(pchar.reputation.enghunter);
+	GameInterface.StatusLine.BAR_ENG.Value = -int(pchar.reputation.enghunter);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_ENG", 0);
 
 	GameInterface.StatusLine.BAR_SPA.Max   = 100;
 	GameInterface.StatusLine.BAR_SPA.Min   = -100;
-	GameInterface.StatusLine.BAR_SPA.Value = -sti(pchar.reputation.spahunter);
+	GameInterface.StatusLine.BAR_SPA.Value = -int(pchar.reputation.spahunter);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_SPA", 0);
 
 	GameInterface.StatusLine.BAR_HOL.Max   = 100;
 	GameInterface.StatusLine.BAR_HOL.Min   = -100;
-	GameInterface.StatusLine.BAR_HOL.Value = -sti(pchar.reputation.holhunter);
+	GameInterface.StatusLine.BAR_HOL.Value = -int(pchar.reputation.holhunter);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_HOL", 0);
 	
 	GameInterface.StatusLine.BAR_IND.Max   = 100;
 	GameInterface.StatusLine.BAR_IND.Min   = 0;
-	GameInterface.StatusLine.BAR_IND.Value = sti(pchar.questTemp.Indian.relation);
+	GameInterface.StatusLine.BAR_IND.Value = int(pchar.questTemp.Indian.relation);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_IND", 0);
 
 	GameInterface.StatusLine.BAR_SMG.Max   = 100;
 	GameInterface.StatusLine.BAR_SMG.Min   = 0;
-	GameInterface.StatusLine.BAR_SMG.Value = sti(pchar.questTemp.Contraband.relation);
+	GameInterface.StatusLine.BAR_SMG.Value = int(pchar.questTemp.Contraband.relation);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_SMG", 0);
 }

@@ -23,18 +23,14 @@ void InitCharacterEvents()
 	chrWaitReloadIsNoLink = false;
 }
 
-bool AddCharacterLocatorGroup(aref chr, string group)
+bool AddCharacterLocatorGroup(ref chr, string group)
 {
-	bool res;
-	res = SendMessage(chr, "ls", MSG_CHARACTER_ADD_DETECTOR, group);
-	return res;
+	return bool(SendMessage(chr, "ls", MSG_CHARACTER_ADD_DETECTOR, group));
 }
 
-bool DelCharacterLocatorGroup(aref chr, string group)
+bool DelCharacterLocatorGroup(ref chr, string group)
 {
-	bool res;
-	res = SendMessage(chr, "ls", MSG_CHARACTER_DEL_DETECTOR, group);
-	return res;
+	return bool(SendMessage(chr, "ls", MSG_CHARACTER_DEL_DETECTOR, group));
 }
 
 
@@ -63,7 +59,7 @@ void chrCharacterEntryToLocator()
 					ILogAndActions.ActiveActions.Reload.Text = XI_ConvertString("for_quick_action_Reload");
 			}
 			chrWaitReloadIsNoLink = false;
-			if(sti(chr.index) != GetMainCharacterIndex()){ break; }
+			if(int(chr.index) != GetMainCharacterIndex()){ break; }
 			chrWaitReloadLocator = locator;
 			chrWaitLocationRef = loc;
 			makearef(chrWaitReloadRef, loc.reload);
@@ -100,15 +96,15 @@ void chrCharacterEntryToLocator()
 	case "camdetector":
         // LDH 18Feb17 - no camera panning out when character is at a door
         //if ( ! CAMERA_SWING_AT_DOORS) break; 
-		// if(sti(InterfaceStates.CAMERASWING) == 0) break; // belamour вынес в меню
+		// if(int(InterfaceStates.CAMERASWING) == 0) break; // belamour вынес в меню
 		// if( !chrCheckCamLocatorSkip(loc,locator) )
 		// {
 			// locAttr = "locators.camera." + locator;
 			// if(CheckAttribute(loc, locAttr) != 0)
 			// {
-				// x = MakeFloat(loc.(locAttr).x);
-				// y = MakeFloat(loc.(locAttr).y);
-				// z = MakeFloat(loc.(locAttr).z);
+				// x = float(loc.(locAttr).x);
+				// y = float(loc.(locAttr).y);
+				// z = float(loc.(locAttr).z);
 				// locCameraToPos(x, y, z, false);
 			// }
 		// }
@@ -134,16 +130,16 @@ void chrCharacterEntryToLocator()
 			bMainCharacterInFire = true;
 			aref locator_group;
 			makearef(locator_group, loc.locators.teleport.(locator));
-			CreateParticleSystem("shipfire",stf(locator_group.x),stf(locator_group.y),stf(locator_group.z),0,0,0,0);
-			CreateParticleSystem("shipfire",stf(locator_group.x)-1.4,stf(locator_group.y),stf(locator_group.z)-1.4,0,0,0,0);
-			CreateParticleSystem("shipfire",stf(locator_group.x)+1.4,stf(locator_group.y),stf(locator_group.z)-1.4,0,0,0,0);
-			CreateParticleSystem("shipfire",stf(locator_group.x)-1.4,stf(locator_group.y),stf(locator_group.z)+1.4,0,0,0,0);
-			CreateParticleSystem("shipfire",stf(locator_group.x)+1.4,stf(locator_group.y),stf(locator_group.z)+1.4,0,0,0,0);
-			loc.gotoFire = SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "fortfire", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, stf(locator_group.x), stf(locator_group.y), stf(locator_group.z));
-			float hp    = stf(chr.chr_ai.hp);
-			chr.chr_ai.hp = sti(chr.chr_ai.hp) - (15+MOD_SKILL_ENEMY_RATE);
+			CreateParticleSystem("shipfire",float(locator_group.x),float(locator_group.y),float(locator_group.z),0,0,0,0);
+			CreateParticleSystem("shipfire",float(locator_group.x)-1.4,float(locator_group.y),float(locator_group.z)-1.4,0,0,0,0);
+			CreateParticleSystem("shipfire",float(locator_group.x)+1.4,float(locator_group.y),float(locator_group.z)-1.4,0,0,0,0);
+			CreateParticleSystem("shipfire",float(locator_group.x)-1.4,float(locator_group.y),float(locator_group.z)+1.4,0,0,0,0);
+			CreateParticleSystem("shipfire",float(locator_group.x)+1.4,float(locator_group.y),float(locator_group.z)+1.4,0,0,0,0);
+			loc.gotoFire = SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "fortfire", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, float(locator_group.x), float(locator_group.y), float(locator_group.z));
+			float hp    = float(chr.chr_ai.hp);
+			chr.chr_ai.hp = int(chr.chr_ai.hp) - (15+MOD_SKILL_ENEMY_RATE);
 			LAi_CheckKillCharacter(chr);
-			if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), MakeFloat(MakeInt(hp)), MakeFloat(MakeInt(chr.chr_ai.hp_max)));
+			if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), float(int(hp)), float(int(chr.chr_ai.hp_max)));
 		}
 		CheckTeleport();
 		break;
@@ -160,7 +156,7 @@ void chrCharacterEntryToLocator()
 	}
 }
 
-bool chrCheckReloadLocatorSkip(aref loc,string locator)
+bool chrCheckReloadLocatorSkip(ref loc,string locator)
 {
 	aref rl,at;
 	int n,num;
@@ -177,7 +173,7 @@ bool chrCheckReloadLocatorSkip(aref loc,string locator)
 	return true;
 }
 
-bool chrCheckCamLocatorSkip(aref loc,string locator)
+bool chrCheckCamLocatorSkip(ref loc,string locator)
 {
 	aref rl,at;
 	int n,num;
@@ -215,10 +211,10 @@ void chrCharacterInLocator()
 	if (bMainCharacterInFire)
 	{
 		if (LAi_IsDead(chr) && LAi_IsImmortal(chr)) return;
-		float hp    = stf(chr.chr_ai.hp);		
-		chr.chr_ai.hp = sti(chr.chr_ai.hp) - (15+MOD_SKILL_ENEMY_RATE);
+		float hp    = float(chr.chr_ai.hp);
+		chr.chr_ai.hp = int(chr.chr_ai.hp) - (15+MOD_SKILL_ENEMY_RATE);
 		LAi_CheckKillCharacter(chr);
-		SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), MakeFloat(MakeInt(hp)), MakeFloat(MakeInt(chr.chr_ai.hp_max)));
+		SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), float(int(hp)), float(int(chr.chr_ai.hp_max)));
 		return;		
 	}
 	if(chr != GetMainCharacter()) return;
@@ -236,7 +232,7 @@ void chrCharacterInLocator()
 				if( !chrCheckReloadLocatorSkip(loc,locator) )
 				{
 					chrWaitReloadIsNoLink = false;
-					if(sti(chr.index) != GetMainCharacterIndex()){ break; }
+					if(int(chr.index) != GetMainCharacterIndex()){ break; }
 					chrWaitReloadLocator = locator;
 					chrWaitLocationRef = loc;
 					makearef(chrWaitReloadRef, loc.reload);
@@ -304,7 +300,7 @@ void chrCharacterExitFromLocator()
 		if (CheckAttribute(loc, "gotoFire"))
 		{
 			DeleteParticles();
-			StopSound(sti(loc.gotoFire), 0);
+			StopSound(int(loc.gotoFire), 0);
 			ReleaseSound(0);
 			bMainCharacterInFire = false;
 		}
@@ -327,7 +323,7 @@ void chrCharacterKeys()
 	string controlName = GetEventData();
 	if(controlName != "ChrAction") return;
 	//Skip if interface active
-	if(sti(InterfaceStates.Launched)==true) return;
+	if(int(InterfaceStates.Launched)==true) return;
 	//Skip is disable reload
 	bool noReload = false;
 	if(chrIsNowEnableReload() != true) noReload = true;
@@ -367,7 +363,7 @@ void chrCharacterKeys()
 }
 
 // Стори-фреймовский блок проникновения/причаливания
-bool CheckStealthOnLoad(aref chrWaitReloadRef, string chrWaitReloadLocator)
+bool CheckStealthOnLoad(ref chrWaitReloadRef, string chrWaitReloadLocator)
 {
 	int num = GetAttributesNum(chrWaitReloadRef);
 	aref arLocator;
@@ -493,7 +489,7 @@ bool CheckDolly(ref location, string locator)
 {
 	if (CheckAttribute(location, "dolly"))
 	{
-		bool bOk = (IsCharacterInLocator(pchar, "item", "dolly1")) || (IsCharacterInLocator(pchar, "item", "dolly2")) || (IsCharacterInLocator(pchar, "item", "dolly3"))
+		bool bOk = (IsCharacterInLocator(pchar, "item", "dolly1")) || (IsCharacterInLocator(pchar, "item", "dolly2")) || (IsCharacterInLocator(pchar, "item", "dolly3"));
 		if (CheckAttribute(location, "canteleport") && bOk && !CheckAttribute(pchar, "questTemp.LSC.MaryBye"))
 		{
 			Log_SetActiveAction("Teleport");

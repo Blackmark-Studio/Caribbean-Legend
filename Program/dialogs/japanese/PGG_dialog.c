@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			Dialog.Text = PGG_Stories[iRnd]+PCharRepPhrase(PGG_Meet_GoodRep[iAns],PGG_Meet_BadRep[iAns]);
 		}		 
 //		link.l1 = "私の名前は "+GetFullName(pchar)+".";
-		link.l1 = PCharRepPhrase(RandSwear()+RandPhraseSimple("皆に酒だ！俺が船長だ "+GetFullName(pchar)+".","俺が『』の船長だ"+PChar.Ship.Name+" そして百人二百人の本物の悪魔どもだぜ！へっへっ！俺の名は "+GetFullName(pchar)+"."),RandPhraseSimple("自己紹介させていただきます、旦那方。私は船長 "+GetFullName(pchar)+".","まだご挨拶していませんね。俺は『の船長だ"+PChar.Ship.Name+" ～の旗の下で "+NationNameGenitive(sti(PChar.nation))+"。私の名前は "+GetFullName(pchar)+"."));
+		link.l1 = PCharRepPhrase(RandSwear()+RandPhraseSimple("皆に酒だ！俺が船長だ "+GetFullName(pchar)+".","俺が『』の船長だ"+PChar.Ship.Name+" そして百人二百人の本物の悪魔どもだぜ！へっへっ！俺の名は "+GetFullName(pchar)+"."),RandPhraseSimple("自己紹介させていただきます、旦那方。私は船長 "+GetFullName(pchar)+".","まだご挨拶していませんね。俺は『の船長だ"+PChar.Ship.Name+" ～の旗の下で "+NationNameGenitive(int(PChar.nation))+"。私の名前は "+GetFullName(pchar)+"."));
 		link.l1.go = "Meeting";
 		break;
 
@@ -94,15 +94,15 @@ void ProcessDialogEvent()
 		Dialog.Text = "ここにいるみんなは俺のことを知ってるぜ！俺は "+GetFullName(NPChar)+"。はじめまして！ご用件は何でしょうか？";
 		link.l1 = RandPhraseSimple("お前に用があるんだ！","お前と話がしたいんだ…");
 		link.l1.go = "quest";
-		if (sti(pchar.Ship.Type) != SHIP_NOTUSED && sti(NPChar.Ship.Type) != SHIP_NOTUSED)
+		if (int(pchar.Ship.Type) != SHIP_NOTUSED && int(NPChar.Ship.Type) != SHIP_NOTUSED)
 		{
-			sld = GetRealShip(sti(NPChar.Ship.Type));
+			sld = GetRealShip(int(NPChar.Ship.Type));
 			
 			Dialog.Text = "ここにいる皆は俺のことを知ってるぜ！俺は "+GetFullName(NPChar)+"、船長 "+xiStr(sld.BaseName+"Acc")+" "+NPChar.Ship.Name+".";
 			link.l2 = "俺と組まないか？船が二隻あれば一隻より心強いぜ。二人でいい商売ができるだろう。";
 			link.l2.go = "companion";
 		}
-		if (sti(NPChar.Ship.Type) == SHIP_NOTUSED)
+		if (int(NPChar.Ship.Type) == SHIP_NOTUSED)
 		{
 			link.l3 = RandPhraseSimple("俺の船で士官として仕えたいか？","お前なら俺の船の士官としてやっていけると思うぜ。どうだ、やってみるか？");
 			link.l3.go = "officer";
@@ -157,12 +157,12 @@ void ProcessDialogEvent()
 				iAns = rand(MAX_PGG_MEET_REP - 1);
 				Dialog.Text = PGG_Stories[iRnd]+PCharRepPhrase(PGG_Meet_GoodRep[iAns]+" 「何か新しい知らせはあるか？」",PGG_Meet_BadRep[iAns]+" この諸島で何か噂はあるか？");
 			}		
-			if (sti(pchar.Ship.Type) != SHIP_NOTUSED && sti(NPChar.Ship.Type) != SHIP_NOTUSED)
+			if (int(pchar.Ship.Type) != SHIP_NOTUSED && int(NPChar.Ship.Type) != SHIP_NOTUSED)
 			{
 				link.l2 = RandPhraseSimple("俺と組まないか？船が二隻あれば一隻よりずっといい。二人でうまくやれば、いい商売ができるぜ。","あんた、なかなか経験豊富な船長に見えるな。俺の旗の下で一緒に航海しないか？");
 				link.l2.go = "companion";
 			}
-			if (sti(NPChar.Ship.Type) == SHIP_NOTUSED)
+			if (int(NPChar.Ship.Type) == SHIP_NOTUSED)
 			{
 				Dialog.Text = RandPhraseSimple("ああ、なんてこった……俺の船が沈んじまった！","おや、誰が来たかと思えば！？どうしてここに来たんだ？ところで、俺の船を失くしちまったんだよ……");
 				link.l3 = RandPhraseSimple("残念だな。次はもっと運があるかもしれねえぜ。","そうかい……さて、そろそろおいとまするぜ。じゃあな。");
@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 		}
 		if (!CheckAttribute(NPChar, "Quest.Officer.Price"))
 		{
-			NPChar.Quest.Officer.Price = 10000 + sti(NPChar.rank)*500*MOD_SKILL_ENEMY_RATE - MakeInt(GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE)*1000);
+			NPChar.Quest.Officer.Price = 10000 + int(NPChar.rank)*500*MOD_SKILL_ENEMY_RATE - int(GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE)*1000);
 		}
 		Dialog.Text = NPCharRepPhrase(NPChar,RandSwear()+RandPhraseSimple("まさに俺が求めていたものだぜ！俺たちの剣が敵の血を味わう時が来た！だが、一つ問題がある――まだ俺には必要なものがあるんだ "+NPChar.Quest.Officer.Price+" 借金を返すためのペソだ。","お前さん、まるで本物の古参水夫みたいだな。もし金を払う気があるなら "+NPChar.Quest.Officer.Price+" ペソがあれば、俺たちはうまくやっていけそうだな。"),LinkRandPhrase("あなたのご提案は実に光栄です。かなり控えめな報酬でお引き受けしましょう。 "+NPChar.Quest.Officer.Price+" ペソ。","ふむ……お前は経験豊富な船乗りに見えるな。もし金を払う気があるなら、お前の申し出を受けてもいいかもしれねえ。 "+NPChar.Quest.Officer.Price+" ペソ。","俺たちはうまくやっていけると思うぜ、船長。だが\n "+NPChar.Quest.Officer.Price+" ペソで、取引成立だ。"));
 
@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "officer_hired":
-		if (sti(pchar.money) < sti(NPChar.Quest.Officer.Price))
+		if (int(pchar.money) < int(NPChar.Quest.Officer.Price))
 		{
 			Dialog.Text = "お前さん、金に困ってるみたいだな、船長。";
 			link.l1 = "「ああ…確かに。」";
@@ -249,9 +249,9 @@ void ProcessDialogEvent()
 			break;
 		}
 		pchar.questTemp.HiringOfficerIDX = NPChar.index;
-		AddMoneyToCharacter(pchar, -(makeint(NPChar.Quest.Officer.Price)));
+		AddMoneyToCharacter(pchar, -(int(NPChar.Quest.Officer.Price)));
 		AddDialogExitQuestFunction("PGG_BecomeHiredOfficer");
-		NPChar.loyality = MakeInt(PGG_ChangeRelation2MainCharacter(NPChar, 0)*0.3)
+		NPChar.loyality = int(PGG_ChangeRelation2MainCharacter(NPChar, 0)*0.3)
 
 		DeleteAttribute(NPChar, "Quest.Officer");
 		DeleteAttribute(NPChar, "PGGAi.Task");
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		//есть ли место для компаньона.
-		if (SetCompanionIndex(pchar, -1, sti(NPChar.index)) != -1)
+		if (SetCompanionIndex(pchar, -1, int(NPChar.index)) != -1)
 		{
 			Dialog.Text = NPCharRepPhrase(NPChar,RandSwear()+RandPhraseSimple("お前が気に入ったぜ！取引成立だ！もう俺たちの懐でペソがチャリンチャリン鳴ってる音が聞こえてくるぜ！","「お前は賢い」 "+GetSexPhrase("野郎","娘")+"…俺たち、きっとうまくやっていけるはずだぜ！"),LinkRandPhrase("あんたの提案、気に入ったぜ。賛成だ。","それは面白いな。知ってるか、一緒ならもっと大きなことができると思うぜ！","面白そうだな。取引成立だぜ！"));
 			link.l1 = RandPhraseSimple("いいぞ！海で待ってるからな！","取引成立だ！俺たちは最高のクルーになるぜ。");
@@ -350,7 +350,7 @@ void ProcessDialogEvent()
 		Dialog.Text = RandSwear()+" "+NPCharRepPhrase(NPChar,RandPhraseSimple("報酬か？いいだろう！金額は "+NPChar.Quest.Companion.Price+" ペソで十分だぜ。","まあ、もしかしたら、もしあんたが俺の船員たちに支払いをする気があるならな "+NPChar.Quest.Companion.Price+" ペソを払えば、あいつらを引き留められるかもしれねえ。"),RandPhraseSimple("よし！少しばかりの報酬でここに残ってやるぜ "+NPChar.Quest.Companion.Price+" ペソだ！",NPChar.Quest.Companion.Price+" しばらくの間、俺と俺の船員たちを満足させてくれるだろう。"));
 		link.l1 = PCharRepPhrase(RandPhraseSimple("俺を笑ってんのか、どうなんだ！？さっさと消えろ！","はっ！俺はこの金をもっと役に立つことに使いたいぜ！"),RandPhraseSimple("おいおい、俺はそんなに金持ちじゃねえぞ！","さらばだ。これだけ払うつもりだ。"));
 		link.l1.go = "Exit_Companion_Leave";
-		if (sti(pchar.money) >= sti(NPChar.Quest.Companion.Price))
+		if (int(pchar.money) >= int(NPChar.Quest.Companion.Price))
 		{
 			link.l2 = PCharRepPhrase(RandPhraseSimple("素晴らしい！これが君の報酬だ！","俺は最初から全部金のためだって疑わなかったぜ！"),RandPhraseSimple("素晴らしい！君が残ってくれて嬉しいよ。","約束したものだ。"));
 			link.l2.go = "Exit_Companion_Stay";
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
         sTmp = LAi_FindNearestFreeLocator("reload", locx, locy, locz);
 		LAi_ActorGoToLocation(NPChar, "reload", sTmp, "none", "", "", "", 5.0);
 
-		AddMoneyToCharacter(pchar, -(makeint(NPChar.Quest.Companion.Price)));
+		AddMoneyToCharacter(pchar, -(int(NPChar.Quest.Companion.Price)));
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit();
 		break;
@@ -422,12 +422,12 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 		if (!PGG_IsQuestAvaible()) break; //квест нельзя брать.
 		//if (!CheckAttribute(NPChar, "PGGAi.ActiveQuest") && !bBettaTestMode) break; //для релиза возможно надо будет закрыть. если закоментить, то ГГ сам может предложить дело
-		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest.QstNumber")) iRnd = sti(NPChar.PGGAi.ActiveQuest.QstNumber); //тип квеста, который хочет от нас ПГГ
+		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest.QstNumber")) iRnd = int(NPChar.PGGAi.ActiveQuest.QstNumber); //тип квеста, который хочет от нас ПГГ
 		if (iRnd == -1 && !CheckAttribute(pchar, "GenQuest.PGG_Quest")) iRnd = rand(1); // может и не быть
 		switch (iRnd)
 		{
 		case 0:
-			if (sti(NPChar.Ship.Type) != SHIP_NOTUSED && sti(PChar.Ship.Type) != SHIP_NOTUSED && GetCharacterShipClass(PChar) <= 4 && GetCompanionQuantity(PChar) < COMPANION_MAX)
+			if (int(NPChar.Ship.Type) != SHIP_NOTUSED && int(PChar.Ship.Type) != SHIP_NOTUSED && GetCharacterShipClass(PChar) <= 4 && GetCompanionQuantity(PChar) < COMPANION_MAX)
 			{
 				//квест от ПГГ
 				/*if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
@@ -462,9 +462,9 @@ void ProcessDialogEvent()
 	case "quest_onStay": // ПГГ сам подходит
 		chrDisableReloadToLocation = false;
 		Dialog.Text = "気をつけろ、気をつけろ！おっと！あんたのことは知ってるぜ。あんたは "+GetFullName(PChar)+"。あなたのことはよく耳にしています。";
-		if (!CheckAttribute(NPChar, "meeting") || !sti(NPChar.meeting))
+		if (!CheckAttribute(NPChar, "meeting") || !int(NPChar.meeting))
 		{
-			link.l1 = PCharRepPhrase(RandSwear()+RandPhraseSimple("俺が船長だ "+GetFullName(pchar)+".","俺が『』の船長だ"+PChar.Ship.Name+" それに百人以上の本物の悪党どもだぜ！へっへっへ！俺の名前は "+GetFullName(pchar)+".")+" しかし、お前のことは覚えてねえな。",RandPhraseSimple("ご紹介させていただきます、旦那方。私は船長 "+GetFullName(pchar)+".","まだ自己紹介していなかったな。俺は『の船長だ"+PChar.Ship.Name+" ～の旗の下で "+NationNameGenitive(sti(PChar.nation))+"。私の名前は "+GetFullName(pchar)+".")+" 「だが、お前のことは覚えてねえな。」");
+			link.l1 = PCharRepPhrase(RandSwear()+RandPhraseSimple("俺が船長だ "+GetFullName(pchar)+".","俺が『』の船長だ"+PChar.Ship.Name+" それに百人以上の本物の悪党どもだぜ！へっへっへ！俺の名前は "+GetFullName(pchar)+".")+" しかし、お前のことは覚えてねえな。",RandPhraseSimple("ご紹介させていただきます、旦那方。私は船長 "+GetFullName(pchar)+".","まだ自己紹介していなかったな。俺は『の船長だ"+PChar.Ship.Name+" ～の旗の下で "+NationNameGenitive(int(PChar.nation))+"。私の名前は "+GetFullName(pchar)+".")+" 「だが、お前のことは覚えてねえな。」");
 //			link.l1 = "ふむ……で、お前は誰だ？覚えがねえな。";
 			link.l1.go = "Quest_1_Meeting";
 		}
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 
 	//=========== Первый квест ==========
 	case "Quest_1_Meeting":
-		sld = GetRealShip(sti(NPChar.Ship.Type));
+		sld = GetRealShip(int(NPChar.Ship.Type));
 		Dialog.Text = "私は "+GetFullName(NPChar)+"、船長 "+xiStr(sld.BaseName+"Acc")+" "+NPChar.Ship.Name+NPCharRepPhrase(NPChar,"。スペイン領西インド全域で最も悪名高いコルセアだ。","。ただの水夫だ。");
 		link.l1 = "ああ、これでお前のことは忘れないぜ。";
 		link.l1.go = "Quest_1_Work";
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 		{
 			PChar.GenQuest.PGG_Quest.Island = GetRandIslandId();
 			PChar.GenQuest.PGG_Quest.Island.Shore = GetIslandRandomShoreId(PChar.GenQuest.PGG_Quest.Island);
-			if (sti(PChar.GenQuest.PGG_Quest.Template)) 
+			if (int(PChar.GenQuest.PGG_Quest.Template))
 			{
 				if (!isLocationFreeForQuests(PChar.GenQuest.PGG_Quest.Island)) PChar.GenQuest.PGG_Quest.Island.Shore = "";
 			}
@@ -524,7 +524,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			PChar.GenQuest.PGG_Quest.Nation = FindEnemyNation2NationWithoutPirates(sti(PChar.Nation));
+			PChar.GenQuest.PGG_Quest.Nation = FindEnemyNation2NationWithoutPirates(int(PChar.Nation));
 			Dialog.Text = "しっ…酒場で商売の話はやめとけ、余計な耳が多すぎる。俺の船『』で待ってるぜ\n"+NPChar.Ship.Name+"。そこで話そう。";
 			link.l1 = "俺には時間がねえし、訪ねるのも好きじゃねえ。";
 		}
@@ -564,7 +564,7 @@ void ProcessDialogEvent()
 		Group_SetAddress("PGGQuest", Islands[GetCharacterCurrentIsland(PChar)].id, "Quest_Ships", "Quest_Ship_1");
 		Group_SetTaskNone("PGGQuest");
 
-		SetTimerConditionParam("PGGQuest1_RemoveShip_Timer", "PGGQuest1_RemoveShip_Timer", 0, 0, 0, MakeInt(GetHour() + 6), false);
+		SetTimerConditionParam("PGGQuest1_RemoveShip_Timer", "PGGQuest1_RemoveShip_Timer", 0, 0, 0, int(GetHour() + 6), false);
 		PChar.Quest.PGGQuest1_RemoveShip_Timer.function = "PGG_Q1RemoveShip";
 
 		NPChar.Ship.Mode = "Pirate";
@@ -573,7 +573,7 @@ void ProcessDialogEvent()
 		NPChar.Nation = GetCityNation(GetCurrentTown());
 		NPChar.AlwaysFriend = true;
 		NPChar.Abordage.Enable = false; //нельзя брать на абордаж
-		SetCharacterRelationBoth(sti(PChar.index), sti(NPChar.index), RELATION_FRIEND);
+		SetCharacterRelationBoth(int(PChar.index), int(NPChar.index), RELATION_FRIEND);
 
 		ReOpenQuestHeader("Gen_PGGQuest1");
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
@@ -638,16 +638,16 @@ void ProcessDialogEvent()
 		break;
 
 	case "Quest_1_Ship_Detail":
-		sTmp = "A caravan belonging to " + NationNameGenitive(sti(PChar.GenQuest.PGG_Quest.Nation)) + ", transporting ";
-		if (sti(PChar.GenQuest.PGG_Quest.Goods) == GOOD_SLAVES)
+		sTmp = "A caravan belonging to " + NationNameGenitive(int(PChar.GenQuest.PGG_Quest.Nation)) + ", transporting ";
+		if (int(PChar.GenQuest.PGG_Quest.Goods) == GOOD_SLAVES)
 		{
 			sTmp += "Slaves";
 			PChar.GenQuest.PGG_Quest.Goods.Text = "Slaves";
 		}
 		else
 		{
-			sTmp += XI_ConvertString(Goods[sti(PChar.GenQuest.PGG_Quest.Goods)].Name);
-			PChar.GenQuest.PGG_Quest.Goods.Text = XI_ConvertString(Goods[sti(PChar.GenQuest.PGG_Quest.Goods)].Name);
+			sTmp += XI_ConvertString(Goods[int(PChar.GenQuest.PGG_Quest.Goods)].Name);
+			PChar.GenQuest.PGG_Quest.Goods.Text = XI_ConvertString(Goods[int(PChar.GenQuest.PGG_Quest.Goods)].Name);
 		}
 
 		if (PChar.GenQuest.PGG_Quest.Island.Town == "" || PChar.GenQuest.PGG_Quest.Island.Town == "Caiman" ||
@@ -660,7 +660,7 @@ void ProcessDialogEvent()
 			sLoc = XI_ConvertString("Colony" + PChar.GenQuest.PGG_Quest.Island.Town + "Gen");
 		}
 		
-		if (sti(PChar.GenQuest.PGG_Quest.Template)) 
+		if (int(PChar.GenQuest.PGG_Quest.Template))
 		{
 			sTmp +=	", stopped not far from " + sLoc + " at the cove of " + GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore) + " to resupply.";
 		}
@@ -676,7 +676,7 @@ void ProcessDialogEvent()
 
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 		{
-			link.l2 = PCharRepPhrase(RandPhraseSimple("それは魅力的な話だが、俺はやっぱり断るぜ。揉め事なんて必要ないんだ "+NationNameAblative(sti(PChar.GenQuest.PGG_Quest.Nation))+".","隊商だと？持ち主がいねえだと！？普通なら千人の兵士が護衛してるはずだろうが！いや、そんなのは駄目だ。 俺は引き上げるぜ。"),RandPhraseSimple("いや、俺は戦争中じゃねえよ "+NationNameAblative(sti(PChar.GenQuest.PGG_Quest.Nation))+"、だから興味はねえ。","俺の答えはノーだ！俺は関係を壊すつもりはねえ "+NationNameAblative(sti(PChar.GenQuest.PGG_Quest.Nation))+"!"));
+			link.l2 = PCharRepPhrase(RandPhraseSimple("それは魅力的な話だが、俺はやっぱり断るぜ。揉め事なんて必要ないんだ "+NationNameAblative(int(PChar.GenQuest.PGG_Quest.Nation))+".","隊商だと？持ち主がいねえだと！？普通なら千人の兵士が護衛してるはずだろうが！いや、そんなのは駄目だ。 俺は引き上げるぜ。"),RandPhraseSimple("いや、俺は戦争中じゃねえよ "+NationNameAblative(int(PChar.GenQuest.PGG_Quest.Nation))+"、だから興味はねえ。","俺の答えはノーだ！俺は関係を壊すつもりはねえ "+NationNameAblative(int(PChar.GenQuest.PGG_Quest.Nation))+"!"));
 			link.l2.go = NPCharRepPhrase(NPChar, "Quest_1_Ship_BadWay", "Quest_1_Ship_Refuse");
 		}
 		else
@@ -684,7 +684,7 @@ void ProcessDialogEvent()
 			Dialog.Text = "それは虐殺の臭いがするぜ！詳細はどうなってるんだ？";
 			link.l1 = sTmp;
 		}
-		if (sti(PChar.GenQuest.PGG_Quest.Template)) 
+		if (int(PChar.GenQuest.PGG_Quest.Template))
 		{
 			AddQuestRecord("Gen_PGGQuest1", "q1_Detail_A");
 		}
@@ -692,8 +692,8 @@ void ProcessDialogEvent()
 		{
 			AddQuestRecord("Gen_PGGQuest1", "q1_Detail_B");
 		}
-		AddQuestUserData("Gen_PGGQuest1", "sNation", NationNameGenitive(sti(PChar.GenQuest.PGG_Quest.Nation)));
-		AddQuestUserData("Gen_PGGQuest1", "sGoods", PChar.GenQuest.PGG_Quest.Goods.Text));
+		AddQuestUserData("Gen_PGGQuest1", "sNation", NationNameGenitive(int(PChar.GenQuest.PGG_Quest.Nation)));
+		AddQuestUserData("Gen_PGGQuest1", "sGoods", PChar.GenQuest.PGG_Quest.Goods.Text);
 		AddQuestUserData("Gen_PGGQuest1", "sColony", sLoc);
 		AddQuestUserData("Gen_PGGQuest1", "sShore", GetLocationNameByID(PChar.GenQuest.PGG_Quest.Island.Shore));
 		break;
@@ -701,8 +701,8 @@ void ProcessDialogEvent()
 	case "Quest_1_Ship_Detail_1":
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 		{
-//			Dialog.Text = "俺たちにはこれしかない "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+" 奴らを迎え撃つために。";
-			Dialog.Text = PCharRepPhrase(RandPhraseSimple("In "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+" 隊商があまりにも遠くへ行ってしまって、俺たちは追いつけなくなるぞ。","「ちょうど」 "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+" 全員ぶっ殺して戦利品を手に入れるまで、あと何日だ！"),RandPhraseSimple("「俺たちには」 "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+" 作戦全体に使える日数だ。","急いだほうがいいな "+PChar.Name+"。俺たちにはまだ "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+"."));
+//			Dialog.Text = "俺たちにはこれしかない "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+" 奴らを迎え撃つために。";
+			Dialog.Text = PCharRepPhrase(RandPhraseSimple("In "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+" 隊商があまりにも遠くへ行ってしまって、俺たちは追いつけなくなるぞ。","「ちょうど」 "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+" 全員ぶっ殺して戦利品を手に入れるまで、あと何日だ！"),RandPhraseSimple("「俺たちには」 "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+" 作戦全体に使える日数だ。","急いだほうがいいな "+PChar.Name+"。俺たちにはまだ "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+"."));
 			link.l1 = RandPhraseSimple("間に合わせてやるぜ！今日は出航しよう。","それじゃあ、時間を無駄にするな。今日出航するように命令を出せ。");
 			link.l1.go = "Exit_Quest_1_Accept";
 			AddQuestRecord("Gen_PGGQuest1", "q1_Accept");
@@ -710,11 +710,11 @@ void ProcessDialogEvent()
 		else
 		{
 			Dialog.Text = "それはとても興味深いですね、どうぞ続けてください。";
-			link.l1 = "「俺たちには」 "+FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days))+" 奴らを迎え撃つために。";
+			link.l1 = "「俺たちには」 "+FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days))+" 奴らを迎え撃つために。";
 			link.l1.go = "Quest_1_Ship_Accept";
 			AddQuestRecord("Gen_PGGQuest1", "q1_Accept_1");
 		}
-		AddQuestUserData("Gen_PGGQuest1", "nDays", FindRussianDaysString(sti(PChar.GenQuest.PGG_Quest.Days)));
+		AddQuestUserData("Gen_PGGQuest1", "nDays", FindRussianDaysString(int(PChar.GenQuest.PGG_Quest.Days)));
 		break;
 
 	case "Quest_1_Ship_Accept":
@@ -724,12 +724,12 @@ void ProcessDialogEvent()
 		break;
 
 	case "Exit_Quest_1_Accept":
-		if (sti(PChar.GenQuest.PGG_Quest.Stage) < 2)
+		if (int(PChar.GenQuest.PGG_Quest.Stage) < 2)
 		{
 			PChar.GenQuest.PGG_Quest.Stage = 2;
 			PGG_Q1RemoveShip("");
 
-			if (sti(PChar.GenQuest.PGG_Quest.Template)) 
+			if (int(PChar.GenQuest.PGG_Quest.Template))
 			{
 				PGG_Q1PlaceShipsNearIsland();
 			}
@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 			PChar.Quest.PGGQuest1_PGGDead.win_condition.l1.Character = PChar.GenQuest.PGG_Quest.PGGid;
 			PChar.Quest.PGGQuest1_PGGDead.function = "PGG_Q1PGGDead";
 
-			SetTimerCondition("PGGQuest1_Time2Late", 0, 0, sti(PChar.GenQuest.PGG_Quest.Days), false);
+			SetTimerCondition("PGGQuest1_Time2Late", 0, 0, int(PChar.GenQuest.PGG_Quest.Days), false);
 			PChar.Quest.PGGQuest1_Time2Late.function = "PGG_Q1Time2Late";
 
 			NPChar.PGGAi.IsPGG = false;
@@ -754,7 +754,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(NPChar, "PGGAi.LockService");
 			DeleteAttribute(NPChar, "AlwaysFriend");
 
-			SetCompanionIndex(PChar, -1, sti(NPChar.index));
+			SetCompanionIndex(PChar, -1, int(NPChar.index));
 			SetCharacterRemovable(NPChar, false);
 			
 			SetBaseShipData(NPChar);
@@ -771,13 +771,13 @@ void ProcessDialogEvent()
 		break;
 
 	case "Quest_1_Ship_Refuse":
-		Dialog.Text = RandSwear()+"お前にはがっかりだぜ、船長。俺が何かに招待すると思ったのか "+RandPhraseSimple("「日曜ミサか？！！」","子供の遊びか！？"));
+		Dialog.Text = RandSwear()+"お前にはがっかりだぜ、船長。俺が何かに招待すると思ったのか "+RandPhraseSimple("「日曜ミサか？！！」","子供の遊びか！？");
 		link.l1 = PCharRepPhrase(RandPhraseSimple("それはお前の勝手だ。決めるのは俺だぜ。","俺はたった数ペソのために縄で吊られるつもりはねえ。"),RandPhraseSimple("私の決定は最終だ、船長。","これ以上話すことはない。"));
 		link.l1.go = "Exit_Quest_1_Refuse";
 		break;
 
 	case "Exit_Quest_1_Refuse":
-		if (sti(PChar.GenQuest.PGG_Quest.Stage) != -1)
+		if (int(PChar.GenQuest.PGG_Quest.Stage) != -1)
 		{
 			PChar.GenQuest.PGG_Quest.Stage = -1;
 			PChar.Quest.PGGQuest1_RemoveShip.win_condition.l1 = "ExitFromLocation";
@@ -795,7 +795,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Quest_1_Ship_BadWay":
-		Dialog.Text = PCharRepPhrase("おい、いいじゃねえか！全部うまくいくさ、誰にもバレやしねえ。全員ぶっ殺してやるぜ。"),RandPhraseSimple("どこへ行くんだ、船長？もしかして役人のところか？","虎の穴に簡単に出られると思って入るのは、かなり愚かなことだ。"));
+		Dialog.Text = PCharRepPhrase("おい、いいじゃねえか！全部うまくいくさ、誰にもバレやしねえ。全員ぶっ殺してやるぜ。", RandPhraseSimple("どこへ行くんだ、船長？もしかして役人のところか？","虎の穴に簡単に出られると思って入るのは、かなり愚かなことだ。"));
 		link.l1 = PCharRepPhrase(RandSwear()+RandPhraseSimple("海の悪魔にキスでもしてこい！俺が船長だ "+GetFullName(PChar)+" お前なんかどうでもいい！俺は行くぜ！","悪魔に誓って、てめえは本当に俺をイライラさせるぜ！"),RandPhraseSimple("お前の提案には興味がねえし、もう話すことは何もねえ。じゃあな。","これ以上話し合うことはないと思う。すまないが、忙しいので行かなくてはならない。"));
 		link.l1.go = "Quest_1_Ship_BadWay_1";
 		break;
@@ -851,7 +851,7 @@ void ProcessDialogEvent()
 
 //		Dialog.Text = "「それで、」 "+GetFullName(PChar)+"、お前と関わったのは間違いだったようだな。これじゃ俺たちの分け前はなしだ。じゃあな！";
 		Dialog.Text = PCharRepPhrase(RandPhraseSimple("くそっ！遅れちまったじゃねえか――全部あの怠け者どものせいだ！これじゃお前と分ける戦利品もねえぞ。 "+GetFullName(PChar)+"「ステイスルを揚げろ！ここから脱出するぞ！」 ","それで、 "+GetFullName(PChar)+"、お前と関わったのは間違いだったと分かったぜ。これじゃあ俺たちの分け前はなしだ。じゃあな！"),RandPhraseSimple("奴らは消えちまった――全部お前の遅れのせいだ！これで俺たちは別々の道を行くぜ、 "+GetFullName(PChar)+".","今さら隊商には追いつけねえよ。お前と関わったのが間違いだったぜ。じゃあな！"))link.l1 = PCharRepPhrase(RandPhraseSimple("そんな隊商なんてくそくらえだ！真珠採りの方がずっといいし、危険もねえからな！","運が味方してるぜ、そして明日はまた新しい日だ！ この海には俺たちに金を奪われるのを待ってる哀れな商人どもが山ほどいるんだ！"),RandPhraseSimple("まったく残念だぜ、あんな見事な作戦が完全な失敗に終わるとはな！さらばだ！","人事を尽くして天命を待つ……さらばだ！"));
-		if (sti(PChar.GenQuest.PGG_Quest.Stage) != -1)
+		if (int(PChar.GenQuest.PGG_Quest.Stage) != -1)
 		{
 			PChar.GenQuest.PGG_Quest.Stage = -1;
 			RemoveCharacterCompanion(pchar, NPChar);
@@ -891,12 +891,12 @@ void ProcessDialogEvent()
 		//не взяли груз...
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 		{
-			PChar.GenQuest.PGG_Quest.FailedPaySum = sti(PChar.GenQuest.PGG_Quest.Days)*10000;
-//			Dialog.Text = "ああ、なんでお前なんかと関わっちまったんだ。全部台無しじゃねえか。だから、今から罰金を払ってもらうぜ "+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+".";
-			Dialog.Text = PCharRepPhrase(RandPhraseSimple("Bloodthirsty "+GetSexPhrase("悪党","汚物")+"「くそっ！すべて海の悪魔の元へ沈んじまったぜ！」"+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+" さっさとペソを置いて、とっとと俺の前から消えろ！","自分をネルソン提督だとでも思ってるのか？戦利品を全部沈めちまいやがって、 "+GetSexPhrase("馬鹿","愚かな女")+"！今すぐ俺によこせ "+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソを持ってさっさと失せろ！"),RandPhraseSimple("ここで戦争を始めるつもりか！それはまったく受け入れられん！だが、まあ、金を払えば水に流してやってもいいぞ "+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソ。","お前のやり方はまったくもって受け入れられねえ！全部台無しにしやがって！今すぐ俺たちの取り分を払え、その額は "+FindRussianMoneyString(sti(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソを持って好きなところへ行け！"));
+			PChar.GenQuest.PGG_Quest.FailedPaySum = int(PChar.GenQuest.PGG_Quest.Days)*10000;
+//			Dialog.Text = "ああ、なんでお前なんかと関わっちまったんだ。全部台無しじゃねえか。だから、今から罰金を払ってもらうぜ "+FindRussianMoneyString(int(PChar.GenQuest.PGG_Quest.FailedPaySum))+".";
+			Dialog.Text = PCharRepPhrase(RandPhraseSimple("Bloodthirsty "+GetSexPhrase("悪党","汚物")+"「くそっ！すべて海の悪魔の元へ沈んじまったぜ！」"+FindRussianMoneyString(int(PChar.GenQuest.PGG_Quest.FailedPaySum))+" さっさとペソを置いて、とっとと俺の前から消えろ！","自分をネルソン提督だとでも思ってるのか？戦利品を全部沈めちまいやがって、 "+GetSexPhrase("馬鹿","愚かな女")+"！今すぐ俺によこせ "+FindRussianMoneyString(int(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソを持ってさっさと失せろ！"),RandPhraseSimple("ここで戦争を始めるつもりか！それはまったく受け入れられん！だが、まあ、金を払えば水に流してやってもいいぞ "+FindRussianMoneyString(int(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソ。","お前のやり方はまったくもって受け入れられねえ！全部台無しにしやがって！今すぐ俺たちの取り分を払え、その額は "+FindRussianMoneyString(int(PChar.GenQuest.PGG_Quest.FailedPaySum))+" ペソを持って好きなところへ行け！"));
 			link.l1 = PCharRepPhrase(RandPhraseSimple("俺がいなきゃ、今ごろカニの餌になってたんだぜ、この強欲野郎！","ああ、そうだな、あいつらの旗艦にお前を拿捕させてやりゃよかったぜ――そうすりゃ今ごろお前はヤードからぶら下がって、空気を汚すこともなかったのによ！"),RandPhraseSimple("お前の要求は筋違いだし、そのほのめかしは侮辱的だぞ！","罰金については合意していないから、俺は一銭も払わねえぞ！"));
 			link.l1.go = "Quest_1_NotPay";
-			if (sti(pchar.money) >= sti(PChar.GenQuest.PGG_Quest.FailedPaySum))
+			if (int(pchar.money) >= int(PChar.GenQuest.PGG_Quest.FailedPaySum))
 			{
 				link.l2 = PCharRepPhrase(RandPhraseSimple("今はお前と戦うことはできねえ、わかってるだろうが！ペソでも喉につまらせやがれ！"," ペソだと？！今日は運の女神に見放されてるみたいだな。仕方ねえ、同意するぜ。"),RandPhraseSimple("お前の要求はとんでもないが、俺には他に選択肢がなさそうだ。","お前らの食欲はすごすぎるが、俺も同感だぜ！"));
 				link.l2.go = "Exit_Quest_1_Failed";
@@ -911,13 +911,13 @@ void ProcessDialogEvent()
 		}
 
 		//минимум треть если взял, то гуд!
-		if (sti(PChar.GenQuest.PGG_Quest.Goods.Taken) > MakeInt(sti(PChar.GenQuest.PGG_Quest.Goods.Qty)/3))
+		if (int(PChar.GenQuest.PGG_Quest.Goods.Taken) > int(int(PChar.GenQuest.PGG_Quest.Goods.Qty)/3))
 		{
 			PChar.GenQuest.PGG_Quest.Ok = 1;
 //			Dialog.Text = "さて、俺たちの戦利品は "+PChar.GenQuest.PGG_Quest.Goods.Taken+" "+PChar.GenQuest.PGG_Quest.Goods.Text+"。分かれよう。";
 			Dialog.Text = PCharRepPhrase("いい取引だったな！さて、俺たちの戦利品は "+PChar.GenQuest.PGG_Quest.Goods.Taken+" "+PChar.GenQuest.PGG_Quest.Goods.Text+".","素晴らしい働きだ、船長！俺たちの戦利品は "+PChar.GenQuest.PGG_Quest.Goods.Taken+" "+PChar.GenQuest.PGG_Quest.Goods.Text+".");
-			i = sti(PChar.GenQuest.PGG_Quest.Parts);
-			PChar.GenQuest.PGG_Quest.Goods.Part = MakeInt(sti(PChar.GenQuest.PGG_Quest.Goods.Taken) / i);
+			i = int(PChar.GenQuest.PGG_Quest.Parts);
+			PChar.GenQuest.PGG_Quest.Goods.Part = int(int(PChar.GenQuest.PGG_Quest.Goods.Taken) / i);
 			if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 			{
 				Dialog.Text = Dialog.Text+PCharRepPhrase(" 俺の取り分は "," 俺の船の取り分だ―― ");
@@ -944,7 +944,7 @@ void ProcessDialogEvent()
 		link.l1.go = "Exit_Quest_1_Failed";
 		PChar.GenQuest.PGG_Quest.Stage = -1;
 
-		bOk = makeint(NPChar.reputation) < 41 && PGG_ChangeRelation2MainCharacter(NPChar, 0) < 75;
+		bOk = int(NPChar.reputation) < 41 && PGG_ChangeRelation2MainCharacter(NPChar, 0) < 75;
 		if (bOk || CheckAttribute(PChar, "GenQuest.PGG_Quest.Ok"))
 		{
 			PChar.GenQuest.PGG_Quest.Stage = 4;
@@ -955,9 +955,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "Exit_Quest_1_Failed":
-		if (sti(PChar.GenQuest.PGG_Quest.Stage) != -1)
+		if (int(PChar.GenQuest.PGG_Quest.Stage) != -1)
 		{
-			AddMoneyToCharacter(PChar, -(sti(PChar.GenQuest.PGG_Quest.FailedPaySum)));
+			AddMoneyToCharacter(PChar, -(int(PChar.GenQuest.PGG_Quest.FailedPaySum)));
 			AddQuestRecord("Gen_PGGQuest1", "q1_FailPay");
 		AddQuestUserData("Gen_PGGQuest1", "sSex", GetSexPhrase("",""));
 		AddQuestUserData("Gen_PGGQuest1", "sSex1", GetSexPhrase("",""));
@@ -980,7 +980,7 @@ void ProcessDialogEvent()
 
 		LAi_SetImmortal(NPChar, true);
 		//что б не били сопровождение.
-		for (i = 1; i < sti(PChar.GenQuest.PGG_Quest.GrpID.Qty); i++)
+		for (i = 1; i < int(PChar.GenQuest.PGG_Quest.GrpID.Qty); i++)
 		{
 			sld = CharacterFromID("pirate_" + i);
 			LAi_SetImmortal(sld, true);
@@ -1043,11 +1043,11 @@ void ProcessDialogEvent()
 	case "Exit_Quest_1_End":
 		RemoveCharacterCompanion(PChar, NPChar);
 
-		i = sti(PChar.GenQuest.PGG_Quest.Goods.Part);
-/*		i *= (sti(PChar.GenQuest.PGG_Quest.Parts)-1);
-		i += sti(PChar.GenQuest.PGG_Quest.StartGoods);
+		i = int(PChar.GenQuest.PGG_Quest.Goods.Part);
+/*		i *= (int(PChar.GenQuest.PGG_Quest.Parts)-1);
+		i += int(PChar.GenQuest.PGG_Quest.StartGoods);
 		n = GetCompanionQuantity(PChar);
-		SetCharacterGoods(PChar, sti(PChar.GenQuest.PGG_Quest.Goods), i);
+		SetCharacterGoods(PChar, int(PChar.GenQuest.PGG_Quest.Goods), i);
 		for (i = 1; i < n; i++)
 		{
 			iRnd = GetCompanionIndex(PChar, i);
@@ -1057,12 +1057,12 @@ void ProcessDialogEvent()
 				if (GetRemovable(sld))
 				{
 					Log_TestInfo("" + sld.id);
-					SetCharacterGoods(sld, sti(PChar.GenQuest.PGG_Quest.Goods), 0);
+					SetCharacterGoods(sld, int(PChar.GenQuest.PGG_Quest.Goods), 0);
 				}
 			}
 		}
 */
-		RemoveCharacterGoods(PChar, sti(PChar.GenQuest.PGG_Quest.Goods), i);
+		RemoveCharacterGoods(PChar, int(PChar.GenQuest.PGG_Quest.Goods), i);
 /*		if (PChar.Location == "Ship_deck")
 		{
 			PChar.Quest.PGGQuest1_EndExitSea.win_condition.l1 = "ExitFromSea";
@@ -1078,7 +1078,7 @@ void ProcessDialogEvent()
 		CloseQuestHeader("Gen_PGGQuest1");
 
 		//что б не били сопровождение.
-		for (i = 1; i < sti(PChar.GenQuest.PGG_Quest.GrpID.Qty); i++)
+		for (i = 1; i < int(PChar.GenQuest.PGG_Quest.GrpID.Qty); i++)
 		{
 			sld = CharacterFromID("pirate_" + i);
 			LAi_SetImmortal(sld, true);
@@ -1095,9 +1095,9 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = false;
 		Dialog.Text = PCharRepPhrase("本当に大虐殺だったな！女どもが一緒にいなかったのが残念だぜ！だが、戦利品で十分儲かったからいいか  "+PChar.GenQuest.PGG_Quest.Goods.Taken+" "+PChar.GenQuest.PGG_Quest.Goods.Text+".","悪くないぜ、船長！戦利品で元は取れるな "+PChar.GenQuest.PGG_Quest.Goods.Taken+" "+PChar.GenQuest.PGG_Quest.Goods.Text+".");
 
-		i = sti(PChar.GenQuest.PGG_Quest.Parts);
-		PChar.GenQuest.PGG_Quest.Goods.Part = MakeInt(sti(PChar.GenQuest.PGG_Quest.Goods.Taken) / i);
-        SetCharacterGoods(PChar, sti(PChar.GenQuest.PGG_Quest.Goods), sti(PChar.GenQuest.PGG_Quest.Goods.Taken) + GetCargoGoods(PChar, sti(PChar.GenQuest.PGG_Quest.Goods)));
+		i = int(PChar.GenQuest.PGG_Quest.Parts);
+		PChar.GenQuest.PGG_Quest.Goods.Part = int(int(PChar.GenQuest.PGG_Quest.Goods.Taken) / i);
+        SetCharacterGoods(PChar, int(PChar.GenQuest.PGG_Quest.Goods), int(PChar.GenQuest.PGG_Quest.Goods.Taken) + GetCargoGoods(PChar, int(PChar.GenQuest.PGG_Quest.Goods)));
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 		{
 			Dialog.Text = Dialog.Text+" 俺の取り分は ";

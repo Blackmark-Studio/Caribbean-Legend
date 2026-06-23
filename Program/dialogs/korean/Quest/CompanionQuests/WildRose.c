@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_1":
 			dialog.text = "깨워서 미안해요, 선장님...";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "그래도 최소한 노크는 했네, 그거면 됐지. 이제 말해봐—나한테 뭘 원하는 거야?";
 				link.l1.go = "Barmen_2";
@@ -2473,12 +2473,6 @@ void ProcessDialogEvent()
 			link.l1 = "언젠가 메리랑 내가 네 연대기를 읽게 되길 바라, 친구야. 여기 네 일지야—잃어버리지 마. 자, 이제 우리 갈 시간이야. 언젠가 다시 만나자, 내 친구.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_21");
-		break;
-		
-		case "WildRose_Betancur_21":
-			dialog.text = "여기 없으니까, "+pchar.name+". 그 둘은 카스퍼 가족과 함께 구조된 바로 다음 날 밤에 죽었어.";
-			link.l1 = "이상하네. 임신한 여자는 또 한 주를 버텼는데, 왕립 해군 소속 선원 두 명은 갑자기 죽었어...";
-			link.l1.go = "WildRose_Betancur_22";
 		break;
 		
 		case "WildRose_Chimiset_21":

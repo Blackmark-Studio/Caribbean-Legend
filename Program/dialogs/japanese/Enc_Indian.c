@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 				case 2: // жемчуг большой
 					npchar.quest.item.qty = 25+hrand(25);
 					npchar.quest.item.price = 30+hrand(10);
-					dialog.text = ""+npchar.name+" 神々の涙を持っている。でかいぞ、白い兄弟よ。その量は "+FindRussianQtyString(sti(npchar.quest.item.qty))+"。欲しいのか？俺は で売ってるぜ "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 一つには。";
+					dialog.text = ""+npchar.name+" 神々の涙を持っている。でかいぞ、白い兄弟よ。その量は "+FindRussianQtyString(int(npchar.quest.item.qty))+"。欲しいのか？俺は で売ってるぜ "+FindRussianMoneyString(int(npchar.quest.item.price))+" 一つには。";
 					link.l1 = "いや、興味はない。";
 					link.l1.go = "exit";
 					link.l2 = "もちろんだ！そんな値段なら喜んで買わせてもらうぜ。";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 				case 3: // жемчуг малый
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 10+hrand(5);
-					dialog.text = ""+npchar.name+" 神々の涙を持っている。小さいやつだ、白い兄弟よ。その量は "+FindRussianQtyString(sti(npchar.quest.item.qty))+"。欲しいのか？俺は で売ってるぜ "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 一つには。";
+					dialog.text = ""+npchar.name+" 神々の涙を持っている。小さいやつだ、白い兄弟よ。その量は "+FindRussianQtyString(int(npchar.quest.item.qty))+"。欲しいのか？俺は で売ってるぜ "+FindRussianMoneyString(int(npchar.quest.item.price))+" 一つには。";
 					link.l1 = "いや、興味はない。";
 					link.l1.go = "exit";
 					link.l2 = "もちろんだ！そんな値段なら喜んで買わせてもらうぜ。";
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 				case 4: //золотые самородки
 					npchar.quest.item.qty = 20+hrand(20);
 					npchar.quest.item.price = 90+hrand(20);
-					dialog.text = ""+npchar.name+" お前ら白い顔が大好きな黄色い金属がある。量は "+FindRussianQtyString(sti(npchar.quest.item.qty))+"。私は～だけで売っている "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 一つには。";
+					dialog.text = ""+npchar.name+" お前ら白い顔が大好きな黄色い金属がある。量は "+FindRussianQtyString(int(npchar.quest.item.qty))+"。私は～だけで売っている "+FindRussianMoneyString(int(npchar.quest.item.price))+" 一つには。";
 					link.l1 = "いや、興味はない。";
 					link.l1.go = "exit";
 					link.l2 = "もちろんだ！そんな値段なら喜んで買わせてもらうぜ。";
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 				case 5: // серебряные самородки
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 40+hrand(10);
-					dialog.text = ""+npchar.name+" お前ら白人がそんなに好きな白い金属があるんだ。その量は "+FindRussianQtyString(sti(npchar.quest.item.qty))+"。私は～だけで売る "+FindRussianMoneyString(sti(npchar.quest.item.price))+" 一つには。";
+					dialog.text = ""+npchar.name+" お前ら白人がそんなに好きな白い金属があるんだ。その量は "+FindRussianQtyString(int(npchar.quest.item.qty))+"。私は～だけで売る "+FindRussianMoneyString(int(npchar.quest.item.price))+" 一つには。";
 					link.l1 = "いや、興味はない。";
 					link.l1.go = "exit";
 					link.l2 = "もちろんだ！そんな値段なら喜んで買わせてもらうぜ。";
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -177,16 +177,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "俺がどれだけ涙を流したか話しただろう。\nインディアンをからかうつもりか、白顔野郎？\nなら、さらばだ。";
 				link.l1 = "ふむ……";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 涙か？よし。お前が俺に "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+"、白い兄弟よ。";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 涙か？よし。お前が俺に "+FindRussianMoneyString(int(npchar.quest.item.Summ))+"、白い兄弟よ。";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "「ほら、お前の金だ、赤い肌の兄弟よ。」";
 				link.l1.go = "big_pearl_1";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry52", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry52", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "持っていけ、白い兄弟。今はお前のものだ。";
 			link.l1 = "ありがとう！";
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -223,16 +223,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "俺がどれだけ涙を流したか話しただろう。インディアンをからかうのか、白顔野郎？じゃあ、さらばだ。";
 				link.l1 = "ふむ……";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 涙か？よし。お前が俺に "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+"、白い兄弟よ。";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 涙か？よし。お前が俺に "+FindRussianMoneyString(int(npchar.quest.item.Summ))+"、白い兄弟よ。";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "「ほら、金だぜ、赤い肌の兄弟。」";
 				link.l1.go = "small_pearl_1";
@@ -242,8 +242,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry53", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry53", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "持っていけ、白い兄弟。今はお前のものだ。";
 			link.l1 = "ありがとう！";
@@ -260,7 +260,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -269,16 +269,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "俺は自分が何人いるか言っただろう。インディアンをバカにしてるのか、白顔野郎？じゃあ、さよならだ。";
 				link.l1 = "ふむ……";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 「塊か？あんたからか」 "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+"、白い兄弟よ。";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 「塊か？あんたからか」 "+FindRussianMoneyString(int(npchar.quest.item.Summ))+"、白い兄弟よ。";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "「ほらよ、お前の金だ、赤い肌の兄弟。」";
 				link.l1.go = "gold_1";
@@ -288,8 +288,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry5", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry5", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "持っていけ、白い兄弟。今はお前のものだ。";
 			link.l1 = "ありがとう！";
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -315,16 +315,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "俺は何人いるか言っただろう。インディアンをからかってるのか、白顔野郎？じゃあな。";
 				link.l1 = "ふむ……";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" 「かけら？あんたからか」 "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+"、白い兄弟よ。";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" 「かけら？あんたからか」 "+FindRussianMoneyString(int(npchar.quest.item.Summ))+"、白い兄弟よ。";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "「ほら、金だぜ、赤い肌の兄弟。」";
 				link.l1.go = "silver_1";
@@ -334,8 +334,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry6", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry6", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "持っていけ、白い兄弟。今はお前のものだ。";
 			link.l1 = "ありがとう！";

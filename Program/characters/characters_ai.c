@@ -7,7 +7,7 @@ void CharacterExitFromLocation(ref character)
 
 bool SetCharacterTask_None(ref character)
 {
-	return SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "None");
+	return bool(SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "None"));
 }
 
 bool SetCharacterForcedStop(ref character)
@@ -18,7 +18,7 @@ bool SetCharacterForcedStop(ref character)
 
 bool SetCharacterTask_Stay(ref character)
 {
-	return SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "Stay");
+	return bool(SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "Stay"));
 }
 
 bool SetCharacterTask_GotoPoint(ref character, string locatorGroup, string locatorName)
@@ -43,12 +43,12 @@ bool SetCharacterTask_GotoPoint(ref character, string locatorGroup, string locat
 	//Get locator position
 	aref locator;
 	MakeARef(locator, loadedLocation.(slocator));
-	x = MakeFloat(locator.x);
-	y = MakeFloat(locator.y);
-	z = MakeFloat(locator.z);
+	x = float(locator.x);
+	y = float(locator.y);
+	z = float(locator.z);
 	//Set task
     bool isCheckBusyPos = !CheckAttribute(character, "chr_ai.tmpl.forced") || character.chr_ai.tmpl.forced == "0";
-	return SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Goto point", isCheckBusyPos, x, y, z);
+	return bool(SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Goto point", isCheckBusyPos, x, y, z));
 }
 
 bool SetCharacterTask_RuntoPoint(ref character, string locatorGroup, string locatorName)
@@ -70,67 +70,67 @@ bool SetCharacterTask_RuntoPoint(ref character, string locatorGroup, string loca
 	//Get locator position
 	aref locator;
 	MakeARef(locator, loadedLocation.(slocator));
-	x = MakeFloat(locator.x);
-	y = MakeFloat(locator.y);
-	z = MakeFloat(locator.z);
+	x = float(locator.x);
+	y = float(locator.y);
+	z = float(locator.z);
 	//Set task
     bool isCheckBusyPos = !CheckAttribute(character, "chr_ai.tmpl.forced") || character.chr_ai.tmpl.forced == "0";
-	return SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Runto point", isCheckBusyPos, x, y, z);
+	return bool(SendMessage(character, "lslfff", MSG_NPCHARACTER_SETTASK, "Runto point", isCheckBusyPos, x, y, z));
 }
 
 bool SetCharacterTask_FollowCharacter(ref character, ref followCharacter)
 {	
-	return SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Follow character", followCharacter);
+	return bool(SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Follow character", followCharacter));
 }
 
 bool SetCharacterTask_Fight(ref character, ref targetCharacter)
 {
-	return SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Fight", targetCharacter);
+	return bool(SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Fight", targetCharacter));
 }
 
 bool SetCharacterTask_Escape(ref character, ref escapeCharacter)
 {
-	return SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Escape", escapeCharacter);
+	return bool(SendMessage(character, "lsi", MSG_NPCHARACTER_SETTASK, "Escape", escapeCharacter));
 }
 
 bool SetCharacterTask_Dead(ref character)
 {
-	return SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "Dead");
+	return bool(SendMessage(character, "ls", MSG_NPCHARACTER_SETTASK, "Dead"));
 }
 
 bool PushCharacterTask(ref character)
 {
-	return SendMessage(character, "l", MSG_NPCHARACTER_PUSHTASK);
+	return bool(SendMessage(character, "l", MSG_NPCHARACTER_PUSHTASK));
 }
 
 bool PopCharacterTask(ref character)
 {
-	return SendMessage(character, "l", MSG_NPCHARACTER_POPTASK);
+	return bool(SendMessage(character, "l", MSG_NPCHARACTER_POPTASK));
 }
 
 bool CharacterTurnByLoc(ref character, string group, string locator)
 {
-	return SendMessage(character, "lssl", MSG_CHARACTER_TURNBYLOC, group, locator, false);
+	return bool(SendMessage(character, "lssl", MSG_CHARACTER_TURNBYLOC, group, locator, false));
 }
 
 bool CharacterTurnToLoc(ref character, string group, string locator)
 {
-	return SendMessage(character, "lssl", MSG_CHARACTER_TURNBYLOC, group, locator, true);
+	return bool(SendMessage(character, "lssl", MSG_CHARACTER_TURNBYLOC, group, locator, true));
 }
 
 bool CharacterTurnByChr(ref character, ref byCharacter)
 {
-	return SendMessage(character, "li", MSG_CHARACTER_TURNBYCHR, byCharacter);
+	return bool(SendMessage(character, "li", MSG_CHARACTER_TURNBYCHR, byCharacter));
 }
 
 bool CharacterTurnByPoint(ref character, float x, float y, float z)
 {
-	return SendMessage(character, "lfff", MSG_CHARACTER_TURNBYPOINT, x, y, z);
+	return bool(SendMessage(character, "lfff", MSG_CHARACTER_TURNBYPOINT, x, y, z));
 }
 
 bool CharacterTurnAy(ref character, float ay)
 {
-	return SendMessage(character, "lf", MSG_CHARACTER_TURNAY, ay);
+	return bool(SendMessage(character, "lf", MSG_CHARACTER_TURNAY, ay));
 }
 
 bool GetCharacterDistByChr(ref character, ref byCharacter, ref float_dist2D)
@@ -153,7 +153,7 @@ bool GetCharacterDistByChr3D(ref character, ref byCharacter, ref float_dist3D)
 
 bool CharacterPlayAction(ref character, string actionName)
 {
-	return SendMessage(character, "ls", MSG_CHARACTER_ACTIONPLAY, actionName);
+	return bool(SendMessage(character, "ls", MSG_CHARACTER_ACTIONPLAY, actionName));
 }
 
 bool GetCharacterDistByLoc(ref character, string group, string locator, ref float_dist3D)

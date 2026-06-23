@@ -34,14 +34,14 @@ void Ghoul(ref attacker, ref enemy)
 {
 	if (!IsEquipCharacterByArtefact(attacker, "totem_11")) return;
 
-	float fEnergyDrain = stf(enemy.chr_ai.energy) * 0.1;
+	float fEnergyDrain = float(enemy.chr_ai.energy) * 0.1;
 	Lai_CharacterChangeEnergy(enemy, -fEnergyDrain);
 	Lai_CharacterChangeEnergy(attacker, fEnergyDrain);
 }
 
 void VodkaEnergy(ref attacker, ref enemy)
 {
-	if(CheckAttribute(attacker, "VodkaEffect")) Lai_CharacterChangeEnergy(enemy, -0.1 * stf(enemy.chr_ai.energy));
+	if(CheckAttribute(attacker, "VodkaEffect")) Lai_CharacterChangeEnergy(enemy, -0.1 * float(enemy.chr_ai.energy));
 }
 
 // Восстанавливаем энергию за убийство
@@ -49,8 +49,8 @@ void CavaliersHatSecondary(ref chr)
 {
 	if (GetCharacterEquipByGroup(chr, HAT_ITEM_TYPE) != "hat2") return;
 
-	float maxEnergy = stf(chr.chr_ai.energy_max);
-	chr.chr_ai.energy = fClamp(1.0, maxEnergy, stf(chr.chr_ai.energy) + maxEnergy*0.25);
+	float maxEnergy = float(chr.chr_ai.energy_max);
+	chr.chr_ai.energy = fClamp(1.0, maxEnergy, float(chr.chr_ai.energy) + maxEnergy*0.25);
 	notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 }
 
@@ -58,7 +58,7 @@ void CavaliersHatSecondary(ref chr)
 void TeresasHatSecondary(ref chr)
 {
 	if (GetCharacterEquipByGroup(chr, HAT_ITEM_TYPE) != "hat11") return;
-	chr.chr_ai.energy = stf(chr.chr_ai.energy) + stf(chr.chr_ai.energy)*0.25;
+	chr.chr_ai.energy = float(chr.chr_ai.energy) + float(chr.chr_ai.energy)*0.25;
 	//notification(XI_ConvertString("Hat2 Hit"), "EnergyPlus");
 }
 
@@ -70,7 +70,7 @@ void SoldiersHat(ref chr)
 	ref hat10 = ItemsFromID("hat10");
 	if (!CheckAttribute(hat10, "durability")) return;
 
-	int durability = sti(hat10.durability);
+	int durability = int(hat10.durability);
 	if (durability < 2)
 	{
 		DeleteAttribute(hat10, "durability");

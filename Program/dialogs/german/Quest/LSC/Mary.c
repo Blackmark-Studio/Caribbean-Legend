@@ -558,7 +558,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // утро
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // утро
 			{
 				dialog.text = "Habe einen anstrengenden Tag vor mir, "+pchar.name+"? Viel Glück!";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -581,12 +581,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_1":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) //вечер
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) //вечер
 			{
 				dialog.text = "Es ist bereits Abend, "+pchar.name+", wovon redest du? Bleib hier, lass uns etwas trinken und entspannen, ja, gell! Es kann bis zum Morgen warten!";
 				link.l1 = "(lachend) Natürlich, Liebe, sag weniger...";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "Mary, lass uns heute zur Taverne gehen!";
 					link.l2.go = "LSC_tavern";
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 				link.l3.go = "LSC_love_2";
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) //день
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) //день
 			{
 				dialog.text = "Vergiss nicht, mich am Abend zu besuchen. Und wage es nicht, mir aus dem Weg zu gehen, ja, gell!";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		
 		case "rest_day":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 13 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 		
 		case "rest_evening":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 18 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // утро
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // утро
 			{
 				dialog.text = "Schon gehst du, "+pchar.name+"? Viel Glück und vergiss mich nicht...";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -714,19 +714,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_4":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) //вечер
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) //вечер
 			{
 				dialog.text = "Es ist schon Abend, "+pchar.name+". Warum bleibst du nicht hier? Ich möchte bei dir sein.";
 				link.l1 = "Ja, gell, Liebling, ich bleibe...";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "Mary, lass uns heute in die Taverne gehen!";
 					link.l2.go = "LSC_tavern";
 				}
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) //день
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) //день
 			{
 				dialog.text = "Viel Glück und vergiss mich nicht... Besuch mich am Abend, wenn du kannst, ja, gell!";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -1196,8 +1196,8 @@ void ProcessDialogEvent()
 		// соглашаемся
 		case "adversary_hire":
 			// проход второй - смотрим, Элен может стать подругой или нет
-			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (sti(pchar.questTemp.Saga.HelenRelation) >= 6);
-			if (bOk || sti(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
+			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (int(pchar.questTemp.Saga.HelenRelation) >= 6);
+			if (bOk || int(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
 			{
 				dialog.text = "Wirklich? Wolltest du mich wirklich als deinen Offizier? "+pchar.name+", verdammt, du kannst dir nicht vorstellen, wie glücklich ich bin! Ich möchte so sehr dein Offizier sein... aber nicht auf demselben Schiff mit dieser Blondine!";
 				link.l1 = "Mary, aber warum?!";
@@ -1556,7 +1556,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;//закрыть локацию
-			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
+			if (int(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			if (npchar.chr_ai.type == "actor")
 			{
 				LAi_SetOfficerType(npchar);
@@ -1584,7 +1584,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "room_sex_goNS":
-		if(sti(pchar.reputation.fame) > 60)
+		if(int(pchar.reputation.fame) > 60)
 		{
 			ChangeCharacterComplexReputation(pchar,"authority", 2);
 			if (npchar.chr_ai.type == "actor")
@@ -2064,7 +2064,7 @@ void ProcessDialogEvent()
 		case "LongHappy_9c":
 			pchar.questTemp.LongHappy.MarryMoney = 100000;
 			pchar.questTemp.LongHappy.MarryRum = 100;
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				pchar.questTemp.LongHappy.MarryMoney = 200000;
 				pchar.questTemp.LongHappy.MarryRum = 150;
@@ -2074,7 +2074,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.LongHappy.MarryMoney = 300000;
 				pchar.questTemp.LongHappy.MarryRum = 200;
 			}
-			dialog.text = "Ich denke, "+sti(pchar.questTemp.LongHappy.MarryMoney)+" Pesos werden genug sein, ja, gell. "+sti(pchar.questTemp.LongHappy.MarryRum)+" Fässer Rum, es gibt nichts Schlimmeres als ohne Getränke dazustehen. Sobald du alles gesammelt hast, was wir brauchen, komm in die Taverne, ich kümmere mich um den Rest.";
+			dialog.text = "Ich denke, "+int(pchar.questTemp.LongHappy.MarryMoney)+" Pesos werden genug sein, ja, gell. "+int(pchar.questTemp.LongHappy.MarryRum)+" Fässer Rum, es gibt nichts Schlimmeres als ohne Getränke dazustehen. Sobald du alles gesammelt hast, was wir brauchen, komm in die Taverne, ich kümmere mich um den Rest.";
 			link.l1 = "Gut, Schatz, ich mache es.";
 			link.l1.go = "LongHappy_9d";
 		break;
@@ -2668,7 +2668,7 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Mary_officer":
 			// если шлялся по борделям - устроит небольшой скандал 
-			if (sti(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
+			if (int(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
 			{
 				dialog.Text = ""+pchar.name+"! Ich muss mit dir reden, ja, gell! Ernsthaft!";
 				Link.l1 = "Was ist passiert, Mary? Gibt es ein Problem?";
@@ -2706,7 +2706,7 @@ void ProcessDialogEvent()
 				Link.l2 = RandPhraseSimple("Liebling, ich will dich jetzt gerade. Ist das in Ordnung für dich?","Mary, wie wäre es, wenn wir... eine Weile zusammenbleiben? Nur wir zwei.");
 				Link.l2.go = "cabin_sex";
 			}
-			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && sti(pchar.money) >= 10)
+			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && int(pchar.money) >= 10)
 			{
 				Link.l2 = RandPhraseSimple("Mary, sollen wir ein Zimmer mieten und zusammen bleiben?","Liebe, ich möchte mit dir alleine sein... wie wäre es, wenn wir uns ein Zimmer mieten und für ein paar Stunden alles vergessen?");
 				Link.l2.go = "room_sex";
@@ -2739,7 +2739,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Mary, wechsle die Munition für Feuerwaffen.";
 					Link.l3.go = "SetGunBullets";
@@ -2752,7 +2752,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -2764,7 +2764,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;

@@ -1150,7 +1150,7 @@ void ProcessDialogEvent()
 			npchar.Dialog.Filename = "Enc_Officer_dialog.c";
 			npchar.Dialog.CurrentNode = "hired";
 			npchar.DeckDialogNode = "hired";
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.Payment = true;
 			npchar.loyality = MAX_LOYALITY;
 			npchar.OfficerWantToGo.DontGo = true;
@@ -1849,7 +1849,7 @@ void ProcessDialogEvent()
 				if(sItem != "" && rItem.groupID == BLADE_ITEM_TYPE) 
 				{
 					attrL = "l" + i;
-					Link.(attrL) = GetItemName(rItem) + ": Ataque, " + FloatToString(stf(rItem.attack),1) + ", equilibrio, " + FloatToString(stf(rItem.Balance),1) + ", peso, " + FloatToString(stf(rItem.Weight),1);
+					Link.(attrL) = GetItemName(rItem) + ": Ataque, " + FloatToString(float(rItem.attack),1) + ", equilibrio, " + FloatToString(float(rItem.Balance),1) + ", peso, " + FloatToString(float(rItem.Weight),1);
 					Link.(attrL).go = "bladeindex_"+GetItemIndex(rItem.id);
 					i++;
 				}

@@ -21,7 +21,7 @@ void GetCoordinatedBoardingHP(ref player, ref companion, int playerCrew, int com
 	companion.Ship.Crew.Exp.Soldiers = totalExp;
 
 	// нативная формула из GetBoardingHP
-	baseHP = baseHP * (totalExp / GetCrewExpRate() - 0.7 + makefloat(totalMoral - MORALE_NORMAL)); 
+	baseHP = baseHP * (totalExp / GetCrewExpRate() - 0.7 + float(totalMoral - MORALE_NORMAL));
 	
 	if (MOD_BETTATESTMODE == "On") 
 	{
@@ -63,19 +63,19 @@ void CoordinatedBoardingStart(ref player, ref enemy, ref boarding_player_hp, ref
 	}
 
 	// подсчёт абордажной роты
-	int iBonusCrew = iClamp(0,2000,GetCrewQuantity(companion) - func_max(makeint(GetCrewQuantity(companion)*0.4), GetMinCrewQuantity(companion))); 
+	int iBonusCrew = iClamp(0,2000,GetCrewQuantity(companion) - func_max(int(GetCrewQuantity(companion)*0.4), GetMinCrewQuantity(companion)));
 	iBonusCrew = GetWeaponCrew(companion, iBonusCrew);
 
 	if (iBonusCrew <= 0) return; // жаль, подмога не пришла, подкрепление не прислали...
 	
 	if (MOD_BETTATESTMODE == "On") Log_Info("Команда " + playerCrew + " + " + iBonusCrew);
-	GetCoordinatedBoardingHP(player, companion, makeint(playerCrew), iBonusCrew, &boarding_player_hp); // считаем по новому хпшечку с учётом пропорции команд
-	RemoveCharacterGoodsSelf(companion, GOOD_WEAPON, makeint(iBonusCrew/2 + 0.5)); // минусуем оружие у компаньона
+	GetCoordinatedBoardingHP(player, companion, int(playerCrew), iBonusCrew, &boarding_player_hp); // считаем по новому хпшечку с учётом пропорции команд
+	RemoveCharacterGoodsSelf(companion, GOOD_WEAPON, int(iBonusCrew/2 + 0.5)); // минусуем оружие у компаньона
 	SetCrewQuantity(companion, GetCrewQuantity(companion) - iBonusCrew);           // оставшиеся на корабле
-	AddCharacterExpToSkill(companion, "Defence",   makeint(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
-	AddCharacterExpToSkill(companion, "Grappling", makeint(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
+	AddCharacterExpToSkill(companion, "Defence",   int(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
+	AddCharacterExpToSkill(companion, "Grappling", int(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
 	enemy.CoordinatedCharIdx = companion.index;
-	int sumCrew = makeint(playerCrew) + iBonusCrew;
+	int sumCrew = int(playerCrew) + iBonusCrew;
 	playerCrew = sumCrew;
 	playerHpCrew = sumCrew; // пока не понял, зачем это две разных переменных, когда они всю дорогу равны
 	Notification(StringFromKey("boarding_9", companion.ship.name, iBonusCrew), "CoordinatedBoarding"); 
@@ -84,7 +84,7 @@ void CoordinatedBoardingStart(ref player, ref enemy, ref boarding_player_hp, ref
 void SetCompanionAsSwashbuckler(ref crewMember, int companionIdx, ref desk)
 {
 	ref companion = GetCharacter(companionIdx);
-	if (makefloat(companion.Health.HP) <  50) return; // здоровье хотя бы Хорошее
+	if (float(companion.Health.HP) <  50) return; // здоровье хотя бы Хорошее
 
 	ChangeAttributesFromCharacter(crewMember, companion, false);
 	crewMember.PersonalityCloneOrigIdx = companion.index;
@@ -97,7 +97,7 @@ void SetCompanionAsSwashbuckler(ref crewMember, int companionIdx, ref desk)
 // распределяем потери по кораблю ГГ и присоединившегося компаньона
 void CoordinatedBoardingEnd(ref player, string companionIdx, int crewSurvived)
 {
-	ref companion = GetCharacter(sti(companionIdx));
+	ref companion = GetCharacter(int(companionIdx));
 	int maxCrew = GetMaxCrewQuantity(player);
 	if (crewSurvived <= maxCrew) {
 		SetCrewQuantity(player, crewSurvived);

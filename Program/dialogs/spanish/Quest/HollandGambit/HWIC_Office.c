@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "licence_1":
-		float fQty = stf(dialogEditStrings[6]);
+		float fQty = float(dialogEditStrings[6]);
 		npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 		if (fQty < 1)
 		{
@@ -232,8 +232,8 @@ void ProcessDialogEvent()
 			link.l1.go = "licence_r";
 			break;
 		}
-		dialog.text = "¿Para " + FindRussianDaysString(sti(fQty)) + " días? Muy bien. Te costará " + FindRussianDublonString(sti(npchar.quest.lcc_summ)) + "¿Son aceptables esos términos?";
-		if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
+		dialog.text = "¿Para " + FindRussianDaysString(int(fQty)) + " días? Muy bien. Te costará " + FindRussianDublonString(int(npchar.quest.lcc_summ)) + "¿Son aceptables esos términos?";
+		if (PCharDublonsTotal() >= int(npchar.quest.lcc_summ))
 		{
 			link.l1 = "Sí, lo son.";
 			link.l1.go = "licence_2";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "licence_2":
-		int iQty = sti(dialogEditStrings[6]);
-		RemoveDublonsFromPCharTotal(sti(npchar.quest.lcc_summ));
+		int iQty = int(dialogEditStrings[6]);
+		RemoveDublonsFromPCharTotal(int(npchar.quest.lcc_summ));
 		GiveNationLicence(HOLLAND, iQty);
 		// belamour legendary edition на пару с Акулой
 		if (CheckAttribute(pchar, "questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "start")
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 	case "HWIC_Boss":
 		if (CheckAttribute(pchar, "questTemp.HWIC.Detector") && (pchar.questTemp.HWIC.Detector == "holl_win"))
 		{
-			if (!CheckAttribute(npchar, "quest.silk_info") && sti(pchar.reputation.nobility) > 60)
+			if (!CheckAttribute(npchar, "quest.silk_info") && int(pchar.reputation.nobility) > 60)
 			{
 				dialog.text = "Ajá, Kapitein " + GetFullName(pchar) + " ¡Es bueno que hayas venido aquí! Tengo una propuesta de negocio para ti.";
 				link.l1 = "¡Interesante! Le escucho, mynheer.";

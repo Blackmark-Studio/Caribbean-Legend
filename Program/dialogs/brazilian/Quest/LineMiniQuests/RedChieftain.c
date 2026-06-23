@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "Irmão branco, perspicaz como a coruja, astuto como a serpente. Problema chegando para o índio. Grande-grande canoa de homens brancos veio à minha aldeia. Eles levaram muitos Cayman, meu povo, colocaram na canoa deles e levaram para a Mãe de Todas as Águas...";
 			link.l1 = "Espera... você está dizendo que seu povo foi escravizado por homens brancos de um navio?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Fico feliz que as lágrimas dos deuses sejam suas, irmão dos Arawak!","Índio agradece, bravo rosto-pálido!","Fique com a nossa pesca, irmão branco!");
 			link.l1 = LinkRandPhrase("Fico feliz em ajudar você!","Obrigado, irmão de pele vermelha!","Ótimo!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Canauri agradece de novo, irmão de pele clara! Você salvou todas as canoas com os índios! Para Canauri, é muito importante salvar cada canoa, porque você também salvou o neto de Canauri, que os malditos de pele clara levaram para a escravidão. Quando era criança, meu neto adorava nadar, e Canauri deu a ele este amuleto encantado para que não se afogasse. Agora o neto não quer mais nadar e me devolveu o amuleto para que eu possa entregá-lo a você, irmão de pele clara. Espero que as lágrimas dos deuses e este presente sejam uma recompensa justa pela vida de um aruaque. Agora nos despedimos – é hora de voltarmos para nossa aldeia.";
 				link.l1 = "Boa sorte, Cunauri! Fico feliz que seu neto tenha sobrevivido! Espero que esse mal nunca mais recaia sobre você!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

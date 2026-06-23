@@ -196,12 +196,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
 		
-		case "Aeva_attack_2":
-			dialog.text = "... 这将是一杯该死的烈酒。 那个爱尔兰人很久以来一直梦想着这瓶威士忌, 所以他会在一秒钟内把它喝光。 砒霜在哪里? 多倒点, 确保万无一失... 然后我们的朋友法奇奥会把这个桶作为独角鲸帮的礼物送给舰队司令, 哈哈! 我说得对吗, 亲爱的朱塞佩? 你想活下去吗? \n啊! 看, 我们有客人! 你想要什么, 混蛋? 在我们钉死你之前滚出去! ";
-			link.l1 = "你的计划失败了, 卡珀。 我一直在跟踪你, 我知道你和你的独眼龙朋友打算做什么。 把砒霜扔掉! 你不能毒害鲨鱼! ";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
 		case "Aeva_attack_3":
 			dialog.text = "啊, 侦探! 好吧, 那你先死! 伙计们, 拿起武器! ";
 			link.l1 = "... ";

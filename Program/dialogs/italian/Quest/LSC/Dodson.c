@@ -1990,7 +1990,7 @@ void ProcessDialogEvent()
 		
 		case "patria_17":
 			dialog.text = "Perfetto. Ora, consegna il denaro o lui è spacciato! E non provare a fregarci, ti teniamo nel mirino!";
-			if (sti(pchar.money) >= 350000)
+			if (int(pchar.money) >= 350000)
 			{
 				link.l1 = "Ecco.";
 				link.l1.go = "patria_18";
@@ -2271,7 +2271,7 @@ void ProcessDialogEvent()
 		break;
 		// belamour legendary edition на пару с Акулой
 		case "SharkGoldFleet":
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
+			if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
 			{
 				dialog.text = "La mia è pronta, e la tua? Ti avevo detto di venire sulla 'Fortuna'. Non so dove tu l’abbia lasciata, ma è una pazzia rischiare un azzardo simile su un’altra nave. Dunque t’aspetto a bordo di quella di cui s’era detto. E non tirare troppo la corda.";
 				link.l1 = "Maledizione, me ne sono completamente dimenticato, lurido bastardo! Aspetta: torno subito sulla nave giusta.";
@@ -2381,7 +2381,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SharkGoldFleet_11":
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
+			if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
 			{
 				dialog.text = "Forse tu sei pronto, ma la tua nave non lo è. Ti avevo detto di venire sulla 'Fortuna'. Non so dove l’hai lasciata, ma rischiare tutto su un’altra nave sarebbe pura follia. Dunque t’aspetto a bordo di quella su cui ci siamo messi d’accordo. E non farti prendere dalla smania.";
 				link.l1 = "Maledizione, me ne sono completamente scordato, somaro! Aspetta: torno subito sulla nave giusta.";
@@ -2492,7 +2492,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "SharkGoldFleet_25";
 				break;
 			}
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
+			if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
 			{
 				dialog.text = pchar.name+", che diamine? Ti avevo detto di stare sulla 'Fortuna'! Capisci: ci servono due navi veloci e potenti, altrimenti tutta l’operazione potrebbe andare a rotoli! Non so cosa ti sia saltato in mente, ma così non va. Cambia subito quella carretta con la 'Fortuna' e torna qui. Ti aspetto.";
 				link.l1 = "Sì, ho solo pensato che questa nave fosse migliore... Va bene, ho capito. Aspetta qui: torno subito!";
@@ -2575,7 +2575,7 @@ void ProcessDialogEvent()
 		break;
 		// делим добычу на берегу
 		case "SharkGoldFleet_34":
-			if(makeint(pchar.questTemp.SharkGoldFleet) > 74)
+			if(int(pchar.questTemp.SharkGoldFleet) > 74)
 			{
 				dialog.text = "Mille diavoli! Gran bel lavoro, Charles! Il bottino si è rivelato molto più ricco di quanto pensassi all’inizio! Credo proprio che questa traversata sia valsa la pena.";
 				link.l1 = "Sono d’accordo con te, Steven! Oggi è senz’altro il nostro giorno, per mille squali!";
@@ -2583,7 +2583,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(makeint(pchar.questTemp.SharkGoldFleet) > 24)
+				if(int(pchar.questTemp.SharkGoldFleet) > 24)
 				{
 					dialog.text = "Bel lavoro, amico. Però dobbiamo ammettere che ci siamo lasciati sfuggire parecchia preda.";
 					link.l1 = "Sono d’accordo, Steven, potremmo fare di meglio. Ma quel che c’è non è poi così male!";
@@ -2623,7 +2623,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SharkGoldFleet_39":
-			if(makeint(pchar.questTemp.SharkGoldFleet) > 74)
+			if(int(pchar.questTemp.SharkGoldFleet) > 74)
 			{
 				AddQuestRecord("SharkGoldFleet", "34");	
 				ChangeCharacterComplexReputation(pchar, "fame", 10);
@@ -2636,7 +2636,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(makeint(pchar.questTemp.SharkGoldFleet) > 24)
+				if(int(pchar.questTemp.SharkGoldFleet) > 24)
 				{
 					AddQuestRecord("SharkGoldFleet", "35");
 					ChangeCharacterComplexReputation(pchar, "fame", 1);
@@ -2654,31 +2654,31 @@ void ProcessDialogEvent()
 					AddCharacterExpToSkill(PChar, "Sneak", 100);
 				}
 			}
-			if(makeint(pchar.questTemp.SharkGoldFleet) > 24)
+			if(int(pchar.questTemp.SharkGoldFleet) > 24)
 			{
 				if(GetSquadronGoods(pchar, GOOD_GOLD)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_GOLD, sti(makeint(pchar.questTemp.SharkGoldFleet.Gold)/2));
+					RemoveCharacterGoods(pchar, GOOD_GOLD, int(int(pchar.questTemp.SharkGoldFleet.Gold)/2));
 				}
 				if(GetSquadronGoods(pchar, GOOD_SILVER)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_SILVER, sti(makeint(pchar.questTemp.SharkGoldFleet.Silver)/2));
+					RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.SharkGoldFleet.Silver)/2));
 				}
 				if(GetSquadronGoods(pchar, GOOD_SANDAL)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_SANDAL, sti(makeint(pchar.questTemp.SharkGoldFleet.Sandal)/2));
+					RemoveCharacterGoods(pchar, GOOD_SANDAL, int(int(pchar.questTemp.SharkGoldFleet.Sandal)/2));
 				}
 				if(GetSquadronGoods(pchar, GOOD_SHIPSILK)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_SHIPSILK, sti(makeint(pchar.questTemp.SharkGoldFleet.Silk)/2));
+					RemoveCharacterGoods(pchar, GOOD_SHIPSILK, int(int(pchar.questTemp.SharkGoldFleet.Silk)/2));
 				}
 				if(GetSquadronGoods(pchar, GOOD_ROPES)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_ROPES, sti(makeint(pchar.questTemp.SharkGoldFleet.Ropes)/2));
+					RemoveCharacterGoods(pchar, GOOD_ROPES, int(int(pchar.questTemp.SharkGoldFleet.Ropes)/2));
 				}
 				if(GetSquadronGoods(pchar, GOOD_OIL)>0)
 				{
-					RemoveCharacterGoods(pchar, GOOD_OIL, sti(makeint(pchar.questTemp.SharkGoldFleet.Gold)/2));
+					RemoveCharacterGoods(pchar, GOOD_OIL, int(int(pchar.questTemp.SharkGoldFleet.Gold)/2));
 				}
 			}
 			SGF_GoodSwimReturn();

@@ -119,7 +119,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "TPZ_Tavern2_1":
 			dialog.text = "Kaptan, bu inanılmaz! Bunu nasıl başardınız? Gerçi, önemli değil. Söyleyin bana, bu kadar lüks bir içki sevkiyatı karşılığında ne istiyorsunuz? Ve evraklarda her şey yolunda olacak mı?";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Evraklar mı? Elbette hepsi tamamen düzgün. Gerçekten kontrol etmeyi düşünmüyorsun, değil mi?";
 				link.l1.go = "TPZ_Tavern2_2";
@@ -215,7 +215,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "Elbette, Kaptan! Peki, yükünüz için ne kadar istiyorsunuz?";
 				link.l1 = "On şişe şarap için otuz dublon, on şişe rom içinse beş dublon isterim. Tüm sevkiyat — her birinden yüz şişe — sana toplam üç yüz elli dublona mal olacak.";

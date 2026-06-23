@@ -6,7 +6,7 @@ int GetHealthNum(ref ch)
 	}
     int i;
 
-    i = makeint((stf(ch.Health.HP) + 9) / 10.0); // до целого
+    i = int((float(ch.Health.HP) + 9) / 10.0); // до целого
 
     return i;
 }
@@ -19,7 +19,7 @@ int GetHealthMaxNum(ref ch)
 	}
     int i;
 
-    i = makeint((stf(ch.Health.maxHP) + 9) / 10.0); // до целого
+    i = int((float(ch.Health.maxHP) + 9) / 10.0); // до целого
 
     return i;
 }
@@ -84,8 +84,8 @@ void SetNewDayHealth()
 {
     ref mainChr = GetMainCharacter();
 
-    float maxhp = stf(mainChr.chr_ai.hp_max);
-    float damg  = stf(mainChr.Health.Damg);
+    float maxhp = float(mainChr.chr_ai.hp_max);
+    float damg  = float(mainChr.Health.Damg);
     int   add   = 0;
 
     mainChr.Health.Damg = 0.0;
@@ -123,8 +123,8 @@ void SetNewDayHealthMax()
 {
     ref mainChr = GetMainCharacter();
 
-    float maxhp = stf(mainChr.chr_ai.hp_max);
-    float damg  = stf(mainChr.Health.weekDamg);
+    float maxhp = float(mainChr.chr_ai.hp_max);
+    float damg  = float(mainChr.Health.weekDamg);
 
     mainChr.Health.weekDamg = 0.0;
 	// belamour legendary edition отменное здоровье защищает от инвалидности
@@ -142,19 +142,19 @@ void AddCharacterHealth(ref mainChr, float add)
 	// belamour расширенное издание
 	if(mainChr.id == "Blaze" && IsEquipCharacterByArtefact(pchar, "talisman12")) return;
 	
-    float maxhp = stf(mainChr.chr_ai.hp_max);
+    float maxhp = float(mainChr.chr_ai.hp_max);
     int   remHP = GetHealthNum(mainChr);
 
-    mainChr.Health.HP = makefloat(stf(mainChr.Health.HP) + add);
+    mainChr.Health.HP = float(float(mainChr.Health.HP) + add);
 
-    if (stf(mainChr.Health.HP) < 1)
+    if (float(mainChr.Health.HP) < 1)
     {
         mainChr.Health.HP = 1.0;
     }
 
-    if (stf(mainChr.Health.HP) > stf(mainChr.Health.maxHP))
+    if (float(mainChr.Health.HP) > float(mainChr.Health.maxHP))
     {
-        mainChr.Health.HP = stf(mainChr.Health.maxHP);
+        mainChr.Health.HP = float(mainChr.Health.maxHP);
     }
 
     if (GetHealthNum(mainChr) > remHP)
@@ -169,7 +169,7 @@ void AddCharacterHealth(ref mainChr, float add)
 		notification(StringFromKey("RPGUtilite_9"),"HealthDown");
 		if(CheckAttribute(mainChr,"systeminfo.tutorial.health"))
 		{
-			LaunchTutorial("Health", 1);
+			LaunchTutorial("Health", true);
 			DeleteAttribute(mainChr,"systeminfo.tutorial.health");
 		}
     }
@@ -181,20 +181,20 @@ void AddCharacterMaxHealth(ref mainChr, float add)
 	// belamour расширенное издание
 	if(mainChr.id == "Blaze" && IsEquipCharacterByArtefact(pchar, "talisman12")) return;
 	
-    mainChr.Health.maxHP = makefloat(stf(mainChr.Health.maxHP) + add);
+    mainChr.Health.maxHP = float(float(mainChr.Health.maxHP) + add);
 
-    if (stf(mainChr.Health.maxHP) < 1)
+    if (float(mainChr.Health.maxHP) < 1)
     {
         mainChr.Health.maxHP = 1.0;
     }
 
-    if (stf(mainChr.Health.maxHP) > 60)
+    if (float(mainChr.Health.maxHP) > 60)
     {
         mainChr.Health.maxHP = 60.0;
     }
 
-    if (stf(mainChr.Health.HP) > stf(mainChr.Health.maxHP))
+    if (float(mainChr.Health.HP) > float(mainChr.Health.maxHP))
     {
-        mainChr.Health.HP = stf(mainChr.Health.maxHP);
+        mainChr.Health.HP = float(mainChr.Health.maxHP);
     }
 }

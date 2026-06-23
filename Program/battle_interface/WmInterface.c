@@ -33,7 +33,7 @@ void InitWmInterface()
 void WM_ProcessControlPress()
 {
 	string ControlName = GetEventData();
-	if( sti(InterfaceStates.Launched) != 0 ) {return;}
+	if( int(InterfaceStates.Launched) != 0 ) {return;}
 
 	switch(ControlName)
 	{
@@ -157,7 +157,7 @@ void WM_LaunchCommand()
 void WM_SetPossibleCommands()
 {
 	int chIdx = GetEventData();
-	int mainIdx = sti(pchar.index);
+	int mainIdx = int(pchar.index);
 
 	if( chIdx<0 || CharacterIsDead(GetCharacter(chIdx)) )
 	{
@@ -182,7 +182,7 @@ void WM_SetPossibleCommands()
 	BattleInterface.Commands.Charge.enable = true;
 
 	bool bDefault = true;
-	switch( sti(worldMap.encounter_type) )
+	switch( int(worldMap.encounter_type) )
 	{
 	case 0:
 		BattleInterface.Commands.EnterToIsland.enable = true;
@@ -214,7 +214,7 @@ void WM_SetPossibleCommands()
 
 	if( bDefault )
 	{
-		if( sti(worldMap.encounter_island) ) {
+		if( int(worldMap.encounter_island) ) {
 			BattleInterface.Commands.EnterToIsland.enable = true;
 			//Log_SetActiveAction("EnterToIsland");
 			Log_SetActiveAction("EnterToSea");  //boal
@@ -228,7 +228,7 @@ void WM_SetPossibleCommands()
 void WM_UpdateCurrentAction()
 {
 	bool bDefault = true;
-	switch( sti(worldMap.encounter_type) )
+	switch( int(worldMap.encounter_type) )
 	{
 	case 0:
 		//Log_SetActiveAction("EnterToIsland");
@@ -259,7 +259,7 @@ void WM_UpdateCurrentAction()
 		break;
 	}
 	if( bDefault ) {
-		if( sti(worldMap.encounter_island) ) {
+		if( int(worldMap.encounter_island) ) {
 			//Log_SetActiveAction("EnterToIsland");
 			Log_SetActiveAction("EnterToSea");  //boal
 		} else {
@@ -336,7 +336,7 @@ void WM_InitializeCommands()
 
 void WM_SetParameterData()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	int fTmp, fTmp2, fTmp3, fTmp4;
 	BattleInterface.CommandTextures.list.t0.name = "interfaces\le\battle_interface\cancel.tga.tx";
 	BattleInterface.CommandTextures.list.t0.xsize = 2;
@@ -365,15 +365,15 @@ void WM_SetParameterData()
 	BattleInterface.wm_sign.fontid					= "interface_normal";
 	BattleInterface.wm_sign.fontcolor				= argb(255,255,255,168); //argb(255,255,255,255);
 	BattleInterface.wm_sign.fontscale				= 1.5 * fHtRatio;
-    fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(40.0 * fRes * fHtRatio);
+    fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(40.0 * fRes * fHtRatio);
     BattleInterface.wm_sign.fontoffset       		= fTmp + "," + fTmp2;
 
 	BattleInterface.wm_sign.shipnamefontid			= "interface_normal";
 	BattleInterface.wm_sign.shipnamefontcolor		= argb(255,255,255,255);
 	BattleInterface.wm_sign.shipnamefontscale		= 1.3 * fHtRatio;
-    fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(60.0 * fHtRatio);
+    fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(60.0 * fHtRatio);
     BattleInterface.wm_sign.shipnamefontoffset      = fTmp + "," + fTmp2;
 
 	BattleInterface.wm_sign.backmctexturename			= "interfaces\le\battle_interface\ShipBackIcon1.tga.tx";
@@ -381,21 +381,21 @@ void WM_SetParameterData()
 	BattleInterface.wm_sign.backcolor				= argb(255,128,128,128);
 	BattleInterface.wm_sign.backuv					= "0.0,0.0,1.0,1.0";
 	BattleInterface.wm_sign.backoffset				= "0,0";
-    fTmp = makeint(128.0 * fRes * fHtRatio);
+    fTmp = int(128.0 * fRes * fHtRatio);
 	BattleInterface.wm_sign.backiconsize			= fTmp + "," + fTmp;
 
 	BattleInterface.wm_sign.shipstatetexturename	= "interfaces\le\battle_interface\ShipState.tga.tx";
 	BattleInterface.wm_sign.shipstatecolor			= argb(255,128,128,128);
 	BattleInterface.wm_sign.shiphpuv				= "0.0,0.1875,0.5,0.7968";
 	BattleInterface.wm_sign.shipspuv				= "0.5,0.1875,1.0,0.7968";
-    fTmp = makeint(-33.0 * fHtRatio);
-    fTmp2 = makeint(0.0 * fHtRatio);
+    fTmp = int(-33.0 * fHtRatio);
+    fTmp2 = int(0.0 * fHtRatio);
     BattleInterface.wm_sign.shiphpoffset			= fTmp + "," + fTmp2;
-    fTmp = makeint(33.0 * fHtRatio);
+    fTmp = int(33.0 * fHtRatio);
 	BattleInterface.wm_sign.shipspoffset			= fTmp + "," + fTmp2;
 	
-    fTmp = makeint(60.0 * fHtRatio);
-    fTmp2 = makeint(76.0 * fHtRatio);
+    fTmp = int(60.0 * fHtRatio);
+    fTmp2 = int(76.0 * fHtRatio);
     BattleInterface.wm_sign.shiphpiconsize			= fTmp + "," + fTmp2;
 	BattleInterface.wm_sign.shipspiconsize			= fTmp + "," + fTmp2;
 
@@ -404,12 +404,12 @@ void WM_SetParameterData()
 	BattleInterface.wm_sign.shipclasscolor			= argb(255,102,102,102); //argb(255,128,128,128);
 	BattleInterface.wm_sign.shipclassuv				= "0.0,0.0,1.0,1.0";
 
-	fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(-54.0 * fHtRatio);
+	fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(-54.0 * fHtRatio);
     BattleInterface.wm_sign.shipclassoffset			= fTmp + "," + fTmp2;
 	
-    fTmp = makeint(128.0 * fRes * fHtRatio);
-    fTmp2 = makeint(32.0 * fRes * fHtRatio);
+    fTmp = int(128.0 * fRes * fHtRatio);
+    fTmp2 = int(32.0 * fRes * fHtRatio);
     BattleInterface.wm_sign.shipclassiconsize		= fTmp + "," + fTmp2;
 
 	BattleInterface.wm_sign.gunchargeprogress		= "0.0625, 0.211, 0.359, 0.5, 0.633, 0.781, 0.983";
@@ -417,19 +417,19 @@ void WM_SetParameterData()
 	BattleInterface.wm_sign.shiptexturename			= "interfaces\le\battle_interface\ship_icons2.tga.tx";
 	BattleInterface.wm_sign.shipcolor				= argb(255,128,128,128);
 	
-    fTmp = makeint(0.0 * fHtRatio);
-    fTmp2 = makeint(0.0 * fHtRatio);
+    fTmp = int(0.0 * fHtRatio);
+    fTmp2 = int(0.0 * fHtRatio);
     BattleInterface.wm_sign.shipoffset				= fTmp + "," + fTmp2;
 
-    fTmp = makeint(90.0 * fRes * fHtRatio);
+    fTmp = int(90.0 * fRes * fHtRatio);
     BattleInterface.wm_sign.shipiconsize			= fTmp + "," + fTmp;
 
-    fTmp = makeint(-20 * fHtRatio);
+    fTmp = int(-20 * fHtRatio);
     BattleInterface.wm_sign.commandlistverticaloffset = fTmp;
 
-    fTmp = makeint(75.0 * fHtRatio);
+    fTmp = int(75.0 * fHtRatio);
     fTmp3 = fTmp;
-    fTmp2 = makeint(150.0 * fHtRatio);
+    fTmp2 = int(150.0 * fHtRatio);
     BattleInterface.wm_sign.iconoffset1 = fTmp + "," + fTmp;
     fTmp3 += fTmp2;
     BattleInterface.wm_sign.iconoffset2 = fTmp + "," + fTmp3;
@@ -448,26 +448,26 @@ void WM_SetParameterData()
 
 	BattleInterface.CommandList.CommandMaxIconQuantity = 8;
 	BattleInterface.CommandList.CommandIconSpace = 1;
-	BattleInterface.CommandList.CommandIconLeft = makeint(160 * fHtRatio);//157;
-	BattleInterface.CommandList.CommandIconWidth = RecalculateHIcon(makeint(55 * fHtRatio));
-	BattleInterface.CommandList.CommandIconHeight = RecalculateVIcon(makeint(55 * fHtRatio));
+	BattleInterface.CommandList.CommandIconLeft = int(160 * fHtRatio);//157;
+	BattleInterface.CommandList.CommandIconWidth = RecalculateHIcon(int(55 * fHtRatio));
+	BattleInterface.CommandList.CommandIconHeight = RecalculateVIcon(int(55 * fHtRatio));
 
 	BattleInterface.CommandList.CommandNoteFont = "interface_normal_bold";
 	BattleInterface.CommandList.CommandNoteColor = argb(255,255,255,255);
 	BattleInterface.CommandList.CommandNoteScale = 0.65 * fHtRatio;
-	BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(makeint(-50 * fHtRatio));
+	BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(int(-50 * fHtRatio));
 
 	// BattleInterface.CommandList.CommandNoteFont = "interface_normal";
 	// BattleInterface.CommandList.CommandNoteColor = argb(255,255,255,255);
 	// BattleInterface.CommandList.CommandNoteScale = 1.0 * fHtRatio;
-	// BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(makeint(-42 * fHtRatio));
+	// BattleInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(int(-42 * fHtRatio));
 
 	BattleInterface.CommandList.UDArrow_Texture = "interfaces\le\battle_interface\arrowly.tga.tx";
 	BattleInterface.CommandList.UDArrow_UV_Up = "0.0,1.0,1.0,0.0";
 	BattleInterface.CommandList.UDArrow_UV_Down = "0.0,0.0,1.0,1.0";
-	BattleInterface.CommandList.UDArrow_Size = RecalculateHIcon(makeint(30 * fHtRatio)) + "," + RecalculateVIcon(makeint(30 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(makeint(-30 * fHtRatio)) + "," + RecalculateVIcon(makeint(-45 * fHtRatio));
-	BattleInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(makeint(-30 * fHtRatio)) + "," + RecalculateVIcon(makeint(45 * fHtRatio));
+	BattleInterface.CommandList.UDArrow_Size = RecalculateHIcon(int(30 * fHtRatio)) + "," + RecalculateVIcon(int(30 * fHtRatio));
+	BattleInterface.CommandList.UDArrow_Offset_Up = RecalculateHIcon(int(-30 * fHtRatio)) + "," + RecalculateVIcon(int(-45 * fHtRatio));
+	BattleInterface.CommandList.UDArrow_Offset_Down = RecalculateHIcon(int(-30 * fHtRatio)) + "," + RecalculateVIcon(int(45 * fHtRatio));
 
 	BattleInterface.maincharindex = pchar.index;
 	
@@ -486,8 +486,8 @@ void WM_SetParameterData()
 		BattleInterface.textinfo.(sAttrB).font = "Info_fader_ls";
 		BattleInterface.textinfo.(sAttrB).scale = 0.6 * fHtRatio;
 		BattleInterface.textinfo.(sAttrB).color = argb(155,255,255,255);
-		BattleInterface.textinfo.(sAttrB).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(50 * fHtRatio));
-		BattleInterface.textinfo.(sAttrB).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(boff * fHtRatio));
+		BattleInterface.textinfo.(sAttrB).pos.x = int(showWindow.left) + RecalculateHIcon(int(50 * fHtRatio));
+		BattleInterface.textinfo.(sAttrB).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(boff * fHtRatio));
 		BattleInterface.textinfo.(sAttrB).align = "left";
 		BattleInterface.textinfo.(sAttrB).text = "";
 		BattleInterface.textinfo.(sAttrB).refreshable = true;
@@ -495,16 +495,16 @@ void WM_SetParameterData()
 		BattleInterface.textinfo.(sAttr).font = "KEYBOARD_SYMBOL";
 		BattleInterface.textinfo.(sAttr).scale = 0.9 * fHtRatio;
 		BattleInterface.textinfo.(sAttr).color = argb(255,255,255,255);
-		BattleInterface.textinfo.(sAttr).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(75 * fHtRatio));
-		BattleInterface.textinfo.(sAttr).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(coff * fHtRatio));
+		BattleInterface.textinfo.(sAttr).pos.x = int(showWindow.left) + RecalculateHIcon(int(75 * fHtRatio));
+		BattleInterface.textinfo.(sAttr).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(coff * fHtRatio));
 		BattleInterface.textinfo.(sAttr).text = "";
 		BattleInterface.textinfo.(sAttr).refreshable = true;
 		
 		BattleInterface.textinfo.(sAttrDes).font = "interface_normal";
 		BattleInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
 		BattleInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
-		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(105 * fHtRatio));
-		BattleInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).pos.x = int(showWindow.left) + RecalculateHIcon(int(105 * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).pos.y = int(showWindow.bottom)/4*3 + RecalculateVIcon(int(doff * fHtRatio));
 		BattleInterface.textinfo.(sAttrDes).align = "left";
 		BattleInterface.textinfo.(sAttrDes).text = "";
 		BattleInterface.textinfo.(sAttrDes).refreshable = true;
@@ -544,13 +544,13 @@ void WM_SetShipData()
 			BattleInterface.wm_sign.(signattr).rightprogress = GetSailPercent(&Characters[cn]) * 0.01;
 			GetStarProgressByValue(GetCharacterShipClass(&Characters[cn]), &uvleft, &uvtop, &uvright, &uvbottom);
 			BattleInterface.wm_sign.(signattr).starprogress = uvleft+","+uvtop + "," + uvright+","+uvbottom;
-			GetTextureUVForShip( sti(RealShips[sti(characters[cn].Ship.Type)].basetype), &uvleft,&uvtop, &uvright,&uvbottom);
+			GetTextureUVForShip( int(RealShips[int(characters[cn].Ship.Type)].basetype), &uvleft,&uvtop, &uvright,&uvbottom);
 			BattleInterface.wm_sign.(signattr).faceuv = uvleft+","+uvtop + "," + uvright+","+uvbottom;
 			BattleInterface.wm_sign.(signattr).text = GetCrewQuantity(&Characters[cn]);
 			BattleInterface.wm_sign.(signattr).shipname = Characters[cn].Ship.Name;
 			
 			ref refShip;
-			makeref(refShip, ShipsTypes[sti(RealShips[sti(characters[cn].Ship.Type)].basetype)]);
+			makeref(refShip, ShipsTypes[int(RealShips[int(characters[cn].Ship.Type)].basetype)]);
 			if (CheckAttribute(refShip, "modname"))
 			{
 				string largeFilePath = "interfaces\le\battle_interface\mods\"+refShip.modname+"\ship_icons2.tga.tx";
@@ -626,26 +626,26 @@ void WM_SetNationsThreat()
 			nLevels++;
 	}
 	
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	int x1, y1, x2, y2;
 	int backwidth, widthFlag, heightFlag, widthThreat, heightThreat, spaceM, spaceL, voffset, vspace, offsetThreat;
 
 	// задаём все размеры и интервалы
-	widthFlag = makeint(60 * fHtRatio);
-	heightFlag = makeint(60 * fHtRatio);
-	widthThreat = makeint(28 * fHtRatio);
-	heightThreat = makeint(28 * fHtRatio);
-	offsetThreat = makeint(30 * fHtRatio);
-	spaceM = makeint(4 * fHtRatio);
-	spaceL = makeint(18 * fHtRatio);
-	voffset = makeint(20 * fHtRatio);
-	vspace = makeint(8 * fHtRatio);
+	widthFlag = int(60 * fHtRatio);
+	heightFlag = int(60 * fHtRatio);
+	widthThreat = int(28 * fHtRatio);
+	heightThreat = int(28 * fHtRatio);
+	offsetThreat = int(30 * fHtRatio);
+	spaceM = int(4 * fHtRatio);
+	spaceL = int(18 * fHtRatio);
+	voffset = int(20 * fHtRatio);
+	vspace = int(8 * fHtRatio);
 	
 	// задаём задник через размеры и интервалы
 	backwidth = spaceL + widthFlag * nLevels + spaceM * (nLevels - 1) + spaceL;
-	y1 = sti(showWindow.top) + voffset;
+	y1 = int(showWindow.top) + voffset;
 	y2 = y1 + vspace + heightFlag + vspace;
-	int centerH = sti(showWindow.right) / 2;
+	int centerH = int(showWindow.right) / 2;
 	x1 = centerH - backwidth / 2;
 	x2 = x1 + backwidth;
 	
@@ -666,7 +666,7 @@ void WM_SetNationsThreat()
 			// задаём позицию через размеры и интервалы
 			x1 = centerH - backwidth / 2 + spaceL + (widthFlag + spaceM) * iFlag;
 			x2 = x1 + widthFlag;
-			y1 = sti(showWindow.top) + voffset + vspace;
+			y1 = int(showWindow.top) + voffset + vspace;
 			y2 = y1 + heightFlag;
 			arImage.pos = GetPosString(x1, y1, x2, y2);
 			// угроза
@@ -675,7 +675,7 @@ void WM_SetNationsThreat()
 			// задаём позицию через размеры и интервалы
 			x1 = centerH - backwidth / 2 + spaceL + (widthFlag + spaceM) * iFlag + offsetThreat;
 			x2 = x1 + widthThreat;
-			y1 = sti(showWindow.top) + voffset + vspace + offsetThreat;
+			y1 = int(showWindow.top) + voffset + vspace + offsetThreat;
 			y2 = y1 + heightThreat;
 			arImage.pos = GetPosString(x1, y1, x2, y2);
 			
@@ -743,8 +743,8 @@ void WM_SetSeasonsData()
 void WM_SetDateBase()
 {
 	float fHtRatio = float(Render.screen_y) / iHudScale;
-	int cx = sti(showWindow.right) - int(114 * fHtRatio);
-	int cy = sti(showWindow.top) + int(240 * fHtRatio);
+	int cx = int(showWindow.right) - int(114 * fHtRatio);
+	int cy = int(showWindow.top) + int(240 * fHtRatio);
 	aref arText;
 	makearef(arText, BattleInterface.wm_dynamic.texts.date);
 	arText.pos.x = cx;
@@ -765,10 +765,10 @@ void WM_SetDateInfo()
 void WM_SetSuppliesBase()
 {
 	float fHtRatio = float(Render.screen_y) / iHudScale;
-	int cx1 = sti(showWindow.right) - int(174.0 * fHtRatio);
+	int cx1 = int(showWindow.right) - int(174.0 * fHtRatio);
 	int cx2 = cx1 + int(60.0 * fHtRatio);
 	int cx3 = cx2 + int(60.0 * fHtRatio);
-	int cy = sti(showWindow.top) + int(300.0 * fHtRatio);
+	int cy = int(showWindow.top) + int(300.0 * fHtRatio);
 	int width_back = int(46 * fHtRatio);
 	int width = int(40 * fHtRatio);
 	int x1, y1, x2, y2;
@@ -875,8 +875,8 @@ void WM_SetSuppliesData()
 void WM_SetCoordinatesBase()
 {
 	float fHtRatio = float(Render.screen_y) / iHudScale;
-	int cx = sti(showWindow.right) - int(114 * fHtRatio);
-	int cy = sti(showWindow.top) + int(400 * fHtRatio);
+	int cx = int(showWindow.right) - int(114 * fHtRatio);
+	int cy = int(showWindow.top) + int(400 * fHtRatio);
 	int width = int(200 * fHtRatio);
 	int height = int(80 * fHtRatio);
 	int cy1 = cy - (4 * height) / 10;
@@ -938,8 +938,8 @@ void WM_SetShipAreaInfo(string sArea)
 void WM_SetFlagBase()
 {
 	float fHtRatio = float(Render.screen_y) / iHudScale;
-	int cx = sti(showWindow.right) - int(114 * fHtRatio);
-	int cy = sti(showWindow.top) + int(490 * fHtRatio);
+	int cx = int(showWindow.right) - int(114 * fHtRatio);
+	int cy = int(showWindow.top) + int(490 * fHtRatio);
 	int width = int(80 * fHtRatio);
 	int height = int(80 * fHtRatio);
 	int x1, y1, x2, y2;
@@ -1033,7 +1033,7 @@ void ControlsMapDesc()
 		sAttrDes = "Con"+numLine+"desc";
 		if(!CheckAttribute(&BattleInterface, "internal.wm_player_state"))
 			BattleInterface.internal.wm_player_state = 0;
-		if(sti(BattleInterface.internal.wm_player_state) > 0)
+		if(int(BattleInterface.internal.wm_player_state) > 0)
 		{
 			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
 			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");

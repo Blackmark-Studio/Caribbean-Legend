@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-            /*if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+            /*if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
 				dialog.text = RandPhraseSimple("Szpieg? Strażnicy!","Alarm! Jest intruz!");
 				link.l1 = "Zamknij się. Wychodzę.";
@@ -59,9 +59,9 @@ void ProcessDialogEvent()
 				break;
 			}*/
 			
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				if (sti(rColony.HeroOwn) == true) // наш горожанин
+				if (int(rColony.HeroOwn) == true) // наш горожанин
 				{
 				    dialog.text = RandPhraseSimple("Mówią, że to ty rządzisz tym miastem, "+GetSexPhrase("panie","panno")+".","Jakie przyjemne spotkanie, szef miasta zwrócił się do mnie z pytaniem.");
 					link.l1 = RandPhraseSimple("Zmieniłem zdanie.","Po prostu zwiedzam to miasto. Do widzenia.");
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(перессылка в файл города)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("Chcę omówić interesy.","W sprawie finansów...");
 							link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(перессылка в файл города)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("Chcę porozmawiać o interesach.","Odnośnie finansów...");
 							link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -149,7 +149,7 @@ void ProcessDialogEvent()
 				}	
 				if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 	            {
-	                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+	                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 	                {
 						link.l3 = RandPhraseSimple("Chcę omówić interesy.","Jeśli chodzi o finanse...");
 						link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 				// Квестовый генератор священника. Квест №2. Warship -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	            {
-					link.l5 = LinkRandPhrase("Czy jesteś świadomy","Czy wiedziałeś","Słyszałeś")+" że miejscowy kościół został ostatnio napadnięty?");
+					link.l5 = LinkRandPhrase("Czy jesteś świadomy","Czy wiedziałeś","Słyszałeś")+" że miejscowy kościół został ostatnio napadnięty?";
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
 				// <-- Квестовый генератор священника. Квест №2.
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
 			}			
 			if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
             {
-                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
                 {
 					link.l3 = RandPhraseSimple("Chcę omówić biznes.","Odnośnie finansów...");
 					link.l3.go = "LoanForAll";//(перессылка в кредитный генератор)
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 			// Квестовый генератор священника. Квест №2. Warship -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	        {
-				link.l5 = LinkRandPhrase("Czy jesteś świadomy","Słyszałeś","Słyszałeś")+"że miejscowy kościół został niedawno napadnięty?");
+				link.l5 = LinkRandPhrase("Czy jesteś świadomy","Słyszałeś","Słyszałeś")+"że miejscowy kościół został niedawno napadnięty?";
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
 			// <-- Квестовый генератор священника. Квест №2.
@@ -361,7 +361,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Citizen_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
 			{
 				dialog.text = "Hmm... Tak, chyba widziałem osobę z podobnym urządzeniem. Chodził tam z tym kilka godzin temu. Ciekawe urządzenie, z pewnością.";
 				link.l1 = "A jak on wyglądał i gdzie poszedł? Bardzo potrzebuję tego instrumentu.";
@@ -396,36 +396,36 @@ void ProcessDialogEvent()
 					}
 				}
 				pchar.GenQuest.SeekSpy.Idx = chrFindNearCharacters[i].index; //индекс выбранного
-				pchar.GenQuest.SeekSpy.Type = characters[sti(pchar.GenQuest.SeekSpy.Idx)].chr_ai.type; //тип кто помог
+				pchar.GenQuest.SeekSpy.Type = characters[int(pchar.GenQuest.SeekSpy.Idx)].chr_ai.type; //тип кто помог
 				pchar.GenQuest.SeekSpy.BaseIdx = npchar.index; //индекс
 			}
 		break;
 		case "SitySpy_1":
-			if (sti(pchar.GenQuest.SeekSpy.Idx) == -1 || sti(pchar.GenQuest.SeekSpy.Idx) == 1) //на всякий случай
+			if (int(pchar.GenQuest.SeekSpy.Idx) == -1 || int(pchar.GenQuest.SeekSpy.Idx) == 1) //на всякий случай
 			{
 				dialog.text = "Każdy może! Posłuchaj, dlaczego ciągle mnie dręczysz?! Jeśli masz problem, idź do gubernatora i wszystko załatwij!",link.l1 ="Hmm... To prawdopodobnie najlepiej nie przeszkadzać mu z taką drobnostką. Wierzę ci.";
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "Każdy w tym mieście! "+NPCharSexPhrase(npchar,GetFullName(&characters[sti(pchar.GenQuest.SeekSpy.Idx)])+" może to zrobić, na przykład, teraz kiedy "+NPCharSexPhrase(&characters[sti(pchar.GenQuest.SeekSpy.Idx)],"on","ona")+" stoi właśnie tam.","Ach, Panie, no, na przykład, "+NPCharSexPhrase(&characters[sti(pchar.GenQuest.SeekSpy.Idx)],GetAddress_FormToNPC(NPChar)+" "+characters[sti(pchar.GenQuest.SeekSpy.Idx)].lastname,GetFullName(&characters[sti(pchar.GenQuest.SeekSpy.Idx)]))+" mogę to zrobić.");				
+			dialog.text = "Każdy w tym mieście! "+NPCharSexPhrase(npchar,GetFullName(&characters[int(pchar.GenQuest.SeekSpy.Idx)])+" może to zrobić, na przykład, teraz kiedy "+NPCharSexPhrase(&characters[int(pchar.GenQuest.SeekSpy.Idx)],"on","ona")+" stoi właśnie tam.","Ach, Panie, no, na przykład, "+NPCharSexPhrase(&characters[int(pchar.GenQuest.SeekSpy.Idx)],GetAddress_FormToNPC(NPChar)+" "+characters[int(pchar.GenQuest.SeekSpy.Idx)].lastname,GetFullName(&characters[int(pchar.GenQuest.SeekSpy.Idx)]))+" mogę to zrobić.");
 			link.l1 = "Dobrze, zobaczmy, więc.";
 		    link.l1.go = "SitySpy_2";
-			sld = &characters[sti(pchar.GenQuest.SeekSpy.Idx)];
+			sld = &characters[int(pchar.GenQuest.SeekSpy.Idx)];
 			sld.dialog.currentnode = "SeekSpy_Checking";
 			pchar.GenQuest.SeekSpy.time = 4.0; //время на подбежать
 			if (sld.chr_ai.type == "merchant") pchar.GenQuest.SeekSpy.time = 0.0; //мерчант базарит сразу
             LAi_SetActorTypeNoGroup(sld);
 		break;
 		case "SitySpy_2":
-			sld = &characters[sti(pchar.GenQuest.SeekSpy.Idx)];
+			sld = &characters[int(pchar.GenQuest.SeekSpy.Idx)];
 			LAi_SetActorTypeNoGroup(npchar);
 			LAi_ActorTurnToCharacter(npchar, sld);
-			LAi_ActorDialog(sld, pchar, "", stf(pchar.GenQuest.SeekSpy.time), 0); 
+			LAi_ActorDialog(sld, pchar, "", float(pchar.GenQuest.SeekSpy.time), 0);
 			DialogExit();
 		break;
 		//=================== ноды квеста мэра. поиск шпиона на улице, опрос свидетеля ==================
 		case "SeekSpy_Checking":
-			dialog.text = "Tak, "+NPCharSexPhrase(&characters[sti(pchar.GenQuest.SeekSpy.BaseIdx)]," rzeczywiście jest miejscowy.","ona rzeczywiście jest miejscową.");
+			dialog.text = "Tak, "+NPCharSexPhrase(&characters[int(pchar.GenQuest.SeekSpy.BaseIdx)]," rzeczywiście jest miejscowy.","ona rzeczywiście jest miejscową.");
 			link.l1 = RandPhraseSimple("Widzę"+GetSexPhrase("","")+". Dziękuję za pomoc.","Wszystko jasne. Dziękuję za pomoc.");
 			link.l1.go = "SeekSpy_Checking_1";
 		break;
@@ -437,7 +437,7 @@ void ProcessDialogEvent()
 				case "citizen":  LAi_SetCitizenTypeNoGroup(npchar);  break;
 				case "merchant": LAi_SetMerchantTypeNoGroup(npchar); break;
 			}
-			LAi_SetCitizenTypeNoGroup(&characters[sti(pchar.GenQuest.SeekSpy.BaseIdx)]);
+			LAi_SetCitizenTypeNoGroup(&characters[int(pchar.GenQuest.SeekSpy.BaseIdx)]);
 			NextDiag.CurrentNode = "First Time";
 			DialogExit();
 		break;
@@ -452,7 +452,7 @@ void ProcessDialogEvent()
 			break;
 			
 		case "CitizenFindItem_2":
-			dialog.text = ""+GetSexPhrase("Kapitan","Pani")+", to naprawdę wspaniale! Proszę, znajdź ten pierścień dla mnie, mój mąż przyjeżdża za chwilę "+sti(NPChar.LifeDay)+" dni, i nie chciałbym, aby widział mnie bez mojego pierścionka ślubnego.";
+			dialog.text = ""+GetSexPhrase("Kapitan","Pani")+", to naprawdę wspaniale! Proszę, znajdź ten pierścień dla mnie, mój mąż przyjeżdża za chwilę "+int(NPChar.LifeDay)+" dni, i nie chciałbym, aby widział mnie bez mojego pierścionka ślubnego.";
 			link.l1 = RandPhraseSimple("Gdzie to zgubiłeś, mówisz?","Właściwie gdzie to zgubiłeś?");
 			link.l1.go = "CitizenFindItem_3";
 		break;
@@ -464,7 +464,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "CitizenFindItem_4":
-			dialog.text = "Tak, proszę to zrobić. I pospiesz się - pamiętaj, że masz tylko "+sti(NPChar.LifeDay)+" dni.";
+			dialog.text = "Tak, proszę to zrobić. I pospiesz się - pamiętaj, że masz tylko "+int(NPChar.LifeDay)+" dni.";
 			link.l1 = "Pamiętam.";
 			link.l1.go = "exit";
 			PChar.GenQuest.CitizenFindItem.StartQuest = true;
@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 			ChangeItemDescribe("DOjeronRing", "itmdescr_WeddingRing");			
 			items[FindItem("DOjeronRing")].Name = "itmname_WeddingRing";
 			items[FindItem("DOjeronRing")].City = XI_ConvertString("Colony" + NPChar.City + "Gen");
-			SetFunctionTimerCondition("CitizenFindItemMiniQuest_Timer", 0, 0, sti(NPChar.LifeDay), false);
+			SetFunctionTimerCondition("CitizenFindItemMiniQuest_Timer", 0, 0, int(NPChar.LifeDay), false);
 			PChar.GenQuestRandItem.(sCity).(sTemp) = "DOjeronRing";
 			SetGameModeCondition("CitizenFindItemMiniQuest_CheckItem");			
 		break;

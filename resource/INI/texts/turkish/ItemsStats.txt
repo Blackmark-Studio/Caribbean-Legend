@@ -333,3 +333,7 @@ itm_stat_greenIdol {Tapınma}
 itm_stat_descr_greenIdol {Put çevresindekileri iradesi altına alır; düşman gemilerinin teslim olma ihtimalini, filonun gücünü ve meyhanelerdeki acemi sayısını $percent(0.30) artırır.}
 itm_stat_secondary_greenIdol {Kadimlerin Fısıltısı}
 itm_stat_descr_secondary_greenIdol {Kuşanıldığında put, küfran fısıltılarıyla mürettebatı deliliğe sürükleyerek morallerini sürekli düşürür.}
+itm_stat_nocturlabe {Hora exacta}
+itm_stat_descr_nocturlabe {Aumenta la maniobrabilidad del barco en un 10%, y en otro 25% en los barcos de 2.ª y 1.ª clase.}
+itm_stat_secondary_nocturlabe {Navegación nocturna}
+itm_stat_descr_secondary_nocturlabe {Aumenta $key(Perception) en #f.0modifiers.SpecialPerception#. Aumenta la probabilidad de huida en el mapa global en 25.}

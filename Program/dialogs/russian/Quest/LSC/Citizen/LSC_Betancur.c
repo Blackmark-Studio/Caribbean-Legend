@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Я не желаю с тобой общаться. Ты нападаешь без причины на мирных граждан, провоцируешь их на драку. Уходи прочь!";
 				link.l1 = "Гм...";
@@ -105,13 +105,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.LSC.Betancur");
 			AddQuestRecord("LSC", "16");
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------
 		case "int_quests":
 			dialog.text = "Слушаю тебя, парень.";

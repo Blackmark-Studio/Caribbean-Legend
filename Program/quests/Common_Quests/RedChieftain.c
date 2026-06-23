@@ -16,7 +16,7 @@ void RedChieftain_Begin(string qName)//инициализация квестод
 {
 	//DelMapQuestMarkCity(pchar.questTemp.RedChieftain.StartCity);
 	//chrDisableReloadToLocation = true;
-	sld = GetCharacter(NPC_GenerateCharacter("RedChieftain", "Canib", "man", "man", 20, sti(pchar.nation), -1, false, "native"));
+	sld = GetCharacter(NPC_GenerateCharacter("RedChieftain", "Canib", "man", "man", 20, int(pchar.nation), -1, false, "native"));
 	sld.name = StringFromKey("RedChieftain_1");
 	sld.lastname = StringFromKey("RedChieftain_2");
     sld.Dialog.Filename = "Quest\LineMiniQuests\RedChieftain.c";
@@ -51,19 +51,19 @@ void RedChieftain_CreateShooner(string qName)//создание кораблей
 {
 	pchar.quest.RedChieftainOver.over = "yes";//снять таймер
 	Group_FindOrCreateGroup("RedChieftain_Shooner");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 5 + 2*sti(pchar.rank);
-	int iNation = sti(pchar.questTemp.RedChieftain.AttackNation);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 5 + 2*int(pchar.rank);
+	int iNation = int(pchar.questTemp.RedChieftain.AttackNation);
 	int iType = SHIP_SCHOONER_W;
 	if (MOD_SKILL_ENEMY_RATE < 5) iType = SHIP_SCHOONER;
 	for (int i=1; i<=2; i++)
 	{
 		if (i == 2 && MOD_SKILL_ENEMY_RATE < 9) iType = SHIP_SCHOONER;
-		if (i == 2 && MOD_SKILL_ENEMY_RATE < 5 && sti(pchar.rank) < 12) continue;
+		if (i == 2 && MOD_SKILL_ENEMY_RATE < 5 && int(pchar.rank) < 12) continue;
 		sld = GetCharacter(NPC_GenerateCharacter("ShoonerRC_Cap_"+i, "off_"+NationShortName(iNation)+"_"+(rand(1)+1), "man", "man", iRank, iNation, 0, true, "quest"));
 		FantomMakeSmallSailor(sld, iType, "", CANNON_TYPE_CANNON_LBS12, 50, iScl, iScl, iScl, iScl);
 		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_10", "pistol1", "bullet", 50);
-		if(MOD_SKILL_ENEMY_RATE < 5) SetCrewQuantity(sld, sti(GetMaxCrewQuantity(sld))/2); // belamour legendary edition
+		if(MOD_SKILL_ENEMY_RATE < 5) SetCrewQuantity(sld, int(GetMaxCrewQuantity(sld))/2); // belamour legendary edition
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		Group_AddCharacter("RedChieftain_Shooner", "ShoonerRC_Cap_"+i);
@@ -75,7 +75,7 @@ void RedChieftain_CreateShooner(string qName)//создание кораблей
 	Group_SetGroupCommander("RedChieftain_Shooner", "ShoonerRC_Cap_1");
 	if (pchar.questTemp.RedChieftain.Island == "Cumana") Group_SetAddress("RedChieftain_Shooner", pchar.questTemp.RedChieftain.Island, "ships", "l1");
 	else Group_SetAddress("RedChieftain_Shooner", pchar.questTemp.RedChieftain.Island, "quest_ships", "quest_ship_7");
-	bool bOk = (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_TARTANE) || (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_WAR_TARTANE) || (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER) || (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER) || (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_SLOOP) || (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_PINK);
+	bool bOk = (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_TARTANE) || (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_WAR_TARTANE) || (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER) || (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER) || (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_SLOOP) || (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_PINK);
 	if(bOk && GetCompanionQuantity(pchar) < 2)
 	{//все гуд - ставим тартаны
 		AddQuestRecord("RedChieftain", "3");
@@ -223,12 +223,12 @@ void RedChieftain_Shore(string qName)//высадка на сушу и бой
 	bQuestDisableMapEnter = false;//на карту можно
 	chrDisableReloadToLocation = true;//закрыть локацию
 	int iCrew = GetCrewQuantity(pchar);//получим число команды
-	int n = makeint(iCrew/10);
+	int n = int(iCrew/10);
 	if (n < 1) n = 1;
 	pchar.questTemp.RedChieftain.OurCrew = n;//запомним
-	int iRank = sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE/2);
-	int iScl = 5 + 2*sti(pchar.rank);
-	int iNation = sti(pchar.questTemp.RedChieftain.AttackNation);
+	int iRank = int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE/2);
+	int iScl = 5 + 2*int(pchar.rank);
+	int iNation = int(pchar.questTemp.RedChieftain.AttackNation);
 	//ставим наших бойцов согласно числу команды
 
 	object aCrewSoldier[1];
@@ -251,7 +251,7 @@ void RedChieftain_Shore(string qName)//высадка на сушу и бой
 		{
 			model = aCrewMushketer[0].model;
 			ani = aCrewMushketer[0].ani;
-			sld = GetCharacter(NPC_GenerateCharacter("RSOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("RSOur_crew_"+i, model, "man", ani, iRank, int(pchar.nation), 0, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		}
 		else
@@ -259,7 +259,7 @@ void RedChieftain_Shore(string qName)//высадка на сушу и бой
 			model = aCrewSoldier[nSoldierIndex].model;
 			ani = aCrewSoldier[nSoldierIndex].ani;
 			nSoldierIndex++;
-			sld = GetCharacter(NPC_GenerateCharacter("RSOur_crew_"+i, model, "man", ani, iRank, sti(pchar.nation), 0, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("RSOur_crew_"+i, model, "man", ani, iRank, int(pchar.nation), 0, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		}
 		ChangeCharacterAddressGroup(sld, pchar.questTemp.RedChieftain.Shore, "goto", "goto1");
@@ -338,7 +338,7 @@ bool RedChieftain_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "RedChieftain_EnterIndian")
 	{
-		n = sti(pchar.questTemp.RedChieftain.OurCrew);
+		n = int(pchar.questTemp.RedChieftain.OurCrew);
 		//считаем живых солдат
 		iTemp = 0;
 		for (i=1; i<=n; i++)
@@ -349,14 +349,14 @@ bool RedChieftain_QuestComplete(string sQuestName, string qname)
 		if (iTemp != n)//если есть потери - пересчитаем команду на корабле
 		{
 			iTemp = (n-iTemp)*10;
-			SetCrewQuantityOverMax(pchar, sti(PChar.Ship.Crew.Quantity)-iTemp); 
+			SetCrewQuantityOverMax(pchar, int(PChar.Ship.Crew.Quantity)-iTemp);
 		}
 		//ставим индейцев по числу живых тартан
-		n = sti(pchar.questTemp.RedChieftain.Tartane);
+		n = int(pchar.questTemp.RedChieftain.Tartane);
 		ChangeIndianRelation(n+4.0);
 		for (i=1; i <=n; i++)
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("RC_Indian_"+i, "miskito_"+(rand(5)+1), "man", "man", 5, sti(pchar.nation), 0, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("RC_Indian_"+i, "miskito_"+(rand(5)+1), "man", "man", 5, int(pchar.nation), 0, true, "quest"));
 			sld.name = StringFromKey("RedChieftain_6");
 			sld.lastname = StringFromKey("RedChieftain_7");
 			ChangeCharacterAddressGroup(sld, pchar.questTemp.RedChieftain.Shore, "goto", "goto1");
@@ -374,8 +374,8 @@ bool RedChieftain_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "RedChieftain_Pearl")
 	{
-		i = sti(pchar.questTemp.RedChieftain.Ind);
-		if (i <= sti(pchar.questTemp.RedChieftain.Tartane))
+		i = int(pchar.questTemp.RedChieftain.Ind);
+		if (i <= int(pchar.questTemp.RedChieftain.Tartane))
 		{
 			sld = characterFromId("RC_Indian_"+i);    
 			LAi_SetActorType(sld);

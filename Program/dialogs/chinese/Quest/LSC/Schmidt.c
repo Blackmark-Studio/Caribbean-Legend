@@ -169,7 +169,7 @@ void ProcessDialogEvent()
 			if (PCharDublonsTotal() > 0)
 			{
 				npchar.quest.blade_pay = PCharDublonsTotal();
-				link.l1 = "给你。 我有" + FindRussianQtyString(sti(npchar.quest.blade_pay)) + "枚。 ";
+				link.l1 = "给你。 我有" + FindRussianQtyString(int(npchar.quest.blade_pay)) + "枚。 ";
 				link.l1.go = "blade_pay";
 			}
 			link.l2 = "嗯。 可惜我现在没带。 但我肯定会带来, 然后我们继续谈。 ";
@@ -184,15 +184,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "blade_pay": // 付款
-			if (sti(npchar.quest.blade_dublon) < sti(npchar.quest.blade_pay)) // 全额支付
+			if (int(npchar.quest.blade_dublon) < int(npchar.quest.blade_pay)) // 全额支付
 			{
-				npchar.quest.blade_pay = sti(npchar.quest.blade_dublon);
+				npchar.quest.blade_pay = int(npchar.quest.blade_dublon);
 				iTemp = 0;
 			}
-			else iTemp = sti(npchar.quest.blade_dublon)-sti(npchar.quest.blade_pay);
+			else iTemp = int(npchar.quest.blade_dublon)-int(npchar.quest.blade_pay);
 			npchar.quest.blade_dublon = iTemp; // 记录余额
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.blade_pay));
-			Log_Info("你给了" + sti(npchar.quest.blade_pay) + "枚达布隆");
+			RemoveDublonsFromPCharTotal(int(npchar.quest.blade_pay));
+			Log_Info("你给了" + int(npchar.quest.blade_pay) + "枚达布隆");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
 			{
@@ -202,7 +202,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "好的。 我收下这些达布隆。 你还需要再带来" + FindRussianQtyString(sti(npchar.quest.blade_dublon)) + "枚。 ";
+				dialog.text = "好的。 我收下这些达布隆。 你还需要再带来" + FindRussianQtyString(int(npchar.quest.blade_dublon)) + "枚。 ";
 				link.l1 = "等我有了就带来。 ";
 				link.l1.go = "exit";
 				npchar.quest.blade_payseek = "true";
@@ -406,17 +406,17 @@ string SelectJurgenBladeDone(string _sType)
 	switch (_sType)
 	{
 		case "rapier":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_18"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_18";
 			else sBlade = "q_blade_16";
 		break;
 		
 		case "sabre":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_19"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_19";
 			else sBlade = "q_blade_10";
 		break;
 		
 		case "palash":
-			if (sti(pchar.rank) > 15) sBlade = "q_blade_21"; 
+			if (int(pchar.rank) > 15) sBlade = "q_blade_21";
 			else sBlade = "q_blade_13";
 		break;
 	}

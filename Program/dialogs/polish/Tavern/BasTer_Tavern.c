@@ -119,7 +119,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "TPZ_Tavern2_1":
 			dialog.text = "Kapitanie, to po prostu niesamowite! Jak wam się to udało? Choć właściwie to nieważne. Lepiej powiedzcie, czego chcecie za tak luksusową partię alkoholu? I czy wszystko będzie w porządku z dokumentami?";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Z dokumentami? Oczywiście, wszystko w najlepszym porządku. Nie zamierzacie ich przecież sprawdzać?";
 				link.l1.go = "TPZ_Tavern2_2";
@@ -215,7 +215,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "Oczywiście, kapitanie! A więc, ile chcecie za swoją partię?";
 				link.l1 = "Za każde dziesięć butelek wina chcę trzydzieści dubloonów, a za rum – pięć. Cała partia to sto butelek rumu i tyle samo wina, razem daje to trzysta pięćdziesiąt dubloonów.";

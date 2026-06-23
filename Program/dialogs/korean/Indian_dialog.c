@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "내 남편 타고파는 우리 부족에서 최고의 사냥꾼이야. 오에이! "+npchar.name+" 남편을 자랑스러워한다. "+npchar.name+" 셀바에서 자주 타고파랑 같이 다녀. 멀리까지 가. 스페인 정착지가 어디 있는지 타고파가 알아.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "타고파는 백인들이 메리다라고 부르는 스페인 도시로 가는 길을 아는가?";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("내 남편은 셀바에 가지 않아, 바다의 아들아. 그는 물고기를 잡지. 좋은 어부야, 오-에이! ","내 남편은 사냥을 잘해, 오-이, 하지만 정글 깊숙이 들어가진 않아."),RandPhraseSimple("사냥하다가 재규어가 내 남편을 다치게 했어. 이제 그는 마을에 앉아서 화살이나 만들고 있지, 아이고!","여섯 달 전, 카퐁 세 놈이 내 남편을 공격했어. 이제 그는 마을에서 멀리 사냥하러 가지 않아. 절대 안 가! 오에이!"));
-				link.l1 = LinkRandPhrase("안됐군...","안타깝군...","정말 안타깝군..."));
+				link.l1 = LinkRandPhrase("안됐군...","안타깝군...","정말 안타깝군...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "아니, 야라나우이. 창백한 얼굴의 자는 절대 약속을 지키지 않는다. 그 자가 말을 해도, 그 말은 곧바로 허공으로 날아가 버린다. 카퐁이 타고파를 죽이고 나면 우리 마을로 와서 로코노를 죽일 것이다.";
 			link.l1 = "이 카퐁 놈들만 걱정하면 된다고 생각하나? 아주 큰 착각이야...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "로코노는 얄라나우이를 믿지 않는다. 얄라나우이는 인디언을 속이고, 인디언을 노예로 만든다. 하지만 로코노는 네 이름을 들었지, 창백한 얼굴이여. 내 신뢰를 주겠다. 내일 해진 뒤에 오너라, 바다의 자식아. 저 오두막에서 타고파와 함께 있을 것이다. 그에게 너와 함께 갈 것인지 물어보겠다.";
 			link.l1 = "타고파에게 내 최고의 권총을 주겠다고 전해라. 그리고 너에겐 내가 보석을 많이 가지고 있지.";
 			link.l1.go = "hayamee_2";
-			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("The Indians respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

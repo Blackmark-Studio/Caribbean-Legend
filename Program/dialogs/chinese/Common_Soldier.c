@@ -12,16 +12,16 @@ void ProcessDialogEvent()
 	
 	int DeceptionChance  = 0;
 	int DeceptionPenalty  = 0;
-	if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeceptionPenalty = sti(pchar.StealtDeceptionPenalty);
+	if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeceptionPenalty = int(pchar.StealtDeceptionPenalty);
 	
-	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
+	DeceptionChance = int(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
 	if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
 	if (false) 
 	{
-		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
+		DeceptionChance = int(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
 	}
-	if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
+	if(int(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 	{
 		DeceptionChance = 100;
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 					if (DeceptionChance > (10+rand(150)+rand(150)))
 					{
 						dialog.text = RandPhraseSimple("你是谁, 在这里做什么? ", "站住! 你是谁, 你有什么权利想进入城镇? ");
-						link.l2 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(sti(npchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
+						link.l2 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(int(npchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
 						link.l1.go = "NotPegYou";
 					}
 					else
@@ -124,11 +124,11 @@ void ProcessDialogEvent()
 						link.l1.go = "LicenceOk";
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //如果停泊在城市
 						{
-							link.l2 = "你没看到我船上挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜吗? ! (欺骗概率" + DeceptionChance + "%%)";
+							link.l2 = "你没看到我船上挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜吗? ! (欺骗概率" + DeceptionChance + "%%)";
 						}
 						else //如果停泊不在城市
 						{
-							link.l2 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
+							link.l2 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -152,11 +152,11 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //如果停泊在城市
 						{
-							link.l1 = "你没看到我船上挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜吗? ! (欺骗概率" + DeceptionChance + "%%)";
+							link.l1 = "你没看到我船上挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜吗? ! (欺骗概率" + DeceptionChance + "%%)";
 						}
 						else //如果停泊不在城市
 						{
-							link.l1 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
+							link.l1 = "我在" + XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen") + "附近下锚, 挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜。 你有什么不明白的? (欺骗概率" + DeceptionChance + "%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -171,9 +171,9 @@ void ProcessDialogEvent()
 				// < —eddy。 检查是否是敌人。 
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (int(NPChar.nation) == PIRATE)
 					{
-						if (sti(rColony.HeroOwn) == true) // 我们的市民
+						if (int(rColony.HeroOwn) == true) // 我们的市民
 						{
 			         		switch (rand(10))
 							{
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{ // 海盗, 不是我们的
-							if (sti(pchar.GenQuest.Piratekill) > 20)
+							if (int(pchar.GenQuest.Piratekill) > 20)
 							{
 								dialog.text = RandPhraseSimple("警报! 武装的病态疯子在这里! ", "拿起武器, 拿起武器! 有个疯狂的混蛋在这里! ");
 								link.l1 = RandPhraseSimple("嗯? 什么? ", "呃, 你为什么要这样做? ");
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{ //如果是对友好或中立国家有不良行为的人
-						if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -15)
+						if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -15)
 						{
 							dialog.text = RandPhraseSimple("看看那个无赖! 他竟敢在" + XI_ConvertString("Colony" + npchar.city) + "露面。 抓住" + GetSexPhrase("他","她") + "! ! ! ", "哈, 我认出你了, " + GetSexPhrase("无赖","流氓") + "! 抓住" + GetSexPhrase("他","她") + "! ! ! ");
 							link.l1 = RandPhraseSimple("啊! ... ", "好吧, 你自找的... ");
@@ -288,13 +288,13 @@ void ProcessDialogEvent()
 					// --> 丛林中的少女
 					if(rand(2) == 1 && CheckAttribute(pchar,"GenQuest.EncGirl") && CheckAttribute(pchar,"GenQuest.EncGirl.MeetSoldiers"))
 					{
-						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)	
+						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)
 						{
 							dialog.text = "哦, 看看谁在那里! " + pchar.GenQuest.EncGirl.name + "小姐亲自光临! 我想知道你怎么敢? 我们一直在找你! 请前往地牢 —你的牢房已经准备好了, 在等着你。 ";
 							link.l1 = "你在说什么胡话! 我和我的" + GetSexPhrase("骑士","同伴") + "在丛林中散步, 采花。 别烦我! 这些严格的人礼貌在哪里? ! 他们一看到迷人的女孩, 就开始对她唠叨! " + GetSexPhrase("亲爱的, 请告诉那些笨蛋滚开, 让一个诚实的女人独处! ","亲爱的, 请告诉那些笨蛋... ") + "! ";
 							link.l1.go = "GirlEnc_1";
 						}
-						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)	
+						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)
 						{
 							dialog.text = "哦, 你在这里, 美人! 你爸爸让整个驻军都去找你, 把你带回家。 ";
 							link.l1 = "滚开! 我知道我要去哪里, 我不需要你的帮助! 船长, 告诉他们把手从我身上拿开。 ";
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// 服役国家的海军中将 不穿制服也能认出来
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
@@ -360,31 +360,31 @@ void ProcessDialogEvent()
 
 							case 2: 
 								dialog.text = "中将, 这是我的荣幸! 我能为您做什么? ";
-								link.l1 = "为" + NationNameGenitive(sti(npchar.nation)) + "服务, 士兵! 这是你能做的最好的事情。 ";
+								link.l1 = "为" + NationNameGenitive(int(npchar.nation)) + "服务, 士兵! 这是你能做的最好的事情。 ";
 								link.l1.go = "exit";
 							break;
 						}
 						break;
 					}
 					// 有许可证的军官
-					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
 							case 0: 
-							dialog.text = "问候您, 船长! 如果您有任何指示给我, 那么请原谅: 虽然我为" + NationNameGenitive(sti(npchar.nation)) + "服务, 但我只听令于指挥官和总督。 "; 
+							dialog.text = "问候您, 船长! 如果您有任何指示给我, 那么请原谅: 虽然我为" + NationNameGenitive(int(npchar.nation)) + "服务, 但我只听令于指挥官和总督。 ";
 							link.l1 = "我有我的军官和船员听从我的指导。 履行你的职责, 士兵。 ";
 							link.l1.go = "exit";
 							break;
 
 							case 1:
-								dialog.text = "船长, 你能带我到你的船上服役吗? 同样为" + NationNameGenitive(sti(npchar.nation)) + "服务, 但我更喜欢大海。 "; 
+								dialog.text = "船长, 你能带我到你的船上服役吗? 同样为" + NationNameGenitive(int(npchar.nation)) + "服务, 但我更喜欢大海。 ";
 								link.l1 = "你需要在被分配的地方, 所以要光荣地履行你的职责。 你一闭眼, 他们就会把你带到海上。 ";
 								link.l1.go = "exit";
 							break;
 
 							case 2: 
-								dialog.text = "哦, 你很幸运: 你是为" + NationNameGenitive(sti(npchar.nation)) + "服务的船长... 而我整天都被困在这里。 "; 
+								dialog.text = "哦, 你很幸运: 你是为" + NationNameGenitive(int(npchar.nation)) + "服务的船长... 而我整天都被困在这里。 ";
 								link.l1 = "你认为我刚到加勒比海, 一周后就成了船长吗? 这都是多年的辛勤工作... ";
 								link.l1.go = "exit";
 							break;
@@ -482,7 +482,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("在我看来这是某种诡计。 我们和指挥官谈谈, " + GetSexPhrase("伙伴","亲爱的") + ", 把一切都弄清楚... ", "嗯... 我觉得你不是你假装的那个人... " + GetAddress_Form(npchar) + "放下武器, 跟我来接受进一步调查! ");
 			link.l1 = RandPhraseSimple("去你的! ", "当两个星期天在一周内到来时... ");
 			link.l1.go = "fight";
-			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
+			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || int(pchar.questTemp.stels.landSolder) != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 40);
 				pchar.questTemp.stels.landSolder = GetDataDay();
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("哦, 我明白了... 一切似乎都没问题, 你可以走了, " + GetAddress_Form(pchar) + "。 ", "我一定是站岗站得有点累了... 一切似乎都很好, " + GetAddress_Form(pchar) + ", 对不起。 ");
 			link.l1 = "没问题! ";
 			link.l1.go = "exit";
-			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
+			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || int(pchar.questTemp.stels.landSolder) != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 80);
 				pchar.questTemp.stels.landSolder = GetDataDay();
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 		
 		case "LicenceOk":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				dialog.text = "想想看! 如此无礼! 以商人的名义来到这里! 你的照片贴在每个营房里, 你这个混蛋! 这次你逃不掉了! 抓住他! ";
 				link.l1 = RandPhraseSimple("啊! ... ", "好吧, 你自找的... ");
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", -1.0);
 			sld.lifeDay = 0;
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");		
 		break;
 		
@@ -598,7 +598,7 @@ void ProcessDialogEvent()
 		break;		
 		
 		case "GirlEnc_12End":
-			pchar.money = sti(pchar.money) - makeint(sti(pchar.money)/20);
+			pchar.money = int(pchar.money) - int(int(pchar.money)/20);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			sld = CharacterFromID("CangGirl");
 			LAi_SetActorType(sld);
@@ -661,7 +661,7 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", -1.0);
 			sld.lifeDay = 0;
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");				
 		break;
 		// < —生成器 "丛林中的少女"
@@ -700,7 +700,7 @@ void ProcessDialogEvent()
 				dialog.text = "一千。 而且不能少一个比索。 ";
 				link.l1 = "不, 也许我不准备为一个瘀伤付这么多钱。 ";
 				link.l1.go = "NightAdventure_CitizenHomieSolder_3NM";
-				if (sti(pchar.money) >= 1000)
+				if (int(pchar.money) >= 1000)
 				{
 					link.l2 = "哦... 好吧, 等一下。 这里马上有笔和羊皮纸。 写上你撤回对我朋友的任何指控。 ";
 					link.l2.go = "NightAdventure_CitizenHomieSolder_3GM";
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 			dialog.text = "可不是嘛, 那我们这些人就轻松多了。 我就不多打扰您了, 船长。";
 			link.l1 = "祝你好运, 士兵。";
 			link.l1.go = "WildRose_Soldier_8";
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 2);
 		break;
 		
 		case "WildRose_Soldier_8":
@@ -814,7 +814,7 @@ void ProcessDialogEvent()
 
 		case "pirate_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_Attack(NPChar, Pchar);
 			DoQuestFunctionDelay("TownPirate_battle", 0.5);
 		break;

@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "Biały brat bystry jak sowa, przebiegły jak wąż. Kłopoty przydarzają się Indianinowi. Wielka-wielka łódź białych ludzi przybywa do mojej wioski. Zabierają wielu Kajmanów, moich ludzi, umieszczają ich na swojej łodzi i zabierają na Matkę Wszystkich Wód...";
 			link.l1 = "Czekaj... czy mówisz, że twoi ludzie zostali zniewoleni przez białych ludzi z okrętu?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("Cieszę się, że łzy bogów są twoje, bracie Arawaka!","Dziękuję ci, odważna blada twarzy!","Weź nasz połów, biały bracie!");
 			link.l1 = LinkRandPhrase("Ciesze się, że mogłem pomóc!","Dzięki, czerwonoskóry bracie!","Świetnie!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "Canauri dziękuje ci ponownie, blady bracie! Ratujesz wszystkie kanoe z Indianami! Dla Canauri jest bardzo ważne, aby uratować wszystkie kanoe, ponieważ także ratujesz wnuka Canauri, którego zły blady twarz wziął do niewoli. Jako dziecko, mój wnuk bardzo lubił pływać, a Kanauri dał mu ten zaczarowany amulet, aby wnuk się nie utopił. Teraz wnuk już nie chce pływać i daje mi amulet, abym mógł go tobie dać, blady bracie. Mam nadzieję, że łzy bogów i ten dar będą wystarczającą nagrodą za życie Arawaka. A teraz żegnamy się - czas wracać do naszej rodzimej wioski.";
 				link.l1 = "Powodzenia, Cunauri! Cieszę się, że twój wnuk przeżył! Modlę się, aby to zło nigdy więcej cię nie spotkało!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

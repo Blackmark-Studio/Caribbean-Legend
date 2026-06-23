@@ -36,16 +36,16 @@ void ProcessDialogEvent()
 	{
 	case "First time":
 		//--> проверка межнациональных отношений
-		if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+		if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 		{
-			dialog.text = NPCStringReactionRepeat("Hm. Navegáis bajo la bandera de " + NationNameGenitive(sti(pchar.nation)) + ", camarada. ¿Qué diablos haces aquí, en nuestra ciudad? ¡Piérdete!", "No quiero ser sospechoso de ser amigo de " + NationNameAblative(sti(pchar.nation)) + "¡Lárgate o informaré a los guardias!", "Es tu última oportunidad para escapar. De lo contrario, solo tendrás a ti mismo para culpar.", "Te he advertido. ¡Ahora pagarás por tu insolencia, bastardo!", "block", 1, npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Hm. Navegáis bajo la bandera de " + NationNameGenitive(int(pchar.nation)) + ", camarada. ¿Qué diablos haces aquí, en nuestra ciudad? ¡Piérdete!", "No quiero ser sospechoso de ser amigo de " + NationNameAblative(int(pchar.nation)) + "¡Lárgate o informaré a los guardias!", "Es tu última oportunidad para escapar. De lo contrario, solo tendrás a ti mismo para culpar.", "Te he advertido. ¡Ahora pagarás por tu insolencia, bastardo!", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("¡Vaya patriota, ja!", "Está bien, está bien, cálmate. Me voy.", "No hagas tanto ruido. Me voy.", "¿Qué?", npchar, Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			break;
 		}
 
 		//--> проверка репутации - дворяне гнобят супернегодяев
-		if (sti(pchar.reputation.nobility) < 10)
+		if (int(pchar.reputation.nobility) < 10)
 		{
 			dialog.text = NPCStringReactionRepeat("¡Mira eso! ¿Y cómo es que nuestros guardias permiten que un bastardo como tú simplemente ande por la ciudad? Imposible...", "¡Piérdete, ni siquiera quiero hablar contigo! ¡Verdugo...", "Es tu última oportunidad para escapar. De lo contrario, solo te tendrás a ti mismo para culpar.", "Te he advertido. ¡Ahora pagarás por tu insolencia, bastardo!", "block", 1, npchar, Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("¡Eh, eh! ¡Muéstrame más respeto, señor!", "Mírate a ti mismo, santo...", "Calma...", "¿Qué?", npchar, Dialog.CurrentNode);
@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		{
 			// проверка наличия корабля в порту
 			bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city) // дворянин-пассажир
+			if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city) // дворянин-пассажир
 			{
 				dialog.text = "Saludos, " + GetAddress_Form(NPChar) + ". Veo que eres capitán de un sólido barco. Quiero pedirte que hagas algo. Puedes aceptarlo o dejarlo.";
 				link.l1 = "Estoy escuchando, " + GetAddress_FormToNPC(NPChar) + "¿Qué quieres decir?";
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 				DeleteAttribute(npchar, "talker"); // снимаем говорилку
 				break;
 			}
-			if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
+			if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
 			if (CheckAttribute(npchar, "quest.donation")) // клянчит деньги
 			{
 				dialog.text = "¡Ahá, es bueno ver a un caballero en nuestra pequeña ciudad! Estoy seguro de que vienes directo de Europa. Escucha, quiero pedirte que me ayudes, de caballero a caballero. Espero que me entiendas correctamente.";
@@ -144,11 +144,11 @@ void ProcessDialogEvent()
 			SetPassengerParameter("Noblepassenger", true);
 		if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
 		{
-			dialog.text = "" + GetSexPhrase("Señor", "Señora") + ", necesito llegar a la colonia de " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + ", tan pronto como sea posible que está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", en el plazo de " + FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty)) + ". Tu barco parece robusto y rápido en comparación con la mayoría de estas pequeñas bañeras que navegan aquí. Puedo pagarte " + FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money)) + "¿Qué dirías?"; // belamour gen
+			dialog.text = "" + GetSexPhrase("Señor", "Señora") + ", necesito llegar a la colonia de " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + ", tan pronto como sea posible que está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", en el plazo de " + FindRussianDaysString(int(pchar.GenQuest.Noblepassenger.DaysQty)) + ". Tu barco parece robusto y rápido en comparación con la mayoría de estas pequeñas bañeras que navegan aquí. Puedo pagarte " + FindRussianMoneyString(int(pchar.GenQuest.Noblepassenger.Money)) + "¿Qué dirías?"; // belamour gen
 		}
 		else
 		{
-			dialog.text = "Hola, " + GetSexPhrase("señor", "señora") + "¡Necesito llegar a " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + "¡Eso está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", por cierto. Sí, sí, sé que esos bastardos están esperando a que aparezcamos allí. ¡Pero tengo una reunión muy urgente e importante allí! No soy una persona tacaña, aunque no me gusta pagar, siempre pago. Deja todo lo que estés haciendo, y tan pronto como lleguemos, te daré " + FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money)) + ".";
+			dialog.text = "Hola, " + GetSexPhrase("señor", "señora") + "¡Necesito llegar a " + XI_ConvertString("Colony" + pchar.GenQuest.Noblepassenger.City + "Acc") + "¡Eso está en " + XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City) + "Voc") + ", por cierto. Sí, sí, sé que esos bastardos están esperando a que aparezcamos allí. ¡Pero tengo una reunión muy urgente e importante allí! No soy una persona tacaña, aunque no me gusta pagar, siempre pago. Deja todo lo que estés haciendo, y tan pronto como lleguemos, te daré " + FindRussianDublonString(int(pchar.GenQuest.Noblepassenger.Money)) + ".";
 		}
 		link.l1 = "Hum. Me dirijo a ese rumbo también, así que estoy listo para llevarte a bordo bajo estos términos.";
 		link.l1.go = "passenger_1";
@@ -209,17 +209,17 @@ void ProcessDialogEvent()
 		AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
 		AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 		AddQuestUserData(sTitle, "sCity", sTemp);
-		AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty)));
+		AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Noblepassenger.DaysQty)));
 		AddQuestUserData(sTitle, "sSex", GetSexPhrase("", ""));
 		if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
-			AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money)));
+			AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Noblepassenger.Money)));
 		else
-			AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money)));
+			AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Noblepassenger.Money)));
 		AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 		pchar.quest.Noblepassenger.win_condition.l1 = "location";
 		pchar.quest.Noblepassenger.win_condition.l1.location = pchar.GenQuest.Noblepassenger.City + "_town";
 		pchar.quest.Noblepassenger.function = "Noblepassenger_complete";
-		SetFunctionTimerCondition("Noblepassenger_Over", 0, 0, sti(pchar.GenQuest.Noblepassenger.DaysQty), false);
+		SetFunctionTimerCondition("Noblepassenger_Over", 0, 0, int(pchar.GenQuest.Noblepassenger.DaysQty), false);
 		break;
 
 	case "passenger_3":
@@ -244,10 +244,10 @@ void ProcessDialogEvent()
 		if (CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
 		{
 			AddCharacterExpToSkill(pchar, "Sneak", 50);
-			TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Noblepassenger.Money));
+			TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Noblepassenger.Money));
 		}
 		else
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Noblepassenger.Money));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.Noblepassenger.Money));
 		sTitle = npchar.index + "Citizpassenger";
 		AddQuestRecordEx(sTitle, "Citizpassenger", "3");
 		CloseQuestHeader(sTitle);
@@ -266,8 +266,8 @@ void ProcessDialogEvent()
 	case "donation_1":
 		iTemp = hrand(4) + 1;
 		pchar.GenQuest.Nobledonation.Money = iTemp * 1000 + rand(iTemp) * 150;
-		dialog.text = "La suma es bastante pequeña, es " + FindRussianMoneyString(sti(pchar.GenQuest.Nobledonation.Money)) + "¿Entonces qué, puedes ayudarme?";
-		if (sti(pchar.money) >= sti(pchar.GenQuest.Nobledonation.Money))
+		dialog.text = "La suma es bastante pequeña, es " + FindRussianMoneyString(int(pchar.GenQuest.Nobledonation.Money)) + "¿Entonces qué, puedes ayudarme?";
+		if (int(pchar.money) >= int(pchar.GenQuest.Nobledonation.Money))
 		{
 			link.l1 = "Sí, claro. Tómalo.";
 			link.l1.go = "donation_2";
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "donation_2":
-		AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Nobledonation.Money));
+		AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Nobledonation.Money));
 		dialog.text = "Mi gratitud, " + GetAddress_Form(NPChar) + "¡Me has salvado! Tengo amigos en la residencia del gobernador y les contaré sobre tu generosidad. ¡Mil gracias de nuevo!";
 		link.l1 = "De nada, señor. Estoy seguro de que haría lo mismo por mí.";
 		link.l1.go = "donation_3";
@@ -294,7 +294,7 @@ void ProcessDialogEvent()
 	case "donation_3":
 		DialogExit();
 		ChangeOfficersLoyality("good_all", rand(2) + 1);
-		ChangeCharacterNationReputation(pchar, sti(npchar.Nation), rand(1) + 2);
+		ChangeCharacterNationReputation(pchar, int(npchar.Nation), rand(1) + 2);
 		LAi_CharacterDisableDialog(npchar);
 		npchar.lifeday = 0;
 		DeleteAttribute(pchar, "GenQuest.Nobledonation");
@@ -399,8 +399,8 @@ void ProcessDialogEvent()
 	case "slaves":
 		npchar.quest.slaves.price = 3 + hrand(1);	  // цена на рабов в дублонах
 		npchar.quest.slaves.qty = 50 + hrand(5) * 10; // количество
-		npchar.quest.slaves.money = sti(npchar.quest.slaves.qty) * sti(npchar.quest.slaves.price);
-		dialog.text = "Soy dueño de una " + LinkRandPhrase("fábrica", "factoría", "plantación") + " y siempre tengo necesidad de esclavos frescos porque el clima los afecta seriamente. Ahora mismo necesito " + sti(npchar.quest.slaves.qty) + " almas. Estoy dispuesto a encargarte un lote y te pagaré " + sti(npchar.quest.slaves.price) + " doblones por cabeza.\nNo hay prisa, no te meteré prisa si obtienes lo que necesito. Bueno, dentro de lo razonable, no lo prolongues más de medio año. ¿Entonces, qué me dices? ¿Hay trato?";
+		npchar.quest.slaves.money = int(npchar.quest.slaves.qty) * int(npchar.quest.slaves.price);
+		dialog.text = "Soy dueño de una " + LinkRandPhrase("fábrica", "factoría", "plantación") + " y siempre tengo necesidad de esclavos frescos porque el clima los afecta seriamente. Ahora mismo necesito " + int(npchar.quest.slaves.qty) + " almas. Estoy dispuesto a encargarte un lote y te pagaré " + int(npchar.quest.slaves.price) + " doblones por cabeza.\nNo hay prisa, no te meteré prisa si obtienes lo que necesito. Bueno, dentro de lo razonable, no lo prolongues más de medio año. ¿Entonces, qué me dices? ¿Hay trato?";
 		link.l1 = "¡Trato hecho! La esclavitud es un negocio sucio, pero vale la pena el riesgo.";
 		link.l1.go = "slaves_1";
 		link.l2 = "Perdóname, pero no soy traficante de esclavos. No es mi línea de trabajo.";
@@ -435,15 +435,15 @@ void ProcessDialogEvent()
 		AddQuestUserDataForTitle(sTitle, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 		AddQuestUserData(sTitle, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 		AddQuestUserData(sTitle, "sName", GetFullName(npchar));
-		AddQuestUserData(sTitle, "sQty", sti(npchar.quest.slaves.qty));
-		AddQuestUserData(sTitle, "sMoney", sti(npchar.quest.slaves.money));
+		AddQuestUserData(sTitle, "sQty", int(npchar.quest.slaves.qty));
+		AddQuestUserData(sTitle, "sMoney", int(npchar.quest.slaves.money));
 		break;
 
 	case "slaves_3":
 		if (GetNpcQuestPastDayParam(npchar, "slaves_date") < 180)
 		{
-			dialog.text = "¿Has traído " + sti(npchar.quest.slaves.qty) + " esclavos como te he pedido, capitán?";
-			if (GetSquadronGoods(pchar, GOOD_SLAVES) >= sti(npchar.quest.slaves.qty))
+			dialog.text = "¿Has traído " + int(npchar.quest.slaves.qty) + " esclavos como te he pedido, capitán?";
+			if (GetSquadronGoods(pchar, GOOD_SLAVES) >= int(npchar.quest.slaves.qty))
 			{
 				link.l1 = "Sí. Todo el lote está en mi bodega. Estoy listo para entregártelos.";
 				link.l1.go = "slaves_4";
@@ -470,15 +470,15 @@ void ProcessDialogEvent()
 		break;
 
 	case "slaves_5":
-		dialog.text = "No te preocupes, lo recuerdo. Aquí, toma la suma, " + sti(npchar.quest.slaves.price) + "doblones por cabeza. ¿Un buen trato para ambos, sí?";
+		dialog.text = "No te preocupes, lo recuerdo. Aquí, toma la suma, " + int(npchar.quest.slaves.price) + "doblones por cabeza. ¿Un buen trato para ambos, sí?";
 		link.l1 = "Gracias. Un placer hacer negocios contigo.";
 		link.l1.go = "slaves_6";
 		break;
 
 	case "slaves_6":
-		RemoveCharacterGoods(pchar, GOOD_SLAVES, sti(npchar.quest.slaves.qty));
-		TakeNItems(pchar, "gold_dublon", sti(npchar.quest.slaves.money));
-		Log_Info("Has recibido " + FindRussianDublonString(sti(npchar.quest.slaves.money)) + "");
+		RemoveCharacterGoods(pchar, GOOD_SLAVES, int(npchar.quest.slaves.qty));
+		TakeNItems(pchar, "gold_dublon", int(npchar.quest.slaves.money));
+		Log_Info("Has recibido " + FindRussianDublonString(int(npchar.quest.slaves.money)) + "");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "¡Eso debería decirse... Discúlpame ahora, debo irme. ¡Hasta luego!";
 		link.l1 = "Buena suerte, " + GetAddress_FormToNPC(NPChar) + ".";
@@ -530,11 +530,11 @@ void ProcessDialogEvent()
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		LAi_SetHP(NPChar, 400, 400);
 		TakeNItems(NPChar, "potion2", 3);
-		SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+		SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		LAi_group_MoveCharacter(NPChar, "TempFight");
 		LAi_group_Attack(NPChar, Pchar);
 		AddDialogExitQuest("MainHeroFightModeOn");
-		ChangeCharacterNationReputation(pchar, sti(npchar.nation), -3);
+		ChangeCharacterNationReputation(pchar, int(npchar.nation), -3);
 		break;
 	}
 }

@@ -84,12 +84,6 @@ object LTR; // Lottery
 string GSeed; // Суточное зерно
 
 //--------------------------------------------------------------------
-// Bool section
-//--------------------------------------------------------------------
-#define false			0
-#define true			1			
-
-//--------------------------------------------------------------------
 // Variables types
 // VarType(ref) вернёт тип переменной по ссылке, а не "ref" или "ref: <type>"
 // Если ссылка пустая, то вернёт "nullptr"
@@ -275,9 +269,9 @@ int EventReturn_isGrassLightsOn()
 {
 	// trace("EventReturn_isGrassLightsOn"); это я перевел на 1 раз за все время создания травы
 	// 1 - светится, 0 - темная
-	if(CheckAttribute(&WeatherParams, "Rain") && sti(WeatherParams.Rain))
+	if(CheckAttribute(&WeatherParams, "Rain") && int(WeatherParams.Rain))
     {
-		if(sti(InterfaceStates.DYNAMICLIGHTS)) 
+		if(int(InterfaceStates.DYNAMICLIGHTS))
 		{
 			if (GetHour() >= 8 && GetHour() <= 18) return 1;
 			else return 0;

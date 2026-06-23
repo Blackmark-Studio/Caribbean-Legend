@@ -558,7 +558,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // 早晨
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // 早晨
 			{
 				dialog.text = "今天很忙吗, "+pchar.name+"? 祝你好运! ";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -581,12 +581,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_1":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) // 晚上
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) // 晚上
 			{
 				dialog.text = "已经是晚上了, "+pchar.name+", 你说的什么事? 待在这里, 我们喝点东西放松一下, 没错! 可以等到早上! ";
 				link.l1 = "(笑着) 当然, 亲爱的, 不用多说... ";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "玛丽, 我们今天去酒馆吧! ";
 					link.l2.go = "LSC_tavern";
@@ -595,7 +595,7 @@ void ProcessDialogEvent()
 				link.l3.go = "LSC_love_2";
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) // 白天
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) // 白天
 			{
 				dialog.text = "别忘了晚上来看我。 你敢躲着我, 没错! ";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		
 		case "rest_day":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 13 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -658,7 +658,7 @@ void ProcessDialogEvent()
 		
 		case "rest_evening":
 			DialogExit();
-			iTime = sti(environment.time);
+			iTime = int(environment.time);
 			iAddTime = 18 - iTime;
 			WaitDate("",0,0,0,iAddtime,5);
 			RecalculateJumpTable();
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
 				link.l1.go = "talisman";
 				break;
 			}
-			if (stf(environment.time) >= 5.0 && stf(environment.time) < 10.0) // 早晨
+			if (float(environment.time) >= 5.0 && float(environment.time) < 10.0) // 早晨
 			{
 				dialog.text = "已经要走了吗, "+pchar.name+"? 祝你好运, 别忘了我... ";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -714,19 +714,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LSC_love_4":
-			if (stf(environment.time) >= 18.0 && stf(environment.time) < 22.0) // 晚上
+			if (float(environment.time) >= 18.0 && float(environment.time) < 22.0) // 晚上
 			{
 				dialog.text = "已经是晚上了, "+pchar.name+"。 为什么不待在这里? 我想和你在一起。 ";
 				link.l1 = "好吧, 亲爱的, 我留下... ";
 				link.l1.go = "LSC_love_evening";
-				if (sti(pchar.money) >= 500)
+				if (int(pchar.money) >= 500)
 				{
 					link.l2 = "玛丽, 我们今天去酒馆吧! ";
 					link.l2.go = "LSC_tavern";
 				}
 				break;
 			}
-			if (stf(environment.time) >= 10.0 && stf(environment.time) < 18.0) // 白天
+			if (float(environment.time) >= 10.0 && float(environment.time) < 18.0) // 白天
 			{
 				dialog.text = "祝你好运, 别忘了我... 如果可以的话, 晚上来看我, 没错! ";
 				if (CheckAttribute(npchar, "quest.narval_blade"))
@@ -1196,8 +1196,8 @@ void ProcessDialogEvent()
 		// 同意
 		case "adversary_hire":
 			// 第二次通过 - 看看海伦是否能成为朋友
-			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (sti(pchar.questTemp.Saga.HelenRelation) >= 6);
-			if (bOk || sti(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
+			bOk = (CheckAttribute(pchar, "questTemp.HelenDrinking.GaveCutlass")) && (int(pchar.questTemp.Saga.HelenRelation) >= 6);
+			if (bOk || int(pchar.questTemp.Saga.HelenRelation) >= 5 || CharacterIsAlive("Longway"))
 			{
 				dialog.text = "真的吗? 你真的想让我当你的军官? "+pchar.name+", 该死的, 你无法想象我有多高兴! 我非常想成为你的军官... 但不想和那个金发女郎在同一艘船上! ";
 				link.l1 = "玛丽, 但为什么? ! ";
@@ -1556,7 +1556,7 @@ void ProcessDialogEvent()
 			DialogExit();
             pchar.quest.sex_partner = Npchar.id;
 			chrDisableReloadToLocation = true;// 关闭地点
-			if (sti(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
+			if (int(pchar.money) >= 10) AddMoneyToCharacter(pchar, -10);
 			if (npchar.chr_ai.type == "actor")
 			{
 				LAi_SetOfficerType(npchar);
@@ -1584,7 +1584,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "room_sex_goNS":
-			if(sti(pchar.reputation.fame) > 60)
+			if(int(pchar.reputation.fame) > 60)
 			{
 				ChangeCharacterComplexReputation(pchar,"authority", 2);
 				if (npchar.chr_ai.type == "actor")
@@ -2064,7 +2064,7 @@ void ProcessDialogEvent()
 		case "LongHappy_9c":
 			pchar.questTemp.LongHappy.MarryMoney = 100000;
 			pchar.questTemp.LongHappy.MarryRum = 100;
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				pchar.questTemp.LongHappy.MarryMoney = 200000;
 				pchar.questTemp.LongHappy.MarryRum = 150;
@@ -2074,7 +2074,7 @@ void ProcessDialogEvent()
 				pchar.questTemp.LongHappy.MarryMoney = 300000;
 				pchar.questTemp.LongHappy.MarryRum = 200;
 			}
-			dialog.text = "我想, "+sti(pchar.questTemp.LongHappy.MarryMoney)+"比索应该够了, 没错。 "+sti(pchar.questTemp.LongHappy.MarryRum)+"桶朗姆酒, 没有比没酒喝更糟糕的了。 你一凑齐我们需要的东西, 就来酒馆, 剩下的我来搞定。 ";
+			dialog.text = "我想, "+int(pchar.questTemp.LongHappy.MarryMoney)+"比索应该够了, 没错。 "+int(pchar.questTemp.LongHappy.MarryRum)+"桶朗姆酒, 没有比没酒喝更糟糕的了。 你一凑齐我们需要的东西, 就来酒馆, 剩下的我来搞定。 ";
 			link.l1 = "好的, 亲爱的, 我会的。 ";
 			link.l1.go = "LongHappy_9d";
 		break;
@@ -2668,7 +2668,7 @@ void ProcessDialogEvent()
 		//--> --------------------------------- —офицeрский блок ------------------------------------------
 		case "Mary_officer":
 			// eсли шлялся по бордeлям - устроит нeбольшой скандал 
-			if (sti(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
+			if (int(pchar.GenQuest.BrothelCount) >= 3 && LAi_grp_playeralarm == 0)
 			{
 				dialog.Text = ""+pchar.name+"! 我得和你谈谈, 没错! 认真地谈! ";
 				Link.l1 = "怎么了, 玛丽? 有什么问题吗? ";
@@ -2706,7 +2706,7 @@ void ProcessDialogEvent()
 				Link.l2 = RandPhraseSimple("亲爱的, 我现在就想要你。 你愿意吗? ", "玛丽, 我们... 待在一起一会儿怎么样? 就我们俩。 ");
 				Link.l2.go = "cabin_sex";
 			}
-			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && sti(pchar.money) >= 10)
+			if (rLoc.type == "tavern" && !CheckAttribute(npchar, "quest.daily_sex") && int(pchar.money) >= 10)
 			{
 				Link.l2 = RandPhraseSimple("玛丽, 我们租个房间待在一起吧? ", "亲爱的, 我想和你私下待着... 我们租个房间, 把一切都忘掉几个小时怎么样? ");
 				Link.l2.go = "room_sex";
@@ -2739,7 +2739,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "玛丽, 更换火器弹药。 ";
 					Link.l3.go = "SetGunBullets";
@@ -2752,7 +2752,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -2764,7 +2764,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;

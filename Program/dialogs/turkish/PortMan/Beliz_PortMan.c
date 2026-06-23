@@ -43,9 +43,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "Hm... Regatta kurallarını çiğnediniz ve sizi diskalifiye etmek zorundayım. Üzgünüm. Bir sonraki yolculuğa katılamayacaksınız. Port Royal'a gönderilecek raporu zaten hazırladım.";
@@ -58,8 +58,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
-			dialog.text = "Kayıt olalım: Kaptan "+GetFullName(pchar)+", gemi şu anda "+pchar.Ship.Name+"...   regatta'nın süresi saat olarak  "+sti(pchar.questTemp.Regata.FirstTransitionTime)+". Tamam, sonucun kaydedildi, yoluna devam edebilirsin.";
+			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
+			dialog.text = "Kayıt olalım: Kaptan "+GetFullName(pchar)+", gemi şu anda "+pchar.Ship.Name+"...   regatta'nın süresi saat olarak  "+int(pchar.questTemp.Regata.FirstTransitionTime)+". Tamam, sonucun kaydedildi, yoluna devam edebilirsin.";
 			link.l1 = "Rütbemi söyle.";
 			link.l1.go = "Regata_info";
 			}
@@ -82,7 +82,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FirstTransitionTime))
+				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FirstTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//имя ближайшего противника

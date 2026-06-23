@@ -1509,3 +1509,5 @@ itmname_blade_34 {L'Épée du Noyé}
 itmdescr_blade_34 {Cette épée de pirate, trouvée à bord du vaisseau gelé, s'est couverte de coraux et de polypes. Elle est assez longue et assez lourde pour porter sans peine de puissants coups d'estoc et de taille depuis la troisième position.}
 itmname_greenIdol {Idole de Pierre Verte}
 itmdescr_greenIdol {Cette idole a été taillée par vos propres mains dans la pierre, au cours d'un rêve. Ses formes contre nature et ses symboles abominables inspirent le dégoût et troublent l'esprit. Parfois, il vous semble qu'elle chuchote quelque chose...}
+itmname_nocturlabe {Nocturlabe}
+itmdescr_nocturlabe {Instrument ingénieux permettant de déterminer l’heure exacte grâce aux étoiles. Simplifie grandement et accélère les traversées maritimes.}

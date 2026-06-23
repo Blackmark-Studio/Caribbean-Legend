@@ -25,7 +25,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//Jason --> Португалец
 		case "Portugal_cloves":
 			dialog.text = "Vestiti nobili? Certo, ho un set qui: pantaloni, un giubbotto, una camicia di seta e stivali. Costa 20.000 pesos. I vestiti sono di altissima qualità, sono comodi e hanno un look notevole, quindi non accetterò di meno per esso.";
-			if (sti(pchar.money) >= 20000)
+			if (int(pchar.money) >= 20000)
 			{
 				link.l1 = "Ottimo! Dammi qui.";
 				link.l1.go = "Portugal_cloves_1";

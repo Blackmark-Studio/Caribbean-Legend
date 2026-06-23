@@ -15,7 +15,7 @@ void ApplyMigration(ref migrationState)
 	for (i = 0; i < REAL_SHIPS_QUANTITY; i++)
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
-		if(sti(RealShips[i].BaseType) != SHIP_MEMENTO) continue;
+		if(int(RealShips[i].BaseType) != SHIP_MEMENTO) continue;
 		ref realShip = &RealShips[i];
 
 		realShip.CannonsQuantity = 20;
@@ -32,8 +32,8 @@ void ApplyMigration(ref migrationState)
 	{
 		if (!CheckAttribute(&characters[j],"Ship.Cannons.borts")) continue;
 		if (!CheckAttribute(&characters[j],"Ship.Type")) continue;
-		if (sti(characters[j].Ship.Type) == SHIP_NOTUSED) continue;
-		if (RealShips[sti(characters[j].Ship.Type)].BaseType != SHIP_MEMENTO) continue;
+		if (int(characters[j].Ship.Type) == SHIP_NOTUSED) continue;
+		if (RealShips[int(characters[j].Ship.Type)].BaseType != SHIP_MEMENTO) continue;
 		DeleteAttribute(&characters[j], "Ship.Cannons.borts.cannonr.damages.c8");
 		DeleteAttribute(&characters[j], "Ship.Cannons.borts.cannonl.damages.c8");
 	}

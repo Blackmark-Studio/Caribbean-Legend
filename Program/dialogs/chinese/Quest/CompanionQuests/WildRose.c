@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_1":
 			dialog.text = "抱歉吵醒您了, 船长……  ";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "被打倒了, 这也算点事儿, 对吧。 现在说吧——你到底想从我这里得到什么? ";
 				link.l1.go = "Barmen_2";
@@ -2474,13 +2474,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_21");
 		break;
-		
-		case "WildRose_Betancur_21":
-			dialog.text = "因为他们不在这里, "+pchar.name+"。 那两个人在被和Casper一家一起救出来的第二天夜里就死了。";
-			link.l1 = "真奇怪。 那个孕妇又撑过了一周, 但皇家海军的两个水手却突然死了……  ";
-			link.l1.go = "WildRose_Betancur_22";
-		break;
-		
+
 		case "WildRose_Chimiset_21":
 			dialog.text = "很高兴又见到你, 朋友。 你来这里有什么事吗? ";
 			link.l1 = "带着一个请求, "+npchar.name+"……  或者说, 是个问题。";

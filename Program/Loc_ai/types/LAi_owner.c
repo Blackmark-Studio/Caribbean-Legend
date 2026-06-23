@@ -22,7 +22,7 @@
 
 
 //Инициализация
-void LAi_type_owner_Init(aref chr)
+void LAi_type_owner_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -32,7 +32,7 @@ void LAi_type_owner_Init(aref chr)
 	chr.chr_ai.type.who = "-1";
 	chr.chr_ai.type.timewait = "0";
 	chr.chr_ai.type.locator = "stay";
-	chr.chr_ai.type.wait = stf(5.0 + frnd() * 5.0);
+	chr.chr_ai.type.wait = float(5.0 + frnd() * 5.0);
 	LAi_tmpl_stay_InitTemplate(chr);
 	//Установим анимацию персонажу
 	LAi_SetDefaultStayAnimation(chr);
@@ -40,10 +40,10 @@ void LAi_type_owner_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_owner_CharacterUpdate(ref chr, float dltTime)
 {
 	int iNumEnemy, i, num;
-	chr.chr_ai.type.wait = stf(chr.chr_ai.type.wait) - dltTime;
+	chr.chr_ai.type.wait = float(chr.chr_ai.type.wait) - dltTime;
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
 		chr.chr_ai.type.time = "0";
@@ -61,7 +61,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 			else
 			{
 				LAi_tmpl_ani_PlayAnimation(chr, "afraid", -1.0);
-				CharacterTurnByChr(chr, &Characters[sti(chrFindNearCharacters[iNumEnemy].index)]);
+				CharacterTurnByChr(chr, &Characters[int(chrFindNearCharacters[iNumEnemy].index)]);
 				return;
 			}
 		}
@@ -78,7 +78,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 				if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
 				{					
 					LAi_type_owner_RestoreAngle(chr);
-					if (stf(chr.chr_ai.type.wait) < 0.0)
+					if (float(chr.chr_ai.type.wait) < 0.0)
 					{									
 						LAi_type_owner_SetGoto(chr);
 					}
@@ -89,7 +89,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 				//Смотрим на персонажей
 				for(i = 0; i < num; i++)
 				{
-					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
+					if(nMainCharacterIndex == int(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
 						if (bMainCharacterInBox && chr.chr_ai.type.state != "afraid" && !HasPerk(pchar, "Quiet"))
@@ -135,14 +135,14 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 									return;
 								}
 								//<-- проверка на обнажёнку оружия
-								if(stf(chrFindNearCharacters[i].dist) < 2.0)
+								if(float(chrFindNearCharacters[i].dist) < 2.0)
 								{ //поворачиваемся фейсом к ГГ
-									CharacterTurnByChr(chr, &Characters[sti(chrFindNearCharacters[i].index)]);				
+									CharacterTurnByChr(chr, &Characters[int(chrFindNearCharacters[i].index)]);
 								}
 								else
 								{
 									LAi_type_owner_RestoreAngle(chr);
-									if (stf(chr.chr_ai.type.wait) < 0.0)
+									if (float(chr.chr_ai.type.wait) < 0.0)
 									{									
 										LAi_type_owner_SetGoto(chr);
 									}
@@ -161,7 +161,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 			if (chr.sex == "man" && LAi_IsSetBale(chr))
 			{
 				chr.chr_ai.type.state = "fight";
-				if(!LAi_tmpl_SetFight(chr, &Characters[sti(chrFindNearCharacters[iNumEnemy].index)]))
+				if(!LAi_tmpl_SetFight(chr, &Characters[int(chrFindNearCharacters[iNumEnemy].index)]))
 				{
 					//Несмогли инициировать шаблон
 					LAi_tmpl_stay_InitTemplate(chr);
@@ -170,11 +170,11 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 			}
 			else
 			{	//Боимся				
-				if(stf(chrFindNearCharacters[iNumEnemy].dist) < 3.0)
+				if(float(chrFindNearCharacters[iNumEnemy].dist) < 3.0)
 				{
 					LAi_tmpl_ani_PlayAnimation(chr, "afraid", -1.0);
 					LAi_SetAfraidDead(chr);
-					CharacterTurnByChr(chr, &Characters[sti(chrFindNearCharacters[iNumEnemy].index)]);
+					CharacterTurnByChr(chr, &Characters[int(chrFindNearCharacters[iNumEnemy].index)]);
 					if (rand(100) > 70)	
 					{
 						if (chr.sex == "man") chr.greeting = "VOICE\" + LanguageGetLanguage() + "\soldier_arest_1.wav";
@@ -186,7 +186,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 					if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
 					{
 						LAi_type_owner_RestoreAngle(chr);
-						if (stf(chr.chr_ai.type.wait) < 0.0)
+						if (float(chr.chr_ai.type.wait) < 0.0)
 						{									
 							LAi_type_owner_SetGoto(chr);
 						}						
@@ -197,19 +197,19 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 	}
 }
 //Загрузка персонажа в локацию
-bool LAi_type_owner_CharacterLogin(aref chr)
+bool LAi_type_owner_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_owner_CharacterLogoff(aref chr)
+bool LAi_type_owner_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_owner_TemplateComplite(aref chr, string tmpl)
+void LAi_type_owner_TemplateComplite(ref chr, string tmpl)
 {
 	switch(chr.chr_ai.type.state)
 	{
@@ -231,12 +231,12 @@ void LAi_type_owner_TemplateComplite(aref chr, string tmpl)
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_owner_NeedDialog(aref chr, aref by)
+void LAi_type_owner_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_owner_CanDialog(aref chr, aref by)
+bool LAi_type_owner_CanDialog(ref chr, ref by)
 {
 	//Согласимся на диалог
 	if(chr.chr_ai.type.state == "afraid") return false;
@@ -245,7 +245,7 @@ bool LAi_type_owner_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_owner_StartDialog(aref chr, aref by)
+void LAi_type_owner_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -254,7 +254,7 @@ void LAi_type_owner_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_owner_EndDialog(aref chr, aref by)
+void LAi_type_owner_EndDialog(ref chr, ref by)
 {
 	if(chr.chr_ai.type.state == "goto")
 	{
@@ -274,7 +274,7 @@ void LAi_type_owner_Fire(aref attack, aref enemy, float kDist, bool isFindedEnem
 
 
 //Персонаж атакован
-void LAi_type_owner_Attacked(aref chr, aref by)
+void LAi_type_owner_Attacked(ref chr, ref by)
 {
 	if(!LAi_group_IsEnemy(chr, by)) return;
 	LAi_group_UpdateTargets(chr);
@@ -286,20 +286,20 @@ void LAi_type_owner_Attacked(aref chr, aref by)
 }
 
 //Ориентироваться по текущему локатору
-void LAi_type_owner_RestoreAngle(aref chr)
+void LAi_type_owner_RestoreAngle(ref chr)
 {
 	CharacterTurnByLoc(chr, "barmen", chr.chr_ai.type.locator);
 }
 
 //Найти врага
-int LAi_type_owner_FindEnemy(aref chr, int num)
+int LAi_type_owner_FindEnemy(ref chr, int num)
 {
 	int idx;
 	if(num > 0)
 	{
 		for(int i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return i;
 		}
 	}
@@ -307,7 +307,7 @@ int LAi_type_owner_FindEnemy(aref chr, int num)
 }
 
 //Отправить хозяина в другой локатор
-void LAi_type_owner_SetGoto(aref chr)
+void LAi_type_owner_SetGoto(ref chr)
 {
 	if(chr.chr_ai.type.locator == "stay")
 	{
@@ -322,7 +322,7 @@ void LAi_type_owner_SetGoto(aref chr)
 }
 
 //Установить задание после прихода в локатор
-void LAi_type_owner_SetAfterGoto(aref chr)
+void LAi_type_owner_SetAfterGoto(ref chr)
 {
 	if(rand(100) < 80 && chr.chr_ai.type.locator != "stay")
 	{
@@ -336,12 +336,12 @@ void LAi_type_owner_SetAfterGoto(aref chr)
 		LAi_CharacterPlaySound(chr, "owner");
 		LAi_tmpl_stay_InitTemplate(chr);
 		chr.chr_ai.type.state = "stay";
-		if (chr.chr_ai.type.locator == "stay") chr.chr_ai.type.wait = stf(5.0 + frnd() * 20.0);
-		else chr.chr_ai.type.wait = stf(1.0 + frnd() * 4.0);
+		if (chr.chr_ai.type.locator == "stay") chr.chr_ai.type.wait = float(5.0 + frnd() * 20.0);
+		else chr.chr_ai.type.wait = float(1.0 + frnd() * 4.0);
 	}
 }
 
-void LAi_type_owner_TestControl(aref chr)
+void LAi_type_owner_TestControl(ref chr)
 {	
 	if(LAi_Character_CanDialog(chr, pchar))
 	{

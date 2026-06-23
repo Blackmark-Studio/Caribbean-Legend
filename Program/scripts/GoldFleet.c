@@ -18,7 +18,7 @@ void GoldFleet()
 	ChangeCrewExp(chref, "Sailors",   100);
 	ChangeCrewExp(chref, "Cannoners", 100);
 	ChangeCrewExp(chref, "Soldiers",  100); 
-	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 2, 200 + makeint(pchar.rank) * 2);
+	LAi_SetHP(chref, 200 + int(pchar.rank) * 2, 200 + int(pchar.rank) * 2);
 	TakeNItems(chref, "potion2", 8);
 	TakeNItems(chref, "potion3", 5); 
 	SetCharacterPerk(chref, "Tireless");
@@ -27,14 +27,14 @@ void GoldFleet()
 	UpgradeShipParameter(chref, "SpeedRate");	//апгрейдить скорость
 	UpgradeShipParameter(chref, "TurnRate");	//манёвренность 
 	
-	string sGroup = "Sea_"+chref.id
+	string sGroup = "Sea_"+chref.id;
 	Group_FindOrCreateGroup(sGroup);
 	Group_SetType(sGroup,"trade");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, chref.id);
 	Group_SetGroupCommander(sGroup, chref.id);
-	SetRandGeraldSail(chref, sti(chref.Nation)); // homo Гербы
+	SetRandGeraldSail(chref, int(chref.Nation)); // homo Гербы
 	chref.dialog.filename = "Capitans_dialog.c"; // homo 20/01/07
 	chref.dialog.currentnode = "GoldSquadron";
 	chref.DeckDialogNode = "GoldSquadron";
@@ -71,20 +71,20 @@ void GoldFleet()
 		ChangeCrewExp(sld, "Sailors",   100);
 		ChangeCrewExp(sld, "Cannoners", 100);
 		ChangeCrewExp(sld, "Soldiers",  100); 
-		LAi_SetHP(sld, 100 + makeint(pchar.rank) * 2, 100 + makeint(pchar.rank) * 2);	
+		LAi_SetHP(sld, 100 + int(pchar.rank) * 2, 100 + int(pchar.rank) * 2);
 	
 		if(k == capHasGold)
 		{
             iSpace = GetCharacterFreeSpace(sld, GOOD_GOLD);
             iSpace = iSpace / 4;
-            Fantom_SetCharacterGoods(sld, GOOD_GOLD, ((rand(1)+1)*iSpace), 1);
-            Fantom_SetCharacterGoods(sld, GOOD_SILVER, iSpace, 1);
+            Fantom_SetCharacterGoods(sld, GOOD_GOLD, ((rand(1)+1)*iSpace), true);
+            Fantom_SetCharacterGoods(sld, GOOD_SILVER, iSpace, true);
         }
 		else
 		{
 			iSpace = GetCharacterFreeSpace(sld, GOOD_SILVER);
 			iSpace = iSpace / 2 + rand(100);
-			Fantom_SetCharacterGoods(sld, GOOD_SILVER, iSpace, 1);
+			Fantom_SetCharacterGoods(sld, GOOD_SILVER, iSpace, true);
 		}
 		
         sld.AlwaysEnemy = true;
@@ -130,7 +130,7 @@ void LeaveGoldleet(string temp)
         {
             //конвой атакован
             DefeatRumour(1);
-            AddQuestRecord("Rumour_GoldFleet", 13+rand(2));
+            AddQuestRecord("Rumour_GoldFleet", string(13+rand(2)));
         }
         else
         {
@@ -162,7 +162,7 @@ void DefeatGoldFleet(string temp)
     string Text;
     ref rParams;
     Group_DeleteGroup("Sea_Head_of_Gold_Squadron");
-    AddQuestRecord("Rumour_GoldFleet", 4 + rand(2));
+    AddQuestRecord("Rumour_GoldFleet", string(4 + rand(2)));
     CloseQuestHeader("Rumour_GoldFleet");
     Pchar.quest.EndOfGoldFleet.over = "yes";
     Pchar.quest.HeadGoldFleetInHavana.over = "yes"; //fix
@@ -184,8 +184,8 @@ void RouteGoldFleet()
         switch (igoldpos)
         {
             case 0 :
-                int hvx = worldMap.islands.Cuba2.Havana_town.position.x;
-    	        int hvz = worldMap.islands.Cuba2.Havana_town.position.z;
+                float hvx = worldMap.islands.Cuba2.Havana_town.position.x$float(0.0);
+				float hvz = worldMap.islands.Cuba2.Havana_town.position.z$float(0.0);
                 Map_CreateTraderXZ(-858.089, 897.072, hvx, hvz, "Head_of_Gold_Squadron", 3);
                 Log_TestInfo("GoldFleet is near of Havana");
             break;
@@ -252,8 +252,8 @@ void StartGoldFleet(string temp)
             pchar.quest.(sQuest).win_condition = "EndOfGoldFleet";
             pchar.quest.(sQuest).function= "EndOfGoldFleet";
             GoldFleet();
-            int pbx = worldMap.islands.PortoBello.PortoBello_town.position.x;
-	        int pbz = worldMap.islands.PortoBello.PortoBello_town.position.z;
+            float pbx = worldMap.islands.PortoBello.PortoBello_town.position.x$float(0.0);
+			float pbz = worldMap.islands.PortoBello.PortoBello_town.position.z$float(0.0);
             Map_CreateTraderXZ(pbx, pbz, -858.089, 897.072, "Head_of_Gold_Squadron", 22);
             igoldpos = 0;
     }
@@ -269,11 +269,11 @@ void EndTime_GoldFleet(int nid)
         makeref(Prm, Rumour[ind]);
         int tNum = TplNameToNum("End_GoldFleet");
         makeref(CurTpl,  templat[tNum]);
-        int StartNext =(sti(Prm.starttime) + 21)
+        int StartNext =(int(Prm.starttime) + 21);
         if ( StartNext > DateToInt(0))
         {
             CurTpl.starttime =  (StartNext - DateToInt(0));
-            CurTpl.actualtime = (sti(CurTpl.actualtime)+ sti(CurTpl.starttime));
+            CurTpl.actualtime = (int(CurTpl.actualtime)+ int(CurTpl.starttime));
         }
     }
 }

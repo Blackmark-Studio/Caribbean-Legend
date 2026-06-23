@@ -69,7 +69,7 @@ void QuestComplete(string sQuestName, string qname)
         break;
 		
 		case "LocTeleport":
-			TeleportCharacterToPos(pchar, stf(pchar.locx), stf(pchar.locy), stf(pchar.locz)); 
+			TeleportCharacterToPos(pchar, float(pchar.locx), float(pchar.locy), float(pchar.locz));
 		break;
 		
 		case "update_sea_environment": //обновление моря
@@ -83,7 +83,7 @@ void QuestComplete(string sQuestName, string qname)
 				i = FindIsland(pchar.location);
 				if(i != -1)
 				{
-					if(stf(Sea.MaxSeaHeight) != SetMaxSeaHeight(i))
+					if(float(Sea.MaxSeaHeight) != SetMaxSeaHeight(i))
 					{
 						WhrCreateSeaEnvironment();
 					}
@@ -116,18 +116,18 @@ void QuestComplete(string sQuestName, string qname)
 			{
 				pchar.HeroParam.Teach_beat	= 0;
 			}
-			pchar.HeroParam.Teach_beat = sti(pchar.HeroParam.Teach_beat) + 1;
+			pchar.HeroParam.Teach_beat = int(pchar.HeroParam.Teach_beat) + 1;
 			sld = characterFromID("Sailor_1");
 			LAi_SetActorTypeNoGroup(sld);
 			LAi_ActorAfraid(sld, pchar, true);
 			bOk = false;
-			if (sti(pchar.HeroParam.Teach_beat) == 1 && sti(pchar.HeroParam.Teach_battle) == 1)
+			if (int(pchar.HeroParam.Teach_beat) == 1 && int(pchar.HeroParam.Teach_battle) == 1)
 			{
 				bOk = true;
 			}
 			else
 			{
-				if (sti(pchar.HeroParam.Teach_beat) == 2 && sti(pchar.HeroParam.Teach_battle) == 2)
+				if (int(pchar.HeroParam.Teach_beat) == 2 && int(pchar.HeroParam.Teach_battle) == 2)
 				{
 					bOk = true;
 					pchar.HeroParam.Teach_beat = 3; // признак, что выиграл
@@ -144,11 +144,11 @@ void QuestComplete(string sQuestName, string qname)
 			{
 				pchar.HeroParam.Teach_beat	= 0;
 			}
-			pchar.HeroParam.Teach_beat = sti(pchar.HeroParam.Teach_beat) + 1;
+			pchar.HeroParam.Teach_beat = int(pchar.HeroParam.Teach_beat) + 1;
 			sld = characterFromID("Sailor_2");
    			LAi_SetActorTypeNoGroup(sld);
 			LAi_ActorAfraid(sld, pchar, true);
-			if (sti(pchar.HeroParam.Teach_beat) == 2 && sti(pchar.HeroParam.Teach_battle) == 2)
+			if (int(pchar.HeroParam.Teach_beat) == 2 && int(pchar.HeroParam.Teach_battle) == 2)
 			{
 				sld = characterFromID("Sailor_1");
 				LAi_SetActorTypeNoGroup(sld);
@@ -181,7 +181,7 @@ void QuestComplete(string sQuestName, string qname)
         case "Battle_Hunters_Land":
             Lai_SetPlayerType(pchar);
             LAi_SetFightMode(Pchar, true);
-			for (i=1; i<= sti(PChar.HunterCost.Qty); i++)
+			for (i=1; i<= int(PChar.HunterCost.Qty); i++)
 			{
 	            sld = characterFromID(PChar.HunterCost.TempHunterType + "LandHunter0" + i);
 				LAi_RemoveCheckMinHP(sld);
@@ -196,7 +196,7 @@ void QuestComplete(string sQuestName, string qname)
         case "GoAway_Hunters_Land":
             DoQuestCheckDelay("OpenTheDoors", 4.0);
             sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
-            for (i=1; i<= sti(PChar.HunterCost.Qty); i++)
+            for (i=1; i<= int(PChar.HunterCost.Qty); i++)
 			{
 	            sld = characterFromID(PChar.HunterCost.TempHunterType + "LandHunter0" + i);
 				LAi_type_actor_Reset(sld);
@@ -235,8 +235,8 @@ void QuestComplete(string sQuestName, string qname)
 
 		// офицеры выживают!
         case "Survive_In_SeaOfficer":
-			sld = GetCharacter(sti(Pchar.GenQuest.Survive_In_SeaOfficerIdx));
-            iTemp = NPC_GeneratePhantomCharacter("citizen", sti(sld.Nation), MAN, -1);  // создать клон
+			sld = GetCharacter(int(Pchar.GenQuest.Survive_In_SeaOfficerIdx));
+            iTemp = NPC_GeneratePhantomCharacter("citizen", int(sld.Nation), MAN, -1);  // создать клон
 			if (iTemp != -1)
 			{
                 npchar = &Characters[iTemp];
@@ -280,7 +280,7 @@ void QuestComplete(string sQuestName, string qname)
 		
         // враги спасшиеся на шлюпках homo
         case "Survive_In_SeaPrisoner":  //homo 22/06/07
-            sld = GetCharacter(sti(Pchar.GenQuest.Survive_In_SeaPrisonerIdx));
+            sld = GetCharacter(int(Pchar.GenQuest.Survive_In_SeaPrisonerIdx));
             iTemp = SetCharToPrisoner(sld);
 			if (iTemp != -1)
 			{
@@ -307,7 +307,7 @@ void QuestComplete(string sQuestName, string qname)
 		//  boal 290804 наказание битьем морды -->
         case "PunishmentAction":
             LAi_SetActorTypeNoGroup(PChar);
-            sld = &Characters[makeint(Pchar.GenQuest.FreeRandomOfficerIdx)];
+            sld = &Characters[int(Pchar.GenQuest.FreeRandomOfficerIdx)];
 			LAi_SetActorTypeNoGroup(sld);
             LAi_ActorTurnToCharacter(pchar, sld);
             LAi_ActorAnimation(pchar, "attack_force_3", "", 0.9);
@@ -315,13 +315,13 @@ void QuestComplete(string sQuestName, string qname)
          break;
 
          case "PunishmentAction_1":
-            sld = &Characters[makeint(Pchar.GenQuest.FreeRandomOfficerIdx)];
+            sld = &Characters[int(Pchar.GenQuest.FreeRandomOfficerIdx)];
             LAi_ActorAnimation(sld, "hit_attack_2", "PunishmentAction_2", 0.6);
          break;
 
          case "PunishmentAction_2":
             Lai_SetPlayerType(pchar);
-            sld = &Characters[makeint(Pchar.GenQuest.FreeRandomOfficerIdx)];
+            sld = &Characters[int(Pchar.GenQuest.FreeRandomOfficerIdx)];
             switch (pchar.GenQuest.PunishmentActionManType)
             {
                 case "LAi_SetHuberStayType":
@@ -397,7 +397,7 @@ void QuestComplete(string sQuestName, string qname)
                 for (i=1; i<=9; i++)
                 {
                     sld = SetFantomDefenceForts("goto", "", PIRATE, LAI_GROUP_TmpEnemy);
-                    if (i >= (sti(PChar.Ship.Crew.Quantity)/((9-GetCharacterShipClass(PChar))*9))) break;
+                    if (i >= (int(PChar.Ship.Crew.Quantity)/((9-GetCharacterShipClass(PChar))*9))) break;
                     RemoveCharacterCrew(PChar, (9-GetCharacterShipClass(PChar))*9);
                 }
                 PChar.Ship.Crew.Morale = 25;
@@ -482,7 +482,7 @@ void QuestComplete(string sQuestName, string qname)
         break;
         // захват с суши по диалогу мэра (телепорт)
         case "Town_Capture_Land":
-            sld = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
+            sld = GetCharacter(int(Pchar.GenQuestFort.fortCharacterIdx));
             DeleteQuestAttribute("Union_with_Escadra");
 
             SetLocationCapturedState(sld.Default, true);
@@ -506,7 +506,7 @@ void QuestComplete(string sQuestName, string qname)
         break;
         // Возвращение губернаторам родные диалоги // boal переделал 251204
         case "Return_Gover_Dialog":
-            Characters[sti(PChar.GenQuest.GoverIdx)].dialog.CurrentNode = "First time";
+            Characters[int(PChar.GenQuest.GoverIdx)].dialog.CurrentNode = "First time";
         break;
 
         case "Return_Gover_Dialog_Exit":
@@ -549,7 +549,7 @@ void QuestComplete(string sQuestName, string qname)
 
         case "CapturedToOurCity":
 			PlayStereoOGG("music_ship_victory");
-			sld = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
+			sld = GetCharacter(int(Pchar.GenQuestFort.fortCharacterIdx));
             Log_Info(StringFromKey("quests_reaction_5", GetCityName(sld.City)));
 			// убрать контрабандиста
 			sTemp = sld.City + "_Smuggler";
@@ -598,7 +598,7 @@ void QuestComplete(string sQuestName, string qname)
         // вызов табличкм А в это время..
         case "LaunchFrameForm":
             PChar.GenQuest.CallFunctionParam = "LaunchFrameForm";
-			DoQuestCheckDelay("CallFunctionParam", stf(pchar.AutoQuest.FrameDelay));
+			DoQuestCheckDelay("CallFunctionParam", float(pchar.AutoQuest.FrameDelay));
         break;
         
         case "Move_Govenour":  // переместим губернатора в другой город
@@ -723,11 +723,11 @@ void QuestComplete(string sQuestName, string qname)
 			Log_Info(StringFromKey("quests_reaction_6"));
 
 			int oSum = 500 + rand(4500);
-			if (makeint(Pchar.money) < oSum) oSum = makeint(Pchar.money);
+			if (int(Pchar.money) < oSum) oSum = int(Pchar.money);
 			AddMoneyToCharacter(pchar, -oSum);
-			if (sti(pchar.questTemp.stels.tavern) != GetDataDay())
+			if (int(pchar.questTemp.stels.tavern) != GetDataDay())
 			{
-				AddCharacterExpToSkill(pchar, SKILL_SNEAK, makeint(50+oSum/100));
+				AddCharacterExpToSkill(pchar, SKILL_SNEAK, int(50+oSum/100));
 				pchar.questTemp.stels.tavern = GetDataDay();
 			}
 
@@ -764,15 +764,15 @@ void QuestComplete(string sQuestName, string qname)
 		break;
 		// агенты в тавернах -->
         case "any_patent_take":
-            AddMoneyToCharacter(pchar, -sti(pchar.PatentPrice));
+            AddMoneyToCharacter(pchar, -int(pchar.PatentPrice));
 
             RemovePatent();
 
 			GiveItem2Character(pchar, "patent_" + pchar.PatentNation);
             EquipCharacterbyItem(pchar, "patent_" + pchar.PatentNation);
 
-            Items[sti(pchar.EquipedPatentId)].TitulCur = 1; // текущ звание сбросим
-        	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0; // счетчик звание сбросим
+            Items[int(pchar.EquipedPatentId)].TitulCur = 1; // текущ звание сбросим
+        	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0; // счетчик звание сбросим
 		break;
 
         case "fra_flag_rise":
@@ -792,7 +792,7 @@ void QuestComplete(string sQuestName, string qname)
         break;
 
 		case "QuestAboardCabinDialog":  // диалог в абордаже, в каюте при достижении минНР
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]; // фантом, тень отца капитана
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)]; // фантом, тень отца капитана
 			LAi_SetActorType(pchar);
 			LAi_SetActorType(sld);
 			SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
@@ -849,12 +849,12 @@ void QuestComplete(string sQuestName, string qname)
 			iTemp = GetCityNation(GetCityNameByIsland(GiveArealByLocation(loadedLocation)));
 			if(iTemp == -1) 
 			{
-				iTemp = sti(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
+				iTemp = int(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
 			}	
 			if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31") iTemp = 1;
 			if (Pchar.quest.contraband.CurrentPlace == "shore59") iTemp = 2;
-			Pchar.quest.contraband.SoldierQty = makeint(2*GetOfficersQuantity(Pchar) + 3);
-			for (i = 2; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			Pchar.quest.contraband.SoldierQty = int(2*GetOfficersQuantity(Pchar) + 3);
+			for (i = 2; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
     			sld = SetFantomDefenceForts("", "", iTemp, "CoastalGuards");
     			attrName = "SoldierIDX"+i;
@@ -875,7 +875,7 @@ void QuestComplete(string sQuestName, string qname)
 			sld.Dialog.CurrentNode = "First time";
 			sld.greeting = "patrol";
 
-			LAi_ActorDialog(&Characters[makeint(Pchar.quest.contraband.SoldierIDX1)], Pchar, "", 35, 1); // boal 120c - озвереть ждать!!!
+			LAi_ActorDialog(&Characters[int(Pchar.quest.contraband.SoldierIDX1)], Pchar, "", 35, 1); // boal 120c - озвереть ждать!!!
 			LAi_group_SetCheck("CoastalGuards", "CoastalGuardsAllDead");
 		break;
 
@@ -944,10 +944,10 @@ void QuestComplete(string sQuestName, string qname)
 		case "AnyReloadToLocation":
 			int iMonth, iDay, iHour, iMin;
 
-			iMonth	= sti(PChar.AutoQuest.delayMonth);
-			iDay	= sti(PChar.AutoQuest.delayDay);
-			iHour	= sti(PChar.AutoQuest.delayHour);
-			iMin	= sti(PChar.AutoQuest.delayMin);
+			iMonth	= int(PChar.AutoQuest.delayMonth);
+			iDay	= int(PChar.AutoQuest.delayDay);
+			iHour	= int(PChar.AutoQuest.delayHour);
+			iMin	= int(PChar.AutoQuest.delayMin);
 
 			if(iMonth > 0 || iDay > 0 || iHour > 0 || iMin > 0)
 			{
@@ -966,7 +966,7 @@ void QuestComplete(string sQuestName, string qname)
 		/////////////////////////////////////////////////////////////////////////////////
 		case "PGG_Companion_Leave":
 			chrDisableReloadToLocation = true;
-			sld = &Characters[sti(pchar.questTemp.PGG_Companion_Leave.index)];
+			sld = &Characters[int(pchar.questTemp.PGG_Companion_Leave.index)];
 			PlaceCharacter(sld, "goto", "random_must_be_near");
 
 			sld.Dialog.CurrentNode = "companion_leave";
@@ -1053,13 +1053,13 @@ void QuestComplete(string sQuestName, string qname)
 		// НАЧАЛО КВЕСТА - ДОСТАВКА ГРУЗА
 		/////////////////////////////////////////////////////////////////////////////////
 		case "trade_quest_open":
-			int iTradeGoods    = sti(pchar.CargoQuest.iTradeGoods);
-			int iQuantityGoods = sti(pchar.CargoQuest.iQuantityGoods);
-			int iTradeNation   = sti(pchar.CargoQuest.iTradeNation);
-			int iMoney         = sti(pchar.CargoQuest.iMoney);
+			int iTradeGoods    = int(pchar.CargoQuest.iTradeGoods);
+			int iQuantityGoods = int(pchar.CargoQuest.iQuantityGoods);
+			int iTradeNation   = int(pchar.CargoQuest.iTradeNation);
+			int iMoney         = int(pchar.CargoQuest.iMoney);
             AddCharacterGoods(pchar, iTradeGoods, iQuantityGoods);
 			//задаем квест
-			SetTimerCondition("generate_trade_quest", 0, 0, sti(pchar.CargoQuest.iDaysExpired), false);
+			SetTimerCondition("generate_trade_quest", 0, 0, int(pchar.CargoQuest.iDaysExpired), false);
 
 			pchar.quest.generate_trade_quest_progress = "begin";
 			ReOpenQuestHeader("DELIVERY_TRADE_QUEST");
@@ -1069,7 +1069,7 @@ void QuestComplete(string sQuestName, string qname)
 			AddQuestUserDataForTitle("DELIVERY_TRADE_QUEST", "sTargetColony", XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony+"Gen"));
 
 			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodGen", GetGoodsNameAlt(iTradeGoods));
-			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodQty", FindRussianQtyString(sti(pchar.CargoQuest.iQuantityGoods)));
+			AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodQty", FindRussianQtyString(int(pchar.CargoQuest.iQuantityGoods)));
 			AddQuestUserData("DELIVERY_TRADE_QUEST", "sBaseColony", XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.CargoQuest.GiveTraderID)].city+"Gen"));
 			AddQuestUserData("DELIVERY_TRADE_QUEST", "sTargetColony",XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony+"Gen"));
             attrName = "";
@@ -1078,7 +1078,7 @@ void QuestComplete(string sQuestName, string qname)
                 attrName = StringFromKey("quests_reaction_11") + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc"); // belamour
             }
             AddQuestUserData("DELIVERY_TRADE_QUEST", "island", attrName);
-    		AddQuestUserData("DELIVERY_TRADE_QUEST", "sTermsDelivery", FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired)));
+    		AddQuestUserData("DELIVERY_TRADE_QUEST", "sTermsDelivery", FindRussianDaysString(int(pchar.CargoQuest.iDaysExpired)));
     		AddQuestUserData("DELIVERY_TRADE_QUEST", "sMoney", FindRussianMoneyString(iMoney));
             // немного веселой жизни
             TraderHunterOnMap(false);
@@ -1091,9 +1091,9 @@ void QuestComplete(string sQuestName, string qname)
 				Log_SetStringToLog(StringFromKey("quests_reaction_12"));
 				ChangeCharacterComplexReputation(pchar,"nobility", -10);
 				OfficersReaction("bad");
-				ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(sti(characters[GetCharacterIndex(pchar.CargoQuest.TraderID)].nation)) + "hunter", 15);
+				ChangeCharacterHunterScore(GetMainCharacter(), NationShortName(int(characters[GetCharacterIndex(pchar.CargoQuest.TraderID)].nation)) + "hunter", 15);
                 AddQuestRecord("DELIVERY_TRADE_QUEST", "3");
-                AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodGen", GetGoodsNameAlt(sti(pchar.CargoQuest.iTradeGoods)));
+                AddQuestUserData("DELIVERY_TRADE_QUEST", "sGoodGen", GetGoodsNameAlt(int(pchar.CargoQuest.iTradeGoods)));
 			    AddQuestUserData("DELIVERY_TRADE_QUEST", "sTargetColony",XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony+"Gen"));
 			}
 		break;
@@ -1148,8 +1148,8 @@ void QuestComplete(string sQuestName, string qname)
 		case "LigaAttack_LoginKillers":
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
 			chrDisableReloadToLocation = true;//закрыть локацию
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-			int iScl = 30 + 3*sti(pchar.rank);
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+			int iScl = 30 + 3*int(pchar.rank);
 			if (iScl > 110) iScl = 110;
 			for (i=1; i<=2; i++)
 			{
@@ -1277,7 +1277,7 @@ void QuestComplete(string sQuestName, string qname)
         case "ActorDialog_Any2Pchar":
             LAi_SetActorType(PChar);
             LAi_ActorWaitDialog(Pchar, characterFromID(Pchar.AutoQuest.NPCharId));
-            LAi_ActorDialog(characterFromID(Pchar.AutoQuest.NPCharId), Pchar, Pchar.AutoQuest.Quest, stf(Pchar.AutoQuest.Time1), stf(Pchar.AutoQuest.Time2));
+            LAi_ActorDialog(characterFromID(Pchar.AutoQuest.NPCharId), Pchar, Pchar.AutoQuest.Quest, float(Pchar.AutoQuest.Time1), float(Pchar.AutoQuest.Time2));
         break;
 
         case "OpenTheDoors":
@@ -1328,7 +1328,7 @@ void QuestComplete(string sQuestName, string qname)
 		break;
 		
 		case "MayorSitBack": //посадить мэра обратно
-			iTemp = GetCharacterIndex(Pchar.quest.MayorSitBack.mayorId)
+			iTemp = GetCharacterIndex(Pchar.quest.MayorSitBack.mayorId);
 			if (iTemp > 0)
 			{
 				sld = &characters[iTemp];
@@ -1362,7 +1362,7 @@ void QuestComplete(string sQuestName, string qname)
 				case 13:fTemp = 10.2; break;
 				case 14:fTemp = 11.2; break;
 			}
-			sGlobalTemp = iTemp;
+			sGlobalTemp = string(iTemp);
 			//LAi_FadeDelay(fTemp, "loading\inside\censored1.tga");
 			//StartPictureAsVideo( "loading\inside\censored1.tga", fTemp );
 			SetLaunchFrameFormParam("", "", 0, fTemp);
@@ -1396,12 +1396,12 @@ void QuestComplete(string sQuestName, string qname)
             	AddCharacterExpToSkill(pchar, "FencingS", -15);
             	AddCharacterExpToSkill(pchar, "Pistol", -15);
 				ChangeCharacterComplexReputation(pchar,"nobility", -1);
-				if (sti(pchar.questTemp.different.FackWaitress.Kick) != 1) 
+				if (int(pchar.questTemp.different.FackWaitress.Kick) != 1)
 				{
 					pchar.questTemp.different = "FackWaitress_fackNoMoney";
 					AddCharacterExpToSkill(pchar, "Fortune", 100);
 				}
-				pchar.money = sti(pchar.money) / sti(pchar.questTemp.different.FackWaitress.Kick);
+				pchar.money = int(pchar.money) / int(pchar.questTemp.different.FackWaitress.Kick);
 				chrDisableReloadToLocation = false;
 			}
 			//квест развода хозяйки борделя
@@ -1436,7 +1436,7 @@ void QuestComplete(string sQuestName, string qname)
             	AddCharacterExpToSkill(pchar, "FencingS", -20);
             	AddCharacterExpToSkill(pchar, "Pistol", -20);
 				ChangeCharacterComplexReputation(pchar,"nobility", -1);
-				pchar.money = sti(pchar.money) - makeint(sti(pchar.money)/15);
+				pchar.money = int(pchar.money) - int(int(pchar.money)/15);
 				chrDisableReloadToLocation = false;
 				SetFunctionTimerCondition("EncGirl_SpeakTavernKeeper", 0, 0, 1, false);
 			}
@@ -1533,47 +1533,48 @@ void QuestComplete(string sQuestName, string qname)
 			LAi_SetImmortal(pchar, false);
 			LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 		break;
-		
-		// belamour тут должен быть default: но наш компилятор решил читать между блоков )))
-		if(HollandGambit_QuestComplete(sQuestName, qname)) return;
-		if(Saga_QuestComplete(sQuestName, qname)) return;
-		if(SharlieTrial_QuestComplete(sQuestName, qname)) return;
-		if(Slavetrader_QuestComplete(sQuestName, qname)) return;
-		if(SharlieFinal_QuestComplete(sQuestName, qname)) return;
-		if(Roger_QuestComplete(sQuestName, qname)) return;
-		if(RedChieftain_QuestComplete(sQuestName, qname)) return;
-		if(FalseTrace_QuestComplete(sQuestName, qname)) return;
-		if(Regatta_QuestComplete(sQuestName, qname)) return;
-		if(Portugal_QuestComplete(sQuestName, qname)) return;
-		if(Consumption_QuestComplete(sQuestName, qname)) return;
-		if(Caleuche_QuestComplete(sQuestName, qname)) return;
-		if(FMQ_QuestComplete(sQuestName, qname)) return;
-		if(Patria_QuestComplete(sQuestName, qname)) return;
-		if(GoldenGirl_QuestComplete(sQuestName, qname)) return;
-		if(LongHappy_QuestComplete(sQuestName, qname)) return;
-		if(IslaMona_QuestComplete(sQuestName, qname)) return;
-		if(Longway_QuestComplete(sQuestName, qname)) return;
-		if(HelenDrinking_QuestComplete(sQuestName, qname)) return;
-		if(ChickenGod_QuestComplete(sQuestName, qname)) return;
-		if(Tonzag_QuestComplete(sQuestName, qname)) return;
-		if(Knippel_QuestComplete(sQuestName, qname)) return;
-		if(Duran_QuestComplete(sQuestName, qname)) return;
-		if(BlackMark_QuestComplete(sQuestName, qname)) return;
-		if(Santa_Misericordia_QuestComplete(sQuestName, qname)) return;
-		if(GenQuests_QuestComplete(sQuestName, qname)) return;
-		if(MiniQuests_QuestComplete(sQuestName, qname)) return;
-		if(LadyBeth_QuestComplete(sQuestName, qname)) return;
-		if(Memento_QuestComplete(sQuestName, qname)) return;
-		if(ClockTower_QuestComplete(sQuestName, qname)) return;
-		if(DiegoDeLanda_QuestComplete(sQuestName, qname)) return;
-		if(SharlieTutorial_QuestComplete(sQuestName, qname)) return;
-		if(DarkWatersOfHealing_QuestComplete(sQuestName, qname)) return;
-		if(EdgesJustice_QuestComplete(sQuestName, qname)) return;
-		if(VPVL_QuestComplete(sQuestName, qname)) return;
-		if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
-		if(LaEspadaDelRey_QuestComplete(sQuestName, qname)) return;
-		if(WildRose_QuestComplete(sQuestName, qname)) return;
-		if(SharlieEpilog_QuestComplete(sQuestName, qname)) return;
+
+		default:
+			if(HollandGambit_QuestComplete(sQuestName, qname)) return;
+			if(Saga_QuestComplete(sQuestName, qname)) return;
+			if(SharlieTrial_QuestComplete(sQuestName, qname)) return;
+			if(Slavetrader_QuestComplete(sQuestName, qname)) return;
+			if(SharlieFinal_QuestComplete(sQuestName, qname)) return;
+			if(Roger_QuestComplete(sQuestName, qname)) return;
+			if(RedChieftain_QuestComplete(sQuestName, qname)) return;
+			if(FalseTrace_QuestComplete(sQuestName, qname)) return;
+			if(Regatta_QuestComplete(sQuestName, qname)) return;
+			if(Portugal_QuestComplete(sQuestName, qname)) return;
+			if(Consumption_QuestComplete(sQuestName, qname)) return;
+			if(Caleuche_QuestComplete(sQuestName, qname)) return;
+			if(FMQ_QuestComplete(sQuestName, qname)) return;
+			if(Patria_QuestComplete(sQuestName, qname)) return;
+			if(GoldenGirl_QuestComplete(sQuestName, qname)) return;
+			if(LongHappy_QuestComplete(sQuestName, qname)) return;
+			if(IslaMona_QuestComplete(sQuestName, qname)) return;
+			if(Longway_QuestComplete(sQuestName, qname)) return;
+			if(HelenDrinking_QuestComplete(sQuestName, qname)) return;
+			if(ChickenGod_QuestComplete(sQuestName, qname)) return;
+			if(Tonzag_QuestComplete(sQuestName, qname)) return;
+			if(Knippel_QuestComplete(sQuestName, qname)) return;
+			if(Duran_QuestComplete(sQuestName, qname)) return;
+			if(BlackMark_QuestComplete(sQuestName, qname)) return;
+			if(Santa_Misericordia_QuestComplete(sQuestName, qname)) return;
+			if(GenQuests_QuestComplete(sQuestName, qname)) return;
+			if(MiniQuests_QuestComplete(sQuestName, qname)) return;
+			if(LadyBeth_QuestComplete(sQuestName, qname)) return;
+			if(Memento_QuestComplete(sQuestName, qname)) return;
+			if(ClockTower_QuestComplete(sQuestName, qname)) return;
+			if(DiegoDeLanda_QuestComplete(sQuestName, qname)) return;
+			if(SharlieTutorial_QuestComplete(sQuestName, qname)) return;
+			if(DarkWatersOfHealing_QuestComplete(sQuestName, qname)) return;
+			if(EdgesJustice_QuestComplete(sQuestName, qname)) return;
+			if(VPVL_QuestComplete(sQuestName, qname)) return;
+			if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
+			if(LaEspadaDelRey_QuestComplete(sQuestName, qname)) return;
+			if(WildRose_QuestComplete(sQuestName, qname)) return;
+			if(SharlieEpilog_QuestComplete(sQuestName, qname)) return;
+		break;
 	}	
 }
 
@@ -1659,8 +1660,8 @@ void WaitNextHours(string qName)
 	pchar.locy = locy;
 	pchar.locz = locz;
 	sHour = StringFromKey("quests_reaction_13");
-	if(sti(pchar.quest.waithours) == 1)		sHour = StringFromKey("quests_reaction_14");
-	if(sti(pchar.quest.waithours) == 24)	sHour = StringFromKey("quests_reaction_15");
+	if(int(pchar.quest.waithours) == 1)		sHour = StringFromKey("quests_reaction_14");
+	if(int(pchar.quest.waithours) == 24)	sHour = StringFromKey("quests_reaction_15");
 	if(isShipInside(pchar.location))
 	{
 		SetLaunchFrameFormParam(sHour, "Update_Deck_Model", 0.1, 2.0);
@@ -1671,7 +1672,7 @@ void WaitNextHours(string qName)
 		SetLaunchFrameReloadLocationParam(pchar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"), "LocTeleport");
 	}
 	
-	WaitDate("", 0, 0, 0, sti(pchar.quest.waithours), 0);
+	WaitDate("", 0, 0, 0, int(pchar.quest.waithours), 0);
 	LaunchFrameForm();
 	DeleteAttribute(pchar,"quest.waithours");
 	RefreshLandTime();
@@ -1689,7 +1690,7 @@ void WaitNextDays(string qName)
 	pchar.locy = locy;
 	pchar.locz = locz;
 	sDay = StringFromKey("quests_reaction_16");
-	if(sti(pchar.quest.waithours) == 1)	sDay = StringFromKey("quests_reaction_15");
+	if(int(pchar.quest.waithours) == 1)	sDay = StringFromKey("quests_reaction_15");
 	if(isShipInside(pchar.location))
 	{
 		SetLaunchFrameFormParam(sDay, "Update_Deck_Model", 0.1, 2.0);
@@ -1699,8 +1700,8 @@ void WaitNextDays(string qName)
 		SetLaunchFrameFormParam(sDay, "Reload_To_Location", 0.1, 2.0);
 		SetLaunchFrameReloadLocationParam(pchar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"), "LocTeleport");
 	}
-	for (int i = 0; i < sti(pchar.quest.waithours); i++) WaitDate("", 0, 0, 1, 0, 0);
-	// WaitDate("", 0, 0, sti(pchar.quest.waithours), 0, 0);
+	for (int i = 0; i < int(pchar.quest.waithours); i++) WaitDate("", 0, 0, 1, 0, 0);
+	// WaitDate("", 0, 0, int(pchar.quest.waithours), 0, 0);
 	LaunchFrameForm();
 	DeleteAttribute(pchar,"quest.waithours");
 	RefreshLandTime();
@@ -1886,7 +1887,7 @@ void Flag_HOLLAND()
 
 void Flag_Rerise()
 {
-	switch (sti(PChar.nation))
+	switch (int(PChar.nation))
 	{
     	case ENGLAND:	Flag_ENGLAND();	break;
     	case FRANCE:	Flag_FRANCE();	break;

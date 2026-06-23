@@ -333,3 +333,7 @@ itm_stat_greenIdol {Culto}
 itm_stat_descr_greenIdol {El ídolo somete a quienes lo rodean, aumentando en $percent(0.30) la probabilidad de rendición de barcos enemigos, la potencia de la escuadra y la cantidad de reclutas en las tabernas.}
 itm_stat_secondary_greenIdol {Susurros de los Antiguos}
 itm_stat_descr_secondary_greenIdol {Mientras está equipado, el ídolo reduce constantemente la moral de la tripulación, enloqueciéndola con sus susurros impíos.}
+itm_stat_nocturlabe {Dokładny czas}
+itm_stat_descr_nocturlabe {Zwiększa zwrotność statku o 10%, a na okrętach 2. i 1. klasy jeszcze o 25%.}
+itm_stat_secondary_nocturlabe {Nawigacja nocna}
+itm_stat_descr_secondary_nocturlabe {Zwiększa $key(Perception) o #f.0modifiers.SpecialPerception#. Zwiększa szansę ucieczki na mapie globalnej o 25.}

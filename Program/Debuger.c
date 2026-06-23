@@ -2,10 +2,10 @@
 //native string GetHello();
 //#libriary "b_engine"
 
-__lua string LuaHELLO(string a, string b);
-__lua void MemoryStress();
-__lua void MemoryClear();
-__lua string LUAAddRandomItem(string groupID, int count);
+lua string LuaHELLO(string a, string b);
+lua void MemoryStress();
+lua void MemoryClear();
+lua string LUAAddRandomItem(string groupID, int count);
 
 void ActiveINSERTControl()
 {
@@ -110,7 +110,7 @@ void AdvanceTime() {
     if (!CheckAttribute(pchar, "hour")) {
         hour = 0;
     } else {
-        hour = sti(pchar.hour);
+        hour = int(pchar.hour);
     }
     
     SetCurrentTime(hour, 0);
@@ -205,7 +205,7 @@ void ActiveF12Control()
             Log_SetStringToLog("Group= "+findCh.location.group + " locator= " + findCh.location.locator);
             if (CheckAttribute(findCh, "cirassId"))
             {
-                Log_SetStringToLog("cirassId= " + sti(findCh.cirassId));
+                Log_SetStringToLog("cirassId= " + int(findCh.cirassId));
             }
             else
             {
@@ -302,7 +302,7 @@ void TestGoodsLiquidity()
 	
 	for (i = 0; i< GetArraySize(&Goods); i++)
 	{
-		SetCharacterGoods(pchar, i, sti(Goods[i].Units));
+		SetCharacterGoods(pchar, i, int(Goods[i].Units));
 	}
 	trace("======= TestGoodsLiquidity ======== start ");
 	for (j = 0; j< GetArraySize(&Goods); j++)
@@ -313,9 +313,9 @@ void TestGoodsLiquidity()
 		{
 			if (GetCargoGoods(pchar, i) > 0)
 			{
-				if (fMaxCost < stf(Goods[i].Cost)/stf(Goods[i].Weight)) 
+				if (fMaxCost < float(Goods[i].Cost)/float(Goods[i].Weight))
 				{
-					fMaxCost = stf(Goods[i].Cost)/stf(Goods[i].Weight);
+					fMaxCost = float(Goods[i].Cost)/float(Goods[i].Weight);
 					idx = i;
 				} 
 			}

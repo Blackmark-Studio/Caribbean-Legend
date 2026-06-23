@@ -5511,6 +5511,21 @@ TheFormerKnight.4
 Siamo riusciti a rintracciare ed eliminare l’ex Cavaliere dell’Ordine. Durand voleva uccidere la donna del cavaliere, che si trovava sfortunatamente in casa in quel momento. Ovviamente, non potevo permetterlo. Abbiamo incrociato le spade ancora una volta, e ancora una volta ho avuto la meglio. Se avessi saputo prima che razza di canaglia fosse, l’avrei sistemato già nella residenza di Levasseur.
 }
 
+TheFormerKnight.5
+{
+Ho deciso di non immischiarmi nei problemi di un ufficiale caduto in disgrazia e ho congedato Claude Durand. Che si trovi un altro capitano.
+}
+
+TheFormerKnight.6
+{
+Non sono riuscito a sopportare il comportamento di Claude. Tra noi è scoppiato un conflitto e sono stato costretto a ucciderlo. Riposa in pace, mercenario.
+}
+
+TheFormerKnight.7
+{
+Claude Durand è caduto in battaglia, e ormai non saprò mai come finisce questa storia. Ebbene, riposa in pace, mercenario.
+}
+
 Tichingitu
 {
 Tichingitu

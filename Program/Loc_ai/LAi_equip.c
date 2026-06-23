@@ -67,7 +67,7 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		// boal -->
 		if(rand(1500) < MOD_SKILL_ENEMY_RATE*100)
         {
-		   TakeNItems(chr, "potion1", rand(makeint(rank/(11-MOD_SKILL_ENEMY_RATE) +0.5))); // даю меньше
+		   TakeNItems(chr, "potion1", rand(int(rank/(11-MOD_SKILL_ENEMY_RATE) +0.5))); // даю меньше
 		}
 		// boal <--
 		if(CheckAttribute(chr, "PhantomType") && chr.PhantomType == "soldier")
@@ -93,7 +93,7 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 			if (sGun != "")
 			{
 				ref rGun = ItemsFromID(sGun);
-				int chrgQ = sti(rGun.chargeQ);
+				int chrgQ = int(rGun.chargeQ);
 				if (chrgQ >= 2)
 				{
 					SetCharacterPerk(chr, "Gunman");
@@ -120,12 +120,12 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 				}
 			}
 		}
-		else if(rand(1000) < MOD_SKILL_ENEMY_RATE * sti(chr.rank) * 8)
+		else if(rand(1000) < MOD_SKILL_ENEMY_RATE * int(chr.rank) * 8)
 		{
 			int iRnd = rand(1);
-			if(sti(chr.rank) > 10) iRnd = rand(2);
-			if(sti(chr.rank) > 15) iRnd = rand(2) + 1;
-			if(sti(chr.rank) > 20) iRnd = rand(3) + 2;
+			if(int(chr.rank) > 10) iRnd = rand(2);
+			if(int(chr.rank) > 15) iRnd = rand(2) + 1;
+			if(int(chr.rank) > 20) iRnd = rand(3) + 2;
 				
 			switch(iRnd)
 			{
@@ -241,7 +241,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 	}
 
 	ref rGun = ItemsFromID(sMush);
-	int chrgQ = sti(rGun.chargeQ);
+	int chrgQ = int(rGun.chargeQ);
 
 	if (chrgQ >= 2)
 	{
@@ -404,11 +404,11 @@ string LAi_NPC_EquipBladeSelection(ref chr)
 		switch( sType )
 		{
 			case "slave" 		:
-				blade = SelectGeneratedItem(TGT_YANKEE, "", "");
+				blade = SelectGeneratedItem(TGT_YANKEE, -1, "");
 				if(blade == "") SelectGeneratedItem(TGT_MARGINAL, B_ORDINARY, "");
 			break;
 			case "native" 		:
-				blade = SelectGeneratedItem(TGT_YANKEE, "", "");
+				blade = SelectGeneratedItem(TGT_YANKEE, -1, "");
 				if(blade == "") SelectGeneratedItem(TGT_MARGINAL, B_ORDINARY, "");
 			break;
 			case "marginal" 	:
@@ -418,19 +418,19 @@ string LAi_NPC_EquipBladeSelection(ref chr)
 				blade = SelectGeneratedItem(TGT_MARGINAL, B_ORDINARY, "");
 			break;
 			case "hunter" 		:
-				if(rand(1) == 0 ) blade = SelectGeneratedItem(TGT_SOLDIER, "", "");
-				else              blade = SelectGeneratedItem(TGT_MARGINAL, "", "");
+				if(rand(1) == 0 ) blade = SelectGeneratedItem(TGT_SOLDIER, -1, "");
+				else              blade = SelectGeneratedItem(TGT_MARGINAL, -1, "");
 			break;
 			case "mercenary"	:
 			break;
 			case "governor" 	:
-				blade = SelectGeneratedItem(TGT_OFFICER, "", "");
+				blade = SelectGeneratedItem(TGT_OFFICER, -1, "");
 			break;
 			case "itza" 		:
-				blade = SelectGeneratedItem(TGT_NATIVE, "", "");
+				blade = SelectGeneratedItem(TGT_NATIVE, -1, "");
 			break;
 			case "quest" 		:
-				blade = SelectGeneratedItem(TGT_SOLDIER, "", "");
+				blade = SelectGeneratedItem(TGT_SOLDIER, -1, "");
 			break;
 			case "pofficer" 	:
 				blade = SelectGeneratedItem(TGT_MARGINAL, B_ORDINARY, "");
@@ -442,7 +442,7 @@ string LAi_NPC_EquipBladeSelection(ref chr)
 				blade = SelectGeneratedItem(TGT_SOLDIER, B_ORDINARY, "");
 			break;
 			case "pirate"		:
-				blade = SelectGeneratedItem(TGT_MARGINAL, "", "");
+				blade = SelectGeneratedItem(TGT_MARGINAL, -1, "");
 			break;
 			case "citizen"		:
 				blade = SelectGeneratedItem(TGT_MARGINAL, B_ORDINARY, "");
@@ -455,7 +455,7 @@ string LAi_NPC_EquipBladeSelection(ref chr)
 // казенная сабля солдат в городе
 string LAi_Soldier_EquipBlade()
 {	
-	return SelectGeneratedItem(TGT_SOLDIER, "", "");
+	return SelectGeneratedItem(TGT_SOLDIER, -1, "");
 }
 
 // new perks generator, more specialized (Gray 12.11.2004)
@@ -465,7 +465,7 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
     int  rest;
     int  PerkTemplates[PERK_TEMPLATE_LAST];
     int  NumPerks[PERK_TEMPLATE_LAST];
-    int  rank = sti(chr.rank);
+    int  rank = int(chr.rank);
     bool ok;
 
 	for (i = 0; i < PERK_TEMPLATE_LAST; i++)
@@ -476,40 +476,40 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 	switch (kind)        // to_do
 	{
 		 case "boatswain" :
-			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = makeint((rank + rand(4)) / 7.0 + 1);
-			PerkTemplates[PERK_TEMPLATE_GRAPPLING]   = makeint((rank + rand(3)) / 6.0);
-			PerkTemplates[PERK_TEMPLATE_MELEE]       = makeint((rank + rand(3)) / 5.0);
+			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = int((rank + rand(4)) / 7.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_GRAPPLING]   = int((rank + rand(3)) / 6.0);
+			PerkTemplates[PERK_TEMPLATE_MELEE]       = int((rank + rand(3)) / 5.0);
 		break;
 
 		case "cannoner" :
-			PerkTemplates[PERK_TEMPLATE_CANNONS] = makeint((rank + rand(2)) / 3.0 + 1);
-			PerkTemplates[PERK_TEMPLATE_MELEE]   = makeint((rank + rand(3)) / 6.0);
+			PerkTemplates[PERK_TEMPLATE_CANNONS] = int((rank + rand(2)) / 3.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_MELEE]   = int((rank + rand(3)) / 6.0);
 		break;
 
 		case "treasurer" :
-			PerkTemplates[PERK_TEMPLATE_COMMERCE] = makeint((rank + rand(1)) / 5.0 + 1);
-			PerkTemplates[PERK_TEMPLATE_REPAIR]   = makeint((rank + rand(3)) / 5.0);
-			PerkTemplates[PERK_TEMPLATE_MELEE]    = makeint((rank + rand(3)) / 6.0);
-			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = makeint((rank + rand(4)) / 7.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_COMMERCE] = int((rank + rand(1)) / 5.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_REPAIR]   = int((rank + rand(3)) / 5.0);
+			PerkTemplates[PERK_TEMPLATE_MELEE]    = int((rank + rand(3)) / 6.0);
+			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = int((rank + rand(4)) / 7.0 + 1);
 		break;
 
 		case "navigator" :
-			PerkTemplates[PERK_TEMPLATE_SAILING]     = makeint((rank + rand(2)) / 4.0 + 1);
-			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = makeint((rank + rand(3)) / 6.0);
-			PerkTemplates[PERK_TEMPLATE_MELEE]       = makeint((rank + rand(3)) / 6.0);
+			PerkTemplates[PERK_TEMPLATE_SAILING]     = int((rank + rand(2)) / 4.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = int((rank + rand(3)) / 6.0);
+			PerkTemplates[PERK_TEMPLATE_MELEE]       = int((rank + rand(3)) / 6.0);
 		break;
 
 		case "fighter" :
-			PerkTemplates[PERK_TEMPLATE_MELEE] = makeint((rank + rand(1)) / 2.0 + 1);
+			PerkTemplates[PERK_TEMPLATE_MELEE] = int((rank + rand(1)) / 2.0 + 1);
 		break;
 
 		case "fantom" : 
-			PerkTemplates[PERK_TEMPLATE_MELEE]       = makeint((rank + rand(4)) / 4.0);
-			PerkTemplates[PERK_TEMPLATE_SAILING]     = makeint((rank + rand(5)) / 8.0);
-			PerkTemplates[PERK_TEMPLATE_GRAPPLING]   = makeint((rank + rand(7)) / 9.0);
-			PerkTemplates[PERK_TEMPLATE_REPAIR]      = makeint((rank + rand(10)) / 15.0);
-			PerkTemplates[PERK_TEMPLATE_CANNONS]     = makeint((rank + rand(2)) / 5.0);
-			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = makeint((rank + rand(4)) / 7.0);
+			PerkTemplates[PERK_TEMPLATE_MELEE]       = int((rank + rand(4)) / 4.0);
+			PerkTemplates[PERK_TEMPLATE_SAILING]     = int((rank + rand(5)) / 8.0);
+			PerkTemplates[PERK_TEMPLATE_GRAPPLING]   = int((rank + rand(7)) / 9.0);
+			PerkTemplates[PERK_TEMPLATE_REPAIR]      = int((rank + rand(10)) / 15.0);
+			PerkTemplates[PERK_TEMPLATE_CANNONS]     = int((rank + rand(2)) / 5.0);
+			PerkTemplates[PERK_TEMPLATE_SHIPDEFENCE] = int((rank + rand(4)) / 7.0);
 		break;
     } 
 

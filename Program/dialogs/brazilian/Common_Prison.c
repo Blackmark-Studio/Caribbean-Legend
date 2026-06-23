@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 				dialog.text = "Saudações, capitão. O que o traz aqui?";
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "Saudações, Vice-Almirante! Como posso ajudar?";
 			}
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";
 				}	
 			}
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "Quero entrar na prisão.";
 				link.l4.go = "ForGoodMove";		
@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 					bool zMsm = (CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour")) && (!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor"));
 					if(pchar.GenQuest.CaptainComission == "MayorTalkBad" || zMsm) //говорил с губером и отказался или узнал слухи, но не говорил с губером
 					{
-						link.l6 = "Ouvi dizer que o antigo capitão de uma patrulha "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" está sendo mantido aqui sob custódia. Posso falar com ele?";
+						link.l6 = "Ouvi dizer que o antigo capitão de uma patrulha "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" está sendo mantido aqui sob custódia. Posso falar com ele?";
 						link.l6.go = "CapComission_PrisonBad1";
 					}
 					if(pchar.GenQuest.CaptainComission == "MayorTalkGood")
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		
 		case "Marginpassenger_1":
 			dialog.text = "Hmm... Isso é muito interessante - por favor, continue!";
-			link.l1 = "Ele sabia o nome do navio em que estava, "+pchar.GenQuest.Marginpassenger.q1Name+" estava planejando zarpar. É "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" chamado de '"+pchar.GenQuest.Marginpassenger.ShipName+"'. Além disso, ele me contou a hora em que aquele navio deveria zarpar.";
+			link.l1 = "Ele sabia o nome do navio em que estava, "+pchar.GenQuest.Marginpassenger.q1Name+" estava planejando zarpar. É "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" chamado de '"+pchar.GenQuest.Marginpassenger.ShipName+"'. Além disso, ele me contou a hora em que aquele navio deveria zarpar.";
 			link.l1.go = "Marginpassenger_2";
 		break;
 	
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
 			pchar.quest.Marginpassenger_InWorld.over = "yes"; //снять таймер
 			DeleteAttribute(Pchar, "GenQuest.Marginpassenger");
 			ChangeCharacterComplexReputation(pchar, "nobility", 3);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), 5);
 			AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
 			ChangeContrabandRelation(pchar, -25);
 			if (GetCharacterIndex("MarginCap") != -1)
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.ReasonToFast.SpeakOther = true;
 			dialog.text = "Estou ouvindo, capitão.";
 			link.l1 = "Quero lhe contar sobre uma conspiração criminosa entre um oficial da sua guarnição e piratas (explica a situação).";
-			if(makeint(pchar.reputation.nobility) < 41)
+			if(int(pchar.reputation.nobility) < 41)
 			{
 				link.l1.go = "ReasonToFast_Prison_BadRep";			
 			}
@@ -463,7 +463,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "F_ShipLetters_2":			
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "Besteira! Não me distraia do meu trabalho! Vá falar com as autoridades portuárias se você se importa!";
 				link.l1 = "Bem, obrigado, eu acho...";
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "Sim, é o dono local. Talvez um prêmio de "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" pesos serão uma recompensa adequada pela sua vigilância, capitão.";
+					dialog.text = "Sim, é o dono local. Talvez um prêmio de "+int(pchar.questTemp.different.GiveShipLetters.price2)+" pesos serão uma recompensa adequada pela sua vigilância, capitão.";
 					link.l1 = "Talvez não.";
 					link.l1.go = "F_ShipLetters_3";	
 					link.l2 = "Uma oferta generosa. Os documentos são seus, então!";
@@ -481,17 +481,17 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "Ah, isso é realmente interessante! Acredito que o tesouro da cidade vai pagar você com prazer "+sti(pchar.questTemp.different.GiveShipLetters.price4)+" pesos pela sua contribuição no combate ao comércio ilegal.";
+						dialog.text = "Ah, isso é realmente interessante! Acredito que o tesouro da cidade vai pagar você com prazer "+int(pchar.questTemp.different.GiveShipLetters.price4)+" pesos pela sua contribuição no combate ao comércio ilegal.";
 						link.l1 = "Talvez não.";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "Uma oferta generosa. Os documentos são seus, então!";
 						link.l2.go = "F_ShipLetters_4";
 					}
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "Meu Deus! Que sorte boa você ter vindo até mim. Imagino que meu colega azarado vai lhe pagar com prazer "+sti(pchar.questTemp.different.GiveShipLetters.price3)+" pesos para evitar que este caso venha a público.";
+						dialog.text = "Meu Deus! Que sorte boa você ter vindo até mim. Imagino que meu colega azarado vai lhe pagar com prazer "+int(pchar.questTemp.different.GiveShipLetters.price3)+" pesos para evitar que este caso venha a público.";
 						link.l1 = "Talvez não.";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "Uma oferta generosa. Os documentos são seus, então!";
@@ -509,30 +509,30 @@ void ProcessDialogEvent()
 		
 		case "F_ShipLetters_4":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price4)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price4));
 				}
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price3)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price3));
 				}
 			}
 						
-			if((sti(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (sti(pchar.questTemp.different.GiveShipLetters.variant) == 2))
+			if((int(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (int(pchar.questTemp.different.GiveShipLetters.variant) == 2))
 			{	
 				ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 				OfficersReaction("bad"); 
@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "Claro, Sua Excelência. Pode passar.";
 				link.l1 = "Obrigado, oficial.";
@@ -568,9 +568,9 @@ void ProcessDialogEvent()
 				break;
 			}
 			// Офицер с патентом
-			if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "Bem, não vejo motivo para recusar você – afinal, você é o capitão do navio a serviço de "+NationNameGenitive(sti(npchar.nation))+". Pode entrar."; 
+				dialog.text = "Bem, não vejo motivo para recusar você – afinal, você é o capitão do navio a serviço de "+NationNameGenitive(int(npchar.nation))+". Pode entrar.";
 				link.l1 = "Obrigado, oficial.";
 				link.l1.go = "exit";
 				pchar.questTemp.jailCanMove = true;
@@ -584,10 +584,10 @@ void ProcessDialogEvent()
 		
         case "ForGoodMove_1":
 			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
-			if (sti(colonies[FindColony(npchar.city)].jail))
+			if (int(colonies[FindColony(npchar.city)].jail))
 			{
-				dialog.text = "Bem, não vejo motivo para recusar. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" - e até você sair da prisão, pode andar livremente pelos corredores e até conversar com os outros presos.";
-				if (PCharDublonsTotal() >= sti(sti(pchar.questTemp.jailCanMove.money)))
+				dialog.text = "Bem, não vejo motivo para recusar. "+FindRussianDublonString(int(pchar.questTemp.jailCanMove.money))+" - e até você sair da prisão, pode andar livremente pelos corredores e até conversar com os outros presos.";
+				if (PCharDublonsTotal() >= int(int(pchar.questTemp.jailCanMove.money)))
 				{
 					link.l1 = "Concordo, aqui estão suas moedas!";
 					link.l1.go = "ForGoodMove_agree";
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 			link.l1 = "Obrigado, oficial.";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.money)));
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.money));
 		break;
 		
         case "KnowAboutPrisoner":
@@ -632,7 +632,7 @@ void ProcessDialogEvent()
 		break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				link.l1 = "Entendo... Entregue-o a mim, oficial, e eu mesmo decidirei o destino deste prisioneiro.";
 				link.l1.go = "KnowAboutPrisoner_admiral";
@@ -688,8 +688,8 @@ void ProcessDialogEvent()
 		
         case "KnowAboutPrisoner_free":
 			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
-			dialog.text = "Certo, temos um acordo. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money))+" na hora, e você pode levá-lo agora mesmo.";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
+			dialog.text = "Certo, temos um acordo. "+FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money))+" na hora, e você pode levá-lo agora mesmo.";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
 				link.l1 = LinkRandPhrase("Excelente! Concordo!","Está fechado, oficial!","Excelente. Estou pronto para pagar essa contribuição.");
 				link.l1.go = "KnowAboutPrisoner_agree";
@@ -703,8 +703,8 @@ void ProcessDialogEvent()
 			link.l1 = "Obrigado.";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.ownerPrison.money));
-			Log_Info("You have given " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.ownerPrison.money));
+			Log_Info("You have given " + FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
 			DeleteAttribute(pchar, "questTemp.jailCanMove.ownerPrison");
 			sld = characterFromId(pchar.questTemp.jailCanMove.prisonerId)
 			LAi_CharacterEnableDialog(sld);
@@ -765,7 +765,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "Saudações, Vice-Almirante! Estou de serviço aqui: garanto que ninguém entre ou saia sem permissão. Mas você, é claro, tem o direito de passar livremente.";
 				link.l1 = "Bem, isso é maravilhoso.";
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "First_protector";
 				break;
 			}
-			if (sti(pchar.questTemp.jailCanMove))
+			if (int(pchar.questTemp.jailCanMove))
 			{
 				dialog.text = RandPhraseSimple("Pode passar, o guarda autorizou.","Recebi uma ordem do diretor da prisão. Você pode passar livremente.");
 				link.l1 = "Muito bom.";
@@ -797,7 +797,7 @@ void ProcessDialogEvent()
 		break;
 		//---------------- Заключенные ------------------
         case "First_prisoner": 
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) == RELATION_ENEMY)
 			{
 				dialog.text = LinkRandPhrase("Ho-ho, não é um ótimo momento!","Corte-os, "+GetSexPhrase("companheiro","moça")+", corta!!!","Ah, inferno! Eu já tinha perdido toda a esperança de ver o cadáver do meu carcereiro!");
 				link.l1 = RandPhraseSimple("Heh!","Arrgh!");
@@ -814,7 +814,7 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Me acusam de roubo, mas eu não sou culpado!","Arrgh, seu canalha bem arrumado... Quer passar um tempinho na minha cela?! Kheh-heh-heh...","Eu não sou culpado!");
 				link.l1 = RandPhraseSimple("Cale a boca!","Eu não dou a mínima pra você...");
 				link.l1.go = "NoMoreTalkExit";
-				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !sti(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason пиратская линейка
+				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !int(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason пиратская линейка
 				{
 					dialog.text = RandPhraseSimple("Espere, "+GetSexPhrase("companheiro","moça")+", não vá com tanta pressa!","Não se apresse, "+GetSexPhrase("companheiro","moça")+", vamos conversar.");
 					link.l1 = "Por qual motivo?";
@@ -856,11 +856,11 @@ void ProcessDialogEvent()
             dialog.text = "Eu juro que estou dizendo a verdade! Quanto ao esconderijo – tem tesouro e dinheiro...";
 			link.l1 = "Não, amigo. Não vou arriscar meu pescoço por um tesouro duvidoso. Me desculpe...";
 			link.l1.go = "Prisoner_5";
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) != RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) != RELATION_ENEMY)
 			{			
 				// belamour legendary edition адмирал и губернатор может договориться без денег
-				bool bAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
-				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation());
+				bool bAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
+				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation();
 				if(!bAdmiral && !bGenGov)
 				{
 				link.l2 = "Bem, talvez valha a pena arriscar... Eu proponho o seguinte: posso eliminar os guardas da prisão e te levar para o meu navio. Se tudo der certo, quero que fique ao meu lado o tempo todo até chegarmos à gruta em  "+XI_ConvertString(pchar.questTemp.jailCanMove.islandId+"Voc")+". Fechado?"; // belamour gen
@@ -891,9 +891,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Prisoner_agree_2";
 		break;
         case "Prisoner_agree_2":
-			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
+			string slai_group = GetNationNameByType(int(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			ReOpenQuestHeader("GivePrisonFree");
 			AddQuestRecord("GivePrisonFree", "1");
             AddQuestUserData("GivePrisonFree", "sCity", XI_ConvertString("Colony"+npchar.city+"Gen"));
@@ -1051,7 +1051,7 @@ void ProcessDialogEvent()
 		break;
 		//==> в месте, где клад припрятан
         case "PrisonerInPlace":
-			switch (sti(pchar.questTemp.jailCanMove.IsTrue))
+			switch (int(pchar.questTemp.jailCanMove.IsTrue))
 			{
 				case 0:
 					dialog.text = "Olha, eu revirei tudo, mas não achei nenhum tesouro. Uma pena que acabou assim. Alguém deve ter desenterrado antes da gente.";
@@ -1311,7 +1311,7 @@ void ProcessDialogEvent()
 			link.l1 = "Talvez minha palavra possa servir como fiança para aquele prisioneiro infeliz?";
 			link.l1.go = "JusticeOnSale_5_WithoutMoney";
 			
-			if(sti(PChar.money) >= 5000)
+			if(int(PChar.money) >= 5000)
 			{
 				link.l2 = "Talvez esses 5000 pesos possam servir como fiança para aquele prisioneiro infeliz?";
 				link.l2.go = "JusticeOnSale_5";
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || int(PChar.money) < 5000)
 			{
 				dialog.text = "Certo, "+GetAddress_Form(NPChar)+", leve esse canalha daqui e suma antes que eu mude de ideia.";
 				link.l1 = "É ótimo ver a justiça vencer, não acha?";
@@ -1343,8 +1343,8 @@ void ProcessDialogEvent()
 		
 		case "JusticeOnSale_6":
 			DialogExit();
-			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", sti(PChar.rank)+5, PIRATE, -1, true, "marginal"));
-			SetFantomParamFromRank(sld, sti(PChar.rank)+5, true);
+			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", int(PChar.rank)+5, PIRATE, -1, true, "marginal"));
+			SetFantomParamFromRank(sld, int(PChar.rank)+5, true);
 			sld.name = PChar.GenQuest.JusticeOnSale.SmugglerName;
 			sld.lastName = "";
 			sld.dialog.filename = "GenQuests_Dialog.c";
@@ -1441,7 +1441,7 @@ void ProcessDialogEvent()
 			dialog.text = "Bem, já que ele não pegou uma arma, isso dá só 1.500 pesos.";
 			link.l1 = "Receio que não estou pronta para dar tanto assim. Bem, considerando que ele só vai ficar aqui por alguns dias, acho que não vai lhe fazer mal. Talvez ele até beba menos.";
 			link.l1.go = "NightAdventure_CitizenHomieEnd";
-			if(sti(pchar.money) >= 1500)
+			if(int(pchar.money) >= 1500)
 			{
 				link.l2 = "Certo, estou pronto para pagar a fiança.";
 				link.l2.go = "NightAdventure_CitizenHomieOfficer_1";
@@ -1485,7 +1485,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			link.l2 = "Queria conversar sobre alguns negócios.";
 			link.l2.go = "quests";
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "Quero entrar na prisão.";
 				link.l4.go = "ForGoodMove";		

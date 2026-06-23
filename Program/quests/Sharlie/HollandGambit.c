@@ -119,7 +119,7 @@ void BaltazarPirateGlobalCreate()//на глобальной карте
 	SelectLevelWarShipParameter();//автолевеллинг
     for (int i = 1; i <= 2; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "mercen_"+(rand(27)+1), "man", "man", sti(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, PIRATE, 10, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "mercen_"+(rand(27)+1), "man", "man", int(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, PIRATE, 10, true, "hunter"));
 		SetRandomNameToCharacter(sld);
 		SetRandomNameToShip(sld);
 		if (i == 1)
@@ -127,7 +127,7 @@ void BaltazarPirateGlobalCreate()//на глобальной карте
 			sld.name = "" + GetName( NAMETYPE_ORIG, pchar.questTemp.HWIC.Holl.PirateName, NAME_NOM) + "";
 			sld.lastname = "";
 		}
-		sld.Ship.Type = GenerateShipExt(iGlobalTemp, 1, sld);
+		sld.Ship.Type = GenerateShipExt(iGlobalTemp, true, sld);
 		SetBaseShipData(sld);
 		int hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
@@ -156,9 +156,9 @@ void BaltazarPirateSeaCreate(string qName)//на боевой карте
 	SelectLevelWarShipParameter();//автолевеллинг
     for (int i = 1; i <= 2; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter("BaltPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", sti(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, PIRATE, 10, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter("BaltPirate_"+i, "mercen_"+(rand(27)+1), "man", "man", int(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, PIRATE, 10, true, "hunter"));
 		FantomMakeSmallSailor(sld, iGlobalTemp, "", iTotalTemp, 10+rand(5), 10+rand(5), 10+rand(5), 10+rand(5), 15+rand(5));
-		FantomMakeCoolFighter(sld, sti(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
+		FantomMakeCoolFighter(sld, int(PChar.rank)+MOD_SKILL_ENEMY_RATE/2, 30, 30, sTotalTemp, "pistol2", "grapeshot", 30);
 		if (i == 1)
 		{
 			sld.name = "" + GetName( NAMETYPE_ORIG, pchar.questTemp.HWIC.Holl.PirateName, NAME_NOM) + "";
@@ -247,7 +247,7 @@ void SantiagoTripInHouse(string qName)//телепорт
 			boxItems.(sName) = PChar.items.(sName);
 		}
 	}
-	location.box1.money = sti(PChar.money);	
+	location.box1.money = int(PChar.money);
 	location.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
 	RemoveAllCharacterItems(PChar, true, true);
 }
@@ -323,7 +323,7 @@ void JacobOnMainOver(string qName)//просрочили на стрелку
 
 void Create_JacobVanBerg()//создаем Якоба ван Берга
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	sld = characterFromId("JacobBerg");
 	sld.rank = iRank;
     FantomMakeCoolFighter(sld, iRank, 20, 20, "blade_14", "pistol1", "bullet", 50);
@@ -373,7 +373,7 @@ void Create_Mirage(string qName)//создаем 'Мираж'
 	if(MOD_SKILL_ENEMY_RATE > 7) SetCharacterPerk(sld, "MusketsShoot");
 	// <-- legendary edition
 	sld.AnalizeShips = true;
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
 	SetShipSailsFromFile(sld, "ships/parus_torn.tga");
 	SetSailsColor(sld, 8);//черный рваный парус
     Group_AddCharacter("Mirage", "MirageCap");
@@ -412,7 +412,7 @@ void Mirage_Attack_Win(string qName)//после боя - проверяем к�
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE || sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG) iNum++;
+			if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE || int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG) iNum++;
 		}
 	}
 	if (iNum != 2)
@@ -467,8 +467,8 @@ void MC_GoAway(string qName)//провалил задание - в лодку и
 		Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Knippel");
 		DeleteAttribute(pchar, "questTemp.HWIC.EngEquip");
 	}
-	sld = &Characters[sti(Pchar.questTemp.FiringOfficerIDX)];
-	CheckForReleaseOfficer(sti(Pchar.questTemp.FiringOfficerIDX));
+	sld = &Characters[int(Pchar.questTemp.FiringOfficerIDX)];
+	CheckForReleaseOfficer(int(Pchar.questTemp.FiringOfficerIDX));
 	RemovePassenger(Pchar, sld);
 	RemoveCharacterCompanion(pchar, sld);
 	LAi_SetCitizenType(sld);
@@ -501,10 +501,10 @@ void Jacob_RemoveShip()//удаление корабля
 		if (iTemp <= 0) continue;
 
 		sld = GetCharacter(iTemp);
-		if (sti(RealShips[sti(sld.ship.type)].basetype) != sti(pchar.questTemp.HWIC.Holl.ShipType)) continue;
+		if (int(RealShips[int(sld.ship.type)].basetype) != int(pchar.questTemp.HWIC.Holl.ShipType)) continue;
 
 		pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-		questCap = GetCharacter(sti(pchar.questTemp.HWIC.Holl.CompanionIndex));
+		questCap = GetCharacter(int(pchar.questTemp.HWIC.Holl.CompanionIndex));
 	}
 
 	DistributeCrewFromShipToSquadron(pchar, questCap);
@@ -528,8 +528,8 @@ void Jacob_RemoveShip()//удаление корабля
 	DelBakSkillAttr(pchar);
 
 	Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Longway");
-	sld = &Characters[sti(Pchar.questTemp.FiringOfficerIDX)];
-	CheckForReleaseOfficer(sti(Pchar.questTemp.FiringOfficerIDX));
+	sld = &Characters[int(Pchar.questTemp.FiringOfficerIDX)];
+	CheckForReleaseOfficer(int(Pchar.questTemp.FiringOfficerIDX));
 	RemovePassenger(Pchar, sld);
 	RemoveCharacterCompanion(pchar, sld);
 	DeleteAttribute(sld, "Payment");
@@ -560,7 +560,7 @@ void ToAntiguaOver(string qName)//потеряли слишком много в�
 void PrepareToFleetwoodAttack(string qName)//пришли на Доминику, а подлого китайца нет
 {
 	if (!CheckAttribute(pchar, "questTemp.HWIC.Holl.Repeat")) AddQuestRecord("Holl_Gambit", "1-18");
-	if (sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_MIRAGE || GetCompanionQuantity(pchar) > 1)
+	if (int(RealShips[int(pchar.ship.type)].basetype) != SHIP_MIRAGE || GetCompanionQuantity(pchar) > 1)
 	{//пришли не на том, или с эскадрой - фигвам, а не Флитвуд, круговое прерывание, пока не выполним условия
 		pchar.quest.Fleetwood_Return.win_condition.l1 = "MapEnter";
 		pchar.quest.Fleetwood_Return.function = "ReturnFleetwoodBreak";
@@ -607,7 +607,7 @@ void CreateFleetwoodOnMap(string qName)//подгружаем в море энк
 	Group_SetTaskAttack("Fleetwood_Attack", PLAYER_GROUP);
 	Group_SetAddress("Pirate_Attack", "Dominica", "", "");
     Group_LockTask("Fleetwood_Attack");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	Sea_LoginGroupCurrentSea("Fleetwood_Attack");
 	log_info(StringFromKey("HollandGambit_9"));
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy1.wav");
@@ -688,7 +688,7 @@ void HollGambit_failed(string qName)//если у кого-то хватит н�
 
 void Lucas_ExangeShip()//обмен корабля
 {
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MIRAGE)
+	if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MIRAGE)
 	{
 		GetMeifengToCharacter(pchar);//даем Мейфенг навсегда - ну неужели эти корабельные обмены окончены? 
 	}
@@ -700,10 +700,10 @@ void Lucas_ExangeShip()//обмен корабля
 			if(iTemp > 0)
 			{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE)
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE)
 				{
 					pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-					sld = GetCharacter(sti(pchar.questTemp.HWIC.Holl.CompanionIndex));
+					sld = GetCharacter(int(pchar.questTemp.HWIC.Holl.CompanionIndex));
 					GetMeifengToCharacter(sld);//сажаем на Мейфенг
 				}
 			}
@@ -1098,7 +1098,7 @@ void HWICSilverConvoyInWorld()//создаем серебряный конвой
 			case 2: iTemp = SHIP_GALEON_L; break;
 			case 3: iTemp = SHIP_SLOOP; break;
 		}
-		sld.Ship.Type = GenerateShipExt(iTemp, 1, sld);
+		sld.Ship.Type = GenerateShipExt(iTemp, true, sld);
 		SetBaseShipData(sld);
 		SetCaptanModelByEncType(sld, "war");
 		int hcrew = GetMaxCrewQuantity(sld);
@@ -1131,7 +1131,7 @@ void HWICSilverConvoyInWorld()//создаем серебряный конвой
 		DeleteAttribute(sld, "SinkTenPercent");
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
-		if (i == 2) SetCharacterGoods(sld, GOOD_SILVER, sti(pchar.questTemp.HWIC.Eng.SlvQty));//положить в трюм серебро
+		if (i == 2) SetCharacterGoods(sld, GOOD_SILVER, int(pchar.questTemp.HWIC.Eng.SlvQty));//положить в трюм серебро
 		sld.mapEnc.type = "war";
 		sld.mapEnc.worldMapShip = "quest_ship";
         sld.mapEnc.Name = StringFromKey("HollandGambit_16");
@@ -1174,9 +1174,9 @@ void HollConvoy_Over(string qName)//опоздали или не нашли ко
 
 void HollConvoy_Remove()//удаляем товар и корабль
 {
-	RemoveCharacterGoods(pchar, GOOD_SILVER, sti(pchar.questTemp.HWIC.Eng.SlvQty));
+	RemoveCharacterGoods(pchar, GOOD_SILVER, int(pchar.questTemp.HWIC.Eng.SlvQty));
 	//удаляем ост-индца
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_GALEON_L)
+	if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_GALEON_L)
 	{
 		pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 		pchar.Ship.name = StringFromKey("HollandGambit_17");
@@ -1191,10 +1191,10 @@ void HollConvoy_Remove()//удаляем товар и корабль
 			if(iTemp > 0)
 			{
 				ref chr = GetCharacter(iTemp);
-				if(sti(RealShips[sti(chr.ship.type)].basetype) == SHIP_GALEON_L)
+				if(int(RealShips[int(chr.ship.type)].basetype) == SHIP_GALEON_L)
 				{
 					pchar.questTemp.HWIC.Eng.CompanionIndex = chr.Index;
-					sld = GetCharacter(sti(pchar.questTemp.HWIC.Eng.CompanionIndex));
+					sld = GetCharacter(int(pchar.questTemp.HWIC.Eng.CompanionIndex));
 				}
 			}
 		}
@@ -1286,7 +1286,7 @@ void GotoBridgetownOver(string qName)//просрочили выполнить �
 
 void VanBergAttackCheck(string qName)//проверка соблюдения условий
 {
-	if (sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) FailVanBergInWorld();
+	if (int(RealShips[int(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) FailVanBergInWorld();
 	else CreateVanBergInWorld();
 }
 
@@ -1320,7 +1320,7 @@ void CreateVanBergInWorld()//запускаем Ван Берга на карт�
 	sld.DontRansackCaptain = true;
 	sld.WatchFort = true; //видеть форты
 	sld.Ship.Mode = "pirate";
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
 	SetShipSailsFromFile(sld, "ships/parus_torn.tga");
 	SetSailsColor(sld, 8);//черный рваный парус
 	sld.AnalizeShips = true;
@@ -1369,7 +1369,7 @@ void Jacob_Attack_Win(string qName)//после боя - проверяем ко
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE || sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA) iNum++;
+			if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE || int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA) iNum++;
 		}
 	}
 	if (iNum != 2)
@@ -1411,7 +1411,7 @@ void ToAntiguaMirageOver(string qName)//если не пошёл на Антиг
 
 void Fleetwood_RemoveShip()//удаление корабля
 {
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == sti(pchar.questTemp.HWIC.Eng.ShipType))
+	if(int(RealShips[int(pchar.ship.type)].basetype) == int(pchar.questTemp.HWIC.Eng.ShipType))
 	{
 		pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 		pchar.Ship.name = StringFromKey("HollandGambit_17");
@@ -1426,10 +1426,10 @@ void Fleetwood_RemoveShip()//удаление корабля
 			if(iTemp > 0)
 			{
 				ref sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == sti(pchar.questTemp.HWIC.Eng.ShipType))
+				if(int(RealShips[int(sld.ship.type)].basetype) == int(pchar.questTemp.HWIC.Eng.ShipType))
 				{
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					sld = GetCharacter(sti(pchar.questTemp.HWIC.Eng.CompanionIndex));
+					sld = GetCharacter(int(pchar.questTemp.HWIC.Eng.CompanionIndex));
 					RemoveCharacterCompanion(PChar, sld);
 					AddPassenger(PChar, sld, false);
 				}
@@ -1437,8 +1437,8 @@ void Fleetwood_RemoveShip()//удаление корабля
 		}
 	}
 	Pchar.questTemp.FiringOfficerIDX = GetCharacterIndex("Knippel");
-	sld = &Characters[sti(Pchar.questTemp.FiringOfficerIDX)];
-	CheckForReleaseOfficer(sti(Pchar.questTemp.FiringOfficerIDX));
+	sld = &Characters[int(Pchar.questTemp.FiringOfficerIDX)];
+	CheckForReleaseOfficer(int(Pchar.questTemp.FiringOfficerIDX));
 	RemovePassenger(Pchar, sld);
 	RemoveCharacterCompanion(pchar, sld);
     DeleteAttribute(sld, "Payment");
@@ -1460,7 +1460,7 @@ void BoomInGrot(string qName)//взрыв
 	LAi_SetActorType(Pchar);
 	LAi_ActorAnimation(Pchar, "jump", "SitInGrot", 1.0);
 	ChangeCharacterAddressGroup(Pchar, "IslaDeCoche_Grot", "monsters", "monster2");
-	Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/3;
+	Pchar.chr_ai.hp = float(Pchar.chr_ai.hp)/3;
 	PlaySound("People fight\Death_NPC_08.wav");
 }
 
@@ -2126,7 +2126,7 @@ void CreateKnippelShip(string qName)//создаем бригантину Чар
 	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_20"), CANNON_TYPE_CULVERINE_LBS8, 45, 90, 85, 30, 80);
 	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_CANNONER, GEN_ARCHETYPE_BOATSWAIN, GEN_RANDOM_PIRATES, 0.6);
 	// belamour для легких уровней половина команды -->
-	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld, sti(GetMaxCrewQuantity(sld))/2);
+	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld, int(GetMaxCrewQuantity(sld))/2);
 	// <-- legendary edition		 
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
@@ -2179,8 +2179,8 @@ void Knippel_AfterBattle(string qName)//реакция на победу
 		object aCrewSoldier[2];
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 
-		int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		int iScl = 20 + 2*sti(pchar.rank);
+		int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		int iScl = 20 + 2*int(pchar.rank);
 		object aSoldier[1];
 		object aMushketers[1];
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
@@ -2393,8 +2393,8 @@ void InTerksShore(string qName)//пришли на Теркс в бухту
 		object aCrewSoldier[7];
 		GenerateCrew(pchar, "soldier", &aCrewSoldier);
 
-		int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-		int iScl = 20 + 2*sti(pchar.rank);
+		int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+		int iScl = 20 + 2*int(pchar.rank);
 		object aSoldier[1];
 		object aMushketers[1];
 		GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
@@ -2402,7 +2402,7 @@ void InTerksShore(string qName)//пришли на Теркс в бухту
 		{
 			string model = aCrewSoldier[i-1].model;
 			string ani = aCrewSoldier[i-1].ani;
-			sld = GetCharacter(NPC_GenerateCharacter("OwrSailor_"+i, model, "man", ani, 20, sti(pchar.nation), -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("OwrSailor_"+i, model, "man", ani, 20, int(pchar.nation), -1, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			DeleteAttribute(sld, "SaveItemsForDead");
 			DeleteAttribute(sld, "DontClearDead");
@@ -2414,7 +2414,7 @@ void InTerksShore(string qName)//пришли на Теркс в бухту
 			if (i == 6 || i == 7) ChangeCharacterAddressGroup(sld, "Shore56", "goto", "goto"+(13-i));
 		}
 		pchar.quest.Fleetwood_Login.win_condition.l1 = "Timer";
-		pchar.quest.Fleetwood_Login.win_condition.l1.date.hour  = sti(GetTime()+rand(6));
+		pchar.quest.Fleetwood_Login.win_condition.l1.date.hour  = int(GetTime()+rand(6));
 		pchar.quest.Fleetwood_Login.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 		pchar.quest.Fleetwood_Login.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 		pchar.quest.Fleetwood_Login.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -2859,8 +2859,8 @@ void CreatePiterHalleon(string qName)//галеон Стайвесанта
 	sld.AnalizeShips = true;
 	SetCharacterPerk(sld, "MusketsShoot");
 	AddLandQuestMark(sld, "questmarkmain");
-	//if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_MAYFANG || GetCompanionQuantity(pchar) > 2) sld.AlwaysEnemy = true;
-	if(CheckShipTypeInSquadron(SHIP_MAYFANG) < 1)) sld.AlwaysEnemy = true;
+	//if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_MAYFANG || GetCompanionQuantity(pchar) > 2) sld.AlwaysEnemy = true;
+	if(CheckShipTypeInSquadron(SHIP_MAYFANG) < 1) sld.AlwaysEnemy = true;
 	Group_AddCharacter("Stivesant_Halleon", "Stivesant");
 	Group_SetGroupCommander("Stivesant_Halleon", "Stivesant");
 	Group_SetAddress("Stivesant_Halleon", "Nevis", "quest_ships", "quest_ship_1");
@@ -3169,7 +3169,7 @@ void CreateVanbergInSea(string qName)//Якоб ван Берг у остров�
 	GiveItem2Character(sld, "totem_13");
 	sld.Ship.Mode = "pirate";
 	if (GetCompanionQuantity(pchar) > 1) sld.Abordage.Enable = false;//теперь попробуй взять компаньоном
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 3;//замшелый корпус
 	SetShipSailsFromFile(sld, "ships/parus_torn.tga");
 	SetSailsColor(sld, 8);//черный рваный парус
 	sld.ship.Crew.Morale = 100;
@@ -3474,7 +3474,7 @@ bool HollandGambit_QuestComplete(string sQuestName, string qname)
 		WaitDate("", 0, 0, 5, 9, 10); // крутим время
 		RecalculateJumpTable();
 		DoQuestFunctionDelay("InMerdokHouse", 5.0);
-		// if (2-sti(RealShips[sti(pchar.ship.type)].basetype) < 0) pchar.Ship.Type = SHIP_NOTUSED;
+		// if (2-int(RealShips[int(pchar.ship.type)].basetype) < 0) pchar.Ship.Type = SHIP_NOTUSED;
 		LocatorReloadEnterDisable("SentJons_town", "houseSP3", true); // дом Флитвуда закроем
 	}
 	else if (sQuestName == "MerdokTalkToMC")
@@ -3700,7 +3700,7 @@ bool HollandGambit_QuestComplete(string sQuestName, string qname)
 		LAi_SetHuberType(sld);
 		ChangeCharacterAddressGroup(sld, "Villemstad_townhall", "sit", "sit1");
 		pchar.quest.Piter_Remove.win_condition.l1 = "Timer";
-		pchar.quest.Piter_Remove.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.Piter_Remove.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.Piter_Remove.win_condition.l1.date.day = GetAddingDataDay(0, 0, 10);
 		pchar.quest.Piter_Remove.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 10);
 		pchar.quest.Piter_Remove.win_condition.l1.date.year = GetAddingDataYear(0, 0, 10);

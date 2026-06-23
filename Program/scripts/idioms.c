@@ -542,7 +542,7 @@ string FindRussianQtyString(int _iQty)
     {
         sTemp = _iQty;
         sTemp = GetSymbol(sTemp, strlen(sTemp)-1);
-        int iTemp = sti(sTemp);
+        int iTemp = int(sTemp);
         sTemp = XI_ConvertString("qty3");
         if (iTemp == 1) sTemp = XI_ConvertString("qty1");
         if (iTemp > 1 && _iQty < 5) sTemp = XI_ConvertString("qty2");
@@ -564,7 +564,7 @@ string FindRussianMonthString(int _Month)
     {
         sTemp = _Month;
         sTemp = GetSymbol(sTemp, strlen(sTemp)-1);
-        int iTemp = sti(sTemp);
+        int iTemp = int(sTemp);
         sTemp = XI_ConvertString("month3");
         if (iTemp == 1) sTemp = XI_ConvertString("month1");
         if (iTemp > 1 && _Month < 5) sTemp = XI_ConvertString("month2");

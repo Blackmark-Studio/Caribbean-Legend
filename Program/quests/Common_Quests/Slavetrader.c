@@ -75,11 +75,11 @@ void Slavetrader_CreateSlaveShips(string qName)//создание корабле
 	Group_SetType("Slave_Attack", "war");
 	for (i=1; i<=2; i++)
 	{
-		Rank = sti(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
-		if(makeint(pchar.rank) >= 20) { iShipRank = 4; }
-		if(makeint(pchar.rank) >= 13 && makeint(pchar.rank) < 20) { iShipRank = rand(1)+2; }	
-		if(makeint(pchar.rank) >= 7 && makeint(pchar.rank) < 13) { iShipRank = rand(1); }	
-		if(makeint(pchar.rank) < 7) { iShipRank = 0; }
+		Rank = int(pchar.rank) + 5 + rand(MOD_SKILL_ENEMY_RATE);
+		if(int(pchar.rank) >= 20) { iShipRank = 4; }
+		if(int(pchar.rank) >= 13 && int(pchar.rank) < 20) { iShipRank = rand(1)+2; }
+		if(int(pchar.rank) >= 7 && int(pchar.rank) < 13) { iShipRank = rand(1); }
+		if(int(pchar.rank) < 7) { iShipRank = 0; }
 		switch (iShipRank)
 		{
 			case 0:  
@@ -185,7 +185,7 @@ void Slavetrader_CreateShoreShips(string qName)//создание пинаса �
 	ref sld;
 	string sTemp;
 	
-	iNation = sti(pchar.questTemp.Slavetrader.Nation);
+	iNation = int(pchar.questTemp.Slavetrader.Nation);
 	sTemp = pchar.questTemp.Slavetrader.ShipName;
 	pchar.questTemp.Slavetrader = "TakeShoreCap";
     Island_SetReloadEnableGlobal(pchar.questTemp.Slavetrader.Island, false);
@@ -249,7 +249,7 @@ void Slavetrader_ShoreAttack_AfterBattle(string qName)//реакция на по
 	}
 	else
 	{
-		characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)].id = "Slaveshorecap"; //полная победа, если захватил
+		characters[int(pchar.GenQuest.LastQuestPrisonerIdx)].id = "Slaveshorecap"; //полная победа, если захватил
 		AddComplexSeaExpToScill(100, 100, 100, 200, 100, 100, 0);
 	}
 }
@@ -269,14 +269,14 @@ void Slavetrader_BrigOver(string qName)//реакция на просрочен�
 	AddQuestUserData("Slavetrader", "sSex", GetSexPhrase(StringFromKey("Slavetrader_4"),StringFromKey("Slavetrader_5")));
 	AddQuestUserData("Slavetrader", "sShipName", pchar.questTemp.Slavetraderbrig.ShipName);
 	CloseQuestHeader("Slavetrader");
-	ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 50);
+	ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 50);
 	pchar.questTemp.Slavetrader = "goodbye";
 	ChangeOfficersLoyality("bad_all", 1);
 }
 
 void Slavetrader_CreateBrig(string qName)//создание бригантины
 {
-	int iNation = sti(pchar.questTemp.Slavetrader.Nation);
+	int iNation = int(pchar.questTemp.Slavetrader.Nation);
 	ref sld;
 	string sTemp;
 			
@@ -346,7 +346,7 @@ void Slavetrader_BrigAttack_DieHard(string qName)//реакция на пора�
 	AddQuestUserData("Slavetrader", "sSex", GetSexPhrase(StringFromKey("Slavetrader_4"),StringFromKey("Slavetrader_5")));
 	AddQuestUserData("Slavetrader", "sShipName", pchar.questTemp.Slavetraderbrig.ShipName);
 	CloseQuestHeader("Slavetrader");
-	ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 50);
+	ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 50);
 	pchar.questTemp.Slavetrader = "goodbye";
 	ChangeOfficersLoyality("bad_all",1);
 }
@@ -356,8 +356,8 @@ void Slavetrader_enterSoldiers() //арестовывающие солдеры
 	LAi_SetPlayerType(pchar);
 	LAi_group_Delete("EnemyFight"); 
 	pchar.questTemp.Slavetrader = "After_enterSoldiers";
-	iTemp = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
-	int iNation = sti(pchar.questTemp.Slavetrader.Nation);
+	iTemp = int(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
+	int iNation = int(pchar.questTemp.Slavetrader.Nation);
 	for (i=1; i<=3; i++)
     {
         sld = GetCharacter(NPC_GenerateCharacter("SLSold"+i, "sold_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", iTemp, iNation, 0, true, "soldier"));
@@ -586,15 +586,15 @@ void Slavetrader_EscapeSlaveInShore(string qName)
 	object aSoldier[1];
 	object aMushketers[1];
 	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	//наши
     for (i=1; i<=3; i++)
     {
 		string model = aCrewSoldier[i - 1].model;
 		string ani = aCrewSoldier[i - 1].ani;
         iTemp = 10+rand(10);
-		sld = GetCharacter(NPC_GenerateCharacter("OwnCrew_"+i, model, "man", ani, iTemp, sti(pchar.nation), 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("OwnCrew_"+i, model, "man", ani, iTemp, int(pchar.nation), 0, true, "soldier"));
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		SetFantomParamFromRank(sld, iTemp, false);
         LAi_SetWarriorType(sld);
@@ -607,7 +607,7 @@ void Slavetrader_EscapeSlaveInShore(string qName)
 	//враги
 	for (i=21; i<=27; i++)
     {
-		iTemp = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iTemp = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 		sld = GetCharacter(NPC_GenerateCharacter("EscapeSlave_"+i, "prizon_"+(rand(3)+1), "man", "man_B", iTemp, PIRATE, -1, true, "marginal"));
 		SetFantomParamFromRank(sld, iTemp, true);
 		LAi_SetWarriorType(sld);
@@ -744,7 +744,7 @@ void Slavetrader_HavanaOver(string qName)//просроченный таймер
 
 void Slavetrader_FiveTSlavesOver(string qName)//просроченный таймер
 {
-	ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 90);
+	ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 90);
 	AddQuestRecord("Slavetrader", "30");
 	AddQuestUserData("Slavetrader", "sSex", GetSexPhrase(StringFromKey("Slavetrader_2"),StringFromKey("Slavetrader_3")));
 	CloseQuestHeader("Slavetrader");
@@ -753,7 +753,7 @@ void Slavetrader_FiveTSlavesOver(string qName)//просроченный тай�
 
 void Slavetrader_HavanaSeekOver(string qName)//просроченный таймер
 {
-	ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.Slavetrader.Nation)) + "hunter", 90);
+	ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.Slavetrader.Nation)) + "hunter", 90);
 	AddQuestRecord("Slavetrader", "31");
 	AddQuestUserData("Slavetrader", "sSex", GetSexPhrase(StringFromKey("Slavetrader_2"),StringFromKey("Slavetrader_3")));
 	CloseQuestHeader("Slavetrader");

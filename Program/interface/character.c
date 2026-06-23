@@ -28,7 +28,7 @@ void InitInterface_R(string iniName, ref _char)
 	// belamour персонаж из кораблей на приколе -->
 	if(CheckAttribute(pchar,"SystemInfo.ShowShip"))
 	{
-		int chrIdx = sti(pchar.SystemInfo.ShowShip);
+		int chrIdx = int(pchar.SystemInfo.ShowShip);
 		xi_refCharacter = GetCharacter(chrIdx);
 		bgr = true;
 	}
@@ -49,7 +49,7 @@ void InitInterface_R(string iniName, ref _char)
 		if (CheckAttribute(xi_refCharacter, "SystemInfo.ChangePIRATES.NotFirstTime")) {
 			bChangePIRATESNotFirstTime = true;
 			HPDelta = GetHPIncrease(xi_refCharacter);
-			oldRank = sti(xi_refCharacter.rank);
+			oldRank = int(xi_refCharacter.rank);
 		}
 		
     	DeleteAttribute(xi_refCharacter, "SystemInfo.ChangePIRATES");
@@ -203,7 +203,7 @@ void SetVariable()
 	FillSkillTables();
 	SetNewPicture("CHARACTER_BIG_PICTURE", "interfaces\le\portraits\512\face_" + xi_refCharacter.FaceId + ".tga");
 	SetFormatedText("HERO_NAME", GetFullName(xi_refCharacter));
-	string archeTypeString = GetHumanCharacterArchetypeFull(xi_refCharacter)
+	string archeTypeString = GetHumanCharacterArchetypeFull(xi_refCharacter);
 	SetFormatedText("HERO_ARCHETYPE", archeTypeString);
 	SetNodeUsing("HERO_ARCHETYPE", archeTypeString != "");
 	SetNodeUsing("HERO_ARCHETYPE_BACKGROUND", archeTypeString != "");
@@ -213,7 +213,7 @@ void SetVariable()
 	{
 		GameInterface.StatusLine.LOYALITY.Max   = COMPLEX_REPUTATION_MAX;
 		GameInterface.StatusLine.LOYALITY.Min   = COMPLEX_REPUTATION_MIN;
-		GameInterface.StatusLine.LOYALITY.Value = sti(xi_refCharacter.reputation.authority);
+		GameInterface.StatusLine.LOYALITY.Value = int(xi_refCharacter.reputation.authority);
 		
 		SetFormatedText("REPUTATION_STR", GetFullReputationComplexName(xi_refCharacter));
 	}
@@ -223,14 +223,14 @@ void SetVariable()
 		GameInterface.StatusLine.LOYALITY.Min   = 0;
 		GameInterface.StatusLine.LOYALITY.Value = GetCharacterLoyality(xi_refCharacter);
 		
-		SetFormatedText("REPUTATION_STR", XI_ConvertString(GetReputationName(sti(xi_refCharacter.reputation))));
+		SetFormatedText("REPUTATION_STR", XI_ConvertString(GetReputationName(int(xi_refCharacter.reputation))));
 	}	
     if (xi_refCharacter.id == pchar.id)
     {
 	    GameInterface.StatusLine.BAR_HEALTH.Max   = 60;
 	    GameInterface.StatusLine.BAR_HEALTH.Min   = 1;
-	    GameInterface.StatusLine.BAR_HEALTH.Value = makeint(pchar.Health.HP);
-	    if (sti(pchar.Health.HP) > 60 )
+	    GameInterface.StatusLine.BAR_HEALTH.Value = int(pchar.Health.HP);
+	    if (int(pchar.Health.HP) > 60 )
 	    {
 	        GameInterface.StatusLine.BAR_HEALTH.Value = 60;
 	    }
@@ -245,7 +245,7 @@ void SetVariable()
     SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"LOYALITY",0);
     SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_HEALTH",0);
 
-    if (sti(xi_refCharacter.Skill.FreeSkill) > 0)
+    if (int(xi_refCharacter.Skill.FreeSkill) > 0)
 	{
         SetFormatedText("FREE_SKILL", xi_refCharacter.Skill.FreeSkill);
     }
@@ -253,7 +253,7 @@ void SetVariable()
     {
         SetFormatedText("FREE_SKILL", "");
     }
-    if (sti(xi_refCharacter.Skill.FreeSPECIAL) > 0)
+    if (int(xi_refCharacter.Skill.FreeSPECIAL) > 0)
 	{
         SetFormatedText("FREE_SPECIAL", xi_refCharacter.Skill.FreeSPECIAL);
     }
@@ -279,7 +279,7 @@ void ShowInfoWindow()
 	{
 		case "TABLE_SPECIAL":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SPECIAL", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SPECIAL", 1));
 			sRow = "tr"+nChooseNum;
 		    sHeader = XI_ConvertString("Characteristics");
 		    sText1  = GetRPGText(GameInterface.TABLE_SPECIAL.(sRow).UserData.ID);
@@ -288,7 +288,7 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_SKILL_1":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_1", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_1", 1));
 			sRow = "tr"+nChooseNum;
 		    sHeader = XI_ConvertString("Personal skill");
 		    sText1  = GetRPGText(GameInterface.TABLE_SKILL_1.(sRow).UserData.ID);
@@ -297,7 +297,7 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_SKILL_2":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_2", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SKILL_2", 1));
 			sRow = "tr"+nChooseNum;
 		    sHeader = XI_ConvertString("Ship skill");
 		    sText1  = GetRPGText(GameInterface.TABLE_SKILL_2.(sRow).UserData.ID);
@@ -322,7 +322,7 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_OTHER":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1));
 			sRow = "tr"+nChooseNum;
 		    sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
 		    sText1  = GetRPGText(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
@@ -463,7 +463,7 @@ void FillSkillTables()
 
 		if (skillVal < SKILL_MAX)
 		{
-			GameInterface.TABLE_SKILL_1.(row).td3.str = makeint(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / makefloat(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + "%";
+			GameInterface.TABLE_SKILL_1.(row).td3.str = int(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / float(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + "%";
 		}
 		else
 		{
@@ -524,7 +524,7 @@ void FillSkillTables()
 
 		if (skillVal < SKILL_MAX)
 		{
-			GameInterface.TABLE_SKILL_2.(row).td3.str = makeint(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / makefloat(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + "%";
+			GameInterface.TABLE_SKILL_2.(row).td3.str = int(GetSkillValueExp(xi_refCharacter, skillName) * 100.0 / float(skillVal * GetCharacterExpRate(xi_refCharacter, skillName))) + "%";
 		}
 		else
 		{
@@ -570,13 +570,13 @@ void FillSkillTables()
 	GameInterface.TABLE_OTHER.tr1.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr1.td1.icon.image = "Rank";
 	GameInterface.TABLE_OTHER.tr1.td2.str = XI_ConvertString("Rank");
-	GameInterface.TABLE_OTHER.tr1.td3.str = sti(xi_refCharacter.rank);
+	GameInterface.TABLE_OTHER.tr1.td3.str = int(xi_refCharacter.rank);
 
 	GameInterface.TABLE_OTHER.tr2.UserData.ID = "Life";
 	GameInterface.TABLE_OTHER.tr2.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr2.td1.icon.image = "Life";
 	GameInterface.TABLE_OTHER.tr2.td2.str = XI_ConvertString("Life");
-	GameInterface.TABLE_OTHER.tr2.td3.str = MakeInt(LAi_GetCharacterHP(xi_refCharacter)) + " / " + MakeInt(LAi_GetCharacterMaxHP(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr2.td3.str = int(LAi_GetCharacterHP(xi_refCharacter)) + " / " + int(LAi_GetCharacterMaxHP(xi_refCharacter));
 
     GameInterface.TABLE_OTHER.tr4.UserData.ID = "Health";
 	GameInterface.TABLE_OTHER.tr4.td1.icon.group = "EQUIP_ICONS";
@@ -591,15 +591,15 @@ void FillSkillTables()
     }
     else
     {
-        GameInterface.TABLE_OTHER.tr4.td3.color = SetAlphaIntoColor(COLOR_NORMAL, GetAlphaFromSkill(makeint(GetHealthNum(xi_refCharacter)* 1.9)));
+        GameInterface.TABLE_OTHER.tr4.td3.color = SetAlphaIntoColor(COLOR_NORMAL, GetAlphaFromSkill(int(GetHealthNum(xi_refCharacter)* 1.9)));
     }
 
     GameInterface.TABLE_OTHER.tr3.UserData.ID = "Energy";
 	GameInterface.TABLE_OTHER.tr3.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr3.td1.icon.image = "Energy";
 	GameInterface.TABLE_OTHER.tr3.td2.str = XI_ConvertString("Energy");
-	GameInterface.TABLE_OTHER.tr3.td3.str = sti(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + sti(LAi_GetCharacterMaxEnergy(xi_refCharacter));
-	diff = sti(LAi_GetCharacterMaxEnergy(xi_refCharacter) - GetCharacterMaxEnergyABSValue(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr3.td3.str = int(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + int(LAi_GetCharacterMaxEnergy(xi_refCharacter));
+	diff = int(LAi_GetCharacterMaxEnergy(xi_refCharacter) - GetCharacterMaxEnergyABSValue(xi_refCharacter));
 	if (diff != 0)
 	{
 	   if (diff > 0)
@@ -640,7 +640,7 @@ void CS_TableSelectChange()
     CurTable = sControl;
 	bool ok = CurTable == "TABLE_PERKS" || CurTable == "TABLE_PERKS2";
     CurRow   =  "tr" + (iSelected);
-    //sti(GameInterface.(sControl).(sRow).index);
+    //int(GameInterface.(sControl).(sRow).index);
  	NullSelectTable("TABLE_SPECIAL");
     NullSelectTable("TABLE_SKILL_1");
     NullSelectTable("TABLE_SKILL_2");
@@ -653,7 +653,7 @@ void CS_TableSelectChange()
     {
     	GameInterface.TABLE_OTHER.tr9.td3.str = GetCharacterRankRateCur(xi_refCharacter) + "/" + GetCharacterRankRate(xi_refCharacter);
     }
-    sti(xi_refCharacter.rank_exp)
+
 	if (CurTable == "TABLE_SKILL_1" || CurTable == "TABLE_SKILL_2")
 	{
         string skillName;
@@ -662,7 +662,7 @@ void CS_TableSelectChange()
         skillVal = GetSkillValue(xi_refCharacter, SKILL_TYPE, skillName);
 		if (skillVal != SKILL_MAX && skillVal != 0)
 		{
-	       GameInterface.TABLE_OTHER.tr9.td3.str = sti(GetSkillValueExp(xi_refCharacter, skillName))+ "/" + makeint(skillVal * GetCharacterExpRate(xi_refCharacter, skillName));
+	       GameInterface.TABLE_OTHER.tr9.td3.str = int(GetSkillValueExp(xi_refCharacter, skillName))+ "/" + int(skillVal * GetCharacterExpRate(xi_refCharacter, skillName));
 		}
 	}
 	Table_UpdateWindow("TABLE_OTHER");
@@ -681,7 +681,7 @@ void SetSkillArrows()
    	bool ok;
 	int  minP;
 	ok = CurTable == "TABLE_SKILL_1" || CurTable == "TABLE_SKILL_2";
-	if (sti(xi_refCharacter.skill.freeskill) > 0 && ok && !bChangePIRATES)  //для начала игры фиг
+	if (int(xi_refCharacter.skill.freeskill) > 0 && ok && !bChangePIRATES)  //для начала игры фиг
 	{
 	    if (GetSkillValue(xi_refCharacter, SKILL_TYPE, GameInterface.(CurTable).(CurRow).UserData.ID) > 1)
         {
@@ -708,7 +708,7 @@ void SetSkillArrows()
             SetNodeUsing("B_SKILLUP",  true);
         }
 	}
-	ok = sti(xi_refCharacter.skill.freeskill) > 0 || sti(xi_refCharacter.skill.FreeSPECIAL) > 0 || bChangePIRATES;  //для начала игры
+	ok = int(xi_refCharacter.skill.freeskill) > 0 || int(xi_refCharacter.skill.FreeSPECIAL) > 0 || bChangePIRATES;  //для начала игры
 	if (ok && CurTable == "TABLE_SPECIAL")
 	{
         minP = 1;
@@ -739,13 +739,13 @@ void NullSelectTable(string sControl)
 
 void SetOfficersSkills()
 {
-	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
+	string sCharacter = "pic"+(int(GameInterface.PASSENGERSLIST.current)+1);
 	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
 	{
 		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
 		{
 			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
-			ref otherchr = &characters[sti(sCharacter)];
+			ref otherchr = &characters[int(sCharacter)];
 	        SetSPECIALMiniTable("TABLE_SMALLSKILL", otherchr);
 	        SetOTHERMiniTable("TABLE_SMALLOTHER", otherchr);
 	        SetFormatedText("OFFICER_NAME", GetFullName(otherchr));
@@ -948,7 +948,7 @@ void ChoosePerk()
 	// проверка на необходимые перки <--
 
     // проверка ранга
-    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && sti(xi_refCharacter.rank) < sti(ChrPerksList.list.(perkName).rank))
+    if (CheckAttribute(&ChrPerksList, "list." + perkName + ".rank") && int(xi_refCharacter.rank) < int(ChrPerksList.list.(perkName).rank))
 	{
         ok = false;
     }

@@ -5511,6 +5511,21 @@ TheFormerKnight.4
 Nous avons réussi à retrouver et à éliminer l'ancien chevalier de l'Ordre. Durand avait l'intention de tuer la femme du chevalier, qui avait la malchance de se trouver dans la maison à ce moment-là. Naturellement, je ne pouvais pas le permettre. Nous avons croisé le fer une fois de plus, et une fois de plus, je me suis montré plus fort. Si j'avais su plus tôt quel salaud il était, j'en aurais fini avec lui dès la résidence de Levasseur.
 }
 
+TheFormerKnight.5
+{
+J’ai décidé de ne pas me mêler des ennuis de cet officier déchu et j’ai renvoyé Claude Durand. Qu’il se cherche un autre capitaine.
+}
+
+TheFormerKnight.6
+{
+Je n’ai pas pu me résigner au comportement de Claude. Un conflit a éclaté entre nous et j’ai été contraint de le tuer. Repose en paix, mercenaire.
+}
+
+TheFormerKnight.7
+{
+Claude Durand est tombé au combat, et maintenant je ne connaîtrai jamais la fin de cette histoire. Eh bien, repose en paix, mercenaire.
+}
+
 Tichingitu
 {
 Tichingitu

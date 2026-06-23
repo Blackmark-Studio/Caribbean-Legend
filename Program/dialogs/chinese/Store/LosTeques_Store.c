@@ -81,7 +81,7 @@ void ProcessDialogEvent()
         case "fight_owner": // 樵夫 。 退出对话 。 如果在箱子里翻找过。 
             LAi_SetOwnerTypeNoGroup(NPChar);
             LAi_group_Attack(NPChar, Pchar);
-            if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+            if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
             NextDiag.CurrentNode = "First time";
             DialogExit();
         break;

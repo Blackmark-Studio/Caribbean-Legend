@@ -2,7 +2,7 @@
 
 void Tutorial_firstfight1_SandBox(string qName)
 {
-	LaunchTutorial("GuideFight", 1);
+	LaunchTutorial("GuideFight", true);
 	pchar.quest.Tutorial_firstfight1_SandBox_AlarmOff.win_condition.l1 = "Alarm";
 	pchar.quest.Tutorial_firstfight1_SandBox_AlarmOff.win_condition.l1.value = 1;
 	pchar.quest.Tutorial_firstfight1_SandBox_AlarmOff.win_condition.l1.operation = "<";
@@ -20,13 +20,13 @@ void Tutorial_firstfight1_SandBox(string qName)
 
 void Tutorial_firstboarding1(string qName)
 {
-	LaunchTutorial("OneToOneBoarding", 1);
+	LaunchTutorial("OneToOneBoarding", true);
 	pchar.systeminfo.tutorial.secondboarding1 = true;
 }
 
 void Tutorial_secondboarding1(string qName)
 {
-	LaunchTutorial("Collision", 1);
+	LaunchTutorial("Collision", true);
 }
 
 void Tutorial_firstfight1_SandBox_AlarmOff(string qName)
@@ -36,7 +36,7 @@ void Tutorial_firstfight1_SandBox_AlarmOff(string qName)
 
 void Tutorial_secondfight_SandBox(string qName)
 {
-	LaunchTutorial("LandTimeScaleDown", 1);
+	LaunchTutorial("LandTimeScaleDown", true);
 }
 
 void Tutorial_WorldMap(string qName)
@@ -46,7 +46,7 @@ void Tutorial_WorldMap(string qName)
 
 void Tutorial_WorldMap2(string qName)
 {
-	LaunchTutorial("WorldMap", 1);
+	LaunchTutorial("WorldMap", true);
 }
 
 void Tutorial_Navigator(string qName)
@@ -77,7 +77,7 @@ void Tutorial_Navigator2(string qName)
 			SetFunctionTimerCondition("DelNavigatorNoShow", 0, 0, 180, false);
 		}
 	}
-	LaunchTutorial("Navigator", 1);
+	LaunchTutorial("Navigator", true);
 	if(GetCharacterShipClass(pchar) < 6) 
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.navigator");
@@ -107,7 +107,7 @@ void Tutorial_Salary(string qName)
 	{
 		DeleteAttribute(Pchar, "quest.Tutorial_Salary.again");
 		pchar.quest.Tutorial_Salary.over = "yes";//снять таймер
-		LaunchTutorial("Salary", 1);
+		LaunchTutorial("Salary", true);
 	}
 	else
 	{
@@ -131,7 +131,7 @@ void Tutorial_Dubloons2(string qName)
 {
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
-		LaunchTutorial("Dubloons", 1);
+		LaunchTutorial("Dubloons", true);
 	}
 	else
 	{
@@ -155,7 +155,7 @@ void Tutorial_Prologue_Inventory2(string qName)
 {
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
-		LaunchTutorial("Prologue_Inventory", 1);
+		LaunchTutorial("Prologue_Inventory", true);
 	}
 	else
 	{
@@ -179,7 +179,7 @@ void Tutorial_Logbook2(string qName)
 {
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
-		LaunchTutorial("Prologue_Logbook", 1);
+		LaunchTutorial("Prologue_Logbook", true);
 	}
 	else
 	{
@@ -194,7 +194,7 @@ void Tutorial_Box(string qName)
 
 void Tutorial_Box2(string qName)
 {
-	LaunchTutorial("Box", 1);
+	LaunchTutorial("Box", true);
 }
 
 void Tutorial_Amulet(string qName)
@@ -214,7 +214,7 @@ void Tutorial_Amulet2(string qName)
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
 		DeleteAttribute(pchar,"systeminfo.tutorial.Amulet");
-		LaunchTutorial("Amulet", 1);
+		LaunchTutorial("Amulet", true);
 	}
 	else
 	{
@@ -241,7 +241,7 @@ void Tutorial_Prologue_Amulet2(string qName)
 		if(CheckAttribute(pchar, "systeminfo.tutorial.prologue_amulet"))
 		{
 			DeleteAttribute(pchar,"systeminfo.tutorial.prologue_amulet");
-			LaunchTutorial("Prologue_Amulet", 0);
+			LaunchTutorial("Prologue_Amulet", false);
 		}
 	}
 	else
@@ -266,7 +266,7 @@ void Tutorial_Perk2(string qName)
 {
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
-		LaunchTutorial("Perk", 1);
+		LaunchTutorial("Perk", true);
 	}
 	else
 	{
@@ -281,7 +281,7 @@ void Tutorial_Rest_Delay(string qName)
 
 void Tutorial_Rest(string qName)
 {
-	LaunchTutorial("Rest", 1);
+	LaunchTutorial("Rest", true);
 }
 
 void Tutorial_Mushket(string qName)
@@ -300,7 +300,7 @@ void Tutorial_Mushket2(string qName)
 {
 	if (!dialogRun && !bQuestCheckProcessFreeze && pchar.chr_ai.type == "player")
 	{
-		LaunchTutorial("Mushket", 1);
+		LaunchTutorial("Mushket", true);
 	}
 	else
 	{
@@ -315,27 +315,27 @@ void Tutorial_Stealth(string qName)
 
 void Tutorial_Stealth2(string qName)
 {
-	LaunchTutorial("Stealth", 1);
+	LaunchTutorial("Stealth", true);
 }
 
 void Tutorial_BoardingTactics(string qName)
 {
-	LaunchTutorial("BoardingTactics", 1);
+	LaunchTutorial("BoardingTactics", true);
 }
 
 void Tutorial_CameraControl(string qName)
 {
-	LaunchTutorial("Prologue_CameraControl", 1);
+	LaunchTutorial("Prologue_CameraControl", true);
 }
 
 void Tutorial_TimeScale(string qName)
 {
-	LaunchTutorial("Prologue_TimeScale", 1);
+	LaunchTutorial("Prologue_TimeScale", true);
 }
 
 void Tutorial_CameraControlFP(string qName)
 {
-	LaunchTutorial("CameraControlFP", 1);
+	LaunchTutorial("CameraControlFP", true);
 }
 
 void Ngt_CaptiveRus(string qName)
@@ -360,12 +360,12 @@ void Ngt_FolkeEng(string qName)
 
 void Tutorial_Overload(string qName)
 {
-	LaunchTutorial("Prologue_Overload", 1);
+	LaunchTutorial("Prologue_Overload", true);
 }
 
 void Tutorial_DeadSearch(string qName)
 {
-	LaunchTutorial("Prologue_DeadSearch", 1);
+	LaunchTutorial("Prologue_DeadSearch", true);
 	TW_InitLand_1_Loot();
 	TW_Open("land");
 	if(!CheckAttribute(&TEV, "Tutor.Loot.Pirate2"))
@@ -385,7 +385,7 @@ void Tutorial_DeadSearch(string qName)
 
 void Tutorial_Trading(string qName)
 {
-	LaunchTutorial("Prologue_Trading", 0);
+	LaunchTutorial("Prologue_Trading", false);
 }
 
 void Tutorial_MapEncounter(string qName)
@@ -396,10 +396,10 @@ void Tutorial_MapEncounter(string qName)
 void Tutorial_MapEncounter2(string qName)
 {
 	DeleteAttribute(pchar, "systeminfo.tutorial.MapEncounter");
-	LaunchTutorial("MapEncounter", 1);
+	LaunchTutorial("MapEncounter", true);
 }
 
 void Tutorial_StoryFrames(string qName)
 {
-	LaunchTutorial("StoryFrames", 1);
+	LaunchTutorial("StoryFrames", true);
 }

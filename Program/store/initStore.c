@@ -48,16 +48,16 @@ void FillStoreGoods(ref pRef)
 			ref rIsland = GetIslandByIndex(islandIdx);
 			if(CheckAttribute(rIsland,"RndPriceModify")) 
 			{
-				RndPriceModify = stf(rIsland.RndPriceModify);
-				if(CheckAttribute(rIsland,"RndPriceModifySign")) RndPriceModifySign = stf(rIsland.RndPriceModifySign);
+				RndPriceModify = float(rIsland.RndPriceModify);
+				if(CheckAttribute(rIsland,"RndPriceModifySign")) RndPriceModifySign = float(rIsland.RndPriceModifySign);
 			}	
 			else
 			{	
 				RndPriceModify = frnd() * 0.15;
 				rIsland.RndPriceModify = RndPriceModify;
 			
-				if(sti(rColony.ismaincolony) == 1 || 
-				   sti(rColony.nation) == PIRATE) RndPriceModifySign = 1.0;
+				if(int(rColony.ismaincolony) == 1 ||
+				   int(rColony.nation) == PIRATE) RndPriceModifySign = 1.0;
 				rIsland.RndPriceModifySign = RndPriceModifySign;
 			}
 			makearef(arTypes, rIsland.Trade); // вся инфа как и в ПКМ по островам
@@ -76,9 +76,9 @@ void FillStoreGoods(ref pRef)
 				n = GetAttributesNum(arCurType);
 				for(j=0; j<n; j++)
 				{
-					goodName = Goods[sti(GetAttributeValue(GetAttributeN(arCurType,j)))].name;
+					goodName = Goods[int(GetAttributeValue(GetAttributeN(arCurType,j)))].name;
 					pRef.Goods.(goodName).TradeType = tt;
-					pRef.Goods.(goodName).Type = Goods[sti(GetAttributeValue(GetAttributeN(arCurType,j)))].type;
+					pRef.Goods.(goodName).Type = Goods[int(GetAttributeValue(GetAttributeN(arCurType,j)))].type;
 				}
 			}			
 		}		

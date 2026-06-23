@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Mtraxx_2":
 			string sTemp = "this";
-			if (sti(pchar.questTemp.Mtraxx.month == 1)) sTemp = "next";
+			if (int(pchar.questTemp.Mtraxx.month == 1)) sTemp = "next";
             dialog.text = "알겠소, 선장. 이는 중대한 사안이니, 설령 그대의 정보원이 거짓을 말했거나 단순히 착오가 있었다 해도 나는 제시된 정보를 바탕으로 조치해야 하오. 지정된 시간에 해안 순찰대를 보내겠소, 그리고 그대의 정보가 확인된다면 충분한 보상을 내리겠소. 이러한 불법 행위는 엄중히 단속되어야 하오.";
 			link.l1 = "뵙겠습니다 "+sTemp+" 16일에. 그때쯤이면 상황이 분명히 해결될 것이오.";
 			link.l1.go = "Mtraxx_3";
@@ -65,7 +65,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Mtraxx_3":
             DialogExit();
 			pchar.questTemp.Mtraxx = "silk_11";
-			int month = sti(pchar.questTemp.Mtraxx.month);
+			int month = int(pchar.questTemp.Mtraxx.month);
 			pchar.quest.mtr_silk_smuggler.over = "yes";
 			pchar.quest.mtr_silk_smuggler_over.over = "yes";
 			DeleteQuestCondition("Mtraxx_SilkCreateSmuggler");
@@ -77,7 +77,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.mtr_silk_smuggler_patrol.win_condition.l1.date.year  = GetAddingDataYear(0, month, 0);
 			pchar.quest.mtr_silk_smuggler_patrol.function = "Mtraxx_SilkSmugglerPatrol";
 			sTemp = "this";
-			if (sti(pchar.questTemp.Mtraxx.month == 1)) sTemp = "next";
+			if (int(pchar.questTemp.Mtraxx.month == 1)) sTemp = "next";
 			AddQuestRecord("Roger_2", "19");
 			AddQuestUserData("Roger_2", "sDate", sTemp);
 			if (CharacterIsAlive("Mtr_Utreht"))

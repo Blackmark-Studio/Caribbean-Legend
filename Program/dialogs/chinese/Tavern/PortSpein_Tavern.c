@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                       "是的, 确实是第三次了... ", "不, 什么问题? ... ", npchar, Dialog.CurrentNode);
             link.l1.go = "exit";
             // 肺结核的代价
-            if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
+            if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && int(pchar.money) >= 3000)
             {
                 link.l1 = "我听说你们堡垒里肺结核肆虐。 你觉得这种流行病会蔓延到镇上吗? ";
                 link.l1.go = "Consumption";
@@ -141,8 +141,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             dialog.text = "哦, 我的上帝, 你又在说那个! 不, 谢天谢地, 我没听说过。 我发誓! 现在让我们换个话题。 求你了! ";
             link.l1 = "好吧, 好吧, 别心脏病发作... ";
             link.l1.go = "exit";
-            pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan) + 1;
-            if (sti(pchar.questTemp.Consumption.AskJuan) == 3)
+            pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan) + 1;
+            if (int(pchar.questTemp.Consumption.AskJuan) == 3)
             {
                 pchar.quest.Consumption2.win_condition.l1 = "location";
                 pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";
@@ -162,7 +162,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2":
 			dialog.text = "这么说吧, 他的朋友远比那些想拧断他脖子的人少。不过, 如果你想知道一个真能影响他的人, 这要花上一千比索。给钱——我就全告诉你。";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "好吧, 拿去, 老敲诈鬼。";
 				link.l1.go = "OZ_Tavern_3";
@@ -178,7 +178,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2_1":
 			dialog.text = "船长, 你带来一千比索了吗? ";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "带来了。拿去, 老敲诈鬼。";
 				link.l1.go = "OZ_Tavern_3";

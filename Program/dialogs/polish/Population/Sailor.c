@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (npchar.quest.meeting == "0")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
 				{
 					dialog.text = "Dzień dobry, "+GetAddress_Form(NPChar)+" . Jestem świadom, że jesteś kapitanem własnego statku. Mam dla ciebie propozycję.";
 					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+". Jaką propozycje?";
@@ -83,14 +83,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_1":
-			switch (sti(npchar.quest.crew.type))
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: sTemp = "Jesteśmy najlepsi w obsłudze żagli i takielunku. Nie będę przesadnie skromny, ale powiedziałbym, że jesteśmy profesjonalistami w obsłudze statków, więc bez obaw, nie zawiedziemy Cię nawet w najsilniejszych sztormach."; break;
 				case 1: sTemp = "Najbardziej lubimy przebywać na pokładzie działowym. Niewielu z nas służyło nawet na prawdziwych okrętach wojennych. Potrafimy ładować i strzelać z armat w sposób, w jaki nie potrafi tego nikt z Waszej załogi. Możecie na nas liczyć w każdej ciężkiej walce!"; break;
 				case 2: sTemp = "Jesteśmy naprawdę dobrymi kapitanami abordażowymi, mieliśmy już kilka wypadów na korsarzy. Znamy blask kordelasów i zapach prochu i krwi. To nasze powołanie. Niełatwo nas pokonać w walce wręcz, więc zawsze możesz liczyć na nasze ostrza, kapitanie!"; break;
 			}
-			dialog.text = "Jest "+sti(npchar.quest.crew.qty)+" z nas i zatrudnimy się tylko razem. Możemy wykonywać wszystkie podstawowe zadania marynarza. "+sTemp+" ";
-			if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+			dialog.text = "Jest "+int(npchar.quest.crew.qty)+" z nas i zatrudnimy się tylko razem. Możemy wykonywać wszystkie podstawowe zadania marynarza. "+sTemp+" ";
+			if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
 			{
 				link.l1 = "Brzmi jak ludzie, których szukam. A co z twoją zaliczką?";
 				link.l1.go = "crew_2";
@@ -105,9 +105,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_2":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
-			dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+" za każdą. A potem zwyczajną pensję marynarza na miesiąc. Nie będziemy żądać niczego nadmiernego, kapitanie.";
-			if (sti(pchar.money) >= iTemp)
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
+			dialog.text = ""+FindRussianMoneyString(int(npchar.quest.crew.money))+" za każdą. A potem zwyczajną pensję marynarza na miesiąc. Nie będziemy żądać niczego nadmiernego, kapitanie.";
+			if (int(pchar.money) >= iTemp)
 			{
 				link.l1 = "Jesteś zatrudniony! Weź swoje monety. Teraz idź na mój statek, nazywa się '"+pchar.ship.name+"', prosto w porcie. Bosman przydzieli wam wszystkim hamaki w kajutach załogi i zajmie się waszymi posiłkami.";
 				link.l1.go = "crew_3";
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_3":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
 			AddMoneyToCharacter(pchar, -iTemp);
 			dialog.text = "Tak jest, kapitanie! Zbiorę chłopaków i zaraz wyruszymy.";
 			link.l1 = "Śpiesz się, wypływamy niezwłocznie.";
@@ -126,17 +126,17 @@ void ProcessDialogEvent()
 		
 		case "crew_4":
 			DialogExit();
-			AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+			AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
 			//увеличиваем опыт
-			iTemp = makeint(sti(npchar.quest.crew.qty)*50/sti(pchar.ship.crew.quantity));
-			switch (sti(npchar.quest.crew.type))
+			iTemp = int(int(npchar.quest.crew.qty)*50/int(pchar.ship.crew.quantity));
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: ChangeCrewExp(pchar, "Sailors", iTemp); break;
 				case 1: ChangeCrewExp(pchar, "Cannoners", iTemp); break;
 				case 2: ChangeCrewExp(pchar, "Soldiers", iTemp); break;
 			}
 			//увеличиваем мораль
-			iTemp = makeint(sti(npchar.quest.crew.qty)/10)+1;
+			iTemp = int(int(npchar.quest.crew.qty)/10)+1;
 			AddCrewMorale(pchar, iTemp);
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

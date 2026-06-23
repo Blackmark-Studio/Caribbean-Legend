@@ -26,7 +26,7 @@ bool BRD_ProcessSurrender(ref mchr, ref echr, bool isFort, int mclass, int eclas
 	LaunchRansackMain(pchar, echr, "crew");
 	DelOurMusketerDist();
 	LAi_boarding_process = false;  
-	Event(SHIP_CAPTURED, "l", sti(echr.index));
+	Event(SHIP_CAPTURED, "l", int(echr.index));
 	return true;
 }
 
@@ -41,16 +41,16 @@ bool CheckForSurrender(ref player, ref enemy, int _deck)
 	int playerPoints = playerCrew * 400;                             // очки берем за n экипажей, чтобы не плавать в точках
 	int enemyPoints = enemyCrew * 1200;                              // очки противника с базовым преимуществом
 
-	if(ShipBonus2Artefact(player, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(player.Ship.Type)], "DeadSailors.SurrenderChanceBonus"))
+	if(ShipBonus2Artefact(player, SHIP_MEMENTO) && CheckAttribute(&RealShips[int(player.Ship.Type)], "DeadSailors.SurrenderChanceBonus"))
 	{
-		playerPoints = makeint(makefloat(playerPoints) * 1.0 + stf(RealShips[sti(player.Ship.Type)].DeadSailors.SurrenderChanceBonus) / 100.0);
+		playerPoints = int(float(playerPoints) * 1.0 + float(RealShips[int(player.Ship.Type)].DeadSailors.SurrenderChanceBonus) / 100.0);
 	}
 
 	int leadersDiff = GetCharacterSkill(player, SKILL_LEADERSHIP) - GetCharacterSkill(enemy, SKILL_LEADERSHIP); // разница в харизме от -100 до 100
-	int soldiersDiff = makeint(GetCrewExp(player, "Soldiers") - GetCrewExp(enemy, "Soldiers"));                 // разница в опыте солдат от -100 до 100
+	int soldiersDiff = int(GetCrewExp(player, "Soldiers") - GetCrewExp(enemy, "Soldiers"));                 // разница в опыте солдат от -100 до 100
 	int skillBasedPoints = playerCrew * 2 * (soldiersDiff + leadersDiff);                                       // докидываем хардскиллуху
 	int modSkillDebuff = playerCrew * 10 * MOD_SKILL_ENEMY_RATE;                                                // штрафуем от сложности
-	int famePoints = (sti(player.reputation.fame) - 50) * playerCrew * 2;                                       // докидываем известность, репутация неважна
+	int famePoints = (int(player.reputation.fame) - 50) * playerCrew * 2;                                       // докидываем известность, репутация неважна
 	int faithScore = hrand(9, enemy.id);                                                                        // щепотка суточно-привязанного рандома
 	int fortuneLevel = GetCharacterSkill(player, SKILL_FORTUNE);                                                // удача любит храбрых
 	int fortunePoints = playerCrew * fortuneLevel * iClamp(0, 3, faithScore - 4);                               // удача любит храбрых
@@ -58,7 +58,7 @@ bool CheckForSurrender(ref player, ref enemy, int _deck)
 	if (IsEquipCharacterByItem(player, "greenIdol")) playerPoints += int(float(playerPoints)*0.3);              // зелёный идол
 
 	if (CheckAttribute(enemy, "Ship.Mode") && enemy.Ship.Mode == "Trade") enemyPoints -= enemyCrew * 300; // торговцы склонны сдаваться
-	if (sti(enemy.Nation) == PIRATE) enemyPoints += 4000 + enemyCrew * 400;                               // а вот пираты не склонны
+	if (int(enemy.Nation) == PIRATE) enemyPoints += 4000 + enemyCrew * 400;                               // а вот пираты не склонны
 	if (CheckAttribute(enemy, "CaptainBrownTrousers")) enemyPoints += 12000 + enemyCrew * 400;            // а уж особо отважные пираты...
 	if (GetCharacterShipClass(enemy) > 4) enemyPoints += 20000;                                           // капитаны малых кораблей рассчитывают вырезать всех сами
 
@@ -200,7 +200,7 @@ void BRD_PlaceCaptain(ref chr, ref boarding_enemy, int locIndex, string sLocType
 		BRD_CheckSitutationInCabin(chr, boarding_enemy); // Применяем доп. ситуации, если нет квестовых диалогов
 	}
 
-	int xhp = makeint((MOD_SKILL_ENEMY_RATE*2+sti(chr.rank))/10.0);
+	int xhp = int((MOD_SKILL_ENEMY_RATE*2+int(chr.rank))/10.0);
 	if (!bImCasual && xhp > 3) SetCharacterPerk(chr, "Energaiser"); 
 
 	if (xhp > 0)
@@ -296,7 +296,7 @@ bool BRD_CrewGiveUpCaptain(ref enemy, int leftCrew)
 	SetCrewQuantity(enemy, func_max(0, resCrew));
 	AddCharacterExpToSkill(pchar, "Leadership", 30);
 	LaunchRansackMain(pchar, enemy, "captain");
-	Event(SHIP_CAPTURED, "l", sti(enemy.index));
+	Event(SHIP_CAPTURED, "l", int(enemy.index));
 	return true;
 }
 
@@ -315,7 +315,7 @@ void BRD_BoardingCaptainKilled(ref clone)
 	if (!CheckAttribute(clone, "MainCaptanIdx")) return;
 	if (HasSubStr(clone.location, "cabin")) return;
 
-	ref captain = GetCharacter(sti(clone.MainCaptanIdx));
+	ref captain = GetCharacter(int(clone.MainCaptanIdx));
 	if (!CheckAttribute(captain, "BoardingFaith.GiveUpCapOnKill") && GetCrewQuantity(captain) > 0)
 	{
 		notification(StringFromKey("boarding_6"), "Berserker");
@@ -348,7 +348,7 @@ void BRD_BoardingCloneKilled(ref clone)
 	if (attr != LAI_GROUP_PLAYER) return;
 	if (type != "boatswain" && type != "companion") return;
 
-	ref chr = GetCharacter(sti(clone.PersonalityCloneIdx));
+	ref chr = GetCharacter(int(clone.PersonalityCloneIdx));
 	Notification(XI_ConvertString("OfficerWounded1") + XI_ConvertString("OfficerWounded2"), GetMessagePortrait(chr));
 	if (!CheckAttribute(chr, "OfficerImmortal")) return;
 
@@ -364,8 +364,8 @@ void BRD_BoardingCloneKilled(ref clone)
 
 	chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr);
 	chr.OfficerImmortal = "Injury";
-	chr.Health.HP = makefloat(chr.Health.HP) - 10.0;
-	if(makefloat(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
+	chr.Health.HP = float(chr.Health.HP) - 10.0;
+	if(float(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
 	string qName = "RestoreHealth_" + chr.index;
 	PChar.quest.(qName).win_condition.l1            = "Timer";
 	PChar.quest.(qName).win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);

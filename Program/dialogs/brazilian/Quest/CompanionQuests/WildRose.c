@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "Barmen_1":
 			dialog.text = "Desculpa te acordar, Capitão...";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Bom, pelo menos você bateu na porta, então já é alguma coisa. Agora fala logo—o que você quer de mim?";
 				link.l1.go = "Barmen_2";
@@ -2474,13 +2474,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap2_IslandOfJustice_21");
 		break;
-		
-		case "WildRose_Betancur_21":
-			dialog.text = "Porque eles não estão aqui, "+pchar.name+". Esses dois morreram na noite seguinte, logo depois de serem resgatados junto com os Caspers.";
-			link.l1 = "Curioso. A mulher grávida sobreviveu mais uma semana, mas dois marinheiros da Marinha Real morreram de repente...";
-			link.l1.go = "WildRose_Betancur_22";
-		break;
-		
+
 		case "WildRose_Chimiset_21":
 			dialog.text = "Que bom te ver de novo, meu amigo. O que te traz aqui?";
 			link.l1 = " A request, +npchar.name+... Or rather, a question.";

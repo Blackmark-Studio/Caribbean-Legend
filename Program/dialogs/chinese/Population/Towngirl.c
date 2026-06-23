@@ -51,9 +51,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "First time":
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				if (sti(rColony.HeroOwn) == true) // 我们的市民
+				if (int(rColony.HeroOwn) == true) // 我们的市民
 				{
 				    dialog.text = RandPhraseSimple("他们说你拥有这个城镇, " + GetSexPhrase("先生", "小姐") + "。 ", "真是愉快的相遇! 真是愉快的相遇! 总督本人在和我说话! ");
 					link.l1 = RandPhraseSimple("我改变主意了。 祝你好运! ", "只是在城里走走。 再见。 ");
@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(转发到城市文件)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("我想讨论财务问题。 ", "关于财务... ");
 							link.l3.go = "LoanForAll";//(转发到贷款生成器)
@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";//(转发到城市文件)
 					if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 		            {
-		                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+		                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 		                {
 							link.l3 = RandPhraseSimple("我想讨论财务问题。 ", "关于财务... ");
 							link.l3.go = "LoanForAll";//(转发到贷款生成器)
@@ -143,7 +143,7 @@ void ProcessDialogEvent()
 				}	
 				if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
 	            {
-	                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+	                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
 	                {
 						link.l3 = RandPhraseSimple("我想讨论财务问题。 ", "关于财务... ");
 						link.l3.go = "LoanForAll";//(转发到贷款生成器)
@@ -160,7 +160,7 @@ void ProcessDialogEvent()
 				// 牧师任务生成器。 任务2。 战船 -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	            {
-					link.l5 = LinkRandPhrase("你知道", "你是否知道", "你听说过") + "当地教堂最近被抢劫了吗? ");
+					link.l5 = LinkRandPhrase("你知道", "你是否知道", "你听说过") + "当地教堂最近被抢劫了吗? ";
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
 				// < —牧师任务生成器。 任务2.
@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 			}			
 			if (CheckAttribute(pchar, "GenQuest.Loan.FindCitizen") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenDone") && !CheckAttribute(pchar, "GenQuest.Loan.FindCitizenFalied"))
             {
-                if (Characters[sti(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
+                if (Characters[int(pchar.GenQuest.Loan.FindCitizenIdx)].id == Npchar.id)
                 {
 					link.l3 = RandPhraseSimple("我想讨论财务问题。 ", "关于财务... ");
 					link.l3.go = "LoanForAll";//(转发到贷款生成器)
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 			// 牧师任务生成器。 任务 №2。 战船 -->
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	        {
-				link.l5 = RandPhraseSimple("你知道", "你是否了解", "你听说过") + "当地教堂最近被抢劫了吗? ");
+				link.l5 = RandPhraseSimple("你知道", "你是否了解", "你听说过") + "当地教堂最近被抢劫了吗? ";
 				link.l5.go = "Citiz_GenQuest_Church_2_1";
 			}
 			// < —牧师任务生成器。 任务 №2.
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_Citizen_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 3 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 6 && npchar.sex != "woman")
 			{
 				dialog.text = "嗯... 是的, 几个小时前我看到一个男人拿着那样的东西。 他在街上走着。 那是个有趣的工具。 ";
 				link.l1 = "他长什么样, 要去哪里? 我真的需要那样的东西。 ";

@@ -168,7 +168,7 @@ string GetFullReputationComplexName(ref chref)
 	
 	if(CheckAttribute(chref,"reputation.fame")) 
 	{
-		sFame = GetReputationComplexName(sti(chref.reputation.fame), "fame");
+		sFame = GetReputationComplexName(int(chref.reputation.fame), "fame");
 	}	
 	else 
 	{
@@ -177,7 +177,7 @@ string GetFullReputationComplexName(ref chref)
 	
 	if(CheckAttribute(chref,"reputation.nobility")) 
 	{
-		sNobility = GetReputationComplexName(sti(chref.reputation.nobility), "nobility");
+		sNobility = GetReputationComplexName(int(chref.reputation.nobility), "nobility");
 	}	
 	else
 	{
@@ -192,15 +192,15 @@ int GetCharacterLoyality(ref chr)
 {
     if (CheckAttribute(chr, "loyality"))
     {
-        if (sti(chr.loyality) > MAX_LOYALITY)
+        if (int(chr.loyality) > MAX_LOYALITY)
         {
             chr.loyality = MAX_LOYALITY;
         }
-        if (sti(chr.loyality) < 0)
+        if (int(chr.loyality) < 0)
         {
             chr.loyality = 0;
         }
-        return sti(chr.loyality);
+        return int(chr.loyality);
     }
     else
     {

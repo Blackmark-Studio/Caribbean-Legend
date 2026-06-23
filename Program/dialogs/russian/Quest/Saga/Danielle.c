@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 		case "meeting_7":
 			DialogExit();
 			chrDisableReloadToLocation = false;//открыть локацию
-			npchar.quest.OfficerPrice = sti(pchar.rank)*700;
+			npchar.quest.OfficerPrice = int(pchar.rank)*700;
 			npchar.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			npchar.CompanionDisable = true; //нельзя в компаньоны - чтобы не утонула
 			LAi_SetImmortal(npchar, false);
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 			
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.GiveAmulets")) {
 				DeleteAttribute(pchar, "questTemp.HelenDrinking.GiveAmulets");
-				if (CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && sti(pchar.questTemp.Saga.HelenRelation) > 6) {
+				if (CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && int(pchar.questTemp.Saga.HelenRelation) > 6) {
 					AddDialogExitQuestFunction("HelenDrinking_GivePotionsDlg");
 				}
 			}
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.GiveAmulets")) {
 				DeleteAttribute(pchar, "questTemp.HelenDrinking.GiveAmulets");
-				if (CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && sti(pchar.questTemp.Saga.HelenRelation) > 6) {
+				if (CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && int(pchar.questTemp.Saga.HelenRelation) > 6) {
 					AddDialogExitQuestFunction("HelenDrinking_GivePotionsDlg");
 				}
 			}
@@ -964,7 +964,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Нужно изменить тип боеприпаса для твоего огнестрельного оружия.";
 					Link.l3.go = "SetGunBullets";
@@ -977,7 +977,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -989,7 +989,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;

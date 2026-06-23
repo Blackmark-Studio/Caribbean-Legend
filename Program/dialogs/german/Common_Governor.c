@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makearef(NextDiag, NPChar.Dialog);
 
     // вызов диалога по городам -->
-    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(sti(NPChar.nation)) + "_Governor.c";
+    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(int(NPChar.nation)) + "_Governor.c";
     if (LoadSegment(NPChar.FileDialog2))
 	{
         ProcessCommonDialog(NPChar, Link, NextDiag);
@@ -30,9 +30,9 @@ void ProcessDialogEvent()
     int f, colony_money;
 
     int k = 1000;
-    if (CheckAttribute(Nations[sti(NPChar.nation)], "Fort"))
+    if (CheckAttribute(Nations[int(NPChar.nation)], "Fort"))
     {
-        k = (300 - sti(Nations[sti(NPChar.nation)].Fort)*10);
+        k = (300 - int(Nations[int(NPChar.nation)].Fort)*10);
     }
 	bool ok;
 	
@@ -69,15 +69,15 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Ich habe gehört, dass Sie sehr hartnäckig um eine Audienz gebeten haben. Mein Name ist "+GetFullName(npchar)+". Ich bin der Generalgouverneur der Kolonien von "+NationNameGenitive(sti(NPChar.nation))+", Stellvertreter der Krone von "+NationKingsName(npchar)+" in diesen Gewässern. Nun, seien Sie bitte so freundlich und sagen Sie mir, was der Zweck Ihres Besuches ist, "+GetAddress_Form(NPChar)+".";
+				dialog.text = "Ich habe gehört, dass Sie sehr hartnäckig um eine Audienz gebeten haben. Mein Name ist "+GetFullName(npchar)+". Ich bin der Generalgouverneur der Kolonien von "+NationNameGenitive(int(NPChar.nation))+", Stellvertreter der Krone von "+NationKingsName(npchar)+" in diesen Gewässern. Nun, seien Sie bitte so freundlich und sagen Sie mir, was der Zweck Ihres Besuches ist, "+GetAddress_Form(NPChar)+".";
 				link.l1 = "Mein Name ist "+GetFullName(pchar)+".";
 				link.l1.go = "node_1";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("Oh, das bist du wieder? Nun, was willst du vom Gouverneur?"+NationNameGenitive(sti(NPChar.nation))+" dieses Mal?","Und schon wieder lenkst du mich von wichtigen Staatsangelegenheiten ab? Was willst du, "+GetAddress_Form(NPChar)+"?");
-				link.l1 = "Ich möchte mit Ihnen über die Arbeit im Namen der Krone sprechen "+NationNameGenitive(sti(NPChar.nation));
+				dialog.text = RandPhraseSimple("Oh, das bist du wieder? Nun, was willst du vom Gouverneur?"+NationNameGenitive(int(NPChar.nation))+" dieses Mal?","Und schon wieder lenkst du mich von wichtigen Staatsangelegenheiten ab? Was willst du, "+GetAddress_Form(NPChar)+"?");
+				link.l1 = "Ich möchte mit Ihnen über die Arbeit im Namen der Krone sprechen "+NationNameGenitive(int(NPChar.nation));
 				link.l1.go = "work";
 				link.l2 = "Ich muss mit dir über eine wichtige Angelegenheit sprechen.";
 				link.l2.go = "quests"; // файл нации
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		
 		case "node_1":
 			dialog.text = "Also, was war der Grund für dich, hierher zu kommen und mich von wichtigen Staatsangelegenheiten abzulenken?";
-			link.l1 = "Ich wollte mit Ihnen über die Arbeit im Namen der Krone sprechen "+NationNameGenitive(sti(NPChar.nation));
+			link.l1 = "Ich wollte mit Ihnen über die Arbeit im Namen der Krone sprechen "+NationNameGenitive(int(NPChar.nation));
 			link.l1.go = "work";
 			link.l2 = "Ich wollte mit dir über eine wichtige Angelegenheit sprechen.";
 			link.l2.go = "quests";
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "Und haben Sie 50000 Pesos vorbereitet - Ihre Eintrittsgebühr, die zum Preisgeld beitragen wird?";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "Ja, natürlich. Bitte akzeptieren Sie meine Gebühr.";
 				link.l1.go = "Regata_2";

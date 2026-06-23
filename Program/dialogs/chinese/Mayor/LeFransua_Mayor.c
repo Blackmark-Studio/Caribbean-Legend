@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 dialog.text = "啊, 终于来了。 我正打算把他卖给巴巴多斯的种植园主, 他一两周后会来... 你有赎金" + GetSexPhrase("", "") + "吗? ";
                 link.l1 = "听着, " + Npchar.name+ ", 有个小问题... 其实我没那么多钱。 但我愿意干活抵账。 ";
                 link.l1.go = "CapComission2_2";
-                if (makeint(pchar.money) > 150000)
+                if (int(pchar.money) > 150000)
                 {
                     link.l2 = "幸好你还没卖掉他。 这是15万比索。 我去哪儿接他? ";
                     link.l2.go = "CapComission2_3";
@@ -114,8 +114,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "CapComission2_2_2":
             CaptainComission_GetRandomShore();
-            pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-            pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+            pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+            pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
             pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
             dialog.text = "嗯... 好吧, " + GetName(NAMETYPE_ORIG, pchar.GenQuest.CaptainComission.UnknownPirateName, NAME_NOM) + " 说服了一些海盗, 让他们相信战利品会藏在我们离 " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore + "Gen") + " 不远的藏匿点。 他们的两艘船‘" + pchar.GenQuest.CaptainComission.ShipName1 + "’和‘" + pchar.GenQuest.CaptainComission.ShipName2 + "’刚起锚驶向 " + XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Abl") + "。 现在你明白为什么我不能信任我的人去做这件事了吧? ";
             link.l1 = "我明白了。 我有多少时间? ";
@@ -200,7 +200,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             dialog.text = "降价? ! 就因为你的无能, 我刚丢了藏匿点! 现在我可以涨价! 如果你想要, 就付20万比索, 否则滚出去! ";
             link.l1 = "太贵了... 再见... ";
             link.l1.go = "CapComission4_4";
-            if (sti(pchar.money) >= 200000)
+            if (int(pchar.money) >= 200000)
             {
                 link.l2 = "该死的, 好吧, 拿钱。 ";
                 link.l2.go = "CapComission4_5";
@@ -248,7 +248,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		    dialog.text = "钱带来了吗, 查尔斯? 我可没开玩笑, 真会把那个人卖到种植园去的。 ";
 		    link.l1 = "听着, " + Npchar.name+ ", 有点麻烦... 我的钱不够。 但我愿意干活抵账。 ";
 		    link.l1.go = "CapComission2_2";
-		    if(makeint(pchar.money) > 150000)
+		    if(int(pchar.money) > 150000)
 		    {
 		        link.l2 = "还好你没把他卖了。 这是15万比索。 我在哪能带走他? ";
 		        link.l2.go = "CapComission2_3";
@@ -281,7 +281,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "Marginpassenger_4":
-		    int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+		    int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 		    dialog.text = "明白了。 如果你没说谎, 这倒是笔不错的交易。 我可以为这个人付给你" + iTemp + "比索, 或者给你一些有趣的情报。 你选吧。 ";
 		    link.l1 = "我还是拿钱吧。 这事儿我受够了... ";
 		    link.l1.go = "Marginpassenger_money";
@@ -296,7 +296,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "Marginpassenger_money_1":
-		    iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+		    iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 		    dialog.text = "不客气, 多给我带些... 再见! ";
 		    link.l1 = "祝你好运... ";
 		    link.l1.go = "exit";

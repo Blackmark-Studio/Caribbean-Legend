@@ -20,7 +20,7 @@ float DescriptorBaseValue(string descriptorName)
 
 float MaterialDefenceValue(string sMaterialIndex)
 {
-	int materialIndex = sti(sMaterialIndex);
+	int materialIndex = int(sMaterialIndex);
 	switch (materialIndex)
 	{
 		case ARMOR_FABRIC:  return ARMOR_FABRIC_DAMAGE_REDUCTION; break;

@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear()+"나는 네 포로다, "+GetAddress_Form(NPChar)+". 하지만 알아두었으면 해 "+NationNameNominative(sti(NPChar.nation))+" 자기 사람들에겐 절대 돈을 안 내지. 우리 모두 각자 알아서 살아야 해.";
+				dialog.text = RandSwear()+"나는 네 포로다, "+GetAddress_Form(NPChar)+". 하지만 알아두었으면 해 "+NationNameNominative(int(NPChar.nation))+" 자기 사람들에겐 절대 돈을 안 내지. 우리 모두 각자 알아서 살아야 해.";
 				link.l1 = "흠... 너한테선 이득 볼 게 없겠군. 최소한 어느 식민지에서든 범죄자로서 몸값은 받을 수 있겠지.";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear()+"나는 당신의 포로요, "+GetAddress_Form(NPChar)+". "+NationNameNominative(sti(NPChar.nation))+" 내 자유를 위해 좋은 값을 쳐 줄 거야.";
+				dialog.text = RandSwear()+"나는 당신의 포로요, "+GetAddress_Form(NPChar)+". "+NationNameNominative(int(NPChar.nation))+" 내 자유를 위해 좋은 값을 쳐 줄 거야.";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "이봐, 너는 솜씨 좋은 선원이구나. 나한텐 너 같은 사람이 필요해. 내 지휘 아래에서 일해 볼 생각 있나?";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "tip-off"
 						dialog.text = RandPhraseSimple("선장님, 제 몸값 대신 더 이득이 되는 제안을 들어보시겠습니까?","여기서 흥정할 여지는 없다는 것 압니다만, 제 제안을 들어보시겠습니까?");
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "선장님, 왜 저를 그냥 놓아주지 않으십니까? 저 같은 사람은 필요 없으시잖아요. 해적이 된 건 제게 남은 유일한 선택이었습니다. 쓸 만한 기술도, 배운 것도 없으니까요. 저는 그저 돈 좀 모아서 은퇴하고 싶었을 뿐입니다.";
 					if (FindFreeRandomOfficer() > 0)
@@ -148,9 +148,9 @@ void ProcessDialogEvent()
 						dialog.text = RandPhraseSimple("선장님, 제가 싸움에서 졌으니 자비를 베풀어 주시길 부탁드립니다. ","선장님, 자비를 베풀어 주시길 간청합니다. 저를 전쟁 포로로 대우하실 이유가 없다는 것 잘 압니다. 그러니 제 목숨만은 살려 주십시오. 맹세코 앞으로는 바다에서 선장님을 마주치지 않겠습니다.");
 						link.l2 = LinkRandPhrase("내 인내심을 시험하지 마라. 네가 아직 살아 있는 것만으로도 운이 좋은 거야.",RandPhraseSimple("나는 너를 위한 내 계획이 따로 있다.","앞으로도 나에게 쓸모가 있을지도 모르겠군."),RandPhraseSimple("너는 내 포로다. 내가 원하는 대로 너를 다룰 권리가 내게 있다. 네 생각 따위는 여기서 아무런 가치도 없어.","너는... 아니, 너였지, 전함의 선장이었고 위험을 잘 알고 있었잖아. 여기서 성인인 척하지 마."));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "봐라, 너는 싸움에 능한 놈이니 내가 너 같은 악당이 필요하다. 내 부하가 될 생각 있냐?";
 								link.l3.go = "free_to_officer";
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                         	ReleasePrisoner(offref); // освободили пленника
 							LAi_SetWarriorType(offref);
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 					sTmp = "I had an idea to rob him once but I have never had a single chance to do that.";
 				break;
 			}
-			dialog.text = "좋아. 그 정도면 충분해. 이제 본론으로 들어가지, "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" 부유한 상인이 거주하는 곳이다 "+NPChar.Hold_GenQuest.Name+". "+"그는 자신의 배 '에서 재산을 모았다"+NPChar.Hold_GenQuest.ShipName+" 판매 "+GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" 항로 :  "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"짐이 너무 많을 때는 호위를 돈 주고 사지."+sTmp+" 이 정보가 한 사람의 목숨보다 당신에게 더 가치 있다고 확신하오.";
+			dialog.text = "좋아. 그 정도면 충분해. 이제 본론으로 들어가지, "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" 부유한 상인이 거주하는 곳이다 "+NPChar.Hold_GenQuest.Name+". "+"그는 자신의 배 '에서 재산을 모았다"+NPChar.Hold_GenQuest.ShipName+" 판매 "+GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" 항로 :  "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"짐이 너무 많을 때는 호위를 돈 주고 사지."+sTmp+" 이 정보가 한 사람의 목숨보다 당신에게 더 가치 있다고 확신하오.";
 			link.l1 = "이 정보가 내게 쓸모 있을 것 같지 않군. 나는 평화로운 상인들은 사냥하지 않아.";	
 			link.l1.go = "free_tip_off_0";
 			link.l2 = "이 정보가 내게 쓸모가 있을지는 모르겠지만, 약속은 했으니 지키겠소. 보선장이 너를 내 선원들과 함께 두고 가장 가까운 항구에서 풀어줄 거다.";
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
@@ -573,7 +573,7 @@ void ProcessDialogEvent()
 		
 		case "free_by_hoard5":
 			dialog.text = "감사합니다, 선장님! 이제야 한 남자의 말값이 어떤 것인지 알겠군요 "+GetSexPhrase("신사 나리!","아가씨!");
-			link.l1 = "가서 내 앞길 막지 마라. 다음번엔 이렇게 쉽게 넘어가지 않을 거다.");
+			link.l1 = "가서 내 앞길 막지 마라. 다음번엔 이렇게 쉽게 넘어가지 않을 거다.";
 			link.l1.go = "free_by_hoard6";
 		break;
 		

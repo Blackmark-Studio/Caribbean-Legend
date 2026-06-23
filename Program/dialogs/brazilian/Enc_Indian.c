@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 				case 2: // жемчуг большой
 					npchar.quest.item.qty = 25+hrand(25);
 					npchar.quest.item.price = 30+hrand(10);
-					dialog.text = ""+npchar.name+" tem as lágrimas dos deuses. Grandes, irmão branco. Em quantidade de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Você quer comprar? Eu vendo por "+FindRussianMoneyString(sti(npchar.quest.item.price))+" por um.";
+					dialog.text = ""+npchar.name+" tem as lágrimas dos deuses. Grandes, irmão branco. Em quantidade de "+FindRussianQtyString(int(npchar.quest.item.qty))+". Você quer comprar? Eu vendo por "+FindRussianMoneyString(int(npchar.quest.item.price))+" por um.";
 					link.l1 = "Não, não estou interessado.";
 					link.l1.go = "exit";
 					link.l2 = "Claro! Vou comprar com prazer por esse preço.";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 				case 3: // жемчуг малый
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 10+hrand(5);
-					dialog.text = ""+npchar.name+" tem as lágrimas dos deuses. Pequenas, irmão branco. Em quantidade de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Quer comprar? Eu vendo por "+FindRussianMoneyString(sti(npchar.quest.item.price))+" por um.";
+					dialog.text = ""+npchar.name+" tem as lágrimas dos deuses. Pequenas, irmão branco. Em quantidade de "+FindRussianQtyString(int(npchar.quest.item.qty))+". Quer comprar? Eu vendo por "+FindRussianMoneyString(int(npchar.quest.item.price))+" por um.";
 					link.l1 = "Não, não estou interessado.";
 					link.l1.go = "exit";
 					link.l2 = "Claro! Vou comprar com prazer por esse preço.";
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 				case 4: //золотые самородки
 					npchar.quest.item.qty = 20+hrand(20);
 					npchar.quest.item.price = 90+hrand(20);
-					dialog.text = ""+npchar.name+" tem o metal amarelo que vocês, rostos pálidos, adoram tanto. Em quantidade de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Eu só vendo por "+FindRussianMoneyString(sti(npchar.quest.item.price))+" por uma.";
+					dialog.text = ""+npchar.name+" tem o metal amarelo que vocês, rostos pálidos, adoram tanto. Em quantidade de "+FindRussianQtyString(int(npchar.quest.item.qty))+". Eu só vendo por "+FindRussianMoneyString(int(npchar.quest.item.price))+" por uma.";
 					link.l1 = "Não, não estou interessado.";
 					link.l1.go = "exit";
 					link.l2 = "Claro! Vou comprar com prazer por esse preço.";
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 				case 5: // серебряные самородки
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 40+hrand(10);
-					dialog.text = ""+npchar.name+" tem aquele metal branco que vocês, branquelos, tanto adoram. Em quantidade de "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Eu só vendo por "+FindRussianMoneyString(sti(npchar.quest.item.price))+" por uma.";
+					dialog.text = ""+npchar.name+" tem aquele metal branco que vocês, branquelos, tanto adoram. Em quantidade de "+FindRussianQtyString(int(npchar.quest.item.qty))+". Eu só vendo por "+FindRussianMoneyString(int(npchar.quest.item.price))+" por uma.";
 					link.l1 = "Não, não estou interessado.";
 					link.l1.go = "exit";
 					link.l2 = "Claro! Vou comprar com prazer por esse preço.";
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -177,16 +177,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Eu te falei quantas lágrimas eu tenho. Você está tirando sarro de índio, cara-pálida? Então adeus.";
 				link.l1 = "Hmm...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" lágrimas? Tudo bem. Você me dá "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", irmão branco.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" lágrimas? Tudo bem. Você me dá "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", irmão branco.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Aqui está o seu dinheiro, irmão de pele vermelha.";
 				link.l1.go = "big_pearl_1";
@@ -196,8 +196,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry52", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry52", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Leve, irmão branco. Agora são seus.";
 			link.l1 = "Obrigado!";
@@ -214,7 +214,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -223,16 +223,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Eu te contei quantas lágrimas eu tenho. Você está tirando sarro de índio, cara-pálida? Então adeus.";
 				link.l1 = "Hum...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" lágrimas? Tudo bem. Você me dá "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", irmão branco.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" lágrimas? Tudo bem. Você me dá "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", irmão branco.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Aqui está seu dinheiro, irmão de pele vermelha.";
 				link.l1.go = "small_pearl_1";
@@ -242,8 +242,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry53", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry53", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Pegue, irmão branco. Agora são seus.";
 			link.l1 = "Obrigado!";
@@ -260,7 +260,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -269,16 +269,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Eu já te disse quantos eu tenho. Está tirando sarro do índio, cara-pálida? Então adeus.";
 				link.l1 = "Hmm...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" pedaços? Bem, de você "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", irmão branco.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" pedaços? Bem, de você "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", irmão branco.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Aqui está seu dinheiro, irmão de pele vermelha.";
 				link.l1.go = "gold_1";
@@ -288,8 +288,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry5", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry5", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Leve-os, irmão branco. Agora são seus.";
 			link.l1 = "Obrigado!";
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -315,16 +315,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Eu já te disse quantos eu tenho. Está tirando sarro do índio, cara-pálida? Então tchau.";
 				link.l1 = "Hmm...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" pedaços? Bem, de você "+FindRussianMoneyString(sti(npchar.quest.item.Summ))+", irmão branco.";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" pedaços? Bem, de você "+FindRussianMoneyString(int(npchar.quest.item.Summ))+", irmão branco.";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Aqui está o seu dinheiro, irmão de pele vermelha.";
 				link.l1.go = "silver_1";
@@ -334,8 +334,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry6", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry6", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Leve, irmão branco. Agora são seus.";
 			link.l1 = "Obrigado!";

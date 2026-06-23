@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Patrol" + locations[FindLocation(npchar.location)].index + "_";
 	string sGroup = "PatrolGroup_" + locations[FindLocation(npchar.location)].index;
 	string sTemp1, sTemp2;
@@ -60,15 +60,15 @@ void ProcessDialogEvent()
 				LAi_type_actor_Reset(sld);
 				LAi_RemoveCheckMinHP(sld);
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("おい見ろ、この悪党がどうやら警報を に鳴らしたようだ "+XI_ConvertString("Colony"+npchar.city+"Dat")+"！捕まえろ"+GetSexPhrase("俺","「えー」")+"!!","へっ、見てみろよ！何人かの "+NationNamePeople(sti(pchar.nation))+" 「敵対することに成功する」 "+NationNameAblative(sti(npchar.nation))+" その悪党を捕まえろ！！！");
+					dialog.text = RandPhraseSimple("おい見ろ、この悪党がどうやら警報を に鳴らしたようだ "+XI_ConvertString("Colony"+npchar.city+"Dat")+"！捕まえろ"+GetSexPhrase("俺","「えー」")+"!!","へっ、見てみろよ！何人かの "+NationNamePeople(int(pchar.nation))+" 「敵対することに成功する」 "+NationNameAblative(int(npchar.nation))+" その悪党を捕まえろ！！！");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("敵の工作員が近くにいる "+XI_ConvertString("Colony"+npchar.city+"Gen")+"「捕まえろ！」"+GetSexPhrase("俺","「えー」")+"!!","「おい、見ろ、」 "+NationNamePeople(sti(pchar.nation))+" ほとんど～の中をうろついている "+XI_ConvertString("Colony"+npchar.city+"Dat")+"「そいつをすぐに捕まえろ！！！」");
+					dialog.text = RandPhraseSimple("敵の工作員が近くにいる "+XI_ConvertString("Colony"+npchar.city+"Gen")+"「捕まえろ！」"+GetSexPhrase("俺","「えー」")+"!!","「おい、見ろ、」 "+NationNamePeople(int(pchar.nation))+" ほとんど～の中をうろついている "+XI_ConvertString("Colony"+npchar.city+"Dat")+"「そいつをすぐに捕まえろ！！！」");
 				}
 				link.l1 = RandPhraseSimple("まあ、やってみるがいいさ。ここには俺たちしかいねえ……","へっ、ここじゃ誰もお前に手なんか貸さねえぜ。");
 				link.l1.go = "exit_fight"; 				
@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			{				
 				// belamour legendary edition
 				sTemp1 = "";
-				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
+				if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
 				dialog.text = LinkRandPhrase("自己紹介させていただきます！私は〜から来た巡回士です "+XI_ConvertString("Colony"+npchar.city+"Gen")+"「逃亡した囚人を探しているんだ。」","こんにちは、俺がこの巡回隊の隊長だ。俺たちはここから逃げた奴隷を探しているんだ "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","「ごきげんよう、」 "+GetAddress_Form(NPChar)+"。私の部隊は付近の領域を巡回している "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_12":
-			jewelType = sti(pchar.questTemp.ReasonToFast.p4);
+			jewelType = int(pchar.questTemp.ReasonToFast.p4);
 			pchar.questTemp.ReasonToFast.item = "jewelry" + jewelType;
 			sItem = "jewelry" + jewelType;
 			switch (jewelType)
@@ -196,10 +196,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_14":
-			dialog.text = "よし、それじゃあ借りができたな "+sti(pchar.questTemp.ReasonToFast.p5)+" 約束通り、ペソだ。";
+			dialog.text = "よし、それじゃあ借りができたな "+int(pchar.questTemp.ReasonToFast.p5)+" 約束通り、ペソだ。";
 			link.l1 = "それはちょっとやりすぎじゃねえか？";
 			link.l1.go = "Reason_To_Fast_16";
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				link.l2 = "「はい、どうぞ。」";
 				link.l2.go = "Reason_To_Fast_17";
@@ -240,15 +240,15 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_17":
 			pchar.questTemp.ReasonToFast = "PatrolSuccess_1";
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p5)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p5)));
 			pchar.GenQuest.CannotWait = 1; // лочим интерфейс отдыха
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.chain")) DeleteAttribute(pchar,"questTemp.ReasonToFast.chain");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.ShipName");
 			if(CheckAttribute(pchar,"questTemp.ReasonToFast.ShipTypeName")) DeleteAttribute(pchar,"questTemp.ReasonToFast.TypeName");
-			switch (sti(pchar.questTemp.ReasonToFast.target))
+			switch (int(pchar.questTemp.ReasonToFast.target))
 			{
 				case 0: // корабль с товаром
-					sTemp1 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp1 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					iShipType = ReasonToFast_GetVictimShipType();
 					iShipGoods = ReasonToFast_GetVictimShipGoods();
 					dialog.text = "素晴らしい！さて、本題に入ろう。俺たちはあれを捕らえたんだ "+GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName)+" 「」"+sTemp1+"「」には積荷として "+GetGoodsNameAlt(iShipGoods)+"、乗組員はすでに拘束されていて、「積み荷」はまだ船に残っている。乗組員は港の貧乏人から雇われた連中で、 明日まで港に入ることはない。あんたの好きなように始末していいぜ。";
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					pchar.questTemp.ReasonToFast.password = sTemp2;
-					sTemp2 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
+					sTemp2 = generateRandomNameToShip(int(pchar.questTemp.ReasonToFast.GuardNation));
 					dialog.text = "「素晴らしい！」 "+sTemp1+" 彼のブドワールに保管されている。連絡船は近日中に到着するが、まだ間に合うはずだ。下僕は「我々」の人間だ。 合言葉：「"+pchar.questTemp.ReasonToFast.password+"「」、返事：「"+sTemp2+"「。」";
 					link.l1 = "わかった。伝言はちゃんと伝えておく "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+".";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_18":
-			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
+			if(int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p5))
 			{
 				dialog.text = "俺を騙そうってのか！？この野郎！";
 				link.l1 = "黙りやがれ！";
@@ -356,8 +356,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_ExitFight":
-			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation));
-			SetNationRelation2MainCharacter(sti(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY); 
+			pchar.questTemp.ReasonToFast.relation = GetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation));
+			SetNationRelation2MainCharacter(int(pchar.questTemp.ReasonToFast.GuardNation), RELATION_ENEMY);
 			
 			pchar.GenQuest.HunterScore2Pause = 1; //НЗГ не начисляются
 			pchar.GenQuest.ReputationNotChange = 1; //репутацию не менять

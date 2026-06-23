@@ -51,10 +51,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "非常感谢, 伙计。 好的... 我去找个地方坐下。 ";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-12");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 				AddQuestRecord("Holl_Gambit", "2-6");
 				pchar.questTemp.HWIC.Eng = "SeekVanBerg";
@@ -89,7 +89,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//荷兰 Gambit /对抗所有人/
 		case "Tonzag_check"://开始根据所有条款检查我们的主角
-			if(sti(pchar.reputation.nobility) > 48)//高声望
+			if(int(pchar.reputation.nobility) > 48)//高声望
 			{
 				// belamour legendary edition 显示标准
 				Notification_Reputation(false, 48, "high");
@@ -291,7 +291,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(bImCasual) NewGameTip("探索模式: 计时器未禁用。 遵守截止日期! ");
 			SetFunctionTimerCondition("FleetwoodJournalOver", 0, 0, 11, false);//计时器
 			pchar.quest.Fleetwood_Journal.win_condition.l1 = "Timer";
-			pchar.quest.Fleetwood_Journal.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Fleetwood_Journal.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 9);
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 9);
 			pchar.quest.Fleetwood_Journal.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 9);

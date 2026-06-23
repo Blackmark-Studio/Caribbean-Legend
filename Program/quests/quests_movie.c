@@ -70,7 +70,7 @@ bool EndQuestMovie()
 	aref stk;
 	makearef(stk, questMovieStack.(level));
 	//InterfaceStates.Buttons.Save.enable = stk.noSave;
-	if(sti(stk.lock) != 0)
+	if(int(stk.lock) != 0)
 	{
 		QuestMovieLockPlayer();
 	}else{
@@ -103,7 +103,7 @@ bool qmIsNoReload()
 	{
 		int l = questMovieProcess - 1;
 		string level = "L" + l + ".noReload";
-		if(sti(questMovieStack.(level)) != 0) return true;
+		if(int(questMovieStack.(level)) != 0) return true;
 	}
 	return false;
 }

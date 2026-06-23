@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 				link.l1.go = "patria_x";
 				break;
 			}
-			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
+			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && int(pchar.money) >= 100000)
 			{
 				dialog.text = "¿Trajiste el dinero?";
 				link.l1 = "Lo hice.";
@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 			
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+			if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("¿Estás loco? ¿Querías jugar a ser carnicero? Todos los piratas están enfadados contigo, chico, será mejor que dejes este lugar...", "  Parece que te has vuelto loco, muchacho. ¿Querías estirar un poco las manos? Sin ofender, pero no tienes nada que hacer aquí. ¡Piérdete! ");
 				link.l1 = RandPhraseSimple("Escucha, quiero arreglar la situación...", "Ayúdame a resolver este problema...");
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-			if (sti(pchar.GenQuest.Piratekill) > 20)
+			if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("¿Estás loco? ¿Querías jugar a ser carnicero? Todos los piratas están enfadados contigo, chico, será mejor que dejes este lugar...", "  Parece que te has vuelto loco, muchacho. ¿Querías estirar un poco las manos? Sin ofender, pero no tienes nada que hacer aquí. ¡Piérdete! ");
 				link.l1 = RandPhraseSimple("Escucha, quiero arreglar la situación...", "Ayúdame a resolver este problema...");
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 				link.l1.go = "patria_x";
 				break;
 			}
-			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && sti(pchar.money) >= 100000)
+			if(CheckAttribute(pchar, "questTemp.Patria.Condotier.NeedMoney") && pchar.questTemp.Patria == "epizode_12_pirates" && int(pchar.money) >= 100000)
 			{
 				dialog.text = "¿Trajiste el dinero?";
 				link.l1 = "Lo hice.";
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "No me distraigas de mi trabajo con tus charlas inútiles. La próxima vez no te irá tan bien...";
         			link.l1 = "Entendido, Marcus.";
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Espero que no me molestes más con tus charlas vacías o tendré que matarte. Digo que no estaré contento de hacerlo.";
         			link.l1 = "Puedes estar seguro de eso, Marcus, no lo haré...";
@@ -592,7 +592,7 @@ void ProcessDialogEvent()
 		
 		case "pirate_town":
             dialog.text = "¿Resolver el problema? ¿Tienes alguna idea de lo que has hecho? De todas formas, tráeme un millón de pesos y persuadiré a los muchachos para que olviden tu hazaña. Si no te gusta la idea, entonces puedes irte al infierno.";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "Está bien, estoy listo para pagar.";
 				link.l1.go = "pirate_town_pay";
@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = IsCharacterPerkOn(pchar,"FlagSpa") || IsCharacterPerkOn(pchar,"FlagHol");
+			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -804,12 +804,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_8":
-			if (sti(pchar.questTemp.Mtraxx.JewQty) > GetCharacterItem(pchar, "jewelry7"))
+			if (int(pchar.questTemp.Mtraxx.JewQty) > GetCharacterItem(pchar, "jewelry7"))
 			{
 				PlaySound("interface\important_item.wav");
 				Log_Info("Has entregado "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" trozos de ámbar azul");
 				RemoveItems(pchar, "jewelry7", GetCharacterItem(pchar, "jewelry7"));
-				dialog.text = "Bueno, bueno... Hijo, ¿recuerdas mi advertencia sobre los peligros de ser una rata? ¿Qué me dijiste entonces? ¿Que ningún perro puede culparte por eso? ¿Crees que soy estúpido, chico? Estoy perfectamente consciente de que has saqueado "+FindRussianQtyString(sti(pchar.questTemp.Mtraxx.JewQty))+" piezas de ámbar azul en la Costa de los Mosquitos. ¡Ahora corre, pequeña rata, corre, y reza para que nunca nos volvamos a encontrar!";
+				dialog.text = "Bueno, bueno... Hijo, ¿recuerdas mi advertencia sobre los peligros de ser una rata? ¿Qué me dijiste entonces? ¿Que ningún perro puede culparte por eso? ¿Crees que soy estúpido, chico? Estoy perfectamente consciente de que has saqueado "+FindRussianQtyString(int(pchar.questTemp.Mtraxx.JewQty))+" piezas de ámbar azul en la Costa de los Mosquitos. ¡Ahora corre, pequeña rata, corre, y reza para que nunca nos volvamos a encontrar!";
 				link.l1 = "¡Maldita sea!";
 				link.l1.go = "AngryExitAgainWithOut";
 				pchar.questTemp.Mtraxx = "fail";
@@ -818,7 +818,7 @@ void ProcessDialogEvent()
 				// belamour legendary edition забрать флаг обратно
 				if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 				{
-					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+					DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 					STH_SetJokerFlag(SPAIN, false); 
 					log_info("Has entregado bandera española");
 				}
@@ -827,7 +827,7 @@ void ProcessDialogEvent()
 			{
 				PlaySound("interface\important_item.wav");
 				Log_Info("Has entregado "+FindRussianQtyString(GetCharacterItem(pchar, "jewelry7"))+" trozos de ámbar azul");
-				RemoveItems(pchar, "jewelry7", sti(pchar.questTemp.Mtraxx.JewQty));
+				RemoveItems(pchar, "jewelry7", int(pchar.questTemp.Mtraxx.JewQty));
 				dialog.text = "¡Bien hecho, muchacho! Te has mostrado desde tu mejor lado: te ocupaste de un asunto difícil y trajiste todo lo que saqueaste. ¡Buen trabajo! Me alegra no haberme equivocado contigo.";
 				link.l1 = "¿Qué hay de mi parte, Marcus?";
 				link.l1.go = "mtraxx_9";
@@ -835,14 +835,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_9":
-			i = sti(pchar.questTemp.Mtraxx.JewQty)/2;
+			i = int(pchar.questTemp.Mtraxx.JewQty)/2;
 			PlaySound("interface\important_item.wav");
 			Log_Info("Has recibido "+FindRussianQtyString(i)+" trozos de ámbar azul");
 			TakeNItems(pchar, "jewelry7", i);
 			// belamour legendary edition забрать флаг обратно
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("Has entregado una bandera española");
 			}
@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = IsCharacterPerkOn(pchar,"FlagSpa") || IsCharacterPerkOn(pchar,"FlagHol");
+			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1093,7 +1093,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition забрать флаг обратно
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("Has entregado una bandera española");
 			}
@@ -1488,7 +1488,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_68":
             dialog.text = "¡Jo-jo! Lo hiciste bien, Príncipe. ¿Y mi parte?";
-			if (sti(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour legendary edition
+			if (int(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour legendary edition
 			{
 				link.l1 = "Aquí, toma esto. Según nuestro acuerdo: 250 000 pesos y 300 doblones.";
 				link.l1.go = "mtraxx_69";
@@ -1507,7 +1507,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_68_2":
             dialog.text = "¿Trajiste mi parte?";
-			if (sti(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour legendary edition
+			if (int(pchar.money) >= 250000 && PCharDublonsTotal() >= 300) // belamour legendary edition
 			{
 				link.l1 = "Aquí, toma esto. Según nuestro acuerdo: 250 000 pesos y 300 doblones.";
 				link.l1.go = "mtraxx_69";
@@ -1673,7 +1673,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Roger_8", "6");
 			pchar.questTemp.Mtraxx = "corrida_marko";
 			/*pchar.quest.mtraxx_corrida_landtimer.win_condition.l1 = "Timer";
-			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.hour  = sti(GetTime()+1);
+			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.hour  = int(GetTime()+1);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.mtraxx_corrida_landtimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -1682,7 +1682,7 @@ void ProcessDialogEvent()
 			pchar.quest.mtraxx_corrida_checktime.win_condition.l1.location = "Hispaniola1";
 			pchar.quest.mtraxx_corrida_checktime.function = "Mtraxx_CorridaCheckTime";*/
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1 = "Timer";
-			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.hour  = sti(GetTime()+12);
+			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.hour  = int(GetTime()+12);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.mtraxx_corrida_torero.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -1707,7 +1707,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition забрать флаг обратно
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("Has entregado una bandera española");
 			}
@@ -1785,7 +1785,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_board_3":
-			RemoveCharacterGoods(pchar, GOOD_GOLD, makeint(iTotalTemp/2));
+			RemoveCharacterGoods(pchar, GOOD_GOLD, int(iTotalTemp/2));
 			WaitDate("", 0, 0, 0, 3, 10);
 			LAi_Fade("", "");
             dialog.text = "... como siempre hacemos en la Hermandad - un corte justo para cada uno. Puedes quedarte con el 'Torero', es tu premio.";
@@ -1810,7 +1810,7 @@ void ProcessDialogEvent()
             npchar.dialog.currentnode = "mtraxx_board_6x";
 			npchar.DeckDialogNode = "mtraxx_board_6x";
 			npchar.DontDeskTalk = true;
-			Ship_SetTaskRunAway(SECONDARY_TASK, sti(npchar.index), sti(pchar.index));
+			Ship_SetTaskRunAway(SECONDARY_TASK, int(npchar.index), int(pchar.index));
 			bQuestDisableMapEnter = false;//открыть карту
 			DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
 			pchar.quest.mtraxx_corrida_complete.win_condition.l1 = "MapEnter";
@@ -1819,7 +1819,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition забрать флаг обратно
 			if(CheckAttribute(pchar, "questTemp.GiveMeSpaFlag")) 
 			{
-				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag")); 
+				DeleteAttribute(pchar, "questTemp.GiveMeSpaFlag");
 				STH_SetJokerFlag(SPAIN, false); 
 				log_info("Has dado una bandera española");
 			}
@@ -1862,21 +1862,21 @@ void ProcessDialogEvent()
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (RealShips[sti(pchar.Ship.Type)].Type.Merchant) // торговые
+			if (RealShips[int(pchar.Ship.Type)].Type.Merchant) // торговые
 			{
 				dialog.text = "Príncipe, ¿has decidido ser mi segundo Alfanje? ¿Por qué me trajiste un barco mercante? ¡Contaba contigo! ¡Ve a traer un barco de guerra decente! ¡Ahora!";
 				link.l1 = "¡Está bien, está bien!";
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (sti(RealShips[sti(pchar.ship.type)].Class) > 3)
+			if (int(RealShips[int(pchar.ship.type)].Class) > 3)
 			{
 				dialog.text = "Príncipe, me has sorprendido. ¡Te dije que trajeras un barco de guerra! ¿Cómo piensas ayudarme en esta bañera? ¡Vuelve aquí en un barco de tercer o segundo rango, ni menos ni más alto! ¡Ahora! No voy a esperar a nadie.";
 				link.l1 = "¡Está bien, está bien!";
 				link.l1.go = "mtraxx_90x";
 				break;
 			}
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Príncipe, ¿por qué no traes aquí al Soberano de los Mares? ¡Cuando te dije que trajeras un buque de guerra, no quise decir que trajeras una maldita nave de línea! ¡Vuelve aquí en un barco de tercera o segunda clase! ¡Ahora! No voy a esperar a nadie.";
 				link.l1 = "¡Está bien, está bien!";
@@ -1997,11 +1997,11 @@ void ProcessDialogEvent()
 			
 			Weather.Wind.Speed = 16.0;
 			pchar.wind.speed = Weather.Wind.Speed;
-			fWeatherSpeed = stf(Weather.Wind.Speed);//халява первого выхода
+			fWeatherSpeed = float(Weather.Wind.Speed);//халява первого выхода
 	
 			Weather.Wind.Angle = 0.0;
 			pchar.wind.angle = Weather.Wind.Angle;
-			fWeatherAngle = stf(Weather.Wind.Angle);//халява первого выхода
+			fWeatherAngle = float(Weather.Wind.Angle);//халява первого выхода
 			
             npchar.dialog.currentnode = "mtraxx_board_6x";
 			npchar.DeckDialogNode = "mtraxx_board_6x";
@@ -2017,7 +2017,7 @@ void ProcessDialogEvent()
 			Group_LockTask("Terrax_SeaGroup2");
 			sld = CharacterFromID("Cartahena Fort Commander");
 			LAi_SetImmortal(sld, false);
-			Ship_SetTaskAttack(SECONDARY_TASK, sti(npchar.index), sti(sld.index));
+			Ship_SetTaskAttack(SECONDARY_TASK, int(npchar.index), int(sld.index));
 			AddQuestRecord("Roger_9", "5");
 			DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
 			pchar.questTemp.Mtraxx.Cartahena.Fort = "true";
@@ -2063,7 +2063,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_107":
-            if (sti(Pchar.money) < 350000)
+            if (int(Pchar.money) < 350000)
 			{
 				dialog.text = "¡Jo-jo, ese es mi chico! Pero, ¿dónde está el dinero?";
 				link.l1 = RandSwear()+"¡Lo traeré en un momento!";
@@ -2083,7 +2083,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_108":
-            if (sti(Pchar.money) < 350000)
+            if (int(Pchar.money) < 350000)
 			{
 				dialog.text = "¿Y bien? ¡Deja de jugar y trae las monedas aquí!";
 				link.l1 = "¡En camino!";
@@ -2105,7 +2105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_110":
-            dialog.text = "Dado que toda la operación fue planeada por mí, además el 'Dragón Rojo' hizo el trabajo más duro al lidiar con el fuerte, yo y mis hombres recibiremos la mitad del botín. La otra mitad se compartirá entre los capitanes de los otros cuatro barcos según el número de sus tripulaciones. Tienes "+GetCrewQuantity(pchar)+" hombres a tu disposición, tu parte es "+sti(pchar.questTemp.Mtraxx.Cartahena.Gold)+" unidades de oro y "+sti(pchar.questTemp.Mtraxx.Cartahena.Money)+" pesos.";
+            dialog.text = "Dado que toda la operación fue planeada por mí, además el 'Dragón Rojo' hizo el trabajo más duro al lidiar con el fuerte, yo y mis hombres recibiremos la mitad del botín. La otra mitad se compartirá entre los capitanes de los otros cuatro barcos según el número de sus tripulaciones. Tienes "+GetCrewQuantity(pchar)+" hombres a tu disposición, tu parte es "+int(pchar.questTemp.Mtraxx.Cartahena.Gold)+" unidades de oro y "+int(pchar.questTemp.Mtraxx.Cartahena.Money)+" pesos.";
 			link.l1 = "Bueno, ya que todos están de acuerdo con esto, ¡yo también lo estoy!";
 			link.l1.go = "mtraxx_111";
 		break;
@@ -2205,7 +2205,7 @@ void ProcessDialogEvent()
 		
 		case "patria_x7":
 			dialog.text = "¡Ja-ja-ja! ¡Eso es un truco del demonio! ¿Cuánto debo cobrarte por esta farsa? Bien, cien mil sellarán el trato. Dame el dinero.";
-			if (sti(pchar.money) >= 100000) 
+			if (int(pchar.money) >= 100000)
 			{
 				link.l1 = "Tómalo.";
 				link.l1.go = "patria_x8";
@@ -2292,7 +2292,7 @@ void ProcessDialogEvent()
 		
 		case "patria_17":
 			dialog.text = "Perfecto. ¡Ahora entrega el dinero o está acabado! Y no intentes engañarnos, te tenemos en la mira.";
-			if (sti(pchar.money) >= 350000)
+			if (int(pchar.money) >= 350000)
 			{
 				link.l1 = "Aquí, tómalo.";
 				link.l1.go = "patria_18";

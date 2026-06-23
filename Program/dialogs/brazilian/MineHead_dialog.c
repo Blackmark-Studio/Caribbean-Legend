@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -23,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "Inimigo na mina! Alarme!";
 				link.l1 = "Aaah, diabo!";
@@ -63,9 +62,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "Senhor, infelizmente, no momento não precisamos de mais escravos. Mas a situação pode mudar a qualquer momento, então volte daqui a algumas semanas ou em outra ocasião.";
 				link.l1 = "Certo, senhor, entendi. Você não precisa deles agora, mas pode precisar algum dia.";
@@ -106,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "Senhor, não tenho tempo para piadas idiotas. Se está com vontade de brincar, vá até a taverna!";
@@ -121,9 +120,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "Infelizmente, senhor, no momento não precisamos de tantos escravos. A mina atualmente exige "+FindRussianQtyString(sti(location.quest.slaves.qty))+". Vai vender tudo isso?";
+				dialog.text = "Infelizmente, senhor, no momento não precisamos de tantos escravos. A mina atualmente exige "+FindRussianQtyString(int(location.quest.slaves.qty))+". Vai vender tudo isso?";
 				link.l1 = "Sim, claro!";
 				link.l1.go = "slaves_max";
 				link.l2 = "Hmm... Acho que não sou mesmo.";
@@ -136,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "Excelente. Por favor, mande que levem eles até os portões da cidade. Vou enviar meus homens para buscá-los.";
 			link.l1 = "Não se preocupe, señor. Seus escravos serão entregues a tempo. Vou emitir todas as ordens necessárias imediatamente.";
 			link.l1.go = "slaves_calk";
@@ -153,7 +152,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

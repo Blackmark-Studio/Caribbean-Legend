@@ -5512,6 +5512,21 @@ TheFormerKnight.4
 We managed to track down and eliminate the former Knight of the Order. Durand was intent on killing the knight's woman, who was unfortunate enough to be in the house at the time. Naturally, I couldn't allow this. We crossed swords once again, and once again, I proved stronger. Had I known earlier what a scoundrel he was, I would have ended him back at Levasseur's residence.
 }
 
+TheFormerKnight.5
+{
+Ich habe beschlossen, mich nicht mit den Problemen eines in Ungnade gefallenen Offiziers zu befassen, und habe Claude Durand entlassen. Er mag sich einen anderen Kapitän suchen.
+}
+
+TheFormerKnight.6
+{
+Ich konnte mich mit Claudes Verhalten nicht abfinden. Zwischen uns entbrannte ein Konflikt, und ich war gezwungen, ihn zu töten. Ruhe in Frieden, Söldner.
+}
+
+TheFormerKnight.7
+{
+Claude Durand ist im Kampf gefallen, und nun werde ich nie erfahren, wie diese Geschichte endet. Nun denn, ruhe in Frieden, Söldner.
+}
+
 Tichingitu
 {
 Tichingitu

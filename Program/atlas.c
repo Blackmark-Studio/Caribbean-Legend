@@ -120,7 +120,7 @@ bool IsAtlasMap(ref map)
 
 bool IsTreasureMap(ref map)
 {
-	return map.maptype == "full" || map.maptype == "part"
+	return map.maptype == "full" || map.maptype == "part";
 }
 
 // проверка - есть ли новые карты для включения в атлас
@@ -173,7 +173,7 @@ void AddMapToPlayerAtlas(ref mapEntity)
 
 	pchar.MapsAtlasCount = CountAreasMapFromCharacter();
 	// даем скрытый перк если собрали все карты островов
-	if (sti(pchar.MapsAtlasCount) == MAPS_IN_ATLAS && !CheckCharacterPerk(pchar, "MapMaker"))
+	if (int(pchar.MapsAtlasCount) == MAPS_IN_ATLAS && !CheckCharacterPerk(pchar, "MapMaker"))
 	{
 		SetCharacterPerk(pchar, "MapMaker");
 	}

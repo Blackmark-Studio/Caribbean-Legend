@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "helendrinking_buy_rainbow_1":
 			dialog.text = "Hepsi için elli bin gümüş, efendim.";
-			if (sti(pchar.money) >= 55000) {
+			if (int(pchar.money) >= 55000) {
 				link.l1 = "N-ne kadar dediniz? E-elli bin mi? Alın, kendiniz sayın! Üstüne beş bin daha bahşiş olarak alın. Hadi gidelim!";
 				link.l1.go = "helendrinking_buy_rainbow_yes";
 			}

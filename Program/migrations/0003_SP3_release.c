@@ -438,26 +438,26 @@ int InitStdBladeSP3(int	    ItemIndex,
 	switch (BladeType) 
 	{
 		case "FencingL" :
-			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.5 + 0.2 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(35.0 * (1.0/Curve + Lenght) * (stf(blade.Attack) * 2.0 - 30.0));
+				blade.price  = int(35.0 * (1.0/Curve + Lenght) * (float(blade.Attack) * 2.0 - 30.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingS" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.25 + 0.25 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(25.0 * (Curve + Lenght) * (stf(blade.Attack) * 2.0 - 40.0));
+				blade.price  = int(25.0 * (Curve + Lenght) * (float(blade.Attack) * 2.0 - 40.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingH" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.25 + 0.2 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (stf(blade.Attack) * 2.0 - 50.0));
+				blade.price  = int(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (float(blade.Attack) * 2.0 - 50.0));
 			}	
 			else blade.price = Price;			
 		break;

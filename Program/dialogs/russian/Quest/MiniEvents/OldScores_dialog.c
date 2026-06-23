@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "Говорят, вчера в таверне драка была... Только вот кто дрался - чёрт его разберёт. Моя рожа-то цела. Вроде.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "Дьявол... У меня башка раскалывается, а тут ещё ты со своими вопросами. Не видел я ничего и не слышал. Дал"+GetSexPhrase("","а")+" бы лучше пару песо, чем терзать морского волка вопросами.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Держи сто песо. Смотри не напейся и опять не попади под чары официантки, хех.";
 				link.l1.go = "OS_Matros_7_harizma";

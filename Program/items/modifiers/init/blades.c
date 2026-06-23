@@ -377,6 +377,7 @@ bool InitWeaponModifiers(ref item)
 		{
 			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
 			AddDescriptor(item, "Special", -1);
+			SetModifier(item, M_HP_RECOVERY_MLT, 5.0);
 		}
 		break;
 		case "blade_34":

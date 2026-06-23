@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "meeting":
-		dialog.text = XI_ConvertString(Nations[sti(NPChar.nation)].Name) + " ha puesto una recompensa decente por tu cabeza, tenemos que entregarte a cualquiera de sus colonias y nos pagarán, no importa si estás muerto o vivo.";
+		dialog.text = XI_ConvertString(Nations[int(NPChar.nation)].Name) + " ha puesto una recompensa decente por tu cabeza, tenemos que entregarte a cualquiera de sus colonias y nos pagarán, no importa si estás muerto o vivo.";
 		Link.l1 = "Escucha, te pagaré si me dejas en paz.";
 		Link.l1.go = "Cost_Head";
 		// boal 08.04.04 -->
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Cost_Head2":
-		AddMoneyToCharacter(pchar, -sti(PChar.HunterCost));
+		AddMoneyToCharacter(pchar, -int(PChar.HunterCost));
 
 		AddDialogExitQuest("GoAway_Hunters_Land");
 		DialogExit();
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 
 	case "Cost_Head":
 		dialog.text = "Creo que " + PChar.HunterCost + " pesos nos vendrán bien.";
-		if (makeint(Pchar.money) < sti(PChar.HunterCost))
+		if (int(Pchar.money) < int(PChar.HunterCost))
 		{
 			Link.l1 = "Pero no tengo tal dinero.";
 			Link.l1.go = "NoMoney";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		dialog.text = "Oh no, " + GetSexPhrase("mi querido amigo", "mi bonita chica") + ". Eso no funcionará. Sabemos con certeza que eras dueño del mapa de " + GetName(pchar.questTemp.ReasonToFast.mapIdx, pchar.questTemp.ReasonToFast.map, NAME_GEN) + ". Y era tal avaro que sus cofres estaban a punto de romperse por dentro llenos de dinero. Así que no vamos a irnos con las manos vacías.";
 		link.l1 = "Tienes razón. Los cofres estaban de hecho llenos. Pero no los conseguirás. Puedes intentar visitar esa cueva, un par de cubos agujereados deberían seguir allí.";
 		link.l1.go = "ReasonToFast_THunter_3";
-		if (ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) && ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+		if (ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8) && ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 		{
 			link.l2 = "Tienes razón. Puedes tener tu tesoro. Solo ten en cuenta que no te hará feliz, ya que está manchado con sangre.";
 			link.l2.go = "ReasonToFast_THunter_4";
@@ -219,7 +219,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ReasonToFast_THunter_GoAway":
-		iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+		iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 		if (iTemp > 0)
 		{
 			ReasonToFast_GetTreasure("icollection", iTemp);
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 			PlayStereoSound("interface\important_item.wav");
 		}
 
-		iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+		iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 		if (iTemp > 0)
 		{
 			ReasonToFast_GetTreasure("Chest", iTemp);
@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 	case "ReasonToFastTHunter_Fight":
 		sGroup = "LAND_HUNTER";
 		sTemp = "LandHunter0";
-		iTemp = sti(pchar.HunterCost.Qty);
+		iTemp = int(pchar.HunterCost.Qty);
 		chrDisableReloadToLocation = true;
 		LAi_SetPlayerType(pchar);
 		LAi_SetFightMode(pchar, true);
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 		if (pchar.questTemp.ReasonToFast == "LakeyExitSuccess")
 		{
 			dialog.text = "Joyas que has robado del gobernador.";
-			if (ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8)) >= sti(pchar.questTemp.ReasonToFast.p8) && ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7)) >= sti(pchar.questTemp.ReasonToFast.p7))
+			if (ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8)) >= int(pchar.questTemp.ReasonToFast.p8) && ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7)) >= int(pchar.questTemp.ReasonToFast.p7))
 			{
 				link.l1 = "Tómalo y saluda a " + GetName(NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + ". Dile que nos encontraremos pronto...";
 				link.l1.go = "ReasonToFast_HunterShore12_2";
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ReasonToFast_HunterShore12_2":
-		iTemp = ReasonToFast_CheckTreasureQty("icollection", sti(pchar.questTemp.ReasonToFast.p8));
+		iTemp = ReasonToFast_CheckTreasureQty("icollection", int(pchar.questTemp.ReasonToFast.p8));
 		if (iTemp > 0)
 		{
 			ReasonToFast_GetTreasure("icollection", iTemp);
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 			PlayStereoSound("interface\important_item.wav");
 		}
 
-		iTemp = ReasonToFast_CheckTreasureQty("Chest", sti(pchar.questTemp.ReasonToFast.p7));
+		iTemp = ReasonToFast_CheckTreasureQty("Chest", int(pchar.questTemp.ReasonToFast.p7));
 		if (iTemp > 0)
 		{
 			ReasonToFast_GetTreasure("Chest", iTemp);
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ReasonToFast_HunterShore21":
-		dialog.text = "No de acuerdo a su rango. Arruinaste nuestra operación y perdimos " + sti(pchar.questTemp.ReasonToFast.p10) + " pesos debido a ti. Así que ahora tienes una deuda que pagar.";
+		dialog.text = "No de acuerdo a su rango. Arruinaste nuestra operación y perdimos " + int(pchar.questTemp.ReasonToFast.p10) + " pesos debido a ti. Así que ahora tienes una deuda que pagar.";
 		link.l1 = "Tómalo y saluda a " + GetName(NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + ". Dile que nos encontraremos pronto...";
 		link.l1.go = "ReasonToFast_HunterShore22";
 		link.l2 = GetName(NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_NOM) + " está gravemente equivocado si piensa que voy a sacar las castañas del fuego por él.";
@@ -351,9 +351,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "ReasonToFast_HunterShore22":
-		if (makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p10))
+		if (int(pchar.money) >= int(pchar.questTemp.ReasonToFast.p10))
 		{
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.questTemp.ReasonToFast.p10)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.questTemp.ReasonToFast.p10)));
 			AddQuestRecord("ReasonToFast", "20");
 			AddQuestUserData("ReasonToFast", "sText", "money");
 			AddQuestUserData("ReasonToFast", "sName", GetName(NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_GEN));

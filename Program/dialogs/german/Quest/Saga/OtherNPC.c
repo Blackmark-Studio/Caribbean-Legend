@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_1_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_MoveCharacter(NPChar, "EnemyFight");
 			LAi_group_Attack(NPChar, Pchar);
 			LAi_group_SetCheck("EnemyFight", "Saga_KillGonsalesA");
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_3":
 			dialog.text = "Ha-ha, schau dir nur dieses unschuldige Lamm an! Ich schlage vor, du deckst meine Verluste, da du der Schuldige dafür bist. Ich werde mit einer Summe von fünfzehntausend Pesos zufrieden sein. Und ich werde so tun, als wärst du nie in meinem Haus gewesen.";
-			if (sti(pchar.money) >= 15000)
+			if (int(pchar.money) >= 15000)
 			{
 				link.l1 = "Wie nachtragend ihr alle seid... Hier ist euer Geld. Und denkt daran, wenn jemand herausfindet, dass ich in dieser Stadt war, komme ich zurück für euch.";
 				link.l1.go = "GonsalesA_3_4";
@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesA_3_6":
 			DialogExit();
-			iTemp = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
+			iTemp = int(pchar.rank) + MOD_SKILL_ENEMY_RATE - 2;
 			for (i=1; i<=2; i++)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("SpSold"+i, "sold_" + NationShortName(SPAIN) + "_" + (rand(1) + 1), "man", "man", iTemp, SPAIN, 0, true, "soldier"));
@@ -271,7 +271,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ich sehe, dass dir mein Entermesser gefällt. Ich kann es dir verkaufen, wenn du willst. Ich werde nicht viel verlangen, ich sterbe vor Verlangen nach etwas Rum und meine Taschen sind leer.";
 			link.l1 = "Und warum zum Teufel sollte ich es brauchen? Der Forest Devil hat mich gebeten, dir seine besten Grüße zu übermitteln.";
 			link.l1.go = "GonsalesB_1_1";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l2 = "Nun, ja. Du hast wirklich einen feinen Säbel. Wie viel?";
 				link.l2.go = "GonsalesB_2_1";
@@ -353,7 +353,7 @@ void ProcessDialogEvent()
 		
 		case "GonsalesB_3_4":
 			dialog.text = "In der Mitte der Stadt, die du einst ausgeraubt hast? Du kannst nichts tun. Also, um es abzuschließen... werden wir es so machen: du gibst mir... sagen wir, zehntausend Pesos jetzt sofort. Ich denke, das wird für einen Monat ausreichen. Und du gehst deinen Weg! Ob zu deinem geliebten Henry, zu Svenson oder zu jedem anderen Teufel deiner Wahl... Und wenn du es nicht tust, muss ich nur schreien, und sie werden dich in eine speziell vorbereitete persönliche Kammer voller Folterwerkzeuge schleifen.";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "Verdammt noch mal, nimm deine zehntausend und verschwinde aus meinen Augen! Und Gott bewahre, ich sehe dich noch einmal.";
 				link.l1.go = "GonsalesB_3_5";
@@ -405,14 +405,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GonsalesB_3_10":
-			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
+			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && int(pchar.reputation.nobility) < 48)
 			{
 				dialog.text = "Teufel! Charlie Prince bietet mir selbst an, seiner Crew beizutreten! Verdammt, ich stimme zu! Gib mir meine Klinge zurück und zehntausend Pesos. Hätte nie gedacht, dass es so kommen würde!";
 				link.l1 = "Hier. Und halt den Mund: Niemand in dieser Stadt muss wissen, wer ich bin, verstanden?";
 				link.l1.go = "GonsalesB_3_11";
 				break;
 			}
-			if(makeint(pchar.reputation.nobility) > 47)
+			if(int(pchar.reputation.nobility) > 47)
 			{
 				dialog.text = "Nein. Du magst ein anständiger Kapitän sein, aber mir scheint, du bist ein bisschen zu steif. Ja, du hast den Spaniern einmal Angst eingejagt, indem du einen waghalsigen Überfall auf Cartagena durchgeführt hast - aber all das war nur mit der Hilfe von Marcus Tyrex. Du hast nicht den Mumm, ehrliches Plündern alleine zu machen. Also, her mit der Knete!";
 			}
@@ -420,7 +420,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Nein. Du bist sicherlich ein berüchtigter Pirat, aber als Kapitän scheinst du nicht sehr beeindruckend zu sein. Du hast es nur mit Hilfe von Marcus Tyrex geschafft, die Kolonie zu plündern - du würdest dich nicht einmal trauen, alleine eine heruntergekommene Schaluppe zu entern. Also, rück das Geld heraus!";
 			}
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				link.l1 = "Verdammt, nimm deine zehntausend und verschwinde aus meinen Augen! Und Gott bewahre, ich sehe dich wieder.";
 				link.l1.go = "GonsalesB_3_5";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 		case "saga_trap_1":
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			int n = makeint(MOD_SKILL_ENEMY_RATE/3);
+			int n = int(MOD_SKILL_ENEMY_RATE/3);
 			for (i=1; i<=3+n; i++)
 			{	
 				sld = characterFromId("sagatrap_sold_"+i);
@@ -1555,8 +1555,8 @@ void ProcessDialogEvent()
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "EnemyFight");
 			}
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
-			int iScl = 25+2*sti(pchar.rank);
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
+			int iScl = 25+2*int(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
 			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
@@ -1583,7 +1583,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ich möchte Ihnen Unterstützung in Ihrem herausfordernden Unterfangen anbieten. Schau hier! Ein magischer Becher und eine verbotene Salbe. Der Becher wird Ihnen in Trinksachen helfen, und die Salbe - in Liebesangelegenheiten. Was werden Sie wählen? Nur zweitausend!";
 			link.l1 = "Ich brauche nichts - Ich habe deiner Sorte schon einen Haufen Silber gegeben.";
 			link.l1.go = "helendrinking_gypsy_refuse";
-			if (sti(pchar.money) >= 2000) {
+			if (int(pchar.money) >= 2000) {
 				link.l2 = "Verbotene Salbe, sagst du? Nun, ich bin kein Heiliger, das gebe ich zu. Gib sie her.";
 				link.l2.go = "helendrinking_gypsy_fuck";
 				link.l3 = "Einen Krug? Sehe ich aus wie ein Säufer? Nun, wer will ich hier täuschen... Ich nehme ihn!";
@@ -1623,7 +1623,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "totem_03");
 			Log_Info("Talisman 'Cupid's Balm' acquired!");
 			PlaySound("interface\important_item.wav");
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
@@ -2071,7 +2071,7 @@ void ProcessDialogEvent()
 		case "francois_sit_kill":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 1;
 			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
@@ -2080,7 +2080,7 @@ void ProcessDialogEvent()
 		case "francois_sit_taunt":
 			DialogExit();
 			
-			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+			pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);

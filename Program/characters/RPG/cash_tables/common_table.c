@@ -81,7 +81,7 @@ void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bH
 		return;
 	}
 
-	int skillN = sti(chr.Skill.(skillName));
+	int skillN = int(chr.Skill.(skillName));
 	
 	if (!bEnableEffects)
 	{
@@ -127,7 +127,7 @@ void CT_SetSpecial(ref chr, aref table, aref itemsTable, string skillName, bool 
 	}
 
 	int equipN = 0;
-	int skillN = sti(chr.SPECIAL.(skillName));
+	int skillN = int(chr.SPECIAL.(skillName));
 	modificator.base = skillN;
 
 	// Здоровье

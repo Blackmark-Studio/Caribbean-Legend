@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 
 	case "Longway_JacobGo":
 		// Лонгвэя - в офицеры
-		npchar.quest.OfficerPrice = sti(pchar.rank) * 500;
+		npchar.quest.OfficerPrice = int(pchar.rank) * 500;
 		Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
 		npchar.OfficerWantToGo.DontGo = true; // не пытаться уйти
 		npchar.HalfImmortal = true;			  // полубессмертен
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		}
 		PChar.quest.Munity = "Deads";
 		LAi_LocationFightDisable(&Locations[FindLocation("Ship_deck")], false);
-		if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG) // если сам на Мейфенг
+		if (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG) // если сам на Мейфенг
 		{
 			pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 			pchar.Ship.name = "Boat";
@@ -138,10 +138,10 @@ void ProcessDialogEvent()
 				if (iTemp > 0)
 				{
 					sld = GetCharacter(iTemp);
-					if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG)
+					if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG)
 					{
 						pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-						sld = GetCharacter(sti(pchar.questTemp.HWIC.Holl.CompanionIndex));
+						sld = GetCharacter(int(pchar.questTemp.HWIC.Holl.CompanionIndex));
 						RemoveCharacterCompanion(PChar, sld);
 						AddPassenger(PChar, sld, false);
 					}
@@ -179,7 +179,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		DeleteAttribute(npchar, "LifeDay");
 		DeleteAttribute(npchar, "HalfImmortal");
-		npchar.quest.OfficerPrice = sti(pchar.rank) * 500;
+		npchar.quest.OfficerPrice = int(pchar.rank) * 500;
 		npchar.OfficerWantToGo.DontGo = true;
 		npchar.loyality = MAX_LOYALITY;
 		AddPassenger(pchar, npchar, false);
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		pchar.quest.RemoveLongwayOver.over = "yes"; // снять таймер
 		pchar.quest.RemoveLongwayTimer.win_condition.l1 = "Timer";
-		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.day = GetAddingDataDay(0, 0, 10);
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 10);
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.year = GetAddingDataYear(0, 0, 10);
@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		pchar.quest.RemoveLongwayOver.over = "yes"; // снять таймер
 		pchar.quest.RemoveLongwayTimer.win_condition.l1 = "Timer";
-		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.hour = sti(GetTime());
+		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.hour = int(GetTime());
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.day = GetAddingDataDay(0, 0, 10);
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 10);
 		pchar.quest.RemoveLongwayTimer.win_condition.l1.date.year = GetAddingDataYear(0, 0, 10);
@@ -552,7 +552,7 @@ void ProcessDialogEvent()
 		Link.l2.go = "Boal_Follow";
 		if (CheckAttribute(NPChar, "equip.gun"))
 		{
-			if (CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+			if (CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 			{
 				Link.l3 = "Cambia el tipo de munición para tus armas de fuego.";
 				Link.l3.go = "SetGunBullets";
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(NPChar, "equip.musket"))
 		{
-			if (CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+			if (CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 			{
 				Link.l4 = "Cambia el tipo de munición para tu mosquete.";
 				Link.l4.go = "SetMusketBullets";
@@ -577,7 +577,7 @@ void ProcessDialogEvent()
 		sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		makearef(rType, rItm.type);
-		for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+		for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
 			sBullet = rItm.type.(sAttr).bullet;
@@ -590,7 +590,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SetGunBullets2":
-		i = sti(NPChar.SetGunBullets) + 1;
+		i = int(NPChar.SetGunBullets) + 1;
 		sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		sAttr = "t" + i;
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		makearef(rType, rItm.type);
-		for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+		for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
 			sBullet = rItm.type.(sAttr).bullet;
@@ -621,7 +621,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SetMusketBullets2":
-		i = sti(NPChar.SetMusketBullets) + 1;
+		i = int(NPChar.SetMusketBullets) + 1;
 		sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		sAttr = "t" + i;
@@ -678,7 +678,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "TargetDistance_1":
-		iTemp = sti(dialogEditStrings[3]);
+		iTemp = int(dialogEditStrings[3]);
 		if (iTemp < 0)
 		{
 			dialog.text = "¿Qué queréis decir, Lord Capitán?";
@@ -760,7 +760,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "Longway_officer";
 			npchar.quest.SharlieEpilog_FarewellOfficers = true;
 			pchar.questTemp.SharlieEpilog_Longway = true;
-			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
+			pchar.questTemp.SharlieEpilog_Friends = int(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 
 	}

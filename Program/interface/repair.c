@@ -196,7 +196,7 @@ void SetDescription()
 {
  	if(GetCurrentNode() == "SHIPS_SCROLL")
 	{	
-		string attributeName = attributeName = "pic" + (nCurScrollNum+1);
+		string attributeName = "pic" + (nCurScrollNum+1);
 		if(CheckAttribute(&GameInterface, "SHIPS_SCROLL." + attributeName))
 		{
 			int iCharacter = GameInterface.SHIPS_SCROLL.(attributeName).companionIndex;
@@ -205,7 +205,7 @@ void SetDescription()
 			xi_refCharacter = characterFromID(sChrId);
 		}
 	}
-	SetNewPicture("MAIN_CHARACTER_PICTURE", "interfaces\le\portraits\256\face_" + its(xi_refCharacter.FaceId) + ".tga");
+	SetNewPicture("MAIN_CHARACTER_PICTURE", "interfaces\le\portraits\256\face_" + string(xi_refCharacter.FaceId) + ".tga");
 
 	if (CheckAttribute(xi_refCharacter, "ship.name"))
 	{
@@ -225,9 +225,9 @@ void ProcessFrame()
 {
 	if(GetCurrentNode() == "SHIPS_SCROLL")
 	{
-		if(sti(GameInterface.SHIPS_SCROLL.current)!=nCurScrollNum)
+		if(int(GameInterface.SHIPS_SCROLL.current)!=nCurScrollNum)
 		{			
-			nCurScrollNum = sti(GameInterface.SHIPS_SCROLL.current);
+			nCurScrollNum = int(GameInterface.SHIPS_SCROLL.current);
 			SetDescription();
 			SetButtonsAccess();
 			
@@ -257,23 +257,23 @@ int GetMaxRepairTime()
 		
 			if(CheckAttribute(chr,"repair"))
 			{
-				tHull = sti(chr.repair.time_hull);
-				tMast = sti(chr.repair.time_mast);
-				tSail = sti(chr.repair.time_sail);
+				tHull = int(chr.repair.time_hull);
+				tMast = int(chr.repair.time_mast);
+				tSail = int(chr.repair.time_sail);
 				
 //				trace("tHull " + tHull + " tMast " + tMast + " tSail " + tSail + " chr.id " + chr.id);
 
 				if (tSail > 0 || tHull > 0 || tMast > 0)
 				{
 					chr.repair.totaltime = tHull/3.0 + tSail/5.0 + tMast;
-					chr.repair.totaltime = makeint(stf(chr.repair.totaltime) * ( 1.75 - GetCrewQuantity(chr)/GetOptCrewQuantity(chr)));
+					chr.repair.totaltime = int(float(chr.repair.totaltime) * ( 1.75 - GetCrewQuantity(chr)/GetOptCrewQuantity(chr)));
 
 //					trace( "totaltime " + totaltime);
 //					trace( "CrewQuantity : " + GetCrewQuantity(chr) + " OptCrewQuantity : " + GetOptCrewQuantity(chr));
 //					trace( "GetCrewQuantity()/GetOptCrewQuantity() " + GetCrewQuantity(chr)/GetOptCrewQuantity(chr));
 //					trace( "totalTime " +  chr.repair.totaltime + " chr.id " + chr.id); 
 
-					if(makeint(stf(chr.repair.totaltime)) > totalTime) totalTime = makeint(stf(chr.repair.totaltime));
+					if(int(float(chr.repair.totaltime)) > totalTime) totalTime = int(float(chr.repair.totaltime));
 					if(totalTime < 1) totalTime = 1;
 				}
 			}
@@ -285,8 +285,8 @@ int GetMaxRepairTime()
 
 int SetSailMaximum(ref rChar)
 {
-	int iSP = makeint(GetAllSailsDamagePercent(rChar));	
-	if(sti(rChar.repair.mast) == GetShipFallMastsQuantity(rChar)) iSP = 100;		
+	int iSP = int(GetAllSailsDamagePercent(rChar));
+	if(int(rChar.repair.mast) == GetShipFallMastsQuantity(rChar)) iSP = 100;
 	return iSP;
 }
 
@@ -340,10 +340,10 @@ void GetLimits(ref chr)
 {
 	int i;
 	
-	int hp = MakeInt(GetHullPercent(chr));
-	int sp = makeint(stf(chr.ship.sailstatus.sailpow) - stf(chr.ship.sailstatus.saildmg));
+	int hp = int(GetHullPercent(chr));
+	int sp = int(float(chr.ship.sailstatus.sailpow) - float(chr.ship.sailstatus.saildmg));
 	
-	int mp = GetShipMastsQuantity(chr));
+	int mp = GetShipMastsQuantity(chr);
 	int mf = GetShipFallMastsQuantity(chr);
 	
 	// hull
@@ -353,13 +353,13 @@ void GetLimits(ref chr)
 	
 	// sail
 	i = cur_sAvail / GetSailRepairMathQty(chr, 1);
-	if(i + sp >= sti(chr.repair.sailmax)) 	chr.repair.sail_limit = sti(chr.repair.sailmax);
+	if(i + sp >= int(chr.repair.sailmax)) 	chr.repair.sail_limit = int(chr.repair.sailmax);
 	else 									chr.repair.sail_limit = i + sp;	
 		
 	// mast
 	float 	repHMathQ, repSMathQ;
-	repHMathQ = makeint(GetMastRepairMathQtyPPP(chr, mf));
-	repSMathQ = makeint(GetMastRepairMathQtySPP(chr, mf, 100 - sti(chr.repair.sailmax)));
+	repHMathQ = int(GetMastRepairMathQtyPPP(chr, mf));
+	repSMathQ = int(GetMastRepairMathQtySPP(chr, mf, 100 - int(chr.repair.sailmax)));
 	if(cur_sAvail >= repSMathQ && cur_pAvail >= repHMathQ)
 	{
 		chr.repair.mast_limit = mp + "/" + mp; // :)
@@ -368,13 +368,13 @@ void GetLimits(ref chr)
 
 void RepairStatShow(ref chr, bool isVisible)
 {
-    int hp = MakeInt(GetHullPercent(chr));
-	int sp = makeint(stf(chr.ship.sailstatus.sailpow) - stf(chr.ship.sailstatus.saildmg));	
+    int hp = int(GetHullPercent(chr));
+	int sp = int(float(chr.ship.sailstatus.sailpow) - float(chr.ship.sailstatus.saildmg));
 	int mp = GetShipMastsQuantity(chr) - GetShipFallMastsQuantity(chr);
 	
-	int rHull = sti(chr.repair.hull);
-	int rMast = sti(chr.repair.mast); 
-	int rSail = sti(chr.repair.sail);
+	int rHull = int(chr.repair.hull);
+	int rMast = int(chr.repair.mast);
+	int rSail = int(chr.repair.sail);
 
 	GetLimits(chr);
 	
@@ -389,7 +389,7 @@ void RepairStatShow(ref chr, bool isVisible)
 			SendMessage( &GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_H", 8, 0, argb(255,255,255,255) );
 			
 		SetFormatedText("REPAIR_QTY_S", (sp + rSail) + "%");
-		if((sp + rSail) == sti(chr.repair.sailmax))
+		if((sp + rSail) == int(chr.repair.sailmax))
 			SendMessage( &GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_S", 8, 0, argb(255,128,255,255) );
 		else	
 			SendMessage( &GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_S", 8, 0, argb(255,255,255,255) );
@@ -429,31 +429,31 @@ void RepairMatherialShow(ref chr, bool isVisible)
     int st = GetCharacterShipType(chr);
 	string sText;
 		
-	int hp = MakeInt(GetHullPercent(chr));	
-	int sp = makeint(stf(chr.ship.sailstatus.sailpow) - stf(chr.ship.sailstatus.saildmg));
+	int hp = int(GetHullPercent(chr));
+	int sp = int(float(chr.ship.sailstatus.sailpow) - float(chr.ship.sailstatus.saildmg));
 	int mp = GetShipMastsQuantity(chr) - GetShipFallMastsQuantity(chr);
 	
-	int rHull = sti(chr.repair.hull);
-	int rMast = sti(chr.repair.mast); 
-	int rSail = sti(chr.repair.sail);
+	int rHull = int(chr.repair.hull);
+	int rMast = int(chr.repair.mast);
+	int rSail = int(chr.repair.sail);
 	
-	chr.repair.preq = makeint(GetHullRepairMathQty(chr, rHull) + GetMastRepairMathQtyPPP(chr, rMast));
-	chr.repair.sreq = makeint(GetSailRepairMathQty(chr, rSail) + GetMastRepairMathQtySPP(chr, rMast, 100 - sti(chr.repair.sailmax)));
+	chr.repair.preq = int(GetHullRepairMathQty(chr, rHull) + GetMastRepairMathQtyPPP(chr, rMast));
+	chr.repair.sreq = int(GetSailRepairMathQty(chr, rSail) + GetMastRepairMathQtySPP(chr, rMast, 100 - int(chr.repair.sailmax)));
 	
-	chr.repair.preq_max = makeint(GetHullRepairMathQty(chr, 100 - hp) + GetMastRepairMathQtyPPP(chr, rMast));
-	chr.repair.sreq_max = makeint(GetSailRepairMathQty(chr, 100 - sp));
+	chr.repair.preq_max = int(GetHullRepairMathQty(chr, 100 - hp) + GetMastRepairMathQtyPPP(chr, rMast));
+	chr.repair.sreq_max = int(GetSailRepairMathQty(chr, 100 - sp));
 	
 	if(isVisible)
 	{	
-		sText = XI_ConvertString("RepairAvailable") + ":\n" + makeint(cur_pAvail) + "/" + pAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n" + makeint(GetHullRepairMathQty(chr, 100 - hp)) + XI_ConvertString("pcs");
+		sText = XI_ConvertString("RepairAvailable") + ":\n" + int(cur_pAvail) + "/" + pAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n" + int(GetHullRepairMathQty(chr, 100 - hp)) + XI_ConvertString("pcs");
 		SetFormatedText("REPAIR_QTY_HULL_STR", sText);
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_HULL_STR", 5 );
 		
-		sText = XI_ConvertString("RepairAvailable") + ":\n" + makeint(cur_pAvail) + "/" + pAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n " + makeint(GetMastRepairMathQtyPPP(chr, GetShipFallMastsQuantity(chr))) + XI_ConvertString("pcs");
+		sText = XI_ConvertString("RepairAvailable") + ":\n" + int(cur_pAvail) + "/" + pAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n " + int(GetMastRepairMathQtyPPP(chr, GetShipFallMastsQuantity(chr))) + XI_ConvertString("pcs");
 		SetFormatedText("REPAIR_QTY_MAST_STR", sText);
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_MAST_STR", 5 );
 		
-		sText = XI_ConvertString("RepairAvailable") + ":\n" + makeint(cur_sAvail) + "/" + sAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n " + makeint(GetSailRepairMathQty(chr, 100 - sp)) + XI_ConvertString("pcs");
+		sText = XI_ConvertString("RepairAvailable") + ":\n" + int(cur_sAvail) + "/" + sAvail + " " + XI_ConvertString("pcs") + "\n" + XI_ConvertString("RepairNeed") + "\n" + XI_ConvertString("RepairFull") + ":\n " + int(GetSailRepairMathQty(chr, 100 - sp)) + XI_ConvertString("pcs");
 		SetFormatedText("REPAIR_QTY_SAIL_STR", sText);
 		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"REPAIR_QTY_SAIL_STR", 5 );
 	}
@@ -476,7 +476,7 @@ void SetButtonsAccess()
         if( cn > 0 )
         {
 			chr = GetCharacter(cn);
-			if (GetHullPercent(chr) < 100 || GetSailPercent(chr) < sti(chr.repair.sailmax) || GetShipFallMastsQuantity(chr) > 0)
+			if (GetHullPercent(chr) < 100 || GetSailPercent(chr) < int(chr.repair.sailmax) || GetShipFallMastsQuantity(chr) > 0)
 			{
 				bOk = true; break;			
 			}
@@ -516,13 +516,13 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 {
     int st = GetCharacterShipType(chr);
     int i, j;
-    int hp = MakeInt(GetHullPercent(chr));
-	int sp = makeint(stf(chr.ship.sailstatus.sailpow) - stf(chr.ship.sailstatus.saildmg));
+    int hp = int(GetHullPercent(chr));
+	int sp = int(float(chr.ship.sailstatus.sailpow) - float(chr.ship.sailstatus.saildmg));
 	int mp = GetShipMastsQuantity(chr) - GetShipFallMastsQuantity(chr);
 	
-	int rHull = sti(chr.repair.hull);
-	int rMast = sti(chr.repair.mast); 
-	int rSail = sti(chr.repair.sail);
+	int rHull = int(chr.repair.hull);
+	int rMast = int(chr.repair.mast);
+	int rSail = int(chr.repair.sail);
 	
 	float repHMathQ, repSMathQ;
 	
@@ -531,7 +531,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 		j = rHull;
 		if (add > 0)
 		{
-			if(cur_pAvail >= makeint(GetHullRepairMathQty(chr, rHull + add)))
+			if(cur_pAvail >= int(GetHullRepairMathQty(chr, rHull + add)))
 		    {
 		        rHull += add;
 		    }
@@ -557,9 +557,9 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 		j = rSail;
 	    if (add > 0)
 		{							
-			if((rSail + add) <= sti(chr.repair.sailmax))
+			if((rSail + add) <= int(chr.repair.sailmax))
 			{
-				if(cur_sAvail >= makeint(GetSailRepairMathQty(chr, rSail + add)))
+				if(cur_sAvail >= int(GetSailRepairMathQty(chr, rSail + add)))
 				{
 					rSail += add;
 				}
@@ -568,7 +568,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 					i = cur_sAvail / GetSailRepairMathQty(chr, 1);
 					rSail += i;
 				}
-				if ((rSail + sp) > sti(chr.repair.sailmax))  rSail = sti(chr.repair.sailmax) - sp;
+				if ((rSail + sp) > int(chr.repair.sailmax))  rSail = int(chr.repair.sailmax) - sp;
 			}				
 	    }
 	    else
@@ -588,8 +588,8 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 			j = rMast;
 			if (add > 0)
 			{				
-				repHMathQ = makeint(GetMastRepairMathQtyPPP(chr, rMast + add));
-				repSMathQ = makeint(GetMastRepairMathQtySPP(chr, rMast + add, 100 - sti(chr.repair.sailmax)));
+				repHMathQ = int(GetMastRepairMathQtyPPP(chr, rMast + add));
+				repSMathQ = int(GetMastRepairMathQtySPP(chr, rMast + add, 100 - int(chr.repair.sailmax)));
 				if(cur_sAvail >= repSMathQ && cur_pAvail >= repHMathQ)
 				{
 					rMast += add;
@@ -604,7 +604,7 @@ void ClickRepairArror(string _type, int add, ref chr, bool isVisible)
 			chr.repair.mast 		= rMast;
 			chr.repair.time_mast 	= rMast * (12-GetCharacterShipClass(chr));
 			cur_pAvail -= GetMastRepairMathQtyPPP(chr, rMast - j);		
-			cur_sAvail -= GetMastRepairMathQtySPP(chr, rMast - j, 100 - sti(chr.repair.sailmax));	
+			cur_sAvail -= GetMastRepairMathQtySPP(chr, rMast - j, 100 - int(chr.repair.sailmax));
 		}
 	}	
 	RepairStatShow(chr, isVisible);
@@ -624,13 +624,13 @@ void RepairOk()
 			chr = GetCharacter(cn);
 
 			int st = GetCharacterShipType(chr);
-			int hp = MakeInt(GetHullPercent(chr));
-			int sp = MakeInt(GetSailPercent(chr));
+			int hp = int(GetHullPercent(chr));
+			int sp = int(GetSailPercent(chr));
 			float ret;
 			
-			int rHull = sti(chr.repair.hull);
-			int rMast = sti(chr.repair.mast); 
-			int rSail = sti(chr.repair.sail);
+			int rHull = int(chr.repair.hull);
+			int rMast = int(chr.repair.mast);
+			int rSail = int(chr.repair.sail);
 		
 			if(rHull == 0 && rMast == 0 && rSail == 0) continue;
 		
@@ -638,14 +638,14 @@ void RepairOk()
 			{
 				chr.repair.time_hull = rHull * (9-GetCharacterShipClass(chr));
 				AddCharacterExpToSkill(chr, "Repair", (rHull * (8-GetCharacterShipClass(chr)) / 2.5));
-				ret = ProcessHullRepair(chr, stf(rHull));
+				ret = ProcessHullRepair(chr, float(rHull));
 			}
 		
 			if (rSail > 0)
 			{
 				chr.repair.time_sail = rSail * (10-GetCharacterShipClass(chr));
 				AddCharacterExpToSkill(chr, "Repair", (rSail * (8-GetCharacterShipClass(chr)) / 3.5));
-				ret = ProcessSailRepair(chr, stf(rSail));		
+				ret = ProcessSailRepair(chr, float(rSail));
 			}
 		
 			if (rMast > 0)
@@ -662,14 +662,14 @@ void RepairOk()
 				DeleteAttribute(chr, "ship.blots");		
 			}
 		
-			if ((sp + rSail) >= sti(chr.repair.sailmax))
+			if ((sp + rSail) >= int(chr.repair.sailmax))
 			{
 				chr.ship.sp = GetCharacterShipSP(chr);
 				DeleteAttribute(chr, "ship.sails");
 			}
 		
-			if(sti(chr.repair.preq) > 0) RemoveCharacterGoods(pchar, GOOD_PLANKS,    sti(chr.repair.preq));
-			if(sti(chr.repair.sreq) > 0) RemoveCharacterGoods(pchar, GOOD_SAILCLOTH, sti(chr.repair.sreq));
+			if(int(chr.repair.preq) > 0) RemoveCharacterGoods(pchar, GOOD_PLANKS,    int(chr.repair.preq));
+			if(int(chr.repair.sreq) > 0) RemoveCharacterGoods(pchar, GOOD_SAILCLOTH, int(chr.repair.sreq));
 		}
 	}
 
@@ -689,7 +689,7 @@ void RepairAll()
 	{
 		ClickRepairArror("mast", GetShipFallMastsQuantity(xi_refCharacter), xi_refCharacter, true);
 	}			
-	ClickRepairArror("sail", sti(xi_refCharacter.repair.sailmax), xi_refCharacter, true);    
+	ClickRepairArror("sail", int(xi_refCharacter.repair.sailmax), xi_refCharacter, true);
 }
 
 void RepairAllSquadron()
@@ -714,7 +714,7 @@ void RepairAllSquadron()
 			{
 				ClickRepairArror("mast", GetShipFallMastsQuantity(chr), chr, isVisible);
 			}	
-			ClickRepairArror("sail", sti(chr.repair.sailmax), chr, true);    
+			ClickRepairArror("sail", int(chr.repair.sailmax), chr, true);
 		}
 	}	
 }

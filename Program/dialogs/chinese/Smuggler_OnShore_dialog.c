@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 			{
 //================ METRO ====================
 				// 如果已付款, 则交谈, 否则送走
-				if (CheckAttribute(PChar, "GenQuest.contraTravel.payed") && sti(PChar.GenQuest.contraTravel.payed) == true)
+				if (CheckAttribute(PChar, "GenQuest.contraTravel.payed") && int(PChar.GenQuest.contraTravel.payed) == true)
 				{
 					dialog.Text = RandPhraseSimple("啊, 终于来了! 我们一直在等你。 走吧, 该起航了。 ", "我们快点。 到处都是巡逻队。 我们得离开这里! ");
 					// 按总督命令, 剿灭走私者, 仅这个分支。 
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// 如果招募了同伴或自己买了船 :), 去花园..
-					if (GetCompanionQuantity(PChar) > 1 || sti(PChar.ship.type) != SHIP_NOTUSED)
+					if (GetCompanionQuantity(PChar) > 1 || int(PChar.ship.type) != SHIP_NOTUSED)
 					{
 						dialog.Text = RandPhraseSimple("你是谁? 我们在等一名乘客, 不是船长。 ", "滚蛋! 在你处理掉你的船之前别回来。 ");
 						Link.l1 = "该死! ";
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// 类似帮忙击退, 自己人... 
-					if (CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight") && sti(PChar.GenQuest.contraTravel.PatrolFight) == true)
+					if (CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight") && int(PChar.GenQuest.contraTravel.PatrolFight) == true)
 					{
 						if (chrDisableReloadToLocation) // 战斗还在进行
 						{
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 					Link.l2 = "我这就走。 ";
 					Link.l2.go = "Exit";
 					// 这是巡逻队... 
-					if (GetSummonSkillFromNameToOld(Pchar, SKILL_SNEAK) < frandSmall(13.0*(1.0 - pow(0.9, sti(PChar.rank)))) && !CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight"))
+					if (GetSummonSkillFromNameToOld(Pchar, SKILL_SNEAK) < frandSmall(13.0*(1.0 - pow(0.9, int(PChar.rank)))) && !CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight"))
 					{
 						AddDialogExitQuest("Rand_ContrabandInterruption");
 						PChar.GenQuest.contraTravel.PatrolFight = true;
@@ -144,10 +144,10 @@ void ProcessDialogEvent()
 						PChar.GenQuest.contraTravel.ship = true;
 						PChar.quest.Munity = "";  // 离开甲板的标志
 						
-						SetLaunchFrameFormParam(".. " + sti(Pchar.GenQuest.contraTravel.destination.days) + " 天过去了。 " + NewStr() + "走私者的甲板。 ",
+						SetLaunchFrameFormParam(".. " + int(Pchar.GenQuest.contraTravel.destination.days) + " 天过去了。 " + NewStr() + "走私者的甲板。 ",
 						                        "Reload_To_Location", 0.1, 5.0);
                         bQuestCheckProcessFreeze = true;
-						WaitDate("", 0, 0, sti(Pchar.GenQuest.contraTravel.destination.days), rand(20), 0);
+						WaitDate("", 0, 0, int(Pchar.GenQuest.contraTravel.destination.days), rand(20), 0);
 						bQuestCheckProcessFreeze = false;
 						MakeCloneShipDeck(refStore, true); // 替换甲板
 						SetLaunchFrameReloadLocationParam("Ship_deck", "reload", "reload1", "Travel_talkOnDeck");
@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cancellation":
-            if (sti(Pchar.quest.Contraband.Counter) == 0)
+            if (int(Pchar.quest.Contraband.Counter) == 0)
             {
 				dialog.Text = "取消? 你在开玩笑吧! ";
 				Link.l1 = "我是认真的。 ";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cancellation_1":
-			if( makeint(Pchar.rank) <= 3 || GetSummonSkillFromNameToOld(Pchar, SKILL_FENCING) <= 5 || GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) <= 5 )
+			if( int(Pchar.rank) <= 3 || GetSummonSkillFromNameToOld(Pchar, SKILL_FENCING) <= 5 || GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) <= 5 )
 			{
 				if(Rand(1) == 1)
 				{
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 
 		case "GenQuestKillContraband_1":
 			// "地铁"的计数器... 
-			if(CheckAttribute(PChar, "GenQuest.contraTravel.active") && sti(PChar.GenQuest.contraTravel.active) == true)
+			if(CheckAttribute(PChar, "GenQuest.contraTravel.active") && int(PChar.GenQuest.contraTravel.active) == true)
 			{
 				Statistic_AddValue(PChar, "contr_TravelKill", 1);
 				ChangeContrabandRelation(pchar, -20); // 走私者声誉下降
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 
 		case "Exchange":
 			// 开始交易 -->
-            if(FindContrabandGoods(Pchar) == -1 && sti(Pchar.quest.Contraband.Counter) == 0)
+            if(FindContrabandGoods(Pchar) == -1 && int(Pchar.quest.Contraband.Counter) == 0)
             {
 				dialog.Text = "你在这里干什么? 你没什么可卖的! 你货舱里的所有货物都可以在镇上合法出售! ";
 				Link.l1 = "这次运气不好。 ";
@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// 设置环境 -->
-				if (sti(Pchar.quest.Contraband.Counter) == 0) // 还未交易
+				if (int(Pchar.quest.Contraband.Counter) == 0) // 还未交易
                 {
                     if(hrand(11) == 3)
                     {
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 				dialog.text = "好吧, 让我们看看你带了什么。 ";										  
 				Link.l1 = "给我们看看你带了什么。 ";
 				Link.l1.go = "Exchange1"; 
-				if (sti(Pchar.quest.Contraband.Counter) == 0)
+				if (int(Pchar.quest.Contraband.Counter) == 0)
 				{
 					Link.l99 = "我改变主意了。 ";
 					Link.l99.go = "Cancellation";
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 			// belamour传奇版 危险货物
 			pchar.GenQuest.Smugglerzpq = npchar.id;
 			
-			LaunchContrabandTrade(CharacterFromId(pchar.GenQuest.Contraband.SmugglerId),  sti(pchar.FindContrabandGoods.StoreIdx));	
+			LaunchContrabandTrade(CharacterFromId(pchar.GenQuest.Contraband.SmugglerId),  int(pchar.FindContrabandGoods.StoreIdx));
 		break;				
 		// belamour传奇版 危险货物 -->
 		case "SmugglerZPQ":
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 			dialog.text = "在这个世界上一切都需要钱, 船长, 甚至信息。 我甚至会说, 尤其是信息。 我提议这样: 我会把这个消息以象征性的... 比如说五千比索的价格告诉你。 你觉得可以吗? ";										  
 			Link.l1 = "为了关于在哪里可以高价出售火药的可疑信息支付五千比索? 不, 我想没有这个消息我也能活下去。 ";
 			Link.l1.go = "SmugglerZPQ_NM"; 
-			if(sti(pchar.money) > 4999)
+			if(int(pchar.money) > 4999)
 			{
 				Link.l2 = "我想这笔交易我能赚的不止五千比索。 好吧, 我同意。 ";
 				Link.l2.go = "SmugglerZPQ_4";

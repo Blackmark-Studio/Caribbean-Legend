@@ -40,13 +40,13 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
 		case "First time":			
             NextDiag.TempNode = "First time";
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
 				dialog.text = RandPhraseSimple("Szpieg! Złóż broń i idź za mną!","Wrogi agent! Łapać "+GetSexPhrase("go","ją")+"!");
 				link.l1 = RandPhraseSimple("Chyba cię coś boli!","Spadaj!");
@@ -55,20 +55,20 @@ void ProcessDialogEvent()
 			else
 			{
 				// eddy. проверяем, не казачок ли. -->
-				if (GetRelation2BaseNation(sti(npchar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
+				if (GetRelation2BaseNation(int(npchar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE && STH_GetColonyStatus(NPChar.City) != STH_LEGAL)
 				{
 					dialog.text = RandPhraseSimple("Kim jesteś i co tu robisz?","Stój nieruchomo! Kim jesteś? Z jakiego powodu próbujesz wejść do twierdzy?");
 					//==> по лицензии
 					if (CheckNationLicence(HOLLAND))
 					{
-						link.l1 = "Oficerze, mam "+GetRusNameNationLicence(sti(npchar.nation))+", więc jestem tutaj na legalnych podstawach. Proszę, spójrz...";
+						link.l1 = "Oficerze, mam "+GetRusNameNationLicence(int(npchar.nation))+", więc jestem tutaj na legalnych podstawach. Proszę, spójrz...";
 						link.l1.go = "LicenceOk";
 					}
 					else
 					{
 						//==> по флагу
 						// заглушка на пирата
-						if (sti(pchar.nation) == PIRATE)
+						if (int(pchar.nation) == PIRATE)
 						{
     						dialog.text = RandPhraseSimple("Pirat jest w forcie?! Chwytajcie go"+GetSexPhrase("on","jej")+"!","To pirat, węszący coś w naszym forcie! Do więzienia!!!");
 							link.l1 = RandPhraseSimple("Tak, jestem piratem, i co teraz?","Heh, złap mnie jeśli potrafisz...");
@@ -77,14 +77,14 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l1 = "Czy nie widzisz "+NationNameGenitive(sti(pchar.nation))+" flagi na maszcie mojego statku?!";
+							link.l1 = "Czy nie widzisz "+NationNameGenitive(int(pchar.nation))+" flagi na maszcie mojego statku?!";
 						}
 						else //если причалил не в городе
 						{
-							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+"! Jakiś problem?";
+							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(int(pchar.nation))+"! Jakiś problem?";
 						}
 						// belamour legendary edition вызываюий доверие даёт возможность обмануть стражу
-						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
+						if(int(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 						{
 							Notification_Perk(true, "Trustworthy");
 							link.l1.go = "NotPegYou";
@@ -106,9 +106,9 @@ void ProcessDialogEvent()
 				// <-- eddy. проверяем, не казачок ли.
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (int(NPChar.nation) == PIRATE)
 					{
-						if (sti(rColony.HeroOwn)) // наш горожанин
+						if (int(rColony.HeroOwn)) // наш горожанин
 						{
 			         		switch (rand(10))
 							{
@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 					}
 					
 					//Jason --> мини-квест Дефицитный товар
-					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && sti(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
+					if (!CheckAttribute(pchar, "questTemp.Sharlie.FastStart") && int(pchar.rank) < 4 && !CheckAttribute(pchar, "questTemp.Wine") && npchar.location.group == "soldiers")
 					{// Addon 2016-1 Jason пиратская линейка
 						string wineCity = "FortFrance";
 						if(SandboxMode)
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// Вице-адмирал на службе нации узнается без мундира
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
@@ -270,31 +270,31 @@ void ProcessDialogEvent()
 
 							case 2: 
 								dialog.text = "Wiceadmirał, dla mnie to zaszczyt! Co mogę dla ciebie zrobić?";
-								link.l1 = "Służ "+NationNameGenitive(sti(npchar.nation))+", żołnierzu! To najlepsze, co możesz zrobić.";
+								link.l1 = "Służ "+NationNameGenitive(int(npchar.nation))+", żołnierzu! To najlepsze, co możesz zrobić.";
 								link.l1.go = "exit";
 							break;
 						}
 						break;
 					}
 					// Офицер с патентом
-					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
 							case 0: 
-							dialog.text = "Pozdrowienia, kapitanie! Jeśli masz dla mnie jakieś instrukcje, to proszę o wybaczenie: choć jestem w służbie "+NationNameGenitive(sti(npchar.nation))+", odpowiadam tylko komendantowi i gubernatorowi."; 
+							dialog.text = "Pozdrowienia, kapitanie! Jeśli masz dla mnie jakieś instrukcje, to proszę o wybaczenie: choć jestem w służbie "+NationNameGenitive(int(npchar.nation))+", odpowiadam tylko komendantowi i gubernatorowi.";
 							link.l1 = "Mam swoich oficerów i załogę, którzy odpowiadają na moje prowadzenie. Wykonaj swoje obowiązki, żołnierzu.";
 							link.l1.go = "exit";
 							break;
 
 							case 1:
-								dialog.text = "Kapitanie, czy możesz zabrać mnie do służby na twoim statku? Ta sama służba za "+NationNameGenitive(sti(npchar.nation))+", ale wolę morze."; 
+								dialog.text = "Kapitanie, czy możesz zabrać mnie do służby na twoim statku? Ta sama służba za "+NationNameGenitive(int(npchar.nation))+", ale wolę morze.";
 								link.l1 = "Jesteś potrzebny tam, gdzie cię przydzielono, więc wykonuj swoją służbę z honorem. Zamkniesz oczy na sekundę, a oni zabiorą to na morze.";
 								link.l1.go = "exit";
 							break;
 
 							case 2: 
-								dialog.text = "Oh, masz szczęście: jesteś kapitanem statku w służbie "+NationNameGenitive(sti(npchar.nation))+"... A ja tu tkwię cały dzień."; 
+								dialog.text = "Oh, masz szczęście: jesteś kapitanem statku w służbie "+NationNameGenitive(int(npchar.nation))+"... A ja tu tkwię cały dzień.";
 								link.l1 = "Czy myślisz, że właśnie przybyłem na Karaiby i tydzień później zostałem kapitanem? To wszystko lata ciężkiej pracy...";
 								link.l1.go = "exit";
 							break;
@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		break;
 		case "LicenceOk":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				dialog.text = "Tylko pomyśl o tym! Taka bezczelność! Przyjść tutaj pod przykrywką kupca! Twoje zdjęcia są umieszczone w każdym baraku, ty bękart! Tym razem ci się nie uda! Chwytajcie go!";
 				link.l1 = RandPhraseSimple("Arrgh!..","Cóż, sam o to prosiłeś...");

@@ -25,9 +25,9 @@ void BadLand_Node0()
 			action = SF_AddAction("a_a", "", "", SF_Icon("story", "random"));
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_LEADERSHIP)/2, SKILL_LEADERSHIP);
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_FORTUNE)/2, SKILL_FORTUNE);
-			SF_SetChance(action, sti(pchar.questTemp.Indian.relation)-50, "relationshipIndians");
+			SF_SetChance(action, int(pchar.questTemp.Indian.relation)-50, "relationshipIndians");
 			action = SF_AddAction("a_b", "", "", SF_Icon("story", "random"));
-			SF_SetChance(action, -(sti(pchar.questTemp.Indian.relation)-50), "relationshipIndians");
+			SF_SetChance(action, -(int(pchar.questTemp.Indian.relation)-50), "relationshipIndians");
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_GRAPPLING)/2, SKILL_GRAPPLING);
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_PISTOL)/2, SKILL_PISTOL);
 			action = SF_AddAction("a_c", "", "", SF_Icon("story", "forward"));

@@ -195,13 +195,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck("EnemyFight", "LSC_CapperDieAeva");
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
-		
-		case "Aeva_attack_2":
-			dialog.text = "... this is going to be a hell of a drink. Shark's been dreaming of this whiskey so long, he'll down it in a single draught. Where's the arsenic? We'll use two bottles, just to be sure... then our friend Fazio can deliver this barrel to the Admiral as a present from tje Narwhals, ha-ha!\nAm I right, dear Giuseppe? Chin up, lad; you do this right, and you've got nothing to worry abou-- Ah! We have company, boys! What do you want, jackass? This is a private get-together.";
-			link.l1 = "Seu plano fracassou, Kapper. Eu sei o que você e seu amigo Marcello estão tramando. Joguem fora o arsênico! Vocês não vão envenenar o Tubarão!";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
+
 		case "Aeva_attack_3":
 			dialog.text = "Ah, merda. Tudo bem... você morre primeiro, depois o Tubarão! Às armas, rapazes!";
 			link.l1 = "...";

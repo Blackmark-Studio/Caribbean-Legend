@@ -8,6 +8,12 @@ condition_mushket_indian
 Este objeto aparecerá con los usureros si tienes
 Caribbean Legend: Age of Pirates
 }
+condition_nocturlabe
+{
+Darmowy prezent dla społeczności.
+ Szukajcie go w sprzedaży u lichwiarzy.
+ Dziękujemy, że gracie!
+}
 noRewardYetMessage
 {
 Esta recompensa aún no está disponible,

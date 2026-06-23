@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "Es gibt hier viele Jones. Der bekannteste, den ich kenne, ist ein Adjutant unter Oberst Fox, Benjamin Jones. Er begrüßt normalerweise Besucher im Hauptquartier des Regiments.";
 				link.l1 = "Wissen Sie, ob er eine Schwester namens Molly hat?";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("Hm, ich fürchte, ich kann Ihnen damit nicht helfen.","Nein, ich kenne ihn nicht.","Phah! Wenn die Molly Jones, die ich kenne, eine seltene Schönheit ist, dann ist Oberst Fox ein Pfarrer."),LinkRandPhrase("Ich kenne ein paar Molly Jones. Eine von ihnen hat einen Bruder, aber... sie ist nicht die, die Sie suchen. Nur ein Mann, der mit Affen gelebt hat, würde sie 'eine seltene Schönheit' nennen.","Es tut mir leid, aber alle Jones, die ich kenne, haben keine Schwestern.","Es tut mir leid, ich kann Ihnen nicht helfen. Fragen Sie jemand anderen."));
 			link.l1 = "Ich verstehe. Entschuldigen Sie die Unannehmlichkeiten.";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Glauben Sie, ich arbeite für den Geheimdienst von "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Glauben Sie, ich arbeite für den Geheimdienst von "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Nun... nein. Dann leben Sie wohl.";
 			link.l1.go = "exit";
 			link.l2 = "Haben Sie noch eine andere Frage?";

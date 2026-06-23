@@ -98,7 +98,7 @@ void KukulklanStoleMyPerks()
 	AddAllFellows(&fellows, pchar, true);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
-		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
+		int idx = int(GetAttributeValue(GetAttributeN(&fellows, i)));
 		chr = GetCharacter(idx);
 		if (!IsFellowOurCrew(chr)) continue;
 		if (!CheckAttribute(chr, "perks.list")) continue;
@@ -107,10 +107,10 @@ void KukulklanStoleMyPerks()
 		object temp;
 		GEN_SummPerkPoints(chr, &temp);
 
-		SetFreePerkPoints(chr, sti(temp.self), "self");
-		SetFreePerkPoints(chr, sti(temp.ship), "ship");
-		SetAttribute(chr, "perks.FreePoints_self_exp", sti(temp.self_left));
-		SetAttribute(chr, "perks.FreePoints_ship_exp", sti(temp.ship_left));
+		SetFreePerkPoints(chr, int(temp.self), "self");
+		SetFreePerkPoints(chr, int(temp.ship), "ship");
+		SetAttribute(chr, "perks.FreePoints_self_exp", int(temp.self_left));
+		SetAttribute(chr, "perks.FreePoints_ship_exp", int(temp.ship_left));
 
 		if (IsMainCharacter(chr))
 		{

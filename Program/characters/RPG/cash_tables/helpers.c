@@ -40,7 +40,7 @@ void CT_SetNavyPenalty(ref chr, ref table, bool bHero, bool bCompanion)
 	if (!bHero && !bCompanion) diff = 0;
 
 	int navyPen = 0;
-	if (diff > 0) navyPen = makeint(makefloat(diff) / 10.0 + 0.9);
+	if (diff > 0) navyPen = int(float(diff) / 10.0 + 0.9);
 
 	table.navyPenaltySpecial = navyPen;
 	table.navyPenaltySkill = diff;
@@ -59,8 +59,8 @@ void CT_SetCompanionOverride(ref chr, ref admiralTable, ref companionTable)
 	{
 		string skillName = GetSkillNameByTRIdx("ShipType", i);
 		string modifierName = SKILL_TYPE + skillName;
-		int compSkillValue = sti(companionTable.(modifierName));
-		int admiralSkillValue = sti(admiralTable.(modifierName).officer.backup);
+		int compSkillValue = int(companionTable.(modifierName));
+		int admiralSkillValue = int(admiralTable.(modifierName).officer.backup);
 		int diff = admiralSkillValue - compSkillValue;
 		companionTable.(modifierName).admiral = diff;
 		companionTable.(modifierName).admiral.backup = compSkillValue;
@@ -96,7 +96,7 @@ void CT_SetOfficerOverride(ref table, string skillName)
 {
 	string jobName = GetJobBySkillName(skillName);
 	string modifierName = SKILL_TYPE + skillName;
-	int iOfficer = sti(pchar.Fellows.Passengers.(jobName));
+	int iOfficer = int(pchar.Fellows.Passengers.(jobName));
 	int pcharSKill = GetAttributeInt(table, modifierName + ".officer.backup");
 	int officerSkill = 0;
 	if (iOfficer > -1) officerSkill = GetSkillWithEffects(&Characters[iOfficer], skillName);
@@ -146,7 +146,7 @@ void CT_MergeTables(ref tableA, ref tableB)
 	{
 		aref modifierB = GetAttributeN(tableB, i);
 		string modifierName = GetAttributeName(modifierB);
-		float value = stf(GetAttributeValue(modifierB));
+		float value = float(GetAttributeValue(modifierB));
 		AddToAttributeFloat(tableA, modifierName, value);
 
 		aref modifierA;

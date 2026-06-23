@@ -247,7 +247,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Portugal", "3");
 			LAi_ActorRunToLocation(npchar, "reload", "houseF1", "Marigo_houseF1", "goto", "goto2", "", -1);
 			pchar.quest.Portugal_Cloves.win_condition.l1 = "Timer";
-			pchar.quest.Portugal_Cloves.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Portugal_Cloves.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Portugal_Cloves.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.Portugal_Cloves.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.Portugal_Cloves.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 			pchar.quest.Portugal_ToAntiguaOver.over = "yes";//снять таймер
 			pchar.questTemp.Portugal = "TreatmentStart";
 			pchar.quest.Portugal_Ill.win_condition.l1 = "Timer";
-			pchar.quest.Portugal_Ill.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Portugal_Ill.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Portugal_Ill.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Portugal_Ill.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Portugal_Ill.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
@@ -929,7 +929,7 @@ void ProcessDialogEvent()
 			dialog.text = "음, 나도 아는 게 많지... 하지만 이번 항해 덕분에 또다시 빈털터리가 됐어. 이 정보가 그렇게 필요하다면 페소 몇 푼쯤은 줘야 하지 않겠어?";
 			link.l1 = "휴고, 넌 여전히 협잡꾼이자 악당이군! 할 말 있으면 해라, 그리고 옛 우정 생각해서 5000페소 가져가라.";
 			link.l1.go = "Avendel_Marigo_4_1";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 			link.l2 = "어쩐지, 전혀 놀랍지 않군. 자, 1만 페소 가져가라. 네 정보가 그만한 값어치를 하길 바라는 게 좋을 거다!";
 			link.l2.go = "Avendel_Marigo_4_2";
@@ -941,7 +941,7 @@ void ProcessDialogEvent()
 		case "Avendel_Marigo_4_1":
 			pchar.questTemp.Portugal.AvMoney = 15000;
 			dialog.text = "아니, 선장, 그렇게는 안 되지! 그 빌어먹을 포르투갈 놈이랑 한탕 크게 챙겼잖아, 분명히. 그러니 그게 내 몫이라고 생각해, 그렇게 욕심부리지 마. 15,000코인, 한 푼도 깎아줄 수 없어!";
-			if (sti(pchar.money) >= 15000)
+			if (int(pchar.money) >= 15000)
 			{
 			link.l1 = "아, 젠장, 가져가라!";
 			link.l1.go = "Avendel_Marigo_4_2";
@@ -951,7 +951,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Avendel_Marigo_4_2":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Portugal.AvMoney));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Portugal.AvMoney));
 			dialog.text = "이게 바로 내 노림수지! ... 들어봐, 바스케스는 나랑 같은 배를 탔는데, 나는 선실값 갚으려고 갑판 청소나 하고 있었고, 그놈은 선실에서 쉬고 있었거든. 덕분에 서로 얼굴 볼 일도 거의 없었고, 그가 날 알아보지도 못했지. 하지만 나는 그 악마를 바로 쫓기 시작했어... 그놈한테 재미있는 일이 벌어졌거든.";
 			link.l1 = "계속 말해! 그 자가 총독 관저에서 뭘 하고 있는 거야?";
 			link.l1.go = "Avendel_Marigo_5";
@@ -980,7 +980,7 @@ void ProcessDialogEvent()
 		
 		case "Avendel_Marigo_4_3":
 			dialog.text = "진심이오, 선장? 도대체 무슨 생각이오? 내 얼굴에 총을 들이대며 쫓아냈으면서, 이제 와서 이런 제안을 하러 온 거요?";
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 			link.l1 = "그건 잊어버려, 내가 요즘 정신이 없었어. 미안하다, 욕심이 날 집어삼킨 것 같군. 자, 여기 1만 페소다. 바스케스에 대해 아는 걸 말해 줘, 난 지금 급하거든.";
 			link.l1.go = "Avendel_Marigo_4_2";
@@ -995,7 +995,7 @@ void ProcessDialogEvent()
 			dialog.text = "뭐라고 해야 할까... 알겠어, 하지만 내 몫을 받고 나서야 동의하지, 선장. 10퍼센트, 기억하지? 그 악당 때문에 이천을 받았으니, 나를 선원으로 들이려면 먼저 빚부터 갚는 게 순서야. 10퍼센트, 딴소리 말고!";
 			link.l1 = "너 정말 사기꾼이구나, 휴고. 지금 당장 그 정도 돈은 없어, 하지만 곧 다시 올 거야. 여기서 기다려.";
 			link.l1.go = "Avendel_Marigo_wait";
-			if (sti(pchar.money) >= 20000)
+			if (int(pchar.money) >= 20000)
 			{
 			link.l2 = "네 사업 수완으로 내 기대에 부응하길 바라네, 하! 몫을 가져가게!";
 			link.l2.go = "Avendel_Marigo_4_2";
@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 		
 		case "Avendel_Marigo_repeat":
 			dialog.text = "마음이 바뀌었나, 선장? 그럼 돈은 기다리겠네.";
-			if (sti(pchar.money) >= sti(pchar.questTemp.Portugal.AvMoney))
+			if (int(pchar.money) >= int(pchar.questTemp.Portugal.AvMoney))
 			{
 				link.l1 = "동전이나 가져가라, 이 악당아, 하하!";
 				link.l1.go = "Avendel_Marigo_4_2";
@@ -1031,7 +1031,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetImmortal(npchar, false); // patch-8
 			SetCharacterRemovable(npchar, true);
-			npchar.quest.OfficerPrice = sti(pchar.rank)*1000;
+			npchar.quest.OfficerPrice = int(pchar.rank)*1000;
 			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
 			npchar.loyality = MAX_LOYALITY;
 			npchar.OfficerWantToGo.DontGo = true;
@@ -1082,7 +1082,7 @@ void ProcessDialogEvent()
 			LAi_SetStayType(sld);
 			ChangeCharacterAddressGroup(sld, "Villemstad_prison", "goto", "goto9");
 			sld = GetCharacter(NPC_GenerateCharacter("PortHolOfficer", "off_hol_4", "man", "man", 35, HOLLAND, 30, true, "soldier"));
-			FantomMakeCoolFighter(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+10, 100, 100, "blade_19", "pistol3", "grapeshot", 100);
+			FantomMakeCoolFighter(sld, int(pchar.rank)+MOD_SKILL_ENEMY_RATE+10, 100, 100, "blade_19", "pistol3", "grapeshot", 100);
 		
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);

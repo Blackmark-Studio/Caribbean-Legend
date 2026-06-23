@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (npchar.quest.meeting == "0")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
 				{
 					dialog.text = "좋은 하루입니다, "+GetAddress_Form(NPChar)+". 네가 네 배의 선장이라는 것쯤은 알고 있지. 거래 하나 제안하지.";
 					link.l1 = "듣고 있소, "+GetAddress_FormToNPC(NPChar)+". 무슨 거래지?";
@@ -83,14 +83,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_1":
-			switch (sti(npchar.quest.crew.type))
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: sTemp = "We are the best in working with sails and tackles. Not being overly modest, I'd say that we are professionals at ship handling, so don't worry, we won't let you down even in the strongest storms."; break;
 				case 1: sTemp = "Most of all we like to be on the gun deck. Few of us even served on real warships. We can load and fire cannons in the way no one in your crew can. You can count on us in every hard fight!"; break;
 				case 2: sTemp = "We're proper good boarders captain, did a few runs on privateers before this. We know the glitter of cutlasses and the smell of gunpowder and blood. That's our calling. It's not easy to defeat us in a hand-to-hand fight so you can always count on our blades, captain!"; break;
 			}
-			dialog.text = "있다 "+sti(npchar.quest.crew.qty)+" 우리끼리만 함께 고용될 거야. 기본적인 선원 업무는 모두 할 수 있어."+sTemp+"";
-			if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+			dialog.text = "있다 "+int(npchar.quest.crew.qty)+" 우리끼리만 함께 고용될 거야. 기본적인 선원 업무는 모두 할 수 있어."+sTemp+"";
+			if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
 			{
 				link.l1 = "내가 찾고 있는 놈들인 것 같군. 선불은 어떻게 할 건가?";
 				link.l1.go = "crew_2";
@@ -105,9 +105,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_2":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
-			dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+" 각각에 대해. 그리고 평범한 선원의 월급도 있습니다. 너무 과한 건 요구하지 않겠습니다, 선장님.";
-			if (sti(pchar.money) >= iTemp)
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
+			dialog.text = ""+FindRussianMoneyString(int(npchar.quest.crew.money))+" 각각에 대해. 그리고 평범한 선원의 월급도 있습니다. 너무 과한 건 요구하지 않겠습니다, 선장님.";
+			if (int(pchar.money) >= iTemp)
 			{
 				link.l1 = "고용됐어! 이 동전들 가져가. 이제 내 배로 가, 이름은 '"+pchar.ship.name+"', 바로 항구에서다. 보선장이 모두에게 선실 내 해먹을 배정하고 식사조도 정해줄 거다.'";
 				link.l1.go = "crew_3";
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_3":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
 			AddMoneyToCharacter(pchar, -iTemp);
 			dialog.text = "알겠어요, 선장님! 녀석들 모아서 바로 출발할게요.";
 			link.l1 = "서둘러라, 곧바로 출항할 거다.";
@@ -126,17 +126,17 @@ void ProcessDialogEvent()
 		
 		case "crew_4":
 			DialogExit();
-			AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+			AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
 			//увеличиваем опыт
-			iTemp = makeint(sti(npchar.quest.crew.qty)*50/sti(pchar.ship.crew.quantity));
-			switch (sti(npchar.quest.crew.type))
+			iTemp = int(int(npchar.quest.crew.qty)*50/int(pchar.ship.crew.quantity));
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: ChangeCrewExp(pchar, "Sailors", iTemp); break;
 				case 1: ChangeCrewExp(pchar, "Cannoners", iTemp); break;
 				case 2: ChangeCrewExp(pchar, "Soldiers", iTemp); break;
 			}
 			//увеличиваем мораль
-			iTemp = makeint(sti(npchar.quest.crew.qty)/10)+1;
+			iTemp = int(int(npchar.quest.crew.qty)/10)+1;
 			AddCrewMorale(pchar, iTemp);
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

@@ -67,7 +67,7 @@ bool DialogMain(ref Character, bool bPlayerInit)
 	//Проверим на существование текущего нода
 	if(!CheckAttribute(Character, "Dialog.CurrentNode"))
 	{
-		Trace("Dialog: Character <" + Character.id + "> can't have field Dialog.CurrentNode, exit from dialog!")
+		Trace("Dialog: Character <" + Character.id + "> can't have field Dialog.CurrentNode, exit from dialog!");
 		return false;
 	}
 	//Если персонаж не готов говорить выходим
@@ -141,7 +141,7 @@ void StartDialogMain()
 			}
 			else
 			{
-				if (sti(CharacterRef.greeting.minute) != sti(Environment.date.min))
+				if (int(CharacterRef.greeting.minute) != int(Environment.date.min))
 				{
 					dialogGreetingSound = CharacterRef.greeting;
 					dialogWaitGreetingSound = 0;
@@ -154,7 +154,7 @@ void StartDialogMain()
 	object persRef = GetCharacterModel(Characters[GetMainCharacterIndex()]);
 	SendMessage(&Dialog, "lii", 0, &Characters[GetMainCharacterIndex()], &persRef);
 
-	ref chr = GetCharacter(makeint(CharacterRef.index));
+	ref chr = GetCharacter(int(CharacterRef.index));
 	object charRef = GetCharacterModel(chr);
 	SendMessage(&Dialog, "lii", 1, chr, &charRef);
 
@@ -195,7 +195,7 @@ void SelfDialog(ref Character)
 	//Проверим на существование текущего нода
 	if(!CheckAttribute(Character, "Dialog.CurrentNode"))
 	{
-		Trace("SelfDialog: Character <" + Character.id + "> can't have field Dialog.CurrentNode, exit from dialog!")
+		Trace("SelfDialog: Character <" + Character.id + "> can't have field Dialog.CurrentNode, exit from dialog!");
 		return false;
 	}
 	//Сохраняем ссыклу на того с кем говорим
@@ -281,7 +281,7 @@ void DialogExit()
 	pchar.systeminfo.DialogExitDelay = true;
 	DoQuestFunctionDelay("DialogExitDelayEnd", 0.5);
 	//Сообщим об окончании диалога
-	PostEvent(EVENT_DIALOG_EXIT, 1, "l", sti(CharacterRef.index));
+	PostEvent(EVENT_DIALOG_EXIT, 1, "l", int(CharacterRef.index));
 	DelEventHandler("DialogEvent", "AddDialogMeta");
 }
 
@@ -400,7 +400,7 @@ bool CanStartDialog()
 		return false;
 	}
 
-	int chrIndex = SendMessage(mc, "ls", MSG_CHARACTER_EX_MSG, "FindDialogCharacter");
+	int chrIndex = int(SendMessage(mc, "ls", MSG_CHARACTER_EX_MSG, "FindDialogCharacter"));
 
 	if(chrIndex < 0 || chrIndex == GetMainCharacterIndex()) {
 		return false;
@@ -488,7 +488,7 @@ void UpdateDynamicRole(ref Dialog, ref chr)
 	}
 	if(CheckAttributeEqualTo(chr, "quest.type", "hovernor"))
 	{
-		if(sti(chr.nation) == PIRATE) chr.role = "Phovernor";
+		if(int(chr.nation) == PIRATE) chr.role = "Phovernor";
 		else chr.role = "hovernor";
 	}
 	if(CheckAttribute(chr, "Merchant.type") && chr.Merchant.type != "GasparGold")
@@ -550,13 +550,19 @@ bool RoleFromID(ref chr)
 		case "SantaMisericordia_clone_church": role = "legend"; break;
 		case "SantaMisericordia_clone_city": role = "legend"; break;
 		case "SantaMisericordia_clone_guber": role = "legend"; break;
-		
-		if (CheckAttribute(pchar, "questTemp.FinishTutorial"))
-		{
-			case "Guide": role = "friend"; break;
-			case "Guide_y": role = "friend"; break;
-			case "Guide_x": role = "friend"; break;
-		}
+
+		case "Guide":
+			if (CheckAttribute(pchar, "questTemp.FinishTutorial"))
+				role = "friend";
+		break;
+		case "Guide_y":
+			if (CheckAttribute(pchar, "questTemp.FinishTutorial"))
+				role = "friend";
+		break;
+		case "Guide_x":
+			if (CheckAttribute(pchar, "questTemp.FinishTutorial"))
+				role = "friend";
+		break;
 		
 		case "Tichingitu":
 			if (CheckAttribute(chr, "Payment")) 

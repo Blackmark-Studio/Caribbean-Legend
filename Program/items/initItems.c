@@ -3153,6 +3153,21 @@ int InitItems()
 	itm.groupID	= TOOL_ITEM_TYPE;
 	n++;
 
+	makeref(itm,Items[n]); // Ноктурлабия
+	itm.id = "nocturlabe";
+	itm.name = "itmname_nocturlabe";
+	itm.describe = "itmdescr_nocturlabe";
+	itm.model = "";
+	itm.picIndex = 10;
+	itm.picTexture = "ITEMS_42";
+	itm.Weight = 0.2;
+	itm.price = 130000;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
+	itm.groupID	= TOOL_ITEM_TYPE;
+	itm.PriceDublon = 250;
+	n++;
+
 	makeref(itm,Items[n]); // Идол из зелёного камня
 	itm.id = "greenIdol";
 	itm.name = "itmname_greenIdol";
@@ -4462,7 +4477,7 @@ int InitStdItem( 	int		ItemIndex,
 					int		Price, 
 					int		PriceDublon, 			
 					float 	Weight,
-					string  TradeType)
+					int     TradeType)
 {
 	ref	rItem;
 	int	itmIndex;
@@ -4612,21 +4627,21 @@ int InitStdBlade( 	int		ItemIndex,
 		case "FencingL" :
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(35.0 * (1.0/Curve + Lenght) * (stf(blade.Attack) * 2.0 - 30.0));
+				blade.price  = int(35.0 * (1.0/Curve + Lenght) * (float(blade.Attack) * 2.0 - 30.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingS" :
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(25.0 * (Curve + Lenght) * (stf(blade.Attack) * 2.0 - 40.0));
+				blade.price  = int(25.0 * (Curve + Lenght) * (float(blade.Attack) * 2.0 - 40.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingH" :
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (stf(blade.Attack) * 2.0 - 50.0));
+				blade.price  = int(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (float(blade.Attack) * 2.0 - 50.0));
 			}	
 			else blade.price = Price;			
 		break;
@@ -4792,7 +4807,7 @@ int InitStdAmulet(	int		ItemIndex,
 					float	Rare, 
 					int 	MinLevel, 
 					int		Time,
-					string  Type,
+					int     Type,
 					bool	isMulti,
 					int     outQty,
 					string	kind,
@@ -5492,9 +5507,9 @@ void InitGuns()
 	InitGunExt("pistol15", "t3", "bullet_double", "",          190.0, 240.0, 0.0, 0, 0,  12, 0);
 
 	ref mushket_indian = ItemsFromID("mushket_indian");
-	InitGunWithAmmoParams(mushket_indian, "t1", "cartridge", "",       127.0, 167.0, 0.0,  0, 0,  29, 0);
-	InitGunWithAmmoParams(mushket_indian, "t2", "bullet", "gunpowder", 110.0, 145.0, 0.0,  0, 0,  38, 1);
-	InitGunWithAmmoParams(mushket_indian, "t3", "bullet_double", "",   220.0, 290.0, 0.0,  0, 0,  19, 0);
+	InitGunWithAmmoParams(mushket_indian, "t1", "cartridge", "",       127.0, 167.0, 0.0,  false, 0,  29, false);
+	InitGunWithAmmoParams(mushket_indian, "t2", "bullet", "gunpowder", 110.0, 145.0, 0.0,  false, 0,  38, true);
+	InitGunWithAmmoParams(mushket_indian, "t3", "bullet_double", "",   220.0, 290.0, 0.0,  false, 0,  19, false);
 	mushket_indian.PriceDublon = 450;
 	mushket_indian.attack = 55.0;
 }

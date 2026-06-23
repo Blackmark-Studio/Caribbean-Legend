@@ -17,7 +17,7 @@ bool IsShipSafeReachableNow()
 		if (CheckAttribute(&pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(&pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
 		
 		int iColony = FindColony(loadedLocation.fastreload);
-		int nation = sti(Colonies[iColony].nation);
+		int nation = int(Colonies[iColony].nation);
 		return nation == PIRATE || GetRelation2BaseNation(nation) != RELATION_ENEMY;
 	}
 
@@ -53,5 +53,5 @@ ref FindLocationByIdx(int locIdx)
 // Получить локацию по ссылке/id/индексу или nullptr
 ref FindLocation_VT(ref ref_id_idx)
 {
-	return FindObject_VT(ref_id_idx, "FindLocationById", "FindLocationByIdx");
+	return FindObject_VT(ref_id_idx, &FindLocationById, &FindLocationByIdx);
 }

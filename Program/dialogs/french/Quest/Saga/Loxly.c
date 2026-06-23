@@ -22,8 +22,8 @@ void ProcessDialogEvent()
 		i = findsubstr(attrLoc, "_" , 0);
 		npchar.quest.relation = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
 		// проверка на уже договор
-		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
-		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
+		attrLoc = "RelationAgent" + GetNationNameByType(int(npchar.quest.relation));
+		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && int(Pchar.GenQuest.(attrLoc)) == true)
 		{
 			Dialog.CurrentNode = "RelationYet";
 		}
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 		
 		// --> снятие НЗГ
 		case "RelationAny_Done":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
 			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
 			if (iRate <= 10) sTemp = "Well, I wouldn't call that trouble. Just a little problem. I will settle the affair at once";
@@ -636,7 +636,7 @@ void ProcessDialogEvent()
 			if (iRate > 60 && iRate <= 90) sTemp = "And how did you do that, Sir? Your troubles are not just serious, they are really serious. The authorities are very eager to get you. I will have to put a lot of effort into settling your disagreements";
 			if (iRate > 90) sTemp = "Well... The situation is catastrophic - you are claimed to be the most bitter enemy. It will be tough but I am the best lawyer in the Caribbean after all, so I will settle your disagreements";
 			dialog.text = ""+sTemp+" avec "+XI_ConvertString(Nations[i].Name+"Abl")+". Cela te coûtera "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
-			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "Très bien, Monsieur Loxley, je suis d'accord. Voici votre argent et essayez de régler les choses dès que possible.";
 				link.l1.go = "relation";
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "relation":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			dialog.text = "Ce fut un plaisir de faire affaire avec vous, Monsieur. Vous pouvez respirer à nouveau, votre problème disparaîtra dans les deux semaines. Veuillez éviter toute confrontation avec "+XI_ConvertString(Nations[i].Name+"Abl")+", pendant que je suis en pleine négociation.";
 			link.l1 = "Bien, je prendrai en compte votre avertissement. Merci et adieu !";
 			link.l1.go = "exit";
@@ -663,7 +663,7 @@ void ProcessDialogEvent()
 		case "contraband":
 			iLoxlyPseudoGlobal = CalculateRelationContraSum(true);
 			dialog.Text = "Et pourquoi as-tu fait cela ? Les contrebandiers sont de bons gars, ils sont honnêtes à leur manière. Nous avons tous besoin de vivre et de manger... Bon, ce n'est pas grave et cela ne te coûtera que "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
-			if(sti(Pchar.money) >= iLoxlyPseudoGlobal)
+			if(int(Pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				Link.l1 = "Très bien, Monsieur Loxley, je suis d'accord. Voici votre argent et essayez de régler les choses dès que possible.";
 				Link.l1.go = "Contraband_Agreed";

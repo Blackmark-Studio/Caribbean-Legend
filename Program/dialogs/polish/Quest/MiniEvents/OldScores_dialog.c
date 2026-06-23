@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_sluh":
 			bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
-			bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
+			bOk2 = SandBoxMode && int(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OS_Start") && npchar.city == "PuertoPrincipe";
 			if (bOk1 || bOk2)
 			{
 				dialog.text = "Mówią, że wczoraj w tawernie była bójka... Ale kto się bił - diabli wiedzą. Moja gęba cała. Chyba.";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OS_Matros_6":
 			dialog.text = "Diabli nadali... Głowa mi pęka, a ty jeszcze z tymi pytaniami. Nic nie widziałem i nic nie słyszałem. Lepiej dał"+GetSexPhrase("","a")+"byś parę peso, zamiast dręczyć starego wilka morskiego.";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Masz tu sto peso. Tylko się znowu nie nachlej i nie daj się omotać tej kelnerce, heh.";
 				link.l1.go = "OS_Matros_7_harizma";

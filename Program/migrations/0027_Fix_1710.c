@@ -16,7 +16,7 @@ void Ships_speedrate()
 		bOk = false;
 		if (!CheckAttribute(&RealShips[i], "BaseType")) continue;
 
-		switch (sti(RealShips[i].BaseType))
+		switch (int(RealShips[i].BaseType))
 		{
 			// Квестовые, перезаписываем:
 			case SHIP_PINK:           bOk = true; break;  // Пинк "Принципио"
@@ -47,11 +47,11 @@ void Ships_speedrate()
 			{
 				if(!CheckAttribute(shTo, "Bonus_SpeedRate"))
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) + stf(shTo.SpeedRate)/5.0);
+					shTo.SpeedRate        = (float(shTo.SpeedRate) + float(shTo.SpeedRate)/5.0);
 				}
 				else
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.2 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (float(shTo.SpeedRate) - float(shTo.Bonus_SpeedRate)) * 1.2 + float(shTo.Bonus_SpeedRate);
 				}    
 			}
 		}

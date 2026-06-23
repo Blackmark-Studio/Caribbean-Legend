@@ -50,13 +50,13 @@ bool ProcessCondition(aref condition, int n)
 		// совместимость с кодом акеллы, где в character хранят не ID (строка), а IDX (число) -->
 		i = GetCharacterIndex(condition.character);
 		if (i != -1) condition.characterIdx = i;
-		else condition.characterIdx = sti(condition.character); // делаем вывод, что это число
+		else condition.characterIdx = int(condition.character); // делаем вывод, что это число
 		// совместимость с кодом акеллы, где в character хранят не ID (строка), а IDX (число) <--
 		DeleteAttribute(condition,"character");
 	}
 	if(CheckAttribute(condition,"characterIdx"))
 	{
-		refCharacter = GetCharacter(sti(condition.characterIdx));
+		refCharacter = GetCharacter(int(condition.characterIdx));
 	}
 	else
 	{
@@ -87,15 +87,15 @@ bool ProcessCondition(aref condition, int n)
     	break;
 
         case "Timer":
-    		if( GetDataYear() < sti(condition.date.year) ) return false;
-    		if( GetDataYear() > sti(condition.date.year) ) return true;
-    		if( GetDataMonth() < sti(condition.date.month) ) return false;
-    		if( GetDataMonth() > sti(condition.date.month) ) return true;
-    		if( GetDataDay() < sti(condition.date.day) ) return false;
-    		if (CheckAttribute(condition, "date.hour") && GetDataDay() <= sti(condition.date.day))  //fix
+    		if( GetDataYear() < int(condition.date.year) ) return false;
+    		if( GetDataYear() > int(condition.date.year) ) return true;
+    		if( GetDataMonth() < int(condition.date.month) ) return false;
+    		if( GetDataMonth() > int(condition.date.month) ) return true;
+    		if( GetDataDay() < int(condition.date.day) ) return false;
+    		if (CheckAttribute(condition, "date.hour") && GetDataDay() <= int(condition.date.day))  //fix
 			{				
-				if(GetHour() < stf(condition.date.hour)) return false;
-				if(GetHour() >= stf(condition.date.hour)) return true;
+				if(GetHour() < float(condition.date.hour)) return false;
+				if(GetHour() >= float(condition.date.hour)) return true;
 			}
     		return true;
     	break;
@@ -111,20 +111,20 @@ bool ProcessCondition(aref condition, int n)
 		
 		//Jason --> прерывание на промежуток времени
 		case "Hour":
-			if (stf(environment.time) >= stf(condition.start.hour) && stf(environment.time) < stf(condition.finish.hour)) return true;
+			if (float(environment.time) >= float(condition.start.hour) && float(environment.time) < float(condition.finish.hour)) return true;
     		return false;
     	break;
 		
 		//Jason --> прерывание на заданный час
 		case "HardHour":
-			if (stf(environment.time) >= stf(condition.hour)) return true;
+			if (float(environment.time) >= float(condition.hour)) return true;
     		return false;
     	break;
 		//<-- прерывания от времени суток и конкретного времени
 
 		//Jason --> прерывание на нацию (поднятие флага) ГГ
 		case "Nation":
-			if (sti(pchar.nation) == sti(condition.nation)) return true;
+			if (int(pchar.nation) == int(condition.nation)) return true;
     		return false;
     	break;
 		//<-- прерывание на нацию
@@ -175,13 +175,13 @@ bool ProcessCondition(aref condition, int n)
 			{
 				if (loadedLocation.type == "town") 
 				{
-					iNation = sti(condition.nation);
+					iNation = int(condition.nation);
 					sLocation = refCharacter.location;
 					iLocation = FindLocation(sLocation);
 					if(CheckAttribute(&Locations[iLocation], "fastreload"))
 					{
 						sLocation = Locations[iLocation].fastreload;
-						if(iNation == sti(Colonies[FindColony(sLocation)].nation)) return true;
+						if(iNation == int(Colonies[FindColony(sLocation)].nation)) return true;
 					}
 				}	
 			}
@@ -217,22 +217,22 @@ bool ProcessCondition(aref condition, int n)
         // boal <--
 
         case "Goods":
-    		return TestIntValue(GetCargoGoods(refCharacter,sti(condition.goods)),sti(condition.quantity),condition.operation);
+    		return TestIntValue(GetCargoGoods(refCharacter,int(condition.goods)),int(condition.quantity),condition.operation);
     	break;
 
 		//Jason: вертаем методы К3; прерывание на ранг
 		case "Rank":
-			return TestIntValue(sti(refCharacter.rank),sti(condition.value),condition.operation);
+			return TestIntValue(int(refCharacter.rank),int(condition.value),condition.operation);
 		break;
 
 		//Jason --> прерывание с учётом аларма
 		case "Alarm":
-			return TestIntValue(LAi_grp_playeralarm, sti(condition.value), condition.operation);
+			return TestIntValue(int(LAi_grp_playeralarm), int(condition.value), condition.operation);
     	break;
 
 		// Addon-2016 Jason, французские миниквесты прерывание на количество денег
 		case "Money":
-			return TestIntValue(sti(pchar.money), sti(condition.value), condition.operation);
+			return TestIntValue(int(pchar.money), int(condition.value), condition.operation);
     	break;
 
     	case "item":  // to_do  пока в квесте воровства  есть, но не используется
@@ -242,13 +242,13 @@ bool ProcessCondition(aref condition, int n)
     	break;
 
         case "Character_Capture":
-    		if( CheckAttribute(refCharacter,"Killer.status") && sti(refCharacter.Killer.status)==KILL_BY_ABORDAGE ) return true;
+    		if( CheckAttribute(refCharacter,"Killer.status") && int(refCharacter.Killer.status)==KILL_BY_ABORDAGE ) return true;
     		return false;
     	break;
 
         //a&m --> 03/02
         case "Character_sink":
-    		if( CheckAttribute(refCharacter,"Killer.status") && sti(refCharacter.Killer.status) != KILL_BY_ABORDAGE ) return true;
+    		if( CheckAttribute(refCharacter,"Killer.status") && int(refCharacter.Killer.status) != KILL_BY_ABORDAGE ) return true;
     		return false;
     	break;
         //a&m <--  03/02
@@ -288,7 +288,7 @@ bool ProcessCondition(aref condition, int n)
 		break;
 
 		case "nation_location":
-			iNation = sti(condition.nation);
+			iNation = int(condition.nation);
 			sLocation = refCharacter.location;
 			iLocation = FindLocation(sLocation);
 			if(iLocation != -1)
@@ -296,7 +296,7 @@ bool ProcessCondition(aref condition, int n)
 				if(CheckAttribute(&Locations[iLocation], "fastreload"))
 				{
 					sLocation = Locations[iLocation].fastreload;
-					int iCurrentNation = sti(Colonies[FindColony(sLocation)].nation);
+					int iCurrentNation = int(Colonies[FindColony(sLocation)].nation);
 					if(iNation == iCurrentNation)
 					{
 						return true;
@@ -327,10 +327,10 @@ bool ProcessCondition(aref condition, int n)
 		case "Coordinates":
 			if(IsEntity(&worldMap)) // если на глобальной карте
 			{
-				if( GetMapCoordDegreeX(makefloat(worldMap.playerShipX)) == sti(condition.coordinate.degreeX) &&
-				    GetMapCoordDegreeZ(makefloat(worldMap.playerShipZ)) == sti(condition.coordinate.degreeZ) &&
-					GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) == sti(condition.coordinate.minutesX) && 
-					GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) == sti(condition.coordinate.minutesZ))
+				if( GetMapCoordDegreeX(float(worldMap.playerShipX)) == int(condition.coordinate.degreeX) &&
+				    GetMapCoordDegreeZ(float(worldMap.playerShipZ)) == int(condition.coordinate.degreeZ) &&
+					GetMapCoordMinutesX(float(worldMap.playerShipX)) == int(condition.coordinate.minutesX) &&
+					GetMapCoordMinutesZ(float(worldMap.playerShipZ)) == int(condition.coordinate.minutesZ))
 				{	
 					return true;	
 				}	
@@ -342,10 +342,10 @@ bool ProcessCondition(aref condition, int n)
 				{
 					if (CheckAttribute(pchar, "Ship.pos.x"))
 					{
-						if( GetSeaCoordDegreeX(makefloat(pchar.Ship.pos.x)) == sti(condition.coordinate.degreeX) &&
-							GetSeaCoordDegreeZ(makefloat(pchar.Ship.pos.z)) == sti(condition.coordinate.degreeZ) &&
-							GetSeaCoordMinutesX(makefloat(pchar.Ship.pos.x)) == sti(condition.coordinate.minutesX) && 
-							GetSeaCoordMinutesZ(makefloat(pchar.Ship.pos.z)) == sti(condition.coordinate.minutesZ))
+						if( GetSeaCoordDegreeX(float(pchar.Ship.pos.x)) == int(condition.coordinate.degreeX) &&
+							GetSeaCoordDegreeZ(float(pchar.Ship.pos.z)) == int(condition.coordinate.degreeZ) &&
+							GetSeaCoordMinutesX(float(pchar.Ship.pos.x)) == int(condition.coordinate.minutesX) &&
+							GetSeaCoordMinutesZ(float(pchar.Ship.pos.z)) == int(condition.coordinate.minutesZ))
 						{	
 							return true;	
 						}	

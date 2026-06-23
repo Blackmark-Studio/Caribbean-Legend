@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 		
 		case "Node_11":
 			Diag.TempNode = "Node_1Next";
-			addMoneyToCharacter(pchar, makeint((sti(pchar.rank))*25 + frand(2)*500));
+			addMoneyToCharacter(pchar, int((int(pchar.rank))*25 + frand(2)*500));
 			dialog.text = "我有些钱, 请收下作为我感激的象征。 我现在就告诉大家, " + GetSexPhrase("你是多么善良高贵的先生","你是多么善良高贵的女士") + "。 ";
 			link.l1 = "你肯定会的。 谢谢...现在回家吧。 ";
 			link.l1.go = "exit";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_32":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "他的名字是" + pchar.GenQuest.EncGirl.sLoverId + ", 他是个新来的。 现在他住在" + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + "的定居点, 想在那里找份工作, 但现在是困难时期。 每个人都在谈论危机...反正我现在也回不了家了。 ";
 			link.l1 = "危机? 哈...对一个真正的海盗来说, 危机是当地平线有一支贸易商队, 却没有风扬起帆...";
 			link.l1.go = "Node_12Next";
@@ -274,7 +274,7 @@ void ProcessDialogEvent()
 				pchar.quest.LandEnc_RapersBadExit.win_condition = "LandEnc_RapersBadExit";
 			}
 			pchar.GenQuest.EncGirl = "Begin_11";
-			switch(sti(pchar.GenQuest.EncGirl.variant))
+			switch(int(pchar.GenQuest.EncGirl.variant))
 			{
 				case 0:
 					if(rand(1) == 0)
@@ -306,7 +306,7 @@ void ProcessDialogEvent()
 		case "Node_131":
 			pchar.GenQuest.EncGirl.SmallCoins = rand(25) + 20;
 			pchar.GenQuest.EncGirl.BigCoins = rand(15) + 5;
-			dialog.text = "那条项链是由精选的珍珠组成的, 那些珍珠不便宜。 有" + sti(pchar.GenQuest.EncGirl.BigCoins) + "颗大珍珠和" + sti(pchar.GenQuest.EncGirl.SmallCoins) + "颗小珍珠。 如果找到这些珍珠, 我们可以委托再做一条那样的项链。 ";
+			dialog.text = "那条项链是由精选的珍珠组成的, 那些珍珠不便宜。 有" + int(pchar.GenQuest.EncGirl.BigCoins) + "颗大珍珠和" + int(pchar.GenQuest.EncGirl.SmallCoins) + "颗小珍珠。 如果找到这些珍珠, 我们可以委托再做一条那样的项链。 ";
 			link.l1 = "这肯定不是一件容易的工作...好吧, 如果你的女主人给了你命令, 那你也没什么办法。 试着找到珍珠吧。 祝你好运。 ";
 			link.l1.go = "Node_131End";
 			link.l2 = "这是没有意义的。 在这片茂密的草丛中找珍珠比在干草堆里找针还难。 更不用说你甚至不知道珍珠丢失的地方...";
@@ -371,14 +371,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_4":
-			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * sti(pchar.rank);
+			pchar.GenQuest.EncGirl.mapPrice = 20000 + 500 * int(pchar.rank);
 			dialog.text = "这听起来很诱人...你能出多少钱买它? ";
-			link.l1 = "我认为它的价值不超过" + sti(pchar.GenQuest.EncGirl.mapPrice) + "比索。 ";
+			link.l1 = "我认为它的价值不超过" + int(pchar.GenQuest.EncGirl.mapPrice) + "比索。 ";
 			link.l1.go = "Node_132_5";
 		break;
 		
 		case "Node_132_5":
-			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (makeint(pchar.money) >= sti(pchar.GenQuest.EncGirl.mapPrice)))
+			if((GetSummonSkillFromName(pchar, SKILL_COMMERCE) + GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) + GetSummonSkillFromName(pchar, SKILL_FORTUNE)) > (rand(220) + 100) && (int(pchar.money) >= int(pchar.GenQuest.EncGirl.mapPrice)))
 			{
 				dialog.text = "呵呵, 做女人不容易...好吧, 我同意。 这场噩梦终于要结束了...也许这张地图属于你, " + GetSexPhrase("一位高贵的绅士","") + ", 比属于那些无赖要好。 ";
 				link.l1 = "好的。 这是你的钱...尽量不要一次花光。 ";
@@ -393,7 +393,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_132_6":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.mapPrice))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.mapPrice)));
 			ref rMap = ItemsFromID("map_full"); // mitrokosta 修复空地图
 			FillMapForTreasure(rMap, "");
 			GiveItem2Character(pchar, "map_full");
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 			dialog.text = "但我能做什么呢? 我不能忽视女主人的命令, 她会活剥了我的皮。 ";
 			link.l1 = "在" + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + "定居点的教堂等我, 我会给你带珍珠来做一条新项链。 ";
 			link.l1.go = "Node_133_1";
-			if(sti(pchar.money) >= 15000)
+			if(int(pchar.money) >= 15000)
 			{
 				link.l2 = "给你。 拿这15000比索。 这应该足够挑选项链的珍珠了, 或者买一条新的。 ";
 				link.l2.go = "Node_135";
@@ -595,15 +595,15 @@ void ProcessDialogEvent()
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("","")); 
 			AddQuestUserData("JungleGirl", "sName", pchar.GenQuest.EncGirl.name); 
 			AddQuestUserData("JungleGirl", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city));
-			AddQuestUserData("JungleGirl", "sText1", sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			AddQuestUserData("JungleGirl", "sText2", sti(pchar.GenQuest.EncGirl.SmallCoins)); 		
+			AddQuestUserData("JungleGirl", "sText1", int(pchar.GenQuest.EncGirl.BigCoins));
+			AddQuestUserData("JungleGirl", "sText2", int(pchar.GenQuest.EncGirl.SmallCoins));
 			DialogExit();
 			AddDialogExitQuest("pchar_back_to_player");			
 		break;
 		
 		case "Node_134":
 			dialog.text = RandPhraseSimple(""+ GetSexPhrase("船长","年轻女士") +", 很高兴再次见到你! 你设法为项链收集珍珠了吗? ","你好, 船长! 你给我带珍珠了吗? 你知道, 我的女主人越来越紧张了...");
-			if (GetCharacterItem(pchar, "jewelry52") >= sti(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= sti(pchar.GenQuest.EncGirl.SmallCoins))
+			if (GetCharacterItem(pchar, "jewelry52") >= int(pchar.GenQuest.EncGirl.BigCoins) && GetCharacterItem(pchar, "jewelry53") >= int(pchar.GenQuest.EncGirl.SmallCoins))
 			{
 				link.l1 = "是的。 这是你的珍珠。 拿给你的女主人, 告诉她下次小心点。 ";
 				link.l1.go = "Node_134_1";
@@ -616,8 +616,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_134_1":
-			TakeNItems(pchar, "jewelry52", -sti(pchar.GenQuest.EncGirl.BigCoins)); 
-			TakeNItems(pchar, "jewelry53", -sti(pchar.GenQuest.EncGirl.SmallCoins)); 
+			TakeNItems(pchar, "jewelry52", -int(pchar.GenQuest.EncGirl.BigCoins));
+			TakeNItems(pchar, "jewelry53", -int(pchar.GenQuest.EncGirl.SmallCoins));
 			pchar.quest.EncGirl_GetCoins.over = "yes";
 			pchar.quest.EncGirl_DeathSimple.over = "yes";
 			dialog.text = "哦, " + GetSexPhrase("船长","年轻女士") + ", 很高兴遇到你! 作为对你为我所做一切的感激之情的象征, 我想给你这个小饰品和这些宝石。 我希望你会觉得它们有用。 ";
@@ -777,7 +777,7 @@ void ProcessDialogEvent()
 		
 		case "Node_209":
 			LAi_LocationDisableMonstersGen(pchar.location, false);
-			i = makeint(sti(pchar.GenQuest.EncGirl.price)/100.0);
+			i = int(int(pchar.GenQuest.EncGirl.price)/100.0);
 			TakeNItems(pchar, "jewelry6", i);
 			sTemp = LAi_FindNearestFreeLocator2Pchar("reload");
 			LAi_SetActorType(npchar);
@@ -849,7 +849,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") || CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
 			{
-				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15)
+				if (CheckAttribute(pchar, "GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15)
 				{
 					dialog.text = "那里人太多了。 我们去私人房间吧。 我有事要告诉你。 ";
 					link.l1 = LinkRandPhrase("我已经为你做了太多, 现在再见。 ","你不应该滥用我的好意。 再见, 亲爱的。 ","我现在不需要你的故事了, 你可以自己解决。 ");
@@ -915,7 +915,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_228":
-			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && sti(pchar.rank) > 15) // 关于一个无辜女孩误入妓院的感人故事
+			if(CheckAttribute(pchar, "GenQuest.EncGirl.Horse") && CheckAttribute(pchar,"GenQuest.EncGirl.BrothelCity") && int(pchar.rank) > 15) // 关于一个无辜女孩误入妓院的感人故事
 			{
 				DeleteAttribute(pchar, "GenQuest.EncGirl.BrothelCity");
 				dialog.text = "那么你仍然想听我的故事吗? ";
@@ -975,7 +975,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_233":
-			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(sti(pchar.GenQuest.EncGirl.nation));
+			pchar.GenQuest.EncGirl.Parents_City = GetQuestNationsCity(int(pchar.GenQuest.EncGirl.nation));
 			dialog.text = "我的家人住在" + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.Parents_City) + "的定居点。 我是偶然来到这里的, 在我新郎带我去见他父母的船上, 但船被海盗劫持了。 船被夺走了, 乘客们被安置在离这里不远的海湾。 我的新郎在登船时被杀了, 我在穿越丛林的途中病得很重\n当地妓院的夫人治疗了我, 当我站起来时, 她要求我工作来支付治疗费用。 我是个妓女, 但我没有让夫人满意, 所以夫人把我卖给了一些土匪, 至少赚了一些钱。 故事的另一部分你知道。 ";
 			link.l1 = "那就辞职回家! 你为什么允许他们像对待奴隶一样对待你? ! ";
 			link.l1.go = "Node_234";
@@ -987,7 +987,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Node_235";
 			link.l2 = "在这里等。 我去给你拿旅行袋。 ";
 			link.l2.go = "Node_236";													
-			if(sti(pchar.money) >= 5000) 
+			if(int(pchar.money) >= 5000)
 			{
 				link.l3 = "谁在乎你的文件? 你需要多少钱才能回家? ";
 				link.l3.go = "Node_237";							
@@ -1083,7 +1083,7 @@ void ProcessDialogEvent()
 		
 		case "Node_242":
 			dialog.text = "他们真的找到我的包了吗? ";
-			if(sti(pchar.money) >= 5000)
+			if(int(pchar.money) >= 5000)
 			{
 				link.l1 = "你需要多少钱才能回家? ";
 				link.l1.go = "Node_237";
@@ -1151,17 +1151,17 @@ void ProcessDialogEvent()
 		
 		case "Node_237":
 			dialog.text = "嗯, 我不知道...也许, 我得等一个过路的车。 但我不能向你要钱。 ";
-			if(makeint(pchar.money)>=5000)
+			if(int(pchar.money)>=5000)
 			{
 				link.l1 = "我明白了。 好吧, 拿5000比索。 那应该够了。 ";
 				link.l1.go = "Node_237_1";
 			}
-			if(makeint(pchar.money)>=25000)
+			if(int(pchar.money)>=25000)
 			{
 				link.l2 = "我明白了。 好吧, 拿25000比索回家。 ";
 				link.l2.go = "Node_237_2";
 			}
-			if(makeint(pchar.money)>=35000)
+			if(int(pchar.money)>=35000)
 			{
 				link.l3 = "我明白了。 好吧, 拿35000比索。 那应该足够在船上买最好的客舱了。 ";
 				link.l3.go = "Node_237_3";
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 			if(pchar.GenQuest.EncGirl == "EncGirlFack_GetMoney") 
 			{
 				AddSimpleRumour(RandPhraseSimple("你听说了吗? 一个妓女试图无证偷偷登上一艘船, 但被抓住并带回了妓院。 他们说她欠了老鸨一大笔钱。 ",  
-				"你听说了吗? 一个没有证件的妓女在港口被抓住了。 他们说她在试图逃离妓院之前清空了老鸨的金库。 我说, 这种污秽和盗窃的源头早就该关闭了。 我们的孩子甚至看到了这一点, 他们能从这样的例子中学到什么? "), sti(pchar.GenQuest.EncGirl.nation), 3, 1);
+				"你听说了吗? 一个没有证件的妓女在港口被抓住了。 他们说她在试图逃离妓院之前清空了老鸨的金库。 我说, 这种污秽和盗窃的源头早就该关闭了。 我们的孩子甚至看到了这一点, 他们能从这样的例子中学到什么? "), int(pchar.GenQuest.EncGirl.nation), 3, 1);
 			}
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
 			DialogExit();
@@ -1213,7 +1213,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_251":
-			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(sti(npchar.nation), "man"); 
+			pchar.GenQuest.EncGirl.sLoverId = GenerateRandomName(int(npchar.nation), "man");
 			dialog.text = "不! 不, 船长, 我爱" + pchar.GenQuest.EncGirl.sLoverId + ", 我不会嫁给其他男人! 我父亲什么都不想听! 他说" + XI_ConvertString("Colony" + pchar.GenQuest.EncGirl.city) + "在这里只是个访客, 所以他永远不会在这里找到工作, 他注定要在贫困中死去, 我也和他一起! 我会和他一起走到世界的尽头, 只为在他身边! 带我去找他, 我求你了! ";
 			link.l1 = "好吧, 我们走。 我想我会想出怎么处理你...";
 			link.l1.go = "Node_252";
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 				
 		case "ThanksForHelp_1":
 			Diag.TempNode = "ThanksAgain";
-			if(makeint(Pchar.reputation.nobility) >= 80)
+			if(int(Pchar.reputation.nobility) >= 80)
 			{
 				dialog.text = "我有一些钱...请接受它作为我感激的象征! ";
 				Link.l1 = "谢谢。 下次尽量小心。 ";
@@ -1315,7 +1315,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					addMoneyToCharacter(Pchar, makeint(PChar.rank)*100);
+					addMoneyToCharacter(Pchar, int(PChar.rank)*100);
 					dialog.text = "我有一些钱...请接受它作为我感激的象征! ";
 					Link.l1 = "谢谢。 下次尽量小心。 ";
 					Link.l1.go = "exit";

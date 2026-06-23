@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                       "Да уж, действительно в третий раз...", "Да нет, какие вопросы...", npchar, Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Цена чахотки
-			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
+			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && int(pchar.money) >= 3000)
 			{
 				link.l1 = "Я слышал"+GetSexPhrase("","а")+", что в вашей тюрьме свирепствует чахотка, как думаешь, это не перекинется на город?";
 				link.l1.go = "Consumption";
@@ -140,8 +140,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Боже мой, вы опять об этом! Нет, слава Богу, не слышал, клянусь! А теперь, давайте сменим тему, прошу!";
 			link.l1 = "Хорошо-хорошо, только не волнуйся ты так...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";
@@ -162,7 +162,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2":
 			dialog.text = "Ну, скажем так, друзей у него куда меньше, чем тех, кто мечтает свернуть ему шею. Но если вам нужно имя человека, который действительно сможет на него повлиять, это обойдётся в тысячу песо. Заплатите - и я всё расскажу.";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Ладно, держи свои деньги, старый вымогатель.";
 				link.l1.go = "OZ_Tavern_3";
@@ -178,7 +178,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2_1":
 			dialog.text = "Капитан, вы принесли тысячу песо?";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Принёс. Держи, старый вымогатель.";
 				link.l1.go = "OZ_Tavern_3";

@@ -64,9 +64,9 @@ void GetRealOptions(ref optref)
 {
 	float ftmp1,ftmp2,ftmp3;
 
-	ftmp1 = stf(optref.volume.sound);
-	ftmp2 = stf(optref.volume.music);
-	ftmp3 = stf(optref.volume.dialog);
+	ftmp1 = float(optref.volume.sound);
+	ftmp2 = float(optref.volume.music);
+	ftmp3 = float(optref.volume.dialog);
 	SendMessage(&sound,"leee", MSG_SOUND_GET_MASTER_VOLUME, &ftmp1, &ftmp2,	&ftmp3 );
 	optref.volume.sound = ftmp1;
 	optref.volume.music = ftmp2;
@@ -88,132 +88,132 @@ void GetRealOptions(ref optref)
 	optref.video.grassquality = iGrassQuality;
 
 	if( CheckAttribute(&InterfaceStates,"Fov") ) {
-		optref.ifov = sti(InterfaceStates.Fov);
+		optref.ifov = int(InterfaceStates.Fov);
 	} else {
 		optref.ifov = 1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"FontType") ) {
-		optref.ifonttype = sti(InterfaceStates.FontType);
+		optref.ifonttype = int(InterfaceStates.FontType);
 	} else {
 		optref.ifonttype = 0;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"MoreInfo") ) {
-		optref.imoreinfo = sti(InterfaceStates.MoreInfo);
+		optref.imoreinfo = int(InterfaceStates.MoreInfo);
 	} else {
 		optref.imoreinfo = 0;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ControlsMode") ) {
-		optref.icontrolsmode = sti(InterfaceStates.ControlsMode);
+		optref.icontrolsmode = int(InterfaceStates.ControlsMode);
 	} else {
 		optref.icontrolsmode = 0;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"CompassPos") ) {
-		optref.icompasspos = sti(InterfaceStates.CompassPos);
+		optref.icompasspos = int(InterfaceStates.CompassPos);
 	} else {
 		optref.icompasspos = 0;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ControlsTips") ) {
-		optref.icontrolstips = sti(InterfaceStates.ControlsTips);
+		optref.icontrolstips = int(InterfaceStates.ControlsTips);
 	} else {
 		optref.icontrolstips = 2;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"HelpTime") ) {
-		optref.ihelptime = sti(InterfaceStates.HelpTime);
+		optref.ihelptime = int(InterfaceStates.HelpTime);
 	} else {
 		optref.ihelptime = 1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"Camera") ) {
-		optref.icamera = sti(InterfaceStates.Camera);
+		optref.icamera = int(InterfaceStates.Camera);
 	} else {
 		optref.icamera = 1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"EnemyType") ) {
-		optref.ienemytype = sti(InterfaceStates.EnemyType);
+		optref.ienemytype = int(InterfaceStates.EnemyType);
 	} else {
 		optref.ienemytype = 1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"Target") ) {
-		optref.itarget = sti(InterfaceStates.Target);
+		optref.itarget = int(InterfaceStates.Target);
 	} else {
 		optref.itarget = 2;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"VisualScheme") ) {
-		optref.ivisualscheme = sti(InterfaceStates.VisualScheme);
+		optref.ivisualscheme = int(InterfaceStates.VisualScheme);
 	} else {
 		optref.ivisualscheme = 0;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"DialogScale") ) {
-		optref.idialogscale = sti(InterfaceStates.DialogScale);
+		optref.idialogscale = int(InterfaceStates.DialogScale);
 	} else {
 		optref.idialogscale = 0;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"BestCourse") ) {
-		optref.ibestcourse = sti(InterfaceStates.BestCourse);
+		optref.ibestcourse = int(InterfaceStates.BestCourse);
 	} else {
 		optref.ibestcourse = 0;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"SeaDetails") ) {
-		optref.seadetails = stf(InterfaceStates.SeaDetails);
+		optref.seadetails = float(InterfaceStates.SeaDetails);
 	}
 
 	if( CheckAttribute(&InterfaceStates,"FoliageDrawDistance") ) {
-		if (sti(optref.FoliageDrawDistance)>3000) optref.FoliageDrawDistance = 3000;
-		else optref.FoliageDrawDistance = stf(InterfaceStates.FoliageDrawDistance);
+		if (int(optref.FoliageDrawDistance)>3000) optref.FoliageDrawDistance = 3000;
+		else optref.FoliageDrawDistance = float(InterfaceStates.FoliageDrawDistance);
 	} else {
 		optref.FoliageDrawDistance = 1000;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"GrassDrawDistance") ) {
-		optref.GrassDrawDistance = stf(InterfaceStates.GrassDrawDistance);
+		optref.GrassDrawDistance = float(InterfaceStates.GrassDrawDistance);
 	} else {
 		optref.GrassDrawDistance = 50;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ClassicSoundScene") ) {
-		optref.cameramode.ClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
+		optref.cameramode.ClassicSoundScene = int(InterfaceStates.ClassicSoundScene);
 	} else {
 		optref.cameramode.ClassicSoundScene = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"SFW") ) {
-		optref.cameramode.SFW = sti(InterfaceStates.SFW);
+		optref.cameramode.SFW = int(InterfaceStates.SFW);
 	} else {
 		optref.cameramode.SFW = false;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"InvertCameras") ) {
-		optref.cameramode.InvertCameras = sti(InterfaceStates.InvertCameras);
+		optref.cameramode.InvertCameras = int(InterfaceStates.InvertCameras);
 	} else {
 		optref.cameramode.InvertCameras = false;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ShowBattleMode") ) {
-		optref.cameramode.ShowBattleMode = sti(InterfaceStates.ShowBattleMode);
+		optref.cameramode.ShowBattleMode = int(InterfaceStates.ShowBattleMode);
 	} else {
 		optref.cameramode.ShowBattleMode = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ShowCharString") ) {
-		optref.cameramode.ShowCharString = sti(InterfaceStates.ShowCharString);
+		optref.cameramode.ShowCharString = int(InterfaceStates.ShowCharString);
 	} else {
 		optref.cameramode.ShowCharString = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ShowTutorial") ) {
-		optref.cameramode.ShowTutorial = sti(InterfaceStates.ShowTutorial);
+		optref.cameramode.ShowTutorial = int(InterfaceStates.ShowTutorial);
 	} else {
 		optref.cameramode.ShowTutorial = true;
 	}
@@ -224,44 +224,44 @@ void GetRealOptions(ref optref)
 	{
 		sAutoSave = "AutoSave_" + GetAutoSaveType(i);
 		if(CheckAttribute(&InterfaceStates, sAutoSave))
-			optref.(sAutoSave) = sti(InterfaceStates.(sAutoSave));
+			optref.(sAutoSave) = int(InterfaceStates.(sAutoSave));
 		else
 			optref.(sAutoSave) = -1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"EnabledQuestsMarks") ) {
-		optref.cameramode.EnabledQuestsMarks = sti(InterfaceStates.EnabledQuestsMarks);
+		optref.cameramode.EnabledQuestsMarks = int(InterfaceStates.EnabledQuestsMarks);
 	} else {
 		optref.cameramode.EnabledQuestsMarks = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"EnabledShipMarks") ) {
-		optref.cameramode.EnabledShipMarks = sti(InterfaceStates.EnabledShipMarks);
+		optref.cameramode.EnabledShipMarks = int(InterfaceStates.EnabledShipMarks);
 	} else {
 		optref.cameramode.EnabledShipMarks = 1;
 	}
-	if (sti(optref.cameramode.EnabledShipMarks)>0) bDrawBars = true;
-	else bDrawBars = sti(optref.cameramode.EnabledShipMarks);
+	if (int(optref.cameramode.EnabledShipMarks)>0) bDrawBars = true;
+	else bDrawBars = bool(optref.cameramode.EnabledShipMarks);
 
 	if( CheckAttribute(&InterfaceStates,"SimpleSea") ) {
-		optref.cameramode.SimpleSeaMode = sti(InterfaceStates.SimpleSea);
+		optref.cameramode.SimpleSeaMode = int(InterfaceStates.SimpleSea);
 	} else {
 		optref.cameramode.SimpleSeaMode = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"CREWONDECK") ) {
-		optref.cameramode.CREWONDECKMode = sti(InterfaceStates.CREWONDECK);
+		optref.cameramode.CREWONDECKMode = int(InterfaceStates.CREWONDECK);
 	} else {
 		optref.cameramode.CREWONDECKMode = true;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"ROTATESKY") ) {
-		optref.cameramode.ROTATESKYMode = sti(InterfaceStates.ROTATESKY);
+		optref.cameramode.ROTATESKYMode = int(InterfaceStates.ROTATESKY);
 	} else {
 		optref.cameramode.ROTATESKYMode = false;
 	}
 	if( CheckAttribute(&InterfaceStates,"DYNAMICLIGHTS") ) {
-		optref.cameramode.DYNAMICLIGHTSMode = sti(InterfaceStates.DYNAMICLIGHTS);
+		optref.cameramode.DYNAMICLIGHTSMode = int(InterfaceStates.DYNAMICLIGHTS);
 	} else {
 		optref.cameramode.DYNAMICLIGHTSMode = true;
 	}
@@ -333,18 +333,18 @@ void GetRealOptions(ref optref)
 
 void SetCurentOptions(ref optref)
 {
-	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, stf(optref.volume.sound), stf(optref.volume.music), stf(optref.volume.dialog));
+	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, float(optref.volume.sound), float(optref.volume.music), float(optref.volume.dialog));
 
-	/*bArcadeSails = sti(optref.arcademode.bArcadeSails);
-	bArcadeShipSpeed = sti(optref.arcademode.bArcadeShipSpeed);
-	bArcadeCannonsReload = sti(optref.arcademode.bArcadeCannonsReload);
-	bArcadeCannonsAccuracy = sti(optref.arcademode.bArcadeCannonsAccuracy);
-	bArcadeFencingAI = sti(optref.arcademode.bArcadeFencingAI);
-	bArcadeFencingDamage = sti(optref.arcademode.bArcadeFencingDamage);
-	bArcadeFencingEquip = sti(optref.arcademode.bArcadeFencingEquip);
-	bArcadeSailTo = sti(optref.arcademode.bArcadeSailTo);
+	/*bArcadeSails = int(optref.arcademode.bArcadeSails);
+	bArcadeShipSpeed = int(optref.arcademode.bArcadeShipSpeed);
+	bArcadeCannonsReload = int(optref.arcademode.bArcadeCannonsReload);
+	bArcadeCannonsAccuracy = int(optref.arcademode.bArcadeCannonsAccuracy);
+	bArcadeFencingAI = int(optref.arcademode.bArcadeFencingAI);
+	bArcadeFencingDamage = int(optref.arcademode.bArcadeFencingDamage);
+	bArcadeFencingEquip = int(optref.arcademode.bArcadeFencingEquip);
+	bArcadeSailTo = int(optref.arcademode.bArcadeSailTo);
 	*/
-	locCameraEnableSpecialMode = !sti(optref.cameramode.follow_on);
+	locCameraEnableSpecialMode = !int(optref.cameramode.follow_on);
 	
 	/*
 	SeaMaxVertices
@@ -359,7 +359,7 @@ void SetCurentOptions(ref optref)
 	}
 
 	if( CheckAttribute(optref,"cameramode.SFW") ) {
-		bSFW = sti(optref.cameramode.SFW);
+		bSFW = bool(optref.cameramode.SFW);
 		InterfaceStates.SFW = bSFW;
 	} else {
 		InterfaceStates.SFW = false;
@@ -389,7 +389,7 @@ void SetCurentOptions(ref optref)
 	{
 		sAutoSave = "AutoSave_" + GetAutoSaveType(i);
 		if(CheckAttribute(optref, sAutoSave))
-			InterfaceStates.(sAutoSave) = sti(optref.(sAutoSave));
+			InterfaceStates.(sAutoSave) = int(optref.(sAutoSave));
 		else
 			InterfaceStates.(sAutoSave) = -1;
 	}
@@ -475,118 +475,118 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.GlowEffect = 0;
 	}
 	
-	SetGlowParams(1.0, sti(InterfaceStates.GlowEffect), 2);
+	SetGlowParams(1.0, int(InterfaceStates.GlowEffect), 2);
 	
 	if( CheckAttribute(optref,"video.grassquality") ) {
-		iGrassQuality = sti(optref.video.grassquality);
+		iGrassQuality = int(optref.video.grassquality);
 	} else {
 		iGrassQuality = 0;
 	}
 
 	if( CheckAttribute(optref,"ifov") ) {
-		InterfaceStates.Fov = sti(optref.ifov);
-		Render.CorrectFov = sti(InterfaceStates.Fov);
+		InterfaceStates.Fov = int(optref.ifov);
+		Render.CorrectFov = int(InterfaceStates.Fov);
 	} else {
 		InterfaceStates.Fov = 1;
 	}
 
 	if( CheckAttribute(optref,"ifonttype") ) {
-		InterfaceStates.FontType = sti(optref.ifonttype);
+		InterfaceStates.FontType = int(optref.ifonttype);
 	} else {
 		InterfaceStates.FontType = 0;
 	}
 
 	if( CheckAttribute(optref,"imoreinfo") ) {
-		InterfaceStates.MoreInfo = sti(optref.imoreinfo);
+		InterfaceStates.MoreInfo = int(optref.imoreinfo);
 	} else {
 		InterfaceStates.MoreInfo = 0;
 	}
 
 	if( CheckAttribute(optref,"icontrolsmode") ) {
-		InterfaceStates.ControlsMode = sti(optref.icontrolsmode);
+		InterfaceStates.ControlsMode = int(optref.icontrolsmode);
 	} else {
 		InterfaceStates.ControlsMode = 0;
 	}
 
 	if( CheckAttribute(optref,"icompasspos") ) {
-		InterfaceStates.CompassPos = sti(optref.icompasspos);
+		InterfaceStates.CompassPos = int(optref.icompasspos);
 	} else {
 		InterfaceStates.CompassPos = 0;
 	}
 
 	if( CheckAttribute(optref,"icontrolstips") ) {
-		InterfaceStates.ControlsTips = sti(optref.icontrolstips);
+		InterfaceStates.ControlsTips = int(optref.icontrolstips);
 	} else {
 		InterfaceStates.ControlsTips = 2;
 	}
 
 	if( CheckAttribute(optref,"ihelptime") ) {
-		iGlobalHelpTime = sti(optref.ihelptime);
+		iGlobalHelpTime = int(optref.ihelptime);
 		InterfaceStates.HelpTime = iGlobalHelpTime;
 	} else {
 		InterfaceStates.HelpTime = 1;
 	}
 
 	if( CheckAttribute(optref,"icamera") ) {
-		iGlobalCamera = sti(optref.icamera);
+		iGlobalCamera = int(optref.icamera);
 		InterfaceStates.Camera = iGlobalCamera;
 	} else {
 		InterfaceStates.Camera = 1;
 	}
 
 	if( CheckAttribute(optref,"ienemytype") ) {
-		iGlobalEnemyType = sti(optref.ienemytype);
+		iGlobalEnemyType = int(optref.ienemytype);
 		InterfaceStates.EnemyType = iGlobalEnemyType;
 	} else {
 		InterfaceStates.EnemyType = 1;
 	}
 
 	if( CheckAttribute(optref,"itarget") ) {
-		iGlobalTarget = sti(optref.itarget);
+		iGlobalTarget = int(optref.itarget);
 		InterfaceStates.Target = iGlobalTarget;
 	} else {
 		InterfaceStates.Target = 2;
 	}
 	
 	if( CheckAttribute(optref,"ivisualscheme") ) {
-		iVisualScheme = sti(optref.ivisualscheme);
+		iVisualScheme = int(optref.ivisualscheme);
 		InterfaceStates.VisualScheme = iVisualScheme;
 	} else {
 		InterfaceStates.VisualScheme = 2;
 	}
 	
 	if( CheckAttribute(optref,"idialogscale") ) {
-		iDialogScale = sti(optref.idialogscale);
+		iDialogScale = int(optref.idialogscale);
 		InterfaceStates.DialogScale = iDialogScale;
 	} else {
 		InterfaceStates.DialogScale = 2;
 	}
 	
 	if( CheckAttribute(optref,"ibestcourse") ) {
-		iBestCourse = sti(optref.ibestcourse);
+		iBestCourse = int(optref.ibestcourse);
 		InterfaceStates.BestCourse = iBestCourse;
 	} else {
 		InterfaceStates.BestCourse = 2;
 	}
 
 	if( CheckAttribute(optref,"seadetails") ) {
-		InterfaceStates.SeaDetails = stf(optref.seadetails);
+		InterfaceStates.SeaDetails = float(optref.seadetails);
 	}
 
 	if( CheckAttribute(optref,"FoliageDrawDistance") ) {
-		if (sti(optref.FoliageDrawDistance)>3000) InterfaceStates.FoliageDrawDistance = 3000;
-		else InterfaceStates.FoliageDrawDistance = stf(optref.FoliageDrawDistance);
+		if (int(optref.FoliageDrawDistance)>3000) InterfaceStates.FoliageDrawDistance = 3000;
+		else InterfaceStates.FoliageDrawDistance = float(optref.FoliageDrawDistance);
 	} else {
 		InterfaceStates.FoliageDrawDistance = 1000;
 	}
 
 	if( CheckAttribute(optref,"GrassDrawDistance") ) {
-		InterfaceStates.GrassDrawDistance = stf(optref.GrassDrawDistance);
+		InterfaceStates.GrassDrawDistance = float(optref.GrassDrawDistance);
 	} else {
 		InterfaceStates.GrassDrawDistance = 50;
 	}
 
-	XI_SetColorCorrection(stf(InterfaceStates.video.contrast),stf(InterfaceStates.video.gamma),stf(InterfaceStates.video.brightness));
+	XI_SetColorCorrection(float(InterfaceStates.video.contrast),float(InterfaceStates.video.gamma),float(InterfaceStates.video.brightness));
 
 	aref arControls;
 	makearef(arControls,optref.controls);
@@ -654,7 +654,7 @@ void GetControlsOptions(ref optref)
 	{
 		arGrp = GetAttributeN(arOut,ng);
 		grName = GetAttributeName(arGrp);
-		if( CheckAttribute(&objControlsState,"grouplist."+grName) && sti(objControlsState.grouplist.(grName))==true )
+		if( CheckAttribute(&objControlsState,"grouplist."+grName) && int(objControlsState.grouplist.(grName))==true )
 		{
 			qc = GetAttributesNum(arGrp);
 			for(nc=0; nc<qc; nc++)

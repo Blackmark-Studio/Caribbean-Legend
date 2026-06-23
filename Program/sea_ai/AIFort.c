@@ -60,10 +60,10 @@ int Fort_FindCharacter(string sLocationID, string sLocationGroup, string sLocati
 
 int Fort_GetDeadDays(ref rCharacter)
 {
-	int		iDYear = sti(rCharacter.Fort.DieTime.Year);
-	int		iDMonth = sti(rCharacter.Fort.DieTime.Month);
-	int		iDDay = sti(rCharacter.Fort.DieTime.Day);
-	float	fTime = stf(rCharacter.Fort.DieTime.Time);
+	int		iDYear = int(rCharacter.Fort.DieTime.Year);
+	int		iDMonth = int(rCharacter.Fort.DieTime.Month);
+	int		iDDay = int(rCharacter.Fort.DieTime.Day);
+	float	fTime = float(rCharacter.Fort.DieTime.Time);
 	
 	return GetPastTime("day", iDYear, iDMonth, iDDay, fTime, GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());
 }
@@ -128,12 +128,12 @@ void Fort_Login(int iIslandIndex)
 			}
 			// Add fort to AIFort
 			ref rCharacter = GetCharacter(iFortCharacter);
-			int iNation = sti(rCharacter.nation);
+			int iNation = int(rCharacter.nation);
 			/*int iRelation = GetNationRelation2MainCharacter(iNation);
 			SetCharacterRelationBoth(nMainCharacterIndex, iFortCharacter, iRelation); */
 
             // boal 22.04.05 сброс всех отношений -->
-			if (sti(rCharacter.nation) != PIRATE)
+			if (int(rCharacter.nation) != PIRATE)
 			{
                 DelCharacterRelation(iFortCharacter);
             }
@@ -143,7 +143,7 @@ void Fort_Login(int iIslandIndex)
 			int iFortMode = FORT_NORMAL;
 			if (CheckAttribute(rCharacter, "Fort.Mode"))
 			{
-				iFortMode = sti(rCharacter.Fort.Mode);
+				iFortMode = int(rCharacter.Fort.Mode);
 			}
 
 			bool	bFortRessurect = false;
@@ -284,8 +284,8 @@ void Fort_CreateEvent()
 int Fort_GetCannonsQuantity(ref rFortCharacter)
 {
 	if (!CheckAttribute(rFortCharacter, "Fort.Cannons.Quantity")) { return 0; }
-	int iMaxCannonsQuantity = sti(rFortCharacter.Fort.Cannons.Quantity);
-	int ResultCannons = sti(iMaxCannonsQuantity) - (iNumDamagedCannonsQuantity);
+	int iMaxCannonsQuantity = int(rFortCharacter.Fort.Cannons.Quantity);
+	int ResultCannons = int(iMaxCannonsQuantity) - (iNumDamagedCannonsQuantity);
 	return ResultCannons;
 }
 
@@ -303,21 +303,21 @@ int Fort_Damage()
 	y = GetEventData();
 	z = GetEventData();
 	
-	ref rCannon = GetCannonByType(sti(rBallCharacter.Ship.Cannons.Type));
-	float fCannonDamageMultiply = stf(rCannon.DamageMultiply);
+	ref rCannon = GetCannonByType(int(rBallCharacter.Ship.Cannons.Type));
+	float fCannonDamageMultiply = float(rCannon.DamageMultiply);
 	
-	ref rBall = GetGoodByType(sti(AIBalls.CurrentBallType));
+	ref rBall = GetGoodByType(int(AIBalls.CurrentBallType));
 	
-	float fHullDamage = stf(rBall.DamageHull) * fCannonDamageMultiply;
+	float fHullDamage = float(rBall.DamageHull) * fCannonDamageMultiply;
 
-	float hp = stf(rFortCharacter.Ship.HP);	
+	float hp = float(rFortCharacter.Ship.HP);
 	int iCannonsMinus = 0;
 	float fCannonRemainHp = hp - (iCurCannonsNum - 1) * FORT_CANNON_MAXHP;
 	
 	if(fHullDamage >= fCannonRemainHp && fCannonRemainHp > 0.0)
 	{
 		iCannonsMinus = 1;
-		iCannonsMinus += makeint(fHullDamage - fCannonRemainHp) / makeint(FORT_CANNON_MAXHP);
+		iCannonsMinus += int(fHullDamage - fCannonRemainHp) / int(FORT_CANNON_MAXHP);
 	}
 	hp -= fHullDamage;
 	
@@ -326,7 +326,7 @@ int Fort_Damage()
 		int iRelation = SeaAI_GetRelation(iFortCharacterIndex, iBallCharacterIndex);
 		if(iRelation != RELATION_ENEMY)
 		{
-			float fCurPlayerDamage = stf(rFortCharacter.Fort.PlayerDamage);
+			float fCurPlayerDamage = float(rFortCharacter.Fort.PlayerDamage);
 
 			if (iRelation == RELATION_FRIEND)	{ fCurPlayerDamage = fCurPlayerDamage + fHullDamage * 0.8; }
 			if (iRelation == RELATION_NEUTRAL)	{ fCurPlayerDamage = fCurPlayerDamage + fHullDamage * 0.5; }
@@ -335,7 +335,7 @@ int Fort_Damage()
 			{
 				if (!LAi_group_IsEnemy(pchar, rFortCharacter)) LICENSE_CheckViolationAgainstGroup_Sea(rFortCharacter);
 				SetCharacterRelationBoth(iBallCharacterIndex, iFortCharacterIndex, RELATION_ENEMY);
-				SetNationRelation2MainCharacter(sti(rFortCharacter.Nation), RELATION_ENEMY);
+				SetNationRelation2MainCharacter(int(rFortCharacter.Nation), RELATION_ENEMY);
 				UpdateRelations();
 				STH_SetColonyEnemy(rFortCharacter.city, 1);
 				
@@ -361,7 +361,7 @@ int Fort_Damage()
 	
 	rFortCharacter.Ship.HP = hp;
 	
-	float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * 0.15;
+	float fCrewDamage = float(rBall.DamageCrew) * fCannonDamageMultiply * 0.15;
 	Ship_ApplyCrewHitpoints(rFortCharacter, fCrewDamage);
 	
 	return iCannonsMinus;
@@ -397,23 +397,23 @@ float Fort_CannonDamage()
 
 	int iCompanionQuantity = GetCompanionQuantity(rBallCharacter);
 
-	int iFortMode = sti(rFortCharacter.Fort.Mode);
+	int iFortMode = int(rFortCharacter.Fort.Mode);
 	if (iFortMode != FORT_NORMAL) { return fDamage; }
 
 	float fDistanceMul = pow(0.11, fDistance);// pow(0.035, fDistance / MIN_CANNON_DAMAGE_DISTANCE);
 
-	ref rCannon = GetCannonByType(sti(rBallCharacter.Ship.Cannons.Type));
-	float fCannonDamageMultiply = stf(rCannon.DamageMultiply) * fDistanceMul;
+	ref rCannon = GetCannonByType(int(rBallCharacter.Ship.Cannons.Type));
+	float fCannonDamageMultiply = float(rCannon.DamageMultiply) * fDistanceMul;
 
-	ref rBall = GetGoodByType(sti(AIBalls.CurrentBallType));
+	ref rBall = GetGoodByType(int(AIBalls.CurrentBallType));
 
 	//CreateParticleSystem("blast",x,y,z,0.0,0.0,0.0,0);
 	
-	float fHullDamage = stf(rBall.DamageHull) * fCannonDamageMultiply * 0.4;
-	float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * 0.6;
+	float fHullDamage = float(rBall.DamageHull) * fCannonDamageMultiply * 0.4;
+	float fCrewDamage = float(rBall.DamageCrew) * fCannonDamageMultiply * 0.6;
 
-	//rFortCharacter.Ship.Crew.Quantity = stf(rFortCharacter.Ship.Crew.Quantity) - fCrewDamage;
-	//if (sti(rFortCharacter.Ship.Crew.Quantity) < 10) rFortCharacter.Ship.Crew.Quantity = 10;
+	//rFortCharacter.Ship.Crew.Quantity = float(rFortCharacter.Ship.Crew.Quantity) - fCrewDamage;
+	//if (int(rFortCharacter.Ship.Crew.Quantity) < 10) rFortCharacter.Ship.Crew.Quantity = 10;
 	Ship_ApplyCrewHitpoints(rFortCharacter, fCrewDamage);
 
 	float fDamagePiece = fHullDamage;// не нужно тут ранд, все честно, попал - молодец + (frnd() - 0.5) * fHullDamage * 0.4;
@@ -423,7 +423,7 @@ float Fort_CannonDamage()
 	
 	bool bImmortal = LAi_IsImmortal(rFortCharacter);
 	// boal 13.04.05 фикс пальбы по своему форту -->
-	if (iBallCharacterIndex == GetMainCharacterIndex() && sti(Colonies[FindColony(rFortCharacter.City)].HeroOwn) == true)
+	if (iBallCharacterIndex == GetMainCharacterIndex() && int(Colonies[FindColony(rFortCharacter.City)].HeroOwn) == true)
 	{
 	    bImmortal = true;
 	    iExp = 200;
@@ -438,7 +438,7 @@ float Fort_CannonDamage()
 	if (fDamage >= 1.0 && !bImmortal)
 	{ 
 		Event("Fort_CannonDestroy", "lllfff", iBallCharacterIndex, iFortCharacterIndex, iNumDamagedCannons, x, y, z);
-		float hp = stf(rFortCharacter.Ship.HP);
+		float hp = float(rFortCharacter.Ship.HP);
 		hp -= FORT_CANNON_MAXHP;
 		if(hp < 1000.0)
 			hp = 1000.0;
@@ -450,7 +450,7 @@ float Fort_CannonDamage()
 	if (rFortCharacter.id == "Tortuga Fort Commander") fkoeff = 1.15-MOD_SKILL_ENEMY_RATE/100;
 	fkoeff *= GetFloatByCondition(HasShipTrait(pchar, "trait13"), 1.0, 1.15);
 	fkoeff *= -SZN_GetModifierMtp(M_MIN_FORT_CANNONS_MTP, -1.0, -0.99, -0.01);
-	if (iNumDamagedCannonsQuantity >= makeint(iNumAllCannons / fClamp(1.0, 10.0, fkoeff))) // усложним с 2 до 1.5
+	if (iNumDamagedCannonsQuantity >= int(iNumAllCannons / fClamp(1.0, 10.0, fkoeff))) // усложним с 2 до 1.5
 	{
 		Fort_SetAbordageMode(rBallCharacter, rFortCharacter);
   		// 13.05.05 anticheat -->
@@ -492,7 +492,7 @@ void Fort_CannonDestroy()
 	iNumDamagedCannonsQuantity = iNumDamagedCannons;
 	
 	int iCompanionQuantity = GetCompanionQuantity(rBallCharacter);
-	int iExp = MakeInt(200 / iCompanionQuantity);
+	int iExp = int(200 / iCompanionQuantity);
 	if (iBallCharacterIndex == GetMainCharacterIndex())
 	{
 		object oRes;
@@ -518,10 +518,10 @@ void Fort_SetAbordageMode(ref rKillerCharacter, ref rFortCharacter)
 	rFortCharacter.Fort.DieTime.Day = GetDataDay();
 	rFortCharacter.Fort.DieTime.Time = GetTime();
 
-	Event(FORT_DESTROYED, "l", sti(rFortCharacter.index));
+	Event(FORT_DESTROYED, "l", int(rFortCharacter.index));
 	int iExp = 20000;
 	//AddCharacterExp(rKillerCharacter, iExp);
-	if (GetRelation(sti(rFortCharacter.index), GetMainCharacterIndex()) == RELATION_ENEMY) // fix если форт друг, а валят его осадники
+	if (GetRelation(int(rFortCharacter.index), GetMainCharacterIndex()) == RELATION_ENEMY) // fix если форт друг, а валят его осадники
 	{
 		// boal -->
 		AddCharacterExpToSkillSquadron(rKillerCharacter, "Grappling", 300);
@@ -647,7 +647,7 @@ int Fort_FindCharacterByPort(string sIslandId, string sLocationLocator)
 	    {
 	        if (CheckAttribute(&colonies[i], "commanderIdx"))
 	        {
-	            return  sti(colonies[i].commanderIdx);
+	            return  int(colonies[i].commanderIdx);
 	        }
 	    }
 	}

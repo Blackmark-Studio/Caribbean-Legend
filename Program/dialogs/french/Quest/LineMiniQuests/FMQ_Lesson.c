@@ -396,12 +396,12 @@ void ProcessDialogEvent()
 		
 		case "contra_1":
 			dialog.text = "Ha. Très intéressé. Surtout mon client. Quel est le butin ?";
-			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+"de bois de fer, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+" de navire de soie, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" de corde et "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" de résine.";
+			link.l1 = ""+FindRussianQtyString(int(pchar.questTemp.FMQL.Sanl))+"de bois de fer, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Silk))+" de navire de soie, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Rope))+" de corde et "+FindRussianQtyString(int(pchar.questTemp.FMQL.Oil))+" de résine.";
 			link.l1.go = "contra_2";
 		break;
 		
 		case "contra_2":// Addon 2016-1 Jason пиратская линейка
-			iTotalTemp = 2200*sti(pchar.questTemp.FMQL.Sanl)+1600*sti(pchar.questTemp.FMQL.Silk)+1000*sti(pchar.questTemp.FMQL.Rope)+900*sti(pchar.questTemp.FMQL.Oil);
+			iTotalTemp = 2200*int(pchar.questTemp.FMQL.Sanl)+1600*int(pchar.questTemp.FMQL.Silk)+1000*int(pchar.questTemp.FMQL.Rope)+900*int(pchar.questTemp.FMQL.Oil);
 			dialog.text = "Très bien. 2200 pesos pour chaque pièce de bois de fer, 900 pesos pour la résine, 1600 pesos pour la soie de navire et 1000 pesos pour les cordages. Qu'avons-nous ici... Eh bien-bien. "+iTotalTemp+" pesos. Marché conclu ?";
 			link.l1 = "Marché conclu !";
 			link.l1.go = "contra_3";
@@ -464,6 +464,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload_sea", "none", "", "", "FMQL_PirateNormal", 10.0);
+			if (CheckAttributeEqualTo(pchar, "questTemp.FMQL", "end")) return;
 			sld = CharacterFromID("FMQL_Prosper");
 			sld.Dialog.currentnode = "prosper_11";
 			sld.MusketerDistance = 20;
@@ -475,7 +476,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "sea", "none", "", "", "FMQL_PirateNormal", 10.0);
-			if (sti(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
+			if (int(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
 			else
 			{
 				pchar.quest.FMQL_money_20k.win_condition.l1 = "Money";

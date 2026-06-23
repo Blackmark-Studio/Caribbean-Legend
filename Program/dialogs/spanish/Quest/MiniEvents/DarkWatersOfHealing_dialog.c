@@ -650,7 +650,7 @@ void ProcessDialogEvent()
 			AddLandQuestMark(sld, "questmarkmain");
 			
 			pchar.questTemp.DWH_QuestCompleted = true;
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1;
+			pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1;
 			
 			AddSimpleRumourCity("¿Ha oído? "+GetFullName(pchar)+" consiguió un remedio para la hija de Thomas Morrison que milagrosamente restauró la salud de la pobre niña!", "SentJons", 10, 1, "");
 			AddSimpleRumourCity("Thomas Morrison enciende una vela en la parroquia diariamente por la salud de "+GetFullName(pchar)+". Dicen que gracias a sus esfuerzos, su hija se liberó de una enfermedad prolongada.", "SentJons", 10, 1, "");

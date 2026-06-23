@@ -175,7 +175,7 @@ void Tonzag_InJail() {
 
 void Tonzag_OdinVKamere(string qName)
 {
-	sld = CharacterFromID("Tonzag")
+	sld = CharacterFromID("Tonzag");
 	int iTemp = LAi_FindNearestVisCharacter(sld, 3);
 	ref characterRef;
 	if(iTemp != -1)
@@ -348,7 +348,7 @@ void Tonzag_GetOut() {
 		if (!CheckAttribute(pchar, "questTemp.Tonzag.Officers." + attr)) {
 			continue;
 		}
-		int index = sti(pchar.questTemp.Tonzag.Officers.(attr));
+		int index = int(pchar.questTemp.Tonzag.Officers.(attr));
 		if (index < 0) {
 			continue;
 		}
@@ -362,7 +362,7 @@ void Tonzag_GetOut() {
 	sld.dialog.currentnode = "Tonzag_officer";
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	Tonzag_PopStash(sld);
-	CheckForReleaseOfficer(sti(sld.index));
+	CheckForReleaseOfficer(int(sld.index));
 	SetCharacterRemovable(sld, false);
 	
 	AddQuestRecord("Tonzag", "4");
@@ -411,7 +411,7 @@ void Tonzag_GetOut() {
 	sld.mapEnc.type = "war";
     sld.mapEnc.Name = StringFromKey("Tonzag_1");
 	Map_CreateCoolWarrior("", sld.id, -1);
-	sld.ShipHideImmortal = makeint(GetCharacterShipHP(sld) / 2);
+	sld.ShipHideImmortal = int(GetCharacterShipHP(sld) / 2);
 	pchar.questTemp.TonzagQuest.Hunter = true;
 	
 	DoReloadCharacterToLocation("Tortuga_town", "reload", "reload_jail");
@@ -445,8 +445,8 @@ void Tonzag_SpawnBrander() {
 	Group_AddCharacter("Tonzag_Brander", "Tonzag_Brander");
 	Group_SetGroupCommander("Tonzag_Brander", "Tonzag_Brander");
 	Sea_LoginGroupCurrentSea("Tonzag_Brander");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
-	Ship_SetTaskBrander(PRIMARY_TASK, sti(sld.index), GetMainCharacterIndex());
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	Ship_SetTaskBrander(PRIMARY_TASK, int(sld.index), GetMainCharacterIndex());
 	
 	pchar.quest.Tonzag_BranderDead.win_condition.l1 = "Group_Death";
 	pchar.quest.Tonzag_BranderDead.win_condition.l1.group = "Tonzag_Brander";
@@ -498,7 +498,7 @@ void Tonzag_LoadDeck() {
 		} else {
 			bool found = false;
 			if (!found) {
-				sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
+				sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "Alonso", "man", "man", int(pchar.rank), FRANCE, -1, false, "soldier"));
 				GiveItem2Character(sld, "blade_10");
 				EquipCharacterByItem(sld, "blade_10");
 				
@@ -520,8 +520,8 @@ void Tonzag_LoadDeck() {
 	LAi_ActorTurnToLocator(pchar, "quest", "quest6");
 	
 	// десант
-	int iRank = MOD_SKILL_ENEMY_RATE + sti(pchar.rank);
-	int iScl = 10 + 2 * sti(pchar.rank);
+	int iRank = MOD_SKILL_ENEMY_RATE + int(pchar.rank);
+	int iScl = 10 + 2 * int(pchar.rank);
 	for (i = 1; i <= 10; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("Tonzag_LigaMushketer_" + i, "killer_" + (1 + rand(1)) + "_mush", "man", "mushketer", 20, PIRATE, 0, false, "quest"));
 		sld.viper = true;
@@ -541,7 +541,7 @@ void Tonzag_LoadDeck() {
 	for (i = 1; i <= locCount; i++) {
 		aref loc = GetAttributeN(locators, i - 1);
 		// знаю, охуенная идея, но не вручную же локаторы вписывать
-		if (stf(loc.z) > 7.6 || stf(loc.z) < -22.0) {
+		if (float(loc.z) > 7.6 || float(loc.z) < -22.0) {
 			continue;
 		}
 		object aCrewSoldier[2];
@@ -584,7 +584,7 @@ void Tonzag_BoardingShot(string qName) {
 }
 
 void Tonzag_BoardingShotResult(string qName) {
-	int sailorsCount = sti(pchar.questTemp.TonzagQuest.SailorsCount);
+	int sailorsCount = int(pchar.questTemp.TonzagQuest.SailorsCount);
 	Log_TestInfo("До выстрела " + sailorsCount + " матросов");
 	for (i = 1; i < sailorsCount; i++) {
 		sld = CharacterFromID("Tonzag_OurSailor_" + i);
@@ -639,7 +639,7 @@ void Tonzag_BoardingFightEnd(string qName) {
 	//DoQuestCheckDelay("pchar_back_to_player", 1.0);
 	
 	sld = CharacterFromID(pchar.questTemp.TonzagQuest.BoardingGF);
-	if (!CharacterIsHere(sld)) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
+	if (!CharacterIsHere(sld.id)) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 	LAi_UseAtidoteBottle(sld);
 	//LAi_Actor2WaitDialog(pchar, sld);
 	sld.dialog.currentnode = "tonzag_after_boarding";
@@ -647,7 +647,7 @@ void Tonzag_BoardingFightEnd(string qName) {
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 	AddLandQuestMark(sld, "questmarkmain");
 	
-	int totalSailors = sti(pchar.questTemp.TonzagQuest.SailorsCount);
+	int totalSailors = int(pchar.questTemp.TonzagQuest.SailorsCount);
 	int aliveSailors = totalSailors;
 	for (int i = 1; i <= totalSailors; i++) {
 		sld = CharacterFromID("Tonzag_OurSailor_" + i);
@@ -744,7 +744,7 @@ void Tonzag_SpawnGunDeck() {
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		
-		index = sti(pchar.Fellows.Passengers.(off));
+		index = int(pchar.Fellows.Passengers.(off));
 		
 		if (index < 0) {
 			continue;
@@ -796,7 +796,7 @@ void Tonzag_GunDeckFightEnd(string qName) {
 	for (i = 0; i < 6; i++) {
 		string off = officers[i];
 		
-		index = sti(pchar.Fellows.Passengers.(off));
+		index = int(pchar.Fellows.Passengers.(off));
 		
 		if (index < 0) {
 			continue;
@@ -919,7 +919,7 @@ void Tonzag_ShowFrame() {
 void Tonzag_ExitToSea() {
 	aref arTmp;
 	makearef(arTmp, pchar.questTemp.TonzagQuest.ShipPos);
-	QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
+	QuestToSeaLogin_Prepare(float(arTmp.x), float(arTmp.z), arTmp.Island);
 	DeleteAttribute(pchar, "questTemp.TonzagQuest.ShipPos");
 	QuestToSeaLogin_Launch();
 	
@@ -1274,7 +1274,7 @@ void Tonzag_ExitMine(string qName) {
 		sld = CharacterFromID("Tonzag_DeadMan_" + i);
 		aref pos;
 		makearef(pos, sld.quest.pos);
-		TeleportCharacterToPosAy(sld, stf(pos.x), stf(pos.y), stf(pos.z), stf(pos.ay));
+		TeleportCharacterToPosAy(sld, float(pos.x), float(pos.y), float(pos.z), float(pos.ay));
 		
 		LAi_KillCharacter(sld);
 	}
@@ -1405,9 +1405,9 @@ void Tonzag_PrepareJournal() {
 	sld = CharacterFromID("Tonzag");
 	LAi_SetCitizenTypeNoGroup(sld);
 	LAi_CharacterDisableDialog(sld);
-	if (RemoveOfficersIndex(pchar, sti(sld.index))) {
-		sld.isbusy = sti(sld.isbusy) - 1;
-		if (sti(sld.isbusy) <= 0) {
+	if (RemoveOfficersIndex(pchar, int(sld.index))) {
+		sld.isbusy = int(sld.isbusy) - 1;
+		if (int(sld.isbusy) <= 0) {
 			DeleteAttribute(sld, "isbusy");
 		}
 		DeleteAttribute(sld, "fighter");
@@ -1638,7 +1638,7 @@ void Tonzag_GoToCaracas() {
 	
 	aref arTmp;
 	makearef(arTmp, pchar.questTemp.TonzagQuest.ShipPos);
-	QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
+	QuestToSeaLogin_Prepare(float(arTmp.x), float(arTmp.z), arTmp.Island);
 	DeleteAttribute(pchar, "questTemp.TonzagQuest.ShipPos");
 	QuestToSeaLogin_Launch();
 	

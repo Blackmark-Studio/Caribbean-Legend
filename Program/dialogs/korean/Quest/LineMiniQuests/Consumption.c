@@ -103,8 +103,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Servant_fight":
-			int iRank = sti(pchar.rank)+5;
-			int iScl = 15 + 2*sti(pchar.rank);
+			int iRank = int(pchar.rank)+5;
+			int iScl = 15 + 2*int(pchar.rank);
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 			chrDisableReloadToLocation = true;
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 			pchar.quest.Consumption3.win_condition.l2.finish.hour = 3;
 			pchar.quest.Consumption3.function = "Consumption_MeetSergio";
 			pchar.quest.Consumption4.win_condition.l1 = "Timer";
-			pchar.quest.Consumption4.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Consumption4.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Consumption4.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.Consumption4.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.Consumption4.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sergio_24":
-			dialog.text = "선장님, 당신은 믿을 만한 사람처럼 보입니다. 또 한 가지 아주 중요한 점은, 당신이 "+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+" 그리고 이제 당신만의 배도 있군. 거래 협정을 맺자고 제안하지.";
+			dialog.text = "선장님, 당신은 믿을 만한 사람처럼 보입니다. 또 한 가지 아주 중요한 점은, 당신이 "+GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"")+" 그리고 이제 당신만의 배도 있군. 거래 협정을 맺자고 제안하지.";
 			link.l1 = "괜찮게 들리는데! 무슨 합의인데?";
 			link.l1.go = "Sergio_25";
 		break;
@@ -440,12 +440,12 @@ void ProcessDialogEvent()
 					link.l1.go = "oil_trade_exit";
 				}
 			}
-			if(sti(pchar.questTemp.SergioOil) >= 1 && !CheckAttribute(pchar, "questTemp.SergioOilBlock")) // увеличить объём поставок смолами
+			if(int(pchar.questTemp.SergioOil) >= 1 && !CheckAttribute(pchar, "questTemp.SergioOilBlock")) // увеличить объём поставок смолами
 			{
 				link.l4 = "세르히오 나리, 송진을 더 사고 싶소. 다섯 배쯤 더 큰 양으로도 공급해 줄 수 있겠소?";
 				link.l4.go = "UpgradeOil";
 			}
-			if(sti(pchar.questTemp.SergioOil) >= 1 && CheckAttribute(pchar, "questTemp.SergioOilPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок смолами, если в первый раз не принесли
+			if(int(pchar.questTemp.SergioOil) >= 1 && CheckAttribute(pchar, "questTemp.SergioOilPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок смолами, если в первый раз не принесли
 			{
 				link.l4 = "여기 있습니다, 약속대로, Sergio 나리, 요청하신 삼천 두블룬입니다.\n당신의 선견지명과 나의 투자라면 이 사업이 우리 둘 모두에게 상당한 이익을 가져다줄 것이라 확신합니다.";
 				link.l4.go = "UpgradeOil_Agreed";
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.UpgradeOil")) AddCharacterGoods(pchar, GOOD_OIL, 300);
 			else AddCharacterGoods(pchar, GOOD_OIL, 60);
 			AddCharacterExpToSkill(pchar, "Commerce", 200);
-			pchar.questTemp.SergioOil = sti(pchar.questTemp.SergioOil) + 1; // счётчик покупок
+			pchar.questTemp.SergioOil = int(pchar.questTemp.SergioOil) + 1; // счётчик покупок
 		break;
 		
 		case "UpgradeOil":
@@ -590,7 +590,7 @@ void ProcessDialogEvent()
 		case "Juan_abordage_4":
 			DialogExit();
 			chrDisableReloadToLocation = true;
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);

@@ -120,7 +120,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "TPZ_Tavern2_1":
 			dialog.text = "Kapitän, das ist einfach unglaublich! Wie haben Sie das geschafft? Egal. Sagen Sie mir lieber, was Sie für diese prächtige Lieferung Alkohol haben wollen. Und... sind die Papiere in Ordnung?";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Die Papiere? Natürlich ist alles in bester Ordnung. Sie werden sie doch wohl nicht überprüfen wollen?";
 				link.l1.go = "TPZ_Tavern2_2";
@@ -216,7 +216,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "Natürlich, Kapitän! Also, wie viel verlangen Sie für Ihre Lieferung?";
 				link.l1 = "Ich möchte dreißig Dublonen für je zehn Flaschen Wein und fünf Dublonen für zehn Flaschen Rum. Insgesamt macht das für hundert Flaschen Rum und hundert Flaschen Wein dreihundertfünfzig Dublonen.";

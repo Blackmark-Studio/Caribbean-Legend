@@ -44,7 +44,7 @@ void ProcessDialogEvent()
 			LookShipConvoy();
 			GenerateConvoyQuest(npchar);
 			dialog.text = "我需要被护送到" + XI_ConvertString("Colony" + pchar.quest.destination + "Gen") + ", 它位于" + XI_ConvertString(GetIslandByCityName(pchar.quest.destination) + "Dat") +
-				", 在" + FindRussianDaysString(sti(pchar.ConvoyQuest.iDay)) + ", 为此我将支付你" + FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney)) + "。 那么, 你的决定是? ";
+				", 在" + FindRussianDaysString(int(pchar.ConvoyQuest.iDay)) + ", 为此我将支付你" + FindRussianMoneyString(int(pchar.ConvoyQuest.convoymoney)) + "。 那么, 你的决定是? ";
 			link.l1 = "我接了。 ";
 			link.l1.go = "convoy_agreeded";
 			link.l2 = "我觉得这提议没什么意思。 ";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 			//传闻
 			AddSimpleRumour(LinkRandPhrase("一位名叫" + GetFullName(npchar) + "的商船船长说, 当需要护卫时, 可以信任" + GetMainCharacterNameDat() + "船长。 ", 
 				"名为" + GetFullName(npchar) + "的商人说" + GetMainCharacterNameDat() + "船长值得信赖。 " + GetSexPhrase("他","她") + "在护送他到" + XI_ConvertString("Colony" + pchar.quest.destination + "Gen") + "时, 以最佳方式保护了他的船只。 ", 
-				"我听说你信守对请求护卫的商船船长的承诺。 一位名叫" + GetFullName(npchar) + "的商人对你评价很高。 "), sti(npchar.nation), 40, 1);
+				"我听说你信守对请求护卫的商船船长的承诺。 一位名叫" + GetFullName(npchar) + "的商人对你评价很高。 "), int(npchar.nation), 40, 1);
 			pchar.quest.generate_convoy_quest_progress = "completed";
 			chrDisableReloadToLocation = false;
 			npchar.LifeDay = 0;
@@ -91,17 +91,17 @@ void GenerateConvoyQuest(ref npchar)
 	DeleteAttribute(NPChar, "Ship");
     int iShipCoef = SetShipConvoyQuest_Traider(NPChar);
 
-	iNation = GetRelation2BaseNation(sti(npchar.nation)); //如果需要运送到敌国城市
+	iNation = GetRelation2BaseNation(int(npchar.nation)); //如果需要运送到敌国城市
 	int daysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.ConvoyQuest.City), GetArealByCityName(pchar.quest.destination));
-	if (sti(daysQty) > 14) daysQty = 14;
-	pchar.ConvoyQuest.iDay = makeint(sti(daysQty)*(frand(1.3)+0.7));
-	iTradeMoney = (makeint(daysQty * 400 * stf(pchar.GenQuest.Convoy.Shipmod))) + (iShipCoef * 700);
+	if (int(daysQty) > 14) daysQty = 14;
+	pchar.ConvoyQuest.iDay = int(int(daysQty)*(frand(1.3)+0.7));
+	iTradeMoney = (int(daysQty * 400 * float(pchar.GenQuest.Convoy.Shipmod))) + (iShipCoef * 700);
 
-	//Log_Info(FindRussianDaysString(sti(daysQty)));
+	//Log_Info(FindRussianDaysString(int(daysQty)));
 	//Log_Info(pchar.quest.destination);
 	//Log_Info(pchar.ConvoyQuest.City);
 
-	SetTimerCondition("generate_convoy_quest_timer", 0, 0, sti(pchar.ConvoyQuest.iDay), false);
+	SetTimerCondition("generate_convoy_quest_timer", 0, 0, int(pchar.ConvoyQuest.iDay), false);
 
 	pchar.quest.generate_convoy_quest_progress = "begin";
 
@@ -112,7 +112,7 @@ void GenerateConvoyQuest(ref npchar)
 
 void LookShipConvoy()
 {
-	switch(sti(RealShips[sti(Pchar.Ship.Type)].Class))
+	switch(int(RealShips[int(Pchar.Ship.Type)].Class))
 	{
 		case 1:
 			pchar.GenQuest.GetPassenger.Shipmod = 1.0;
@@ -140,7 +140,7 @@ void LookShipConvoy()
 
 int SetShipConvoyQuest_Traider(ref _chr)
 {
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	int iShip, iShipCoef;
 	
 	if(iRank < 5)

@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makearef(NextDiag, NPChar.Dialog);
 
     // вызов диалога по городам -->
-    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(sti(NPChar.nation)) + "_Governor.c";
+    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(int(NPChar.nation)) + "_Governor.c";
     if (LoadSegment(NPChar.FileDialog2))
 	{
         ProcessCommonDialog(NPChar, Link, NextDiag);
@@ -30,9 +30,9 @@ void ProcessDialogEvent()
     int f, colony_money;
 
     int k = 1000;
-    if (CheckAttribute(Nations[sti(NPChar.nation)], "Fort"))
+    if (CheckAttribute(Nations[int(NPChar.nation)], "Fort"))
     {
-        k = (300 - sti(Nations[sti(NPChar.nation)].Fort)*10);
+        k = (300 - int(Nations[int(NPChar.nation)].Fort)*10);
     }
 	bool ok;
 	
@@ -69,15 +69,15 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Senin bir görüşme talebinde çok ısrarcı olduğunu duydum. Benim adım "+GetFullName(npchar)+". Ben kolonilerin genel valisiyim "+NationNameGenitive(sti(NPChar.nation))+",   Kraliyet'in   vekili "+NationKingsName(npchar)+" bu sularda. Şimdi, lütfen bana söyler misiniz, ziyaretinizin amacı nedir, "+GetAddress_Form(NPChar)+".";
+				dialog.text = "Senin bir görüşme talebinde çok ısrarcı olduğunu duydum. Benim adım "+GetFullName(npchar)+". Ben kolonilerin genel valisiyim "+NationNameGenitive(int(NPChar.nation))+",   Kraliyet'in   vekili "+NationKingsName(npchar)+" bu sularda. Şimdi, lütfen bana söyler misiniz, ziyaretinizin amacı nedir, "+GetAddress_Form(NPChar)+".";
 				link.l1 = "Benim adım "+GetFullName(pchar)+".";
 				link.l1.go = "node_1";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("Ah, yine sen misin? Peki, genel valisinden ne istiyorsun "+NationNameGenitive(sti(NPChar.nation))+" bu sefer?","Ve yine, beni devletin önemli işlerinden alıkoyuyorsun? Ne istiyorsun, "+GetAddress_Form(NPChar)+"?");
-				link.l1 = "Sana   Majestelerinin   adına   çalışmak   hakkında   konuşmak   istiyorum "+NationNameGenitive(sti(NPChar.nation));
+				dialog.text = RandPhraseSimple("Ah, yine sen misin? Peki, genel valisinden ne istiyorsun "+NationNameGenitive(int(NPChar.nation))+" bu sefer?","Ve yine, beni devletin önemli işlerinden alıkoyuyorsun? Ne istiyorsun, "+GetAddress_Form(NPChar)+"?");
+				link.l1 = "Sana   Majestelerinin   adına   çalışmak   hakkında   konuşmak   istiyorum "+NationNameGenitive(int(NPChar.nation));
 				link.l1.go = "work";
 				link.l2 = "Seninle önemli bir konu hakkında konuşmam gerek.";
 				link.l2.go = "quests"; // файл нации
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		
 		case "node_1":
 			dialog.text = "Peki, seni buraya getiren ve devletin önemli işlerinden beni alıkoyan nedir?";
-			link.l1 = "Sana   Majestelerinin   adına   çalışmak   hakkında   konuşmak   istiyordum "+NationNameGenitive(sti(NPChar.nation));
+			link.l1 = "Sana   Majestelerinin   adına   çalışmak   hakkında   konuşmak   istiyordum "+NationNameGenitive(int(NPChar.nation));
 			link.l1.go = "work";
 			link.l2 = "Sizinle önemli bir konu hakkında konuşacaktım.";
 			link.l2.go = "quests";
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "Ve giriş ücreti olarak ödeyeceğin 50.000 peso hazır mı? Bu para ödül havuzuna eklenecek.";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "Evet, elbette. Lütfen ücretimi kabul edin.";
 				link.l1.go = "Regata_2";

@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -22,11 +22,11 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = makeint(makeint(Pchar.money)/20)*10;
+			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
-				"Have you heard that the local bandits attacked one captain? He was totally robbed, he lost " + FindRussianMoneyString(iMoney) + "!"), sti(npchar.nation), 5, 1);
+				"Have you heard that the local bandits attacked one captain? He was totally robbed, he lost " + FindRussianMoneyString(iMoney) + "!"), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase(RandPhraseSimple("Have you heard? That bandit " + GetFullName(npchar) + " has finally found justice. He and his boys tried to rob "+ GetSexPhrase("some captain, but he turned out to be","some lady captain, but she turned out to be") +" a tough nut. So our dear robber shited his pants, ha-ha! That will be a lesson for him! Robbing the local farmers is one thing, but a brave captain is a different story!", 
 				"Thank you, captain " + GetFullName(pchar) + ", for finally dealing with the gang of that bandit " + GetFullName(npchar) + ". Those rascals were really a pain in everyone's ass. We were scared to even send couriers to the farm for milk, they could have intercepted them and rob of all the money."), 
 				"Have you heard, "+ GetSexPhrase("finally, some captain","finally, some lady captain") +" stopped that rascal " + GetFullName(npchar) + ", who was in 'charge' of the jungle, terrorizing all the local farmers. I do hope, it will stop them from their dirty deeds for long enough...", 
-				"Have you heard that local bandit " + GetFullName(npchar) + " and his boys attempted to rob "+ GetSexPhrase("some captain","some lady captain") +"? Bah! Nothing of the sort! That captain turned out to be a tough nut. They say, he chased on these robbers over all the jungle like a shark chases flock of sardines. Thank God that there are still people who can stand up for us at time when the authorities do nothing, too busy with their dark deeds..."), sti(npchar.nation), 5, 1);
+				"Have you heard that local bandit " + GetFullName(npchar) + " and his boys attempted to rob "+ GetSexPhrase("some captain","some lady captain") +"? Bah! Nothing of the sort! That captain turned out to be a tough nut. They say, he chased on these robbers over all the jungle like a shark chases flock of sardines. Thank God that there are still people who can stand up for us at time when the authorities do nothing, too busy with their dark deeds..."), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("바보짓 하지 마! 돈을 바로 내놔, 그래야 널 보내줄지도 몰라!","여행 통행료에 대해 못 들었나? 금을 내놓지 않으면 목숨을 내놓게 될 거다!","헤헷, 이 작은 모험이 너한테 돈 좀 들겠군... 내가 화내지 않는다면 말이지."),RandPhraseSimple("아주 간단해. 네가 가진 금을 전부 내놓으면 자유롭게 떠날 수 있지. 아니면 여기 남아서 우리가 어차피 네 금을 다 가져가게 될 거야. 하지만 두 번째 선택은 네가 원하지 않을 것 같은데, 헤헤.","모르는 척하지 마! 네가 죽어서 내가 직접 가져가길 원하지 않으면, 돈주머니 내놔!"),"느려터졌으니 내가 설명해 주지. 목숨이 아깝다면 가진 돈 전부 내놔.");
-			Link.l1 = "젠장, 이 망할 놈아! 난 겨우 "+makeint(makeint(Pchar.money)/20)*10+" 페소입니다.";
+			Link.l1 = "젠장, 이 망할 놈아! 난 겨우 "+int(int(Pchar.money)/20)*10+" 페소입니다.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("내 돈을 원해? 와서 가져가 봐, 네가 얼마나 값어치 있는지 직접 보겠어!","감히 이런 무례를! 예의를 제대로 가르쳐 주마!","참 자신감이군! 좋아, 진짜를 상대로 네가 어떻게 하는지 보자고\n "+GetSexPhrase("바다늑대","루브 데 메르")+"!"),LinkRandPhrase("이런 무례함에는 채찍질을 받아야 마땅하오!","이 악당들아! 지옥에서 따뜻한 자리를 위해 네 놈들 악마에게나 빌어라!","너희 같은 교수대의 새끼들은 진작에 목매달렸어야 했지! 좋아, 내 검을 너희 피로 물들여야겠군!"),RandPhraseSimple("내가 왜 너한테 내 돈을 줘야 한다고 생각하지?","그리고 내가 무장한 채로 여기 산책하러 온 게 아니라는 걸 눈치채지 못했나?"));
 			Link.l2.go = "CheckSkills";	
 		break;
 
 		case "Node_3":
-			bOk = makeint(pchar.reputation.nobility) < 11 || makeint(pchar.reputation.nobility) > 90;  
+			bOk = int(pchar.reputation.nobility) < 11 || int(pchar.reputation.nobility) > 90;
 			if(bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) == 100 || CheckCharacterPerk(pchar, "Trustworthy") || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				dialog.text = RandPhraseSimple("젠장! 좋아, 나가도 된다. 하지만 여기 있는 동안 소리라도 낼 생각은 하지 마라!","이번엔 운이 좋았지만, 다음번엔 두 배로 갚아야 할 거야! 잊지 말고 우리한테 꼭 상기시켜, 헤헤.");
@@ -117,7 +117,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				bOk = makeint(pchar.reputation.nobility) < 51 && makeint(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - жесть!!! Надо было всего лишь убрать единичку!
+				bOk = int(pchar.reputation.nobility) < 51 && int(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - жесть!!! Надо было всего лишь убрать единичку!
 				if(!bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35)
 				{
 					dialog.text = RandPhraseSimple("조용히 죽여주지. 비명 한 번 못 지를 거다.","젠장! 네가 경보를 울리기 전에 빨리 죽여야겠군.");
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("내가 네 순찰대에 왜 신경 써야 하지? 내가 걔네들한테 돈 주고 있거든. 그러니까 지갑이나 내놓고 입 다물어.","나를 겁줄 수 있다고 생각해? 이 정글에서 너 같은 놈들을 단속하는 게 바로 나다. 지금까지 아무도 대가를 치르지 않고 나간 적 없어!");
-					Link.l1 = "젠장, 이 악당아! 난 겨우 "+makeint(makeint(Pchar.money)/20)*10+" 페소입니다.";
+					Link.l1 = "젠장, 이 악당아! 난 겨우 "+int(int(Pchar.money)/20)*10+" 페소입니다.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("헤, 너 같은 약골한테 명령 따위 안 들어.","그런 건방짐에는 네 두개골에 구멍 두 개 더 뚫어주겠다! 네 머리 좀 환기시켜 줄 겸.","이런 무례함은 그냥 넘어가지 않을 것이다!"),"그렇게 하지 말았어야지...");
 					Link.l2.go = "CheckSkills";
@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 		
 		case "CheckSkills":
 		    bool isStrong = (GetCharacterSkillToOld(Pchar, "FencingL") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingS") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingH") >= 7);
-			bool z_ok = (isStrong) && (makeint(Pchar.Rank) >= 8) && (Makeint(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 проверяем на оружие (новый вариант)
+			bool z_ok = (isStrong) && (int(Pchar.Rank) >= 8) && (int(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 проверяем на оружие (новый вариант)
 			if (z_ok || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				Diag.TempNode = "GetLost";
@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(makeint(makeint(Pchar.money)/20)*10 >= makeint(Pchar.rank)*100)
+			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("좋아! 내놔, 그리고 꺼져!","별건 아니지만, 없는 것보단 낫지. 똑똑한 사람과 거래하니 좋군! 이제 가도 된다."),"그건 또 다른 이야기지! 내 친구가 늘 그러더군, '똑똑한 사람 말을 듣는 것도 좋지만, 바보랑 얘기하는 게 훨씬 재밌다'고! 헤헤!","네 금을 받는 대신 충고 하나 해주지. 정글에서는 절대 돌아다니지 마라, 만약 네가\n "+GetSexPhrase("겁쟁이 같으니. 술집에서 럼주나 마셔, 그래야 너도 네 돈주머니도 안전할 테니까!","아가씨라면, 도둑맞은 게 그나마 다행일 수도 있지.")+".");

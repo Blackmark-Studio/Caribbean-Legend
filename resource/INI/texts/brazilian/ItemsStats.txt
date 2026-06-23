@@ -333,3 +333,7 @@ itm_stat_greenIdol {Culto}
 itm_stat_descr_greenIdol {O ídolo subjuga os que estão ao redor, aumentando em $percent(0.30) a chance de rendição de navios inimigos, o poder da esquadra e o número de recrutas nas tavernas.}
 itm_stat_secondary_greenIdol {Sussurros dos Antigos}
 itm_stat_descr_secondary_greenIdol {Quando equipado, o ídolo reduz constantemente o moral da tripulação, levando-a à loucura com seus sussurros ímpios.}
+itm_stat_nocturlabe {Tam Saat}
+itm_stat_descr_nocturlabe {Geminin manevra kabiliyetini %10 artırır, 2. ve 1. sınıf gemilerde ise ek olarak %25 daha artırır.}
+itm_stat_secondary_nocturlabe {Gece Seyri}
+itm_stat_descr_secondary_nocturlabe {$key(Perception) değerini #f.0modifiers.SpecialPerception# artırır. Global haritadaki kaçış şansını 25 artırır.}

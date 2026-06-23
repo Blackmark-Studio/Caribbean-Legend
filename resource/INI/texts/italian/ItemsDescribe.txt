@@ -1491,3 +1491,5 @@ itmname_blade_34 {La Spada dell'Annegato}
 itmdescr_blade_34 {Questa spada da pirata, trovata a bordo della nave ghiacciata, è ricoperta di coralli e polipi. È abbastanza lunga e pesante da sferrare senza fatica potenti colpi d'affondo e di taglio dalla terza posizione.}
 itmname_greenIdol {Idolo di Pietra Verde}
 itmdescr_greenIdol {Questo idolo è stato scolpito da voi stessi nella pietra, in sogno. Le sue forme innaturali e i simboli terrificanti suscitano disgusto e ottenebrano la mente. A volte vi sembra persino che sussurri qualcosa...}
+itmname_nocturlabe {夜時盤}
+itmdescr_nocturlabe {星々を頼りに正確な時刻を知ることができる精巧な器具。航海を大いに簡便にし、移動を速める。}

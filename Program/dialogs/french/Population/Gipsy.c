@@ -24,7 +24,7 @@ void ProcessDialogEvent()
     // вызов диалога по городам <--
 	
 	ProcessCommonDialogRumors(NPChar, Link, NextDiag);
-	
+	sTemp = GuessText();
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -92,10 +92,9 @@ void ProcessDialogEvent()
 			link.l4 = "5000 pesos";
 			link.l4.go = "guess_rate_4";
 		break;
-		
-		sTemp = GuessText();
+
 		case "guess_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "Ah, merci pour ta charité, mon beau jeune faucon ! Maintenant écoute : "+sTemp+"";
@@ -111,7 +110,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_2"://немного в везение или скрытность
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
 				dialog.text = "Ah, merci, mon beau jeune faucon ! Maintenant écoute :"+sTemp+"Bonjour, monami.";
@@ -129,7 +128,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_3"://здоровье + везение или скрытность, харизма
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "Ah, merci pour ton argent, mon beau jeune faucon ! Écoute maintenant :"+sTemp+"Bonjour, monami.";
@@ -149,7 +148,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_4"://умения в оружие, везение+скрытность, здоровье, харизма
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "Oh là là ! Merci pour votre générosité, mon beau jeune faucon ! Maintenant écoute : "+sTemp+"";
@@ -196,8 +195,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "Oh beau et si galant homme ! (chuchotant) Payez-moi "+sti(npchar.quest.poison_price)+" doublons.";
-			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
+			dialog.text = "Oh beau et si galant homme ! (chuchotant) Payez-moi "+int(npchar.quest.poison_price)+" doublons.";
+			if (PCharDublonsTotal() >= int(npchar.quest.poison_price))
 			{				
 				link.l1 = "Cher... Mieux vaut que cette camelote fonctionne.";
 				link.l1.go = "get_poison_4";
@@ -217,7 +216,7 @@ void ProcessDialogEvent()
 		
 		case "get_poison_4" :
 			PlaySound("interface\important_item.wav");
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.poison_price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.poison_price));
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
@@ -225,7 +224,7 @@ void ProcessDialogEvent()
 
 	// --> Мангароса
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("Montre-moi la plante, cher... Hm... Je suppose que je peux l'acheter de toi. Trois cents pièces de huit, d'accord ?","Montre-le-moi, beau gosse... Heh... Eh bien, je peux payer deux cent cinquante pour ça.","Voyons voir... Oh ! Un exemple intéressant ! Deux cents pesos ! Marché conclu ?")"Bonjour, mon ami.";
+			dialog.text = LinkRandPhrase("Montre-moi la plante, cher... Hm... Je suppose que je peux l'acheter de toi. Trois cents pièces de huit, d'accord ?","Montre-le-moi, beau gosse... Heh... Eh bien, je peux payer deux cent cinquante pour ça.","Voyons voir... Oh ! Un exemple intéressant ! Deux cents pesos ! Marché conclu ?");
 			link.l1 = LinkRandPhrase("Oh Seigneur... aux yeux noirs, je ne suis pas un paysan. Je connais cette plante. C'est de la mangarosa...","Oh, vraiment ?! C'est un spécimen parfait de mangarosa. Ne tente pas de m'escroquer, gitan.","Ah, et tu supposes que je vais te donner cette mangarosa pour une somme si dérisoire.");
 			link.l1.go = "mangarosa_1";
 		break;
@@ -238,7 +237,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
+			if (int(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... Je suppose que ce n'est pas trop grave si je vous en parle un peu. Vous ne pourrez rien faire avec cette plante sans compétences particulières.";
 				link.l1 = "Je vous écoute.";
@@ -276,7 +275,7 @@ void ProcessDialogEvent()
 			link.l1 = LinkRandPhrase("Quel dommage pour vous alors ! Un autre de vos gens me le dira de toute façon. Et elle recevra cette plante en cadeau. À bientôt !","Pourquoi être si têtu ? Si tu ne me le dis pas, l'autre le fera. Et elle recevra cette mangarosa en cadeau. Adieu.","Ton haleine pue l'ail. J'obtiendrai ce que je veux tôt ou tard. Un autre de ta race sera plus loquace et obtiendra la plante gratuitement. À plus tard.");
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
-			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
+			pchar.questTemp.Mangarosa.g_count = int(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":

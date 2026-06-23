@@ -11,8 +11,8 @@ void ProcessDialogEvent()
 	// 教堂任务 #2 -->
 	if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskContra_1") && !CheckAttribute(PChar, "GenQuest.ChurchQuest_2.Summ_To_Contra"))
 	{
-		iChurchQuest2_Summ = sti(PChar.rank)*100 + (rand(3)+1)*100;
-		PChar.GenQuest.ChurchQuest_2.Summ_To_Contra = sti(iChurchQuest2_Summ);
+		iChurchQuest2_Summ = int(PChar.rank)*100 + (rand(3)+1)*100;
+		PChar.GenQuest.ChurchQuest_2.Summ_To_Contra = int(iChurchQuest2_Summ);
 	}
 	// < —教堂任务 #2
 	
@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 
 	// belamour legendary edition
 	bool MCGovernon = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE;
-	bool MCAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
+	bool MCAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
 
 	if (!CheckAttribute(npchar, "quest.trade_date"))
     {
@@ -39,7 +39,7 @@ void ProcessDialogEvent()
     }
 
 	//长时间后删除属性 (navy fix)
-	if (CheckAttribute(pchar, "GenQuest.contraTravel.days") && GetQuestPastDayParam("contraTravel") > sti(PChar.GenQuest.contraTravel.days))
+	if (CheckAttribute(pchar, "GenQuest.contraTravel.days") && GetQuestPastDayParam("contraTravel") > int(PChar.GenQuest.contraTravel.days))
 	{
 		DeleteAttribute(pchar, "GenQuest.contraTravel");
 		CloseQuestHeader("Gen_ContrabandTravel");
@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 			Pchar.quest.Contraband.active = true;
 			pchar.GenQuest.Contraband.GuardNation = npchar.nation;
 			pchar.GenQuest.Contraband.SmugglerId  = npchar.id;				
-			SetAllContraGoods(&Stores[sti(Pchar.GenQuest.Contraband.StoreIdx)], npchar);
+			SetAllContraGoods(&Stores[int(Pchar.GenQuest.Contraband.StoreIdx)], npchar);
 			ReOpenQuestHeader("Gen_Contraband");
             if (GetIslandByCityName(npchar.city) == "Mein")
             {
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 					if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 					{
 						pchar.GenQuest.CaptainComission.SpeakContra = true;
-						dialog.text = "今天不做生意。 每个海湾都有巡逻队, 我们的总督在找一批货物, 被某个" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "船长" + pchar.GenQuest.CaptainComission.Name + "没收了, 他把货物藏在某个地方。 ";
+						dialog.text = "今天不做生意。 每个海湾都有巡逻队, 我们的总督在找一批货物, 被某个" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "船长" + pchar.GenQuest.CaptainComission.Name + "没收了, 他把货物藏在某个地方。 ";
 						link.l1 = "那这个" + pchar.GenQuest.CaptainComission.Name + "船长在哪里? ";
 						link.l1.go = "CapComission_1";
 						break;
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "Meeting_3";
 				}
 
-				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && sti(pchar.GenQuest.contraTravel.active) == true)
+				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && int(pchar.GenQuest.contraTravel.active) == true)
 					Link.l2 = "关于旅行... ";
 				else
 					Link.l2 = "我需要去一个地方。 ";
@@ -258,9 +258,9 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddQuestRecord("CaptainComission2", "38");
 			AddQuestUserData("CaptainComission2", "sSex", GetSexPhrase("",""));
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")));
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")));
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
-			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
+			AddQuestUserData("CaptainComission2", "sShipTypeQuest", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipTypeVictim),"Name") + "Gen")));
 		break;
 		
 		case "CapComission_4":
@@ -268,13 +268,13 @@ void ProcessDialogEvent()
 			link.l1 = "我明白了... 祝你愉快。 ";
 			link.l1.go = "exit";
 			AddQuestRecord("CaptainComission2", "19");
-			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
+			AddQuestUserData("CaptainComission2", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Gen"))); // belamour gen
 			AddQuestUserData("CaptainComission2", "sName", pchar.GenQuest.CaptainComission.Name);
 		break;
 				
 		case "SM_ShipLetters_1":
 			pchar.questTemp.different.GiveShipLetters.speakSmuggler = true;
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "你为什么这么想? 我是个诚实的沿海贸易商。 去找别的买家吧。 ";
 				link.l1 = "谢谢... ";
@@ -284,7 +284,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "为什么不呢? 也许我会发现你的'货物'有用。 拿" + sti(pchar.questTemp.different.GiveShipLetters.price2) + "个硬币, 忘了它。 ";
+					dialog.text = "为什么不呢? 也许我会发现你的'货物'有用。 拿" + int(pchar.questTemp.different.GiveShipLetters.price2) + "个硬币, 忘了它。 ";
 					link.l1 = "不, 谢谢。 ";
 					link.l1.go = "SM_ShipLetters_2";	
 					link.l2 = "你猜对了, 我开始忘了! ";
@@ -292,17 +292,17 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "正是! 我现在真的很好奇。 我想如果我付你" + sti(pchar.questTemp.different.GiveShipLetters.price3) + "个硬币, 你就不会在乎那些文件了。 ";
+						dialog.text = "正是! 我现在真的很好奇。 我想如果我付你" + int(pchar.questTemp.different.GiveShipLetters.price3) + "个硬币, 你就不会在乎那些文件了。 ";
 						link.l1 = "不, 谢谢。 ";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "你说得对。 我已经忘了它们。 ";
 						link.l2.go = "SM_ShipLetters_3";
 					}
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "现在, 这是抓住那个傲慢家伙的机会! 我真的真的很好奇。 看, 我付你" + sti(pchar.questTemp.different.GiveShipLetters.price4) + "金币, 你会完全忘记桌上的文件吗? ";
+						dialog.text = "现在, 这是抓住那个傲慢家伙的机会! 我真的真的很好奇。 看, 我付你" + int(pchar.questTemp.different.GiveShipLetters.price4) + "金币, 你会完全忘记桌上的文件吗? ";
 						link.l1 = "我不会。 ";
 						link.l1.go = "SM_ShipLetters_2";
 						link.l2 = "好, 成交! ";
@@ -320,30 +320,30 @@ void ProcessDialogEvent()
 		
 		case "SM_ShipLetters_3":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price3)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price3));
 				}
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price4)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price4));
 				}
 			}
 						
-			if((sti(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (sti(pchar.questTemp.different.GiveShipLetters.variant) == 2))
+			if((int(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (int(pchar.questTemp.different.GiveShipLetters.variant) == 2))
 			{	
 				ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 				OfficersReaction("bad"); 
@@ -363,7 +363,7 @@ void ProcessDialogEvent()
 				if(!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakContra"))
 				{
 					pchar.GenQuest.CaptainComission.SpeakContra = true;
-					dialog.text = "今天不做生意。 每个海湾都有巡逻队, 我们的总督在找一批货物, 被某个" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "船长" + pchar.GenQuest.CaptainComission.Name + "没收了, 他把货物藏在某个地方。 ";
+					dialog.text = "今天不做生意。 每个海湾都有巡逻队, 我们的总督在找一批货物, 被某个" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "船长" + pchar.GenQuest.CaptainComission.Name + "没收了, 他把货物藏在某个地方。 ";
 					link.l1 = "那这个" + pchar.GenQuest.CaptainComission.Name + "船长在哪里? ";
 					link.l1.go = "CapComission_1";
 					break;
@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_2":
 			iChurchQuest2_Summ = PChar.GenQuest.ChurchQuest_2.Summ_To_Contra;
-			if(sti(PChar.money) >= iChurchQuest2_Summ)
+			if(int(PChar.money) >= iChurchQuest2_Summ)
 			{
 				dialog.text = "把你的硬币给我。 要知道你花这么点钱买不到多少信息。 ";
 				link.l1 = "看, 我错过了我的朋友。 我开会迟到了, 他们没等我... ";
@@ -564,12 +564,12 @@ void ProcessDialogEvent()
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);	
 				break;
 			}
-			bOk  = CheckAttribute(pchar, "GenQuest.contraTravel.active") && (sti(pchar.GenQuest.contraTravel.active) == true);
-			bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (sti(Pchar.quest.Contraband.Active) == true);
+			bOk  = CheckAttribute(pchar, "GenQuest.contraTravel.active") && (int(pchar.GenQuest.contraTravel.active) == true);
+			bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (int(Pchar.quest.Contraband.Active) == true);
 			bool bOk3 = CheckAttribute(Pchar, "questTemp.pirateStartQuest") && (Pchar.questTemp.pirateStartQuest == "3");
 			if (bOk)
 			{
-			    if (GetQuestPastDayParam("contraTravel") > sti(PChar.GenQuest.contraTravel.days))
+			    if (GetQuestPastDayParam("contraTravel") > int(PChar.GenQuest.contraTravel.days))
 				{  // 逾期
 					DeleteAttribute(PChar, "GenQuest.contraTravel");
 					CloseQuestHeader("Gen_ContrabandTravel");
@@ -652,13 +652,13 @@ void ProcessDialogEvent()
 			}
 //navy <--
 			//如果主角没有船且没有同伴一切正常
-			if (sti(pchar.ship.type) == SHIP_NOTUSED && GetCompanionQuantity(pchar) == 1 && GetPassengersQuantity(pchar) == 0)
+			if (int(pchar.ship.type) == SHIP_NOTUSED && GetCompanionQuantity(pchar) == 1 && GetPassengersQuantity(pchar) == 0)
 			{
 				//如果已经有信息
-				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && sti(pchar.GenQuest.contraTravel.active) == true)
+				if (CheckAttribute(pchar, "GenQuest.contraTravel.active") && int(pchar.GenQuest.contraTravel.active) == true)
 				{
 					//已经支付
-					if (CheckAttribute(pchar, "GenQuest.contraTravel.payed") && sti(pchar.GenQuest.contraTravel.payed) == true)
+					if (CheckAttribute(pchar, "GenQuest.contraTravel.payed") && int(pchar.GenQuest.contraTravel.payed) == true)
 					{
 						Dialog.Text = "我以为我们已经达成协议了? ";
 						Link.l2 = "确实! ";
@@ -666,7 +666,7 @@ void ProcessDialogEvent()
 					//未支付, 意味着可以在期限内支付
 					else
 					{
-						if(GetQuestPastDayParam("contraTravel") == sti(PChar.GenQuest.contraTravel.days))
+						if(GetQuestPastDayParam("contraTravel") == int(PChar.GenQuest.contraTravel.days))
 						{
 							Dialog.Text = "你带钱了吗? ";
 							Link.l1 = "是的。 ";
@@ -677,7 +677,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{
-                            if (GetQuestPastDayParam("contraTravel") < sti(PChar.GenQuest.contraTravel.days))
+                            if (GetQuestPastDayParam("contraTravel") < int(PChar.GenQuest.contraTravel.days))
 							{
 								Dialog.Text = "我已经告诉你一切了。 ";
 								Link.l2 = "没错。 ";
@@ -706,12 +706,12 @@ void ProcessDialogEvent()
 						aref arTmp; makearef(arTmp, pchar.GenQuest.contraTravel);
 						SetSmugglersTravelDestination(arTmp);
 						//多久送达
-						pchar.GenQuest.contraTravel.price = (sti(PChar.rank)*250 + (100 - nRel)*10 + rand(30)*20) + sti(arTmp.destination.days)*100;
+						pchar.GenQuest.contraTravel.price = (int(PChar.rank)*250 + (100 - nRel)*10 + rand(30)*20) + int(arTmp.destination.days)*100;
 						
 						//如果地铁活跃, 主角没有乘客, 今天没见过面, 有可用海湾, 且随机... 
 						bOk = !bPauseContrabandMetro && CheckNPCQuestDate(npchar, "Travel_Talk") && 
 							Pchar.GenQuest.contraTravel.CurrentPlace != "None" && rand(50) < nRel;
-                        bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (sti(Pchar.quest.Contraband.Active) == true);
+                        bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (int(Pchar.quest.Contraband.Active) == true);
 						if (bOk && !bOk2)
 						{
 							nDay = 1 + rand(3);
@@ -778,7 +778,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Gen_ContrabandTravel", "sLoc", GetLocationNameByID(pchar.GenQuest.contraTravel.CurrentPlace));
 			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 			AddQuestUserData("Gen_ContrabandTravel", "sPlaceTo", XI_ConvertString("Colony" + pchar.GenQuest.contraTravel.destination + "Gen"));
-			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(sti(pchar.GenQuest.contraTravel.days)));
+			AddQuestUserData("Gen_ContrabandTravel", "sDays", FindRussianDaysString(int(pchar.GenQuest.contraTravel.days)));
 			AddQuestUserData("Gen_ContrabandTravel", "sPrice", pchar.GenQuest.contraTravel.price);
 
 			//激活任务
@@ -790,8 +790,8 @@ void ProcessDialogEvent()
 		//主角同意支付
 		case "Travel_pay":
 			//钱够吗? 
-			Sum = sti(pchar.GenQuest.contraTravel.price);
-			if (sti(pchar.money) >= Sum)
+			Sum = int(pchar.GenQuest.contraTravel.price);
+			if (int(pchar.money) >= Sum)
 			{
 				AddMoneyToCharacter(pchar, -1*Sum);
 				//设置支付标志
@@ -804,7 +804,7 @@ void ProcessDialogEvent()
 				//设置走私者
 				PlaceSmugglersOnShore(PChar.GenQuest.contraTravel.CurrentPlace);
 				//船在海湾中... 
-				Sum = sti(pchar.GenQuest.contraTravel.destination.days);
+				Sum = int(pchar.GenQuest.contraTravel.destination.days);
 				sld = GetCharacter(NPC_GenerateCharacter("Abracham_Gray", "citiz_46", "man", "man", 5, PIRATE, Sum + 2, true, "hunter"));
 				//复活... 
 				sld.nation = PIRATE;
@@ -862,7 +862,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("Shadowtrader", "sCity", XI_ConvertString("Colony"+pchar.questTemp.Shadowtrader.City+"Gen"));
 			SetFunctionTimerCondition("ShadowtraderTimeSmugglers_Over", 0, 0, 2, false);
 			int iNation = pchar.questTemp.Shadowtrader.nation;
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 			sld = GetCharacter(NPC_GenerateCharacter("ShadowAgent_1", "citiz_"+(rand(9)+41), "man", "man", iRank, iNation, 2, true, "quest"));
 			SetFantomParamFromRank(sld, iRank, true);
 			GiveItem2Character(sld, "blade_04");
@@ -930,7 +930,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_1":
-			if (sti(pchar.money) >= 3002)
+			if (int(pchar.money) >= 3002)
 			{
 				dialog.text = "他会付钱, 哈! 我的时间不便宜, 先生, 要3000比索加上这杯被他们误称为朗姆酒的恶心饮料。 ";
 				link.l1 = "成交! 现在告诉我关于你自己人里那个在当地监狱待了半年然后去世的人。 他发生了什么? ";
@@ -986,8 +986,8 @@ void ProcessDialogEvent()
 		
 		//Jason --> 巴考特销售生成器
 		case "bakaut":
-			dialog.text = "是这样吗? 好的。 罗森克拉夫特先生需要一批铁木, 但不少于" + FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)) + "。 你有足够的货物吗? ";
-			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
+			dialog.text = "是这样吗? 好的。 罗森克拉夫特先生需要一批铁木, 但不少于" + FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)) + "。 你有足够的货物吗? ";
+			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= int(pchar.GenQuest.Bakaut.Value))
 			{
 				link.l1 = "我有。 我在哪里可以找到罗森克拉夫特先生? ";
 				link.l1.go = "bakaut_1";
@@ -1020,14 +1020,14 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("Bakaut");
 			AddQuestRecord("Bakaut", "1");
 			AddQuestUserData("Bakaut", "sIsland", XI_ConvertString(pchar.GenQuest.Bakaut.Island+"Gen"));
-			AddQuestUserData("Bakaut", "sDays", FindRussianDaysString(sti(pchar.GenQuest.Bakaut.DaysQty)));
-			AddQuestUserData("Bakaut", "sQty", FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)));
+			AddQuestUserData("Bakaut", "sDays", FindRussianDaysString(int(pchar.GenQuest.Bakaut.DaysQty)));
+			AddQuestUserData("Bakaut", "sQty", FindRussianQtyString(int(pchar.GenQuest.Bakaut.Value)));
 			// 定时器
 			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1 = "Timer";
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.hour  = sti(GetTime());
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
-			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.hour  = int(GetTime());
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
+			pchar.quest.Bakaut_Rozencraft_Find.win_condition.l1.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.Bakaut.DaysQty));
 			pchar.quest.Bakaut_Rozencraft_Find.function = "Bakaut_RozencraftRemove";
 		break;
 		// < —巴考特销售生成器

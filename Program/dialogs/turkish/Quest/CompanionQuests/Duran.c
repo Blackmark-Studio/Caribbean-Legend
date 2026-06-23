@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "Heh! Benim hatam, Kaptan. Doğru, Levasseur'un emirlerinde yalnızca şövalyeyi değil, yanındaki herkesi ortadan kaldırmam gerektiği açıkça yazıyordu. Hepsini, anlıyor musun? Bu insanlarla oyun olmaz ve istekleri ciddiye alınmalı. İşimi yapmama engel olma, Kaptan. Son bir pis iş, sonra sonsuza dek yanındayım, yemin ederim!";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Cehenneme kadar yolun var! Pis işini yap. Yeminini kabul ediyorum ve bunu ölümüne ciddiye alsan iyi edersin. Anlaştık mı?";

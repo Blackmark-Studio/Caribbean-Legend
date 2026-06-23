@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "我不想和你说话。 你无缘无故攻击和平的人, 还煽动他们打架。 滚开! ";
 				link.l1 = "嗯... ";
@@ -151,12 +151,6 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("SharkHunt", "36");
 			pchar.questTemp.Saga.SharkHunt = "barmen_whiskey"; // 酒馆标记 - 寻找老鼠药
-		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
 		break;
 		
 		case "":

@@ -11,8 +11,8 @@ bool bAdvancedChange = false;
 int iEsc = 78;
 
 float 	fHUDRatio 	= 1.0;
-int 	iHUDBase 	= iHudScale;
-int 	newBase 	= iHudScale;
+int 	iHUDBase 	= BI_COMPARE_HEIGHT;
+int 	newBase 	= BI_COMPARE_HEIGHT;
 string 	sFoliageDrawDistance;
 string 	sGrassDrawDistance;
 int		curFoliageDrawDistance;
@@ -31,7 +31,7 @@ int CalcHUDBase(float fSlider, float MyScreen)
     float fRes = BI_DIF_RATIO * fSlider;
     float curBase = MyScreen / (BI_LOW_RATIO + fRes);
 
-    return makeint(curBase + 0.5);
+    return int(curBase + 0.5);
 }
 
 float CalcHUDSlider(float fRatio)
@@ -56,15 +56,15 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	}
 	float glowEffect;
 
-    fHUDRatio = stf(Render.screen_y) / iHudScale;
-    iHUDBase = makeint(iHudScale);
+    fHUDRatio = float(Render.screen_y) / iHudScale;
+    iHUDBase = int(iHudScale);
     newBase = iHUDBase;
 
 	g_nCurControlsMode = -1;
 	GameInterface.title = "titleOptions";
 	g_ControlsLngFile = LanguageOpenFile("ControlsNames.txt");
 
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && int(InterfaceStates.showGameMenuOnExit) == true)
     {
 		LoadGameOptions();
 	}
@@ -113,7 +113,7 @@ void InitInterface_B(string iniName, bool isMainMenu)
         }
     }
 
-	// if(sti(Render.full_screen)==0)
+	// if(int(Render.full_screen)==0)
 	// {
 		// SetSelectable("GAMMA_SLIDE",false);
 		// SetSelectable("BRIGHT_SLIDE",false);
@@ -140,16 +140,16 @@ void InitInterface_B(string iniName, bool isMainMenu)
 		InterfaceStates.GlowEffect = 0;
 	}
 	
-	glowEffect = sti(InterfaceStates.GlowEffect) / 250.0;
+	glowEffect = int(InterfaceStates.GlowEffect) / 250.0;
 	
 	GameInterface.nodes.GLOW_SLIDE.value = glowEffect;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "GLOW_SLIDE", 0, glowEffect);
 	
-	fHUDRatio = stf(Render.screen_y) / iHudScale;
+	fHUDRatio = float(Render.screen_y) / iHudScale;
 	float sl = CalcHUDSlider(fHUDRatio);
-	SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "HUD_SLIDE", 2, makeint(sl * 100.0));
+	SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "HUD_SLIDE", 2, int(sl * 100.0));
 	GameInterface.nodes.hud_slide.value = sl;
-	iHUDBase = CalcHUDBase(sl, stf(Render.screen_y));
+	iHUDBase = CalcHUDBase(sl, float(Render.screen_y));
 	SetFormatedText("HUD_DESCRIP_TEXT", Render.screen_y + "  / " + newBase + " : " + fHUDRatio);
 	
 	// sith дальность прорисовки растительности на островах
@@ -157,32 +157,32 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	{
 		InterfaceStates.FoliageDrawDistance = 1000;
 	}
-	float fFoliageDrawDistance = sti(InterfaceStates.FoliageDrawDistance) / 3000.0; 
+	float fFoliageDrawDistance = int(InterfaceStates.FoliageDrawDistance) / 3000.0;
 	GameInterface.nodes.FOLIAGE_DRAW_DISTANCE_SLIDE.value = fFoliageDrawDistance;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "FOLIAGE_DRAW_DISTANCE_SLIDE", 0, fFoliageDrawDistance);
-	sFoliageDrawDistance = sti(InterfaceStates.FoliageDrawDistance);
-	curFoliageDrawDistance = sti(InterfaceStates.FoliageDrawDistance);
+	sFoliageDrawDistance = int(InterfaceStates.FoliageDrawDistance);
+	curFoliageDrawDistance = int(InterfaceStates.FoliageDrawDistance);
 	SetFormatedText("FOLIAGE_DESCRIP_TEXT", sFoliageDrawDistance);
 	// sith дальность прорисовки травы
 	if(!CheckAttribute(&InterfaceStates, "GrassDrawDistance"))
 	{
 		InterfaceStates.GrassDrawDistance = 50;
 	}
-	float fGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance) / 500.0; 
+	float fGrassDrawDistance = int(InterfaceStates.GrassDrawDistance) / 500.0;
 	GameInterface.nodes.GRASS_DRAW_DISTANCE_SLIDE.value = fGrassDrawDistance;
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "GRASS_DRAW_DISTANCE_SLIDE", 0, fGrassDrawDistance);
-	sGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
-	curGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
+	sGrassDrawDistance = int(InterfaceStates.GrassDrawDistance);
+	curGrassDrawDistance = int(InterfaceStates.GrassDrawDistance);
 	SetFormatedText("GRASS_DESCRIP_TEXT", sGrassDrawDistance);
 	// sith fov
 	if(CheckAttribute(&InterfaceStates,"Fov"))
 	{
-		curFov = sti(InterfaceStates.Fov);
+		curFov = int(InterfaceStates.Fov);
 	}
 	// продвинутые настройки контролок
 	if(CheckAttribute(&InterfaceStates,"AdvancedChange"))
 	{
-		bAdvancedChange = sti(InterfaceStates.AdvancedChange);
+		bAdvancedChange = int(InterfaceStates.AdvancedChange);
 	}
 }
 
@@ -206,29 +206,29 @@ void ProcessCancelExit()
 void ProcessOkExit()
 {
 	// Warship 07.07.09 Эффект свечения
-	SetGlowParams(1.0, sti(InterfaceStates.GlowEffect), 2));
+	SetGlowParams(1.0, int(InterfaceStates.GlowEffect), 2);
 	iHudScale = newBase;
 	// sith дальность прорисовки растительности на островах
-	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && sti(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance)
+	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && int(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance)
     {
 		if(bSeaActive && !bAbordageStarted) Sea_UpdateIslandGrass(AISea.Island);
 	}
 	int iLocation = FindLocation(pchar.location);
 	// sith дальность прорисовки травы
-	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && sti(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance)
+	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && int(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance)
     {
 		if(iLocation != -1)
         {
 			object objGrass;
 			GetEntity(&objGrass,"grass");
-			float fMaxDist = stf(InterfaceStates.GrassDrawDistance);
+			float fMaxDist = float(InterfaceStates.GrassDrawDistance);
 			SendMessage(objGrass,"lffffff",42666, 1.0, 1.0, 0.2, 10.0, fMaxDist, 0.0);
 		}
 	}
 	// sith fov
-	if(CheckAttribute(&InterfaceStates,"Fov") && sti(InterfaceStates.Fov) != curFov)
+	if(CheckAttribute(&InterfaceStates,"Fov") && int(InterfaceStates.Fov) != curFov)
     {
-		Render.CorrectFov = sti(InterfaceStates.Fov);
+		Render.CorrectFov = int(InterfaceStates.Fov);
 		if(!bSeaActive || bAbordageStarted)
 			SendMessage(&locCamera, "lf", MSG_CAMERA_SET_PERSPECTIVE, 1.285);
 	}
@@ -245,7 +245,7 @@ void ProcessOkExit()
 	if(iEnabledShipMarks > 0) bDrawBars = true;
 	else bDrawBars = false;
 	
-	if(CheckAttribute(&InterfaceStates,"SFW")) bSFW = sti(InterfaceStates.SFW);
+	if(CheckAttribute(&InterfaceStates,"SFW")) bSFW = bool(InterfaceStates.SFW);
 	
 	if(iLocation != -1)
 		SetLocationCharacterMarksOptions(&Locations[iLocation]);
@@ -266,19 +266,19 @@ void ProcessOkExit()
 	ProcessExit();
 
 	// change sea settings
-	SetSeaGridStep(stf(InterfaceStates.SeaDetails));
+	SetSeaGridStep(float(InterfaceStates.SeaDetails));
 }
 
 void ProcessExit()
 {
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && int(InterfaceStates.showGameMenuOnExit) == true)
     {
 		IDoExit(RC_INTERFACE_LAUNCH_GAMEMENU);
 		return;
 	}
 
 	IDoExit(RC_INTERFACE_OPTIONSCREEN_EXIT);
-	if(!CheckAttribute(&InterfaceStates,"InstantExit") || sti(InterfaceStates.InstantExit) == false)
+	if(!CheckAttribute(&InterfaceStates,"InstantExit") || int(InterfaceStates.InstantExit) == false)
     {
 		ReturnToMainMenu();
 	}
@@ -341,7 +341,7 @@ void IDoExit(int exitCode)
 	LanguageCloseFile(g_ControlsLngFile);
 
 	interfaceResultCommand = exitCode;
-	if(CheckAttribute(&InterfaceStates,"InstantExit") && sti(InterfaceStates.InstantExit)==true) {
+	if(CheckAttribute(&InterfaceStates,"InstantExit") && int(InterfaceStates.InstantExit)==true) {
 		EndCancelInterface(true);
 	} else {
 		EndCancelInterface(false);
@@ -382,71 +382,71 @@ void IReadVariableAfterInit()
 
 	int nClassicSoundScene = 0;
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene")) {
-		nClassicSoundScene = sti(InterfaceStates.ClassicSoundScene);
+		nClassicSoundScene = int(InterfaceStates.ClassicSoundScene);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, nClassicSoundScene);
 
 	int nSFW = 0;
 	if(CheckAttribute(&InterfaceStates,"SFW")) {
-		nSFW = sti(InterfaceStates.SFW);
+		nSFW = int(InterfaceStates.SFW);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SFW_CHECKBOX", 2, 1, nSFW);
 
 	int nAdvancedChange = 0;
 	if(CheckAttribute(&InterfaceStates,"AdvancedChange")) {
-		nAdvancedChange = sti(InterfaceStates.AdvancedChange);
+		nAdvancedChange = int(InterfaceStates.AdvancedChange);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ADVANCEDCHANGE_CHECKBOX", 2, 1, nAdvancedChange);
 	
 	int nShowBattleMode = 0;
 	if(CheckAttribute(&InterfaceStates,"ShowBattleMode")) {
-		nShowBattleMode = sti(InterfaceStates.ShowBattleMode);
+		nShowBattleMode = int(InterfaceStates.ShowBattleMode);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"BATTLE_MODE_CHECKBOX", 2, 1, nShowBattleMode);
 
 	int nShowCharString = 1;
 	if(CheckAttribute(&InterfaceStates,"ShowCharString")) {
-		nShowCharString = sti(InterfaceStates.ShowCharString);
+		nShowCharString = int(InterfaceStates.ShowCharString);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CHAR_STRING_CHECKBOX", 2, 1, nShowCharString);
 
 	int nShowTutorial = 1;
 	if(CheckAttribute(&InterfaceStates,"ShowTutorial")) {
-		nShowTutorial = sti(InterfaceStates.ShowTutorial);
+		nShowTutorial = int(InterfaceStates.ShowTutorial);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, nShowTutorial);
 
 	int nEnabledQuestsMarks = 1;
 	if(CheckAttribute(&InterfaceStates,"EnabledQuestsMarks")) {
-		nEnabledQuestsMarks = sti(InterfaceStates.EnabledQuestsMarks);
+		nEnabledQuestsMarks = int(InterfaceStates.EnabledQuestsMarks);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QUESTMARK_CHECKBOX", 2, 1, nEnabledQuestsMarks);
 
 	int nEnabledSimpleSea = 0;
 	if(CheckAttribute(&InterfaceStates,"SimpleSea")) 
 	{
-		nEnabledSimpleSea = sti(InterfaceStates.SimpleSea);
+		nEnabledSimpleSea = int(InterfaceStates.SimpleSea);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SIMPLESEA_CHECKBOX", 2, 1, nEnabledSimpleSea);
 	
 	int nEnabledCREWONDECK = 1;
 	if(CheckAttribute(&InterfaceStates,"CREWONDECK")) 
 	{
-		nEnabledCREWONDECK = sti(InterfaceStates.CREWONDECK);
+		nEnabledCREWONDECK = int(InterfaceStates.CREWONDECK);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREWONDECK_CHECKBOX", 2, 1, nEnabledCREWONDECK);
 	
 	int nEnabledROTATESKY = 0;
 	if(CheckAttribute(&InterfaceStates,"ROTATESKY")) 
 	{
-		nEnabledROTATESKY = sti(InterfaceStates.ROTATESKY);
+		nEnabledROTATESKY = int(InterfaceStates.ROTATESKY);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ROTATESKY_CHECKBOX", 2, 1, nEnabledROTATESKY);
 	
 	int nEnabledDYNAMICLIGHTS = 1;
 	if(CheckAttribute(&InterfaceStates,"DYNAMICLIGHTS")) 
 	{
-		nEnabledDYNAMICLIGHTS = sti(InterfaceStates.DYNAMICLIGHTS);
+		nEnabledDYNAMICLIGHTS = int(InterfaceStates.DYNAMICLIGHTS);
 	}
 	
 	// автосейвы
@@ -459,7 +459,7 @@ void IReadVariableAfterInit()
 			sDescr = InterfaceStates.(sAutoSave);
 		else
 			InterfaceStates.(sAutoSave) = sDescr;
-		nAutoSaves[i] = sti(sDescr);
+		nAutoSaves[i] = int(sDescr);
 		if(sDescr == "-1")
 			sDescr = XI_ConvertString("Infinite");
 		SetFormatedText("DESCRIP_TEXT_" + sAutoSave, sDescr);	
@@ -804,7 +804,7 @@ void SelectorValueChanged()
 					sCurSaves = 50;
 			break;
 		}
-		nAutoSaves[i] = sti(sCurSaves);
+		nAutoSaves[i] = int(sCurSaves);
 		if(sCurSaves == "-1")
 			sCurSaves = XI_ConvertString("Infinite");
 		SetFormatedText("DESCRIP_TEXT_" + sAutoSave, sCurSaves);
@@ -941,13 +941,13 @@ void procSlideChange()
 	}
 	if(sNodeName == "FOLIAGE_DRAW_DISTANCE_SLIDE") {
 		InterfaceStates.FoliageDrawDistance = fVal*3000;
-		sFoliageDrawDistance = sti(InterfaceStates.FoliageDrawDistance);
+		sFoliageDrawDistance = int(InterfaceStates.FoliageDrawDistance);
 		SetFormatedText("FOLIAGE_DESCRIP_TEXT", sFoliageDrawDistance);
 		return;
 	}
 	if(sNodeName == "GRASS_DRAW_DISTANCE_SLIDE") {
 		InterfaceStates.GrassDrawDistance = fVal*500;
-		sGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
+		sGrassDrawDistance = int(InterfaceStates.GrassDrawDistance);
 		SetFormatedText("GRASS_DESCRIP_TEXT", sGrassDrawDistance);
 		return;
 	}
@@ -966,25 +966,25 @@ void procSlideChange()
 
 void ChangeMouseSensitivity()
 {
-	InterfaceStates.mouse.loc_sens = stf(GameInterface.nodes.loc_mouse_sensitivity_slide.value);
-	InterfaceStates.mouse.sea_sens = stf(GameInterface.nodes.sea_mouse_sensitivity_slide.value);
+	InterfaceStates.mouse.loc_sens = float(GameInterface.nodes.loc_mouse_sensitivity_slide.value);
+	InterfaceStates.mouse.sea_sens = float(GameInterface.nodes.sea_mouse_sensitivity_slide.value);
 	SetRealMouseSensitivity();
 }
 
 void ChangeVideoColor()
 {
-	float fCurContrast = stf(GameInterface.nodes.contrast_slide.value);
-	float fCurGamma = stf(GameInterface.nodes.GAMMA_SLIDE.value);
-	float fCurBright = stf(GameInterface.nodes.BRIGHT_SLIDE.value);
+	float fCurContrast = float(GameInterface.nodes.contrast_slide.value);
+	float fCurGamma = float(GameInterface.nodes.GAMMA_SLIDE.value);
+	float fCurBright = float(GameInterface.nodes.BRIGHT_SLIDE.value);
 
 	float fContrast = ConvertContrast(fCurContrast,false);
 	float fGamma = ConvertGamma(fCurGamma,false);
 	float fBright = ConvertBright(fCurBright,false);
 
 	if(!CheckAttribute(&InterfaceStates,"video.contrast") ||
-		(stf(InterfaceStates.video.contrast)!=fContrast) ||
-		(stf(InterfaceStates.video.gamma)!=fGamma) ||
-		(stf(InterfaceStates.video.brightness)!=fBright)) {
+		(float(InterfaceStates.video.contrast)!=fContrast) ||
+		(float(InterfaceStates.video.gamma)!=fGamma) ||
+		(float(InterfaceStates.video.brightness)!=fBright)) {
 			InterfaceStates.video.contrast = fContrast;
 			InterfaceStates.video.gamma = fGamma;
 			InterfaceStates.video.brightness = fBright;
@@ -994,19 +994,19 @@ void ChangeVideoColor()
 
 void ChangeSeaDetail()
 {
-	float fCurSeaDetail = stf(GameInterface.nodes.sea_details_slide.value);
+	float fCurSeaDetail = float(GameInterface.nodes.sea_details_slide.value);
 	float fSeaDetail = ConvertSeaDetails(fCurSeaDetail,false);
 	if(!CheckAttribute(&InterfaceStates,"SeaDetails") ||
-		(stf(InterfaceStates.SeaDetails)!=fSeaDetail)) {
+		(float(InterfaceStates.SeaDetails)!=fSeaDetail)) {
 			InterfaceStates.SeaDetails = fSeaDetail;
 	}
 }
 
 void ChangeSoundSetting()
 {
-	float fMusic = stf(GameInterface.nodes.music_slide.value);
-	float fSound = stf(GameInterface.nodes.sound_slide.value);
-	float fDialog = stf(GameInterface.nodes.dialog_slide.value);
+	float fMusic = float(GameInterface.nodes.music_slide.value);
+	float fSound = float(GameInterface.nodes.sound_slide.value);
+	float fDialog = float(GameInterface.nodes.dialog_slide.value);
 	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, fSound,	fMusic,	fDialog);
 }
 
@@ -1127,7 +1127,7 @@ void RefreshControlsList()
             key = objControlsState.keygroups.BattleInterfaceControls.(controlName);
         else
             key = objControlsState.keygroups.(groupName).(controlName);
-        RefreshControlInList(GetAttributeName(row), controlName, key, sti(row.userdata.remapable));
+        RefreshControlInList(GetAttributeName(row), controlName, key, int(row.userdata.remapable));
 	}
 
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "CONTROLS_LIST", 0);
@@ -1204,8 +1204,8 @@ void GetMouseOptionsData()
 {
 	float fCurLocSens = 0.5;
 	float fCurSeaSens = 0.5;
-	if(CheckAttribute(&InterfaceStates,"mouse.sea_sens")) {fCurSeaSens=stf(InterfaceStates.mouse.sea_sens);}
-	if(CheckAttribute(&InterfaceStates,"mouse.loc_sens")) {fCurLocSens=stf(InterfaceStates.mouse.loc_sens);}
+	if(CheckAttribute(&InterfaceStates,"mouse.sea_sens")) {fCurSeaSens=float(InterfaceStates.mouse.sea_sens);}
+	if(CheckAttribute(&InterfaceStates,"mouse.loc_sens")) {fCurLocSens=float(InterfaceStates.mouse.loc_sens);}
 	if(fCurSeaSens<0.0) fCurSeaSens = 0.0;
 	if(fCurSeaSens>1.0) fCurSeaSens = 1.0;
 	if(fCurLocSens<0.0) fCurLocSens = 0.0;
@@ -1221,17 +1221,17 @@ void GetVideoOptionsData()
 	float fB = 0.0;
 	float fD = 1.0;
 	if(CheckAttribute(&InterfaceStates,"video.contrast")) {
-		fC = stf(InterfaceStates.video.contrast);
+		fC = float(InterfaceStates.video.contrast);
 	}
 	if(CheckAttribute(&InterfaceStates,"video.gamma")) {
-		fG = stf(InterfaceStates.video.gamma);
+		fG = float(InterfaceStates.video.gamma);
 	}
 	if(CheckAttribute(&InterfaceStates,"video.brightness")) {
-		fB = stf(InterfaceStates.video.brightness);
+		fB = float(InterfaceStates.video.brightness);
 	}
 
 	if(CheckAttribute(&InterfaceStates,"SeaDetails")) {
-		fD = stf(InterfaceStates.SeaDetails);
+		fD = float(InterfaceStates.SeaDetails);
 	}
 	ISetColorCorrection(fC, fG, fB, fD);
 }
@@ -1301,11 +1301,11 @@ void GetControlsStatesData()
 {
 	int nAlwaysRun = 0;
 	if(CheckAttribute(&InterfaceStates,"alwaysrun")) {
-		nAlwaysRun = sti(InterfaceStates.alwaysrun);
+		nAlwaysRun = int(InterfaceStates.alwaysrun);
 	}
 	int nInvertCam = 0;
 	if(CheckAttribute(&InterfaceStates,"InvertCameras")) {
-		nInvertCam = sti(InterfaceStates.InvertCameras);
+		nInvertCam = int(InterfaceStates.InvertCameras);
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ALWAYS_RUN_CHECKBOX", 2, 1, nAlwaysRun);
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"INVERT_MOUSE_CHECKBOX", 2, 1, nInvertCam);
@@ -1448,21 +1448,21 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
 	makearef(arControlGroup, objControlsState.keygroups.(groupName));
 	makearef(arKeyRoot, objControlsState.key_codes);
 	arKey = GetAttributeN(arKeyRoot, keyIdx);
-	keyCode = sti(GetAttributeValue(arKey));
+	keyCode = int(GetAttributeValue(arKey));
 
 	// Check for not allowed keys (belamour)
-	if (keyCode == sti(objControlsState.key_codes.VK_F6)  ||
-		keyCode == sti(objControlsState.key_codes.VK_F7)  ||
-		keyCode == sti(objControlsState.key_codes.VK_F8)  ||
-		keyCode == sti(objControlsState.key_codes.VK_F9)  ||
-		keyCode == sti(objControlsState.key_codes.VK_F10) ||
-		keyCode == sti(objControlsState.key_codes.VK_F11) ||
-		keyCode == sti(objControlsState.key_codes.VK_F12))
+	if (keyCode == int(objControlsState.key_codes.VK_F6)  ||
+		keyCode == int(objControlsState.key_codes.VK_F7)  ||
+		keyCode == int(objControlsState.key_codes.VK_F8)  ||
+		keyCode == int(objControlsState.key_codes.VK_F9)  ||
+		keyCode == int(objControlsState.key_codes.VK_F10) ||
+		keyCode == int(objControlsState.key_codes.VK_F11) ||
+		keyCode == int(objControlsState.key_codes.VK_F12))
 	{
 		return false;
 	}
 
-	if (CheckAttribute(arKey,"stick") && sti(arKey.stick) == true) return false;
+	if (CheckAttribute(arKey,"stick") && int(arKey.stick) == true) return false;
 
 	string controlReplacement = ""; // friends текущей клавиши сюда не кладутся
 	if(KeyAlreadyUsed(groupName, sControl, GetAttributeName(arKey), bAltPress, &controlReplacement) && controlReplacement == "")
@@ -1481,7 +1481,7 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
 	}
 
 	sName = arControlGroup.(sControl);
-	if(CheckAttribute(arKeyRoot,sName+".stick") && sti(arKeyRoot.(sName).stick) == true) return false;
+	if(CheckAttribute(arKeyRoot,sName+".stick") && int(arKeyRoot.(sName).stick) == true) return false;
 
 	if(bAltPress) MapControlToGroup(sControl, "AltPressedGroup");
 	else DeleteAttribute(&objControlsState, "keygroups.AltPressedGroup." + sControl);
@@ -1533,7 +1533,7 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
             sName = GetAttributeName(GetAttributeN(aFriend, i));
             if(CheckAttribute(arControlGroup, sName))
             {
-                if(sti(aFriend.(sName)) == 1)
+                if(int(aFriend.(sName)) == 1)
                 {
                     // Если дружественная клавиша синхронизирована, обновим и её тоже
                     // Здесь предполагается, что синхронизированные клавиши в тех же группах
@@ -1541,8 +1541,8 @@ bool DoMapToOtherKey(int keyIdx, int stickUp)
                     // синхронизированная, но нет текущей обновляемой (sControl)
                     GroupKeyUpdate(sName, keyCode, groupName); 
                 }
-                else if(sti(aFriend.(sName)) == 2) BI_CheckWASD(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
-                else if(sti(aFriend.(sName)) == 3) BI_CheckWASDSail(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
+                else if(int(aFriend.(sName)) == 2) BI_CheckWASD(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
+                else if(int(aFriend.(sName)) == 3) BI_CheckWASDSail(arControlGroup.(sName) == CI_GetKeyName(keyCode), groupName);
             }   
         }
     }
@@ -1570,8 +1570,8 @@ void SetMouseToDefault()
 	SetAlwaysRun(true);
 
 	GetControlsStatesData();
-	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"LOC_MOUSE_SENSITIVITY_SLIDE", 0,stf(InterfaceStates.mouse.loc_sens));
-	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"SEA_MOUSE_SENSITIVITY_SLIDE", 0,stf(InterfaceStates.mouse.sea_sens));
+	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"LOC_MOUSE_SENSITIVITY_SLIDE", 0,float(InterfaceStates.mouse.loc_sens));
+	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"SEA_MOUSE_SENSITIVITY_SLIDE", 0,float(InterfaceStates.mouse.sea_sens));
 }
 
 void ShowInfo()
@@ -1701,18 +1701,18 @@ void ShowInfo()
 			sHeader = XI_ConvertString("SFW");
 			sText1 = XI_ConvertString("SFW_descr");
 		break;
-// Accessibility	
 		case "FRAME_VISUAL_SCHEME":
 			sHeader = XI_ConvertString("SFW");
 			sText1 = XI_ConvertString("SFW_descr");
 		break;
-// Other
-		if(FindSubStr(sNode, "AUTOSAVE", 0) != -1)
-		{
-			string sAutoSave = FindStringAfterChar(sNode, "_");
-			sHeader = XI_ConvertString(sAutoSave);
-			sText1 = XI_ConvertString(sAutoSave + "_descr");
-		}
+		default:
+			if(FindSubStr(sNode, "AUTOSAVE", 0) != -1)
+			{
+				string sAutoSave = FindStringAfterChar(sNode, "_");
+				sHeader = XI_ConvertString(sAutoSave);
+				sText1 = XI_ConvertString(sAutoSave + "_descr");
+			}
+		break;
 	}
 
 	HandleSelectorDescription(sNode, &sHeader, &sText1, "FOV", "FOV");
@@ -1777,7 +1777,7 @@ bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPres
                         sName = GetAttributeName(arCntrl);
                         if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))  continue;
                         if(bAltPress != CheckAttribute(&objControlsState, "keygroups.AltPressedGroup." + sName)) continue;
-                        if(sti(arCntrl.remapping)) controlReplacement = sName;
+                        if(int(arCntrl.remapping)) controlReplacement = sName;
                         return true;
                     }
                 }
@@ -1797,7 +1797,7 @@ bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPres
                 sName = GetAttributeName(arCntrl);
                 if(CheckAttribute(&objControlsState, "map.controls." + sControl + ".friends." + sName))  continue;
                 if(bAltPress != CheckAttribute(&objControlsState, "keygroups.AltPressedGroup." + sName)) continue;
-                if(sti(arCntrl.remapping)) controlReplacement = sName;
+                if(int(arCntrl.remapping)) controlReplacement = sName;
                 return true;
             }
         }
@@ -1833,11 +1833,11 @@ void FaderFrame()
 
 void ChangeHUDDetail()
 {
-    float sl = stf(GameInterface.nodes.hud_slide.value);
-	newBase = CalcHUDBase(sl, stf(Render.screen_y));
+    float sl = float(GameInterface.nodes.hud_slide.value);
+	newBase = CalcHUDBase(sl, float(Render.screen_y));
 	if(newBase != iHUDBase) 
 	{
-        fHUDRatio = stf(Render.screen_y) / newBase;
+        fHUDRatio = float(Render.screen_y) / newBase;
 		SetFormatedText("HUD_DESCRIP_TEXT", Render.screen_y + "  / " + newBase + " : " + fHUDRatio);
 	}
 }
@@ -1903,18 +1903,18 @@ void RestoreDefaultSettings()
 	
 	// SendMessage(&GameInterface,"lsll",MSG_INTERFACE_MSG_TO_NODE, "HUD_SLIDE", 2, 20);
 	// GameInterface.nodes.hud_slide.value = 0.2;
-	// float sl = stf(GameInterface.nodes.hud_slide.value);
-	// newBase = CalcHUDBase(sl, stf(Render.screen_y));
-	// fHUDRatio = stf(Render.screen_y) / newBase;
+	// float sl = float(GameInterface.nodes.hud_slide.value);
+	// newBase = CalcHUDBase(sl, float(Render.screen_y));
+	// fHUDRatio = float(Render.screen_y) / newBase;
 	// SetFormatedText("HUD_DESCRIP_TEXT", Render.screen_y + "  / " + newBase + " : " + fHUDRatio);
 
-	InterfaceStates.ShowBattleMode = 0
+	InterfaceStates.ShowBattleMode = 0;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"BATTLE_MODE_CHECKBOX", 2, 1, 0);
 
-	InterfaceStates.ShowCharString = 1
+	InterfaceStates.ShowCharString = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CHAR_STRING_CHECKBOX", 2, 1, 1);
 
-	InterfaceStates.ShowTutorial = 1
+	InterfaceStates.ShowTutorial = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TUTORIAL_CHECKBOX", 2, 1, 1);
 
 	InterfaceStates.EnabledQuestsMarks = 1;
@@ -1964,7 +1964,7 @@ void GroupKeyUpdate(string controlName, int keyCode, string sGroupName)
     // cntrlCode - индекс контролки; controlName - имя контролки;
     // keyCode   - индекс бинда;     sKeyName    - имя бинда;
 
-    int cntrlCode = sti(objControlsState.map.controls.(controlName));
+    int cntrlCode = int(objControlsState.map.controls.(controlName));
     string sKeyName = CI_GetKeyName(keyCode);
 
     makearef(arKGRoot, objControlsState.keygroups);

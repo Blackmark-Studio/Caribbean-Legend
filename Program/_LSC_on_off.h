@@ -2,7 +2,7 @@
 // здесь и далее ник boal - это разработческий ник ALexusB
 
 #define VERSION_NUMBER1       "Caribbean Legend "
-#define VERSION_NUMBER2       "ver. 1.8.0 (04.06.26)"
+#define VERSION_NUMBER2       "ver. 1.8.2 (23.06.26)"
 #define VERSION_NUMBER3       "BlackMark.bz"
 
 #define VERSION_NUM      150  // текущий номер
@@ -178,5 +178,4 @@ int iFortNation, iFortCommander;
 //начало и конец предметов для локаторов item
 int ItemsForLocators_start, ItemsForLocators_end;
 
-GetEngineVersion();
 /////////////////////////////

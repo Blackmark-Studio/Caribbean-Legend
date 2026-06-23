@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_2")
 			{
-				if(sti(pchar.rank) < 10)
+				if(int(pchar.rank) < 10)
 				{
 					dialog.text = LinkRandPhrase("네 길을 가라, "+GetSexPhrase("동료","아가씨")+". 결국엔 그녀가 우리에게 감사할 거야, 알지.","꺼져! 나리들께서 즐기시게 내버려 둬.","이건 네 알 바 아니야, "+GetSexPhrase("이방인","아가씨")+". 그냥 좀 즐기기만 할 거야, 그게 다야!!");
 					link.l1 = LinkRandPhrase("이건 절대로 허락하지 않겠다!","지금 당장 그 사악한 계획을 포기해라!","나는 어떤 폭력도 용납하지 않겠다!");
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_3")
 			{
-				if(sti(pchar.rank) < 20)
+				if(int(pchar.rank) < 20)
 				{	
 					dialog.text = "네 갈 길을 가라, "+GetSexPhrase("좋은 사람","아가씨")+". 너 없이도 우리가 알아서 할 거야.";
 					link.l1 = "나는 어떤 폭력도 용납하지 않겠다!";
@@ -132,9 +132,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3":
-			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * sti(pchar.rank);
-			dialog.text = "그녀 때문에 우리 꽤나 돈 썼다는 걸 알아둬! 그렇게 고귀하다면, 네가 그녀를 데려가도 돼\n "+sti(pchar.GenQuest.EncGirl.price)+" 페소입니다."+GetSexPhrase(" 그 여자랑 재미있게 놀 거야, 헤헤...","")+"";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
+			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * int(pchar.rank);
+			dialog.text = "그녀 때문에 우리 꽤나 돈 썼다는 걸 알아둬! 그렇게 고귀하다면, 네가 그녀를 데려가도 돼\n "+int(pchar.GenQuest.EncGirl.price)+" 페소입니다."+GetSexPhrase(" 그 여자랑 재미있게 놀 거야, 헤헤...","")+"";
+			if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.price))
 			{
 				link.l1 = RandPhraseSimple("여기 돈이다. 나는 그녀를 데려가겠다.","이 악물지 마라. 그 아가씨는 내가 데려간다. 여기 네 돈이다.");
 				link.l1.go = "Node_4";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		
 		case "Node_4": // бандюки уходят, девица остаётся - ГГ ее выкупил у бандюков
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.price))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.price)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 7);
 			//pchar.quest.LandEnc_RapersBadExit.over = "yes";
 			sGlobalTemp = "Saved_CangGirl";
@@ -299,12 +299,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar2":
-			pchar.GenQuest.EncGirl.BerglarSum = makeint(sti(pchar.money)/5) + 5000;
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 0)
+			pchar.GenQuest.EncGirl.BerglarSum = int(int(pchar.money)/5) + 5000;
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 0)
 			{
-				dialog.text = "아니. 단지 소박한 금액인 "+sti(pchar.GenQuest.EncGirl.BerglarSum)+" 페소만 있으면 모든 곤란에서 벗어날 수 있지.";
-				if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.BerglarSum))
+				dialog.text = "아니. 단지 소박한 금액인 "+int(pchar.GenQuest.EncGirl.BerglarSum)+" 페소만 있으면 모든 곤란에서 벗어날 수 있지.";
+				if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.BerglarSum))
 				{
 					link.l1 = "음, 고귀한 행동이 요즘은 좀 값이 나가긴 하지. 좋아, 가져가라...";
 					link.l1.go = "EncGirl_Berglar3";
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar3":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.BerglarSum)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.BerglarSum)));
 			dialog.text = "아주 좋아. 잘 됐군.";
 			link.l1 = "행운을 빌어.";
 			link.l1.go = "exit";

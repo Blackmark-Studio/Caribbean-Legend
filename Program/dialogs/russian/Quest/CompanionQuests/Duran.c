@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "Хе! Виноват, капитан. И правда, Левассер достаточно ясно сказал убрать не только рыцаришку, но и всех его спутников. Всех, понимаете? С такими людьми не шутят и к их требованиям надо относиться серьёзно. Не мешайте мне делать мою работу, кэп. Последнее грязное дело, и дальше я с вами до конца, клянусь!";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Чёрт с тобой! Делай свое грязное дело. Клятву твою я принимаю - и лучше бы тебе к ней отнестись смертельно серьёзно. Мы поняли друг друга?";

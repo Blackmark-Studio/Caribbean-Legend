@@ -28,9 +28,9 @@ void ProcessDialogEvent()
 			//первая встреча
             if(NPChar.quest.meeting == "0")
 			{
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
-					dialog.text = "Hm.   Sen   şu   anda   şu   bayrak   altında   seyrediyorsun:  "+NationNameGenitive(sti(pchar.nation))+", kaptan. Ülkemin düşmanıyla konuşmak istemiyorum. Hıh!";
+					dialog.text = "Hm.   Sen   şu   anda   şu   bayrak   altında   seyrediyorsun:  "+NationNameGenitive(int(pchar.nation))+", kaptan. Ülkemin düşmanıyla konuşmak istemiyorum. Hıh!";
 					link.l1 = "Ah, evet. Gerçek bir vatansever...";
 					link.l1.go = "exit";
 				}
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
 			else
 			{
 				//повторные обращения
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "Tekrar mı edeyim?  Arkadaşı olduğumdan şüphelenilmek istemem "+NationNameAblative(sti(pchar.nation))+"! Defol yoksa muhafızları çağırırım! Seninle konuşmak için can atıyorlar.";
+					dialog.text = "Tekrar mı edeyim?  Arkadaşı olduğumdan şüphelenilmek istemem "+NationNameAblative(int(pchar.nation))+"! Defol yoksa muhafızları çağırırım! Seninle konuşmak için can atıyorlar.";
 					link.l1 = "Pekala, pekala, sakin ol. Gidiyorum.";
 					link.l1.go = "exit";
 				}

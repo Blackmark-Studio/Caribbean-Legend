@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_2")
 			{
-				if(sti(pchar.rank) < 10)
+				if(int(pchar.rank) < 10)
 				{
 					dialog.text = LinkRandPhrase("Kendi yoluna git, "+GetSexPhrase("ahbap","kız")+". Sonunda bize teşekkür edecek, biliyorsun.","Defol! Bırak beyefendiler keyfine baksın.","Bu seni ilgilendirmez, "+GetSexPhrase("yabancı","kız")+". Sadece biraz eğleneceğiz, hepsi bu!!");
 					link.l1 = LinkRandPhrase("Buna izin vermeyeceğim!","Kötü planlarından hemen vazgeç!","Herhangi bir şiddete asla tahammül etmeyeceğim!");
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_3")
 			{
-				if(sti(pchar.rank) < 20)
+				if(int(pchar.rank) < 20)
 				{	
 					dialog.text = "Kendi yoluna git, "+GetSexPhrase("iyi adam","genç hanımefendi")+". Sensiz de hallederiz.";
 					link.l1 = "Herhangi bir şiddete asla tahammül etmeyeceğim!";
@@ -132,9 +132,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3":
-			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * sti(pchar.rank);
-			dialog.text = "Bilmelisin ki o bize epey pahalıya patladı! Eğer bu kadar asil olduğunu düşünüyorsan, onu alabilirsin "+sti(pchar.GenQuest.EncGirl.price)+" pesos."+GetSexPhrase(" Onunla iyi vakit geçireceksin, he-he...","")+"";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
+			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * int(pchar.rank);
+			dialog.text = "Bilmelisin ki o bize epey pahalıya patladı! Eğer bu kadar asil olduğunu düşünüyorsan, onu alabilirsin "+int(pchar.GenQuest.EncGirl.price)+" pesos."+GetSexPhrase(" Onunla iyi vakit geçireceksin, he-he...","")+"";
+			if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.price))
 			{
 				link.l1 = RandPhraseSimple("Al paran burada. Onu yanıma alıyorum.","Dişlerini sıkmayı bırak. Kızı yanıma alıyorum. Al paran burada.");
 				link.l1.go = "Node_4";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		
 		case "Node_4": // бандюки уходят, девица остаётся - ГГ ее выкупил у бандюков
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.price))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.price)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 7);
 			//pchar.quest.LandEnc_RapersBadExit.over = "yes";
 			sGlobalTemp = "Saved_CangGirl";
@@ -299,12 +299,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar2":
-			pchar.GenQuest.EncGirl.BerglarSum = makeint(sti(pchar.money)/5) + 5000;
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 0)
+			pchar.GenQuest.EncGirl.BerglarSum = int(int(pchar.money)/5) + 5000;
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 0)
 			{
-				dialog.text = "Hayır. Sadece mütevazı bir miktar "+sti(pchar.GenQuest.EncGirl.BerglarSum)+" peso seni tüm dertlerinden kurtaracak.";
-				if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.BerglarSum))
+				dialog.text = "Hayır. Sadece mütevazı bir miktar "+int(pchar.GenQuest.EncGirl.BerglarSum)+" peso seni tüm dertlerinden kurtaracak.";
+				if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.BerglarSum))
 				{
 					link.l1 = "Eh, soylu işler bu devirde biraz pahalıya patlıyor doğrusu. Peki, al bakalım...";
 					link.l1.go = "EncGirl_Berglar3";
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar3":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.BerglarSum)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.BerglarSum)));
 			dialog.text = "Çok iyi. Kurtulmamız iyi oldu.";
 			link.l1 = "İyi şanslar.";
 			link.l1.go = "exit";

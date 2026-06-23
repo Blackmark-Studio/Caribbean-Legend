@@ -83,17 +83,17 @@ void ProcessDialogEvent()
 			if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_A") 
 			{
 				// 没有地图
-				dialog.text = "船长! 别这么担心! 很明显无法和平逃离, 所以我们决定拜访当地银行家, 检查他的箱子。 这是您的份额 - " + sti(pchar.questTemp.ReasonToFast.p9) + " 比索... ";
+				dialog.text = "船长! 别这么担心! 很明显无法和平逃离, 所以我们决定拜访当地银行家, 检查他的箱子。 这是您的份额 - " + int(pchar.questTemp.ReasonToFast.p9) + " 比索... ";
 			}
 			if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_B")
 			{
 				// 拿到了地图
 				GiveItem2Character(pchar, pchar.questTemp.ReasonToFast.p6);
-				dialog.text = "船长! 别这么担心! 很明显无法和平逃离, 所以我们决定拜访当地银行家, 检查他的箱子。 当铺箱里还有一把好剑。 这是您的份额 - " + sti(pchar.questTemp.ReasonToFast.p9) + " 比索和一把剑... ";
+				dialog.text = "船长! 别这么担心! 很明显无法和平逃离, 所以我们决定拜访当地银行家, 检查他的箱子。 当铺箱里还有一把好剑。 这是您的份额 - " + int(pchar.questTemp.ReasonToFast.p9) + " 比索和一把剑... ";
 			}		
 			link.l1 = "干得好, 伙计们! 干得好! 我为你们骄傲。 ";
 			link.l1.go = "On_MyShip_Deck_End";
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.ReasonToFast.p9));			
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.ReasonToFast.p9));
 			pchar.Ship.Crew.Morale = MORALE_MAX;
 			chrDisableReloadToLocation = false; // 打开出口
 			AddQuestRecord("ReasonToFast", "17");		
@@ -215,7 +215,7 @@ void ProcessDialogEvent()
 			LAi_SetCitizenType(NPChar); // 让他在甲板上行走
 			
 			NPChar = GetRealShip(GetCharacterShipType(CharacterFromID("MaryCelesteCapitan")));
-			NPChar.TurnRate = sti(PChar.QuestTemp.MaryCeleste.TurnRate); // 恢复机动性, 用于界面
+			NPChar.TurnRate = int(PChar.QuestTemp.MaryCeleste.TurnRate); // 恢复机动性, 用于界面
 			
 			chrDisableReloadToLocation = false; // 打开出口
 			

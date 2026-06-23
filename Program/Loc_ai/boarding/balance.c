@@ -31,7 +31,7 @@ void SetRankOffsets(ref attacker, ref defender, int attackerCrew, int defenderCr
 	else if (result > 0 && defenderTstantsa) result -= result * 0.3;
 	
 	// оффест от -10 до 10
-	int attackerRank = makeint(10 * result);
+	int attackerRank = int(10 * result);
 	int defenderRank = -attackerRank;
 	TEV.boarding.attacker = attackerCrew;
 	TEV.boarding.defender = defenderCrew;
@@ -49,7 +49,7 @@ void BRD_InjectPerks(ref chr, int curIdx, ref perkChars, ref location, bool give
 	// сначала пробуем компаньона
 	if (CheckAttribute(perkChars, "companion") && CheckAttribute(location, "UpDeckType"))
 	{
-		ref companion = GetCharacter(sti(perkChars.companion));
+		ref companion = GetCharacter(int(perkChars.companion));
 		ChangeAttributesFromCharacter(chr, companion, false);
 		DeleteAttribute(chr, "payment");
 		chr.PersonalityCloneType = "companion";
@@ -62,7 +62,7 @@ void BRD_InjectPerks(ref chr, int curIdx, ref perkChars, ref location, bool give
 	// затем боцмана только на верхнюю палубу
 	if (!replaced && CheckAttribute(perkChars, "boatswain") && CheckAttribute(location, "UpDeckType"))
 	{
-		ref boatswain = GetCharacter(sti(perkChars.boatswain));
+		ref boatswain = GetCharacter(int(perkChars.boatswain));
 		if (!IsOfficer(boatswain)) // и так уже абордажник
 		{
 			ChangeAttributesFromCharacter(chr, boatswain, false);
@@ -106,20 +106,20 @@ void BRD_FillPerkChars(ref attacker, ref defender, ref perkChars)
 
 	if (IsMainCharacter(attacker) && CheckOfficersPerk(attacker, "Involvement"))
 	{
-		int boatswainIdx = sti(pchar.Fellows.Passengers.boatswain);
+		int boatswainIdx = int(pchar.Fellows.Passengers.boatswain);
 		if (boatswainIdx > 0) perkChars.boatswain = boatswainIdx;
 	}
 
 	if (CheckOfficersPerk(attacker, "BruteForce"))
 	{
-		perkChars.bruteForce_1;
-		perkChars.bruteForce_2;
+		touchattr(perkChars.bruteForce_1);
+		touchattr(perkChars.bruteForce_2);
 	}
 
 	if (CheckOfficersPerk(attacker, "Ambuscade"))
 	{
-		perkChars.Ambuscade_1;
-		perkChars.Ambuscade_2;
+		touchattr(perkChars.Ambuscade_1);
+		touchattr(perkChars.Ambuscade_2);
 	}
 }
 
@@ -133,7 +133,7 @@ void BRD_InjectBalance(ref chr, int offsetRank, ref boardingObject, ref location
 		return;
 	}
 
-	int targetRank = sti(pchar.rank) + offsetRank;
+	int targetRank = int(pchar.rank) + offsetRank;
 	ForceAdaptivelevel(chr, targetRank, GEN_TYPE_ENEMY, GEN_BY_RANK, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 
 	SetAttribute(boardingObject, location.id + "." + chr.chr_ai.group + "." + chr.id, targetRank + "|" + chr.rank + "|" + chr.personality.powerLvl + "|" + mark);

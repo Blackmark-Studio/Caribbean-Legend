@@ -28,9 +28,9 @@ void ProcessDialogEvent()
 			//первая встреча
             if(NPChar.quest.meeting == "0")
 			{
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
-					dialog.text = "ふむ。お前は～の旗の下で航海しているのか "+NationNameGenitive(sti(pchar.nation))+"「船長。私は自国の敵と話す気などない。ふん！」";
+					dialog.text = "ふむ。お前は～の旗の下で航海しているのか "+NationNameGenitive(int(pchar.nation))+"「船長。私は自国の敵と話す気などない。ふん！」";
 					link.l1 = "ああ、そうだ。本物の愛国者だな……";
 					link.l1.go = "exit";
 				}
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
 			else
 			{
 				//повторные обращения
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "もう一度言わなきゃならねえのか？あいつの仲間だと疑われたくねえんだが "+NationNameAblative(sti(pchar.nation))+"「出て行け！さもないと衛兵を呼ぶぞ！あいつらはお前と話したがっているからな。」";
+					dialog.text = "もう一度言わなきゃならねえのか？あいつの仲間だと疑われたくねえんだが "+NationNameAblative(int(pchar.nation))+"「出て行け！さもないと衛兵を呼ぶぞ！あいつらはお前と話したがっているからな。」";
 					link.l1 = "わかった、わかった、落ち着け。俺はもう行くぜ。";
 					link.l1.go = "exit";
 				}

@@ -304,7 +304,7 @@ int LocationInitBarbados(int n)
 	// МАГАЗИН
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Bridgetown_store";
-	locations[n].id.label = "Store"
+	locations[n].id.label = "Store";
 	locations[n].filespath.models = "locations\inside\Store03\";
 	locations[n].image = "loading\inside\shop.tga";
 	//Town sack

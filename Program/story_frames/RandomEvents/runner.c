@@ -69,7 +69,7 @@ bool _RE_GlobalConditions()
 // Условия для запуска системы ивентов в зависимости о текущей ситуации в игре
 bool _RE_SituationalConditions()
 {
-	string reason = ""
+	string reason = "";
 	if (g_ActiveActionName != "EnterToSea") reason = "движуха в море"; // мы на глобалке с какой-то активной движухой, скипаем
 	else if (GetCharacterShipClass(pchar) > 6) reason = "мы на лодке";   // на лодках ничего не происходит
 
@@ -129,7 +129,7 @@ string _RE_PickEvent(int now)
 	return "";
 }
 
-extern bool SF_InitConditions();
+extern bool SF_InitConditions(ref context, ref situation, bool fromStory = false);
 bool _Re_CanRunEvent(string eventId, int now)
 {
 	if (now < GetAttributeInt(&RandEventSystem, "recentEvents." + eventId)) return false;

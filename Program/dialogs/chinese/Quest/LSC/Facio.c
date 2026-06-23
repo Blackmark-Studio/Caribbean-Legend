@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // 自己
 					dialog.text = "啊? 你为什么像着火一样闯进我的地方? 你以为你是谁? ? ";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
-				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+int(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
-				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+int(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "嗯, 这实际上不是冲突, 只是一个小误会, 呵呵。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
-				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+int(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
+				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+int(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("你给了"+sti(npchar.quest.price)+"杜布隆");
+			Log_Info("你给了"+int(npchar.quest.price)+"杜布隆");
 			dialog.text = "太好了。 现在坐下休息一下。 在我解决你的问题之前, 你最好待在我的船舱里。 我不想让你把事情弄得更糟, 亲爱的。 ";
 			link.l1 = "好的... ";
 			link.l1.go = "peace";

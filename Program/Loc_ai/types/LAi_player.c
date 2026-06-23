@@ -11,7 +11,7 @@
 #define LAI_TYPE_PLAYER		"player"
 
 //Инициализация
-void LAi_type_player_Init(aref chr)
+void LAi_type_player_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	bool isNew = false;
@@ -37,13 +37,13 @@ void LAi_type_player_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_player_CharacterUpdate(ref chr, float dltTime)
 {
 	float time;
 	if (CheckAttribute(chr, "showTimer")) 
 	{
-		chr.showTimer = stf(chr.showTimer) - dltTime;
-		if (sti(chr.showTimer) <= 0.0)
+		chr.showTimer = float(chr.showTimer) - dltTime;
+		if (int(chr.showTimer) <= 0.0)
 		{
 			DeleteAttribute(chr, "showTimer");
 			if (CheckAttribute(chr, "questTemp.LSC.RescueMary")) // Jason, LSC: бежим к Мэри на время
@@ -65,7 +65,7 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
                 }
             }
 		}
-		else Log_SetEternalString("" + sti(chr.showTimer));
+		else Log_SetEternalString("" + int(chr.showTimer));
 	}
 	
 	// Jason: измерение дистанции до НПС
@@ -96,7 +96,7 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 	}
 	if(LAi_IsFightMode(chr))
 	{
-		time = stf(chr.chr_ai.type.weapontime) + dltTime;
+		time = float(chr.chr_ai.type.weapontime) + dltTime;
 		chr.chr_ai.type.weapontime = time;
 		if(time > 300.0)
 		{
@@ -118,11 +118,11 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 			if(CheckAttribute(pchar, "questTemp.Guardoftruth") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "santiago" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) Vigilance = 10;
 			if(CheckAttribute(pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) Vigilance = 10;
 			StealthLuck = GetCharacterSkill(pchar, "Sneak");
-			if(IsEquipCharacterByArtefact(pchar, "obereg_4")) StealthLuck = sti(StealthLuck*1.5);
+			if(IsEquipCharacterByArtefact(pchar, "obereg_4")) StealthLuck = int(StealthLuck*1.5);
 			if(GetCharacterEquipByGroup(pchar, CIRASS_ITEM_TYPE) == "suit4") StealthLuck *= 3;
 			//порядок не менять, тк множим только скрытность
 			StealthLuck += GetCharacterSPECIAL(pchar, SPECIAL_P)*5;
-			StealthLuck -= sti(pchar.reputation.fame);
+			StealthLuck -= int(pchar.reputation.fame);
 			StealthLuck += ChangeCharacterNationReputation(pchar, StealthNat, 0);
 			// если не в зоне видимости, то максимальная скрытность 
 			int num = FindNearCharacters(chr, 10.0, -1.0, -1.0, 0.1, true, true);
@@ -131,7 +131,7 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 			{
 				for(int i = 0; i < num; i++)
 				{
-					int iTemp = chrFindNearCharacters[i].index;
+					int iTemp = chrFindNearCharacters[i].index$int(0);
 					if(CheckAttribute(&Characters[iTemp], "chr_ai.type") && Characters[iTemp].chr_ai.type == "patrol")
 					{
 						visPatrol = true;
@@ -162,38 +162,38 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 		// кулдаун на диалог
 		if(CheckAttribute(pchar,"chr_ai.stealtDlgCooldown"))
 		{
-			pchar.chr_ai.stealtDlgCooldown = stf(pchar.chr_ai.stealtDlgCooldown) - dltTime;
-			if(stf(pchar.chr_ai.stealtDlgCooldown) < 1.0) DeleteAttribute(pchar,"chr_ai.stealtDlgCooldown");
+			pchar.chr_ai.stealtDlgCooldown = float(pchar.chr_ai.stealtDlgCooldown) - dltTime;
+			if(float(pchar.chr_ai.stealtDlgCooldown) < 1.0) DeleteAttribute(pchar,"chr_ai.stealtDlgCooldown");
 		}
 	}
 	// <-- дополнительные возможности обмануть стражу
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_player_CharacterLogin(aref chr)
+bool LAi_type_player_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_player_CharacterLogoff(aref chr)
+bool LAi_type_player_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_player_TemplateComplite(aref chr, string tmpl)
+void LAi_type_player_TemplateComplite(ref chr, string tmpl)
 {
 	LAi_tmpl_player_InitTemplate(chr);
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_player_NeedDialog(aref chr, aref by)
+void LAi_type_player_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_player_CanDialog(aref chr, aref by)
+bool LAi_type_player_CanDialog(ref chr, ref by)
 {
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return false;
@@ -204,7 +204,7 @@ bool LAi_type_player_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_player_StartDialog(aref chr, aref by)
+void LAi_type_player_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -213,7 +213,7 @@ void LAi_type_player_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_player_EndDialog(aref chr, aref by)
+void LAi_type_player_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 //	LAi_CharacterRestoreAy(chr);	// evganat - отключил, это не сочетается с камерой
@@ -225,14 +225,14 @@ void LAi_type_player_EndDialog(aref chr, aref by)
 void LAi_type_player_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy)
 {
 	Log_TestInfo("Выстрелил персонаж с ID - " + attack.id + " и попал в персонажа с ID - " + enemy.id);
-	int iCurHP = enemy.chr_ai.hp;
-	int iMaxHP = LAi_GetCharacterMaxHP(enemy);
+	int iCurHP = enemy.chr_ai.hp$int(0);
+	int iMaxHP = int(LAi_GetCharacterMaxHP(enemy));
 	if(iCurHP > 0 && !LAi_IsImmortal(enemy))
 		Log_Info(XI_ConvertString("HealthRemain") + iCurHP + "/" + iMaxHP);
 }
 
 
 //Персонаж атакован
-void LAi_type_player_Attacked(aref chr, aref by)
+void LAi_type_player_Attacked(ref chr, ref by)
 {
 }

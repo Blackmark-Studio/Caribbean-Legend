@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PearlMan_1";
 		break;
 		case "PearlMan_1":
-			dialog.text = "Burada inci topluyoruz, hizmet ediyoruz  "+NationNameGenitive(sti(npchar.nation))+", biliyorsun...";
+			dialog.text = "Burada inci topluyoruz, hizmet ediyoruz  "+NationNameGenitive(int(npchar.nation))+", biliyorsun...";
 			link.l1 = "Evet, biliyorum...";
 			link.l1.go = "exit";
 			link.l2 = "Hey, dinle, bu küçük süslerden birkaçını doğrudan 'üreticiden' almak mümkün mü? Ne dersin?";

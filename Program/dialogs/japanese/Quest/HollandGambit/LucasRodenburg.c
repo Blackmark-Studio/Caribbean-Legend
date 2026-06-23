@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Holl == "JacobTakeShip")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
 					dialog.text = "船を停泊させろと言っただろうが。命令も守れねえほど馬鹿か、それとも無知なのか？";
 					link.l1 = "どちらでもありません、旦那。私はこれから向かうところです。";
@@ -110,8 +110,8 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MAYFANG) iMef = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MAYFANG) iMef = 1;
 				}
 				}//установили признак наличия кораблей в эскадре.
 				RemoveItems(PChar, "JacobJournal", 1);//удалим журнал ван Берга
@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 					{
 						sld = GetCharacter(iTemp);
 						pchar.questTemp.HWIC.Holl.CompanionIndex = sld.Index;
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_MIRAGE) iMir = 1;
 					}
 				}//установили признак наличия Миража в эскадре.
 				pchar.quest.ToAntiguaOver.over = "yes"; //снять таймер
@@ -819,7 +819,7 @@ void ProcessDialogEvent()
 			}
 			link.l2 = "いいや。あちこち探したが、何も見つからなかった。";
 			link.l2.go = "Merdok_5";
-			DeleteAttribute("SentJons_TownCave", "box2");//если не нашли шифр - уже и не найдем
+			DeleteAttribute(&Locations[FindLocation("SentJons_TownCave")], "box2");//если не нашли шифр - уже и не найдем
 		break;
 		
 		case "Merdok_5":
@@ -938,7 +938,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Solomon");//уберем Соломона
 			sld.lifeday = 0;
 			pchar.quest.Lucas_quit.win_condition.l1 = "Timer";
-			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Lucas_quit.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
@@ -970,7 +970,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Solomon");//уберем Соломона
 			sld.lifeday = 0;
 			pchar.quest.Lucas_quit.win_condition.l1 = "Timer";
-			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.Lucas_quit.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.Lucas_quit.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);

@@ -46,7 +46,7 @@ void GoodLand_Node0()
 		case "d":
 			action = SF_AddAction("d_a", "", "", SF_Icon("story", "random"));
 			SF_AddCondition(&action, GoodLandHasTreasures(action), SF_CONDITION_CUSTOM, SF_Convert("MissingTreasures"));
-			SF_SetChance(action, sti(pchar.questTemp.Indian.relation)-50, "relationshipIndians");
+			SF_SetChance(action, int(pchar.questTemp.Indian.relation)-50, "relationshipIndians");
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_COMMERCE)/3, SKILL_COMMERCE);
 			SF_SetChance(action, GetSkillAfterPenalty(pchar, SKILL_LEADERSHIP)/2, SKILL_LEADERSHIP);
 

@@ -9,6 +9,12 @@ condition_mushket_indian
 Dieser Gegenstand erscheint bei Geldleihern, wenn du
 Caribbean Legend: Age of Pirates besitzt
 }
+condition_nocturlabe
+{
+Ein kostenloses Geschenk für die Community.
+ Haltet bei den Wucherern danach Ausschau.
+ Danke, dass ihr spielt!
+}
 noRewardYetMessage
 {
 Diese Belohnung ist noch nicht verfügbar,

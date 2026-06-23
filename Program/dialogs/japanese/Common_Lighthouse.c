@@ -118,18 +118,18 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//иногда продает корабельные товары // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 			npchar.quest.goodsqty = 50+hrand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
-			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//цена единицы товара
-			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//стоимость товара
+			if (int(npchar.quest.goods) == GOOD_EBONY || int(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
+			npchar.quest.goodsprice = int(int(Goods[int(npchar.quest.goods)].Cost)/4);//цена единицы товара
+			npchar.quest.goodscost = int(npchar.quest.goodsprice)*int(npchar.quest.goodsqty);//стоимость товара
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && int(GetCharacterFreeSpace(pchar, int(npchar.quest.goods))) > int(npchar.quest.goodsqty) && int(pchar.money) >= int(npchar.quest.goodscost) && ok)
 			{
-				dialog.text = "船長、最近いくらかの積荷が浜に打ち上げられました―― "+GetGoodsNameAlt(sti(npchar.quest.goods))+"。一部は海水でダメになったが、 "+FindRussianQtyString(sti(npchar.quest.goodsqty))+" 素晴らしい状態で救い出せたんだ。いくつか買わないか？あんたのためだけに安くしてやるぜ、ただし "+FindRussianMoneyString(sti(npchar.quest.goodsprice))+" 1単位あたり。";
+				dialog.text = "船長、最近いくらかの積荷が浜に打ち上げられました―― "+GetGoodsNameAlt(int(npchar.quest.goods))+"。一部は海水でダメになったが、 "+FindRussianQtyString(int(npchar.quest.goodsqty))+" 素晴らしい状態で救い出せたんだ。いくつか買わないか？あんたのためだけに安くしてやるぜ、ただし "+FindRussianMoneyString(int(npchar.quest.goodsprice))+" 1単位あたり。";
 				link.l1 = "いや。最近の収穫を見せてくれ。";
 				link.l1.go = "Trade_lighthouse_double";
-				link.l2 = "ふむ……正直な申し出だな、同意しよう。多少は転売して儲けも出せそうだ。さて……それで合計は "+FindRussianMoneyString(sti(npchar.quest.goodscost))+"。そういうことか？";
+				link.l2 = "ふむ……正直な申し出だな、同意しよう。多少は転売して儲けも出せそうだ。さて……それで合計は "+FindRussianMoneyString(int(npchar.quest.goodscost))+"。そういうことか？";
 				link.l2.go = "Trade_goods";
 				SaveCurrentNpcQuestDateParam(npchar, "goods_date");
 			}
@@ -156,9 +156,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_goods":
-			AddCharacterGoods(pchar, sti(npchar.quest.goods), sti(npchar.quest.goodsqty));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.goodscost));
-			AddMoneyToCharacter(npchar, sti(npchar.quest.goodscost));
+			AddCharacterGoods(pchar, int(npchar.quest.goods), int(npchar.quest.goodsqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.goodscost));
+			AddMoneyToCharacter(npchar, int(npchar.quest.goodscost));
 			dialog.text = "その通りだぜ、船長。いい取引だったな！お互いしっかり儲けたってわけさ……";
 			link.l1 = "よし、それじゃあ。船乗りたちに荷物を俺の船まで運ばせるぜ。さて、売り物を見せてくれ。";
 			link.l1.go = "Trade_lighthouse_double";
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_3":
-			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= sti(npchar.quest.artday))
+			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= int(npchar.quest.artday))
 			{
 			dialog.text = "ああ、持ってるぜ。100ドゥブロン用意したか、船長？"; // Addon-2016 Jason
 				// belamour legendary edition -->
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_SetOwnerType(NPChar); // belamour иначе обижается навсегда		   
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "ああ、あんたがあの船長か！そうさ、ずっと待ってたんだ。ジェラールも待ってたけど、 急な遠征で出かけなきゃならなくなってな、代わりに俺が支払いを渡すよう頼まれたんだ。 あんたが必ず来るって言ってたぜ。ここにドゥブロン金貨が90枚ある、どうぞ。");
+			dialog.text = "ああ、あんたがあの船長か！そうさ、ずっと待ってたんだ。ジェラールも待ってたけど、 急な遠征で出かけなきゃならなくなってな、代わりに俺が支払いを渡すよう頼まれたんだ。 あんたが必ず来るって言ってたぜ。ここにドゥブロン金貨が90枚ある、どうぞ。";
 			link.l1 = "ありがとうございます！正直者と取引できて嬉しいです。";
 			link.l1.go = "Trial_1";
 		break;

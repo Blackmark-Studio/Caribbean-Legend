@@ -138,8 +138,8 @@ void CalculateNationRelat()
     FortCh = FindSiegeFortCommander();
     if(FortCh.id != "none")
     {
-        ok1 = (sti(FortCh.nation) == Nation1) && (sti(CaptEsc.nation) == Nation2);
-        ok2 = (sti(FortCh.nation) == Nation2) && (sti(CaptEsc.nation) == Nation1);
+        ok1 = (int(FortCh.nation) == Nation1) && (int(CaptEsc.nation) == Nation2);
+        ok2 = (int(FortCh.nation) == Nation2) && (int(CaptEsc.nation) == Nation1);
         if (ok1 || ok2)
         {
             RelatNat = RELATION_ENEMY;
@@ -166,12 +166,12 @@ void CalculateNationRelat()
 	}
     SetNationRelationBoth(Nation1, Nation2, RelatNat);
 
-    if (sti(mainCh.nation) == Nation1)
+    if (int(mainCh.nation) == Nation1)
     {
         SetNationRelation2MainCharacter(Nation2, RelatNat);
     }
 
-    if (sti(mainCh.nation) == Nation2)
+    if (int(mainCh.nation) == Nation2)
     {
         SetNationRelation2MainCharacter(Nation1, RelatNat);
     }

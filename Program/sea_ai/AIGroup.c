@@ -27,7 +27,7 @@ void Group_DeleteGroupIndex(int iGroupIndex)
     {
         if (CheckAttribute(&AIGroups[i], "id") && CheckAttribute(&AIGroups[i], "Task.Target"))
         {
-            if (NotPlayer || !CheckAttribute(&AIGroups[i], "Task.Lock") || sti(AIGroups[i].Task.Lock) == 0)
+            if (NotPlayer || !CheckAttribute(&AIGroups[i], "Task.Lock") || int(AIGroups[i].Task.Lock) == 0)
             {
                 if (AIGroups[i].Task.Target == sGroupID)
                 {
@@ -284,7 +284,7 @@ string GetGroupIDFromCharacter(ref chr)
 		rGroup = Group_GetGroupByIndex(i);
 		if (CheckAttribute(rGroup, "id"))
 		{
-			string sTemp = "Quest.id_" + sti(chr.index);
+			string sTemp = "Quest.id_" + int(chr.index);
 			if (CheckAttribute(rGroup, sTemp))
 			{
 				return rGroup.id;
@@ -345,7 +345,7 @@ int Group_GetDeadCharactersNumR(ref rGroup)
 	{
 		int iCharacterIndex = Group_GetCharacterIndexR(rGroup, i);
 		if (iCharacterIndex < 0) { iDeads++; }
-		if (sti(Characters[iCharacterIndex].Ship.Type) == SHIP_NOTUSED || LAi_IsDead(&Characters[iCharacterIndex])) { iDeads++; }  // fix фантомов
+		if (int(Characters[iCharacterIndex].Ship.Type) == SHIP_NOTUSED || LAi_IsDead(&Characters[iCharacterIndex])) { iDeads++; }  // fix фантомов
 	}
 	return iDeads;
 }
@@ -367,7 +367,7 @@ int Group_GetCharacterIndexR(ref rGroup, int iIndex)
 	int iNumAttributes = GetAttributesNum(arQuest);
 	if (iIndex >= iNumAttributes) { return -1; } 
 	arAttr = GetAttributeN(arQuest, iIndex);
-	return sti(arAttr.index);
+	return int(arAttr.index);
 }
 
 // delete character from group
@@ -395,7 +395,7 @@ bool Group_isDeadR(ref rGroup)
 	{
 		int iCharacterIndex = Group_GetCharacterIndexR(rGroup, i);
 		if (iCharacterIndex < 0) { break; }
-		if (sti(Characters[iCharacterIndex].Ship.Type) == SHIP_NOTUSED || LAi_IsDead(&Characters[iCharacterIndex])) { iNumDeadCharacters++; }  // стертый тоже труп
+		if (int(Characters[iCharacterIndex].Ship.Type) == SHIP_NOTUSED || LAi_IsDead(&Characters[iCharacterIndex])) { iNumDeadCharacters++; }  // стертый тоже труп
 		i++;
 	}
 	if (iNumDeadCharacters == i) { return true; }
@@ -453,7 +453,7 @@ float Group_GetPowerHP_R(ref rGroup)
 		if (iCharacterIndex < 0) { break; }
 		if (CheckAttribute(&Characters[iCharacterIndex], "Ship.HP")) // fix может быть убитый фантом
 		{
-			fHP = fHP + stf(Characters[iCharacterIndex].Ship.HP);
+			fHP = fHP + float(Characters[iCharacterIndex].Ship.HP);
 		}
 		else
 		{
@@ -467,7 +467,7 @@ float Group_GetPowerHP_R(ref rGroup)
 // =											TASK SECTION											=
 // ======================================================================================================
 
-bool Group_isTaskLockR(ref rGroup) { return sti(rGroup.Task.Lock); }
+bool Group_isTaskLockR(ref rGroup) { return bool(rGroup.Task.Lock); }
 bool Group_isTaskLock(string sGroupID)
 {
 	ref rGroup = Group_FindOrCreateGroup(sGroupID);
@@ -479,14 +479,14 @@ bool Group_CheckTaskLock(string sGroupID)
     ref rGroup = Group_FindOrCreateGroup(sGroupID);
     if (!CheckAttribute(rGroup, "Task.Lock"))
         rGroup.Task.Lock = "0";
-	return sti(rGroup.Task.Lock);
+	return bool(rGroup.Task.Lock);
 }
 
 bool Group_CheckTaskLockR(ref rGroup)
 {
     if (!CheckAttribute(rGroup, "Task.Lock"))
         rGroup.Task.Lock = "0";
-	return sti(rGroup.Task.Lock);
+	return bool(rGroup.Task.Lock);
 }
 
 // lock task, group can't change task before end current
@@ -508,14 +508,14 @@ bool Group_CheckAttackPlayer(string sGroupID)
     ref rGroup = Group_FindOrCreateGroup(sGroupID);
     if (!CheckAttribute(rGroup, "Task.Target"))
         return false;
-    return (sti(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
+    return (int(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
 }
 
 bool Group_CheckAttackPlayerR(ref rGroup)
 {
     if (!CheckAttribute(rGroup, "Task.Target"))
         return false;
-    return (sti(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
+    return (int(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
 }
 
 // Task: Defend
@@ -677,7 +677,7 @@ void Group_CheckTask()
         if (MOD_BETTATESTMODE == "On") Log_Info("Error: Group_CheckTask нет группы");
         return;
     }
-	switch (sti(rGroup.Task))
+	switch (int(rGroup.Task))
 	{
 		case AITASK_DEFEND:
 			AIDefend_CheckTask(sGroupID);

@@ -75,13 +75,13 @@ void ProcessDialogEvent()
 			nationManName[2] = "Si usted está viendo esto, es un error";
 			nationManName[3] = "Spaniard";
 			dialog.text = "Lo siento, me temo que no entendí su nombre, señor. ¿Es usted inglés?";
-			link.l1 = nationManName[sti(pchar.BaseNation)]+"¿Es tan importante? No nos preocupemos por mi nombre por ahora.";
+			link.l1 = nationManName[int(pchar.BaseNation)]+"¿Es tan importante? No nos preocupemos por mi nombre por ahora.";
 			link.l1.go = "Himenes_6";
 		break;
 		
 		case "Himenes_6":
 			dialog.text = "De hecho, al ser reconocidos como herejes por la Iglesia Católica Española, debemos comparecer ante el justo tribunal de la Santa Inquisición. Por eso tu nacionalidad es tan importante para nosotros. Un capitán español estaría obligado a entregarnos a las autoridades locales. ¡No sobreviviríamos a tal cosa de nuevo! ¡Ja-ja!";
-			if (sti(pchar.BaseNation) == SPAIN) dialog.text = "¡Ja-ja-ja-ja-ja-ja! Tal es nuestra suerte, bueno, no tenemos nada que perder de todos modos. "+dialog.text;
+			if (int(pchar.BaseNation) == SPAIN) dialog.text = "¡Ja-ja-ja-ja-ja-ja! Tal es nuestra suerte, bueno, no tenemos nada que perder de todos modos. "+dialog.text;
 			link.l1 = "Bueno, afortunadamente para ti, los asuntos de la Inquisición no me conciernen. ¿Y qué? ¿Sois paganos?";
 			link.l1.go = "Himenes_7";
 		break;
@@ -591,7 +591,7 @@ void ProcessDialogEvent()
 				link.l4 = "Rodrigo, los especialistas y equipos especialmente valiosos han sido entregados a la fábrica. Puedes empezar a trabajar.";
 				link.l4.go = "Himenes_plantation_7";
 			}
-			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && sti(pchar.questTemp.IslaMona.Factory.Part) > 0)
+			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && int(pchar.questTemp.IslaMona.Factory.Part) > 0)
 			{
 				link.l4 = "Rodrigo, he venido por mi sándalo.";
 				link.l4.go = "Himenes_bacaut";
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_harbour_2":
 			dialog.text = "Bienvenido, Capitán. ¿Qué le parece su nuevo puerto?";
-			if (stf(environment.time) > 22.0 || stf(environment.time) < 5.0)
+			if (float(environment.time) > 22.0 || float(environment.time) < 5.0)
 			{
 				link.l1 = "¡Está oscuro, Rodrigo! ¡Casi chocamos con tu alabado muelle! ¡Bien hecho por al menos iluminarlo!";
 				link.l1.go = "Himenes_harbour_3";
@@ -843,8 +843,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_bacaut":
-			dialog.text = "Por supuesto, capitán, tómelo. Tenemos los siguientes lotes listos para la próxima fecha: "+sti(pchar.questTemp.IslaMona.Factory.Part)+", eso es "+sti(pchar.questTemp.IslaMona.Factory.Goods)+" troncos. Por lo tanto, nos debes "+sti(pchar.questTemp.IslaMona.Factory.Dublon)+"  doblones, "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+"botellas de ron, y "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" botellas de vino, ¿tienes todo eso?";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= sti(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= sti(pchar.questTemp.IslaMona.Factory.Bottle))
+			dialog.text = "Por supuesto, capitán, tómelo. Tenemos los siguientes lotes listos para la próxima fecha: "+int(pchar.questTemp.IslaMona.Factory.Part)+", eso es "+int(pchar.questTemp.IslaMona.Factory.Goods)+" troncos. Por lo tanto, nos debes "+int(pchar.questTemp.IslaMona.Factory.Dublon)+"  doblones, "+int(pchar.questTemp.IslaMona.Factory.Bottle)+"botellas de ron, y "+int(pchar.questTemp.IslaMona.Factory.Bottle)+" botellas de vino, ¿tienes todo eso?";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= int(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= int(pchar.questTemp.IslaMona.Factory.Bottle))
 			{
 				link.l1 = "Por supuesto. Aquí está tu pago.";
 				link.l1.go = "Himenes_bacaut_1";
@@ -991,15 +991,15 @@ void ProcessDialogEvent()
 			string sAdd = "";
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Candle"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Amber"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget"))
 			{
-				sAdd += " "+ sti(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
+				sAdd += " "+ int(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber"))
 			{
@@ -1041,7 +1041,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_14":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "que no tendremos que estar aquí sentados durante semanas esperando a que se desarrollen los acontecimientos.";
 			else sTemp = "que no todos tendrán que participar en la batalla.";
 			dialog.text = "Ja-ja-ja-ja-ja... ja. ¡Yo también lo pensé, capitán! Rodgar tiene razón, tu presencia ya significa, "+sTemp+"";
@@ -1066,7 +1066,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_17":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Defend.Force")) // решил проблему самостоятельно
 			{
 				dialog.text = "Solo tres de ellos llegaron a nosotros, y solo uno sobrevivió. ¡El capitán mismo! Aparentemente, un marino militar muy serio. Pero no puede ayudarnos aún, tendrá que quedarse en la cama al menos un par de días más. Por cierto, capitán, oímos disparos y, a juzgar por su aspecto, usted también.";
@@ -1499,7 +1499,7 @@ void ProcessDialogEvent()
 		
 		case "FraOfficer_3":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "Probablemente haya muchos más bandidos que nosotros, vimos tiendas en la orilla. ¡Y además de tiendas, también tienen un muro, puertas, cañones!";
 			else sTemp = "Probablemente no haya tantos bandidos, de lo contrario ya nos habrían echado de aquí. ¡Pero aún disponen de un muro, puertas, cañones y mucho tiempo!";
 			dialog.text = "¿Qué nos impidió?! Solo tenemos doce fusileros y siete marineros. Todos cansados y agotados. Salvamos solo cinco mosquetes, ¡con solo un cartucho cada uno en el mejor de los casos!"+sTemp+"";
@@ -1627,7 +1627,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_2":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1646,7 +1646,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_3":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 70, SKILL_LEADERSHIP);
@@ -1665,7 +1665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_4":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1927,7 +1927,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_man_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = RandPhraseSimple(RandPhraseSimple("No lo tome como una insolencia, señor, pero vivir aquí es imposible.","Todo es mejor que estar sentado en las celdas de la Inquisición..."),RandPhraseSimple("Gracias por salvarnos, Capitán.","¿Estos... piratas son tus amigos?"));
@@ -1984,7 +1984,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_woman_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = LinkRandPhrase("Oh... Hola.","Señor, ¿quiénes son esos... hombres rudos con armas?","Gracias por salvarnos, Capitán.");

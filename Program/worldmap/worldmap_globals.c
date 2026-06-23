@@ -36,7 +36,7 @@ void Map_CreateTrader(string beginlocator, string endLocator, string characterID
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 	if(CheckAttribute(pchar, "systeminfo.tutorial.MapEncounter"))
 	{
 		if(CheckAttributeEqualTo(&Characters[GetCharacterIndex(characterID)], "mapEnc.worldMapShip", "quest_ship"))
@@ -66,7 +66,7 @@ void Map_CreateTraderXZ(float x1, float z1, float x2, float z2, string character
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 }
 
 // Jason - скоростной торговец
@@ -84,7 +84,7 @@ void Map_CreateCoolTrader(string beginlocator, string endLocator, string charact
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 }
 
 //военный (догоняющий). TimeOut в днях, если -1, то неиспользуеться.
@@ -101,7 +101,7 @@ void Map_CreateWarrior(string beginLocator, string characterID, int TimeOut)
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 }
 
 //Jason Квестовый скоростной энкаунтер. Уйти от него невозможно.
@@ -117,7 +117,7 @@ void Map_CreateCoolWarrior(string beginLocator, string characterID, int TimeOut)
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 }
 
 //воюющий. TimeOut в днях. При таймауте придёт эвент Map_BattleEnd
@@ -134,7 +134,7 @@ void Map_CreateBattle(string characterID, int iEnemyNation, int TimeOut)
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) + 1;
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) + 1;
 }
 
 //Удалить квестового энкоунтера
@@ -153,7 +153,7 @@ void Map_ReleaseQuestEncounter(string characterID)
         if(enc.characterID == characterID)
         {
             DeleteAttribute(enc, "characterID");
-            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+            //pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
             //break;
         }
     }
@@ -168,7 +168,7 @@ void Map_ReleaseQuestEncounter(string characterID)
 		if(enc.quest.chrID == characterID)
         {
 			wdmDeleteLoginEncounter(GetAttributeName(enc));
-            //pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+            //pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
         }
 	}
 
@@ -183,22 +183,22 @@ void Map_ReleaseQuestEncounter(string characterID)
 
 int wdmGetNumberStorms()
 {
-	return MakeInt(worldMap.storm.num);
+	return int(worldMap.storm.num);
 }
 
 //Ship encounter functions
 
 int wdmGetNumberShipEncounters()
 {
-	return MakeInt(worldMap.encounter.num);
+	return int(worldMap.encounter.num);
 }
 
 bool wdmSetCurrentShipData(int shipIndex)
 {
 	worldMap.encounter.cur = shipIndex;
-	int i = MakeInt(worldMap.encounter.cur);
-	if(i < 0 || i != shipIndex) return 0;
-	return 1;
+	int i = int(worldMap.encounter.cur);
+	if(i < 0 || i != shipIndex) return false;
+	return true;
 }
 
 //Создание энкоунтеров...
@@ -222,11 +222,11 @@ bool wdmChoseAndCreateShip()
 	}
 
     int  iType = i-1;
-	bool bTrade = (sti(EncountersTypes[iType].Type) == ENCOUNTER_TRADE);
+	bool bTrade = (int(EncountersTypes[iType].Type) == ENCOUNTER_TRADE);
 
     if (bBettaTestMode && __DebugEncCnt)
     {
-        if (sti(TEV.LastEnc) != iType) __DebugEncCnt = 1;
+        if (int(TEV.LastEnc) != iType) __DebugEncCnt = 1;
         else __DebugEncCnt++;
         TEV.LastEnc = iType;
     }
@@ -335,10 +335,10 @@ bool wdmCreateSpecialByIndex(float kSpeed, int index, ref encID, string from, st
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	// boal правки в ядре -->
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); 
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
-	bool res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, from, to, kSpeed, timeOutInSec);
+	bool res = bool(SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, from, to, kSpeed, timeOutInSec));
 	// boal <--
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);
@@ -370,10 +370,10 @@ bool wdmCreateMerchantShipByIndex(float kSpeed, int index, ref encID, string fro
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	// boal правки в ядре -->
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); 
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
-	bool res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, from, to, kSpeed, timeOutInSec);
+	bool res = bool(SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, from, to, kSpeed, timeOutInSec));
 	// boal <--
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);
@@ -388,10 +388,10 @@ bool wdmCreateMerchantShipXZByIndex(float kSpeed, int index, ref encID, float x1
 	string nationShipName = wdmEncounterModelName(index);
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); 
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
-	bool res = SendMessage(&worldMap, "lsffffff", MSG_WORLDMAP_CREATEENC_MER_XZ, nationShipName, x1, z1, x2, z2, kSpeed, timeOutInSec);
+	bool res = bool(SendMessage(&worldMap, "lsffffff", MSG_WORLDMAP_CREATEENC_MER_XZ, nationShipName, x1, z1, x2, z2, kSpeed, timeOutInSec));
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);
 	//Вернём идентификатор
@@ -424,24 +424,24 @@ bool wdmCreateFollowShipByIndex(float kSpeed, int index, ref encID, int timeOutI
 	int iNation = PIRATE;
 	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(rEnc.Nation);
+		iNation = int(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	//Время жизни в секундах
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec);
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec);
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
 	bool res = false;
 	bool PowerCheck = (iNation == PIRATE) && wdmCompareEncPower(iNation); // Механика мощи
 	if (PowerCheck || (GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY))
 	{
-		res = SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec);
+		res = bool(SendMessage(&worldMap, "lsssff", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed, timeOutInSec));
 	}
 	else
 	{   // boal - код этот полный абзац, я Вам, господа акеловцы, аплодирую - метод Следовать даёт убегание - и так весь код. плакаль
 		// погано, что метод имеет право быть, но название должно быть иным, нужно чтоб мирные не доставали патрулями.
-		res = SendMessage(&worldMap, "lsff", MSG_WORLDMAP_CREATEENC_FLW, nationShipName, kSpeed, timeOutInSec);
+		res = bool(SendMessage(&worldMap, "lsff", MSG_WORLDMAP_CREATEENC_FLW, nationShipName, kSpeed, timeOutInSec));
 	}
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);
@@ -459,22 +459,22 @@ bool wdmCreateRealFollowShipByIndex(float kSpeed, int index, ref encID, int time
 	int iNation = PIRATE;
 	if(CheckAttribute(rEnc, "nation"))
 	{
-		iNation = sti(rEnc.Nation);
+		iNation = int(rEnc.Nation);
 	}
 	//Создадим ссылку на атрибуты
 	ref mapEncSlotRef = GetMapEncounterRef(index);
 	//Время жизни в секундах
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
 	bool res = false;
 	/*if(GetNationRelation2MainCharacter(iNation) != RELATION_ENEMY)
 	{
-		res = SendMessage(&worldMap, "lsssf", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed);
+		res = bool(SendMessage(&worldMap, "lsssf", MSG_WORLDMAP_CREATEENC_MER, nationShipName, "", "", kSpeed));
 	}
 	else
 	{ */  // boal - код этот полный абзац, я Вам, господа акеловцы, аплодирую - метод Следовать даёт убегание - и так весь код. плакаль
-		res = SendMessage(&worldMap, "lsff", MSG_WORLDMAP_CREATEENC_FLW, nationShipName, kSpeed, timeOutInSec);
+		res = bool(SendMessage(&worldMap, "lsff", MSG_WORLDMAP_CREATEENC_FLW, nationShipName, kSpeed, timeOutInSec));
 	//}
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef, worldMap.EncounterID1);
@@ -512,10 +512,10 @@ bool wdmCreateWarringShipsByIndex(int index1, int index2, ref encID1, ref encID2
 	ref mapEncSlotRef1 = GetMapEncounterRef(index1);
 	ref mapEncSlotRef2 = GetMapEncounterRef(index2);
 	//Время жизни в секундах
-	float daysPerSec = 24.0/stf(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
+	float daysPerSec = 24.0/float(worldMap.date.hourPerSec); // Boal супер бага была - делили на 24. Математику в школе прогуливали?
 	float timeOutInSec = daysPerSec*timeOutInDays;
 	//Создаём реального энкоунтера
-	bool res = SendMessage(&worldMap, "lssf", MSG_WORLDMAP_CREATEENC_WAR, nationShipName1, nationShipName2, timeOutInSec);
+	bool res = bool(SendMessage(&worldMap, "lssf", MSG_WORLDMAP_CREATEENC_WAR, nationShipName1, nationShipName2, timeOutInSec));
 	//Копируем данные
 	WdmCopyEncounterData(mapEncSlotRef1, worldMap.EncounterID1);
 	WdmCopyEncounterData(mapEncSlotRef2, worldMap.EncounterID2);
@@ -594,13 +594,13 @@ void wdmEmptyAllDeadQuestEncounter()
         DeleteAttribute(enc, "dirSailEnc");
         if(CheckAttribute(enc, "quest.chrID"))
         {
-            iChar = GetCharacterIndex(enc.quest.chrID)
+            iChar = GetCharacterIndex(enc.quest.chrID);
             if (iChar == -1 || CharacterIsDead(&characters[iChar]))
             {
 	            if (!isWMap)
 				{
 					DeleteAttribute(encs, GetAttributeName(enc));
-	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	                pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 	            }
 	            else
 	            {
@@ -621,7 +621,7 @@ void wdmEmptyAllDeadQuestEncounter()
 	        if (iChar == -1 || CharacterIsDead(&characters[iChar]))
 	        {
 	            DeleteAttribute(encs, GetAttributeName(enc));
-	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	            pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 	        }
         }
     }
@@ -642,7 +642,7 @@ void  wdmEmptyAllOldEncounter()
         if(CheckAttribute(enc, "needDelete") && enc.needDelete == "wdmEncounterDelete")
         {
 			if(CheckAttribute(enc, "quest")) // ???
-                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+                pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 			DeleteAttribute(encs, GetAttributeName(enc));
         }
     }
@@ -660,8 +660,8 @@ void  wdmUpdateAllEncounterLivetime()
 		ihours = GetQuestPastTimeParam("WordMapEncounters_DailyUpdate");
 		if (ihours > 0)
 		{
-            Log_TestInfo("Прошло дней : "+makeint(ihours/24.0));
-            float timeOutInSec = ihours/stf(worldMap.date.hourPerSec);
+            Log_TestInfo("Прошло дней : "+int(ihours/24.0));
+            float timeOutInSec = ihours/float(worldMap.date.hourPerSec);
 
             makearef(encs, worldMap.encounters);
             num = GetAttributesNum(encs);
@@ -670,20 +670,20 @@ void  wdmUpdateAllEncounterLivetime()
                 enc = GetAttributeN(encs, i);
                 if (CheckAttribute(enc, "livetime") && CheckAttribute(enc, "quest"))
                 {
-                    Log_TestInfo(enc.livetime+" - "+timeOutInSec+" : "+stf(stf(enc.livetime) - timeOutInSec));
+                    Log_TestInfo(enc.livetime+" - "+timeOutInSec+" : "+float(float(enc.livetime) - timeOutInSec));
                     /* По идее можно и координату приращивтаь, чтоб не просто время шло, но ещё и плыли.
                     k = (enc.gotoz - enc.z)/(enc.gotox - enc.x);
                     b = enc.z - k*enc.x
                     ...
                     */
-                    enc.livetime = stf(enc.livetime) - timeOutInSec;
+                    enc.livetime = float(enc.livetime) - timeOutInSec;
 
-                    if (sti(enc.livetime)<=0)
+                    if (int(enc.livetime)<=0)
                     {
                         sEvent = enc.quest.event; // TO_DO: REF
                         sChar  = enc.quest.chrID;
                         DeleteAttribute(encs,  GetAttributeName(enc));
-						pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+						pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 						if(sEvent == "Map_TraderSucces")    Map_TraderSucces_quest(sChar); // belamour теперь запустим обработку нпс-кэпов
                         else if(sEvent == "Map_WarriorEnd") Map_WarriorEnd_quest(sChar);
                     }
@@ -713,7 +713,7 @@ aref wdmFindOrCreateQuestEncounter(string _chrId)
 	        if(iChar == -1 || characters[iChar].id == _chrId)
 	        {
 	            DeleteAttribute(encs, GetAttributeName(enc));
-	            pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	            pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 	        }
         }
     }
@@ -726,13 +726,13 @@ aref wdmFindOrCreateQuestEncounter(string _chrId)
         enc = GetAttributeN(encs, i);
         if(CheckAttribute(enc, "quest.chrID"))
         {
-            iChar = GetCharacterIndex(enc.quest.chrID)
+            iChar = GetCharacterIndex(enc.quest.chrID);
             if(iChar == -1 || characters[iChar].id == _chrId)
             {
 	            if(!isWMap)
 				{
 					DeleteAttribute(encs, GetAttributeName(enc));
-	                pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
+	                pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
 	            }
 	            else
 	            {
@@ -755,19 +755,19 @@ bool wdmCompareEncPower(int iNation) //(ref rEnc)
 {
     /*
     if(!CheckAttribute(rEnc, "Power")) return false;
-    float encPow = stf(rEnc.Power);
-    float pchPow = stf(PChar.Squadron.ModPower);
+    float encPow = float(rEnc.Power);
+    float pchPow = float(PChar.Squadron.ModPower);
     return (pchPow > encPow);
     */
 
-    return (stf(PChar.Squadron.ModPower) > wdmGetPowerThreshold(iNation));
+    return (float(PChar.Squadron.ModPower) > wdmGetPowerThreshold(iNation));
     
 }
 
 int GetBattleDifficulty(ref rEnc)
 {
     float encPow = 0.0;
-    float pchPow = stf(PChar.Squadron.RawPower);
+    float pchPow = float(PChar.Squadron.RawPower);
     if(CheckAttribute(rEnc, "CharacterID"))
     {
         string sTemp;
@@ -782,7 +782,7 @@ int GetBattleDifficulty(ref rEnc)
     else
     {
         if(!CheckAttribute(rEnc, "Power")) return 0;	// XI_ConvertString("Unknown dif"); // TO_DO: DEL
-        encPow = stf(rEnc.Power);
+        encPow = float(rEnc.Power);
     }
     if(pchPow == 0.0)
     {
@@ -865,11 +865,11 @@ float CalculateGroupPowerR(ref rGroup)
     for(int i = 0; i < qty; i++)
     {
         aCharInfo = GetAttributeN(aCompanions, i);
-        idx = sti(aCharInfo.index);
+        idx = int(aCharInfo.index);
         if(idx == -1) continue;
         rChar = GetCharacter(idx);
         if(LAi_IsDead(rChar)) continue;
-        iShipType = sti(rChar.Ship.Type);
+        iShipType = int(rChar.Ship.Type);
         if(iShipType == SHIP_NOTUSED) continue;
         rShip = GetRealShip(iShipType);
         encPow += GetRealShipPower(rChar);

@@ -12,16 +12,16 @@ void ProcessDialogEvent()
 	
 	int DeceptionChance  = 0;
 	int DeceptionPenalty  = 0;
-	if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeceptionPenalty = sti(pchar.StealtDeceptionPenalty);
+	if(CheckAttribute(pchar,"StealtDeceptionPenalty")) DeceptionPenalty = int(pchar.StealtDeceptionPenalty);
 	
-	DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
+	DeceptionChance = int(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/110);
 	if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
 	if (false) 
 	{
-		DeceptionChance = sti(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
+		DeceptionChance = int(GetSummonSkillFromName(pchar, SKILL_SNEAK)*100/310);
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
 	}
-	if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
+	if(int(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 	{
 		DeceptionChance = 100;
 		if(DeceptionChance - DeceptionPenalty > 50) DeceptionChance -= DeceptionPenalty;
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 					if (DeceptionChance > (10+rand(150)+rand(150)))
 					{
 						dialog.text = RandPhraseSimple("Kim jesteś i co tu robisz?","Stój tam! Kim jesteś i z jakiego prawa próbujesz wejść do miasta?");
-						link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(npchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+						link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(int(npchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						link.l1.go = "NotPegYou";
 					}
 					else
@@ -124,11 +124,11 @@ void ProcessDialogEvent()
 						link.l1.go = "LicenceOk";
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l2 = "Nie widzisz flagi "+NationNameGenitive(sti(pchar.nation))+"na maszcie mojego statku?! (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l2 = "Nie widzisz flagi "+NationNameGenitive(int(pchar.nation))+"na maszcie mojego statku?! (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						else //если причалил не в городе
 						{
-							link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l2 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(int(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -152,11 +152,11 @@ void ProcessDialogEvent()
 						}
 						if (findsubstr(pchar.location.from_sea, "_town" , 0) != -1) //если причалил в городе
 						{
-							link.l1 = "Czy nie widzisz flagi "+NationNameGenitive(sti(pchar.nation))+" na moim statku?! (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l1 = "Czy nie widzisz flagi "+NationNameGenitive(int(pchar.nation))+" na moim statku?! (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						else //если причалил не в городе
 						{
-							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(sti(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
+							link.l1 = "Zrzuciłem kotwicę niedaleko "+XI_ConvertString(GetIslandByCityName(npchar.city)+"Gen")+" pod flagą "+NationNameGenitive(int(pchar.nation))+". Jakiś problem? (Prawdopodobieństwo oszustwa "+DeceptionChance+"%%)";
 						}
 						if (DeceptionChance < (10+rand(50)+rand(50)))
 						{
@@ -171,9 +171,9 @@ void ProcessDialogEvent()
 				// <-- eddy. проверяем, не казачок ли.
 				else
 				{
-					if (sti(NPChar.nation) == PIRATE)
+					if (int(NPChar.nation) == PIRATE)
 					{
-						if (sti(rColony.HeroOwn) == true) // наш горожанин
+						if (int(rColony.HeroOwn) == true) // наш горожанин
 						{
 			         		switch (rand(10))
 							{
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{ // пираты, не наши
-							if (sti(pchar.GenQuest.Piratekill) > 20)
+							if (int(pchar.GenQuest.Piratekill) > 20)
 							{
 								dialog.text = RandPhraseSimple("Uwaga! Zbrojny, chory psychol jest tu!","Do broni, do broni! Jakiś szalony dranie jest tutaj!");
 								link.l1 = RandPhraseSimple("He? Co?","Eh, dlaczego to robisz?");
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{ //если негодяй, имеющий НЗГ к дружественной или нейтральной нации
-						if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -15)
+						if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -15)
 						{
 							dialog.text = RandPhraseSimple("Spójrzcie  "+GetSexPhrase("na tego łajdaka! Odważył się pokazać swoją twarz","na tamtą szmate! Ośmieliła się pokazać swoją twarz")+" w "+XI_ConvertString("Colony"+npchar.city)+". Brać "+GetSexPhrase("go","ją")+"!!!","Hej, rozpoznaje cię, "+GetSexPhrase("łotrze","cwaniaro")+"! Łapać "+GetSexPhrase("go","ją")+"!!!");
 							link.l1 = RandPhraseSimple("Argh!..","Cóż, sam się o to prosiłeś...");
@@ -288,13 +288,13 @@ void ProcessDialogEvent()
 					// --> девица в джунглях
 					if(rand(2) == 1 && CheckAttribute(pchar,"GenQuest.EncGirl") && CheckAttribute(pchar,"GenQuest.EncGirl.MeetSoldiers"))
 					{
-						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)	
+						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)
 						{
 							dialog.text = "O, popatrz! Pani "+pchar.GenQuest.EncGirl.name+" sama zaszczyciła nas swoją obecnością! Zastanawiam się, jak miałaś odwagę? Szukaliśmy ciebie! Proszę iść do lochu - twoja cela jest gotowa i czeka na ciebie. ";
 							link.l1 = "Jakie to kompletna bzdura, o czym ty mówisz!? Ja i mój "+GetSexPhrase("kawaler","towarzysz")+" spacerowaliśmy po dżungli, zbierając kwiaty. Zostaw mnie w spokoju! Gdzie są maniery tych despotów?! Jak tylko zobaczą atrakcyjną dziewczynę, zaczynają ją dręczyć! "+GetSexPhrase("Moja droga, powiedz tym durniom, żeby spadli i zostawili uczciwą kobietę w spokoju!","Kochanie, proszę powiedz tym durniom...")+"!";
 							link.l1.go = "GirlEnc_1";
 						}
-						if(sti(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)	
+						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)
 						{
 							dialog.text = "O, tutaj jesteś, piękna! Twój tata zaciągnął całą załogę, aby cię znaleźć i przyprowadzić do domu.";
 							link.l1 = "Zejdź z drogi! Wiem, dokąd idę i nie potrzebuję twojej pomocy! Kapitanie, powiedz im, żeby odsunęli ode mnie swoje łapy.";
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					// Вице-адмирал на службе нации узнается без мундира
-					if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
@@ -360,31 +360,31 @@ void ProcessDialogEvent()
 
 							case 2: 
 								dialog.text = "Wiceadmirał, to dla mnie zaszczyt! Co mogę dla ciebie zrobić?";
-								link.l1 = "Służyć "+NationNameGenitive(sti(npchar.nation))+", żołnierzu! To najlepsze, co możesz zrobić.";
+								link.l1 = "Służyć "+NationNameGenitive(int(npchar.nation))+", żołnierzu! To najlepsze, co możesz zrobić.";
 								link.l1.go = "exit";
 							break;
 						}
 						break;
 					}
 					// Офицер с патентом
-					if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+					if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 					{
 						switch(rand(2))
 						{
 							case 0: 
-							dialog.text = "Pozdrowienia, kapitanie! Jeśli masz dla mnie jakieś instrukcje, to przepraszam: chociaż jestem w służbie "+NationNameGenitive(sti(npchar.nation))+", Odpowiadam tylko komendantowi i gubernatorowi."; 
+							dialog.text = "Pozdrowienia, kapitanie! Jeśli masz dla mnie jakieś instrukcje, to przepraszam: chociaż jestem w służbie "+NationNameGenitive(int(npchar.nation))+", Odpowiadam tylko komendantowi i gubernatorowi.";
 							link.l1 = "Mam swoich oficerów i załogę, którzy słuchają moich wskazówek. Wykonaj swoje obowiązki, żołnierzu.";
 							link.l1.go = "exit";
 							break;
 
 							case 1:
-								dialog.text = "Kapitanie, czy możesz przyjąć mnie do służby na swoim statku? Tak samo służę za "+NationNameGenitive(sti(npchar.nation))+", ale wolę morze."; 
+								dialog.text = "Kapitanie, czy możesz przyjąć mnie do służby na swoim statku? Tak samo służę za "+NationNameGenitive(int(npchar.nation))+", ale wolę morze.";
 								link.l1 = "Potrzebny jesteś tam, gdzie cię przydzielono, więc wykonuj swoją służbę z honorem. Zamkniesz oczy na sekundę, a oni zabiorą to na morze.";
 								link.l1.go = "exit";
 							break;
 
 							case 2: 
-								dialog.text = "Oh, masz szczęście: jesteś kapitanem statku na służbie "+NationNameGenitive(sti(npchar.nation))+"... A ja tkwię tu cały dzień."; 
+								dialog.text = "Oh, masz szczęście: jesteś kapitanem statku na służbie "+NationNameGenitive(int(npchar.nation))+"... A ja tkwię tu cały dzień.";
 								link.l1 = "Czy myślisz, że właśnie przybyłem na Karaiby i tydzień później zostałem kapitanem? To wszystko lata ciężkiej pracy...";
 								link.l1.go = "exit";
 							break;
@@ -482,7 +482,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("Wydaje mi się, że to jakaś sztuczka. Porozmawiamy z komendantem, "+GetSexPhrase("przyjacielu","moja droga")+", i wszystko sobie wyjaśnimy...","Hmm... Coś mi mówi, że nie jesteś tym, za kogo się podajesz... Oddaj swoją broń "+GetAddress_Form(npchar)+", i podążaj za mną!");
 			link.l1 = RandPhraseSimple("Nigdzie nie ide! Spieprzaj!","Myślisz, że się poddam? Zaryzykuje drugą opcję...");
 			link.l1.go = "fight";
-			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
+			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || int(pchar.questTemp.stels.landSolder) != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 40);
 				pchar.questTemp.stels.landSolder = GetDataDay();
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 			dialog.text = RandPhraseSimple("Och, rozumiem... Wszystko wydaje się w porządku, możesz iść, "+GetAddress_Form(pchar)+".","Musiałem się trochę zmęczyć stojąc na straży... Wydaje się, że wszystko jest w porządku, "+GetAddress_Form(pchar)+", Przepraszam.");
 			link.l1 = "Nie ma problemu!";
 			link.l1.go = "exit";
-			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || sti(pchar.questTemp.stels.landSolder) != GetDataDay())
+			if (!CheckAttribute(pchar,"questTemp.stels.landSolder") || int(pchar.questTemp.stels.landSolder) != GetDataDay())
 			{
 				AddCharacterExpToSkill(pchar, SKILL_SNEAK, 80);
 				pchar.questTemp.stels.landSolder = GetDataDay();
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 		
 		case "LicenceOk":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				dialog.text = "Właśnie przyszło mi to do głowy! Taka bezczelność! Przybyć tu pod pozorem kupca! Twoje portrety wiszą w każdych koszarach, ty sukinsynie! Tym razem ci się to nie uda! Łapcie go!";
 				link.l1 = RandPhraseSimple("Arrgh!..","No cóż, sam się o to prosiłeś...");
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", -1.0);
 			sld.lifeDay = 0;
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");		
 		break;
 		
@@ -598,7 +598,7 @@ void ProcessDialogEvent()
 		break;		
 		
 		case "GirlEnc_12End":
-			pchar.money = sti(pchar.money) - makeint(sti(pchar.money)/20);
+			pchar.money = int(pchar.money) - int(int(pchar.money)/20);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			sld = CharacterFromID("CangGirl");
 			LAi_SetActorType(sld);
@@ -661,7 +661,7 @@ void ProcessDialogEvent()
 			LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", -1.0);
 			sld.lifeDay = 0;
 			DeleteAttribute(pchar, "GenQuest.EncGirl");
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");				
 		break;
 		// <-- генератор "A damsel in the jungle"
@@ -700,7 +700,7 @@ void ProcessDialogEvent()
 				dialog.text = "Tysiąc. I ani peso mniej.";
 				link.l1 = "Nie, może nie jestem gotów zapłacić tak dużo za jedno siniaka.";
 				link.l1.go = "NightAdventure_CitizenHomieSolder_3NM";
-				if (sti(pchar.money) >= 1000)
+				if (int(pchar.money) >= 1000)
 				{
 					link.l2 = "Oh... Dobrze, chwileczkę. Oto pióro i pergamin. Napisz, że wycofujesz wszelkie roszczenia wobec mojego przyjaciela.";
 					link.l2.go = "NightAdventure_CitizenHomieSolder_3GM";
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 			dialog.text = "No tak, nasz brat miałby znacznie mniej pracy. Nie będę Cię już dłużej zatrzymywać, kapitanie.";
 			link.l1 = "Powodzenia, żołnierzu.";
 			link.l1.go = "WildRose_Soldier_8";
-			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+			ChangeCharacterNationReputation(pchar, int(NPChar.nation), 2);
 		break;
 		
 		case "WildRose_Soldier_8":
@@ -814,7 +814,7 @@ void ProcessDialogEvent()
 
 		case "pirate_fight":
 			DialogExit();
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_group_Attack(NPChar, Pchar);
 			DoQuestFunctionDelay("TownPirate_battle", 0.5);
 		break;

@@ -111,7 +111,7 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
     CopyChref.lastname         = PastChref.lastname;
 
     CopyChref.rank             = PastChref.rank;
-    CopyChref.reputation       = makeint(PastChref.reputation);
+    CopyChref.reputation       = int(PastChref.reputation);
 	
 	CopyChref.baseCapIdx       = PastChref.index; //Id оригинального в структуру клона
 
@@ -128,10 +128,10 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 
     CopyChref.Money            = PastChref.Money;
 
-    CopyChref.chr_ai.hp         = makeint(PastChref.chr_ai.hp);
-    CopyChref.chr.chr_ai.hp_max = makeint(PastChref.chr_ai.hp_max);
+    CopyChref.chr_ai.hp         = int(PastChref.chr_ai.hp);
+    CopyChref.chr.chr_ai.hp_max = int(PastChref.chr_ai.hp_max);
 
-    LAi_SetHP(CopyChref, makeint(PastChref.chr_ai.hp_max), makeint(PastChref.chr_ai.hp_max));
+    LAi_SetHP(CopyChref, int(PastChref.chr_ai.hp_max), int(PastChref.chr_ai.hp_max));
 	LAi_SetCurHPMax(CopyChref);
 	
 	//копируем структуру quest от оригинального кэпа, очень нужно по квестам :)
@@ -264,11 +264,11 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 	}
 	if (CheckAttribute(PastChref, "PriorityMode"))
     {
-		CopyChref.PriorityMode = sti(PastChref.PriorityMode);
+		CopyChref.PriorityMode = int(PastChref.PriorityMode);
 	}
 	if (CheckAttribute(PastChref, "MusketerDistance"))
     {
-		CopyChref.MusketerDistance = sti(PastChref.MusketerDistance);
+		CopyChref.MusketerDistance = int(PastChref.MusketerDistance);
 	}
 	// belamour legendary edition зарядим огнестрел 
 	if (CheckAttribute(PastChref, "chr_ai.gun.bullet"))

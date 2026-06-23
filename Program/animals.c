@@ -37,8 +37,8 @@ void CreateAnimals(ref Location)
 						for(n = 0; n < num; n++)
 						{
 							locator = GetAttributeN(locator_group, n);
-							//SendMessage(Animals, "lfff", MSG_ANIMALS_SEAGULLS_ADD, stf(locator.x), stf(locator.y), stf(locator.z));
-							SendMessage(Animals, "lfff", MSG_ANIMALS_SEAGULLS_ADD, stf(locator.x), stf(locator.y), stf(locator.z));
+							//SendMessage(Animals, "lfff", MSG_ANIMALS_SEAGULLS_ADD, float(locator.x), float(locator.y), float(locator.z));
+							SendMessage(Animals, "lfff", MSG_ANIMALS_SEAGULLS_ADD, float(locator.x), float(locator.y), float(locator.z));
 						}
 					}
 				}

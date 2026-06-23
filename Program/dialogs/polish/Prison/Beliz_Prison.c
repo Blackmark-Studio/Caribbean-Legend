@@ -136,7 +136,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_7":
-			if (sti(pchar.questTemp.Caleuche.BelizChance) < 3)
+			if (int(pchar.questTemp.Caleuche.BelizChance) < 3)
 			{
 				dialog.text = "Przygotowaliśmy gorące powitanie dla łajdaków, ha-ha-ha! Gdybyś tylko mógł zobaczyć ich twarze! Złapaliśmy wszystkich, w tym przywódcę! Niektórzy próbowali stawiać opór, ale zostali wyeliminowani przez naszych dzielnych żołnierzy.";
 				link.l1 = "Doskonale wieści, oficerze! Teraz obywatele Belize wreszcie mogą spać spokojnie.";

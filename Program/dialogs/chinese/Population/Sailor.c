@@ -29,7 +29,7 @@ void ProcessDialogEvent()
         case "First time":
             if (npchar.quest.meeting == "0")
             {
-                if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//招募船员
+                if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//招募船员
                 {
                     dialog.text = "日安, "+GetAddress_Form(NPChar)+"。 我知道你是自己船只的船长。 我有个交易想和你谈。 ";
                     link.l1 = "我在听, "+GetAddress_FormToNPC(NPChar)+"。 什么样的交易? ";
@@ -89,14 +89,14 @@ void ProcessDialogEvent()
         break;
         
         case "crew_1":
-            switch (sti(npchar.quest.crew.type))
+            switch (int(npchar.quest.crew.type))
             {
                 case 0: sTemp = "我们最擅长操作帆和索具。 毫不谦虚地说, 我们是船舶操控方面的专业人士, 所以别担心, 即使在最强的风暴中, 我们也不会让你失望。 "; break;
                 case 1: sTemp = "我们最喜欢在加农炮甲板上。 我们中有些人甚至在真正的战船上服役过。 我们装炮和开炮的方式是你船上的人比不了的。 在任何艰苦的战斗中, 你都可以依靠我们! "; break;
                 case 2: sTemp = "我们是真正的优秀登船队员, 船长, 在此之前曾在私掠船上干过几次。 我们知道弯刀的闪光和火药与血的气味。 这是我们的使命。 在肉搏战中击败我们可不容易, 所以你总是可以依靠我们的刀刃, 船长! "; break;
             }
-            dialog.text = "我们有"+sti(npchar.quest.crew.qty)+"个人, 我们只会一起被雇佣。 我们可以完成所有基本的水手任务。 "+sTemp+"";
-            if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+            dialog.text = "我们有"+int(npchar.quest.crew.qty)+"个人, 我们只会一起被雇佣。 我们可以完成所有基本的水手任务。 "+sTemp+"";
+            if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
             {
                 link.l1 = "听起来像是我要找的人。 你们的预付金呢? ";
                 link.l1.go = "crew_2";
@@ -111,9 +111,9 @@ void ProcessDialogEvent()
         break;
         
         case "crew_2":
-            iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
-            dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+"每人。 然后是每月普通水手的工资。 我们不会要求过多, 船长。 ";
-            if (sti(pchar.money) >= iTemp)
+            iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
+            dialog.text = ""+FindRussianMoneyString(int(npchar.quest.crew.money))+"每人。 然后是每月普通水手的工资。 我们不会要求过多, 船长。 ";
+            if (int(pchar.money) >= iTemp)
             {
                 link.l1 = "你们被雇佣了! 拿上你们的硬币。 现在去我的船那里, 它叫‘"+pchar.ship.name+"’, 就在港口。 水手长会在船员宿舍给你们分配吊床, 并安排你们的伙食。 ";
                 link.l1.go = "crew_3";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
         break;
         
         case "crew_3":
-            iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
+            iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
             AddMoneyToCharacter(pchar, -iTemp);
             dialog.text = "是, 是, 船长! 我会召集伙计们, 我们马上出发。 ";
             link.l1 = "快点, 我们随时起航。 ";
@@ -132,17 +132,17 @@ void ProcessDialogEvent()
         
         case "crew_4":
             DialogExit();
-            AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+            AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
             //增加经验
-            iTemp = makeint(sti(npchar.quest.crew.qty)*50/sti(pchar.ship.crew.quantity));
-            switch (sti(npchar.quest.crew.type))
+            iTemp = int(int(npchar.quest.crew.qty)*50/int(pchar.ship.crew.quantity));
+            switch (int(npchar.quest.crew.type))
             {
                 case 0: ChangeCrewExp(pchar, "Sailors", iTemp); break;
                 case 1: ChangeCrewExp(pchar, "Cannoners", iTemp); break;
                 case 2: ChangeCrewExp(pchar, "Soldiers", iTemp); break;
             }
             //增加士气
-            iTemp = makeint(sti(npchar.quest.crew.qty)/10)+1;
+            iTemp = int(int(npchar.quest.crew.qty)/10)+1;
             AddCrewMorale(pchar, iTemp);
             LAi_SetActorType(npchar);
             LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

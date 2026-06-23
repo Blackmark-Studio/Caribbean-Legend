@@ -34,7 +34,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "guardoftruth_3":
 			dialog.text = "스페인 함대의 멋진 선장이라더군! 자기소개를 했는데... 아, 이놈의 기억력... 아! 나리 디에고였어. 이름이 디에고였고, 성은... 데 몬타냐나 데 몬토야였지. 뭐 그런 식이었어. 너처럼 내 말을 들어주고, 고맙다 하고는 가버렸어. 그 뒤로는 본 적 없어.";
-			if (sti(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "알겠소. 이야기 정말 고맙소, 큰 도움이 되었소. 이 동전으로 내 감사의 뜻을 받아주시오. 안녕히 가시오.";
 				AddMoneyToCharacter(pchar, -5000);

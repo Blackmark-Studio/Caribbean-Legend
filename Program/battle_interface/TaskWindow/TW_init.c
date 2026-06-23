@@ -338,7 +338,7 @@ void TW_InitSea_Battle_1_AutoFire()
 void TW_FinishSea_Battle_1_AutoFire()
 {
 	objTask.sea_battle = "";
-	LaunchTutorial("Prologue_AimingFire", 1);
+	LaunchTutorial("Prologue_AimingFire", true);
 	DoQuestFunctionDelay("TW_InitSea_Battle_2_AimingFire", 1.5);
 }
 
@@ -459,7 +459,7 @@ void TW_InitSea_Battle_3_WinBattle(string qName)
 
 void TW_InitLand_Fight_1_Attack()
 {
-	LaunchTutorial("Prologue_FightAttack", 1);
+	LaunchTutorial("Prologue_FightAttack", true);
 	
 	aref arTask, arImage, arText, arDef;
 	makearef(arDef, objTask.defines);
@@ -554,7 +554,7 @@ void TW_FinishLand_Fight_1_Attack()
 
 void TW_InitLand_Fight_2_Defence(string qName)
 {
-	LaunchTutorial("Prologue_FightDefence", 1);
+	LaunchTutorial("Prologue_FightDefence", true);
 	
 	aref arTask, arImage, arText, arDef;
 	makearef(arDef, objTask.defines);

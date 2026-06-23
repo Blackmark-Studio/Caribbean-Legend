@@ -50,8 +50,8 @@ void ProcessDialogEvent()
         i = findsubstr(attrLoc, "_" , 0);
         npchar.quest.relation      = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
 		// проверка на уже договор
-		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
-		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
+		attrLoc = "RelationAgent" + GetNationNameByType(int(npchar.quest.relation));
+		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && int(Pchar.GenQuest.(attrLoc)) == true)
 		{
 		    Dialog.CurrentNode = "RelationYet";
 		}
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 		break;
 		case "D_ShipLetters_2":
 			s1 = "Let me see it! Yes, the markers here are actual. You are a lucky "+ GetSexPhrase("man","woman") +"! ";
-			s1 = s1 + "I just need a package like this and I can offer you " + sti(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. What would you say?";
+			s1 = s1 + "I just need a package like this and I can offer you " + int(pchar.questTemp.different.GiveShipLetters.price5) + " pesos. What would you say?";
 			dialog.text = s1;
 			link.l1 = "이런 왕실의 관대함이라니! 당연히 동의하지!";
 			link.l1.go = "D_ShipLetters_3";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		break;
 		case "D_ShipLetters_3":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price5)); 
+			addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price5));
 			OfficersReaction("bad"); 
 			pchar.questTemp.different = "free";
 			pchar.quest.GiveShipLetters_null.over = "yes"; //снимаем таймер 
@@ -203,9 +203,9 @@ void ProcessDialogEvent()
 		
 		case "NationLicenceType2":
 			iSumm = LICENSE_GetPrice(npchar.LicenceType);
-        	dialog.text = "그래서, 무역 허가증이"+XI_ConvertString(Nations[sti(npchar.LicenceNation)].Name+"Gen")+" 위해 "+sti(npchar.LicenceType)+" 일 수, 가격은 "+FindRussianMoneyString(iSumm)+".";
+        	dialog.text = "그래서, 무역 허가증이"+XI_ConvertString(Nations[int(npchar.LicenceNation)].Name+"Gen")+" 위해 "+int(npchar.LicenceType)+" 일 수, 가격은 "+FindRussianMoneyString(iSumm)+".";
 		    link.l1 = "동의하오.";
-		    if(makeint(Pchar.money) < iSumm)
+		    if(int(Pchar.money) < iSumm)
             {
 				Link.l1.go = "No_money";
 			}
@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 			link.l9 = "감사하오.";
 			link.l9.go = "exit";
 			AddMoneyToCharacter(pchar, -iSumm);
-			GiveNationLicence(sti(npchar.LicenceNation), sti(npchar.LicenceType));
+			GiveNationLicence(int(npchar.LicenceNation), int(npchar.LicenceType));
 		break;
 		
         case "No_money":
@@ -233,7 +233,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "patent_0":
-			dialog.text = "훌륭하군. 우선, 그대가 국가에 충성을 다한다는 것을 증명해야 하오"+" 그에 대한 훌륭한 봉사로 말이오. 어느 총독에게든 가시오\n"+//NationNameGenitive(sti(NPChar.nation))+" 그의 임무 몇 가지를 완수하면, 그가 면허를 내줄 거야.";
+			dialog.text = "훌륭하군. 우선, 그대가 국가에 충성을 다한다는 것을 증명해야 하오"+" 그에 대한 훌륭한 봉사로 말이오. 어느 총독에게든 가시오\n"+" 그의 임무 몇 가지를 완수하면, 그가 면허를 내줄 거야.";
 			link.l1 = "말해 보시오, "+GetAddress_FormToNPC(NPChar)+", 이 지루한 형식적인 절차를 피할 방법이 있을까?";
 			link.l1.go = "patent_1";
 			link.l2 = "안녕히 가시오, "+GetAddress_FormToNPC(NPChar);
@@ -288,9 +288,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patent_2":
-            //pchar.PatentPrice = 8000 + (sti(NPChar.PatentPrice) * sti(pchar.rank));
-			pchar.PatentPrice = 350000 - GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) * 100 + (5000 + rand(1000)) * sti(pchar.rank) * MOD_SKILL_ENEMY_RATE;
-            switch (sti(NPChar.nation))
+            //pchar.PatentPrice = 8000 + (int(NPChar.PatentPrice) * int(pchar.rank));
+			pchar.PatentPrice = 350000 - GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) * 100 + (5000 + rand(1000)) * int(pchar.rank) * MOD_SKILL_ENEMY_RATE;
+            switch (int(NPChar.nation))
             {
 			    case PIRATE :
                     dialog.text = "이것은 버그입니다. 이 메시지를 보셨다면 ALexusB에게 연락해 주십시오";
@@ -314,7 +314,7 @@ void ProcessDialogEvent()
                     break;
 			}
 
-            if(makeint(Pchar.money) < makeint(pchar.PatentPrice))
+            if(int(Pchar.money) < int(pchar.PatentPrice))
             {
 				Link.l1.go = "No_money";
 			}
@@ -328,7 +328,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "patent_3":
-            pchar.PatentNation = NationShortName(sti(NPChar.nation));
+            pchar.PatentNation = NationShortName(int(NPChar.nation));
 			dialog.text = "우리가 거래를 성사시켜서 기쁩니다.";
 			link.l1 = "안녕히 가시오, "+GetAddress_FormToNPC(NPChar);
 			link.l1.go = "exit";
@@ -339,7 +339,7 @@ void ProcessDialogEvent()
 			iDiplomatPseudoGlobal = CalculateRelationContraSum(false);
 			dialog.Text = "좋아. 값이 들 거야 " + iDiplomatPseudoGlobal + " 페소입니다.";
 			Link.l1 = "동의하오.";
-			if(makeint(Pchar.money) < iDiplomatPseudoGlobal)
+			if(int(Pchar.money) < iDiplomatPseudoGlobal)
 			{
 				Link.l1.go = "No_money";
 			}
@@ -360,10 +360,10 @@ void ProcessDialogEvent()
 		break;
         // boal <--
 		case "RelationAny_Done":
-			i = sti(npchar.quest.relation);
+			i = int(npchar.quest.relation);
 			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
 			dialog.text = "흠... 뭐라고 해야 할지 모르겠군. 물론 네가 요청한 대로 화친을 맺어줄 수는 있지. "+XI_ConvertString(Nations[i].Name+"Abl")+", 비용이 들 거야 "+FindRussianMoneyString(iDiplomatPseudoGlobal)+".";
-			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
+			if(int(pchar.money) >= iDiplomatPseudoGlobal)
 			{
 				link.l1 = "선택의 여지가 없는 것 같군. 내 돈 가져가.";
 				link.l1.go = "relation3";
@@ -392,11 +392,11 @@ void ProcessDialogEvent()
 			dialog.Text = "어느 식민지의 소유권에 대해 이야기하고 싶으신가요?";
 			for (i=0; i<MAX_COLONIES; i++)
 			{
-				if (sti(colonies[i].HeroOwn) == true && sti(colonies[i].isBought) == false)
+				if (int(colonies[i].HeroOwn) == true && int(colonies[i].isBought) == false)
 				{
 					sld = GetFortCommander(colonies[i].id);
 					attrLoc = "l" + i;
-					Link.(attrLoc) = GetCityName(colonies[i].id) + " - " + XI_ConvertString(GetNationNameByType(sti(sld.Default.nation)));
+					Link.(attrLoc) = GetCityName(colonies[i].id) + " - " + XI_ConvertString(GetNationNameByType(int(sld.Default.nation)));
 					Link.(attrLoc).go = "CityPay_" + i;
 				}
 			}
@@ -405,11 +405,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CityInfo":
-            i = sti(NPChar.quest.CityIdx);
+            i = int(NPChar.quest.CityIdx);
             sld = GetFortCommander(colonies[i].id);
             iSumm = TWN_CityCost(colonies[i].id);
-			dialog.Text = "Colony "+GetCityName(colonies[i].id)+", 소속되어 있었소 "+XI_ConvertString(GetNationNameByType(sti(sld.Default.nation))+"Gen")+", 재포획 시도를 막기 위한 몸값은 "+FindRussianMoneyString(iSumm)+".";
-   			if(sti(pchar.money) >= iSumm)
+			dialog.Text = "Colony "+GetCityName(colonies[i].id)+", 소속되어 있었소 "+XI_ConvertString(GetNationNameByType(int(sld.Default.nation))+"Gen")+", 재포획 시도를 막기 위한 몸값은 "+FindRussianMoneyString(iSumm)+".";
+   			if(int(pchar.money) >= iSumm)
 			{
 			    Link.l1 = "그래, 바로 내가 필요로 하던 거야.";
 				Link.l1.go = "City_Buy_End";
@@ -419,7 +419,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "City_Buy_End":
-            i = sti(NPChar.quest.CityIdx);
+            i = int(NPChar.quest.CityIdx);
             TWN_RealeseForMoney(colonies[i].id, true);
 			dialog.Text = "좋아, 거래는 진행 중이야. 붙잡으려는 시도는 없을 거야 "+GetCityName(colonies[i].id)+" 다시.";
 			Link.l2 = "감사합니다. 좋은 하루 되십시오.";

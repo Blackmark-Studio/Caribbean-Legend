@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "BarbTemptation_1":
 			dialog.text = "¡Ja, ja! Tienes sentido del humor, señor... Bueno, dos mil pesos y puedes seguir adelante.";
-			if(sti(Pchar.money) >= 2000)
+			if(int(Pchar.money) >= 2000)
 			{
 				link.l1 = "Tómalo, oficial. ¡Gracias!";
 				link.l1.go = "BarbTemptation_2";

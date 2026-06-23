@@ -1504,6 +1504,11 @@ OZ.12
 Não devolvi o dinheiro para Felipe Alarcon. Ele não valorizou o gesto – partiu para o ataque. Cuidei dele sem dificuldade, mas agora parece que vou ter que lutar para sair da cidade.
 }
 
+OZ.13
+{
+Decidi não devolver o livro ao ferreiro e vendi-o ao francês, depois vasculhei sozinho o esconderijo na gruta. Parece que esse negócio se revelou muito lucrativo — devo prestar mais atenção aos rumores da cidade.
+}
+
 OZ.2
 {
 Agora está claro o que tirou o ânimo de Sebastian Cordoba. Ele perdeu um livro muito importante para seu ofício – um manual de ferraria. Para piorar, Javier não perdeu tempo e vendeu o livro para um mestre armeiro francês. Como de costume, desgraça pouca é bobagem. No dia anterior, o ferreiro recebeu uma encomenda importante do Almirante Eugenio de la Torre... Quando o almirante chegar, certamente vai descobrir por que seu pedido não foi atendido. Ao saber que o livro foi parar nas mãos dos franceses, segundo o próprio ferreiro, ele será implacável. Concordei@<sSex> em ajudar o pobre homem. Se eu conseguir recuperar o livro, ele terá uma segunda chance, e espero que não repita os mesmos erros. Assim, poderei sempre contar com os serviços de um bom ferreiro. Vou começar procurando por Javier, que com certeza já está tentando passar a perna em outro desavisado.

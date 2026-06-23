@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Я не желаю с тобой общаться. Ты нападаешь без причины на мирных граждан, провоцируешь их на драку. Уходи прочь!";
 				link.l1 = "Гм...";
@@ -84,12 +84,6 @@ void ProcessDialogEvent()
 			link.l1 = "Всё может быть. Удачи!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
-		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
 		break;
 		
 //--------------------------------------- блок вопросов и ответов ---------------------------------------------

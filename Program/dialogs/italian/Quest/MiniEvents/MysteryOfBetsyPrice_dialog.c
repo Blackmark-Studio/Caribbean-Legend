@@ -71,7 +71,7 @@ void ProcessDialogEvent()
 
 		case "Poorman_4":
 			dialog.text = "Solo cento pesos"+GetSexPhrase(", Capitano","")+"... solo pochi spiccioli per uno come te! E per me – una settimana intera senza dovermi scervellare dove trovare un tozzo di pane. Guarda solo che meraviglia!";
-			if (sti(pchar.Money) >= 100)
+			if (int(pchar.Money) >= 100)
 			{
 				link.l1 = "Va bene, ecco i tuoi cento pesos.";
 				link.l1.go = "Poorman_5";

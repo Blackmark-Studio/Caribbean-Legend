@@ -41,14 +41,14 @@ void Ship_BortFire()
 	
 	// boal  05.12.03 check skill -->
 	bool  bTempNotEnoughBalls = false;
-	if (sti(rCharacter.index) == GetMainCharacterIndex())
+	if (int(rCharacter.index) == GetMainCharacterIndex())
 	{
         if (80 > rand(99)) PlayShipSoundEvent(PChar, "sounds of sailors/FireCommand", true);
 		ballNumber = 0;
         bTempNotEnoughBalls = bNotEnoughBalls;
 	}
 	bool bOfficer;
-	bOfficer = (sti(rCharacter.index) == GetMainCharacterIndex()) || CheckAttribute(rCharacter, "Payment"); // аналог IsCompanion(rCharacter) только без цикла и кучи иф
+	bOfficer = (int(rCharacter.index) == GetMainCharacterIndex()) || CheckAttribute(rCharacter, "Payment"); // аналог IsCompanion(rCharacter) только без цикла и кучи иф
 	if (bDisableMapEnter && bOfficer && !bTempNotEnoughBalls) // use only in battle
 	{
         if (bortName == "cannonr" || bortName == "cannonl")
@@ -77,7 +77,7 @@ void Ship_BortFire()
     // boal <--
 	
 	//belamour расчет бонуса от противооткатной системы 
-	if(sti(rCharacter.index) == GetMainCharacterIndex())
+	if(int(rCharacter.index) == GetMainCharacterIndex())
 	{
 		if(HasShipTrait(rCharacter, "trait12"))
 		{
@@ -89,11 +89,11 @@ void Ship_BortFire()
 				}
 				else
 				{
-					rCharacter.Tmp.LastBortFire.Bonus = sti(rCharacter.Tmp.LastBortFire.Bonus) + 6;
-					if(sti(rCharacter.Tmp.LastBortFire.Bonus) > 35)
+					rCharacter.Tmp.LastBortFire.Bonus = int(rCharacter.Tmp.LastBortFire.Bonus) + 6;
+					if(int(rCharacter.Tmp.LastBortFire.Bonus) > 35)
 						rCharacter.Tmp.LastBortFire.Bonus = 35;
 				}
-				//Log_testinfo("Выстрел с борта: " + bortName + " повысил бонус до: " + stf(rCharacter.Tmp.LastBortFire.Bonus));
+				//Log_testinfo("Выстрел с борта: " + bortName + " повысил бонус до: " + float(rCharacter.Tmp.LastBortFire.Bonus));
 			}
 			else
 			{

@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 	{
 		// ----------------------------------- Диалог первый - первая встреча
 		case "First time":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("미쳤냐? 도살놀이라도 하고 싶었던 거야? 모든 해적들이 너한테 빡쳐 있어, 이 녀석아, 여기서 얼른 꺼지는 게 좋을 거다...","미친 거 아니냐, 이놈아. 팔다리 좀 펴보고 싶었나? 기분 나쁘게 듣지 마라, 네가 여기 있을 자리는 없어. 꺼져!");
 				link.l1 = RandPhraseSimple("이봐, 내가 이 상황을 바로잡고 싶어...","이 문제 좀 해결해 줘...");
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("미쳤냐? 도살장 놀이하고 싶었던 거야? 모든 해적들이 너한테 화났어, 이 녀석. 여기서 당장 꺼지는 게 좋을 거다...");
 				link.l1 = RandPhraseSimple("이봐, 이 상황을 바로잡고 싶어...","이 문제 좀 해결해 줘...");
@@ -230,9 +230,9 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck(LAI_GROUP_BRDENEMY, "Saga_AfterJackmanBoarding");
 			AddDialogExitQuest("MainHeroFightModeOn");
 			// подкрепление
-			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+12;
-			int iScl = 30 + 2*sti(pchar.rank);
-			sld = GetCharacter(NPC_GenerateCharacter("Saga_JackmanCabinHelper", "citiz_58", "man", "man", iRank, sti(npchar.nation), 0, true, "quest"));
+			int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+12;
+			int iScl = 30 + 2*int(pchar.rank);
+			sld = GetCharacter(NPC_GenerateCharacter("Saga_JackmanCabinHelper", "citiz_58", "man", "man", iRank, int(npchar.nation), 0, true, "quest"));
 			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "blade_21", "pistol4", "bullet", iScl*2+100);
 			LAi_SetCheckMinHP(sld, 150, true, "Saga_DannyHurryHelp");
 			LAi_SetWarriorType(sld);
@@ -262,7 +262,7 @@ void ProcessDialogEvent()
 				dialog.text = "아, 드디어 왔군. 난 그 녀석을 바베이도스의 플랜테이션 주인놈한테 팔아넘길까 생각 중이었지, 그 자식이 일주일이나 이주일 안에 올 거거든... 몸값은 가져왔냐?";
 				link.l1 = "봐라, 약간 문제가 있어... 사실, 내가 그렇게 많은 돈은 없어. 하지만 일할 의지는 있다.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "그놈을 아직 팔지 않아서 다행이군. 여기 네 돈이다 - 15만 페소다. 그놈은 어디에 있지?"link.l2.go ="CapComission2_3";
 				}	
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 			link.l1 = "또 보자...";
 			link.l1.go = "exit";
 			AddQuestRecord("CaptainComission1", "10");
-			AddQuestUserData("CaptainComission1", "sName", "Jackman")); // belamour gen
+			AddQuestUserData("CaptainComission1", "sName", "Jackman"); // belamour gen
 			//AddQuestUserData("CaptainComission1", "sName", ChangeNameCase(NAMETYPE_MAIN, pchar.GenQuest.CaptainComission.PirateName, NAME_NOM));
 			CaptainComission_GenerateManager();
 		break;
@@ -314,8 +314,8 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Abl");
 			dialog.text = "흠... 그래, "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+" 우리 보물창고가 멀지 않은 곳에 있어서 거기에 자기 몫의 전리품이 보관되어 있다고 몇몇 해적들을 설득했지 "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". 그들의 두 척 배 '"+pchar.GenQuest.CaptainComission.ShipName1+"' 그리고 '"+pchar.GenQuest.CaptainComission.ShipName2+"'이(가) 얼마 전에 닻을 올리고 출항해서 "+sLoc+". 이제 내가 왜 내 부하놈들한테 이 일을 맡길 수 없는지 알겠지?";
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_4":
 			AddQuestRecord("CaptainComission1", "24");
-			AddQuestUserData("CaptainComission1", "sName", "Jackman")); // belamour gen
+			AddQuestUserData("CaptainComission1", "sName", "Jackman"); // belamour gen
 			//AddQuestUserData("CaptainComission1", "sName", ChangeNameCase(NAMETYPE_MAIN, pchar.GenQuest.CaptainComission.PirateName, NAME_NOM));
 			AddQuestUserData("CaptainComission1", "sShipName1", pchar.GenQuest.CaptainComission.ShipName1);
 			AddQuestUserData("CaptainComission1", "sShipName2", pchar.GenQuest.CaptainComission.ShipName2);
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 			dialog.text = "값을 깎으라고? 네 놈 무능함 때문에 내 물건 다 날렸잖아! 이제는 오히려 값을 올릴 수 있지! 원하면 20만 페소에 데려가든가, 아니면 당장 꺼져라.";
 			link.l1 = "너무 비싸군... 잘 가라...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "젠장, 돈이나 가져가.";
 				link.l2.go = "CapComission4_5";
@@ -478,7 +478,7 @@ void ProcessDialogEvent()
 			dialog.text = "돈 가져왔냐, Charles? 내가 그 남자를 플랜테이션에 팔겠다는 말, 농담 아니었어.";			
 			link.l1 = "들어봐, "+NPChar.name+", 문제가 있어... 그만한 돈은 없어. 하지만 일할 의지는 있지.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "그놈을 아직 팔지 않았다니 다행이군. 여기 네 돈이다 - 15만 페소. 그놈은 어디에 있지?"link.l2.go ="CapComission2_3";
 			}			
@@ -498,7 +498,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся с Джекменом через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "싸구려 말로 귀찮게 하지 마라. 다음엔 결과가 마음에 안 들 거다...";
         			link.l1 = "알겠어.";
@@ -508,12 +508,12 @@ void ProcessDialogEvent()
             }
     	break;
 		case "AngryRepeat_2":
-            dialog.text = "끝났어, 말은 필요 없어.""더 이상 너랑 말하고 싶지 않으니까, 귀찮게 하지 마.";
+            dialog.text = "끝났어, 말은 필요 없어. 더 이상 너랑 말하고 싶지 않으니까, 귀찮게 하지 마.";
 			link.l1 = RandPhraseSimple("네 뜻대로 해...","좋아, 그럼...");
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся с Джекменом через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "네가 좀 더 예의를 갖추고 무례하게 굴지 않길 바란다. 그렇지 않으면 널 죽여야 할 테니까. 그건 정말 불쾌한 일이 될 거다.";
         			link.l1 = "확실히 할 거다, Jackman.";
@@ -534,7 +534,7 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		case "pirate_town":
             dialog.text = "문제를 해결하라고? 네가 뭘 저질렀는지나 아냐? 어쨌든, 백만 페소 가져와라. 그러면 내가 놈들에게 네 '업적'을 잊으라고 설득해주지. 이게 싫으면 지옥이나 꺼져라.";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "좋아, 돈 낼 준비 됐어.";
 				link.l1.go = "pirate_town_pay";

@@ -13,7 +13,7 @@ void ApplyMigration(ref migrationState) {
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-		if(sti(RealShips[i].BaseType) == SHIP_MEMENTO)
+		if(int(RealShips[i].BaseType) == SHIP_MEMENTO)
 		{
 			RealShips[i].CabinType = "Cabin_memento";
 		}
@@ -33,7 +33,7 @@ void ApplyMigration(ref migrationState) {
 			
 			if (CheckAttribute(loc, sBoxName + ".money")) 
 			{
-				loc.box1.money = sti(loc.box1.money) + sti(loc.(sBoxName).money);
+				loc.box1.money = int(loc.box1.money) + int(loc.(sBoxName).money);
 			}
 			makearef(arBoxItems, loc.(sBoxName).items);
 			makearef(arBox, loc.(sBoxName));
@@ -49,7 +49,7 @@ void ApplyMigration(ref migrationState) {
 						arBox.items.(attr) = 0;
 					}
 					
-					loc.box1.items.(attr) = makeint(sti(loc.box1.items.(attr)) + makeint(GetAttributeValue(arCurItem)));
+					loc.box1.items.(attr) = int(int(loc.box1.items.(attr)) + int(GetAttributeValue(arCurItem)));
 				}
 			}
 			// del

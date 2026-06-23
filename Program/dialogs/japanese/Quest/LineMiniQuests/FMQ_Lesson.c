@@ -396,12 +396,12 @@ void ProcessDialogEvent()
 		
 		case "contra_1":
 			dialog.text = "はっ。すごく興味があるぜ。特に俺の依頼人がな。で、取り分はどうなってる？";
-			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+" 鉄木の "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+" 船シルクの "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" 縄と "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" 樹脂の。";
+			link.l1 = ""+FindRussianQtyString(int(pchar.questTemp.FMQL.Sanl))+" 鉄木の "+FindRussianQtyString(int(pchar.questTemp.FMQL.Silk))+" 船シルクの "+FindRussianQtyString(int(pchar.questTemp.FMQL.Rope))+" 縄と "+FindRussianQtyString(int(pchar.questTemp.FMQL.Oil))+" 樹脂の。";
 			link.l1.go = "contra_2";
 		break;
 		
 		case "contra_2":// Addon 2016-1 Jason пиратская линейка
-			iTotalTemp = 2200*sti(pchar.questTemp.FMQL.Sanl)+1600*sti(pchar.questTemp.FMQL.Silk)+1000*sti(pchar.questTemp.FMQL.Rope)+900*sti(pchar.questTemp.FMQL.Oil);
+			iTotalTemp = 2200*int(pchar.questTemp.FMQL.Sanl)+1600*int(pchar.questTemp.FMQL.Silk)+1000*int(pchar.questTemp.FMQL.Rope)+900*int(pchar.questTemp.FMQL.Oil);
 			dialog.text = "よし。鉄木は一つにつき2200ペソ、樹脂は900ペソ、船用絹は1600ペソ、ロープは1000ペソだ。\nさて、ここには何があるかな……ほう、ほう。 "+iTotalTemp+" ペソだ。どうだ？";
 			link.l1 = "「取引成立だ！」";
 			link.l1.go = "contra_3";
@@ -464,6 +464,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload_sea", "none", "", "", "FMQL_PirateNormal", 10.0);
+			if (CheckAttributeEqualTo(pchar, "questTemp.FMQL", "end")) return;
 			sld = CharacterFromID("FMQL_Prosper");
 			sld.Dialog.currentnode = "prosper_11";
 			sld.MusketerDistance = 20;
@@ -475,7 +476,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "sea", "none", "", "", "FMQL_PirateNormal", 10.0);
-			if (sti(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
+			if (int(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
 			else
 			{
 				pchar.quest.FMQL_money_20k.win_condition.l1 = "Money";

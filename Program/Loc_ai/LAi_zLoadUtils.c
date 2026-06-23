@@ -1,10 +1,10 @@
 // Jason: LSC - поведение горожан-статиков - хождение по городу и заведениям
-void CreateLostShipsCity(aref loc)
+void CreateLostShipsCity(ref loc)
 {	
 	int i;
+	ref sld;
 	if (loc.id == "LostShipsCity_town" && isDay())
 	{
-		ref sld;
 		string sTemp, sLocator;
 		int locNum, n, Index;
 		int qtyTavern = 0; 
@@ -30,7 +30,7 @@ void CreateLostShipsCity(aref loc)
 				//////// если внешний горожанин /////////
 				if (sld.cityTape == "citizen")
 				{
-					if (GetNpcQuestPastTimeParam(sld, "location") > sti(sld.location.hours)) 
+					if (GetNpcQuestPastTimeParam(sld, "location") > int(sld.location.hours))
 					{
 						DeleteAttribute(sld, "location.going"); //снимаем флаг
 						LAi_SetLoginTime(sld, 6.0, 21.99);
@@ -106,7 +106,7 @@ void CreateLostShipsCity(aref loc)
 				//////// если домашний горожанин /////////
 				if (sld.cityTape == "citizenHome")
 				{
-					if (GetNpcQuestPastTimeParam(sld, "location") > sti(sld.location.hours)) 
+					if (GetNpcQuestPastTimeParam(sld, "location") > int(sld.location.hours))
 					{
 						DeleteAttribute(sld, "location.going"); //снимаем флаг
 						LAi_SetLoginTime(sld, 6.0, 21.99);
@@ -273,7 +273,7 @@ void CreateLostShipsCity(aref loc)
 	}
 }
 
-void CreatUnderwater(aref loc) // под водой
+void CreatUnderwater(ref loc) // под водой
 {
 	if (loc.type == "underwater")
 	{
@@ -311,9 +311,9 @@ void CreatUnderwater(aref loc) // под водой
 					sld.SaveItemsForDead = true;
 					if (bPincers()) TakeNItems(sld, "crab_pincers", 2); // клешни
 					//if (rand(2) == 1) TakeNItems(sld, "crab_jaw", rand(1)); // жвалы
-					int iTemp = 200+MOD_SKILL_ENEMY_RATE*10+sti(pchar.rank)*8;
+					int iTemp = 200+MOD_SKILL_ENEMY_RATE*10+int(pchar.rank)*8;
 					LAi_SetHP(sld, iTemp, iTemp);
-					if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE/2.5);
+					if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = float(MOD_SKILL_ENEMY_RATE/2.5);
 					sld.animal = true;
 					LAi_SetWarriorType(sld);
 					LAi_warrior_SetStay(sld, true);
@@ -357,7 +357,7 @@ void CreatUnderwater(aref loc) // под водой
 	}
 }
 
-void CreatePlantation(aref loc)
+void CreatePlantation(ref loc)
 {
 	if(CheckAttribute(loc,"type") && loc.type == "Plantation")
 	{
@@ -416,7 +416,7 @@ void CreatePlantation(aref loc)
 			iMassive = rand(9);
 			if (model[iMassive] != "")
 			{
-				sAnime = "man_B"
+				sAnime = "man_B";
 				if(model[iMassive] == "prison_5") sAnime = "man2";
 				chr = GetCharacter(NPC_GenerateCharacter("Slave_"+i, model[iMassive], "man", sAnime, 7, iNation, 2, false, "slave"));
 				
@@ -442,8 +442,8 @@ void CreatePlantation(aref loc)
 		}
 
 		// солдаты -->
-		iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-		iScl = 30 + 2*sti(pchar.rank);
+		iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+		iScl = 30 + 2*int(pchar.rank);
 		if (iRank > 50) iRank = 50;
 		if (checkAttribute(loc, "soldiers") && CheckAttribute(loc, "locators.soldiers"))
 		{
@@ -486,7 +486,7 @@ void CreatePlantation(aref loc)
 					chr.greeting = "soldier";
 				}
 				
-				if (sti(Colonies[iColony].HeroOwn) == true)
+				if (int(Colonies[iColony].HeroOwn) == true)
 				{
 					LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
 					chr.greeting = "pirat_guard";
@@ -533,7 +533,7 @@ void CreatePlantation(aref loc)
 				LAi_SetLoginTime(chr, 0.0, 24.0);
 				LAi_SetPatrolType(chr);
 
-	            if (sti(Colonies[iColony].HeroOwn) == true)
+	            if (int(Colonies[iColony].HeroOwn) == true)
 				{
 					LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
 					chr.greeting = "town_pirate";
@@ -614,7 +614,7 @@ void CreatePlantation(aref loc)
 	}	
 }
 
-void CreateItzaLand(aref loc)
+void CreateItzaLand(ref loc)
 {
 	if(CheckAttribute(loc, "ItzaLand") && !bBettaTestMode)
 	{
@@ -650,7 +650,7 @@ void CreateItzaLand(aref loc)
 		chrDisableReloadToLocation = true;
 		
 		//определим ранг войнов. обработаем от сложности, но не менее 20 уровня
-		warriorRank = GetCoffDiff(sti(pchar.rank), 1000) + MOD_SKILL_ENEMY_RATE;
+		warriorRank = GetCoffDiff(int(pchar.rank), 1000) + MOD_SKILL_ENEMY_RATE;
 		if (warriorRank < 20) warriorRank = 20;
 		
 		while(i < num)

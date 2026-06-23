@@ -7,8 +7,8 @@ void zpq_Prepare(string qName)
 
 void zpq_sld1_fc(string qName)
 {
-	int iRank = sti(pchar.rank)+5;
-	int iScl = 20+sti(pchar.rank)*2;
+	int iRank = int(pchar.rank)+5;
+	int iScl = 20+int(pchar.rank)*2;
 	LAi_group_Delete("EnemyFight");
 	LAi_LocationFightDisable(loadedLocation, true);
 
@@ -46,8 +46,8 @@ void zpq_sld1_fc(string qName)
 
 void zpq_seaBattle(string qName)
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20+sti(pchar.rank)*2;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20+int(pchar.rank)*2;
 	LAi_group_Delete("EnemyFight");
 	sld = GetCharacter(NPC_GenerateCharacter("zpqCaptain", "citiz_45", "man", "man", iRank, PIRATE, 1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_CAREERLUGGER, StringFromKey("DangerousCargo_1"), CANNON_TYPE_CANNON_LBS6, iScl, iScl, iScl, iScl, iScl);
@@ -73,23 +73,23 @@ void zpq_seaBattle(string qName)
 void UpgradeShipZPQ(ref chr)
 {
 	ref sld = chr;
-	RealShips[sti(sld.Ship.Type)].MaxCaliber = 8;
-	//RealShips[sti(sld.Ship.Type)].CannonsQuantity = 10;
-	/* RealShips[sti(sld.Ship.Type)].MinCrew = 9;
-	RealShips[sti(sld.Ship.Type)].OptCrew = 40;
-	RealShips[sti(sld.Ship.Type)].MaxCrew = 50;
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 9.75;
-	RealShips[sti(sld.Ship.Type)].TurnRate = 70.70;
-	RealShips[sti(sld.Ship.Type)].HP = 750; */
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].MaxCaliber = 8;
+	//RealShips[int(sld.Ship.Type)].CannonsQuantity = 10;
+	/* RealShips[int(sld.Ship.Type)].MinCrew = 9;
+	RealShips[int(sld.Ship.Type)].OptCrew = 40;
+	RealShips[int(sld.Ship.Type)].MaxCrew = 50;
+	RealShips[int(sld.Ship.Type)].SpeedRate = 9.75;
+	RealShips[int(sld.Ship.Type)].TurnRate = 70.70;
+	RealShips[int(sld.Ship.Type)].HP = 750; */
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "TurnRate");
 	UpgradeShipParameter(sld, "Rig");
-	if(CheckAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity"))
+	if(CheckAttribute(&RealShips[int(sld.Ship.Type)],"Tuning.Capacity"))
 	{
-		DeleteAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity");
+		DeleteAttribute(&RealShips[int(sld.Ship.Type)],"Tuning.Capacity");
 	}
-	//RealShips[sti(sld.Ship.Type)].Capacity = 950;
+	//RealShips[int(sld.Ship.Type)].Capacity = 950;
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "HP");
 	UpgradeShipParameter(sld, "MaxCrew");
@@ -97,6 +97,6 @@ void UpgradeShipZPQ(ref chr)
 	UpgradeShipParameter(sld, "Cannons");
 	DeleteAttribute(sld, "ship.hulls");
 	SetCrewQuantity(sld, GetMaxCrewQuantity(sld));
-	RealShips[sti(sld.ship.type)].Tuning.All = true;
+	RealShips[int(sld.ship.type)].Tuning.All = true;
 	//sld.ship.HP = 1020;
 }

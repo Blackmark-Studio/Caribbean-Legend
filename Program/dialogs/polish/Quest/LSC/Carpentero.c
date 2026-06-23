@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Nie chcę z tobą rozmawiać. Atakujesz pokojowych ludzi bez powodu i prowokujesz ich do walki. Wynoś się z mojej tawerny!";
 				link.l1 = "Hm...";
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && PCharDublonsTotal() >= 1)
 				{
-					if (PCharDublonsTotal() >= sti(npchar.quest.ratmoney))
+					if (PCharDublonsTotal() >= int(npchar.quest.ratmoney))
 					{
 						if(!CheckAttribute(npchar, "quest.ratmoneyagain")) ChangeCharacterComplexReputation(pchar, "fame", 5);
 						link.l7 = "Sancho, przyszedłem po moją kirysę. Oto pieniądze.";
@@ -100,17 +100,17 @@ void ProcessDialogEvent()
 						link.l7.go = "rat_take_money_not_all";
 					}
 				}
-				if (makeint(pchar.money) >= 25)
+				if (int(pchar.money) >= 25)
 				{
 					link.l1 = "Podaj mi rumu, Sancho.";
 					link.l1.go = "drink";
 				}
-				if (makeint(pchar.money) >= 20)
+				if (int(pchar.money) >= 20)
 				{
 					link.l2 = "Chcę zostać na noc.";
 					link.l2.go = "room";
 				}
-				if (stf(environment.time) >= 6.0 && stf(environment.time) <= 18.0 && makeint(pchar.money) >= 300)
+				if (float(environment.time) >= 6.0 && float(environment.time) <= 18.0 && int(pchar.money) >= 300)
 				{
 					link.l9 = "Nudno... Sancho, chcę spędzić tu czas z butelką wina aż do wieczora...";
 					link.l9.go = "drink_sit";
@@ -132,12 +132,12 @@ void ProcessDialogEvent()
 		
 		case "meeting":
 			dialog.text = "Ja też. Mam nadzieję, że będę cię widywać przynajmniej co drugi dzień albo nawet co wieczór, ha-ha! Szczerze cieszę się z każdego gościa w mojej tawernie.";
-			if (makeint(pchar.money) >= 25)
+			if (int(pchar.money) >= 25)
 			{
 				link.l1 = "Podaj mi trochę rumu, Sancho.";
 				link.l1.go = "drink";
 			}
-			if (makeint(pchar.money) >= 20)
+			if (int(pchar.money) >= 20)
 			{
 				link.l2 = "Chcę zostać na noc.";
 				link.l2.go = "room";
@@ -250,7 +250,7 @@ void ProcessDialogEvent()
 		// пей до дна
 		case "drunk_fail":
 			dialog.text = "Chodź, przyjacielu! Nie jesteś mi nic winien. Już straciłeś sto dublonów. To był błąd zadawać się z Fazio...";
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				link.l1 = "Nie, nie, Sancho! Dziękuję i proszę, weź te pięćset pesos. To powinno pokryć koszt napojów, o ile dobrze pamiętam. Nie chcę być twoim dłużnikiem.";
 				AddMoneyToCharacter(pchar, -500);
@@ -427,10 +427,10 @@ void ProcessDialogEvent()
 			DialogExit();
 			GiveItem2Character(pchar, "cirass4");
 			RemoveItems(pchar, "talisman1", 1);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.ratmoney));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.ratmoney));
 			Log_Info("You have given away the talisman 'God of rats'");
 			Log_Info("You have received a Milanese armor");
-			Log_Info("You gave "+FindRussianDublonString(sti(npchar.quest.ratmoney))+"");
+			Log_Info("You gave "+FindRussianDublonString(int(npchar.quest.ratmoney))+"");
 			PlaySound("interface\important_item.wav");
 			DeleteAttribute(npchar, "quest.ratmoney");
 			if(CheckAttribute(npchar, "quest.ratmoneyagain"))
@@ -438,11 +438,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rat_take_money_not_all":
-			npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - PCharDublonsTotal();
+			npchar.quest.ratmoney = int(npchar.quest.ratmoney) - PCharDublonsTotal();
 			Log_Info("You gave "+FindRussianDublonString(PCharDublonsTotal())+"");
 			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Wciąż budzisz we mnie podziw "+FindRussianDublonString(sti(npchar.quest.ratmoney))+", "+pchar.name+".";
+			dialog.text = "Wciąż budzisz we mnie podziw "+FindRussianDublonString(int(npchar.quest.ratmoney))+", "+pchar.name+".";
 			link.l1 = "Nie przypominaj mi!";
 			link.l1.go = "exit";
 		break;
@@ -512,7 +512,7 @@ void ProcessDialogEvent()
 		
 		//--> выпивка
 		case "drink":
-			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 4)
+			if (CheckAttribute(pchar, "questTemp.Rum") && int(pchar.questTemp.Rum) > 4)
 			{
 				dialog.text = ""+pchar.name+", myślę, że powinieneś przestać. Nie daj Boże, wpadniesz w kłopoty lub wypadniesz za burtę, by stać się posiłkiem dla krabów... To nie jest dobry pomysł, by tutaj pić za dużo, wielu ludzi zginęło z tego powodu.";
 				link.l1 = "Hm... Myślę, że masz rację, Sancho - już mi wystarczy. Dzięki za troskę!";			
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 				{
 					if (CheckAttribute(pchar, "questTemp.Rum"))
 					{
-						pchar.questTemp.Rum = sti(pchar.questTemp.Rum) + 1;
+						pchar.questTemp.Rum = int(pchar.questTemp.Rum) + 1;
 					}
 					else pchar.questTemp.Rum = 1;
 				}
@@ -546,8 +546,8 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			if (CheckAttribute(pchar, "questTemp.Rum"))
 			{
-				if (sti(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
-				else LAi_AlcoholSetDrunk(pchar, 71, sti(pchar.questTemp.Rum)*2800);
+				if (int(pchar.questTemp.Rum) < 3) LAi_AlcoholSetDrunk(pchar, 51, 5600);
+				else LAi_AlcoholSetDrunk(pchar, 71, int(pchar.questTemp.Rum)*2800);
 			}
 		break;
 		

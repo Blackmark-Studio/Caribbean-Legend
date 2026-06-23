@@ -13,8 +13,8 @@ void IncreaseSkill(int _add)
 	sSkillName = GameInterface.(CurTable).(CurRow).UserData.ID;
 	if (CurTable != "TABLE_SPECIAL")
 	{
-		if (sti(xi_refCharacter.skill.freeskill) < _add)
-			_add = sti(xi_refCharacter.skill.freeskill);
+		if (int(xi_refCharacter.skill.freeskill) < _add)
+			_add = int(xi_refCharacter.skill.freeskill);
 		if ((GetSkillValue(xi_refCharacter, SKILL_TYPE, sSkillName) + _add) > SKILL_MAX)
 		{
 			_add = SKILL_MAX - GetSkillValue(xi_refCharacter, SKILL_TYPE, sSkillName);
@@ -22,15 +22,15 @@ void IncreaseSkill(int _add)
 		if (_add > 0)
 		{
 			iValue = AddCharacterSkill(xi_refCharacter, sSkillName, _add);
-			xi_refCharacter.skill.freeskill = sti(xi_refCharacter.skill.freeskill) - _add;
+			xi_refCharacter.skill.freeskill = int(xi_refCharacter.skill.freeskill) - _add;
 		}
 		else
 			return;
 	}
 	else
 	{
-		if (sti(xi_refCharacter.skill.FreeSPECIAL) < _add)
-			_add = sti(xi_refCharacter.skill.FreeSPECIAL);
+		if (int(xi_refCharacter.skill.FreeSPECIAL) < _add)
+			_add = int(xi_refCharacter.skill.FreeSPECIAL);
 		if ((GetSkillValue(xi_refCharacter, SPECIAL_TYPE, sSkillName) + _add) > SPECIAL_MAX)
 		{
 			_add = SPECIAL_MAX - GetSkillValue(xi_refCharacter, SPECIAL_TYPE, sSkillName);
@@ -38,7 +38,7 @@ void IncreaseSkill(int _add)
 		if (_add > 0)
 		{
 			iValue = AddSPECIALValue(xi_refCharacter, sSkillName, _add);
-			xi_refCharacter.skill.FreeSPECIAL = sti(xi_refCharacter.skill.FreeSPECIAL) - _add;
+			xi_refCharacter.skill.FreeSPECIAL = int(xi_refCharacter.skill.FreeSPECIAL) - _add;
 		}
 		else
 			return;
@@ -68,7 +68,7 @@ void DecreaseSkill(int _add)
 		if (_add > 0)
 		{
 			iValue = AddCharacterSkill(xi_refCharacter, sSkillName, -_add);
-			xi_refCharacter.skill.freeskill = sti(xi_refCharacter.skill.freeskill) + _add;
+			xi_refCharacter.skill.freeskill = int(xi_refCharacter.skill.freeskill) + _add;
 		}
 		else
 			return;
@@ -86,7 +86,7 @@ void DecreaseSkill(int _add)
 		if (_add > 0)
 		{
 			iValue = AddSPECIALValue(xi_refCharacter, sSkillName, -_add);
-			xi_refCharacter.skill.FreeSPECIAL = sti(xi_refCharacter.skill.FreeSPECIAL) + _add;
+			xi_refCharacter.skill.FreeSPECIAL = int(xi_refCharacter.skill.FreeSPECIAL) + _add;
 		}
 		else
 			return;
@@ -130,7 +130,7 @@ void SetSkillsTooltip(string sCurrentNode, ref header, ref text, ref badText, re
 		aref row = GetAttributeN(skillAttribute, i);
 		string reasonName = GetAttributeName(row);
 		string reasonValue = GetAttributeValue(row);
-		int value = sti(reasonValue);
+		int value = int(reasonValue);
 
 		string humanReason = newStr() + GetHumanReadableReason(reasonName, xi_refCharacter) + ": " + ToHumanModifier(reasonValue);
 		if (reasonName == "base") text += newStr() + GetHumanReadableReason(reasonName, xi_refCharacter) + ": " + ToHumanNumber(reasonValue);

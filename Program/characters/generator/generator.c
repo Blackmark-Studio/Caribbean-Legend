@@ -12,18 +12,18 @@ void InitChrRebalance(ref chr)
 	int oldPowerLvl = powerLvl;
 	bool randomPirates = AttributeIsTrue(chr, "personality.randomPirates");
 	float selfToShip = GetAttributeFloat(chr, "personality.selfToShip");
-	int playerRank = sti(pchar.rank);
+	int playerRank = int(pchar.rank);
 	int targetRank = playerRank;
 
 // костыль для квестовых персонажей, им нужен минимальный ранг
 	if (CheckAttribute(chr, "personality.adaptiveRankMin"))
 	{
-		targetRank = func_max(sti(chr.personality.adaptiveRankMin), playerRank);
+		targetRank = func_max(int(chr.personality.adaptiveRankMin), playerRank);
 		if (powerLvl == GEN_BY_RANK) powerLvl = GEN_GetPowerLvlByRank(targetRank);
 	}
 	else if (CheckAttribute(chr, "personality.adaptiveRank")) // костыль для персонажей с адаптивной сложностью, им от ранга выдаем разряд
 	{
-		int adaptiveRank = sti(chr.personality.adaptiveRank);
+		int adaptiveRank = int(chr.personality.adaptiveRank);
 		if (adaptiveRank < playerRank) adaptiveRank = playerRank;
 		targetRank = GEN_GetTargetRankFromFixed(adaptiveRank);
 		powerLvl = func_max(GEN_GetPowerLvlByRank(targetRank), powerLvl);
@@ -37,7 +37,7 @@ void InitChrRebalance(ref chr)
 
 	GEN_ModifyCaptainsRankByShip(chr, &targetRank, playerRank, &powerLvl);
 	// trace("Итого powerLvl: " + chr.id + " с " + oldPowerLvl + " на " + powerLvl + ". Целевой ранг: " + targetRank + ", а фиксированный был: " + GetAttributeInt(chr, "personality.adaptiveRank"));
-	ChrRebalance(chr, targetRank, chrtype, powerLvl, randomPirates, selfToShip)
+	ChrRebalance(chr, targetRank, chrtype, powerLvl, randomPirates, selfToShip);
 }
 
 void GEN_ModifyCaptainsRankByShip(ref chr, ref targetRank, int playerRank, ref powerLvl)
@@ -47,7 +47,7 @@ void GEN_ModifyCaptainsRankByShip(ref chr, ref targetRank, int playerRank, ref p
 	if (shipClass > 6) return; // лодочники или не капитаны
 	int newRank = 34 - shipClass*6 + shipClass;
 
-	targetRank = func_max(makeint(newRank), playerRank);
+	targetRank = func_max(int(newRank), playerRank);
 	int tempRank = targetRank;
 	int tempLvl = powerLvl;
 	powerLvl = func_max(GEN_GetPowerLvlByRank(tempRank), tempLvl);
@@ -81,15 +81,15 @@ void ChrRebalance(ref chr, int targetRank, int chrtype, int powerLvl, bool rando
 	DeleteAttribute(chr, "BusyRebalancing");
 	if (chrtype == GEN_TYPE_OFFICER) 
 	{
-		// chr.quest.OfficerPrice    = (11 + 2*sti(chr.rank))*(150 + MOD_SKILL_ENEMY_RATE*20) + rand(5)*10;
-		// chr.quest.OfficerLowPrice = makeint(sti(chr.quest.OfficerPrice)/1.5 + 0.5);
+		// chr.quest.OfficerPrice    = (11 + 2*int(chr.rank))*(150 + MOD_SKILL_ENEMY_RATE*20) + rand(5)*10;
+		// chr.quest.OfficerLowPrice = int(int(chr.quest.OfficerPrice)/1.5 + 0.5);
 		chr.quest.officertype = ArcheTypeToOfficerType(chr.Personality.mainArchetype);
 		chr.quest.officertype_2 = "";
 	}
 
 	DeleteAttribute(&TEV, "QCharAutolevel." + chr.id);
 	GEN_ApplyDifficulty(chr, chrtype, powerLvl);
-	if (CheckAttribute(chr, "personality.hasCrew")) GiveCaptainOfficers(chr, sti(chr.personality.HasCrew));
+	if (CheckAttribute(chr, "personality.hasCrew")) GiveCaptainOfficers(chr, int(chr.personality.HasCrew));
 	else CT_UpdateCashTables(chr);
 
 	SetFantomHP(chr);                 // хпшечку в макс
@@ -102,7 +102,7 @@ void GEN_ModifyMusketers(ref chr)
 {
 	if (!IsMusketer(chr)) return;
 
-	int bonus = GEN_SmoothBonusByRank(GEN_MUSKETERS_OFFSET, sti(pchar.rank));
+	int bonus = GEN_SmoothBonusByRank(GEN_MUSKETERS_OFFSET, int(pchar.rank));
 	AddToAttributeInt(chr, "skill." + SKILL_PISTOL, bonus);
 	AddToAttributeInt(chr, "skill." + SKILL_FENCING, -bonus);
 }
@@ -149,7 +149,7 @@ void GEN_LimitSkills(ref chr, int chrtype)
 {
 	if (chrtype != GEN_TYPE_OFFICER) return;
 
-	chr.skill.sailing = iClamp(1, 75, sti(chr.skill.sailing));
+	chr.skill.sailing = iClamp(1, 75, int(chr.skill.sailing));
 }
 
 void GEN_BuyPerks(ref chr, bool continueLeveling)
@@ -183,7 +183,7 @@ void GEN_BuyPerks(ref chr, bool continueLeveling)
 	makearef(eggheadTemplate, temp.eggheadTemplate);
 
 	int templateVar;
-	if (CheckAttribute(chr, "Personality.TemplateVar")) templateVar = sti(personality.TemplateVar);
+	if (CheckAttribute(chr, "Personality.TemplateVar")) templateVar = int(personality.TemplateVar);
 	else templateVar = GEN_RandLock(chr, 99, "");
 
 	primaryTemplate.seed   = templateVar;
@@ -201,24 +201,24 @@ void GEN_BuyPerks(ref chr, bool continueLeveling)
 	{
 		case "egghead": // яйцеголовый, оба занятия корабельные
 			FillPersonTemplatePeasant(&eggheadTemplate);
-			perkPoints.self = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.self), &eggheadTemplate, &utilityTemplate, &NullObj, "00010001001001010101");
-			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.ship), &primaryTemplate, &secondaryTemplate, &restTemplate, "001");
+			perkPoints.self = GenPerksForPoints(chr, &chrPerks, int(perkPoints.self), &eggheadTemplate, &utilityTemplate, &NullObj, "00010001001001010101");
+			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, int(perkPoints.ship), &primaryTemplate, &secondaryTemplate, &restTemplate, "001");
 		break;
 		case "fighter": // боец с корабельным хобби
-			perkPoints.self = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.self), &primaryTemplate, &utilityTemplate, &NullObj, "000010001001001010101");
-			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.ship), &secondaryTemplate, &restTemplate, &NullObj, "0");
+			perkPoints.self = GenPerksForPoints(chr, &chrPerks, int(perkPoints.self), &primaryTemplate, &utilityTemplate, &NullObj, "000010001001001010101");
+			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, int(perkPoints.ship), &secondaryTemplate, &restTemplate, &NullObj, "0");
 		break;
 		case "manager": // корабельщик с бойцовским хобби
-			perkPoints.self = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.self), &secondaryTemplate, &utilityTemplate, &NullObj, "001010101010101");
-			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, sti(perkPoints.ship), &primaryTemplate, &restTemplate, &NullObj, "0");
+			perkPoints.self = GenPerksForPoints(chr, &chrPerks, int(perkPoints.self), &secondaryTemplate, &utilityTemplate, &NullObj, "001010101010101");
+			perkPoints.ship = GenPerksForPoints(chr, &chrPerks, int(perkPoints.ship), &primaryTemplate, &restTemplate, &NullObj, "0");
 		break;
 	}
 
 
-	SetFreePerkPoints(chr, sti(perkPoints.self), "self");
-	SetFreePerkPoints(chr, sti(perkPoints.ship), "ship");
-	SetAttribute(chr, "perks.FreePoints_self_exp", sti(perkPoints.self_left));
-	SetAttribute(chr, "perks.FreePoints_ship_exp", sti(perkPoints.ship_left));
+	SetFreePerkPoints(chr, int(perkPoints.self), "self");
+	SetFreePerkPoints(chr, int(perkPoints.ship), "ship");
+	SetAttribute(chr, "perks.FreePoints_self_exp", int(perkPoints.self_left));
+	SetAttribute(chr, "perks.FreePoints_ship_exp", int(perkPoints.ship_left));
 }
 
 string GEN_GetArchetypeCategory(string mainArchetype, string secondaryArchetype)
@@ -244,7 +244,7 @@ int GenPerksForPoints(ref chr, ref chrPerks, int points, ref primaryTemplate, re
 	{
 		if (sequenceIdx == sequenceSize) sequenceIdx = 0; // начинаем последовательность заново
 
-		switch(sti(strcut(sequence, sequenceIdx, sequenceIdx)))
+		switch(int(strcut(sequence, sequenceIdx, sequenceIdx)))
 		{
 			case 0:
 				perkName = GetPerkFromTemplate(chr, chrPerks, primaryTemplate, dayLock, i);
@@ -299,7 +299,7 @@ string GetPerkFromTemplate(ref chr, ref chrPerks, ref template, bool dayLock, in
 
 	if (CheckAttribute(template, "random")) 
 	{
-		perk_index = GEN_RandLock(chr, templateSize - 1, index);
+		perk_index = GEN_RandLock(chr, templateSize - 1, string(index));
 	}
 
 	if (templateSize == 0) return "";
@@ -363,7 +363,7 @@ void GEN_OverrideAppearance(ref chr, int forceIcon)
 // Устанавливаем среднее значение скиллов для генерации от ранга ГГ или адаптивного ранга
 int GetPersonGenScore(int targetRank)
 {
-	int middleByRank = 6 + makeint(targetRank*3.0);
+	int middleByRank = 6 + int(targetRank*3.0);
 
 	return iClamp(3, 100, middleByRank);
 }
@@ -379,8 +379,8 @@ void GEN_SetSkills(ref chr, ref skills, int score, float selfToShip, int targetR
 	float shipMtp = (1.0-selfToShip) * 2;
 	if (selfMtp > 1) selfMtp = pow(selfMtp, 0.75);
 	else if (shipMtp > 1) shipMtp = pow(shipMtp, 0.75);
-	int selfScore = makeint(score * selfMtp);
-	int shipScore = makeint(score * shipMtp);
+	int selfScore = int(score * selfMtp);
+	int shipScore = int(score * shipMtp);
 	for (i=1; i<8; i++)
 	{
 		skillName = GetSkillNameByTRIdx("SelfType", i);
@@ -456,8 +456,8 @@ void GEN_AddSkillsFromSpecials(ref chr, ref skills)
 				break;
 		}
 
-		float mtp = Bring2Range(0.8, 1.2, 30.0, 100.0, makefloat(bonus));
-		skills.(skillName) = iClamp(3, 100, makeint(stf(skills.(skillName)) * mtp));
+		float mtp = Bring2Range(0.8, 1.2, 30.0, 100.0, float(bonus));
+		skills.(skillName) = iClamp(3, 100, int(float(skills.(skillName)) * mtp));
 	}
 }
 
@@ -481,13 +481,13 @@ int GEN_GetArchetypeBonus(string skillName, string type, int bonus, int secondBo
 		break;
 		case GEN_ARCHETYPE_DUELIST:
 			if (skillName == SKILL_F_LIGHT) return bonus;
-			if (skillName == SKILL_FENCING) return makeint(secondBonus * 0.6);
-			if (skillName == SKILL_PISTOL)  return makeint(secondBonus * 0.4);
+			if (skillName == SKILL_FENCING) return int(secondBonus * 0.6);
+			if (skillName == SKILL_PISTOL)  return int(secondBonus * 0.4);
 		break;
 		case GEN_ARCHETYPE_SOLDIER:
 			if (skillName == SKILL_F_HEAVY) return bonus;
-			if (skillName == SKILL_FENCING) return makeint(secondBonus * 0.8);
-			if (skillName == SKILL_PISTOL)  return makeint(secondBonus * 0.2);
+			if (skillName == SKILL_FENCING) return int(secondBonus * 0.8);
+			if (skillName == SKILL_PISTOL)  return int(secondBonus * 0.2);
 		break;
 		case GEN_ARCHETYPE_GUNMAN:
 			if (skillName == SKILL_PISTOL)  return bonus;
@@ -500,7 +500,7 @@ int GEN_GetArchetypeBonus(string skillName, string type, int bonus, int secondBo
 			return 0;
 		break;
 	}
-	return -makeint(bonus * 0.2);
+	return -int(bonus * 0.2);
 }
 
 // Приводим типы офицеров к архетипам должностей, т. к. теперь они равноценны

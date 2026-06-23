@@ -39,7 +39,7 @@ void SetEnergyToCharacter(ref _refCharacter)
 	}
 	else
 	{
-	    if (sti(_refCharacter.chr_ai.energy) > sti(_refCharacter.chr_ai.energyMax))
+	    if (int(_refCharacter.chr_ai.energy) > int(_refCharacter.chr_ai.energyMax))
 	    {
 	        _refCharacter.chr_ai.energy    = _refCharacter.chr_ai.energyMax;
 	    }
@@ -47,21 +47,21 @@ void SetEnergyToCharacter(ref _refCharacter)
 }
 
 //Получить количество энергии у персонажа 0..100
-float Lai_CharacterGetEnergy(aref chr)
+float Lai_CharacterGetEnergy(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.energy"))
 	{
-		return stf(chr.chr_ai.energy);
+		return float(chr.chr_ai.energy);
 	}
 	return 0.0;
 }
 
 //Изменить количество энергии у персонажа 0..100
-void Lai_CharacterChangeEnergy(aref chr, float dlt)
+void Lai_CharacterChangeEnergy(ref chr, float dlt)
 {
 	if(CheckAttribute(chr, "chr_ai.energy"))
 	{
-		float cur = stf(chr.chr_ai.energy);
+		float cur = float(chr.chr_ai.energy);
 		cur = cur + dlt;
 		if(cur < 0.0) cur = 0.0;
 		if(cur > LAi_GetCharacterMaxEnergy(chr)) cur = LAi_GetCharacterMaxEnergy(chr); //boal
@@ -75,19 +75,19 @@ void Lai_CharacterChangeEnergy(aref chr, float dlt)
 
 
 //Получить относительную энергию персонажа 0..1
-float LAi_GetCharacterRelEnergy(aref chr)
+float LAi_GetCharacterRelEnergy(ref chr)
 {
 	float energy = 0.0;
 	if(CheckAttribute(chr, "chr_ai.energy"))
 	{
-		energy = stf(chr.chr_ai.energy);
+		energy = float(chr.chr_ai.energy);
 		energy = energy / LAi_GetCharacterMaxEnergy(chr); // boal
 	}
 	return energy;
 }
 
 
-float LAi_GetCharacterMaxEnergy(aref chr)
+float LAi_GetCharacterMaxEnergy(ref chr)
 {
-	return GetAttributeFloatOrDefault(chr, "chr_ai.energyMax", LAI_DEFAULT_ENERGY_MAX)
+	return GetAttributeFloatOrDefault(chr, "chr_ai.energyMax", LAI_DEFAULT_ENERGY_MAX);
 }

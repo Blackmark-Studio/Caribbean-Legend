@@ -244,7 +244,7 @@ void IProcessFrame()
 
 void exitCancel()
 {
-	if( CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+	if( CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && int(InterfaceStates.showGameMenuOnExit) == true)
 	{	
 		isOkExit = true;
 		IDoExit(RC_INTERFACE_LAUNCH_GAMEMENU, true);
@@ -605,7 +605,7 @@ bool ProfileExists()
 
 void SelectNation()
 {
-	int iNation = sti(nulChr.nation);
+	int iNation = int(nulChr.nation);
 	string sNationPict = GetNationNameByType(iNation);				
 	SetNewGroupPicture("NATIONS_PICTURE", "NATIONS", sNationPict);
 	NullCharacter.HeroParam.Nation = iNation;
@@ -634,7 +634,7 @@ void IDoExit(int exitCode, bool bCode)
 	}
 	else
 	{
-		MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);  // 0т 7 до 15
+		MOD_EXP_RATE = int(5 + MOD_SKILL_ENEMY_RATE);  // 0т 7 до 15
 		interfaceResultCommand = exitCode;
 		EndCancelInterface(bCode);
 	}
@@ -675,7 +675,7 @@ void ShowInfo()
 		
 		case "TABLE_SMALLSKILL":
 			CloseTooltipNew();
-			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SMALLSKILL", 3);
+			nChooseCol = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SMALLSKILL", 3));
 			sCol = "td" + (nChooseCol + 1);
 			if(CheckAttribute(&GameInterface, "TABLE_SMALLSKILL.tr1." + sCol + ".UserData.ID"))
 			{
@@ -721,7 +721,7 @@ void ShowInfo()
 		break;	*/
 	
 		case "NATIONS_PICTURE":
-			sNation = GetNationNameByType(sti(nulChr.nation));
+			sNation = GetNationNameByType(int(nulChr.nation));
 			sHeader = XI_ConvertString(sNation);
 			sText1 = GetRPGText(sNation + "_descr");
 		break;
@@ -999,7 +999,7 @@ int GetCharacterSPECIALCharSelect(ref _refCharacter, string skillName)
     {
         return 3;
     }
-	int skillN = sti(_refCharacter.SPECIAL.(skillName));
+	int skillN = int(_refCharacter.SPECIAL.(skillName));
 	
 	if (skillN <= 1) skillN = 1;
 	if( skillN > SPECIAL_MAX ) skillN = SPECIAL_MAX;

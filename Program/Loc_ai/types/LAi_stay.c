@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_stay_Init(aref chr)
+void LAi_type_stay_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -45,7 +45,7 @@ void LAi_type_stay_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_stay_CharacterUpdate(ref chr, float dltTime)
 {
 	int num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, true, true);
 	int idx;
@@ -54,7 +54,7 @@ void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
 	{
 		for(int i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
 			if (CheckAttribute(chr, "talker") && idx == nMainCharacterIndex && LAi_Character_CanDialog(chr, pchar)) 
 			{	
@@ -89,29 +89,29 @@ void LAi_type_stay_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_stay_CharacterLogin(aref chr)
+bool LAi_type_stay_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_stay_CharacterLogoff(aref chr)
+bool LAi_type_stay_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_stay_TemplateComplite(aref chr, string tmpl)
+void LAi_type_stay_TemplateComplite(ref chr, string tmpl)
 {
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_stay_NeedDialog(aref chr, aref by)
+void LAi_type_stay_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_stay_CanDialog(aref chr, aref by)
+bool LAi_type_stay_CanDialog(ref chr, ref by)
 {
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl != LAI_TMPL_STAY && by.id != "Blaze") return false;
@@ -120,7 +120,7 @@ bool LAi_type_stay_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_stay_StartDialog(aref chr, aref by)
+void LAi_type_stay_StartDialog(ref chr, ref by)
 {
     // TO_DO: УДАЛИТЬ
 	if(bGlobalTutor && chr.id == "SharlieTutorial_Captain")
@@ -139,7 +139,7 @@ void LAi_type_stay_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_stay_EndDialog(aref chr, aref by)
+void LAi_type_stay_EndDialog(ref chr, ref by)
 {
     // TO_DO: УДАЛИТЬ
 	if(bGlobalTutor && chr.id == "SharlieTutorial_Captain")
@@ -160,7 +160,7 @@ void LAi_type_stay_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy
 
 
 //Персонаж атакован
-void LAi_type_stay_Attacked(aref chr, aref by)
+void LAi_type_stay_Attacked(ref chr, ref by)
 {
 }
 

@@ -44,16 +44,16 @@ void WhrFillSunGlowData(int nw1, int nw2)
     int iDay = GetDataDay();
 
 	Whr_DebugLog("WhrFillSunGlowData  nw1:" + nw1 + " nw2:" + nw2 + " time:" + GetTime());
-    Whr_DebugLog("Glow.Enable :" + sti(aSun1.Glow.Enable));
-    Whr_DebugLog("Flare.Enable :" + sti(aSun1.Flare.Enable));
-    Whr_DebugLog("Overflow.Enable :" + sti(aSun1.Overflow.Enable));
-    Whr_DebugLog("Reflection.Enable :" + sti(aSun1.Reflection.Enable));
+    Whr_DebugLog("Glow.Enable :" + int(aSun1.Glow.Enable));
+    Whr_DebugLog("Flare.Enable :" + int(aSun1.Flare.Enable));
+    Whr_DebugLog("Overflow.Enable :" + int(aSun1.Overflow.Enable));
+    Whr_DebugLog("Reflection.Enable :" + int(aSun1.Reflection.Enable));
 
 	if (nw2 < 0)
 	{
 		if (sunIsShine)
 		{
-			if (sti(aSun1.Glow.Enable) != false)
+			if (int(aSun1.Glow.Enable) != false)
 			{
 				SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
 				SunGlow.Glow.Size = Whr_GetFloat(aGlow1,"Size");
@@ -64,7 +64,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 				SunGlow.Glow.Color = Whr_GetColor(aGlow1,"Color");
 			}
 
-			if (sti(aMoon1.Glow.Enable) != false)
+			if (int(aMoon1.Glow.Enable) != false)
 			{
 				SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
 				SunGlow.Glow.Size = Whr_GetFloat(aGlow1,"Size");
@@ -75,7 +75,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 				SunGlow.Glow.Color = Whr_GetColor(aGlow1,"Color");
 			}
 
-			if (sti(aSun1.Flare.Enable) != false)
+			if (int(aSun1.Flare.Enable) != false)
 			{
 				SunGlow.Flare.Texture = Whr_GetString(aFlare1,"Texture");
 				SunGlow.Flare.TexSizeX = Whr_GetString(aFlare1,"TexSizeX");
@@ -94,7 +94,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 				}
 			}
 
-			if (sti(aSun1.Overflow.Enable) != false)
+			if (int(aSun1.Overflow.Enable) != false)
 			{
 				SunGlow.Overflow.Texture = Whr_GetString(aOverflow1,"Texture");
 				SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
@@ -103,7 +103,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 				SunGlow.Overflow.Start = Whr_GetFloat(aOverflow1,"Start");
 			}
 
-			if (sti(aSun1.Reflection.Enable) != false)
+			if (int(aSun1.Reflection.Enable) != false)
 			{
 				SunGlow.Reflection.Texture = Whr_GetString(aReflection1, "Texture");
 				SunGlow.Reflection.Technique = Whr_GetString(aReflection1, "Technique");
@@ -116,7 +116,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 	}
 	else
 	{	
-		if (sti(aSun1.Glow.Enable) != false)
+		if (int(aSun1.Glow.Enable) != false)
 		{
 			SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
 			SunGlow.Glow.Size = Whr_GetFloat(aGlow1,"Size");
@@ -127,7 +127,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			SunGlow.Glow.TechniqueNoZ = Whr_GetString(aGlow1,"TechniqueNoZ");
 		}
 
-		if (sti(aMoon1.Glow.Enable) != false)
+		if (int(aMoon1.Glow.Enable) != false)
 		{
 			SunGlow.Glow.Dist = Whr_GetFloat(aGlow1,"Dist");
 			SunGlow.Glow.Size = Whr_GetFloat(aGlow1,"Size");
@@ -138,7 +138,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			SunGlow.Glow.Color = Whr_GetColor(aGlow1,"Color");
 		}
 
-		if (sti(aSun1.Flare.Enable) != false)
+		if (int(aSun1.Flare.Enable) != false)
 		{
 			SunGlow.Flare.Texture = Whr_GetString(aFlare1,"Texture");
 			SunGlow.Flare.TexSizeX = Whr_GetString(aFlare1,"TexSizeX");
@@ -157,7 +157,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			}
 		}
 
-		if (sti(aSun1.Overflow.Enable) != false)
+		if (int(aSun1.Overflow.Enable) != false)
 		{
 			SunGlow.Overflow.Texture = Whr_GetString(aOverflow1,"Texture");
 			SunGlow.Overflow.Color = Whr_GetColor(aOverflow1,"Color");
@@ -166,7 +166,7 @@ void WhrFillSunGlowData(int nw1, int nw2)
 			SunGlow.Overflow.Start = Whr_GetFloat(aOverflow1,"Start");
 		}
 
-		if (sti(aSun1.Reflection.Enable) != false)
+		if (int(aSun1.Reflection.Enable) != false)
 		{
 			SunGlow.Reflection.Texture = Whr_GetString(aReflection1, "Texture");
 			SunGlow.Reflection.Technique = Whr_GetString(aReflection1, "Technique");
@@ -302,9 +302,9 @@ void WhrFillSunGlowData(int nw1, int nw2)
             else SunGlow.Reflection.Size = 550;
 		}
 
-		if (CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == 1)
+		if (CheckAttribute(&WeatherParams, "Storm") && int(WeatherParams.Storm) == 1)
             SunGlow.Glow.Size = 0;
-		if (CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == 1)
+		if (CheckAttribute(&WeatherParams, "Storm") && int(WeatherParams.Storm) == 1)
             SunGlow.Reflection.Size = 0;
 
         if (iDay < 10) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon\moon0" + iDay + ".tga";
@@ -435,9 +435,9 @@ void WhrFillSunGlowData(int nw1, int nw2)
                 else SunGlow.Reflection.Size = 550;
 			}
 
-			if (CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == 1)
+			if (CheckAttribute(&WeatherParams, "Storm") && int(WeatherParams.Storm) == 1)
                 SunGlow.Glow.Size = 0;
-			if (CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == 1)
+			if (CheckAttribute(&WeatherParams, "Storm") && int(WeatherParams.Storm) == 1)
                 SunGlow.Reflection.Size = 0;
 
             if (iDay < 10) SunGlow.Glow.MoonTexture = "weather\sun\glow\moon\moon0" + iDay + ".tga";

@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "なんてことだ、父の金を見つけてくれたのか？本当なのか？ああ、嬉しい！早く父のところへ行ってくれ、 君と話したがっているんだ。急いで会いに行ってくれ！";
 					link.l1 = "ただいま参ります、お嬢様。";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 				{
 					DelLandQuestMark(npchar);
 					dialog.text = "ああ、シャルル！戻ったのね！早く教えて、島は見つけたの？もう待ちきれないわ！";
-					if (makeint(Pchar.money) >= 200000)
+					if (int(Pchar.money) >= 200000)
 					{
 						link.l1 = "ああ、アビ。島も見つけたし、君のお父さんのお金も手に入れた。今、それを君に返しに来たんだ。";
 						link.l1.go = "Abigile_GiveMoney";

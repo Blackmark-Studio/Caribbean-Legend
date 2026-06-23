@@ -1761,7 +1761,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_1":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "Charles !..";
 				link.l1 = "Qu'est-ce qui ne va pas, Helen ??";
@@ -1776,7 +1776,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Helena_2":
-			if (sti(pchar.questTemp.Saga.HelenRelation) >= 6)
+			if (int(pchar.questTemp.Saga.HelenRelation) >= 6)
 			{
 				dialog.text = "Un navire de guerre anglais ! On l'a repéré il y a quelque temps. Au début, je n'y ai pas prêté attention, mais elle nous atteindra d'une minute à l'autre ! Je n'ai jamais vu un navire aussi rapide.";
 				link.l1 = "Alors merci de m'avoir prévenu. J'espère que nous aurons le temps de nous préparer avant qu'elle ne s'approche. Helen, Charlie, à vos postes de combat !";
@@ -1869,7 +1869,7 @@ void ProcessDialogEvent()
 			LAi_SetCheckMinHP(npchar, 10, true, "DTSG_KortniRanen");
 			LAi_SetImmortal(npchar, false);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", sti(pchar.rank), ENGLAND, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("DTSG_Mrt_Rocur", "citiz_8", "man", "man", int(pchar.rank), ENGLAND, -1, false, "soldier"));
 			sld.name = "Brian";
 			sld.lastname = "Tasse";
 			GiveItem2Character(sld, "blade_20");
@@ -2136,7 +2136,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_LT_2":
-			if (sti(pchar.reputation.nobility) > 70)
+			if (int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				dialog.text = "C'est... un grand risque. Et ce n'est pas seulement une question de savoir si je peux faire confiance à ta parole. Mais si mes collègues me croiront quand ils verront un corps ressemblant à celui de Charlie. Et je ne prendrai pas ce risque... comme ça.";
@@ -2160,7 +2160,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_4":
 			dialog.text = "Enfin, droit au but. Un million de pesos. Offre finale.";
-			if (sti(pchar.Money) >= 1000000)
+			if (int(pchar.Money) >= 1000000)
 			{
 				link.l1 = "Je te paierai l'argent. Ne pense pas que je suis pauvre ou que je ne valorise pas la vie de mes hommes. Ni l'un ni l'autre n'est vrai. Prends-le.";
 				link.l1.go = "DTSG_Kortni_LT_7";
@@ -2394,7 +2394,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Kortni_Kech_2":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -2406,13 +2406,13 @@ void ProcessDialogEvent()
 				dialog.text = "Je crains que construire l'un de ceux-là coûte bien plus que l'or que nous avons préparé pour vous. Mais tu m'as amusé, Charles. D'une bonne manière.";
 				link.l1 = "Cela valait la peine d'essayer.";
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 			}
 			link.l1.go = "DTSG_Kortni_Kech_3";
 		break;
 		
 		case "DTSG_Kortni_Kech_3":
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				dialog.text = "Je vois que tu sais ce que tu veux et que tu poursuis tes buts dans la vie\nEh bien, d'accord. Le cotre est à toi. Mais oublie l'argent - l'usurier te dira qu'il ne sait rien.";
 				link.l1 = "Ça me convient.";
@@ -2505,7 +2505,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_VizyvaemKnippel_9":
 			DialogExit();
 			
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
 			sld.dialog.currentnode = "DTSG_Kortni_VizyvaemKnippel_10";
 			LAi_SetActorType(sld);

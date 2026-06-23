@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "我理解, 查尔斯。 我愿意相信完美的真爱, 但我想这世界上不存在这样的东西。 ";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "混蛋! 我的人呢? 他们还活着作证吗? ";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "他们没事, 大人。 有点受伤, 但能活下来。 ";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "不是所有人都没事, 大人。 有一位绅士没挺过来 —德.谢沃特意带了火枪手。 我无能为力。 ";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "是的, 我见过你的船, 必须承认它确实很壮观。 那我们提高赌注吧 —两艘对一艘。 我的护卫舰和带银饰的长笛号换你的船? ";
 				link.l1 = "一场有价值的游戏! 博托夫人错了 —这场决斗将成为传奇。 成交! ";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "看看我们的船长, 真是个调皮的男孩! 不过, 私掠是神圣的。 那来艘战船怎么样? 一艘48门炮的护卫舰。 比许多轻巡洋舰还快 —皇家造船厂的产品, 又被世界上最好的造船师进一步改进。 她携带的长炮射程和精度都很好。 你觉得如何? ";
 					link.l1 = "好多了, 我加入! 开始吧! ";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "游戏结束, 船长, 你得到了想要的。 如果你想幸灾乐祸就来吧。 我建议我们明天中午讨论赎回我护卫舰的条件。 ";
 					link.l1 = "就这样? 我真心相信, 和你一样, 赌输的东西无法赎回, 只能赢回来。 或者我可以把她当木材卖给当地渔民, 告诉他们你慷慨的捐赠。 ";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "看来命运有她的安排。 这结果真有趣。 恭喜你, 德.莫尔船长。 我建议我们明天中午讨论赎回我护卫舰的条件。 ";
 						link.l1 = "这么快? 我们让其他客人失望了, 先生。 如果我没记错, 你还有一艘船。 我真心相信, 和你一样, 赌输的东西无法赎回, 只能赢回来。 ";

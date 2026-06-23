@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 		case "prepare_convoy_quest_3":
 			LookShipPassenger();
 			GenerateConvoyPassengerQuest(npchar);
-			dialog.text = "私は の酒場まで連れて行ってほしい "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"、その上で "+XI_ConvertString(GetIslandByCityName(npchar.GenQuest.GetPassenger_Destination)+"Dat")+"、のために "+FindRussianDaysString(sti(npchar.GenQuest.GetPassenger_Time))+"、それに対して報酬を払う "+FindRussianMoneyString(sti(npchar.GenQuest.GetPassenger_Money))+"。賛成か？";
+			dialog.text = "私は の酒場まで連れて行ってほしい "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"、その上で "+XI_ConvertString(GetIslandByCityName(npchar.GenQuest.GetPassenger_Destination)+"Dat")+"、のために "+FindRussianDaysString(int(npchar.GenQuest.GetPassenger_Time))+"、それに対して報酬を払う "+FindRussianMoneyString(int(npchar.GenQuest.GetPassenger_Money))+"。賛成か？";
 			link.l1 = "ああ、そうだ。";
 			link.l1.go = "convoy_agreeded";
 			link.l2 = "面白い提案だとは思わねえな。";
@@ -66,8 +66,8 @@ void ProcessDialogEvent()
 			AddQuestUserData(sTitle, "sCity", sTemp);
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
-			AddQuestUserData(sTitle, "sDay", FindRussianDaysString(sti(npchar.GenQuest.GetPassenger_Time)));
-            AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(npchar.GenQuest.GetPassenger_Money)));
+			AddQuestUserData(sTitle, "sDay", FindRussianDaysString(int(npchar.GenQuest.GetPassenger_Time)));
+            AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(npchar.GenQuest.GetPassenger_Money)));
             // по городу вернём его таверну
 			sTavern = npchar.GenQuest.GetPassenger_Destination + "_tavern";
 			sTemp = npchar.id + "_complited";
@@ -95,14 +95,14 @@ void ProcessDialogEvent()
 			//слухи
 			AddSimpleRumour(LinkRandPhrase("One person by the name of " + GetFullName(npchar) + " says that captain " + GetMainCharacterNameDat() + " can be trusted, since "+ GetSexPhrase("he","she") +" had easily delivered him to " + XI_ConvertString("Colony" + npchar.GenQuest.GetPassenger_Destination + "Gen") + ".", 
 				"Passenger named " + GetFullName(npchar) + " says that captain " + GetMainCharacterNameDat() + " can be trusted. "+ GetSexPhrase("He delivered","She delivered") +" him to " + XI_ConvertString("Colony" + npchar.GenQuest.GetPassenger_Destination + "Gen") + " absolutelly safely.", 
-				"I heard that you are a captain who keeps his word given to passengers. Huckster named " + GetFullName(npchar) + " is giving high praises to you."), sti(npchar.nation), 40, 1);
+				"I heard that you are a captain who keeps his word given to passengers. Huckster named " + GetFullName(npchar) + " is giving high praises to you."), int(npchar.nation), 40, 1);
 			chrDisableReloadToLocation = false;
 			DeleteAttribute(pchar, "GenQuest.ConvoyPassenger." + npchar.id); //извлекаем из структуры недовольных
 			//--> смотрим Deck
     		makearef(arAll, pchar.GenQuest.ConvoyPassenger);
 			if (GetAttributesNum(arAll) == 0) pchar.quest.ConvoyMapPassenger.over = "yes";
 			//<-- смотрим Deck
-			AddMoneyToCharacter(pchar, makeint(npchar.GenQuest.GetPassenger_Money));
+			AddMoneyToCharacter(pchar, int(npchar.GenQuest.GetPassenger_Money));
 			ChangeCharacterComplexReputation(pchar, "nobility",1);
 			ChangeCharacterComplexReputation(pchar, "fame",1);
 			RemovePassenger(PChar, npchar);
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 		
 		case "convoy_DeskTalk":
 			dialog.text = NPCStringReactionRepeat(LinkRandPhrase(RandSwear()+"船長、時間切れだ。いつになったら、くそっ、俺はやっと\n "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Acc")+"?",RandSwear()+"船長、一体いつまでどこをさまよってるんだ！？いつになったら俺たちは到着するんだよ\n "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"?",RandSwear()+"聞いてくれ、船長、俺はそこへ行く必要があるんだ "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"、それがいつ起こるのか、はっきり簡単に答えてほしいんだ！"),RandPhraseSimple("船長、またしてもあなたの義務について質問しなければなりません。いつになったら我々は "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"?","船長、これで二度目ですが、私の旅についてまたお伺いしなければなりません。いったいいつになったら、 私たちは海岸を見ることができるのでしょうか\n "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Gen")+"?"),RandPhraseSimple(RandSwear()+"船長、三度目だが、いつになったら着くんだ "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Acc")+"?","船長、ものすごく時間を無駄にしたじゃねえか！いつになったら俺を連れて行ってくれるんだ "+XI_ConvertString("Colony"+npchar.GenQuest.GetPassenger_Destination+"Acc")+"?"),"聞いてくれ、船長、これは本当にやりすぎだぜ！","ブロック",0,npchar,Dialog.CurrentNode);
-            if (sti(npchar.GenQuest.GetPassenger_Money) > 100)
+            if (int(npchar.GenQuest.GetPassenger_Money) > 100)
             {
 				link.l1 = HeroStringReactionRepeat(RandPhraseSimple("どうかお許しください、やるべきことが山ほどあったもので……七日後には必ず目的地に到着します。","申し訳ない。 "+GetAddress_Form(NPChar)+"、本当にあなたへの義務を果たせなかっただろう。しかし心配しないでくれ、1週間で到着する。"),RandPhraseSimple("改めてお詫び申し上げます。\n目的地には一週間で到着いたします。","改めてお詫び申し上げます。\n目的地には一週間で到着いたします。"),RandPhraseSimple("そしてもう一度、お詫び申し上げます……目的地には一週間で到着いたします。","そしてもう一度、申し訳ありません。必ず一週間以内に目的地へお連れします、約束します。"),"承知しました。 "+GetAddress_Form(NPChar)+"しかし、どうかご辛抱を……遅くとも七日以内に目的地までお連れします！",npchar,Dialog.CurrentNode);
     			link.l1.go = "convoy_DeskTalk_1";
@@ -148,10 +148,10 @@ void ProcessDialogEvent()
 			SetTimerCondition(sTemp, 0, 0, 7, false);
 			pchar.quest.(sTemp).win_condition              = "AllPassangersTimeOver";
 			pchar.quest.(sTemp).Idx						   = npchar.index; 
-			npchar.GenQuest.GetPassenger_Money = makeint(sti(npchar.GenQuest.GetPassenger_Money) / 1.5);			
+			npchar.GenQuest.GetPassenger_Money = int(int(npchar.GenQuest.GetPassenger_Money) / 1.5);
 			sTitle = npchar.index + "convoy_passenger";
 			AddQuestRecordEx(sTitle, "Gen_convoy_passenger", "5");
-			AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(npchar.GenQuest.GetPassenger_Money)));
+			AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(npchar.GenQuest.GetPassenger_Money)));
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "", 4.0);	
 			Diag.CurrentNode = "convoy_DeskTalk";
@@ -178,13 +178,13 @@ void ProcessDialogEvent()
 		case "convoy_Prison_3":
 			AddSimpleRumour(LinkRandPhrase("It has been reported that a captain named " + GetFullName(pchar) + " obliged to deliver a passenger by the name of " + GetFullName(npchar) + ", but didn't stay true to "+ GetSexPhrase("his","her") +" word. Besides, "+ GetSexPhrase("he","she") +" imprisoned a poor guy. That's what happens when you trust strange people...", 
 				"What's wrong with this world?! Captain " + GetFullName(pchar) + " imprisoned a poor guy by the name of " + GetFullName(npchar) + ", despite him being a passenger on his ship...", 
-				"People say, captain, that you are "+ GetSexPhrase("a real scoundrel","a really vile bitch") +". They say that poor " + GetFullName(npchar) + " was taken prisoner on board your ship. And you promised to deliver him to " + XI_ConvertString("Colony" + npchar.GenQuest.GetPassenger_Destination + "Gen") + ". Very, very ugly ..."), sti(npchar.nation), 40, 1);
+				"People say, captain, that you are "+ GetSexPhrase("a real scoundrel","a really vile bitch") +". They say that poor " + GetFullName(npchar) + " was taken prisoner on board your ship. And you promised to deliver him to " + XI_ConvertString("Colony" + npchar.GenQuest.GetPassenger_Destination + "Gen") + ". Very, very ugly ..."), int(npchar.nation), 40, 1);
             RemovePassenger(PChar, NPChar);
         	LAi_SetActorType(NPChar);
         	LAi_ActorRunToLocation(NPChar, "reload", "reload1", "none", "", "", "", 5.0);
         	ChangeCharacterComplexReputation(pchar,"nobility", -5);
             OfficersReaction("bad");
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 10 + rand(10), 5 + rand(5)));// награда
+			ChangeCharacterHunterScore(pchar, NationShortName(int(NPChar.nation)) + "hunter", GetIntByCondition(HasShipTrait(pchar, "trait23"), 10 + rand(10), 5 + rand(5)));// награда
 			DeleteAttribute(pchar, "GenQuest.ConvoyPassenger." + npchar.id); //извлекаем из структуры недовольных
 			sTemp = npchar.id + "_complited";
             pchar.quest.(sTemp).over = "yes";
@@ -208,22 +208,22 @@ void GenerateConvoyPassengerQuest(ref npchar)
 	int iTradeMoney, iNation, irank;
 	string sTemp, sR;
 
-	iNation = GetRelation2BaseNation(sti(npchar.nation)); //если привезти нужно во вражеский город
+	iNation = GetRelation2BaseNation(int(npchar.nation)); //если привезти нужно во вражеский город
 	npchar.GenQuest.GetPassenger_Destination = sGlobalTemp;
 	int daysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.GetPassenger_City), GetArealByCityName(sGlobalTemp));
-	if (sti(daysQty) > 14) daysQty = 14;
-	npchar.GenQuest.GetPassenger_Time  = makeint(sti(daysQty)*(frand(1.3)+0.7));
-	iTradeMoney = (sti(daysQty)*500*sti(pchar.GenQuest.GetPassenger.Shipmod)+rand(100))*sti(daysQty)/sti(npchar.GenQuest.GetPassenger_Time);
-	if (iNation == RELATION_ENEMY && sti(npchar.nation != PIRATE)) iTradeMoney = makeint(iTradeMoney * 1.3); //то размер награды увеличивается
+	if (int(daysQty) > 14) daysQty = 14;
+	npchar.GenQuest.GetPassenger_Time  = int(int(daysQty)*(frand(1.3)+0.7));
+	iTradeMoney = (int(daysQty)*500*int(pchar.GenQuest.GetPassenger.Shipmod)+rand(100))*int(daysQty)/int(npchar.GenQuest.GetPassenger_Time);
+	if (iNation == RELATION_ENEMY && int(npchar.nation != PIRATE)) iTradeMoney = int(iTradeMoney * 1.3); //то размер награды увеличивается
 	npchar.GenQuest.GetPassenger_Money = iTradeMoney;
 
-	//Log_Info(FindRussianDaysString(sti(daysQty)));
+	//Log_Info(FindRussianDaysString(int(daysQty)));
 	//Log_Info(npchar.GenQuest.GetPassenger_Destination);
 	//Log_Info(pchar.GenQuest.GetPassenger_City);
 	
 
 	sTemp = npchar.id + "_TimeOver";
-	SetTimerCondition(sTemp, 0, 0, sti(npchar.GenQuest.GetPassenger_Time), false);
+	SetTimerCondition(sTemp, 0, 0, int(npchar.GenQuest.GetPassenger_Time), false);
 	pchar.quest.(sTemp).win_condition              = "AllPassangersTimeOver";
 	pchar.quest.(sTemp).Idx						   = npchar.index; 
 
@@ -236,7 +236,7 @@ void GenerateConvoyPassengerQuest(ref npchar)
 
 void LookShipPassenger()
 {
-	switch(makeint(7-sti(RealShips[sti(Pchar.Ship.Type)].Class)))
+	switch(int(7-int(RealShips[int(Pchar.Ship.Type)].Class)))
 	{
 		case 0:
 			pchar.GenQuest.GetPassenger.Shipmod = 0.8;

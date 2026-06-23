@@ -119,7 +119,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "TPZ_Tavern2_1":
 			dialog.text = "船長、こりゃあ信じられねえぜ！どうやってこんなことをやったんだ？まあ、細けえことはいい。で、 こんな豪華な酒の積荷と引き換えに何が欲しいんだ？それと、書類の方はちゃんと問題ねえのか？";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "書類かい？もちろん全部ちゃんと揃ってるぜ。まさか本当に確認するつもりじゃねえだろうな？";
 				link.l1.go = "TPZ_Tavern2_2";
@@ -215,7 +215,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "もちろんだぜ、船長！それで、その積み荷はいくらで売りたいんだ？";
 				link.l1 = "ワイン10本ごとにドゥブロン金貨30枚、ラム酒10本ごとにドゥブロン金貨5枚だ。\n全部でそれぞれ100本ずつなら、合計でドゥブロン金貨350枚になるぜ。";

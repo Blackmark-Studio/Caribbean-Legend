@@ -25,8 +25,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "「フアン？それだけか？旦那、酔ってるのか、それとも俺をからかってるのか？姓か、 せめて船の名前くらい覚えてないのか？ここはスペインの植民地だぞ、頼むから。 こっちにフアンが何人いると思ってるんだ？詳細がなけりゃ手助けできねえよ。」";
 			link.l1 = "なるほど。お邪魔してすまなかったな…";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

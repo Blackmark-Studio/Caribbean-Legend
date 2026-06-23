@@ -7,7 +7,7 @@ void ActivateTimeEvents()
 //////////////////////// boal SLiB ////////////////////////////////
 void SalaryNextDayUpdate()
 {
-	if (sti(NullCharacter.SalayPayMonth) != GetDataMonth() && !bDisableMapEnter) // boal
+	if (int(NullCharacter.SalayPayMonth) != GetDataMonth() && !bDisableMapEnter) // boal
 	{
 		// проверка на наличие кому платить -->
 		int nPaymentQ = 0;
@@ -33,12 +33,12 @@ void SalaryNextDayUpdate()
 		{
 			if( CheckAttribute(pchar,"CrewPayment") )
 			{
-				nPaymentQ += makeint(pchar.CrewPayment); // а тут помним все до копейки!
+				nPaymentQ += int(pchar.CrewPayment); // а тут помним все до копейки!
 			}
 			if( CheckAttribute(pchar,"Partition.MonthPart") )
 			{
-				nPaymentQ += makeint(pchar.Partition.MonthPart); // доля за месяц
-				DeleteAttribute(pchar,"Partition.MonthPart")
+				nPaymentQ += int(pchar.Partition.MonthPart); // доля за месяц
+				DeleteAttribute(pchar,"Partition.MonthPart");
 			}
 			
 			pchar.CrewPayment = nPaymentQ;
@@ -379,7 +379,7 @@ void Tut_TeachBattle()
 	LAi_SetWarriorType(sld);
     LAi_group_MoveCharacter(sld, "TmpEnemy");
 	
-	if (sti(pchar.HeroParam.Teach_battle) == 2)
+	if (int(pchar.HeroParam.Teach_battle) == 2)
 	{
         sld = characterFromID("Sailor_2");
 		if (!IsEntity(sld))
@@ -405,13 +405,13 @@ void Tut_StartDialog()
 	
 	if (CheckAttribute(pchar, "HeroParam.Teach_beat"))
 	{ // признак, что выиграл
-		if (sti(pchar.HeroParam.Teach_beat) == 3)
+		if (int(pchar.HeroParam.Teach_beat) == 3)
 		{
 		    sld.Dialog.CurrentNode = "Teach_battle_win_2";
 		}
 		else
 		{
-			if (sti(pchar.HeroParam.Teach_battle) == 1)
+			if (int(pchar.HeroParam.Teach_battle) == 1)
 			{
 				sld.Dialog.CurrentNode = "Teach_battle_win";
 			}

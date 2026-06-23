@@ -86,7 +86,7 @@ int SZN_GetModifierState(string modifierName, int defaultValue = 0)
 
 int SZN_IncreaseIntByModifier(int value, string modifierName)
 {
-	return makeint(makefloat(value) * SZN_GetModifierMtp(modifierName));
+	return int(float(value) * SZN_GetModifierMtp(modifierName));
 }
 
 // цветовой конфиг тултипа для историй сезонов
@@ -170,7 +170,7 @@ void SZN_ShowModifiers(ref rObject, ref sHeader, ref text, ref badText, ref good
 		}
 
 		string modifierValue = GetAttributeValue(modifier);
-		float value = stf(modifierValue);
+		float value = float(modifierValue);
 
 		string humanModifier = "\n" + GetModifierName(modifierId) + ": " + ToHumanModifierPercent(value);
 		goodText += humanModifier;
@@ -187,7 +187,7 @@ void SZN_ShowEnumModifiers(ref modifiers, ref text, ref badText, ref goodText)
 	{
 		aref modifier = GetAttributeN(modifiers, i);
 		string modifierId = GetAttributeName(modifier);
-		string humanModifier = newStr() + GetModifierName(modifierId + "_" + sti(GetAttributeValue(modifier)));
+		string humanModifier = newStr() + GetModifierName(modifierId + "_" + int(GetAttributeValue(modifier)));
 		goodText += humanModifier;
 	}
 }

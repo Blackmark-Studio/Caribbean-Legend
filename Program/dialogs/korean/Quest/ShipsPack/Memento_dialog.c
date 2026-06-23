@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "왠지 멋진 연설이라도 할 줄 알았는데, 그냥 들이닥치더군.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
+			if (int(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -43,7 +43,7 @@ void ProcessDialogEvent()
 
 		case "Memento_MortimerGrimDead_Alonso_3":
 			dialog.text = "왜 우리가 그들을 공격했지? 저 브리그는 위협도 아니었고, 화물도 싣지 않았어. 물론 그림에 대한 온갖 소문이 돌긴 했지만, 그를 두려워한 건 노예상들뿐이었지. 오늘 많은 사람이 죽었어 — 대체 무엇 때문에?";
-			if (sti(pchar.questTemp.ISawDiegoDeLanda) >= 2)
+			if (int(pchar.questTemp.ISawDiegoDeLanda) >= 2)
 			{
 				link.l1 = "...";
 				link.l1.go = "Memento_MortimerGrimDead_Alonso_4";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 
 		case "Memento_Dich_EtapOne_Alonso_3":
 			dialog.text = "악몽이 대부분이야. 하지만 제일 끔찍한 건 우리 중 한 명이 열병으로 죽었다는 거지. 소처럼 힘센 젊은 녀석이었는데, 몇 시간 만에 불타오르듯 죽어버렸어.";
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				link.l1 = "그건 의사가 결정할 일이야. "+sld.name+" 자기 일은 잘 아는 놈이지.";
 				link.l1.go = "Memento_Dich_EtapOne_Alonso_4";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_Dich_EtapTwo_Alonso_4":
-			if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index))
+			if (int(pchar.Fellows.Passengers.doctor) == int(sld.index))
 			{
 				dialog.text = sld.name+" 오늘 아침에 이미 보고했습니다. 열한 명이 죽었습니다. 어떻게 해야 합니까?";
 			}

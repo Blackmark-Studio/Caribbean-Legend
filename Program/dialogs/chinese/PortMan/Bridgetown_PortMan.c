@@ -55,10 +55,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "太糟了。 那再见。 ";
             link.l1.go = "exit";    
             npchar.quest.HWICTalked = "true";
-            pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter) + 1;
+            pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter) + 1;
             AddQuestRecord("Holl_Gambit", "2-9");
             DelLandQuestMark(npchar);
-            if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+            if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
             {
                 AddQuestRecord("Holl_Gambit", "2-6");
                 pchar.quest.GotoBridgetownOver.over = "yes";// 移除计时器
@@ -78,9 +78,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             sFrom_sea = rColony.from_sea;
         }
         ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-        if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)// 检查港口是否有船
+        if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)// 检查港口是否有船
         {
-            bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+            bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
             pchar.quest.Regata_PU.over = "yes"; // mitrokosta 移除中断
             if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Sentjons") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
             {
@@ -93,8 +93,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
             else
             {
-                pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());// 玩家在1+2+3+4次转换中消耗的小时数
-                dialog.text = "船长, 你可能注意到这座城市被围困了。 我们随时预计西班牙人会进攻, 正在动员兵力。 但帆船赛仍在继续\n让我们登记: " +GetFullName(pchar)+ "船长, 船是 - " + pchar.Ship.Name + "... 帆船赛用时为" + sti(pchar.questTemp.Regata.FourthTransitionTime) + "小时。 完成, 你的成绩已登记, 你可以继续前行了。 ";
+                pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());// 玩家在1+2+3+4次转换中消耗的小时数
+                dialog.text = "船长, 你可能注意到这座城市被围困了。 我们随时预计西班牙人会进攻, 正在动员兵力。 但帆船赛仍在继续\n让我们登记: " +GetFullName(pchar)+ "船长, 船是 - " + pchar.Ship.Name + "... 帆船赛用时为" + int(pchar.questTemp.Regata.FourthTransitionTime) + "小时。 完成, 你的成绩已登记, 你可以继续前行了。 ";
                 link.l1 = "告诉我我的排名。 ";
                 link.l1.go = "Regata_info";
             }
@@ -117,7 +117,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 if (i == 3) sTemp = "c";
                 if (i == 4) sTemp = "d";
                 if (i == 5) sTemp = "e";
-                if (pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FourthTransitionTime))
+                if (pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FourthTransitionTime))
                 {
                     n++;
                     sName = pchar.questTemp.Regata.AdversaryName.(sTemp);// 最近对手的名字

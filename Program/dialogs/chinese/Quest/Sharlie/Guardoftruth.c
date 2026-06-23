@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;//打开地点
 			AddQuestRecord("Guardoftruth", "5");
 			pchar.quest.GuardOT_mayak.win_condition.l1 = "Timer";
-			pchar.quest.GuardOT_mayak.win_condition.l1.date.hour  = sti(GetTime()-(rand(4)));
+			pchar.quest.GuardOT_mayak.win_condition.l1.date.hour  = int(GetTime()-(rand(4)));
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.GuardOT_mayak.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -412,7 +412,7 @@ void ProcessDialogEvent()
 			sld = ItemsFromID("specialletter");
 			sld.text = "Letter_Vincento";
 			dialog.text = "给你。 给我几个硬币作为我的辛苦费怎么样? ";
-			if (sti(Pchar.money) >= 2000)
+			if (int(Pchar.money) >= 2000)
 			{
 				link.l1 = "拿点银币。 你诚实地挣到了。 ";
 				link.l1.go = "vinsentoagent_2_1";	
@@ -653,9 +653,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_13":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			dialog.text = "如果你有现金支付香草和运费, 我们就成交。 正如迷人的爱尔兰谚语所说:'让我看看钱.'";
-			if (sti(Pchar.money) >= iTemp)
+			if (int(Pchar.money) >= iTemp)
 			{
 				link.l1 = "给你, 看看。 都在这里。 ";
 				link.l1.go = "gevarra_14";
@@ -674,9 +674,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_wait":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			dialog.text = "你把钱带来了吗? ";
-			if (sti(Pchar.money) >= iTemp)
+			if (int(Pchar.money) >= iTemp)
 			{
 				link.l1 = "给你, 看看。 都在这里。 ";
 				link.l1.go = "gevarra_14";
@@ -689,7 +689,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_14":
-			if (stf(environment.time) < 24.0)
+			if (float(environment.time) < 24.0)
 			{
 				sTemp = "明天";
 				iTemp = 1;
@@ -699,7 +699,7 @@ void ProcessDialogEvent()
 				sTemp = "今天";
 				iTemp = 0;
 			}
-			if (stf(environment.time) > 21.0 && stf(environment.time) < 7.0)
+			if (float(environment.time) > 21.0 && float(environment.time) < 7.0)
 			{
 				dialog.text = "太好了! 我喜欢和明智的合作伙伴做生意。 " + sTemp + "早上十点回来。 我想那时我们共同的朋友盖乌斯会醒悟过来。 ";
 				link.l1 = "太好了! 回头见! ";
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 				link.l1 = "太好了! 回头见! ";
 				link.l1.go = "gevarra_15";
 				pchar.quest.GuardOT_tradetimer.win_condition.l1 = "Timer";
-				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour  = sti(GetTime()+3);
+				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour  = int(GetTime()+3);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 				pchar.quest.GuardOT_tradetimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -726,7 +726,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_15":
-			iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
+			iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty)*210+25000;
 			DialogExit();
 			NextDiag.currentnode = "gevarra_time";
 			npchar.DeckDialogNode = "gevarra_time";
@@ -964,7 +964,7 @@ void ProcessDialogEvent()
 		
 		case "belinda_18":
 			dialog.text = "告诉我, 别让我等! 你和强盗见面了吗? ";
-			if (sti(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "给你, 拿回你的五万比索。 我不需要它。 也拿着这枚戒指。 我相信你会觉得熟悉。 ";
 				link.l1.go = "belinda_19_1";
@@ -1301,7 +1301,7 @@ void ProcessDialogEvent()
 			pchar.quest.GuardOT_sanantonio.function = "GuardOT_SanantonioArrive";
 			// 时间, 专门为不读对话和攻略的傻瓜
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1 = "Timer";
-			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour  = sti(GetTime()+6);
+			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour  = int(GetTime()+6);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

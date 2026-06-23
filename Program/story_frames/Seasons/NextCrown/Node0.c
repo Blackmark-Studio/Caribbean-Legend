@@ -95,7 +95,7 @@ void NextCrown_Node0()
 			SZN_IncreaseTempEffect(M_CREW_HIRING_EXP_MTP, 0.30);
 			SZN_IncreaseTempEffect(M_CREW_EXP_MTP, 0.25);
 			reaction = SF_AddReaction("d", "", "", SF_Icon(PIRATES_TYPE, PIRATES_I));
-			SZN_SetReactionEffect(&reaction, M_CREW_HIRING_EXP_MTP, 0.02 * makefloat(GetPirates(pchar, PIRATES_I)) + 0.3);
+			SZN_SetReactionEffect(&reaction, M_CREW_HIRING_EXP_MTP, 0.02 * float(GetPirates(pchar, PIRATES_I)) + 0.3);
 		break;
 		case "c":
 			SZN_IncreaseTempEffect(M_STEALTH_INCEPTION_BONUS, 0.15);

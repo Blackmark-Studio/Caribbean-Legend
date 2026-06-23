@@ -9,7 +9,7 @@
 		"falure"	задача невыполнима
 */
 
-bool LAi_tmpl_runto_InitTemplate(aref chr)
+bool LAi_tmpl_runto_InitTemplate(ref chr)
 {
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", false);
 	CharacterPlayAction(chr, "");
@@ -65,7 +65,7 @@ bool LAi_tmpl_runto_InitTemplate(aref chr)
 }
 
 //Направить персонажа в заданный локатор
-void LAi_tmpl_runto_SetLocator(aref chr, string group, string locator, float timeout)
+void LAi_tmpl_runto_SetLocator(ref chr, string group, string locator, float timeout)
 {
 	chr.chr_ai.tmpl.state = "runto";
 	chr.chr_ai.tmpl.wait = "0";
@@ -76,21 +76,21 @@ void LAi_tmpl_runto_SetLocator(aref chr, string group, string locator, float tim
 	LAi_tmpl_runto_Restart(chr);
 }
 
-bool LAi_tmpl_runto_IsStay(aref chr)
+bool LAi_tmpl_runto_IsStay(ref chr)
 {
 	if(chr.chr_ai.tmpl.state != "runto") return true;
 	return false;
 }
 
 //Процессирование шаблона персонажа
-void LAi_tmpl_runto_CharacterUpdate(aref chr, float dltTime)
+void LAi_tmpl_runto_CharacterUpdate(ref chr, float dltTime)
 {
 	aref tmpl;
 	makearef(tmpl, chr.chr_ai.tmpl);
 	if(tmpl.state == "runto")
 	{
 
-		float time = stf(tmpl.wait);
+		float time = float(tmpl.wait);
 		if(time > 0.0)
 		{
 			//Персонаж ждёт
@@ -104,10 +104,10 @@ void LAi_tmpl_runto_CharacterUpdate(aref chr, float dltTime)
 				LAi_tmpl_runto_Restart(chr);
 			}
 		}
-		float timeout = stf(tmpl.timeout);
+		float timeout = float(tmpl.timeout);
 		if(timeout > 0.0)
 		{
-			time = stf(tmpl.time) + dltTime;
+			time = float(tmpl.time) + dltTime;
 			tmpl.time = time;
 			if(time >= timeout)
 			{
@@ -126,13 +126,13 @@ void LAi_tmpl_runto_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Персонаж выполнил команду  go to point
-void LAi_tmpl_runto_EndGoToPoint(aref chr)
+void LAi_tmpl_runto_EndGoToPoint(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж провалил команду  go to point
-void LAi_tmpl_runto_FailureGoToPoint(aref chr)
+void LAi_tmpl_runto_FailureGoToPoint(ref chr)
 {
 	Trace("Template <runto> -> failure for chr.id = " + chr.id);
 	if(LAi_tmpl_runto_Teleport(chr))
@@ -146,19 +146,19 @@ void LAi_tmpl_runto_FailureGoToPoint(aref chr)
 
 
 //Персонаж выполнил команду  run to point
-void LAi_tmpl_runto_EndRunToPoint(aref chr)
+void LAi_tmpl_runto_EndRunToPoint(ref chr)
 {
 	LAi_tmpl_runto_Complite(chr);
 }
 
 //Персонаж провалил команду  run to point
-void LAi_tmpl_runto_FailureRunToPoint(aref chr)
+void LAi_tmpl_runto_FailureRunToPoint(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж не может добраться до точки назначения
-void LAi_tmpl_runto_BusyPos(aref chr, float x, float y, float z)
+void LAi_tmpl_runto_BusyPos(ref chr, float x, float y, float z)
 {
 	if(chr.chr_ai.tmpl.state == "runto")
 	{
@@ -171,101 +171,101 @@ void LAi_tmpl_runto_BusyPos(aref chr, float x, float y, float z)
 }
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_runto_FollowGo(aref chr)
+void LAi_tmpl_runto_FollowGo(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_runto_FollowStay(aref chr)
+void LAi_tmpl_runto_FollowStay(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж провалил команду  follow character
-void LAi_tmpl_runto_FailureFollow(aref chr)
+void LAi_tmpl_runto_FailureFollow(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_runto_FightGo(aref chr)
+void LAi_tmpl_runto_FightGo(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_runto_FightStay(aref chr)
+void LAi_tmpl_runto_FightStay(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж провалил команду  Fight
-void LAi_tmpl_runto_FailureFight(aref chr)
+void LAi_tmpl_runto_FailureFight(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Можно ли стрелять
-bool LAi_tmpl_runto_IsFire(aref chr)
+bool LAi_tmpl_runto_IsFire(ref chr)
 {	
 	return false;
 }
 
 //Можно ли использовать оружие
-bool LAi_tmpl_runto_IsFight(aref chr)
+bool LAi_tmpl_runto_IsFight(ref chr)
 {
 	return false;
 }
 
 
 //Персонаж выполнил команду  escape
-void LAi_tmpl_runto_EndEscape(aref chr)
+void LAi_tmpl_runto_EndEscape(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж скользит вдоль патча
-void LAi_tmpl_runto_EscapeSlide(aref chr)
+void LAi_tmpl_runto_EscapeSlide(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 //Персонаж провалил команду  escape
-void LAi_tmpl_runto_FailureEscape(aref chr)
+void LAi_tmpl_runto_FailureEscape(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 
 //Персонаж толкается с другими персонажами
-void LAi_tmpl_runto_ColThreshold(aref chr)
+void LAi_tmpl_runto_ColThreshold(ref chr)
 {
 }
 
 
 //Персонаж закончил проигрывать анимацию
-void LAi_tmpl_runto_EndAction(aref chr)
+void LAi_tmpl_runto_EndAction(ref chr)
 {
 	LAi_tmpl_runto_Restart(chr);
 }
 
 
 //Персонажа просят освободить место
-void LAi_tmpl_runto_FreePos(aref chr, aref who)
+void LAi_tmpl_runto_FreePos(ref chr, aref who)
 {
 }
 
 
 //Перезапустить задачу
-void LAi_tmpl_runto_Restart(aref chr)
+void LAi_tmpl_runto_Restart(ref chr)
 {
 	if(chr.chr_ai.tmpl.state == "runto")
 	{
 		if(LAi_IsInitedAI)
 		{
-			if(stf(chr.chr_ai.tmpl.wait) < 1.0)
+			if(float(chr.chr_ai.tmpl.wait) < 1.0)
 			{
 				if(SetCharacterTask_RuntoPoint(chr, chr.chr_ai.tmpl.group, chr.chr_ai.tmpl.locator) == false)
 				{
@@ -287,9 +287,9 @@ void LAi_tmpl_runto_Restart(aref chr)
 	}
 }
 
-bool LAi_tmpl_runto_Teleport(aref chr)
+bool LAi_tmpl_runto_Teleport(ref chr)
 {
-	if(stf(chr.chr_ai.tmpl.timeout) >= 0)
+	if(float(chr.chr_ai.tmpl.timeout) >= 0)
 	{
 		//Trace("Template <runto> -> teleport chr.id = " + chr.id + " to <" + chr.chr_ai.tmpl.group + " : " + chr.chr_ai.tmpl.locator + ">");
 		TeleportCharacterToLocator(chr, chr.chr_ai.tmpl.group, chr.chr_ai.tmpl.locator);
@@ -299,7 +299,7 @@ bool LAi_tmpl_runto_Teleport(aref chr)
 }
 
 //Завершить runto
-void LAi_tmpl_runto_Complite(aref chr)
+void LAi_tmpl_runto_Complite(ref chr)
 {
 	if(LAi_IsInitedAI) SetCharacterTask_Stay(chr);
 	chr.chr_ai.tmpl.group = "";

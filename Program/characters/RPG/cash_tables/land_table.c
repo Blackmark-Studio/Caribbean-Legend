@@ -35,9 +35,26 @@ void CT_UpdateLandTable(ref chr)
 	CT_SetMaxWeight(&landTable, &equipTable, chr);
 	CT_SetStrikeAngles(&landTable, &equipTable, chr);
 	CT_SetGunUsingSpeed(&landTable, &equipTable, chr);
-
+	CT_SetHPReloadMultiplier(&landTable, &equipTable, chr);
+	CT_SetEnergyReloadMultiplier(&landTable, &equipTable, chr);
 	// мультифайтер
-	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "_" + M_DAMAGE, stf(chr.MultiFighter));
+	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "_" + M_DAMAGE, float(chr.MultiFighter));
+}
+
+void CT_SetEnergyReloadMultiplier(ref landTable, ref equipTable, ref chr)
+{
+	CopyModifier(landTable, equipTable, M_ENERGY_RECOVERY_MLT);
+	float mtp = 1.0;
+	mtp *= equipTable.(M_ENERGY_RECOVERY_MLT)$float(1.0);
+	SetAttribute(landTable, M_ENERGY_RECOVERY_MLT, mtp);
+}
+
+void CT_SetHPReloadMultiplier(ref landTable, ref equipTable, ref chr)
+{
+	CopyModifier(landTable, equipTable, M_HP_RECOVERY_MLT);
+	float mtp = 1.0;
+	mtp *= equipTable.(M_HP_RECOVERY_MLT)$float(1.0);
+	SetAttribute(landTable, M_HP_RECOVERY_MLT, mtp);
 }
 
 void CT_SetGunUsingSpeed(ref landTable, ref equipTable, ref chr)
@@ -65,7 +82,7 @@ void CT_SetStrikeAngles(ref landTable, ref equipTable, ref chr)
 void CT_SetMaxHealth(ref landTable, ref equipTable, ref chr)
 {
 	float baseHp = GetCharacterBaseHpValue(chr);
-	baseHp += GetAttributeFloat(equipTable, M_HP_PER_RANK) * (sti(chr.rank) - 1);
+	baseHp += GetAttributeFloat(equipTable, M_HP_PER_RANK) * (int(chr.rank) - 1);
 	float bonusHp = GetAttributeFloat(equipTable, M_HP_MAX);
 	float bonusMtp = GetAttributeFloat(equipTable, M_MTP_HP_MAX);
 
@@ -75,7 +92,7 @@ void CT_SetMaxHealth(ref landTable, ref equipTable, ref chr)
 void CT_SetMaxEnergy(ref landTable, ref equipTable, ref chr)
 {
 	float baseEnergy = GetCharacterBaseEnergy(chr);
-	baseEnergy += GetAttributeFloat(equipTable, M_ENERGY_PER_RANK) * (sti(chr.rank) - 1);
+	baseEnergy += GetAttributeFloat(equipTable, M_ENERGY_PER_RANK) * (int(chr.rank) - 1);
 	float bonusEnergy = GetAttributeFloat(equipTable, M_ENERGY_MAX);
 	float bonusMtp = GetAttributeFloat(equipTable, M_MTP_ENERGY_MAX);
 
@@ -180,7 +197,7 @@ void CT_SetCritModifier(float value, string weapon, string modifier, ref landTab
 void CT_SetDefence(ref landTable, ref equipTable, ref chr)
 {
 	float damageReduction = GetAttributeFloat(equipTable, M_REDUCE_DAMAGE);
-	if (CheckAttribute(chr,"ReducedDamage")) damageReduction += 1.0-makefloat(chr.ReducedDamage); // квестовое снижение урона
+	if (CheckAttribute(chr,"ReducedDamage")) damageReduction += 1.0-float(chr.ReducedDamage); // квестовое снижение урона
 
 	if (damageReduction > 0) SetAttribute(landTable, M_REDUCE_DAMAGE, damageReduction);
 
@@ -208,7 +225,7 @@ void CT_SetWeaponDamageCoeff(ref landTable, ref equipTable, ref chr, ref blade)
 	float shotBonus = commonBonus;
 
 	CT_AddEquipCoeffBonuses(equipTable, "", &fastBonus, &forceBonus, &roundBonus, &breakBonus, &shotBonus);
-	CT_AddEquipCoeffBonuses(equipTable, weaponType, &fastBonus, &forceBonus, &roundBonus, &breakBonus, &shotBonus);
+	CT_AddEquipCoeffBonuses(equipTable, string(weaponType), &fastBonus, &forceBonus, &roundBonus, &breakBonus, &shotBonus);
 
 	if (fastBonus  > 0) SetAttribute(landTable, FAST_STRIKE  + "_" + M_DAMAGE, fastBonus);
 	if (forceBonus > 0) SetAttribute(landTable, FORCE_STRIKE + "_" + M_DAMAGE, forceBonus);
@@ -234,7 +251,7 @@ void CT_SetMusketDamageCoeff(ref table, ref equipTable, ref chr)
 		breakBonus += 0.2;
 	}
 
-	CT_AddEquipCoeffBonuses(equipTable, MUSKET_ITEM_TYPE, &fastBonus, &forceBonus, &roundBonus, &breakBonus, &shotBonus);
+	CT_AddEquipCoeffBonuses(equipTable, string(MUSKET_ITEM_TYPE), &fastBonus, &forceBonus, &roundBonus, &breakBonus, &shotBonus);
 
 	if (fastBonus  > 0) SetAttribute(table, MUSKET_ITEM_TYPE + "_" + FAST_STRIKE  + "_" + M_DAMAGE, fastBonus);
 	if (forceBonus > 0) SetAttribute(table, MUSKET_ITEM_TYPE + "_" + FORCE_STRIKE + "_" + M_DAMAGE, forceBonus);
@@ -267,7 +284,7 @@ int CT_SetMaxWeight(ref landTable, ref equipTable, ref chr)
 {
 	int baseWeight = 0;
 	if (IsCharacterPerkOn(chr, "Grus")) baseWeight += PERK_VALUE_GRUS;
-	if (HasPerk(chr, "Mule")) baseWeight += PERK_VALUE_MULE * sti(chr.rank);
+	if (HasPerk(chr, "Mule")) baseWeight += PERK_VALUE_MULE * int(chr.rank);
 	if (!IsMainCharacter(chr) && IsCharacterPerkOn(chr, "Looting")) baseWeight += PERK_VALUE_LOOTING;
 	if (CheckAttribute(chr, "cheats.dopgrus")) baseWeight += 1000;
 	if (IsEquipCharacterByItem(chr, "legendGuide")) baseWeight += 15;
@@ -277,7 +294,7 @@ int CT_SetMaxWeight(ref landTable, ref equipTable, ref chr)
 	if (IsEquipCharacterByArtefact(chr, "obereg_3"))   bonus += 0.15; // Обезьяна
 	if (IsEquipCharacterByArtefact(chr, "talisman13")) bonus += 1.0;  // Оберег Таино
 
-	int result = makeint(makefloat(baseWeight) * bonus + 0.5);
+	int result = int(float(baseWeight) * bonus + 0.5);
 	SetAttribute(landTable, "MaxWeight", result);
 	return result;
 }

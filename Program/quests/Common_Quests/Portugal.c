@@ -34,8 +34,8 @@ void CreatePortugalGuard(string qName)//охрана Португальца
 	LAi_group_Delete("EnemyFight");
 	for (int i=1; i <=3; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("PortugalGuard_"+i, "citiz_"+(i+42), "man", "man", sti(pchar.rank), PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank), 20, 20, "blade_10", "pistol1", "bullet", 0);
+		sld = GetCharacter(NPC_GenerateCharacter("PortugalGuard_"+i, "citiz_"+(i+42), "man", "man", int(pchar.rank), PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, int(pchar.rank), 20, 20, "blade_10", "pistol1", "bullet", 0);
 		LAi_SetHP(sld, 60.0, 60.0);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -187,8 +187,8 @@ void PortugalOnStreet(string qName)//охотники в Сент-Джонсе
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
 	for (int i=1; i <=5; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("PortugalHunter_"+i, "citiz_"+(i+42), "man", "man", sti(pchar.rank)+1, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank)+1, 30, 30, "blade_10", "pistol1", "bullet", 0);
+		sld = GetCharacter(NPC_GenerateCharacter("PortugalHunter_"+i, "citiz_"+(i+42), "man", "man", int(pchar.rank)+1, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, int(pchar.rank)+1, 30, 30, "blade_10", "pistol1", "bullet", 0);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		sld.dialog.FileName = "Quest\Portugal_dialog.c";
@@ -216,9 +216,9 @@ void PortugalSeaHunter(string qName)//атака охотников в порт�
 	Group_DeleteGroup("Hunter_Attack");
 	Group_FindOrCreateGroup("Hunter_Attack");
 	SelectLevelWarShipParameter();//автолевеллинг
-	sld = GetCharacter(NPC_GenerateCharacter("Porthunter", "mercen_"+(rand(27)+1), "man", "man", sti(PChar.rank)+1, ENGLAND, 5, true, "hunter"));
+	sld = GetCharacter(NPC_GenerateCharacter("Porthunter", "mercen_"+(rand(27)+1), "man", "man", int(PChar.rank)+1, ENGLAND, 5, true, "hunter"));
 	FantomMakeSmallSailor(sld, iGlobalTemp, "", iTotalTemp, 70+rand(5), 60+rand(5), 60+rand(5), 50+rand(5), 55+rand(5));
-	FantomMakeCoolFighter(sld, sti(PChar.rank)+1, 30, 30, sTotalTemp, "pistol3", "grapeshot", 50);
+	FantomMakeCoolFighter(sld, int(PChar.rank)+1, 30, 30, sTotalTemp, "pistol3", "grapeshot", 50);
 	sld.AlwaysEnemy = true;
 	sld.Coastal_Captain = true;
 	sld.DontRansackCaptain = true;
@@ -317,8 +317,8 @@ void Portugal_enterPirates()//пиратусы в таверне Ле Франс
 	LAi_group_Delete("EnemyFight");
 	for (int i=1; i<=3; i++)
 {
-		sld = GetCharacter(NPC_GenerateCharacter("LeFransuaPirate_"+i, "citiz_"+(i+43), "man", "man", sti(pchar.rank)+2, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank)+2, 40, 40, "blade_10", "pistol3", "bullet", 0);
+		sld = GetCharacter(NPC_GenerateCharacter("LeFransuaPirate_"+i, "citiz_"+(i+43), "man", "man", int(pchar.rank)+2, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, int(pchar.rank)+2, 40, 40, "blade_10", "pistol3", "bullet", 0);
 		LAi_SetHP(sld, 100.0, 100.0);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -365,8 +365,8 @@ void CreateVaskezsPirates(string qName)//драка на улицах Ле Фр�
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретим драться
 	for (int i=1; i <=9; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("VaskezsPirate_"+i, "citiz_"+(i+40), "man", "man", sti(pchar.rank)+2, PIRATE, -1, true, "quest"));
-		FantomMakeCoolFighter(sld, sti(pchar.rank)+2, 40, 40, "blade_10", "pistol1", "bullet", 0);
+		sld = GetCharacter(NPC_GenerateCharacter("VaskezsPirate_"+i, "citiz_"+(i+40), "man", "man", int(pchar.rank)+2, PIRATE, -1, true, "quest"));
+		FantomMakeCoolFighter(sld, int(pchar.rank)+2, 40, 40, "blade_10", "pistol1", "bullet", 0);
 		LAi_SetHP(sld, 100.0, 100.0);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
@@ -403,7 +403,7 @@ void CreateVaskezsFrigate(string qName)//атака фрегата Васкез�
 	Group_FindOrCreateGroup("VaskezFrigate");
 	sld = GetCharacter(NPC_GenerateCharacter("Vaskezs_helper", "mercen_"+(rand(27)+1), "man", "man", 25+MOD_SKILL_ENEMY_RATE, PIRATE, -1, true, "quest"));
 	
-	int iClass = sti(RealShips[sti(pchar.ship.type)].Class);
+	int iClass = int(RealShips[int(pchar.ship.type)].Class);
 	if(iClass < 2) iClass = 2;
 	if(iClass > 4) iClass = 4;
 	
@@ -467,8 +467,8 @@ void RemovePortugal(string qName)//Португальца - вон
 void CreateHollIndBattle(string qName)//массовая драка в джунглях с индейцами и голландцами
 {
 	chrDisableReloadToLocation = true;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 10 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 10 + 2*int(pchar.rank);
 	//ставим голландцев
 	for (i=1; i<=10; i++)
 	{
@@ -532,9 +532,9 @@ void CreatePortugalHollShip(string qName)//голландский фрегат /
 {
 	Island_SetReloadEnableGlobal("Terks", false);
 	Group_FindOrCreateGroup("PortHolFrigate");
-	sld = GetCharacter(NPC_GenerateCharacter("PortHolCap", "off_hol_5", "man", "man", sti(PChar.rank)+MOD_SKILL_ENEMY_RATE, HOLLAND, -1, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("PortHolCap", "off_hol_5", "man", "man", int(PChar.rank)+MOD_SKILL_ENEMY_RATE, HOLLAND, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_FRIGATE, "", CANNON_TYPE_CANNON_LBS32, 90, 90, 90);
-	FantomMakeCoolFighter(sld, sti(PChar.rank)+MOD_SKILL_ENEMY_RATE, 70, 70, "blade_21", "pistol3", "grapeshot", 100);
+	FantomMakeCoolFighter(sld, int(PChar.rank)+MOD_SKILL_ENEMY_RATE, 70, 70, "blade_21", "pistol3", "grapeshot", 100);
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -623,7 +623,7 @@ void InMarigoResidence()//в резиденции Мариго
 void CreateErnandoVaskez()//появился Васкез
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Vaskez", "Vasces", "man", "man", 35, PIRATE, -1, true, "soldier"));
-	FantomMakeCoolFighter(sld, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+15, 100, 100, "blade_10", "pistol6", "bullet", 200);
+	FantomMakeCoolFighter(sld, int(pchar.rank)+MOD_SKILL_ENEMY_RATE+15, 100, 100, "blade_10", "pistol6", "bullet", 200);
 	sld.name = StringFromKey("Portugal_12");
 	sld.lastname = StringFromKey("Portugal_13");
 	sld.dialog.FileName = "Quest\Portugal_dialog.c";
@@ -789,7 +789,7 @@ bool Portugal_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "VaskezFight")
 	{
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/2;
+		Pchar.chr_ai.hp = float(Pchar.chr_ai.hp)/2;
 		sld = characterFromId("Vaskez");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");

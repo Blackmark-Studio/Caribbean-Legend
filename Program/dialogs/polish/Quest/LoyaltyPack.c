@@ -474,7 +474,7 @@ void ProcessDialogEvent()
 			dialog.text = "Jeśli chodzi o laski... to jestem za. Hehe. Ale czemu nie naszym statkiem? I czemu jako pasażer? Chłopaki może by trochę pomarudzili, ale z tobą pójdą i do nieba, i do piekła.";
 			link.l1 = "Kiedy pierwszy raz tu przypłynąłem, nie wyobrażałem sobie siebie jako marynarza. A teraz nie potrafię sobie wyobrazić innego życia. Chcę się przekonać, czy potrafię pogodzić się z tym, że już nie jestem kapitanem... i że może trzeba będzie porzucić grabieże i życie na morzu.";
 			link.l1.go = "SharlieEpilog_Alonso_nothing";
-			if (sti(pchar.Money) >= GetSalaryForShip(PChar))
+			if (int(pchar.Money) >= GetSalaryForShip(PChar))
 			{
 				link.l2 = "Długa historia. Opowiem ci ją w tawernie — przy kuflu rumu. Zaproś też załogę. Zróbmy huczną imprezę na pożegnanie. Trzymaj, wypłać im miesięczną pensję jako odprawę.";
 				link.l2.go = "SharlieEpilog_Alonso_salary";

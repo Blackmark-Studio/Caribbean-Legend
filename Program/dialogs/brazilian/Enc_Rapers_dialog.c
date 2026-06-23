@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_2")
 			{
-				if(sti(pchar.rank) < 10)
+				if(int(pchar.rank) < 10)
 				{
 					dialog.text = LinkRandPhrase("Siga seu próprio caminho, "+GetSexPhrase("companheiro","moça")+". No final, ela vai nos agradecer, sabia.","Cai fora! Deixa os cavalheiros se divertirem.","Isso não é da sua conta, "+GetSexPhrase("estranho","moça")+". Vamos só nos divertir um pouco, e é só isso!!");
 					link.l1 = LinkRandPhrase("Eu não vou permitir isso!","Abandone seus planos malignos neste instante!","Não vou tolerar nenhum tipo de violência!");
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			}
 			if(pchar.GenQuest.EncGirl == "Begin_3")
 			{
-				if(sti(pchar.rank) < 20)
+				if(int(pchar.rank) < 20)
 				{	
 					dialog.text = "Siga seu próprio caminho, "+GetSexPhrase("bom homem","moça")+". A gente resolve isso sem você.";
 					link.l1 = "Não vou tolerar nenhum tipo de violência!";
@@ -132,9 +132,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3":
-			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * sti(pchar.rank);
-			dialog.text = "Você devia saber que ela nos custou caro! E se você é tão nobre assim, pode levá-la por "+sti(pchar.GenQuest.EncGirl.price)+" pesos."+GetSexPhrase(" Você vai se divertir com ela, he-he...","")+"";
-			if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.price))
+			pchar.GenQuest.EncGirl.price = 1100*(rand(4)+5) + 200 * int(pchar.rank);
+			dialog.text = "Você devia saber que ela nos custou caro! E se você é tão nobre assim, pode levá-la por "+int(pchar.GenQuest.EncGirl.price)+" pesos."+GetSexPhrase(" Você vai se divertir com ela, he-he...","")+"";
+			if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.price))
 			{
 				link.l1 = RandPhraseSimple("Aqui está o seu dinheiro. Vou levá-la comigo.","Pare de ranger os dentes. Eu vou levar a garota comigo. Aqui está o seu dinheiro.");
 				link.l1.go = "Node_4";
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		
 		case "Node_4": // бандюки уходят, девица остаётся - ГГ ее выкупил у бандюков
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.price))); 
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.price)));
 			ChangeCharacterComplexReputation(pchar,"nobility", 7);
 			//pchar.quest.LandEnc_RapersBadExit.over = "yes";
 			sGlobalTemp = "Saved_CangGirl";
@@ -299,12 +299,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar2":
-			pchar.GenQuest.EncGirl.BerglarSum = makeint(sti(pchar.money)/5) + 5000;
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
-			if(sti(pchar.GenQuest.EncGirl.BerglarSum) > 0)
+			pchar.GenQuest.EncGirl.BerglarSum = int(int(pchar.money)/5) + 5000;
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 250000) pchar.GenQuest.EncGirl.BerglarSum = 220000 + rand(30000);
+			if(int(pchar.GenQuest.EncGirl.BerglarSum) > 0)
 			{
-				dialog.text = "Não. Apenas uma quantia modesta de "+sti(pchar.GenQuest.EncGirl.BerglarSum)+" pesos vão te livrar de toda essa encrenca.";
-				if(sti(pchar.money) >= sti(pchar.GenQuest.EncGirl.BerglarSum))
+				dialog.text = "Não. Apenas uma quantia modesta de "+int(pchar.GenQuest.EncGirl.BerglarSum)+" pesos vão te livrar de toda essa encrenca.";
+				if(int(pchar.money) >= int(pchar.GenQuest.EncGirl.BerglarSum))
 				{
 					link.l1 = "Bem, atos nobres realmente custam caro hoje em dia. Tudo bem, pode pegar...";
 					link.l1.go = "EncGirl_Berglar3";
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_Berglar3":
-			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.BerglarSum)));
+			AddMoneyToCharacter(pchar, -int(int(pchar.GenQuest.EncGirl.BerglarSum)));
 			dialog.text = "Muito bem. Já vai tarde.";
 			link.l1 = "Boa sorte.";
 			link.l1.go = "exit";

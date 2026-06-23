@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -23,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "鉱山に敵だ！警報だ！";
 				link.l1 = "ああっ、悪魔め！";
@@ -63,9 +62,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "旦那、残念だが、今はこれ以上奴隷は必要ないんだ。しかし状況はいつでも変わるから、 数週間後かまた別の時に来てくれ。";
 				link.l1 = "わかったよ、旦那。今は必要ないが、そのうち必要になるかもしれねえぜ。";
@@ -106,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "旦那、くだらない冗談に付き合ってる暇はないんだ。ふざけたいなら酒場にでも行きな！";
@@ -121,9 +120,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "残念だが、旦那、今はそんなに多くの奴隷はいらねえんだ。鉱山が今必要としているのは "+FindRussianQtyString(sti(location.quest.slaves.qty))+"「そんなにたくさん売るつもりか？」";
+				dialog.text = "残念だが、旦那、今はそんなに多くの奴隷はいらねえんだ。鉱山が今必要としているのは "+FindRussianQtyString(int(location.quest.slaves.qty))+"「そんなにたくさん売るつもりか？」";
 				link.l1 = "「ああ、もちろんだ！」";
 				link.l1.go = "slaves_max";
 				link.l2 = "ふむ……まあ、俺はそうじゃねえな。";
@@ -136,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "素晴らしい。彼らを町の門まで連れてくるよう命じてください。私の部下を迎えに行かせます。";
 			link.l1 = "心配するな、旦那。奴隷たちはちゃんと時間通りに届けるぜ。すぐに必要な指示を出しておく。";
 			link.l1.go = "slaves_calk";
@@ -153,7 +152,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

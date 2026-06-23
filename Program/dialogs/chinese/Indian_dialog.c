@@ -467,7 +467,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "我丈夫塔戈法是部落里最好的猎人。 哦-哎! " + npchar.name+ "为丈夫感到骄傲。 " + npchar.name+ "经常和塔戈法一起去丛林。 走得很远。 塔戈法知道西班牙定居点在哪里。 ";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "塔戈法知道去西班牙人称为梅里达的城市的路吗? ";
 					link.l1.go = "hayamee_1";
@@ -482,7 +482,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("我丈夫不去丛林, 海洋之子。 他捕鱼。 是个好渔夫, 哦-哎! ", "我丈夫是个好猎人, 哦-哎, 但他不深入丛林。 "), RandPhraseSimple("美洲虎在狩猎中伤了我丈夫。 现在他坐在村子里, 制作箭头, 哦-哎! ", "六个月前, 三个卡蓬人袭击了我丈夫。 现在他不离开村子太远去打猎。 再也不! 哦-哎! "));
-				link.l1 = LinkRandPhrase("可惜... ", "太糟了... ", "真遗憾... "));
+				link.l1 = LinkRandPhrase("可惜... ", "太糟了... ", "真遗憾... ");
 				link.l1.go = "exit";
 			}
 		break;
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			dialog.text = "不, 亚拉瑙伊。 白皮肤从不遵守诺言。 白皮肤说话 - 话语立即飞入虚空。 卡蓬人会杀了塔戈法, 然后来到我们的村庄, 杀死洛科诺人。 ";
 			link.l1 = "你认为这些卡蓬人是你唯一需要担心的吗? 你大错特错了... ";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("印第安人不尊重你 " + stf(pchar.questTemp.Indian.relation) + "/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("印第安人不尊重你 " + float(pchar.questTemp.Indian.relation) + "/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -529,7 +529,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "洛科诺人不信任雅拉瑙伊。 雅拉瑙伊欺骗印第安人, 让印第安人成为奴隶。 但洛科诺人听说了你的名字, 白皮肤。 我信任你。 明天日落后来吧, 海洋之子。 我会和塔戈法在那间小屋里。 我会问他是否和你一起去。 ";
 			link.l1 = "告诉塔戈法我会给他我最漂亮的手枪。 给你我有很多珠宝。 ";
 			link.l1.go = "hayamee_2";
-			notification("印第安人尊重你 " + stf(pchar.questTemp.Indian.relation) + "/40", "None");
+			notification("印第安人尊重你 " + float(pchar.questTemp.Indian.relation) + "/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

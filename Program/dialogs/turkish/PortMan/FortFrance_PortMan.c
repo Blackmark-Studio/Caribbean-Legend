@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Jason „олго и счастливо
 		case "LH_letter":
 			dialog.text = "Evet, haklısınız - bir zarf var. İşte burada, ama önce teslimat ücreti olarak on iki bin gümüş peso ödemeniz gerekiyor.";
-			if (sti(pchar.money) >= 12000)
+			if (int(pchar.money) >= 12000)
 			{
 				link.l1 = "Her zaman ticaretinizin aslında hırsızlıktan ibaret olduğunu düşünürdüm, ama demek ki yanılmışım, hm. Lütfen, işte paranız.";
 				link.l1.go = "LH_letter_1";

@@ -8,6 +8,12 @@ condition_mushket_indian
 라이브러리에
 Caribbean Legend: Age of Pirates가 있으면 이 아이템이 고리대금업자에게 나타납니다
 }
+condition_nocturlabe
+{
+Un regalo gratuito per la comunità.
+ Cercatelo in vendita presso gli usurai.
+ Grazie per giocare!
+}
 noRewardYetMessage
 {
 이 보상은 아직 제공되지 않습니다.

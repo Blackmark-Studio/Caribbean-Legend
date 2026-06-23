@@ -33,8 +33,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginCap_2":
-			int MCparam = (7-sti(RealShips[sti(pchar.ship.type)].Class))*100+sti(pchar.ship.Crew.Morale)+sti(pchar.Ship.Crew.Exp.Sailors)+sti(pchar.Ship.Crew.Exp.Cannoners)+sti(pchar.Ship.Crew.Exp.Soldiers);
-			int NPCparam = (7-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
+			int MCparam = (7-int(RealShips[int(pchar.ship.type)].Class))*100+int(pchar.ship.Crew.Morale)+int(pchar.Ship.Crew.Exp.Sailors)+int(pchar.Ship.Crew.Exp.Cannoners)+int(pchar.Ship.Crew.Exp.Soldiers);
+			int NPCparam = (7-int(RealShips[int(npchar.ship.type)].Class))*100+int(npchar.ship.Crew.Morale)+int(npchar.Ship.Crew.Exp.Sailors)+int(npchar.Ship.Crew.Exp.Cannoners)+int(npchar.Ship.Crew.Exp.Soldiers);
 			if (MCparam > NPCparam)//отдаст сам
 			{
 				dialog.text = "O zaman başka seçeneğim yok. Mürettebatımın kaderi benim için bir adamın kaderinden daha değerli. Ama bu kadar kolay kurtulamayacaksın! Bunu asla unutmayacağım!";
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.Dialog.CurrentNode = "MarginCap_repeat";
 			//отдаем пассажира
-			sld = GetCharacter(NPC_GenerateCharacter("MarginPass", pchar.GenQuest.Marginpassenger.model, pchar.GenQuest.Marginpassenger.sex, pchar.GenQuest.Marginpassenger.ani, 2, sti(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("MarginPass", pchar.GenQuest.Marginpassenger.model, pchar.GenQuest.Marginpassenger.sex, pchar.GenQuest.Marginpassenger.ani, 2, int(pchar.GenQuest.Marginpassenger.Nation), -1, true, "quest"));
 			sld.Dialog.Filename = "Quest\Marginpassenger.c";
 			sld.Dialog.currentnode = "MarginPass";
 			sld.name = pchar.GenQuest.Marginpassenger.q1Name;
@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 			npchar.Abordage.Enable = false; // запрет абордажа
 			npchar.ShipEnemyDisable = true;
 			npchar.AlwaysFriend = true;
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), -1);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), -1);
 		break;
 		
 		case "MarginCap_4":
@@ -74,9 +74,9 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "MarginCap_repeat";
 			pchar.GenQuest.Marginpassenger.Mustboarding = "true";
 			AddQuestRecord("Marginpassenger", "5");
-			AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")+"Acc")));
+			AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name")+"Acc")));
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), -1);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), -1);
 		break;
 		
 		case "MarginCap_repeat":
@@ -189,8 +189,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginNeed_money_2":
-		iTemp = sti(dialogEditStrings[1]);
-		int iSum = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*5*stf(pchar.GenQuest.Marginpassenger.Chance));
+		iTemp = int(dialogEditStrings[1]);
+		int iSum = int(int(pchar.GenQuest.Marginpassenger.Dublon)*5*float(pchar.GenQuest.Marginpassenger.Chance));
 		if (iTemp <= 0)
 		{
 			dialog.text = "Çok komik. Peki, şakanın gerçekten komik olduğunu varsayalım. Hoşça kal!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("MarginPass");
 			RemovePassenger(Pchar, sld);
 			sld.lifeday = 0;
-			iTemp = sti(dialogEditStrings[1]);
+			iTemp = int(dialogEditStrings[1]);
 			TakeNItems(pchar, "gold_dublon", iTemp);
 			AddQuestRecord("Marginpassenger", "9");
 			AddQuestUserData("Marginpassenger", "sSum", iTemp);
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("MarginPass");
 			RemovePassenger(Pchar, sld);
 			sld.lifeday = 0;
-			iTemp = sti(dialogEditStrings[1])*500;
+			iTemp = int(dialogEditStrings[1])*500;
 			AddMoneyToCharacter(pchar, iTemp);
 			AddQuestRecord("Marginpassenger", "10");
 			AddQuestUserData("Marginpassenger", "sSum", FindRussianMoneyString(iTemp));
@@ -334,7 +334,7 @@ void ProcessDialogEvent()
 			else AddQuestRecord("Marginpassenger", "4");
 			AddQuestUserData("Marginpassenger", "sName1", pchar.GenQuest.Marginpassenger.q1Name);
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName);
-			AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")+"Acc")));
+			AddQuestUserData("Marginpassenger", "sShipType", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name")+"Acc")));
 		break;
 		
 		case "Exit":

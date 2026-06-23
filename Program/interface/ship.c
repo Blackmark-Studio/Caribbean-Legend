@@ -29,7 +29,7 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	// belamour корабль из журнала -->
 	if(CheckAttribute(pchar,"SystemInfo.ShowShip"))
 	{
-		int chrIdx = sti(pchar.SystemInfo.ShowShip);
+		int chrIdx = int(pchar.SystemInfo.ShowShip);
 		xi_refCharacter = GetCharacter(chrIdx);
 	}
 	else
@@ -93,11 +93,11 @@ void InitInterface_R(string iniName, ref _chr) // _chr нужно для чит�
 	OnShipScrollChange();
 	sMessageMode = "";
 	ref chref = GetMainCharacter();
-	curNationIdx = sti(chref.nation);
+	curNationIdx = int(chref.nation);
     SetNewNation(0, &curNationIdx);
 
 	SetNodeUsing("SHIP_LOCATION_PICTURE", bBettaTestMode);
-	SetUseTrigger("SHIP_LOCATION_PICTURE", bBettaTestMode)
+	SetUseTrigger("SHIP_LOCATION_PICTURE", bBettaTestMode);
 	if (!bBettaTestMode) return;
 }
 
@@ -444,12 +444,12 @@ void FillShipsScroll()
 		if(cn != -1)
 		{
 			AddShipPictureToList("SHIPS_SCROLL.ImagesGroup", GetCharacter(cn));
-			iShipType = sti(characters[cn].ship.type);
+			iShipType = int(characters[cn].ship.type);
 			if(iShipType != SHIP_NOTUSED)
 			{
 				ref realShip = GetRealShip(iShipType);
 				attributeName = "pic" + (m+1);
-				iShipType = sti(RealShips[iShipType].basetype);
+				iShipType = int(RealShips[iShipType].basetype);
 				shipName = ShipsTypes[iShipType].Name;
 
 				GameInterface.SHIPS_SCROLL.(attributeName).character = cn;
@@ -483,14 +483,14 @@ void ProcessFrame()
 	string sNode = GetCurrentNode();
 	if(sNode == "SHIPS_SCROLL")
 	{
-		if(sti(GameInterface.SHIPS_SCROLL.current)!= nCurScrollNum)
+		if(int(GameInterface.SHIPS_SCROLL.current)!= nCurScrollNum)
 		{
 			DeleteAttribute(&GameInterface, "TABLE_LIST.BackUp");
-			nCurScrollNum = sti(GameInterface.SHIPS_SCROLL.current);
+			nCurScrollNum = int(GameInterface.SHIPS_SCROLL.current);
 
 			attributeName = "pic" + (nCurScrollNum+1);
 
-			iCharacter = sti(GameInterface.SHIPS_SCROLL.(attributeName).character);
+			iCharacter = int(GameInterface.SHIPS_SCROLL.(attributeName).character);
 
 			if(iCharacter > 0)
 			{
@@ -502,7 +502,7 @@ void ProcessFrame()
 				{
 					shipIndex= 0;
 				}
-				if (sti(xi_refCharacter.ship.type) == SHIP_NOTUSED) 
+				if (int(xi_refCharacter.ship.type) == SHIP_NOTUSED)
 				{
 					shipIndex= -1;
 				}
@@ -546,8 +546,8 @@ void OnShipScrollChange()
 	Table_Clear("TABLE_OTHER", false, true, false);
 	Table_Clear("TABLE_CREW", false, true, false);
 	//Ship info window
-	SetFormatedText("Money_TEXT", MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER));
-	int iShip = sti(xi_refCharacter.ship.type);
+	SetFormatedText("Money_TEXT", MakeMoneyShow(int(pchar.Money), MONEY_SIGN,MONEY_DELIVER));
+	int iShip = int(xi_refCharacter.ship.type);
 	
 	SetNodeUsing("CREW_PARTITION", false);
 	SetNodeUsing("FLAGPIC", false);
@@ -564,7 +564,7 @@ void OnShipScrollChange()
 	    RefreshCharacterSkillExpRate(xi_refCharacter);
 	    // оптимизация скилов <--
 	    
-		if (CheckAttribute(xi_refCharacter, "Ship.Cargo.RecalculateCargoLoad") && sti(xi_refCharacter.Ship.Cargo.RecalculateCargoLoad))
+		if (CheckAttribute(xi_refCharacter, "Ship.Cargo.RecalculateCargoLoad") && int(xi_refCharacter.Ship.Cargo.RecalculateCargoLoad))
 		{
 			RecalculateCargoLoad(xi_refCharacter);
 			xi_refCharacter.Ship.Cargo.RecalculateCargoLoad = 0;
@@ -598,9 +598,9 @@ void OnShipScrollChange()
 			iColor = ARGB_Color("white");
 		}
 		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREW_QTY", 8,-1,iColor);
-		SetNewGroupPicture("CREW_MORALE_PIC", "MORALE_SMALL", GetMoraleGroupPicture(stf(xi_refCharacter.ship.crew.morale)));
-		SetFormatedText("CREW_MORALE_TEXT", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(sti(xi_refCharacter.Ship.crew.morale))));
-		if (sti(xi_refCharacter.Ship.crew.morale) < MORALE_MAX && GetCrewQuantity(xi_refCharacter) > 0)
+		SetNewGroupPicture("CREW_MORALE_PIC", "MORALE_SMALL", GetMoraleGroupPicture(float(xi_refCharacter.ship.crew.morale)));
+		SetFormatedText("CREW_MORALE_TEXT", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(int(xi_refCharacter.Ship.crew.morale))));
+		if (int(xi_refCharacter.Ship.crew.morale) < MORALE_MAX && GetCrewQuantity(xi_refCharacter) > 0)
 		{
 			SetSelectable("CREW_MORALE_BUTTON", true);
 		}
@@ -613,7 +613,7 @@ void OnShipScrollChange()
 		//BAR_CrewMoral
 		GameInterface.StatusLine.BAR_CrewMoral.Max   = 100;
     	GameInterface.StatusLine.BAR_CrewMoral.Min   = 0;
-    	GameInterface.StatusLine.BAR_CrewMoral.Value = sti(xi_refCharacter.Ship.crew.morale);
+    	GameInterface.StatusLine.BAR_CrewMoral.Value = int(xi_refCharacter.Ship.crew.morale);
     	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_CrewMoral", 0);
 		
     	if (xi_refCharacter.id == pchar.id)
@@ -680,7 +680,7 @@ void ShowInfoWindow()
 	int iShip;
 	ref refBaseShip;
 	float fRepairPercent;
-	iShip = sti(xi_refCharacter.ship.type);
+	iShip = int(xi_refCharacter.ship.type);
 	refBaseShip = GetRealShip(iShip);
 	aref tuning;
 	makearef(tuning, refBaseShip.tuning.modifiers);
@@ -710,7 +710,7 @@ void ShowInfoWindow()
 		case "SHIPS_SCROLL":
 			if (shipIndex != -1)
 			{
-			    iShip = sti(xi_refCharacter.ship.type);
+			    iShip = int(xi_refCharacter.ship.type);
 			    refBaseShip = GetRealShip(iShip);
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText1 = GetShipDescr(refBaseShip);
@@ -735,37 +735,37 @@ void ShowInfoWindow()
 		
 		case "TABLE_OTHER":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1));
 			sRow = "tr"+nChooseNum;
 			if (nChooseNum < 1) return;
 			sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
 		    sText1  = GetConvertStr(GameInterface.TABLE_OTHER.(sRow).UserData.ID, "ShipsDescribe.txt");
-		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "CannonType" && sti(xi_refCharacter.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "CannonType" && int(xi_refCharacter.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
 		    {
-		    	ref Cannon = GetCannonByType(sti(xi_refCharacter.Ship.Cannons.Type));
-		    	sText1 = sText1 + NewStr() + "***" + NewStr() + XI_ConvertString("Type") +": " + XI_ConvertString(GetCannonType(sti(xi_refCharacter.Ship.Cannons.Type)));
-		    	sText1 = sText1 + NewStr() + XI_ConvertString("Caliber") + ": " + XI_ConvertString("caliber" + GetCannonCaliber(sti(xi_refCharacter.Ship.Cannons.Type)));
-		    	sText1 = sText1 + NewStr() + XI_ConvertString("Fire range2") + ": "  + sti(Cannon.FireRange);
-		    	sText1 = sText1 + NewStr() + XI_ConvertString("CannonsDamage") + ": x" + FloatToString(stf(Cannon.DamageMultiply), 1);
-		    	sText1 = sText1 + NewStr() + XI_ConvertString("CannonsTime") + ": " + sti(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
-		    	sText1 = sText1 + NewStr() + XI_ConvertString("Weight") + ": " + sti(Cannon.Weight) + " " + XI_ConvertString("cwt") + NewStr() + "***";
+		    	ref Cannon = GetCannonByType(int(xi_refCharacter.Ship.Cannons.Type));
+		    	sText1 = sText1 + NewStr() + "***" + NewStr() + XI_ConvertString("Type") +": " + XI_ConvertString(GetCannonType(int(xi_refCharacter.Ship.Cannons.Type)));
+		    	sText1 = sText1 + NewStr() + XI_ConvertString("Caliber") + ": " + XI_ConvertString("caliber" + GetCannonCaliber(int(xi_refCharacter.Ship.Cannons.Type)));
+		    	sText1 = sText1 + NewStr() + XI_ConvertString("Fire range2") + ": "  + int(Cannon.FireRange);
+		    	sText1 = sText1 + NewStr() + XI_ConvertString("CannonsDamage") + ": x" + FloatToString(float(Cannon.DamageMultiply), 1);
+		    	sText1 = sText1 + NewStr() + XI_ConvertString("CannonsTime") + ": " + int(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
+		    	sText1 = sText1 + NewStr() + XI_ConvertString("Weight") + ": " + int(Cannon.Weight) + " " + XI_ConvertString("cwt") + NewStr() + "***";
 		    	
 		    	sGroup = "GOODS";
-				sGroupPicture = GetCannonType(sti(xi_refCharacter.Ship.Cannons.Type)) + "_" + GetCannonCaliber(sti(xi_refCharacter.Ship.Cannons.Type));
+				sGroupPicture = GetCannonType(int(xi_refCharacter.Ship.Cannons.Type)) + "_" + GetCannonCaliber(int(xi_refCharacter.Ship.Cannons.Type));
 		    }
-		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew" && sti(xi_refCharacter.ship.type) != SHIP_NOTUSED)
+		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew" && int(xi_refCharacter.ship.type) != SHIP_NOTUSED)
 			{
 				sText2 = XI_ConvertString("other_crew_descr");
 				sText2 = sText2 + NewStr() + XI_ConvertString("other_crew_descr_max") + ": " + GetMaxCrewQuantity(xi_refCharacter);
 			} 
 			// процент ремонта
-			if (sti(xi_refCharacter.ship.type) != SHIP_NOTUSED)
+			if (int(xi_refCharacter.ship.type) != SHIP_NOTUSED)
 			{
 				if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Hull")
 				{
 					if (GetHullPercent(xi_refCharacter) < 100.0 )
 					{
-						sText2 = XI_ConvertString("RepairShipShort") + " " + FloatToString(GetHullRepairDay(xi_refCharacter, false),2) + XI_ConvertString("RepairShip_descr") + makeint(GetHullRepairDay(xi_refCharacter, true)) + XI_ConvertString("RepairShip_descr_planks");
+						sText2 = XI_ConvertString("RepairShipShort") + " " + FloatToString(GetHullRepairDay(xi_refCharacter, false),2) + XI_ConvertString("RepairShip_descr") + int(GetHullRepairDay(xi_refCharacter, true)) + XI_ConvertString("RepairShip_descr_planks");
 					}
 					sText3 = xiStr("Hull") + ": " + GetCurrentShipHP(xi_refCharacter) +  " / " + GetCharacterShipHP(xi_refCharacter) + " (" + GetCharacterShipBaseHP(xi_refCharacter) + ")";
 				}
@@ -773,15 +773,15 @@ void ShowInfoWindow()
 				{
 					if (GetSailPercent(xi_refCharacter) < GetAllSailsDamagePercent(xi_refCharacter) )
 					{
-						sText2 = XI_ConvertString("RepairShipShort") + " " + FloatToString(GetSailRepairDay(xi_refCharacter, false),2) + XI_ConvertString("RepairShip_descr") + makeint(GetSailRepairDay(xi_refCharacter, true))+ XI_ConvertString("RepairShip_descr_canvas");
+						sText2 = XI_ConvertString("RepairShipShort") + " " + FloatToString(GetSailRepairDay(xi_refCharacter, false),2) + XI_ConvertString("RepairShip_descr") + int(GetSailRepairDay(xi_refCharacter, true))+ XI_ConvertString("RepairShip_descr_canvas");
 					}
 					sText3 = xiStr("Sails") + ": " + FloatToString(GetSailPercent(xi_refCharacter), 1) + " %";
 				}
 			}
 			// трюм
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity" && sti(xi_refCharacter.ship.type) != SHIP_NOTUSED)
+			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity" && int(xi_refCharacter.ship.type) != SHIP_NOTUSED)
 			{
-				sText3 = XI_ConvertString("Used") + ": " + FloatToString((stf(GetCargoLoad(xi_refCharacter))  /  stf(GetCargoMaxSpace(xi_refCharacter))) * 100.0, 1)+ " %";
+				sText3 = XI_ConvertString("Used") + ": " + FloatToString((float(GetCargoLoad(xi_refCharacter))  /  float(GetCargoMaxSpace(xi_refCharacter))) * 100.0, 1)+ " %";
 			}
 
 			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Speed") SetModifiersStatText(xi_refCharacter, &tuning, M_SHIP_SPEED, &sText3, "ToHumanModifierPercent", 0.0);
@@ -926,7 +926,7 @@ void ShowItemInfo()
 {
 	if (CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index")) // нет товара вообще
 	{
-	    ShowGoodsInfo(sti(GameInterface.(CurTable).(CurRow).index));
+	    ShowGoodsInfo(int(GameInterface.(CurTable).(CurRow).index));
 		XI_WindowDisable("QTY_WINDOW", false);
 		XI_WindowShow("QTY_WINDOW", true);
 		XI_WindowDisable("MAIN_WINDOW", true);
@@ -940,7 +940,7 @@ void ShowItemInfo()
 		    SetSelectable("QTY_OK_BUTTON", false);
 		}
 		// мины
-	    if (sti(GameInterface.(CurTable).(CurRow).index) == GOOD_POWDER)
+	    if (int(GameInterface.(CurTable).(CurRow).index) == GOOD_POWDER)
 	    {
 	        SetNodeUsing("QTY_BOMB_BUTTON", true);
 	        if (bSeaActive && !bAbordageStarted && GetRemovable(xi_refCharacter))
@@ -985,7 +985,7 @@ void ShowGoodsInfo(int iGoodIndex)
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHolds") + " " + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
-	iUnits  = sti(Goods[iGoodIndex].Units);
+	iUnits  = int(Goods[iGoodIndex].Units);
 	if(checkAttribute(pchar, "ship.cargo.goods." + GoodName + ".isquest"))
 	{
 		string sTradeQ = pchar.ship.cargo.goods.(GoodName).isquest.quantity;
@@ -999,8 +999,8 @@ void ShowGoodsInfo(int iGoodIndex)
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
 	
 	iShipQty = GetCargoGoods(xi_refCharacter, iGoodIndex);
-    SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty))
-    SetFormatedText("QTY_INFO_STORE_QTY", its(GetGoodWeightByType(iGoodIndex, iShipQty)));
+    SetFormatedText("QTY_INFO_SHIP_QTY", string(iShipQty));
+    SetFormatedText("QTY_INFO_STORE_QTY", string(GetGoodWeightByType(iGoodIndex, iShipQty)));
 }
 
 void TransactionOK()
@@ -1008,7 +1008,7 @@ void TransactionOK()
 	int nTradeQuantity;
 	confirmChangeQTY_EDIT();
 	
-	nTradeQuantity = sti(GameInterface.qty_edit.str);
+	nTradeQuantity = int(GameInterface.qty_edit.str);
 
     SetCharacterGoods(xi_refCharacter, iCurGoodsIdx, iShipQty);
     
@@ -1030,19 +1030,19 @@ void confirmChangeQTY_EDIT()
 void ChangeQTY_EDIT()
 {
 	int  iWeight;
-	GameInterface.qty_edit.str = abs(sti(GameInterface.qty_edit.str));  // приведение к числу
+	GameInterface.qty_edit.str = abs(int(GameInterface.qty_edit.str));  // приведение к числу
 	
 	string GoodName = goods[iCurGoodsIdx].name;
 	
     // проверка на колво доступное -->
-    if (sti(GameInterface.qty_edit.str) > iShipQty)
+    if (int(GameInterface.qty_edit.str) > iShipQty)
     {
         GameInterface.qty_edit.str = iShipQty;
     }
-    SetFormatedText("QTY_INFO_SHIP_QTY", its(iShipQty - sti(GameInterface.qty_edit.str)))
-	SetFormatedText("QTY_INFO_STORE_QTY", its(GetGoodWeightByType(iCurGoodsIdx, (iShipQty - sti(GameInterface.qty_edit.str)))));
+    SetFormatedText("QTY_INFO_SHIP_QTY", string(iShipQty - int(GameInterface.qty_edit.str)));
+	SetFormatedText("QTY_INFO_STORE_QTY", string(GetGoodWeightByType(iCurGoodsIdx, (iShipQty - int(GameInterface.qty_edit.str)))));
 	// прикидываем место в трюме
-	iWeight = sti(GameInterface.qty_edit.str);
+	iWeight = int(GameInterface.qty_edit.str);
 	SetCharacterGoods(xi_refCharacter, iCurGoodsIdx, iShipQty);
 	if (iWeight > 0)
 	{
@@ -1068,15 +1068,15 @@ void ADD_ALL_BUTTON()  // купить все
 void REMOVE_BUTTON()  // продать
 {
 	if (!GetRemovable(xi_refCharacter)) return;
-	GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + iUnits);
+	GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + iUnits);
 	ChangeQTY_EDIT();
 }
 
 void ADD_BUTTON()  // купить
 {
 	if (!GetRemovable(xi_refCharacter)) return;
-	GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - iUnits);
-	if (sti(GameInterface.qty_edit.str) < 0) GameInterface.qty_edit.str = 0;
+	GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - iUnits);
+	if (int(GameInterface.qty_edit.str) < 0) GameInterface.qty_edit.str = 0;
 	ChangeQTY_EDIT();
 }
 
@@ -1092,9 +1092,9 @@ void DropGoodsToSeaFromInterface(int iGoodIndex, int iQuantity)
 		RemoveCharacterGoods(xi_refCharacter, iGoodIndex, iQuantity);
 		if (bSeaActive && !bAbordageStarted)  // море, но не каюта
 		{
-			iQuantity = iQuantity / sti(Goods[iGoodIndex].Units);
+			iQuantity = iQuantity / int(Goods[iGoodIndex].Units);
 	
-			int iSwimQuantity = makeint(iQuantity/3 + rand(makeint(iQuantity/3)) + rand(makeint(iQuantity/3)));
+			int iSwimQuantity = int(iQuantity/3 + rand(int(iQuantity/3)) + rand(int(iQuantity/3)));
 	
 			if(iSwimQuantity < 1)
 			{
@@ -1106,7 +1106,7 @@ void DropGoodsToSeaFromInterface(int iGoodIndex, int iQuantity)
 	        
 			if (CheckAttribute(&Goods[iGoodIndex], "Swim")) 
 			{ 
-				float fTime = stf(Goods[iGoodIndex].Swim.Time);
+				float fTime = float(Goods[iGoodIndex].Swim.Time);
 				string sModel = Goods[iGoodIndex].Swim.Model;
 	
 				fTime = fTime + (frnd() - 0.5) * fTime / 2.0;
@@ -1123,7 +1123,7 @@ void ShipChange()
 	if(CheckAttribute(pchar,"SystemInfo.ShowShip")) return;
 	bool bOk;
 	bool sOk = false;
-	if (xi_refCharacter.id != pchar.id && sti(pchar.ship.type) != SHIP_NOTUSED)
+	if (xi_refCharacter.id != pchar.id && int(pchar.ship.type) != SHIP_NOTUSED)
 	{
 		SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChange1")); // Перейти в режим обмена между кораблями?
 		bOk = !bSeaActive && LAi_grp_alarmactive;
@@ -1142,7 +1142,7 @@ void ShipChange()
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChange4")); // Обмен с кораблём этого компаньона невозможен
 			sOk = true;
 		}
-		if (sti(pchar.ship.type) == SHIP_NOTUSED)
+		if (int(pchar.ship.type) == SHIP_NOTUSED)
 		{
 			SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("ShipChange5")); // Обмен невозможен. У героя нет корабля
 			sOk = true;
@@ -1227,7 +1227,7 @@ void ShowMoraleMessage()
 	SetFormatedText("REMOVE_WINDOW_CAPTION", XI_ConvertString("RaiseMorale"));
 	SetFormatedText("REMOVE_WINDOW_TEXT", XI_ConvertString("RaiseMoraleMoney") + FindRussianMoneyString(sum));
 	
-	if (sum <= sti(pchar.money))
+	if (sum <= int(pchar.money))
 	{
 		SetSelectable("REMOVE_ACCEPT_OFFICER", true);
 	}
@@ -1252,7 +1252,7 @@ void ShowCannonsMenu()
     
     bool bOk  = !bSeaActive && LAi_grp_alarmactive;
     bool bOk2 = bAbordageStarted && !bCabinStarted; // в абордаже не жать пушки
-	bool bOk3 = bDisableMapEnter && !CheckAttribute(pchar, "GenQuest.MapClosedNoBattle") // Jason 020712
+	bool bOk3 = bDisableMapEnter && !CheckAttribute(pchar, "GenQuest.MapClosedNoBattle"); // Jason 020712
 	if (bOk3 || bOk || bOk2)
     { // идёт бой, запрет смены орудий
     	SetSelectable("CANNONS_OK", false);
@@ -1265,21 +1265,21 @@ void ShowCannonsMenu()
 	{
 		SetSelectable("CANNONS_OK", false);
 	}
-    DeleteAttribute(&GameInterface, "CANNONS_TABLE.BackUp")
+    DeleteAttribute(&GameInterface, "CANNONS_TABLE.BackUp");
     CannonsMenuRefresh();
 	currentCannonsMode = 1;
 }
 void CannonsMenuRefresh()
 {
-	int idx = GetCannonGoodsIdxByType(sti(xi_refCharacter.Ship.Cannons.Type));
+	int idx = GetCannonGoodsIdxByType(int(xi_refCharacter.Ship.Cannons.Type));
 	if (idx != -1)
 	{
 	    SetNewGroupPicture("CANNONS_PIC", "GOODS", Goods[idx].Name);
 		SetFormatedText("CANNONS_TEXT", XI_ConvertString(Goods[idx].Name));
-		SetFormatedText("CANNONS_QTY_F", its(GetBortCannonsQty(xi_refCharacter, "cannonf")));
-		SetFormatedText("CANNONS_QTY_B", its(GetBortCannonsQty(xi_refCharacter, "cannonb")));
-		SetFormatedText("CANNONS_QTY_R", its(GetBortCannonsQty(xi_refCharacter, "cannonr")));
-		SetFormatedText("CANNONS_QTY_L", its(GetBortCannonsQty(xi_refCharacter, "cannonl")));
+		SetFormatedText("CANNONS_QTY_F", string(GetBortCannonsQty(xi_refCharacter, "cannonf")));
+		SetFormatedText("CANNONS_QTY_B", string(GetBortCannonsQty(xi_refCharacter, "cannonb")));
+		SetFormatedText("CANNONS_QTY_R", string(GetBortCannonsQty(xi_refCharacter, "cannonr")));
+		SetFormatedText("CANNONS_QTY_L", string(GetBortCannonsQty(xi_refCharacter, "cannonl")));
 		/// всего GetCannonsNum(xi_refCharacter)
 	}
 	else
@@ -1366,10 +1366,10 @@ void CanonsSetAll(ref chr)
     //новый калибр назначить
     if (CurTable == "CANNONS_TABLE" && CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index"))
     {
-		chr.Ship.Cannons.Type = sti(Goods[sti(GameInterface.(CurTable).(CurRow).index)].CannonIdx);
+		chr.Ship.Cannons.Type = int(Goods[int(GameInterface.(CurTable).(CurRow).index)].CannonIdx);
 	}
     // потом все выставить раскидав по бортам
-    int idx = GetCannonGoodsIdxByType(sti(chr.Ship.Cannons.Type));
+    int idx = GetCannonGoodsIdxByType(int(chr.Ship.Cannons.Type));
     int fb, lb, rb, bb;
     int qty;
     
@@ -1443,15 +1443,15 @@ void FillCannonsTable()
 			if (qty <= 0) continue; // только не нули
 
 	        if (!CheckAttribute(&Goods[i], "type")) continue;
-	        if (sti(Goods[i].type) != T_TYPE_CANNONS) continue;
+	        if (int(Goods[i].type) != T_TYPE_CANNONS) continue;
 
-	        if (GetCannonCaliberNominal(sti(Goods[i].CannonIdx)) > GetMaximumCaliber(xi_refCharacter)) continue;
+	        if (GetCannonCaliberNominal(int(Goods[i].CannonIdx)) > GetMaximumCaliber(xi_refCharacter)) continue;
 			GameInterface.CANNONS_TABLE.(row).index = i;
 
 			GameInterface.CANNONS_TABLE.(row).td2.str = qty;
-			GameInterface.CANNONS_TABLE.(row).td3.str = sti(Goods[i].FireRange);
-			GameInterface.CANNONS_TABLE.(row).td4.str = "x"+FloatToString(stf(Goods[i].DamageMultiply), 1);
-			GameInterface.CANNONS_TABLE.(row).td5.str = sti(Goods[i].ReloadTime);
+			GameInterface.CANNONS_TABLE.(row).td3.str = int(Goods[i].FireRange);
+			GameInterface.CANNONS_TABLE.(row).td4.str = "x"+FloatToString(float(Goods[i].DamageMultiply), 1);
+			GameInterface.CANNONS_TABLE.(row).td5.str = int(Goods[i].ReloadTime);
 
 	        GameInterface.CANNONS_TABLE.(row).td1.icon.group = "GOODS";
 			GameInterface.CANNONS_TABLE.(row).td1.icon.image = sGood;
@@ -1474,7 +1474,7 @@ void ShowPartitionWindow()
 
 	if (isMainCharacterPatented())
 	{
-		sTitul = GetAddress_FormTitle(sti(Items[sti(pchar.EquipedPatentId)].Nation), sti(Items[sti(pchar.EquipedPatentId)].TitulCur));
+		sTitul = GetAddress_FormTitle(int(Items[int(pchar.EquipedPatentId)].Nation), int(Items[int(pchar.EquipedPatentId)].TitulCur));
 //		HowGower = Partition_GetSetting("Part_Gower") + (MOD_SKILL_ENEMY_RATE);
 	}
 	
@@ -1483,9 +1483,9 @@ void ShowPartitionWindow()
 	{
 		str += XI_ConvertString("PrevPaymentDate") + pchar.paymentdate + NewStr();
 	}	
-	str += sTitul + " " + GetFullName(pchar) + NewStr() + XI_ConvertString("Rank") + ": " + sti(pchar.rank) + NewStr();
+	str += sTitul + " " + GetFullName(pchar) + NewStr() + XI_ConvertString("Rank") + ": " + int(pchar.rank) + NewStr();
 	str += XI_ConvertString("m_Complexity") + ": " + GetLevelComplexity(MOD_SKILL_ENEMY_RATE) + NewStr() +
-			XI_ConvertString("OurMoney") + FindRussianMoneyString(sti(pchar.money)) + NewStr() + "*****" + NewStr();
+			XI_ConvertString("OurMoney") + FindRussianMoneyString(int(pchar.money)) + NewStr() + "*****" + NewStr();
     str += XI_ConvertString("CurMonthParts") + NewStr() + XI_ConvertString("CaptainPart") + GetPartitionAmount("Partition.MonthPart.Hero") + NewStr() +
 		  XI_ConvertString("OfficersPart") + GetPartitionAmount("Partition.MonthPart.Officers") + NewStr() +
 		  XI_ConvertString("SailorsPart") + GetPartitionAmount("Partition.MonthPart.Crew") + NewStr() + 		  
@@ -1498,7 +1498,7 @@ void ShowPartitionWindow()
     SetSelectable("PARTITION_OK", false);
 	if (GetPartitionAmount("Partition.MonthPart") > 0 || GetPartitionAmount("CrewPayment") > 0)
 	{
-		if (sti(Pchar.Money) > 0)
+		if (int(Pchar.Money) > 0)
 		{
 			SetSelectable("PARTITION_OK", true);
 		}
@@ -1528,9 +1528,9 @@ void DoPartitionPay()
 	if (GetPartitionAmount("CrewPayment") > 0)
 	{
 	    sum = GetPartitionAmount("CrewPayment");
-	    if (sti(Pchar.Money) < sum) sum = sti(Pchar.Money);
-        Pchar.CrewPayment = sti(Pchar.CrewPayment) - sum;
-        if (sti(Pchar.CrewPayment) <= 0) DeleteAttribute(Pchar, "CrewPayment");
+	    if (int(Pchar.Money) < sum) sum = int(Pchar.Money);
+        Pchar.CrewPayment = int(Pchar.CrewPayment) - sum;
+        if (int(Pchar.CrewPayment) <= 0) DeleteAttribute(Pchar, "CrewPayment");
 	}
 	else
 	{
@@ -1538,8 +1538,8 @@ void DoPartitionPay()
 		if (GetPartitionAmount("Partition.MonthPart") > 0)
 		{
 		    sum = GetPartitionAmount("Partition.MonthPart");
-		    if (sti(Pchar.Money) < sum) sum = sti(Pchar.Money);
-	        Pchar.Partition.MonthPart = sti(Pchar.Partition.MonthPart) - sum;
+		    if (int(Pchar.Money) < sum) sum = int(Pchar.Money);
+	        Pchar.Partition.MonthPart = int(Pchar.Partition.MonthPart) - sum;
 	        AddCrewMorale(xi_refCharacter, 2);
 			ChangeCharacterComplexReputation(pchar,"authority", 2); 
 		}
@@ -1547,14 +1547,14 @@ void DoPartitionPay()
 		if (GetPartitionAmount("Partition.MonthPart.Gower") > 0)
 		{
 		    sum_gow = GetPartitionAmount("Partition.MonthPart.Gower");
-		    if (sti(Pchar.Money) < sum_gow) sum_gow = sti(Pchar.Money);
-	        Pchar.Partition.MonthPart.Gower = sti(Pchar.Partition.MonthPart.Gower) - sum_gow;
+		    if (int(Pchar.Money) < sum_gow) sum_gow = int(Pchar.Money);
+	        Pchar.Partition.MonthPart.Gower = int(Pchar.Partition.MonthPart.Gower) - sum_gow;
 		}
 	}
 	pchar.paymentdate = GetDateString() + " " + GetTimeString();
 	AddMoneyToCharacter(Pchar, - (sum + sum_gow));
 	Statistic_AddValue(pchar, "PartitionPay", sum + sum_gow);
-	if(sum >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, makefloat(sum) / 3000.0);
+	if(sum >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, float(sum) / 3000.0);
 	OnShipScrollChange();
 	ExitPartitionWindow();
 }
@@ -1562,7 +1562,7 @@ void DoPartitionPay()
 int GetPartitionAmount(string _param)
 {
     if (!CheckAttribute(Pchar, _param)) return 0;
-    return sti(Pchar.(_param));
+    return int(Pchar.(_param));
 }
 
 
@@ -1574,7 +1574,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	string  row;
 	float   fTmp;
 
-    int iShip = sti(_chr.ship.type);
+    int iShip = int(_chr.ship.type);
 	ref refBaseShip = GetRealShip(iShip);
 		
     GameInterface.(_tabName).select = 0;
@@ -1594,7 +1594,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr1.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr1.td1.icon.image = "Hull";
 	GameInterface.(_tabName).tr1.td2.str = XI_ConvertString("Hull");
-	GameInterface.(_tabName).tr1.td3.str = sti(_chr.ship.hp) + " / " + sti(refBaseShip.hp);
+	GameInterface.(_tabName).tr1.td3.str = int(_chr.ship.hp) + " / " + int(refBaseShip.hp);
     if (!CheckAttribute(&RealShips[iShip], "Tuning.HP")) 
 	{
 		GameInterface.(_tabName).tr1.td3.color = ARGB_Color("white");
@@ -1608,7 +1608,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr2.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr2.td1.icon.image = "Sails";
 	GameInterface.(_tabName).tr2.td2.str = XI_ConvertString("Sails");
-	GameInterface.(_tabName).tr2.td3.str = sti(_chr.ship.sp) + " / " + sti(refBaseShip.sp);
+	GameInterface.(_tabName).tr2.td3.str = int(_chr.ship.sp) + " / " + int(refBaseShip.sp);
 
     GameInterface.(_tabName).tr4.UserData.ID = "Speed";
 	GameInterface.(_tabName).tr4.td1.icon.group = "EQUIP_ICONS";
@@ -1638,8 +1638,8 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr5.td2.str = XI_ConvertString("Maneuver");
 	if (IsCompanion(_chr))
 	{
-  		// GameInterface.(_tabName).tr5.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
-  		GameInterface.(_tabName).tr5.td3.str = FloatToString((stf(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
+  		// GameInterface.(_tabName).tr5.td3.str = FloatToString((float(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
+  		GameInterface.(_tabName).tr5.td3.str = FloatToString((float(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
 	}
 	else
 	{
@@ -1689,7 +1689,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr7.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr7.td1.icon.image = "Crew";
 	GameInterface.(_tabName).tr7.td2.str = XI_ConvertString("Crew");
-	GameInterface.(_tabName).tr7.td3.str = GetCrewQuantity(_chr) + " : "+ sti(refBaseShip.MinCrew) +" / " + sti(refBaseShip.OptCrew);	
+	GameInterface.(_tabName).tr7.td3.str = GetCrewQuantity(_chr) + " : "+ int(refBaseShip.MinCrew) +" / " + int(refBaseShip.OptCrew);
 	if (!CheckAttribute(&RealShips[iShip], "Tuning.MaxCrew")) 
 	{
 		GameInterface.(_tabName).tr7.td3.color = ARGB_Color("white");
@@ -1703,7 +1703,7 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr8.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr8.td1.icon.image = "Caliber";
 	GameInterface.(_tabName).tr8.td2.str = XI_ConvertString("sCannons"); //XI_ConvertString("Caliber");
-	GameInterface.(_tabName).tr8.td3.str = XI_ConvertString("caliber" + refBaseShip.MaxCaliber) + " / " + sti(refBaseShip.CannonsQuantity);
+	GameInterface.(_tabName).tr8.td3.str = XI_ConvertString("caliber" + refBaseShip.MaxCaliber) + " / " + int(refBaseShip.CannonsQuantity);
 	
 	if (int(refBaseShip.CannonsQuantity) < int(refBaseShip.CannonsQuantityMax))//   !CheckAttribute(&RealShips[iShip], "Tuning.Cannon")) 
 	{
@@ -1717,13 +1717,13 @@ void SetShipOTHERTable2(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr9.UserData.ID = "CannonType";
 	GameInterface.(_tabName).tr9.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr9.td1.icon.image = "Cannons";
-	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(sti(_chr.Ship.Cannons.Type)) + "s2");
+	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(int(_chr.Ship.Cannons.Type)) + "s2");
 	
-    if (sti(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+    if (int(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
     {
         if(GetCannonsNum(_chr) > 0)
         {
-            GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(sti(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
+            GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(int(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
         }
         else
         {
@@ -1846,7 +1846,7 @@ void SetModifiersStatText(ref chr, ref equipTable, string modifier, ref result, 
 	{
 		source = GetAttributeN(sources, i);
 		string reason = GetAttributeName(source);
-		float value = stf(GetAttributeValue(source));
+		float value = float(GetAttributeValue(source));
 		if (value != 0.0) bonusText += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+value) + NewStr();
 	}
 

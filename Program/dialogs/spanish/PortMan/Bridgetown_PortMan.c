@@ -54,10 +54,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		link.l1 = "Qué lástima. Adiós entonces.";
 		link.l1.go = "exit";
 		npchar.quest.HWICTalked = "true";
-		pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter) + 1;
+		pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter) + 1;
 		AddQuestRecord("Holl_Gambit", "2-9");
 		DelLandQuestMark(npchar);
-		if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
+		if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 		{
 			AddQuestRecord("Holl_Gambit", "2-6");
 			pchar.quest.GotoBridgetownOver.over = "yes"; // снять таймер
@@ -77,9 +77,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok) // проверка на наличие корабля в порту
+		if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok) // проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			pchar.quest.Regata_PU.over = "yes"; // mitrokosta снимаем прерывание
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Sentjons") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
@@ -92,8 +92,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-				pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime()); // истратил ГГ в часах на 1+2+3+4 переход
-				dialog.text = "Puede que hayas notado, capitán, que la ciudad está bajo asedio. Esperamos que los españoles nos ataquen en cualquier momento y estamos movilizando nuestras fuerzas. Pero la regata sigue adelante\nVamos a registrarnos: capitán " + GetFullName(pchar) + ", el barco está, " + pchar.Ship.Name + "... El tiempo de la regata en horas es " + sti(pchar.questTemp.Regata.FourthTransitionTime) + ". Hecho, tu resultado está registrado, puedes continuar tu camino.";
+				pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime()); // истратил ГГ в часах на 1+2+3+4 переход
+				dialog.text = "Puede que hayas notado, capitán, que la ciudad está bajo asedio. Esperamos que los españoles nos ataquen en cualquier momento y estamos movilizando nuestras fuerzas. Pero la regata sigue adelante\nVamos a registrarnos: capitán " + GetFullName(pchar) + ", el barco está, " + pchar.Ship.Name + "... El tiempo de la regata en horas es " + int(pchar.questTemp.Regata.FourthTransitionTime) + ". Hecho, tu resultado está registrado, puedes continuar tu camino.";
 				link.l1 = "Dime mi rango.";
 				link.l1.go = "Regata_info";
 			}
@@ -121,7 +121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				sTemp = "d";
 			if (i == 5)
 				sTemp = "e";
-			if (pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FourthTransitionTime))
+			if (pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FourthTransitionTime))
 			{
 				n++;
 				sName = pchar.questTemp.Regata.AdversaryName.(sTemp);	  // имя ближайшего противника

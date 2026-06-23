@@ -169,7 +169,7 @@ void procQuestSceneCommand()
 	case "TimeWait": // "ssaf"
 		f1 = GetEventData();
 		arTask = PushSceneTask(arCharacter,"TimeWait");
-		arTask.time = MakeInt(f1*1000.0);
+		arTask.time = int(f1*1000.0);
 		return;
 	break;
 	// сделать фэйд экрана и добавить игровое время на заданное число минут (задаем число игровых минут, число типа int)
@@ -194,7 +194,7 @@ void procQuestSceneCommand()
 		return;
 	break;
 	// проиграть звук (задаем имя файла озвучки)
-	case "PlayMusic": // "ssas"
+	case "PlaySound": // "ssas"
 		s1 = GetEventData();
 		arTask = PushSceneTask(arCharacter,"PlaySound");
 		arTask.name = s1;
@@ -230,13 +230,13 @@ void qprocTaskEnd()
 
 	if( locTask == "loopAction" )
 	{
-		PerformLoopAnimation(GetCharacter(sti(arch.index)),taskRef.action);
+		PerformLoopAnimation(GetCharacter(int(arch.index)),taskRef.action);
 		return;
 	}
 
 	if( CheckAttribute(taskRef,"QuestCheck") ) ExecuteQuestCheck(taskRef.QuestCheck);
 
-	if( CheckAttribute(taskRef,"StopTask") && sti(taskRef.StopTask)==true )
+	if( CheckAttribute(taskRef,"StopTask") && int(taskRef.StopTask)==true )
 	{
 		PopBegSceneTask(arch);
 	}
@@ -417,13 +417,13 @@ void StartSceneExecute(aref character)
 	break;
 
 	case "TimeWait":
-		LAi_QuestDelay(QuestNameForChr(character), stf(scnref.time)*0.001);
+		LAi_QuestDelay(QuestNameForChr(character), float(scnref.time)*0.001);
 		return;
 	break;
 
 	case "TimeFade":
 		//WaitNightPause(false);
-		AddTimeToCurrent(0,sti(scnref.time));
+		AddTimeToCurrent(0,int(scnref.time));
 		PostEvent("qprocTaskEnd",1,"a",character); // !!!
 		return;
 	break;
@@ -511,7 +511,7 @@ void ClearOldScenes(ref chref)
 	DeleteAttribute(chref,"SceneTask");
 }
 
-string QuestNameForChr(aref chref)
+string QuestNameForChr(ref chref)
 {
 	string questName;
 	aref arQuestList;
@@ -529,7 +529,7 @@ string QuestNameForChr(aref chref)
 
 ref ARefChrToRef(aref charef)
 {
-	return &Characters[sti(charef.index)];
+	return &Characters[int(charef.index)];
 }
 
 // shooter стреляет в shot, после смерти (возможно фейковой) выполняется квест quest
@@ -537,9 +537,9 @@ void QuestSceneStartShot(ref shooter, ref shot, string consequenceFunc, string q
 	LAi_SetActorTypeNoGroup(shooter);
 	LAi_ActorTurnToCharacter(shooter, shot);
 	SetEventHandler("event_" + shooter.index + "_Shot", "QuestScenePerformShot", 0);
-	PostEvent("event_" + shooter.index + "_Shot", 1, "ls", sti(shooter.index), quest);
+	PostEvent("event_" + shooter.index + "_Shot", 1, "ls", int(shooter.index), quest);
 	SetEventHandler("event_" + shot.index + "_Dead", "QuestSceneShotDeath", 0);
-	PostEvent("event_" + shot.index + "_Dead", 801, "ls", sti(shot.index), consequenceFunc);
+	PostEvent("event_" + shot.index + "_Dead", 801, "ls", int(shot.index), consequenceFunc);
 }
 
 void QuestScenePerformShot() {
@@ -572,9 +572,9 @@ void QuestSceneStartMelee(ref attacker, ref defender, string consequenceFunc, st
 	LAi_SetActorTypeNoGroup(attacker);
 	LAi_ActorTurnToCharacter(attacker, defender);
 	SetEventHandler("event_" + attacker.index + "_Melee", "QuestScenePerformMelee", 0);
-	PostEvent("event_" + attacker.index + "_Melee", 1, "ls", sti(attacker.index), quest);
+	PostEvent("event_" + attacker.index + "_Melee", 1, "ls", int(attacker.index), quest);
 	SetEventHandler("event_" + defender.index + "_Hit", "QuestSceneMeleeHit", 0);
-	PostEvent("event_" + defender.index + "_Hit", 501, "ls", sti(defender.index), consequenceFunc);
+	PostEvent("event_" + defender.index + "_Hit", 501, "ls", int(defender.index), consequenceFunc);
 }
 
 void QuestScenePerformMelee() {

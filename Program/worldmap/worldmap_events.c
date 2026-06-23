@@ -83,7 +83,7 @@ void wdmEvent_AddQuestEncounters()
 				encID = "";
 				if (CheckAttribute(at, "XZGoto")) // покоординатный boal 04/10/06
 				{
-					if(!wdmCreateMerchantShipXZByIndex(1.0, idx, &encID, stf(at.x1), stf(at.z1), stf(at.x2), stf(at.z2), sti(at.TimeOut)))
+					if(!wdmCreateMerchantShipXZByIndex(1.0, idx, &encID, float(at.x1), float(at.z1), float(at.x2), float(at.z2), int(at.TimeOut)))
 					{
 						PostEvent("Map_TraderSucces", 100, "s", at.characterID);
 						continue;
@@ -91,7 +91,7 @@ void wdmEvent_AddQuestEncounters()
 				}
 				else
 				{
-					if(!wdmCreateMerchantShipByIndex(1.0, idx, &encID, at.beginlocator, at.endLocator, sti(at.TimeOut)))
+					if(!wdmCreateMerchantShipByIndex(1.0, idx, &encID, at.beginlocator, at.endLocator, int(at.TimeOut)))
 					{
 						PostEvent("Map_TraderSucces", 100, "s", at.characterID);
 						continue;
@@ -112,7 +112,7 @@ void wdmEvent_AddQuestEncounters()
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
-				if(!wdmCreateMerchantShipByIndex(stf(at.speed), idx, &encID, at.beginlocator, at.endLocator, sti(at.TimeOut)))
+				if(!wdmCreateMerchantShipByIndex(float(at.speed), idx, &encID, at.beginlocator, at.endLocator, int(at.TimeOut)))
 				{
 					PostEvent("Map_TraderSucces", 100, "s", at.characterID);
 					continue;
@@ -132,8 +132,8 @@ void wdmEvent_AddQuestEncounters()
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
-				//if(!wdmCreateFollowShipByIndex(1.0, idx, &encID, at.beginlocator, sti(at.TimeOut)))
-				if(!wdmCreateRealFollowShipByIndex(1.0, idx, &encID, sti(at.TimeOut)))
+				//if(!wdmCreateFollowShipByIndex(1.0, idx, &encID, at.beginlocator, int(at.TimeOut)))
+				if(!wdmCreateRealFollowShipByIndex(1.0, idx, &encID, int(at.TimeOut)))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
 					continue;
@@ -153,8 +153,8 @@ void wdmEvent_AddQuestEncounters()
 				}
 				//Создаём в карте энкоунтера
 				encID = "";
-				//if(!wdmCreateFollowShipByIndex(1.0, idx, &encID, at.beginlocator, sti(at.TimeOut)))
-				if(!wdmCreateRealFollowShipByIndex(1.7, idx, &encID, sti(at.TimeOut)))
+				//if(!wdmCreateFollowShipByIndex(1.0, idx, &encID, at.beginlocator, int(at.TimeOut)))
+				if(!wdmCreateRealFollowShipByIndex(1.7, idx, &encID, int(at.TimeOut)))
 				{
 					PostEvent("Map_WarriorEnd", 100, "s", at.characterID);
 					continue;
@@ -167,7 +167,7 @@ void wdmEvent_AddQuestEncounters()
 			}
 			if(at.type == "battle")
 			{
-				//wdmQuestCreateBattle(at.characterID, sti(at.iEnemyNation), sti(at.TimeOut));
+				//wdmQuestCreateBattle(at.characterID, int(at.iEnemyNation), int(at.TimeOut));
 			}
 		}
 	}
@@ -215,10 +215,10 @@ ref wdmEncounterDelete()
 		//Даже если его трет программист?
     	if(CheckAttribute(&enc, "Gotox") && CheckAttribute(&enc, "Gotoz"))
 		{
-			float fDeltaX = (stf(enc.x) - stf(enc.Gotox));
-			float fDeltaZ = (stf(enc.z) - stf(enc.Gotoz));
+			float fDeltaX = (float(enc.x) - float(enc.Gotox));
+			float fDeltaZ = (float(enc.z) - float(enc.Gotoz));
 			float fRadSqr = fDeltaX*fDeltaX + fDeltaZ*fDeltaZ;
-			if( fRadSqr > 100.0 && stf(enc.livetime) > 1.0) 
+			if( fRadSqr > 100.0 && float(enc.livetime) > 1.0)
 			{
 				BI_intRetValue = false;
 			}
@@ -267,7 +267,7 @@ float wdmGetMoral()
 		}
 	}
 	iMorale = iMorale / iRealCompNum;
-	return stf(iMorale);
+	return float(iMorale);
 }
 
 //  квестовый отлов входа в море по наличию НПС в случайке
@@ -313,10 +313,10 @@ string GetPlayerShipModel()
 {
 	if(GetCharacterShipType(pchar) != SHIP_NOTUSED)
 	{
-		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_SM) return "galeon_sm_player";
-		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_LADYBETH) return "shnyava_sp2_player";
-		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_MEMENTO) return "memento_player";
-		if(sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_AMSTERDAM) return "amsterdam_sp4_player";
+		if(int(RealShips[int(pchar.Ship.Type)].BaseType) == SHIP_GALEON_SM) return "galeon_sm_player";
+		if(int(RealShips[int(pchar.Ship.Type)].BaseType) == SHIP_LADYBETH) return "shnyava_sp2_player";
+		if(int(RealShips[int(pchar.Ship.Type)].BaseType) == SHIP_MEMENTO) return "memento_player";
+		if(int(RealShips[int(pchar.Ship.Type)].BaseType) == SHIP_AMSTERDAM) return "amsterdam_sp4_player";
 	}
 	return "Ship";
 }

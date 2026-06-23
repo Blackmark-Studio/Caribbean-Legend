@@ -11,7 +11,7 @@
 
 
 //Инициализация
-void LAi_type_fisher_Init(aref chr)
+void LAi_type_fisher_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -27,7 +27,7 @@ void LAi_type_fisher_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_fisher_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_fisher_CharacterUpdate(ref chr, float dltTime)
 {	
 	if(chr.chr_ai.tmpl != LAI_TMPL_DIALOG)
 	{
@@ -40,30 +40,30 @@ void LAi_type_fisher_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_fisher_CharacterLogin(aref chr)
+bool LAi_type_fisher_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_fisher_CharacterLogoff(aref chr)
+bool LAi_type_fisher_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_fisher_TemplateComplite(aref chr, string tmpl)
+void LAi_type_fisher_TemplateComplite(ref chr, string tmpl)
 {
 	//LAi_tmpl_player_InitTemplate(chr);
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_fisher_NeedDialog(aref chr, aref by)
+void LAi_type_fisher_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_fisher_CanDialog(aref chr, aref by)
+bool LAi_type_fisher_CanDialog(ref chr, ref by)
 {
 	/* //Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return false;
@@ -73,7 +73,7 @@ bool LAi_type_fisher_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_fisher_StartDialog(aref chr, aref by)
+void LAi_type_fisher_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	//LAi_tmpl_stay_InitTemplate(chr);
@@ -83,7 +83,7 @@ void LAi_type_fisher_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_fisher_EndDialog(aref chr, aref by)
+void LAi_type_fisher_EndDialog(ref chr, ref by)
 {
 	/* LAi_tmpl_stay_InitTemplate(chr);
 	LAi_SetfisherSitAnimation(chr); */
@@ -96,13 +96,13 @@ void LAi_type_fisher_Fire(aref attack, aref enemy, float kDist, bool isFindedEne
 
 
 //Персонаж атакован
-void LAi_type_fisher_Attacked(aref chr, aref by)
+void LAi_type_fisher_Attacked(ref chr, ref by)
 {
 	
 }
 
 //Найти врага
-int LAi_type_fisher_FindEnemy(aref chr, int num)
+int LAi_type_fisher_FindEnemy(ref chr, int num)
 {
 	return -1;
 }
@@ -119,7 +119,7 @@ void SetFisherAnimation(ref character)
 	character.actions.HitNoFight = "HitNoFightSit";
 }
 
-void LAi_SetFisherSitAnimation(aref chr)
+void LAi_SetFisherSitAnimation(ref chr)
 {
 	BeginChangeCharacterActions(chr);
 	SetFisherAnimation(chr);	

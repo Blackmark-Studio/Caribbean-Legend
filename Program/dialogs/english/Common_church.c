@@ -156,7 +156,7 @@ void ProcessDialogEvent()
 			
 			//--> Сага
 			// Картахена, Чика Гонсалес
-			if(CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "cartahena" && pchar.location == "Cartahena_church" && sti(pchar.money) >= 1000)
+			if(CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "cartahena" && pchar.location == "Cartahena_church" && int(pchar.money) >= 1000)
 			{
 				link.l4 = "I'd like to order a prayer service for the repose of a lady's soul.";
 				link.l4.go = "saga";				
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 				link.l4 = "About the candles...";
 				link.l4.go = "candle";
 			}
-			if(CheckAttribute(npchar, "quest.prayer") && GetNpcQuestPastDayParam(npchar, "prayer_date") >= 1 && stf(environment.time) >= 22.0)
+			if(CheckAttribute(npchar, "quest.prayer") && GetNpcQuestPastDayParam(npchar, "prayer_date") >= 1 && float(environment.time) >= 22.0)
 			{
 				link.l4 = "I am ready to pray, Father.";
 				link.l4.go = "prayer";
@@ -400,7 +400,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seektreatment_1":
-			if (sti(pchar.questTemp.Saga.JessSeekTreatment) == 3)
+			if (int(pchar.questTemp.Saga.JessSeekTreatment) == 3)
 			{
 				dialog.text = "I have heard of those... They were brought into our world by the unholy witches of these red-skinned pagans. I would advise you to see the father superior of the church in Bridgetown - he has spent several years studying the pernicious influence of Indian curses on the bodies and souls of Christians.";
 				link.l1 = "And he would be able to help me?!";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 			link.l1 = "Goodbye, padre.";
 			link.l1.go = "exit";
 			npchar.quest.seektreatment = "true";
-			pchar.questTemp.Saga.JessSeekTreatment = sti(pchar.questTemp.Saga.JessSeekTreatment)+1;
+			pchar.questTemp.Saga.JessSeekTreatment = int(pchar.questTemp.Saga.JessSeekTreatment)+1;
 		break;
 		
 		case "seektreatment_4":
@@ -525,12 +525,12 @@ void ProcessDialogEvent()
 			PChar.GenQuest.ChurchQuest_2.QuestTown = NPChar.City;	// Город, в котором спрашиваем
 			PChar.GenQuest.ChurchQuest_2.QuestTown.PriestName = NPChar.name;
 			PChar.GenQuest.ChurchQuest_2.IslandId = locations[FindLocation(NPChar.location)].islandId; // На каком острове опрашиваем бандюков
-			PChar.GenQuest.ChurchQuest_2.Nation = sti(NPChar.nation);
+			PChar.GenQuest.ChurchQuest_2.Nation = int(NPChar.nation);
 			PChar.GenQuest.ChurchQuest_2.AskPeople = true;
 			PChar.GenQuest.ChurchQuest_2.AskBarmen = true;
 			PChar.GenQuest.ChurchQuest_2.AskAlcash = true;
-			PChar.GenQuest.ChurchQuest_2.MoneyCount = (sti(pchar.rank)+8)*543+3210;
-			PChar.GenQuest.ChurchQuest_2.MoneyToCharacter = makeint(sti(PChar.GenQuest.ChurchQuest_2.MoneyCount)/3);
+			PChar.GenQuest.ChurchQuest_2.MoneyCount = (int(pchar.rank)+8)*543+3210;
+			PChar.GenQuest.ChurchQuest_2.MoneyToCharacter = int(int(PChar.GenQuest.ChurchQuest_2.MoneyCount)/3);
 			sQuestTitle = NPChar.City + "ChurchGenQuest2";
 			ReOpenQuestHeader(sQuestTitle);
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "1");
@@ -610,7 +610,7 @@ void ProcessDialogEvent()
 		case "GenQuest_Church_2_Thief_4_1_5":
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
 			ChangeCharacterComplexReputation(PChar,"nobility", -2);
 			sQuestTitle = NPChar.City + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "12_2");
@@ -622,7 +622,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "GenQuest_Church_2_Thief_4_1_6":
-			iMoneyToCharacter = sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter);
+			iMoneyToCharacter = int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter);
 			dialog.text = "Oh, child, I am truly sorry... I hope this small contribution of "+FindRussianMoneyString(iMoneyToCharacter)+" will be enough to cover your expenses?";
 			link.l1 = "Yes, "+LinkRandPhrase("padre.","Father.")+", that's enough, thank you.";
 			link.l1.go = "GenQuest_Church_2_Thief_4_1_6_1";
@@ -632,7 +632,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			ChangeCharacterComplexReputation(PChar,"nobility", -2);
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
 			sQuestTitle = NPChar.City + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "12_3");
 			AddQuestUserData(sQuestTitle, "sName", NPChar.name);
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 			iMoneyToCharacter = PChar.GenQuest.ChurchQuest_2.MoneyToCharacter;
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			ChangeCharacterComplexReputation(PChar,"nobility", -2);
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
 			ChurchGenQuest2_RemoveCup();
 			sQuestTitle = NPChar.City + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "12_5");
@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 			// Принесли священнику и деньги и чашу.
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.Complete.With_All"))
 			{
-				if(sti(PChar.money) >= sti(PChar.GenQuest.ChurchQuest_2.MoneyCount))
+				if(int(PChar.money) >= int(PChar.GenQuest.ChurchQuest_2.MoneyCount))
 				{
 					link.l1 = "I am certain that you'll like the news - I have duly punished the robbers and taken the parish money from them, as well as this chalice.";
 					link.l1.go = "GenQuest_Church_2_Finally_Complete_1_2_1";
@@ -786,7 +786,7 @@ void ProcessDialogEvent()
 			// Короткий вариант прохождения квеста.
 			if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.Complete.Short_With_Mon"))
 			{
-				if(sti(PChar.money) >= sti(PChar.GenQuest.ChurchQuest_2.MoneyCount))
+				if(int(PChar.money) >= int(PChar.GenQuest.ChurchQuest_2.MoneyCount))
 				{
 					link.l1 = "I am sure that news will make you happy - I punished the robbers and brought back the parish's money.";
 					link.l1.go = "GenQuest_Church_2_Finally_Complete_1_2_1";
@@ -823,7 +823,7 @@ void ProcessDialogEvent()
 			else
 			{
 				// Священник даёт деньги ГГ...
-				iMoneyToCharacter = sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter);
+				iMoneyToCharacter = int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter);
 				dialog.text = "Oh, "+GetSexPhrase("my son","my daughter")+". Your words plunged me into deep sorrow - but not despair, for desperation is a mortal sin! The Lord has set another trial before us to strengthen our faith. But your efforts and expenses must be compensated, even if they were fruitless. Please, accept this modest sum - "+FindRussianMoneyString(iMoneyToCharacter)+" - and continue on your righteous path!";
 					link.l1 = "Hmm!... Thank you, padre, I will use this money for a virtuous cause.";
 					link.l1.go = "GenQuest_Church_2_Finally_Complete_1_3_1_1";
@@ -967,8 +967,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			ChangeCharacterComplexReputation(PChar,"nobility", 5);
-			AddMoneyToCharacter(PChar, -sti(PChar.GenQuest.ChurchQuest_2.MoneyCount));
-			AddMoneyToCharacter(PChar, sti(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
+			AddMoneyToCharacter(PChar, -int(PChar.GenQuest.ChurchQuest_2.MoneyCount));
+			AddMoneyToCharacter(PChar, int(PChar.GenQuest.ChurchQuest_2.MoneyToCharacter));
 			sQuestTitle = NPChar.City + "ChurchGenQuest2";
 			AddQuestRecordEx(sQuestTitle, "ChurchGenQuest2", "4");
 			AddQuestUserData(sQuestTitle, "sSex", GetSexPhrase("",""));
@@ -984,23 +984,23 @@ void ProcessDialogEvent()
 			dialog.Text = "Of course, "+GetSexPhrase("my son","my daughter")+". How much would you like to donate to the Holy Church?";
 			Link.l1 = "I am sorry, holy Father, but I've changed my mind.";
 			Link.l1.go = "No donation";
-			if(makeint(PChar.money)>=100)
+			if(int(PChar.money)>=100)
 			{
 				Link.l2 = "My donation will be a modest one - just 100 pesos.";
 				Link.l2.go = "donation paid_100";
 			}
-			if(makeint(PChar.money)>=1000)
+			if(int(PChar.money)>=1000)
 			{
 				Link.l3 = "1000 pesos. I think that should be enough.";
 				Link.l3.go = "donation paid_1000";
 			}
-			if(makeint(PChar.money)>=5000)
+			if(int(PChar.money)>=5000)
 			{
 				Link.l4 = "I am lucky with money, so I will donate 5,000 pesos.";
 				Link.l4.go = "donation paid_5000";
 			}
 			//-->> квест пожертвования хозяйки борделя
-			if(pchar.questTemp.different == "HostessChurch_toChurch" && pchar.questTemp.different.HostessChurch.city == npchar.city && sti(pchar.money) >= sti(pchar.questTemp.different.HostessChurch.money))
+			if(pchar.questTemp.different == "HostessChurch_toChurch" && pchar.questTemp.different.HostessChurch.city == npchar.city && int(pchar.money) >= int(pchar.questTemp.different.HostessChurch.money))
 			{
 				Link.l5 = "Father, I want to make a donation not on my own behalf. I am doing it at someone's request.";
 				Link.l5.go = "HostessChurch";
@@ -1018,7 +1018,7 @@ void ProcessDialogEvent()
 
 		case "donation paid_100":
 			AddMoneyToCharacter(pchar, -100);
-			pchar.questTemp.donate = makeint(pchar.questTemp.donate) + 100;
+			pchar.questTemp.donate = int(pchar.questTemp.donate) + 100;
 			dialog.Text = "On behalf of the Holy Church, I thank you, "+GetSexPhrase("my son","my daughter")+", for your gift.";
 			Link.l1 = "I need to talk to you, Father.";
 			Link.l1.go = "node_3";
@@ -1029,7 +1029,7 @@ void ProcessDialogEvent()
 
 		case "donation paid_1000":
 			AddMoneyToCharacter(pchar, -1000);
-			pchar.questTemp.donate = makeint(pchar.questTemp.donate) + 1000;
+			pchar.questTemp.donate = int(pchar.questTemp.donate) + 1000;
 			dialog.Text = "On behalf of the Holy Church, I thank you.";
             Link.l1 = "I need to talk to you, Father.";
 			Link.l1.go = "node_3";
@@ -1040,7 +1040,7 @@ void ProcessDialogEvent()
 
 		case "donation paid_5000":
 			AddMoneyToCharacter(pchar, -5000);
-			pchar.questTemp.donate = makeint(pchar.questTemp.donate) + 5000;
+			pchar.questTemp.donate = int(pchar.questTemp.donate) + 5000;
 			dialog.Text = "On behalf of the Holy Church, I thank you for your gift.";
             Link.l1 = "I need to talk to you, Father.";
 			Link.l1.go = "node_3";
@@ -1064,7 +1064,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ispoved_2":
-			dialog.text = "I hope there were none among those who sailed under the flag of "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "I hope there were none among those who sailed under the flag of "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "No, of course not, Father.";
 			link.l1.go = "ispoved_3";
 			link.l2 = "All sorts of them, Father...";
@@ -1096,15 +1096,15 @@ void ProcessDialogEvent()
 			dialog.text = "What kind of business brings you here, "+GetSexPhrase("my son","my daughter")+"?";
 			link.l1 = "I want to ask you one question, Padre...";
 			link.l1.go = "quests"; // ссылка к НПС
-            link.l2 = RandPhraseSimple("I wanted to talk about working for the good of the Church of "+NationNameGenitive(sti(NPChar.nation))+".","How are things going in the parish? Do you need any help?");
+            link.l2 = RandPhraseSimple("I wanted to talk about working for the good of the Church of "+NationNameGenitive(int(NPChar.nation))+".","How are things going in the parish? Do you need any help?");
 			link.l2.go = "prihod";
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 	            link.l3 = RandPhraseSimple("Padre","Father")+", I want to talk to you about financial matters."; //(пересылка в кредиты)
 	            link.l3.go = "LoanForAll";
             }
 			// -->
-            if (stf(pchar.Health.HP) < 60.0)
+            if (float(pchar.Health.HP) < 60.0)
             {
                 link.l4 = "I need healing.";
                 link.l4.go = "healthAdd_1";
@@ -1124,7 +1124,7 @@ void ProcessDialogEvent()
             }
 			//<-- Церковная депеша
 			//--> Jason Доставка молитвенников
-			if (CheckAttribute(pchar, "GenQuest.Churchbooks") && pchar.GenQuest.Churchbooks == "go" && sti(npchar.nation) == sti(pchar.GenQuest.Churchbooks.Nation) && npchar.city != pchar.GenQuest.Churchbooks.StartCity)
+			if (CheckAttribute(pchar, "GenQuest.Churchbooks") && pchar.GenQuest.Churchbooks == "go" && int(npchar.nation) == int(pchar.GenQuest.Churchbooks.Nation) && npchar.city != pchar.GenQuest.Churchbooks.StartCity)
 			{
 	            link.l11 = "Padre, I came from the colony of "+XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity)+". The local church needs more prayer books, and the local monk suggested seeing you regarding this matter.";
 	            link.l11.go = "Churchbooks";
@@ -1180,7 +1180,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			PChar.GenQuest.ChurchQuest_1.StartQuest = true;
 			PChar.GenQuest.ChurchQuest_1.PriestName = NPChar.name;
-			PChar.GenQuest.ChurchQuest_1.Nation = sti(NPChar.nation);
+			PChar.GenQuest.ChurchQuest_1.Nation = int(NPChar.nation);
 			PChar.GenQuest.ChurchQuest_1.AskOwner = true;
 			sQuestTitle = NPChar.City + "ChurchGenQuest1";
 			ReOpenQuestHeader(sQuestTitle);
@@ -1363,7 +1363,7 @@ void ProcessDialogEvent()
 		// <-- Church GenQuest_1
 
         case "healthAdd_1":
-            if (stf(pchar.Health.maxHP) == 60.0) // отлично
+            if (float(pchar.Health.maxHP) == 60.0) // отлично
             {
                 dialog.text = "Your health is "+GetHealthNameMaxSmall(pchar)+", and the wounds will heal on their own. You just need to avoid bloodshed and take care of your health.";
     			link.l1 = "Thank you, that's certainly a relief. I'll try to restrain myself from fighting for a while.";
@@ -1414,7 +1414,7 @@ void ProcessDialogEvent()
 			dialog.text = "One hundred thousand pesos will be a sufficient payment for the miracle of healing.";
 			link.l1 = pcharrepphrase("What?!! Are you completely mad? I'd only pay such a sum after robbing a couple of churches!","That's too much for me. They say it's true - health cannot be bought with money.");
 			link.l1.go = "exit";
-            if (sti(pchar.Money) >= 100000)
+            if (int(pchar.Money) >= 100000)
             {
     			link.l2 = "I agree!";
     			link.l2.go = "healthAdd_5";
@@ -1492,7 +1492,7 @@ void ProcessDialogEvent()
 			dialog.text = "I accept it. "+GetSexPhrase("my son","my daughter")+". Go and tell that to your fallen woman.";
 			link.l1 = "Alright, padre. Thank you.";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.HostessChurch.money));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.HostessChurch.money));
 			AddCharacterExpToSkill(pchar, "Fortune", 20);
 			//флаг удачная или неудачная попытка дачи
 			characters[GetCharacterIndex(pchar.questTemp.different.HostessChurch.city + "_Hostess")].questChurch = "yes";
@@ -1502,7 +1502,7 @@ void ProcessDialogEvent()
 			dialog.text = "I accept it. "+GetSexPhrase("my son","my daughter")+". Tell this benefactor of yours about it.";
 			link.l1 = "Alright, padre. Thank you.";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.different.HostessChurch.money));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.different.HostessChurch.money));
 			AddCharacterExpToSkill(pchar, "Fortune", 20);
 			//флаг удачная или неудачная попытка дачи
 			characters[GetCharacterIndex(pchar.questTemp.different.HostessChurch.city + "_Hostess")].questChurch = "yes";
@@ -1582,7 +1582,7 @@ void ProcessDialogEvent()
 			CloseQuestHeader("Monkletter");
 			TakeNItems(pchar, "gold_dublon", 10+rand(5));
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), 5);
 			AddCharacterExpToSkill(pchar, "Leadership", 50);
 			AddCharacterExpToSkill(pchar, "Fortune", 50);
 			DeleteAttribute(pchar, "GenQuest.Monkletter");
@@ -1646,7 +1646,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Churchbooks", "4");
 			CloseQuestHeader("Churchbooks");
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 1);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), 1);
 			AddCharacterExpToSkill(pchar, "Leadership", 50);
 			AddCharacterExpToSkill(pchar, "Fortune", 50);
 			DeleteAttribute(pchar, "GenQuest.Churchbooks");

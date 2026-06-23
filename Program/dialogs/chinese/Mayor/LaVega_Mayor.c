@@ -80,7 +80,7 @@ void ProcessDialogEvent()
             link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
                     dialog.text = "别再用你廉价的谈话烦我。 下次你不会喜欢结果的... ";
                     link.l1 = "我明白了。 ";
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
             link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //10天后和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
                     dialog.text = "我希望你能对我更尊重些, 别再无礼了? 否则我就得杀了你。 那会非常不愉快。 ";
                     link.l1 = ""+npchar.name+", 你放心, 我会的。 ";

@@ -196,12 +196,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
 		
-		case "Aeva_attack_2":
-			dialog.text = "... this is going to be a hell of a drink. Shark's been dreaming of this whiskey so long, he'll down it in a single draught. Where's the arsenic? We'll use two bottles, just to be sure... then our friend Fazio can deliver this barrel to the Admiral as a present from tje Narwhals, ha-ha!\nAm I right, dear Giuseppe? Chin up, lad; you do this right, and you've got nothing to worry abou-- Ah! We have company, boys! What do you want, jackass? This is a private get-together.";
-			link.l1 = "Your plan has failed, Kapper. I know what you and your friend Marcello are going to do. Toss the arsenic! You'll not poison Shark!";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
 		case "Aeva_attack_3":
 			dialog.text = "Ah, shit. All right... you die first, then Shark! To arms, lads!";
 			link.l1 = "...";

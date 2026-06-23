@@ -72,11 +72,11 @@ int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNa
 		makeref(refShip,ShipsTypes[i]);
 
         if (!CheckAttribute(refShip, "Class")) continue;
-		if (CheckAttribute(refShip, "QuestShip")  && sti(refShip.QuestShip)  == 1) continue;
-		if (CheckAttribute(refShip, "ShipHolder") && sti(refShip.ShipHolder) == 1) continue;
-		if (CheckAttribute(refShip, "CanEncounter") && sti(refShip.CanEncounter) == 0) continue;
+		if (CheckAttribute(refShip, "QuestShip")  && int(refShip.QuestShip)  == 1) continue;
+		if (CheckAttribute(refShip, "ShipHolder") && int(refShip.ShipHolder) == 1) continue;
+		if (CheckAttribute(refShip, "CanEncounter") && int(refShip.CanEncounter) == 0) continue;
 
-		int class = sti(refShip.Class);
+		int class = int(refShip.Class);
 
 		if (!and(classFlags, gShipClassFlags[class]))
 		{
@@ -88,7 +88,7 @@ int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNa
 			continue;
 		}
 		
-		int iType = sti(refShip.Spec);
+		int iType = int(refShip.Spec);
 		
 		if (!and(typeFlags, gShipTypeFlags[iType])) 
 		{
@@ -107,7 +107,7 @@ int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNa
 					continue;
 				}
 				string sNationFlag = refShip.nation.(sNation);
-				if (sti(sNationFlag) == 1 && and(nationFlags, gShipNationFlags[k]) != 0)
+				if (int(sNationFlag) == 1 && and(nationFlags, gShipNationFlags[k]) != 0)
 				{
 					match = true;
 					break;
@@ -122,7 +122,7 @@ int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNa
 
 		if (CheckAttribute(refShip, "NationExclusive"))
 		{
-		    int iNationExclusive = sti(refShip.NationExclusive);
+		    int iNationExclusive = int(refShip.NationExclusive);
 			int iNationFlag = gShipNationFlags[iNationExclusive];
 			if (!and(nationFlags, iNationFlag))
 			{
@@ -135,7 +135,7 @@ int GetRandomShipTypeEx(int classFlags, int typeFlags, int nationFlags, bool bNa
 		int regularity = 1;
 		if (CheckAttribute(refShip, "Regularity"))
 		{
-			regularity = sti(refShip.Regularity);
+			regularity = int(refShip.Regularity);
 		}
 
 		//Regularity - "частота появления корабля". Чем число выше - тем чаще появление.

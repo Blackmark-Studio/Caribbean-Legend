@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 				dialog.text = "问候你, 船长。 什么风把你吹到这里? ";
 			}
 			// 舰队副司令
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "问候你, 舰队副司令! 我能为你做什么? ";
 			}
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";
 				}	
 			}
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "我想进入监狱里面。 ";
 				link.l4.go = "ForGoodMove";		
@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 					bool zMsm = (CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour")) && (!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor"));
 					if(pchar.GenQuest.CaptainComission == "MayorTalkBad" || zMsm) //和市长谈过并拒绝或听到传闻, 但没和市长谈过
 					{
-						link.l6 = "我听说 " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的前队长 " + pchar.GenQuest.CaptainComission.Name + "被关押在这里。 我能和他谈谈吗? ";
+						link.l6 = "我听说 " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name") + "Acc")) + "巡逻队的前队长 " + pchar.GenQuest.CaptainComission.Name + "被关押在这里。 我能和他谈谈吗? ";
 						link.l6.go = "CapComission_PrisonBad1";
 					}
 					if(pchar.GenQuest.CaptainComission == "MayorTalkGood")
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		
 		case "Marginpassenger_1":
 			dialog.text = "嗯... 这很有趣 - 请继续! ";
-			link.l1 = "他知道 " + pchar.GenQuest.Marginpassenger.q1Name + "计划乘坐的船名。 是 " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + ", 名叫'" + pchar.GenQuest.Marginpassenger.ShipName + "'。 此外, 他告诉我那艘船计划起航的时间。 ";
+			link.l1 = "他知道 " + pchar.GenQuest.Marginpassenger.q1Name + "计划乘坐的船名。 是 " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType), "Name"))) + ", 名叫'" + pchar.GenQuest.Marginpassenger.ShipName + "'。 此外, 他告诉我那艘船计划起航的时间。 ";
 			link.l1.go = "Marginpassenger_2";
 		break;
 	
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
 			pchar.quest.Marginpassenger_InWorld.over = "yes"; //取下计时器
 			DeleteAttribute(Pchar, "GenQuest.Marginpassenger");
 			ChangeCharacterComplexReputation(pchar, "nobility", 3);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), 5);
 			AddCharacterExpToSkill(pchar, "Leadership", 100);//权威
 			ChangeContrabandRelation(pchar, -25);
 			if (GetCharacterIndex("MarginCap") != -1)
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.ReasonToFast.SpeakOther = true;
 			dialog.text = "我洗耳恭听, 船长。 ";
 			link.l1 = "我想告诉你关于你的驻军一名军官和海盗之间的犯罪勾结 (解释此事) 。 ";
-			if(makeint(pchar.reputation.nobility) < 41)
+			if(int(pchar.reputation.nobility) < 41)
 			{
 				link.l1.go = "ReasonToFast_Prison_BadRep";			
 			}
@@ -463,7 +463,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "F_ShipLetters_2":			
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "胡说! 不要分散我工作的注意力! 如果你在意的话, 去港口当局那里! ";
 				link.l1 = "好吧, 我想谢谢... ";
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "是的, 是当地的主人。 也许 " + sti(pchar.questTemp.different.GiveShipLetters.price2) + " 比索的奖金将作为对你警惕性的充分奖励, 船长。 ";
+					dialog.text = "是的, 是当地的主人。 也许 " + int(pchar.questTemp.different.GiveShipLetters.price2) + " 比索的奖金将作为对你警惕性的充分奖励, 船长。 ";
 					link.l1 = "也许不是。 ";
 					link.l1.go = "F_ShipLetters_3";	
 					link.l2 = "慷慨的提议。 那么文件是你的了! ";
@@ -481,17 +481,17 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "哦, 现在这真的很有趣! 我相信城市财政部会很高兴为你在打击非法贸易中的贡献支付你 " + sti(pchar.questTemp.different.GiveShipLetters.price4) + " 比索。 ";
+						dialog.text = "哦, 现在这真的很有趣! 我相信城市财政部会很高兴为你在打击非法贸易中的贡献支付你 " + int(pchar.questTemp.different.GiveShipLetters.price4) + " 比索。 ";
 						link.l1 = "也许不是。 ";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "慷慨的提议。 那么文件是你的了! ";
 						link.l2.go = "F_ShipLetters_4";
 					}
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "哦, 主啊! 你来找我是多么好的机会。 我想我不幸的同事会很高兴支付你 " + sti(pchar.questTemp.different.GiveShipLetters.price3) + " 比索, 以避免这件事的公开。 ";
+						dialog.text = "哦, 主啊! 你来找我是多么好的机会。 我想我不幸的同事会很高兴支付你 " + int(pchar.questTemp.different.GiveShipLetters.price3) + " 比索, 以避免这件事的公开。 ";
 						link.l1 = "也许不是。 ";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "慷慨的提议。 那么文件是你的了! ";
@@ -509,30 +509,30 @@ void ProcessDialogEvent()
 		
 		case "F_ShipLetters_4":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price4)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price4));
 				}
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price3)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price3));
 				}
 			}
 						
-			if((sti(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (sti(pchar.questTemp.different.GiveShipLetters.variant) == 2))
+			if((int(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (int(pchar.questTemp.different.GiveShipLetters.variant) == 2))
 			{	
 				ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 				OfficersReaction("bad"); 
@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// 舰队副司令
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "当然, 大人。 你可以通过。 ";
 				link.l1 = "谢谢你, 警官。 ";
@@ -568,9 +568,9 @@ void ProcessDialogEvent()
 				break;
 			}
 			// 有许可证的军官
-			if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "嗯, 我认为没有理由拒绝你 - 毕竟, 你是为 " + NationNameGenitive(sti(npchar.nation)) + "服务的船只的船长。 进来吧。 "; 
+				dialog.text = "嗯, 我认为没有理由拒绝你 - 毕竟, 你是为 " + NationNameGenitive(int(npchar.nation)) + "服务的船只的船长。 进来吧。 ";
 				link.l1 = "谢谢你, 警官。 ";
 				link.l1.go = "exit";
 				pchar.questTemp.jailCanMove = true;
@@ -586,10 +586,10 @@ void ProcessDialogEvent()
 		
         case "ForGoodMove_1":
 			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
-			if (sti(colonies[FindColony(npchar.city)].jail))
+			if (int(colonies[FindColony(npchar.city)].jail))
 			{
-				dialog.text = "嗯, 我认为没有理由拒绝。 " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money)) + " - 直到你离开监狱, 你可以自由地沿着走廊走, 甚至和囚犯交谈。 ";
-				if (PCharDublonsTotal() >= sti(sti(pchar.questTemp.jailCanMove.money)))
+				dialog.text = "嗯, 我认为没有理由拒绝。 " + FindRussianDublonString(int(pchar.questTemp.jailCanMove.money)) + " - 直到你离开监狱, 你可以自由地沿着走廊走, 甚至和囚犯交谈。 ";
+				if (PCharDublonsTotal() >= int(int(pchar.questTemp.jailCanMove.money)))
 				{
 					link.l1 = "我同意, 这是你的硬币! ";
 					link.l1.go = "ForGoodMove_agree";
@@ -610,7 +610,7 @@ void ProcessDialogEvent()
 			link.l1 = "谢谢你, 警官。 ";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.money)));
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.money));
 		break;
 		
         case "KnowAboutPrisoner":
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 		break;
 			}
 			// 舰队副司令
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				link.l1 = "我明白了... 把他交给我, 警官, 然后我会自己决定这个囚犯的命运。 ";
 				link.l1.go = "KnowAboutPrisoner_admiral";
@@ -690,8 +690,8 @@ void ProcessDialogEvent()
 		
         case "KnowAboutPrisoner_free":
 			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
-			dialog.text = "好吧, 我们成交。 " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + " 现金, 你现在就可以带他走。 ";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
+			dialog.text = "好吧, 我们成交。 " + FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money)) + " 现金, 你现在就可以带他走。 ";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
 				link.l1 = LinkRandPhrase("太好了! 我同意! ","你有交易, 警官! ","太好了。 我准备支付那笔捐款。 ");
 				link.l1.go = "KnowAboutPrisoner_agree";
@@ -705,8 +705,8 @@ void ProcessDialogEvent()
 			link.l1 = "谢谢。 ";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.ownerPrison.money));
-			Log_Info("你已经给了 " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.ownerPrison.money));
+			Log_Info("你已经给了 " + FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
 			DeleteAttribute(pchar, "questTemp.jailCanMove.ownerPrison");
 			sld = characterFromId(pchar.questTemp.jailCanMove.prisonerId)
 			LAi_CharacterEnableDialog(sld);
@@ -767,7 +767,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// 舰队副司令
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "问候你, 舰队副司令! 我在这里值班: 我确保没有人未经允许进入或离开。 但你, 当然, 有权自由通过这里。 ";
 				link.l1 = "那太好了。 ";
@@ -775,7 +775,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "First_protector";
 				break;
 			}
-			if (sti(pchar.questTemp.jailCanMove))
+			if (int(pchar.questTemp.jailCanMove))
 			{
 				dialog.text = RandPhraseSimple("你可以通过, 监狱长给了他的许可。 ", "我收到了监狱长的命令。 你可以自由通过。 ");
 				link.l1 = "非常好。 ";
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
 		break;
 		//-------------- —囚犯 ------------------
         case "First_prisoner": 
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) == RELATION_ENEMY)
 			{
 				dialog.text = LinkRandPhrase("呵呵, 这不是个好时机吗! ", "砍他们, " + GetSexPhrase("伙计","姑娘") + ", 砍! ", "哦, 见鬼! 我已经失去了看到我狱卒尸体的所有希望! ");
 				link.l1 = RandPhraseSimple("嘿! ", "啊! ");
@@ -816,7 +816,7 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("我被指控抢劫, 但我是无辜的! ", "啊, 你这个衣冠楚楚的人渣... 你想在我的牢房里坐一会儿吗? ! 呵呵呵... ", "我是无辜的! ");
 				link.l1 = RandPhraseSimple("闭嘴! ", "我他妈的不在乎你... ");
 				link.l1.go = "NoMoreTalkExit";
-				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !sti(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason 海盗线
+				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !int(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason 海盗线
 				{
 					dialog.text = RandPhraseSimple("等等, " + GetSexPhrase("伙计","姑娘") + ", 别这么快过来! ", "别着急, " + GetSexPhrase("伙计","姑娘") + ", 我们谈谈。 ");
 					link.l1 = "为什么? ";
@@ -858,11 +858,11 @@ void ProcessDialogEvent()
             dialog.text = "我发誓我说的是实话! 至于藏匿处 - 有宝藏和钱... ";
 			link.l1 = "不, 伙计。 我不会为了一个可疑的藏匿处冒我的风险。 对不起... ";
 			link.l1.go = "Prisoner_5";
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) != RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) != RELATION_ENEMY)
 			{			
 				// belamour legendary edition舰队司令和 governor 可以不用钱达成协议
-				bool bAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
-				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation());
+				bool bAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
+				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation();
 				if(!bAdmiral && !bGenGov)
 				{
 				link.l2 = "嗯, 这可能值得冒险... 我建议如下: 我可以消灭监狱里的警卫, 把你带到我的船上。 如果一切顺利, 我希望你一直待在我身边, 直到我们到达 " + XI_ConvertString(pchar.questTemp.jailCanMove.islandId + "Voc") + "的洞穴。 成交? "; // belamour gen
@@ -893,9 +893,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Prisoner_agree_2";
 		break;
         case "Prisoner_agree_2":
-			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
+			string slai_group = GetNationNameByType(int(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			ReOpenQuestHeader("GivePrisonFree");
 			AddQuestRecord("GivePrisonFree", "1");
             AddQuestUserData("GivePrisonFree", "sCity", XI_ConvertString("Colony"+npchar.city+"Gen"));
@@ -1053,7 +1053,7 @@ void ProcessDialogEvent()
 		break;
 		//==> 在宝藏藏匿的地方
         case "PrisonerInPlace":
-			switch (sti(pchar.questTemp.jailCanMove.IsTrue))
+			switch (int(pchar.questTemp.jailCanMove.IsTrue))
 			{
 				case 0:
 					dialog.text = "听着, 我都检查过了, 但没有找到宝藏。 真遗憾会是这样。 一定是有人在我们之前挖走了。 ";
@@ -1313,7 +1313,7 @@ void ProcessDialogEvent()
 			link.l1 = "也许, 我的话可以作为那个不幸囚犯的保释? ";
 			link.l1.go = "JusticeOnSale_5_WithoutMoney";
 			
-			if(sti(PChar.money) >= 5000)
+			if(int(PChar.money) >= 5000)
 			{
 				link.l2 = "也许, 这5000比索可以作为那个不幸囚犯的保释金? ";
 				link.l2.go = "JusticeOnSale_5";
@@ -1321,7 +1321,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || int(PChar.money) < 5000)
 			{
 				dialog.text = "好吧, " + GetAddress_Form(NPChar) + ", 带上那个无赖离开, 趁我还没改变主意。 ";
 				link.l1 = "看到正义的胜利, 你不觉得很棒吗? ";
@@ -1345,8 +1345,8 @@ void ProcessDialogEvent()
 		
 		case "JusticeOnSale_6":
 			DialogExit();
-			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", sti(PChar.rank)+5, PIRATE, -1, true, "marginal"));
-			SetFantomParamFromRank(sld, sti(PChar.rank)+5, true);
+			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", int(PChar.rank)+5, PIRATE, -1, true, "marginal"));
+			SetFantomParamFromRank(sld, int(PChar.rank)+5, true);
 			sld.name = PChar.GenQuest.JusticeOnSale.SmugglerName;
 			sld.lastName = "";
 			sld.dialog.filename = "GenQuests_Dialog.c";
@@ -1443,7 +1443,7 @@ void ProcessDialogEvent()
 			dialog.text = "嗯, 考虑到他没有拿武器, 只要1500比索。 ";
 			link.l1 = "恐怕我不准备给那么多。 嗯, 考虑到他只在这里待几天, 我想这对他没什么伤害。 也许他会少喝点。 ";
 			link.l1.go = "NightAdventure_CitizenHomieEnd";
-			if(sti(pchar.money) >= 1500)
+			if(int(pchar.money) >= 1500)
 			{
 				link.l2 = "好吧, 我准备保释。 ";
 				link.l2.go = "NightAdventure_CitizenHomieOfficer_1";
@@ -1487,7 +1487,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			link.l2 = "我想谈点生意。 ";
 			link.l2.go = "quests";
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "我想进入监狱里面。 ";
 				link.l4.go = "ForGoodMove";		

@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 				dialog.text = "안녕하십니까, 선장님. 무슨 일로 여기 오셨습니까?";
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "안녕하십니까, 부제독님! 무엇을 도와드릴까요?";
 			}
@@ -129,7 +129,7 @@ void ProcessDialogEvent()
 					link.l2.go = "quests";
 				}	
 			}
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "감옥 안으로 들어가고 싶어.";
 				link.l4.go = "ForGoodMove";		
@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 					bool zMsm = (CheckAttribute(pchar,"GenQuest.CaptainComission.GetRumour")) && (!CheckAttribute(pchar,"GenQuest.CaptainComission.SpeakMayor"));
 					if(pchar.GenQuest.CaptainComission == "MayorTalkBad" || zMsm) //говорил с губером и отказался или узнал слухи, но не говорил с губером
 					{
-						link.l6 = "순시선의 전 선장에 대해 들었어 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" 여기서 구금되어 있습니다. 그와 이야기해도 되겠습니까?";
+						link.l6 = "순시선의 전 선장에 대해 들었어 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.CaptainComission.ShipType),"Name")+"Acc"))+" "+pchar.GenQuest.CaptainComission.Name+" 여기서 구금되어 있습니다. 그와 이야기해도 되겠습니까?";
 						link.l6.go = "CapComission_PrisonBad1";
 					}
 					if(pchar.GenQuest.CaptainComission == "MayorTalkGood")
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		
 		case "Marginpassenger_1":
 			dialog.text = "흠... 아주 흥미로운데 - 계속 말씀해 주시죠!";
-			link.l1 = "그는 자신이 탄 배의 이름을 알고 있었어, "+pchar.GenQuest.Marginpassenger.q1Name+" 항해할 계획이었어. 지금은 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" '라고 불리는 '"+pchar.GenQuest.Marginpassenger.ShipName+"'. 그리고 그 배가 출항할 예정이었던 시간도 말해줬어.";
+			link.l1 = "그는 자신이 탄 배의 이름을 알고 있었어, "+pchar.GenQuest.Marginpassenger.q1Name+" 항해할 계획이었어. 지금은 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" '라고 불리는 '"+pchar.GenQuest.Marginpassenger.ShipName+"'. 그리고 그 배가 출항할 예정이었던 시간도 말해줬어.";
 			link.l1.go = "Marginpassenger_2";
 		break;
 	
@@ -238,7 +238,7 @@ void ProcessDialogEvent()
 			pchar.quest.Marginpassenger_InWorld.over = "yes"; //снять таймер
 			DeleteAttribute(Pchar, "GenQuest.Marginpassenger");
 			ChangeCharacterComplexReputation(pchar, "nobility", 3);
-			ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 5);
+			ChangeCharacterNationReputation(pchar, int(npchar.Nation), 5);
 			AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
 			ChangeContrabandRelation(pchar, -25);
 			if (GetCharacterIndex("MarginCap") != -1)
@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.ReasonToFast.SpeakOther = true;
 			dialog.text = "듣고 있소, 선장.";
 			link.l1 = "당신네 주둔지 장교와 해적들 사이의 범죄적 결탁에 대해 말씀드리고 싶소 (상황을 설명한다).";
-			if(makeint(pchar.reputation.nobility) < 41)
+			if(int(pchar.reputation.nobility) < 41)
 			{
 				link.l1.go = "ReasonToFast_Prison_BadRep";			
 			}
@@ -463,7 +463,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "F_ShipLetters_2":			
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "헛소리 집어쳐! 내 일 방해하지 마! 신경 쓰이면 항만 당국에나 가봐!";
 				link.l1 = "글쎄, 뭐, 고맙긴 하지...";
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					dialog.text = "그래, 이곳의 주인이지. 어쩌면 전리품일지도\n "+sti(pchar.questTemp.different.GiveShipLetters.price2)+" 페소가 당신의 경계심에 대한 충분한 보상이 될 것이오, 선장.";
+					dialog.text = "그래, 이곳의 주인이지. 어쩌면 전리품일지도\n "+int(pchar.questTemp.different.GiveShipLetters.price2)+" 페소가 당신의 경계심에 대한 충분한 보상이 될 것이오, 선장.";
 					link.l1 = "아마도 아니오.";
 					link.l1.go = "F_ShipLetters_3";	
 					link.l2 = "관대한 제안이군. 그럼 서류는 자네 것이야!";
@@ -481,17 +481,17 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 					{
-						dialog.text = "오, 그거 정말 흥미롭군! 시 재무관이 기꺼이 보수를 줄 거라 믿네 "+sti(pchar.questTemp.different.GiveShipLetters.price4)+" 불법 무역 퇴치에 기여해 주신 대가로 드리는 페소입니다.";
+						dialog.text = "오, 그거 정말 흥미롭군! 시 재무관이 기꺼이 보수를 줄 거라 믿네 "+int(pchar.questTemp.different.GiveShipLetters.price4)+" 불법 무역 퇴치에 기여해 주신 대가로 드리는 페소입니다.";
 						link.l1 = "그렇지 않을 수도 있지.";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "관대한 제안이군. 그럼 서류는 당신 거야!";
 						link.l2.go = "F_ShipLetters_4";
 					}
-					if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+					if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 					{
-						dialog.text = "오, 주님! 당신이 저에게 와 주시다니 참으로 행운입니다. 제 불운한 동료가 기꺼이 당신께 값을 치를 것이라 생각합니다. "+sti(pchar.questTemp.different.GiveShipLetters.price3)+" 이 사건이 공개되지 않게 하려면 페소가 필요하다.";
+						dialog.text = "오, 주님! 당신이 저에게 와 주시다니 참으로 행운입니다. 제 불운한 동료가 기꺼이 당신께 값을 치를 것이라 생각합니다. "+int(pchar.questTemp.different.GiveShipLetters.price3)+" 이 사건이 공개되지 않게 하려면 페소가 필요하다.";
 						link.l1 = "아닐지도 모르지.";
 						link.l1.go = "F_ShipLetters_3";
 						link.l2 = "관대한 제안이군. 그럼 서류는 당신 거요!";
@@ -509,30 +509,30 @@ void ProcessDialogEvent()
 		
 		case "F_ShipLetters_4":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 1)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 1)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price4)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price4));
 				}
 			}
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 2)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 2)
 			{
 				if(!CheckAttribute(pchar, "questTemp.different.GiveShipLetters.speakUsurer_1"))
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price2)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price2));
 				}
 				else
 				{
-					addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price3)); 
+					addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price3));
 				}
 			}
 						
-			if((sti(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (sti(pchar.questTemp.different.GiveShipLetters.variant) == 2))
+			if((int(pchar.questTemp.different.GiveShipLetters.variant) == 0) || (int(pchar.questTemp.different.GiveShipLetters.variant) == 2))
 			{	
 				ChangeCharacterComplexReputation(pchar,"nobility", -1); 
 				OfficersReaction("bad"); 
@@ -559,7 +559,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "물론입니다, 각하. 지나가셔도 됩니다.";
 				link.l1 = "감사합니다, 장교님.";
@@ -568,9 +568,9 @@ void ProcessDialogEvent()
 				break;
 			}
 			// Офицер с патентом
-			if(IsOfficerFullEquip() && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(IsOfficerFullEquip() && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "글쎄, 거절할 이유는 없군 - 어쨌든 당신은 그 배의 선장이자 그곳을 위해 일하고 있으니 "+NationNameGenitive(sti(npchar.nation))+". 들어오시오."; 
+				dialog.text = "글쎄, 거절할 이유는 없군 - 어쨌든 당신은 그 배의 선장이자 그곳을 위해 일하고 있으니 "+NationNameGenitive(int(npchar.nation))+". 들어오시오.";
 				link.l1 = "감사합니다, 장교님.";
 				link.l1.go = "exit";
 				pchar.questTemp.jailCanMove = true;
@@ -584,10 +584,10 @@ void ProcessDialogEvent()
 		
         case "ForGoodMove_1":
 			pchar.questTemp.jailCanMove.money = 20+hrand(3)*10;
-			if (sti(colonies[FindColony(npchar.city)].jail))
+			if (int(colonies[FindColony(npchar.city)].jail))
 			{
-				dialog.text = "글쎄, 거절할 이유는 없겠군. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.money))+" - 그리고 감옥을 떠날 때까지는 복도를 자유롭게 돌아다니고 죄수들과 대화도 할 수 있습니다.";
-				if (PCharDublonsTotal() >= sti(sti(pchar.questTemp.jailCanMove.money)))
+				dialog.text = "글쎄, 거절할 이유는 없겠군. "+FindRussianDublonString(int(pchar.questTemp.jailCanMove.money))+" - 그리고 감옥을 떠날 때까지는 복도를 자유롭게 돌아다니고 죄수들과 대화도 할 수 있습니다.";
+				if (PCharDublonsTotal() >= int(int(pchar.questTemp.jailCanMove.money)))
 				{
 					link.l1 = "동의하네, 여기 네 돈이야!";
 					link.l1.go = "ForGoodMove_agree";
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 			link.l1 = "감사합니다, 장교님.";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.money)));
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.money));
 		break;
 		
         case "KnowAboutPrisoner":
@@ -632,7 +632,7 @@ void ProcessDialogEvent()
 		break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				link.l1 = "알겠소... 장교, 저 죄수를 내게 넘기시오. 이 죄수의 운명은 내가 직접 결정하겠소.";
 				link.l1.go = "KnowAboutPrisoner_admiral";
@@ -688,8 +688,8 @@ void ProcessDialogEvent()
 		
         case "KnowAboutPrisoner_free":
 			pchar.questTemp.jailCanMove.ownerPrison.money = 50+hrand(10)*10;
-			dialog.text = "좋아, 거래 성사다. "+FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money))+" 바로 돈을 내면, 지금 당장 그를 데려가도 된다.";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.jailCanMove.ownerPrison.money))
+			dialog.text = "좋아, 거래 성사다. "+FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money))+" 바로 돈을 내면, 지금 당장 그를 데려가도 된다.";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.jailCanMove.ownerPrison.money))
 			{
 				link.l1 = LinkRandPhrase("훌륭하군! 나도 동의해!","거래 성사요, 장교!","훌륭하오. 그 기여금을 지불할 준비가 되었소.");
 				link.l1.go = "KnowAboutPrisoner_agree";
@@ -703,8 +703,8 @@ void ProcessDialogEvent()
 			link.l1 = "고맙다.";
 			link.l1.go = "exit";
 			pchar.questTemp.jailCanMove = true;
-			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.jailCanMove.ownerPrison.money));
-			Log_Info("You have given " + FindRussianDublonString(sti(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
+			RemoveDublonsFromPCharTotal(int(pchar.questTemp.jailCanMove.ownerPrison.money));
+			Log_Info("You have given " + FindRussianDublonString(int(pchar.questTemp.jailCanMove.ownerPrison.money)) + "");
 			DeleteAttribute(pchar, "questTemp.jailCanMove.ownerPrison");
 			sld = characterFromId(pchar.questTemp.jailCanMove.prisonerId)
 			LAi_CharacterEnableDialog(sld);
@@ -765,7 +765,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "안녕하십니까, 부제독님! 저는 여기서 근무 중입니다. 아무도 허가 없이 드나들지 못하게 감시하고 있지요. 하지만 부제독님께서는 물론 자유롭게 통과하실 수 있습니다.";
 				link.l1 = "그래, 그거 참 멋지군.";
@@ -773,7 +773,7 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "First_protector";
 				break;
 			}
-			if (sti(pchar.questTemp.jailCanMove))
+			if (int(pchar.questTemp.jailCanMove))
 			{
 				dialog.text = RandPhraseSimple("지나가도 된다, 감시관이 허락했으니.","감옥장으로부터 명령을 받았습니다. 자유롭게 지나가도 됩니다.");
 				link.l1 = "아주 좋군.";
@@ -797,7 +797,7 @@ void ProcessDialogEvent()
 		break;
 		//---------------- Заключенные ------------------
         case "First_prisoner": 
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) == RELATION_ENEMY)
 			{
 				dialog.text = LinkRandPhrase("호호, 정말 멋진 때 아니냐!","베어버려라, "+GetSexPhrase("동료","아가씨")+", 컷!!!","이런 젠장! 내 간수의 시체를 다시 볼 거란 희망은 완전히 버렸었는데!");
 				link.l1 = RandPhraseSimple("헤헷!","아르르!");
@@ -814,7 +814,7 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("나는 강도죄로 몰렸지만, 난 결백해!","으르렁, 잘 차려입은 잡놈아... 내 감방에 좀 앉아보고 싶으냐?! 크헤헤헤...","나는 죄가 없어!");
 				link.l1 = RandPhraseSimple("닥쳐!","난 너 따위는 신경도 안 써...");
 				link.l1.go = "NoMoreTalkExit";
-				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !sti(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason пиратская линейка
+				if (rand(10) > 6 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !CheckAttribute(pchar, "GenQuest.PrisonQuestLock") && !CheckAttribute(pchar, "quest.GivePrisonFree_Over") && !CheckAttribute(pchar, "quest.GivePrisonFree") && !CheckAttribute(pchar, "quest.DeliverToBander") && !int(colonies[FindColony(npchar.city)].HeroOwn)) // Addon 2016-1 Jason пиратская линейка
 				{
 					dialog.text = RandPhraseSimple("잠깐, "+GetSexPhrase("동료","아가씨")+", 그렇게 서두르지 말고 좀 천천히 가!","서두르지 마, "+GetSexPhrase("동료","아가씨")+", 이야기하자.");
 					link.l1 = "무슨 이유로?";
@@ -856,11 +856,11 @@ void ProcessDialogEvent()
             dialog.text = "맹세코 진실만 말하고 있어! 그 은닉처 말인데, 보물도 있고 돈도 있어...";
 			link.l1 = "아니, 이봐. 수상한 보물 때문에 내 목숨을 걸 순 없어. 미안하지만...";
 			link.l1.go = "Prisoner_5";
-			if (GetNationRelation2MainCharacter(sti(npchar.nation)) != RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(npchar.nation)) != RELATION_ENEMY)
 			{			
 				// belamour legendary edition адмирал и губернатор может договориться без денег
-				bool bAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation);
-				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation());
+				bool bAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation);
+				bool bGenGov = CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == GetBaseHeroNation();
 				if(!bAdmiral && !bGenGov)
 				{
 				link.l2 = "음, 위험을 감수할 만한 가치가 있을지도 모르지... 내 제안은 이렇다네: 내가 감옥의 경비병들을 처리하고 자네를 내 배로 데려가겠네. 모든 일이 잘 풀리면, 우리가 그로토에 도착할 때까지 항상 내 곁에 있어 주었으면 하네\n  "+XI_ConvertString(pchar.questTemp.jailCanMove.islandId+"Voc")+". 거래지?"; // belamour gen
@@ -891,9 +891,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Prisoner_agree_2";
 		break;
         case "Prisoner_agree_2":
-			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
+			string slai_group = GetNationNameByType(int(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			ReOpenQuestHeader("GivePrisonFree");
 			AddQuestRecord("GivePrisonFree", "1");
             AddQuestUserData("GivePrisonFree", "sCity", XI_ConvertString("Colony"+npchar.city+"Gen"));
@@ -1051,7 +1051,7 @@ void ProcessDialogEvent()
 		break;
 		//==> в месте, где клад припрятан
         case "PrisonerInPlace":
-			switch (sti(pchar.questTemp.jailCanMove.IsTrue))
+			switch (int(pchar.questTemp.jailCanMove.IsTrue))
 			{
 				case 0:
 					dialog.text = "들어봐, 내가 다 확인해 봤는데 보물은 없었어. 이렇게 되어 아쉽군. 누가 우리보다 먼저 파냈나 봐.";
@@ -1311,7 +1311,7 @@ void ProcessDialogEvent()
 			link.l1 = "혹시 내 말이 그 불운한 죄수의 보석 보증이 될 수 있을까?";
 			link.l1.go = "JusticeOnSale_5_WithoutMoney";
 			
-			if(sti(PChar.money) >= 5000)
+			if(int(PChar.money) >= 5000)
 			{
 				link.l2 = "이 5000페소가 그 불운한 죄수의 보석금으로 쓰일 수 있겠소?";
 				link.l2.go = "JusticeOnSale_5";
@@ -1319,7 +1319,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JusticeOnSale_5_WithoutMoney":
-			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || sti(PChar.money) < 5000)
+			if(GetCharacterSkill(PChar, SKILL_LEADERSHIP) > hrand(100) || int(PChar.money) < 5000)
 			{
 				dialog.text = "좋아, "+GetAddress_Form(NPChar)+", 저 악당을 데리고 내가 마음을 바꾸기 전에 당장 나가.";
 				link.l1 = "정의가 승리하는 걸 보니 정말 기쁘지 않나?";
@@ -1343,8 +1343,8 @@ void ProcessDialogEvent()
 		
 		case "JusticeOnSale_6":
 			DialogExit();
-			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", sti(PChar.rank)+5, PIRATE, -1, true, "marginal"));
-			SetFantomParamFromRank(sld, sti(PChar.rank)+5, true);
+			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Smuggler", "mercen_"+(rand(9)+1), "man", "man", int(PChar.rank)+5, PIRATE, -1, true, "marginal"));
+			SetFantomParamFromRank(sld, int(PChar.rank)+5, true);
 			sld.name = PChar.GenQuest.JusticeOnSale.SmugglerName;
 			sld.lastName = "";
 			sld.dialog.filename = "GenQuests_Dialog.c";
@@ -1441,7 +1441,7 @@ void ProcessDialogEvent()
 			dialog.text = "글쎄, 무기를 들지 않았으니 1,500페소만 받지.";
 			link.l1 = "그렇게 많은 돈을 줄 준비는 안 됐네. 뭐, 그 녀석이 며칠만 있다 갈 거라면 별 문제 없겠지. 어쩌면 술도 좀 덜 마시겠군.";
 			link.l1.go = "NightAdventure_CitizenHomieEnd";
-			if(sti(pchar.money) >= 1500)
+			if(int(pchar.money) >= 1500)
 			{
 				link.l2 = "좋아, 보석금을 낼 준비가 됐어.";
 				link.l2.go = "NightAdventure_CitizenHomieOfficer_1";
@@ -1485,7 +1485,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			link.l2 = "사업 이야기를 좀 하고 싶었어.";
 			link.l2.go = "quests";
-			if (!sti(pchar.questTemp.jailCanMove))
+			if (!int(pchar.questTemp.jailCanMove))
 			{
 				link.l4 = "감옥 안에 들어가고 싶어.";
 				link.l4.go = "ForGoodMove";		

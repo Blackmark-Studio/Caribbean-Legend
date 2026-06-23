@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 		case "Newstorehelper_regard_1":
 			DialogExit();
 			npchar.lifeday = 0;
-			switch (sti(pchar.questTemp.Sharlie.Storehelper.Quality))
+			switch (int(pchar.questTemp.Sharlie.Storehelper.Quality))
 			{
 				case 0:
 					AddMoneyToCharacter(pchar, 500);
@@ -301,7 +301,7 @@ void ProcessDialogEvent()
 		case "Rum_Cap_getout":
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation("Deck_Near_Ship")], false);
-			setCharacterShipLocation(pchar, "Shore38"));
+			setCharacterShipLocation(pchar, "Shore38");
 			setWDMPointXZ("Shore38");
 			DoQuestReloadToLocation("Shore38", "goto", "goto1", "Rum_RemoveBarkas");
 		break;
@@ -344,11 +344,11 @@ void ProcessDialogEvent()
 			
 			Weather.Wind.Speed = 16.0;
 			pchar.wind.speed = Weather.Wind.Speed;
-			fWeatherSpeed = stf(Weather.Wind.Speed);//首次出海的福利
+			fWeatherSpeed = float(Weather.Wind.Speed);//首次出海的福利
 			
 			Weather.Wind.Angle = PId2;
 			pchar.wind.angle = Weather.Wind.Angle;
-			fWeatherAngle = stf(Weather.Wind.Angle);//首次出海的福利
+			fWeatherAngle = float(Weather.Wind.Angle);//首次出海的福利
 			
 			pchar.quest.MessageRum2.win_condition.l1 = "ExitFromLocation";
 			pchar.quest.MessageRum2.win_condition.l1.location = pchar.location;
@@ -516,7 +516,7 @@ void ProcessDialogEvent()
 			pchar.quest.Sharlie_Gigolo.win_condition.l1.locator = "houseSp1";
 			pchar.quest.Sharlie_Gigolo.function = "Sharlie_GiveGigoloGirl";
 			pchar.quest.Sharlie_Gigolo1.win_condition.l1 = "Timer";
-			pchar.quest.Sharlie_Gigolo1.win_condition.l1.date.hour  = sti(GetTime() + 2);
+			pchar.quest.Sharlie_Gigolo1.win_condition.l1.date.hour  = int(GetTime() + 2);
 			pchar.quest.Sharlie_Gigolo1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.Sharlie_Gigolo1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.Sharlie_Gigolo1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -578,7 +578,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 			DialogExit();
-			n = makeint(MOD_SKILL_ENEMY_RATE/2);
+			n = int(MOD_SKILL_ENEMY_RATE/2);
 			if (n <= 1) n = 2;
 			for (i=1; i<=n; i++)
 			{
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 		case "CaptivePirate_4":
 			DialogExit();
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			int n = makeint(MOD_SKILL_ENEMY_RATE/2);
+			int n = int(MOD_SKILL_ENEMY_RATE/2);
 			if (n <= 1) n = 2;
 			for (i=1; i<=n; i++)
 			{
@@ -851,7 +851,7 @@ void ProcessDialogEvent()
 			pchar.quest.Sharlie_RescueDaughter1.win_condition.l1.location = "Martinique_jungle_04";
 			pchar.quest.Sharlie_RescueDaughter1.function = "RescueDaughter_NearCave";
 			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1 = "Timer";
-			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1.date.hour  = sti(GetTime()+2);
+			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1.date.hour  = int(GetTime()+2);
 			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.Sharlie_RescueDaughter2.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
 				bOk1 = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-				if (sti(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
+				if (int(pchar.rank) > 6 && npchar.location == "PortSpein_tavern" && !CheckAttribute(npchar, "quest.Consumption")  && bOk1)
 				{
 					dialog.text = "您想要什么, 先生? 抱歉我只是...'抽泣'... 哦... 对不起。 ";
 					link.l1 = "你为什么这么难过, 女士? 美丽的脸上挂着泪水? 发生了什么事? ";
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different.FackWaitress.Name = GetFullName(npchar); //记住女服务员的名字
 			pchar.questTemp.different.FackWaitress.City = npchar.city;
 			//制作女服务员的克隆
-			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, sti(npchar.nation), 3, false, "citizen"));
+			sld = GetCharacter(NPC_GenerateCharacter("WairessQuest", npchar.model, "woman", npchar.model.animation, 5, int(npchar.nation), 3, false, "citizen"));
 			sld.name = npchar.name;
 			sld.lastname = npchar.lastname;
 			sld.dialog.Filename = "Quest\ForAll_dialog.c";
@@ -270,7 +270,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Consumption_3_1":
-			if(sti(pchar.reputation.nobility) > 36)
+			if(int(pchar.reputation.nobility) > 36)
 			{
 				Notification_Reputation(false, 36, "high");
 				dialog.text = "这是在'暗示'吗? 对不起, 和你说话是我的错! 再见,'骑士'... ";

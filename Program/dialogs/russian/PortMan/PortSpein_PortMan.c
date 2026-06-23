@@ -27,8 +27,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Хуан? И всё? Может вспомните фамилию, или, хотя бы, название судна? Здесь же испанские колонии, милейш"+GetSexPhrase("ий","ая")+" - Хуанов и Карлосов тут как бананов в джунглях, и в моих учётных книгах их не меньше, так что, если вы более ничего не знаете - я вам помочь не смогу.";
 			link.l1 = "Ясно. Извините за беспокойство...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

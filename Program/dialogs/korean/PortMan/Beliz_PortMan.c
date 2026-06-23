@@ -43,9 +43,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "흠... 자네가 레가타 규칙을 어겼으니 내가 실격 처리해야겠군. 유감이네. 다음 항해에는 참가할 수 없을 걸세. 이미 포트 로얄로 보고서를 준비해 두었네.";
@@ -58,8 +58,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
-			dialog.text = "등록합시다: 선장 "+GetFullName(pchar)+", 배는 "+pchar.Ship.Name+"... 레가타의 지속 시간이 시간 단위로 "+sti(pchar.questTemp.Regata.FirstTransitionTime)+". 완료되었습니다, 결과가 기록되었으니 계속 가셔도 됩니다.";
+			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
+			dialog.text = "등록합시다: 선장 "+GetFullName(pchar)+", 배는 "+pchar.Ship.Name+"... 레가타의 지속 시간이 시간 단위로 "+int(pchar.questTemp.Regata.FirstTransitionTime)+". 완료되었습니다, 결과가 기록되었으니 계속 가셔도 됩니다.";
 			link.l1 = "내 계급을 말해 줘.";
 			link.l1.go = "Regata_info";
 			}
@@ -82,7 +82,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FirstTransitionTime))
+				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FirstTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//имя ближайшего противника

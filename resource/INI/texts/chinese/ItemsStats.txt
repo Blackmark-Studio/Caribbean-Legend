@@ -325,3 +325,7 @@ itm_stat_greenIdol {崇拜}
 itm_stat_descr_greenIdol {这尊邪像会支配周围之人的意志，使敌舰投降几率、舰队战力以及酒馆中的可招募人数提高 $percent(0.30)。}
 itm_stat_secondary_greenIdol {古老者的低语}
 itm_stat_descr_secondary_greenIdol {装备后，这尊邪像会持续降低船员士气，以不敬的低语将他们逼向疯狂。}
+itm_stat_nocturlabe {精准时刻}
+itm_stat_descr_nocturlabe {使船只机动性提高10%，并在2级和1级舰船上额外提高25%。}
+itm_stat_secondary_nocturlabe {夜间航行}
+itm_stat_descr_secondary_nocturlabe {使 $key(Perception) 提高 #f.0modifiers.SpecialPerception#。使大地图上的逃脱几率提高25。}

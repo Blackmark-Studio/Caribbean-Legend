@@ -474,7 +474,7 @@ void ProcessDialogEvent()
 			dialog.text = "여자들 때문이라면... 나도 갈게. 헤헤. 근데 왜 우리 배로 안 가? 그리고 왜 승객으로? 애들이야 좀 투덜댈 수도 있겠지만, 당신이라면 천국이든 지옥이든 따라갈 거야.";
 			link.l1 = "처음 여기 왔을 땐 내가 뱃사람이 될 거라고는 상상도 못 했어. 그런데 지금은 다른 삶은 생각도 못 하겠어. 내가 더 이상 선장이 아닐 수도 있다는 걸 받아들일 수 있는지... 그리고 바다에서의 삶, 약탈을 떠날 준비가 됐는지 확인하고 싶어.";
 			link.l1.go = "SharlieEpilog_Alonso_nothing";
-			if (sti(pchar.Money) >= GetSalaryForShip(PChar))
+			if (int(pchar.Money) >= GetSalaryForShip(PChar))
 			{
 				link.l2 = "긴 얘기야. 선술집에서 럼 한 잔 하면서 말해줄게. 선원들도 불러. 성대한 송별 파티를 열자고. 자, 이거 받아——걔네들한테 한 달치 월급 주라. 퇴직금 대신이야.";
 				link.l2.go = "SharlieEpilog_Alonso_salary";

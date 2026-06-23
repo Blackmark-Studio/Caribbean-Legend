@@ -121,7 +121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "TPZ_Tavern2_1":
             dialog.text = "船长, 这太不可思议了! 你是怎么做到的? 不过没关系。 告诉我, 你想要什么来交换这批豪华的酒类货物? 还有, 文件会没问题吗? ";
-            if (sti(pchar.reputation.nobility) >= 40)
+            if (int(pchar.reputation.nobility) >= 40)
             {
                 link.l1 = "文件? 当然一切都完全合规。 你不会真的打算检查吧? ";
                 link.l1.go = "TPZ_Tavern2_2";
@@ -217,7 +217,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "当然, 船长! 那么, 你的这批货想要多少钱? ";
 				link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 —各一百瓶 —将花费你三百五十杜布隆。 ";

@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 		chrDisableReloadToLocation = false; // открыть локацию
 		AddQuestRecord("Guardoftruth", "5");
 		pchar.quest.GuardOT_mayak.win_condition.l1 = "Timer";
-		pchar.quest.GuardOT_mayak.win_condition.l1.date.hour = sti(GetTime() - (rand(4)));
+		pchar.quest.GuardOT_mayak.win_condition.l1.date.hour = int(GetTime() - (rand(4)));
 		pchar.quest.GuardOT_mayak.win_condition.l1.date.day = GetAddingDataDay(0, 0, 1);
 		pchar.quest.GuardOT_mayak.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 		pchar.quest.GuardOT_mayak.win_condition.l1.date.year = GetAddingDataYear(0, 0, 1);
@@ -412,7 +412,7 @@ void ProcessDialogEvent()
 		sld = ItemsFromID("specialletter");
 		sld.text = "Letter_Vincento";
 		dialog.text = "Ahí tienes. ¿Qué tal unas monedas por mis molestias?";
-		if (sti(Pchar.money) >= 2000)
+		if (int(Pchar.money) >= 2000)
 		{
 			link.l1 = "Toma un poco de plata. Te lo has ganado honestamente.";
 			link.l1.go = "vinsentoagent_2_1";
@@ -653,9 +653,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "gevarra_13":
-		iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
+		iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
 		dialog.text = "Tenemos un trato si tienes el dinero para pagar la vainilla y el envío. Como dice el encantador dicho irlandés: 'Muéstrame el dinero.'";
-		if (sti(Pchar.money) >= iTemp)
+		if (int(Pchar.money) >= iTemp)
 		{
 			link.l1 = "Aquí tienes, echa un vistazo. Todo está aquí.";
 			link.l1.go = "gevarra_14";
@@ -674,9 +674,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "gevarra_wait":
-		iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
+		iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
 		dialog.text = "¿Has traído el dinero?";
-		if (sti(Pchar.money) >= iTemp)
+		if (int(Pchar.money) >= iTemp)
 		{
 			link.l1 = "Aquí tienes, echa un vistazo. Está todo aquí.";
 			link.l1.go = "gevarra_14";
@@ -689,7 +689,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "gevarra_14":
-		if (stf(environment.time) < 24.0)
+		if (float(environment.time) < 24.0)
 		{
 			sTemp = "mañana";
 			iTemp = 1;
@@ -699,7 +699,7 @@ void ProcessDialogEvent()
 			sTemp = "hoy";
 			iTemp = 0;
 		}
-		if (stf(environment.time) > 21.0 && stf(environment.time) < 7.0)
+		if (float(environment.time) > 21.0 && float(environment.time) < 7.0)
 		{
 			dialog.text = "¡Estupendo! Disfruto haciendo negocios con socios sensatos. Vuelve " + sTemp + " para las diez de la mañana. Creo que para ese momento nuestro amigo mutuo Gaius habrá recuperado el sentido.";
 			link.l1 = "¡Genial! ¡Nos vemos más tarde!";
@@ -717,7 +717,7 @@ void ProcessDialogEvent()
 			link.l1 = "¡Genial! ¡Nos vemos más tarde!";
 			link.l1.go = "gevarra_15";
 			pchar.quest.GuardOT_tradetimer.win_condition.l1 = "Timer";
-			pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour = sti(GetTime() + 3);
+			pchar.quest.GuardOT_tradetimer.win_condition.l1.date.hour = int(GetTime() + 3);
 			pchar.quest.GuardOT_tradetimer.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 			pchar.quest.GuardOT_tradetimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.GuardOT_tradetimer.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -726,7 +726,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "gevarra_15":
-		iTemp = sti(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
+		iTemp = int(pchar.questTemp.Guardoftruth.VanilleQty) * 210 + 25000;
 		DialogExit();
 		NextDiag.currentnode = "gevarra_time";
 		npchar.DeckDialogNode = "gevarra_time";
@@ -964,7 +964,7 @@ void ProcessDialogEvent()
 
 	case "belinda_18":
 		dialog.text = "¡Dime, no me hagas esperar! ¿Te encontraste con los bandidos?";
-		if (sti(Pchar.money) >= 50000)
+		if (int(Pchar.money) >= 50000)
 		{
 			link.l1 = "Aquí, toma tus cincuenta mil de vuelta. No los necesitaba. Toma también este anillo. Creo que te resultará familiar.";
 			link.l1.go = "belinda_19_1";
@@ -1305,7 +1305,7 @@ void ProcessDialogEvent()
 		pchar.quest.GuardOT_sanantonio.function = "GuardOT_SanantonioArrive";
 		// на время, специально для дебилов, не читающих диалоги и СЖ
 		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1 = "Timer";
-		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour = sti(GetTime() + 6);
+		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.hour = int(GetTime() + 6);
 		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.GuardOT_sanantoniotimer.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);

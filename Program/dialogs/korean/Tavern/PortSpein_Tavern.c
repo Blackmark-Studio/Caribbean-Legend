@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("내 마음이 바뀌었어...","지금은 할 말이 없어."),"으음, 내 기억이 다 어디로 갔지...","그래, 정말 이번이 세 번째야...","아니, 무슨 질문이야?…",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Цена чахотки
-			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && sti(pchar.money) >= 3000)
+			if (!CheckAttribute(npchar, "quest.Consumption") && CheckAttribute(pchar, "questTemp.Consumption") && pchar.questTemp.Consumption == "begin" && int(pchar.money) >= 3000)
 			{
 				link.l1 = "자네 요새에서 결핵이 창궐하고 있다는 소문을 들었네. 그 역병이 마을까지 퍼질 거라 생각하나?";
 				link.l1.go = "Consumption";
@@ -139,8 +139,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "오, 맙소사, 또 그 얘기 하는 거야! 아니, 다행히도 못 들었어. 맹세해! 이제, 화제 좀 바꾸자. 제발!";
 			link.l1 = "알았어, 알았다고, 심장마비나 일으키지 마...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";
@@ -161,7 +161,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2":
 			dialog.text = "글쎄, 그 자는 목을 비틀고 싶어 하는 놈들이 친구보다 훨씬 많다고만 해두지. 하지만 정말로 그 자에게 영향력을 행사할 수 있는 사람의 이름이 필요하다면, 천 페소는 내야 해. 돈을 내면 전부 다 말해주지.";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "좋아, 돈 가져가, 이 늙은 갈취꾼아.";
 				link.l1.go = "OZ_Tavern_3";
@@ -177,7 +177,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "OZ_Tavern_2_1":
 			dialog.text = "선장님, 천 페소 가져오셨습니까?";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "가졌다. 가져가, 이 늙은 갈취꾼아.";
 				link.l1.go = "OZ_Tavern_3";

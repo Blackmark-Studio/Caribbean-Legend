@@ -20,13 +20,13 @@ float GetCritDefence(ref table)
 // Крит шанс
 float GetCritChance(ref table, string type)
 {
-	return GetAttributeFloat(table, type + "_" + M_CRIT_CHANCE)
+	return GetAttributeFloat(table, type + "_" + M_CRIT_CHANCE);
 }
 
 // Крит урон
 float GetCritDamageMtp(ref table, string type)
 {
-	return GetAttributeFloat(table, type + "_" + M_CRIT_DAMAGE)
+	return GetAttributeFloat(table, type + "_" + M_CRIT_DAMAGE);
 }
 
 // Скорость перезарядки пистолета/мушкета

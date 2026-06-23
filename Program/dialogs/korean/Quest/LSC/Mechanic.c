@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					link.l4 = "또 나야, Henrik. 네 옷은 어때? 수선할 수 있었어?";
 					link.l4.go = "mechanic_20";
 				}
-				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= sti(pchar.questTemp.LSC.PtAddQty))
+				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= int(pchar.questTemp.LSC.PtAddQty))
 				{
 					link.l4 = "네가 부탁한 그 금속, 충분히 있어. 가져가.";
 					link.l4.go = "mechanic_23";
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mechanic_20":
-			if (sti(pchar.questTemp.LSC.PtAddQty) == 0)
+			if (int(pchar.questTemp.LSC.PtAddQty) == 0)
 			{
 				dialog.text = "그래. 위르겐이랑 내가 정말 고생했지, 네가 가져온 부품 양도 충분했어. 잠수복은 수리 완료됐고 준비도 다 됐어. 몇 가지 테스트만 더 하면 되는데, 문제없을 거라 확신해. 내일 오전 10시에 오면 돼 — 내가 탱크에 공기를 채워둘 테니, 네가 원하는 대로 할 수 있을 거야.";
 				link.l1 = "훌륭해! 기대하고 있겠어. 내일 보자, Henrik!";
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "실망시켜야겠군, "+pchar.name+". 내 예상대로 금속이 부족하군. 나는 필요해 "+FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty))+" 수리를 끝내려면 부품이 더 필요해. 다시 한 번 도움을 부탁해야겠어.";
+				dialog.text = "실망시켜야겠군, "+pchar.name+". 내 예상대로 금속이 부족하군. 나는 필요해 "+FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty))+" 수리를 끝내려면 부품이 더 필요해. 다시 한 번 도움을 부탁해야겠어.";
 				link.l1 = "음, 이런 전개는 예상 못 했는데. 좋아, 네가 부족한 금덩이를 찾아볼게.";
 				link.l1.go = "mechanic_21";
 			}
@@ -271,11 +271,11 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.LSC = "platinum_add_wait";
 			AddQuestRecord("LSC", "9");
-			AddQuestUserData("LSC", "sQty", FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty)));
+			AddQuestUserData("LSC", "sQty", FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty)));
 		break;
 		
 		case "mechanic_23":
-			RemoveItems(pchar, "jewelry10", sti(pchar.questTemp.LSC.PtAddQty));
+			RemoveItems(pchar, "jewelry10", int(pchar.questTemp.LSC.PtAddQty));
 			dialog.text = "훌륭해! 이제 잠수복이 복원될 거야. 몇 가지 테스트만 더 하면 되는데, 분명 괜찮을 거라고 확신해. 내일 오전 10시에 와. 내가 탱크에 공기를 채워둘 테니, 네가 원하는 대로 할 수 있을 거야.";
 			link.l1 = "훌륭해! 기대하고 있을게. 내일 보자, Henrik!";
 			link.l1.go = "mechanic_24";
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(npchar, "quest.guarantee")) // требует залог
 			{
 				dialog.text = "네, 물론이지. 잠수복은 이미 시험해 보고 공기도 채워 놨어. 서약서는 가지고 있나? 50만 페소?";
-				if (sti(pchar.money) >= 500000)
+				if (int(pchar.money) >= 500000)
 				{
 					link.l1 = "그래, 물론이지. 자, 받아.";
 					link.l1.go = "immersion_next_pay";

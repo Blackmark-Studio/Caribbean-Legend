@@ -72,13 +72,13 @@ void ProcessDialogEvent()
 	if(HasSubStr(attrL, "ShipStockManBack2_"))
 	{
 		i = findsubstr(attrL, "_" , 0);
-		AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
+		AddMoneyToCharacter(Pchar, -int(NPChar.MoneyForShip));
 
-		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));//сторож
+		chref = GetCharacter(int(NPChar.ShipToStoreIdx));//сторож
 
 		////DownCrewExp(chref,GetNpcQuestPastDayParam(chref, "ShipInStockMan.Date"));
 
-        int iChar = GetPassenger(PChar, sti(strcut(attrL, i+1, strlen(attrL)-1))); //выбранный пассажир
+        int iChar = GetPassenger(PChar, int(strcut(attrL, i+1, strlen(attrL)-1))); //выбранный пассажир
 		compref = GetCharacter(iChar);
 
 		DeleteAttribute(compref,"ship");//зачем-то стираем корабль офицера, хотя его там и не должно быть
@@ -107,8 +107,8 @@ void ProcessDialogEvent()
 		chref.ship = "";
 		LAi_SetCurHP(chref, 0.0);//ещё и убивать непися, чтоб точно очистился из массива?
 
-		NPChar.Portman	= sti(NPChar.Portman) - 1;
-		pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
+		NPChar.Portman	= int(NPChar.Portman) - 1;
+		pchar.ShipInStock = int(pchar.ShipInStock) - 1;
 		Dialog.CurrentNode = "exit";//закрываем диалог, ещё одно подтверждение уже не справшиваем
 	}
 	
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 	{
 		i = findsubstr(attrL, "_" , 0);
 		NPChar.StoreWithOff = 1;
-		NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, sti(strcut(attrL, i+1, strlen(attrL)-1))); // индех в конце
+		NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, int(strcut(attrL, i+1, strlen(attrL)-1))); // индех в конце
 		Dialog.CurrentNode = "ShipStock_2";
 	}
 
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 	{
 		i = findsubstr(attrL, "_" , 0);
 		NPChar.StoreWithOff = 0;
-		NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, sti(strcut(attrL, i+1, strlen(attrL)-1))); // индех в конце
+		NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, int(strcut(attrL, i+1, strlen(attrL)-1))); // индех в конце
 		Dialog.CurrentNode = "ShipStock_2";
 	}
     //  <=== hasert
@@ -135,7 +135,9 @@ void ProcessDialogEvent()
 	 	NPChar.Quest.BurntShip.ShipCompanionIndex = strcut(attrL, i + 1, strlen(attrL) - 1); // индех в конце
  	    Dialog.CurrentNode = "BurntShip19";
 	}
-    
+	int iTime, idaysQty, iGoods, iGoodsQty, amount;
+	int iFrahtGoods1, iFrahtGoods2, iFrahtGoods3, iFrahtGoods;
+	int iFrahtGoodsQty1, iFrahtGoodsQty2, iFrahtGoodsQty3;
 	switch(Dialog.CurrentNode)
 	{
         case "Exit":
@@ -215,7 +217,7 @@ void ProcessDialogEvent()
 					if(CheckAttribute(PChar, "GenQuest.ChurchQuest_1.NoMoneyToPortMan"))
 					{
 						dialog.text = "Also, was ist mit dem Geld? Hast du mindestens tausend Pesos für mich?";
-						if(sti(PChar.Money) >= 1000)
+						if(int(PChar.Money) >= 1000)
 						{
 							link.l1 = "Ja, ich habe"+GetSexPhrase("","")+". Das sind genau tausend Pesos. Jetzt die Informationen!";
 							link.l1.go = "Church_GenQuest1_Node_FillFullInfo_3";
@@ -386,12 +388,12 @@ void ProcessDialogEvent()
 				Link.l3 = "Kann ich eines meiner Schiffe für einige Zeit hier anlegen?";
 				Link.l3.go = "ShipStock_1";
 			}
-			if (sti(NPChar.Portman) > 0)
+			if (int(NPChar.Portman) > 0)
 			{
                 Link.l4 = "Ich möchte mein Schiff abholen.";
     			Link.l4.go = "ShipStockReturn_1";
 			}
-			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
+			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && int(pchar.GenQuest.LoanChest.TargetIdx) == int(NPChar.index))
 			{
 				link.l5 = "Ich bin gekommen, um finanzielle Geschäfte zu besprechen.";
 				link.l5.go = "LoanForAll";//(перессылка в кредитный генератор)	
@@ -489,7 +491,7 @@ void ProcessDialogEvent()
 			
 		case "Church_GenQuest1_Node_FillFullInfo_2":
 			dialog.text = "Ich verstehe. Das macht die Dinge ein bisschen komplizierter. Ich muss in den Aufzeichnungen im Schiffsregister herumwühlen, und das wird einige Zeit in Anspruch nehmen. Und Zeit ist Geld, wie Sie wahrscheinlich wissen.";
-			if(sti(pchar.money) >= 1000)
+			if(int(pchar.money) >= 1000)
 			{
 				link.l1 = "Ich verstehe das perfekt, Herr "+GetFullName(NPChar)+", und ich bin ausreichend vorbereitet, um Ihre Zeit zu bewerten ... sagen wir mal, im Wert von tausend Pesos.";
 				link.l1.go = "Church_GenQuest1_Node_FillFullInfo_3";
@@ -592,7 +594,7 @@ void ProcessDialogEvent()
 //			SetFunctionLocationCondition("Church_GenQuest1_ChangeCapitanLocation", "Deck_Near_Ship", true);
 			PChar.GenQuest.ChurchQuest_1.CurPortManColony = NPChar.city;
 			Group_SetAddress("ChurchGenQuest1_CapGroup", colonies[FindColony(NPChar.City)].Island, "IslandShips1", "Ship_1"); // Ставим кэпа в порту колонии
-			Characters[GetCharacterIndex("ChurchGenQuest1_Cap")].Nation = sti(NPChar.Nation); // Сменим нацию, чтоб вражды не было
+			Characters[GetCharacterIndex("ChurchGenQuest1_Cap")].Nation = int(NPChar.Nation); // Сменим нацию, чтоб вражды не было
 			DeleteAttribute(PChar, "GenQuest.ChurchQuest_1.AskPortMan"); // Больше не спрашиваем
 //			if(rand(1) == 0) PChar.GenQuest.ChurchQuest_1.CapWaitOnTavern = true;
 			sld = CharacterFromID("ChurchGenQuest1_Cap");
@@ -617,7 +619,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.different.GiveShipLetters.speakPortman = true;
 			s1 = "Let me take a look! Yes, this vessel and its captain are both registered in my documents. ";
 			s1 = s1 + "Your conscientiousness, captain, reflects credit upon yourself! Of course, your efforts must not go unrewarded.  ";
-			dialog.text = s1+"Sag mal, würdest du eine Summe von "+sti(pchar.questTemp.different.GiveShipLetters.price1)+" pesos ein passender Lohn?";
+			dialog.text = s1+"Sag mal, würdest du eine Summe von "+int(pchar.questTemp.different.GiveShipLetters.price1)+" pesos ein passender Lohn?";
 			link.l1 = "Natürlich nicht!";
 			link.l1.go = "exit";
 			link.l2 = "Nun, eine bescheidene Summe, aber auch keine große Sache. Ja, ich akzeptiere Ihr Angebot, "+npchar.name+".";
@@ -626,7 +628,7 @@ void ProcessDialogEvent()
 		
 		case "ShipLetters_Portman1_2" :
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price1)); 			
+			addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price1));
 			pchar.questTemp.different = "free";
 			pchar.quest.GiveShipLetters_null.over = "yes"; //снимаем таймер 
 			AddQuestRecord("GiveShipLetters", "5");			
@@ -646,7 +648,7 @@ void ProcessDialogEvent()
 		
 		case "ShipLetters_Portman2_1":
 			TakeItemFromCharacter(pchar, "CaptainBook"); 
-			addMoneyToCharacter(pchar, sti(pchar.questTemp.different.GiveShipLetters.price1)); 			
+			addMoneyToCharacter(pchar, int(pchar.questTemp.different.GiveShipLetters.price1));
 			pchar.questTemp.different = "free";
 			pchar.quest.GiveShipLetters_null.over = "yes"; //снимаем таймер 
 			AddQuestRecord("GiveShipLetters", "6");			
@@ -676,7 +678,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_4":
-			if(sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
+			if(int(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 			{
 				dialog.text = "Oh, du bist das "+GetSexPhrase("Kapitän, der gebracht hat","junge Dame, die gebracht hat")+" mein verlorener Sohn mit einer jungen Braut?";
 				link.l1 = "Ja, ich habe ihre Flucht unterstützt.";
@@ -703,7 +705,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_5_1":
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.EncGirl.sum));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.EncGirl.sum));
 			GiveItem2Character(pchar, pchar.GenQuest.EncGirl.item);
 			AddQuestRecord("JungleGirl", "18");
 			CloseQuestHeader("JungleGirl");
@@ -760,7 +762,6 @@ void ProcessDialogEvent()
 		break;
 
 ///Jason-----------------------новые генераторы накопительного типа для портмана----------------------------
-		int iTime, idaysQty, iGoods, iGoodsQty, amount;
 		case "Work_check"://фейс-контроль - общая проверка профпригодности ГГ и выбор задания
 			//--> проверка миниквестов начальника порта. 
 			if (npchar.quest == "PortmansJornal") //взят квест на судовой журнал
@@ -790,8 +791,8 @@ void ProcessDialogEvent()
 					{
 						sld = &characters[cn];
 						if (sld.ship.name == npchar.quest.PortmansSeekShip.shipName && 
-							RealShips[sti(sld.ship.type)].BaseName == npchar.quest.PortmansSeekShip.shipTapeName &&
-							RealShips[sti(sld.Ship.Type)].basetype == npchar.quest.PortmansSeekShip.shipTape)
+							RealShips[int(sld.ship.type)].BaseName == npchar.quest.PortmansSeekShip.shipTapeName &&
+							RealShips[int(sld.Ship.Type)].basetype == npchar.quest.PortmansSeekShip.shipTape)
 						{
 							if (i == 0)
 							{	//если нужный корабль - у ГГ
@@ -824,13 +825,13 @@ void ProcessDialogEvent()
 			}
 			//<-- проверка миниквестов начальника порта. 
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 			{
 				if (!CheckAttribute(npchar, "work_date") || GetNpcQuestPastDayParam(npchar, "work_date") >= 2)//проверка повтора
 				{
-					if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+					if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 					{
-						dialog.text = RandPhraseSimple("Es gibt keine Arbeit für diejenigen, die unter der Flagge von segeln "+NationNameGenitive(sti(pchar.nation))+"! Verlassen Sie sofort mein Büro!","Ich werde nicht zusammenarbeiten mit "+NationNameAblative(sti(pchar.nation))+". Verschwinde!");
+						dialog.text = RandPhraseSimple("Es gibt keine Arbeit für diejenigen, die unter der Flagge von segeln "+NationNameGenitive(int(pchar.nation))+"! Verlassen Sie sofort mein Büro!","Ich werde nicht zusammenarbeiten mit "+NationNameAblative(int(pchar.nation))+". Verschwinde!");
 						link.l1 = RandPhraseSimple("Nun, wie du willst...","Nun, wie du möchtest...");
 						link.l1.go = "exit";
 						break;
@@ -879,7 +880,7 @@ void ProcessDialogEvent()
 		
 		if (hrand(5) > 1)
 		{
-			if (GetCompanionQuantity(pchar) < 3 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
+			if (GetCompanionQuantity(pchar) < 3 && or(int(RealShips[int(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, int(RealShips[int(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER))
 			{
 				if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) 
 				{ // если заняты
@@ -889,7 +890,7 @@ void ProcessDialogEvent()
 				} 
 				else 
 				{ // если не заняты
-					if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) 
+					if (int(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1)
 					{ // 2 уровень
 						dialog.text = "Sie haben bereits mehrmals erfolgreich Handelsschiffe eskortiert. Ich vermute, ich habe einen Auftrag, der Ihnen passen würde.";
 						link.l1 = "Ich bin ganz Ohr.";
@@ -897,7 +898,7 @@ void ProcessDialogEvent()
 					} 
 					else 
 					{ // 1 уровень
-						if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // если на ТГ
+						if (int(RealShips[int(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - int(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // если на ТГ
 							dialog.text = "Ich habe einen Auftrag nur für dich. Es gibt zwei Handelsschiffe im Hafen, die schon längst hätten auslaufen sollen. Die Sache ist die, ihr Eskortschiff wurde beschädigt und wartet noch immer auf die notwendigen Reparaturen, so dass es vorerst nicht auslaufen kann. \nEs stellt sich heraus, dass dein Schiff ideal für den Job ist - außerdem muss ich noch zusätzliche Ladung in deinen Laderaum einlagern. Natürlich wird die Bezahlung doppelt sein - für die Fracht und die Eskorte.";
 							link.l1 = "Was für ein interessantes Angebot! Ich nehme es an!";
 							link.l1.go = "escort_bonus";
@@ -937,7 +938,7 @@ void ProcessDialogEvent()
 		
 		if (hrand(5) > 1)
 		{
-			if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)
+			if (int(RealShips[int(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)
 			{
 				if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp"))
 				{ 
@@ -949,7 +950,7 @@ void ProcessDialogEvent()
 				else 
 				{ 
 					// если не заняты
-					if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) 
+					if (int(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1)
 					{ //если 2 уровень
 						dialog.text = "So... Du hast bereits mehrere Jobs als Kurier übernommen und warst dabei, nach meinem besten Wissen, ziemlich erfolgreich. Du kannst wahrscheinlich die Aufgabe, die ich dir gleich zuweisen werde, bewältigen.";
 						link.l1 = "Ich bin ganz Ohr, "+GetAddress_FormToNPC(NPChar)+".";
@@ -994,7 +995,7 @@ void ProcessDialogEvent()
 					Link.l1.go = "exit";
 					break;
 				}
-				if (1500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) > 0)//мало места - не даем
+				if (1500 - int(GetCharacterFreeSpace(pchar, GOOD_RUM)) > 0)//мало места - не даем
 				{
 					dialog.text = "Sie haben zu wenig Platz in Ihrem Laderaum. Ich brauche ein geräumigeres Schiff für eine Fracht. Ich schlage vor, Sie schauen im Laden nach - der örtliche Händler chartert häufig Schiffe, um kleine Mengen von Ladungen zu liefern.";
 					link.l1 = "Ich verstehe. Nun, wie Sie sagen.";
@@ -1019,9 +1020,7 @@ void ProcessDialogEvent()
 				Link.l1.go = "exit";
 			}
 		break;
-	
-		int iFrahtGoods1, iFrahtGoods2, iFrahtGoods3, iFrahtGoods;
-		int iFrahtGoodsQty1, iFrahtGoodsQty2, iFrahtGoodsQty3;
+
 		case "Fraht_choise":
 			//выбираем города
 			pchar.questTemp.WPU.Fraht.City1 = findCurrentCity1(npchar);
@@ -1035,12 +1034,12 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Fraht.Goods2 = iFrahtGoods2;
 			pchar.questTemp.WPU.Fraht.Goods3 = iFrahtGoods3;
 			//определим количество
-			iFrahtGoodsQty1 = makeint(GetCharacterFreeSpace(pchar, iFrahtGoods1))/(1+frand(0.5));
-			iFrahtGoodsQty2 = makeint(GetCharacterFreeSpace(pchar, iFrahtGoods2))/(1+frand(0.5));
-			iFrahtGoodsQty3 = makeint(GetCharacterFreeSpace(pchar, iFrahtGoods3))/(1+frand(0.5));
-			if (sti(iFrahtGoodsQty1) > 10000) iFrahtGoodsQty1 = 10000 + rand(500);
-			if (sti(iFrahtGoodsQty2) > 10000) iFrahtGoodsQty2 = 10000 + rand(500);
-			if (sti(iFrahtGoodsQty3) > 10000) iFrahtGoodsQty3 = 10000 + rand(500);
+			iFrahtGoodsQty1 = int(GetCharacterFreeSpace(pchar, iFrahtGoods1))/(1+frand(0.5));
+			iFrahtGoodsQty2 = int(GetCharacterFreeSpace(pchar, iFrahtGoods2))/(1+frand(0.5));
+			iFrahtGoodsQty3 = int(GetCharacterFreeSpace(pchar, iFrahtGoods3))/(1+frand(0.5));
+			if (int(iFrahtGoodsQty1) > 10000) iFrahtGoodsQty1 = 10000 + rand(500);
+			if (int(iFrahtGoodsQty2) > 10000) iFrahtGoodsQty2 = 10000 + rand(500);
+			if (int(iFrahtGoodsQty3) > 10000) iFrahtGoodsQty3 = 10000 + rand(500);
 			pchar.questTemp.WPU.Fraht.GoodsQty1 = iFrahtGoodsQty1;
 			pchar.questTemp.WPU.Fraht.GoodsQty2 = iFrahtGoodsQty2;
 			pchar.questTemp.WPU.Fraht.GoodsQty3 = iFrahtGoodsQty3;
@@ -1050,16 +1049,16 @@ void ProcessDialogEvent()
 			int daysQty1 = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Fraht.StartCity), GetArealByCityName(pchar.questTemp.WPU.Fraht.City1));
 			int daysQty2 = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Fraht.StartCity), GetArealByCityName(pchar.questTemp.WPU.Fraht.City2));
 			int daysQty3 = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Fraht.StartCity), GetArealByCityName(pchar.questTemp.WPU.Fraht.City3));
-			pchar.questTemp.WPU.Fraht.DaysQty1 = makeint(sti(daysQty1)*(frand(1.3)+0.7));
-			pchar.questTemp.WPU.Fraht.DaysQty2 = makeint(sti(daysQty2)*(frand(1.3)+0.7));
-			pchar.questTemp.WPU.Fraht.DaysQty3 = makeint(sti(daysQty3)*(frand(1.3)+0.7));
+			pchar.questTemp.WPU.Fraht.DaysQty1 = int(int(daysQty1)*(frand(1.3)+0.7));
+			pchar.questTemp.WPU.Fraht.DaysQty2 = int(int(daysQty2)*(frand(1.3)+0.7));
+			pchar.questTemp.WPU.Fraht.DaysQty3 = int(int(daysQty3)*(frand(1.3)+0.7));
 			//установим цену исходя из объёма груза, дальности и сроков
-			pchar.questTemp.WPU.Fraht.Money1 = (makeint((sti(iFrahtGoodsQty1) * sti(Goods[iFrahtGoods1].Weight) / sti(Goods[iFrahtGoods1].Units))))*(sti(daysQty1)*2)*sti(daysQty1)/sti(pchar.questTemp.WPU.Fraht.DaysQty1);
-			pchar.questTemp.WPU.Fraht.Money2 = (makeint((sti(iFrahtGoodsQty2) * sti(Goods[iFrahtGoods2].Weight) / sti(Goods[iFrahtGoods2].Units))))*(sti(daysQty2)*2)*sti(daysQty2)/sti(pchar.questTemp.WPU.Fraht.DaysQty2);
-			pchar.questTemp.WPU.Fraht.Money3 = (makeint((sti(iFrahtGoodsQty3) * sti(Goods[iFrahtGoods3].Weight) / sti(Goods[iFrahtGoods3].Units))))*(sti(daysQty3)*2)*sti(daysQty3)/sti(pchar.questTemp.WPU.Fraht.DaysQty3);
+			pchar.questTemp.WPU.Fraht.Money1 = (int((int(iFrahtGoodsQty1) * int(Goods[iFrahtGoods1].Weight) / int(Goods[iFrahtGoods1].Units))))*(int(daysQty1)*2)*int(daysQty1)/int(pchar.questTemp.WPU.Fraht.DaysQty1);
+			pchar.questTemp.WPU.Fraht.Money2 = (int((int(iFrahtGoodsQty2) * int(Goods[iFrahtGoods2].Weight) / int(Goods[iFrahtGoods2].Units))))*(int(daysQty2)*2)*int(daysQty2)/int(pchar.questTemp.WPU.Fraht.DaysQty2);
+			pchar.questTemp.WPU.Fraht.Money3 = (int((int(iFrahtGoodsQty3) * int(Goods[iFrahtGoods3].Weight) / int(Goods[iFrahtGoods3].Units))))*(int(daysQty3)*2)*int(daysQty3)/int(pchar.questTemp.WPU.Fraht.DaysQty3);
 			if (hrand(5) < 4)//три варианта
 			{
-				dialog.text = "Die folgenden Varianten sind verfügbar:\n"+"Fracht "+GetGoodsNameAlt(iFrahtGoods1)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty1)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1)+". Zahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money1))+"\nFracht "+GetGoodsNameAlt(iFrahtGoods2)+" in der Menge von "+FindRussianQtyString(iFrahtGoodsQty2)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+", im "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2)+". Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money2))+"\nFracht "+GetGoodsNameAlt(iFrahtGoods3)+" in der Menge von "+FindRussianQtyString(iFrahtGoodsQty3)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City3)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty3)+". Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money3))+"\nWas ist deine Wahl?";
+				dialog.text = "Die folgenden Varianten sind verfügbar:\n"+"Fracht "+GetGoodsNameAlt(iFrahtGoods1)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty1)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1)+". Zahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money1))+"\nFracht "+GetGoodsNameAlt(iFrahtGoods2)+" in der Menge von "+FindRussianQtyString(iFrahtGoodsQty2)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+", im "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2)+". Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money2))+"\nFracht "+GetGoodsNameAlt(iFrahtGoods3)+" in der Menge von "+FindRussianQtyString(iFrahtGoodsQty3)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City3)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty3)+". Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money3))+"\nWas ist deine Wahl?";
 				Link.l1 = "Ich wähle die zweite Variante - eine Charta für die Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+" beladen mit "+GetGoodsNameAlt(iFrahtGoods1)+".";
 				Link.l1.go = "Fraht_Choise_1";
 				Link.l2 = "Ich wähle die dritte Variante - eine Charta zur Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+" beladen mit "+GetGoodsNameAlt(iFrahtGoods2)+".";
@@ -1069,7 +1068,7 @@ void ProcessDialogEvent()
 			}
 			else //два варианта
 			{
-				dialog.text = "Die folgenden Varianten sind verfügbar:\n"+"Fracht "+GetGoodsNameAlt(iFrahtGoods1)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty1)+" zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1)+". Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money1))+"\nLadung "+GetGoodsNameAlt(iFrahtGoods2)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty2)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2)+". Zahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money2))+"\nWas ist deine Wahl?";
+				dialog.text = "Die folgenden Varianten sind verfügbar:\n"+"Fracht "+GetGoodsNameAlt(iFrahtGoods1)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty1)+" zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty1)+". Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money1))+"\nLadung "+GetGoodsNameAlt(iFrahtGoods2)+" in Höhe von "+FindRussianQtyString(iFrahtGoodsQty2)+" in die Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+", in "+FindRussianDaysString(pchar.questTemp.WPU.Fraht.DaysQty2)+". Zahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money2))+"\nWas ist deine Wahl?";
 				Link.l1 = "Ich werde die erste Variante wählen - Charter in die Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1)+" beladen mit "+GetGoodsNameAlt(iFrahtGoods1)+".";
 				Link.l1.go = "Fraht_Choise_1";
 				Link.l2 = "Ich wähle die zweite Variante - eine Charta für die Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2)+" beladen mit "+GetGoodsNameAlt(iFrahtGoods2)+".";
@@ -1084,69 +1083,69 @@ void ProcessDialogEvent()
 			dialog.text = "Nun, großartig! Ich werde die notwendigen Dokumente bearbeiten, und Sie können Ihr Schiff für die Beladung vorbereiten.";
 			link.l1 = "Ich werde mein Bestes geben!";
 			link.l1.go = "Fraht_Forcemajor";
-			AddCharacterGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods1), sti(pchar.questTemp.WPU.Fraht.GoodsQty1));
+			AddCharacterGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods1), int(pchar.questTemp.WPU.Fraht.GoodsQty1));
 			iFrahtGoods1 = pchar.questTemp.WPU.Fraht.Goods1;
 			ReOpenQuestHeader("Fraht");
 			AddQuestRecord("Fraht", "1");
 			AddQuestUserData("Fraht", "sGoods", GetGoodsNameAlt(iFrahtGoods1));
-			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(sti(pchar.questTemp.WPU.Fraht.GoodsQty1)));
-			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Fraht.DaysQty1)));
-			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money1)));
+			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(int(pchar.questTemp.WPU.Fraht.GoodsQty1)));
+			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Fraht.DaysQty1)));
+			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money1)));
 			AddQuestUserData("Fraht", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.StartCity+"Gen"));
 			AddQuestUserData("Fraht", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City1+"Gen"));
-			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, sti(pchar.questTemp.WPU.Fraht.DaysQty1), false);
+			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, int(pchar.questTemp.WPU.Fraht.DaysQty1), false);
 			pchar.questTemp.WPU.Fraht.TargetPortmanID = pchar.questTemp.WPU.Fraht.City1+"_portman";
-			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iFrahtGoods1].Cost);//цена единицы товара
-			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = sti(Goods[iFrahtGoods1].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty1);//средняя стоимость товара
-			pchar.questTemp.WPU.Fraht.Goods = sti(pchar.questTemp.WPU.Fraht.Goods1);
-			pchar.questTemp.WPU.Fraht.GoodsQty = sti(pchar.questTemp.WPU.Fraht.GoodsQty1);
-			pchar.questTemp.WPU.Fraht.Money = sti(pchar.questTemp.WPU.Fraht.Money1);
+			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iFrahtGoods1].Cost);//цена единицы товара
+			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = int(Goods[iFrahtGoods1].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty1);//средняя стоимость товара
+			pchar.questTemp.WPU.Fraht.Goods = int(pchar.questTemp.WPU.Fraht.Goods1);
+			pchar.questTemp.WPU.Fraht.GoodsQty = int(pchar.questTemp.WPU.Fraht.GoodsQty1);
+			pchar.questTemp.WPU.Fraht.Money = int(pchar.questTemp.WPU.Fraht.Money1);
 		break;
 	
 		case "Fraht_Choise_2":
 			dialog.text = "Nun, großartig! Ich werde die notwendigen Dokumente bearbeiten, und Sie können Ihr Schiff für die Beladung vorbereiten.";
 			link.l1 = "Ich werde mein Bestes geben!";
 			link.l1.go = "Fraht_Forcemajor";
-			AddCharacterGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods2), sti(pchar.questTemp.WPU.Fraht.GoodsQty2));
+			AddCharacterGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods2), int(pchar.questTemp.WPU.Fraht.GoodsQty2));
 			iFrahtGoods2 = pchar.questTemp.WPU.Fraht.Goods2;
 			ReOpenQuestHeader("Fraht");
 			AddQuestRecord("Fraht", "1");
 			AddQuestUserData("Fraht", "sGoods", GetGoodsNameAlt(iFrahtGoods2));
-			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(sti(pchar.questTemp.WPU.Fraht.GoodsQty2)));
-			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Fraht.DaysQty2)));
-			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money2)));
+			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(int(pchar.questTemp.WPU.Fraht.GoodsQty2)));
+			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Fraht.DaysQty2)));
+			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money2)));
 			AddQuestUserData("Fraht", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.StartCity+"Gen"));
 			AddQuestUserData("Fraht", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City2+"Gen"));
-			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, sti(pchar.questTemp.WPU.Fraht.DaysQty2), false);
+			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, int(pchar.questTemp.WPU.Fraht.DaysQty2), false);
 			pchar.questTemp.WPU.Fraht.TargetPortmanID = pchar.questTemp.WPU.Fraht.City2+"_portman";
-			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iFrahtGoods2].Cost);//цена единицы товара
-			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = sti(Goods[iFrahtGoods2].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty2);//средняя стоимость товара
-			pchar.questTemp.WPU.Fraht.Goods = sti(pchar.questTemp.WPU.Fraht.Goods2);
-			pchar.questTemp.WPU.Fraht.GoodsQty = sti(pchar.questTemp.WPU.Fraht.GoodsQty2);
-			pchar.questTemp.WPU.Fraht.Money = sti(pchar.questTemp.WPU.Fraht.Money2);
+			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iFrahtGoods2].Cost);//цена единицы товара
+			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = int(Goods[iFrahtGoods2].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty2);//средняя стоимость товара
+			pchar.questTemp.WPU.Fraht.Goods = int(pchar.questTemp.WPU.Fraht.Goods2);
+			pchar.questTemp.WPU.Fraht.GoodsQty = int(pchar.questTemp.WPU.Fraht.GoodsQty2);
+			pchar.questTemp.WPU.Fraht.Money = int(pchar.questTemp.WPU.Fraht.Money2);
 		break;
 	
 		case "Fraht_Choise_3":
 			dialog.text = "Nun, großartig! Ich werde die notwendigen Dokumente bearbeiten und Sie können Ihr Schiff für das Laden vorbereiten.";
 			link.l1 = "Ich werde mein Bestes geben!";
 			link.l1.go = "Fraht_Forcemajor";
-			AddCharacterGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods3), sti(pchar.questTemp.WPU.Fraht.GoodsQty3));
+			AddCharacterGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods3), int(pchar.questTemp.WPU.Fraht.GoodsQty3));
 			iFrahtGoods3 = pchar.questTemp.WPU.Fraht.Goods3;
 			ReOpenQuestHeader("Fraht");
 			AddQuestRecord("Fraht", "1");
 			AddQuestUserData("Fraht", "sGoods", GetGoodsNameAlt(iFrahtGoods3));
-			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(sti(pchar.questTemp.WPU.Fraht.GoodsQty3)));
-			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Fraht.DaysQty3)));
-			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money3)));
+			AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(int(pchar.questTemp.WPU.Fraht.GoodsQty3)));
+			AddQuestUserData("Fraht", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Fraht.DaysQty3)));
+			AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money3)));
 			AddQuestUserData("Fraht", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.StartCity+"Gen"));
 			AddQuestUserData("Fraht", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.City3+"Gen"));
-			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, sti(pchar.questTemp.WPU.Fraht.DaysQty3), false);
+			SetFunctionTimerCondition("FrahtTime_Over", 0, 0, int(pchar.questTemp.WPU.Fraht.DaysQty3), false);
 			pchar.questTemp.WPU.Fraht.TargetPortmanID = pchar.questTemp.WPU.Fraht.City3+"_portman";
-			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iFrahtGoods3].Cost);//цена единицы товара
-			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = sti(Goods[iFrahtGoods3].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty3);//средняя стоимость товара
-			pchar.questTemp.WPU.Fraht.Goods = sti(pchar.questTemp.WPU.Fraht.Goods3);
-			pchar.questTemp.WPU.Fraht.GoodsQty = sti(pchar.questTemp.WPU.Fraht.GoodsQty3);
-			pchar.questTemp.WPU.Fraht.Money = sti(pchar.questTemp.WPU.Fraht.Money3);
+			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iFrahtGoods3].Cost);//цена единицы товара
+			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = int(Goods[iFrahtGoods3].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty3);//средняя стоимость товара
+			pchar.questTemp.WPU.Fraht.Goods = int(pchar.questTemp.WPU.Fraht.Goods3);
+			pchar.questTemp.WPU.Fraht.GoodsQty = int(pchar.questTemp.WPU.Fraht.GoodsQty3);
+			pchar.questTemp.WPU.Fraht.Money = int(pchar.questTemp.WPU.Fraht.Money3);
 		break;
 	
 		case "Fraht_Forcemajor":
@@ -1155,7 +1154,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Fraht.Nation = sld.nation;//нация получателя
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Fraht.TargetCity = FindTownOnIsland(pchar.questTemp.WPU.Current.TargetIslandID);
-			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
+			pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Fraht.Chance > 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Fraht.Chance == 2) FrahtHunterOnSea();//создание ДУ в акватории
 			DialogExit();
@@ -1163,13 +1162,13 @@ void ProcessDialogEvent()
 	
 		case "Fraht_complete":
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			iFrahtGoods = makeint(pchar.questTemp.WPU.Fraht.Goods);
-			amount = sti(pchar.questTemp.WPU.Fraht.GoodsQty) - GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods));
+			iFrahtGoods = int(pchar.questTemp.WPU.Fraht.Goods);
+			amount = int(pchar.questTemp.WPU.Fraht.GoodsQty) - GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods));
 			if (amount > 0)
 			{
-				dialog.text = "Lass uns mal sehen. Du solltest eine Ladung liefern von "+GetGoodsNameAlt(iFrahtGoods)+" in Höhe von "+FindRussianQtyString(pchar.questTemp.WPU.Fraht.GoodsQty)+". Aber wie ich sehe, hast du nicht die gesamte Lieferung geliefert - du bist "+FindRussianQtyString(sti(amount))+" kurz.";
+				dialog.text = "Lass uns mal sehen. Du solltest eine Ladung liefern von "+GetGoodsNameAlt(iFrahtGoods)+" in Höhe von "+FindRussianQtyString(pchar.questTemp.WPU.Fraht.GoodsQty)+". Aber wie ich sehe, hast du nicht die gesamte Lieferung geliefert - du bist "+FindRussianQtyString(int(amount))+" kurz.";
 				link.l1 = "Tausend Haie! Es müssen diese verfluchten Ratten sein! Aber mach dir keine Sorgen, "+GetAddress_FormToNPC(NPChar)+", Ich werde die fehlende Menge kaufen und die gesamte Charge abgeben.";
 				link.l1.go = "Fraht_complete_3";
 				break;
@@ -1189,16 +1188,16 @@ void ProcessDialogEvent()
 		case "Fraht_complete_1":
 			if (pchar.questTemp.WPU.Fraht == "late")//опоздали
 			{
-				iTime = makeint(GetQuestPastDayParam("questTemp.Fraht.Late"))+1;
+				iTime = int(GetQuestPastDayParam("questTemp.Fraht.Late"))+1;
 				pchar.questTemp.WPU.Fraht.DayLate = iTime;
 				pchar.questTemp.WPU.Fraht.PercentLate = iTime/0.2;
-				pchar.questTemp.WPU.Fraht.Money = makeint(sti(pchar.questTemp.WPU.Fraht.Money) - sti(pchar.questTemp.WPU.Fraht.Money)*sti(pchar.questTemp.WPU.Fraht.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
-				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" zu spät. Daher muss ich deine Bezahlung für die Fracht kürzen. Laut Vertrag beträgt deine Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Jetzt bitte, nimm dein "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+", und versuche, dich in Zukunft an den Vertrag zu halten.";
+				pchar.questTemp.WPU.Fraht.Money = int(int(pchar.questTemp.WPU.Fraht.Money) - int(pchar.questTemp.WPU.Fraht.Money)*int(pchar.questTemp.WPU.Fraht.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
+				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" zu spät. Daher muss ich deine Bezahlung für die Fracht kürzen. Laut Vertrag beträgt deine Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Jetzt bitte, nimm dein "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+", und versuche, dich in Zukunft an den Vertrag zu halten.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "Fraht_complete_2";
 				break;
 			}
-			dialog.text = "Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+".";
+			dialog.text = "Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+".";
 			link.l1 = "Danke!";
 			link.l1.go = "Fraht_complete_2";
 		break;
@@ -1212,13 +1211,13 @@ void ProcessDialogEvent()
 			else
 			{
 				pchar.quest.FrahtTime_FullOver.over = "yes";//снять второй таймер
-				pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)-1;//опоздавший рейс не засчитываем
+				pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)-1;//опоздавший рейс не засчитываем
 				AddQuestRecord("Fraht", "4");
 				AddQuestUserData("Fraht", "sDay", FindRussianDaysString(pchar.questTemp.WPU.Fraht.DayLate));
-				AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money)));
+				AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money)));
 			}
-			RemoveCharacterGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods), sti(pchar.questTemp.WPU.Fraht.GoodsQty));
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Fraht.Money));
+			RemoveCharacterGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods), int(pchar.questTemp.WPU.Fraht.GoodsQty));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Fraht.Money));
 			CloseQuestHeader("Fraht");
 			DeleteAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
@@ -1229,7 +1228,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Leadership", 50);//авторитет
 			AddCharacterExpToSkill(pchar, "Fortune", 50);//везение
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Fraht.Nation), 2);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Fraht.Nation), 2);
 			Group_DeleteGroup("Fraht_Attack");
 			DialogExit();
 		break;
@@ -1241,9 +1240,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Fraht_complete_bad_1":
-			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)*3;
-			dialog.text = "Dreimal die Kosten der Waren. Das beläuft sich auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+".";
-			if (sti(Pchar.money) >= sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
+			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)*3;
+			dialog.text = "Dreimal die Kosten der Waren. Das beläuft sich auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+".";
+			if (int(Pchar.money) >= int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
 			{
 				link.l1 = "Das ist ziemlich viel. Aber Geschäft ist Geschäft. Gut, hier ist dein Geld.";
 				link.l1.go = "Fraht_complete_pay";
@@ -1253,16 +1252,16 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Fraht_complete_pay":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost));
 			dialog.text = "Eine weise Entscheidung. Jetzt sehe ich, dass du tatsächlich eine ernste Person bist. Ich denke, wir können in der Zukunft immer noch zusammenarbeiten.";
 			link.l1 = "Danke, und jetzt muss ich gehen.";
 			link.l1.go = "exit";
 			ChangeCharacterComplexReputation(pchar,"nobility", 12);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Fraht.Nation), 30);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Fraht.Nation), 30);
 			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus"))
 			{
 				AddQuestRecord("Escort", "8");
-				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
+				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
 				CloseQuestHeader("Escort");
 				pchar.questTemp.WPU.Escort = "complete";
 				DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
@@ -1271,7 +1270,7 @@ void ProcessDialogEvent()
 			else
 			{
 				AddQuestRecord("Fraht", "6");
-				AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
+				AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
 				CloseQuestHeader("Fraht");
 				pchar.questTemp.WPU.Fraht = "complete";
 				DeleteAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID");
@@ -1285,13 +1284,13 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Fraht_complete_fail":
-			dialog.text = "Oh, ich verstehe... Nun, in diesem Fall solltest du dein Gesicht nie wieder bei irgendeiner Hafenbehörde zeigen "+NationNameGenitive(sti(pchar.questTemp.WPU.Fraht.Nation))+"! Verschwinde!";
+			dialog.text = "Oh, ich verstehe... Nun, in diesem Fall solltest du dein Gesicht nie wieder bei irgendeiner Hafenbehörde zeigen "+NationNameGenitive(int(pchar.questTemp.WPU.Fraht.Nation))+"! Verschwinde!";
 			link.l1 = "Ich habe sicher nicht viel verpasst...";
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus"))
 			{
 				AddQuestRecord("Escort", "9");
-				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
+				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
 				CloseQuestHeader("Escort");
 				pchar.questTemp.WPU.Escort = "complete";
 				DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
@@ -1322,10 +1321,10 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Postcureer.StartCity = npchar.city;//город квестодателя
 			pchar.questTemp.WPU.Postcureer.Chance = rand(4);//форс-мажор
 			idaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Postcureer.StartCity), GetArealByCityName(pchar.questTemp.WPU.Postcureer.City));
-			pchar.questTemp.WPU.Postcureer.DaysQty = makeint(sti(idaysQty)*(frand(0.3)+0.7)); 
-			if (sti(pchar.questTemp.WPU.Postcureer.DaysQty) == 1) pchar.questTemp.WPU.Postcureer.DaysQty = 2;
-			pchar.questTemp.WPU.Postcureer.Money = (sti(idaysQty)*1000)*sti(idaysQty)/sti(pchar.questTemp.WPU.Postcureer.DaysQty)*(1+frand(0.2));
-			dialog.text = "Dieses Paket muss bei der Hafenbehörde in der Stadt abgeliefert werden "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Postcureer.DaysQty)+", und so schnell wie möglich. Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))".";
+			pchar.questTemp.WPU.Postcureer.DaysQty = int(int(idaysQty)*(frand(0.3)+0.7));
+			if (int(pchar.questTemp.WPU.Postcureer.DaysQty) == 1) pchar.questTemp.WPU.Postcureer.DaysQty = 2;
+			pchar.questTemp.WPU.Postcureer.Money = (int(idaysQty)*1000)*int(idaysQty)/int(pchar.questTemp.WPU.Postcureer.DaysQty)*(1+frand(0.2));
+			dialog.text = "Dieses Paket muss bei der Hafenbehörde in der Stadt abgeliefert werden "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Postcureer.DaysQty)+", und so schnell wie möglich. Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 			link.l1 = "Ich stimme zu!";
 			link.l1.go = "Postcureer_1";
 			link.l2 = "Hmm... Aber ich gehe nicht in diese Richtung. Tut mir leid, aber ich muss ablehnen.";
@@ -1344,15 +1343,15 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Postcureer.EnemyNation = GetEnemyNationToMainCharacter();//вражеская нация
 			i = 0;
-			while (sti(pchar.questTemp.WPU.Postcureer.EnemyNation) == PIRATE)
+			while (int(pchar.questTemp.WPU.Postcureer.EnemyNation) == PIRATE)
 			{
 				pchar.questTemp.WPU.Postcureer.EnemyNation = GetEnemyNationToMainCharacter();
 				i++;
-				if(i > 5) pchar.questTemp.WPU.Postcureer.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
+				if(i > 5) pchar.questTemp.WPU.Postcureer.EnemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.BaseNation));
 			}
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)+1;//считаем сделанные доставки
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)+1;//считаем сделанные доставки
 			//запустить регату при счетчике > 4
-			if (!CheckAttribute(pchar, "questTemp.RegataGo") && sti(pchar.questTemp.WPU.Postcureer.count) > 4)
+			if (!CheckAttribute(pchar, "questTemp.RegataGo") && int(pchar.questTemp.WPU.Postcureer.count) > 4)
 			{
 				pchar.questTemp.RegataGo = "true";
 				pchar.questTemp.Regata.CureerCity = FindFriendCityToMC(true);//город, в котором вестовой подойдет
@@ -1366,27 +1365,27 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.WPU.Postcureer.Chance == 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Postcureer");
 			AddQuestRecord("Postcureer", "1");
-			AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty)));
-			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)));
+			AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty)));
+			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money)));
 			AddQuestUserData("Postcureer", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen"));
 			AddQuestUserData("Postcureer", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City)); // belamour gen
 			AddQuestUserData("Postcureer", "sSex1", GetSexPhrase("",""));
-			SetFunctionTimerCondition("PostcureerTime_Over", 0, 0, sti(pchar.questTemp.WPU.Postcureer.DaysQty), false);
+			SetFunctionTimerCondition("PostcureerTime_Over", 0, 0, int(pchar.questTemp.WPU.Postcureer.DaysQty), false);
 		break;
 	
 		case "Postcureer_complete":
 			if (pchar.questTemp.WPU.Postcureer == "late")//опоздали
 			{
-				iTime = makeint(GetQuestPastDayParam("questTemp.Postcureer.Late"))+1;
+				iTime = int(GetQuestPastDayParam("questTemp.Postcureer.Late"))+1;
 				pchar.questTemp.WPU.Postcureer.DayLate = iTime;
 				pchar.questTemp.WPU.Postcureer.PercentLate = iTime/0.1;
-				pchar.questTemp.WPU.Postcureer.Money = makeint(sti(pchar.questTemp.WPU.Postcureer.Money) - sti(pchar.questTemp.WPU.Postcureer.Money)*sti(pchar.questTemp.WPU.Postcureer.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
-				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" spät. Daher muss ich Ihre Bezahlung für die Arbeit kürzen. Laut Vertrag beträgt Ihre Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Jetzt bitte, nehmen Sie Ihr "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+", und versuche in Zukunft, dich an den Vertrag zu halten.";
+				pchar.questTemp.WPU.Postcureer.Money = int(int(pchar.questTemp.WPU.Postcureer.Money) - int(pchar.questTemp.WPU.Postcureer.Money)*int(pchar.questTemp.WPU.Postcureer.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
+				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" spät. Daher muss ich Ihre Bezahlung für die Arbeit kürzen. Laut Vertrag beträgt Ihre Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Jetzt bitte, nehmen Sie Ihr "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+", und versuche in Zukunft, dich an den Vertrag zu halten.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "Postcureer_complete_1";
 				break;
 			}
-			dialog.text = "Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+			dialog.text = "Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 			link.l1 = "Danke!";
 			link.l1.go = "Postcureer_complete_1";
 		break;
@@ -1400,14 +1399,14 @@ void ProcessDialogEvent()
 			else
 			{
 				pchar.quest.PostcureerTime_FullOver.over = "yes";//снять второй таймер
-				pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)-1;//опоздавший рейс не засчитываем
+				pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)-1;//опоздавший рейс не засчитываем
 				AddQuestRecord("Postcureer", "4");
 				AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(pchar.questTemp.WPU.Postcureer.DayLate));
-				AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)));
+				AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money)));
 				AddQuestUserData("Postcureer", "sSex", GetSexPhrase("",""));
 			}
 			RemoveItems(PChar, "PostLetters", 1);
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Postcureer.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Postcureer.Money));
 			CloseQuestHeader("Postcureer");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
@@ -1417,7 +1416,7 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
 			AddCharacterExpToSkill(pchar, "Fortune", 100);//везение
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Postcureer.Nation), 2);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Postcureer.Nation), 2);
 			Group_DeleteGroup("Fraht_Attack");
 			SaveCurrentNpcQuestDateParam(npchar, "work_date");
 			Achievment_Set("ach_CL_118");
@@ -1439,17 +1438,17 @@ void ProcessDialogEvent()
 /// ---------------------------работа в качестве эскорта для торговых кораблей----------------------------
 
 		case "escort":
-			pchar.questTemp.WPU.Escort.ShipName1 = GenerateRandomNameToShip(sti(npchar.nation));//имена кораблей
-			pchar.questTemp.WPU.Escort.ShipName2 = GenerateRandomNameToShip(sti(npchar.nation));
+			pchar.questTemp.WPU.Escort.ShipName1 = GenerateRandomNameToShip(int(npchar.nation));//имена кораблей
+			pchar.questTemp.WPU.Escort.ShipName2 = GenerateRandomNameToShip(int(npchar.nation));
 			pchar.questTemp.WPU.Escort.Goods1 = rand(GOOD_PAPRIKA);
 			pchar.questTemp.WPU.Escort.Goods2 = rand(GOOD_PAPRIKA);
 			pchar.questTemp.WPU.Escort.City = findCurrentCity1(npchar);//целевой город
 			pchar.questTemp.WPU.Escort.StartCity = npchar.city;//город квестодателя
 			pchar.questTemp.WPU.Escort.Chance = rand(4);//форс-мажор
 			idaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Escort.StartCity), GetArealByCityName(pchar.questTemp.WPU.Escort.City));
-			pchar.questTemp.WPU.Escort.DaysQty = makeint(sti(idaysQty)*(frand(0.5)+1)); 
-			pchar.questTemp.WPU.Escort.Money = (sti(idaysQty)*2000)*sti(idaysQty)/sti(pchar.questTemp.WPU.Escort.DaysQty)*(1+frand(0.2));
-			dialog.text = "Also, du musst Schiffe eskortieren '"+pchar.questTemp.WPU.Escort.ShipName1+"' und '"+pchar.questTemp.WPU.Escort.ShipName2+"' zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+". Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))". Beide Schiffe müssen sicher und unversehrt ihr Ziel erreichen. Du wirst die Schiffe dem Beamten der örtlichen Hafenbehörde übergeben. Er wird auch derjenige sein, der dich für die Arbeit bezahlt.";
+			pchar.questTemp.WPU.Escort.DaysQty = int(int(idaysQty)*(frand(0.5)+1));
+			pchar.questTemp.WPU.Escort.Money = (int(idaysQty)*2000)*int(idaysQty)/int(pchar.questTemp.WPU.Escort.DaysQty)*(1+frand(0.2));
+			dialog.text = "Also, du musst Schiffe eskortieren '"+pchar.questTemp.WPU.Escort.ShipName1+"' und '"+pchar.questTemp.WPU.Escort.ShipName2+"' zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+". Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+". Beide Schiffe müssen sicher und unversehrt ihr Ziel erreichen. Du wirst die Schiffe dem Beamten der örtlichen Hafenbehörde übergeben. Er wird auch derjenige sein, der dich für die Arbeit bezahlt.";
 			link.l1 = "Alles scheint klar zu sein. Soll ich fortfahren?";
 			link.l1.go = "escort_1";
 			link.l2 = "Hmm... Aber ich gehe nicht in diese Richtung. Tut mir leid, aber ich muss ablehnen.";
@@ -1468,34 +1467,34 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();//вражеская нация
 			i = 0;
-			while (sti(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
+			while (int(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
 			{
 				pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();
 				i++;
-				if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
+				if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.BaseNation));
 			}
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 2) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "1");
-			AddQuestUserData("Escort", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Escort.DaysQty)));
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+			AddQuestUserData("Escort", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Escort.DaysQty)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 			AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 			AddQuestUserData("Escort", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City)); // belamour gen
-			SetFunctionTimerCondition("EscortTime_Over", 0, 0, sti(pchar.questTemp.WPU.Escort.DaysQty), false);
+			SetFunctionTimerCondition("EscortTime_Over", 0, 0, int(pchar.questTemp.WPU.Escort.DaysQty), false);
 		break;
 	
 		case "escort_add_ships":
 			int iGoods1, iGoods2, iSpace1, iSpace2, ShipType, Rank;
 			int iNation = pchar.questTemp.WPU.Escort.ShipNation;
-			int iLifeday = sti(pchar.questTemp.WPU.Escort.DaysQty)+10;
+			int iLifeday = int(pchar.questTemp.WPU.Escort.DaysQty)+10;
 			string sTemp;
 	        for (i=1; i<=2; i++)
 	        {
-				ShipType = GetRandomShipType(GetClassFlag(sti(RealShips[sti(pchar.Ship.Type)].Class)), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
-				Rank = 5 * (6 - sti(RealShips[sti(pchar.Ship.Type)].Class)) + rand(5);
+				ShipType = GetRandomShipType(GetClassFlag(int(RealShips[int(pchar.Ship.Type)].Class)), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+				Rank = 5 * (6 - int(RealShips[int(pchar.Ship.Type)].Class)) + rand(5);
 				if (i == 1) sTemp = pchar.questTemp.WPU.Escort.ShipName1;
 				if (i == 2) sTemp = pchar.questTemp.WPU.Escort.ShipName2;
 				if (i == 2) ShipType = SHIP_FLEUT;//один всегда флейт
@@ -1505,16 +1504,16 @@ void ProcessDialogEvent()
 				DeleteAttribute(sld, "DontClearDead");
 				SetCharacterGoods(sld, GOOD_FOOD, 400+rand(200));
 				SetCharacterGoods(sld, GOOD_MEDICAMENT, 60+rand(30));
-	            iGoods1 = sti(pchar.questTemp.WPU.Escort.Goods1);
+	            iGoods1 = int(pchar.questTemp.WPU.Escort.Goods1);
 				iSpace1 = GetCharacterFreeSpace(sld, iGoods1);
-				iSpace1 = makeint(iSpace1/2 + rand(iSpace1/2));
-				iGoods2 = sti(pchar.questTemp.WPU.Escort.Goods2);
+				iSpace1 = int(iSpace1/2 + rand(iSpace1/2));
+				iGoods2 = int(pchar.questTemp.WPU.Escort.Goods2);
 				iSpace2 = GetCharacterFreeSpace(sld, iGoods2);
-				iSpace2 = makeint(iSpace2/2 + rand(iSpace2/2));
+				iSpace2 = int(iSpace2/2 + rand(iSpace2/2));
 				if (i == 1) SetCharacterGoods(sld, iGoods1, iSpace1);
 				if (i == 2) SetCharacterGoods(sld, iGoods2, iSpace2);
 				sld.CompanionEnemyEnable = false; //всегда друзья
-	            SetCompanionIndex(pchar, -1, sti(sld.index));
+	            SetCompanionIndex(pchar, -1, int(sld.index));
 				sld.loyality = MAX_LOYALITY;
 				SetCharacterRemovable(sld, false);
 				sld.Dialog.Filename = "Common_portman.c";
@@ -1533,7 +1532,7 @@ void ProcessDialogEvent()
 	
 		case "Escort_complete":
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
 			//проверяем, все ли корабли
 			if (GetCharacterIndex("EscortCaptain_1") == -1 || GetCharacterIndex("EscortCaptain_2") == -1)
@@ -1553,12 +1552,12 @@ void ProcessDialogEvent()
 			iGoods = pchar.questTemp.WPU.Escort.Goods;
 			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus")) 
 			{
-				//pchar.questTemp.WPU.Escort.Money = sti(pchar.questTemp.WPU.Escort.Money)+sti(pchar.questTemp.WPU.Escort.BonusMoney);
-				pchar.questTemp.WPU.Escort.Money = sti(pchar.questTemp.WPU.Escort.TotalMoney);
-				amount = sti(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods));
+				//pchar.questTemp.WPU.Escort.Money = int(pchar.questTemp.WPU.Escort.Money)+int(pchar.questTemp.WPU.Escort.BonusMoney);
+				pchar.questTemp.WPU.Escort.Money = int(pchar.questTemp.WPU.Escort.TotalMoney);
+				amount = int(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods));
 				if (amount > 0)
 				{
-					dialog.text = "In Ordnung, dann. Sie sollten Schiffe eskortieren und die Ladung liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.GoodsQty))+". Aber ich sehe, dass du nicht die gesamte Lieferung abgegeben hast - du bist "+FindRussianQtyString(sti(amount))+" kurz.";
+					dialog.text = "In Ordnung, dann. Sie sollten Schiffe eskortieren und die Ladung liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(int(pchar.questTemp.WPU.Escort.GoodsQty))+". Aber ich sehe, dass du nicht die gesamte Lieferung abgegeben hast - du bist "+FindRussianQtyString(int(amount))+" kurz.";
 					link.l1 = "Tausend Haie! Das müssen diese verfluchten Ratten sein! Aber mach dir keine Sorgen, "+GetAddress_FormToNPC(NPChar)+", Ich werde die fehlende Menge kaufen und die gesamte Charge abgeben.";
 					link.l1.go = "Fraht_complete_3";
 					break;
@@ -1566,22 +1565,22 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.WPU.Escort == "late")//опоздали
 			{
-				iTime = makeint(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
+				iTime = int(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
 				pchar.questTemp.WPU.Escort.DayLate = iTime;
 				pchar.questTemp.WPU.Escort.PercentLate = iTime/0.1;
-				pchar.questTemp.WPU.Escort.Money = makeint(sti(pchar.questTemp.WPU.Escort.Money) - sti(pchar.questTemp.WPU.Escort.Money)*sti(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
-				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" zu spät. Daher muss ich Ihre Bezahlung für die Arbeit kürzen. Gemäß dem Vertrag beträgt Ihre Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Nun nehmen Sie bitte Ihr "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+", und versuchen Sie in Zukunft, sich an den Vertrag zu halten.";
+				pchar.questTemp.WPU.Escort.Money = int(int(pchar.questTemp.WPU.Escort.Money) - int(pchar.questTemp.WPU.Escort.Money)*int(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
+				dialog.text = "Hm... Aber du warst "+FindRussianDaysString(iTime)+" zu spät. Daher muss ich Ihre Bezahlung für die Arbeit kürzen. Gemäß dem Vertrag beträgt Ihre Strafe fünf Prozent des Gesamtbetrags für jeden Tag der Verspätung. Nun nehmen Sie bitte Ihr "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+", und versuchen Sie in Zukunft, sich an den Vertrag zu halten.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "Escort_complete_1";
 				break;
 			}
 			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus")) 
 			{
-				dialog.text = "Also gut, dann. Du warst dazu bestimmt, Schiffe zu eskortieren und die Fracht zu liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.GoodsQty))+". Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+".";
+				dialog.text = "Also gut, dann. Du warst dazu bestimmt, Schiffe zu eskortieren und die Fracht zu liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(int(pchar.questTemp.WPU.Escort.GoodsQty))+". Danke für deine Arbeit. Bitte, nimm deine Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+".";
 			}
 			else
 			{
-				dialog.text = "Danke für Ihre Arbeit. Bitte, nehmen Sie Ihre Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+".";
+				dialog.text = "Danke für Ihre Arbeit. Bitte, nehmen Sie Ihre Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+".";
 			}
 			link.l1 = "Danke!";
 			link.l1.go = "Escort_complete_1";
@@ -1603,20 +1602,20 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//опоздавший рейс не засчитываем
+				pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//опоздавший рейс не засчитываем
 				pchar.quest.EscortTime_FullOver.over = "yes";//снять второй таймер
 				if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus"))
 				{
-					pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)-1;//опоздавший рейс не засчитываем
+					pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)-1;//опоздавший рейс не засчитываем
 				}
 				AddQuestRecord("Escort", "4");
 				AddQuestUserData("Escort", "sDay", FindRussianDaysString(pchar.questTemp.WPU.Escort.DayLate));
-				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 			}
 			RemoveCharacterCompanion(Pchar, characterFromID("EscortCaptain_1"));//удалим компаньонов
 			RemoveCharacterCompanion(Pchar, characterFromID("EscortCaptain_2"));
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.Money));
-			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus")) RemoveCharacterGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods), sti(pchar.questTemp.WPU.Escort.GoodsQty));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.Money));
+			if (CheckAttribute(pchar, "questTemp.WPU.Escort.Bonus")) RemoveCharacterGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods), int(pchar.questTemp.WPU.Escort.GoodsQty));
 			CloseQuestHeader("Escort");
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
@@ -1628,29 +1627,29 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
 			AddCharacterExpToSkill(pchar, "Fortune", 100);//везение
 			ChangeCharacterComplexReputation(pchar,"nobility", 2);
-			ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), 2);
+			ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), 2);
 			Group_DeleteGroup("Fraht_Attack");
 			DialogExit();
 		break;
 	
 		case "escort_bonus":
-			pchar.questTemp.WPU.Escort.ShipName1 = GenerateRandomNameToShip(sti(npchar.nation));//имена кораблей
-			pchar.questTemp.WPU.Escort.ShipName2 = GenerateRandomNameToShip(sti(npchar.nation));
+			pchar.questTemp.WPU.Escort.ShipName1 = GenerateRandomNameToShip(int(npchar.nation));//имена кораблей
+			pchar.questTemp.WPU.Escort.ShipName2 = GenerateRandomNameToShip(int(npchar.nation));
 			pchar.questTemp.WPU.Escort.Goods = 	hrand(GOOD_PAPRIKA);//для ГГ
 			pchar.questTemp.WPU.Escort.Goods1 = hrand(GOOD_PAPRIKA-3);
 			pchar.questTemp.WPU.Escort.Goods2 = hrand(GOOD_PAPRIKA-5);
 			iGoods = pchar.questTemp.WPU.Escort.Goods;
-			iGoodsQty = makeint(GetCharacterFreeSpace(pchar, iGoods))-(50+rand(100));//количество груза
+			iGoodsQty = int(GetCharacterFreeSpace(pchar, iGoods))-(50+rand(100));//количество груза
 			pchar.questTemp.WPU.Escort.GoodsQty = iGoodsQty;
 			pchar.questTemp.WPU.Escort.City = findCurrentCity1(npchar);//целевой город
 			pchar.questTemp.WPU.Escort.StartCity = npchar.city;//город квестодателя
 			pchar.questTemp.WPU.Escort.Chance = rand(4);//форс-мажор
 			idaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Escort.StartCity), GetArealByCityName(pchar.questTemp.WPU.Escort.City));
-			pchar.questTemp.WPU.Escort.DaysQty = makeint(sti(idaysQty)*(frand(0.5)+1));//дни
-			pchar.questTemp.WPU.Escort.Money = (sti(idaysQty)*2000)*sti(idaysQty)/sti(pchar.questTemp.WPU.Escort.DaysQty)*(1+frand(0.2));//оплата за сопровождение
-			pchar.questTemp.WPU.Escort.BonusMoney = (makeint((sti(iGoodsQty) * sti(Goods[iGoods].Weight) / sti(Goods[iGoods].Units))))*(sti(idaysQty)*2)*sti(idaysQty)/sti(pchar.questTemp.WPU.Escort.DaysQty);//оплата за фрахт
-			pchar.questTemp.WPU.Escort.TotalMoney = sti(pchar.questTemp.WPU.Escort.Money)+sti(pchar.questTemp.WPU.Escort.BonusMoney); // общая сумма
-			dialog.text = "Also, du musst die Schiffe eskortieren '"+pchar.questTemp.WPU.Escort.ShipName1+"' und '"+pchar.questTemp.WPU.Escort.ShipName2+"' zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+". Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+"\nAlso auf Ihrem Schiff, lege ich die Last von "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+". Bezahlung für die Lieferung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney))+".";
+			pchar.questTemp.WPU.Escort.DaysQty = int(int(idaysQty)*(frand(0.5)+1));//дни
+			pchar.questTemp.WPU.Escort.Money = (int(idaysQty)*2000)*int(idaysQty)/int(pchar.questTemp.WPU.Escort.DaysQty)*(1+frand(0.2));//оплата за сопровождение
+			pchar.questTemp.WPU.Escort.BonusMoney = (int((int(iGoodsQty) * int(Goods[iGoods].Weight) / int(Goods[iGoods].Units))))*(int(idaysQty)*2)*int(idaysQty)/int(pchar.questTemp.WPU.Escort.DaysQty);//оплата за фрахт
+			pchar.questTemp.WPU.Escort.TotalMoney = int(pchar.questTemp.WPU.Escort.Money)+int(pchar.questTemp.WPU.Escort.BonusMoney); // общая сумма
+			dialog.text = "Also, du musst die Schiffe eskortieren '"+pchar.questTemp.WPU.Escort.ShipName1+"' und '"+pchar.questTemp.WPU.Escort.ShipName2+"' zur Stadt von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City)+", für "+FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty)+". Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+"\nAlso auf Ihrem Schiff, lege ich die Last von "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+". Bezahlung für die Lieferung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney))+".";
 			link.l1 = "Alles scheint klar zu sein. Soll ich fortfahren?";
 			link.l1.go = "escort_bonus_1";
 			link.l2 = "Hmm... Aber ich gehe nicht in diese Richtung. Tut mir leid, aber ich muss ablehnen.";
@@ -1662,7 +1661,7 @@ void ProcessDialogEvent()
 			link.l1 = "Ich setze die Segel, dann!";
 			link.l1.go = "escort_add_ships";
 			iGoods = pchar.questTemp.WPU.Escort.Goods;
-			AddCharacterGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods), sti(pchar.questTemp.WPU.Escort.GoodsQty));
+			AddCharacterGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods), int(pchar.questTemp.WPU.Escort.GoodsQty));
 			pchar.questTemp.WPU.Escort = "begin";
 			pchar.questTemp.WPU.Escort.Bonus = "true";
 			pchar.questTemp.WPU.Escort.ShipNation = npchar.nation;//нация отправителя
@@ -1672,29 +1671,29 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();//вражеская нация
 			i = 0;
-			while (sti(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
+			while (int(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
 			{
 				pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();
 				i++;
-				if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
+				if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.BaseNation));
 			}
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
-			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)+1;//считаем сделанные эскорты
+			pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)+1;//считаем сделанные фрахты
 			if (pchar.questTemp.WPU.Escort.Chance > 3) EnemyNationHunterOnMap(false);//запуск перехватчиков на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance == 3) TraderHunterOnMap(false);//запуск ДУ на глобалке
 			if (pchar.questTemp.WPU.Escort.Chance < 3) FrahtHunterOnSea();//создание перехватчиков в акватории
 			ReOpenQuestHeader("Escort");
 			AddQuestRecord("Escort", "6");
-			AddQuestUserData("Escort", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Escort.DaysQty)));
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+			AddQuestUserData("Escort", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Escort.DaysQty)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 			AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 			AddQuestUserData("Escort", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City));
 			AddQuestUserData("Escort", "sGoods", GetGoodsNameAlt(iGoods));
-			AddQuestUserData("Escort", "sGoodQty", FindRussianQtyString(sti(pchar.questTemp.WPU.Escort.GoodsQty)));
-			AddQuestUserData("Escort", "sMoney1", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney)));
-			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost);//цена единицы товара
-			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Escort.GoodsQty);//средняя стоимость товара
-			SetFunctionTimerCondition("EscortTime_Over", 0, 0, sti(pchar.questTemp.WPU.Escort.DaysQty), false);
+			AddQuestUserData("Escort", "sGoodQty", FindRussianQtyString(int(pchar.questTemp.WPU.Escort.GoodsQty)));
+			AddQuestUserData("Escort", "sMoney1", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney)));
+			pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost);//цена единицы товара
+			pchar.questTemp.WPU.Fraht.GoodsAverigeCost = int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Escort.GoodsQty);//средняя стоимость товара
+			SetFunctionTimerCondition("EscortTime_Over", 0, 0, int(pchar.questTemp.WPU.Escort.DaysQty), false);
 		break;
 	
 		case "Escort_complete_fail":
@@ -1707,7 +1706,7 @@ void ProcessDialogEvent()
 			else RemoveCharacterCompanion(pchar, characterFromID("EscortCaptain_1"));
 			AddQuestRecord("Escort", "11");
 			CloseQuestHeader("Escort");
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
 			pchar.questTemp.WPU.Escort = "complete";
@@ -1722,25 +1721,25 @@ void ProcessDialogEvent()
 			if (GetCharacterIndex("EscortCaptain_1") == -1) RemoveCharacterCompanion(pchar, characterFromID("EscortCaptain_2"));
 			else RemoveCharacterCompanion(pchar, characterFromID("EscortCaptain_1"));//удалим компаньона
 			pchar.quest.Escort_fail.over = "yes";//снять прерывание
-			amount = sti(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods));
-			pchar.questTemp.WPU.Escort.GoodsQty = GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods));
+			amount = int(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods));
+			pchar.questTemp.WPU.Escort.GoodsQty = GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods));
 			if (pchar.questTemp.WPU.Escort == "begin")
 			{
 				pchar.quest.EscortTime_Over.over = "yes";//снять таймер
-				pchar.questTemp.WPU.Escort.MinusMoney = makeint(sti(pchar.questTemp.WPU.Escort.BonusMoney) - sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice)*sti(amount));
-				if (sti(pchar.questTemp.WPU.Escort.MinusMoney) < 0) amount = 101;
+				pchar.questTemp.WPU.Escort.MinusMoney = int(int(pchar.questTemp.WPU.Escort.BonusMoney) - int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice)*int(amount));
+				if (int(pchar.questTemp.WPU.Escort.MinusMoney) < 0) amount = 101;
 				if (amount > 0 && amount <= 100)
 				{
-					pchar.questTemp.WPU.Escort.BonusMoney = sti(pchar.questTemp.WPU.Escort.MinusMoney);
-					dialog.text = "Unglaublich! Und wofür brauchten wir dich? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte nun ausgeschlossen ist... Nicht nur das, sondern dir fehlt auch Fracht - "+FindRussianQtyString(sti(amount))+"\nIm Allgemeinen bezahle ich Ihnen nur für den Frachttransport von Waren, die in akzeptablem Zustand geliefert wurden, abzüglich des Wertes der fehlenden Artikel. Holen Sie sich Ihre "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney))+" und du kannst gehen, wohin du willst.";
+					pchar.questTemp.WPU.Escort.BonusMoney = int(pchar.questTemp.WPU.Escort.MinusMoney);
+					dialog.text = "Unglaublich! Und wofür brauchten wir dich? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte nun ausgeschlossen ist... Nicht nur das, sondern dir fehlt auch Fracht - "+FindRussianQtyString(int(amount))+"\nIm Allgemeinen bezahle ich Ihnen nur für den Frachttransport von Waren, die in akzeptablem Zustand geliefert wurden, abzüglich des Wertes der fehlenden Artikel. Holen Sie sich Ihre "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney))+" und du kannst gehen, wohin du willst.";
 					link.l1 = "Nun, es ist zumindest etwas.";
 					link.l1.go = "EscortBonus_complete_fail_1";
 					break;
 				}
 				if (amount > 100)
 				{
-					dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte jetzt ausgeschlossen ist... Nicht nur das, du hast auch einen riesigen Mangel an Ladung.\nIch habe keine Zeit, darauf zu warten, dass du die fehlenden Waren beschaffst. Also musst du die Kosten vollständig ausgleichen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+". Was die Ladung betrifft, kannst du sie behalten.";
-					if (sti(pchar.money) >= sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
+					dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte jetzt ausgeschlossen ist... Nicht nur das, du hast auch einen riesigen Mangel an Ladung.\nIch habe keine Zeit, darauf zu warten, dass du die fehlenden Waren beschaffst. Also musst du die Kosten vollständig ausgleichen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+". Was die Ladung betrifft, kannst du sie behalten.";
+					if (int(pchar.money) >= int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
 					{
 						link.l1 = "Also gut, reg dich nicht zu sehr auf. Hier ist dein Geld.";
 						link.l1.go = "EscortBonus_complete_fail_2";
@@ -1749,7 +1748,7 @@ void ProcessDialogEvent()
 					link.l2.go = "EscortBonus_complete_fail_3";
 					break;
 				}
-				dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass jegliche Belohnung für die Eskorte nun außer Frage steht. \nIm Allgemeinen werde ich nur für die Fracht für Waren bezahlen, die du mitgenommen hast. Hol dir deine "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney))+" und du kannst gehen, wohin du willst.";
+				dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass jegliche Belohnung für die Eskorte nun außer Frage steht. \nIm Allgemeinen werde ich nur für die Fracht für Waren bezahlen, die du mitgenommen hast. Hol dir deine "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney))+" und du kannst gehen, wohin du willst.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "EscortBonus_complete_fail_1";
 				break;
@@ -1757,14 +1756,14 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.WPU.Escort == "late")
 			{
 				pchar.quest.EscortTime_FullOver.over = "yes";//снять второй таймер
-				iTime = makeint(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
+				iTime = int(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
 				pchar.questTemp.WPU.Escort.DayLate = iTime;
 				pchar.questTemp.WPU.Escort.PercentLate = iTime/0.1;
-				pchar.questTemp.WPU.Escort.BonusMoney = makeint(sti(pchar.questTemp.WPU.Escort.BonusMoney) - sti(pchar.questTemp.WPU.Escort.BonusMoney)*sti(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
+				pchar.questTemp.WPU.Escort.BonusMoney = int(int(pchar.questTemp.WPU.Escort.BonusMoney) - int(pchar.questTemp.WPU.Escort.BonusMoney)*int(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
 				if (amount > 0)
 				{
-					dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte nun ausgeschlossen ist... Du hast ein Schiff verloren, du bist angekommen "+FindRussianDaysString(iTime)+" spät, und dazu fehlt auch noch Fracht - "+FindRussianQtyString(sti(amount))+"\nIch habe keine Zeit zu warten, bis du die fehlenden Waren beschafft hast. Also musst du die Kosten vollständig kompensieren "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+". Was die Ladung betrifft, kannst du sie behalten.";
-					if (sti(pchar.money) >= sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
+					dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte nun ausgeschlossen ist... Du hast ein Schiff verloren, du bist angekommen "+FindRussianDaysString(iTime)+" spät, und dazu fehlt auch noch Fracht - "+FindRussianQtyString(int(amount))+"\nIch habe keine Zeit zu warten, bis du die fehlenden Waren beschafft hast. Also musst du die Kosten vollständig kompensieren "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))+". Was die Ladung betrifft, kannst du sie behalten.";
+					if (int(pchar.money) >= int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost))
 					{
 						link.l1 = "In Ordnung, reg dich nicht zu sehr auf. Hier ist dein Geld.";
 						link.l1.go = "EscortBonus_complete_fail_2";
@@ -1773,7 +1772,7 @@ void ProcessDialogEvent()
 					link.l2.go = "EscortBonus_complete_fail_3";
 					break;
 				}
-				dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte jetzt ausgeschlossen ist... Außerdem bist du angekommen "+FindRussianDaysString(iTime)+" zu spät.\nDaher musste ich die Zahlung für die Fracht reduzieren. Nach dem Vertrag beträgt die Strafe 10 Prozent des ursprünglichen Betrags für jeden Tag der Verspätung. Nun, nimm dein "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney))+", und du kannst gehen.";
+				dialog.text = "Unglaublich! Und wofür haben wir dich gebraucht? Wie konntest du das zulassen?! Ich hoffe, du verstehst, dass eine Belohnung für die Eskorte jetzt ausgeschlossen ist... Außerdem bist du angekommen "+FindRussianDaysString(iTime)+" zu spät.\nDaher musste ich die Zahlung für die Fracht reduzieren. Nach dem Vertrag beträgt die Strafe 10 Prozent des ursprünglichen Betrags für jeden Tag der Verspätung. Nun, nimm dein "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney))+", und du kannst gehen.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "EscortBonus_complete_fail_1";
 				break;
@@ -1782,11 +1781,11 @@ void ProcessDialogEvent()
 	
 		case "EscortBonus_complete_fail_1"://потеряли корабль, время и груз в норме или частично
 			AddQuestRecord("Escort", "12");
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.BonusMoney)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.BonusMoney)));
 			CloseQuestHeader("Escort");
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.BonusMoney));
-			RemoveCharacterGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods), sti(pchar.questTemp.WPU.Escort.GoodsQty));
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.BonusMoney));
+			RemoveCharacterGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods), int(pchar.questTemp.WPU.Escort.GoodsQty));
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.Bonus");
@@ -1802,11 +1801,11 @@ void ProcessDialogEvent()
 	
 		case "EscortBonus_complete_fail_2"://потеряли корабль и груз, время норма или нет, мир
 			AddQuestRecord("Escort", "13");
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
 			CloseQuestHeader("Escort");
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost));
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
-			pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Fraht.count)-1;//рейс не засчитываем
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost));
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//рейс не засчитываем
+			pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Fraht.count)-1;//рейс не засчитываем
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.Bonus");
@@ -1821,11 +1820,11 @@ void ProcessDialogEvent()
 		break;
 	
 		case "EscortBonus_complete_fail_3"://потеряли корабль и груз, время норма или нет, война
-			dialog.text = "Oh, ich verstehe... Nun, in diesem Fall solltest du dein Gesicht nie wieder bei irgendeiner Hafenbehörde zeigen "+NationNameGenitive(sti(pchar.questTemp.WPU.Escort.Nation))+"! Verschwinde!";
+			dialog.text = "Oh, ich verstehe... Nun, in diesem Fall solltest du dein Gesicht nie wieder bei irgendeiner Hafenbehörde zeigen "+NationNameGenitive(int(pchar.questTemp.WPU.Escort.Nation))+"! Verschwinde!";
 			link.l1 = "Ich habe sicherlich nicht viel verpasst...";
 			link.l1.go = "exit";
 			AddQuestRecord("Escort", "14");
-			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
+			AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigeCost)));
 			CloseQuestHeader("Escort");
 			pchar.questTemp.WPU.Escort.count = 0;//счетчик в ноль
 			pchar.questTemp.WPU.Escort.count = 0;//счетчик в ноль
@@ -1835,7 +1834,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Escort = "complete";
 			pchar.questTemp.WPU.Fraht = "fail";
 			ChangeCharacterComplexReputation(pchar,"nobility", -10);
-			ChangeCharacterHunterScore(pchar, NationShortName(sti(pchar.questTemp.WPU.Escort.Nation)) + "hunter", 30);
+			ChangeCharacterHunterScore(pchar, NationShortName(int(pchar.questTemp.WPU.Escort.Nation)) + "hunter", 30);
 			pchar.questTemp.WPU.Fraht.Nation = pchar.questTemp.WPU.Escort.Nation;
 			SaveCurrentNpcQuestDateParam(npchar, "work_date");
 			Group_DeleteGroup("Fraht_Attack");
@@ -1848,11 +1847,11 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Escort_fail_complete":
-			iFrahtGoods = makeint(pchar.questTemp.WPU.Escort.Goods);
-			amount = sti(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods));
+			iFrahtGoods = int(pchar.questTemp.WPU.Escort.Goods);
+			amount = int(pchar.questTemp.WPU.Escort.GoodsQty) - GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods));
 			if (amount > 0)
 			{
-				dialog.text = "Lass uns sehen, dann. Du solltest eine Ladung liefern von "+GetGoodsNameAlt(iFrahtGoods)+" in der Menge von "+FindRussianQtyString(pchar.questTemp.WPU.Escort.GoodsQty)+". Aber ich sehe, dass du nicht die gesamte Lieferung geliefert hast - du bist "+FindRussianQtyString(sti(amount))+" kurz.";
+				dialog.text = "Lass uns sehen, dann. Du solltest eine Ladung liefern von "+GetGoodsNameAlt(iFrahtGoods)+" in der Menge von "+FindRussianQtyString(pchar.questTemp.WPU.Escort.GoodsQty)+". Aber ich sehe, dass du nicht die gesamte Lieferung geliefert hast - du bist "+FindRussianQtyString(int(amount))+" kurz.";
 				link.l1 = "Tausend Haie! Es müssen diese verfluchten Ratten sein! Aber mach dir keine Sorgen, "+GetAddress_FormToNPC(NPChar)+", ich werde die fehlende Menge kaufen und die gesamte Partie abliefern.";
 				link.l1.go = "Fraht_complete_3";
 				break;
@@ -1864,19 +1863,19 @@ void ProcessDialogEvent()
 	
 		case "Escort_fail_complete_1":
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.Bonus");
-			pchar.questTemp.WPU.Escort.Money = makeint(sti(pchar.questTemp.WPU.Escort.BonusMoney)/2);
+			pchar.questTemp.WPU.Escort.Money = int(int(pchar.questTemp.WPU.Escort.BonusMoney)/2);
 			if (pchar.questTemp.WPU.Escort == "late")//опоздали
 			{
-				iTime = makeint(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
+				iTime = int(GetQuestPastDayParam("questTemp.Escort.Late"))+1;
 				pchar.questTemp.WPU.Escort.DayLate = iTime;
 				pchar.questTemp.WPU.Escort.PercentLate = iTime/0.1;
-				pchar.questTemp.WPU.Escort.Money = makeint(sti(pchar.questTemp.WPU.Escort.Money) - sti(pchar.questTemp.WPU.Escort.Money)*sti(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
-				dialog.text = "Hmm... Nicht nur, dass du die dir anvertrauten Schiffe verloren hast, sondern du warst auch noch zu spät dran "+FindRussianDaysString(iTime)+". Also musste ich die Bezahlung für die Fracht kürzen. Da du nicht in der Lage warst, die Schiffe zu retten, habe ich die Bezahlung für die Fracht halbiert, und das ist das Meiste, was ich dir anbieten kann.\nZusätzlich beträgt die Strafe laut Vertrag 10 Prozent des ursprünglichen Betrags für jeden Verzögerungstag. Nun, nimm dein "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+", und weg bist du.";
+				pchar.questTemp.WPU.Escort.Money = int(int(pchar.questTemp.WPU.Escort.Money) - int(pchar.questTemp.WPU.Escort.Money)*int(pchar.questTemp.WPU.Escort.PercentLate)/100);//снижаем оплату согласно числа дней опоздания
+				dialog.text = "Hmm... Nicht nur, dass du die dir anvertrauten Schiffe verloren hast, sondern du warst auch noch zu spät dran "+FindRussianDaysString(iTime)+". Also musste ich die Bezahlung für die Fracht kürzen. Da du nicht in der Lage warst, die Schiffe zu retten, habe ich die Bezahlung für die Fracht halbiert, und das ist das Meiste, was ich dir anbieten kann.\nZusätzlich beträgt die Strafe laut Vertrag 10 Prozent des ursprünglichen Betrags für jeden Verzögerungstag. Nun, nimm dein "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+", und weg bist du.";
 				link.l1 = "Nun, es ist zumindest etwas.";
 				link.l1.go = "Escort_fail_complete_2";
 				break;
 			}
-			dialog.text = "Nun, obwohl ich äußerst verärgert bin, dass du die dir anvertrauten Schiffe nicht beschützen konntest, hast du zumindest die Ware geliefert. Da du die Schiffe nicht retten konntest, habe ich die Bezahlung für die Fracht halbiert, und das ist das meiste, was ich dir anbieten kann. Nun, nimm deine Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+" und du kannst gehen, wohin du willst.";
+			dialog.text = "Nun, obwohl ich äußerst verärgert bin, dass du die dir anvertrauten Schiffe nicht beschützen konntest, hast du zumindest die Ware geliefert. Da du die Schiffe nicht retten konntest, habe ich die Bezahlung für die Fracht halbiert, und das ist das meiste, was ich dir anbieten kann. Nun, nimm deine Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+" und du kannst gehen, wohin du willst.";
 			link.l1 = "Nun, es ist zumindest etwas.";
 			link.l1.go = "Escort_fail_complete_2";
 		break;
@@ -1886,18 +1885,18 @@ void ProcessDialogEvent()
 			{
 				pchar.quest.EscortTime_Over.over = "yes";
 				AddQuestRecord("Escort", "17");
-				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 			}
 			else
 			{
 				pchar.quest.EscortTime_FullOver.over = "yes";//снять второй таймер
 				AddQuestRecord("Escort", "18");
 				AddQuestUserData("Escort", "sDay", FindRussianDaysString(pchar.questTemp.WPU.Escort.DayLate));
-				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+				AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 			}
-			pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)-1;//фейловый рейс не засчитываем
-			RemoveCharacterGoods(pchar, sti(pchar.questTemp.WPU.Escort.Goods), sti(pchar.questTemp.WPU.Escort.GoodsQty));
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.Money));
+			pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)-1;//фейловый рейс не засчитываем
+			RemoveCharacterGoods(pchar, int(pchar.questTemp.WPU.Escort.Goods), int(pchar.questTemp.WPU.Escort.GoodsQty));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.Money));
 			CloseQuestHeader("Escort");
 			DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current.TargetIslandID");
@@ -1915,8 +1914,8 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Postcureer.City = findCurrentCity2(npchar);//целевой город
 			pchar.questTemp.WPU.Postcureer.StartCity = npchar.city;//город квестодателя
 			idaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Postcureer.StartCity), GetArealByCityName(pchar.questTemp.WPU.Postcureer.City));
-			pchar.questTemp.WPU.Postcureer.DaysQty = makeint(sti(idaysQty)*(frand(0.3)+0.6));//дни
-			pchar.questTemp.WPU.Postcureer.Money = (sti(idaysQty)*3000)*sti(idaysQty)/sti(pchar.questTemp.WPU.Postcureer.DaysQty)*(1+frand(0.2));//оплата
+			pchar.questTemp.WPU.Postcureer.DaysQty = int(int(idaysQty)*(frand(0.3)+0.6));//дни
+			pchar.questTemp.WPU.Postcureer.Money = (int(idaysQty)*3000)*int(idaysQty)/int(pchar.questTemp.WPU.Postcureer.DaysQty)*(1+frand(0.2));//оплата
 			pchar.questTemp.WPU.Postcureer.Chance = rand(4);//форс-мажор
 			pchar.questTemp.WPU.Postcureer.StartNation = npchar.nation;//нация отправителя
 			pchar.questTemp.WPU.Postcureer.TargetPortmanID = pchar.questTemp.WPU.Postcureer.City +"_portman";//ИД портмана
@@ -1925,17 +1924,17 @@ void ProcessDialogEvent()
 			pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(sld);//ИД целевого ареала
 			pchar.questTemp.WPU.Postcureer.EnemyNation = GetEnemyNationToMainCharacter();//вражеская нация
 			i = 0;
-			while (sti(pchar.questTemp.WPU.Postcureer.EnemyNation) == PIRATE)
+			while (int(pchar.questTemp.WPU.Postcureer.EnemyNation) == PIRATE)
 			{
 				pchar.questTemp.WPU.Postcureer.EnemyNation = GetEnemyNationToMainCharacter();
 				i++;
-				if(i > 5) pchar.questTemp.WPU.Postcureer.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
+				if(i > 5) pchar.questTemp.WPU.Postcureer.EnemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.BaseNation));
 			}
 
 			switch (rand(3))
 			{
 				case 0:
-					dialog.text = "Sie müssen eine dringende offizielle Depesche an den Gouverneur der Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Sei sehr vorsichtig - unsere Feinde könnten auch nach dieser Depesche suchen. Bezahlung für die Lieferung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Sie müssen eine dringende offizielle Depesche an den Gouverneur der Stadt "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty))+". Sei sehr vorsichtig - unsere Feinde könnten auch nach dieser Depesche suchen. Bezahlung für die Lieferung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Ich stimme zu!";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Nein, ich glaube, ich verzichte.";
@@ -1948,7 +1947,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 1:
-					dialog.text = "Sie müssen diese Papiere an den Ladenbesitzer liefern von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Dies ist die neueste Zusammenfassung der Preise in Geschäften im ganzen Archipel - ein wertvolles Handelsdokument. Vorsicht sollte geboten sein - Konkurrenten könnten eine Jagd arrangieren. Bezahlung für die Lieferung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Sie müssen diese Papiere an den Ladenbesitzer liefern von "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty))+". Dies ist die neueste Zusammenfassung der Preise in Geschäften im ganzen Archipel - ein wertvolles Handelsdokument. Vorsicht sollte geboten sein - Konkurrenten könnten eine Jagd arrangieren. Bezahlung für die Lieferung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Ich stimme zu!";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Nein, ich glaube, ich verzichte.";
@@ -1961,7 +1960,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 2:
-					dialog.text = "Sie müssen diesen Bündel von Dokumenten zum Wucherer in der Stadt liefern "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Es handelt sich um sehr wichtige Informationen über Wechselkurse und Aktienkurse. Seien Sie sehr vorsichtig - einige zwielichtige Figuren sind bereits daran interessiert, dieses Paket zu bekommen. Bezahlung für die Lieferung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Sie müssen diesen Bündel von Dokumenten zum Wucherer in der Stadt liefern "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty))+". Es handelt sich um sehr wichtige Informationen über Wechselkurse und Aktienkurse. Seien Sie sehr vorsichtig - einige zwielichtige Figuren sind bereits daran interessiert, dieses Paket zu bekommen. Bezahlung für die Lieferung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Ich stimme zu!";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Nein, ich glaube, ich werde passen.";
@@ -1973,7 +1972,7 @@ void ProcessDialogEvent()
 				break;
 			
 				case 3:
-					dialog.text = "Du solltest dieses Bündel dem Dockmeister in der Stadt übergeben "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty))+". Es enthält Baupläne für die neue "+RandPhraseSimple(LinkRandPhrase("Brigg","Korvette","Fregatte"),LinkRandPhrase("Flöte","Pinasse","Galeone"))+", mit einzigartigen technologischen Entwürfen. Ich hoffe, Sie verstehen, dass es andere... interessierte Parteien gibt, also müssen Sie diskret handeln. Zahlung für die Lieferung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money))+".";
+					dialog.text = "Du solltest dieses Bündel dem Dockmeister in der Stadt übergeben "+XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City+"Gen")+" nicht später als "+FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty))+". Es enthält Baupläne für die neue "+RandPhraseSimple(LinkRandPhrase("Brigg","Korvette","Fregatte"),LinkRandPhrase("Flöte","Pinasse","Galeone"))+", mit einzigartigen technologischen Entwürfen. Ich hoffe, Sie verstehen, dass es andere... interessierte Parteien gibt, also müssen Sie diskret handeln. Zahlung für die Lieferung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money))+".";
 					link.l1 = "Ich stimme zu!";
 					link.l1.go = "Postcureer_LevelUp_Go";
 					link.l2 = "Nein, ich denke, ich werde passen.";
@@ -1992,9 +1991,9 @@ void ProcessDialogEvent()
 			link.l1.go = "Forsmajor_choose";
 			pchar.questTemp.WPU.Postcureer = "begin";
 			pchar.questTemp.WPU.Postcureer.LevelUp = "true";
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count) + 1;
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count) + 1;
 			//запустить регату при счетчике > 4
-			if (!CheckAttribute(pchar, "questTemp.RegataGo") && sti(pchar.questTemp.WPU.Postcureer.count) > 4)
+			if (!CheckAttribute(pchar, "questTemp.RegataGo") && int(pchar.questTemp.WPU.Postcureer.count) > 4)
 			{
 				pchar.questTemp.RegataGo = "true";
 				pchar.questTemp.Regata.CureerCity = FindFriendCityToMC(true);//город, в котором вестовой подойдет
@@ -2008,24 +2007,24 @@ void ProcessDialogEvent()
 			ChangeItemDescribe(pchar.questTemp.WPU.Current.Item, pchar.questTemp.WPU.Current.Itemdescr);
 			ReOpenQuestHeader("Postcureer");
 			AddQuestRecord("Postcureer", "6");
-			AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(sti(pchar.questTemp.WPU.Postcureer.DaysQty)));
-			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Postcureer.Money)));
+			AddQuestUserData("Postcureer", "sDay", FindRussianDaysString(int(pchar.questTemp.WPU.Postcureer.DaysQty)));
+			AddQuestUserData("Postcureer", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Postcureer.Money)));
 			AddQuestUserData("Postcureer", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.StartCity+"Gen"));
 			AddQuestUserData("Postcureer", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Postcureer.City)); // belamour gen
 			AddQuestUserData("Postcureer", "sText", pchar.questTemp.WPU.Current.Add);
 			AddQuestUserData("Postcureer", "sSex1", GetSexPhrase("",""));
-			SetFunctionTimerCondition("PostcureerTime_Over", 0, 0, sti(pchar.questTemp.WPU.Postcureer.DaysQty), false);
+			SetFunctionTimerCondition("PostcureerTime_Over", 0, 0, int(pchar.questTemp.WPU.Postcureer.DaysQty), false);
 		break;
 	
 		case "Postcureer_LevelDown":
 			dialog.text = "Schade, wirklich ... Tatsächlich werden Angebote dieser Art normalerweise nicht aufgeworfen. Aber es ist trotzdem Ihre Entscheidung.";
 			link.l1 = "Ja, das ist mein Ruf, "+GetAddress_FormToNPC(NPChar)+".";
 			link.l1.go = "exit";
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count) - 1;//за отказ от спецзадания счетчик скрутим
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count) - 1;//за отказ от спецзадания счетчик скрутим
 		break;
 	
 		case "Forsmajor_choose":
-			switch (sti(pchar.questTemp.WPU.Postcureer.Chance))
+			switch (int(pchar.questTemp.WPU.Postcureer.Chance))
 			{
 				case 0://охотники в городе прибытия + ДУ
 					pchar.quest.Postcureer_Hunter.win_condition.l1 = "Location";
@@ -2072,7 +2071,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.WPU.Postcureer == "late") pchar.quest.PostcureerTime_FullOver.over = "yes";//снять второй таймер
 			CloseQuestHeader("Postcureer");
 			ChangeCharacterComplexReputation(pchar,"nobility", -2);
-			pchar.questTemp.WPU.Postcureer.count = sti(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
+			pchar.questTemp.WPU.Postcureer.count = int(pchar.questTemp.WPU.Postcureer.count)-3;//скрутим счетчик
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.TargetPortmanID");
 			DeleteAttribute(pchar, "questTemp.WPU.Current");
 			DeleteAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp");
@@ -2089,99 +2088,99 @@ void ProcessDialogEvent()
 		switch (rand(4))//для тестов
 		{
 			case 0:
-				pchar.questTemp.WPU.Fraht.Goods = GOOD_CHOCOLATE + hrand(makeint(GOOD_TOBACCO - GOOD_CHOCOLATE));
+				pchar.questTemp.WPU.Fraht.Goods = GOOD_CHOCOLATE + hrand(int(GOOD_TOBACCO - GOOD_CHOCOLATE));
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 3000 + sti(pchar.rank)*30*(hrand(9)+1);
-				iGoodsQty = 1000+sti(pchar.rank)*10*(hrand(9)+1); // min 1100 max 5000
+				//iGoodsQty = 3000 + int(pchar.rank)*30*(hrand(9)+1);
+				iGoodsQty = 1000+int(pchar.rank)*10*(hrand(9)+1); // min 1100 max 5000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
-				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
-				pchar.questTemp.WPU.Fraht.Money = sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
+				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost)*2;//двойная цена единицы товара
+				pchar.questTemp.WPU.Fraht.Money = int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "double";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "Die Nachfrage nach einer bestimmten Ware hat in unserer Kolonie kürzlich dramatisch zugenommen. Die lokalen Läden haben es nicht mehr auf Lager. Daher möchte ich, dass du mir mit "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
+				dialog.text = "Die Nachfrage nach einer bestimmten Ware hat in unserer Kolonie kürzlich dramatisch zugenommen. Die lokalen Läden haben es nicht mehr auf Lager. Daher möchte ich, dass du mir mit "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
 				link.l1 = "In Ordnung, ich werde diese Mission annehmen.";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "Es tut mir leid, Sie zu enttäuschen, aber ich kann es im Moment nicht tun.";
 				link.l2.go = "Fraht_LevelDown";
-				SetNull2StoreGood(rColony, sti(pchar.questTemp.WPU.Fraht.Goods));
+				SetNull2StoreGood(rColony, int(pchar.questTemp.WPU.Fraht.Goods));
 			break;
 		
 			case 1:
-				pchar.questTemp.WPU.Fraht.Goods = GOOD_EBONY + hrand(makeint(GOOD_CINNAMON - GOOD_EBONY));
+				pchar.questTemp.WPU.Fraht.Goods = GOOD_EBONY + hrand(int(GOOD_CINNAMON - GOOD_EBONY));
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 1500 + sti(pchar.rank)*20*(hrand(9)+1);
-				iGoodsQty = 600+sti(pchar.rank)*5*(hrand(6)+1); // min 630 max 2000
+				//iGoodsQty = 1500 + int(pchar.rank)*20*(hrand(9)+1);
+				iGoodsQty = 600+int(pchar.rank)*5*(hrand(6)+1); // min 630 max 2000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
-				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
-				pchar.questTemp.WPU.Fraht.Money = sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
+				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost)*2;//двойная цена единицы товара
+				pchar.questTemp.WPU.Fraht.Money = int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty)*2;//двойная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "double";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "Die Nachfrage nach einer bestimmten Ware hat in unserer Kolonie kürzlich dramatisch zugenommen. Die örtlichen Geschäfte haben sie nicht mehr auf Lager. Daher möchte ich, dass Sie mir liefern "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
+				dialog.text = "Die Nachfrage nach einer bestimmten Ware hat in unserer Kolonie kürzlich dramatisch zugenommen. Die örtlichen Geschäfte haben sie nicht mehr auf Lager. Daher möchte ich, dass Sie mir liefern "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
 				link.l1 = "In Ordnung, ich werde diese Mission annehmen.";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "Es tut mir leid, Sie zu enttäuschen, aber ich kann es in diesem Moment nicht tun.";
 				link.l2.go = "Fraht_LevelDown";
-				SetNull2StoreGood(rColony, sti(pchar.questTemp.WPU.Fraht.Goods));
+				SetNull2StoreGood(rColony, int(pchar.questTemp.WPU.Fraht.Goods));
 			break;
 		
 			case 2:
-				//pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS + hrand(makeint(GOOD_POWDER - GOOD_BOMBS));
+				//pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS + hrand(int(GOOD_POWDER - GOOD_BOMBS));
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_BOMBS;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				//iGoodsQty = 15000 + sti(pchar.rank)*300*(hrand(9)+1);
-				iGoodsQty = 5000+sti(pchar.rank)*10*(hrand(9)+1); // min 5100 max 9000
+				//iGoodsQty = 15000 + int(pchar.rank)*300*(hrand(9)+1);
+				iGoodsQty = 5000+int(pchar.rank)*10*(hrand(9)+1); // min 5100 max 9000
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
-				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*3;//тройная цена единицы товара
-				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/20);//тройная стоимость товара
+				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost)*3;//тройная цена единицы товара
+				pchar.questTemp.WPU.Fraht.Money = int((int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/20);//тройная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "triple";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "Das Arsenal unserer Kolonie mangelt es drastisch an "+GetGoodsNameAlt(iGoods)+". Die örtlichen Geschäfte haben es nicht mehr vorrätig. Daher möchte ich, dass du mir mit "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Dreifache zu zahlen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
+				dialog.text = "Das Arsenal unserer Kolonie mangelt es drastisch an "+GetGoodsNameAlt(iGoods)+". Die örtlichen Geschäfte haben es nicht mehr vorrätig. Daher möchte ich, dass du mir mit "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Dreifache zu zahlen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Artikel. Das wird sich auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
 				link.l1 = "In Ordnung, ich nehme diese Mission an.";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "Es tut mir leid, Sie zu enttäuschen, aber ich kann es im Moment nicht tun.";
 				link.l2.go = "Fraht_LevelDown";
-				SetNull2StoreGood(rColony, sti(pchar.questTemp.WPU.Fraht.Goods));
+				SetNull2StoreGood(rColony, int(pchar.questTemp.WPU.Fraht.Goods));
 			break;
 		
 			case 3:
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_MEDICAMENT;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				iGoodsQty = 7000 + sti(pchar.rank)*300*(hrand(9)+1);
+				iGoodsQty = 7000 + int(pchar.rank)*300*(hrand(9)+1);
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
-				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*3;//тройная цена единицы товара
-				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/30);//тройная стоимость товара
+				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost)*3;//тройная цена единицы товара
+				pchar.questTemp.WPU.Fraht.Money = int((int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty)*3)/30);//тройная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "triple";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "Nach dem jüngsten Fieberausbruch in unserer Kolonie fehlen uns medizinische Vorräte - und in den Läden ist nichts mehr übrig. Der Gouverneur fürchtet um die Sicherheit der Stadtbewohner. Daher möchte ich Sie bitten, mir zu liefern "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Dreifache zu zahlen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Packung. Das wird sich belaufen auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
+				dialog.text = "Nach dem jüngsten Fieberausbruch in unserer Kolonie fehlen uns medizinische Vorräte - und in den Läden ist nichts mehr übrig. Der Gouverneur fürchtet um die Sicherheit der Stadtbewohner. Daher möchte ich Sie bitten, mir zu liefern "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Dreifache zu zahlen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Packung. Das wird sich belaufen auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Waren warten.";
 				link.l1 = "In Ordnung, ich werde diese Mission annehmen.";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "Es tut mir leid, Sie zu enttäuschen, aber ich kann es in diesem Moment nicht tun.";
 				link.l2.go = "Fraht_LevelDown";
-				SetNull2StoreGood(rColony, sti(pchar.questTemp.WPU.Fraht.Goods));
+				SetNull2StoreGood(rColony, int(pchar.questTemp.WPU.Fraht.Goods));
 			break;
 		
 			case 4:
 				pchar.questTemp.WPU.Fraht.Goods = GOOD_FOOD;
 				iGoods = pchar.questTemp.WPU.Fraht.Goods;
-				iGoodsQty = 15000 + sti(pchar.rank)*300*(hrand(9)+1);
+				iGoodsQty = 15000 + int(pchar.rank)*300*(hrand(9)+1);
 				pchar.questTemp.WPU.Fraht.GoodsQty = iGoodsQty;
-				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = sti(Goods[iGoods].Cost)*2;//двойная цена единицы товара
-				pchar.questTemp.WPU.Fraht.Money = makeint((sti(Goods[iGoods].Cost)*sti(pchar.questTemp.WPU.Fraht.GoodsQty)*2)/10);//двойная стоимость товара
+				pchar.questTemp.WPU.Fraht.GoodsAverigePrice = int(Goods[iGoods].Cost)*2;//двойная цена единицы товара
+				pchar.questTemp.WPU.Fraht.Money = int((int(Goods[iGoods].Cost)*int(pchar.questTemp.WPU.Fraht.GoodsQty)*2)/10);//двойная стоимость товара
 				pchar.questTemp.WPU.Current.Add = "double";
 				// 08Mar17 "month" was "moths"
-				dialog.text = "Nach einer schlechten Ernte ist unsere Kolonie ständig auf importierte Lebensmittel angewiesen. Derzeit sind unsere Vorräte fast aufgebraucht und die Regale der Geschäfte sind schon vor einiger Zeit geleert worden. Ich möchte Sie bitten, mir zu liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Packung. Das wird sich belaufen auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Ware warten.";
+				dialog.text = "Nach einer schlechten Ernte ist unsere Kolonie ständig auf importierte Lebensmittel angewiesen. Derzeit sind unsere Vorräte fast aufgebraucht und die Regale der Geschäfte sind schon vor einiger Zeit geleert worden. Ich möchte Sie bitten, mir zu liefern "+GetGoodsNameAlt(iGoods)+" in der Menge von "+FindRussianQtyString(iGoodsQty)+", und ich bin bereit, das Doppelte zu zahlen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.GoodsAverigePrice))+" pro Packung. Das wird sich belaufen auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+". Oh, und versuche, die Frist von einem Monat einzuhalten - ich kann nicht länger auf die Ware warten.";
 				link.l1 = "In Ordnung, ich werde diese Mission annehmen.";
 				link.l1.go = "Fraht_LevelUp_Go";
 				link.l2 = "Es tut mir leid, Sie zu enttäuschen, aber ich kann es in diesem Moment nicht tun.";
 				link.l2.go = "Fraht_LevelDown";
-				SetNull2StoreGood(rColony, sti(pchar.questTemp.WPU.Fraht.Goods));
+				SetNull2StoreGood(rColony, int(pchar.questTemp.WPU.Fraht.Goods));
 			break;
 		}
 	break;
 		
 	case "Fraht_LevelDown":
 		DialogExit();
-		pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count)-1;//скрутим счетчик
+		pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count)-1;//скрутим счетчик
 	break;
 		
 	case "Fraht_LevelUp_Go":
@@ -2190,25 +2189,25 @@ void ProcessDialogEvent()
 		link.l1.go = "exit";
 		pchar.questTemp.WPU.Fraht = "begin";
 		pchar.questTemp.WPU.Fraht.LevelUp = "true";
-		pchar.questTemp.WPU.Fraht.count = sti(pchar.questTemp.WPU.Fraht.count) + 1;
+		pchar.questTemp.WPU.Fraht.count = int(pchar.questTemp.WPU.Fraht.count) + 1;
 		pchar.questTemp.WPU.Fraht.TargetPortmanID = pchar.questTemp.WPU.Fraht.StartCity +"_portman";//ИД портмана
 		iGoods = pchar.questTemp.WPU.Fraht.Goods;
 		ReOpenQuestHeader("Fraht");
 		AddQuestRecord("Fraht", "8");
-		AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money)));
+		AddQuestUserData("Fraht", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money)));
 		AddQuestUserData("Fraht", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Fraht.StartCity+"Gen"));
 		AddQuestUserData("Fraht", "sGoods", GetGoodsNameAlt(iGoods));
-		AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(sti(pchar.questTemp.WPU.Fraht.GoodsQty)));
+		AddQuestUserData("Fraht", "sGoodQty", FindRussianQtyString(int(pchar.questTemp.WPU.Fraht.GoodsQty)));
 		AddQuestUserData("Fraht", "sText", pchar.questTemp.WPU.Current1.Add);
 		SetFunctionTimerCondition("FrahtTimeLevelUp_Over", 0, 0, 30, false);
 	break;
 	
 	case "Fraht_completeLevelUp":
 	ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 	{
-		iGoods = makeint(pchar.questTemp.WPU.Fraht.Goods);
-		amount = sti(pchar.questTemp.WPU.Fraht.GoodsQty) - GetSquadronGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods));
+		iGoods = int(pchar.questTemp.WPU.Fraht.Goods);
+		amount = int(pchar.questTemp.WPU.Fraht.GoodsQty) - GetSquadronGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods));
 		if (amount > 0)
 		{
 			dialog.text = "Machst du Witze? Du hast nicht die Menge an Waren, die ich bestellt habe!";
@@ -2217,7 +2216,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Gut, du solltest eine Ladung liefern von "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(pchar.questTemp.WPU.Fraht.GoodsQty)+". Ausgezeichnet, vielen Dank. Hier ist Ihre Bezahlung - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Fraht.Money))+".";
+			dialog.text = "Gut, du solltest eine Ladung liefern von "+GetGoodsNameAlt(iGoods)+" in Höhe von "+FindRussianQtyString(pchar.questTemp.WPU.Fraht.GoodsQty)+". Ausgezeichnet, vielen Dank. Hier ist Ihre Bezahlung - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Fraht.Money))+".";
 			link.l1 = "Freut mich, Geschäfte mit Ihnen zu machen, "+GetAddress_FormToNPC(NPChar)+"!";
 			link.l1.go = "Fraht_completeLevelUp_1";
 		}
@@ -2234,8 +2233,8 @@ void ProcessDialogEvent()
 		pchar.quest.FrahtTimeLevelUp_Over.over = "yes";//снять таймер
 		AddQuestRecord("Fraht", "2");
 		CloseQuestHeader("Fraht");
-		RemoveCharacterGoods(pchar, sti(pchar.questTemp.WPU.Fraht.Goods), sti(pchar.questTemp.WPU.Fraht.GoodsQty));
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Fraht.Money));
+		RemoveCharacterGoods(pchar, int(pchar.questTemp.WPU.Fraht.Goods), int(pchar.questTemp.WPU.Fraht.GoodsQty));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Fraht.Money));
 		DeleteAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID");
 		DeleteAttribute(pchar, "questTemp.WPU.Current1"); // лесник  Current1 вместо Current
 		DeleteAttribute(pchar, "questTemp.WPU.Fraht.LevelUp");
@@ -2245,7 +2244,7 @@ void ProcessDialogEvent()
 		AddCharacterExpToSkill(pchar, "Leadership", 150);//авторитет
 		AddCharacterExpToSkill(pchar, "Fortune", 100);//везение
 		ChangeCharacterComplexReputation(pchar,"nobility", 2);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Fraht.Nation), 2);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Fraht.Nation), 2);
 		DialogExit();
 	break;
 	
@@ -2257,11 +2256,11 @@ void ProcessDialogEvent()
 		pchar.questTemp.WPU.Escort.Nation = npchar.nation;//нация квестодателя
 		pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();//вражеская нация
 		i = 0;
-		while (sti(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
+		while (int(pchar.questTemp.WPU.Escort.EnemyNation) == PIRATE)
 		{
 			pchar.questTemp.WPU.Escort.EnemyNation = GetEnemyNationToMainCharacter();
 			i++;
-			if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(sti(pchar.BaseNation));
+			if(i > 5) pchar.questTemp.WPU.Escort.EnemyNation = FindEnemyNation2NationWithoutPirates(int(pchar.BaseNation));
 		}
 		switch (hrand(2))
 		{
@@ -2269,9 +2268,9 @@ void ProcessDialogEvent()
 				pchar.questTemp.WPU.Current.TargetIslandID = DesIsland();//выбор необитайки
 				while (!isLocationFreeForQuests(pchar.questTemp.WPU.Current.TargetIslandID)) pchar.questTemp.WPU.Current.TargetIslandID = DesIsland();
 				pchar.questTemp.WPU.Escort.ShipType = Escort_ShipType();//выбор корабля
-				pchar.questTemp.WPU.Escort.ShipName = GenerateRandomNameToShip(sti(pchar.nation));//имя корабля
+				pchar.questTemp.WPU.Escort.ShipName = GenerateRandomNameToShip(int(pchar.nation));//имя корабля
 				pchar.questTemp.WPU.Escort.TargetPortmanID = pchar.questTemp.WPU.Escort.StartCity +"_portman";//ИД портмана
-				pchar.questTemp.WPU.Escort.ShipBaseName = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.WPU.Escort.ShipType), "Name") + "Gen"));
+				pchar.questTemp.WPU.Escort.ShipBaseName = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.WPU.Escort.ShipType), "Name") + "Gen"));
 				dialog.text = "Diese Katastrophe ereignete sich vor zehn Tagen... ein Karawanenkonvoi von Handelsschiffen, der auf dem Weg zu unserer Kolonie war, wurde von Piraten angegriffen. Ein heftiger Sturm zwang die Piraten zum Rückzug, aber die Handelsschiffe wurden verstreut und verloren den Kontakt zueinander. Schließlich erreichten alle Schiffe verschiedene Häfen, außer einem. \n"+pchar.questTemp.WPU.Escort.ShipBaseName+" '"+pchar.questTemp.WPU.Escort.ShipName+"' verschwand und ihr Schicksal bleibt unbekannt. Vermutlich kann sie in der Nähe der unbewohnten Insel gefunden werden "+XI_ConvertString(pchar.questTemp.WPU.Current.TargetIslandID)+". Ich bitte Sie, dorthin zu gehen, herauszufinden, was mit dem verlorenen Schiff passiert ist und, wenn sie überlebt hat, sie zu unserem Hafen zu bringen. Wir werden Ihre Entschädigung entscheiden, nachdem die Arbeit erledigt ist, aber ich versichere Ihnen, es wird sich lohnen.";
 				link.l1 = "Natürlich, ich stimme zu!";
 				link.l1.go = "Escort_LevelUp_1";
@@ -2288,7 +2287,7 @@ void ProcessDialogEvent()
 				link.l2.go = "Escort_LevelUp_exit";
 			break;
 			case 2://встретить и довести
-				pchar.questTemp.WPU.Escort.ShipName = GenerateRandomNameToShip(sti(pchar.nation));
+				pchar.questTemp.WPU.Escort.ShipName = GenerateRandomNameToShip(int(pchar.nation));
 				pchar.questTemp.WPU.Escort.ShipType = Escort_ShipType();
 				pchar.questTemp.WPU.Escort.City = findCurrentCity1(npchar);//город, откуда забрать
 				pchar.questTemp.WPU.Escort.TargetPortmanID = pchar.questTemp.WPU.Escort.City +"_portman";//ИД портмана
@@ -2296,9 +2295,9 @@ void ProcessDialogEvent()
 				pchar.questTemp.WPU.Escort.Nation = sld.nation;//нация получателя
 				pchar.questTemp.WPU.Current.TargetIslandID = GetCharacterCurrentIslandId(npchar);//ИД целевого ареала
 				pchar.questTemp.WPU.Escort.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.questTemp.WPU.Escort.StartCity), GetArealByCityName(pchar.questTemp.WPU.Escort.City));//расстояние в днях
-				pchar.questTemp.WPU.Escort.Money = sti(pchar.questTemp.WPU.Escort.DaysQty)*2000+20000;
+				pchar.questTemp.WPU.Escort.Money = int(pchar.questTemp.WPU.Escort.DaysQty)*2000+20000;
 				pchar.questTemp.WPU.Escort.Chance = rand(1);
-				dialog.text = "Ein Schiff mit Waffen und Munition, das unsere Kolonie bestellt hat, ist kürzlich in der Kolonie angekommen "+XI_ConvertString(pchar.questTemp.WPU.Escort.City)+". Ihr Eskortschiff hat das Riff getroffen, wurde schwer beschädigt und wird so schnell nicht den Hafen verlassen können. Wir können es nicht riskieren, ein Handelsschiff mit einer solchen Ladung alleine zu schicken.\nWürden Sie zustimmen, sie zu unserer Kolonie zu eskortieren? Die Bezahlung für die Arbeit ist festgelegt auf "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+".";
+				dialog.text = "Ein Schiff mit Waffen und Munition, das unsere Kolonie bestellt hat, ist kürzlich in der Kolonie angekommen "+XI_ConvertString(pchar.questTemp.WPU.Escort.City)+". Ihr Eskortschiff hat das Riff getroffen, wurde schwer beschädigt und wird so schnell nicht den Hafen verlassen können. Wir können es nicht riskieren, ein Handelsschiff mit einer solchen Ladung alleine zu schicken.\nWürden Sie zustimmen, sie zu unserer Kolonie zu eskortieren? Die Bezahlung für die Arbeit ist festgelegt auf "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+".";
 				link.l1 = "Natürlich, ich stimme zu!";
 				link.l1.go = "Escort_LevelUp_0";
 				link.l2 = "Es tut mir leid, aber diese Arbeit ist nichts für mich. Ich fürchte, ich werde passen.";
@@ -2311,7 +2310,7 @@ void ProcessDialogEvent()
 		dialog.text = "Schade, wirklich. Ich habe tatsächlich auf dich gezählt...";
 		link.l1 = "Es tut mir auch leid. Nun, bis wir uns wiedersehen, "+GetAddress_FormToNPC(NPChar)+".";
 		link.l1.go = "exit";
-		pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)-1;//скрутим счетчик
+		pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)-1;//скрутим счетчик
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp");
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.TargetPortmanID");
 	break;
@@ -2325,20 +2324,20 @@ void ProcessDialogEvent()
 	case "Escort_LevelUp_0_go":
 		ReOpenQuestHeader("Escort");
 		AddQuestRecord("Escort", "19");
-		AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money)));
+		AddQuestUserData("Escort", "sMoney", FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money)));
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 		AddQuestUserData("Escort", "sTargetColony",XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.City));
 		AddQuestUserData("Escort", "sDay", FindRussianDaysString(pchar.questTemp.WPU.Escort.DaysQty));
-		SetFunctionTimerCondition("EscortArsenalShip_Over", 0, 0, sti(pchar.questTemp.WPU.Escort.DaysQty)+1, false);
+		SetFunctionTimerCondition("EscortArsenalShip_Over", 0, 0, int(pchar.questTemp.WPU.Escort.DaysQty)+1, false);
 		DialogExit();
 		pchar.questTemp.WPU.Escort = "begin";
 		pchar.questTemp.WPU.Escort.LevelUp_0 = "true";
-		pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;
+		pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)+1;
 	break;
 	
 	case "Escort_LUGo_0":
 	ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 	{
 		pchar.quest.EscortArsenalShip_Over.over = "yes";
 		dialog.text = "Endlich! Dieses Schiff war lange genug ein Dorn im Auge. Übernehmen Sie dann das Kommando. Der Name des Schiffes ist "+pchar.questTemp.WPU.Escort.ShipName+", und ihr Kapitän wird sofort über deine Ankunft informiert.";
@@ -2354,9 +2353,9 @@ void ProcessDialogEvent()
 	break;
 	
 	case "Escort_LUGo_01"://добавляем компаньона
-		int iShipType = sti(pchar.questTemp.WPU.Escort.ShipType);
+		int iShipType = int(pchar.questTemp.WPU.Escort.ShipType);
 		sTemp = pchar.questTemp.WPU.Escort.ShipName;
-		sld = GetCharacter(NPC_GenerateCharacter("ArsenalShipCaptain", "citiz_41", "man", "man", 15, sti(pchar.nation), -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("ArsenalShipCaptain", "citiz_41", "man", "man", 15, int(pchar.nation), -1, true, "quest"));
 		FantomMakeSmallSailor(sld, iShipType, sTemp, CANNON_TYPE_CANNON_LBS16, 65, 22, 24, 35, 33);
 		SetFantomParamFromRank(sld, 15, true); 
 		SetCaptanModelByEncType(sld, "war");
@@ -2368,7 +2367,7 @@ void ProcessDialogEvent()
 		SetCharacterGoods(sld, GOOD_POWDER, 10000);
 		SetCharacterGoods(sld, GOOD_WEAPON, 3000);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		SetCharacterRemovable(sld, false);
 		sld.loyality = MAX_LOYALITY;
 		sld.Dialog.Filename = "Common_portman.c";
@@ -2379,20 +2378,20 @@ void ProcessDialogEvent()
 		pchar.quest.Escort_fail.win_condition.l1 = "NPC_Death";//прерывание на потопление сопровождаемого
 		pchar.quest.Escort_fail.win_condition.l1.character = "ArsenalShipCaptain";
 		pchar.quest.Escort_fail.function = "EscortArsenalShip_failed";
-		SetFunctionTimerCondition("EscortArsenalShipGo_Over", 0, 0, sti(pchar.questTemp.WPU.Escort.DaysQty)+6, false);
+		SetFunctionTimerCondition("EscortArsenalShipGo_Over", 0, 0, int(pchar.questTemp.WPU.Escort.DaysQty)+6, false);
 		DeleteAttribute(pchar, "questTemp.WPU.Escort.LevelUp_0");
 		pchar.questTemp.WPU.Escort.LevelUpGo_0 = "true";
-		if (sti(pchar.questTemp.WPU.Escort.Chance) == 0) EnemyNationHunterOnMap(true);//скоростной перехватчик
+		if (int(pchar.questTemp.WPU.Escort.Chance) == 0) EnemyNationHunterOnMap(true);//скоростной перехватчик
 		else FrahtHunterOnSea();
 	break;
 	
 	case "Escort_LUGo_complete":
 	ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 	{
 		pchar.quest.Escort_fail.over = "yes";
 		pchar.quest.EscortArsenalShipGo_Over.over = "yes";
-		dialog.text = "Ausgezeichnet! Wieder einmal hast du bewiesen, dass man sich auf dich verlassen kann. Vielen Dank für die gut gemachte Arbeit. Bitte, nimm deine Bezahlung entgegen - "+FindRussianMoneyString(sti(pchar.questTemp.WPU.Escort.Money))+". Und vergiss nicht, mich ab und zu zu besuchen - für einen Kapitän wie dich gibt es immer ein oder zwei Aufträge.";
+		dialog.text = "Ausgezeichnet! Wieder einmal hast du bewiesen, dass man sich auf dich verlassen kann. Vielen Dank für die gut gemachte Arbeit. Bitte, nimm deine Bezahlung entgegen - "+FindRussianMoneyString(int(pchar.questTemp.WPU.Escort.Money))+". Und vergiss nicht, mich ab und zu zu besuchen - für einen Kapitän wie dich gibt es immer ein oder zwei Aufträge.";
 		link.l1 = "Schön, das zu hören, "+GetAddress_FormToNPC(NPChar)+"! Natürlich wird unsere Zusammenarbeit fortgesetzt. Herzliche Grüße!";
 		link.l1.go = "Escort_LUGo_complete_1";
 	}
@@ -2408,9 +2407,9 @@ void ProcessDialogEvent()
 		RemoveCharacterCompanion(Pchar, characterFromID("ArsenalShipCaptain"));
 		sld = characterFromId("ArsenalShipCaptain");
 		sld.lifeday = 0;//на всякий случай
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.Money));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.Money));
 		ChangeCharacterComplexReputation(pchar,"nobility", 2);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), 2);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), 2);
 		AddQuestRecord("Escort", "24");
 		AddQuestUserData("Escort", "sSName", pchar.questTemp.WPU.Escort.ShipName);
 		CloseQuestHeader("Escort");
@@ -2472,12 +2471,12 @@ void ProcessDialogEvent()
 		SetFunctionTimerCondition("DesIsland_Over", 0, 0, 15, false);
 		DialogExit();
 		pchar.questTemp.WPU.Escort = "begin";
-		pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;
+		pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)+1;
 	break;
 	
 	case "Escort_LU1WM_complete":
 	ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 	{
 		dialog.text = "Ja, ich wurde bereits benachrichtigt. Hervorragende Arbeit, "+GetAddress_Form(NPChar)+"! Du hast einmal mehr bewiesen, dass ich mich auf dich verlassen kann. Nimm deine Belohnung - 30.000 Pesos.\nDenk daran, mich von Zeit zu Zeit zu besuchen - Leute wie du sind unbezahlbar und ich werde immer einen passenden Job für dich finden.";
 		link.l1 = "Schön, das zu hören, "+GetAddress_FormToNPC(NPChar)+"! Natürlich werden wir weiterhin zusammenarbeiten. Alles Gute!";
@@ -2497,7 +2496,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		AddMoneyToCharacter(pchar, 30000);
 		ChangeCharacterComplexReputation(pchar,"nobility", 5);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), 5);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), 5);
 		AddQuestRecord("Escort", "32");
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 		AddQuestUserData("Escort", "sMoney", 30000);
@@ -2516,7 +2515,7 @@ void ProcessDialogEvent()
 	
 	case "Escort_LU1VSP_complete":
 	ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-	if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+	if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 	{
 		dialog.text = "Ja, er hat mir bereits von der Schlacht mit den Piraten erzählt und wie heldenhaft du sein Schiff verteidigt hast. Hervorragende Arbeit, "+GetAddress_Form(NPChar)+"! Du hast einmal mehr bewiesen, dass ich mich auf dich verlassen kann. Hol dir deine Belohnung - 50.000 Pesos.\nVergiss nicht, mich ab und zu zu besuchen - Leute wie du sind unbezahlbar und ich werde immer eine passende Arbeit für dich finden.";
 		link.l1 = "Schön, das zu hören, "+GetAddress_FormToNPC(NPChar)+"! Natürlich wird unsere Zusammenarbeit fortgesetzt. Beste Grüße!";
@@ -2536,7 +2535,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		AddMoneyToCharacter(pchar, 50000);
 		ChangeCharacterComplexReputation(pchar,"nobility", 10);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), 6);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), 6);
 		AddQuestRecord("Escort", "32");
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 		AddQuestUserData("Escort", "sMoney", 50000);
@@ -2593,7 +2592,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		AddMoneyToCharacter(pchar, 40000);
 		ChangeCharacterComplexReputation(pchar,"nobility", 8);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), 3);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), 3);
 		AddQuestRecord("Escort", "32");
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 		AddQuestUserData("Escort", "sMoney", 40000);
@@ -2620,7 +2619,7 @@ void ProcessDialogEvent()
 		AddQuestRecord("Escort", "41");
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
 		SetFunctionTimerCondition("CaravanNearIsland_Over", 0, 0, 2, false);
-		pchar.questTemp.WPU.Escort.count = sti(pchar.questTemp.WPU.Escort.count)+1;
+		pchar.questTemp.WPU.Escort.count = int(pchar.questTemp.WPU.Escort.count)+1;
 		pchar.quest.CaravanNearIsland_Start.win_condition.l1 = "location";
 		pchar.quest.CaravanNearIsland_Start.win_condition.l1.location = pchar.questTemp.WPU.Current.TargetIslandID;
 		pchar.quest.CaravanNearIsland_Start.function = "CreateCaravanNearIsland";
@@ -2630,7 +2629,7 @@ void ProcessDialogEvent()
 	break;
 	
 	case "Escort_LU2_complete":
-		switch (sti(pchar.questTemp.WPU.Escort.LevelUp_2.Qty))
+		switch (int(pchar.questTemp.WPU.Escort.LevelUp_2.Qty))
 		{
 			case 1:
 				pchar.questTemp.WPU.Escort.LevelUp_2.Money = 10000;
@@ -2654,15 +2653,15 @@ void ProcessDialogEvent()
 	break;
 	
 	case "Escort_LU2_complete_1":
-		iTemp = sti(pchar.questTemp.WPU.Escort.LevelUp_2.Qty);
+		iTemp = int(pchar.questTemp.WPU.Escort.LevelUp_2.Qty);
 		DialogExit();
 		Group_DeleteGroup("CaravanShip");
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.WPU.Escort.LevelUp_2.Money));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.WPU.Escort.LevelUp_2.Money));
 		ChangeCharacterComplexReputation(pchar,"nobility", iTemp*2);
-		ChangeCharacterNationReputation(pchar, sti(pchar.questTemp.WPU.Escort.Nation), iTemp);
+		ChangeCharacterNationReputation(pchar, int(pchar.questTemp.WPU.Escort.Nation), iTemp);
 		AddQuestRecord("Escort", "32");
 		AddQuestUserData("Escort", "sStartCity", XI_ConvertString("Colony"+pchar.questTemp.WPU.Escort.StartCity+"Gen"));
-		AddQuestUserData("Escort", "sMoney", sti(pchar.questTemp.WPU.Escort.LevelUp_2.Money));
+		AddQuestUserData("Escort", "sMoney", int(pchar.questTemp.WPU.Escort.LevelUp_2.Money));
 		CloseQuestHeader("Escort");
 		AddCharacterExpToSkill(pchar, "Sailing", iTemp*35);//навигация
 		AddCharacterExpToSkill(pchar, "Accuracy", iTemp*50);//меткость
@@ -2702,7 +2701,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BurntShip5":
-			sCapitainId = GenerateRandomName(sti(NPChar.nation), "man");
+			sCapitainId = GenerateRandomName(int(NPChar.nation), "man");
 			
 			dialog.text = "Nein! Natürlich nicht! Gott bewahre meine Seele, sonst würde ich meinen Kopf verlieren. Der Laderaum war absolut leer, danke Gott, der Heiligen Jungfrau Maria!\n"+"Und das Problem ist, dass das Schiff gehört... oder besser gesagt, gehörte Herrn. "+sCapitainId+", bekannt in allen Karibik. Und sie wurde in Europa auf Sonderbestellung gebaut, mit außergewöhnlichen Eigenschaften. "+"Und dieser Schiffseigner war viel zu stolz und prahlte links und rechts, eine Art Dummkopf, Gott verzeihe mir... Was soll ich ihm jetzt sagen? Ich sollte mich besser umbringen, ich schwöre...";
 			link.l1 = "Oh, jetzt sehe ich tatsächlich, was das Problem ist. Und was war so besonders an dem Schiff? Welche ungewöhnlichen Merkmale hatte sie, auf die ihr Besitzer so stolz war?";
@@ -2715,7 +2714,7 @@ void ProcessDialogEvent()
 			BurntShipQuest_FillStartParams(NPChar);
 			
 			attrL = NPChar.Quest.BurntShip.ShipAttribute;
-			iTest = sti(NPChar.Quest.BurntShip.ShipType);
+			iTest = int(NPChar.Quest.BurntShip.ShipType);
 			
 			switch(attrL)
 			{
@@ -2768,7 +2767,7 @@ void ProcessDialogEvent()
 			
 			attrL = NPChar.Quest.BurntShip.ShipAttribute;
 			
-			iTest = sti(NPChar.Quest.BurntShip.ShipType);
+			iTest = int(NPChar.Quest.BurntShip.ShipType);
 			
 			switch(attrL)
 			{
@@ -2857,7 +2856,7 @@ void ProcessDialogEvent()
 			sTitle = NPChar.Quest.BurntShip.ShipAttribute;
 			ok = (sFrom_sea == "") || (Pchar.location.from_sea == sFrom_sea);
 			
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				for(i = 1; i < COMPANION_MAX; i++)
 				{
@@ -2867,10 +2866,10 @@ void ProcessDialogEvent()
 					{
 						chref = GetCharacter(cn);
 						
-						sld = &RealShips[sti(chref.ship.type)];
+						sld = &RealShips[int(chref.ship.type)];
 						
-						if(GetRemovable(chref) && sti(sld.basetype) == sti(NPchar.Quest.BurntShip.ShipType) &&
-							stf(sld.(sTitle)) >= stf(NPChar.Quest.BurntShip.ShipNeededValue))
+						if(GetRemovable(chref) && int(sld.basetype) == int(NPchar.Quest.BurntShip.ShipType) &&
+							float(sld.(sTitle)) >= float(NPChar.Quest.BurntShip.ShipNeededValue))
 						{
 							attrL = "l" + i;
 							Link.(attrL) = chref.Ship.Name;
@@ -2924,7 +2923,7 @@ void ProcessDialogEvent()
 			sTitle = NPChar.Quest.BurntShip.ShipAttribute;
 			ok = (sFrom_sea == "") || (Pchar.location.from_sea == sFrom_sea);
 			
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				for(i = 1; i < COMPANION_MAX; i++)
 				{
@@ -2934,10 +2933,10 @@ void ProcessDialogEvent()
 					{
 						chref = GetCharacter(cn);
 						
-						sld = &RealShips[sti(chref.ship.type)];
+						sld = &RealShips[int(chref.ship.type)];
 						
-						if(GetRemovable(chref) && sti(sld.basetype) == sti(NPchar.Quest.BurntShip.ShipType) &&
-							stf(sld.(sTitle)) >= stf(NPChar.Quest.BurntShip.ShipNeededValue))
+						if(GetRemovable(chref) && int(sld.basetype) == int(NPchar.Quest.BurntShip.ShipType) &&
+							float(sld.(sTitle)) >= float(NPChar.Quest.BurntShip.ShipNeededValue))
 						{
 							attrL = "l" + i;
 							Link.(attrL) = chref.Ship.Name;
@@ -2952,10 +2951,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BurntShip19":
-			sld = &Characters[GetCompanionIndex(PChar, sti(NPChar.Quest.BurntShip.ShipCompanionIndex))];
+			sld = &Characters[GetCompanionIndex(PChar, int(NPChar.Quest.BurntShip.ShipCompanionIndex))];
 			cn = GetShipSellPrice(sld, CharacterFromID(NPChar.city + "_shipyarder")) * 3;
 			rRealShip = GetRealShip(GetCharacterShipType(sld));
-			if (sti(rRealShip.Stolen)) cn *= 3;
+			if (int(rRealShip.Stolen)) cn *= 3;
 			
 			dialog.text = "Ja, perfekt. Ich bin bereit, dir deine Belohnung zu übergeben, "+FindRussianMoneyString(cn)+". So hat die Versicherungsgesellschaft den Wert des verbrannten Schiffes bewertet. Die Versicherungssumme wird in Kreditkisten ausgezahlt - kein Bargeld, tut mir leid.";
 			link.l1 = "Oh nein, diese Summe passt mir nicht. Ich bin sicher, dass dieses Schiff viel teurer ist.";
@@ -2966,7 +2965,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BurntShip20_exit":
-			TakeNItems(pchar, "chest", makeint(sti(NPChar.Quest.BurntShip.Money)/12000));
+			TakeNItems(pchar, "chest", int(int(NPChar.Quest.BurntShip.Money)/12000));
 			Log_Info("You have received credit chests");
 			PlaySound("interface\important_item.wav");
 			sTitle = "BurntShipQuest" + NPChar.location;
@@ -2977,7 +2976,7 @@ void ProcessDialogEvent()
 			
 			ChangeCharacterComplexReputation(pchar,"nobility", 3);
 			
-			sld = &Characters[GetCompanionIndex(PChar, sti(NPChar.Quest.BurntShip.ShipCompanionIndex))];
+			sld = &Characters[GetCompanionIndex(PChar, int(NPChar.Quest.BurntShip.ShipCompanionIndex))];
 			RemoveCharacterCompanion(PChar, sld);
 			AddPassenger(PChar, sld, false);
 			
@@ -3122,9 +3121,9 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Ausgezeichnet! Obwohl ich vermute, dass dies nicht genau das Schiff ist, das gestohlen wurde... Ach, wen kümmert's! Ich nehme es.";
 				link.l1 = "Ja, tatsächlich...";
-				//npchar.quest.money = makeint(sti(npchar.quest.money) / 4); //снижаем оплату
+				//npchar.quest.money = int(int(npchar.quest.money) / 4); //снижаем оплату
 				ChangeCharacterComplexReputation(pchar,"nobility", 5);
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 10);
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), 10);
                 AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 10);
                 AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 10);
                 AddCharacterExpToSkill(GetMainCharacter(), "Commerce", 50);
@@ -3135,7 +3134,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ausgezeichnet! Du hast mir sehr geholfen. Ich kann mir nicht vorstellen, wie schwierig es war.";
 				link.l1 = "Ja, in der Tat...";
 				ChangeCharacterComplexReputation(pchar,"nobility", 10);
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 20);
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), 20);
                 AddCharacterExpToSkill(GetMainCharacter(), "Leadership", 100);
                 AddCharacterExpToSkill(GetMainCharacter(), "Sailing", 150);
                 AddCharacterExpToSkill(GetMainCharacter(), "Grappling", 100);
@@ -3143,10 +3142,10 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "Ich bin bereit, dir deine Belohnung zu zahlen. Sie besteht aus " + sti(npchar.quest.money) + " in doubloons. Leider kann ich Ihnen nicht mehr als das zahlen.";
+			dialog.text = "Ich bin bereit, dir deine Belohnung zu zahlen. Sie besteht aus " + int(npchar.quest.money) + " in doubloons. Leider kann ich Ihnen nicht mehr als das zahlen.";
 			link.l1 = "Nun, das reicht. Danke und herzliche Grüße.";
 			link.l1.go = "exit";
-			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));
+			TakeNItems(pchar, "gold_dublon", int(npchar.quest.money));
 			sTitle = npchar.id + "Portmans_SeekShip";
 			AddQuestRecordEx(sTitle, "Portmans_SeekShip", "6");
 			CloseQuestHeader(sTitle);
@@ -3159,17 +3158,17 @@ void ProcessDialogEvent()
 		//в список портмана заносим тайтл, заголовок и номер строки из quest_text.txt
 		//ПРИМЕР: в конце метода  void SetCapitainFromCityToSea(string qName)
 		case "CapitainList":
-			if (sti(npchar.quest.qty) > 0)
+			if (int(npchar.quest.qty) > 0)
 			{
 				dialog.text = "Es gibt mehrere registrierte Kapitäne. Interessieren Sie sich für jemanden Bestimmten?";
 				makearef(arCapBase, npchar.quest.capitainsList); 
-				for (i=0; i<sti(npchar.quest.qty); i++)
+				for (i=0; i<int(npchar.quest.qty); i++)
 				{
     				arCapLocal = GetAttributeN(arCapBase, i);
 					sCapitainId = GetAttributeName(arCapLocal);
 					sld = characterFromId(sCapitainId);
 					attrL = "l" + i;
-					link.(attrL) = GetFullName(sld) + ", captain of " + GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Gen")) + " '" + sld.Ship.name + "'.";
+					link.(attrL) = GetFullName(sld) + ", captain of " + GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Gen")) + " '" + sld.Ship.name + "'.";
 					link.(attrL).go = "CapList_"+attrL;
 				}
 			}
@@ -3194,7 +3193,7 @@ void ProcessDialogEvent()
 			AddQuestRecordEx(arCapLocal.QBString1, arCapLocal.QBString2, arCapLocal.QBQty);
 			AddQuestUserData(arCapLocal.QBString1, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			AddQuestUserData(arCapLocal.QBString1, "sCapName", GetFullName(sld));
-			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Voc")));
+			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Voc")));
 			AddQuestUserData(arCapLocal.QBString1, "sShipName", sld.Ship.name);
 			AddQuestUserData(arCapLocal.QBString1, "sDate", arCapLocal.date);
 			AddQuestUserData(arCapLocal.QBString1, "sTargetCity", XI_ConvertString("Colony" + arCapLocal + "Acc"));
@@ -3219,7 +3218,7 @@ void ProcessDialogEvent()
 			AddQuestRecordEx(arCapLocal.QBString1, arCapLocal.QBString2, arCapLocal.QBQty);
 			AddQuestUserData(arCapLocal.QBString1, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			AddQuestUserData(arCapLocal.QBString1, "sCapName", GetFullName(sld));
-			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Dat")));
+			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Dat")));
 			AddQuestUserData(arCapLocal.QBString1, "sShipName", sld.Ship.name);
 			AddQuestUserData(arCapLocal.QBString1, "sDate", arCapLocal.date);
 			AddQuestUserData(arCapLocal.QBString1, "sTargetCity", XI_ConvertString("Colony" + arCapLocal + "Acc"));
@@ -3244,7 +3243,7 @@ void ProcessDialogEvent()
 			AddQuestRecordEx(arCapLocal.QBString1, arCapLocal.QBString2, arCapLocal.QBQty);
 			AddQuestUserData(arCapLocal.QBString1, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			AddQuestUserData(arCapLocal.QBString1, "sCapName", GetFullName(sld));
-			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Dat")));
+			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Dat")));
 			AddQuestUserData(arCapLocal.QBString1, "sShipName", sld.Ship.name);
 			AddQuestUserData(arCapLocal.QBString1, "sDate", arCapLocal.date);
 			AddQuestUserData(arCapLocal.QBString1, "sTargetCity", XI_ConvertString("Colony" + arCapLocal + "Acc"));
@@ -3269,7 +3268,7 @@ void ProcessDialogEvent()
 			AddQuestRecordEx(arCapLocal.QBString1, arCapLocal.QBString2, arCapLocal.QBQty);
 			AddQuestUserData(arCapLocal.QBString1, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			AddQuestUserData(arCapLocal.QBString1, "sCapName", GetFullName(sld));
-			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Dat")));
+			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Dat")));
 			AddQuestUserData(arCapLocal.QBString1, "sShipName", sld.Ship.name);
 			AddQuestUserData(arCapLocal.QBString1, "sDate", arCapLocal.date);
 			AddQuestUserData(arCapLocal.QBString1, "sTargetCity", XI_ConvertString("Colony" + arCapLocal + "Acc"));
@@ -3294,7 +3293,7 @@ void ProcessDialogEvent()
 			AddQuestRecordEx(arCapLocal.QBString1, arCapLocal.QBString2, arCapLocal.QBQty);
 			AddQuestUserData(arCapLocal.QBString1, "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
 			AddQuestUserData(arCapLocal.QBString1, "sCapName", GetFullName(sld));
-			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName + "Dat")));
+			AddQuestUserData(arCapLocal.QBString1, "sShipTypeName", GetStrSmallRegister(XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName + "Dat")));
 			AddQuestUserData(arCapLocal.QBString1, "sShipName", sld.Ship.name);
 			AddQuestUserData(arCapLocal.QBString1, "sDate", arCapLocal.date);
 			AddQuestUserData(arCapLocal.QBString1, "sTargetCity", XI_ConvertString("Colony" + arCapLocal + "Acc"));
@@ -3323,7 +3322,7 @@ void ProcessDialogEvent()
     		Link.l1.go = "ShipStock_HWICEng";
 			break;
 			}
-            if (sti(NPChar.Portman) >= 3 || CheckAttribute(pchar, "questTemp.HWIC.TakeQuestShip"))
+            if (int(NPChar.Portman) >= 3 || CheckAttribute(pchar, "questTemp.HWIC.TakeQuestShip"))
 			{
                 dialog.text = "Nun, das ist korrekt. Aber leider kann ich Ihr Schiff im Moment nicht akzeptieren. Kein Dockplatz verfügbar.";
     			Link.l1 = "Das ist schade.";
@@ -3332,7 +3331,7 @@ void ProcessDialogEvent()
             else
             {
     			ok = (sFrom_sea == "") || (Pchar.location.from_sea == sFrom_sea);
-			    if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			    if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 				{
 					dialog.text = "Und welches besondere Schiff wirst du hier lassen?";
 	    			for(i=1; i<COMPANION_MAX; i++)
@@ -3343,7 +3342,7 @@ void ProcessDialogEvent()
 							chref = GetCharacter(cn);
 							if (!GetRemovable(chref)) continue;							
 							attrL = "l"+i+COMPANION_MAX;
-							Link.(attrL)	= XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+							Link.(attrL)	= XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 							Link.(attrL).go = "ShipStockMan22_" + i;
 
 						}
@@ -3398,7 +3397,7 @@ void ProcessDialogEvent()
 		break;
 */		
 		case "ShipStock_2":
-			/*if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
+			/*if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && int(RealShips[int(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
 			{
 				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
 			}
@@ -3407,9 +3406,9 @@ void ProcessDialogEvent()
 				if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = MOD_SKILL_ENEMY_RATE/2*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
 				else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
 			}
-			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName)+" '"+chref.Ship.Name+"', Klasse "+RealShips[sti(chref.Ship.Type)].Class+", Liegeplatz kostet "+FindRussianMoneyString(sti(NPChar.MoneyForShip))+" pro Monat, Zahlung für einen Monat im Voraus.";
+			dialog.Text = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName)+" '"+chref.Ship.Name+"', Klasse "+RealShips[int(chref.Ship.Type)].Class+", Liegeplatz kostet "+FindRussianMoneyString(int(NPChar.MoneyForShip))+" pro Monat, Zahlung für einen Monat im Voraus.";
 			Link.l1 = "Ja, das passt mir.";
-			if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip))
+			if (int(Pchar.Money) >= int(NPChar.MoneyForShip))
 			{
 			    Link.l1.go = "ShipStock_3";
 			}
@@ -3419,18 +3418,18 @@ void ProcessDialogEvent()
 			}
 			Link.l2 = "Nein, ich habe meine Meinung geändert.";
 			Link.l2.go = "exit";*/
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			PortmanCalculatePrices(NPChar, chref);
-			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', Klasse " + RealShips[sti(chref.Ship.Type)].Class +
-								 ", Liegeplatzkosten " + FindRussianMoneyString(sti(NPChar.MoneyForShip)) + " pro Monat, zahlbar im Voraus.";
-			dialog.Text = dialog.Text + " Wenn Sie es mit Offizier und Mannschaft überlassen, dann zusammen mit ihnen " + FindRussianMoneyString(sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew));
+			dialog.Text = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', Klasse " + RealShips[int(chref.Ship.Type)].Class +
+								 ", Liegeplatzkosten " + FindRussianMoneyString(int(NPChar.MoneyForShip)) + " pro Monat, zahlbar im Voraus.";
+			dialog.Text = dialog.Text + " Wenn Sie es mit Offizier und Mannschaft überlassen, dann zusammen mit ihnen " + FindRussianMoneyString(int(NPChar.MoneyForShip) + int(NPChar.MoneyForCrew));
 
 			Link.l1 = "Ja. Das passt für mich.";
-			if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip)) Link.l1.go = "ShipStock_3";
+			if (int(Pchar.Money) >= int(NPChar.MoneyForShip)) Link.l1.go = "ShipStock_3";
 			else  Link.l2.go = "ShipStock_NoMoney";
 
 			Link.l2 = "Ja. Das passt für mich. Wir lassen es mit Kapitän und Mannschaft.";
-			if (sti(Pchar.Money) >= (sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew))) Link.l2.go = "ShipStock_4";
+			if (int(Pchar.Money) >= (int(NPChar.MoneyForShip) + int(NPChar.MoneyForCrew))) Link.l2.go = "ShipStock_4";
 			else Link.l2.go = "ShipStock_NoMoney";
 
 			Link.l3 = "Nein, ich habe es mir anders überlegt" + GetSexPhrase("","") + ".";
@@ -3444,14 +3443,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "ShipStock_3":
-		 	LeaveShipInPort(&NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
+		 	LeaveShipInPort(&NPChar, GetCharacter(int(NPChar.ShipToStoreIdx)));
 			dialog.text = "Très bien. Vous le récupérerez quand vous en aurez besoin.";
 			Link.l1 = "Merci.";
 			Link.l1.go = "exit";
 		break;
 
 		case "ShipStock_4":
-		 	LeaveShipInPortWithCrew(&NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
+		 	LeaveShipInPortWithCrew(&NPChar, GetCharacter(int(NPChar.ShipToStoreIdx)));
 			dialog.text = "Très bien. Vous le récupérerez quand vous en aurez besoin.";
 			Link.l1 = "Merci.";
 			Link.l1.go = "exit";
@@ -3459,7 +3458,7 @@ void ProcessDialogEvent()
 
 		case "ShipStockReturn_1":
             ok = (sFrom_sea == "") || (Pchar.location.from_sea == sFrom_sea);
-		    if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+		    if (int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				if (GetCompanionQuantity(pchar) < COMPANION_MAX)
 	            {
@@ -3475,12 +3474,12 @@ void ProcessDialogEvent()
 								attrL = "l"+cn;
 								if(HasSubStr(chref.id, "ShipInStockMan_"))											  
 								{ 
-								Link.(attrL)	= XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+								Link.(attrL)	= XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 								Link.(attrL).go = "ShipStockManBack22_" + i; 
 								}
 								else
 								{  
-								Link.(attrL)	= XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "' and my officer " + GetFullName(chref) + ".";
+								Link.(attrL)	= XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "' and my officer " + GetFullName(chref) + ".";
 								Link.(attrL).go = "ShipStockManBack11_" + i;
 								}
 								cn++;
@@ -3507,7 +3506,7 @@ void ProcessDialogEvent()
 		break;
 
         case "ShipStockManBack":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+            chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			
 			// Лимит офицеров не позволяет забрать  
 			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {  
@@ -3525,16 +3524,16 @@ void ProcessDialogEvent()
 				break;
 			}
 			// <--
-            NPChar.MoneyForShip =  GetNpcQuestPastMonthParam(chref, "ShipInStockMan.Date") * sti(chref.ShipInStockMan.MoneyForShip);
-			if (sti(NPChar.MoneyForShip) > 0)
+            NPChar.MoneyForShip =  GetNpcQuestPastMonthParam(chref, "ShipInStockMan.Date") * int(chref.ShipInStockMan.MoneyForShip);
+			if (int(NPChar.MoneyForShip) > 0)
 			{
-			    dialog.Text = "Möchtest du dein Schiff abholen? Für die Anlegestelle schuldest du noch "+FindRussianMoneyString(sti(NPChar.MoneyForShip))+".";
+			    dialog.Text = "Möchtest du dein Schiff abholen? Für die Anlegestelle schuldest du noch "+FindRussianMoneyString(int(NPChar.MoneyForShip))+".";
 			}
 			else
 			{
 				dialog.Text = "Aufheben?";
 			}
-			if (sti(NPChar.MoneyForShip) <= sti(pchar.Money))
+			if (int(NPChar.MoneyForShip) <= int(pchar.Money))
 			{
 				Link.l1 = "Ja.";
 				Link.l1.go = "ShipStockManBack2";
@@ -3544,23 +3543,23 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStockManBack2": // hasert новый кейс для сторожа.
-			if (sti(NPChar.StoreWithOff))
+			if (int(NPChar.StoreWithOff))
 			{   
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
 
-			AddMoneyToCharacter(Pchar, -sti(NPChar.MoneyForShip));
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			AddMoneyToCharacter(Pchar, -int(NPChar.MoneyForShip));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
 			if(CheckAttribute(chref, "DontNullShip"))
 			{
 				DeleteAttribute(chref, "DontNullShip");
 				DeleteAttribute(NPChar, "DontNullShipBeliz");
 			}
-			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
+			SetCompanionIndex(pchar, -1, int(NPChar.ShipToStoreIdx));
 
-			NPChar.Portman	= sti(NPChar.Portman) - 1;
-			pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
+			NPChar.Portman	= int(NPChar.Portman) - 1;
+			pchar.ShipInStock = int(pchar.ShipInStock) - 1;
 			}
 			else
 			{   
@@ -3574,7 +3573,7 @@ void ProcessDialogEvent()
 				sld = GetCharacter(_curCharIdx);
 					if (_curCharIdx!=-1)
 					{
-						ok = CheckAttribute(&characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == true;
+						ok = CheckAttribute(&characters[_curCharIdx], "prisoned") && int(characters[_curCharIdx].prisoned) == true;
 
 						if (!CheckAttribute(sld, "CompanionDisable"))
 					    {
@@ -3583,12 +3582,12 @@ void ProcessDialogEvent()
 								attrL = "l"+i;
 								sProf = "";
 								if (IsOfficer(sld)) sProf += " (vanguard)";
-								if (sti(pchar.Fellows.Passengers.navigator) == sti(sld.index)) sProf += " (navigator)";
-								if (sti(pchar.Fellows.Passengers.boatswain) == sti(sld.index)) sProf += " (boatswain)";
-								if (sti(pchar.Fellows.Passengers.cannoner) == sti(sld.index)) sProf += " (cannoneer)";
-								if (sti(pchar.Fellows.Passengers.doctor) == sti(sld.index)) sProf += " (surgeon)";
-								if (sti(pchar.Fellows.Passengers.carpenter) == sti(sld.index)) sProf += " (carpenter)";
-							    if (sti(pchar.Fellows.Passengers.treasurer) == sti(sld.index)) sProf += " (purser)";
+								if (int(pchar.Fellows.Passengers.navigator) == int(sld.index)) sProf += " (navigator)";
+								if (int(pchar.Fellows.Passengers.boatswain) == int(sld.index)) sProf += " (boatswain)";
+								if (int(pchar.Fellows.Passengers.cannoner) == int(sld.index)) sProf += " (cannoneer)";
+								if (int(pchar.Fellows.Passengers.doctor) == int(sld.index)) sProf += " (surgeon)";
+								if (int(pchar.Fellows.Passengers.carpenter) == int(sld.index)) sProf += " (carpenter)";
+							    if (int(pchar.Fellows.Passengers.treasurer) == int(sld.index)) sProf += " (purser)";
 								Link.(attrL)	= GetFullName(&characters[_curCharIdx]) + sProf;
 								Link.(attrL).go = "ShipStockManBack2_" + i;
 								q++;
@@ -3646,7 +3645,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Ja, natürlich. Hast du das Geld dabei?";
-				if(makeint(Pchar.money) >= 10000)
+				if(int(Pchar.money) >= 10000)
 				{
 					link.l1 = "Sicher. Hier bitte.";
 					link.l1.go = "ShipStock_HWICEng_1";	
@@ -3679,10 +3678,10 @@ void ProcessDialogEvent()
 		
 		// --> mitrokosta сюрприз для хитрецов поставивших бунтовщика в ПУ
 		case "ShipStockManMutiny":
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
-			NPChar.Portman    = sti(NPChar.Portman) - 1;
-            pchar.ShipInStock = sti(pchar.ShipInStock) - 1;
+			NPChar.Portman    = int(NPChar.Portman) - 1;
+            pchar.ShipInStock = int(pchar.ShipInStock) - 1;
 			dialog.text = "Ihr Offizier "+GetFullName(chref)+" informiert"+NPCharSexPhrase(chref,"","")+" erzähl mir das "+NPCharSexPhrase(chref,"er","sie")+" musste auf Ihren Befehl hin zur See fahren. Ich habe nicht widersprochen "+NPCharSexPhrase(chref,"ihn","sie")+".";
 			link.l1 = "Verdammt! Es gab keinen solchen Befehl! Hätte mein Schiff nicht dem Bastard anvertrauen sollen! Eh, was auch immer, ich kann sowieso nichts über meinen Verlust tun.";
 			link.l1.go = "ShipStockManMutiny1";
@@ -3692,7 +3691,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStockManMutiny1":
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			chref.lifeday = 0;
 
 			dialog.text = "Es tut mir leid, "+GetAddress_Form(NPChar)+". Sie sollten vorsichtiger mit Ihren Untergebenen sein.";
@@ -3704,7 +3703,7 @@ void ProcessDialogEvent()
 		// уникальные корабли и легендарные капитаны -->
 		case "UniqueShips":
 			dialog.text = "Eindeutige Schiffe und die ihnen anvertrauten Personen können im Archipel nicht unbemerkt bleiben. Diese Information ist jedoch von erheblichem Wert und wird nicht leichtfertig gegeben.";
-			if (sti(pchar.Money) >= 25000)
+			if (int(pchar.Money) >= 25000)
 			{
 				link.l1 = "Ich verstehe. Würde die Summe von 25000 Pesos ausreichen, um meine ernsthaften Absichten zu demonstrieren?";
 				link.l1.go = "UniqueShips_2";
@@ -3790,7 +3789,7 @@ void ProcessDialogEvent()
 void SetJornalCapParam(ref npchar)
 {
 	//созадем рассеянного кэпа
-	ref sld = GetCharacter(NPC_GenerateCharacter("PortmansCap_" + npchar.index, "", "man", "man", 20, sti(npchar.nation), -1, true, "citizen"));
+	ref sld = GetCharacter(NPC_GenerateCharacter("PortmansCap_" + npchar.index, "", "man", "man", 20, int(npchar.nation), -1, true, "citizen"));
 	SetShipToFantom(sld, "trade", true);
 	sld.Ship.Mode = "trade";
 	SetCaptanModelByEncType(sld, "trade");
@@ -3817,18 +3816,18 @@ void SetJornalCapParam(ref npchar)
 	Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, sld.id);
 	Group_SetGroupCommander(sGroup, sld.id);
-	SetRandGeraldSail(sld, sti(sld.Nation)); 
+	SetRandGeraldSail(sld, int(sld.Nation));
 	//записываем данные в структуры портмана и кэпа
 	npchar.quest = "PortmansJornal"; //личный флаг квеста для портмана
 	npchar.quest.PortmansJornal.capName = GetFullName(sld); //имя кэпа
 	npchar.quest.PortmansJornal.shipName = sld.Ship.name; //имя корабля
-	npchar.quest.PortmansJornal.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название корабля
+	npchar.quest.PortmansJornal.shipTapeName = RealShips[int(sld.Ship.Type)].BaseName; //название корабля
 	npchar.quest.PortmansJornal.city = SelectNotEnemyColony(npchar); //определим колонию, куда ушел кэп
 	sld.quest = "InMap"; //личный флаг рассеянного кэпа
 	sld.quest.targetCity = npchar.quest.PortmansJornal.city; //продублируем колонию-цель в структуру кэпа
 	sld.quest.firstCity = npchar.city; //капитану знать откуда вышел в самом начале
 	sld.quest.stepsQty = 1; //количество выходов в море
-	sld.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 150) + (sti(pchar.rank)*150); //вознаграждение
+	sld.quest.money = ((int(RealShips[int(sld.Ship.Type)].basetype)+1) * 150) + (int(pchar.rank)*150); //вознаграждение
 	Log_TestInfo("The absent-minded cap " + sld.id + " went to: " + sld.quest.targetCity);
 	//определим бухту, куда ставить энкаунтер. чтобы сразу не генерился перед ГГ у города
 	string sTemp = GetArealByCityName(npchar.city);
@@ -3882,7 +3881,7 @@ int CheckCapitainsList(ref npchar)
 void SetSeekShipCapParam(ref npchar)
 {
 	//создаем кэпа-вора
-	int Rank = sti(pchar.rank) + 5;
+	int Rank = int(pchar.rank) + 5;
 	if (Rank > 30) Rank = 30;
 	ref sld = GetCharacter(NPC_GenerateCharacter("SeekCap_" + npchar.index, "", "man", "man", Rank, PIRATE, -1, true, "soldier"));
 	SetSeekCapShip(sld);
@@ -3925,15 +3924,15 @@ void SetSeekShipCapParam(ref npchar)
 	Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, sld.id);
 	Group_SetGroupCommander(sGroup, sld.id);
-	SetRandGeraldSail(sld, sti(sld.Nation)); 
+	SetRandGeraldSail(sld, int(sld.Nation));
 	//записываем данные в структуры портмана и кэпа
 	npchar.quest = "PortmansSeekShip"; //личный флаг квеста для портмана
 	npchar.quest.PortmansSeekShip.capName = GetFullName(sld); //имя кэпа-вора
 	npchar.quest.PortmansSeekShip.shipName = sld.Ship.name; //имя украденного корабля
-	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название украденного корабля
-	npchar.quest.PortmansSeekShip.shipTape = RealShips[sti(sld.Ship.Type)].basetype; //тип украденного корабля
-	npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 10) + (sti(pchar.rank)*5); //вознаграждение
-	// npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
+	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[int(sld.Ship.Type)].BaseName; //название украденного корабля
+	npchar.quest.PortmansSeekShip.shipTape = RealShips[int(sld.Ship.Type)].basetype; //тип украденного корабля
+	npchar.quest.money = ((int(RealShips[int(sld.Ship.Type)].basetype)+1) * 10) + (int(pchar.rank)*5); //вознаграждение
+	// npchar.quest.chest = 12-int(RealShips[int(sld.Ship.Type)].Class); //в сундуках
 	sld.quest = "InMap"; //личный флаг кэпа-вора
 	sld.city = SelectAnyColony(npchar.city); //определим колонию, откуда кэп-вор выйдет
 	sld.quest.targetCity = SelectAnyColony2(npchar.city, sld.city); //определим колонию, куда он придёт
@@ -4006,7 +4005,7 @@ string findCurrentCity1(ref NPChar)//выбираем целевой город 
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(pchar.nation), int(colonies[n].nation));
 		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
@@ -4027,7 +4026,7 @@ string findCurrentCity2(ref NPChar)//выбираем целевой город 
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(pchar.nation), int(colonies[n].nation));
 		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
@@ -4048,7 +4047,7 @@ string findCurrentCity3(ref NPChar)//выбираем целевой город 
 
 	for(n=0; n<MAX_COLONIES; n++)
 	{
-		nation = GetNationRelation(sti(pchar.nation), sti(colonies[n].nation));
+		nation = GetNationRelation(int(pchar.nation), int(colonies[n].nation));
 		if (nation != RELATION_ENEMY && colonies[n].id != "Panama" && colonies[n].id != "LosTeques" && colonies[n].id != "SanAndres" && colonies[n].nation != "none" && GetIslandByCityName(npchar.city) != GetIslandByColony(&colonies[n])) //на свой остров
 		{
 			storeArray[howStore] = n;
@@ -4078,37 +4077,37 @@ int Escort_ShipType()
 void SetSeekCapShip(ref _chr)
 {
 	int iRank;
-	if (sti(pchar.rank) < 7) iRank = 0;
-	if (sti(pchar.rank) >= 7 && sti(pchar.rank) < 11) iRank = 1;
-	if (sti(pchar.rank) >= 11 && sti(pchar.rank) < 20) iRank = 2;
-	if (sti(pchar.rank) >= 20 && sti(pchar.rank) < 27) iRank = 3;
-	if (sti(pchar.rank) >= 27) iRank = 4;
+	if (int(pchar.rank) < 7) iRank = 0;
+	if (int(pchar.rank) >= 7 && int(pchar.rank) < 11) iRank = 1;
+	if (int(pchar.rank) >= 11 && int(pchar.rank) < 20) iRank = 2;
+	if (int(pchar.rank) >= 20 && int(pchar.rank) < 27) iRank = 3;
+	if (int(pchar.rank) >= 27) iRank = 4;
 	
 	int iShip = SHIP_WAR_TARTANE;
 	switch (iRank)
 	{
 		case 0:
-			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)), 
-										 its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+			iShip = int(RandPhraseSimple(string(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+										 string(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 		case 1:  
-			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+			iShip = int(LinkRandPhrase(string(GetRandomShipType(FLAG_SHIP_CLASS_6, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break; 
 		case 2:  
-			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+			iShip = int(LinkRandPhrase(string(GetRandomShipType(FLAG_SHIP_CLASS_5, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 		case 3:  
-			iShip = sti(LinkRandPhrase(its(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
-									   its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
+			iShip = int(LinkRandPhrase(string(GetRandomShipType(FLAG_SHIP_CLASS_4, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY)),
+									   string(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_MERCHANT + FLAG_SHIP_TYPE_UNIVERSAL, FLAG_SHIP_NATION_ANY))));
 		break;
 		case 4:  
-			iShip = sti(RandPhraseSimple(its(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)), 
-										 its(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY))));
+			iShip = int(RandPhraseSimple(string(GetRandomShipType(FLAG_SHIP_CLASS_3, FLAG_SHIP_TYPE_WAR + FLAG_SHIP_TYPE_RAIDER, FLAG_SHIP_NATION_ANY)),
+										 string(GetRandomShipType(FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_ANY, FLAG_SHIP_NATION_ANY))));
 		break;
 	}
 	

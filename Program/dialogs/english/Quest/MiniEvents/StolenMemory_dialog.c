@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "A necklace? Indeed... I did recently acquire such a trinket. And pray tell, captain, by what means do you propose to relieve me of this piece of jewelry that is rightfully mine?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "I am prepared to offer you five thousand pesos for the piece. A handsome sum that would allow you to purchase an equally fine ornament, perhaps even grander. Meanwhile, this particular necklace would be restored to one who values it beyond measure—far more than any monetary worth.";
 				link.l1.go = "Captain_4_commerce";

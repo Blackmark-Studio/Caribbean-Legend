@@ -40,11 +40,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_1":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 5000;
 				dialog.text = "Now Monsieur, that isn't true! She is young, pretty, and experienced; my clients all but admire her. She will cost you a lot. Five thousand pesos for a night with her, and not a single peso less.";
-				if (sti(pchar.money) >= 5000)
+				if (int(pchar.money) >= 5000)
 				{
 					link.l1 = "Caro, mas muito bem. Aqui está sua moeda.";
 					link.l1.go = "Gigolo_3";
@@ -59,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 2500;
 				dialog.text = "Suspiro, você tem razão, Monsieur, ela é bonita e jovem, mas não tem experiência. Meus clientes geralmente nem reparam nela, por isso perguntei. Mas se você realmente gosta de moças discretas, diria que ela é uma boa escolha. Vai lhe custar dois mil e quinhentos pesos.";
-				if (sti(pchar.money) >= 2500)
+				if (int(pchar.money) >= 2500)
 				{
 					link.l1 = "Pois bem, ela servirá perfeitamente. Pegue suas moedas.";
 					link.l1.go = "Gigolo_3";
@@ -73,11 +73,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_2":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 4500;
 				dialog.text = "Você não seria o primeiro, bonitão. Às vezes meus clientes fazem fila pela atenção dela, já que ela é bem diferente das filhas de pele escura das nossas ilhas. Vai te custar quatro mil e quinhentos pesos.";
-				if (sti(pchar.money) >= 4500)
+				if (int(pchar.money) >= 4500)
 				{
 					link.l1 = "Caro, mas muito bem. Pegue sua moeda.";
 					link.l1.go = "Gigolo_3";
@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 3000;
 				dialog.text = "Sério, Monsieur? Já está com saudade de casa? Minhas crioulas e, principalmente, minhas mulatas são bem mais apaixonadas do que essa parisiense preguiçosa. Mas enfim, a escolha é sua. Ela vai lhe custar três mil pesos.";
-				if (sti(pchar.money) >= 3000)
+				if (int(pchar.money) >= 3000)
 				{
 					link.l1 = "Caro, mas muito bem. Aqui está sua moeda.";
 					link.l1.go = "Gigolo_3";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_3":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Sharlie.Gigolo.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Sharlie.Gigolo.Money));
 			dialog.text = "Como quiser, querido. Lucille estará te esperando ansiosamente às onze horas da noite. Além disso, ela deve voltar até, no máximo, sete horas da manhã. Se você não chegar antes da meia-noite, ela atenderá outro cliente, e então você terá que esperar até a noite seguinte para vê-la. E nem pense em... machucá-la de qualquer forma, ou vai se arrepender. Considere-se avisado, querido.";
 			link.l1 = "Não se preocupe, vou tratá-la como uma amante, não como um bruto. Vou encontrá-la às onze horas. Agora, o que devo fazer até lá?";
 			link.l1.go = "Gigolo_4a";

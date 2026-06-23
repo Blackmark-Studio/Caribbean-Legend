@@ -47,12 +47,12 @@ int FindLoadedLocation()
 
 bool SetLocatorGroupRadius(ref loc, string grpName, float rad)
 {
-	return SendMessage(loc, "lsf", MSG_LOCATION_GRP_RADIUS, grpName, rad);
+	return bool(SendMessage(loc, "lsf", MSG_LOCATION_GRP_RADIUS, grpName, rad));
 }
 
 bool SetLocatorRadius(ref loc, string grpName, string locName, float rad)
 {
-	return SendMessage(loc, "lssf", MSG_LOCATION_LOC_RADIUS, grpName, locName, rad);
+	return bool(SendMessage(loc, "lssf", MSG_LOCATION_LOC_RADIUS, grpName, locName, rad));
 }
 
 
@@ -62,7 +62,7 @@ bool VisibleLocatorsGroup(string group, float kRadius, float viewLabelsDist, int
 	int i = FindLoadedLocation();
 	if(i < 0) return false;
 	int color = argb(a, r, g, b);
-	return SendMessage(&Locations[i], "lsffl", MSG_LOCATION_VIEWLGROUP, group, kRadius, viewLabelsDist, color);
+	return bool(SendMessage(&Locations[i], "lsffl", MSG_LOCATION_VIEWLGROUP, group, kRadius, viewLabelsDist, color));
 }
 
 void HideLocatorsGroup(string group)
@@ -119,7 +119,7 @@ void QuestPointerDelLoc(string Id, string group, string locator)
 	
 	if(CheckAttribute(&Locations[i], "QuestPointer."+group+"."+locator))
 	{
-		DeleteAttribute(&Locations[i], "QuestPointer."+group+"."+locator));
+		DeleteAttribute(&Locations[i], "QuestPointer."+group+"."+locator);
 		if(i == FindLoadedLocation()) HideQuestPointer(group, locator);
 	}
 	// убрать атрибут, если нет маркерованных
@@ -138,8 +138,8 @@ bool QuestPointer_CheckTime(aref arLocator)
 {
 	if(!CheckAttribute(arLocator,"startTime") || !CheckAttribute(arLocator,"endTime")) return true;
 	
-	float start = stf(arLocator.startTime);
-	float end = stf(arLocator.endTime);
+	float start = float(arLocator.startTime);
+	float end = float(arLocator.endTime);
 	float curTime = GetTime();
 	if(start <= end)
 	{
@@ -478,9 +478,9 @@ void CallLocHandlers()
 
 void Villemstad_BigClock_Sound()
 {
-    float x = stf(loadedLocation.locators.WindMill.Fan3.x);
-    float y = stf(loadedLocation.locators.WindMill.Fan3.y);
-    float z = stf(loadedLocation.locators.WindMill.Fan3.z);
+    float x = float(loadedLocation.locators.WindMill.Fan3.x);
+    float y = float(loadedLocation.locators.WindMill.Fan3.y);
+    float z = float(loadedLocation.locators.WindMill.Fan3.z);
     SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "Location/clocks_bell", 0, x, y, z);
 }
 

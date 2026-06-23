@@ -4,7 +4,7 @@
 
 
 //Инициализация
-void LAi_type_monkey_Init(aref chr)
+void LAi_type_monkey_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -53,7 +53,7 @@ void LAi_type_monkey_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_monkey_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_monkey_CharacterUpdate(ref chr, float dltTime)
 {
 	int trg = -1;
 	if(chr.chr_ai.tmpl == LAI_TMPL_FIGHT)
@@ -109,19 +109,19 @@ void LAi_type_monkey_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_monkey_CharacterLogin(aref chr)
+bool LAi_type_monkey_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_monkey_CharacterLogoff(aref chr)
+bool LAi_type_monkey_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_monkey_TemplateComplite(aref chr, string tmpl)
+void LAi_type_monkey_TemplateComplite(ref chr, string tmpl)
 {
 	if(tmpl == "goto")
 	{
@@ -137,23 +137,23 @@ void LAi_type_monkey_TemplateComplite(aref chr, string tmpl)
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_monkey_NeedDialog(aref chr, aref by)
+void LAi_type_monkey_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_monkey_CanDialog(aref chr, aref by)
+bool LAi_type_monkey_CanDialog(ref chr, ref by)
 {
 	return false;
 }
 
 //Начать диалог
-void LAi_type_monkey_StartDialog(aref chr, aref by)
+void LAi_type_monkey_StartDialog(ref chr, ref by)
 {
 }
 
 //Закончить диалог
-void LAi_type_monkey_EndDialog(aref chr, aref by)
+void LAi_type_monkey_EndDialog(ref chr, ref by)
 {
 }
 
@@ -166,7 +166,7 @@ void LAi_type_monkey_Attack(aref attack, aref enemy, float attackDmg, float hitD
 		float poison = 0.0;
 		if(CheckAttribute(enemy, "chr_ai.poison"))
 		{
-			poison = stf(enemy.chr_ai.poison);
+			poison = float(enemy.chr_ai.poison);
 			if(poison < 1.0) poison = 1.0;
 		}		
 		enemy.chr_ai.poison = poison + 30 + rand(20);
@@ -186,12 +186,12 @@ void LAi_type_monkey_Fire(aref attack, aref enemy, float kDist, bool isFindedEne
 
 
 //Персонаж атакован
-void LAi_type_monkey_Attacked(aref chr, aref by)
+void LAi_type_monkey_Attacked(ref chr, ref by)
 {
 	
 }
 
-void LAi_type_monkey_Return(aref chr)
+void LAi_type_monkey_Return(ref chr)
 {
 	bool isSet = false;
 	if(CheckAttribute(chr, "location.group"))

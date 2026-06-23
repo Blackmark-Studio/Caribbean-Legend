@@ -1,20 +1,13 @@
-key {d24.04.2026}
-News {1.8 Maritime Update is now available!}
+key {d23.06.2026}
+News {1.8.2 Performance Update is now available!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Patch 1.8 Maritime Update is now available
-— Version 1.7.3 is being archived; you can switch between versions via Steam
+— Patch 1.8.2 Performance Update is available
 — No new game required
-— Maritime Stories DLC is available
-— Seasons have been added to the game, dramatically changing the Caribbean
-— Naval gunnery has been reworked
-— New sail and point-of-sail system
-— Boarding has been improved
-— World map usability has been improved
-— Naval AI has been improved, making ship battles far more engaging
-— Numerous quality-of-life improvements, balance changes, and bug fixes
-— You can find the full changelog in the news post via the button below
+— Performance has increased by 40%
+— A new community reward has been added to the game
+— You can find the full list of changes and news about patch 2.0 in the news via the button below
 }

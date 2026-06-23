@@ -62,8 +62,8 @@ void ProcessDialogEvent()
 					pchar.questTemp.FalseTrace.TargetShore = "Mayak8";
 				break;
 			}
-			pchar.questTemp.FalseTrace.ShipName = GenerateRandomNameToShip(sti(npchar.nation));
-			pchar.questTemp.FalseTrace.Mation = sti(npchar.nation);
+			pchar.questTemp.FalseTrace.ShipName = GenerateRandomNameToShip(int(npchar.nation));
+			pchar.questTemp.FalseTrace.Mation = int(npchar.nation);
 			dialog.text = "카! 이렇게 머리 잘 돌아가는 선장하고 거래하니 참 기분 좋군. 일이 간단해: 근처 항구 중 한 곳에서 곧 출항할 플루트 한 척이 꽤 많은 은을 싣고 있지. 배는 한 척뿐, 호위도 없어. 웃기지 않아? 크-카\n 식은 죽 먹기지. 내가 언제 어디서인지 알려주면, 자네가 먹고 나는 몫만 챙기면 되는 거야.";
 			link.l1 = "물론, 지금 당장 현금으로 받고 싶다는 거지?";
 			link.l1.go = "FalseTrace_2";
@@ -109,12 +109,12 @@ void ProcessDialogEvent()
 			AddQuestUserData("FalseTrace", "sShip", pchar.questTemp.FalseTrace.ShipName);
 			//установим таймер на генерацию энкаунтера
 			pchar.quest.False_Trace_2.win_condition.l1 = "Timer";
-			pchar.quest.False_Trace_2.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.False_Trace_2.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.False_Trace_2.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 2);
 			pchar.quest.False_Trace_2.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 2);
 			pchar.quest.False_Trace_2.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 2);
 			pchar.quest.False_Trace_2.function = "CreateFalseTraceGaleonOnMap";
-			SetFunctionTimerCondition("FalseTraceGaleonOver", 0, 0, sti(pchar.questTemp.FalseTrace.DayQty)+2, false);//таймер
+			SetFunctionTimerCondition("FalseTraceGaleonOver", 0, 0, int(pchar.questTemp.FalseTrace.DayQty)+2, false);//таймер
 		break;
 		
 		case "FalseTrace_officer":
@@ -244,14 +244,14 @@ void ProcessDialogEvent()
 			bQuestDisableMapEnter = false;
 			RemovePassenger(Pchar, npchar);
 			pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(npchar);
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
-			Pchar.questTemp.FalseTrace.PrisonerAdamIDX = sti(pchar.GenQuest.LastQuestPrisonerIdx);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+			Pchar.questTemp.FalseTrace.PrisonerAdamIDX = int(pchar.GenQuest.LastQuestPrisonerIdx);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "", 3.0);
 			LAi_SetPlayerType(pchar);
 			RemoveCharacterEquip(npchar, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(npchar, GUN_ITEM_TYPE);
 			RemoveCharacterEquip(npchar, CIRASS_ITEM_TYPE);
-			sld = &Characters[sti(Pchar.questTemp.FalseTrace.PrisonerIDX)];
+			sld = &Characters[int(Pchar.questTemp.FalseTrace.PrisonerIDX)];
 			ReleasePrisoner(sld); //освободили пленника
 			AddPassenger(pchar, sld, false);
 			SetCharacterRemovable(sld, false);
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "FalseTrace_AfterFight", 3.0);
 			pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(npchar);
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
 			pchar.questTemp.FalseTrace.CapName = GetFullName(npchar);
 			ChangeCharacterComplexReputation(pchar, "nobility", 2);
 		break;
@@ -555,7 +555,7 @@ void ProcessDialogEvent()
 			dialog.text = "너는 정말 잔인하고 인정머리 없는 놈이야! 맹세코 나는...";
 			link.l1 = "갑판장! 우리가 도착할 때까지 저 여자를 지키고 계속 감시해라 "+XI_ConvertString("Colony"+pchar.questTemp.FalseTrace.QuestCity+"Gen")+"!";
 			link.l1.go = "FalseTrace_wife_18";
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], true);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], true);
 		break;
 		
 		case "FalseTrace_wife_24":
@@ -565,7 +565,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("FalseTrace", "8");
 			chrDisableReloadToLocation = false;
 			pchar.questTemp.FalseTrace.Prisoner = "true";
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], true);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], true);
 		break;
 		
 		case "FalseTrace_wife_25":
@@ -710,12 +710,7 @@ void ProcessDialogEvent()
 			link.l1 = "잘 가라, Adam.";
 			link.l1.go = "FalseTrace_Remove2";
 		break;
-		
-		case "FalseTrace_Remove2":
-			DialogExit();
-			LAi_ActorGoToLocation(npchar, "reload", "reload4_back", "none", "", "", "", 15);
-		break;
-		
+
 		case "FalseTrace_Remove_exit":
 			DialogExit();
 			LAi_ActorGoToLocation(npchar, "reload", "reload4_back", "none", "", "", "FalseTraceWife_Remove", 15);
@@ -762,7 +757,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FalseTrace_GoldShip_1":
-			if (sti(pchar.basenation == HOLLAND) || sti(pchar.basenation == SPAIN))
+			if (int(pchar.basenation == HOLLAND) || int(pchar.basenation == SPAIN))
 			{
 				pchar.questTemp.FalseTrace.ShipNation = ENGLAND;
 				pchar.questTemp.FalseTrace.ShipCity = "PortRoyal";
@@ -788,7 +783,7 @@ void ProcessDialogEvent()
 			locations[FindLocation(pchar.questTemp.FalseTrace.TargetShore)].DisableEncounters = false; //энкаутеры открыть
 			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "FalseTraceDouble_Remove", -1);
 			pchar.quest.False_Trace_6.win_condition.l1 = "Timer";
-			pchar.quest.False_Trace_6.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.False_Trace_6.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.False_Trace_6.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
 			pchar.quest.False_Trace_6.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 14);
 			pchar.quest.False_Trace_6.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 14);

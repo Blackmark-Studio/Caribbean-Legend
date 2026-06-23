@@ -58,7 +58,7 @@ void Abordage_ReloadStartFade()
 
 	DelEventHandler("FaderEvent_StartFade", "Abordage_ReloadStartFade");
 
-	fOldMaxSeaHeight = stf(Sea.MaxSeaHeight);
+	fOldMaxSeaHeight = float(Sea.MaxSeaHeight);
 	Sea.MaxSeaHeight = 1.2;						// set maxinum sea height for ship abordage
 }
 
@@ -161,17 +161,17 @@ void Abordage_ReloadEndFade()
 
 		case SHIP_ABORDAGE:
 			// calc & apply abordage damage for ships
-				fHP1 = stf(Characters[iAbordageCharacter].Ship.HP);
-				fHP2 = stf(Characters[nMainCharacterIndex].Ship.HP);
+				fHP1 = float(Characters[iAbordageCharacter].Ship.HP);
+				fHP2 = float(Characters[nMainCharacterIndex].Ship.HP);
 				fHP = 0.1 + frnd() * 0.2;
 				if (fHP1 > fHP2) { fHP = fHP * fHP2; }
 				if (fHP1 < fHP2) { fHP = fHP * fHP1; }
 
 				int AbordageStike;
 				bSeaReloadStarted = false;
-				AbordageStike = fHP * (1.05 - stf(Characters[iAbordageCharacter].TmpSkill.Sneak));
+				AbordageStike = int(fHP * (1.05 - float(Characters[iAbordageCharacter].TmpSkill.Sneak)));
 				Ship_ApplyHullHitpoints(&Characters[iAbordageCharacter], AbordageStike/1.5, KILL_BY_TOUCH, -1);
-				AbordageStike = fHP * (1.05 - stf(Characters[nMainCharacterIndex].TmpSkill.Sneak))
+				AbordageStike = int(fHP * (1.05 - float(Characters[nMainCharacterIndex].TmpSkill.Sneak)));
 				Ship_ApplyHullHitpoints(&Characters[nMainCharacterIndex], AbordageStike/1.5, KILL_BY_TOUCH, -1);
 				bSeaReloadStarted = true;
 
@@ -232,7 +232,7 @@ void Sea_AbordageLoad_ActiveCountStart()
 
 void Sea_AbordageLoad_ActiveCount()
 {
-	int n = sti(pchar.abordage_active_count) - 1;
+	int n = int(pchar.abordage_active_count) - 1;
 	if( n<=0 ) {
 		DelEventHandler("frame","Sea_AbordageLoad_ActiveCount");
 		DeleteAttribute(pchar,"abordage_active_count");
@@ -243,8 +243,8 @@ void Sea_AbordageLoad_ActiveCount()
 
 void Continue_Sea_AbordageLoad()
 {
-	int _iAbordageMode = sti(pchar.boarding_info.mode);
-	int _bMCAbordageInitiator = sti(pchar.boarding_info.indicator);
+	int _iAbordageMode = int(pchar.boarding_info.mode);
+	bool _bMCAbordageInitiator = bool(pchar.boarding_info.indicator);
 
 	if (bSeaActive == false) 
 	{ 

@@ -267,7 +267,7 @@ void SeaCameras_Switch()
 				SeaCameras.Camera = "SeaDeckCamera";
 				Crosshair.OutsideCamera = true;//CrosshairHidden(); // was false;  LDH 17Jan17
 //				Sailors.IsOnDeck = !bSeePeoplesOnDeck;
-				Sailors.IsOnDeck = !sti(InterfaceStates.CREWONDECK); //  belamour !CREW_ON_DECK; // LDH 15Jan17 show crew on deck
+				Sailors.IsOnDeck = !int(InterfaceStates.CREWONDECK); //  belamour !CREW_ON_DECK; // LDH 15Jan17 show crew on deck
 				bSwitch = true;
 			}
 		break;
@@ -299,7 +299,7 @@ void SeaCameras_SetFireCamera()
 		SeaCameras.Camera = SeaFireCamera.LastCamera;
 		Crosshair.OutsideCamera = true;
 		if(SeaCameras.Camera == "SeaShipCamera")
-			Sailors.IsOnDeck = !sti(InterfaceStates.CREWONDECK);
+			Sailors.IsOnDeck = !int(InterfaceStates.CREWONDECK);
 		else
 			Sailors.IsOnDeck = 0;
 	}
@@ -321,7 +321,7 @@ void SeaCameras_UpdateCamera()
 			SendMessage(&SeaCameras, "lia", AI_CAMERAS_SET_CAMERA, &SeaShipCamera, &SeaShipCharacterForCamera);
 			if(CheckAttribute(&TEV, "ShipCameraAy"))
 			{
-				SendMessage(&SeaShipCamera, "lf", MSG_SHIP_CAMERA_SET_AY, stf(TEV.ShipCameraAy));
+				SendMessage(&SeaShipCamera, "lf", MSG_SHIP_CAMERA_SET_AY, float(TEV.ShipCameraAy));
 				DeleteAttribute(&TEV, "ShipCameraAy");
 			}
 			
@@ -382,7 +382,7 @@ bool SeaCameras_isCameraOutside()
 	return false;
 }
 
-void SeaCameras_SetShipForSeaCamera(object Character)
+void SeaCameras_SetShipForSeaCamera(ref Character)
 {
 	makeref(SeaShipCharacterForCamera, Character);
 	SeaCameras_UpdateCamera();
@@ -394,7 +394,7 @@ void ToggleCrosshair()
     if (GetCurControlGroup() != "SailingFire") return;
 
     if ( ! CheckAttribute(Crosshair, "hidden")) Crosshair.hidden = 1;   // hide crosshair by default
-    switch (makeint(Crosshair.hidden))
+    switch (int(Crosshair.hidden))
     {
         case 0:
             Crosshair.hidden = 1;           // hide the crosshair
@@ -411,7 +411,7 @@ void ToggleCrosshair()
 bool CrosshairHidden()
 {
     if ( ! CheckAttribute(Crosshair, "hidden")) Crosshair.hidden = 1;   // hide crosshair by default
-    if (sti(Crosshair.hidden) == 1) return true;
+    if (int(Crosshair.hidden) == 1) return true;
     return false;
 }
 // LDH 17Jan17 <--
@@ -467,9 +467,9 @@ void FireCamera_UpdateAttributes()
 {
 	makearef(Crosshair, SeaCameras.Crosshair);
 	
-	float fCannons = stf(pchar.TmpSkill.Cannons);
-	float fAccuracy = stf(pchar.TmpSkill.Accuracy);
-	float fCrewExp = stf(GetCrewExp(pchar, "Cannoners"));
+	float fCannons = float(pchar.TmpSkill.Cannons);
+	float fAccuracy = float(pchar.TmpSkill.Accuracy);
+	float fCrewExp = float(GetCrewExp(pchar, "Cannoners"));
 	float kCrewExp = Bring2Range(0.8, 1.2, 1.0, 100.0, fCrewExp);
 	
 	float fCannonPerk = 1.0; // увеличиваем скорость сведения от перка

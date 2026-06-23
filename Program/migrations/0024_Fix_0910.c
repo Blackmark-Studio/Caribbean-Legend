@@ -18,9 +18,9 @@ void ReapplyUpgradeHolyMercyBlade0024()
 {
 	ref Blade = ItemsFromID("lacrima_patris");
 	if (!CheckAttribute(Blade, "KillerBonus")) return;
-	if (sti(Blade.KillerBonus.Attack) < 1) return;
+	if (int(Blade.KillerBonus.Attack) < 1) return;
 	
-	int currentDifference = sti(Blade.Attack) - sti(Blade.KillerBonus.DefAttack);
+	int currentDifference = int(Blade.Attack) - int(Blade.KillerBonus.DefAttack);
 	int addValue = currentDifference - GetAttributeInt(Blade, "KillerBonus.appliedBonus");
 	if (addValue == 0) return;
 

@@ -10,7 +10,7 @@ void ProcessDialogEvent()
 	makeref(NPChar, CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Carib" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch (Dialog.CurrentNode)
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, false);
 		}
-		if (sti(pchar.questTemp.Indian.relation) > 79)
+		if (int(pchar.questTemp.Indian.relation) > 79)
 		{
 			dialog.text = LinkRandPhrase("¡Salud a ti, hijo del mar! He oído hablar de ti. Puedes pisar tranquilo en nuestra tierra.", "" + npchar.name + " te saluda, hermano de cara pálida. Nos alegra verte como nuestro invitado.", "¡Te saludo, valiente guerrero de cara pálida!" + npchar.name + " se alegra de conocer a un amigo de los indios. ¡Vete en paz!");
 			link.l1 = RandPhraseSimple("¡Y saludos a ti, hermano de piel roja! ¡Buena caza para ti!", "¡Saludos, valiente guerrero! ¡Que los dioses bendigan a ti y a tu familia!");
@@ -87,12 +87,12 @@ void ProcessDialogEvent()
 			link.l1 = RandPhraseSimple("¿Tu tierra? ¡Pierdete, escoria de cara roja!", "¡Mira a eso, un mono parlante! ¡Lárgate, ahora!");
 			link.l1.go = "war_indian_1";
 			link.l2 = RandPhraseSimple("He venido en paz, guerrero de piel roja. No deberíamos luchar por nada.", "No soy un enemigo para ti y tu tierra, guerrero. He venido en paz.");
-			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 3)) > hrand(80))
+			if (int(pchar.questTemp.Indian.relation) + (int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 3)) > hrand(80))
 				link.l2.go = "war_indian_2_1";
 			else
 				link.l2.go = "war_indian_2_2";
 			link.l3 = RandPhraseSimple("He venido a comerciar contigo, no a luchar.", "No lucho con indios. Comercio con ellos.");
-			if (sti(pchar.questTemp.Indian.relation) + (makeint(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 6) + makeint(GetSummonSkillFromName(pchar, SKILL_FORTUNE) / 6)) > hrand(90))
+			if (int(pchar.questTemp.Indian.relation) + (int(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) / 6) + int(GetSummonSkillFromName(pchar, SKILL_FORTUNE) / 6)) > hrand(90))
 				link.l3.go = "war_indian_3_1";
 			else
 				link.l3.go = "war_indian_3_2";
@@ -304,13 +304,13 @@ void ProcessDialogEvent()
 
 	case "war_indian_trade_agree":
 		ChangeIndianRelation(1.00);
-		npchar.quest.count = sti(npchar.quest.count) + 1;
+		npchar.quest.count = int(npchar.quest.count) + 1;
 		TakeNItems(pchar, npchar.quest.item, iTotalTemp);
 		RemoveItems(pchar, npchar.quest.gun, 1);
 		Log_Info("Has entregado " + XI_ConvertString(npchar.quest.gun) + "");
 		Log_Info("Has recibido " + XI_ConvertString(npchar.quest.item) + " por un importe de " + FindRussianQtyString(iTotalTemp) + "");
 		PlaySound("interface\important_item.wav");
-		if (sti(npchar.quest.count) > 3 + hrand(2))
+		if (int(npchar.quest.count) > 3 + hrand(2))
 			;
 		{
 			dialog.text = "Bien. Aquí tus bienes. No comerciamos más. Ven más tarde. Mejor arma ardiente más damos por ella. ¡Ahora vete!";
@@ -337,7 +337,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "war_indian_trade_bad":
-		if (sti(pchar.questTemp.Indian.relation) > 79)
+		if (int(pchar.questTemp.Indian.relation) > 79)
 		{
 			DialogExit();
 			sGroup = "CaribGroup_" + locations[FindLocation(npchar.location)].index;

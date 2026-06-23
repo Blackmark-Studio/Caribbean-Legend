@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Contra_1":
 			dialog.text = "你是谁, 你到底在这儿鬼鬼祟祟干什么? ! ";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "冷静点, 伙计。 我只是路过。 我不会干涉你的... 不管这是什么。 ";
 			}
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Contra_2":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "离开这里! 如果你把客户吓跑搞砸了交易, 我... ";
 			}
@@ -837,7 +837,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Pyanitsa_6":
-			if (sti(pchar.basenation) == ENGLAND) sStr = "我们的";
+			if (int(pchar.basenation) == ENGLAND) sStr = "我们的";
 			else sStr = "你们的";
 			dialog.text = "嗯, 她不像她最好的岁月那么快了 —就像我再喝一杯后一样, 哈哈哈! 但一个好船长仍然可以从这位老妇人身上得到一些东西。 盖比也尽量不让她置身于火线。 ";
 			link.l1 = "那么为什么这艘船没有被重新命名? 也许在" + sStr + "旧政权下叫'鞭打号'陛下的船? ";
@@ -930,10 +930,10 @@ void ProcessDialogEvent()
 			dialog.text = "托马斯, 是你吗... ? ";
 			link.l1 = "哦是的, 盖比。 我来是为了惩罚你那天对我所做的事。 ";
 			link.l1.go = "BM_IronsClone2";
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			CharacterTurnByChr(sld, CharacterFromID("IronsClone"));
 			sld = CharacterFromID("IronsClone");
-			CharacterTurnByChr(sld, &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
+			CharacterTurnByChr(sld, &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
 		break;
 		
 		case "BM_IronsClone2":
@@ -1826,7 +1826,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "这次你得换种弹药。 ";
 					Link.l3.go = "SetGunBullets";
@@ -1842,7 +1842,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l4 = "给你的滑膛枪换弹药类型。 ";
 					Link.l4.go = "SetMusketBullets";
@@ -1875,7 +1875,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1887,7 +1887,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -1906,7 +1906,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1918,7 +1918,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = int(NPChar.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -2003,7 +2003,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = ""+GetSexPhrase("别冷嘲热讽了。 ","想跟我学幽默还早着呢, 姑娘。 不过有进步! ")+"";
@@ -2172,7 +2172,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Irons_salary_X3":
@@ -2180,7 +2180,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Irons_exit":

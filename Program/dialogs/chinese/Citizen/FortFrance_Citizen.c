@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "info":
         // 替换为某些NPC的描述, 关于任务
-            dialog.text = "你以为我是" + NationNameGenitive(sti(NPChar.nation)) + "的特工吗? ";
+            dialog.text = "你以为我是" + NationNameGenitive(int(NPChar.nation)) + "的特工吗? ";
             link.l1 = "好吧... 不是。 那么再见。 ";
             link.l1.go = "exit";
             link.l2 = "那么, 还有其他问题吗? ";
@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         //--> 加斯科涅人的负担
         case "Sharlie":
-            if (sti(pchar.questTemp.Sharlie.Citcount) == 3)
+            if (int(pchar.questTemp.Sharlie.Citcount) == 3)
             {
                 dialog.text = "嗯... 我猜你是刚到这里, 居然敢无所顾忌地问这种问题... 如果你不想惹麻烦, 我劝你收手。 去和修道院院长谈谈, 他或许能帮你'清醒清醒'。 你可以在教堂找到他。 ";
                 link.l1 = "我知道了... ";

@@ -333,3 +333,7 @@ itm_stat_greenIdol {Culto}
 itm_stat_descr_greenIdol {L'idolo piega a sé chi gli sta intorno, aumentando di $percent(0.30) la probabilità di resa delle navi nemiche, la potenza della squadra e il numero di reclute nelle taverne.}
 itm_stat_secondary_greenIdol {Il Sussurro degli Antichi}
 itm_stat_descr_secondary_greenIdol {Quando è equipaggiato, l'idolo riduce costantemente il morale dell'equipaggio, trascinandolo nella follia con i suoi sussurri empî.}
+itm_stat_nocturlabe {正確な時刻}
+itm_stat_descr_nocturlabe {船の機動性を10%上昇させ、さらに2級船および1級船では追加で25%上昇させる。}
+itm_stat_secondary_nocturlabe {夜間航行}
+itm_stat_descr_secondary_nocturlabe {$key(Perception) を #f.0modifiers.SpecialPerception# 増加させる。グローバルマップでの逃走確率を25上昇させる。}

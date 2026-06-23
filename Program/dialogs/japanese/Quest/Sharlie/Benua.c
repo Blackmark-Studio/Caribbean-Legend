@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan.Late")) // Addon 2016-1 Jason пиратская линейка 1
 			{
 				dialog.text = "会えて嬉しいぞ、息子よ。借金を返しに来たのか？";
-				if (PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+				if (PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 				{
 					link.l1 = "はい、お父様。私でございます。";
 					link.l1.go = "FastStart_7";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(npchar, "quest.relation_info")) link.l1.go = "help";
 				else link.l1.go = "help_start";
 			}
-			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 			{
 				link.l2 = "はい、お父様。私でございます。";
 				link.l2.go = "FastStart_7";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			rate = wdmGetNationThreat(int(pchar.GenQuest.BenuaNation));
 			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
 			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
 			if (rate < 2)
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
             rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -672,14 +672,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_23_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "え、え……ふむ……";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_23_1";
 		break;
 		
 		case "LH_abbat_24_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "え、え……ふむ……";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_24_1";
@@ -769,7 +769,7 @@ void ProcessDialogEvent()
 		
 		case "LH_abbat_35":
 			string sTemp;
-			if (sti(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
+			if (int(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
 			else sTemp = "";
 			dialog.text = "新婚の二人よ、ひざまずいて共に祈りなさい。オラティオ・フィデリウム。 "+sTemp+"";
 			link.l1 = "";
@@ -1269,7 +1269,7 @@ case "SharlieEpilog_Benua_1":
 		
 		case "SharlieEpilog_Benua_Money_4":
 			dialog.text = "それでは、十万ペソの寄付で十分でしょう。この資金があれば、困っている人々に数ヶ月も食事を提供できます。 教会への寄進金を含め、必要な金額を持っているなら、今すぐ始められます。";
-			if (sti(pchar.Money) >= 10100000)
+			if (int(pchar.Money) >= 10100000)
 			{
 				link.l1 = "もちろんです。どうぞ、お受け取りください。真に助けを必要としている人々を支援できることを嬉しく思いますし、 あなたの監督のもと、この金が賢く、そして誠実に使われると確信しています。";
 				link.l1.go = "SharlieEpilog_Benua_Money_4_1";
@@ -1284,7 +1284,7 @@ case "SharlieEpilog_Benua_1":
 
 		case "SharlieEpilog_Benua_Money_5":
 			dialog.text = "では、二十五万ペソの寄付が必要になります。この資金で孤児のための施設を建てることができ、あなたの名が称えられ、 その最初の運営を支えるでしょう。 教会への寄進金を含め、必要な金額を持っているなら、今すぐ始められます。";
-			if (sti(pchar.Money) >= 25250000)
+			if (int(pchar.Money) >= 25250000)
 			{
 				link.l1 = "もちろんです。どうぞ、お受け取りください。真に助けを必要としている人々を支援できることを嬉しく思いますし、 あなたの監督のもと、この金が賢く、そして誠実に使われると確信しています。";
 				link.l1.go = "SharlieEpilog_Benua_Money_5_1";
@@ -1299,7 +1299,7 @@ case "SharlieEpilog_Benua_1":
 
 		case "SharlieEpilog_Benua_Money_6":
 			dialog.text = "ふむ、どうやら時間を無駄にしていなかったようだな、"+pchar.name+"。五十万ペソの寄付で十分だと思います。これだけの資金があれば病院を建て、長年にわたり必要なものを提供できます。 教会への寄進金を含め、必要な金額を持っているなら、今すぐ始められます。";
-			if (sti(pchar.Money) >= 50500000)
+			if (int(pchar.Money) >= 50500000)
 			{
 				link.l1 = "もちろんです。どうぞ、お受け取りください。真に助けを必要としている人々を支援できることを嬉しく思いますし、 あなたの監督のもと、この金が賢く、そして誠実に使われると確信しています。";
 				link.l1.go = "SharlieEpilog_Benua_Money_6_1";

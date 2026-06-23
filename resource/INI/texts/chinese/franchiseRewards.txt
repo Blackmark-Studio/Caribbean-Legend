@@ -9,6 +9,12 @@ condition_mushket_indian
 如果您拥有
 Caribbean Legend: Age of Pirates，该物品将出现在放贷人处
 }
+condition_nocturlabe
+{
+送给社区的免费礼物。
+ 可在放债人处购买。
+ 感谢游玩！
+}
 noRewardYetMessage
 {
 该奖励尚未推出，

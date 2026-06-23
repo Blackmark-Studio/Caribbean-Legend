@@ -10,7 +10,7 @@ void SetFantomParamFromRank(ref NPchar, int  rank, bool setEquip)
     // SetFantomHP(NPchar);
 	if (setEquip)
 	{
-		LAi_NPC_Equip(NPchar, sti(NPchar.rank), true, true);
+		LAi_NPC_Equip(NPchar, int(NPchar.rank), true, true);
 	}
 
 	ForceOldGenerateToNew(NPchar, rank);
@@ -34,21 +34,21 @@ void CalculateAppropriateSkillsParam(ref NPchar, float  MiddleK, int _complex)
     float  fValue;
     
     fValue = (20 * _complex / 4.0);
-    Npchar.skill.FencingL 	  = makeint(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.2)) - 24));
-    Npchar.skill.FencingS     = makeint(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.0)) - 20));
-    Npchar.skill.FencingH     = makeint(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.5)) - 28));
-    Npchar.skill.Pistol       = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Fortune      = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.FencingL 	  = int(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.2)) - 24));
+    Npchar.skill.FencingS     = int(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.0)) - 20));
+    Npchar.skill.FencingH     = int(MiddleK + (frandSmall(fValue) + frandSmall((20* _complex / 3.5)) - 28));
+    Npchar.skill.Pistol       = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Fortune      = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
 
-    Npchar.skill.Leadership   = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Commerce     = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Sailing      = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Accuracy     = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Cannons      = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Grappling    = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Repair       = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Defence      = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
-    Npchar.skill.Sneak        = makeint(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Leadership   = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Commerce     = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Sailing      = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Accuracy     = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Cannons      = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Grappling    = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Repair       = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Defence      = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
+    Npchar.skill.Sneak        = int(MiddleK + (frandSmall(fValue) + frandSmall(fValue) - 30));
 
     CorrectSkillParam(Npchar);
 
@@ -75,18 +75,18 @@ void CalculateAppropriateSkills(ref NPchar)
         sTemp = "";
 		if (CheckAttribute(NPchar, "RankBonus"))
 		{
-			rank_bonus = sti(NPchar.RankBonus);
+			rank_bonus = int(NPchar.RankBonus);
 		    sTemp = "RankBonus: " + rank_bonus;
 		}
 
 		base_rank = 0;
 		if (CheckAttribute(NPchar, "BaseRank"))
 		{       
-			base_rank = sti(NPchar.BaseRank);
+			base_rank = int(NPchar.BaseRank);
 			sTemp += " BaseRank: " + base_rank;
 		}
 
-		if (sti(Pchar.rank) > base_rank) base_rank = sti(Pchar.rank);
+		if (int(Pchar.rank) > base_rank) base_rank = int(Pchar.rank);
 		
 		MiddleK = base_rank;
 		
@@ -102,7 +102,7 @@ void CalculateAppropriateSkills(ref NPchar)
             MiddleK = MiddleK + (MOD_SKILL_ENEMY_RATE-5) * 1.5;
             sTemp += " ComplexBonus = " + FloatToString((MOD_SKILL_ENEMY_RATE-5) * 1.5, 1);
   		}
-  		rank = MakeInt(MiddleK + frandSmall(4) + frandSmall(4) + frandSmall(4) + frandSmall(4) - 8 + rank_bonus);
+  		rank = int(MiddleK + frandSmall(4) + frandSmall(4) + frandSmall(4) + frandSmall(4) - 8 + rank_bonus);
 
 		if (rank < 1) rank = 1;
 		if (rank > 300) rank = 300;
@@ -134,12 +134,12 @@ void CalculateAppropriateSkills(ref NPchar)
 
 void SetRankFromSkill(ref Npchar)
 {
-    Npchar.rank = 1 + makeint( (sti(Npchar.skill.FencingL) + sti(Npchar.skill.FencingH) + sti(Npchar.skill.Fortune) +
-                           sti(Npchar.skill.Pistol) + sti(Npchar.skill.Leadership) + sti(Npchar.skill.FencingS) +
-                           sti(Npchar.skill.Sailing) + sti(Npchar.skill.Accuracy) + sti(Npchar.skill.Cannons) +
-                           sti(Npchar.skill.Grappling) + sti(Npchar.skill.Repair) + sti(Npchar.skill.Defence) +
-                           sti(Npchar.skill.Commerce) + sti(Npchar.skill.Sneak) - 84) / GetCharacterRankRate(Npchar) );
-    if (sti(Npchar.rank) < 1)
+    Npchar.rank = 1 + int( (int(Npchar.skill.FencingL) + int(Npchar.skill.FencingH) + int(Npchar.skill.Fortune) +
+                           int(Npchar.skill.Pistol) + int(Npchar.skill.Leadership) + int(Npchar.skill.FencingS) +
+                           int(Npchar.skill.Sailing) + int(Npchar.skill.Accuracy) + int(Npchar.skill.Cannons) +
+                           int(Npchar.skill.Grappling) + int(Npchar.skill.Repair) + int(Npchar.skill.Defence) +
+                           int(Npchar.skill.Commerce) + int(Npchar.skill.Sneak) - 84) / GetCharacterRankRate(Npchar) );
+    if (int(Npchar.rank) < 1)
     {
         Npchar.rank = 1;
     }
@@ -153,15 +153,15 @@ void CorrectSkillParam(ref Npchar)
     for (i=1; i <= SKILL_QTY; i++)
     {
         skillName = GetSkillNameByIdx(i);
-        if(sti(Npchar.skill.(skillName)) > SKILL_MAX) Npchar.skill.(skillName) = SKILL_MAX;
-        if(sti(Npchar.skill.(skillName)) < 1)         Npchar.skill.(skillName) = 1;
+        if(int(Npchar.skill.(skillName)) > SKILL_MAX) Npchar.skill.(skillName) = SKILL_MAX;
+        if(int(Npchar.skill.(skillName)) < 1)         Npchar.skill.(skillName) = 1;
     }
 }
 float GetMiddleMainSkill()
 {
     float MiddleK;
 
-    MiddleK = makefloat(GetSkillSum(Pchar) / 14.0) ;
+    MiddleK = float(GetSkillSum(Pchar) / 14.0) ;
 
     return  MiddleK;
 }
@@ -174,7 +174,7 @@ int GetSkillSum(ref Npchar)
     for (i=1; i <= SKILL_QTY; i++)
     {
         skillName = GetSkillNameByIdx(i);
-        sum += sti(Npchar.skill.(skillName));
+        sum += int(Npchar.skill.(skillName));
     }
     return sum;
 }
@@ -188,7 +188,7 @@ int GetSPECIALSum(ref Npchar)
     for (i=15; i <= SPECIAL_END; i++)
     {
         skillName = GetSkillNameByIdx(i);
-        sum += sti(Npchar.SPECIAL.(skillName));
+        sum += int(Npchar.SPECIAL.(skillName));
     }
     return sum;
 }
@@ -205,7 +205,7 @@ void SetFantomParamCommon(ref chr)
     // тут трем накопивщиеся сабли и корабли 290704 BOAL -->
     DeleteAttribute(chr, "Items");
     // тут трем накопивщиеся сабли и корабли 290704 BOAL <--
-    LAi_NPC_Equip(chr, sti(chr.rank), true, true);
+    LAi_NPC_Equip(chr, int(chr.rank), true, true);
     //AntiCheat(_pchar);
 		ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
     SetFantomHP(chr);
@@ -259,7 +259,7 @@ void SetSeaFantomParam(ref _pchar, string type)
 	DeleteAttribute(_pchar, "items");
 
 	SetFantomHP(_pchar);
-	LAi_NPC_Equip(_pchar, sti(_pchar.rank), true, true);
+	LAi_NPC_Equip(_pchar, int(_pchar.rank), true, true);
 	ForceAutolevel(_pchar, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB SetSeaFantomParam
 	GiveCaptainOfficers(_pchar, true);
 	//AntiCheat(_pchar);
@@ -326,7 +326,7 @@ void Fantom_SetRandomSkills(ref rFantom, string sFantomType)
             aFSkills.Defence	= Fantom_CalcSkill(rFantom, SKILL_DEFENCE,	iSClass, 0, 0, 0, 1, 2, 3, 4, 5, 6);			
 		break;
 	}
-    //if (sti(rFantom.rank) < 50)
+    //if (int(rFantom.rank) < 50)
     //{
 	SetRankFromSkill(rFantom);
 	//}
@@ -335,7 +335,7 @@ void Fantom_SetRandomSkills(ref rFantom, string sFantomType)
 void SetFantomHP(ref _pchar)
 {
 	int hp;
-	hp = LAi_GetCharacterMaxHP(_pchar);
+	hp = int(LAi_GetCharacterMaxHP(_pchar));
 	LAi_SetHP(_pchar, hp, hp);
 	LAi_SetCurHPMax(_pchar);
 }
@@ -345,15 +345,15 @@ void SetMonsterLoginHP(ref _pchar) // жизнь у монстров больш�
 	int hp;
 	if (true)
 	{
-		int rank = makeint(sti(_pchar.rank) * (1 + MOD_SKILL_ENEMY_RATE / 40.0));
-		hp = LAI_DEFAULT_HP_MAX + rank * 5;
+		int rank = int(int(_pchar.rank) * (1 + MOD_SKILL_ENEMY_RATE / 40.0));
+		hp = int(LAI_DEFAULT_HP_MAX + rank * 5);
 		_pchar.rank = rank;
 		LAi_SetHP(_pchar, hp, hp);
 		LAi_SetCurHPMax(_pchar);
 	}
 	else
 	{
-		hp = LAI_DEFAULT_HP_MAX + makeint(sti(_pchar.rank)*(MOD_SKILL_ENEMY_RATE / 2.0 + 5.0)) + 10;
+		hp = int(LAI_DEFAULT_HP_MAX + int(int(_pchar.rank)*(MOD_SKILL_ENEMY_RATE / 2.0 + 5.0)) + 10);
 		LAi_SetHP(_pchar, hp, hp);
 		LAi_SetCurHPMax(_pchar);
 	}
@@ -380,14 +380,14 @@ int GetBoarding_player_hp_Bonus(int mcrew, int ecrew) // бонус от пер�
 	{     // только этот код
 		if (mcrew > ecrew)
 		{
-			m_rank_bonus = makeint(0.5 * MOD_SKILL_ENEMY_RATE * makefloat((mcrew - ecrew) / makefloat(ecrew)));
+			m_rank_bonus = int(0.5 * MOD_SKILL_ENEMY_RATE * float((mcrew - ecrew) / float(ecrew)));
 			Log_TestInfo("Бонус к уровню игрока за перевес в численности: " + m_rank_bonus);
 		}
 		return 0;
 	}
 	else
 	{
-		return makeint(5 * MOD_SKILL_ENEMY_RATE * makefloat((mcrew - ecrew) / makefloat(ecrew)));
+		return int(5 * MOD_SKILL_ENEMY_RATE * float((mcrew - ecrew) / float(ecrew)));
 	}
 }
 
@@ -400,14 +400,14 @@ int GetBoarding_enemy_hp_Bonus(int mcrew, int ecrew) // бонус от пере
 	{     // только этот код
 		if (ecrew > mcrew)
 		{
-			e_rank_bonus = makeint(2 * MOD_SKILL_ENEMY_RATE * makefloat((ecrew - mcrew) / makefloat(mcrew)));
+			e_rank_bonus = int(2 * MOD_SKILL_ENEMY_RATE * float((ecrew - mcrew) / float(mcrew)));
 			Log_TestInfo("Бонус к уровню врагов за перевес в численности: " + e_rank_bonus);
 		}
 		return 0;
 	}
 	else
 	{
-		return makeint(6 * MOD_SKILL_ENEMY_RATE * makefloat((ecrew - mcrew) / makefloat(mcrew)));
+		return int(6 * MOD_SKILL_ENEMY_RATE * float((ecrew - mcrew) / float(mcrew)));
 	}
 }
 
@@ -518,7 +518,7 @@ void SetMushketerParamFortEnemy(ref _pchar)
 void SetFantomParamHunter(ref sld)
 {
     SetSeaFantomParam(sld, "hunter");
-    LAi_SetHP(sld, LAI_DEFAULT_HP_MAX + sti(sld.chr_ai.hp), LAI_DEFAULT_HP_MAX + sti(sld.chr_ai.hp));
+    LAi_SetHP(sld, LAI_DEFAULT_HP_MAX + int(sld.chr_ai.hp), LAI_DEFAULT_HP_MAX + int(sld.chr_ai.hp));
     TakeNItems(sld,"potion2", 2);
 }
 //крутые парни <--
@@ -527,7 +527,7 @@ void SetFantomParamHunter(ref sld)
 void AntiCheat(ref _pchar)
 {
     /*ref mc = GetMainCharacter();
-    if (sti(mc.chr_ai.hp) > 310)
+    if (int(mc.chr_ai.hp) > 310)
     {
         LAi_SetHP(_pchar, 10000, 10000);
         mc.chr_ai.hp = 310;
@@ -539,7 +539,7 @@ void CheckAntiCheat()
 {
  	if (CheckAttribute(PChar, "SystemInfo.CRC"))
  	{
-		if (stf(PChar.SystemInfo.CRC) != GetCRCCheatSum(PChar))
+		if (float(PChar.SystemInfo.CRC) != GetCRCCheatSum(PChar))
 		{
 		    bPlayerIsCheater = true;
 		}
@@ -553,5 +553,5 @@ void SetAntiCheat()
 
 float GetCRCCheatSum(ref _PChar)
 {
-	return makefloat(GetSPECIALSum(_PChar) + GetSkillSum(_PChar) + sti(_PChar.Ship.Type) + stf(_PChar.Health.HP) + sti(_PChar.rank) + sti(_PChar.Money) + stf(_PChar.chr_ai.hp));
+	return float(GetSPECIALSum(_PChar) + GetSkillSum(_PChar) + int(_PChar.Ship.Type) + float(_PChar.Health.HP) + int(_PChar.rank) + int(_PChar.Money) + float(_PChar.chr_ai.hp));
 }

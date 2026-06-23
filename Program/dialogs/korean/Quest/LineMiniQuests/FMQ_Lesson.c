@@ -396,12 +396,12 @@ void ProcessDialogEvent()
 		
 		case "contra_1":
 			dialog.text = "하. 아주 흥미롭군. 내 의뢰인도 특히 그렇지. 수익이 얼마나 되지?";
-			link.l1 = ""+FindRussianQtyString(sti(pchar.questTemp.FMQL.Sanl))+" 철목의, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Silk))+" 배의 비단의, "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Rope))+" 밧줄과\n "+FindRussianQtyString(sti(pchar.questTemp.FMQL.Oil))+" 송진의.";
+			link.l1 = ""+FindRussianQtyString(int(pchar.questTemp.FMQL.Sanl))+" 철목의, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Silk))+" 배의 비단의, "+FindRussianQtyString(int(pchar.questTemp.FMQL.Rope))+" 밧줄과\n "+FindRussianQtyString(int(pchar.questTemp.FMQL.Oil))+" 송진의.";
 			link.l1.go = "contra_2";
 		break;
 		
 		case "contra_2":// Addon 2016-1 Jason пиратская линейка
-			iTotalTemp = 2200*sti(pchar.questTemp.FMQL.Sanl)+1600*sti(pchar.questTemp.FMQL.Silk)+1000*sti(pchar.questTemp.FMQL.Rope)+900*sti(pchar.questTemp.FMQL.Oil);
+			iTotalTemp = 2200*int(pchar.questTemp.FMQL.Sanl)+1600*int(pchar.questTemp.FMQL.Silk)+1000*int(pchar.questTemp.FMQL.Rope)+900*int(pchar.questTemp.FMQL.Oil);
 			dialog.text = "좋아. 철목 한 조각당 2200페소, 송진은 900페소, 선박용 비단은 1600페소, 밧줄은 1000페소다. 여기 뭘 가져왔나... 흠, 그래. "+iTotalTemp+" 페소다. 거래할래?";
 			link.l1 = "거래 성사!";
 			link.l1.go = "contra_3";
@@ -464,6 +464,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload_sea", "none", "", "", "FMQL_PirateNormal", 10.0);
+			if (CheckAttributeEqualTo(pchar, "questTemp.FMQL", "end")) return;
 			sld = CharacterFromID("FMQL_Prosper");
 			sld.Dialog.currentnode = "prosper_11";
 			sld.MusketerDistance = 20;
@@ -475,7 +476,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "sea", "none", "", "", "FMQL_PirateNormal", 10.0);
-			if (sti(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
+			if (int(pchar.money) >= 20000) DoQuestFunctionDelay("FMQL_MoneyForSelina", 0.5);
 			else
 			{
 				pchar.quest.FMQL_money_20k.win_condition.l1 = "Money";

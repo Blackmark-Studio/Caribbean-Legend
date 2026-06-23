@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 		case "Step_4":
 			iTotalTemp = 0;
 			dialog.text = "Cinquanta mila pesos.";
-			if(makeint(Pchar.money) >= 50000)
+			if(int(Pchar.money) >= 50000)
 			{
 				link.l1 = "Hm, piuttosto salato il prezzo. Ma dico di sì, se l'affare ne vale la pena. Ci sto! Dammi i dettagli.";
 				link.l1.go = "Step_5";
@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Step_5":
-			switch (sti(pchar.questTemp.jailCanMove.Deliver.good))
+			switch (int(pchar.questTemp.jailCanMove.Deliver.good))
 			{
 				case 0://попытка грабежа
 					dialog.text = "Ebbene, ebbene, poco importa, "+GetSexPhrase("ti hanno gabbato, stolto","sei stata ingannata, stupida ragazza")+". Ora paga, subito e in contanti!";
@@ -98,9 +98,9 @@ void ProcessDialogEvent()
 					GetBandersTradeGoods();
 					GetBandersTradeNation();
 					pchar.questTemp.jailCanMove.Deliver.terms = 10+rand(2);
-					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
-					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
-					dialog.text = "D'accordo, ascolta. Mi hanno riferito che in "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" ce ne saranno due "+pchar.questTemp.jailCanMove.Deliver.add1+" navi mercantili - le "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" e il "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con le stive cariche di "+pchar.questTemp.jailCanMove.Deliver.add+". Puoi provare ad acchiapparli.";
+					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(int(pchar.questTemp.jailCanMove.Deliver.Nation));
+					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(int(pchar.questTemp.jailCanMove.Deliver.Nation));
+					dialog.text = "D'accordo, ascolta. Mi hanno riferito che in "+FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" ce ne saranno due "+pchar.questTemp.jailCanMove.Deliver.add1+" navi mercantili - le "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" e il "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con le stive cariche di "+pchar.questTemp.jailCanMove.Deliver.add+". Puoi provare ad acchiapparli.";
 					link.l1 = "Splendido! Pare proprio che non mi sia sbagliato a spartire il bottino con te.";
 					link.l1.go = "Step_lay";
 				break;
@@ -112,10 +112,10 @@ void ProcessDialogEvent()
 					GetBandersTradeGoods();
 					GetBandersTradeNation();
 					pchar.questTemp.jailCanMove.Deliver.terms = 10+rand(2);
-					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
-					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
+					pchar.questTemp.jailCanMove.Deliver.ShipName1 = GenerateRandomNameToShip(int(pchar.questTemp.jailCanMove.Deliver.Nation));
+					pchar.questTemp.jailCanMove.Deliver.ShipName2 = GenerateRandomNameToShip(int(pchar.questTemp.jailCanMove.Deliver.Nation));
 					
-					dialog.text = "Va bene, ascolta. Mi hanno detto che a "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" ce ne saranno due "+pchar.questTemp.jailCanMove.Deliver.add1+" navi mercantili - le "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" e il "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con le stive colme di "+pchar.questTemp.jailCanMove.Deliver.add+". Puoi provare ad acciuffarli.";
+					dialog.text = "Va bene, ascolta. Mi hanno detto che a "+FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" ce ne saranno due "+pchar.questTemp.jailCanMove.Deliver.add1+" navi mercantili - le "+pchar.questTemp.jailCanMove.Deliver.ShipName1+" e il "+pchar.questTemp.jailCanMove.Deliver.ShipName2+" con le stive colme di "+pchar.questTemp.jailCanMove.Deliver.add+". Puoi provare ad acciuffarli.";
 					link.l1 = "Splendido! Pare proprio che ci abbia visto giusto a spartire il bottino con te.";
 					link.l1.go = "Step_trader";
 				break;
@@ -125,9 +125,9 @@ void ProcessDialogEvent()
 					else RemoveDublonsFromPCharTotal(iTotalTemp);
 					GetBandersTradeShore();
 					GetBandersTradeNation();
-					pchar.questTemp.jailCanMove.Deliver.ShipName = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
+					pchar.questTemp.jailCanMove.Deliver.ShipName = GenerateRandomNameToShip(int(pchar.questTemp.jailCanMove.Deliver.Nation));
 					pchar.questTemp.jailCanMove.Deliver.terms = 5+rand(5);
-					dialog.text = "Bene, ascolta. Mi hanno informato che a "+FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" navigherà su una lugger corriera "+pchar.questTemp.jailCanMove.Deliver.add2+" chiamato "+pchar.questTemp.jailCanMove.Deliver.ShipName+". Ci sono molti gioielli lì sopra. Puoi provare a catturarla.";
+					dialog.text = "Bene, ascolta. Mi hanno informato che a "+FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms))+" non lontano da "+pchar.questTemp.jailCanMove.Deliver.Island.Areal+" navigherà su una lugger corriera "+pchar.questTemp.jailCanMove.Deliver.add2+" chiamato "+pchar.questTemp.jailCanMove.Deliver.ShipName+". Ci sono molti gioielli lì sopra. Puoi provare a catturarla.";
 					link.l1 = "Splendido! Pare proprio che ho fatto bene a spartire le monete con te.";
 					link.l1.go = "Step_cureer";
 				break;
@@ -162,14 +162,14 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
 			AddQuestUserData("GivePrisonFree", "sGoods", pchar.questTemp.jailCanMove.Deliver.add);
-			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms)));
+			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms)));
 			AddQuestUserData("GivePrisonFree", "sShipName1", pchar.questTemp.jailCanMove.Deliver.ShipName1);
 			AddQuestUserData("GivePrisonFree", "sShipName2", pchar.questTemp.jailCanMove.Deliver.ShipName2);
 			AddQuestUserData("GivePrisonFree", "sShoreName", pchar.questTemp.jailCanMove.Deliver.Island.Areal);
 			pchar.quest.jailCanMoveDeliver_ShipsAttack.win_condition.l1 = "location";
             pchar.quest.jailCanMoveDeliver_ShipsAttack.win_condition.l1.location = pchar.questTemp.jailCanMove.Deliver.Island;//отправляем в локацию
             pchar.quest.jailCanMoveDeliver_ShipsAttack.function = "Deliver_lay";//придем - а там пусто
-			SetFunctionTimerCondition("Deliver_TraderShipsOver", 0, 0, sti(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
+			SetFunctionTimerCondition("Deliver_TraderShipsOver", 0, 0, int(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
 			LAi_SetWarriorTypeNoGroup(npchar);
 			chrDisableReloadToLocation = false;
 		break;
@@ -180,14 +180,14 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "13");
 			AddQuestUserData("GivePrisonFree", "sGoods", pchar.questTemp.jailCanMove.Deliver.add);
-			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms)));
+			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms)));
 			AddQuestUserData("GivePrisonFree", "sShipName1", pchar.questTemp.jailCanMove.Deliver.ShipName1);
 			AddQuestUserData("GivePrisonFree", "sShipName2", pchar.questTemp.jailCanMove.Deliver.ShipName2);
 			AddQuestUserData("GivePrisonFree", "sShoreName", pchar.questTemp.jailCanMove.Deliver.Island.Areal);
 			pchar.quest.jailCanMoveDeliver_ShipsAttack.win_condition.l1 = "location";
             pchar.quest.jailCanMoveDeliver_ShipsAttack.win_condition.l1.location = pchar.questTemp.jailCanMove.Deliver.Island;//отправляем в локацию
             pchar.quest.jailCanMoveDeliver_ShipsAttack.function = "Deliver_CreateTraderShips";//создание кораблей
-			SetFunctionTimerCondition("Deliver_TraderShipsOver", 0, 0, sti(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
+			SetFunctionTimerCondition("Deliver_TraderShipsOver", 0, 0, int(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
 			LAi_SetWarriorTypeNoGroup(npchar);
 			chrDisableReloadToLocation = false;
 		break;
@@ -197,14 +197,14 @@ void ProcessDialogEvent()
 			link.l1 = "Addio.";
 			link.l1.go = "exit";
 			AddQuestRecord("GivePrisonFree", "14");
-			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(sti(pchar.questTemp.jailCanMove.Deliver.terms)));
+			AddQuestUserData("GivePrisonFree", "sDay", FindRussianDaysString(int(pchar.questTemp.jailCanMove.Deliver.terms)));
 			AddQuestUserData("GivePrisonFree", "sText", pchar.questTemp.jailCanMove.Deliver.add2);
 			AddQuestUserData("GivePrisonFree", "sShipName", pchar.questTemp.jailCanMove.Deliver.ShipName);
 			AddQuestUserData("GivePrisonFree", "sShoreName", pchar.questTemp.jailCanMove.Deliver.Island.Areal);
 			pchar.quest.jailCanMoveDeliver_ShipsCAttack.win_condition.l1 = "location";
             pchar.quest.jailCanMoveDeliver_ShipsCAttack.win_condition.l1.location = pchar.questTemp.jailCanMove.Deliver.Island;//отправляем в локацию
             pchar.quest.jailCanMoveDeliver_ShipsCAttack.function = "Deliver_CreateCureerShips";//создание кораблей
-			SetFunctionTimerCondition("Deliver_CureerShipsOver", 0, 0, sti(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
+			SetFunctionTimerCondition("Deliver_CureerShipsOver", 0, 0, int(pchar.questTemp.jailCanMove.Deliver.terms), false);//таймер
 			LAi_SetWarriorTypeNoGroup(npchar);
 			chrDisableReloadToLocation = false;
 		break;

@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bool bFMQL = CheckAttribute(pchar,"questTemp.FMQL") && pchar.questTemp.FMQL != "fail" && pchar.questTemp.FMQL != "end";
 				if(bFMQM || bFMQN || bFMQT || bFMQP || bFMQG || bFMQL)
 				{
-					if (sti(pchar.rank) < 12)
+					if (int(pchar.rank) < 12)
 					{
 						dialog.text = "やあ、兄弟！ここから俺を出そうとするお前の熱意には感謝するが、まだ次の段階に進むには早いぞ。 俺の計画には経験豊富な船長が必要なんだ。カリブをもっと冒険して、報酬を稼ぎ、学ぶんだ！準備ができたら、 また先へ進もう。";
 						link.l1 = "まあ、どう言おうと兄さんがここに座ってるんだ、俺じゃないさ。";
@@ -46,24 +46,24 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				if (sti(pchar.rank) < 12)
+				if (int(pchar.rank) < 12)
 				{
 					Log_info("Level 12 is required");
 					dialog.text = "航海者シャルル！お前の冒険の噂は聞いているぞ！俺の計画の次の段階に進むには、もう少し経験を積めば十分だ。 もっと経験を積んだらすぐ戻ってこい。";
-					if (sti(pchar.rank) < 7)
+					if (int(pchar.rank) < 7)
 					{
 						dialog.text = "やあ、兄弟よ！ここから俺を出そうとするお前の誠実な熱意には感謝するが、次の段階に進むにはまだ早い。 俺の計画には経験豊富な船長が必要なんだ。カリブをもっと探検し、賞金を稼いで学ぶんだ！準備ができたら、 また続きをやろう。";
 					} 
 					else 
 					{
-						if (sti(pchar.rank) < 10)
+						if (int(pchar.rank) < 10)
 						{
 							dialog.text = "会えて嬉しいぞ、兄弟！順調に進んでいると聞いたぜ！だが、まだ俺の計画の次の段階に進むには早いな。 今まで通り続けて、準備ができたらまた俺のところに来い。";
 						}
 					}
 					link.l1 = "まあ、どう言おうと勝手だよ、兄貴。ここに座ってるのは俺じゃなくて、あんただからな。";
 					link.l1.go = "exit";
-					if(sti(pchar.rank) > 8)
+					if(int(pchar.rank) > 8)
 					{
 						link.l2 = "そうは思わないよ、兄さん。君はもうこの檻に慣れちまったのかもしれないけど、僕は長居するつもりはない――父上だっていつまでも待っていられないんだ。さあ、話してくれ。";
 						link.l2.go = "gambitA";
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		
 		case "gambit":
 			dialog.text = "見えるぞ、兄上。歩き方も、顔の表情もはっきりと分かる。ついに、 私を本当に気が狂いそうにさせたあのうぬぼれた若造の仮面が、あなたから消えたのだ。新しい人生が、 今やあなたに良い影響を与えたのは明らかだな。";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "兄さん、君の言葉が褒め言葉なのか侮辱なのか、さっぱり分からないよ。\nでも本当のことを言おう。君が向こうから僕をどう思おうが、僕には全く興味がない。\n君の借金を返すために必要な百万を集めたから、もうすぐ自由の身になれるさ。\nで、ド・プアンシーはどこにいる？";
 				link.l1.go = "gambit_1_1";
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		
 		case "saga_2":
 			dialog.text = "もう必要な百万円のペソを用意できたのか？";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "はい、今は必要な金額を持っております。";
 				link.l1.go = "saga_3_1";

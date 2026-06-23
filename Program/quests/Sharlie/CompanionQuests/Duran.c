@@ -37,7 +37,7 @@ void Duran_Duran_DlgExit_1()
 {
 	sld = CharacterFromID("Duran");
 	chrDisableReloadToLocation = false;
-	sld.loyality = makeint(sld.loyality) + 10;
+	sld.loyality = int(sld.loyality) + 10;
 	ReturnOfficer_Duran();
 }
 
@@ -47,8 +47,11 @@ void Duran_Duran_DlgExit_2()
 	AddQuestRecord("TheFormerKnight", "1");
 	chrDisableReloadToLocation = false;
 	sld = CharacterFromID("Duran");
-	sld.loyality = makeint(sld.loyality) + 15;
+	sld.loyality = int(sld.loyality) + 15;
 	ReturnOfficer_Duran();
+	pchar.quest.SKD_DuranDied.win_condition.l1 = "NPC_Death";
+	pchar.quest.SKD_DuranDied.win_condition.l1.character = "Duran";
+	pchar.quest.SKD_DuranDied.function = "SKD_DuranDied";
 	PChar.quest.SKD_DomAnri.win_condition.l1 = "location";
 	PChar.quest.SKD_DomAnri.win_condition.l1.location = "PortRoyal_houseSp1";
 	PChar.quest.SKD_DomAnri.win_condition = "SKD_DomAnri";
@@ -95,6 +98,7 @@ void Duran_Duran_DlgExit_5()
 	chrDisableReloadToLocation = false;
 	AddQuestRecord("TheFormerKnight", "3");
 	CloseQuestHeader("TheFormerKnight");
+	pchar.quest.SKD_DuranDied.over = "yes";
 	ChangeCharacterComplexReputation(pchar, "nobility", -1);
 	
 	sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
@@ -109,7 +113,7 @@ void Duran_Duran_DlgExit_5()
 
 	pchar.questTemp.SKD_DuranDruzhba = true;
 	pchar.questTemp.SKD_DevushkaUbita = true;
-	sld.reputation = sti(sld.reputation) - 15;
+	sld.reputation = int(sld.reputation) - 15;
 	OfficersFollow();
 }
 
@@ -117,6 +121,7 @@ void Duran_Duran_DlgExit_6()
 {
 	AddQuestRecord("TheFormerKnight", "2");
 	CloseQuestHeader("TheFormerKnight");
+	pchar.quest.SKD_DuranDied.over = "yes";
 	chrDisableReloadToLocation = false;
 	ChangeCharacterComplexReputation(pchar, "nobility", 1);
 	LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
@@ -290,6 +295,7 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 		LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
 		AddQuestRecord("TheFormerKnight", "4");
 		CloseQuestHeader("TheFormerKnight");
+		pchar.quest.SKD_DuranDied.over = "yes";
 	}
 
 	else if (sQuestName == "SKD_DomAnri_DuranDruzhba") {
@@ -352,4 +358,12 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 	}
 	
 	return condition;
+}
+
+void SKD_DuranDied()
+{
+	ref chr = CharacterFromID("Duran");
+	CloseQuestHeader("TheFormerKnight");
+	if (CheckAttributeEqualTo(chr, "chr_ai.group", "TmpEnemy")) AddQuestRecord("TheFormerKnight", "6");
+	else AddQuestRecord("TheFormerKnight", "7");
 }

@@ -482,12 +482,12 @@ void ProcessDialogEvent()
 			dialog.text = "Что ж, для меня было честью нести службу под одним флагом с вами, и я с удовольствием сделаю это вновь, если судьбе будет угодно.";
 			link.l1 = "Надеюсь, наша с вами дружба не оборвётся, а лишь упрочнится, ведь мы с вами немало приключений разделили.";
 			link.l1.go = "SharlieEpilog_Dassen_nothing";
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice))
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice))
 			{
 				link.l2 = "За вашу преданность и профессионализм я хочу, в качестве увольнительных, выплатить вам месячное жалование.";
 				link.l2.go = "SharlieEpilog_Dassen_salary";
 			}
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice) * 3)
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice) * 3)
 			{
 				link.l3 = "Вы несли службу безупречно, и я считаю необходимым отблагодарить вас должным образом. Примите это - здесь три месячных жалования. Вы более чем заслужили эту награду.";
 				link.l3.go = "SharlieEpilog_Dassen_salaryX3";
@@ -520,7 +520,7 @@ void ProcessDialogEvent()
 				link.l1 = "Ну что ж, до новых встреч, месье "+npchar.lastname+". Прощайте.";
 				link.l1.go = "SharlieEpilog_Dassen_Leave";
 			}
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Dassen_salaryX3":
@@ -535,7 +535,7 @@ void ProcessDialogEvent()
 				link.l1 = "Долой формальности, зовите меня просто Шарлем. В честь отплытия я собираюсь устроить в таверне небольшое празднество. Надеюсь, вы присоединитесь к нам?";
 				link.l1.go = "SharlieEpilog_Dassen_Tavern";
 			}
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Dassen_Governor":

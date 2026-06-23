@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "Ah, delikanlım, sen misin? Bana hiç mi iyi bir haberin yok? Yine mi Hristiyanlar bu zavallı yaşlı Yahudiyi sorularla bunaltmaya geldiniz?";
 					if (CheckCharacterItem(pchar, "SkullAztec"))

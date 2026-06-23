@@ -35,15 +35,15 @@ void ProcessDialogEvent()
 			rColony = GetColonyByIndex(iTemp);
 			bOk = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 			dialog.text = "是的, 是的。 我亲爱的朋友法迪详细描述了您和您的情况。 我一看到门口的您就知道是您。 告诉我, 船长, 您有什么样的船? ";
-			if(sti(pchar.ship.type) == SHIP_NOTUSED || !bOk)
+			if(int(pchar.ship.type) == SHIP_NOTUSED || !bOk)
 			{
 				link.l1 = "啊... 目前我没有船, 先生... ";
 				link.l1.go = "lecrua_noship";
 			}
 			else
 			{
-				link.l1 = "我有一艘" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name"))) + ", 她的名字是" + pchar.ship.name + "。 ";
-				if (6-sti(RealShips[sti(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
+				link.l1 = "我有一艘" + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype), "Name"))) + ", 她的名字是" + pchar.ship.name + "。 ";
+				if (6-int(RealShips[int(pchar.ship.type)].Class) < 0) link.l1.go = "lecrua_badship";
 				else link.l1.go = "lecrua_2";
 			}
 		break;
@@ -253,7 +253,7 @@ void ProcessDialogEvent()
 			if(!bImCasual) 
 			{
 				pchar.quest.trial_spy_over.win_condition.l1 = "Timer";
-				pchar.quest.trial_spy_over.win_condition.l1.date.hour  = sti(GetTime() + 2);
+				pchar.quest.trial_spy_over.win_condition.l1.date.hour  = int(GetTime() + 2);
 				pchar.quest.trial_spy_over.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 2);
 				pchar.quest.trial_spy_over.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 2);
 				pchar.quest.trial_spy_over.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 2);
@@ -355,7 +355,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "florian_deck_wait";
 			pchar.questTemp.Trial = "spy_wait";
 			pchar.quest.Trial_spyfail_wait.win_condition.l1 = "Timer";
-			pchar.quest.Trial_spyfail_wait.win_condition.l1.date.hour  = sti(GetTime()+rand(12));
+			pchar.quest.Trial_spyfail_wait.win_condition.l1.date.hour  = int(GetTime()+rand(12));
 			pchar.quest.Trial_spyfail_wait.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.Trial_spyfail_wait.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.Trial_spyfail_wait.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);

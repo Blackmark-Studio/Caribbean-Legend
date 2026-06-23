@@ -39,7 +39,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 
 	case "let_s_duel":
 		//проверка на начатые дуэли.
-		if (CheckAttribute(PChar, "questTemp.duel.Start") && sti(PChar.questTemp.duel.Start))
+		if (CheckAttribute(PChar, "questTemp.duel.Start") && int(PChar.questTemp.duel.Start))
 		{
 			Dialog.Text = "먼저 다른 이들과 볼일을 끝내고, 그 다음에 우리 얘기하자.";
 			if (PChar.questTemp.duel.enemy == NPChar.id)
@@ -71,7 +71,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		Dialog.Text = RandPhraseSimple("결투라니, 좋아. 우리 무기는 검과 권총이 될 거다.","너 칼이나 제대로 쥘 수는 있냐?");
 		link.l1 = RandPhraseSimple("넌 무릎 꿇고 자비를 빌게 될 거다.","내 손으로 직접 네 놈을 목 졸라 죽여주겠다, 이 악당아!");
 		link.l1.go = "land_duel";
-		if (sti(pchar.Ship.Type) != SHIP_NOTUSED && sti(NPChar.Ship.Type) != SHIP_NOTUSED)
+		if (int(pchar.Ship.Type) != SHIP_NOTUSED && int(NPChar.Ship.Type) != SHIP_NOTUSED)
 		{
 			Dialog.Text = RandPhraseSimple(Dialog.Text+" 아니면 우리가 나가서 누가 누군지 직접 확인해 보자!","결투라고?!! 하, 널 벌레처럼 짓밟아 주지! 어떻게 죽고 싶은지 골라 봐!");
 			link.l2 = RandPhraseSimple("바다에서는 내가 최고다.","내 배가 네 낡은 배 따위는 쉽게 침몰시킬 거야!");
@@ -103,7 +103,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 		iHour = 1 + rand(2);
 		if (GetTime() > 4.0 && GetTime() < 17.0)
 		{
-//			iHour = MakeInt(18.0 - GetTime()) + rand(2); //раскоментировать для дуэлей только по ночам
+//			iHour = int(18.0 - GetTime()) + rand(2); //раскоментировать для дуэлей только по ночам
 		}
 		pchar.questTemp.Duel.WaitTime = iHour;
 		Dialog.Text = RandSwear()+RandPhraseSimple("칼을 뽑아라, 네 피가 무슨 색인지 한번 보자!","글쎄, 죽고 싶다면야...");
@@ -155,7 +155,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.duel_move_opponent2place.win_condition.l1.location = pchar.questTemp.duel.place;
 			pchar.quest.duel_move_opponent2place.function = "Duel_Move_Opponent2Place";
 			//на случай, если не дождется, часа вполне достаточно
-			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, sti(GetTime() + 0.5) + sti(pchar.questTemp.Duel.WaitTime) + 1, false);
+			SetTimerConditionParam("duel_move_opponentBack", "Duel_Move_OpponentBack", 0, 0, 0, int(GetTime() + 0.5) + int(pchar.questTemp.Duel.WaitTime) + 1, false);
 			pchar.quest.duel_move_opponentBack.function = "Duel_Move_OpponentBack";
 			if (CheckAttribute(NPChar, "CityType"))
 			{
@@ -164,7 +164,7 @@ void ProcessDuelDialog(ref NPChar, aref Link, aref NextDiag)
 				if (!CheckAttribute(NPChar, "PGGAi")) 
 				{
 					if (!CheckAttribute(NPChar, "LifeDay")) npchar.LifeDay = 0;
-					npchar.LifeDay = sti(npchar.LifeDay) + 3; // чтоб до дуэли не помер
+					npchar.LifeDay = int(npchar.LifeDay) + 3; // чтоб до дуэли не помер
 				}
     		}
 		}

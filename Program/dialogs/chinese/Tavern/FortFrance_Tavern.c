@@ -10,7 +10,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                       "是的, 确实是第三次了... ", "不, 什么问题? ... ", npchar, Dialog.CurrentNode);
             link.l1.go = "exit";
             /* //--> Jason, 加斯科涅人的负担
-            if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && makeint(environment.time) > 5.0 && makeint(environment.time) < 19.0)
+            if (!CheckAttribute(npchar, "quest.Rum") && CheckAttribute(pchar, "questTemp.Sharlie.Lock") && pchar.questTemp.Sharlie == "ship" && int(environment.time) > 5.0 && int(environment.time) < 19.0)
             {
                 link.l1 = "先生, 我在找工作。 你有什么活儿吗? ";
                 link.l1.go = "Sharlie_rum";
@@ -40,7 +40,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "我打算为我的手下安排一场聚会, 我想你已经知道了吧? ";
                 link.l1.go = "LH_tavern_SP";
             }
-            if (CheckAttribute(npchar, "quest.LongHappy.Nomoney") && LongHappy_CheckTavernGoods() && sti(Pchar.money) >= 100000+sti(pchar.questTemp.LongHappy.MarryMoney))
+            if (CheckAttribute(npchar, "quest.LongHappy.Nomoney") && LongHappy_CheckTavernGoods() && int(Pchar.money) >= 100000+int(pchar.questTemp.LongHappy.MarryMoney))
             {
                 link.l1 = "我把庆祝所需的一切都带来了。 ";
                 link.l1.go = "LH_tavern_SP_3";
@@ -94,6 +94,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             DeleteAttribute(pchar, "questTemp.Sharlie.Rum");
             SetCurrentTime(23, 0);
             Sharlie_removeLocks("");
+			QuestPointerDelLoc("fortfrance_town", "reload", "reload4_back");
         break;
         
         case "Sharlie_rum_3":
@@ -176,7 +177,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         // 葡萄牙人
 		case "Portugal":
             dialog.text = "没问题, 我有一间房。 50比索, 你可以住三天。 ";
-            if (sti(pchar.money) >= 50)
+            if (int(pchar.money) >= 50)
             {
                 link.l1 = "给你。 ";
                 link.l1.go = "Portugal_1";
@@ -256,7 +257,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "LH_tavern_SP_1":
             dialog.text = "再加10万八里亚尔应该够了, 放心 —我肯定办得漂漂亮亮。 你的人能记这派对一辈子, 我打包票! ";
-            if (sti(Pchar.money) >= 100000 + sti(pchar.questTemp.LongHappy.MarryMoney))
+            if (int(Pchar.money) >= 100000 + int(pchar.questTemp.LongHappy.MarryMoney))
             {
                 link.l1 = "你可得用心办 —这可是特殊场合。 还有, 庆祝完了就算酒馆烧了也别来找我抱怨。 ";
                 link.l1.go = "LH_tavern_SP_4";
@@ -281,8 +282,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "LH_tavern_SP_4":
             DialogExit();
-            RemoveCharacterGoods(pchar, GOOD_RUM, sti(pchar.questTemp.LongHappy.MarryRum));
-            AddMoneyToCharacter(pchar, -sti(pchar.questTemp.LongHappy.MarryMoney));
+            RemoveCharacterGoods(pchar, GOOD_RUM, int(pchar.questTemp.LongHappy.MarryRum));
+            AddMoneyToCharacter(pchar, -int(pchar.questTemp.LongHappy.MarryMoney));
             AddMoneyToCharacter(pchar, -100000);
             DeleteAttribute(npchar, "quest.LongHappy.Nomoney");
             pchar.questTemp.LongHappy.DrinkReady = "true";

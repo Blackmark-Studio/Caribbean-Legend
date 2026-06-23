@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 			AddItems(sld, "gunpowder", 50);
 			TakeNItems(sld, "potion2", 1);
 			//
-			sld.quest.OfficerPrice = sti(pchar.rank)*200;
+			sld.quest.OfficerPrice = int(pchar.rank)*200;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			sld.OfficerImmortal = true;
@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "cirass1");
 			EquipCharacterbyItem(sld, "cirass1");
 			AddItems(sld, "cartridge", 50);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+			sld.quest.OfficerPrice = int(pchar.rank) * 20;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.CompanionDisable = true;
 			sld.loyality = MAX_LOYALITY;
@@ -297,7 +297,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Saga.Helena_officer = "true";
 			sld = characterFromId("Helena");
 			sld.greeting = "helena_hire";
-			sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+			sld.quest.OfficerPrice = int(pchar.rank) * 500;
 			sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			sld.loyality = MAX_LOYALITY;
 			AddPassenger(pchar, sld, false);
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			TakeNItems(sld, "bullet", 20);
 			AddItems(sld, "gunpowder", 20);
-			sld.quest.OfficerPrice = sti(pchar.rank)*500;
+			sld.quest.OfficerPrice = int(pchar.rank)*500;
 			sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			sld.CompanionDisable = true; //нельзя в компаньоны
 			sld.loyality = MAX_LOYALITY;
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			AddItems(sld, "gunpowder", 50);
 			TakeNItems(sld, "potion2", 1);
 			//
-			sld.quest.OfficerPrice = sti(pchar.rank)*200;
+			sld.quest.OfficerPrice = int(pchar.rank)*200;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			sld.OfficerImmortal = true;
@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "cirass1");
 			EquipCharacterbyItem(sld, "cirass1");
 			AddItems(sld, "cartridge", 50);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+			sld.quest.OfficerPrice = int(pchar.rank) * 20;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.CompanionDisable = true;
 			sld.loyality = MAX_LOYALITY;
@@ -563,7 +563,7 @@ void ProcessDialogEvent()
 			// Мэри:
 			pchar.questTemp.LSC.Mary_officer = "true";
 			sld = characterFromId("Mary");
-			sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+			sld.quest.OfficerPrice = int(pchar.rank) * 500;
 			sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			sld.CompanionDisable = true;       //нельзя в компаньоны
 			sld.loyality = MAX_LOYALITY;
@@ -623,7 +623,7 @@ void ProcessDialogEvent()
 			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			TakeNItems(sld, "bullet", 20);
 			AddItems(sld, "gunpowder", 20);
-			sld.quest.OfficerPrice = sti(pchar.rank)*500;
+			sld.quest.OfficerPrice = int(pchar.rank)*500;
 			sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			sld.CompanionDisable = true; //нельзя в компаньоны
 			sld.loyality = MAX_LOYALITY;
@@ -761,7 +761,7 @@ void ProcessDialogEvent()
 			AddItems(sld, "gunpowder", 50);
 			TakeNItems(sld, "potion2", 1);
 			//
-			sld.quest.OfficerPrice = sti(pchar.rank)*200;
+			sld.quest.OfficerPrice = int(pchar.rank)*200;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			sld.OfficerImmortal = true;
@@ -804,7 +804,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "cirass1");
 			EquipCharacterbyItem(sld, "cirass1");
 			AddItems(sld, "cartridge", 50);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+			sld.quest.OfficerPrice = int(pchar.rank) * 20;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.CompanionDisable = true;
 			sld.loyality = MAX_LOYALITY;
@@ -824,7 +824,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "pirate_cutlass");
 			EquipCharacterbyItem(sld, "pirate_cutlass");
 			LAi_SetImmortal(sld, false);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+			sld.quest.OfficerPrice = int(pchar.rank) * 500;
 			sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			DeleteAttribute(sld, "CompanionDisable");
 			DeleteAttribute(sld, "HalfImmortal");
@@ -969,7 +969,7 @@ void ProcessDialogEvent()
 			AddItems(sld, "gunpowder", 50);
 			TakeNItems(sld, "potion2", 1);
 			//
-			sld.quest.OfficerPrice = sti(pchar.rank)*200;
+			sld.quest.OfficerPrice = int(pchar.rank)*200;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			sld.OfficerImmortal = true;
@@ -1012,7 +1012,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "cirass1");
 			EquipCharacterbyItem(sld, "cirass1");
 			AddItems(sld, "cartridge", 50);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+			sld.quest.OfficerPrice = int(pchar.rank) * 20;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.CompanionDisable = true;
 			sld.loyality = MAX_LOYALITY;
@@ -1155,7 +1155,7 @@ void ProcessDialogEvent()
 			AddItems(sld, "gunpowder", 50);
 			TakeNItems(sld, "potion2", 1);
 			//
-			sld.quest.OfficerPrice = sti(pchar.rank)*200;
+			sld.quest.OfficerPrice = int(pchar.rank)*200;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.loyality = MAX_LOYALITY;
 			sld.OfficerImmortal = true;
@@ -1198,7 +1198,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(sld, "cirass1");
 			EquipCharacterbyItem(sld, "cirass1");
 			AddItems(sld, "cartridge", 50);
-			sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+			sld.quest.OfficerPrice = int(pchar.rank) * 20;
 			sld.OfficerWantToGo.DontGo = true;
 			sld.CompanionDisable = true;
 			sld.loyality = MAX_LOYALITY;
@@ -1473,7 +1473,7 @@ void ProcessDialogEvent()
 		case "Teach_battle_lose":
 			Tut_RestoreState();
 			dialog.text = LinkRandPhrase("うーん……今のお前は本当に弱いな。もっと注意して、ブロックやパリィをしっかり使え。強攻撃には気をつけろ、 ブロックだけじゃ防げねえからな。フェイントやパリィを使うか、後ろに下がってみろ。","強攻撃を当てさせるな、フェイントで敵の攻撃を受け流すか、パリィを狙え。\n油断せず、敵のフェイントにも注意しろ。さもないと、お前の攻撃が見破られて逆に利用されるぞ。","体力が少ない時は走って逃げるか、飛び退け。相手にフェイントをかけてみるのも手だ。 敵の攻撃をフェイントでかわすのは簡単じゃねえが、うまく騙すことはできるぜ。成功すれば、 敵の一撃を避けて反撃できるぞ。")+"もう一度やってみるか？";
-			if (sti(pchar.rank) < 3) // чтоб не качались до упора
+			if (int(pchar.rank) < 3) // чтоб не качались до упора
 			{
 				link.l1 = "もちろんだぜ！";
 				link.l1.go  = "Teach_battle_1";
@@ -1513,7 +1513,7 @@ void ProcessDialogEvent()
 			sld = characterFromID("Sailor_2");
 			LAi_SetCitizenType(sld);
 			dialog.text = "まあ、悪くないな。相手は一人倒したが、二人いたんだ。もう少し練習が必要だぜ。 敵は三人や四人で一度に襲ってくることもあるからな。もう一度やってみるか？";
-   			if (sti(pchar.rank) < 3) // чтоб не качались до упора
+   			if (int(pchar.rank) < 3) // чтоб не качались до упора
 			{
 				link.l1 = "もちろんだぜ！";
 				link.l1.go  = "Teach_battle_1";

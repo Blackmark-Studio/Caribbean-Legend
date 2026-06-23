@@ -4,7 +4,7 @@
 // Ускоряем выпады прямым или удары кривым оружием
 void CondottieresHat(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	int weaponCurvature = GetAttributeInt(table, HAS + M_WEAPON_CURVATURE);
 
 	string attackType;
@@ -18,7 +18,7 @@ void CondottieresHat(ref chr, ref table, ref function, ref context, string funcN
 // Ускоряем выпады прямым или удары кривым оружием
 void Battleaxe(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) != WEAPON_HEAVY) return;
 
 	IncreaseModifierFromSourceDirect(table, BREAK_STRIKE + "_" + M_DAMAGE, value, ITEM_SLOT_TYPE);
@@ -27,7 +27,7 @@ void Battleaxe(ref chr, ref table, ref function, ref context, string funcName)
 // Ускоряем круговые удары коротким и пробивающие удары длинным
 void CavaliersHat(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	int weaponLength = GetAttributeInt(table, HAS + M_WEAPON_LENGTH);
 
 	string attackType;
@@ -43,7 +43,7 @@ void ElTrozo(ref chr, ref table, ref function, ref context, string funcName)
 {
 	string modifierName = BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED;
 	int amuletsCount = GetAttributeInt(table, "descriptors." + M_AMULET_TYPE + "_" + AMULET_PAGAN);
-	float value = stf(function.arg0) * amuletsCount;
+	float value = float(function.arg0) * amuletsCount;
 	IncreaseModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
 }
 
@@ -52,7 +52,7 @@ void Euchologion(ref chr, ref table, ref function, ref context, string funcName)
 {
 	string modifierName = RANGE + M_REDUCE_DAMAGE;
 	int amuletsCount = GetAttributeInt(table, "descriptors." + M_AMULET_TYPE + "_" + AMULET_CHURCH);
-	float value = stf(function.arg0) * amuletsCount;
+	float value = float(function.arg0) * amuletsCount;
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value *= 2;
 	IncreaseModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
 }
@@ -60,7 +60,7 @@ void Euchologion(ref chr, ref table, ref function, ref context, string funcName)
 // Нательный крест уменьшает урон от критов
 void Crucifix(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value = 0.20;
 	IncreaseModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, value, ITEM_SLOT_TYPE);
 }
@@ -68,7 +68,7 @@ void Crucifix(ref chr, ref table, ref function, ref context, string funcName)
 // Святая вода даёт макс хп
 void HolyWater(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value = 0.25;
 	IncreaseModifierFromSourceDirect(table, M_MTP_HP_MAX, value, ITEM_SLOT_TYPE);
 }
@@ -78,13 +78,13 @@ void GoldenKnife(ref chr, ref table, ref function, ref context, string funcName)
 {
 	if (!CheckAttribute(table, "descriptors.exotic.blade")) return;
 	string modifierName = BLADE_ITEM_TYPE + "_" + M_DAMAGE;
-	SetModifierFromSourceDirect(table, modifierName, stf(function.arg0), TALISMAN_ITEM_TYPE);
+	SetModifierFromSourceDirect(table, modifierName, float(function.arg0), TALISMAN_ITEM_TYPE);
 }
 
 // Легкое оружие наносит больше урона выпадами
 void JaguarSon(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) != WEAPON_LIGHT) return;
 
 	SetModifierFromSourceDirect(table, FORCE_STRIKE + "_" + M_DAMAGE, value, TALISMAN_ITEM_TYPE);
@@ -93,7 +93,7 @@ void JaguarSon(ref chr, ref table, ref function, ref context, string funcName)
 // Среднее оружие наносит больше урона круговыми ударами
 void TasmanianDevil(ref chr, ref table, ref function, ref context, string funcName)
 {
-	float value = stf(function.arg0);
+	float value = float(function.arg0);
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) != WEAPON_MEDIUM) return;
 
 	SetModifierFromSourceDirect(table, ROUND_STRIKE + "_" + M_DAMAGE, value, TALISMAN_ITEM_TYPE);
@@ -107,12 +107,12 @@ void NgomboShield(ref chr, ref table, ref function, ref context, string funcName
 	{
 		float allDefence = GetAttributeFloat(table, M_REDUCE_DAMAGE);
 		float armorDefence = GetAttributeFloat(table, M_REDUCE_DAMAGE + ".cirass");
-		float bonusArmor = armorDefence * stf(function.arg0);
+		float bonusArmor = armorDefence * float(function.arg0);
 		SetAttribute(table, M_REDUCE_DAMAGE, allDefence + bonusArmor);
 		SetAttribute(table, M_REDUCE_DAMAGE + ".cirass", armorDefence + bonusArmor);
 	}
 
-	if (HasDescriptor(table, "HeartDefence")) IncreaseModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, stf(function.arg1), CIRASS_ITEM_TYPE);
+	if (HasDescriptor(table, "HeartDefence")) IncreaseModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, float(function.arg1), CIRASS_ITEM_TYPE);
 }
 
 // Книжка Аламиды увеличивает защиту и защиту от урона
@@ -136,7 +136,7 @@ void LiberMisericordiae(ref chr, ref table, ref function, ref context, string fu
 	else if (IsCompanion(chr))
 	{
 		if (GetCharacterShipType(chr) == SHIP_NOTUSED) return;
-		if (!(sti(RealShips[sti(chr.Ship.Type)].BaseType) == SHIP_GALEON_SM)) return;
+		if (!(int(RealShips[int(chr.Ship.Type)].BaseType) == SHIP_GALEON_SM)) return;
 		SetModifierFromSourceDirect(table, SKILL_TYPE + SKILL_DEFENCE, skillDefenceValue, TALISMAN_ITEM_TYPE);
 	}
 }
@@ -153,28 +153,28 @@ void Jian(ref chr, ref table, ref function, ref context, string funcName)
 
 void ChiefsMusket(ref chr, ref table, ref function, ref context, string funcName)
 {
-	int indianRep = sti(pchar.questTemp.Indian.relation);
-	if (indianRep >= 50) SetModifierFromSourceDirect(table, SHOT_STRIKE + "_" + M_DAMAGE, stf(function.arg0), MUSKET_ITEM_TYPE);
-	if (chr.id == "Tichingitu") SetModifierFromSourceDirect(table, MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, stf(function.arg1), MUSKET_ITEM_TYPE);
+	int indianRep = int(pchar.questTemp.Indian.relation);
+	if (indianRep >= 50) SetModifierFromSourceDirect(table, SHOT_STRIKE + "_" + M_DAMAGE, float(function.arg0), MUSKET_ITEM_TYPE);
+	if (chr.id == "Tichingitu") SetModifierFromSourceDirect(table, MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, float(function.arg1), MUSKET_ITEM_TYPE);
 }
 
 void KaleucheAmuletAttack(ref chr, ref table, ref function, ref context, string funcName)
 {
 	int bonus;
 	int base;
-	float mtp = stf(function.arg0);
-	base = sti(context.fencingl.base);
-	bonus = makeint(base * mtp);
+	float mtp = float(function.arg0);
+	base = int(context.fencingl.base);
+	bonus = int(base * mtp);
 	context.fencingl = base + bonus;
 	context.fencingl.talisman = bonus;
 
-	base = sti(context.fencings.base);
-	bonus = makeint(base * mtp);
+	base = int(context.fencings.base);
+	bonus = int(base * mtp);
 	context.fencings = base + bonus;
 	context.fencings.talisman = bonus;
 
-	base = sti(context.fencingh.base);
-	bonus = makeint(base * mtp);
+	base = int(context.fencingh.base);
+	bonus = int(base * mtp);
 	context.fencingh = base + bonus;
 	context.fencingh.talisman = bonus;
 }
@@ -185,7 +185,7 @@ void BlackwoodsCharter(ref chr, ref table, ref function, ref context, string fun
 	ref Articles = ItemsFromID("talisman18");
 	if (!CheckAttribute(Articles, "QBonus")) return;
 	if (CheckAttribute(Articles,"QBonus.max")) value = 0.10;
-	else value = wPercentFloat(stf(Articles.QBonus), 1.0);
+	else value = wPercentFloat(float(Articles.QBonus), 1.0);
 
 	if (value > 0.0) SetModifierFromSourceDirect(table, GRAPESHOT + "_" + M_DAMAGE, value * 2, TALISMAN_ITEM_TYPE);
 }

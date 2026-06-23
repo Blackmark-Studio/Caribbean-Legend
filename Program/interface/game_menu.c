@@ -39,7 +39,7 @@ void InitInterface_gm(string iniName)
 	// логотип
 	SetMenuLogo();
 
-	if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && sti(InterfaceStates.Buttons.Resume.enable) == true)
+	if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && int(InterfaceStates.Buttons.Resume.enable) == true)
 	{
 		SetSelectable("MB_RESUME", true);
 	} 
@@ -88,7 +88,7 @@ void InitInterface_gm(string iniName)
 void ProcessCancelExit()
 {
 	bGameMenuStart = false; // выход из меню, показываем landinterface
-	if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && sti(InterfaceStates.Buttons.Resume.enable) == true)
+	if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && int(InterfaceStates.Buttons.Resume.enable) == true)
 	IDoExit(RC_INTERFACE_DO_RESUME_GAME, true);
 }
 

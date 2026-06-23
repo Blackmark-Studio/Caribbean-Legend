@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "Svenson_4":
             dialog.text = "谁知道呢... 一周时间不算长, 但麦卡瑟的遗孀坚信女儿出事了, 而且她说服了斯文森。 他召集人手, 亲自搜寻, 但至今没有结果。 ‘彩虹号’和船员就这么消失了。 给我一千枚八里亚尔银币, 我就告诉你去哪里找格拉迪斯。 ";
-            if (sti(pchar.money) >= 1000)
+            if (int(pchar.money) >= 1000)
             {
                 link.l1 = "你的情报可真贵, 但你勾起了我的兴趣。 给你钱。 我去哪里找她? ";
                 link.l1.go = "Svenson_5";

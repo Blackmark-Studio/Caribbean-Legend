@@ -22,8 +22,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tonzag_bail_2":
-			dialog.text = "Bien sûr, cependant, cela vous coûtera un peu plus cher. Laissez-moi vous expliquer exactement... "+pchar.questTemp.TonzagQuest.Bail+"  doubloons seront "+sti(pchar.questTemp.TonzagQuest.Bail)* 150+" pesos.";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail) || sti(pchar.money) >= sti(pchar.questTemp.TonzagQuest.Bail) * 150) {
+			dialog.text = "Bien sûr, cependant, cela vous coûtera un peu plus cher. Laissez-moi vous expliquer exactement... "+pchar.questTemp.TonzagQuest.Bail+"  doubloons seront "+int(pchar.questTemp.TonzagQuest.Bail)* 150+" pesos.";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.TonzagQuest.Bail) || int(pchar.money) >= int(pchar.questTemp.TonzagQuest.Bail) * 150) {
 				link.l1 = "Un peu plus cher, dites-vous ? Tenez, voici le montant complet requis.";
 				link.l1.go = "tonzag_bail_give";
 			} else {
@@ -39,10 +39,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			
 			NextDiag.TempNode = "First time";
 			
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.TonzagQuest.Bail)) {
-				RemoveDublonsFromPCharTotal(sti(pchar.questTemp.TonzagQuest.Bail));
+			if (PCharDublonsTotal() >= int(pchar.questTemp.TonzagQuest.Bail)) {
+				RemoveDublonsFromPCharTotal(int(pchar.questTemp.TonzagQuest.Bail));
 			} else {
-				AddMoneyToCharacter(pchar, -(sti(pchar.questTemp.TonzagQuest.Bail) * 150));
+				AddMoneyToCharacter(pchar, -(int(pchar.questTemp.TonzagQuest.Bail) * 150));
 			}
 			sld = CharacterFromID("TortugaJailOff");
 			LAi_CharacterEnableDialog(sld);
@@ -61,11 +61,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.loans.tortuga.StartMonth = GetDataMonth();
 			pchar.quest.loans.tortuga.StartYear = GetDataYear();
 			pchar.quest.loans.tortuga.StartTime = GetTime();
-			SetTimerCondition("Loans_Tortuga", 0, makeint(pchar.quest.loans.tortuga.period), 0, false);
+			SetTimerCondition("Loans_Tortuga", 0, int(pchar.quest.loans.tortuga.period), 0, false);
 			pchar.quest.Loans_Tortuga.CityId = "Tortuga";
 			pchar.quest.Loans_Tortuga.win_condition = "LoansForAll";
 			
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.TonzagQuest.Bail) * 150);
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.TonzagQuest.Bail) * 150);
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

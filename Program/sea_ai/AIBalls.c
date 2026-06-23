@@ -80,17 +80,17 @@ int ballNumber;
 
 void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0, float fDirAng, float fHeightAng, float fCannonDirAng, float fMaxFireDistance, bool isAutoFire, string bort)
 {
-	int iCannonType = sti(aCharacter.Ship.Cannons.Type);
+	int iCannonType = int(aCharacter.Ship.Cannons.Type);
 	ref rCannon = GetCannonByType(iCannonType);
-	float fCannonHeightMultiply = stf(rCannon.HeightMultiply);
+	float fCannonHeightMultiply = float(rCannon.HeightMultiply);
 
-	EntityUpdate(0);
+	EntityUpdate(false);
 	AIBalls.CannonType = iCannonType;
 	AIBalls.x = fX;
 	AIBalls.y = fY;
 	AIBalls.z = fZ;
 	AIBalls.CharacterIndex    = aCharacter.Index;
-	AIBalls.Type = Goods[sti(aCharacter.Ship.Cannons.Charge.Type)].Name;
+	AIBalls.Type = Goods[int(aCharacter.Ship.Cannons.Charge.Type)].Name;
 	AIBalls.HeightMultiply    = fCannonHeightMultiply;
 	AIBalls.SizeMultiply      = rCannon.SizeMultiply;
 	AIBalls.TimeSpeedMultiply = rCannon.TimeSpeedMultiply;
@@ -110,16 +110,16 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 
 	//float fDamage2Cannons = 100.0;
 
-    float fAccuracy = 1.2 - stf(aCharacter.TmpSkill.Accuracy);
-	float fCannons = stf(aCharacter.TmpSkill.Cannons)*10;
+    float fAccuracy = 1.2 - float(aCharacter.TmpSkill.Accuracy);
+	float fCannons = float(aCharacter.TmpSkill.Cannons)*10;
 
 	fCannons = 15.0 + MOD_SKILL_ENEMY_RATE - fCannons;
 
-	if (fCannons > 0.0 && RealShips[sti(aCharacter.ship.type)].BaseName != "fort") // fix
+	if (fCannons > 0.0 && RealShips[int(aCharacter.ship.type)].BaseName != "fort") // fix
 	{
 		if (fCannons > rand(100) && !IsCharacterEquippedArtefact(aCharacter, "talisman3"))
 		{
-            fCannons = (rand(4) + 2.0*(1.65 - stf(aCharacter.TmpSkill.Cannons))) * 10;
+            fCannons = (rand(4) + 2.0*(1.65 - float(aCharacter.TmpSkill.Cannons))) * 10;
 			SendMessage(&AISea, "laffff", AI_MESSAGE_CANNONS_BOOM_CHECK, aCharacter, fCannons, fx, fy, fz);  // fDamage2Cannons  там много делителей, потому много
 		}
 	}
@@ -132,7 +132,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 
 	AIBalls.Event = "";
 
-	EntityUpdate(1);
+	EntityUpdate(true);
 	AIBalls.Add = "";
 	
 	string sParticleName = "cancloud_fire";
@@ -143,7 +143,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 	}
 	else
 	{
-		if(GetCannonType(sti(aCharacter.Ship.Cannons.Type)) == "Culverine" ) 
+		if(GetCannonType(int(aCharacter.Ship.Cannons.Type)) == "Culverine" )
 		{ 
 			sParticleName = "cancloud_coulverines"; 
 		}
@@ -170,11 +170,11 @@ void Ball_WaterHitEvent()
 	y = GetEventData();
 	z = GetEventData();
 
-	if (sti(AIBalls.CurrentBallCannonType) >= 0)
+	if (int(AIBalls.CurrentBallCannonType) >= 0)
 	{
-		ref rCannon = GetCannonByType(sti(AIBalls.CurrentBallCannonType));
+		ref rCannon = GetCannonByType(int(AIBalls.CurrentBallCannonType));
 
-		if (sti(rCannon.BigBall))	{ CreateParticleSystem("splash_big", X, Y, Z, 0.0, 0.0, 0.0, 5); }
+		if (int(rCannon.BigBall))	{ CreateParticleSystem("splash_big", X, Y, Z, 0.0, 0.0, 0.0, 5); }
 		else						{ CreateParticleSystem("splash", X, Y, Z, 0.0, 0.0, 0.0, 5); }
 	}
 	else

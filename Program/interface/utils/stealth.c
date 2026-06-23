@@ -16,14 +16,14 @@ void SetNewNation(int add, ref curNationIdx)
 			SetSelectable("FLAG_BTN", false);
 	}
 
-	ok = !STH_CanUseFlag(iCurNation) && sti(pchar.nation) != iCurNation;
+	ok = !STH_CanUseFlag(iCurNation) && int(pchar.nation) != iCurNation;
 	ok2 = true;
 	if (isMainCharacterPatented())
 	{
-		ok2 = (sti(Items[sti(pchar.EquipedPatentId)].Nation) != iCurNation);
+		ok2 = (int(Items[int(pchar.EquipedPatentId)].Nation) != iCurNation);
 	}
 	if (ok && ok2) SetNewNation(add, &iCurNation);
-	if (sti(pchar.nation) == iCurNation) SetNodeUsing("FLAG_BTN", false);
+	if (int(pchar.nation) == iCurNation) SetNodeUsing("FLAG_BTN", false);
 
 	curNationIdx = iCurNation;
 }

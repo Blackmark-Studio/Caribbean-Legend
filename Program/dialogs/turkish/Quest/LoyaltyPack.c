@@ -446,7 +446,7 @@ void ProcessDialogEvent()
 			dialog.text = "Söz konusu hatunlarsa... tamam, geliyorum. Hehe. Ama neden kendi gemimizle değil? Ve neden yolcu olarak? Adamlar biraz homurdanır belki ama seninle ister cennet, ister cehennem olsun, giderler.";
 			link.l1 = "Buraya ilk geldiğimde kendimi denizci olarak hayal bile edemezdim. Ama şimdi başka bir hayat düşünemiyorum. Kaptan olmadığım bir hayatı kabullenebilir miyim... ve belki de yağmayı ve deniz hayatını geride bırakabilir miyim, bunu görmek istiyorum.";
 			link.l1.go = "SharlieEpilog_Alonso_nothing";
-			if (sti(pchar.Money) >= GetSalaryForShip(PChar))
+			if (int(pchar.Money) >= GetSalaryForShip(PChar))
 			{
 				link.l2 = "Uzun hikâye. Meyhanede anlatırım — bir kadeh rom eşliğinde. Mürettebatı da davet et. Veda için güzel bir alem yapalım. Al bunu — bir aylık maaşlarını öde, tazminat niyetine.";
 				link.l2.go = "SharlieEpilog_Alonso_salary";

@@ -6,11 +6,11 @@
 string ToHumanNumber(ref number_string)
 {
 	string str = "error";
-	switch (VarType(number_string))
+	switch (typeid(number_string))
 	{
-		case VAR_INTEGER: return its(number_string); break;
-		case VAR_STRING: str = FloatToString(stf(number_string), 2); break;
-		case VAR_FLOAT:  str = FloatToString(number_string, 2);      break;
+		case typeid(int): return string(number_string); break;
+		case typeid(string): str = FloatToString(float(number_string), 2); break;
+		case typeid(float):  str = FloatToString(number_string, 2);      break;
 	}
 
 	if (str == "error")
@@ -21,7 +21,7 @@ string ToHumanNumber(ref number_string)
 
 	int dotPos = FindSubStr(str, ".", 0);
 	string result = strcut(str, 0, dotPos-1);
-	int floatPart = sti(strright(str, 2));
+	int floatPart = int(strright(str, 2));
 	if (floatPart == 0) return result;
 
 	if (floatPart % 10 > 0) return result + "." + floatPart;
@@ -35,10 +35,11 @@ string ToHumanNumber(ref number_string)
 string ToHumanPercent(ref percent)
 {
 	string result = "";
-	switch (Vartype(percent))
+	switch (typeid(percent))
 	{
-		case VAR_INTEGER: result = ToHumanNumber(percent); break;
-		case VAR_FLOAT: result = ToHumanNumber(percent * 100); break;
+		case typeid(int): result = ToHumanNumber(percent); break;
+		case typeid(float): result = ToHumanNumber(percent * 100); break;
+		case typeid(string): result = ToHumanNumber(float(percent) * 100); break;
 	}
 
 	if (result == "")
@@ -68,7 +69,7 @@ string FloatToString(float fl,int nDigAfterPoint)
 string ToHumanModifier(ref number_string)
 {
 	string sNumber = ToHumanNumber(number_string);
-	float number = stf(sNumber);
+	float number = float(sNumber);
 	if (number > 0) sNumber = "+" + sNumber;
 	// else if (number < 0) sNumber = "- " + sNumber;
 	return sNumber;
@@ -78,7 +79,7 @@ string ToHumanModifier(ref number_string)
 string ToHumanModifierPercent(ref number_string)
 {
 	string sNumber = ToHumanPercent(number_string);
-	float number = stf(sNumber);
+	float number = float(sNumber);
 	if (number > 0) sNumber = "+" + sNumber;
 	// else if (number < 0) sNumber = "- " + sNumber;
 	return sNumber;

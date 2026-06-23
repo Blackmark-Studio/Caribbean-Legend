@@ -1503,3 +1503,5 @@ itmname_blade_34 {A Espada do Afogado}
 itmdescr_blade_34 {Esta espada pirata, encontrada por você a bordo da embarcação congelada, está coberta de corais e pólipos. Ela é longa e pesada o bastante para desferir com facilidade golpes de estocada e corte poderosos a partir da terceira posição.}
 itmname_greenIdol {Ídolo de Pedra Verde}
 itmdescr_greenIdol {Este ídolo foi esculpido por você mesmo em pedra durante um sonho. Suas formas antinaturais e seus símbolos horrendos despertam repulsa e turvam a mente. Às vezes, parece que ele sussurra alguma coisa...}
+itmname_nocturlabe {Nocturlab}
+itmdescr_nocturlabe {Yıldızlara bakarak tam saati belirlemeyi sağlayan ustaca yapılmış bir aygıt. Deniz yolculuklarını büyük ölçüde kolaylaştırır ve hızlandırır.}

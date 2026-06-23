@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 			// --> 卡莱乌切
-			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && sti(Pchar.money) >= 2000) 
+			if (CheckAttribute(pchar, "questTemp.Caleuche.SeekAmulet") && hrand(1) == 0 && int(Pchar.money) >= 2000)
 			{
 				dialog.text = "看, 先生, 你不想买一件有趣的小东西吗? 不贵, 只要几千比索... ";
 				link.l1 = "嗯。 可能是偷来的这个'小东西', 现在想甩掉它? ";
@@ -117,8 +117,8 @@ void ProcessDialogEvent()
 		break;
 		case "Whants_2":
 			SaveCurrentNpcQuestDateParam(npchar, "wants_date");
-			int iTemp = sti(dialogEditStrings[2]);
-			if (iTemp <= 0 || sti(pchar.money) < iTemp)
+			int iTemp = int(dialogEditStrings[2]);
+			if (iTemp <= 0 || int(pchar.money) < iTemp)
 			{
 				dialog.text = "嘲笑弱者和疲惫的人是一种罪过... ";
 				link.l1 = "哈哈哈! 你以为我会给你钱吗, 你这个疯乞丐? ! ";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 				dialog.text = "谢谢你的" + FindRussianMoneyString(iTemp) + ", " + GetAddress_Form(NPChar) + "。 现在我可以用这些钱买些面包了... ";
 				link.l1 = "给你, 流浪汉 - 去补充点体力吧。 ";
 				link.l1.go = "exit";
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 100 && iTemp <= 500)
@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 				link.l1 = "很高兴能帮助你。 ";
 				link.l1.go = "exit";
 				OfficersReaction("good");
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 500 && iTemp <= 1000)
@@ -149,7 +149,7 @@ void ProcessDialogEvent()
 				link.l1 = "这真的没必要。 ";
 				link.l1.go = "exit";
 				ChangeCharacterComplexReputation(pchar,"nobility", iTemp/2000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 1000 && iTemp <= 5000)
@@ -157,8 +157,8 @@ void ProcessDialogEvent()
 				dialog.text = "谢谢你, 尊敬的" + GetSexPhrase("先生","女士") + " " + GetAddress_Form(NPChar) + "。 愿上帝保佑你... ";
 				link.l1 = "是的, 他的保护当然不会有坏处! ";
 				link.l1.go = "exit";
-				ChangeCharacterNationReputation(pchar, sti(NPChar.nation), iTemp/10000.0+0.5);
-				pchar.money = sti(pchar.money) - iTemp;
+				ChangeCharacterNationReputation(pchar, int(NPChar.nation), iTemp/10000.0+0.5);
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
 			if (iTemp > 5000 && iTemp <= 10000)
@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				AddCharacterExpToSkill(pchar, "Leadership", iTemp/5000.0);
 				AddCharacterExpToSkill(pchar, "Fortune", iTemp/5000.0);
-				pchar.money = sti(pchar.money) - iTemp;
+				pchar.money = int(pchar.money) - iTemp;
 				Achievment_SetStat(41, 1);
 			}
                  if (iTemp > 10000 && iTemp < 25000)
@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		
 		case "trial_7":
 			dialog.text = "我发现了, 先生, 我发现了。 不确定这和你告诉我的是否一致... 你带钱了吗? 五千比索。 ";
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				link.l1 = "别担心。 这是你的钱。 现在说出来。 ";
 				link.l1.go = "trial_8";

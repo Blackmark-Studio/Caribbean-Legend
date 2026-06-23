@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "白い兄弟よ、フクロウのように賢く、ヘビのように狡猾だ。\nインディアンに災いが近づいている。白人の大きな大きなカヌーが俺の村にやって来た。\n奴らは多くのカイマン――俺たちの仲間を捕まえて、自分たちのカヌーに乗せ、母なる大海へ連れて行ったんだ……";
 			link.l1 = "待てよ……お前の仲間たちは、船に乗った白人どもに奴隷にされたって言うのか？";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("神々の涙があんたのものになって嬉しいぜ、アラワク族の兄弟よ！","インディアン、ありがとう、勇敢な白人よ！","「俺たちの獲物を持ってけ、白い兄弟！」");
 			link.l1 = LinkRandPhrase("助けになれて嬉しいぜ！","「ありがとう、赤い肌の兄弟！」","「すごい！」");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "カナウリはまた礼を言うぞ、色白の兄弟よ！お前はインディアンたちとカヌーを全部救ってくれた！カナウリにとっては、 すべてのカヌーを守ることがとても大事だ。なぜなら、 お前は悪い色白どもに奴隷にされたカナウリの孫も救ってくれたからだ。孫は子供の頃、水泳が大好きでな、 カナウリは彼が溺れないようにこの呪われたお守りを渡した。だが今、孫はもう泳ぎたくないと言って、 このお守りをカナウリに返してくれた。だからカナウリはこれをお前に渡す、色白の兄弟よ。神々の涙とこの贈り物が、 アラワクの命にふさわしい報酬となることを願う。そして今、別れの時だ――我々は故郷の村に帰る時が来た。";
 				link.l1 = "幸運を祈るぜ、Cunauri！孫が生き延びて本当に良かった！もう二度とこんな災いがお前に降りかからねえよう祈ってるぜ！";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

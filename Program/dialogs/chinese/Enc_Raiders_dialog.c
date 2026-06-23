@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(Diag, NPChar.Dialog);
-	int iTemp = sti(npchar.EncQty);
+	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
 	switch(Dialog.CurrentNode)
@@ -22,11 +22,11 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = makeint(makeint(Pchar.money)/20)*10;
+			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("听说了吗? 当地强盗" + GetFullName(npchar) + "找到了新目标。 有个船长被吓到了, 花钱消灾。 据说他给了" + FindRussianMoneyString(iMoney) + ", 嘿嘿... ", 
 				"是啊, " +GetFullName(pchar)+ "船长, 我听说你不得不付" + FindRussianMoneyString(iMoney) + "给当地强盗" + GetFullName(npchar) + "。 这可真是倒霉! 哈哈哈! ", 
-				"听说当地强盗袭击了一个船长吗? 他被彻底抢劫了, 损失了" + FindRussianMoneyString(iMoney) + "! "), sti(npchar.nation), 5, 1);
+				"听说当地强盗袭击了一个船长吗? 他被彻底抢劫了, 损失了" + FindRussianMoneyString(iMoney) + "! "), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 			AddSimpleRumour(LinkRandPhrase(RandPhraseSimple("听说了吗? 那个强盗" + GetFullName(npchar) + "终于得到了报应。 他和他的手下想抢劫" + GetSexPhrase("某个船长, 但结果发现他是","某个女船长, 但结果发现她是") + "个硬茬。 所以我们亲爱的强盗吓得屁滚尿流, 哈哈! 这对他是个教训! 抢劫当地农民是一回事, 但勇敢的船长是另一回事! ", 
 				"感谢你, " +GetFullName(pchar)+ "船长, 终于解决了那个强盗" + GetFullName(npchar) + "的团伙。 那些无赖真是每个人的眼中钉。 我们甚至不敢派信使去农场取牛奶, 怕他们拦截抢钱。 "), 
 				"听说了吗, " + GetSexPhrase("终于有个船长","终于有个女船长") + "阻止了那个在丛林里称王称霸。 恐吓当地农民的无赖" + GetFullName(npchar) + "。 我希望这能让他们长时间停止恶行... ", 
-				"听说当地强盗" + GetFullName(npchar) + "和他的手下试图抢劫" + GetSexPhrase("某个船长","某个女船长") + "吗? 呸! 根本不是那么回事! 那个船长原来是个硬茬。 据说他像鲨鱼追沙丁鱼群一样在丛林里追着这些强盗跑。 谢天谢地, 当当局无所作为。 忙于阴暗勾当时, 还有人能为我们挺身而出... "), sti(npchar.nation), 5, 1);
+				"听说当地强盗" + GetFullName(npchar) + "和他的手下试图抢劫" + GetSexPhrase("某个船长","某个女船长") + "吗? 呸! 根本不是那么回事! 那个船长原来是个硬茬。 据说他像鲨鱼追沙丁鱼群一样在丛林里追着这些强盗跑。 谢天谢地, 当当局无所作为。 忙于阴暗勾当时, 还有人能为我们挺身而出... "), int(npchar.nation), 5, 1);
 			for(i = 0; i < iTemp; i++)
 			{
 				sld = CharacterFromID(sTemp + i);
@@ -125,7 +125,7 @@ void ProcessDialogEvent()
 				RandPhraseSimple("很简单。 把所有的金子给我们, 然后你就可以走了, 否则你就留在这里, 我们照样拿走所有金子。 但我想你不会喜欢后者, 嘿嘿。 ",
 				"别装不懂! 不想从尸体上拿钱包的话, 就把你的钱包给我! "),
 				"如果你这么迟钝, 我就解释一下。 如果你珍惜生命, 就把所有的钱给我。 ");
-			Link.l1 = "该死的, 混蛋! 我只有" + makeint(makeint(Pchar.money)/20)*10 + "比索。 ";
+			Link.l1 = "该死的, 混蛋! 我只有" + int(int(Pchar.money)/20)*10 + "比索。 ";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("你想要我的钱? 自己来拿, 我倒要看看你有多大本事! ",
 				"你怎么敢, 粗人! 我会教你懂礼貌! ",
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Node_3":
-			bOk = makeint(pchar.reputation.nobility) < 11 || makeint(pchar.reputation.nobility) > 90;  
+			bOk = int(pchar.reputation.nobility) < 11 || int(pchar.reputation.nobility) > 90;
 			if(bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) == 100 || CheckCharacterPerk(pchar, "Trustworthy") || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				dialog.text = RandPhraseSimple("该死! 好吧, 你可以走。 但在这里别出声! ", 
@@ -149,7 +149,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				bOk = makeint(pchar.reputation.nobility) < 51 && makeint(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - 恶意!!! 只需要去掉个位数!
+				bOk = int(pchar.reputation.nobility) < 51 && int(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - 恶意!!! 只需要去掉个位数!
 				if(!bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35)
 				{
 					dialog.text = RandPhraseSimple("我们会安静地杀了你, 你连一声尖叫都发不出来。 ", 
@@ -161,7 +161,7 @@ void ProcessDialogEvent()
 				{
 					dialog.text = RandPhraseSimple("我为什么要在乎你的巡逻队? 我在给他们付钱。 所以, 把你的钱包给我, 别再废话了。 ", 
 						"你以为你能吓到我? 在这片丛林里, 我就是你们这种人的'巡逻队'。 还没人能不付费就离开! ");
-					Link.l1 = "该死的, 混蛋! 我只有" + makeint(makeint(Pchar.money)/20)*10 + "比索。 ";
+					Link.l1 = "该死的, 混蛋! 我只有" + int(int(Pchar.money)/20)*10 + "比索。 ";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("嘿嘿, 我不会听从你这种懦夫的命令。 ", 
 						"我会在你脑袋上开几个新洞, 让你的脑子透透气。 ",
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 		
 		case "CheckSkills":
 			bool isStrong = (GetCharacterSkillToOld(Pchar, "FencingL") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingS") >= 7) || (GetCharacterSkillToOld(Pchar, "FencingH") >= 7);
-			bool z_ok = (isStrong) && (makeint(Pchar.Rank) >= 8) && (Makeint(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 检查武器 (新变体)
+			bool z_ok = (isStrong) && (int(Pchar.Rank) >= 8) && (int(PChar.reputation.nobility) <= 30); // Captain Beltrop & mitrokosta, 23.01.21 检查武器 (新变体)
 			if (z_ok || CheckCharacterPerk(pchar, "SeaDogProfessional"))
 			{
 				Diag.TempNode = "GetLost";
@@ -206,7 +206,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(makeint(makeint(Pchar.money)/20)*10 >= makeint(Pchar.rank)*100)
+			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("好吧! 给我钱, 然后滚! ",

@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 				link.l1 = "Ebbene, arrivederci alla prossima, monsieur "+npchar.lastname+". Addio.";
 				link.l1.go = "SharlieEpilog_Dassen_Leave";
 			}
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Dassen_salaryX3":
@@ -528,7 +528,7 @@ void ProcessDialogEvent()
 				link.l1 = "Basta con le formalità, chiamatemi semplicemente Charles. In onore della mia partenza, ho intenzione di organizzare una piccola festa alla taverna. Spero che vi unirete a noi?";
 				link.l1.go = "SharlieEpilog_Dassen_Tavern";
 			}
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Dassen_Governor":

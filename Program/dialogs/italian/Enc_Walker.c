@@ -41,7 +41,7 @@ void ProcessDialogEvent()
 				npchar.quest.last_theme = Rand(17);
 				npchar.quest.Meeting = LastSpeakDate();
 			}
-			switch (sti(npchar.quest.last_theme))
+			switch (int(npchar.quest.last_theme))
 			{	
 				case 0:
 					dialog.text = DLG_TEXT[0]; 
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 			{
 				case 0:
 					dialog.text = DLG_TEXT[74];
-					if(makeint(PChar.skill.FencingS)>= SKILL_MAX)
+					if(int(PChar.skill.FencingS)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[75];
 						Link.l1.go = "exit_Fencing";
@@ -425,7 +425,7 @@ void ProcessDialogEvent()
 						Link.l1 = DLG_TEXT[78];
 						Link.l1.go = "Fencing";
 					}
-					if(makeint(PChar.skill.Defence)>= SKILL_MAX)
+					if(int(PChar.skill.Defence)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[77];
 						Link.l1.go = "exit_out";
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 
 				case 1:
 					dialog.text = DLG_TEXT[80];
-					if(makeint(PChar.skill.Leadership)>= SKILL_MAX)
+					if(int(PChar.skill.Leadership)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[81];
 						Link.l1.go = "exit_out";
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 
 				case 2:
 					dialog.text = DLG_TEXT[84];
-					if(makeint(PChar.skill.Sailing)>= SKILL_MAX)
+					if(int(PChar.skill.Sailing)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[85];
 						Link.l1.go = "exit_out";
@@ -473,7 +473,7 @@ void ProcessDialogEvent()
 
 				case 3:
 					dialog.text = DLG_TEXT[88];
-					if(makeint(PChar.skill.Accuracy)>= SKILL_MAX)
+					if(int(PChar.skill.Accuracy)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[89];
 						Link.l1.go = "exit_out";
@@ -489,7 +489,7 @@ void ProcessDialogEvent()
 
 				case 4:
 					dialog.text = DLG_TEXT[92];
-					if(makeint(PChar.skill.Cannons)>= SKILL_MAX)
+					if(int(PChar.skill.Cannons)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[93];
 						Link.l1.go = "exit_out";
@@ -506,7 +506,7 @@ void ProcessDialogEvent()
 
 				case 5:
 					dialog.text = DLG_TEXT[96];
-					if(makeint(PChar.skill.Grappling)>= SKILL_MAX)
+					if(int(PChar.skill.Grappling)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[97];
 						Link.l1.go = "exit_out";
@@ -522,7 +522,7 @@ void ProcessDialogEvent()
 
 				case 6:
 					dialog.text = DLG_TEXT[100];
-					if(makeint(PChar.skill.Repair)>= SKILL_MAX)
+					if(int(PChar.skill.Repair)>= SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[101];
 						Link.l1.go = "exit_out";
@@ -538,7 +538,7 @@ void ProcessDialogEvent()
 	
 				case 7:
 					dialog.text = DLG_TEXT[104];
-					if(makeint(PChar.skill.Commerce)>=SKILL_MAX)
+					if(int(PChar.skill.Commerce)>=SKILL_MAX)
 					{
 						Link.l1 = DLG_TEXT[105];
 						Link.l1.go = "exit_out";
@@ -555,9 +555,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Fencing":
-			Sum = (sti(Pchar.skill.FencingS) + 1) * 10000;
+			Sum = (int(Pchar.skill.FencingS) + 1) * 10000;
 			dialog.text = DLG_TEXT[108]+Sum+DLG_TEXT[109];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[110];
 				Link.l1.go = "exit_Fencing";		
@@ -572,9 +572,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Fencing2":
-			Sum = (sti(Pchar.skill.FencingS) + 1) * 10000;
+			Sum = (int(Pchar.skill.FencingS) + 1) * 10000;
 			dialog.text = DLG_TEXT[113]+Sum+DLG_TEXT[114];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[115];
 				Link.l1.go = "exit_Fencing";		
@@ -589,7 +589,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Fencing1":
-			Sum = (sti(Pchar.skill.FencingS) + 1) * 10000;
+			Sum = (int(Pchar.skill.FencingS) + 1) * 10000;
 			AddCharacterSkill(Pchar, SKILL_FENCING, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -597,9 +597,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Defence":
-			Sum = (sti(Pchar.skill.Defence) + 1) * 10000;
+			Sum = (int(Pchar.skill.Defence) + 1) * 10000;
 			dialog.text = DLG_TEXT[118]+Sum+DLG_TEXT[119];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[120];
 				Link.l1.go = "exit_Defence";		
@@ -614,9 +614,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Defence2":
-			Sum = (sti(Pchar.skill.Defence) + 1) * 10000;
+			Sum = (int(Pchar.skill.Defence) + 1) * 10000;
 			dialog.text = DLG_TEXT[123]+Sum+DLG_TEXT[124];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[125];
 				Link.l1.go = "exit_Defence";		
@@ -631,7 +631,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Defence1":
-			Sum = (sti(Pchar.skill.Defence) + 1) * 10000;
+			Sum = (int(Pchar.skill.Defence) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_DEFENCE, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -639,9 +639,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Leadership":
-			Sum = (sti(Pchar.skill.Leadership) + 1) * 10000;
+			Sum = (int(Pchar.skill.Leadership) + 1) * 10000;
 			dialog.text = DLG_TEXT[128]+Sum+DLG_TEXT[129];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[130];
 				Link.l1.go = "exit_Leadership";		
@@ -656,9 +656,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Leadership2":
-			Sum = (sti(Pchar.skill.Leadership) + 1) * 10000;
+			Sum = (int(Pchar.skill.Leadership) + 1) * 10000;
 			dialog.text = DLG_TEXT[133]+Sum+DLG_TEXT[134];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[135];
 				Link.l1.go = "exit_Leadership";		
@@ -673,7 +673,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Leadership1":
-			Sum = (sti(Pchar.skill.Leadership) + 1) * 10000;
+			Sum = (int(Pchar.skill.Leadership) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_LEADERSHIP, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -681,9 +681,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Sailing":
-			Sum = (sti(Pchar.skill.Sailing) + 1) * 10000;
+			Sum = (int(Pchar.skill.Sailing) + 1) * 10000;
 			dialog.text = DLG_TEXT[138]+Sum+DLG_TEXT[139];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[140];
 				Link.l1.go = "exit_Sailing";		
@@ -698,9 +698,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Sailing2":
-			Sum = (sti(Pchar.skill.Sailing) + 1) * 10000;
+			Sum = (int(Pchar.skill.Sailing) + 1) * 10000;
 			dialog.text = DLG_TEXT[143]+Sum+DLG_TEXT[144];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[145];
 				Link.l1.go = "exit_Sailing";		
@@ -715,7 +715,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Sailing1":
-			Sum = (sti(Pchar.skill.Sailing) + 1) * 10000;
+			Sum = (int(Pchar.skill.Sailing) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_SAILING, 10);
 			AddMoneytoCharacter(Pchar, - Sum);
 			Diag.CurrentNode = "get_out";
@@ -723,9 +723,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Accuracy":
-			Sum = (sti(Pchar.skill.Accuracy) + 1) * 10000;
+			Sum = (int(Pchar.skill.Accuracy) + 1) * 10000;
 			dialog.text = DLG_TEXT[148]+Sum+DLG_TEXT[149];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[150];
 				Link.l1.go = "exit_Accuracy";		
@@ -740,9 +740,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Accuracy2":
-			Sum = (sti(Pchar.skill.Accuracy) + 1) * 10000;
+			Sum = (int(Pchar.skill.Accuracy) + 1) * 10000;
 			dialog.text = DLG_TEXT[153]+Sum+DLG_TEXT[154];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[155];
 				Link.l1.go = "exit_Accuracy";		
@@ -757,7 +757,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Accuracy1":
-			Sum = (sti(Pchar.skill.Accuracy) + 1) * 10000;
+			Sum = (int(Pchar.skill.Accuracy) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_ACCURACY, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -765,9 +765,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cannons":
-			Sum = (sti(Pchar.skill.Cannons) + 1) * 10000;
+			Sum = (int(Pchar.skill.Cannons) + 1) * 10000;
 			dialog.text = DLG_TEXT[158]+Sum+DLG_TEXT[159];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[160];
 				Link.l1.go = "exit_Cannons";		
@@ -782,9 +782,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cannons2":
-			Sum = (sti(Pchar.skill.Cannons) + 1) * 10000;
+			Sum = (int(Pchar.skill.Cannons) + 1) * 10000;
 			dialog.text = DLG_TEXT[163]+Sum+DLG_TEXT[164];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[165];
 				Link.l1.go = "exit_Cannons";		
@@ -799,7 +799,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cannons1":
-			Sum = (sti(Pchar.skill.Cannons) + 1) * 10000;
+			Sum = (int(Pchar.skill.Cannons) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_CANNONS, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -807,9 +807,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Grappling":
-			Sum = (sti(Pchar.skill.Grappling) + 1) * 10000;
+			Sum = (int(Pchar.skill.Grappling) + 1) * 10000;
 			dialog.text = DLG_TEXT[168]+Sum+DLG_TEXT[169];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[170];
 				Link.l1.go = "exit_Grappling";		
@@ -824,9 +824,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Grappling2":
-			Sum = (sti(Pchar.skill.Grappling) + 1) * 10000;
+			Sum = (int(Pchar.skill.Grappling) + 1) * 10000;
 			dialog.text = DLG_TEXT[173]+Sum+DLG_TEXT[174];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[175];
 				Link.l1.go = "exit_Grappling";		
@@ -841,7 +841,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Grappling1":
-			Sum = (sti(Pchar.skill.Grappling) + 1) * 10000;
+			Sum = (int(Pchar.skill.Grappling) + 1) * 10000;
             AddCharacterSkill(Pchar, SKILL_GRAPPLING, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -849,9 +849,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Repair":
-			Sum = (sti(Pchar.skill.Repair) + 1) * 10000;
+			Sum = (int(Pchar.skill.Repair) + 1) * 10000;
 			dialog.text = DLG_TEXT[178]+Sum+DLG_TEXT[179];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[180];
 				Link.l1.go = "exit_Repair";		
@@ -866,9 +866,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Repair2":
-			Sum = (sti(Pchar.skill.Repair) + 1) * 10000;
+			Sum = (int(Pchar.skill.Repair) + 1) * 10000;
 			dialog.text = DLG_TEXT[183]+Sum+DLG_TEXT[184];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[185];
 				Link.l1.go = "exit_Repair";		
@@ -883,7 +883,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Repair1":
-			Sum = (sti(Pchar.skill.Repair) + 1) * 10000;
+			Sum = (int(Pchar.skill.Repair) + 1) * 10000;
 			AddCharacterSkill(Pchar, SKILL_REPAIR, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";
@@ -891,9 +891,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Commerce":
-			Sum = (sti(Pchar.skill.Commerce) + 1) * 10000;
+			Sum = (int(Pchar.skill.Commerce) + 1) * 10000;
 			dialog.text = DLG_TEXT[188]+Sum+DLG_TEXT[189];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[190];
 				Link.l1.go = "exit_Commerce";		
@@ -908,9 +908,9 @@ void ProcessDialogEvent()
 		break;
 
 		case "Commerce2":
-			Sum = (sti(Pchar.skill.Commerce) + 1) * 10000;
+			Sum = (int(Pchar.skill.Commerce) + 1) * 10000;
 			dialog.text = DLG_TEXT[193]+Sum+DLG_TEXT[194];
-			if(makeint(Pchar.money) < Sum)
+			if(int(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[195];
 				Link.l1.go = "exit_Commerce";		
@@ -925,7 +925,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Commerce1":
-			Sum = (sti(Pchar.skill.Commerce) + 1) * 10000;
+			Sum = (int(Pchar.skill.Commerce) + 1) * 10000;
 			AddCharacterSkill(Pchar, SKILL_COMMERCE, 10);
 			AddMoneytoCharacter(Pchar, -Sum);
 			Diag.CurrentNode = "get_out";

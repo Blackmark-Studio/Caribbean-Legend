@@ -43,11 +43,11 @@ void REMOVE_BUTTON()  // продать
     {
 		if (BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) + targetValue);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + targetValue);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - targetValue);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - targetValue);
 		}
 		BuyOrSell = 0;
 	}
@@ -67,11 +67,11 @@ void ADD_BUTTON()  // купить
     {
   		if (BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + targetValue);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + targetValue);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - targetValue);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - targetValue);
 		}
 		BuyOrSell = 0;
 	}

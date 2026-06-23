@@ -127,7 +127,7 @@ void WildRose_Etap1_EscapeSlaves_6()
 	CharacterTurnToLoc(pchar, "reload", "reload2");
 	CharacterTurnToLoc(CharacterFromID("Mary"), "reload", "reload2");
 	
-	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_1", "mush_ctz_9", "man", "mushketer", sti(pchar.rank), PIRATE, 0, false, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_1", "mush_ctz_9", "man", "mushketer", int(pchar.rank), PIRATE, 0, false, "pirate"));
 	sld.name = StringFromKey("WildRose_2");
 	sld.lastname = StringFromKey("WildRose_3");
 	sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
@@ -139,7 +139,7 @@ void WildRose_Etap1_EscapeSlaves_6()
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 	LAi_ActorWaitDialog(pchar, sld);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_Rab", "Chard3", "man", "man", sti(pchar.rank), PIRATE, 0, false, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_Rab", "Chard3", "man", "man", int(pchar.rank), PIRATE, 0, false, "pirate"));
 	sld.name = StringFromKey("WildRose_4");
 	sld.lastname = StringFromKey("WildRose_5");
 	ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "reload", "reload2");
@@ -148,7 +148,7 @@ void WildRose_Etap1_EscapeSlaves_6()
 	
 	for (i=2; i<=5; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_"+i, "citiz_4"+(rand(8)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_"+i, "citiz_4"+(rand(8)+1), "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 		ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "reload", "reload2");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, CharacterFromID("WildRose_Naemnik_1"), "", -1);
@@ -194,7 +194,7 @@ void WildRose_Etap1_EscapeSlaves_8(string qName)
 	DoQuestCheckDelay("hide_weapon", 1.2);
 	
 	// sld = CharacterFromID("WildRose_Naemnik_Rab");
-	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_Rab_mushketer", "Chard3_mush", "man", "mushketer", sti(pchar.rank), PIRATE, -1, false, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Naemnik_Rab_mushketer", "Chard3_mush", "man", "mushketer", int(pchar.rank), PIRATE, -1, false, "pirate"));
 	sld.name = StringFromKey("WildRose_4");
 	sld.lastname = StringFromKey("WildRose_5");
 	GiveItem2Character(sld, "mushket1");
@@ -795,7 +795,7 @@ void WildRose_Etap2_IslandOfJustice_13_2()
 	sld = CharacterFromID("Chimiset");
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	
-	SetFunctionTimerConditionParam("WildRose_Etap2_IslandOfJustice_14", 0, 0, 0, sti(GetTime() + 5), false);
+	SetFunctionTimerConditionParam("WildRose_Etap2_IslandOfJustice_14", 0, 0, 0, int(GetTime() + 5), false);
 	
 	chrDisableReloadToLocation = false;
 	DeleteAttribute(pchar, "GenQuest.BlockTalkSelf");
@@ -2062,7 +2062,7 @@ void WildRose_Etap6_LifeAfterDeath_12(string qName)
 	}	
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Alonso"))
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Alonso", "Alonso", "man", "man", int(pchar.rank), FRANCE, -1, false, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		GiveItem2Character(sld, "blade_10");
@@ -2193,7 +2193,7 @@ void WildRose_Etap6_LifeAfterDeath_18(string qName)
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", 3, 0);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("WildRose_EnemySoldier_0", "citiz_49", "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("WildRose_EnemySoldier_0", "citiz_49", "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 	ChangeCharacterAddressGroup(sld, "Shore8", "goto", "goto4");
 	LAi_SetActorType(sld);
 	LAi_ActorRunToLocation(sld, "reload", "reload1", "none", "", "", "OpenTheDoors", -1);
@@ -2326,7 +2326,7 @@ void WildRose_Etap6_LifeAfterDeath_23(string qName)
 	}
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Alonso"))
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Prisoner", "citiz_35", "man", "prisoner", sti(pchar.rank), FRANCE, 0, false, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Prisoner", "citiz_35", "man", "prisoner", int(pchar.rank), FRANCE, 0, false, "quest"));
 	}
 	sld.model.animation = "prisoner";
 	Characters_RefreshModel(sld);
@@ -2576,11 +2576,11 @@ void WildRose_Etap6_LifeAfterDeath_29()
 			sld = &Characters[idx];
 			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_BadEnd"))
 			{
-				if (!CharacterIsHere(sld)) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
+				if (!CharacterIsHere(sld.id)) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
 			}
 			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
 			{
-				if (!CharacterIsHere(sld)) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
+				if (!CharacterIsHere(sld.id)) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
 			}
 		}
 	}
@@ -2618,8 +2618,8 @@ void WildRose_Etap6_LifeAfterDeath_29()
 	pchar.OfficerAttRange = 35.0;
 	OfficersFollow();
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	object aCrewSoldier[10];
 	GenerateCrew(pchar, "soldier", &aCrewSoldier);
 	string model;
@@ -2879,7 +2879,7 @@ void WildRose_Etap6_LifeAfterDeath_39()
 	sld.DontHitInStorm = true;
 	sld.AlwaysSandbankManeuver = true;
 	sld.SinkTenPercent = false;
-	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+	Ship_SetTaskAttack(SECONDARY_TASK, int(sld.index), int(pchar.index));
 	sld.Ship.Mode = "pirate";
 	SetCharacterGoods(sld, GOOD_SANDAL, 200 + rand(20));
 	SetCharacterGoods(sld, GOOD_OIL, 300 + rand(20));
@@ -2998,7 +2998,7 @@ void WildRose_Test()
 	// Мэри:
 	pchar.questTemp.LSC.Mary_officer = "true";
 	sld = characterFromId("Mary");
-	sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+	sld.quest.OfficerPrice = int(pchar.rank) * 500;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.CompanionDisable = true;
 	sld.loyality = MAX_LOYALITY;

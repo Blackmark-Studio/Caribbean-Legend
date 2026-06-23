@@ -33,7 +33,7 @@ void StealthCheckNight_Node3()
 			// ПРОВЕРКА. Шанс успеха: 20+отношения с контрабандистами При успехе результат 1 и +16, при провале результат 2 и -9"
 			reaction = SF_AddReaction("c", "", "", SF_Icon("fractions", "smugglers"));
 			SF_SetChance(reaction, 20, "base");
-			SF_SetChance(reaction, sti(pchar.questTemp.Contraband.relation), "relationshipSmugglers");
+			SF_SetChance(reaction, int(pchar.questTemp.Contraband.relation), "relationshipSmugglers");
 			SF_SetResults(reaction, -9, 16);
 		break;
 		case "b":

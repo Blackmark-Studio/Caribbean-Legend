@@ -76,11 +76,11 @@ void LootItemsFromContainer(ref Items, ref LootBox, ref container)
 		if (itemName == "" || itemName == "unarmed" ) continue;
 
 		if (!CheckAttribute(&LootBox, "items." + itemName)) LootBox.items.(itemName) = 0;
-		LootBox.items.(itemName) = makeint(sti(LootBox.items.(itemName)) + makeint(GetAttributeValue(item)));
+		LootBox.items.(itemName) = int(int(LootBox.items.(itemName)) + int(GetAttributeValue(item)));
 	}
 
 	if (CheckAttribute(container, "money")) {
-		LootBox.money = sti(LootBox.money) + sti(container.money);
+		LootBox.money = int(LootBox.money) + int(container.money);
 		DeleteAttribute(container, "money");
 	}
 

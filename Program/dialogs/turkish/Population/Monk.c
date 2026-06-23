@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
+				if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && 7-int(RealShips[int(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
 					dialog.text = "İyi günler evladım. Senden bir iyilik isteyeceğim. Elbette karşılığını ödeyeceğim.";
 					link.l1 = "Sizi dinliyorum, baba. Ne istiyorsunuz?";
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
 				{
 					dialog.text = "Selam, evladım. Senin bir kaptan olduğunu anlıyorum. O halde sana bir teklifim var.";
 					link.l1 = "Dinliyorum, baba.";
@@ -74,12 +74,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("Sana bir sorum var, baba.","Bilgiye ihtiyacım var.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
 				{
 					link.l3 = "Baba, gemimde insanlar var. Hem Hristiyanlar hem de vaftiz edilmemiş putperestler. Putperestleri vaftiz etmeni, Hristiyanlara ise komünyon vermeni istiyorum. Sonrasında hepsini Tanrı'nın ve Kilisemizin yüceliği için özgür bırakacağım.";
 					link.l3.go = "slaves";
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Babacığım, gemimi kutsamanı ve mürettebatım için ayin düzenlemeni istiyorum. Bunun bedeli ne kadar olur?";
 					link.l4.go = "shipshine";
@@ -96,12 +96,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("Sana bir sorum var, baba.","Bilgiye ihtiyacım var.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
 					{
 						link.l3 = "Baba, gemimde insanlar var. Hem Hristiyan hem de vaftiz edilmemiş putperest kölelerim var. Putperestleri vaftiz etmeni ve Hristiyanlara komünyon vermeni istiyorum. Sonrasında, hepsini Tanrı'nın ve Kilisemizin yüceliği için özgür bırakacağım.";
 						link.l3.go = "slaves";
 					}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "Baba, gemimi kutsamanı ve mürettebatım için ayin düzenlemeni istiyorum. Bunun bedeli ne olur?";
 					link.l4.go = "shipshine";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "check":
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
 			{
 				pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
 				pchar.GenQuest.Monkletter.StartCity = npchar.city;//город квестодателя
@@ -125,11 +125,11 @@ void ProcessDialogEvent()
 				npchar.quest.monkletter = "true";
 				break;
 			}
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && sti(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && int(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
 			{
 				pchar.GenQuest.Churchbooks.StartCity = npchar.city;//город квестодателя
 				pchar.GenQuest.Churchbooks.Nation = npchar.nation;
-				dialog.text = "Oğlum, acil bir konuda bana yardım etmeye razı olur musun? Kilisemizde, ihtiyacı olan herkese verdiğimiz İncil ve dua kitapları tükenmek üzere\nEn yakın kolonilere yelken açabilir misin "+NationNameGenitive(sti(npchar.nation))+", yerel kiliseden birkaç İncil ve dua kitabı alıp buraya getirebilir misin? Ve bunu bir ay içinde yapmaya çalış, elimizde fazla kalmadı.";
+				dialog.text = "Oğlum, acil bir konuda bana yardım etmeye razı olur musun? Kilisemizde, ihtiyacı olan herkese verdiğimiz İncil ve dua kitapları tükenmek üzere\nEn yakın kolonilere yelken açabilir misin "+NationNameGenitive(int(npchar.nation))+", yerel kiliseden birkaç İncil ve dua kitabı alıp buraya getirebilir misin? Ve bunu bir ay içinde yapmaya çalış, elimizde fazla kalmadı.";
 				link.l1 = "Kilisenize memnuniyetle yardım ederim. Bu kitapları herhangi bir papazdan alabilir miyim?";
 				link.l1.go = "Churchbooks";
 				link.l2 = "Bunu memnuniyetle yaparım baba, ama şu anda yapamam.";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "Paralar için teşekkür ederim, evladım! Onlar iyi bir amaç için kullanılacak!";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_2":
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "Sana teşekkür ediyorum, evladım. Bu miktar gerçekten de cemaatimizin misyonuna büyük katkı sağlayacak. Tanrı seni korusun!";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_3":
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "Böylesine cömert olacağını hayal bile edemezdim, evladım! Bir sonraki mektubumda seni piskoposumuza mutlaka yazacağım ve her gün senin için dua edeceğiz! Sana hayır duamı gönderiyor ve paranı minnetle kabul ediyorum!";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 40);
 				AddCrewMorale(pchar, 3);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 1);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 1);
 			}
 			else
 			{
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_4":
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				AddMoneyToCharacter(pchar, -10000);
 				dialog.text = "Ne... Doğru mu duydum? Gerçekten on bin peso bağışlayacak mısınız!? Sizi kutsuyorum ve paranızı minnetle kabul ediyorum. Bir sonraki mektubumda piskoposumuza sizden bahsedeceğim ve her gün sizin için dua edeceğiz! Bu, Kilise için çok büyük bir yardım!";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 60);
 				AddCrewMorale(pchar, 5);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 2);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 2);
 				ChangeCrewExp(pchar, "Sailors", 5);
 				ChangeCrewExp(pchar, "Cannoners", 5);
 				ChangeCrewExp(pchar, "Soldiers", 5);
@@ -295,19 +295,19 @@ void ProcessDialogEvent()
 				break;
 				case 2:
 					sTemp = "I have two ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
 					sTemp = "I have three ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
 					sTemp = "I have four ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
 					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "Her şey, filonuzdaki toplam gemi sayısına ve onların büyüklüğüne bağlı.";
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_1":
-			dialog.text = "Sana pahalıya patlar "+FindRussianMoneyString(sti(pchar.GenQuest.Shipshine.Money))+", oğlum.";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Shipshine.Money))
+			dialog.text = "Sana pahalıya patlar "+FindRussianMoneyString(int(pchar.GenQuest.Shipshine.Money))+", oğlum.";
+			if (int(pchar.money) >= int(pchar.GenQuest.Shipshine.Money))
 			{
 				link.l1 = "Bu parayı ödeyebilirim, baba. Alın paranızı.";
 				link.l1.go = "shipshine_2";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_2":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Shipshine.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Shipshine.Money));
 			dialog.text = "Pekâlâ, evladım. Kutsal kapları toplayayım, sonra limana gidelim.";
 			link.l1 = "Beni takip et, baba.";
 			link.l1.go = "shipshine_3";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		
 		case "capellan_1":
 			dialog.text = "Neden mi, bu oldukça açık. Sizin ve mürettebatınız için Tanrı'ya dua ederim, her gün ayin yaparım, adamlarınıza kutsama veririm ve savaş öncesi günah çıkartırım. Tanrı'nın sözü, adamlarınızın ellerine ve ruhlarına güç verir. Mürettebatınız düzenli olarak ayin ve günah çıkarma fırsatı bulacak. İnanın bana, lütuf halindeki bir denizci, imansız birinin korkuya kapılacağı durumlarda bile dimdik durur. Kendim için fazla bir şey istemem: memleketimdeki kiliseme elli bin peso tek seferlik bir bağış, kamarada basit bir ranza ve subaylarınızla aynı sofrada yemek. Hepsi bu.";
-			if (sti(pchar.money) >= 50000)
+			if (int(pchar.money) >= 50000)
 			{
 				link.l1 = "İlginç... Haklısınız, iyi bir kaptan sadece tayfasının bedenine değil, ruhuna da önem vermeli. Gemimize hoş geldiniz, baba!";
 				link.l1.go = "capellan_2";
@@ -420,11 +420,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "Benim "+GetSexPhrase("oğul","kızım")+",   oraya   gitmem   gerekiyor "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" bu açık "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", için "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". Sana ödeme yapacağım "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" bunun için. Ne dersin?";
+				dialog.text = "Benim "+GetSexPhrase("oğul","kızım")+",   oraya   gitmem   gerekiyor "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" bu açık "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", için "+FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty))+". Sana ödeme yapacağım "+FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money))+" bunun için. Ne dersin?";
 			}
 			else
 			{
-				dialog.text = "Benim "+GetSexPhrase("oğul","kızım")+", Tanrı'nın yolları gizemlidir ve bu yüzden güvenilir bir kaptan arıyorum. Beni  götürebilir misin? "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+",   üzerinde "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? Düşmanlarımız asla uyumadığı için bunun ateşli bir Gehenna'ya yolculuk gibi olduğunu anlıyorum. Ve senin İsa Mesih olmadığını da biliyorum, ama ben de bir havari değilim, bu yüzden biraz birikmiş param var. Olur mu "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" senin için yeterli olur mu?";
+				dialog.text = "Benim "+GetSexPhrase("oğul","kızım")+", Tanrı'nın yolları gizemlidir ve bu yüzden güvenilir bir kaptan arıyorum. Beni  götürebilir misin? "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+",   üzerinde "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? Düşmanlarımız asla uyumadığı için bunun ateşli bir Gehenna'ya yolculuk gibi olduğunu anlıyorum. Ve senin İsa Mesih olmadığını da biliyorum, ama ben de bir havari değilim, bu yüzden biraz birikmiş param var. Olur mu "+FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money))+" senin için yeterli olur mu?";
 			}
 			link.l1 = "Katılıyorum, Peder.";
 			link.l1.go = "passenger_1";
@@ -486,15 +486,15 @@ void ProcessDialogEvent()
 			AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			AddQuestUserData(sTitle, "sCity", sTemp);
-			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty)));
+			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty)));
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money)));
-			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money)));
+			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money)));
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			pchar.quest.Monkpassenger.win_condition.l1 = "location";
 			pchar.quest.Monkpassenger.win_condition.l1.location = pchar.GenQuest.Monkpassenger.City+"_town";
 			pchar.quest.Monkpassenger.function = "Monkpassenger_complete";
-			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, sti(pchar.GenQuest.Monkpassenger.DaysQty), false);
+			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, int(pchar.GenQuest.Monkpassenger.DaysQty), false);
 		break;
 		
 		case "passenger_3":
@@ -518,9 +518,9 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
 				AddCharacterExpToSkill(pchar, "Sneak", 50);
-				TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Monkpassenger.Money));
+				TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Monkpassenger.Money));
 			}
-			else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Monkpassenger.Money));
+			else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Monkpassenger.Money));
 			sTitle = npchar.index+"Citizpassenger";
 			AddQuestRecordEx(sTitle, "Citizpassenger", "3");
 			CloseQuestHeader(sTitle);
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Churchbooks":
-			dialog.text = "Evet. Onları herhangi bir kolonide bulabilirsin "+NationNameGenitive(sti(npchar.nation))+". Bulduğun tüm kitapları kilisedeki papazımıza getir. Tanrı seni korusun!";
+			dialog.text = "Evet. Onları herhangi bir kolonide bulabilirsin "+NationNameGenitive(int(npchar.nation))+". Bulduğun tüm kitapları kilisedeki papazımıza getir. Tanrı seni korusun!";
 			link.l1 = "Teşekkürler! Kitaplarınız yakında elinize ulaşacak.";
 			link.l1.go = "Churchbooks_1";
 		break;
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			ReOpenQuestHeader("Churchbooks");
 			AddQuestRecord("Churchbooks", "1");
-			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(sti(pchar.GenQuest.Churchbooks.Nation)));
+			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(int(pchar.GenQuest.Churchbooks.Nation)));
 			AddQuestUserData("Churchbooks", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity));
 			SetFunctionTimerCondition("Churchbooks_Over", 0, 0, 30, false);
 			pchar.GenQuest.Churchbooks = "go";

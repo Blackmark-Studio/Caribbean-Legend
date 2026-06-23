@@ -84,17 +84,17 @@ void ProcessDialogEvent()
 		    if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_A") 
 			{
 				// карты не было
-				dialog.text = "Капитан! Бросьте печалиться! Раз уж всё равно было миром не уйти, в суматохе мы решили заскочить к местному ростовщику и слегка облегчили его сундуки. Вот Ваша доля - " + sti(pchar.questTemp.ReasonToFast.p9) + " песо...";
+				dialog.text = "Капитан! Бросьте печалиться! Раз уж всё равно было миром не уйти, в суматохе мы решили заскочить к местному ростовщику и слегка облегчили его сундуки. Вот Ваша доля - " + int(pchar.questTemp.ReasonToFast.p9) + " песо...";
 			}
 			if(pchar.questTemp.ReasonToFast == "speakSuccess_chain_B")
 			{
 				// карту отобрали
 				GiveItem2Character(pchar, pchar.questTemp.ReasonToFast.p6);
-				dialog.text = "Капитан! Бросьте печалиться! Раз уж всё равно было миром не уйти, в суматохе мы решили заскочить к местному ростовщику и слегка облегчили его сундуки. Да ещё и клинок приличный прихватили из ломбардного шкафа. Вот Ваша доля - " + sti(pchar.questTemp.ReasonToFast.p9) + " песо и клинок...";
+				dialog.text = "Капитан! Бросьте печалиться! Раз уж всё равно было миром не уйти, в суматохе мы решили заскочить к местному ростовщику и слегка облегчили его сундуки. Да ещё и клинок приличный прихватили из ломбардного шкафа. Вот Ваша доля - " + int(pchar.questTemp.ReasonToFast.p9) + " песо и клинок...";
 			}		
 			link.l1 = "Весьма кстати. Молодцы!";
 			link.l1.go = "On_MyShip_Deck_End";
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.ReasonToFast.p9));			
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.ReasonToFast.p9));
 			pchar.Ship.Crew.Morale = MORALE_MAX;
 			chrDisableReloadToLocation = false; // Откроем выход
 			AddQuestRecord("ReasonToFast", "17");		
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 			LAi_SetCitizenType(NPChar); // Чтоб по палубе ходил
 			
 			NPChar = GetRealShip(GetCharacterShipType(CharacterFromID("MaryCelesteCapitan")));
-			NPChar.TurnRate = sti(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
+			NPChar.TurnRate = int(PChar.QuestTemp.MaryCeleste.TurnRate); // Вернем манёвренность, для интерфейса
 			
 			chrDisableReloadToLocation = false; // Откроем выход
 			

@@ -462,7 +462,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_3].Weight		    	= Cannon[CANNON_TYPE_CANNON_LBS3].Weight;
 	Goods[GOOD_CANNON_3].FireRange	    	= Cannon[CANNON_TYPE_CANNON_LBS3].FireRange;
 	Goods[GOOD_CANNON_3].DamageMultiply		= Cannon[CANNON_TYPE_CANNON_LBS3].DamageMultiply;
-	Goods[GOOD_CANNON_3].ReloadTime			= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS3]));
+	Goods[GOOD_CANNON_3].ReloadTime			= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS3]));
 	Goods[GOOD_CANNON_3].Units				= 1;
 	Goods[GOOD_CANNON_3].AfraidWater		= 0;
 	Goods[GOOD_CANNON_3].type				= T_TYPE_CANNONS;
@@ -478,7 +478,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_6].Weight		    	= Cannon[CANNON_TYPE_CANNON_LBS6].Weight;
 	Goods[GOOD_CANNON_6].FireRange	    	= Cannon[CANNON_TYPE_CANNON_LBS6].FireRange;
 	Goods[GOOD_CANNON_6].DamageMultiply		= Cannon[CANNON_TYPE_CANNON_LBS6].DamageMultiply;
-	Goods[GOOD_CANNON_6].ReloadTime			= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS6]));
+	Goods[GOOD_CANNON_6].ReloadTime			= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS6]));
 	Goods[GOOD_CANNON_6].Units				= 1;
 	Goods[GOOD_CANNON_6].AfraidWater		= 0;
 	Goods[GOOD_CANNON_6].type				= T_TYPE_CANNONS;
@@ -494,7 +494,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_8].Weight		    	= Cannon[CANNON_TYPE_CANNON_LBS8].Weight;
 	Goods[GOOD_CANNON_8].FireRange	    	= Cannon[CANNON_TYPE_CANNON_LBS8].FireRange;
 	Goods[GOOD_CANNON_8].DamageMultiply		= Cannon[CANNON_TYPE_CANNON_LBS8].DamageMultiply;
-	Goods[GOOD_CANNON_8].ReloadTime			= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS8]));
+	Goods[GOOD_CANNON_8].ReloadTime			= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS8]));
 	Goods[GOOD_CANNON_8].Units				= 1;
 	Goods[GOOD_CANNON_8].AfraidWater		= 0;
 	Goods[GOOD_CANNON_8].type				= T_TYPE_CANNONS;
@@ -510,7 +510,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_12].Weight			= Cannon[CANNON_TYPE_CANNON_LBS12].Weight;
 	Goods[GOOD_CANNON_12].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS12].FireRange;
 	Goods[GOOD_CANNON_12].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS12].DamageMultiply;
-	Goods[GOOD_CANNON_12].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS12]));
+	Goods[GOOD_CANNON_12].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS12]));
 	Goods[GOOD_CANNON_12].Units				= 1;
 	Goods[GOOD_CANNON_12].AfraidWater		= 0;
 	Goods[GOOD_CANNON_12].type				= T_TYPE_CANNONS;
@@ -531,7 +531,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_16].NotSale			= 0;
 	Goods[GOOD_CANNON_16].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS16].FireRange;
 	Goods[GOOD_CANNON_16].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS16].DamageMultiply;
-	Goods[GOOD_CANNON_16].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS16]));
+	Goods[GOOD_CANNON_16].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS16]));
 	Goods[GOOD_CANNON_16].Norm          	= 20; 
 	Goods[GOOD_CANNON_16].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_16].SmallNorm			= 1.0;
@@ -547,7 +547,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_18].NotSale			= 0;
 	Goods[GOOD_CANNON_18].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS18].FireRange;
 	Goods[GOOD_CANNON_18].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS18].DamageMultiply;
-	Goods[GOOD_CANNON_18].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS18]));
+	Goods[GOOD_CANNON_18].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS18]));
 	Goods[GOOD_CANNON_18].Norm          	= 20; 
 	Goods[GOOD_CANNON_18].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_18].SmallNorm			= 1.0;
@@ -563,7 +563,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_20].NotSale			= 0;
 	Goods[GOOD_CANNON_20].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS20].FireRange;
 	Goods[GOOD_CANNON_20].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS20].DamageMultiply;
-	Goods[GOOD_CANNON_20].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS20]));
+	Goods[GOOD_CANNON_20].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS20]));
 	Goods[GOOD_CANNON_20].Norm          	= 15; 
 	Goods[GOOD_CANNON_20].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_20].SmallNorm			= 0.5;
@@ -579,7 +579,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_24].NotSale   		= 0;
 	Goods[GOOD_CANNON_24].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS24].FireRange;
 	Goods[GOOD_CANNON_24].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS24].DamageMultiply;
-	Goods[GOOD_CANNON_24].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS24]));
+	Goods[GOOD_CANNON_24].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS24]));
 	Goods[GOOD_CANNON_24].Norm          	= 15; 
 	Goods[GOOD_CANNON_24].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_24].SmallNorm			= 1.0;
@@ -595,7 +595,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_32].NotSale			= 0;
 	Goods[GOOD_CANNON_32].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS32].FireRange;
 	Goods[GOOD_CANNON_32].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS32].DamageMultiply;
-	Goods[GOOD_CANNON_32].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS32]));
+	Goods[GOOD_CANNON_32].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS32]));
 	Goods[GOOD_CANNON_32].Norm          	= 10; 
 	Goods[GOOD_CANNON_32].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_32].SmallNorm			= 1.0;
@@ -611,7 +611,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_36].NotSale			= 1;
 	Goods[GOOD_CANNON_36].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS36].FireRange;
 	Goods[GOOD_CANNON_36].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS36].DamageMultiply;
-	Goods[GOOD_CANNON_36].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS36]));
+	Goods[GOOD_CANNON_36].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS36]));
 	Goods[GOOD_CANNON_36].Norm          	= 10; 
 	Goods[GOOD_CANNON_36].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_36].SmallNorm			= 1.0;
@@ -628,7 +628,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_42].NotSale			= 1;
 	Goods[GOOD_CANNON_42].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS42].FireRange;
 	Goods[GOOD_CANNON_42].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS42].DamageMultiply;
-	Goods[GOOD_CANNON_42].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS42]));
+	Goods[GOOD_CANNON_42].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS42]));
 	Goods[GOOD_CANNON_42].Norm          	= 10; 
 	Goods[GOOD_CANNON_42].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_42].SmallNorm			= 1.0;
@@ -645,7 +645,7 @@ void InitGoods()
 	Goods[GOOD_CULVERINE_8].NotSale  		= 0;
 	Goods[GOOD_CULVERINE_8].FireRange		= Cannon[CANNON_TYPE_CULVERINE_LBS8].FireRange;
 	Goods[GOOD_CULVERINE_8].DamageMultiply	= Cannon[CANNON_TYPE_CULVERINE_LBS8].DamageMultiply;
-	Goods[GOOD_CULVERINE_8].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS8]));
+	Goods[GOOD_CULVERINE_8].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS8]));
 	Goods[GOOD_CULVERINE_8].Norm          	= 30; 
 	Goods[GOOD_CULVERINE_8].MediumNorm		= 1.0;
 	Goods[GOOD_CULVERINE_8].SmallNorm		= 1.0;
@@ -661,7 +661,7 @@ void InitGoods()
 	Goods[GOOD_CULVERINE_18].NotSale 		= 0;
 	Goods[GOOD_CULVERINE_18].FireRange		= Cannon[CANNON_TYPE_CULVERINE_LBS18].FireRange;
 	Goods[GOOD_CULVERINE_18].DamageMultiply	= Cannon[CANNON_TYPE_CULVERINE_LBS18].DamageMultiply;
-	Goods[GOOD_CULVERINE_18].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS18]));
+	Goods[GOOD_CULVERINE_18].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS18]));
 	Goods[GOOD_CULVERINE_18].Norm          	= 20; 
 	Goods[GOOD_CULVERINE_18].MediumNorm		= 1.0;
 	Goods[GOOD_CULVERINE_18].SmallNorm		= 1.0;
@@ -677,7 +677,7 @@ void InitGoods()
 	Goods[GOOD_CULVERINE_36].NotSale 		= 1;
 	Goods[GOOD_CULVERINE_36].FireRange		= Cannon[CANNON_TYPE_CULVERINE_LBS36].FireRange;
 	Goods[GOOD_CULVERINE_36].DamageMultiply	= Cannon[CANNON_TYPE_CULVERINE_LBS36].DamageMultiply;
-	Goods[GOOD_CULVERINE_36].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS36]));
+	Goods[GOOD_CULVERINE_36].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CULVERINE_LBS36]));
 	Goods[GOOD_CULVERINE_36].Norm          	= 10; 
 	Goods[GOOD_CULVERINE_36].MediumNorm		= 1.0;
 	Goods[GOOD_CULVERINE_36].SmallNorm		= 1.0;
@@ -695,7 +695,7 @@ void InitGoods()
 	Goods[GOOD_CANNON_48].NotGenerate		= 1;
 	Goods[GOOD_CANNON_48].FireRange		    = Cannon[CANNON_TYPE_CANNON_LBS48].FireRange;
 	Goods[GOOD_CANNON_48].DamageMultiply	= Cannon[CANNON_TYPE_CANNON_LBS48].DamageMultiply;
-	Goods[GOOD_CANNON_48].ReloadTime		= sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS48]));
+	Goods[GOOD_CANNON_48].ReloadTime		= int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS48]));
 	Goods[GOOD_CANNON_48].Norm          	= 10; 
 	Goods[GOOD_CANNON_48].MediumNorm		= 1.0;
 	Goods[GOOD_CANNON_48].SmallNorm			= 1.0;

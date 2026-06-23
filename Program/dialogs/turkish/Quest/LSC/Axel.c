@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Seninle konuşmak istemiyorum, dostum. Masum insanlara sebepsiz yere saldırıyor ve onları kavgaya kışkırtıyorsun. Defol git!";
 				link.l1 = "Hm...";
@@ -158,13 +158,7 @@ void ProcessDialogEvent()
 			link.l1 = "";
 			link.l1.go = "";
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();

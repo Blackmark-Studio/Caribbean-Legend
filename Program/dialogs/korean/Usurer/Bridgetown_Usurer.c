@@ -20,10 +20,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "알겠습니다. 창고에 짐을 싣고 남은 공간이 얼마나 되는지 세어보겠습니다. 그리고 부족한 양을 계산한 뒤, 필요하다면 다시 찾아오겠습니다.";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
-			pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+			pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
 			AddQuestRecord("Holl_Gambit", "2-13");
 			DelLandQuestMark(npchar);
-			if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+			if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
 			{
 			AddQuestRecord("Holl_Gambit", "2-6");
 			pchar.questTemp.HWIC.Eng = "SeekVanBerg";
@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DelMapQuestMarkCity("Bridgetown");
 				pchar.quest.VanBergAttack_Check.win_condition.l1 = "MapEnter";
 				pchar.quest.VanBergAttack_Check.function = "VanBergAttackCheck";
-				//if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) AddDialogExitQuestFunction("FailVanBergInWorld");
+				//if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) AddDialogExitQuestFunction("FailVanBergInWorld");
 				//else AddDialogExitQuestFunction("CreateVanBergInWorld");
 			}
 		break;

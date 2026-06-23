@@ -105,14 +105,14 @@ void DiegoDeLanda_Leaving_End_3(string qName)
 	LAi_SetPlayerType(pchar);
 	chrDisableReloadToLocation = false;
 	LAi_LocationFightDisable(loadedLocation, false);
-	if (sti(pchar.questTemp.ISawDiegoDeLanda) == 2)
+	if (int(pchar.questTemp.ISawDiegoDeLanda) == 2)
 	{
 		SetQuestHeader("SixCaptains");
 		AddQuestRecord("SixCaptains", "1");
 		AddQuestUserData("SixCaptains", "sSex", GetSexPhrase("","а"));
 		CloseQuestHeader("SixCaptains");
 	}
-	if (sti(pchar.questTemp.ISawDiegoDeLanda) == 3)
+	if (int(pchar.questTemp.ISawDiegoDeLanda) == 3)
 	{
 		if (CharacterIsAlive("DiegoDeLanda"))
 		{

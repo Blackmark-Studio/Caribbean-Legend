@@ -148,7 +148,7 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 	Group_AddCharacter("DonovanGroup", "Donovan");
 	Group_SetGroupCommander("DonovanGroup", "Donovan");
 	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
-	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 2)
+	if (int(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 2)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("DonovanHelper", "off_eng_2", "man", "man", 25, ENGLAND, 2, true, "quest"));
 		FantomMakeSmallSailor(sld, SHIP_GALEON_H, "", CANNON_TYPE_CANNON_LBS36, 80, 65, 75, 80, 65);
@@ -345,7 +345,7 @@ void Saga_CreateTrapBandos(string qName)//ловушка - бандиты у м�
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
-	int n = makeint(MOD_SKILL_ENEMY_RATE/3);
+	int n = int(MOD_SKILL_ENEMY_RATE/3);
 	int iRank = 20+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = 55;
 	for (i=1; i<=3+n; i++)
@@ -456,7 +456,7 @@ void Dolly_TeleportContinue_3(string qName)
 	locCameraTarget(tempchar);
 	float x, y, z;
 	GetCharacterPos(PChar,&x,&y,&z);
-	locCameraFromToPos(stf(Camera.Pos.x), stf(Camera.Pos.y), stf(Camera.Pos.z), true, x, y, z);
+	locCameraFromToPos(float(Camera.Pos.x), float(Camera.Pos.y), float(Camera.Pos.z), true, x, y, z);
 	
 	switch (sGlobalTemp)
 	{
@@ -513,10 +513,10 @@ void Dolly_TeleportContinue_4(string qName)
 
 void Dolly_TeleportConsequences() // последствия телепорта
 {
-	Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/3; // 2/3 жизни сносим
+	Pchar.chr_ai.hp = float(Pchar.chr_ai.hp)/3; // 2/3 жизни сносим
 	AddCharacterHealth(pchar, -45); //сносим здоровье
 	pchar.chr_ai.poison = 500; // травим
-	if (stf(pchar.Health.HP) <= 1) LAi_KillCharacter(pchar);
+	if (float(pchar.Health.HP) <= 1) LAi_KillCharacter(pchar);
 }
 //<-- телепортация
 
@@ -605,7 +605,7 @@ void LSC_CreateCrabGuard() // крабик-охранник
 	sld.lastname = StringFromKey("Saga_17");
 	GiveItem2Character(sld, "unarmed");
 	EquipCharacterbyItem(sld, "unarmed");
-	if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE/2.5);
+	if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = float(MOD_SKILL_ENEMY_RATE/2.5);
 	sld.animal = true;
 	SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 	LAi_SetActorType(sld);
@@ -716,7 +716,7 @@ void LSC_GotoPrison(string qName)// в тюрьму на Тартарус
 			boxItems.(sName) = PChar.items.(sName);
 		}
 	}
-	location.private1.money = sti(PChar.money);	
+	location.private1.money = int(PChar.money);
 	location.private1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
 	RemoveAllCharacterItems(PChar, true);
 	RemoveItems(pchar, "letter_svenson", 1);
@@ -1586,7 +1586,7 @@ void LSC_MaryTavern(string qName) // посидеть в таверне с Мэ�
 void LSC_MaryLoveWaitTime() // перемотка времени
 {
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 7;
 	if (iTime < 7) iAddTime = 7 - iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24  + 7 - iTime;
@@ -1829,7 +1829,7 @@ void LSC_DrinkGo(string qName) // бухалово
 	DoQuestFunctionDelay("LSC_DrinkResult", 32.5);
 	if(!IsEquipCharacterByArtefact(pchar, "totem_01"))
 	{
-		if (sti(pchar.questTemp.LSC.Drink.Chance) > 80) pchar.questTemp.LSC.Drink.Result = 1;
+		if (int(pchar.questTemp.LSC.Drink.Chance) > 80) pchar.questTemp.LSC.Drink.Result = 1;
 		else pchar.questTemp.LSC.Drink.Result = 2;
 	}
 	else pchar.questTemp.LSC.Drink.Result = 0;
@@ -1843,7 +1843,7 @@ void LSC_DrinkResult(string qName) // итоги
 	ref chr = characterFromId("LSC_Leonard");
 	LAi_SetActorType(chr);
 	LAi_Fade("", "");
-	switch (sti(pchar.questTemp.LSC.Drink.Result))
+	switch (int(pchar.questTemp.LSC.Drink.Result))
 	{
 		case 0: // тотем помог
 			sld = characterFromId("Facio");
@@ -1881,7 +1881,7 @@ void LSC_DrinkResult_1(string qName) // итоги-1
 	LAi_SetPlayerType(pchar);
 	ref chr = characterFromId("Carpentero");
 	sld = characterFromId("Facio");
-	if (sti(pchar.questTemp.LSC.Drink.Result) < 2)
+	if (int(pchar.questTemp.LSC.Drink.Result) < 2)
 	{
 		LAi_SetLayType(sld);
 		ChangeCharacterAddressGroup(sld, "FleuronTavern", "quest", "lay1");
@@ -2000,7 +2000,7 @@ void LSC_CheckOlePearl()
 	if (CheckAttribute(sld, "pearl_date") && GetNpcQuestPastDayParam(sld, "pearl_date") >= 20)
 	{
 		chrDisableReloadToLocation = true;//закрыть локацию
-		if (sti(sld.quest.pearlqty) < 11) sld.dialog.currentnode = "givemepearl";
+		if (int(sld.quest.pearlqty) < 11) sld.dialog.currentnode = "givemepearl";
 		else sld.dialog.currentnode = "mother";
 		GetCharacterPos(pchar, &locx, &locy, &locz);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz));
@@ -2055,7 +2055,7 @@ void LSC_ReturnJackmanAttack(string qName) //наймиты Джекмана а�
 	Group_FindOrCreateGroup("Jkm_Attack");
     for (int i = 1; i <= 3; i++)
     {
-		switch (sti(RealShips[sti(pchar.ship.type)].Class))
+		switch (int(RealShips[int(pchar.ship.type)].Class))
 		{
 			case 7:
 				iShip = SHIP_WAR_TARTANE;
@@ -2466,7 +2466,7 @@ void Saga_CheckMarlinAfterBattle(string qName) //проверяем полакр
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_POLACRE && sld.ship.name == StringFromKey("Saga_37")) iMar = 1;
+			if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_POLACRE && sld.ship.name == StringFromKey("Saga_37")) iMar = 1;
 		}
 	} // есть ли у нас Марлин
 	if (iMar == 1) // есть
@@ -2578,7 +2578,7 @@ void Saga_BrigantineBoom(string qName) // залез на бригантину �
 void Saga_BrigantineDetonate(string qName) // сюрприз для особо упоротых
 {
 	PlayStereoSound("Sea Battles\Vzriv_fort_001.wav");
-		PlayStereoSound("Sea Battles\vzriv_pogreb_002.wav")
+	PlayStereoSound("Sea Battles\vzriv_pogreb_002.wav");
 	sld = characterFromId("Cap_Vensan");
 	Ship_Detonate(sld, true, true); 
 	Ship_Detonate(pchar, true, true); 
@@ -2591,7 +2591,7 @@ void Saga_DestroyVensanTrap(string qName) // учиняем массовую д�
 	int iScl = 55;
 	// устанавливаем врагов
 	// мушкетеры
-	int m = makeint(MOD_SKILL_ENEMY_RATE/2);
+	int m = int(MOD_SKILL_ENEMY_RATE/2);
 	if (m < 2) m = 2;
 	for (i=1; i<=m; i++)
 	{
@@ -2685,7 +2685,7 @@ void Saga_CreateVensanEnemyes(string qName) // устанавливаем Бро
 	sld.DontDeskTalk = true;
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
 	Group_AddCharacter("Ship_VensanEnemy", "Saga_Vagrant");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
 	//SetNationRelation2MainCharacter(PIRATE, RELATION_FRIEND); // 300912
 	// устанавливаем фрегат Упыря
 	sld = GetCharacter(NPC_GenerateCharacter("Saga_vampire", "mercen_25", "man", "man", iRank+5, ENGLAND, -1, true, "quest")); // patch
@@ -2699,7 +2699,7 @@ void Saga_CreateVensanEnemyes(string qName) // устанавливаем Бро
 	sld.DontDeskTalk = true;
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
 	Group_AddCharacter("Ship_VensanEnemy", "Saga_vampire");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
 	Group_SetGroupCommander("Ship_VensanEnemy", "Saga_Vagrant");
 	Group_SetTaskNone("Ship_VensanEnemy");//нет задачи
 	Group_SetAddress("Ship_VensanEnemy", "Terks", "Islandships1", "ship_2");
@@ -2725,8 +2725,8 @@ void Saga_CheckVensanEnemyes() // анализируем ГГ - обработк
 		sld.AlwaysEnemy = true;
 		sld = characterFromId("Saga_vampire");
 		sld.AlwaysEnemy = true;
-		SetCharacterRelationBoth(sti(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
-		SetCharacterRelationBoth(sti(GetCharacterIndex("Saga_vampire")), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(GetCharacterIndex("Saga_vampire")), GetMainCharacterIndex(), RELATION_ENEMY);
 		Group_SetTaskAttack("Ship_VensanEnemy", PLAYER_GROUP);
 		Group_LockTask("Ship_VensanEnemy");
 		UpdateRelations();
@@ -2743,8 +2743,8 @@ void Saga_VagrantVampireAttack() // пальнули через прицел
 	sld.AlwaysEnemy = true;
 	sld = characterFromId("Saga_vampire");
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Saga_vampire")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Saga_vampire")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Ship_VensanEnemy", PLAYER_GROUP);
 	Group_LockTask("Ship_VensanEnemy");
 	UpdateRelations();
@@ -2760,7 +2760,7 @@ void Saga_HitSeaBomb() // ставим бомбу под фрегат - обра
 	if(iArcadeSails == 1) fTemp = 40.0;
 	AISeaGoods_AddGood(pchar, "powder", "barrel_treasure", fTemp-10.0, 1);
 	DoQuestFunctionDelay("Saga_HitSeaBomb_Detonate", fTemp);
-	log_info(StringFromKey("Saga_48", sti(fTemp)));
+	log_info(StringFromKey("Saga_48", int(fTemp)));
 }
 
 void Saga_HitSeaBomb_Detonate(string qName) // капут фрегату
@@ -2773,7 +2773,7 @@ void Saga_HitSeaBomb_Detonate(string qName) // капут фрегату
 	if (Ship_GetDistance2D(GetMainCharacter(), sld) < 200) Saga_SeaBombFail();
 	sld = characterFromId("Saga_Vagrant");
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Saga_Vagrant")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Ship_VensanEnemy", PLAYER_GROUP);
 	Group_LockTask("Ship_VensanEnemy");
 	UpdateRelations();
@@ -2856,7 +2856,7 @@ void Saga_CheckJackmanBermudes(string qName) // Джекман
 		int iRank = 25+MOD_SKILL_ENEMY_RATE/2;
 		int iScl = 90;
 		int iCannon = CANNON_TYPE_CANNON_LBS32;
-		if (sti(pchar.rank) < 15 || MOD_SKILL_ENEMY_RATE < 7) iCannon = CANNON_TYPE_CANNON_LBS24;
+		if (int(pchar.rank) < 15 || MOD_SKILL_ENEMY_RATE < 7) iCannon = CANNON_TYPE_CANNON_LBS24;
 		sld = characterFromId("Jackman");
 		sld.nation = ENGLAND;
 		FantomMakeSmallSailor(sld, SHIP_FRIGATE_H, StringFromKey("Saga_51"), iCannon, iScl, iScl, iScl, iScl, iScl);
@@ -2873,7 +2873,7 @@ void Saga_CheckJackmanBermudes(string qName) // Джекман
 		sld.DontClearDead = true;
 		GiveItem2Character(sld, "spyglass4");
 		sld.DontDeskTalk = true;
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
+		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
 		sld.ship.Crew.Morale = 50+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Sailors = 50+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Cannoners = 50+MOD_SKILL_ENEMY_RATE*5;
@@ -2947,7 +2947,7 @@ void Saga_CheckJackmanFrigate() // анализируем ГГ - обработ�
 		DeleteAttribute(sld, "quest.fugas");
 		sld = characterFromId("Jackman");
 		sld.AlwaysEnemy = true;
-		SetCharacterRelationBoth(sti(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
+		SetCharacterRelationBoth(int(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
 		Group_SetTaskAttack("Jackman_Frigate", PLAYER_GROUP);
 		Group_LockTask("Jackman_Frigate");
 		UpdateRelations();
@@ -2963,7 +2963,7 @@ void Saga_CenturionAttack() // пальнули через прицел
 	DeleteAttribute(pchar, "questTemp.Saga.BarbTemptation.Fugas");
 	sld = characterFromId("Jackman");
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Jackman_Frigate", PLAYER_GROUP);
 	Group_LockTask("Jackman_Frigate");
 	UpdateRelations();
@@ -2978,7 +2978,7 @@ void Saga_HitSeaFugas() // бросаем фугас - обработка в А�
 	PlayStereoSound("Sea Battles\udar_metal_002.wav");
 	log_info(StringFromKey("Saga_56"));
 	DoQuestFunctionDelay("Saga_HitSeaFugas_Detonate", fTemp);
-	log_info(StringFromKey("Saga_57", sti(fTemp)));
+	log_info(StringFromKey("Saga_57", int(fTemp)));
 }
 
 void Saga_HitSeaFugas_Detonate(string qName) // фугасом по пиратам
@@ -2990,10 +2990,10 @@ void Saga_HitSeaFugas_Detonate(string qName) // фугасом по пирата
 	Ship_Detonate(sld, false, false); // ба-бах!!!
 	PlayStereoSound("Sea Battles\vzriv_pogreb_002.wav");
 	PlayStereoSound("Sea Battles\sdavl_kriki_005.wav");
-	int iCrew = makeint(sti(sld.Ship.Crew.Quantity)*0.67);
-	if(MOD_SKILL_ENEMY_RATE < 8) iCrew = makeint(sti(sld.Ship.Crew.Quantity)*0.4);
+	int iCrew = int(int(sld.Ship.Crew.Quantity)*0.67);
+	if(MOD_SKILL_ENEMY_RATE < 8) iCrew = int(int(sld.Ship.Crew.Quantity)*0.4);
 	SetCrewQuantityOverMax(sld, iCrew); // сносим треть команды
-	sld.ship.HP = makeint(sti(sld.ship.HP)*0.9); // портим корпус
+	sld.ship.HP = int(int(sld.ship.HP)*0.9); // портим корпус
 	AddCrewMorale(sld, -30); // команда врага деморализована внезапным и подлым нападением
 	ChangeCrewExp(sld, "Sailors", -30);
 	ChangeCrewExp(sld, "Cannoners", -30);
@@ -3008,7 +3008,7 @@ void Saga_HitSeaFugas_DetonateReaction(string qName) // Джекман атак�
 	PlaySoundSafe("VOICE\" + LanguageGetLanguage(), "EvilPirates01.wav");
 	sld = characterFromId("Jackman");
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Jackman")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Jackman_Frigate", PLAYER_GROUP);
 	Group_LockTask("Jackman_Frigate");
 	UpdateRelations();
@@ -3086,8 +3086,8 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = 20 + 2*int(pchar.rank);
 
 	object aSoldier[1];
 	object aMushketers[1];
@@ -3097,7 +3097,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	{
 		model = aCrewMushketer[i-1].model;
 		ani = aCrewMushketer[i-1].ani;
-		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, model, "man", model, 25, sti(pchar.nation), -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, model, "man", model, 25, int(pchar.nation), -1, false, "soldier"));
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto16");
 		LAi_SetActorType(sld);
@@ -3107,7 +3107,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	{
 		model = aCrewMushketer[i-1].model;
 		ani = aCrewMushketer[i-1].ani;
-		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, model, "man", ani, 25, sti(pchar.nation), -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, model, "man", ani, 25, int(pchar.nation), -1, false, "soldier"));
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aMushketers, iScl*2);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto16");
 		LAi_SetActorType(sld);
@@ -3119,7 +3119,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	{
 		model = aCrewSoldier[i-1].model;
 		ani = aCrewSoldier[i-1].ani;
-		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGS_"+i, model, "man", ani, 25, sti(pchar.nation), -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGS_"+i, model, "man", ani, 25, int(pchar.nation), -1, false, "soldier"));
 		FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto17");
 		LAi_SetActorType(sld);
@@ -3598,7 +3598,7 @@ void Saga_CreateMolliganInWorld()
 	int iScl = 70;
 	int iCannon = CANNON_TYPE_CANNON_LBS24;
 	int iDays = 15;
-	if (sti(pchar.rank) < 15 || MOD_SKILL_ENEMY_RATE < 7) iCannon = CANNON_TYPE_CANNON_LBS20;
+	if (int(pchar.rank) < 15 || MOD_SKILL_ENEMY_RATE < 7) iCannon = CANNON_TYPE_CANNON_LBS20;
 	sld = GetCharacter(NPC_GenerateCharacter("Molligan", "Molligan", "man", "man", iRank, ENGLAND, iDays, true, "quest"));
 	sld.name = StringFromKey("Saga_62");
 	sld.lastname = StringFromKey("Saga_63");
@@ -3614,7 +3614,7 @@ void Saga_CreateMolliganInWorld()
 	sld.AnalizeShips = true; 
 	sld.DontRansackCaptain = true; 
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1; //всегда первый - это будет важно потом
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1; //всегда первый - это будет важно потом
 	SetCharacterGoods(sld, GOOD_EBONY, 50);
 	SetCharacterGoods(sld, GOOD_MAHOGANY, 80);
 	SetCharacterGoods(sld, GOOD_SANDAL, 100);//положить бакаут
@@ -3657,7 +3657,7 @@ void Saga_MolliganAttack() // атака Моллигана - обработка
 	PlaySound("interface\notebook.wav");
 	sld = characterFromId("Molligan");
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Molligan")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Molligan")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Molligan_Group", PLAYER_GROUP);
 	Group_LockTask("Molligan_Group");
 	UpdateRelations();
@@ -3670,11 +3670,11 @@ void Saga_MolliganCriticalAttack() // атакуем Моллигана - обр
 	log_info(StringFromKey("Saga_66"));
 	sld = characterFromId("Molligan");
 	PlayStereoSound("Sea Battles\sdavl_kriki_005.wav");
-	int iCrew = makeint(sti(sld.Ship.Crew.Quantity)*0.67); 
+	int iCrew = int(int(sld.Ship.Crew.Quantity)*0.67);
 	SetCrewQuantityOverMax(sld, iCrew); // сносим треть команды
 	AddCrewMorale(sld, -20); // команда врага деморализована внезапным и подлым нападением
 	sld.AlwaysEnemy = true;
-	SetCharacterRelationBoth(sti(GetCharacterIndex("Molligan")), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(GetCharacterIndex("Molligan")), GetMainCharacterIndex(), RELATION_ENEMY);
 	Group_SetTaskAttack("Molligan_Group", PLAYER_GROUP);
 	Group_LockTask("Molligan_Group");
 	UpdateRelations();
@@ -3695,7 +3695,7 @@ void Saga_MolliganAbordage(string qName) //проверяем Устрицу п�
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64")) iUst = 1;
+			if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64")) iUst = 1;
 		}
 	} // есть ли у нас Устрица
 	if (iUst == 1) pchar.questTemp.Saga.Oyster = "true"; // есть
@@ -3733,7 +3733,7 @@ void Saga_RozencraftWGOver(string qName) // снять Розенкрафта
 
 void Saga_RemoveOuster() //удаление Устрицы
 {
-	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_EASTINDIAMAN && pchar.ship.name == StringFromKey("Saga_64"))
+	if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_EASTINDIAMAN && pchar.ship.name == StringFromKey("Saga_64"))
 	{
 		pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 		pchar.Ship.name = StringFromKey("Saga_69");
@@ -3748,10 +3748,10 @@ void Saga_RemoveOuster() //удаление Устрицы
 			if(iTemp > 0)
 			{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64"))
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64"))
 				{
 					pchar.GanQuest.CompanionIndex = sld.Index;
-					sld = GetCharacter(sti(pchar.GanQuest.CompanionIndex));
+					sld = GetCharacter(int(pchar.GanQuest.CompanionIndex));
 					RemoveCharacterCompanion(PChar, sld);
 					AddPassenger(PChar, sld, false);
 				}
@@ -3769,14 +3769,14 @@ void Saga_CheckRozencraftWG(string qName) // устанавливаем Розе
 		if(iTemp > 0)
 		{
 			sld = GetCharacter(iTemp);
-			if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64")) iUst = 1;
+			if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN && sld.ship.name == StringFromKey("Saga_64")) iUst = 1;
 		}
 	} // есть ли у нас Устрица
 	// двойная защита от жухления геймеров
 	if (iUst == 1 && CheckAttribute(pchar, "questTemp.Saga.Oyster")) pchar.questTemp.Saga.Oyster = "cantalk";
 	Group_FindOrCreateGroup("Rozencraft_Group");
 	Group_SetType("Rozencraft_Group", "war");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 40) iRank = 40;
 	int iScl = 100;
 	sld = GetCharacter(NPC_GenerateCharacter("Rozencraft", "Rozencraft", "man", "man", iRank, HOLLAND, -1, true, "quest"));
@@ -3927,7 +3927,7 @@ void Saga_SetBakerBoat(string qName) // ставим баркас с Бейке�
 	sld.DontDeskTalk = true;
 	sld.Abordage.Enable = true;
 	sld.ShipEnemyDisable = true; 
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
 	LAi_SetImmortal(sld, true); // сплошная защита от дурака
 	sld.ship.masts.mast2 = 1;
 	ref realShip = GetRealShip(GetCharacterShipType(sld));
@@ -3988,7 +3988,7 @@ void Saga_JessikaIsland(string qName) // вышли на риф
 {
 	// ориентируем на день в обязательном порядке
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 12;
 	if (iTime < 7) iAddTime = 12 - iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24  + 12 - iTime;
@@ -4053,7 +4053,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	sld = characterFromId("Svenson");
 	if (CheckAttribute(sld, "quest.jessika")) DeleteAttribute(sld, "quest.jessika");
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
 	int iScl = MOD_SKILL_ENEMY_RATE*6;
 	int iAdd = MOD_SKILL_ENEMY_RATE*60;
 	// ставим Джесс
@@ -4371,8 +4371,8 @@ void SharkGoldFleet21(string qName)
 
 void SGF_CreateCurierInWorld(string qName)
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
-	int iScl = MOD_SKILL_ENEMY_RATE+3*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2;
+	int iScl = MOD_SKILL_ENEMY_RATE+3*int(pchar.rank);
     string sCapId = "SGFcurierCap";
     string sGroup = "Sea_" + sCapId + "1";
 	Group_DeleteGroup(sGroup);
@@ -4581,26 +4581,26 @@ void SharkGoldFleetToShark(string qName)
 	Group_SetTaskNone("DodsonFrigate");
 	Group_SetAddress("DodsonFrigate", "Curacao", "quest_ships", "quest_ship_4");
 	Group_LockTask("DodsonFrigate");
-	if(CheckAttribute(&RealShips[sti(sld.Ship.Type)], "Tuning.Capacity"))
-	DeleteAttribute(&RealShips[sti(sld.Ship.Type)], "Tuning.Capacity")); 
-	RealShips[sti(sld.Ship.Type)].MaxCaliber = 36;
-	RealShips[sti(sld.Ship.Type)].CannonsQuantity = 50;
-	RealShips[sti(sld.Ship.Type)].CannonsQuantityMin = 50;
-	RealShips[sti(sld.Ship.Type)].CannonsQuantityMax = 50;
-	RealShips[sti(sld.Ship.Type)].CannonDiff = 0;
+	if(CheckAttribute(&RealShips[int(sld.Ship.Type)], "Tuning.Capacity"))
+		DeleteAttribute(&RealShips[int(sld.Ship.Type)], "Tuning.Capacity");
+	RealShips[int(sld.Ship.Type)].MaxCaliber = 36;
+	RealShips[int(sld.Ship.Type)].CannonsQuantity = 50;
+	RealShips[int(sld.Ship.Type)].CannonsQuantityMin = 50;
+	RealShips[int(sld.Ship.Type)].CannonsQuantityMax = 50;
+	RealShips[int(sld.Ship.Type)].CannonDiff = 0;
 	SetShipCannonsDamagesNull(sld);
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 11.0;
-	RealShips[sti(sld.Ship.Type)].TurnRate = 35.0;
-	RealShips[sti(sld.Ship.Type)].MinCrew = 50; 
-	RealShips[sti(sld.Ship.Type)].OptCrew = 408; 
-	RealShips[sti(sld.Ship.Type)].MaxCrew = 510; 
-	RealShips[sti(sld.Ship.Type)].HP = 6000;
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].SpeedRate = 11.0;
+	RealShips[int(sld.Ship.Type)].TurnRate = 35.0;
+	RealShips[int(sld.Ship.Type)].MinCrew = 50;
+	RealShips[int(sld.Ship.Type)].OptCrew = 408;
+	RealShips[int(sld.Ship.Type)].MaxCrew = 510;
+	RealShips[int(sld.Ship.Type)].HP = 6000;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
     sld.ship.HP = 6000;
 	SetSailsColor(sld, 8);//черный парус
 	UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 	UpgradeShipParameter(sld, "Capacity");//апгрейдить трюм
-	RealShips[sti(sld.Ship.Type)].Capacity = 6000;
+	RealShips[int(sld.Ship.Type)].Capacity = 6000;
 	DeleteAttribute(sld, "ship.hulls");
 	i = GetMaxCrewQuantity(sld);
 	SetCrewQuantity(sld, i);
@@ -4630,7 +4630,7 @@ void SGF_SharkCompanion()
 	sld = characterFromId("Dodson_GF");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
@@ -4679,7 +4679,7 @@ void SGF_CheckCoordinates(string qName) // проверяем координат
 	}
 	if (CheckAttribute(pchar, "Ship.pos.x") && !bDisableMapEnter)
 	{
-		if(GetSeaCoordDegreeZ(makefloat(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(makefloat(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(makefloat(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(makefloat(worldMap.playerShipX)) < minW2) 
+		if(GetSeaCoordDegreeZ(float(pchar.Ship.pos.z)) == degN && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) >= minN1 && GetMapCoordMinutesZ(float(worldMap.playerShipZ)) < minN2 && GetSeaCoordDegreeX(float(pchar.Ship.pos.x)) == degW && GetMapCoordMinutesX(float(worldMap.playerShipX)) >= minW1 && GetMapCoordMinutesX(float(worldMap.playerShipX)) < minW2)
 		{	
 			
 			log_Testinfo("Координаты соответствуют!");
@@ -4708,7 +4708,7 @@ void SGF_CheckCoordinatesRestart(string qName) // запуск новой про
 void SGF_CreatGoldFleet(string qName)
 {
 	int i;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+5;
 	if (iRank > 45) iRank = 45;
 	log_info(StringFromKey("Saga_87"));
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
@@ -4729,7 +4729,7 @@ void SGF_CreatGoldFleet(string qName)
 	sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
 	sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
 	if(MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
-	RealShips[sti(sld.Ship.Type)].Capacity = 5900;
+	RealShips[int(sld.Ship.Type)].Capacity = 5900;
 	UpgradeShipParameter(sld, "Capacity");
 	SetRandGeraldSail(sld, SPAIN);
 	NullCharacterGoods(sld);
@@ -4742,12 +4742,12 @@ void SGF_CreatGoldFleet(string qName)
 	AddCharacterGoods(sld, GOOD_FOOD, 1000);
 	AddCharacterGoods(sld, GOOD_MEDICAMENT, 250);
 	AddCharacterGoods(sld, GOOD_RUM, 100);
-	pchar.questTemp.SharkGoldFleet.Gold = GetGoodQuantityByWeight(GOOD_GOLD, sti(GetCargoFreeSpace(sld)/2));
-	AddCharacterGoods(sld, GOOD_GOLD, makeint(pchar.questTemp.SharkGoldFleet.Gold));
-	pchar.questTemp.SharkGoldFleet.Silk = GetGoodQuantityByWeight(GOOD_SHIPSILK, sti(GetCargoFreeSpace(sld)/2));
-	AddCharacterGoods(sld, GOOD_SHIPSILK, makeint(pchar.questTemp.SharkGoldFleet.Silk));
+	pchar.questTemp.SharkGoldFleet.Gold = GetGoodQuantityByWeight(GOOD_GOLD, int(GetCargoFreeSpace(sld)/2));
+	AddCharacterGoods(sld, GOOD_GOLD, int(pchar.questTemp.SharkGoldFleet.Gold));
+	pchar.questTemp.SharkGoldFleet.Silk = GetGoodQuantityByWeight(GOOD_SHIPSILK, int(GetCargoFreeSpace(sld)/2));
+	AddCharacterGoods(sld, GOOD_SHIPSILK, int(pchar.questTemp.SharkGoldFleet.Silk));
 	pchar.questTemp.SharkGoldFleet.Ropes = GetGoodQuantityByWeight(GOOD_ROPES, GetCargoFreeSpace(sld));
-	AddCharacterGoods(sld, GOOD_ROPES, makeint(pchar.questTemp.SharkGoldFleet.Ropes));
+	AddCharacterGoods(sld, GOOD_ROPES, int(pchar.questTemp.SharkGoldFleet.Ropes));
 	// навио
 	sld = GetCharacter(NPC_GenerateCharacter("SGF_GoldCap_2", "off_spa_3", "man", "man", iRank, SPAIN, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_NAVIO, StringFromKey("Saga_89"), CANNON_TYPE_CANNON_LBS24, 100, 100, 100);
@@ -4763,7 +4763,7 @@ void SGF_CreatGoldFleet(string qName)
 	sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
 	sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
 	if(MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
-	RealShips[sti(sld.Ship.Type)].Capacity = 5800;
+	RealShips[int(sld.Ship.Type)].Capacity = 5800;
 	UpgradeShipParameter(sld, "Capacity");
 	SetRandGeraldSail(sld, SPAIN);
 	NullCharacterGoods(sld);
@@ -4776,12 +4776,12 @@ void SGF_CreatGoldFleet(string qName)
 	AddCharacterGoods(sld, GOOD_FOOD, 1000);
 	AddCharacterGoods(sld, GOOD_MEDICAMENT, 250);
 	AddCharacterGoods(sld, GOOD_RUM, 100);
-	pchar.questTemp.SharkGoldFleet.Silver = GetGoodQuantityByWeight(GOOD_SILVER, sti(GetCargoFreeSpace(sld)/2));
-	AddCharacterGoods(sld, GOOD_SILVER, makeint(pchar.questTemp.SharkGoldFleet.Silver));
-	pchar.questTemp.SharkGoldFleet.Sandal = GetGoodQuantityByWeight(GOOD_SANDAL, sti(GetCargoFreeSpace(sld)/2));
-	AddCharacterGoods(sld, GOOD_SANDAL, makeint(pchar.questTemp.SharkGoldFleet.Sandal));
+	pchar.questTemp.SharkGoldFleet.Silver = GetGoodQuantityByWeight(GOOD_SILVER, int(GetCargoFreeSpace(sld)/2));
+	AddCharacterGoods(sld, GOOD_SILVER, int(pchar.questTemp.SharkGoldFleet.Silver));
+	pchar.questTemp.SharkGoldFleet.Sandal = GetGoodQuantityByWeight(GOOD_SANDAL, int(GetCargoFreeSpace(sld)/2));
+	AddCharacterGoods(sld, GOOD_SANDAL, int(pchar.questTemp.SharkGoldFleet.Sandal));
 	pchar.questTemp.SharkGoldFleet.Oil = GetGoodQuantityByWeight(GOOD_OIL, GetCargoFreeSpace(sld));
-	AddCharacterGoods(sld, GOOD_OIL, makeint(pchar.questTemp.SharkGoldFleet.Oil));
+	AddCharacterGoods(sld, GOOD_OIL, int(pchar.questTemp.SharkGoldFleet.Oil));
 	
 	// не высплывать товарам после потопления орудиями
 	DeleteAttribute(&Goods[GOOD_SHIPSILK],"Swim");
@@ -4813,7 +4813,7 @@ void SGF_CreatGoldFleet(string qName)
 
 void SGF_CreatBattleShips(string qName)
 {
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE/2+4;
 	if (iRank > 45) iRank = 45;
 	int iShip, Ship3, Ship4, Ship5, Ship6, iCannon, Cannon3, Cannon4, Cannon5, Cannon6, n, i;
 	if(MOD_SKILL_ENEMY_RATE < 5) n = 5;
@@ -4859,7 +4859,7 @@ void SGF_CreatBattleShips(string qName)
 			case 5: iShip = Ship5; iCannon = Cannon5; break;
 			case 6: iShip = Ship6; iCannon = Cannon6; break;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("SGF_GoldCap_"+i, "off_spa_"+sti(1+rand(2)), "man", "man", iRank, SPAIN, -1, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("SGF_GoldCap_"+i, "off_spa_"+int(1+rand(2)), "man", "man", iRank, SPAIN, -1, true, "quest"));
 		FantomMakeCoolSailor(sld, iShip, "", iCannon, 100, 100, 100);
 		FantomMakeCoolFighter(sld, iRank, 100, 100, LinkRandPhrase("blade_17","blade_20","blade_21"), "pistol5", "bullet", 250);
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -4907,12 +4907,12 @@ void SGF_CheckWin(string qName)
 		
 	int percent;
 	int TotalGoods = 0;
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Gold);
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Silk);
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Ropes);
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Silver);
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Sandal);
-	TotalGoods += makeint(pchar.questTemp.SharkGoldFleet.Oil);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Gold);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Silk);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Ropes);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Silver);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Sandal);
+	TotalGoods += int(pchar.questTemp.SharkGoldFleet.Oil);
 	int PcharGoods = 0;
 	PcharGoods += GetSquadronGoods(pchar, GOOD_GOLD);
 	PcharGoods += GetSquadronGoods(pchar, GOOD_SILVER);
@@ -5061,7 +5061,7 @@ void Mary_SexReady(string qName) // Мэри снова готова к секс
 	sld = characterFromId("Mary");	
 	DeleteAttribute(sld, "quest.daily_sex");
 	pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
-	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
+	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = int(GetTime());
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 14);
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 14);
@@ -5570,7 +5570,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	// -----------------------начальная часть - пропавшая амазонка и наследница------------------------------
 	else if (sQuestName == "Saga_AfterDonovanBoarding")
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("SagaTempsailor", "citiz_35", "man", "man", 10, sti(pchar.nation), 0, true, "quest"));
+		sld = GetCharacter(NPC_GenerateCharacter("SagaTempsailor", "citiz_35", "man", "man", 10, int(pchar.nation), 0, true, "quest"));
 		sld.Dialog.Filename = "Quest\Saga\OtherNPC.c";
 		sld.dialog.currentnode = "Tempsailor";
 		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc2");
@@ -5600,10 +5600,10 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_HireHelena")	
 	{
 		chrDisableReloadToLocation = false; // открыть локацию
-		iTemp = 150 + sti(pchar.rank) * 5; // 14-add
+		iTemp = 150 + int(pchar.rank) * 5; // 14-add
 		sld = characterFromId("Helena");
 		LAi_SetHP(sld, iTemp, iTemp); 
-		sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+		sld.quest.OfficerPrice = int(pchar.rank) * 500;
 		sld.OfficerWantToGo.DontGo = true; // не пытаться уйти
 		sld.CompanionDisable = true; // нельзя в компаньоны - чтобы не утонула
 		sld.HalfImmortal = true; // чтобы не убили в сухопутном бою
@@ -5747,7 +5747,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Saga_DominicaDollyWait")
 	{
 		iTemp = 8;
-		if (stf(environment.time) > 9.0) 
+		if (float(environment.time) > 9.0)
 		{
 			iTemp = 7;
 		}
@@ -5786,7 +5786,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		pchar.questTemp.NotTeleportation = true; // нет телепортации более до поры
 
-		if (pchar.questTemp.HelenDrinking.Result != "no_visit" && CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && sti(pchar.questTemp.Saga.HelenRelation) >= 6) 
+		if (pchar.questTemp.HelenDrinking.Result != "no_visit" && CheckAttribute(pchar, "questTemp.Saga.HelenRelation") && int(pchar.questTemp.Saga.HelenRelation) >= 6)
 		{
 			sld = CharacterFromID("Helena");
 			LAi_SetActorType(sld);
@@ -5892,10 +5892,10 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		}
 		else 
 		{
-			pchar.GenQuest.NarvalConflict = sti(pchar.GenQuest.NarvalConflict) + 1;
+			pchar.GenQuest.NarvalConflict = int(pchar.GenQuest.NarvalConflict) + 1;
 		}
 		LocatorReloadEnterDisable("LostShipsCity_town", "reload48", true); // закрыть вход к Дональду
-		log_Testinfo("Конфликт с нарвалами достиг " + sti(pchar.GenQuest.NarvalConflict) + " ступени");
+		log_Testinfo("Конфликт с нарвалами достиг " + int(pchar.GenQuest.NarvalConflict) + " ступени");
 	}
 	else if (sQuestName == "LSC_RivadosConflict") // конфликт с ривадос
 	{
@@ -5905,10 +5905,10 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		}
 		else 
 		{
-			pchar.GenQuest.RivadosConflict = sti(pchar.GenQuest.RivadosConflict) + 1;
+			pchar.GenQuest.RivadosConflict = int(pchar.GenQuest.RivadosConflict) + 1;
 		}
 		LocatorReloadEnterDisable("LostShipsCity_town", "reload33", true); // закрыть вход к Эдди
-		log_Testinfo("Конфликт с ривадос достиг " + sti(pchar.GenQuest.RivadosConflict) + " ступени");
+		log_Testinfo("Конфликт с ривадос достиг " + int(pchar.GenQuest.RivadosConflict) + " ступени");
 	}
 	else if (sQuestName == "LSC_SharkConflict") // конфликт с пиратами
 	{
@@ -5918,11 +5918,11 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		}
 		else 
 		{
-			pchar.GenQuest.SharkConflict = sti(pchar.GenQuest.SharkConflict) + 1;
+			pchar.GenQuest.SharkConflict = int(pchar.GenQuest.SharkConflict) + 1;
 		}
 		LSC_CloseSanAvgustinDoors(); // закрыть сан-августин
 		LSC_CloseTartarusDoors(); // закрыть Тартарус
-		log_Testinfo("Конфликт с пиратами достиг " + sti(pchar.GenQuest.SharkConflict) + " ступени");
+		log_Testinfo("Конфликт с пиратами достиг " + int(pchar.GenQuest.SharkConflict) + " ступени");
 	}
 	else if (sQuestName == "LSC_CitizenConflict") // избиение горожан строго наказуемо, вплоть до геймовера
 	{
@@ -5932,8 +5932,8 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		}
 		else 
 		{
-			pchar.GenQuest.CitizenConflict = sti(pchar.GenQuest.CitizenConflict) + 1;
-			if (sti(pchar.GenQuest.CitizenConflict) == 5)
+			pchar.GenQuest.CitizenConflict = int(pchar.GenQuest.CitizenConflict) + 1;
+			if (int(pchar.GenQuest.CitizenConflict) == 5)
 			{
 				log_Testinfo("Ты - не геймер, ты - отморозок, и место твоему ГГ в тюрьме!");
 				pchar.quest.LSC_GameOverPrison.win_condition.l1 = "location";
@@ -5941,7 +5941,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 				pchar.quest.LSC_GameOverPrison.function = "LSC_GameOverPrison";
 			}
 		}
-		log_Testinfo("Конфликт с горожанами достиг " + sti(pchar.GenQuest.CitizenConflict) + " ступени");
+		log_Testinfo("Конфликт с горожанами достиг " + int(pchar.GenQuest.CitizenConflict) + " ступени");
 	}
 	else if (sQuestName == "LSC_GameOverInPrison") // геймовер в тюрьме на Тартарусе
 	{
@@ -5970,7 +5970,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "LSC_DrinkSitExit") 
 	{
-		int iAddTime = 20 - sti(environment.time);
+		int iAddTime = 20 - int(environment.time);
 		StoreDayUpdate();
 		WaitDate("", 0, 0, 0, iAddTime, 5);
 		RecalculateJumpTable();
@@ -6638,10 +6638,10 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "LSC_Mary_hire") // найм Мэри: в отличие от всех прочих, её HP будет подбираться автолевеллингом
 	{
 		pchar.questTemp.LSC.Mary_officer = "true";
-		iTemp = 250 + sti(pchar.rank) * 5;
+		iTemp = 250 + int(pchar.rank) * 5;
 		sld = characterFromId("Mary");
 		LAi_SetHP(sld, iTemp, iTemp); 
-		sld.quest.OfficerPrice = sti(pchar.rank) * 500;
+		sld.quest.OfficerPrice = int(pchar.rank) * 500;
 		sld.OfficerWantToGo.DontGo = true; // не пытаться уйти
 		sld.CompanionDisable = true; // Мэри подруга, а не компаньон
 		sld.loyality = MAX_LOYALITY;
@@ -6682,7 +6682,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		// активируем поведение Мэри
 		// если две недели не заниматься с ней любовью - будет требовать
 		pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
-		pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 14);
 		pchar.quest.Mary_giveme_sex.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 14);
@@ -6746,7 +6746,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorGoToLocator(sld, "reload", "reload24", "LSC_DrinkGotoCarolina_2", -1);
 		LAi_SetImmortal(sld, true);
 		pchar.quest.LSC_Drink1.win_condition.l1 = "Timer";
-		pchar.quest.LSC_Drink1.win_condition.l1.date.hour  = sti(GetTime() + 1);
+		pchar.quest.LSC_Drink1.win_condition.l1.date.hour  = int(GetTime() + 1);
 		pchar.quest.LSC_Drink1.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 		pchar.quest.LSC_Drink1.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.LSC_Drink1.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -6762,7 +6762,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		DoQuestReloadToLocation("CarolineBank", "reload", "reload3", "pchar_back_to_player");
 		chrDisableReloadToLocation = true;
 		// считаем деньги и дублоны ГГ
-		pchar.questTemp.LSC.Drink.Money = sti(pchar.money);
+		pchar.questTemp.LSC.Drink.Money = int(pchar.money);
 		pchar.questTemp.LSC.Drink.Dublon = GetCharacterItem(pchar, "gold_dublon");
 	}
 	else if (sQuestName == "LSC_DrinkInCarolina") // внутри каролины
@@ -6780,7 +6780,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("LSC_Leonard");
 		LAi_SetImmortal(sld, false);
 		pchar.quest.LSC_Drink3.win_condition.l1 = "Timer";
-		pchar.quest.LSC_Drink3.win_condition.l1.date.hour  = sti(GetTime() + 3);
+		pchar.quest.LSC_Drink3.win_condition.l1.date.hour  = int(GetTime() + 3);
 		pchar.quest.LSC_Drink3.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 		pchar.quest.LSC_Drink3.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.LSC_Drink3.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -6808,7 +6808,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			sld.lastname = StringFromKey("Saga_113");
 			GiveItem2Character(sld, "unarmed");
 			EquipCharacterbyItem(sld, "unarmed");
-			if (MOD_SKILL_ENEMY_RATE > 4) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE / 2.5);
+			if (MOD_SKILL_ENEMY_RATE > 4) sld.MultiFighter = float(MOD_SKILL_ENEMY_RATE / 2.5);
 			sld.SaveItemsForDead = true;
 			sld.animal = true;
 			SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
@@ -6852,7 +6852,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			sld.lastname = StringFromKey("Saga_113");
 			GiveItem2Character(sld, "unarmed");
 			EquipCharacterbyItem(sld, "unarmed");
-			if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE / 2.5);
+			if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = float(MOD_SKILL_ENEMY_RATE / 2.5);
 			sld.SaveItemsForDead = true;
 			sld.animal = true;
 			SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
@@ -7018,7 +7018,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		CreateLocationParticles("blood_big", "goto", sTemp, 1.3, 0, 0, "");
 		PlaySound("People Fight\Death_NPC_08.wav");
 		PlaySound("Interface\boom.wav");
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp) / 1.5; // 1/3 жизни сносим 
+		Pchar.chr_ai.hp = float(Pchar.chr_ai.hp) / 1.5; // 1/3 жизни сносим
 		Log_Info(StringFromKey("Saga_115"));
 		pchar.GenQuest.CantRun = true;
 	}
@@ -7100,7 +7100,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		CreateLocationParticles("blood_big", "goto", sTemp, 1.3, 0, 0, "");
 		PlaySound("People Fight\Death_NPC_08.wav");
 		PlaySound("Interface\boom.wav");
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp) / 2; // 1/2 жизни сносим 
+		Pchar.chr_ai.hp = float(Pchar.chr_ai.hp) / 2; // 1/2 жизни сносим
 		Log_Info(StringFromKey("Saga_116"));
 	}
 	else if (sQuestName == "Saga_JessikaSecondKick_3")
@@ -7188,7 +7188,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorAnimation(Pchar, "Ground_StandUp", "", 3.5);
 		DoQuestCheckDelay("Saga_JessikaThirdKick_3", 3.5);
 		CreateLocationParticles("blast_inv", "quest", "wall", 1.6, 0, 0, "");
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp) / 3; // 2/3 жизни сносим
+		Pchar.chr_ai.hp = float(Pchar.chr_ai.hp) / 3; // 2/3 жизни сносим
 		Log_Info(StringFromKey("Saga_117"));
 		PlaySound("People Fight\Death_NPC_08.wav");
 		CreateLocationParticles("blood_big", "quest", "wall", 1.3, 0, 0, "");

@@ -62,7 +62,7 @@ void ProcessDialogEvent()
 				case 2: // жемчуг большой
 					npchar.quest.item.qty = 25+hrand(25);
 					npchar.quest.item.price = 30+hrand(10);
-					dialog.text = "У "+npchar.name+" есть слёзы богов. Большие слёзы богов, "+GetSexPhrase("белый брат","белая сестра")+". Всего "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Ты хотеть покупать их? Я продать за "+FindRussianMoneyString(sti(npchar.quest.item.price))+" штука.";
+					dialog.text = "У "+npchar.name+" есть слёзы богов. Большие слёзы богов, "+GetSexPhrase("белый брат","белая сестра")+". Всего "+FindRussianQtyString(int(npchar.quest.item.qty))+". Ты хотеть покупать их? Я продать за "+FindRussianMoneyString(int(npchar.quest.item.price))+" штука.";
 					link.l1 = "Нет, мне это не интересно.";
 					link.l1.go = "exit";
 					link.l2 = "Конечно! За такую цену я готов"+GetSexPhrase("","а")+" их приобрести.";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 				case 3: // жемчуг малый
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 10+hrand(5);
-					dialog.text = "У "+npchar.name+" есть слёзы богов. Маленькие слёзы богов, "+GetSexPhrase("белый брат","белая сестра")+". Всего "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Ты хотеть покупать их? Я продать за "+FindRussianMoneyString(sti(npchar.quest.item.price))+" штука.";
+					dialog.text = "У "+npchar.name+" есть слёзы богов. Маленькие слёзы богов, "+GetSexPhrase("белый брат","белая сестра")+". Всего "+FindRussianQtyString(int(npchar.quest.item.qty))+". Ты хотеть покупать их? Я продать за "+FindRussianMoneyString(int(npchar.quest.item.price))+" штука.";
 					link.l1 = "Нет, мне это не интересно.";
 					link.l1.go = "exit";
 					link.l2 = "Конечно! За такую цену я готов"+GetSexPhrase("","а")+" их приобрести.";
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 				case 4: //золотые самородки
 					npchar.quest.item.qty = 20+hrand(20);
 					npchar.quest.item.price = 90+hrand(20);
-					dialog.text = "У "+npchar.name+" есть жёлтый металл, который вы, бледнолицые, любить. Всего "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Я продать дёшево, всего за "+FindRussianMoneyString(sti(npchar.quest.item.price))+" штука.";
+					dialog.text = "У "+npchar.name+" есть жёлтый металл, который вы, бледнолицые, любить. Всего "+FindRussianQtyString(int(npchar.quest.item.qty))+". Я продать дёшево, всего за "+FindRussianMoneyString(int(npchar.quest.item.price))+" штука.";
 					link.l1 = "Нет, мне это не интересно.";
 					link.l1.go = "exit";
 					link.l2 = "Конечно! За такую цену я готов"+GetSexPhrase("","а")+" их приобрести.";
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 				case 5: // серебряные самородки
 					npchar.quest.item.qty = 40+hrand(40);
 					npchar.quest.item.price = 40+hrand(10);
-					dialog.text = "У "+npchar.name+" есть белый металл, который вы, бледнолицые, любить. Всего "+FindRussianQtyString(sti(npchar.quest.item.qty))+". Я продать дёшево, всего за "+FindRussianMoneyString(sti(npchar.quest.item.price))+" штука.";
+					dialog.text = "У "+npchar.name+" есть белый металл, который вы, бледнолицые, любить. Всего "+FindRussianQtyString(int(npchar.quest.item.qty))+". Я продать дёшево, всего за "+FindRussianMoneyString(int(npchar.quest.item.price))+" штука.";
 					link.l1 = "Нет, мне это не интересно.";
 					link.l1.go = "exit";
 					link.l2 = "Конечно! За такую цену я готов"+GetSexPhrase("","а")+" их приобрести.";
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -183,16 +183,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Я же сказать, сколько у меня слёз. Ты шутить над индеец, "+GetSexPhrase("бледнолицый","белая скво")+"? Тогда прощай.";
 				link.l1 = "Гм...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" слез? Хорошо. С тебя " + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" слез? Хорошо. С тебя " + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Держи свои монеты, краснокожий брат.";
 				link.l1.go = "big_pearl_1";
@@ -202,8 +202,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "big_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry52", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry52", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Вот, возьми, "+GetSexPhrase("белый брат","белая сестра")+". Теперь они твои.";
 			link.l1 = "Благодарю!";
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -229,16 +229,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Я же сказать, сколько у меня слёз. Ты шутить над индеец, "+GetSexPhrase("бледнолицый","белая скво")+"? Тогда прощай.";
 				link.l1 = "Гм...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" слез? Хорошо. С тебя " + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" слез? Хорошо. С тебя " + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Держи свои монеты, краснокожий брат.";
 				link.l1.go = "small_pearl_1";
@@ -248,8 +248,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "small_pearl_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry53", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry53", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Вот, возьми, "+GetSexPhrase("белый брат","белая сестра")+". Теперь они твои.";
 			link.l1 = "Благодарю!";
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -275,16 +275,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Я же сказать, сколько у меня есть. Ты шутить над индеец, "+GetSexPhrase("бледнолицый","белая скво")+"? Тогда прощай.";
 				link.l1 = "Гм...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" кусков? Хорошо. С тебя " + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" кусков? Хорошо. С тебя " + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Держи свои монеты, краснокожий брат.";
 				link.l1.go = "gold_1";
@@ -294,8 +294,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gold_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry5", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry5", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Вот, возьми, "+GetSexPhrase("белый брат","белая сестра")+". Теперь они твои.";
 			link.l1 = "Благодарю!";
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_qty":
-			iQty = sti(dialogEditStrings[4]);
+			iQty = int(dialogEditStrings[4]);
 			npchar.quest.item.Byeqty = iQty;
 			if (iQty < 1)
 			{
@@ -321,16 +321,16 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (iQty > sti(npchar.quest.item.qty))
+			if (iQty > int(npchar.quest.item.qty))
 			{
 				dialog.text = "Я же сказать, сколько у меня есть. Ты шутить над индеец, "+GetSexPhrase("бледнолицый","белая скво")+"? Тогда прощай.";
 				link.l1 = "Гм...";
 				link.l1.go = "exit";
 				break;
 			}
-			npchar.quest.item.Summ = iQty*sti(npchar.quest.item.price);
-			dialog.text = ""+iQty+" кусков? Хорошо. С тебя " + FindRussianMoneyString(sti(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
-			if (sti(Pchar.money) >= sti(npchar.quest.item.Summ))
+			npchar.quest.item.Summ = iQty*int(npchar.quest.item.price);
+			dialog.text = ""+iQty+" кусков? Хорошо. С тебя " + FindRussianMoneyString(int(npchar.quest.item.Summ)) + ", "+GetSexPhrase("белый брат","белая сестра")+".";
+			if (int(Pchar.money) >= int(npchar.quest.item.Summ))
 			{
 				link.l1 = "Держи свои монеты, краснокожий брат.";
 				link.l1.go = "silver_1";
@@ -340,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "silver_1":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.item.Summ));
-			TakeNItems(pchar, "jewelry6", sti(npchar.quest.item.Byeqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.item.Summ));
+			TakeNItems(pchar, "jewelry6", int(npchar.quest.item.Byeqty));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Вот, возьми, "+GetSexPhrase("белый брат","белая сестра")+". Теперь они твои.";
 			link.l1 = "Благодарю!";

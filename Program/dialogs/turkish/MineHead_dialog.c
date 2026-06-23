@@ -11,10 +11,9 @@ void ProcessDialogEvent()
 	makeref(NPChar,CharacterRef);
 	makearef(Link, Dialog.Links);
 	makearef(NextDiag, NPChar.Dialog);
-	
+	location = &Locations[FindLocation(pchar.location)];
 	switch(Dialog.CurrentNode)
 	{
-		location = &Locations[FindLocation(pchar.location)];
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
@@ -23,7 +22,7 @@ void ProcessDialogEvent()
 				link.l1.go = "fight";
 				break;
 			}
-			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+			if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 			{
     			dialog.text = "Madende düşman var! Alarm!";
 				link.l1 = "Aaah, şeytan!";
@@ -63,9 +62,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves":
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
-			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
-			if (sti(location.quest.slaves.qty) < 5)
+			location.quest.slaves.qty = int(location.quest.slaves.qty)+GetNpcQuestPastDayParam(location, "slave_date"); // каждый день даёт +1 потребности
+			if (int(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
+			if (int(location.quest.slaves.qty) < 5)
 			{
 				dialog.text = "Señor, maalesef şu anda daha fazla köleye ihtiyacımız yok. Ama durum her an değişebilir, bu yüzden birkaç hafta sonra ya da başka bir zaman tekrar uğrayın.";
 				link.l1 = "Pekâlâ, señor, anladım. Şimdi onlara ihtiyacınız yok, ama bir gün gerekebilirler.";
@@ -106,7 +105,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_trade":
-			iTotalTemp = sti(dialogEditStrings[6]);
+			iTotalTemp = int(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
 				dialog.text = "Señor, saçma şakalara ayıracak vaktim yok. Eğer şaka yapmak istiyorsan, meyhaneye git!";
@@ -121,9 +120,9 @@ void ProcessDialogEvent()
 				link.l1.go = "slaves_exit";
 				break;
 			}
-			if (iTotalTemp > sti(location.quest.slaves.qty))
+			if (iTotalTemp > int(location.quest.slaves.qty))
 			{
-				dialog.text = "Maalesef, señor, şu anda o kadar çok köleye ihtiyacımız yok. Şu an için madenin ihtiyacı olan sayı "+FindRussianQtyString(sti(location.quest.slaves.qty))+" . Bu kadarını satacak mısın?";
+				dialog.text = "Maalesef, señor, şu anda o kadar çok köleye ihtiyacımız yok. Şu an için madenin ihtiyacı olan sayı "+FindRussianQtyString(int(location.quest.slaves.qty))+" . Bu kadarını satacak mısın?";
 				link.l1 = "Evet, tabii ki!";
 				link.l1.go = "slaves_max";
 				link.l2 = "Hmm... Sanırım değilim.";
@@ -136,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "slaves_max":
-			iTotalTemp = sti(location.quest.slaves.qty);
+			iTotalTemp = int(location.quest.slaves.qty);
 			dialog.text = "Mükemmel. Lütfen onları kasaba kapılarına getirmelerini emredin. Adamlarımı onları almaya göndereceğim.";
 			link.l1 = "Endişelenmeyin, señor. Köleleriniz zamanında size teslim edilecek. Gerekli tüm emirleri hemen vereceğim.";
 			link.l1.go = "slaves_calk";
@@ -153,7 +152,7 @@ void ProcessDialogEvent()
 			else TakeNItems(pchar, "jewelry6", iTotalTemp*2);
 			DeleteAttribute(location, "slave_date");
 			SaveCurrentNpcQuestDateParam(location, "slave_date");
-			location.quest.slaves.qty = sti(location.quest.slaves.qty)-iTotalTemp;
+			location.quest.slaves.qty = int(location.quest.slaves.qty)-iTotalTemp;
 		break;
 		
 		case "slaves_exit":

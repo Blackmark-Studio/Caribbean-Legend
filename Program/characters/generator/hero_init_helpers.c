@@ -236,7 +236,7 @@ ref InitLongwayFP(string id, ref NPChar)
 	}
 	TakeNItems(sld, "potion2", 1);
 	sld.quest.meeting = true;
-	sld.quest.OfficerPrice = sti(pchar.rank)*200;
+	sld.quest.OfficerPrice = int(pchar.rank)*200;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.loyality = MAX_LOYALITY;
 	sld.OfficerImmortal = true;

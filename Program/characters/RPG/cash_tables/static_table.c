@@ -47,8 +47,8 @@ void RemoveChrModifier(ref chr, string sourceName)
 		if (!CheckAttribute(modifier, sourceName)) continue;
 
 		string modifierName = GetAttributeName(modifier);
-		float value = stf(modifier.(sourceName));
-		table.(modifierName) = stf(GetAttributeValue(modifier)) - value; // вычитаем эффект
+		float value = float(modifier.(sourceName));
+		table.(modifierName) = float(GetAttributeValue(modifier)) - value; // вычитаем эффект
 		DeleteAttribute(modifier, sourceName);                           // убираем источник
 	}
 }

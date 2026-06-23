@@ -2,7 +2,7 @@
 void TavernWaitDate(string date)
 {
 	int iTime, iAddTime, iTmp;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (date == "wait_day")
 	{
 		if (iTime >= 21) iAddTime = 24 - iTime + 7;
@@ -21,7 +21,7 @@ void TavernWaitDate(string date)
 	//navy --> сон снимает алкоголь... 2 часа = кружка
 	if (CheckAttribute(pchar, "questTemp.Rum") && CheckAttribute(pchar, "chr_ai.drunk"))
 	{
-		iTmp = sti(pchar.chr_ai.drunk);
+		iTmp = int(pchar.chr_ai.drunk);
 		iTmp -= (iAddtime * 900);
 		if (iTmp < 0) LAi_SetAlcoholNormal(pchar);
 		else pchar.chr_ai.drunk = iTmp;
@@ -37,7 +37,7 @@ void TavernWaitDate(string date)
 void TavernWaitDate_LSC(string date)
 {
 	int iTime, iAddTime, iTmp;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (date == "wait_day")
 	{
 		if (iTime >= 21) iAddTime = 24 - iTime + 7;
@@ -55,7 +55,7 @@ void TavernWaitDate_LSC(string date)
 	//navy --> сон снимает алкоголь... 2 часа = кружка
 	if (CheckAttribute(pchar, "questTemp.Rum") && CheckAttribute(pchar, "chr_ai.drunk"))
 	{
-		iTmp = sti(pchar.chr_ai.drunk);
+		iTmp = int(pchar.chr_ai.drunk);
 		iTmp -= (iAddtime * 900);
 		if (iTmp < 0) LAi_SetAlcoholNormal(pchar);
 		else pchar.chr_ai.drunk = iTmp;
@@ -76,7 +76,7 @@ void TavernWaitDate_LSC(string date)
 void TavernWaitDateEx(int number)
 {
 	int iTime, iAddTime, iTmp;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + number;
 	if (iTime < number) iAddTime = number - iTime;
 	if (iTime >= number && iTime < 21) iAddTime = 24  + number - iTime;

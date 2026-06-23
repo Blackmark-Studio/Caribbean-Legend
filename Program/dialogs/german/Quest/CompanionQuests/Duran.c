@@ -126,7 +126,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_15":
 			dialog.text = "Heh! Meine Schuld, Kapitän. Richtig, Levasseurs Befehle sagten klar, dass nicht nur der Ritter, sondern auch all seine Begleiter ausgeschaltet werden sollen. Alle von ihnen, verstehst du? Mit diesen Leuten ist nicht zu spaßen und ihre Forderungen müssen ernst genommen werden. Hindere mich nicht daran, meine Arbeit zu erledigen, Kap. Eine letzte schmutzige Arbeit und dann bin ich bis zum Ende mit dir, das schwöre ich!";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
 				Notification_Perk(true, "Trustworthy");
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Zum Teufel mit dir! Mach deine schmutzige Arbeit. Ich akzeptiere deinen Eid, und du solltest ihn tödlich ernst nehmen. Verstehen wir uns?";

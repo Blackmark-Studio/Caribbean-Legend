@@ -45,12 +45,12 @@ void SetRandomNameToShip(ref rCharacter)
 	{
 		rCharacter.nation = PIRATE;
 	}
-	if(sti(rCharacter.nation) == -1)
+	if(int(rCharacter.nation) == -1)
 	{
 		rCharacter.nation = PIRATE;
 	}
 
-	switch (sti(rCharacter.nation))
+	switch (int(rCharacter.nation))
 	{
 		case ENGLAND:	makeref(rMassiveOfNames, sRndShpEnName); break;
 		case FRANCE:	makeref(rMassiveOfNames, sRndShpFrName); break;
@@ -85,13 +85,13 @@ string GetShipLocationID(ref chref)
 	{
 		return "";
 	}
-	int st = sti(chref.ship.type);
+	int st = int(chref.ship.type);
 	if(st==SHIP_NOTUSED) 
 	{
 		return "";
 	}
 
-	int iShipType = sti(RealShips[st].basetype);
+	int iShipType = int(RealShips[st].basetype);
 	if(ShipsTypes[iShipType].name == "Fort")
 	{
 		aref ar_FindLoc = FindIslandReloadLocator(chref.location,chref.location.locator);
@@ -105,9 +105,9 @@ string GetShipLocationID(ref chref)
 	// в данный метод на вход всегда идёт враг ГГ, метод только на абордаже
 	// решаем, что за палуба
 	bool bBig1 = (ShipsTypes[iShipType].DeckType == "Big");
-	bool bBig2 = (RealShips[sti(pchar.ship.type)].DeckType == "Big");
+	bool bBig2 = (RealShips[int(pchar.ship.type)].DeckType == "Big");
 	bool bMed1 = HasSubStr(ShipsTypes[iShipType].DeckType, "Medium");
-	bool bMed2 = HasSubStr(RealShips[sti(pchar.ship.type)].DeckType, "Medium");
+	bool bMed2 = HasSubStr(RealShips[int(pchar.ship.type)].DeckType, "Medium");
 	if (bBig1)
 	{
 	    if (bMed2 || bBig2) return "BOARDING_BIG_DECK";
@@ -139,13 +139,13 @@ string GetShipCabinID(ref chref)
 	{
 		return "";
 	}
-	int st = sti(chref.ship.type);
+	int st = int(chref.ship.type);
 	if(st==SHIP_NOTUSED)
 	{
 		return "";
 	}
 
-	int iShipType = sti(RealShips[st].basetype);
+	int iShipType = int(RealShips[st].basetype);
 	if(ShipsTypes[iShipType].name == "Fort")
 	{
 		return "";
@@ -162,7 +162,7 @@ bool IsSmallShip(int iShipType)
 {
 	ref refShip;
 	makeref(refShip, ShipsTypes[iShipType]);
-	if (sti(refShip.Class) == 7)
+	if (int(refShip.Class) == 7)
 	{
 		return true;
 	}
@@ -207,7 +207,7 @@ void SailsInit()
 		rShip.sails_data = false;
 		aref arData = &rShip.sails_data;
         SendMessage(&objsail, "liila", MSG_SAIL_INIT, &objship, &objmodel, true, arData);
-		trace("makeref(refShip, ShipsTypes[" + i + "]);")
+		trace("makeref(refShip, ShipsTypes[" + i + "]);");
 		for(int iNode = 0; iNode < @arData; iNode++)
 		{
 			aref arNode = GetAttributeN(arData, iNode);
@@ -496,7 +496,7 @@ int GetSpeedColor()
 	int green2 = (color2 >> 8) & 255;
 	int blue2 = color2 & 255;
 	
-	float k = (fSpeed - cSpeed1) / (cSpeed2 - cSpeed1)
+	float k = (fSpeed - cSpeed1) / (cSpeed2 - cSpeed1);
 	alpha += int(k * (alpha2 - alpha));
 	red += int(k * (red2 - red));
 	green += int(k * (green2 - green));
@@ -594,7 +594,7 @@ void ExportSpeedPoints(int iShipType)
 	int iStep = 360 / SHIP_SPEEDPOINT_QUANTITY;
 	float fSpeedPoint;
 	trace("// === " + rShip.name + " ===");
-	trace("makeref(refShip, ShipsTypes[" + iShipType + "]);")
+	trace("makeref(refShip, ShipsTypes[" + iShipType + "]);");
 	for(int i = 0; i <= SHIP_SPEEDPOINT_QUANTITY / 2; i++)
 	{
 		iAng = i * iStep;
@@ -622,7 +622,7 @@ void ExportAdvancedSpeedPoints(int iShipType)
 	int iStep = 360 / SHIP_SPEEDPOINT_QUANTITY;
 	float fSpeedPoint;
 	trace("// === " + rShip.name + " ===");
-	trace("makeref(refShip, ShipsTypes[" + iShipType + "]);")
+	trace("makeref(refShip, ShipsTypes[" + iShipType + "]);");
 	for(int i = 0; i <= SHIP_SPEEDPOINT_QUANTITY / 2; i++)
 	{
 		iAng = i * iStep;

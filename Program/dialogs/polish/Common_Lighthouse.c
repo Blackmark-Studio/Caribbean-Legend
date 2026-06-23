@@ -118,18 +118,18 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//иногда продает корабельные товары // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 			npchar.quest.goodsqty = 50+hrand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
-			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//цена единицы товара
-			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//стоимость товара
+			if (int(npchar.quest.goods) == GOOD_EBONY || int(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
+			npchar.quest.goodsprice = int(int(Goods[int(npchar.quest.goods)].Cost)/4);//цена единицы товара
+			npchar.quest.goodscost = int(npchar.quest.goodsprice)*int(npchar.quest.goodsqty);//стоимость товара
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && int(GetCharacterFreeSpace(pchar, int(npchar.quest.goods))) > int(npchar.quest.goodsqty) && int(pchar.money) >= int(npchar.quest.goodscost) && ok)
 			{
-				dialog.text = "Kapitanie, niedawno na brzeg wyrzuciło ilość towarów - "+GetGoodsNameAlt(sti(npchar.quest.goods))+". Niektóre części zostały zniszczone przez słoną wodę, ale "+FindRussianQtyString(sti(npchar.quest.goodsqty))+" Udało mi się zachować w świetnym stanie. Chcesz kupić trochę? Przydam je tanio, tylko za "+FindRussianMoneyString(sti(npchar.quest.goodsprice))+" za jednostkę.";
+				dialog.text = "Kapitanie, niedawno na brzeg wyrzuciło ilość towarów - "+GetGoodsNameAlt(int(npchar.quest.goods))+". Niektóre części zostały zniszczone przez słoną wodę, ale "+FindRussianQtyString(int(npchar.quest.goodsqty))+" Udało mi się zachować w świetnym stanie. Chcesz kupić trochę? Przydam je tanio, tylko za "+FindRussianMoneyString(int(npchar.quest.goodsprice))+" za jednostkę.";
 				link.l1 = "Nie. Pokaż mi swoje najnowsze zdobycze.";
 				link.l1.go = "Trade_lighthouse_double";
-				link.l2 = "Hm... Szczerą ofertę, zgadzam się. Myślę, że mógłbym to odsprzedać z zyskiem. Zobaczmy... To wyniesie "+FindRussianMoneyString(sti(npchar.quest.goodscost))+". Czy to prawda?";
+				link.l2 = "Hm... Szczerą ofertę, zgadzam się. Myślę, że mógłbym to odsprzedać z zyskiem. Zobaczmy... To wyniesie "+FindRussianMoneyString(int(npchar.quest.goodscost))+". Czy to prawda?";
 				link.l2.go = "Trade_goods";
 				SaveCurrentNpcQuestDateParam(npchar, "goods_date");
 			}
@@ -156,9 +156,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_goods":
-			AddCharacterGoods(pchar, sti(npchar.quest.goods), sti(npchar.quest.goodsqty));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.goodscost));
-			AddMoneyToCharacter(npchar, sti(npchar.quest.goodscost));
+			AddCharacterGoods(pchar, int(npchar.quest.goods), int(npchar.quest.goodsqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.goodscost));
+			AddMoneyToCharacter(npchar, int(npchar.quest.goodscost));
 			dialog.text = "Masz rację, kapitanie. Wspaniały interes! Obydwoje na tym zyskaliśmy...";
 			link.l1 = "Dobrze, więc. Wyślę marynarzy, aby zabrali ładunek do mojego statku. Teraz pokaż mi, co zgromadziłeś na sprzedaż.";
 			link.l1.go = "Trade_lighthouse_double";
@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_3":
-			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= sti(npchar.quest.artday))
+			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= int(npchar.quest.artday))
 			{
 			dialog.text = "Tak, mam to. Przygotowałeś 100 dublonów, kapitanie?"; // Addon-2016 Jason
 				// belamour legendary edition -->
@@ -627,7 +627,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_SetOwnerType(NPChar); // belamour иначе обижается навсегда		   
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
@@ -651,7 +651,7 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "Ach, więc ty jesteś tym kapitanem! Tak, czekałem na ciebie. Gerard też czekał, ale musiał nagle wybrać się na jakąś ekspedycję, więc poprosił mnie, aby przekazać ci płatność. Powiedział, że musisz przyjść. Tutaj jest 90 dublonów, jeśli pozwolisz.");
+			dialog.text = "Ach, więc ty jesteś tym kapitanem! Tak, czekałem na ciebie. Gerard też czekał, ale musiał nagle wybrać się na jakąś ekspedycję, więc poprosił mnie, aby przekazać ci płatność. Powiedział, że musisz przyjść. Tutaj jest 90 dublonów, jeśli pozwolisz.";
 			link.l1 = "Dziękuję! Miło jest mieć do czynienia z uczciwymi ludźmi.";
 			link.l1.go = "Trial_1";
 		break;

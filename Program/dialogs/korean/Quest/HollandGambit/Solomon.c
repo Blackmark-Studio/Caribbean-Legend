@@ -24,7 +24,7 @@ void ProcessDialogEvent()
 					DelLandQuestMark(npchar);
 					break;
 				}
-				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
+				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && int(Pchar.money) >= 200000)
 				{
 					dialog.text = "오, 젊은이, 너였구나? 좋은 소식은 하나도 없느냐? 또 그리스도인들이 이 늙은 유대인에게 질문으로 괴롭히러 온 거냐?";
 					if (CheckCharacterItem(pchar, "SkullAztec"))

@@ -4,7 +4,7 @@
 //------------------------------------------------------------------------------------------
 
 //Установить время загрузки персонажа
-void LAi_SetLoginTime(aref chr, float start, float end)
+void LAi_SetLoginTime(ref chr, float start, float end)
 {
 	if(start < 0) start = 0;
 	if(start >= 24) start = 23.99999999;
@@ -15,7 +15,7 @@ void LAi_SetLoginTime(aref chr, float start, float end)
 }
 
 //Удалить время загрузки персонажа
-void LAi_RemoveLoginTime(aref chr)
+void LAi_RemoveLoginTime(ref chr)
 {
 	aref loc;
 	makearef(loc, chr.location);
@@ -24,7 +24,7 @@ void LAi_RemoveLoginTime(aref chr)
 }
 
 //Данный персонаж является верующим, и в определённое время находиться в церкви
-void LAi_SetFanatic(aref chr, string churchID, string group, string locator, float start, float end)
+void LAi_SetFanatic(ref chr, string churchID, string group, string locator, float start, float end)
 {
 	chr.location.church = churchID;
 	chr.location.church.group = group;
@@ -34,7 +34,7 @@ void LAi_SetFanatic(aref chr, string churchID, string group, string locator, flo
 }
 
 //Сделать обычным персонаж
-void LAi_RemoveFanatic(aref chr)
+void LAi_RemoveFanatic(ref chr)
 {
 	aref loc;
 	makearef(loc, chr.location);
@@ -42,13 +42,13 @@ void LAi_RemoveFanatic(aref chr)
 }
 
 //Запретить перерождение персонажа после убийства
-void LAi_NoRebirthEnable(aref chr)
+void LAi_NoRebirthEnable(ref chr)
 {
 	chr.location.norebirth = "1";
 }
 
 //Разрешить перерождение персонажа после убийства
-void LAi_NoRebirthDisable(aref chr)
+void LAi_NoRebirthDisable(ref chr)
 {
 	aref loc;
 	makearef(loc, chr.location);
@@ -56,13 +56,13 @@ void LAi_NoRebirthDisable(aref chr)
 }
 
 //Перерождение нпс со старым именем
-void LAi_RebirthOldName(aref chr)
+void LAi_RebirthOldName(ref chr)
 {
 	chr.location.rebirthOldName = true;
 }
 
 //Разрешить/запретить персонажу загружаться в захваченную локацию
-void LAi_LoginInCaptureTown(aref chr, bool isEnable)
+void LAi_LoginInCaptureTown(ref chr, bool isEnable)
 {
 
 	if (isEnable) chr.location.loadcapture = "1";
@@ -74,7 +74,7 @@ void LAi_LoginInCaptureTown(aref chr, bool isEnable)
 //------------------------------------------------------------------------------------------
 
 //Установить хитпойнты
-void LAi_SetHP(aref chr, float cur, float max)
+void LAi_SetHP(ref chr, float cur, float max)
 {
 	if(max < 1) max = 1;
 	if(cur < 0) cur = 0;
@@ -84,12 +84,12 @@ void LAi_SetHP(aref chr, float cur, float max)
 }
 
 //Установить текущии хитпойнты
-void LAi_SetCurHP(aref chr, float cur)
+void LAi_SetCurHP(ref chr, float cur)
 {
 	float maxHP = LAI_DEFAULT_HP_MAX;
 	if(CheckAttribute(chr, "chr_ai.hp_max"))
 	{
-		maxHP = stf(chr.chr_ai.hp_max);
+		maxHP = float(chr.chr_ai.hp_max);
 		if(maxHP < 1) maxHP = 1;
 	}
 	chr.chr_ai.hp_max = maxHP;
@@ -103,12 +103,12 @@ void LAi_SetCurHP(aref chr, float cur)
 }
 
 //Установить текущии хитпойнты и энергию максимальными
-void LAi_SetCurHPMax(aref chr)
+void LAi_SetCurHPMax(ref chr)
 {
 	float maxHP = LAI_DEFAULT_HP_MAX;
 	if(CheckAttribute(chr, "chr_ai.hp_max"))
 	{
-		maxHP = stf(chr.chr_ai.hp_max);
+		maxHP = float(chr.chr_ai.hp_max);
 		if(maxHP < 1) maxHP = 1;
 	}
 	chr.chr_ai.hp_max = maxHP;
@@ -118,26 +118,26 @@ void LAi_SetCurHPMax(aref chr)
 }
 
 //Скорость изменения хп в секунду
-void LAi_SetDltHealth(aref chr, float healthPerSec)
+void LAi_SetDltHealth(ref chr, float healthPerSec)
 {
 	//if(healthPerSec < 0) healthPerSec = 0;
 	chr.chr_ai.hp_dlt = healthPerSec;
 }
 
 //Использовать бутылочку-лечилку
-void LAi_UseHealthBottle(aref chr, float healthInBottle)
+void LAi_UseHealthBottle(ref chr, float healthInBottle)
 {
 	if(healthInBottle <= 0) return;	
 	if(!CheckAttribute(chr, "chr_ai.hp_bottle"))
 	{
 		chr.chr_ai.hp_bottle = "0";
 	}
-	chr.chr_ai.hp_bottle = stf(chr.chr_ai.hp_bottle) + healthInBottle;
-	if(chr.id == Characters[nMainCharacterIndex].id) chr.chr_ai.usedbottlemax = stf(chr.chr_ai.hp_bottle);
+	chr.chr_ai.hp_bottle = float(chr.chr_ai.hp_bottle) + healthInBottle;
+	if(chr.id == Characters[nMainCharacterIndex].id) chr.chr_ai.usedbottlemax = float(chr.chr_ai.hp_bottle);
 	SendMessage(chr, "l", MSG_CHARACTER_ACTIVEHEAL);
 }
 // boal
-void LAi_UseHealthBottleSpeed(aref chr, float healthSpeed)
+void LAi_UseHealthBottleSpeed(ref chr, float healthSpeed)
 {
 	if (healthSpeed <= 0) return;
 	
@@ -145,11 +145,11 @@ void LAi_UseHealthBottleSpeed(aref chr, float healthSpeed)
 }
 
 //navy -->
-void LAi_AlcoholSetDrunk(aref chr, float alcoholDegree, float time)
+void LAi_AlcoholSetDrunk(ref chr, float alcoholDegree, float time)
 {
 	//эффекты не суммируются.
 	if (CheckAttribute(chr, "chr_ai.drunk")) return;
-	if(sti(chr.index) == GetMainCharacterIndex()) notification(XI_ConvertString("Drunk note"),"Drunk");
+	if(int(chr.index) == GetMainCharacterIndex()) notification(XI_ConvertString("Drunk note"),"Drunk");
 	chr.chr_ai.drunk = time;
 	bool bHat8 = GetCharacterEquipByGroup(chr, HAT_ITEM_TYPE) == "hat8";
 	int n = 0;
@@ -189,21 +189,21 @@ void LAi_AlcoholSetDrunk(aref chr, float alcoholDegree, float time)
 	if(CheckAttribute(chr, "chr_ai.energy"))
 	{
 		/*
-		energyMax = stf(chr.chr_ai.energyMax);
+		energyMax = float(chr.chr_ai.energyMax);
 		if(energyMax < 1) energyMax = 1;
 		chr.chr_ai.drunk.energyMax = energyMax*0.2;
-		chr.chr_ai.energyMax = stf(chr.chr_ai.energyMax) + stf(chr.chr_ai.drunk.energyMax);
+		chr.chr_ai.energyMax = float(chr.chr_ai.energyMax) + float(chr.chr_ai.drunk.energyMax);
 		*/
-		chr.chr_ai.energy = stf(chr.chr_ai.energy) + 20;
+		chr.chr_ai.energy = float(chr.chr_ai.energy) + 20;
 	}
 }
 
-void LAi_SetAlcoholNormal(aref chr)
+void LAi_SetAlcoholNormal(ref chr)
 {
 	/*
 	if(CheckAttribute(chr, "chr_ai.energyMax"))
 	{
-		chr.chr_ai.energyMax = stf(chr.chr_ai.energyMax) - stf(chr.chr_ai.drunk.energyMax);
+		chr.chr_ai.energyMax = float(chr.chr_ai.energyMax) - float(chr.chr_ai.drunk.energyMax);
 	}
 	*/
 	if (CheckAttribute(pchar, "questTemp.Rum")) DeleteAttribute(pchar, "questTemp.Rum");
@@ -214,20 +214,20 @@ void LAi_SetAlcoholNormal(aref chr)
 //<--
 
 //Использовать бутылочку-противоядие
-void LAi_UseAtidoteBottle(aref chr)
+void LAi_UseAtidoteBottle(ref chr)
 {
 	DeleteAttribute(chr, "chr_ai.poison");
 }
 
 //Отравлен
-bool LAi_IsPoison(aref chr)
+bool LAi_IsPoison(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.poison")) return true;
 	return false;
 }
 
 //Сделать персонажа бессмертным
-void LAi_SetImmortal(aref chr, bool isImmortal)
+void LAi_SetImmortal(ref chr, bool isImmortal)
 {
 	if(isImmortal)
 	{
@@ -240,11 +240,11 @@ void LAi_SetImmortal(aref chr, bool isImmortal)
 }
 
 //Узнать отношение персонажа к бессмертию
-bool LAi_IsImmortal(aref chr)
+bool LAi_IsImmortal(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.immortal"))
 	{
-		if(sti(chr.chr_ai.immortal) != 0)
+		if(int(chr.chr_ai.immortal) != 0)
 		{
 			return true;
 		}
@@ -261,7 +261,7 @@ bool LAi_IsArmed(ref chr)
 }
 
 //Установить проверяльщик хп, если их становиться меньше чем, вызвать квест
-void LAi_SetCheckMinHP(aref chr, float min, bool immortal, string quest)
+void LAi_SetCheckMinHP(ref chr, float min, bool immortal, string quest)
 {
 	if(min < 0.9999999) min = 0.9999999;
 	chr.chr_ai.hpchecker = min;
@@ -270,7 +270,7 @@ void LAi_SetCheckMinHP(aref chr, float min, bool immortal, string quest)
 }
 
 //Установить проверяльщик хп с коллбэком
-void LAi_SetCheckMinHPCallback(aref chr, float min, bool immortal, string funcName)
+void LAi_SetCheckMinHPCallback(ref chr, float min, bool immortal, string funcName)
 {
 	if(min < 0.9999999) min = 0.9999999;
 	chr.chr_ai.hpchecker = min;
@@ -279,7 +279,7 @@ void LAi_SetCheckMinHPCallback(aref chr, float min, bool immortal, string funcNa
 }
 
 //Удалить проверяльщик хп
-void LAi_RemoveCheckMinHP(aref chr)
+void LAi_RemoveCheckMinHP(ref chr)
 {
 	aref chr_ai;
 	makearef(chr_ai, chr.chr_ai);
@@ -287,7 +287,7 @@ void LAi_RemoveCheckMinHP(aref chr)
 }
 
 //Убить персонажа
-void LAi_KillCharacter(aref chr)
+void LAi_KillCharacter(ref chr)
 {
 	chr.chr_ai.hp = "0";
 	if(CheckAttribute(chr, "chr_ai.immortal"))
@@ -320,11 +320,11 @@ void LAi_KillImmortalCharacter(ref chr)
 }
 
 //Убит ли персонаж
-bool LAi_IsDead(aref chr)
+bool LAi_IsDead(ref chr)
 {
 	if(chr.id == "0") return true; // boal если фантома нет, то НПС умер
 	if(CheckAttribute(chr, "chr_ai.hp") == false) return true;
-	if(stf(chr.chr_ai.hp) < 1.0) return true;
+	if(float(chr.chr_ai.hp) < 1.0) return true;
 	return false;
 }
 
@@ -334,7 +334,7 @@ bool LAi_IsDead(aref chr)
 //------------------------------------------------------------------------------------------
 
 //Является ли персонаж управляемым
-bool LAi_IsCharacterControl(aref chr)
+bool LAi_IsCharacterControl(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.tmpl"))
 	{
@@ -344,25 +344,25 @@ bool LAi_IsCharacterControl(aref chr)
 }
 
 //Запретить диалог с персонажем
-void LAi_CharacterDisableDialog(aref chr)
+void LAi_CharacterDisableDialog(ref chr)
 {
 	chr.chr_ai.disableDlg = "1";
 }
 
 //Разрешить диалог с персонажем
-void LAi_CharacterEnableDialog(aref chr)
+void LAi_CharacterEnableDialog(ref chr)
 {
 	chr.chr_ai.disableDlg = "0";
 }
 
 //Разрешить при смерти порождить фантома
-void LAi_CharacterReincarnation(aref chr, bool isEnable, bool isUseCurModel)
+void LAi_CharacterReincarnation(ref chr, bool isEnable, bool isUseCurModel)
 {
 	LAi_CharacterReincarnationEx(chr, isEnable, isUseCurModel, "");
 }
 
 //Разрешить при смерти порождить фантома
-void LAi_CharacterReincarnationEx(aref chr, bool isEnable, bool isUseCurModel, string locgroup)
+void LAi_CharacterReincarnationEx(ref chr, bool isEnable, bool isUseCurModel, string locgroup)
 {
 	if(isEnable)
 	{
@@ -384,24 +384,24 @@ void LAi_CharacterReincarnationEx(aref chr, bool isEnable, bool isUseCurModel, s
 	}	
 }
 
-bool LAi_CharacterIsReincarnation(aref chr)
+bool LAi_CharacterIsReincarnation(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.reincarnation") == false) return false;
 	return true;
 }
 
-bool LAi_CharacterReincarnationMode(aref chr)
+bool LAi_CharacterReincarnationMode(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.reincarnation") == false)
 	{
 		Trace("LAi_CharacterReincarnationMode -> no field chr.chr_ai.reincarnation");
 		return false;
 	}
-	if(sti(chr.chr_ai.reincarnation) != 0) return true;
+	if(int(chr.chr_ai.reincarnation) != 0) return true;
 	return false;
 }
 
-string LAi_CharacterReincarnationGroup(aref chr)
+string LAi_CharacterReincarnationGroup(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.reincarnation.group") == false)
 	{
@@ -413,7 +413,7 @@ string LAi_CharacterReincarnationGroup(aref chr)
 }
 
 //eddy. установить установить шаг повышения ранга фантома при реинкарнации.
-bool LAi_SetReincarnationRankStep(aref _chr, int _step) 
+bool LAi_SetReincarnationRankStep(ref _chr, int _step)
 {
 	if(CheckAttribute(_chr, "chr_ai.reincarnation"))
 	{
@@ -430,20 +430,20 @@ bool LAi_SetReincarnationRankStep(aref _chr, int _step)
 //------------------------------------------------------------------------------------------
 
 //Проиграть звук
-void LAi_CharacterPlaySound(aref chr, string soundname)
+void LAi_CharacterPlaySound(ref chr, string soundname)
 {
 	SendMessage(chr, "s", soundname);
 }
 
 //Переключиться в боевой или мирный режим
-void LAi_SetFightMode(aref chr, int isFightMode)
+void LAi_SetFightMode(ref chr, int isFightMode)
 {
 	if(isFightMode)
 	{
 		if(SendMessage(chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode") != CHR_MODE_PEACE)
 			return; //Не для переключения между режимами эта функция
 		if(CheckAttribute(chr, "PriorityMode"))
-			isFightMode = sti(chr.PriorityMode);
+			isFightMode = int(chr.PriorityMode);
 	}
 	if(IsMainCharacter(chr))
 		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, 0);
@@ -468,24 +468,24 @@ void LAi_SetFightModeForOfficers(bool isFightMode)
 }
 
 //Присвоить персонажу боевой режим (для появления без анимации доставания оружия на абордажах, штурмах и т.д.)
-void LAi_InstantFightMode(aref chr)
+void LAi_InstantFightMode(ref chr)
 {
 	if(CheckAttribute(chr, "PriorityMode"))
-		SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightMode", sti(chr.PriorityMode));
+		SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightMode", int(chr.PriorityMode));
 	else
 		SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightMode", 1);
 }
 
 //Заблокировать текущий режим (!!! сбрасывается при смене шаблона !!!)
-void LAi_LockFightMode(aref chr, bool isLockFightMode)
+void LAi_LockFightMode(ref chr, bool isLockFightMode)
 {
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", isLockFightMode);
 }
 
 //Получить режим боя (2 - мушкетный у универсалов, 1 - сабля у универсалов и просто боевой у остальных, 0 - мирный)
-int LAi_CheckFightMode(aref chr)
+int LAi_CheckFightMode(ref chr)
 {
-	return SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode");
+	return int(SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "CheckFightMode"));
 }
 
 //------------------------------------------------------------------------------------------
@@ -494,17 +494,17 @@ int LAi_CheckFightMode(aref chr)
 
 
 //Получить относительный заряд пистолета
-float LAi_GetCharacterRelCharge(aref chr, string sType)
+float LAi_GetCharacterRelCharge(ref chr, string sType)
 {
 	if(CheckAttribute(chr, "chr_ai."+sType+".charge"))
 	{
 		if(CheckAttribute(chr, "chr_ai."+sType+".chargeprc"))
 		{
-			if(sti(chr.chr_ai.(sType).chargeprc))
+			if(int(chr.chr_ai.(sType).chargeprc))
 			{
 				if(!CheckAttribute(chr, "chr_ai."+sType+".charge_max")) return 0.0;
-				float charge = stf(chr.chr_ai.(sType).charge);
-				float chargemax = stf(chr.chr_ai.(sType).charge_max);
+				float charge = float(chr.chr_ai.(sType).charge);
+				float chargemax = float(chr.chr_ai.(sType).charge_max);
 				if(chargemax <= 0) return 0.0;
 				if(charge >= chargemax) charge = chargemax;
 				charge = charge/chargemax;
@@ -520,28 +520,28 @@ float LAi_GetCharacterRelCharge(aref chr, string sType)
 }
 
 //Получить максимальное количество зарядов пистолета
-int LAi_GetCharacterChargeQuant(aref chr, string sType)
+int LAi_GetCharacterChargeQuant(ref chr, string sType)
 {
 	if(CheckAttribute(chr, "chr_ai."+sType+".charge_max"))
 	{
-		return sti(chr.chr_ai.(sType).charge_max);
+		return int(chr.chr_ai.(sType).charge_max);
 	}
 	return 0;
 }
 
 //Получить текущее количество зарядов пистолета
-int LAi_GetCharacterChargeCur(aref chr, string sType)
+int LAi_GetCharacterChargeCur(ref chr, string sType)
 {
 	if(CheckAttribute(chr, "chr_ai."+sType+".charge"))
 	{
-		float charge = stf(chr.chr_ai.(sType).charge);
-		return MakeInt(charge);
+		float charge = float(chr.chr_ai.(sType).charge);
+		return int(charge);
 	}
 	return 0;
 }
 
 //Установить количество зарядов
-void LAi_GunSetChargeQuant(aref chr, string sType, int quant)
+void LAi_GunSetChargeQuant(ref chr, string sType, int quant)
 {
 	if(quant < 0) quant = 0;
 
@@ -677,7 +677,7 @@ string LAi_GetCharacterDefaultBulletType(string sGun)
 		for (int i = 0; i < iNum; i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
-			if(sti(rItm.type.(sAttr).Default) > 0)
+			if(int(rItm.type.(sAttr).Default) > 0)
 			{
 				sBulletType = rItm.type.(sAttr).bullet;
 			}
@@ -787,13 +787,13 @@ bool LAi_SetCharacterUseBullet(ref rChar, string sType, string sBullet)
 				rItm.dmg_min 				= rItm.type.(sAttr).DmgMin;
 				rItm.dmg_max				= rItm.type.(sAttr).DmgMax;
 								
-				if(CheckAttribute(rItm,"chargeQ"))										LAi_GunSetChargeQuant(rChar, sType, sti(rItm.chargeQ));
+				if(CheckAttribute(rItm,"chargeQ"))										LAi_GunSetChargeQuant(rChar, sType, int(rItm.chargeQ));
 				else																	LAi_GunSetChargeQuant(rChar, sType, 0);						
-				if(CheckAttribute(rItm,"chargespeed") && stf(rItm.chargespeed) > 0.0)	LAi_GunSetChargeSpeed(rChar, sType, 1.0/stf(rItm.chargespeed));
+				if(CheckAttribute(rItm,"chargespeed") && float(rItm.chargespeed) > 0.0)	LAi_GunSetChargeSpeed(rChar, sType, 1.0/float(rItm.chargespeed));
 				else																	LAi_GunSetChargeSpeed(rChar, sType, 0.0);				
-				if(CheckAttribute(rItm,"dmg_min"))										LAi_GunSetDamageMin(rChar, sType, stf(rItm.dmg_min));
+				if(CheckAttribute(rItm,"dmg_min"))										LAi_GunSetDamageMin(rChar, sType, float(rItm.dmg_min));
 				else																	LAi_GunSetDamageMin(rChar, sType, 0.0);				
-				if(CheckAttribute(rItm,"dmg_max"))										LAi_GunSetDamageMax(rChar, sType, stf(rItm.dmg_max));
+				if(CheckAttribute(rItm,"dmg_max"))										LAi_GunSetDamageMax(rChar, sType, float(rItm.dmg_max));
 				else																	LAi_GunSetDamageMax(rChar, sType, 0.0);
 			
 				return true;	
@@ -803,14 +803,14 @@ bool LAi_SetCharacterUseBullet(ref rChar, string sType, string sBullet)
 	return false;
 }
 
-float LAi_GetGunChargeProgress(aref chr)
+float LAi_GetGunChargeProgress(ref chr)
 {
 	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "") return 0.0;
 	if(CheckAttribute(chr, "chr_ai.gun.charge"))
 	{
 		float charge = chr.chr_ai.gun.charge;
-		if(charge > 1.0) charge -= MakeInt(chr.chr_ai.gun.charge);
-		if(CheckAttribute(chr, "chr_ai.gun.charge_max") && MakeInt(chr.chr_ai.gun.charge_max) == MakeInt(chr.chr_ai.gun.charge))
+		if(charge > 1.0) charge -= int(chr.chr_ai.gun.charge);
+		if(CheckAttribute(chr, "chr_ai.gun.charge_max") && int(chr.chr_ai.gun.charge_max) == int(chr.chr_ai.gun.charge))
 			charge = 0.0;
 	}
 	else return 0.0;
@@ -818,14 +818,14 @@ float LAi_GetGunChargeProgress(aref chr)
 	return charge;
 }
 
-float LAi_GetMusketChargeProgress(aref chr)
+float LAi_GetMusketChargeProgress(ref chr)
 {
 	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "") return 0.0;
 	if(CheckAttribute(chr, "chr_ai.musket.charge"))
 	{
 		float charge = chr.chr_ai.musket.charge;
-		if(charge > 1.0) charge -= MakeInt(chr.chr_ai.musket.charge);
-		if(CheckAttribute(chr, "chr_ai.musket.charge_max") && MakeInt(chr.chr_ai.musket.charge_max) == MakeInt(chr.chr_ai.musket.charge))
+		if(charge > 1.0) charge -= int(chr.chr_ai.musket.charge);
+		if(CheckAttribute(chr, "chr_ai.musket.charge_max") && int(chr.chr_ai.musket.charge_max) == int(chr.chr_ai.musket.charge))
 			charge = 0.0;
 	}
 	else return 0.0;
@@ -833,14 +833,14 @@ float LAi_GetMusketChargeProgress(aref chr)
 	return charge;
 }
 
-float LAi_GetPotionProgress(aref chr)
+float LAi_GetPotionProgress(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.usedbottlemax"))
 	{
-		float fmax = stf(chr.chr_ai.usedbottlemax); 
+		float fmax = float(chr.chr_ai.usedbottlemax);
 		if(CheckAttribute(chr, "chr_ai.hp_bottle"))
 		{
-			float fcur = stf(chr.chr_ai.hp_bottle);
+			float fcur = float(chr.chr_ai.hp_bottle);
 		}
 		else return 1.0;
 		
@@ -876,14 +876,14 @@ int iGetPistolChargeNum(ref rChar, string sType, int iQuant) // Скока мо�
 // <-- Методы по зарядке огнестрельного оружия
 
 //Разрядить оружие
-void LAi_GunSetUnload(aref chr, string sType)
+void LAi_GunSetUnload(ref chr, string sType)
 {
 	chr.chr_ai.(sType).charge = "0";
 	chr.chr_ai.(sType).chargeprc = "1";
 }
 
 //Установить скорость заряда оружия
-void LAi_GunSetChargeSpeed(aref chr, string sType, float speed)
+void LAi_GunSetChargeSpeed(ref chr, string sType, float speed)
 {
 	if(speed < 0.0) speed = 0.0;
 	if(speed > 4.0) speed = 4.0;
@@ -891,31 +891,31 @@ void LAi_GunSetChargeSpeed(aref chr, string sType, float speed)
 }
 
 //Установить минимальный урон от оружия
-void LAi_GunSetDamageMin(aref chr, string sType, float min)
+void LAi_GunSetDamageMin(ref chr, string sType, float min)
 {
 	chr.chr_ai.(sType).dmggunmin = min;
 }
 
 //Установить максимальный урон от оружия
-void LAi_GunSetDamageMax(aref chr, string sType, float max)
+void LAi_GunSetDamageMax(ref chr, string sType, float max)
 {
 	chr.chr_ai.(sType).dmggunmax = max;
 }
 
 //Установить минимальный урон от сабли
-void LAi_BladeSetDamageMin(aref chr, float min)
+void LAi_BladeSetDamageMin(ref chr, float min)
 {
 	chr.chr_ai.dmgbldmin = min;
 }
 
 //Установить максимальный урон от сабли
-void LAi_BladeSetDamageMax(aref chr, float max)
+void LAi_BladeSetDamageMax(ref chr, float max)
 {
 	chr.chr_ai.dmgbldmax = max;
 }
 
 //Установить вероятность пробивки
-void LAi_BladeSetPiercing(aref chr, float piercing)
+void LAi_BladeSetPiercing(ref chr, float piercing)
 {
 	if(piercing < 0.0) piercing = 0.0;
 	if(piercing > 1.0) piercing = 1.0;
@@ -923,19 +923,19 @@ void LAi_BladeSetPiercing(aref chr, float piercing)
 }
 
 //Установить вероятность неблокирования
-void LAi_BladeSetBlock(aref chr, float block)
+void LAi_BladeSetBlock(ref chr, float block)
 {
 	if(block < 0.0) block = 0.0;
 	if(block > 1.0) block = 1.0;
 	chr.chr_ai.block = block;
 }
 // тип сабли boal
-void LAi_BladeFencingType(aref chr, string FencingType)
+void LAi_BladeFencingType(ref chr, string FencingType)
 {
 	chr.chr_ai.FencingType = FencingType;
 }
 
-string LAi_GetBladeFencingType(aref chr)
+string LAi_GetBladeFencingType(ref chr)
 {
     if(CheckAttribute(chr, "chr_ai.FencingType"))
 	{
@@ -944,30 +944,30 @@ string LAi_GetBladeFencingType(aref chr)
     return SKILL_FENCING;
 }
 
-void LAi_SetBladeEnergyType(aref chr, float fEnergyType)
+void LAi_SetBladeEnergyType(ref chr, float fEnergyType)
 {
 	chr.chr_ai.BladeEnergyType = fEnergyType;
 }
 
-float LAi_GetBladeEnergyType(aref chr)
+float LAi_GetBladeEnergyType(ref chr)
 {
     if (CheckAttribute(chr, "chr_ai.BladeEnergyType"))
 	{
-        return stf(chr.chr_ai.BladeEnergyType);
+        return float(chr.chr_ai.BladeEnergyType);
     }
     return 1.0;
 }
 
-void LAi_SetMushketEnergyType(aref chr, float fEnergyType)
+void LAi_SetMushketEnergyType(ref chr, float fEnergyType)
 {
 	chr.chr_ai.MushketEnergyType = fEnergyType;
 }
 
-float LAi_GetMushketEnergyType(aref chr)
+float LAi_GetMushketEnergyType(ref chr)
 {
     if (CheckAttribute(chr, "chr_ai.MushketEnergyType"))
 	{
-        return stf(chr.chr_ai.MushketEnergyType);
+        return float(chr.chr_ai.MushketEnergyType);
     }
     return 1.0;
 }
@@ -982,180 +982,209 @@ float SprintEnergyCost = 3.0;
 //Процессируем всех загруженных персонажей
 void LAi_AllCharactersUpdate(float dltTime)
 {
+	int iMainCharacterIndex = GetMainCharacterIndex();
 	for(int i = 0; i < LAi_numloginedcharacters; i++)
 	{
 		int idx = LAi_loginedcharacters[i];
 		if(idx >= 0)
 		{
+			ref chr = &Characters[idx];
+			if(LAi_IsDead(chr)) continue;
+			if (chr.OfficerImmortal$string("") == "injury")
+			{
+				continue;
+			}
+
 			//Персонаж
 			aref chr_ai;
 			makearef(chr_ai, Characters[idx].chr_ai);
-			ref chr = &Characters[idx];
-			if(LAi_IsDead(chr)) continue;
-			if (CheckAttributeEqualTo(chr, "OfficerImmortal", "injury")) continue;
 
-			//Востоновление жизни
-			float dlthp = LAI_DEFAULT_DLTHP;
-			if(CheckAttribute(chr_ai, "hp_dlt")) dlthp = stf(chr_ai.hp_dlt);
-			if (IsEquipCharacterByArtefact(chr, "amulet_7")) dlthp *= 2.0;
-			if (HasPerk(chr, "Medic") && stf(chr_ai.hp) * 2.0 < stf(chr_ai.hp_max)) dlthp *= 2.0;
-			if(idx == GetMainCharacterIndex() && CheckAttribute(chr, "cheats.hpupdate")) dlthp *= 10.0;
-			if(LAi_IsFightMode(chr) && GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_WR") dlthp *= 5.0;
-			float hp = stf(chr_ai.hp) + dlthp*dltTime;
-			float oldhp = hp;
-			if(CheckAttribute(chr_ai, "hp_bottle"))
+            float hp = float(chr_ai.hp);
+			float maxhp = float(chr_ai.hp_max);
+			float fPoison = chr_ai.poison$float(0.0);
+			bool bPoisoned = fPoison > 0;
+			bool bMain = idx == iMainCharacterIndex;
+			if (hp < maxhp || bPoisoned)
 			{
-				float bottle = stf(chr_ai.hp_bottle);
-				if(bottle > 0)
+				float dlthp = LAI_DEFAULT_DLTHP;
+				dlthp = chr_ai.hp_dlt$float(0.0);
+				//if(CheckAttribute(chr_ai, "hp_dlt")) ;
+				dlthp *= LAi_HPRecoverySpeed(chr);
+
+
+				//if (IsEquipCharacterByArtefact(chr, "amulet_7")) dlthp *= 2.0;
+				if(bMain && CheckAttribute(chr, "cheats.hpupdate")) dlthp *= 10.0;
+				//if(LAi_IsFightMode(chr) && GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_WR") dlthp *= 5.0;
+
+				hp += dlthp*dltTime;
+
+				float oldhp = hp;
+				aref arBottle = chr_ai.hp_bottle$aref;
+				if (arBottle != nullptr)
 				{
-					//Скорость высасывания из бутылки
-					float bottledlthp = LAI_DEFAULT_DLTBLTHP;
-					if(CheckAttribute(chr_ai, "hp_dlt_bottle"))
+					float bottle = float(arBottle);
+
+					if(bottle > 0)
 					{
-						bottledlthp = stf(chr_ai.hp_dlt_bottle);
+						//Скорость высасывания из бутылки
+						float bottledlthp = chr_ai.hp_dlt_bottle$float(LAI_DEFAULT_DLTBLTHP);
+
+						//Количество вытянутых хп за текущий период времени
+						bottledlthp = bottledlthp*dltTime;
+						if(bottledlthp > bottle)
+						{
+							bottledlthp = bottle;
+						}
+						bottle = bottle - bottledlthp;
+						hp = hp + bottledlthp;
+						chr_ai.hp_bottle = bottle;
 					}
-					//Количество вытянутых хп за текущий период времени
-					bottledlthp = bottledlthp*dltTime;				
-					if(bottledlthp > bottle)
+					else
 					{
-						bottledlthp = bottle;
+						//Нет больше бутылки
+						DeleteAttribute(chr_ai, "hp_bottle");
+						DeleteAttribute(chr_ai, "hp_dlt_bottle");//fix
+						if(bMain)
+							DeleteAttribute(chr, "chr_ai.usedbottlemax");
 					}
-					bottle = bottle - bottledlthp;
-					hp = hp + bottledlthp;
-					chr_ai.hp_bottle = bottle;
-				}else{
-					//Нет больше бутылки
-					DeleteAttribute(chr_ai, "hp_bottle");
-					DeleteAttribute(chr_ai, "hp_dlt_bottle");//fix
-					if(idx==GetMainCharacterIndex())
-					DeleteAttribute(chr, "chr_ai.usedbottlemax");
-					
 				}
+
+				if(bPoisoned)
+				{
+					chr_ai.poison = fPoison - dltTime;
+					if(fPoison <= 0.0)
+					{
+						DeleteAttribute(chr_ai, "poison");
+					}
+					else if(!IsInvulnerable(chr))
+					{
+						hp = hp - dltTime*2.0;
+						if(hp < 1.0) DeleteAttribute(chr_ai, "poison");
+						if (!CheckAttribute(chr, "poison.hp") || hp < int(chr.poison.hp)-1.0)
+						{
+							chr.poison.hp = hp;
+							if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, hp, float(int(chr.chr_ai.hp)), float(int(chr.chr_ai.hp_max)));
+						}
+					}
+				}
+
+				//<--
+				if(LAi_IsImmortal(chr))
+				{
+					if(hp < oldhp) hp = oldhp;
+				}
+
+				if(hp > maxhp)
+				{
+					hp = maxhp;
+					DeleteAttribute(chr_ai, "bottle");
+				}
+				chr_ai.hp = hp;
+				
+				//Проверка квеста на hp
+				LAi_ProcessCheckMinHP(chr);
+				//Проверка на смерть
+				LAi_CheckKillCharacter(chr);
 			}
-			
-			// временная неуязвимость
-			if(idx == GetMainCharacterIndex() && IsInvulnerable(chr))
+			else
 			{
-				float invulTime = stf(chr_ai.invulnerability);
+				DeleteAttribute(chr_ai, "bottle");
+			}
+
+			// временная неуязвимость
+			if(bMain && IsInvulnerable(chr))
+			{
+				float invulTime = float(chr_ai.invulnerability);
 				invulTime -= dltTime;
 				if(invulTime <= 0.0)
 					SetInvulnerable(chr, -1.0);
 				else
 					chr_ai.invulnerability = invulTime;
 			}
-			
-			if(CheckAttribute(chr_ai, "poison"))
-			{
-				chr_ai.poison = stf(chr_ai.poison) - dltTime;
-				if(stf(chr_ai.poison) <= 0.0)
-				{
-					DeleteAttribute(chr_ai, "poison");
-				}
-				else if(!IsInvulnerable(chr))
-				{
-					hp = hp - dltTime*2.0;
-					if(hp < 1.0) DeleteAttribute(chr_ai, "poison");
-					if (!CheckAttribute(chr, "poison.hp") || hp < sti(chr.poison.hp)-1.0)
-					{
-						chr.poison.hp = hp;
-						if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, hp, MakeFloat(MakeInt(chr.chr_ai.hp)), MakeFloat(MakeInt(chr.chr_ai.hp_max)));
-					}
-				}
-			}
+
 			//navy --> время действия бутылки
-			if(CheckAttribute(chr_ai, "drunk"))
+			int drunk = chr_ai.drunk$int(-1);
+			if(drunk != -1)
 			{
-				chr_ai.drunk = sti(chr_ai.drunk) - 1;
-				if(sti(chr_ai.drunk) < 1) LAi_SetAlcoholNormal(chr);
+				chr_ai.drunk = drunk - 1;
+				if(drunk < 1) LAi_SetAlcoholNormal(chr);
 			}
-			//<--
-			if(LAi_IsImmortal(chr))
-			{
-				if(hp < oldhp) hp = oldhp;
-			}
-			float maxhp = stf(chr_ai.hp_max);
-			if(hp > maxhp)
-			{
-				hp = maxhp;
-				DeleteAttribute(chr_ai, "bottle");
-			}
-			chr_ai.hp = hp;
-			//Проверка квеста на hp
-			LAi_ProcessCheckMinHP(chr);
-			//Проверка на смерть
-			LAi_CheckKillCharacter(chr);
-			
+
 			//--> Восстановление зарядов огнестрельного оружия
 			float charge, dltcharge;
 			float ChargeMax = 0.0;
 			bool bMus = IsMusketer(chr);
-			bool bPeace = !LAi_IsFightMode(chr);
+
 			bool bAiming = false;
-			if(idx == GetMainCharacterIndex())
+			if(bMain)
 			{
 				string sAimingStep;
 				SendMessage(pchar, "lse", MSG_CHARACTER_EX_MSG, "GetAimingStep", &sAimingStep);
 				if(sAimingStep != "none")
 					bAiming = true;
-				if(CheckAttribute(chr_ai, "kill_timer"))
-				{
-					float killTimer = stf(chr_ai.kill_timer);
+				float killTimer = chr_ai.kill_timer$float(0.0);
 					killTimer -= dltTime;
-					if(killTimer <= 0.0)
-						DeleteAttribute(chr_ai, "kill_timer");
-					else
-						chr_ai.kill_timer = killTimer;
-				}
+				if(killTimer <= 0.0)
+					DeleteAttribute(chr_ai, "kill_timer");
+				else
+					chr_ai.kill_timer = killTimer;
 			}
-			
-			if(CheckAttribute(chr_ai, "getheadshot"))
+
+			aref arGetHeadShot = chr_ai.getheadshot$aref;
+			if (arGetHeadShot != nullptr)
 			{
-				float headshotCD = stf(chr_ai.getheadshot);
-				headshotCD -= dltTime;
-				if(headshotCD <= 0.0)
+				float fGetHeadShot = arGetHeadShot$float(0.0);
+				fGetHeadShot -= dltTime;
+				if(fGetHeadShot <= 0.0)
 					DeleteAttribute(chr_ai, "getheadshot");
 				else
-					chr_ai.getheadshot = headshotCD;
+					chr_ai.getheadshot = fGetHeadShot;
 			}
 			
 			//Для пистолета
 			if(!bAiming)
 			{
+				bool bPeace = !LAi_IsFightMode(chr);
 				if (bRechargePistolOnLine || bPeace)
 				{
-					if(CheckAttribute(chr_ai, "gun.charge_max")) ChargeMax = stf(chr_ai.gun.charge_max);
+					ChargeMax = chr_ai.gun.charge_max$float(0.0);
 					if(ChargeMax > 0.0)
 					{
-						if(sti(chr_ai.gun.chargeprc))
+						if(int(chr_ai.gun.chargeprc))
 						{
-							charge = stf(chr_ai.gun.charge);
-							if((iGetMinPistolChargeNum(chr, "gun") - charge) > 0)
+							charge = float(chr_ai.gun.charge);
+							if (charge < ChargeMax)
 							{
-								if(!CheckAttribute(chr_ai, "gun.charge_pSkill"))
-								{	//Скорость зарядки
-									chr_ai.gun.charge_pSkill = LAi_GunReloadSpeed(chr, "gun");
-								}
-
-								dltcharge = stf(chr_ai.gun.charge_pSkill);
-								// TO_DO: надо будет заставить этот перк работать через все таблицы-шмаблицы
-								if(HasPerk(chr, "Kern") && ChargeMax > charge)
-									dltcharge *= 1.0 + PERK_VALUE2_KERN * (ChargeMax - makeint(charge));
-
-								//Подзаряжаем пистолет
-								charge = charge + dltcharge*dltTime;
-								if(charge >= ChargeMax)
+								if((iGetMinPistolChargeNum(chr, "gun") - charge) > 0)
 								{
-									charge = ChargeMax;
-									chr_ai.gun.chargeprc = "0";
-									DeleteAttribute(chr_ai, "gun.charge_pSkill");
-
-									// boal 24.04.04 озвучка зарядки пистоля -->
-									if (Characters[idx].index == GetMainCharacterIndex() && LAi_IsFightMode(pchar))
+									aref arDltcharge = chr_ai.gun.charge_pSkill$aref;
+									dltcharge = arDltcharge$float(0.0);
+									if (arDltcharge == nullptr)
 									{
-										PlaySound("People Fight\reload1.wav");
+										dltcharge = LAi_GunReloadSpeed(chr, "gun");
+										chr_ai.gun.charge_pSkill = dltcharge;
 									}
+
+									// TO_DO: надо будет заставить этот перк работать через все таблицы-шмаблицы
+									if(HasPerk(chr, "Kern") && ChargeMax > charge)
+										dltcharge *= 1.0 + PERK_VALUE2_KERN * (ChargeMax - int(charge));
+
+									//Подзаряжаем пистолет
+									charge = charge + dltcharge*dltTime;
+									if(charge >= ChargeMax)
+									{
+										charge = ChargeMax;
+										chr_ai.gun.chargeprc = "0";
+										DeleteAttribute(chr_ai, "gun.charge_pSkill");
+
+										// boal 24.04.04 озвучка зарядки пистоля -->
+										if (bMain && !bPeace)
+										{
+											PlaySound("People Fight\reload1.wav");
+										}
+									}
+									chr_ai.gun.charge = charge;
 								}
-								chr_ai.gun.charge = charge;
 							}
 						}
 					}
@@ -1165,37 +1194,40 @@ void LAi_AllCharactersUpdate(float dltTime)
 				//Для мушкета в мирном режиме без тревоги и/или если его держат в руках
 				if(bMus) //НО НЕ В САБЕЛЬНОМ
 				{
-					ChargeMax = 0.0;
-					if(CheckAttribute(chr_ai, "musket.charge_max")) ChargeMax = stf(chr_ai.musket.charge_max);
+					ChargeMax = chr_ai.musket.charge_max$float(0.0);
 					if(ChargeMax > 0.0)
 					{
-						if(sti(chr_ai.musket.chargeprc))
+						if(int(chr_ai.musket.chargeprc))
 						{
-							charge = stf(chr_ai.musket.charge);
-							if((iGetMinPistolChargeNum(chr, "musket") - charge) > 0)
+							charge = float(chr_ai.musket.charge);
+							if (charge < ChargeMax)
 							{
-								if(!CheckAttribute(chr_ai, "musket.charge_pSkill"))
-								{	//Скорость зарядки
-									chr_ai.musket.charge_pSkill = LAi_GunReloadSpeed(chr, "musket");
-								}
-
-								dltcharge = stf(chr_ai.musket.charge_pSkill);
-
-								//Подзаряжаем мушкет
-								charge = charge + dltcharge*dltTime;
-								if(charge >= ChargeMax)
+								if((iGetMinPistolChargeNum(chr, "musket") - charge) > 0)
 								{
-									charge = ChargeMax;
-									chr_ai.musket.chargeprc = "0";
-									DeleteAttribute(chr_ai, "musket.charge_pSkill");
-
-									// boal 24.04.04 озвучка зарядки пистоля -->
-									if (Characters[idx].index == GetMainCharacterIndex() && LAi_IsFightMode(pchar))
+									aref arDltcharge = chr_ai.musket.charge_pSkill$aref;
+									dltcharge = arDltcharge$float(0.0);
+									if (arDltcharge == nullptr)
 									{
-										PlaySound("People Fight\reload1.wav");
+										dltcharge = LAi_GunReloadSpeed(chr, "musket");
+										chr_ai.musket.charge_pSkill = dltcharge;
 									}
+
+									//Подзаряжаем мушкет
+									charge = charge + dltcharge*dltTime;
+									if(charge >= ChargeMax)
+									{
+										charge = ChargeMax;
+										chr_ai.musket.chargeprc = "0";
+										DeleteAttribute(chr_ai, "musket.charge_pSkill");
+
+										// boal 24.04.04 озвучка зарядки пистоля -->
+										if (bMain && !bPeace)
+										{
+											PlaySound("People Fight\reload1.wav");
+										}
+									}
+									chr_ai.musket.charge = charge;
 								}
-								chr_ai.musket.charge = charge;
 							}
 						}
 					}
@@ -1205,9 +1237,9 @@ void LAi_AllCharactersUpdate(float dltTime)
 			//<-- Восстановление зарядов огнестрельного оружия
 			
 			// замедление на время
-			if(CheckAttribute(chr_ai, "slowdown"))
+			float slowTimer = chr_ai.slowdown$float(0.0);
+			if(slowTimer > 0)
 			{
-				float slowTimer = stf(chr_ai.slowdown);
 				slowTimer -= dltTime;
 				if(slowTimer <= 0.0)
 					RemoveSlowDown(chr);
@@ -1216,38 +1248,45 @@ void LAi_AllCharactersUpdate(float dltTime)
 			}
 			
 			// Восстановление энергии
-			if(CheckAttribute(chr_ai, "energy"))
+			float fEnergy = chr_ai.energy$float(0.0);
+			float energy = fEnergy;
+			float fMaxEnergy = chr_ai.energyMax$float(LAI_DEFAULT_ENERGY_MAX);
+
+			if(energy >= fMaxEnergy && !bMain)   // boal
+				continue;
+
+			if(bMain && SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "IsSprint") == 1 && LAi_group_IsActivePlayerAlarm())
 			{
-				float energy = stf(chr_ai.energy);
-				if(idx == GetMainCharacterIndex() && SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "IsSprint") == 1 && LAi_group_IsActivePlayerAlarm())
-				{
-					float tempSprintEnergyCost = SprintEnergyCost;
-					if (HasPerk(pchar, "MarathonRunner")) tempSprintEnergyCost = PERK_VALUE_MARATHON_RUNNER;
-					energy -= dltTime * tempSprintEnergyCost;
-					if(energy < 0.0)
-						SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "StopSprint");
-				}
-				else
-					energy = Lai_UpdateEnergyPerDltTime(chr, stf(chr_ai.energy), dltTime);
+				float tempSprintEnergyCost = SprintEnergyCost;
+				if (HasPerk(pchar, "MarathonRunner")) tempSprintEnergyCost = PERK_VALUE_MARATHON_RUNNER;
+				energy -= dltTime * tempSprintEnergyCost;
 				if(energy < 0.0)
-					energy = 0.0;
-				if(energy > LAi_GetCharacterMaxEnergy(chr))   // boal
-					energy = LAi_GetCharacterMaxEnergy(chr);
-				chr_ai.energy = energy;
+					SendMessage(pchar, "ls", MSG_CHARACTER_EX_MSG, "StopSprint");
 			}
+			else
+			{
+				energy = Lai_UpdateEnergyPerDltTime(chr, energy, dltTime, fEnergy, fMaxEnergy);
+			}
+			if(energy < 0.0)
+				energy = 0.0;
+
+			if(energy > fMaxEnergy)   // boal
+				energy = fMaxEnergy;
+			chr_ai.energy = energy;
+
 		}
 	}
 }
 
-void LAi_ProcessCheckMinHP(aref chr)
+void LAi_ProcessCheckMinHP(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.hpchecker"))
 	{
-		float minhp = stf(chr.chr_ai.hpchecker);
-		float hp = stf(chr.chr_ai.hp);
+		float minhp = float(chr.chr_ai.hpchecker);
+		float hp = float(chr.chr_ai.hp);
 		if(hp < minhp)
 		{
-			if(sti(chr.chr_ai.hpchecker.immortal))
+			if(int(chr.chr_ai.hpchecker.immortal))
 			{
 				LAi_SetImmortal(chr, true);
 				chr.chr_ai.hp = minhp;
@@ -1266,18 +1305,18 @@ void LAi_ProcessCheckMinHP(aref chr)
 	}
 }
 
-void LAi_CharacterSaveAy(aref chr)
+void LAi_CharacterSaveAy(ref chr)
 {
 	float ay = 0.0;
 	if(GetCharacterAy(chr, &ay) == false) ay = 0.0;
 	chr.chr_ai.type.ay = ay;	
 }
 
-void LAi_CharacterRestoreAy(aref chr)
+void LAi_CharacterRestoreAy(ref chr)
 {
 	if(CheckAttribute(chr, "chr_ai.type.ay"))
 	{
-		float ay = stf(chr.chr_ai.type.ay);
+		float ay = float(chr.chr_ai.type.ay);
 		aref type;
 		makearef(type, chr.chr_ai.type);
 		DeleteAttribute(type, "ay");
@@ -1293,7 +1332,7 @@ void SetCharacterActionSpeed(ref chr, string sActionName, float fSpeed)
 float GetCharacterActionSpeed(ref chr, string sActionName)
 {
 	if(CheckAttribute(chr, "anim_speed." + sActionName))
-		return stf(chr.anim_speed.(sActionName));
+		return float(chr.anim_speed.(sActionName));
 	return 1.0;
 }
 

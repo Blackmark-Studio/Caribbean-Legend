@@ -138,7 +138,7 @@ void ProcessDialogEvent()
 
 //----------------------------------------------за Англию--------------------------------------------------	
 		case "Knippel_check"://начинаем проверять нашего ГГ по всем статьям
-			if(makeint(PChar.reputation.nobility) < 48)//низкая репа
+			if(int(PChar.reputation.nobility) < 48)//низкая репа
 			{
 				Notification_Reputation(false, 48, "low");
 				PlaySound("Voice\English\hambit\Charlie Knippel-04.wav");
@@ -210,12 +210,12 @@ void ProcessDialogEvent()
 				{
 					sld = GetCharacter(iTemp);
 					pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-					if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
+					if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_GALEON_L) iHal++;
 				}
 			}//признак наличия ТГ в компаньонах
 			if (iHal > 0)
 			{
-				amount = sti(pchar.questTemp.HWIC.Eng.SlvQty) - GetSquadronGoods(pchar, GOOD_SILVER);
+				amount = int(pchar.questTemp.HWIC.Eng.SlvQty) - GetSquadronGoods(pchar, GOOD_SILVER);
 				if (amount <= 0)
 				{
 					dialog.text = "何があったかなんて言わなくていいぜ、船長。お前の船を税関役人が調べてる間に、全部聞かされてたんだよ……よくやったな、船長。まったく見事だ！楽な仕事には聞こえなかったぜ、鎖弾だとよ、冗談じゃねえ！";
@@ -314,7 +314,7 @@ void ProcessDialogEvent()
 			LocatorReloadEnterDisable("SentJons_town", "reload2_back", false);
 			LocatorReloadEnterDisable("SentJons_town", "gate_back", false);//откроем локаторы
 			//Книппеля - в офицеры
-			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
+			npchar.quest.OfficerPrice = int(pchar.rank)*500;
 			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
 			npchar.OfficerWantToGo.DontGo = true; //не пытаться уйти
 			npchar.HalfImmortal = true;//полубессмертен
@@ -361,7 +361,7 @@ void ProcessDialogEvent()
 			}
 			PChar.quest.Munity = "Deads";
 			LAi_LocationFightDisable(&Locations[FindLocation("Ship_deck")], false);
-			if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_VALCIRIA)//если сам на Валькирии
+			if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_VALCIRIA)//если сам на Валькирии
 			{
 				pchar.Ship.Type = GenerateShipExt(SHIP_TARTANE, true, pchar);
 				pchar.Ship.name = "Boat";
@@ -376,10 +376,10 @@ void ProcessDialogEvent()
 					if(iTemp > 0)
 					{
 						sld = GetCharacter(iTemp);
-						if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA)
+						if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA)
 						{
 							pchar.questTemp.HWIC.Eng.CompanionIndex = sld.Index;
-							sld = GetCharacter(sti(pchar.questTemp.HWIC.Eng.CompanionIndex));
+							sld = GetCharacter(int(pchar.questTemp.HWIC.Eng.CompanionIndex));
 							RemoveCharacterCompanion(PChar, sld);
 							AddPassenger(PChar, sld, false);
 						}
@@ -441,7 +441,7 @@ void ProcessDialogEvent()
 		case "Knippel_hire":
 			DialogExit();
 			DeleteAttribute(npchar, "LifeDay");
-			npchar.quest.OfficerPrice = sti(pchar.rank)*200;
+			npchar.quest.OfficerPrice = int(pchar.rank)*200;
 			npchar.OfficerWantToGo.DontGo = true;
 			DeleteAttribute(npchar, "CompanionDisable");//теперь можем и в компаньоны
 			DeleteAttribute(npchar, "HalfImmortal");
@@ -647,7 +647,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "火器の弾薬の種類を変更する。";
 					Link.l3.go = "SetGunBullets";
@@ -660,7 +660,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -672,7 +672,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -742,7 +742,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "Knippel_officer";
 			npchar.quest.SharlieEpilog_FarewellOfficers = true;
 			pchar.questTemp.SharlieEpilog_Knippel = true;
-			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
+			pchar.questTemp.SharlieEpilog_Friends = int(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 		
 		case "Exit":

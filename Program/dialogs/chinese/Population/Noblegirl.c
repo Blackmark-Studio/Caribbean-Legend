@@ -28,9 +28,9 @@ void ProcessDialogEvent()
             //首次见面
             if(NPChar.quest.meeting == "0")
             {
-                if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//检查国家间关系
+                if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//检查国家间关系
                 {
-                    dialog.text = "嗯。 你挂着" + NationNameGenitive(sti(pchar.nation)) + "的旗帜航行, 船长。 我不想和我国的敌人说话。 哼! ";
+                    dialog.text = "嗯。 你挂着" + NationNameGenitive(int(pchar.nation)) + "的旗帜航行, 船长。 我不想和我国的敌人说话。 哼! ";
                     link.l1 = "啊, 对。 真是个爱国者... ";
                     link.l1.go = "exit";
                 }
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
             else
             {
                 //再次对话
-                if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+                if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
                 {
-                    dialog.text = "要我重复一遍吗? 我不想被怀疑是" + NationNameAblative(sti(pchar.nation)) + "的朋友! 离开, 否则我就叫卫兵了! 他们会很高兴和你谈谈。 ";
+                    dialog.text = "要我重复一遍吗? 我不想被怀疑是" + NationNameAblative(int(pchar.nation)) + "的朋友! 离开, 否则我就叫卫兵了! 他们会很高兴和你谈谈。 ";
                     link.l1 = "好, 好, 冷静点。 我这就走。 ";
                     link.l1.go = "exit";
                 }

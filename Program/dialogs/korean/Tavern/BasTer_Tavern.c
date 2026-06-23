@@ -119,7 +119,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "TPZ_Tavern2_1":
 			dialog.text = "선장님, 이거 정말 대단하군요! 어떻게 이런 일을 해내셨습니까? 뭐, 그건 중요하지 않소. 자, 말씀해 보시오. 이렇게 호화로운 술 화물을 가져온 대가로 무엇을 원하시오? 그리고 서류 처리도 모두 문제없이 될 수 있겠소?\n";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "서류라구? 물론 전부 완벽하게 준비되어 있지. 설마 진짜로 확인할 생각은 아니겠지?";
 				link.l1.go = "TPZ_Tavern2_2";
@@ -215,7 +215,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "TPZ_Tavern2_11":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "물론이죠, 선장님! 그래서, 화물 값을 얼마나 받고 싶으신가요?";
 				link.l1 = "포도주 열 병마다 나는 두블룬 서른 개를 원하고, 럼주 열 병마다 다섯 두블룬을 받아야겠어. 전체로 각각 백 병씩이면, 전부 해서 삼백오십 두블룬이 들 거야.";

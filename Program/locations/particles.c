@@ -15,14 +15,14 @@ void StormReSynchronization()
 	{
 		if (isBigStorm == 1)
 		{
-			if (sti(loadedLocation.storm) == 1)
+			if (int(loadedLocation.storm) == 1)
 			{
 				CreateParticleSystem("storm", x, y, z,0,1.0,0,0);
 			}
 		}
 		if (isBigStorm == 0)
 		{
-			if (sti(loadedLocation.storm) == 1)
+			if (int(loadedLocation.storm) == 1)
 			{
 				CreateParticleSystem("small_storm", x, y, z,0,1.0,0,0);
 			}
@@ -130,7 +130,7 @@ void CreateParticles(ref Location)
 		{
 			locator = GetAttributeN(locator_group, n);
 			//if(frnd() < 0.3 ) 
-			CreateParticleSystem("signstar",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("signstar",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
 			
 			
 
@@ -146,7 +146,7 @@ void CreateParticles(ref Location)
 			for(n = 0; n < num; n++)
 			{
 				locator = GetAttributeN(locator_group, n);
-				CreateParticleSystem("stream",stf(locator.x),stf(locator.y),stf(locator.z),0.0,0.0,0.0,0);
+				CreateParticleSystem("stream",float(locator.x),float(locator.y),float(locator.z),0.0,0.0,0.0,0);
 			}
 		}
 	}*/
@@ -158,7 +158,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("ship_foam",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("ship_foam",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
 		}
 	}
 
@@ -176,7 +176,7 @@ void CreateParticles(ref Location)
 				{
 					locator = GetAttributeN(locator_group, n);
 					ClearPostEventsForEvent("StormReSynchronization");
-					PostEvent("StormReSynchronization", n * 1000, "fffl", stf(locator.x), stf(locator.y), stf(locator.z), 1);
+					PostEvent("StormReSynchronization", n * 1000, "fffl", float(locator.x), float(locator.y), float(locator.z), 1);
 				}
 			}
 		}
@@ -200,7 +200,7 @@ void CreateParticles(ref Location)
 			{
 				locator = GetAttributeN(locator_group, n);
 				ClearPostEventsForEvent("StormReSynchronization");
-				PostEvent("StormReSynchronization", n * 1000, "fffl", stf(locator.x), stf(locator.y), stf(locator.z), 0);
+				PostEvent("StormReSynchronization", n * 1000, "fffl", float(locator.x), float(locator.y), float(locator.z), 0);
 			}
 		}
 	}
@@ -214,7 +214,7 @@ void CreateParticles(ref Location)
 			for(n = 0; n < num; n++)
 			{
 				locator = GetAttributeN(locator_group, n);
-				PostEvent("RainReSynchronization", n * 100, "fff", stf(locator.x), stf(locator.y), stf(locator.z));
+				PostEvent("RainReSynchronization", n * 100, "fff", float(locator.x), float(locator.y), float(locator.z));
 			}
 		}
 	}
@@ -226,8 +226,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("waterfall",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("waterfall",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -239,8 +239,8 @@ void CreateParticles(ref Location)
         for(n = 0; n < num; n++)
         {
             locator = GetAttributeN(locator_group, n);
-            CreateParticleSystemX("bubbles",stf(locator.x),stf(locator.y),stf(locator.z),
-                stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+            CreateParticleSystemX("bubbles",float(locator.x),float(locator.y),float(locator.z),
+                float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
         }
     }
 
@@ -251,8 +251,8 @@ void CreateParticles(ref Location)
         for(n = 0; n < num; n++)
         {
             locator = GetAttributeN(locator_group, n);
-            CreateParticleSystemX("fishblue",stf(locator.x),stf(locator.y),stf(locator.z),
-                stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+            CreateParticleSystemX("fishblue",float(locator.x),float(locator.y),float(locator.z),
+                float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
         }
     }
 
@@ -263,8 +263,8 @@ void CreateParticles(ref Location)
         for(n = 0; n < num; n++)
         {
             locator = GetAttributeN(locator_group, n);
-            CreateParticleSystemX("shadowstar",stf(locator.x),stf(locator.y),stf(locator.z),
-                stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+            CreateParticleSystemX("shadowstar",float(locator.x),float(locator.y),float(locator.z),
+                float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
         }
     }
 
@@ -277,7 +277,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("fire_mix",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("fire_mix",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
 		}
 	}
 */
@@ -289,9 +289,9 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			//CreateParticleSystem("fountain",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
-			CreateParticleSystemX("fountain",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			//CreateParticleSystem("fountain",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
+			CreateParticleSystemX("fountain",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -302,8 +302,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("waterfog",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("waterfog",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -314,8 +314,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("waterfog_fall",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("waterfog_fall",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -326,8 +326,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("stars",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("stars",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -338,7 +338,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			if(frnd() < 0.3 ) CreateParticleSystem("smoke_medium",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
+			if(frnd() < 0.3 ) CreateParticleSystem("smoke_medium",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
 		}
 	}
 
@@ -349,7 +349,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("fire",stf(locator.x),stf(locator.y),stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("fire",float(locator.x),float(locator.y),float(locator.z),-1.57,0,0,0);
 		}
 	}
 
@@ -360,7 +360,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("torch",stf(locator.x),stf(locator.y) - 0.07,stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("torch",float(locator.x),float(locator.y) - 0.07,float(locator.z),-1.57,0,0,0);
 		}
 	}
 
@@ -371,7 +371,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("torch",stf(locator.x),stf(locator.y) - 0.07,stf(locator.z),-1.57,0,0,0);
+			CreateParticleSystem("torch",float(locator.x),float(locator.y) - 0.07,float(locator.z),-1.57,0,0,0);
 		}
 	}
 	
@@ -382,8 +382,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("shipfire",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("shipfire",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -396,11 +396,11 @@ void CreateParticles(ref Location)
 			locator = GetAttributeN(locator_group, n);
 			if (Whr_CheckInsideLoc())
 			{
-				CreateParticleSystem("candle",stf(locator.x),stf(locator.y) + 0.04,stf(locator.z),-1.57,0,0,0);
+				CreateParticleSystem("candle",float(locator.x),float(locator.y) + 0.04,float(locator.z),-1.57,0,0,0);
 			}
 			else if (Whr_IsLight() != 0)
             {
-                CreateParticleSystem("candle",stf(locator.x),stf(locator.y) + 0.04,stf(locator.z),-1.57,0,0,0);
+                CreateParticleSystem("candle",float(locator.x),float(locator.y) + 0.04,float(locator.z),-1.57,0,0,0);
             }
 		}
 	}
@@ -413,8 +413,8 @@ void CreateParticles(ref Location)
 		{
 			locator = GetAttributeN(locator_group, n);
 			//Fortfire_p =   // boal
-			CreateParticleSystemX("fortfire",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("fortfire",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 
@@ -425,8 +425,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("fire_from_hole",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("fire_from_hole",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	} */
 	
@@ -438,9 +438,9 @@ void CreateParticles(ref Location)
 		{
 			locator = GetAttributeN(locator_group, n);
 			//Torch_deck_p =  // boal
-			CreateParticleSystemX("torch",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
-			CreateParticleSystem("smoke_light",stf(locator.x),stf(locator.y),stf(locator.z),0,0,0,0);
+			CreateParticleSystemX("torch",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
+			CreateParticleSystem("smoke_light",float(locator.x),float(locator.y),float(locator.z),0,0,0,0);
 			//Trace("Torch_deck created");
 		}
 	}
@@ -452,8 +452,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("shipfire1",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
+			CreateParticleSystemX("shipfire1",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
 			//Trace("shipfire_deck created");
 		}
 	}
@@ -465,8 +465,8 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("large_smoke",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
+			CreateParticleSystemX("large_smoke",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
 		}
 	}
 
@@ -477,11 +477,11 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("large_smoke",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
-			CreateParticleSystemX("torch",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
-			SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "torch_deck", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, stf(locator.x), stf(locator.y), stf(locator.z));
+			CreateParticleSystemX("large_smoke",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
+			CreateParticleSystemX("torch",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
+			SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "torch_deck", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, float(locator.x), float(locator.y), float(locator.z));
 		}
 	}
 
@@ -492,10 +492,10 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("shipfire",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
+			CreateParticleSystemX("shipfire",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
 			SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "fortfire", SOUND_WAV_3D, VOLUME_FX, 
-				0, 1, 0, 0, stf(locator.x), stf(locator.y), stf(locator.z));
+				0, 1, 0, 0, float(locator.x), float(locator.y), float(locator.z));
 		}
 	}
 
@@ -508,10 +508,10 @@ void CreateParticles(ref Location)
 			locator = GetAttributeN(locator_group, n);
 			if (CheckAttribute(Location, "hidden_fire"))
 			{
-				CreateParticleSystemX("shipfire",stf(locator.x),stf(locator.y),stf(locator.z), stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
-				CreateParticleSystemX("large_smoke",stf(locator.x),stf(locator.y),stf(locator.z), stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z), 0);
+				CreateParticleSystemX("shipfire",float(locator.x),float(locator.y),float(locator.z), float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
+				CreateParticleSystemX("large_smoke",float(locator.x),float(locator.y),float(locator.z), float(locator.vz.x),float(locator.vz.y),float(locator.vz.z), 0);
 			}
-			if (CheckAttribute(Location, "hidden_sound")) SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "fortfire", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, stf(locator.x), stf(locator.y), stf(locator.z));
+			if (CheckAttribute(Location, "hidden_sound")) SendMessage(Sound, "lsllllllfff", MSG_SOUND_PLAY, "fortfire", SOUND_WAV_3D, VOLUME_FX, 0, 1, 0, 0, float(locator.x), float(locator.y), float(locator.z));
 		}
 	}
 
@@ -522,7 +522,7 @@ void CreateParticles(ref Location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("fire_incas",stf(locator.x),stf(locator.y),stf(locator.z),0,0,0,0);
+			CreateParticleSystem("fire_incas",float(locator.x),float(locator.y),float(locator.z),0,0,0,0);
 		}
 	}
 
@@ -533,7 +533,7 @@ void CreateParticles(ref Location)
 	Particles.winddirection.y = 0; // ~!~
 }
 
-void CreateHeaters(aref Location)
+void CreateHeaters(ref Location)
 {
 	aref locator_group;
 	int num;
@@ -553,7 +553,7 @@ void CreateHeaters(aref Location)
 		{			
 			if(CheckAttribute(&Weathers[iCurWeatherNum], "Lights"))
 			{
-				if(sti(Weathers[iCurWeatherNum].Lights) == 0)
+				if(int(Weathers[iCurWeatherNum].Lights) == 0)
 				{
 					isHeatersEnable = false;
 				}
@@ -561,7 +561,7 @@ void CreateHeaters(aref Location)
 		}
 		if(CheckAttribute(location, "heaters_disable"))
 		{
-			if(sti(location.heaters_disable) == 1)
+			if(int(location.heaters_disable) == 1)
 			{
 				isHeatersEnable = false;
 			}
@@ -575,9 +575,9 @@ void CreateHeaters(aref Location)
 			{
 				locator = GetAttributeN(locator_group, n);
 	
-				x = stf(locator.x);
-				y = stf(locator.y);
-				z = stf(locator.z);
+				x = float(locator.x);
+				y = float(locator.y);
+				z = float(locator.z);
 				
 				if(bLandfire)
 				{
@@ -611,7 +611,7 @@ void LaunchCananada()
 		for(int n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			PostEvent("CanonadaReSynchronization", n * 2000, "fff", stf(locator.x), stf(locator.y), stf(locator.z));
+			PostEvent("CanonadaReSynchronization", n * 2000, "fff", float(locator.x), float(locator.y), float(locator.z));
 		}
 	}
 }
@@ -621,9 +621,9 @@ bool CreateFireParticles(string sGroup, string sLocator)
 {
 	ref rLoc = &locations[FindLocation(PChar.location)];
 	
-	float x = stf(rLoc.locators.(sGroup).(sLocator).x);
-	float y = stf(rLoc.locators.(sGroup).(sLocator).y);
-	float z = stf(rLoc.locators.(sGroup).(sLocator).z);
+	float x = float(rLoc.locators.(sGroup).(sLocator).x);
+	float y = float(rLoc.locators.(sGroup).(sLocator).y);
+	float z = float(rLoc.locators.(sGroup).(sLocator).z);
 	
 	CreateParticleSystemX("Fire", x, y+0.15, z, x, y+0.15, z, 0); // Огонь
 	CreateParticleSystemX("Fire", x, y+0.3, z, x, y+0.3, z, 0); // Для пущей красоты создаем два партикла
@@ -636,9 +636,9 @@ bool CreateLocationParticles(string sParticle, string sGroup, string sLocator, f
 {
 	ref rLoc = &locations[FindLocation(PChar.location)];
 	
-	float x = stf(rLoc.locators.(sGroup).(sLocator).x);
-	float y = stf(rLoc.locators.(sGroup).(sLocator).y);
-	float z = stf(rLoc.locators.(sGroup).(sLocator).z);
+	float x = float(rLoc.locators.(sGroup).(sLocator).x);
+	float y = float(rLoc.locators.(sGroup).(sLocator).y);
+	float z = float(rLoc.locators.(sGroup).(sLocator).z);
 	
 	CreateParticleSystemX(sParticle, x, y+up, z, x+ax, y+up, z+az, 0);
 	Play3DSound(sSound, x, y, z);
@@ -661,7 +661,7 @@ void StartTorchesInTown(aref location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("torch", stf(locator.x), stf(locator.y) - 0.07, stf(locator.z), -1.57, 0.0, 0.0, 0);
+			CreateParticleSystem("torch", float(locator.x), float(locator.y) - 0.07, float(locator.z), -1.57, 0.0, 0.0, 0);
 		}		
 	}
 	if (CheckAttribute(Location, "locators.torchlightes_o_p") && Whr_IsLight() != 0)
@@ -671,7 +671,7 @@ void StartTorchesInTown(aref location)
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystem("torch", stf(locator.x), stf(locator.y) - 0.07, stf(locator.z), -1.57, 0.0, 0.0, 0);
+			CreateParticleSystem("torch", float(locator.x), float(locator.y) - 0.07, float(locator.z), -1.57, 0.0, 0.0, 0);
 		}
 	}
 }
@@ -691,7 +691,7 @@ void StartFireRing()
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("town_explodion",stf(locator.x),stf(locator.y),stf(locator.z), 0.0, 0.0, 0.0, 0);
+			CreateParticleSystemX("town_explodion",float(locator.x),float(locator.y),float(locator.z), 0.0, 0.0, 0.0, 0);
 		}
 	}
 }
@@ -711,8 +711,8 @@ void StartPozhar()
 		for(n = 0; n < num; n++)
 		{
 			locator = GetAttributeN(locator_group, n);
-			CreateParticleSystemX("pozhar",stf(locator.x),stf(locator.y),stf(locator.z),
-				stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+			CreateParticleSystemX("pozhar",float(locator.x),float(locator.y),float(locator.z),
+				float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 		}
 	}
 }
@@ -731,9 +731,9 @@ void LaunchSingleBoom(int iLocNum)
 		locator = GetAttributeN(locator_group, n);
 		if(CheckAttribute(&locator, "x") && CheckAttribute(&locator, "y") && CheckAttribute(&locator, "z"))
 		{
-			CreateParticleSystem("ShipExplode", stf(locator.x), stf(locator.y), stf(locator.z), 0.0, 1.0, 0.0, 0);
-			Play3DSound("scene_ship_explosion", stf(locator.x), stf(locator.y), stf(locator.z));
-			CreateParticleSystem("large_smoke", stf(locator.x), stf(locator.y), stf(locator.z), 0.0, 0.0, 0.0, 0);
+			CreateParticleSystem("ShipExplode", float(locator.x), float(locator.y), float(locator.z), 0.0, 1.0, 0.0, 0);
+			Play3DSound("scene_ship_explosion", float(locator.x), float(locator.y), float(locator.z));
+			CreateParticleSystem("large_smoke", float(locator.x), float(locator.y), float(locator.z), 0.0, 0.0, 0.0, 0);
 		}
 	}
 }

@@ -23,11 +23,11 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realm
 		if (OffQty < 0) OffQty = 1;
 		
 		mShipClassCoeff = (eclass - mclass) * 0.15; // считаем коэффицент классности для ГГ
-		mCrewShot = makeint(tempMCrew / 4);				// количество стрелков ГГ
+		mCrewShot = int(tempMCrew / 4);				// количество стрелков ГГ
 
 		mCoeff = 0.5 + 0.1 * OffQty;
 		// это базовая величина потенциального урона, который может нанести команда протагониста.
-		mDamage = tempMCrew * mCoeff/4 + rand( makeint(tempMCrew * (1 - mCoeff)/4 ) );
+		mDamage = tempMCrew * mCoeff/4 + rand( int(tempMCrew * (1 - mCoeff)/4 ) );
 		
 		mDamage = mDamage * (1 + mShipClassCoeff);
 		if(mDamage > tempECrew * 0.75) mDamage = tempECrew * 0.75;
@@ -39,7 +39,7 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realm
 			mDamage *= 1.0 + ArticlesBonus(pchar);
 		}
 
-		ecrewBak = makeint(mDamage);	
+		ecrewBak = int(mDamage);
 		tempECrew = tempECrew - ecrewBak;
 
 		if(ecrewBak > 0)
@@ -49,8 +49,8 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realm
 	{
 		bOk = true;
 		eShipClassCoeff = (mclass - eclass) * 0.15; 				// считаем коэффицент классности для противника
-		eCrewShot = makeint(tempECrew / 4);								// количество стрелков противника
-		eDamage = tempECrew * 0.2 + rand(makeint(tempECrew/20)); 			// базовая величина потенциального урона, который может нанести противник
+		eCrewShot = int(tempECrew / 4);								// количество стрелков противника
+		eDamage = tempECrew * 0.2 + rand(int(tempECrew/20)); 			// базовая величина потенциального урона, который может нанести противник
 		
 		eDamage = eDamage * (1 + eShipClassCoeff);
 		if(eDamage > tempMCrew * 0.75) eDamage = tempMCrew * 0.75;
@@ -58,7 +58,7 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, ref realm
 		eDamage = eDamage * isEquippedArtefactUse(pchar, "amulet_11", 1.0, 0.90);
 		eDamage = eDamage * isEquippedArtefactUse(echr, "indian_6", 1.0, 1.10);
 		
-		ecrewBak = makeint(eDamage);	
+		ecrewBak = int(eDamage);
 		tempMCrew = tempMCrew - ecrewBak;
 		
 		if(ecrewBak > 0)
@@ -110,12 +110,12 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	makearef(realEnemyPerkChars, boardingObject.perkChars.brdenemy);
 	CopyAttributes(&perkChars, realPerkChars);
 	CopyAttributes(&enemyPerkChars, realEnemyPerkChars);
-	int attackerRankOffset = sti(boardingObject.attacker.rank);
-	int defenderRankOffset = sti(boardingObject.defender.rank);
-	bool attackerElixir = GetAttributeInt(&boardingObject, "attacker.elixir");
-	bool defenderElixir = GetAttributeInt(&boardingObject, "defender.elixir");
+	int attackerRankOffset = int(boardingObject.attacker.rank);
+	int defenderRankOffset = int(boardingObject.defender.rank);
+	bool attackerElixir = boardingObject.attacker.elixir$bool(false);
+	bool defenderElixir = boardingObject.defender.elixir$bool(false);
 
-	if(CheckAttribute(location, "boarding.locatorNum")) limit = sti(location.boarding.locatorNum);
+	if(CheckAttribute(location, "boarding.locatorNum")) limit = int(location.boarding.locatorNum);
 
 	Log_TestInfo("Location: " + locID + " Limit: " + limit);
 	Log_TestInfo("Player: " + boarding_player_crew + " х " + boarding_player_crew_per_chr + " Enemy: " + boarding_enemy_crew + " х " + boarding_enemy_crew_per_chr);
@@ -168,7 +168,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 			if (IsFort) SetFantomParamFortOur(chr);
 			else SetFantomParamAbordOur(chr);
 
-			AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
+			AddCharHP(chr, int(boarding_player_hp)); // влияение опыта и морали в НР
 			BRD_InjectPerks(chr, i, &perkChars, location, attackerElixir);
 			BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 			SetNewModelToChar(chr); //иначе сабли не те, что реально
@@ -190,7 +190,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					pchar.GenQuest.boarding.(sNum) = characters[MusChr].id;
 					if(CheckAttribute(&characters[MusChr],"MusketerDistance"))
 					{
-						characters[MusChr].boarding.mDistance = stf(characters[MusChr].MusketerDistance);
+						characters[MusChr].boarding.mDistance = float(characters[MusChr].MusketerDistance);
 						characters[MusChr].MusketerDistance = 0.0;
 					}
 					if(mush_officers > 1) break;
@@ -211,7 +211,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					model = aBoardingMushModels[j].model;
 					ani = aBoardingMushModels[j].ani;
 					j++;
-					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, sti(pchar.nation), 0, false, "soldier"));
+					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, int(pchar.nation), 0, false, "soldier"));
 					chr.id = "GenChar_" + chr.index;
 					
 					chr.AboardFantom = true;
@@ -224,7 +224,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					if (IsFort) SetMushketerParamFortOur(chr);
 					else SetMushketerParamAbordOur(chr);
 
-					AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
+					AddCharHP(chr, int(boarding_player_hp)); // влияение опыта и морали в НР
 					BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 				}
 			}
@@ -250,7 +250,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 				chr = characterFromId(pchar.GenQuest.boarding.n2);
 				if(CheckAttribute(chr,"boarding.mDistance"))
 				{
-					chr.MusketerDistance = stf(chr.boarding.mDistance);
+					chr.MusketerDistance = float(chr.boarding.mDistance);
 					DeleteAttribute(chr,"boarding.mDistance");
 				}
 				DeleteAttribute(pchar, "GenQuest.boarding.n2");
@@ -260,7 +260,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 				chr = characterFromId(pchar.GenQuest.boarding.n1);
 				if(CheckAttribute(chr,"boarding.mDistance"))
 				{
-					chr.MusketerDistance = stf(chr.boarding.mDistance);
+					chr.MusketerDistance = float(chr.boarding.mDistance);
 					DeleteAttribute(chr,"boarding.mDistance");
 				}
 				DeleteAttribute(pchar, "GenQuest.boarding.n1");
@@ -316,12 +316,12 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 			BRD_InjectPerks(chr, i, &enemyPerkChars, location, defenderElixir);
 		}
 
-		chr.nation = sti(boarding_enemy.nation);
+		chr.nation = int(boarding_enemy.nation);
 		boarding_enemy_crew = boarding_enemy_crew - 1;
 
 		SetNewModelToChar(&chr); //иначе сабли не те, что реально
 		chr.AboardFantom = true;
-		AddCharHP(&chr, boarding_enemy_hp); // влияение опыта и морали в НР
+		AddCharHP(&chr, int(boarding_enemy_hp)); // влияение опыта и морали в НР
 		BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
 		
 		if(boarding_enemy.id == "Memento_Cap" && !CheckAttribute(&Locations[locIndex], "CabinType"))
@@ -349,7 +349,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					model = aBoardingMushModelsEnemy[j].model;
 					ani = aBoardingMushModelsEnemy[j].ani;
 					j++;
-					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, sti(boarding_enemy.nation), 0, false, "soldier"));
+					chr = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", ani, 5, int(boarding_enemy.nation), 0, false, "soldier"));
 					chr.id = "GenChar_" + chr.index;
 
 					chr.AboardFantom = true;
@@ -364,7 +364,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					if (IsFort) SetMushketerParamFortEnemy(chr);
 					else SetMushketerParamAbordEnemy(chr);
 
-					AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР
+					AddCharHP(chr, int(boarding_enemy_hp)); // влияение опыта и морали в НР
 					BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
 				}
 			}	
@@ -398,10 +398,10 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
 	{
 		ChangeCrewExp(pchar, "Soldiers", 4);
 		LAi_SetCurHPMax(chr);  // нужно, чтоб был живой!!!
-		SetCrewQuantity(chr, MakeInt(leftCrew*(rand(20)*0.01))); // раз кэп живой, то можно раненых воскресить
+		SetCrewQuantity(chr, int(leftCrew*(rand(20)*0.01))); // раз кэп живой, то можно раненых воскресить
 		LaunchRansackMain(pchar, chr, "captain"); //капитан в плен
 		DelOurMusketerDist();
-		Event(SHIP_CAPTURED, "l", sti(chr.index));
+		Event(SHIP_CAPTURED, "l", int(chr.index));
 		return true;
 	}
 
@@ -410,13 +410,13 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, ref surrender)
 		ChangeCrewExp(pchar, "Soldiers", 5);
 		LaunchRansackMain(pchar, chr, ""); //не сдался
 		DelOurMusketerDist();
-		Event(SHIP_CAPTURED, "l", sti(chr.index));
+		Event(SHIP_CAPTURED, "l", int(chr.index));
 		return true;
 	}
 	if(IsFort)
 	{
 		ChangeCrewExp(pchar, "Soldiers", 7);
-		Event(FORT_CAPTURED, "l", sti(chr.index));
+		Event(FORT_CAPTURED, "l", int(chr.index));
 		chr.Ship.Crew.Quantity = 10 + rand(350); // рабы (остатки выживших)
 		LaunchFortCapture(chr);
 		return true;
@@ -466,7 +466,7 @@ int GetBoardingMaxCrew(ref location, int mclass, int eclass)
 
 	if (CheckAttribute(location, "boarding.locatorNum"))
 	{
-		maxcrew = func_min(sti(location.boarding.locatorNum), maxcrew);
+		maxcrew = func_min(int(location.boarding.locatorNum), maxcrew);
 	}
 
 	return iClamp(1, BRDLT_MAXCREW, maxcrew);
@@ -482,11 +482,11 @@ bool BRD_FallbackNoLocation(string deckID, ref echr, bool isFort)
 	if(!isFort)
 	{
 		LaunchRansackMain(pchar, echr, "captain");  // на деле параметры LaunchRansackMain не важны совсем - все определеятеся от реалий
-		Event(SHIP_CAPTURED, "l", sti(echr.index)); // to_do can be harmfull
+		Event(SHIP_CAPTURED, "l", int(echr.index)); // to_do can be harmfull
 	}
 	else if (isFort)
 	{
-		Event(FORT_CAPTURED, "l", sti(echr.index));
+		Event(FORT_CAPTURED, "l", int(echr.index));
 		echr.Ship.Crew.Quantity = 10 + rand(350); // рабы (остатки выживших)
 		LaunchFortCapture(echr);
 	}

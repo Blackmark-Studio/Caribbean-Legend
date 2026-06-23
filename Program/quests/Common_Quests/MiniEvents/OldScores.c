@@ -9,7 +9,7 @@ void OS_Start()
 
 void OS_ShipWolf(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("OS_Pirate", "mercen_11", "man", "man", sti(PChar.rank), PIRATE, -1, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("OS_Pirate", "mercen_11", "man", "man", int(PChar.rank), PIRATE, -1, true, "pirate"));
 	FantomMakeSmallSailor(sld, SHIP_SCHOONER_W, StringFromKey("Neutral_5"), CANNON_TYPE_CANNON_LBS8, 40, 40, 40, 40, 40);
 	LAi_SetHP(sld, 200.0, 200.0);
 	sld.AlwaysFriend = true;
@@ -28,7 +28,7 @@ void OS_ShipWolf(string qName)
 	
 	for (i=2; i<=3; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("OS_Matros_"+i, "citiz_3"+i, "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("OS_Matros_"+i, "citiz_3"+i, "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 		sld.dialog.filename = "Quest\MiniEvents\OldScores_dialog.c";
 		sld.dialog.currentnode = "OS_Matros_sluh";
 		sld.City = "PuertoPrincipe";
@@ -45,7 +45,7 @@ void DWH_Close_House(string qName)
 
 void OS_Zasada(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("OS_Jack", "mercen_8", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("OS_Jack", "mercen_8", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 	sld.name = StringFromKey("Neutral_3");
 	sld.lastname = StringFromKey("Neutral_4");
 	ChangeCharacterAddressGroup(sld, "PuertoPrincipe_QuestHouse_1", "reload", "reload2");
@@ -53,7 +53,7 @@ void OS_Zasada(string qName)
 	LAi_SetActorType(sld);
 	LAi_ActorFollow(sld, pchar, "", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("OS_capWolf", "mercen_15", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("OS_capWolf", "mercen_15", "man", "man", int(pchar.rank), PIRATE, 0, true, "pirate"));
 	ChangeCharacterAddressGroup(sld, "PuertoPrincipe_QuestHouse_1", "reload", "reload1");
 	TeleportCharacterToPosAy(sld, 0.40, 0.00, -1.40, 2.80);
 	sld.dialog.filename = "Quest\MiniEvents\OldScores_dialog.c";
@@ -106,7 +106,7 @@ void OS_Pobeda(string qName)
 	sld = CharacterFromID("PuertoPrincipe_waitress");
 	ChangeCharacterAddressGroup(sld, "PuertoPrincipe_tavern", "waitress", "barmen");
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

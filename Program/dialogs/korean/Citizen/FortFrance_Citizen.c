@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "내가 혹시 비밀 정보국에서 일한다고 생각하나 "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "내가 혹시 비밀 정보국에서 일한다고 생각하나 "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "음... 아니. 그럼 이만.";
 			link.l1.go = "exit";
 			link.l2 = "다른 질문 있나?";
@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Бремя гасконца
 		case "Sharlie":
-			if (sti(pchar.questTemp.Sharlie.Citcount) == 3)
+			if (int(pchar.questTemp.Sharlie.Citcount) == 3)
 			{
 				dialog.text = "흠... 네가 이런 질문을 겁도 없이 하는 걸 보니, 막 도착한 모양이군... 괜히 문제 생기기 싫으면 그만두는 게 좋을 거다. 수도원장에게 가 봐라. '정신 차릴' 수 있게 도와줄지도 모르지. 교회에 가면 만날 수 있을 거다.";
 				link.l1 = "그렇군...";

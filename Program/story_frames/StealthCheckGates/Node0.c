@@ -43,7 +43,7 @@ void StealthCheckGates_Node0()
 		case "d":
 			storyObject.temp.prisonerCost = 1000;
 			reaction = SF_AddReaction("b", "", "", SF_Icon("perk", "Investor"));
-			SF_AddCondition(&reaction, sti(pchar.money) > sti(storyObject.temp.prisonerCost), SF_CONDITION_MONEY);
+			SF_AddCondition(&reaction, int(pchar.money) > int(storyObject.temp.prisonerCost), SF_CONDITION_MONEY);
 			SF_SetResult(reaction, 25);
 			SF_AddCondition(&reaction, HasPerk(pchar, "Investor"), SF_CONDITION_PERK, "Investor");
 		break;
@@ -53,7 +53,7 @@ void StealthCheckGates_Node0()
 	{
 		case "a": 
 			reaction = SF_AddReaction("c", "", "", SF_Icon("honor", "repup"))
-			SF_AddCondition(&reaction, sti(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10), SF_CONDITION_REPUTATION);
+			SF_AddCondition(&reaction, int(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10), SF_CONDITION_REPUTATION);
 			SF_SetResult(reaction, 25);
 		break;
 		case "b":
@@ -79,7 +79,7 @@ void StealthCheckGates_Node0()
 	SF_SetChance(action, ChangeCharacterNationReputation(pchar, StealthCheck_Nation(), 0), "relationship" + StealthCheck_Nation()); // отношения с нацией
 	if (CheckAttributeEqualTo(pchar, "questTemp.Trial", "spy")) SF_SetChance(action, 60, "questZpq"); // +если "неизвестный гасконец" - квестовый тег для карибских нравов
 	if (IsCharacterEquippedArtefact(pchar, "indian_11")) SF_SetChance(action, 15, "itmname_indian_11"); // если маска нгомбо
-	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
+	SF_SetChance(action, int(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon(SKILL_TYPE, SKILL_FENCING));
 	StealthCheck_CheckVerifyPapers("c");
@@ -107,7 +107,7 @@ void StealthCheckGates_Node0_b_c_reaction()
 void StealthCheckGates_Node0_b_d_reaction()
 {
 	SF_DefaultReaction("a");
-	AddMoneyToCharacter(pchar, -sti(storyObject.temp.prisonerCost));
+	AddMoneyToCharacter(pchar, -int(storyObject.temp.prisonerCost));
 }
 
 // Предложить помощь

@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Una collana, dici? In effetti... Ne ho messa una nuova tra le mie cianfrusaglie di recente. E dimmi, capitano, in che modo pensi di privarmi di questo gingillo che, a tutti gli effetti, appartiene a me di diritto?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Sono disposto a offrirti cinquemila pesos per questo pezzo. Una somma generosa che ti permetterebbe di acquistare un ornamento altrettanto pregiato, forse persino più sfarzoso. Intanto, questa particolare collana tornerebbe a chi la stima più di ogni tesoro — ben oltre qualunque valore in moneta.";
 				link.l1.go = "Captain_4_commerce";

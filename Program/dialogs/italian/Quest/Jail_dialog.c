@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		//--> Сомнительное предложение
 		if (CheckAttribute(pchar, "GenQuest.Contraoffer.Jail"))
 		{
-			dialog.text = "Sei stato arrestato per aver tentato di trafficare e vendere merce di contrabbando. Considerando l'aiuto dato alle autorità e la tua posizione, passerai in prigione solo "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Inoltre, tutto il denaro che hai guadagnato col contrabbando -"+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+" verrà confiscato e messo nel tesoro della città. Divertiti pure, capitano!";
+			dialog.text = "Sei stato arrestato per aver tentato di trafficare e vendere merce di contrabbando. Considerando l'aiuto dato alle autorità e la tua posizione, passerai in prigione solo "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Inoltre, tutto il denaro che hai guadagnato col contrabbando -"+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+" verrà confiscato e messo nel tesoro della città. Divertiti pure, capitano!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			DeleteAttribute(pchar, "GenQuest.Contraoffer.Jail");
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		//<-- Сомнительное предложение
-			dialog.text = "Sei stato arrestato per aver commesso un crimine, e verrai rinchiuso nella prigione per "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Inoltre verrai multato per "+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+"   Passa un buon tempo, capitano!";
+			dialog.text = "Sei stato arrestato per aver commesso un crimine, e verrai rinchiuso nella prigione per "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Inoltre verrai multato per "+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+"   Passa un buon tempo, capitano!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			NextDiag.currentnode = "Jail_officer_free";

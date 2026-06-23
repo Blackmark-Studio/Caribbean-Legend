@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "여기에는 존스라는 사람이 많아. 내가 아는 가장 유명한 존스는 폭스 대령 휘하의 부관인 벤자민 존스야. 그는 보통 연대 본부에서 방문객들을 맞이하지.";
 				link.l1 = "그에게 몰리라는 이름의 여동생이 있나?";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("흠, 그건 도와줄 수 없을 것 같군.","아니, 난 그 사람 몰라.","푸하! 내가 아는 몰리 존스가 진짜 미인이라면, 폭스 대령은 신부님이지."),LinkRandPhrase("몰리 존스라는 이름 가진 사람 몇 명 알아. 그 중 한 명은 오빠가 있긴 한데... 네가 찾는 그 여자는 아니야. 원숭이랑 같이 산 놈만이 그녀를 '희귀한 미인'이라고 부를걸.","미안하지만, 내가 아는 모든 존스 집안에는 누이가 없어.","미안하지만, 도와줄 수 없어. 다른 사람한테 물어봐."));
 			link.l1 = "알겠소. 번거롭게 해서 미안하오.";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "내가 혹시 비밀 정보국에서 일한다고 생각하나 "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "내가 혹시 비밀 정보국에서 일한다고 생각하나 "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "음... 아니. 그럼 안녕히 가시오.";
 			link.l1.go = "exit";
 			link.l2 = "다른 질문 있나?";

@@ -37,9 +37,9 @@ void ProcessDialogEvent()
 			link.l1.go = "FMQG";
 			break;	
 		}
-			if (sti(NPChar.nation) == PIRATE)
+			if (int(NPChar.nation) == PIRATE)
 			{
-				dialog.text = RandSwear()+"Ben senin tutsağınım, "+GetAddress_Form(NPChar)+". Ama bilmeni isterim ki "+NationNameNominative(sti(NPChar.nation))+" kendi insanlarının parasını asla ödemez. Hepimiz kendi başımızayız.";
+				dialog.text = RandSwear()+"Ben senin tutsağınım, "+GetAddress_Form(NPChar)+". Ama bilmeni isterim ki "+NationNameNominative(int(NPChar.nation))+" kendi insanlarının parasını asla ödemez. Hepimiz kendi başımızayız.";
 				link.l1 = "Pekâlâ... Senden bir kazanç elde edemeyeceğim anlaşılan. En azından seni herhangi bir kolonide suçlu olarak fidye karşılığı teslim edebilirim.";
 				link.l1.go = "offender";
 				if (FindFreeRandomOfficer() > 0)
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = RandSwear()+"Ben senin tutsağınım, "+GetAddress_Form(NPChar)+". "+NationNameNominative(sti(NPChar.nation))+" özgürlüğüm için iyi bir bedel ödeyecek.";
+				dialog.text = RandSwear()+"Ben senin tutsağınım, "+GetAddress_Form(NPChar)+". "+NationNameNominative(int(NPChar.nation))+" özgürlüğüm için iyi bir bedel ödeyecek.";
 				if(NPChar.EncType == "trade" && FindFreeRandomOfficer() > 0 && CheckAttribute(NPChar, "Back.Ship.Mode") && NPChar.Back.Ship.Mode == "trade")
 				{
 					link.l1 = "Bak, sen yetenekli bir denizcisin ve senin gibi insanlara ihtiyacım var. Komutam altında hizmet etmek ister misin?";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		case "second time":
 			if(CheckAttribute(NPChar,"Hold_GenQuest") && !CheckAttribute(pchar,"GenQuest.Hold_GenQuest"))
 			{
-				switch(sti(NPChar.Hold_GenQuest.variant))
+				switch(int(NPChar.Hold_GenQuest.variant))
 				{				
 					case 0: // "tip-off"
 						dialog.text = RandPhraseSimple("Kaptan, fidyem yerine daha kârlı bir teklifimi duymak ister misiniz?","Burada pazarlık yapacak bir alan olmadığını anlıyorum, ama teklifimi duymak ister misiniz?");
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(NPChar.nation) == PIRATE)
+				if (int(NPChar.nation) == PIRATE)
 				{
 					dialog.text = "Kaptan, neden beni bırakmıyorsun? Sana bir faydam yok. Korsan olmak tek seçeneğimdi, çünkü ne değerli bir yeteneğim var ne de bir eğitimim. Tek istediğim biraz para kazanıp sonra köşeme çekilmekti.";
 					if (FindFreeRandomOfficer() > 0)
@@ -148,9 +148,9 @@ void ProcessDialogEvent()
 						dialog.text = RandPhraseSimple("Kaptan, dövüşü kaybettim ve merhametinize sığınıyorum. ","Kaptan, merhametinize sığınıyorum. Biliyorum, beni savaş esiri olarak görmeniz için bir sebep yok. Bu yüzden size yalvarıyorum, bana acıyın. Size söz veriyorum, denizde bir daha karşınıza çıkmaktan kaçınacağım.");
 						link.l2 = LinkRandPhrase("Sabrımı zorlamayın. Zaten hayatta olduğuna şükret.",RandPhraseSimple("Senin için kendi planlarım var.","Sanırım gelecekte bana hâlâ faydan dokunabilir."),RandPhraseSimple("Sen benim esirimsin ve seninle ne istersem yapmaya hakkım var. Senin fikrinin burada hiçbir değeri yok.","Sen... yani, bir savaş gemisinin kaptanısın ya da öyleydin ve risklerin farkındaydın. Burada kendini bir aziz gibi göstermeye çalışma."));
 						link.l2.go = "exit";	
-						if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 1)
+						if (isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 1)
 						{
-							if(sti(Items[sti(pchar.EquipedPatentId)].Nation) == sti(NPChar.nation) && FindFreeRandomOfficer() > 0)
+							if(int(Items[int(pchar.EquipedPatentId)].Nation) == int(NPChar.nation) && FindFreeRandomOfficer() > 0)
 							{
 								link.l3 = "Bak, sen yetenekli bir dövüşçüsün ve benim senin gibi gözü kara adamlara ihtiyacım var. Subayım olmak ister misin?";
 								link.l3.go = "free_to_officer";
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
             NPChar.Dialog.Filename = "Enc_Officer_dialog.c";
             NPChar.greeting = "Gr_Officer";
             NPChar.loyality = 5 + rand(10);
-		    if (sti(NPChar.reputation) > 41)
+		    if (int(NPChar.reputation) > 41)
 		    {
 		        NPChar.alignment = "good";
 		    }
@@ -375,7 +375,7 @@ void ProcessDialogEvent()
                     offref = GetCharacter(cn);
                     if (CheckAttribute(offref,"prisoned"))
                     {
-        	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+        	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
         	            {
                         	ReleasePrisoner(offref); // освободили пленника
 							LAi_SetWarriorType(offref);
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 					sTmp = "I had an idea to rob him once but I have never had a single chance to do that.";
 				break;
 			}
-			dialog.text = "Pekala. Bu bana yeter. Şimdi, doğrudan konuya gelelim, "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" zengin bir tüccarın evidir "+NPChar.Hold_GenQuest.Name+". "+"Servetini   gemisiyle   kazandı '"+NPChar.Hold_GenQuest.ShipName+" satıyor "+GetStrSmallRegister(XI_ConvertString(Goods[sti(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" rotasıyla : "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"Çok fazla yükü olduğunda, koruma tutar."+sTmp+" Eminim bu bilgi, tek bir adamın hayatından sizin için çok daha değerli.";
+			dialog.text = "Pekala. Bu bana yeter. Şimdi, doğrudan konuya gelelim, "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.City+"Voc")+" zengin bir tüccarın evidir "+NPChar.Hold_GenQuest.Name+". "+"Servetini   gemisiyle   kazandı '"+NPChar.Hold_GenQuest.ShipName+" satıyor "+GetStrSmallRegister(XI_ConvertString(Goods[int(NPChar.Hold_GenQuest.Goods)].Name+"Acc"))+" rotasıyla : "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.FromCity)+" - "+XI_ConvertString("Colony"+NPChar.Hold_GenQuest.ToCity)+". "+"Çok fazla yükü olduğunda, koruma tutar."+sTmp+" Eminim bu bilgi, tek bir adamın hayatından sizin için çok daha değerli.";
 			link.l1 = "Bu bilginin bana faydalı olacağından şüpheliyim. Barışçıl tüccarların peşine düşmem.";	
 			link.l1.go = "free_tip_off_0";
 			link.l2 = "Bu bilginin bana bir faydası olur mu emin değilim, ama sana söz verdim. Lostromos seni mürettebatıma katacak ve en yakın limanda serbest bırakacak.";
@@ -499,7 +499,7 @@ void ProcessDialogEvent()
 			ReOpenQuestHeader("HoldQuest");
 			AddQuestRecord("HoldQuest", "1");
 			AddQuestUserData("HoldQuest", "sName", GetFullName(NPChar));
-			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[sti(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc"))); 
+			AddQuestUserData("HoldQuest", "sGoods", GetStrSmallRegister(XI_ConvertString(Goods[int(pchar.GenQuest.Hold_GenQuest.Goods)].Name + "Acc")));
 			AddQuestUserData("HoldQuest", "sCityFrom", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.FromCity));
 			AddQuestUserData("HoldQuest", "sCityTo", XI_ConvertString("Colony" + pchar.GenQuest.Hold_GenQuest.ToCity));
 			AddQuestUserData("HoldQuest", "sShipName", pchar.GenQuest.Hold_GenQuest.ShipName);
@@ -573,7 +573,7 @@ void ProcessDialogEvent()
 		
 		case "free_by_hoard5":
 			dialog.text = "Teşekkür ederim, kaptan! Şimdi bir insanın sözünün değerini anlıyorum "+GetSexPhrase("beyefendi!","hanımefendi!");
-			link.l1 = "Git ve yolumdan çekil. Bir dahaki sefere seni bu kadar kolay bırakmam.");
+			link.l1 = "Git ve yolumdan çekil. Bir dahaki sefere seni bu kadar kolay bırakmam.";
 			link.l1.go = "free_by_hoard6";
 		break;
 		

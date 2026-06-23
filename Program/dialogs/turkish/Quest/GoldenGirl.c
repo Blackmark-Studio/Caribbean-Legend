@@ -991,7 +991,7 @@ void ProcessDialogEvent()
 		case "Julianna_126":
 			ChangeCharacterComplexReputation(pchar, "nobility", -2);
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
-			if(sti(pchar.reputation.nobility) > 65)
+			if(int(pchar.reputation.nobility) > 65)
 			{
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Anlıyorum, Charles. Gerçek ve kusursuz aşka inanmak istiyorum, ama sanırım bu dünyada öyle bir şey yok.";
@@ -1422,14 +1422,14 @@ void ProcessDialogEvent()
 		
 		case "governor_26":
 			dialog.text = "Alçak herif! Peki ya adamlarım? Olanları anlatacak kadar hayatta kaldılar mı?";
-			if (sti(pchar.questTemp.GoldenGirl.Officer) > 1)
+			if (int(pchar.questTemp.GoldenGirl.Officer) > 1)
 			{
 				link.l1 = "Hepsi iyi, Ekselansları. Biraz hırpalanmışlar, ama yaşayacaklar.";
 				link.l1.go = "governor_27_1";
 			}
 			else
 			{
-				if (sti(pchar.questTemp.GoldenGirl.Officer) == 1)
+				if (int(pchar.questTemp.GoldenGirl.Officer) == 1)
 				{
 					link.l1 = "Hepsini değil, Ekselansları. Bir beyefendi başaramadı - de Chievous yanında tüfekli askerler getirme zahmetine girmiş. Elimden bir şey gelmedi.";
 					link.l1.go = "governor_27_2";
@@ -1577,14 +1577,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Angerran_11":
-			if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+			if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 			{
 				dialog.text = "Evet, gemini gördüm, kabul etmeliyim ki gerçekten görülmeye değer. O halde bahsi yükseltelim – iki gemi bire karşı. Benim fırkatem ve flütümdeki gümüşe karşı senin gemin?";
 				link.l1 = "Harika bir oyun! Madame Botot yanılmış - BU düello efsane olarak anılacak. Anlaştık!";
 			}
 			else
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+				if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 				{
 					dialog.text = "Bak hele, kaptanımız yaramaz bir çocukmuş! Ama korsanlık kutsaldır. Peki ya bir savaş gemisi? Bir fırkateyn, 48 toplu. Birçok korvetten daha hızlı – kraliyet tersanelerinin ürünü, dünyanın en iyi gemi ustaları tarafından daha da geliştirilmiş. Taşıdığı kalverin topları mükemmel menzile ve isabetliliğe sahip. Ne dersin?";
 					link.l1 = "Çok daha iyi, varım! Hadi gidelim!";
@@ -1612,7 +1612,7 @@ void ProcessDialogEvent()
 		case "Angerran_13":
 			if (CheckAttribute(pchar, "questTemp.GoldenGirl.Game.Win"))
 			{
-				if (sti(RealShips[sti(pchar.ship.type)].Class) < 2)
+				if (int(RealShips[int(pchar.ship.type)].Class) < 2)
 				{
 					dialog.text = "Oyun bitti, Kaptan, istediğini aldın. İstersen zaferini kutla. Fırkateynimin devriyle ilgili şartları yarın öğlen konuşmamızı öneririm.";
 					link.l1 = "Hepsi bu mu? Ben de senin gibi, kumarda kaybedilenin parayla geri alınamayacağına, sadece yeniden kazanılabileceğine inanıyorum. Ya da onu buradaki balıkçılara kereste diye satar, onlara da senin cömert bağışından uzun uzun bahsederim.";
@@ -1620,7 +1620,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (sti(RealShips[sti(pchar.ship.type)].Class) <= 3)
+					if (int(RealShips[int(pchar.ship.type)].Class) <= 3)
 					{
 						dialog.text = "Demek ki kader kararını verdi. Bu iş gerçekten ilginç bir hal aldı. Tebrikler, Kaptan de Maure. Firkateynimin devriyle ilgili şartları yarın öğlen konuşmamızı öneririm.";
 						link.l1 = "Bu kadar çabuk mu? Diğer misafirlerimizi hayal kırıklığına uğratıyoruz, monsieur. Yanılmıyorsam, hâlâ bir geminiz daha var. Kaybedilenin kumarda satın alınamayacağına, sadece geri kazanılabileceğine sizin gibi ben de yürekten inanıyorum.";

@@ -289,13 +289,13 @@ void ProcessDialogEvent()
 		case "Sharlie_sailor_3":
 			dialog.text = "もし自分ひとりだけなら、すぐにでも参加するさ。だが、俺にはユリシーズ号から連れてきた四十人の仲間がいる。 奴らは自分の未来を俺に託してくれたんだ。お前があいつらを裏切らないと確信しなきゃならねえ\n"+
 			"どんな船を持っているんだ？";
-			link.l1 = "「船は船だ」 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype),"Name")))+"「……なぜ、そんなに重要なのか？」";
+			link.l1 = "「船は船だ」 "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype),"Name")))+"「……なぜ、そんなに重要なのか？」";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
 			dialog.text = "あんたな、ユリシーズ号の後じゃ、バルク船やタルタンなんかに乗りたかねえよ。もうあんたの船は見せてもらったし、 連中も気に入ってるぜ\n"+"さて、金の話だ。前金で4,800ペソ要求するぜ。あとはいつも通り取り分を分ける。不当なことは言ってねえ、安心しな。払えるか？";
-			if (sti(Pchar.money) >= 4800)
+			if (int(Pchar.money) >= 4800)
 			{
 				link.l1 = "よくやった！これが報酬の金貨だ。";
 				link.l1.go = "Sharlie_sailor_5";
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_sailor_again":
 			dialog.text = "戻ったのかい、船長？俺や仲間たちを雇う気はできたか？財布が軽くなってきてよ、また潮風を顔で感じたいんだ！";
-			if (sti(Pchar.money) < 4800)
+			if (int(Pchar.money) < 4800)
 			{
 				link.l1 = "まだだ、今はまだ準備中なんだ。";
 				link.l1.go = "exit";
@@ -471,9 +471,9 @@ void ProcessDialogEvent()
 			link.l1 = "選択肢なんてなかったんだ、これしか売りに出てる船がなかったんだよ！しかも、えらく高い金をふんだくられたぜ。 ご存知の通り、今は修理してる暇もねえ……出航前に何かアドバイスはあるか？";
 			link.l1.go = "Folke_8";
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
+
 		case "Folke_8":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			if (bOk)
 			{
 				dialog.text = "弾薬と火薬は十分に備えていますぜ、船長。今のところはこれで大丈夫ですが、補給は早めにお願いしますよ。";
@@ -522,6 +522,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_1":
+			bOk = (GetSquadronGoods(pchar, GOOD_BALLS) >= 80) && (GetSquadronGoods(pchar, GOOD_GRAPES) >= 80) && (GetSquadronGoods(pchar, GOOD_KNIPPELS) >= 80) && (GetSquadronGoods(pchar, GOOD_BOMBS) >= 80) && (GetSquadronGoods(pchar, GOOD_POWDER) >= 180);
 			dialog.text = "弾薬の購入は終わりましたか、船長？";
 			if (bOk)
 			{
@@ -535,9 +536,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_1";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
+
 		case "Folke_10":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			if (bOk)
 			{
 				dialog.text = "よくやった、乗組員のために十分な武器を買い揃えたな。武器が足りなければ、 斬り込みの際にもっと多くの仲間を失うことになる。神よ、そんな事態から我々をお守りください。 貨物室の在庫はこまめに確認するのを忘れるな\n必要な分より少し多めに武器を持っておくのが賢明だ。 くそったれなネズミどもが木の柄や銃床をかじるのが好きだからな。";
@@ -560,6 +561,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_2":
+			bOk = (GetSquadronGoods(pchar, GOOD_WEAPON) >= 50);
 			dialog.text = "武器の購入は終わりましたか、船長？";
 			if (bOk)
 			{
@@ -573,9 +575,9 @@ void ProcessDialogEvent()
 				NextDiag.TempNode = "Folke_goods_2";
 			}
 		break;
-		
-		bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
+
 		case "Folke_11":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			if (bOk)
 			{
 				dialog.text = "いや、これで十分だと思う。食料も足りているし、乗組員のラムもちゃんと用意してくれたな。賢明だぜ、 勤務の後に冷えたラムを一杯やるほど、あらゆる病に効く薬はねえからな。\n毎日ラムを配る船長は水夫たちに愛され、尊敬されるもんだ。\n「なぜラムがなくなったんだ？」なんて部下に言わせちゃいけねえぜ。";
@@ -598,6 +600,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_goods_3":
+			bOk = (GetSquadronGoods(pchar, GOOD_FOOD) >= 100) && (GetSquadronGoods(pchar, GOOD_RUM) >= 10);
 			dialog.text = "俺たちの食料とラムの買い出しは終わったか、船長？";
 			if (bOk)
 			{
@@ -622,7 +625,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13a":
-			Npchar.loyality = makeint(Npchar.loyality) - 5;
+			Npchar.loyality = int(Npchar.loyality) - 5;
 			ChangeCharacterComplexReputation(pchar,"authority", 5);
 			dialog.text = "それなら俺を航海士に任命してくれ、そうすりゃ甲板に立つぜ。";
 			link.l1 = "...";
@@ -630,7 +633,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Folke_13":
-			Npchar.loyality = makeint(Npchar.loyality) + 5;
+			Npchar.loyality = int(Npchar.loyality) + 5;
 			AddCharacterExpToSkill(pchar, "Leadership", 150);
 			// <-- legendary edition
 			dialog.text = "それなら俺を航海士に任命してくれ、そうすりゃ甲板に立つぜ。";
@@ -1033,7 +1036,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
 			dialog.text = "治療用のエッセンスかい？材料代として、90ペソいただくよ、坊や。もちろん材料費だよ。";
-			if (sti(Pchar.money) >= 90)
+			if (int(Pchar.money) >= 90)
 			{
 				link.l1 = "「ありがとうございます、お父様。」";
 				link.l1.go = "potion_pay";
@@ -1049,7 +1052,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
 			dialog.text = "「健康に効く霊薬かい？五百ペソだよ、坊や。」";
-			if (sti(Pchar.money) >= 500)
+			if (int(Pchar.money) >= 500)
 			{
 				link.l1 = "「ありがとうございます、お父様。」";
 				link.l1.go = "potion_pay";
@@ -1065,7 +1068,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
 			dialog.text = "「解毒剤かい？200ペソだよ、坊や。」";
-			if (sti(Pchar.money) >= 200)
+			if (int(Pchar.money) >= 200)
 			{
 				link.l1 = "「ありがとうございます、お父様。」";
 				link.l1.go = "potion_pay";
@@ -1081,7 +1084,7 @@ void ProcessDialogEvent()
 			npchar.quest.price = 900;
 			npchar.quest.type = 4;
 			dialog.text = "薬草の調合かい？900ペソだよ、坊や。";
-			if (sti(Pchar.money) >= 900)
+			if (int(Pchar.money) >= 900)
 			{
 				link.l1 = "「ありがとうございます、お父様。」";
 				link.l1.go = "potion_pay";
@@ -1094,8 +1097,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "potion_pay":
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.price));
-			iTemp = sti(npchar.quest.type);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.price));
+			iTemp = int(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "「『わたしはあなたを癒し、あなたの傷を治す。主の言葉である。』これがあなたの薬です。ドミヌス・ヴォビスクム！」 ";
@@ -1376,7 +1379,7 @@ case "Europe":
 			dialog.text = "神々の涙さ。お前たちはそれを真珠と呼ぶ。たくさんの真珠だ。";
 			link.l1 = "俺は決めたぜ、ココアリーフ。ここで待ってろ、武器商人のところへ行ってくる。必要な物を買って戻るからな。";
 			link.l1.go = "ZsI_ListKakao_Soglasen_5";
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				link.l2 = "俺はもう決めたぜ、ココアリーフ。お前が欲しいものはもう持ってる。ほら、受け取れ。";
 				link.l2.go = "ZsI_ListKakao_Soglasen_2";
@@ -1415,7 +1418,7 @@ case "Europe":
 			LAi_SetOfficerType(sld);
 			sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 			sld.Dialog.CurrentNode = "Tichingitu_officer";
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_2":
@@ -1428,7 +1431,7 @@ case "Europe":
 			Log_Info("You have received 180 small pearls");
 			PlaySound("Interface\important_item.wav");
 			DeleteAttribute(pchar, "questTemp.ZsI_PokupaemPistolety");
-			if (sti(pchar.items.pistol1) >= 2 && sti(pchar.items.GunPowder) >= 20 && sti(pchar.items.bullet) >= 20)
+			if (int(pchar.items.pistol1) >= 2 && int(pchar.items.GunPowder) >= 20 && int(pchar.items.bullet) >= 20)
 			{
 				RemoveCharacterEquip(PChar, GUN_ITEM_TYPE);
 				RemoveItems(PChar, "pistol1", 2);
@@ -1453,7 +1456,7 @@ case "Europe":
 			chrDisableReloadToLocation = false;
 			
 			ReturnOfficer_Tichingitu();
-			LaunchTutorial("Fighter", 1);
+			LaunchTutorial("Fighter", true);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_5":
@@ -1791,7 +1794,7 @@ case "Europe":
 			FantomMakeCoolSailor(npchar, SHIP_BARKENTINE, "Charles", CANNON_TYPE_CANNON_LBS3, 40, 33, 20);
 			npchar.Ship.Mode = "trade";
 			SetCharacterRemovable(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.CompanionEnemyEnable = true;
 			SetCrewQuantity(npchar, 35);
 			SetCharacterGoods(npchar, GOOD_ROPES, 30);
@@ -1869,12 +1872,12 @@ case "Europe":
 		
 		case "MOT_Barbie_109":
 			dialog.text = "一万ペソだ。控えめな額だが、縄を密輸業者に転売すればかなりの利益になるぜ。";
-			if (sti(pchar.Money) >= 10000)
+			if (int(pchar.Money) >= 10000)
 			{
 				link.l1 = "こんな機会を逃したら、一生自分を許せないだろう。銀貨を受け取って、品物をすぐに俺の船に届けてくれ。";
 				link.l1.go = "MOT_Barbie_ContraSoglasen";
 			}
-			if (sti(pchar.Money) >= 7000)
+			if (int(pchar.Money) >= 7000)
 			{
 				link.l2 = "これは危険な取引だ、友よ。お互い歩み寄ろうじゃないか？君のロープは七千で受け取ろう。";
 				link.l2.go = "MOT_Barbie_ContraTorg";
@@ -1925,7 +1928,7 @@ case "Europe":
 			{
 				Notification_Skill(false, 25, SKILL_COMMERCE);
 				dialog.text = "できません、船長。私の品物は重要で、相応の扱いが必要です。ほとんどの自由船長は戦略物資の取引を恐れています。 残念ですが、ここで値引き交渉はできません。";
-				if (sti(pchar.Money) >= 10000)
+				if (int(pchar.Money) >= 10000)
 				{
 					link.l1 = "こんな機会を逃したら、一生自分を許せないだろう。銀貨を受け取って、品物をすぐに俺の船へ届けてくれ。";
 					link.l1.go = "MOT_Barbie_ContraSoglasen";
@@ -2145,7 +2148,7 @@ case "Europe":
 		case "Del_hire":
 			if (CheckAttribute(pchar, "questTemp.Del_SniziliTsenu"))
 			{
-				if (sti(pchar.Money) >= 2500)
+				if (int(pchar.Money) >= 2500)
 				{
 					AddMoneyToCharacter(pchar, -2500);
 					NextDiag.TempNode = "OnboardSoon";
@@ -2163,7 +2166,7 @@ case "Europe":
 			}
 			else
 			{
-				if (sti(pchar.Money) >= 4000)
+				if (int(pchar.Money) >= 4000)
 				{
 					AddMoneyToCharacter(pchar, -4000);
 					NextDiag.TempNode = "Del_OnboardSoon";
@@ -2292,14 +2295,14 @@ case "Europe":
 		case "TK_Kapitan_Plen":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			sld.DontRansackCaptain = true;
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			
-			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", sti(PChar.rank), PIRATE, -1, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("TK_Heiter2", "mercen_8", "man", "man", int(PChar.rank), PIRATE, -1, false, "pirate"));
 			sld.name = "Daniel";
 			sld.lastname = "Montbars";
 			AddPassenger(pchar, sld, false);
@@ -2313,7 +2316,7 @@ case "Europe":
 		case "TK_Kapitan_Otpustil":
 			DialogExit();
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			Lai_SetPlayerType(pchar);
 			LAi_RemoveCheckMinHP(sld);
 			LAi_SetImmortal(sld, true);
@@ -2509,7 +2512,7 @@ case "Europe":
 		
 		case "VsD_Tsyganka_4":
 			dialog.text = "地元の人々に崇められている強力なお守りがあるんだ。木材はその意志に従い、 木工に不慣れな者でも身につければ腕が上がるってわけさ。たった千ペソであんたのものだよ、旦那。";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "よろしい、取引成立だ。俺にはできるだけ多くの助けが必要なんだ。";
 				link.l1.go = "VsD_Tsyganka_Da";

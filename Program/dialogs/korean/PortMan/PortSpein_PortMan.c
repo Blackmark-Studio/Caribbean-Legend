@@ -25,8 +25,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "후안? 그게 다요? 나리, 지금 취하셨소 아니면 나한테 바보 같은 장난을 치는 거요? 성씨나 적어도 그 자의 배 이름이라도 기억나오? 여기는 스페인 식민지요, 제발 좀. 여기서 돌아다니는 후안이 몇 명이나 되는지 아시오? 아무런 정보도 없으면 도와줄 수 없소.";
 			link.l1 = "알겠소. 귀찮게 해서 미안하오...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

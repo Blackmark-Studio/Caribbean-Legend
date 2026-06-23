@@ -13,11 +13,11 @@ string SPGL_GetAproximateCrewQuantity(ref chr, ref spyglass)
 	int realQty = GetCrewQuantity(chr);
 	int glassLevel = 0;
 	float sumMtp, minMtp, maxMtp;
-	if (IsCompanion(chr)) return its(realQty);
+	if (IsCompanion(chr)) return string(realQty);
 
 	if (HasDescriptor(spyglass, "SpyGlass_Crew_0")) glassLevel = 1;
 	else if (HasDescriptor(spyglass, "SpyGlass_Crew_1")) glassLevel = 2;
-	else if (HasDescriptor(spyglass, "SpyGlass_Crew_2")) return its(realQty);
+	else if (HasDescriptor(spyglass, "SpyGlass_Crew_2")) return string(realQty);
 	else return "";
 
 	if (realQty > 999) return "1k - 2k";
@@ -30,11 +30,11 @@ string SPGL_GetAproximateCrewQuantity(ref chr, ref spyglass)
 	{
 		return cash.result;
 	}
-	else if (CheckAttributeEqualTo(cash, "glassLevel", its(glassLevel)))
+	else if (CheckAttributeEqualTo(cash, "glassLevel", string(glassLevel)))
 	{
-		sumMtp = stf(cash.sumMtp);
-		minMtp = stf(cash.minMtp);
-		maxMtp = stf(cash.maxMtp);
+		sumMtp = float(cash.sumMtp);
+		minMtp = float(cash.minMtp);
+		maxMtp = float(cash.maxMtp);
 	}
 	else
 	{
@@ -48,13 +48,13 @@ string SPGL_GetAproximateCrewQuantity(ref chr, ref spyglass)
 		cash.maxMtp = maxMtp;
 	}
 
-	float tempQty = makefloat(realQty) * (1.0 + sumMtp);
-	int min = makeint(tempQty * (1.0 - minMtp));
-	int max = makeint(0.5 + tempQty * (1.0 + maxMtp));
+	float tempQty = float(realQty) * (1.0 + sumMtp);
+	int min = int(tempQty * (1.0 - minMtp));
+	int max = int(0.5 + tempQty * (1.0 + maxMtp));
 	string result;
 	if (min < 1) result = "1";
 	else if (min != max) result = min + " - " + max;
-	else result = min; // для всяких 1-1, 2-2
+	else result = string(min); // для всяких 1-1, 2-2
 
 	cash.result = result;
 	return result;

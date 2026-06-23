@@ -31,7 +31,7 @@ void WhrCreateLightningEnvironment()
     Lightning.Enable = false;
 	DelEventHandler(WHR_LIGHTNING_DOIT,"Lightning_DoIt");
 
-//	if (sti(aLightning.Enable) != true) return;
+//	if (int(aLightning.Enable) != true) return;
 
 	if (!isEntity(&Lightning)) 
 	{ 
@@ -58,7 +58,7 @@ void WhrCreateLightningEnvironment()
 
 void WhrStartLightning()
 {
-    if(CheckAttribute(&WeatherParams,"Lighting") && sti(WeatherParams.Lighting) == 1) 
+    if(CheckAttribute(&WeatherParams,"Lighting") && int(WeatherParams.Lighting) == 1)
     {    
         Whr_DebugLog("Lightning already started");
         return;
@@ -88,7 +88,7 @@ void WhrStartLightning()
 
 void WhrStopLightning()
 {
-    if(CheckAttribute(&WeatherParams,"Lighting") && sti(WeatherParams.Lighting) == 1)
+    if(CheckAttribute(&WeatherParams,"Lighting") && int(WeatherParams.Lighting) == 1)
     {    
         Lightning.Enable = false;
         DelEventHandler(WHR_LIGHTNING_SOUND,"Lightning_Sound");
@@ -121,20 +121,20 @@ void Lightning_DoIt()
 	PostEvent(WHR_LIGHTNING_DOIT, 500 + rand(5000));
 
 	// if interface launched, return
-	if (sti(InterfaceStates.Launched) && CurrentInterface != INTERFACE_MAINMENU) { return; }
+	if (int(InterfaceStates.Launched) && CurrentInterface != INTERFACE_MAINMENU) { return; }
 
 	aref aCurWeather = GetCurrentWeather();
 
 	int iTimeLightning = 1000;
 
-	float cx = stf(Camera.Pos.x);
-	float cy = stf(Camera.Pos.y);
-	float cz = stf(Camera.Pos.z);
+	float cx = float(Camera.Pos.x);
+	float cy = float(Camera.Pos.y);
+	float cz = float(Camera.Pos.z);
 
 	float fDist = 1000.0 + frnd() * 2000.0;
 	if (rand(30) == 15) { fDist = 20.0 + frnd() * 200.0; }	// nearest lightning
 	float fAngle = frnd() * PIm2;
-	int iTimeSound = fDist / 333.0;
+	int iTimeSound = int(fDist / 333.0);
 
 	float fTime = frnd() * 0.1 + 0.1;
 	float x = cx + fDist * sin(fAngle);
@@ -143,7 +143,7 @@ void Lightning_DoIt()
 
 	int iFlickerTime = Whr_GetLong(aCurWeather, "Lightning.FlickerTime");
 
-	int iSubTexture = rand(sti(Lightning.SubTexX) * sti(Lightning.SubTexY) - 1);
+	int iSubTexture = rand(int(Lightning.SubTexX) * int(Lightning.SubTexY) - 1);
 
 	float fFlashSize = 1500.0;
 	float fLightningSize = 600.0;

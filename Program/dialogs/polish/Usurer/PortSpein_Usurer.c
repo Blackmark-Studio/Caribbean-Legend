@@ -20,8 +20,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Nie wiem. I nie chcę wiedzieć. Nie polecam ci również wiedzieć. A teraz, musisz mi wybaczyć, ale mam interesy, do których muszę wrócić. Przypuszczam, że ty również masz swoje sprawy do załatwienia? Więc odejdź i się nimi zajmij.";
 			link.l1 = "Dobrze, w porządku. Przepraszam za kłopot...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

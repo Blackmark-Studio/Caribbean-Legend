@@ -11,7 +11,7 @@ void TreasureTiersInit()
 	if(LoadSegment("scripts\Treasure_Init.c"))
 	{
 		InitTreasureTiers();
-        InitTreasureTiers_Additions()
+        InitTreasureTiers_Additions();
 		UnloadSegment("scripts\Treasure_Init.c");
 	}
 }
@@ -166,7 +166,7 @@ int GetTresuareTier(int iTier)
 	if (bTrHash) sTemp = wrand_h("TresuareMap", "TM" + sTrTag);
     else sTemp = wrand("TresuareMap");
     CorrectWeightParameters("TresuareMapTier", sTemp, "Treasure");
-    return sti(LTR.TresuareMapTier.(sTemp));
+    return int(LTR.TresuareMapTier.(sTemp));
 }
 
 // Выбрать вещь и выбросить её из пулла
@@ -244,14 +244,14 @@ void FillBoxForTreasure(ref item)
 
     // Определяем тир (15 отрезков в диапазоне от 3 до 692)
     iTier += GetCharacterSkill(PChar,SKILL_FORTUNE)*3;                //Везение (min 1)
-    iTier += iClamp(0, 12, sti(PChar.Statistic.Treasure))*16;         //Количество найденных кладов
+    iTier += iClamp(0, 12, int(PChar.Statistic.Treasure))*16;         //Количество найденных кладов
     if(CheckAttribute(PChar,"GenQuest.TreasureBuild")) iTier += 200;  //Сборная карта
 
     float mtp = 1;
     if (HasTreasureHunter) mtp += 0.15;
     if (HasLuckyHat) mtp += 0.10;
 
-    iTier = MakeInt(iTier*mtp);
+    iTier = int(iTier*mtp);
     iTier = iClamp(0, 14, iTier/47);    // Неполное частное от 0 до 14 (ниже +1 будет от 1 до 15)
     iTier = GetTresuareTier(iTier + 1); // Среди соседей взять рандомом по весу
     item.TreasureTier = iTier;          // Сохраним для ачивки и опыта
@@ -306,7 +306,7 @@ void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
 		if (bTrHash)
 		{
 			// Золото в первый слот
-			item.BoxTreasure.gold = sti(aTier.gold.min) + hrand(sti(aTier.gold.dif), sTrTag);
+			item.BoxTreasure.gold = int(aTier.gold.min) + hrand(int(aTier.gold.dif), sTrTag);
 			// Остальные четыре слота
 			if(75 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
 			if(65 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
@@ -316,7 +316,7 @@ void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
 		else
 		{
 			// Золото в первый слот
-			item.BoxTreasure.gold = sti(aTier.gold.min) + rand(sti(aTier.gold.dif));
+			item.BoxTreasure.gold = int(aTier.gold.min) + rand(int(aTier.gold.dif));
 			// Остальные четыре слота
 			if(75 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
 			if(65 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
@@ -332,18 +332,18 @@ void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
 			if (bTrHash)
 			{
 				itmName = GetSubStringByNum("bullet,GunPowder,grapeshot", hrand(2, sTrTag + sTrSubTag));
-				item.BoxTreasure.(itmName) = sti(aTier.Jewelry.Ammo.min) + hrand(sti(aTier.Jewelry.Ammo.dif), sTrTag + sTrSubTag);
+				item.BoxTreasure.(itmName) = int(aTier.Jewelry.Ammo.min) + hrand(int(aTier.Jewelry.Ammo.dif), sTrTag + sTrSubTag);
 			}
 			else
 			{
 				itmName = LinkRandPhrase("bullet", "GunPowder", "grapeshot");
-				item.BoxTreasure.(itmName) = sti(aTier.Jewelry.Ammo.min) + rand(sti(aTier.Jewelry.Ammo.dif));
+				item.BoxTreasure.(itmName) = int(aTier.Jewelry.Ammo.min) + rand(int(aTier.Jewelry.Ammo.dif));
 			}
 		}
 		else
 		{
-			if (bTrHash) item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + hrand(sti(aTier.Jewelry.(itmName).dif), sTrTag + sTrSubTag);
-			else item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + rand(sti(aTier.Jewelry.(itmName).dif));
+			if (bTrHash) item.BoxTreasure.(itmName) = int(aTier.Jewelry.(itmName).min) + hrand(int(aTier.Jewelry.(itmName).dif), sTrTag + sTrSubTag);
+			else item.BoxTreasure.(itmName) = int(aTier.Jewelry.(itmName).min) + rand(int(aTier.Jewelry.(itmName).dif));
 		}
     }
 }
@@ -360,8 +360,8 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
         bool bExcellent = (itmName == "map_a");
         int qMiss = MAPS_IN_ATLAS - CountAreasMapFromCharacter(); // Сколько на момент генерации не хватало обычных карт
         int qTy;
-		if (bTrHash) qTy = sti(aTier.Special.(itmName).min) + hrand(sti(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
-		else qTy = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
+		if (bTrHash) qTy = int(aTier.Special.(itmName).min) + hrand(int(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
+		else qTy = int(aTier.Special.(itmName).min) + rand(int(aTier.Special.(itmName).dif));
         for(int i = 0; i < qTy; i++)
         {
             if(bExcellent)
@@ -385,7 +385,7 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
             {
                 itmName = SelectUsualMaps(item, &qMiss);
                 if(CheckAttribute(item, "BoxTreasure." + itmName))
-                    item.BoxTreasure.(itmName) = sti(item.BoxTreasure.(itmName)) + 1;
+                    item.BoxTreasure.(itmName) = int(item.BoxTreasure.(itmName)) + 1;
                 else
                     item.BoxTreasure.(itmName) = 1;
             }
@@ -394,8 +394,8 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
     }
     else
     {
-        if (bTrHash) item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + hrand(sti(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
-		else item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
+        if (bTrHash) item.BoxTreasure.(itmName) = int(aTier.Special.(itmName).min) + hrand(int(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
+		else item.BoxTreasure.(itmName) = int(aTier.Special.(itmName).min) + rand(int(aTier.Special.(itmName).dif));
     }
 
     if(bOtherSlots)
@@ -483,16 +483,16 @@ void SetTreasureBoxFromMap()
         PlaySound("interface\notebook.wav");
 
         Items_FindItem("map_full", &item);
-        int iTier = sti(item.TreasureTier);
+        int iTier = int(item.TreasureTier);
 
         // Охотники за кладом - ОЗК (Пещера)
-        switch (sti(pchar.GenQuest.Treasure.Vario))
+        switch (int(pchar.GenQuest.Treasure.Vario))
         {
             case 0: Treasure_SetCaribWarrior();  break;
             case 1: Treasure_SetBandosWarrior(); break;  
         }
         // Джентельмены удачи - ДУ (Море) 50%
-        if(rand(1)) TreasureHunterOnMap(rand(1), iTier);
+        if(rand(1)) TreasureHunterOnMap(bool(rand(1)), iTier);
         // ОЗК (Бухта)
         if( CheckAttribute(Pchar,"location.from_sea") )
         {
@@ -536,7 +536,7 @@ void SetTreasureBoxFromMap()
 // Обычные ДУ
 void TraderHunterOnMap(bool bCool)
 {
-    int Rank = sti(PChar.Rank);
+    int Rank = int(PChar.Rank);
     int iShips[4] = {0, 0, 0, 0}; // Рейдер, Универсал, Рейдер, Военник
     int i, num, max, add = 5;
     if(bCool) add = 8;
@@ -561,7 +561,7 @@ void TraderHunterOnMap(bool bCool)
     {
         if(i > num) Rank = iShips[rand(num-1)];
         else Rank = iShips[i-1];
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.Rank) + add, PIRATE, 10, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", int(PChar.Rank) + add, PIRATE, 10, true, "hunter"));
         sld.GenShip.Class = Rank;
         if(i > num)
         {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
@@ -624,7 +624,7 @@ void TreasureHunterOnMap(bool bCool, int iTier)
     {
         if(i > num) iTier = iShips[rand(num-1)];
         else iTier = iShips[i-1];
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + add, PIRATE, 10, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", int(PChar.rank) + add, PIRATE, 10, true, "hunter"));
         sld.GenShip.Class = iTier;
         if(i > num)
         {   // Вероятности на спеки специально равные (рейдеру не больше остальных), если у игрока большая эскадра
@@ -677,7 +677,7 @@ void SetTreasureHunter(string temp)
 	arrayNPCModelHow = 0;
     for (i = 1; i <= j; i++)
     {
-        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 5, PIRATE, 0, true, "hunter"));
+        sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", int(PChar.rank) + 5, PIRATE, 0, true, "hunter"));
         SetFantomParamHunter(sld); //крутые парни
         ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Говоруны охотники за кладами
         sld.Dialog.CurrentNode = "TreasureHunter";
@@ -714,7 +714,7 @@ void SetTreasureHunter(string temp)
 	LAi_SetFightModeForOfficers(false);
 	if (ok)
     {
-        PChar.HunterCost = makeint(sti(Pchar.money) / 5) + rand(20)*1000; //сразу генерим
+        PChar.HunterCost = int(int(Pchar.money) / 5) + rand(20)*1000; //сразу генерим
         PChar.HunterCost.Qty = i;
         PChar.HunterCost.TempHunterType = "";
         sld = characterFromID(sCapId + "1");
@@ -783,7 +783,7 @@ void SetMapDescribe(ref item, int iTier)
 		sTemp = GetAttributeName(GetAttributeN(aDesc, hrand(GetAttributesNum(aDesc)-1, sTrTag))); // :)
 	}
 	else sTemp = GetRandomAttrName(aDesc);
-    item.MapTypeIdx = (iTier - 1) * 3 + sti(aDesc.(sTemp)); // 123, 456, 789
+    item.MapTypeIdx = (iTier - 1) * 3 + int(aDesc.(sTemp)); // 123, 456, 789
     DeleteAttribute(aDesc, sTemp);
 }
 
@@ -791,9 +791,9 @@ void SetMapDescribe(ref item, int iTier)
 void Treasure_Stories(string attr)
 {
     DeleteAttribute(PChar, "Treasure_Stories_Read." + attr);
-	PChar.questTemp.Treasure_Stories = sti(PChar.questTemp.Treasure_Stories) + 1;
-	if(!GetAchievement("ach_CL_141") && sti(PChar.questTemp.Treasure_Stories) == 1)  Achievment_Set("ach_CL_141");
-	if(!GetAchievement("ach_CL_142") && sti(PChar.questTemp.Treasure_Stories) == 32) Achievment_Set("ach_CL_142");
+	PChar.questTemp.Treasure_Stories = int(PChar.questTemp.Treasure_Stories) + 1;
+	if(!GetAchievement("ach_CL_141") && int(PChar.questTemp.Treasure_Stories) == 1)  Achievment_Set("ach_CL_141");
+	if(!GetAchievement("ach_CL_142") && int(PChar.questTemp.Treasure_Stories) == 32) Achievment_Set("ach_CL_142");
 }
 
 // Записка попала в инвентарь из клада
@@ -817,7 +817,7 @@ bool TreasureNotesHandler(ref _refCharacter, aref arItm)
 void Treasure_SetCaribWarrior()
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
-	int iRank = 10+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
+	int iRank = 10+int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_carib_"+i, "canib_"+(rand(5)+1), "man", "man", iRank, PIRATE, 1, true, "native"));
@@ -839,7 +839,7 @@ void Treasure_SetCaribWarrior()
 void Treasure_SetBandosWarrior()
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
-	int iRank = 8+sti(pchar.rank)+makeint(MOD_SKILL_ENEMY_RATE)/2;
+	int iRank = 8+int(pchar.rank)+int(MOD_SKILL_ENEMY_RATE)/2;
 	for(int i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_bandos_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, 1, true, "marginal"));
@@ -862,7 +862,7 @@ void Treasure_SetCaptainWarrior(string qName)
     if(CheckAttribute(loc, "townsack")) return; //fix: Вдруг вышли не в джунгли, а, например, в мастерскую Алексуса?
 
 	string model;
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(loc, true);//запретить драться // patch-6
 	for(int i=1; i<=3; i++)
@@ -889,10 +889,10 @@ void Treasure_SetOfficerWarrior(string qName)
 
     int iNation = PIRATE;
 	string sTemp = GetCityNameByIsland(Pchar.curIslandId);
-    if(sTemp != "none")   iNation = sti(colonies[FindColony(sTemp)].nation);
+    if(sTemp != "none")   iNation = int(colonies[FindColony(sTemp)].nation);
 	if(iNation == PIRATE) iNation = hrand(NON_PIRATES, Pchar.curIslandId);
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(loc, true);//запретить драться // patch-6
 	for(int i=1; i<=3; i++)

@@ -22,7 +22,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "DTSG_KnippelDolg":
 			DeleteAttribute(pchar, "questTemp.DTSG_KnippelDolg");
 			dialog.text = "哪一个? ";
-			if (sti(pchar.reputation.nobility) > 50)
+			if (int(pchar.reputation.nobility) > 50)
 			{
 				link.l1 = "(声望) 肯定是查理.尼普尔。 ";
 				link.l1.go = "DTSG_KnippelDolg_VD_2";

@@ -333,3 +333,7 @@ itm_stat_greenIdol {Kult}
 itm_stat_descr_greenIdol {Bożek podporządkowuje sobie otoczenie, zwiększając o $percent(0.30) szansę kapitulacji wrogich okrętów, siłę eskadry i liczbę rekrutów w tawernach.}
 itm_stat_secondary_greenIdol {Szepty Przedwiecznych}
 itm_stat_descr_secondary_greenIdol {Gdy bożek jest wyposażony, nieustannie obniża morale załogi, doprowadzając ją do obłędu bezbożnymi szeptami.}
+itm_stat_nocturlabe {정확한 시간}
+itm_stat_descr_nocturlabe {선박의 기동성을 10% 증가시키며, 2급 및 1급 선박에서는 추가로 25% 증가시킵니다.}
+itm_stat_secondary_nocturlabe {야간 항해}
+itm_stat_descr_secondary_nocturlabe {$key(Perception)을 #f.0modifiers.SpecialPerception#만큼 증가시킵니다. 글로벌 맵에서 도주 확률을 25 증가시킵니다.}

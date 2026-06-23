@@ -513,7 +513,7 @@ void ProcessDialogEvent()
 				link.l1 = "那么, 期待下次再见, "+npchar.lastname+" 先生。 告辞。";
 				link.l1.go = "SharlieEpilog_Dassen_Leave";
 			}
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Dassen_salaryX3":
@@ -528,7 +528,7 @@ void ProcessDialogEvent()
 				link.l1 = "不必拘泥于礼节, 直接叫我夏尔吧。 为庆祝启航, 我打算在酒馆里办一场小小的宴会。 希望你能来参加? ";
 				link.l1.go = "SharlieEpilog_Dassen_Tavern";
 			}
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Dassen_Governor":

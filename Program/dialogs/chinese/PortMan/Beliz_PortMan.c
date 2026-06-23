@@ -44,9 +44,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//检查港口是否有船
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//检查港口是否有船
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "嗯... 你违反了帆船赛规则, 我必须取消你的资格。 抱歉, 你不能参加下一次航行。 我已准备好发往皇家港的急件。 ";
@@ -59,8 +59,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//玩家在第1段航行中消耗的小时数
-			dialog.text = "我们来登记: " +GetFullName(pchar)+ "船长, 船是" + pchar.Ship.Name + "... 帆船赛用时" + sti(pchar.questTemp.Regata.FirstTransitionTime) + "小时。 完成, 成绩已登记, 你可以继续了。 ";
+			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//玩家在第1段航行中消耗的小时数
+			dialog.text = "我们来登记: " +GetFullName(pchar)+ "船长, 船是" + pchar.Ship.Name + "... 帆船赛用时" + int(pchar.questTemp.Regata.FirstTransitionTime) + "小时。 完成, 成绩已登记, 你可以继续了。 ";
 			link.l1 = "告诉我我的排名。 ";
 			link.l1.go = "Regata_info";
 			}
@@ -83,7 +83,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==3) sTemp = "c";
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
-				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.FirstTransitionTime))
+				if (pchar.questTemp.Regata.AdversaryFirstTransition.Time.(sTemp) < int(pchar.questTemp.Regata.FirstTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//最近对手的名字

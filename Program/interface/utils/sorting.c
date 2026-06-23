@@ -85,7 +85,7 @@ void RestoreTableSorting(string tableName)
 	if (!CheckAttribute(table, "hr.backup.column")) return;
 
 	makearef(backup, table.hr.backup);
-	QoLSortTable(tableName, sti(backup.column), backup.datatype, true, sti(backup.offset));
+	QoLSortTable(tableName, int(backup.column), backup.datatype, true, int(backup.offset));
 	Table_UpdateWindow(tableName);
 }
 
@@ -97,7 +97,7 @@ int RestoreSelectedRow(ref table, int tableSize, int selectedGoodsId)
 	for (int i=1; i < tableSize; i++){
 		string sRow = "tr" + i;
 		if (!CheckAttribute(&table, sRow)) return -1;
-		if (selectedGoodsId != sti(table.(sRow).index)) continue;
+		if (selectedGoodsId != int(table.(sRow).index)) continue;
 		found = i;
 		break;
 	}

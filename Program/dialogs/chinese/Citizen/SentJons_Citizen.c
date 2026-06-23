@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "terrapin":
-            if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10%概率或计数达标
+            if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10%概率或计数达标
             {
                 dialog.text = "这儿叫琼斯的人很多。 我知道最有名的是福克斯上校的副官本杰明.琼斯。 他通常在团部总部接待访客。 ";
                 link.l1 = "他有个叫莫莉的妹妹吗? ";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             dialog.text = RandPhraseSimple(LinkRandPhrase("嗯, 恐怕我帮不了你。 ", "不, 我不认识他。 ", "哈! 如果我认识的莫莉.琼斯算罕见美人, 那福克斯上校就是教区神父了。 "), LinkRandPhrase("我认识几个莫莉.琼斯, 其中一个有兄弟, 但... 她不是你要找的那个。 只有和猿猴一起生活的人才会称她为'罕见美人'。 ", "抱歉, 我认识的所有琼斯都没有姐妹。 ", "抱歉, 我帮不了你, 问问别人吧。 "));
             link.l1 = "明白了, 抱歉打扰。 ";
             link.l1.go = "exit";
-            pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count) + 1;
+            pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count) + 1;
         break;
         
         case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "info":
         // 替换为某些NPC的描述, 关于任务
-            dialog.text = "你以为我是" + NationNameGenitive(sti(NPChar.nation)) + "的特工吗? ";
+            dialog.text = "你以为我是" + NationNameGenitive(int(NPChar.nation)) + "的特工吗? ";
             link.l1 = "好吧... 不是。 那么再见。 ";
             link.l1.go = "exit";
             link.l2 = "那么, 还有其他问题吗? ";

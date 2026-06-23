@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		case "RedChieftain_0":
 			dialog.text = "하얀 형제여, 부엉이처럼 통찰력 있고, 뱀처럼 교활하구나. 인디언에게 곧 문제가 닥쳐온다. 백인들의 아주 큰 카누가 내 마을에 왔다네.\n그들은 많은 카이만, 내 동족을 잡아 그들의 카누에 태우고 모든 물의 어머니로 데려갔지...";
 			link.l1 = "잠깐만... 네 사람들을 배에서 온 백인들에게 노예로 잡혀갔다고 말하는 거야?";
-			if (sti(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
+			if (int(pchar.Basenation) == SPAIN) link.l1.go = "RedChieftain_2";
 			else link.l1.go = "RedChieftain_1";
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessDialogEvent()
 			dialog.text = LinkRandPhrase("신들의 눈물이 그대의 것이라니 기쁘구나, 아라와크의 형제여!","인디언, 고맙다, 용감한 창백이!","우리의 잡은 고기 가져가라, 하얀 형제!");
 			link.l1 = LinkRandPhrase("도와줄 수 있어서 기뻐!","고맙다, 붉은 피부 형제여!","대단하군!");
 			link.l1.go = "exit";
-			pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind)+1;
+			pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind)+1;
 			AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 		
 		case "RedChieftain_final":
 			chrDisableReloadToLocation = false;//открыть локацию
 		// belamour legendary edition -->
-			if(sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+			if(int(pchar.questTemp.RedChieftain.Tartane) > 5)
 			{
 				dialog.text = "카나우리, 다시 한 번 고맙다네, 창백한 얼굴 형제여! 자네가 인디언들과 함께 모든 카누를 구해줬지! 카나우리에게는 모든 카누를 지키는 것이 매우 중요하다네, 왜냐하면 자네가 악한 창백한 얼굴들이 노예로 끌고 간 카나우리의 손자도 구해줬으니까. 내 손자는 어릴 때 수영을 무척 좋아했기에, 카나우리는 그가 물에 빠지지 않도록 이 부적을 주었지. 이제 손자는 더 이상 수영을 원하지 않아서, 이 부적을 나에게 돌려주었고, 내가 자네에게 주라고 했네, 창백한 얼굴 형제여. 신들의 눈물과 이 선물이 아라와크 한 사람의 생명에 대한 충분한 보상이 되길 바라네. 이제 우리는 작별을 고하네 - 우리 고향 마을로 돌아갈 시간이 되었으니.";
 				link.l1 = "행운을 빌어, 쿠나우리! 네 손자가 살아남아서 정말 기쁘다! 이런 불행이 다시는 네게 닥치지 않기를 기도할게!";
@@ -243,7 +243,7 @@ void ProcessDialogEvent()
 			{
 				//if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 				//{
-					//if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+					//if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 					//{
 						pchar.questTemp.SanBoxTarget.RedChieftain = true;
 						ChangeCharacterComplexReputation(pchar, "fame", 25);

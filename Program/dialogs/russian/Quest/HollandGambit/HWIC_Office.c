@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_1":
-			float fQty = stf(dialogEditStrings[6]);
+			float fQty = float(dialogEditStrings[6]);
 			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
@@ -232,8 +232,8 @@ void ProcessDialogEvent()
 				link.l1.go = "licence_r";
 				break;
 			}
-			dialog.text = "На "+FindRussianDaysString(sti(fQty))+"? Хорошо. Стоимость такой лицензии составит "+FindRussianDublonString(sti(npchar.quest.lcc_summ))+". Вас устраивает?";
-			if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
+			dialog.text = "На "+FindRussianDaysString(int(fQty))+"? Хорошо. Стоимость такой лицензии составит "+FindRussianDublonString(int(npchar.quest.lcc_summ))+". Вас устраивает?";
+			if (PCharDublonsTotal() >= int(npchar.quest.lcc_summ))
 			{
 				link.l1 = "Да, конечно, устраивает.";
 				link.l1.go = "licence_2";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_2":
-			int iQty = sti(dialogEditStrings[6]);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.lcc_summ));
+			int iQty = int(dialogEditStrings[6]);
+			RemoveDublonsFromPCharTotal(int(npchar.quest.lcc_summ));
 			GiveNationLicence(HOLLAND, iQty);
 			// belamour legendary edition на пару с Акулой
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "start")
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.silk_info"))
 				{
-					if (sti(pchar.reputation.nobility) > 60)
+					if (int(pchar.reputation.nobility) > 60)
 					{
 						dialog.text = "А-а, капитан " + GetFullName(pchar) + "! Очень хорошо, что вы ко мне зашли. У меня для вас есть деловое предложение.";
 						link.l1 = "Очень занятно! Внимательно вас слушаю, минхер.";
@@ -451,12 +451,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
 			{
 				link.l4 = "Минхер "+npchar.name+", я хотел"+GetSexPhrase("","а")+" бы обсудить возможность увеличения поставок шёлка.";
 				link.l4.go = "UpgradeSilk";
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
 			{
 				link.l4 = "Я прин"+GetSexPhrase("ёс","есла")+" ваши дублоны, минхер "+npchar.name+". Извольте получить.";
 				link.l4.go = "UpgradeSilk_Agreed";
@@ -483,7 +483,7 @@ void ProcessDialogEvent()
 			SetFunctionTimerCondition("Silk_TraderAttrReturn", 0, 0, 1, false); // таймер
 			AddCharacterExpToSkill(pchar, "Commerce", 150);
 			NextDiag.TempNode = "HWIC_Boss";
-			pchar.questTemp.GVIKSilk = sti(pchar.questTemp.GVIKSilk) + 1; // счётчик покупок
+			pchar.questTemp.GVIKSilk = int(pchar.questTemp.GVIKSilk) + 1; // счётчик покупок
 		break;
 		
 		case "UpgradeSilk": //

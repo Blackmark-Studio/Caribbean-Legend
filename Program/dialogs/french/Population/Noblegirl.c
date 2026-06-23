@@ -28,9 +28,9 @@ void ProcessDialogEvent()
 			//первая встреча
             if(NPChar.quest.meeting == "0")
 			{
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
-					dialog.text = "Hm. Vous naviguez sous le drapeau de "+NationNameGenitive(sti(pchar.nation))+", capitaine. Je n'ai aucune envie de parler avec l'ennemi de mon pays. Hmph!";
+					dialog.text = "Hm. Vous naviguez sous le drapeau de "+NationNameGenitive(int(pchar.nation))+", capitaine. Je n'ai aucune envie de parler avec l'ennemi de mon pays. Hmph!";
 					link.l1 = "Ah, oui. Un vrai patriote...";
 					link.l1.go = "exit";
 				}
@@ -66,9 +66,9 @@ void ProcessDialogEvent()
 			else
 			{
 				//повторные обращения
-				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
+				if (int(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "Dois-je me répéter? Je ne veux pas être soupçonné d'être un ami de "+NationNameAblative(sti(pchar.nation))+"Pars ou je vais appeler les gardes! Ils seraient ravis de te parler.";
+					dialog.text = "Dois-je me répéter? Je ne veux pas être soupçonné d'être un ami de "+NationNameAblative(int(pchar.nation))+"Pars ou je vais appeler les gardes! Ils seraient ravis de te parler.";
 					link.l1 = "D'accord, d'accord, calme-toi. Je m'en vais.";
 					link.l1.go = "exit";
 				}

@@ -245,7 +245,7 @@ void FillPriceListTown(string _tabName)
     // шапка -->
     GameInterface.(_tabName).select = 0;
     GameInterface.(_tabName).hr.td1.str = "Нация";
-    GameInterface.(_tabName).hr.td1.scale = 0.77
+    GameInterface.(_tabName).hr.td1.scale = 0.77;
 	GameInterface.(_tabName).hr.td2.str = "Город";
 	GameInterface.(_tabName).hr.td2.scale = 0.8;
 	GameInterface.(_tabName).hr.td3.str = "Местоположение";
@@ -271,7 +271,7 @@ void FillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONS";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
@@ -319,93 +319,93 @@ void FillPriceListTownSorted(string _tabName)
 	i = 0;
 	if(!bSortByABC) 
 	{
-		string sHeroNation = GetBaseHeroNation(); // belamour задел на будущее 
-		switch (sHeroNation) 
+		int iHeroNation = GetBaseHeroNation(); // belamour задел на будущее
+		switch (iHeroNation)
 		{
-			case "1": // Шарль де Мор
+			case FRANCE: // Шарль де Мор
 			
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}	
+					if(Nations[int(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 			break;
 		
-			case "2": // Диего де Монтойя
+			case SPAIN: // Диего де Монтойя
 
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}	
+					if(Nations[int(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 			break;
 		
-			case "0": // малыш Вилли, если будет
+			case ENGLAND: // малыш Вилли, если будет
 			
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "ENGLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "FRANCE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}	
+					if(Nations[int(rCitySort.nation)].Name == "HOLLAND") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}		
+					if(Nations[int(rCitySort.nation)].Name == "SPAIN") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 				for (z=0; z<MAX_OURCOLONIES; z++)
 				{
 					m = FindColony(AlphaColonies[z]); rCitySort = GetColonyByIndex(m);
-					if(Nations[sti(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
+					if(Nations[int(rCitySort.nation)].Name == "PIRATE") {OurColonies[i] = AlphaColonies[z]; i++;}
 				}
 			break;
 		}
@@ -423,7 +423,7 @@ void FillPriceListTownSorted(string _tabName)
     // шапка -->
     GameInterface.(_tabName).select = 0;
     GameInterface.(_tabName).hr.td1.str = "Нация";
-    GameInterface.(_tabName).hr.td1.scale = 0.77
+    GameInterface.(_tabName).hr.td1.scale = 0.77;
 	GameInterface.(_tabName).hr.td2.str = "Город";
 	GameInterface.(_tabName).hr.td2.scale = 0.8;
 	GameInterface.(_tabName).hr.td3.str = "Местоположение";
@@ -464,7 +464,7 @@ void FillPriceListTownSorted(string _tabName)
 			GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONS";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
@@ -504,19 +504,19 @@ int DateStringToInt(string dateString) {
 	date = strcut(&dateString, pos + 1, strlen(&dateString) - 1);
 	
 	// парсинг и приведение дат к числам
-	totalTime += sti(strcut(&date, 6, 9));
+	totalTime += int(strcut(&date, 6, 9));
 	totalTime *= 365;
 	
-	totalTime += sti(strcut(&date, 3, 4));
+	totalTime += int(strcut(&date, 3, 4));
 	totalTime *= 31;
 	
-	totalTime += sti(strcut(&date, 0, 1));
+	totalTime += int(strcut(&date, 0, 1));
 	totalTime *= 24;
 	
-	totalTime += sti(strcut(&time, 0, 1));
+	totalTime += int(strcut(&time, 0, 1));
 	totalTime *= 60;
 	
-	totalTime += sti(strcut(&time, 3, 4));
+	totalTime += int(strcut(&time, 3, 4));
 	
 	return totalTime;
 }
@@ -584,7 +584,7 @@ void FillPriceListTownSortedByDate(string _tabName) {
 			GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONS";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 			GameInterface.(_tabName).(row).td1.icon.height = 26;
 			GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
@@ -628,7 +628,7 @@ void FillPriceListClockwiseSort(string _tabName)
     // шапка -->
     GameInterface.(_tabName).select = 0;
     GameInterface.(_tabName).hr.td1.str = "Нация";
-    GameInterface.(_tabName).hr.td1.scale = 0.77
+    GameInterface.(_tabName).hr.td1.scale = 0.77;
 	GameInterface.(_tabName).hr.td2.str = "Город";
 	GameInterface.(_tabName).hr.td2.scale = 0.8;
 	GameInterface.(_tabName).hr.td3.str = "Местоположение";
@@ -669,7 +669,7 @@ void FillPriceListClockwiseSort(string _tabName)
 			GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONS";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 26;
 		    GameInterface.(_tabName).(row).td1.icon.height = 26;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "0, 3";
@@ -728,7 +728,7 @@ void FillPriceList(string _tabName, string  attr1)
 	    {
 	        row = "tr" + n;
 	        sGoods = "Gidx" + i;			
-	        if (sti(nulChr.PriceList.(attr1).(sGoods).TradeType) == T_TYPE_CANNONS && !bBettaTestMode) continue; // не пушки
+	        if (int(nulChr.PriceList.(attr1).(sGoods).TradeType) == T_TYPE_CANNONS && !bBettaTestMode) continue; // не пушки
 	        
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
@@ -820,7 +820,7 @@ void ShowInfoWindow()
 		    sGroup = "GOODS";
 		    sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
 		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
-		    iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
+		    iItem = int(GameInterface.(CurTable).(CurRow).UserData.IDX);
 		    sText1  = GetAssembledString(GetGoodDescr(GameInterface.(CurTable).(CurRow).UserData.ID), &Goods[iItem]);
 			sText2 = "Цвета указателя типа товара :" + newStr() + 
 				 "- зелёный : колониальные товары" + newStr() + 

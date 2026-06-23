@@ -164,7 +164,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "Sharlie_storehelper_13":
-		switch (sti(pchar.questTemp.Sharlie.Storehelper.Quality))
+		switch (int(pchar.questTemp.Sharlie.Storehelper.Quality))
 		{
 		case 0:
 			AddMoneyToCharacter(pchar, 3000);

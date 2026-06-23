@@ -22,7 +22,7 @@ void StealthCheckNight_Node2()
 			// "ПРОВЕРКА. Шанс успеха: Навигация/2 + 38. При успехе результат 1 и +22, при провале результат 2 и -14
 			reaction = SF_AddReaction("b", "", "", SF_Icon(PIRATES_TYPE, PIRATES_I));
 			SF_SetChance(reaction, 38, "base");
-			SF_SetChance(reaction, MakeInt(GetCharacterSkill(pchar, SKILL_SAILING) / 2), SKILL_SAILING);
+			SF_SetChance(reaction, int(GetCharacterSkill(pchar, SKILL_SAILING) / 2), SKILL_SAILING);
 			SF_SetResults(reaction, -14, 22);
 		break;
 		case "c":

@@ -80,7 +80,7 @@ void ClockTower_InvitationToTheTower()// пригласили в башню на
 	LocatorReloadEnterDisable("Villemstad_town", "houseO2", false);
 	
 	// Маартен Виссер заместитель сидит в башне
-	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Visser", "citiz_6", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Visser", "citiz_6", "man", "man", int(pchar.rank), HOLLAND, -1, false, "quest"));
 	sld.name = GetCharacterName("Maarten");
 	sld.lastname = GetCharacterName("Visser");
 	sld.role = "Deputy Director";
@@ -226,7 +226,7 @@ void JournalsAchievment(int sold)
 		}
 		
 		int stat = GetStat("stat_CL_200");
-		int piratesJournalsQty = sti(pchar.achievment.piratesJournals) + sold;
+		int piratesJournalsQty = int(pchar.achievment.piratesJournals) + sold;
 		pchar.achievment.piratesJournals = piratesJournalsQty;
 		
 		if(piratesJournalsQty > stat) Achievment_SetStat(200, piratesJournalsQty - stat);
@@ -275,9 +275,9 @@ void ClockTower_AmsterdamInTheHarbor()
 	LAi_CharacterDisableDialog(sld);
 
 	// PlaySound("Ships\snasti_skrp_006.wav");
-    float x = stf(loadedLocation.locators.reload.reload1.x);
-    float y = stf(loadedLocation.locators.reload.reload1.y);
-    float z = stf(loadedLocation.locators.reload.reload1.z);
+    float x = float(loadedLocation.locators.reload.reload1.x);
+    float y = float(loadedLocation.locators.reload.reload1.y);
+    float z = float(loadedLocation.locators.reload.reload1.z);
 	SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, "Location/SP4_quest1", 0, x, y, z);
 }
 
@@ -314,8 +314,8 @@ void ClockTower_AmsterdamInTheHarbor_Kino_2()
 
 	ref sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Amsterdam", "off_hol_5", "man", "man", 10, HOLLAND, 0, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_AMSTERDAM, GetShipName("Amsterdam"), -1, 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10), 10+rand(10));
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
-	ref rShip = GetRealShip(sti(sld.Ship.Type));
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
+	ref rShip = GetRealShip(int(sld.Ship.Type));
 	CreateEntity(sld, "ship");
 	Ship_SetLightsAndFlares(sld);
 	sld.Ship.Pos.x = 89.39;
@@ -334,7 +334,7 @@ void ClockTower_AmsterdamInTheHarbor_Citizens() // Особое событие �
 	//Солдаты - Протекторы
 	for (i=1; i<=6; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_SoldierProtector_"+i, "sold_hol_"+(rand(7)+1), "man", "man", sti(pchar.rank), HOLLAND, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_SoldierProtector_"+i, "sold_hol_"+(rand(7)+1), "man", "man", int(pchar.rank), HOLLAND, 0, true, "soldier"));
         LAi_LoginInCaptureTown(sld, true);
 		LAi_SetGuardianType(sld);
 		LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
@@ -345,7 +345,7 @@ void ClockTower_AmsterdamInTheHarbor_Citizens() // Особое событие �
 	//Солдаты - Протекторы 2
 	for (i=1; i<=3; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_SoldierProtector2_"+i, "sold_hol_"+(rand(7)+1), "man", "man", sti(pchar.rank), HOLLAND, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_SoldierProtector2_"+i, "sold_hol_"+(rand(7)+1), "man", "man", int(pchar.rank), HOLLAND, 0, true, "soldier"));
         LAi_LoginInCaptureTown(sld, true);
 		LAi_SetGuardianType(sld);
 		LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
@@ -356,7 +356,7 @@ void ClockTower_AmsterdamInTheHarbor_Citizens() // Особое событие �
 	//Мирные жители - стоят у пирса
 	for (i=1; i<=13; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_CitizenPirs_"+i, "citiz_"+i, "man", "man", sti(pchar.rank), HOLLAND, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_CitizenPirs_"+i, "citiz_"+i, "man", "man", int(pchar.rank), HOLLAND, 0, false, "soldier"));
         LAi_LoginInCaptureTown(sld, true);
 		LAi_SetActorType(sld);
 		LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
@@ -380,7 +380,7 @@ void ClockTower_AmsterdamInTheHarbor_Citizens() // Особое событие �
 	}
 	for (i=4; i<=5; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_CitizenPirsWoman_"+i, "women_"+i, "woman", "woman", sti(pchar.rank), HOLLAND, 0, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("ClockTower_CitizenPirsWoman_"+i, "women_"+i, "woman", "woman", int(pchar.rank), HOLLAND, 0, false, "soldier"));
         LAi_LoginInCaptureTown(sld, true);
 		LAi_SetActorType(sld);
 		LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
@@ -432,7 +432,7 @@ void ClockTower_AmsterdamInTheHarbor_Kino_3(string qName)
 void ClockTower_BigClock_Sound()
 {
     ref sld;
-    int iCurQty = sti(TEV.BigClockCounter) + 1;
+    int iCurQty = int(TEV.BigClockCounter) + 1;
     if (iCurQty != 1)
     {
         locCameraResetState();
@@ -499,7 +499,7 @@ void ClockTower_BigClock_Sound()
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("ClockTower_mushket_"+i, "mush_hol_"+i, "man", "mushketer", 5, HOLLAND, 0, false, "soldier"));
 					LAi_LoginInCaptureTown(sld, true);
-					FantomMakeCoolFighter(sld, sti(pchar.rank), 50, 50, "", "mushket1", "bullet", 0);
+					FantomMakeCoolFighter(sld, int(pchar.rank), 50, 50, "", "mushket1", "bullet", 0);
 					ChangeCharacterAddressGroup(sld, "Villemstad_town", "goto", "goto31");
 					if (i==4) TeleportCharacterToPosAy(sld, 61.50, 2.20, -39.00, -1.50);
 					if (i==5) TeleportCharacterToPosAy(sld, 61.50, 2.20, -41.20, -1.50);
@@ -586,7 +586,7 @@ void ClockTower_AmsterdamInTheHarbor_Kino_7(string qName)
 
 	EndQuestMovie();
 
-    SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, sti(TEV.SP4_Static_Sounds.s1), 0);
+    SendMessage(Sound, "lll", MSG_SOUND_EVENT_STOP, int(TEV.SP4_Static_Sounds.s1), 0);
 
     DeleteAttribute(PChar, "questTemp.NoFast");
 	SetLocationCapturedState("Villemstad_town", false);
@@ -1192,7 +1192,7 @@ void ClockTower_CuracaoInCabin_2(string qName)
 	chrDisableReloadToLocation = true;
 	Sea_CabinStartNow();
 	
-	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -1291,7 +1291,7 @@ void ClockTower_DiegoDeLandaInTower()
 void ClockTower_DiegoDeLandaInTower_ISawDiego(string qName)
 {
 	chrDisableReloadToLocation = true;
-	pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
+	pchar.questTemp.ISawDiegoDeLanda = int(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 	pchar.questTemp.DiegoDeLanda_ClockTower = true;
 	// ref sld = &Locations[FindLocation("Villemstad_ClockTower")];
 	// DeleteAttribute(sld, "QuestlockWeather");
@@ -1394,7 +1394,7 @@ void ClockTower_FireBrigadeExt_hol(string qName) // Temp-SP4-Joker
 				sld.Ship.Type = GenerateShipExt(SHIP_AMSTERDAM, true, sld);
 				sld.Ship.Name = GetShipName("Amsterdam");
 				sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
-				RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+				RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 				sld.QuestHandler = "ClockTower_HolBrigadeInterruption";
 				sld.DontClearDead = true;
 				sld.SaveItemsForDead = true;
@@ -1471,8 +1471,8 @@ void ClockTower_FireBrigadeExt_hol(string qName) // Temp-SP4-Joker
 			sld.mapEnc.Marker = "BigBrigadier";
 			sld.hunter = "hunter";
 			Group_AddCharacter(sGroup, sCapId + i);
-			if (i == 1) RealShips[sti(sld.Ship.Type)].ShipSails.Gerald_Name = "hol_4.tga.tx";
-			else if (i == 4 || i == 5) RealShips[sti(sld.Ship.Type)].ShipSails.Gerald_Name = "hol_1.tga.tx";
+			if (i == 1) RealShips[int(sld.Ship.Type)].ShipSails.Gerald_Name = "hol_4.tga.tx";
+			else if (i == 4 || i == 5) RealShips[int(sld.Ship.Type)].ShipSails.Gerald_Name = "hol_1.tga.tx";
 
             if(i == 1)
             {
@@ -1508,7 +1508,7 @@ void ClockTower_FireBrigadeExt_hol(string qName) // Temp-SP4-Joker
 
 ref CreateVanDoorn(string id, int lifeday)
 {
-	ref sld = GetCharacter(NPC_GenerateCharacter(id, "off_hol_5", "man", "man", sti(pchar.rank), HOLLAND, lifeday, false, "quest"));
+	ref sld = GetCharacter(NPC_GenerateCharacter(id, "off_hol_5", "man", "man", int(pchar.rank), HOLLAND, lifeday, false, "quest"));
 	sld.name = GetCharacterName("Hendrik");
 	sld.lastname = GetCharacterName("van Doorn");
 	//sld.greeting = ""; // to_do
@@ -1597,7 +1597,7 @@ void ClockTower_HolBrigadeCapture(string qName)
 
 	//Ачивки
 	Achievment_Set("ach_CL_196");
-	if (sti(PChar.rank) <= 19) Achievment_Set("ach_CL_195");
+	if (int(PChar.rank) <= 19) Achievment_Set("ach_CL_195");
 	if (CheckAttribute(PChar, "questTemp.ClockTower_KillVanDornAnyway")) Achievment_Set("ach_CL_198");
 
 	// Продолжение квеста
@@ -1610,7 +1610,7 @@ void ClockTower_CabinFight(ref _boarding_enemy, ref _callback)
 	LAi_LockFightMode(pchar, true);
 	LAi_group_SetCheckEvent(LAI_GROUP_BRDENEMY);
 
-	ref chr = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	ref chr = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	chr.Dialog.FileName = "Quest\ShipsPack\ClockTower_dialog.c";
 	chr.Dialog.CurrentNode = "ClockTower_VanDoorn_21";
 	LAi_SetActorType(chr);
@@ -1719,7 +1719,7 @@ void ClockTower_cabinPeace()
 {
 	ChangeCharacterComplexReputation(pchar, "nobility", 6);
 	
-	ref chr = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	ref chr = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetActorType(chr);
 	LAi_group_MoveCharacter(chr, LAI_GROUP_PEACE);
 	chr.lifeday = 0;

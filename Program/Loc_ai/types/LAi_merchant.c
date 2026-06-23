@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_merchant_Init(aref chr)
+void LAi_type_merchant_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -29,28 +29,28 @@ void LAi_type_merchant_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_merchant_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_merchant_CharacterUpdate(ref chr, float dltTime)
 {
 	float time, tw;
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
 	{
 		//Смотрим близко проходящих персонажей
-		time = stf(chr.chr_ai.type.time);
+		time = float(chr.chr_ai.type.time);
 		int num = FindNearCharacters(chr, 4.5, -1.0, -1.0, 0.001, false, true);
 		if(num > 0)
 		{
 			if(LAi_type_merchant_FindEnemy(chr, num) < 0)
 			{				
-				int ichr = sti(chrFindNearCharacters[0].index);
+				int ichr = int(chrFindNearCharacters[0].index);
 				//Трепимся с подошедшим
 				time = time + dltTime;
 				chr.chr_ai.type.time = time;
-				if(stf(chr.chr_ai.type.who) != ichr)
+				if(float(chr.chr_ai.type.who) != ichr)
 				{
 					chr.chr_ai.type.time = "0";
 					chr.chr_ai.type.who = ichr;
 				}
-				tw = stf(chr.chr_ai.type.timewait);
+				tw = float(chr.chr_ai.type.timewait);
 				tw = tw + dltTime;
 				chr.chr_ai.type.timewait = tw;
 				if(time < 60.0)
@@ -93,7 +93,7 @@ void LAi_type_merchant_CharacterUpdate(aref chr, float dltTime)
 			chr.chr_ai.type.timewait = "3";
 		}else{
 			//Смотрим близко проходящих персонажей
-			time = stf(chr.chr_ai.type.time);
+			time = float(chr.chr_ai.type.time);
 			num = FindNearCharacters(chr, 5.5, -1.0, -1.0, 0.001, false, false);
 			if(num > 0)
 			{
@@ -101,7 +101,7 @@ void LAi_type_merchant_CharacterUpdate(aref chr, float dltTime)
 			}
 			if(num <= 0)
 			{
-				if(sti(chr.chr_ai.type.afraid) != 0)
+				if(int(chr.chr_ai.type.afraid) != 0)
 				{
 					chr.chr_ai.type.afraid = "0";
 					LAi_SetDefaultDead(chr);
@@ -115,23 +115,23 @@ void LAi_type_merchant_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_merchant_CharacterLogin(aref chr)
+bool LAi_type_merchant_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_merchant_CharacterLogoff(aref chr)
+bool LAi_type_merchant_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_merchant_TemplateComplite(aref chr, string tmpl)
+void LAi_type_merchant_TemplateComplite(ref chr, string tmpl)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_ANI)
 	{
-		if(sti(chr.chr_ai.type.afraid) == 0)
+		if(int(chr.chr_ai.type.afraid) == 0)
 		{
 			LAi_tmpl_stay_InitTemplate(chr);
 		}
@@ -139,12 +139,12 @@ void LAi_type_merchant_TemplateComplite(aref chr, string tmpl)
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_merchant_NeedDialog(aref chr, aref by)
+void LAi_type_merchant_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_merchant_CanDialog(aref chr, aref by)
+bool LAi_type_merchant_CanDialog(ref chr, ref by)
 {
 	//Согласимся на диалог
 	if(chr.chr_ai.type.afraid == "1") return false;
@@ -154,7 +154,7 @@ bool LAi_type_merchant_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_merchant_StartDialog(aref chr, aref by)
+void LAi_type_merchant_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -163,7 +163,7 @@ void LAi_type_merchant_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_merchant_EndDialog(aref chr, aref by)
+void LAi_type_merchant_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_CharacterRestoreAy(chr);
@@ -177,13 +177,13 @@ void LAi_type_merchant_Fire(aref attack, aref enemy, float kDist, bool isFindedE
 
 
 //Персонаж атакован
-void LAi_type_merchant_Attacked(aref chr, aref by)
+void LAi_type_merchant_Attacked(ref chr, ref by)
 {
 	
 }
 
 //Проиграть анимацию зазывания покупанелей
-void LAi_type_merchant_Ask(aref chr)
+void LAi_type_merchant_Ask(ref chr)
 {
 	//Выбираем анимацию
 	string animation;
@@ -206,7 +206,7 @@ void LAi_type_merchant_Ask(aref chr)
 }
 
 //ориентировка по локатору
-void LAi_type_merchant_RestoreAngle(aref chr)
+void LAi_type_merchant_RestoreAngle(ref chr)
 {
 	if(CheckAttribute(chr, "location.group"))
 	{
@@ -218,14 +218,14 @@ void LAi_type_merchant_RestoreAngle(aref chr)
 }
 
 //Найти врага
-int LAi_type_merchant_FindEnemy(aref chr, int num)
+int LAi_type_merchant_FindEnemy(ref chr, int num)
 {
 	int i, idx;
 	if(LAi_grp_alarmactive == true)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
@@ -233,7 +233,7 @@ int LAi_type_merchant_FindEnemy(aref chr, int num)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			ref by = &Characters[idx];
 			if (LAi_CheckFightMode(by) != CHR_MODE_PEACE) return idx;
 		}

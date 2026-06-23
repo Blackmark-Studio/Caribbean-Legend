@@ -22,7 +22,7 @@ void ReapplyPerksItems0037()
 	AddAllFellows(&fellows, pchar, true);
 	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
-		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
+		int idx = int(GetAttributeValue(GetAttributeN(&fellows, i)));
 		ref chr = GetCharacter(idx);
 		if (!CheckAttribute(chr, "perks.list")) continue;
 		ReapplyAllPerks(chr);

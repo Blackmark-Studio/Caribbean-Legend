@@ -226,13 +226,6 @@ bool InitRestModifiers(ref item)
 			AddDescriptor(item, "Valuable", -1);
 		}
 		break;
-		case "Mechanic_Tool":
-		{
-			AddDescriptor(item, "Tool", -1);
-			AddDescriptor(item, "Valuable", -1);
-			AddDescriptor(item, "Ingredient", -1);
-		}
-		break;
 	}
 
 	// Украшения
@@ -707,6 +700,13 @@ bool InitRestModifiers(ref item)
 			SetModifier(item, M_HP_MAX, 10);
 			SetModifier(item, M_ENERGY_MAX, 10);
 			SetModifier(item, PIRATES_TYPE + PIRATES_A, 1);
+		}
+		break;
+		case "nocturlabe":
+		{
+			AddDescriptor(item, "Tool");
+			AddDescriptor(item, "Fancy");
+			SetModifier(item, PIRATES_TYPE + PIRATES_I, 1);
 		}
 		break;
 		case "greenIdol":

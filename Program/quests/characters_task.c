@@ -109,7 +109,7 @@ void ExecuteAfterDialogTask(ref _refCharacter)
 			break;
 
 			case ADA_ENDQUESTMOVIE:
-				if(CheckAttribute(rTask,"Num")) j = sti(rTask.Num);
+				if(CheckAttribute(rTask,"Num")) j = int(rTask.Num);
 				else j=1;
 				for(i=0; i<j; i++)
 				{

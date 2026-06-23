@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// Jason „олго и счастливо
 		case "LH_letter":
 			dialog.text = "네, 맞아요 - 봉투가 있습니다. 여기 있습니다만, 먼저 배달비로 은화 만이천 페소를 지불하셔야 합니다.";
-			if (sti(pchar.money) >= 12000)
+			if (int(pchar.money) >= 12000)
 			{
 				link.l1 = "나는 항상 자네 장사가 원래 도둑질에서 시작된 거라 의심했었네만, 어쩐지 빗나갔군, 흠. 자, 여기 자네 돈이네.";
 				link.l1.go = "LH_letter_1";

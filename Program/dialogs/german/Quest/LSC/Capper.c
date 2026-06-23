@@ -196,12 +196,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
 		
-		case "Aeva_attack_2":
-			dialog.text = "... das wird ein verdammt guter Trunk. Der verdammte Ire hat schon lange von diesem Whiskey geträumt, also wird er ihn in einer Sekunde hinunterschlingen. Wo ist das Arsen? Gieß mehr davon ein, nur um sicher zu gehen... Und dann wird unser Freund Fazio dieses Fass als Geschenk von den Narwalen an den Admiral liefern, ha-ha! Stimmt's, lieber Giuseppe? Willst du leben?\nArgh! Schau mal, wir haben Gäste! Was willst du, Esel? Verzieh dich, bevor wir dich festnageln!";
-			link.l1 = "Dein Plan ist gescheitert, Kapper. Ich habe deine Spuren verfolgt und ich weiß, was du und dein Kumpel Zyklop vorhabt. Werft das Arsen weg! Ihr werdet Shark nicht vergiften!";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
 		case "Aeva_attack_3":
 			dialog.text = "Ach, Spürhund! Nun, dann stirbst du zuerst! Jungs, zu den Waffen!";
 			link.l1 = "...";

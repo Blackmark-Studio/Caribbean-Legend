@@ -94,11 +94,11 @@ void SetNationRelations()
     
 	// ГГ отношения от нации
 	pchar = GetMainCharacter();
-	SetNationRelation2MainCharacter(ENGLAND, GetNationRelation(sti(pchar.nation), ENGLAND));
-	SetNationRelation2MainCharacter(FRANCE,  GetNationRelation(sti(pchar.nation), FRANCE));
-	SetNationRelation2MainCharacter(SPAIN,   GetNationRelation(sti(pchar.nation), SPAIN));
-	SetNationRelation2MainCharacter(PIRATE,  GetNationRelation(sti(pchar.nation), PIRATE));
-    SetNationRelation2MainCharacter(HOLLAND, GetNationRelation(sti(pchar.nation), HOLLAND));
+	SetNationRelation2MainCharacter(ENGLAND, GetNationRelation(int(pchar.nation), ENGLAND));
+	SetNationRelation2MainCharacter(FRANCE,  GetNationRelation(int(pchar.nation), FRANCE));
+	SetNationRelation2MainCharacter(SPAIN,   GetNationRelation(int(pchar.nation), SPAIN));
+	SetNationRelation2MainCharacter(PIRATE,  GetNationRelation(int(pchar.nation), PIRATE));
+    SetNationRelation2MainCharacter(HOLLAND, GetNationRelation(int(pchar.nation), HOLLAND));
 }
 
 // метод установки отношений по дипломату
@@ -178,14 +178,14 @@ int CalculateRelationSum(int iNation, bool bLoyer)
         case 3: iRel = THREAT_LVL_3; break;
         case 4: iRel = THREAT_LVL_4; break;
     }
-	if (bLoyer) return (iCurProblem - iRel) * 1200 + makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*80000);
-	return (iCurProblem - iRel) * 1500 +  makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*100000);
+	if (bLoyer) return (iCurProblem - iRel) * 1200 + int(float(PChar.rank)/float(PChar.reputation.nobility)*80000);
+	return (iCurProblem - iRel) * 1500 +  int(float(PChar.rank)/float(PChar.reputation.nobility)*100000);
 }
 
 int CalculateRelationContraSum(bool bLoyer)
 {
-	if (bLoyer) return makeint(0.3*stf(PChar.rank)/stf(PChar.reputation.nobility)*60000);
-	return makeint(0.3 * stf(Pchar.rank)/stf(Pchar.reputation.nobility)*80000);
+	if (bLoyer) return int(0.3*float(PChar.rank)/float(PChar.reputation.nobility)*60000);
+	return int(0.3 * float(Pchar.rank)/float(Pchar.reputation.nobility)*80000);
 }
 
 void ChangeNationRelationFromRelationAgent(int iNation)
@@ -202,12 +202,12 @@ void ChangeNationRelationFromRelationAgent(int iNation)
 
 void ChangeNationRelationFromRelationAgentComplete(string sQuest)
 {
-	int iNation = sti(PChar.quest.(sQuest).nation);
+	int iNation = int(PChar.quest.(sQuest).nation);
     string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
 	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
 	if (nowrate < 0)
 	{
-        int rate = sti(PChar.GenQuest.(sNation));
+        int rate = int(PChar.GenQuest.(sNation));
         nowrate = -nowrate;
         if (nowrate < rate) rate = nowrate;
         ChangeCharacterNationReputation(PChar, iNation, rate);
@@ -227,11 +227,11 @@ void ChangeNationRelationFromRelationAgentComplete(string sQuest)
 
 void ChangeNationRelationFromFadeyComplete(string sQuest) 
 {
-	int iNation = sti(pchar.GenQuest.FadeyNation);
+	int iNation = int(pchar.GenQuest.FadeyNation);
 	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
 	if (nowrate < 0)
 	{
-        int rate = sti(pchar.GenQuest.FadeyNation.Rate);
+        int rate = int(pchar.GenQuest.FadeyNation.Rate);
         nowrate = -nowrate;
         if (nowrate < rate) rate = nowrate;
         ChangeCharacterNationReputation(pchar, iNation, rate);
@@ -247,11 +247,11 @@ void ChangeNationRelationFromFadeyComplete(string sQuest)
 
 void ChangeNationRelationFromBenuaComplete(string sQuest) // 141012
 {
-	int iNation = sti(pchar.GenQuest.BenuaNation);
+	int iNation = int(pchar.GenQuest.BenuaNation);
 	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
 	if (nowrate < 0)
 	{
-        int rate = sti(pchar.GenQuest.BenuaNation.Rate);
+        int rate = int(pchar.GenQuest.BenuaNation.Rate);
         nowrate = -nowrate;
         if (nowrate < rate) rate = nowrate;
         ChangeCharacterNationReputation(pchar, iNation, rate);
@@ -272,13 +272,13 @@ bool CreateParticleSystemOnLocator(string _location_id, string _locatorName, str
 	if (!FindLocator(_location_id, _locatorName, &locator, true))
 		return false;
 
-	CreateParticleSystemX(_particleName,stf(locator.x),stf(locator.y),stf(locator.z), stf(locator.vz.x),stf(locator.vz.y),stf(locator.vz.z),0);
+	CreateParticleSystemX(_particleName,float(locator.x),float(locator.y),float(locator.z), float(locator.vz.x),float(locator.vz.y),float(locator.vz.z),0);
 	return true;
 }
 
-void GenerateMaps(aref ch, int iProbability1, int iProbability2)
+void GenerateMaps(ref ch, int iProbability1, int iProbability2)
 {
-	int rank = sti(PChar.rank);
+	int rank = int(PChar.rank);
 	
 	if(rand(4) == 1) AddItems(ch, "map_bad", 1); 
 	if(rand(6) == 1 && rank >= 10) AddItems(ch, "map_normal", 1); // patch-5
@@ -307,12 +307,12 @@ void GenerateMaps(aref ch, int iProbability1, int iProbability2)
 	if(rand(iProbability1) == 1 && !CheckMainHeroMap("map_cumana")) AddItems(ch, "map_cumana", 1);
 }
 
-void GiveItemToTrader(aref ch)
+void GiveItemToTrader(ref ch)
 {
 	int 		i, j, irand;
 	string 		itemID, merType;
     string      tag = ch.id + ch.name;
-	int 		rank = sti(PChar.rank); // makeint(pchar.rank) - и так было везде... Нет бы сразу переменную завести - это ведь быстрее будет в разы
+	int 		rank = int(PChar.rank); // int(pchar.rank) - и так было везде... Нет бы сразу переменную завести - это ведь быстрее будет в разы
 	ref 		itm; 					// ref itm = ItemsFromID("map_LSC"); - тоже самое... Че за бред, заводить переденную внутри блока иф?
 	
 	DeleteAttribute(ch, "items");
@@ -854,15 +854,15 @@ void GiveItemToTrader(aref ch)
 		case "jeweller" 	:// ювелир
 			if(ShipBonus2Artefact(pchar, SHIP_LADYBETH))
 			{
-				AddItems(ch, "gold_dublon", 45 + sti(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
+				AddItems(ch, "gold_dublon", 45 + int(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
 			}
 			else if(CheckAttribute(ch, "City") && ch.City == GetLadyBethCity())
 			{
-				AddItems(ch, "gold_dublon", 45 + sti(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
+				AddItems(ch, "gold_dublon", 45 + int(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
 			}
 			else
 			{
-				AddItems(ch, "gold_dublon", 35 + sti(pchar.rank) * 3 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(3 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 4)); // дублоны 
+				AddItems(ch, "gold_dublon", 35 + int(pchar.rank) * 3 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(3 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 4)); // дублоны
 			}
 			irand = rand(2);
 			if(irand == 1) AddItems(ch, "chest_open", Rand(3) + 4); // пустые сундуки
@@ -936,6 +936,11 @@ void GiveItemToTrader(aref ch)
 			{
 				AddItems(ch, "mushket_indian", 1);
 			}
+
+			if (CheckAttribute(&TEV, "franshise.nocturlabe.inStock"))
+			{
+				AddItems(ch, "nocturlabe", 1);
+			}
 		break;
 		
 		case "lightman": //Jason - смотрители маяков
@@ -999,15 +1004,15 @@ void GiveItemToTrader(aref ch)
 			AddItems(ch, "gunpowder", 	Rand(20) + 10);
 			
 			irand = hrand(5, tag);
-			if(irand == 1) AddItems(ch, "jewelry10", hrand(7, tag)+3));
+			if(irand == 1) AddItems(ch, "jewelry10", hrand(7, tag)+3);
 			if(irand == 3) AddItems(ch, "jewelry14", 1+rand(4));
 			if(irand == 5) AddItems(ch, "jewelry18", 1+rand(4));
 			irand = hrand(3, tag);
-			if(irand == 0) AddItems(ch, "jewelry13", hrand(5, tag)+3));
+			if(irand == 0) AddItems(ch, "jewelry13", hrand(5, tag)+3);
 			if(irand == 1) AddItems(ch, "jewelry16", 1+rand(4));
 			if(irand == 2) AddItems(ch, "jewelry20", 1+rand(4));
 			irand = hrand(4, tag);
-			if(irand == 0) AddItems(ch, "jewelry12", hrand(5, tag)+3));
+			if(irand == 0) AddItems(ch, "jewelry12", hrand(5, tag)+3);
 			if(irand == 2) AddItems(ch, "jewelry17", 1+rand(4));
 			if(irand == 4) AddItems(ch, "jewelry21", 1+rand(4));
 			irand = hrand(6, tag);
@@ -1150,7 +1155,7 @@ void GiveItemToTrader(aref ch)
 			irand = hrand(6, tag); 
 			if(irand == 6) AddItems(ch, "spyglass2", 1);
 			irand = hrand(100, tag);
-			if(irand == 50 && sti(pchar.rank) > 7) AddItems(ch, "spyglass3", 1);
+			if(irand == 50 && int(pchar.rank) > 7) AddItems(ch, "spyglass3", 1);
 			if(irand > 90 && rank > 11) AddItems(ch, "Hat6", 1);
 			GenerateMaps(ch, 20, 50); // patch-5
 		break;
@@ -1304,7 +1309,7 @@ void GiveItemToTrader(aref ch)
 	}	
 }
 
-string PlaceCharacter(aref ch, string group, string location) //boal change
+string PlaceCharacter(ref ch, string group, string location) //boal change
 {  // location = "random"  "random_free"  и "random_must_be" - должен быть, даже если все занято  random_must_be_near - рядом
 	float locx;
 	float locy;
@@ -1370,11 +1375,11 @@ void FirstVisitCity(string sQuest)
 }
 
 // переделал 25.09.06 метод не зависит от ГГ, просто ранд корабли для порта
-int SearchForMaxShip(aref chr, int isLock, int _tmp)
+int SearchForMaxShip(ref chr, bool isLock, int _tmp)
 {
 	int iType;
 	
-	if (sti(chr.nation) != PIRATE)
+	if (int(chr.nation) != PIRATE)
 	{
 		if (rand(100) > 70)
 		{
@@ -1473,20 +1478,20 @@ void RemoveGeometryFromLocation(string LocationID, string ModelName)
 }
 
 
-bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
+bool CreateModel(int iChar, string sType, int iSex, ref rLoc)
 {
-	int iNation = sti(characters[iChar].nation);
+	int iNation = int(characters[iChar].nation);
 
-	if (arLoc != nullptr)
+	if (rLoc != nullptr)
 	{
 		string sCallback = "";
-		if (CheckAttribute(arLoc, "CreateModelCallback"))
+		if (CheckAttribute(rLoc, "CreateModelCallback"))
 		{
-			sCallback = arLoc.CreateModelCallback;
+			sCallback = rLoc.CreateModelCallback;
 		}
 		else
 		{
-			int iLinkedColonyNum = GiveColonyIndexByLocation(arLoc);
+			int iLinkedColonyNum = GiveColonyIndexByLocation(rLoc);
 			if (iLinkedColonyNum != -1)
 			{
 				ref rLinkedColony = &colonies[iLinkedColonyNum];
@@ -1499,7 +1504,7 @@ bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 
 		if (sCallback != "")
 		{
-			bool bResult = call sCallback(iChar, sType, iSex, arLoc);
+			bool bResult = call sCallback(iChar, sType, iSex, rLoc);
 			if (!bResult)
 			{
 				return bResult;
@@ -1750,20 +1755,20 @@ bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 
 		case "drinker": //пьяницы
 			sBody = "drinker";
-			iNumber = sti(rand(15)+1);
+			iNumber = int(rand(15)+1);
 		break;
 
 		case "flutist":
 			if(iSex == WOMAN)
 			{
 				sBody = "woman_flutist";
-				iNumber = sti(rand(7)+1);
+				iNumber = int(rand(7)+1);
 				sAnim =  "woman_musician";
 			}
 			else
 			{
 				sBody = "flutist";
-				iNumber = sti(rand(11)+1);
+				iNumber = int(rand(11)+1);
 				sAnim =  "musician";
 			}
 		break;
@@ -1772,13 +1777,13 @@ bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 			if(iSex == WOMAN)
 			{
 				sBody = "woman_violinist";
-				iNumber = sti(rand(3)+1);
+				iNumber = int(rand(3)+1);
 				sAnim =  "woman_musician";
 			}
 			else
 			{
 				sBody = "violinist";
-				iNumber = sti(rand(16)+1);
+				iNumber = int(rand(16)+1);
 				sAnim =  "musician";
 			}
 		break;
@@ -1813,7 +1818,7 @@ bool CreateModel(int iChar, string sType, int iSex, aref arLoc)
 			sBody = "blacksmith";
 			sAnim = "blacksmith";
 			sResultType = "sailor";
-			iNumber = sti(rand(17)+1);
+			iNumber = int(rand(17)+1);
 		break;
 	}
 
@@ -1870,7 +1875,7 @@ int FindNonEnemyColonyForAdventure(int iNation, string sBeginColony, bool _check
 		{
 			if (_checkPort && CheckAttribute(&Colonies[i], "HasNoFort")) continue;  // без форта не берем
 			
-			if (GetNationRelation(sti(Colonies[i].nation), iNation) != RELATION_ENEMY && Colonies[i].id != sBeginColony)
+			if (GetNationRelation(int(Colonies[i].nation), iNation) != RELATION_ENEMY && Colonies[i].id != sBeginColony)
 			{
 				iArray[m] = i;
 				m++;
@@ -1904,7 +1909,7 @@ string FindAlliedColonyForNation(int iNation, bool _checkPort)
 		if (colonies[i].nation != "none" && colonies[i].id != "Panama" && colonies[i].id != "SanAndres")
 		{
 			if (_checkPort && CheckAttribute(&Colonies[i], "HasNoFort")) continue;  // без форта не берем
-			if (sti(Colonies[i].nation)== iNation)
+			if (int(Colonies[i].nation)== iNation)
 			{
 				iArray[m] = i;
 				m++;
@@ -1930,13 +1935,13 @@ string FindAlliedColonyForNationExceptColony(string sHomeColony)
 	int m = 0;
 	string sColony = "";
 
-	int iNation = sti(colonies[FindColony(sHomeColony)].nation);
+	int iNation = int(colonies[FindColony(sHomeColony)].nation);
 	
 	for (int i = 0; i<MAX_COLONIES; i++)
 	{
 		if(colonies[i].nation != "none" && colonies[i].id != sHomeColony && colonies[i].id != "Panama" && colonies[i].id != "SanAndres" && colonies[i].id != "LosTeques")
 		{
-			if (sti(Colonies[i].nation) == iNation)
+			if (int(Colonies[i].nation) == iNation)
 			{
 				iArray[m] = i;
 				m++;
@@ -2102,7 +2107,7 @@ void EmptyAllFantomCharacter()
 		else
 		{
 			if (CheckAttribute(&characters[i], "LifeDay") &&
-			    GetNpcQuestPastDayParam(&characters[i], "LifeTimeCreate") >= sti(characters[i].LifeDay) &&
+			    GetNpcQuestPastDayParam(&characters[i], "LifeTimeCreate") >= int(characters[i].LifeDay) &&
 				characters[i].location != pchar.location) // не трем, если ГГ в локации,иначе горожане пропадают на лету
 			{ // время вышло
 				InitCharacter(&characters[i], i);  // тут проверку на компаньонов не нужно, тк они все одинаковые по времени
@@ -2123,12 +2128,12 @@ int GenerateCharacter(int iNation, int isShip, string sModel, int iSex, int isLo
 		// to_do del
 		if(CharacterType == FORT_COMMANDER)
 		{
-			characters[iChar].ship.type = GenerateShip(SHIP_FORT, isLock);
+			characters[iChar].ship.type = GenerateShip(SHIP_FORT, isLock != 0);
 			Fantom_SetRandomCrewExp(&characters[iChar], "war");
 		}
 		else
 		{
-			characters[iChar].ship.type = SearchForMaxShip(&characters[iChar], isLock, CharacterType);
+			characters[iChar].ship.type = SearchForMaxShip(&characters[iChar], isLock != 0, CharacterType);
 			InitChrRebalance(&characters[iChar]);
 			Fantom_SetRandomCrewExp(&characters[iChar], "war");
 			GiveCaptainOfficers(&characters[iChar], true);
@@ -2158,7 +2163,7 @@ int GetRandomNationForMapEncounter(string sIslandID, bool bMerchant)
 			{
 				if (colonies[i].nation != "none")
 				{
-					iNation = sti(colonies[i].nation);
+					iNation = int(colonies[i].nation);
 					break;
 				}
 			}
@@ -2294,7 +2299,7 @@ string FindNearestFreeLocator(string group)
 	return homelocator;
 }
 
-string SetModelFlag(aref chr)
+string SetModelFlag(ref chr)
 {
 	string sResult = "";
 
@@ -2305,7 +2310,7 @@ string SetModelFlag(aref chr)
 
 	if(CheckAttribute(&InterfaceStates,"EnabledQuestsMarks") )
 	{
-		if(sti(InterfaceStates.EnabledQuestsMarks) == 0)
+		if(int(InterfaceStates.EnabledQuestsMarks) == 0)
 		{
 			return "";
 		}
@@ -2313,7 +2318,7 @@ string SetModelFlag(aref chr)
 
 	if(CheckAttribute(chr, "quest.questflag"))
 	{
-		switch(sti(chr.quest.questflag))
+		switch(int(chr.quest.questflag))
 		{
 			case 1:
 				sResult = "exclamationmarkY";
@@ -2339,7 +2344,7 @@ string GetTechNameForSign()
 	return "RandItem";
 }
 
-void CheckQuestForCharacter(aref chr)
+void CheckQuestForCharacter(ref chr)
 {
 
 }
@@ -2520,7 +2525,7 @@ ref GetOurSailor(string _id) // моежт быть нужно нескольк�
 	smodel = aBoardingModels[0].model;
 	ani = aBoardingModels[0].ani;
     
-	i = NPC_GenerateCharacter(_id, smodel, "man", ani, 10, sti(pchar.nation), 0, true, "soldier");
+	i = NPC_GenerateCharacter(_id, smodel, "man", ani, 10, int(pchar.nation), 0, true, "soldier");
 	CrOur = GetCharacter(i);
 	CrOur.name     = XI_ConvertString("Sailor");
 	CrOur.lastname = "";
@@ -2533,7 +2538,7 @@ int NPC_GeneratePhantomCharacter(string sType, int iNation, int iSex, int _LifeD
 	return NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, _LifeDay, nullptr);
 }
 
-int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int _LifeDay, aref arLoc)//, int CharacterType)
+int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int _LifeDay, ref rLoc)//, int CharacterType)
 {
     int iChar = FindFirstEmptyCharacter();
     ref ch;
@@ -2571,7 +2576,7 @@ int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int 
     ch.reputation = (1 + rand(44) + rand(44));// репа всем горожанам
 	ch.id = "GenChar_" + iChar;
 
-	bool bSuccess = CreateModel(iChar, sType, iSex, arLoc);
+	bool bSuccess = CreateModel(iChar, sType, iSex, rLoc);
 	if (!bSuccess)
 	{
 		ch.LifeDay = 0;
@@ -2581,11 +2586,11 @@ int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int 
 	    
     if (sType == "citizen" || sType == "blade_trader" || sType == "monk")
 	{
-		LAi_NPC_Equip(ch, sti(ch.rank), false, false);
+		LAi_NPC_Equip(ch, int(ch.rank), false, false);
 	}
 	else
 	{
-	    LAi_NPC_Equip(ch, sti(ch.rank), true, true);
+	    LAi_NPC_Equip(ch, int(ch.rank), true, true);
 	}
 	
 	return  iChar;
@@ -2608,7 +2613,7 @@ int GetPrisonerQty()
             offref = GetCharacter(cn);
             if(CheckAttribute(offref,"prisoned"))
             {
-	            if(sti(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
+	            if(int(offref.prisoned)==true && GetRemovable(offref)) // ставим только фантомов
 	            {
                     qty++;
                 }
@@ -2768,7 +2773,7 @@ void MakeFortDead(string _ColonyFort)
 	FC.Fort.DieTime.Month = GetDataMonth();
 	FC.Fort.DieTime.Day = GetDataDay();
 	FC.Fort.DieTime.Time = GetTime();
-	Event(FORT_DESTROYED, "l", sti(FC.index));
+	Event(FORT_DESTROYED, "l", int(FC.index));
 }
 
 // ugeen --> получить наиболее дальний из группы локаторов для постановки квестовых  кораблей
@@ -2784,9 +2789,9 @@ string GetSeaQuestShipFarLocator(ref _loc, string group, float x, float y, float
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float dx = x - stf(loc.x);
-		float dy = y - stf(loc.y);
-		float dz = z - stf(loc.z);
+		float dx = x - float(loc.x);
+		float dy = y - float(loc.y);
+		float dz = z - float(loc.z);
 		float d = dx*dx + dy*dy + dz*dz;
 		if(j >= 0)
 		{
@@ -2819,9 +2824,9 @@ string GetSeaQuestShipNearestLocator(ref _loc, string group, float x, float y, f
 	for(int i = 0; i < num; i++)
 	{
 		aref loc = GetAttributeN(grp, i);
-		float dx = x - stf(loc.x);
-		float dy = y - stf(loc.y);
-		float dz = z - stf(loc.z);
+		float dx = x - float(loc.x);
+		float dy = y - float(loc.y);
+		float dz = z - float(loc.z);
 		float d = dx*dx + dy*dy + dz*dz;
 		if(j >= 0)
 		{
@@ -2842,21 +2847,21 @@ string GetSeaQuestShipNearestLocator(ref _loc, string group, float x, float y, f
 }
 //
 
-void MarkCharacter(aref chr, string markType)
+void MarkCharacter(ref chr, string markType)
 {
 	if (InterfaceStates.EnabledQuestsMarks == false) return;
 	chr.quest.questflag.model = markType; 
 	chr.quest.questflag.technique = "RandItem"; 
 }
 
-void FXMarkCharacter(aref chr, string markType)
+void FXMarkCharacter(ref chr, string markType)
 {
 	if (InterfaceStates.EnabledFXMarks == false) return;
 	chr.quest.questflag.model = markType; 
 	chr.quest.questflag.technique = "RandItem"; 
 }
 
-void UnmarkCharacter(aref chr) 
+void UnmarkCharacter(ref chr)
 { 
 	chr.quest.questflag.model = ""; 
 	chr.quest.questflag.technique = ""; 
@@ -2895,7 +2900,7 @@ bool CharacterIsHere(string id)
     return false;
 }
 
-// TO_DO: Заменить на nullaref, убрав проверки "error"
+// TO_DO: Заменить на nullptr, убрав проверки "error"
 aref ErrorAttr()
 {
     aref aError;
@@ -3208,6 +3213,12 @@ string GetLocationLabelByRef(ref rLoc)
 {
 	string sKeyFilePath = "LocLables.txt";
 
+	if ("id.label" !in rLoc)
+	{
+		trace("id.label !in nullptr for id: "+rLoc.id);
+		DumpAttributes(rLoc);
+		CollectCallStack();
+	}
 	return GetConvertStr(rLoc.id.label, sKeyFilePath);
 }
 
@@ -3304,7 +3315,7 @@ void FillAllPrisonersIndexes(ref result)
 
 		ref passenger = GetCharacter(cn);
 		if (!CheckAttribute(passenger,"prisoned")) continue;
-		if (sti(passenger.prisoned) != true || !GetRemovable(passenger)) continue;
+		if (int(passenger.prisoned) != true || !GetRemovable(passenger)) continue;
 
 		SetArraySize(&result, found+1);
 		result[found] = cn;

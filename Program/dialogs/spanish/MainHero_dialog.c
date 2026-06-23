@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
 			pchar.wind.speed = 18.0;
-			fWeatherSpeed = stf(18.0);
+			fWeatherSpeed = float(18.0);
 			//AddDialogExitQuestFunction("SharlieTutorial_StartShip");
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_3");
 		}
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		{ // исп.линейка, квест №6, возможность переночевать в оплаченной комнате
 			if (CheckAttribute(pchar, "questTemp.State.Open") && pchar.location == "Tortuga_tavern_upstairs")
 			{
-				if (makeint(environment.time) >= 22.0 || makeint(environment.time) < 10.0)
+				if (int(environment.time) >= 22.0 || int(environment.time) < 10.0)
 				{
 					link.l1 = "Descansa hasta la mañana.";
 					link.l1.go = "TalkSelf_room_day";
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 
 		if (CheckAttribute(pchar, "equip.gun"))
 		{
-			if (CheckAttribute(pchar, "chr_ai.gun.bulletNum") && sti(pchar.chr_ai.gun.bulletNum) > 1)
+			if (CheckAttribute(pchar, "chr_ai.gun.bulletNum") && int(pchar.chr_ai.gun.bulletNum) > 1)
 			{
 				Link.l8 = "Quiero cambiar la munición para las armas de fuego.";
 				Link.l8.go = "SetGunBullets";
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 
 		if (CheckAttribute(pchar, "equip.musket"))
 		{
-			if (CheckAttribute(pchar, "chr_ai.musket.bulletNum") && sti(pchar.chr_ai.musket.bulletNum) > 1)
+			if (CheckAttribute(pchar, "chr_ai.musket.bulletNum") && int(pchar.chr_ai.musket.bulletNum) > 1)
 			{
 				Link.l9 = "Quiero cambiar la munición para el mosquete.";
 				Link.l9.go = "SetMusketBullets";
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 			Link.l17 = "Suma el contenido del cofre y decide terminar de reunir municiones para Picard.";
 			Link.l17.go = "mtraxx_ammo";
 		}
-		if (CheckAttribute(pchar, "questTemp.Mtraxx.Mutiny") && pchar.location == "Maracaibo_Plantation" && stf(environment.time) >= 3.00 && stf(environment.time) < 4.00)
+		if (CheckAttribute(pchar, "questTemp.Mtraxx.Mutiny") && pchar.location == "Maracaibo_Plantation" && float(environment.time) >= 3.00 && float(environment.time) < 4.00)
 		{
 			Link.l17 = "Da una orden para atacar la plantación de Maracaibo.";
 			Link.l17.go = "mtraxx_mutiny";
@@ -583,7 +583,7 @@ void ProcessDialogEvent()
 		sGun = GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		makearef(rType, rItm.type);
-		for (i = 0; i < sti(pchar.chr_ai.gun.bulletNum); i++)
+		for (i = 0; i < int(pchar.chr_ai.gun.bulletNum); i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
 			sBullet = rItm.type.(sAttr).bullet;
@@ -596,7 +596,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SetGunBullets2":
-		i = sti(PChar.GenQuest.SetGunBullets) + 1;
+		i = int(PChar.GenQuest.SetGunBullets) + 1;
 		sGun = GetCharacterEquipByGroup(pchar, GUN_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		sAttr = "t" + i;
@@ -613,7 +613,7 @@ void ProcessDialogEvent()
 		sGun = GetCharacterEquipByGroup(pchar, MUSKET_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		makearef(rType, rItm.type);
-		for (i = 0; i < sti(pchar.chr_ai.musket.bulletNum); i++)
+		for (i = 0; i < int(pchar.chr_ai.musket.bulletNum); i++)
 		{
 			sAttr = GetAttributeName(GetAttributeN(rType, i));
 			sBullet = rItm.type.(sAttr).bullet;
@@ -626,7 +626,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "SetMusketBullets2":
-		i = sti(PChar.GenQuest.SetMusketBullets) + 1;
+		i = int(PChar.GenQuest.SetMusketBullets) + 1;
 		sGun = GetCharacterEquipByGroup(pchar, MUSKET_ITEM_TYPE);
 		rItm = ItemsFromID(sGun);
 		sAttr = "t" + i;
@@ -751,7 +751,7 @@ void ProcessDialogEvent()
 		if (CheckOfficersPerk(pchar, "Troopers"))
 			needCrew = 300;
 		bOk = (GetPartyCrewQuantity(Pchar, true) >= needCrew) || bBettaTestMode;
-		if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && bOk)
+		if (int(Pchar.Ship.Type) != SHIP_NOTUSED && bOk)
 		{
 			chr = GetCharacter(GetCharIDXForTownAttack(pchar.location));
 			if (chr.from_sea == Pchar.location.from_sea)
@@ -828,7 +828,7 @@ void ProcessDialogEvent()
 		Pchar.GenQuestFort.StartAttack = true;
 		Pchar.GenQuestFort.fortCharacterIdx = GetCharIDXForTownAttack(pchar.location);
 		DeleteQuestAttribute("Union_with_Escadra");
-		chr = GetCharacter(sti(Pchar.GenQuestFort.fortCharacterIdx));
+		chr = GetCharacter(int(Pchar.GenQuestFort.fortCharacterIdx));
 		if (isCityHasFort(chr.City))
 		{
 			SetLocationCapturedState(chr.from_sea, true);
@@ -877,34 +877,34 @@ void ProcessDialogEvent()
 		break;
 
 	case "TalkSelf_SlavesToCrew_1":
-		bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
+		bOk = ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[int(pchar.Ship.Type)], "DeadSailors.RecruitSlaveBonus");
 		if(!bOk)
 		{
 			// belamour legendary edition перк получил время работы, старый метод не подходит
 			if (GetOfficersPerkUsing(pchar, "IronWill"))
 			{
-				AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 5.0))
+				AddCrewMorale(pchar, -int(int(pchar.GenQuest.SlavesToCrew) / 5.0))
 			}
 			else
 			{
-				AddCrewMorale(pchar, -makeint(sti(pchar.GenQuest.SlavesToCrew) / 3.0))
+				AddCrewMorale(pchar, -int(int(pchar.GenQuest.SlavesToCrew) / 3.0))
 			}
 		}
 		ChangeCharacterComplexReputation(pchar, "authority", -0.5);
 		// падение опыта -->
-		fTemp = stf(GetCrewQuantity(pchar) + sti(pchar.GenQuest.SlavesToCrew));
-		pchar.Ship.Crew.Exp.Sailors = (stf(pchar.Ship.Crew.Exp.Sailors) * GetCrewQuantity(pchar) +
-									   stf(pchar.Ship.Crew.Exp.Sailors) * 0.3 * sti(pchar.GenQuest.SlavesToCrew)) /
+		fTemp = float(GetCrewQuantity(pchar) + int(pchar.GenQuest.SlavesToCrew));
+		pchar.Ship.Crew.Exp.Sailors = (float(pchar.Ship.Crew.Exp.Sailors) * GetCrewQuantity(pchar) +
+									   float(pchar.Ship.Crew.Exp.Sailors) * 0.3 * int(pchar.GenQuest.SlavesToCrew)) /
 									  fTemp;
-		pchar.Ship.Crew.Exp.Cannoners = (stf(pchar.Ship.Crew.Exp.Cannoners) * GetCrewQuantity(pchar) +
-										 stf(pchar.Ship.Crew.Exp.Cannoners) * 0.3 * sti(pchar.GenQuest.SlavesToCrew)) /
+		pchar.Ship.Crew.Exp.Cannoners = (float(pchar.Ship.Crew.Exp.Cannoners) * GetCrewQuantity(pchar) +
+										 float(pchar.Ship.Crew.Exp.Cannoners) * 0.3 * int(pchar.GenQuest.SlavesToCrew)) /
 										fTemp;
-		pchar.Ship.Crew.Exp.Soldiers = (stf(pchar.Ship.Crew.Exp.Soldiers) * GetCrewQuantity(pchar) +
-										stf(pchar.Ship.Crew.Exp.Soldiers) * 0.3 * sti(pchar.GenQuest.SlavesToCrew)) /
+		pchar.Ship.Crew.Exp.Soldiers = (float(pchar.Ship.Crew.Exp.Soldiers) * GetCrewQuantity(pchar) +
+										float(pchar.Ship.Crew.Exp.Soldiers) * 0.3 * int(pchar.GenQuest.SlavesToCrew)) /
 									   fTemp;
 		// падение опыта <--
-		pchar.Ship.Crew.Quantity = sti(pchar.Ship.Crew.Quantity) + sti(pchar.GenQuest.SlavesToCrew);
-		RemoveCharacterGoodsSelf(pchar, GOOD_SLAVES, sti(pchar.GenQuest.SlavesToCrew));
+		pchar.Ship.Crew.Quantity = int(pchar.Ship.Crew.Quantity) + int(pchar.GenQuest.SlavesToCrew);
+		RemoveCharacterGoodsSelf(pchar, GOOD_SLAVES, int(pchar.GenQuest.SlavesToCrew));
 
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit_Self();
@@ -944,10 +944,10 @@ void ProcessDialogEvent()
 		for (i = 1; i < GetCompanionQuantity(PChar); i++)
 		{
 			chr = GetCharacter(GetCompanionIndex(PChar, i));
-			if (!CheckAttribute(chr, "Tasks.Clone") && sti(chr.Payment) == true)
+			if (!CheckAttribute(chr, "Tasks.Clone") && int(chr.Payment) == true)
 			{
 				sAttr = "l" + i;
-				rShip = GetRealShip(sti(chr.Ship.Type));
+				rShip = GetRealShip(int(chr.Ship.Type));
 				link.(sAttr) = GetFullName(chr) + ", " + xiStr(rShip.BaseName) + " '" + chr.Ship.Name + "'.";
 				link.(sAttr).go = "CabinCompanionTalk_" + i;
 			}
@@ -957,7 +957,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Cabin_Companion_Talk":
-		i = sti(PChar.GenQuest.CabinCompanionNum);
+		i = int(PChar.GenQuest.CabinCompanionNum);
 		PlaceCompanionCloneNearMChr(i, false);
 
 		NextDiag.CurrentNode = NextDiag.TempNode;

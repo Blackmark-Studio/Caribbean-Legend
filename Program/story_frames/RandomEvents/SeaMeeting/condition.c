@@ -1,8 +1,8 @@
 bool SF_InitConditions(ref context, ref situation, bool fromStory = false)
 {
-	if (sti(pchar.nation) == PIRATE) return false;
+	if (int(pchar.nation) == PIRATE) return false;
 
-	int nation = FindNonEnemyNation2Nation(sti(pchar.nation));
+	int nation = FindNonEnemyNation2Nation(int(pchar.nation));
 	if (nation < 0) return false; // чебурашка, у которого нет друзей
 
 	int foodQty = GetCargoGoods(pchar, GOOD_FOOD);

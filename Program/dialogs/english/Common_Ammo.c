@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 				link.l1 = "No, nothing, just dropped by randomly.";
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "Greetings, Vice Admiral! Do you have any orders?";
 				link.l1 = "No, officer, no orders. I just came to see the fort.";
@@ -128,10 +128,10 @@ void ProcessDialogEvent()
 			
 		case "GiveTaskGun_1":
 			GetGunType();
-			pchar.questTemp.PrisonGun.Sum = makeint(sti(pchar.questTemp.PrisonGun.Price)*sti(pchar.questTemp.PrisonGun.Qty));
+			pchar.questTemp.PrisonGun.Sum = int(int(pchar.questTemp.PrisonGun.Price)*int(pchar.questTemp.PrisonGun.Qty));
 			pchar.questTemp.PrisonGun.Luck = rand(4);
 			pchar.questTemp.PrisonGun.Id = npchar.location;
-			dialog.Text = "I need "+pchar.questTemp.PrisonGun.Text+", in the amount of "+sti(pchar.questTemp.PrisonGun.Qty)+"  units exactly. I'll pay in golden doubloons, "+sti(pchar.questTemp.PrisonGun.Price)+" for a piece. That will amount to "+FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum))+" in total. What do you say? Oh, and one more thing - I will take the entire batch, but not before a month has passed - the money hasn't arrived yet.";
+			dialog.Text = "I need "+pchar.questTemp.PrisonGun.Text+", in the amount of "+int(pchar.questTemp.PrisonGun.Qty)+"  units exactly. I'll pay in golden doubloons, "+int(pchar.questTemp.PrisonGun.Price)+" for a piece. That will amount to "+FindRussianDublonString(int(pchar.questTemp.PrisonGun.Sum))+" in total. What do you say? Oh, and one more thing - I will take the entire batch, but not before a month has passed - the money hasn't arrived yet.";
 			Link.l1 = RandPhraseSimple("No, officer, your offer doesn't interest me at all... I am sorry.","It's tempting, but I think I'll pass. Allow me to keep my reasoning to myself.");
 			Link.l1.go = "exit_gun";
 			Link.l2 = RandPhraseSimple("Well, that offer is certainly an interesting one. Consider it a deal.","I suppose I'll take it. It's not that difficult and clearly profitable.");
@@ -155,8 +155,8 @@ void ProcessDialogEvent()
 			AddQuestUserData("PrisonGun", "sSex", GetSexPhrase("",""));
 			AddQuestUserData("PrisonGun", "sName", GetFullName(npchar));
 			AddQuestUserData("PrisonGun", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
-			AddQuestUserData("PrisonGun", "sQty", makeint(pchar.questTemp.PrisonGun.Qty));
-			AddQuestUserData("PrisonGun", "sSum", makeint(pchar.questTemp.PrisonGun.Sum));
+			AddQuestUserData("PrisonGun", "sQty", int(pchar.questTemp.PrisonGun.Qty));
+			AddQuestUserData("PrisonGun", "sSum", int(pchar.questTemp.PrisonGun.Sum));
 			AddQuestUserData("PrisonGun", "sText", pchar.questTemp.PrisonGun.Text);
 			NextDiag.TempNode = "First time";
 		break;	
@@ -178,8 +178,8 @@ void ProcessDialogEvent()
 				break;
 			}
 			iGunGoods = pchar.questTemp.PrisonGun.Goods;
-			amount = GetSquadronGoods(Pchar, iGunGoods) - sti(pchar.questTemp.PrisonGun.Qty);
-			sTemp = sti(pchar.questTemp.PrisonGun.Qty);
+			amount = GetSquadronGoods(Pchar, iGunGoods) - int(pchar.questTemp.PrisonGun.Qty);
+			sTemp = int(pchar.questTemp.PrisonGun.Qty);
 			iTest = FindColony(NPChar.City); // город
 			
 			if (iTest != -1)
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 				rColony = GetColonyByIndex(iTest);
 			}
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				dialog.Text = "Yes, are you ready to help me?";
 				if (amount < 0)
@@ -248,13 +248,13 @@ void ProcessDialogEvent()
 		
 		case "TakeGun_1":
 			iGunGoods = pchar.questTemp.PrisonGun.Goods;
-			amount = sti(pchar.questTemp.PrisonGun.Qty);
-			iTemp = sti(pchar.questTemp.PrisonGun.Sum);
+			amount = int(pchar.questTemp.PrisonGun.Qty);
+			iTemp = int(pchar.questTemp.PrisonGun.Sum);
 			dialog.Text = "Of course. Here is your gold - suit yourself.";
 			Link.l1 = "Thank you! It was a pleasure doing business with you!";
             Link.l1.go = "TakeGun_2";
 			TakeNItems(pchar, "gold_dublon", iTemp);
-			Log_Info("You have received "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
+			Log_Info("You have received "+FindRussianDublonString(int(pchar.questTemp.WPU.Escort.Money))+"");
 			PlaySound("interface\important_item.wav");
 			RemoveCharacterGoods(Pchar, iGunGoods, amount);
 		break;
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 				rColony = GetColonyByIndex(iTest);
 			}
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				if (GetSquadronGoods(pchar, GOOD_BOMBS) < 2500 || GetSquadronGoods(pchar, GOOD_POWDER) < 2500)
 				{
@@ -523,7 +523,7 @@ void ProcessDialogEvent()
 				AddQuestUserData("zpq", "sSex", GetSexPhrase("",""));
 				CloseQuestHeader("zpq");
 				pchar.questTemp.zpq.sum = 100000;
-				AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+				AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 			}
 			else
 			{
@@ -550,7 +550,7 @@ void ProcessDialogEvent()
             AddQuestRecord("zpq", "5");
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 125000;
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 			/*else
 			{
 				dialog.text = "What?! I am a military officer! Do you think you can scare me, kid?! Guards, take "+GetSexPhrase("him","her")+"!";
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("zpq", "sSex", GetSexPhrase("",""));
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 50000;
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 		break;
 		
 		case "zpq_ex_agry":
@@ -585,14 +585,14 @@ void ProcessDialogEvent()
             AddQuestRecord("zpq", "4");
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 100000;
-			AddMoneyToCharacter(npchar, makeint(sti(pchar.questTemp.zpq.sum)*2 + rand(5000)));
+			AddMoneyToCharacter(npchar, int(int(pchar.questTemp.zpq.sum)*2 + rand(5000)));
 			GiveItem2Character(npchar, "blade_21");
 			EquipCharacterbyItem(npchar, "blade_21");
 			npchar.SaveItemsForDead  = true;
 			npchar.DontClearDead = true;
 			npchar.cirassId = Items_FindItemIdx("cirass3");
 			chrDisableReloadToLocation = true;
-			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
+			string slai_group = GetNationNameByType(int(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
 			LAi_group_SetCheck(slai_group, "OpenTheDoors");
 			AddSimpleRumour("Such terrible things happen here! They say that some prisoner has escaped from the casemates! He slaughtered all the guards, stole the treasury, and just went away! Shiver me timbers!", SPAIN, 5, 1);
@@ -604,48 +604,48 @@ void ProcessDialogEvent()
 void GetGunType()
 {
 	int iGunType;
-	if(makeint(pchar.rank) < 6) iGunType = rand(1);	//18&&24
-	if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 15) iGunType = rand(2); //24&&32	
-	if(makeint(pchar.rank) >= 15 && makeint(pchar.rank) < 24) iGunType = rand(2)+2; //32&&36&&42
-	if(makeint(pchar.rank) >= 24) iGunType = 5-rand(1); //36clv&&42
-	int iAdd = makeint(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20);
+	if(int(pchar.rank) < 6) iGunType = rand(1);	//18&&24
+	if(int(pchar.rank) >= 6 && int(pchar.rank) < 15) iGunType = rand(2); //24&&32
+	if(int(pchar.rank) >= 15 && int(pchar.rank) < 24) iGunType = rand(2)+2; //32&&36&&42
+	if(int(pchar.rank) >= 24) iGunType = 5-rand(1); //36clv&&42
+	int iAdd = int(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20);
 	
 	switch (iGunType)
 	{
 		case 0:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_24;     					
 			pchar.questTemp.PrisonGun.Price = 28 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*5+25+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "24 calibre cannons";
 		break; 
 		case 1:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_18;     					
 			pchar.questTemp.PrisonGun.Price = 25 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*5+25+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "couleuvrines";
 		break; 
 		case 2:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_32;     					
 			pchar.questTemp.PrisonGun.Price = 32 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*3+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "32 calibre cannons";
 		break; 
 		case 3:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_36;     					
 			pchar.questTemp.PrisonGun.Price = 36 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*3+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "36 calibre cannons";
 		break;
 		case 4:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_36;     					
 			pchar.questTemp.PrisonGun.Price = 49 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "full couleuvrines";
 		break; 
 		case 5:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_42;     					
 			pchar.questTemp.PrisonGun.Price = 40 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+20+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)+20+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "42 calibre cannons";
 		break; 
 	}

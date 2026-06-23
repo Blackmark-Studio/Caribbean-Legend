@@ -23,7 +23,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "Sence gizli servis için mi çalışıyorum "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "Sence gizli servis için mi çalışıyorum "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "Pekâlâ... hayır. O halde hoşça kal.";
 			link.l1.go = "exit";
 			link.l2 = "Başka bir sorunuz var mı, peki?";
@@ -42,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		//--> Бремя гасконца
 		case "Sharlie":
-			if (sti(pchar.questTemp.Sharlie.Citcount) == 3)
+			if (int(pchar.questTemp.Sharlie.Citcount) == 3)
 			{
 				dialog.text = "Hmm... I suspect you've only just arrived here, since you so fearlessly ask such questions... I advise you to stop if you don't want any trouble. Speak to the Abbot; he may help you 'come to your senses'. You can find him at the church.";
 				link.l1 = "Anladım...";

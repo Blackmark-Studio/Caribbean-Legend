@@ -39,9 +39,9 @@ int GetCannonCaliber(int nCannon)
 	
 	if (CheckAttribute(curCannon, "RealCaliber"))
 	{
-		return sti(curCannon.RealCaliber);
+		return int(curCannon.RealCaliber);
 	}
-	return sti(curCannon.caliber);
+	return int(curCannon.caliber);
 }
 
 int GetCannonCaliberNominal(int nCannon)
@@ -50,5 +50,5 @@ int GetCannonCaliberNominal(int nCannon)
 	makeref(curCannon, Cannon[nCannon]);
 	
 	
-	return sti(curCannon.caliber);
+	return int(curCannon.caliber);
 }

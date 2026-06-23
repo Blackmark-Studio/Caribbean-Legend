@@ -2,20 +2,20 @@
 
 int ChangeContrabandRelation(ref pchar, int _val)
 {
-	pchar.questTemp.Contraband.relation = makeint(pchar.questTemp.Contraband.relation) + _val;
-	if (makeint(pchar.questTemp.Contraband.relation) > 100) pchar.questTemp.Contraband.relation = 100;
-	if (makeint(pchar.questTemp.Contraband.relation) < 0) pchar.questTemp.Contraband.relation = 0;
+	pchar.questTemp.Contraband.relation = int(pchar.questTemp.Contraband.relation) + _val;
+	if (int(pchar.questTemp.Contraband.relation) > 100) pchar.questTemp.Contraband.relation = 100;
+	if (int(pchar.questTemp.Contraband.relation) < 0) pchar.questTemp.Contraband.relation = 0;
 	
 	if (_val>0)
 	{
-		notification(StringFromKey("smuggling_1")+stf(pchar.questTemp.Contraband.relation)+")", "Smugglers");
+		notification(StringFromKey("smuggling_1")+float(pchar.questTemp.Contraband.relation)+")", "Smugglers");
 	}
 	if (_val<0)
 	{
-		notification(StringFromKey("smuggling_2")+stf(pchar.questTemp.Contraband.relation)+")", "Smugglers");
+		notification(StringFromKey("smuggling_2")+float(pchar.questTemp.Contraband.relation)+")", "Smugglers");
 	}
 	
-	return makeint(pchar.questTemp.Contraband.relation);
+	return int(pchar.questTemp.Contraband.relation);
 }
 
 // работа с контрабандой
@@ -46,7 +46,7 @@ void AddContraGoods(ref _refCharacter, int _Goods, int _Quantity)
 	string goodsName = Goods[_Goods].name;
 	if(CheckAttribute(_refCharacter,"Goods."+goodsName))
 	{
-		_refCharacter.Goods.(goodsName) = sti(_refCharacter.Goods.(goodsName)) + _Quantity;
+		_refCharacter.Goods.(goodsName) = int(_refCharacter.Goods.(goodsName)) + _Quantity;
 	}
 	else
 	{
@@ -59,7 +59,7 @@ void RemoveContraGoods(ref _refCharacter, int _Goods, int _Quantity)
 	int    curQuantity;
 	string goodsName = Goods[_Goods].name;
 
-	curQuantity = sti( _refCharacter.Goods.(goodsName));
+	curQuantity = int( _refCharacter.Goods.(goodsName));
 	if (curQuantity >= _Quantity)
 	{
 		_refCharacter.Goods.(goodsName) = curQuantity - _Quantity;
@@ -75,7 +75,7 @@ int GetContraGoodsQuantity(ref _refCharacter, int _Goods)
 	string tmpstr = Goods[_Goods].name;
 	int q = 0;
 	if( CheckAttribute(_refCharacter,"Goods."+tmpstr) )
-		q = sti(_refCharacter.Goods.(tmpstr));
+		q = int(_refCharacter.Goods.(tmpstr));
 	return q;
 }
 
@@ -90,14 +90,14 @@ void SetAllContraGoods(ref _refStore, ref _refCharacter)
 		tmpstr = Goods[i].name;
 		if( CheckAttribute(_refStore,"Goods."+tmpstr+".canbecontraband") )		
 		{
-			qty = sti(_refStore.Goods.(tmpstr).Quantity);	
-			if(sti(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_SELL)  	// можем продать товар  контрикам
+			qty = int(_refStore.Goods.(tmpstr).Quantity);
+			if(int(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_SELL)  	// можем продать товар  контрикам
 			{
 				SetContraGoods(_refCharacter, i, 0);
 			}
-			if(sti(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_BUY)		// можем купить товар у контриков
+			if(int(_refStore.Goods.(tmpstr).canbecontraband) == CONTRA_BUY)		// можем купить товар у контриков
 			{
-				SetContraGoods(_refCharacter, i, makeint(qty/4) + rand(200));
+				SetContraGoods(_refCharacter, i, int(qty/4) + rand(200));
 			}
 		}
 	}
@@ -165,7 +165,7 @@ int FindFirstContrabandGoods(ref _refCharacter)
 	iMax   = GetAttributesNum(islRef); //fix
 	for(i=0; i<iMax; i++)
 	{
-		n = sti(GetAttributeValue(GetAttributeN(islRef,0)));
+		n = int(GetAttributeValue(GetAttributeN(islRef,0)));
 		if( GetSquadronGoods(_refCharacter,n)>0 )
 		{
 			_refCharacter.FindContrabandGoods.IslandIdx = curIslandIdx;
@@ -183,10 +183,10 @@ int FindNextContrabandGoods(ref _refCharacter)
 	{
 		if(CheckAttribute(_refCharacter,"FindContrabandGoods.GoodsIdx"))
 		{
-			int curStoreIdx = sti(_refCharacter.FindContrabandGoods.StoreIdx);
+			int curStoreIdx = int(_refCharacter.FindContrabandGoods.StoreIdx);
 			if(curStoreIdx>=0)
 			{
-				for(i=sti(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GetArraySize(&Goods); i++)
+				for(i=int(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GetArraySize(&Goods); i++)
 				{
 					if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME )
 					{
@@ -206,14 +206,14 @@ int FindNextContrabandGoods(ref _refCharacter)
 		{
 			if(CheckAttribute(_refCharacter,"FindContrabandGoods.GoodsIdx"))
 			{
-				int curIslandIdx = sti(_refCharacter.FindContrabandGoods.IslandIdx);
+				int curIslandIdx = int(_refCharacter.FindContrabandGoods.IslandIdx);
 				if(curIslandIdx>=0)
 				{
-					int curGoodsNum = sti(_refCharacter.FindContrabandGoods.GoodsIdx) + 1;
+					int curGoodsNum = int(_refCharacter.FindContrabandGoods.GoodsIdx) + 1;
 					aref islRef; makearef(islRef,Islands[curIslandIdx].Trade.Contraband);
 					for(i=curGoodsNum; i<GetAttributesNum(islRef); i++)      // это мне сомнительно, походу тут баг, но эта ветка не работает, тк магазин есть, тк разговор в таверне идёт
 					{
-						n = GetAttributeValue(GetAttributeN(islRef,i));
+						n = int(GetAttributeValue(GetAttributeN(islRef,i)));
 						if( GetSquadronGoods(_refCharacter,n)>0 )
 						{
 							_refCharacter.FindContrabandGoods.GoodsIdx = i;
@@ -230,10 +230,10 @@ int FindNextContrabandGoods(ref _refCharacter)
 
 int GetCharacterCurrentStore(ref _refCharacter)
 {
-	bool bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (sti(Pchar.quest.Contraband.Active) == true); // в сделке, значит магазин уже ясен
+	bool bOk2 = CheckAttribute(Pchar, "quest.Contraband.Active") && (int(Pchar.quest.Contraband.Active) == true); // в сделке, значит магазин уже ясен
 	if (bOk2 && CheckAttribute(Pchar, "GenQuest.Contraband.StoreIdx"))
 	{
-		return sti(Pchar.GenQuest.Contraband.StoreIdx);
+		return int(Pchar.GenQuest.Contraband.StoreIdx);
 	}
 	int i, idx;
 	int curLocNum = FindLocation(_refCharacter.location);
@@ -272,7 +272,7 @@ string SelectSmugglingLocation()
 {
     ref CurIsland;
 	int n;
-	string TargetLocation
+	string TargetLocation;
 	
 	n = GetCharacterCurrentIsland(Pchar);
 	if (n < 0) 
@@ -359,7 +359,7 @@ void RemoveSmugglersFromShore()
 		if (CheckAttribute(pchar, "questTemp.PGGContra"))
 		{
 			sLoc = pchar.questTemp.PGGContra.Loc;
-			Smuggler = &Characters[sti(pchar.questTemp.PGGContra)];
+			Smuggler = &Characters[int(pchar.questTemp.PGGContra)];
 			ChangeCharacterAddressGroup(Smuggler, "None", "", "");
 			Smuggler.location.from_sea = "";
 			Smuggler.PGGAi.location.town = Smuggler.PGGAi.location.town.back;
@@ -394,7 +394,7 @@ void SetCoastalGuardPursuit()
 	
 	ref Smuggler;
 	int i;
-	int iNation = sti(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
+	int iNation = int(pchar.GenQuest.Contraband.GuardNation);// Нация патруля
 	string Model;
 	
 	for (i = 1; i <= 3; i++)
@@ -408,9 +408,9 @@ void SetCoastalGuardPursuit()
 		Smuggler.DontRansackCaptain = true;
 		Smuggler.AlwaysSandbankManeuver = true;
 		Group_addCharacter("Coastal_Guards", Smuggler.id);
-		SetCharacterRelationBoth(sti(Smuggler.index), GetMainCharacterIndex(), RELATION_ENEMY);
-		if (makeint(Pchar.rank) < 6 && i == 1 && GetCompanionQuantity(Pchar) == 1) break;
-		if (makeint(Pchar.rank) < 9 && i == 2 && GetCompanionQuantity(Pchar) < 3) break;
+		SetCharacterRelationBoth(int(Smuggler.index), GetMainCharacterIndex(), RELATION_ENEMY);
+		if (int(Pchar.rank) < 6 && i == 1 && GetCompanionQuantity(Pchar) == 1) break;
+		if (int(Pchar.rank) < 9 && i == 2 && GetCompanionQuantity(Pchar) < 3) break;
     }
 	Group_SetGroupCommander("Coastal_Guards", "Coastal_Captain01");
 
@@ -450,11 +450,11 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 	float _TradeSkill = GetSummonSkillFromNameToOld(chref,SKILL_COMMERCE); // 0..10.0
 	aref refGoods;
 	string tmpstr = Goods[_Goods].name;
-	int basePrice = MakeInt(Goods[_Goods].Cost);
+	int basePrice = int(Goods[_Goods].Cost);
 	if (!CheckAttribute(_refStore,"Goods."+tmpstr) ) return 0;
 	makearef(refGoods,_refStore.Goods.(tmpstr));
- 	int tradeType = MakeInt(refGoods.TradeType);
-	int Type = MakeInt(refGoods.Type);	 
+ 	int tradeType = int(refGoods.TradeType);
+	int Type = int(refGoods.Type);
 
 	float tradeModify 	= 1.0;
 	float priceModify   = 1.0;
@@ -465,25 +465,25 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 	switch (tradeType)
 	{
 		case T_TYPE_NORMAL:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_EXPORT:
-			tradeModify = 0.75 + stf(refGoods.RndPriceModify); 
+			tradeModify = 0.75 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_IMPORT:
-			tradeModify = 1.30 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.30 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_AGGRESSIVE:
-			tradeModify = 1.40 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.40 + float(refGoods.RndPriceModify);
 			break;	
 		case T_TYPE_CONTRABAND:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;
 		case T_TYPE_AMMUNITION:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify);
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;  
 		case T_TYPE_CANNONS:
-			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.00 + float(refGoods.RndPriceModify);
 			break;	
 	}
 
@@ -492,7 +492,7 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 
 	if(_PriceType == PRICE_TYPE_BUY) // цена покупки товара игроком
 	{
-		skillModify = 1.25 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55); 
+		skillModify = 1.25 - 0.15 * pow(float(_TradeSkill) / 10.0, 0.55);
 		if(tradeType == T_TYPE_CANNONS) cModify = 2.0 - MOD_SKILL_ENEMY_RATE/20.0;
 		
 		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.9; }
@@ -504,7 +504,7 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 	}
 	else	// цена продажи товара игроком
 	{
-		skillModify = 0.75 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55);
+		skillModify = 0.75 - 0.15 * pow(float(_TradeSkill) / 10.0, 0.55);
 		if(tradeType == T_TYPE_CANNONS) cModify = 2.0 - MOD_SKILL_ENEMY_RATE/20.0;
 		
 		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.1;}
@@ -516,7 +516,7 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 	}
 
 	// boal 23.01.2004 -->
-	if (MakeInt(basePrice * tradeModify * skillModify * costModify + 0.5) < 1) return 1;
+	if (int(basePrice * tradeModify * skillModify * costModify + 0.5) < 1) return 1;
 	// boal 23.01.2004 <--
 	
 	switch (Type)
@@ -544,5 +544,5 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 			break;
 	}
 	
-    return MakeInt(priceModify * basePrice * tradeModify * skillModify * _qty * costModify * cModify + 0.5);
+    return int(priceModify * basePrice * tradeModify * skillModify * _qty * costModify * cModify + 0.5);
 }

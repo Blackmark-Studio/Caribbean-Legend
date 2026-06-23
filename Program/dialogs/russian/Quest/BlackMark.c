@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Contra_1":
 			dialog.text = "Ты кто "+GetSexPhrase("такой","такая")+", и какого дьявола тут околачиваешься?!";
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				link.l1 = "Полегче, приятель. Я просто прогуливаюсь здесь, только и всего. И лезть не в свои дела не собираюсь.";
 			}
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Contra_2":
-			if (sti(pchar.reputation.nobility) >= 40)
+			if (int(pchar.reputation.nobility) >= 40)
 			{
 				dialog.text = "Вот и проваливай отсюда! Сорвёшь нам сделку, спугнув клиента, и...";
 			}
@@ -841,7 +841,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Pyanitsa_6":
-			if (sti(pchar.basenation) == ENGLAND) sStr = "нашем";
+			if (int(pchar.basenation) == ENGLAND) sStr = "нашем";
 			else sStr = "вашем";
 			dialog.text = "Ну, оно уже не такое быстрое, как в свои л-лучшие годы - прямо, как я после кружечки другой, ха-ха-ха! Но хороший капитан всё ещё сможет выжать из этого старичка что-нибудь. А ещё Гейб старается не подставлять его под прямые, ик, попадания.";
 			link.l1 = "Так почему корабль не переименовали? Например, Корабль Его Величества 'Разящий', как его могли бы назвать при " + sStr + " старом режиме.";
@@ -934,10 +934,10 @@ void ProcessDialogEvent()
 			dialog.text = "Неужели... Томас, ты ли это?..";
 			link.l1 = "О да, Гейб. И я пришёл наказать тебя за то, что ты тогда на меня наговорил.";
 			link.l1.go = "BM_IronsClone2";
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+			sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 			CharacterTurnByChr(sld, CharacterFromID("IronsClone"));
 			sld = CharacterFromID("IronsClone");
-			CharacterTurnByChr(sld, &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
+			CharacterTurnByChr(sld, &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)]);
 		break;
 		
 		case "BM_IronsClone2":
@@ -1830,7 +1830,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.gun"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Мне нужно, чтобы ты стрелял из пистолета другими снарядами.";
 					Link.l3.go = "SetGunBullets";
@@ -1847,7 +1847,7 @@ void ProcessDialogEvent()
 			
 			if(CheckAttribute(NPChar, "equip.musket"))
 			{
-				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && int(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
 					Link.l4 = "Мне нужно, чтобы ты стрелял из мушкета другими снарядами.";
 					Link.l4.go = "SetMusketBullets";
@@ -1880,7 +1880,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1892,7 +1892,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -1911,7 +1911,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.musket.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.musket.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -1923,7 +1923,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SetMusketBullets2":
-			i = sti(NPChar.SetMusketBullets) + 1; 
+			i = int(NPChar.SetMusketBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, MUSKET_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -2010,7 +2010,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TargetDistance_1":
-			iTemp = sti(dialogEditStrings[3]);
+			iTemp = int(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
 				dialog.text = ""+GetSexPhrase("Тебе не стоит заниматься юмором.","Тебе ещё у меня учиться и учиться искусству шутки, девочка моя. Но ты определённо делаешь успехи!")+"";
@@ -2162,12 +2162,12 @@ void ProcessDialogEvent()
 			dialog.text = "Великодушно, чёрт побери. Что ж, спасибо, капитан-предатель, сэр. Так и запишем - 'верный пёс может дождаться хозяина, если не сдохнет от скуки'.";
 			link.l1 = "Не принимай это близко к сердцу. Так сложились обстоятельства.";
 			link.l1.go = "SharlieEpilog_Irons_nothing";
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice))
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice))
 			{
 				link.l2 = "Понимаю, ты зол. Я бы тоже на твоём месте не обрадовался бы. Я выплачу тебе месячное жалование сверх того, что тебе полагается. Надеюсь, ты не держишь на меня зла.";
 				link.l2.go = "SharlieEpilog_Irons_salary";
 			}
-			if (sti(pchar.Money) >= sti(npchar.quest.OfficerPrice) * 3)
+			if (int(pchar.Money) >= int(npchar.quest.OfficerPrice) * 3)
 			{
 				link.l3 = "Знаю, эта новость застала тебя врасплох, и у тебя есть основания негодовать. Я готов выплатить тебе тройное месячное жалование сверх того, что тебе положено.";
 				link.l3.go = "SharlieEpilog_Irons_salary_X3";
@@ -2185,7 +2185,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, - sti(npchar.quest.OfficerPrice));
+			AddMoneyToCharacter(pchar, - int(npchar.quest.OfficerPrice));
 		break;
 		
 		case "SharlieEpilog_Irons_salary_X3":
@@ -2193,7 +2193,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "SharlieEpilog_Irons_exit";
 			//
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.OfficerPrice) * 3);
+			AddMoneyToCharacter(pchar, -int(npchar.quest.OfficerPrice) * 3);
 		break;
 		
 		case "SharlieEpilog_Irons_exit":

@@ -75,13 +75,13 @@ void ProcessDialogEvent()
 			nationManName[2] = "If you are seeing this, it's a bug";
 			nationManName[3] = "Spaniard";
 			dialog.text = "미안하지만, 이름을 못 들었소, 나리. 당신은 영국인인가?";
-			link.l1 = nationManName[sti(pchar.BaseNation)]+". 그게 그렇게 중요한가? 지금은 내 이름에 신경 쓰지 말자.";
+			link.l1 = nationManName[int(pchar.BaseNation)]+". 그게 그렇게 중요한가? 지금은 내 이름에 신경 쓰지 말자.";
 			link.l1.go = "Himenes_6";
 		break;
 		
 		case "Himenes_6":
 			dialog.text = "실제로, 우리는 가톨릭 스페인 교회에 의해 이단자로 간주되고 있으니, 신성한 종교재판소의 정의로운 법정에 출두해야 하지. 그래서 자네의 국적이 우리에게 그렇게 중요한 거야. 스페인 선장이라면 우리를 현지 당국에 넘길 수밖에 없지. 그런 일을 또 겪는다면 살아남지 못할 거야! 하하!";
-			if (sti(pchar.BaseNation) == SPAIN) dialog.text = "하하하하하! 우리 운이 그렇지 뭐, 어차피 잃을 것도 없잖아. "+dialog.text;
+			if (int(pchar.BaseNation) == SPAIN) dialog.text = "하하하하하! 우리 운이 그렇지 뭐, 어차피 잃을 것도 없잖아. "+dialog.text;
 			link.l1 = "음, 너한텐 다행이군, 나는 종교재판소 일엔 관심 없어. 그래서 뭐? 너희 이교도들이냐?";
 			link.l1.go = "Himenes_7";
 		break;
@@ -591,7 +591,7 @@ void ProcessDialogEvent()
 				link.l4 = "로드리고, 가장 귀중한 전문가들과 장비가 공장에 도착했네. 이제 작업을 시작해도 되네.";
 				link.l4.go = "Himenes_plantation_7";
 			}
-			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && sti(pchar.questTemp.IslaMona.Factory.Part) > 0)
+			if (CheckAttribute(pchar, "questTemp.IslaMona.Factory.Part") && int(pchar.questTemp.IslaMona.Factory.Part) > 0)
 			{
 				link.l4 = "로드리고, 내 아이언우드 가지러 왔다.";
 				link.l4.go = "Himenes_bacaut";
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_harbour_2":
 			dialog.text = "어서 오시오, 선장님. 새 항구는 마음에 드시오?";
-			if (stf(environment.time) > 22.0 || stf(environment.time) < 5.0)
+			if (float(environment.time) > 22.0 || float(environment.time) < 5.0)
 			{
 				link.l1 = "어두워, 로드리고! 네가 자랑하는 부두에 거의 부딪칠 뻔했잖아! 그래도 불은 켜놔서 다행이야!";
 				link.l1.go = "Himenes_harbour_3";
@@ -843,8 +843,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_bacaut":
-			dialog.text = "물론입니다, 선장님, 가져가십시오. 다음 선적을 위해 준비된 물품 목록은 다음과 같습니다: "+sti(pchar.questTemp.IslaMona.Factory.Part)+", 그게 "+sti(pchar.questTemp.IslaMona.Factory.Goods)+" 통나무지. 그러니 우리에게 빚진 거야 "+sti(pchar.questTemp.IslaMona.Factory.Dublon)+" 두블룬, "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" 럼주 병들과, 그리고\n "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" 포도주 병들, 그거 다 가지고 있나?";
-			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= sti(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= sti(pchar.questTemp.IslaMona.Factory.Bottle))
+			dialog.text = "물론입니다, 선장님, 가져가십시오. 다음 선적을 위해 준비된 물품 목록은 다음과 같습니다: "+int(pchar.questTemp.IslaMona.Factory.Part)+", 그게 "+int(pchar.questTemp.IslaMona.Factory.Goods)+" 통나무지. 그러니 우리에게 빚진 거야 "+int(pchar.questTemp.IslaMona.Factory.Dublon)+" 두블룬, "+int(pchar.questTemp.IslaMona.Factory.Bottle)+" 럼주 병들과, 그리고\n "+int(pchar.questTemp.IslaMona.Factory.Bottle)+" 포도주 병들, 그거 다 가지고 있나?";
+			if (PCharDublonsTotal() >= int(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= int(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= int(pchar.questTemp.IslaMona.Factory.Bottle))
 			{
 				link.l1 = "물론이지. 여기 네 보수다.";
 				link.l1.go = "Himenes_bacaut_1";
@@ -991,15 +991,15 @@ void ProcessDialogEvent()
 			string sAdd = "";
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Candle"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Amber"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
+				sAdd += " "+int(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget"))
 			{
-				sAdd += " "+ sti(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
+				sAdd += " "+ int(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber"))
 			{
@@ -1041,7 +1041,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_14":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "that we won't have to sit here for weeks waiting for events to unfold.";
 			else sTemp = "that not everyone will have to participate in the battle.";
 			dialog.text = "하하하하하... 하. 나도 그렇게 생각했소, 선장님! 로드가르 말이 맞소, 당신이 여기 있다는 것만으로도 이미 의미가 있지, "+sTemp+"";
@@ -1066,7 +1066,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_church_17":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Defend.Force")) // решил проблему самостоятельно
 			{
 				dialog.text = "우리에게 도착한 건 셋뿐이었고, 그중 한 명만 살아남았어. 바로 선장 본인이야! 꽤나 높은 해군 장교 같더군. 하지만 아직 우리를 도울 수는 없어 – 최소 며칠은 더 누워 있어야 한대. \n그건 그렇고, 선장, 총소리가 들렸는데, 당신 꼴을 보니 당신도 들은 모양이군.";
@@ -1499,7 +1499,7 @@ void ProcessDialogEvent()
 		
 		case "FraOfficer_3":
 			sld = characterFromId("Islamona_carpenter");
-			i = sti(sld.crew.qty);
+			i = int(sld.crew.qty);
 			if (i >= 50) sTemp = "There are probably many more bandits than us - we saw tents on the shore. And besides tents, they also have a wall, gates, cannon!";
 			else sTemp = "There are probably not so many bandits, otherwise they would have kicked us out of here already, but they still have a wall, gates, cannon and plenty of time!";
 			dialog.text = "우릴 막은 게 뭐냐고?! 우리는 푸질리에 열둘에 선원 일곱밖에 없어. 모두 지치고 녹초가 됐지. 머스킷 다섯 자루만 간신히 챙겼는데, 그마저도 탄환이 한 발씩밖에 없어! "+sTemp+"";
@@ -1627,7 +1627,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_2":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1646,7 +1646,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_3":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 70, SKILL_LEADERSHIP);
@@ -1665,7 +1665,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_15_4":
-			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && int(pchar.reputation.nobility) > 41)
 			{
 				Notification_Reputation(true, 42, "low");
 				Notification_Skill(true, 60, SKILL_LEADERSHIP);
@@ -1927,7 +1927,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_man_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = RandPhraseSimple(RandPhraseSimple("무례하게 들릴지 모르겠지만, 나리, 여기서는 도저히 살 수 없습니다.","이단 심문소 감옥에 앉아 있는 것보단 뭐든 낫지..."),RandPhraseSimple("구해주셔서 감사합니다, 선장님.","이 자들... 해적들이 네 친구들이냐?"));
@@ -1984,7 +1984,7 @@ void ProcessDialogEvent()
 			link.l1.go = "island_woman_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
 			{
-				switch(sti(pchar.questTemp.IslaMona.TownStage))
+				switch(int(pchar.questTemp.IslaMona.TownStage))
 				{
 					case 0:
 						dialog.text = LinkRandPhrase("오... 안녕.","나리, 저기 있는... 무기를 든 거친 놈들은 누구입니까?","우리를 구해주셔서 감사합니다, 선장님.");

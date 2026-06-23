@@ -92,12 +92,12 @@ void CreateGoodNamesStrings()
 		
 		if(CheckAttribute(&GameInterface, "GOODS_ICONS.imagelist." + sGood))
 		{
-			x = MakeInt(GameInterface.GOODS_ICONS.imagelist.(sGood).x);
-			y = MakeInt(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 54;
+			x = int(GameInterface.GOODS_ICONS.imagelist.(sGood).x);
+			y = int(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 54;
 			
 			if(CheckAttribute(PChar, "TransferGoods." + companionId + "." + sGood))
 			{
-				buyCount = sti(PChar.TransferGoods.(companionId).(sGood));
+				buyCount = int(PChar.TransferGoods.(companionId).(sGood));
 			}
 			else
 			{
@@ -126,7 +126,7 @@ void RefreshGoodsCountStrings()
 		{
 			if(CheckAttribute(PChar, "TransferGoods." + companionId + "." + sGood))
 			{
-				buyCount = sti(PChar.TransferGoods.(companionId).(sGood));
+				buyCount = int(PChar.TransferGoods.(companionId).(sGood));
 			}
 			else
 			{
@@ -145,15 +145,15 @@ void ShowItemsWindow()	// Принцип тот-же, что и в интерф�
 	
 	GetXYWindowOffset(&offsetX, &offsetY);
 	
-	float fMouseX = stf(GameInterface.mousepos.x) + 10;
-	float fMouseY = stf(GameInterface.mousepos.y) - 45;
+	float fMouseX = float(GameInterface.mousepos.x) + 10;
+	float fMouseY = float(GameInterface.mousepos.y) - 45;
 	
 	//определяем верхний левый угол картинки
-	float fOffsetX = stf(GameInterface.GOODS_ICONS.offset.x);
-	float fOffsetY = stf(GameInterface.GOODS_ICONS.offset.y);
+	float fOffsetX = float(GameInterface.GOODS_ICONS.offset.x);
+	float fOffsetY = float(GameInterface.GOODS_ICONS.offset.y);
 
-	fMouseX = fOffsetX + fMouseX * stf(GameInterface.GOODS_ICONS.scale.x);
-	fMouseY = fOffsetY + fMouseY * stf(GameInterface.GOODS_ICONS.scale.y);
+	fMouseX = fOffsetX + fMouseX * float(GameInterface.GOODS_ICONS.scale.x);
+	fMouseY = fOffsetY + fMouseY * float(GameInterface.GOODS_ICONS.scale.y);
 	
 	string sGood;
 	for(int i=0; i<GetArraySize(&Goods); i++)
@@ -161,13 +161,13 @@ void ShowItemsWindow()	// Принцип тот-же, что и в интерф�
 		sGood = goods[i].name;
 		if(CheckAttribute(&GameInterface, "GOODS_ICONS.imagelist." + sGood))
 		{
-			if(fMouseX >= stf(GameInterface.GOODS_ICONS.imagelist.(sGood).x) - 32 + offsetX)
+			if(fMouseX >= float(GameInterface.GOODS_ICONS.imagelist.(sGood).x) - 32 + offsetX)
 			{
-				if(fMouseX <= stf(GameInterface.GOODS_ICONS.imagelist.(sGood).x) + 55.0 + offsetX)
+				if(fMouseX <= float(GameInterface.GOODS_ICONS.imagelist.(sGood).x) + 55.0 + offsetX)
 				{
-					if(fMouseY >= stf(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 93 + offsetY)
+					if(fMouseY >= float(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 93 + offsetY)
 					{
-						if(fMouseY <= stf(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 1 + offsetY)
+						if(fMouseY <= float(GameInterface.GOODS_ICONS.imagelist.(sGood).y) - 1 + offsetY)
 						{
 							ShowMainWindow(false);
 							ShowTransferGoods(i);
@@ -214,7 +214,7 @@ void ShowTransferGoods(int iGood)
 	
 	if(CheckAttribute(PChar, "TransferGoods." + companionId + "." + sGood))
 	{
-		buyCount = sti(PChar.TransferGoods.(companionId).(sGood));
+		buyCount = int(PChar.TransferGoods.(companionId).(sGood));
 	}
 	else
 	{
@@ -298,7 +298,7 @@ void ProcCommand()
 			{
 				rGood = &Goods[iCurGoodIndex];
 				sGood = rGood.name;
-				iNum =  sti(GameInterface.TG_EDIT.str);
+				iNum =  int(GameInterface.TG_EDIT.str);
 				
 				PChar.TransferGoods.(companionId).(sGood) = iNum; // Прибавим в список закупок
 				
@@ -342,24 +342,24 @@ void SetCurrentCompanion(int _num)
 void OnAddBtnClick()
 {
 	ref rGood;
-	int iNum = MakeInt(GameInterface.TG_EDIT.str);
+	int iNum = int(GameInterface.TG_EDIT.str);
 	
 	if(iNum < 10000)
 	{
 		rGood = &Goods[iCurGoodIndex];
-		GameInterface.TG_EDIT.str = iNum + sti(rGood.Units);
+		GameInterface.TG_EDIT.str = iNum + int(rGood.Units);
 	}
 }
 
 void OnRemoveBtnClick()
 {
 	ref rGood;
-	int iNum = MakeInt(GameInterface.TG_EDIT.str);
+	int iNum = int(GameInterface.TG_EDIT.str);
 	
 	if(iNum > 0)
 	{
 		rGood = &Goods[iCurGoodIndex];
-		GameInterface.TG_EDIT.str = iNum - sti(rGood.Units);
+		GameInterface.TG_EDIT.str = iNum - int(rGood.Units);
 	}
 }
 

@@ -40,7 +40,7 @@ void StealthCheckHarbour_Node1()
 		case "b": 
 			// Если честь нейтральная или положительная, то результат 1 и +30, если отрицательная - то результат 2 и +10
 			reaction = SF_AddReaction("c", "", "", SF_Icon(PIRATES_TYPE, PIRATES_A));
-			storyObject.temp.c_b_state = sti(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10);
+			storyObject.temp.c_b_state = int(pchar.reputation.nobility) > (COMPLEX_REPUTATION_NEUTRAL-10);
 			if (AttributeIsTrue(storyObject, "temp.c_b_state")) bonus = 30;
 			else bonus = 10;
 			SF_SetResult(reaction, bonus);
@@ -57,7 +57,7 @@ void StealthCheckHarbour_Node1()
 	SF_SetChance(action, GetCharacterSkill(pchar, SKILL_LEADERSHIP) / 2, SKILL_LEADERSHIP);
 	SF_SetChance(action, GetCharacterSpecial(pchar, SPECIAL_L) * 2, SPECIAL_L);
 	if (HasShipTrait(pchar, "trait05")) SF_SetChance(action, 15, "trait05"); // +если трейт Фальшивые документы
-	SF_SetChance(action, makeint(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
+	SF_SetChance(action, int(SZN_GetModifierMtp(M_STEALTH_INCEPTION_BONUS, 0.0, -0.30, 0.30) * 100), "season");
 
 	SF_AddAction("b", "", "", SF_Icon("story", "fail"));
 }

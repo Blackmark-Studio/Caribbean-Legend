@@ -21,10 +21,10 @@ native int ShipSailState(int chrIdx);
 void ActivateSpecRepair(ref chref,int repairType)
 {
 	if(repairType==0)
-	{	PostEvent("evntActionRepair",BI_SLOW_REPAIR_PERIOD,"ll",sti(chref.index),0);
+	{	PostEvent("evntActionRepair",BI_SLOW_REPAIR_PERIOD,"ll",int(chref.index),0);
 	}
 	else
-	{	PostEvent("evntActionRepair",BI_FAST_REPAIR_PERIOD,"llff",sti(chref.index),1, 0.0,0.0);
+	{	PostEvent("evntActionRepair",BI_FAST_REPAIR_PERIOD,"llff",int(chref.index),1, 0.0,0.0);
 	}
 }
 
@@ -114,7 +114,7 @@ void procActionRepair()
 			{
 				if(ftmp2>1.0)
 				{
-					nMatDeltaH = makeint(ftmp2);
+					nMatDeltaH = int(ftmp2);
 					fMaterialH = ftmp2 - nMatDeltaH;
 				}
 			}
@@ -139,7 +139,7 @@ void procActionRepair()
 				ftmp2 = fMaterialS + ftmp1*fRepairS;
 				if(ftmp2>1.0)
 				{
-					nMatDeltaS = makeint(ftmp2);
+					nMatDeltaS = int(ftmp2);
 					fMaterialS = ftmp2 - nMatDeltaS;
 				}
 			}
@@ -149,14 +149,14 @@ void procActionRepair()
 			nMaterialH -= nMatDeltaH;
 			goodsName = Goods[GOOD_PLANKS].Name;
 			chref.Ship.Cargo.Goods.(goodsName) = nMaterialH;
-			chref.Ship.Cargo.Load = sti(chref.Ship.Cargo.Load) - sti(Goods[GOOD_PLANKS].Weight)*nMatDeltaH;
+			chref.Ship.Cargo.Load = int(chref.Ship.Cargo.Load) - int(Goods[GOOD_PLANKS].Weight)*nMatDeltaH;
 		}
 		if(nMatDeltaS>0)
 		{
 			nMaterialS -= nMatDeltaS;
 			goodsName = Goods[GOOD_SAILCLOTH].Name;
 			chref.Ship.Cargo.Goods.(goodsName) = nMaterialS;
-			chref.Ship.Cargo.Load = sti(chref.Ship.Cargo.Load) - sti(Goods[GOOD_SAILCLOTH].Weight)*nMatDeltaS;
+			chref.Ship.Cargo.Load = int(chref.Ship.Cargo.Load) - int(Goods[GOOD_SAILCLOTH].Weight)*nMatDeltaS;
 		}
 
 		if(hpp < InstantRepairRATE && nMaterialH>0) // boal 23.01.2004
@@ -186,14 +186,14 @@ float ProcessHullRepair(ref chref,float repPercent)
 	if(dmg==0.0) return 0.0;
 	if(repPercent>dmg) repPercent=dmg;
 	int blotsQuantity = GetBlotsQuantity(chref);
-	int repBlots = makeint(blotsQuantity*repPercent/dmg);
+	int repBlots = int(blotsQuantity*repPercent/dmg);
 	DeleteBlots(chref,repBlots);	
 	int hullElementsQty = GetDestroyedHullElementsQuantity(chref);
-	int repElements = makeint(hullElementsQty*repPercent/dmg);
+	int repElements = int(hullElementsQty*repPercent/dmg);
 	DeleteDestroyedHullElements(chref, repElements);	
-	float baseHP = makefloat(GetCharacterShipHP(chref));
+	float baseHP = float(GetCharacterShipHP(chref));
 	chref.ship.HP = baseHP+(repPercent-dmg)*baseHP/100.0;
-	if(sti(chref.ship.HP) > baseHP)
+	if(int(chref.ship.HP) > baseHP)
 	{
 		chref.ship.HP = baseHP;
 	}
@@ -228,7 +228,7 @@ float ProcessSailRepair(ref chref, float repPercent)
 			if( CheckAttribute(arSail,"mastFall") )
 			{
 				tmpstr = "ship.masts."+arSail.mastFall;
-				if( CheckAttribute(chref,tmpstr) && stf(chref.(tmpstr))>=1.0 )	{continue;}
+				if( CheckAttribute(chref,tmpstr) && float(chref.(tmpstr))>=1.0 )	{continue;}
 			}
 			fMakeRepair -= OneSailDmgRepair(chref,arGroup,arSail,fMakeRepair);
 			if(fMakeRepair<=0.0) {break;}
@@ -259,13 +259,13 @@ float OneSailDmgRepair(ref chref, aref arSailNode, aref arSail, float fDmgRepair
 {
 	if(fDmgRepair<=0.0) return 0.0;
 	if (!CheckAttribute(arSail, "dmg")) return 0.0; // fix boal 18.08.06
-	float fSailDmg = stf(arSail.dmg);
+	float fSailDmg = float(arSail.dmg);
 	
 	if (fSailDmg <= 0.0 || !CheckAttribute(arSail, "hd"))  return 0.0;  // fix boal 14.09.06
 	
 	if (fDmgRepair>=fSailDmg)
 	{
-		DeleteOneSailHole( sti(chref.index), GetAttributeName(arSail), GetAttributeName(arSailNode), sti(arSail.hd), sti(arSail.hc) );
+		DeleteOneSailHole( int(chref.index), GetAttributeName(arSail), GetAttributeName(arSailNode), int(arSail.hd), int(arSail.hc) );
 		DeleteAttribute(arSailNode,GetAttributeName(arSail));
 		if( GetAttributesNum(arSailNode)==0 )
 		{
@@ -275,11 +275,11 @@ float OneSailDmgRepair(ref chref, aref arSailNode, aref arSail, float fDmgRepair
 	}
 
 	fSailDmg -= fDmgRepair;
-	float sailDmgMax = GetCharacterShipSP(chref) * stf(arSail.sp);
-	int iAfterHole = GetNeedHoleFromDmg( fSailDmg, sailDmgMax, sti(arSail.mhc) );
-	if( sti(arSail.hc) > iAfterHole )
+	float sailDmgMax = GetCharacterShipSP(chref) * float(arSail.sp);
+	int iAfterHole = GetNeedHoleFromDmg( fSailDmg, sailDmgMax, int(arSail.mhc) );
+	if( int(arSail.hc) > iAfterHole )
 	{
-		arSail.hd = DeleteOneSailHole( sti(chref.index), GetAttributeName(arSail), GetAttributeName(arSailNode), sti(arSail.hd), sti(arSail.hc)-iAfterHole );
+		arSail.hd = DeleteOneSailHole( int(chref.index), GetAttributeName(arSail), GetAttributeName(arSailNode), int(arSail.hd), int(arSail.hc)-iAfterHole );
 		arSail.hc = iAfterHole;
 	}
 	arSail.dmg = fSailDmg;
@@ -301,7 +301,7 @@ float GetAllSailsDamagePercent(ref chref)
 	
 	if(IsEntity(&worldMap))
 	{
-		if(CheckAttribute(chref,"ship.sailstatus.sailpow")) return makefloat(chref.ship.sailstatus.sailpow);
+		if(CheckAttribute(chref,"ship.sailstatus.sailpow")) return float(chref.ship.sailstatus.sailpow);
 		else 												return 100.0;
 	}
 	
@@ -323,8 +323,8 @@ float GetAllSailsDamagePercent(ref chref)
 			arSail = GetAttributeN(arGroup, j);
 			if (CheckAttribute(arSail, "sp") && CheckAttribute(arSail, "hc") && CheckAttribute(arSail, "mhc")) 
 			{
-				float fSailPow = GetCharacterShipSP(chref) * stf(arSail.sp);
-				float fSailDmg = GetNeedDmgFromHole(sti(arSail.hc),fSailPow, sti(arSail.mhc));
+				float fSailPow = GetCharacterShipSP(chref) * float(arSail.sp);
+				float fSailDmg = GetNeedDmgFromHole(int(arSail.hc),fSailPow, int(arSail.mhc));
 				SailPow += fSailPow;
 				SailDmg += fSailDmg;
 			}
@@ -401,7 +401,7 @@ void DeleteDestroyedHullElements(ref chref, int repElements)
 int GetNeedHoleFromDmg(float sailDmg, float sailDmgMax, int maxHoleCount)
 {
 	if(sailDmgMax<=0.0) return 0;
-	int holeNeed = makeint(sailDmg/sailDmgMax*maxHoleCount);
+	int holeNeed = int(sailDmg/sailDmgMax*maxHoleCount);
 	return holeNeed;
 }
 
@@ -448,7 +448,7 @@ float CalculateShipSP(ref chref)
 			{
 				arSail.dmg = 0.0;
 			}
-			fSP -= stf(arSail.dmg);
+			fSP -= float(arSail.dmg);
 		}
 	}	
 	if(fSP < 0.0) fSP = 0.0;
@@ -460,7 +460,7 @@ float CalculateShipSP(ref chref)
 //===============================================
 int AddTextureToList(ref rHostObj, string texName, int hSize, int vSize)
 {
-	return SendMessage(rHostObj, "lsll", BI_MSG_ADD_NEWTEXTURE, texName, hSize, vSize);
+	return int(SendMessage(rHostObj, "lsll", BI_MSG_ADD_NEWTEXTURE, texName, hSize, vSize));
 }
 
 void GetTextureUVForShip(int nShipType, ref rLeft, ref rTop, ref rRight, ref rBottom)
@@ -477,8 +477,8 @@ void GetTextureUVForShip(int nShipType, ref rLeft, ref rTop, ref rRight, ref rBo
 		SetShipPictureDataByShipType(nShipType);
 		int nV = BI_intNRetValue[0] / 16;
 		int nH = BI_intNRetValue[0] - nV * 16;
-		fLeft = stf(nH) * 0.0625;
-		fTop = stf(nV) * 0.0625;//0.25;
+		fLeft = float(nH) * 0.0625;
+		fTop = float(nV) * 0.0625;//0.25;
 		fRight = fLeft + 0.0625;
 		fBottom = fTop + 0.0625;//0.25;
 	}
@@ -493,9 +493,9 @@ object objTimerInterface;
 #event_handler("evntTimerTimeOut","procTimerTimeOut");
 void InitTimerInterface()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 	DeleteAttribute( &objTimerInterface, "" );
-	objTimerInterface.timerpos = RecalculateHIcon(makeint(100 * fHtRatio))+","+RecalculateVIcon(makeint(20 * fHtRatio))+","+RecalculateHIcon(makeint(228 * fHtRatio))+","+RecalculateVIcon(makeint(40 * fHtRatio));
+	objTimerInterface.timerpos = RecalculateHIcon(int(100 * fHtRatio))+","+RecalculateVIcon(int(20 * fHtRatio))+","+RecalculateHIcon(int(228 * fHtRatio))+","+RecalculateVIcon(int(40 * fHtRatio));
 	objTimerInterface.timeroffset = "0,0,0,0";
 	objTimerInterface.timerbackuv = "0.0,0.0,1.0,0.5";
 	objTimerInterface.timerforeuv = "0.0,0.5,1.0,1.0";

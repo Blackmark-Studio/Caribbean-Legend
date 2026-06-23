@@ -14,13 +14,13 @@ void GiveCaptainOfficers(ref chr, bool upNavy)
 
 	// накинем до 20% от харизмы потому что можем
 	float score = GetSkillSum(chr) / 16;
-	score *= Bring2Range(1.0, 1.2, 1.0, 100.0, makefloat(GetSkillWithEffects(chr, SKILL_LEADERSHIP)));
+	score *= Bring2Range(1.0, 1.2, 1.0, 100.0, float(GetSkillWithEffects(chr, SKILL_LEADERSHIP)));
 
-	int goodScore = makeint(score * (1+VO_TYPE_OFFSET_SKILLS));
-	int perkPoints = makeint(score / 7);
-	int goodPerkPoints = makeint(goodScore / 7);
-	int badScore = makeint(score * (1-VO_TYPE_OFFSET_SKILLS));
-	int badPerkPoints = makeint(badScore / 7);
+	int goodScore = int(score * (1+VO_TYPE_OFFSET_SKILLS));
+	int perkPoints = int(score / 7);
+	int goodPerkPoints = int(goodScore / 7);
+	int badScore = int(score * (1-VO_TYPE_OFFSET_SKILLS));
+	int badPerkPoints = int(badScore / 7);
 	GiveCaptainVirtualOfficerNoCash(chr, perkPoints, score, JOB_NAVIGATOR);
 
 	string phantomType = GetAttributeOrDefault(chr, "PhantomType", "none");
@@ -133,7 +133,7 @@ void GiveNationFlagPerk(ref chr)
 	}
 }
 
-void GiveCaptainVirtualOfficerNoCash(ref chr, int perkPoints, int score, string job)
+void GiveCaptainVirtualOfficerNoCash(ref chr, int perkPoints, float score, string job)
 {
 	string skillName = GetSkillNameByJob(job);
 	RemoveCaptainVirtualOfficersPerksNoCash(chr, job);
@@ -167,19 +167,19 @@ void GiveCaptainVirtualOfficerNoCash(ref chr, int perkPoints, int score, string 
 	}
 }
 
-void GiveCaptainVirtualOfficer(ref chr, int perkPoints, int score, string job)
+void GiveCaptainVirtualOfficer(ref chr, int perkPoints, float score, string job)
 {
 	GiveCaptainVirtualOfficerNoCash(chr, perkPoints, score, job);
 	CT_UpdateCashTables(chr);
 }
 
-void GiveCaptainVirtualOfficerSkill(ref chr, string skillName, int score, int fixScore)
+void GiveCaptainVirtualOfficerSkill(ref chr, string skillName, float score, int fixScore)
 {
-	int currentValue = sti(chr.skill.(skillName));
+	int currentValue = int(chr.skill.(skillName));
 	int tempScore;
 	if (fixScore > 0) tempScore = fixScore;
-	// else tempScore = iClamp(1, 100, makeint(score + rand(GEN_CHAOS_VALUE) * 2 - rand(GEN_CHAOS_VALUE) * 2 - rand(GEN_CHAOS_VALUE) * 2));
-	else tempScore = iClamp(1, 100, makeint(makefloat(score) * (0.9+fRandSmall(0.20))));
+	// else tempScore = iClamp(1, 100, int(score + rand(GEN_CHAOS_VALUE) * 2 - rand(GEN_CHAOS_VALUE) * 2 - rand(GEN_CHAOS_VALUE) * 2));
+	else tempScore = iClamp(1, 100, int(float(score) * (0.9+fRandSmall(0.20))));
 	if (currentValue < tempScore) SetChrModifier(chr, SKILL_TYPE + skillName, tempScore-currentValue, "officer");
 }
 

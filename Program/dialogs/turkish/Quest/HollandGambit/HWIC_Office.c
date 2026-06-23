@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_1":
-			float fQty = stf(dialogEditStrings[6]);
+			float fQty = float(dialogEditStrings[6]);
 			npchar.quest.lcc_summ = LICENSE_GetPrice("", fQty);
 			if (fQty < 1)
 			{
@@ -232,8 +232,8 @@ void ProcessDialogEvent()
 				link.l1.go = "licence_r";
 				break;
 			}
-			dialog.text = "İçin "+FindRussianDaysString(sti(fQty))+"? Çok iyi. Bunun sana maliyeti olacak "+FindRussianDublonString(sti(npchar.quest.lcc_summ))+". Bu şartlar kabul edilebilir mi?";
-			if (PCharDublonsTotal() >= sti(npchar.quest.lcc_summ))
+			dialog.text = "İçin "+FindRussianDaysString(int(fQty))+"? Çok iyi. Bunun sana maliyeti olacak "+FindRussianDublonString(int(npchar.quest.lcc_summ))+". Bu şartlar kabul edilebilir mi?";
+			if (PCharDublonsTotal() >= int(npchar.quest.lcc_summ))
 			{
 				link.l1 = "Evet, öyleyim.";
 				link.l1.go = "licence_2";
@@ -252,8 +252,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "licence_2":
-			int iQty = sti(dialogEditStrings[6]);
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.lcc_summ));
+			int iQty = int(dialogEditStrings[6]);
+			RemoveDublonsFromPCharTotal(int(npchar.quest.lcc_summ));
 			GiveNationLicence(HOLLAND, iQty);
 			// belamour legendary edition на пару с Акулой
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "start")
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.silk_info"))
 				{
-					if (sti(pchar.reputation.nobility) > 60)
+					if (int(pchar.reputation.nobility) > 60)
 					{
 						dialog.text = "Aha, Kaptan "+GetFullName(pchar)+"! Geldiğine sevindim. Sana bir iş teklifim var.";
 						link.l1 = "İlginç! Sizi dinliyorum, efendim.";
@@ -451,12 +451,12 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 				}
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && !CheckAttribute(pchar, "questTemp.GVIKSilkBlock")) // увеличить объём поставок шёлка
 			{
 				link.l4 = "Mijnheer "+npchar.name+", ipek tedariklerinin artırılması olasılığını görüşmek isterim.";
 				link.l4.go = "UpgradeSilk";
 			}
-			if(sti(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
+			if(int(pchar.questTemp.GVIKSilk) >= 1 && CheckAttribute(pchar, "questTemp.GVIKSilkPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок шёлка, если в первый раз не принесли
 			{
 				link.l4 = "Altınlarınızı getirdim, Mijnheer "+npchar.name+". Lütfen onları kabul edin.";
 				link.l4.go = "UpgradeSilk_Agreed";

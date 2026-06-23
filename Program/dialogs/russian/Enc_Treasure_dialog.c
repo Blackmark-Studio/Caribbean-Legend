@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			{
 				dialog.Text = "Стоит всего "+FindRussianMoneyString(iTreasureMapPesosCost)+"."; // Addon-2016 Jason
 				Link.l1 = "Давай, заверни в красивую тряпочку.";
-				if (sti(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
+				if (int(pchar.money) >= iTreasureMapPesosCost) // Addon-2016 Jason
 				{
 				   Link.l1.go = "map_treasure_buy";
 				}
@@ -99,9 +99,9 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.Text = "Стоит всего "+FindRussianDublonString(sti(NPChar.TreasureMoney))+"."; // Addon-2016 Jason
+				dialog.Text = "Стоит всего "+FindRussianDublonString(int(NPChar.TreasureMoney))+"."; // Addon-2016 Jason
 				Link.l1 = "Давай, заверни в красивую тряпочку.";
-				if (PCharDublonsTotal() >= sti(NPChar.TreasureMoney)) // Addon-2016 Jason
+				if (PCharDublonsTotal() >= int(NPChar.TreasureMoney)) // Addon-2016 Jason
 				{
 				   Link.l1.go = "map_treasure_buy";
 				}
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Спасибо!";
 			Link.l1.go = "exit";
 			if(bPesosMap) AddMoneyToCharacter(pchar, -iTreasureMapPesosCost);
-			else RemoveDublonsFromPCharTotal(sti(NPChar.TreasureMoney));// Addon-2016 Jason
+			else RemoveDublonsFromPCharTotal(int(NPChar.TreasureMoney));// Addon-2016 Jason
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Temp_treasure";
 			npchar.LifeDay = 0; // продал и свалил, если дуэль, то продлится у него жизнь

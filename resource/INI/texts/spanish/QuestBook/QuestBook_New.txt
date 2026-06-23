@@ -1507,6 +1507,11 @@ OZ.12
 No devolví el dinero a Felipe Alarcón. No apreció ese gesto: se lanzó a atacarme. Me encargué de él sin problemas, pero parece que ahora tendré que abrirme paso luchando para salir de la ciudad.
 }
 
+OZ.13
+{
+Decidí no devolverle el libro al herrero y vendérselo al francés, y luego registré yo solo el escondite en la gruta. Parece que esta empresa resultó muy provechosa; debería prestar más atención a los rumores de la ciudad.
+}
+
 OZ.2
 {
 Ahora está claro qué causó el decaimiento de Sebastián Córdoba. Perdió un libro muy importante para su trabajo: un libro de herrería. Su situación se complica porque Javier decidió no perder el tiempo y vender el libro a un maestro armero francés. Como suele ocurrir, las desgracias rara vez vienen solas. La víspera, el herrero recibió un encargo serio del almirante Eugenio de la Torre... Cuando llegue aquí, sin duda sabrá por qué su encargo no fue cumplido. Al enterarse de que el libro cayó en manos de los franceses, según el herrero, se portará con él con suma dureza. He aceptado@<sSex> ayudar al pobre hombre. Si logro devolverle el libro, tendrá una segunda oportunidad y, espero, no repetirá sus errores, y yo siempre podré contar con los servicios de un buen herrero. Empezaré buscando a Javier; seguramente ahora mismo intenta engañar a alguien más.

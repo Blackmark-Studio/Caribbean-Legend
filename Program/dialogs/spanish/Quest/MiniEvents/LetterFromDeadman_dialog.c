@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		
 		case "Sailor_5":
 			dialog.text = "Está dirigida a cierta Marisa Caldera de Porto Bello. Sellada con cera... Lo presiento en las entrañas: esto no es cualquier tontería. Quizá sea de un capitán, quizá de un comerciante... pero seguro que no de un simple marinero como yo. Solo que no tendré tiempo de buscar a la destinataria: nuestro capitán no se anda con bromas.  ¿No quieres comprármela? Te la dejo por mil pesos. Eres capitán, para ti no será difícil dar con esta señorita. Y quién sabe, tal vez te recompense con oro, o con algo más... ya me entiendes.";
-			if (sti(pchar.Money) >= 1000)
+			if (int(pchar.Money) >= 1000)
 			{
 				link.l1 = "Bueno, entonces tal vez encuentre a tu Marisa.  De cualquier modo, no tengo nada que perder. Excepto mil pesos. Dame la carta.";
 				link.l1.go = "Sailor_6";

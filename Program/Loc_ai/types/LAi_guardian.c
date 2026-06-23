@@ -14,7 +14,7 @@
 
 
 //Инициализация
-void LAi_type_guardian_Init(aref chr)
+void LAi_type_guardian_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	bool isNew = false;
@@ -32,7 +32,7 @@ void LAi_type_guardian_Init(aref chr)
 		chr.chr_ai.type.enemy = "";
 		chr.chr_ai.type.etime = "0";
 		chr.chr_ai.type.wait = "";
-		chr.chr_ai.type.dlgwas = "0.0" //для таймера на инициализацию диалога. eddy
+		chr.chr_ai.type.dlgwas = "0.0"; //для таймера на инициализацию диалога. eddy
 		chr.chr_ai.type.bottle = rand(10)+2;
 		//Установим шаблон стояния
 		LAi_tmpl_stay_InitTemplate(chr);
@@ -64,7 +64,7 @@ void LAi_type_guardian_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_guardian_CharacterUpdate(ref chr, float dltTime)
 {
 	aref type;
 	int trg, t;
@@ -74,7 +74,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 	if(type.wait != "") return;
 	
     // boal  лечимся -->
-	float fCheck = stf(chr.chr_ai.type.bottle) - dltTime;
+	float fCheck = float(chr.chr_ai.type.bottle) - dltTime;
 	if(fCheck < 0)
 	{
 		chr.chr_ai.type.bottle = 5.0;
@@ -85,8 +85,8 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 			if(LAi_GetCharacterRelHP(chr) < 0.75)
 			{
 				dhlt = LAi_GetCharacterMaxHP(chr) - LAi_GetCharacterHP(chr);
-				btl = FindHealthForCharacter(&Characters[sti(chr.index)], dhlt);
-				DoCharacterUsedItem(&Characters[sti(chr.index)], btl);
+				btl = FindHealthForCharacter(&Characters[int(chr.index)], dhlt);
+				DoCharacterUsedItem(&Characters[int(chr.index)], btl);
 				chr.chr_ai.type.bottle = 10.0;
 			}
 		}
@@ -102,7 +102,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 		bool isValidate = false;
 		trg = LAi_tmpl_fight_GetTarget(chr);
 		//Пробуем обновить оптимальную цель
-		time = stf(type.etime) - dltTime;
+		time = float(type.etime) - dltTime;
 		type.etime = time;
 		if(trg >= 0)
 		{
@@ -111,7 +111,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 				if(!LAi_tmpl_fight_LostTarget(chr))
 				{
 					isValidate = true;
-					if (stf(LAi_grp_relations.distance) > 2.0 && time < 0) //цель далеко, попробуем сменить на ближайшую
+					if (float(LAi_grp_relations.distance) > 2.0 && time < 0) //цель далеко, попробуем сменить на ближайшую
 					{
 						isValidate = false;
 					}
@@ -156,7 +156,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 				//eddy. активация диалога у гарда c атрибутом протектора если не враг и если это не колония базовой нации.
 				if (or(CheckAttribute(chr, "protector") && !LAi_grp_alarmactive, CheckAttribute(chr, "talker")))
 				{
-					time = stf(chr.chr_ai.type.dlgwas) - dltTime;
+					time = float(chr.chr_ai.type.dlgwas) - dltTime;
 					chr.chr_ai.type.dlgwas = time;					
 					//Анализируем окружающих персонажей
 					int num = FindNearCharacters(chr, 4.0, -1.0, 180.0, 0.1, true, true);
@@ -165,7 +165,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 					{
 						for(int i = 0; i < num; i++)
 						{
-							idx = sti(chrFindNearCharacters[i].index);
+							idx = int(chrFindNearCharacters[i].index);
 							if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
 							if (CheckAttribute(chr, "talker") && idx == nMainCharacterIndex && LAi_Character_CanDialog(chr, pchar)) 
 							{	
@@ -173,7 +173,7 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 								DeleteAttribute(chr, "talker");
 								return;
 							}
-							if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
+							if(nMainCharacterIndex == int(chrFindNearCharacters[i].index))
 							{
 								break;
 							}
@@ -181,14 +181,14 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 						if(i < num)
 						{
 							//Нашли главного персонажа
-							if(stf(chr.chr_ai.type.dlgwas) <= 0.0)
+							if(float(chr.chr_ai.type.dlgwas) <= 0.0)
 							{
 								if(LAi_type_guardian_TestControl(chr)) return;
 							}
 						}
 						else
 						{
-							trg = sti(chrFindNearCharacters[0].index);
+							trg = int(chrFindNearCharacters[0].index);
 						}
 					}					
 				}
@@ -231,19 +231,19 @@ void LAi_type_guardian_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_guardian_CharacterLogin(aref chr)
+bool LAi_type_guardian_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_guardian_CharacterLogoff(aref chr)
+bool LAi_type_guardian_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_guardian_TemplateComplite(aref chr, string tmpl)
+void LAi_type_guardian_TemplateComplite(ref chr, string tmpl)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	CharacterTurnByLoc(chr, chr.chr_ai.type.group, chr.chr_ai.type.locator);
@@ -251,12 +251,12 @@ void LAi_type_guardian_TemplateComplite(aref chr, string tmpl)
 
 
 //Сообщить о желании завести диалог
-void LAi_type_guardian_NeedDialog(aref chr, aref by)
+void LAi_type_guardian_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_guardian_CanDialog(aref chr, aref by)
+bool LAi_type_guardian_CanDialog(ref chr, ref by)
 {
 	//Если просто стоим, то согласимся на диалог
 	if(chr.chr_ai.tmpl == LAI_TMPL_STAY)
@@ -264,7 +264,7 @@ bool LAi_type_guardian_CanDialog(aref chr, aref by)
 		if(LAi_CanNearEnemy(chr, 5.0)) return false;
 		return true;
 	}
-	if(sti(by.index) == nMainCharacterIndex)
+	if(int(by.index) == nMainCharacterIndex)
 	{
 		if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 		{
@@ -275,7 +275,7 @@ bool LAi_type_guardian_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_guardian_StartDialog(aref chr, aref by)
+void LAi_type_guardian_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	LAi_CharacterSaveAy(chr);
@@ -284,27 +284,27 @@ void LAi_type_guardian_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_guardian_EndDialog(aref chr, aref by)
+void LAi_type_guardian_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_CharacterRestoreAy(chr);
 }
 
 //Персонаж выстрелил
-void LAi_type_guardian_Fire(aref chr, aref enemy, float kDist, bool isFindedEnemy)
+void LAi_type_guardian_Fire(ref chr, aref enemy, float kDist, bool isFindedEnemy)
 {
 
 }
 
 //Персонаж атакован
-void LAi_type_guardian_Attacked(aref chr, aref by)
+void LAi_type_guardian_Attacked(ref chr, ref by)
 {
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG)
 	{
 		LAi_tmpl_dialog_StopNPC(chr);
 	}
 	//если наносящий удар уже таргет, нефиг крутить код и переназначать цель
-	if (LAi_tmpl_fight_GetTarget(chr) == sti(by.index)) return;	
+	if (LAi_tmpl_fight_GetTarget(chr) == int(by.index)) return;
 	//Своих пропускаем
 	if(!LAi_group_IsEnemy(chr, by)) return;
     //boal fix ai -->
@@ -324,7 +324,7 @@ void LAi_type_guardian_Attacked(aref chr, aref by)
 //Внутреннии функции
 //------------------------------------------------------------------------------------------
 
-void LAi_type_guardian_CmdAttack(aref chr)
+void LAi_type_guardian_CmdAttack(ref chr)
 {
 	chr.chr_ai.type.wait = "attack";
 	PostEvent("Event_type_guardian_Attacked", rand(5)*100, "i", chr);
@@ -338,11 +338,11 @@ void LAi_type_guardian_CmdAttack_Event()
 	if(!TestRef(chr)) return;
 	chr.chr_ai.type.wait = "";
 	if(chr.chr_ai.type.enemy == "") return;
-	int trg = sti(chr.chr_ai.type.enemy);
+	int trg = int(chr.chr_ai.type.enemy);
 	LAi_type_guardian_CmdAttack_Now(chr, trg);
 }
 
-bool LAi_type_guardian_CmdAttack_Now(aref chr, int trg)
+bool LAi_type_guardian_CmdAttack_Now(ref chr, int trg)
 {
 	if(trg < 0)
 	{
@@ -360,7 +360,7 @@ bool LAi_type_guardian_CmdAttack_Now(aref chr, int trg)
 	return true;
 }
 
-void LAi_type_guardian_Return(aref chr)
+void LAi_type_guardian_Return(ref chr)
 {
 	chr.chr_ai.type.wait = "return";
 	chr.chr_ai.type.enemy = "";
@@ -380,11 +380,11 @@ void LAi_type_guardian_Return_Event()
 }
 
 //Проверить персонажа с заданной вероятностью
-bool LAi_type_guardian_TestControl(aref chr)
+bool LAi_type_guardian_TestControl(ref chr)
 {
 	if (!CheckAttribute(chr, "protector.CheckAlways")) //флаг "опрашивать всегда" через паузу, не один раз.
 	{						
-		if (GetBaseHeroNation() == sti(chr.nation) && GetRelation2BaseNation(sti(chr.nation)) != RELATION_ENEMY && GetNationRelation2MainCharacter(sti(chr.nation)) != RELATION_ENEMY) return false;
+		if (GetBaseHeroNation() == int(chr.nation) && GetRelation2BaseNation(int(chr.nation)) != RELATION_ENEMY && GetNationRelation2MainCharacter(int(chr.nation)) != RELATION_ENEMY) return false;
 		if (!CheckAttribute(pchar, "CheckStateOk")) pchar.CheckStateOk = true; //флаг "уже проверили на входе"
 		else return false;
 	}
@@ -397,7 +397,7 @@ bool LAi_type_guardian_TestControl(aref chr)
 		chr.chr_ai.type.dlgwas = "100"; //уже поговорили
 		pchar.chr_ai.stealtDlgCooldown = 20;
 		if(!CheckAttribute(pchar,"StealtDeceptionPenalty")) pchar.StealtDeceptionPenalty = 0;
-		else pchar.StealtDeceptionPenalty = sti(pchar.StealtDeceptionPenalty)+5;
+		else pchar.StealtDeceptionPenalty = int(pchar.StealtDeceptionPenalty)+5;
 	}
 	else // belamour значит каким то образом избежали диалога
 	{

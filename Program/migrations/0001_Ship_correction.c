@@ -10,8 +10,8 @@ void ApplyMigration(ref migrationState)
         rBaseShip = &ShipsTypes[i];
         if(CheckAttribute(rBaseShip, "Power"))
         {
-            iClass = sti(rBaseShip.Class);
-            iSpec  = sti(rBaseShip.Spec);
+            iClass = int(rBaseShip.Class);
+            iSpec  = int(rBaseShip.Spec);
             switch(iSpec)
             {
                 case SHIP_SPEC_MERCHANT:	fSpec = 0.75;	break;

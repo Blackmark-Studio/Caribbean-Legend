@@ -47,16 +47,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "mtraxx_1":
-			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
+			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
             dialog.text = "지금 이 순간에 "+sTemp+", 'Rosbohom'이라는 네덜란드 선박이 호위선 한 척과 함께 우리 해역에 들어오고 있소. 에보니 목재를 가득 실었으며, 윌렘스타드에서 출항해 다른 호위선과 합류하여 유럽까지 안전하게 항해하려는 것이오. 어느 항로를 택할지는 모르겠으나, 신트마르턴을 경유할지 에스파뇰을 경유할지 알 수 없지만, 그들의 합류 지점 좌표는 알고 있소\n그곳에서 네덜란드 배를 찾아 상인을 나포하고, 화물을 내게 가져오시오. 화물이 도착하는 즉시 대가를 지불하겠소.";
 			link.l1 = "알겠습니다. 시간과 장소는?";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-			int i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-			int n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
-            dialog.text = ""+sti(pchar.questTemp.Mtraxx.Crdn.degN)+" "+i+" 북쪽과 "+sti(pchar.questTemp.Mtraxx.Crdn.degW)+" "+n+" 서쪽이오. 분명 이슬라 테소로의 남쪽이나 남서쪽 어딘가일 것이오. 나는 이런 일에 서툴러서, 뱃사람도 아니오. 하지만 그대는 다르지. 일을 끝내려면 약 닷새 정도 시간이 있소.";
+			int i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+			int n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+            dialog.text = ""+int(pchar.questTemp.Mtraxx.Crdn.degN)+" "+i+" 북쪽과 "+int(pchar.questTemp.Mtraxx.Crdn.degW)+" "+n+" 서쪽이오. 분명 이슬라 테소로의 남쪽이나 남서쪽 어딘가일 것이오. 나는 이런 일에 서툴러서, 뱃사람도 아니오. 하지만 그대는 다르지. 일을 끝내려면 약 닷새 정도 시간이 있소.";
 			link.l1 = "알겠소... 이해했소. 그럼 지체할 시간 없군!";
 			link.l1.go = "mtraxx_3";
 		break;
@@ -70,13 +70,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "mtraxx_4":
            DialogExit();
 		   pchar.questTemp.Mtraxx = "pasq_convoy";
-		   i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-           n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+		   i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+           n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
 		   AddQuestRecord("Roger_4", "3");
-		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
-		   AddQuestUserData("Roger_4", "sdegN", sti(pchar.questTemp.Mtraxx.Crdn.degN));
+		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
+		   AddQuestUserData("Roger_4", "sdegN", int(pchar.questTemp.Mtraxx.Crdn.degN));
 		   AddQuestUserData("Roger_4", "sminN", i);
-		   AddQuestUserData("Roger_4", "sdegW", sti(pchar.questTemp.Mtraxx.Crdn.degW));
+		   AddQuestUserData("Roger_4", "sdegW", int(pchar.questTemp.Mtraxx.Crdn.degW));
 		   AddQuestUserData("Roger_4", "sminW", n);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeTimeConvoy", 0, 0, 6, false);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeConvoyOver", 0, 0, 7, false);
@@ -91,16 +91,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < makeint(sti(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
+			if (iTotalTemp < int(int(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
 			{
 				dialog.text = "장난하냐, 이 녀석? 네 화물칸엔 흑단 조각 몇 개밖에 없잖아! 이건 말도 안 되는 사기지! 당장 꺼져! 마르쿠스에게 이 사실을 알릴 거다! 나가!!!";
 				link.l1 = "흠...";
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < sti(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
+			if (iTotalTemp < int(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
 			{
-				dialog.text = "로스보홈호에는 적어도 "+FindRussianQtyString(sti(pchar.questTemp.Mtraxx.Crdn.Ebony))+" 흑단이군. 왜 더 적게 가져왔소?";
+				dialog.text = "로스보홈호에는 적어도 "+FindRussianQtyString(int(pchar.questTemp.Mtraxx.Crdn.Ebony))+" 흑단이군. 왜 더 적게 가져왔소?";
 				link.l1 = "음... 있잖아, 싸움 중에 일부는 어쩔 수 없이 버려야 했어. 게다가 쥐들까지, 젠장할 놈들...";
 				link.l1.go = "mtraxx_7";
 				break;

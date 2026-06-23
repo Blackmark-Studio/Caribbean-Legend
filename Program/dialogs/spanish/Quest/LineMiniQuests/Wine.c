@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 
 	case "Wine_fort_check":
 		dialog.text = "Entonces, capitán, ¿ha traído el vino?";
-		if (sti(pchar.items.potionwine) >= 10)
+		if (int(pchar.items.potionwine) >= 10)
 		{
 			link.l1 = "Sí, lo he hecho.";
 			link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "Wine_take":
-		pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-		pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty) * 1000;
-		if (sti(pchar.items.potionwine) > 60)
+		pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+		pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty) * 1000;
+		if (int(pchar.items.potionwine) > 60)
 		{
 			dialog.text = "¡Santo San Arnulf, ruega por nosotros! ¡Eso es mucho vino! ¡Excelente! Lamentablemente, como dije, solo podemos permitirnos sesenta botellas, desafortunadamente no tenemos suficiente dinero para comprar más. Toma tus pesos y cuidaré bien de estas sesenta botellas. Por favor, guarda el resto.";
 			link.l1 = "Gracias. ¡Asegúrate de que tú y tus amigos soldados levanten una copa por mi salud!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			dialog.text = "Bienvenido de nuevo. Veamos... Has traído " + sti(pchar.questTemp.Wine.Qty) + " botellas. ¡Bien! Las tomaré. El pago es " + FindRussianMoneyString(sti(pchar.questTemp.Wine.Money)) ".";
+			dialog.text = "Bienvenido de nuevo. Veamos... Has traído " + int(pchar.questTemp.Wine.Qty) + " botellas. ¡Bien! Las tomaré. El pago es " + FindRussianMoneyString(int(pchar.questTemp.Wine.Money)) +".";
 			link.l1 = "Gracias. ¡Asegúrate de que tú y tus amigos soldados levanten un vaso a mi salud!";
 			link.l1.go = "Wine_take_1";
-			RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+			RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 		}
 		break;
 
 	case "Wine_take_1":
-		AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+		AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 		dialog.text = "Por supuesto que lo haremos, " + GetAddress_Form(NPChar) + "¡El tambor llama a asamblea, tengo que irme ahora! ¡Adiós!";
 		link.l1 = "¡Qué tengas vientos favorables y mares tranquilos, camarada!";
 		link.l1.go = "Wine_take_2";

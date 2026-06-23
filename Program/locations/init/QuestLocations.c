@@ -500,7 +500,7 @@ int LocationInitQuestLocations(int n)
 	locations[n].models.always.town.sea_reflection = 1;
 	locations[n].models.always.L1 = "Curacao_signsA";
 	locations[n].models.always.L2 = "Curacao_signsB";
-    locations[n].models.always.L2.tech = "DLightModel"
+    locations[n].models.always.L2.tech = "DLightModel";
 	locations[n].models.always.locators = "Curacao_locators";
 	locations[n].models.always.grassPatch = "Curacao_grass";
 	locations[n].models.always.seabed = "Curacao_sb";

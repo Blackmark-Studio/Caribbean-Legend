@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_huber_Init(aref chr)
+void LAi_type_huber_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -24,7 +24,7 @@ void LAi_type_huber_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_huber_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_huber_CharacterUpdate(ref chr, float dltTime)
 {	
 	int num;
 	float locx, locy, locz;
@@ -55,7 +55,7 @@ void LAi_type_huber_CharacterUpdate(aref chr, float dltTime)
 		num = FindNearCharacters(chr, 10.0, -1.0, 180.0, 0.01, true, true);
 		for(int i = 0; i < num; i++)
 		{
-			if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
+			if(nMainCharacterIndex == int(chrFindNearCharacters[i].index))
 			{					
 				//нашли ГГ, проверяем, не в сундуке ли.						
 				if (bMainCharacterInBox && !HasPerk(pchar, "Quiet"))
@@ -81,30 +81,30 @@ void LAi_type_huber_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_huber_CharacterLogin(aref chr)
+bool LAi_type_huber_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_huber_CharacterLogoff(aref chr)
+bool LAi_type_huber_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_huber_TemplateComplite(aref chr, string tmpl)
+void LAi_type_huber_TemplateComplite(ref chr, string tmpl)
 {
 	LAi_tmpl_player_InitTemplate(chr);
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_huber_NeedDialog(aref chr, aref by)
+void LAi_type_huber_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_huber_CanDialog(aref chr, aref by)
+bool LAi_type_huber_CanDialog(ref chr, ref by)
 {
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG) return false;
@@ -113,7 +113,7 @@ bool LAi_type_huber_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_huber_StartDialog(aref chr, aref by)
+void LAi_type_huber_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
 	//LAi_tmpl_stay_InitTemplate(chr);
@@ -123,7 +123,7 @@ void LAi_type_huber_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_huber_EndDialog(aref chr, aref by)
+void LAi_type_huber_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 	LAi_SetHuberSitAnimation(chr);
@@ -136,13 +136,13 @@ void LAi_type_huber_Fire(aref attack, aref enemy, float kDist, bool isFindedEnem
 
 
 //Персонаж атакован
-void LAi_type_huber_Attacked(aref chr, aref by)
+void LAi_type_huber_Attacked(ref chr, ref by)
 {
 	
 }
 
 //Найти врага
-int LAi_type_huber_FindEnemy(aref chr, int num)
+int LAi_type_huber_FindEnemy(ref chr, int num)
 {
 	if(num <= 0) return -1;
 	int i, idx;
@@ -150,7 +150,7 @@ int LAi_type_huber_FindEnemy(aref chr, int num)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
@@ -158,7 +158,7 @@ int LAi_type_huber_FindEnemy(aref chr, int num)
 	{		
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) return idx;
 		}
 	}

@@ -35,16 +35,16 @@ int AddSPECIALValue(ref _refCharacter, string _skillName, int _add)
     
     if (CheckAttribute(_refCharacter, _type + "." + _skillName))
     {
-        _refCharacter.(_type).(_skillName) = sti(_refCharacter.(_type).(_skillName)) + _add;
+        _refCharacter.(_type).(_skillName) = int(_refCharacter.(_type).(_skillName)) + _add;
     }
     else
     {
         _refCharacter.(_type).(_skillName) = _add;
     }
-    if (sti(_refCharacter.(_type).(_skillName)) < 1) {_refCharacter.(_type).(_skillName) = 1;}
-    if (sti(_refCharacter.(_type).(_skillName)) > SPECIAL_MAX) {_refCharacter.(_type).(_skillName) = SPECIAL_MAX;}
+    if (int(_refCharacter.(_type).(_skillName)) < 1) {_refCharacter.(_type).(_skillName) = 1;}
+    if (int(_refCharacter.(_type).(_skillName)) > SPECIAL_MAX) {_refCharacter.(_type).(_skillName) = SPECIAL_MAX;}
     
-    return sti(_refCharacter.(_type).(_skillName));
+    return int(_refCharacter.(_type).(_skillName));
 }
 
 void SetSPECIAL(ref _refCharacter, int _s, int _p, int _e, int _c, int _i, int _a, int _l)

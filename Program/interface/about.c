@@ -25,17 +25,17 @@ void InitInterface(string iniName)
 	int headers = 0;
 	string sValue, sAttr;
 	sValue = LanguageConvertString(aboutFileId, "headers");
-	if (sValue != "") headers = sti(sValue);
+	if (sValue != "") headers = int(sValue);
 	
 	for (int i = 1; i <= headers; i++) {
 		int lines = 0;
 		sAttr = "header_" + i;
 		sValue = LanguageConvertString(aboutFileId, sAttr + "_lines");
-		if (sValue != "") lines = sti(sValue);
+		if (sValue != "") lines = int(sValue);
 		
 		int skip = 1;
 		sValue = LanguageConvertString(aboutFileId, sAttr + "_skip");
-		if (sValue != "") skip = sti(sValue);
+		if (sValue != "") skip = int(sValue);
 		
 		sValue = LanguageConvertString(aboutFileId, sAttr + "_text");
 		AddTextToCredits(sValue);
@@ -103,7 +103,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("My_MoveText","MoveText");
     
 	interfaceResultCommand = exitCode;
-	if(CheckAttribute(&InterfaceStates,"InstantExit") && sti(InterfaceStates.InstantExit) == true)
+	if(CheckAttribute(&InterfaceStates,"InstantExit") && int(InterfaceStates.InstantExit) == true)
 		EndCancelInterface(true);
 	else
 		EndCancelInterface(false);
@@ -112,13 +112,13 @@ void IDoExit(int exitCode)
 
 void ProcessCancelExit()
 {
-	if(CheckAttribute(&InterfaceStates, "showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
+	if(CheckAttribute(&InterfaceStates, "showGameMenuOnExit") && int(InterfaceStates.showGameMenuOnExit) == true)
 	{
 		IDoExit(RC_INTERFACE_LAUNCH_GAMEMENU);
 		return;
 	}
 	IDoExit(RC_INTERFACE_ABOUT_EXIT);
-	if(!CheckAttribute(&InterfaceStates, "InstantExit") || sti(InterfaceStates.InstantExit) == false) ReturnToMainMenu();
+	if(!CheckAttribute(&InterfaceStates, "InstantExit") || int(InterfaceStates.InstantExit) == false) ReturnToMainMenu();
 }
 
 void MoveText()
@@ -129,8 +129,8 @@ void MoveText()
 	}
 	else
 	{
-		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"LOGO",0, 80, makeint(50 - fNewPos * factor), 470, makeint(250 - fNewPos * factor));
-		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"BMS",0, 120, makeint(210 - fNewPos * factor), 430, makeint(360 - fNewPos * factor));
+		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"LOGO",0, 80, int(50 - fNewPos * factor), 470, int(250 - fNewPos * factor));
+		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"BMS",0, 120, int(210 - fNewPos * factor), 430, int(360 - fNewPos * factor));
 		SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT",2, fNewPos);
 		PostEvent("My_MoveText", 20);
 		factor = 14500; // скорость лого (больше быстрее)

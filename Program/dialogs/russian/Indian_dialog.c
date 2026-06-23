@@ -468,7 +468,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "Мой муж Тагофа лучший охотник племя. О-ей! "+npchar.name+" гордиться свой муж. "+npchar.name+" часто ходить в сельва вместе с Тагофа. Далеко ходить.";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "А известна ли Тагофе дорога к испанскому городу, который бледнолицые называют Меридой?";
 					link.l1.go = "hayamee_1";
@@ -483,7 +483,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("Мой муж не ходить в сельва, "+GetSexPhrase("сын","дочь")+" моря. Он ловить и бить рыба. Хороший рыбак, о-ей!","Мой муж хороший охотник, о-ей, но он не ходить так глубоко в джунгли."), RandPhraseSimple("Ягуар ранить мой муж на охота. Теперь он сидеть деревня и делать стрелы, копья и лук, о-ей!","Шесть лун назад на мой муж в сельва напасть три воина капонг. Теперь он не ходить на охота далеко от селение, никогда! О-ей!"));
-				link.l1 = LinkRandPhrase("Очень жаль...","Вот незадача...","Какая досада..."));
+				link.l1 = LinkRandPhrase("Очень жаль...","Вот незадача...","Какая досада...");
 				link.l1.go = "exit";
 			}
 		break;
@@ -504,7 +504,7 @@ void ProcessDialogEvent()
 			dialog.text = "Нет, яланауи. Бледнолицый никогда не держать своё слово. Бледнолицый говорить - и слово сразу улетать в пустота. Капонги убить Тагофа и потом прийти в наше селение, убивать локоно.";
 			link.l1 = "Ты думаешь, эти капонги - это всё, чего вам  стоит опасаться? Ты сильно ошибаешься...";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("Индейцы вас не уважают "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("Индейцы вас не уважают "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 			dialog.text = "Локоно не верить яланауи. Яланауи обманывать индеец, делать индеец раб. Но локоно слышать твой имя, бледнолицый. Моя доверять твоя. Приходить завтра после закат, сын моря. Я быть вместе с Тагофа в той хижина. Я спросить его, пойти он с вами или нет.";
 			link.l1 = "Передай Тагофе, что я дам ему мой самый красивый пистолет. А тебе много украшений.";
 			link.l1.go = "hayamee_2";
-			notification("Индейцы вас уважают "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("Индейцы вас уважают "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		
@@ -665,6 +665,6 @@ void ProcessDialogEvent()
 			dialog.text = "Убирать оружие, яланауи, пока мы не заставить тебя это сделать!";
 			link.l1 = LinkRandPhrase("Хорошо.", "Ладно.", "Не переживай, уже убираю...");
 			link.l1.go = "exit";
-		break;  
+		break;
 	}
 }

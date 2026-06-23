@@ -1,35 +1,35 @@
-int Whr_GetColor(aref arRef, string sAttribute)
+int Whr_GetColor(ref arRef, string sAttribute)
 {
-	return sti(arRef.(sAttribute));
+	return int(arRef.(sAttribute));
 }
 
-float Whr_GetFloat(aref arRef, string sAttribute)
+float Whr_GetFloat(ref arRef, string sAttribute)
 {
     if (!CheckAttribute(arRef, sAttribute)) return 0.0;
 	string sTmpAttr = sAttribute + ".max";
 	if (CheckAttribute(arRef, sTmpAttr))
 	{
-		float fMin = stf(arRef.(sAttribute).min);
-		float fMax = stf(arRef.(sAttribute).max);
+		float fMin = float(arRef.(sAttribute).min);
+		float fMax = float(arRef.(sAttribute).max);
 		return fMin + frnd() * (fMax - fMin);
 	}
-	return stf(arRef.(sAttribute));
+	return float(arRef.(sAttribute));
 }
 
-int Whr_GetLong(aref arRef, string sAttribute)
+int Whr_GetLong(ref arRef, string sAttribute)
 {
     if (!CheckAttribute(arRef, sAttribute)) return 0;
 	string sTmpAttr = sAttribute + ".max";
 	if (CheckAttribute(arRef, sTmpAttr))
 	{
-		int iMin = sti(arRef.(sAttribute).min);
-		int iMax = sti(arRef.(sAttribute).max);
+		int iMin = int(arRef.(sAttribute).min);
+		int iMax = int(arRef.(sAttribute).max);
 		return iMin + rand(iMax - iMin - 1);
 	}
-    return sti(arRef.(sAttribute));
+    return int(arRef.(sAttribute));
 }
 
-string Whr_GetString(aref arRef, string sAttribute)
+string Whr_GetString(ref arRef, string sAttribute)
 {
 	return arRef.(sAttribute);
 }
@@ -47,7 +47,7 @@ float Whr_BlendFloat(float fBlend, float f1, float f2)
 
 int Whr_BlendLong(float fBlend, int i1, int i2)
 {
-	int i = makeint(i1 + fBlend * (i2-i1));
+	int i = int(i1 + fBlend * (i2-i1));
 	return i;
 }
 
@@ -83,10 +83,10 @@ int Whr_BlendColor(float fBlend, int col1, int col2)
 	int b1 = and(col1,255); 					// get blue color 1
 	int b2 = and(col2,255); 					// get blue color 2
 
-	int r = r1 + MakeInt(fBlend * (r2-r1));
-	int g = g1 + MakeInt(fBlend * (g2-g1));
-	int b = b1 + MakeInt(fBlend * (b2-b1));
-	int a = a1 + MakeInt(fBlend * (a2-a1));
+	int r = r1 + int(fBlend * (r2-r1));
+	int g = g1 + int(fBlend * (g2-g1));
+	int b = b1 + int(fBlend * (b2-b1));
+	int a = a1 + int(fBlend * (a2-a1));
 
 	return argb(a,r,g,b);
 }

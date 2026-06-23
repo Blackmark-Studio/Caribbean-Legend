@@ -74,12 +74,12 @@ bool LAi_IsGroupDamagableEnemy(ref attacker, ref enemy)
 
 void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 {
-    if (sti(attack.index) == GetMainCharacterIndex())
+    if (int(attack.index) == GetMainCharacterIndex())
     {
-		if (CheckAttribute(enemy, "City") && sti(enemy.nation) == PIRATE) 
+		if (CheckAttribute(enemy, "City") && int(enemy.nation) == PIRATE)
 		{
-			pchar.GenQuest.Piratekill = sti(pchar.GenQuest.Piratekill)+1;
-			log_testinfo("Репутация у пиратов изменилась и равна "+sti(pchar.GenQuest.Piratekill)+"");
+			pchar.GenQuest.Piratekill = int(pchar.GenQuest.Piratekill)+1;
+			log_testinfo("Репутация у пиратов изменилась и равна "+int(pchar.GenQuest.Piratekill)+"");
 		}
 		if (CheckAttribute(enemy, "LSC_clan")) // Jason: обиды кланов
 		{
@@ -97,14 +97,14 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 		{
 			ChangeIndianRelation(-2.5);
 		}
-		if (GetRelation2BaseNation(sti(enemy.nation)) == RELATION_ENEMY)
+		if (GetRelation2BaseNation(int(enemy.nation)) == RELATION_ENEMY)
 		{
 			if (!isSetBalde)
 			{
 				LAi_ChangeReputation(attack, -1);   // to_do
 			if (CheckAttribute(enemy, "City"))
 			{
-				ChangeCharacterHunterScore(attack, NationShortName(sti(enemy.nation)) + "hunter", 2);
+				ChangeCharacterHunterScore(attack, NationShortName(int(enemy.nation)) + "hunter", 2);
 			}
 		}
 		}
@@ -112,7 +112,7 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 		{
 			if (CheckAttribute(enemy, "City"))
 			{
-				ChangeCharacterHunterScore(attack, NationShortName(sti(enemy.nation)) + "hunter", 3);
+				ChangeCharacterHunterScore(attack, NationShortName(int(enemy.nation)) + "hunter", 3);
 			}
 		}
 		// обида нации на разборки в городе boal 19.09.05
@@ -121,14 +121,14 @@ void LAi_SetResultOfDeath(ref attack, ref enemy, bool isSetBalde)
 			// нужна проверка на дуэли и квесты
 			if (GetSummonSkillFromName(attack, SKILL_SNEAK) < rand(140)) // скрытность
 			{
-			    SetNationRelation2MainCharacter(sti(enemy.nation), RELATION_ENEMY);
+			    SetNationRelation2MainCharacter(int(enemy.nation), RELATION_ENEMY);
 		    }
 		}
 	}
 }
 // boal <--
 
-float LAi_NPC_GetAttackPreferenceWeight(aref chr, string attackType, float fOff, float fOn)
+float LAi_NPC_GetAttackPreferenceWeight(ref chr, string attackType, float fOff, float fOn)
 {
 	if(LAi_GetBladeFencingType(chr) == attackType) return fOn; 
 	return fOff;
@@ -338,7 +338,7 @@ void LAi_Location_CharacterSGFire()
 	LAi_group_Attack(attack, enemy);
 	//AddCharacterExp(attack, 100*kDmg);
 	//Наносим повреждение
-	LAi_ApplyCharacterDamage(enemy, MakeInt((5 + rand(5))*kDmg),"fire", false);
+	LAi_ApplyCharacterDamage(enemy, int((5 + rand(5))*kDmg),"fire", false);
 	//Проверим на смерть
 	LAi_CheckKillCharacter(enemy);
 }
@@ -410,7 +410,7 @@ float LAi_NPC_GetRelHeal()
 	aref chr = GetEventData();
 	if(!CheckAttribute(chr, "chr_ai.hp_bottle"))
 		return -1.0;
-	float heal = LAi_GetCharacterHP(chr) + stf(chr.chr_ai.hp_bottle);
+	float heal = LAi_GetCharacterHP(chr) + float(chr.chr_ai.hp_bottle);
 	float maxhp = LAi_GetCharacterMaxHP(chr);
 	if(heal > maxhp)
 		heal = maxhp;
@@ -480,7 +480,7 @@ bool LAi_Chr_CheckEnergy()
         case "strafe_l":    needEnergy = 3.0;    break;
         case "strafe_r":    needEnergy = 3.0;    break;
     } */
-	if (stf(chr.chr_ai.energy) >= needEnergy)
+	if (float(chr.chr_ai.energy) >= needEnergy)
 	{
 		res = true;
 		if (action != SPRINT_MOVE) Lai_CharacterChangeEnergy(chr, -needEnergy);
@@ -488,14 +488,14 @@ bool LAi_Chr_CheckEnergy()
 	return res;
 }
 
-void ChickenGod_KhopeshKill(aref chr) {
+void ChickenGod_KhopeshKill(ref chr) {
 	sld = ItemsFromID("khopesh1");
 	if (!CheckAttribute(sld, "kills")) {
 		sld.kills = 0;
 	}
 	
-	sld.kills = sti(sld.kills) + 1;
-	if (sti(sld.kills) >= 113) {
+	sld.kills = int(sld.kills) + 1;
+	if (int(sld.kills) >= 113) {
 		TakeNItems(chr, "khopesh1", -1);
 		TakeNItems(chr, "khopesh3", +1);
 		EquipCharacterbyItem(chr, "khopesh3");
@@ -522,7 +522,7 @@ bool LAi_ShotOnlyEnemy()
 void AimingUpdate()
 {
 	float fTime = GetEventData();
-	int isFindedTarget = GetEventData();
+	bool isFindedTarget = bool(GetEventData());
 	aref target = GetEventData();
 	BI_CrosshairRefresh(fTime, isFindedTarget, target);
 }
@@ -541,7 +541,7 @@ int GetShardsQuantity()
 	if(IsBulletGrape(sBullet))
 	{
 		if(CheckAttribute(chr, "chr_ai."+sType+".shards"))
-			return sti(chr.chr_ai.(sType).shards);
+			return int(chr.chr_ai.(sType).shards);
 	}
 	return 1;
 }
@@ -560,41 +560,56 @@ aref GetShotParams()
 	return arShards;
 }
 
-void ResetCritChanceBonus(aref chr)
+void ResetCritChanceBonus(ref chr)
 {
 	chr.chr_ai.crit_counter = 0;
 }
 
 
-float Lai_UpdateEnergyPerDltTime(aref chr, float curEnergy, float dltTime)
+float LAi_HPRecoverySpeed(ref chr)
+{
+	aref landTable = CT_GetTable(chr, CT_LAND);
+	return landTable.(kstring(M_HP_RECOVERY_MLT))$float(1.0);
+}
+
+float LAi_EnergyRecoverySpeed(ref chr)
+{
+	aref landTable = CT_GetTable(chr, CT_LAND);
+	return landTable.(kstring(M_ENERGY_RECOVERY_MLT))$float(1.0);
+}
+
+float Lai_UpdateEnergyPerDltTime(ref chr, float curEnergy, float dltTime, float fBaseEnergy, float fEnergyMax)
 {
 	float fMultiplier = 1.6666667;
-	
-	if(CheckAttribute(chr,"chr_ai.energy") && CheckAttribute(chr,"chr_ai.energyMax"))
-	{
-		if(stf(chr.chr_ai.energy) < stf(chr.chr_ai.energyMax)*0.1) fMultiplier = 3.0;
-	}
-	if(CheckCharacterPerk(chr, "Energaiser")) // скрытый перк боссов и ГГ
+
+
+	if(fBaseEnergy < fEnergyMax*0.1) fMultiplier = 3.0;
+	fMultiplier *= LAi_EnergyRecoverySpeed(chr);
+	/*if("perks.list.Energaiser" in chr) // скрытый перк боссов и ГГ
 	{
 		fMultiplier = fMultiplier * 1.5;
 	}
-	if(CheckCharacterPerk(chr, "Tireless")) 
+
+	if("perks.list.Tireless" in chr)
 	{
 		fMultiplier = fMultiplier * (1 + PERK_VALUE_TIRELESS);
 	}
-	if(CheckCharacterPerk(chr, "HT3")) 
+
+	if("perks.list.HT3" in chr)
 	{
 		fMultiplier = fMultiplier * 1.15;
-	}
-	if(GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
+	}*/
+	if (GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
 	{
 		fMultiplier *= 1.0 + GetHungmanBonus(chr, "energy");
 	}
 
 	bool bPeace = true;
-	if(CheckAttribute(chr, "chr_ai.group") && chr.chr_ai.group == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm())
+	string sGroup = chr.chr_ai.group$string("");
+	string sTempl = chr.chr_ai.tmpl$string("");
+	if(sGroup == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm())
 		bPeace = false;
-	else if(CheckAttribute(chr, "chr_ai.tmpl") && chr.chr_ai.tmpl == LAI_TMPL_FIGHT)
+	else if(sTempl == LAI_TMPL_FIGHT)
 		bPeace = false;
 	if(bPeace)
 		fMultiplier *= 3.0;
@@ -620,7 +635,7 @@ float LAi_GetAdditionalMeleeDist()
 {
 	aref attack = GetEventData();
 	string sAttackType = GetEventData();
-	return 0.0
+	return 0.0;
 }
 
 #event_handler("Event_GetAdditionalMeleeAng", "LAi_GetAdditionalMeleeAng");
@@ -653,7 +668,7 @@ float LAi_GetFireRepulse()
 int NPC_Event_EnableCancel()
 {
 	aref chr = GetEventData();
-	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", string(GEN_COMMONER)))
 	{
 		int diff = GetNormalizedDifficultyLevel();
 		if(diff < 2)	// нпс разряда commoner не умеет прерывать атаки на первых двух сложностях
@@ -675,7 +690,7 @@ float NPC_GetCancelDistProb()
 	float fSkillMin, fSkillMax, fProbMin, fProbMax;
 	float fSkill = LAi_GetCharacterFightLevel(chr);
 	fProbMin = 0.0;
-	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", string(GEN_COMMONER)))
 	{
 		fSkillMax = 1.0;
 		if(GetNormalizedDifficultyLevel() > 2)
@@ -708,7 +723,7 @@ float NPC_GetCancelParryProb()
 	float fSkill = LAi_GetCharacterFightLevel(chr);
 	fProbMin = 0.0;
 	fSkillMax = 1.0;
-	if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+	if(CheckAttributeEqualTo(chr, "personality.powerLvl", string(GEN_COMMONER)))
 	{
 		if(GetNormalizedDifficultyLevel() > 2)
 		{
@@ -746,7 +761,7 @@ int NPC_Event_GetCancelFast()
 		float fSkill = LAi_GetCharacterFightLevel(chr);
 		fProbMin = 0.0;
 		fSkillMax = 1.0;
-		if(CheckAttributeEqualTo(chr, "personality.powerLvl", GEN_COMMONER))
+		if(CheckAttributeEqualTo(chr, "personality.powerLvl", string(GEN_COMMONER)))
 		{
 			if(GetNormalizedDifficultyLevel() > 2)
 			{

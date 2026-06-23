@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "那么, 船长, 你把酒带来了吗? ";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "是的, 带来了。 ";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "圣阿诺夫保佑我们! 这么多酒! 太棒了! 遗憾的是, 正如我所说, 我们最多只能买60瓶, 很抱歉我们没有足够的钱买更多。 拿着你的比索, 我会好好保管这60瓶酒的。 剩下的请你留着。 ";
 				link.l1 = "谢谢。 请确保你和你的士兵朋友们为我的健康干杯! ";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "欢迎回来。 让我看看... 你带来了"+sti(pchar.questTemp.Wine.Qty)+"瓶。 不错! 我收下了。 报酬是" + FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))+"。 ";
+				dialog.text = "欢迎回来。 让我看看... 你带来了"+int(pchar.questTemp.Wine.Qty)+"瓶。 不错! 我收下了。 报酬是" + FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+"。 ";
 				link.l1 = "谢谢。 请确保你和你的士兵朋友们为我的健康干杯! ";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "我们一定会的, " + GetAddress_Form(NPChar) + "! 鼓声响起, 我得走了。 再见! ";
 			link.l1 = "顺风航行, 伙计! ";
 			link.l1.go = "Wine_take_2";

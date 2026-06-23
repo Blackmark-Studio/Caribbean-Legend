@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // у себя
 					dialog.text = "А? Что ты врываешься ко мне, словно здесь пожар? Что ты себе позволяешь?";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
-				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+int(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
-				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+int(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Ну, это ещё не конфликт - так, небольшое недоразумение, хе-хе. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
-				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+int(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
+				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+int(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("Вы отдали "+sti(npchar.quest.price)+" дублонов");
+			Log_Info("Вы отдали "+int(npchar.quest.price)+" дублонов");
 			dialog.text = "Замечательно! Теперь присаживайтесь, отдохните. До тех пор, пока я не улажу все вопросы, вам лучше побыть в моей каюте. А то не дай Бог, опять бед натворите, любезнейший.";
 			link.l1 = "Хорошо...";
 			link.l1.go = "peace";

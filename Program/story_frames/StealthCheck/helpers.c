@@ -23,7 +23,7 @@ void StealthCheck_EnterTown(string type, int status)
 // iNation города, куда проникаем
 int StealthCheck_Nation()
 {
-	return sti(Colonies[FindColony(storyObject.context.colonyId)].nation);
+	return int(Colonies[FindColony(storyObject.context.colonyId)].nation);
 }
 
 // Есть торговая лицензия ИЛИ верительная грамота по квесту

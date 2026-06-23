@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 
 		case "OZ_Shuler_5":
 			dialog.text = "Parece que no me entiendes. Lo dejé claro: necesito el dinero ahora mismo. No en una semana, ni en un mes, ni cuando el herrero lo junte - ahora mismo. Me largo de esta maldita isla cuanto antes. Así que, o me das toda la suma ahora, o el libro va a parar a los franceses, y tú empeñas tu honor ante el verdugo del almirante.";
-			if (sti(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
+			if (int(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
 				link.l1 = "Hagamos esto: juguemos. Mis cien mil contra el libro. Si ganas, te vas de la isla con una fortuna. Si pierdes, me quedo con el libro. ¿O solo juegas con los que ven cartas por primera vez?";
 				link.l1.go = "OZ_Shuler_6";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Felip_11":
 			dialog.text = "¡Capitán! Ya me han informado de que Javier partió al otro mundo por su culpa. ¡Y le pedí que no lo matara antes de tiempo! Espero que esté aquí para devolverme mi dinero.";
-			if (sti(pchar.Money) >= 100000)
+			if (int(pchar.Money) >= 100000)
 			{
 				link.l1 = "Exactamente. Logré encontrar su escondite, en el que había cien mil pesos. Es todo el dinero que tenía.";
 				link.l1.go = "OZ_Felip_12";

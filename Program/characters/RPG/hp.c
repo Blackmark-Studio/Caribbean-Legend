@@ -11,12 +11,12 @@ float GetCharacterBaseHPValue(ref chr)
 }
 
 //Получить хп персонажа
-float LAi_GetCharacterHP(aref chr)
+float LAi_GetCharacterHP(ref chr)
 {
 	float curHp = 0.0;
 	if(CheckAttribute(chr, "chr_ai.hp"))
 	{
-		curHp = stf(chr.chr_ai.hp);
+		curHp = float(chr.chr_ai.hp);
 	}
 	float maxHp = LAi_GetCharacterMaxHP(chr);
 	if(curHp > maxHp) curHp = maxHp;
@@ -28,11 +28,11 @@ float LAi_GetCharacterHP(aref chr)
 //Получить максимальные хп персонажа
 float LAi_GetCharacterMaxHP(ref chr)
 {
-	return GetAttributeFloatOrDefault(chr, "chr_ai.hp_max", BASE_HP)
+	return GetAttributeFloatOrDefault(chr, "chr_ai.hp_max", BASE_HP);
 }
 
 //Получить относительные хп персонажа 0..1
-float LAi_GetCharacterRelHP(aref chr)
+float LAi_GetCharacterRelHP(ref chr)
 {
 	float hp = LAi_GetCharacterHP(chr);
 	float maxhp = LAi_GetCharacterMaxHP(chr);

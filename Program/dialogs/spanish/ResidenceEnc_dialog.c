@@ -29,13 +29,13 @@ void ProcessDialogEvent()
 		LAi_SetOwnerTypeNoGroup(npchar);
 		LAi_group_Attack(NPChar, Pchar);
 		if (rand(3) != 1)
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 	//--------------------------------- леди в резиденции ---------------------------------
 	case "ResWoman":
 		NextDiag.TempNode = "ResWoman";
-		if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && sti(npchar.nation) == SPAIN)
+		if (LAi_grp_playeralarm <= 0 && CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2") && !CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.o2.Done") && !CheckAttribute(npchar, "quest.chickengod") && int(npchar.nation) == SPAIN)
 		{
 			link.chickengod = "Señora, por favor discúlpeme, pero me pidieron que le dijera que tiene... una cita dentro de una antigua pirámide pagana.";
 			link.chickengod.go = "chickengod";
@@ -59,7 +59,7 @@ void ProcessDialogEvent()
 		link.l1.go = "exit_setOwner";
 		LAi_group_Attack(NPChar, Pchar);
 		if (rand(3) != 1)
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 	//--------------------------------- слуга в резиденции ---------------------------------
 	case "ResMan":
@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 		link.l1.go = "fight";
 		LAi_group_Attack(NPChar, Pchar);
 		if (rand(3) != 1)
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 	//--------------------------------- солдат в резиденции ---------------------------------
 	case "ResGuard":
@@ -103,8 +103,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "chickengod":
-		pchar.questTemp.ChickenGod.Tasks.o2.Counter = sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) + 1;
-		if (sti(pchar.questTemp.ChickenGod.Tasks.o2.Counter) >= 3)
+		pchar.questTemp.ChickenGod.Tasks.o2.Counter = int(pchar.questTemp.ChickenGod.Tasks.o2.Counter) + 1;
+		if (int(pchar.questTemp.ChickenGod.Tasks.o2.Counter) >= 3)
 		{
 			dialog.text = "Ah, sí. ¡Finalmente! Estoy listo para ir contigo, capitán.";
 			link.l1 = "¿Así nomás? Señora, ¿está segura de que esto es lo que quiere?";

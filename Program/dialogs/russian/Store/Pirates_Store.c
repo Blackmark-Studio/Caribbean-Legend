@@ -50,16 +50,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "mtraxx_1":
-			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
+			string sTemp = GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")));
             dialog.text = "В данный момент к нашим водам приближается голландский корабль из Виллемстада - "+sTemp+" под названием 'Розбоом' с трюмом, полным чёрного дерева, в сопровождении одного корабля охранения. Каким маршрутом он идёт, через Синт-Маартен или через Эспаньолу, мне неведомо, но я точно знаю дату и координаты места, где этот караван встретится с третьим голландским кораблём, и под его охраной конвой двинется на север, в Европу\nВаша задача - найти голландцев в указанном мной месте, отбить 'Розбоом', захватить весь его груз и доставить мне. С вами рассчитаемся сразу же после доставки товара.";
 			link.l1 = "Задача ясна. Место и день?";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-			int i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-			int n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
-            dialog.text = "Встреча голландцев назначена в следующем месте: "+sti(pchar.questTemp.Mtraxx.Crdn.degN)+" градусов "+i+" минут северной широты, "+sti(pchar.questTemp.Mtraxx.Crdn.degW)+" градусов "+n+" минут западной долготы. Это где-то на юг или юго-запад от Исла-Тесоро, я в этом плохо соображаю, вы моряк - разберётесь. Дата - через 5 дней, не считая сегодняшний день.";
+			int i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+			int n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+            dialog.text = "Встреча голландцев назначена в следующем месте: "+int(pchar.questTemp.Mtraxx.Crdn.degN)+" градусов "+i+" минут северной широты, "+int(pchar.questTemp.Mtraxx.Crdn.degW)+" градусов "+n+" минут западной долготы. Это где-то на юг или юго-запад от Исла-Тесоро, я в этом плохо соображаю, вы моряк - разберётесь. Дата - через 5 дней, не считая сегодняшний день.";
 			link.l1 = "Сейчас все запишем... понятно. Ну, тогда не будем терять времени!";
 			link.l1.go = "mtraxx_3";
 		break;
@@ -73,13 +73,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "mtraxx_4":
            DialogExit();
 		   pchar.questTemp.Mtraxx = "pasq_convoy";
-		   i = sti(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
-           n = sti(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
+		   i = int(pchar.questTemp.Mtraxx.Crdn.minN2)-10;
+           n = int(pchar.questTemp.Mtraxx.Crdn.minW2)-10;
 		   AddQuestRecord("Roger_4", "3");
-		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
-		   AddQuestUserData("Roger_4", "sdegN", sti(pchar.questTemp.Mtraxx.Crdn.degN));
+		   AddQuestUserData("Roger_4", "sShip", GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(pchar.questTemp.Mtraxx.Crdn.Ship), "Name")+ "Gen")));
+		   AddQuestUserData("Roger_4", "sdegN", int(pchar.questTemp.Mtraxx.Crdn.degN));
 		   AddQuestUserData("Roger_4", "sminN", i);
-		   AddQuestUserData("Roger_4", "sdegW", sti(pchar.questTemp.Mtraxx.Crdn.degW));
+		   AddQuestUserData("Roger_4", "sdegW", int(pchar.questTemp.Mtraxx.Crdn.degW));
 		   AddQuestUserData("Roger_4", "sminW", n);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeTimeConvoy", 0, 0, 6, false);
 		   SetFunctionTimerCondition("Mtraxx_PasqualeConvoyOver", 0, 0, 7, false);
@@ -94,16 +94,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < makeint(sti(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
+			if (iTotalTemp < int(int(pchar.questTemp.Mtraxx.Crdn.Ebony)/4))
 			{
 				dialog.text = "Вы издеваетесь, молодой человек? В ваших трюмах жалкие крохи от того количества чёрного дерева, что было на 'Розбоом'! Вы меня нагло надули! Это вам даром не пройдёт - я пожалуюсь Маркусу Тираксу! Убирайтесь вон!!";
 				link.l1 = "Гм...";
 				link.l1.go = "mtraxx_6";
 				break;
 			}
-			if (iTotalTemp < sti(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
+			if (iTotalTemp < int(pchar.questTemp.Mtraxx.Crdn.Ebony)-20)
 			{
-				dialog.text = "На 'Розбоом' должно было быть не меньше "+FindRussianQtyString(sti(pchar.questTemp.Mtraxx.Crdn.Ebony))+" чёрного дерева. Почему вы привезли меньше?";
+				dialog.text = "На 'Розбоом' должно было быть не меньше "+FindRussianQtyString(int(pchar.questTemp.Mtraxx.Crdn.Ebony))+" чёрного дерева. Почему вы привезли меньше?";
 				link.l1 = "Так это... часть груза пришлось бросить в бою. И ещё крысы сожрали, треклятые...";
 				link.l1.go = "mtraxx_7";
 				break;

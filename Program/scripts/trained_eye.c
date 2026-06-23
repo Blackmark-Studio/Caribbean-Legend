@@ -18,7 +18,7 @@ string QuickGlanceText(ref chr)
 	return " – " + DLGO("_" + typeName + traitPart, nullptr);
 }
 
-int GetCargoPoints(string goodIdx)
+int GetCargoPoints(int goodIdx)
 {
 	switch (goodIdx)
 	{

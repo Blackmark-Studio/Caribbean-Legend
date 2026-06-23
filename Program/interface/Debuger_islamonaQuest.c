@@ -354,7 +354,7 @@ void ProcCommand()
 /*
 float GetShipMaxNeededValue(int iShipType, string _param)
 {
-	float NeededValue = makefloat(GetBaseShipParamFromType(iShipType, _param));
+	float NeededValue = float(GetBaseShipParamFromType(iShipType, _param));
 	switch (_param)
 	{
 		case "speedrate":
@@ -460,8 +460,8 @@ bool AddTestCube(string cubePrefix) {
 	aref cube;
 	makearef(cube, loc.cubes.(cubePrefix));
 	
-	int cur = sti(cube.cur);
-	int max = sti(cube.max);
+	int cur = int(cube.cur);
+	int max = int(cube.max);
 	
 	if (cur < max) {
 		cur++;
@@ -485,7 +485,7 @@ int CountTestPolygons() {
 	
 	for (int i = 0; i < qty; i++) {
 		cube = GetAttributeN(cubes, i);
-		total += sti(cube.cur) * sti(cube.polygons);
+		total += int(cube.cur) * int(cube.polygons);
 	}
 	return total;
 }
@@ -671,18 +671,18 @@ void CalculateInfoDataF3()
         if (CheckAttribute(mc, "Ship.pos.x"))
         {
             totalInfo = totalInfo + NewStr() + mc.location + "     ship(x,z,y)= " + mc.Ship.pos.x + ", " + mc.Ship.pos.z + ", " + mc.Ship.Ang.y;
-            totalInfo = totalInfo + NewStr() + " Sea_Coord.X " + Sea_GetRealCoordX(makefloat(mc.Ship.pos.x)) + " Sea_Coord.Z " + Sea_GetRealCoordZ(makefloat(mc.Ship.pos.z));
+            totalInfo = totalInfo + NewStr() + " Sea_Coord.X " + Sea_GetRealCoordX(float(mc.Ship.pos.x)) + " Sea_Coord.Z " + Sea_GetRealCoordZ(float(mc.Ship.pos.z));
 
             if (false) //CheckAttribute(mc, "WMShip.Pos.x") && worldMap.island != "")
             {
                 string sTemp = mc.curIslandId;
-                float r1 = stf(worldMap.islands.(sTemp).GoMapRadius);
+                float r1 = float(worldMap.islands.(sTemp).GoMapRadius);
 
                 r1 *= WDM_MAP_TO_SEA_SCALE;
-                float d2 = GetDistance2D(stf(mc.Ship.Pos.x),
-                                         stf(mc.Ship.Pos.z),
-                                         stf(worldMap.islands.(sTemp).position.rx),
-                                         stf(worldMap.islands.(sTemp).position.rz));
+                float d2 = GetDistance2D(float(mc.Ship.Pos.x),
+                                         float(mc.Ship.Pos.z),
+                                         float(worldMap.islands.(sTemp).position.rx),
+                                         float(worldMap.islands.(sTemp).position.rz));
 
                 totalInfo = totalInfo + "         Координаты для карты radius= " + r1 + "   GetDistance2D= " + d2 + "      ";
             }
@@ -718,9 +718,9 @@ void CalculateInfoDataF3()
 */
     totalInfo = totalInfo + NewStr() + " MapShipX " + worldMap.playerShipX + " MapShipZ " + worldMap.playerShipZ + " X " + worldMap.island.x + " Z " + worldMap.island.z;
 
-    totalInfo = totalInfo + NewStr() + " Map_Coord.X " + Map_GetRealCoordX(makefloat(worldMap.playerShipX)) + " Map_Coord.Z " + Map_GetRealCoordZ(makefloat(worldMap.playerShipZ));
+    totalInfo = totalInfo + NewStr() + " Map_Coord.X " + Map_GetRealCoordX(float(worldMap.playerShipX)) + " Map_Coord.Z " + Map_GetRealCoordZ(float(worldMap.playerShipZ));
 
-    totalInfo = totalInfo + NewStr() + " Zero_Point_X " + makefloat(worldMap.zeroX) + " Zero_Point_Z " + makefloat(worldMap.zeroZ);
+    totalInfo = totalInfo + NewStr() + " Zero_Point_X " + float(worldMap.zeroX) + " Zero_Point_Z " + float(worldMap.zeroZ);
     // <
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1097,7 +1097,7 @@ void CalculateInfoDataF17()
         if (i > remInt*60 || i < (remInt-1)*60) continue;
 
         curItem = GetAttributeN(rootItems, i);
-		j = sti(GetAttributeValue(curItem));
+		j = int(GetAttributeValue(curItem));
 		totalInfo = totalInfo+"   "+i+"= "+//NewStr() + NewStr() +
         GetAttributeName(curItem);// + " : " + GetAttributeValue(curItem);
 
@@ -1143,11 +1143,11 @@ void CalculateInfoDataF19()
 {
     totalInfo = descF19;
 	// -->
-    if (sti(pchar.Fellows.Passengers.navigator) != -1)
+    if (int(pchar.Fellows.Passengers.navigator) != -1)
 	{
-	    ref chr = GetCharacter(sti(pchar.Fellows.Passengers.navigator));
+	    ref chr = GetCharacter(int(pchar.Fellows.Passengers.navigator));
 
-    	chr.Skill.FreeSkill  = sti(chr.Skill.FreeSkill) + 35;
+    	chr.Skill.FreeSkill  = int(chr.Skill.FreeSkill) + 35;
     }
     else
     {
@@ -1243,12 +1243,12 @@ void CalculateInfoDataF23()
 	// -->
     DumpAttributes(&Camera);
 	
-	float sinAx = sin(stf(Camera.ang.x));
-	float cosAx = cos(stf(Camera.ang.x));
-	float sinAy = sin(stf(Camera.ang.y));
-	float cosAy = cos(stf(Camera.ang.y));
-	float sinAz = sin(stf(Camera.ang.z));
-	float cosAz = cos(stf(Camera.ang.z));	
+	float sinAx = sin(float(Camera.ang.x));
+	float cosAx = cos(float(Camera.ang.x));
+	float sinAy = sin(float(Camera.ang.y));
+	float cosAy = cos(float(Camera.ang.y));
+	float sinAz = sin(float(Camera.ang.z));
+	float cosAz = cos(float(Camera.ang.z));
 	
 	xx = cosAz*cosAy + sinAz*sinAx*sinAy;  		
 	xy = sinAz*cosAx;  		
@@ -1342,7 +1342,7 @@ void CalculateInfoDataF24()
 	sld.equip.blade = "blade_19";
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
-	LAi_SetCharacterUseBullet(sld, "bullet");
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 50);
 	AddItems(sld, "gunpowder", 50);
 	TakeNItems(sld, "potion2", MOD_SKILL_ENEMY_RATE/2);
@@ -1350,8 +1350,8 @@ void CalculateInfoDataF24()
 	sld.cirassId = Items_FindItemIdx("cirass1"); 
 	LAi_SetImmortal(sld, true);
 	sld.SuperShooter = true;
-	sld.MultiFighter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
-	sld.MultiShooter = 1.0 + stf(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiFighter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
+	sld.MultiShooter = 1.0 + float(MOD_SKILL_ENEMY_RATE/10);
 	LAi_SetStayType(sld);
 	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS"); */
 	
@@ -1374,7 +1374,7 @@ void CalculateInfoDataF24()
 	ChangeCharacterAddressGroup(sld, "FortFrance_church", "goto", "goto1");
 	LAi_SetActorType(sld); */
 	
-	//GoldenGirl_Start();
+	//GoldenGirl_Start("");
 	//pchar.quest.goldengirl_AngerranCap_AfterBattle.over = "yes";
 	/* pchar.questTemp.Portugal.GG1 = "true";
 	sld = GetCharacter(NPC_GenerateCharacter("GG_Moreno", "Port_B", "man", "man", 35, FRANCE, -1, true, "quest"));
@@ -1561,7 +1561,7 @@ void CalculateInfoDataF25()
 	AddItems(mc, "shotgun_cartridge", 30);
 	AddItems(mc, "GunCap_colt", 30);
 	AddItems(mc, "potion2", 10);
-	LAi_SetCharacterUseBullet(mc, "shotgun_cartridge");
+	LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "shotgun_cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
 	SetHeroAutolevel(sld);
@@ -1599,7 +1599,7 @@ void CalculateInfoDataF25()
 	AddItems(sld, "cartridge", 30);
 	AddItems(sld, "GunEchin", 30);
 	AddItems(sld, "GunPowder", 30);
-	sld.quest.OfficerPrice = sti(pchar.rank)*20;
+	sld.quest.OfficerPrice = int(pchar.rank)*20;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.CompanionDisable = true;
 	sld.loyality = MAX_LOYALITY;
@@ -1616,7 +1616,7 @@ void CalculateInfoDataF25()
 	pchar.questTemp.Saga.Helena_officer = "true";
 	sld = characterFromId("Helena");
 	sld.greeting = "helena_hire";
-	sld.quest.OfficerPrice = sti(pchar.rank)*500;
+	sld.quest.OfficerPrice = int(pchar.rank)*500;
 	sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
 	sld.loyality = MAX_LOYALITY;
 	AddPassenger(pchar, sld, false);
@@ -1641,14 +1641,14 @@ void CalculateInfoDataF25()
 	GiveItem2Character(sld, "cirass4");
 	EquipCharacterbyItem(sld, "cirass4");
 	AddItems(sld, "cartridge", 50);
-	LAi_SetCharacterUseBullet(sld, "cartridge");
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
 	AddItems(sld, "potion2", 10);
 	AddItems(sld, "potion4", 5);
 	// Тонзаг
 	sld = characterFromId("Tonzag");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
 	sld.Dialog.currentnode = "hired";
-	sld.quest.OfficerPrice = sti(pchar.rank)*20;
+	sld.quest.OfficerPrice = int(pchar.rank)*20;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.loyality = MAX_LOYALITY;
 	AddPassenger(pchar, sld, false);
@@ -1678,7 +1678,7 @@ void CalculateInfoDataF25()
 	EquipCharacterbyItem(sld, "cirass2");
 	AddItems(sld, "GunEchin", 50);
 	AddItems(sld, "GunPowder", 50);
-	LAi_SetCharacterUseBullet(sld, "GunEchin");
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "GunEchin");
 	AddItems(sld, "potion2", 15);
 	AddItems(sld, "potion4", 10);
 	
@@ -1695,18 +1695,18 @@ void CalculateInfoDataF25()
 	GiveItem2Character(pchar, "suit1");
 	GiveItem2Character(pchar, "patent_fra");
 	EquipCharacterbyItem(pchar, "patent_fra");
-	Items[sti(pchar.EquipedPatentId)].TitulCur = 5; 
-	Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+	Items[int(pchar.EquipedPatentId)].TitulCur = 5;
+	Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 	//Log_Info("Вы получили мундир королевского военно-морского флота Франции");
 	ChangeCharacterNationReputation(pchar, FRANCE, 100);
 	ChangeCharacterComplexReputation(pchar, "fame", 50);
 	
 	// местоположение
 	DoQuestReloadToLocation("FortFrance_town", "reload", "reload1", "");
-	setCharacterShipLocation(pchar, "FortFrance_town"));
+	setCharacterShipLocation(pchar, "FortFrance_town");
 	setWDMPointXZ("FortFrance_town");
 	
-	//GoldenGirl_Start();
+	//GoldenGirl_Start("");
 	pchar.questTemp.Portugal = "true";
 	pchar.questTemp.Portugal.GG1 = "true"; // с Португальцем
 	
@@ -1732,7 +1732,7 @@ void CalculateInfoDataF26()
 	trace("========================================");
 
 	ref realShip;
-	int shipType = sti(characterRef.Ship.Type);
+	int shipType = int(characterRef.Ship.Type);
 
 	if(shipType != SHIP_NOTUSED) // Есть ли корабль вообще
 	{
@@ -1765,10 +1765,10 @@ void CalculateInfoDataF27()
 {
     totalInfo = descF27;
 	// -->
-	/* if ( sti(pchar.reputation.nobility) > 1)
+	/* if ( int(pchar.reputation.nobility) > 1)
 	{
-	   pchar.reputation.nobility = sti(pchar.reputation.nobility) - 10;
-	   if (sti(pchar.reputation.nobility) < 1)
+	   pchar.reputation.nobility = int(pchar.reputation.nobility) - 10;
+	   if (int(pchar.reputation.nobility) < 1)
 	   {
 	       pchar.reputation.nobility = 1;
 	   }
@@ -1777,7 +1777,7 @@ void CalculateInfoDataF27()
 	ChangeCharacterComplexReputation(pchar, "authority", 5);// репутация-авторитет
 	ChangeCharacterComplexReputation(pchar, "fame", 5);
 	
-	trace(" -- reputation " + sti(pchar.reputation.nobility));
+	trace(" -- reputation " + int(pchar.reputation.nobility));
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1792,10 +1792,10 @@ void CalculateInfoDataF28()
 {
     totalInfo = descF28;
 	// -->
-	/* if ( sti(pchar.reputation.nobility) > 1 && sti(pchar.reputation.nobility) < 100)
+	/* if ( int(pchar.reputation.nobility) > 1 && int(pchar.reputation.nobility) < 100)
 	{
-	   pchar.reputation.nobility = sti(pchar.reputation.nobility) + 10;
-	   if (sti(pchar.reputation.nobility) > 100)
+	   pchar.reputation.nobility = int(pchar.reputation.nobility) + 10;
+	   if (int(pchar.reputation.nobility) > 100)
 	   {
 	       pchar.reputation.nobility = 100;
 	   }
@@ -1803,7 +1803,7 @@ void CalculateInfoDataF28()
 	ChangeCharacterComplexReputation(pchar, "nobility", 10);// репутация-известность
 	ChangeCharacterComplexReputation(pchar, "authority", 5);// репутация-авторитет
 	ChangeCharacterComplexReputation(pchar, "fame", 5);
-	trace(" ++ reputation " + sti(pchar.reputation.nobility));
+	trace(" ++ reputation " + int(pchar.reputation.nobility));
     // <--
     totalInfo = totalInfo + NewStr() + NewStr() +
                 "Команда отработала успешно!";
@@ -1910,7 +1910,7 @@ void CalculateInfoDataF31()
 	
 	AddItems(mc, "amulet_7", 1);
 	
-	LAi_SetCharacterUseBullet(mc, "cartridge");
+	LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 	
  	SetAllPerksToChar(mc, false);
 	 	
@@ -1974,7 +1974,7 @@ void CalculateInfoDataF32()
 	//mc.ship.SP = CalculateShipSP(mc);
 
 //	trace("fail masts " + GetShipFallMastsQuantity(mc) + " ship.sp " + mc.ship.SP);
-	mc.ship.HP = sti(mc.ship.HP) - makeint(sti(mc.ship.HP)/2);
+	mc.ship.HP = int(mc.ship.HP) - int(int(mc.ship.HP)/2);
 	
 //	ShipRepair(mc);
 	
@@ -2035,18 +2035,18 @@ void CalculateInfoDataF32()
 	AddItems(mc, "amulet_7", 2);
 	
 	
-	LAi_SetCharacterUseBullet(mc, "cartridge");
+	LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 	
 // 	SetHalfPerksToChar(mc, false);
 	SetAllPerksToChar(mc, false);
 	
 	ref realShip;
-	int shipType = sti(mc.Ship.Type);
+	int shipType = int(mc.Ship.Type);
 
 	if(shipType != SHIP_NOTUSED) // Есть ли корабль вообще
 	{
 		realShip = GetRealShip(shipType);
-//		realShip.HP = sti(realShip.HP) - makeint(sti(realShip.HP)/5);
+//		realShip.HP = int(realShip.HP) - int(int(realShip.HP)/5);
 	}	
 
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
@@ -2117,7 +2117,7 @@ void CalculateInfoDataF33()
 	AddItems(mc, "bullet", 50);
 	AddItems(mc, "gunpowder", 50);
 	AddItems(mc, "grapeshot", 20);
-	LAi_SetCharacterUseBullet(mc, "cartridge");
+	LAi_SetCharacterUseBullet(mc, GUN_ITEM_TYPE, "cartridge");
 	
 	SetAllPerksToChar(mc, false);*/
 	SetCharacterGoods(mc, GOOD_SHIPSILK, 1000);
@@ -2139,8 +2139,8 @@ void CalculateInfoDataF33()
 
 void ShipRepair(ref chr)
 {
-	int hp = MakeInt(GetHullPercent(chr));
-	int sp = MakeInt(GetSailPercent(chr));	
+	int hp = int(GetHullPercent(chr));
+	int sp = int(GetSailPercent(chr));
 	trace("hp " + hp + " sp " + sp);
 	
 	// процент ремонта в день (при ремонте на глобальной карте)
@@ -2174,7 +2174,7 @@ void ShipRepair(ref chr)
 	float matQ;	
 	int shMastFall = GetShipFallMastsQuantity(chr);
 	
-	trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + makeint( (timeHull/4.0 + timeSail/6.0)) );
+	trace("timeHull " + timeHull + " timeSail " + timeSail + " time (hours) : " + int( (timeHull/4.0 + timeSail/6.0)) );
 	
 	
 	if(shMastFall > 0)
@@ -2206,7 +2206,7 @@ void ReloadByStr()
 	    {
 	        if (locations[i].type == "seashore" || locations[i].type == "mayak")
 	        {
-	            setCharacterShipLocation(pchar, loc));
+	            setCharacterShipLocation(pchar, loc);
 		        setWDMPointXZ(loc);
 	        }
 	    }

@@ -205,7 +205,7 @@ void LAi_CharacterAttack()
 	
 	/*if(attack.id == pchar.id)
 	{
-		pchar.combo.target = sti(enemy.index);
+		pchar.combo.target = int(enemy.index);
 	}   */
 	if(isBlocked == true)  // to_do
 	{
@@ -266,7 +266,7 @@ void LAi_CharacterFire()
 		if(CheckAttribute(talisman, "durability"))
 		{
 			
-			int durability = sti(talisman.durability);
+			int durability = int(talisman.durability);
 			if(durability < 2)
 			{
 				DeleteAttribute(talisman, "durability");
@@ -308,7 +308,7 @@ void LAi_CharacterFire()
 	{
 		//Заряд персонажа
 		if(!CheckAttribute(attack, "chr_ai." + sType + ".charge")) attack.chr_ai.(sType).charge = "0";
-		float charge = stf(attack.chr_ai.(sType).charge) - 1.0;
+		float charge = float(attack.chr_ai.(sType).charge) - 1.0;
 		// boal gun bullet убираем пулю после выстрела -->
 		TakeItemFromCharacter(attack, sBullet);
 		// boal gun bullet убираем пулю после выстрела <--
@@ -341,9 +341,9 @@ void LAi_CharacterFire()
 	}
 	
 	// evganat - хедшот
-	int isHeadShot = GetEventData();
+	bool isHeadShot = bool(GetEventData());
 	
-	if(CheckAttribute(attack, "chr_ai.explosion" ) && sti(attack.chr_ai.explosion) > 0)
+	if(CheckAttribute(attack, "chr_ai.explosion" ) && int(attack.chr_ai.explosion) > 0)
 	{	
 		float x, y, z;						
 		GetCharacterPos(enemy, &x, &y, &z);
@@ -351,13 +351,13 @@ void LAi_CharacterFire()
 		PlayStereoSound("Sea Battles\cannon_fire_03.wav");
 	}	
 	
-	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && sti(attack.chr_ai.(sType).multidmg) > 0)
+	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && int(attack.chr_ai.(sType).multidmg) > 0)
 	{
 		int num = FindNearCharacters(enemy, 2.5, -1.0, -1.0, 0.001, false, true);
 		for (int j = 0; j < num; j++)
 		{
 			int idx = -1;
-			if(CheckAttribute(chrFindNearCharacters[j], "index")) idx = sti(chrFindNearCharacters[j].index);	
+			if(CheckAttribute(chrFindNearCharacters[j], "index")) idx = int(chrFindNearCharacters[j].index);
 			if(idx == -1) continue;
 			ref findCh;
 			findCh = GetCharacter(idx);	
@@ -366,10 +366,10 @@ void LAi_CharacterFire()
 				LAi_ApplyCharacterFireDamage(&attack, &Characters[idx], 1, fAimingTime, isHeadShot, 1);
 			}	
 									
-			if( CheckAttribute(attack, "chr_ai."+sType+".selfdmg" ) && sti(attack.chr_ai.(sType).selfdmg) > 0 && findCh.id == attack.id && rand(4) == 1)	
+			if( CheckAttribute(attack, "chr_ai."+sType+".selfdmg" ) && int(attack.chr_ai.(sType).selfdmg) > 0 && findCh.id == attack.id && rand(4) == 1)
 			{
-				LAi_ApplyCharacterDamage(&Characters[idx], 10 + rand(sti(weapon.dmg_min) - 10), "fire", false);
-				if(stf(attack.chr_ai.hp) < 1.0) attack.chr_ai.hp = 1 + makeint(rand(10));
+				LAi_ApplyCharacterDamage(&Characters[idx], 10 + rand(int(weapon.dmg_min) - 10), "fire", false);
+				if(float(attack.chr_ai.hp) < 1.0) attack.chr_ai.hp = 1 + int(rand(10));
 			}
 		}
 	}
@@ -382,9 +382,9 @@ void LAi_CharacterFire()
 	
 	//Начисление повреждений
 	LAi_ApplyCharacterFireDamage(&attack, &enemy, 1, fAimingTime, isHeadShot, 1);
-	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && sti(attack.chr_ai.(sType).multidmg) > 0)
+	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && int(attack.chr_ai.(sType).multidmg) > 0)
 	{
-		if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) enemy.chr_ai.hp = 5;
+		if(float(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) enemy.chr_ai.hp = 5;
 		LAi_CheckKillCharacter(enemy);
 	}
 	
@@ -486,13 +486,13 @@ void LAi_Character_EndAction()
 //Dead event
 //==========================================================================================
 
-void LAi_Character_Dead_Process(aref chr)
+void LAi_Character_Dead_Process(ref chr)
 {
-	if (sti(chr.index) == nMainCharacterIndex || sti(chr.index) == sti(CharacterRef.index)) {
+	if (int(chr.index) == nMainCharacterIndex || int(chr.index) == int(CharacterRef.index)) {
 		DialogExit();
 	}
 	LAi_CharacterLogoff(chr);
-	if(sti(chr.index) != nMainCharacterIndex)
+	if(int(chr.index) != nMainCharacterIndex)
 	{
 //navy --> смерть ПГГ
 		if (CheckAttribute(chr, "PGGAi"))
@@ -565,10 +565,10 @@ void LAi_GameOver()
 //Сообщение об окончании работы темплейта
 //------------------------------------------------------------------------------------------
 
-void LAi_Character_TemplateComplite(aref chr, string tmplName)
+void LAi_Character_TemplateComplite(ref chr, string tmplName)
 {
 
-	int index = sti(chr.index);
+	int index = int(chr.index);
 	PostEvent("LAi_event_Character_TemplateComplite", 1, "ls", index, tmplName);
 
 }
@@ -597,9 +597,9 @@ void LAi_Character_TemplateComplite_Event()
 //Запрос локатора
 //------------------------------------------------------------------------------------------
 
-void LAi_Character_FreeLocator(aref chr, string group, string locator)
+void LAi_Character_FreeLocator(ref chr, string group, string locator)
 {
-	int index = sti(chr.index);
+	int index = int(chr.index);
 	PostEvent("LAi_event_Character_FreePos", 1, "lss", index, group, locator);
 }
 
@@ -638,7 +638,7 @@ void LAi_Character_FreePos_Event()
 //Запрос на диалог
 //------------------------------------------------------------------------------------------
 
-void LAi_Character_NeedDialog(aref chr, aref by)
+void LAi_Character_NeedDialog(ref chr, ref by)
 {
 	if(IsEntity(&by))
 	{
@@ -652,14 +652,14 @@ void LAi_Character_NeedDialog(aref chr, aref by)
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_Character_CanDialog(aref chr, aref by)
+bool LAi_Character_CanDialog(ref chr, ref by)
 {
 	if(IsEntity(&by))
 	{
 		bool isDisable = false;
 		if(CheckAttribute(chr, "chr_ai.disableDlg"))
 		{
-			if(sti(chr.chr_ai.disableDlg) != 0) isDisable = true;
+			if(int(chr.chr_ai.disableDlg) != 0) isDisable = true;
 		}
 		if(isDisable == false)
 		{
@@ -675,7 +675,7 @@ bool LAi_Character_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_Character_StartDialog(aref chr, aref by)
+void LAi_Character_StartDialog(ref chr, ref by)
 {
 	if(IsEntity(&by))
 	{
@@ -689,7 +689,7 @@ void LAi_Character_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_Character_EndDialog(aref chr, aref by)
+void LAi_Character_EndDialog(ref chr, ref by)
 {
 	if(IsEntity(&by))
 	{
@@ -714,12 +714,12 @@ void LAi_CharacterItemAction()
 	case "set": LAi_TieItemToCharacter(chr,nItemIndex); break;
 	}
 }
-void LAi_UntieItemFromCharacter(aref chr, int nItemIndex)
+void LAi_UntieItemFromCharacter(ref chr, int nItemIndex)
 {
 	if( nItemIndex<0 ) return;
 	SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", nItemIndex);
 }
-void LAi_TieItemToCharacter(aref chr, int nItemIndex)
+void LAi_TieItemToCharacter(ref chr, int nItemIndex)
 {
 	if( nItemIndex<0 ) return;
 
@@ -764,7 +764,7 @@ void Location_CharacterFireShards()
 	
 	if(nShots > 0)
 		LAi_ApplyCharacterFireDamage(&attack, &enemy, nEnemies, fAimingTime, false, nShots);
-	if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) 
+	if(float(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER)
 		enemy.chr_ai.hp = 5;
 	LAi_CheckKillCharacter(enemy);
 	
@@ -802,7 +802,7 @@ void Location_CharacterFireShardEnd()
 	
 	//Заряд персонажа
 	if(!CheckAttribute(attack, "chr_ai." + sType + ".charge")) attack.chr_ai.(sType).charge = "0";
-	float charge = stf(attack.chr_ai.(sType).charge) - 1.0;
+	float charge = float(attack.chr_ai.(sType).charge) - 1.0;
 	// boal gun bullet убираем пулю после выстрела -->
 	sBullet = LAi_GetCharacterBulletType(attack, sType);
 	TakeItemFromCharacter(attack, sBullet);
@@ -827,7 +827,7 @@ void Location_CharacterFireShardEnd()
 	aref weapon;
 	Items_FindItem(weaponID, &weapon);
 
-	if(CheckAttribute(attack, "chr_ai.explosion" ) && sti(attack.chr_ai.explosion) > 0)
+	if(CheckAttribute(attack, "chr_ai.explosion" ) && int(attack.chr_ai.explosion) > 0)
 		PlayStereoSound("Sea Battles\cannon_fire_03.wav");
 }
 
@@ -876,7 +876,7 @@ void Event_PerkCollection()
 	if (!HasSubStr(pchar.location.from_sea, "town")) return;
 	ref location = &Locations[FindLocation(pchar.location.from_sea)];
 	ref colony = &Colonies[FindColony(location.fastreload)];
-	if (GetRelation2BaseNation(sti(colony.nation)) == RELATION_ENEMY && !CheckNationLicence(HOLLAND)) return;
+	if (GetRelation2BaseNation(int(colony.nation)) == RELATION_ENEMY && !CheckNationLicence(HOLLAND)) return;
 	int cabinIdx = FindLocation(Get_My_Cabin());
 	if (cabinIdx < 0) return;
 	ref cabin = &locations[cabinIdx];
@@ -895,7 +895,7 @@ void Event_PerkCollection()
 		{
 			curItem = GetAttributeN(arBox, i);
 			item = ItemsFromId(GetAttributeName(curItem));
-			if (HasDescriptor(item, "Exotic")) exoticQty += sti(GetAttributeValue(curItem));
+			if (HasDescriptor(item, "Exotic")) exoticQty += int(GetAttributeValue(curItem));
 		}
 	}
 
@@ -908,7 +908,7 @@ void Event_PerkCollection()
 void CheckSlowDown(ref attack, ref enemy)
 {
 	if (!HasPerk(attack, "ShootToKill")) return;
-	SetChrModifier(enemy, M_MOVE_SPEED, -PERK_VALUE_SHOOT_TO_KILL, "ShootToKill")
+	SetChrModifier(enemy, M_MOVE_SPEED, -PERK_VALUE_SHOOT_TO_KILL, "ShootToKill");
 	CT_UpdateEquipTable(enemy);
 	CT_UpdateLandTable(enemy);
 	enemy.chr_ai.slowdown = PERK_VALUE2_SHOOT_TO_KILL;

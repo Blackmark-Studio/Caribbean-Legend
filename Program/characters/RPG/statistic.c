@@ -11,24 +11,24 @@ int Statistic_AddValue(ref _chref, string _attrName, int _add) // set and get(_a
 	
 	if(!CheckAttribute(_chref, "index")) return 0;
 	
-    if (sti(_chref.index) != GetMainCharacterIndex()) return 0; // оптимизация
+    if (int(_chref.index) != GetMainCharacterIndex()) return 0; // оптимизация
     
     if( !CheckAttribute(_chref,"Statistic." + _attrName) )
     {
         _chref.Statistic.(_attrName) = 0;
     }
-    _chref.Statistic.(_attrName) = sti(_chref.Statistic.(_attrName)) + _add;
+    _chref.Statistic.(_attrName) = int(_chref.Statistic.(_attrName)) + _add;
 
-    if (sti(_chref.Statistic.(_attrName)) < 0)
+    if (int(_chref.Statistic.(_attrName)) < 0)
     {
         _chref.Statistic.(_attrName) = 0;
     }
-    return sti(_chref.Statistic.(_attrName));
+    return int(_chref.Statistic.(_attrName));
 }
 void Statistic_KillChar(aref _attack, aref _enemy, string _attrName)
 {
 	if(_attrName == "_s") addBonusToBlade(_attack, _enemy);
-	if (sti(_attack.index) != GetMainCharacterIndex()) return; // оптимизация
+	if (int(_attack.index) != GetMainCharacterIndex()) return; // оптимизация
 	string  name = GetCharType(_enemy);
 
 		switch (name)
@@ -67,7 +67,7 @@ string GetCharType(aref _enemy)  //TO_DO переделать на тип в Н�
     string  name  	= "Warrior"; // define
     string  model 	= _enemy.model;
 	string  _type;
-	int     iNation = sti(_enemy.nation);
+	int     iNation = int(_enemy.nation);
 	
     switch (_enemy.chr_ai.type)
 	{

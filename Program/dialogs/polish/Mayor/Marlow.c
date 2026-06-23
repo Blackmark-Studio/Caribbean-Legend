@@ -42,7 +42,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("Czyś ty oszalał? Chciałeś się zabawić w rzeźnika? Wszyscy piraci są na ciebie wściekli, chłopcze, lepiej opuść to miejsce...","Wygląda na to, że oszalałeś, chłopcze. Chciałeś trochę rozprostować ręce? Bez urazy, ale nie masz tu nic do roboty. Zgiń przepadnij!");
 				link.l1 = RandPhraseSimple("Słuchaj, chcę naprawić sytuację...","Pomóż mi rozwiązać ten problem...");
@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		break;
 
         case "I_know_you_good":
-            if (sti(pchar.GenQuest.Piratekill) > 20)
+            if (int(pchar.GenQuest.Piratekill) > 20)
 			{
 				dialog.text = RandPhraseSimple("Czyś ty oszalał? Chciałeś się zabawić w rzeźnika? Wszyscy piraci są na ciebie wściekli, chłopcze, lepiej opuść to miejsce...","Wygląda na to, że oszalałeś, chłopcze. Chciałeś trochę rozprostować ręce? Bez urazy, ale nie masz tu nic do roboty. Zgiń przepadnij!");
 				link.l1 = RandPhraseSimple("Słuchaj, chcę naprawić sytuację...","Pomóż mi rozwiązać ten problem...");
@@ -264,7 +264,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ah, wreszcie. Myślałem, żeby go sprzedać temu właścicielowi plantacji z Barbadosu, będzie tu za tydzień lub dwa... Masz okup?";
 				link.l1 = "Spójrz, jest pewien mały problem... Właściwie to nie mam tyle pieniędzy. Ale jestem gotów do pracy.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "Dobrze, że go nie sprzedałeś. Oto twoje monety - 150.000 pesos. Gdzie mogę go znaleźć?"link.l2.go ="CapComission2_3";
 				}	
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			sLoc = XI_ConvertString(pchar.GenQuest.CaptainComission.Island + "Dat"); // belamour gen
 			dialog.text = "Hm... Cóż, "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+"przekonał niektórych piratów, że ich część łupu trzymana jest w naszej skrytce niedaleko od "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". Ich dwa statki '"+pchar.GenQuest.CaptainComission.ShipName1+"' i '"+pchar.GenQuest.CaptainComission.ShipName2+"' podnieśli kotwice niedawno i popłynęli do "+sLoc+"Teraz widzisz, dlaczego nie mogę ufać moim ludziom, że wykonają tę robotę?";
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 			dialog.text = "Obniżyć cenę?! Przez twoją niekompetencję straciłem swój skarb! A teraz mogę podnieść cenę! Możesz go wziąć za 200.000 pesos, jeśli chcesz, albo możesz się stąd wynosić.";
 			link.l1 = "To zbyt drogie... Żegnaj...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "Cholera, bierz swoje monety.";
 				link.l2.go = "CapComission4_5";
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 			dialog.text = "Przyniosłeś okup"+GetSexPhrase("","ла")+"Bo nie żartowałem, gdy powiedziałem, że sprzedam go plantatorom.";			
 			link.l1 = "Słuchaj, "+NPChar.name+", widzisz, sprawa wygląda tak... W sumie, nie mam takich pieniędzy. Ale jestem gotów"+GetSexPhrase(" ","а")+" odpracować.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Dobrze, że go nie sprzedałeś. Oto twoje monety - 150000 pesos. Gdzie mogę go znaleźć?"link.l2.go ="CapComission2_3";
 			}			
@@ -494,7 +494,7 @@ void ProcessDialogEvent()
 			dialog.text = "Przyniosłeś pieniądze? Nie żartowałem, mówiąc o sprzedaniu tego człowieka na plantację.";			
 			link.l1 = "Nie mam pieniędzy, "+NPChar.name+", ale nad tym pracuję.";
 			link.l1.go = "exit";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Dobrze, że go nie sprzedałeś. Oto twoje monety - 150.000 peso. Gdzie mogę go znaleźć?"link.l2.go ="CapComission2_3";
 			}			
@@ -527,7 +527,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Rozumiem... byłby to dobry handel, jeśli nie kłamiesz. Myślę, że mogę zapłacić ci za tego człowieka "+iTemp+" pesety albo podziel się ciekawymi informacjami. Wybór należy do ciebie.";
 			link.l1 = "Lepiej wezmę pesos. Mam dość tego interesu...";
 			link.l1.go = "Marginpassenger_money";
@@ -542,7 +542,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Nie ma za co, przynieś mi więcej... Do zobaczenia!";
 			link.l1 = "Powodzenia...";
 			link.l1.go = "exit";
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "13");
 			AddQuestUserData("Marginpassenger", "sShore", XI_ConvertString(pchar.GenQuest.Marginpassenger.Shore+"Dat"));//лесник - окончание в СЖ // belamour gen: Abl - это к Залив"ом", нужен дательный
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen : как-то странно, наводку даёт Захар, а в сж Добряк дефолтом
 			SetFunctionTimerCondition("Marginpassenger_SouthshoreOver", 0, 0, 7, false);
 			pchar.quest.Marginpassenger.win_condition.l1 = "location";
 			pchar.quest.Marginpassenger.win_condition.l1.location = pchar.GenQuest.Marginpassenger.Shore;
@@ -597,7 +597,7 @@ void ProcessDialogEvent()
 		case "Marginpassenger_offer_2":
 			DialogExit();
 			AddQuestRecord("Marginpassenger", "16");
-			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow")); // belamour gen 
+			AddQuestUserData("Marginpassenger", "sName", "Zachary Marlow"); // belamour gen
 			AddQuestUserData("Marginpassenger", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity+"Gen"));
 			AddQuestUserData("Marginpassenger", "sCity1", XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Southcity1+"Acc")); // лесник - окончание в СЖ
 			AddQuestUserData("Marginpassenger", "sShipName", pchar.GenQuest.Marginpassenger.ShipName1);
@@ -618,7 +618,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Nie zawracaj mi głowy swoimi tanimi gadkami. Następnym razem nie spodoba ci się wynik...";
         			link.l1 = "Zrozumiałem.";
@@ -634,7 +634,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "Mam nadzieję, że okażesz więcej szacunku i przestaniesz być niegrzeczny?";
         			link.l1 = "Możesz być pewien, Pastorze, zrobię to.";
@@ -657,7 +657,7 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		case "pirate_town":
             dialog.text = "Rozwiązać problem? Czy masz pojęcie, co narobiłeś? Tak czy inaczej, przynieś mi milion pesos, a przekonam chłopców, żeby zapomnieli o twoim czynie. Jeśli ten pomysł ci się nie podoba, to możesz iść do diabła.";
-			if (sti(Pchar.money) >= 1000000)
+			if (int(Pchar.money) >= 1000000)
 			{
 				link.l1 = "Dobrze, jestem gotów zapłacić.";
 				link.l1.go = "pirate_town_pay";

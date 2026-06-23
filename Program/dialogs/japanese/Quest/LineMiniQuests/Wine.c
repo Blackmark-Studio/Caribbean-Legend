@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "それで、船長、ワインは持ってきたのか？";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "ああ、あるぜ。";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "聖アルヌルフよ、我らのために祈りたまえ！\nすごい量のワインだな！素晴らしい！\n残念ながら、先ほど申し上げた通り、我々が買えるのは六十本だけだ。あいにく、これ以上買う金がないんだ。\nペソを受け取ってくれ、この六十本は大事に預かるよ。残りは取っておいてくれ。";
 				link.l1 = "ありがとう。君とその兵隊仲間たちで、俺の健康を祝って一杯やってくれよ！";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "おかえり。さて……持ってきたのは "+sti(pchar.questTemp.Wine.Qty)+" 瓶か。いいね！もらっていくぜ。支払いは "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "おかえり。さて……持ってきたのは "+int(pchar.questTemp.Wine.Qty)+" 瓶か。いいね！もらっていくぜ。支払いは "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "ありがとう。君とその兵隊仲間たちで、必ず俺の健康を祝って一杯やってくれよ！";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "もちろんだぜ。 "+GetAddress_Form(NPChar)+"！太鼓が集合の合図を鳴らしてる、俺はもう行かなくちゃ。じゃあな！";
 			link.l1 = "順風満帆で行けよ、相棒！";
 			link.l1.go = "Wine_take_2";

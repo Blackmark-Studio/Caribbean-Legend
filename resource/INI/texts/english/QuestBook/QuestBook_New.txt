@@ -1504,6 +1504,11 @@ OZ.12
 I did not return the money to Felipe Alarcon. He did not appreciate the gesture – he rushed to attack. I dealt with him easily, but now it seems I’ll have to fight my way out of the city.
 }
 
+OZ.13
+{
+I decided not to return the book to the blacksmith and sold it to the Frenchman instead, then searched the stash in the grotto alone. It seems this venture turned out to be very profitable — I should pay more attention to town rumors.
+}
+
 OZ.2
 {
 Now it is clear what caused Sebastian Cordoba’s loss of spirit. He lost a very important book for his work – a book of blacksmithing. His situation is made worse by the fact that Javier decided not to waste time and sell the book to a French master gunsmith. As usual, trouble rarely comes alone. The day before, the blacksmith received a serious order from Admiral Eugenio de la Torre... When he arrives here, he will certainly find out why his order was not fulfilled. Learning that the book ended up in the hands of the French, he will, according to the blacksmith, treat him very harshly. I agreed@<sSex> to help the poor man. If I manage to return the book to him, he will get a second chance, and I hope he will not repeat his mistakes, and I will always be able to count on the services of a good blacksmith. I will start by looking for Javier, he is surely now trying to swindle someone else.

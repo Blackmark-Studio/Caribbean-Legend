@@ -31,9 +31,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)//проверка на наличие корабля в порту
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Beliz") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "Sir! Złamałeś zasady regaty i muszę cię zdyskwalifikować. Przykro mi. Nie bierzesz udziału w następnej podróży. Już przygotowałem depeszę do Port-Royal.";
@@ -46,8 +46,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1+2 переход
-			dialog.text = "Zarejestrujmy cię: Kapitanie "+GetFullName(pchar)+", statek jest "+pchar.Ship.Name+"... Czas regat w godzinach to "+sti(pchar.questTemp.Regata.SecondTransitionTime)+"Zrobione, twój wynik jest zarejestrowany, możesz kontynuować swoją drogę.";
+			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1+2 переход
+			dialog.text = "Zarejestrujmy cię: Kapitanie "+GetFullName(pchar)+", statek jest "+pchar.Ship.Name+"... Czas regat w godzinach to "+int(pchar.questTemp.Regata.SecondTransitionTime)+"Zrobione, twój wynik jest zarejestrowany, możesz kontynuować swoją drogę.";
 			link.l1 = "Powiedz mi mój stopień.";
 			link.l1.go = "Regata_info";
 			}
@@ -71,7 +71,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp)));
-				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.SecondTransitionTime))
+				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < int(pchar.questTemp.Regata.SecondTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);//имя ближайшего противника

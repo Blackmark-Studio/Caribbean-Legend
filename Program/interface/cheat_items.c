@@ -878,7 +878,7 @@ void CalculateInfoDataF20()
 
 	for (i = 0; i < ITEMS_QUANTITY; i++)
 	{
-		if (CheckAttribute(&Items[i], "Atlas") && sti(Items[i].Atlas) == 1)
+		if (CheckAttribute(&Items[i], "Atlas") && int(Items[i].Atlas) == 1)
 		{
 			Map = Items[i].id;
 			TakenItems(pchar, Map, 1);
@@ -1186,7 +1186,7 @@ void ReloadByStr()
         {
             if (locations[i].type == "seashore" || locations[i].type == "mayak")
             {
-                setCharacterShipLocation(pchar, loc));
+                setCharacterShipLocation(pchar, loc);
                 setWDMPointXZ(loc);
             }
         }

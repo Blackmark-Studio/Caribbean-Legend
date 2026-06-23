@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 	case "RedChieftain_0":
 		dialog.text = "Hermano blanco perspicaz como búho, astuto como serpiente. Problema ocurriendo a indio. Gran-gran canoa de hombres blancos llega a mi aldea. Se llevan a muchos Cayman, mi gente, los ponen en su canoa y los sacan hacia la Madre de Todas las Aguas...";
 		link.l1 = "Espera... ¿estás diciendo que tu gente fue esclavizada por hombres blancos de un barco?";
-		if (sti(pchar.Basenation) == SPAIN)
+		if (int(pchar.Basenation) == SPAIN)
 			link.l1.go = "RedChieftain_2";
 		else
 			link.l1.go = "RedChieftain_1";
@@ -223,14 +223,14 @@ void ProcessDialogEvent()
 		dialog.text = LinkRandPhrase("¡Me alegra que las lágrimas de los dioses sean tuyas, hermano de Arawak!", "¡Indio agradecido, valiente rostro pálido!", "¡Toma nuestra captura, hermano blanco!");
 		link.l1 = LinkRandPhrase("¡Encantado de ayudarte!", "¡Gracias, hermano piel roja!", "¡Estupendo!");
 		link.l1.go = "exit";
-		pchar.questTemp.RedChieftain.Ind = sti(pchar.questTemp.RedChieftain.Ind) + 1;
+		pchar.questTemp.RedChieftain.Ind = int(pchar.questTemp.RedChieftain.Ind) + 1;
 		AddDialogExitQuest("RedChieftain_Pearl");
 		break;
 
 	case "RedChieftain_final":
 		chrDisableReloadToLocation = false; // открыть локацию
 		// belamour legendary edition -->
-		if (sti(pchar.questTemp.RedChieftain.Tartane) > 5)
+		if (int(pchar.questTemp.RedChieftain.Tartane) > 5)
 		{
 			dialog.text = "Canauri te agradece de nuevo, ¡hermano cara pálida! ¡Rescatas todas las canoas con el indio! Para Canauri es muy importante salvar todas las canoas porque también salvaste al nieto de Canauri, a quien el malvado cara pálida llevó a la esclavitud. De niño, a mi nieto le encantaba nadar mucho, y Canauri le dio este amuleto encantado para que el nieto no se ahogue. Ahora el nieto ya no quiere nadar y me da el amuleto para que yo pueda dártelo a ti, hermano de cara pálida. Espero que las lágrimas de los dioses y este regalo sean una recompensa suficiente por la vida de Arawak. Y ahora nos despedimos, es hora de que regresemos a nuestra aldea natal.";
 			link.l1 = "¡Buena suerte, Cunauri! ¡Me alegra que tu nieto haya sobrevivido! ¡Rezo para que este mal nunca vuelva a caer sobre ti!";
@@ -246,7 +246,7 @@ void ProcessDialogEvent()
 		{
 			// if(CheckAttribute(pchar,"questTemp.SanBoxTarget"))
 			//{
-			// if(makeint(pchar.questTemp.SanBoxTarget) == 2 ||  makeint(pchar.questTemp.SanBoxTarget) == 5)
+			// if(int(pchar.questTemp.SanBoxTarget) == 2 ||  int(pchar.questTemp.SanBoxTarget) == 5)
 			//{
 			pchar.questTemp.SanBoxTarget.RedChieftain = true;
 			ChangeCharacterComplexReputation(pchar, "fame", 25);

@@ -70,59 +70,8 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			NextDiag.TempNode = "OZ_Kuznets_repeat";
 			AddDialogExitQuestFunction("OZ_Kuznets_Agree");
-		break;case "First time":
-			dialog.text = "你想干嘛?";
-			link.l1 = "没事。";
-			link.l1.go = "exit";
 		break;
 
-		case "OZ_Kuznets_1":
-			//PlaySound("VOICE\Russian\Master_05.wav");
-			dialog.text = "您找我有什么事, "+GetAddress_Form(NPChar)+"?不好意思, 我现在不接新订单, 实在是…… 太忙了。";
-			link.l1 = "是吗?听说你最近在牌桌上输了件很贵重的东西, 是真的吗?";
-			link.l1.go = "OZ_Kuznets_2";
-			DelLandQuestMark(npchar);
-		break;
-
-		case "OZ_Kuznets_2":
-			dialog.text = "哼, 如果你是来幸灾乐祸的, 那就排队吧——像你这样的人多得很。不过没人愿意帮我一把。我命悬一线, 全看哈维尔·卡斯蒂略的脸色, 而人们只知道拿我的失败当笑话。";
-			link.l1 = "我不是那种会嘲笑别人不幸的人。说说看, 事情是怎么发生的。也许我能帮你。";
-			link.l1.go = "OZ_Kuznets_3";
-			link.l2 = "帮忙?凭什么有人要帮你?我才不会。你自己的幸福…… 甚至不幸, 都是你亲手铸成的。别装可怜了——接受你行为的后果吧, 那是理所当然的。";
-			link.l2.go = "OZ_Kuznets_NoAgree";
-		break;
-
-		case "OZ_Kuznets_NoAgree":
-			DialogExit();
-			AddDialogExitQuestFunction("OZ_Kuznets_NoAgree");
-		break;
-
-		case "OZ_Kuznets_3":
-			dialog.text = "那晚本不该成为我的噩梦。我只是去酒馆喝杯朗姆酒, 因为连海军上将欧赫尼奥·德·拉·托雷都刚刚下了个大订单给我。但喝得有点多后, 我坐下来玩了局牌。这时, 哈维尔盯上了我。\n起初运气站在我这边——我甚至赢了不少钱。但我一旦开始自信, 情况立刻急转直下。哈维尔不断往我杯里加朗姆酒, 我则一把把地输光了:先是现钱, 然后是买材料的钱, 最后是所有积蓄。\n等我意识到自己输了多少时, 已经无路可退。我脑子里只剩一个念头——无论如何也要翻盘。于是我把一本书压上了赌桌。那个混蛋哈维尔只愿出五千比索买它。\n其实这本书远不止这个价, 但我被赌瘾冲昏了头, 居然答应了。接下来…… 你应该知道了。我输了。你知道吗?我从没遇过这种事。我觉得那混蛋一定在我酒里下了什么。";
-			link.l1 = "那我能帮你什么呢?你自己去玩牌, 自己拿出财产做赌注, 最后也自己输光了。你只是不想面对结果罢了。到底那本书有什么特别之处, 让你如此后悔?";
-			link.l1.go = "OZ_Kuznets_4";
-		break;
-
-		case "OZ_Kuznets_4":
-			dialog.text = "那本书是我最宝贵的东西。里面记载着代代铁匠师傅传下来的秘诀。它是我铁匠铺的灵魂, 是我技艺的核心。我已经接受了失败, "+GetAddress_Form(NPChar)+", 但我实在无法接受失去那本书。我曾向哈维尔出价五千比索赎回它。\n我甚至愿意背债, 只为取回它。但你知道他怎么说吗?他说他要十万!十万, "+GetAddress_Form(NPChar)+"!我根本拿不出这么多钱。他也不愿降价, 更不接受分期付款。我求他了…… 可他只是嘲笑我。我看得出, 您是"+GetSexPhrase("个硬汉, 是名水手…… 甚至可能是船长, 看您那把佩剑可不是装饰用","位不简单的姑娘, 相信您一定懂得如何与男人周旋")+"\n请您帮我和哈维尔谈谈。也许他会听您的, 愿意给我宽限点时间。没有那本书…… 我的人生毫无意义。作为回报, 将来我一定以优惠价格为您提供优质材料, 等我东山再起, 甚至还能为您打造点特别的东西, 船长。";
-			link.l1 = "谈谈这事倒不难。看看结果如何吧。不过首先容我自我介绍:我叫"+GetFullName(pchar)+", 是我这艘船的船长。";
-			link.l1.go = "OZ_Kuznets_5";
-		break;
-
-		case "OZ_Kuznets_5":
-			dialog.text = ""+GetSexPhrase("我叫塞巴斯蒂安·科尔多瓦…… ","一位女船长?我听说过, 但这是我第一次亲眼见到, 还能交谈。")+" 很高兴认识您, "+pchar.lastname+"船长。谢谢您。如今这年头, 愿意帮助别人的人太少了, 大多数人只会嘲笑别人的不幸。您知道吗?如果我的书能重回我手, 我发誓:再也不碰赌博了。";
-			link.l1 = "现在还不必谢我。我要先处理自己的事, 然后看看是否有空去找哈维尔。";
-			link.l1.go = "OZ_Kuznets_6";
-		break;
-
-		case "OZ_Kuznets_6":
-			dialog.text = "恐怕您得快点。哈维尔比我想象中动作还快…… 他已经找到了那本书的买主——是法国的枪械大师埃蒂安·雷诺阿。如果上将知道因为我, 那本宝贵的书落入法国人手里…… 我可就完了。坐牢都算轻的。";
-			link.l1 = "哼…… 好吧, 我现在就去处理这事。";
-			link.l1.go = "exit";
-			NextDiag.TempNode = "OZ_Kuznets_repeat";
-			AddDialogExitQuestFunction("OZ_Kuznets_Agree");
-		break;
-		
 		case "OZ_Kuznets_repeat":
 			dialog.text = pchar.lastname+"船长!您和哈维尔谈过了吗?有什么消息?";
 			link.l1 = "还没有, 我正打算去酒馆找他。";
@@ -205,7 +154,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_5":
 			dialog.text = "你是不是没听懂?我说得再清楚不过了——我要的钱是现在立刻。不是一周后、不是一个月后、也不是等那个铁匠凑够, 而是现在。我想尽快离开这个倒霉岛。所以, 要么我现在就拿到全部钱, 要么书就归法国人, 而你的船长名誉嘛…… 留给上将的刽子手吧。";
-			if (sti(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
+			if (int(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
 				link.l1 = "这样吧, 我们赌一把。我出十万, 你出书。如果你赢了, 就能发财离岛;要是你输了——书归我。还是说你只敢骗新手下水?";
 				link.l1.go = "OZ_Shuler_6";
@@ -449,7 +398,7 @@ void ProcessDialogEvent()
 
 		case "OZ_Felip_11":
 			dialog.text = "船长!我听说哈维尔已经上了西天, 全是你的‘功劳’。我可不是嘱咐过你别太早动手?希望你这次来, 是把我的钱带回来了?";
-			if (sti(pchar.Money) >= 100000)
+			if (int(pchar.Money) >= 100000)
 			{
 				link.l1 = "正是如此。我找到了他藏的钱, 共十万比索。这就是他留下的全部财产了。";
 				link.l1.go = "OZ_Felip_12";

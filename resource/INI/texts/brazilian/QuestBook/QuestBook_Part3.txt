@@ -5515,6 +5515,21 @@ TheFormerKnight.4
 Conseguimos localizar e eliminar o ex-cavaleiro da Ordem. Durand estava decidido a matar a mulher do cavaleiro, que teve o azar de estar na casa naquele momento. É claro que não pude permitir isso. Cruzamos espadas mais uma vez, e mais uma vez provei ser o mais forte. Se eu soubesse antes que ele era um canalha desses, teria acabado com ele lá mesmo na casa de Levasseur.
 }
 
+TheFormerKnight.5
+{
+Decidi não me meter nos problemas de um oficial caído em desgraça e dispensei Claude Durand. Que procure outro capitão.
+}
+
+TheFormerKnight.6
+{
+Não consegui aceitar o comportamento de Claude. Houve um conflito entre nós, e fui obrigado a matá-lo. Descansa em paz, mercenário.
+}
+
+TheFormerKnight.7
+{
+Claude Durand morreu em combate, e agora jamais saberei o desfecho desta história. Pois bem, descansa em paz, mercenário.
+}
+
 Tichingitu
 {
 Tichingitu

@@ -603,7 +603,7 @@ void ProcessDialogEvent()
 			
 			if (GetDataDay() >= 10 && GetDataDay() <= 15)
 			{
-				int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;
+				int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+2;
 				if (iRank > 45) iRank = 45;
 				Group_FindOrCreateGroup("Mtr_Utreht");
 				sld = GetCharacter(NPC_GenerateCharacter("Cap_Utreht", "mercen_19", "man", "man", iRank, ENGLAND, -1, true, "quest"));
@@ -2986,7 +2986,7 @@ void ProcessDialogEvent()
 		
 		case "merida_head_8":
             dialog.text = "По-хорошему он не запоёт. Я таких знаю.";
-			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
+			if (IsCharacterPerkOn(pchar, "Trustworthy") && int(pchar.reputation.nobility) >= 50 && GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50)
 			{
 				link.l1 = "(Вызывающий доверие) (Честь) (Харизма) На сегодня хватит крови, Жан. Я сам.";
 				link.l1.go = "merida_head_dobro_1";
@@ -2997,7 +2997,7 @@ void ProcessDialogEvent()
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
+				if (int(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Недостаточно развит навык (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Ну хорошо. Действуй. Я этим заниматься не собираюсь. И смотреть - тоже.";
@@ -3114,7 +3114,7 @@ void ProcessDialogEvent()
 			SetCharacterRemovable(npchar, false);
 			npchar.CompanionEnemyEnable = false; //всегда друзья
 			LAi_SetImmortal(npchar, false);
-			SetCompanionIndex(pchar, -1, sti(npchar.index));
+			SetCompanionIndex(pchar, -1, int(npchar.index));
 			npchar.loyality = MAX_LOYALITY;
 		    pchar.quest.mtraxx_ignasio_sail.win_condition.l1 = "location";
 			pchar.quest.mtraxx_ignasio_sail.win_condition.l1.location = "Bridgetown_town";
@@ -3240,12 +3240,12 @@ void ProcessDialogEvent()
 		case "ignasio_14":
 			LAi_Fade("", "");
 			WaitDate("", 0, 0, 0, 3, 10); 
-			pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER)-sti(pchar.questTemp.Mtraxx.Silver);
-			pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY)-sti(pchar.questTemp.Mtraxx.Mahogany);
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 100)
+			pchar.questTemp.Mtraxx.Silver = GetSquadronGoods(pchar, GOOD_SILVER)-int(pchar.questTemp.Mtraxx.Silver);
+			pchar.questTemp.Mtraxx.Mahogany = GetSquadronGoods(pchar, GOOD_MAHOGANY)-int(pchar.questTemp.Mtraxx.Mahogany);
+			if (int(pchar.questTemp.Mtraxx.Silver) < 100)
 			{
 				dialog.text = "Капитан, простите: это что? Где наше серебро? Вы утопили весь товар?";
-				if (sti(pchar.questTemp.Mtraxx.Mahogany) < 200) 
+				if (int(pchar.questTemp.Mtraxx.Mahogany) < 200)
 				{
 					link.l1 = "Э-э-м-м...";
 					link.l1.go = "ignasio_15_1";
@@ -3257,14 +3257,14 @@ void ProcessDialogEvent()
 				}
 				break;
 			}
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 300 && sti(pchar.questTemp.Mtraxx.Silver) > 100)
+			if (int(pchar.questTemp.Mtraxx.Silver) < 300 && int(pchar.questTemp.Mtraxx.Silver) > 100)
 			{
 				dialog.text = "Гхм... Маловато как-то. Я думал, будет больше...";
 				link.l1 = "Ну уж сколько получилось.";
 				link.l1.go = "ignasio_15_2";
 				break;
 			}
-			if (sti(pchar.questTemp.Mtraxx.Silver) < 700 && sti(pchar.questTemp.Mtraxx.Silver) > 300)
+			if (int(pchar.questTemp.Mtraxx.Silver) < 700 && int(pchar.questTemp.Mtraxx.Silver) > 300)
 			{
 				dialog.text = "Неплохо, неплохо... Хотя я думал, что побогаче добыча будет.";
 				link.l1 = "Ну уж сколько получилось.";
@@ -3284,7 +3284,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_11":
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
 			dialog.text = "А больше ничего и не остаётся. С паршивой овцы хоть шерсти клок... Ребята! В шлюпки!";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3292,8 +3292,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_2":
-			RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "Ладно, что добыли, то добыли. Расходимся.";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3301,8 +3301,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_3":
-            RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+            RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "Ладно, что добыли, то добыли. Расходимся. В любом случае, дельце было успешным, хе-хе.";
 			link.l1 = "...";
 			link.l1.go = "exit";
@@ -3310,8 +3310,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ignasio_15_4":
-			RemoveCharacterGoods(pchar, GOOD_SILVER, makeint(sti(pchar.questTemp.Mtraxx.Silver)/2));
-			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, makeint(sti(pchar.questTemp.Mtraxx.Mahogany)/2));
+			RemoveCharacterGoods(pchar, GOOD_SILVER, int(int(pchar.questTemp.Mtraxx.Silver)/2));
+			RemoveCharacterGoods(pchar, GOOD_MAHOGANY, int(int(pchar.questTemp.Mtraxx.Mahogany)/2));
             dialog.text = "Плодотворное у нас получилось знакомство. Возможно, не в последний раз видимся, капитан!";
 			link.l1 = "Ещё найдёте жирных купцов - не забудьте позвать меня, хе-хе...";
 			link.l1.go = "exit";
@@ -3571,7 +3571,7 @@ void ProcessDialogEvent()
 			link.l3 = "Родгар, я хочу оставить на острове один из своих кораблей.";
 			if (CheckAttribute(npchar, "portman.info")) link.l3.go = "shipstock";
 			else link.l3.go = "shipstock_info";
-			if (CheckAttribute(npchar, "portman") && sti(npchar.portman > 0))
+			if (CheckAttribute(npchar, "portman") && int(npchar.portman > 0))
 			{
 				link.l4 = "Родгар, я хочу забрать свой корабль обратно.";
 				link.l4.go = "shipstockreturn";
@@ -3591,7 +3591,7 @@ void ProcessDialogEvent()
 				link.l6 = "Родгар, я хочу оставить часть команды на острове.";
 				link.l6.go = "crew";
 			}
-			if (CheckAttribute(npchar, "crew") && sti(npchar.crew.qty) > 0)
+			if (CheckAttribute(npchar, "crew") && int(npchar.crew.qty) > 0)
 			{
 				link.l7 = "Родгар, я хочу забрать своих матросов.";
 				link.l7.go = "crew_3";
@@ -3757,7 +3757,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("IslaMona", "3");
 			RemoveItems(pchar, "islamona_toolbox", 1);
 			pchar.questTemp.IslaMona = "rumours";
-			AddRumor("Говорят, каких-то преступников высадили на одном из необитаемых островов! Вроде как настолько лютые чудовища, что даже ни палач, ни святые отцы связываться бы с ними не стали! Но почему же таких всегда везут к нам?!", 1, "all", "none", 0, (2022 - STARTGAME_YEAR) * 365, "IslaMona_TerksRumour", "none");
+			AddRumor("Говорят, каких-то преступников высадили на одном из необитаемых островов! Вроде как настолько лютые чудовища, что даже ни палач, ни святые отцы связываться бы с ними не стали! Но почему же таких всегда везут к нам?!", "1", "all", "none", "0", string((2022 - STARTGAME_YEAR) * 365), "IslaMona_TerksRumour", "none");
 		break;
 		
 		case "IslaMona_12":
@@ -4432,7 +4432,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_96":
             dialog.text = "Сыграем, кэп?";
-			if (sti(pchar.money) >= 20)
+			if (int(pchar.money) >= 20)
 			{
 				link.l1 = "Начнём!";
 				link.l1.go = "IslaMona_97";
@@ -4445,7 +4445,7 @@ void ProcessDialogEvent()
             DialogExit();
 			pchar.questTemp.GoldenGirl.Game.IslaMona = "true"; // атрибут квестовой игры
 			npchar.money = 20;
-			pchar.questTemp.IslaMona.Money = sti(pchar.money);
+			pchar.questTemp.IslaMona.Money = int(pchar.money);
 			pchar.money = 20;
 			// вызов интерфейса игры
 			pchar.GenQuest.Cards.npcharIdx = npchar.index;
@@ -4509,7 +4509,7 @@ void ProcessDialogEvent()
             DialogExit();
 			DeleteAttribute(pchar, "questTemp.GoldenGirl.Game");
 			DeleteAttribute(pchar, "GenQuest.Cards");
-			pchar.money = sti(pchar.money)+sti(pchar.questTemp.IslaMona.Money);
+			pchar.money = int(pchar.money)+int(pchar.questTemp.IslaMona.Money);
 			DeleteAttribute(pchar, "questTemp.IslaMona.Money");
 			IslaMona_ChurchTavernStandUp();
 		break;
@@ -4570,7 +4570,7 @@ void ProcessDialogEvent()
 		case "shipstock":
 			if(CheckAttribute(pchar,"questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 			{
-				if(sti(npchar.portman) == 3)
+				if(int(npchar.portman) == 3)
 				{
 					dialog.text = "Кэп, на приколе уже стоит три твоих судна. Больше нет места.";
 					link.l1 = "Ах да, точно, я и забыл.";
@@ -4579,7 +4579,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if(CheckAttribute(npchar,"FstClassInHarbour") && sti(npchar.portman) > 0)
+					if(CheckAttribute(npchar,"FstClassInHarbour") && int(npchar.portman) > 0)
 					{
 						dialog.text = "Кэп, на приколе уже стоит корабль первого класса. Больше нет места.";
 						link.l1 = "Ах да, точно, я и забыл.";
@@ -4590,7 +4590,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(npchar.portman) == 2)
+				if (int(npchar.portman) == 2)
 				{
 					dialog.text = "Кэп, на приколе уже стоит два твоих судна. Больше нет места.";
 					link.l1 = "Ах да, точно, я и забыл.";
@@ -4615,7 +4615,7 @@ void ProcessDialogEvent()
 					if (!GetRemovable(chref)) continue;
 
 					attrL = "l"+i;
-					Link.(attrL) = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+					Link.(attrL) = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 					Link.(attrL).go = "ShipStockMan_" + i;
 				}
 			}
@@ -4660,10 +4660,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_2":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+            chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			if(CheckAttribute(pchar,"questTemp.IslaMona.Harbour") && pchar.questTemp.IslaMona.Harbour == "done")
 			{
-				if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2 && sti(npchar.portman) > 0)
+				if(int(RealShips[int(chref.Ship.Type)].Class) < 2 && int(npchar.portman) > 0)
 				{
 					dialog.text = "Кэп, я уже говорил - на нашу стоянку можно поставить только один корабль первого класса. Слишком велик.";
 					Link.l1 = "Ах, да, точно, я и забыл.";
@@ -4673,7 +4673,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
+				if (int(RealShips[int(chref.Ship.Type)].Class) < 2)
 				{
 					dialog.text = "Кэп, я уже говорил - корабли первого класса на нашу стоянку поставить нельзя. Слишком велики.";
 					Link.l1 = "Ах, да, точно, я и забыл.";
@@ -4681,14 +4681,14 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
+			if (int(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Кэп, на корабле должен быть только один вахтённый офицер и больше никого. Переведи команду на флагман.";
 				Link.l1 = "Ах, да, точно, сейчас сделаем!";
 				Link.l1.go = "carpenter_exit";
 				break;
 			}
-			dialog.Text = "Итак, нам надо поставить на хранение "+XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName+"Acc")+" под названием '"+chref.Ship.Name+"'. Я всё правильно понял?";
+			dialog.Text = "Итак, нам надо поставить на хранение "+XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName+"Acc")+" под названием '"+chref.Ship.Name+"'. Я всё правильно понял?";
 			Link.l1 = "Да.";
 			Link.l1.go = "ShipStock_3";
 			Link.l2 = "Нет, я передумал"+GetSexPhrase("","а")+".";
@@ -4715,7 +4715,7 @@ void ProcessDialogEvent()
 						if (chref.ShipInStockMan == NPChar.id)
 						{
 							attrL = "l"+cn;
-							Link.(attrL)    = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
+							Link.(attrL)    = XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'.";
 							Link.(attrL).go = "ShipStockManBack_" + i;
 							cn++;
 						}
@@ -4739,7 +4739,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			dialog.Text = "Забираешь?";
 			link.l1 = "Да.";
 			link.l1.go = "ShipStockManBack2";
@@ -4751,11 +4751,11 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.dialog.currentnode = "carpenter_17";
 			if(CheckAttribute(npchar,"FstClassInHarbour")) DeleteAttribute(npchar,"FstClassInHarbour");
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			chref = GetCharacter(int(NPChar.ShipToStoreIdx));
 			DeleteAttribute(chref, "ShipInStockMan");
-			SetCompanionIndex(pchar, -1, sti(NPChar.ShipToStoreIdx));
-			npchar.portman = sti(npchar.portman)-1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)-1;
+			SetCompanionIndex(pchar, -1, int(NPChar.ShipToStoreIdx));
+			npchar.portman = int(npchar.portman)-1;
+            pchar.ShipInStock = int(pchar.ShipInStock)-1;
 		break;
 		
 		case "storadge":
@@ -6064,7 +6064,7 @@ void ProcessDialogEvent()
 				link.l1 = "Я оплачу 50 дублонов. Так намного выгоднее.";
 				link.l1.go = "SlavesTrader_Dub";
 			}
-			if(sti(Pchar.money) >= 10000)
+			if(int(Pchar.money) >= 10000)
 			{
 				link.l2 = "Я оплачу 10 000 песо.";
 				link.l2.go = "SlavesTrader_P";
@@ -6886,7 +6886,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetOwnerTypeNoGroup(npchar);
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		//<-- блок реагирования на попытку залезть в сундук

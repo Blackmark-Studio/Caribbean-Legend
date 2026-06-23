@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 		
 		case "start2":
             ret = Pchar.name + ", я контрабандист, а не мэр города. Какая у меня для тебя работа?";
-            if (sti(Pchar.nation) == PIRATE)
+            if (int(Pchar.nation) == PIRATE)
             {
                 dialog.text = ret + " Загляни в таверну к Инес. Она знает всех на этом острове."+
                               " Зайди к Юрксену, он здесь у пиратов вместо губернатора. Но сначала поговори с простыми пиратами.";
@@ -124,7 +124,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			//Квест бук
 			AddQuestRecord("Gen_ContrabandTravel", "4");
-			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc)));
+			AddQuestUserData("Gen_ContrabandTravel", "sLocTo", GetLocationNameByID(pchar.GenQuest.contraTravel.destination.loc));
 
 
 			LAi_SetPlayerType(PChar);

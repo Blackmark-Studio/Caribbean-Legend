@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "OpenTheDoors", 5.0);
 			SaveCurrentNpcQuestDateParam(npchar, "pearl_date");
-			npchar.quest.pearlqty = sti(npchar.quest.pearlqty)+1;
+			npchar.quest.pearlqty = int(npchar.quest.pearlqty)+1;
 			NextDiag.CurrentNode = "givemepearl_repeat";
 		break;
 		

@@ -65,7 +65,7 @@ void InitInterface(string iniName)
 	7) одна пара 2- одинаковых
 	8) ничего нет
 	*/
-	r_delta = makeint(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
+	r_delta = int(Bring2Range(20.0, 5.0, 5.0, 20.0, GetRDeltaTime() * 1.0));
     sgxy = 120;
     ssxy = 120;
     
@@ -82,12 +82,12 @@ void InitInterface(string iniName)
     
     pchar = GetMainCharacter();
     
-    iRate  = sti(pchar.GenQuest.Dice.iRate); // ставки золотых
+    iRate  = int(pchar.GenQuest.Dice.iRate); // ставки золотых
     
-    npchar = GetCharacter(sti(pchar.GenQuest.Dice.npcharIdx));
+    npchar = GetCharacter(int(pchar.GenQuest.Dice.npcharIdx));
     
-	iMoneyP = sti(pchar.Money); // mitrokosta реальные деньги смотрим только в начале и в конце
-	iMoneyN = sti(npchar.Money);
+	iMoneyP = int(pchar.Money); // mitrokosta реальные деньги смотрим только в начале и в конце
+	iMoneyN = int(npchar.Money);
     
 	// mitrokosta фикс опыта за некратные ставки -->
 	if (iRate >= 50) {
@@ -197,23 +197,23 @@ void Exit()
 		DelEventHandler("MouseRClickUp","HideInfoWindow");
 		DelEventHandler("Event_NodeMouseEffect", "MouseEffect");
 
-        if (sti(pchar.GenQuest.Dice.SitType) == true)
+        if (int(pchar.GenQuest.Dice.SitType) == true)
     	{
             DoQuestCheckDelay("exit_sit", 0.6);
     	}
         interfaceResultCommand = RC_INTERFACE_SALARY_EXIT;
 
-		bool isWin = (iMoneyP > sti(pchar.Money));
+		bool isWin = (iMoneyP > int(pchar.Money));
 
-		AddMoneyToCharacter(pchar, iMoneyP - sti(pchar.Money)); // mitrokosta раздача денег теперь в конце
-		AddMoneyToCharacter(npchar, iMoneyN - sti(npchar.Money));
+		AddMoneyToCharacter(pchar, iMoneyP - int(pchar.Money)); // mitrokosta раздача денег теперь в конце
+		AddMoneyToCharacter(npchar, iMoneyN - int(npchar.Money));
     	Statistic_AddValue(Pchar, "GameDice_Win", iHeroWin);
     	Statistic_AddValue(Pchar, "GameDice_WinMoney", iMoneyP);
 		if(!CheckAttribute(Pchar,"questTemp.hat7"))
 		{
 			if(Statistic_AddValue(Pchar, "GameDice_WinMoney", 0) + Statistic_AddValue(Pchar, "GameCards_WinMoney", 0) > 7776)
 			{
-				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED)
+				if(int(Pchar.Ship.Type) != SHIP_NOTUSED)
 				{
 					PutItemToShip("My_deck", "hat7", 1);
 					Pchar.questTemp.hat7 = true;
@@ -387,8 +387,8 @@ void MoveImg()
 			y_rand = y1 - 150 + rand(y2 - y1 + 300);
 		}
 		t = move_i / 50.0;
-		x = makeint((1.0 - t) * (1.0 - t) * x1 + 2.0 * (1.0 - t) * t * x_rand + t * t * x2);
-		y = makeint((1.0 - t) * (1.0 - t) * y1 + 2.0 * (1.0 - t) * t * y_rand + t * t * y2);
+		x = int((1.0 - t) * (1.0 - t) * x1 + 2.0 * (1.0 - t) * t * x_rand + t * t * x2);
+		y = int((1.0 - t) * (1.0 - t) * y1 + 2.0 * (1.0 - t) * t * y_rand + t * t * y2);
 		SetNodePosition("DiceCup", x, y, x + spx, y + spy);
         PostEvent("My_eventMoveImg", r_delta);
     }
@@ -401,8 +401,8 @@ void MoveImg()
 		}
 
 		t = (move_i - 50) / 50.0;
-		x = makeint((1.0 - t) * (1.0 - t) * x2 + 2.0 * (1.0 - t) * t * x_rand + t * t * x1);
-		y = makeint((1.0 - t) * (1.0 - t) * y2 + 2.0 * (1.0 - t) * t * y_rand + t * t * y1);
+		x = int((1.0 - t) * (1.0 - t) * x2 + 2.0 * (1.0 - t) * t * x_rand + t * t * x1);
+		y = int((1.0 - t) * (1.0 - t) * y2 + 2.0 * (1.0 - t) * t * y_rand + t * t * y1);
         if (move_i <= 100)
         {
 			SetNodePosition("DiceCup", x, y, x + spx, y + spy);
@@ -864,7 +864,7 @@ bool CheckCupForDice()
 	for (i = 1; i<=5; i++)
 	{
         sGlobalTemp = "d"+i;
-        if (sti(DiceState.Desk.(sGlobalTemp).Mix) == true)
+        if (int(DiceState.Desk.(sGlobalTemp).Mix) == true)
         {
             return true;
 		}
@@ -882,7 +882,7 @@ void RecalcDiceOnHand(string _whom)
 	for (i = 2; i<=5; i++)
 	{
         sGlobalTemp = "d"+i;
-        if (sti(DiceState.(_whom).d1) != sti(DiceState.(_whom).(sGlobalTemp)))
+        if (int(DiceState.(_whom).d1) != int(DiceState.(_whom).(sGlobalTemp)))
         {
             ok = false;
             break;
@@ -891,8 +891,8 @@ void RecalcDiceOnHand(string _whom)
 	if (ok)
 	{
         DiceState.(_whom).Result.Type  = RESULT_FIVE;
-        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).d1);
-        DiceState.(_whom).Result.Rate2  = sti(DiceState.(_whom).d1);
+        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).d1);
+        DiceState.(_whom).Result.Rate2  = int(DiceState.(_whom).d1);
 		return;
 	}
 	// 2) Каре - 4 одинаковых
@@ -904,7 +904,7 @@ void RecalcDiceOnHand(string _whom)
 		for (i = 1; i<=5; i++)
 		{
 			sGlobalTemp = "d"+i;
-	        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+	        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 	        {
 	            iOk--;
 			}
@@ -912,8 +912,8 @@ void RecalcDiceOnHand(string _whom)
 	 	if (iOk >= 4)
 		{
 	        DiceState.(_whom).Result.Type  = RESULT_FOUR;
-	        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).(sTemp));
-	        DiceState.(_whom).Result.Rate2  = sti(DiceState.(_whom).(sTemp));
+	        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).(sTemp));
+	        DiceState.(_whom).Result.Rate2  = int(DiceState.(_whom).(sTemp));
 			return;
 		}
 	}
@@ -926,14 +926,14 @@ void RecalcDiceOnHand(string _whom)
 		for (i = 1; i<=5; i++)
 		{
 	        sGlobalTemp = "d"+i;
-	        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+	        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 	        {
 	            iOk--;
 			}
 		}
 	 	if (iOk >= 3)
 		{
-	        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).(sTemp));
+	        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).(sTemp));
 	        ok = true;
 	        break;
 		}
@@ -945,19 +945,19 @@ void RecalcDiceOnHand(string _whom)
 		{
 			iOk = 5;
 			sTemp = "d" + k;
-			if (sti(DiceState.(_whom).(sTemp)) == sti(DiceState.(_whom).Result.Rate1)) continue;
+			if (int(DiceState.(_whom).(sTemp)) == int(DiceState.(_whom).Result.Rate1)) continue;
 			
 			for (i = 1; i<=5; i++)
 			{
 		        sGlobalTemp = "d"+i;
-		        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+		        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 		        {
 		            iOk--;
 				}
 			}
 		 	if (iOk >= 2)
 			{
-		        DiceState.(_whom).Result.Rate2  = sti(DiceState.(_whom).(sTemp));
+		        DiceState.(_whom).Result.Rate2  = int(DiceState.(_whom).(sTemp));
 		        ok = true;
 		        break;
 			}
@@ -975,7 +975,7 @@ void RecalcDiceOnHand(string _whom)
 	{
         sGlobalTemp = "d"+i;
         sTemp       = "d"+(i+1);
-        if (sti(DiceState.(_whom).(sGlobalTemp)) != (sti(DiceState.(_whom).(sTemp)) - 1) )
+        if (int(DiceState.(_whom).(sGlobalTemp)) != (int(DiceState.(_whom).(sTemp)) - 1) )
         {
             ok = false;
             break;
@@ -984,8 +984,8 @@ void RecalcDiceOnHand(string _whom)
 	if (ok)
 	{
         DiceState.(_whom).Result.Type  = RESULT_STRAIGHT;
-        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).d5);
-        DiceState.(_whom).Result.Rate2  = sti(DiceState.(_whom).d5);
+        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).d5);
+        DiceState.(_whom).Result.Rate2  = int(DiceState.(_whom).d5);
 		return;
 	}
 
@@ -998,14 +998,14 @@ void RecalcDiceOnHand(string _whom)
 		for (i = 1; i<=5; i++)
 		{
 	        sGlobalTemp = "d"+i;
-	        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+	        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 	        {
 	            iOk--;
 			}
 		}
 	 	if (iOk >= 3)
 		{
-	        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).(sTemp));
+	        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).(sTemp));
 	        ok = true;
 	        break;
 		}
@@ -1025,14 +1025,14 @@ void RecalcDiceOnHand(string _whom)
 		for (i = 1; i<=5; i++)
 		{
 	        sGlobalTemp = "d"+i;
-	        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+	        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 	        {
 	            iOk--;
 			}
 		}
 	 	if (iOk >= 2)
 		{
-	        DiceState.(_whom).Result.Rate2  = sti(DiceState.(_whom).(sTemp)); // младшая
+	        DiceState.(_whom).Result.Rate2  = int(DiceState.(_whom).(sTemp)); // младшая
 	        ok = true;
 	        break;
 		}
@@ -1044,19 +1044,19 @@ void RecalcDiceOnHand(string _whom)
 		{
 			iOk = 5;
 			sTemp = "d" + k;
-			if (sti(DiceState.(_whom).(sTemp)) == sti(DiceState.(_whom).Result.Rate2)) continue;
+			if (int(DiceState.(_whom).(sTemp)) == int(DiceState.(_whom).Result.Rate2)) continue;
 
 			for (i = 1; i<=5; i++)
 			{
 		        sGlobalTemp = "d"+i;
-		        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+		        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 		        {
 		            iOk--;
 				}
 			}
 		 	if (iOk >= 2)
 			{
-		        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).(sTemp)); // старшая
+		        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).(sTemp)); // старшая
 		        ok = true;
 		        break;
 			}
@@ -1076,14 +1076,14 @@ void RecalcDiceOnHand(string _whom)
 		for (i = 1; i<=5; i++)
 		{
 	        sGlobalTemp = "d"+i;
-	        if (sti(DiceState.(_whom).(sTemp)) != sti(DiceState.(_whom).(sGlobalTemp)))
+	        if (int(DiceState.(_whom).(sTemp)) != int(DiceState.(_whom).(sGlobalTemp)))
 	        {
 	            iOk--;
 			}
 		}
 	 	if (iOk >= 2)
 		{
-	        DiceState.(_whom).Result.Rate1  = sti(DiceState.(_whom).(sTemp));
+	        DiceState.(_whom).Result.Rate1  = int(DiceState.(_whom).(sTemp));
 	        ok = true;
 	        break;
 		}
@@ -1114,15 +1114,15 @@ void SortDiceOnHand(string _whom)
 	for (k = 1; k<=4; k++)
 	{
         sGlobalTemp = "d"+k;
-        w = sti(DiceState.(_whom).(sGlobalTemp));
+        w = int(DiceState.(_whom).(sGlobalTemp));
 		j = k;
 		for (m = k+1; m<=5; m++)
 		{
             sGlobalTemp = "d"+m;
-			if (sti(DiceState.(_whom).(sGlobalTemp)) < w)
+			if (int(DiceState.(_whom).(sGlobalTemp)) < w)
 			{
 			    j = m;
-			    w = sti(DiceState.(_whom).(sGlobalTemp));
+			    w = int(DiceState.(_whom).(sGlobalTemp));
 			}
 		}
 		sGlobalTemp = "d"+j;
@@ -1134,27 +1134,27 @@ void SortDiceOnHand(string _whom)
 // сравнение результата
 int GetResult()
 {
-	if (sti(DiceState.Hero.Result.Type) < sti(DiceState.Comp.Result.Type))
+	if (int(DiceState.Hero.Result.Type) < int(DiceState.Comp.Result.Type))
 	{
 	    return 1;
 	}
-	if (sti(DiceState.Hero.Result.Type) > sti(DiceState.Comp.Result.Type))
+	if (int(DiceState.Hero.Result.Type) > int(DiceState.Comp.Result.Type))
 	{
 	    return -1;
 	}
-	if (sti(DiceState.Hero.Result.Rate1) > sti(DiceState.Comp.Result.Rate1))
+	if (int(DiceState.Hero.Result.Rate1) > int(DiceState.Comp.Result.Rate1))
 	{
 	    return 1;
 	}
-	if (sti(DiceState.Hero.Result.Rate1) < sti(DiceState.Comp.Result.Rate1))
+	if (int(DiceState.Hero.Result.Rate1) < int(DiceState.Comp.Result.Rate1))
 	{
 	    return -1;
 	}
-	if (sti(DiceState.Hero.Result.Rate2) > sti(DiceState.Comp.Result.Rate2))
+	if (int(DiceState.Hero.Result.Rate2) > int(DiceState.Comp.Result.Rate2))
 	{
 	    return 1;
 	}
-	if (sti(DiceState.Hero.Result.Rate2) < sti(DiceState.Comp.Result.Rate2))
+	if (int(DiceState.Hero.Result.Rate2) < int(DiceState.Comp.Result.Rate2))
 	{
 	    return -1;
 	}
@@ -1169,7 +1169,7 @@ bool EndTurnGame()
     bool  ret = true;
 
 	ok = GetResult();
-	sTemp = XI_ConvertString("DicePhrase9_1") + GetTypeName(sti(DiceState.Comp.Result.Type)) + XI_ConvertString("DicePhrase9_2") + GetTypeName(sti(DiceState.Hero.Result.Type)) + ".";
+	sTemp = XI_ConvertString("DicePhrase9_1") + GetTypeName(int(DiceState.Comp.Result.Type)) + XI_ConvertString("DicePhrase9_2") + GetTypeName(int(DiceState.Hero.Result.Type)) + ".";
     if (ok == 0)
     {
         sTemp += NewStr() + XI_ConvertString("DicePhrase10");
@@ -1289,7 +1289,7 @@ void SetDiceForTableRand()
 		for (i = 1; i<=5; i++)
 		{
 			sGlobalTemp = "d"+i;
-			if (sti(DiceState.Desk.(sGlobalTemp).Mix) == true)
+			if (int(DiceState.Desk.(sGlobalTemp).Mix) == true)
 			{
 				if(iV == 2) DiceState.Desk.(sGlobalTemp) = iR+1; // покер
 				else
@@ -1306,7 +1306,7 @@ void SetDiceForTableRand()
 	for (i = 1; i<=5; i++)
 	{
         sGlobalTemp = "d"+i;
-        if (sti(DiceState.Desk.(sGlobalTemp).Mix) == true)
+        if (int(DiceState.Desk.(sGlobalTemp).Mix) == true)
         {
             DiceState.Desk.(sGlobalTemp) = (rand(5)+1);
 		}
@@ -1327,7 +1327,7 @@ void CompTurn()
 	}
 	if (ok)
 	{
-    	if (sti(DiceState.Comp.Result.Type) == RESULT_NOTHING && sti(DiceState.Hero.Result.Type) >= RESULT_FOUR)
+    	if (int(DiceState.Comp.Result.Type) == RESULT_NOTHING && int(DiceState.Hero.Result.Type) >= RESULT_FOUR)
     	{
             //перебросим всегда первую фишку (это 100% 1)
             SetFormatedText("INFO_TEXT",XI_ConvertString("DicePhrase17"));
@@ -1340,17 +1340,17 @@ void CompTurn()
     	}
 
     	// две пары бросаем на фул (один кубик)
-        ok3 = (sti(DiceState.Comp.Result.Type) == RESULT_TWO_PAIRS) && (sti(DiceState.Hero.Result.Type) >= RESULT_THREE);
-        ok  = (sti(DiceState.Comp.Result.Type) == RESULT_TWO_PAIRS) && (sti(DiceState.Hero.Result.Type) == RESULT_FULL) && (sti(DiceState.Hero.Result.Rate1) <= sti(DiceState.Comp.Result.Rate2));
+        ok3 = (int(DiceState.Comp.Result.Type) == RESULT_TWO_PAIRS) && (int(DiceState.Hero.Result.Type) >= RESULT_THREE);
+        ok  = (int(DiceState.Comp.Result.Type) == RESULT_TWO_PAIRS) && (int(DiceState.Hero.Result.Type) == RESULT_FULL) && (int(DiceState.Hero.Result.Rate1) <= int(DiceState.Comp.Result.Rate2));
         ok3 = ok3 || ok;
         // пара бросаем триаду, каре или две пары, а может фулл??
-        ok = (sti(DiceState.Comp.Result.Type) == RESULT_PAIR) || (sti(DiceState.Comp.Result.Type) == RESULT_THREE);
-        // ok = ok && (sti(DiceState.Hero.Result.Type) >= 3); // типа стрит фулом/каре не перекрыть - теперь устарело
+        ok = (int(DiceState.Comp.Result.Type) == RESULT_PAIR) || (int(DiceState.Comp.Result.Type) == RESULT_THREE);
+        // ok = ok && (int(DiceState.Hero.Result.Type) >= 3); // типа стрит фулом/каре не перекрыть - теперь устарело
         // каре, но у ГГ больше
-        ok2 = (sti(DiceState.Hero.Result.Type) == RESULT_FOUR) && (sti(DiceState.Hero.Result.Rate1) > sti(DiceState.Comp.Result.Rate1));
-        b   = (sti(DiceState.Hero.Result.Type) == RESULT_FIVE) && (sti(DiceState.Hero.Result.Rate1) <= sti(DiceState.Comp.Result.Rate1));
+        ok2 = (int(DiceState.Hero.Result.Type) == RESULT_FOUR) && (int(DiceState.Hero.Result.Rate1) > int(DiceState.Comp.Result.Rate1));
+        b   = (int(DiceState.Hero.Result.Type) == RESULT_FIVE) && (int(DiceState.Hero.Result.Rate1) <= int(DiceState.Comp.Result.Rate1));
         ok2 = ok2 || b;
-        ok2 = (sti(DiceState.Comp.Result.Type) == RESULT_FOUR) && ok2;
+        ok2 = (int(DiceState.Comp.Result.Type) == RESULT_FOUR) && ok2;
         if (ok || ok2 || ok3)
         {
             ok = false;
@@ -1358,14 +1358,14 @@ void CompTurn()
             for (i = 1; i<=6; i++)
     		{
     	        sGlobalTemp = "d"+i;
-    	        if (sti(DiceState.Comp.Result.(sGlobalTemp)) == 1)
+    	        if (int(DiceState.Comp.Result.(sGlobalTemp)) == 1)
     	        {
                     d = i; // че за фишка
                     for (j = 1; j<=5; j++)
             		{
             	        sGlobalTemp = "d"+j;
-            	        if (sti(DiceState.Comp.(sGlobalTemp).Mix) == true) continue;
-            	        if (sti(DiceState.Comp.(sGlobalTemp)) == d)
+            	        if (int(DiceState.Comp.(sGlobalTemp).Mix) == true) continue;
+            	        if (int(DiceState.Comp.(sGlobalTemp)) == d)
             	        {
                             ok = ClickCompDice(j) || ok;
                             break;
@@ -1384,17 +1384,17 @@ void CompTurn()
         }
 
         // супер жухло!!!!! -->
-        if (sti(DiceState.Comp.Result.Type) > sti(DiceState.Hero.Result.Type) && GetCharacterSkillToOld(pchar, SKILL_FORTUNE) < rand(12) && rand(4) > 1)
+        if (int(DiceState.Comp.Result.Type) > int(DiceState.Hero.Result.Type) && GetCharacterSkillToOld(pchar, SKILL_FORTUNE) < rand(12) && rand(4) > 1)
         {
 			//navy --> счетчик жульничеств
 			if (!CheckAttribute(npchar, "Quest.DiceCheats")) npchar.Quest.DiceCheats = 0;
-			npchar.Quest.DiceCheats = sti(npchar.Quest.DiceCheats) + 1;
+			npchar.Quest.DiceCheats = int(npchar.Quest.DiceCheats) + 1;
 			//navy <--
             SetFormatedText("INFO_TEXT",XI_ConvertString("DicePhrase18"));
             ok = false;
-            if (sti(DiceState.Hero.Result.Type) == 1)
+            if (int(DiceState.Hero.Result.Type) == 1)
             {
-                d = sti(DiceState.Hero.Result.Rate1) + 1;
+                d = int(DiceState.Hero.Result.Rate1) + 1;
             }
             else
             {
@@ -1405,7 +1405,7 @@ void CompTurn()
     		for (i = 1; i<=5; i++)
     		{
     	        sGlobalTemp = "d"+i;
-    	        if (sti(DiceState.Comp.(sGlobalTemp)) != d)
+    	        if (int(DiceState.Comp.(sGlobalTemp)) != d)
     	        {
                     ok = ClickCompDice(i) || ok;
     	            DiceState.Desk.(sGlobalTemp) = d;
@@ -1431,7 +1431,7 @@ bool ClickCompDice(int d)
 {
     sGlobalTemp = "d"+d;
     
-	if (iMoneyN >= iRate && sti(DiceState.Comp.(sGlobalTemp).Mix) == false)
+	if (iMoneyN >= iRate && int(DiceState.Comp.(sGlobalTemp).Mix) == false)
 	{
 		SetNodeUsing("CompDice" + d, false);
 		DiceState.Comp.(sGlobalTemp).Mix = true;
@@ -1462,8 +1462,8 @@ void RecalcAIDice(string _whom)
 	for (i = 1; i<=5; i++)
 	{
         sGlobalTemp = "d" + i;
-        sTemp       = "d" + sti(DiceState.(_whom).(sGlobalTemp));
-        DiceState.(_whom).Result.(sTemp) = sti(DiceState.(_whom).Result.(sTemp)) + 1;
+        sTemp       = "d" + int(DiceState.(_whom).(sGlobalTemp));
+        DiceState.(_whom).Result.(sTemp) = int(DiceState.(_whom).Result.(sTemp)) + 1;
 	}
 }
 
@@ -1553,7 +1553,7 @@ void MouseEffect()
 	GetNodePosition("B_HeroDice1", &x1, &y1, &x2, &y2);
 	x1 = x1 - 20;
 	y1 = y1 + 10;
-	int iDice = sti(strright(sNode, 1)) - 1;
+	int iDice = int(strright(sNode, 1)) - 1;
 	x = x1 + iDice * 80;
 	int y = y1 + scy;
 	if(iDice >= 0 && iDice <= 4)

@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 				bool bFMQL = CheckAttribute(pchar,"questTemp.FMQL") && pchar.questTemp.FMQL != "fail" && pchar.questTemp.FMQL != "end";
 				if(bFMQM || bFMQN || bFMQT || bFMQP || bFMQG || bFMQL)
 				{
-					if (sti(pchar.rank) < 12)
+					if (int(pchar.rank) < 12)
 					{
 						dialog.text = "Selam, kardeşim! Beni buradan çıkarmak için gösterdiğin içten çabayı takdir ediyorum, ama bir sonraki adım için henüz hazır değilsin. Planım deneyimli bir kaptan gerektiriyor. Karayipler'i keşfetmeye devam et, ödüller kazan ve öğren! Hazır olduğunda devam edeceğiz.";
 						link.l1 = "Pekala, ne dersen de, kardeşim. Burada oturan sensin, ben değilim.";
@@ -46,24 +46,24 @@ void ProcessDialogEvent()
 					}
 					break;
 				}
-				if (sti(pchar.rank) < 12)
+				if (int(pchar.rank) < 12)
 				{
 					Log_info("Level 12 is required");
 					dialog.text = "Denizci Charles! Maceralarını duydum! Planımın bir sonraki aşamasına neredeyse hazırsın. Biraz daha deneyim kazandığında hemen geri gel.";
-					if (sti(pchar.rank) < 7)
+					if (int(pchar.rank) < 7)
 					{
 						dialog.text = "Selam, kardeşim! Beni buradan çıkarmak için gösterdiğin içten çabayı takdir ediyorum, ama bir sonraki adım için henüz hazır değilsin. Planım deneyimli bir kaptan gerektiriyor. Karayipler'i keşfetmeye devam et, ödüller kazan ve öğren! Hazır olduğunda devam edeceğiz.";
 					} 
 					else 
 					{
-						if (sti(pchar.rank) < 10)
+						if (int(pchar.rank) < 10)
 						{
 							dialog.text = "Seni görmek güzel, kardeşim! Duyduğuma göre ilerleme kaydediyorsun! Ama henüz planımın bir sonraki adımına hazır değilsin. Şimdilik yaptıklarını yapmaya devam et ve hazır olduğunda bana geri dön.";
 						}
 					}
 					link.l1 = "Pekala, ne dersen de, kardeşim. Burada oturan sensin, ben değilim.";
 					link.l1.go = "exit";
-					if(sti(pchar.rank) > 8)
+					if(int(pchar.rank) > 8)
 					{
 						link.l2 = "Bence öyle değil, kardeşim. Belki sen bu kafese çoktan alıştın, ama ben burada uzun süre kalmaya niyetli değilim – babamız sonsuza kadar bekleyemez. Hadi anlat.";
 						link.l2.go = "gambitA";
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 		
 		case "gambit":
 			dialog.text = "Seni görebiliyorum, sevgili kardeşim. Yürüyüşünü ve yüzündeki ifadeyi görebiliyorum. Sonunda, beni deliliğin eşiğine getiren o kendini beğenmiş genç çocuğun maskesi senden silinmiş. Yeni hayatın sana artık gerçekten yaramış.";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "Anlayamıyorum kardeşim, söylediklerin övgü mü hakaret mi. Ama sana gerçeği söyleyeyim: Oradan benim hakkımda ne düşündüğün umurumda değil. Borcunu ödemek için gereken milyonları topladım, yakında özgür olacaksın. De Poincy'i nerede bulabilirim?";
 				link.l1.go = "gambit_1_1";
@@ -829,7 +829,7 @@ void ProcessDialogEvent()
 		
 		case "saga_2":
 			dialog.text = "Gerekli bir milyon peso tutarını toplamayı başardın mı?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "Evet, şu anda gereken miktara sahibim.";
 				link.l1.go = "saga_3_1";

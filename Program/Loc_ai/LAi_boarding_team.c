@@ -21,7 +21,7 @@ void GenerateCrew(ref rCharacter, string sType, ref rDstArray)
 string GetCrewFunction(ref rCharacter)
 {
 	string sFunc = "GenerateCrewBase";
-	int iNation = sti(rCharacter.nation);
+	int iNation = int(rCharacter.nation);
 
 	if (CheckAttribute(rCharacter, "CrewCallback"))
 	{
@@ -43,18 +43,18 @@ string GetCrewFunction(ref rCharacter)
 		return "GenerateCrewMemento";
 	}
 
-	if(sti(rCharacter.index) == GetMainCharacterIndex())
+	if(int(rCharacter.index) == GetMainCharacterIndex())
 	{
 		if (CheckAttribute(rCharacter, "GenQuest.CrewSkelMode"))
 		{
 			return "GenerateCrewSkeletons";
 		}
 		//--> Jason - национальная форма солдат на квестовиках по мультиквесту
-		if (CheckAttribute(rCharacter, "questTemp.HWIC.HollEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MAYFANG)
+		if (CheckAttribute(rCharacter, "questTemp.HWIC.HollEquip") && int(RealShips[int(pchar.ship.type)].basetype) == SHIP_MAYFANG)
 		{
 			return "GenerateCrewHol";
 		}
-		if (CheckAttribute(rCharacter, "questTemp.HWIC.EngEquip") && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_VALCIRIA)
+		if (CheckAttribute(rCharacter, "questTemp.HWIC.EngEquip") && int(RealShips[int(pchar.ship.type)].basetype) == SHIP_VALCIRIA)
 		{
 			return "GenerateCrewEng";
 		}
@@ -67,9 +67,9 @@ string GetCrewFunction(ref rCharacter)
 			return "GenerateCrewPir";
 		}
 		//<-- форма солдат на квестовиках
-		if (isMainCharacterPatented() && sti(Items[sti(rCharacter.EquipedPatentId)].TitulCur) > 1) //форма только со звания капитан
+		if (isMainCharacterPatented() && int(Items[int(rCharacter.EquipedPatentId)].TitulCur) > 1) //форма только со звания капитан
 		{
-			iNation = sti(Items[sti(rCharacter.EquipedPatentId)].Nation);
+			iNation = int(Items[int(rCharacter.EquipedPatentId)].Nation);
 			return "GenerateCrew" + NationShortName(iNation);
 		}
 		else

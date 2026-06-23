@@ -24,7 +24,7 @@ void ProcessDialogEvent()
     // вызов диалога по городам <--
 	
 	ProcessCommonDialogRumors(NPChar, Link, NextDiag);
-	
+	sTemp = GuessText();
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
@@ -97,10 +97,9 @@ void ProcessDialogEvent()
 			link.l4 = "5000 pesos";
 			link.l4.go = "guess_rate_4";
 		break;
-		
-		sTemp = GuessText();
+
 		case "guess_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "Ach, dziękuję za twoją hojność, mój mały sokole! Teraz posłuchaj: "+sTemp+" ";
@@ -116,7 +115,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_2"://немного в везение или скрытность
-			if (sti(pchar.money) >= 500)
+			if (int(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
 				dialog.text = "Ach, dziękuję, mój słodki sokole! Teraz słuchaj: "+sTemp+" ";
@@ -139,7 +138,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_3"://здоровье + везение или скрытность, харизма
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "Ach, dzięki za twoje srebro, mój przystojny młody sokołu! Teraz słuchaj: "+sTemp+" ";
@@ -164,7 +163,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guess_rate_4"://умения в оружие, везение+скрытность, здоровье, харизма
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "Oh la la! Dziękuję za twoją hojność, mój przystojny młody sokołku! Teraz słuchaj: "+sTemp+" ";
@@ -215,8 +214,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "Och, jesteś taki odważny i męski... (szeptem) To będzie kosztowało " + sti(npchar.quest.poison_price) + " dublonów.";
-			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
+			dialog.text = "Och, jesteś taki odważny i męski... (szeptem) To będzie kosztowało " + int(npchar.quest.poison_price) + " dublonów.";
+			if (PCharDublonsTotal() >= int(npchar.quest.poison_price))
 			{				
 				link.l1 = "Drogo... ale niech będzie. Oby to działało lepiej niż stare pułapki z beczek i sera.";
 				link.l1.go = "get_poison_4";
@@ -236,7 +235,7 @@ void ProcessDialogEvent()
 		
 		case "get_poison_4" :
 			PlaySound("interface\important_item.wav");
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.poison_price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.poison_price));
 			TakeNItems(pchar, "rat_poison", 1);
 			DialogExit();
 		break;
@@ -244,7 +243,7 @@ void ProcessDialogEvent()
 
 	// --> Мангароса
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("Pokaż mi tę roślinę, kochanie... Hm... Przypuszczam, że mogę ją od ciebie kupić. Trzysta sztuk pesos, zgoda?","Pokaż mi to, przystojniaku... Heh... Cóż, mogę za to zapłacić dwieście pięćdziesiąt i ani peso więcej. ","Zobaczmy... O! Ciekawe znalezisko! Dwieście pesos! Umowa?")"";
+			dialog.text = LinkRandPhrase("Pokaż mi tę roślinę, kochanie... Hm... Przypuszczam, że mogę ją od ciebie kupić. Trzysta sztuk pesos, zgoda?","Pokaż mi to, przystojniaku... Heh... Cóż, mogę za to zapłacić dwieście pięćdziesiąt i ani peso więcej. ","Zobaczmy... O! Ciekawe znalezisko! Dwieście pesos! Umowa?");
 			link.l1 = LinkRandPhrase("Oj, ciemnooka... myślisz, że jestem jakimś kretynem z prowincji?! Znam tę roślinę. To mangarosa...","Ha! To doskonały okaz mangarosa. Nie próbuj mnie oszukać, Cyganko!","Aha, i myślisz, że dam ci tę mangarosę za tak nędzną sumę...?");
 			link.l1.go = "mangarosa_1";
 		break;
@@ -257,7 +256,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_2":
 			// тут работает харизма
-			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
+			if (int(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
 				dialog.text = "Hm... może nie zaszkodzi zdradzić ci uchylić rąbka tajemnicy. Ale bez odpowiedniej wiedzy i składników nic z nią nie zrobisz.";
 				link.l1 = "A więc zamieniam się w słuch.";
@@ -303,7 +302,7 @@ void ProcessDialogEvent()
 			);
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
-			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
+			pchar.questTemp.Mangarosa.g_count = int(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":

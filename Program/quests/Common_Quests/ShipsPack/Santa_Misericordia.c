@@ -6,7 +6,7 @@ void SantaMisericordia_init()
 	pchar.questTemp.SantaMisericordia = true;
 	log_testinfo("Квест 'Святое Милосердие' стартовал");
 	pchar.questTemp.SantaMisericordia.stage = 1; // стадии меняем при выходе на карту
-	pchar.questTemp.SantaMisericordia.colony = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)); // колонии меняем при заходе в порт
+	pchar.questTemp.SantaMisericordia.colony = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)); // колонии меняем при заходе в порт
     ref sld, chref;
 	
 	// характеристики запишем после ТЗ
@@ -50,18 +50,18 @@ void SantaMisericordia_init()
 	SetCharacterGoods(chref, GOOD_KNIPPELS, 500);
 	SetCharacterGoods(chref, GOOD_BOMBS, 1000);
 	
-	string sGroup = "Sea_"+chref.id
+	string sGroup = "Sea_"+chref.id;
 	Group_FindOrCreateGroup(sGroup);
 	Group_SetType(sGroup,"trade");
     Group_SetTaskAttackInMap(sGroup, PLAYER_GROUP);
     Group_LockTask(sGroup);
 	Group_AddCharacter(sGroup, chref.id);
 	Group_SetGroupCommander(sGroup, chref.id);
-	SetRandGeraldSail(chref, sti(chref.Nation));
+	SetRandGeraldSail(chref, int(chref.Nation));
 	
 	chref.quest = "InMap";
-	chref.city = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage));
-	chref.quest.targetCity = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1);
+	chref.city = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage));
+	chref.quest.targetCity = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1);
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
 	chref.mapEnc.Name = GetShipName("Holy Mercy");
@@ -108,7 +108,7 @@ string SantaMisericordia_findColony(int stage);
     for (int j = 0; j < 22; j++) 
 	{
         ref rCity = GetColonyRefByID(OurColonies[j]);
-        if (sti(rCity.nation) == SPAIN)
+        if (int(rCity.nation) == SPAIN)
 		{
             SpanishColonies[spanishCount] = OurColonies[j];
             spanishCount++;
@@ -144,7 +144,7 @@ int TotalSpainColonies()
 void SantaMisericordia_ToCity(string sChar)
 {
 	if(!CharacterIsAlive(sChar)) {Log_testinfo("Капитан ГАЛЕОНА умер"); return;}
-	pchar.questTemp.SantaMisericordia.colony = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1);
+	pchar.questTemp.SantaMisericordia.colony = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1);
 	Log_testinfo("капитан галеона сошёл в порту "+ pchar.questTemp.SantaMisericordia.colony);
 	
 	//DeleteQuestCondition("SantaMisericordia_ToMap");
@@ -177,12 +177,12 @@ void SantaMisericordia_ToCity(string sChar)
 	pchar.questTemp.SantaMisericordia.ColonyZapret = pchar.questTemp.SantaMisericordia.colony;
 	//губернатор уступает место
 	sld = CharacterFromID(pchar.questTemp.SantaMisericordia.colony + "_Mayor");
-	sld.quest.SantaMisericordia;
+	touchattr(sld.quest.SantaMisericordia);
 	LAi_SetStayType(sld);
 	ChangeCharacterAddressGroup(sld, pchar.questTemp.SantaMisericordia.colony + "_townhall", "goto", "governor1");
 	//контрабандист
 	sld = CharacterFromID(pchar.questTemp.SantaMisericordia.colony + "_Smuggler");
-	sld.quest.SantaMisericordia;
+	touchattr(sld.quest.SantaMisericordia);
 	//молится в церкви c 6-9
 	sld = GetCharacter(NPC_GenerateCharacter("SantaMisericordia_clone_church", "off_spa_2", "man", "man", 30, SPAIN, -1, false, "governor"));
 	sld.name = GetConvertStr("Cap_Name", LangFile);
@@ -262,29 +262,29 @@ void SantaMisericordia_ToMap(string sQuest)
 	ref chref = characterFromId("SantaMisericordia_cap");
 	chref.quest = "InMap";
 	
-	string sGroup = "Sea_"+chref.id
+	string sGroup = "Sea_"+chref.id;
 	Group_FindOrCreateGroup(sGroup);
 	Group_SetAddressNone(sGroup);
 	
-	pchar.questTemp.SantaMisericordia.stage = sti(pchar.questTemp.SantaMisericordia.stage) + 1;
-	if(sti(pchar.questTemp.SantaMisericordia.stage) >= TotalSpainColonies())
+	pchar.questTemp.SantaMisericordia.stage = int(pchar.questTemp.SantaMisericordia.stage) + 1;
+	if(int(pchar.questTemp.SantaMisericordia.stage) >= TotalSpainColonies())
 	{		
 		pchar.questTemp.SantaMisericordia.stage = 0;
 		chref.city = SantaMisericordia_findColony(TotalSpainColonies());
 	}
 	else
 	{
-		chref.city = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage));
+		chref.city = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage));
 	}
 	// При ПЧФ не заходим в Картахену
 	if (CheckAttribute(pchar, "questTemp.Mtraxx"))
 	{
 		if (pchar.questTemp.Mtraxx != "fail" && pchar.questTemp.Mtraxx != "fail_end" && pchar.questTemp.Mtraxx != "full_complete" && pchar.questTemp.Mtraxx != "full_complete_end")
 		{
-			if(SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1) == "Cartahena")
+			if(SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1) == "Cartahena")
 			{
-				pchar.questTemp.SantaMisericordia.stage = sti(pchar.questTemp.SantaMisericordia.stage) + 1;
-				Log_testInfo("Капитан ГАЛЕОНА ПРОПУСТИЛ КАРТАХЕНУ направился в колонию: "+SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1));
+				pchar.questTemp.SantaMisericordia.stage = int(pchar.questTemp.SantaMisericordia.stage) + 1;
+				Log_testInfo("Капитан ГАЛЕОНА ПРОПУСТИЛ КАРТАХЕНУ направился в колонию: "+SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1));
 			}
 		}
 	}
@@ -293,15 +293,15 @@ void SantaMisericordia_ToMap(string sQuest)
 	{
 		if (pchar.questTemp.Patria != "end" && pchar.questTemp.Patria != "fail")
 		{
-			if(SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1) == "PortSpein")
+			if(SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1) == "PortSpein")
 			{
-				pchar.questTemp.SantaMisericordia.stage = sti(pchar.questTemp.SantaMisericordia.stage) + 1;
-				Log_testInfo("Капитан ГАЛЕОНА ПРОПУСТИЛ ТРИНИДАД направился в колонию: "+SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1));
+				pchar.questTemp.SantaMisericordia.stage = int(pchar.questTemp.SantaMisericordia.stage) + 1;
+				Log_testInfo("Капитан ГАЛЕОНА ПРОПУСТИЛ ТРИНИДАД направился в колонию: "+SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1));
 			}
 		}
 	}
 	
-	chref.quest.targetCity = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1);
+	chref.quest.targetCity = SantaMisericordia_findColony(int(pchar.questTemp.SantaMisericordia.stage)+1);
 	Log_testInfo("Капитан ГАЛЕОНА направился в колонию: "+chref.quest.targetCity + " из колонии : "+chref.city);
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
@@ -347,7 +347,7 @@ void CheckSantaMisericordia()
 {
 	if(CharacterIsAlive("SantaMisericordia_cap"))
 	{
-		ref sld = CharacterFromID("SantaMisericordia_cap")
+		ref sld = CharacterFromID("SantaMisericordia_cap");
 		if(CheckAttribute(sld,"quest") && sld.quest == "InMap")
 		{
 			//проверяем на карте
@@ -461,8 +461,8 @@ void SantaMisericordia_SpawnBranders()
 	Group_AddCharacter("SantaMisericordia_Brander", "SantaMisericordia_Brander");
 	Group_SetGroupCommander("SantaMisericordia_Brander", "SantaMisericordia_Brander");
 	Sea_LoginGroupCurrentSea("SantaMisericordia_Brander");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
-	Ship_SetTaskBrander(PRIMARY_TASK, sti(sld.index), GetMainCharacterIndex());
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	Ship_SetTaskBrander(PRIMARY_TASK, int(sld.index), GetMainCharacterIndex());
 	log_testinfo("Запущен брандер 1");
 	DoQuestFunctionDelay("SantaMisericordia_SpawnBrander2", 10.0);
 }
@@ -477,7 +477,7 @@ void SantaMisericordia_SpawnBrander2(string sQuest)
 	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
-	ref ship = GetRealShip(sld.ship.type);
+	ref ship = GetRealShip(int(sld.ship.type));
 	
 	sld.ShipTaskLock = true;
 	sld.Abordage.Enable = false;
@@ -488,8 +488,8 @@ void SantaMisericordia_SpawnBrander2(string sQuest)
 	Group_AddCharacter("SantaMisericordia_Brander2", "SantaMisericordia_Brander2");
 	Group_SetGroupCommander("SantaMisericordia_Brander2", "SantaMisericordia_Brander2");
 	Sea_LoginGroupCurrentSea("SantaMisericordia_Brander2");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
-	Ship_SetTaskBrander(PRIMARY_TASK, sti(sld.index), GetMainCharacterIndex());
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	Ship_SetTaskBrander(PRIMARY_TASK, int(sld.index), GetMainCharacterIndex());
 	log_testinfo("Запущен брандер 2");
 }
 
@@ -501,7 +501,7 @@ void SantaMisericordia_ChangeWhr()
 	Seafoam.storm = "false";
 	WeatherParams.Rain.Duration  = 1000000; // затяжной дождь
 	WeatherParams.Rain.ThisDay   = true;
-    WeatherParams.Rain.StartTime = MakeInt(GetHour());
+    WeatherParams.Rain.StartTime = int(GetHour());
 	DeleteAttribute(&WeatherParams, "Storm");
 	Whr_UpdateWeather();
 	//PauseAllSounds();
@@ -523,9 +523,9 @@ void SantaMisericordia_Mines(ref chRef)
 void SantaMisericordia_NextMine(string sQuest)
 {
 	if(!CharacterIsAlive("SantaMisericordia_cap")) return;
-	if(sti(pchar.questTemp.SantaMisericordia.mines) > 30) return;
-	pchar.questTemp.SantaMisericordia.mines = sti(pchar.questTemp.SantaMisericordia.mines)+1;
-	Log_TestInfo("Мина номер: "+sti(pchar.questTemp.SantaMisericordia.mines));
+	if(int(pchar.questTemp.SantaMisericordia.mines) > 30) return;
+	pchar.questTemp.SantaMisericordia.mines = int(pchar.questTemp.SantaMisericordia.mines)+1;
+	Log_TestInfo("Мина номер: "+int(pchar.questTemp.SantaMisericordia.mines));
 	ref chRef = characterFromId("SantaMisericordia_cap");
 	AISeaGoods_AddGood(chRef, "powder" + 1, "barrel", 600.0, 1);
     PlaySound("Ships\jakor_002.wav");
@@ -536,9 +536,9 @@ void SantaMisericordia_NextMine(string sQuest)
 void SantaMisericordia_NextMineNext(string sQuest)
 {
 	if(!CharacterIsAlive("SantaMisericordia_cap")) return;
-	if(sti(pchar.questTemp.SantaMisericordia.mines) > 30) return;
-	pchar.questTemp.SantaMisericordia.mines = sti(pchar.questTemp.SantaMisericordia.mines)+1;
-	Log_TestInfo("Мина номер: "+sti(pchar.questTemp.SantaMisericordia.mines));
+	if(int(pchar.questTemp.SantaMisericordia.mines) > 30) return;
+	pchar.questTemp.SantaMisericordia.mines = int(pchar.questTemp.SantaMisericordia.mines)+1;
+	Log_TestInfo("Мина номер: "+int(pchar.questTemp.SantaMisericordia.mines));
 	ref chRef = characterFromId("SantaMisericordia_cap");
 	AISeaGoods_AddGood(chRef, "powder" + 1, "barrel", 600.0, 1);
     PlaySound("Ships\jakor_002.wav");
@@ -677,7 +677,7 @@ void SantaMisericordia_HavanaCrypt_6(string sQuest)
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
-		pchar.questTemp.ISawDiegoDeLanda = sti(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
+		pchar.questTemp.ISawDiegoDeLanda = int(pchar.questTemp.ISawDiegoDeLanda) + 1; // встретил Диего де Ланда
 		pchar.questTemp.DiegoDeLanda_SantaMisericordia = true;
 		
 		PlaySound("ambient\jail\jail_door2.wav");
@@ -707,7 +707,7 @@ void SantaMisericordia_Pobeda(string sQuest)
 {
 	//ачивки
 	Achievment_Set("ach_CL_136");
-	if (sti(pchar.rank) <= 14) Achievment_Set("ach_CL_137");
+	if (int(pchar.rank) <= 14) Achievment_Set("ach_CL_137");
 	bQuestDisableMapEnter = false;
 	
 	//чистим всё
@@ -748,9 +748,9 @@ void SantaMisericordia_Pobeda(string sQuest)
 
 bool ach139condition()
 {
-	if(sti(Pchar.Ship.Type) == SHIP_NOTUSED) return false;
+	if(int(Pchar.Ship.Type) == SHIP_NOTUSED) return false;
 
-	if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_GALEON_SM && IsEquipCharacterByItem(pchar, "lacrima_patris") && IsCharacterEquippedArtefact(pchar, "Talisman17"))
+	if (int(RealShips[int(pchar.ship.type)].basetype) == SHIP_GALEON_SM && IsEquipCharacterByItem(pchar, "lacrima_patris") && IsCharacterEquippedArtefact(pchar, "Talisman17"))
 	{
 		if(CheckAttribute(pchar,"equip_item.slot1") && pchar.equip_item.slot1 != SLOT_NOT_USED && isMonkArtefact(pchar.equip_item.slot1)
 		&& CheckAttribute(pchar,"equip_item.slot2") && pchar.equip_item.slot2 != SLOT_NOT_USED && isMonkArtefact(pchar.equip_item.slot2)
@@ -775,7 +775,7 @@ void SantaMisericordia_Alamida_DlgExit()
 
 void SantaMisericordia_Alamida_Abordage_DlgExit_1()
 {
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetPlayerType(pchar);
 	LAi_SetFightMode(pchar, true);
 	LAi_SetImmortal(sld, false);
@@ -790,7 +790,7 @@ void SantaMisericordia_Alamida_Abordage_DlgExit_1()
 
 void SantaMisericordia_Alamida_Abordage_DlgExit_2()
 {
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetPlayerType(pchar);
 	LAi_SetFightMode(pchar, true);
 	LAi_SetImmortal(sld, false);
@@ -809,7 +809,7 @@ void SantaMisericordia_Alamida_Abordage_DlgExit_2()
 
 void SantaMisericordia_Alamida_Abordage_DlgExit_3()
 {
-	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 	LAi_SetPlayerType(pchar);
 	LAi_SetImmortal(sld, false);
 	LAi_KillCharacter(sld);
@@ -834,7 +834,7 @@ bool Santa_Misericordia_QuestComplete(string sQuestName, string qname)
 	// ==> Квест "Святое Милосердие"
 	if (sQuestName == "SantaMisericordia_TrirdRound") {
 		DoQuestCheckDelay("hide_weapon", 1.2);
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.Dialog.FileName = "Quest\ShipsPack\SantaMisericordia_dialog.c";
 		sld.Dialog.CurrentNode = "Alamida_abordage_TrirdRound";
 		LAi_SetActorType(sld);
@@ -843,7 +843,7 @@ bool Santa_Misericordia_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "SantaMisericordia_Molitva") {
 		DoQuestCheckDelay("hide_weapon", 1.2);
-		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		sld = &Characters[int(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.Dialog.FileName = "Quest\ShipsPack\SantaMisericordia_dialog.c";
 		sld.Dialog.CurrentNode = "Alamida_abordage_Molitva";
 		LAi_SetActorType(sld);

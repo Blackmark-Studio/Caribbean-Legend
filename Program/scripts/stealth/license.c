@@ -154,9 +154,9 @@ string GetRusNameNationLicence(int _nation)
 int LICENSE_GetPrice(string licenseType = "", float daysQty = 0)
 {
 	int res;
-	if (licenseType != "") res = sti(licenseType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
-	else res = makeint(sqrt(daysQty)*10)*7;
+	if (licenseType != "") res = int(licenseType) * (3000 + MOD_SKILL_ENEMY_RATE*500);
+	else res = int(sqrt(daysQty)*10)*7;
 
-	res = MakeInt(MakeFloat(res) * SZN_GetModifierMtp(M_TRADE_LICENSE_COST, 1.0, 0.01));
+	res = int(float(res) * SZN_GetModifierMtp(M_TRADE_LICENSE_COST, 1.0, 0.01));
 	return res;
 }

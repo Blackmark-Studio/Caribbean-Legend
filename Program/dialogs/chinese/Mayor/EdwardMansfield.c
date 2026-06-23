@@ -66,7 +66,7 @@ void ProcessDialogEvent()
             }
 
 
-                    if (npchar.city == sti(pchar.HeroParam.Location))
+                    if (npchar.city == int(pchar.HeroParam.Location))
                     {
                         if(!CheckAttribute(PChar, "questTemp.pirateStartQuest"))
                         {
@@ -217,7 +217,7 @@ void ProcessDialogEvent()
             link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //30天后与曼斯菲尔德和解
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
                     dialog.text = "别烦我, 记住。 ";
                     link.l1 = "知道了。 ";

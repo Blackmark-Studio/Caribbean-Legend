@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // у себя
 					dialog.text = "Ach? Warum dringen Sie in meinen Platz ein, als ob es brennen würde? Wer glauben Sie, dass Sie sind??";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+sti(npchar.quest.price)+"  Dublonen und dein Problem wird innerhalb eines Tages gelöst sein.";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+int(npchar.quest.price)+"  Dublonen und dein Problem wird innerhalb eines Tages gelöst sein.";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast eine große Unordnung angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+sti(npchar.quest.price)+" Dublonen und dein Problem wird innerhalb eines Tages gelöst sein.";
-				else dialog.text = "Die gesamte Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht einfach sein, dir zu helfen, aber es gibt eine Chance. "+sti(npchar.quest.price)+" Doubloons und ich werde versuchen, dein Problem zu lösen.";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast eine große Unordnung angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+int(npchar.quest.price)+" Dublonen und dein Problem wird innerhalb eines Tages gelöst sein.";
+				else dialog.text = "Die gesamte Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht einfach sein, dir zu helfen, aber es gibt eine Chance. "+int(npchar.quest.price)+" Doubloons und ich werde versuchen, dein Problem zu lösen.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Hier, nimm deine Münzen und komm damit klar.";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+sti(npchar.quest.price)+"  Dublonen und dein Problem wird in einem Tag gelöst sein.";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+int(npchar.quest.price)+"  Dublonen und dein Problem wird in einem Tag gelöst sein.";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast ein großes Durcheinander angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+sti(npchar.quest.price)+"  Dublonen und dein Problem wird in einem Tag gelöst sein.";
-				else dialog.text = "Die ganze Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht einfach sein, dir zu helfen, aber es gibt eine Chance. "+sti(npchar.quest.price)+" Dublonen und ich werde versuchen, Ihr Problem zu lösen.";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast ein großes Durcheinander angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+int(npchar.quest.price)+"  Dublonen und dein Problem wird in einem Tag gelöst sein.";
+				else dialog.text = "Die ganze Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht einfach sein, dir zu helfen, aber es gibt eine Chance. "+int(npchar.quest.price)+" Dublonen und ich werde versuchen, Ihr Problem zu lösen.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Hier, nimm deine Münzen und komm damit klar.";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+sti(npchar.quest.price)+" Doubloons und Ihr Problem wird innerhalb eines Tages gelöst sein.";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "Nun, es ist eigentlich kein Konflikt, nur ein kleines Missverständnis, he-he. "+int(npchar.quest.price)+" Doubloons und Ihr Problem wird innerhalb eines Tages gelöst sein.";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast eine große Unordnung angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+sti(npchar.quest.price)+" Dublonen und Ihr Problem wird in einem Tag gelöst sein.";
-				else dialog.text = "Die ganze Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht leicht sein, dir zu helfen, aber es gibt eine Chance."+sti(npchar.quest.price)+" Dublonen und ich werde versuchen, Ihr Problem zu lösen.";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Sicher, ich habe davon gehört. Du hast eine große Unordnung angerichtet, mein Lieber. Aber es gibt einen Ausweg. "+int(npchar.quest.price)+" Dublonen und Ihr Problem wird in einem Tag gelöst sein.";
+				else dialog.text = "Die ganze Insel ist sich des Gemetzels bewusst, das du angerichtet hast. Es wird nicht leicht sein, dir zu helfen, aber es gibt eine Chance."+int(npchar.quest.price)+" Dublonen und ich werde versuchen, Ihr Problem zu lösen.";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "Hier, nimm deine Münzen und komm damit klar.";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("You have given "+sti(npchar.quest.price)+" doubloons");
+			Log_Info("You have given "+int(npchar.quest.price)+" doubloons");
 			dialog.text = "Herrlich. Nun setzen Sie sich und ruhen Sie sich aus. Es wäre besser, wenn Sie in meiner Kajüte bleiben, bis ich Ihr Problem gelöst habe. Ich möchte nicht, dass Sie es noch schlimmer machen, mein Lieber.";
 			link.l1 = "Gut...";
 			link.l1.go = "peace";

@@ -34,7 +34,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "guardoftruth_3":
 			dialog.text = "Etwas fabelhafter Kapitän der spanischen Flotte, nicht weniger! Er hat sich vorgestellt als...oh... Ich habe es vergessen... Ah! Senor Diego. Sein Name war Diego, aber sein Nachname... de Montagna oder de Montoya. So etwas. Er hörte mir zu, genau wie du, bedankte sich und ging weg. Seitdem habe ich ihn nicht mehr gesehen.";
-			if (sti(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "Ich verstehe. Vielen Dank für Ihre Geschichte, Sie haben mir sehr geholfen. Nehmen Sie meine Dankbarkeit in Münzen. Auf Wiedersehen.";
 				AddMoneyToCharacter(pchar, -5000);

@@ -203,7 +203,7 @@ void ProcessDialogEvent()
             DeleteAttribute(&TEV, "boardingReloadFreeze");
             NPChar.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
             NPChar.Dialog.CurrentNode = "Knippel_officer";
-			NPChar.quest.OfficerPrice = sti(PChar.rank)*200; // 文物
+			NPChar.quest.OfficerPrice = int(PChar.rank)*200; // 文物
             NPChar.quest.meeting = true;
             NPChar.OfficerImmortal = true;
             NPChar.Health.HP    = 60.0;
@@ -312,8 +312,8 @@ void AddBrigadierOfficer(ref sld, ref NPChar)
 		case  9: num = 1.3;  break;
 		case 10: num = 1.5;  break;
 	}
-    num = stf(NPChar.Rank) / num;
-    FantomMakeCoolFighter(sld, MakeInt(num+2), 70, 70, BLADE_LONG, "", "", 100);
+    num = float(NPChar.Rank) / num;
+    FantomMakeCoolFighter(sld, int(num+2), 70, 70, BLADE_LONG, "", "", 100);
     RemoveAllCharacterItems(sld, true);
     GiveItem2Character(sld, NPChar.equip.blade);
     EquipCharacterbyItem(sld, NPChar.equip.blade);
@@ -333,7 +333,7 @@ void AddBrigadierOfficer(ref sld, ref NPChar)
     sld.greeting = "officer_hire";
     sld.Dialog.Filename = "Enc_Officer_dialog.c";
     sld.quest.meeting = true;
-	sld.quest.OfficerPrice = sti(PChar.rank)*200; // 文物
+	sld.quest.OfficerPrice = int(PChar.rank)*200; // 文物
     Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
     sld.OfficerImmortal = true;
     sld.Health.HP    = 60.0;

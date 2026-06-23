@@ -1,7 +1,7 @@
 // Эффективность по talent
 float GetTalentEfficiency(int talent)
 {
-    float norm = makefloat(talent) / 10.0;   // нормализуем 1..10 → 0.1..1.0
+    float norm = float(talent) / 10.0;   // нормализуем 1..10 → 0.1..1.0
     return 0.7 + 0.3 * sqrt(norm);           // формула эффективности
 }
 
@@ -13,9 +13,9 @@ int GetCharacterRankRate(ref _refCharacter)
 
     if(CheckCharacterPerk(_refCharacter, "SharedExperience"))
     {
-        return makeint(44.0);
+        return int(44.0);
     }
-    return makeint(45.0);
+    return int(45.0);
 }
 int GetCharacterRankRateCur(ref _refCharacter)
 {
@@ -23,7 +23,7 @@ int GetCharacterRankRateCur(ref _refCharacter)
 	{
 		_refCharacter.rank_exp = 0;
 	}
-    return sti(_refCharacter.rank_exp);
+    return int(_refCharacter.rank_exp);
 }
 
 // сброс всех порогов (буфер расчета, пересчитывается от вещей +1)
@@ -91,8 +91,8 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
     // boal 300804 падение экспы
     if (_addValue < 0)
     {
-        _chref.skill.(_skill_exp) = sti(_chref.skill.(_skill_exp)) + _addValue;
-        if (sti(_chref.skill.(_skill_exp)) < 0)
+        _chref.skill.(_skill_exp) = int(_chref.skill.(_skill_exp)) + _addValue;
+        if (int(_chref.skill.(_skill_exp)) < 0)
         {
             _chref.skill.(_skill_exp) = 0;
         }
@@ -124,13 +124,13 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
         }
     }
 
-    if (CheckAttribute(_chref, "skill." + _skill) && sti(_chref.skill.(_skill)) < SKILL_MAX)// && sti(_chref.skill.(_skill)) > 0)
+    if (CheckAttribute(_chref, "skill." + _skill) && int(_chref.skill.(_skill)) < SKILL_MAX)// && int(_chref.skill.(_skill)) > 0)
     { // if skill = 0 then it is great loser
-        _chref.skill.(_skill_exp) = stf(_chref.skill.(_skill_exp)) + _addValue;
+        _chref.skill.(_skill_exp) = float(_chref.skill.(_skill_exp)) + _addValue;
         float fExpRate = GetCharacterExpRate(_chref, _skill);
-        while ( makeint(sti(_chref.skill.(_skill)) * fExpRate) <= stf(_chref.skill.(_skill_exp)) && sti(_chref.skill.(_skill)) < SKILL_MAX )
+        while ( int(int(_chref.skill.(_skill)) * fExpRate) <= float(_chref.skill.(_skill_exp)) && int(_chref.skill.(_skill)) < SKILL_MAX )
         {
-            _chref.skill.(_skill_exp) = stf(_chref.skill.(_skill_exp)) - makeint(sti(_chref.skill.(_skill)) * fExpRate);
+            _chref.skill.(_skill_exp) = float(_chref.skill.(_skill_exp)) - int(int(_chref.skill.(_skill)) * fExpRate);
             AddCharacterSkillDontClearExp(_chref, _skill, 1);
             fExpRate = GetCharacterExpRate(_chref, _skill); // Обновим на случай повышения fRateReg
             // оптимизация скилов
@@ -140,7 +140,7 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
     }
 
     // Officers
-    if (_addValue > 0 && sti(_chref.index) == GetMainCharacterIndex()) // Только для ГГ
+    if (_addValue > 0 && int(_chref.index) == GetMainCharacterIndex()) // Только для ГГ
     {
         if(ShowExpNotifications()) notification(StringFromKey("RPGUtilite_1"), _skill);
 
@@ -281,9 +281,9 @@ float GetCharacterExpRate(ref _chref, string _skill)
         else if(Skill_Val > 94 && Skill_Val < 99) fRateReg = 2.64;
         else if(Skill_Val > 98) fRateReg = 10.00;
 		
-        _chref.skill.(skill_rate) = makefloat(MOD_EXP_RATE / divBy)*fRateReg;
+        _chref.skill.(skill_rate) = float(MOD_EXP_RATE / divBy)*fRateReg;
     }
-    return  stf(_chref.skill.(skill_rate));
+    return  float(_chref.skill.(skill_rate));
 }
 
 
@@ -296,23 +296,23 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
     {
         if(CheckAttribute(_chref,"perks.FreePoints_self_exp"))
         {
-            _chref.perks.FreePoints_self_exp = sti(_chref.perks.FreePoints_self_exp) + _addValue;
+            _chref.perks.FreePoints_self_exp = int(_chref.perks.FreePoints_self_exp) + _addValue;
         }
         else
         {	_chref.perks.FreePoints_self_exp = _addValue;
         }
-        if (sti(_chref.perks.FreePoints_self_exp) >= GetFreePoints_SelfRate(_chref))
+        if (int(_chref.perks.FreePoints_self_exp) >= GetFreePoints_SelfRate(_chref))
         {
             DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
             _chref.perks.FreePoints_self_exp = 0;
             if(CheckAttribute(_chref,"perks.FreePoints_self"))
             {
-                _chref.perks.FreePoints_self = sti(_chref.perks.FreePoints_self) + 1;
+                _chref.perks.FreePoints_self = int(_chref.perks.FreePoints_self) + 1;
             }
             else
             {	_chref.perks.FreePoints_self = 1;
             }
-            if (sti(_chref.index) == GetMainCharacterIndex())
+            if (int(_chref.index) == GetMainCharacterIndex())
             {
 			    notification(XI_ConvertString("Personal abilities Note"), "Personal abilities");
 			    if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
@@ -332,23 +332,23 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
     {
         if(CheckAttribute(_chref,"perks.FreePoints_ship_exp"))
         {
-            _chref.perks.FreePoints_ship_exp = sti(_chref.perks.FreePoints_ship_exp) + _addValue;
+            _chref.perks.FreePoints_ship_exp = int(_chref.perks.FreePoints_ship_exp) + _addValue;
         }
         else
         {	_chref.perks.FreePoints_ship_exp = _addValue;
         }
-        if (sti(_chref.perks.FreePoints_ship_exp) >= GetFreePoints_ShipRate(_chref))
+        if (int(_chref.perks.FreePoints_ship_exp) >= GetFreePoints_ShipRate(_chref))
         {
             DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
             _chref.perks.FreePoints_ship_exp = 0;
             if(CheckAttribute(_chref,"perks.FreePoints_ship"))
             {
-                _chref.perks.FreePoints_ship = sti(_chref.perks.FreePoints_ship) + 1;
+                _chref.perks.FreePoints_ship = int(_chref.perks.FreePoints_ship) + 1;
             }
             else
             {	_chref.perks.FreePoints_ship = 1;
             }
-            if (sti(_chref.index) == GetMainCharacterIndex())
+            if (int(_chref.index) == GetMainCharacterIndex())
             {
                 notification(XI_ConvertString("Ship abilities Note"), "Ship abilities");
 			    if(CheckAttribute(_chref,"systeminfo.tutorial.Perk"))
@@ -371,12 +371,12 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
     {
         _chref.rank_exp = 0;
     }
-    _chref.rank_exp = sti(_chref.rank_exp) + _addValue;
+    _chref.rank_exp = int(_chref.rank_exp) + _addValue;
 
-    if (sti(_chref.rank_exp) >= GetCharacterRankRate(_chref)) // use classic mode - 2 skill = 1 rank
+    if (int(_chref.rank_exp) >= GetCharacterRankRate(_chref)) // use classic mode - 2 skill = 1 rank
     {
         _chref.rank_exp = 0;
-        _chref.rank = sti(_chref.rank) + 1;
+        _chref.rank = int(_chref.rank) + 1;
         float mhp = LAi_GetCharacterMaxHP(_chref);
         CT_UpdateCashTables(_chref);
         LAi_SetHP(_chref,mhp,mhp);
@@ -389,17 +389,17 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
 		//   		_chref.PerkValue.EnergyPlus = 0;
 		// 	}
 		// 	// belamour legendary edition новый бонус к энергии 
-		// 	_chref.PerkValue.EnergyPlus = sti(_chref.rank);
+		// 	_chref.PerkValue.EnergyPlus = int(_chref.rank);
 		// 	SetEnergyToCharacter(_chref);
 		// }
 
         // сообщение в лог
         //if(IsOfficer(_chref) || IsCompanion(_chref))
 
-		if(sti(_chref.index) == GetMainCharacterIndex())
+		if(int(_chref.index) == GetMainCharacterIndex())
         {
             AddMsgToCharacter(_chref, MSGICON_LEVELUP);
-            LA_LevelUp(XI_ConvertString("Level Up"), ""+sti(_chref.rank)+"");
+            LA_LevelUp(XI_ConvertString("Level Up"), ""+int(_chref.rank)+"");
             Event("PlayerLevelUp");
 			if(GetMaxAutoSaves("Rank") != 0)
 			{
@@ -420,18 +420,18 @@ int AddCharacterSkill(ref _chref, string _skill, int _addValue)
 
     if (_addValue > 0)
 	{
-	    if ((sti(_chref.skill.(_skill)) + _addValue) > SKILL_MAX)
+	    if ((int(_chref.skill.(_skill)) + _addValue) > SKILL_MAX)
 	    {
-	        _addValue = SKILL_MAX - sti(_chref.skill.(_skill));
+	        _addValue = SKILL_MAX - int(_chref.skill.(_skill));
 	    }
 	}
-    _chref.skill.(_skill) = sti(_chref.skill.(_skill)) + _addValue;
+    _chref.skill.(_skill) = int(_chref.skill.(_skill)) + _addValue;
 
-	if (sti(_chref.skill.(_skill)) < 1)
+	if (int(_chref.skill.(_skill)) < 1)
 	{
         _chref.skill.(_skill) = 1;
 	}
-	if (sti(_chref.skill.(_skill)) > SKILL_MAX )
+	if (int(_chref.skill.(_skill)) > SKILL_MAX )
 	{
 	    _chref.skill.(_skill) = SKILL_MAX;
 	}
@@ -442,25 +442,25 @@ int AddCharacterSkill(ref _chref, string _skill, int _addValue)
 	}
     else if (_addValue < 0 ) Event(EVENT_CT_UPDATE_FELLOW, "a", _chref);
 
-	return sti(_chref.skill.(_skill));
+	return int(_chref.skill.(_skill));
 }
 
 void AddCharacterSkillDontClearExp(ref _chref, string _skill, int _addValue)
 {
     /*if (_addValue > 0)
 	{
-	    if ((sti(_chref.skill.(_skill)) + _addValue) > SKILL_MAX)
+	    if ((int(_chref.skill.(_skill)) + _addValue) > SKILL_MAX)
 	    {
-	        _addValue = SKILL_MAX - sti(_chref.skill.(_skill));
+	        _addValue = SKILL_MAX - int(_chref.skill.(_skill));
 	    }
 	} */
-	_chref.skill.(_skill) = sti(_chref.skill.(_skill)) + _addValue;
+	_chref.skill.(_skill) = int(_chref.skill.(_skill)) + _addValue;
 
-	if (sti(_chref.skill.(_skill)) < 1)
+	if (int(_chref.skill.(_skill)) < 1)
 	{
         _chref.skill.(_skill) = 1;
 	}
-	if (sti(_chref.skill.(_skill)) > SKILL_MAX )
+	if (int(_chref.skill.(_skill)) > SKILL_MAX )
 	{
 	    _chref.skill.(_skill) = SKILL_MAX;
 	}
@@ -478,18 +478,18 @@ float GetSkillValueExp(ref _refCharacter, string _skillName)
 	{
 		_refCharacter.Skill.(skillName_exp) = 0;
 	}
-    return stf(_refCharacter.Skill.(skillName_exp));
+    return float(_refCharacter.Skill.(skillName_exp));
 }
 
 void AddCharacterSkillPoints(ref _chref, string _skill, int _addValue)
 {
-	_chref.skill.(_skill) = sti(_chref.skill.(_skill)) + _addValue;
+	_chref.skill.(_skill) = int(_chref.skill.(_skill)) + _addValue;
 
-	if (sti(_chref.skill.(_skill)) < 1)
+	if (int(_chref.skill.(_skill)) < 1)
 	{
         _chref.skill.(_skill) = 1;
 	}
-	if (sti(_chref.skill.(_skill)) > SKILL_MAX )
+	if (int(_chref.skill.(_skill)) > SKILL_MAX )
 	{
 	    _chref.skill.(_skill) = SKILL_MAX;
 	}

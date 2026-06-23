@@ -83,7 +83,7 @@ void ProcessDialogEvent()
 			{
 //================ METRO ====================
 				//если заплатил, то разговаривают, иначе посылают
-				if (CheckAttribute(PChar, "GenQuest.contraTravel.payed") && sti(PChar.GenQuest.contraTravel.payed) == true)
+				if (CheckAttribute(PChar, "GenQuest.contraTravel.payed") && int(PChar.GenQuest.contraTravel.payed) == true)
 				{
                     dialog.Text = RandPhraseSimple("Ага, наконец-то!!! Вот и ты, а то мы уж заждались совсем. Идём, мы отчаливаем.", "Пошевеливайся, тут повсюду патрули. Нужно быстрее убраться отсюда!");
 					//по заданию губернатора, истребление контры, только эта ветка.
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					//если набрал компаньонов или купил корабль себе уже :), в сад..
-					if (GetCompanionQuantity(PChar) > 1 || sti(PChar.ship.type) != SHIP_NOTUSED)
+					if (GetCompanionQuantity(PChar) > 1 || int(PChar.ship.type) != SHIP_NOTUSED)
 					{
 						dialog.Text = RandPhraseSimple("Ты кто? Мы договаривались доставить пассажира, а не капитана.", "Проваливай! Пока не избавишься от своего корабля, не приходи.");
 						Link.l1 = "Ах, чёрт...";
@@ -110,7 +110,7 @@ void ProcessDialogEvent()
 						break;
 					}
 					//типа помог отбиться, свой парень... 
-					if (CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight") && sti(PChar.GenQuest.contraTravel.PatrolFight) == true)
+					if (CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight") && int(PChar.GenQuest.contraTravel.PatrolFight) == true)
 					{
 						if (chrDisableReloadToLocation) // ещё бой идёт
 						{
@@ -128,7 +128,7 @@ void ProcessDialogEvent()
 					Link.l2 = "Уже иду.";
 					Link.l2.go = "Exit";
 					//а это патруль... 
-					if (GetSummonSkillFromNameToOld(Pchar, SKILL_SNEAK) < frandSmall(13.0*(1.0 - pow(0.9, sti(PChar.rank)))) && !CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight"))
+					if (GetSummonSkillFromNameToOld(Pchar, SKILL_SNEAK) < frandSmall(13.0*(1.0 - pow(0.9, int(PChar.rank)))) && !CheckAttribute(PChar, "GenQuest.contraTravel.PatrolFight"))
 					{
 						AddDialogExitQuest("Rand_ContrabandInterruption");
 						PChar.GenQuest.contraTravel.PatrolFight = true;
@@ -144,10 +144,10 @@ void ProcessDialogEvent()
 						PChar.GenQuest.contraTravel.ship = true;
 						PChar.quest.Munity = "";  // признак выхода с палубы
 						
-						SetLaunchFrameFormParam("Прошло " + sti(Pchar.GenQuest.contraTravel.destination.days) + " дней." + NewStr() + "Палуба корабля контрабандистов.",
+						SetLaunchFrameFormParam("Прошло " + int(Pchar.GenQuest.contraTravel.destination.days) + " дней." + NewStr() + "Палуба корабля контрабандистов.",
 						                        "Reload_To_Location", 0.1, 5.0);
                         bQuestCheckProcessFreeze = true;
-						WaitDate("", 0, 0, sti(Pchar.GenQuest.contraTravel.destination.days), rand(20), 0);
+						WaitDate("", 0, 0, int(Pchar.GenQuest.contraTravel.destination.days), rand(20), 0);
 						bQuestCheckProcessFreeze = false;
 						MakeCloneShipDeck(refStore, true); // подмена палубы
 						SetLaunchFrameReloadLocationParam("Ship_deck", "reload", "reload1", "Travel_talkOnDeck");
@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cancellation":
-            if (sti(Pchar.quest.Contraband.Counter) == 0)
+            if (int(Pchar.quest.Contraband.Counter) == 0)
             {
     			dialog.Text = "Отменяется? Ты что, смеёшься?";
     			Link.l1 = "Совершенно серьёзно.";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Cancellation_1":
-			if( makeint(Pchar.rank) <= 3 || GetSummonSkillFromNameToOld(Pchar, SKILL_FENCING) <= 5 || GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) <= 5 )
+			if( int(Pchar.rank) <= 3 || GetSummonSkillFromNameToOld(Pchar, SKILL_FENCING) <= 5 || GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) <= 5 )
 			{
 				if(Rand(1) == 1)
 				{
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 
 		case "GenQuestKillContraband_1":
 			//счетчик подстав по "метро"...
-			if(CheckAttribute(PChar, "GenQuest.contraTravel.active") && sti(PChar.GenQuest.contraTravel.active) == true)
+			if(CheckAttribute(PChar, "GenQuest.contraTravel.active") && int(PChar.GenQuest.contraTravel.active) == true)
 			{
 				Statistic_AddValue(PChar, "contr_TravelKill", 1);
 				ChangeContrabandRelation(pchar, -20); //репу контры вниз
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 
 		case "Exchange":
 			// сама торговля -->
-            if(FindContrabandGoods(Pchar) == -1 && sti(Pchar.quest.Contraband.Counter) == 0)
+            if(FindContrabandGoods(Pchar) == -1 && int(Pchar.quest.Contraband.Counter) == 0)
             {
 				dialog.Text = "Ну, и чего ты здесь делаешь? У тебя же ничего нет, что можно продать! Всё, что лежит у тебя в трюме, можно купить в городе!";
 				Link.l1 = "Не повезло.";
@@ -319,7 +319,7 @@ void ProcessDialogEvent()
 			else
 			{
                 // установим окружение -->
-                if (sti(Pchar.quest.Contraband.Counter) == 0) // не торговали ещё
+                if (int(Pchar.quest.Contraband.Counter) == 0) // не торговали ещё
                 {
                     if(hrand(11) == 3)
                     {
@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 				dialog.text = "Итак, давай посмотрим товары.";										  
 				Link.l1 = "Ну давай посмотрим.";
 				Link.l1.go = "Exchange1"; 
-				if (sti(Pchar.quest.Contraband.Counter) == 0)
+				if (int(Pchar.quest.Contraband.Counter) == 0)
     			{
         			Link.l99 = "Пожалуй, я передумал"+ GetSexPhrase("","а") +".";
     				Link.l99.go = "Cancellation";
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition опасный груз
 			pchar.GenQuest.Smugglerzpq = npchar.id;
 			
-			LaunchContrabandTrade(CharacterFromId(pchar.GenQuest.Contraband.SmugglerId),  sti(pchar.FindContrabandGoods.StoreIdx));	
+			LaunchContrabandTrade(CharacterFromId(pchar.GenQuest.Contraband.SmugglerId),  int(pchar.FindContrabandGoods.StoreIdx));
 		break;				
 		// belamour legendary edition опасный груз -->
 		case "SmugglerZPQ":
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 			dialog.text = "В этом мире всё стоит денег, капитан, даже информация. Я бы даже сказал, особенно информация. Предлагаю так: я дам вам эту наводку за символическую сумму в... скажем, пять тысяч песо. Вас это устроит?";										  
 			Link.l1 = "Платить пять тысяч песо за сомнительную информацию о том, где можно задорого продать порох? Нет уж, пожалуй, я как-нибудь проживу и без этой наводки.";
 			Link.l1.go = "SmugglerZPQ_NM"; 
-			if(sti(pchar.money) > 4999)
+			if(int(pchar.money) > 4999)
 			{
 				Link.l2 = "Думаю, я смогу заработать на этой сделке больше, чем какие-то пять тысяч. Я согласен.";
 				Link.l2.go = "SmugglerZPQ_4";

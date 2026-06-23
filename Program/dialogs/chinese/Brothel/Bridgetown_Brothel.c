@@ -22,10 +22,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "这是一大笔钱... 我需要考虑一下。 ";
             link.l1.go = "exit";    
             npchar.quest.HWICTalked = "true";
-            pchar.questTemp.HWIC.Eng.BridgeCounter = sti(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
+            pchar.questTemp.HWIC.Eng.BridgeCounter = int(pchar.questTemp.HWIC.Eng.BridgeCounter)+1;
             AddQuestRecord("Holl_Gambit", "2-7");
             DelLandQuestMark(npchar);
-            if (sti(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7) 
+            if (int(pchar.questTemp.HWIC.Eng.BridgeCounter) == 7)
             {
                 AddQuestRecord("Holl_Gambit", "2-6");
                 pchar.quest.GotoBridgetownOver.over = "yes"; // 取消计时器
@@ -33,7 +33,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 pchar.questTemp.HWIC.Eng = "SeekVanBerg";
                 pchar.quest.VanBergAttack_Check.win_condition.l1 = "MapEnter";
                 pchar.quest.VanBergAttack_Check.function = "VanBergAttackCheck";
-                // if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) AddDialogExitQuestFunction("FailVanBergInWorld");
+                // if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_VALCIRIA || GetCompanionQuantity(pchar) > 1) AddDialogExitQuestFunction("FailVanBergInWorld");
                 // else AddDialogExitQuestFunction("CreateVanBergInWorld");
             }
         break;

@@ -750,7 +750,7 @@ void ProcessDialogEvent()
 		
 		case "Tuttuat_73":
 			RemoveItems(pchar, "cannabis7", 5);
-			switch (sti(pchar.questTemp.Caleuche.Mangarosa))
+			switch (int(pchar.questTemp.Caleuche.Mangarosa))
 			{
 				case 0:
 					dialog.text = "非常好。 明天太阳落山时来。 我会为你酿造增加你的反应和敏捷的药水。 ";
@@ -797,8 +797,8 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Caleuche.Potion"))
 			{
 				sTemp = "";
-				if (sti(pchar.questTemp.Caleuche.Mangarosa) == 1) sTemp = " 它使你的动作更快, 你更擅长使用轻便武器。 ";
-				if (sti(pchar.questTemp.Caleuche.Mangarosa) == 2) sTemp = " 它使你在长途旅行中更耐寒, 你更擅长使用锋利的军刀。 ";
+				if (int(pchar.questTemp.Caleuche.Mangarosa) == 1) sTemp = " 它使你的动作更快, 你更擅长使用轻便武器。 ";
+				if (int(pchar.questTemp.Caleuche.Mangarosa) == 2) sTemp = " 它使你在长途旅行中更耐寒, 你更擅长使用锋利的军刀。 ";
 				dialog.text = "药水准备好了, 白脸战士。 你拿走它。 "+sTemp+"";
 				link.l1 = "谢谢你, 伟大的萨满。 ";
 				link.l1.go = "Tuttuat_76";
@@ -817,7 +817,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tuttuat_76":
-			if (sti(pchar.questTemp.Caleuche.Mangarosa) > 2)
+			if (int(pchar.questTemp.Caleuche.Mangarosa) > 2)
 			{
 				dialog.text = "我为你酿造了所有我承诺的药水。 你变得更强了。 你高兴吗? ";
 				link.l1 = "是的, 伟大的萨满。 这确实是一个有价值的奖励。 ";
@@ -835,7 +835,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			npchar.dialog.currentnode = "Tuttuat_72";
 			DeleteAttribute(pchar, "questTemp.Caleuche.Potion");
-			if (sti(pchar.questTemp.Caleuche.Mangarosa) == 1)
+			if (int(pchar.questTemp.Caleuche.Mangarosa) == 1)
 			{
 				ChangeItemDescribe("kaleuche_amulet1", "itmdescr_kaleuche_amulet1_potion");
 				sld = ItemsFromID("kaleuche_amulet1");
@@ -848,7 +848,7 @@ void ProcessDialogEvent()
 				sld.ItemType = "SUPPORT";
 				GiveItem2Character(pchar, "kaleuche_amulet1");
 			}
-			if (sti(pchar.questTemp.Caleuche.Mangarosa) == 2)
+			if (int(pchar.questTemp.Caleuche.Mangarosa) == 2)
 			{
 				ChangeItemDescribe("kaleuche_amulet2", "itmdescr_kaleuche_amulet2_potion");
 				sld = ItemsFromID("kaleuche_amulet2");
@@ -929,9 +929,9 @@ void ProcessDialogEvent()
 			sld.picTexture = "ITEMS_35";
 			sld.price = 0;
 			sld.Weight = 1.0;
-			sld.reaction = sti(pchar.questTemp.Caleuche.Mangarosa);
+			sld.reaction = int(pchar.questTemp.Caleuche.Mangarosa);
 			sld.ItemType = "SUPPORT";
-			i = sti(sld.reaction);
+			i = int(sld.reaction);
 			ChangeItemDescribe("kaleuche_amulet3", "itmdescr_kaleuche_amulet"+i+"_potion");
 			AddQuestRecord("Caleuche", "42");
 			pchar.questTemp.Caleuche = "end";

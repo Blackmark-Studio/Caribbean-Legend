@@ -10,7 +10,7 @@ int FindFreeMapEncounterSlot()
 {
 	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++)
 	{
-		if (sti(MapEncounters[i].bUse) == false)
+		if (int(MapEncounters[i].bUse) == false)
 		{
 			return i;
 		}
@@ -54,7 +54,7 @@ void ReleaseMapEncounters()
 void ReleaseMapEncounter(int iEncounterSlot)
 {
 	Trace("Release encounter with slot " + iEncounterSlot);
-	if (sti(MapEncounters[iEncounterSlot].bUse) == true)
+	if (int(MapEncounters[iEncounterSlot].bUse) == true)
 	{
 		DeleteAttribute(&MapEncounters[iEncounterSlot],"");
 		MapEncounters[iEncounterSlot].bUse = false;
@@ -70,9 +70,9 @@ ref GetMapEncounterRef(int iEncounterSlot)
 
 ref GetMapEncounterNationRef(int iEncounterSlot)
 {
-	if (sti(MapEncounters[iEncounterSlot].bUse) == true)
+	if (int(MapEncounters[iEncounterSlot].bUse) == true)
 	{
-		return GetNationByType(sti(MapEncounters[iEncounterSlot].Nation));
+		return GetNationByType(int(MapEncounters[iEncounterSlot].Nation));
 	}
 	//Trace("GetMapEncounterNationString: error: not found use slot iEncounterSlot = " + iEncounterSlot);
 	return GetNationByType(ENGLAND);
@@ -117,10 +117,10 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 		rEncounter1 = &MapEncounters[iEncounter1];
         if(bSetGrp)
             rEncounter1.GroupName = ENCOUNTER_GROUP + GetEncStamp();
-		if(sti(rEncounter1.nation) == PIRATE)
+		if(int(rEncounter1.nation) == PIRATE)
 		{
             // ~!~
-			if(sti(rEncounter1.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || sti(rEncounter1.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
+			if(int(rEncounter1.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || int(rEncounter1.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
 			{
 				iEncounter1 = -1;
 				iEncounter2 = -1;
@@ -133,10 +133,10 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 		rEncounter2 = &MapEncounters[iEncounter2];
         if(bSetGrp)
             rEncounter2.GroupName = ENCOUNTER_GROUP + GetEncStamp();
-		if(sti(rEncounter2.nation) == PIRATE)
+		if(int(rEncounter2.nation) == PIRATE)
 		{
             // ~!~
-			if(sti(rEncounter2.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || sti(rEncounter2.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
+			if(int(rEncounter2.RealEncounterType) < ENCOUNTER_TYPE_SMUGGLERS || int(rEncounter2.RealEncounterType) > ENCOUNTER_TYPE_PIRATE)
 			{
 				iEncounter1 = -1;
 				iEncounter2 = -1;
@@ -148,7 +148,7 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 
 	if(iEncounter1 != -1 && iEncounter2 != -1)
 	{
-		if(GetNationRelation(sti(rEncounter1.nation), sti(rEncounter2.nation)) != RELATION_ENEMY)
+		if(GetNationRelation(int(rEncounter1.nation), int(rEncounter2.nation)) != RELATION_ENEMY)
 		{
 			iEncounter1 = -1;
 			iEncounter2 = -1;
@@ -173,9 +173,9 @@ bool GenerateMapEncounter_SetMapShipModel(ref rEncounter)
 		trace("У ЭНКАУНТЕРА НЕТ НАЦИИИ!!!");
 		return false;
 	}
-	string sFirstName = Nations[sti(rEncounter.Nation)].worldMapShip;
+	string sFirstName = Nations[int(rEncounter.Nation)].worldMapShip;
 
-	if (sti(rEncounter.RealEncounterType) == ENCOUNTER_TYPE_ALONE)
+	if (int(rEncounter.RealEncounterType) == ENCOUNTER_TYPE_ALONE)
 	{
 		if(!CheckAttribute(rEncounter, "CharacterID"))
 		{
@@ -201,7 +201,7 @@ bool GenerateMapEncounter_SetMapShipModel(ref rEncounter)
 	}
 	else
 	{
-		sLastName = EncountersTypes[sti(rEncounter.RealEncounterType)].worldMapShip;
+		sLastName = EncountersTypes[int(rEncounter.RealEncounterType)].worldMapShip;
 		rEncounter.worldMapShip = sFirstName + "_" + sLastName;
 		Trace(" rEncounter.worldMapShip = " + rEncounter.worldMapShip);
 	}
@@ -314,7 +314,7 @@ bool GenerateMapEncounter_War(string sIslandID, ref iEncounter, bool bFixTypes)
 	}
 	iEncounter = iEncounterSlot;
 
-	if (sti(rEncounter.Nation) == PIRATE)
+	if (int(rEncounter.Nation) == PIRATE)
 	{
 		rEncounter.Type = "pirate";
 	}
@@ -409,7 +409,7 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 	}
 
 	// generate second encounter; TO_DO: also Merchant
-	if (!GenerateMapEncounter_War(-1, iEncounter2, false))
+	if (!GenerateMapEncounter_War("", iEncounter2, false))
 	{
 		ManualReleaseMapEncounter(iEncounter1);
 		iEncounter1 = -1; iEncounter2 = -1;
@@ -419,16 +419,16 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 	ref rEncounter1 = &MapEncounters[iEncounter1];
 	ref rEncounter2 = &MapEncounters[iEncounter2];
 
-	int iRealEncounterType1 = rEncounter1.RealEncounterType;
-	int iRealEncounterType2 = rEncounter2.RealEncounterType;
+	int iRealEncounterType1 = rEncounter1.RealEncounterType$int(0);
+	int iRealEncounterType2 = rEncounter2.RealEncounterType$int(0);
 
 	// find nations for battle between two encounters
 
 	int iNationsCanBe[MAX_NATIONS];
 	int iNumNationsCanBe = 0;
 
-	int iNation1 = sti(rEncounter1.Nation);
-	int iNation2 = sti(rEncounter2.Nation);
+	int iNation1 = int(rEncounter1.Nation);
+	int iNation2 = int(rEncounter2.Nation);
 
 	// if we hit the target with nations - return
 	if (GetNationRelation(iNation1, iNation2) != RELATION_ENEMY)
@@ -485,8 +485,8 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 
 void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
 {
-    int iNation = sti(rEncounter.Nation);
-    int iEType  = sti(rEncounter.RealEncounterType);
+    int iNation = int(rEncounter.Nation);
+    int iEType  = int(rEncounter.RealEncounterType);
     //ref rEncTemplate = &EncountersTypes[iEType];
 
     // Общая классификация для уведомлений
@@ -594,7 +594,7 @@ int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipSpec, int iNati
 		classFlags += GetClassFlag(i);
 	}
 
-	int iType = sti(sShipSpec);
+	int iType = int(sShipSpec);
 	typeFlags = gShipTypeFlags[iType];
 
 	nationFlags = GetNationFlag(iNation);
@@ -604,14 +604,14 @@ int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipSpec, int iNati
 	if (iShipType == SHIP_NOTUSED)
 	{
         Log_TestInfo("WARNING! CANT FIND SHIP IN WME_GetShipTypeExt!");
-		Trace("Can't find ship with spec " + wdmGetSpec(sti(sShipSpec)) + " and ClassMin = " + iClassMin + ", ClassMax = " + iClassMax);
+		Trace("Can't find ship with spec " + wdmGetSpec(int(sShipSpec)) + " and ClassMin = " + iClassMin + ", ClassMax = " + iClassMax);
 		return INVALID_SHIP_TYPE;
 	}
 
 	ref refShip;
 	makeref(refShip, ShipsTypes[iShipType]);
 
-	if (CheckAttribute(refShip, "NationalLineShip") && sti(refShip.NationalLineShip))
+	if (CheckAttribute(refShip, "NationalLineShip") && int(refShip.NationalLineShip))
 	{
 		// Доля линейников 10% от кораблей первого класса
 		// В ваниле ещё может выпасть только военник

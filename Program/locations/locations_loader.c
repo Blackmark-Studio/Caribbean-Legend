@@ -41,7 +41,7 @@ void SetCamShuttle(ref loc) // boal вынес в метод
 {
 	if(CheckAttribute(pchar, "GenQuest.CamShuttle"))
 	{
-		float fshut = stf(Pchar.GenQuest.CamShuttle)/10;
+		float fshut = float(Pchar.GenQuest.CamShuttle)/10;
 		float ftmp = 0.1;
 		if (fshut > 0.4) fshut = 0.4;
 		if (fshut < 0.2) ftmp = 0.05;
@@ -63,7 +63,7 @@ bool LoadLocation(ref loc)
 	PostEvent(EVENT_LOCATION_LOAD, 0);
 
 	int i;
-	bool res;
+	bool res = false;
 
 	for (i = 0; i < MAX_SHIPS_IN_LOCATION; i++) { iShips[i] = -1; }
 
@@ -130,7 +130,7 @@ bool LoadLocation(ref loc)
 	{		
 		if (CheckAttribute(loc, "QuestlockWeather.hours") && CheckAttribute(loc, "QuestlockWeather.minutes"))
 		{
-			SetCurrentTime(sti(loc.QuestlockWeather.hours), sti(loc.QuestlockWeather.minutes));
+			SetCurrentTime(int(loc.QuestlockWeather.hours), int(loc.QuestlockWeather.minutes));
 			DeleteAttribute(loc, "QuestlockWeather.hours");
 			DeleteAttribute(loc, "QuestlockWeather.minutes");
 		}
@@ -182,7 +182,7 @@ bool LoadLocation(ref loc)
 	//SendMessage(Sound,"lf",MSG_SOUND_SET_MASTER_VOLUME,0.0);
 
 	//Create location======================================================================
-	if(CreateEntity(&loc, "location") == 0) return 0;
+	if(CreateEntity(&loc, "location") == 0) return false;
 	//Set models path
 	if(CheckAttribute(loc, "filespath.models"))
 	{		
@@ -201,7 +201,7 @@ bool LoadLocation(ref loc)
 	}		
 	else // outside
 	{
-		if(sti(InterfaceStates.DYNAMICLIGHTS))
+		if(int(InterfaceStates.DYNAMICLIGHTS))
 		{
 			SendMessage(loc, "ls", MSG_LOCATION_LIGHTPATH, "");
 		}			
@@ -219,7 +219,7 @@ bool LoadLocation(ref loc)
     // rotate.dz - начальный поворот в радианах
     if (loc.id == "Villemstad_town")
     {
-        float fHourSec = stf(Weather.Time.speed);
+        float fHourSec = float(Weather.Time.speed);
         float fHour = GetTime();
         if (fHour > 12.0) fHour -= 12.0;
 
@@ -245,7 +245,7 @@ bool LoadLocation(ref loc)
 
         loc.models.always.clock.rotate.dx = 0.0;
         loc.models.always.clock.rotate.dy = 0.0;
-        loc.models.always.clock.rotate.dz = PIm2 * (fHour - makeint(fHour));
+        loc.models.always.clock.rotate.dz = PIm2 * (fHour - int(fHour));
 
         SetEventHandler("NextHour", "Villemstad_BigClock", 0);
         SetEventHandler(EVENT_LOCATION_UNLOAD, "Villemstad_BigClock_Off", 0);
@@ -268,7 +268,7 @@ bool LoadLocation(ref loc)
 
 	// инит данных для режима скрытности
 	UpdateStealthParams(loc);
- 
+
 	//Loading always models================================================================
 	aref st, at, lit, lit1;
 	string sat;
@@ -283,20 +283,20 @@ bool LoadLocation(ref loc)
 		{
 			sat = "models.always." + sat;
 			res = LocLoadModel(loc, sat, "");
-			if(res == 0)
+			if(!res)
 			{
 				Trace("LocationLoader: not loaded model location." + sat + ", id = " + loc.id);
 				Trace("Unload location.");
 				UnloadLocation(loc);
-				return 0;
+				return false;
 			}
 		}else{
 			LocLoadGrass(loc, "models.always." + sat);
 			object objGrass;
-			GetEntity(&objGrass,"grass"));
+			GetEntity(&objGrass,"grass");
 			if(CheckAttribute(&InterfaceStates,"GrassDrawDistance"))
 			{
-				fMaxDist = stf(InterfaceStates.GrassDrawDistance);
+				fMaxDist = float(InterfaceStates.GrassDrawDistance);
 				if(CheckLocGrassOpt() && fMaxDist > 100) fMaxDist = 100;
 			} else fMaxDist = 50;
 
@@ -349,12 +349,12 @@ bool LoadLocation(ref loc)
 			{
 				sat = "models.day." + sat;
 				res = LocLoadModel(loc, sat, "");
-				if(res == 0)
+				if(!res)
 				{
                     Trace("LocationLoader: not loaded model location." + sat + ", id = " + loc.id);
 					Trace("Unload location.");
 					UnloadLocation(loc);
-					return 0;
+					return false;
 				}
 			}
 			ReloadProgressUpdate();
@@ -362,19 +362,19 @@ bool LoadLocation(ref loc)
 		//Loading patches
 		if(CheckAttribute(loc, "models.day.charactersPatch") != 0)
 		{
-			res = SendMessage(loc, "ls", MSG_LOCATION_SET_CHRS_PATCH, loc.models.day.charactersPatch + smg);
-			if(res == 0)
+			res = bool(SendMessage(loc, "ls", MSG_LOCATION_SET_CHRS_PATCH, loc.models.day.charactersPatch + smg));
+			if(!res)
 			{
 				Trace("Character patch not loaded!");
 				UnloadLocation(loc);
-				return 0;
+				return false;
 			}
 		}
 		else
 		{
 			Trace("Character patch not setting for location.models.day.charactersPatch!");
 			UnloadLocation(loc);
-			return 0;
+			return false;
 		}
 		if(CheckAttribute(loc, "models.day.jumpPatch") != 0)
 		{
@@ -393,12 +393,12 @@ bool LoadLocation(ref loc)
 			{
 				sat = "models.night." + sat;
 				res = LocLoadModel(loc, sat, "");
-				if(res == 0)
+				if(!res)
 				{
                     Trace("LocationLoader: not loaded model location." + sat + ", id = " + loc.id);
 					Trace("Unload location.");
 					UnloadLocation(loc);
-					return 0;
+					return false;
 				}
                 ReloadProgressUpdate();
 			}
@@ -407,19 +407,19 @@ bool LoadLocation(ref loc)
 		//Loading patches
 		if (CheckAttribute(loc, "models.night.charactersPatch") != 0)
 		{
-			res = SendMessage(loc, "ls", MSG_LOCATION_SET_CHRS_PATCH, loc.models.night.charactersPatch + smg);
-			if(res == 0)
+			res = bool(SendMessage(loc, "ls", MSG_LOCATION_SET_CHRS_PATCH, loc.models.night.charactersPatch + smg));
+			if(!res)
 			{
 				Trace("Character patch not loaded!");
 				UnloadLocation(loc);
-				return 0;
+				return false;
 			}
 		}
 		else
 		{
 			Trace("Character patch not setting for location.models.night.charactersPatch!");
 			UnloadLocation(loc);
-			return 0;
+			return false;
 		}
 		if(CheckAttribute(loc, "models.night.jumpPatch") != 0)
 		{
@@ -437,12 +437,12 @@ bool LoadLocation(ref loc)
 			at = GetAttributeN(st, i);
 			sat = "models.entry." + GetAttributeName(at);
 			res = LocLoadModel(loc, sat, "");
-			if(res == 0)
+			if(!res)
 			{
                 Trace("LocationLoader: not loaded model location." + sat + ", id = " + loc.id);
 				Trace("Unload location.");
 				UnloadLocation(loc);
-				return 0;
+				return false;
 			}
 		}
 	}
@@ -453,9 +453,9 @@ bool LoadLocation(ref loc)
 	Sea.MaxSeaHeight = Whr_SetLocationMaxSeaHeight();//Mett: old 0.5;
 	if(CheckAttribute(loc, "MaxWaveHeigh"))
 	{
-		if(stf(loc.MaxWaveHeigh) > 0.0)
+		if(float(loc.MaxWaveHeigh) > 0.0)
 		{
-			Sea.MaxSeaHeight = stf(loc.MaxWaveHeigh);
+			Sea.MaxSeaHeight = float(loc.MaxWaveHeigh);
 		}
 	}
 	//Locator's radiuses
@@ -470,7 +470,7 @@ bool LoadLocation(ref loc)
 			//Group radius
 			aref rdgrp = GetAttributeN(locator_rad, j);
 			string rdgname = GetAttributeName(rdgrp);			
-			float rad = MakeFloat("" + rdgrp);
+			float rad = float("" + rdgrp);
 			SetLocatorGroupRadius(loc, rdgname, rad);
 			//Some locators radius
 			lnum = GetAttributesNum(rdgrp);
@@ -478,7 +478,7 @@ bool LoadLocation(ref loc)
 			{
 				aref rdloc = GetAttributeN(rdgrp, k);
 				string rdlname = GetAttributeName(rdloc);
-				rad = MakeFloat("" + rdloc);
+				rad = float("" + rdloc);
 				SetLocatorRadius(loc, rdgname, rdlname, rad);
 			}
 		}
@@ -509,7 +509,7 @@ bool LoadLocation(ref loc)
 	{
 		Trace("Main character not loaded!");
 		UnloadLocation(loc);
-		return 0;		
+		return false;
 	}
 	AddCharacterLocatorGroup(mainCharacter, "reload");
 	AddCharacterLocatorGroup(mainCharacter, "camdetector");
@@ -531,7 +531,7 @@ bool LoadLocation(ref loc)
 	PChar.CameraHoldPos = false; //boal
 	if(CheckAttribute(loc, "lockCamAngle") == true && !Whr_CheckNewBoardingDeck())// в новых абордажках отвязана камера
 	{
-		float lockCamAngle = stf(loc.lockCamAngle);
+		float lockCamAngle = float(loc.lockCamAngle);
 		if(lockCamAngle < -1.5) lockCamAngle = -1.5;
 		if(lockCamAngle > 1.5) lockCamAngle = 1.5;
 		if(CheckAttribute(loc, "type"))
@@ -542,19 +542,19 @@ bool LoadLocation(ref loc)
 	}
     SetCamShuttle(loc);
 
-	float fRatio = stf(showWindow.right)/stf(showWindow.bottom);
+	float fRatio = float(showWindow.right)/float(showWindow.bottom);
 	locCamera.maxRadius = Bring2RangeNoCheck(4.5, 8.0, 16.0/9.0, 32.0/9.0, fRatio);
 
 	if(!CheckAttribute(&locCamera, "zoom"))
 	{
 		locCamera.zoom = 0.75;
 	}
-	if(stf(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
+	if(float(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
 		locCameraSetFPVMode(true);
 	else
 		locCameraSetFPVMode(false);
 	
-	SendMessage(&locCamera, "lf", MSG_CAMERA_SET_RADIUS, stf(locCamera.maxRadius)*stf(locCamera.zoom)); // belamour высота камеры
+	SendMessage(&locCamera, "lf", MSG_CAMERA_SET_RADIUS, float(locCamera.maxRadius)*float(locCamera.zoom)); // belamour высота камеры
 	/*if(isNoBoarding) мешало релоду на абордаже и каюте*/ SetEventHandler("Control Activation","chrCharacterKeys",1);
     if(!LAi_IsCharacterControl(PChar)) SendMessage(&locCamera, "ll", MSG_CAMERA_SPECIALMODE, true); // Не доворачивать за камерой
 
@@ -703,7 +703,7 @@ bool LoadLocation(ref loc)
 
 	if(CheckAttribute(&mainCharacter, "lastFightMode") != 0)
 	{
-		if(sti(mainCharacter.lastFightMode) != 0)
+		if(int(mainCharacter.lastFightMode) != 0)
 		{
 			if(CheckAttribute(loc, "noFight") && loc.noFight != "1") //eddy. для переходов в режиме боя, чтобы не було эррорлога. счас только при читовых телепортах вылазит, сам смотри.
 			{
@@ -765,7 +765,7 @@ bool LoadLocation(ref loc)
 	// если мы под водой
 	if(CheckAttribute(loc, "underwater") != 0)
 	{
-		if (sti(loc.underwater))
+		if (int(loc.underwater))
 		{
 			aref arWeather = GetCurrentWeather();
 
@@ -805,7 +805,7 @@ bool LoadLocation(ref loc)
 	/////
 	/* if (CheckAttribute(loc, "time"))
 	{
-		int time = sti(loc.time);
+		int time = int(loc.time);
 		WaitDate("", 0, 0, 0, 0, time); //крутим время
 		RecalculateJumpTable();
 	} */
@@ -917,10 +917,10 @@ bool LoadLocation(ref loc)
 		{
 			notification(StringFromKey("locations_loader_1") + XI_ConvertString("Colony"+ loc.townsack + "Gen") + "!", "Discovery");
 			pchar.questTemp.TownVisit.(TownId) = true;
-			pchar.questTemp.TownVisit.counter = sti(pchar.questTemp.TownVisit.counter) + 1;
+			pchar.questTemp.TownVisit.counter = int(pchar.questTemp.TownVisit.counter) + 1;
 			AddCharacterExpToSkill(pchar, "Sailing", 15.0);
 		}
-		if(!CheckAttribute(pchar, "questTemp.TownVisit.counter.All") && sti(pchar.questTemp.TownVisit.counter) == 28)
+		if(!CheckAttribute(pchar, "questTemp.TownVisit.counter.All") && int(pchar.questTemp.TownVisit.counter) == 28)
 		{
 			notification(StringFromKey("locations_loader_2"), "none");
 			AddCharacterExpToSkill(pchar, "Sailing", 200.0);
@@ -945,7 +945,7 @@ bool LoadLocation(ref loc)
 	// применяем настройки пресета камеры
 	Camera_CheckPreset();
 	
-	return 1;
+	return true;
 }
 
 void LocationSetLights(ref loc)
@@ -986,9 +986,9 @@ void LocationSetLights(ref loc)
 				for(j = 0; j < lnum; j++)
 				{
 					lit1 = GetAttributeN(lit, j);
-					float litX = stf(lit1.x);
-					float litY = stf(lit1.y);
-					float litZ = stf(lit1.z);
+					float litX = float(lit1.x);
+					float litY = float(lit1.y);
+					float litZ = float(lit1.z);
 					//Trace("     AddLight: " + lightName + " (" + litX + ", " + litY + ", " + litZ);
 					SendMessage(loc, "lsfff", MSG_LOCATION_ADD_LIGHT, lightName, litX, litY, litZ);
 					if(lightName == "lamp")
@@ -1025,7 +1025,10 @@ void LocationSubstituteGeometry(ref loc)
 			{
 				sat1 = "models.day." + sat;
 				sat2 = "models.night." + sat;
-				SendMessage(loc, "lss", MSG_LOCATION_EX_MSG, "DeleteLocationModel",loc.(sat2));
+				if (sat2 in loc)
+				{
+					SendMessage(loc, "lss", MSG_LOCATION_EX_MSG, "DeleteLocationModel",loc.(sat2));
+				}
 				LocLoadModel(loc, sat1, "");
 			}				
 		}		
@@ -1044,8 +1047,11 @@ void LocationSubstituteGeometry(ref loc)
 				|| sat == "deckMediumBigNight")
 			{
 				sat1 = "models.night." + sat;
-				sat2 = "models.day." + sat;				
-				SendMessage(loc, "lss", MSG_LOCATION_EX_MSG, "DeleteLocationModel",loc.(sat2));
+				sat2 = "models.day." + sat;
+				if (sat2 in loc)
+				{
+					SendMessage(loc, "lss", MSG_LOCATION_EX_MSG, "DeleteLocationModel",loc.(sat2));
+				}
 				LocLoadModel(loc, sat1, "");
 			}				
 		}
@@ -1054,7 +1060,7 @@ void LocationSubstituteGeometry(ref loc)
     // SendMessage(loc, "l", MSG_LOCATION_UPDATELOCATORS);	
 }
 
-bool UnloadLocation(aref loc)
+bool UnloadLocation(ref loc)
 {
     // Удалить временные виртуальные локаторы
     DeleteAttribute(loc, "locators.temp");
@@ -1067,7 +1073,7 @@ bool UnloadLocation(aref loc)
 	// 14.07.2007 - отключаем подводную часть
 	Sea.UnderWater = false;
 
-	//trace("UnloadLocation(aref loc) " + loc.id);
+	//trace("UnloadLocation(ref loc) " + loc.id);
 	DialogExit();
 
     LocUnloadGrass(loc);
@@ -1203,13 +1209,13 @@ bool LocCheckDLight(ref loc)
 	return checkDLight;
 }
 
-bool LocLoadModel(aref loc, string sat, string addition)
+bool LocLoadModel(ref loc, string sat, string addition)
 {
 	//Пропустим пустое имя
 	if(loc.(sat) == "") return true;
 	//Считываем параметры модельки
 	string attr, attr1;
-	bool res;
+	bool res = false;
 	bool dLight;
 	string tech = "";
 	int level = 10;
@@ -1217,25 +1223,25 @@ bool LocLoadModel(aref loc, string sat, string addition)
     attr = sat + ".level";
     if(CheckAttribute(loc, attr)) 
 	{	
-		level = MakeInt(loc.(attr));
+		level = int(loc.(attr));
 		if(!bSeaActive) level += 10;
 	}	
 
-	int dynamicLightsOn = sti(InterfaceStates.DYNAMICLIGHTS); //  belamour динамический свет
+	int dynamicLightsOn = int(InterfaceStates.DYNAMICLIGHTS); //  belamour динамический свет
 	attr = sat + ".tech";
 	if(CheckAttribute(loc, attr)) tech = loc.(attr);
 	if(tech == "LocationModelBlend" && dynamicLightsOn) tech = "LocationModelBlendLighting";
 	dLight = LocCheckDLight(loc);
 	//Trace("Load model: " + loc.(sat) + " lights :" + dynamicLightsOn + " tech :" + tech + " dLight :" + dLight);
 
-	int bOk;
+	bool bOk = false;
 	if(!dLight) // внутренние локи
 	{		
-		bOk = 0;	
+		bOk = false;
 		attr = sat + ".lights";
 		if(CheckAttribute(loc, attr)) 
 		{
-			bOk = MakeInt(loc.(attr)); 
+			bOk = bool(loc.(attr));
 		}		
 	}	
 	else // внешние
@@ -1248,8 +1254,8 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	}
 	
     //Грузим модельку
-	res = SendMessage(loc, "lssll", MSG_LOCATION_ADD_MODEL, loc.(sat) + addition, tech, level, bOk);
-	if(res == 0) return 0;
+	res = bool(SendMessage(loc, "lssll", MSG_LOCATION_ADD_MODEL, loc.(sat) + addition, tech, level, bOk));
+	if(!res) return false;
 	//Устанавливаем флаги
 	object mdl;
 	if(SendMessage(loc, "le", MSG_LOCATION_GET_MODEL, &mdl) != 0)
@@ -1291,14 +1297,14 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	Trace("> " + attr);
 	if(CheckAttribute(loc, attr) != 0)
 	{
-		res = 0;
+		res = false;
 		attr1 = sat + ".locator.name";
 		Trace("> " + attr1);
 		if(CheckAttribute(loc, attr1) != 0)
 		{
-			res = SendMessage(loc, "lss", MSG_LOCATION_MODEL_SET_POS, loc.(attr), loc.(attr1));
+			res = bool(SendMessage(loc, "lss", MSG_LOCATION_MODEL_SET_POS, loc.(attr), loc.(attr1)));
 		}
-		if(res == 0) 
+		if(!res)
 		{
 			Trace("Can't set locator modifier to model: " + loc.(sat));
 		}
@@ -1311,23 +1317,23 @@ bool LocLoadModel(aref loc, string sat, string addition)
         float dy = 0.0;
         float dz = 0.0;
         attr1 = attr + ".dx";
-        if(CheckAttribute(loc, attr1) != 0) dx = MakeFloat(loc.(attr1));
+        if(CheckAttribute(loc, attr1) != 0) dx = float(loc.(attr1));
         attr1 = attr + ".dy";
-		if(CheckAttribute(loc, attr1) != 0) dy = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) dy = float(loc.(attr1));
 		attr1 = attr + ".dz";
-		if(CheckAttribute(loc, attr1) != 0) dz = MakeFloat(loc.(attr1));
-        res = SendMessage(loc, "lfff", MSG_LOCATION_MODEL_SET_ROT_ANGLE, dx, dy, dz);
-		if(res == 0) Trace("Can't set rotate modifier to model: " + loc.(sat));
+		if(CheckAttribute(loc, attr1) != 0) dz = float(loc.(attr1));
+        res = bool(SendMessage(loc, "lfff", MSG_LOCATION_MODEL_SET_ROT_ANGLE, dx, dy, dz));
+		if(!res) Trace("Can't set rotate modifier to model: " + loc.(sat));
         
 		float x, y, z;
 		attr1 = attr + ".x";
-		if(CheckAttribute(loc, attr1) != 0) x = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) x = float(loc.(attr1));
 		attr1 = attr + ".y";
-		if(CheckAttribute(loc, attr1) != 0) y = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) y = float(loc.(attr1));
 		attr1 = attr + ".z";
-		if(CheckAttribute(loc, attr1) != 0) z = MakeFloat(loc.(attr1));
-		res = SendMessage(loc, "lfff", MSG_LOCATION_MODEL_SET_ROT, x, y, z);
-		if(res == 0) Trace("Can't set rotate modifier to model: " + loc.(sat));
+		if(CheckAttribute(loc, attr1) != 0) z = float(loc.(attr1));
+		res = bool(SendMessage(loc, "lfff", MSG_LOCATION_MODEL_SET_ROT, x, y, z));
+		if(!res) Trace("Can't set rotate modifier to model: " + loc.(sat));
 	}	
 	//uvslide
 	attr = sat + ".uvslide";
@@ -1336,15 +1342,15 @@ bool LocLoadModel(aref loc, string sat, string addition)
 		float u0, v0, u1, v1;
 		u0 = 0; v0 = 0; u1 = 0; v1 = 0;
 		attr1 = attr + ".u0";
-		if(CheckAttribute(loc, attr1) != 0) u0 = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) u0 = float(loc.(attr1));
 		attr1 = attr + ".v0";
-		if(CheckAttribute(loc, attr1) != 0) v0 = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) v0 = float(loc.(attr1));
 		attr1 = attr + ".u1";
-		if(CheckAttribute(loc, attr1) != 0) u1 = MakeFloat(loc.(attr1));
+		if(CheckAttribute(loc, attr1) != 0) u1 = float(loc.(attr1));
 		attr1 = attr + ".v1";
-		if(CheckAttribute(loc, attr1) != 0) v1 = MakeFloat(loc.(attr1));
-		res = SendMessage(loc, "lffff", MSG_LOCATION_MODEL_SET_UVS, u0, v0, u1, v1);
-		if(res == 0) Trace("Can't set uvslide modifier to model: " + loc.(sat));
+		if(CheckAttribute(loc, attr1) != 0) v1 = float(loc.(attr1));
+		res = bool(SendMessage(loc, "lffff", MSG_LOCATION_MODEL_SET_UVS, u0, v0, u1, v1));
+		if(!res) Trace("Can't set uvslide modifier to model: " + loc.(sat));
 	}
 	//rotate
 	attr = sat + ".lamps";
@@ -1359,7 +1365,7 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	attr = sat + ".reflection";
 	if(CheckAttribute(loc, attr) != 0)
 	{
-		SendMessage(loc, "lf", MSG_LOCATION_MODEL_REFLECTION, stf(loc.(attr)));
+		SendMessage(loc, "lf", MSG_LOCATION_MODEL_REFLECTION, float(loc.(attr)));
 	}
 	//reflection
 	attr = sat + ".sea_reflection";
@@ -1367,7 +1373,7 @@ bool LocLoadModel(aref loc, string sat, string addition)
 	{
 		LayerAddObject(SEA_REFLECTION2, &mdl, 4);
 	}
-	return 1;
+	return true;
 }
 
 float GetAngleY(float x, float z)
@@ -1410,7 +1416,7 @@ void LocLoadShips(ref Location)
 	makearef(locator_ships, location.locators.ships);
 	makearef(locator_otherships, location.locators.ships_other);
 
-	iMainCharacterShipType = sti(Characters[iMCI].Ship.Type);
+	iMainCharacterShipType = int(Characters[iMCI].Ship.Type);
 
 	// create our characters ships
 	if (bMainCharacterHere)
@@ -1422,7 +1428,7 @@ void LocLoadShips(ref Location)
 			if (iCompanionIndex==-1) continue;
 			ref rCompanion = GetCharacter(iCompanionIndex);
 			SetCharacterShipLocation(&Characters[iCompanionIndex],Location.id);
-			iShipType = sti(Characters[iCompanionIndex].Ship.Type);
+			iShipType = int(Characters[iCompanionIndex].Ship.Type);
 			if (iShipType == SHIP_NOTUSED) continue;
 			iShips[locNumShips] = iCompanionIndex;
 			iShipsType[locNumShips] = 0;
@@ -1446,7 +1452,7 @@ void LocLoadShips(ref Location)
 			}
 		}
 		if (bExist) continue;
-		iShipType = sti(Characters[i].Ship.Type);
+		iShipType = int(Characters[i].Ship.Type);
 		if (iShipType == SHIP_NOTUSED) continue;
 		iShips[locNumShips] = i; 
 		locNumShips++;
@@ -1454,26 +1460,26 @@ void LocLoadShips(ref Location)
 		Characters[i].Ship.Stopped = true; // boal fix
 	}
 //----> Малые суда у пирса
-	bool bSmallShip = 0;
-	if(CheckAttribute(pchar,"Ship.Type") && sti(pchar.ship.type) != SHIP_NOTUSED) 
+	bool bSmallShip = false;
+	if(CheckAttribute(pchar,"Ship.Type") && int(pchar.ship.type) != SHIP_NOTUSED)
 	{
-		ref refBaseShip = GetRealShip(sti(pchar.ship.type));
-		int iShipClass = sti(refBaseShip.Class);
+		ref refBaseShip = GetRealShip(int(pchar.ship.type));
+		int iShipClass = int(refBaseShip.Class);
 		if(CheckAttribute(Location, "type"))
 		{			
 			if(Location.type == "town" || Location.type == "port") // фильтр городов
 			{
-				if (iShipClass > 6) bSmallShip = 1;
-				if (iShipClass > 3 && iShipClass < 7  && sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FLEUT)
+				if (iShipClass > 6) bSmallShip = true;
+				if (iShipClass > 3 && iShipClass < 7  && int(RealShips[int(pchar.ship.type)].basetype) != SHIP_FLEUT)
 				{
-					if (CheckAttribute(Location, "locators.reload.boat2")) bSmallShip = 1; // проверка наличия локатора для корабля побольше
-					else bSmallShip = 0;
+					if (CheckAttribute(Location, "locators.reload.boat2")) bSmallShip = true; // проверка наличия локатора для корабля побольше
+					else bSmallShip = false;
 				}
 			}
 		}
 		if(CheckAttribute(Location, "id")) // фильтр отдельных локаций
 		{
-			if(Location.id == "LeFransua_town") bSmallShip = 0;
+			if(Location.id == "LeFransua_town") bSmallShip = false;
 		}
 	}
 //<----Малые суда у пирса
@@ -1512,13 +1518,13 @@ void LocLoadShips(ref Location)
 		if (CreateEntity(&locShips[n], "ship") == 0) break;
 		//if (iShips[n] == 0) Log_info("Bad index");
 		ref rCharacter = GetCharacter(iShips[n]);
-		ref rShip = GetRealShip(sti(rCharacter.Ship.Type));
+		ref rShip = GetRealShip(int(rCharacter.Ship.Type));
 		//SetTextureForShip(rShip, rCharacter);
 		Ship_SetLightsAndFlares(rCharacter);
 		//rCharacter.Ship.TexturePath = "";
-		rCharacter.Ship.Pos.x = stf(locator.x);
-		rCharacter.Ship.Pos.z = stf(locator.z);
-		rCharacter.Ship.Ang.y = GetAngleY(stf(locator.vZ.x),stf(locator.vZ.z));
+		rCharacter.Ship.Pos.x = float(locator.x);
+		rCharacter.Ship.Pos.z = float(locator.z);
+		rCharacter.Ship.Ang.y = GetAngleY(float(locator.vZ.x),float(locator.vZ.z));
 		rCharacter.Ship.stopped = true;
 		rCharacter.Ship.Speed.z = 0.0;
 		Ship_PrepareShipForLocation(rCharacter);
@@ -1557,14 +1563,14 @@ void LocLoadShips(ref Location)
 			else rCharacter = CharacterFromId("BoatChar"); // boal && ugeen		
 //<----Малые суда у пирса
 
-			rShip = GetRealShip(sti(rCharacter.Ship.Type));
+			rShip = GetRealShip(int(rCharacter.Ship.Type));
 			rCharacter.Ship.TexturePath = "";
-			rCharacter.Ship.Pos.x = stf(locator.x);
-			rCharacter.Ship.Pos.z = stf(locator.z);
-			rCharacter.Ship.Ang.y = GetAngleY(stf(locator.vZ.x),stf(locator.vZ.z));
+			rCharacter.Ship.Pos.x = float(locator.x);
+			rCharacter.Ship.Pos.z = float(locator.z);
+			rCharacter.Ship.Ang.y = GetAngleY(float(locator.vZ.x),float(locator.vZ.z));
 			rCharacter.Ship.stopped = true;
 			rCharacter.Ship.Speed.z = 0.0;
-			rCharacter.nation = sti(rPlayer.nation); // ugeen --> для флага на шлюпке
+			rCharacter.nation = int(rPlayer.nation); // ugeen --> для флага на шлюпке
 			if (!CheckAttribute(rPlayer, "Flags.Pirate")) rCharacter.Flags.Pirate = rand(2);
 			else 										  rCharacter.Flags.Pirate = rPlayer.Flags.Pirate;
 			Ship_SetLightsAndFlares(rCharacter);
@@ -1600,7 +1606,7 @@ bool LocIsEntryLocation(ref Location)
 	return true;
 }
 
-void LocLoadGrass(aref loc, string sat)
+void LocLoadGrass(ref loc, string sat)
 {
     bool   bOk = true;
 	string grs = loc.(sat);
@@ -1645,7 +1651,7 @@ void LocLoadGrass(aref loc, string sat)
 		else
 		{
 			loc.texGrass = tex;
-			if (CheckAttribute(&InterfaceStates,"GrassDrawDistance") && stf(InterfaceStates.GrassDrawDistance) >= 250.0 && !iGrassQuality)
+			if (CheckAttribute(&InterfaceStates,"GrassDrawDistance") && float(InterfaceStates.GrassDrawDistance) >= 250.0 && !iGrassQuality)
 			{
 				bOk = false;
 			}
@@ -1662,13 +1668,13 @@ void LocLoadGrass(aref loc, string sat)
 	{
 		SendMessage(loc, "lss", MSG_LOCATION_SET_GRS_PATCH, grs, tex); // grass tex update
 		object objGrass;
-		GetEntity(&objGrass,"grass"));
-		float fMaxDist = stf(InterfaceStates.GrassDrawDistance);
+		GetEntity(&objGrass,"grass");
+		float fMaxDist = float(InterfaceStates.GrassDrawDistance);
 		SendMessage(objGrass,"lffffff",42666, 1.0, 1.0, 0.2, 10.0, fMaxDist, 0.0); // grass distance update
 	}
 }
 
-void LocUnloadGrass(aref loc)
+void LocUnloadGrass(ref loc)
 {
     if(CheckAttribute(loc, "texGrass")) DeleteAttribute(loc, "texGrass");
 }
@@ -1824,7 +1830,7 @@ bool IslamonaCreateShips(ref Location)
 	}
 	makearef(locator_ships, location.locators.ships);
 	
-	iMainCharacterShipType = sti(Characters[iMCI].Ship.Type);
+	iMainCharacterShipType = int(Characters[iMCI].Ship.Type);
 	if (iMainCharacterShipType == SHIP_NOTUSED) return false;
 	iShips[locNumShips] = iMCI;
 	iShipsType[locNumShips] = 0;
@@ -1853,7 +1859,7 @@ bool IslamonaCreateShips(ref Location)
 			}
 		}
 		if (bExist) continue;
-		iShipType = sti(Characters[i].Ship.Type);
+		iShipType = int(Characters[i].Ship.Type);
 		if (iShipType == SHIP_NOTUSED) continue;
 		iShips[locNumShips] = i; 
 		locNumShips++;
@@ -1873,16 +1879,16 @@ bool IslamonaCreateShips(ref Location)
 		iCurNumShips++;
 		if (CreateEntity(&locShips[n], "ship") == 0) break;
 		rCharacter = GetCharacter(iShips[n]);
-		rShip = GetRealShip(sti(rCharacter.Ship.Type));
+		rShip = GetRealShip(int(rCharacter.Ship.Type));
 		Ship_SetLightsAndFlares(rCharacter);
-		rCharacter.Ship.Pos.x = stf(locator.x);
-		rCharacter.Ship.Pos.z = stf(locator.z);
-		rCharacter.Ship.Ang.y = GetAngleY(stf(locator.vZ.x),stf(locator.vZ.z));
+		rCharacter.Ship.Pos.x = float(locator.x);
+		rCharacter.Ship.Pos.z = float(locator.z);
+		rCharacter.Ship.Ang.y = GetAngleY(float(locator.vZ.x),float(locator.vZ.z));
 		rCharacter.Ship.stopped = true;
 		rCharacter.Ship.Speed.z = 0.0;
 		Ship_PrepareShipForLocation(rCharacter);
 		SendMessage(&locShips[n],"laa",MSG_SHIP_CREATE,&rCharacter,&rShip);
-		iShips[locNumShips] = rCharacter.index; 
+		iShips[locNumShips] = rCharacter.index$int(-1);
 		//locNumShips++;
 	}
 	return true;

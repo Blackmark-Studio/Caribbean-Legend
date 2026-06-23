@@ -12,7 +12,7 @@
 
 
 //Инициализация
-void LAi_type_poor_Init(aref chr)
+void LAi_type_poor_Init(ref chr)
 {
 	DeleteAttribute(chr, "location.follower");
 	DeleteAttribute(chr, "chr_ai.type");
@@ -24,7 +24,7 @@ void LAi_type_poor_Init(aref chr)
 	chr.chr_ai.type.wait = 1.0;
 	LAi_SetDefaultStayAnimation(chr);	
 	//нищий сидит или стоит. пропишем анимацию.
-	if (CheckAttribute(chr, "PoorSit") && sti(chr.PoorSit))
+	if (CheckAttribute(chr, "PoorSit") && int(chr.PoorSit))
 	{
 		chr.chr_ai.type.SitState = true; //сидим
 		LAi_SetSitPoorAnimation(chr);
@@ -37,7 +37,7 @@ void LAi_type_poor_Init(aref chr)
 }
 
 //Процессирование типа персонажа
-void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
+void LAi_type_poor_CharacterUpdate(ref chr, float dltTime)
 {
 	ref by;
 	int idx, num;
@@ -52,13 +52,13 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 		}
 		else
 		{	//тут все действия после проигрывания анимаций
-			if (sti(chr.chr_ai.type.SitState))
+			if (int(chr.chr_ai.type.SitState))
 			{	//сидим
 				if (!CheckAttribute(chr, "chr_ai.type.StandAndGoExit"))
 				{
-					if (sti(chr.chr_ai.type.AttackIndex) > 0 && !sti(chr.chr_ai.type.GroundAfraid))
+					if (int(chr.chr_ai.type.AttackIndex) > 0 && !int(chr.chr_ai.type.GroundAfraid))
 					{	//после выполнения анимации быстрого вставания от удара
-						by = &characters[sti(chr.chr_ai.type.AttackIndex)]; //здесь помним индекс врага с прошлых тактов
+						by = &characters[int(chr.chr_ai.type.AttackIndex)]; //здесь помним индекс врага с прошлых тактов
 						LAi_tmpl_afraid_SetAfraidCharacter(chr, by, true);
 						chr.chr_ai.type.SitState = false; //теперь нпс будет стоячим нищий
 					}
@@ -91,7 +91,7 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 			chr.chr_ai.type.wait = 0.0;
 		}
 	}
-	float time = stf(chr.chr_ai.type.wait) - dltTime;
+	float time = float(chr.chr_ai.type.wait) - dltTime;
 	if (time > 0)
 	{
 		chr.chr_ai.type.wait = time;
@@ -102,7 +102,7 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 		else chr.chr_ai.type.wait = 2.0;
 	}
 	// --> сидячий нищий
-	if (sti(chr.chr_ai.type.SitState))
+	if (int(chr.chr_ai.type.SitState))
 	{
 		num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, false, true);
 		//если люди в радиусе 5 метров
@@ -110,7 +110,7 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 		{
 			for(int i = 0; i < num; i++)
 			{
-				idx = sti(chrFindNearCharacters[i].index);
+				idx = int(chrFindNearCharacters[i].index);
 				if(LAi_group_IsEnemy(chr, &Characters[idx])) break;
 				if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) break;
 			}
@@ -244,29 +244,29 @@ void LAi_type_poor_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Загрузка персонажа в локацию
-bool LAi_type_poor_CharacterLogin(aref chr)
+bool LAi_type_poor_CharacterLogin(ref chr)
 {
 	return true;
 }
 
 //Выгрузка персонажа из локацию
-bool LAi_type_poor_CharacterLogoff(aref chr)
+bool LAi_type_poor_CharacterLogoff(ref chr)
 {
 	return true;
 }
 
 //Завершение работы темплейта
-void LAi_type_poor_TemplateComplite(aref chr, string tmpl)
+void LAi_type_poor_TemplateComplite(ref chr, string tmpl)
 {
 }
 
 //Сообщить о желании завести диалог
-void LAi_type_poor_NeedDialog(aref chr, aref by)
+void LAi_type_poor_NeedDialog(ref chr, ref by)
 {
 }
 
 //Запрос на диалог, если возвратить true то в этот момент можно начать диалог
-bool LAi_type_poor_CanDialog(aref chr, aref by)
+bool LAi_type_poor_CanDialog(ref chr, ref by)
 {
 	//Если уже говорим, то откажем
 	if(chr.chr_ai.tmpl == LAI_TMPL_DIALOG || chr.chr_ai.tmpl == LAI_TMPL_ANI) return false;
@@ -275,10 +275,10 @@ bool LAi_type_poor_CanDialog(aref chr, aref by)
 }
 
 //Начать диалог
-void LAi_type_poor_StartDialog(aref chr, aref by)
+void LAi_type_poor_StartDialog(ref chr, ref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
-	if (!sti(chr.chr_ai.type.SitState))
+	if (!int(chr.chr_ai.type.SitState))
 	{
 		LAi_CharacterSaveAy(chr);
 		CharacterTurnByChr(chr, by);
@@ -287,7 +287,7 @@ void LAi_type_poor_StartDialog(aref chr, aref by)
 }
 
 //Закончить диалог
-void LAi_type_poor_EndDialog(aref chr, aref by)
+void LAi_type_poor_EndDialog(ref chr, ref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
 }
@@ -299,12 +299,12 @@ void LAi_type_poor_Fire(aref attack, aref enemy, float kDist, bool isFindedEnemy
 
 
 //Персонаж атакован
-void LAi_type_poor_Attacked(aref chr, aref by)
+void LAi_type_poor_Attacked(ref chr, ref by)
 {
 	
 }
 
-int LAi_type_poor_FindNearEnemy(aref chr)
+int LAi_type_poor_FindNearEnemy(ref chr)
 {
 	int i, idx;
 	int num = FindNearCharacters(chr, 5.0, -1.0, -1.0, 0.001, false, true);
@@ -317,7 +317,7 @@ int LAi_type_poor_FindNearEnemy(aref chr)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_group_IsEnemy(chr, &Characters[idx])) return idx;
 		}
 	}
@@ -325,14 +325,14 @@ int LAi_type_poor_FindNearEnemy(aref chr)
 	{
 		for(i = 0; i < num; i++)
 		{
-			idx = sti(chrFindNearCharacters[i].index);
+			idx = int(chrFindNearCharacters[i].index);
 			if(LAi_CheckFightMode(&Characters[idx]) != CHR_MODE_PEACE) return idx;	
 		}
 	}
 	return -1;
 }
 
-void LAi_SetSitPoorAnimation(aref chr)
+void LAi_SetSitPoorAnimation(ref chr)
 {
 	//Установим анимацию сидячему нищему
 	BeginChangeCharacterActions(chr);

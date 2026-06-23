@@ -54,7 +54,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Ah, sonunda. Onu Barbados'taki o plantasyon sahibine satmayı düşünüyordum, bir iki haftaya burada olacak... Fidye getirdin mi"+GetSexPhrase("","")+"?";
 				link.l1 = "Bak, "+NPChar.name+" , ufak bir sorun var... Aslında o kadar param yok. Ama çalışmaya hazırım.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "Onu satmamış olman iyi. İşte paranın - 150.000 peso. Onu nerede bulabilirim?"link.l2.go ="CapComission2_3";
 				}	
@@ -111,8 +111,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			dialog.text = "Hmm... Peki "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+" bazı korsanları ganimet paylarının bizim sandığımızda, çok uzakta olmayan bir yerde saklanacağına ikna etti "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". İki gemileri '"+pchar.GenQuest.CaptainComission.ShipName1+"' ve '"+pchar.GenQuest.CaptainComission.ShipName2+"' demir aldı, çok geçmeden yelken açıp gitti "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island+"Abl")+". Şimdi neden adamlarıma bu işi emanet edemeyeceğimi anlıyorsun, değil mi?";
 			link.l1 = "Anladım. Ne kadar vaktim var?";
@@ -197,7 +197,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Fiyatı düşürmek mi?! Senin beceriksizliğin yüzünden malımı kaybettim! Şimdi fiyatı artırmam gerekir! İstersen onu 200.000 pesoya alabilirsin, yoksa defolup gidebilirsin!";
 			link.l1 = "Bu çok pahalı... Elveda...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "Lanet olsun, peki, al paranı.";
 				link.l2.go = "CapComission4_5";
@@ -245,7 +245,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Parayı getirdin mi, Charles? O adamı plantasyona satmak konusunda şaka yapmıyordum";			
 			link.l1 = "Dinle, "+NPChar.name+", bir sorun var... O kadar param yok. Ama çalışmaya hazırım.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Onu satmamış olmanız iyi. İşte paralarınız – 150.000 peso. Onu nerede bulabilirim?"link.l2.go ="CapComission2_3";
 			}			
@@ -277,7 +277,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Anlıyorum. Yalan söylemiyorsan, bu adil bir alışveriş olurdu. Sanırım bu adam için sana ödeme yapabilirim, "+iTemp+" pesos, ya da bunun yerine size ilginç bir bilgi verebilirim. Seçim sizin.";
 			link.l1 = "Parayı alsam iyi olacak. Bu işten artık bıktım...";
 			link.l1.go = "Marginpassenger_money";
@@ -292,7 +292,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Rica ederim, bana daha fazlasını getir... Görüşürüz!";
 			link.l1 = "İyi şanslar...";
 			link.l1.go = "exit";

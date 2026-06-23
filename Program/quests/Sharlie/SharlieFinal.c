@@ -52,7 +52,7 @@ void Terrapin_GotoWindow(string qName) // телепортируем через 
 	chrDisableReloadToLocation = true; // закрыть локацию
 	InterfaceStates.Buttons.Save.enable = false; //запретить сохраняться
 	LocatorReloadEnterDisable("Tortuga_tavern_upstairs", "reload1_back", false);//открыть комнату таверны patch-8
-	setCharacterShipLocation(pchar, "Tortuga_town"));
+	setCharacterShipLocation(pchar, "Tortuga_town");
 	setWDMPointXZ("Tortuga_town"); // корабль на рейд
 	// ставим горожанку
 	sld = GetCharacter(NPC_GenerateCharacter("TerrapinRoofGirl", "women_15", "woman", "towngirl", 10, FRANCE, -1, true, "quest"));
@@ -249,7 +249,7 @@ void Terrapin_RoberAfterBattle(string qName) // победили Мартэна
 		AddQuestRecord("Terrapin", "13");
 		// прерывание на эскадру Кромвеля
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1 = "Timer";
-		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 429);
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 429);
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 429);
@@ -418,7 +418,7 @@ void Terrapin_CreateRoberConvoy()//создаем испанский конво�
 			case 2: iTemp = SHIP_FRIGATE_H; break;
 			case 3: iTemp = SHIP_CORVETTE; break;
 		}
-		sld.Ship.Type = GenerateShipExt(iTemp, 1, sld);
+		sld.Ship.Type = GenerateShipExt(iTemp, true, sld);
 		SetBaseShipData(sld);
 		SetCaptanModelByEncType(sld, "war");
 		sld.Ship.Mode = "war";
@@ -521,7 +521,7 @@ void Terrapinconvoy_AfterBattle(string qName)//после боя
 	{
 		// прерывание на эскадру Кромвеля
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1 = "Timer";
-		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 397);
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 397);
 		pchar.quest.Terrapin_CromvelScuadron.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 397);
@@ -654,7 +654,7 @@ void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля
 	pchar.quest.Ach_TrafalgarC.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 5);
 	pchar.quest.Ach_TrafalgarC.function = "Ach_TrafalgarC";
 	
-	if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage") && sti(pchar.questTemp.IslaMona.TownStage) > 0)
+	if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage") && int(pchar.questTemp.IslaMona.TownStage) > 0)
 	{
 		pchar.quest.Cromvel_CheckIslaMona.win_condition.l1 = "location";
 		pchar.quest.Cromvel_CheckIslaMona.win_condition.l1.location = "IslaMona";
@@ -772,8 +772,8 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 		sld.Coastal_Captain = true;
 		sld.Ship.Mode = "war";
 		hcrew = GetMaxCrewQuantity(sld);
-		SetCrewQuantityOverMax(sld, sti(hcrew/fSpace));
-		sld.ship.HP = makeint(sti(sld.ship.HP)/fDamage);
+		SetCrewQuantityOverMax(sld, int(hcrew/fSpace));
+		sld.ship.HP = int(int(sld.ship.HP)/fDamage);
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
 		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
 		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
@@ -898,7 +898,7 @@ void DefendSP_SpainAvanpost(string qName) // ставим испанцев у в
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		ChangeCharacterAddressGroup(sld, "FortFrance_ExitTown", "rld", locator+i);
-		int hpl = LAi_GetCharacterHP(sld)/hpm;
+		int hpl = int(LAi_GetCharacterHP(sld)/hpm);
 		LAi_SetHP(sld, hpl, hpl);
 	}
 	DefendSP_OurSoldiersFight();
@@ -1345,10 +1345,10 @@ void GuardOT_CreateTwoShips(string qName) // создаем галеон Гая 
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.Ship.Mode = "trade";
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.sails = 9;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.sails = 9;
 	// грузим ваниль
 	int iSpace = GetCharacterFreeSpace(sld, GOOD_CINNAMON);
-	Fantom_SetCharacterGoods(sld, GOOD_CINNAMON, iSpace, 1);
+	Fantom_SetCharacterGoods(sld, GOOD_CINNAMON, iSpace, true);
 	pchar.questTemp.Guardoftruth.VanilleQty = iSpace; // запомним
 	// защита от дурака
 	sld.AlwaysFriend = true;
@@ -1417,7 +1417,7 @@ void GuardOT_TradeCompleteNext(string qName) // типо поторговали 
 	pchar.quest.GuardOT_gotoshore1.over = "yes"; //снять прерывание
 	// ориентируем на вечер
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24 - iTime + 21;
 	if (iTime < 7) iAddTime = 21 - iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24  + 21 - iTime;
@@ -1439,7 +1439,7 @@ void GuardOT_TradeCompleteNext(string qName) // типо поторговали 
 	sld.lastname = StringFromKey("SharlieFinal_34");
 	sld.FaceId = 44;
 	SetCrewQuantityOverMax(sld, 30);
-	RemoveCharacterGoods(pchar, GOOD_CINNAMON, sti(pchar.questTemp.Guardoftruth.VanilleQty));
+	RemoveCharacterGoods(pchar, GOOD_CINNAMON, int(pchar.questTemp.Guardoftruth.VanilleQty));
 	sld = characterFromId("GOT_Gevarra");
 	sld.lifeday = 0;
 	Group_DeleteGroup("Gevarra_group");
@@ -1449,7 +1449,7 @@ void GuardOT_GotoBeach(string qName) // телепорт
 {
 	LocatorReloadEnterDisable("Shore29", "boat", true);
 	DoQuestReloadToLocation("Shore29", "reload", "sea", "GuardOT_ArriveBeach");
-	setCharacterShipLocation(pchar, "Shore29"));
+	setCharacterShipLocation(pchar, "Shore29");
 	setWDMPointXZ("Shore29");
 	pchar.questTemp.Guardoftruth = "shore";
 }
@@ -1516,7 +1516,7 @@ void GuardOT_GotoGaleon(string qName) // телепортируем на гал�
 
 void GuardOT_KickGuard(string qName) // тюк!
 {
-	int num = sti(pchar.questTemp.Guardoftruth.num);
+	int num = int(pchar.questTemp.Guardoftruth.num);
 	LAi_SetPlayerType(pchar);
 	CreateLocationParticles("blood_big", "item", "kick"+num, 2.0, 0, 0, "");
 	PlaySound("People\jump.wav");
@@ -2077,7 +2077,7 @@ void GuardOT_CreateDiegoLuggerInWorld()
 	sld.ShipEnemyDisable  = true; //не обижаться на выстрелы
 	LAi_SetImmortal(sld, true);
 	// чит
-	ref shTo = &RealShips[sti(sld.Ship.Type)];
+	ref shTo = &RealShips[int(sld.Ship.Type)];
 	shTo.SpeedRate = 25.0;
 	shTo.TurnRate = 80.0;
 	//в морскую группу
@@ -2194,11 +2194,11 @@ void GuardOT_CreateCatocheSquadron(string qName) // эскадра Диего
 
 void GuardOT_CamicadzeBoom()
 {
-	log_info(StringFromKey("SharlieFinal_47"))
+	log_info(StringFromKey("SharlieFinal_47"));
 	sld = characterFromId("GOT_camicadze");
-	PostEvent(SHIP_BRANDER_DETONATE, 800, "l", sti(sld.index));
+	PostEvent(SHIP_BRANDER_DETONATE, 800, "l", int(sld.index));
     PlaySound("Sea Battles\Vzriv_fort_001.wav");
-	Ship_SetTaskNone(SECONDARY_TASK, sti(sld.index));
+	Ship_SetTaskNone(SECONDARY_TASK, int(sld.index));
 }
 
 void GuardOT_CatocheSquadronDie(string qName) // прибили эскадру Диего
@@ -2432,8 +2432,8 @@ void GuardOT_SetDiegoFortInside(string qName) // бой в резиденции
 			idx = GetOfficersIndex(PChar,i);
 			if (idx != -1) 
 			{
-				sld = GetCharacter(idx)
-				ChangeCharacterAddressGroup(sld, "Jungle_fort_ammo", "rld", "loc"+sti(i+2));
+				sld = GetCharacter(idx);
+				ChangeCharacterAddressGroup(sld, "Jungle_fort_ammo", "rld", "loc"+int(i+2));
 			}
 		}
 	}
@@ -2628,7 +2628,7 @@ void GuardOT_SetArchyStreet(string qName)
 	pchar.GenQuest.CannotWait = true;//запрет ожидания
 	// ориентируем на день в обязательном порядке
 	int iTime, iAddTime;
-	iTime = sti(environment.time);
+	iTime = int(environment.time);
 	if (iTime >= 21) iAddTime = 24-iTime+12;
 	if (iTime < 7) iAddTime = 12-iTime;
 	if (iTime >= 7 && iTime < 21) iAddTime = 24+12-iTime;
@@ -2772,7 +2772,7 @@ void GuardOT_ArchyChestBoom() // ба-бах!!
 	SetCameraShake(1.2, 2.5, 5.0, 0.13, 0.5, true, false, CAM_EASING_SMOOTH_STEP);
 	LAi_ActorAnimation(Pchar, "jump", "GuardOT_SitInHouse", 0.5);
 	ChangeCharacterAddressGroup(Pchar, "IslaDeVieques_House", "goto", "goto5");
-	Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/4;
+	Pchar.chr_ai.hp = float(Pchar.chr_ai.hp)/4;
 	PlaySound("People fight\Death_NPC_08.wav");
 	DeleteAttribute(pchar, "questTemp.Guardoftruth.ArchyBoom");
 	AddCharacterExpToSkill(pchar, "Defence", 100);
@@ -2808,7 +2808,7 @@ void GuardOT_CreateMercenInHouse(string qName)// вошел бандос
 	TakeNItems(sld, "cartridge", 2);
 	TakeNItems(sld, "bullet", 30);
 	TakeNItems(sld, "gunpowder", 30);
-	if (MOD_SKILL_ENEMY_RATE > 4) LAi_SetCheckMinHP(sld, sti((LAi_GetCharacterHP(sld))/2), false, "GuardOT_CreateAddMercenInHouse");
+	if (MOD_SKILL_ENEMY_RATE > 4) LAi_SetCheckMinHP(sld, int((LAi_GetCharacterHP(sld))/2), false, "GuardOT_CreateAddMercenInHouse");
 	LAi_SetActorType(sld);
 	ChangeCharacterAddressGroup(sld, "IslaDeVieques_House", "reload", "reload1");
 	LAi_ActorDialogDelay(sld, pchar, "", 1.0);
@@ -2830,8 +2830,8 @@ void GuardOT_KillMCOfficerInJungle() // убиваем офицеров ГГ
 		}
 		if(CheckAttribute(sld, "OfficerImmortal"))
 		{
-			sld.Health.HP = makefloat(sld.Health.HP)/2.0;
-			sld.Health.maxHP = makefloat(sld.Health.maxHP)/2.0;
+			sld.Health.HP = float(sld.Health.HP)/2.0;
+			sld.Health.maxHP = float(sld.Health.maxHP)/2.0;
 
 			LAi_ApplyCharacterDamage(sld, 1000, "fire", true);
 			LAi_CheckKillCharacter(sld);
@@ -4086,7 +4086,7 @@ void Tieyasal_CreateItzaWarriorFirstGroup(string qName) // первая груп
 	PlaySound("interface\abordage_wining.wav");
 	PlaySound("interface\abordage_wining.wav");
 	int iRank = 25+MOD_SKILL_ENEMY_RATE*2;
-	iTotalTemp = 5+makeint(MOD_SKILL_ENEMY_RATE/5);
+	iTotalTemp = 5+int(MOD_SKILL_ENEMY_RATE/5);
 	for(int i=1; i<=iTotalTemp; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Itza_1Group_"+i, "itza_"+(rand(7)+1), "man", "man", iRank, PIRATE, -1, false, "native"));
@@ -4106,7 +4106,7 @@ void Tieyasal_InGreatTemple(string qName) // внутри большого хр�
 	// ставим Мишеля. Он же Кукулькан
 	int iTemp = MOD_SKILL_ENEMY_RATE;
 	sld = characterFromId("Mishelle");
-	sld.model = "migel_2":
+	sld.model = "migel_2";
 	sld.SpecialRole = "kukulkan";
 	sld.dialog.currentnode = "kukulkan";
 	LAi_SetHP(sld, 1000+MOD_SKILL_ENEMY_RATE*200, 1000+MOD_SKILL_ENEMY_RATE*200);
@@ -4729,7 +4729,7 @@ void Tieyasal_Win_TempleFinal(string qName)
 	LocatorReloadEnterDisable("Tenochtitlan", "reload1_back", false); // открываем выход
 	LocatorReloadEnterDisable("Tayasal_jungle_11", "reload3_back", false); // закрываем Тайясаль со стороны джунглей
 	DeleteAttribute(pchar, "GenQuest.CannotWait");//можно мотать время
-	setCharacterShipLocation(pchar, "Shore_ship2"));
+	setCharacterShipLocation(pchar, "Shore_ship2");
 	setWDMPointXZ("Shore_ship2"); // ставим корабль
 	pchar.quest.Tieyasal_Returnshore.win_condition.l1 = "location";
 	pchar.quest.Tieyasal_Returnshore.win_condition.l1.location = "Shore_ship2";
@@ -5192,9 +5192,9 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "GuardOT_ArriveGaleon")
 	{
 		// для умников :)
-		if (sti(environment.time) < 21 && sti(environment.time) > 3)
+		if (int(environment.time) < 21 && int(environment.time) > 3)
 		{
-			int iTime = sti(environment.time);
+			int iTime = int(environment.time);
 			if (iTime >= 21) iAddTime = 24 - iTime + 21;
 			if (iTime < 7) iAddTime = 21 - iTime;
 			if (iTime >= 7 && iTime < 21) iAddTime = 24  + 21 - iTime;
@@ -5609,7 +5609,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LocatorReloadEnterDisable("PortRoyal_town", "reload", true); // дом рядом закрываем
 		AddQuestRecord("Guardoftruth", "64");
 		pchar.quest.GuardOT_squadrongo.win_condition.l1 = "Timer";
-		pchar.quest.GuardOT_squadrongo.win_condition.l1.date.hour  = sti(GetTime()+rand(12));
+		pchar.quest.GuardOT_squadrongo.win_condition.l1.date.hour  = int(GetTime()+rand(12));
 		pchar.quest.GuardOT_squadrongo.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1+rand(2));
 		pchar.quest.GuardOT_squadrongo.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1+rand(2));
 		pchar.quest.GuardOT_squadrongo.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1+rand(2));
@@ -6039,7 +6039,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		sld.GuardMask = true;
 		sld.PoisonResistent = true; // Addon 2016-1 Jason пиратская линейка патч 17/1
 		TakeNItems(sld, "icollection", 5);
-		LAi_SetCheckMinHP(sld, sti(LAi_GetCharacterHP(sld)/2), true, "Ksochitam_GuardMaskAddSkeletonsFirst");
+		LAi_SetCheckMinHP(sld, int(LAi_GetCharacterHP(sld)/2), true, "Ksochitam_GuardMaskAddSkeletonsFirst");
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, "Shore_mask", "quest", "guardmask");
 		DoQuestCheckDelay("Ksochitam_GuardMaskGo", 1.5);
@@ -6080,7 +6080,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_SetCurHPMax(sld);
 		LAi_GetCharacterMaxEnergy(sld);
 		log_info(StringFromKey("SharlieFinal_69"));
-		LAi_SetCheckMinHP(sld, sti(LAi_GetCharacterHP(sld)/3), true, "Ksochitam_GuardMaskAddSkeletonsSecond");
+		LAi_SetCheckMinHP(sld, int(LAi_GetCharacterHP(sld)/3), true, "Ksochitam_GuardMaskAddSkeletonsSecond");
 	}
 	else if (sQuestName == "Ksochitam_ShoreMaskAddSkeletons")
 	{
@@ -6569,7 +6569,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 			LAi_warrior_DialogEnable(sld, false);
 		}
 		// ставим воинов ица
-		iTotalTemp = 5+makeint(MOD_SKILL_ENEMY_RATE/3);
+		iTotalTemp = 5+int(MOD_SKILL_ENEMY_RATE/3);
 		for(i=1; i<=iTotalTemp; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Warrior_itza_"+i, "itza_"+i, "man", "man", iRank, PIRATE, -1, false, "native"));
@@ -6625,7 +6625,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		iRank = 30+MOD_SKILL_ENEMY_RATE*2;
 		PlaySound("interface\abordage_wining.wav");
 		PlaySound("interface\abordage_wining.wav");
-		n = 3+makeint(MOD_SKILL_ENEMY_RATE/5);
+		n = 3+int(MOD_SKILL_ENEMY_RATE/5);
 		n = n+14;
 		for(i=15; i<=n; i++)
 		{
@@ -6683,7 +6683,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		PlaySound("interface\abordage_wining.wav");
 		// добавочная группа ица
 		iRank = 32+MOD_SKILL_ENEMY_RATE*2;
-		n = 2+makeint(MOD_SKILL_ENEMY_RATE/5);
+		n = 2+int(MOD_SKILL_ENEMY_RATE/5);
 		n = n+10;
 		for(i=11; i<=n; i++)
 		{
@@ -6709,7 +6709,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 				LAi_ActorRunToLocation(sld, "quest", "detector3", "none", "", "", "", 5.0);
 			}
 		}
-		n = 2+makeint(MOD_SKILL_ENEMY_RATE/5);
+		n = 2+int(MOD_SKILL_ENEMY_RATE/5);
 		n = n+10;
 		for(i=11; i<=n; i++)
 		{
@@ -6735,7 +6735,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_GetCharacterMaxEnergy(sld);
 		LaunchBlast(sld);
 		LaunchBlood(pchar, 1.8, true, "fire");
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)/5;
+		Pchar.chr_ai.hp = float(Pchar.chr_ai.hp)/5;
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "jump", "Tieyasal_SitInTemple", 0.5);
 		PlaySound("People Fight\Death_NPC_08.wav");
@@ -6988,7 +6988,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		Achievment_Set("ach_47");
 		if(!CheckAttribute(pchar, "questTemp.PerksPotionEffect")) Achievment_Set("ach_CL_172");
 		if(MOD_SKILL_ENEMY_RATE > 9) Achievment_Set("ach_CL_103");
-		if(CheckAttribute(pchar,"questTemp.HorseQty") && sti(pchar.questTemp.HorseQty) < 1)
+		if(CheckAttribute(pchar,"questTemp.HorseQty") && int(pchar.questTemp.HorseQty) < 1)
 		{
 			if(!CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && !CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "quest.mtraxx_mirabella_life"))
 			{
@@ -7062,7 +7062,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Tieyasal_FinalChoise")  // 26.12.2025 Не активно - ачивки преренесены в эпилог
 	{
 		if(MOD_SKILL_ENEMY_RATE > 9) Achievment_Set("ach_CL_103");
-		if(CheckAttribute(pchar,"questTemp.HorseQty") && sti(pchar.questTemp.HorseQty) < 1)
+		if(CheckAttribute(pchar,"questTemp.HorseQty") && int(pchar.questTemp.HorseQty) < 1)
 		{
 			if(!CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && !CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && !CheckAttribute(pchar, "quest.mtraxx_mirabella_life"))
 			{

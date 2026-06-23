@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "guardoftruth_3":
 			dialog.text = "是西班牙舰队的一个时髦船长, 而且来头不小! 他自称... 哦... 我忘了... 啊! 迭戈先生, 他叫迭戈, 不过姓氏... 德.蒙塔尼亚还是德.蒙托亚, 差不多这样。 他当时就像你一样听我讲, 谢过我之后就走了, 之后再也没见过他。 ";
-			if (sti(Pchar.money) >= 5000)
+			if (int(Pchar.money) >= 5000)
 			{
 				link.l1 = "明白了。 非常感谢你讲的故事, 你帮了我大忙。 这是我的一点心意。 再见。 ";
 				AddMoneyToCharacter(pchar, -5000);

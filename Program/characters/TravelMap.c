@@ -4338,8 +4338,8 @@ void SetSmugglersTravelDestination(aref arDest)
 	}
 
 	DeleteAttribute(arDest, "destination");
-	iMin = sti(arTown.(sTmp).town.days.min);
-	iMax = sti(arTown.(sTmp).town.days.max);
+	iMin = int(arTown.(sTmp).town.days.min);
+	iMax = int(arTown.(sTmp).town.days.max);
 
 	arDest.destination.days = iMin + rand(iMax-iMin);
 	arDest.destination =			arTown.(sTmp).town;
@@ -4398,7 +4398,7 @@ int GetMaxDaysFromIsland2Island(string _isl1, string _isl2)
 	for (i = 0; i < iNum; i++)
 	{
 		sTmp = "t" + i;
-		if (arTown.(sTmp) == _isl2) return sti(arTown.(sTmp).town.days.max);
+		if (arTown.(sTmp) == _isl2) return int(arTown.(sTmp).town.days.max);
 	}
 	return -1;
 }

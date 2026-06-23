@@ -308,7 +308,7 @@ void ProcessDialogEvent()
 		LAi_SetActorType(npchar);
 		LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "OpenTheDoors", -1);
 		pchar.quest.Terrapin_wait.win_condition.l1 = "Timer";
-		pchar.quest.Terrapin_wait.win_condition.l1.date.hour = sti(GetTime() + 3);
+		pchar.quest.Terrapin_wait.win_condition.l1.date.hour = int(GetTime() + 3);
 		pchar.quest.Terrapin_wait.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 		pchar.quest.Terrapin_wait.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.Terrapin_wait.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -605,7 +605,7 @@ void ProcessDialogEvent()
 		LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "OpenTheDoors", -1);
 		AddQuestRecord("Terrapin", "9");
 		pchar.quest.Terrapin_cave.win_condition.l1 = "Timer";
-		pchar.quest.Terrapin_cave.win_condition.l1.date.hour = sti(GetTime() + 1);
+		pchar.quest.Terrapin_cave.win_condition.l1.date.hour = int(GetTime() + 1);
 		pchar.quest.Terrapin_cave.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
 		pchar.quest.Terrapin_cave.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 		pchar.quest.Terrapin_cave.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
@@ -652,8 +652,8 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 		}
 		// подкрепление
-		int iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 7;
-		int iScl = 30 + 2 * sti(pchar.rank);
+		int iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE + 7;
+		int iScl = 30 + 2 * int(pchar.rank);
 		for (i = 5; i <= 9; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("TerrapinGuard" + i, "citiz_5" + i, "man", "man", iRank, PIRATE, -1, true, "quest"));

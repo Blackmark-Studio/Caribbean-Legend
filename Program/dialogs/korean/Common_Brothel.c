@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 	}
     // вызов диалога по городам <--
 	crewWhoreCost = 50 + 7 * MOD_SKILL_ENEMY_RATE - hrand(40);
-	charWhoreCost = 2460 + sti(pchar.rank) * 40;
+	charWhoreCost = 2460 + int(pchar.rank) * 40;
 	
 	switch(Dialog.CurrentNode)
 	{
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			}
 			//<-- туториал Мартиника
 			//Jason --> Заносчивый аристократ
-			if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && makeint(environment.time) > 15.0 && makeint(environment.time) < 21.0 && sti(pchar.questTemp.HorseQty) > 4)
+			if (!CheckAttribute(pchar, "GenQuest.Badboy") && !CheckAttribute(npchar, "quest.Badboy") && !CheckAttribute(pchar, "questTemp.ZA.Block") && int(environment.time) > 15.0 && int(environment.time) < 21.0 && int(pchar.questTemp.HorseQty) > 4)
 			{
 				dialog.text = "당신은 정말 훌륭한 분이시군요. 게다가 우리 아가씨들도 당신을 무척 좋아합니다. 제 업소를 위해 작은 부탁 하나 드리고 싶습니다.";
 				link.l5 = "칭찬해 주시니 영광이오. 무슨 일로 내 도움이 필요하시오?";
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HWIC.Detector") || SandBoxMode)
 			{
 				bool bOk = (pchar.questTemp.HWIC.Detector == "holl_win") || (pchar.questTemp.HWIC.Detector == "eng_win") || (pchar.questTemp.HWIC.Detector == "self_win") || SandBoxMode;
-				if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && makeint(environment.time) > 6.0 && makeint(environment.time) < 22.0 && sti(pchar.rank) >= 7)
+				if (!CheckAttribute(pchar, "questTemp.Portugal") && bOk && !CheckAttribute(npchar, "quest.Portugal") && npchar.location == "Marigo_SecBrRoom" && int(environment.time) > 6.0 && int(environment.time) < 22.0 && int(pchar.rank) >= 7)
 				{
 					DelMapQuestMarkCity("marigo");
 					DelLandQuestMark(npchar);
@@ -98,7 +98,7 @@ void ProcessDialogEvent()
 			{
 				DelLandQuestMark(npchar);
 				dialog.text = "휴고와 이야기해 보셨습니까, 선장 나리?";
-				if (sti(pchar.money) >= 10000)
+				if (int(pchar.money) >= 10000)
 				{
 					link.l1 = "게다가, 부인, 여기 돈이 있습니다. 모든 일이 아주 순조롭게 진행됐습니다...";
 					link.l1.go = "Portugal_3";
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution") && pchar.questTemp.Mtraxx.Retribution == "brothel_repeat" && npchar.location == "Tortuga_SecBrRoom")
 			{
 				dialog.text = "잊지 못할 회복 치료를 받을 준비가 되었나, 용감한 코르세어?";
-				if (sti(pchar.money) >= 31000)
+				if (int(pchar.money) >= 31000)
 				{
 					link.l1 = "나야! 찰리 프린스는 돈은 펑펑 써도 말은 아끼지, 하하!";
 					link.l1.go = "mtraxx_R2";
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(pchar, "questTemp.Sharlie.Lock")) // не идёт старт Шарля
 			{
-				if (sti(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - а смысл, если нет как корабля, так и команды?
+				if (int(pchar.ship.type) != SHIP_NOTUSED && GetCrewQuantity(pchar) > 0) // Rebbebion - а смысл, если нет как корабля, так и команды?
 				{
 					link.l3 = "내가 마지막으로 내 부하들을 챙긴 지도 꽤 됐군. 우리 선원들을 위해 여자들을 대량으로 주문할 수 있을까?";
 					link.l3.go = "ForCrew";
@@ -205,7 +205,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipLetters_2":
-			if(sti(pchar.questTemp.different.GiveShipLetters.variant) == 0)
+			if(int(pchar.questTemp.different.GiveShipLetters.variant) == 0)
 			{
 				dialog.text = "내가 좀 볼까! 흠... 어떤 선장이 서류를 잃어버렸다고? 이 일에 대해서는 항만 관리자에게 물어보는 게 좋겠어.";
 				link.l1 = "아마도, 아마도...";
@@ -279,10 +279,10 @@ void ProcessDialogEvent()
 					break;
 				}
 				// <-- legendary edition
-				dialog.text = ""+GetSexPhrase("좋아, 훌륭해, 내 용맹한 녀석!","그들은 모두 자기 일에 아주 능숙하니, 의심하지 마시오.")+" 아주 예쁜 아가씨를 소개해 줄 수 있어, 이름은 "+GetFullName(sld)+", 그리고 지금 그녀는 이용할 수 있어. 그 쾌락은 비용이 들지. "+FindRussianMoneyString(sti(sld.quest.price)+charWhoreCost)+". 동의하나?";
+				dialog.text = ""+GetSexPhrase("좋아, 훌륭해, 내 용맹한 녀석!","그들은 모두 자기 일에 아주 능숙하니, 의심하지 마시오.")+" 아주 예쁜 아가씨를 소개해 줄 수 있어, 이름은 "+GetFullName(sld)+", 그리고 지금 그녀는 이용할 수 있어. 그 쾌락은 비용이 들지. "+FindRussianMoneyString(int(sld.quest.price)+charWhoreCost)+". 동의하나?";
 				Link.l1 = "아니. 그런 것 같지 않아. 너무 비싸서...";
 				Link.l1.go = "exit";
-				if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+				if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 				{
 					Link.l2 = "물론이지, 내가 어떻게 거절하겠어?!";
 					Link.l2.go = "Hostess_NotChoice_agree";	
@@ -297,8 +297,8 @@ void ProcessDialogEvent()
 		break;
 		
         case "Hostess_NotChoice_agree":
-			sld = &characters[sti(npchar.quest.choiceIdx)];
-			if (sti(pchar.money) >= (sti(sld.quest.price) + charWhoreCost))
+			sld = &characters[int(npchar.quest.choiceIdx)];
+			if (int(pchar.money) >= (int(sld.quest.price) + charWhoreCost))
 			{
 				dialog.text = "좋아, "+GetSexPhrase("잘생긴","아름다운")+". "+sld.name+" 2층의 개인실에서 당신을 기다릴 것입니다.";
 				Link.l1 = ""+GetSexPhrase("좋아, 간다, 그럼","좋아, 간다, 그럼")+"...";
@@ -306,11 +306,11 @@ void ProcessDialogEvent()
 				// belamour legendary edition деньги только без ордена или адмиральского мундира
 				if(IsEquipTalisman9())
 				{
-					if(npchar.nation != FRANCE) AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+					if(npchar.nation != FRANCE) AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 				}
 				else
 				{
-					AddMoneyToCharacter(pchar, -(sti(sld.quest.price) + charWhoreCost));
+					AddMoneyToCharacter(pchar, -(int(sld.quest.price) + charWhoreCost));
 				}
 				sld.dialog.currentnode = "Horse_ReadyFack";			
 				//--> таймер на возврат, чтобы не вечно ждали
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 				
 				// belamour legendary edition не давать квесты губернатору и адмиралу
 				bool MCGovernon = CheckAttribute(pchar, "questTemp.Patria.GenGovernor");
-				bool MCAdmiral = isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4;
+				bool MCAdmiral = isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4;
 				
 				if ((rand(4) == 1) && (pchar.questTemp.different == "free") && (!CheckCharacterItem(pchar, "CaptainBook")) && GetNpcQuestPastDayWOInit(npchar, "questShipLetters") > 10 && !MCGovernon && !MCAdmiral ) 
 				{					
@@ -384,7 +384,7 @@ void ProcessDialogEvent()
 				if((rand(5) == 2) && !CheckAttribute(pchar, "questTemp.ReasonToFast") && GetNpcQuestPastDayWOInit(npchar, "questReasonToFast") > 20 && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && !MCGovernon && !MCAdmiral) // Addon-2016 Jason
 				{
 					iColony = FindColony(npchar.city);	
-					if( sti(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
+					if( int(Colonies[iColony].HeroOwn) == false && npchar.city != "Panama" && npchar.city != "Charles")
 					{
 						pchar.questTemp.ReasonToFast = "Begin";
 						pchar.questTemp.ReasonToFast.city = npchar.city;
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "아, 그게 말이오, 문제는 말이지 "+sld.name+" 값싼 여자가 아니야, 그녀의 값은 "+FindRussianMoneyString(sti(sld.quest.price)+charWhoreCost)+". 그리고 지금은 그 배를 살 형편이 안 되는 것 같군. 부자가 되면 다시 오라고\n"+GetSexPhrase(", 그대여","")+"...";
+				dialog.text = "아, 그게 말이오, 문제는 말이지 "+sld.name+" 값싼 여자가 아니야, 그녀의 값은 "+FindRussianMoneyString(int(sld.quest.price)+charWhoreCost)+". 그리고 지금은 그 배를 살 형편이 안 되는 것 같군. 부자가 되면 다시 오라고\n"+GetSexPhrase(", 그대여","")+"...";
 				Link.l1 = "이게 내 팔자지...";
 				Link.l1.go = "exit";
 			}
@@ -450,9 +450,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ForCrew_1":
-		    if (sti(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
+		    if (int(Pchar.money) >= GetCrewQuantity(pchar)*crewWhoreCost && GetCrewQuantity(pchar)>0)
 		    {
-		        AddMoneyToCharacter(Pchar, -makeint(GetCrewQuantity(pchar)*crewWhoreCost));
+		        AddMoneyToCharacter(Pchar, -int(GetCrewQuantity(pchar)*crewWhoreCost));
 	            AddCrewMorale(Pchar, 10, true);
 				ChangeCharacterComplexReputation(pchar,"authority", 1);
 	            LAi_Fade("", "");
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 			link.l1 = "닥쳐, 이 늙은 년아.";
 			link.l1.go = "exit_setOwner";
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		break;
 		
 		//поиски кольца губернатора
@@ -724,15 +724,15 @@ void ProcessDialogEvent()
 			}
 			//--> кол-во посещений
 			if (!CheckAttribute(npchar, "quest.sexHappend")) npchar.quest.sexHappend = 1;
-			else npchar.quest.sexHappend = sti(npchar.quest.sexHappend) + 1;
-			pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // для Данек
+			else npchar.quest.sexHappend = int(npchar.quest.sexHappend) + 1;
+			pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // для Данек
 			Achievment_SetStat(23, 1);
 			//<-- кол-во посещений
 			str = npchar.city;
 			pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 			pchar.quest.(str).win_condition.l1.location = pchar.location;
 			pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //счетчик
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //счетчик
 		break;
 		
 		case "Horse_Kiss":
@@ -899,7 +899,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeMayorsRing_S5":
-			if (rand(1) && sti(pchar.money)>5000)
+			if (rand(1) && int(pchar.money)>5000)
 			{
 				dialog.text = "좋아, 반지는 돌려주겠지만, 오천 페소는 내게 내야 해.";
 				link.l1 = "좋아, 돈 가져가고 반지 내놔.";
@@ -935,7 +935,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Badboy.Brothel.City = npchar.city; //город квестодателя
 			//log_info(pchar.GenQuest.Badboy.Brothel.City); // patch-6
 			pchar.GenQuest.Badboy.Brothel.nation = npchar.nation;
-			pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(sti(npchar.nation), "man");
+			pchar.GenQuest.Badboy.Brothel.Name = GenerateRandomName_Generator(int(npchar.nation), "man");
 			dialog.text = "있지, 우리한테 골칫덩이 손님이 한 명 있어 - "+pchar.GenQuest.Badboy.Brothel.Name+". 그리고 그 자가 올 때마다 정말 우리를 짜증나게 해요! 처음엔 선술집에서 술에 취하고, 그다음엔 여기 와서 여자 하나 꼬셔서 난동을 피우죠\n제일 나쁜 건 그가 귀족 출신이라는 거예요! 우리 총독과 먼 친척이라서, 우리는 그 녀석의 온갖 행패를 참아야만 해요. 혹시 그 건방진 젊은이를... 음... 좀 진정시키거나, 내 업소에 다시는 오지 않게 해줄 수 있겠어요?";
 			link.l1 = "총독의 친척이라고? 흠... 관헌들과 엮이고 싶지 않군. 정말 미안하다.";
 			link.l1.go = "exit";
@@ -950,9 +950,9 @@ void ProcessDialogEvent()
 			//создаем дебошира
 			int iRank, iType, b;
 			string sBlade, sPistol;
-			if (sti(pchar.rank) < 6) iType = 0;
-			if (sti(pchar.rank) >= 6 && sti(pchar.rank) < 16) iType = 1;
-			if (sti(pchar.rank) >= 16) iType = 2;
+			if (int(pchar.rank) < 6) iType = 0;
+			if (int(pchar.rank) >= 6 && int(pchar.rank) < 16) iType = 1;
+			if (int(pchar.rank) >= 16) iType = 2;
 			switch (iType)
 			{
 				case 0:
@@ -962,20 +962,20 @@ void ProcessDialogEvent()
 					b = 25;
 				break;
 				case 1:
-					iRank = sti(pchar.rank)+10;
+					iRank = int(pchar.rank)+10;
 					sBlade = "blade_09";
 					sPistol = "pistol1";
 					b = 65;
 				break;
 				case 2:
-					iRank = sti(pchar.rank)+5;
+					iRank = int(pchar.rank)+5;
 					sBlade = "blade_14";
 					sPistol = "pistol1";
 					b = 40;
 				break;
 			}
 			sld = GetCharacter(NPC_GenerateCharacter("Badboy", "citiz_"+(7+rand(1)), "man", "man", iRank, HOLLAND, -1, true, "citizen"));
-			FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", makeint(iRank*5));
+			FantomMakeCoolFighter(sld, iRank, b, b, sBlade, sPistol, "bullet", int(iRank*5));
 			sld.name = pchar.GenQuest.Badboy.Brothel.Name;
 			sld.lastname = "";
 			sld.dialog.FileName = "Quest\Other_quests_NPC.c";
@@ -1006,7 +1006,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("SexWithHostess_goToRoom");
 			SetTimerFunction("SexWithHostess_null", 0, 0, 1); 
 			DialogExit();
-			if (sti(pchar.GenQuest.Badboy.Brothel.Type) != 2)
+			if (int(pchar.GenQuest.Badboy.Brothel.Type) != 2)
 			{
 				DeleteAttribute(pchar, "GenQuest.Badboy");
 			}
@@ -1136,14 +1136,14 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_7S":
             DialogExit();
-			pchar.GenQuest.BrothelCount = sti(pchar.GenQuest.BrothelCount) + 1; // для Данек
+			pchar.GenQuest.BrothelCount = int(pchar.GenQuest.BrothelCount) + 1; // для Данек
 			Achievment_SetStat(23, 1);
 			//<-- кол-во посещений
 			str = npchar.city;
 			pchar.quest.(str).win_condition.l1 = "ExitFromLocation";
 			pchar.quest.(str).win_condition.l1.location = pchar.location;
 			pchar.quest.(str).win_condition = "Brothel_checkVisitTime";
-			pchar.questTemp.HorseQty = sti(pchar.questTemp.HorseQty) + 1; //счетчик
+			pchar.questTemp.HorseQty = int(pchar.questTemp.HorseQty) + 1; //счетчик
 			AddDialogExitQuest("PlaySex_1");
 			// кач от борделя
 			if (CheckNPCQuestDate(pchar, "BrothelSex"))
@@ -1185,7 +1185,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_R1":
             dialog.text = "아, Charlie Prince, 너의 유머는 네 검만큼이나 날카롭구나! 거의 화낼 뻔했잖아... 얘들아! 손님이 오셨다, 아주 특별한 손님이야! 술과 음식을 가져와라!";
-			if (sti(pchar.money) >= 31000)
+			if (int(pchar.money) >= 31000)
 			{
 				link.l1 = "여기 예쁜 아가씨들 전부 불러 와! 오늘은 쉬면서 신나게 놀 거야! 요호호!..";
 				link.l1.go = "mtraxx_R2";
@@ -1208,13 +1208,13 @@ void ProcessDialogEvent()
 		break;
 		// belamour ночной приключенец
 		case "NA_Girl":
-            dialog.text = "오, 여기 안목 있는 손님이 있구먼, 히히... 그래, 딱 맞는 아가씨가 있지. 하지만 값이 만만치 않아: "+makeint(pchar.GenQuest.NightAdventure_money)+" 페소입니다."; 
+            dialog.text = "오, 여기 안목 있는 손님이 있구먼, 히히... 그래, 딱 맞는 아가씨가 있지. 하지만 값이 만만치 않아: "+int(pchar.GenQuest.NightAdventure_money)+" 페소입니다.";
 			link.l1 = "거래지.";
 			link.l1.go = "NA_Girl_1";
 		break;
 		
 		case "NA_Girl_1":
-			AddMoneyToCharacter(pchar, -makeint(pchar.GenQuest.NightAdventure_money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.NightAdventure_money));
             dialog.text = "좋아, 자기야. 사랑의 여신 사제가 위층에서 기다리고 있을 거야. 믿어, 절대 후회하지 않을 거야."; 
 			link.l1 = "나 이미 안 그래.";
 			link.l1.go = "NA_Girl_2";
@@ -1230,7 +1230,7 @@ void ProcessDialogEvent()
 		
 		case "chicken_god":
 			dialog.text = "당신과 아귀에바나 나리를 위해서라면? 물론이지. 만 냥이네, 선장.";
-			if (sti(pchar.money) >= 10000) {
+			if (int(pchar.money) >= 10000) {
 				link.l1 = "잠깐, 그렇게 하면 안 돼!.. 젠장! 됐다, 여기 보수다.";
 				link.l1.go = "chicken_god_pay";
 			} else {

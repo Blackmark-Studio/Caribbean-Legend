@@ -1499,3 +1499,5 @@ itmname_blade_34 {Boğulmuş Adamın Kılıcı}
 itmdescr_blade_34 {Donmuş geminin güvertesinde bulduğunuz bu korsan kılıcı mercanlar ve poliplerle kaplanmıştır. Üçüncü pozisyondan güçlü saplamalar ve kesişler savuracak kadar uzun ve ağırdır.}
 itmname_greenIdol {Yeşil Taş İdolü}
 itmdescr_greenIdol {Bu putu rüyanızda taşı bizzat kendiniz oydunuz. Doğaya aykırı biçimleri ve korkunç sembolleri iğrenme uyandırır, aklı bulandırır. Bazen size bir şeyler fısıldıyormuş gibi gelir...}
+itmname_nocturlabe {Nocturlabio}
+itmdescr_nocturlabe {Un ingenioso instrumento que permite determinar la hora exacta por las estrellas. Simplifica en gran medida y acelera los viajes por mar.}

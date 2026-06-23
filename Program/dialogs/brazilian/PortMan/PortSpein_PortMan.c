@@ -25,8 +25,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Juan? Só isso? Señor, o senhor está bêbado ou está fazendo uma piada sem graça comigo? Consegue lembrar o sobrenome dele ou pelo menos o nome do navio? Esta é uma colônia espanhola, pelo amor de Deus. Sabe quantos Juans temos por aqui? Não vou conseguir te ajudar sem mais detalhes.";
 			link.l1 = "Entendi. Desculpe incomodar...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

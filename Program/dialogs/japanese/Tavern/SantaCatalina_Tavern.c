@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Svenson_4":
 			dialog.text = "誰にも分からねえ……一週間ってのはそんなに長くねえが、マッカーサーの未亡人は娘に何かあったと確信してて、 それをスヴェンソンにも信じ込ませたんだ。奴は部下を呼び集めて自ら捜索を始めたが、今のところ成果はなし。 「レインボー」とその乗組員は跡形もなく消えちまった\nグラディスの居場所を教えてやってもいいぜ、千枚のエイトピースでな。";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l1 = "あんたの知識はずいぶん高くつくが、興味が湧いたぜ。ほら、金だ。で、彼女はどこにいるんだ？";
 				link.l1.go = "Svenson_5";

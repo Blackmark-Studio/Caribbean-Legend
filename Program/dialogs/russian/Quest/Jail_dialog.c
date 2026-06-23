@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		//--> Сомнительное предложение
 		if (CheckAttribute(pchar, "GenQuest.Contraoffer.Jail"))
 		{
-			dialog.text = "Вы задержаны с поличным при попытке провезти и сбыть контрабанду. Поскольку вы пошли следствию навстречу, и учитывая ваше положение в обществе, вы проведёте в тюрьме всего лишь "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Кроме того, все деньги от сделки с контрабандным товаром - "+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+" изымаются и поступают в городскую казну. Приятного времяпровождения, капитан! Хе-хе!";
+			dialog.text = "Вы задержаны с поличным при попытке провезти и сбыть контрабанду. Поскольку вы пошли следствию навстречу, и учитывая ваше положение в обществе, вы проведёте в тюрьме всего лишь "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Кроме того, все деньги от сделки с контрабандным товаром - "+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+" изымаются и поступают в городскую казну. Приятного времяпровождения, капитан! Хе-хе!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			DeleteAttribute(pchar, "GenQuest.Contraoffer.Jail");
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			break;
 		}
 		//<-- Сомнительное предложение
-			dialog.text = "Вы задержаны за совершение преступления и проведёте в тюрьме "+FindRussianDaysString(sti(pchar.questTemp.JailTemp2))+". Кроме того, вы будете оштрафованы на "+FindRussianMoneyString(sti(pchar.questTemp.JailTemp1))+". Приятного времяпровождения, хе-хе!";
+			dialog.text = "Вы задержаны за совершение преступления и проведёте в тюрьме "+FindRussianDaysString(int(pchar.questTemp.JailTemp2))+". Кроме того, вы будете оштрафованы на "+FindRussianMoneyString(int(pchar.questTemp.JailTemp1))+". Приятного времяпровождения, хе-хе!";
 			link.l1 = "";
 			link.l1.go = "Jail_officer_take_1";
 			NextDiag.currentnode = "Jail_officer_free";

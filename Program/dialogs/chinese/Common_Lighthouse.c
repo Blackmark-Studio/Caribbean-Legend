@@ -120,18 +120,18 @@ void ProcessDialogEvent()
 		
 		case "Trade_lighthouse":
 			//有时售卖船用货物 // Addon-2016 Jason
-			npchar.quest.goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));
+			npchar.quest.goods = GOOD_COFFEE + hrand(int(GOOD_PAPRIKA - GOOD_COFFEE));
 			npchar.quest.goodsqty = 50+hrand(100);
-			if (sti(npchar.quest.goods) == GOOD_EBONY || sti(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
-			npchar.quest.goodsprice = makeint(sti(Goods[sti(npchar.quest.goods)].Cost)/4);//单位商品价格
-			npchar.quest.goodscost = sti(npchar.quest.goodsprice)*sti(npchar.quest.goodsqty);//商品总价
+			if (int(npchar.quest.goods) == GOOD_EBONY || int(npchar.quest.goods) == GOOD_MAHOGANY) npchar.quest.goodsqty = 25+hrand(50);
+			npchar.quest.goodsprice = int(int(Goods[int(npchar.quest.goods)].Cost)/4);//单位商品价格
+			npchar.quest.goodscost = int(npchar.quest.goodsprice)*int(npchar.quest.goodsqty);//商品总价
 			ok = (!CheckAttribute(npchar, "goods_date")) || (GetNpcQuestPastDayParam(npchar, "goods_date") >= 10)
-			if (hrand(4) == 1 && makeint(GetCharacterFreeSpace(pchar, sti(npchar.quest.goods))) > sti(npchar.quest.goodsqty) && sti(pchar.money) >= sti(npchar.quest.goodscost) && ok)
+			if (hrand(4) == 1 && int(GetCharacterFreeSpace(pchar, int(npchar.quest.goods))) > int(npchar.quest.goodsqty) && int(pchar.money) >= int(npchar.quest.goodscost) && ok)
 			{
-				dialog.text = "船长, 最近有一批货物被冲上岸 - " + GetGoodsNameAlt(sti(npchar.quest.goods)) + "。 有些被盐水损坏了, 但" + FindRussianQtyString(sti(npchar.quest.goodsqty)) + "我设法完好保存了下来。 想买点吗? 我便宜卖, 每单位只要" + FindRussianMoneyString(sti(npchar.quest.goodsprice)) + "。 ";
+				dialog.text = "船长, 最近有一批货物被冲上岸 - " + GetGoodsNameAlt(int(npchar.quest.goods)) + "。 有些被盐水损坏了, 但" + FindRussianQtyString(int(npchar.quest.goodsqty)) + "我设法完好保存了下来。 想买点吗? 我便宜卖, 每单位只要" + FindRussianMoneyString(int(npchar.quest.goodsprice)) + "。 ";
 				link.l1 = "不。 给我看看你最近的收藏。 ";
 				link.l1.go = "Trade_lighthouse_double";
-				link.l2 = "嗯... 诚邀, 我同意。 我想我可以转卖赚点利润。 让我看看... 总共是" + FindRussianMoneyString(sti(npchar.quest.goodscost)) + "。 对吗? ";
+				link.l2 = "嗯... 诚邀, 我同意。 我想我可以转卖赚点利润。 让我看看... 总共是" + FindRussianMoneyString(int(npchar.quest.goodscost)) + "。 对吗? ";
 				link.l2.go = "Trade_goods";
 				SaveCurrentNpcQuestDateParam(npchar, "goods_date");
 			}
@@ -158,9 +158,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_goods":
-			AddCharacterGoods(pchar, sti(npchar.quest.goods), sti(npchar.quest.goodsqty));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.goodscost));
-			AddMoneyToCharacter(npchar, sti(npchar.quest.goodscost));
+			AddCharacterGoods(pchar, int(npchar.quest.goods), int(npchar.quest.goodsqty));
+			AddMoneyToCharacter(pchar, -int(npchar.quest.goodscost));
+			AddMoneyToCharacter(npchar, int(npchar.quest.goodscost));
 			dialog.text = "你说得对, 船长。 一笔好交易! 我们都从中获利了... ";
 			link.l1 = "好的。 我会派水手把货物送到我的船上。 现在给我看看你要卖的东西。 ";
 			link.l1.go = "Trade_lighthouse_double";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_3":
-			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= sti(npchar.quest.artday))
+			if (CheckAttribute(npchar, "art_date") && GetNpcQuestPastDayParam(npchar, "art_date") >= int(npchar.quest.artday))
 			{
 			dialog.text = "是的, 我有。 你准备好100杜布隆了吗, 船长? "; // Addon-2016 Jason
 				// belamour legendary edition -->
@@ -629,7 +629,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			LAi_SetOwnerType(NPChar); // belamour 否则永远生气		   
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;

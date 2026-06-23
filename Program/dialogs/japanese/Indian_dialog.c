@@ -455,7 +455,7 @@ void ProcessDialogEvent()
 			if (npchar.id == "Hayamee")
 			{
 				dialog.text = "私の夫タゴファは部族一の狩人だ。おーい！ "+npchar.name+" 彼女は夫を誇りに思っている。 "+npchar.name+" よくセルバでタゴファと一緒に行動している。遠くまで行くんだ。 スペイン人の居留地がどこにあるかはタゴファが知っている。";
-				if (IsCharacterPerkOn(pchar, "Trustworthy") && stf(pchar.questTemp.Indian.relation) >= 40.0)
+				if (IsCharacterPerkOn(pchar, "Trustworthy") && float(pchar.questTemp.Indian.relation) >= 40.0)
 				{
 					link.l1 = "タゴファは白人どもがメリダと呼ぶスペインの町への道を知っているか？";
 					link.l1.go = "hayamee_1";
@@ -470,7 +470,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = RandPhraseSimple(RandPhraseSimple("私の夫はセルバには行かないよ、海の息子さん。魚を捕るんだ。いい漁師さ、オーエイ！ ","あたしの旦那は腕のいい猟師だよ、でもジャングルの奥までは行かないんだ。"),RandPhraseSimple("ジャガーが狩りの最中に旦那を傷つけたんだ。今じゃ村で矢を作って座ってるよ、あーあ！","六つの月前に、三人のカポングが私の夫を襲ったのです。今では彼は村から遠くへ狩りに行かなくなりました。絶対に！ おーえい！"));
-				link.l1 = LinkRandPhrase("「残念だな…」","残念だな……","なんて残念だ……"));
+				link.l1 = LinkRandPhrase("「残念だな…」","残念だな……","なんて残念だ……");
 				link.l1.go = "exit";
 			}
 		break;
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 			dialog.text = "いいや、ヤラナウイ。白い顔の者は決して約束を守らない。白い顔の者が口にした言葉は、すぐに虚空へと消えてしまう。 カポンはタゴファを殺し、それから我らの村へ来てロコノを殺すだろう。";
 			link.l1 = "お前はカポンどもだけを気にしていればいいと思ってるのか？大間違いだぜ……";
 			link.l1.go = "hayamee_bad_4";
-			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			if (float(pchar.questTemp.Indian.relation) < 40.0) notification("The Indians don't respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
@@ -517,7 +517,7 @@ link.l1.go = "hayamee_1_1";
 			dialog.text = "ロコノはヤラナウイを信用しない。ヤラナウイはインディアンを欺き、奴隷にする。だが、ロコノはお前の名を聞いたぞ、 白人よ。俺の信頼はお前のものだ。明日、日没後に来い、海の子よ。あの小屋でタゴファと一緒にいる。 タゴファが一緒に行くかどうか、俺が彼に聞いてみる。";
 			link.l1 = "タゴファに俺の最高のピストルをやると伝えてくれ。\nそしてお前には宝石をたんまり用意してあるぜ。";
 			link.l1.go = "hayamee_2";
-			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
+			notification("The Indians respect you "+float(pchar.questTemp.Indian.relation)+"/40", "None");
 			Notification_Perk(true, "Trustworthy");
 		break;
 		

@@ -1,20 +1,13 @@
-key {d24.04.2026}
-News {1.8 Maritime Update: otwarta beta}
+key {d23.06.2026}
+News {1.8.2 Performance Update jest już dostępna!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoj!   ***************************
 -------------------------------------------------------------------------------------------------
-— Aktualizacja 1.8 Maritime Update jest już dostępna
-— Wersja 1.7.3 trafia do archiwum; możecie przełączać się między wersjami przez Steam
+— Aktualizacja 1.8.2 Performance Update jest już dostępna
 — Nie trzeba zaczynać nowej gry
-— DLC Maritime Stories jest już dostępne
-— Do gry dodano Pory Roku, które znacząco zmieniają Karaiby
-— Przebudowano ostrzał morski
-— Nowy system żagli i kąta kursowego
-— Ulepszono abordaże
-— Zwiększono wygodę korzystania z mapy globalnej
-— Ulepszono morskie AI, dzięki czemu bitwy okrętów stały się znacznie ciekawsze
-— Mnóstwo zmian quality of life, poprawek balansu i bugfixów
-— Szczegółową listę zmian znajdziecie w aktualnościach pod przyciskiem poniżej
+— Wydajność wzrosła o 40%
+— Do gry dodano nową nagrodę dla społeczności
+— Szczegółową listę zmian i wiadomości o patchu 2.0 znajdziesz w aktualnościach pod przyciskiem poniżej
 }

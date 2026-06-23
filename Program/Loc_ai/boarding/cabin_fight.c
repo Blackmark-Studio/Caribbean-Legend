@@ -50,9 +50,9 @@ ref BRDC_GetNextFighter(ref boardingObject, string type, int fighterIdx, ref cap
 		if (chrIdx > -1) return GetCharacter(chrIdx);
 	}
 
-	if (type == "ally" && sti(boardingObject.attacker < 1)) return nullptr; // совсем нет матросов
+	if (type == "ally" && int(boardingObject.attacker < 1)) return nullptr; // совсем нет матросов
 
-	ref genOfficer = GetCharacter(NPC_GenerateCharacter("GenChar_", models[fighterIdx].model, "man", models[fighterIdx].ani, sti(pchar.rank), sti(captain.nation), 0, false, "officer"));
+	ref genOfficer = GetCharacter(NPC_GenerateCharacter("GenChar_", models[fighterIdx].model, "man", models[fighterIdx].ani, int(pchar.rank), int(captain.nation), 0, false, "officer"));
 	genOfficer.id = "GenChar_" + genOfficer.index;
 
 	// Если совсем нет абордажников, будет Алонсо
@@ -65,7 +65,7 @@ ref BRDC_GetNextFighter(ref boardingObject, string type, int fighterIdx, ref cap
 	}
 
 	SetNPCEquip(genOfficer, items);
-	LAi_NPC_Equip(genOfficer, sti(genOfficer.rank), true, true);
+	LAi_NPC_Equip(genOfficer, int(genOfficer.rank), true, true);
 	LAi_SetWarriorType(genOfficer);
 	genOfficer.AboardFantom = true;
 	if (type == "ally") 

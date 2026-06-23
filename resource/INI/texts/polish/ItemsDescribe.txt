@@ -1496,3 +1496,5 @@ itmname_blade_34 {Miecz Topielca}
 itmdescr_blade_34 {Ten piracki miecz, znaleziony przez was na pokładzie zamarzniętego statku, porósł koralowcami i polipami. Jest dość długi i ciężki, by bez trudu zadawać z trzeciej pozycji potężne pchnięcia i cięcia.}
 itmname_greenIdol {Idol z Zielonego Kamienia}
 itmdescr_greenIdol {Tego bożka wyrzeźbiliście własnoręcznie z kamienia we śnie. Jego nienaturalne kształty i ohydne symbole budzą odrazę i mącą zmysły. Czasami wydaje się wam, że coś szepcze...}
+itmname_nocturlabe {야시계}
+itmdescr_nocturlabe {별을 통해 정확한 시간을 알아낼 수 있게 해 주는 정교한 기구다. 해상 항해를 크게 단순화하고 더욱 빠르게 만들어 준다.}

@@ -20,7 +20,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan.Late")) // Addon 2016-1 Jason пиратская линейка 1
 			{
 				dialog.text = "아들아, 다시 보니 반갑구나. 빚을 갚으러 온 것이냐?";
-				if (PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+				if (PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 				{
 					link.l1 = "예, 아버지. 그렇습니다.";
 					link.l1.go = "FastStart_7";
@@ -96,7 +96,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(npchar, "quest.relation_info")) link.l1.go = "help";
 				else link.l1.go = "help_start";
 			}
-			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && sti(pchar.money) >= 50000)
+			if (CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan") && PCharDublonsTotal() >= 100 && int(pchar.money) >= 50000)
 			{
 				link.l2 = "예, 아버지. 그렇습니다.";
 				link.l2.go = "FastStart_7";
@@ -315,7 +315,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			rate = wdmGetNationThreat(int(pchar.GenQuest.BenuaNation));
 			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
 			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
 			if (rate < 2)
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
             rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -672,14 +672,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LH_abbat_23_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "으, 으음...";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_23_1";
 		break;
 		
 		case "LH_abbat_24_2":
-			pchar.questTemp.LongHappy.Mistake = sti(pchar.questTemp.LongHappy.Mistake)+1;
+			pchar.questTemp.LongHappy.Mistake = int(pchar.questTemp.LongHappy.Mistake)+1;
 			dialog.text = "으, 으음...";
 			link.l1 = "";
 			link.l1.go = "LH_abbat_24_1";
@@ -769,7 +769,7 @@ void ProcessDialogEvent()
 		
 		case "LH_abbat_35":
 			string sTemp;
-			if (sti(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
+			if (int(pchar.questTemp.LongHappy.Mistake) > 1) sTemp = "(Whispering) Charles, my son, just move your lips, I beg you - don't try to make any sound...";
 			else sTemp = "";
 			dialog.text = "신혼부부여, 함께 무릎 꿇고 기도하시오. Oratio fidelium. "+sTemp+"";
 			link.l1 = "";
@@ -1269,7 +1269,7 @@ void ProcessDialogEvent()
 		
 		case "SharlieEpilog_Benua_Money_4":
 			dialog.text = "그렇다면 십만 페소의 기부로 충분할 것이다. 이 돈으로 우리는 수개월 동안 도움이 필요한 이들에게 식사를 제공할 수 있다. 교회에 바칠 헌금을 포함해 필요한 금액을 가지고 있다면, 지금 바로 시작할 수 있습니다.";
-			if (sti(pchar.Money) >= 10100000)
+			if (int(pchar.Money) >= 10100000)
 			{
 				link.l1 = "물론입니다. 여기 있습니다. 진정으로 도움이 필요한 사람들을 도울 수 있어 기쁘며, 이 돈이 성부님의 감독 아래 현명하고 명예롭게 쓰일 것이라 확신합니다.";
 				link.l1.go = "SharlieEpilog_Benua_Money_4_1";
@@ -1284,7 +1284,7 @@ void ProcessDialogEvent()
 
 		case "SharlieEpilog_Benua_Money_5":
 			dialog.text = "그렇다면 네 기부금은 이십오만 페소가 되어야 한다. 이 자금으로 고아들을 위한 보호소를 세울 수 있으며, 그것은 네 이름을 기리고 최소한 초기에는 운영을 유지할 수 있을 것이다. 교회에 바칠 헌금을 포함해 필요한 금액을 가지고 있다면, 지금 바로 시작할 수 있습니다.";
-			if (sti(pchar.Money) >= 25250000)
+			if (int(pchar.Money) >= 25250000)
 			{
 				link.l1 = "물론입니다. 여기 있습니다. 진정으로 도움이 필요한 사람들을 도울 수 있어 기쁘며, 이 돈이 성부님의 감독 아래 현명하고 명예롭게 쓰일 것이라 확신합니다.";
 				link.l1.go = "SharlieEpilog_Benua_Money_5_1";
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 
 		case "SharlieEpilog_Benua_Money_6":
 			dialog.text = "흠, 시간을 헛되이 보내지는 않았군, "+pchar.name+". 오십만 페소의 기부면 충분할 것 같다. 이 정도의 헌금이라면 병원을 세우고 오랜 세월 동안 필요한 모든 것을 제공할 수 있을 것이다. 교회에 바칠 헌금을 포함해 필요한 금액을 가지고 있다면, 지금 바로 시작할 수 있습니다.";
-			if (sti(pchar.Money) >= 50500000)
+			if (int(pchar.Money) >= 50500000)
 			{
 				link.l1 = "물론입니다. 여기 있습니다. 진정으로 도움이 필요한 사람들을 도울 수 있어 기쁘며, 이 돈이 성부님의 감독 아래 현명하고 명예롭게 쓰일 것이라 확신합니다.";
 				link.l1.go = "SharlieEpilog_Benua_Money_6_1";

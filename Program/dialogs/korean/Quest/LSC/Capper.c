@@ -195,13 +195,7 @@ void ProcessDialogEvent()
 			LAi_group_SetCheck("EnemyFight", "LSC_CapperDieAeva");
 			AddDialogExitQuest("MainHeroFightModeOn");	
 		break;
-		
-		case "Aeva_attack_2":
-			dialog.text = "... 이건 정말 지옥 같은 술판이 되겠군. 샤크는 이 위스키를 얼마나 오래 꿈꿔왔는지, 한 번에 들이켜 버릴 거야. 비소는 어디 있지? 확실하게 하려면 두 병을 쓰자... 그러면 우리 친구 파지오가 이 통을 정의의 섬의 나리발들이 준 선물이라며 제독에게 전해줄 수 있겠지, 하하!\n맞지, 주세페? 기운 내, 친구야. 제대로만 하면 걱정할 거 없어-- 아! 손님이 왔군, 얘들아! 뭘 원하지, 이 멍청아? 여긴 사적인 모임이야.";
-			link.l1 = "네 계획은 실패했어, 카퍼. 너랑 네 친구 마르첼로가 뭘 하려는지 다 알고 있어. 비소를 버려! 샤크를 독살하게 두지 않을 거야!";
-			link.l1.go = "Aeva_attack_3";
-		break;
-		
+
 		case "Aeva_attack_3":
 			dialog.text = "아, 젠장. 좋아... 네가 먼저 죽고, 그다음은 샤크다! 무기 들어, 녀석들!";
 			link.l1 = "...";

@@ -1499,3 +1499,5 @@ itmname_blade_34 {溺死者の剣}
 itmdescr_blade_34 {あなたが凍りついた船の上で見つけたこの海賊の剣は、珊瑚とポリプに覆われている。第三の構えから、強烈な突きと斬撃をたやすく繰り出せるほどに長く、そして重い。}
 itmname_greenIdol {緑の石の偶像}
 itmdescr_greenIdol {この偶像は、あなたが夢の中で自ら石から削り出したものだ。その不自然な形とおぞましい印は嫌悪を誘い、理性を濁らせる。時折、それが何かを囁いているように思える……}
+itmname_nocturlabe {Nocturlábio}
+itmdescr_nocturlabe {Um engenhoso instrumento que permite determinar a hora exata pelas estrelas. Simplifica bastante e acelera as travessias marítimas.}

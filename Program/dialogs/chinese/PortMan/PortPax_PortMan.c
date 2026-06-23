@@ -32,9 +32,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			sFrom_sea = rColony.from_sea;
 		}
 		ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-		if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)// 检查港口是否有船
+		if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)// 检查港口是否有船
 		{
-			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
+			bool bRegLugger = int(RealShips[int(pchar.ship.type)].basetype) == SHIP_LUGGER || int(RealShips[int(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Beliz") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
 			dialog.text = "先生! 你违反了帆船赛规则, 我必须取消你的资格。 抱歉, 你不能参加下一次航行。 我已准备好发往皇家港的急件。 ";
@@ -47,8 +47,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			else
 			{
-			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());// 玩家在1+2次转换中消耗的小时数
-			dialog.text = "我们来登记: " +GetFullName(pchar)+ "船长, 船是" + pchar.Ship.Name + "... 帆船赛用时" + sti(pchar.questTemp.Regata.SecondTransitionTime) + "小时。 完成, 成绩已登记, 你可以继续了。 ";
+			pchar.questTemp.Regata.SecondTransitionTime = GetPastTime("hour", int(pchar.questTemp.Regata.StartYear), int(pchar.questTemp.Regata.StartMonth), int(pchar.questTemp.Regata.StartDay), float(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());// 玩家在1+2次转换中消耗的小时数
+			dialog.text = "我们来登记: " +GetFullName(pchar)+ "船长, 船是" + pchar.Ship.Name + "... 帆船赛用时" + int(pchar.questTemp.Regata.SecondTransitionTime) + "小时。 完成, 成绩已登记, 你可以继续了。 ";
 			link.l1 = "告诉我我的排名。 ";
 			link.l1.go = "Regata_info";
 			}
@@ -72,7 +72,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				if (i==4) sTemp = "d";
 				if (i==5) sTemp = "e";
 				log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp)));
-				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < sti(pchar.questTemp.Regata.SecondTransitionTime))
+				if (pchar.questTemp.Regata.AdversarySecondTransition.Time.(sTemp) < int(pchar.questTemp.Regata.SecondTransitionTime))
 				{
 					n++;
 					sName = pchar.questTemp.Regata.AdversaryName.(sTemp);// 最近对手的名字

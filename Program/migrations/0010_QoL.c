@@ -26,7 +26,6 @@ void ApplyMigration(ref migrationState) {
 				case "map_jam":        item.area = "Jamaica";       break;
 				case "map_hisp":       item.area = "Hispaniola";    break;
 				case "map_LSC":        item.area = "LostShipsCity"; break;
-				case "map_maine_1":    item.area = "Maracaibo";     break;
 				case "map_martiniqua": item.area = "Martinique";    break;
 				case "map_nevis":      item.area = "Nevis";         break;
 				case "map_panama":     item.area = "PortoBello";    break;
@@ -51,7 +50,6 @@ void ApplyMigration(ref migrationState) {
 				case "a_map_cuba":       item.area = "Cuba";          break;
 				case "a_map_jam":        item.area = "Jamaica";       break;
 				case "a_map_hisp":       item.area = "Hispaniola";    break;
-				case "a_map_maine_1":    item.area = "Maracaibo";     break;
 				case "a_map_martiniqua": item.area = "Martinique";    break;
 				case "a_map_nevis":      item.area = "Nevis";         break;
 				case "a_map_panama":     item.area = "PortoBello";    break;
@@ -94,7 +92,7 @@ void ApplyMigration(ref migrationState) {
 			Atlas.areas.(area).(atlastype) = map.id;
 		}
 		else if (map.ImageType == "cabin_map") Atlas.region.(mapId) = true;
-		else if (sti(map.Atlas) != 0) Atlas.rest.(mapId) = true;
+		else if (int(map.Atlas) != 0) Atlas.rest.(mapId) = true;
 	}
 
 	DeleteAttribute(pchar, "equip.maps");

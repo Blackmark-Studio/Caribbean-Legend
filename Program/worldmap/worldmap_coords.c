@@ -48,12 +48,12 @@ void CheckQuestCoordinates()
 
 	if(IsEntity(&worldMap)) // если на глобальной карте
 	{
-		Log_SetStringToLog("X : " + GetMapCoordDegreeX(makefloat(worldMap.playerShipX)) + " Z : " + GetMapCoordDegreeZ(makefloat(worldMap.playerShipZ)));
-		if( (GetMapCoordDegreeX(makefloat(worldMap.playerShipX)) == coordinateDegreeX) &&
-			(GetMapCoordDegreeZ(makefloat(worldMap.playerShipZ)) == coordinateDegreeZ) )
+		Log_SetStringToLog("X : " + GetMapCoordDegreeX(float(worldMap.playerShipX)) + " Z : " + GetMapCoordDegreeZ(float(worldMap.playerShipZ)));
+		if( (GetMapCoordDegreeX(float(worldMap.playerShipX)) == coordinateDegreeX) &&
+			(GetMapCoordDegreeZ(float(worldMap.playerShipZ)) == coordinateDegreeZ) )
 		{
 			DeleteCoordinateQuest("CheckQuestCoordinates");
-			Log_SetStringToLog("Текущие координаты : " + Map_GetRealCoordZ(makefloat(worldMap.playerShipZ)) + "  " + Map_GetRealCoordX(makefloat(worldMap.playerShipX)));
+			Log_SetStringToLog("Текущие координаты : " + Map_GetRealCoordZ(float(worldMap.playerShipZ)) + "  " + Map_GetRealCoordX(float(worldMap.playerShipX)));
 			Log_SetStringToLog("Достигли искомой точки - 70 гр. з.д. 15 гр. с.ш.");
 		}
 	}
@@ -75,7 +75,7 @@ int GetSeaToMapScale()
 
 float GetSeaShipX(float X)
 {
-	float zeroX = MakeFloat(worldMap.zeroX);
+	float zeroX = float(worldMap.zeroX);
 	int scale = GetSeaToMapScale();
 	float ShipX = (X/scale) + zeroX;
 
@@ -84,7 +84,7 @@ float GetSeaShipX(float X)
 
 float GetSeaShipZ(float Z)
 {
-	float zeroZ = MakeFloat(worldMap.zeroZ);
+	float zeroZ = float(worldMap.zeroZ);
 	int scale = GetSeaToMapScale();
 	float ShipZ = (Z/scale) + zeroZ;	
 	
@@ -94,7 +94,7 @@ float GetSeaShipZ(float Z)
 // секунды долготы относительно начала координат (глобальная карта)
 int Map_GetRCoordSecondsX(float X)
 {
-	int iSecX = makeint((fShiftX - X)/fScaleX * iSecondsX);
+	int iSecX = int((fShiftX - X)/fScaleX * iSecondsX);
 	return iSecX;
 }
 
@@ -102,13 +102,13 @@ int Map_GetRCoordSecondsX(float X)
 int Map_GetRCoordDegreeX(float X)
 {
 	int iDegX = Map_GetRCoordSecondsX(X);
-	return makeint(iDegX/3600.0);
+	return int(iDegX/3600.0);
 }
 
 // секунды широты относительно начала координат (глобальная карта)
 int Map_GetRCoordSecondsZ(float Z)
 {
-	int iSecZ = makeint((fShiftZ + Z)/fScaleZ * iSecondsZ);
+	int iSecZ = int((fShiftZ + Z)/fScaleZ * iSecondsZ);
 	return iSecZ;
 }
 
@@ -116,7 +116,7 @@ int Map_GetRCoordSecondsZ(float Z)
 int Map_GetRCoordDegreeZ(float Z)
 {
 	int iDegZ = Map_GetRCoordSecondsZ(Z);
-	return makeint(iDegZ/3600.0);
+	return int(iDegZ/3600.0);
 }
 
 int GetMapCoordDegreeX(float X)
@@ -130,7 +130,7 @@ int GetMapCoordMinutesX(float X)
 	int iRDegX = Map_GetRCoordDegreeX(X);
 	int iRSecX = Map_GetRCoordSecondsX(X);
 	
-	return makeint((iRSecX - iRDegX * 3600)/60);
+	return int((iRSecX - iRDegX * 3600)/60);
 }
 
 int GetMapCoordDegreeZ(float Z)
@@ -144,7 +144,7 @@ int GetMapCoordMinutesZ(float Z)
 	int iRDegZ = Map_GetRCoordDegreeZ(Z);
 	int iRSecZ = Map_GetRCoordSecondsZ(Z);
 	
-	return makeint((iRSecZ - iRDegZ * 3600)/60);
+	return int((iRSecZ - iRDegZ * 3600)/60);
 }
 
 int GetSeaCoordDegreeX(float X)
@@ -179,9 +179,9 @@ string Map_GetRealCoordX(float X)
 	int iRDegX = 0;
 	
 	iRSecX = Map_GetRCoordSecondsX(X);
-	iRDegX = makeint(iRSecX/3600.0);
+	iRDegX = int(iRSecX/3600.0);
 	
-	iRMinX = makeint((iRSecX - iRDegX * 3600)/60);
+	iRMinX = int((iRSecX - iRDegX * 3600)/60);
 	iRDegX += WDM_RealCoordStartX;
 	
 	string sCoordX = "W " + iRDegX + " " + iRMinX + "'";	
@@ -196,9 +196,9 @@ string Map_GetRealCoordZ(float Z)
 	int iRDegZ = 0;
 	
 	iRSecZ = Map_GetRCoordSecondsZ(Z);
-	iRDegZ = makeint(iRSecZ/3600.0);
+	iRDegZ = int(iRSecZ/3600.0);
 	
-	iRMinZ = makeint((iRSecZ - iRDegZ * 3600)/60);
+	iRMinZ = int((iRSecZ - iRDegZ * 3600)/60);
 	iRDegZ += WDM_RealCoordStartZ;
 	
 	string sCoordZ = "N " + iRDegZ + " " + iRMinZ + "'";
@@ -232,8 +232,8 @@ void wdmCoordUpdate()
 			isLongitude = true;
 		}	
 	
-		if(isLatitude) 	latitude 	= Map_GetRealCoordZ(makefloat(worldMap.playerShipZ));
-		if(isLongitude) longitude 	= Map_GetRealCoordX(makefloat(worldMap.playerShipX));
+		if(isLatitude) 	latitude 	= Map_GetRealCoordZ(float(worldMap.playerShipZ));
+		if(isLongitude) longitude 	= Map_GetRealCoordX(float(worldMap.playerShipX));
 
 		sCoordinates = latitude + " " + longitude;
 		

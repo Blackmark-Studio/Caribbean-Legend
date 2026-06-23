@@ -320,12 +320,12 @@ void ProcessDialogEvent()
 					NextDiag.TempNode = "Kristian_41";
 				}
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // 增加葡萄酒和朗姆酒的供应量
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && !CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoBlock")) // 增加葡萄酒和朗姆酒的供应量
 			{
 				link.l4 = "克里斯蒂安, 我想增加我的定期订单。 准确地说, 每月各一百瓶朗姆酒和葡萄酒。 ";
 				link.l4.go = "UpgradeVino";
 			}
-			if(sti(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && sti(pchar.Money) >= 50000) // 增加葡萄酒和朗姆酒的供应量, 如果第一次没有带来
+			if(int(pchar.questTemp.TPZ_KritstianVinoAndRom) >= 1 && CheckAttribute(pchar, "questTemp.TPZ_KritstianVinoPotom") && int(pchar.Money) >= 50000) // 增加葡萄酒和朗姆酒的供应量, 如果第一次没有带来
 			{
 				link.l4 = "克里斯蒂安, 我想重新考虑扩大我们的安排。 ";
 				link.l4.go = "UpgradeVino_Agreed";
@@ -354,7 +354,7 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.TPZ_TradeVinoAndRom");
 			SetFunctionTimerCondition("TPZ_KristianReturn", 0, 0, 1, false); // 定时器
 			AddCharacterExpToSkill(pchar, "Commerce", 100);
-			pchar.questTemp.TPZ_KritstianVinoAndRom = sti(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // 购买计数器
+			pchar.questTemp.TPZ_KritstianVinoAndRom = int(pchar.questTemp.TPZ_KritstianVinoAndRom) + 1; // 购买计数器
 		break;
 
 		case "UpgradeVino":
@@ -371,7 +371,7 @@ void ProcessDialogEvent()
 
 		case "UpgradeVino_3":
 			dialog.text = "非常遗憾, 船长, 我必须坚持这笔款项是绝对的最低要求。 如果偷工减料, 我们的企业可能会... 可以说, 灾难性地偏离轨道。 这样的灾难对您的利益和我的利益都没有好处, 我敢说。 ";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "这是您的全额付款。 确保您值得这样的信任, 克里斯蒂安。 ";
 				link.l1.go = "UpgradeVino_5";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 		
 		case "UpgradeVino_Agreed":
 			dialog.text = "船长, 最精彩的消息! 您带来了五万银币来立即进行吗? ";
-			if (sti(pchar.Money) >= 50000)
+			if (int(pchar.Money) >= 50000)
 			{
 				link.l1 = "这是您的全额付款。 确保您值得这样的信任, 克里斯蒂安。 ";
 				link.l1.go = "UpgradeVino_5";

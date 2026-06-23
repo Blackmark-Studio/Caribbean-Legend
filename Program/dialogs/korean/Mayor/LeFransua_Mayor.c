@@ -54,7 +54,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "아, 드디어 왔군. 나는 그를 바베이도스의 플랜테이션 소유주에게 팔까 생각하고 있었소, 그가 일주일이나 이주일 후에 올 것이오... 몸값을 준비했소?"+GetSexPhrase("","")+"?";
 				link.l1 = "보시오, "+NPChar.name+" , 약간 문제가 있소... 사실, 내게 그만한 돈이 없소. 하지만 일할 의지는 있소.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "그를 아직 팔지 않아서 다행이오. 여기 당신의 돈이오 - 15만 페소. 그를 어디서 찾을 수 있소?"link.l2.go ="CapComission2_3";
 				}	
@@ -111,8 +111,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			dialog.text = "흠... 그렇군 "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+" 몇몇 해적들에게 전리품 몫이 우리 은닉처, 즉 에서 멀지 않은 곳에 보관될 것이라고 설득했습니다\n "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". 그들의 두 척의 배 '"+pchar.GenQuest.CaptainComission.ShipName1+"'와 '"+pchar.GenQuest.CaptainComission.ShipName2+"'가 얼마 전에 닻을 올리고 출항하여 "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island+"Abl")+". 이제 왜 내가 내 부하들에게 이 일을 맡길 수 없는지 알겠소?";
 			link.l1 = "알겠소. 시간이 얼마나 남았소?";
@@ -197,7 +197,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "값을 깎으라고?! 네놈의 무능함 때문에 내 물건을 다 잃었단 말이다! 오히려 값을 올려야지! 원한다면 20만 페소에 데려가든가, 아니면 당장 꺼져라!";
 			link.l1 = "너무 비싸군... 작별이오...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "제기랄, 좋아, 돈 가져가라.";
 				link.l2.go = "CapComission4_5";
@@ -245,7 +245,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "돈을 가져왔나, Charles? 저 사내를 플랜테이션에 팔겠다는 말, 농담이 아니었네\n";			
 			link.l1 = "들으시오, "+NPChar.name+", 문제가 있소... 그만한 돈이 없소. 하지만 일할 의지는 있소.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "그를 아직 팔지 않으셨다니 다행이오. 여기 당신의 돈이오 – 15만 페소요. 그를 어디에서 찾을 수 있소?"link.l2.go ="CapComission2_3";
 			}			
@@ -277,7 +277,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "알겠소. 그대가 거짓말을 하지 않는다면 공정한 거래가 되겠군. 이 사람에 대해 내가 값을 치를 수 있을 것이라 생각하오. "+iTemp+" 페소를 드릴 수도 있고, 아니면 흥미로운 정보를 드릴 수도 있습니다. 선택은 당신의 몫이오.";
 			link.l1 = "동전을 가져가는 게 낫겠군. 이 일도 이제 지긋지긋하군...";
 			link.l1.go = "Marginpassenger_money";
@@ -292,7 +292,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "천만에, 더 가져오게나... 또 보세!";
 			link.l1 = "행운을 빕니다...";
 			link.l1.go = "exit";

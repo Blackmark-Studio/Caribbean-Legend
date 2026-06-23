@@ -16,7 +16,7 @@ void ProcessDialogEvent()
 	{
 		case "First time":
 		bool ok = CheckFreeSitFront(npchar);
-			if(hrand(11) > 8 && ok && !CheckAttribute(pchar, "GenQuest.Racing.Go") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && 7-sti(RealShips[sti(pchar.ship.type)].Class) > 0)//гонки на гидропланах
+			if(hrand(11) > 8 && ok && !CheckAttribute(pchar, "GenQuest.Racing.Go") && !CheckAttribute(npchar, "quest.race") && int(Pchar.Ship.Type) != SHIP_NOTUSED && 7-int(RealShips[int(pchar.ship.type)].Class) > 0)//гонки на гидропланах
 			{
 				dialog.text = TimeGreeting() + ", "+GetAddress_Form(NPChar) + "! Меня зовут "+ GetFullName(NPChar) + ", я капитан. Вижу, что вы тоже капитан корабля. Присоединитесь ко мне, опрокинем по стаканчику?";
 				link.l1 = "Почему бы и нет? Давайте выпьем, поболтаем.";
@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 			else
 			{
 			//конвой торгового судна
-				if(!CheckAttribute(pchar, "GenQuest.Escort.Trader") && !CheckAttribute(npchar, "quest.race") && sti(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(npchar, "repeat_work") && 7-sti(RealShips[sti(pchar.ship.type)].Class) > 0 && GetCompanionQuantity(pchar) < 3)
+				if(!CheckAttribute(pchar, "GenQuest.Escort.Trader") && !CheckAttribute(npchar, "quest.race") && int(Pchar.Ship.Type) != SHIP_NOTUSED && !CheckAttribute(npchar, "repeat_work") && 7-int(RealShips[int(pchar.ship.type)].Class) > 0 && GetCompanionQuantity(pchar) < 3)
 				{
 					dialog.text = TimeGreeting() + ", "+GetAddress_Form(NPChar) + "! Я "+ GetFullName(NPChar) + ", торговец. Вижу, вы капитан корабля. Не желаете подзаработать пару тысяч песо?";
 					link.l1 = "Заработать всегда желаю. Какого рода работу вы мне хотите предложить?";
@@ -67,11 +67,11 @@ void ProcessDialogEvent()
 				case 0://город дружественный
 					pchar.GenQuest.Escort.Trader.City = FindFriendCityToMC(false);//целевой город
 					pchar.GenQuest.Escort.Trader.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Escort.Trader.StartCity), GetArealByCityName(pchar.GenQuest.Escort.Trader.City))+5;//дни
-					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата от расстояния и классов кораблей ГГ и неписи
+					pchar.GenQuest.Escort.Trader.Money = int(int(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата от расстояния и классов кораблей ГГ и неписи
 					pchar.GenQuest.Escort.Trader.Type1 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(1);
 					pchar.GenQuest.Escort.Trader.Add = "до "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" за "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+" за "+FindRussianDaysString(int(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "Ну что же, почему бы и нет? Вдвоём всегда безопаснее, это понятно. Я соглас"+GetSexPhrase("ен","на")+".";
 					link.l1.go = "EscortType";
 					link.l2 = "Я бы и рад"+GetSexPhrase("","а")+" помочь, но мне совсем в другую сторону.";
@@ -85,11 +85,11 @@ void ProcessDialogEvent()
 						GetEscortTraderShore();
 					} // patch-6
 					pchar.GenQuest.Escort.Trader.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Escort.Trader.StartCity), pchar.GenQuest.Escort.Trader.Island)+5;//дни
-					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата
+					pchar.GenQuest.Escort.Trader.Money = int(int(pchar.GenQuest.Escort.Trader.DaysQty) * 400 * ShipFactorMC() + iTemp * 700);//оплата
 					pchar.GenQuest.Escort.Trader.Type2 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
 					pchar.GenQuest.Escort.Trader.Add = "до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", что недалеко от "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+"";
-					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", это недалеко от "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+", за "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", это недалеко от "+XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.City+"Gen")+", за "+FindRussianDaysString(int(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "Ну что же, почему бы и нет? Я согласен.";
 					link.l1.go = "EscortType";
 					link.l2 = "Я бы и рад"+GetSexPhrase("","а")+" помочь, но мне совсем в другую сторону.";
@@ -99,11 +99,11 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Escort.Trader.Island = DesIsland();//целевой остров
 					pchar.GenQuest.Escort.Trader.Shore = SelectQuestShoreLocationFromSea(pchar.GenQuest.Escort.Trader.Island);//и бухта на нём
 					pchar.GenQuest.Escort.Trader.DaysQty = GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Escort.Trader.StartCity), pchar.GenQuest.Escort.Trader.Island)+5;//дни
-					pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.DaysQty)*400*ShipFactorMC()+sti(pchar.GenQuest.Escort.Trader.ShipType)*700);//оплата
+					pchar.GenQuest.Escort.Trader.Money = int(int(pchar.GenQuest.Escort.Trader.DaysQty)*400*ShipFactorMC()+int(pchar.GenQuest.Escort.Trader.ShipType)*700);//оплата
 					pchar.GenQuest.Escort.Trader.Type3 = "true";//тип задания
 					pchar.GenQuest.Escort.Trader.Chance = rand(2);
 					pchar.GenQuest.Escort.Trader.Add = "до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", что на необитаемом острове "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+"";
-					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", это на острове "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+", за "+FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+".";
+					dialog.text = "Я хотел бы вас попросить сопроводить меня до "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Shore+"Gen")+", это на острове "+XI_ConvertString(pchar.GenQuest.Escort.Trader.Island)+", за "+FindRussianDaysString(int(pchar.GenQuest.Escort.Trader.DaysQty))+". За это я заплачу вам "+FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money))+".";
 					link.l1 = "Ну что же, почему бы и нет? Я согласен. Хотя никогда не слышал про магазины или торговые точки на необитаемых островах.";
 					link.l1.go = "EscortType";
 					link.l2 = "Я бы и рад"+GetSexPhrase("","а")+" помочь, но мне совсем в другую сторону.";
@@ -136,12 +136,12 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.GenQuest.Escort.Trader.id = npchar.id;
 			CreateTraderShipAndAdd(npchar);//присоединяем торговца
-			pchar.GenQuest.Escort.Trader.ShipMaxHP = sti(npchar.ship.HP);
+			pchar.GenQuest.Escort.Trader.ShipMaxHP = int(npchar.ship.HP);
 			ReOpenQuestHeader("TraderEscort");
 			AddQuestRecord("TraderEscort", "1");
 			AddQuestUserData("TraderEscort", "sSex1", GetSexPhrase("ся","ась"));
-			AddQuestUserData("TraderEscort", "sDay", FindRussianDaysString(sti(pchar.GenQuest.Escort.Trader.DaysQty)));
-			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money)));
+			AddQuestUserData("TraderEscort", "sDay", FindRussianDaysString(int(pchar.GenQuest.Escort.Trader.DaysQty)));
+			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money)));
 			AddQuestUserData("TraderEscort", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Escort.Trader.StartCity+"Gen"));
 			AddQuestUserData("TraderEscort", "sAdd", pchar.GenQuest.Escort.Trader.Add);
 			pchar.GenQuest.Escort.Trader = "begin";
@@ -149,13 +149,13 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type1"))//в дружественный город
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.City+"_tavern";
-			if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) TraderHunterOnMap(true);
+			if (int(pchar.GenQuest.Escort.Trader.Chance) == 1) TraderHunterOnMap(true);
 				else TraderHunterOnMap(false);//запуск ДУ на глобалке
 			}
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type2"))//в бухту
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
-				if (sti(pchar.GenQuest.Escort.Trader.Chance) != 2) TraderHunterOnMap(false);
+				if (int(pchar.GenQuest.Escort.Trader.Chance) != 2) TraderHunterOnMap(false);
 				else
 				{
 					pchar.quest.EscortTrader_Attack.win_condition.l1 = "location";
@@ -166,10 +166,10 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type3"))//на необитайку
 			{
 				pchar.GenQuest.Escort.Trader.Location = pchar.GenQuest.Escort.Trader.Shore;
-				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 0) TraderHunterOnMap(false);
-				if (sti(pchar.GenQuest.Escort.Trader.Chance) == 1) 
+				if (int(pchar.GenQuest.Escort.Trader.Chance) == 0) TraderHunterOnMap(false);
+				if (int(pchar.GenQuest.Escort.Trader.Chance) == 1)
 				{
-					if(sti(RealShips[sti(pchar.Ship.Type)].Class) >= sti(RealShips[sti(pchar.GenQuest.Escort.Trader.ShipType)].Class) && sti(RealShips[sti(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
+					if(int(RealShips[int(pchar.Ship.Type)].Class) >= int(RealShips[int(pchar.GenQuest.Escort.Trader.ShipType)].Class) && int(RealShips[int(pchar.Ship.Type)].BaseType) != SHIP_GALEON_H && GetCompanionQuantity(pchar) < 3)//меряемся кораблями
 					{//нападет сам
 						pchar.quest.EscortTrader_Attack.win_condition.l1 = "location";
 						pchar.quest.EscortTrader_Attack.win_condition.l1.location = pchar.GenQuest.Escort.Trader.Island;
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 			pchar.quest.EscortTrader_Complete.win_condition.l1 = "location";
 			pchar.quest.EscortTrader_Complete.win_condition.l1.location = pchar.GenQuest.Escort.Trader.Location;
 			pchar.quest.EscortTrader_Complete.function = "EscortTraderComplete";
-			SetFunctionTimerCondition("EscortTrader_Over", 0, 0, sti(pchar.GenQuest.Escort.Trader.DaysQty), false);
+			SetFunctionTimerCondition("EscortTrader_Over", 0, 0, int(pchar.GenQuest.Escort.Trader.DaysQty), false);
 			pchar.quest.EscortTrader_fail.win_condition.l1 = "NPC_Death";//прерывание на потопление сопровождаемого
 			pchar.quest.EscortTrader_fail.win_condition.l1.character = pchar.GenQuest.Escort.Trader.id;
 			pchar.quest.EscortTrader_fail.function = "EscortTrader_failed";
@@ -195,22 +195,22 @@ void ProcessDialogEvent()
 		
 		case "EscortTrader_complete"://сдаём квест
 			sld = characterFromId(pchar.GenQuest.Escort.Trader.id);
-			if (sti(sld.ship.HP) < makeint(sti(pchar.GenQuest.Escort.Trader.ShipMaxHP)/4))//если корпуса осталось меньше 1/4 - первая проверка
+			if (int(sld.ship.HP) < int(int(pchar.GenQuest.Escort.Trader.ShipMaxHP)/4))//если корпуса осталось меньше 1/4 - первая проверка
 			{
 				dialog.text = "Капитан, вы не подскажете, зачем я нанял вас? Вы только посмотрите на мой корабль! На что он похож? На решето! Он еле на плаву держится! Вы это видите? Я так и не понял, кто кого сопровождал - вы меня, или я вас. В общем, награды вы не получите, и не надейтесь. Вы её не заслужили.";
 				link.l1 = "Э-гхм... Если бы не я - ты бы вообще сейчас кормил крабов, тупой торгаш. Ладно, земля круглая - попадёшься ты мне ещё в море!";
 				link.l1.go = "EscortTrader_complete_1";
 				break;
 			}
-			if (sti(sld.ship.HP) < makeint(sti(pchar.GenQuest.Escort.Trader.ShipMaxHP)/2))//если корпуса осталось меньше 1/2 - вторая проверка
+			if (int(sld.ship.HP) < int(int(pchar.GenQuest.Escort.Trader.ShipMaxHP)/2))//если корпуса осталось меньше 1/2 - вторая проверка
 			{
-				pchar.GenQuest.Escort.Trader.Money = makeint(sti(pchar.GenQuest.Escort.Trader.Money))/2;
+				pchar.GenQuest.Escort.Trader.Money = int(int(pchar.GenQuest.Escort.Trader.Money))/2;
 				dialog.text = "Капитан, вы не подскажете, зачем я нанял вас? Вы только посмотрите на мой корабль! На что он похож? На решето! Вы это видите? В общем, я заплачу вам только половину причитавшейся суммы. И на большее не рассчитывайте!";
 				link.l1 = "Э-гхм.. Ладно, я согласен. Ваш корабль и впрямь... немного пострадал.";
 				link.l1.go = "EscortTrader_complete_2";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type2") && sti(pchar.GenQuest.Escort.Trader.Chance) == 1)//вместо денег - наводка
+			if (CheckAttribute(pchar, "GenQuest.Escort.Trader.Type2") && int(pchar.GenQuest.Escort.Trader.Chance) == 1)//вместо денег - наводка
 			{
 				dialog.text = "Капитан, тут такое дело... У меня нет денег, чтобы заплатить вам за работу. Но не кипятитесь, пожалуйста, я хочу вам предложить оплату, которая значительно превзойдёт обещанную мной.";
 				link.l1 = "Гм... Я вообще-то рассчитывал"+GetSexPhrase("","а")+" получить деньги сейчас. Но, раз так - я тебя готов"+GetSexPhrase("","а")+" выслушать.";
@@ -233,13 +233,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EscortTrader_complete_2":
-			dialog.text = "Да, вы очень верно подметили - 'немного пострадал'... Вот, держите "+FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money))+" и прощайте.";
+			dialog.text = "Да, вы очень верно подметили - 'немного пострадал'... Вот, держите "+FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money))+" и прощайте.";
 			link.l1 = "Всего доброго, " + npchar.name + ".";
 			link.l1.go = "complete_exit";
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Escort.Trader.Money));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.Escort.Trader.Money));
 			AddQuestRecord("TraderEscort", "5");
 			AddQuestUserData("TraderEscort", "sSex", GetSexPhrase("","а"));
-			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money)));
+			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money)));
 			AddComplexSeaExpToScill(50, 50, 50, 0, 50, 0, 50);
 			AddCharacterExpToSkill(pchar, "Fortune", 40);//везение
 		break;
@@ -248,10 +248,10 @@ void ProcessDialogEvent()
 			dialog.text = "Непременно! Ну, а теперь мне пора идти. До свидания, капитан!";
 			link.l1 = "Удачи, " + npchar.name + "!";
 			link.l1.go = "complete_exit";
-			AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Escort.Trader.Money));
+			AddMoneyToCharacter(pchar, int(pchar.GenQuest.Escort.Trader.Money));
 			AddQuestRecord("TraderEscort", "6");
 			AddQuestUserData("TraderEscort", "sSex", GetSexPhrase("","а"));
-			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Escort.Trader.Money)));
+			AddQuestUserData("TraderEscort", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Escort.Trader.Money)));
 			AddComplexSeaExpToScill(100, 100, 100, 50, 100, 100, 150);
 			AddCharacterExpToSkill(pchar, "Leadership", 80);//авторитет
 			AddCharacterExpToSkill(pchar, "Fortune", 80);//везение
@@ -259,7 +259,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EscortTrader_complete_4":
-			pchar.GenQuest.Escort.Trader.Enemyname = GenerateRandomName_Generator(sti(npchar.nation), "man");
+			pchar.GenQuest.Escort.Trader.Enemyname = GenerateRandomName_Generator(int(npchar.nation), "man");
 			GetEnemyTraderGoods();
 			pchar.GenQuest.Escort.Trader.EnIsland = DesIsland();
 			dialog.text = "На архипелаге есть один торговец - "+ pchar.GenQuest.Escort.Trader.Enemyname +". У него собственный флейт, на котором он перевозит товары. Я совершенно точно знаю, что примерно через две недели он будет находиться у берегов необитаемого острова "+ XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland) +" - пополнять запасы воды и торговать с местными индейцами, а в трюмах его флейта будет полно "+pchar.GenQuest.Escort.Trader.add+". Вояка он никудышный, захватить его корабль вам труда не составит\nТак что вы ещё окажетесь в выигрыше, капитан.";
@@ -288,7 +288,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("TraderEscort", "sIsland", XI_ConvertString(pchar.GenQuest.Escort.Trader.EnIsland));
 			AddQuestUserData("TraderEscort", "sAdd", pchar.GenQuest.Escort.Trader.add);
 			pchar.quest.EscortTrader_EnTrader.win_condition.l1 = "Timer";
-			pchar.quest.EscortTrader_EnTrader.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.EscortTrader_EnTrader.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.EscortTrader_EnTrader.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 12);
 			pchar.quest.EscortTrader_EnTrader.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 12);
 			pchar.quest.EscortTrader_EnTrader.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 12);
@@ -361,9 +361,9 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Racing.Go.StartCity = GetCurrentTown();
 			pchar.GenQuest.Racing.Go.City = FindFriendCityToMC(false);//целевой дружественный город
 			pchar.GenQuest.Racing.Go.Island = GetIslandByCityName(pchar.GenQuest.Racing.Go.City);
-			pchar.GenQuest.Racing.Go.DaysQty = makeint((GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Racing.Go.StartCity), GetArealByCityName(pchar.GenQuest.Racing.Go.City)))/1.3);//дни
-			pchar.GenQuest.Racing.Go.ShipName = GenerateRandomNameToShip(sti(npchar.nation));
-			if (sti(pchar.GenQuest.Racing.Go.DaysQty) < 1) pchar.GenQuest.Racing.Go.DaysQty = 1; // patch-8
+			pchar.GenQuest.Racing.Go.DaysQty = int((GetMaxDaysFromIsland2Island(GetArealByCityName(pchar.GenQuest.Racing.Go.StartCity), GetArealByCityName(pchar.GenQuest.Racing.Go.City)))/1.3);//дни
+			pchar.GenQuest.Racing.Go.ShipName = GenerateRandomNameToShip(int(npchar.nation));
+			if (int(pchar.GenQuest.Racing.Go.DaysQty) < 1) pchar.GenQuest.Racing.Go.DaysQty = 1; // patch-8
 			dialog.text = "А вот такое. Я сегодня намереваюсь выйти в море и направляюсь в "+XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.City)+". Я заявляю, что буду там через "+FindRussianDaysString(pchar.GenQuest.Racing.Go.DaysQty)+". Попробуй обогнать меня и прибыть в "+XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.City)+" раньше. Отсчёт времени начнём прямо сейчас. Рискнёшь? Или не потянешь, хе-хе?";
 			link.l1 = "Кто? Я не потяну? Не смеши. Ты рассчитываешь уложиться в эти сроки? Забавно. Я принимаю твоё пари. С какой суммой ты готов расстаться?";
 			link.l1.go = "Race_begin_5";
@@ -385,7 +385,7 @@ void ProcessDialogEvent()
 			for (i=5; i>=1; i--)
 			{
 					sTemp = "l"+iTemp;
-					link.(sTemp) = ""+FindRussianMoneyString(sti(10000*i))+"";
+					link.(sTemp) = ""+FindRussianMoneyString(int(10000*i))+"";
 					link.(sTemp).go = "Racing_rate"+i;
 					iTemp++;
 			}
@@ -472,7 +472,7 @@ void ProcessDialogEvent()
 		
 		case "Racing_rate":
 			dialog.text = "Ну, и?..";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Racing.Go.Money))
+			if (int(pchar.money) >= int(pchar.GenQuest.Racing.Go.Money))
 			{
 			link.l1 = "Вот! Моя ставка!";
 			link.l1.go = "Racing_Go";
@@ -485,7 +485,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_rate_nomoney":
-			if (sti(pchar.GenQuest.Racing.Go.Money) == 10000 || sti(pchar.Money) < 10000)
+			if (int(pchar.GenQuest.Racing.Go.Money) == 10000 || int(pchar.Money) < 10000)
 			{
 			dialog.text = "Ну, знаете, мы не в подворотне, чтобы спорить на два песо. Или вы просто боитесь? А, ладно, чёрт с вами. Но на будущее - не торопитесь со скоропалительными выводами - среди торговцев очень много опытных моряков... гораздо опытнее вас.";
 			link.l1 = "Ладно-ладно, нечего мне тут морали читать, философ нашёлся. Прощай...";
@@ -512,7 +512,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Racing_Go":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Racing.Go.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Racing.Go.Money));
 			dialog.text = "Принято! Призовём в свидетели бармена, если вы не против... ему же и оставим наши ставки. Победитель вернётся и заберёт всю сумму. Обмануть не выйдет - новости по архипелагу разносятся очень быстро, так что трактирщик будет в курсе, кто из нас выиграл.";
 			link.l1 = "Соглас"+GetSexPhrase("ен","на")+". Так будет вернее.";
 			link.l1.go = "Racing_Go_1";
@@ -533,27 +533,27 @@ void ProcessDialogEvent()
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "exit_sit", -1);
 			//работает корректно только через клон :(
 			sTemp = npchar.model;
-			int iNation = sti(npchar.Nation);
-			sld = GetCharacter(NPC_GenerateCharacter("RaceTrader", sTemp, "man", "man", sti(PChar.rank)+5, iNation, -1, true, "quest"));
+			int iNation = int(npchar.Nation);
+			sld = GetCharacter(NPC_GenerateCharacter("RaceTrader", sTemp, "man", "man", int(PChar.rank)+5, iNation, -1, true, "quest"));
 			sld.name = npchar.name;
 			sld.lastname = npchar.lastname;
 			sld.Dialog.Filename = "Quest\QuestTrader_dialog.c";
 			pchar.quest.Racing_Timer.win_condition.l1 = "Timer";
-			pchar.quest.Racing_Timer.win_condition.l1.date.hour  = sti(GetTime()+rand(6));
-			pchar.quest.Racing_Timer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, sti(pchar.GenQuest.Racing.Go.DaysQty));
-			pchar.quest.Racing_Timer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, sti(pchar.GenQuest.Racing.Go.DaysQty));
-			pchar.quest.Racing_Timer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, sti(pchar.GenQuest.Racing.Go.DaysQty));
+			pchar.quest.Racing_Timer.win_condition.l1.date.hour  = int(GetTime()+rand(6));
+			pchar.quest.Racing_Timer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, int(pchar.GenQuest.Racing.Go.DaysQty));
+			pchar.quest.Racing_Timer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, int(pchar.GenQuest.Racing.Go.DaysQty));
+			pchar.quest.Racing_Timer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, int(pchar.GenQuest.Racing.Go.DaysQty));
 			pchar.quest.Racing_Timer.function = "TraderRaceInTargetCity";
 			pchar.quest.Racing_Finish.win_condition.l1 = "location";
 			pchar.quest.Racing_Finish.win_condition.l1.location = pchar.GenQuest.Racing.Go.City + "_town";
 			pchar.quest.Racing_Finish.function = "MCRaceInTargetCity";
-			SetFunctionTimerCondition("RacingTimeOver", 0, 0, sti(pchar.GenQuest.Racing.Go.DaysQty)+10, false);
+			SetFunctionTimerCondition("RacingTimeOver", 0, 0, int(pchar.GenQuest.Racing.Go.DaysQty)+10, false);
 			ReOpenQuestHeader("Racing");
 			AddQuestRecord("Racing", "1");
 			AddQuestUserData("Racing", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.StartCity+"Gen"));
 			AddQuestUserData("Racing", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.City+"Gen"));
 			AddQuestUserData("Racing", "sDay", FindRussianDaysString(pchar.GenQuest.Racing.Go.DaysQty));
-			AddQuestUserData("Racing", "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Racing.Go.Money)));
+			AddQuestUserData("Racing", "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Racing.Go.Money)));
 		break;
 		
 		case "Racing_Finished":
@@ -579,9 +579,9 @@ void ProcessDialogEvent()
 			dialog.text = "Что же, вы выиграли. Теперь вам нужно вернуться в поселение "+XI_ConvertString("Colony"+pchar.GenQuest.Racing.Go.StartCity)+" и забрать у бармена свои деньги. Вы их действительно заслужили!";
 			link.l1 = "Именно это я и собираюсь сделать. А теперь позвольте откланяться. Был"+GetSexPhrase("","а")+" искренне рад"+GetSexPhrase("","а")+" нашему знакомству. До свидания!";
 			link.l1.go = "Racing_end";
-			pchar.GenQuest.Racing.Count = sti(pchar.GenQuest.Racing.Count)+1;
+			pchar.GenQuest.Racing.Count = int(pchar.GenQuest.Racing.Count)+1;
 			//запустить регату
-			if (!CheckAttribute(pchar, "questTemp.RegataGo") && sti(pchar.GenQuest.Racing.Count) == 3)
+			if (!CheckAttribute(pchar, "questTemp.RegataGo") && int(pchar.GenQuest.Racing.Count) == 3)
 			{
 				pchar.questTemp.RegataGo = "true";
 				pchar.questTemp.Regata.CureerCity = FindFriendCityToMC(true);//город, в котором вестовой подойдет
@@ -640,7 +640,7 @@ void ProcessDialogEvent()
 float ShipFactorMC()//коэффициент от класса корабля ГГ
 {
 	float f;
-	switch (sti(RealShips[sti(pchar.Ship.Type)].Class))
+	switch (int(RealShips[int(pchar.Ship.Type)].Class))
 	{
 		case 1: f = 1.0 break;
 		case 2: f = 1.2 break;
@@ -655,7 +655,7 @@ float ShipFactorMC()//коэффициент от класса корабля Г
 
 int TraderShipType(ref iShipCoef)//корабль торговца
 {
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	int iShip;
 	
 	if(iRank < 5)

@@ -22,10 +22,10 @@ extern void evtDirSail(aref rRawG, aref encDataForS, int iNumMerchantS, int iNum
 
 void getRTplayerShipXZ(ref RTplayerShipX, ref RTplayerShipZ, ref scale)
 {
-	float zeroX = MakeFloat(worldMap.zeroX);
-	float SeaX = stf(pchar.Ship.Pos.x);
-	float zeroZ = MakeFloat(worldMap.zeroZ);
-	float SeaZ = stf(pchar.Ship.Pos.z);
+	float zeroX = float(worldMap.zeroX);
+	float SeaX = float(pchar.Ship.Pos.x);
+	float zeroZ = float(worldMap.zeroZ);
+	float SeaZ = float(pchar.Ship.Pos.z);
 	string sIsland = worldMap.island;
 
 	scale = WDM_MAP_TO_SEA_SCALE;
@@ -42,7 +42,7 @@ void getRTplayerShipXZ(ref RTplayerShipX, ref RTplayerShipZ, ref scale)
 
 float getRTplayerShipAY()
 {
-	float RTplayerShipAY = stf(pchar.Ship.Ang.y);
+	float RTplayerShipAY = float(pchar.Ship.Ang.y);
 	return RTplayerShipAY;
 }
 
@@ -60,7 +60,7 @@ int getRTclosestIsland(float RTplayerShipX, float RTplayerShipZ, int curScale, r
 	
 	ref 			rIsland;
 	string 			islandTemp;
-    shipAY 			= stf(pchar.Ship.Ang.y);
+    shipAY 			= float(pchar.Ship.Ang.y);
 	
 	for (int inum = 0; inum <= iNumIslands; inum++ )
 	{
@@ -69,8 +69,8 @@ int getRTclosestIsland(float RTplayerShipX, float RTplayerShipZ, int curScale, r
 		
 		if(Islands[inum].visible == false) continue;
 		
-		iX = stf(worldMap.islands.(islandTemp).position.x);
-		iZ = stf(worldMap.islands.(islandTemp).position.z);
+		iX = float(worldMap.islands.(islandTemp).position.x);
+		iZ = float(worldMap.islands.(islandTemp).position.z);
 
 		iBearing = GetAngleY(iX - RTplayerShipX, iZ - RTplayerShipZ);
         offShip = iBearing - shipAY;
@@ -93,7 +93,7 @@ int getRTclosestIsland(float RTplayerShipX, float RTplayerShipZ, int curScale, r
 
 		if (distance < iDistanceNow)
 		{
-			iDistanceNow = distance
+			iDistanceNow = distance;
 			nextisland = inum;
 			scaleDiff = tempDiff;
 		}
@@ -129,8 +129,8 @@ void Sea2Sea_Reload()
 	ref 	rIsland 	= GetIslandByIndex(nextisland);
 	string 	CIsland 	= rIsland.id;
 
-	float ix = MakeFloat(worldMap.islands.(CIsland).position.x);
-	float iz = MakeFloat(worldMap.islands.(CIsland).position.z);
+	float ix = float(worldMap.islands.(CIsland).position.x);
+	float iz = float(worldMap.islands.(CIsland).position.z);
 
 	seaLoginToSea.playerGroup.x = (CX - ix)*scale;
 	seaLoginToSea.playerGroup.z = (CZ - iz)*scale;
@@ -305,7 +305,7 @@ void CheckIslandChange()
 		}	
 		else
 		{		
-			distToCurIsland = GetDistance2DRel(RTplayerShipX, RTplayerShipZ, stf(worldMap.islands.(sIslandNow).position.x), stf(worldMap.islands.(sIslandNow).position.z));
+			distToCurIsland = GetDistance2DRel(RTplayerShipX, RTplayerShipZ, float(worldMap.islands.(sIslandNow).position.x), float(worldMap.islands.(sIslandNow).position.z));
 		}	
 		
 		if (bScaleDiff) 
@@ -329,8 +329,8 @@ void CheckIslandChange()
 		float 	enemyDistLimit   = 1000.0;
 		float 	neutralDistLimit = 1000.0;
 /*
-		nextenemy = sti(rSituation.MinEnemyIndex);
-		enemydist = stf(rSituation.MinEnemyDistance);
+		nextenemy = int(rSituation.MinEnemyIndex);
+		enemydist = float(rSituation.MinEnemyDistance);
 		//if (DIRECTSAILDEBUG) trace("DirectsailCheck; next enemy: "+nextenemy + " dist: "+enemydist);
 		if(nextenemy!= -1 && enemydist<enemyDistLimit )
 		{
@@ -338,11 +338,11 @@ void CheckIslandChange()
 			break;
 		}
 		
-		nextenemy = sti(rSituation.MinNeutralIndex);
-		enemydist = stf(rSituation.MinNeutralDistance);
+		nextenemy = int(rSituation.MinNeutralIndex);
+		enemydist = float(rSituation.MinNeutralDistance);
 
 		//if (DIRECTSAILDEBUG) trace("DirectsailCheck; next neutral ship: "+nextenemy + " dist: "+enemydist);
-		if(nextenemy!= -1 && enemydist<neutralDistLimit && sti(Characters[nextenemy].ship.type) != SHIP_FORT ) 
+		if(nextenemy!= -1 && enemydist<neutralDistLimit && int(Characters[nextenemy].ship.type) != SHIP_FORT )
 		{
 		  //if (DIRECTSAILDEBUG) trace("Directsail aborted due to neutral ship, dist = " + enemydist);	
 		  break;
@@ -402,13 +402,13 @@ void CheckIslandChange()
             else 
 			{
                 WeatherParams.Rain.ThisDay 		= true;
-                WeatherParams.Rain.StartTime 	= MakeInt(GetHour());
+                WeatherParams.Rain.StartTime 	= int(GetHour());
                 WeatherParams.Rain.Duration 	= 75.0;
 				WeatherParams.Rain.Type			= rand(1);								// тип дождя 
 				WeatherParams.Rain.year 		= GetDataYear();		
 				WeatherParams.Rain.month 		= GetDataMonth();
 				WeatherParams.Rain.day 			= GetDataDay();
-				WeatherParams.Rain.time 		= stf(WeatherParams.Rain.StartTime);
+				WeatherParams.Rain.time 		= float(WeatherParams.Rain.StartTime);
 				Whr_UpdateWeather();
                 Log_SetStringToLog("Капитан, рядом шторм!");
             }
@@ -435,7 +435,7 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
     int 	iNumMerchantShips 	= 0;
     int 	nShipCnt 			= 0;
     bool 	bFound 				= false;
-    float 	fScale 				= makefloat(scale);
+    float 	fScale 				= float(scale);
     float 	x, z, ay, dist, xs, zs, dists;
     string 	encID = "";
 	
@@ -458,8 +458,8 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
 		{
             if(bStorm) continue;
 			
-            xs = stf(rRawGroup.px) * fScale;
-            zs = stf(rRawGroup.pz) * fScale;
+            xs = float(rRawGroup.px) * fScale;
+            zs = float(rRawGroup.pz) * fScale;
 			
             dists = GetDistance2DRel(RTplayerShipX, RTplayerShipZ, xs, zs);
             if(dists > DIR_SAIL_STORMWARN_DIST_REL) continue;
@@ -467,7 +467,7 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
             bStorm 		= true;
             distStorm 	= dists;
 			
-            if(CheckAttribute(rRawGroup, "isTornado") && sti(rRawGroup.isTornado) != 0)
+            if(CheckAttribute(rRawGroup, "isTornado") && int(rRawGroup.isTornado) != 0)
                     bTornado = true;
             if(dists <= DIR_SAIL_STORM_DIST_REL)
                     rRawGroup.needDelete = "Reload delete storm encounter";
@@ -479,9 +479,9 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
             if(!CheckAttribute(rRawGroup, "encdata")) continue;
 			
 			// mitrokosta эта проверка должна быть выше! -->
-			x = stf(rRawGroup.x) * fScale;
-			z = stf(rRawGroup.z) * fScale;
-			ay = stf(rRawGroup.ay);
+			x = float(rRawGroup.x) * fScale;
+			z = float(rRawGroup.z) * fScale;
+			ay = float(rRawGroup.ay);
 			dist = GetDistance2DRel(RTplayerShipX, RTplayerShipZ, x, z);
 
 			if(dist > DIRECTENCOUNTERRANDDISTANCE)
@@ -506,12 +506,12 @@ void checkWMEnctr(float RTplayerShipX, float RTplayerShipZ, int scale, ref bStor
 
             if(CheckAttribute(encDataForSlot, "NumMerchantShips"))
             {
-                iNumMerchantShips = sti(encDataForSlot.NumMerchantShips);
+                iNumMerchantShips = int(encDataForSlot.NumMerchantShips);
                 nShipCnt += iNumMerchantShips;
             }
             if(CheckAttribute(encDataForSlot, "NumWarShips"))
             {
-                iNumWarShips = sti(encDataForSlot.NumWarShips);
+                iNumWarShips = int(encDataForSlot.NumWarShips);
                 nShipCnt += iNumWarShips;
             }
             if(nShipCnt > MAX_SHIPS_IN_LOCATION) continue;

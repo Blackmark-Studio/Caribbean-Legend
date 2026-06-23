@@ -76,7 +76,7 @@ void ProcessDialogEvent()
 	
 		case "Wine_fort_check":
 			dialog.text = "Peki kaptan, şarabı getirdin mi?";
-			if (sti(pchar.items.potionwine) >= 10)
+			if (int(pchar.items.potionwine) >= 10)
 			{
 				link.l1 = "Evet, var.";
 				link.l1.go = "Wine_take";
@@ -87,9 +87,9 @@ void ProcessDialogEvent()
 		break;
 	
 		case "Wine_take":
-			pchar.questTemp.Wine.Qty = sti(pchar.items.potionwine);
-			pchar.questTemp.Wine.Money = sti(pchar.questTemp.Wine.Qty)*1000;
-			if (sti(pchar.items.potionwine) > 60)
+			pchar.questTemp.Wine.Qty = int(pchar.items.potionwine);
+			pchar.questTemp.Wine.Money = int(pchar.questTemp.Wine.Qty)*1000;
+			if (int(pchar.items.potionwine) > 60)
 			{
 				dialog.text = "Holy Saint Arnulf, pray for us! That's a lot of wine! Excellent! Regrettably, as I said, we can only afford sixty bottles; unfortunately, we don't have enough money to buy more. Take your pesos and I'll take good care of these sixty bottles. Please keep the rest.";
 				link.l1 = "Teşekkür ederim. Sen ve asker arkadaşların, sağlığıma bir kadeh kaldırmayı unutmayın!";
@@ -99,15 +99,15 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Tekrar hoş geldin. Bakalım... Getirmişsin "+sti(pchar.questTemp.Wine.Qty)+" şişeler. Güzel! Onları alıyorum. Ödeme ise "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Money))".";
+				dialog.text = "Tekrar hoş geldin. Bakalım... Getirmişsin "+int(pchar.questTemp.Wine.Qty)+" şişeler. Güzel! Onları alıyorum. Ödeme ise "+FindRussianMoneyString(int(pchar.questTemp.Wine.Money))+".";
 				link.l1 = "Teşekkür ederim. Sen ve asker arkadaşların, sağlığıma bir kadeh kaldırmayı unutmayın!";
 				link.l1.go = "Wine_take_1";
-				RemoveItems(PChar, "potionwine", sti(pchar.questTemp.Wine.Qty));
+				RemoveItems(PChar, "potionwine", int(pchar.questTemp.Wine.Qty));
 			}
 		break;
 	
 		case "Wine_take_1":
-			AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.Wine.Money));
 			dialog.text = "Elbette yapacağız, "+GetAddress_Form(NPChar)+"! Davul toplanma işareti çalıyor, şimdi gitmem gerek. Hoşça kal!";
 			link.l1 = "Rüzgarın ve denizin hep yanında olsun, dostum!";
 			link.l1.go = "Wine_take_2";

@@ -38,7 +38,7 @@ void TemplateLoad()
 	tpl.starttime = 2;
 	tpl.actualtime = 20;
 	tpl.loginfo.begin = "Rumour_GoldFleet";
-	tpl.loginfo.textnum = "1"
+	tpl.loginfo.textnum = "1";
 	tpl.event = "GoldFleet";
 	tpl.next = "End_GoldFleet";
 	tpl.function = "";
@@ -71,7 +71,7 @@ void TemplateLoad()
 	tpl.starttime = 0;
 	tpl.actualtime = 30;
 	tpl.loginfo.end = "Rumour_GoldFleet";
-	tpl.loginfo.text = "13"
+	tpl.loginfo.text = "13";
 	tpl.event = "none";
 	tpl.next = "none";
 	tpl.function = "";
@@ -87,7 +87,7 @@ void TemplateLoad()
 	tpl.starttime = 0;
 	tpl.actualtime = 30;
 	tpl.loginfo.end = "Rumour_GoldFleet";
-	tpl.loginfo.textnum = "7"
+	tpl.loginfo.textnum = "7";
 	tpl.event = "none";
 	tpl.next = "none";
 	tpl.function = "";

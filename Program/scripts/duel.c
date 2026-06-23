@@ -11,7 +11,7 @@ void Duel_Prepare_Fight()
 
 	if (CheckAttribute(npchar, "LifeDay") && npchar.LifeDay >= 0)
 	{
-		npchar.LifeDay = sti(npchar.LifeDay) + 2;
+		npchar.LifeDay = int(npchar.LifeDay) + 2;
 	}
 	
 	if (CheckAttribute(rLoc, "type") && rLoc.type == "tavern")
@@ -32,8 +32,8 @@ void Duel_Prepare_Fight()
 		
 		if(CheckAttribute(PChar,"questTemp.duel.enemyQty")) // не один !!
 		{
-			iTemp = sti(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); // Addon-2016 Jason
-			for(i = 0; i < sti(PChar.questTemp.duel.enemyQty); i++)
+			iTemp = int(pchar.rank) + rand(MOD_SKILL_ENEMY_RATE); // Addon-2016 Jason
+			for(i = 0; i < int(PChar.questTemp.duel.enemyQty); i++)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Berglar_Duel"+i, "citiz_"+(rand(9)+21), "man", "man", iTemp, PIRATE, 1, true, "hunter"));				
 				SetFantomParamHunter(sld);
@@ -81,7 +81,7 @@ void Duel_Move_Opponent2Place(string qName)
 	npchar = CharacterFromID(pchar.questTemp.duel.enemy);
 	SetAutolevel(npchar, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Дуэлянты по квесту
     
-	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") < sti(pchar.questTemp.Duel.WaitTime))
+	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") < int(pchar.questTemp.Duel.WaitTime))
 	{
 		DeleteAttribute(pchar, "quest.duel_move_opponent2place.over");
 		pchar.quest.Duel_CheckSituation.win_condition.l1 = "ExitFromLocation";
@@ -90,7 +90,7 @@ void Duel_Move_Opponent2Place(string qName)
 		return;
 	}
 
-	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= sti(pchar.questTemp.Duel.WaitTime) + 1)
+	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= int(pchar.questTemp.Duel.WaitTime) + 1)
 	{
 		pchar.questTemp.Duel.Coward = true;
 		return;
@@ -103,7 +103,7 @@ void Duel_Move_Opponent2Place(string qName)
 
 	npchar.Dialog.CurrentNode = "talk_off_town";
 	//чтобы в таверну не вернулся, а то может..
-	if (CheckAttribute(npchar, "PGGAi") && sti(npchar.PGGAi.IsPGG))
+	if (CheckAttribute(npchar, "PGGAi") && int(npchar.PGGAi.IsPGG))
 	{
 		npchar.BackUp.town = npchar.PGGAi.location.town;
 		npchar.PGGAi.location.town = "none";
@@ -131,9 +131,9 @@ void Duel_Move_Opponent2Place(string qName)
 void Duel_CheckSituation(string qName)
 {
 	if (CheckAttribute(pchar, "questTemp.Duel.End")) return;
-	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= sti(pchar.questTemp.Duel.WaitTime))
+	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= int(pchar.questTemp.Duel.WaitTime))
 	{
-		if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= sti(pchar.questTemp.Duel.WaitTime)+1)
+		if (GetQuestPastTimeParam("questTemp.Duel.StartTime") >= int(pchar.questTemp.Duel.WaitTime)+1)
 		{
 			pchar.quest.duel_move_opponent2place.over = "yes";
 			pchar.questTemp.Duel.End = true;
@@ -163,7 +163,7 @@ void Duel_Fight_Right_Now(string qName)
 	//запоминаем запрет на оружие в локации
 	if (CheckAttribute(sld, "noFight"))
 	{
-		bOk = sti(sld.noFight);
+		bOk = bool(sld.noFight);
 	}
 	if (bOk)
 	{
@@ -198,8 +198,8 @@ void Duel_Kill_Enemy()
 	// считаем общее кол-во дуэлей
 	if(CheckAttribute(PChar,"questTemp.duelQty")) 	
 	{	
-		pchar.questTemp.duelQty = sti(pchar.questTemp.duelQty) + 1;
-		if(sti(pchar.questTemp.duelQty) == 7 + rand(2))
+		pchar.questTemp.duelQty = int(pchar.questTemp.duelQty) + 1;
+		if(int(pchar.questTemp.duelQty) == 7 + rand(2))
 		{
 			pchar.questTemp.HabitueSpeakDisable = true; // дуэлянта посылаем нафик в таверне 2 месяца
 			SetTimerCondition("HabitueSpeakDisable_End", 0, 2, rand(10), false);
@@ -209,7 +209,7 @@ void Duel_Kill_Enemy()
 	
 	if(CheckAttribute(PChar,"questTemp.duel.enemyQty")) DeleteAttribute(PChar,"questTemp.duel.enemyQty");	
 	//восстанавливаем запрет на оружие, если был
-	if (CheckAttribute(pchar, "questTemp.LocFightEnable") && sti(pchar.questTemp.LocFightEnable))
+	if (CheckAttribute(pchar, "questTemp.LocFightEnable") && int(pchar.questTemp.LocFightEnable))
 	{
 		sld = &Locations[FindLocation(pchar.location)];
 		LAi_LocationFightDisable(sld, true);
@@ -217,7 +217,7 @@ void Duel_Kill_Enemy()
 	}
 
 	//если в локации клоне, то объясняем куда все делись
-	if (CheckAttribute(pchar, "questTemp.LocationClone") && sti(pchar.questTemp.LocationClone))
+	if (CheckAttribute(pchar, "questTemp.LocationClone") && int(pchar.questTemp.LocationClone))
 	{
 		DoQuestCheckDelay("TalkSelf_Start", 0.2);
         SetFunctionExitFromLocationCondition("SyncClonedLocBoxes", "Clone_location", false);
@@ -270,7 +270,7 @@ void Duel_Move_OpponentBack(string qName)
 		AddTemplRumour("DuelCoward", id_counter+1);
 	}
 
-	if (sti(npchar.PGGAi))
+	if (int(npchar.PGGAi))
 	{
 		npchar.PGGAi.location.town = npchar.BackUp.town;
 	}
@@ -300,7 +300,7 @@ void Duel_Sea_Prepare()
 	NPChar.Abordage.Enable = false;
 	NPChar.Nation.Bak = NPChar.Nation;
 	NPChar.Nation = GetCityNation(GetCurrentTown());
-	SetCharacterRelationBoth(sti(pchar.index), sti(npchar.index), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(pchar.index), int(npchar.index), RELATION_ENEMY);
 
 	Group_AddCharacter(sTemp, npchar.id);
 	Group_SetGroupCommander(sTemp, npchar.id);

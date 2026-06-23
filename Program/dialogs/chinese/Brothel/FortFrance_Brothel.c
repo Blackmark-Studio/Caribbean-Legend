@@ -42,11 +42,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_1":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand1) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 5000;
 				dialog.text = "先生, 那不是真的! 她年轻漂亮又有经验, 我的客户都很欣赏她。 她会让你花很多钱。 和她过一夜要五千比索, 一分不少。 ";
-				if (sti(pchar.money) >= 5000)
+				if (int(pchar.money) >= 5000)
 				{
 					link.l1 = "很贵, 但好吧。 拿你的钱。 ";
 					link.l1.go = "Gigolo_3";
@@ -61,7 +61,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 2500;
 				dialog.text = "唉, 你说得对, 先生, 她漂亮又年轻, 但缺乏经验。 我的客户通常不会注意到她, 所以我才问。 但如果你真的喜欢朴实的女孩, 我觉得她是个不错的选择。 她会收你两千五百比索。 ";
-				if (sti(pchar.money) >= 2500)
+				if (int(pchar.money) >= 2500)
 				{
 					link.l1 = "唉, 她也可以。 拿你的钱。 ";
 					link.l1.go = "Gigolo_3";
@@ -75,11 +75,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_2_2":
-			if (sti(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
+			if (int(pchar.questTemp.Sharlie.Gigolo.Rand2) == 0)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 4500;
 				dialog.text = "你不会是第一个, 帅哥。 有时我的客户会排队等着她的关注, 因为她和我们岛上的黑皮肤女孩很不一样。 她会收你四千五百比索。 ";
-				if (sti(pchar.money) >= 4500)
+				if (int(pchar.money) >= 4500)
 				{
 					link.l1 = "很贵, 但好吧。 拿你的钱。 ";
 					link.l1.go = "Gigolo_3";
@@ -94,7 +94,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				pchar.questTemp.Sharlie.Gigolo.Money = 3000;
 				dialog.text = "真的吗, 先生? 已经想家了? 我的克里奥尔人, 尤其是我的穆拉托人, 比这个悠闲的巴黎野猫更热情。 但唉, 这是你的选择。 她会收你三千比索。 ";
-				if (sti(pchar.money) >= 3000)
+				if (int(pchar.money) >= 3000)
 				{
 					link.l1 = "很贵, 但好吧。 拿你的钱。 ";
 					link.l1.go = "Gigolo_3";
@@ -108,7 +108,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Gigolo_3":
-			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Sharlie.Gigolo.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.questTemp.Sharlie.Gigolo.Money));
 			dialog.text = "如你所愿, 亲爱的。 露西尔会在晚上十一点急切地等你。 另外, 她不得迟于早上七点回来。 如果你在午夜前不到, 她会接待另一个客户, 然后你就得等到第二天晚上才能带她走。 \n还有, 别想…以任何方式伤害她, 否则你会后悔的。 这是一个公平的警告, 亲爱的。 ";
 			link.l1 = "别担心, 我会像对待爱人一样对待她, 而不是野蛮人。 我十一点来接她。 那在那之前我该做什么呢? ";
 			link.l1.go = "Gigolo_4a";

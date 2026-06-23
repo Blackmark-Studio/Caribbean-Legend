@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "俺はお前と話したくねえんだ、相棒。お前は何の理由もなく無実の人々を襲って、喧嘩をふっかけるじゃねえか。 消え失せろ！";
 				link.l1 = "ふむ……";
@@ -158,13 +158,7 @@ void ProcessDialogEvent()
 			link.l1 = "";
 			link.l1.go = "";
 		break;
-		
-		case "":
-			dialog.text = "";
-			link.l1 = "";
-			link.l1.go = "";
-		break;
-		
+
 		case "Exit":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();

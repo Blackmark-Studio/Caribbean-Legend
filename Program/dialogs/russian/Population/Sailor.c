@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (npchar.quest.meeting == "0")
 			{
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
 				{
 					dialog.text = "Здравствуйте, "+GetAddress_Form(NPChar)+". Как мне известно, вы - капитан собственного корабля. У меня к вам деловой разговор.";
 					link.l1 = "Слушаю вас внимательно, "+GetAddress_FormToNPC(NPChar)+". О чём речь?";
@@ -89,14 +89,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_1":
-			switch (sti(npchar.quest.crew.type))
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: sTemp = "Хотя лучше всего прочего мы умеем обращаться с парусами и снастями. Без лишней скромности скажу: мы на этом деле собаку съели, так что не подведём даже в самый свирепый шторм!"; break;
 				case 1: sTemp = "Однако больше всего нам по душе пушечная палуба. Мы умеем обращаться с орудиями так, как никто другой в вашей команде, уверяю. Во время жаркой баталии можете без опаски положиться на нас!"; break;
 				case 2: sTemp = "Но наша стихия - это абордажная схватка. Блеск сабель, запах пороха и крови - вот наше призвание. В бою с нами нелегко совладать, так что в случае опасности наши клинки выручат вас, капитан!"; break;
 			}
-			dialog.text = "Нас "+sti(npchar.quest.crew.qty)+" человек, и пойдём мы на службу только все вместе. Умеем мы всё, что положено матросу. "+sTemp+"";
-			if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
+			dialog.text = "Нас "+int(npchar.quest.crew.qty)+" человек, и пойдём мы на службу только все вместе. Умеем мы всё, что положено матросу. "+sTemp+"";
+			if (GetFreeCrewQuantity(pchar) >= int(npchar.quest.crew.qty))
 			{
 				link.l1 = "Звучит весьма заманчиво. Сколько вы хотите аванса?";
 				link.l1.go = "crew_2";
@@ -111,9 +111,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_2":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
-			dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+" на брата. Потом - обычное матросское жалование. Мы лишнего не попросим, кэп.";
-			if (sti(pchar.money) >= iTemp)
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
+			dialog.text = ""+FindRussianMoneyString(int(npchar.quest.crew.money))+" на брата. Потом - обычное матросское жалование. Мы лишнего не попросим, кэп.";
+			if (int(pchar.money) >= iTemp)
 			{
 				link.l1 = "Договорились! Вот здесь вся сумма. Отправляйтесь на мой корабль, он называется '"+pchar.ship.name+"', стоит на рейде. Боцман выделит вам места в кубрике и даст работу.";
 				link.l1.go = "crew_3";
@@ -123,7 +123,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "crew_3":
-			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
+			iTemp = int(npchar.quest.crew.money)*int(npchar.quest.crew.qty);
 			AddMoneyToCharacter(pchar, -iTemp);
 			dialog.text = "Уже идём, капитан! Я соберу ребят, и мы отправимся на борт немедленно!";
 			link.l1 = "Давайте, поторапливайтесь, я долго задерживаться тут не планирую.";
@@ -132,17 +132,17 @@ void ProcessDialogEvent()
 		
 		case "crew_4":
 			DialogExit();
-			AddCharacterCrew(pchar, sti(npchar.quest.crew.qty));
+			AddCharacterCrew(pchar, int(npchar.quest.crew.qty));
 			//увеличиваем опыт
-			iTemp = makeint(sti(npchar.quest.crew.qty)*50/sti(pchar.ship.crew.quantity));
-			switch (sti(npchar.quest.crew.type))
+			iTemp = int(int(npchar.quest.crew.qty)*50/int(pchar.ship.crew.quantity));
+			switch (int(npchar.quest.crew.type))
 			{
 				case 0: ChangeCrewExp(pchar, "Sailors", iTemp); break;
 				case 1: ChangeCrewExp(pchar, "Cannoners", iTemp); break;
 				case 2: ChangeCrewExp(pchar, "Soldiers", iTemp); break;
 			}
 			//увеличиваем мораль
-			iTemp = makeint(sti(npchar.quest.crew.qty)/10)+1;
+			iTemp = int(int(npchar.quest.crew.qty)/10)+1;
 			AddCrewMorale(pchar, iTemp);
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 20.0);

@@ -75,7 +75,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	sld.AlwaysFriend = true;
 	sld.ShipEnemyDisable = true; 
 	sld.SeaBoss = 0.5; // получает на 50% меньше урона корпусу
-	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	UpgradeShipParameter(sld, "SpeedRate");//апгрейдить скорость
 	UpgradeShipParameter(sld, "TurnRate");//маневренность
 	sld.Ship.Mode = "war";
@@ -110,7 +110,7 @@ void Patria_AddEcliaton() // присоединяем Эклятон
 	sld = characterFromId("Ecliaton_Cap");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	SetFunctionTimerCondition("Patria_SanJoseOver", 0, 0, 30, false); // таймер
 	AddQuestRecord("Patria", "2");
@@ -213,8 +213,8 @@ void Patria_SanJoseMayak(string qName) // на маяке Тринидада
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	object aSoldier[1];
 	object aMushketers[1];
 	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
@@ -424,7 +424,7 @@ void Patria_EcliatonRepair(string qName) // починка Эклятона
 	SetCharacterGoods(sld, GOOD_PLANKS, 100);
 	SetCharacterGoods(sld, GOOD_SAILCLOTH, 100);
 	// чиним орудия
-	ref shTo = &RealShips[sti(sld.Ship.Type)];
+	ref shTo = &RealShips[int(sld.Ship.Type)];
 	ResetShipCannonsDamages(sld);
 	shTo.Cannons = 66;
 }
@@ -585,7 +585,7 @@ void Patria_PortPaxBegin() // снова присоединяем Эклятон
 	DeleteAttribute(sld, "ShipHideImmortal");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	pchar.questTemp.Patria.Ecliaton = "true";
 	SetFunctionTimerCondition("Patria_PortPaxOver", 0, 0, 30, false); // таймер
@@ -788,10 +788,10 @@ void Patria_CureerBegin() // отсоединяем Эклятон, присое
 	sld.AnalizeShips = true;
 	sld.Ship.Mode = "trade";
 	int iSpace = GetCharacterFreeSpace(sld, GOOD_EBONY);
-	Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, 1);
+	Fantom_SetCharacterGoods(sld, GOOD_EBONY, iSpace, true);
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	// прерывание на потерю флейта
 	pchar.quest.Patria_CureerFail.win_condition.l1 = "NPC_Death";
@@ -975,7 +975,7 @@ void Patria_SanMartinFortAttack()
 	Island_SetReloadEnableGlobal("Curacao", false);//закрыть Кюрасао
 	sld = CharacterFromID("Villemstad Fort Commander");
 	Character_SetAbordageEnable(sld, false); // неабордируемый форт Кюрасао
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	SetNationRelation2MainCharacter(HOLLAND, RELATION_ENEMY);
 	sld.AlwaysEnemy = true;
 	DoQuestFunctionDelay("Patria_SanMartinSetSquadron", 5.0);
@@ -986,7 +986,7 @@ void Patria_SanMartinSetSquadron(string qName) // ставим эскадру г
 	AddQuestRecord("Patria", "27");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_SanMartinSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
 	int iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2;
 	
@@ -1162,7 +1162,7 @@ void Patria_DiplomatFight() //
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_group_Delete("EnemyFight");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	if (iRank > 45) iRank = 45;
 	for (i=1; i<=5; i++)
     {
@@ -1204,7 +1204,7 @@ void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру г�
 	PlaySound("interface\notebook.wav");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
 	Group_FindOrCreateGroup("Patria_DiplomatSeaGroup");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
 	int iShip, Ship1, Ship2, Ship3, iCannon, Cannon1, Cannon2;
 	
@@ -1344,7 +1344,7 @@ void Patria_HunterContinue() //
 	DeleteAttribute(pchar, "questTemp.Patria.War");
 	DoQuestCheckDelay("sea_victory", 0.2);
 	// генератор голландских конвоев
-	pchar.questTemp.Patria.Hunter = 0 // счетчик учёта сданных кораблей
+	pchar.questTemp.Patria.Hunter = 0; // счетчик учёта сданных кораблей
 	pchar.questTemp.Patria.Hunter.Capture = 0; // счетчик учёта захваченных кораблей
 	pchar.questTemp.Patria.Hunter.Num = 0; // нумерация конвоев
 	SetFunctionTimerCondition("Patria_HunterConvoyGenerate", 0, 0, 3, false);
@@ -1360,8 +1360,8 @@ void Patria_HunterBugFixer(string qName) //
 
 void Patria_HunterConvoyGenerate(string qName) // генерируем конвой
 {
-	if (sti(pchar.questTemp.Patria.Hunter) > 4) return;
-	pchar.questTemp.Patria.Hunter.Num = sti(pchar.questTemp.Patria.Hunter.Num)+1; // порядковый номер конвоя
+	if (int(pchar.questTemp.Patria.Hunter) > 4) return;
+	pchar.questTemp.Patria.Hunter.Num = int(pchar.questTemp.Patria.Hunter.Num)+1; // порядковый номер конвоя
 	int iColony = rand(5);
 	int iDay, iGoods, iSpace, iShip, iShip1, iShip2, iCannon, iCannon1, iCannon2, iCannon3;
 	string sColony, sModel;
@@ -1375,13 +1375,13 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	
 	iGoods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, iGoodFlags);
 	
-	if (!and(sti(Goods[iGoods].Flag), FLAG_GOODS_VALUABLE_WOOD)) 
+	if (!and(int(Goods[iGoods].Flag), FLAG_GOODS_VALUABLE_WOOD))
 	{
 		iSpace = 1400+rand(100);
 	}
 	else
 	{
-		int cost = sti(Goods[iGoods].Cost);
+		int cost = int(Goods[iGoods].Cost);
 		int baseSize = 110000 / cost;
 		int variableSize = 5000 / cost;
 		iSpace = baseSize + rand(variableSize);
@@ -1463,7 +1463,7 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	}
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	if (iRank > 45) iRank = 45;
 	for (int i = 1; i <= 3; i++)
     {
@@ -1520,7 +1520,7 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	
 	SetFunctionTimerCondition("Patria_HunterNewConvoyGenerate", 0, 0, iDay+3, false);
 	
-	log_Testinfo("Сгенерирован конвой номер "+sti(pchar.questTemp.Patria.Hunter.Num)+". Движется из "+XI_ConvertString(sColony)+", будет через "+FindRussianDaysString(iDay)+". Товар: "+GetGoodsNameAlt(iGoods)+" в количестве "+FindRussianQtyString(iSpace)+".");
+	log_Testinfo("Сгенерирован конвой номер "+int(pchar.questTemp.Patria.Hunter.Num)+". Движется из "+XI_ConvertString(sColony)+", будет через "+FindRussianDaysString(iDay)+". Товар: "+GetGoodsNameAlt(iGoods)+" в количестве "+FindRussianQtyString(iSpace)+".");
 }
 
 void Patria_HunterNewConvoyGenerate(string qName) // 
@@ -1532,25 +1532,25 @@ void Patria_HunterCaptureCounter(string qName) //
 {
 	log_info(StringFromKey("Patria_16"));
 	PlaySound("interface\notebook.wav");
-	pchar.questTemp.Patria.Hunter.Capture = sti(pchar.questTemp.Patria.Hunter.Capture)+1;
+	pchar.questTemp.Patria.Hunter.Capture = int(pchar.questTemp.Patria.Hunter.Capture)+1;
 }
 
 void Patria_HunterShipChecker()
 {
-	if (sti(pchar.questTemp.Patria.Hunter.Capture) < 1) return; // нет захваченных кораблей, чтобы не сдавал левые ост-индцы
+	if (int(pchar.questTemp.Patria.Hunter.Capture) < 1) return; // нет захваченных кораблей, чтобы не сдавал левые ост-индцы
 	for(int i = 0; i < COMPANION_MAX; i++)
 	{
 		int iTemp = GetCompanionIndex(PChar, i);
 		if(iTemp > 0)
 		{
 			ref sld = GetCharacter(iTemp);
-			if (sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN)
+			if (int(RealShips[int(sld.ship.type)].basetype) == SHIP_EASTINDIAMAN)
 			{
 				log_Testinfo("Нужный корабль есть");
 				if (GetCargoGoods(sld, GOOD_COFFEE) >= 1300 || GetCargoGoods(sld, GOOD_CHOCOLATE) >= 1300 || GetCargoGoods(sld, GOOD_TOBACCO) >= 1300 || GetCargoGoods(sld, GOOD_EBONY) >= 500 || GetCargoGoods(sld, GOOD_MAHOGANY) >= 600 || GetCargoGoods(sld, GOOD_CINNAMON) >= 1300)
 				{
 					i = 6; // остановка цикла
-					pchar.questTemp.Patria.Hunter.Capture = sti(pchar.questTemp.Patria.Hunter.Capture)-1; // уменьшаем счетчик захваченных кораблей
+					pchar.questTemp.Patria.Hunter.Capture = int(pchar.questTemp.Patria.Hunter.Capture)-1; // уменьшаем счетчик захваченных кораблей
 					pchar.questTemp.Patria.Hunter.GiveShip = "true";
 					log_Testinfo("Корабль есть и нужный товар есть на корабле!");
 					if (sld.index == pchar.index)
@@ -1606,7 +1606,7 @@ void Patria_SiegeCreateSquadron() // осада
 	sld.Ship.Mode = "war";
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	// прерывание на потерю
 	pchar.quest.Patria_LuggerFail.win_condition.l1 = "NPC_Death";
@@ -1776,13 +1776,13 @@ void Patria_SiegeEscapeReady(string qName) //
 void Patria_SiegeEscape(string qName) // вышли в море, начинаем подгружать три корабля противника
 {
 	if (pchar.location != "Nevis") return;
-	pchar.questTemp.Patria.Escape_count = sti(pchar.questTemp.Patria.Escape_count)+1;
-	if (sti(pchar.questTemp.Patria.Escape_count) > 3) return;
+	pchar.questTemp.Patria.Escape_count = int(pchar.questTemp.Patria.Escape_count)+1;
+	if (int(pchar.questTemp.Patria.Escape_count) > 3) return;
 	PlaySound("interface\notebook.wav");
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvEnemy0.wav");
-	string sGroup = "Patria_EscapeSeaGroup_"+sti(pchar.questTemp.Patria.Escape_count);
+	string sGroup = "Patria_EscapeSeaGroup_"+int(pchar.questTemp.Patria.Escape_count);
 	Group_FindOrCreateGroup(sGroup);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE+3;
 	if (iRank > 45) iRank = 45;
 	int iShip, iCannon;
 	ref refShip;
@@ -1806,7 +1806,7 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 		case 8:
 			iShip = GetRandomShipType(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 			makeref(refShip, ShipsTypes[iShip]);
-			if (sti(refShip.MaxCaliber) >= 32)
+			if (int(refShip.MaxCaliber) >= 32)
 			{
 				iCannon = CANNON_TYPE_CANNON_LBS32;
 			}
@@ -1820,11 +1820,11 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 			iShip = GetRandomShipType(FLAG_SHIP_CLASS_1 + FLAG_SHIP_CLASS_2, FLAG_SHIP_TYPE_WAR, FLAG_SHIP_NATION_ANY);
 			makeref(refShip, ShipsTypes[iShip]);
 
-			if (sti(refShip.MaxCaliber) >= 36)
+			if (int(refShip.MaxCaliber) >= 36)
 			{
 				iCannon = CANNON_TYPE_CANNON_LBS36;
 			}
-			else if (sti(refShip.MaxCaliber) >= 32)
+			else if (int(refShip.MaxCaliber) >= 32)
 			{
 				iCannon = CANNON_TYPE_CANNON_LBS32;
 			}
@@ -2011,7 +2011,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 			SetCharacterPerk(sld, "Doctor1");
 			SetCharacterPerk(sld, "Doctor2");
 			FantomMakeCoolFighter(sld, 45, 80, 80, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol13", "bullet", 250);
-			RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+			RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 			UpgradeShipParameter(sld, "TurnRate");//маневренность
 			sld.DontClearDead = true;
 			sld.SaveItemsForDead = true;
@@ -2092,7 +2092,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 	sld = characterFromId("Doily");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	LAi_SetImmortal(sld, false);
 	pchar.questTemp.Patria.Trafalgar = "true";
@@ -2101,7 +2101,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld = characterFromId("Patria_EngSquadronCap_"+i);
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		LAi_SetImmortal(sld, false);
 	}
@@ -2200,7 +2200,7 @@ void Patria_SiegeSeaBattleAddEcliaton(string qName) // подгружаем Эк
 	DeleteAttribute(sld, "ShipHideImmortal");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	LAi_SetImmortal(sld, false);
 	pchar.questTemp.Patria.Ecliaton = "true";
@@ -2346,7 +2346,7 @@ void Patria_BastionFrigateGlp() // присоединяем фрегат на Г
 	sld.alignment = "good";
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 }
 
@@ -2364,7 +2364,7 @@ void Patria_BastionFrigateMrt() // присоединяем фрегат на М
 	sld.alignment = "good";
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 }
 
@@ -2374,7 +2374,7 @@ void Patria_BastionAddEcliaton() // присоединяем Эклятон
 	DeleteAttribute(sld, "ShipHideImmortal");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	pchar.questTemp.Patria.Ecliaton = "true";
 	// прерывание на потерю Эклятона
@@ -2544,8 +2544,8 @@ void Patria_BastionShore(string qName) // в бухте, ставим штурм
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	object aSoldier[1];
 	object aMushketers[1];
 	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
@@ -2617,7 +2617,7 @@ void Patria_BastionMineAttack(string qName) // соляной рудник - б�
 		sld.cirassId = Items_FindItemIdx("cirass1");
 		sld.MusketerDistance = 0;
 		sld.LSC_clan = true;
-		if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiShooter = stf(MOD_SKILL_ENEMY_RATE/2);
+		if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiShooter = float(MOD_SKILL_ENEMY_RATE/2);
 		TakeNItems(sld, "grenade", 100);
 		TakeNItems(sld, "potion2", 5);
 		TakeNItems(sld, "potion3", 5);
@@ -2863,7 +2863,7 @@ void Patria_SlaveShipsSail(string qName) // запускаем конвой
 	}
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	if (iRank > 45) iRank = 45;
 	for (int i = 1; i <= 4; i++)
     {
@@ -3034,7 +3034,7 @@ void Patria_CuracaoAddEcliaton() // присоединяем Эклятон
 	DeleteAttribute(sld, "ShipHideImmortal");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	pchar.questTemp.Patria.Ecliaton = "true";
 	// прерывание на потерю Эклятона
@@ -3150,7 +3150,7 @@ void Patria_CuracaoSail() // формируем эскадру
 	sld = characterFromId("Doily");
 	SetCharacterRemovable(sld, false);
 	sld.CompanionEnemyEnable = false; //всегда друзья
-	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCompanionIndex(pchar, -1, int(sld.index));
 	sld.loyality = MAX_LOYALITY;
 	LAi_SetImmortal(sld, false);
 	pchar.questTemp.Patria.Trafalgar = "true";
@@ -3159,7 +3159,7 @@ void Patria_CuracaoSail() // формируем эскадру
 		sld = characterFromId("Patria_DoilySquadronCap_"+i);
 		SetCharacterRemovable(sld, false);
 		sld.CompanionEnemyEnable = false; //всегда друзья
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 		sld.loyality = MAX_LOYALITY;
 		LAi_SetImmortal(sld, false);
 	}
@@ -3196,7 +3196,7 @@ void Patria_CuracaoEnter(string qName) // пришли к Кюрасао
 	string sModel;
 	Group_DeleteGroup("Patria_CuracaoGroup1");
 	Group_FindOrCreateGroup("Patria_CuracaoGroup1");
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	if (iRank > 45) iRank = 45;
 	for (int i = 1; i <= 3; i++)
     {
@@ -3418,8 +3418,8 @@ void Patria_CuracaoMarch(string qName) // наш отряд в бухте
 	string model;
 	string ani;
 
-	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
-	int iScl = 20 + 2*sti(pchar.rank);
+	int iRank = int(pchar.rank)+MOD_SKILL_ENEMY_RATE;
+	int iScl = 20 + 2*int(pchar.rank);
 	object aSoldier[1];
 	object aMushketers[1];
 	GenerateItemsForCharacter(pchar, ITEM_PACK_GENERIC, &aSoldier, &aMushketers);
@@ -4225,7 +4225,7 @@ void Patria_CondotierTerks(string qName) // на Терксе
 		sld.AnalizeShips = true;
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
-		RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+		RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 		SetSailsColor(sld, 8);//черный парус
 		Group_AddCharacter("DodsonFrigate", "Terrax_sea");
 		Group_SetGroupCommander("DodsonFrigate", "Terrax_sea");
@@ -4654,7 +4654,7 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Patria", "11");
 		LocatorReloadEnterDisable("Tortuga_town", "reload3_back", true);
 		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1 = "Timer";
-		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 3);
 		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 3);
 		pchar.quest.Patria_Visiter_TortugaBack.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 3);
@@ -4667,7 +4667,7 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Patria", "13");
 		LocatorReloadEnterDisable("Portpax_town", "reload3_back", true);
 		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1 = "Timer";
-		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1.date.hour  = sti(GetTime());
+		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1.date.hour  = int(GetTime());
 		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 7);
 		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 7);
 		pchar.quest.Patria_Visiter_PortpaxBack.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
@@ -4830,9 +4830,9 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		sld = GetCharacter(NPC_GenerateCharacter("Bastion_spanish_boss", "Boss_2", "man", "man", 15, SPAIN, -1, false, "soldier"));
 		FantomMakeCoolFighter(sld, 15, 20, 20, LinkRandPhrase("blade_18","blade_19","blade_21"), "pistol5", "bullet", 50);
 		pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(sld);
-		SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+		SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
 		pchar.questTemp.Patria.SpanishName = GetFullName(sld);
-		sld = characterFromId(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)]);
+		sld = characterFromId(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)]);
 		pchar.questTemp.Patria.SpanishID = sld.id;
 		log_info(StringFromKey("Patria_44"));
 		pchar.questTemp.Patria = "epizode_9_return";
@@ -5216,8 +5216,8 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		EquipCharacterbyItem(pchar, "suit1");
 		GiveItem2Character(pchar, "patent_fra");
 		EquipCharacterbyItem(pchar, "patent_fra");
-		Items[sti(pchar.EquipedPatentId)].TitulCur = 2; 
-		Items[sti(pchar.EquipedPatentId)].TitulCurNext = 0;
+		Items[int(pchar.EquipedPatentId)].TitulCur = 2;
+		Items[int(pchar.EquipedPatentId)].TitulCurNext = 0;
 		//Log_Info("Вы получили мундир королевского военно-морского флота Франции");
 		ChangeCharacterNationReputation(pchar, FRANCE, 100);
 		ChangeCharacterComplexReputation(pchar, "fame", 12);

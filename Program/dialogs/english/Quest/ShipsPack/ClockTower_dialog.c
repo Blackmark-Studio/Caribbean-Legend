@@ -343,7 +343,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_Visser_24":
 			dialog.text = "Nationality?";
-			link.l1 = ""+NationNameNominative(sti(pchar.baseNation))+".";
+			link.l1 = ""+NationNameNominative(int(pchar.baseNation))+".";
 			link.l1.go = "ClockTower_Visser_25";
 		break;
 
@@ -555,7 +555,7 @@ void ProcessDialogEvent()
 		
 		// Первое знакомство с ван Дорном
 		case "ClockTower_VanDoorn_1":
-			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
+			NationName = GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
 			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Your ship — '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" guns and "+GetMaxCrewQuantity(pchar)+" crew.";
 			link.l1 = "All correct.";
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 				link.l5 = "You just entered my ship in the registry. Do you think an incompetent captain could maintain it?";
 				link.l5.go = "ClockTower_VanDoorn_option_5";
 			}
-			if (!CheckAttribute(npchar, "ClockTower_option_6") && sti(pchar.Money) >= 1000000)
+			if (!CheckAttribute(npchar, "ClockTower_option_6") && int(pchar.Money) >= 1000000)
 			{
 				link.l6 = "I'm managing just fine, and money grows on trees in the Caribbean.";
 				link.l6.go = "ClockTower_VanDoorn_option_6";
@@ -1050,7 +1050,7 @@ void ProcessDialogEvent()
 		case "ClockTower_Johan_57":
 			dialog.text = "Go ahead, "+GetTitle(NPChar, true)+". Only I beg you, don't ruin me: if the mynheer director finds out, I'll lose my head, and I've got a family to feed.";
 			link.l1 = "I'll do my best.";
-			// if (sti(pchar.reputation.nobility) >= 71) link.l1.go = "ClockTower_Johan_58_hint";
+			// if (int(pchar.reputation.nobility) >= 71) link.l1.go = "ClockTower_Johan_58_hint";
 			// else link.l1.go = "ClockTower_Johan_NightSuccess";
 			link.l1.go = "ClockTower_Johan_58_hint";
 		break;
@@ -1060,14 +1060,14 @@ void ProcessDialogEvent()
 			dialog.text = "You're a good man, "+GetTitle(NPChar, true)+". Perhaps I can help you: I know that in one of the books the mynheer director keeps a key. What it's for — I don't know, but perhaps it'll be useful.";
 			link.l1 = "Thank you, Johan.";
 			link.l1.go = "ClockTower_Johan_NightSuccess";
-			// if (sti(pchar.reputation.nobility) >= 71) Notification_Reputation(true, 71, "low");
+			// if (int(pchar.reputation.nobility) >= 71) Notification_Reputation(true, 71, "low");
 		break;
 		
 		case "ClockTower_Johan_NightSuccess":
 			DialogExit();
 			AddDialogExitQuestFunction("ClockTower_NightFree");
 			NextDiag.CurrentNode = "ClockTower_Johan_51";
-			// if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+			// if (int(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 		break;
 		
 		case "ClockTower_Peter_50":
@@ -1440,7 +1440,7 @@ void ProcessDialogEvent()
 		
 		// Абордаж Амстердама, перед боем с Ван Дормом
 		case "ClockTower_VanDoorn_21":
-			NationName = GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"");
+			NationName = GetSexPhrase(""+NationNameMan(int(pchar.baseNation))+"",""+NationNameWoman(int(pchar.baseNation))+"");
 			shipType = LowerFirst(XI_ConvertString(GetShipTypeName(pchar)));
 			dialog.text = ""+UpperFirst(GetTitle(NPChar, false))+" "+GetFullName(pchar)+", "+NationName+". Your ship — '"+PChar.Ship.Name+"', "+shipType+". "+GetCannonQuantity(pchar)+" guns and "+GetMaxCrewQuantity(pchar)+" crew.";
 			link.l1 = "You're as precise as ever, mynheer director.";
@@ -1583,7 +1583,7 @@ void ProcessDialogEvent()
 		
 		case "ClockTower_Visser_114":
 			dialog.text = "Allegiance?";
-			link.l1 = ""+NationNameNominative(sti(pchar.baseNation))+".";
+			link.l1 = ""+NationNameNominative(int(pchar.baseNation))+".";
 			link.l1.go = "ClockTower_Visser_115";
 		break;
 
@@ -1698,7 +1698,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
  
@@ -1711,7 +1711,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_audit_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 			if (CanUpgradeShip(sld, &sTemp, "Audit"))
 			{
@@ -1741,7 +1741,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_OfficeServices_audit_upgradeShip":
 			Achievment_Set("ach_CL_199");
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			RemoveDublonsFromPCharTotal(GetAuditShipCost(sld));
 			UpgradeShipAudit(sld);
 			dialog.text = "Done.";
@@ -1771,7 +1771,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
 
@@ -1784,7 +1784,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_buffSpec_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 			if (CanUpgradeShip(sld, &sTemp, "SpecialityUpgrade"))
 			{
@@ -1814,7 +1814,7 @@ void ProcessDialogEvent()
 
 		case "ClockTower_OfficeServices_buffSpec_upgradeShip":
 			Achievment_Set("ach_CL_199");
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			RemoveDublonsFromPCharTotal(GetSpecialityUpgradeShipCost(sld));
 			UpgradeShipSpeciality(sld);
 			dialog.text = "Done.";
@@ -1845,7 +1845,7 @@ void ProcessDialogEvent()
 
 				n++;
 				sTemp = "l"+n;
-				link.(sTemp) = XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
+				link.(sTemp) = XI_ConvertString(RealShips[int(sld.Ship.Type)].BaseName) + " '" + sld.Ship.Name + "'.";
 				link.(sTemp).go = Dialog.currentNode + "_chosenIdx/" + idx;
 			}
 
@@ -1858,7 +1858,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_changeTrait_chosenIdx":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			sTemp = "";
 
 			if (ShipTraitCanBeChanged(sld, &sTemp))
@@ -1889,7 +1889,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "ClockTower_OfficeServices_changeTrait_upgradeShip":
-			sld = GetCharacter(sti(Dialog.tmpIdx));
+			sld = GetCharacter(int(Dialog.tmpIdx));
 			NextDiag.CurrentNode = "ClockTower_OfficeServices";
 			DialogExit();
 			LaunchChangeShipTraitScreen(sld);
@@ -1963,8 +1963,8 @@ void ClockTower_NoShipInPort(ref link)
 
 int ClockTower_PlaySound_rh2(string name)
 {
-    float x = stf(loadedLocation.locators.reload.houseO2.x);
-    float y = stf(loadedLocation.locators.reload.houseO2.y);
-    float z = stf(loadedLocation.locators.reload.houseO2.z);
-    return SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z);
+    float x = float(loadedLocation.locators.reload.houseO2.x);
+    float y = float(loadedLocation.locators.reload.houseO2.y);
+    float z = float(loadedLocation.locators.reload.houseO2.z);
+    return int(SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z));
 }

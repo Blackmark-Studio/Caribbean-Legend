@@ -123,7 +123,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "OhrannikCabin";
 	AddLandQuestMark(sld, "questmarkgen");
-	SetFunctionLocatorCondition("SharlieTutorial_OhrannikStopaet", "Quest_Ship_deck_Medium_trade", "reload", "reload_cabin", false)
+	SetFunctionLocatorCondition("SharlieTutorial_OhrannikStopaet", "Quest_Ship_deck_Medium_trade", "reload", "reload_cabin", false);
 	
 	//Брашпиль
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Windlass", "windlass", "man", "windlass", 15, FRANCE, -1, false, "quest"));
@@ -369,7 +369,7 @@ void SharlieTutorial_PrinestiRumFinal()
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.dialog.currentnode = "SailorWantRum_PrinestiRum";
 	DelLandQuestMark(sld);
-	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+	pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_SailorNeedBoxOfBalls()
@@ -384,7 +384,7 @@ void SharlieTutorial_SailorNeedBoxOfBallsFinal()
 	AddQuestRecord("SharlieTutorial", "4");
 	sld = CharacterFromID("SharlieTutorial_Sailor_8");
 	DelLandQuestMark(sld);
-	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+	pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_QuestRazdatZoloto()
@@ -427,15 +427,15 @@ void SharlieTutorial_OldSailorKey()
 	switch (rand(2))
 	{
 		case 0: 
-			SetItemInLocation("Tutorial_key", "Quest_Cabin_Medium", "item2") 
+			SetItemInLocation("Tutorial_key", "Quest_Cabin_Medium", "item2");
 			Log_TestInfo("Ключ в каюте капитана");
 		break;
 		case 1:
-			SetItemInLocation("Tutorial_key", "Quest_Ship_deck_Medium_trade", "item1") 
+			SetItemInLocation("Tutorial_key", "Quest_Ship_deck_Medium_trade", "item1");
 			Log_TestInfo("Ключ на верхней палубе");
 		break;
 		case 2:
-			SetItemInLocation("Tutorial_key", "Quest_Deck_Medium", "item2") 
+			SetItemInLocation("Tutorial_key", "Quest_Deck_Medium", "item2");
 			Log_TestInfo("Ключ на орудийной палубе");
 		break;
 	}
@@ -447,12 +447,12 @@ void SharlieTutorial_OldSailorKey()
 
 void SharlieTutorial_FoundTheKey(string qName)
 {
-	SetFunctionLocatorCondition("SharlieTutorial_OpenBox", "Quest_Cabin_Medium", "box", "private1", false)
+	SetFunctionLocatorCondition("SharlieTutorial_OpenBox", "Quest_Cabin_Medium", "box", "private1", false);
 }
 
 void SharlieTutorial_OpenBox(string qName)
 {
-	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+	pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_Trevoga()
@@ -573,12 +573,12 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
 	pchar.Ship.name = GetShipName("Ulysse");
 	SetBaseShipData(pchar);
-	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
+	RealShips[int(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].WaterLine = 1.3;
-	realships[sti(pchar.ship.type)].Capacity = 6500;
-	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
-	realships[sti(pchar.ship.type)].TurnRate = 78.65;
+	realships[int(pchar.ship.type)].WaterLine = 1.3;
+	realships[int(pchar.ship.type)].Capacity = 6500;
+	realships[int(pchar.ship.type)].SpeedRate = 11.65;
+	realships[int(pchar.ship.type)].TurnRate = 78.65;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -649,7 +649,7 @@ void SharlieTutorial_StartShip_2(string qName)
 	if(bGlobalTutor)
 	{
 		bCanSwitchCameras = false;
-		LaunchTutorial("Prologue_AutoFire", 1);
+		LaunchTutorial("Prologue_AutoFire", true);
 	}
 }
 
@@ -671,7 +671,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 1
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_1", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_SHNYAVA, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = float(realships[sti(sld.ship.type)].SpeedRate) * 0.6;
+	realships[int(sld.ship.type)].SpeedRate = float(realships[int(sld.ship.type)].SpeedRate) * 0.6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0; 
 	SetSailsColor(sld, 8);
@@ -679,7 +679,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 2
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_2", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_BRIG, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = float(realships[sti(sld.ship.type)].SpeedRate) * 0.6;
+	realships[int(sld.ship.type)].SpeedRate = float(realships[int(sld.ship.type)].SpeedRate) * 0.6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0; 
 	SetSailsColor(sld, 8);
@@ -687,7 +687,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 3
     sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_3", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_BRIG, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = float(realships[sti(sld.ship.type)].SpeedRate) * 0.6;
+	realships[int(sld.ship.type)].SpeedRate = float(realships[int(sld.ship.type)].SpeedRate) * 0.6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -695,7 +695,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 4
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_4", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_GALEON_L, "", CANNON_TYPE_CANNON_LBS16, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = float(realships[sti(sld.ship.type)].SpeedRate) * 0.6;
+	realships[int(sld.ship.type)].SpeedRate = float(realships[int(sld.ship.type)].SpeedRate) * 0.6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -703,7 +703,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 5
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_5", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_SCHOONER, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = float(realships[sti(sld.ship.type)].SpeedRate) * 0.6;
+	realships[int(sld.ship.type)].SpeedRate = float(realships[int(sld.ship.type)].SpeedRate) * 0.6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -713,7 +713,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	Group_SetAddress("SharlieTutorial_SeaAttack", "Cuba2", "", "");
 	Group_SetTaskAttack("SharlieTutorial_SeaAttack", PLAYER_GROUP);
 	Group_LockTask("SharlieTutorial_SeaAttack");
-	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
+	SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_ENEMY);
 	
 	Sea_LoginGroupCurrentSeaEx("SharlieTutorial_SeaAttack", 150.0, 0);
 	//log_info("Враг на горизонте!");
@@ -935,7 +935,7 @@ void SharlieTutorial_TrumBitva_5()
 	LAi_ActorSetGroundSitMode(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	
-	LaunchTutorial("Prologue_Marksmanship", 1);
+	LaunchTutorial("Prologue_Marksmanship", true);
 }
 
 void SharlieTutorial_TrumBitva_6(string qName)
@@ -970,7 +970,7 @@ void SharlieTutorial_TrumBitva_6_1(string qName)
 	SetCharacterRemovable(sld, true);
 	LAi_SetOfficerType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	//LaunchTutorial("Fighter", 1);
+	//LaunchTutorial("Fighter", true);
 }*/
 
 void SharlieTutorial_TrumBitva_8()
@@ -1413,9 +1413,9 @@ void SharlieTutorial_PogodaRefresh(string qName)
 void SharlieTutorial_RadiusCannonsOff(string qName)
 {
 	pchar.wind.speed = 18.0;
-	fWeatherSpeed = stf(18.0);
+	fWeatherSpeed = float(18.0);
 	pchar.wind.angle = 0.0;
-	fWeatherAngle = stf(0.0);
+	fWeatherAngle = float(0.0);
 	DontRefreshBLI = true;
 }
 
@@ -1510,7 +1510,7 @@ void SharlieTutorial_windlass_9(string qName)
 	LAi_SetPlayerType(pchar);
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event1");
-	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+	pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 /*void SharlieTutorial_windlass_2(string qName)
@@ -1665,7 +1665,7 @@ void SharlieTutorial_cannon_10(string qName)
 	
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	DelLocatorEvent(sld.id, "event3");
-	pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+	pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 }
 
 void SharlieTutorial_cannon_11()
@@ -1916,12 +1916,12 @@ void SharlieTutorial_SeaNearMartinique()
 	pchar.Ship.Type = GenerateShipExt(SHIP_PINNACE, true, pchar);
 	pchar.Ship.name = GetShipName("Ulysse");
 	SetBaseShipData(pchar);
-	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
+	RealShips[int(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].WaterLine = 1.3;
-	realships[sti(pchar.ship.type)].Capacity = 6500;
-	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
-	realships[sti(pchar.ship.type)].TurnRate = 78.65;
+	realships[int(pchar.ship.type)].WaterLine = 1.3;
+	realships[int(pchar.ship.type)].Capacity = 6500;
+	realships[int(pchar.ship.type)].SpeedRate = 11.65;
+	realships[int(pchar.ship.type)].TurnRate = 78.65;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -1959,9 +1959,9 @@ void SharlieTutorial_SeaNearMartinique_2(string qName)
 	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_music", 0.1);
 	DoQuestFunctionDelay("SharlieTutorial_SeaNearMartinique_Logo", 5.0);
 	pchar.wind.speed = 18.0;
-	fWeatherSpeed = stf(18.0);
+	fWeatherSpeed = float(18.0);
 	pchar.wind.angle = 0.0;
-	fWeatherAngle = stf(0.0);
+	fWeatherAngle = float(0.0);
 	Island_SetReloadEnableGlobal("Martinique", false);
 	InterfaceStates.Buttons.Save.enable = false;
 }
@@ -1970,7 +1970,7 @@ void SharlieTutorial_SeaNearMartinique_Logo(string qName)
 {
 	SharlieTutorial_ShowLogo_Start();
 	Achievment_Set("ach_CL_162");
-	if(sti(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
+	if(int(pchar.SharlieTutorial.FullyCompleted) == 6) Achievment_Set("ach_CL_163");
     DeleteAttribute(PChar, "SharlieTutorial.FullyCompleted");
 }
 
@@ -2026,7 +2026,7 @@ bool SharlieTutorial_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("hide_weapon", 2.0);
 		LAi_RemoveCheckMinHP(pchar);
 		sld = characterFromId("SharlieTutorial_Captain");
-		if (sti(sld.quest.SharlieTutorial_win == 0)) sld.dialog.currentnode = "FencingTraining_4";
+		if (int(sld.quest.SharlieTutorial_win == 0)) sld.dialog.currentnode = "FencingTraining_4";
 		else sld.dialog.currentnode = "FencingTraining_5"; 
 		LAi_SetActorType(sld);
 		LAi_ActorTurnToCharacter(sld, pchar);
@@ -2037,11 +2037,11 @@ bool SharlieTutorial_QuestComplete(string sQuestName, string qname)
 		LAi_group_Delete("EnemyFight");
 		DoQuestCheckDelay("hide_weapon", 2.0);
 		sld = characterFromId("SharlieTutorial_Captain");
-		sld.quest.SharlieTutorial_win = sti(sld.quest.SharlieTutorial_win)+1;
-		if (sti(sld.quest.SharlieTutorial_win == 1)) sld.dialog.currentnode = "FencingTraining_6";
+		sld.quest.SharlieTutorial_win = int(sld.quest.SharlieTutorial_win)+1;
+		if (int(sld.quest.SharlieTutorial_win == 1)) sld.dialog.currentnode = "FencingTraining_6";
 		else 
 		{
-			if (sti(sld.quest.SharlieTutorial_win == 2)) sld.dialog.currentnode = "FencingTraining_7";
+			if (int(sld.quest.SharlieTutorial_win == 2)) sld.dialog.currentnode = "FencingTraining_7";
 			else sld.dialog.currentnode = "FencingTraining_8";
 		}
 		LAi_SetActorType(sld);
@@ -2122,11 +2122,11 @@ void TutorialLogo_Refresh()
 	makearef(arColor, arImage.color);
 	makearef(arPos, arImage.pos);
 	float time, timer;
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
+	float fHtRatio = float(Render.screen_y) / iHudScale;
 
 	// меняем цвет
-	int color_step = sti(arColor.step);
-	if(color_step <= sti(arColor.maxStep))
+	int color_step = int(arColor.step);
+	if(color_step <= int(arColor.maxStep))
 	{
 		int alpha_start, alpha_end;
 		switch(color_step)
@@ -2149,9 +2149,9 @@ void TutorialLogo_Refresh()
 				timer = 2.0;
 			break;
 		}
-		time = stf(arColor.time);
+		time = float(arColor.time);
 		time += delta * 0.001;
-		int alpha = makeint(Bring2Range(alpha_start * 1.0, alpha_end * 1.0, 0.0, timer, time));
+		int alpha = int(Bring2Range(alpha_start * 1.0, alpha_end * 1.0, 0.0, timer, time));
 		arImage.color = argb(alpha, 128, 128, 128);
 		if(time >= timer)
 		{
@@ -2163,33 +2163,33 @@ void TutorialLogo_Refresh()
 	}
 	
 	// меняем позицию
-	int pos_step = sti(arPos.step);
-	if(pos_step <= sti(arPos.maxStep))
+	int pos_step = int(arPos.step);
+	if(pos_step <= int(arPos.maxStep))
 	{
 		int x1_start, y1_start, x2_start, y2_start;
 		int x1_end, y1_end, x2_end, y2_end;
-		int addStart = makeint(400 * fHtRatio);
-		int addEnd = makeint(512 * fHtRatio);
+		int addStart = int(400 * fHtRatio);
+		int addEnd = int(512 * fHtRatio);
 		switch(pos_step)
 		{
 			case 1:
-				x1_start = sti(showWindow.right) / 2 - RecalculateHIcon(addStart);
-				y1_start = sti(showWindow.bottom) / 2 - RecalculateVIcon(addStart);
-				x2_start = sti(showWindow.right) / 2 + RecalculateHIcon(addStart);
-				y2_start = sti(showWindow.bottom) / 2 + RecalculateVIcon(addStart);
-				x1_end = sti(showWindow.right) / 2 - RecalculateHIcon(addEnd);
-				y1_end = sti(showWindow.bottom) / 2 - RecalculateVIcon(addEnd);
-				x2_end = sti(showWindow.right) / 2 + RecalculateHIcon(addEnd);
-				y2_end = sti(showWindow.bottom) / 2 + RecalculateVIcon(addEnd);
+				x1_start = int(showWindow.right) / 2 - RecalculateHIcon(addStart);
+				y1_start = int(showWindow.bottom) / 2 - RecalculateVIcon(addStart);
+				x2_start = int(showWindow.right) / 2 + RecalculateHIcon(addStart);
+				y2_start = int(showWindow.bottom) / 2 + RecalculateVIcon(addStart);
+				x1_end = int(showWindow.right) / 2 - RecalculateHIcon(addEnd);
+				y1_end = int(showWindow.bottom) / 2 - RecalculateVIcon(addEnd);
+				x2_end = int(showWindow.right) / 2 + RecalculateHIcon(addEnd);
+				y2_end = int(showWindow.bottom) / 2 + RecalculateVIcon(addEnd);
 				timer = 2.0;
 			break;
 		}
-		time = stf(arPos.time);
+		time = float(arPos.time);
 		time += delta * 0.001;
-		int x1 = makeint(Bring2Range(x1_start * 1.0, x1_end * 1.0, 0.0, timer, time));
-		int y1 = makeint(Bring2Range(y1_start * 1.0, y1_end * 1.0, 0.0, timer, time));
-		int x2 = makeint(Bring2Range(x2_start * 1.0, x2_end * 1.0, 0.0, timer, time));
-		int y2 = makeint(Bring2Range(y2_start * 1.0, y2_end * 1.0, 0.0, timer, time));
+		int x1 = int(Bring2Range(x1_start * 1.0, x1_end * 1.0, 0.0, timer, time));
+		int y1 = int(Bring2Range(y1_start * 1.0, y1_end * 1.0, 0.0, timer, time));
+		int x2 = int(Bring2Range(x2_start * 1.0, x2_end * 1.0, 0.0, timer, time));
+		int y2 = int(Bring2Range(y2_start * 1.0, y2_end * 1.0, 0.0, timer, time));
 		arImage.pos = x1 + "," + y1 + "," + x2 + "," + y2;
 		if(time >= timer)
 		{
@@ -2200,7 +2200,7 @@ void TutorialLogo_Refresh()
 		arPos.time = time;
 	}
 	
-	if(color_step > sti(arColor.maxStep) && pos_step > sti(arPos.maxStep))
+	if(color_step > int(arColor.maxStep) && pos_step > int(arPos.maxStep))
 	{
 		SharlieTutorial_ShowLogo_End();
 		return;

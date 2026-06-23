@@ -20,8 +20,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "모르겠소. 그리고 알고 싶지도 않소. 자네가 알아보는 것도 권하지 않겠네. 이제, 미안하지만 나는 다시 돌아가야 할 일이 있소. 자네도 아마 처리해야 할 일이 있을 테지? 그러니 가서 할 일이나 하시오.";
 			link.l1 = "좋아, 알겠어. 귀찮게 해서 미안해...";
 			link.l1.go = "exit";
-			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
-			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
+			pchar.questTemp.Consumption.AskJuan = int(pchar.questTemp.Consumption.AskJuan)+1;
+			if(int(pchar.questTemp.Consumption.AskJuan) == 3)
 			{
 				pchar.quest.Consumption2.win_condition.l1 = "location";
 				pchar.quest.Consumption2.win_condition.l1.location = "PortSpein_town";

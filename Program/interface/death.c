@@ -15,7 +15,7 @@ void InitInterface(string iniName)
 		SetNewPicture("DEATH_PIC", InterfaceStates.DeathPic);
 	}
 	HideButtons();
-	PostEvent("ShowButtons",2000)
+	PostEvent("ShowButtons",2000);
 }
 
 void IDoExit(int exitCode)

@@ -10,19 +10,19 @@ void InitActivePerkShower()
 
 void InitShowPlaces()
 {
-	float fHtRatio = stf(Render.screen_y) / iHudScale;
-	/*objActivePerkShower.ShowParam.PosRect.left		= sti(showWindow.right) - RecalculateHIcon(300 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.top		= sti(showWindow.bottom) - RecalculateVIcon(makeint(300 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.right		= sti(showWindow.right) - RecalculateHIcon(makeint(35 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.bottom	= sti(showWindow.bottom) - RecalculateVIcon(makeint(400 * fHtRatio));
-	objActivePerkShower.ShowParam.IconSize.horz		= RecalculateHIcon(makeint(60 * fHtRatio));
-	objActivePerkShower.ShowParam.IconSize.vert		= RecalculateVIcon(makeint(60 * fHtRatio));*/
-	objActivePerkShower.ShowParam.PosRect.left		= sti(showWindow.right) - RecalculateHIcon(100 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.top		= sti(showWindow.bottom)/2 + RecalculateVIcon(makeint(64 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.right		= sti(showWindow.right) - RecalculateHIcon(makeint(40 * fHtRatio));
-	objActivePerkShower.ShowParam.PosRect.bottom	= sti(showWindow.bottom) - RecalculateVIcon(makeint(0 * fHtRatio));
-	objActivePerkShower.ShowParam.IconSize.horz		= RecalculateHIcon(makeint(60 * fHtRatio));
-	objActivePerkShower.ShowParam.IconSize.vert		= RecalculateVIcon(makeint(60 * fHtRatio));
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	/*objActivePerkShower.ShowParam.PosRect.left		= int(showWindow.right) - RecalculateHIcon(300 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.top		= int(showWindow.bottom) - RecalculateVIcon(int(300 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.right		= int(showWindow.right) - RecalculateHIcon(int(35 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.bottom	= int(showWindow.bottom) - RecalculateVIcon(int(400 * fHtRatio));
+	objActivePerkShower.ShowParam.IconSize.horz		= RecalculateHIcon(int(60 * fHtRatio));
+	objActivePerkShower.ShowParam.IconSize.vert		= RecalculateVIcon(int(60 * fHtRatio));*/
+	objActivePerkShower.ShowParam.PosRect.left		= int(showWindow.right) - RecalculateHIcon(int(100 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.top		= int(showWindow.bottom)/2 + RecalculateVIcon(int(64 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.right		= int(showWindow.right) - RecalculateHIcon(int(40 * fHtRatio));
+	objActivePerkShower.ShowParam.PosRect.bottom	= int(showWindow.bottom) - RecalculateVIcon(int(0 * fHtRatio));
+	objActivePerkShower.ShowParam.IconSize.horz		= RecalculateHIcon(int(60 * fHtRatio));
+	objActivePerkShower.ShowParam.IconSize.vert		= RecalculateVIcon(int(60 * fHtRatio));
 	objActivePerkShower.ShowParam.IconSpace.horz	= RecalculateHIcon(2);
 	objActivePerkShower.ShowParam.IconSpace.vert	= RecalculateVIcon(2);
 }

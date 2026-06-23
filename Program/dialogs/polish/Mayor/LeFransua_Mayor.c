@@ -54,7 +54,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Ach, nareszcie. Już myślałem, żeby sprzedać go właścicielowi plantacji z Barbadosu, będzie tu za tydzień lub dwa... Masz okup?"+GetSexPhrase("","")+"?";
 				link.l1 = "Spójrz, "+NPChar.name+" , jest mały problem... Właściwie, nie mam aż tyle pieniędzy. Ale jestem gotów do pracy.";
 				link.l1.go = "CapComission2_2";
-				if(makeint(pchar.money) > 150000)
+				if(int(pchar.money) > 150000)
 				{
 					link.l2 = "Dobrze, że go nie sprzedałeś. Oto twoje monety - 150.000 pesos. Gdzie mogę go dostać?"link.l2.go ="CapComission2_3";
 				}	
@@ -111,8 +111,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "CapComission2_2_2":
 			CaptainComission_GetRandomShore();
-			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(sti(NPChar.nation));
-			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(sti(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName1 = GenerateRandomNameToShip(int(NPChar.nation));
+			pchar.GenQuest.CaptainComission.ShipName2 = GenerateRandomNameToShip(int(NPChar.nation));
 			pchar.GenQuest.CaptainComission.UnknownPirateName = "l" + rand(GetNamesCount(NAMETYPE_ORIG) - 1);
 			dialog.text = "Hm.. Cóż "+GetName(NAMETYPE_ORIG,pchar.GenQuest.CaptainComission.UnknownPirateName,NAME_NOM)+"przekonał niektórych piratów, że ich część łupu zostanie przechowana w naszej skrytce niedaleko "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island.Shore+"Gen")+". Ich dwa statki '"+pchar.GenQuest.CaptainComission.ShipName1+"i"+pchar.GenQuest.CaptainComission.ShipName2+"podnieśli kotwice niedawno i odpłynęli do "+XI_ConvertString(pchar.GenQuest.CaptainComission.Island+"Abl")+"Teraz widzisz, dlaczego nie mogę zaufać moim ludziom, by wykonali tę robotę?";
 			link.l1 = "Rozumiem. Ile mam czasu?";
@@ -197,7 +197,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Obniżyć cenę?! Właśnie straciłem mój skarb przez twoją nieudolność! Teraz mogę podnieść cenę! Możesz go wziąć za 200.000 pesos, jeśli chcesz, albo możesz się stąd wynosić!";
 			link.l1 = "To zbyt drogie... Żegnaj...";
 			link.l1.go = "CapComission4_4";
-			if(sti(pchar.money) >= 200000)
+			if(int(pchar.money) >= 200000)
 			{
 				link.l2 = "Cholera, dobrze, weź swoją monetę.";
 				link.l2.go = "CapComission4_5";
@@ -245,7 +245,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Czy przyniosłeś pieniądze, Charles? Nie żartowałem, sprzedając tamtego człowieka na plantację.";			
 			link.l1 = "Słuchaj, "+NPChar.name+", jest pewien problem... Nie mam tyle pieniędzy. Ale jestem gotów do pracy.";
 			link.l1.go = "CapComission2_2";
-			if(makeint(pchar.money) > 150000)
+			if(int(pchar.money) > 150000)
 			{
 				link.l2 = "Dobrze, że go nie sprzedałeś. Oto twoje monety - 150.000 peso. Gdzie mogę go znaleźć?"link.l2.go ="CapComission2_3";
 			}			
@@ -277,7 +277,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_4":
-			int iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			int iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Widzę. Byłby to dobry handel, jeśli nie kłamiesz. Przypuszczam, że mogę ci zapłacić za tego człowieka, "+iTemp+"pesos, albo dać ci jakieś ciekawe informacje w zamian. Wybór należy do ciebie.";
 			link.l1 = "Lepiej wezmę tę monetę. Mam dość tego interesu...";
 			link.l1.go = "Marginpassenger_money";
@@ -292,7 +292,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Marginpassenger_money_1":
-			iTemp = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*2*stf(pchar.GenQuest.Marginpassenger.Chance))*100;
+			iTemp = int(int(pchar.GenQuest.Marginpassenger.Dublon)*2*float(pchar.GenQuest.Marginpassenger.Chance))*100;
 			dialog.text = "Nie ma za co, przynieś mi więcej... Do zobaczenia!";
 			link.l1 = "Powodzenia...";
 			link.l1.go = "exit";

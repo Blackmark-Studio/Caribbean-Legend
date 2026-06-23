@@ -53,12 +53,12 @@ int GetArmorType(ref rItem)
 
 void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)
 {
-	float weightMtp = GetWeightMtp(type, stf(item.weight));
+	float weightMtp = GetWeightMtp(type, float(item.weight));
 	aref attack;
 	makearef(attack, item.attack);
-	float baseAttack = stf(item.attack);
-	item.attack.min = makeInt(baseAttack * dmgMin + 0.5);
-	item.attack.max = makeInt(baseAttack * dmgMax + 0.5);
+	float baseAttack = float(item.attack);
+	item.attack.min = int(baseAttack * dmgMin + 0.5);
+	item.attack.max = int(baseAttack * dmgMax + 0.5);
 	float mtp = baseAttack * weightMtp;
 
 	if (type == -1) // мушкеты
@@ -100,8 +100,8 @@ void SetWeaponDamageByStrikes(ref item, int type, float dmgMin, float dmgMax)
 
 void SetWeaponStrikeDamage(aref attack, string strike, float mtp, float dmgMin, float dmgMax)
 {
-	SetAttribute(attack, strike + ".min", makeInt(mtp * dmgMin + 0.5));
-	SetAttribute(attack, strike + ".max", makeInt(mtp * dmgMax + 0.5));
+	SetAttribute(attack, strike + ".min", int(mtp * dmgMin + 0.5));
+	SetAttribute(attack, strike + ".max", int(mtp * dmgMax + 0.5));
 }
 
 void SetWeaponDescriptors(ref item, int type, int length, int curvature, float dmgMin, float dmgMax)

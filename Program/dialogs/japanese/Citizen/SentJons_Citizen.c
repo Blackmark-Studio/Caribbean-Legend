@@ -16,7 +16,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin":
-			if (sti(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
+			if (int(pchar.questTemp.Terrapin.SJ_count) == 5 || rand(9) == 1) // 10% или числом
 			{
 				dialog.text = "ここにはジョーンズという名の者がたくさんいるぜ。俺が知ってる中で一番有名なのはフォックス大佐の副官、 ベンジャミン・ジョーンズだ。たいてい連隊本部で来客の応対をしてるぜ。";
 				link.l1 = "奴にはモリーって名前の妹がいるのか？";
@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = RandPhraseSimple(LinkRandPhrase("うーん、それについては力になれそうにないな。","いや、俺はそいつを知らねえ。","ふん！俺の知ってるモリー・ジョーンズが絶世の美女なら、フォックス大佐は教区の神父だぜ。"),LinkRandPhrase("モリー・ジョーンズなら何人か知ってるぜ。そのうちの一人には兄貴がいるが……あんたが探してる女じゃねえな。あいつを「稀な美人」なんて呼ぶのは、猿と一緒に暮らしてた野郎くらいだろうよ。","悪いが、俺の知ってるジョーンズたちには姉妹はいねえんだ。","悪いが、俺には手伝えねえ。他の奴に聞いてくれ。"));
 			link.l1 = "なるほど。迷惑をかけてすまねえな。";
 			link.l1.go = "exit";
-			pchar.questTemp.Terrapin.SJ_count = sti(pchar.questTemp.Terrapin.SJ_count)+1;
+			pchar.questTemp.Terrapin.SJ_count = int(pchar.questTemp.Terrapin.SJ_count)+1;
 		break;
 		
 		case "terrapin_yes":
@@ -53,7 +53,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "info":
         // заменить на описание неких НПС, по квестам
-			dialog.text = "俺があの秘密情報部のために働いてると思うのか "+NationNameGenitive(sti(NPChar.nation))+"?";
+			dialog.text = "俺があの秘密情報部のために働いてると思うのか "+NationNameGenitive(int(NPChar.nation))+"?";
 			link.l1 = "うーん……いや。じゃあ、さらばだ。";
 			link.l1.go = "exit";
 			link.l2 = "他に質問はあるか？";

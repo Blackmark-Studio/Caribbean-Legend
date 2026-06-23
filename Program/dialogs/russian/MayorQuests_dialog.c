@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 
 		case "DestroyGang_ExitAfraid":
 			pchar.GenQuest.DestroyGang = "Found"; //флаг нашёл, но струсил
-			npchar.money = AddMoneyToCharacter(npchar, sti(pchar.money));
+			npchar.money = AddMoneyToCharacter(npchar, int(pchar.money));
 			pchar.money = 0;
 			LAi_SetWarriorType(npchar);
 			LAi_SetImmortal(npchar, false);
@@ -134,12 +134,12 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "OpenTheDoors", 10.0);
-			sld = GetCharacter(NPC_GenerateCharacter("ContraPass", "citiz_"+(rand(9)+11), "man", "man", 10, sti(pchar.GenQuest.TakePassenger.Nation), -1, true, "quest"));
+			sld = GetCharacter(NPC_GenerateCharacter("ContraPass", "citiz_"+(rand(9)+11), "man", "man", 10, int(pchar.GenQuest.TakePassenger.Nation), -1, true, "quest"));
 			sld.name = pchar.GenQuest.TakePassenger.Name;
 			sld.lastname = "";
 			pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(sld);
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
-			Pchar.GenQuest.TakePassenger.PrisonerIDX = sti(pchar.GenQuest.LastQuestPrisonerIdx);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+			Pchar.GenQuest.TakePassenger.PrisonerIDX = int(pchar.GenQuest.LastQuestPrisonerIdx);
 		break;
 		
 		case "Fugitive_city": // ходит по городу
@@ -216,8 +216,8 @@ void ProcessDialogEvent()
 			npchar.lifeday = 0;
 			LAi_SetImmortal(npchar, true);
 			pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(npchar);
-			SetCharacterRemovable(&characters[sti(pchar.GenQuest.LastQuestPrisonerIdx)], false);
-			Pchar.GenQuest.FindFugitive.PrisonerIDX = sti(pchar.GenQuest.LastQuestPrisonerIdx);
+			SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
+			Pchar.GenQuest.FindFugitive.PrisonerIDX = int(pchar.GenQuest.LastQuestPrisonerIdx);
 			pchar.GenQuest.FindFugitive = "Execute"; //флаг выполнил успешно
 			pchar.quest.FindFugitive1.win_condition.l1 = "location";
 			pchar.quest.FindFugitive1.win_condition.l1.location = pchar.GenQuest.FindFugitive.Startcity+"_townhall";

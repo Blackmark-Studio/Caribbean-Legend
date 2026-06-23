@@ -11,7 +11,7 @@
 //отдельный объект, в котором будут храниться настройки нового моря
 object SeaSettings;
 
-int iSkyColor = argb(0, 255, 255, 255);
+int iSkyColor;
 
 void WhrDeleteSeaEnvironment()
 {
@@ -30,7 +30,7 @@ void WhrCreateSeaEnvironment()
 
 	if (CheckAttribute(&Sea,"MaxSeaHeight")) 
 	{ 
-		fMaxSeaHeight = stf(Sea.MaxSeaHeight); 
+		fMaxSeaHeight = float(Sea.MaxSeaHeight);
 	}
 	DeleteAttribute(&Sea,"");
 
@@ -40,7 +40,7 @@ void WhrCreateSeaEnvironment()
 	string sLocation 	= mchr.location;
 
 	float FogDensity 	= 1.0;
-	float FogSeaDensity = 1.0
+	float FogSeaDensity = 1.0;
 
 	int iLocation 		= FindLocation(sLocation);
 	int iIsland 		= FindIsland(sLocation);
@@ -70,7 +70,7 @@ void WhrCreateSeaEnvironment()
 			fMaxSeaHeight = SetMaxSeaHeight(iIsland);
 			if(CheckAttribute(pchar, "debuger_weather"))
 			{
-				fMaxSeaHeight = stf(pchar.debuger_weather.maxSeaHeight);
+				fMaxSeaHeight = float(pchar.debuger_weather.maxSeaHeight);
 			}
 			fMaxSeaDistance = 20000;
 		}
@@ -118,7 +118,7 @@ void WhrCreateSeaEnvironment()
 	Sea.Sea2.FoamTexDisturb = Whr_GetFloat(SeaSettings, "FoamTexDisturb");
 
 	Sea.Sea2.FoamEnable = Whr_SetSeaFoam(); //пена на волнах
-	Sea.Sea2.SimpleSea = sti(InterfaceStates.SimpleSea);
+	Sea.Sea2.SimpleSea = int(InterfaceStates.SimpleSea);
 
 	Sea.MaxSeaHeight = fMaxSeaHeight;
 	Sea.MaxSeaDistance = fMaxSeaDistance;
@@ -170,7 +170,7 @@ void SetSeaGridStep(float SeaDetails)
 
 	Sea.Sea2.GridStep = SEA_GRID_STEP + SeaDetailsCoeff();
 
-	Sea.Sea2.SimpleSea = sti(InterfaceStates.SimpleSea);
+	Sea.Sea2.SimpleSea = int(InterfaceStates.SimpleSea);
 }
 
 // boal 14.09.06 относительная высота волны
@@ -178,15 +178,15 @@ float GetScaleSeaHeight()
 {
 	float fMaxSeaHeight = 0.0;
 
-	if (CheckAttribute(&Sea, "MaxSeaHeight")) { fMaxSeaHeight = stf(Sea.MaxSeaHeight); }
+	if (CheckAttribute(&Sea, "MaxSeaHeight")) { fMaxSeaHeight = float(Sea.MaxSeaHeight); }
 	
 	aref arWeath = GetCurrentWeather();
 	float fAmp1, fAmp2;
 	
-	if(CheckAttribute(arWeath,"Sea2.Amp1")) fAmp1 = stf(arWeath.Sea2.Amp1);
+	if(CheckAttribute(arWeath,"Sea2.Amp1")) fAmp1 = float(arWeath.Sea2.Amp1);
 	else									fAmp1 = 1.0;
 	
-	if(CheckAttribute(arWeath,"Sea2.Amp2")) fAmp2 = stf(arWeath.Sea2.Amp2);
+	if(CheckAttribute(arWeath,"Sea2.Amp2")) fAmp2 = float(arWeath.Sea2.Amp2);
 	else									fAmp2 = 1.0;
 	
 	float fScale;
@@ -214,7 +214,7 @@ float SeaDetailsCoeff()
 		return 0.05;
 	}
 
-	float fSeaDetailsCoeff = 0.1 * (1.0 - fclamp(0.4, 1.0, stf(InterfaceStates.SeaDetails)));
+	float fSeaDetailsCoeff = 0.1 * (1.0 - fclamp(0.4, 1.0, float(InterfaceStates.SeaDetails)));
 	return fSeaDetailsCoeff;
 }
 
@@ -225,8 +225,8 @@ string Whr_SetSeaAngle()
 	string _angle = "0.0, 0.0, 2.0";
 	if(CheckAttribute(pchar, "debuger_weather")) //если в дебагере
 	{
-		xAng = -1.0 * stf(pchar.debuger_weather.windAngle.x);
-		zAng = -1.0 * stf(pchar.debuger_weather.windAngle.z);
+		xAng = -1.0 * float(pchar.debuger_weather.windAngle.x);
+		zAng = -1.0 * float(pchar.debuger_weather.windAngle.z);
 	}
 	else
 	{
@@ -237,8 +237,8 @@ string Whr_SetSeaAngle()
 		}
 		else
 		{
-			xAng = -1.0 * stf(worldMap.WindX);
-			zAng = -1.0 * stf(worldMap.WindZ);	
+			xAng = -1.0 * float(worldMap.WindX);
+			zAng = -1.0 * float(worldMap.WindZ);
 		}
 	}
 	_angle = xAng + ", 0.0, " + zAng;
@@ -248,7 +248,7 @@ string Whr_SetSeaAngle()
 //шторм
 bool Whr_CheckStorm()
 {
-	bool bRealStorm = CheckAttribute(&WeatherParams, "Storm") && sti(WeatherParams.Storm) == true; //реальный игровой шторм
+	bool bRealStorm = CheckAttribute(&WeatherParams, "Storm") && int(WeatherParams.Storm) == true; //реальный игровой шторм
 	bool bDebugerStorm = CheckAttribute(pchar, "debuger_weather.storm") && pchar.debuger_weather.storm == true; //шторм вызываемый через дебагер
 	return bRealStorm || bDebugerStorm;
 }
@@ -566,7 +566,7 @@ bool Whr_SetSeaFoam()
 	}
 	if(CheckAttribute(pchar, "debuger_weather"))
 	{		
-		bSet = sti(pchar.debuger_weather.FoamEnable);
+		bSet = bool(pchar.debuger_weather.FoamEnable);
 	}
 	return bSet;
 }
@@ -579,13 +579,13 @@ float Whr_SetLocationMaxSeaHeight()
 
 	if(CheckAttribute(&Sea, "CabinSeaHeight"))
 	{
-		fMaxSeaHeight = stf(Sea.CabinSeaHeight);
+		fMaxSeaHeight = float(Sea.CabinSeaHeight);
 		DeleteAttribute(&Sea, "CabinSeaHeight");
 		return fMaxSeaHeight;
 	}
 	if(CheckAttribute(&Sea, "AbordageSeaHeight"))
 	{
-		fMaxSeaHeight = stf(Sea.AbordageSeaHeight);
+		fMaxSeaHeight = float(Sea.AbordageSeaHeight);
 		DeleteAttribute(&Sea, "AbordageSeaHeight");
 		return fMaxSeaHeight;
 	}
@@ -653,7 +653,7 @@ int Whr_SetWaterColor(float fMaxSeaHeight)
 {
 	int iLocation = FindLocation(pchar.location);
 	int iWaterColor = argb(  0,  0, 70,120 );				
-	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain); // дождь
+	bool bRain = CheckAttribute(&WeatherParams,"Rain") && int(WeatherParams.Rain); // дождь
 	// цвет моря в шторм
 	if(Whr_CheckStorm() || Whr_CheckLandStorm())
 	{
@@ -858,7 +858,7 @@ void Whr_SetSeaFromWind(float fSpeed, float fMaxSeaHeight)
 	string sType = "";
 	string sMoveSpeed 	= Whr_SetSeaAngle();				//направление волн в море
 	Whr_ModifySeaFog(fSpeed);
-	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain); // дождь
+	bool bRain = CheckAttribute(&WeatherParams,"Rain") && int(WeatherParams.Rain); // дождь
 	float fFrenel = 0.3;
 	
 	int iWaterColor = Whr_SetWaterColor(fMaxSeaHeight);		//цвет воды
@@ -1050,7 +1050,7 @@ void Whr_SetLocationSeaWaves(ref rAmp1, ref rAmp2, ref rScale1, ref rScale2, ref
 {
 	aref weather = GetCurrentWeather();
 	string sParams = "Empty";
-	bool 	bOk = CheckAttribute(&WeatherParams, "Fog.ThisDay") && sti(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
+	bool 	bOk = CheckAttribute(&WeatherParams, "Fog.ThisDay") && int(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
 	float fMaxSeaHeight = Whr_SetLocationMaxSeaHeight();
 	if(Whr_CheckStorm() || Whr_CheckLandStorm())
 	{
@@ -1074,7 +1074,7 @@ void Whr_SetLocationSeaWaves(ref rAmp1, ref rAmp2, ref rScale1, ref rScale2, ref
 			rFoamK = 0.2;
 		}
 		rFoamUV = 0.3;
-		rFoamV = abs(makefloat(rAmp2) - fMaxSeaHeight) - 0.25;
+		rFoamV = abs(float(rAmp2) - fMaxSeaHeight) - 0.25;
 		wRange(&rFoamV, 0.35, 0.6);
 
 		sParams = "LandStorm";
@@ -1104,7 +1104,7 @@ void Whr_SetLocationSeaWaves(ref rAmp1, ref rAmp2, ref rScale1, ref rScale2, ref
 				rFoamK = 0.5;
 			}
 			rFoamUV = 0.3;
-			rFoamV = abs(makefloat(rAmp2) - fMaxSeaHeight) - 0.25;
+			rFoamV = abs(float(rAmp2) - fMaxSeaHeight) - 0.25;
 			wRange(&rFoamV, 0.45, 0.6);
 
 			sParams = "Town/Seashore/Grotto/Deck/Cabine";
@@ -1132,7 +1132,7 @@ void Whr_SetLocationSeaWaves(ref rAmp1, ref rAmp2, ref rScale1, ref rScale2, ref
 				rFoamK = 0.5;
 			}
 			rFoamUV = 0.8;
-			rFoamV = abs(makefloat(rAmp2) - fMaxSeaHeight) - 0.125;
+			rFoamV = abs(float(rAmp2) - fMaxSeaHeight) - 0.125;
 			wRange(&rFoamV, 0.25, 0.35);
 
 			sParams = "SeaHeightFix/";
@@ -1153,7 +1153,7 @@ void Whr_SetLocationSeaWaves(ref rAmp1, ref rAmp2, ref rScale1, ref rScale2, ref
 
 			rFoamK = 2.0;
 
-			rFoamV = abs(makefloat(rAmp2) - fMaxSeaHeight) - 0.125;
+			rFoamV = abs(float(rAmp2) - fMaxSeaHeight) - 0.125;
 			wRange(&rFoamV, 0.4, 0.5);
 
 			sParams = "LSC";
@@ -1183,7 +1183,7 @@ void Whr_SetLocationSeaParams(ref rReflection, ref rTransparency, ref rFrenel, r
 {
 	aref weather = GetCurrentWeather();
 	string sParams = "Empty";
-	bool 	bOk = CheckAttribute(&WeatherParams, "Fog.ThisDay") && sti(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");	
+	bool 	bOk = CheckAttribute(&WeatherParams, "Fog.ThisDay") && int(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
 	if(Whr_CheckStorm() || Whr_CheckLandStorm())
 	{
 		rReflection = 0.625;
@@ -1294,12 +1294,12 @@ void Whr_ModifySeaFog(float fWind)
 	{
         if (currentHour >= 6.0)
         {
-            fBlend = blendCoeff + (stf(currentHour) - sti(currentHour)) * (-1.0 * blendCoeff);
+            fBlend = blendCoeff + (float(currentHour) - int(currentHour)) * (-1.0 * blendCoeff);
             additionalNightFog = fBlend;
         }
         else if(currentHour <= 1.0)
         {
-            fBlend = (stf(currentHour) - sti(currentHour)) * (blendCoeff);
+            fBlend = (float(currentHour) - int(currentHour)) * (blendCoeff);
             additionalNightFog = fBlend;
         }
         else additionalNightFog = blendCoeff;
@@ -1310,7 +1310,7 @@ void Whr_ModifySeaFog(float fWind)
 	iDensity = 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
 	sDensity = 0.00065 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
 	// fDensity = 0.00025 + 0.00003 * pow(fWind/12.0, 3) + additionalNightFog;
-	bOk1 = CheckAttribute(&WeatherParams, "Fog.ThisDay") && sti(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
+	bOk1 = CheckAttribute(&WeatherParams, "Fog.ThisDay") && int(WeatherParams.Fog.ThisDay) && CheckAttribute(weather, "SpecialLandFog");
 
 	// штатный туман в режиме моря и если не установлен утренний или вечерний туман в локе
 	if (bSeaActive || !bOk1)
@@ -1318,7 +1318,7 @@ void Whr_ModifySeaFog(float fWind)
 		aCurWeather.Fog.Height 	= 	200;
 		aCurWeather.Fog.Start 	= 	10.0;
 
-		Whr_DebugLog("Fog - Density: " + fDensity + " IDensity: " + iDensity + " SDensity: " + sDensity + " wind:" + fWind + " Time:" + currentHour + " hour:" + sti(currentHour) + " blend:" + fBlend);
+		Whr_DebugLog("Fog - Density: " + fDensity + " IDensity: " + iDensity + " SDensity: " + sDensity + " wind:" + fWind + " Time:" + currentHour + " hour:" + int(currentHour) + " blend:" + fBlend);
 
 		aCurWeather.Fog.IslandDensity = iDensity;
 		aCurWeather.Fog.SeaDensity    = sDensity;

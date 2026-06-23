@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
@@ -57,9 +57,9 @@ void ProcessDialogEvent()
 		
 		// охрана - протектор
 		case "plantation_protector":
-            if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+            if (GetNationRelation2MainCharacter(int(NPChar.nation)) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 			{
-				if (sti(pchar.nation) == PIRATE)
+				if (int(pchar.nation) == PIRATE)
 				{
 					PlaySound("Voice\English\soldier_arest_1.wav");
     				dialog.text = RandPhraseSimple("해적이다?! 저 놈을 잡아라!","그는 해적이다! 공격해!");
@@ -68,15 +68,15 @@ void ProcessDialogEvent()
 					break;
 				}
 				PlaySound("Voice\English\soldier_arest_2.wav");
-				dialog.text = RandPhraseSimple("호호, 너는 그 깃발 아래에서 항해하고 있구나 "+NationNameGenitive(sti(pchar.nation))+"! 우리 지휘관께서 당신과 이야기하게 되어 기뻐하실 것 같소!","오, 오, 냄새가 나는군 "+NationNameAblative(sti(pchar.nation))+" 여기 있군! 첩자라니?! 이제 우리 사령관과 이야기할 시간이야.");
+				dialog.text = RandPhraseSimple("호호, 너는 그 깃발 아래에서 항해하고 있구나 "+NationNameGenitive(int(pchar.nation))+"! 우리 지휘관께서 당신과 이야기하게 되어 기뻐하실 것 같소!","오, 오, 냄새가 나는군 "+NationNameAblative(int(pchar.nation))+" 여기 있군! 첩자라니?! 이제 우리 사령관과 이야기할 시간이야.");
 				link.l1 = RandPhraseSimple("먼저, 널 지옥으로 보내주지!","이제 내 칼날이 너와 대화할 시간이야!");
 				link.l1.go = "fight"; 
 			}
 			else
 			{
-				if (GetNationRelation(sti(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
+				if (GetNationRelation(int(NPChar.nation), GetBaseHeroNation()) == RELATION_ENEMY && int(NPChar.nation) != PIRATE)
 				{
-					if (sti(pchar.nation) == PIRATE)
+					if (int(pchar.nation) == PIRATE)
 					{
 						PlaySound("Voice\English\soldier_arest_1.wav");
 						dialog.text = RandPhraseSimple("해적이다?! 저 놈을 잡아라!","그 자는 해적이다! 공격해!");
@@ -116,7 +116,7 @@ void ProcessDialogEvent()
 		
 		case "Licence":
 			iTemp = GetDaysContinueNationLicence(HOLLAND);
-			if (ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 0) <= -12)
+			if (ChangeCharacterNationReputation(pchar, int(NPChar.nation), 0) <= -12)
 			{
 				PlaySound("Voice\English\soldier_arest_2.wav");
 				dialog.text = "면허증? 잠깐만... 하하, 이거 웃기네! 네가 누군지 알아. 넌 수배자야, 이 친구야! 네 목에 걸린 현상금이 엄청 크다고! 잡아라!";
@@ -139,7 +139,7 @@ void ProcessDialogEvent()
 		
 		case "PegYou":
 			PlaySound("Voice\English\soldier_arest_2.wav");
-            dialog.text = "사업? 하하! 이거 웃기는군! 너한테서 나는 냄새가 "+NationNameAblative(sti(GetBaseHeroNation()))+" 천 리 밖에서 왔군! 이제 우리 사령관을 만날 시간이야.";
+            dialog.text = "사업? 하하! 이거 웃기는군! 너한테서 나는 냄새가 "+NationNameAblative(int(GetBaseHeroNation()))+" 천 리 밖에서 왔군! 이제 우리 사령관을 만날 시간이야.";
 			link.l1 = "아니, 이제 내 칼을 맛볼 때가 된 것 같군.";
 			link.l1.go = "fight";
 		break;
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "plant_2") // belamour legendary edition 
 			{
 				dialog.text = "여기서 무슨 일이지, 나리?";
-				link.l1 = TimeGreeting()+", 나리. 당신께 제안할 사업이 있소. 노예를 팔려고 하오. "+FindRussianQtyString(sti(GetSquadronGoods(pchar,GOOD_SLAVES)))+". 관심 있어?";
+				link.l1 = TimeGreeting()+", 나리. 당신께 제안할 사업이 있소. 노예를 팔려고 하오. "+FindRussianQtyString(int(GetSquadronGoods(pchar,GOOD_SLAVES)))+". 관심 있어?";
 				link.l1.go = "mtraxx";
 				break;
 			}
@@ -226,7 +226,7 @@ void ProcessDialogEvent()
             DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddQuestRecord("Roger_3", "27");
 			sld = characterFromId("Mtr_plantation_boss");
 			sld.lifeday = 0;
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 11;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-            dialog.text = "커피 상자 500개라고? 오, 그래... 어디 보자... (계산 중) 네 커피와 맞바꿀 준비가 됐어 "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와 "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이네. 거래할래?";
+            dialog.text = "커피 상자 500개라고? 오, 그래... 어디 보자... (계산 중) 네 커피와 맞바꿀 준비가 됐어 "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와 "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이네. 거래할래?";
 			link.l1 = "흠... 더 좋은 조건을 기대했는데. 뭐, 상관없지. 거래하자!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 19;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 106;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 106;
-            dialog.text = "바닐라 500상자라고? 오, 그래... 어디 보자... (셈하는 중) 네 바닐라와 바꿀 준비가 됐어 "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와 "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이야. 거래할래?";
+            dialog.text = "바닐라 500상자라고? 오, 그래... 어디 보자... (셈하는 중) 네 바닐라와 바꿀 준비가 됐어 "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와 "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이야. 거래할래?";
 			link.l1 = "흠... 더 좋은 조건을 기대했는데. 뭐, 상관없지. 거래하자!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))
@@ -321,7 +321,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Mtraxx.PlantGood.Cargo = 20;
 			pchar.questTemp.Mtraxx.PlantGood.Sugar = i * 100;
 			pchar.questTemp.Mtraxx.PlantGood.Cocoa = n * 100;
-            dialog.text = "코프라 500상자라고? 그래, 그래... 어디 보자... (계산 중) 네 코프라를 바꿔줄 준비가 되어 있지 "+sti(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와\n "+sti(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이야. 거래할래?";
+            dialog.text = "코프라 500상자라고? 그래, 그래... 어디 보자... (계산 중) 네 코프라를 바꿔줄 준비가 되어 있지 "+int(pchar.questTemp.Mtraxx.PlantGood.Sugar)+" 설탕 자루와\n "+int(pchar.questTemp.Mtraxx.PlantGood.Cocoa)+"  카카오 상자들이야. 거래할래?";
 			link.l1 = "흠... 더 좋은 조건을 기대했는데... 뭐, 상관없지. 거래하자!";
 			link.l1.go = "mtraxx_6";
 			if (CheckAttribute(pchar, "questTemp.mtraxx_PlantVykup"))

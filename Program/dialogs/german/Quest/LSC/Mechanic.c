@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					link.l4 = "Ich bin's wieder, Henrik. Wie steht's um deinen Anzug? Konntest du ihn reparieren?";
 					link.l4.go = "mechanic_20";
 				}
-				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= sti(pchar.questTemp.LSC.PtAddQty))
+				if(pchar.questTemp.LSC == "platinum_add_wait" && GetCharacterItem(pchar, "jewelry10") >= int(pchar.questTemp.LSC.PtAddQty))
 				{
 					link.l4 = "Ich habe genug von dem Metall, nach dem du gefragt hast. Nimm es.";
 					link.l4.go = "mechanic_23";
@@ -245,7 +245,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mechanic_20":
-			if (sti(pchar.questTemp.LSC.PtAddQty) == 0)
+			if (int(pchar.questTemp.LSC.PtAddQty) == 0)
 			{
 				dialog.text = "Ja. Jurgen und ich haben verdammt gute Arbeit geleistet und die Menge an Teilen, die du gebracht hast, war ausreichend. Der Anzug ist repariert und vorbereitet. Ich muss nur noch einige Tests durchführen, aber ich bin sicher, dass alles in Ordnung ist. Komm morgen um 10 Uhr - ich werde die Tanks mit Luft füllen und du kannst tun, was du willst.";
 				link.l1 = "Ausgezeichnet! Ich freue mich darauf. Bis morgen, Henrik!";
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Ich muss Sie enttäuschen, "+pchar.name+". Wie ich vermutet habe, gibt es nicht genug Metall. Ich brauche "+FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty))+" mehr Teile, um die Reparatur abzuschließen. Ich muss Sie erneut um Hilfe bitten.";
+				dialog.text = "Ich muss Sie enttäuschen, "+pchar.name+". Wie ich vermutet habe, gibt es nicht genug Metall. Ich brauche "+FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty))+" mehr Teile, um die Reparatur abzuschließen. Ich muss Sie erneut um Hilfe bitten.";
 				link.l1 = "Nun, ich habe solch eine Wendung der Ereignisse nicht erwartet. Gut, ich werde versuchen, die Nuggets zu finden, die dir fehlen.";
 				link.l1.go = "mechanic_21";
 			}
@@ -271,11 +271,11 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.LSC = "platinum_add_wait";
 			AddQuestRecord("LSC", "9");
-			AddQuestUserData("LSC", "sQty", FindRussianQtyString(sti(pchar.questTemp.LSC.PtAddQty)));
+			AddQuestUserData("LSC", "sQty", FindRussianQtyString(int(pchar.questTemp.LSC.PtAddQty)));
 		break;
 		
 		case "mechanic_23":
-			RemoveItems(pchar, "jewelry10", sti(pchar.questTemp.LSC.PtAddQty));
+			RemoveItems(pchar, "jewelry10", int(pchar.questTemp.LSC.PtAddQty));
 			dialog.text = "Herrlich! Jetzt wird der Anzug wiederhergestellt. Ich muss nur noch einige Tests durchführen, aber ich bin sicher, dass alles in Ordnung ist. Komm morgen um 10 Uhr - ich werde die Tanks mit Luft füllen und du kannst tun, was du willst.";
 			link.l1 = "Ausgezeichnet! Ich freue mich darauf. Bis morgen, Henrik!";
 			link.l1.go = "mechanic_24";
@@ -461,7 +461,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(npchar, "quest.guarantee")) // требует залог
 			{
 				dialog.text = "Ja, sicher. Der Anzug wurde getestet und mit Luft gefüllt. Hast du das Pfand dabei? 500.000 Pesos?";
-				if (sti(pchar.money) >= 500000)
+				if (int(pchar.money) >= 500000)
 				{
 					link.l1 = "Ja, sicher. Hier, nimm es.";
 					link.l1.go = "immersion_next_pay";

@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "puancie":
 			dialog.text = "아하, 그렇군. 그 빚에 대해서는 알고 있소... 필요한 금액을 가지고 왔소?";
-			if (sti(pchar.money) >= 1000000)
+			if (int(pchar.money) >= 1000000)
 			{
 				link.l1 = "물론이지요. 달리 어찌 되었겠소?";
 				link.l1.go = "puancie_1";

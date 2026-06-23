@@ -164,12 +164,12 @@ void ProcessDialogEvent()
 					link.l1 = "He cumplido, monsieur Fadey. Aquí tienes tus 75 doblones.";
 					link.l1.go = "pistols_4D";
 				}
-				if (sti(Pchar.money) >= 40000)
+				if (int(Pchar.money) >= 40000)
 				{
 					link.l2 = "¡Los tengo, monsieur Fadey! Aquí están tus 40,000 pesos.";
 					link.l2.go = "pistols_4P";
 				}
-				if (PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000)
+				if (PCharDublonsTotal() < 75 || int(Pchar.money) < 40000)
 				{
 					link.l3 = "No, solo de visita. Todavía estoy buscando la cantidad adecuada.";
 					link.l3.go = "exit";
@@ -193,12 +193,12 @@ void ProcessDialogEvent()
 					link.l1 = "Toma 75 doblones. Pediré a los marineros que lleven esta caja a mi barco. Oh, ¿qué haría sin ti, Fadey? ¡No tienes idea de cuánto me has ayudado!";
 					link.l1.go = "pistols_5D";
 				}
-				if (sti(Pchar.money) >= 40000)
+				if (int(Pchar.money) >= 40000)
 				{
 					link.l2 = "Toma 40.000 pesos. Pediré a los marineros que lleven esta caja a mi barco. Oh, ¿qué haría sin ti, Fadey? ¡No tienes idea de cuánto me has ayudado!";
 					link.l2.go = "pistols_5P";
 				}
-				if (PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+				if (PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 				{
 					link.l3 = "No, solo pasé por aquí. Todavía estoy tratando de reunir lo suficiente.";
 					link.l3.go = "exit";
@@ -779,12 +779,12 @@ void ProcessDialogEvent()
 			link.l1 = "Toma doblones, Fadey. Resulta que llevo algunos conmigo ahora mismo.";
 			link.l1.go = "pistols_4D";
 		}
-		if (sti(Pchar.money) >= 40000)
+		if (int(Pchar.money) >= 40000)
 		{
 			link.l2 = "Todos mis doblones se han agotado, toma pesos, Fadey.";
 			link.l2.go = "pistols_4P";
 		}
-		if (PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+		if (PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 		{
 			link.l3 = "Necesito hablar con mi banquero. ¡Regreso enseguida!";
 			link.l3.go = "exit";
@@ -826,12 +826,12 @@ void ProcessDialogEvent()
 			link.l1 = "Toma 75 doblones. Haré que mis hombres lleven las armas a mi barco. ¿Qué haría sin ti, Fadey? ¡No tienes idea de cuánto me has ayudado!";
 			link.l1.go = "pistols_5D";
 		}
-		if (sti(Pchar.money) >= 40000)
+		if (int(Pchar.money) >= 40000)
 		{
 			link.l2 = "Toma 40 000 pesos. Haré que mis hombres lleven las armas a mi barco. ¿Qué haría yo sin ti, Fadey? ¡No tienes idea de cuánto me has ayudado!";
 			link.l2.go = "pistols_5P";
 		}
-		if (PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
+		if (PCharDublonsTotal() < 75 || int(Pchar.money) < 40000) // возможность найти без отказа
 		{
 			link.l3 = "Pues maldición, ¿cómo pude olvidar el dinero? Volveré pronto.";
 			link.l3.go = "exit";
@@ -1431,12 +1431,12 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		}
-		if (sti(pchar.questTemp.FadeyRopes) >= 1 && !CheckAttribute(pchar, "questTemp.FadeyRopesBlock")) // увеличить объём поставок канатами
+		if (int(pchar.questTemp.FadeyRopes) >= 1 && !CheckAttribute(pchar, "questTemp.FadeyRopesBlock")) // увеличить объём поставок канатами
 		{
 			link.l4 = "Fadey, ¿podríamos aumentar el volumen de nuestros tratos? ¡Estoy listo para comprar cinco veces más mercancías de ti! Creo que esto nos beneficiaría a ambos. ¿Qué dices?";
 			link.l4.go = "UpgradeRopes";
 		}
-		if (sti(pchar.questTemp.FadeyRopes) >= 1 && CheckAttribute(pchar, "questTemp.FadeyRopesPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок канатами, если в первый раз не принесли
+		if (int(pchar.questTemp.FadeyRopes) >= 1 && CheckAttribute(pchar, "questTemp.FadeyRopesPotom") && PCharDublonsTotal() >= 3000) // увеличить объём поставок канатами, если в первый раз не принесли
 		{
 			link.l4 = "¡Fadey, he traído el dinero! Tres mil doblones de oro, como acordamos.";
 			link.l4.go = "UpgradeRopes_Agreed";
@@ -1465,7 +1465,7 @@ void ProcessDialogEvent()
 		DeleteAttribute(npchar, "quest.ropes");
 		SetFunctionTimerCondition("Ropes_FadeyAttrReturn", 0, 0, 1, false); // таймер
 		AddCharacterExpToSkill(pchar, "Commerce", 200);
-		pchar.questTemp.FadeyRopes = sti(pchar.questTemp.FadeyRopes) + 1; // счётчик покупок
+		pchar.questTemp.FadeyRopes = int(pchar.questTemp.FadeyRopes) + 1; // счётчик покупок
 		break;
 
 	// уменьшение НЗГ
@@ -1507,7 +1507,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "relation":
-		rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+		rate = wdmGetNationThreat(int(pchar.GenQuest.FadeyNation));
 		iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", false);
 		sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
 		if (rate < 2)
@@ -1562,7 +1562,7 @@ void ProcessDialogEvent()
         rate = 10 + hrand(5);
         rate = GetIntByCondition(bOk, rate, rate / 2);
         SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
-        pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
+        pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, int(pchar.GenQuest.FadeyNation));
         npchar.quest.relation = "true";
 		break;
 

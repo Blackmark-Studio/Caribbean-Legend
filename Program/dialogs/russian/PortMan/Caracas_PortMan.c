@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}
 				else
 				{
-					if(sti(RealShips[sti(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
+					if(int(RealShips[int(pchar.ship.type)].basetype) != SHIP_FRIGATE_L)
 					{
 						pchar.questTemp.SharkGoldFleet = "toCurierWait";
 						AddQuestRecord("SharkGoldFleet", "11");

@@ -11,7 +11,7 @@ void ProcessDialogEvent()
 	makearef(NextDiag, NPChar.Dialog);
 
     // вызов диалога по городам -->
-    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(sti(NPChar.nation)) + "_Governor.c";
+    NPChar.FileDialog2 = "DIALOGS\" + LanguageGetLanguage() + "\Governor\" + NationShortName(int(NPChar.nation)) + "_Governor.c";
     if (LoadSegment(NPChar.FileDialog2))
 	{
         ProcessCommonDialog(NPChar, Link, NextDiag);
@@ -30,9 +30,9 @@ void ProcessDialogEvent()
     int f, colony_money;
 
     int k = 1000;
-    if (CheckAttribute(Nations[sti(NPChar.nation)], "Fort"))
+    if (CheckAttribute(Nations[int(NPChar.nation)], "Fort"))
     {
-        k = (300 - sti(Nations[sti(NPChar.nation)].Fort)*10);
+        k = (300 - int(Nations[int(NPChar.nation)].Fort)*10);
     }
 	bool ok;
 	
@@ -69,15 +69,15 @@ void ProcessDialogEvent()
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "당신이 면담을 매우 끈질기게 요청했다고 들었습니다. 내 이름은 "+GetFullName(npchar)+". 나는 식민지 총독이오 "+NationNameGenitive(sti(NPChar.nation))+", 왕실의 대리인 "+NationKingsName(npchar)+" 이 바다에서. 이제, 부디 친절하게 말씀해 주시겠습니까, 방문 목적이 무엇인지, "+GetAddress_Form(NPChar)+".";
+				dialog.text = "당신이 면담을 매우 끈질기게 요청했다고 들었습니다. 내 이름은 "+GetFullName(npchar)+". 나는 식민지 총독이오 "+NationNameGenitive(int(NPChar.nation))+", 왕실의 대리인 "+NationKingsName(npchar)+" 이 바다에서. 이제, 부디 친절하게 말씀해 주시겠습니까, 방문 목적이 무엇인지, "+GetAddress_Form(NPChar)+".";
 				link.l1 = "내 이름은 "+GetFullName(pchar)+".";
 				link.l1.go = "node_1";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("오, 또 너냐? 그래서, 총독에게서 뭘 원하는 거지 "+NationNameGenitive(sti(NPChar.nation))+" 이번에는?","또다시 나를 국정의 중요한 일에서 방해하는 건가? 무슨 용건이지, "+GetAddress_Form(NPChar)+"?");
-				link.l1 = "왕실의 이름으로 일하는 것에 대해 당신과 이야기하고 싶소 "+NationNameGenitive(sti(NPChar.nation));
+				dialog.text = RandPhraseSimple("오, 또 너냐? 그래서, 총독에게서 뭘 원하는 거지 "+NationNameGenitive(int(NPChar.nation))+" 이번에는?","또다시 나를 국정의 중요한 일에서 방해하는 건가? 무슨 용건이지, "+GetAddress_Form(NPChar)+"?");
+				link.l1 = "왕실의 이름으로 일하는 것에 대해 당신과 이야기하고 싶소 "+NationNameGenitive(int(NPChar.nation));
 				link.l1.go = "work";
 				link.l2 = "중요한 일로 당신과 이야기할 필요가 있어.";
 				link.l2.go = "quests"; // файл нации
@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		
 		case "node_1":
 			dialog.text = "그래서 무슨 일로 여기까지 와서 내 중요한 국정 업무를 방해하는 것이오?";
-			link.l1 = "왕관의 이름으로 일하는 것에 대해 당신과 이야기하고 싶었소 "+NationNameGenitive(sti(NPChar.nation));
+			link.l1 = "왕관의 이름으로 일하는 것에 대해 당신과 이야기하고 싶었소 "+NationNameGenitive(int(NPChar.nation));
 			link.l1.go = "work";
 			link.l2 = "중요한 일에 대해 당신과 이야기하려고 했소.";
 			link.l2.go = "quests";
@@ -134,7 +134,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_1":
 			dialog.text = "그럼 5만 페소, 즉 상금에 쓰일 입장료는 준비했나?";
-			if (makeint(Pchar.money) >= 50000)
+			if (int(Pchar.money) >= 50000)
 			{
 				link.l1 = "네, 물론입니다. 제 수고비를 받아 주십시오.";
 				link.l1.go = "Regata_2";

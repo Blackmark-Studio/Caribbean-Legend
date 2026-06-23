@@ -9,8 +9,8 @@ void ApplyMigration(ref migrationState)
 		UnloadSegment("ships\sails_init.c");
 	}
 
-	InitGunWithAmmoParams("mushket_indian", "t1", "cartridge", "",       127.0, 167.0, 0.0,  0, 0,  29, 0);
-	InitGunWithAmmoParams("mushket_indian", "t3", "bullet_double", "",   220.0, 290.0, 0.0,  0, 0,  19, 0);
+	InitGunWithAmmoParams("mushket_indian", "t1", "cartridge", "",       127.0, 167.0, 0.0,  false, 0,  29, false);
+	InitGunWithAmmoParams("mushket_indian", "t3", "bullet_double", "",   220.0, 290.0, 0.0,  false, 0,  19, false);
 
 	if(LoadSegment("items\modifiers\init\init.c"))
 	{

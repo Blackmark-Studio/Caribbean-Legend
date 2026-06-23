@@ -62,7 +62,7 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 {
 	int numShips = wdmGetNumberShipEncounters();
 	if(CheckAttribute(pchar,"worldmap.shipcounter")) {
-		numShips = numShips - sti(pchar.worldmap.shipcounter);
+		numShips = numShips - int(pchar.worldmap.shipcounter);
 	}
 	if(numShips < 0)
 	{
@@ -137,8 +137,8 @@ void Map_WarriorEnd()
 	{
 		return;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	if(sti(pchar.worldmap.shipcounter) < 0)
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
+	if(int(pchar.worldmap.shipcounter) < 0)
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
@@ -159,7 +159,7 @@ void Map_WarriorEnd_quest(string sChar)
     }
     else if(FindSubStr(sChar, "Brigadier0", 0) != -1)
     {
-        FireBrigadeRefresh(rChar, sti(rChar.Nation), 3 + rand(3));
+        FireBrigadeRefresh(rChar, int(rChar.Nation), 3 + rand(3));
     }
 }
 
@@ -169,8 +169,8 @@ void Map_TraderSucces()
 	{
 		return;
 	}
-	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;
-	if(sti(pchar.worldmap.shipcounter) < 0)
+	pchar.worldmap.shipcounter = int(pchar.worldmap.shipcounter) - 1;
+	if(int(pchar.worldmap.shipcounter) < 0)
 	{
 		pchar.worldmap.shipcounter = 0;
 	}
@@ -198,7 +198,7 @@ void Map_TraderSucces()
 	{
 		if(CheckAttribute(&characters[GetCharacterIndex(sChar)], "hovernor"))
 		{
-			if(sti(characters[GetCharacterIndex(sChar)].hovernor) == 1)
+			if(int(characters[GetCharacterIndex(sChar)].hovernor) == 1)
 			{
 				//  to_do MakeNewCapital(sChar);
 				return;
@@ -218,7 +218,7 @@ void Map_TraderSucces()
 	}
 	if(CheckAttribute(&characters[GetCharacterIndex(sChar)], "mapEnc.quest"))
 	{
-		int iQuest = sti(characters[GetCharacterIndex(sChar)].mapEnc.quest);
+		int iQuest = int(characters[GetCharacterIndex(sChar)].mapEnc.quest);
 		string sQuest = "sink_ship_character_" + sChar + "_wait_before_travel";
 		pchar.quest.(sQuest).win_condition.l1 = "timer";
 		pchar.quest.(sQuest).win_condition.l1.date.day = GetAddingDataDay(0, 0, 2);
@@ -347,6 +347,6 @@ void Map_TraderSucces_quest(string sChar)
     }
     else if (FindSubStr(sChar, "Brigadier0", 0) != -1)
     {
-        FireBrigadeRefresh(character, sti(character.nation), 5 + rand(4));
+        FireBrigadeRefresh(character, int(character.nation), 5 + rand(4));
     }
 }

@@ -1,48 +1,79 @@
 // DSL for localizations files
 
-#include "scripts\dialogDSL\core\utility.c"           // iternal helpers
-#include "scripts\dialogDSL\core\text_utility.c"      // lower/uper register
-#include "scripts\dialogDSL\core\simple_replace.c"    // replace $shortcut$
-#include "scripts\dialogDSL\core\functions_replace.c" // replace $func(args)
-#include "scripts\dialogDSL\defines.c"                // DSL-functions and shorcuts defines here
-#include "scripts\dialogDSL\helpers.c"                // helpers for localization stuff
 
 // Main function to use
-string DLGO(string input, ref context)
-{
-  DLG_EscapeAllChars(&input);             // escape all system chars like \( and \) to {{}}
-  DLG_ReplaceSimpleKeys(&input, context); // replace all the simple shortcuts like $shortcut
-  DLG_RunAllFunctions(&input, context);   // replace all the functions like $func(args)
-  DLG_ModifyAllRegister(&input);          // lower and Upper register by keys "^" and "_"
-  DLG_UnescapeAllChars(&input);           // return all system chars back from {{}} to ()
-  return "" + input;
-}
+//string DLGO(string input, ref context);
 
 // Universal translate function
-string DLG_Convert(string key, string filename, ref context = nullptr)
-{
-  string result;
-  object tempContext;
-  if (context != nullptr) CopyAttributes(&tempContext, context);
-  tempContext.filename = filename;
-  if (filename != "") result = GetConvertStr(key, filename);
-  else result = xiStr(key); // empty filename so we looking in common.ini
-
-  if (result == "" || result == " ") return "Key " + key + " in " + filename;
-  if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
-  return DLGO(result, &tempContext);
-}
+//string DLG_Convert(string key, string filename, ref context = nullptr);
 
 // Universal translate function with empty result
-string DLG_ConvertE(string key, string filename, ref context)
-{
-  string result;
-  object tempContext;
-  CopyAttributes(&tempContext, context);
-  tempContext.filename = filename;
-  if (filename != "") result = GetConvertStr(key, filename);
-  else result = xiStr(key); // empty filename so we looking in common.ini
+//string DLG_ConvertE(string key, string filename, ref context);
 
-  if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
-  return DLGO(result, &tempContext);
+
+// func("aXbXcX", "X", "Y", 0) → "aYbYcY"
+// func("aXbXcX", "X", "Y", 3) → "aXbYcY"
+//void DLG_ReplaceAllMatches(ref input, string key, string replace, int curPos);
+
+string DLG_ShipManWomanArgs(ref chr, string arg0, string arg1)
+{
+	int nShipType = GetCharacterShipType(&chr);
+	ref rBaseShip = GetRealShip(nShipType);
+	return GetShipSexWord(rBaseShip.BaseName, arg0, arg1);
+}
+
+string DLG_HumanModifierValue(string modifier, ref rObject)
+{
+	if (CheckAttribute(rObject, "modifiers." +modifier)) return rObject.modifiers.(modifier);
+
+	trace("Missing modifier " + modifier + " for object" + rObject.id);
+	return "Missing modifier";
+}
+
+string DLG_HumanModifierValuePercent(string modifier, ref rObject)
+{
+	return ToHumanPercent(float(DLG_HumanModifierValue(modifier, rObject)));
+}
+
+string DLG_NationGen(int iNation)
+{
+	return XI_ConvertString(GetNationNameByType(iNation) + "Gen");
+}
+
+string DLG_ColonyVoc(string sColony)
+{
+	return XiStr("Colony" + sColony + "Voc");
+}
+
+string DLG_GoodName(string input)
+{
+	return Goods[int(input)].name;
+}
+
+
+string DLG_PlayerNationAbl()
+{
+	return NationNameSK(GetBaseHeroNation());
+}
+
+string DLG_DeclensionString(int num, string form1, string form2, string form5 = "")
+{
+	return num + " " + DLG_DeclensionForm(num, form1, form2, form5);
+}
+
+string DLG_DeclensionForm(int num, string form1, string form2, string form5 = "")
+{
+	if (form5 == "") form5 = form2;
+
+	int remainder = num % 100;
+	if (remainder >= 11 && remainder <= 14) return form5;
+
+	switch (num % 10) {
+		case 1: return form1; break;
+		case 2: return form2; break;
+		case 3: return form2; break;
+		case 4: return form2; break;
+	}
+
+	return form5;
 }

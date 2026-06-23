@@ -19,7 +19,7 @@ void WhrCreateSkyEnvironment()
 	aref aSky;
 	makearef(aSky, aCurWeather.Sky);
 
-	DeleteAttribute(&Sky, "")
+	DeleteAttribute(&Sky, "");
 	if (!isEntity(&Sky))
 	{
 		CreateEntity(&Sky, "Sky");
@@ -38,7 +38,7 @@ void WhrCreateSkyEnvironment()
 // Warship 02.06.09 - апдейт параметров неба (например, скорость ротации в зависимости от силы ветра)
 void UpdateSky()
 {
-    if (!CheckAttribute(&InterfaceStates,"ROTATESKY") || sti(InterfaceStates.ROTATESKY) != 1)
+    if (!CheckAttribute(&InterfaceStates,"ROTATESKY") || int(InterfaceStates.ROTATESKY) != 1)
     {
         Sky.RotateSpeed = 0.0;
         return;
@@ -52,14 +52,14 @@ void UpdateSky()
 	if (timeScale <= 2.0) timeScale = 1.0;
 	else timeScale *= 0.5;
 
-	if (CheckAttribute(&Weather, "Wind.Speed")) windSpeed = stf(Weather.Wind.Speed);
+	if (CheckAttribute(&Weather, "Wind.Speed")) windSpeed = float(Weather.Wind.Speed);
 
     if (fTime >= 5.0 && fTime < 8.0)        Sky.RotateSpeed = 0.0;
     else if (fTime >= 18.0 && fTime < 21.0) Sky.RotateSpeed = 0.0;
     else Sky.RotateSpeed = windSpeed / 16000.0 / timeScale;
 }
 
-void FillSkyDir(aref aSky)
+void FillSkyDir(ref aSky)
 {
 	int 		i;
 	float		nStart, nDur;
@@ -75,8 +75,8 @@ void FillSkyDir(aref aSky)
 
 	if (CheckAttribute(&WeatherParams, "weather_sky"))		
 	{
-		sSubDir = "weather\skies" + sti(WeatherParams.weather_sky) + "\";	
-		sky		= sti(WeatherParams.weather_sky);
+		sSubDir = "weather\skies" + int(WeatherParams.weather_sky) + "\";
+		sky		= int(WeatherParams.weather_sky);
 	}
 	else
 	{
@@ -99,15 +99,15 @@ void FillSkyDir(aref aSky)
 	{
 		for (i = 0; i < MAX_WEATHERS; i++)
 		{
-			if (CheckAttribute(&Weathers[i], "Skip") && sti(Weathers[i].Skip) == true) continue;
+			if (CheckAttribute(&Weathers[i], "Skip") && int(Weathers[i].Skip) == true) continue;
 
-			satr = "d" + sti(Weathers[i].Hour.Min);
+			satr = "d" + int(Weathers[i].Hour.Min);
 
 			if (Whr_CheckStorm()) // если идёт шторм
 			{
-				if (sti(Weathers[i].Storm))
+				if (int(Weathers[i].Storm))
 				{
-					sDir = Whr_SetStormSkyData(stf(Weathers[i].Hour.Min), &fog, &sunAmb);
+					sDir = Whr_SetStormSkyData(float(Weathers[i].Hour.Min), &fog, &sunAmb);
 					Weathers[i].Fog.Color   = fog;
 					Weathers[i].Sun.Ambient = sunAmb;
 				}
@@ -115,23 +115,23 @@ void FillSkyDir(aref aSky)
 			}
 			else // если шторма нет, т.е. штатная погода
 			{
-				if (!sti(Weathers[i].Storm))
+				if (!int(Weathers[i].Storm))
 				{
 					sDir = sSubDir + Weathers[i].Sky.SubDir + "\\";
-					Whr_SetSkyFogData(sky, sti(Weathers[i].Hour.Min), &fog);
+					Whr_SetSkyFogData(sky, int(Weathers[i].Hour.Min), &fog);
 					Weathers[i].Fog.Color = fog;
 
-					if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && sti(WeatherParams.Rain.ThisDay))
+					if (CheckAttribute(&WeatherParams, "Rain.ThisDay") && int(WeatherParams.Rain.ThisDay))
 					{
-						nStart = stf(WeatherParams.Rain.StartTime);
-						nDur   = stf(WeatherParams.Rain.Duration)/60.0;
+						nStart = float(WeatherParams.Rain.StartTime);
+						nDur   = float(WeatherParams.Rain.Duration)/60.0;
 
-						if (sti(Weathers[i].Hour.Min) >= makeint(nStart - 1.0) && sti(Weathers[i].Hour.Max) <= makeint(nStart + nDur + 1.0))
+						if (int(Weathers[i].Hour.Min) >= int(nStart - 1.0) && int(Weathers[i].Hour.Max) <= int(nStart + nDur + 1.0))
 						{
-							sDir = Whr_SetRainSkyData(Weathers[i].Hour.Min, &fog, &sunAmb);
+							sDir = Whr_SetRainSkyData(Weathers[i].Hour.Min$float(0.0), &fog, &sunAmb);
 							Weathers[i].Fog.Color   = fog;
 							Weathers[i].Sun.Ambient = sunAmb;
-							Whr_DebugLog("RainDir : " + sDir + " hour :" + sti(Weathers[i].Hour.Min));	
+							Whr_DebugLog("RainDir : " + sDir + " hour :" + int(Weathers[i].Hour.Min));
 						}
 					}
 				}

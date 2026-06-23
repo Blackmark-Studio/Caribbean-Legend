@@ -29,7 +29,7 @@ void Perk_PowderFeel(ref item, ref resultQuantity)
 {
 	if (!HasPerk(pchar, "PowderFeel")) return;
 	if (item.groupID != AMMO_ITEM_TYPE) return;
-	resultQuantity = makeint(resultQuantity * (1 + PERK_VALUE_POWDER_FEEL));
+	resultQuantity = int(resultQuantity * (1 + PERK_VALUE_POWDER_FEEL));
 }
 
 void Perk_Sniper(ref attacker, ref enemy, string sBullet, int nShots)
@@ -40,7 +40,7 @@ void Perk_Sniper(ref attacker, ref enemy, string sBullet, int nShots)
 	if (IsBulletGrape(sBullet)) value = (rand(1) + 1) * nShots;
 	else value = rand(20) + 20;
 
-	Lai_CharacterChangeEnergy(enemy, -value)
+	Lai_CharacterChangeEnergy(enemy, -value);
 }
 
 bool Perk_Sliding(ref attacker)
@@ -79,12 +79,12 @@ void Perk_Master(ref item, int qty)
 	
 	if(!CheckAttribute(pchar, "achievment.Perk_Master"))
 		pchar.achievment.Perk_Master = 0;
-	pchar.achievment.Perk_Master = sti(pchar.achievment.Perk_Master) + qty;
-	if(sti(pchar.achievment.Perk_Master) >= 100) Achievment_Set("ach_CL_182");
+	pchar.achievment.Perk_Master = int(pchar.achievment.Perk_Master) + qty;
+	if(int(pchar.achievment.Perk_Master) >= 100) Achievment_Set("ach_CL_182");
 	
     // belamour на случай стата в стиме
 	/* int statSteam = GetStat("stat_CL_175");
-	int statProfile = sti(pchar.achievment.Perk_Master) + qty;
+	int statProfile = int(pchar.achievment.Perk_Master) + qty;
 	if(statProfile > statSteam)
 	{
 		Achievment_SetStat(175, statProfile - statSteam);

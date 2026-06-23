@@ -90,7 +90,7 @@ void FillStars(ref aStars)
     if(!IsEntity(&Astronomy)) return;
 
     Astronomy.Stars.Enable = Whr_GetLong(aStars, "Enable");
-	if (sti(Astronomy.Stars.Enable))
+	if (int(Astronomy.Stars.Enable))
 	{
 		Astronomy.Stars.Catalog = "resource\\hic.dat";
 		Astronomy.Stars.Texture = Whr_GetString(aStars, "Texture");
@@ -123,7 +123,7 @@ void FillStars(ref aStars)
 void FillAstronomyFadeValue()
 {
 	Astronomy.Planets.Enable = Whr_GetLong(&Weathers[iCurWeatherNum],"Planets.Enable");
-	if (sti(Astronomy.Planets.Enable))
+	if (int(Astronomy.Planets.Enable))
 	{
 		Astronomy.Planets.Scale = 1.0;
 		Astronomy.Planets.Speed = 10.0;
@@ -135,7 +135,7 @@ void FillAstronomyFadeValue()
 		} 
 		else 
 		{
-			Astronomy.Planets.FadeStartTime = makefloat(sti(Environment.Time)) + 0.2;
+			Astronomy.Planets.FadeStartTime = float(int(Environment.Time)) + 0.2;
 		}
 		Astronomy.Planets.FadeTime = -0.2;
 	} 
@@ -147,7 +147,7 @@ void FillAstronomyFadeValue()
 		Astronomy.Planets.FadeValue = 0.0;
 		if( iBlendWeatherNum >= 0 && Whr_GetLong(&Weathers[iBlendWeatherNum],"Planets.Enable") ) 
 		{
-			Astronomy.Planets.FadeStartTime = makefloat(sti(Environment.Time)) + 0.6;
+			Astronomy.Planets.FadeStartTime = float(int(Environment.Time)) + 0.6;
 		} 
 		else 
 		{
@@ -157,7 +157,7 @@ void FillAstronomyFadeValue()
 	}
 
 	Astronomy.Stars.Enable = Whr_GetLong(&Weathers[iCurWeatherNum], "Stars.Enable");
-	if (sti(Astronomy.Stars.Enable))
+	if (int(Astronomy.Stars.Enable))
 	{
 		Astronomy.Stars.Radius = Whr_GetFloat(&Weathers[iCurWeatherNum], "Stars.Radius");
 		Astronomy.Stars.HeightFade = Whr_GetFloat(&Weathers[iCurWeatherNum], "Stars.HeightFade");
@@ -169,7 +169,7 @@ void FillAstronomyFadeValue()
 		} 
 		else 
 		{
-			Astronomy.Stars.FadeStartTime = makefloat(sti(Environment.Time)) + 0.2;
+			Astronomy.Stars.FadeStartTime = float(int(Environment.Time)) + 0.2;
 		}
 		Astronomy.Stars.FadeTime = -0.2;
 	}
@@ -178,7 +178,7 @@ void FillAstronomyFadeValue()
 		Astronomy.Stars.FadeValue = 0.0;
 		if( iBlendWeatherNum >= 0 && Whr_GetLong(&Weathers[iBlendWeatherNum],"Stars.Enable") ) 
 		{
-			Astronomy.Stars.FadeStartTime = makefloat(sti(Environment.Time)) + 0.6;
+			Astronomy.Stars.FadeStartTime = float(int(Environment.Time)) + 0.6;
 		} 
 		else 
 		{

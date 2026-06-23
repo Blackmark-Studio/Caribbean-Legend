@@ -130,84 +130,84 @@ void shipsReInit()
 	{
         if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-        if(sti(RealShips[i].BaseType) == SHIP_PINK) // пинк "Принципио"
+        if(int(RealShips[i].BaseType) == SHIP_PINK) // пинк "Принципио"
         {
             RealShips[i].SpeedRate = 10.35;
         }
 
         if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
             
-        if(sti(RealShips[i].BaseType) == SHIP_LADYBETH) // патрульная шнява "Леди Бет"
+        if(int(RealShips[i].BaseType) == SHIP_LADYBETH) // патрульная шнява "Леди Бет"
         {
             RealShips[i].SpeedRate = 11.60;
         }
 
         if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
             
-        if(sti(RealShips[i].BaseType) == SHIP_MEMENTO) // "Мементо"
+        if(int(RealShips[i].BaseType) == SHIP_MEMENTO) // "Мементо"
         {
             RealShips[i].SpeedRate = 11.90;
         }
             
-        if(sti(RealShips[i].BaseType) == SHIP_MAYFANG) // лёг. шебека "Мейфенг"
+        if(int(RealShips[i].BaseType) == SHIP_MAYFANG) // лёг. шебека "Мейфенг"
         {
             RealShips[i].SpeedRate = 10.90;
         }
             
-        if(sti(RealShips[i].BaseType) == SHIP_MIRAGE) // прив. кеч "Мираж"
+        if(int(RealShips[i].BaseType) == SHIP_MIRAGE) // прив. кеч "Мираж"
         {
             RealShips[i].SpeedRate = 10.65;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_VALCIRIA) // патр. бриг "Валькирия"
+        if(int(RealShips[i].BaseType) == SHIP_VALCIRIA) // патр. бриг "Валькирия"
         {
             RealShips[i].SpeedRate = 13.50;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_HIMERA) // воен. кеч "Химера"
+        if(int(RealShips[i].BaseType) == SHIP_HIMERA) // воен. кеч "Химера"
         {
             RealShips[i].SpeedRate = 10.85;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_POLACRE_QUEST) // тяж. полакр "Тореро" //ку
+        if(int(RealShips[i].BaseType) == SHIP_POLACRE_QUEST) // тяж. полакр "Тореро" //ку
         {
             RealShips[i].SpeedRate = 11.55;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_GALEON_SM) // королевский галеон "Святое Милосердие"
+        if(int(RealShips[i].BaseType) == SHIP_GALEON_SM) // королевский галеон "Святое Милосердие"
         {
             RealShips[i].SpeedRate = 10.65;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_ELCASADOR) // исп. галеон "Эль Касадор"
+        if(int(RealShips[i].BaseType) == SHIP_ELCASADOR) // исп. галеон "Эль Касадор"
         {
             RealShips[i].SpeedRate = 10.75;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_CORVETTE_QUEST) // тяжёлый корвет "Гриффондор"
+        if(int(RealShips[i].BaseType) == SHIP_CORVETTE_QUEST) // тяжёлый корвет "Гриффондор"
         {
             RealShips[i].SpeedRate = 13.75;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_FRIGATE_L) // быстрый фрегат "Фортуна"
+        if(int(RealShips[i].BaseType) == SHIP_FRIGATE_L) // быстрый фрегат "Фортуна"
         {
             RealShips[i].SpeedRate = 14.15;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_CURSED_FDM) // линейный галеон "Летящее сердце" (Калючка 1)
+        if(int(RealShips[i].BaseType) == SHIP_CURSED_FDM) // линейный галеон "Летящее сердце" (Калючка 1)
         {
             RealShips[i].SpeedRate = 11.00;
         }
-        if(sti(RealShips[i].BaseType) == SHIP_FDM) // "Летящее сердце" (Калючка 2)
+        if(int(RealShips[i].BaseType) == SHIP_FDM) // "Летящее сердце" (Калючка 2)
         {
             RealShips[i].SpeedRate = 11.00;
         }
-        if(sti(RealShips[i].BaseType) == SHIP_RENOVATED_FDM) // "Летящее сердце" (Калючка 3)
+        if(int(RealShips[i].BaseType) == SHIP_RENOVATED_FDM) // "Летящее сердце" (Калючка 3)
         {
             RealShips[i].SpeedRate = 11.00;
         }
 
-        if(sti(RealShips[i].BaseType) == SHIP_ECLIATON) // фр. линейный кор. "Эклятон"
+        if(int(RealShips[i].BaseType) == SHIP_ECLIATON) // фр. линейный кор. "Эклятон"
         {
             RealShips[i].SpeedRate = 10.00;
         }

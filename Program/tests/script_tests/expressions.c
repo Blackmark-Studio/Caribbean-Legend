@@ -7,13 +7,13 @@
 // If possible, add the syntax highlighting (to basic C syntax):
 // INSTRUCTION WORD: call new in is typeid exec
 // TYPE WORD: string native ref aref object
-// LITERALS: true false nullptr nullaref
+// LITERALS: true false nullptr
 // OPERATOR: @
 // STRING: ``
 
 // Note: while there is no optimization in the engine for transferring arrays, objects (not just an attribute reference, but a real object) and strings, it is advisable to transfer them by reference (with & or by ref-variable) to the appropriate operators (@, in, is, typeid, explicit casts).
 // Otherwise, a full copy of the variable will be created (and then deleted!) on the stack.
-// When the optimization appears, this note and tests will be fixed (@& -> @ and etc).
+// When the optimization appears, this note and tests will be fixed (@ -> @ and etc).
 
 // Macros can now be used in initializing global arrays
 #define __TEST_MACRO 100
@@ -22,44 +22,44 @@ int __tstarr2[2] = {__TEST_MACRO, __TEST_MACRO};
 
 void test__array()
 {
-    // Use @& instead GetArraySize
-    assert(@&__tstarr == GetArraySize(&__tstarr));
-    assert((@&__tstarr == 3) && (@&__tstarr2 == 2));
+    // Use @ instead GetArraySize
+    assert(@__tstarr == GetArraySize(&__tstarr));
+    assert((@__tstarr == 3) && (@__tstarr2 == 2));
 
     // Assigning any arrays via {}
-    string arr1[] = {"a", "bb", "ccc"}; // @&arr1 == 3
+    string arr1[] = {"a", "bb", "ccc"}; // @arr1 == 3
     string arr2[3] = {"a", "bb", "ccc", };
 
     arr1 = {"a", "b"};
-    assert(@&arr1 == 2);
+    assert(@arr1 == 2);
     SetArraySize(&arr1, 0);
-    assert(@&arr1 == 0);
+    assert(@arr1 == 0);
 
     // Forget SetArraySize (via @)
     @arr1 = 4;
-    assert(@&arr1 == 4);
+    assert(@arr1 == 4);
     @arr1++;
     @arr1 += 5;
-    assert(@&arr1 == 10);
+    assert(@arr1 == 10);
     @arr1--;
-    assert(@&arr1 == 9);
+    assert(@arr1 == 9);
     @arr1 -= 9;
-    assert(@&arr1 == 0);
+    assert(@arr1 == 0);
     // TO_DO: * *=
 
     // Concatenating variables
     string arr3[];
-    assert((@&arr3 == 0) && !@&arr3);
+    assert((@arr3 == 0) && !@arr3);
     arr3 += "sss";
-    assert(@&arr3 == 1);
+    assert(@arr3 == 1);
     assert(arr3[0] == "sss");
 
     // Concatenating array expression
     arr3 += {"sa", "fds"};
-    assert(@&arr3 == 3);
+    assert(@arr3 == 3);
     assert((arr3[1] == "sa") && (arr3[2] == "fds"));
     arr3 += {"sf", };
-    assert((arr3[3] == "sf") && (@&arr3 == 4));
+    assert((arr3[3] == "sf") && (@arr3 == 4));
 
     // Comparing arrays
     assert(arr3 != arr1);
@@ -81,7 +81,7 @@ void test__array()
 }
 bool __CheckFive(ref arr)
 {
-    for (int i = 0; i < @&arr; i++){if (arr[i] == 5) return true;}
+    for (int i = 0; i < @arr; i++){if (arr[i] == 5) return true;}
     return false;
 }
 
@@ -117,7 +117,7 @@ bool test__ternar()
 {
     // Ternary operator
     assert(__TrFu() ? (false ? true ? false : false : true) : (rand(1) ? true: true));
-    bool bTmp = 1 ? 1 : 0, bM[] = false ? {} : {false ? 0 : 1, true ? false ? 0 : 1 : 0};
+    bool bTmp = 1 ? 1 : 0, bM[] = false ? {} : {false ? false : true, true ? false ? false : true : false};
     assert(bTmp);
     assert(bM[0] == 1 && bM[1] == true);
     if (__TrFu() ? __TrFu() ? false ? false : true : true : __TrFu() ? 0 : 0)
@@ -152,7 +152,7 @@ void test__case_default_size_operator()
 
     int i, cnt = 0;
     int iArray[] = {1, -1, 2, 3, 5, -100};
-    for(i = 0; i < @&iArray; i++)
+    for(i = 0; i < @iArray; i++)
     {
         cnt++;
         switch (iArray[i])
@@ -168,11 +168,12 @@ void test__case_default_size_operator()
         // Bad example 1 (so far)
         switch (iArray[i])
         {
-            default:
-                assert(1); // It will be for everyone (so far), don't write like that
-                break;
+			default:
+                if (iArray[i] == 5 || iArray[i] == -100) assert(0);
+                else assert(1);
+                break; // so far, a break is required, just like with regular cases in this scripts
             case 4: assert(0); break;
-            case 5: assert(0); break;
+            case 5: assert(1); break;
             case -100: assert(1); break;
         }
         // Bad example 2 (so far)
@@ -180,33 +181,33 @@ void test__case_default_size_operator()
         {
             case 4: assert(0); break;
             case 5: assert(1); break;
-            default:
-                if (iArray[i] == 5) assert(0);
+			default:
+                if (iArray[i] == 5 || iArray[i] == -100) assert(0);
                 else assert(1);
-                break;
-            case -100: assert(0); break; // It won't work (so far) because of the default above
+                break; // so far, a break is required, just like with regular cases in this scripts
+            case -100: assert(1); break;
         }
     }
     assert(cnt == 6);
-    assert(cnt == @&iArray);
+    assert(cnt == @iArray);
 
     // Array sizes testing
     // Forget GetArraySize
     int biba[] = {3, 2}, boba[], booba[4];
-    assert(@&biba == 2 && @&boba == 0 && !@&boba && @&booba == 4);
+    assert(@biba == 2 && @boba == 0 && !@boba && @booba == 4);
     biba = &boba;
     booba = {0, };
-    assert(@&biba == 0 && @&booba == 1);
+    assert(@biba == 0 && @booba == 1);
     booba += 1;
     booba += {3, 2} + {4, 5};
-    assert(@&booba == 6);
+    assert(@booba == 6);
     int boobs;
     assert(@boobs == 0 && !@boobs); // scalar (and not attribute)
     cnt = 0;
-    for(i = 0; i < @&booba; i++)
+    for(i = 0; i < @booba; i++)
     {
         cnt++;
-        booba = {3, 2, __TrFu()};
+        booba = {3, 2, int(__TrFu())};
     }
     assert(cnt == 3); // because booba changed size
     assert(@{} == 0);
@@ -217,11 +218,11 @@ void test__case_default_size_operator()
     object bob;
     bob.attr1 = "";
     bob.attr2 = "";
-    assert(@&bob == 2);
+    assert(@bob == 2);
     DeleteAttribute(&bob, "attr1");
-    assert(@&bob == 1);
+    assert(@bob == 1);
     DeleteAttribute(&bob, "");
-    assert(@&bob == 0);
+    assert(@bob == 0);
     bob.attr1.attr1 = "";
     bob.attr1.attr2 = "";
     bob.attr1.attr3 = "";
@@ -238,13 +239,13 @@ void test__case_default_size_operator()
     bob.attr5 = "";
     bob.attr6 = "";
     cnt = 0;
-    for(i = 0; i < @&bob; i++)
+    for(i = 0; i < @bob; i++)
     {
         cnt++;
         DeleteAttribute(&bob, "attr" + (6 - i));
     }
     assert(cnt == 3); // because bob changed size
-    assert(cnt == @&bob);
+    assert(cnt == @bob);
     int aa[4], bb[5];
     assert(@(true ? &aa : &bb) == 4);
     ref ra = &aa, rb = &bb;
@@ -259,6 +260,7 @@ void test__is_in_nullptr()
 
     object biba, bulba;
     biba.attr = "";
+
     assert(CheckAttribute(&biba, "attr") == ("attr" in &biba));
     assert(!CheckAttribute(&biba, "attr") == ("attr" !in &biba));
     assert("attr" in &biba);
@@ -281,7 +283,7 @@ void test__is_in_nullptr()
 
     // Type checking
     bool bbiba;
-    assert(bbiba is int); // The bool-cake is a lie (so far)
+    assert(bbiba is bool); // The bool-cake is a lie (so far)
     int ibiba, iboba[];
     assert(ibiba is int);
     assert(ibiba !is int[]);
@@ -347,7 +349,7 @@ void test__bits()
     // There will be no UB from shifts by an amount greater than sizeof(int) * CHAR_BIT.
     // Priority for operators as in C.
 
-    bool bTmp;
+    int bTmp;
     int a, b, BitMask;
 
     // BLOCK I: Stupid tests:
@@ -362,11 +364,11 @@ void test__bits()
     BitMask = 0;         // 00000000 00000000 00000000 00000000
     BitMask = ~BitMask;  // 11111111 11111111 11111111 11111111
     assert(BitMask == -1);
-    // Shifts > 31 testing temporary disabled (TO_DO)
-    // BitMask >>= 32;   // 00000000 00000000 00000000 00000000
-    // assert(BitMask == 0);
+    // Shifts > 63 testing temporary disabled (TO_DO)
+    BitMask >>= 64;      // 00000000 00000000 00000000 00000000
+    assert(BitMask == 0);
     BitMask = 1;         // 00000000 00000000 00000000 00000001
-    BitMask <<= 31;      // 10000000 00000000 00000000 00000000
+    BitMask <<= 63;      // 10000000 00000000 00000000 00000000
     assert(BitMask == INT_MIN);
     BitMask <<= 1;
     assert(!BitMask);
@@ -376,12 +378,13 @@ void test__bits()
     assert(BitMask == (BIT_8 | BIT_2));
     BitMask &= LBITS_3;  // 00000000 00000000 00000000 00000010
     assert(BitMask == BIT_2);
-    BitMask <<= 31;
+    BitMask <<= 63;
     assert(!BitMask);
 
     // BLOCK II: Чуть менее stupid tests:
     // Первое упражнение из Шеня
-    a = 228, b = -322;
+    a = 228;
+	b = -322;
     a ^= b;
     b ^= a;
     a ^= b;
@@ -402,11 +405,11 @@ void test__bits()
 
     // Compute the integer absolute value without branching
     a = -322;
-    BitMask = -(a >> 31);
+    BitMask = -(a >> 63);
     b = (a ^ BitMask) - BitMask;
     assert(b == 322);
     a = INT_MAX;
-    BitMask = -(a >> 31);
+    BitMask = -(a >> 63);
     b = (a ^ BitMask) - BitMask;
     assert(b == INT_MAX);
 
@@ -417,7 +420,7 @@ void test__bits()
 
     // Determine if a word has a zero byte
     b = 2519349767; // 10010110 00101010 00111010 00000111
-    bTmp = ~((((b & 2139062143) + 2139062143) | b) | 2139062143); // 2139062143 == 0x7F7F7F7F
+	bTmp = (~((((b & 2139062143) + 2139062143) | b) | 2139062143)) & (-1 >> 32); // 2139062143 == 0x7F7F7F7F
     assert(!bTmp);
     b = 2519334913; // 10010110 00101010 00000000 00000001
     bTmp = ~((((b & 2139062143) + 2139062143) | b) | 2139062143);
@@ -432,30 +435,32 @@ void test__bits()
     b *= 31;        // 11101001 00110011 00011101 00111100
     // b >> 11 is      00000000 00011101 00100110 01100011
     b ^= b >> 11;   // 11101001 00101110 00111011 01011111
-    assert(b == -382846113, "hash test failed!");
+    assert(b == 38255082335, "hash test failed!");
 
     // Reverse bits
-    b = 355427305; // 00010101 00101111 01100011 11101001
-    a = 16, BitMask = -1;
-    while (a)
-    {
-      BitMask ^= (BitMask << a);
-      b = ((b >> a) & BitMask) | ((b << a) & ~BitMask);
-      a >>= 1;
-    }
-    assert(b == 2546398376); // 10010111 11000110 11110100 10101000
+	// Reverse bits
+	b = 355427305; // 00000000 00000000 00000000 00000000 00010101 00101111 01100011 11101001
+	a = 32;
+	BitMask = -1;
+	while (a)
+	{
+		BitMask ^= (BitMask << a);
+		b = ((b >> a) & BitMask) | ((b << a) & ~BitMask);
+		a >>= 1;
+	}
+	assert(b == -7510046326202040320); // 10010111 11000110 11110100 10101000 00000000 00000000 00000000 00000000
 
     // BLOCK III: Bacchanalia test
     int tst = 10;
     assert(~~tst == tst);
     assert(!!~~tst == 1);
-    tst = ~!@&tst;
+    tst = ~!@tst;
     assert(tst == -2);
     tst = !~&tst;
     assert(tst == 0);
     tst = 1234567890987654321;
     tst = ~((tst >> 11) ^ (tst << (!@tst ? 4 : 6)) | 32578 + (6457 * tst ^^ 2)); // ^^ is pow
-    assert(tst == 673189924);
+    assert(tst == -9199639678823690204);
 }
 
 void test__arithmetic_edits()
@@ -528,7 +533,7 @@ void test__tensors_operator_new()
     // Operator new returns ref with type[]
     __sa1 = new string[0]; // If the value returned by the operator new is not accepted as a reference, then dereference and copying will occur, which is correct, but by accepting copying as a reference, you can avoid it
     assert(__sa1 is string[]);
-    assert(@&__sa1 == 0);
+    assert(@__sa1 == 0);
     SetArraySize(&__sa1, 3);
     __sa1[0] = "b";
     assert(__sa1[0] is string);
@@ -614,13 +619,14 @@ void test__exec()
 
     int local_biba = 0;
     // exec executes code in a global context, not the current scope
-    // exec("local_biba = 5"); // Fail
-    exec("__global_biba = 5"); // Good
+    // exec("local_biba = 5;"); // Fail
+    exec("__global_biba = 5;"); // Good
     assert(__global_biba == 5);
     int i = 5;
-    i = exec("__global_biba = (12 + 15)"); // Returns 0 if there is no retern inside
-    assert(__global_biba == 27 && i == 0);
-    string code = "return 12;";
+    exec("__global_biba = (12 + 15);");
+	exec("i = 21;");
+    assert(__global_biba == 27 && i == 21);
+    string code = "12;";
     i = exec(code);
     assert(i == 12);
 
@@ -634,7 +640,7 @@ void test__exec()
     exec(__gcode);
     assert(__gcnt1 == 10);
 
-    __gob99.code = `__gob99.code.cnt = sti(__gob99.code.cnt) + 1;
+    __gob99.code = `__gob99.code.cnt = int(__gob99.code.cnt) + 1;
                     if (__gob99.code.cnt != "10")
                   //{
                         exec(__gob99.code);
@@ -661,7 +667,7 @@ void __tstfunc1(ref str, string boba = "go:", ...)
         if (rArg is int) boobs += string(rArg);
         else boobs += "oops " + i;
     }
-    for (i = 0; i < @&boobs; i++) str += boobs[i];
+    for (i = 0; i < @boobs; i++) str += boobs[i];
 }
 
 #define __TST_MACRO_1 ""
@@ -669,7 +675,7 @@ void __tstfunc1(ref str, string boba = "go:", ...)
 #define __TST_MACRO_3 1.0
 void test__typeid()
 {
-    bool   b, ba[]; assert(typeid(b) == typeid(int));    assert(typeid(&ba) == typeid(int[]));
+    bool   b, ba[]; assert(typeid(b) == typeid(bool));    assert(typeid(&ba) == typeid(bool[]));
     int    i, ia[]; assert(typeid(i) == typeid(int));    assert(typeid(&ia) == typeid(int[]));
     float  f, fa[]; assert(typeid(f) == typeid(float));  assert(typeid(&fa) == typeid(float[]));
     string s, sa[]; assert(typeid(s) == typeid(string)); assert(typeid(&sa) == typeid(string[]));
@@ -698,7 +704,7 @@ void test__typeid()
 
 void test__explicit_cast()
 {
-    // Forget: its, sti, stf, makeint, makefloat, etc
+    // Forget: its, int, float, int, float, etc
     // fts makes sense, as it allows you to specify the number of characters
 
     float f = -11.9999;
@@ -741,11 +747,8 @@ void test__additions()
     assert(tensor[0][1][2] == 9);
 
     aref attr;
-    assert(attr is nullaref);
-    assert(attr is nullptr); // Both!
-    assert(nullaref is nullaref);
-    assert(nullaref is nullptr);
-    assert(nullptr !is nullaref);
+    assert(attr !is nullptr); // Both!
+    assert(aref(nullptr) !is nullptr);
 
 //  ref r = attr; // Так нельзя, должна быть именно ссылка
     ref r = &attr;
@@ -753,9 +756,12 @@ void test__additions()
     r = nullptr; // r became nullptr, but not aref, which she referred to
     assert(attr !is nullptr);
     r = &ar;
-    r = nullaref; // ar became nullaref
-    assert(ar is nullptr);
-    assert(ar is nullaref);
+    r = aref(nullptr);
+    assert(ar !is nullptr);
+	ref r2 = &ar;
+	assert(r2 !is nullptr);
+	assert(r2 != nullptr);
+	assert(r2 == aref(nullptr));
 
     // The operator ! applied to float now works correctly
     assert(0.99);
@@ -765,7 +771,7 @@ void test__additions()
     // Array clearing QoL
     int biba[] = {1,2,3,4,5,6,7};
     biba = {};
-    assert(@&biba == 0);
+    assert(@biba == 0);
 
     assert(typeid(__returnzero()) == typeid(float));
 

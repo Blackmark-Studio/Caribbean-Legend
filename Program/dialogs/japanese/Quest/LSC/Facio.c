@@ -162,7 +162,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			switch (sti(npchar.quest.poisonnode))
+			switch (int(npchar.quest.poisonnode))
 			{
 				case 1: // у себя
 					dialog.text = "あぁ？火事でも起きたみたいに俺のところに飛び込んで来て、何様のつもりだ？？";
@@ -297,14 +297,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			npchar.quest.price = sti(pchar.GenQuest.NarvalConflict)*50;
-			if (sti(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "まあ、争いってほどじゃなくて、ちょっとした誤解さ、へへ。 "+sti(npchar.quest.price)+"  ドゥブロン金貨があれば、お前の問題なんざ一日で解決するぜ。";
+			npchar.quest.price = int(pchar.GenQuest.NarvalConflict)*50;
+			if (int(pchar.GenQuest.NarvalConflict) < 3) dialog.text = "まあ、争いってほどじゃなくて、ちょっとした誤解さ、へへ。 "+int(npchar.quest.price)+"  ドゥブロン金貨があれば、お前の問題なんざ一日で解決するぜ。";
 			else
 			{
-				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "ああ、その話は聞いたよ。あんた、ずいぶん騒ぎを起こしたじゃねえか、旦那。だが、抜け道はあるぜ。 "+sti(npchar.quest.price)+" ドブロン金貨を出せば、お前の問題は一日で解決するぜ。";
-				else dialog.text = "お前がやった虐殺のことは島中に知れ渡ってるぜ。助けるのは簡単じゃねえが、可能性はある。 "+sti(npchar.quest.price)+" ドゥブロン金貨をくれれば、お前の問題を解決してやるぜ。";
+				if (int(pchar.GenQuest.NarvalConflict) >= 3 && int(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "ああ、その話は聞いたよ。あんた、ずいぶん騒ぎを起こしたじゃねえか、旦那。だが、抜け道はあるぜ。 "+int(npchar.quest.price)+" ドブロン金貨を出せば、お前の問題は一日で解決するぜ。";
+				else dialog.text = "お前がやった虐殺のことは島中に知れ渡ってるぜ。助けるのは簡単じゃねえが、可能性はある。 "+int(npchar.quest.price)+" ドゥブロン金貨をくれれば、お前の問題を解決してやるぜ。";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "ほら、これが金貨だ。自分で何とかしろ。";
 				link.l1.go = "pay";
@@ -314,14 +314,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			npchar.quest.price = sti(pchar.GenQuest.RivadosConflict)*50;
-			if (sti(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "まあ、争いってほどじゃねえさ、ちょっとした行き違いだよ、へへ。 "+sti(npchar.quest.price)+"  ドゥブロンを出せば、お前の問題は一日で解決するぜ。";
+			npchar.quest.price = int(pchar.GenQuest.RivadosConflict)*50;
+			if (int(pchar.GenQuest.RivadosConflict) < 3) dialog.text = "まあ、争いってほどじゃねえさ、ちょっとした行き違いだよ、へへ。 "+int(npchar.quest.price)+"  ドゥブロンを出せば、お前の問題は一日で解決するぜ。";
 			else
 			{
-				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "ああ、それについては聞いたことがあるよ。ずいぶん派手にやらかしたな、あんた。でも抜け道はあるんだ。 "+sti(npchar.quest.price)+"  ドブロン金貨を出せば、お前の問題は一日で解決するぜ。";
-				else dialog.text = "お前がやった虐殺のことは島中に知れ渡っている。助けるのは簡単じゃねえが、可能性はあるぜ。 "+sti(npchar.quest.price)+" ドゥブロン金貨をくれれば、お前の問題を解決してやるぜ。";
+				if (int(pchar.GenQuest.RivadosConflict) >= 3 && int(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "ああ、それについては聞いたことがあるよ。ずいぶん派手にやらかしたな、あんた。でも抜け道はあるんだ。 "+int(npchar.quest.price)+"  ドブロン金貨を出せば、お前の問題は一日で解決するぜ。";
+				else dialog.text = "お前がやった虐殺のことは島中に知れ渡っている。助けるのは簡単じゃねえが、可能性はあるぜ。 "+int(npchar.quest.price)+" ドゥブロン金貨をくれれば、お前の問題を解決してやるぜ。";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "ほら、これが金貨だ。自分で何とかしろ。";
 				link.l1.go = "pay";
@@ -331,14 +331,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			npchar.quest.price = sti(pchar.GenQuest.SharkConflict)*50;
-			if (sti(pchar.GenQuest.SharkConflict) < 3) dialog.text = "まあ、争いってほどじゃなくて、ちょっとした誤解さ、へへ。 "+sti(npchar.quest.price)+" ドゥブロン金貨を出せば、お前の問題は一日で解決するぜ。";
+			npchar.quest.price = int(pchar.GenQuest.SharkConflict)*50;
+			if (int(pchar.GenQuest.SharkConflict) < 3) dialog.text = "まあ、争いってほどじゃなくて、ちょっとした誤解さ、へへ。 "+int(npchar.quest.price)+" ドゥブロン金貨を出せば、お前の問題は一日で解決するぜ。";
 			else
 			{
-				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "ああ、それについては聞いたことがあるよ。ずいぶんと騒ぎを起こしたね、君。だが、抜け道はあるんだ。 "+sti(npchar.quest.price)+" ドブロン金貨があれば、お前の問題なんざ一日で解決するぜ。";
-				else dialog.text = "お前がやった虐殺のことは島中に知れ渡ってる。手を貸すのは簡単じゃねえが、可能性はあるぜ。 "+sti(npchar.quest.price)+" ドブロン金貨をくれれば、お前の問題を解決してやるぜ。";
+				if (int(pchar.GenQuest.SharkConflict) >= 3 && int(pchar.GenQuest.SharkConflict) < 10) dialog.text = "ああ、それについては聞いたことがあるよ。ずいぶんと騒ぎを起こしたね、君。だが、抜け道はあるんだ。 "+int(npchar.quest.price)+" ドブロン金貨があれば、お前の問題なんざ一日で解決するぜ。";
+				else dialog.text = "お前がやった虐殺のことは島中に知れ渡ってる。手を貸すのは簡単じゃねえが、可能性はあるぜ。 "+int(npchar.quest.price)+" ドブロン金貨をくれれば、お前の問題を解決してやるぜ。";
 			}
-			if (PCharDublonsTotal() >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= int(npchar.quest.price))
 			{
 				link.l1 = "ほら、これが金貨だ。自分で何とかしろ。";
 				link.l1.go = "pay";
@@ -348,9 +348,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(int(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
-			Log_Info("You have given "+sti(npchar.quest.price)+" doubloons");
+			Log_Info("You have given "+int(npchar.quest.price)+" doubloons");
 			dialog.text = "素晴らしい。さあ、席について休んでくれ。私が君の問題を解決するまで、私の船室にいた方がいい。 これ以上事態を悪化させてほしくないんだよ、坊や。";
 			link.l1 = "……わかった……";
 			link.l1.go = "peace";

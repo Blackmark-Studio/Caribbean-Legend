@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Aeva_attack_2";
 			CharacterTurnByChr(npchar, pchar);
 		break;
-		
+
 		case "Aeva_attack_2":
 			dialog.text = "Ha-ha, Köpekbalığı muhtemelen çoktan ölmüştür! Ve sen de yakında ona katılacaksın, casus!";
 			link.l1 = "...";
@@ -194,12 +194,6 @@ void ProcessDialogEvent()
 			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 			LAi_group_SetCheck("EnemyFight", "LSC_CapperDieAeva");
 			AddDialogExitQuest("MainHeroFightModeOn");	
-		break;
-		
-		case "Aeva_attack_2":
-			dialog.text = "... this is going to be a hell of a drink. Shark's been dreaming of this whiskey so long, he'll down it in a single draught. Where's the arsenic? We'll use two bottles, just to be sure... then our friend Fazio can deliver this barrel to the Admiral as a present from tje Narwhals, ha-ha!\nAm I right, dear Giuseppe? Chin up, lad; you do this right, and you've got nothing to worry abou-- Ah! We have company, boys! What do you want, jackass? This is a private get-together.";
-			link.l1 = "Planın işe yaramadı, Kapper. Senin ve arkadaşın Marcello'nun ne yapacağını biliyorum. At şu arseniği! Köpekbalığını zehirleyemezsin!";
-			link.l1.go = "Aeva_attack_3";
 		break;
 		
 		case "Aeva_attack_3":

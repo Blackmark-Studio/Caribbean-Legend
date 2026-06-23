@@ -85,7 +85,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "terrapin_3":
-			if (stf(environment.time) < 20.0 && stf(environment.time) > 8.0)
+			if (float(environment.time) < 20.0 && float(environment.time) > 8.0)
 			{
 				dialog.text = "Nein. Er sagte, er wäre erst um acht Uhr abends heute zurück. Sie könnten versuchen, ihn zu Hause in seiner Villa zu suchen, aber ich glaube nicht, dass Sie ihn dort finden werden. Ich sah ihn auf einer Patrouillen-Lugger auf See segeln.";
 				link.l1 = "Danke! Ich werde später vorbeischauen, um ihn zu sehen.";

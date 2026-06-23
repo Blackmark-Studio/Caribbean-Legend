@@ -49,7 +49,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
+				if (ok && int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0 && 7-int(RealShips[int(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
 					dialog.text = "좋은 하루구나, 아들아. 부탁이 하나 있네. 물론 보수는 지불하겠네.";
 					link.l1 = "듣고 있습니다, 신부님. 무엇이 필요하십니까?";
@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
 				{
 					dialog.text = "안녕하구나, 아들아. 네가 선장인 것 같구나. 그래서 너에게 제안을 하나 하려 한다.";
 					link.l1 = "듣고 있습니다, 신부님.";
@@ -74,12 +74,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("아버지, 질문이 있습니다.","정보가 필요해.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
 				{
 					link.l3 = "신부님, 제 배에 사람들이 있습니다. 그들은 노예들인데, 기독교인도 있고 세례받지 않은 이교도도 있습니다. 이교도들에게 세례를 주시고, 기독교인들에게는 성찬식을 집전해 주십시오. 그 후에 저는 모두를 하느님과 우리 교회의 영광을 위해 해방시키겠습니다.";
 					link.l3.go = "slaves";
 				}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "신부님, 제 배에 축복을 내려 주시고 제 선원들을 위해 미사를 올려 주셨으면 합니다. 비용이 얼마나 들까요?";
 					link.l4.go = "shipshine";
@@ -96,12 +96,12 @@ void ProcessDialogEvent()
 				link.l1.go = "check";//на возможную выдачу квестов
 				link.l2 = RandPhraseSimple("아버지, 묻고 싶은 것이 있습니다.","정보가 필요하다.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
+				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && int(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
 					{
 						link.l3 = "신부님, 제 배에는 사람들이 있습니다. 그들은 노예들로, 기독교인도 있고 세례받지 않은 이교도도 있습니다. 이교도들에게는 세례를 베풀어 주시고, 기독교인들에게는 성찬식을 집전해 주시길 바랍니다. 그 후에는 모두를 하느님과 우리 교회의 영광을 위해 해방시키겠습니다.";
 						link.l3.go = "slaves";
 					}
-				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
+				if (int(Pchar.Ship.Type) != SHIP_NOTUSED && int(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-int(RealShips[int(Pchar.Ship.Type)].Class) > 0)
 				{
 					link.l4 = "신부님, 제 배에 축복을 내려 주시고 선원들을 위해 미사를 올려 주셨으면 합니다. 비용이 얼마나 들까요?";
 					link.l4.go = "shipshine";
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "check":
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) < 3 && !CheckAttribute(npchar, "quest.monkletter") && !CheckAttribute(pchar, "GenQuest.Monkletter") && !CheckAttribute(npchar, "quest.passenger")) //церковная депеша
 			{
 				pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
 				pchar.GenQuest.Monkletter.StartCity = npchar.city;//город квестодателя
@@ -125,11 +125,11 @@ void ProcessDialogEvent()
 				npchar.quest.monkletter = "true";
 				break;
 			}
-			if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && sti(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
+			if (int(Pchar.Ship.Type) != SHIP_NOTUSED && rand(8) > 5 && int(pchar.rank < 11) && !CheckAttribute(npchar, "quest.churchbooks") && !CheckAttribute(pchar, "GenQuest.Churchbooks") && !CheckAttribute(npchar, "quest.passenger")) //привезти молитвенники
 			{
 				pchar.GenQuest.Churchbooks.StartCity = npchar.city;//город квестодателя
 				pchar.GenQuest.Churchbooks.Nation = npchar.nation;
-				dialog.text = "아들아, 급한 일에 나를 도와줄 수 있겠느냐? 우리 교회에 성경책과 기도서가 부족하구나. 우리는 필요한 이들에게 모두 나눠주고 있지\n가장 가까운 식민지로 항해해 줄 수 있겠느냐 "+NationNameGenitive(sti(npchar.nation))+", 근처 교회에서 성경책과 기도서를 몇 권 가져와 주겠나? 그리고 한 달 안에 해주게. 남은 게 얼마 없네.";
+				dialog.text = "아들아, 급한 일에 나를 도와줄 수 있겠느냐? 우리 교회에 성경책과 기도서가 부족하구나. 우리는 필요한 이들에게 모두 나눠주고 있지\n가장 가까운 식민지로 항해해 줄 수 있겠느냐 "+NationNameGenitive(int(npchar.nation))+", 근처 교회에서 성경책과 기도서를 몇 권 가져와 주겠나? 그리고 한 달 안에 해주게. 남은 게 얼마 없네.";
 				link.l1 = "기꺼이 교회를 도와드리겠습니다. 이 책들을 아무 신부에게서나 받을 수 있습니까?";
 				link.l1.go = "Churchbooks";
 				link.l2 = "기꺼이 하겠습니다, 신부님. 하지만 지금은 할 수 없습니다.";
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_1"://никаких плюшек
-			if (sti(pchar.money) >= 100)
+			if (int(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
 				dialog.text = "동전 주어서 고맙구나, 내 아이야! 좋은 일에 쓰일 것이다!";
@@ -180,7 +180,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_2":
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
 				dialog.text = "감사하네, 아들아. 이 금액은 우리 본당의 선교에 큰 도움이 될 것이네. 축복이 있기를!";
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_3":
-			if (sti(pchar.money) >= 5000)
+			if (int(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
 				dialog.text = "이렇게 관대할 줄은 상상도 못했구나, 아들아! 다음에 주교님께 편지 쓸 때 너를 꼭 언급하마, 그리고 매일 너를 위해 기도할 것이다! 내가 너를 축복하고, 네 돈도 감사히 받겠다!";
@@ -209,7 +209,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 40);
 				AddCrewMorale(pchar, 3);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 1);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 1);
 			}
 			else
 			{
@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "donation_rate_4":
-			if (sti(pchar.money) >= 10000)
+			if (int(pchar.money) >= 10000)
 			{
 				AddMoneyToCharacter(pchar, -10000);
 				dialog.text = "뭐라고... 내가 제대로 들은 게요? 정말 만 페소를 기부하시겠다고요!? 신의 축복이 있기를 바라며, 감사히 돈을 받겠습니다. 다음에 주교님께 보내는 편지에 당신을 꼭 언급하겠고, 매일 당신을 위해 기도하겠습니다! 교회에 정말 큰 도움이 되는군요!";
@@ -230,7 +230,7 @@ void ProcessDialogEvent()
 				AddCharacterExpToSkill(pchar, "Leadership", 60);
 				AddCrewMorale(pchar, 5);
 				ChangeCharacterComplexReputation(pchar, "nobility", 1);
-				ChangeCharacterNationReputation(pchar, sti(npchar.Nation), 2);
+				ChangeCharacterNationReputation(pchar, int(npchar.Nation), 2);
 				ChangeCrewExp(pchar, "Sailors", 5);
 				ChangeCrewExp(pchar, "Cannoners", 5);
 				ChangeCrewExp(pchar, "Soldiers", 5);
@@ -295,19 +295,19 @@ void ProcessDialogEvent()
 				break;
 				case 2:
 					sTemp = "I have two ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
 					sTemp = "I have three ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
 					sTemp = "I have four ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
 					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
-					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
+					pchar.GenQuest.Shipshine.Money = int(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "그것은 전적으로 당신 함대의 총 함선 수와 그 크기에 달려 있습니다.";
@@ -316,8 +316,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_1":
-			dialog.text = "값을 치러야 할 거요 "+FindRussianMoneyString(sti(pchar.GenQuest.Shipshine.Money))+", 아들아.";
-			if (sti(pchar.money) >= sti(pchar.GenQuest.Shipshine.Money))
+			dialog.text = "값을 치러야 할 거요 "+FindRussianMoneyString(int(pchar.GenQuest.Shipshine.Money))+", 아들아.";
+			if (int(pchar.money) >= int(pchar.GenQuest.Shipshine.Money))
 			{
 				link.l1 = "이 금액을 드릴 수 있습니다, 신부님. 돈을 받으십시오.";
 				link.l1.go = "shipshine_2";
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shipshine_2":
-			AddMoneyToCharacter(pchar, -sti(pchar.GenQuest.Shipshine.Money));
+			AddMoneyToCharacter(pchar, -int(pchar.GenQuest.Shipshine.Money));
 			dialog.text = "좋다, 아들아. 내가 성물을 챙기고 항구로 가자꾸나.";
 			link.l1 = "따라오십시오, 신부님.";
 			link.l1.go = "shipshine_3";
@@ -357,7 +357,7 @@ void ProcessDialogEvent()
 		
 		case "capellan_1":
 			dialog.text = "왜냐하면, 그 이유는 아주 명백하오. 나는 당신과 선원들을 위해 하느님께 기도하고, 매일 미사를 집전하며, 전투 전에 당신의 부하들에게 축복을 내리고 고해성사를 들어주오. 하느님의 말씀이 당신 선원들의 손과 영혼에 힘을 더해 주지. 당신의 선원들은 정기적으로 영성체와 고해성사를 받을 기회를 갖게 될 것이오. 믿으시오, 은총의 상태에 있는 선원은 불경한 자가 주저하는 상황에서도 굳건히 버틸 것이오.\n내가 바라는 것은 많지 않소. 내 고향 본당을 위한 오만 페소의 일시불, 선실 안에 간단한 침상 하나, 그리고 당신 장교들과 같은 식사만 있으면 충분하오. 그게 전부요.";
-			if (sti(pchar.money) >= 50000)
+			if (int(pchar.money) >= 50000)
 			{
 				link.l1 = "흥미롭군요... 맞는 말이오, 훌륭한 선장은 선원들의 몸뿐만 아니라 영혼도 돌봐야 하오. 배에 오신 것을 환영하오, 신부님!";
 				link.l1.go = "capellan_2";
@@ -420,11 +420,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "My "+GetSexPhrase("아들","딸")+", 나는 ~에 가야 해 "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" 시작이다 "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", 왜냐하면 "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". 내가 돈을 줄게 "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" 그 일에 대해서. 어떻게 생각하시오?";
+				dialog.text = "My "+GetSexPhrase("아들","딸")+", 나는 ~에 가야 해 "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" 시작이다 "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", 왜냐하면 "+FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty))+". 내가 돈을 줄게 "+FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money))+" 그 일에 대해서. 어떻게 생각하시오?";
 			}
 			else
 			{
-				dialog.text = "My "+GetSexPhrase("아들","딸")+", 주님의 뜻은 오묘하니, 그래서 나는 믿을 만한 선장을 찾고 있소. 나를 데려다줄 수 있겠소 "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", 그것이 있는 "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? 적들의 잠 없는 감시 속에 불타는 게헨나로 여행을 가는 기분이라는 것도 이해합니다. 그리고 당신이 예수 그리스도가 아니라는 것도 알고 있지만, 저 역시 사도가 아니기에 약간의 저축은 있습니다. 그러니 "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" 이 정도면 되겠소?";
+				dialog.text = "My "+GetSexPhrase("아들","딸")+", 주님의 뜻은 오묘하니, 그래서 나는 믿을 만한 선장을 찾고 있소. 나를 데려다줄 수 있겠소 "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", 그것이 있는 "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? 적들의 잠 없는 감시 속에 불타는 게헨나로 여행을 가는 기분이라는 것도 이해합니다. 그리고 당신이 예수 그리스도가 아니라는 것도 알고 있지만, 저 역시 사도가 아니기에 약간의 저축은 있습니다. 그러니 "+FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money))+" 이 정도면 되겠소?";
 			}
 			link.l1 = "동의합니다, 신부님.";
 			link.l1.go = "passenger_1";
@@ -486,15 +486,15 @@ void ProcessDialogEvent()
 			AddQuestUserDataForTitle(sTitle, "sCity", sTemp);
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			AddQuestUserData(sTitle, "sCity", sTemp);
-			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty)));
+			AddQuestUserData(sTitle, "sDays", FindRussianDaysString(int(pchar.GenQuest.Monkpassenger.DaysQty)));
 			AddQuestUserData(sTitle, "sSex", GetSexPhrase("",""));
-            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money)));
-			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)));
+            if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity")) AddQuestUserData(sTitle, "sMoney", FindRussianMoneyString(int(pchar.GenQuest.Monkpassenger.Money)));
+			else AddQuestUserData(sTitle, "sMoney", FindRussianDublonString(int(pchar.GenQuest.Monkpassenger.Money)));
 			AddQuestUserData(sTitle, "sName", GetFullName(npchar));
 			pchar.quest.Monkpassenger.win_condition.l1 = "location";
 			pchar.quest.Monkpassenger.win_condition.l1.location = pchar.GenQuest.Monkpassenger.City+"_town";
 			pchar.quest.Monkpassenger.function = "Monkpassenger_complete";
-			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, sti(pchar.GenQuest.Monkpassenger.DaysQty), false);
+			SetFunctionTimerCondition("Monkpassenger_Over", 0, 0, int(pchar.GenQuest.Monkpassenger.DaysQty), false);
 		break;
 		
 		case "passenger_3":
@@ -518,9 +518,9 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
 				AddCharacterExpToSkill(pchar, "Sneak", 50);
-				TakeNItems(pchar, "gold_dublon", sti(pchar.GenQuest.Monkpassenger.Money));
+				TakeNItems(pchar, "gold_dublon", int(pchar.GenQuest.Monkpassenger.Money));
 			}
-			else AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Monkpassenger.Money));
+			else AddMoneyToCharacter(pchar, int(pchar.GenQuest.Monkpassenger.Money));
 			sTitle = npchar.index+"Citizpassenger";
 			AddQuestRecordEx(sTitle, "Citizpassenger", "3");
 			CloseQuestHeader(sTitle);
@@ -560,7 +560,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Churchbooks":
-			dialog.text = "그래. 어느 식민지에서든 구할 수 있어. "+NationNameGenitive(sti(npchar.nation))+". 찾은 모든 책을 교회에 계신 우리 목사님께 가져다드리시오. 신의 가호가 있기를!";
+			dialog.text = "그래. 어느 식민지에서든 구할 수 있어. "+NationNameGenitive(int(npchar.nation))+". 찾은 모든 책을 교회에 계신 우리 목사님께 가져다드리시오. 신의 가호가 있기를!";
 			link.l1 = "감사합니다! 곧 책을 받게 될 것입니다.";
 			link.l1.go = "Churchbooks_1";
 		break;
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			ReOpenQuestHeader("Churchbooks");
 			AddQuestRecord("Churchbooks", "1");
-			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(sti(pchar.GenQuest.Churchbooks.Nation)));
+			AddQuestUserData("Churchbooks", "sNation", NationNameGenitive(int(pchar.GenQuest.Churchbooks.Nation)));
 			AddQuestUserData("Churchbooks", "sStartCity", XI_ConvertString("Colony"+pchar.GenQuest.Churchbooks.StartCity));
 			SetFunctionTimerCondition("Churchbooks_Over", 0, 0, 30, false);
 			pchar.GenQuest.Churchbooks = "go";

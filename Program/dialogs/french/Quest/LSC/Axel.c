@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "Je ne veux pas te parler. Tu attaques les gens paisibles sans raison et tu les provoques à se battre. Déguerpis !";
 				link.l1 = "Hm...";
@@ -156,12 +156,6 @@ void ProcessDialogEvent()
 		case "":
 			dialog.text = "Bonjour, monami.";
 			link.l1 = "Bonjour, mon ami.";
-			link.l1.go = "";
-		break;
-		
-		case "":
-			dialog.text = "Bonjour, monami.";
-			link.l1 = "";
 			link.l1.go = "";
 		break;
 		

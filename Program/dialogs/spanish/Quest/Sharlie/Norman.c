@@ -519,11 +519,11 @@ void ProcessDialogEvent()
 		break;
 
 	case "fight":
-		iTemp = 20 - sti(GetCharacterItem(npchar, "potion2"));
+		iTemp = 20 - int(GetCharacterItem(npchar, "potion2"));
 		TakeNItems(npchar, "potion2", iTemp);
 		DialogExit();
 		NextDiag.CurrentNode = NextDiag.TempNode;
-		SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+		SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 		LAi_group_Attack(NPChar, Pchar);
 		AddDialogExitQuest("MainHeroFightModeOn");
 		break;

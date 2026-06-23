@@ -9,7 +9,7 @@
 */
 
 
-bool LAi_tmpl_SetDialog(aref chr, aref by, float dlgTime)
+bool LAi_tmpl_SetDialog(ref chr, ref by, float dlgTime)
 {
 	if(!LAi_tmpl_dialog_InitTemplate(chr)) return false;
 	chr.chr_ai.tmpl.dialog = "";
@@ -22,7 +22,7 @@ bool LAi_tmpl_SetDialog(aref chr, aref by, float dlgTime)
 }
 
 //Если мы пасивны, запускаем шаблон без времени завершения
-bool LAi_tmpl_SetActivatedDialog(aref chr, aref by)
+bool LAi_tmpl_SetActivatedDialog(ref chr, ref by)
 {
 	if(!LAi_tmpl_dialog_InitTemplate(chr)) return false;
 	chr.chr_ai.tmpl.dialog = by.index;
@@ -33,19 +33,19 @@ bool LAi_tmpl_SetActivatedDialog(aref chr, aref by)
 	return true;
 }
 
-void LAi_tmpl_dialog_NoAni(aref chr)
+void LAi_tmpl_dialog_NoAni(ref chr)
 {
 	chr.chr_ai.tmpl.noani = "1";
 }
 
 //Остановить диалог между NPC
-bool LAi_tmpl_dialog_StopNPC(aref chr)
+bool LAi_tmpl_dialog_StopNPC(ref chr)
 {
 	if(chr.chr_ai.tmpl.state == "dialog")
 	{
 		//Если один из беседующих игрок, то не прекращаем диалог
-		int idx = sti(chr.chr_ai.tmpl.dialog);
-		if(nMainCharacterIndex == sti(chr.index)) return false;
+		int idx = int(chr.chr_ai.tmpl.dialog);
+		if(nMainCharacterIndex == int(chr.index)) return false;
 		if(nMainCharacterIndex == idx) return false;
 		//Операнивно всё сворачиваем
 		CharacterPlayAction(chr, "");
@@ -61,7 +61,7 @@ bool LAi_tmpl_dialog_StopNPC(aref chr)
 }
 
 
-bool LAi_tmpl_dialog_InitTemplate(aref chr)
+bool LAi_tmpl_dialog_InitTemplate(ref chr)
 {
 	SendMessage(&chr, "ls", MSG_CHARACTER_EX_MSG, "ForcedStopMove");	// evganat - фикс движения в диалоге
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", false);
@@ -108,7 +108,7 @@ bool LAi_tmpl_dialog_InitTemplate(aref chr)
 }
 
 //Возможно ли завенсти диалог
-bool LAi_tmpl_dialog_IsActive(aref chr)
+bool LAi_tmpl_dialog_IsActive(ref chr)
 {	
 	if(chr.chr_ai.tmpl.state == "wait") return false;
 	return true;
@@ -116,7 +116,7 @@ bool LAi_tmpl_dialog_IsActive(aref chr)
 
 
 //Процессирование шаблона персонажа
-void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
+void LAi_tmpl_dialog_CharacterUpdate(ref chr, float dltTime)
 {
 	float time, fAng;
 	aref tmpl;
@@ -124,7 +124,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 	float zAng = 0;
 	int animChoice = 0;
 	makearef(tmpl, chr.chr_ai.tmpl);
-	int idx = sti(chr.chr_ai.tmpl.dialog);
+	int idx = int(chr.chr_ai.tmpl.dialog);
 	if(LAi_IsDead(&Characters[idx]))
 	{
 		LAi_tmpl_dialog_StopNPC(chr);
@@ -135,16 +135,16 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		LAi_tmpl_dialog_StopNPC(chr);
 		return;
 	}
-	if (sti(chr.index) == nMainCharacterIndex && !CheckAttribute(chr, "QuestDiag")) return;
+	if (int(chr.index) == nMainCharacterIndex && !CheckAttribute(chr, "QuestDiag")) return;
 	//Если в диалоге, направляемся на персонажа
 	if(tmpl.state == "dialog")
 	{
 		//Проверяем время ведения диолога
-		float dlgtime = stf(tmpl.dlgtime);
+		float dlgtime = float(tmpl.dlgtime);
 		if(dlgtime >= 0)
 		{
 			//Мы ведём диалог
-			time = stf(tmpl.time) + dltTime;
+			time = float(tmpl.time) + dltTime;
 			tmpl.time = time;
 			if(time > dlgtime)
 			{
@@ -161,14 +161,14 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		}
 	}	
 	//если нищий и сидит - ничего не крутим
-	if (chr.chr_ai.type == LAI_TYPE_POOR && sti(chr.chr_ai.type.SitState)) return; 
+	if (chr.chr_ai.type == LAI_TYPE_POOR && int(chr.chr_ai.type.SitState)) return;
 	if (chr.model.animation == "mushketer") return;
 	
 	if (chr.chr_ai.type == LAI_TYPE_OFFICER && bCabinStarted)
 	{
 		if(chr.location.locator == "sit1" && NeedCabinTmpl())
 		{
-			time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
+			time = float(chr.chr_ai.tmpl.phrasetime) - dltTime;
 			chr.chr_ai.tmpl.phrasetime = time;
 			if(time < 0.0)
 			{
@@ -181,7 +181,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 
 	if (chr.chr_ai.type == LAI_TYPE_HUBER) 
 	{
-		time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
+		time = float(chr.chr_ai.tmpl.phrasetime) - dltTime;
 		chr.chr_ai.tmpl.phrasetime = time;
 		if(time < 0.0)
 		{
@@ -202,7 +202,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 	if (chr.chr_ai.type == LAI_TYPE_SIT)
 	{
 		if (CheckAttribute(chr, "nonTable")) return; //режеми диалоговые анимации сидунам не за столом
-		time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
+		time = float(chr.chr_ai.tmpl.phrasetime) - dltTime;
 		if(time < 0.0)
 		{			
 			int num = FindNearCharacters(chr, 2.5, -1.0, 0.0, 0.0, false, false);
@@ -211,8 +211,8 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 				if(chrFindNearCharacters[i].index == idx)
 				{
 					GetCharacterAy(chr, &fAng);
-					xAng = stf(chrFindNearCharacters[i].dx) * cos(fAng) - stf(chrFindNearCharacters[i].dz) * sin(fAng);
-					zAng = stf(chrFindNearCharacters[i].dz) * cos(fAng) + stf(chrFindNearCharacters[i].dx) * sin(fAng);
+					xAng = float(chrFindNearCharacters[i].dx) * cos(fAng) - float(chrFindNearCharacters[i].dz) * sin(fAng);
+					zAng = float(chrFindNearCharacters[i].dz) * cos(fAng) + float(chrFindNearCharacters[i].dx) * sin(fAng);
 					//Log_SetEternalString("xAng: " + xAng + "    zAng: " + zAng + "   fAng: " + fAng);
 					break;
 				}
@@ -263,7 +263,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 		//Всегда стоим
 		SetCharacterTask_Stay(chr);
 		//Выкидываем всякие жесты и фразочки
-		time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
+		time = float(chr.chr_ai.tmpl.phrasetime) - dltTime;
 		if(time < 0.0)
 		{
 			string sTemp;
@@ -281,7 +281,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
                     {
                         if(chr.sex == "woman") 
                         {
-                            if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "man" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
+                            if (characters[int(chr.chr_ai.tmpl.dialog)].sex == "man" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
                             {
                                 sTemp = "knicksen";
                                 chr.chr_ai.tmpl.poklon = true;
@@ -290,7 +290,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
                         }
                         else 
                         {
-                            if (characters[sti(chr.chr_ai.tmpl.dialog)].sex == "woman" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
+                            if (characters[int(chr.chr_ai.tmpl.dialog)].sex == "woman" && !CheckAttribute(chr, "chr_ai.tmpl.poklon"))
                             {
                                 sTemp = "Poklon";
                                 chr.chr_ai.tmpl.poklon = true;
@@ -301,7 +301,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
                     CharacterPlayAction(chr, sTemp);
                 }
             }
-			if(stf(tmpl.dlgtime) >= 0.0)
+			if(float(tmpl.dlgtime) >= 0.0)
 			{	
 //				string snd = "citizen_male";
 //				if(CheckAttribute(chr,"sex"))
@@ -320,104 +320,104 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 }
 
 //Персонаж выполнил команду  go to point
-void LAi_tmpl_dialog_EndGoToPoint(aref chr)
+void LAi_tmpl_dialog_EndGoToPoint(ref chr)
 {
 }
 
 //Персонаж провалил команду  go to point
-void LAi_tmpl_dialog_FailureGoToPoint(aref chr)
+void LAi_tmpl_dialog_FailureGoToPoint(ref chr)
 {
 }
 
 //Персонаж выполнил команду  run to point
-void LAi_tmpl_dialog_EndRunToPoint(aref chr)
+void LAi_tmpl_dialog_EndRunToPoint(ref chr)
 {	
 }
 
 //Персонаж провалил команду  run to point
-void LAi_tmpl_dialog_FailureRunToPoint(aref chr)
+void LAi_tmpl_dialog_FailureRunToPoint(ref chr)
 {	
 }
 
 //Персонаж не может добраться до точки назначения
-void LAi_tmpl_dialog_BusyPos(aref chr, float x, float y, float z)
+void LAi_tmpl_dialog_BusyPos(ref chr, float x, float y, float z)
 {
 }
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_dialog_FollowGo(aref chr)
+void LAi_tmpl_dialog_FollowGo(ref chr)
 {
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_dialog_FollowStay(aref chr)
+void LAi_tmpl_dialog_FollowStay(ref chr)
 {	
 }
 
 //Персонаж провалил команду  dialog character
-void LAi_tmpl_dialog_FailureFollow(aref chr)
+void LAi_tmpl_dialog_FailureFollow(ref chr)
 {	
 }
 
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_dialog_FightGo(aref chr)
+void LAi_tmpl_dialog_FightGo(ref chr)
 {
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_dialog_FightStay(aref chr)
+void LAi_tmpl_dialog_FightStay(ref chr)
 {
 }
 
 //Персонаж провалил команду  Fight
-void LAi_tmpl_dialog_FailureFight(aref chr)
+void LAi_tmpl_dialog_FailureFight(ref chr)
 {
 }
 
 //Можно ли стрелять
-bool LAi_tmpl_dialog_IsFire(aref chr)
+bool LAi_tmpl_dialog_IsFire(ref chr)
 {	
 	return false;
 }
 
 //Можно ли использовать оружие
-bool LAi_tmpl_dialog_IsFight(aref chr)
+bool LAi_tmpl_dialog_IsFight(ref chr)
 {
 	return false;
 }
 
 
 //Персонаж выполнил команду  escape
-void LAi_tmpl_dialog_EndEscape(aref chr)
+void LAi_tmpl_dialog_EndEscape(ref chr)
 {
 }
 
 //Персонаж скользит вдоль патча
-void LAi_tmpl_dialog_EscapeSlide(aref chr)
+void LAi_tmpl_dialog_EscapeSlide(ref chr)
 {
 }
 
 //Персонаж провалил команду  escape
-void LAi_tmpl_dialog_FailureEscape(aref chr)
+void LAi_tmpl_dialog_FailureEscape(ref chr)
 {
 }
 
 
 //Персонаж толкается с другими персонажами
-void LAi_tmpl_dialog_ColThreshold(aref chr)
+void LAi_tmpl_dialog_ColThreshold(ref chr)
 {
 }
 
 //Персонаж закончил проигрывать анимацию
-void LAi_tmpl_dialog_EndAction(aref chr)
+void LAi_tmpl_dialog_EndAction(ref chr)
 {
 	CharacterPlayAction(chr, "");
 }
 
 
 //Персонажа просят освободить место
-void LAi_tmpl_dialog_FreePos(aref chr, aref who)
+void LAi_tmpl_dialog_FreePos(ref chr, aref who)
 {
 }
 
@@ -425,7 +425,7 @@ void LAi_tmpl_dialog_FreePos(aref chr, aref who)
 //Внутреннии функции
 //------------------------------------------------------------------------------------------
 
-void LAi_tmpl_dialog_updatetemplate(aref chr)
+void LAi_tmpl_dialog_updatetemplate(ref chr)
 {
 	if(chr.chr_ai.tmpl.state == "dialog")
 	{
@@ -436,7 +436,7 @@ void LAi_tmpl_dialog_updatetemplate(aref chr)
 	}
 }
 
-void LAi_tmpl_dialog_StartDialog(aref chr, aref by, float dlgTime)
+void LAi_tmpl_dialog_StartDialog(ref chr, ref by, float dlgTime)
 {
 	//Заполняем поля
 	chr.chr_ai.tmpl.dialog = by.index;
@@ -444,8 +444,8 @@ void LAi_tmpl_dialog_StartDialog(aref chr, aref by, float dlgTime)
 	chr.chr_ai.tmpl.dtime = "0";
 	chr.chr_ai.tmpl.dlgtime = dlgTime;
 	//Запускаем диалог
-	int idx = sti(chr.chr_ai.tmpl.dialog);
-	int my = sti(chr.index);
+	int idx = int(chr.chr_ai.tmpl.dialog);
+	int my = int(chr.index);
 	if(idx == my)
 	{
 		//Не говорим сами с собой

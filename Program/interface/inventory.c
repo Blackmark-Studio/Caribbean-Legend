@@ -337,7 +337,7 @@ void ProcessCommandExecute()
 			}
 		break;
 		case "MUSKET_PRIORITY_CHECKBOX":
-			Inventory_ToggleMusketPriority()
+			Inventory_ToggleMusketPriority();
 		break;
 	}
 	// boal new menu 31.12.04 -->
@@ -487,7 +487,7 @@ void RemoveItem()
 
 void EquipItem()
 {
-	iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index);
+	iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
 	ref arItm = &Items[iGoodIndex];
 	if(ThisItemCanBeEquip(arItm)) EquipPress();
 }
@@ -527,15 +527,15 @@ void WarningHide()
 
 void ProcessFrame()
 {
-	if (sti(GameInterface.CHARACTERS_SCROLL.current)!=nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
+	if (int(GameInterface.CHARACTERS_SCROLL.current)!=nCurScrollNum && GetCurrentNode() == "CHARACTERS_SCROLL")
 	{
-		nCurScrollNum = sti(GameInterface.CHARACTERS_SCROLL.current);
+		nCurScrollNum = int(GameInterface.CHARACTERS_SCROLL.current);
 		SetButtonsState();
 		return;
 	}
-	if (sti(GameInterface.PASSENGERSLIST.current)!= nCurScrollOfficerNum && GetCurrentNode() == "PASSENGERSLIST")
+	if (int(GameInterface.PASSENGERSLIST.current)!= nCurScrollOfficerNum && GetCurrentNode() == "PASSENGERSLIST")
 	{
-		nCurScrollOfficerNum = sti(GameInterface.PASSENGERSLIST.current);
+		nCurScrollOfficerNum = int(GameInterface.PASSENGERSLIST.current);
 		SetOfficersSkills();
 		return;
 	}
@@ -546,7 +546,7 @@ void SetButtonsState()
 	string attributeName = "pic" + (nCurScrollNum+1);
 	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
 	{
-		int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
+		int iCharacter = int(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
 		xi_refCharacter = &characters[iCharacter];
 		SetControlsTabModeManual(1);
 		SetVariable();
@@ -577,7 +577,7 @@ void SetVariable()
 {
 	SetCommonHeaderInfo();
 	SetFormatedText("Rank", xi_refCharacter.rank);
-	SetFormatedText("Rank2", ""+(sti(xi_refCharacter.rank) + 1));
+	SetFormatedText("Rank2", ""+(int(xi_refCharacter.rank) + 1));
 	SetFormatedText("Rank_progress", GetCharacterRankRateCur(&xi_refCharacter) + " / " + GetCharacterRankRate(&xi_refCharacter));
 
 	//Порог уровня
@@ -598,7 +598,7 @@ void SetVariable()
 	// чекбокс шляп
 	if (CheckAttribute(xi_refCharacter, "HatShow"))
 	{
-		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"HAT_CHECKBOX", 2, 1, sti(xi_refCharacter.HatShow));
+		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"HAT_CHECKBOX", 2, 1, int(xi_refCharacter.HatShow));
 	}
 	else
 	{
@@ -638,10 +638,10 @@ void SetVariable()
 	if (bBettaTestMode)
     {
         CreateString(true,"healthCur1",
-                     "pchar MaxHP = "    + FloatToString(stf(pchar.Health.maxHP), 1) +
-                     " CurHP = "   + FloatToString(stf(pchar.Health.HP), 1) +
-                     " WeekDmg = " + FloatToString(stf(pchar.Health.weekDamg), 1) +
-                     " DayDmg = "  + FloatToString(stf(pchar.Health.Damg), 1),
+                     "pchar MaxHP = "    + FloatToString(float(pchar.Health.maxHP), 1) +
+                     " CurHP = "   + FloatToString(float(pchar.Health.HP), 1) +
+                     " WeekDmg = " + FloatToString(float(pchar.Health.weekDamg), 1) +
+                     " DayDmg = "  + FloatToString(float(pchar.Health.Damg), 1),
                      "INTERFACE_ULTRASMALL",COLOR_NORMAL,10,1070, SCRIPT_ALIGN_LEFT,1.0);
     }
 
@@ -650,18 +650,18 @@ void SetVariable()
 			SetFormatedText("LOYALITY_STR", GetFullReputationComplexName(xi_refCharacter));
 	    GameInterface.StatusLine.BAR_HEALTH.Max   = 60;
 	    GameInterface.StatusLine.BAR_HEALTH.Min   = 1;
-	    GameInterface.StatusLine.BAR_HEALTH.Value = makeint(pchar.Health.HP);
-	    if (sti(pchar.Health.HP) > 60 )
+	    GameInterface.StatusLine.BAR_HEALTH.Value = int(pchar.Health.HP);
+	    if (int(pchar.Health.HP) > 60 )
 	    {
 	        GameInterface.StatusLine.BAR_HEALTH.Value = 60;
 	    }
 			GameInterface.StatusLine.LOYALITY.Max   = COMPLEX_REPUTATION_MAX;
 			GameInterface.StatusLine.LOYALITY.Min   = COMPLEX_REPUTATION_MIN;
-			GameInterface.StatusLine.LOYALITY.Value = sti(xi_refCharacter.reputation.nobility);
+			GameInterface.StatusLine.LOYALITY.Value = int(xi_refCharacter.reputation.nobility);
     }
     else
     {
-			SetFormatedText("LOYALITY_STR", xiStr(GetReputationName(sti(xi_refCharacter.reputation))));
+			SetFormatedText("LOYALITY_STR", xiStr(GetReputationName(int(xi_refCharacter.reputation))));
 			GameInterface.StatusLine.LOYALITY.Max   = MAX_LOYALITY;
 			GameInterface.StatusLine.LOYALITY.Min   = 0;
 			GameInterface.StatusLine.LOYALITY.Value = GetCharacterLoyality(xi_refCharacter);
@@ -670,8 +670,8 @@ void SetVariable()
 		{
 			GameInterface.StatusLine.BAR_HEALTH.Max   = 60;
 			GameInterface.StatusLine.BAR_HEALTH.Min   = 1;
-			GameInterface.StatusLine.BAR_HEALTH.Value = makeint(xi_refCharacter.Health.HP);
-			if (sti(xi_refCharacter.Health.HP) > 60 )
+			GameInterface.StatusLine.BAR_HEALTH.Value = int(xi_refCharacter.Health.HP);
+			if (int(xi_refCharacter.Health.HP) > 60 )
 			{
 				GameInterface.StatusLine.BAR_HEALTH.Value = 60;
 			}
@@ -733,12 +733,12 @@ void RefreshSetupBigPicture()
 		case "Helena":
 		SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Helena.tga");
 		break;
-        //default:
+        default:
         if (xi_refCharacter.sex == "man")
         SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Man.tga");
         else
         SetNewPicture("SETUP_BIG_PICTURE", "interfaces\le\equipment\CharacterEquipment_Helena.tga");
-        //break;
+        break;
 	}
 }
 	
@@ -763,9 +763,9 @@ void ShowInfoWindow()
 			CloseTooltipNew();
 			picW = 256;
 			picH = 256;
-			nChooseNum = SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 );
+			nChooseNum = int(SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 ));
 			string attributeName = "pic" + (nChooseNum+1);
-			int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
+			int iCharacter = int(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
             sHeader = XI_ConvertString("passengership");
 			sText1 = "";
 			sText2 = "";
@@ -857,10 +857,10 @@ void ShowInfoWindow()
 						sText1 = GetCharacterFullName(Characters[iCharacter].id);
 						sHeader = XI_ConvertString("companionship");
 					}
-					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
+					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga";
 					if(CheckCharacterPerk(rchr, "ByWorker")) 
 					{
-						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
 					}
 				}
 			}
@@ -885,7 +885,7 @@ void ShowInfoWindow()
 							sText2 = GetRPGText("Prisoner_desc");
 						}
 					}
-					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga"
+					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga";
 					if(CheckCharacterPerk(rchar, "ByWorker")) 
 					{
 						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
@@ -922,7 +922,8 @@ void ShowInfoWindow()
 
 		case "TABLE_OTHER":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1));
+			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
 			sText1  = GetRPGText(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
@@ -979,8 +980,8 @@ void ShowInfoWindow()
 			sText1 = GetRPGText("Nation_hint");
 			if(CheckCharacterPerk(xi_refCharacter, "ByWorker")) 
 			{
-				sHeader = GetConvertStr("ByWorker", "AbilityDescribe.txt"));
-				sText1 = GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+				sHeader = GetConvertStr("ByWorker", "AbilityDescribe.txt");
+				sText1 = GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
 			}
 		break;
 		//navy-->
@@ -1133,14 +1134,14 @@ void FillTableOther()
 	GameInterface.TABLE_OTHER.tr1.td1.icon.group = "EQUIP_ICONS";
 	GameInterface.TABLE_OTHER.tr1.td1.icon.image = "life";
 	GameInterface.TABLE_OTHER.tr1.td2.str = XI_ConvertString("Life");
-	GameInterface.TABLE_OTHER.tr1.td3.str = MakeInt(LAi_GetCharacterHP(xi_refCharacter)) + " / " + MakeInt(LAi_GetCharacterMaxHP(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr1.td3.str = int(LAi_GetCharacterHP(xi_refCharacter)) + " / " + int(LAi_GetCharacterMaxHP(xi_refCharacter));
 
     GameInterface.TABLE_OTHER.tr2.UserData.ID = "Energy";
 	GameInterface.TABLE_OTHER.tr2.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr2.td1.icon.image = "Energy";
 	GameInterface.TABLE_OTHER.tr2.td2.str = XI_ConvertString("Energy");
-	GameInterface.TABLE_OTHER.tr2.td3.str = sti(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + sti(LAi_GetCharacterMaxEnergy(xi_refCharacter));
-	diff = sti(LAi_GetCharacterMaxEnergy(xi_refCharacter) - GetCharacterMaxEnergyABSValue(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr2.td3.str = int(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + int(LAi_GetCharacterMaxEnergy(xi_refCharacter));
+	diff = int(LAi_GetCharacterMaxEnergy(xi_refCharacter) - GetCharacterMaxEnergyABSValue(xi_refCharacter));
 	if (diff != 0)
 	{
 	   if (diff > 0)
@@ -1170,7 +1171,7 @@ void FillTableOther()
     }
     else
     {
-        GameInterface.TABLE_OTHER.tr3.td3.color = SetAlphaIntoColor(COLOR_NORMAL, GetAlphaFromSkill(makeint(GetHealthNum(xi_refCharacter)* 1.9)));
+        GameInterface.TABLE_OTHER.tr3.td3.color = SetAlphaIntoColor(COLOR_NORMAL, GetAlphaFromSkill(int(GetHealthNum(xi_refCharacter)* 1.9)));
     }
     
 	GameInterface.TABLE_OTHER.tr4.UserData.ID = "CritDamage";
@@ -1207,7 +1208,7 @@ void CS_TableSelectChange()
 	iSelected = GetEventData();
     CurTable = sControl;
     CurRow   =  "tr" + (iSelected);
-    iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index);
+    iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
     NullSelectTable("TABLE_OTHER");
     // перерисует "порог опыта"
     GameInterface.TABLE_OTHER.tr8.td3.str = "";
@@ -1520,7 +1521,7 @@ void SetControlsTabMode(int nMode)
 	if(CheckAttribute(&GameInterface, "TABLE_ITEMS.tr1.index"))
 	{
 		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ITEMS", 2, 0); // ставим принудительно первую строку
-		iGoodIndex = sti(GameInterface.TABLE_ITEMS.tr1.index)
+		iGoodIndex = int(GameInterface.TABLE_ITEMS.tr1.index);
 		SetItemInfo(iGoodIndex);
 	}
 	else HideItemInfo();
@@ -1685,12 +1686,12 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 				GameInterface.TABLE_ITEMS.(row).td1.line_space_modifier = 0.9;
 				GameInterface.TABLE_ITEMS.(row).td1.str = GetItemName(arItem);
 				
-				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(stf(arItem.Weight), 1);
+				GameInterface.TABLE_ITEMS.(row).td2.str   = FloatToString(float(arItem.Weight), 1);
 				if(groupID == MAPS_ITEM_TYPE)
 					GameInterface.TABLE_ITEMS.(row).td3.str   = GetCharacterFreeItem(xi_refCharacter, sGood);
 				else
 					GameInterface.TABLE_ITEMS.(row).td3.str   = GetCharacterItem(xi_refCharacter, sGood);
-				GameInterface.TABLE_ITEMS.(row).td4.str   = FloatToString(stf(arItem.Weight) * sti(GameInterface.TABLE_ITEMS.(row).td3.str), 1);
+				GameInterface.TABLE_ITEMS.(row).td4.str   = FloatToString(float(arItem.Weight) * int(GameInterface.TABLE_ITEMS.(row).td3.str), 1);
 				n++;
 			}
 		}
@@ -1829,7 +1830,7 @@ void FillItemsSelected()
                     int iQBonus = 0;
                     if(CheckAttribute(Liber, "QBonus"))
                     {
-                        iQBonus = sti(Liber.QBonus);
+                        iQBonus = int(Liber.QBonus);
                     }
                     picIndex = iQBonus*2; // у картинки 10 делений
                     SetNewGroupPicture("SLOT_PIC_6", "ITEMS_USE10", "items_use" + picIndex);
@@ -1844,7 +1845,7 @@ void FillItemsSelected()
                     int QBonus = 0;
                     if(CheckAttribute(Articles, "QBonus"))
                     {
-                        QBonus = sti(Articles.QBonus);
+                        QBonus = int(Articles.QBonus);
                     }
                     picIndex = QBonus;
                     SetNewGroupPicture("SLOT_PIC_6", "ITEMS_USE10", "items_use" + picIndex);
@@ -1858,7 +1859,7 @@ void FillItemsSelected()
                     int Durability = 60;
                     if(CheckAttribute(Bandolier, "durability"))
                     {
-                        durability = sti(Bandolier.durability);
+                        durability = int(Bandolier.durability);
                     }
                     picIndex = Durability / 6;
                     SetNewGroupPicture("SLOT_PIC_6", "ITEMS_USE10", "items_use" + picIndex);
@@ -1888,9 +1889,9 @@ void FillItemsSelected()
                     int DurabilityHat10 = 45;
                     if(CheckAttribute(hat10, "durability"))
                     {
-                        DurabilityHat10 = sti(hat10.durability);
+                        DurabilityHat10 = int(hat10.durability);
                     }
-                    picIndex = makeint(DurabilityHat10 / 4.5);
+                    picIndex = int(DurabilityHat10 / 4.5);
                     SetNewGroupPicture("SLOT_PIC_11", "ITEMS_USE10", "items_use" + picIndex);
                     SetNodeUsing("SLOT_PIC_11", true);
                     SetFormatedText("SLOT11_TEXT", DurabilityHat10 +"/45");
@@ -2037,7 +2038,7 @@ void TransactionOK()
 {
 	ref arItm = &Items[iGoodIndex];
 	int iDropQuantity;
-	iDropQuantity = sti(GameInterface.qty_edit.str);
+	iDropQuantity = int(GameInterface.qty_edit.str);
 	if(iDropQuantity <= 0) return;
 	if(iDropQuantity > 0) 
 	{
@@ -2062,23 +2063,23 @@ void ChangeQTY_EDIT()
 	float fCurWeight, fItemsWeight;
 	ref arItm = &Items[iGoodIndex];
 	ref rItem = ItemsFromID(arItm.id);
-	GameInterface.qty_edit.str = sti(GameInterface.qty_edit.str);
+	GameInterface.qty_edit.str = int(GameInterface.qty_edit.str);
 	
-	if (sti(GameInterface.qty_edit.str) <= 0)
+	if (int(GameInterface.qty_edit.str) <= 0)
 	{
 		GameInterface.qty_edit.str = 0;
 		SetSelectable("QTY_OK_BUTTON", false);
 	}	
-	if (sti(GameInterface.qty_edit.str) == 1)
+	if (int(GameInterface.qty_edit.str) == 1)
 	{
 		GameInterface.qty_edit.str = 1;
 	}	
 	// проверка на доступное кол-во -->
-    if (sti(GameInterface.qty_edit.str) > iCharQty)
+    if (int(GameInterface.qty_edit.str) > iCharQty)
     {
         GameInterface.qty_edit.str = iCharQty;
     }
-	fItemsWeight = sti(GameInterface.qty_edit.str)*stf(rItem.Weight);
+	fItemsWeight = int(GameInterface.qty_edit.str)*float(rItem.Weight);
 	fCurWeight = GetItemsWeight(xi_refCharacter) - fItemsWeight;
 	string sText = FloatToString(fCurWeight, 1) + " / " + GetMaxItemsWeight(xi_refCharacter);
 	SetFormatedText("WEIGHT", sText);
@@ -2093,9 +2094,9 @@ void ADD_ALL_BUTTON()  // сбросить
 
 void ADD_BUTTON()  // вернуть
 {
-	GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - 1);
+	GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - 1);
 
-	if(sti(GameInterface.qty_edit.str) < 0)
+	if(int(GameInterface.qty_edit.str) < 0)
 	{
 		GameInterface.qty_edit.str = 0;
 	}
@@ -2106,9 +2107,9 @@ void REMOVE_BUTTON()  // выкинуть
 {
 	if(iCharQty >= 1)
 	{
-		GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + 1);
+		GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + 1);
 	}
-	if(sti(GameInterface.qty_edit.str) > iCharQty)
+	if(int(GameInterface.qty_edit.str) > iCharQty)
 	{
 		GameInterface.qty_edit.str = iCharQty;
 	}
@@ -2133,7 +2134,7 @@ void UpdateItemInfo();
 	CloseTooltipNew();
 	if(CheckAttribute(&GameInterface, "TABLE_ITEMS." + CurRow + ".index"))
 	{
-		iGoodIndex = sti(GameInterface.TABLE_ITEMS.(CurRow).index);
+		iGoodIndex = int(GameInterface.TABLE_ITEMS.(CurRow).index);
 		SetItemInfo(iGoodIndex);
 	}
 	else HideItemInfo();
@@ -2190,7 +2191,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		return false;
 	}	
 	
-	if(arItem.id == "MapsAtlas" && sti(xi_refCharacter.index) == sti(pchar.index)) 
+	if(arItem.id == "MapsAtlas" && int(xi_refCharacter.index) == int(pchar.index))
 	{
 		if(IsMainCharacter(xi_refCharacter)) return true;
 		return false;
@@ -2326,7 +2327,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		{
 			return false;
 		}
-		int chrgQm = sti(arItem.chargeQ);
+		int chrgQm = int(arItem.chargeQ);
 
 		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
 	}
@@ -2338,7 +2339,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		{
 			return false;
 		}
-		int chrgQ = sti(arItem.chargeQ);
+		int chrgQ = int(arItem.chargeQ);
 
 		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
 	}
@@ -2348,7 +2349,7 @@ bool ThisItemCanBeEquip(aref arItem)
 
 void AtlasAddPress()
 {
-	iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index);
+	iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
 	ref itmRef = &Items[iGoodIndex];
 	string totalInfo;
 	int  i;
@@ -2366,7 +2367,7 @@ void AtlasAddPress()
 
 void EquipPress()
 {
-	iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index);
+	iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
 	ref itmRef = &Items[iGoodIndex];
 	string totalInfo;
 	int  i;
@@ -2446,7 +2447,7 @@ void EquipPress()
                     {
                         FillMapForTreasure(itmRef, ""); //заполним если смотрим карту из сундука
                     }
-		            if (CheckAttribute(itmRef, "MapTypeIdx") && (sti(itmRef.MapTypeIdx) == -1))
+		            if (CheckAttribute(itmRef, "MapTypeIdx") && (int(itmRef.MapTypeIdx) == -1))
 				    {
                         SetFormatedText("MAP_TEXT", GetConvertStr("type_fake", "MapDescribe.txt"));
 					    DeleteAttribute(itmRef, "MapIslId");
@@ -2545,9 +2546,9 @@ void EquipPress()
 				if (findsubstr(itmRef.id, "purse" , 0) != -1) // кошельки
 				{
 					RemoveItems(pchar, itmRef.id, 1);
-					TakeNItems(pchar, itmRef.result, sti(itmRef.result.qty));
+					TakeNItems(pchar, itmRef.result, int(itmRef.result.qty));
 					PlaySound("Ambient\Tavern\monetki_taverna_001.wav");
-					Log_info(XI_ConvertString("Acquired")+sti(itmRef.result.qty)+XI_ConvertString("dublon4")+"");
+					Log_info(XI_ConvertString("Acquired")+int(itmRef.result.qty)+XI_ConvertString("dublon4")+"");
 				}
 				if (itmRef.id == "RingCapBook") // СЖ пинаса 'Санта-Люсия' и дневник Колхауна
 				{
@@ -2572,7 +2573,7 @@ void EquipPress()
 				}
 				if (itmRef.id == "skinmap") // // Jason 120712 карта двух появлений
 				{
-					int mark = sti(itmRef.mark);
+					int mark = int(itmRef.mark);
 					SetNewPicture("MAP_PICTURE", "interfaces\maps\" + "skinmap_"+mark+".tga");
 					ShowMapWindow();
 					if (CheckAttribute(pchar, "questTemp.Ksochitam"))
@@ -2584,7 +2585,7 @@ void EquipPress()
 				}
 				if (itmRef.id == "mark_map") // // Jason 130712 карта с пометками
 				{
-					mark = sti(itmRef.mark);
+					mark = int(itmRef.mark);
 					if(LanguageGetLanguage() != "Russian"){
 						if(LanguageGetLanguage() == "Chinese")
 							SetNewPicture("MAP_PICTURE", "interfaces\maps\chinese\" + "map_TM_"+mark+".tga");
@@ -2629,7 +2630,7 @@ void EquipPress()
 			}
 			else
 			{
-				bool bCanmakeMushketer = (CheckAttribute(xi_refCharacter, "CanTakeMushket"))
+				bool bCanmakeMushketer = (CheckAttribute(xi_refCharacter, "CanTakeMushket"));
 				if(HasSubStr(itmRef.id, "Mushket") && bCanmakeMushketer)
 				{
 					/* if (IsMainCharacter(xi_refCharacter)) // ГГ
@@ -2707,7 +2708,7 @@ void EquipPress()
 								}
 								else
 								{
-									if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 1)
+									if(CheckAttribute(&InterfaceStates, "ShowTutorial") && int(InterfaceStates.ShowTutorial) == 1)
 									{
 										Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 										DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
@@ -2803,12 +2804,12 @@ void EquipPress()
 									// belamour legendary edition орден святого Людовика -->
 									if(itmRef.id == "talisman9" && CheckAttribute(xi_refCharacter, "reputation.fame.talisman9"))
 									{
-										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame.talisman9);
+										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - int(xi_refCharacter.reputation.fame.talisman9);
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
 									}
 									if(itmRef.id == "suit5" && CheckAttribute(xi_refCharacter, "reputation.fame.talisman9"))
 									{
-										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame.talisman9);
+										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX - int(xi_refCharacter.reputation.fame.talisman9);
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
 									}
 									if(itmGroup == HAT_ITEM_TYPE)
@@ -2820,14 +2821,14 @@ void EquipPress()
 								}
 								else 
 								{
-									if(sti(xi_refCharacter.index) == GetMainCharacterIndex() && itmRef.id == "talisman9")
+									if(int(xi_refCharacter.index) == GetMainCharacterIndex() && itmRef.id == "talisman9")
 									{
-										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame);
+										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - int(xi_refCharacter.reputation.fame);
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX;
 									}
-									if(sti(xi_refCharacter.index) == GetMainCharacterIndex() && itmRef.id == "suit5")
+									if(int(xi_refCharacter.index) == GetMainCharacterIndex() && itmRef.id == "suit5")
 									{
-										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - sti(xi_refCharacter.reputation.fame);
+										xi_refCharacter.reputation.fame.talisman9 = COMPLEX_REPUTATION_MAX - int(xi_refCharacter.reputation.fame);
 										xi_refCharacter.reputation.fame = COMPLEX_REPUTATION_MAX;
 									}
 									// <-- legendary edition
@@ -3098,7 +3099,7 @@ void OpenMap()
 {
 	ref map = ItemFromIdx(iGoodIndex);
 	pchar.showlastmap = map.id;
-	pchar.showlastmap.force;
+	touchattr(pchar.showlastmap.force);
 	IDoExit(RC_INTERFACE_MAPVIEW);
 }
 

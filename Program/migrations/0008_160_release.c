@@ -525,7 +525,7 @@ void Goods_Refactoring()
     curGood.NotGenerate      = 1;
     curGood.FireRange        = Cannon[CANNON_TYPE_CANNON_LBS48].FireRange;
     curGood.DamageMultiply   = Cannon[CANNON_TYPE_CANNON_LBS48].DamageMultiply;
-    curGood.ReloadTime       = sti(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS48]));
+    curGood.ReloadTime       = int(GetCannonReloadTime(&Cannon[CANNON_TYPE_CANNON_LBS48]));
     curGood.Norm             = 10; 
     curGood.MediumNorm       = 1.0;
     curGood.SmallNorm        = 1.0;
@@ -1151,13 +1151,13 @@ void Cabins()
 	{
 		makeref(refShip,ShipsTypes[i]);
 		if(!CheckAttribute(refShip,"Class")) continue;
-		if(sti(refShip.Class) == 6) refship.CabinType = "Cabin_Small";
-		if(sti(refShip.Class) == 5) refship.CabinType = "Cabin_Medium";
-		if(sti(refShip.Class) == 4) refship.CabinType = "Cabin_Medium2";
-		if(sti(refShip.Class) == 3) refship.CabinType = "Cabin_Medium2";
+		if(int(refShip.Class) == 6) refship.CabinType = "Cabin_Small";
+		if(int(refShip.Class) == 5) refship.CabinType = "Cabin_Medium";
+		if(int(refShip.Class) == 4) refship.CabinType = "Cabin_Medium2";
+		if(int(refShip.Class) == 3) refship.CabinType = "Cabin_Medium2";
 		if(refship.CabinType == "CabineFDM") continue;
-		if(sti(refShip.Class) == 2) refship.CabinType = "Cabin";
-		if(sti(refShip.Class) == 1) refship.CabinType = "Cabin";
+		if(int(refShip.Class) == 2) refship.CabinType = "Cabin";
+		if(int(refShip.Class) == 1) refship.CabinType = "Cabin";
 	}
 	
 	
@@ -1166,13 +1166,13 @@ void Cabins()
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-		if(sti(RealShips[i].Class) == 6) RealShips[i].CabinType = "Cabin_Small";
-		if(sti(RealShips[i].Class) == 5) RealShips[i].CabinType = "Cabin_Medium";
-		if(sti(RealShips[i].Class) == 4) RealShips[i].CabinType = "Cabin_Medium2";
-		if(sti(RealShips[i].Class) == 3) RealShips[i].CabinType = "Cabin_Medium2";
+		if(int(RealShips[i].Class) == 6) RealShips[i].CabinType = "Cabin_Small";
+		if(int(RealShips[i].Class) == 5) RealShips[i].CabinType = "Cabin_Medium";
+		if(int(RealShips[i].Class) == 4) RealShips[i].CabinType = "Cabin_Medium2";
+		if(int(RealShips[i].Class) == 3) RealShips[i].CabinType = "Cabin_Medium2";
 		if(RealShips[i].CabinType == "CabineFDM") continue;
-		if(sti(RealShips[i].Class) == 2) RealShips[i].CabinType = "Cabin";
-		if(sti(RealShips[i].Class) == 1) RealShips[i].CabinType = "Cabin";
+		if(int(RealShips[i].Class) == 2) RealShips[i].CabinType = "Cabin";
+		if(int(RealShips[i].Class) == 1) RealShips[i].CabinType = "Cabin";
 	}
 }
 
@@ -1316,40 +1316,40 @@ void SchoonerWaterLine()
 	{
 		if(!CheckAttribute(&RealShips[i],"BaseType")) continue;
 		
-		if(sti(RealShips[i].BaseType) == SHIP_SCHOONER)
+		if(int(RealShips[i].BaseType) == SHIP_SCHOONER)
 		{
 			RealShips[i].WaterLine = -0.3;
 		}
-		if(sti(RealShips[i].BaseType) == SHIP_BARKENTINE)
+		if(int(RealShips[i].BaseType) == SHIP_BARKENTINE)
 		{
 			RealShips[i].WaterLine = -0.25;
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_FDM)
+		if(int(RealShips[i].BaseType) == SHIP_FDM)
 		{
 			RealShips[i].Name = "Flyingdutchman";
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_PINK)
+		if(int(RealShips[i].BaseType) == SHIP_PINK)
 		{
 			RealShips[i].SpeedRate = 13.90;
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_MAYFANG)
+		if(int(RealShips[i].BaseType) == SHIP_MAYFANG)
 		{
 			RealShips[i].SpeedRate = 11.65;
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_MIRAGE)
+		if(int(RealShips[i].BaseType) == SHIP_MIRAGE)
 		{
 			RealShips[i].SpeedRate = 13.65;
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_HIMERA)
+		if(int(RealShips[i].BaseType) == SHIP_HIMERA)
 		{
 			RealShips[i].SpeedRate = 15.20;
 		}
-		if(sti(RealShips[i].BaseType) == SHIP_CURSED_FDM)
+		if(int(RealShips[i].BaseType) == SHIP_CURSED_FDM)
 		{
 			RealShips[i].CannonsQuantity = 62;
 			RealShips[i].CannonsQuantityMax = 62;
@@ -1362,12 +1362,12 @@ void SchoonerWaterLine()
 			RealShips[i].cannonf  = RealShips[i].fcannon;
 			RealShips[i].cannonb  = RealShips[i].bcannon;
 		}
-		/* if(sti(RealShips[i].BaseType) == SHIP_TARTANE)
+		/* if(int(RealShips[i].BaseType) == SHIP_TARTANE)
 		{
 			RealShips[i].SpeedRate = 10.15;
 		}
 		
-		if(sti(RealShips[i].BaseType) == SHIP_CAREERLUGGER)
+		if(int(RealShips[i].BaseType) == SHIP_CAREERLUGGER)
 		{
 			RealShips[i].SpeedRate = 10.15;
 		} */
@@ -1376,8 +1376,8 @@ void SchoonerWaterLine()
 	{
 		if(!CheckAttribute(&characters[j],"Ship.Cannons.borts")) continue;
 		if(!CheckAttribute(&characters[j],"Ship.Type")) continue;
-		if(sti(characters[j].Ship.Type) > 899) continue;
-		if(RealShips[sti(characters[j].Ship.Type)].BaseType != SHIP_CURSED_FDM) continue;
+		if(int(characters[j].Ship.Type) > 899) continue;
+		if(RealShips[int(characters[j].Ship.Type)].BaseType != SHIP_CURSED_FDM) continue;
 		
 		for (i = 0; i < 26; i++)
 		{
@@ -1564,26 +1564,26 @@ int InitStdBlade160(int	    ItemIndex,
 	switch (BladeType) 
 	{
 		case "FencingL" :
-			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.5 + 0.2 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(35.0 * (1.0/Curve + Lenght) * (stf(blade.Attack) * 2.0 - 30.0));
+				blade.price  = int(35.0 * (1.0/Curve + Lenght) * (float(blade.Attack) * 2.0 - 30.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingS" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.25 + 0.25 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(25.0 * (Curve + Lenght) * (stf(blade.Attack) * 2.0 - 40.0));
+				blade.price  = int(25.0 * (Curve + Lenght) * (float(blade.Attack) * 2.0 - 40.0));
 			}	
 			else blade.price = Price;			
 		break;
 		case "FencingH" :
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
+			blade.WeightAttack = float(blade.Attack) * (0.25 + 0.2 * float(blade.Weight));
 			if(isGenerablePrice) 
 			{
-				blade.price  = makeint(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (stf(blade.Attack) * 2.0 - 50.0));
+				blade.price  = int(20.0 * ((Curve + 1.0) * 1.0/Lenght) * (float(blade.Attack) * 2.0 - 50.0));
 			}	
 			else blade.price = Price;			
 		break;

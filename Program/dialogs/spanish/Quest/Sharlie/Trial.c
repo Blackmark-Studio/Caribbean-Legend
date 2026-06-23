@@ -35,15 +35,15 @@ void ProcessDialogEvent()
 		rColony = GetColonyByIndex(iTemp);
 		bOk = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 		dialog.text = "Sí, sí. Mi querido amigo Fadey te describió a ti y tu situación con todo detalle. Supe que eras tú tan pronto como te vi en la puerta. Dime, capitán, ¿qué tipo de barco tienes?";
-		if (sti(pchar.ship.type) == SHIP_NOTUSED || !bOk)
+		if (int(pchar.ship.type) == SHIP_NOTUSED || !bOk)
 		{
 			link.l1 = "Ah...No tengo un barco en este momento, monsieur...";
 			link.l1.go = "lecrua_noship";
 		}
 		else
 		{
-			link.l1 = "Tengo un " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name"))) + ", su nombre es " + pchar.ship.name + ".";
-			if (5 - sti(RealShips[sti(pchar.ship.type)].Class) < 0)
+			link.l1 = "Tengo un " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(int(RealShips[int(pchar.ship.type)].basetype), "Name"))) + ", su nombre es " + pchar.ship.name + ".";
+			if (5 - int(RealShips[int(pchar.ship.type)].Class) < 0)
 				link.l1.go = "lecrua_badship";
 			else
 				link.l1.go = "lecrua_2";
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 		if (!bImCasual)
 		{
 			pchar.quest.trial_spy_over.win_condition.l1 = "Timer";
-			pchar.quest.trial_spy_over.win_condition.l1.date.hour = sti(GetTime() + 2);
+			pchar.quest.trial_spy_over.win_condition.l1.date.hour = int(GetTime() + 2);
 			pchar.quest.trial_spy_over.win_condition.l1.date.day = GetAddingDataDay(0, 0, 2);
 			pchar.quest.trial_spy_over.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 2);
 			pchar.quest.trial_spy_over.win_condition.l1.date.year = GetAddingDataYear(0, 0, 2);
@@ -358,7 +358,7 @@ void ProcessDialogEvent()
 		NextDiag.CurrentNode = "florian_deck_wait";
 		pchar.questTemp.Trial = "spy_wait";
 		pchar.quest.Trial_spyfail_wait.win_condition.l1 = "Timer";
-		pchar.quest.Trial_spyfail_wait.win_condition.l1.date.hour = sti(GetTime() + rand(12));
+		pchar.quest.Trial_spyfail_wait.win_condition.l1.date.hour = int(GetTime() + rand(12));
 		pchar.quest.Trial_spyfail_wait.win_condition.l1.date.day = GetAddingDataDay(0, 0, 1);
 		pchar.quest.Trial_spyfail_wait.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 		pchar.quest.Trial_spyfail_wait.win_condition.l1.date.year = GetAddingDataYear(0, 0, 1);

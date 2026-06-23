@@ -18,7 +18,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
+			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && int(pchar.GenQuest.CitizenConflict) > 3)
 			{
 				dialog.text = "我不想和你说话。 你无缘无故攻击和平的平民, 还挑衅他们打架。 走开! ";
 				link.l1 = "嗯... ";
@@ -130,7 +130,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "facio_wait";
 			pchar.questTemp.LSC.Drink = "begin";
 			pchar.questTemp.LSC.Drink.Chance = hrand(100); // 醉酒结果
-			if (CheckAttribute(pchar, "questTemp.CanDrink")) pchar.questTemp.LSC.Drink.Chance = sti(pchar.questTemp.LSC.Drink.Chance)+50;
+			if (CheckAttribute(pchar, "questTemp.CanDrink")) pchar.questTemp.LSC.Drink.Chance = int(pchar.questTemp.LSC.Drink.Chance)+50;
 			SetFunctionTimerCondition("LSC_DrinkOver", 0, 0, 3, false); // 3天
 			AddQuestRecord("LSC_Drink", "1");
 		break;
@@ -191,8 +191,8 @@ void ProcessDialogEvent()
 		
 		case "result_grabbing":
 			// 计算从箱子里拿的钱和金币
-			iPeso = sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money);
-			iDubl = GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon);
+			iPeso = int(pchar.money)-int(pchar.questTemp.LSC.Drink.Money);
+			iDubl = GetCharacterItem(pchar, "gold_dublon")-int(pchar.questTemp.LSC.Drink.Dublon);
 			if (iPeso <= 0) sPeso = "一个比索都没有";
 			else sPeso = ""+FindRussianMoneyString(iPeso)+"";
 			if (iDubl <= 0) sDubl = "一个杜布隆都没有";
@@ -241,8 +241,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "grabbing_part":
-			iPeso = makeint((sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money))/2);
-			iDubl = makeint((GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
+			iPeso = int((int(pchar.money)-int(pchar.questTemp.LSC.Drink.Money))/2);
+			iDubl = int((GetCharacterItem(pchar, "gold_dublon")-int(pchar.questTemp.LSC.Drink.Dublon))/2);
 			AddMoneyToCharacter(pchar, -iPeso);
 			RemoveDublonsFromPCharTotal(iDubl);
 			Log_Info("你给了" + iDubl + "个杜布隆");
@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload38", "FleuronTavern", "goto", "goto2", "OpenTheDoors", 15.0);
 			pchar.quest.LSC_Drink4.win_condition.l1 = "Timer";
-			pchar.quest.LSC_Drink4.win_condition.l1.date.hour  = sti(GetTime()+5);
+			pchar.quest.LSC_Drink4.win_condition.l1.date.hour  = int(GetTime()+5);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
@@ -280,7 +280,7 @@ void ProcessDialogEvent()
 			n = Findlocation("CarolineBank");
 			locations[n].private2.QuestClosed = true; // 锁上箱子
 			pchar.quest.LSC_Drink4.win_condition.l1 = "Timer";
-			pchar.quest.LSC_Drink4.win_condition.l1.date.hour  = sti(GetTime()+5);
+			pchar.quest.LSC_Drink4.win_condition.l1.date.hour  = int(GetTime()+5);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
 			pchar.quest.LSC_Drink4.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);

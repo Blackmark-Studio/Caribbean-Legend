@@ -1,20 +1,13 @@
-key {d24.04.2026}
-News {1.8 Maritime Update: Open Beta}
+key {d23.06.2026}
+News {Das 1.8.2 Performance Update ist jetzt verfügbar!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoi!   ***************************
 -------------------------------------------------------------------------------------------------
-— Patch 1.8 Maritime Update ist jetzt verfügbar
-— Version 1.7.3 wandert ins Archiv; ihr könnt über Steam zwischen den Versionen wechseln
+— Patch 1.8.2 Performance Update ist verfügbar
 — Kein neues Spiel erforderlich
-— Das DLC Maritime Stories ist verfügbar
-— Jahreszeiten wurden dem Spiel hinzugefügt und verändern die Karibik spürbar
-— Der Seekampf mit Kanonen wurde überarbeitet
-— Neues Segel- und Kurswinkelsystem
-— Entergefechte wurden verbessert
-— Die Bedienung der Weltkarte wurde verbessert
-— Die Schiffs-KI wurde verbessert, wodurch Kämpfe zwischen Schiffen deutlich spannender geworden sind
-— Zahlreiche Quality-of-Life-Verbesserungen, Balance-Anpassungen und Bugfixes
-— Die vollständige Liste der Änderungen findet ihr über den Button unten in den News
+— Die Leistung ist um 40 % gestiegen
+— Dem Spiel wurde eine neue Community-Belohnung hinzugefügt
+— Die ausführliche Liste der Änderungen und Neuigkeiten zu Patch 2.0 findet ihr über die Schaltfläche unten in den News
 }

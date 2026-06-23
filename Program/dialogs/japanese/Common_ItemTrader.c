@@ -146,7 +146,7 @@ void ProcessDialogEvent()
 		//Jason --> мини-квест Дефицитный товар
 		case "Wine_ItemTrader":
 			dialog.text = "ああ。一本につき七百ペソだ。";
-			if (makeint(Pchar.money) >= 700)
+			if (int(Pchar.money) >= 700)
 			{
 				link.l1 = "素晴らしい。金を受け取って、それを俺に渡せ。";
 				link.l1.go = "Wine_ItemTrader_1";
@@ -175,35 +175,13 @@ void ProcessDialogEvent()
 		
 		case "Wine_Bottles_1":
 			dialog.text = "いや、違うぜ。ここで手に入れてるんだ。でも、そう簡単に仕入れ先の名前は教えられねえな。だが、千ペソくれりゃ……もしかしたら、教えてやってもいいかもな……";
-			if (makeint(Pchar.money) >= 1000)
+			if (int(Pchar.money) >= 1000)
             {
 				link.l1 = "いいだろう。これが千枚だ――さあ、仕入れ先を教えろ。";
 				link.l1.go = "Wine_Bottles_2";
 			}
 			link.l2 = "今やお前ら商売人は図々しくなりすぎだぜ！そんなの、お前らにはもったいないくらいだろ？ お前らの取引先なんかいなくても、俺は十分やっていけるさ、ありがとな。";
 			link.l2.go = "Wine_Bottles_fail";
-		break;
-		
-		case "Wine_Bottles_free":
-			dialog.text = "そうか……仕方ないな。これがあんたの証文だ、いつか恩を返してくれると期待してるぜ。";
-			link.l1 = "...";
-			link.l1.go = "Wine_Bottles_free_1";
-		break;
-		
-		case "Wine_Bottles_free_1":
-			pchar.questTemp.Wine.TraderID = pchar.questTemp.Wine.City +"_trader";
-			sld = characterFromId(pchar.questTemp.Wine.TraderID);
-			pchar.questTemp.Wine.Name = GetFullName(sld);
-			pchar.questTemp.Wine.ItemTraderID = npchar.id;
-			dialog.text = "俺のワインの仕入れ先の名前は "+pchar.questTemp.Wine.Name+"、彼はこの地元の店の主人だ。";
-			link.l1 = "了解だ！ありがとな！";
-			link.l1.go = "exit";
-			//pchar.questTemp.Wine.Trader = "true";
-			DeleteAttribute(pchar, "questTemp.Wine.bottles");
-			pchar.questTemp.Wine.Repeat2 = "true";
-			TakeNItems(pchar, "letter_1", 1);
-			ChangeItemDescribe("letter_1", "itmdescr_letter_1");
-			PlaySound("interface\important_item.wav");
 		break;
 		
 		case "Wine_Bottles_2":
@@ -249,7 +227,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Repeat1_2":
 			dialog.text = "情報のためにお前から千ペソ受け取ったぜ。\n手紙については別に二千ペソ払ってもらう。どんな場合でも、それ以下にはならねえぞ。";
-			if (makeint(Pchar.money) >= 2000)
+			if (int(Pchar.money) >= 2000)
 			{
 				link.l1 = "ああ……商人どもは本当に欲深いな。誰にも好かれねえのも当然だぜ。まあいい、ほらよ、金だ。さっさと証文を書きやがれ。";
 				link.l1.go = "Wine_Bottles_3";
@@ -335,12 +313,12 @@ void ProcessDialogEvent()
 		
 		case "ZsI_PokupaemPistolety_1":
 			dialog.text = "もちろんです！お客様はいつでも大歓迎ですよ。三千ペソで、ご要望通り信頼できるピストル、弾丸、 火薬をお渡しします。";
-			if (sti(pchar.Money) > 2999)
+			if (int(pchar.Money) > 2999)
 			{
 				link.l1 = "高いが、まあいい。買わせてもらうぜ。";
 				link.l1.go = "ZsI_PokupaemPistolety_2";
 			}
-			if (sti(pchar.Money) > 2299)
+			if (int(pchar.Money) > 2299)
 			{
 				link.l2 = "値段が不公平に思えるな。モスクワ人ファディの友人には割引してくれないか？";
 				link.l2.go = "ZsI_Torg";
@@ -391,7 +369,7 @@ void ProcessDialogEvent()
 			{
 				Notification_Skill(false, 19, SKILL_COMMERCE);
 				dialog.text = "ファデイ旦那の友人ならいつでも歓迎だが、値段には友人なんていないぜ。三千ペソだ、船長。";
-				if (sti(pchar.Money) > 2999)
+				if (int(pchar.Money) > 2999)
 				{
 					link.l1 = "高いけど、まあいいさ。もらっておくぜ。";
 					link.l1.go = "ZsI_PokupaemPistolety_2";
@@ -430,7 +408,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Device_ItemTrader_1":
-			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+sti(pchar.GenQuest.Device.Shipyarder.Chance1))
+			if (int(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && int(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+int(pchar.GenQuest.Device.Shipyarder.Chance1))
 			{
 				dialog.text = "ふむ……ああ、変な奴が一人いたな。でもあいつはそれが何なのか教えてくれなかったし、ただ俺に売りつけようとしただけだ。 だけど、何に使うものか分からないのに、俺がそれを買ってどうする？どうやって転売するんだ？だから、 俺は断ったのさ"+NPCharSexPhrase(npchar,"","")+"、そして彼は立ち去った";
 				link.l1 = "それで、そいつはどんな奴だったんだ？どこへ行った？俺はその道具がどうしても必要なんだ。";
@@ -448,7 +426,7 @@ void ProcessDialogEvent()
 		// Мангароса
 		case "mangarosa":
 			// тут работает везение
-			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
+			if (int(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
 				dialog.text = "見せてくれ……そうだな、これは面白い植物だ。そして、とても、とても珍しいものだ。マンガローザと呼ばれている。 何に使うのかは知らないが、これについて面白い事実があるんだ……";
 				link.l1 = "「どういう意味だ？」";
@@ -464,7 +442,7 @@ void ProcessDialogEvent()
 		
 		case "mangarosa_exit":
 			DialogExit();
-			pchar.questTemp.Mangarosa.m_count = sti(pchar.questTemp.Mangarosa.m_count)+1;
+			pchar.questTemp.Mangarosa.m_count = int(pchar.questTemp.Mangarosa.m_count)+1;
 			npchar.quest.mangarosa = "true";
 		break;
 		
@@ -489,7 +467,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
 			pchar.questTemp.UV_Lavochniki_2 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_2":
@@ -498,7 +476,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
 			pchar.questTemp.UV_Lavochniki_3 = true;
-			npchar.quest.UV_Vopros;
+			touchattr(npchar.quest.UV_Vopros);
 		break;
 
 		case "UV_Lavochniki_3":

@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Un collier ? En effet... J'ai récemment acquis un tel bijou. Et dites-moi, capitaine, par quels moyens proposez-vous de me déposséder de ce bijou qui m'appartient légitimement ?";
 			}
-			if (sti(pchar.Money) >= 5000)
+			if (int(pchar.Money) >= 5000)
 			{
 				link.l1 = "Je suis prêt"+GetSexPhrase("","e")+" à vous offrir cinq mille pesos pour cette pièce. Une somme considérable qui vous permettrait d’acheter un ornement tout aussi raffiné, peut-être même plus grandiose. Pendant ce temps, ce collier particulier serait restitué à quelqu’un qui le valorise au-delà de toute mesure—bien plus que n’importe quelle valeur monétaire.";
 				link.l1.go = "Captain_4_commerce";

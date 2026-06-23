@@ -115,7 +115,7 @@ void TBP_HouseBetsi(string qName)
 	DeleteAttribute(pchar, "questTemp.TBP_BuyKulon3");
 	for (i=1; i<=2; i++)
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("TBP_Bandit_"+i, "citiz_4"+(rand(8)+1), "man", "man", sti(pchar.rank), PIRATE, -1, true, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("TBP_Bandit_"+i, "citiz_4"+(rand(8)+1), "man", "man", int(pchar.rank), PIRATE, -1, true, "pirate"));
 		if(i==1)
 		{
 			sld.dialog.filename = "Quest\MiniEvents\MysteryOfBetsyPrice_dialog.c";
@@ -284,7 +284,7 @@ void TBP_BetsiBackToWork(string qName)
 	SetTimerFunction("TBP_BetsiBackToWork_2", 0, 0, 1);
 	pchar.questTemp.TBP_BetsiPrice = true;
 	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	pchar.questTemp.MiniEvents = int(pchar.questTemp.MiniEvents) + 1; // завершено событие
 	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
 	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }

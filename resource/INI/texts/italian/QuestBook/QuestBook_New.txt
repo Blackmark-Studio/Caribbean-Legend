@@ -1505,6 +1505,11 @@ OZ.12
 Non ho restituito i soldi a Felipe Alarcón. Non ha apprezzato il gesto – si è lanciato all'attacco. L'ho sistemato senza problemi, ma ora, a quanto pare, dovrò aprirmi la strada fuori dalla città combattendo.
 }
 
+OZ.13
+{
+Ho deciso di non restituire il libro al fabbro e di venderlo invece al francese, poi ho perlustrato da solo il nascondiglio nella grotta. Pare che questa impresa si sia rivelata molto redditizia: dovrei prestare più attenzione alle voci di città.
+}
+
 OZ.2
 {
 Ora è chiaro cosa ha causato lo sconforto di Sebastian Cordoba. Ha perso un libro molto importante per il suo lavoro – un libro sull'arte della lavorazione del metallo. La sua situazione è aggravata dal fatto che Javier ha deciso di non perdere tempo e vendere il libro a un maestro armaiolo francese. Come al solito, i guai non vengono mai da soli. Poco prima, il fabbro aveva ricevuto un importante ordine dall'ammiraglio Eugenio de la Torre... Quando arriverà qui, saprà certamente perché il suo ordine non è stato eseguito. Venuto a sapere che il libro è finito nelle mani dei francesi, secondo il fabbro, sarà molto severo con lui. Ho accettato@<sSex> di aiutare il poveretto. Se riuscirò a restituirgli il libro, avrà una seconda possibilità e, spero, non ripeterà più i suoi errori, mentre io potrò sempre contare sui servizi di un buon fabbro. Comincerò cercando Javier, che sicuramente ora starà cercando di raggirare qualcun altro.

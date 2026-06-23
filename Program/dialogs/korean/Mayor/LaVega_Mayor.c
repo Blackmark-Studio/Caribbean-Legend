@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgainWithOut";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "값싼 말로 나를 귀찮게 하지 마시오. 다음번에는 결과가 마음에 들지 않을 것이오...";
         			link.l1 = "알겠습니다.";
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 		    link.l1.go = "AngryExitAgain";
             if (CheckAttribute(npchar, "angry.terms")) //примиряемся через 10 дней.
             {
-                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > sti(npchar.angry.terms))
+                if (GetNpcQuestPastDayParam(npchar, "angry.terms") > int(npchar.angry.terms))
                 {
          			dialog.text = "나에게 더 많은 존경을 표하고 무례를 그만두기를 바라오. 그렇지 않으면 그대를 죽여야만 하오. 그것은 매우 불쾌한 일이 될 것이오.";
         			link.l1 = ""+npchar.name+", 확실히 그렇게 하겠습니다.";

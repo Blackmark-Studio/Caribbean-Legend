@@ -22,7 +22,7 @@ void LoginCharactersInLocation(ref loc)
 	// boal dead can be searched 14.12.2003 <--
 }
 
-void LoginCharacter(aref chr, string locID)
+void LoginCharacter(ref chr, string locID)
 {
 	if(CheckAttribute(chr, "OfficerImmortal") && chr.OfficerImmortal == "Injury") return;
 	if(LAi_CharacterLogin(chr, locID))
@@ -34,7 +34,7 @@ void LoginCharacter(aref chr, string locID)
 			isNoCreated = false;			
 			if(TeleportCharacterToLocator(chr, chr.location.group, chr.location.locator)==0)
 			{
-				if((CheckAttribute(chr, "index") != false) && (GetMainCharacterIndex() == sti(chr.index)))
+				if((CheckAttribute(chr, "index") != false) && (GetMainCharacterIndex() == int(chr.index)))
 				{
 					Trace("Main character <" + chr.id + "> error teleportation by location: " + chr.location + "  on locator: " + chr.location.group + "::" + chr.location.locator);
 					Log_TestInfo("Player: Error teleportation on locator: <" + chr.location.group + "::" + chr.location.locator + ">");
@@ -61,7 +61,7 @@ void LoginCharacter(aref chr, string locID)
 	}
 }
 
-void LogoffCharacter(aref chr)
+void LogoffCharacter(ref chr)
 {
 	if(IsEntity(&chr))
 	{

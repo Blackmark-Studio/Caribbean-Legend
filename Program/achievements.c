@@ -139,7 +139,7 @@ int GetMaxState(int StateNum)
 			curState = 35;			
 		break;
 		case 39  :	// Торговец : Заработать торговлей/перепродажей 10000000
-			curState = 10000000)					
+			curState = 10000000;
 		break;		
 		case 40  :	// Исследователь : исследовать данжи (>=50)
 			curState = 50;					
@@ -217,7 +217,7 @@ int GetMaxState(int StateNum)
 void CheckAchievments()
 {	
 	// Легендарный :  уровень >= 30
-	if(sti(pchar.rank) >= 30) Achievment_Set("ach_05");
+	if(int(pchar.rank) >= 30) Achievment_Set("ach_05");
 	// Баловень судьбы : (удача = 100%)
 	if(GetSkillValue(pchar, SKILL_TYPE, SKILL_FORTUNE) >= 100)	Achievment_Set("ach_11");
 	// Фехтовальщик : (фехт в ЛО = 100%)
@@ -235,11 +235,11 @@ void CheckAchievments()
 	// Негоциант : (торговля = 100%)
 	if(GetSkillValue(pchar, SKILL_TYPE, SKILL_COMMERCE) >= 100) Achievment_Set("ach_18");				
 	// Джедай :  достичь максимальной репутации
-	if(sti(pchar.reputation.nobility) > 95) Achievment_Set("ach_19");
+	if(int(pchar.reputation.nobility) > 95) Achievment_Set("ach_19");
 	// Ситх : достичь минимальной репутации
-	if(sti(pchar.reputation.nobility) < 5) Achievment_Set("ach_20");
+	if(int(pchar.reputation.nobility) < 5) Achievment_Set("ach_20");
 	// Скряга : сколотить капитал >= 10 000 000
-	if(sti(pchar.money) >= 10000000) Achievment_Set("ach_28");
+	if(int(pchar.money) >= 10000000) Achievment_Set("ach_28");
 	// Флотоводец : собрать максимальную эскадру
 	if(GetRemovableCompanionsNumber(pchar) == COMPANION_MAX) Achievment_Set("ach_30");
 	// Болезненный : уронить здоровье до минимума
@@ -255,13 +255,13 @@ void CheckAchievments()
 	// Не зная страха - прохождение "Против всех"
 	if(CheckAttribute(pchar,"questTemp.HWIC.Detector") && (pchar.questTemp.HWIC.Detector == "self_win")) Achievment_Set("ach_46");
 	// "Путешественник" - посетить все колонии (таверны) 
-	if(sti(pchar.questTemp.TavernVisit.counter) == 28) Achievment_Set("ach_54");
+	if(int(pchar.questTemp.TavernVisit.counter) == 28) Achievment_Set("ach_54");
 	// "Команда профессионалов" - нанять офицеров на все должности
 	if(CheckForAllOfficers()) Achievment_Set("ach_55");
 	// за три приготовленных зелья из Мангаросы
 	if(CheckAttribute(pchar, "Mangarosa.Alchemy.MP") && CheckAttribute(pchar, "Mangarosa.Alchemy.MF") && CheckAttribute(pchar, "Mangarosa.Alchemy.MT")) Achievment_Set("ach_62");
 	// за ремонт на всех верфях архипелага
-	if(sti(pchar.questTemp.ShipyardVisit.counter) == 23) Achievment_Set("ach_63");
+	if(int(pchar.questTemp.ShipyardVisit.counter) == 23) Achievment_Set("ach_63");
 	// за полный апгрейд корабля
 	if(CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(pchar, "achievment.Tuning.stage4")) Achievment_Set("ach_66");
 	if(CheckAttribute(pchar,"Achievment.Barbie") && CheckAttribute(pchar,"Achievment.Genrih")) Achievment_Set("ach_CL_111");
@@ -272,7 +272,7 @@ void CheckAchievments()
 	{
 		if(CheckAttribute(pchar,"reputation.enghunter") && CheckAttribute(pchar,"reputation.frahunter") && CheckAttribute(pchar,"reputation.spahunter") && CheckAttribute(pchar,"reputation.holhunter"))
 		{
-			if(sti(pchar.reputation.enghunter) > 99 && sti(pchar.reputation.frahunter) > 99  && sti(pchar.reputation.spahunter) > 99 && sti(pchar.reputation.holhunter) > 99)
+			if(int(pchar.reputation.enghunter) > 99 && int(pchar.reputation.frahunter) > 99  && int(pchar.reputation.spahunter) > 99 && int(pchar.reputation.holhunter) > 99)
 			{
 				Achievment_Set("ach_CL_113");
 			}
@@ -281,7 +281,7 @@ void CheckAchievments()
 	// неканонично
 	if(startHeroType != 2 && !GetAchievement("ach_CL_124"))
 	{
-		if(CheckAttribute(pchar,"reputation.spahunter") && sti(pchar.reputation.spahunter) < -99)
+		if(CheckAttribute(pchar,"reputation.spahunter") && int(pchar.reputation.spahunter) < -99)
 			Achievment_Set("ach_CL_124");
 	}
 	
@@ -298,7 +298,7 @@ void CheckAchievments()
 	// ачивки и статы фриплея -->
 	if(SandBoxMode)
 	{
-		if(sti(pchar.money) >= 1000000)
+		if(int(pchar.money) >= 1000000)
 		{
 			Achievment_Set("ach_CL_98");
 		}
@@ -309,11 +309,11 @@ void CheckAchievments()
 			pchar.questTemp.SanBoxTarget.AllQuests = true;
 			ChangeCharacterComplexReputation(pchar, "fame", COMPLEX_REPUTATION_MAX);
 		}
-		if(sti(pchar.money) >= 1000000 && CheckAttribute(pchar,"questTemp.SanBoxTarget.ColonyCaptured") && CheckAttribute(pchar,"questTemp.SanBoxTarget.AllQuests") && Statistic_AddValue(Pchar, "Treasure", 0) > 19)
+		if(int(pchar.money) >= 1000000 && CheckAttribute(pchar,"questTemp.SanBoxTarget.ColonyCaptured") && CheckAttribute(pchar,"questTemp.SanBoxTarget.AllQuests") && Statistic_AddValue(Pchar, "Treasure", 0) > 19)
 		{
 			Achievment_Set("ach_CL_102");
 		}
-		if(sti(pchar.rank) >= 30 && !CheckAttribute(pchar, "questTemp.PerksPotionEffect"))
+		if(int(pchar.rank) >= 30 && !CheckAttribute(pchar, "questTemp.PerksPotionEffect"))
 		{
 			Achievment_Set("ach_CL_172");
 		}

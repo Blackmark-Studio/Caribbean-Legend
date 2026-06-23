@@ -302,7 +302,7 @@ void ProcessDialogEvent()
 			link.l1.go = "AlonsoWait_2";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(40);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			npchar.SharlieTutorial_KaznacheyQuest_Alonso = true;
 		break;
@@ -313,7 +313,7 @@ void ProcessDialogEvent()
 			link.l1.go = "AlonsoWait_2";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(50);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			npchar.SharlieTutorial_KaznacheyQuest_Alonso = true;
 		break;
 
@@ -323,7 +323,7 @@ void ProcessDialogEvent()
 			link.l1.go = "AlonsoWait_2";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(60);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			npchar.SharlieTutorial_KaznacheyQuest_Alonso = true;
 		break;
@@ -897,7 +897,7 @@ void ProcessDialogEvent()
 			link.l1.go = "RumGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(28);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			npchar.SharlieTutorial_KaznacheyQuest_Anri = true;
 		break;
@@ -908,7 +908,7 @@ void ProcessDialogEvent()
 			link.l1.go = "RumGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(35);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			npchar.SharlieTutorial_KaznacheyQuest_Anri = true;
 		break;
 
@@ -918,7 +918,7 @@ void ProcessDialogEvent()
 			link.l1.go = "RumGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(42);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			npchar.SharlieTutorial_KaznacheyQuest_Anri = true;
 		break;
@@ -1278,7 +1278,7 @@ void ProcessDialogEvent()
 			link.l1.go = "BallsGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(20);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			npchar.SharlieTutorial_KaznacheyQuest_Poli = true;
 		break;
@@ -1289,7 +1289,7 @@ void ProcessDialogEvent()
 			link.l1.go = "BallsGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(25);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			npchar.SharlieTutorial_KaznacheyQuest_Poli = true;
 		break;
 
@@ -1299,7 +1299,7 @@ void ProcessDialogEvent()
 			link.l1.go = "BallsGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
 			RemoveDublonsFromPCharTotal(30);
-			pchar.questTemp.SharlieTutorial_KaznacheyQuest = sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
+			pchar.questTemp.SharlieTutorial_KaznacheyQuest = int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) + 1;
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 			npchar.SharlieTutorial_KaznacheyQuest_Poli = true;
 		break;
@@ -1448,7 +1448,7 @@ void ProcessDialogEvent()
 			dialog.text = "Vi ricordo che dovete ancora trenta pesos alla cassa della nave — per la botte d’acqua piovana rovinata. Il vostro comico tentativo di lavare la camicia avrebbe potuto costare ancora di più, se non fosse tornata la pioggia. "+sStr+"";
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass"))
 			{
-				if (sti(pchar.Money) >= 230)
+				if (int(pchar.Money) >= 230)
 				{
 					link.l1 = "Proprio quello che mi mancava — debiti subito all’arrivo. Ecco qui.";
 					link.l1.go = "OfficerKaznachey_4";
@@ -1456,7 +1456,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (sti(pchar.Money) >= 30)
+				if (int(pchar.Money) >= 30)
 				{
 					link.l1 = "Proprio quello che mi mancava — debiti subito all’arrivo. Ecco qui.";
 					link.l1.go = "OfficerKaznachey_4";
@@ -1561,7 +1561,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_11_agree":
-			if(GetItemsWeight(pchar) + sti(Items[GetItemIndex("Chest")].weight) > GetMaxItemsWeight(pchar))
+			if(GetItemsWeight(pchar) + int(Items[GetItemIndex("Chest")].weight) > GetMaxItemsWeight(pchar))
 			{
 				dialog.text = "Prego. Ma per l’amor di Dio — non dimenticate di estrarre i dobloni dal forziere, attenetevi rigorosamente alla lista e non osate tenere nulla per voi. Mi aspetto di riavere anche il forziere vuoto\n"+
 				"E cercate di non sforzarvi troppo, monsieur. E perché vi siete caricato di tutta questa roba? Vi consiglio di lasciare qualcosa in un baule.";
@@ -1585,7 +1585,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_12_Wait": // ждёт выполнения квеста
 			dialog.text = "Come va? Hai distribuito il pagamento? Hai portato tutto? Il resto dei dobloni, lo scrigno vuoto?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && int(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "Tutto pronto.";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1642,7 +1642,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.SharlieTutorial_KaznacheyQuestCompleted = true;
 			DeleteAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuestActive");
 			npchar.Merchant.type = "SharlieTurorialK";
-			pchar.SharlieTutorial.FullyCompleted = sti(pchar.SharlieTutorial.FullyCompleted) + 1;
+			pchar.SharlieTutorial.FullyCompleted = int(pchar.SharlieTutorial.FullyCompleted) + 1;
 		break;
 		
 		case "OfficerKaznachey_15_gold_115":

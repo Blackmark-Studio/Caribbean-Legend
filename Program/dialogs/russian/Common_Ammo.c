@@ -37,7 +37,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			LAi_group_Attack(NPChar, Pchar);
-			if (rand(3) != 1) SetNationRelation2MainCharacter(sti(npchar.nation), RELATION_ENEMY);
+			if (rand(3) != 1) SetNationRelation2MainCharacter(int(npchar.nation), RELATION_ENEMY);
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 
@@ -68,7 +68,7 @@ void ProcessDialogEvent()
 				link.l1 = "Нет, ничего, просто зашёл по случаю.";
 			}
 			// вице-адмирал
-			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
+			if(isMainCharacterPatented() && int(Items[int(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == int(Items[int(pchar.EquipedPatentId)].Nation))
 			{
 				dialog.text = "Приветствую вас, вице-адмирал! У вас есть какие-нибудь указания?";
 				link.l1 = "Нет, офицер, указаний нет. Я просто зашёл осмотреть форт.";
@@ -129,10 +129,10 @@ void ProcessDialogEvent()
 			
 		case "GiveTaskGun_1":
 			GetGunType();
-			pchar.questTemp.PrisonGun.Sum = makeint(sti(pchar.questTemp.PrisonGun.Price)*sti(pchar.questTemp.PrisonGun.Qty));
+			pchar.questTemp.PrisonGun.Sum = int(int(pchar.questTemp.PrisonGun.Price)*int(pchar.questTemp.PrisonGun.Qty));
 			pchar.questTemp.PrisonGun.Luck = rand(4);
 			pchar.questTemp.PrisonGun.Id = npchar.location;
-			dialog.Text = "Мне необходимы "+ pchar.questTemp.PrisonGun.Text +", в количестве ровно " + sti(pchar.questTemp.PrisonGun.Qty) + " штук. Заплатить готов золотыми дублонами, по "+ sti(pchar.questTemp.PrisonGun.Price) +" за штуку. Всего это выйдет " + FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum)) + ". Что скажете?.. Да, ещё одно - всю партию приму сразу, но не ранее, чем через месяц - деньги ещё в пути.";
+			dialog.Text = "Мне необходимы "+ pchar.questTemp.PrisonGun.Text +", в количестве ровно " + int(pchar.questTemp.PrisonGun.Qty) + " штук. Заплатить готов золотыми дублонами, по "+ int(pchar.questTemp.PrisonGun.Price) +" за штуку. Всего это выйдет " + FindRussianDublonString(int(pchar.questTemp.PrisonGun.Sum)) + ". Что скажете?.. Да, ещё одно - всю партию приму сразу, но не ранее, чем через месяц - деньги ещё в пути.";
 			Link.l1 = RandPhraseSimple("Нет, офицер, не заинтересовало меня ваше предложение... Извините.","Заманчиво, конечно, но я не возьмусь. Позвольте не объяснять своего решения...");
 			Link.l1.go = "exit_gun";
 			Link.l2 = RandPhraseSimple("Не скрою, предложение интересное. Считайте, что мы уже договорились.","Пожалуй, возьмусь. Мне это не сложно, а выгода очевидна.");
@@ -156,8 +156,8 @@ void ProcessDialogEvent()
 			AddQuestUserData("PrisonGun", "sSex", GetSexPhrase("ся","ась"));
 			AddQuestUserData("PrisonGun", "sName", GetFullName(npchar));
 			AddQuestUserData("PrisonGun", "sCity", XI_ConvertString("Colony" + npchar.city + "Gen"));
-			AddQuestUserData("PrisonGun", "sQty", makeint(pchar.questTemp.PrisonGun.Qty));
-			AddQuestUserData("PrisonGun", "sSum", makeint(pchar.questTemp.PrisonGun.Sum));
+			AddQuestUserData("PrisonGun", "sQty", int(pchar.questTemp.PrisonGun.Qty));
+			AddQuestUserData("PrisonGun", "sSum", int(pchar.questTemp.PrisonGun.Sum));
 			AddQuestUserData("PrisonGun", "sText", pchar.questTemp.PrisonGun.Text);
 			NextDiag.TempNode = "First time";
 		break;	
@@ -179,8 +179,8 @@ void ProcessDialogEvent()
 				break;
 			}
 			iGunGoods = pchar.questTemp.PrisonGun.Goods;
-			amount = GetSquadronGoods(Pchar, iGunGoods) - sti(pchar.questTemp.PrisonGun.Qty);
-			sTemp = sti(pchar.questTemp.PrisonGun.Qty);
+			amount = GetSquadronGoods(Pchar, iGunGoods) - int(pchar.questTemp.PrisonGun.Qty);
+			sTemp = int(pchar.questTemp.PrisonGun.Qty);
 			iTest = FindColony(NPChar.City); // город
 			
 			if (iTest != -1)
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 				rColony = GetColonyByIndex(iTest);
 			}
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				dialog.Text = "Да, вы готовы меня обрадовать?";
 				if (amount < 0)
@@ -249,13 +249,13 @@ void ProcessDialogEvent()
 		
 		case "TakeGun_1":
 			iGunGoods = pchar.questTemp.PrisonGun.Goods;
-			amount = sti(pchar.questTemp.PrisonGun.Qty);
-			iTemp = sti(pchar.questTemp.PrisonGun.Sum);
+			amount = int(pchar.questTemp.PrisonGun.Qty);
+			iTemp = int(pchar.questTemp.PrisonGun.Sum);
 			dialog.Text = "Конечно! Вот ваше золото. Пожалуйста, получите.";
 			Link.l1 = "Благодарствую! С вами приятно иметь дело!";
             Link.l1.go = "TakeGun_2";
 			TakeNItems(pchar, "gold_dublon", iTemp);
-			//Log_Info("Вы получили "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
+			//Log_Info("Вы получили "+FindRussianDublonString(int(pchar.questTemp.WPU.Escort.Money))+"");
 			PlaySound("interface\important_item.wav");
 			RemoveCharacterGoods(Pchar, iGunGoods, amount);
 		break;
@@ -301,7 +301,7 @@ void ProcessDialogEvent()
 				rColony = GetColonyByIndex(iTest);
 			}
 			ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
-			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
+			if(int(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
 				if (GetSquadronGoods(pchar, GOOD_BOMBS) < 2500 || GetSquadronGoods(pchar, GOOD_POWDER) < 2500)
 				{
@@ -527,7 +527,7 @@ void ProcessDialogEvent()
 				AddQuestUserData("zpq", "sSex", GetSexPhrase("","а"));
 				CloseQuestHeader("zpq");
 				pchar.questTemp.zpq.sum = 100000;
-				AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+				AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 			}
 			else
 			{
@@ -554,7 +554,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("zpq", "5");
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 125000;
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 			/*else
 			{
 				dialog.text = "Что?! Я боевой офицер! Ты кого пугать вздумал"+ GetSexPhrase(", сопляк","а, соплячка") +"?! Стража, взять е"+ GetSexPhrase("го","ё") +"!!";
@@ -572,7 +572,7 @@ void ProcessDialogEvent()
 			AddQuestUserData("zpq", "sSex", GetSexPhrase("","а"));
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 50000;
-			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
+			AddMoneyToCharacter(pchar, int(pchar.questTemp.zpq.sum));
 		break;
 		
 		case "zpq_ex_agry":
@@ -589,14 +589,14 @@ void ProcessDialogEvent()
             AddQuestRecord("zpq", "4");
 			CloseQuestHeader("zpq");
 			pchar.questTemp.zpq.sum = 100000;
-			AddMoneyToCharacter(npchar, makeint(sti(pchar.questTemp.zpq.sum)*2 + rand(5000)));
+			AddMoneyToCharacter(npchar, int(int(pchar.questTemp.zpq.sum)*2 + rand(5000)));
 			GiveItem2Character(npchar, "blade_21");
 			EquipCharacterbyItem(npchar, "blade_21");
 			npchar.SaveItemsForDead  = true;
 			npchar.DontClearDead = true;
 			npchar.cirassId = Items_FindItemIdx("cirass3");
 			chrDisableReloadToLocation = true;
-			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
+			string slai_group = GetNationNameByType(int(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
 			LAi_group_SetCheck(slai_group, "OpenTheDoors");
 			AddSimpleRumour("Ну и дела у нас происходят!! Поговаривают, что в Кумане какой-то заключённый выбрался из казематов, перебил всю охрану форта, ограбил казну и был таков! Ну, дела-а!..", SPAIN, 5, 1);
@@ -608,48 +608,48 @@ void ProcessDialogEvent()
 void GetGunType()
 {
 	int iGunType;
-	if(makeint(pchar.rank) < 6) iGunType = rand(1);	//18&&24
-	if(makeint(pchar.rank) >= 6 && makeint(pchar.rank) < 15) iGunType = rand(2); //24&&32	
-	if(makeint(pchar.rank) >= 15 && makeint(pchar.rank) < 24) iGunType = rand(2)+2; //32&&36&&42
-	if(makeint(pchar.rank) >= 24) iGunType = 5-rand(1); //36clv&&42
-	int iAdd = makeint(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20);
+	if(int(pchar.rank) < 6) iGunType = rand(1);	//18&&24
+	if(int(pchar.rank) >= 6 && int(pchar.rank) < 15) iGunType = rand(2); //24&&32
+	if(int(pchar.rank) >= 15 && int(pchar.rank) < 24) iGunType = rand(2)+2; //32&&36&&42
+	if(int(pchar.rank) >= 24) iGunType = 5-rand(1); //36clv&&42
+	int iAdd = int(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20);
 	
 	switch (iGunType)
 	{
 		case 0:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_24;     					
 			pchar.questTemp.PrisonGun.Price = 28 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*5+25+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "пушки 24-го калибра";
 		break; 
 		case 1:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_18;     					
 			pchar.questTemp.PrisonGun.Price = 25 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*5+25+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*5+25+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "кулеврины";
 		break; 
 		case 2:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_32;     					
 			pchar.questTemp.PrisonGun.Price = 32 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*3+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "пушки 32-го калибра";
 		break; 
 		case 3:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_36;     					
 			pchar.questTemp.PrisonGun.Price = 36 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)*3+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)*3+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "пушки 36-го калибра";
 		break;
 		case 4:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CULVERINE_36;     					
 			pchar.questTemp.PrisonGun.Price = 49 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+15+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)+15+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "полные кулеврины";
 		break; 
 		case 5:  
 			pchar.questTemp.PrisonGun.Goods = GOOD_CANNON_42;     					
 			pchar.questTemp.PrisonGun.Price = 40 + iAdd;
-			pchar.questTemp.PrisonGun.Qty = sti(pchar.rank)+20+rand(sti(pchar.rank));
+			pchar.questTemp.PrisonGun.Qty = int(pchar.rank)+20+rand(int(pchar.rank));
 			pchar.questTemp.PrisonGun.Text = "пушки 42 калибра";
 		break; 
 	}

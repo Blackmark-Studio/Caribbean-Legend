@@ -1,7 +1,7 @@
 float LAi_CalcMeleeDamage(ref attacker, ref weapon, string attackType)
 {
-	float dmgMin = stf(weapon.Attack.(attackType).min);
-	float dmgMax = stf(weapon.Attack.(attackType).max);
+	float dmgMin = float(weapon.Attack.(attackType).min);
+	float dmgMax = float(weapon.Attack.(attackType).max);
 	float strikeDamage = dmgMin + (dmgMax - dmgMin)*frandSmall(1.0); // урон оружия для типа удара
 	float skillMtp = DamageSkillMtp(attacker, "melee");              // влияние умения фехтования
 
@@ -46,9 +46,9 @@ float LAi_CalcUseEnergyForBlade(aref character, string actionType)
 		{
 			ref rItm = ItemsFromID(GetCharacterEquipByGroup(character, MUSKET_ITEM_TYPE));
 			if(IsCharacterPerkOn(character, "HT4"))
-				fWeapon = stf(rItm.weight) * 0.1;
+				fWeapon = float(rItm.weight) * 0.1;
 			else
-				fWeapon = stf(rItm.weight) * 0.1 + 0.4;
+				fWeapon = float(rItm.weight) * 0.1 + 0.4;
 		}
 		else	
 			fWeapon = LAi_GetBladeEnergyType(character);
@@ -82,16 +82,16 @@ void LAi_ApplyCharacterAttackDamage(ref attacker, ref enemy, string strikeType, 
 	DrownedBlade(attacker, enemy, &damageMtp);
 	float resultDamage = damage * func_fmax(0.0, damageMtp);                          // итого базовый урон * мультипликатор
 	
-	if(isBackstab && sti(attacker.index) == GetMainCharacterIndex())
+	if(isBackstab && int(attacker.index) == GetMainCharacterIndex())
 		Achievment_SetStat(187, 1);
 
 	if (IsDummy(attacker) || IsDummy(enemy))
 	{
 		if(bDrawBars)
-			SendMessage(enemy, "lfff", MSG_CHARACTER_VIEWDAMAGE, resultDamage, stf(enemy.chr_ai.hp), stf(enemy.chr_ai.hp_max));
+			SendMessage(enemy, "lfff", MSG_CHARACTER_VIEWDAMAGE, resultDamage, float(enemy.chr_ai.hp), float(enemy.chr_ai.hp_max));
 		return;
 	}
-	LAi_ApplyCharacterDamage(enemy, MakeInt(resultDamage + 0.5), "fight", isCrit);
+	LAi_ApplyCharacterDamage(enemy, int(resultDamage + 0.5), "fight", isCrit);
 	MakePoisonAttackCheckSex(attacker, enemy, &aTable, &eTable);
 	LAi_CheckKillCharacter(enemy);
 

@@ -34,7 +34,7 @@ void InitInterface(string iniName)
 	}
 	
 	SetEventHandler("My_EndView","EndView",0);
-	PostEvent("My_EndView", makeint(stf(pchar.AutoQuest.FrameAutoEnd)*1000));
+	PostEvent("My_EndView", int(float(pchar.AutoQuest.FrameAutoEnd)*1000));
 }
 void EndView()
 {
@@ -69,14 +69,14 @@ void IDoExit(int exitCode)
 			ref loc = loadedLocation;
 			UnloadLocation(loc);
 			LoadLocation(loc);
-			TeleportCharacterToPos(pchar, stf(pchar.locx), stf(pchar.locy), stf(pchar.locz));
+			TeleportCharacterToPos(pchar, float(pchar.locx), float(pchar.locy), float(pchar.locz));
 		}
 		else
 		{
 		    if (pchar.AutoQuest.FrameQuest == "Run_Function")
 		    {
 		        PChar.GenQuest.CallFunctionParam = pchar.AutoQuest.FrameFunction;
-				DoQuestCheckDelay("CallFunctionParam", stf(pchar.AutoQuest.FrameFunctionDelay));
+				DoQuestCheckDelay("CallFunctionParam", float(pchar.AutoQuest.FrameFunctionDelay));
 		    }
 		    else
 		    {

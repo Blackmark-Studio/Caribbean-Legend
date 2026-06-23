@@ -37,7 +37,7 @@ void FillScrollWithCharacters(ref firstChr, string scrollNodeName, string IsFell
 		int pointer = i;
 		if (direction < 0) pointer = inversedI;
 		inversedI --;
-		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(&fellows, pointer))));
+		ref chr = GetCharacter(int(GetAttributeValue(GetAttributeN(&fellows, pointer))));
 		if (!call IsFellowOkToFunc(chr)) continue;
 
 		attributeName = "pic" + (m + 1);

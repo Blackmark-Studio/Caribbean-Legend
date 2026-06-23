@@ -56,7 +56,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Svenson_4":
 			dialog.text = "Quem sabe... Uma semana não é tanto tempo assim, mas a viúva de MacArthur está certa de que algo aconteceu com a filha dela, e conseguiu convencer Svenson disso. Ele chamou seus homens e começou a procurar pessoalmente, mas até agora sem resultado. O 'Rainbow' e sua tripulação simplesmente desapareceram\nPosso te dizer onde encontrar a Gladys por mil peças de oito.";
-			if (sti(pchar.money) >= 1000)
+			if (int(pchar.money) >= 1000)
 			{
 				link.l1 = "Seu conhecimento custa caro, mas você conseguiu despertar meu interesse. Aqui está o seu dinheiro. Onde posso encontrá-la?";
 				link.l1.go = "Svenson_5";

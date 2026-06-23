@@ -33,7 +33,7 @@ void HelenDrinking_GoToTavern(string qName) {
 	FreeSitLocator("SantaCatalina_tavern", "sit6");
 	LAi_ActorRunToLocation(sld, "reload", "reload4_back", "SantaCatalina_tavern", "sit", "sit6", "", -1);
 	
-	int iRank = sti(pchar.rank) + 10;
+	int iRank = int(pchar.rank) + 10;
 	int iScl = 60;
 	sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_Francois", "off_fra_4", "man", "man", iRank, FRANCE, -1, false, "quest"));
 	sld.name = StringFromKey("HelenDrinking_1");
@@ -696,7 +696,7 @@ void HelenDrinking_AddRainbow() {
 	LAi_SetOfficerType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	
-	sld.quest.OfficerPrice = sti(pchar.rank) * 100;
+	sld.quest.OfficerPrice = int(pchar.rank) * 100;
 	sld.loyality = MAX_LOYALITY;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.Payment = true;
@@ -705,7 +705,7 @@ void HelenDrinking_AddRainbow() {
 	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
 	
 	if (sld.ship.type != SHIP_NOTUSED) {
-		SetCompanionIndex(pchar, -1, sti(sld.index));
+		SetCompanionIndex(pchar, -1, int(sld.index));
 	} else {
 		AddPassenger(pchar, sld, false);
 	}
@@ -957,7 +957,7 @@ void HelenDrinking_IslaTesoroPrepareAmbush() {
 }
 
 void HelenDrinking_IslaTesoroSpawnFirst(string qName) {
-	int iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE;
 	for (int i = 1; i <= 5; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_IslaTesoroPirate1_" + i, "citiz_" + (41 + rand(9)), "man", "man", iRank, PIRATE, -1, true, "pirate"));
 		
@@ -986,7 +986,7 @@ void HelenDrinking_IslaTesoroSpawnSecond() {
 	sld = CharacterFromID("HelenDrinking_IslaTesoroPirate1_1");
 	LAi_ActorFollow(sld, pchar, "", -1);
 	
-	int iRank = sti(pchar.rank) + MOD_SKILL_ENEMY_RATE;
+	int iRank = int(pchar.rank) + MOD_SKILL_ENEMY_RATE;
 	for (int i = 1; i <= 7; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_IslaTesoroPirate2_" + i, "citiz_" + (41 + rand(9)), "man", "man", iRank, PIRATE, -1, true, "pirate"));
 		
@@ -1345,7 +1345,7 @@ void HelenDrinking_PortRoyalDialog(string qName) {
 	sld = CharacterFromID("Helena");
 	PlaceCharacter(sld, "goto", "random_must_be_near");
 	LAi_SetActorTypeNoGroup(sld);
-	if (sti(pchar.questTemp.Saga.HelenRelation) >= 6) {
+	if (int(pchar.questTemp.Saga.HelenRelation) >= 6) {
 		sld.dialog.currentnode = "loot_good";
 	} else {
 		sld.dialog.currentnode = "loot_bad";
@@ -1418,7 +1418,7 @@ void HelenDrinking_AtSHDN(string qName) {
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	LAi_ActorFollowEverywhere(sld, "", -1);
 	
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	for (int i = 1; i < 3; i++) {
 		string model;
 		model = "mush_ctz_" + (4 + rand(2));
@@ -1531,7 +1531,7 @@ void HelenDrinking_SpawnAmbushSoldiers() {
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocator(sld, "quest", "helen", "HelenDrinking_HelenPovorot", -1);
 	
-	int iRank = sti(pchar.rank);
+	int iRank = int(pchar.rank);
 	rCharacter = GetCharacter(NPC_GenerateCharacter("HelenDrinking_Richard", "off_eng_" + (1 + rand(3)), "man", "man", iRank + 10, ENGLAND, 0, true, "officer"));
 	rCharacter.name = StringFromKey("HelenDrinking_17");
 	rCharacter.lastname = StringFromKey("HelenDrinking_18");
@@ -1632,7 +1632,7 @@ void HelenDrinking_HelenKillFrancois()
 void HelenDrinking_HelenKillFrancois_2(string qName) 
 {
 	locCameraSleep(true);
-	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+	pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 	Notification_Approve(true, "Helena");
 	
 	ChangeCharacterComplexReputation(pchar, "nobility", -10);
@@ -1723,7 +1723,7 @@ void HelenDrinking_SetupDuelDialog() {
 void HelenDrinking_SetupDuel() {
 	EndQuestMovie();
 	LAi_group_Delete("EnemyFight");
-	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
+	pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) - 2;
 	Notification_Approve(false, "Helena");
 	pchar.questTemp.HelenDrinking.Duel = true;
 	
@@ -1756,9 +1756,9 @@ void HelenDrinking_SetupDuel() {
 	
 	aref locator;
 	makearef(locator, loadedLocation.locators.quest.our);
-	float x = stf(locator.x);
-	float y = stf(locator.y);
-	float z = stf(locator.z);
+	float x = float(locator.x);
+	float y = float(locator.y);
+	float z = float(locator.z);
 	
 	float dx = 1.0;
 	float dy = 0.0;
@@ -1774,9 +1774,9 @@ void HelenDrinking_SetupDuel() {
 	}
 	
 	makearef(locator, loadedLocation.locators.quest.enemy);
-	x = stf(locator.x);
-	y = stf(locator.y);
-	z = stf(locator.z);
+	x = float(locator.x);
+	y = float(locator.y);
+	z = float(locator.z);
 	
 	for (i = 0; i < 3; i++) {
 		sld = CharacterFromID("HelenDrinking_SDHN_EnemyMush_" + i);
@@ -1923,7 +1923,7 @@ void HelenDrinking_AfterSecondKiss(string qName)
 	TeleportCharacterToPosAy(pchar, 5.00, 2.10, 16.30, 3.00);
 	sld = CharacterFromID("Helena");
 	TeleportCharacterToPosAy(sld, 5.00, 2.10, 15.33, 0.00);
-	if (sti(pchar.questTemp.Saga.HelenRelation) > 8) 
+	if (int(pchar.questTemp.Saga.HelenRelation) > 8)
 	{
 		sld.dialog.currentnode = "after_second_kiss1";
 	} 
@@ -2167,7 +2167,7 @@ void HelenUpgradeShip2() {
 }
 
 void HelenDrinking_GiveCutlass() {
-	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
+	pchar.questTemp.Saga.HelenRelation = int(pchar.questTemp.Saga.HelenRelation) + 1;
 	Notification_Approve(true, "Helena");
 	pchar.questTemp.HelenDrinking.GaveCutlass = true;
 	string item = GetCharacterGenerableItem(pchar, "pirate_cutlass");

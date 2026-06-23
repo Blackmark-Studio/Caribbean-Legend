@@ -33,17 +33,17 @@ int FindEncounter(int type, int nat)
 	int iNumTypes = 0;
 
 	ref rCharacter = GetMainCharacter();
-	int iCharacterRank = sti(rCharacter.rank);
+	int iCharacterRank = int(rCharacter.rank);
 
 	int iChance = rand(250);
 
 	for (i=0; i<MAX_ENCOUNTER_TYPES; i++)
 	{
-		if(sti(EncountersTypes[i].Type) == type)
+		if(int(EncountersTypes[i].Type) == type)
 		{
-			if(sti(EncountersTypes[i].Skip) || !Encounter_CanNation(i, nat)) { continue; }
+			if(int(EncountersTypes[i].Skip) || !Encounter_CanNation(i, nat)) { continue; }
 			// check chance
-			if (iChance > sti(EncountersTypes[i].Chance)) { continue; }
+			if (iChance > int(EncountersTypes[i].Chance)) { continue; }
 
 			iTypes[iNumTypes] = i;
 			iNumTypes++;
@@ -64,17 +64,17 @@ int FindWarEncounter()
 	int iNumTypes = 0;
 
 	ref rCharacter = GetMainCharacter();
-	int iCharacterRank = sti(rCharacter.rank);
+	int iCharacterRank = int(rCharacter.rank);
 
 	int iChance = rand(250);// boal 13.03.2004
 
 	for (int i=0; i<MAX_ENCOUNTER_TYPES; i++)
 	{
-		if (sti(EncountersTypes[i].Type) == ENCOUNTER_WAR)
+		if (int(EncountersTypes[i].Type) == ENCOUNTER_WAR)
 		{
-			if (sti(EncountersTypes[i].Skip)) { continue; }
+			if (int(EncountersTypes[i].Skip)) { continue; }
 			// check chance
-			if (iChance > sti(EncountersTypes[i].Chance)) { continue; }
+			if (iChance > int(EncountersTypes[i].Chance)) { continue; }
 
             iTypes[iNumTypes] = i;
             iNumTypes++;
@@ -94,17 +94,17 @@ int FindMerchantEncounter()
 	int iNumTypes = 0;
 
 	ref rCharacter = GetMainCharacter();
-	int iCharacterRank = sti(rCharacter.rank);
+	int iCharacterRank = int(rCharacter.rank);
 
 	int iChance = rand(250);// boal 13.03.2004
 
 	for (int i=0; i<MAX_ENCOUNTER_TYPES; i++)
 	{
-		if (sti(EncountersTypes[i].Type) == ENCOUNTER_TRADE)
+		if (int(EncountersTypes[i].Type) == ENCOUNTER_TRADE)
 		{
-            if (sti(EncountersTypes[i].Skip)) { continue; } // fix
+            if (int(EncountersTypes[i].Skip)) { continue; } // fix
 			// check chance
-			if (iChance > sti(EncountersTypes[i].Chance)) continue;
+			if (iChance > int(EncountersTypes[i].Chance)) continue;
 
             iTypes[iNumTypes] = i;
             iNumTypes++;
@@ -124,17 +124,17 @@ int FindSpecialEncounter()
 	int iNumTypes = 0;
 	
 	ref rCharacter = GetMainCharacter();
-	int iCharacterRank = sti(rCharacter.rank);
+	int iCharacterRank = int(rCharacter.rank);
 	
 	int iChance = rand(200);// boal 13.03.2004
 	
 	for (int i=0; i<MAX_ENCOUNTER_TYPES; i++)
 	{
-		if (sti(EncountersTypes[i].Type) == ENCOUNTER_SPECIAL)	
+		if (int(EncountersTypes[i].Type) == ENCOUNTER_SPECIAL)
 		{
-            if (sti(EncountersTypes[i].Skip)) { continue; } // fix
+            if (int(EncountersTypes[i].Skip)) { continue; } // fix
 			// check chance
-			if (iChance > sti(EncountersTypes[i].Chance)) continue;
+			if (iChance > int(EncountersTypes[i].Chance)) continue;
 
             iTypes[iNumTypes] = i;
             iNumTypes++;	
@@ -151,7 +151,7 @@ bool Encounter_CanNation(int iEncounter, int iNation)
 {
 	string sNation = "Nation.Exclude." + Nations[iNation].Name;
 	if (!CheckAttribute(&EncountersTypes[iEncounter], sNation)) return true;
-	return !sti(EncountersTypes[iEncounter].(sNation));
+	return !int(EncountersTypes[iEncounter].(sNation));
 }
 
 bool Encounter_GetClassesFromRank(int iEncounter, int iRank, ref rMClassMin, ref rMClassMax, ref rWClassMin, ref rWClassMax)
@@ -179,7 +179,7 @@ bool Encounter_GetClassesFromRank(int iEncounter, int iRank, ref rMClassMin, ref
 			{
 				aref aRank = GetAttributeN(aRanks, i);
 				string sName = GetAttributeName(aRank);
-				int iCurRank = sti(sName);
+				int iCurRank = int(sName);
 				if (abs(iRank - iCurRank) < iBestRank)
 				{
 					iBestRank = abs(iRank - iCurRank);
@@ -213,7 +213,7 @@ int FindRealEncounterTypeFromId(string _id)
     if (!CheckAttribute(&worldMap, "encounters." + _id)) return -1;
     aref rEnc;
     makearef(rEnc, worldMap.encounters.(_id).encdata);
-    return sti(rEnc.RealEncounterType);
+    return int(rEnc.RealEncounterType);
 }
 
 void Enc_ExcludeNation(ref rEnc, int iNation)
@@ -265,15 +265,15 @@ void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
       bR - SHIP_SPEC_RAIDER    2
       bU - SHIP_SPEC_UNIVERSAL 3*/
 
-    int qty = bM + bW + bR + bU;
-    int BitMask = bM + (bW << 1) + (bR << 2) + (bU << 3) + (qty << 4);
+    int qty = int(bM) + int(bW) + int(bR) + int(bU);
+    int BitMask = int(bM) + (int(bW) << 1) + (int(bR) << 2) + (int(bU) << 3) + (qty << 4);
     for(int i = 0; i < qty; i++)
     {
         int offset = 8 + (i*2);
-        if (bM) {     BitMask += SHIP_SPEC_MERCHANT  << offset; bM = 0;}
-        else if (bW) {BitMask += SHIP_SPEC_WAR       << offset; bW = 0;}
-        else if (bR) {BitMask += SHIP_SPEC_RAIDER    << offset; bR = 0;}
-        else if (bU) {BitMask += SHIP_SPEC_UNIVERSAL << offset; bU = 0;}
+        if (bM) {     BitMask += SHIP_SPEC_MERCHANT  << offset; bM = false;}
+        else if (bW) {BitMask += SHIP_SPEC_WAR       << offset; bW = false;}
+        else if (bR) {BitMask += SHIP_SPEC_RAIDER    << offset; bR = false;}
+        else if (bU) {BitMask += SHIP_SPEC_UNIVERSAL << offset; bU = false;}
     }
 
     ENC_RANDOM_PARAMS[iEncType] = BitMask;
@@ -282,7 +282,7 @@ void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
 // Проверить, участвует ли конкретная специализация в рандоме
 bool CheckEncRand_Spec(int BitMask, int iSpec)
 {
-    return (BitMask >> iSpec) & 1;
+    return bool((BitMask >> iSpec) & 1);
 }
 
 // Выбрать специализацию из участвующих в рандоме
@@ -298,7 +298,7 @@ bool EncProgress[60];
 void Encounter_Progress()
 {
     ref rEnc;
-    int Rank = sti(PChar.Rank);
+    int Rank = int(PChar.Rank);
 
     if(Rank >= 3 && !EncProgress[3])
     {
@@ -358,7 +358,7 @@ void Encounter_Progress()
         SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 1, 5, 6);
         SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 0, 1, 5, 6);
         SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 5, 6);
-        SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, 0, 1, 1, 0);
+        SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, false, true, true, false);
         SetFunctionMapEnterCondition("PirateNotificationUPD", false);
     }
 

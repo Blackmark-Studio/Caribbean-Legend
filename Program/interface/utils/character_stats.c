@@ -12,7 +12,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, ref header, ref text, re
 		case "life":
 			text += newStr() + " " + newStr() + " ";
 			base = GetCharacterBaseHPValue(chr);
-			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + sti(base);
+			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + int(base);
 			_AddByRankModifierAsFlatValue(chr, &tempTable, M_HP_PER_RANK, M_HP_MAX);
 			SetCharacterStat(chr, &tempTable, M_HP_MAX, &goodText, "ToHumanModifier", 0);
 			SetCharacterStat(chr, &tempTable, M_MTP_HP_MAX, &goodText, "ToHumanModifierPercent", 0);
@@ -21,7 +21,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, ref header, ref text, re
 			text += newStr() + " " + newStr() + " ";
 			base = GetCharacterBaseEnergy(chr);
 			_AddByRankModifierAsFlatValue(chr, &tempTable, M_ENERGY_PER_RANK, M_ENERGY_MAX);
-			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + sti(base);
+			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + int(base);
 			SetCharacterStat(chr, &tempTable, M_ENERGY_MAX, &goodText, "ToHumanModifier", 0);
 			SetCharacterStat(chr, &tempTable, M_MTP_ENERGY_MAX, &goodText, "ToHumanModifierPercent", 0);
 		break;
@@ -43,7 +43,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, ref header, ref text, re
 			SetCharacterStatGroup(chr, &equipTable, MUSKET_ITEM_TYPE + "_" + M_CRIT_CHANCE, &text, &goodText, base);
 		break;
 		case "critCharDefence":
-			SetCharacterStat(chr, &equipTable, M_REDUCE_CRIT_DAMAGE, &goodText, "ToHumanModifierPercent", 0)
+			SetCharacterStat(chr, &equipTable, M_REDUCE_CRIT_DAMAGE, &goodText, "ToHumanModifierPercent", 0);
 		break;
 		case "CharDefence":
 			SetCharacterStat(chr, &equipTable, M_REDUCE_DAMAGE, &goodText, "ToHumanModifierPercent", 0);
@@ -75,7 +75,7 @@ void AddItemUICharacterModifiers(ref chr, ref result, ref stat, ref item)
 	{
 		case "reloadTime":
 		{
-			int time = makeint(1.0 / LAi_GunReloadSpeed(&dummy, item.groupId) + 0.5);
+			int time = int(1.0 / LAi_GunReloadSpeed(&dummy, item.groupId) + 0.5);
 			modifier = item.groupId + "_" + M_RELOAD_SPEED;
 			makearef(sources, equipTable.(modifier));
 			sources.skill = 0.3*LAi_GetCharacterGunLevel(&dummy);
@@ -133,7 +133,7 @@ void SetUIAttackDamge(ref chr, ref item, ref result, ref landTable, string strik
 	string skillType = "melee";
 	if (item.groupID == MUSKET_ITEM_TYPE) skillType = "range";
 	float skillMtp = DamageSkillMtp(chr, skillType);
-	result += GetConvertStr("ChrAttack"+strikeType, "ControlsNames.txt") + ": " + makeint(stf(item.attack.(strikeType).min) * mtp * skillMtp) + "-" + makeint(stf(item.attack.(strikeType).max) * mtp * skillMtp) + NewStr();
+	result += GetConvertStr("ChrAttack"+strikeType, "ControlsNames.txt") + ": " + int(float(item.attack.(strikeType).min) * mtp * skillMtp) + "-" + int(float(item.attack.(strikeType).max) * mtp * skillMtp) + NewStr();
 }
 
 void SetCharacterStatGroup(ref chr, ref equipTable, string modifier, ref text, ref goodText, float base)
@@ -157,7 +157,7 @@ void SetCharacterStat(ref chr, ref equipTable, string modifier, ref result, stri
 	{
 		source = GetAttributeN(sources, i);
 		string reason = GetAttributeName(source);
-		result += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+stf(GetAttributeValue(source))) + NewStr();
+		result += GetHumanReadableReason(reason, chr) + ": " + call formatter(base+float(GetAttributeValue(source))) + NewStr();
 	}
 }
 
@@ -172,7 +172,7 @@ void _AddByRankModifierAsFlatValue(ref chr, ref rObject, string modifierFrom, st
 	for (int i = 0; i < sourcesQty; i++)
 	{
 		source = GetAttributeN(sources, i);
-		float value = stf(GetAttributeValue(source)) * (sti(chr.rank) - 1);
+		float value = float(GetAttributeValue(source)) * (int(chr.rank) - 1);
 		if (value > 0.0) IncreaseModifierFromSourceDirect(rObject, modifierTo, value, GetAttributeName(source));
 	}
 }

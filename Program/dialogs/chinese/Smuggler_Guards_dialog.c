@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (makeint(pchar.reputation.nobility) >= 70 && GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) >= 5)
+				if (int(pchar.reputation.nobility) >= 70 && GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) >= 5)
 				{
 					Link.l1.go = "ThisTimeFree";
 				}
@@ -56,7 +56,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(makeint(Pchar.rank) >= 4 && GetSummonSkillFromNameToOld(Pchar, SKILL_COMMERCE) >= 5)
+				if(int(Pchar.rank) >= 4 && GetSummonSkillFromNameToOld(Pchar, SKILL_COMMERCE) >= 5)
 				{
 					Link.l2.go = "GiveMeSomeMoneyToo";
 				}
@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 				}
 			}
 			Link.l3 = "离这里远点, 士兵。 这不关你的事! ";
-			if(makeint(pchar.reputation.nobility) <= 25 && FencingSkills)
+			if(int(pchar.reputation.nobility) <= 25 && FencingSkills)
 			{
 				Link.l3.go = "GettingLostFromHere";
 			}
@@ -94,14 +94,14 @@ void ProcessDialogEvent()
 
 		case "ThisTimeFree_fight":	
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрeшить драться 130313
-			ChangeCharacterNationReputation(pchar, sti(NPChar.Nation), -1);
+			ChangeCharacterNationReputation(pchar, int(NPChar.Nation), -1);
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = NPC_Meeting;
 			DialogExit();
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
     			attrName = "SoldierIDX"+i;
-				sld = GetCharacter(sti(Pchar.quest.contraband.(attrName)));
+				sld = GetCharacter(int(Pchar.quest.contraband.(attrName)));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "CoastalGuards");
             }
@@ -122,10 +122,10 @@ void ProcessDialogEvent()
             DialogExit();
 			StopCoastalGuardPursuit();
 			ChangeContrabandRelation(pchar, -30);
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
     			attrName = "SoldierIDX"+i;
-				sld = GetCharacter(sti(Pchar.quest.contraband.(attrName)));
+				sld = GetCharacter(int(Pchar.quest.contraband.(attrName)));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "CoastalGuards");
             }
@@ -145,8 +145,8 @@ void ProcessDialogEvent()
 		case "GiveMeSomeMoneyToo":	
 			dialog.snd = "Voice\COGU\COGU005";		
 			dialog.text = "真的吗? 好吧, 这个活动完全合法... 当然如果我们能分到一份的话。 你的慈善有多大方? ";
-			Link.l1 = "我想" + makeint(sti(Pchar.money)/10) + "比索足够了。 ";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/10))
+			Link.l1 = "我想" + int(int(Pchar.money)/10) + "比索足够了。 ";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/10))
 			{
 				Link.l1.go = "MoneyAccepted10";
 			}
@@ -155,8 +155,8 @@ void ProcessDialogEvent()
 				Link.l1.go = "TryingToGiveBribe";
 			}
 
-			Link.l2 = "给" + makeint(sti(Pchar.money)/5) + "比索怎么样? ";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/5))
+			Link.l2 = "给" + int(int(Pchar.money)/5) + "比索怎么样? ";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/5))
 			{
 				Link.l2.go = "MoneyAccepted5";
 			}
@@ -165,8 +165,8 @@ void ProcessDialogEvent()
 				Link.l2.go = "TryingToGiveBribe";
 			}
 
-			Link.l3 = "给你, 长官, 我有" + makeint(sti(Pchar.money)/2) + "比索! ";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/2))
+			Link.l3 = "给你, 长官, 我有" + int(int(Pchar.money)/2) + "比索! ";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/2))
 			{
 				Link.l3.go = "MoneyAccepted2";
 			}
@@ -188,7 +188,7 @@ void ProcessDialogEvent()
 			dialog.text = "感谢你的慈善。 ";
 			Link.l1 = "随时为你效劳。 ";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/10));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/10));
 		break;
 		
 		case "MoneyAccepted5":
@@ -196,7 +196,7 @@ void ProcessDialogEvent()
 			dialog.text = "感谢你的慈善。 ";
 			Link.l1 = "随时为你效劳。 ";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/5));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/5));
 		break;
 		
 		case "MoneyAccepted2":
@@ -204,7 +204,7 @@ void ProcessDialogEvent()
 			dialog.text = "感谢你的慈善。 ";
 			Link.l1 = "随时为你效劳。 ";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/2));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/2));
 		break;
 
 		case "GettingLostFromHere":
@@ -229,11 +229,11 @@ void ProcessDialogEvent()
             DialogExit();
             
 			StopCoastalGuardPursuit();
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
                 attrName = "SoldierIDX"+i;
-                LAi_SetActorType(&Characters[sti(Pchar.quest.contraband.(attrName))]);
-                LAi_ActorRunToLocation(&Characters[sti(Pchar.quest.contraband.(attrName))], "reload", "Reload1", "none", "", "", "", 40);
+                LAi_SetActorType(&Characters[int(Pchar.quest.contraband.(attrName))]);
+                LAi_ActorRunToLocation(&Characters[int(Pchar.quest.contraband.(attrName))], "reload", "Reload1", "none", "", "", "", 40);
 			}
 			LAi_SetPlayerType(Pchar);
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрeшить драться 130313

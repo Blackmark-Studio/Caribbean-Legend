@@ -208,7 +208,7 @@ void QuestTopChange()
 	{
 		curQuestTop = newTop;
 		XI_SetQuestTitles("QUEST_TITLE", arefTmp, curQuestTop);
-		XI_SetScroller("QUEST_TITLE", MakeFloat(newTop) / MakeFloat(maxVal));
+		XI_SetScroller("QUEST_TITLE", float(newTop) / float(maxVal));
 	}	
 }
 
@@ -309,7 +309,7 @@ void ProcScrollPosChange()
 		makearef(arefTmp,pchar.TmpQuestInfo);
 		int nQuests = GetAttributesNum(arefTmp);
 		int maxVal = nQuests - maxQuestsNum;
-		int newTop = makeint(newPos * maxVal + 0.5);
+		int newTop = int(newPos * maxVal + 0.5);
 
 		if(newTop!=curQuestTop)
 		{
@@ -403,7 +403,7 @@ void ProcessCommandExecute()
 					break;
 				}
 				// mitrokosta <--
-				int chrIdx = sti(arCurRow.UserData.IDX);
+				int chrIdx = int(arCurRow.UserData.IDX);
 				pchar.SystemInfo.ShowShip = chrIdx;
 				// if(XI_IsKeyPressed("control")) IDoExit(RC_INTERFACE_TO_CHAR);
 				if(XI_IsKeyPressed("shift")) IDoExit(RC_INTERFACE_TO_SHIP);
@@ -465,14 +465,14 @@ void selectJournal(int iMode)
 		switch (iMode)
         {
             case 1:
-                if (!CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && sti(pchar.QuestInfo.(attributeName).Complete) == false)
+                if (!CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && int(pchar.QuestInfo.(attributeName).Complete) == false)
                 {
                     ok = true;
                 }
             break;
             
             case 2:
-                if (!CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && sti(pchar.QuestInfo.(attributeName).Complete) == true)
+                if (!CheckAttribute(pchar, "QuestInfo." + attributeName + ".InfoType") && int(pchar.QuestInfo.(attributeName).Complete) == true)
                 {
                     ok = true;
                 }
@@ -621,7 +621,7 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_GOODS":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_GOODS", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_GOODS", 1));
 			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			if (!CheckAttribute(&GameInterface, "TABLE_GOODS." + sRow)) return;
@@ -630,7 +630,7 @@ void ShowInfoWindow()
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				bTooltip = false;
 			} else {
-				iItem = sti(arCurRow.UserData.IDX);
+				iItem = int(arCurRow.UserData.IDX);
 				sHeader = XI_ConvertString(arCurRow.UserData.ID);
 				sGroupPicture = arCurRow.UserData.ID;
 				picW = 128;
@@ -641,7 +641,7 @@ void ShowInfoWindow()
 		break;
 		case "TABLE_SHIP_PLACE":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SHIP_PLACE", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SHIP_PLACE", 1));
 			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			if (!CheckAttribute(&GameInterface, "TABLE_SHIP_PLACE." + sRow)) return;
@@ -649,9 +649,9 @@ void ShowInfoWindow()
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				bTooltip = false;
 			} else {
-				int chrIdx = sti(arCurRow.UserData.IDX);
+				int chrIdx = int(arCurRow.UserData.IDX);
 				ref chref = GetCharacter(chrIdx);
-				int iShip = sti(chref.ship.type);
+				int iShip = int(chref.ship.type);
 				ref refBaseShip = GetRealShip(iShip);
 				string sShip = refBaseShip.BaseName + refBaseShip.ship.upgrades.hull;
 				sPicture = "interfaces\le\ships\" + sShip + ".tga";
@@ -665,7 +665,7 @@ void ShowInfoWindow()
 		break;
 		case "TRADEBOOK_TABLE_GOODS":
 			CloseTooltipNew();
-			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TRADEBOOK_TABLE_GOODS", 1);
+			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TRADEBOOK_TABLE_GOODS", 1));
 			if (nChooseNum == 0) return;
 			sRow = "tr"+nChooseNum;
 			makearef(arCurRow, GameInterface.TRADEBOOK_TABLE_GOODS.(sRow));
@@ -674,7 +674,7 @@ void ShowInfoWindow()
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				bTooltip = false;
 			} else {
-		    iItem = sti(arCurRow.UserData.IDX);
+		    iItem = int(arCurRow.UserData.IDX);
 			sGroupPicture = arCurRow.UserData.ID;
 		    sHeader = XI_ConvertString(arCurRow.UserData.ID);
 		    sText1  = GetAssembledString(GetGoodDescr(arCurRow.UserData.ID), &Goods[iItem]);
@@ -902,7 +902,7 @@ void InitTableHeader()
 	GameInterface.TABLE_OTHER.tr7.td2.str = pchar.SystemInfo.SaveCount +" / " + pchar.SystemInfo.LoadCount;
 	
 	GameInterface.TABLE_OTHER.tr8.td1.str = XI_ConvertString("StatHealthTotalDmg");
-	GameInterface.TABLE_OTHER.tr8.td2.str = sti(pchar.Health.TotalDamg);
+	GameInterface.TABLE_OTHER.tr8.td2.str = int(pchar.Health.TotalDamg);
 	
 	GameInterface.TABLE_OTHER.tr9.td1.str = XI_ConvertString("StatSailorsDead");
 	GameInterface.TABLE_OTHER.tr9.td2.str = Statistic_AddValue(PChar, "Sailors_dead", 0);
@@ -917,27 +917,27 @@ void InitTableHeader()
 	GameInterface.TABLE_OTHER.tr12.td2.str = Statistic_AddValue(PChar, "PartitionPay", 0);
 	
 	GameInterface.TABLE_NATION.hr.td1.str = XI_ConvertString("StatEvents");
- 	GameInterface.TABLE_NATION.hr.td2.icon.group = "NATIONSQ"
+ 	GameInterface.TABLE_NATION.hr.td2.icon.group = "NATIONSQ";
 	GameInterface.TABLE_NATION.hr.td2.icon.image      = Nations[0].Name;
 	GameInterface.TABLE_NATION.hr.td2.icon.width = 55;
     GameInterface.TABLE_NATION.hr.td2.icon.height = 55;
     GameInterface.TABLE_NATION.hr.td2.icon.offset = "3, 0";
- 	GameInterface.TABLE_NATION.hr.td3.icon.group = "NATIONSQ"
+ 	GameInterface.TABLE_NATION.hr.td3.icon.group = "NATIONSQ";
 	GameInterface.TABLE_NATION.hr.td3.icon.image      = Nations[1].Name;
 	GameInterface.TABLE_NATION.hr.td3.icon.width = 55;
     GameInterface.TABLE_NATION.hr.td3.icon.height = 55;
     GameInterface.TABLE_NATION.hr.td3.icon.offset = "3, 0";
- 	GameInterface.TABLE_NATION.hr.td4.icon.group = "NATIONSQ"
+ 	GameInterface.TABLE_NATION.hr.td4.icon.group = "NATIONSQ";
 	GameInterface.TABLE_NATION.hr.td4.icon.image      = Nations[2].Name;
 	GameInterface.TABLE_NATION.hr.td4.icon.width = 55;
     GameInterface.TABLE_NATION.hr.td4.icon.height = 55;
     GameInterface.TABLE_NATION.hr.td4.icon.offset = "3, 0";
- 	GameInterface.TABLE_NATION.hr.td5.icon.group = "NATIONSQ"
+ 	GameInterface.TABLE_NATION.hr.td5.icon.group = "NATIONSQ";
 	GameInterface.TABLE_NATION.hr.td5.icon.image      = Nations[3].Name;
 	GameInterface.TABLE_NATION.hr.td5.icon.width = 55;
     GameInterface.TABLE_NATION.hr.td5.icon.height = 55;
     GameInterface.TABLE_NATION.hr.td5.icon.offset = "3, 0";
- 	GameInterface.TABLE_NATION.hr.td6.icon.group = "NATIONSQ"
+ 	GameInterface.TABLE_NATION.hr.td6.icon.group = "NATIONSQ";
 	GameInterface.TABLE_NATION.hr.td6.icon.image      = Nations[4].Name;
 	GameInterface.TABLE_NATION.hr.td6.icon.width = 55;
     GameInterface.TABLE_NATION.hr.td6.icon.height = 55;
@@ -1037,12 +1037,12 @@ void InitTableHeader()
     		row = "tr" + i;
     		i++;
     		GameInterface.TABLE_CREDIT.(row).td1.str = GetCityName(sQuestName);
-			GameInterface.TABLE_CREDIT.(row).td2.str = MakeMoneyShow(sti(Pchar.Quest.Loans.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
-			GameInterface.TABLE_CREDIT.(row).td3.str = GetBookData(sti(Pchar.Quest.Loans.(sQuestName).StartDay),
-                               sti(Pchar.Quest.Loans.(sQuestName).StartMonth),
-                               sti(Pchar.Quest.Loans.(sQuestName).StartYear));
+			GameInterface.TABLE_CREDIT.(row).td2.str = MakeMoneyShow(int(Pchar.Quest.Loans.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
+			GameInterface.TABLE_CREDIT.(row).td3.str = GetBookData(int(Pchar.Quest.Loans.(sQuestName).StartDay),
+                               int(Pchar.Quest.Loans.(sQuestName).StartMonth),
+                               int(Pchar.Quest.Loans.(sQuestName).StartYear));
 			GameInterface.TABLE_CREDIT.(row).td4.str = Pchar.Quest.Loans.(sQuestName).Period;
-			GameInterface.TABLE_CREDIT.(row).td5.str = fts(stf(Pchar.Quest.Loans.(sQuestName).Interest), 1);
+			GameInterface.TABLE_CREDIT.(row).td5.str = fts(float(Pchar.Quest.Loans.(sQuestName).Interest), 1);
         }
     }
 	Table_UpdateWindow("TABLE_CREDIT");
@@ -1072,15 +1072,15 @@ void InitTableHeader()
                 row = "tr" + i;
     			i++;
 				GameInterface.TABLE_DEBIT.(row).td1.str = GetCityName(Pchar.Quest.Deposits.(sQuestName).City);
-				rawData = MakeMoneyShow(sti(Pchar.Quest.Deposits.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
+				rawData = MakeMoneyShow(int(Pchar.Quest.Deposits.(sQuestName).Sum), MONEY_SIGN,MONEY_DELIVER);
 				GameInterface.TABLE_DEBIT.(row).td2.str = rawData;
 				GameInterface.TABLE_DEBIT.(row).td2.rawData = Pchar.Quest.Deposits.(sQuestName).Sum;
-				rawData = GetBookData(sti(Pchar.Quest.Deposits.(sQuestName).StartDay),
-	                               sti(Pchar.Quest.Deposits.(sQuestName).StartMonth),
-	                               sti(Pchar.Quest.Deposits.(sQuestName).StartYear));
+				rawData = GetBookData(int(Pchar.Quest.Deposits.(sQuestName).StartDay),
+	                               int(Pchar.Quest.Deposits.(sQuestName).StartMonth),
+	                               int(Pchar.Quest.Deposits.(sQuestName).StartYear));
 				GameInterface.TABLE_DEBIT.(row).td3.str = rawData;
 				GameInterface.TABLE_DEBIT.(row).td3.rawData = "00:00 " + rawData;
-				GameInterface.TABLE_DEBIT.(row).td4.str = fts(stf(Pchar.Quest.Deposits.(sQuestName).Interest), 1);
+				GameInterface.TABLE_DEBIT.(row).td4.str = fts(float(Pchar.Quest.Deposits.(sQuestName).Interest), 1);
 				if(HasSubStr(sQuestName, "_type1"))
 				{
 					GameInterface.TABLE_DEBIT.(row).td5.str = XI_ConvertString("DebitType1");
@@ -1134,7 +1134,7 @@ void FillShipPlaceTable(string _tabName)
                 if (chref.ShipInStockMan == (rCity.id + "_PortMan"))
 		        {
                     row = "tr" + cn;
-					int iShip = sti(chref.ship.type);
+					int iShip = int(chref.ship.type);
 					refBaseShip = GetRealShip(iShip);
 					string sShip = refBaseShip.BaseName + refBaseShip.ship.upgrades.hull;
 					GameInterface.(_tabName).(row).UserData.IDX = i; // belamour запомнить в кого тыкать будем
@@ -1149,10 +1149,10 @@ void FillShipPlaceTable(string _tabName)
 					GameInterface.(_tabName).(row).td2.line_space_modifier = 0.8;	
 				    GameInterface.(_tabName).(row).td2.textoffset = "40, 0";
 					
-					GameInterface.(_tabName).(row).td3.str = sti(refBaseShip.Class) + "";
+					GameInterface.(_tabName).(row).td3.str = int(refBaseShip.Class) + "";
 					
 					GameInterface.(_tabName).(row).td4.icon.group  = "NATIONSQ";
-					GameInterface.(_tabName).(row).td4.icon.image  = Nations[sti(rCity.nation)].Name;
+					GameInterface.(_tabName).(row).td4.icon.image  = Nations[int(rCity.nation)].Name;
 					GameInterface.(_tabName).(row).td4.icon.width  = 40;
 				    GameInterface.(_tabName).(row).td4.icon.height = 40;
 				    GameInterface.(_tabName).(row).td4.icon.offset = "-2, 0";
@@ -1185,9 +1185,9 @@ void FillShipPlaceTable(string _tabName)
 		GameInterface.(_tabName).(row).td2.icon.offset = "-2, 0";
 		GameInterface.(_tabName).(row).td2.icon.width  = 40;
 		GameInterface.(_tabName).(row).td2.icon.height = 40;
-		GameInterface.(_tabName).(row).td2.str = Truncate(XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'", 36, "..");
+		GameInterface.(_tabName).(row).td2.str = Truncate(XI_ConvertString(RealShips[int(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "'", 36, "..");
 		GameInterface.(_tabName).(row).td2.textoffset = "40, 0";
-		GameInterface.(_tabName).(row).td3.str = sti(RealShips[sti(chref.Ship.Type)].Class) + "";
+		GameInterface.(_tabName).(row).td3.str = int(RealShips[int(chref.Ship.Type)].Class) + "";
 		GameInterface.(_tabName).(row).td4.icon.group  = "NATIONSQ";
 		GameInterface.(_tabName).(row).td4.icon.image  = Nations[PIRATE].Name;
 		GameInterface.(_tabName).(row).td4.icon.width  = 40;
@@ -1243,14 +1243,14 @@ void FillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).UserData.CityID  = rCity.id;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONSQ";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 40;
 			GameInterface.(_tabName).(row).td1.icon.height = 40;
 			GameInterface.(_tabName).(row).td1.icon.offset = "10, 0";
 			GameInterface.(_tabName).(row).td2.str = GetCityName(rCity.id);
 			GameInterface.(_tabName).(row).td3.str = GetIslandName(rCity);
 			GameInterface.(_tabName).(row).td4.str = GetStorageUsedWeight(refStorage) + " / " + iMaxGoodsStore;
-			GameInterface.(_tabName).(row).td5.str = GetNpcQuestPastMonthParam(chref, "Storage.Date") * sti(chref.MoneyForStorage);
+			GameInterface.(_tabName).(row).td5.str = GetNpcQuestPastMonthParam(chref, "Storage.Date") * int(chref.MoneyForStorage);
 			cn++;
 		}
 	}
@@ -1379,7 +1379,7 @@ void TradebookFillPriceListTown(string _tabName)
 			GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 			GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 			GameInterface.(_tabName).(row).td1.icon.group  = "NATIONSQ";
-			GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+			GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 			GameInterface.(_tabName).(row).td1.icon.width  = 35;
 		    GameInterface.(_tabName).(row).td1.icon.height = 35;
 		    GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
@@ -1469,7 +1469,7 @@ void TradebookFillPriceList(string _tabName, string  attr1)
 	        if (CheckAttribute(nulChr, "PriceList." + attr1 + "." + sGoods + ".Qty"))
 	        {
 	            GameInterface.(_tabName).(row).td6.str = nulChr.PriceList.(attr1).(sGoods).Qty;
-							GameInterface.(_tabName).(row).td5.str = GetGoodWeightByType(i, sti(nulChr.PriceList.(attr1).(sGoods).Qty));
+							GameInterface.(_tabName).(row).td5.str = GetGoodWeightByType(i, int(nulChr.PriceList.(attr1).(sGoods).Qty));
 	        }
 	        else
 	        {
@@ -1488,7 +1488,7 @@ void SetFontType()
 {
 	if(CheckAttribute(&InterfaceStates,"FontType"))
 	{
-		switch (sti(InterfaceStates.FontType))
+		switch (int(InterfaceStates.FontType))
 		{
 			case 0:
 				SetTabsFontType(1);
@@ -1688,7 +1688,7 @@ void SortTradeBookTownsByGood(int column, bool preserveState)
 void ShowCityByGoodMode()
 {
   ChangeCityTableMode(1);
-	int iGood = sti(GameInterface.TRADEBOOK_TABLE_GOODS.(CurRow).UserData.idx);
+	int iGood = int(GameInterface.TRADEBOOK_TABLE_GOODS.(CurRow).UserData.idx);
 	TradebookFillPriceListByGood("TRADEBOOK_TABLE_CITY_BY_GOOD", iGood);
 }
 
@@ -1756,7 +1756,7 @@ void TradebookFillPriceListByGood(string _tabName, int goodIdx)
 		GameInterface.(_tabName).(row).UserData.CityID  = cityId;
 		GameInterface.(_tabName).(row).UserData.CityIDX = cn;
 		GameInterface.(_tabName).(row).td1.icon.group  = "NATIONSQ";
-		GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+		GameInterface.(_tabName).(row).td1.icon.image  = Nations[int(rCity.nation)].Name;
 		GameInterface.(_tabName).(row).td1.icon.width  = 35;
 		GameInterface.(_tabName).(row).td1.icon.height = 35;
 		GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
@@ -1766,7 +1766,7 @@ void TradebookFillPriceListByGood(string _tabName, int goodIdx)
 		GameInterface.(_tabName).(row).td3.icon.offset = "5,2";
 		GameInterface.(_tabName).(row).td3.icon.width = 24;
 		GameInterface.(_tabName).(row).td3.icon.height = 34;
-		if (hasMap) GameInterface.(_tabName).(row).td4.str = makeint(_GetDistanceToColony2D(rCity.id)/100 + 0.5);
+		if (hasMap) GameInterface.(_tabName).(row).td4.str = int(_GetDistanceToColony2D(rCity.id)/100 + 0.5);
 		else GameInterface.(_tabName).(row).td4.str = "???";
 		if (CheckAttribute(nulChr, "PriceList." + cityId + "." + sGoods + ".Buy"))
 		{
@@ -1806,8 +1806,8 @@ void GetCorrectShipCoords(ref X, ref Y)
 {
 	if(IsEntity(&worldMap))
 	{
-		X = sti(worldMap.playerShipX);
-		Y = -sti(worldMap.playerShipZ);
+		X = int(worldMap.playerShipX);
+		Y = -int(worldMap.playerShipZ);
 	}
 		else
 	{
@@ -1815,13 +1815,13 @@ void GetCorrectShipCoords(ref X, ref Y)
 		// this cannot be implemented without modifying sea.c
 		if (!bSeaActive && CheckAttribute(pchar, "shipx"))
 		{
-			X = GetSeaShipX(stf(pchar.shipx));
-			Y = -GetSeaShipZ(stf(pchar.shipz));
+			X = GetSeaShipX(float(pchar.shipx));
+			Y = -GetSeaShipZ(float(pchar.shipz));
 		}
 		else
 		{
-			X = GetSeaShipX(stf(pchar.Ship.Pos.X));
-			Y = -GetSeaShipZ(stf(pchar.Ship.Pos.Z));
+			X = GetSeaShipX(float(pchar.Ship.Pos.X));
+			Y = -GetSeaShipZ(float(pchar.Ship.Pos.Z));
 		}
 	}
 	
@@ -1844,11 +1844,11 @@ int _GetDistanceToColony2D(string _sColony)
 	}
 
 	float X1, Z1;
-	GetCorrectShipCoords(&X1, &Z1)
-	float X2 = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
-	float Z2 = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+	GetCorrectShipCoords(&X1, &Z1);
+	float X2 = float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+	float Z2 = -float(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
 	
-	return makeint(GetDistance2D(X1, Z1, X2, Z2));
+	return int(GetDistance2D(X1, Z1, X2, Z2));
 }
 ///espkk. utils <--
 

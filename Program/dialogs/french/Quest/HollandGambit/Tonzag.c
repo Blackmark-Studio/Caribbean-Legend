@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 			ForceHeroAutolevel(npchar);//Тонзага - в офицеры
 			DialogExit();
 			DeleteAttribute(npchar, "LifeDay");
-			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
+			npchar.quest.OfficerPrice = int(pchar.rank)*500;
 			npchar.OfficerWantToGo.DontGo = true;
 			npchar.loyality = MAX_LOYALITY;
 			AddPassenger(pchar, npchar, false);
@@ -327,7 +327,7 @@ void ProcessDialogEvent()
 			if(sGun != "")
 			{
 				rItm = ItemsFromID(sGun);
-				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
+				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && int(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
 					Link.l3 = "Changez le type de vos munitions.";
 					Link.l3.go = "SetGunBullets";
@@ -340,7 +340,7 @@ void ProcessDialogEvent()
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			makearef(rType, rItm.type);	
-			for (i = 0; i < sti(NPChar.chr_ai.gun.bulletNum); i++)
+			for (i = 0; i < int(NPChar.chr_ai.gun.bulletNum); i++)
 			{
 				sAttr = GetAttributeName(GetAttributeN(rType, i));
 				sBullet = rItm.type.(sAttr).bullet;
@@ -352,7 +352,7 @@ void ProcessDialogEvent()
 		break;	
 
 		case "SetGunBullets2":
-			i = sti(NPChar.SetGunBullets) + 1; 
+			i = int(NPChar.SetGunBullets) + 1;
 			sGun = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
 			rItm = ItemsFromID(sGun);
 			sAttr = "t" + i;
@@ -955,7 +955,7 @@ void ProcessDialogEvent()
 			NextDiag.TempNode = "Tonzag_officer";
 			npchar.quest.SharlieEpilog_FarewellOfficers = true;
 			pchar.questTemp.SharlieEpilog_Tonzag = true;
-			pchar.questTemp.SharlieEpilog_Friends = sti(pchar.questTemp.SharlieEpilog_Friends) + 1;
+			pchar.questTemp.SharlieEpilog_Friends = int(pchar.questTemp.SharlieEpilog_Friends) + 1;
 		break;
 
 	}

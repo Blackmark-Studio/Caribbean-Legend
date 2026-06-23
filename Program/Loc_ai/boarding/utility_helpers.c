@@ -62,7 +62,7 @@ string chooseDeck(ref mchr, ref echr)
 				if(isTradeDeck(echr)) return "BOARDING_"+eclass+"_TRADE";
 			}
 		}
-		return "BOARDING_"+HighClass+"_WAR"
+		return "BOARDING_"+HighClass+"_WAR";
 	}
 	else
 	{
@@ -86,7 +86,7 @@ void DelOurMusketerDist()
 		chr = characterFromId(pchar.GenQuest.boarding.n2);
 		if(CheckAttribute(chr,"boarding.mDistance"))
 		{
-			chr.MusketerDistance = stf(chr.boarding.mDistance);
+			chr.MusketerDistance = float(chr.boarding.mDistance);
 			DeleteAttribute(chr,"boarding.mDistance");
 		}
 		DeleteAttribute(pchar, "GenQuest.boarding.n2");
@@ -96,7 +96,7 @@ void DelOurMusketerDist()
 		chr = characterFromId(pchar.GenQuest.boarding.n1);
 		if(CheckAttribute(chr,"boarding.mDistance"))
 		{
-			chr.MusketerDistance = stf(chr.boarding.mDistance);
+			chr.MusketerDistance = float(chr.boarding.mDistance);
 			DeleteAttribute(chr,"boarding.mDistance");
 		}
 		DeleteAttribute(pchar, "GenQuest.boarding.n1");
@@ -186,9 +186,9 @@ bool GetBoardingHP(ref mchr, ref echr, ref float_boarding_player_hp, ref float_b
 	
 	if(ShipBonus2Artefact(mchr, SHIP_MEMENTO))
 	{
-		if(CheckAttribute(&RealShips[sti(mchr.Ship.Type)], "DeadSailors.SailorsBoardingBonus"))
+		if(CheckAttribute(&RealShips[int(mchr.Ship.Type)], "DeadSailors.SailorsBoardingBonus"))
 		{
-			fShipBonus = stf(RealShips[sti(mchr.Ship.Type)].DeadSailors.SailorsBoardingBonus) / 100.0;
+			fShipBonus = float(RealShips[int(mchr.Ship.Type)].DeadSailors.SailorsBoardingBonus) / 100.0;
 		}
 	}
 
@@ -196,7 +196,7 @@ bool GetBoardingHP(ref mchr, ref echr, ref float_boarding_player_hp, ref float_b
 	moral = 0;
 	if(CheckAttribute(mchr, "ship.crew.morale"))
 	{
-		moral = (stf(mchr.ship.crew.morale) - MORALE_NORMAL)/(MORALE_MAX - MORALE_MIN);
+		moral = (float(mchr.ship.crew.morale) - MORALE_NORMAL)/(MORALE_MAX - MORALE_MIN);
 		if(moral < -0.5) moral = -0.5;
 		if(moral > 0.5) moral = 0.5;
 	}

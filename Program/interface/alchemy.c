@@ -49,7 +49,7 @@ void InitInterface(string iniName)
 	AddToTable(ItemsFromId(sCurItem));
 	
 
-	iCurGoodsIdx = sti(GameInterface.TABLE_LIST.tr1.index);
+	iCurGoodsIdx = int(GameInterface.TABLE_LIST.tr1.index);
 	ShowGoodsInfo(GetItemIndex(sCurItem));
 	
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY, iTableAddBtnX + 30, iTableAddBtnY + 45, 0);
@@ -127,7 +127,7 @@ void IDoExit(int exitCode)
 		curItem = GetAttributeN(rootItems,j);
 		if( Items_FindItem(GetAttributeName(curItem), &arItem) >= 0 )
 		{
-			iItemsQty = sti(GetAttributeValue(curItem));
+			iItemsQty = int(GetAttributeValue(curItem));
 			if(iItemsQty == 0) 	continue;
 			AddItems(refCharacter, arItem.id, iItemsQty);
 			//PutItemMyBox("box1", arItem.id, iItemsQty); 
@@ -164,7 +164,7 @@ void IDoExit(int exitCode)
 void ChooseTable()
 {
 	SetCurrentNode("TABLE_LIST");
-	iCurGoodsIdx = sti(GameInterface.TABLE_LIST.tr1.index);
+	iCurGoodsIdx = int(GameInterface.TABLE_LIST.tr1.index);
 	ShowGoodsInfo(iCurGoodsIdx);
 	XI_WindowShow("QTY_WINDOW", true);
 }
@@ -371,20 +371,20 @@ string SetItemsName()
 
 void ProcessFrame()
 {	
-	if(sti(GameInterface.ITEMS_SCROLL.current) != nCurScrollNum && GetCurrentNode() == "ITEMS_SCROLL")
+	if(int(GameInterface.ITEMS_SCROLL.current) != nCurScrollNum && GetCurrentNode() == "ITEMS_SCROLL")
 	{
 
 		XI_WindowDisable("QTY_WINDOW", false);
 		XI_WindowShow("QTY_WINDOW", false);
-		nCurScrollNum = sti(GameInterface.ITEMS_SCROLL.current);
+		nCurScrollNum = int(GameInterface.ITEMS_SCROLL.current);
 		string sAttr = "pic" + (nCurScrollNum + 1);
 		string sItemId = GameInterface.ITEMS_SCROLL.(sAttr).itemId;
 		
 		rItem = ItemsFromId(sItemId);
 
 		AddToTable(rItem);
-		iCurGoodsIdx = sti(GameInterface.TABLE_LIST.tr1.index);
-		ShowGoodsInfo(sti(rItem.index));
+		iCurGoodsIdx = int(GameInterface.TABLE_LIST.tr1.index);
+		ShowGoodsInfo(int(rItem.index));
 		sCurItem = sItemId;
 		
 		GameInterface.TABLE_LIST.select = 1;
@@ -443,8 +443,8 @@ void AddToTable(ref rItem)
 		sList = "tr" + n;
 		// belamour заполнить имеющимся количеством
 		if(iCurrentTabMode == 1) iLeftQty  = GetCharacterFreeItem(refCharacter, sItmId);
-		else iLeftQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), sItmId); 
-		if(CheckAttribute(alchemy, "items."+(sItmId))) iRightQty = sti(alchemy.items.(sItmId));
+		else iLeftQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), sItmId);
+		if(CheckAttribute(alchemy, "items."+(sItmId))) iRightQty = int(alchemy.items.(sItmId));
 		else iRightQty = 0;
 		
 		GameInterface.TABLE_LIST.(sList).td1.str = iLeftQty;
@@ -485,7 +485,7 @@ void CS_TableSelectChange()
 	
 	if(CheckAttribute(&GameInterface, "TABLE_LIST.top"))
 	{
-		iSelLine = iSelected - sti(GameInterface.TABLE_LIST.top);
+		iSelLine = iSelected - int(GameInterface.TABLE_LIST.top);
 	}
 	
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 55 * (iSelLine - 1), iTableAddBtnX + 30, iTableAddBtnY + 55 * (iSelLine - 1) + 45, 0);
@@ -495,7 +495,7 @@ void CS_TableSelectChange()
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON", 0, iTableRemoveAllBtnX, iTableRemoveAllBtnY + 55 * (iSelLine - 1), iTableRemoveAllBtnX + 35, iTableRemoveAllBtnY + 55 * (iSelLine - 1) + 45, 0);
 	
 	String sList = "tr" + iSelected;
-	iCurGoodsIdx = sti(GameInterface.TABLE_LIST.(sList).index);
+	iCurGoodsIdx = int(GameInterface.TABLE_LIST.(sList).index);
 	ShowGoodsInfo(iCurGoodsIdx);
 }
 
@@ -567,7 +567,7 @@ int CheckAlchemy(string sItemID)
 	{	
 		sAttr 		= GetAttributeName(GetAttributeN(rType, i));
 		sItmId 		= rItem.component.(sAttr).id;
-		itmReq      = sti(rItem.component.(sAttr).qty);
+		itmReq      = int(rItem.component.(sAttr).qty);
 		sItmUse 	= rItem.component.(sAttr).use;
 		
 		if(CheckCharacterPerk(refCharacter, "Alchemy"))
@@ -579,7 +579,7 @@ int CheckAlchemy(string sItemID)
 		
 		if(sItmUse == "component")
 		{
-			itmQty 		= makeint(GetCharacterFreeItem(alchemy, sItmId)/itmReq);
+			itmQty 		= int(GetCharacterFreeItem(alchemy, sItmId)/itmReq);
 			if(itmQty > 0)
 			{
 				if(itmQty < Qty && Qty != 0) 	Qty = itmQty;
@@ -626,7 +626,7 @@ void onGetAllBtnClick()
 	{
 		sAttr 		= GetAttributeName(GetAttributeN(rType, i));
 		sItmId 		= rItem.component.(sAttr).id;
-		itmReq      = sti(rItem.component.(sAttr).qty);		
+		itmReq      = int(rItem.component.(sAttr).qty);
 		sItmUse 	= rItem.component.(sAttr).use;
 		
 		if(sItmUse == "component")
@@ -643,7 +643,7 @@ void onGetAllBtnClick()
 		}	
 	}
 
-	int resultQty = Qty * sti(rItem.multiobject.qty);
+	int resultQty = Qty * int(rItem.multiobject.qty);
 	Perk_PowderFeel(rItem, &resultQty);
 	Perk_Master(rItem, resultQty);
 
@@ -693,7 +693,7 @@ void onGetAllBtnClick()
 	// <-- Warship fix 10.06.09	
 	SetCurrentNode("TABLE_LIST");
 	EndTooltip();
-	iCurGoodsIdx = sti(GameInterface.TABLE_LIST.tr1.index);
+	iCurGoodsIdx = int(GameInterface.TABLE_LIST.tr1.index);
 	ShowGoodsInfo(iCurGoodsIdx);
 }
 
@@ -708,14 +708,14 @@ void onTableAddAllBtnClick()
 		RemoveItems(alchemy, item, iItemsQty);
 		// belamour
 		if(iCurrentTabMode == 1) AddItems(refCharacter, item, iItemsQty);
-		else PutItemMyBox("box"+sti(iCurrentTabMode-1), item, iItemsQty); 
+		else PutItemMyBox("box"+int(iCurrentTabMode-1), item, iItemsQty);
 		
 		AddToTable(ItemsFromId(sCurItem));
 		if(CheckAlchemy(sCurItem) > 0) 	SetSelectable("GETALL_BUTTON", true);
 		else							SetSelectable("GETALL_BUTTON", false);
 		// belamour	
 		if(iCurrentTabMode == 1) iCharQty = GetCharacterFreeItem(refCharacter, item);
-		else iCharQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), item);
+		else iCharQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 		iStoreQty = GetCharacterFreeItem(alchemy, item);	
 	}
 }
@@ -728,13 +728,13 @@ void onTableRemoveAllBtnClick()
 	int iItemsQty = 0;
 	// belamour
 	if(iCurrentTabMode == 1)  iItemsQty = GetCharacterFreeItem(refCharacter, item);
-	else  iItemsQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), item);      
+	else  iItemsQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 						
 	if(iItemsQty > 0) 
 	{
 		// belamour
 		if(iCurrentTabMode == 1) RemoveItems(refCharacter, item, iItemsQty);
-		else GetItemMyBox("box"+sti(iCurrentTabMode-1), item, iItemsQty);
+		else GetItemMyBox("box"+int(iCurrentTabMode-1), item, iItemsQty);
 		
 		AddItems(alchemy, item, iItemsQty);
 		
@@ -743,7 +743,7 @@ void onTableRemoveAllBtnClick()
 		else							SetSelectable("GETALL_BUTTON", false);
 		// belamour				
 		if(iCurrentTabMode == 1) iCharQty = GetCharacterFreeItem(refCharacter, item);
-		else iCharQty =  CheckItemMyBox("box"+sti(iCurrentTabMode-1), item); 
+		else iCharQty =  CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 		iStoreQty = GetCharacterFreeItem(alchemy, item);	
 	}		
 }
@@ -759,14 +759,14 @@ void onTableAddBtnClick()
 		RemoveItems(alchemy, item, iItemsQty);
 		// belamour
 		if(iCurrentTabMode == 1) AddItems(refCharacter, item, iItemsQty);
-		else PutItemMyBox("box"+sti(iCurrentTabMode-1), item, iItemsQty); 
+		else PutItemMyBox("box"+int(iCurrentTabMode-1), item, iItemsQty);
 		
 		AddToTable(ItemsFromId(sCurItem));
 		if(CheckAlchemy(sCurItem) > 0) 	SetSelectable("GETALL_BUTTON", true);
 		else							SetSelectable("GETALL_BUTTON", false);
 		// belamour	
 		if(iCurrentTabMode == 1) iCharQty = GetCharacterFreeItem(refCharacter, item);
-		else iCharQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), item);
+		else iCharQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 		iStoreQty = GetCharacterFreeItem(alchemy, item);	
 	}
 }
@@ -779,13 +779,13 @@ void onTableRemoveBtnClick()
 	int iItemsQty = 0;
 	// belamour
 	if(iCurrentTabMode == 1)  iItemsQty = GetCharacterFreeItem(refCharacter, item);
-	else  iItemsQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), item);      
+	else  iItemsQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 	if (iItemsQty > 1) iItemsQty = 1;// лок на 1 ед.
 	if(iItemsQty > 0) 
 	{
 		// belamour
 		if(iCurrentTabMode == 1) RemoveItems(refCharacter, item, iItemsQty);
-		else GetItemMyBox("box"+sti(iCurrentTabMode-1), item, iItemsQty);
+		else GetItemMyBox("box"+int(iCurrentTabMode-1), item, iItemsQty);
 		
 		AddItems(alchemy, item, iItemsQty);
 		
@@ -794,7 +794,7 @@ void onTableRemoveBtnClick()
 		else							SetSelectable("GETALL_BUTTON", false);
 		// belamour				
 		if(iCurrentTabMode == 1) iCharQty = GetCharacterFreeItem(refCharacter, item);
-		else iCharQty =  CheckItemMyBox("box"+sti(iCurrentTabMode-1), item); 
+		else iCharQty =  CheckItemMyBox("box"+int(iCurrentTabMode-1), item);
 		iStoreQty = GetCharacterFreeItem(alchemy, item);	
 	}		
 }
@@ -823,11 +823,11 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetFormatedText("QTY_GOODS_INFO", describeStr);
 	// belamour
 	if(iCurrentTabMode == 1)iCharQty = GetCharacterFreeItem(refCharacter, Items[iGoodIndex].id);
-	else iCharQty = CheckItemMyBox("box"+sti(iCurrentTabMode-1), Items[iGoodIndex].id); 
+	else iCharQty = CheckItemMyBox("box"+int(iCurrentTabMode-1), Items[iGoodIndex].id);
 	iStoreQty = GetCharacterFreeItem(alchemy, Items[iGoodIndex].id);
 		
-	SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty));
-	SetFormatedText("QTY_INFO_SHIP_QTY", its(iCharQty));
+	SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty));
+	SetFormatedText("QTY_INFO_SHIP_QTY", string(iCharQty));
 	BuyOrSell = 0;	
 }
 
@@ -836,7 +836,7 @@ void TransactionOK()
 	int nTradeQuantity;
 	String list;
 	confirmChangeQTY_EDIT();
-	nTradeQuantity = sti(GameInterface.qty_edit.str);
+	nTradeQuantity = int(GameInterface.qty_edit.str);
 	if(BuyOrSell == 0)
 	{
 	    EndTooltip();
@@ -848,7 +848,7 @@ void TransactionOK()
 		RemoveItems(alchemy, Items[iCurGoodsIdx].id, nTradeQuantity);
 		// belamour
 		if(iCurrentTabMode == 1) AddItems(refCharacter, Items[iCurGoodsIdx].id, nTradeQuantity);
-		else  PutItemMyBox("box"+sti(iCurrentTabMode-1), Items[iCurGoodsIdx].id,  nTradeQuantity);
+		else  PutItemMyBox("box"+int(iCurrentTabMode-1), Items[iCurGoodsIdx].id,  nTradeQuantity);
 		
 	}
  	else // Отдаем
@@ -856,7 +856,7 @@ void TransactionOK()
 		AddItems(alchemy, Items[iCurGoodsIdx].id, nTradeQuantity);
 		// belamour
 		if(iCurrentTabMode == 1)RemoveItems(refCharacter, Items[iCurGoodsIdx].id, nTradeQuantity);
-		else GetItemMyBox("box"+sti(iCurrentTabMode-1), Items[iCurGoodsIdx].id, nTradeQuantity); 
+		else GetItemMyBox("box"+int(iCurrentTabMode-1), Items[iCurGoodsIdx].id, nTradeQuantity);
 	}
 	
 	AddToTable(ItemsFromId(sCurItem));
@@ -875,8 +875,8 @@ void confirmChangeQTY_EDIT()
 
 void ChangeQTY_EDIT()
 {
-	GameInterface.qty_edit.str = sti(GameInterface.qty_edit.str);
-	if(sti(GameInterface.qty_edit.str) == 0)
+	GameInterface.qty_edit.str = int(GameInterface.qty_edit.str);
+	if(int(GameInterface.qty_edit.str) == 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 	    SetFormatedText("QTY_Result", "");
@@ -886,17 +886,17 @@ void ChangeQTY_EDIT()
 	}
 	else
 	{
-		if (sti(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
+		if (int(GameInterface.qty_edit.str) < 0 || BuyOrSell == -1)
 		{
 			if (BuyOrSell != -1)
 			{
-		    	GameInterface.qty_edit.str = -sti(GameInterface.qty_edit.str);
+		    	GameInterface.qty_edit.str = -int(GameInterface.qty_edit.str);
 		    }
 			
 		    BuyOrSell = -1;
 			
 		    // проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iCharQty)
+		    if (int(GameInterface.qty_edit.str) > iCharQty)
 		    {
 		        GameInterface.qty_edit.str = iCharQty;
 		    }
@@ -911,7 +911,7 @@ void ChangeQTY_EDIT()
 			BuyOrSell = 1;
 			
 	        // проверка на колво доступное -->
-		    if (sti(GameInterface.qty_edit.str) > iStoreQty)
+		    if (int(GameInterface.qty_edit.str) > iStoreQty)
 		    {
 		        GameInterface.qty_edit.str = iStoreQty;
 		    }
@@ -922,15 +922,15 @@ void ChangeQTY_EDIT()
 		}
 	}
 	// если получили ноль
-	if (sti(GameInterface.qty_edit.str) == 0)
+	if (int(GameInterface.qty_edit.str) == 0)
 	{
 	    SetFormatedText("QTY_TypeOperation", "");
 		SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"QTY_TAKEGIVE_BUTTON", 0, "");
 		SetNodeUsing("QTY_TAKEGIVE_BUTTON", false);
 	    BuyOrSell = 0;
 	}
-    SetFormatedText("QTY_INFO_STORE_QTY", its(iStoreQty - BuyOrSell*sti(GameInterface.qty_edit.str)));
-    SetFormatedText("QTY_INFO_SHIP_QTY", its(iCharQty + BuyOrSell*sti(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_STORE_QTY", string(iStoreQty - BuyOrSell*int(GameInterface.qty_edit.str)));
+    SetFormatedText("QTY_INFO_SHIP_QTY", string(iCharQty + BuyOrSell*int(GameInterface.qty_edit.str)));
 }
 
 void REMOVE_ALL_BUTTON()  
@@ -971,11 +971,11 @@ void REMOVE_BUTTON()
 	{
 		if(BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) + 1);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + 1);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - 1);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - 1);
 		}
 		
 		BuyOrSell = 0;
@@ -996,11 +996,11 @@ void ADD_BUTTON()
 	{
 		if(BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + 1);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + 1);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - 1);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - 1);
 		}
 		
 		BuyOrSell = 0;

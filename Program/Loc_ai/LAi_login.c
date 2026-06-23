@@ -3,7 +3,7 @@ int LAi_loginedcharacters[MAX_CHARS_IN_LOC];
 int LAi_numloginedcharacters = 0;
 
 
-bool LAi_CharacterLogin(aref chr, string locID)
+bool LAi_CharacterLogin(ref chr, string locID)
 {
 	string func;
 	//Проверим адрес логина
@@ -20,13 +20,13 @@ bool LAi_CharacterLogin(aref chr, string locID)
 	bool isLogin = false;
 	if(chr.location == locID)
 	{
-		if(sti(chr.index) == nMainCharacterIndex) isLogin = true;
+		if(int(chr.index) == nMainCharacterIndex) isLogin = true;
 		if(CheckAttribute(chr, "location.stime") != false)
 		{
 			if(CheckAttribute(chr, "location.etime") != false)
 			{
 				//Проверям время логина
-				if(LAi_login_CheckTime(stf(chr.location.stime), stf(chr.location.etime))) 
+				if(LAi_login_CheckTime(float(chr.location.stime), float(chr.location.etime)))
 				{
 					isLogin = true;
 				}
@@ -59,7 +59,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 	//Проверим на захваченность локации
 	if(LAi_IsCapturedLocation)
 	{
-		if(GetMainCharacterIndex() != sti(chr.index))
+		if(GetMainCharacterIndex() != int(chr.index))
 		{
    			// boal fix fort officers -->
 			if(!IsOfficer(chr))
@@ -68,7 +68,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 				{
 					isLogin = false;
 				}else{
-					if(sti(chr.location.loadcapture) == 0)
+					if(int(chr.location.loadcapture) == 0)
 					{
 						isLogin = false;
 					}
@@ -129,8 +129,8 @@ bool LAi_CharacterLogin(aref chr, string locID)
 	SetEnergyToCharacter(chr);  // boal
 	
 	//Проверяем хитпойнты
-	float hp = stf(chr.chr_ai.hp);
-	float hpmax = stf(chr.chr_ai.hp_max);
+	float hp = float(chr.chr_ai.hp);
+	float hpmax = float(chr.chr_ai.hp_max);
 	if(hpmax < 1) hpmax = 1;
 	chr.chr_ai.hp_max = hpmax;
 	if(hp > hpmax) hp = hpmax;
@@ -142,7 +142,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 		{
 			if(CheckAttribute(chr, "location.norebirth") != false)
 			{
-				if(sti(chr.location.norebirth) != 0) return false;
+				if(int(chr.location.norebirth) != 0) return false;
 			}
 			//Надо возрождать персонажа
 			chr.chr_ai.hp = hpmax;
@@ -183,7 +183,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 	{
 		if(chr.quest.type == "trader")
 		{
-			if(!CheckAttribute(chr, "quest.questflag") || sti(chr.quest.questflag) == -1)
+			if(!CheckAttribute(chr, "quest.questflag") || int(chr.quest.questflag) == -1)
 			{
 				GenerateTraderQuests(chr);
 			}
@@ -223,7 +223,7 @@ void LAi_CharacterPostLogin(ref location)
 				string locator = LAi_FindNearestFreeLocator("goto", x, y, z);
 				if(locator != "")
 				{
-					TeleportCharacterToLocator(chr, "goto", locator)
+					TeleportCharacterToLocator(chr, "goto", locator);
 					CharacterTurnByChr(chr, pchar);
 				}else{
 					Trace("Can't find good locator for follower character <" + chr.id + ">");
@@ -289,7 +289,7 @@ void LAi_CharacterPostLogin(ref location)
 	}
 }
 
-bool LAi_CharacterLogoff(aref chr)
+bool LAi_CharacterLogoff(ref chr)
 {
 	chr.chr_ai.login = false;	
 	//chr.location = "none";
@@ -306,16 +306,16 @@ bool LAi_CharacterLogoff(aref chr)
 	return true;
 }
 
-void LAi_AddLoginedCharacter(aref chr)
+void LAi_AddLoginedCharacter(ref chr)
 {
-	int index = sti(chr.index);
+	int index = int(chr.index);
 	LAi_loginedcharacters[LAi_numloginedcharacters] = index;
 	LAi_numloginedcharacters = LAi_numloginedcharacters + 1;
 }
 
-void LAi_DelLoginedCharacter(aref chr)
+void LAi_DelLoginedCharacter(ref chr)
 {
-	int index = sti(chr.index);
+	int index = int(chr.index);
 	for(int i = 0; i < LAi_numloginedcharacters; i++)
 	{
 		if(LAi_loginedcharacters[i] == index)
@@ -340,7 +340,7 @@ bool LAi_login_CheckTime(float start, float end)
 	return false;
 }
 
-void LAi_PostLoginInit(aref chr)
+void LAi_PostLoginInit(ref chr)
 {
 	if(!IsEntity(&chr)) return;
 	//Добавляем в группу
@@ -366,7 +366,7 @@ void LAi_PostLoginInit(aref chr)
 	ResetCritChanceBonus(chr);
 }
 
-bool NotLoginQuestCapture(aref chr, string locID)
+bool NotLoginQuestCapture(ref chr, string locID)
 {
 	if(!CheckAttribute(&Locations[FindLocation(locID)], "QuestCapture")) return false;
 	

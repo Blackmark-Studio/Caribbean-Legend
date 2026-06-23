@@ -664,7 +664,7 @@ void ProcessDialogEvent()
 				if(iTemp > 0)
 				{
 				sld = GetCharacter(iTemp);
-				if(sti(RealShips[sti(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
+				if(int(RealShips[int(sld.ship.type)].basetype) == SHIP_VALCIRIA) iVal = 1;
 				}
 			}//设置了舰队中存在瓦尔基里的标志。 
 			if (iVal != 0)
@@ -779,7 +779,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "3-36");
 			//设置生成遭遇的计时器
 			pchar.quest.HWIC_Cureer.win_condition.l1 = "Timer";
-			pchar.quest.HWIC_Cureer.win_condition.l1.date.hour  = sti(GetTime());
+			pchar.quest.HWIC_Cureer.win_condition.l1.date.hour  = int(GetTime());
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 			pchar.quest.HWIC_Cureer.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
@@ -1004,7 +1004,7 @@ void ProcessDialogEvent()
 			dialog.text = "两万比索。 这是一个非常好的工具包, 很快就能回本。 ";
 			link.l1 = "你在嘲笑我吧? 一个装玻璃器皿的手提包要价相当于一艘小帆船? 不, 我不要。 ";
 			link.l1.go = "alchemy_exit";
-			if (sti(pchar.money) >= 20000)
+			if (int(pchar.money) >= 20000)
 			{
 				link.l2 = "我同意。 我觉得尝试自己制作东西会很有趣。 ";
 				link.l2.go = "alchemy_5";

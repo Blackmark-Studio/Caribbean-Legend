@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_5":
 			dialog.text = "Chyba mnie nie słyszysz. Powiedziałem jasno - pieniądze są mi potrzebne teraz. Nie za tydzień, nie za miesiąc, ani kiedy tam kowal je uzbiera, tylko teraz. Zamierzam wynieść się z tej nieszczęsnej wyspy jak najszybciej. Więc albo cała suma ląduje u mnie w rękach teraz, albo księga idzie do Francuzów, a swój kapitański honor będziesz zastawiać u admirałowskiego kata.";
-			if (sti(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
+			if (int(pchar.Money) >= 100000 && GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
 				link.l1 = "Zróbmy tak: zagramy. Moje sto tysięcy przeciwko księdze. Jeśli wygrasz, opuścisz wyspę jako bogacz. Jeśli przegrasz - biorę księgę. Czy grasz tylko z tymi, którzy pierwszy raz widzą karty?";
 				link.l1.go = "OZ_Shuler_6";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "OZ_Felip_11":
 			dialog.text = "Kapitanie! Już mi doniesiono, że Javier poszedł na tamten świat z waszej łaski. A przecież prosiłem, by nie zabijać go przed czasem! Mam nadzieję, że przyszedłeś oddać mi moje pieniądze?";
-			if (sti(pchar.Money) >= 100000)
+			if (int(pchar.Money) >= 100000)
 			{
 				link.l1 = "Dokładnie tak. Udało mi się znaleźć jego skrytkę, w której było sto tysięcy peso. To wszystkie pieniądze, jakie miał.";
 				link.l1.go = "OZ_Felip_12";

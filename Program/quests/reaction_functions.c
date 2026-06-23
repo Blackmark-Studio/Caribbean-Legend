@@ -17,7 +17,7 @@ void SmallQuests_free(string qName)
 //вернуть тип губернаторов обратно в sit после боевки
 void MayorSitBack(string qName) 
 {
-	iTemp = GetCharacterIndex(Pchar.quest.MayorSitBack.mayorId)
+	iTemp = GetCharacterIndex(Pchar.quest.MayorSitBack.mayorId);
 	if (iTemp > 0)
 	{
 		sld = &characters[iTemp];
@@ -32,7 +32,7 @@ void MayorSitBack(string qName)
 
 void SeekShip_Stay(string qName)
 {
-	sld = &characters[sti(pchar.quest.(qName).Idx)];
+	sld = &characters[int(pchar.quest.(qName).Idx)];
 	LAi_SetStayType(sld);
 }
 
@@ -55,12 +55,12 @@ void RestoreInjOfficerInLoc(string _quest)
 // прибавим здоровья, если не максимум
 void AddOfficerHealth(string _quest)
 {
-	int chrindex = strcut(_quest, 14 , strlen(_quest)-1);
+	int chrindex = int(strcut(_quest, 14 , strlen(_quest)-1));
 	ref chr = GetCharacter(chrindex);
-	if(makefloat(chr.Health.HP) < 60.0)
+	if(float(chr.Health.HP) < 60.0)
 	{
-		chr.Health.HP = makefloat(chr.Health.HP) + 2.0;
-		if(makefloat(chr.Health.HP) > 59.9) 
+		chr.Health.HP = float(chr.Health.HP) + 2.0;
+		if(float(chr.Health.HP) > 59.9)
 		{
 			chr.Health.HP = 60.0;
 			DeleteAttribute(Pchar, "quest."+_quest+".again");
@@ -346,8 +346,8 @@ bool Verifier_OnLoad() {
 		makearef(from, pchar.Verifier.location);
 		CopyAttributes(to, from);
 		
-		chrDisableReloadToLocation = sti(pchar.Verifier.chrDisableReloadToLocation);
-		if (!sti(pchar.Verifier.CannotWait)) {
+		chrDisableReloadToLocation = int(pchar.Verifier.chrDisableReloadToLocation);
+		if (!int(pchar.Verifier.CannotWait)) {
 			DeleteAttribute(pchar, "GenQuest.CannotWait");
 		}
 		
@@ -652,14 +652,14 @@ void Hat6_deal(string qName)
 			{
 				int iGood = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, FLAG_GOODS_NONE);
 				ref rColony = GetColonyByIndex(FindColony(GetCityNameByIsland(GiveArealByLocation(loc))));
-				int iPrice = sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], iGood, PRICE_TYPE_BUY, pchar, 1));
+				int iPrice = int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], iGood, PRICE_TYPE_BUY, pchar, 1));
 				
 				log_testinfo("Hat6_deal Good " + Goods[iGood].name + " price " + iPrice);
 				
-				int money = GetSummonSkillFromName(pchar, SKILL_COMMERCE) * 100 + (-ChangeCharacterHunterScore(Pchar, NationShortName(sti(rColony.nation)) + "hunter", 0) * 20) + sti(pow(sti(pchar.money), 0.5));
+				int money = GetSummonSkillFromName(pchar, SKILL_COMMERCE) * 100 + (-ChangeCharacterHunterScore(Pchar, NationShortName(int(rColony.nation)) + "hunter", 0) * 20) + int(pow(int(pchar.money), 0.5));
 				
 				AddCharacterGoods(pchar, iGood, money/iPrice);
-				ChangeCharacterHunterScore(Pchar, NationShortName(sti(rColony.nation)) + "hunter", -(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20));
+				ChangeCharacterHunterScore(Pchar, NationShortName(int(rColony.nation)) + "hunter", -(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20));
 				notification(StringFromKey("reaction_functions_5") + money/iPrice, Goods[iGood].name);
 				pchar.questTemp.Hat6_deal = true;
 				SetFunctionTimerCondition("Hat6_NewDeal", 0, 0, 3, false);
@@ -692,15 +692,15 @@ void Hat6_NewDeal(string qName)
 				
 				
 				ref rColony = GetColonyByIndex(FindColony(GetCityNameByIsland(GiveArealByLocation(loc))));
-				int iPrice = sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], sti(sGood), PRICE_TYPE_BUY, pchar, 1);
+				int iPrice = int(GetStoreGoodsPrice(&stores[int(rColony.StoreNum)], int(sGood), PRICE_TYPE_BUY, pchar, 1);
 				
-				log_testinfo("Hat6_deal Good " + Goods[sti(sGood)].name + " price " + iPrice);
+				log_testinfo("Hat6_deal Good " + Goods[int(sGood)].name + " price " + iPrice);
 				
-				int money = GetSummonSkillFromName(pchar, SKILL_COMMERCE) * 100 + (-ChangeCharacterHunterScore(Pchar, NationShortName(sti(rColony.nation)) + "hunter", 0) * 20) + sti(pow(sti(pchar.money), 0.5));
+				int money = GetSummonSkillFromName(pchar, SKILL_COMMERCE) * 100 + (-ChangeCharacterHunterScore(Pchar, NationShortName(int(rColony.nation)) + "hunter", 0) * 20) + int(pow(int(pchar.money), 0.5));
 				
-				AddCharacterGoods(pchar, sti(sGood), money/iPrice);
-				ChangeCharacterHunterScore(Pchar, NationShortName(sti(rColony.nation)) + "hunter", -(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20));
-				notification("Удачный день для сделки, трюмы пополнены! +" + money/iPrice, Goods[sti(sGood)].name);
+				AddCharacterGoods(pchar, int(sGood), money/iPrice);
+				ChangeCharacterHunterScore(Pchar, NationShortName(int(rColony.nation)) + "hunter", -(GetSummonSkillFromName(pchar, SKILL_COMMERCE)/20));
+				notification("Удачный день для сделки, трюмы пополнены! +" + money/iPrice, Goods[int(sGood)].name);
 				pchar.questTemp.Hat6_deal = true;
 				SetFunctionTimerCondition("Hat6_NewDeal", 0, 0, 3, false);
 			}
@@ -839,12 +839,12 @@ void PR_Letter_Reaction()
 	if(locId == "FortFrance_Dungeon") locId = "FortFrance_town";
 	
 	if(!CheckAttribute(rItem, locId + ".find")) rItem.(locId).find = 0;
-	rItem.(locId).find = sti(rItem.(locId).find) + 1;
+	rItem.(locId).find = int(rItem.(locId).find) + 1;
 	AddQuestRecordInfo(locId+"_Letter", rItem.(locId).find);
 	
 	if(locId == "PortRoyal_town")
 	{
-		if(sti(rItem.(locId).find) == 4)
+		if(int(rItem.(locId).find) == 4)
 		{
 			//SetItemInLocation("key_candlestick_PortRoyal", "PortRoyal_town", "key1");
 			QuestPointerToLoc("PortRoyal_town", "item", "key1");
@@ -854,7 +854,7 @@ void PR_Letter_Reaction()
 			rItem.startLocator = "key1";
 			Item_OnLoadLocation("PortRoyal_town");
 		}
-		else if (sti(rItem.(locId).find) == 5)
+		else if (int(rItem.(locId).find) == 5)
 		{
 			Achievment_Set("ach_CL_145");
 			pchar.questTemp.MysteryPortRoyal_Helena = true;
@@ -863,7 +863,7 @@ void PR_Letter_Reaction()
 	
 	if(locId == "FortFrance_town")
 	{
-		if(sti(rItem.(locId).find) == 4)
+		if(int(rItem.(locId).find) == 4)
 		{
 			QuestPointerToLoc("FortFrance_town", "item", "key1");
 			rItem = ItemsFromID("key_candlestick_FortFrance");
@@ -872,7 +872,7 @@ void PR_Letter_Reaction()
 			rItem.startLocator = "key1";
 			Item_OnLoadLocation("FortFrance_town");
 		}
-		else if (sti(rItem.(locId).find) == 5)
+		else if (int(rItem.(locId).find) == 5)
 		{
 			Achievment_Set("ach_CL_168");
 		}
@@ -880,7 +880,7 @@ void PR_Letter_Reaction()
 	
 	if(locId == "LeFransua_town")
 	{
-		if(sti(rItem.(locId).find) == 3)
+		if(int(rItem.(locId).find) == 3)
 		{
 			QuestPointerToLoc("LeFransua_town", "item", "key1");
 			rItem = ItemsFromID("key_candlestick_LeFransua");
@@ -907,7 +907,7 @@ void PR_Letter_Reaction()
 			PChar.quest.LeFransua_OpenLetterTreasureBox.win_condition.l1.item = "key_candlestick_LeFransua";
 			PChar.quest.LeFransua_OpenLetterTreasureBox.function = "LeFransua_OpenLetterTreasureBox";
 		}
-		else if (sti(rItem.(locId).find) == 4)
+		else if (int(rItem.(locId).find) == 4)
 		{
 			TakeItemFromCharacter(pchar, "key_candlestick_LeFransua");
 			
@@ -920,7 +920,7 @@ void PR_Letter_Reaction()
 	
 	if(locId == "Villemstad_town")
 	{
-		switch (sti(rItem.(locId).find))
+		switch (int(rItem.(locId).find))
 		{
 			case 1: AddCharacterSkillDontClearExp(pchar, SKILL_SAILING, 1); break;
 			case 2: AddCharacterSkillDontClearExp(pchar, SKILL_SNEAK, 1); break;
@@ -928,7 +928,7 @@ void PR_Letter_Reaction()
 			case 4: AddCharacterSkillDontClearExp(pchar, SKILL_COMMERCE, 1); break;
 		}
 		
-		if(sti(rItem.(locId).find) == 4)
+		if(int(rItem.(locId).find) == 4)
 		{
 			QuestPointerToLoc("Villemstad_town", "item", "key1");
 			rItem = ItemsFromID("key_candlestick_Villemstad");
@@ -937,11 +937,11 @@ void PR_Letter_Reaction()
 			rItem.startLocator = "key1";
 			Item_OnLoadLocation("Villemstad_town");
 		}
-		else if(sti(rItem.(locId).find) < 4)
+		else if(int(rItem.(locId).find) < 4)
 		{
 			DoQuestFunctionDelay("Show_Next_PR_Letter", 1.0);
 		}
-		else if (sti(rItem.(locId).find) == 5)
+		else if (int(rItem.(locId).find) == 5)
 		{
 			Achievment_Set("ach_CL_146");
 		}
@@ -952,7 +952,7 @@ void Show_Next_PR_Letter(string qName)
 {
 	string locId = pchar.location;
 	ref rItem = ItemsFromID("PR_Letter");
-	string sLocator = "letter"+sti(1 + sti(rItem.(locId).find));
+	string sLocator = "letter"+int(1 + int(rItem.(locId).find));
 	rItem.shown = true;
 	rItem.startLocation = "Villemstad_town";
 	rItem.startLocator = sLocator;
@@ -1063,7 +1063,7 @@ void Notification_Approve(bool check, string icon)
 	}
 }
 
-void Notification_ReputationNation(bool check, int number, string nation)
+void Notification_ReputationNation(bool check, int number, int nation)
 {
 	string icon;
 	if (nation == ENGLAND) icon = "enghunter";

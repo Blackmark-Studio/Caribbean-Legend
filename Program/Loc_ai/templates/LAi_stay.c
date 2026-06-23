@@ -4,7 +4,7 @@
 
 
 
-bool LAi_tmpl_stay_InitTemplate(aref chr)
+bool LAi_tmpl_stay_InitTemplate(ref chr)
 {
 	SendMessage(&chr, "lsl", MSG_CHARACTER_EX_MSG, "LockFightMode", false);
 	CharacterPlayAction(chr, "");
@@ -26,13 +26,13 @@ bool LAi_tmpl_stay_InitTemplate(aref chr)
 }
 
 //Процессирование шаблона персонажа
-void LAi_tmpl_stay_CharacterUpdate(aref chr, float dltTime) {
+void LAi_tmpl_stay_CharacterUpdate(ref chr, float dltTime) {
 	float time;
-	// float time = stf(chr.chr_ai.tmpl.time) - dltTime;
+	// float time = float(chr.chr_ai.tmpl.time) - dltTime;
 	if (chr.model.animation == "main_menu_mc" || 
 	chr.model.animation == "main_menu_mc_man_b" ||
 	chr.model.animation == "main_menu_mc_rumba") {
-	time = stf(chr.chr_ai.tmpl.time) - dltTime;
+	time = float(chr.chr_ai.tmpl.time) - dltTime;
 		switch (chr.chr_ai.tmpl.state) {
 			case "idle":
 				if (time < 0) {
@@ -83,7 +83,7 @@ void LAi_tmpl_stay_CharacterUpdate(aref chr, float dltTime) {
 		chr.model.animation == "main_menu_mary" || 
 		chr.model.animation == "main_menu_mc_helena" || 
 		chr.model.animation == "main_menu_helena") {
-	time = stf(chr.chr_ai.tmpl.time) - dltTime;
+	time = float(chr.chr_ai.tmpl.time) - dltTime;
 		switch (chr.chr_ai.tmpl.state) {
 			case "idle":
 				if (time < 0) {
@@ -133,114 +133,114 @@ void LAi_tmpl_stay_CharacterUpdate(aref chr, float dltTime) {
 }
 
 //Персонаж выполнил команду  go to point
-void LAi_tmpl_stay_EndGoToPoint(aref chr)
+void LAi_tmpl_stay_EndGoToPoint(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж провалил команду  go to point
-void LAi_tmpl_stay_FailureGoToPoint(aref chr)
+void LAi_tmpl_stay_FailureGoToPoint(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 
 //Персонаж выполнил команду  run to point
-void LAi_tmpl_stay_EndRunToPoint(aref chr)
+void LAi_tmpl_stay_EndRunToPoint(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж провалил команду  run to point
-void LAi_tmpl_stay_FailureRunToPoint(aref chr)
+void LAi_tmpl_stay_FailureRunToPoint(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж не может добраться до точки назначения
-void LAi_tmpl_stay_BusyPos(aref chr, float x, float y, float z)
+void LAi_tmpl_stay_BusyPos(ref chr, float x, float y, float z)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_stay_FollowGo(aref chr)
+void LAi_tmpl_stay_FollowGo(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_stay_FollowStay(aref chr)
+void LAi_tmpl_stay_FollowStay(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж провалил команду  follow character
-void LAi_tmpl_stay_FailureFollow(aref chr)
+void LAi_tmpl_stay_FailureFollow(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 
 //Персонаж начал перемещение за другим
-void LAi_tmpl_stay_FightGo(aref chr)
+void LAi_tmpl_stay_FightGo(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж начал дошёл до другого персонажа
-void LAi_tmpl_stay_FightStay(aref chr)
+void LAi_tmpl_stay_FightStay(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж провалил команду  Fight
-void LAi_tmpl_stay_FailureFight(aref chr)
+void LAi_tmpl_stay_FailureFight(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Можно ли стрелять
-bool LAi_tmpl_stay_IsFire(aref chr)
+bool LAi_tmpl_stay_IsFire(ref chr)
 {	
 	return false;
 }
 
 //Можно ли использовать оружие
-bool LAi_tmpl_stay_IsFight(aref chr)
+bool LAi_tmpl_stay_IsFight(ref chr)
 {
 	return false;
 }
 
 
 //Персонаж выполнил команду  escape
-void LAi_tmpl_stay_EndEscape(aref chr)
+void LAi_tmpl_stay_EndEscape(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж скользит вдоль патча
-void LAi_tmpl_stay_EscapeSlide(aref chr)
+void LAi_tmpl_stay_EscapeSlide(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 //Персонаж провалил команду  escape
-void LAi_tmpl_stay_FailureEscape(aref chr)
+void LAi_tmpl_stay_FailureEscape(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 
 //Персонаж толкается с другими персонажами
-void LAi_tmpl_stay_ColThreshold(aref chr)
+void LAi_tmpl_stay_ColThreshold(ref chr)
 {
 	SetCharacterTask_Stay(chr);
 }
 
 
 //Персонаж закончил проигрывать анимацию
-void LAi_tmpl_stay_EndAction(aref chr)
+void LAi_tmpl_stay_EndAction(ref chr)
 {
 	if (chr.model.animation == "main_menu_mc" || 
 	chr.model.animation == "main_menu_mc_man_b" || 
@@ -298,7 +298,7 @@ void LAi_tmpl_stay_EndAction(aref chr)
 
 
 //Персонажа просят освободить место
-void LAi_tmpl_stay_FreePos(aref chr, aref who)
+void LAi_tmpl_stay_FreePos(ref chr, aref who)
 {
 	SetCharacterTask_Stay(chr);
 }

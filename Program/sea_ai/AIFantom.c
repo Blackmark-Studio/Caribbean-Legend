@@ -57,13 +57,13 @@ int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 	for (i = 0; i < q; i++)
 	{
         arShip = GetAttributeN(arShips, i);
-		iShipTypes[i] = arShip.type;
-		 ShipModes[i] = arShip.mode;
+		iShipTypes[i] = arShip.type$int(0);
+		ShipModes[i] = arShip.mode;
 
         // Проверяем кандидатуру
         if (or(bTrade && ShipModes[i] == "trade", !bTrade && ShipModes[i] != "trade"))
         {
-            iCurClass = ShipsTypes[iShipTypes[i]].Class;
+            iCurClass = ShipsTypes[iShipTypes[i]].Class$int(0);
             if (iCurClass < iBestClass)
             {
                 iBestClass = iCurClass;
@@ -101,7 +101,7 @@ int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 		DeleteAttribute(rFantom, "QuestDate");
 		DeleteAttribute(rFantom, "ransom");
 
-		rFantom.Ship.Type = GenerateShipExt(iShipTypes[iSort[i]], 0, rFantom);
+		rFantom.Ship.Type = GenerateShipExt(iShipTypes[iSort[i]], false, rFantom);
 		rFantom.Ship.Mode = ShipModes[iSort[i]];
 		rFantom.SeaAI.Group.Name = sGroupName;
 		rFantom.Charge.Type = GOOD_BALLS;
@@ -121,7 +121,7 @@ void Fantom_SetRandomMoney(ref rFantom, string sFantomType)
 	//GenerateBootyItems(rFantom); // to_do del
 	if (!CheckAttribute(rFantom, "ship.type")) return; // fix
 	
-    int iShip = sti(rFantom.ship.type);
+    int iShip = int(rFantom.ship.type);
 	if (iShip == SHIP_NOTUSED) return; // fix
 	
 	// clear money from character
@@ -182,12 +182,12 @@ void Fantom_SetCannons(ref rFantom, string sFantomType)
 {
 	int iSClass = GetCharacterShipClass(rFantom);
 	ref rShip = GetRealShip(GetCharacterShipType(rFantom));
-	if (sti(rShip.Cannon) == CANNON_TYPE_NONECANNON)
+	if (int(rShip.Cannon) == CANNON_TYPE_NONECANNON)
 	{
 		rFantom.Ship.Cannons.Type = CANNON_TYPE_NONECANNON;
 		return;
 	}
-    int iCaliber = sti(rShip.MaxCaliber);
+    int iCaliber = int(rShip.MaxCaliber);
 	string sCannonType = "cannon";
 	switch (sFantomType)
 	{
@@ -249,8 +249,8 @@ void Fantom_SetCannons(ref rFantom, string sFantomType)
 	if (iCaliber < 3)
         iCaliber = 3;
 
-	if (iCaliber > sti(rShip.MaxCaliber))
-        iCaliber = sti(rShip.MaxCaliber);
+	if (iCaliber > int(rShip.MaxCaliber))
+        iCaliber = int(rShip.MaxCaliber);
 
 	rFantom.Ship.Cannons.Type = GetCannonByTypeAndCaliber(sCannonType, iCaliber);
 }
@@ -310,19 +310,19 @@ void Fantom_SetBalls(ref rFantom, string sFantomType)
 	if (GetCharacterShipClass(rFantom) == 1) fKBalls = fKBalls * 2.2; 
 	if (GetCharacterShipClass(rFantom) == 2) fKBalls = fKBalls * 1.8; 
     // boal 20.01.2004 -->
-	Fantom_SetCharacterGoods(rFantom, GOOD_BALLS,    	MakeInt(195 * fKBalls + rand(MakeInt(10 * fKBalls))), 0);
-	Fantom_SetCharacterGoods(rFantom, GOOD_BOMBS,    	MakeInt(10  * fKBalls + rand(MakeInt(2  * fKBalls))), 0);
-	Fantom_SetCharacterGoods(rFantom, GOOD_KNIPPELS, 	MakeInt(90  * fKBalls + rand(MakeInt(10 * fKBalls))), 0);
-	Fantom_SetCharacterGoods(rFantom, GOOD_GRAPES,   	MakeInt(70  * fKBalls + rand(MakeInt(10 * fKBalls))), 0);
-	Fantom_SetCharacterGoods(rFantom, GOOD_POWDER,   	MakeInt(350 * fKBalls + rand(MakeInt(30 * fKBalls))), 0);
+	Fantom_SetCharacterGoods(rFantom, GOOD_BALLS,    	int(195 * fKBalls + rand(int(10 * fKBalls))), false);
+	Fantom_SetCharacterGoods(rFantom, GOOD_BOMBS,    	int(10  * fKBalls + rand(int(2  * fKBalls))), false);
+	Fantom_SetCharacterGoods(rFantom, GOOD_KNIPPELS, 	int(90  * fKBalls + rand(int(10 * fKBalls))), false);
+	Fantom_SetCharacterGoods(rFantom, GOOD_GRAPES,   	int(70  * fKBalls + rand(int(10 * fKBalls))), false);
+	Fantom_SetCharacterGoods(rFantom, GOOD_POWDER,   	int(350 * fKBalls + rand(int(30 * fKBalls))), false);
 
-	Fantom_SetCharacterGoods(rFantom, GOOD_SAILCLOTH, 	MakeInt(4 	* fKBalls + rand(MakeInt(10 * fKBalls))), 0);
-	Fantom_SetCharacterGoods(rFantom, GOOD_PLANKS, 		MakeInt(3 	* fKBalls + rand(MakeInt(20 * fKBalls))), 0);
+	Fantom_SetCharacterGoods(rFantom, GOOD_SAILCLOTH, 	int(4 	* fKBalls + rand(int(10 * fKBalls))), false);
+	Fantom_SetCharacterGoods(rFantom, GOOD_PLANKS, 		int(3 	* fKBalls + rand(int(20 * fKBalls))), false);
 
-    Fantom_SetCharacterGoods(rFantom, GOOD_FOOD, 		MakeInt(20 	* fKBalls + rand(MakeInt(26 * fKBalls))), 0);
-    Fantom_SetCharacterGoods(rFantom, GOOD_WEAPON, 		MakeInt(8  	* fKBalls + rand(MakeInt(13 * fKBalls))), 0);
-    Fantom_SetCharacterGoods(rFantom, GOOD_RUM, 		MakeInt(4  	* fKBalls + rand(MakeInt(10 * fKBalls))), 0);
-    Fantom_SetCharacterGoods(rFantom, GOOD_MEDICAMENT, 	MakeInt(4  	* fKBalls + rand(MakeInt(13 * fKBalls))), 0);
+    Fantom_SetCharacterGoods(rFantom, GOOD_FOOD, 		int(20 	* fKBalls + rand(int(26 * fKBalls))), false);
+    Fantom_SetCharacterGoods(rFantom, GOOD_WEAPON, 		int(8  	* fKBalls + rand(int(13 * fKBalls))), false);
+    Fantom_SetCharacterGoods(rFantom, GOOD_RUM, 		int(4  	* fKBalls + rand(int(10 * fKBalls))), false);
+    Fantom_SetCharacterGoods(rFantom, GOOD_MEDICAMENT, 	int(4  	* fKBalls + rand(int(13 * fKBalls))), false);
     // boal 20.01.2004 <--
 }
 
@@ -342,7 +342,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 
 	float 	fModifikator = 0.0;
 
-	int 	Nation = sti(rFantom.nation);
+	int 	Nation = int(rFantom.nation);
 
 	if(CheckAttribute(rFantom, "situation")) bOk = true;
 
@@ -357,24 +357,23 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
             // Провиант на корабли снабжения (to_do ref)
             if(IsMerchantShipType(rFantom) && CheckAttribute(rFantom, "RealEncounterType"))
             {
-                i = sti(rFantom.RealEncounterType);
+                i = int(rFantom.RealEncounterType);
                 if(i >= ENCOUNTER_TYPE_PATROL_SMALL && i <= ENCOUNTER_TYPE_NAVAL_LARGE)
-                    Fantom_SetCharacterGoods(rFantom, GOOD_FOOD, 1000 * iShipClass + rand(300 * iShipClass), rand(1));
+                    Fantom_SetCharacterGoods(rFantom, GOOD_FOOD, 1000 * iShipClass + rand(300 * iShipClass), bool(rand(1)));
             }
 			for (i = 0; i < iRandGoods; i++)
 			{
-				if(rand(4) == 1) isLock = 1; 
-				else			 isLock = 0; 	
+				isLock = rand(4) == 1;
 				isLock = isLock || bOk; 
 			    Fantom_SetCharacterGoods(rFantom, iStart + rand(iFinish), iMultiply * rand(iRandMultiply * 3), isLock);
 			}
-			iMultiply = GetCannonGoodsIdxByType(sti(rFantom.Ship.Cannons.Type));
+			iMultiply = GetCannonGoodsIdxByType(int(rFantom.Ship.Cannons.Type));
 			if (iMultiply != -1)
 			{
 				iRandMultiply = rand(6) - 2;  // 0..4 пушки
 				if (iRandMultiply > 0)
 				{
-					Fantom_SetCharacterGoods(rFantom, iMultiply, iRandMultiply, 0);	
+					Fantom_SetCharacterGoods(rFantom, iMultiply, iRandMultiply, false);
 				}
 			}			
 		break;
@@ -384,7 +383,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 
 			if (CheckAttribute(rFantom, "RealEncounterType"))
 			{
-				switch (sti(rFantom.RealEncounterType))
+				switch (int(rFantom.RealEncounterType))
 				{
 					case ENCOUNTER_TYPE_MERCHANT_SMALL:
 						iGoods = rand(2) + 4; 
@@ -432,20 +431,19 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				for (i = 0; i < iGoods; i++)
 				{
 					iGoodName = iStart + rand(iFinish);
-					iGoodQuantity = makeint(20 + fModifikator * iMultiply * (2 + rand(iRandMultiply * 3)));
+					iGoodQuantity = int(20 + fModifikator * iMultiply * (2 + rand(iRandMultiply * 3)));
 
 					// уникальные и коронные товары
 					if(iGoodName >= GOOD_SHIPSILK && iGoodName <= GOOD_SILVER)
 					{
-						iGoodQuantity = makeint(rand(25) + rand(15) +  1.5 * (10 - MOD_SKILL_ENEMY_RATE) + 15 * (8 - iShipClass) );
+						iGoodQuantity = int(rand(25) + rand(15) +  1.5 * (10 - MOD_SKILL_ENEMY_RATE) + 15 * (8 - iShipClass) );
 						if(iGoodQuantity < 1) iGoodQuantity = 1;
-						isLock = 1; 
+						isLock = true;
 						Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);			
 					}
 					else
 					{
-						if(rand(4) == 1) isLock = 1; 
-						else			 isLock = 0; 	
+						isLock = rand(4) == 1;
 						isLock = isLock || bOk; 
 						Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);
 					}
@@ -461,7 +459,7 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 
 			if (CheckAttribute(rFantom, "RealEncounterType"))
 			{
-				switch (sti(rFantom.RealEncounterType))
+				switch (int(rFantom.RealEncounterType))
 				{
 					case ENCOUNTER_TYPE_PIRATE: // TO_DO: REF
                         switch (iGPThreatMax)
@@ -513,21 +511,19 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 			for (i = 0; i < iRandGoods; i++)
 			{
 				iGoodName = iStart + rand(iFinish);
-				iGoodQuantity = makeint(20 + fModifikator * iMultiply * (1+rand(iRandMultiply * 3)));
-
-				if(rand(4) == 1) isLock = 1; 
-				else			 isLock = 0; 	
+				iGoodQuantity = int(20 + fModifikator * iMultiply * (1+rand(iRandMultiply * 3)));
+				isLock = rand(4) == 1;
 				isLock = isLock || bOk; 
 				Fantom_SetCharacterGoods(rFantom, iGoodName, iGoodQuantity, isLock);
 			}
 
-			iMultiply = GetCannonGoodsIdxByType(sti(rFantom.Ship.Cannons.Type));
+			iMultiply = GetCannonGoodsIdxByType(int(rFantom.Ship.Cannons.Type));
 			if (iMultiply != -1)
 			{
 				iRandMultiply = rand(6) - 2;  // 0..4 пушки
 				if (iRandMultiply > 0)
 				{
-					Fantom_SetCharacterGoods(rFantom, iMultiply, iRandMultiply, 0);	
+					Fantom_SetCharacterGoods(rFantom, iMultiply, iRandMultiply, false);
 				}
 			}         
 		break;
@@ -554,7 +550,7 @@ int Fantom_SetCharacterGoods(ref rFantom, int iGoods, int iQuantity, bool isLock
 	
 	if (CheckAttribute(rFantom,"Ship.Cargo.Goods." + sGood))
 	{
-		rFantom.Ship.Cargo.Goods.(sGood) = sti(rFantom.Ship.Cargo.Goods.(sGood)) + iQuantity;
+		rFantom.Ship.Cargo.Goods.(sGood) = int(rFantom.Ship.Cargo.Goods.(sGood)) + iQuantity;
 	}
     else
 	{	
@@ -571,7 +567,7 @@ void Fantom_SetRandomCrewExp(ref rFantom, string sFantomType)
 {
     if (!CheckAttribute(rFantom, "ship.type")) return; // fix
     
-	int iShip = sti(rFantom.ship.type);
+	int iShip = int(rFantom.ship.type);
 	if (iShip == SHIP_NOTUSED) return; // fix
 	
 	// ship class
@@ -603,7 +599,7 @@ void Fantom_SetQuestSitiation(ref rFantom, string sFantomType)
 	bool CanGenerateSituation = false;
 	if (!CheckAttribute(rFantom, "ship.type")) return; 
     
-	int iShip = sti(rFantom.ship.type);
+	int iShip = int(rFantom.ship.type);
 	if (iShip == SHIP_NOTUSED) return; 
 	
 	switch (sFantomType)
@@ -649,7 +645,7 @@ void Fantom_SetDamage(ref rFantom, string sFantomType)
 {
 	if (!CheckAttribute(rFantom, "ship.type")) return; // fix
     
-	int iShip = sti(rFantom.ship.type);
+	int iShip = int(rFantom.ship.type);
 	if (iShip == SHIP_NOTUSED) return; // fix
 
 	switch (sFantomType)
@@ -747,8 +743,8 @@ void Fantom_SetDamageCannons(ref rFantom)
 	ref rRealShip = GetRealShip(GetCharacterShipType(rFantom));
 	
 	int iCannonDiff = 0;	
-	int rCannonQty = GetBortIntactCannonsNum(rFantom, "cannonr", sti(rRealShip.rcannon));
-	int lCannonQty = GetBortIntactCannonsNum(rFantom, "cannonl", sti(rRealShip.lcannon));
+	int rCannonQty = GetBortIntactCannonsNum(rFantom, "cannonr", int(rRealShip.rcannon));
+	int lCannonQty = GetBortIntactCannonsNum(rFantom, "cannonl", int(rRealShip.lcannon));
 
 	if(rCannonQty > 4)
 	{
@@ -788,8 +784,8 @@ void Fantom_SetDamageCannons(ref rFantom)
 void SetShipToFantom(ref _chr, string _type, bool _setgoods)
 {
 	int ShipType;
-	int Nation = sti(_chr.nation);
-	int Rank = sti(pchar.rank);
+	int Nation = int(_chr.nation);
+	int Rank = int(pchar.rank);
 	int iClassFlag = FLAG_SHIP_CLASS_6;
 	int iTypesFlag = FLAG_SHIP_TYPE_MERCHANT;
 	int iNationsFlag = GetNationFlag(Nation);

@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (makeint(pchar.reputation.nobility) >= 70 && GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) >= 5)
+				if (int(pchar.reputation.nobility) >= 70 && GetSummonSkillFromNameToOld(Pchar, SKILL_LEADERSHIP) >= 5)
 				{
 					Link.l1.go = "ThisTimeFree";
 				}
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if(makeint(Pchar.rank) >= 4 && GetSummonSkillFromNameToOld(Pchar, SKILL_COMMERCE) >= 5)
+				if(int(Pchar.rank) >= 4 && GetSummonSkillFromNameToOld(Pchar, SKILL_COMMERCE) >= 5)
 				{
 					Link.l2.go = "GiveMeSomeMoneyToo";
 				}
@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 				}
 			}
 			Link.l3 = "여기서 꺼져, 군인. 네 알 바 아니야!";
-			if(makeint(pchar.reputation.nobility) <= 25 && FencingSkills)
+			if(int(pchar.reputation.nobility) <= 25 && FencingSkills)
 			{
 				Link.l3.go = "GettingLostFromHere";
 			}
@@ -93,14 +93,14 @@ void ProcessDialogEvent()
 
 		case "ThisTimeFree_fight":	
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться 130313
-			ChangeCharacterNationReputation(pchar, sti(NPChar.Nation), -1);
+			ChangeCharacterNationReputation(pchar, int(NPChar.Nation), -1);
 			Diag.CurrentNode = Diag.TempNode;
 			NPChar.quest.meeting = NPC_Meeting;
 			DialogExit();
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
     			attrName = "SoldierIDX"+i;
-				sld = GetCharacter(sti(Pchar.quest.contraband.(attrName)));
+				sld = GetCharacter(int(Pchar.quest.contraband.(attrName)));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "CoastalGuards");
             }
@@ -121,10 +121,10 @@ void ProcessDialogEvent()
             DialogExit();
 			StopCoastalGuardPursuit();
 			ChangeContrabandRelation(pchar, -30);
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
     			attrName = "SoldierIDX"+i;
-				sld = GetCharacter(sti(Pchar.quest.contraband.(attrName)));
+				sld = GetCharacter(int(Pchar.quest.contraband.(attrName)));
 				LAi_SetWarriorType(sld);
 				LAi_group_MoveCharacter(sld, "CoastalGuards");
             }
@@ -144,8 +144,8 @@ void ProcessDialogEvent()
 		case "GiveMeSomeMoneyToo":	
 			dialog.snd = "Voice\COGU\COGU005";		
 			dialog.text = "정말이야? 뭐, 우리가 몫을 챙긴다면 이 일은 완전히 합법적이지... 물론이지. 그런데 자네의 자비심은 얼마나 후한가?";
-			Link.l1 = "내 생각에는"+makeint(sti(Pchar.money)/10)+" 페소면 충분하겠지.";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/10))
+			Link.l1 = "내 생각에는"+int(int(Pchar.money)/10)+" 페소면 충분하겠지.";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/10))
 			{
 				Link.l1.go = "MoneyAccepted10";
 			}
@@ -154,8 +154,8 @@ void ProcessDialogEvent()
 				Link.l1.go = "TryingToGiveBribe";
 			}
 
-			Link.l2 = "어때 "+makeint(sti(Pchar.money)/5)+" 페소?";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/5))
+			Link.l2 = "어때 "+int(int(Pchar.money)/5)+" 페소?";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/5))
 			{
 				Link.l2.go = "MoneyAccepted5";
 			}
@@ -164,8 +164,8 @@ void ProcessDialogEvent()
 				Link.l2.go = "TryingToGiveBribe";
 			}
 
-			Link.l3 = "장교 나리, 당신을 위해 내가 준비한 게 있소 "+makeint(sti(Pchar.money)/2)+" 페소!";
-			if(makeint(Pchar.rank)*1000 <= makeint(sti(Pchar.money)/2))
+			Link.l3 = "장교 나리, 당신을 위해 내가 준비한 게 있소 "+int(int(Pchar.money)/2)+" 페소!";
+			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/2))
 			{
 				Link.l3.go = "MoneyAccepted2";
 			}
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 			dialog.text = "친절에 감사드립니다.";
 			Link.l1 = "언제나 당신을 위해 대기하고 있습니다.";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/10));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/10));
 		break;
 		
 		case "MoneyAccepted5":
@@ -195,7 +195,7 @@ void ProcessDialogEvent()
 			dialog.text = "친절에 감사드립니다.";
 			Link.l1 = "언제나 당신을 위해 준비되어 있습니다.";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/5));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/5));
 		break;
 		
 		case "MoneyAccepted2":
@@ -203,7 +203,7 @@ void ProcessDialogEvent()
 			dialog.text = "친절에 감사드립니다.";
 			Link.l1 = "항상 당신을 위해 준비되어 있습니다.";
 			Link.l1.go = "GettingLostFromHere_exit";
-			AddMoneyToCharacter(pchar, -makeint(sti(Pchar.money)/2));
+			AddMoneyToCharacter(pchar, -int(int(Pchar.money)/2));
 		break;
 
 		case "GettingLostFromHere":
@@ -228,11 +228,11 @@ void ProcessDialogEvent()
             DialogExit();
             
 			StopCoastalGuardPursuit();
-			for (i = 1; i <= sti(Pchar.quest.contraband.SoldierQty); i++)
+			for (i = 1; i <= int(Pchar.quest.contraband.SoldierQty); i++)
 			{
                 attrName = "SoldierIDX"+i;
-                LAi_SetActorType(&Characters[sti(Pchar.quest.contraband.(attrName))]);
-                LAi_ActorRunToLocation(&Characters[sti(Pchar.quest.contraband.(attrName))], "reload", "Reload1", "none", "", "", "", 40);
+                LAi_SetActorType(&Characters[int(Pchar.quest.contraband.(attrName))]);
+                LAi_ActorRunToLocation(&Characters[int(Pchar.quest.contraband.(attrName))], "reload", "Reload1", "none", "", "", "", 40);
 			}
 			LAi_SetPlayerType(Pchar);
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться 130313

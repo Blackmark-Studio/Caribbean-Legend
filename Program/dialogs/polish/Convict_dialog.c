@@ -15,7 +15,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = NPCStringReactionRepeat("Przykro mi, ale będzie lepiej dla nas obu, jeśli już nie będziemy ze sobą rozmawiać. Oni mnie ukarzą, a ciebie poproszą o wyjście.","Już ci wszystko powiedziałem, przyjacielu. Czy chcesz, żebym był chłostany przez ciebie?","Nie słucham...","Miecz uderza i klan-gi wybierają...","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Przykro mi, ale lepiej będzie dla nas obu, jeśli już nie będziemy ze sobą rozmawiać. Oni mnie ukarzą, a ciebie poproszą o wyjście.","Już ci wszystko powiedziałem, przyjacielu. Czy chcesz, żebym był chłostany przez ciebie?","Nie słucham...","Miecz uderza i klan-gi wybierają...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Ciężkie zasady macie tutaj...","Nie, oczywiście, nie chcę tego.","Hmmm...","Tato, czy mnie słyszysz...",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 			NextDiag.TempNode = "First time";

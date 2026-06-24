@@ -214,7 +214,7 @@ int UseBestPotion(ref chref, bool needAntidote)
 		if( bValidPot && (GetCharacterItem(chref,arItm.id) > 0))
 		{
 			if (CheckAttribute(arItm,"potion.health"))
-				newPotionHealAmt = arItm.potion.health;
+				newPotionHealAmt = arItm.potion.health$int(0);
 			else
 				newPotionHealAmt = 0;
 								
@@ -305,7 +305,7 @@ bool EnablePotionUsing(ref mc, aref arItm)
 }
 
 // Warship 13.06.09 Для противоядий
-bool EnableAntidoteUsing(ref _char, aref _item)
+bool EnableAntidoteUsing(ref _char, ref _item)
 {
 	if(CheckAttribute(_item, "potion.antidote") && LAi_IsPoison(_char) && CheckCharacterItem(_char, _item.Id))
 	{
@@ -1395,7 +1395,7 @@ bool isMonkArtefact(string id)
 }
 
 // belamour тут высчитываем бонусы для клинка
-void addBonusToBlade(aref _attack, aref _enemy)
+void addBonusToBlade(ref _attack, ref _enemy)
 {
 	if(!GetDLCenabled(DLC_APPID_4)) return;
 	if(GetCharacterEquipByGroup(_attack, BLADE_ITEM_TYPE) != "lacrima_patris") return;

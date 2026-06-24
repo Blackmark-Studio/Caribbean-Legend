@@ -446,9 +446,17 @@ bool LAi_ReloadEndFade()
 	}
 
 	int crewSurvived = int(crew + 0.3);
+
 	// распределяем потери по кораблю ГГ и присоединившегося компаньона
 	if (CheckAttribute(&boarding_enemy, "CoordinatedCharIdx")) CoordinatedBoardingEnd(pchar, boarding_enemy.CoordinatedCharIdx, crewSurvived);
-	else SetCrewQuantityOverMax(pchar, crewSurvived); // десант весь ГГ как перегруз команды
+	else if (IsFort)
+	{
+		float surviveRate = 1.0 - (float(deadCrew) / float(boarding_player_base_crew)); // прикидываем процент выживших
+		Pchar.GenQuestFort.surviveRate = func_fmin(0.0, surviveRate);
+		Pchar.GenQuestFort.ownedCrew = GetCurCrewEscadr();
+		SetCrewQuantityOverMax(pchar, crewSurvived);
+	}
+	else SetCrewQuantityOverMax(pchar, crewSurvived);
 
 	Log_TestInfo("----- в конце стало " + crew +" матросов ---");
 	SetCrewQuantity(boarding_enemy, 0); //Пересчитываем команду соперника

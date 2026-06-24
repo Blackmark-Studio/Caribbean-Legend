@@ -271,7 +271,7 @@ int LAi_FindNearestVisCharacter(ref chr, float radius)
 }
 
 //Получить уровень драки приведёный к 0..1
-float LAi_GetCharacterFightLevel(aref character)
+float LAi_GetCharacterFightLevel(ref character)
 {
 	if (!LAi_IsArmed(&character)) return 0.0; // невооруженные пофигу
 	//Fencing skill
@@ -295,7 +295,7 @@ float LAi_GetCharacterGunLevel(ref character)
 	return fgtlevel;
 }
 
-float LAi_GetCharacterLuckLevel(aref character)
+float LAi_GetCharacterLuckLevel(ref character)
 {
 	float fgtlevel = 0.0;
 	fgtlevel = GetCharacterSkill(character, SKILL_FORTUNE);

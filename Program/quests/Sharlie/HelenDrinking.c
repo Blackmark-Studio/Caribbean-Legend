@@ -113,7 +113,7 @@ void HelenDrinking_TavernChange() {
 	pchar.questTemp.HelenDrinking.InTavern = true;
 	
 	if (GetHour() < 19) {
-		WaitDate("", 0, 0, 0, 19 - GetHour(), 0);
+		WaitDate("", 0, 0, 0, 19 - int(GetHour()), 0);
 	}
 	
 	bOk = false;
@@ -155,7 +155,7 @@ void HelenDrinking_TavernSpeak() {
 
 void HelenDrinking_TavernEmpty() {
 	if (GetHour() < 23) {
-		WaitDate("", 0, 0, 0, 23 - GetHour(), 0);
+		WaitDate("", 0, 0, 0, 23 - int(GetHour()), 0);
 	}
 	
 	for (i = 0; i < MAX_CHARACTERS; i++) {
@@ -383,10 +383,10 @@ void HelenDrinking_JoanDialog3() {
 
 void HelenDrinking_GoToShipyard() {
 	//if (GetHour() < 7) {
-	//	WaitDate("", 0, 0, 0, 7 - GetHour(), 0);
+	//	WaitDate("", 0, 0, 0, 7 - int(GetHour()), 0);
 	//}
 	if (GetHour() < 24) {
-		WaitDate("", 0, 0, 0, 24 - GetHour(), 0);
+		WaitDate("", 0, 0, 0, 24 - int(GetHour()), 0);
 	}
 	
 	sld = CharacterFromID("SantaCatalina_shipyarder");
@@ -413,10 +413,10 @@ void HelenDrinking_ShipyardDialog() {
 
 void HelenDrinking_GoToFort() {
 	//if (GetHour() < 12) {
-	//	WaitDate("", 0, 0, 0, 12 - GetHour(), 0);
+	//	WaitDate("", 0, 0, 0, 12 - int(GetHour()), 0);
 	//}
 	if (GetHour() < 21) {
-		WaitDate("", 0, 0, 0, 21 - GetHour(), 0);
+		WaitDate("", 0, 0, 0, 21 - int(GetHour()), 0);
 	}
 	
 	DoFunctionReloadToLocation("SantaCatalina_fort", "goto", "goto43", "HelenDrinking_AtFort");
@@ -545,10 +545,10 @@ void HelenDrinking_FortDialog3() {
 
 void HelenDrinking_GoToVillage() {
 	//if (GetHour() < 18) {
-	//	WaitDate("", 0, 0, 0, 18 - GetHour(), 0);
+	//	WaitDate("", 0, 0, 0, 18 - int(GetHour()), 0);
 	//}
 	if (GetHour() < 22) {
-		WaitDate("", 0, 0, 0, 22 - GetHour(), 0);
+		WaitDate("", 0, 0, 0, 22 - int(GetHour()), 0);
 	}
 	
 	DoFunctionReloadToLocation("Miskito_village", "sit", "ground2", "HelenDrinking_AtMiskito");

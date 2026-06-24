@@ -1470,7 +1470,7 @@ void VsD_Vzriv_2(string qName)
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), -1, true, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		LAi_SetActorType(sld);
@@ -2464,7 +2464,7 @@ void Guide_HeroKill(string qName) // ГГ убил Валинье
 // Миниквест "Делюк" ==>
 void Del_Alonso(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Del_Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Del_Alonso", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), -1, true, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
@@ -2874,6 +2874,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			pchar.NoNavyPenalty = true; // не штрафовать за нехватку навигации
 			pchar.questTemp.Sharlie.Citcount = 0;//туповато, но пусть хоть поспрашивает числом
 			LocatorReloadEnterDisable("Charles_townhall", "reload3", true);//закроем вход к Пуанси
+			CT_UpdateCashTables(pchar);
 			// закрываем все острова, кроме Гваделупы и Мартиники
 			for (i=0; i<MAX_ISLANDS; i++)
 			{				

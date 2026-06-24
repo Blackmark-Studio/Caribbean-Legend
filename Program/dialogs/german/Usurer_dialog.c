@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "Verzeihen Sie mir, Kapitän, aber diese Summe ist zu groß für meine Kolonialbank. Ich werde nicht in der Lage sein, Ihnen Ihre Zinsen zu zahlen. Und das Fehlen einer zuverlässigen Wache... Ich hoffe, Sie verstehen. Jedenfalls ist die maximale Summe, die ich von Ihnen annehmen kann, "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Verzeihen Sie mir, Kapitän, aber diese Summe ist zu groß für meine Kolonialbank. Ich werde nicht in der Lage sein, Ihnen Ihre Zinsen zu zahlen. Und das Fehlen einer zuverlässigen Wache... Ich hoffe, Sie verstehen. Jedenfalls ist die maximale Summe, die ich von Ihnen annehmen kann, "+FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000)+".";
 				Link.l1 = "Schade, ich muss dann einen anderen Bankier finden.";
 				Link.l1.go = "Exit";
 			}
@@ -1182,7 +1182,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "Verzeihen Sie mir, Kapitän, aber diese Summe ist zu groß für meine Kolonialbank. Ich werde nicht in der Lage sein, Ihnen Ihre Zinsen zu zahlen. Und das Fehlen eines zuverlässigen Wächters... Ich hoffe, Sie verstehen. Wie auch immer, die maximale Summe, die ich von Ihnen annehmen kann, ist "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Verzeihen Sie mir, Kapitän, aber diese Summe ist zu groß für meine Kolonialbank. Ich werde nicht in der Lage sein, Ihnen Ihre Zinsen zu zahlen. Und das Fehlen eines zuverlässigen Wächters... Ich hoffe, Sie verstehen. Wie auch immer, die maximale Summe, die ich von Ihnen annehmen kann, ist "+FindRussianDublonString(int(NPChar.UsurerDeposit)*10)+".";
 				Link.l1 = "Schade, dann muss ich wohl einen anderen Bankier finden.";
 				Link.l1.go = "Exit";
 			}

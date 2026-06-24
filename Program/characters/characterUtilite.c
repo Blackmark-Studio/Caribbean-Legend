@@ -3342,7 +3342,7 @@ void UpdateFame()
 bool Character_IsAbordageEnable(ref rCharacter)
 {
 	if (CheckAttribute(rCharacter, "AlwaysFriend")) return false; // boal
-	if (CheckAttribute(rCharacter, "Abordage.Enable")) { return int(rCharacter.Abordage.Enable); }
+	if (CheckAttribute(rCharacter, "Abordage.Enable")) { return bool(rCharacter.Abordage.Enable); }
 	return true;
 }
 

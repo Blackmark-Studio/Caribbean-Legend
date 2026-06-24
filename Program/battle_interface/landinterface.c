@@ -49,7 +49,7 @@ void InitBattleLandInterface()
 
 void BLI_EnableShow()
 {
-	SetLandInterfaceShow( int(InterfaceStates.BattleShow.Command) );
+	SetLandInterfaceShow( bool(InterfaceStates.BattleShow.Command) );
 }
 
 void BLI_DisableShow()

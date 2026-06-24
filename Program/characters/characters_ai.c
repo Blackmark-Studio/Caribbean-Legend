@@ -165,7 +165,7 @@ bool GetCharacterDistByLoc(ref character, string group, string locator, ref floa
 	return true;
 }
 
-string FindCharacterOptLocator(aref character, string group)
+string FindCharacterOptLocator(ref character, string group)
 {
 	string str = "";
 	if(SendMessage(character, "lsse", MSG_CHARACTER_EX_MSG, "FindForvardLocator", group, &str) == 0) return "";

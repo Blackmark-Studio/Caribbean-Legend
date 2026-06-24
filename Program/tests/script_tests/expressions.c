@@ -121,13 +121,13 @@ bool test__ternar()
     assert(bTmp);
     assert(bM[0] == 1 && bM[1] == true);
     if (__TrFu() ? __TrFu() ? false ? false : true : true : __TrFu() ? 0 : 0)
-        assert(1);
+        assert(true);
     else
-        assert(0);
+        assert(false);
     if (__TrFu() ? (__TrFu() ? (false ? false : (true ? 0 : 1) ? 0 : 1) : false) : false)
-        assert(1);
+        assert(true);
     else
-        assert(0);
+        assert(false);
 
     // Ternary conditional operator is disallowed in non-expression scope
     // Both operands must also be expressions, not pure statements
@@ -157,35 +157,35 @@ void test__case_default_size_operator()
         cnt++;
         switch (iArray[i])
         {
-            case 4: assert(0); break;
-            case 5: assert(1); break;
-            case -100: assert(1); break;
+            case 4: assert(false); break;
+            case 5: assert(true); break;
+            case -100: assert(true); break;
             default:
-                if (iArray[i] == 5 || iArray[i] == -100) assert(0);
-                else assert(1);
+                if (iArray[i] == 5 || iArray[i] == -100) assert(false);
+                else assert(true);
                 break; // so far, a break is required, just like with regular cases in this scripts
         }
         // Bad example 1 (so far)
         switch (iArray[i])
         {
 			default:
-                if (iArray[i] == 5 || iArray[i] == -100) assert(0);
-                else assert(1);
+                if (iArray[i] == 5 || iArray[i] == -100) assert(false);
+                else assert(true);
                 break; // so far, a break is required, just like with regular cases in this scripts
-            case 4: assert(0); break;
-            case 5: assert(1); break;
-            case -100: assert(1); break;
+            case 4: assert(false); break;
+            case 5: assert(true); break;
+            case -100: assert(true); break;
         }
         // Bad example 2 (so far)
         switch (iArray[i])
         {
-            case 4: assert(0); break;
-            case 5: assert(1); break;
+            case 4: assert(false); break;
+            case 5: assert(true); break;
 			default:
-                if (iArray[i] == 5 || iArray[i] == -100) assert(0);
-                else assert(1);
+                if (iArray[i] == 5 || iArray[i] == -100) assert(false);
+                else assert(true);
                 break; // so far, a break is required, just like with regular cases in this scripts
-            case -100: assert(1); break;
+            case -100: assert(true); break;
         }
     }
     assert(cnt == 6);
@@ -693,8 +693,8 @@ void test__typeid()
     r = &s;
     switch (typeid(r))
     {
-        case typeid(string): assert(1); break;
-        default: assert(0); break;
+        case typeid(string): assert(true); break;
+        default: assert(false); break;
     }
 
     assert(typeid(__TST_MACRO_1) == typeid(string));
@@ -711,13 +711,13 @@ void test__explicit_cast()
     assert(typeid(string(f)) == typeid(string));
     switch (int(f))
     {
-        case -11: assert(1); break;
-        default:  assert(0); break;
+        case -11: assert(true); break;
+        default:  assert(false); break;
     }
     switch (int(false ? -25.55543 : -5.776))
     {
-        case -5: assert(1); break;
-        default: assert(0); break;
+        case -5: assert(true); break;
+        default: assert(false); break;
     }
 
     object ob;
@@ -764,7 +764,14 @@ void test__additions()
 	assert(r2 == aref(nullptr));
 
     // The operator ! applied to float now works correctly
-    assert(0.99);
+    if (0.99)
+	{
+
+	}
+	else
+	{
+		assert(false);
+	}
     assert(!0.99 == false);
     assert(!!0.99);
 

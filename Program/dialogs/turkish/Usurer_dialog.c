@@ -1010,7 +1010,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "Affedersiniz kaptan, fakat bu miktar kolonimin bankası için fazla büyük. Size faiz ödemen mümkün olmayacak. Ayrıca güvenilir bir koruma da yok... Umarım beni anlarsınız. Her neyse, sizden kabul edebileceğim en yüksek miktar "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Affedersiniz kaptan, fakat bu miktar kolonimin bankası için fazla büyük. Size faiz ödemen mümkün olmayacak. Ayrıca güvenilir bir koruma da yok... Umarım beni anlarsınız. Her neyse, sizden kabul edebileceğim en yüksek miktar "+FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000)+".";
 				Link.l1 = "Ne yazık ki, o zaman başka bir tefeci bulmam gerekecek.";
 				Link.l1.go = "Exit";
 			}
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "Affedersiniz kaptan, fakat bu miktar kolonimin bankası için fazla büyük. Size faiz ödemen mümkün olmayacak. Ayrıca güvenilir bir koruma eksikliği de var... Umarım beni anlarsınız. Her neyse, sizden kabul edebileceğim en yüksek miktar "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Affedersiniz kaptan, fakat bu miktar kolonimin bankası için fazla büyük. Size faiz ödemen mümkün olmayacak. Ayrıca güvenilir bir koruma eksikliği de var... Umarım beni anlarsınız. Her neyse, sizden kabul edebileceğim en yüksek miktar "+FindRussianDublonString(int(NPChar.UsurerDeposit)*10)+".";
 				Link.l1 = "Ne yazık ki, o zaman başka bir tefeci bulmam gerekecek.";
 				Link.l1.go = "Exit";
 			}

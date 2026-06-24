@@ -90,7 +90,7 @@ void LAi_type_player_CharacterUpdate(ref chr, float dltTime)
 	{
 		chr.chr_ai.type.weapontime = "0";
 	}
-	if(LAi_group_GetPlayerAlarm())
+	if(LAi_group_GetPlayerAlarm() > 0)
 	{
 		chr.chr_ai.type.weapontime = "0";
 	}

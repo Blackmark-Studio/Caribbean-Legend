@@ -2188,14 +2188,14 @@ void Knippel_AfterBattle(string qName)//реакция на победу
 		{
 			string model = aCrewSoldier[i-1].model;
 			string ani = aCrewSoldier[i-1].ani;
-			sld = GetCharacter(NPC_GenerateCharacter("Sailor_"+i, model, "man", ani, 25, pchar.nation, -1, false, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Sailor_"+i, model, "man", ani, 25, pchar.nation$int(PIRATE), -1, false, "soldier"));
 			FantomMakeCoolFighterForRef(sld, iRank, iScl, iScl, &aSoldier, iScl*2);
 			LAi_SetStayType(sld);
 			LAi_CharacterDisableDialog(sld);
 			if (i == 1) ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "aloc2");
 			else ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "loc3");
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("Sailor_3", "Alonso", "man", "man", 25, pchar.nation, -1, false, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Sailor_3", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), -1, false, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		sld.greeting = "hambit_other_4";

@@ -113,7 +113,7 @@ void CI_CreateContainer(string groupName, string containerName, float containerV
 
 void AddToContainer(string groupName, string containerName, string controlName, int KeyCode, int controlState, bool inverse )
 {
-	float fVal = objControlsContainer.(containerName);
+	float fVal = float(objControlsContainer.(containerName));
 	string keyName = CI_GetKeyName(KeyCode);
 	if( CheckAttribute(&objControlsState,"key_codes."+keyName+".stick") &&
 		int(objControlsState.key_codes.(keyName).stick) == true)

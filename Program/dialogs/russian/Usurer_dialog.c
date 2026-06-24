@@ -1022,7 +1022,7 @@ void ProcessDialogEvent()
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
 			    dialog.text = "Извините меня, капитан, но эта сумма слишком велика для провинциального банка. Мне просто негде организовать оборот таких денег, чтобы иметь возможность выплачивать проценты по вашему депозиту. Да и отсутствие достойной охраны, знаете ли... ну, надеюсь, вы меня правильно понимаете? В общем, я могу принять от вас в целом не более " +
-						FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000, MONEY_SIGN,MONEY_DELIVER)) + ".";
+						FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000) + ".";
 				Link.l1 = "Очень жаль, придётся обратиться к другому ростовщику.";
 				Link.l1.go = "Exit";
 			}
@@ -1194,7 +1194,7 @@ void ProcessDialogEvent()
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
 			    dialog.text = "Извините меня, капитан, но эта сумма слишком велика для провинциального банка. Мне просто негде организовать оборот такого количества золота, чтобы иметь возможность выплачивать проценты по вашему депозиту. Да и отсутствие достойной охраны, знаете ли... ну, надеюсь, вы меня правильно понимаете? В общем, я могу принять от вас в целом не более " +
-						FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10, MONEY_SIGN,MONEY_DELIVER)) + ".";
+						FindRussianDublonString(int(NPChar.UsurerDeposit)*10) + ".";
 				Link.l1 = "Очень жаль, придётся обратиться к другому ростовщику.";
 				Link.l1.go = "Exit";
 			}

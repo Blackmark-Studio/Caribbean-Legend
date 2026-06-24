@@ -20,19 +20,19 @@ float uniform_angle(float left, float right)
   return uniform(PI * left / 180.0, PI * right / 180.0);
 }
 
-aref GetRandomAttr(aref Lottery)
+aref GetRandomAttr(ref Lottery)
 {
     int num = GetAttributesNum(Lottery);
     if (num == 0) return ErrorAttr();
     return GetAttributeN(Lottery, rand(num-1));
 }
 
-string GetRandomAttrName(aref Lottery)
+string GetRandomAttrName(ref Lottery)
 {
     return GetAttributeName(GetRandomAttr(Lottery));
 }
 
-string GetRandomAttrValue(aref Lottery)
+string GetRandomAttrValue(ref Lottery)
 {
     return GetAttributeValue(GetRandomAttr(Lottery));
 }

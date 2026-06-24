@@ -808,7 +808,7 @@ float LAi_GetGunChargeProgress(ref chr)
 	if(GetCharacterEquipByGroup(chr, GUN_ITEM_TYPE) == "") return 0.0;
 	if(CheckAttribute(chr, "chr_ai.gun.charge"))
 	{
-		float charge = chr.chr_ai.gun.charge;
+		float charge = chr.chr_ai.gun.charge$float(0.0);
 		if(charge > 1.0) charge -= int(chr.chr_ai.gun.charge);
 		if(CheckAttribute(chr, "chr_ai.gun.charge_max") && int(chr.chr_ai.gun.charge_max) == int(chr.chr_ai.gun.charge))
 			charge = 0.0;
@@ -823,7 +823,7 @@ float LAi_GetMusketChargeProgress(ref chr)
 	if(GetCharacterEquipByGroup(chr, MUSKET_ITEM_TYPE) == "") return 0.0;
 	if(CheckAttribute(chr, "chr_ai.musket.charge"))
 	{
-		float charge = chr.chr_ai.musket.charge;
+		float charge = chr.chr_ai.musket.charge$float(0.0);
 		if(charge > 1.0) charge -= int(chr.chr_ai.musket.charge);
 		if(CheckAttribute(chr, "chr_ai.musket.charge_max") && int(chr.chr_ai.musket.charge_max) == int(chr.chr_ai.musket.charge))
 			charge = 0.0;

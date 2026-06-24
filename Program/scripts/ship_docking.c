@@ -67,7 +67,7 @@ void LeaveShipInPort(ref NPChar, ref chref)
 {
 	aref arTo, arFrom;
 	AddMoneyToCharacter(pchar, -int(NPChar.MoneyForShip));
-	chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
+	chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation$int(PIRATE), -1, false, "quest"));
 	chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
 	chref.loyality = MAX_LOYALITY; 
 	chref.name = "";

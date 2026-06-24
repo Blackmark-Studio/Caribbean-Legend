@@ -450,7 +450,7 @@ void SantaMisericordia_SpawnBranders()
 	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
-	ref ship = GetRealShip(sld.ship.type);
+	ref ship = GetRealShip(sld.ship.type$int(0));
 	
 	sld.ShipTaskLock = true;
 	sld.Abordage.Enable = false;

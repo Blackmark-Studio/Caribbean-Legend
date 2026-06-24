@@ -455,7 +455,7 @@ void DTSG_Knippel_103()
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, true, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");

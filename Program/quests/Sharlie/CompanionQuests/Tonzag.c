@@ -432,7 +432,7 @@ void Tonzag_SpawnBrander() {
 	UpgradeShipParameter(sld, "Rig");
 	UpgradeShipParameter(sld, "TurnRate");
 	
-	ref ship = GetRealShip(sld.ship.type);
+	ref ship = GetRealShip(sld.ship.type$int(0));
 	
 	//sld.AlwaysEnemy = true;
 	sld.ShipTaskLock = true;

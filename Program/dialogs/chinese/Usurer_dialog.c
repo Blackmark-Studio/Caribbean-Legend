@@ -1031,7 +1031,7 @@ void ProcessDialogEvent()
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
 			    dialog.text = "抱歉, 船长, 但这笔金额对我的殖民地银行来说太大了。 我无法支付你的利息。 而且缺乏可靠的守卫... 希望你能理解。 无论如何, 我能接受你的最大金额是" +
-						FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000, MONEY_SIGN,MONEY_DELIVER)) + "。 ";
+						FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000) + "。 ";
 				Link.l1 = "太糟糕了, 我得找另一个银行家了。 ";
 				Link.l1.go = "Exit";
 			}
@@ -1203,7 +1203,7 @@ void ProcessDialogEvent()
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
 			    dialog.text = "抱歉, 船长, 但这笔金额对我的殖民地银行来说太大了。 我无法支付你的利息。 而且缺乏可靠的守卫... 希望你能理解。 无论如何, 我能接受你的最大金额是" +
-						FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10, MONEY_SIGN,MONEY_DELIVER)) + "。 ";
+						FindRussianDublonString(int(NPChar.UsurerDeposit)*10) + "。 ";
 				Link.l1 = "太糟糕了, 我得找另一个银行家了。 ";
 				Link.l1.go = "Exit";
 			}

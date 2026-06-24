@@ -1192,7 +1192,7 @@ void ClockTower_CuracaoInCabin_2(string qName)
 	chrDisableReloadToLocation = true;
 	Sea_CabinStartNow();
 	
-	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -1620,7 +1620,7 @@ void ClockTower_CabinFight(ref _boarding_enemy, ref _callback)
 void ClockTower_InitOfficersInCabin()
 {
 	// Первый офицер
-	ref chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_1", "quest_off_holl", "man", "man", 15, pchar.nation, 0, false, "quest"));
+	ref chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_1", "quest_off_holl", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "quest"));
 	GiveItem2Character(chr, "blade_26");
 	EquipCharacterByItem(chr, "blade_26");
 	GiveItem2Character(chr, "cirass6");
@@ -1635,7 +1635,7 @@ void ClockTower_InitOfficersInCabin()
 	chr.DontClearDead = true;
 
 	// Второй офицер
-	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_2", "off_hol_2", "man", "man", 15, pchar.nation, 0, false, "quest"));
+	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_2", "off_hol_2", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "quest"));
 	GiveItem2Character(chr, "blade_29");
 	EquipCharacterByItem(chr, "blade_29");
 	GiveItem2Character(chr, "cirass8");
@@ -1649,7 +1649,7 @@ void ClockTower_InitOfficersInCabin()
 	chr.DontClearDead = true;
 
 	// Третий офицер
-	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_3", "ozg_martin", "man", "man", 15, pchar.nation, 0, false, "quest"));
+	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_VanDorn_officer_3", "ozg_martin", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "quest"));
 	GiveItem2Character(chr, "topor_04");
 	EquipCharacterByItem(chr, "topor_04");
 	GiveItem2Character(chr, "cirass2");
@@ -1682,7 +1682,7 @@ void ClockTower_CabinFight2()
 		LAi_group_MoveCharacter(chr, LAI_GROUP_BRDENEMY);
 	}
 
-	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", 25, pchar.nation, 0, true, "soldier"));
+	chr = GetCharacter(NPC_GenerateCharacter("ClockTower_Alonso", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), 0, true, "soldier"));
 	chr.name = GetCharacterName("Alonso");
 	chr.lastname = "";
 	FantomMakeCoolFighter(chr, 15, 50, 50, "blade_13", "pistol6", "bullet", 300);

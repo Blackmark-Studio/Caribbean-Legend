@@ -486,7 +486,7 @@ bool IsLocationCaptured(string locationID)
 		arTown = GetAttributeN(arTownsList,i);
 		if(arTown.name == townName)
 		{
-			return int(arTown.captured);
+			return bool(arTown.captured);
 		}
 	}
 

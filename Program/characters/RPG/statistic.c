@@ -25,7 +25,7 @@ int Statistic_AddValue(ref _chref, string _attrName, int _add) // set and get(_a
     }
     return int(_chref.Statistic.(_attrName));
 }
-void Statistic_KillChar(aref _attack, aref _enemy, string _attrName)
+void Statistic_KillChar(ref _attack, ref _enemy, string _attrName)
 {
 	if(_attrName == "_s") addBonusToBlade(_attack, _enemy);
 	if (int(_attack.index) != GetMainCharacterIndex()) return; // оптимизация
@@ -62,7 +62,7 @@ void Statistic_KillChar(aref _attack, aref _enemy, string _attrName)
 }
 
 
-string GetCharType(aref _enemy)  //TO_DO переделать на тип в НПС
+string GetCharType(ref _enemy)  //TO_DO переделать на тип в НПС
 {
     string  name  	= "Warrior"; // define
     string  model 	= _enemy.model;

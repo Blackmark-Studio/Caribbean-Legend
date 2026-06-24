@@ -50,7 +50,7 @@ void LAi_GenerateFantomFromMe(ref chr)
 	//Создаём фантома	
 	if(ani == "mushketer")
 	{
-		ref sld = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", "mushketer", chr.rank, int(chr.nation), int(chr.lifeDay), false, "soldier"));
+		ref sld = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", "mushketer", int(chr.rank), int(chr.nation), int(chr.lifeDay), false, "soldier"));
 		sld.id = "GenChar_" + sld.index;
 		sld.reputation = chr.reputation;
 		sld.City = chr.City;

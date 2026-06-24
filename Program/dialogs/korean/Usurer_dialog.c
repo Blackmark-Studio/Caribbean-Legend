@@ -1010,7 +1010,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "실례합니다, 선장님, 하지만 이 금액은 저희 식민지 은행에는 너무 큽니다. 이자로 드릴 돈을 지급할 수 없겠군요. 그리고 믿을 만한 경비도 부족하고요... 이해해 주시길 바랍니다. 아무튼, 제가 선장님께 받을 수 있는 최대 금액은 "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "실례합니다, 선장님, 하지만 이 금액은 저희 식민지 은행에는 너무 큽니다. 이자로 드릴 돈을 지급할 수 없겠군요. 그리고 믿을 만한 경비도 부족하고요... 이해해 주시길 바랍니다. 아무튼, 제가 선장님께 받을 수 있는 최대 금액은 "+FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000)+".";
 				Link.l1 = "유감이군, 그럼 다른 은행가를 찾아야겠어.";
 				Link.l1.go = "Exit";
 			}
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "실례합니다, 선장님, 하지만 이 금액은 저희 식민지 은행에 너무 큽니다. 이자로 드릴 돈을 마련할 수 없겠군요. 그리고 믿을 만한 경비도 부족하니... 이해해 주시기 바랍니다. 아무튼, 제가 선장님께 받을 수 있는 최대 금액은 "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "실례합니다, 선장님, 하지만 이 금액은 저희 식민지 은행에 너무 큽니다. 이자로 드릴 돈을 마련할 수 없겠군요. 그리고 믿을 만한 경비도 부족하니... 이해해 주시기 바랍니다. 아무튼, 제가 선장님께 받을 수 있는 최대 금액은 "+FindRussianDublonString(int(NPChar.UsurerDeposit)*10)+".";
 				Link.l1 = "유감이군, 그럼 다른 은행가를 찾아야겠어.";
 				Link.l1.go = "Exit";
 			}

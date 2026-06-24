@@ -246,7 +246,7 @@ void Memento_MortimerGrimDead_Alonso(string qName)
 {
 	DoQuestCheckDelay("hide_weapon", 1.2);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -320,7 +320,7 @@ void Memento_Dich_EtapOne_Paluba_4(string qName)
 	pchar.GenQuest.DontSetCabinOfficer = true;
 	chrDisableReloadToLocation = true;
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -375,7 +375,7 @@ void Memento_Dich_EtapTwo_Paluba_2(string qName)
 
 void Memento_Dich_EtapTwo_Paluba_3(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -429,7 +429,7 @@ void Memento_Dich_EtapThree_Paluba_2(string qName)
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
@@ -533,7 +533,7 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 		LAi_CharacterDisableDialog(sld);
 		sld.BlockSnore = true;
 	}	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, false, "soldier"));
 	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Грима
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
@@ -733,7 +733,7 @@ void Memento_Dich_EtapThree_Paluba_22()
 	LAi_SetActorType(pchar);
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, -1, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), -1, false, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");

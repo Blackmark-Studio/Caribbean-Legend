@@ -1011,7 +1011,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "Veuillez m'excuser, capitaine, mais cette somme est trop importante pour ma banque coloniale. Je ne pourrai pas vous payer vos intérêts. Et l'absence d'une garde fiable... J'espère que vous comprenez. Quoi qu'il en soit, la somme maximale que je peux accepter de vous est "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Veuillez m'excuser, capitaine, mais cette somme est trop importante pour ma banque coloniale. Je ne pourrai pas vous payer vos intérêts. Et l'absence d'une garde fiable... J'espère que vous comprenez. Quoi qu'il en soit, la somme maximale que je peux accepter de vous est "+FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000)+".";
 				Link.l1 = "Dommage, je dois trouver un autre banquier alors.";
 				Link.l1.go = "Exit";
 			}
@@ -1182,7 +1182,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "Excusez-moi, capitaine, mais cette somme est trop importante pour ma banque coloniale. Je ne pourrai pas vous verser vos intérêts. Et l'absence d'une garde fiable... J'espère que vous comprenez. Quoi qu'il en soit, la somme maximale que je peux accepter de vous est "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Excusez-moi, capitaine, mais cette somme est trop importante pour ma banque coloniale. Je ne pourrai pas vous verser vos intérêts. Et l'absence d'une garde fiable... J'espère que vous comprenez. Quoi qu'il en soit, la somme maximale que je peux accepter de vous est "+FindRussianDublonString(int(NPChar.UsurerDeposit)*10)+".";
 				Link.l1 = "Hélas, je dois trouver un autre banquier alors.";
 				Link.l1.go = "Exit";
 			}

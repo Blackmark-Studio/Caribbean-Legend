@@ -183,7 +183,7 @@ void Regata_Start(string qName)//старт регаты
 		pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp) = 576*float(pchar.questTemp.Regata.AdversarySpeed.(sTemp));//время 1+2+3 переходов в часах
 		pchar.questTemp.Regata.AdversaryFourthTransition.Time.(sTemp) = 720*float(pchar.questTemp.Regata.AdversarySpeed.(sTemp));//время 1+2+3+4 переходов в часах
 		pchar.questTemp.Regata.AdversaryFifthTransition.Time.(sTemp) = 1080*float(pchar.questTemp.Regata.AdversarySpeed.(sTemp));//время 1+2+3+4+5 переходов в часах
-		log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp)));
+		log_testinfo(FindRussianDaysString(pchar.questTemp.Regata.AdversaryThirdTransition.Time.(sTemp)$int(0)));
 	}
 	pchar.quest.Regata_Check.win_condition.l1 = "location";
 	pchar.quest.Regata_Check.win_condition.l1.location = "Beliz";

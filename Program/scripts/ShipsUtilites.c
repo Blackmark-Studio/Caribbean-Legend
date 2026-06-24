@@ -640,7 +640,7 @@ int FindFirstEmptyShip()
 	return -1;
 }
 
-float FindShipSpeed(aref refCharacter)
+float FindShipSpeed(ref refCharacter)
 {
 	if(!CheckAttribute(refCharacter, "Ship.type"))
 	{
@@ -763,7 +763,7 @@ float FindShipTurnrateMax(ref chr)
 	return base;
 }
 
-float SpeedBySkill(aref refCharacter)
+float SpeedBySkill(ref refCharacter)
 {
 	float fSpeedPerk;
 
@@ -777,7 +777,7 @@ float SpeedBySkill(aref refCharacter)
 	return fTRFromSKill*fSpeedPerk;
 }
 
-float FindShipTurnRate(aref refCharacter)
+float FindShipTurnRate(ref refCharacter)
 {
 	if(!CheckAttribute(refCharacter, "Ship.type"))
 	{
@@ -833,7 +833,7 @@ float FindShipTurnRate(aref refCharacter)
 	return fTurn;	
 }
 
-float TurnBySkill(aref refCharacter)
+float TurnBySkill(ref refCharacter)
 {
 	float fSkill = GetSummonSkillFromNameToOld(refCharacter, SKILL_SAILING);
 	float fTRFromSKill;
@@ -1733,6 +1733,26 @@ int DistributeCrewFromShipToSquadron(ref squadronLeader, ref chr)
 		AddCharacterCrew(companion, transferQty);
 		AddCharacterCrew(chr, -transferQty);
 		crewQty -= shortage;
+	}
+
+	return crewQty;
+}
+
+// Установить экипаж по всем кораблям вплоть до лимита, вернуть остаток
+int SetCrewToSquadron(ref squadronleader, int crewQty, bool skipQuestShips = true)
+{
+	for(int i=0; i<COMPANION_MAX; i++)
+	{
+		int companionIdx = GetCompanionIndex(squadronLeader, i);
+		if (companionIdx < 0) continue;
+
+		ref companion = GetCharacter(companionIdx);
+		if (skipQuestShips && !GetRemovable(companion)) continue;
+
+		int maxCrew = GetMaxCrewQuantity(companion);
+		int resultCrew = func_min(maxCrew, crewQty);
+		SetCrewQuantity(companion, resultCrew);
+		crewQty -= resultCrew;
 	}
 
 	return crewQty;

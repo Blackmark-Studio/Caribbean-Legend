@@ -9805,7 +9805,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, -1, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), -1, true, "soldier"));
 			LAi_SetImmortal(sld, true);
 			sld.name = GetCharacterName("Alonso");
 			sld.lastname = "";

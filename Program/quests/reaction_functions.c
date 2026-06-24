@@ -346,7 +346,7 @@ bool Verifier_OnLoad() {
 		makearef(from, pchar.Verifier.location);
 		CopyAttributes(to, from);
 		
-		chrDisableReloadToLocation = int(pchar.Verifier.chrDisableReloadToLocation);
+		chrDisableReloadToLocation = bool(pchar.Verifier.chrDisableReloadToLocation);
 		if (!int(pchar.Verifier.CannotWait)) {
 			DeleteAttribute(pchar, "GenQuest.CannotWait");
 		}
@@ -401,7 +401,7 @@ void TorrentEddy_Freedom(string qName)
 		DeleteAttribute(pchar,"GenQuest.CannotWait");
 	}
 	
-	chrDisableReloadToLocation = pchar.TorrentEddy.chrDisableReloadToLocation;
+	chrDisableReloadToLocation = bool(pchar.TorrentEddy.chrDisableReloadToLocation);
 	DoQuestFunctionDelay("TorrentEddy_Restart", 3.0);
 	DoQuestReloadToLocation(pchar.TorrentEddy.location, "goto", "goto1", "");
 }

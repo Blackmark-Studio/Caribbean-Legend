@@ -108,6 +108,10 @@ void DLG_SetTests(ref tests)
 
   tests.common0 = "$rand($player.name|$npc.name)";
   tests.common0.expect = pchar.name + "|" + CharacterRef.name;
+
+  tests.custom0 = "$ctx(test_field)";
+  tests.custom0.expect = "fooBar";
+  tests.custom0.context = "pchar";
 }
 
 void DLG_RunTest(ref test)
@@ -136,7 +140,6 @@ object DLG_GetTestContext(ref test)
 	object result;
 	CopyAttributes(&result, NullCharacter);
 	result.sex = "man";
-
 	switch(test.context)
 	{
 		case "woman":
@@ -155,7 +158,7 @@ object DLG_GetTestContext(ref test)
 			result.Ship.Type = CreateBaseShip(SHIP_BRIGANTINE);
 		break;
 	}
-
+	result.test_field = "_Foo^bar";
 	return result;
 }
 

@@ -1010,7 +1010,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType1).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType1).Sum)) > int(NPChar.UsurerDeposit)*1000)
 			{
-			    dialog.text = "Perdoe-me, capitão, mas essa quantia é grande demais para o meu banco colonial. Não vou conseguir lhe pagar os juros. E a falta de uma escolta confiável... Espero que compreenda. De qualquer forma, o valor máximo que posso aceitar de você é "+FindRussianMoneyString(MakeMoneyShow(int(NPChar.UsurerDeposit)*1000,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Perdoe-me, capitão, mas essa quantia é grande demais para o meu banco colonial. Não vou conseguir lhe pagar os juros. E a falta de uma escolta confiável... Espero que compreenda. De qualquer forma, o valor máximo que posso aceitar de você é "+FindRussianMoneyString(int(NPChar.UsurerDeposit)*1000)+".";
 				Link.l1 = "Que pena, então terei que procurar outro banqueiro.";
 				Link.l1.go = "Exit";
 			}
@@ -1181,7 +1181,7 @@ void ProcessDialogEvent()
 			// boal limit
 			if ( (int(Pchar.Quest.Deposits.(sDepositType2).Result) + int(Pchar.QuestTemp.Deposits.(sDepositType2).Sum)) > int(NPChar.UsurerDeposit)*10)
 			{
-			    dialog.text = "Perdoe-me, capitão, mas essa quantia é grande demais para o meu banco colonial. Não poderei lhe pagar os juros. E a falta de uma guarda confiável... Espero que compreenda. De qualquer forma, o valor máximo que posso aceitar de você é "+FindRussianDublonString(MakeMoneyShow(int(NPChar.UsurerDeposit)*10,MONEY_SIGN,MONEY_DELIVER))+".";
+			    dialog.text = "Perdoe-me, capitão, mas essa quantia é grande demais para o meu banco colonial. Não poderei lhe pagar os juros. E a falta de uma guarda confiável... Espero que compreenda. De qualquer forma, o valor máximo que posso aceitar de você é "+FindRussianDublonString(int(NPChar.UsurerDeposit)*10)+".";
 				Link.l1 = "Que pena, vou ter que procurar outro banqueiro então.";
 				Link.l1.go = "Exit";
 			}

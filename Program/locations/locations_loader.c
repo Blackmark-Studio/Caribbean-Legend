@@ -1576,7 +1576,7 @@ void LocLoadShips(ref Location)
 			Ship_SetLightsAndFlares(rCharacter);
 			Ship_PrepareShipForLocation(rCharacter);
 			SendMessage(&locShips[n],"laa",MSG_SHIP_CREATE,&rCharacter,&rShip);
-			iShips[locNumShips] = rCharacter.index; 
+			iShips[locNumShips] = rCharacter.index$int(0);
 			locNumShips++;
 		}
 	}

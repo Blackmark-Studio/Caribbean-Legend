@@ -4832,7 +4832,7 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 		pchar.GenQuest.LastQuestPrisonerIdx = SetCharToPrisoner(sld);
 		SetCharacterRemovable(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)], false);
 		pchar.questTemp.Patria.SpanishName = GetFullName(sld);
-		sld = characterFromId(&characters[int(pchar.GenQuest.LastQuestPrisonerIdx)]);
+		sld = &characters[int(pchar.GenQuest.LastQuestPrisonerIdx)];
 		pchar.questTemp.Patria.SpanishID = sld.id;
 		log_info(StringFromKey("Patria_44"));
 		pchar.questTemp.Patria = "epizode_9_return";

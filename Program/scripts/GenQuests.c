@@ -897,7 +897,7 @@ void ReasonToFast_PreparePirateShip(string qName) // генерация пира
 	sld.dialog.filename      = "GenQuests_Dialog.c";
 	sld.dialog.currentnode   = "ReasonToFast_FightCap";
 	sTemp = GenerateRandomNameToShip(PIRATE);
-	FantomMakeCoolSailor(sld, iShipType, sTemp, "", 50+rand(40), 50+rand(40), 50 + rand(40));
+	FantomMakeCoolSailor(sld, iShipType, sTemp, 0, 50+rand(40), 50+rand(40), 50 + rand(40));
 	sld.cirassId = Items_FindItemIdx("cirass1");  // предмета нет, но влияение есть
     FantomMakeCoolFighter(sld, int(pchar.rank) + rand(10) + 5, 60 + rand(30), 50, "blade_06", "pistol3","grapeshot", 80);
 		
@@ -6795,7 +6795,7 @@ void CitizCapFromSeaToMap(string qName) //помещаем на карту кэ�
 //после боевки в каюте. для всех квестов по поисков кэпов ситезанами
 void CitizSeekCap_afterCabinFight(string qName)
 {	
-	sld = GetCharacter(NPC_GenerateCharacter(pchar.quest.(qName).label + "_" + pchar.quest.(qName).WifeCity, pchar.quest.(qName).model, "woman", "towngirl", 5, pchar.quest.(qName).nation, -1, false, "citizen"));
+	sld = GetCharacter(NPC_GenerateCharacter(pchar.quest.(qName).label + "_" + pchar.quest.(qName).WifeCity, pchar.quest.(qName).model, "woman", "towngirl", 5, pchar.quest.(qName).nation$int(PIRATE), -1, false, "citizen"));
 	sld.name = pchar.quest.(qName).WifeName;
 	sld.lastname = pchar.quest.(qName).WifeLastname;
 	sld.dialog.filename   = "Quest\ForAll_dialog.c";
@@ -6853,7 +6853,7 @@ void Deliver_CreateTraderShips(string qName)//создание торговых 
 				Rank = 30 + rand(5);
 			break; 			
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("CaptainAttack_"+i, "trader_"+(rand(15)+1), "man", "man", Rank, sNation, 3, true, "hunter"));//создание кэпа
+		sld = GetCharacter(NPC_GenerateCharacter("CaptainAttack_"+i, "trader_"+(rand(15)+1), "man", "man", Rank, int(sNation), 3, true, "hunter"));//создание кэпа
 		if (i == 1)
 		{
 			FantomMakeCoolSailor(sld, ShipType, sTemp1, -1, 48, 35, 35);//создание кораблей
@@ -6964,7 +6964,7 @@ void Deliver_CreateCureerShips(string qName)//создание курьерск�
                 Blade = "blade_13";
 			break; 			
 		}
-	sld = GetCharacter(NPC_GenerateCharacter("CureerAttack", "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", Rank, sNation, 3, true, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("CureerAttack", "off_" + NationShortName(iNation) + "_" + (rand(1) + 1), "man", "man", Rank, int(sNation), 3, true, "quest"));
 	FantomMakeCoolSailor(sld, ShipType, sTemp, -1, 75, 50, 50);
 	FantomMakeCoolFighter(sld, Rank, 40, 40, Blade, "pistol3", "grapeshot", 40);
 	Group_AddCharacter("Cureer_Attack", "CureerAttack");
@@ -7214,7 +7214,7 @@ void NightAdventure_CitizenHomieOK(string _quest)
 	LAi_SetStayType(pchar);
 	sld = characterFromId(pchar.GenQuest.NightAdventureId);
 	sld.dialog.currentnode = "NightAdventure_CitizenHomiePresent";
-	string nation = sld.City;
+	int nation = sld.nation$int(PIRATE);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", LAi_FindNearestFreeLocator("goto", locx, locy, locz)); 
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);

@@ -3006,7 +3006,7 @@ int GetPirateFlag(ref chr)
 bool IsShipCommander(ref chr)
 {
 	string sGroup = GetGroupIDFromCharacter(chr);
-	if(sGroup == "") return 0;
+	if(sGroup == "") return false;
 	ref cmdr = Group_GetGroupCommander(sGroup);
 	if(chr.id == cmdr.id) return true;
 	return false;

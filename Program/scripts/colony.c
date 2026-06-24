@@ -832,7 +832,15 @@ void TWN_FightInTown_OpenNext()
 	i     = int((float(Pchar.GenQuestFort.PlayerCrew_Start) - fTemp) /1.5 + 0.5); // трупы
 	// это после резиденции RemoveCharacterGoodsSelf(Pchar, GOOD_WEAPON, i);
 	i = int(Pchar.GenQuestFort.PlayerCrew_Start) - i; // выжившие с бонусом
-	SetCrewQuantityOverMax(Pchar, i);
+	if ("GenQuestFort.surviveRate" in pchar)
+	{
+		float surviveRate = float(Pchar.GenQuestFort.surviveRate);
+		float crewToPlayer = float(Pchar.GenQuestFort.ownedCrew);
+		SetCrewToSquadron(pchar, int(crewToPlayer * surviveRate));
+		DeleteAttribute(pchar, "GenQuestFort.surviveRate");
+		DeleteAttribute(pchar, "GenQuestFort.ownedCrew");
+	}
+	else SetCrewQuantityOverMax(pchar, i);
 	// вернём живых на корабль <--
 }
 

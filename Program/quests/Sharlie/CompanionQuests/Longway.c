@@ -298,7 +298,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, true, "soldier"));
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -2064,7 +2064,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, true, "soldier"));
 			sld.name = StringFromKey("Longway_1");
 			sld.lastname = StringFromKey("Longway_2");
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -3435,7 +3435,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			//sld.MusketerDistance = 10;
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_RandomSailor", "citiz_39", "man", "man", int(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_RandomSailor", "citiz_39", "man", "man", int(pchar.rank), pchar.nation$int(PIRATE), 0, true, "soldier"));
 		sld.name 	= StringFromKey("Longway_58");
 		sld.lastname = StringFromKey("Longway_59");
 		ChangeCharacterAddressGroup(sld, Get_My_Cabin(), "reload", "reload1");
@@ -3825,7 +3825,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_AlonsoKazn") {
-		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), -1, true, "soldier"));
 		sld.name = StringFromKey("Longway_1");
 		sld.lastname = StringFromKey("Longway_2");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";

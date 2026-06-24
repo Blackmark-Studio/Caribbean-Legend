@@ -329,7 +329,7 @@ void LadyBeth_CaimanSea_3(string qName)
 	StartQuestMovie(true, false, true);
 	TeleportCharacterToPosAy(pchar, -7.70, 8.01, -22.31, 1.50);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation$int(PIRATE), -1, true, "soldier"));
 	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\LadyBeth_dialog.c";
@@ -581,7 +581,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
 		// Наёмник
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_Golovorez", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_Golovorez", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol1", "bullet", 150);
 		ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
 		LAi_CharacterDisableDialog(sld);
@@ -592,7 +592,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 		// Чуваки от перков боцмана
 		if (CheckOfficersPerk(pchar, "bruteForce"))
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_1", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_1", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 			BRD_UpgradeToPerkChar(sld, "bruteForce");
 			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
@@ -600,7 +600,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 			LAi_SetActorType(sld);
 			LAi_ActorFollow(sld, pchar, "", -1);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_2", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_2", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 			BRD_UpgradeToPerkChar(sld, "bruteForce");
 			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
@@ -612,7 +612,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 		// Чуваки от перков боцмана
 		if (CheckOfficersPerk(pchar, "ambuscade"))
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_1", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_1", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 			BRD_UpgradeToPerkChar(sld, "ambuscade");
 			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
@@ -620,7 +620,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 			LAi_SetActorType(sld);
 			LAi_ActorFollow(sld, pchar, "", -1);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_2", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_2", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 			BRD_UpgradeToPerkChar(sld, "ambuscade");
 			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
@@ -632,7 +632,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 
 	}
 	// Алонсо
-	sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 	FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
 	ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 	sld.name = GetCharacterName("Alonso");
@@ -736,7 +736,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 			//LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
 		// Алонсо
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 50, 50, "blade_13", "pistol6", "bullet", 300);
 		ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		sld.name = GetCharacterName("Alonso");
@@ -805,7 +805,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 			//LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
 		// Алонсо
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, -1, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation$int(PIRATE), -1, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
 		ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		sld.name = GetCharacterName("Alonso");
@@ -819,7 +819,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_warrior_SetStay(sld, true);
 		//LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		// Наёмник
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_Golovorez", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_Golovorez", "citiz_60", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "topor_04", "pistol3", "grapeshot", 150);
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 		sld.MultiFighter = 2.5;
@@ -1603,7 +1603,7 @@ void LadyBeth_PobedaInJungles_3(string qName)
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation$int(PIRATE), 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
@@ -1969,7 +1969,7 @@ void LadyBeth_ShipInShore_17(string qName = "")
 	}
 	else
 	{
-		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, -1, false, "pirate"));
+		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation$int(PIRATE), -1, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
 		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";

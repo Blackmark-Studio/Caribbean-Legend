@@ -34,7 +34,7 @@ bool LAi_tmpl_goto_InitTemplate(ref chr)
 		isNew = true;
 		if(CheckAttribute(chr, "chr_ai.tmpl.group"))
 		{
-			if(CheckAttribute(chr, "chr_ai.tmpl."))
+			if(CheckAttribute(chr, "chr_ai.tmpl"))
 			{
 				if(chr.chr_ai.tmpl.group != "")
 				{

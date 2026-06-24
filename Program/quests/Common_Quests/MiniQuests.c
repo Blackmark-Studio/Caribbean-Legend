@@ -2398,7 +2398,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 
 	//поисковый генератор
 	else if (sQuestName == "CitizSeekCap_afterCabinFight") {
-		sld = GetCharacter(NPC_GenerateCharacter(pchar.GenQuest.CitizSeekCap.label + "_" + pchar.GenQuest.CitizSeekCap.WifeCity, pchar.GenQuest.CitizSeekCap.model, pchar.GenQuest.CitizSeekCap.sex, pchar.GenQuest.CitizSeekCap.ani, 5, pchar.GenQuest.CitizSeekCap.nation, -1, false, "citizen"));
+		sld = GetCharacter(NPC_GenerateCharacter(pchar.GenQuest.CitizSeekCap.label + "_" + pchar.GenQuest.CitizSeekCap.WifeCity, pchar.GenQuest.CitizSeekCap.model, pchar.GenQuest.CitizSeekCap.sex, pchar.GenQuest.CitizSeekCap.ani, 5, pchar.GenQuest.CitizSeekCap.nation$int(PIRATE), -1, false, "citizen"));
 		sld.name = pchar.GenQuest.CitizSeekCap.WifeName;
 		sld.lastname = pchar.GenQuest.CitizSeekCap.WifeLastname;
 		sld.dialog.filename   = "Quest\ForAll_dialog.c";

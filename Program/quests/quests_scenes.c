@@ -253,7 +253,7 @@ void qprocEndReload()
 	Event("qprocTaskEnd","a",pchar);
 }
 
-string PopSceneTask(aref character)
+string PopSceneTask(ref character)
 {
 	aref taskRef;
 	if( !GetLastTask(character,&taskRef) ) return "";
@@ -262,7 +262,7 @@ string PopSceneTask(aref character)
 	return taskName;
 }
 
-string PopBegSceneTask(aref character)
+string PopBegSceneTask(ref character)
 {
 	aref taskRef;
 	if( !GetFirstTask(character,&taskRef) ) return "";
@@ -271,7 +271,7 @@ string PopBegSceneTask(aref character)
 	return taskName;
 }
 
-aref PushSceneTask(aref character,string TaskName)
+aref PushSceneTask(ref character,string TaskName)
 {
 	aref staref; makearef(staref,character.SceneTask);
 	string attrName = "s"+GetAttributesNum(staref);
@@ -280,7 +280,7 @@ aref PushSceneTask(aref character,string TaskName)
 	return staref;
 }
 
-bool GetLastTask(aref character, ref taskRef)
+bool GetLastTask(ref character, ref taskRef)
 {
 	aref staref; makearef(staref,character.SceneTask);
 	int qn = GetAttributesNum(staref);
@@ -289,7 +289,7 @@ bool GetLastTask(aref character, ref taskRef)
 	return true;
 }
 
-bool GetFirstTask(aref character, ref taskRef)
+bool GetFirstTask(ref character, ref taskRef)
 {
 	aref staref; makearef(staref,character.SceneTask);
 	int qn = GetAttributesNum(staref);
@@ -298,7 +298,7 @@ bool GetFirstTask(aref character, ref taskRef)
 	return true;
 }
 
-void StartSceneExecute(aref character)
+void StartSceneExecute(ref character)
 {
 	aref scnref;
 	if( !GetFirstTask(character,&scnref) )	return;
@@ -527,7 +527,7 @@ string QuestNameForChr(ref chref)
 	return questName;
 }
 
-ref ARefChrToRef(aref charef)
+ref ARefChrToRef(ref charef)
 {
 	return &Characters[int(charef.index)];
 }

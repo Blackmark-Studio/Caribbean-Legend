@@ -1,7 +1,7 @@
 #include "ships\ships.h"
 #include "ships\waterline_breaches.c"
 
-#define NEED_SAILS_INIT 0
+#define NEED_SAILS_INIT false
 #define SHIP_SPEEDPOINT_QUANTITY 72
 #define SHIP_RIGTYPE_SQUARE "rig_square"
 #define SHIP_RIGTYPE_FOREAFT "rig_fore_aft"

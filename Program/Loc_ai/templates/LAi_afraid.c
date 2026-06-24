@@ -2,7 +2,7 @@
 
 #define LAI_TMPL_AFRAID	"afraid"
 
-void LAi_tmpl_afraid_SetAfraidCharacter(ref chr, aref afraid, bool canMove)
+void LAi_tmpl_afraid_SetAfraidCharacter(ref chr, ref afraid, bool canMove)
 {
 	DeleteAttribute(chr, "chr_ai.tmpl");
 	LAi_tmpl_afraid_InitTemplate(chr);

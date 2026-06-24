@@ -9,7 +9,7 @@ float LAi_CalcMeleeDamage(ref attacker, ref weapon, string attackType)
 }
 
 //Энергия, необходимая для запуска действия
-float LAi_CalcUseEnergyForBlade(aref character, string actionType)
+float LAi_CalcUseEnergyForBlade(ref character, string actionType)
 {
 	float energy = 0.0;
 	

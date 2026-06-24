@@ -89,7 +89,7 @@ void ChrRebalance(ref chr, int targetRank, int chrtype, int powerLvl, bool rando
 
 	DeleteAttribute(&TEV, "QCharAutolevel." + chr.id);
 	GEN_ApplyDifficulty(chr, chrtype, powerLvl);
-	if (CheckAttribute(chr, "personality.hasCrew")) GiveCaptainOfficers(chr, int(chr.personality.HasCrew));
+	if (CheckAttribute(chr, "personality.hasCrew")) GiveCaptainOfficers(chr, bool(chr.personality.HasCrew));
 	else CT_UpdateCashTables(chr);
 
 	SetFantomHP(chr);                 // хпшечку в макс

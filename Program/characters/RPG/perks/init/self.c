@@ -175,7 +175,7 @@ void initSelfPerks(ref list)
 	// 1 cлой
 
 	perks.Tireless.cost = 1;
-
+	SetArefModifier(perks, "Tireless", M_ENERGY_REGEN_MTP, PERK_VALUE_TIRELESS);
 	// 2 cлой 
 
 	perks.PerfectBalance.cost = 2;
@@ -369,11 +369,6 @@ void initSelfPerks(ref list)
 	perks.TreasureHunter.PlayerOnly = true;
 	perks.TreasureHunter.HeroType = "HT2";
 	perks.TreasureHunter.cost = -1;
-
-	SetArefModifier(perks, "Energaiser", M_ENERGY_RECOVERY_MLT, 1.5);
-	SetArefModifier(perks, "Tireless", M_ENERGY_RECOVERY_MLT, 1 + PERK_VALUE_TIRELESS);
-	SetArefModifier(perks, "HT3", M_ENERGY_RECOVERY_MLT, 1.15);
-	SetArefModifier(perks, "Medic", M_HP_RECOVERY_MLT, 2.0);
 
 	for (int i = 0; i < GetAttributesNum(perks); i++)
 	{

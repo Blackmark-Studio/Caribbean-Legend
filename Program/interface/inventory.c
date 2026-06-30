@@ -1206,20 +1206,15 @@ void CS_TableSelectChange()
 {
 	string sControl = GetEventData();
 	iSelected = GetEventData();
-    CurTable = sControl;
-    CurRow   =  "tr" + (iSelected);
-    iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
-    NullSelectTable("TABLE_OTHER");
-    // перерисует "порог опыта"
-    GameInterface.TABLE_OTHER.tr8.td3.str = "";
-    if (CurTable == "TABLE_OTHER" && CurRow == "tr1")
-    {
-    	GameInterface.TABLE_OTHER.tr8.td3.str = GetCharacterRankRateCur(xi_refCharacter) + "/" + GetCharacterRankRate(xi_refCharacter);
-    }
+	CurTable = sControl;
+	if (CurTable != "TABLE_ITEMS") return;
+
+	CurRow   =  "tr" + (iSelected);
+	iGoodIndex = int(GameInterface.(CurTable).(CurRow).index);
 	Table_UpdateWindow("TABLE_OTHER");
 	validLineClicked = true;
 	// отрисовка инфы
-    if (CurTable == "TABLE_ITEMS") UpdateItemInfo();
+	if (CurTable == "TABLE_ITEMS") UpdateItemInfo();
 	GameInterface.qty_edit.str = 0;
 	ChangeQTY_EDIT();
 }

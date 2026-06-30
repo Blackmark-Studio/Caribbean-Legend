@@ -22,7 +22,7 @@ float LAi_CalcUseEnergyForBlade(ref character, string actionType)
 			energy = 7.0;
 		break;
 		case "round":
-			energy = 18.0;
+			energy = 13.5;
 		break;
 		case "break":
 			energy = 14.0;

@@ -23,15 +23,14 @@
 #define M_STAGGER_SPEED "StaggerSpeed"
 #define M_STRIKE_ANGLE "StrikeAngle"
 
-#define M_HP_MAX "hpMax"                   // флет макс хп
-#define M_MTP_HP_MAX "mtpHpMax"            // процент макс хп
-#define M_HP_PER_RANK "hpPerRank"          // +хп за уровень
-#define M_ENERGY_MAX "energyMax"           // флет макс энергия
-#define M_MTP_ENERGY_MAX "mtpEnergyMax"    // процент макс энергия
-#define M_ENERGY_PER_RANK "energyPerRank"  // +энергия за уровень
-
-#define M_HP_RECOVERY_MLT "mul_hpReloadMlt"
-#define M_ENERGY_RECOVERY_MLT "mul_energyReloadMlt"
+#define M_HP_MAX "hpMax"                    // флет макс хп
+#define M_MTP_HP_MAX "mtpHpMax"             // процент макс хп
+#define M_HP_PER_RANK "hpPerRank"           // +хп за уровень
+#define M_ENERGY_MAX "energyMax"            // флет макс энергия
+#define M_MTP_ENERGY_MAX "mtpEnergyMax"     // процент макс энергия
+#define M_ENERGY_PER_RANK "energyPerRank"   // +энергия за уровень
+#define M_ENERGY_REGEN_MTP "energyRegenMtp" // ускорение восстановления энергии
+#define M_HP_REGEN_MTP "hpRegenMtp"         // ускорение восстановления хп
 
 #define MELEE "Melee"
 #define RANGE "Range"

@@ -1454,9 +1454,9 @@ void LocLoadShips(ref Location)
 		if (bExist) continue;
 		iShipType = int(Characters[i].Ship.Type);
 		if (iShipType == SHIP_NOTUSED) continue;
-		iShips[locNumShips] = i; 
-		locNumShips++;
+		iShips[locNumShips] = i;
 		iShipsType[locNumShips] = 1;
+		locNumShips++;
 		Characters[i].Ship.Stopped = true; // boal fix
 	}
 //----> Малые суда у пирса
@@ -1498,7 +1498,8 @@ void LocLoadShips(ref Location)
 				if (iCurNumShips >= iNumShips) 
 				{ 
 					Trace("LocLoadShips: need (ships): " + iCurNumShips + ", but max_num_ships: " + iNumShips);
-					bContinue = true; 
+					bContinue = true;
+					break; // выход из switch
 				}
 				locator = GetAttributeN(locator_ships, iCurNumShips);
 				iCurNumShips++;
@@ -1507,7 +1508,8 @@ void LocLoadShips(ref Location)
 				if (iCurNumOtherShips >= iNumOtherShips) 
 				{ 
 					Trace("LocLoadShips: need (ships_other): " + iCurNumOtherShips + ", but max_num_ships_other: " + iNumOtherShips);
-					bContinue = true; 
+					bContinue = true;
+					break; // выход из switch
 				}
 				locator = GetAttributeN(locator_otherships, iCurNumOtherShips);
 				iCurNumOtherShips++;

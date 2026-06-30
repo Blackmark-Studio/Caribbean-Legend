@@ -35,26 +35,20 @@ void CT_UpdateLandTable(ref chr)
 	CT_SetMaxWeight(&landTable, &equipTable, chr);
 	CT_SetStrikeAngles(&landTable, &equipTable, chr);
 	CT_SetGunUsingSpeed(&landTable, &equipTable, chr);
-	CT_SetHPReloadMultiplier(&landTable, &equipTable, chr);
-	CT_SetEnergyReloadMultiplier(&landTable, &equipTable, chr);
+	CT_SetHPRegeneration(&landTable, &equipTable, chr);
+	CT_SetEnergyRegeneration(&landTable, &equipTable, chr);
 	// мультифайтер
 	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "_" + M_DAMAGE, float(chr.MultiFighter));
 }
 
-void CT_SetEnergyReloadMultiplier(ref landTable, ref equipTable, ref chr)
+void CT_SetEnergyRegeneration(ref landTable, ref equipTable, ref chr)
 {
-	CopyModifier(landTable, equipTable, M_ENERGY_RECOVERY_MLT);
-	float mtp = 1.0;
-	mtp *= equipTable.(M_ENERGY_RECOVERY_MLT)$float(1.0);
-	SetAttribute(landTable, M_ENERGY_RECOVERY_MLT, mtp);
+	CopyModifier(landTable, equipTable, M_ENERGY_REGEN_MTP);
 }
 
-void CT_SetHPReloadMultiplier(ref landTable, ref equipTable, ref chr)
+void CT_SetHPRegeneration(ref landTable, ref equipTable, ref chr)
 {
-	CopyModifier(landTable, equipTable, M_HP_RECOVERY_MLT);
-	float mtp = 1.0;
-	mtp *= equipTable.(M_HP_RECOVERY_MLT)$float(1.0);
-	SetAttribute(landTable, M_HP_RECOVERY_MLT, mtp);
+	CopyModifier(landTable, equipTable, M_HP_REGEN_MTP);
 }
 
 void CT_SetGunUsingSpeed(ref landTable, ref equipTable, ref chr)

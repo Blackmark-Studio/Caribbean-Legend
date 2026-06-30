@@ -1006,16 +1006,10 @@ void LAi_AllCharactersUpdate(float dltTime)
 			bool bMain = idx == iMainCharacterIndex;
 			if (hp < maxhp || bPoisoned)
 			{
-				float dlthp = LAI_DEFAULT_DLTHP;
-				dlthp = chr_ai.hp_dlt$float(0.0);
-				//if(CheckAttribute(chr_ai, "hp_dlt")) ;
-				dlthp *= LAi_HPRecoverySpeed(chr);
+				float dlthp = chr_ai.hp_dlt$float(LAI_DEFAULT_DLTHP);
+				dlthp *= 1 + LAi_HPRecoverySpeed(chr);
 
-
-				//if (IsEquipCharacterByArtefact(chr, "amulet_7")) dlthp *= 2.0;
 				if(bMain && CheckAttribute(chr, "cheats.hpupdate")) dlthp *= 10.0;
-				//if(LAi_IsFightMode(chr) && GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_WR") dlthp *= 5.0;
-
 				hp += dlthp*dltTime;
 
 				float oldhp = hp;

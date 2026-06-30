@@ -729,13 +729,6 @@ void AddToAttributeFloat(ref rObject, string atrName, float value)
 	rObject.(atrName) = GetAttributeFloat(rObject, atrName) + value;
 }
 
-// Увеличить значение float атрибута на value
-void MulToAttributeFloat(ref rObject, string atrName, float value)
-{
-	float fOrig = rObject.(atrName)$float(1.0);
-	rObject.(atrName) = fOrig * value;
-}
-
 // Вывести все атрибуты объекта текстом для дебага
 string AtributesToText(ref rObject)
 {

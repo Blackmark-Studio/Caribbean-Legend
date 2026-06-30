@@ -142,7 +142,6 @@ bool ApplyPerkEffects(ref chr, string perkName, bool fromOfficer)
 		string modifierName = GetAttributeName(modifier);
 		if (modifierName == "callbacks") MergeCallbacks(&table, &modifier);
 		else if (modifierName == "has") MergeFlags(&table, &modifier);
-		else if (modifierName[ .. 4] == "mul_") SetModifierFromSourceDirectMul(&table, GetAttributeName(modifier), float(GetAttributeValue(modifier)), perkName);
 		else SetModifierFromSourceDirect(&table, GetAttributeName(modifier), float(GetAttributeValue(modifier)), perkName);
 	}
 

@@ -569,56 +569,31 @@ void ResetCritChanceBonus(ref chr)
 float LAi_HPRecoverySpeed(ref chr)
 {
 	aref landTable = CT_GetTable(chr, CT_LAND);
-	return landTable.(kstring(M_HP_RECOVERY_MLT))$float(1.0);
+	return landTable.(kstring(M_HP_REGEN_MTP))$float(0.0);
 }
 
 float LAi_EnergyRecoverySpeed(ref chr)
 {
 	aref landTable = CT_GetTable(chr, CT_LAND);
-	return landTable.(kstring(M_ENERGY_RECOVERY_MLT))$float(1.0);
+	return landTable.(kstring(M_ENERGY_REGEN_MTP))$float(0.0);
 }
 
 float Lai_UpdateEnergyPerDltTime(ref chr, float curEnergy, float dltTime, float fBaseEnergy, float fEnergyMax)
 {
-	float fMultiplier = 1.6666667;
-
-
-	if(fBaseEnergy < fEnergyMax*0.1) fMultiplier = 3.0;
-	fMultiplier *= LAi_EnergyRecoverySpeed(chr);
-	/*if("perks.list.Energaiser" in chr) // скрытый перк боссов и ГГ
-	{
-		fMultiplier = fMultiplier * 1.5;
-	}
-
-	if("perks.list.Tireless" in chr)
-	{
-		fMultiplier = fMultiplier * (1 + PERK_VALUE_TIRELESS);
-	}
-
-	if("perks.list.HT3" in chr)
-	{
-		fMultiplier = fMultiplier * 1.15;
-	}*/
-	if (GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3")
-	{
-		fMultiplier *= 1.0 + GetHungmanBonus(chr, "energy");
-	}
-
+	float baseMtp = 2.4;
+	if (curEnergy < 9.0) baseMtp += 1.5;
+	else if (curEnergy < 19.0) baseMtp += 0.45;
+	else if (curEnergy < 39.0) baseMtp += 0.15;
+	
 	bool bPeace = true;
-	string sGroup = chr.chr_ai.group$string("");
-	string sTempl = chr.chr_ai.tmpl$string("");
-	if(sGroup == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm())
-		bPeace = false;
-	else if(sTempl == LAI_TMPL_FIGHT)
-		bPeace = false;
-	if(bPeace)
-		fMultiplier *= 3.0;
-
-	if(CheckAttribute(chr, "cheats.energyupdate")) fMultiplier = fMultiplier * 10.0;
-	float fEnergy;
-	fEnergy = curEnergy + dltTime * fMultiplier; 
-
-	return fEnergy;
+	if (chr.chr_ai.group$string("") == LAI_GROUP_PLAYER && LAi_group_IsActivePlayerAlarm()) bPeace = false;
+	else if (chr.chr_ai.tmpl$string("") == LAI_TMPL_FIGHT) bPeace = false;
+	if (bPeace) baseMtp += 3.0;
+	if(CheckAttribute(chr, "cheats.energyupdate")) baseMtp += 10.0;
+	
+	float bonusMtp = 1 + LAi_EnergyRecoverySpeed(chr);
+	if (GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_SP_3") bonusMtp += GetHungmanBonus(chr, "energy");
+	return curEnergy + dltTime * baseMtp * bonusMtp;
 }
 
 void LAi_Achievments_ExtraDamage(ref attacker, int damage)

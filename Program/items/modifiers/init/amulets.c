@@ -194,7 +194,7 @@ bool InitAmuletModifiers(ref item)
 			AddJobDescriptor(item, JOB_FIGHTER);
 			modifier = AddCallback(item, CT_EQUIP, "HolyWater");
 			modifier.arg0 = 0.15;
-			SetModifier(item, M_HP_RECOVERY_MLT, 2.0);
+			SetModifier(item, M_HP_REGEN_MTP, 2.0);
 		}
 		break;
 		case "indian_4":

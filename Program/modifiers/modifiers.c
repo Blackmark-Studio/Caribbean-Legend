@@ -59,27 +59,6 @@ void IncreaseModifierDirect(ref rObject, string modifier, ref value)
 	AddToAttributeFloat(rObject, modifier, value);
 }
 
-// Добавить умножаемый модификатор чему-либо напрямую, с перезаписью значения и указанием источника
-void SetModifierFromSourceDirectMul(ref rObject, string modifier, ref value, string sourceName)
-{
-	// если уже есть мод, выпиливаем
-	if (CheckAttribute(rObject, modifier + "." + sourceName))
-	{
-		float currentValue = GetAttributeFloat(rObject, modifier + "." + sourceName);
-		MulToAttributeFloat(rObject, modifier, float(value) / currentValue);
-		SetAttribute(rObject, modifier + "." + sourceName, value);
-	}
-	else IncreaseModifierFromSourceDirectMul(rObject, modifier, value, sourceName);
-}
-
-// Добавить умножаемый модификатор чему-либо напрямую с умножением значения и указанием источника
-void IncreaseModifierFromSourceDirectMul(ref rObject, string modifier, ref value, string sourceName)
-{
-	MulToAttributeFloat(rObject, modifier, float(value));
-	MulToAttributeFloat(rObject, modifier + "." + sourceName, float(value));
-}
-
-
 // Добавить коллбэк на предмет/навык и получить его
 aref AddCallback(ref rObject, string callerFunctionName, string callbackFunctionName)
 {

@@ -116,12 +116,12 @@ void ProcessDialogEvent()
 		
 		case "Dios":
 			dialog.text = "A-ach, to ty, señor "+GetFullName(pchar)+"Masz coś ciekawego do opowiedzenia?";
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < 24 && !CheckAttribute(npchar, "quest.mapinfo"))
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < A_MAPS_IN_ATLAS && !CheckAttribute(npchar, "quest.mapinfo"))
 			{
 				link.l3 = TimeGreeting()+"! Señor Dios, proszę, spójrz na mapę, którą znalazłem. To musi być jedna z twoich map według znaku.";
 				link.l3.go = "map_info";
 			}
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 23)
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() >= A_MAPS_IN_ATLAS)
 			{
 				link.l3 = TimeGreeting()+"¡Señor Dios, mam dla ciebie dobre wieści. Udało mi się zebrać pełny zestaw twoich unikalnych map, dokładnie tak, jak chciałeś. Oto wszystkie dwadzieścia cztery mapy.";
 				link.l3.go = "amap";

@@ -116,12 +116,12 @@ void ProcessDialogEvent()
 		
 		case "Dios":
 			dialog.text = "A-ah, sensin, señor "+GetFullName(pchar)+"? Bana anlatacak ilginç bir şeyin var mı?";
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < 24 && !CheckAttribute(npchar, "quest.mapinfo"))
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < A_MAPS_IN_ATLAS && !CheckAttribute(npchar, "quest.mapinfo"))
 			{
 				link.l3 = TimeGreeting()+"Tanrım, lütfen bulduğum şu haritaya bir bakın. İşarete göre bu haritalardan biri size ait olmalı.";
 				link.l3.go = "map_info";
 			}
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 23)
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() >= A_MAPS_IN_ATLAS)
 			{
 				link.l3 = TimeGreeting()+"! Señor Dios, size iyi haberlerim var. İstediğiniz gibi, eşsiz haritalarınızın tamamını toplamayı başardım. İşte yirmi dört haritanın hepsi.";
 				link.l3.go = "amap";

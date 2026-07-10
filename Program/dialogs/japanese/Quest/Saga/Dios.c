@@ -116,12 +116,12 @@ void ProcessDialogEvent()
 		
 		case "Dios":
 			dialog.text = "あ、あなたでしたか、旦那 "+GetFullName(pchar)+"？何か面白い話でもあるか？";
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < 24 && !CheckAttribute(npchar, "quest.mapinfo"))
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < A_MAPS_IN_ATLAS && !CheckAttribute(npchar, "quest.mapinfo"))
 			{
 				link.l3 = TimeGreeting()+"！旦那神よ、どうか、私が見つけたこの地図をご覧ください。印によれば、これはあなたの地図の一つに違いありません。 ";
 				link.l3.go = "map_info";
 			}
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 23)
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() >= A_MAPS_IN_ATLAS)
 			{
 				link.l3 = TimeGreeting()+"！旦那神よ、良い知らせがあります。ご要望通り、あなたの特別な地図の全セットを集めることができました。 これが二十四枚すべての地図です。";
 				link.l3.go = "amap";

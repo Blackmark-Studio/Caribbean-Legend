@@ -406,7 +406,7 @@ void ShowInfoWindow()
 			
 			string counterString = XiStr("AtlasCommonMapsCounter") + ": " + areasMap + " / " + MAPS_IN_ATLAS;
 			counterString += NewStr();
-			counterString += XiStr("AtlasAdmiralMapsCounter") + ": " + CountAdmiralMapFromCharacter() + " / " + MAPS_IN_ATLAS;
+			counterString += XiStr("AtlasAdmiralMapsCounter") + ": " + CountAdmiralMapFromCharacter() + " / " + A_MAPS_IN_ATLAS;
 			counterString += NewStr();
 			counterString += XiStr("AtlasMapsBonus") + ": ";
 			if (areasMap == MAPS_IN_ATLAS )counterString += xiStr("yes");

@@ -62,6 +62,7 @@ int ITEMS_QUANTITY = 611; // не забываем менять номер
 #define ITEM_PROBABILITY		  0.5
 #define OBJECTS_IN_BOX			  9
 #define MAPS_IN_ATLAS			  23 // ugeen 21.06.09  -не забываем увеличивать при появлении новых карт
+#define A_MAPS_IN_ATLAS			  24
 #define TREASURE_NOTES			  32
 
 // blade defines - некоторые константы для клинков

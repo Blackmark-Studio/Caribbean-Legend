@@ -216,7 +216,7 @@ string SelectUsualMaps(ref item, ref qMiss)
 string SelectAdmiralMaps() 
 {
 	string mapId = "";
-	string map[24];
+	string map[A_MAPS_IN_ATLAS];
 	string leftMaps[];
 	int n = 1;
 	int mapQty = FillAdmiralMaps(&map);
@@ -270,7 +270,7 @@ int CountAdmiralMapFromCharacter()
 
 bool HasAllMaps(string type)
 {
-	if (type == "admiral") return CountAdmiralMapFromCharacter() == MAPS_IN_ATLAS;
+	if (type == "admiral") return CountAdmiralMapFromCharacter() == A_MAPS_IN_ATLAS;
 	return CountAreasMapFromCharacter() == MAPS_IN_ATLAS;
 }
 
@@ -299,7 +299,7 @@ int FillAdmiralMaps(ref mapIds)
 void RemoveAllAdmiralMap()
 {
 	string mapId = "";
-	string map[24];
+	string map[A_MAPS_IN_ATLAS];
 	int n = 1;
 	int mapQty = FillAdmiralMaps(&map);
 	for (int i = 0; i < mapQty; i++) {

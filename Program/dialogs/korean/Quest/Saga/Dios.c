@@ -116,12 +116,12 @@ void ProcessDialogEvent()
 		
 		case "Dios":
 			dialog.text = "아-아, 너였군, 나리 "+GetFullName(pchar)+"뭐? 나한테 재미있는 얘기라도 있어?";
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < 24 && !CheckAttribute(npchar, "quest.mapinfo"))
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 0 && CountAdmiralMapFromCharacter() < A_MAPS_IN_ATLAS && !CheckAttribute(npchar, "quest.mapinfo"))
 			{
 				link.l3 = TimeGreeting()+"! 신이시여, 제발, 제가 찾은 이 지도를 좀 봐주세요. 표식으로 보아 분명 당신의 지도 중 하나인 것 같습니다.";
 				link.l3.go = "map_info";
 			}
-			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() > 23)
+			if (CheckAttribute(pchar, "questTemp.AdmiralMap") && CountAdmiralMapFromCharacter() >= A_MAPS_IN_ATLAS)
 			{
 				link.l3 = TimeGreeting()+"! 신이시여, 좋은 소식이 있습니다. 원하신 대로 당신의 특별한 지도 전체 세트를 모을 수 있었소. 여기 스물네 장의 지도가 모두 있습니다.";
 				link.l3.go = "amap";

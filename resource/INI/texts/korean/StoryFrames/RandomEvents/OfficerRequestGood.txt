@@ -44,10 +44,10 @@ Node0_d_b_action {제대로 치르도록 하자}
 Node0_d_b_success {$attr($context.officerName)은 당신의 _$attr($context.officerJob)이지 평범한 선원은 아닙니다. 그것은 그에게 일정한 특권을 $rand(주고|의미합니다). 당신은 선실 식당에서 $rand(공식 추도식을|규정에 따른 추도식을) 치르라고 명합니다. $attr($context.officerName)은 $rand(조금 당황한 듯|당황한 듯) 보이지만, 곧 그 감정은 $rand(감사로 바뀝니다|감사로 바뀌어 갑니다).}
 Node0_d_b_success_action {충직한 동료에게는 가장 좋은 것을}
 Node0_d_c_action {하느님은 그런 것 없이도 너를 들으신다}
-Node0_d_c_success {당신은 장교에게 진실한 기도라면 의식이 없어도 하느님께 닿는다고 말해 줍니다.$br$red$attr($context.officerName)도 그 말에 수긍하는 듯합니다. 당신은 자신의 말이 그의 마음을 조금이나마 덜어 주었다는 데서 은근한 자부심을 느낍니다.}
+Node0_d_c_success {당신은 장교에게 진실한 기도라면 의식이 없어도 하느님께 닿는다고 말해 줍니다.$br()$red $attr($context.officerName)도 그 말에 수긍하는 듯합니다. 당신은 자신의 말이 그의 마음을 조금이나마 덜어 주었다는 데서 은근한 자부심을 느낍니다.}
 Node0_d_c_success_action {넌 이겨 낼 수 있다}
 Node0_d_c_fail {당신의 말은 영 힘이 없었고, $attr($context.officerName)은 상처받은 듯한 얼굴을 합니다. 아무래도 그는 당신을 그저 인색하고 냉소적인 사람으로 여긴 모양입니다.}
 Node0_d_c_fail_action {잠깐, 아까운 건 아니다}
 Node0_d_d_action {배의 군목이 도와줄 것이다}
-Node0_d_d_success {$attr($context.officerName)이 배에 진짜 군목이 있다는 사실을 잊었다는 게 당신에겐 이상하게 느껴지지만, 당신은 그것을 눈앞이 캄캄해질 만큼 큰 슬픔 탓으로 돌립니다.$br$red당신은 군목을 선실로 불러 사정을 설명하고 조언을 부탁합니다. $attr($context.officerName)은 넋이 나간 듯 보이지만, 성직자의 말은 곧 그를 제정신으로 돌아오게 합니다.}
+Node0_d_d_success {$attr($context.officerName)이 배에 진짜 군목이 있다는 사실을 잊었다는 게 당신에겐 이상하게 느껴지지만, 당신은 그것을 눈앞이 캄캄해질 만큼 큰 슬픔 탓으로 돌립니다.$br()$red 당신은 군목을 선실로 불러 사정을 설명하고 조언을 부탁합니다. $attr($context.officerName)은 넋이 나간 듯 보이지만, 성직자의 말은 곧 그를 제정신으로 돌아오게 합니다.}
 Node0_d_d_success_action {하느님께서 우리의 기도를 들으셨다}

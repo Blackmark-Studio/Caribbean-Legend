@@ -1,3 +1,6 @@
+#include "interface\utils\ship_common.c"
+#include "interface\utils\universal_input.c"
+
 /// boal 30.07.06 найм матросов
 /// Sith переделка
 int	nCurScrollNum = 0;
@@ -44,12 +47,14 @@ void InitInterface(string iniName)
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("TransactionCancel", "TransactionCancel", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
+
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("QTY_HIREFIRE_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetArrowsInputHandler("QTY_EDIT", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetClickInputHandler("QTY_REMOVE_BUTTON", "QTY_ADD_BUTTON", &REMOVE_BUTTON, &ADD_BUTTON);
 	
 	SetNewGroupPicture("QTY_CREW_PICTURE", "SHIP_STATE_ICONS", "Crew");
+	XI_SetUniversalInputTooltip("QTY_EDIT", "MAIN_WINDOW");
 	SetBackupQty();
 	SetCurrentNode("SHIPS_SCROLL");
 	GameInterface.qty_edit.str = 0;
@@ -320,11 +325,8 @@ void IDoExit(int exitCode)
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("TransactionCancel", "TransactionCancel");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
-	
+	XI_ExitUniversalInput();
+
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
 }
@@ -354,30 +356,6 @@ void ProcCommand()
 			SetCurrentNode("SHIPS_SCROLL");
 		}
 		if (comName == "activate") SetCurrentNode("QTY_HIREFIRE_BUTTON");
-		if(comName=="leftstep")
-		{
-						AddOrRemove(1);
-		}
-		if(comName=="rightstep")
-		{
-						AddOrRemove(-1);
-		}
-		if(comName=="ctrlleft")
-		{
-						AddOrRemove(10);
-		}
-		if(comName=="ctrlright")
-		{
-						AddOrRemove(-10);
-		}
-		if(comName=="speedleft")
-		{
-			ADD_ALL_BUTTON();
-		}
-		if(comName=="speedright")
-		{
-			REMOVE_ALL_BUTTON();
-		}
 	}
 	switch(nodName)
 	{
@@ -440,8 +418,6 @@ void SetVariable()
 	    GameInterface.strings.shipname = "";
 	    GameInterface.strings.shipbasename = "";
 	}
-	SetCrewExpTable(refCharacter, "TABLE_CREW", "BAR_Sailors", "BAR_Cannoners", "BAR_Soldiers");
-	
 	SetFormatedText("QTY_CREW_QTY", ""+GetCrewQuantity(refCharacter));
 	if (GetCrewQuantity(refCharacter) > GetOptCrewQuantity(refCharacter) || GetCrewQuantity(refCharacter) < GetMinCrewQuantity(refCharacter))
 	{
@@ -453,9 +429,7 @@ void SetVariable()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY", 8,-1,iColor);
 	SetFormatedText("QTY_CREW_CAPACITY", "" + GetOptCrewQuantity(refCharacter));
-	SetNewGroupPicture("CREW_MORALE_PIC", "MORALE_SMALL", GetMoraleGroupPicture(float(refCharacter.ship.crew.morale)));
-	SetFormatedText("CREW_MORALE_TEXT", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(int(refCharacter.Ship.crew.morale))));
-		
+
 	RecalculateCargoLoad(refCharacter);
 
 	// на одном корабле
@@ -466,30 +440,18 @@ void SetVariable()
 	SetMedicamentShipInfo(refCharacter,"MEDICAMENT_SHIP", "short");
 
 	SetFormatedText("CREW_CAPACITY", GetCrewQuantity(refCharacter) + "/" + GetOptCrewQuantity(refCharacter));
-	////  заполнялка города
-	SetCrewExpTable(refTown, "TABLE_CREW2", "BAR_Sailors2", "BAR_Cannoners2", "BAR_Soldiers2");
-	//BAR_CrewMoral
-	GameInterface.StatusLine.BAR_CrewMoral.Max   = 100;
-	GameInterface.StatusLine.BAR_CrewMoral.Min   = 0;
-	GameInterface.StatusLine.BAR_CrewMoral.Value = int(refCharacter.Ship.crew.morale);
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_CrewMoral", 0);
-	//BAR_CrewMoral2
-	GameInterface.StatusLine.BAR_CrewMoral2.Max   = 100;
-	GameInterface.StatusLine.BAR_CrewMoral2.Min   = 0;
-	GameInterface.StatusLine.BAR_CrewMoral2.Value = int(refTown.Ship.crew.morale);
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, "BAR_CrewMoral2", 0);
-
 	SetFormatedText("QTY_CREW_QTY2", ""+GetCrewQuantity(refTown));
 	if(PosEffects()) iColor = argb(255,128,255,128);
 	else iColor = argb(255,255,128,128);
 	if(GetCrewQuantity(refTown)==0) iColor = ARGB_Color("white");
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY2", 8,-1,iColor);	
-	SetNewGroupPicture("CREW_MORALE_PIC2", "MORALE_SMALL", GetMoraleGroupPicture(float(refTown.ship.crew.morale)));
-	SetFormatedText("CREW_MORALE_TEXT2", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(int(refTown.Ship.crew.morale))));
 	
 	iPriceSailor = GetCrewPriceForTavern(refTown.id);
 	
 	if(IsEquipCharacterByArtefact(pchar, "totem_07")) iPriceSailor = int(iPriceSailor/2);
+
+	XI_SetCrewQualityStates(refCharacter);
+	XI_SetCrewQualityStates(refTown, "2");
 	
 	SetFormatedText("QTY_TAVERN_PRICE", XI_ConvertString("HirePrice1") + " " + FindRussianMoneyString(iPriceSailor));
 }
@@ -555,7 +517,6 @@ void ShowInfoWindow()
 	int iShip;
 	ref refBaseShip;
 	string sRow, sCol;
-	bool  bShowHint = true;
 	switch (sCurrentNode)
 	{
 		case "SHIPS_SCROLL":
@@ -575,14 +536,6 @@ void ShowInfoWindow()
 				sText1  = GetConvertStr("NoneBoat", "ShipsDescribe.txt");
 			}
 		break;
-		case "TABLE_CREW":
-			sHeader = GetConvertStr("Crew_Exp", "ShipsDescribe.txt");
-			sText1  = GetConvertStr("Crew_Exp_hint", "ShipsDescribe.txt");
-		break; 
-		case "TABLE_CREW2":
-			sHeader = GetConvertStr("Crew_Exp", "ShipsDescribe.txt");
-			sText1  = GetConvertStr("Crew_Exp_hint", "ShipsDescribe.txt");
-		break; 
 		case "MONEY_SHIP":
 			sHeader = XI_Convertstring("CostPerMonth");
 			sText1 = GetRPGText("Partition_hint");
@@ -616,10 +569,10 @@ void ShowInfoWindow()
 			}
 		break; 
 	}
-	if (bShowHint)
-	{
-		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false, false);
-	}
+
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
+	if (XI_CrewQualityTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3)) return;
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false, false);
 }
 
 void HideInfoWindow()
@@ -805,24 +758,16 @@ void ChangeQTY_EDIT()
 		if (BuyOrSell == 1)
 		{   // найм меняет опыт и мораль корабля
 			fQty = float(GetCrewQuantity(refCharacter) + int(GameInterface.qty_edit.str));
-			refCharacter.Ship.Crew.Exp.Sailors   = (float(refCharacter.Ship.Crew.Exp.Sailors)*GetCrewQuantity(refCharacter) +
-			                                        float(refTown.Ship.Crew.Exp.Sailors)*int(GameInterface.qty_edit.str)) / fQty;
-			refCharacter.Ship.Crew.Exp.Cannoners   = (float(refCharacter.Ship.Crew.Exp.Cannoners)*GetCrewQuantity(refCharacter) +
-			                                        float(refTown.Ship.Crew.Exp.Cannoners)*int(GameInterface.qty_edit.str)) / fQty;
-			refCharacter.Ship.Crew.Exp.Soldiers   = (float(refCharacter.Ship.Crew.Exp.Soldiers)*GetCrewQuantity(refCharacter) +
-			                                        float(refTown.Ship.Crew.Exp.Soldiers)*int(GameInterface.qty_edit.str)) / fQty;
+			refCharacter.Ship.Crew.Exp   = (GetCrewExp(refCharacter)*GetCrewQuantity(refCharacter) +
+			                                        GetCrewExp(refTown)*int(GameInterface.qty_edit.str)) / fQty;
 			refCharacter.Ship.Crew.Morale   = (float(refCharacter.Ship.Crew.Morale)*GetCrewQuantity(refCharacter) +
 			                                        float(refTown.Ship.Crew.Morale)*int(GameInterface.qty_edit.str)) / fQty;
 		}
 		else
 		{ // увольнение меняет таверну
 			fQty = float(GetCrewQuantity(refTown) + int(GameInterface.qty_edit.str));
-			refTown.Ship.Crew.Exp.Sailors   = (float(refTown.Ship.Crew.Exp.Sailors)*GetCrewQuantity(refTown) +
-			                                        float(refCharacter.Ship.Crew.Exp.Sailors)*int(GameInterface.qty_edit.str)) / fQty;
-			refTown.Ship.Crew.Exp.Cannoners   = (float(refTown.Ship.Crew.Exp.Cannoners)*GetCrewQuantity(refTown) +
-			                                        float(refCharacter.Ship.Crew.Exp.Cannoners)*int(GameInterface.qty_edit.str)) / fQty;
-			refTown.Ship.Crew.Exp.Soldiers   = (float(refTown.Ship.Crew.Exp.Soldiers)*GetCrewQuantity(refTown) +
-			                                        float(refCharacter.Ship.Crew.Exp.Soldiers)*int(GameInterface.qty_edit.str)) / fQty;
+			refTown.Ship.Crew.Exp   = (GetCrewExp(refTown)*GetCrewQuantity(refTown) +
+			                                        GetCrewExp(refCharacter)*int(GameInterface.qty_edit.str)) / fQty;
 			refTown.Ship.Crew.Morale   = (float(refTown.Ship.Crew.Morale)*GetCrewQuantity(refTown) +
 			                                        float(refCharacter.Ship.Crew.Morale)*int(GameInterface.qty_edit.str)) / fQty;
 		}
@@ -832,32 +777,9 @@ void ChangeQTY_EDIT()
     SetVariable(); // обновим экран
 }
 
-void REMOVE_ALL_BUTTON()  // продать все (уволить)
+void REMOVE_BUTTON(int value)  // продать
 {
-	GetBackupQty();	// вернём все как было
-	if (!GetRemovable(refCharacter)) return;
-	GameInterface.qty_edit.str = -GetCrewQuantity(refCharacter);
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_ALL_BUTTON()  // купить все
-{
-	GetBackupQty();	// вернём все как было
-	if (!GetRemovable(refCharacter)) return;
-	GameInterface.qty_edit.str = GetCrewQuantity(refTown);
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_BUTTON()  // продать
-{
-	if(XI_IsKeyPressed("shift"))
-		REMOVE_ALL_BUTTON();
-	int n = -1;
-	if(XI_IsKeyPressed("control"))
-		n = -10;
-	AddOrRemove(n);
+	AddOrRemove(-value);
 }
 
 void AddOrRemove(int value)
@@ -879,14 +801,9 @@ void AddOrRemove(int value)
 	ChangeQTY_EDIT();
 }
 
-void ADD_BUTTON()  // купить
+void ADD_BUTTON(int value)  // купить
 {
-	if(XI_IsKeyPressed("shift"))
-		ADD_ALL_BUTTON();
-	int n = 1;
-	if(XI_IsKeyPressed("control"))
-		n = 10;
-	AddOrRemove(n);
+	AddOrRemove(value);
 }
 
 bool PosEffects()

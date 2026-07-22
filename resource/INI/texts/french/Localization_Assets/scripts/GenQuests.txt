@@ -107,3 +107,11 @@ GenQuests_96 {Avez-vous entendu parler du gang local de @<pchar.GenQuest.(Gun).n
 GenQuests_97 {Avez-vous entendu parler du meurtre de @<pchar.GenQuest.EncGirl.name> ? La pauvre, elle a été tuée dans la jungle récemment. Ils devraient trouver le meurtrier et le pendre !}
 GenQuests_98 {Vous savez, capitaine @<GetFullName(pchar)>, quelqu'un a assassiné une pauvre fille nommée @<pchar.GenQuest.EncGirl.name> ? Dommage, c'était une fille très gentille...}
 GenQuests_99 {Elle s'appelait @<pchar.GenQuest.EncGirl.name>, et elle est morte dans la jungle. Rien de bien frappant, je vous le dis, on n'est pas en sécurité là dehors...}
+Alone_Citiz_Death_0 {On raconte que @<Name> a été égorgé par des bandits dans la jungle. Voilà où nous en sommes, $Name : de nos jours, un homme franchit les portes et ne revient déjà plus.}
+Alone_Citiz_Death_1 {Vous avez entendu ? @<Name> a rendu l’âme dans la jungle. On dit que des bandits y sont pour quelque chose, et par les temps qui courent, les honnêtes gens ont de moins en moins de chances de voir le soir.}
+Alone_Citiz_RobberyFail_0 {On dit qu’un va-nu-pieds a eu l’idée de détrousser @<Name>. Ils ne se tiennent plus du tout, $Name : autrefois ils craignaient au moins la garde, et maintenant ils vous tombent dessus au couteau en plein jour.}
+Alone_Citiz_RobberyFail_1 {Il y a peu, @<Name> est revenu en ville en fuyant des brigands. Voilà les temps où nous vivons, $Name : ce n’est plus l’homme qui choisit la route, c’est la route qui décide s’il revient vivant ou non.}
+Alone_Citiz_RobberySuccess_0 {@<Name> a été détroussé, vous imaginez ? Ils ont tout pris, et c’est un miracle qu’ils l’aient laissé en vie. On dirait que même les brigands ont encore une conscience en ces temps maudits.}
+Alone_Citiz_RobberySuccess_1 {On raconte que @<Name> a remis jusqu’à sa dernière pièce aux bandits. Que voulez-vous, $Name : autrement, il n’aurait peut-être jamais revu sa maison.}
+JungInjured_SoldHeal_0 {On dit, $Name, que c’est vous qui avez sauvé notre soldat dans la jungle. Par les temps qui courent, rares sont ceux qui défendraient la vie d’un autre, alors toute la ville en parle.}
+JungInjured_SoldHeal_1 {@<Name> est revenu de la jungle à peine vivant. En ville, on raconte, $Name, que c’est vous qui l’avez arraché à la mort, et de nos jours une bonne action pareille vaut cher. Vous êtes quelqu’un de bien.}

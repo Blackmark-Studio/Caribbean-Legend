@@ -253,6 +253,17 @@ void Fantom_SetCannons(ref rFantom, string sFantomType)
         iCaliber = int(rShip.MaxCaliber);
 
 	rFantom.Ship.Cannons.Type = GetCannonByTypeAndCaliber(sCannonType, iCaliber);
+	if (PercentChance(20)) FantomSetDiverseCaliber(rFantom, sFantomType, rShip);
+}
+
+// Отдельно зарандомить ретирадные/погонные
+void FantomSetDiverseCaliber(ref chr, string _fantomType, ref rShip)
+{
+	int defaultCaliber = chr.Ship.Cannons.Type$int(CANNON_TYPE_NONECANNON);
+	chr.Ship.Cannons.cannonl.Type = defaultCaliber;
+	chr.Ship.Cannons.cannonr.Type = defaultCaliber;
+	chr.Ship.Cannons.cannonf.Type = GetRandomCaliber(GetRandomCannonType(), rShip);
+	chr.Ship.Cannons.cannonb.Type = GetRandomCaliber(GetRandomCannonType(), rShip);
 }
 
 bool FindRelevantCulverine(ref rFantom, int iMaxCaliber)
@@ -576,19 +587,13 @@ void Fantom_SetRandomCrewExp(ref rFantom, string sFantomType)
 	switch (sFantomType)
 	{
 		case "trade":
-			rFantom.Ship.Crew.Exp.Sailors   = 20 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(70);
-			rFantom.Ship.Crew.Exp.Cannoners = 20 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(70);
-			rFantom.Ship.Crew.Exp.Soldiers  = 20 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(70);
+			SetCrewExp(rFantom, float(20 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(70)));
 		break;
 		case "war":
-			rFantom.Ship.Crew.Exp.Sailors   = 30 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(60);
-			rFantom.Ship.Crew.Exp.Cannoners = 30 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(60);
-			rFantom.Ship.Crew.Exp.Soldiers  = 30 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(60);
+			SetCrewExp(rFantom, float(30 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(60)));
 		break;
 		case "pirate":
-		    rFantom.Ship.Crew.Exp.Sailors   = 35 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(55);
-			rFantom.Ship.Crew.Exp.Cannoners = 35 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(55);
-			rFantom.Ship.Crew.Exp.Soldiers  = 35 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(55);
+		    SetCrewExp(rFantom, float(35 - iSClass*2 + MOD_SKILL_ENEMY_RATE + rand(55)));
 		break;
 	}
 }

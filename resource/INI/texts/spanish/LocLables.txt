@@ -143,6 +143,7 @@ LosTeques Town {Mina Los-Teques}
 LosTeques_town {Mina Los-Teques}
 LostShipsCity {Loco-Riferte}
 LostShipsCity Town {Loco-Riferte}
+LostShipsCity_Town {Loco-Riferte}
 Loxly_house {Oficina de Albert Locksley}
 LSC North {Norte de la isla de los barcos abandonados}
 LSC South {Sur de la isla de los barcos abandonados}

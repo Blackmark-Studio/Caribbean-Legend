@@ -120,6 +120,13 @@ int GetDiplomatRate(bool bTrait, int iNation)
     return iCurProblem - iRel;
 }
 
+// Плата мэру
+int GetMayorIndulgenceSumm(ref rMayor)
+{
+    int iHunterScore = ChangeCharacterHunterScore(PChar, NationShortName(int(rMayor.nation)) + "hunter", 0);
+    return iHunterScore <= 0 ? 0 : 5000 + hrand(2500) + iHunterScore * 2000;
+}
+
 // Плата Фадею и Бенуа в дублонах
 int DiplomatDublonPayment(int rate, string sName, bool bContra)
 {
@@ -2596,6 +2603,128 @@ int NPC_GeneratePhantomCharacterForLoc(string sType, int iNation, int iSex, int 
 	return  iChar;
 }
 
+// Создать фантома, основываясь на характеристиках данного персонажа в самом дальнем углу
+void LAi_GenerateFantomFromMe(ref chr)
+{
+	//Проверяем возможность генерации фантома в данной локации
+	if(!TestRef(loadedLocation)) return;
+	if(!IsEntity(&loadedLocation)) return;
+	if(LAi_LocationIsFantomsGen(loadedLocation) == false) return;
+	//Проверяем возможность перерождения персонажа
+	if(LAi_CharacterIsReincarnation(chr) == false) return;
+	//Проверяем какую модельку использовать для перерождения
+	bool isGen = LAi_CharacterReincarnationMode(chr);
+	if(!CheckAttribute(chr, "model") || !CheckAttribute(chr, "model.animation") || chr.model == "" || chr.model.animation == "")
+    {
+        isGen = true;
+    }
+	string model, ani;
+	if(isGen)
+	{
+		int nat = GetLocationNation(loadedLocation);
+		if(nat < 0) nat = PIRATE;
+		if(nat >= MAX_NATIONS) nat = PIRATE;
+		if(CheckAttribute(&Nations[nat], "fantomModel") == false)
+		{
+			Trace("Nation (Nations[" + nat + "]) by name " + Nations[nat].name + " not include fantoms");
+			return;
+		}
+		aref fantoms;
+		makearef(fantoms, Nations[nat].fantomModel);
+		int num = GetAttributesNum(fantoms);
+		if(num <= 0)
+		{
+			Trace("Nation (Nations[" + nat + "]) by name " + Nations[nat].name + " not include have fantoms");
+			return;
+		}
+		num = rand(num - 1);
+		string m = GetAttributeName(GetAttributeN(fantoms, num));
+		model = fantoms.(m);
+		ani = "man";
+		m = m + ".ani";
+		if(CheckAttribute(fantoms, m) != false)
+		{
+			ani = fantoms.(m);
+		}
+	}
+    else
+    {
+		model = chr.model;
+		ani = chr.model.animation;
+	}
+	//Создаём фантома	
+	if(ani == "mushketer")
+	{
+		ref sld = GetCharacter(NPC_GenerateCharacter("GenChar_", model, "man", "mushketer", int(chr.rank), int(chr.nation), int(chr.lifeDay), false, "soldier"));
+		sld.id = "GenChar_" + sld.index;
+		sld.reputation = chr.reputation;
+		sld.City = chr.City;
+        sld.CityType = chr.CityType;
+		sld.RebirthPhantom = true; 
+		sld.dialog.filename = "Common_Soldier.c";
+		sld.dialog.currentnode = "first time";
+		sld.greeting = chr.greeting; // Rebbebion, возврат гритинга
+		LAi_CharacterReincarnation(sld, true, true);
+		LAi_SetReincarnationRankStep(sld, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
+		if (CheckAttribute(chr, "chr_ai.reincarnation.step"))
+		{
+			SetFantomParamFromRank(sld, int(chr.rank) + int(chr.chr_ai.reincarnation.step), true); // бравые орлы
+		}
+		LAi_SetLoginTime(sld, 6.0, 23.0); //а ночью будет беготня от патруля :)		
+		sld.dialog.filename = chr.dialog.filename;
+		sld.dialog.currentnode = chr.dialog.currentnode;
+		SetRandomNameToCharacter(sld);
+		LAi_SetPatrolType(sld);
+		LAi_group_MoveCharacter(sld, chr.chr_ai.group);
+		PlaceCharacter(sld, "patrol", "random_free");
+	}
+	else
+	{   // TO_DO: МЕТОД ДРЕВНИЙ И КРИВОЙ (ИЗ ВМЛ), ФАНТОМЫ МОЛЧАТ, НАДО ПЕРЕПИСАТЬ
+		ref fnt = LAi_CreateFantomCharacterEx(model, ani, LAi_CharacterReincarnationGroup(chr), "");
+		string curidx = fnt.index;
+		//Устанавливаем параметры предыдущего персонажа
+        CopyAttributes(fnt, chr);
+		// boal оружие дать! 19.01.2004 -->
+		// фантомы точные клоны SetFantomParam(fnt);  
+		//--> eddy. шаг на увеличение ранга фантома.
+		if (CheckAttribute(chr, "chr_ai.reincarnation.step"))
+		{
+			SetFantomParamFromRank(fnt, int(chr.rank) + int(chr.chr_ai.reincarnation.step), true); // бравые орлы
+			characters[int(fnt.baseIndex)].rank = fnt.rank; //в структуру прародителя ранг с наворотом
+		}
+		else //не даем падать рангу от SetFantomParam
+		{
+			LAi_NPC_Equip(fnt, int(fnt.rank), true, true);
+			LAi_SetCurHPMax(fnt);
+		}
+		// boal 19.01.2004 <--
+		if(CheckAttribute(fnt, "chr_ai.group"))
+		{
+			LAi_group_MoveCharacter(fnt, fnt.chr_ai.group);
+		}else{
+			LAi_group_MoveCharacter(fnt, "");
+		}
+		//Сохраняем модельку и анимацию
+		fnt.model = model;
+		fnt.model.animation = ani;
+		//Инициализируем тип
+		if(!CheckAttribute(fnt, "chr_ai.type")) fnt.chr_ai.type = "";
+		string chrtype = fnt.chr_ai.type;
+		SetRandomNameToCharacter(fnt);
+		fnt.id = chr.id;
+		fnt.index = curidx;
+        fnt.lifeDay = 0;
+		LAi_tmpl_stay_InitTemplate(fnt);
+		fnt.chr_ai.type = "";
+		if(chrtype != "")
+		{
+			chrtype = "LAi_type_" + chrtype + "_Init";
+			call chrtype(fnt);
+		}
+		SetNewModelToChar(fnt);   // fix
+	}
+}
+
 // boal prison count -->
 int GetPrisonerQty()
 {
@@ -3321,4 +3450,60 @@ void FillAllPrisonersIndexes(ref result)
 		result[found] = cn;
 		found++;
 	}
+}
+
+string GetCharacterDynamicRole(ref chr)
+{
+	string result;
+	// Уважаемый дата-майнер, здесь совершенно точно не спрятано секретных квестов, это просто пасхалка
+	// медленно положи свой текстовый редактор на пол и отойди. Медленно! (⌐■_■)
+	if (CheckAttribute(chr, "quest.last_theme") && chr.quest.last_theme == "0" && !CheckAttribute(chr, "role"))
+	{
+		if (chr.greeting == "habitue") chr.role = "drinker_" + rand(9);
+	}
+	if (CheckAttribute(chr, "PhantomType"))
+	{
+		if (chr.PhantomType == "pofficer") chr.role = "pofficer";
+		else if (chr.PhantomType == "gipsy") chr.role = "gipsy";
+		else if (chr.PhantomType == "captain") chr.role = "captain";
+		else if (chr.PhantomType == "noble") chr.role = "noble";
+	}
+	if(CheckAttributeEqualTo(chr, "quest.type", "hovernor"))
+	{
+		if(sti(chr.nation) == PIRATE) chr.role = "Phovernor";
+		else chr.role = "hovernor";
+	}
+	if(CheckAttribute(chr, "Merchant.type") && chr.Merchant.type != "GasparGold")
+	{
+		chr.role = chr.Merchant.type + "_merchant";
+	}
+	
+	if(HasSubStr(chr.id, "_tavernkeeper")) chr.role = "tavernkeeper";
+	else if(HasSubStr(chr.id, "_waitress")) chr.role = "waitress";
+	else if(HasSubStr(chr.id, "_trader")) chr.role = "trader";
+	else if(HasSubStr(chr.id, "_shipyarder")) chr.role = "shipyarder";
+	else if(HasSubStr(chr.id, "_PortMan")) chr.role = "portman";
+	else if(HasSubStr(chr.id, "_Priest")) chr.role = "priest";
+	else if(HasSubStr(chr.id, "_usurer")) chr.role = "usurer";
+	else if(HasSubStr(chr.id, "_Poorman")) chr.role = "poorman";
+	else if(HasSubStr(chr.id, "_Hostess")) chr.role = "hostess";
+	else if(HasSubStr(chr.id, "_smuggler")) chr.role = "smuggler";
+	
+	if(chr.model == "Alonso")
+	{
+		if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FourthStage", "completed")) return GetConvertStr("HeadSailorPlus", "roles.txt");
+		else return GetConvertStr("HeadSailor", "roles.txt");
+	}
+	
+	// belamour return только в особых ситуациях
+	if(RoleFromID(chr))
+	{
+		result = GetCharacterRole(chr);
+		if(chr.role == "friend") result += " / " + GetJobsList(chr, " / ");
+		return result;
+	}
+	if (CheckAttribute(chr, "SpecialRole")) return GetCharacterSpecialRole(chr);
+	if (CheckAttribute(chr, "Payment")) return GetJobsList(chr, " / ");
+	else if (CheckAttributeHasValue(chr, "role")) return GetCharacterRole(chr);
+	return GetAttributeOrDefault(chr, "role", "");
 }

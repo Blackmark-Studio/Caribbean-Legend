@@ -17,9 +17,9 @@ void OSL_ReadGameOption()
 
 void PrepareDefaultOption(ref optref)
 {   
-	optref.volume.music = 0.25;
-	optref.volume.sound = 0.25;
-	optref.volume.dialog = 0.25;
+	optref.volume.music = 0.20;
+	optref.volume.sound = 0.20;
+	optref.volume.dialog = 0.20;
 	optref.cameramode.SFW = false;
 	optref.cameramode.follow_on = true;
 	/*

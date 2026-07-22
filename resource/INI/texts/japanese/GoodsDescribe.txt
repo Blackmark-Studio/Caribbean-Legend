@@ -22,74 +22,62 @@ Cannon_12 {12ポンドデミキャノン}
 Cannon_12_descr
 {
 小型戦闘艦で一般的な口径。 そのサイズと重量にしては優れた武装を誇るが、 砲員が必要なため乗組員数が増加する。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_16 {16ポンド デミキャノン}
 Cannon_16_descr
 {
 近代的なフランスタイプの砲。 先進的な設計により、 射程、 信頼性、 火力に優れる。 哨戒艦や偵察艦で非常に一般的な口径。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_18 {18ポンドデミキャノン}
 Cannon_18_descr
 {
 かつて軍艦によく搭載された強力な汎用砲。 群島では一般的で、 シンプルさと信頼性が評価されていますが、 設計が古いため射程はやや制限されています。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_20 {20ポンド砲}
 Cannon_20_descr
 {
 巡洋艦や軍用護衛の補助船で使われる長砲身の砲。 効果的な射撃には砲員の連携が不可欠。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_24 {24ポンド砲}
 Cannon_24_descr
 {
 軍艦の主砲であり、 艦砲技術の頂点。 射程と火力の完璧なバランスを持ち、 優れた設計により長時間の海戦でも致命的な損傷を受けにくい。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_3 {ファルコネット}
 Cannon_3_descr
 {
 砲塔付きの甲板砲。 最も高い機動性を持つが、 小型のため威力と射程は最小。
 交換式の尾栓を備え、 素早い再装填が可能なことも多い。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_32 {32ポンド砲}
 Cannon_32_descr
 {
 大口径の重砲。 砦の砲撃に適し、 莫大なダメージを与える。 素材強度の限界により火薬量が抑えられ、 射程が制限されている。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_36 {36ポンド砲}
-Cannon_36_descr
-{
-ロングバレル砲はガンデッキでは珍しい存在。 その遅い装填と限られた射程は、 ゆっくり飛ぶ重い砲弾による圧倒的なダメージで補われる。 大人数の砲手が必要。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、再装填 - #dReloadTime# 秒。
-}
+Cannon_36_descr {ロングバレル砲はガンデッキでは珍しい存在。 その遅い装填と限られた射程は、 ゆっくり飛ぶ重い砲弾による圧倒的なダメージで補われる。 大人数の砲手が必要。}
 Cannon_42 {42ポンド ボンバルド}
-Cannon_42_descr
-{
-強力な砲。 海軍火力の頂点。 戦列艦や要塞、 大規模な欧州戦でのみ使用される。 運用には大勢の熟練した乗組員が必要。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、再装填 - #dReloadTime# 秒。
-}
+Cannon_42_descr {強力な砲。 海軍火力の頂点。 戦列艦や要塞、 大規模な欧州戦でのみ使用される。 運用には大勢の熟練した乗組員が必要。}
 Cannon_48 {48ポンド ボンバルド}
-Cannon_48_descr
-{
-強力な砲で、 海軍火力の頂点。 戦列艦や要塞、 欧州の大規模な戦闘でのみ使用される。 運用には大人数かつ熟練の乗組員が必要。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、再装填 - #dReloadTime# 秒。
-}
+Cannon_48_descr {強力な砲で、 海軍火力の頂点。 戦列艦や要塞、 欧州の大規模な戦闘でのみ使用される。 運用には大人数かつ熟練の乗組員が必要。}
 Cannon_6 {6ポンドデミキャノン}
 Cannon_6_descr
 {
 小型砲。 軽量・ 低コスト・ 高耐久で、 運送船や商船に人気。 扱いやすく、 熟練した乗組員も不要。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Cannon_8 {8ポンドデミキャノン}
 Cannon_8_descr
 {
 小型船で最も人気のある口径のひとつで、 商船や哨戒船の両方で使われています。 サイズ、 重量、 火力のバランスに優れています。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Chocolate {カカオ}
 Chocolate_descr
@@ -132,21 +120,19 @@ Culverine_18_descr
 {
 中型18ポンド砲。 射程が長く、 小型船にも搭載可能。
 発射距離は優れるが、 非常に重く装填に時間がかかる。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime#秒。
 }
 Culverine_36 {フルカルヴァリン}
 Culverine_36_descr
 {
 突破射撃用の要塞36ポンド砲――先に撃った者が勝つ！
 長大な砲身のため、42ポンド砲用の砲門にのみ設置可能。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、再装填 - #dReloadTime#秒。
 }
 Culverine_8 {デミカルバリン}
 Culverine_8_descr
 {
 特製の架台と頑丈な木製車輪を備えた長砲身の8ポンド砲。
 射程が長く、 弾幕射撃によく使われる。
-射程 - #dFireRange#、ダメージ - x#f.1DamageMultiply#、リロード - #dReloadTime# 秒。
+。
 }
 Ebony {黒檀}
 Ebony_descr
@@ -202,8 +188,10 @@ Mahogany_descr
 Medicament {薬}
 Medicament_descr
 {
-最も一般的な病気の治療や負傷者への応急処置のための薬品と器具のセット。
-船に薬があれば、 負傷者の救命や白兵戦での損害軽減、 航海中の病人の治療に役立つ。
+一般的な傷、外傷、病気の治療に用いる医薬品、治療薬、医療器具の一式です。医薬品がなければ、乗組員は病気で死亡し始め、白兵戦での損失も増加します。
+~
+1日の消費量：
+1人につき物資 1/$number($kstringTemp(MEDICAMENT_BY_CREW))単位。
 }
 newline
 {
@@ -241,7 +229,13 @@ Ropes_descr
 最高品質で名高いロープは、 ロシア帝国で製造されています。
 }
 Rum {ラム}
-Rum_descr {発酵したサトウキビジュースを蒸留した、 ややクセのある風味の強い酒。 常に高値で売れる貴重な商品であり、 手元にあれば水夫たちの士気も上がる。 さらに、 船ではラムを淡水に加えてグロッグを作り、 水を消毒し味も良くする。 ラムが不足すると乗組員の不満が高まり、 反乱の原因になることもある。}
+Rum_descr
+{
+カリブの現地原料から造られる、独特の味と香りを持つ強い酒です。船内の士気を維持し、飲み水を消毒するために欠かせません。
+~
+1日の消費量：
+1人につき物資 1/$number($kstringTemp(RUM_BY_CREW))単位。
+}
 Sailcloth {帆布}
 Sailcloth_descr
 {

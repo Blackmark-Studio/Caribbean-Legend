@@ -1423,9 +1423,7 @@ void CalculateInfoDataF32()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 80;
-    mc.Ship.Crew.Exp.Sailors = 90;
-    mc.Ship.Crew.Exp.Cannoners = 70;
-    mc.Ship.Crew.Exp.Soldiers = 70;
+    SetCrewExp(mc, 90.0);
     SetCharacterGoods(mc, GOOD_BALLS, 100);
     SetCharacterGoods(mc, GOOD_GRAPES, 100);
     SetCharacterGoods(mc, GOOD_KNIPPELS, 100);

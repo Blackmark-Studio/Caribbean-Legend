@@ -112,7 +112,7 @@ Unlocks the ability to choose a broadside fire mode.
 }
 perkBladeDancer {Group attack with Curved weapons deals $percent($perkBaseValue(BladeDancer|1)) more damage.}
 perkBoardingPrepare {Boarding party receives potions during boarding.}
-perkBombardier {Durability of cannons is increased.}
+perkBombardier {The bonus from cannons in good condition is increased by $percent($perkBaseValue(Bombardier|1)). This effect stacks.}
 perkBruteForce {Heavily armed soldiers with axes and armor replace some of your regular sailors during a boarding.}
 perkBuilder {The consumption of planks and sailcloth during repairs is reduced by 25%.}
 perkByWorker {A character can hold two officer positions at once}

@@ -213,7 +213,7 @@ void ActiveF12Control()
             }
             if (CheckAttribute(findCh, "chr_ai.FencingType"))
             {
-                Log_SetStringToLog("chr_ai.FencingType= " + findCh.chr_ai.FencingType));
+                Log_SetStringToLog("chr_ai.FencingType= " + findCh.chr_ai.FencingType);
             }
             else
             {

@@ -2,7 +2,9 @@ GenQuests_1 {Smuggler}
 GenQuests_100 {Have you heard? Some captain rescued a girl named @<pchar.GenQuest.EncGirl.name> from bandits — literally pulled her out of their hands! What a fine person and a real man!}
 GenQuests_101
 {
-You know, Captain @<GetFullName(pchar)> saved a girl named @<pchar.GenQuest.EncGirl.name> from rapists in the jungle... Ah, that was you! I'm impressed...GenQuests_102
+You know, Captain @<GetFullName(pchar)> saved a girl named @<pchar.GenQuest.EncGirl.name> from rapists in the jungle... Ah, that was you! I'm impressed...
+
+GenQuests_102
 }
 GenQuests_102 { }
 GenQuests_103 {Well, captain @<GetFullName(pchar)>, nobody could ever think that you would leave a helpless woman in the hands of bandits to be their plaything. Poor @<pchar.GenQuest.EncGirl.name>, if only I had words...}
@@ -110,3 +112,11 @@ GenQuests_96 {Did you hear how local gang of @<pchar.GenQuest.(Gun).name> tried 
 GenQuests_97 {Did you hear about a murder of @<pchar.GenQuest.EncGirl.name>? Poor girl, she was killed in the jungles recently. They should find the murderer and hang him!}
 GenQuests_98 {You know, captain @<GetFullName(pchar)>, someone murdered a poor girl named @<pchar.GenQuest.EncGirl.name>? Pity, she was a really nice girl...}
 GenQuests_99 {Her name was @<pchar.GenQuest.EncGirl.name>, and she died in the jungles. Nothing striking, I'll tell ya, it is not safe out there...}
+Alone_Citiz_Death_0 {They say @<Name> was knifed by bandits in the jungle. That is what times have come to, $Name: these days a man steps beyond the gates and may never come back.}
+Alone_Citiz_Death_1 {Have you heard? @<Name> gave up the ghost in the jungle. They say bandits did the deed, and in times like these honest folk have fewer and fewer chances of living to see evening.}
+Alone_Citiz_RobberyFail_0 {They say some ragamuffin tried to rob @<Name>. They have grown completely brazen, $Name: once they at least feared the guards, and now they come at people with knives in broad daylight.}
+Alone_Citiz_RobberyFail_1 {Recently @<Name> made it back to town while fleeing robbers. Such are the times, $Name: it is no longer the man who chooses the road, but the road that decides whether he returns alive or not.}
+Alone_Citiz_RobberySuccess_0 {@<Name> was robbed, can you imagine? They took everything, and it is a miracle they left him alive. Seems even robbers still have a conscience in these cursed times.}
+Alone_Citiz_RobberySuccess_1 {They say @<Name> handed every last coin over to the bandits. What can one do, $Name? Otherwise, he might never have made it home.}
+JungInjured_SoldHeal_0 {They say it was you, $Name, who saved our soldier in the jungle. In times like these, few people will stand up for another's life, and that is why the whole town is gossiping about it.}
+JungInjured_SoldHeal_1 {@<Name> came back from the jungle barely alive. People in town are saying, $Name, that it was you who dragged him back from the brink of death, and a good deed like that is worth a great deal these days. You are a good person.}

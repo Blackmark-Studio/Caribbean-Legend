@@ -81,9 +81,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	sld.Ship.Mode = "war";
 	SetCrewQuantityFull(sld);
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterGoods(sld, GOOD_BALLS, 6000);
 	SetCharacterGoods(sld, GOOD_GRAPES, 2000);
 	SetCharacterGoods(sld, GOOD_KNIPPELS, 2000);
@@ -684,9 +682,7 @@ void Patria_PortPaxAttack(string qName) // ставим испанскую эс�
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*5));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (i < 3) SetRandGeraldSail(sld, SPAIN);
 		Group_AddCharacter("PatriaPPSeaGroup", "PatriaPP_Seacap_"+i);
@@ -733,9 +729,7 @@ void Patria_PortPaxNextBattle(string qName) // добавочный ТГ
 	sld.AlwaysSandbankManeuver = true;
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Sailors = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Cannoners = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Soldiers = 50+MOD_SKILL_ENEMY_RATE*5;
+	SetCrewExp(sld, float(50+MOD_SKILL_ENEMY_RATE*5));
 	SetRandGeraldSail(sld, SPAIN);
 	Group_AddCharacter("PatriaPPSeaGroup1", "PatriaPP_Seacap_add");
 	Group_SetGroupCommander("PatriaPPSeaGroup1", "PatriaPP_Seacap_add");
@@ -1062,9 +1056,7 @@ void Patria_SanMartinSetSquadron(string qName) // ставим эскадру г
 		sld.Coastal_Captain = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Patria_SanMartinSeaGroup", "Patria_SanMartinCap_"+i);
 	}
@@ -1280,9 +1272,7 @@ void Patria_DiplomatSeabattleGo(string qName) // ставим эскадру г�
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Patria_DiplomatSeaGroup", "Patria_DiplomatCap_"+i);
 	}
@@ -1496,9 +1486,7 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 		sld.Ship.Mode = "war";
 		sld.AlwaysEnemy = true; // 7-add
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		sld.lifeDay = iDay;
 		sld.Coastal_Captain = true;
@@ -1630,9 +1618,7 @@ void Patria_SiegeCreateSquadron() // осада
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*5));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, HOLLAND);
 		if (i < 3) Group_AddCharacter("Patria_SiegeGroup1", "Patria_SiegeCap_"+i);
@@ -1660,9 +1646,7 @@ void Patria_SiegeCreateSquadron() // осада
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*5));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, SPAIN);
 		if (i == 4) Group_AddCharacter("Patria_SiegeGroup3", "Patria_SiegeCap_"+i);
@@ -1845,9 +1829,7 @@ void Patria_SiegeEscape(string qName) // вышли в море, начинае�
 	sld.Ship.Mode = "war";
 	sld.Coastal_Captain = true; // 14-add
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+	SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter(sGroup, sGroup+"_Cap");
 	Group_SetGroupCommander(sGroup, sGroup+"_Cap");
@@ -1894,9 +1876,7 @@ void Patria_SiegeEscapeOnMap(string qName) //
 	sld.Abordage.Enable = false;
 	sld.SeaBoss = 0.5; // получает на 50% меньше урона корпусу
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetRandGeraldSail(sld, ENGLAND);
 	Group_AddCharacter("Patria_EngSquadron", "Doily");
@@ -1931,9 +1911,7 @@ void Patria_SiegeEscapeOnMap(string qName) //
 		sld.Ship.Mode = "war";
 		LAi_SetImmortal(sld, true); // не забыть снять
 		sld.ship.Crew.Morale = 90;
-		sld.Ship.Crew.Exp.Sailors = 90;
-		sld.Ship.Crew.Exp.Cannoners = 90;
-		sld.Ship.Crew.Exp.Soldiers = 90;
+		SetCrewExp(sld, 90.0);
 		SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, ENGLAND);
 		Group_AddCharacter("Patria_EngSquadron", "Patria_EngSquadronCap_"+i);
@@ -2033,9 +2011,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld.Ship.Mode = "war";
 		if (i == 1 && MOD_SKILL_ENEMY_RATE > 4) sld.SeaBoss = 0.6; // получает на 60% меньше урона корпусу
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*5));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, HOLLAND);
 	}
@@ -2057,9 +2033,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*5));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, SPAIN);
 	}
@@ -2339,9 +2313,7 @@ void Patria_BastionFrigateGlp() // присоединяем фрегат на Г
 	FantomMakeCoolFighter(sld, 30, 60, 60, LinkRandPhrase("blade_09","blade_12","blade_13"), "pistol5", "bullet", 150);
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 90;
-	sld.Ship.Crew.Exp.Sailors = 80;
-	sld.Ship.Crew.Exp.Cannoners = 80;
-	sld.Ship.Crew.Exp.Soldiers = 90;
+	SetCrewExp(sld, 80.0);
 	sld.reputation = 70;
 	sld.alignment = "good";
 	SetCharacterRemovable(sld, false);
@@ -2357,9 +2329,7 @@ void Patria_BastionFrigateMrt() // присоединяем фрегат на М
 	FantomMakeCoolFighter(sld, 33, 65, 65, LinkRandPhrase("blade_09","blade_12","blade_13"), "pistol5", "bullet", 150);
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 95;
-	sld.Ship.Crew.Exp.Sailors = 85;
-	sld.Ship.Crew.Exp.Cannoners = 85;
-	sld.Ship.Crew.Exp.Soldiers = 95;
+	SetCrewExp(sld, 85.0);
 	sld.reputation = 70;
 	sld.alignment = "good";
 	SetCharacterRemovable(sld, false);
@@ -2902,9 +2872,7 @@ void Patria_SlaveShipsSail(string qName) // запускаем конвой
 		sld.Coastal_Captain = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		sld.lifeDay = 6;
 		sld.AnalizeShips = true;
@@ -3068,9 +3036,7 @@ void Patria_CuracaoDoilyReady(string qName) // д'Ойли готов к пох�
 	sld.Abordage.Enable = false;
 	sld.SeaBoss = 0.5; // получает на 50% меньше урона корпусу
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetRandGeraldSail(sld, ENGLAND);
 	Group_AddCharacter("Patria_DoilySquadron", "Doily");
@@ -3101,9 +3067,7 @@ void Patria_CuracaoDoilyReady(string qName) // д'Ойли готов к пох�
 		sld.Ship.Mode = "war";
 		LAi_SetImmortal(sld, true); // не забыть снять
 		sld.ship.Crew.Morale = 90;
-		sld.Ship.Crew.Exp.Sailors = 90;
-		sld.Ship.Crew.Exp.Cannoners = 90;
-		sld.Ship.Crew.Exp.Soldiers = 90;
+		SetCrewExp(sld, 90.0);
 		SetCharacterPerk(sld, "MusketsShoot");
 		SetRandGeraldSail(sld, ENGLAND);
 		Group_AddCharacter("Patria_DoilySquadron", "Patria_DoilySquadronCap_"+i);
@@ -3229,9 +3193,7 @@ void Patria_CuracaoEnter(string qName) // пришли к Кюрасао
 		sld.Coastal_Captain = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 		sld.AnalizeShips = true;
 		sld.WatchFort = true; //видеть форты
@@ -3276,9 +3238,7 @@ void Patria_CuracaoEnter(string qName) // пришли к Кюрасао
 		sld.Ship.Mode = "war";
 		sld.AlwaysEnemy = true;
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		sld.AnalizeShips = true;
 		sld.WatchFort = true; //видеть форты
 		Group_AddCharacter("Patria_CuracaoGroup2", "Patria_CuracaoCap2_"+i);

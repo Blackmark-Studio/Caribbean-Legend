@@ -1,0 +1,41 @@
+Patrol_Win_Caribs_NoHelp {该死的红皮子，真是越来越放肆了。居然都摸到城边来了，简直难以置信！这下他们很长一段时间都不敢再从那片丛林里探头了。}
+Patrol_Win_Pirates_NoHelp {该死的绞刑架货色，愿他们为自己的罪行在地狱里焚烧！不过也好，现在再没人能去抢掠老实百姓了。}
+Patrol_Win_Smugglers_NoHelp {这一仗打得可真够激烈。如今这群渣滓在我们殖民地附近再搞他们那些见不得光的勾当之前，可得先掂量掂量了。}
+Caribs_Win_Patrol_NoHelp {走你的路去吧，白脸人。我们要包扎伤口。这些战士很会战斗。}
+Caribs_Win_Pirates_NoHelp {这些强盗想抢我们，但我们让他们见识了我们战士真正的力量。他们全都死了。}
+Caribs_Win_Smugglers_NoHelp {我们知道这些白脸人……他们妨碍我们在岸边采集神之泪。现在他们死了，我们能回去了。}
+Pirates_Win_Caribs_NoHelp {该死的异教徒，真把我们折腾惨了！偏偏撞上这帮杂种……你他妈还瞅什么？趁还能走，赶紧滚。}
+Pirates_Win_Patrol_NoHelp {真他妈走背字，偏偏在快收尾的时候撞上巡逻队……你又在这儿晃悠什么？跟他们一伙的，还是单干的？趁我们还没翻脸，赶紧滚远点……}
+Smugglers_Win_Caribs_NoHelp {我们走过这些小路多少回了，偏偏就得挑这种时候出事——交易刚做完，兜里塞满银子，结果一头撞进了这马蜂窝。呸。}
+Smugglers_Win_Patrol_NoHelp {你在这儿闻来闻去想干什么？打算去告发我们？这样吧——你什么都没看见，我们什么都没看见，然后各走各的。要不还得把你也送去见祖宗？}
+JungFight_Ok {$rand(明白了|行，我这就走|算你们走运)。}
+JungFight_Officer_Thanks {感谢你的帮助，这份恩情怎么评价都不为过。我一定会向总督禀报你的无私之举。}
+JungFight_Patrol_Thanks {多谢了，没有你我们可应付不过来。要不要加入我们？我们这儿伙食上乘，制服也挺体面……}
+JungFight_Caribs_Thanks {我们感谢白脸人的帮助。现在你走。丛林的灵魂发怒了。}
+JungFight_Pirates_Thanks {朋友，你走你的路吧。谢了，不过……你也明白。}
+JungFight_Smugglers_Thanks {多谢搭把手，我们该动身了。等把这摊烂事理清，我们会替你说几句好话。到时候少不了你几笔好买卖。}
+JungFight_Victory_Ok {$rand(一切顺利。|保重自己。|但愿下次我们不会站在对立的两边。)}
+JungFight_Officer_Reward_Caribs {感谢你及时出手相助。若不是你，那些野蛮人就得逞了。你应得一份奖赏，拿着。}
+JungFight_Officer_Reward_Pirates {多谢你，$rand(旅人|过路人)，不管你是什么人，你在这场战斗中的援手来得正是时候。这些该上绞架的家伙折磨我们殖民地的平民已久——瞧瞧这帮匪徒都坐大成什么样了。你的壮举理当得到奖赏。}
+JungFight_Officer_Reward_Smugglers {你帮了我们一个大忙。若不是你，这些走私犯很可能就会逍遥法外。你瞧瞧他们的穿戴和武装……咱们总督到底都在看些什么？咳，我这是说到哪儿去了。你展现出的勇武与胆识理当获得奖赏，收下吧。}
+JungFight_Patrol_Reward_Caribs {多谢帮忙，我们很快就收拾了那些野蛮人。只可惜我们的军官阵亡了。如今为了补上他这个缺，天知道还要折腾出多少麻烦……咳。鉴于你展现出的英勇与胆识，你理应得到一份奖赏……大概吧。拿着。}
+JungFight_Patrol_Reward_Pirates {我们可真是吃了大亏……可怜的$rand(贝丝|玛丽|海伦|露露|诺拉)。她再也等不到她那位英勇的军官了。杀死他的又是谁？一群下贱的渣滓？真是莫大的耻辱。失礼了。感谢您及时出手相助，您理当得到奖赏。}
+JungFight_Patrol_Reward_Smugglers {可怜我们的船长，离退役就只剩一年了……不过也罢，他履行了自己最后的职责——罪犯受到了惩罚，如今非法货物也不会再流入我们的殖民地了。谢谢你的帮助，陌生人。你应得一份酬谢。}
+JungFight_Caribs_Reward_Patrol {我们感谢白脸人的帮助。我不明白，你为什么和自己部族的战士作战？神灵会对你这样的人发怒，所以拿上我们的礼物——它会帮你熬过这份怒火。}
+JungFight_Caribs_Reward_Pirates {白脸人，神灵在我们最需要帮助的时候把你送到我们身边。这些强盗再也不会走在我们的丛林里了。收下我们部族的这份礼物。}
+JungFight_Caribs_Reward_Smugglers {白脸人帮助我们，我们也帮助白脸人。这些死去的你们部族的商贩身上带着许多东西，那些东西在你们部族里很值钱。拿走吧。我们感谢你的帮助。}
+JungFight_Pirates_Reward_Caribs {$swear 他们活该！该死的无神狗东西！你来得正是时候，朋友。要不是你帮忙，我们这会儿早喂虫子了。拿着，这是给你的。别推辞——我们这儿没这规矩。}
+JungFight_Pirates_Reward_Patrol {$swear 咱们可把那帮大头兵狠狠干了一顿！你这小子也不是省油的灯，往后准有出息。要不是你冲上来，我们这会儿就得挂绞架上了。我们这种人，碰上这种事都得分一份——拿着。}
+JungFight_Smugglers_Reward_Caribs {谢了，兄弟！我不知道那些$rand(林子里的魔鬼|红皮猴子|异教徒)想干什么，但他们的打算里肯定没给我们留活路。拿着，这是谢礼——要不是你，我们早就$rand(脑袋不保了！|别想活着脱身！|全都横尸在这儿了！) 别担心，这东西不归谁……}
+JungFight_Smugglers_Reward_Patrol {看来是躲过去了。我早说过那家伙不对劲，可偏偏没人信我。现在还得再去应付巡逻队。谢了，要是再晚一分钟，这儿就连个能张嘴说话的都没了。拿着赏钱吧。别担心，没人会发现少了它。}
+JungFight_Reward_Ok {$rand(我很乐意收下这份奖赏。|很高兴能帮上忙。|我不能袖手旁观。|保重。)}
+JungFight_Rumour_Caribs_vs_Patrol {听说城外发生了一场屠杀：我们的巡逻队撞上了一支红皮部族。难道他们真的离殖民地越来越近了吗？}
+JungFight_Rumour_Caribs_vs_Pirates {听说城外有伙强盗撞上了一支印第安部族，闹出了一场真正的血洗。垃圾能自己清理自己，总是好事，您说呢？}
+JungFight_Rumour_Caribs_vs_Smugglers {您能想象吗，船长？就在我们城门外的丛林里，一支印第安部族撞上了走私犯！最后谁赢了还不清楚，但我敢肯定，各种摊派又要涨了。他们会说什么保护我们的安全，然后把手伸进我们的口袋。}
+JungFight_Rumour_Patrol_vs_Pirates {船长，您能想象吗？我们的巡逻队正好中了本地强盗的埋伏。那些吃闲饭的总算在干正事了，而不是在街上骚扰老实人。}
+JungFight_Rumour_Patrol_vs_Smugglers {我这儿有个新鲜传闻，船长。就在我们的水域里，一笔大买卖黄了：巡逻队在最不合时宜的时候出现，那些混账逃进了雨林。我们的人在那里追上了他们，随即打了起来。总算让我看见我们的税钱花到哪儿去了！}
+JungFight_Rumour_HeroHelp_Patrol_Caribs {听说您帮助我们的巡逻队击退了那些野蛮人。您真是个勇敢的人，$fullName！}
+JungFight_Rumour_HeroHelp_Patrol_Pirates {船长，大家都在谈论您在与海盗的战斗中如何勇敢地援助了我们的士兵。您是真正的英雄，$Name！}
+JungFight_Rumour_HeroHelp_Patrol_Smugglers {最近我们的巡逻队在城外剿灭了一伙走私犯。听说您也参加了那场冲突，$Name。有您这样勇敢的人在我们之中，真是太好了！}
+JungFight_Rumour_AllDead_Patrol {真是悲伤的时日啊，$Name船长。有人在城外杀光了我们的巡逻队，一个活口都没留下。现在出城门更让人害怕了，可我以前多喜欢傍晚散步啊！}
+JungFight_Rumour_AllDead {$Name船长，似乎正在发生极其可怕的事情。最近城门外发生了一场骇人的惨剧，最要命的是没人明白究竟怎么回事！唯一清楚的是那里发生过一场战斗：血腥而残酷，没有一个活人留下。那简直是野兽般的残忍——亵渎神明，而且毫无意义！}

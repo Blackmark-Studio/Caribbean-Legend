@@ -32,7 +32,8 @@ descriptor_descr_ArmorMaterial_1 {L’armatura in cuoio può salvarti in una ris
 descriptor_descr_ArmorMaterial_2 {Le piastre offrono un ottimo equilibrio tra peso e protezione. Possono salvarti la vita. Riduce i danni subiti del $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.Riduce i danni subiti del $percent($MaterialDefenceValue(3)).
+L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.
+Riduce i danni subiti del $percent($MaterialDefenceValue(3)).
 }
 descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del $percent($MaterialDefenceValue(4)).}
 descriptor_descr_ArmorType_0 {L’armatura leggera è quasi identica a un abito normale e non limita i movimenti. In cambio, offre meno protezione.}
@@ -51,7 +52,8 @@ descriptor_descr_EmpoweredAmmo {Queste munizioni migliorano le proprietà dell�
 descriptor_descr_EnhancingPotion {Possiede un effetto speciale potenziante.}
 descriptor_descr_Exotic
 {
-Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo possessore si diffondono subito.Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
+Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo possessore si diffondono subito.
+Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
 }
 descriptor_descr_Fancy {Questo oggetto si distingue per l’aspetto cerimoniale, le decorazioni e i materiali pregiati. Indossarlo aumenta il Carisma di $number($DescriptorBaseValue(Fancy)). Gli effetti si sommano.}
 descriptor_descr_Fighter {L'effetto è utile per gli armigeri.}
@@ -88,7 +90,8 @@ descriptor_descr_Trinket {Oggetti raffinati e meno raffinati che distinguono chi
 descriptor_descr_TwoHanded {Arma da fuoco pesante da impugnare a due mani durante il tiro. Richiede abilità speciali per l’uso.}
 descriptor_descr_Unremarkable
 {
-Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.Aumenta Furtività di $number($DescriptorBaseValue(Unremarkable)). Gli effetti si sommano.
+Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.
+Aumenta Furtività di $number($DescriptorBaseValue(Unremarkable)). Gli effetti si sommano.
 }
 descriptor_descr_Valuable {Ha un alto valore di vendita.}
 descriptor_descr_WeaponCurvature_0 {Quest’arma è dritta o solo leggermente ricurva, ideale per affondi rapidi più che per colpi di taglio.}
@@ -105,7 +108,7 @@ descriptor_Exotic {Esotico}
 descriptor_Fancy {Stravagante}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Fragile}
-descriptor_GoodFit {Semplice}
+descriptor_GoodFit {Su misura}
 descriptor_GrapeAmmo {Mitraglia}
 descriptor_HealPotion {Cura}
 descriptor_HeartDefence {Rinforz.}

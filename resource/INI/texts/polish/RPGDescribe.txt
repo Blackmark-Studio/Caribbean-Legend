@@ -42,14 +42,14 @@ Podstawowe wskaźniki Ochrony przed obrażeniami. Zmniejszają wszystkie otrzymy
 }
 Charisma
 {
-Autorytet: połączenie dzielnej, pooranej bliznami twarzy i ciętego języka.
-Przydaje się w każdym towarzystwie i w każdych negocjacjach — za urodzonym liderem chętnie pójdą utalentowani zwolennicy, a każda transakcja zakończy się na jego korzyść.
+Przywództwo: połączenie mężnej, pooranej bliznami twarzy i ciętego języka.
+Przydaje się w każdym towarzystwie i podczas każdych negocjacji — za urodzonym przywódcą chętnie podążą utalentowani stronnicy, a każda transakcja zakończy się na jego korzyść.
 ~
-Wpływa na umiejętności „Leadership” i „Handel”.
-Ustawia limit oficerów (A*2).
-Zwiększa zniżkę na utrzymanie oficerów oraz procent doświadczenia przekazywanego oficerom i towarzyszom.
+Wpływa na umiejętności „Przywództwo” i „Handel”.
+Ustala limit oficerów (A*2).
+Zwiększa część doświadczenia przekazywaną oficerom i kompanom.
 ~
-Aktualny bonus: $percent($LVL_GetCurrentLeadershipBonusMtp( )) z $percent($LVL_GetMAXLeadershipBonusMtp( ))
+Obecna premia: $percent($LVL_GetCurrentLeadershipBonusMtp( )) z $percent($LVL_GetMAXLeadershipBonusMtp( ))
 }
 Commerce
 {
@@ -151,6 +151,7 @@ Aby zobaczyć przedmioty, które nie mieszczą się w wyświetlonym oknie, użyj
 ~
 Naciśnij klawisz „Enter” lub kliknij dwukrotnie na przedmiot na liście, aby zobaczyć jego opis, wyrzucić niepotrzebną ilość za burtę lub zrzucić minę.
 }
+GoodsCannons_hint {Działa są niezbędne na niebezpiecznych wodach Morza Karaibskiego. Ciężkie bombardy, lekkie półkartauny lub dalekosiężne kolubryny — każdy kapitan dobiera uzbrojenie do swoich możliwości i upodobań. Konstrukcja statku ogranicza maksymalną liczbę i kaliber dział. Działa zużywają się, a w złym stanie powodują dotkliwe kary, dlatego należy utrzymywać je w sprawności.}
 Grappling
 {
 Wyrównanie statku z wrogim okrętem, rzucenie haków abordażowych, opanowanie drżącego przeciwnika, oczyszczenie pokładu i przejęcie statku jako zasłużonej nagrody — wszystko to wymaga zręczności i doświadczenia, ale łupy z pewnością wynagrodzą cały trud.
@@ -395,3 +396,4 @@ Ten tryb pozwala na przejście jednej ze scenariuszowych linii fabularnych dla N
 ~
 Żyjący świat zacznie działać dopiero po ukończeniu scenariusza fabularnego.
 }
+cannons_managment_hint {Okrętowe działa szybko się zużywają z powodu ograniczeń ówczesnej metalurgii. Każdy wystrzał powoduje ukryte uszkodzenia lufy i lawety, z czasem utrudniając konserwację i zmniejszając celność. Regularnie odwiedzaj stocznię, aby utrzymać działa w idealnym stanie i oddawać zabójcze, doskonale skoordynowane salwy.}

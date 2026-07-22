@@ -226,12 +226,14 @@ void LAi_group_Release()
 }
 
 // Не очищать группу при отсутствии в ней персонажей
-void LAi_group_SetPermanent(string sName) {
+void LAi_group_SetPermanent(string sName)
+{
 	LAi_grp_relations.permanent.(sName) = true;
 }
 
 // Надо ли чистить группу?
-bool LAi_group_IsPermanent(string sName) {
+bool LAi_group_IsPermanent(string sName)
+{
 	if (sName == "" || CheckAttribute(&LAi_grp_relations, "permanent." + sName)) {
 		return true;
 	}
@@ -240,42 +242,41 @@ bool LAi_group_IsPermanent(string sName) {
 }
 
 // Чистка пустых групп
-void LAi_group_Clean() {
+void LAi_group_Clean()
+{
 	object oGrp;
 	aref arData, arRel;
 	ref chref, rGrp;
 	int i, j, nRel, nChar;
 	string sName, relName;
-	
+
 	makearef(arData, LAi_grp_relations.savedata);
 	makeref(rGrp, oGrp);
-	
+
 	// первый проход - запоминаем все группы
 	nRel = GetAttributesNum(arData);
-	for (i = 0; i < nRel; i++) {
+	for (i = 0; i < nRel; i++)
+    {
 		arRel = GetAttributeN(arData, i);
-		
+
 		sName = arRel.name1;
-		if (!LAi_group_IsPermanent(sName)) {
+		if (!LAi_group_IsPermanent(sName))
 			rGrp.(sName) = true;
-		}
-		
+
 		sName = arRel.name2;
-		if (!LAi_group_IsPermanent(sName)) {
+		if (!LAi_group_IsPermanent(sName))
 			rGrp.(sName) = true;
-		}
 	}
-	
+
 	// второй проход - ищем непустые
 	nChar = GetArraySize(&characters);
-	for (i = 0; i < nChar; i++) {
+	for (i = 0; i < nChar; i++)
+    {
 		makeref(chref, characters[i]);
-		if (CheckAttribute(chref, "chr_ai.group") && chref.chr_ai.group != "") {
+		if (CheckAttribute(chref, "chr_ai.group") && chref.chr_ai.group != "")
 			DeleteAttribute(rGrp, chref.chr_ai.group);
-			//trace("Group " + chref.chr_ai.group + " is not empty, it has " + chref.id + ", skipping");
-		}
 	}
-	
+
 	// третий проход - удаляем отношения между пустыми группами
 	bool bDelete;
 	
@@ -324,7 +325,6 @@ void LAi_group_Delete(string groupName)
 	SendMessage(&LAi_grp_relations, "ss", "ReleaseGroup", groupName);
 }
 
-
 //Установить для группы радиус видимости
 void LAi_group_SetLookRadius(string groupName, float radius)
 {
@@ -370,7 +370,7 @@ void LAi_group_SetAlarmDown(string group1, string group2, float down)
 void LAi_group_MoveCharacter(ref chr, string groupName)
 {
 	chr.chr_ai.group = groupName;
-	SendMessage(&LAi_grp_relations, "sis", "MoveChr", chr, groupName);	
+	SendMessage(&LAi_grp_relations, "sis", "MoveChr", chr, groupName);
 }
 
 //------------------------------------------------------------------------------------------
@@ -544,44 +544,49 @@ bool LAi_group_IsEnemy(ref chr, ref trg)
 //Реакция групп на атаку attack->hit
 bool LAi_group_Attack(ref attack, ref hit)
 {
-	if(attack.chr_ai.group == hit.chr_ai.group)
-	{
-		//Своих игнорируем
-		return false;
-	}
-	//Jason: придётся помирить все кланы, однако...
-	if(CheckAttribute(attack, "LSC_clan") && CheckAttribute(hit, "LSC_clan"))
-	{
-		return false;
-	}
-	if(hit.chr_ai.group == LAI_GROUP_ACTOR)
-	{
-		return false;
-	}
-	// belamour cle 1.5 индифферентность нейтральных групп -->
-	if(hit.chr_ai.group == LAI_GROUP_PEACE)
-	{
-		return false;
-	}
-	if(hit.chr_ai.group == LAI_GROUP_PLAYER && attack.chr_ai.group == "Tmp_friend")
-	{
-		return false;
-	}
-	if(attack.chr_ai.group == LAI_GROUP_PLAYER && hit.chr_ai.group == "TMP_FRIEND")
-	{
-		return false;
-	}
+    string sAttackGroup = attack.chr_ai.group;
+    string sHitGroup = hit.chr_ai.group;
 
-	// Бахнули кого-то дружелюбного к нам
-	if (IsMainCharacter(&attack) && !LAi_group_IsEnemy(&attack, &hit)) LICENSE_CheckViolationAgainstGroup_Land(&hit);
+    // Своих игнорируем
+	if (sAttackGroup == sHitGroup)
+		return false;
 
-	// <-- cle 1.5
-	//Натравим друг на друга
+	// Jason: придётся помирить все кланы, однако...
+	if ("LSC_clan" in attack && "LSC_clan" in hit)
+		return false;
+
+    // belamour: индифферентность нейтральных групп
+	if (sHitGroup == LAI_GROUP_ACTOR)
+		return false;
+	if (sHitGroup == LAI_GROUP_PEACE)
+		return false;
+	if (sHitGroup == LAI_GROUP_PLAYER && sAttackGroup == "TMP_FRIEND")
+		return false;
+	if (sAttackGroup == LAI_GROUP_PLAYER && sHitGroup == "TMP_FRIEND")
+		return false;
+
+    // Бахнули кого-то дружелюбного к нам (враждебность проверять до натравливания)
+    bool bAttackedAlly = !LAi_group_IsEnemy(attack, hit);
+
+	// Натравим друг на друга
 	SendMessage(&LAi_grp_relations, "sss", "Attack", attack.chr_ai.group, hit.chr_ai.group);
-	//Добавляем врага
+	// Добавляем врага
 	SendMessage(&LAi_grp_relations, "siif", "AddTarget", hit, attack, 10.0 + rand(10));
+
+	if (IsMainCharacter(attack))
+    {   // Обработчики вызывать после натравливания
+        if (bAttackedAlly)
+            LICENSE_CheckViolationAgainstGroup_Land(hit);
+        if ("Reactions." + sHitGroup in &LAi_grp_relations)
+        {
+            LAi_grp_relations.Reactions.(sHitGroup)(attack, hit);
+            DeleteAttribute(&LAi_grp_relations, "Reactions." + sHitGroup);
+        }
+    }
+
 	return true;
 }
+
 //eddy.Можно пользоваться этим методом для непостоянного стравливания. Для групп горожан юзать только его!
 bool LAi_group_AttackGroup(string attack, string hit)
 {
@@ -631,6 +636,17 @@ bool LAi_group_IsActivePlayerAlarm()
 	return LAi_grp_alarmactive;
 }
 
+// Установить реакцию на атаку
+void LAi_group_SetReaction(string groupName, string sFunc)
+{
+    LAi_grp_relations.Reactions.(groupName) := fref(sFunc);
+}
+// Удалить реакцию
+void LAi_group_RemoveReaction(string groupName)
+{
+    DeleteAttribute(&LAi_grp_relations, "Reactions." + groupName);
+}
+
 //Установить квест на убивание группы
 void LAi_group_SetCheck(string groupName, string quest)
 {
@@ -650,7 +666,7 @@ void LAi_group_SetCheck(string groupName, string quest)
 }
 
 // Warship 18.08.09 Проверка убийства группы с вызовом функции
-void LAi_group_SetCheckFunction(String _groupName, String _function)
+void LAi_group_SetCheckFunction(string _groupName, string _function)
 {
 	//Найдём свободное поле
 	aref quests;
@@ -714,7 +730,7 @@ void LAi_group_CheckGroupQuest(ref chr)
 	aref quests;
 	makearef(quests, LAi_grp_relations.quests);
 	int num = GetAttributesNum(&quests);
-	String function;
+	string function;
 	
 	if(num <= 0) return;
 	//Проверим остальных персонажей в данной группе
@@ -759,12 +775,12 @@ void LAi_group_CheckGroupQuest(ref chr)
 				if(CheckAttribute(atr, "function"))
 				{
 					function = atr.function;
-					call function(function); // В параметре - название самой функции
+					call function(group);
 				}
 				else
 				{
-				PostEvent("LAi_event_GroupKill", 1, "s", group);
-			}
+                    PostEvent("LAi_event_GroupKill", 1, "s", group);
+                }
 			}
 			string atname = GetAttributeName(GetAttributeN(&quests, i));
 			//Теперь удалим
@@ -774,7 +790,6 @@ void LAi_group_CheckGroupQuest(ref chr)
 		}
 	}
 }
-
 
 //------------------------------------------------------------------------------------------
 //Ответная реакция на запросы

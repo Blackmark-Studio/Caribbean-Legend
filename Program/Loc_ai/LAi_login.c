@@ -2,90 +2,74 @@
 int LAi_loginedcharacters[MAX_CHARS_IN_LOC];
 int LAi_numloginedcharacters = 0;
 
-
 bool LAi_CharacterLogin(ref chr, string locID)
 {
 	string func;
-	//Проверим адрес логина
-	if(CheckAttribute(chr, "location") == false)
+	// Проверим адрес логина
+	if (CheckAttribute(chr, "location") == false)
 	{
 		Trace("Character <" + chr.id + "> have not field [location]");
 		return false;
 	}
-	if(chr.id == "0")
+	if (chr.id == "0")
 	{
 		chr.location = "none";
 		return false;
 	}
-	bool isLogin = false;
-	if(chr.location == locID)
+    bool isLogin = false;
+	if (chr.location == locID)
 	{
-		if(int(chr.index) == nMainCharacterIndex) isLogin = true;
-		if(CheckAttribute(chr, "location.stime") != false)
+        if ("location.stime" in chr && "location.etime" in chr)
 		{
-			if(CheckAttribute(chr, "location.etime") != false)
-			{
-				//Проверям время логина
-				if(LAi_login_CheckTime(float(chr.location.stime), float(chr.location.etime)))
-				{
-					isLogin = true;
-				}
-			}
-			else 
-			{
-				isLogin = true;
-			}
-		}
+            isLogin = LAi_login_CheckTime(float(chr.location.stime), float(chr.location.etime));
+        }
 		else 
 		{
 			isLogin = true;
 		}
 	}
-	//Залогинем последователей
-	if(!LAi_IsBoarding)
+	// Залогиним последователей
+	if (!LAi_IsBoarding)
 	{
-		if(CheckAttribute(chr, "location.follower") != false)
+		if ("location.follower" in chr)
 		{
-			chr.location = pchar.location;
-			chr.location.group = pchar.location.group;
-			chr.location.locator = pchar.location.locator;
+			chr.location = PChar.location;
+			chr.location.group = PChar.location.group;
+			chr.location.locator = PChar.location.locator;
 			isLogin = true;
-			if(LAi_restoreStates)
+			if (LAi_restoreStates)
 			{
 				LAi_SetCurHPMax(chr);
 			}
 		}
 	}
 	//Проверим на захваченность локации
-	if(LAi_IsCapturedLocation)
+	if (LAi_IsCapturedLocation)
 	{
-		if(GetMainCharacterIndex() != int(chr.index))
+		if (GetMainCharacterIndex() != int(chr.index) && !IsOfficer(chr))
 		{
-   			// boal fix fort officers -->
-			if(!IsOfficer(chr))
-			{
-				if(CheckAttribute(chr, "location.loadcapture") == 0)
-				{
-					isLogin = false;
-				}else{
-					if(int(chr.location.loadcapture) == 0)
-					{
-						isLogin = false;
-					}
-				}
-			}
-			// boal fix fort officers <--
+            if (chr.Location.LoadCapture$bool(false) == false)
+            {
+                isLogin = false;
+            }
 		}
 	}
-	if(NotLoginQuestCapture(chr, locID)) return false;
-	if(!isLogin) return false;
-	//Если персонажей больше максимального числа, незагружаем больше
+    if (!isLogin)
+        return false;
+    if (!actLoadFlag && "LoginCondition" in chr && chr.index !in LoginConditions)
+    {   // Перенести логин в LAi_CheckLoginConditions
+        LoginConditions.(chr.index) := int(chr.index);
+        return false;
+    }
+	if (NotLoginQuestCapture(chr, locID))
+        return false;
+	// Если персонажей больше максимального числа, не загружаем больше
 	if(LAi_numloginedcharacters >= MAX_CHARS_IN_LOC)
 	{
 		Trace("LAi_CharacterLogin -> many logined characters in location > " + MAX_CHARS_IN_LOC);
 		return false;
 	}
-	//Устанавливаем необходимые поля, если надо
+	// Устанавливаем необходимые поля, если надо
 	if(CheckAttribute(chr, "chr_ai.type") == false)
 	{
 		chr.chr_ai.type = LAI_DEFAULT_TYPE;
@@ -231,7 +215,7 @@ void LAi_CharacterPostLogin(ref location)
 			}
 		}
 	}
-	if(!actLoadFlag)
+	if (!actLoadFlag)
 	{
 		QuestsCheck(); // в начале квесты, иначе нет перехвата
 		// заполнение фантомами локаций
@@ -272,17 +256,21 @@ void LAi_CharacterPostLogin(ref location)
 		CreatePlantation(location);
 		CreateItzaLand(location);
 		CreatIslaMonaNPC(location);
-		//Расставляем квестовых энкоунтеров
-		LAi_CreateEncounters(location); //eddy. монстры не нужны здесь
+		// Окружение
 		LAi_CreateParticles(location);
-		LAi_CreateFlowers(location); // Jason: выращиваем травку
+		LAi_CreateFlowers(location);      // Jason: выращиваем травку
 		LAi_CreateQuestFlowers(location); // Jason: высаживаем квестовую травку
-		LAi_CreateDolly(location); //Jason: устанавливаем телепортационные статуи
-		LAi_CreateShoreChest(location); // Jason: выброшенные сундуки на берегу
+		LAi_CreateDolly(location);        // Jason: устанавливаем телепортационные статуи
+		LAi_CreateShoreChest(location);   // Jason: выброшенные сундуки на берегу
+        // Случайные встречи
+        LAi_CreateJungleEncounters(location);
 		LAi_CreateCaveEncounters(location);
-		/// ОЗГи
+		// ОЗГи
 		LandHunterReactionResult(location);
-		//обновить базу абордажников для нефритового черепа
+        // Персонажи с условиями для логина
+        // Ставим в следующем кадре, чтобы все флаги были актуальны
+        PostEvent("CheckLoginConditions", 0, "e", location);
+		// Обновить базу абордажников для нефритового черепа
 		CopyPassForAztecSkull();
 		CheckTradeConnections(location);
 		STH_CheckIfTownFriendly(location);
@@ -343,11 +331,11 @@ bool LAi_login_CheckTime(float start, float end)
 void LAi_PostLoginInit(ref chr)
 {
 	if(!IsEntity(&chr)) return;
-	//Добавляем в группу
+	// Добавляем в группу
 	LAi_group_MoveCharacter(chr, chr.chr_ai.group);
-	//Инициализируем шаблон
+	// Инициализируем шаблон
 	string func = chr.chr_ai.tmpl;
-	if(func != "")
+	if (func != "")
 	{
 		func = "LAi_tmpl_" + func + "_InitTemplate";
 		bool res = call func(&chr);
@@ -356,14 +344,19 @@ void LAi_PostLoginInit(ref chr)
 			chr.chr_ai.tmpl = LAI_DEFAULT_TEMPLATE;
 		}
 	}
-	//Инициализируем тип
+	// Инициализируем тип
 	func = chr.chr_ai.type;
-	if(func != "")
+	if (func != "")
 	{
 		func = "LAi_type_" + func + "_Init";
 		call func(&chr);
 	}
 	ResetCritChanceBonus(chr);
+    // Действия при появлении
+    if (!actLoadFlag && "LoginCallback" in chr)
+    {
+        chr.LoginCallback(chr);
+    }
 }
 
 bool NotLoginQuestCapture(ref chr, string locID)
@@ -375,4 +368,20 @@ bool NotLoginQuestCapture(ref chr, string locID)
 	if(HasSubStr(chr.id, "SeekCitizCap_")) return true;
 	
 	return false;
+}
+
+// Персонажи с особыми условиями для появления в локации
+#event_handler("CheckLoginConditions","LAi_CheckLoginConditions");
+void LAi_CheckLoginConditions(ref loc)
+{
+    for (aref arIdx : LoginConditions)
+    {
+        ref chr = GetCharacter(int(arIdx));
+        if (chr.LoginCondition(chr, loc))
+        {
+            LoginCharacter(chr, loc.id);
+            LAi_PostLoginInit(chr);
+        }
+    }
+    DeleteAttribute(&LoginConditions, "");
 }

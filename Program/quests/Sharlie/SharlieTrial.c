@@ -331,7 +331,7 @@ void Rum_CreateBarkas(string qName)//баркас у пирса
 	ref shTo = &RealShips[int(Pchar.Ship.Type)];
 	shTo.SpeedRate = 13.0;
 	SetCrewQuantityOverMax(PChar, 5);
-	pchar.Ship.Crew.Exp.Sailors = 50;
+	SetCrewExp(pchar, 50.0);
 	pchar.quest.Sharlie_rum1.win_condition.l1 = "location";
 	pchar.quest.Sharlie_rum1.win_condition.l1.location = "Martinique";
 	pchar.quest.Sharlie_rum1.function = "Rum_FindLugger";
@@ -1948,9 +1948,7 @@ void Trial_CreateFlorianFrigate(string qName)// ставим фрегат Фло
 	sld.AlwaysSandbankManeuver = true;
 	sld.MultiFighter = 2.5; // мультифайтер
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("Florian_group", "Florian");
 	Group_SetGroupCommander("Florian_group", "Florian");

@@ -42,12 +42,12 @@ Estatísticas básicas de Proteção contra Dano. Reduzem todo o dano recebido e
 }
 Charisma
 {
-Autoridade: a combinação de um rosto valente, marcado por feridas, e uma língua afiada.
-Útil em qualquer meio e em qualquer negociação — seguidores talentosos acompanham facilmente um líder nato, e qualquer acordo se fecha a seu favor.
+Liderança: uma combinação de um rosto viril coberto de cicatrizes e uma boa lábia.
+É útil em qualquer círculo social e negociação — seguidores talentosos acompanham facilmente um líder nato, e qualquer acordo será fechado a seu favor.
 ~
-Afeta as habilidades “Leadership” e “Comércio”.
+Afeta as habilidades “Liderança” e “Comércio”.
 Define o limite de oficiais (A*2).
-Aumenta o desconto de manutenção dos oficiais e a porcentagem de experiência repassada a oficiais e companheiros.
+Aumenta a parcela de experiência transferida aos oficiais e companheiros.
 ~
 Bônus atual: $percent($LVL_GetCurrentLeadershipBonusMtp( )) de $percent($LVL_GetMAXLeadershipBonusMtp( ))
 }
@@ -150,6 +150,7 @@ Para ver os itens que não cabem na janela, use a barra de rolagem à direita da
 ~
 Pressione 'Enter' ou dê um clique duplo no item da lista para ver a descrição do produto, jogar fora uma quantidade indesejada ou largar uma mina.
 }
+GoodsCannons_hint {Os canhões são indispensáveis nas águas perigosas do mar do Caribe. Bombardas pesadas, meios-canhões leves ou colubrinas de longo alcance — cada capitão escolhe o armamento de acordo com suas possibilidades e preferências. A estrutura do navio limita a quantidade máxima e o calibre dos canhões. Os canhões se desgastam e, quando estão em mau estado, sofrem penalidades severas, por isso devem ser mantidos em boas condições.}
 Grappling
 {
 Alinhar o navio com o inimigo, lançar os ganchos para abordar o adversário trêmulo, varrer os conveses e tomar o navio como prêmio merecido — tudo isso exige muita agilidade e experiência, mas o saque certamente compensa o esforço.
@@ -392,3 +393,4 @@ Este modo permite jogar uma das linhas de missão de cenário das Nações, mas 
 ~
 O mundo vivo só será ativado após a conclusão da história do cenário.
 }
+cannons_managment_hint {Os canhões navais se desgastam rapidamente devido às limitações da metalurgia. Cada disparo causa danos internos ao cano e à carreta, o que, com o tempo, dificulta a manutenção e reduz a precisão. Visite o estaleiro com frequência para manter os canhões em perfeito estado e disparar salvas letais perfeitamente coordenadas.}

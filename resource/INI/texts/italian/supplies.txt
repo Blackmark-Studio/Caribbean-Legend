@@ -1,0 +1,22 @@
+weapon_0 {nessuno}
+weapon_1 {insufficiente}
+weapon_2 {sufficiente}
+weapon_3 {in eccesso}
+weapon_tooltip {Per effettuare con successo un abbordaggio, le armi devono essere più numerose dei marinai. In caso contrario, l’equipaggio subirà penalità devastanti e perdite enormi.}
+bortFire_tooltip {Una salva richiede $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {L’intera scorta basterà per $decl($ctx(mineQty)|mina|mine|mine)}
+food_tooltip {Consumo attuale: $decl($ctx(foodconsumption)|confezione|confezioni|confezioni) al giorno}
+food_approximation_tooltip {Con l’equipaggio al completo, la nave richiederà $decl($ctx(approximation.foodconsumption)|confezione|confezioni|confezioni)}
+medicament_tooltip {Consumo attuale: $decl($ctx(medicamentconsumption)|confezione|confezioni|confezioni) al giorno}
+medicament_approximation_tooltip {Con l’equipaggio al completo, la nave richiederà $decl($ctx(approximation.medicamentconsumption)|confezione|confezioni|confezioni)}
+rum_tooltip {Consumo attuale: $decl($ctx(rumconsumption)|barilotto|barilotti|barilotti) al giorno}
+rum_approximation_tooltip {Con l’equipaggio al completo, la nave richiederà $decl($ctx(approximation.rumconsumption)|barilotto|barilotti|barilotti)}
+spareCannons {$ctx(qty) di scorta}
+money {Denaro insufficiente}
+goods {Merci insufficienti}
+cooldown {Devi riposarti}
+raiseMoraleText {Per risollevare il morale dell’equipaggio, devi distribuire:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Per addestrare l’equipaggio, devi distribuire:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Riparazione: $percent($ctx(hullPerDay)) al giorno, consumo di $decl($ctx(planksPerDay)|tavola|tavole|tavole)}
+sailcloth_tooltip {Riparazione: $percent($ctx(sailsPerDay)) al giorno, consumo di $decl($ctx(sailClothesPerDay)|tela da vela|tela da vela|tela da vela)}
+spareCannons_tooltip {Solo i cannoni del calibro principale sono considerati cannoni di riserva. I cannoni prodieri e poppieri non vengono inclusi in questi calcoli.}

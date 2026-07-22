@@ -347,7 +347,8 @@ void Main()
 	nTeleportLocation = 1;
 
 	NationsInit();
-	EncountersInit();
+	EncountersInit(); // Worldmap
+    JungleEncountersInit();
 	CannonsInit();
 	ShipsInit();
 	SailsInit();
@@ -405,7 +406,8 @@ void Main_InitGame()
 	boarding_location          = -1;
 	
 	NationsInit();
-	EncountersInit();
+	EncountersInit(); // Worldmap
+    JungleEncountersInit();
 	CannonsInit();
 	ShipsInit();
 	IslandsInit();

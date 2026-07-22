@@ -131,19 +131,28 @@ int GetCargoLoadEx(ref _refCharacter, int addGoods, int iGoods)
 	return iLoad;
 }
 
-int RecalculateCargoLoad(ref _refCharacter)
+int GetInstalledCannonsWeight(ref chr)
 {
 	int loadSpace = 0;
-	// boal 27/07/06 учёт орудий на борту -->
-	if (int(_refCharacter.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+	string borts[4] = {"cannonl", "cannonr", "cannonf", "cannonb"};
+	int defaultType = int(chr.Ship.Cannons.Type$int(CANNON_TYPE_NONECANNON));
+	ref refBaseShip = GetRealShip(GetCharacterShipType(chr));
+
+	for (int index, ref bortName: borts)
 	{
-		ref Cannon = GetCannonByType(int(_refCharacter.Ship.Cannons.Type));
-		loadSpace = GetCannonsNum(_refCharacter) * int(Cannon.Weight);
+		int cannonType = chr.Ship.Cannons.(bortName).Type$int(defaultType);
+		if (cannonType == CANNON_TYPE_NONECANNON) continue;
+
+		ref cannonItem = GetCannonByType(cannonType);
+		loadSpace += GetBortIntactCannonsNum(chr, bortName, refBaseShip.(bortName)$int(0)) * int(cannonItem.Weight);
 	}
-	// учёт орудий на борту <--
-	// ugeen --> учёт веса экипажа (1 тушка члена экипажа весит 1 ц.)
-	loadSpace = loadSpace + GetCrewQuantity(_refCharacter);
-	// <-- учёт веса экипажа
+	return loadSpace;
+}
+
+int RecalculateCargoLoad(ref _refCharacter)
+{
+	int loadSpace = GetInstalledCannonsWeight(_refCharacter);
+	loadSpace += GetCrewQuantity(_refCharacter);
 	for(int i=0; i<GetArraySize(&Goods); i++)
 	{
 		loadSpace = loadSpace + GetGoodWeightByType(i,GetCargoGoods(_refCharacter,i));
@@ -444,11 +453,10 @@ int AddCharacterGoods(ref _refCharacter,int _Goods,int _Quantity)
 	return false;
 }
 
-// Cannons utilite
+// Получить тип основного калибра, на левом/правом борту
 int GetCaracterShipCannonsType(ref _refCharacter)
 {
-	if(!CheckAttribute(_refCharacter,"Ship.Cannons.Type")) return CANNON_TYPE_NONECANNON;
-	return int(_refCharacter.Ship.Cannons.Type);
+	return GetCannonTypeByBort(_refCharacter, "cannonl");
 }
 
 int GetCannonQuantity(ref refCharacter)
@@ -611,7 +619,7 @@ int GetMaxCrewQuantity(ref _refCharacter)
 	int shipType = int(_refCharacter.Ship.Type);
 	if(shipType<0) return 0;
 	if(shipType>=REAL_SHIPS_QUANTITY) return 0;
-	int maxCrew = int(GetBonusCrewQuartermaster(_refCharacter, int(RealShips[shipType].OptCrew), int(RealShips[shipType].MaxCrew)));
+	int maxCrew = int(GetBonusCrewQuartermaster(_refCharacter, int(RealShips[shipType].MaxCrew)));
 	maxCrew = int(float(maxCrew) * (1.0 + GetShipModifierBonus(_refCharacter, M_SHIP_MAXCREW)));
 	return maxCrew;
 }
@@ -619,11 +627,7 @@ int GetMaxCrewQuantity(ref _refCharacter)
 //boal optimal crew
 int GetOptCrewQuantity(ref _refCharacter)
 {
-	if(!CheckAttribute(_refCharacter,"Ship.Type")) return 0;
-	int shipType = int(_refCharacter.Ship.Type);
-	if(shipType<0) return 0;
-	if(shipType>=REAL_SHIPS_QUANTITY) return 0;
-	return int(RealShips[shipType].OptCrew);
+	return GetMaxCrewQuantity(_refCharacter);
 }
 
 int GetMinCrewQuantity(ref _refCharacter)
@@ -709,16 +713,14 @@ float GetSailPercent(ref _refCharacter) // ~!~ ???
 	if (!CheckAttribute(_refCharacter,"Ship.SP")) return 100.0;
 	float fSP = GetCharacterShipSP(_refCharacter);
 	if (fSP <= 0.0) return 100.0;
-	float fpsp = 100.0 * float(_refCharacter.Ship.SP) / fSP;
-	return fpsp;
+	return 100.0 * float(_refCharacter.Ship.SP) / fSP;
 }
 float GetHullPercent(ref _refCharacter)
 {
 	if (!CheckAttribute(_refCharacter, "Ship.HP")) return 100.0;
 	int iHP = GetCharacterShipHP(_refCharacter);
 	if (iHP <= 0) return 100.0;
-	float fphp = 100.0*float(_refCharacter.Ship.HP)/iHP;
-	return fphp;
+	return 100.0 * float(_refCharacter.Ship.HP) / iHP;
 }
 
 float GetHullPercentWithModifier(ref _refCharacter, int iModifier)
@@ -730,7 +732,7 @@ float GetHullPercentWithModifier(ref _refCharacter, int iModifier)
 	return fphp;
 }
 
-float GetSailRPD(ref _refCharacter) // процент ремонта парусов в день
+float GetSailRPD(ref _refCharacter, float approximation = 100.0) // процент ремонта парусов в день
 {
 	float repairSkill = GetSummonSkillFromNameToOld(_refCharacter, SKILL_REPAIR);
 
@@ -738,7 +740,6 @@ float GetSailRPD(ref _refCharacter) // процент ремонта парус�
 	if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.2;
 	else if (GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 1.00;
 	else if (CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.75;
-	else return 0.0;
 
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает 
@@ -752,21 +753,20 @@ float GetSailRPD(ref _refCharacter) // процент ремонта парус�
 
 	repairSkill *= SZN_GetModifierMtp(M_SEA_REPAIR_EFFICENCY, 1.0);
 
-	float damagePercent = 100.0 - GetSailPercent(_refCharacter);
+	float damagePercent = 100.0 - func_fmin(approximation, GetSailPercent(_refCharacter));
 	if (damagePercent == 0.0) return 0.0;
 
 	float ret = repairSkill*20.0 / damagePercent;
 	if (ret > damagePercent) ret = damagePercent;
 	return ret;  //boal
 }
-float GetHullRPD(ref _refCharacter) // процент ремонта корпуса в день
+float GetHullRPD(ref _refCharacter, float approximation = 100.0) // процент ремонта корпуса в день
 {
 	float repairSkill = GetSummonSkillFromNameToOld(_refCharacter, SKILL_REPAIR);
 	
 	if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.2;
 	else if (GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 1.00;
 	else if (CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.75;
-	else return 0.0;
 
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает
@@ -780,7 +780,7 @@ float GetHullRPD(ref _refCharacter) // процент ремонта корпу�
 
 	repairSkill *= SZN_GetModifierMtp(M_SEA_REPAIR_EFFICENCY, 1.0);
 
-	float damagePercent = 100.0 - GetHullPercent(_refCharacter);
+	float damagePercent = 100.0 - func_fmin(approximation, GetHullPercent(_refCharacter));
 	if(damagePercent == 0.0) return 0.0;
 
 	float ret = repairSkill*20.0 / damagePercent;
@@ -824,15 +824,15 @@ float GetHullPPP(ref _refCharacter) // количество досок на од
 	return ret;
 }
 // расчёт починки корпуса
-float GetHullRepairDay(ref _refCharacter, bool _qty) // процент ремонта корпуса в день с материалом
+float GetHullRepairDay(ref _refCharacter, bool _qty, float approximation = 100.0) // процент ремонта корпуса в день с материалом
 {
     float repPercent = 0.0;
     float matQ, tmpf;
     
     matQ = 0;	
-	if (GetHullPercent(_refCharacter) < 100.0 )
+	if (approximation < 100.0 || GetHullPercent(_refCharacter) < 100.0 )
 	{
-		repPercent = GetHullRPD(_refCharacter);
+		repPercent = GetHullRPD(_refCharacter, approximation);
 		matQ = repPercent*GetHullPPP(_refCharacter);
 		tmpf = GetRepairGoods(true,_refCharacter);
 		if (tmpf >= 0)
@@ -851,15 +851,15 @@ float GetHullRepairDay(ref _refCharacter, bool _qty) // процент ремо�
 	return repPercent;
 }
 
-float GetSailRepairDay(ref _refCharacter, bool _qty)			// расчёт починки парусов
+float GetSailRepairDay(ref _refCharacter, bool _qty, float approximation = 100.0)			// расчёт починки парусов
 {
     float repPercent = 0.0;
     float matQ, tmpf;
     
     matQ = 0;
-	if (GetSailPercent(_refCharacter) < GetAllSailsDamagePercent(_refCharacter) )
+	if (approximation < 100.0 || GetSailPercent(_refCharacter) < GetAllSailsDamagePercent(_refCharacter) )
 	{
-		repPercent = GetSailRPD(_refCharacter);
+		repPercent = GetSailRPD(_refCharacter, approximation);
 		matQ = repPercent*GetSailSPP(_refCharacter);
 		tmpf = GetRepairGoods(false,_refCharacter);
 		if (tmpf >= 0)
@@ -1562,17 +1562,13 @@ void SetBaseShipData(ref refCharacter)
 		}
 		if (!CheckAttribute(refShip,"Crew.Quantity")) 
 		{ 
-			refShip.Crew.Quantity = refBaseShip.OptCrew; // оптимальная команда 
+			refShip.Crew.Quantity = refBaseShip.maxCrew;
 		}
         
 		SetGoodsInitNull(refCharacter); // boal пееренс в метод
 		// новый опыт
-        if(!CheckAttribute(refCharacter, "ship.crew.Exp"))
-		{
-			refCharacter.Ship.Crew.Exp.Sailors   = 1 + rand(80);
-			refCharacter.Ship.Crew.Exp.Cannoners = 1 + rand(80);
-			refCharacter.Ship.Crew.Exp.Soldiers  = 1 + rand(80);
-		}
+		if(!CheckAttribute(refCharacter, "ship.crew.Exp")) SetCrewExp(refCharacter, float(1 + rand(80)));
+
 		int iGoodN = 0;
 		int iGoodR = 0;
 

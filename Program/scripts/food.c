@@ -15,6 +15,25 @@
 #define MAINTENANCE_MOD_RUM_LEFT 5
 #define MAINTENANCE_MOD_RUM_INFO 6
 
+string kstringTemp(string constantValue)
+{
+	switch (constantValue)
+	{
+		case "FOOD_BY_CREW": return kstring(FOOD_BY_CREW); break;
+		case "FOOD_BY_SLAVES": return kstring(FOOD_BY_SLAVES); break;
+		case "MEDICAMENT_BY_CREW": return kstring(MEDICAMENT_BY_CREW); break;
+		case "MEDICAMENT_BY_SLAVES": return kstring(MEDICAMENT_BY_SLAVES); break;
+		case "RUM_BY_CREW": return kstring(RUM_BY_CREW); break;
+		case "HUMAN_TURN_RATE_STEP_1": return kstring(HUMAN_TURN_RATE_STEP_1); break;
+		case "HUMAN_TURN_RATE_STEP_2": return kstring(HUMAN_TURN_RATE_STEP_2); break;
+		case "HUMAN_TURN_RATE_STEP_3": return kstring(HUMAN_TURN_RATE_STEP_3); break;
+		case "HUMAN_TURN_RATE_STEP_4": return kstring(HUMAN_TURN_RATE_STEP_4); break;
+		case "HUMAN_TURN_RATE_STEP_5": return kstring(HUMAN_TURN_RATE_STEP_5); break;
+	}
+
+	return "error";
+}
+
 // На сколько дней еды в эскадре
 int CalculateFood()
 {
@@ -466,6 +485,7 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 	object shipInfo;
 	SetShipMaintenanceInfo(rChar, &shipInfo);
 	int iCrewQty = GetCrewQuantity(rChar);
+	int maxCrew = GetMaxCrewQuantity(rChar);
 	int slavesQty = GetCargoGoods(rChar, GOOD_SLAVES);
 	int cn, morale, nMoraleDecreaseQ, iDeadCrew;
 	if (iCrewQty + slavesQty < 1) return;
@@ -482,15 +502,14 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 	DailyRumUpdate(rChar, IsCompanionTraveler, &shipInfo, iCrewQty);
 
 	iCrewQty = GetCrewQuantity(rChar);
-	// рассчет перегруза команды на мораль  и авторитет -->
-	if(iCrewQty > GetOptCrewQuantity(rChar) && !IsCharacterEquippedArtefact(rChar, "talisman4"))
+	if (!IsCharacterEquippedArtefact(rChar, "talisman4"))
 	{
 		float debuff = float(1+rand(3));
+		debuff *= func_fmax(0.3, float(iCrewQty) / float(maxCrew));
 		debuff *= (1-SZN_GetModifierMtp(M_CREW_MORALE_DEBUFF_MTP, 0.0, 0.0, 0.99));
 		AddCrewMorale(rChar, -int(debuff));
 		ChangeCharacterComplexReputation(pchar,"authority", -0.1);
 	} 
-	// рассчет перегруза команды на мораль <--
 
 	if (IsEquipCharacterByItem(pchar, "greenIdol")) AddCrewMorale(rChar, -1);
 	

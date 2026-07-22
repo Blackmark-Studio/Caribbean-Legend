@@ -1,0 +1,25 @@
+Alone_Citiz_First_time_text_1 {$rand(Selam|Merhaba|Esenlikler|İyi vakitler), $rand(yabancı|yolcu|seyyah)! $rand(Doğrusu, beni epey $rand(korkuttunuz|ürküttünüz).|Burada birine rastlamayı beklemiyordum.|Siz de kafanızı dağıtmaya mı geldiniz? İyi etmişsiniz.) Benim adım $npcName. $rand(Bir konuda yardımcı olabilir miyim?|Size nasıl faydam dokunur?|Bir şey mi istediniz?|Ne hizmet edebilirim?)}
+Alone_Citiz_First_time_l0 {$rand(Ormanda çığlıklarını kimse duymaz, $npcName.|Sahil Kardeşliği'nin ihtiyaçları için gönüllü-zorunlu bağışlar topluyorum.|Bu patikadan geçmenin ücretli olduğunu bilmiyor musun, $npcName?|Benim bölgemde öylece dolaşabileceğini mi sandın?|Yeni vergiyi duymadın mı? Aptalca tek başına orman gezilerine daha yeni koydular.) $rand(Hadi bakalım, ceplerini boşalt.|Haydi, eşyalarını ver.|Ben daha iyiyken kıymetlilerini paylaş bakalım.|Ceplerinde ne şıngırdıyor, bir görelim.|Kafanı kaybetmeden o şıkır şıkır paraları ver.)(Şans $ctx(Chance)%)}
+Alone_Citiz_First_time_l1 {Sadece selam vermeye gelmiştim, $npcName. Esen kal.}
+Alone_Citiz_First_time_text_2 {Yine merhaba. Bir şey mi istiyordunuz? Sanırım her şeyi konuştuk.}
+Alone_Citiz_First_time_l0_a {$rand(Evet, var bir şey.|Az daha unutuyordum...|Aslında doğru, istiyordum!|Doğru ya, istiyordum!) $rand(Ormanda çığlıklarını kimse duymaz, $npcName.|Sahil Kardeşliği'nin ihtiyaçları için gönüllü-zorunlu bağışlar topluyorum.|Bu patikadan geçmenin ücretli olduğunu bilmiyor musun, $npcName?|Benim bölgemde öylece dolaşabileceğini mi sandın?|Yeni vergiyi duymadın mı? Aptalca tek başına orman gezilerine daha yeni koydular.) $rand(Hadi bakalım, ceplerini boşalt.|Haydi, eşyalarını ver.|Ben daha iyiyken kıymetlilerini paylaş bakalım.|Ceplerinde ne şıngırdıyor, bir görelim.|Kafanı kaybetmeden o şıkır şıkır paraları ver. (Şans $ctx(Chance)%)}
+Alone_Citiz_First_time_l0_b {Sadece yürüyorum, $npcName, yanlış anlamayın.}
+Alone_Citiz_Bullying_Fail {Haraç alma başarısız}
+Alone_Citiz_Bullying_Success {Başarılı haraç alma}
+Alone_Citiz_Robbery_text_1 {$rand(Lanet olasıca alçak! Sana bir şey vermem!|Karşılaştığım ilk herifin sen olduğunu mu sanıyorsun? Hadi oradan!)}
+Alone_Citiz_Robbery_text_2 {$rand(Bende olanın hepsi bu.|Son lokmamı da alıyorsun. Eh, gökler bunu elbet yazar.|Bu dünya nereye gidiyor, insan bir adım bile rahat atamıyor.|Ne zamanlara kaldık, canını almadıkları sürece herkes seni soymaya, yolmaya bakıyor.) $rand(Al da defol git, alçak.|Bende olanın hepsi bu.|Alın. Başka hiçbir şeyim yok.|Olan bu kadar. Alın da beni rahat bırakın.)}
+Alone_Citiz_Robbery_l1 {$rand(Öyleyse eşyalarını cesedinden sökmem gerekecek.|Yanlış cevap.|Pekâlâ, şimdi hoş olmayan kısım başlıyor.|Harika. Ölüleri soymak çok daha kolaydır.)}
+Alone_Citiz_Robbery_l2 {İşte böyle. Sakın aptallık etme.}
+Alone_Citiz_AfterRobbery_text_1 {Beni zaten iliğime kadar soydun, alçak, daha ne istiyorsun?!}
+Alone_Citiz_AfterRobbery_l1 {Bir şey unutmuş muyum diye bakıyorum.}
+Alone_Citiz_ToRumours_first {$rand(Bana en iyisi bu handa hangi hikâyelerin dolaştığını anlat.|En iyisi bu civarda ne var ne yok, onu söyle.|En iyisi anlat bakalım dostum, karada hayat nasıl akıyor?)}
+Alone_Citiz_ToRumours_second {$rand(Bu handa hangi hikâyeler dolaşıyor?|Bu civarda ne var ne yok?|Karada hayat nasıl akıyor?)}
+Alone_Citiz_Rumours_posrep_1 {$rand(İşler böyle işte...|Belki bu sizi eğlendirir.)}
+Alone_Citiz_Rumours_answ_1 {$swear İlginç şeyler anlatıyorsun, $npcName. Başka bir şey biliyor musun?}
+Alone_Citiz_Rumours_posrep_2 {$rand(İşler böyle işte...|Belki bu sizi eğlendirir.)}
+Alone_Citiz_Rumours_answ_2 {$swear Bu çok ilginç! Başka haber var mı?}
+Alone_Citiz_Rumours_posrep_3 {~ Peki sizde haber var mı, kaptan?}
+Alone_Citiz_Rumours_answ_3 {$rand(Dünyada neler olmuyor ki, ama ne yazık ki bende haber yok.|Biraz acelem var, o yüzden başka sefere.)}
+Alone_Citiz_Rumours_Block {$rand(Ne yazık ki daha fazlasını bilmiyorum, gitmeme izin verin.|Sorularınızla beni yordunuz. Bağışlayın, ama işlerim beni bekliyor.)}
+Alone_Citiz_Rumours_Block_Ok {O hâlde hoşça kal.}
+Alone_Citiz_Rumours_Bye {$rand(Teşekkür ederim, artık müsaadenizi istemeliyim.|Esenlikler.)}

@@ -223,9 +223,7 @@ void Terrapin_RoberAttack(string qName) // Мартэн атакуэ
 	sld.Ship.Mode = "pirate";
 	sld.alwaysenemy = true;
 	sld.ship.Crew.Morale = iRate;
-	sld.Ship.Crew.Exp.Sailors = iRate;
-	sld.Ship.Crew.Exp.Cannoners = iRate;
-	sld.Ship.Crew.Exp.Soldiers = iRate;
+	SetCrewExp(sld, float(iRate));
 	Group_AddCharacter("Rober_Group", "Rober");
 	Group_SetGroupCommander("Rober_Group", "Rober");
 	Group_SetTaskAttack("Rober_Group", PLAYER_GROUP);
@@ -347,9 +345,7 @@ void CreateGriffondor() // малый фрегат Гриффондор
 	sld.dialog.currentnode = "griffondor_officer";
 	sld.greeting = "patrol";
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	NullCharacterGoods(sld);
 	AddCharacterGoods(sld, GOOD_BALLS, 700);
 	AddCharacterGoods(sld, GOOD_GRAPES, 700);
@@ -446,9 +442,7 @@ void Terrapin_CreateRoberConvoy()//создаем испанский конво�
 		sld.skill.Accuracy = iRate;
 		sld.skill.Cannons = iRate;
 		sld.Ship.Crew.Morale = iRate;
-		sld.Ship.Crew.Exp.Sailors = iRate;
-		sld.Ship.Crew.Exp.Cannoners = iRate;
-		sld.Ship.Crew.Exp.Soldiers = iRate;
+		SetCrewExp(sld, float(iRate));
 		TakeNItems(sld, "potion2", 1);
 		TakeNItems(sld, "potion3", 2);
 		SetCharacterPerk(sld, "Energaiser");
@@ -628,9 +622,7 @@ void Terrapin_SetCromvelScuadron(string qName) //эскадра Кромвеля
 		sld.Ship.Mode = "war";
 		sld.AlwaysEnemy = true;
 		sld.ship.Crew.Morale = 50+(60-i*12);
-		sld.Ship.Crew.Exp.Sailors = 50+(60-i*12);
-		sld.Ship.Crew.Exp.Cannoners = 50+(60-i*12);
-		sld.Ship.Crew.Exp.Soldiers = 50+(60-i*12);
+		SetCrewExp(sld, float(50+(60-i*12)));
 		if (i < 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (i < 5) SetRandGeraldSail(sld, ENGLAND);
 		Group_AddCharacter("CromvelGroup", "Cromvel_cap_"+i);
@@ -775,9 +767,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 		SetCrewQuantityOverMax(sld, int(hcrew/fSpace));
 		sld.ship.HP = int(int(sld.ship.HP)/fDamage);
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
-		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
-		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
-		sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*5+(60-i*12);
+		SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*5+(60-i*12)));
 		if (i < 4 && MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 		if (i < 5) SetRandGeraldSail(sld, SPAIN);
 		Group_AddCharacter("MartiniqueQuestSiege", "SPsiege_cap_"+i);
@@ -2019,9 +2009,7 @@ void GuardOT_CreateDiegoShips(string qName) //
 	sld.alwaysEnemy = true;
 	sld.Coastal_Captain = true;
 	sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*10;
+	SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*10));
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("Diegohaleon_group", "Diegohaleon_cap");
 	Group_SetGroupCommander("Diegohaleon_group", "Diegohaleon_cap");
@@ -2176,9 +2164,7 @@ void GuardOT_CreateCatocheSquadron(string qName) // эскадра Диего
 		sld.alwaysEnemy = true;
 		sld.Coastal_Captain = true;
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*7+30;
+		SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*7+30));
 		if (MOD_SKILL_ENEMY_RATE > 4 && i < 3) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Catoche_group", "GOT_catochecap_"+i);
 	}
@@ -2524,9 +2510,7 @@ void GuardOT_SetWillySquadron(string qName) // ставим эскадру Па�
 	sld.ShipEnemyDisable  = true; //не обижаться на выстрелы
 	LAi_SetImmortal(sld, true);
 	sld.ship.Crew.Morale = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Sailors = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Cannoners = 50+MOD_SKILL_ENEMY_RATE*5;
-	sld.Ship.Crew.Exp.Soldiers = 50+MOD_SKILL_ENEMY_RATE*5;
+	SetCrewExp(sld, float(50+MOD_SKILL_ENEMY_RATE*5));
 	if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("Willy_group", "Willy");
 	int iShip, iCannon;
@@ -2567,9 +2551,7 @@ void GuardOT_SetWillySquadron(string qName) // ставим эскадру Па�
 		sld.ShipEnemyDisable  = true; //не обижаться на выстрелы
 		LAi_SetImmortal(sld, true);
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*7+30;
-		sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*7+30;
+		SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*7+30));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Willy_group", "Willy_cap_"+i);
 	}
@@ -3414,9 +3396,7 @@ void Ksochitam_CreateMaldonadoSquadron(string qName)
 		sld.alwaysEnemy = true;
 		sld.Coastal_Captain = true;
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*5+50;
-		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*5+50;
-		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*5+50;
-		sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*5+50;
+		SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*5+50));
 		if (MOD_SKILL_ENEMY_RATE > 4 && i < 3) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Maldonado_group", "Maldonadocap_"+i);
 	}
@@ -3706,9 +3686,7 @@ void Tieyasal_CreateITShips(string qName) // ставим корабли у Ис
 		sld.alwaysEnemy = true;
 		sld.AlwaysSandbankManeuver = true;
 		sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*3+70;
-		sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*3+70;
-		sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*3+70;
-		sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*3+70;
+		SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*3+70));
 		SetCharacterPerk(sld, "MusketsShoot");
 		SetCharacterPerk(sld, "LongRangeGrappling");
 		SetCharacterPerk(sld, "GrapplingProfessional");

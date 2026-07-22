@@ -1,0 +1,90 @@
+Enc_Carib_dialog_First_time_text_1 {Tebrikler! Bu bir hata. Jason'la iletişime geçip bunu nasıl ve nerede bulduğunu anlat. Kolay gelsin!}
+Enc_Carib_dialog_First_time_l1_1 {Hemen yapacağım!}
+Enc_Carib_dialog_war_indian_text_1 {$rand(Denizin oğlu, selam sana! Senin hakkında duyduklarım var. Topraklarımızda özgürce dolaşabilirsin.|$npcName seni selamlıyor, solgun yüzlü kardeş. Seni misafirimiz olarak görmekten memnunuz.|Seni selamlıyorum, cesur beyaz yüzlü savaşçı! $npcName Kızılderililerin bir dostuyla tanıştığına memnun oldu. Huzur içinde git!)}
+Enc_Carib_dialog_war_indian_l1_1 {$rand(Ve sana da selam, kızıl derili kardeşim! Sana iyi avlar dilerim!|Selam, cesur savaşçı! Tanrılar sana ve ailene bereket versin!)}
+Enc_Carib_dialog_war_indian_l2_1 {$rand(Sana ilginç gelebilecek bir şeyim var, kızıl derili kardeşim. Takas yapmak ister misin?|Sana ilginç bir şey satabilirim, cesur savaşçı. Alışveriş yapmak ister misin?)}
+Enc_Carib_dialog_war_indian_text_2 {$rand(Dur, soluk yüz! Hangi hakla topraklarımda yürüyorsun?|Dur, beyaz adam! Burası atalarımın ve benim toprağım!|Dur, soluk yüzlü! Bu topraklarda işin yok)}
+Enc_Carib_dialog_war_indian_l1_2 {$rand(Burası senin toprağın mı? Defol git, kızarmış suratlı pislik!|Şuna bak - konuşan bir maymun! Şimdi defol!)}
+Enc_Carib_dialog_war_indian_l2_2 {$rand(Barış için geldim, kızıl derili savaşçı. Boş yere dövüşmemeliyiz.|Sana ya da toprağına düşman değilim, savaşçı. Barış için geldim.)}
+Enc_Carib_dialog_war_indian_l3_1 {$rand(Seninle ticaret yapmak için geldim, kavga etmek için değil.|Ben Kızılderililerle savaşmam. Onlarla ticaret yaparım.)}
+Enc_Carib_dialog_war_indian_1_text_1 {$rand(Doğduğun güne lanet edeceksin, solgun suratlı köpek... Kalbini çıkarıp ateşte kızartacağım!|Sana taş yedireceğim, solgun suratlı köpek! Dizlerinin üstünde ölüm için yalvarırken sana güleceğiz, beyaz it!)}
+Enc_Carib_dialog_war_indian_1_l1_1 {$rand(Hâlâ o pis ağzını kapatamıyor musun, boyalı korkuluk? Sürükleyip geldiğin ormana geri yollayacağım seni!|Bana tehdit mi savuruyorsun, pislik?! Şimdi geldiğin ağaca geri tırman bakalım!)}
+Enc_Carib_dialog_war_indian_2_1_text_1 {$rand(Sesinin doğru söylediğini duyuyorum. Bugün baltalarımızı sana karşı kaldırmayacağız. Huzurla git, soluk yüzlü.|Beyaz yüz nadiren huzur getirir, ama gözlerinde doğruyu söylediğini görüyorum. Şimdi git.)}
+Enc_Carib_dialog_war_indian_2_1_l1_1 {$rand(Akıllıca bir karar, savaşçı. Sana bol şans.|Anlaştığımıza sevindim, savaşçı.)}
+Enc_Carib_dialog_war_indian_2_2_text_1 {$rand(Yalancısın, soluk yüzlü köpek! Buraya Kızılderilileri öldürmeye geldin! Savaşa hazır mısın, soluk yüzlü?!|Sen Kızılderilileri öldürüyorsun. Beyaz dil yalancı dildir. Onu keserim ve ateşte kızartırım!)}
+Enc_Carib_dialog_war_indian_2_2_l1_1 {$rand(Pekâlâ dostum, o zaman beni suçlama. Tanrı şahidimdir, bundan kaçınmaya çalıştım...|Pekala, sen istedin, savaşçı.)}
+Enc_Carib_dialog_war_indian_3_1_text_1 {Ticaret mi? Beyaz adamın silahına ihtiyacımız var. O soluk yüzlünün tek elle kullanılan ateşli silahı! Bunun için mallarımızı takas ederiz! Takas edecek bir ateşli silahın var mı?}
+Enc_Carib_dialog_war_indian_3_1_l1_1 {Hmm. Evet, biliyorum. Peki bana karşılığında ne vereceksin?}
+Enc_Carib_dialog_war_indian_3_1_l2_1 {Sen alçak! Sonra da tabancalarımla kolonistleri mi vuracaksın? Hayır, buna izin vermem! Size gelince, çakallar, şimdi hepinizi doğrayacağım...}
+Enc_Carib_dialog_war_indian_3_1_text_2 {Aradığımız şey sende yok, soluk yüz... Savaş ganimetimiz olacaksın!}
+Enc_Carib_dialog_war_indian_3_1_l1_2 {Denemeye cesaretin varsa, korkuluk...}
+Enc_Carib_dialog_war_indian_3_2_text_1 {$rand(Beyaz suratlı köpeklerle ticaret yapmayız. Öldürür, alırız!|Biz kirli Miskito ya da Arawak değiliz, soluk yüzlülerle ticaret yapmayız! Onları öldürür, savaş ganimetlerini alırız!)}
+Enc_Carib_dialog_war_indian_3_2_l1_1 {$rand(Pekâlâ, o zaman soy beni, alçak!|Önce kılıcımı elimden alman gerekecek, pislik!)}
+Enc_Carib_dialog_war_indian_trade_text_1 {Sen neyin varsa gösterirsin, biz de ona ne vereceğimizi söyleriz.}
+Enc_Carib_dialog_war_indian_trade_link_dyn_1 {Offer $ctx(valueText).}
+Enc_Carib_dialog_gun_1_gun_1 {pistol1}
+Enc_Carib_dialog_gun_1_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_1_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_1_text_1 {Hey-ho! Bunun için sana vereceğiz $ctx(offerText).}
+Enc_Carib_dialog_gun_1_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_1_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_gun_2_gun_1 {pistol2}
+Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_2_text_1 {Hey-ho! Kurnaz bir silah... Bunun için sana bir şeyler vereceğiz $ctx(offerText).}
+Enc_Carib_dialog_gun_2_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_2_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_gun_3_gun_1 {pistol3}
+Enc_Carib_dialog_gun_3_item_1 {jewelry5$ctx(qty)}
+Enc_Carib_dialog_gun_3_stext_1 {$ctx(qtyText) this beautiful pearl}
+Enc_Carib_dialog_gun_3_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_3_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_3_text_1 {Hey-ho! Güçlü bir silah! Birçok, birçok düşmanı öldürür! Onun için sana veriyoruz $ctx(offerText).}
+Enc_Carib_dialog_gun_3_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_3_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_gun_4_gun_1 {pistol4}
+Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_2 {this amulet}
+Enc_Carib_dialog_gun_4_text_1 {Hey-ho! Korkunç bir silah... Bunu sana bunun karşılığında vereceğiz $ctx(offerText).}
+Enc_Carib_dialog_gun_4_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_4_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_gun_5_gun_1 {pistol5}
+Enc_Carib_dialog_gun_5_item_1 {jewelry7}
+Enc_Carib_dialog_gun_5_item_2 {jewelry8}
+Enc_Carib_dialog_gun_5_item_3 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_1 {$ctx(qtyText) this beautiful and precious petrified tar}
+Enc_Carib_dialog_gun_5_item_4 {indian_$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_2 {this amulet}
+Enc_Carib_dialog_gun_5_text_1 {Hey-ho! Güzel ve kudretli bir silah! Birçok, birçok düşmanı öldürdü! Bunun karşılığında sana veriyoruz $ctx(offerText).}
+Enc_Carib_dialog_gun_5_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_5_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_gun_6_gun_1 {pistol6}
+Enc_Carib_dialog_gun_6_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_6_item_2 {amulet_$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_2 {this amulet}
+Enc_Carib_dialog_gun_6_text_1 {Hey-ho! Güzel bir silah... Karşılığında sana bir şeyler vereceğiz $ctx(offerText).}
+Enc_Carib_dialog_gun_6_l1_1 {Anlaştık!}
+Enc_Carib_dialog_gun_6_l2_1 {Hayır. Asla.}
+Enc_Carib_dialog_war_indian_trade_agree_text_1 {Güzel. İşte malların. Artık ticaret yapmayacağız. Sonra tekrar gel. Daha iyi ateşli silah getirene daha fazlasını veririz. Şimdi git!}
+Enc_Carib_dialog_war_indian_trade_agree_l1_1 {Elveda, kızıl derili savaşçı.}
+Enc_Carib_dialog_war_indian_trade_agree_text_2 {Pekâlâ. İşte malların. Takas edecek başka ateşli silahların var mı?}
+Enc_Carib_dialog_war_indian_trade_agree_l1_2 {Var. Alacak mısın?}
+Enc_Carib_dialog_war_indian_trade_agree_l2_1 {Hayır. Bir dahaki sefere daha fazlasını getireceğim.}
+Enc_Carib_dialog_war_indian_trade_exit_text_1 {Getir. Daha iyi bir ateşli silah getir, sana daha fazlasını verelim. Şimdi git!}
+Enc_Carib_dialog_war_indian_trade_exit_l1_1 {Görüşürüz, savaşçı...}
+Enc_Carib_dialog_war_indian_trade_bad_text_1 {O zaman her şeyi bedavaya alıyoruz, soluk yüzlü!}
+Enc_Carib_dialog_war_indian_trade_bad_l1_1 {Deneyebilirsin...}
+Enc_Carib_dialog_peace_indian_text_1 {$rand(Selam, beyaz adam. Ormanımızda ne arıyorsun?|Ormanımız çok tehlikelidir. Burada ne yapıyorsun?|Buraya ne getirdi seni, cesur beyaz yüz?)}
+Enc_Carib_dialog_peace_indian_l1_1 {$rand(Yoldan geçiyordum sadece, kırmızı tenli dostum. Sanırım bu yolda ikimiz için de yeterince yer var?|Selamlar, ormanın oğlu! Burada işim var ve Kızılderililerle savaşmam.)}
+Enc_Carib_dialog_peace_indian_l2_1 {$rand(Ve neden bilmek istiyorsun? Kendi yoluna git ve beladan uzak dur!|Kendi yoluna git, kızıl tenli. Seninle konuşacak vaktim yok.)}
+Enc_Carib_dialog_peace_indian_1_text_1 {$rand(Biz barışçıl insanlarız. Beyaz adamlarla düşman değiliz. Git, ama topraklarımızda dikkatli ol!|Hintli dostlarının solgun yüzlü arkadaşıyla tanıştığıma memnun oldum. Huzurla git, denizin oğlu!)}
+Enc_Carib_dialog_peace_indian_1_l1_1 {$rand(Sana da bol şans, selva'nın oğlu...|Elveda, kızıl derili dostum.)}
+Enc_Carib_dialog_peace_indian_2_text_1 {$rand(Biz barışçıl avcılarız. Ama topraklarımızda soluk yüzlülerin böyle konuşmasına asla izin vermeyiz!|Beyaz adamlarla savaşmayız, ama eğer beyaz adamlar bize hakaret ederse, atalarımızın bize öğrettiği gibi karşılık veririz!)}
+Enc_Carib_dialog_peace_indian_2_l1_1 {$rand(Hâlâ o pis ağzını kapatamıyor musun, boyalı korkuluk? Sürükleyip geldiğin ormana geri göndereceğim seni!|Bana tehdit mi savuruyorsun, pislik?! Şimdi geldiğin ağaca geri tırmanacaksın!)}

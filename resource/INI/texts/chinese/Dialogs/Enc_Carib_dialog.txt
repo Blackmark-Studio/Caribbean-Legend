@@ -1,0 +1,90 @@
+Enc_Carib_dialog_First_time_text_1 {恭喜! 这是一个漏洞。 联系杰森并告诉他你是如何以及在哪里遇到这个漏洞的。 祝好!}
+Enc_Carib_dialog_First_time_l1_1 {我会立即这么做!}
+Enc_Carib_dialog_war_indian_text_1 {$rand(向你致敬, 海洋之子! 我听说过你。 你可以在我们的土地上安心行走。 |$npcName向你问候, 白脸兄弟。 我们很高兴见到你这位客人。 |我问候你, 勇敢的白脸战士! $npcName很高兴见到印第安人的朋友。 平安前行! )}
+Enc_Carib_dialog_war_indian_l1_1 {$rand(也向你致敬, 红皮肤的兄弟! 祝你狩猎顺利! |问候你, 勇敢的战士! 愿神灵保佑你和你的家人! )}
+Enc_Carib_dialog_war_indian_l2_1 {$rand(我有一些可能让你感兴趣的东西, 红皮肤的兄弟。 想交易吗? |我可以提供一些有趣的东西给你买, 勇敢的战士。 想交易吗? )}
+Enc_Carib_dialog_war_indian_text_2 {$rand(停下, 白脸! 你有什么权利在我的土地上行走? |停下, 白人! 你在我祖先的土地和我的土地上! |停下, 白脸! 你不属于我的土地)}
+Enc_Carib_dialog_war_indian_l1_2 {$rand(你的土地? 滚开, 你这红皮肤的混蛋! |看看他 - 会说话的猿猴! 现在滚开! )}
+Enc_Carib_dialog_war_indian_l2_2 {$rand(我是和平而来, 红皮肤的战士。 我们不该无缘无故地战斗。 |我不是你和你土地的敌人, 战士。 我是和平而来。 )}
+Enc_Carib_dialog_war_indian_l3_1 {$rand(我是来和你交易的, 不是来战斗的。 |我不与印第安人战斗。 我与他们交易。 )}
+Enc_Carib_dialog_war_indian_1_text_1 {$rand(你会为出生感到遗憾, 白脸狗... 我会挖出你的心在火上烤! |我会让你吃石头, 白脸狗! 我们会嘲笑你跪在地上求死, 白杂种! )}
+Enc_Carib_dialog_war_indian_1_l1_1 {$rand(你还不能闭上你那臭嘴吗, 涂漆的稻草人? 我会把你赶回你来自的丛林! |你敢威胁我, 混蛋? ! 好吧, 现在你得爬回你刚下来的那棵树! )}
+Enc_Carib_dialog_war_indian_2_1_text_1 {$rand(我听到你的声音是真诚的。 我们今天不向你亮出斧头。 平安前行, 白脸。 |白脸很少带来和平, 但我在你眼中看到你说的是实话。 现在走吧。 )}
+Enc_Carib_dialog_war_indian_2_1_l1_1 {$rand(明智的决定, 战士。 祝你好运。 |我很高兴我们达成了共识, 战士。 )}
+Enc_Carib_dialog_war_indian_2_2_text_1 {$rand(你在撒谎, 白脸杂种! 你来到这里是为了杀印第安人! 准备战斗吧, 白脸? ! |你杀印第安人。 白人的舌头是说谎的舌头。 我会把它割下来放在火上烤! )}
+Enc_Carib_dialog_war_indian_2_2_l1_1 {$rand(好吧, 伙计, 那就别怪我了。 天知道, 我试过避免这样... |好吧, 这是你自找的, 战士。 )}
+Enc_Carib_dialog_war_indian_3_1_text_1 {交易? 我们需要白人的武器。 白脸的一种火器! 用它我们可以交易我们的商品! 你有可以交易的火器吗?}
+Enc_Carib_dialog_war_indian_3_1_l1_1 {嗯。 我有。 你会给我什么作为交换?}
+Enc_Carib_dialog_war_indian_3_1_l2_1 {你这无赖! 然后你会用我的手枪射击殖民者吗? 不, 那不会发生! 至于你们这些豺狼, 我现在就把你们都砍倒...}
+Enc_Carib_dialog_war_indian_3_1_text_2 {你没有我们想要的东西, 白脸... 你将成为我们的战利品!}
+Enc_Carib_dialog_war_indian_3_1_l1_2 {如果你敢, 就试试...}
+Enc_Carib_dialog_war_indian_3_2_text_1 {$rand(我们不与白脸狗交易。 我们杀人并夺取! |我们不是肮脏的米斯基托人或阿拉瓦克人, 我们不与白脸交易! 我们杀了他们并获得战利品! )}
+Enc_Carib_dialog_war_indian_3_2_l1_1 {$rand(好吧, 那试试抢劫我吧, 无赖! |首先, 你需要从我这里夺走我的军刀, 你们这些垃圾! )}
+Enc_Carib_dialog_war_indian_trade_text_1 {你展示你有的东西, 我们会说我们为此给你什么。}
+Enc_Carib_dialog_war_indian_trade_link_dyn_1 {提供$ctx(valueText)。}
+Enc_Carib_dialog_gun_1_gun_1 {pistol1}
+Enc_Carib_dialog_gun_1_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_1 {$ctx(qtyText) 瓶优质治疗药水}
+Enc_Carib_dialog_gun_1_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_2 {$ctx(qtyText) 颗这颗美丽的宝石}
+Enc_Carib_dialog_gun_1_text_1 {嘿嗬! 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_1_l1_1 {成交!}
+Enc_Carib_dialog_gun_1_l2_1 {不。 没门。}
+Enc_Carib_dialog_gun_2_gun_1 {pistol2}
+Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) 瓶优质治疗药水}
+Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) 颗这颗美丽的宝石}
+Enc_Carib_dialog_gun_2_text_1 {嘿嗬! 狡猾的武器... 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_2_l1_1 {成交!}
+Enc_Carib_dialog_gun_2_l2_1 {不。 没门。}
+Enc_Carib_dialog_gun_3_gun_1 {pistol3}
+Enc_Carib_dialog_gun_3_item_1 {jewelry5$ctx(qty)}
+Enc_Carib_dialog_gun_3_stext_1 {$ctx(qtyText) 颗这颗美丽的珍珠}
+Enc_Carib_dialog_gun_3_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_3_stext_2 {$ctx(qtyText) 颗这颗美丽的宝石}
+Enc_Carib_dialog_gun_3_text_1 {嘿嗬! 强大的武器! 能杀死很多敌人! 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_3_l1_1 {成交!}
+Enc_Carib_dialog_gun_3_l2_1 {不。 没门。}
+Enc_Carib_dialog_gun_4_gun_1 {pistol4}
+Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) 白人视若生命的金属块}
+Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_2 {这个护身符}
+Enc_Carib_dialog_gun_4_text_1 {嘿嗬! 可怕的武器... 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_4_l1_1 {成交!}
+Enc_Carib_dialog_gun_4_l2_1 {不, 没门。}
+Enc_Carib_dialog_gun_5_gun_1 {pistol5}
+Enc_Carib_dialog_gun_5_item_1 {jewelry7}
+Enc_Carib_dialog_gun_5_item_2 {jewelry8}
+Enc_Carib_dialog_gun_5_item_3 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_1 {$ctx(qtyText) 块美丽而珍贵的石化焦油}
+Enc_Carib_dialog_gun_5_item_4 {indian_$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_2 {这个护身符}
+Enc_Carib_dialog_gun_5_text_1 {嘿嗬! 美丽而强大的武器! 能杀死很多敌人! 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_5_l1_1 {成交!}
+Enc_Carib_dialog_gun_5_l2_1 {No。 No way.}
+Enc_Carib_dialog_gun_6_gun_1 {pistol6}
+Enc_Carib_dialog_gun_6_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_1 {$ctx(qtyText) 白人视若生命的金属块}
+Enc_Carib_dialog_gun_6_item_2 {amulet_$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_2 {这个护身符}
+Enc_Carib_dialog_gun_6_text_1 {嘿嗬! 实用的武器... 我们用$ctx(offerText)来换它。}
+Enc_Carib_dialog_gun_6_l1_1 {成交!}
+Enc_Carib_dialog_gun_6_l2_1 {不, 没门。}
+Enc_Carib_dialog_war_indian_trade_agree_text_1 {好。 这是你的货物。 我们不再交易了。 以后再来。 更好的火器我们会给更多。 现在走吧!}
+Enc_Carib_dialog_war_indian_trade_agree_l1_1 {再见, 红皮肤的战士。}
+Enc_Carib_dialog_war_indian_trade_agree_text_2 {很好。 这是你的货物。 你还有更多火器要交易吗?}
+Enc_Carib_dialog_war_indian_trade_agree_l1_2 {我有。 你要买吗?}
+Enc_Carib_dialog_war_indian_trade_agree_l2_1 {不。 下次我会带更多来。}
+Enc_Carib_dialog_war_indian_trade_exit_text_1 {带来吧。 更好的火器我们会给更多。 现在走吧!}
+Enc_Carib_dialog_war_indian_trade_exit_l1_1 {再见, 战士...}
+Enc_Carib_dialog_war_indian_trade_bad_text_1 {那么我们就免费拿走一切, 白脸!}
+Enc_Carib_dialog_war_indian_trade_bad_l1_1 {你可以试试...}
+Enc_Carib_dialog_peace_indian_text_1 {$rand( hail, 白人。 你在我们的丛林里需要什么? |我们的丛林非常危险。 你在这里做什么? |是什么把你带到这里来的, 勇敢的白脸? )}
+Enc_Carib_dialog_peace_indian_l1_1 {$rand(我只是路过, 我的红皮肤朋友。 我相信这条路上有足够的空间供我们两人通行? |问候你, 丛林之子! 我是来这里办事的, 我不与印第安人作战。 )}
+Enc_Carib_dialog_peace_indian_l2_1 {$rand(你为什么需要知道? 走你自己的路, 远离麻烦! |走你自己的路, 红皮肤的人。 我没有时间和你说话。 )}
+Enc_Carib_dialog_peace_indian_1_text_1 {$rand(我们是和平的人民。 我们不是白人的敌人。 走吧, 但在我们的土地上要小心! |我很高兴见到印第安人的白脸朋友。 平安地走吧, 海洋之子! )}
+Enc_Carib_dialog_peace_indian_1_l1_1 {$rand(也祝你好运, 丛林之子... |再见, 红皮肤的朋友。 )}
+Enc_Carib_dialog_peace_indian_2_text_1 {$rand(我们是和平的猎人。 但是当白脸在我们的土地上这样说话时, 我们不会容忍! |我们不与白人作战, 但如果白人冒犯我们, 我们会按照我们祖先教导的方式回应! )}
+Enc_Carib_dialog_peace_indian_2_l1_1 {$rand(你还不能闭上你那臭嘴吗, 涂漆的稻草人? 我会把你赶回你来自的丛林! |你敢威胁我,人渣? ! 现在你得爬回你刚下来的那棵树! )}

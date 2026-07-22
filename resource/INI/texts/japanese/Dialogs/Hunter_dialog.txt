@@ -1,0 +1,58 @@
+Hunter_dialog_First_time_text_1 {$fullName! 俺たちはずいぶん長い間お前を追ってきたんだが、ついにお前は俺たちのものになったぜ。}
+Hunter_dialog_First_time_l1_1 {お前は誰だ、俺に何の用だ？}
+Hunter_dialog_meeting_text_1 {$ctx(valueText) お前の首にかなりの賞金がかけられてるんだ。どこの植民地に連れて行っても、 死んでいようが生きていようが報酬はもらえるってわけさ。}
+Hunter_dialog_meeting_l1_1 {聞け、俺に構わず立ち去ってくれたら金を払うぞ。}
+Hunter_dialog_meeting_l2_1 {$manWoman(失礼ですが、あなたは勘違いしているようです。私は $ctx(personName) - この地で名の知れた商人だ。|失礼ですが、何かお間違いではありませんか。私はただの普通の娘ですし、父は $ctx(personName) - この地で名の知れた商人だ。).}
+Hunter_dialog_meeting_l3_1 {よし、運試しをしてみてもいいぜ、もし望むならな。}
+Hunter_dialog_lier_text_1 {「おお！本当に勘違いかもしれません。どうかお許しください。」 $sir.}
+Hunter_dialog_lier_l1_1 {そういうこともあるさ、気にすんな…}
+Hunter_dialog_lier_text_2 {俺はお前が嘘をついてると思うぜ！}
+Hunter_dialog_lier_l1_2 {聞け、俺に構わず立ち去ってくれたら金を払うぞ。}
+Hunter_dialog_lier_l2_1 {よし、運試しをしてみてもいいぜ、望むならな。}
+Hunter_dialog_Cost_Head_text_1 {私はそう思う $ctx(hunterCost) ペソで十分だぜ。}
+Hunter_dialog_Cost_Head_l1_1 {でも、そんな金は持ってねえんだ。}
+Hunter_dialog_Cost_Head_l1_2 {ほら、金だ。受け取って、とっとと失せろ。}
+Hunter_dialog_Cost_Head_l2_1 {こんな大金をお前らみたいなろくでなしに渡すくらいなら……ここで全員ぶった斬ってやるぜ！}
+Hunter_dialog_NoMoney_text_1 {その場合、俺たちの話はこれで終わりだ！}
+Hunter_dialog_NoMoney_l1_1 {俺を生きたまま捕まえられると思うな。}
+Hunter_dialog_TreasureHunter_text_1 {「待て、」 $manWoman(相棒|娘)…お前、何か面白いものを持ってるんじゃねえか。仲間同士なら見つけた宝は分け合うべきだと思わねえか？}
+Hunter_dialog_TreasureHunter_l1_1 {聞けよ、俺に構わずにいてくれたら金を払うぜ。}
+Hunter_dialog_TreasureHunter_l2_1 {$manWoman(失礼ですが、あなたは勘違いされているようです。私は $ctx(personName) - この地で名の知れた市民だが、決して財宝探しの者ではない。|失礼ですが、何かお間違いではありませんか。私はただの普通の娘で、宝探しなんてしません。それに、私の父は $ctx(personName) - この辺りでは有名な市民だ)!}
+Hunter_dialog_TreasureHunter_l3_1 {どうやら、そろそろお前らの首と胴体を引き離す時が来たようだな。}
+Hunter_dialog_TreasureHunterLier_text_1 {「おお！それなら、俺たちが間違っていたかもしれねえな。どうか許してくれ、」 $sir.}
+Hunter_dialog_TreasureHunterLier_l1_1 {そういうこともあるさ、気にすんな…}
+Hunter_dialog_TreasureHunterLier_text_2 {俺はお前が嘘をついてると思うぜ！}
+Hunter_dialog_TreasureHunterLier_l1_2 {ならば俺の刃の歌を聞け。}
+Hunter_dialog_TreasureCaptain_text_1 {$rand(お前が俺の宝の地図を奪った張本人か！そろそろ奪ったものを全部返してもらおうか…|おお、ライバルか！俺の財宝の重みに押しつぶされて、お前はそう遠くへは行けねえぞ……|ふん、やっと追いついたぜ！この洞窟の財宝は全部俺のもんだ、わかったか？さあ、持ち物を全部出しな、相棒！)}
+Hunter_dialog_TreasureCaptain_l1_1 {$rand(俺の刃に会う時が来たぜ、相棒！|お前の宝だと？それは昔の話だな、今は俺のものだぜ！|俺はお前の腹をこの刃でぶちまけてやりてえんだぜ、相棒。)}
+Hunter_dialog_TreasureOfficer_text_1 {$rand(そうか、大佐の言った通り、この洞窟に宝が隠されていたんだな……ポケットの中身を全部出せ、水夫！|とうとうこの忌々しいジャングルや茨、沼地を追い回して、やっとお前に追いついたぜ。さあ、野郎、 持ってるもの全部出しやがれ……|おい、水夫！その海賊の財宝は俺たちのもんだ、だから汚ねえ手をどけや！)}
+Hunter_dialog_TreasureOfficer_l1_1 {$rand(まさか軍人からそんなことを言われるとは思わなかったぜ！だがまあ、どうせお前に一発教えてやるさ……|あいつを見ろよ、士官の制服を着た海賊だぜ……|確かに、最近じゃ兵士も海賊も大して変わらねえな……)}
+Hunter_dialog_ReasonToFast_THunter_1_text_1 {そして、ついに俺たちの金が来たぜ。少なくとも待った甲斐はあったな。}
+Hunter_dialog_ReasonToFast_THunter_1_l1_1 {$rand(何をおっしゃっているのです、旦那方？私はオランダ西インド会社の代表者で、ここを通りかかっただけです！ 海岸の景色を眺めるために立ち寄っただけですよ！|私を誰かと間違えているようですね。私は $manWoman(「フランソワ・マリー・パガネル」 |「マリア＝テレジア」 )博物学者だ。ここでこの地の植物の標本を集めているんだ。\nユッカの葉のコレクションを見てみないか？面白いものがいくつかあるぜ！)}
+Hunter_dialog_ReasonToFast_THunter_1_l2_1 {何の用だ！？俺の邪魔をするんじゃねえ！}
+Hunter_dialog_ReasonToFast_THunter_2_text_1 {「ああ、いやだ」 $manWoman(親愛なる友よ|「俺の可愛い娘」)。それは通用しない。我々はお前がその地図を持っていたことを確かに知っているんだ $ctx(mapOwnerName)。それに、あいつはとんでもない守銭奴で、金でいっぱいの箱が中からはち切れそうだったんだ。だから、 俺たちが手ぶらで帰るわけがねえだろう。}
+Hunter_dialog_ReasonToFast_THunter_2_l1_1 {お前の言う通りだ。確かに宝箱は満杯だった。\nだが、お前には渡さねえ。あの洞窟に行ってみるといい、穴だらけのバケツが二つ三つまだ残ってるはずだぜ。}
+Hunter_dialog_ReasonToFast_THunter_2_l2_1 {あんたの言う通りだ。宝は好きにしな。だが覚えておけ、それは血で汚れているから幸せはもたらさねえぞ。}
+Hunter_dialog_ReasonToFast_THunter_3_text_1 {$manWoman(へっ、船長、あんたは死ぬにはまだ若すぎるじゃねえか……|へっ、お嬢ちゃん、死ぬにはまだ早いだろう…)...}
+Hunter_dialog_ReasonToFast_THunter_3_l1_1 {実は、俺は死ぬつもりなんてねえぞ！}
+Hunter_dialog_ReasonToFast_THunter_4_text_1 {「これぞ分別ある者の言葉だな！」}
+Hunter_dialog_ReasonToFast_THunter_4_l1_1 {呪われちまえ、お前もその財宝も……}
+Hunter_dialog_ReasonToFast_HunterShore1_text_1 {「おい、」$manWoman(相棒|娘)! $ctx(contactName) 「俺たちに何か用があるって言ってたぜ。」}
+Hunter_dialog_ReasonToFast_HunterShore1_l1_1 {どういう意味だ？}
+Hunter_dialog_ReasonToFast_HunterShore11_text_1 {「の地図」 $ctx(mapOwnerName)}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_1 {受け取って、よろしく伝えてくれ $ctx(contactName)……彼にもうすぐ会うと伝えてくれ……}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_1 {$ctx(contactName) 俺があいつのために火中の栗を拾うと思ってるなら、大間違いだぜ。}
+Hunter_dialog_ReasonToFast_HunterShore11_text_2 {お前が総督から盗んだ宝飾品だ。}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_2 {これを持って、よろしく伝えてくれ $ctx(contactName)……彼に、私たちがすぐに会うと伝えてくれ……}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_2 {$ctx(contactName) 俺があいつのために火中の栗を拾うと思ってるなら、大間違いだぜ。}
+Hunter_dialog_ReasonToFast_HunterShore2_text_1 {「おい、」$manWoman(相棒|娘)! $ctx(contactName) あなたにいくつか質問がある。}
+Hunter_dialog_ReasonToFast_HunterShore2_l1_1 {「それなら、なぜ自分で彼らに聞かないんだ？」}
+Hunter_dialog_ReasonToFast_HunterShore21_text_1 {身分相応の扱いじゃない。お前のせいで作戦が台無しになり、俺たちは失った $ctx(moneyAmount) お前のせいでペソを失った。だから今、お前には返すべき借りがあるんだ。}
+Hunter_dialog_ReasonToFast_HunterShore21_l1_1 {受け取って、「よろしく」と伝えてくれ $ctx(contactName)「……彼に、私たちはすぐに会うことになると伝えてくれ……」}
+Hunter_dialog_ReasonToFast_HunterShore21_l2_1 {$ctx(contactName) 俺があいつのために火中の栗を拾うと思ってるなら、大間違いだぜ。}
+Hunter_dialog_ReasonToFast_HunterShore22_text_1 {ああ、そんな金は持ってないのか！まあ、自分で選んだことだ……}
+Hunter_dialog_ReasonToFast_HunterShore22_l1_1 {昔々……}
+Hunter_dialog_ReasonToFast_HunterShore23_text_1 {……まあ、自分で選んだんだな……}
+Hunter_dialog_ReasonToFast_HunterShore23_l1_1 {昔々……}
+Hunter_dialog_GetLocHunterName_island_1 {island of}
+Hunter_dialog_GetLocHunterName_mainland_1 {mainland of}

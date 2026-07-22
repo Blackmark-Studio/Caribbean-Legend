@@ -8,6 +8,8 @@
 #include "interface\utils\popup_confirmation.c"
 #include "interface\utils\character_stats.c"
 #include "interface\utils\modifiers.c"
+#include "interface\utils\universal_input.c"
+
 int iCharCapacity;
 int iTotalSpace;
 float fCharWeight, fStoreWeight;
@@ -67,7 +69,6 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
-	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
 	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
 	SetEventHandler("HideInfoWindow", "HideHelpHint", 0);
@@ -76,10 +77,20 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 	SetEventHandler("TransactionOK", "TransactionWithConfirm", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
 
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("QTY_OK_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_CANCEL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("QTY_REMOVE_BUTTON", "QTY_ADD_BUTTON", &REMOVE_BUTTON, &ADD_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+
+	XI_SetArrowsInputHandler("TABLE_LIST", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("TABLE_LIST2", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+
+	XI_SetUniversalInputTooltip("QTY_EDIT", "QTY_WINDOW", XI_UNIVERSAL_INPUT_ITEMS);
+	
+
+
+
+
 	SetEventHandler("eTabControlPress", "procTabChange", 0);
 
 	SetEventHandler("frame","ProcessFrame",1);
@@ -151,7 +162,6 @@ void IDoExit(int exitCode)
 
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
-	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
 	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
 	DelEventHandler("HideInfoWindow", "HideHelpHint");
@@ -160,11 +170,8 @@ void IDoExit(int exitCode)
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionWithConfirm");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
 	DelEventHandler("eTabControlPress", "procTabChange");
+	XI_ExitUniversalInput();
 
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
@@ -203,65 +210,6 @@ void ProcCommand()
 	string comName = GetEventData();
 	string nodName = GetEventData();
 
-	switch(nodName)
-	{
-		case "QTY_BUYSELL_BUTTON":
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "TABLE_LIST":
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "TABLE_LIST2":
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-	}
 }
 
 void DoPostExit()
@@ -619,6 +567,7 @@ void ShowHelpHint()
 		sText3 = XI_ConvertString("ItemsTrade_d2");
 	}
 
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
 	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
 	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
@@ -1236,21 +1185,6 @@ void ChangeQTY_EDIT()
     SetVariable();
 }
 
-void REMOVE_ALL_BUTTON()  // продать все
-{
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = -iCharQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_ALL_BUTTON()  // купить все
-{
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = iStoreQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
 
 int GetTradeItemPrice(int itmIdx, int tradeType, ref chr, ref modifier)
 {

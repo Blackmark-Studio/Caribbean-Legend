@@ -44,10 +44,10 @@ Node0_d_b_action {Wir machen es, wie es sich gehört}
 Node0_d_b_success {$attr($context.officerName) ist euer _$attr($context.officerJob) und kein gewöhnlicher Matrose. Das $rand(gewährt ihm|bedeutet) gewisse Vorrechte. Ihr befehlt, in der Messe $rand(eine offizielle Totenmesse|eine Totenmesse nach Vorschrift) abzuhalten. $attr($context.officerName) wirkt zunächst $rand(etwas verlegen|verlegen), doch dieses Gefühl $rand(weicht rasch der Dankbarkeit|macht der Dankbarkeit Platz).}
 Node0_d_b_success_action {Den treuen Gefährten das Beste}
 Node0_d_c_action {Gott hört euch auch so}
-Node0_d_c_success {Ihr redet dem Offizier zu, dass ein aufrichtiges Gebet auch ohne Zeremonie erhört wird.$br$red$attr($context.officerName) scheint euch zuzustimmen. Ihr empfindet einen stillen Stolz darüber, dass eure Worte ihm Erleichterung verschaffen.}
+Node0_d_c_success {Ihr redet dem Offizier zu, dass ein aufrichtiges Gebet auch ohne Zeremonie erhört wird.$br()$red $attr($context.officerName) scheint euch zuzustimmen. Ihr empfindet einen stillen Stolz darüber, dass eure Worte ihm Erleichterung verschaffen.}
 Node0_d_c_success_action {Ihr werdet das überstehen}
 Node0_d_c_fail {Eure Worte klingen unerquicklich, und $attr($context.officerName) wirkt niedergeschlagen. Offenbar hält er euch schlicht für geizig und zynisch.}
 Node0_d_c_fail_action {Wartet, ich habe nichts dagegen}
 Node0_d_d_action {Der Schiffsgeistliche wird helfen}
-Node0_d_d_success {Es kommt euch seltsam vor, dass $attr($context.officerName) den eigentlichen Schiffsgeistlichen vergessen hat, doch ihr schreibt es der betäubenden Trauer zu.$br$redIhr lasst den Geistlichen in eure Kajüte rufen, schildert ihm das Problem und bittet um Zuspruch. $attr($context.officerName) wirkt noch wie betäubt, doch die Worte des Seelsorgers bringen ihn rasch wieder zu sich.}
+Node0_d_d_success {Es kommt euch seltsam vor, dass $attr($context.officerName) den eigentlichen Schiffsgeistlichen vergessen hat, doch ihr schreibt es der betäubenden Trauer zu.$br()$red Ihr lasst den Geistlichen in eure Kajüte rufen, schildert ihm das Problem und bittet um Zuspruch. $attr($context.officerName) wirkt noch wie betäubt, doch die Worte des Seelsorgers bringen ihn rasch wieder zu sich.}
 Node0_d_d_success_action {Gott hat uns erhört}

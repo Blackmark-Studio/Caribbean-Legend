@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_1":
-			dialog.text = "Aussi espagnol que le roi Felipe lui-même, ha ! Je voudrais également souligner que mes papiers sont en buen orden. Je suis noble d'Espagne, pas un pirata sucia !";
+			dialog.text = "Aussi espagnol que le roi Felipe lui-même, ha ! Je voudrais également souligner que mes papiers sont en buen orden. Je suis noble d'Espagne, pas un pirata socio !";
 			link.l1 = "Don Domingo, nos plus sincères excuses pour cet incident malheureux ! Veuillez nous accompagner pour quelques questions et une bouteille de vin à la garnison. Nous nous occuperons de tout. Quant à vous...";
 			link.l1.go = "noble_2";
 		break;

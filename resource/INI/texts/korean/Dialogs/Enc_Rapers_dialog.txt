@@ -1,0 +1,69 @@
+Enc_Rapers_dialog_First_time_text_1 {$rand(네 길을 가라, $manWoman(동료|아가씨). 결국에는 그녀가 우리에게 감사할 거야, 알지.|꺼져! 신사분들께서 즐기시게 내버려 둬.|이건 네 알 바 아니야, $manWoman(이방인|아가씨). 그냥 재미 좀 보고 끝내자!)}
+Enc_Rapers_dialog_First_time_l1_1 {$rand(이건 절대로 허락할 수 없어!|지금 당장 그 사악한 계획을 포기해라!|나는 어떤 폭력도 용납하지 않겠다!)}
+Enc_Rapers_dialog_First_time_l2_1 {$rand(알겠어, 나 간다. 방해해서 미안해.|다시는 감히 폐를 끼치지 않겠습니다. 신경 써 드려 죄송합니다.)}
+Enc_Rapers_dialog_First_time_text_2 {$rand(네 길을 가라, $manWoman(동료|아가씨). 결국엔 그녀가 우리에게 감사할 거야, 알지.|꺼져! 나리들께서 즐기시게 내버려 둬.|이건 네 알 바 아니야, $manWoman(이방인|아가씨). 그냥 좀 즐기기만 할 거야, 그게 다야!!)}
+Enc_Rapers_dialog_First_time_l1_2 {$rand(이건 절대로 허락하지 않겠다!|지금 당장 그 사악한 계획을 포기해라!|나는 어떤 폭력도 용납하지 않겠다!)}
+Enc_Rapers_dialog_First_time_l2_2 {$rand(알겠어, 나 간다. 방해해서 미안해.|다시는 감히 폐를 끼치지 않겠습니다. 신경 쓰이게 해서 죄송합니다.)}
+Enc_Rapers_dialog_First_time_text_3 {$rand(이봐, $manWoman(이방인|아가씨), 왜 시비를 거는 거야? 이 아가씨는 우리 정착지에서 '유명한' 인물이야. 우리는 이미 돈을 지불했는데, 네가 나타나자 그녀가 우리 돈을 들고 도망치기로 한 거지.|이봐, $manWoman(동료|아가씨), 네 일이나 하고 우리 일에 끼어들지 마라. 저 아가씨는 주사위 게임에서 우리가 이겼는데, 너무 재빠르게 도망쳐서 한 시간째 이 정글에서 쫓고 있던 참이다.)}
+Enc_Rapers_dialog_First_time_l1_3 {난 상관없어, 그녀를 해치게 두지 않을 거야!}
+Enc_Rapers_dialog_First_time_l2_3 {$rand(아, 그렇군! 나도 그녀 말을 거의 믿을 뻔했지! 저런 계집이라니...|아, 그래, 그건 또 다른 이야기지. 자, 신나게 놀아라, 이 녀석들아!)}
+Enc_Rapers_dialog_First_time_text_4 {네 갈 길을 가라, $manWoman(좋은 사람|아가씨). 너 없이도 우리가 알아서 할 거야.}
+Enc_Rapers_dialog_First_time_l1_4 {나는 어떤 폭력도 용납하지 않겠다!}
+Enc_Rapers_dialog_First_time_text_5 {$rand(이봐, $manWoman(이방인|아가씨), 왜 괜히 문제를 일으키는 거야? 이 아가씨는 우리 정착지에서 '잘 알려진' 인물이야. 우리는 이미 돈을 지불했는데, 네가 나타나자 그녀가 우리 돈을 들고 도망치기로 한 거지.|이봐, $manWoman(동료|아가씨), 네 갈 길이나 가고 우리 일에 참견하지 마라. 이 아가씨는 주사위 게임에서 우리가 이겼는데, 너무 재빨리 도망쳐서 한 시간째 쫓고 있었다.)}
+Enc_Rapers_dialog_First_time_l1_5 {신경 안 써 - 그녀를 해치게 두지 않을 거야!}
+Enc_Rapers_dialog_First_time_l2_4 {$rand(아, 그렇군! 나 그 여자 말을 거의 믿을 뻔했잖아! 저런 계집이라니...|아, 그렇다면 또 다른 이야기군. 자, 신나게 놀아라, 이 녀석들아!)}
+Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(그래, 산책하기엔 정말 딱 좋은 때를 골랐군...|그래서, 영웅이 되기로 한 거야?) 그놈을 처리해$manWoman(im|er), 얘들아!|You $manWoman(점액|오물)! 우리 길을 막으려 들어?! 베어버려라$manWoman(임|er)!)}
+Enc_Rapers_dialog_Node_Fight_l1_1 {나는 더 위협적인 사람들도 봤어!}
+Enc_Rapers_dialog_Node_3_text_1 {그녀 때문에 우리 꽤나 돈 썼다는 걸 알아둬! 그렇게 고귀하다면, 네가 그녀를 데려가도 돼\n $ctx(price) 페소입니다.$manWoman( 그 여자랑 재미있게 놀 거야, 헤헤...|)}
+Enc_Rapers_dialog_Node_3_l1_1 {$rand(여기 돈이다. 나는 그녀를 데려가겠다.|이 악물지 마라. 그 아가씨는 내가 데려간다. 여기 네 돈이다.)}
+Enc_Rapers_dialog_Node_3_l2_1 {$rand(그래, 돈이 필요한 거냐? 아니면 차가운 칼날이 더 좋겠어?|그게 웃기다는 거냐, 이 바보야, 저 여자애 좀 봐! 겁먹었잖아!|누구를 속이려는 거냐, 이 타락한 놈아!)}
+Enc_Rapers_dialog_Node_5_text_1 {애초에 왜 그녀 말을 믿는 거지? 무슨 폭력? 걔가 집에서 도망친 거고, 우리는 우리 두목이 시켜서 걔를 찾으러 온 거야.}
+Enc_Rapers_dialog_Node_5_l1_1 {$rand(그렇다면 이야기가 다르지. 가서 네 도망자를 쫓아라.|아, 그렇군. 그럼 계속 그녀를 쫓아가 봐... 나는 처리할 일이 좀 있거든.)}
+Enc_Rapers_dialog_Node_5_l2_1 {$rand(그런 허튼소리는 네 손자들에게나 해라, 오래 살아서 손자라도 보게 된다면 말이지!|누구를 속이려는 거야, 이 자식아?!)}
+Enc_Rapers_dialog_Node_5_l3_1 {내가 직접 그녀를 집에 데려다주겠소, 괜한 문제를 피하려고. 그녀 부모가 누구요?}
+Enc_Rapers_dialog_Node_6_text_1 {죽고 싶어? 그건 네 선택이지...}
+Enc_Rapers_dialog_Node_6_l1_1 {누가 할 소린지 모르겠군.}
+Enc_Rapers_dialog_Node_7_fatherNom_1 {is a store owner}
+Enc_Rapers_dialog_Node_7_fatherGen_1 {of a store owner}
+Enc_Rapers_dialog_Node_7_fatherNom_2 {serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherGen_2 {who serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherNom_3 {serves as the prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherGen_3 {of a prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherNom_4 {is a shipyard owner}
+Enc_Rapers_dialog_Node_7_fatherGen_4 {of a shipyard owner}
+Enc_Rapers_dialog_Node_7_text_1 {그녀의 아버지 $ctx(fatherName), $ctx(convertedText)에서 $ctx(cityName). 하지만 제발, 우리를 실망시키지 마시오, 그는 만만한 사람이 아니니 우리 모두를 산 채로 가죽을 벗길 수도 있소...}
+Enc_Rapers_dialog_Node_7_l1_1 {걱정 마. 내가 그녀를 그에게 데려다줄게.}
+Enc_Rapers_dialog_Node_8_text_1 {또 다시 만났군. 네 동료는 어디 있지? 뭐, 사실 네가 여기 있다면 그 여자는 필요 없어.}
+Enc_Rapers_dialog_Node_8_l1_1 {신사 여러분, 내 생각엔 이미 충분히 돈을 받았으니 그 아가씨는 이제 그만 놔주는 게 좋겠소.}
+Enc_Rapers_dialog_Node_9_sTemp_1 {a leg}
+Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
+Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
+Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
+Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
+Enc_Rapers_dialog_Node_9_text_1 {네 돈이 무슨 대수냐, 그 보물에 비하면 $ctx(pirateName)? 그자는 너무 욕심이 많아서 자기 딸을 시집보내는 것조차 추가 지출이 싫어서 꺼렸지...\n그런데 우리 몫은 자기 금고에 꼭꼭 숨겨두고 있단 말이야! $ctx(pirateName2) 승선 전투에서 패배함 $ctx(tempText)! 그리고 대신 뭘 가지고 있지? 한심한 은화 몇 닢이냐? $ctx(pirateName2) 항상 전리품을 전부 자기 은닉처로 가져갔지. 하지만 이제는 포기하지 않을 거야! 그의 상자가 어디 있는지 보여 줘!}
+Enc_Rapers_dialog_Node_9_l1_1 {음, 난 분명히 네 선장의 보물을 지키려고 온 건 아니지만, 그 장소를 보여줄 수는 없어... 왜냐하면 나도 어디 있는지 모르거든.}
+Enc_Rapers_dialog_Node_10_text_1 {거짓말하지 마!!! 이 동굴에서 금 냄새가 나는 걸 내가 맡았어! 죽기 싫으면 어서 그곳을 보여 줘!}
+Enc_Rapers_dialog_Node_10_l1_1 {내 말로는 설득이 안 되는 모양이군. 내 칼이 더 설득력 있을지도 모르지?}
+Enc_Rapers_dialog_Node_11_text_1 {You $manWoman(똥개|오물)! 비켜!}
+Enc_Rapers_dialog_Node_11_l1_1 {아르그!}
+Enc_Rapers_dialog_EncGirl_Berglar_text_1 {안녕, 좋아 $manWoman(남자|아가씨). 당신에 대한 불만이 접수되었습니다.}
+Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {누가 불평한다고? 그 창녀가?}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {입 조심해, 알겠어? 내 여동생을 모욕하는 건 절대 용납 못 해! 처음엔 정글에서 그녀를 공격하더니, 이제 여기까지 데려왔잖아\n $manWoman(더한 추태를 위해\n|그리고 나를 털어갔어).}
+Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {이봐, 친구, 내가 그 얘기 전부 다 들어야 해?}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {아니. 단지 소박한 금액인 $ctx(moneyAmount) 페소만 있으면 모든 곤란에서 벗어날 수 있지.}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {음, 고귀한 행동이 요즘은 좀 값이 나가긴 하지. 좋아, 가져가라...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_1 {네 뱃속에 구멍을 뚫어버리는 게 출구로 가는 길을 막지 않게 하는 데 더 싸게 먹힐 것 같은데.}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_2 {아니. 하지만 너도 주머니 다 뒤집어! 안 그러면 찔러버릴 거야!}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_2 {알겠어, 가져가라 이 악당아! 하지만 그냥 넘어가진 않을 거야...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_2 {네 배에 구멍을 뚫어버리는 게 내가 나가는 길을 막지 않게 하는 더 쉬운 방법일 것 같은데.}
+Enc_Rapers_dialog_EncGirl_Berglar3_text_1 {아주 좋아. 잘 됐군.}
+Enc_Rapers_dialog_EncGirl_Berglar3_l1_1 {행운을 빌어.}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {물론 안 하지, 물론이지... 자, 그럼 잘 가라, $manWoman(동료|아가씨).$manWoman( 그리고 명심해, 네가 그렇게 잘생긴 것도 아니라서 아무 여자나 널 보자마자 반할 정도는 아니야. 이게 내가 너한테 주는 교훈이야.|)}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(그건 확실하지!..|꺼져 버려라!)}
+Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {너는 ~처럼 보여 $manWoman(그렇게 고귀한 분|이렇게 교양 있는 숙녀), 왜 그렇게 입이 험해?}
+Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {그게 나한테 제일 잘 맞지...}
+Enc_Rapers_dialog_Node_2_text_1 {자, 네가 원한 거잖아! 간질여 줄까\n$manWoman(임|er) 칼로 할래, 얘들아?}
+Enc_Rapers_dialog_Node_2_l1_1 {죽기 전에 기도나 해라!}
+Enc_Rapers_dialog_OnceAgain_text_1 {그래서, 합류할 거야, 말 거야? $manWoman(꺼져, 우리 모두 먹을 만큼 충분하지 않아|꺼져라, 우리한텐 아가씨 한 명이면 충분하니까\n)!}
+Enc_Rapers_dialog_OnceAgain_l1_1 {그렇다면 더 이상 방해하지 않겠소.}
+Enc_Rapers_dialog_OnceAgain_l2_1 {나는 어떤 폭력도 용납하지 않겠다!}

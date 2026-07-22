@@ -1,0 +1,16 @@
+quest_companion_header {クエスト同行}
+quest_companion_text {この仲間はクエストのために同行しています。その船とはやり取りできません。}
+where_is_my_ship_sea_header {船の位置}
+where_is_my_ship_sea_text {$rand(外洋|天と地の狭間|航海中|竜骨の下に七フィート)}
+where_is_my_ship_header {船の位置}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {砲の状態が悪い}
+cannons_broken_text {造船所で砲を至急修理するか、交換する必要があります！}
+bad_captain_header {スキル不足}
+bad_captain_text {この仲間は「船長」スキルが不足しているため、外洋で船を指揮できません。}
+low_morale_header {反乱の恐れ}
+low_morale_text {乗組員が不満を抱いています。至急、士気を上げる必要があります！}
+low_food_header {食料不足}
+low_food_text {まもなく水兵たちが餓死し始めます。至急、食料を補充してください！}
+low_medicament_header {医薬品不足}
+low_medicament_text {まもなく水兵たちが病死し始めます。至急、医薬品を補充してください！}

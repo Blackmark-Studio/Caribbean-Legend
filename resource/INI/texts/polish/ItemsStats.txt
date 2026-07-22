@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Każde 2% utraconego kadłuba statku zwiększa
 itm_stat_descr_talisman2 {Pomaga uniknąć wejścia w strefę sztormu lub zmniejsza uszkodzenia żagli i kadłuba podczas burzy.}
 itm_stat_descr_talisman20 {Szybkość celowania bronią palną wzrasta o 15%, maksymalne obrażenia przy celowaniu o 20%, szybkość przeładowania o 10%, a obrażenia za trafienie w głowę o 20%.}
 itm_stat_descr_talisman21 {Umożliwia handel z przemytnikami na statkach do 2. rangi włącznie.}
-itm_stat_descr_talisman3 {Zapobiega wybuchowi armat.}
+itm_stat_descr_talisman3 {Premia za dobry stan dział wzrasta o $percent(0.05). Efekt się kumuluje.}
 itm_stat_descr_talisman4 {Zmniejsza spadek morale załogi przy przeciążeniu i obniża dzienne zużycie rumu przez załogę.}
 itm_stat_descr_talisman6 {Pomaga oszczędzać prowiant na statku, zmniejszając jego zużycie o jedną czwartą.}
 itm_stat_descr_talisman7

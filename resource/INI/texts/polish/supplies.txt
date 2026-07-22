@@ -1,0 +1,22 @@
+weapon_0 {brak}
+weapon_1 {za mało}
+weapon_2 {wystarczająco}
+weapon_3 {nadmiar}
+weapon_tooltip {Do udanego abordażu potrzeba więcej broni niż marynarzy. W przeciwnym razie załoga poniesie dotkliwe kary i ogromne straty.}
+bortFire_tooltip {Do jednej salwy potrzeba $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {Cały zapas wystarczy na $decl($ctx(mineQty)|minę|miny|min)}
+food_tooltip {Aktualne zużycie: $decl($ctx(foodconsumption)|paczka|paczki|paczek) dziennie}
+food_approximation_tooltip {Przy maksymalnej liczebności załogi statek będzie potrzebował $decl($ctx(approximation.foodconsumption)|paczka|paczki|paczek)}
+medicament_tooltip {Aktualne zużycie: $decl($ctx(medicamentconsumption)|paczka|paczki|paczek) dziennie}
+medicament_approximation_tooltip {Przy maksymalnej liczebności załogi statek będzie potrzebował $decl($ctx(approximation.medicamentconsumption)|paczka|paczki|paczek)}
+rum_tooltip {Aktualne zużycie: $decl($ctx(rumconsumption)|beczułka|beczułki|beczułek) dziennie}
+rum_approximation_tooltip {Przy maksymalnej liczebności załogi statek będzie potrzebował $decl($ctx(approximation.rumconsumption)|beczułka|beczułki|beczułek)}
+spareCannons {$ctx(qty) zapasowych}
+money {Za mało pieniędzy}
+goods {Za mało towarów}
+cooldown {Musisz odpocząć}
+raiseMoraleText {Aby podnieść morale załogi, musisz jej wydać:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Aby wyszkolić załogę, musisz jej wydać:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Naprawa: $percent($ctx(hullPerDay)) dziennie, zużycie: $decl($ctx(planksPerDay)|deska|deski|desek)}
+sailcloth_tooltip {Naprawa: $percent($ctx(sailsPerDay)) dziennie, zużycie: $decl($ctx(sailClothesPerDay)|płótno żaglowe|płótno żaglowe|płótno żaglowe)}
+spareCannons_tooltip {Za działa zapasowe uznawane są wyłącznie działa głównego kalibru. Działa dziobowe i rufowe nie są uwzględniane w tych obliczeniach.}

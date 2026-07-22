@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_1":
-			dialog.text = "Rey Felipe'nin kendisi kadar İspanyolum, ha! Ayrıca belgelerimin de buen orden olduğunu belirtmek isterim. Ben bir İspanyol soylusuyum, öyle sıradan bir pirata sucia değilim!";
+			dialog.text = "Rey Felipe'nin kendisi kadar İspanyolum, ha! Ayrıca belgelerimin de buen orden olduğunu belirtmek isterim. Ben bir İspanyol soylusuyum, öyle sıradan bir pirata socio değilim!";
 			link.l1 = "Don Domingo, bu talihsiz olay için en içten özürlerimizi sunarız! Lütfen birkaç soru ve bir şişe şarap eşliğinde karakola gelin. Her şeyi halledeceğiz. Size gelince...";
 			link.l1.go = "noble_2";
 		break;

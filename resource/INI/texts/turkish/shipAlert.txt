@@ -1,0 +1,16 @@
+quest_companion_header {Göreve bağlı}
+quest_companion_text {Bu yoldaş bir görev nedeniyle size eşlik ediyor. Gemisiyle etkileşime giremezsiniz.}
+where_is_my_ship_sea_header {Geminin konumu}
+where_is_my_ship_sea_text {$rand(Açık deniz|Gökle yer arasında|Seyirde|Omurganın altında yedi fit)}
+where_is_my_ship_header {Geminin konumu}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Toplar kötü durumda}
+cannons_broken_text {Toplar acilen tersanede onarılmalı veya değiştirilmelidir!}
+bad_captain_header {Beceri yetersiz}
+bad_captain_text {Bu yoldaş, “Kaptan” becerisi yetersiz olduğu için açık denizde gemiyi yönetemez.}
+low_morale_header {İsyan riski}
+low_morale_text {Mürettebat hoşnutsuz. Morali acilen yükseltmelisiniz!}
+low_food_header {Yiyecek az}
+low_food_text {Denizciler yakında açlıktan ölmeye başlayacak. Erzakı acilen yenilemelisiniz!}
+low_medicament_header {İlaç az}
+low_medicament_text {Denizciler yakında hastalıktan ölmeye başlayacak. Stokları acilen yenilemelisiniz!}

@@ -7,7 +7,7 @@ CrewMorale_pchar_0 {乗組員の士気が$MoraleStrDiff($ctx(value))}
 CrewMorale_pchar_1 {乗組員の士気が$MoraleStrDiff($ctx(value))}
 Reputation_pchar_0 {名声が下がった}
 Reputation_pchar_1 {名声が上がった}
-CrewExp_pchar_1 {$key($ctx(p1))は経験値を獲得}
+CrewExp_pchar_1 {乗組員が経験値を獲得しました}
 Money_pchar_1 {$money($ctx(value))を受け取った}
 Money_pchar_0 {$abs($money($ctx(value)))を支払った}
 Goods_pchar_1 {獲得: _$key($goodI($ctx(p1))Acc) $number($ctx(value))}

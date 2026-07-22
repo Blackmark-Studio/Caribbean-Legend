@@ -238,6 +238,7 @@ void FillUpStats(ref item, ref chr)
 	makearef(itemStats, itemInfo.stats);
 	SetUIAttributesItem(item, &itemStats, chr);
 	int statsQty = GetAttributesNum(&itemStats);
+	SetNodeUsing("TABLE_ITEM_STATS", statsQty > 0);
 
 	for (int y = 0; y < statsQty; y++)
 	{

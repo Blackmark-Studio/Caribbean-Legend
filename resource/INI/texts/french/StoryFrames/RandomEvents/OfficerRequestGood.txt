@@ -44,10 +44,10 @@ Node0_d_b_action {Nous ferons les choses comme il se doit}
 Node0_d_b_success {$attr($context.officerName) est votre _$attr($context.officerJob), et non un simple matelot. Cela $rand(lui accorde|implique) certains privilèges. Vous ordonnez qu'une $rand(panikhida officielle|panikhida selon le règlement) soit organisée dans la salle commune. $attr($context.officerName) paraît $rand(un peu gêné|gêné), mais ce sentiment $rand(cède vite la place à la gratitude|se transforme bientôt en gratitude).}
 Node0_d_b_success_action {Le meilleur pour les compagnons fidèles}
 Node0_d_c_action {Dieu t'entend même sans cela}
-Node0_d_c_success {Vous convainquez l'officier qu'une prière sincère sera entendue, même sans rite.$br$red$attr($context.officerName) semble l'admettre. Vous ressentez une certaine fierté à voir que vos paroles lui apportent un peu d'apaisement.}
+Node0_d_c_success {Vous convainquez l'officier qu'une prière sincère sera entendue, même sans rite.$br()$red $attr($context.officerName) semble l'admettre. Vous ressentez une certaine fierté à voir que vos paroles lui apportent un peu d'apaisement.}
 Node0_d_c_success_action {Tu surmonteras cela}
 Node0_d_c_fail {Vos paroles sonnent faux, et $attr($context.officerName) a l'air profondément peiné. On dirait qu'il vous prend simplement pour un avare cynique.}
 Node0_d_c_fail_action {Attends, cela ne me coûte rien}
 Node0_d_d_action {L'aumônier du bord saura aider}
-Node0_d_d_success {Il vous semble étrange que $attr($context.officerName) ait oublié le véritable aumônier de votre bord, mais vous mettez cela sur le compte d'un chagrin aveuglant.$br$redVous faites appeler l'aumônier dans votre cabine, lui exposez la situation et lui demandez conseil. $attr($context.officerName) paraît absent, mais les paroles du religieux le ramènent vite à lui.}
+Node0_d_d_success {Il vous semble étrange que $attr($context.officerName) ait oublié le véritable aumônier de votre bord, mais vous mettez cela sur le compte d'un chagrin aveuglant.$br()$red Vous faites appeler l'aumônier dans votre cabine, lui exposez la situation et lui demandez conseil. $attr($context.officerName) paraît absent, mais les paroles du religieux le ramènent vite à lui.}
 Node0_d_d_success_action {Dieu nous a entendus}

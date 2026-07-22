@@ -112,7 +112,7 @@ perkBeneathWaterline
 }
 perkBladeDancer {曲刀での範囲攻撃はダメージが$percent($perkBaseValue(BladeDancer|1))増加する。}
 perkBoardingPrepare {白兵戦中、 白兵戦要員が薬を受け取る。}
-perkBombardier {大砲の耐久性が上昇する。}
+perkBombardier {砲が良好な状態のときに得られるボーナスが$percent($perkBaseValue(Bombardier|1))増加します。この効果は累積します。}
 perkBruteForce {斧と鎧で重武装した兵士が、 白兵戦中に一部の通常の水夫と交代する。}
 perkBuilder {修理時の板材と帆布の消費が25％減少する。}
 perkByWorker {キャラクターは同時に2つの士官職に就けます}

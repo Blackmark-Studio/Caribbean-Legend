@@ -44,10 +44,10 @@ Node0_d_b_action {Bunu usulüne göre yapacağız}
 Node0_d_b_success {$attr($context.officerName) sizin _$attr($context.officerJob)'ınız; sıradan bir tayfa değil. Bu da bazı ayrıcalıklar $rand(sağlıyor|anlamına geliyor). Kamarotada $rand(resmî bir ağıt töreni|nizama uygun bir ağıt töreni) düzenlenmesini emrediyorsunuz. $attr($context.officerName) $rand(biraz mahcup görünüyor|mahcup görünüyor), ama bu duygu $rand(kısa sürede minnettarlığa bırakıyor yerini|minnettarlığa dönüşüyor).}
 Node0_d_b_success_action {Sadık yoldaşlara en iyisi yakışır}
 Node0_d_c_action {Tanrı seni bunlar olmadan da duyar}
-Node0_d_c_success {Subayı, içten edilen bir duanın törensiz de işitileceğine inandırıyorsunuz.$br$red$attr($context.officerName) galiba buna razı oluyor. Sözlerinizin ona biraz olsun ferahlık verdiğini görmek size gurur veriyor.}
+Node0_d_c_success {Subayı, içten edilen bir duanın törensiz de işitileceğine inandırıyorsunuz.$br()$red $attr($context.officerName) galiba buna razı oluyor. Sözlerinizin ona biraz olsun ferahlık verdiğini görmek size gurur veriyor.}
 Node0_d_c_success_action {Bunu atlatacaksın}
 Node0_d_c_fail {Sözleriniz pek inandırıcı gelmiyor ve $attr($context.officerName) üzgün görünüyor. Anlaşılan sizi sadece cimri ve alaycı biri sanmış.}
 Node0_d_c_fail_action {Dur, o kadar da umurumda değil}
 Node0_d_d_action {Geminin papazı yardımcı olur}
-Node0_d_d_success {$attr($context.officerName)'ın gemideki gerçek papazı unutmuş olması size tuhaf geliyor, ama bunu gözünü kör eden kedere bağlıyorsunuz.$br$redPapazı kamaraya çağırtıyor, durumu ona anlatıyor ve yol göstermesini istiyorsunuz. $attr($context.officerName) dalgın ve kopuk görünüyor, ama din adamının sözleri onu çabucak kendine getiriyor.}
+Node0_d_d_success {$attr($context.officerName)'ın gemideki gerçek papazı unutmuş olması size tuhaf geliyor, ama bunu gözünü kör eden kedere bağlıyorsunuz.$br()$red Papazı kamaraya çağırtıyor, durumu ona anlatıyor ve yol göstermesini istiyorsunuz. $attr($context.officerName) dalgın ve kopuk görünüyor, ama din adamının sözleri onu çabucak kendine getiriyor.}
 Node0_d_d_success_action {Tanrı bizi işitti}

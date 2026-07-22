@@ -1543,9 +1543,10 @@ ref GetCurrentCharge()
 	BI_intNRetValue[5] = 109;
 	BI_intNRetValue[6] = 110;
 	BI_intNRetValue[7] = 111;
-	if(CheckAttribute(pchar,"Ship.Cannons.Type") && pchar.Ship.Cannons.Type != CANNON_TYPE_NONECANNON && GetCannonsNum(pchar) > 0)
+	int mainCannonType = GetCannonTypeByBort(pchar, "cannonl");
+	if (mainCannonType != CANNON_TYPE_NONECANNON && GetCannonsNum(pchar) > 0)
 	{
-		BI_intNRetValue[8] = int(pchar.Ship.Cannons.Type);
+		BI_intNRetValue[8] = mainCannonType;
 		BattleInterface.textinfo.Cannonf.text = GetBortCannonsQty(pchar, "cannonf");
 		BattleInterface.textinfo.Cannonb.text = GetBortCannonsQty(pchar, "cannonb");
 		BattleInterface.textinfo.Cannonl.text = GetBortCannonsQty(pchar, "cannonl");
@@ -2685,48 +2686,46 @@ void ProcessDayRepair()
 			cn = GetCompanionIndex(mchar,i);
 			if(cn==-1) continue;
 			chref = GetCharacter(cn);
-			if(CheckRepairPerks(chref))
-			{	
-				// расчёт починки корпуса
-				if (GetHullPercent(chref) < 100.0 )
+
+			// расчёт починки корпуса
+			if (GetHullPercent(chref) < 100.0 )
+			{
+				repPercent = GetHullRPD(chref);
+				matQ = repPercent*GetHullPPP(chref);
+				tmpf = GetRepairGoods(true,chref);
+				if (tmpf > 0)
 				{
-					repPercent = GetHullRPD(chref);
+					if (tmpf < matQ)	{ repPercent = tmpf/GetHullPPP(chref); }  
+					repPercent = ProcessHullRepair(chref, repPercent);
 					matQ = repPercent*GetHullPPP(chref);
-					tmpf = GetRepairGoods(true,chref);
-					if (tmpf > 0)
+					RemoveRepairGoods(true,chref,matQ);
+					// boal  check skill -->
+					AddCharacterExpToSkill(chref, "Repair", matQ / 3.0);
+					// boal <--
+					if(int(chref.index) == GetMainCharacterIndex())
 					{
-						if (tmpf < matQ)	{ repPercent = tmpf/GetHullPPP(chref); }  
-						repPercent = ProcessHullRepair(chref, repPercent);
-						matQ = repPercent*GetHullPPP(chref);
-						RemoveRepairGoods(true,chref,matQ);
-						// boal  check skill -->
-						AddCharacterExpToSkill(chref, "Repair", matQ / 3.0);
-						// boal <--
-						if(int(chref.index) == GetMainCharacterIndex())
-						{
-							float repairedHP = repPercent * float(GetCharacterShipHP(chref)) / 100.0;
-							Achievment_SetStat(64, int(repairedHP));
-						}
+						float repairedHP = repPercent * float(GetCharacterShipHP(chref)) / 100.0;
+						Achievment_SetStat(64, int(repairedHP));
 					}
 				}
+			}
+			
+			// расчёт починки парусов
+			if (GetSailPercent(chref) < GetAllSailsDamagePercent(chref) )
+			{
+				repPercent = GetSailRPD(chref);
+				matQ = repPercent*GetSailSPP(chref);
+				tmpf = GetRepairGoods(false,chref);
 				
-				// расчёт починки парусов
-				if (GetSailPercent(chref) < GetAllSailsDamagePercent(chref) )
+				if (tmpf > 0)
 				{
-					repPercent = GetSailRPD(chref);
+					if (tmpf < matQ)	{ repPercent = tmpf/GetSailSPP(chref); }
+					repPercent = ProcessSailRepair(chref,repPercent);
 					matQ = repPercent*GetSailSPP(chref);
-					tmpf = GetRepairGoods(false,chref);
-					
-					if (tmpf > 0)
-					{
-						if (tmpf < matQ)	{ repPercent = tmpf/GetSailSPP(chref); }
-						repPercent = ProcessSailRepair(chref,repPercent);
-						matQ = repPercent*GetSailSPP(chref);
-						RemoveRepairGoods(false,chref,matQ);
-						// boal  check skill -->
-						AddCharacterExpToSkill(chref, "Repair", matQ / 4.0);
-						// boal <--
-					}
+					RemoveRepairGoods(false,chref,matQ);
+					// boal  check skill -->
+					AddCharacterExpToSkill(chref, "Repair", matQ / 4.0);
+					// boal <--
 				}
 			}
 		}
@@ -3615,26 +3614,16 @@ float GetRSRollSpeed(ref chref)
 	if( iShip<0 || iShip>=REAL_SHIPS_QUANTITY ) {return 0.0;}
 	
 	float fRollSpeed = 0.5 + 0.05 * float( GetSummonSkillFromNameToOld(chref,SKILL_SAILING) ); //fix skill
-	int crewQ = GetCrewQuantity(chref);
-	//int crewMin = int(RealShips[iShip].MinCrew);
 	int crewMax = RealShips[iShip].MaxCrew$int(-1);
+	int crewQ = func_fmin(crewMax, GetCrewQuantity(chref));
 	if (crewMax == -1)
 	{
 		Log_TestInfo("GetRSRollSpeed нет MaxCrew у корабля НПС ID=" + chref.id);
 		return 0.0;
 	}
 
- 	int crewOpt = RealShips[iShip].OptCrew$int(1);//boal
- 	if (crewMax < crewQ) crewQ  = crewMax; // boal
-	//if(crewQ < crewMin) fRollSpeed *= float(crewQ)/float(2*crewMin);
-	//fRollSpeed = fRollSpeed * (0.5 + float(crewQ)/float(2*crewMax)); // уменьшение скорости разворота от команды
-	//fRollSpeed = fRollSpeed * float(crewQ)/float(crewMax);
-	// опыт матросов 
 	float  fExp;
-	
-	if (crewOpt <= 0) crewOpt = 0; // fix для профилактики деления на ноль
-	
-	fExp = 0.05 + float(GetCrewExp(chref, "Sailors") * crewQ) / float(crewOpt * GetCrewExpRate());
+	fExp = 0.05 + float(GetCrewExp(chref, "Sailors") * crewQ) / float(crewMax * GetCrewExpRate());
 	if (fExp > 1) fExp = 1;
 	fRollSpeed = fRollSpeed * fExp;
 	// мораль
@@ -4202,9 +4191,7 @@ void BI_ResizeCannons()
 	
 	int cannonCircleSize = RecalculateHIcon(int(200 * fHtRatio));
 	int cannonChargeSize = int(cannonCircleSize * 74.0 / 75.0);
-	
-	int offsetX = RecalculateHIcon(int(cannonChargeSize * 0.1));
-	
+		
 	if (centerY + cannonCircleSize * 0.4 > int(showWindow.bottom))
 	{
 		offsetY = int(cannonCircleSize * 0.4);
@@ -4218,31 +4205,44 @@ void BI_ResizeCannons()
 	BattleInterface.dynamic.images.firemode_r.texture = "interfaces\le\battle_interface\cannons_arrows.tga";
 	BattleInterface.dynamic.images.firemode_r.pos = GetPosString(centerX + int(cannonCircleSize * 0.33) - 21, centerY - 10, centerX + int(cannonCircleSize * 0.33) - 1, centerY + 10);
 	
+	int cannonHealthSize = 3 * iconHeight / 5;
+	int cannonHealthLeftCenter = centerX - int(cannonCircleSize * 0.33) - 1 - cannonHealthSize / 2;
+	int cannonHealthRightCenter = centerX + int(cannonCircleSize * 0.33) - 1 + cannonHealthSize / 2;
+	
+	BattleInterface.dynamic.images.cannon_health_l.group = "CANNONS_MANAGEMENT";
+	BattleInterface.dynamic.images.cannon_health_l.pos = GetPosString(cannonHealthLeftCenter - cannonHealthSize / 2, centerY - cannonHealthSize / 2, cannonHealthLeftCenter + cannonHealthSize / 2, centerY + cannonHealthSize / 2);
+	BattleInterface.dynamic.images.cannon_health_r.group = "CANNONS_MANAGEMENT";
+	BattleInterface.dynamic.images.cannon_health_r.pos = GetPosString(cannonHealthRightCenter - cannonHealthSize / 2, centerY - cannonHealthSize / 2, cannonHealthRightCenter + cannonHealthSize / 2, centerY + cannonHealthSize / 2);
+
+	int cannonHealthOffsetX = RecalculateHIcon(int(5 * fHtRatio));
+	int leftIconsOffset = cannonHealthLeftCenter - cannonHealthSize / 2 - cannonHealthOffsetX;
+	int rightIconsOffset = cannonHealthRightCenter + cannonHealthSize / 2 + cannonHealthOffsetX;
+	
 	aref arAmmo;
 	makearef(arAmmo, BattleInterface.ammo);
 	
-	arAmmo.BallsPos						= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 4) + "," + centerY;
+	arAmmo.BallsPos						= (leftIconsOffset + iconWidth / 2 - iconWidth * 4) + "," + centerY;
 	arAmmo.BallsPictureSize				= iconWidth + "," + iconHeight;
 	
-	arAmmo.GrapesPos					= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 3) + "," + centerY;
+	arAmmo.GrapesPos					= (leftIconsOffset + iconWidth / 2 - iconWidth * 3) + "," + centerY;
 	arAmmo.GrapesPictureSize			= iconWidth + "," + iconHeight;
 	
-	arAmmo.KnippelsPos					= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 2) + "," + centerY;
+	arAmmo.KnippelsPos					= (leftIconsOffset + iconWidth / 2 - iconWidth * 2) + "," + centerY;
 	arAmmo.KnippelsPictureSize			= iconWidth + "," + iconHeight;
 	
-	arAmmo.BombsPos						= (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth) + "," + centerY;
+	arAmmo.BombsPos						= (leftIconsOffset + iconWidth / 2 - iconWidth) + "," + centerY;
 	arAmmo.BombsPictureSize				= iconWidth + "," + iconHeight;
 	
-	arAmmo.PowderPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth) + "," + centerY;
+	arAmmo.PowderPos					= (rightIconsOffset - iconWidth / 2 + iconWidth) + "," + centerY;
 	arAmmo.PowderPictureSize			= iconWidth + "," + iconHeight;
 	
-	arAmmo.WeaponPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 2) + "," + centerY;
+	arAmmo.WeaponPos					= (rightIconsOffset - iconWidth / 2 + iconWidth * 2) + "," + centerY;
 	arAmmo.WeaponPictureSize			= iconWidth + "," + iconHeight;
 	
-	arAmmo.PlanksPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 3) + "," + centerY;
+	arAmmo.PlanksPos					= (rightIconsOffset - iconWidth / 2 + iconWidth * 3) + "," + centerY;
 	arAmmo.PlanksPictureSize			= iconWidth + "," + iconHeight;
 	
-	arAmmo.SailclothPos					= (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 4) + "," + centerY;
+	arAmmo.SailclothPos					= (rightIconsOffset - iconWidth / 2 + iconWidth * 4) + "," + centerY;
 	arAmmo.SailclothPictureSize			= iconWidth + "," + iconHeight;
 	
 	arAmmo.CannonsGPos					= centerX + "," + centerY;
@@ -4268,16 +4268,16 @@ void BI_ResizeCannons()
 	
 	int centerTextY = centerY - offsetTextY;
 	
-	arText.Balls.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 4);
+	arText.Balls.pos.x = (leftIconsOffset + iconWidth / 2 - iconWidth * 4);
 	arText.Balls.pos.y = centerTextY;
 
-	arText.Grapes.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 3);
+	arText.Grapes.pos.x = (leftIconsOffset + iconWidth / 2 - iconWidth * 3);
 	arText.Grapes.pos.y = centerTextY;
 
-	arText.Knippels.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth * 2);
+	arText.Knippels.pos.x = (leftIconsOffset + iconWidth / 2 - iconWidth * 2);
 	arText.Knippels.pos.y = centerTextY;
 	
-	arText.Bombs.pos.x = (centerX - cannonCircleSize / 2 + offsetX + iconWidth / 2 - iconWidth);
+	arText.Bombs.pos.x = (leftIconsOffset + iconWidth / 2 - iconWidth);
 	arText.Bombs.pos.y = centerTextY;
 
 	arText.BallsKey.pos.x = int(arText.Balls.pos.x) - iconWidth / 4;
@@ -4292,16 +4292,16 @@ void BI_ResizeCannons()
 	arText.BombsKey.pos.x = int(arText.Bombs.pos.x) - iconWidth / 4;
 	arText.BombsKey.pos.y = centerY;
 
-	arText.Powder.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth);
+	arText.Powder.pos.x = (rightIconsOffset - iconWidth / 2 + iconWidth);
 	arText.Powder.pos.y = centerTextY;
 	
-	arText.Weapon.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 2);
+	arText.Weapon.pos.x = (rightIconsOffset - iconWidth / 2 + iconWidth * 2);
 	arText.Weapon.pos.y = centerTextY;
 	
-	arText.Planks.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 3);
+	arText.Planks.pos.x = (rightIconsOffset - iconWidth / 2 + iconWidth * 3);
 	arText.Planks.pos.y = centerTextY;
 	
-	arText.Sailcloth.pos.x = (centerX + cannonCircleSize / 2 - offsetX - iconWidth / 2 + iconWidth * 4);
+	arText.Sailcloth.pos.x = (rightIconsOffset - iconWidth / 2 + iconWidth * 4);
 	arText.Sailcloth.pos.y = centerTextY;
 	
 	arText.MineKey.pos.x = int(arText.Powder.pos.x) - iconWidth / 4;
@@ -4341,4 +4341,46 @@ void BI_ShowExtInfo()
 {
 	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_EXT_INFO, bShowExtInfo());
 	BI_SetFireModeArrows();
+	BI_SetCannonHealth();
+}
+
+void BI_SetCannonHealth()
+{
+	aref arCannonsL = touchattr(BattleInterface.dynamic.images.cannon_health_l);
+	aref arCannonsR = touchattr(BattleInterface.dynamic.images.cannon_health_r);
+
+	if (!bShowExtInfo())
+	{
+		arCannonsL.color = argb(0,128,128,128);
+		arCannonsR.color = argb(0,128,128,128);
+		return;
+	}
+
+	aref cash = CAN_GetHealthCash(pchar.id);
+	int healthLevel = cash.cannonl.level$int(CAN_HEALTH_LEVEL_NORMAL);
+
+	if (healthLevel != CAN_HEALTH_LEVEL_NORMAL)
+	{
+		arCannonsL.picture = "health_" + healthLevel;
+		arCannonsL.color = argb(255,128,128,128);
+	}
+	else arCannonsL.color = argb(0,128,128,128);
+	
+	healthLevel = cash.cannonr.level$int(CAN_HEALTH_LEVEL_NORMAL);
+	if (healthLevel != CAN_HEALTH_LEVEL_NORMAL)
+	{
+		arCannonsR.picture = "health_" + healthLevel;
+		arCannonsR.color = argb(255,128,128,128);
+	}
+	else arCannonsR.color = argb(0,128,128,128);
+
+	/*
+	Для картинок используются следующие атрибуты:
+		texture и uv - если изображение задано текстурой
+		group и picture - если изображение не задано текстурой и задано картинкой в battle_interface.ini
+		technique - позволяет задавать технику, по умолчанию "battle_tex_col_Rectangle"
+		priority - позволяет задавать порядок наложения элементов, по умолчанию 10000
+		color - цвет
+		pos - целочисленная позиция прямоугольника, задаётся через GetPosString
+	*/
 }

@@ -1,0 +1,22 @@
+weapon_0 {없음}
+weapon_1 {부족}
+weapon_2 {충분}
+weapon_3 {과잉}
+weapon_tooltip {성공적으로 승선전을 치르려면 무기 수가 선원 수보다 많아야 합니다. 그렇지 않으면 선원들이 막대한 불이익과 엄청난 피해를 입습니다.}
+bortFire_tooltip {한 차례 일제사격에는 $ctx(bortFireSize) _$key($ctx(goodName)Gen)이 필요합니다}
+powder_tooltip {전체 비축량은 $decl($ctx(mineQty)|기뢰|기뢰|기뢰)분입니다}
+food_tooltip {현재 소비량: 하루 $decl($ctx(foodconsumption)|묶음|묶음|묶음)}
+food_approximation_tooltip {최대 인원일 때 함선에는 $decl($ctx(approximation.foodconsumption)|묶음|묶음|묶음)이 필요합니다}
+medicament_tooltip {현재 소비량: 하루 $decl($ctx(medicamentconsumption)|묶음|묶음|묶음)}
+medicament_approximation_tooltip {최대 인원일 때 함선에는 $decl($ctx(approximation.medicamentconsumption)|묶음|묶음|묶음)이 필요합니다}
+rum_tooltip {현재 소비량: 하루 $decl($ctx(rumconsumption)|작은 통|작은 통|작은 통)}
+rum_approximation_tooltip {최대 인원일 때 함선에는 $decl($ctx(approximation.rumconsumption)|작은 통|작은 통|작은 통)이 필요합니다}
+spareCannons {$ctx(qty)개 예비}
+money {돈이 부족합니다}
+goods {물품이 부족합니다}
+cooldown {휴식이 필요합니다}
+raiseMoraleText {선원의 사기를 높이려면 다음을 지급해야 합니다:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {선원을 훈련하려면 다음을 지급해야 합니다:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {수리: 하루 $percent($ctx(hullPerDay)), $decl($ctx(planksPerDay)|판자|판자|판자) 소모}
+sailcloth_tooltip {수리: 하루 $percent($ctx(sailsPerDay)), $decl($ctx(sailClothesPerDay)|돛천|돛천|돛천) 소모}
+spareCannons_tooltip {주 구경 함포만 예비 함포로 간주됩니다. 선수포와 선미포는 이 계산에 포함되지 않습니다.}

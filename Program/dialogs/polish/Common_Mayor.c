@@ -105,9 +105,9 @@ void ProcessDialogEvent()
             }
 			if (int(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0) > 10)
             {
-				iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0);
+				iTotalTemp = GetMayorIndulgenceSumm(NPChar);
                 dialog.text = "O, kogo my tu mamy! To"+GetSexPhrase("","")+" "+GetFullName(pchar)+" Wiesz, właśnie niedawno wysłałem łowców piratów, by cię tu sprowadzili. Gdybym wiedział, że przyjdziesz tu jak gdyby nigdy nic, zaoszczędziłbym swoje pieniądze.";
-                if (int(pchar.Money) >= iTotalTemp*6000)
+                if (int(pchar.Money) >= iTotalTemp)
                 {
                     link.l1 = "Już miałem się zabrać za rozliczenie naszych rachunków.";
 				    link.l1.go = "arestFree_1";
@@ -2317,20 +2317,22 @@ void ProcessDialogEvent()
 		
 		case "arestFree_1":
 			dialog.text = "Osiedlić się? A jak sobie to wyobrażasz?";
-            link.l1 = "Myślę, że suma "+iTotalTemp*6000+" pesos mogą mnie jeszcze ocalić, prawda?";
+            link.l1 = "Myślę, że suma "+iTotalTemp+" pesos mogą mnie jeszcze ocalić, prawda?";
 			link.l1.go = "arestFree_2";
 			link.l2 = "Nie. I czas, bym odszedł. Z wyrazami szacunku.";
 			link.l2.go = "arest_1";
 		break;
 
 		case "arestFree_2":
-            if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= hrand(7) && iTotalTemp < 21)
+            i = wdmGetNationThreat(int(NPChar.Nation));
+            if (i < 3)
             {
     			dialog.text = "Przypuszczam, że moglibyśmy rozwiązać nasz incydent w taki sposób. Jeszcze nie posunąłeś się tak daleko, by sytuacja stała się nieodwracalna.";
     		    link.l1 = "Doskonale. Bardzo się cieszę. Proszę, przyjmij moją darowiznę.";
     		    link.l1.go = "Exit";
-    		    AddMoneyToCharacter(pchar, -iTotalTemp*6000);
-    		    ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", -iTotalTemp);
+    		    AddMoneyToCharacter(pchar, -iTotalTemp);
+                i = ChangeCharacterNationReputation(Pchar, int(NPChar.nation), 0);
+    		    ChangeCharacterNationReputation(Pchar, int(NPChar.nation), -i);
     		    AddCharacterExpToSkill(pchar, "Fortune", 100);
             }
             else

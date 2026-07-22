@@ -1,6 +1,7 @@
 
 void ProcessDialogEvent()
 {
+    object dlgContext;
 	ref NPChar;
 	aref Link, NextDiag;
 

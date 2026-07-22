@@ -5,20 +5,18 @@ Barque {Una barca è ideale per lunghi viaggi. Con una stiva spaziosa e buone qu
 Battleship {Le navi di linea di terza classe sono molto numerose e le più equilibrate in termini di qualità di combattimento, progettate per la battaglia in linea. Hanno abbastanza potenza di fuoco per sfidare anche i leviatani da 100 cannoni. Allo stesso tempo, le superano notevolmente in velocità e manovrabilità.}
 Brig {Le brig sono ampiamente utilizzate nella marina per il riconoscimento. Pescaggio ridotto, linee di scafo affilate e armo avanzato rendono la brig una delle navi più veloci, e i suoi cannoni di calibro decente la rendono un avversario molto pericoloso.}
 Brigantine {Un tipo leggendario di nave a vela. Veloce e manovrabile come una rondine, la brigantina è particolarmente apprezzata da pirati e avventurieri di ogni tipo. Il suo design riuscito la rende adatta a qualsiasi compito, dal combattimento al commercio.}
-CannonType {Tipo di cannone: mostra il tipo (cannoni o colubrine), il calibro attuale e il numero di cannoni installati}
+CannonType {Qui sono indicati il numero attuale e massimo di cannoni a bordo, nonché il loro tipo e le loro caratteristiche. Se il numero attuale coincide con quello massimo, viene mostrato un solo valore.}
 Capacity
 {
-Portata: mostra la capacità attuale e massima della nave. Più la nave è carica, più diventa lenta e poco manovrabile.I cannoni installati sulla nave sono anch'essi presi in considerazione nel calcolo della portata. Possono essere rimossi dalla nave per liberare spazio aggiuntivo per il carico. Per farlo, selezionare i cannoni attuali nell'elenco dei parametri della nave nell'interfaccia "Nave".
+Portata: mostra la capacità attuale e massima della nave. Più la nave è carica, più diventa lenta e poco manovrabile.
+I cannoni installati sulla nave sono anch'essi presi in considerazione nel calcolo della portata. Possono essere rimossi dalla nave per liberare spazio aggiuntivo per il carico. Per farlo, selezionare i cannoni attuali nell'elenco dei parametri della nave nell'interfaccia "Nave".
 }
 Caravel {L'armo caratteristico della caravella permette di riconoscere facilmente questa nave da lontano. Il suo design obsoleto le conferisce qualità di navigazione piuttosto mediocri, che le impediscono di competere alla pari con le navi moderne, nonostante abbia abbastanza cannoni.}
 Corvette {Le corvette sono progettate per il riconoscimento, il servizio di corriere e le operazioni di crociera. Con buona velocità e manovrabilità, una corvetta può raggiungere navi più leggere ed evitare con successo il combattimento con navi più pesanti.}
 CORVETTE_QUEST {Una nave unica, capolavoro dei costruttori navali francesi. L'ampia modernizzazione del design della corvetta ha migliorato quasi tutte le sue caratteristiche senza sacrificare la velocità. L'aumento della superficie velica e il calibro dei cannoni richiedono un equipaggio più esperto e numeroso, ma se le prove nei Caraibi avranno successo, le tecnologie applicate qui potrebbero rappresentare un vero progresso nella costruzione navale.}
 Crew {Equipaggio: mostra il numero attuale di membri dell'equipaggio, nonché il minimo e il massimo per questa nave.}
 Crew_Exp {Esperienza dell'equipaggio}
-Crew_Exp_hint
-{
-L'esperienza dell'equipaggio è suddivisa in tre categorie: marineria (influisce sulla manovrabilità della nave), artiglieria (velocità di ricarica e precisione di tiro) e abbordaggio (efficacia dell'equipaggio nel combattimento corpo a corpo).Un equipaggio esperto in numero ridotto può essere più efficace di una nave sovraccarica di novizi.L'esperienza in tutte e tre le categorie viene acquisita durante l'esecuzione delle azioni corrispondenti (manovra, tiro, abbordaggio), ma si perde anche se le abilità acquisite non vengono praticate per molto tempo.
-}
+Crew_Exp_hint {La vita a bordo è organizzata in turni di guardia e ogni marinaio deve sapersela cavare sia con il sartiame sia con gli affusti. L’esperienza dell’equipaggio influisce su tutte le caratteristiche della nave, dalla velocità di manovra delle vele al tempo di ricarica dei cannoni. $br()L’esperienza aumenta col tempo, ma diminuisce in seguito alle perdite o quando si reclutano pivelli in taverna. Preservare un equipaggio esperto è molto più conveniente che reclutare pivelli e addestrarli da zero.}
 EastIndiaMan {Le navi della Compagnia delle Indie Orientali hanno riunito le migliori qualità delle pinacce e si sono liberate dei loro difetti, diventando navi universali quasi perfette. Dotate di cannoni di grosso calibro, possono competere con navi da guerra di dimensioni comparabili, e la loro stiva spaziosa consente di utilizzarle efficacemente per il commercio.}
 Ecliaton {Le navi di questo tipo sono state costruite ai tempi del cardinale Richelieu e oggi sono strutturalmente obsolete. Ma hanno buone qualità di navigazione e possono trasportare i cannoni più pesanti, il che le rende una forza formidabile.}
 Elcasador {Un brillante esempio di nave da guerra progettata per operazioni speciali in mare aperto. Questo galeone è stato costruito su ordine della Casa de Contratación per distruggere i pirati più pericolosi che rappresentano una vera minaccia per il commercio nella regione e per gli interessi della Corona spagnola.}
@@ -32,26 +30,54 @@ Galeon_l {Il galeone è stato creato all'inizio del XVI secolo sulla base della 
 Galeon_sm {Un simbolo del potere e dell'ambizione spagnoli. I ponti brillano di ornamenti dorati e a poppa si erge l'immagine della Vergine della Misericordia, patrona della nave. Per alcuni, 'Santa Misericordia' è l'incarnazione dell'ordine, per altri, un temuto simbolo dell'oppressione reale. E alcuni vi vedono anche la vera Provvidenza Divina.}
 GoodsKeys_hint
 {
-I tasti freccia "Sinistra" e "Destra" sulla tastiera spostano le merci nella riga selezionata della tabella di una unità. Se si tiene premuto il tasto Maiusc, le merci verranno spostate completamente.Facendo clic con il tasto destro sulle frecce nella riga con la merce nell'interfaccia si trasferiscono dieci unità alla volta.
+I tasti Freccia sinistra e Freccia destra spostano le merci nella riga selezionata della tabella un’unità alla volta.
+L’uso dei tasti modificatori cambia la quantità:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — sposta tutto
+Clic destro su una freccia — sposta tutto
 }
 Himera {Una nave capolavoro, creata appositamente per le esigenze dell'intelligence navale britannica. Per le sue caratteristiche è paragonabile alle navi da guerra di terza classe, mantenendo la facilità di manovra della quarta classe.}
-Hull {Scafo: mostra la quantità attuale e massima di danni che lo scafo della nave può sopportare.}
+Hull {Lo scafo indica l'integrità attuale e massima della nave. Sotto il 10%, la nave inizia lentamente ad affondare.}
 LadyBeth
 {
-Un magnifico esempio di costruzione navale inglese, creato per il servizio di pattuglia indipendente in acque pericolose. Questa shniava ha eccellenti qualità di navigazione e un armamento impressionante per le sue dimensioni, che le consente di competere con navi di classi superiori.I suoi anni di servizio militare sono ormai lontani, e la gloria del suo precedente proprietario attira ora più commercianti di antiquariato e mappe del tesoro che lupi di mare.
+Un magnifico esempio di costruzione navale inglese, creato per il servizio di pattuglia indipendente in acque pericolose. Questa shniava ha eccellenti qualità di navigazione e un armamento impressionante per le sue dimensioni, che le consente di competere con navi di classi superiori.
+I suoi anni di servizio militare sono ormai lontani, e la gloria del suo precedente proprietario attira ora più commercianti di antiquariato e mappe del tesoro che lupi di mare.
 }
 LineShip {Le navi di linea di quarta classe non possono competere in potenza di fuoco con le loro sorelle maggiori, quindi non ha senso metterle in linea di battaglia. Il loro miglior utilizzo è la protezione dei convogli, poiché la loro velocità e manovrabilità le rendono più efficaci per questo compito.}
 Lugger
 {
-Il lugro è una piccola nave a vela che molti marinai, soprattutto contrabbandieri, apprezzano per la sua manovrabilità e versatilità. I lugri compensano la mancanza di velocità a vele spiegate con eccellenti angoli di bolina.Nonostante le piccole dimensioni, i lugri hanno una buona navigabilità e possono effettuare lunghi viaggi.
+Il lugro è una piccola nave a vela che molti marinai, soprattutto contrabbandieri, apprezzano per la sua manovrabilità e versatilità. I lugri compensano la mancanza di velocità a vele spiegate con eccellenti angoli di bolina.
+Nonostante le piccole dimensioni, i lugri hanno una buona navigabilità e possono effettuare lunghi viaggi.
 }
 LuggerQuest {Il lugro da corriere è stato costruito appositamente per le esigenze del servizio di corriere. Eccellenti qualità di navigazione, ottime prestazioni controvento e un armamento abbastanza forte garantiscono la consegna affidabile di dispacci importanti e piccoli carichi di valore.}
-Maneuver {Manovrabilità: mostra la manovrabilità della nave in questo momento, tenendo conto di tutti i fattori (carico, abilità del capitano, danni alla nave) e la manovrabilità massima raggiungibile.}
+Maneuver
+{
+La manovrabilità determina la velocità di virata della nave. Più alto è il valore, meglio la nave risponde al timone. Danni, inesperienza dell’equipaggio e sovraccarico della stiva la riducono. Le vele da combattimento garantiscono la massima manovrabilità.
+~
+Manovrabilità massima della nave: $number($ctx(turnrateMax))
+~
+Valori approssimativi:$br
+_$key(human_turn_rate_1) – fino a $kstringTemp(HUMAN_TURN_RATE_STEP_1)
+_$key(human_turn_rate_2) – fino a $kstringTemp(HUMAN_TURN_RATE_STEP_2)
+_$key(human_turn_rate_3) – fino a $kstringTemp(HUMAN_TURN_RATE_STEP_3)
+_$key(human_turn_rate_4) – fino a $kstringTemp(HUMAN_TURN_RATE_STEP_4)
+_$key(human_turn_rate_5) – fino a $kstringTemp(HUMAN_TURN_RATE_STEP_5)
+_$key(human_turn_rate_6) – qualsiasi valore superiore
+}
+ManeuverCurrent
+{
+~
+Manovrabilità attuale, tenendo conto delle abilità del capitano e delle condizioni della nave:
+$number($ctx(turnrate)) — $percent($ctx(turnratePercent)) del massimo.
+~
+}
 Manowar {Le navi di linea di seconda classe sono la spina dorsale della potenza navale di qualsiasi nazione. Insieme alle navi di terza classe, formano una flotta che combina forza e manovrabilità. E in assenza di navi di prima classe nello squadrone, alcune di esse servono come ammiraglie.}
 Manowar_e {Una nave di linea di prima classe è una vera fortezza galleggiante. Grazie alla sua terrificante potenza di fuoco, può mandare a fondo qualsiasi avversario con pochi colpi precisi. Ma anche le più grandi potenze navali non hanno molte di queste navi, e vengono utilizzate come ammiraglie nelle grandi battaglie navali.}
 MayFang
 {
-Questo xebec ha uno scafo alleggerito a scapito della robustezza, ma ciò lo rende un navigatore impareggiabile: nei Caraibi non c'è altra nave in grado di navigare quasi controvento!E venti cannoni di medio calibro sono un argomento di peso nella competizione marittima.
+Questo xebec ha uno scafo alleggerito a scapito della robustezza, ma ciò lo rende un navigatore impareggiabile: nei Caraibi non c'è altra nave in grado di navigare quasi controvento!
+E venti cannoni di medio calibro sono un argomento di peso nella competizione marittima.
 }
 Memento {In questa nave è difficile riconoscere il vecchio design di un brigantino inglese, che compensa la sua scarsa manovrabilità con una potente artiglieria e uno scafo pesante e resistente. Ricoperto di amuleti nativi e impregnato di morte, spaventa non solo i nemici, ma anche il suo stesso equipaggio.}
 Mirage {A differenza dei ketch bombardieri, i ketch corsari non trasportano mortai giganti progettati per bombardare le fortezze, ma hanno uno scafo più leggero e aerodinamico, il che migliora le loro qualità di navigazione. Anche gli yacht dei principi invidierebbero la velocità di questo ketch corsaro.}
@@ -76,19 +102,41 @@ Migliorare il piano velico può esaltare i punti di forza o attenuare i punti de
 }
 Sails {Vele: mostrano i danni attuali e massimi che le vele della nave possono sopportare.}
 Santisima {Questa nave è stata varata nel famoso cantiere navale dell'Avana. Il suo scafo è un po' più leggero e debole rispetto ad altre navi di prima classe, ma questo è ampiamente compensato da migliori qualità di navigazione.}
-sCannons {Mostra il calibro massimo consentito e il numero massimo possibile di cannoni sulla nave.}
+sCannons {Il calibro attuale e massimo dei cannoni installabili su questa nave. Se il calibro attuale coincide con quello massimo, viene mostrato un solo valore.}
 Schooner {Buone qualità di navigazione, una stiva spaziosa, pescaggio ridotto e un armamento decente hanno reso la goletta una delle navi più popolari delle piccole classi. È ugualmente adatta al commercio, alla navigazione costiera e al combattimento.}
 Schooner_W {I marinai del Nuovo Mondo sono stati i primi ad apprezzare le golette e hanno iniziato a usarle per scopi militari. Per questo è stato necessario modificare un po' lo scafo, ridurre lo spazio utile della stiva e aggiungere cannoni, ma il risultato ne è valsa la pena. Ben armata, veloce e manovrabile, la goletta da guerra è una seria minaccia per qualsiasi nave mercantile.}
 Shipyard_hint
 {
-Nel cantiere navale puoi acquistare, riparare o vendere navi.L'eroe non può vendere la propria nave se ha dei compagni. Non puoi nemmeno acquistare una nave per un compagno se l'eroe non ha la propria nave.Per cambiare la nave dell'eroe o del compagno mantenendo tutto il contenuto della stiva e l'equipaggio, seleziona nell'elenco delle navi della squadra dell'eroe (sul lato sinistro dell'interfaccia) la nave da sostituire con una nuova, e nell'elenco delle navi in vendita nel cantiere navale (sul lato destro dell'interfaccia) quella desiderata, quindi fai clic sul pulsante "Acquista".Per acquistare una nuova nave (assegnare un nuovo compagno), seleziona prima uno slot vuoto nell'elenco a sinistra prima dell'acquisto.
+Nel cantiere navale puoi acquistare, riparare o vendere navi.
+L'eroe non può vendere la propria nave se ha dei compagni. Non puoi nemmeno acquistare una nave per un compagno se l'eroe non ha la propria nave.
+Per cambiare la nave dell'eroe o del compagno mantenendo tutto il contenuto della stiva e l'equipaggio, seleziona nell'elenco delle navi della squadra dell'eroe (sul lato sinistro dell'interfaccia) la nave da sostituire con una nuova, e nell'elenco delle navi in vendita nel cantiere navale (sul lato destro dell'interfaccia) quella desiderata, quindi fai clic sul pulsante "Acquista".
+Per acquistare una nuova nave (assegnare un nuovo compagno), seleziona prima uno slot vuoto nell'elenco a sinistra prima dell'acquisto.
 }
+ShipyardCannons_hint {Al cantiere navale puoi commerciare cannoni, ma non tutti i calibri sono disponibili alla libera vendita. Qui non troverai né bombarde né colubrine intere. I cannoni venduti dal cantiere sono sempre in condizioni perfette. Quando vendi dei cannoni, questi vengono prima riparati e il costo delle riparazioni viene detratto dall’importo della transazione.}
 Shnyava {La shniava e la brigantina erano le predecessori della brig. Grazie al loro design di scafo riuscito, alla buona velocità e alla capacità di trasportare cannoni pesanti, queste navi sono diventate molto popolari sia nei Caraibi che in Europa. Sono spesso utilizzate per scortare convogli mercantili di piccole classi.}
 Sloop {Con buona velocità e manovrabilità e un armamento solido per le sue dimensioni, lo sloop è una nave pattuglia affidabile, adatta anche al riconoscimento.}
-Speed {Velocità: mostra la velocità massima attuale della nave, tenendo conto di tutti i fattori (carico, abilità del capitano, danni alla nave) e la velocità massima raggiungibile.}
+Speed {La velocità massima raggiungibile dalla nave nelle condizioni attuali e con il vento alla massima intensità. È influenzata dalle capacità e abilità del capitano e del Navigatore, dagli amuleti, dal carico della nave, dall’usura delle vele e dall’esperienza dell’equipaggio.}
+MaxSpeed {La velocità massima raggiungibile dalla nave in condizioni ideali e con il vento alla massima intensità. Le imbarcazioni più leggere e dotate di un’ampia velatura sono generalmente più veloci, ma lo pagano con uno scafo meno resistente e una stiva più piccola.}
 TakeAllGoods_hint {Il pulsante "Trasferisci tutte le merci" trasferisce le merci sulla nave del personaggio in base al loro valore specifico medio. Prima vengono trasferite le merci più preziose, poi quelle meno preziose, e così via fino a quando non c'è più spazio nella stiva.}
 Tartane {Una barca da pesca non è la migliore nave per un capitano che brilla nell'alta società. Ma se il destino ti ha privato della tua nave preferita, questa barca triste è abbastanza adatta per un viaggio veloce tra le isole, anche se dovresti ricordare a te stesso: è solo temporaneo!}
 Valciria {Un ottimo brigantino inglese. Grande velocità e manovrabilità, buone prestazioni controvento e due dozzine di cannoni sul ponte fanno di questa nave a vela un sogno.}
 Warship {Le navi di questo tipo sono state costruite ai tempi del cardinale Richelieu e oggi sono strutturalmente obsolete. Ma hanno buone qualità di navigazione e possono trasportare i cannoni più pesanti, il che le rende una forza formidabile.}
 WarTartane {Le tartane sono le stesse barche da pesca rapidamente adattate per lavori costieri nelle pericolose acque dei Caraibi. Il loro modesto armamento e la costruzione improvvisata non ispirano rispetto, ma sono in grado di spaventare un pirata inesperto o un povero contrabbandiere. Una soluzione temporanea quando non c'è molta scelta.}
 XebekVML {Lo xebec è il tipo di nave mediterranea più famoso. Il suo scafo stretto e le grandi vele latine su tutti gli alberi gli permettono di navigare con angoli estremi rispetto al vento, il che lo rende un avversario molto fastidioso. Sfortunatamente, la bassa velocità con vento in poppa limita l'uso dello xebec principalmente alla pirateria e al contrabbando.}
+ShipPower {La potenza della nave indica quanto essa appaia minacciosa a un osservatore esterno. Il valore attuale dipende dalla classe e dalla specializzazione della nave, dal numero e dallo stato dei cannoni, dal numero e dall’addestramento dell’equipaggio, dalle condizioni dello scafo e delle vele e dalle abilità del capitano. Una pinaccia comandata da un tagliagole noto in tutti i Caraibi verrà evitata con cura, mentre una fregata danneggiata nelle mani di un giovane inesperto attirerà presto guai. $br$red La potenza di ogni nave della squadra si somma alla potenza complessiva della squadra, che influenza il comportamento delle squadre ostili e dei pirati sulla mappa globale. Questo valore è consultabile nella schermata «Nazioni».}
+Cannon_DamageMultiply_header {Moltiplicatore danni dei cannoni}
+Cannon_DamageMultiply_text {Il valore per cui viene moltiplicato il danno del proiettile.}
+Cannon_firerange_header {Gittata}
+Cannon_firerange_text {La gittata massima entro cui il cannone può colpire il bersaglio. Le munizioni scelte, le abilità, gli amuleti e persino il rollio della nave possono influenzare la gittata finale.}
+Cannon_reloadtime_header {Tempo di ricarica}
+Cannon_reloadtime_text {Il tempo necessario per ricaricare completamente i cannoni. Dipende dal numero e dall’esperienza dell’equipaggio, nonché dalle abilità del capitano e del cannoniere.}
+Cannon_hp_header {Integrità massima}
+Cannon_hp_text {Questo valore determina quanti colpi può sparare un cannone prima di essere completamente distrutto. Più è alto, meno spesso il cannone deve essere riparato. Ogni tipo di cannone possiede una propria integrità massima, che generalmente aumenta con il calibro.}
+Cannon_weight_header {Peso del cannone}
+Cannon_weight_text {I cannoni occupano molto spazio a bordo; sulle navi da guerra, la batteria d’artiglieria può assorbire fino a metà della capacità di carico. Il peso aumenta con il calibro e la potenza di fuoco, mentre le colubrine pesano più dei cannoni dello stesso calibro.}
+Cannon_health_0 {Distrutti}
+Cannon_health_1 {Usurati}
+Cannon_health_2 {In ordine}
+Cannon_health_3 {Ben tarati}
+Cannon_weight_in_stock {Equivale a circa$br() il $percent($ctx(weightPercent)) della portata lorda}
+Cannon_health_on_ship {Stato dei cannoni nella stiva della «$ctx(ShipName)»: $ctx(health)}

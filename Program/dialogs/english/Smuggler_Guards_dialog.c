@@ -48,22 +48,7 @@ void ProcessDialogEvent()
 				}
 			}
 			Link.l2 = "I do charity. Is that really illegal?";
-			// belamour legendary edition включим обаяние ГГ, если оно есть
-			if(CheckCharacterPerk(pchar, "Trustworthy"))
-			{
-				Link.l2.go = "GiveMeSomeMoneyToo";
-			}
-			else
-			{
-				if(int(Pchar.rank) >= 4 && GetSummonSkillFromNameToOld(Pchar, SKILL_COMMERCE) >= 5)
-				{
-					Link.l2.go = "GiveMeSomeMoneyToo";
-				}
-				else
-				{
-				Link.l2.go = "TryingToGiveBribe";
-				}
-			}
+			Link.l2.go = "GiveMeSomeMoneyToo";
 			Link.l3 = "Get away from here, soldier. It's none of your business!";
 			if(int(pchar.reputation.nobility) <= 25 && FencingSkills)
 			{
@@ -141,38 +126,35 @@ void ProcessDialogEvent()
 			Link.l1.go = "ThisTimeFree_fight";
 		break;
 
-		case "GiveMeSomeMoneyToo":	
+		case "GiveMeSomeMoneyToo":
+            attrName = XI_ConvertString("Chance");
+            int iRand = hrand(99, "&Bribe" + PChar.Location);
+            int iMoney = PChar.Money;
+            int iBaseChance = GetCharacterSkill(PChar, SKILL_SNEAK) + GetCharacterSkill(PChar, SKILL_LEADERSHIP);
 			dialog.snd = "Voice\COGU\COGU005";		
 			dialog.text = "Really? Well, this activity is completely legal... if we get our share, of course. And how generous is your charity?";
-			Link.l1 = "I think that"+int(int(Pchar.money)/10)+" pesos will be enough.";
-			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/10))
-			{
-				Link.l1.go = "MoneyAccepted10";
-			}
-			else
-			{
-				Link.l1.go = "TryingToGiveBribe";
-			}
-
-			Link.l2 = "How about "+int(int(Pchar.money)/5)+" pesos?";
-			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/5))
-			{
-				Link.l2.go = "MoneyAccepted5";
-			}
-			else
-			{
-				Link.l2.go = "TryingToGiveBribe";
-			}
-
-			Link.l3 = "For you, officer, I've got "+int(int(Pchar.money)/2)+" pesos!";
-			if(int(Pchar.rank)*1000 <= int(int(Pchar.money)/2))
-			{
-				Link.l3.go = "MoneyAccepted2";
-			}
-			else
-			{
-				Link.l3.go = "TryingToGiveBribe";
-			}
+            if (iMoney >= 25000)
+            {
+                iTemp = iBaseChance > 100 ? 100 : iBaseChance;
+                link.l1 = "For you, officer, I've got 25000 pesos! (" + attrName + " " + iTemp + "%)";
+                link.l1.go = iTemp > iRand ? "MoneyAccepted10" : "TryingToGiveBribe";
+            }
+            if (iMoney >= 12000)
+            {
+                iTemp = iBaseChance / 2 + 10;
+                if (iTemp > 100) iTemp = 100;
+                link.l2 = "How about 12000 pesos? (" + attrName + " " + iTemp + "%)";
+                link.l2.go = iTemp > iRand ? "MoneyAccepted5" : "TryingToGiveBribe";
+            }
+            if (iMoney >= 5000)
+            {
+                iTemp = iBaseChance / 2 - 10;
+                if (iTemp > 100) iTemp = 100;
+                link.l3 = "I think that 5000 pesos will be enough. (" + attrName + " " + iTemp + "%)";
+                link.l3.go = iTemp > iRand ? "MoneyAccepted2" : "TryingToGiveBribe";
+            }
+			link.l4 = StringFromKey("smuggling_3");
+			link.l4.go = "ThisTimeFree_fight";
 		break;
 
 		case "TryingToGiveBribe":
@@ -183,6 +165,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "MoneyAccepted10":
+            AddMoneyToCharacter(PChar, -25000);
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "My thanks for your kindness.";
 			Link.l1 = "Always at your service.";
@@ -191,6 +174,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MoneyAccepted5":
+            AddMoneyToCharacter(PChar, -12000);
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "My thanks for your kindness.";
 			Link.l1 = "Always at your service.";
@@ -199,6 +183,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MoneyAccepted2":
+            AddMoneyToCharacter(PChar, -5000);
 			dialog.snd = "Voice\COGU\COGU007";
 			dialog.text = "My thanks for your kindness.";
 			Link.l1 = "Always at your service.";

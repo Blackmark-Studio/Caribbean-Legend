@@ -44,10 +44,10 @@ Node0_d_b_action {We will do this properly}
 Node0_d_b_success {$attr($context.officerName) is your _$attr($context.officerJob), not an ordinary sailor. That $rand(gives him|means) certain privileges. You order $rand(an official memorial service|a memorial service according to regulation) to be held in the wardroom. $attr($context.officerName) looks $rand(a little embarrassed|embarrassed), but that feeling $rand(quickly gives way to gratitude|soon gives way to gratitude).}
 Node0_d_b_success_action {The best for loyal comrades}
 Node0_d_c_action {God hears you without them}
-Node0_d_c_success {You reassure the officer that a heartfelt prayer will be heard even without rites.$br$red$attr($context.officerName) seems to agree. You feel a quiet pride that your words have brought him some relief.}
+Node0_d_c_success {You reassure the officer that a heartfelt prayer will be heard even without rites.$br()$red $attr($context.officerName) seems to agree. You feel a quiet pride that your words have brought him some relief.}
 Node0_d_c_success_action {You will get through this}
 Node0_d_c_fail {Your words ring hollow, and $attr($context.officerName) looks hurt and disappointed. It seems he has simply taken you for a miser and a cynic.}
 Node0_d_c_fail_action {Wait, I do not begrudge it}
 Node0_d_d_action {The ship's chaplain will help}
-Node0_d_d_success {It seems strange to you that $attr($context.officerName) forgot about the ship's actual chaplain, but you put it down to blinding grief.$br$redYou summon the chaplain to your cabin, explain the matter, and ask him for guidance. $attr($context.officerName) looks distant, but the holy man's words quickly bring him back to himself.}
+Node0_d_d_success {It seems strange to you that $attr($context.officerName) forgot about the ship's actual chaplain, but you put it down to blinding grief.$br()$red You summon the chaplain to your cabin, explain the matter, and ask him for guidance. $attr($context.officerName) looks distant, but the holy man's words quickly bring him back to himself.}
 Node0_d_d_success_action {God has heard us}

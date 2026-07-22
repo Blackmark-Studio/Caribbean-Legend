@@ -32,7 +32,8 @@ descriptor_descr_ArmorMaterial_1 {皮甲或许能在醉酒斗殴中保你无恙,
 descriptor_descr_ArmorMaterial_2 {板甲兼顾重量与防护, 关键时刻能救你一命。可减少$percent($MaterialDefenceValue(2))所受伤害。}
 descriptor_descr_ArmorMaterial_3
 {
-冲压护甲为部队批量生产, 广泛用于欧洲战争。 可减少$percent($MaterialDefenceValue(3))所受伤害。
+冲压护甲为部队批量生产, 广泛用于欧洲战争。 
+可减少$percent($MaterialDefenceValue(3))所受伤害。
 }
 descriptor_descr_ArmorMaterial_4 {制造高质量的锻造盔甲是一个复杂 且昂贵的过程, 这使得它在加勒比地区极为罕见。 将所受伤害降低$percent($MaterialDefenceValue(4))。}
 descriptor_descr_ArmorType_0 {轻甲几乎与普通衣物无异, 完全不影响行动, 但防护力较低。}
@@ -51,7 +52,8 @@ descriptor_descr_EmpoweredAmmo {该弹药可提升武器属性。}
 descriptor_descr_EnhancingPotion {具有特殊增益效果。}
 descriptor_descr_Exotic
 {
-此物不应落入虔诚基督徒之手, 持有者立刻便流言四起, 令人不寒而栗。舰队力量提升$percent($DescriptorBaseValue(Exotic)), 效果可叠加。
+此物不应落入虔诚基督徒之手, 持有者立刻便流言四起, 令人不寒而栗。
+舰队力量提升$percent($DescriptorBaseValue(Exotic)), 效果可叠加。
 }
 descriptor_descr_Fancy {此物以其典雅外观、镶嵌和昂贵材 质而出众。 佩戴可使领导力提升$number($DescriptorBaseValue(Fancy))。效果可叠加。}
 descriptor_descr_Fighter {该效果对先锋有用。}
@@ -88,7 +90,8 @@ descriptor_descr_Trinket {精致与不那么精致的物品, 彰显品味与乡�
 descriptor_descr_TwoHanded {重型火器, 射击时需双手持握。需具备专门技 能方可使用。}
 descriptor_descr_Unremarkable
 {
-这种物品人手一件。有了它, 你不会引人注意, 也不会被记住。潜行提高$number($DescriptorBaseValue(Unremarkable)), 效果可叠加。
+这种物品人手一件。有了它, 你不会引人注意, 也不会被记住。
+潜行提高$number($DescriptorBaseValue(Unremarkable)), 效果可叠加。
 }
 descriptor_descr_Valuable {售价较高。}
 descriptor_descr_WeaponCurvature_0 {这种武器为直型或略带弯曲, 更适合快速攻击而非劈砍攻击。}
@@ -105,7 +108,7 @@ descriptor_Exotic {异域}
 descriptor_Fancy {华丽}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {脆弱}
-descriptor_GoodFit {朴素}
+descriptor_GoodFit {合身}
 descriptor_GrapeAmmo {霰弹}
 descriptor_HealPotion {治疗}
 descriptor_HeartDefence {强化}

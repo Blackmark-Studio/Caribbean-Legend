@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Don't play the fool! Cash on the nail and maybe then I'll let you go!","Haven't you heard about the travelling fee? If you don't part with your gold, you'll part with your head!","Heh, this little adventure will cost you a purse... if I don't get angry."),RandPhraseSimple("It's very simple. You give us all your gold and then you are free to leave, or you stay here, and we take all your gold anyway. But I think that the latter is not what you would like, he-he.","Don't pretend you don't understand! Hand over your purse if you don't want me to take it from your dead body!"),"I'll explain, if you're so slow-witted. You give me all your money, if you value your life.");
-			Link.l1 = "Goddamn it, scoundrel! I only have "+int(int(Pchar.money)/20)*10+" pesos.";
+			Link.l1 = "Goddamn it, scoundrel! I only have "+iMoney+" pesos.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("You want my money? Come and get it, and I'll see how much you're worth!","How dare you, boor! I'll teach you a lesson in good manners!","What self-confidence! Well, let's see how you fare against a real "+GetSexPhrase("sea wolf","Louve des mers")+"!"),LinkRandPhrase("You should be flogged for such an outrage!","You scoundrels! Pray to your devils for a warm place in hell!","You should have been hanged long ago, gallows-birds! Well, it seems I will have to stain my sabre with your blood!"),RandPhraseSimple("And what makes you think that I would give you my money?","And haven't you noticed that I am well-armed and didn't come here just for a stroll?"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("And why should I care about your patrol? I pay them. So, give me your purse and stop running your mouth.","You think you can scare me? I am the patrol myself for those like you in this jungle. No one has left yet without paying a fee!");
-					Link.l1 = "Goddammit, scoundrel! I only have "+int(int(Pchar.money)/20)*10+" pesos.";
+					Link.l1 = "Goddammit, scoundrel! I only have "+iMoney+" pesos.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("Heh, I'm not going to take orders from a wimp like you.","I'll make a couple of new holes in your skull for such impudence! Just to ventilate your brain a bit.","Such impudence won't go unpunished!"),"You shouldn't have done that...");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("Alright! Hand it over and get lost!","Not much, but still better than nothing. It's good to deal with a smart person! You're free to go."),"Now that's a different story! As my friend used to say, 'it's always good to listen to someone who is smart, but talking with a fool is much better'! He-he!","In exchange for your gold, I will give you some advice: you should not walk in the jungle if you're "+GetSexPhrase("such a wimp. Drink your rum at the tavern, so that you and your purse stay safe!","a lass. Being robbed is not the worst that could have happened to you.")+".");

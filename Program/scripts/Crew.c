@@ -1,10 +1,41 @@
-// файл по методам экипажа, переделка для ВМЛ 29.07.06
 int  Part_HeroPart 				= 200;
 int  Part_CompanionShipPerClass = 20;
 int  Part_Gower					= 10; 
 int  Part_Crew					= 1;
 int  Part_Companion				= 30;
 int  Part_Officer               = 10;	
+
+
+// месячная базовая ставка одного матроса до модификаторов
+#define CREW_SAILOR_MONTHLY_SALARY        385.0
+
+// разовый аванс при найме матроса в таверне: полтора месячного жалования
+#define CREW_HIRE_ADVANCE_MTP             1.5
+
+// опыт экипажа влияет мягко: средний опыт 0..100 даёт множитель 0.75..1.25
+#define CREW_EXP_SALARY_MTP_MIN           0.75
+#define CREW_EXP_SALARY_MTP_RANGE         0.50
+
+// сложность почти не трогает содержание: каждый шаг сложности от 6 даёт +/-5%
+// MOD_SKILL_ENEMY_RATE идёт 2/4/6/8/10, поэтому делим разницу на 2
+#define CREW_DIFFICULTY_SALARY_STEP       0.05
+
+// Торговля и Харизма вместе могут снизить зарплату матросов максимум на 15%
+// SKILL_LEADERSHIP в проекте соответствует русской Харизме
+#define CREW_SKILL_SALARY_DISCOUNT_MAX    0.15
+
+// базовая месячная ставка офицера за сам факт службы
+#define OFFICER_BASE_MONTHLY_SALARY      3500.0
+
+// стоимость одного очка умения офицера; сумма 14 навыков 1..100 даёт примерно 2к..50к
+#define OFFICER_SKILL_POINT_COST         20.0
+
+// сложность мягко влияет на зарплату офицеров: каждый шаг от 6 даёт +/-5%
+// MOD_SKILL_ENEMY_RATE идёт 2/4/6/8/10, поэтому делим разницу на 2
+#define OFFICER_DIFFICULTY_SALARY_STEP   0.05
+
+// Торговля и Харизма вместе могут снизить зарплату офицеров максимум на 15%
+#define OFFICER_SKILL_SALARY_DISCOUNT_MAX 0.15
 
 void UpdateCrewExp()
 {	
@@ -85,21 +116,77 @@ int GetMoneyForOfficer(ref Npchar)
 		sum += GetSkillValue(Npchar, SKILL_TYPE, GetSkillNameByIdx(i));
 	}
 
-	float mtp = 1.0 - LVL_GetCurrentLeadershipBonusMtp();
+	// База: офицер получает ставку за службу + оплату за общий профессиональный опыт.
+	// 14 навыков по 1 дают около 2к, 14 навыков по 100 дают около 50к до модификаторов.
+	float payment = OFFICER_BASE_MONTHLY_SALARY + float(sum) * OFFICER_SKILL_POINT_COST;
+
+	// Сложность слегка двигает содержание, но не перестраивает экономику.
+	// MOD 2 = -10%, MOD 6 = база, MOD 10 = +10%.
+	float mtp = 1.0 + ((float(MOD_SKILL_ENEMY_RATE) - 6.0) / 2.0) * OFFICER_DIFFICULTY_SALARY_STEP;
+
+	// Сохраняем старый смысл Trustworthy: такой офицер обходится дешевле.
 	if (HasPerk(Npchar, "Trustworthy")) mtp -= PERK_VALUE_TRUSTWORTHY;
 
-	return int(MOD_SKILL_ENEMY_RATE * 7 * sum * mtp);
+	return int(payment * mtp);
+}
+
+
+float GetCrewSalaryExpMtp(ref chref)
+{
+	float crewExp = GetCrewExp(chref);
+	if (crewExp < 0.0) crewExp = 0.0;
+	if (crewExp > 100.0) crewExp = 100.0;
+
+	return CREW_EXP_SALARY_MTP_MIN + CREW_EXP_SALARY_MTP_RANGE * crewExp / 100.0;
+}
+
+float GetCrewSalaryDifficultyMtp()
+{
+	return 1.0 + ((MOD_SKILL_ENEMY_RATE - 6.0) / 2.0) * CREW_DIFFICULTY_SALARY_STEP;
+}
+
+float GetCrewSalarySkillMtp(ref mchref)
+{
+	float nLeadership = GetSummonSkillFromNameToOld(mchref, SKILL_LEADERSHIP); // Харизма
+	float nCommerce   = GetSummonSkillFromNameToOld(mchref, SKILL_COMMERCE);   // Торговля
+	float skillAvg    = (nLeadership + nCommerce) / 2.0;
+
+	// Навыки в старой шкале 1..10. Единица не даёт скидки, десять даёт полный бонус.
+	float skillPower = (skillAvg - 1.0) / 9.0;
+	if (skillPower < 0.0) skillPower = 0.0;
+	if (skillPower > 1.0) skillPower = 1.0;
+
+	return 1.0 - CREW_SKILL_SALARY_DISCOUNT_MAX * skillPower;
+}
+
+int GetMoneyForCrew(ref chref)
+{
+	int crewQty = GetCrewQuantity(chref);
+	if (crewQty <= 0) return 0;
+
+	float payment = float(crewQty) * CREW_SAILOR_MONTHLY_SALARY;
+	payment *= GetCrewSalaryExpMtp(chref);
+	payment *= GetCrewSalaryDifficultyMtp();
+	payment *= GetCrewSalarySkillMtp(GetMainCharacter());
+	payment *= SZN_GetModifierMtp(M_CREW_MAINTENANCE_COST, 1.0, 0.01);
+
+	return int(payment);
 }
 
 int GetMoneyForOfficerFull(ref Npchar)
 {
-    float oLeaderShip = GetSummonSkillFromNameToOld(pchar,SKILL_LEADERSHIP);
-	float oCommerce   = GetSummonSkillFromNameToOld(pchar,SKILL_COMMERCE);	
-	// Влияния навыков (1..10 приводим к 0..1 аффинно) и степенная форма 0.55
-	float okCommerce   = pow((oCommerce) / 10.0, 0.55) * 0.65; // 65% вес
-	float okLeadership = pow((oLeaderShip) / 10.0, 0.55) * 0.35; // 35% вес
-	float mSkillOficcer  = 1.0 - 0.35 * (okCommerce + okLeadership); 
-	return int(GetMoneyForOfficer(Npchar)*mSkillOficcer);
+	float oLeaderShip = GetSummonSkillFromNameToOld(pchar, SKILL_LEADERSHIP); // Харизма
+	float oCommerce   = GetSummonSkillFromNameToOld(pchar, SKILL_COMMERCE);   // Торговля
+	float skillAvg    = (oLeaderShip + oCommerce) / 2.0;
+
+	// Навыки в старой шкале 1..10. Единица не даёт скидки, десять даёт полный бонус.
+	// Торговля и Харизма 50/50 дают до -15% к зарплате офицеров.
+	float skillPower = (skillAvg - 1.0) / 9.0;
+	if (skillPower < 0.0) skillPower = 0.0;
+	if (skillPower > 1.0) skillPower = 1.0;
+
+	float mSkillOficcer = 1.0 - OFFICER_SKILL_SALARY_DISCOUNT_MAX * skillPower;
+	return int(GetMoneyForOfficer(Npchar) * mSkillOficcer);
 }
 
 int GetSalaryForShip(ref chref)
@@ -107,26 +194,14 @@ int GetSalaryForShip(ref chref)
     int i, cn, iMax;
     ref mchref, offref;
     int nPaymentQ = 0;
-    float fExp;
     mchref = GetMainCharacter();
 
 	float nLeaderShip = GetSummonSkillFromNameToOld(mchref,SKILL_LEADERSHIP);
-	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);	
-	// Влияния навыков (1..10 приводим к 0..1 аффинно) и степенная форма 0.55
-	float kCommerce   = pow((nCommerce) / 10.0, 0.55) * 0.65; // 65% вес
-	float kLeadership = pow((nLeaderShip) / 10.0, 0.55) * 0.35; // 35% вес
-	float mSkillCrew  = 1.0 - 0.55 * (kCommerce + kLeadership);      // границы: 1.0..0.45
-
-	
-
-	float shClass = GetCharacterShipClass(chref);
-	if (shClass   < 1) shClass   = 7;
-	if (!GetRemovable(chref) && int(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то вских сопровождаемых кормить!!!
+	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);
+	if (!GetRemovable(chref) && int(chref.index) != GetMainCharacterIndex()) return 0; // считаем только своих, а то всяких сопровождаемых кормить!!!
 		
-	// экипаж
-	fExp = (GetCrewExp(chref, "Sailors") + GetCrewExp(chref, "Cannoners") + GetCrewExp(chref, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	nPaymentQ += int( fExp * float((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/float(shClass) * mSkillCrew );
-	nPaymentQ = int(float(nPaymentQ) * SZN_GetModifierMtp(M_CREW_MAINTENANCE_COST, 1.0, 0.01));
+	// экипаж: фиксированная месячная ставка матроса + мягкие модификаторы опыта, сложности, навыков и сезона
+	nPaymentQ += GetMoneyForCrew(chref);
     
     // теперь самого капитана и его офицеров (тут  главный герой не считается) так что пассажиров и оффицеров ниже
     if(int(chref.index) != GetMainCharacterIndex())
@@ -228,49 +303,38 @@ int AddCrewMorale(ref chr, int add, bool withNotification = false)
 	return morale;
 }
 
-int GetCharacterRaiseCrewMoraleMoney(ref chr)
-{
-	float nLeaderShip = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP);
-	float nCommerce   = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // boal	
-	int nPaymentQ = int(15 + GetCrewQuantity(chr) * (30 + int(MOD_SKILL_ENEMY_RATE * GetCharacterCrewMorale(chr)/10.0) - nLeaderShip - nCommerce)); // boal
-	float fExp = (GetCrewExp(chr, "Sailors") + GetCrewExp(chr, "Cannoners") + GetCrewExp(chr, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	nPaymentQ = int(nPaymentQ * (fExp + 0.5));
-	if (nPaymentQ < 5) nPaymentQ = 5;
-	return nPaymentQ;
-}
-
 float ChangeCrewExp(ref chr, string sType, float fNewExp, bool withNotification = false)
 {
-	if (!CheckAttribute(chr, "Ship.Crew.Exp." + sType)) chr.Ship.Crew.Exp.(sType) = (1 + rand(50));
+	float exp = chr.Ship.Crew.Exp$float(10.0);
+	if (sType != "sailors") return exp;
 
 	fNewExp *= isEquippedArtefactUse(chr, "totem_09", 1.0, 2.0);
 	if (IsCompanion(chr)) fNewExp *= SZN_GetModifierMtp(M_CREW_EXP_MTP, 1.0, 0.01);
-
-	chr.Ship.Crew.Exp.(sType) = (float(chr.Ship.Crew.Exp.(sType)) + fNewExp);
-	if (float(chr.Ship.Crew.Exp.(sType)) > 100) chr.Ship.Crew.Exp.(sType) = 100;
-	if (float(chr.Ship.Crew.Exp.(sType)) < 1) chr.Ship.Crew.Exp.(sType)   = 1;
+	exp += fNewExp;
 	
 	if (withNotification && fNewExp > 0) notification(StringFromKey("food_20"), "Sailor");
-	return float(chr.Ship.Crew.Exp.(sType));
+	chr.Ship.Crew.Exp = func_fmin(float(EXP_MAX), exp);
+	return float(chr.Ship.Crew.Exp);
 }
 
-float GetCrewExp(ref chr, string sType)
+// 3 опыта сшиты в 1, код пока оставлен, чтобы везде не менять
+float GetCrewExp(ref chr, string sType = "")
 {
-	if (!CheckAttribute(chr, "Ship.Crew.Exp." + sType)) chr.Ship.Crew.Exp.(sType) = 10;
-	
-	if(ShipBonus2Artefact(chr, SHIP_MEMENTO))
+	if ("Ship.Crew.Exp" !in chr) chr.Ship.Crew.Exp = 10.0;
+
+	float exp = func_fmax(0.0, chr.Ship.Crew.Exp$float(10.0));
+	if (ShipBonus2Artefact(chr, SHIP_MEMENTO))
 	{
-		if(CheckAttribute(&RealShips[int(chr.Ship.Type)], "DeadSailors.SailorsExpBonus"))
-		{
-			float exp = float(chr.Ship.Crew.Exp.(sType));
-			exp = exp + float(RealShips[int(chr.Ship.Type)].DeadSailors.SailorsExpBonus);
-			if(exp > 100.0) exp = 100.0;
-			
-			return exp;
-		}
+		ref realShip = &RealShips[int(chr.Ship.Type)];
+		exp += realShip.DeadSailors.SailorsExpBonus$float(0.0);
 	}
-	
-	return float(chr.Ship.Crew.Exp.(sType));
+
+	return func_fmin(float(EXP_MAX), exp);
+}
+
+void SetCrewExp(ref chr, float value)
+{
+	chr.Ship.Crew.Exp = func_fmin(float(EXP_MAX), value);
 }
 
 float GetCrewExpRate()
@@ -278,12 +342,14 @@ float GetCrewExpRate()
 	return float(50 + MOD_SKILL_ENEMY_RATE);
 }
 
-int GetCharacterCrewMorale(ref chr)
+int GetCharacterCrewMorale(ref chr, bool withoutBonus = false)
 {
 	if(!CheckAttribute(chr, "ship.crew.morale"))
 	{
 		chr.ship.crew.morale = MORALE_NORMAL;
 	}
+
+	if (withoutBonus) return int(chr.ship.crew.morale);
 	
 	if(GetCharacterIndex(chr.id) == GetMainCharacterIndex())
 	{
@@ -414,43 +480,9 @@ void UpdateCrewInColonies()
 			nPastM = MORALE_NORMAL/5 + rand(int(MORALE_NORMAL*1.5));
 		nPastM = int(float(nPastM) * SZN_GetModifierMtp(M_CREW_HIRE_MORALE_MTP, 1.0, 0.01, 2.0));
 		rTown.Ship.crew.morale = nPastM;
+		rTown.Ship.Crew.Exp = (45 + rand(100)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
 
-		// пороги опыта от нации
-		switch (iNation)
-		{
-			case ENGLAND:	
-				eSailors   = 45; 
-				eCannoners = 5;
-				eSoldiers  = 20;
-			break;
-			case FRANCE:	
-				eSailors   = 20; 
-				eCannoners = 45;
-				eSoldiers  = 5; 
-			break;
-			case SPAIN:		
-				eSailors   = 5; 
-				eCannoners = 20;
-				eSoldiers  = 45; 
-			break;
-			case PIRATE:	
-				eSailors   = 25; 
-				eCannoners = 25;
-				eSoldiers  = 45; 
-			break;
-			case HOLLAND:	
-				eSailors   = 25; 
-				eCannoners = 25;
-				eSoldiers  = 5;
-			break;
-		}
-
-		rTown.Ship.Crew.Exp.Sailors   = (eSailors   + rand(2*eSailors)   + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
-		rTown.Ship.Crew.Exp.Cannoners = (eCannoners + rand(2*eCannoners) + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
-		rTown.Ship.Crew.Exp.Soldiers  = (eSoldiers  + rand(2*eSoldiers)  + rand(10)) * SZN_GetModifierMtp(M_CREW_HIRING_EXP_MTP, 1.0, 0.01);
-		ChangeCrewExp(rTown, "Sailors", 0);  // приведение к 1-100
-		ChangeCrewExp(rTown, "Cannoners", 0);
-		ChangeCrewExp(rTown, "Soldiers", 0);
+		ChangeCrewExp(rTown, "Sailors", 0);
 	}
 }
 
@@ -458,16 +490,21 @@ int GetCrewPriceForTavern(string sColony)
 {
 	int iColony = FindColony(sColony);
 	ref rTown = &colonies[iColony];
-	
-	float fExp = (GetCrewExp(rTown, "Sailors") + GetCrewExp(rTown, "Cannoners") + GetCrewExp(rTown, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	float fSkill = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP) + GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // 0-20
-	int   nCrewCost = int((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*50 * (1.0 - fSkill / 40.0));
-	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = int(nCrewCost * 0.95);
+	if(rTown.id == "IslaMona") return 0;
 
-	nCrewCost = int(fExp*nCrewCost + 0.5);
-	nCrewCost = int(float(nCrewCost) * SZN_GetModifierMtp(M_CREW_HIRE_COST, 1.0, 0.01));
+	// Найм матроса = недельный аванс от новой месячной ставки.
+	// Используем те же мягкие множители, что и для месячной зарплаты экипажа:
+	// опыт городских рекрутов, сложность, Торговля+Харизма игрока и сезон найма.
+	float crewCost = CREW_SAILOR_MONTHLY_SALARY * CREW_HIRE_ADVANCE_MTP;
+	crewCost *= GetCrewSalaryExpMtp(rTown);
+	crewCost *= GetCrewSalaryDifficultyMtp();
+	crewCost *= GetCrewSalarySkillMtp(GetMainCharacter());
+	crewCost *= SZN_GetModifierMtp(M_CREW_HIRE_COST, 1.0, 0.01);
+
+	if (IsEquipCharacterByItem(pchar, "hat3")) crewCost *= 0.95;
+
+	int nCrewCost = int(crewCost);
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
-	if(rTown.id == "IslaMona") return 0; 
 	return nCrewCost;
 }
 

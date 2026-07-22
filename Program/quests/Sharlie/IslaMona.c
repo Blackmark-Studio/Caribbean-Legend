@@ -669,33 +669,6 @@ void IslaMona_MirabellaWaitress(string qName) // вернуть Мирабель
 	LAi_group_MoveCharacter(sld, "PIRATE_CITIZENS");
 }
 
-/* void IslaMona_TavernAddCrew() // добавление команды в таверну Исла Моны
-{
-	sld = characterFromId("Islamona_carpenter");
-	int crew = int(sld.crew.qty); // столько сейчас на постое
-	int add = int(sld.crew.add); // столько добавляем
-	int total = crew + add;
-	sld.Ship.Crew.Exp.Sailors = (float(pchar.Ship.Crew.Exp.Sailors)*add + float(sld.Ship.Crew.Exp.Sailors)*crew) / total;
-	sld.Ship.Crew.Exp.Cannoners = (float(pchar.Ship.Crew.Exp.Cannoners)*add + float(sld.Ship.Crew.Exp.Cannoners)*crew) / total;
-	sld.Ship.Crew.Exp.Soldiers = (float(pchar.Ship.Crew.Exp.Soldiers)*add + float(sld.Ship.Crew.Exp.Soldiers)*crew) / total;
-	sld.Ship.Crew.Morale = (float(pchar.Ship.Crew.Morale)*add + float(sld.Ship.Crew.Morale)*crew) / total;
-	sld.crew.qty = total;
-	pchar.ship.crew.quantity = int(pchar.ship.crew.quantity)-add;
-} */
-
-/* void IslaMona_TavernRemoveCrew() // удаление команды из таверны Исла Моны
-{
-	sld = characterFromId("Islamona_carpenter");
-	int add = int(sld.crew.add); // столько удаляем
-	int total = int(pchar.ship.crew.quantity)+add;
-	pchar.Ship.Crew.Exp.Sailors = (float(sld.Ship.Crew.Exp.Sailors)*add + float(pchar.Ship.Crew.Exp.Sailors)*int(pchar.ship.crew.quantity)) / total;
-	pchar.Ship.Crew.Exp.Cannoners = (float(sld.Ship.Crew.Exp.Cannoners)*add + float(pchar.Ship.Crew.Exp.Cannoners)*int(pchar.ship.crew.quantity)) / total;
-	pchar.Ship.Crew.Exp.Soldiers = (float(sld.Ship.Crew.Exp.Soldiers)*add + float(pchar.Ship.Crew.Exp.Soldiers)*int(pchar.ship.crew.quantity)) / total;
-	pchar.Ship.Crew.Morale = (float(sld.Ship.Crew.Morale)*add + float(pchar.Ship.Crew.Morale)*int(pchar.ship.crew.quantity)) / total;
-	sld.crew.qty = int(sld.crew.qty)-add;
-	pchar.ship.crew.quantity = total;
-} */
-
 void IslaMona_BuildPlantation(string qName) // постройка фактории завершена
 {
 	Log_testinfo("Фактория построена");

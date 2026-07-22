@@ -80,7 +80,7 @@ int ballNumber;
 
 void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0, float fDirAng, float fHeightAng, float fCannonDirAng, float fMaxFireDistance, bool isAutoFire, string bort)
 {
-	int iCannonType = int(aCharacter.Ship.Cannons.Type);
+	int iCannonType = GetCannonTypeByBort(aCharacter, bort);
 	ref rCannon = GetCannonByType(iCannonType);
 	float fCannonHeightMultiply = float(rCannon.HeightMultiply);
 
@@ -117,7 +117,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 
 	if (fCannons > 0.0 && RealShips[int(aCharacter.ship.type)].BaseName != "fort") // fix
 	{
-		if (fCannons > rand(100) && !IsCharacterEquippedArtefact(aCharacter, "talisman3"))
+		if (fCannons > rand(100))
 		{
             fCannons = (rand(4) + 2.0*(1.65 - float(aCharacter.TmpSkill.Cannons))) * 10;
 			SendMessage(&AISea, "laffff", AI_MESSAGE_CANNONS_BOOM_CHECK, aCharacter, fCannons, fx, fy, fz);  // fDamage2Cannons  там много делителей, потому много
@@ -143,7 +143,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 	}
 	else
 	{
-		if(GetCannonType(int(aCharacter.Ship.Cannons.Type)) == "Culverine" )
+		if(GetCannonType(iCannonType) == "Culverine" )
 		{ 
 			sParticleName = "cancloud_coulverines"; 
 		}
@@ -169,6 +169,7 @@ void Ball_WaterHitEvent()
 	x = GetEventData();
 	y = GetEventData();
 	z = GetEventData();
+	int iCannonType = GetEventData();
 
 	if (int(AIBalls.CurrentBallCannonType) >= 0)
 	{
@@ -195,10 +196,12 @@ void Ball_FortHit()
 	x = GetEventData();
 	y = GetEventData();
 	z = GetEventData();
+	
+	int iCannonType = GetEventData();
 
 	if (rand(4) == 1) CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0); // boal fix
 	CreateParticleSystem("blast_newsmoke", x, y, z, 0.0, 0.0, 0.0, 0);
-	SendMessage(&AIFort, "llfff", AI_MESSAGE_FORT_HIT, iCharacterIndex, x, y, z);
+	SendMessage(&AIFort, "llfffl", AI_MESSAGE_FORT_HIT, iCharacterIndex, x, y, z, iCannonType);
 }
 
 void Ball_IslandHit()
@@ -211,6 +214,8 @@ void Ball_IslandHit()
 	x = GetEventData();
 	y = GetEventData();
 	z = GetEventData();
+	
+	int iCannonType = GetEventData();
 
 	if (rand(2) == 1) CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0); // boal fix
 	CreateParticleSystem("blast_newsmoke", x, y, z, 0.0, 0.0, 0.0, 0);

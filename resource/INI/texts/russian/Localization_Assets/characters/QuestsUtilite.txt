@@ -257,6 +257,8 @@ QuestsUtilite_329 {Пираты разбиты, воды стали безопа
 QuestsUtilite_33 {Мердок}
 QuestsUtilite_330 {Пираты окрепли, в море стало опаснее}
 QuestsUtilite_331 {Капитан, это фрегат 'Амстердам'! Вы добились своего — Компания признала вас угрозой.}
+QuestsUtilite_332 {Угроза пиратов снижена}
+QuestsUtilite_333 {Какая дерзость!}
 QuestsUtilite_34 {Джино}
 QuestsUtilite_35 {Гвинейли}
 QuestsUtilite_36 {Чарли}

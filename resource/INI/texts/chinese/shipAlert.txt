@@ -1,0 +1,16 @@
+quest_companion_header {任务相关}
+quest_companion_text {这名同伴因任务而与你同行。你无法与其船只互动。}
+where_is_my_ship_sea_header {船只位置}
+where_is_my_ship_sea_text {$rand(公海|天地之间|航行中|龙骨下七英尺)}
+where_is_my_ship_header {船只位置}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {火炮状态不佳}
+cannons_broken_text {必须立即前往造船厂修理或更换火炮！}
+bad_captain_header {技能不足}
+bad_captain_text {这名同伴无法在公海上指挥船只，因为其“船长”技能不足。}
+low_morale_header {可能发生叛乱}
+low_morale_text {船员心怀不满。必须立即提升士气！}
+low_food_header {食物不足}
+low_food_text {水手很快就会开始饿死，必须立即补充储备！}
+low_medicament_header {药品不足}
+low_medicament_text {水手很快就会开始病死，必须立即补充储备！}

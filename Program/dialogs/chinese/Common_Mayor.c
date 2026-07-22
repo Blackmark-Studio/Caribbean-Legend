@@ -109,9 +109,9 @@ void ProcessDialogEvent()
             }
 			if (int(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0) > 10)
             {
-				iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0);
+				iTotalTemp = GetMayorIndulgenceSumm(NPChar);
                 dialog.text = "哦, 看看谁在那儿! 是" + GetSexPhrase("","") + " " + GetFullName(pchar) + "。 你知道吗, 我最近刚派出海盗猎人把你抓回来。 如果我知道你会大摇大摆地走进我的门, 我就省点钱了。 ";
-                if (int(pchar.Money) >= iTotalTemp*6000)
+                if (int(pchar.Money) >= iTotalTemp)
                 {
                     link.l1 = "我正打算结算我们的账目。 ";
 				    link.l1.go = "arestFree_1";
@@ -2359,20 +2359,22 @@ void ProcessDialogEvent()
 		
 		case "arestFree_1":
 			dialog.text = "解决? 你觉得那会是怎样的? ";
-			link.l1 = "我认为" + iTotalTemp*6000 + "比索的金额仍然可以拯救我, 不是吗? ";
+			link.l1 = "我认为" + iTotalTemp + "比索的金额仍然可以拯救我, 不是吗? ";
 			link.l1.go = "arestFree_2";
 			link.l2 = "不。 而且我该走了。 此致。 ";
 			link.l2.go = "arest_1";
 		break;
 
 		case "arestFree_2":
-            if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= hrand(7) && iTotalTemp < 21)
+            i = wdmGetNationThreat(int(NPChar.Nation));
+            if (i < 3)
             {
 				dialog.text = "我想我们可以用这种方式解决我们的事件。 你还没有走到不可挽回的地步。 ";
 				link.l1 = "太好了。 我非常高兴。 请接受我的捐款。 ";
 				link.l1.go = "Exit";
-				AddMoneyToCharacter(pchar, -iTotalTemp*6000);
-				ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", -iTotalTemp);
+    		    AddMoneyToCharacter(pchar, -iTotalTemp);
+                i = ChangeCharacterNationReputation(Pchar, int(NPChar.nation), 0);
+    		    ChangeCharacterNationReputation(Pchar, int(NPChar.nation), -i);
 				AddCharacterExpToSkill(pchar, "Fortune", 100);
             }
             else

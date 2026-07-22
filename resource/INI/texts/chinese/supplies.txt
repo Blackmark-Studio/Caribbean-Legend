@@ -1,0 +1,22 @@
+weapon_0 {无}
+weapon_1 {不足}
+weapon_2 {充足}
+weapon_3 {过量}
+weapon_tooltip {要想成功接舷，武器数量必须多于水手人数，否则船员将遭受极其严重的惩罚和巨大伤亡。}
+bortFire_tooltip {一次齐射需要 $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {全部储备足够使用 $decl($ctx(mineQty)|枚水雷|枚水雷|枚水雷)}
+food_tooltip {当前消耗：每天 $decl($ctx(foodconsumption)|包|包|包)}
+food_approximation_tooltip {满员时，船只需要 $decl($ctx(approximation.foodconsumption)|包|包|包)}
+medicament_tooltip {当前消耗：每天 $decl($ctx(medicamentconsumption)|包|包|包)}
+medicament_approximation_tooltip {满员时，船只需要 $decl($ctx(approximation.medicamentconsumption)|包|包|包)}
+rum_tooltip {当前消耗：每天 $decl($ctx(rumconsumption)|小桶|小桶|小桶)}
+rum_approximation_tooltip {满员时，船只需要 $decl($ctx(approximation.rumconsumption)|小桶|小桶|小桶)}
+spareCannons {$ctx(qty) 件备用}
+money {金钱不足}
+goods {货物不足}
+cooldown {你需要休息}
+raiseMoraleText {要提升船员士气，必须发放：$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {要训练船员，必须发放：$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {维修速度：每天 $percent($ctx(hullPerDay))，消耗 $decl($ctx(planksPerDay)|块木板|块木板|块木板)}
+sailcloth_tooltip {维修速度：每天 $percent($ctx(sailsPerDay))，消耗 $decl($ctx(sailClothesPerDay)|帆布|帆布|帆布)}
+spareCannons_tooltip {只有主口径火炮会被视为备用火炮。艏炮和艉炮不计入这些计算。}

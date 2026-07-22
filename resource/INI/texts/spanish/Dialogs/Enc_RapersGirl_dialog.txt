@@ -1,0 +1,241 @@
+Enc_RapersGirl_dialog_Begin_1_text_1 {$rand($manWoman(Capitán|Señora)¡Por favor, sé misericordioso! Protégeme, te lo suplico!|¡Ayuda! $manWoman(Extranjero|Señorita), ¡sálvame, te lo suplico!)}
+Enc_RapersGirl_dialog_Begin_1_l1_1 {$rand(¿Qué ocurrió?|¿Qué pasa?|$rand(¿Cuál es el problema?|¿Qué está pasando?))}
+Enc_RapersGirl_dialog_Begin_2_text_1 {$rand($manWoman(¡Capitán! ¡Capitán!|¡Chica! ¡Chica!), ¡por favor aguanta!|Espera, $manWoman(Capitán|joven dama)¡Por favor.)}
+Enc_RapersGirl_dialog_Begin_2_l1_1 {$rand(¿Qué pasó?|¿Qué pasa?|$rand(¿Cuál es el problema?|¿Qué está pasando?))}
+Enc_RapersGirl_dialog_Begin_3_text_1 {¡Oh, señor$manWoman(|ita) ¡Por favor, ayuda a una pobre chica, te lo suplico! ¡Esas personas quieren hacerme algo terrible!}
+Enc_RapersGirl_dialog_Begin_3_l1_1 {$rand(¿Qué ha ocurrido?|¿Qué pasa?|$rand(¿Cuál es el problema?|¿Qué está pasando?))}
+Enc_RapersGirl_dialog_Begin_11_text_1 {$rand(¡Estos villanos van a violarme! ¡Por todo lo que es bueno, no los dejes!|¡Por el amor de Dios, protégeme de estos monstruos! ¡Van a deshonrarme!)}
+Enc_RapersGirl_dialog_Begin_11_l1_1 {Deja de entrar en pánico$manWoman(, belleza|)¿. Qué ocurrió aquí?}
+Enc_RapersGirl_dialog_Begin_21_text_1 {$rand(¡Me están persiguiendo violadores!$manWoman(¿Defenderías el honor de una dama?|)|Capitán, $manWoman(sé un hombre,|tú también eres una mujer,) ¿salvarás a una chica de la deshonra?)}
+Enc_RapersGirl_dialog_Begin_21_l1_1 {Deja de entrar en pánico$manWoman(, belleza|)¿Qué ha sucedido aquí?}
+Enc_RapersGirl_dialog_Begin_31_text_1 {¡Me están persiguiendo! ¡Los bandidos! Diles que me dejen en paz!}
+Enc_RapersGirl_dialog_Begin_31_l1_1 {Deja de entrar en pánico$manWoman(, belleza|)¿Qué ha ocurrido aquí?}
+Enc_RapersGirl_dialog_First_time_text_1 {$rand(¡Ayuda! ¡Ayuda! ¡Me están persiguiendo! ¡Sálvame!|¡Aaah! Ayuda, $manWoman(extraño|joven dama)¡Sálvame de estos malhechores!|¡Muestra misericordia y protégeme de estos malandrines! ¡Por favor!)}
+Enc_RapersGirl_dialog_First_time_l1_1 {$rand(¿Qué está pasando?|¿Qué pasa?|¿Qué pasó?)}
+Enc_RapersGirl_dialog_Node_2_text_1 {$rand(¡Ellos... ellos van a violarme! ¡Por todo lo que es bueno, no los dejes! ¡Por favor!|Estas bestias... están planeando algo horrible... Protégeme de ellas, por favor!|¡En el nombre de nuestro Señor, sálvame de estas bestias lujuriosas! ¡Quieren deshonrarme!)}
+Enc_RapersGirl_dialog_Node_2_l1_1 {Vamos a averiguarlo todo, entonces.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_1 {$rand(Gracias, $manWoman(Capitán|señorita). ¡Estaba tan asustado!|¡Gracias por salvarme! ¡Estoy tan agradecido contigo!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_1 {Está bien, $manWoman(belleza|querido), cálmate, todo eso es cosa del pasado.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_2 {Oh, gracias, $manWoman(¡noble hombre! ¡Eres un verdadero caballero!|¡Señora! ¡Me has salvado!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_2 {No podía hacer de otra manera.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_3 {Oh, gracias, $manWoman(¡noble hombre! ¡Eres un verdadero caballero!|¡forastero! ¡Me has salvado!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_3 {No podía hacer de otra manera.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_4 {¿Qué has hecho? ¡¿Por qué los has matado?! ¡Ahora me buscarán a mí! Dios mío, ¿qué he hecho para merecer esto?}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_4 {¡Eso sí que es gratitud!}
+Enc_RapersGirl_dialog_ThanksForHelp_text_5 {¿Qué has hecho, $manWoman(capitán|señorita)? ¿Por qué los has matado? En realidad, fueron enviados por mi padre... Ay Dios, ahora seguro que me va a matar...}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_5 {¡Eso sí que son noticias! ¿Y qué te creías gritando que eras perseguida por bandidos?}
+Enc_RapersGirl_dialog_Node_11_text_1 {Tengo algo de dinero, por favor, acéptalo como muestra de mi gratitud. Ahora se lo diré a todos, $manWoman(qué hombre tan bueno y noble eres|qué buena y noble mujer eres).}
+Enc_RapersGirl_dialog_Node_11_l1_1 {Claro que lo harás. Gracias... Ahora solo vete a casa.}
+Enc_RapersGirl_dialog_Node_12_text_1 {Todavía no puedo recomponerme. ¿Podría por favor acompañarme, señor$manWoman(|ita), al asentamiento de $ctx(valueText)? Sabes... Ahora siento que hay violadores escondidos detrás de cada arbusto.}
+Enc_RapersGirl_dialog_Node_12_l1_1 {$rand(No te preocupes tanto, de verdad... Bien, vamos.|¿Eres un cobarde, no es cierto? De acuerdo, te llevaré allí.)}
+Enc_RapersGirl_dialog_Node_12_l2_1 {Lo siento, cariño, pero simplemente no tengo tiempo, estoy demasiado ocupado.}
+Enc_RapersGirl_dialog_Node_22_text_1 {¡Pensaba que solo los asustarías! Ahora debes llevarme a la taberna en el asentamiento de $ctx(valueText), no tengo a nadie más que a ti para pedir ayuda.}
+Enc_RapersGirl_dialog_Node_22_l1_1 {¡Oh, maldita sea! Bueno, vamos. Solo no te quedes atrás.}
+Enc_RapersGirl_dialog_Node_22_l2_1 {No, eso es todo, $manWoman(hermosura|querido)¡Ya he tenido suficientes sorpresas por hoy. Busca a alguien más para que te ayude.}
+Enc_RapersGirl_dialog_Node_31_text_1 {¿Y qué tenía que hacer yo?! Mi padre quiere que me case con el hijo del usurero, ese lechón... sólo porque su papi tiene un montón de dinero en sus cofres! ¡Pero yo amo a otro hombre! Llévame a él, por favor...}
+Enc_RapersGirl_dialog_Node_31_l1_1 {¡Qué carga eres! Bueno, está bien, vamos. No puedo simplemente dejarte aquí, ¿verdad?.. ¿Cómo se llama tu elegido, a dónde debo llevarte?}
+Enc_RapersGirl_dialog_Node_31_l2_1 {No, eso es todo, $manWoman(belleza|querido)¡He tenido suficientes sorpresas por hoy. Busca a alguien más para que te ayude.}
+Enc_RapersGirl_dialog_Node_32_sLoverId_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_32_text_1 {Su nombre es $ctx(loverName), él es un recién llegado. Ahora mismo se queda en el asentamiento de $ctx(valueText), intenté encontrar un trabajo allí, pero estos son tiempos difíciles. Todos siguen hablando de una crisis... Y ahora, de todos modos, no hay vuelta atrás para mí.}
+Enc_RapersGirl_dialog_Node_32_l1_1 {¿Una crisis? Ja... Para un verdadero pirata, una crisis es cuando hay una caravana comercial en el horizonte, pero no hay viento para llenar las velas...}
+Enc_RapersGirl_dialog_Node_12End_text_1 {$rand(Sabes, $manWoman(capitán|señorita), estaba tan asustada que mis piernas todavía están un poco temblorosas.|Oh, estaba tan asustada. Es un milagro que Dios te haya enviado por mi camino.)}
+Enc_RapersGirl_dialog_Node_12End_l1_1 {$rand(Gracias a Dios que todavía estás viva.|No te lo tomes a pecho. Es bueno que haya terminado así, ya sabes.)}
+Enc_RapersGirl_dialog_Node_1Next_text_1 {$rand(Gracias, $manWoman(capitán|señorita), una vez más. Realmente, estoy tan endeudado contigo.|Muchas gracias, $manWoman(capitán|señorita). No tengo idea de qué haría sin tu ayuda.)}
+Enc_RapersGirl_dialog_Node_1Next_l1_1 {$rand(Esa debería ser una lección para ti. Bien, buena suerte...|La próxima vez debes tener más cuidado... Ahora, vete a casa, tengo cosas que hacer.)}
+Enc_RapersGirl_dialog_Node_1Next_l2_1 {¿Cómo pudiste ser tan descuidado? ¿Por qué te adentraste en la jungla solo?}
+Enc_RapersGirl_dialog_Node_1End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_3End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_3Final_text_1 {$rand(¿Has cambiado de opinión?|¡Capitán, es estupendo que hayas cambiado de opinión!)}
+Enc_RapersGirl_dialog_Node_3Final_l1_1 {$rand(No-no, querido, yo paso.|No tengas falsas esperanzas...)}
+Enc_RapersGirl_dialog_Node_13_text_1 {Probablemente te rías de mí, pero... estaba recolectando una poción de amor... Una bruja me dijo que había una raíz que puede ayudar en asuntos de amor.}
+Enc_RapersGirl_dialog_Node_13_l1_1 {¡Dios mío! $manWoman(¿En qué están pensando estas mujeres?|¿En qué estabas pensando?) Al parecer, has recogido a muchos de ellos, había bastantes pretendientes persiguiéndote, me ha costado mucho trabajo ahuyentarlos a todos. Ja-ja-ja-ja... Adiós.}
+Enc_RapersGirl_dialog_Node_13_text_2 {Acabo de salir a pasear para recolectar algunas hierbas y respirar aire fresco. Aparentemente, no era el mejor momento para caminar.}
+Enc_RapersGirl_dialog_Node_13_l1_2 {¡Qué descuido! Gracias a Dios que llegué a tiempo. Bueno, te deseo la mejor de las suertes.}
+Enc_RapersGirl_dialog_Node_13_text_3 {Mi señora perdió las perlas de su collar por aquí, cuando estaba de paseo. Cuando llegó a casa, me gritó y ordenó salir a recogerlas. Ella dijo, '¡Ni siquiera muestres tu rostro aquí hasta que las recojas todas!', Y ni siquiera sé el lugar exacto. Además, ¿cómo se supone que las encuentre en esta hierba tan espesa? Las perlas son tan pequeñas... Entonces, solo estoy vagando aquí sin tener idea de qué debería hacer...}
+Enc_RapersGirl_dialog_Node_13_l1_3 {¿Y qué tipo de collar era? Quizás, ¿sería más fácil simplemente comprar uno nuevo en lugar de vagar por la jungla? ¿Cuántas perlas ha perdido tu ama?}
+Enc_RapersGirl_dialog_Node_13_text_4 {Mi difunto padre me dejó un mapa, y sus compañeros querían arrebatármelo. Mientras él estaba vivo, todos temblaban de miedo ante él, pero justo cuando lo había enterrado, comenzaron los tiempos difíciles. Primero intentaron comprar este mapa de mí, pero me negué, y entonces comenzaron a intimidarme.}
+Enc_RapersGirl_dialog_Node_13_l1_4 {¿Y por qué no lo vendiste simplemente? ¿Qué tiene de especial este mapa, que las bandas de piratas lo buscan?}
+Enc_RapersGirl_dialog_Node_131_text_1 {Ese collar estaba compuesto de perlas seleccionadas, esas no se pueden comprar baratas. Había $ctx(bigCoins) perlas grandes y $ctx(smallCoins) más pequeños. Si se encontraran esas perlas, podríamos encargar otro collar como ese.}
+Enc_RapersGirl_dialog_Node_131_l1_1 {Seguramente este no será un trabajo fácil... Bueno, si tu señora te dio una orden, entonces no hay mucho que puedas hacer. Intenta encontrar las perlas. Buena suerte.}
+Enc_RapersGirl_dialog_Node_131_l2_1 {Es inútil. Sería más fácil encontrar una aguja en un pajar que las perlas en esta hierba espesa. Sin mencionar que ni siquiera conoces el lugar donde se perdieron las perlas...}
+Enc_RapersGirl_dialog_Node_132_mapOwner_1 {l$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_132_text_1 {Mi padre marcó un lugar en él donde había escondido su tesoro. ¿Has oído hablar del famoso pirata $ctx(pirateName)?}
+Enc_RapersGirl_dialog_Node_132_l1_1 {No, nunca he oído hablar de él.}
+Enc_RapersGirl_dialog_Node_132_1_text_1 {Bueno, $ctx(pirateName) era mi padre. Todos le tenían miedo, nadie se atrevía a decir una palabra. Ahora, por supuesto, se han vuelto descarados. Cuando me negué a venderles el mapa, afirmaron que ellos también deben tener su parte del tesoro. Quería esconder el mapa, pero aún así me rastrearon...}
+Enc_RapersGirl_dialog_Node_132_1_l1_1 {¿Y por qué lo ocultarías, en primer lugar? Fleta un barco y vete, reclama tu tesoro. Tu padre no lo habría ocultado por nada.}
+Enc_RapersGirl_dialog_Node_132_2_text_1 {Más fácil decirlo que hacerlo. No tengo dinero para fletar un barco, y... tengo miedo... ¿Cómo se supone que debo desenterrarlo todo, llevarlo al barco... Y a dónde llevaría el tesoro luego? Sería presa fácil para cualquiera en el camino...}
+Enc_RapersGirl_dialog_Node_132_2_l1_1 {Eso es un buen punto... Está bien, adelante y esconde tu mapa, entonces. Solo recuerda colocarlo bien.}
+Enc_RapersGirl_dialog_Node_132_2_l2_1 {Hmm... Probablemente eso sea cierto. Más aún, deberías haberlo vendido.}
+Enc_RapersGirl_dialog_Node_132_2_l3_1 {¿Has intentado encontrar un compañero?}
+Enc_RapersGirl_dialog_Node_132_2End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_132_3_text_1 {Me entristece perder una oportunidad así... Papá me contó sobre los tesoros que había escondido allí. Nadie me pagaría tanto...}
+Enc_RapersGirl_dialog_Node_132_3_l1_1 {Bueno, no lo vendas demasiado barato. Y, de todas formas, el oro no vale tu vida. Sin mencionar que esta es la manera más fácil para ti, simplemente recoges tu dinero y te libras de todos los problemas...}
+Enc_RapersGirl_dialog_Node_132_4_text_1 {Eso suena tentador... ¿Y cuánto puedes ofrecerme por ello?}
+Enc_RapersGirl_dialog_Node_132_4_l1_1 {No creo que pueda valer más que $ctx(mapPrice) pesos.}
+Enc_RapersGirl_dialog_Node_132_5_text_1 {Je, ser mujer no es fácil... Bien, estoy de acuerdo. Finalmente esta pesadilla terminará... Quizás, es mejor que este mapa te pertenezca,$manWoman(un caballero noble|), que a esos granujas.}
+Enc_RapersGirl_dialog_Node_132_5_l1_1 {Bueno. Aquí está tu dinero... solo intenta no gastarlo todo de una vez.}
+Enc_RapersGirl_dialog_Node_132_5_text_2 {No, $manWoman(capitán|joven dama). No lo venderé. Me casaré con un buen hombre, y luego reclamaremos el tesoro juntos.}
+Enc_RapersGirl_dialog_Node_132_5_l1_2 {Bueno, eso es para que tú decidas. Tu pedazo de papel no vale más, de todos modos.}
+Enc_RapersGirl_dialog_Node_132_8_text_1 {¿Y dónde los encontraré? Los jóvenes no son confiables, y no les importan tanto los tesoros como, otras cosas. Y temo a los más viejos, todos me recuerdan a los amigos de mi padre. Tan astutos y traicioneros, nunca sabrías qué esperar de ellos.}
+Enc_RapersGirl_dialog_Node_132_8_l1_1 {Ja-ja-ja... Está bien, ¿pero me llevarás contigo?}
+Enc_RapersGirl_dialog_Node_132_9_text_1 {¿Tú? ¿Y te irías? Pero entonces tendrás que traerme de vuelta aquí, al asentamiento de $ctx(valueText), ¿de acuerdo?}
+Enc_RapersGirl_dialog_Node_132_9_l1_1 {Bien, te doy mi palabra. Solo muéstrame el camino.}
+Enc_RapersGirl_dialog_Node_132_10_text_1 {El tesoro está escondido en la cueva en $ctx(valueText), necesitamos desembarcar en $ctx(valueText2), el lugar donde me mostraré... ¡Pero no olvides, solo conseguirás la mitad!}
+Enc_RapersGirl_dialog_Node_132_10_l1_1 {De acuerdo, no te engañaré, lo prometo. Sígueme y no te quedes atrás.}
+Enc_RapersGirl_dialog_Node_132_11_1_text_1 {Capitán, ahora debemos encontrar la cueva.}
+Enc_RapersGirl_dialog_Node_132_11_1_l1_1 {Está bien, echemos un vistazo ahora.}
+Enc_RapersGirl_dialog_Node_132_11_2_text_1 {Capitán, debemos encontrar la cueva.}
+Enc_RapersGirl_dialog_Node_132_11_2_l1_1 {Está bien, echemos un vistazo ahora.}
+Enc_RapersGirl_dialog_Node_132_12_text_1 {¡Aquí! ¡Lo encontré! ¡Justo como dijo mi padre! ¡Un enorme montón de tesoro! La mitad es tuya, como acordamos.}
+Enc_RapersGirl_dialog_Node_132_12_l1_1 {¿Ves? Eso no fue difícil, así que no había nada que temer.}
+Enc_RapersGirl_dialog_Node_132_13_text_1 {¡Ja-ja-ja! ¡Ahora soy rico! ¿Vas a tomar tu parte ahora?}
+Enc_RapersGirl_dialog_Node_132_13_l1_1 {Supongo.}
+Enc_RapersGirl_dialog_Node_132_15_text_1 {Entonces tómalo y por favor ayúdame a llevar todas esas cosas al barco. ¿Todavía recuerdas que prometiste llevarme de vuelta a casa?}
+Enc_RapersGirl_dialog_Node_132_15_l1_1 {¡No lo he olvidado! Claro, te llevaré.}
+Enc_RapersGirl_dialog_Node_132_17_text_1 {¡Ser rico es simplemente genial! Me siento tan diferente ahora.}
+Enc_RapersGirl_dialog_Node_132_17_l1_1 {Me alegro por ti.}
+Enc_RapersGirl_dialog_Node_132_18_text_1 {Bien, capitán. Mi viaje ha terminado ahora. Gracias por tu ayuda.}
+Enc_RapersGirl_dialog_Node_132_18_l1_1 {De nada... Entonces, ¿qué planeas hacer con tus nuevas riquezas? ¿Comprar una plantación con esclavos?}
+Enc_RapersGirl_dialog_Node_132_19_text_1 {No lo sé, aún no he decidido. Quizás, me traslade a Europa...}
+Enc_RapersGirl_dialog_Node_132_19_l1_1 {¡Bueno, bien! Buena suerte para ti.}
+Enc_RapersGirl_dialog_Node_132_20_text_1 {Espera... Este trinkete estaba entre los tesoros de mi padre. No tengo uso para él, pero a ti podría gustarte. Por favor, acéptalo como mi gratitud personal por lo que has hecho por mí. ¡Eso es de mi parte, ja-ja-ja!}
+Enc_RapersGirl_dialog_Node_132_20_l1_1 {Vaya, eso sí que es un regalo bonito. Gracias$manWoman(, belleza|). Encuentra un buen novio para ti, ¿si?}
+Enc_RapersGirl_dialog_Node_133_text_1 {¿Pero qué puedo hacer? No puedo ignorar las órdenes de mi ama, me desollará viva.}
+Enc_RapersGirl_dialog_Node_133_l1_1 {Espérame en la iglesia del asentamiento de $ctx(valueText), te traeré las perlas para hacer un nuevo collar.}
+Enc_RapersGirl_dialog_Node_133_l2_1 {Aquí. Toma estos 15000 pesos. Eso debería ser más que suficiente para seleccionar las perlas para el collar, o para comprar uno nuevo.}
+Enc_RapersGirl_dialog_Node_133_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_134_text_1 {$rand($manWoman(Capitán|Joven señorita), ¡Estoy tan feliz de verte de nuevo! ¿Has logrado recolectar perlas para el collar?|¡Hola, capitán! ¿Me has traído las perlas? Como puedes imaginar, mi señora se está poniendo tan nerviosa...)}
+Enc_RapersGirl_dialog_Node_134_l1_1 {Sí. Aquí están tus perlas. Llévaselas a tu señora y dile que sea más cuidadosa la próxima vez.}
+Enc_RapersGirl_dialog_Node_134_l1_2 {Aún no. No es tan fácil, ya sabes... Pero los traeré, solo espera.}
+Enc_RapersGirl_dialog_Node_134_1_text_1 {Oh, $manWoman(Capitán|señorita), estoy tan feliz de haberte conocido! Como muestra de mi gratitud por todo lo que has hecho por mí, quiero darte este amuleto y estas gemas. Espero que los encuentres útiles.}
+Enc_RapersGirl_dialog_Node_134_1_l1_1 {¡Vaya! Bueno, gracias a ti también$manWoman(, belleza|), no esperaba... Adiós, y sé feliz.}
+Enc_RapersGirl_dialog_Node_134_2_text_1 {Oh, $manWoman(capitán|señorita), estoy contando contigo.}
+Enc_RapersGirl_dialog_Node_134_2_l1_1 {...}
+Enc_RapersGirl_dialog_Node_135_text_1 {Oh, $manWoman(capitán|Joven señorita), me has ayudado por segunda vez hoy. Muchas gracias. Nunca olvidaré tu bondad.}
+Enc_RapersGirl_dialog_Node_135_l1_1 {De nada. Di 'hola' a tu señora...}
+Enc_RapersGirl_dialog_Node_135End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_ThanksForSave_text_1 {$rand(No deberías haberles dado dinero. Estaban mintiendo.|No les creas. Son mentirosos. Y no deberías haberles dado dinero.)}
+Enc_RapersGirl_dialog_ThanksForSave_l1_1 {¿Debería haberlos matado?}
+Enc_RapersGirl_dialog_ThanksForSave_text_2 {¡Oh, qué noble acción! Pude ver de inmediato que eras $manWoman(un verdadero caballero|una dama noble). ¡Por favor, acepta mi más sincera gratitud. Espero que no hayas creído lo que decían estos granujas.}
+Enc_RapersGirl_dialog_ThanksForSave_l1_2 {Eso no importa. Una chica y una banda de pillos en la jungla, es simplemente tan natural...}
+Enc_RapersGirl_dialog_ThanksForSave_l2_1 {¿De qué estás hablando, $manWoman(linda|querido)? ¿Cómo podría?}
+Enc_RapersGirl_dialog_ThanksForSave_text_3 {Gracias, capitán. Lamento haberte involucrado en este desagradable asunto, pero simplemente no tenía otra opción.}
+Enc_RapersGirl_dialog_ThanksForSave_l1_3 {Bueno, veo que también estás bastante atascado. ¿Cómo llegaste a esto?}
+Enc_RapersGirl_dialog_Node_200_text_1 {Quizás... Nunca me dejarán en paz ahora.}
+Enc_RapersGirl_dialog_Node_200_l1_1 {¡Vamos, vamos! Solo vuelve a casa, ya no tienes nada que temer.}
+Enc_RapersGirl_dialog_Node_200_l2_1 {¡Vaya! ¿Por qué tienes tal aversión por los hombres?}
+Enc_RapersGirl_dialog_Node_200_text_2 {¡Por supuesto que no! Pero de todos modos, no me dejarán en paz. ¿Me llevarías al asentamiento de $ctx(valueText), ¿por favor?}
+Enc_RapersGirl_dialog_Node_200_l1_2 {Solo vuelve a casa, no te tocarán. Deberían estar yendo a la taberna ahora mismo para desperdiciar su dinero fácil.}
+Enc_RapersGirl_dialog_Node_200_l2_2 {$rand(No te preocupes tanto, de verdad... Bueno, vamos.|¿Eres tal cobarde, no es cierto? Está bien, te llevaré allí..)}
+Enc_RapersGirl_dialog_Node_201_text_1 {¡Oh no!, ¿qué estás diciendo? Conozco a estos canallas demasiado bien. Son antiguos compañeros de mi padre. Están tratando de localizar el lugar donde escondió sus tesoros.}
+Enc_RapersGirl_dialog_Node_201_l1_1 {¿Y qué pasa con tu padre?}
+Enc_RapersGirl_dialog_Node_202_text_1 {Solía ser el capitán de un barco pirata. Recientemente murió... Todos fueron tan corteses durante el entierro, pero con el paso del tiempo, lo han olvidado, y poco después también su honor y honestidad. Es bueno que los haya notado. Tan pronto como descubran dónde están los tesoros, estoy perdido.}
+Enc_RapersGirl_dialog_Node_202_l1_1 {Esa es una triste historia. Entonces, ¿planeas seguir escondiéndote de ellos?}
+Enc_RapersGirl_dialog_Node_203_text_1 {No puedo guardar joyas en casa, no tengo a nadie que me proteja. Así que voy por la noche a la cueva, cuando se acaba el dinero...\nLlévame, por favor, a la cueva, y te daré el dinero que les has dado ... Creo, los piratas no se arriesgarían a seguirnos mientras estés conmigo.}
+Enc_RapersGirl_dialog_Node_203_l1_1 {Lo siento, cariño, pero tengo planes diferentes. Recogerás tu tesoro en otro momento.}
+Enc_RapersGirl_dialog_Node_203_l2_1 {Está bien, vámonos, si no me temes.}
+Enc_RapersGirl_dialog_Node_204_text_1 {Sabes, por alguna razón, no estoy...}
+Enc_RapersGirl_dialog_Node_204_l1_1 {Bueno, eso es una buena cosa.}
+Enc_RapersGirl_dialog_Node_206_text_1 {Capitán, prometiste llevarme a la cueva.}
+Enc_RapersGirl_dialog_Node_206_l1_1 {Vamos...}
+Enc_RapersGirl_dialog_Node_207_text_1 {Está bien, capitán, he tomado todo lo que necesitaba. Ahora podemos regresar.}
+Enc_RapersGirl_dialog_Node_207_l1_1 {Veo que tus colegas no están cerca.}
+Enc_RapersGirl_dialog_Node_208_text_1 {Gracias a Dios. No necesito más problemas... Aquí, toma estos lingotes... eso debería ser suficiente para cubrir tus gastos. Ve solo, yo tomaré un camino diferente...}
+Enc_RapersGirl_dialog_Node_208_l1_1 {Bien, buena suerte para ti, si no tienes miedo.}
+Enc_RapersGirl_dialog_Node_209_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_210_text_1 {Mmm, $manWoman(capitán|señorita), no me gusta tu ironía.}
+Enc_RapersGirl_dialog_Node_210_l1_1 {Estás listo para ir, $manWoman(belleza|querido). Y más te vale apurarte a la ciudad, antes de que te persigan de nuevo.}
+Enc_RapersGirl_dialog_Node_211_text_1 {¡Estaba tan agitada! ¿Podrías llevarme a la taberna en el asentamiento de $ctx(valueText)? De lo contrario, me temo, van a perseguirme de nuevo.}
+Enc_RapersGirl_dialog_Node_211_l1_1 {Tienes razón. Vamos...}
+Enc_RapersGirl_dialog_Node_220_text_1 {¡Oh, capitán, es una larga historia y no estoy seguro de que la encuentres interesante. Aunque... aún no lo haré sin tu ayuda ahora. ¿Podrías llevarme a la taberna en el asentamiento de $ctx(valueText)¿Temo que simplemente no me dejen en paz?}
+Enc_RapersGirl_dialog_Node_220_l1_1 {Lo siento, cariño, no tengo tiempo para eso. Tengo cosas que hacer.}
+Enc_RapersGirl_dialog_Node_220_l2_1 {¿Por qué eres tan reservado?}
+Enc_RapersGirl_dialog_Node_222_text_1 {¿Y cómo puedo no ser reservado, si todos intentan sacar provecho de mi desgracia?}
+Enc_RapersGirl_dialog_Node_222_l1_1 {Bueno, entonces...}
+Enc_RapersGirl_dialog_Node_224_text_1 {Capitán, prometiste llevarme a la taberna en el asentamiento de $ctx(valueText).}
+Enc_RapersGirl_dialog_Node_224_l1_1 {$rand(Recuerdo.|No te preocupes, te veré allí.)}
+Enc_RapersGirl_dialog_Node_225_text_1 {Hay demasiada gente allí. Vayamos a la sala privada. Necesito contarte algo.}
+Enc_RapersGirl_dialog_Node_225_l1_1 {$rand(Ya he hecho demasiado por ti, así que ahora te digo adiós.|No deberías estar abusando de mi favor. Nos vemos, cariño.|No necesito tus cuentos a partir de ahora, puedes averiguarlo todo por ti mismo.)}
+Enc_RapersGirl_dialog_Node_225_l2_1 {Hmm, está bien. Tomaré las llaves del cantinero entonces.}
+Enc_RapersGirl_dialog_Node_225_text_2 {Muchas gracias por tu ayuda, capitán. No lo olvidaré.}
+Enc_RapersGirl_dialog_Node_225_l1_2 {Oh, no te molestes. Solo intenta ser más cuidadoso en el futuro.}
+Enc_RapersGirl_dialog_Node_225_text_3 {Muchas gracias por tu ayuda, capitán. No lo olvidaré.}
+Enc_RapersGirl_dialog_Node_225_l1_3 {Oh, no te molestes. Solo trata de ser más cuidadoso en el futuro.}
+Enc_RapersGirl_dialog_Node_225_text_4 {Hay demasiada gente aquí. Vamos a la habitación privada. Necesito contarte algo.}
+Enc_RapersGirl_dialog_Node_225_l1_4 {$rand(Ya he hecho demasiado por ti, así que adiós ahora.|No deberías estar abusando de mi favor. Nos vemos, cariño.|No necesito tus historias a partir de ahora, puedes resolverlo todo tú mismo.)}
+Enc_RapersGirl_dialog_Node_225_l2_2 {Hmm, está bien. Tomaré las llaves del cantinero entonces.}
+Enc_RapersGirl_dialog_Node_226_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_228_text_1 {¿Entonces aún quieres escuchar mi historia?}
+Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... Supongo que, es hora de que me vaya. ¡Adiós!}
+Enc_RapersGirl_dialog_Node_228_l2_1 {Bueno, escúpelo, entonces.}
+Enc_RapersGirl_dialog_Node_228_text_2 {Oh, mi noble salvador, finalmente puedo agradecerte de la única forma en que una mujer puede agradecer\nCuando te vi en la jungla, todo cambió dentro de mí. Olvidé a los violadores y las agudas hojas de palma que azotaban mis mejillas. Olvidé a dónde correr, por qué correr... Sólo te vi a ti. Y sólo te quería a ti... Y después de lo que has hecho por mí...}
+Enc_RapersGirl_dialog_Node_228_l1_2 {¡Vaya! ¡Qué temperamento! Tus perseguidores seguramente sabían a quién perseguir...}
+Enc_RapersGirl_dialog_Node_228_l2_2 {Escucha, belleza, puedo entenderlo perfectamente, pero por favor, guarda tu temperamento para ti mismo.}
+Enc_RapersGirl_dialog_Node_229_text_1 {Ven a mí ahora, mi héroe...}
+Enc_RapersGirl_dialog_Node_229_l1_1 {Oh, querido...}
+Enc_RapersGirl_dialog_Node_230_text_1 {¡Oh! ¿Cómo... ¿Cómo te atreves?! ¡Qué bastardo! Una chica te agradeció con todo su corazón y alma, y tú...}
+Enc_RapersGirl_dialog_Node_230_l1_1 {Bueno, si no estuvieras coqueteando tanto y echándole los tejos al primer hombre que encuentras, seguramente tendrías menos problemas. Ya no rescato a tales coquetas en la jungla...}
+Enc_RapersGirl_dialog_Node_231_text_1 {¡Nunca he escuchado tales palabras de nadie antes! ¡Y no las perdonaré! ¡Todavía me recordarás!}
+Enc_RapersGirl_dialog_Node_231_l1_1 {Vete ya, ¿de acuerdo? Y trata de refrescarte un poco, a menos que quieras ser rescatado otra vez...}
+Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_233_text_1 {Mi familia vive en el asentamiento de $ctx(valueText). Llegué aquí por casualidad, en el barco, en el que mi prometido me estaba llevando a sus padres, pero fue capturado por piratas. El barco fue llevado, y los pasajeros fueron desembarcados en la bahía no muy lejos de aquí. Mi prometido fue asesinado durante el abordaje del barco, y yo estuve gravemente enferma durante el tránsito por la jungla\nLa Señora del burdel me trató, y cuando me puse en pie, ella exigió trabajar el dinero gastado en el tratamiento. Fui una puta pero no agradé a la Madame, y entonces la Señora me vendió a unos bandidos para ganar al menos algo de dinero. La otra parte de la historia ya la conoces.}
+Enc_RapersGirl_dialog_Node_233_l1_1 {¡Así que simplemente renuncia y regresa a casa! ¿Por qué permites que te traten como a un esclavo?!}
+Enc_RapersGirl_dialog_Node_234_text_1 {¡No puedo! Todas mis pertenencias: ropa decente, dinero, documentos... Todo está en el burdel en mi bolsa de viaje. La he escondido en la sala de citas. Y mientras esté vestido así, todos los marineros del puerto me perseguirán. ¿Y quién me llevará a bordo sin documentos ni dinero? Y ahora ni siquiera puedo mostrar mi cara en la ciudad, o me encerrarán en la cárcel...}
+Enc_RapersGirl_dialog_Node_234_l1_1 {No debería ser un problema. Vamos. Te llevaré a casa yo mismo.}
+Enc_RapersGirl_dialog_Node_234_l2_1 {Espera aquí. Te traeré tu bolsa de viaje.}
+Enc_RapersGirl_dialog_Node_234_l3_1 {¿A quién le importan tus papeles? ¿Cuánto dinero necesitas para volver a casa?}
+Enc_RapersGirl_dialog_Node_235_text_1 {Oh, gracias, capitán... Pero... sabes, no tengo nada con qué pagarte.}
+Enc_RapersGirl_dialog_Node_235_l1_1 {¿De qué pago estás hablando? Vamos antes de que nos encuentren...}
+Enc_RapersGirl_dialog_Node_236_text_1 {Oh, capitán, sabes, nunca me atrevería a preguntar...}
+Enc_RapersGirl_dialog_Node_236_l1_1 {No tengas miedo. Pronto volveré.}
+Enc_RapersGirl_dialog_Node_240_1_text_1 {Oh, ya estaba preocupándome de que algo te hubiera sucedido.}
+Enc_RapersGirl_dialog_Node_240_1_l1_1 {¿Qué podría pasar? Aquí, toma tus cosas.}
+Enc_RapersGirl_dialog_Node_240_1_l1_2 {Escucha, no he encontrado nada allí. ¿Estás seguro de que dejaste tu bolsa de viaje en la sala de citas?}
+Enc_RapersGirl_dialog_Node_241_text_1 {Gracias, $manWoman(noble capitán|chica noble). Nunca olvidaré lo que has hecho por mí. No tengo mucho, pero por favor acepta este amuleto. Quizás, fue ese trasto el que salvó mi vida durante el ataque pirata.}
+Enc_RapersGirl_dialog_Node_241_l1_1 {¡Gracias y buen viaje! Adiós ahora...}
+Enc_RapersGirl_dialog_Node_242_text_1 {¿Realmente encontraron mi bolsa?}
+Enc_RapersGirl_dialog_Node_242_l1_1 {¿Cuánto dinero necesitas para volver a casa?}
+Enc_RapersGirl_dialog_Node_242_l2_1 {Quizás lo hicieron. De todos modos, nuestros caminos se separan aquí ahora. ¡Adiós!}
+Enc_RapersGirl_dialog_Node_245_text_1 {Gracias, capitán. Sabes, es difícil creer que finalmente estoy en casa. Por favor, ven conmigo, te presentaré a mis padres.}
+Enc_RapersGirl_dialog_Node_245_l1_1 {Escucha, $manWoman(belleza|cielito), realmente no tengo tiempo para eso. ¿Quizás en otro momento?}
+Enc_RapersGirl_dialog_Node_246_text_1 {Qué lástima... Bueno, adiós entonces, y que el Señor te vigile. No tengo nada con qué recompensarte, pero por favor acepta este amuleto.}
+Enc_RapersGirl_dialog_Node_246_l1_1 {¡Gracias! Corre a casa ahora, haz felices a tus padres!}
+Enc_RapersGirl_dialog_Node_247_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_237_text_1 {Bueno, no lo sé... Quizás, tendré que esperar un viaje de paso. Pero no puedo pedirte dinero.}
+Enc_RapersGirl_dialog_Node_237_l1_1 {Ya veo. Está bien, toma 5000 pesos. Eso debería ser suficiente.}
+Enc_RapersGirl_dialog_Node_237_l2_1 {Entiendo. Está bien, toma 25000 pesos y vete a casa.}
+Enc_RapersGirl_dialog_Node_237_l3_1 {Ya veo. Bien, toma 35000 pesos. Eso debería ser suficiente para comprar la mejor cabina en el barco.}
+Enc_RapersGirl_dialog_Node_237_1_text_1 {Gracias, $manWoman(noble capitán|chica noble). Nunca olvidaré lo que has hecho por mí.}
+Enc_RapersGirl_dialog_Node_237_1_l1_1 {Buena travesía, entonces. Adiós...}
+Enc_RapersGirl_dialog_Node_237_2_text_1 {Gracias, $manWoman(noble capitán|chica noble). Nunca olvidaré lo que has hecho por mí.}
+Enc_RapersGirl_dialog_Node_237_2_l1_1 {Buen viaje, entonces. Adiós...}
+Enc_RapersGirl_dialog_Node_237_3_text_1 {Gracias, $manWoman(noble capitán|chica noble). Nunca olvidaré lo que has hecho por mí.}
+Enc_RapersGirl_dialog_Node_237_3_l1_1 {Buen viaje, entonces. Adiós...}
+Enc_RapersGirl_dialog_Node_238_rumour_1 {$rand(¿Te has enterado? Una ramera intentaba colarse a bordo de un barco sin documentos, pero la atraparon y la llevaron de vuelta al burdel. Dicen que le debía a la madame una buena suma.|¿Te has enterado? Una ramera sin documentos fue capturada en el puerto. Dicen que había limpiado las arcas de la madame antes de intentar huir del burdel. Yo digo que esa fuente de suciedad y robo debió cerrarse hace tiempo. Incluso nuestros hijos están viendo esto y ¿qué pueden aprender de semejante ejemplo?)}
+Enc_RapersGirl_dialog_Node_250_text_1 {¡No arruines mi vida, capitán! Mi padre quiere que me case con el hijo del usurero, ese lechón inmundo... ¡solo porque su papá tiene un montón de dinero en sus cofres! Bueno, preferiría quedarme en la selva para ser devorada por bestias salvajes ¡que tomar una condena de por vida con él!}
+Enc_RapersGirl_dialog_Node_250_l1_1 {¿Cuál es el problema con tu matrimonio, $manWoman(belleza|querido)? Detén al que busca casarte y sé feliz. Después de un tiempo, estarías feliz de casarte con ese mamón, pero podría ser demasiado tarde...}
+Enc_RapersGirl_dialog_Node_251_sLoverId_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_251_text_1 {¡No! No, capitán, yo amo $ctx(loverName) ¡y no me casaré con ningún otro hombre! ¡Y mi padre no quiere escuchar nada! Dice que $ctx(valueText) solo es un visitante aquí, ¡así que nunca encontrará trabajo aquí y está destinado a morir en la pobreza, y yo con él! ¡Y yo iría con él hasta el fin del mundo, solo para estar a su lado! Llévame a él, ¡te lo ruego!}
+Enc_RapersGirl_dialog_Node_251_l1_1 {Bien, vámonos. Supongo que averiguaré qué hacer contigo...}
+Enc_RapersGirl_dialog_Node_253_text_1 {Capitán, prometiste llevarme a la colonia de $ctx(valueText).}
+Enc_RapersGirl_dialog_Node_253_l1_1 {$rand(Recuerdo.|No te preocupes, te llevaré allí.)}
+Enc_RapersGirl_dialog_Node_260_text_1 {$rand(Gracias, $manWoman(capitán|señorita), una vez más. Realmente, te estoy tan agradecido.|Muchas gracias, $manWoman(capitán|señorita). No tengo idea de qué haría sin tu ayuda.)}
+Enc_RapersGirl_dialog_Node_260_l1_1 {$rand(Esa debería ser una lección para ti. Bueno, mucha suerte...|La próxima vez deberías tener más cuidado... Ahora corre a casa, tengo cosas que hacer.)}
+Enc_RapersGirl_dialog_Node_260_l2_1 {¿Cómo podrías ser tan imprudente? ¿Por qué te has adentrado en la jungla solo?}
+Enc_RapersGirl_dialog_Node_260_text_2 {Oh, $manWoman(capitán|joven dama), realmente no tengo idea de cómo agradecerte.}
+Enc_RapersGirl_dialog_Node_260_l1_2 {No fue nada. Siempre feliz de ayudar...}
+Enc_RapersGirl_dialog_Node_260End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_261_text_1 {¿Puedes llevarme a la taberna? Necesito esperar a mi tía y descansar un poco, esta 'aventura' ha drenado toda mi energía...}
+Enc_RapersGirl_dialog_Node_261_l1_1 {No, $manWoman(belleza|cariño), eso ciertamente es suficiente para mí. Tengo mucho que hacer.}
+Enc_RapersGirl_dialog_Node_261_l2_1 {$manWoman(¡Oh, mujeres! ¿Hay algo que puedan hacer sin la ayuda de un hombre?|¿Por qué eres tan impotente?)Vamos...}
+Enc_RapersGirl_dialog_Node_262_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_1 {Tengo algo de dinero... Por favor, acéptalo como muestra de mi gratitud!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_1 {Gracias. Intenta ser más cuidadoso la próxima vez.}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_2 {¡Le contaré a todos que me has salvado! ¡Que todos sepan $manWoman(lo valiente y corajudo que eres|la valiente y audaz dama que eres)!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_2 {Gracias. Y ahora deberías irte a casa.}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_3 {Tengo algo de dinero... Por favor, acéptalo como una muestra de mi gratitud!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_3 {Gracias. Intenta ser más cuidadoso la próxima vez.}
+Enc_RapersGirl_dialog_ThanksAgain_text_1 {¡Le diré a todos que me has salvado! ¡Que todo el mundo sepa $manWoman(lo valiente y corajudo que eres|la valiente y audaz dama que eres)!}
+Enc_RapersGirl_dialog_ThanksAgain_l1_1 {Gracias. Y ahora deberías irte a casa.}

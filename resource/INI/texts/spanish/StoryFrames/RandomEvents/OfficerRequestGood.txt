@@ -44,10 +44,10 @@ Node0_d_b_action {Lo haremos como es debido}
 Node0_d_b_success {$attr($context.officerName) es tu _$attr($context.officerJob), no un marinero raso. Eso $rand(le otorga|supone) ciertos privilegios. Ordenas que se celebre en la cámara común $rand(un responso oficial|un responso conforme al reglamento). $attr($context.officerName) parece $rand(algo incómodo|incómodo), pero pronto ese sentimiento $rand(da paso a la gratitud|se convierte en gratitud).}
 Node0_d_b_success_action {Lo mejor para los camaradas leales}
 Node0_d_c_action {Dios te oye igual}
-Node0_d_c_success {Convences al oficial de que una oración sincera será escuchada incluso sin ritos.$br$red$attr($context.officerName) parece aceptarlo. Sientes cierto orgullo al ver que tus palabras le han traído algo de alivio.}
+Node0_d_c_success {Convences al oficial de que una oración sincera será escuchada incluso sin ritos.$br()$red $attr($context.officerName) parece aceptarlo. Sientes cierto orgullo al ver que tus palabras le han traído algo de alivio.}
 Node0_d_c_success_action {Saldrás adelante}
 Node0_d_c_fail {Tus palabras suenan poco convincentes, y $attr($context.officerName) parece abatido. Da la impresión de que simplemente te ha tomado por un tacaño y un cínico.}
 Node0_d_c_fail_action {Espera, no me duele darte eso}
 Node0_d_d_action {El capellán del barco podrá ayudar}
-Node0_d_d_success {Os parece extraño que $attr($context.officerName) haya olvidado al verdadero capellán del barco, pero lo atribuís al dolor que lo tiene cegado.$br$redLlamáis al capellán al camarote, le explicáis el problema y le pedís orientación. $attr($context.officerName) parece ausente, pero las palabras del religioso pronto lo devuelven en sí.}
+Node0_d_d_success {Os parece extraño que $attr($context.officerName) haya olvidado al verdadero capellán del barco, pero lo atribuís al dolor que lo tiene cegado.$br()$red Llamáis al capellán al camarote, le explicáis el problema y le pedís orientación. $attr($context.officerName) parece ausente, pero las palabras del religioso pronto lo devuelven en sí.}
 Node0_d_d_success_action {Dios nos ha escuchado}

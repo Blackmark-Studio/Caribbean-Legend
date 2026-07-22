@@ -714,7 +714,8 @@ void SetTreasureHunter(string temp)
 	LAi_SetFightModeForOfficers(false);
 	if (ok)
     {
-        PChar.HunterCost = int(int(Pchar.money) / 5) + rand(20)*1000; //сразу генерим
+        int iMoney = int(Pchar.money) / 5 + rand(20) * 1000;
+        PChar.HunterCost = iMoney > 15000 ? 15000 : iMoney; // Сразу генерим
         PChar.HunterCost.Qty = i;
         PChar.HunterCost.TempHunterType = "";
         sld = characterFromID(sCapId + "1");

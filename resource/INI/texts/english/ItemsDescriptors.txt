@@ -32,7 +32,8 @@ descriptor_descr_ArmorMaterial_1 {Leather armor might save you in a drunken braw
 descriptor_descr_ArmorMaterial_2 {Plate is an excellent balance of weight and protection. Can save your life. Reduces incoming damage by $percent($MaterialDefenceValue(2)).}
 descriptor_descr_ArmorMaterial_3
 {
-Stamped armor is mass-produced to equip troops and is used in European wars. Reduces incoming damage by $percent($MaterialDefenceValue(3)).
+Stamped armor is mass-produced to equip troops and is used in European wars. 
+Reduces incoming damage by $percent($MaterialDefenceValue(3)).
 }
 descriptor_descr_ArmorMaterial_4 {Producing high-quality forged armor is a complex and costly process, which makes it a rare sight in the Caribbean. Reduces incoming damage by $percent($MaterialDefenceValue(4)).}
 descriptor_descr_ArmorType_0 {Light armor is almost indistinguishable from regular clothing and doesn’t restrict movement at all. The trade-off is reduced protection.}
@@ -51,7 +52,8 @@ descriptor_descr_EmpoweredAmmo {This ammo positively affects weapon properties.}
 descriptor_descr_EnhancingPotion {Has a special enhancing effect.}
 descriptor_descr_Exotic
 {
-This item has no place in the hands of a good Christian, and chilling rumors about its bearer spread instantly.Increases Fleet Power by $percent($DescriptorBaseValue(Exotic)); effects stack.
+This item has no place in the hands of a good Christian, and chilling rumors about its bearer spread instantly.
+Increases Fleet Power by $percent($DescriptorBaseValue(Exotic)); effects stack.
 }
 descriptor_descr_Fancy {This item stands out for its ceremonial look, inlays, and costly materials. Wearing it increases Leadership by $number($DescriptorBaseValue(Fancy)). Effects stack.}
 descriptor_descr_Fighter {Effect is useful for Vanguards.}
@@ -88,7 +90,8 @@ descriptor_descr_Trinket {Exquisite and not-so-exquisite items that separate tho
 descriptor_descr_TwoHanded {Heavy firearm that must be held with both hands when firing. Requires special skills to use.}
 descriptor_descr_Unremarkable
 {
-Everyone has items like this. With it, you won’t stand out or be remembered.Increases Stealth by $number($DescriptorBaseValue(Unremarkable)). Effects stack.
+Everyone has items like this. With it, you won’t stand out or be remembered.
+Increases Stealth by $number($DescriptorBaseValue(Unremarkable)). Effects stack.
 }
 descriptor_descr_Valuable {Has a high sale value.}
 descriptor_descr_WeaponCurvature_0 {This weapon is straight or only slightly curved, making it better suited for fast attacks than for slash attacks.}
@@ -105,7 +108,7 @@ descriptor_Exotic {Exotic}
 descriptor_Fancy {Fancy}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Fragile}
-descriptor_GoodFit {Plain}
+descriptor_GoodFit {Good Fit}
 descriptor_GrapeAmmo {Grapeshot}
 descriptor_HealPotion {Healing}
 descriptor_HeartDefence {Reinforced}

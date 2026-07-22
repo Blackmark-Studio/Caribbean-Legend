@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
             dialog.text = "Biz burada sohbet ederken, gemi hızla Küba'dan Philipsburg'a doğru yol alıyor. Şimdi Tortuga'ya yakın olmalı, ya da biraz doğusunda. O yüzden demiri alın ve Saint Martin'e doğru yelken açın, 'Torero'yu adadan çok uzaklaşmadan yakalayın, ama sakın Barbazon'un adamları dövüşü görmesin, yoksa bütün planım mahvolur.";
 			link.l1 = "Hemen!";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(IsCharacterPerkOn(pchar,"FlagSpa")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

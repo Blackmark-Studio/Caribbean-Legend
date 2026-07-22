@@ -191,9 +191,7 @@ void Mtraxx_JewelryGulf(string qName) // Кабаньяс в заливе
 	sld.AlwaysEnemy = true;
 	SetSailsColor(sld, 6);
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*4;
+	SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*4));
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("Mtr_Jewhead", "Cabanos");
 	Group_SetGroupCommander("Mtr_Jewhead", "Cabanos");
@@ -504,9 +502,7 @@ void Mtraxx_SilkCreateSmuggler(string qName) // Утрехт отправляе�
 	sld.Ship.Mode = "pirate";
 	SetSailsColor(sld, 2);
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Sailors = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*4;
+	SetCrewExp(sld, float(60+MOD_SKILL_ENEMY_RATE*4));
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterGoods(sld, GOOD_SHIPSILK, 80);
 
@@ -835,9 +831,7 @@ void Mtraxx_PlantCreatePelly(string qName) // ставим Пелли
 	sld.Ship.Mode = "pirate";
 	SetSailsColor(sld, 8);
 	sld.ship.Crew.Morale = 70;
-	sld.Ship.Crew.Exp.Sailors = 70;
-	sld.Ship.Crew.Exp.Cannoners = 70;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 70.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("PellyGroup", "Pelly_sea");
 	Group_SetGroupCommander("PellyGroup", "Pelly_sea");
@@ -1977,9 +1971,7 @@ void Mtraxx_PlantSeaBattle(string qName) // бой с испанской эск�
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (Type > 1 && i == 1) SetRandGeraldSail(sld, SPAIN);
 		Group_AddCharacter("Mtr_PlantSeaGroup", "Mtr_PlantSeaCap_"+i);
@@ -2188,9 +2180,7 @@ void Mtraxx_PasqualeCreateConvoy(string qName) // создаем конвой
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (i == 1) 
 		{
@@ -3944,9 +3934,7 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 	SetSelfSkill(sld, 65, n, 60, 90, 55);
 	SetShipSkill(sld, 45, 50, n, n, 90, 70, 90, n, 70);
 	sld.Ship.Crew.Morale = n;
-	sld.Ship.Crew.Exp.Sailors = n;
-	sld.Ship.Crew.Exp.Cannoners = n;
-	sld.Ship.Crew.Exp.Soldiers = n;
+	SetCrewExp(sld, float(n));
 	UpgradeShipParameter(sld, "MaxCrew");
 	int hcrew = GetMaxCrewQuantity(sld);
 	SetCrewQuantity(sld, hcrew);
@@ -4069,9 +4057,7 @@ void Mtraxx_IgnasioCreateCaravane(string qName) // ставим голландц
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 		if (i == 1) 
 		{
@@ -4273,9 +4259,7 @@ void Mtraxx_IgnasioCreateSpanish(string qName) //
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 50;
-		sld.Ship.Crew.Exp.Sailors = 50;
-		sld.Ship.Crew.Exp.Cannoners = 50;
-		sld.Ship.Crew.Exp.Soldiers = 50;
+		SetCrewExp(sld, 50.0);
 		SetCharacterGoods(sld,GOOD_GRAPES,0);
 		//SetCharacterPerk(sld, "MusketsShoot");
 		if(CheckAttribute(sld,"perks.list.MusketsShoot"))
@@ -4283,9 +4267,7 @@ void Mtraxx_IgnasioCreateSpanish(string qName) //
 		if (i == 1) 
 		{
 			sld.ship.Crew.Morale = 100;
-			sld.Ship.Crew.Exp.Sailors = 100;
-			sld.Ship.Crew.Exp.Cannoners = 100;
-			sld.Ship.Crew.Exp.Soldiers = 100;
+			SetCrewExp(sld, 100.0);
 			SetShipSkill(sld, 60, 50, 100, 100, 100, 100, 100, 100, 70);
 			SetCharacterPerk(sld, "LongRangeShoot");
 			SetCharacterPerk(sld, "FastReload");
@@ -5609,9 +5591,7 @@ void Mtraxx_CorridaCreateHispanios(string qName) // ставим конвой и
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Sailors = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
+		SetCrewExp(sld, float(60+MOD_SKILL_ENEMY_RATE*4));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		if (i == 1) 
 		{
@@ -5777,9 +5757,7 @@ void Mtraxx_MarkusSetShipParameter()
 	int hcrew = GetMaxCrewQuantity(sld);
 	SetCrewQuantity(sld, hcrew);
 	sld.Ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 }
 
 void Mtraxx_CorridaMarkusCommand(string qName) // 
@@ -6032,9 +6010,7 @@ void Mtraxx_CartahenaArrive(string qName) // прибыли в акватори�
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+		SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Mtr_CartahenaSeaGroup", "Mtr_CartahenaCap_"+i);
 	}
@@ -8545,9 +8521,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		int hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
 		sld.Ship.Crew.Morale = 100;
-		sld.Ship.Crew.Exp.Sailors = 90;
-		sld.Ship.Crew.Exp.Cannoners = 90;
-		sld.Ship.Crew.Exp.Soldiers = 90;
+		SetCrewExp(sld, 90.0);
 		LAi_SetImmortal(sld, false);
 		sld.ShipHideImmortal = 800; // непотопляемый корабль
 		sld.SeaBoss = 0.8;
@@ -8578,9 +8552,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
 		sld.Ship.Crew.Morale = 100;
-		sld.Ship.Crew.Exp.Sailors = 90;
-		sld.Ship.Crew.Exp.Cannoners = 90;
-		sld.Ship.Crew.Exp.Soldiers = 90;
+		SetCrewExp(sld, 90.0);
 		LAi_SetImmortal(sld, false);
 		sld.ShipHideImmortal = 500; // непотопляемый корабль
 		sld.SeaBoss = 0.8;
@@ -8596,9 +8568,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		// Бернар Венсан
 		sld = characterFromId("Mtr_Vensan");
 		sld.Ship.Crew.Morale = 100;
-		sld.Ship.Crew.Exp.Sailors = 70;
-		sld.Ship.Crew.Exp.Cannoners = 70;
-		sld.Ship.Crew.Exp.Soldiers = 70;
+		SetCrewExp(sld, 70.0);
 		LAi_SetImmortal(sld, false);
 		sld.ShipHideImmortal = 400; // непотопляемый корабль
 		sld.SeaBoss = 0.8;

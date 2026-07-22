@@ -82,4 +82,6 @@
 #define MAX_AIMING_TIME			1.0
 
 // количество хп в одной засечке
-#define ENEMY_BARS_SERIF_WIDTH 50.0
+#define ENEMY_BARS_HP_SERIF_WIDTH 50.0
+// количество энергии в одной засечке
+#define ENEMY_BARS_ENERGY_SERIF_WIDTH 25.0

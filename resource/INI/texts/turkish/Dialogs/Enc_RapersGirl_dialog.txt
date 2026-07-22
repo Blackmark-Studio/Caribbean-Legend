@@ -1,0 +1,241 @@
+Enc_RapersGirl_dialog_Begin_1_text_1 {$rand($manWoman(Kaptan|Hanımefendi)! Lütfen, merhamet et! Beni koru, yalvarıyorum sana!|Yardım edin! $manWoman(Yabancı|Genç hanımefendi), kurtar beni, yalvarıyorum!)}
+Enc_RapersGirl_dialog_Begin_1_l1_1 {$rand(Ne oldu?|Ne oluyor?|$rand(Ne oldu, bir sorun mu var?|Ne oluyor?))}
+Enc_RapersGirl_dialog_Begin_2_text_1 {$rand($manWoman(Kaptan! Kaptan|Kız! Kız), lütfen bekleyin!|Bekle, $manWoman(Kaptan|genç hanım)! Lütfen.)}
+Enc_RapersGirl_dialog_Begin_2_l1_1 {$rand(Ne oldu?|Ne var ne yok?|$rand(Ne oldu, bir sorun mu var?|Ne oluyor?))}
+Enc_RapersGirl_dialog_Begin_3_text_1 {Oh, m$manWoman(ister|iss)! Lütfen, zavallı bir kıza yardım edin, yalvarıyorum! O insanlar bana korkunç bir şey yapmak istiyorlar!}
+Enc_RapersGirl_dialog_Begin_3_l1_1 {$rand(Ne oldu?|Ne var ne yok?|$rand(Ne oldu?|Ne oluyor?))}
+Enc_RapersGirl_dialog_Begin_11_text_1 {$rand(Bu alçaklar bana tecavüz edecek! Ne olur, onları durdurun!|Tanrı aşkına, beni bu canavarlardan koruyun! Onlar beni rezil edecekler!)}
+Enc_RapersGirl_dialog_Begin_11_l1_1 {Panik yapmayı bırak$manWoman(, güzelim|) . Burada ne oldu?}
+Enc_RapersGirl_dialog_Begin_21_text_1 {$rand(Beni tecavüzcüler kovalıyor!$manWoman( Bir hanımefendinin onurunu savunur musun?|)|Kaptan, $manWoman(adam ol|sen de bir kadınsın) bir kızı rezillikten kurtarmaz mıydın!)}
+Enc_RapersGirl_dialog_Begin_21_l1_1 {Panik yapmayı bırak$manWoman(, güzelim|). Burada ne oldu?}
+Enc_RapersGirl_dialog_Begin_31_text_1 {Beni kovalıyorlar! Haydutlar! Onlara, beni rahat bıraksınlar, de!}
+Enc_RapersGirl_dialog_Begin_31_l1_1 {Panik yapmayı bırak$manWoman(, güzelim|). Burada ne oldu?}
+Enc_RapersGirl_dialog_First_time_text_1 {$rand(Yardım edin! Yardım edin! Peşimdeler! Kurtarın beni!|Aaah! Yardım edin, $manWoman(yabancı|genç hanım) Beni bu alçaklardan kurtarın! |Bana merhamet et ve beni bu alçaklardan koru! Lütfen!)}
+Enc_RapersGirl_dialog_First_time_l1_1 {$rand(Ne oluyor?|Ne var ne yok?|Ne oldu?)}
+Enc_RapersGirl_dialog_Node_2_text_1 {$rand(Beni... beni tecavüz edecekler! Ne olur, Tanrı aşkına, engel ol! Lütfen!|Bu yaratıklar... Korkunç bir şey planlıyorlar... Beni onlardan koru, lütfen!|Tanrımızın adıyla, beni bu azgın yaratıklardan kurtar! Onlar beni lekelemek istiyorlar!)}
+Enc_RapersGirl_dialog_Node_2_l1_1 {Hadi her şeyi çözelim, o zaman.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_1 {$rand(Teşekkür ederim, $manWoman(Kaptan|genç hanımefendi). Çok korkmuştum!|Beni kurtardığın için teşekkür ederim! Sana minnettarım!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_1 {Pekâlâ, $manWoman(güzellik|sevgili), sakin ol, hepsi geçmişte kaldı.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_2 {Ah, çok teşekkür ederim, $manWoman(asil bir adam! Gerçekten tam bir centilmeniniz!|Hanımefendi! Beni kurtardınız!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_2 {Başka türlü yapamazdım.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_3 {Ah, teşekkür ederim, $manWoman(asil bir adam! Gerçekten tam bir centilmensiniz!|Yabancı! Beni kurtardın!)}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_3 {Başka türlü yapamazdım.}
+Enc_RapersGirl_dialog_ThanksForHelp_text_4 {Ne yaptın sen? Neden onları öldürdün?! Şimdi beni aramaya gelecekler! Tanrım, ben ne yaptım da bunu hak ettim!}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_4 {İşte minnettarlık dedikleri bu!}
+Enc_RapersGirl_dialog_ThanksForHelp_text_5 {Ne yaptın, $manWoman(kaptan|genç hanım)?! Neden onları öldürdün? Aslında babam tarafından gönderilmişlerdi... Aman Tanrım, şimdi kesin beni öldürecek...}
+Enc_RapersGirl_dialog_ThanksForHelp_l1_5 {Bu gerçekten haber! Peki sen ne düşünüyordun, haydutlar tarafından kovalandığını bağırırken?!}
+Enc_RapersGirl_dialog_Node_11_text_1 {Biraz param var, lütfen bunu minnettarlığımın bir göstergesi olarak kabul edin. Şimdi herkese anlatacağım, $manWoman(ne kadar iyi ve asil bir adamsın|ne kadar iyi ve asil bir kadınsın).}
+Enc_RapersGirl_dialog_Node_11_l1_1 {Elbette yapacaksın. Teşekkür ederim... Şimdi sadece eve git.}
+Enc_RapersGirl_dialog_Node_12_text_1 {Hâlâ kendime gelemedim. Lütfen bana getirir misin $manWoman(bir hanımefendi|ben) yerleşimine $ctx(valueText)? Biliyor musun, şimdi bana her çalının arkasında bir tecavüzcü saklanıyormuş gibi geliyor.}
+Enc_RapersGirl_dialog_Node_12_l1_1 {$rand(Bu kadar endişelenme, gerçekten... Tamam, hadi gidelim.|Sen tam bir korkaksın, değil mi? Peki, seni oraya götüreceğim.)}
+Enc_RapersGirl_dialog_Node_12_l2_1 {Üzgünüm canım, ama gerçekten hiç vaktim yok, fazlasıyla meşgulüm.}
+Enc_RapersGirl_dialog_Node_22_text_1 {Sadece onları korkutup kaçırmanı bekliyordum! Şimdi beni yerleşimdeki meyhaneye götürmelisin $ctx(valueText), sana yardım için başvurabileceğim başka kimsem yok.}
+Enc_RapersGirl_dialog_Node_22_l1_1 {Ah, kahretsin! Tamam, hadi gidelim. Sadece geride kalma.}
+Enc_RapersGirl_dialog_Node_22_l2_1 {Hayır, hepsi bu, $manWoman(güzellik|sevgili)! Bugünlük sürprizlere doydum. Sana yardım edecek başka birini bul.}
+Enc_RapersGirl_dialog_Node_31_text_1 {Ben ne yapacaktım ki?! Babam beni o tefecinin oğluyla evlendirmek istiyor, o süt çocuğuyla... sadece babasının kasasında servet var diye! Ama ben başka birini seviyorum! Lütfen beni ona götür...}
+Enc_RapersGirl_dialog_Node_31_l1_1 {Ne büyük bir yük oldun! Peki, tamam, gidelim. Artık seni burada bırakamam, değil mi?.. Seçtiğin kişinin adı ne, seni nereye götüreyim?}
+Enc_RapersGirl_dialog_Node_31_l2_1 {Hayır, bu kadar, $manWoman(güzellik|sevgili)! Bugünlük sürprizlere doyduğum yetti. Sana yardım edecek başka birini bul.}
+Enc_RapersGirl_dialog_Node_32_sLoverId_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_32_text_1 {Adı $ctx(loverName), o yeni geldi. Şu anda yerleşiminde kalıyor $ctx(valueText), orada iş bulmaya çalıştım ama şu sıralar işler zor. Herkes sürekli bir krizden bahsediyor... Ve artık benim için eve dönmek de mümkün değil.}
+Enc_RapersGirl_dialog_Node_32_l1_1 {Bir kriz mi? Ha... Gerçek bir korsan için kriz, ufukta bir ticaret kervanı görünüp de yelkenleri dolduracak rüzgar olmadığında olur...}
+Enc_RapersGirl_dialog_Node_12End_text_1 {$rand(Biliyor musun, $manWoman(kaptan|genç hanım)? O kadar korktum ki, bacaklarım hâlâ biraz titriyor.|Ah, biliyor musun, çok korkmuştum. Tanrı'nın seni karşıma çıkarması harika bir şey.)}
+Enc_RapersGirl_dialog_Node_12End_l1_1 {$rand(Tanrıya şükür, hâlâ hayattasın.|Bunu bu kadar kafana takma. Böyle olması iyi oldu, biliyor musun.)}
+Enc_RapersGirl_dialog_Node_1Next_text_1 {$rand(Teşekkür ederim, $manWoman(kapitan|genç hanım), bir kez daha. Gerçekten, sana çok minnettarım.|Çok teşekkür ederim, $manWoman(kaptan|genç hanım). Senin yardımın olmasaydı ne yapardım, hiç bilmiyorum.)}
+Enc_RapersGirl_dialog_Node_1Next_l1_1 {$rand(Bu sana ders olsun. Peki, bol şans...|Bir dahaki sefere daha dikkatli olmalısın... Şimdi, evine koş, yapacak işlerim var.)}
+Enc_RapersGirl_dialog_Node_1Next_l2_1 {Bu kadar dikkatsiz nasıl olabildin? Neden tek başına ormana girdin?}
+Enc_RapersGirl_dialog_Node_1End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_3End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_3Final_text_1 {$rand(Fikrini değiştirdin mi?|Kaptan, fikrinizi değiştirmiş olmanız harika!)}
+Enc_RapersGirl_dialog_Node_3Final_l1_1 {$rand(Hayır, hayır, canım, ben almayayım.|Boşuna umutlanma...)}
+Enc_RapersGirl_dialog_Node_13_text_1 {Muhtemelen bana güleceksin ama... Bir aşk iksiri için malzeme topluyordum... Bir cadı, kalp meselelerine iyi gelebilecek bir kök olduğunu söyledi.}
+Enc_RapersGirl_dialog_Node_13_l1_1 {Aman Tanrım! Ne $manWoman(bu kadınlar ne düşünüyor|aklından geçen neydi)?! Görünen o ki, epey talibin olmuş, peşinden koşanlar çoktu ve hepsini savuşturmak bana zor geldi. Ha-ha-ha-ha... Hoşça kal.}
+Enc_RapersGirl_dialog_Node_13_text_2 {Sadece biraz ot toplamak ve temiz hava almak için dışarı çıkmıştım. Görünüşe göre yürüyüş için en iyi zaman değilmiş.}
+Enc_RapersGirl_dialog_Node_13_l1_2 {Ne dikkatsizlik! Neyse ki zamanında yetiştim. Sana bol şans dilerim.}
+Enc_RapersGirl_dialog_Node_13_text_3 {Hanımım burada bir yerde yürüyüş yaparken kolyesindeki incileri düşürmüş. Eve döndüğünde bana bağırdı ve hepsini bulup getirmemi emretti. 'Hepsini bulmadan sakın buraya dönme!' dedi. Ama tam olarak nerede düştüklerini bile bilmiyorum ki. Ayrıca, bu sık otların arasında onları nasıl bulacağım? İnciler o kadar küçük ki... Yani, burada öylece dolaşıyorum, ne yapmam gerektiği hakkında en ufak bir fikrim yok...}
+Enc_RapersGirl_dialog_Node_13_l1_3 {Peki, nasıl bir kolyeydi? Belki de ormanda dolaşmak yerine yenisini almak daha kolay olurdu? Hanımınız kaç inci kaybetmiş?}
+Enc_RapersGirl_dialog_Node_13_text_4 {Rahmetli babam bana bir harita bıraktı, ve onun eski dostları bunu benden almak istediler. O hayattayken hepsi ondan korkardı, ama onu toprağa verdikten sonra sıkıntılı günler başladı. Önce bu haritayı satın almak istediler, ama kabul etmedim, sonra da beni korkutmaya başladılar.}
+Enc_RapersGirl_dialog_Node_13_l1_4 {Peki neden onu satmadın? Bu harita hakkında korsan çetelerinin peşine düşeceği kadar özel olan ne var?}
+Enc_RapersGirl_dialog_Node_131_text_1 {O kolye seçilmiş incilerden yapılmıştı, onlar ucuza alınamaz. Orada $ctx(bigCoins) büyük inciler ve $ctx(smallCoins) daha küçükleri. Eğer o inciler bulunsaydı, onun gibi bir kolye daha yaptırabilirdik.}
+Enc_RapersGirl_dialog_Node_131_l1_1 {Bu işin kolay olmayacağı kesin... Neyse, hanımın sana emir verdiyse, yapacak pek bir şey yok. İncileri bulmaya çalış. İyi şanslar.}
+Enc_RapersGirl_dialog_Node_131_l2_1 {Bu anlamsız. Bu kalın otların arasında inci bulmak, samanlıkta iğne aramaktan daha zor. Üstelik incilerin kaybolduğu yeri bile bilmiyorsun...}
+Enc_RapersGirl_dialog_Node_132_mapOwner_1 {l$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_132_text_1 {Babam, hazinesini sakladığı yeri haritada işaretlemişti. Ünlü korsan hakkında bir şey duydun mu $ctx(pirateName)?}
+Enc_RapersGirl_dialog_Node_132_l1_1 {Hayır, hiç duymadım.}
+Enc_RapersGirl_dialog_Node_132_1_text_1 {Pekala, $ctx(pirateName) babamdı. Herkes ondan korkardı, kimse tek kelime etmeye cesaret edemezdi. Şimdi ise yüzsüzleştiler tabii. Haritayı satmayı reddedince, onlar da hazineden paylarını almaları gerektiğini söylediler. Haritayı saklamak istedim ama yine de izimi buldular...}
+Enc_RapersGirl_dialog_Node_132_1_l1_1 {Ve neden en başta bunu sakladın ki? Bir gemi kirala, git ve hazineni al. Baban bunu boşuna saklamamıştır.}
+Enc_RapersGirl_dialog_Node_132_2_text_1 {Bunu söylemek kolay da yapmak zor. Bir gemi kiralayacak param yok, hem... Korkarım... Hazineyi nasıl kazacağım, gemiye nasıl taşıyacağım... Sonra da nereye götüreceğim? Yol boyunca herkes bana kolayca saldırabilir...}
+Enc_RapersGirl_dialog_Node_132_2_l1_1 {İyi bir noktaya değindin... Peki, haritanı sakla o zaman. Ama onu iyi bir yere koymayı unutma.}
+Enc_RapersGirl_dialog_Node_132_2_l2_1 {Hmm... Muhtemelen doğru. O yüzden satmalıydın zaten.}
+Enc_RapersGirl_dialog_Node_132_2_l3_1 {Bir yol arkadaşı bulmayı denedin mi?}
+Enc_RapersGirl_dialog_Node_132_2End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_132_3_text_1 {Böyle bir fırsatı kaybetmek beni üzüyor... Babam oraya sakladığı hazinelerden bahsetmişti. Kimse bana o kadar para vermezdi...}
+Enc_RapersGirl_dialog_Node_132_3_l1_1 {Pekâlâ, onu ucuza satma. Hem, altın hayatından daha değerli değil. Üstelik, bu senin için en kolay yol: paranı alıp bütün dertlerinden kurtuluyorsun...}
+Enc_RapersGirl_dialog_Node_132_4_text_1 {Bu kulağa cazip geliyor... Peki bunun için bana ne kadar teklif edebilirsin?}
+Enc_RapersGirl_dialog_Node_132_4_l1_1 {Bence bundan daha değerli olamaz $ctx(mapPrice) pesos.}
+Enc_RapersGirl_dialog_Node_132_5_text_1 {Heh, kadın olmak kolay değil... Peki, kabul ediyorum. Sonunda bu kâbus bitecek... Belki de bu haritanın sana ait olması en iyisi,$manWoman( asil bir beyefendi|), o alçaklara göre daha iyi.}
+Enc_RapersGirl_dialog_Node_132_5_l1_1 {Güzel. Al paranı... sadece hepsini bir anda harcamamaya çalış.}
+Enc_RapersGirl_dialog_Node_132_5_text_2 {Hayır, $manWoman(kapitan|genç hanım). Bunu satmayacağım. İyi bir adamla evleneceğim ve sonra hazineyi birlikte bulacağız.}
+Enc_RapersGirl_dialog_Node_132_5_l1_2 {Bu sana kalmış. Zaten o kağıt parçasının artık bir değeri yok.}
+Enc_RapersGirl_dialog_Node_132_8_text_1 {Onları nerede bulacağım peki? Gençler güvenilir değil, hazinelerden çok başka şeylerle ilgileniyorlar. Yaşlılardan ise çekiniyorum, hepsi bana babamın arkadaşlarını hatırlatıyor. O kadar kurnaz ve hainler ki, onlardan ne bekleyeceğini asla bilemezsin.}
+Enc_RapersGirl_dialog_Node_132_8_l1_1 {Ha-ha-ha... Peki, ama beni de yanında götürecek misin?}
+Enc_RapersGirl_dialog_Node_132_9_text_1 {Sen mi? Ve sen gidecek misin? Ama o zaman beni buraya, yerleşkeye geri getirmek zorunda kalacaksın $ctx(valueText), tamam mı?}
+Enc_RapersGirl_dialog_Node_132_9_l1_1 {Pekâlâ, sana söz veriyorum. Sadece bana yolu göster.}
+Enc_RapersGirl_dialog_Node_132_10_text_1 {Hazine mağarada saklı $ctx(valueText), karaya çıkmamız gerekiyor $ctx(valueText2), kendimi göstereceğim yer... Ama unutma, sadece yarısını alacaksın!}
+Enc_RapersGirl_dialog_Node_132_10_l1_1 {Pekâlâ, sana ihanet etmeyeceğim, söz veriyorum. Beni takip et ve geride kalma.}
+Enc_RapersGirl_dialog_Node_132_11_1_text_1 {Kaptan, şimdi mağarayı bulmalıyız.}
+Enc_RapersGirl_dialog_Node_132_11_1_l1_1 {Pekala, şimdi bir bakalım.}
+Enc_RapersGirl_dialog_Node_132_11_2_text_1 {Kaptan, mağarayı bulmalıyız.}
+Enc_RapersGirl_dialog_Node_132_11_2_l1_1 {Pekala, şimdi bir bakalım.}
+Enc_RapersGirl_dialog_Node_132_12_text_1 {İşte! Buldum! Babamın dediği gibi! Kocaman bir hazine yığını! Anlaştığımız gibi, yarısı senin.}
+Enc_RapersGirl_dialog_Node_132_12_l1_1 {Gördün mü? Zor olmadı, korkacak bir şey yokmuş.}
+Enc_RapersGirl_dialog_Node_132_13_text_1 {Ha-ha-ha! Artık zenginim! Payını şimdi alacak mısın?}
+Enc_RapersGirl_dialog_Node_132_13_l1_1 {Sanırım.}
+Enc_RapersGirl_dialog_Node_132_15_text_1 {O zaman al, ve lütfen şu eşyaların hepsini gemiye taşımama yardım et. Hâlâ beni eve götüreceğine dair verdiğin sözü hatırlıyor musun?}
+Enc_RapersGirl_dialog_Node_132_15_l1_1 {Unutmadım! Tabii ki seni götüreceğim.}
+Enc_RapersGirl_dialog_Node_132_17_text_1 {Zengin olmak gerçekten harika! Şimdi kendimi bambaşka hissediyorum.}
+Enc_RapersGirl_dialog_Node_132_17_l1_1 {Senin adına sevindim.}
+Enc_RapersGirl_dialog_Node_132_18_text_1 {Pekala, kaptan. Yolculuğum burada sona eriyor. Yardımlarınız için teşekkür ederim.}
+Enc_RapersGirl_dialog_Node_132_18_l1_1 {Rica ederim... Peki, bu yeni servetinle ne yapmayı düşünüyorsun? Kölelerle birlikte bir plantasyon mu alacaksın?}
+Enc_RapersGirl_dialog_Node_132_19_text_1 {Bilmiyorum, henüz karar vermedim. Belki Avrupa'ya taşınırım...}
+Enc_RapersGirl_dialog_Node_132_19_l1_1 {Pekala, o zaman! Sana bol şans.}
+Enc_RapersGirl_dialog_Node_132_20_text_1 {Dur bir dakika... Bu süs eşyası babamın hazineleri arasındaydı. Benim için bir anlamı yok, ama belki sen beğenirsin. Lütfen, bana yaptıkların için kişisel bir teşekkürüm olarak bunu kabul et. Bu benim payımdan, ha-ha-ha!}
+Enc_RapersGirl_dialog_Node_132_20_l1_1 {Vay canına, bu gerçekten harika bir hediye. Teşekkür ederim$manWoman(, güzelim|) . Kendine iyi bir damat bul, olur mu...}
+Enc_RapersGirl_dialog_Node_133_text_1 {Ama ne yapabilirim? Hanımımın emirlerini görmezden gelemem, beni canlı canlı yüzebilir.}
+Enc_RapersGirl_dialog_Node_133_l1_1 {Beni yerleşimdeki kilisede bekle $ctx(valueText), sana yeni bir kolye yapmak için incileri getireceğim.}
+Enc_RapersGirl_dialog_Node_133_l2_1 {Al bakalım. Şu 15.000 peso senin olsun. Bu, kolyeye uygun incileri seçmek ya da yenisini almak için fazlasıyla yeterli olacaktır.}
+Enc_RapersGirl_dialog_Node_133_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_134_text_1 {$rand($manWoman(Kaptan|Genç hanımefendi), seni tekrar gördüğüme çok sevindim! Kolye için incileri toplamayı başardın mı?|Merhaba, kaptan! İncileri getirdin mi? Biliyor musun, hanımım oldukça endişelenmeye başladı...)}
+Enc_RapersGirl_dialog_Node_134_l1_1 {Evet. İşte incilerin. Onları hanımına götür ve bir dahaki sefere daha dikkatli olmasını söyle.}
+Enc_RapersGirl_dialog_Node_134_l1_2 {Daha değil. O kadar kolay değil, biliyorsun... Ama getireceğim, bekle ve gör.}
+Enc_RapersGirl_dialog_Node_134_1_text_1 {Oh, $manWoman(Kaptan|genç hanım), seninle tanıştığıma o kadar mutluyum ki! Bana yaptığın her şey için minnettarlığımın bir göstergesi olarak, sana bu küçük takıyı ve şu değerli taşları vermek istiyorum. Umarım işine yararlar.}
+Enc_RapersGirl_dialog_Node_134_1_l1_1 {Vay canına! Sana da teşekkürler$manWoman(, güzelim|), beklemiyordum... Elveda, mutlu ol.}
+Enc_RapersGirl_dialog_Node_134_2_text_1 {Ah, $manWoman(kapitan|genç hanım), sana güveniyorum.}
+Enc_RapersGirl_dialog_Node_134_2_l1_1 {...}
+Enc_RapersGirl_dialog_Node_135_text_1 {Ah, $manWoman(kaptan|genç hanımefendi), bugün bana ikinci kez yardım ettin. Sana minnettarım. İyiliğini asla unutmayacağım.}
+Enc_RapersGirl_dialog_Node_135_l1_1 {Rica ederim. Hanımına selam söyle...}
+Enc_RapersGirl_dialog_Node_135End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_ThanksForSave_text_1 {$rand(Onlara hiç para vermemeliydin. Yalan söylüyorlardı.|Onlara inanma. Onlar yalancı. Ve onlara hiç para vermemeliydin.)}
+Enc_RapersGirl_dialog_ThanksForSave_l1_1 {Onları öldürmeli miydim?}
+Enc_RapersGirl_dialog_ThanksForSave_text_2 {Oh, ne asil bir davranış! Senin hemen böyle biri olduğunu anlamıştım $manWoman(gerçek bir centilmen|soylu bir hanımefendi)! Lütfen, en içten teşekkürlerimi kabul edin. Umarım o serserilerin söylediklerine inanmadınız?}
+Enc_RapersGirl_dialog_ThanksForSave_l1_2 {Önemli değil. Bir kız ve bir avuç serseri ormanda, bu öylesine doğal ki...}
+Enc_RapersGirl_dialog_ThanksForSave_l2_1 {Ne diyorsun, $manWoman(güzellik|sevgili)? Nasıl yapabilirim ki?}
+Enc_RapersGirl_dialog_ThanksForSave_text_3 {Teşekkür ederim, kaptan. Sizi bu tatsız işe bulaştırdığım için üzgünüm, ama gerçekten başka çarem yoktu.}
+Enc_RapersGirl_dialog_ThanksForSave_l1_3 {Pekâlâ, senin de epeyce sıkışıp kaldığını görüyorum. Nasıl oldu da bu hâle geldik?}
+Enc_RapersGirl_dialog_Node_200_text_1 {Belki de... Artık beni asla rahat bırakmayacaklar.}
+Enc_RapersGirl_dialog_Node_200_l1_1 {Ah, hadi ama! Artık korkacak bir şeyin yok, eve git.}
+Enc_RapersGirl_dialog_Node_200_l2_1 {Vay canına! Neden erkeklere bu kadar mesafelisin?}
+Enc_RapersGirl_dialog_Node_200_text_2 {Elbette hayır! Ama yine de peşimi bırakmayacaklar. Beni şu yerleşkeye götürür müsün $ctx(valueText), lütfen?}
+Enc_RapersGirl_dialog_Node_200_l1_2 {Eve git, sana dokunmazlar. Şimdi kolay kazandıkları parayı harcamak için meyhaneye gidiyor olmalılar.}
+Enc_RapersGirl_dialog_Node_200_l2_2 {$rand(Bu kadar endişelenme, gerçekten... Tamam, hadi gidelim.|Ne kadar korkaksın, değil mi? Peki, seni oraya götüreceğim..)}
+Enc_RapersGirl_dialog_Node_201_text_1 {Ah hayır, ne diyorsun? Bu alçakları çok iyi tanıyorum. Onlar babamın eski dostları. Babamın hazinelerini sakladığı yeri bulmaya çalışıyorlar.}
+Enc_RapersGirl_dialog_Node_201_l1_1 {Peki ya babanla ne işin var?}
+Enc_RapersGirl_dialog_Node_202_text_1 {Eskiden bir korsan gemisinin kaptanıydı. Yakın zamanda öldü... Cenazede hepsi çok saygılıydı, ama zaman geçtikçe onu unuttular, ardından da onurlarını ve dürüstlüklerini kaybettiler. İyi ki onları fark ettim. Hazineyi nerede bulacaklarını öğrenir öğrenmez, benim işim biter.}
+Enc_RapersGirl_dialog_Node_202_l1_1 {Bu üzücü bir hikaye. Peki, onlardan saklanmaya devam mı edeceksin?}
+Enc_RapersGirl_dialog_Node_203_text_1 {Evde mücevher saklayamam, beni koruyacak kimsem yok. Bu yüzden geceleri mağaraya gidiyorum, param bitince...\nLütfen beni mağaraya götür, sana verdiğim parayı geri vereceğim... Sanırım sen yanımdayken korsanlar peşimize düşmeye cesaret edemezler.}
+Enc_RapersGirl_dialog_Node_203_l1_1 {Üzgünüm canım, ama başka planlarım var. Hazineni başka bir zaman toplarsın.}
+Enc_RapersGirl_dialog_Node_203_l2_1 {Pekala, hadi gidelim, eğer benden korkmuyorsan.}
+Enc_RapersGirl_dialog_Node_204_text_1 {Biliyor musun, nedense ben...}
+Enc_RapersGirl_dialog_Node_204_l1_1 {Pekâlâ, bu iyi bir şey.}
+Enc_RapersGirl_dialog_Node_206_text_1 {Kaptan, beni mağaraya götüreceğine söz vermiştin.}
+Enc_RapersGirl_dialog_Node_206_l1_1 {Hadi gidelim...}
+Enc_RapersGirl_dialog_Node_207_text_1 {Pekala, kaptan, ihtiyacım olan her şeyi aldım. Artık dönebiliriz.}
+Enc_RapersGirl_dialog_Node_207_l1_1 {Arkadaşların etrafta yok, görüyorum.}
+Enc_RapersGirl_dialog_Node_208_text_1 {Tanrıya şükür. Daha fazla belaya ihtiyacım yok... Al, şu külçeleri al... masraflarını karşılamaya yeter. Yalnız git, ben başka bir yoldan gideceğim...}
+Enc_RapersGirl_dialog_Node_208_l1_1 {Pekâlâ, korkmuyorsan sana bol şans.}
+Enc_RapersGirl_dialog_Node_209_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_210_text_1 {Hmm, $manWoman(kaptan|genç hanım), alaycı tavrını hiç beğenmiyorum.}
+Enc_RapersGirl_dialog_Node_210_l1_1 {Hazırsın, $manWoman(güzellik|sevgili). Ve kasabaya gitmek için acele etsen iyi olur, yoksa seni tekrar kovalamaya başlarlar.}
+Enc_RapersGirl_dialog_Node_211_text_1 {O kadar telaşlandım ki! Beni lütfen yerleşimdeki meyhaneye götürebilir misiniz? $ctx(valueText)? Yoksa, korkarım ki beni tekrar kovalayacaklar.}
+Enc_RapersGirl_dialog_Node_211_l1_1 {Belki de haklısın. Hadi gidelim...}
+Enc_RapersGirl_dialog_Node_220_text_1 {Ah kaptan, bu uzun bir hikaye ve emin değilim ilgini çeker mi. Ama... şimdi senin yardımın olmadan başaramam. Beni yerleşimdeki meyhaneye götürebilir misin lütfen? $ctx(valueText)? Korkarım ki beni bir türlü rahat bırakmadılar.}
+Enc_RapersGirl_dialog_Node_220_l1_1 {Üzgünüm canım, buna vaktim yok. Yapmam gereken işler var.}
+Enc_RapersGirl_dialog_Node_220_l2_1 {Neden bu kadar gizemlisin?}
+Enc_RapersGirl_dialog_Node_222_text_1 {Ve herkes benim talihsizliğimden çıkar sağlamaya çalışırken, nasıl açık olabilirim ki?}
+Enc_RapersGirl_dialog_Node_222_l1_1 {Pekâlâ, o zaman...}
+Enc_RapersGirl_dialog_Node_224_text_1 {Kaptan, beni yerleşim yerindeki meyhaneye götüreceğine söz vermiştin $ctx(valueText).}
+Enc_RapersGirl_dialog_Node_224_l1_1 {$rand(Hatırlıyorum.|Merak etme, orada olacağım.)}
+Enc_RapersGirl_dialog_Node_225_text_1 {Orada çok fazla insan var. Özel odaya geçelim. Sana bir şey söylemem lazım.}
+Enc_RapersGirl_dialog_Node_225_l1_1 {$rand(Senin için zaten fazlasıyla şey yaptım, artık hoşça kal.|Lütfumu suistimal etmemelisin. Görüşürüz, canım.|Bundan sonra hikayelerine ihtiyacım yok, her şeyi kendin halledebilirsin.)}
+Enc_RapersGirl_dialog_Node_225_l2_1 {Hmm, peki. O zaman anahtarları barmenden alacağım.}
+Enc_RapersGirl_dialog_Node_225_text_2 {Yardımınız için çok teşekkür ederim, kaptan. Bunu unutmayacağım.}
+Enc_RapersGirl_dialog_Node_225_l1_2 {Ah, zahmet etme. Sadece bundan sonra daha dikkatli olmaya çalış.}
+Enc_RapersGirl_dialog_Node_225_text_3 {Yardımınız için çok teşekkür ederim, kaptan. Bunu unutmayacağım.}
+Enc_RapersGirl_dialog_Node_225_l1_3 {Ah, zahmet etme. Sadece bundan sonra daha dikkatli olmaya çalış.}
+Enc_RapersGirl_dialog_Node_225_text_4 {Orada çok fazla insan var. Özel odaya geçelim. Sana bir şey söylemem lazım.}
+Enc_RapersGirl_dialog_Node_225_l1_4 {$rand(Senin için zaten fazlasıyla şey yaptım, artık hoşça kal.|İyiliğimi suistimal etmemelisin. Görüşürüz, canım.|Artık hikayelerine ihtiyacım yok, bundan sonrasını kendin halledebilirsin.)}
+Enc_RapersGirl_dialog_Node_225_l2_2 {Hmm, peki. O zaman anahtarları barmenden alırım.}
+Enc_RapersGirl_dialog_Node_226_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_228_text_1 {Hâlâ hikayemi dinlemek istiyor musun?}
+Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... Sanırım gitme vakti geldi. Hoşça kal!}
+Enc_RapersGirl_dialog_Node_228_l2_1 {Pekâlâ, söyle bakalım, o zaman.}
+Enc_RapersGirl_dialog_Node_228_text_2 {Ah, asil kurtarıcım, sonunda sana bir kadının teşekkür edebileceği tek şekilde teşekkür edebilirim\nSeni ormanda gördüğümde, içimde her şey değişti. Tecavüzcüleri ve yanaklarımı kamçılayan keskin palmiye yapraklarını unuttum. Nereye kaçacağımı, neden kaçacağımı unuttum ... Sadece seni gördüm. Ve sadece seni istedim ... Ve benim için yaptıklarından sonra...}
+Enc_RapersGirl_dialog_Node_228_l1_2 {Vay canına! Ne öfke ama! Peşindekiler kimi kovalayacaklarını iyi biliyormuş...}
+Enc_RapersGirl_dialog_Node_228_l2_2 {Dinle güzelim, bunu gayet iyi anlıyorum ama lütfen, öfkeni kendine sakla.}
+Enc_RapersGirl_dialog_Node_229_text_1 {Şimdi gel bana, kahramanım...}
+Enc_RapersGirl_dialog_Node_229_l1_1 {Ah, sevgilim...}
+Enc_RapersGirl_dialog_Node_230_text_1 {Ah! Nasıl... Nasıl cüret edersin?! Ne alçak herifsin! Bir kız sana tüm kalbiyle ve ruhuyla teşekkür etti, sen ise...}
+Enc_RapersGirl_dialog_Node_230_l1_1 {Eğer bu kadar çok cilve yapıp karşılaştığın ilk adama göz koymasaydın, başın da bu kadar derde girmezdi. Artık ormanda böyle cilveli hanımları kurtarmıyorum...}
+Enc_RapersGirl_dialog_Node_231_text_1 {Böyle sözleri daha önce hiç kimseden duymamıştım! Ve bunu asla affetmeyeceğim! Beni daha çok hatırlayacaksın!}
+Enc_RapersGirl_dialog_Node_231_l1_1 {Hadi artık, tamam mı? Biraz toparlan kendini, yoksa yine kurtarılmak mı istiyorsun...}
+Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_233_text_1 {Ailem yerleşim yerinde yaşıyor $ctx(valueText)Tesadüfen buraya geldim, nişanlımın beni ailesiyle tanıştırmak için götürdüğü gemideydim ama gemiye korsanlar saldırdı. Gemi ele geçirildi ve yolcular buradan çok uzakta olmayan bir koyda karaya bırakıldı. Nişanlım baskın sırasında öldürüldü, ben ise ormanı geçerken ağır hastalandım.\nYerel genelevin patroniçesi beni iyileştirdi, ama ayağa kalkar kalkmaz tedavime harcadığı parayı çalışarak ödememi istedi. Fahişe oldum, ama patroniçenin hoşuna gitmedim, bu yüzden en azından parasının bir kısmını geri almak için beni bazı haydutlara sattı. Geri kalanını zaten biliyorsun.}
+Enc_RapersGirl_dialog_Node_233_l1_1 {O zaman bırak işi, eve git! Neden sana köleymişsin gibi davranmalarına izin veriyorsun?!}
+Enc_RapersGirl_dialog_Node_234_text_1 {Yapamam! Bütün eşyalarım: düzgün kıyafetlerim, param, belgelerim... Hepsi genelevde, seyahat çantamda. Onu buluşma odasında sakladım. Ve ben bu haldeyken, limandaki her denizci peşimden koşar. Belgelerim ya da param olmadan kim beni gemisine alır ki? Şimdi ise şehirde yüzümü bile gösteremem, yoksa hapsi boylarım...}
+Enc_RapersGirl_dialog_Node_234_l1_1 {Sorun olmaz. Hadi gidelim. Seni bizzat ben eve götüreceğim.}
+Enc_RapersGirl_dialog_Node_234_l2_1 {Burada bekle. Seyahat çantanı getireceğim.}
+Enc_RapersGirl_dialog_Node_234_l3_1 {Senin belgelerini kim takar? Eve gitmek için ne kadar paraya ihtiyacın var?}
+Enc_RapersGirl_dialog_Node_235_text_1 {Ah, teşekkür ederim kaptan... Ama... biliyorsunuz, size ödeyecek hiçbir şeyim yok.}
+Enc_RapersGirl_dialog_Node_235_l1_1 {Hangi ödemeden bahsediyorsun? Hadi, bulunmadan gidelim...}
+Enc_RapersGirl_dialog_Node_236_text_1 {Ah, kaptan, bilirsiniz ki, asla böyle bir şey sormaya cesaret edemem...}
+Enc_RapersGirl_dialog_Node_236_l1_1 {Korkma. Yakında geri döneceğim.}
+Enc_RapersGirl_dialog_Node_240_1_text_1 {Ah, sana bir şey olmuş olmasından zaten endişelenmiştim.}
+Enc_RapersGirl_dialog_Node_240_1_l1_1 {Ne olabilir ki? Al, eşyalarını al.}
+Enc_RapersGirl_dialog_Node_240_1_l1_2 {Dinle, orada hiçbir şey bulamadım. Seyahat çantanı buluşma odasında bıraktığına emin misin?}
+Enc_RapersGirl_dialog_Node_241_text_1 {Teşekkür ederim, $manWoman(asil kaptan|asil kız). Bana yaptıklarını asla unutmayacağım. Fazla bir şeyim yok, ama lütfen bu muskayı kabul et. Belki de korsan saldırısı sırasında hayatımı kurtaran bu tılsımdı.}
+Enc_RapersGirl_dialog_Node_241_l1_1 {Teşekkür ederim, yolun açık olsun! Hoşça kal şimdi...}
+Enc_RapersGirl_dialog_Node_242_text_1 {Gerçekten çantamı buldular mı?}
+Enc_RapersGirl_dialog_Node_242_l1_1 {Eve dönmek için ne kadar paraya ihtiyacın var?}
+Enc_RapersGirl_dialog_Node_242_l2_1 {Belki de öyle oldu. Her neyse, yollarımız burada ayrılıyor. Elveda!}
+Enc_RapersGirl_dialog_Node_245_text_1 {Teşekkür ederim, kaptan. Biliyor musunuz, sonunda eve döndüğüme hâlâ inanamıyorum. Lütfen, benimle gelin, sizi ailemle tanıştırayım.}
+Enc_RapersGirl_dialog_Node_245_l1_1 {Dinle, $manWoman(güzellik|tatlım), gerçekten buna hiç vaktim yok. Belki başka bir zaman?}
+Enc_RapersGirl_dialog_Node_246_text_1 {Ne yazık... Peki, o zaman hoşça kal, Tanrı seni korusun. Sana borcumu ödeyemem ama lütfen bu muskayı kabul et.}
+Enc_RapersGirl_dialog_Node_246_l1_1 {Teşekkür ederim! Şimdi hemen eve koş, aileni mutlu et!}
+Enc_RapersGirl_dialog_Node_247_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_237_text_1 {Pek bilmiyorum... Belki de geçen bir arabayı beklemem gerekecek. Ama senden para isteyemem.}
+Enc_RapersGirl_dialog_Node_237_l1_1 {Anladım. Peki, al 5000 peso. Bu yeterli olmalı.}
+Enc_RapersGirl_dialog_Node_237_l2_1 {Anladım. Peki, al 25.000 peso ve evine git.}
+Enc_RapersGirl_dialog_Node_237_l3_1 {Anladım. Peki, al 35.000 peso. Bu, gemideki en iyi kamarayı almak için yeterli olmalı.}
+Enc_RapersGirl_dialog_Node_237_1_text_1 {Teşekkür ederim, $manWoman(soylu kaptan|asil kız). Bana yaptıklarını asla unutmayacağım.}
+Enc_RapersGirl_dialog_Node_237_1_l1_1 {İyi yolculuklar o zaman. Elveda...}
+Enc_RapersGirl_dialog_Node_237_2_text_1 {Teşekkür ederim, $manWoman(asil kaptan|asil kız). Bana yaptıklarını asla unutmayacağım.}
+Enc_RapersGirl_dialog_Node_237_2_l1_1 {Öyleyse iyi yolculuklar. Elveda...}
+Enc_RapersGirl_dialog_Node_237_3_text_1 {Teşekkür ederim, $manWoman(asil kaptan|asil kız). Bana yaptıklarını asla unutmayacağım.}
+Enc_RapersGirl_dialog_Node_237_3_l1_1 {İyi yolculuklar o zaman. Elveda...}
+Enc_RapersGirl_dialog_Node_238_rumour_1 {$rand(Have you heard? A whore was trying to sneak on board of a ship without documents, but she was caught and taken back to the brothel. They say she owed the madam quite a sum.|Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?)}
+Enc_RapersGirl_dialog_Node_250_text_1 {Hayatımı mahvetme, kaptan! Babam beni o tefeci herifin oğluyla evlendirmek istiyor, o pis süt çocuğuyla... Sırf babasının kasasında bir servet var diye! İnan, onunla bir ömür geçireceğime, ormanda vahşi hayvanlara yem olmayı tercih ederim!}
+Enc_RapersGirl_dialog_Node_250_l1_1 {Evliliğinizde ne sorun var, $manWoman(güzellik|tatlım)? Sana talip olanı bırakma, onunla mutlu ol. Zaman geçince o süt çocuğuyla evlendiğine sevinebilirsin, ama iş işten geçmiş olabilir...}
+Enc_RapersGirl_dialog_Node_251_sLoverId_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_251_text_1 {Hayır! Hayır, kaptan, ben seviyorum $ctx(loverName) ve başka bir adamla evlenmeyeceğim! Babam ise hiçbir şey duymak istemiyor! Diyor ki $ctx(valueText) burada sadece bir misafir, bu yüzden burada asla iş bulamayacak, yoksulluk içinde ölmeye mahkûm, ben de onunla birlikte! Ve ben onun yanında olabilmek için dünyanın öbür ucuna bile giderim! Ne olur, beni ona götür, yalvarıyorum sana!}
+Enc_RapersGirl_dialog_Node_251_l1_1 {Pekala, hadi gidelim. Sanırım seninle ne yapacağımı yol üzerinde çözerim...}
+Enc_RapersGirl_dialog_Node_253_text_1 {Kaptan, beni yerleşim yerine götüreceğine söz vermiştin $ctx(valueText).}
+Enc_RapersGirl_dialog_Node_253_l1_1 {$rand(Hatırlıyorum.|Merak etme, seni oraya götüreceğim.)}
+Enc_RapersGirl_dialog_Node_260_text_1 {$rand(Teşekkür ederim, $manWoman(kapitan|genç hanımefendi), bir kez daha. Gerçekten, sana çok minnettarım.|Çok teşekkür ederim, $manWoman(kaptan|genç hanım). Senin yardımın olmasaydı ne yapardım hiç bilmiyorum.)}
+Enc_RapersGirl_dialog_Node_260_l1_1 {$rand(Bu sana ders olsun. Peki, bol şans...|Bir dahaki sefere daha dikkatli olmalısın... Şimdi evine koş, yapacak işlerim var.)}
+Enc_RapersGirl_dialog_Node_260_l2_1 {Nasıl bu kadar dikkatsiz olabilirsin? Neden tek başına ormana girdin?}
+Enc_RapersGirl_dialog_Node_260_text_2 {Oh, $manWoman(kaptan|genç hanım), gerçekten sana nasıl teşekkür edeceğimi bilmiyorum.}
+Enc_RapersGirl_dialog_Node_260_l1_2 {Önemli değil. Her zaman yardımcı olmaktan mutluluk duyarım...}
+Enc_RapersGirl_dialog_Node_260End_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_Node_261_text_1 {Beni meyhaneye götürebilir misin? Teyzemi beklemem ve biraz dinlenmem lazım, bu 'macera' bütün enerjimi aldı...}
+Enc_RapersGirl_dialog_Node_261_l1_1 {Hayır, $manWoman(güzellik|tatlım), bu benim için fazlasıyla yeterli. Yapacak çok işim var.}
+Enc_RapersGirl_dialog_Node_261_l2_1 {$manWoman(Ah, kadınlar! Bir erkeğin yardımı olmadan yapamayacakları bir şey var mı acaba?|Neden bu kadar çaresizsin?) Hadi gidelim...}
+Enc_RapersGirl_dialog_Node_262_stemp_1 {$ctx(valueText)}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_1 {Biraz param var... Lütfen, minnettarlığımın bir göstergesi olarak kabul edin!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_1 {Teşekkür ederim. Bir dahaki sefere daha dikkatli ol lütfen.}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_2 {Senin beni kurtardığını herkese anlatacağım! Herkes bilsin, $manWoman(ne kadar cesur ve yürekli bir adamsın|ne kadar cesur ve yürekli bir hanımsınız)!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_2 {Teşekkür ederim. Şimdi eve gitmelisin.}
+Enc_RapersGirl_dialog_ThanksForHelp_1_text_3 {Biraz param var... Lütfen, minnettarlığımın bir göstergesi olarak kabul edin!}
+Enc_RapersGirl_dialog_ThanksForHelp_1_l1_3 {Teşekkürler. Bir dahaki sefere daha dikkatli ol.}
+Enc_RapersGirl_dialog_ThanksAgain_text_1 {Herkese beni kurtardığını anlatacağım! Herkes bilsin, $manWoman(ne kadar cesur ve yürekli bir adamsın|ne kadar cesur ve yürekli bir hanımefendisiniz)!}
+Enc_RapersGirl_dialog_ThanksAgain_l1_1 {Teşekkür ederim. Şimdi eve gitmelisin.}

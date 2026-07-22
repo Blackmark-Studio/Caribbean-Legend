@@ -150,14 +150,6 @@ void SeaAI_SwapShipsAttributes(ref refMyCharacter, ref refEnemyCharacter) // to_
 	CopyAttributes(arShipMy,arShipEnemy);
 	DeleteAttribute(arShipEnemy,"");
 	CopyAttributes(arShipEnemy,&oTmp);
-	// оставляем старую команду на месте, иначе херилась мораль
-	/*float fExp = float(refMyCharacter.ship.crew.experience);
-	float fMor = float(refMyCharacter.ship.crew.morale);
-
-	refMyCharacter.ship.crew.experience = refEnemyCharacter.ship.crew.experience;
-	refMyCharacter.ship.crew.morale = refEnemyCharacter.ship.crew.morale;
-	refEnemyCharacter.ship.crew.experience = fExp;
-	refEnemyCharacter.ship.crew.morale = fMor;*/
 }
 
 bool SeaAI_SwapShipAfterAbordage(ref refMyCharacter, ref refEnemyCharacter)

@@ -556,9 +556,7 @@ void CalculateInfoDataF1()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 80;
-    mc.Ship.Crew.Exp.Sailors = 60;
-    mc.Ship.Crew.Exp.Cannoners = 60;
-    mc.Ship.Crew.Exp.Soldiers = 60;
+    SetCrewExp(mc, 60.0);
     // открываем все острова
     for (i = 0; i < MAX_ISLANDS; i++)
     {
@@ -1522,9 +1520,7 @@ void CalculateInfoDataF25()
 	mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
 	SetCrewQuantityFull(mc);
 	mc.Ship.Crew.Morale = 100;
-	mc.Ship.Crew.Exp.Sailors = 100;
-	mc.Ship.Crew.Exp.Cannoners = 100;
-	mc.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(mc, 100.0);
 	UpgradeShipParameter(mc, "SpeedRate");//апгрейдить скорость
 	UpgradeShipParameter(mc, "TurnRate");//маневренность
 	UpgradeShipParameter(mc, "HP");//корпус
@@ -1945,9 +1941,7 @@ void CalculateInfoDataF32()
 	mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
 	SetCrewQuantityFull(mc);
 	mc.Ship.Crew.Morale = 80;
-	mc.Ship.Crew.Exp.Sailors = 90;
-	mc.Ship.Crew.Exp.Cannoners = 70;
-	mc.Ship.Crew.Exp.Soldiers = 70;
+	SetCrewExp(mc, 90.0);
 	SetCharacterGoods(mc, GOOD_BALLS, 100);
 	SetCharacterGoods(mc, GOOD_GRAPES, 100);
 	SetCharacterGoods(mc, GOOD_KNIPPELS, 100);

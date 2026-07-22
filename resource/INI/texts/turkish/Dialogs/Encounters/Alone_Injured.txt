@@ -1,0 +1,44 @@
+Native_First_time_1 {Ahh... soluk yüz. $rand(Vahşi hayvan avda beni yaraladı... Ben köyümde ne diyeceğim?|Senin kabilen beni yaraladı ve ölmeye bıraktı... Onların işini bitirmeye mi geldin?|Haydutlar $rand(tanrıların gözyaşlarımı|sarı taşımı|muska­larımı) istedi, ama $npcName savaşçı! Şimdi onlar öldü, ben de...) Yoksa sen bana yardım etmek mi istiyorsun?}
+Native_First_time_2 {Sen ne istiyorsun? $npcName yaralı, görmüyor musun?}
+Native_Bye_1 {$rand(Hayır, buna karışmak istemiyorum.|Sana yardım edecek bir şeyim yok.) Hoşça kal.}
+Native_Bye_2 {$rand(Bir şey değil. Hoşça kal.|Sadece hâlâ yaşıyor musun diye bakıyordum. Hoşça kal.|Ee... iyileş bari?)}
+Native_ThanksPotion {Sağ ol, soluk yüz! Şimdi köye kadar yetişirim... biraz dinlenmek gerek sadece...}
+Native_ThanksElixir {Sağ ol, soluk yüz! $npcName şimdi sapasağlam. Köyde herkese senin $rand(iyiliğini|yardımını) anlatırım, bilesin!}
+Native_ThanksMixture {Bana yalnızca bizim şamanın yapabildiği değerli ilacı verdin. Sen benim halkımın gerçek dostusun, soluk yüz. $npcName seni hatırlayacak ve minnet duyacak.}
+Native_Bye_3 {$rand(Bir şey değil.|Hepimiz insanız.|Yalnız kimseye anlatma, olur mu?)}
+Marginal_First_time_1 {$swear $rand(Gücümün tükendiğini hissediyorum...|İşte, sonunda böyle geberip gideceğim...|Sabaha çıkamayacağımı hissediyorum...) Geçip gitme, $rand(yolcu|seyyah|dost)! Dert içindeki bir adama yardım et - $rand(yerlilerin beni nasıl doğradığını|haydutların beni ne hâle getirdiğini|ormanda gezinmenin nasıl bittiğini|memnun olmayan müşterilerin neler yapabildiğini) görmüyor musun? Yemin ederim, karşılıksız bırakmam - $rand(küçük işlerimden|uğraşımdan|pek de yasal sayılmayacak taşımacılıktan|tam anlamıyla dürüst olmayan ticaretten) bir şeyler kazandım.}
+Marginal_First_time_2 {Daha ne istiyorsun? Acılarıma bakmaya mı geldin?}
+Marginal_Bye_1 {Sana hiçbir şekilde yardım edemem.}
+Marginal_Bye_2 {Seninle ne yapacağıma daha karar vermedim.}
+Marginal_ThanksPotion {Bunun için de sağ ol. Artık kesinlikle kendi adamlarıma ulaşırım.}
+Marginal_ThanksElixir {Of... iğrençliğin daniskası, ama beni bir anda ayağa kaldırdı. Sağ ol, dostum, senin için iyi bir çift laf ederim.}
+Marginal_ThanksMixture {Hm... tadı bundan çok daha kötü olur sanmıştım. Buna ne kattın? Bir dahaki sefere ipeka kökü kuru değil, taze olsa daha iyi olur. Ha, bir de yardımın için sağ ol. Artık adın bizimkiler arasında mutlaka duyulur olacak. Yani... kimlerin arasında olduğunu anladın sen.}
+Marginal_Bye_3 {Esenlikler.}
+Bandit_First_time_1 {$swear $rand(Demek ölümüm de geldi çattı.|Oraklı kocakarı nihayet çıkageldi.|Görünen o ki koşacak kadar koştum.|Liman orospularını bir daha göremeyeceğim.) Ne dikilip duruyorsun ulan? Görmüyor musun $rand(o kızılderi maymunların beni nasıl doğradığını|devriyenin beni ne hâle soktuğunu|bizim kıyı kardeşliğinin beni nasıl biçtiğini|ormanda gezinmenin sonunun ne olduğunu)? Ya usulca defol git, ya da yardım et - karşılıksız bırakmam.}
+Bandit_First_time_2 {Daha ne istiyorsun ulan? Ya yardım et ya da bırak da huzur içinde geberip gideyim. $swear}
+Bandit_Bye_1 {Sana yardım edemem. Doğrusu pek edesim de yok. Hadi kaybol.}
+Bandit_Bye_2 {Biraz daha terbiyeli olsaydın, belki bu hâle düşmezdin. Hoşça kal.}
+Bandit_ThanksPotion {Uf... meret şey! Yine de sağ ol. Belki koya kadar dayanırım.}
+Bandit_ThanksElixir {Ne rezil şeymiş, tüf! Ama hafiflediğimi hissediyorum. Sağ ol, dostum - sen olmasan sabaha çıkamazdım.}
+Bandit_ThanksMixture {Merhametli Tanrı, bu ne iğrençlik! Buna ne kattın, kaldırım altından kazınmış balçık mı? Tamam, tamam, o kadar da kötü değil. Meret beni bir anda ayağa dikti, Allah kahretsin. Sağ ol, dostum; bizimkilere senden iyi bahsedeceğim. Hadi, beni de kötü anma!}
+Bandit_Bye_3 {Hoşça kal.}
+Soldier_First_time_1 {¡Eh, tú, alto ahí! Ayuda a un soldado en apuros. ¿No ves $rand(lo que me hicieron $rand(esos malditos pieles rojas|esos bandidos|los contrabandistas|los lugareños)|en qué estado me encuentro? Hace nada estaba sano como un roble, y de pronto, toma - un balazo en la rodilla)! Ayudarme es deber de todo leal súbdito de nuestra patria, y recompensaré vuestra compasión como es debido.}
+Soldier_First_time_2 {Ne o, seni alçak, benimle eğleniyor musun? Ne istiyorsun? Her an kan kaybından geberip gideceğim.}
+Soldier_Bye_1 {Ne yazık ki sana yardım edemem. Umarım başka biri seni yeniden ayağa kaldırır, asker.}
+Soldier_Bye_2 {Vay canına, hele şu konuşmaya bak. O bütün cazibe ve kibarlık nereye kayboldu? Sen biraz daha uzan bakalım, görelim bunun sonu nereye varacak.}
+Soldier_ThanksPotion {Daha kuvvetli bir şey yok mu? Yine de bunun için de sağ ol. Kaptan senin iyiliğini öğrenecek.}
+Soldier_ThanksElixir {Allahım, ne berbat bir şey bu! Tıpkı annemin lapası gibi... Ben ne diyorum böyle? Sağ olun efendim. Artık eve kesin varırım. Bunu unutmayacağım.}
+Soldier_ThanksMixture {Bu gerçekten güvenli mi? Gerçi başka çarem de yok, ver bakalım şu kaynatıp durduğun zıkkımı. Oh... Gerçekten de daha iyiyim. Ne daha iyisi, resmen sapasağlam oldum! Sağ olun. Vali bunu mutlaka öğrenecek.}
+Soldier_Bye_3 {Bir şey değil. Gelecek sefere daha dikkatli ol.}
+EnemySoldier_First_time_1 {Ne oldu, benimle eğlenmeye mi geldin? Yoksa işimi bitirmeye mi? Geç kaldın, beni zaten $rand(sizin devriyeleriniz doğradı|kızılderililer pusuya düşürdü|haydut soyu sopu benzetti). Ama şunu bil - savaşmadan teslim olmam. Yoksa içinde bir damla merhamet mi kaldı?}
+EnemySoldier_First_time_2 {Daha ne istiyorsun? Neden bana daha fazla eziyet ediyorsun? $swear}
+EnemySoldier_Bye_1 {Merhamet gösterilmeyecek. Hoşça kal.}
+EnemySoldier_Bye_2 {Doğru ya, seni izlemek başlı başına bir zevk.}
+EnemySoldier_ThanksPotion {Ne? Teşekkür ederim... demek ki senin hakkında yanılmışım. Devriyeleriniz beni bulmadan kendi adamlarıma döneceğim.}
+EnemySoldier_ThanksElixir {Bu zehirli değil, değil mi? Eh, zaten pek seçeneğim de yok. Ah... gerçekten hafifledim. Teşekkür ederim. Görünen o ki sizin hepinizi piç ve dinsiz sanmakta haksızmışım.}
+EnemySoldier_ThanksMixture {Doğrusu bunu beklemiyordum. Gerçekten daha iyiyim. Hımm... demek öyle. Başka şartlarda karşılaşmamız kan dökülmesiyle biterdi, ama kaderin nasıl bir oyun çevirdiğine bak... Teşekkür ederim, dostum. Herkes bilsin ki sizin aranızda da namuslu insanlar var.}
+EnemySoldier_Bye_3 {Ben senin memleketinin düşmanıyım ama bir canavar değilim. Yolun açık olsun; umarım savaş meydanında bir daha hiç karşılaşmayız.}
+InjuredGuy_Give_Potion {(Şifa İksiri) Al. Çok bir şey değil ama seni yeniden ayağa kaldırması gerekir.}
+InjuredGuy_Give_Elixir {(İksir) Al, şu devayı iç. Tuhaf bir şeydir ama en korkunç yaraları bile iyileştirir.}
+InjuredGuy_Give_Mixture {(Karışım) Sana çok nadir ve güçlü bir ilaç vereceğim. Tadı iğrençtir ama sapasağlam olacaksın — söz veriyorum.}
+InjuredGuy_Kill {(Öldür) Pekâlâ, onların başlattığı işi ben bitireceğim.}

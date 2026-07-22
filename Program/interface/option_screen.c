@@ -1855,10 +1855,10 @@ void RestoreDefaultKeys()
 
 void RestoreDefaultSettings()
 {
-	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, 0.25, 0.25, 0.25);
-	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "MUSIC_SLIDE", 0, 0.25);
-	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "SOUND_SLIDE", 0, 0.25);
-	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "DIALOG_SLIDE", 0, 0.25);
+	SendMessage(&sound,"lfff", MSG_SOUND_SET_MASTER_VOLUME, 0.20, 0.20, 0.20);
+	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "MUSIC_SLIDE", 0, 0.20);
+	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "SOUND_SLIDE", 0, 0.20);
+	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "DIALOG_SLIDE", 0, 0.20);
 
 	SetSelectorDefault("HerbQuantity", "HERB", 0, &iGrassQuality);
 	SetSelectorDefault("Fov", "FOV", 1, &iFov);

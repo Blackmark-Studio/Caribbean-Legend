@@ -1,0 +1,16 @@
+quest_companion_header {Quest-bound}
+quest_companion_text {This companion is accompanying you for a quest. You cannot interact with their ship.}
+where_is_my_ship_sea_header {Ship location}
+where_is_my_ship_sea_text {$rand(Open sea|Between heaven and earth|Under way|Seven feet under the keel)}
+where_is_my_ship_header {Ship location}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Cannons in poor condition}
+cannons_broken_text {The cannons must be repaired at a shipyard or replaced immediately!}
+bad_captain_header {Insufficient skill}
+bad_captain_text {This companion cannot command a ship on the open sea because they lack the Captain skill.}
+low_morale_header {Mutiny risk}
+low_morale_text {The crew is discontented. Raise morale immediately!}
+low_food_header {Low on food}
+low_food_text {The sailors will soon begin to starve to death. Replenish your supplies immediately!}
+low_medicament_header {Low on medicine}
+low_medicament_text {The sailors will soon begin to die from disease. Replenish your supplies immediately!}

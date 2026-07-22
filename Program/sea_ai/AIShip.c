@@ -461,7 +461,7 @@ float Ship_MastDamage()
 	float z 			= GetEventData();
 	float fDamage 		= GetEventData();
 	aref rCharacter 	= GetEventData();
-	
+	int iBallOwnerIndex, iCannonType;
 	if (LAi_IsImmortal(rCharacter)) return 0.0;
 	
 	// belamour legendaty edition фикс неломающихся мачт у первоклассников 
@@ -475,11 +475,13 @@ float Ship_MastDamage()
 			fDamage = fDamage + 0.25*fBonus;
 		break;
 		case SHIP_MAST_TOUCH_SHIP:
+			aref collideCharacter = GetEventData();	// на всякий случай получаем второго персонажа (он может совпадать с первым)
 			fDamage = fDamage + 0.2*fBonus;
 		break;
 		case SHIP_MAST_TOUCH_BALL:
-			int iBallOwnerIndex 	= GetEventData();
-			ref	rBallCharacter 		= GetCharacter(iBallOwnerIndex);	// кто пуляет
+			iBallOwnerIndex 	= GetEventData();
+			iCannonType 		= GetEventData();	// на всякий случай получаем тип орудия
+			ref	rBallCharacter 	= GetCharacter(iBallOwnerIndex);	// кто пуляет
 			int	iBallType = int(AIBalls.CurrentBallType);   			// спорно, тк это не ядра, того кто стрелял, а скорее ядра ГГ
 			switch (iBallType)
 			{
@@ -537,6 +539,7 @@ float Ship_HullDamage()
 	aref rCharacter = GetEventData(); // в кого прилетело
 	//aref aCharacter = GetEventData(); // владелец ядра (от кого прилетело)
 	string HullName = GetEventData(); // имя ноды в которую прилетело
+	int iCannonType = GetEventData();
 	
 	switch (iDamageType)
 	{
@@ -2099,6 +2102,7 @@ void Ship_SailDamage()
 	y = GetEventData();
 	z = GetEventData();
 	int	iBallCharacterIndex = GetEventData();
+	int iCannonType = GetEventData();
 
 	ref	rBallCharacter 	= GetCharacter(iBallCharacterIndex);	// кто пуляет
 	ref	rOurCharacter 	= GetCharacter(iCharacterIndex);   		// по кому
@@ -2261,7 +2265,7 @@ void Ship_ApplyCrewHitpoints(ref rOurCharacter, float fCrewHP)
 	if (fNewCrewQuantity >= f5Percent && IsCompanion(rOurCharacter))
 	{
        AddCharacterExpToSkill(rOurCharacter, "Defence", float(fCrewHP / 2 + 0.5));
-       ChangeCrewExp(rOurCharacter, "Soldiers",  (fCrewHP / float(rBaseShip.OptCrew))); // to_do может быть много
+       ChangeCrewExp(rOurCharacter, "Soldiers",  (fCrewHP / float(rBaseShip.maxCrew)));
     }
     // boal <--
 	
@@ -2766,9 +2770,11 @@ void Ship_HullHitEvent()
 	int		iFirePlaceIndex = GetEventData();   
 	float	fFirePlaceDistance = GetEventData();
 	
+	int iCannonType = GetEventData();
+	
 	//Log_Info(" Ship_HullHitEvent : rOurCharacter.id = " + rOurCharacter.id + " rBallCharacter.id = " + rBallCharacter.id);
 
-	bool	bDead = LAi_IsDead(rOurCharacter) && CheckAttribute(rBallCharacter, "Ship.Cannons.Type");  // boal fix
+	bool	bDead = LAi_IsDead(rOurCharacter) && iCannonType != CANNON_TYPE_NONECANNON;  // boal fix
 
 	bool	bSeriousBoom = false;
 	bool	bInflame = false;
@@ -2777,7 +2783,7 @@ void Ship_HullHitEvent()
     
     if (bDead) return; // фикс, не нужно обсчитывать труп
 	// Cannon damage multiply
-	ref rCannon = GetCannonByType(int(rBallCharacter.Ship.Cannons.Type));
+	ref rCannon = GetCannonByType(iCannonType);
 	float fCannonDamageMultiply = float(rCannon.DamageMultiply);
 	if (GetMainCharacterIndex() == iBallCharacterIndex && !SeaCameras_isCameraOutside())
 	{
@@ -2819,17 +2825,27 @@ void Ship_HullHitEvent()
 		break;
 	}
 	fTmpCannonDamage = fCannonDamageMultiply * float(rBall.DamageHull);
-	if (rand(2) == 1) CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);// boal fix
+	if (rand(2) == 1) CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0); // boal fix
 
     if (int(rOurCharacter.TmpPerks.ShipDefenseProfessional) && rand(1000) < 700) bSeriousBoom = false; // no seriouse boom
 
-    float fCrewDamage = float(rBall.DamageCrew) * fCannonDamageMultiply * AIShip_isPerksUse(int(rBallCharacter.TmpPerks.CrewDamageUp), 1.0, PERK_VALUE_CREW_DAMAGE_UP);
-	
-	if(rOurCharacter.id == "Memento_cap" && GetHullPercent(rOurCharacter) > 30.0)
+    float kHull = 1.0, kCrew = 1.0;
+    int shipIdx = rOurCharacter.Ship.Type$int(SHIP_NOTUSED);
+    if (shipIdx != SHIP_NOTUSED)
+    {
+        ref rShip = GetRealShip(shipIdx);
+        kCrew = pow(float(GetCrewQuantity(rOurCharacter)) / float(rShip.MaxCrew), 1.35);
+        kHull = 1.0 - 0.35 * pow(float(rOurCharacter.Ship.HP) / float(rShip.HP), 3.5);
+        // Clamp?
+    }
+
+    float fCrewDamage = ceilf(float(rBall.DamageCrew) * fCannonDamageMultiply * AIShip_isPerksUse(int(rBallCharacter.TmpPerks.CrewDamageUp), 1.0, PERK_VALUE_CREW_DAMAGE_UP) * kHull * kCrew);
+
+	if (rOurCharacter.id == "Memento_cap" && GetHullPercent(rOurCharacter) > 30.0)
 	{
-		fCrewDamage /= 10.0;
+		fCrewDamage *= 0.1;
 	}
-	
+
 	if (bSeriousBoom)
 	{
 		fCrewDamage = fCrewDamage * 7.0;
@@ -3075,7 +3091,7 @@ void Ship_SetFantomData(ref rFantom)
 
 	rBaseShip = GetRealShip(int(rFantom.Ship.Type));
 
-	int iOptCrew = int(rBaseShip.OptCrew);
+	int iOptCrew = int(rBaseShip.maxCrew);
 
 	int iBaseHP = int(rBaseShip.HP);
 	int iCapacity = int(rBaseShip.Capacity);

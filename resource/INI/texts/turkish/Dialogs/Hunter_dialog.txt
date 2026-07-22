@@ -1,0 +1,58 @@
+Hunter_dialog_First_time_text_1 {$fullName! Seni uzun zamandır izliyorduk, sonunda artık bizimlesin.}
+Hunter_dialog_First_time_l1_1 {Sen kimsin ve benden ne istiyorsun?}
+Hunter_dialog_meeting_text_1 {$ctx(valueText) başına iyi bir ödül koydular, seni onların herhangi bir kolonisinde teslim etmemiz yeterli, ister canlı ister ölü ol, paramızı alacağız.}
+Hunter_dialog_meeting_l1_1 {Dinle, beni rahat bırakırsan sana para vereceğim.}
+Hunter_dialog_meeting_l2_1 {$manWoman(Affedersiniz, ama bir yanlışlık olmalı. Ben $ctx(personName) - bu topraklarda iyi tanınan bir tüccar.|Affedersiniz, ama bir yanlışlık olmalı. Ben sadece sıradan bir kızım ve babam ise $ctx(personName) - bu topraklarda tanınmış bir tüccar.).}
+Hunter_dialog_meeting_l3_1 {Pekâlâ, eğer istersen şansını deneyebilirsin.}
+Hunter_dialog_lier_text_1 {Ah! Belki de gerçekten yanılmışızdır. Lütfen bizi affedin, $sir.}
+Hunter_dialog_lier_l1_1 {Bazen olur, dert etme...}
+Hunter_dialog_lier_text_2 {Bence yalan söylüyorsun!}
+Hunter_dialog_lier_l1_2 {Dinle, beni rahat bırakırsan sana para vereceğim.}
+Hunter_dialog_lier_l2_1 {Pekala, istersen şansını deneyebilirsin.}
+Hunter_dialog_Cost_Head_text_1 {Bence $ctx(hunterCost) peso bizim için yeterli olacak.}
+Hunter_dialog_Cost_Head_l1_1 {Ama bende o kadar para yok.}
+Hunter_dialog_Cost_Head_l1_2 {Al paran burada, al ve kaybol.}
+Hunter_dialog_Cost_Head_l2_1 {Böyle bir parayı sizin gibi alçaklara vermek... Sanırım hepinizi burada gebertmeyi tercih ederim!}
+Hunter_dialog_NoMoney_text_1 {Öyleyse, konuşmamız burada bitiyor!}
+Hunter_dialog_NoMoney_l1_1 {Beni asla canlı ele geçiremeyeceksin.}
+Hunter_dialog_TreasureHunter_text_1 {Bekle, $manWoman(dostum|kız)... Sanırım yanında ilginç bir şey var. Arkadaşlar buldukları hazineleri birbirleriyle paylaşmalı, sence de öyle değil mi?}
+Hunter_dialog_TreasureHunter_l1_1 {Dinle, beni rahat bırakırsan sana para vereceğim.}
+Hunter_dialog_TreasureHunter_l2_1 {$manWoman(Affedersiniz, ama yanılıyorsunuz. Ben $ctx(personName) - bu topraklarda tanınmış bir vatandaş, ama kesinlikle bir hazine avcısı değil.|Affedersiniz, ama bir yanlışlık olmalı. Ben sadece sıradan bir kızım, hazine avcısı değilim. Ve babam da $ctx(personName) - buralarda tanınmış bir vatandaş)!}
+Hunter_dialog_TreasureHunter_l3_1 {Görünüşe bakılırsa, kafalarınızın bedenlerinizden ayrılma vakti geldi.}
+Hunter_dialog_TreasureHunterLier_text_1 {Ah! O zaman gerçekten yanılmış olabiliriz. Lütfen bizi affedin, $sir.}
+Hunter_dialog_TreasureHunterLier_l1_1 {Böyle şeyler olur, kafana takma...}
+Hunter_dialog_TreasureHunterLier_text_2 {Bence yalan söylüyorsun!}
+Hunter_dialog_TreasureHunterLier_l1_2 {O halde kılıcımın şarkısını dinle.}
+Hunter_dialog_TreasureCaptain_text_1 {$rand(Demek hazine haritamı çalan sensin! Sanırım artık aldığın her şeyi geri vermenin vakti geldi...|Ah, bir rakip! Hazinelerimin ağırlığıyla fazla ileri gidemezsin...|Hah, sonunda seni yakaladım! Bu mağaradaki bütün hazineler bana ait, anladın mı? Şimdi, ceplerini boşalt bakalım, dostum!)}
+Hunter_dialog_TreasureCaptain_l1_1 {$rand(Artık kılıcımla tanışma vaktin geldi, dostum!|Hazinelerin mi? Demek senindi, çünkü artık benim!|Sana dostum, kılıcımla bağırsaklarını deşmeyi tercih ederim.)}
+Hunter_dialog_TreasureOfficer_text_1 {$rand(Demek ki albay haklıymış, hazine bu mağarada saklanmış... Cebindekileri boşalt, denizci!|Sonunda seni bu lanet ormanlarda, dikenlerde ve bataklıklarda izini sürüp yakaladık. Şimdi, alçak herif, bize her şeyini vereceksin...|Hey, denizci! O korsanın hazineleri bize ait, o yüzden o pis ellerini onlardan çek!)}
+Hunter_dialog_TreasureOfficer_l1_1 {$rand(Doğrusu, bunu bir ordu subayından beklemezdim! Ama peki, sana yine de bir ders vereceğim...|Şuna bak, subay üniforması giymiş bir korsan...|Gerçekten de, askerlerle korsanlar bugünlerde pek de farklı sayılmaz...)}
+Hunter_dialog_ReasonToFast_THunter_1_text_1 {Ve işte altınımız geliyor. En azından bekleyişimiz boşa gitmedi.}
+Hunter_dialog_ReasonToFast_THunter_1_l1_1 {$rand(Ne diyorsunuz beyler? Ben Hollanda Batı Hindistan Şirketi'nin bir temsilcisiyim ve buradan sadece geçiyorum! Sadece kıyı manzarasını seyretmek için durdum!|Beni başka biriyle karıştırdınız sanırım. Ben $manWoman(Francua Marie Paganel, |Maria-Theresa, )Bir doğa bilimcisiyim. Buradaki yerel bitki örtüsünden örnekler topluyorum. Yuka yapraklarından oluşan koleksiyonuma bakmak ister misin? Çok ilginç birkaç tane var!)}
+Hunter_dialog_ReasonToFast_THunter_1_l2_1 {Ne istiyorsun?! Yolumdan çekil!}
+Hunter_dialog_ReasonToFast_THunter_2_text_1 {Ah hayır, $manWoman(sevgili dostum|güzel kızım). Bu işe yaramaz. Haritanın sana ait olduğunu kesin olarak biliyoruz $ctx(mapOwnerName)Ve öyle bir cimriydi ki sandıkları içten patlayacak gibiydi, para doluydu. Yani buradan eli boş ayrılmayacağız.}
+Hunter_dialog_ReasonToFast_THunter_2_l1_1 {Haklısın. Sandıklar gerçekten doluydu. Ama onları alamayacaksın. O mağarayı ziyaret etmeyi deneyebilirsin, birkaç delik deşik kova hâlâ orada olmalı.}
+Hunter_dialog_ReasonToFast_THunter_2_l2_1 {Haklısın. Hazineni alabilirsin. Ama unutma, bu hazine kana bulanmış olduğu için sana mutluluk getirmeyecek.}
+Hunter_dialog_ReasonToFast_THunter_3_text_1 {$manWoman(Heh, kaptan, ölmek için fazla genç değil misin...|Heh, kızım, ölmek için fazla genç değil misin...)...}
+Hunter_dialog_ReasonToFast_THunter_3_l1_1 {Aslında, ölmeyeceğim!}
+Hunter_dialog_ReasonToFast_THunter_4_text_1 {İşte bu, aklı başında birinin sözleri!}
+Hunter_dialog_ReasonToFast_THunter_4_l1_1 {Seni ve o hazinelerini lanet olsun...}
+Hunter_dialog_ReasonToFast_HunterShore1_text_1 {Hey,$manWoman(dostum|kız)! $ctx(contactName) bize bir şeyin olduğunu söyledin.}
+Hunter_dialog_ReasonToFast_HunterShore1_l1_1 {Ne demek istiyorsun?}
+Hunter_dialog_ReasonToFast_HunterShore11_text_1 {Bir harita $ctx(mapOwnerName)}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_1 {Al bunu ve selamımı ilet $ctx(contactName). Ona yakında görüşeceğimizi söyle...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_1 {$ctx(contactName) onun için ateşten kestane çıkaracağımı sanıyorsa, fena halde yanılıyor.}
+Hunter_dialog_ReasonToFast_HunterShore11_text_2 {Validenin valisinden çaldığın mücevherler.}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_2 {Al bunu ve ona selam söyle $ctx(contactName). Ona yakında görüşeceğimizi söyle...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_2 {$ctx(contactName) onun için ateşten kestane çıkaracağımı sanıyorsa fena halde yanılıyor.}
+Hunter_dialog_ReasonToFast_HunterShore2_text_1 {Hey,$manWoman(dostum|kız)! $ctx(contactName) sizinle ilgili birkaç sorusu var.}
+Hunter_dialog_ReasonToFast_HunterShore2_l1_1 {Peki, neden onlara kendisi sormuyor?}
+Hunter_dialog_ReasonToFast_HunterShore21_text_1 {Rütbesine göre değil. Operasyonumuzu mahvettin ve kaybettik $ctx(moneyAmount) pesos yüzünden senin sayende. Şimdi ödenecek bir borcun var.}
+Hunter_dialog_ReasonToFast_HunterShore21_l1_1 {Al bunu ve ona selam söyle $ctx(contactName). Ona yakında buluşacağımızı söyle...}
+Hunter_dialog_ReasonToFast_HunterShore21_l2_1 {$ctx(contactName) onun için ateşten kestane çıkarmaya kalkacağımı sanıyorsa, fena halde yanılıyor.}
+Hunter_dialog_ReasonToFast_HunterShore22_text_1 {Ah, o kadar paran yokmuş! Eh, seçimini yaptın...}
+Hunter_dialog_ReasonToFast_HunterShore22_l1_1 {Uzun zaman önce...}
+Hunter_dialog_ReasonToFast_HunterShore23_text_1 {Pekala, seçimini yaptın...}
+Hunter_dialog_ReasonToFast_HunterShore23_l1_1 {Uzun zaman önce...}
+Hunter_dialog_GetLocHunterName_island_1 {island of}
+Hunter_dialog_GetLocHunterName_mainland_1 {mainland of}

@@ -5,7 +5,7 @@ Barque {Barka idealnie nadaje się do długich rejsów. Posiada przestronną ła
 Battleship {Okręty liniowe 3. rangi są bardzo liczne i najbardziej zrównoważone pod względem cech bojowych, przeznaczone do walki w linii. Mają wystarczającą siłę ognia, by rzucić wyzwanie nawet 100-działowym lewiatanom. Jednocześnie znacznie je przewyższają pod względem prędkości i zwrotności.}
 Brig {Brygi są szeroko stosowane w marynarce wojennej do rozpoznania. Małe zanurzenie, ostre linie kadłuba i zaawansowane ożaglowanie czynią bryg jednym z najszybszych statków, a przyzwoity kaliber dział czyni go bardzo groźnym przeciwnikiem.}
 Brigantine {Legendarny typ żaglowca. Szybka i zwrotna jak jaskółka, brygantyna jest szczególnie ceniona przez piratów i awanturników wszelkiej maści. Udana konstrukcja sprawia, że brygantyna doskonale nadaje się do każdego zadania – od walki po handel.}
-CannonType {Typ działa – pokazuje typ (działa lub kowerny), aktualny kaliber i liczbę zamontowanych dział}
+CannonType {Tutaj przedstawiono bieżącą i maksymalną liczbę dział na statku, a także ich typ i parametry. Jeśli bieżąca liczba jest równa maksymalnej, wyświetlana jest tylko jedna wartość.}
 Capacity
 {
 Nośność – pokazuje aktualną i maksymalną pojemność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.
@@ -16,12 +16,7 @@ Corvette {Korwety są przeznaczone do rozpoznania, służby kurierskiej i operac
 CORVETTE_QUEST {Jednostkowy statek, arcydzieło francuskich szkutników. Głęboka modernizacja konstrukcji korwety poprawiła prawie wszystkie jej cechy bez utraty prędkości. Zwiększona powierzchnia żagli i kaliber dział wymagają bardziej doświadczonej i liczniejszej załogi, ale jeśli próby na Karaibach się powiodą, zastosowane tu technologie mogą być prawdziwym przełomem w szkutnictwie.}
 Crew {Załoga – pokazuje aktualną liczbę członków załogi, a także minimalną i maksymalną dla tego statku.}
 Crew_Exp {Doświadczenie załogi}
-Crew_Exp_hint
-{
-Doświadczenie załogi dzieli się na trzy kategorie: morskie (wpływa na sterowność statku), artyleryjskie (szybkość przeładowania i celność ognia) i abordażowe (skuteczność załogi w walce wręcz).
-Doświadczona załoga w mniejszej liczbie może być skuteczniejsza niż przeładowany nowicjuszami statek.
-Doświadczenie we wszystkich trzech kategoriach zdobywa się podczas wykonywania odpowiednich czynności (manewrowanie, strzelanie, abordaż), ale także traci, jeśli nabyte umiejętności nie są praktykowane przez dłuższy czas.
-}
+Crew_Exp_hint {Życie na pokładzie jest zorganizowane w wachty, a każdy marynarz musi umieć radzić sobie zarówno z takielunkiem, jak i lawetami. Doświadczenie załogi wpływa na wszystkie parametry statku — od szybkości obsługi żagli po czas przeładowania dział. $br()Doświadczenie rośnie z czasem, lecz spada wskutek strat lub zatrudniania żółtodziobów w tawernie. O wiele bardziej opłaca się chronić doświadczoną załogę, niż zatrudniać nowicjuszy i szkolić ich od podstaw.}
 EastIndiaMan {Statki Kompanii Wschodnioindyjskiej połączyły najlepsze cechy pinas i pozbyły się ich wad, stając się niemal doskonałymi uniwersalnymi jednostkami. Dzięki ciężkim działom mogą konkurować z okrętami wojennymi o podobnych rozmiarach, a przestronna ładownia pozwala efektywnie wykorzystywać je do handlu.}
 Ecliaton {Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.}
 Elcasador {Znakomity przykład okrętu wojennego przeznaczonego do operacji specjalnych na otwartym oceanie. Ten galeon został zbudowany na zamówienie Casa de Contratación w celu zniszczenia najgroźniejszych piratów, stanowiących realne zagrożenie dla handlu w regionie i interesów Korony Hiszpańskiej.}
@@ -35,11 +30,15 @@ Galeon_l {Galeon powstał na początku XVI wieku na bazie karaki i od początku 
 Galeon_sm {Symbol hiszpańskiej potęgi i ambicji. Pokłady lśnią złotymi ozdobami, a na rufie wznosi się wizerunek Matki Miłosierdzia, patronki statku. Dla jednych 'Santa Misericordia' to uosobienie porządku, dla innych – znienawidzony symbol królewskiego ucisku. A niektórzy widzą w niej prawdziwą Opatrzność Bożą.}
 GoodsKeys_hint
 {
-Klawisze strzałek "Lewo" i "Prawo" na klawiaturze przesuwają towary w wybranym wierszu tabeli o jedną paczkę. Jeśli przytrzymasz klawisz Shift – towary zostaną przeniesione w całości.
-Kliknięcie prawym przyciskiem myszy na strzałkach w wierszu z towarem w interfejsie przenosi dziesięć paczek towaru naraz.
+Klawisze strzałek w lewo i w prawo przenoszą towary w wybranym wierszu tabeli po jednej jednostce.
+Połączenie strzałek z klawiszami modyfikującymi zmienia ilość:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — przenieś wszystko
+Kliknięcie strzałki prawym przyciskiem myszy — przenieś wszystko
 }
 Himera {Statek-mistrzostwo, stworzony specjalnie na potrzeby brytyjskiego wywiadu morskiego. Pod względem parametrów porównywalny z okrętami wojennymi 3. klasy, zachowując łatwość obsługi 4. klasy.}
-Hull {Kadłub – pokazuje aktualną i maksymalną ilość uszkodzeń, które kadłub statku może wytrzymać.}
+Hull {Kadłub przedstawia bieżącą i maksymalną wytrzymałość statku. Poniżej 10% statek zaczyna powoli tonąć.}
 LadyBeth
 {
 Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ten snow ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.
@@ -52,7 +51,27 @@ Lugier to mały żaglowiec, który wielu marynarzy, zwłaszcza przemytników, ce
 Mimo niewielkich rozmiarów lugry mają dobrą dzielność morską i mogą odbywać długie rejsy.
 }
 LuggerQuest {Lugier kurierski został zbudowany specjalnie na potrzeby służby posłańczej. Doskonałe właściwości żeglugowe, świetne osiągi na wiatr i dość silne uzbrojenie gwarantują niezawodne dostarczenie ważnych depesz i niewielkich cennych ładunków.}
-Maneuver {Zwrotność – pokazuje zwrotność statku w danym momencie, uwzględniając wszystkie czynniki (ładunek, umiejętności kapitana, uszkodzenia statku) oraz maksymalną osiągalną zwrotność.}
+Maneuver
+{
+Manewrowość określa szybkość skręcania statku. Im wyższa wartość, tym lepiej statek reaguje na ster. Zmniejszają ją uszkodzenia, niedoświadczenie załogi i przeciążona ładownia. Żagle bojowe zapewniają maksymalną manewrowość.
+~
+Maksymalna manewrowość statku: $number($ctx(turnrateMax))
+~
+Przybliżone wartości:$br
+_$key(human_turn_rate_1) – do $kstringTemp(HUMAN_TURN_RATE_STEP_1)
+_$key(human_turn_rate_2) – do $kstringTemp(HUMAN_TURN_RATE_STEP_2)
+_$key(human_turn_rate_3) – do $kstringTemp(HUMAN_TURN_RATE_STEP_3)
+_$key(human_turn_rate_4) – do $kstringTemp(HUMAN_TURN_RATE_STEP_4)
+_$key(human_turn_rate_5) – do $kstringTemp(HUMAN_TURN_RATE_STEP_5)
+_$key(human_turn_rate_6) – wszystko powyżej
+}
+ManeuverCurrent
+{
+~
+Aktualna manewrowość z uwzględnieniem umiejętności kapitana i stanu statku:
+$number($ctx(turnrate)) — $percent($ctx(turnratePercent)) wartości maksymalnej.
+~
+}
 Manowar {Okręty liniowe 2. rangi są podstawą potęgi morskiej każdego państwa. Wraz z okrętami 3. rangi tworzą flotę łączącą siłę z manewrowością. A przy braku w eskadrze okrętów 1. rangi niektóre z nich pełnią rolę okrętów flagowych.}
 Manowar_e {Okręt liniowy 1. rangi to prawdziwa pływająca twierdza. Dzięki przerażającej sile ognia może kilkoma celnymi salwami posłać na dno każdego przeciwnika. Nawet największe potęgi morskie nie mają wielu takich okrętów, a są one wykorzystywane jako okręty flagowe w wielkich bitwach morskich.}
 MayFang
@@ -83,7 +102,7 @@ Ulepszenie ożaglowania może wzmocnić zalety lub złagodzić wady konkretnych 
 }
 Sails {Żagle – pokazują aktualne i maksymalne uszkodzenia, które mogą wytrzymać żagle statku.}
 Santisima {Ten statek został zwodowany w słynnej stoczni w Hawanie. Jego kadłub jest nieco lżejszy i słabszy niż innych okrętów 1. rangi, ale rekompensują to znacznie lepsze właściwości żeglugowe.}
-sCannons {Pokazuje maksymalny dozwolony kaliber i maksymalną możliwą liczbę dział na statku.}
+sCannons {Bieżący i maksymalny kaliber dział, które można zamontować na tym statku. Jeśli bieżący kaliber jest równy maksymalnemu, wyświetlana jest tylko jedna wartość.}
 Schooner {Dobre właściwości żeglugowe, przestronna ładownia, małe zanurzenie i przyzwoite uzbrojenie sprawiły, że szkuner stał się jednym z najpopularniejszych statków małych klas. Nadaje się zarówno do handlu, kabotażu, jak i walki.}
 Schooner_W {Marynarze w Nowym Świecie pierwsi docenili szkunery i zaczęli wykorzystywać je do celów wojskowych. W tym celu trzeba było nieco zmodyfikować kadłub, zmniejszyć przestrzeń ładowni i dodać działa, ale efekt był tego wart. Dobrze uzbrojony, szybki i zwrotny szkuner wojenny stanowi poważne zagrożenie dla każdego statku handlowego.}
 Shipyard_hint
@@ -93,12 +112,31 @@ Bohater nie może sprzedać swojego statku, jeśli ma towarzyszy. Nie można te�
 Aby zmienić statek bohatera lub towarzysza, zachowując całą zawartość ładowni i załogę, należy w liście statków eskadry bohatera (po lewej stronie interfejsu) wybrać statek, który ma zostać zastąpiony nowym, a w liście statków na sprzedaż w stoczni (po prawej stronie interfejsu) – wybrany, a następnie kliknąć przycisk "Kup".
 Aby kupić nowy statek (przydzielić nowego towarzysza), przed zakupem należy najpierw wybrać pusty slot na liście po lewej stronie.
 }
+ShipyardCannons_hint {W stoczni można handlować działami, lecz nie wszystkie kalibry są dostępne w wolnej sprzedaży. Nie znajdziesz tu bombard ani pełnych kolubryn. Działa sprzedawane przez stocznię są zawsze w idealnym stanie. Przy sprzedaży działa są najpierw naprawiane, a koszt naprawy zostaje potrącony z kwoty transakcji.}
 Shnyava {Snow i brygantyna były poprzednikami brygu. Dzięki udanej konstrukcji kadłuba, dobrej prędkości i zdolności do przenoszenia ciężkich dział, statki te zyskały dużą popularność zarówno na Karaibach, jak i w Europie. Często są wykorzystywane do eskortowania konwojów handlowych małych klas.}
 Sloop {Dobra prędkość i zwrotność oraz solidne uzbrojenie jak na swoje rozmiary sprawiają, że slup jest niezawodnym statkiem patrolowym, nadającym się również do rozpoznania.}
-Speed {Prędkość – pokazuje aktualną maksymalną prędkość statku, uwzględniając wszystkie czynniki (ładunek, umiejętności kapitana, uszkodzenia statku) oraz maksymalną osiągalną prędkość.}
+Speed {Maksymalna prędkość, jaką statek może osiągnąć w obecnych warunkach przy najsilniejszym wietrze. Wpływają na nią zdolności i umiejętności kapitana oraz Nawigatora, amulety, obciążenie statku, stopień zużycia żagli i doświadczenie załogi.}
+MaxSpeed {Maksymalna prędkość statku w idealnych warunkach i przy najsilniejszym wietrze. Lżejsze jednostki z rozbudowanym ożaglowaniem są zazwyczaj szybsze, lecz płacą za to słabszym kadłubem i mniejszą ładownią.}
 TakeAllGoods_hint {Przycisk "Przenieś wszystkie towary" przenosi towary na statek postaci zgodnie z ich średnią wartością jednostkową. Najpierw przenoszone są najcenniejsze towary, potem mniej cenne i tak dalej, aż w ładowni zabraknie miejsca.}
 Tartane {Łódź rybacka nie jest najlepszym statkiem dla kapitana błyszczącego w wyższych sferach. Ale jeśli los pozbawił cię ulubionego statku, ta ponura łódź nadaje się do szybkiej podróży między wyspami, choć warto pamiętać – to tylko na chwilę!}
 Valciria {Doskonały angielski bryg. Wysoka prędkość i zwrotność, dobre osiągi na wiatr i dwadzieścia dział na pokładzie czynią ten żaglowiec marzeniem.}
 Warship {Statki tego typu budowano jeszcze za czasów kardynała Richelieu i dziś są konstrukcyjnie przestarzałe. Mają jednak dobre właściwości żeglugowe i mogą przenosić najcięższe działa, co czyni je groźną siłą.}
 WarTartane {Tartany to te same łodzie rybackie, pospiesznie przystosowane do pracy przybrzeżnej na niebezpiecznych wodach Karaibów. Skromne uzbrojenie i prowizoryczna konstrukcja nie budzą szacunku, ale są w stanie odstraszyć niedoświadczonego pirata lub biednego przemytnika. Tymczasowe rozwiązanie, gdy nie ma wielkiego wyboru.}
 XebekVML {Szebeka to najsłynniejszy typ statku śródziemnomorskiego. Wąski kadłub i duże żagle łacińskie na wszystkich masztach pozwalają jej płynąć pod ekstremalnymi kątami do wiatru, co czyni ją bardzo uciążliwym przeciwnikiem. Niestety, niska prędkość przy kursie z wiatrem ogranicza zastosowanie szebeki głównie do piractwa i przemytu.}
+ShipPower {Potęga statku określa, jak groźnie jednostka wygląda w oczach postronnego obserwatora. Na jej obecną wartość wpływają klasa i specjalizacja statku, liczba i stan dział, liczebność oraz wyszkolenie załogi, stan kadłuba i żagli, a także umiejętności kapitana. Pinasę dowodzoną przez rzezimieszka znanego na całych Karaibach każdy woli ominąć z daleka, podczas gdy uszkodzona fregata w rękach młodego żółtodzioba szybko przyciągnie kłopoty. $br$red Potęga każdego statku w eskadrze jest dodawana do łącznej potęgi eskadry, która wpływa na zachowanie wrogich eskadr i piratów na mapie globalnej. Wartość tę można sprawdzić na ekranie „Narody”.}
+Cannon_DamageMultiply_header {Mnożnik obrażeń dział}
+Cannon_DamageMultiply_text {Wartość, przez którą mnożone są obrażenia pocisku.}
+Cannon_firerange_header {Zasięg}
+Cannon_firerange_text {Maksymalny zasięg skutecznego ognia działa. Wybrany pocisk, umiejętności, amulety, a nawet kołysanie statku mogą wpłynąć na ostateczny zasięg.}
+Cannon_reloadtime_header {Czas przeładowania}
+Cannon_reloadtime_text {Czas potrzebny do pełnego przeładowania dział. Wpływają na niego liczebność i doświadczenie załogi oraz umiejętności kapitana i kanoniera.}
+Cannon_hp_header {Maksymalna wytrzymałość}
+Cannon_hp_text {Ten parametr określa, ile strzałów działo może oddać, zanim zostanie całkowicie zniszczone. Im jest wyższy, tym rzadziej trzeba naprawiać działo. Każdy typ działa ma własną maksymalną wytrzymałość, która zazwyczaj rośnie wraz z kalibrem.}
+Cannon_weight_header {Masa działa}
+Cannon_weight_text {Działa zajmują na statku dużo miejsca; na okrętach wojennych bateria artyleryjska może pochłaniać nawet połowę ładowności. Masa rośnie wraz z kalibrem i siłą ognia, a kolubryny ważą więcej niż działa tego samego kalibru.}
+Cannon_health_0 {Zniszczone}
+Cannon_health_1 {Zużyte}
+Cannon_health_2 {Sprawne}
+Cannon_health_3 {Wyregulowane}
+Cannon_weight_in_stock {To około$br() $percent($ctx(weightPercent)) nośności}
+Cannon_health_on_ship {Stan dział w ładowni statku „$ctx(ShipName)”: $ctx(health)}

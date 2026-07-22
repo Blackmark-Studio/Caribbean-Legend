@@ -112,7 +112,7 @@ Sblocca la possibilità di scegliere la modalità di bordata.
 }
 perkBladeDancer {L’attacco di gruppo con armi ricurve infligge il $percent($perkBaseValue(BladeDancer|1)) di danni in più.}
 perkBoardingPrepare {La squadra d’abbordaggio riceve pozioni durante l’abbordaggio.}
-perkBombardier {La durabilità dei cannoni è aumentata.}
+perkBombardier {Il bonus conferito dai cannoni in buone condizioni aumenta del $percent($perkBaseValue(Bombardier|1)). Questo effetto è cumulabile.}
 perkBruteForce {Soldati pesantemente armati con asce e armatura sostituiscono alcuni dei tuoi marinai durante l’abbordaggio.}
 perkBuilder {Il consumo di assi e tela durante le riparazioni è ridotto del 25%.}
 perkByWorker {Un personaggio può ricoprire due incarichi da ufficiale contemporaneamente}

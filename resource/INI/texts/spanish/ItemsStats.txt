@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Cada 2% del casco del barco perdido aumenta la
 itm_stat_descr_talisman2 {Ayuda a evitar zonas de tormenta o reduce el daño a velas y casco durante una tormenta.}
 itm_stat_descr_talisman20 {La velocidad de apuntado con armas de fuego aumenta un 15%, el daño máximo al apuntar un 20%, la recarga un 10% y el daño por disparo a la cabeza un 20%.}
 itm_stat_descr_talisman21 {Permite comerciar con contrabandistas en barcos de hasta rango 2 inclusive.}
-itm_stat_descr_talisman3 {Evita que los cañones exploten.}
+itm_stat_descr_talisman3 {La bonificación por mantener los cañones en buen estado aumenta un $percent(0.05). Este efecto se acumula.}
 itm_stat_descr_talisman4 {Reduce la pérdida de moral por sobrecarga y baja la ración diaria de ron consumida por la tripulación.}
 itm_stat_descr_talisman6 {Ayuda a ahorrar provisiones en el barco, reduciendo su consumo en una cuarta parte.}
 itm_stat_descr_talisman7

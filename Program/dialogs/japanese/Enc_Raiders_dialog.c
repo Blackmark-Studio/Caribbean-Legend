@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("ふざけるんじゃねえ！金を即座に払え、そうすりゃお前を放してやるかもな！","旅の通行料を聞いたことがねえのか？金を出さなきゃ、首を出すことになるぜ！","へっ、このちょっとした冒険は財布が飛ぶぜ……俺が怒らなきゃな。"),RandPhraseSimple("とても簡単なことだ。お前が持ってる金を全部渡せば、自由に立ち去っていい。だが、ここにとどまるなら、 どうせ俺たちが全部奪うだけだぜ。もっとも、後者はお前の望むところじゃねえだろうが、へっへっへ。","とぼけてんじゃねえぞ！死にたくなけりゃ財布をよこせ、さもなきゃ死体から奪うことになるぜ！"),"説明してやるよ、そんなに頭が悪いならな。命が惜しけりゃ、持ってる金を全部よこせ。");
-			Link.l1 = "ちくしょう、このろくでなしめ！俺にはまだ "+int(int(Pchar.money)/20)*10+" ペソ。";
+			Link.l1 = "ちくしょう、このろくでなしめ！俺にはまだ "+iMoney+" ペソ。";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("俺の金が欲しいのか？取りに来いよ、てめえの価値を見せてもらおうじゃねえか！","なんて無礼な奴だ！礼儀ってものを叩き込んでやるぞ！","なんて自信満々なんだ！さて、本物を相手にどうなるか見せてもらおう "+GetSexPhrase("海狼","「ルーヴ・デ・メール」")+"!"),LinkRandPhrase("こんな無礼を働いたら鞭打ちの刑にされるべきだぞ！","貴様ら悪党どもめ！地獄で温かい場所を悪魔に祈っておけ！","お前らみたいな絞首台の鳥はとっくに吊るされてるべきだったんだ！\nまあいい、俺のサーベルをお前らの血で染めてやるしかねえな！"),RandPhraseSimple("「俺がなんでお前に金を渡さなきゃならねえんだ？」","それに、俺がしっかり武装してて、ただの散歩でここに来たわけじゃねえって気づかなかったのか？"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("「で、なんで俺があんたの巡回なんか気にしなきゃならねえんだ？俺が奴らに金を払ってるんだぜ。さあ、 財布をよこして、くだらねえ口を閉じな。」","俺を脅せると思ってるのか？このジャングルでお前みたいな奴を見張ってるのは俺自身だぜ。今まで誰一人、 料金を払わずにここを出た奴はいねえ！");
-					Link.l1 = "くそっ、このろくでなしめ！俺にはまだ "+int(int(Pchar.money)/20)*10+" ペソ。";
+					Link.l1 = "くそっ、このろくでなしめ！俺にはまだ "+iMoney+" ペソ。";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("へっ、俺はお前みたいな腰抜けの命令なんか聞かねえぞ。","そんな生意気な口をききやがって、頭に新しい穴を二つ開けてやるぜ！ちょっと脳みそに風通ししてやるんだ。","そのような無礼、許しておかねえぞ！"),"そんなこと、するべきじゃなかったんだ……");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("よし！渡せ、そしてとっとと失せろ！","大した額じゃねえが、何もないよりはマシだな。頭の切れる奴と取引できてよかったぜ！もう行っていいぞ。"),"それはまた別の話だぜ！俺の友達がよく言ってたんだ、「賢い奴の話を聞くのも悪くねえが、 馬鹿と話す方がずっと面白い」ってな！へへ！","お前の金と引き換えに、ひとつ忠告してやるぜ：もしお前が\n "+GetSexPhrase("そんな腰抜けだな。酒場でラムでも飲んでろ、そうすりゃお前も財布も無事でいられるぜ！","娘さん。盗まれただけで済んだのは、まだましな方だぜ。")+".");

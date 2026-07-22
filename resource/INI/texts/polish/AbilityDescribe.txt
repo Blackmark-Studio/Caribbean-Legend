@@ -112,7 +112,7 @@ Odblokowuje możliwość wyboru trybu salwy burtowej.
 }
 perkBladeDancer {Atak grupowy zakrzywioną bronią zadaje o $percent($perkBaseValue(BladeDancer|1)) więcej obrażeń.}
 perkBoardingPrepare {Załoga abordażowa otrzymuje mikstury podczas abordażu.}
-perkBombardier {Wytrzymałość armat zwiększona.}
+perkBombardier {Premia za dobry stan dział wzrasta o $percent($perkBaseValue(Bombardier|1)). Efekt się kumuluje.}
 perkBruteForce {Ciężkozbrojni żołnierze z toporami i zbrojami zastępują część zwykłych marynarzy podczas abordażu.}
 perkBuilder {Zużycie desek i płótna żaglowego podczas napraw jest zmniejszone o 25%.}
 perkByWorker {Postać może zajmować jednocześnie dwa stanowiska oficerskie}

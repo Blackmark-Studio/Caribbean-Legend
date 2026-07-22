@@ -1,0 +1,69 @@
+Enc_Rapers_dialog_First_time_text_1 {$rand(走吧, $manWoman(伙计|姑娘)。 她最终会感谢我们的, 你知道的。 |滚开! 让先生们找点乐子。 |这不关你的事, $manWoman(陌生人|姑娘)。 我们只是找点乐子, 就这样! )}
+Enc_Rapers_dialog_First_time_l1_1 {$rand(我不允许这样! |立即放弃你们的邪恶计划! |我不容忍任何暴力行为! )}
+Enc_Rapers_dialog_First_time_l2_1 {$rand(我知道了, 这就走。 抱歉打扰。 |我不敢再打扰你们了。 抱歉打扰。 )}
+Enc_Rapers_dialog_First_time_text_2 {$rand(走吧, $manWoman(伙计|姑娘)。 她最终会感谢我们的, 你知道的。 |滚开! 让先生们找点乐子。 |这不关你的事, $manWoman(陌生人|姑娘)。 我们只是找点乐子, 就这样!! )}
+Enc_Rapers_dialog_First_time_l1_2 {$rand(我不允许这样! |立即放弃你们的邪恶计划! |我不容忍任何暴力行为! )}
+Enc_Rapers_dialog_First_time_l2_2 {$rand(我知道了, 这就走。 抱歉打扰。 |我不敢再打扰你们了。 抱歉打扰。 )}
+Enc_Rapers_dialog_First_time_text_3 {$rand(嘿, $manWoman(陌生人|年轻女士), 你为什么要自找麻烦? 这个女孩在我们定居点是个'名人'。 我们已经付了钱, 但她看到你后决定带着我们的钱逃跑。 |嘿, $manWoman(伙计|姑娘), 走你自己的路, 别干涉我们的事。 我们在掷骰子游戏中赢了这个女孩, 但她动作太快跑了, 我们在丛林里追了她一个小时。 )}
+Enc_Rapers_dialog_First_time_l1_3 {我不在乎, 我不会让你们伤害她!}
+Enc_Rapers_dialog_First_time_l2_3 {$rand(哦, 我明白了! 我差点就相信她了! 真是个荡妇... |啊, 好吧, 那就是另一回事了。 好吧, 伙计们玩得开心! )}
+Enc_Rapers_dialog_First_time_text_4 {走吧, $manWoman(好人|年轻女士)。 没有你我们也能解决。}
+Enc_Rapers_dialog_First_time_l1_4 {我不容忍任何暴力行为!}
+Enc_Rapers_dialog_First_time_text_5 {$rand(嘿, $manWoman(陌生人|年轻女士), 你为什么要自找麻烦? 这个女孩在我们定居点是个'名人'。 我们已经付了钱, 但她看到你后决定带着我们的钱逃跑。 |嘿, $manWoman(伙计|姑娘), 走你自己的路, 别干涉我们的事。 我们在掷骰子游戏中赢了这个女孩, 但她动作太快跑了, 我们追了她一个小时。 )}
+Enc_Rapers_dialog_First_time_l1_5 {我不在乎 - 我不会让你们伤害她!}
+Enc_Rapers_dialog_First_time_l2_4 {$rand(哦, 我明白了! 我差点就相信她了! 真是个荡妇... |啊, 好吧, 那就是另一回事了。 好吧, 伙计们玩得开心! )}
+Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(好吧, 你确实选对了散步的时间... |所以, 你决定当英雄了? ) 对付他$manWoman(们|她), 伙计们! |你这$manWoman(卑鄙小人|败类)! 你敢挡我们的路? ! 砍了他$manWoman(们|她)! )}
+Enc_Rapers_dialog_Node_Fight_l1_1 {我见过更有威胁的人!}
+Enc_Rapers_dialog_Node_3_text_1 {你应该知道她花了我们不少钱! 如果你这么高尚, 可以用$ctx(price)比索带走她。 $manWoman( 你会和她玩得很开心的, 嘿嘿... |)}
+Enc_Rapers_dialog_Node_3_l1_1 {$rand(给你钱。 我带她走。 |别咧嘴笑了。 我要带这个女孩走。 给你钱。 )}
+Enc_Rapers_dialog_Node_3_l2_1 {$rand(所以, 你想要钱? 冷钢怎么样? |这应该很有趣吧, 你这个傻瓜! 看看这个女孩, 她吓坏了! |你想骗谁呢, 你这个堕落的家伙! )}
+Enc_Rapers_dialog_Node_5_text_1 {你为什么首先相信她? 什么暴力? 她离家出走了, 我们是被老板派来找她的。}
+Enc_Rapers_dialog_Node_5_l1_1 {$rand(好吧, 那就是另一回事了。 去吧, 追你们的逃犯。 |哦, 我明白了。 那继续追她吧... 我还有事要做。 )}
+Enc_Rapers_dialog_Node_5_l2_1 {$rand(把这些童话故事讲给你孙子听吧, 如果你能活到有孙子的话! |你想骗谁呢, 你这个混蛋? ! )}
+Enc_Rapers_dialog_Node_5_l3_1 {我会自己带她回家, 避免发生不好的事。 她父母是谁?}
+Enc_Rapers_dialog_Node_6_text_1 {想找死? 这是你的选择...}
+Enc_Rapers_dialog_Node_6_l1_1 {看看谁在说话。}
+Enc_Rapers_dialog_Node_7_fatherNom_1 {是个店主}
+Enc_Rapers_dialog_Node_7_fatherGen_1 {店主的}
+Enc_Rapers_dialog_Node_7_fatherNom_2 {在港务局工作}
+Enc_Rapers_dialog_Node_7_fatherGen_2 {在港务局工作的}
+Enc_Rapers_dialog_Node_7_fatherNom_3 {担任监狱长}
+Enc_Rapers_dialog_Node_7_fatherGen_3 {监狱长的}
+Enc_Rapers_dialog_Node_7_fatherNom_4 {是造船厂老板}
+Enc_Rapers_dialog_Node_7_fatherGen_4 {造船厂老板的}
+Enc_Rapers_dialog_Node_7_text_1 {她的父亲$ctx(fatherName), 在$ctx(cityName)定居点。 但请不要让我们失望, 因为他不是好惹的, 他会把我们都活剥了...}
+Enc_Rapers_dialog_Node_7_l1_1 {别担心。 我会把她交给他。}
+Enc_Rapers_dialog_Node_8_text_1 {所以我们又见面了。 你的同伴呢? 哦, 好吧, 实际上如果你在这里, 我不需要她。}
+Enc_Rapers_dialog_Node_8_l1_1 {先生们, 我真的认为你们已经收到足够的钱, 可以放过这个女孩了。}
+Enc_Rapers_dialog_Node_9_sTemp_1 {一条腿}
+Enc_Rapers_dialog_Node_9_sTemp_2 {一只胳膊}
+Enc_Rapers_dialog_Node_9_sTemp_3 {一只耳朵}
+Enc_Rapers_dialog_Node_9_sTemp_4 {一个鼻子}
+Enc_Rapers_dialog_Node_9_sTemp_5 {一只眼睛}
+Enc_Rapers_dialog_Node_9_text_1 {你的钱与$ctx(pirateName)的宝藏相比算什么? 他太贪婪了, 甚至不想娶自己的女儿, 因为想避免额外的开销... \n但他的箱子里有我们的份额! $ctx(pirateName2)在登船时失去了$ctx(tempText)! 我们得到了什么? 可怜的一把银子? $ctx(pirateName2)总是把所有战利品都藏起来。 但现在我们不会放弃! 告诉我们他的箱子在哪里!}
+Enc_Rapers_dialog_Node_9_l1_1 {好吧, 我当然没有申请守护你们船长的宝藏, 但我不能告诉你们地点... 因为我不知道那个地方在哪里。}
+Enc_Rapers_dialog_Node_10_text_1 {你在撒谎! 我能闻到从这个山洞里传来的金子的味道! 如果你不想死, 就告诉我们地点!}
+Enc_Rapers_dialog_Node_10_l1_1 {我看我的话没能说服你。 也许我的刀刃会更有说服力?}
+Enc_Rapers_dialog_Node_11_text_1 {你这$manWoman(杂种|败类)! 给我让开!}
+Enc_Rapers_dialog_Node_11_l1_1 {啊!}
+Enc_Rapers_dialog_EncGirl_Berglar_text_1 {你好, $manWoman(先生|女士)。 我们有关于你的投诉。}
+Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {谁的投诉? 那个妓女?}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {注意你的言辞, 好吗? 我不允许你侮辱我妹妹! 首先你在丛林里骚扰她, 然后带她来这里$manWoman(进行更多下流行为|并抢劫了我)。}
+Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {嘿, 伙计, 我真的必须听这些吗?}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {不。 只需支付$ctx(moneyAmount)比索的 modest 金额, 就可以帮你摆脱所有麻烦。}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {好吧, 如今高尚的行为确实有点昂贵。 好吧, 拿去吧...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_1 {我想在你肚子上开个洞会更便宜, 这样你就不会挡着我出去的路了。}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_2 {不。 但你也要把口袋翻出来, 否则我就捅你!}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_2 {好吧, 拿去吧, 你这个混蛋! 但你不会得逞的...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_2 {我想在你肚子上开个洞会更容易, 这样你就不会挡着我出去的路了。}
+Enc_Rapers_dialog_EncGirl_Berglar3_text_1 {很好。 滚吧。}
+Enc_Rapers_dialog_EncGirl_Berglar3_l1_1 {祝你好运。}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {当然我不会, 当然... 好吧, 再见, $manWoman(伙计|姑娘)。 $manWoman( 记住, 你没那么帅, 不会有女孩一见到你就爱上你。 这算是我给你的教训。 |)}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(那是肯定的! ..|快滚吧! )}
+Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {你看起来像$manWoman(这么高尚的人|这么有教养的女士), 为什么说脏话?}
+Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {这最适合我...}
+Enc_Rapers_dialog_Node_2_text_1 {好吧, 这是你自找的! 伙计们, 我们该用钢刀挠挠他$manWoman(们|她)吗?}
+Enc_Rapers_dialog_Node_2_l1_1 {死前祈祷吧!}
+Enc_Rapers_dialog_OnceAgain_text_1 {那么, 你想加入还是怎样? $manWoman(滚开, 不够我们分的|趁你还能走的时候滚开, 我们有一个姑娘就够了)!}
+Enc_Rapers_dialog_OnceAgain_l1_1 {好吧, 那我就不打扰你们了。}
+Enc_Rapers_dialog_OnceAgain_l2_1 {我不允许任何暴力行为发生!}

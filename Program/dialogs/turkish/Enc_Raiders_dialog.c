@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Aptallık etme! Parayı peşin ver, belki o zaman seni bırakırım!","Seyahat ücreti diye bir şey duymadın mı? Altınını vermezsen, kafandan olursun!","Heh, bu küçük macera sana bir kese altına mal olacak... tabii eğer sinirlenmezsem."),RandPhraseSimple("Çok basit. Bize tüm altınını veriyorsun ve sonra gitmekte özgürsün, ya da burada kalırsın ve biz yine de tüm altınını alırız. Ama sanırım ikinci seçenek pek hoşuna gitmez, he-he.","Anlamazlıktan gelme! Eğer keseni ölü bedeninden almak istemiyorsam, hemen ver onu bana!"),"Sana açıklayayım, madem bu kadar yavaş anlıyorsun. Eğer hayatını önemsiyorsan, bütün paranı bana ver.");
-			Link.l1 = "Lanet olsun, alçak! Sadece "+int(int(Pchar.money)/20)*10+" peso.";
+			Link.l1 = "Lanet olsun, alçak! Sadece "+iMoney+" peso.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Parama mı göz diktin? Gel ve al, bakalım gerçekten neye değersin!","Bunu nasıl cüret edersin, kaba herif! Sana iyi davranışın ne olduğunu göstereceğim!","Ne özgüven ama! Peki, gerçek birine karşı nasıl dayanacaksın bakalım "+GetSexPhrase("deniz kurdu","Louve des mers")+"!"),LinkRandPhrase("Böyle bir rezalet için kırbaçlanmalısın!","Soysuzlar! Cehennemde sıcak bir yer için şeytanlarınıza dua edin!","Siz çoktan asılmalıydınız, cellat kuşları! Demek ki kılıcımı sizin kanınızla lekelemem gerekecek!"),RandPhraseSimple("Ve sana paramı vereceğimi düşündüren şey ne?","Ve silahlı olduğumu ve buraya sadece gezintiye çıkmak için gelmediğimi fark etmedin mi?"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("Devriyenle neden ilgileneyim ki? Onlara ben para ödüyorum. Şimdi cüzdanını ver ve çeneni kapa.","Beni korkutabileceğini mi sanıyorsun? Bu ormanda senin gibiler için devriye bizzat benim. Buradan henüz kimse bir bedel ödemeden çıkamadı!");
-					Link.l1 = "Lanet olsun, alçak! Sadece "+int(int(Pchar.money)/20)*10+" peso.";
+					Link.l1 = "Lanet olsun, alçak! Sadece "+iMoney+" peso.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("Heh, senin gibi bir zavallıdan emir alacak değilim.","Böyle bir küstahlık için kafanda birkaç yeni delik açarım! Beynini biraz havalandırmak fena olmaz.","Böylesine küstahlık cezasız kalmaz!"),"Bunu yapmamalıydın...");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("Pekâlâ! Onu ver ve kaybol!","Çok değil, ama hiç yoktan iyidir. Akıllı biriyle iş yapmak güzel! Gidebilirsin."),"Bu bambaşka bir hikaye! Bir arkadaşım derdi ki, 'akıllı birini dinlemek iyidir ama bir aptalla konuşmak çok daha eğlencelidir'! He-he!","Altınların karşılığında sana bir tavsiye vereceğim: Eğer   ormanda yürüyorsan dikkatli olmalısın "+GetSexPhrase("Ne korkaksın. Git meyhanede romunu iç, hem sen hem de kesen güvende kalsın!","bir kızsın. Soyulmak başına gelebilecek en kötü şey değildi.")+".");

@@ -54,7 +54,7 @@ float GetHeadshotDamageMtp(ref table)
 
 float GetPoisonChance(ref chr, ref table)
 {
-	if (chr.sex == "skeleton" || chr.sex == "crab" || CheckAttribute(chr, "viper")) return 15.0;
+	if (chr.sex == "skeleton" || chr.sex == "crab" || CheckAttribute(chr, "viper")) return 0.15;
 	return GetAttributeFloat(chr, "ct." + CT_LAND + "." + M_POISON_CHANCE);
 }
 

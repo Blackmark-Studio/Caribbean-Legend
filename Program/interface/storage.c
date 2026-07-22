@@ -1,3 +1,5 @@
+#include "interface\utils\universal_input.c"
+
 ////    boal 31/03/06 STORE
 // ugeen --> переделано в интерфейс склада ГГ  28.01.10
 #define MAX_GOODS_STORE 50000
@@ -53,20 +55,29 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
-	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
 
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
+
+	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 
 	SetEventHandler("frame","ProcessFrame",1);
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("TABLE_LIST", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetArrowsInputHandler("QTY_EDIT", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetArrowsInputHandler("QTY_BUYSELL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetClickInputHandler("QTY_ADD_BUTTON", "QTY_REMOVE_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetUniversalInputTooltip("QTY_EDIT");
 
 	SetFormatedText("STORECAPTION", XI_ConvertString("Colony" + refStore.Colony) + ":" + XI_ConvertString("titleStorage"));
+}
+
+void HideInfoWindow()
+{
+	CloseTooltipNew();
 }
 
 void ProcessBreakExit()
@@ -91,66 +102,37 @@ void IDoExit(int exitCode)
 
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
-	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
 	DelEventHandler("TableSelectChange", "CS_TableSelectChange");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
+}
+
+void ShowHelpHint()
+{
+	string sCurrentNode = GetEventData();
+	string sHeader;
+	string sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture;
+	sPicture = "none";
+	sGroup = "none";
+	sGroupPicture = "none";
+	Log_Info("AGA");
+
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
+
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
 void ProcCommand()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
-
-	switch(nodName)
-	{
-		case "QTY_BUYSELL_BUTTON":
-			if(comName=="leftstep")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "TABLE_LIST":
-			if(comName=="leftstep")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-	}
 }
 
 void DoPostExit()
@@ -602,72 +584,47 @@ void ChangeQTY_EDIT()
     ShowFoodInfo();
 }
 
-void REMOVE_ALL_BUTTON()  // продать все
-{
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = -iShipQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
 
-void ADD_ALL_BUTTON()  // купить все
-{
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = iStoreQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_BUTTON()  // продать
+void REMOVE_BUTTON(int value = 1)  // продать
 {
     if (!GetRemovable(refCharacter)) return;
 	if (!bShowChangeWin) return;
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = -iUnits;
+        GameInterface.qty_edit.str = -iUnits*value;
     }
     else
     {
 		if (BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + iUnits);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + iUnits*value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - iUnits);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - iUnits*value);
 		}
 		BuyOrSell = 0;
 	}
 	ChangeQTY_EDIT();
 }
 
-void ADD_BUTTON()  // купить
+void ADD_BUTTON(int value = 1)  // купить
 {
     if (!GetRemovable(refCharacter)) return;
 	if (!bShowChangeWin) return;
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = iUnits;
+        GameInterface.qty_edit.str = iUnits*value;
     }
     else
     {
   		if (BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + iUnits);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + iUnits*value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - iUnits);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - iUnits*value);
 		}
 		BuyOrSell = 0;
 	}

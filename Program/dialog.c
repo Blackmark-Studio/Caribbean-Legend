@@ -308,9 +308,39 @@ void StartDialogWithMainCharacter()
 	//Trace("Dialog: start dialog " + person + " whith main character");
 }
 
+// Проверяем, что для диалога есть universal файл на ключах
+bool IsUniversalDialogFileExist(string path)
+{
+	string base = "Program\dialogs\universal\";
+	object fullPath;
+	SplitString(&fullPath, path, "\");
+
+	int pathLevelQty = GetAttributesNum(&fullPath);
+	if (pathLevelQty == 0) return IsFileExist(base, path);
+
+	string fileName = GetAttributeValue(GetAttributeN(&fullPath, GetAttributesNum(&fullPath)-1));
+	string pathToFile = base + strleft(path, strlen(path) - strlen(fileName));
+
+	return IsFileExist(pathToFile, fileName);
+}
+
+// Если общий диалог на ключах, запускаем его, иначе обычный метод
+void DialogRunCommonFile(ref chr, string filePath)
+{
+	string dialogLang = IsUniversalDialogFileExist(filePath) ? "universal" : LanguageGetLanguage();
+	chr.FileDialog2 = "DIALOGS\" + dialogLang + filePath;
+	if (!LoadSegment(chr.FileDialog2)) return;
+
+	aref Link = GetAref(&Dialog, "Links", true);
+	aref NextDiag = GetAref(chr, "Dialog", true);
+	ProcessCommonDialog(chr, Link, NextDiag);
+	UnloadSegment(chr.FileDialog2);
+}
+
 bool LoadDialogFiles(string dialogPath)
 {
 	if (strleft(dialogPath, 6) == "exact$") FullDialogPath = FindStringAfterChar(dialogPath, "$");
+	else if (IsUniversalDialogFileExist(dialogPath)) FullDialogPath = "dialogs\universal\" + dialogPath;
 	else FullDialogPath = "dialogs\" + LanguageGetLanguage() + "\" + dialogPath;
 
 	// Выбор директории с языковыми файлами
@@ -471,65 +501,7 @@ void AddDialogMeta() {
 // Выставляем плашку с ролью в диалоге по атрибуту персонажа, за исключением офицеров
 void UpdateDynamicRole(ref Dialog, ref chr)
 {
-	Dialog.role = "";
-
-	// Уважаемый дата-майнер, здесь совершенно точно не спрятано секретных квестов, это просто пасхалка
-	// медленно положи свой текстовый редактор на пол и отойди. Медленно! (⌐■_■)
-	if (CheckAttribute(chr, "quest.last_theme") && chr.quest.last_theme == "0" && !CheckAttribute(chr, "role"))
-	{
-		if (chr.greeting == "habitue") chr.role = "drinker_" + rand(9);
-	}
-	if (CheckAttribute(chr, "PhantomType"))
-	{
-		if (chr.PhantomType == "pofficer") chr.role = "pofficer";
-		else if (chr.PhantomType == "gipsy") chr.role = "gipsy";
-		else if (chr.PhantomType == "captain") chr.role = "captain";
-		else if (chr.PhantomType == "noble") chr.role = "noble";
-	}
-	if(CheckAttributeEqualTo(chr, "quest.type", "hovernor"))
-	{
-		if(int(chr.nation) == PIRATE) chr.role = "Phovernor";
-		else chr.role = "hovernor";
-	}
-	if(CheckAttribute(chr, "Merchant.type") && chr.Merchant.type != "GasparGold")
-	{
-		chr.role = chr.Merchant.type + "_merchant";
-	}
-	
-	if(HasSubStr(chr.id, "_tavernkeeper")) chr.role = "tavernkeeper";
-	else if(HasSubStr(chr.id, "_waitress")) chr.role = "waitress";
-	else if(HasSubStr(chr.id, "_trader")) chr.role = "trader";
-	else if(HasSubStr(chr.id, "_shipyarder")) chr.role = "shipyarder";
-	else if(HasSubStr(chr.id, "_PortMan")) chr.role = "portman";
-	else if(HasSubStr(chr.id, "_Priest")) chr.role = "priest";
-	else if(HasSubStr(chr.id, "_usurer")) chr.role = "usurer";
-	else if(HasSubStr(chr.id, "_Poorman")) chr.role = "poorman";
-	else if(HasSubStr(chr.id, "_Hostess")) chr.role = "hostess";
-	else if(HasSubStr(chr.id, "_smuggler")) chr.role = "smuggler";
-	
-	if(chr.model == "Alonso")
-	{
-		Dialog.role = GetConvertStr("HeadSailor", "roles.txt");
-		if(CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.FourthStage", "completed"))
-			Dialog.role = GetConvertStr("HeadSailorPlus", "roles.txt");
-		return;
-	}
-	
-	// belamour return только в особых ситуациях
-	if(RoleFromID(chr))
-	{
-		Dialog.role = GetCharacterRole(chr);
-		if(chr.role == "friend")
-			Dialog.role = Dialog.role + " / " + GetJobsList(chr, " / ");
-		return;
-	}
-	if (CheckAttribute(chr, "SpecialRole")) 
-	{
-		Dialog.role = GetCharacterSpecialRole(chr);
-		return;
-	}
-	if (CheckAttribute(chr, "Payment")) Dialog.role = GetJobsList(chr, " / ");
-	else if (CheckAttributeHasValue(chr, "role")) Dialog.role = GetCharacterRole(chr);
+	Dialog.role = GetCharacterDynamicRole(chr);
 }
 
 bool RoleFromID(ref chr)

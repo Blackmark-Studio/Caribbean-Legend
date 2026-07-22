@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Ne jouez pas l'imbécile ! De l'argent comptant et peut-être alors je te laisserai partir !","N'avez-vous pas entendu parler de la solde de voyage? Si vous ne vous séparez pas de votre or, vous vous séparerez d'une tête!","Heh, cette aventure ordinaire te coûtera une bourse... si je ne me mets pas en colère."),RandPhraseSimple("C'est très simple. Tu nous donnes tout ton or et ensuite tu es libre de partir, ou tu restes ici, et nous prenons tout ton or, de toute façon. Mais je pense que ce dernier n'est pas ce que tu aimerais, he-he.","Ne faites pas semblant de ne pas comprendre! Donnez-moi votre bourse si vous ne voulez pas que je la prenne de votre cadavre!"),"Je vais expliquer, si tu es si lent d'esprit. Tu me donnes tout ton argent, si tu tiens à ta vie.");
-			Link.l1 = "Sacrebleu, fripouille ! Je n'ai que "+int(int(Pchar.money)/20)*10+" pesos.";
+			Link.l1 = "Sacrebleu, fripouille ! Je n'ai que "+iMoney+" pesos.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Tu veux mon argent? Viens le chercher, et je verrai combien tu vaux!","Comment osez-vous, rustre ! Je vais vous donner une leçon de bonnes manières !","Quelle assurance ! Eh bien, voyons comment tu te tiens face à un vrai "+GetSexPhrase("loup de mer","Louve des mers")+"!"),LinkRandPhrase("Tu devrais être fouetté pour une telle outrage!","Vous, canailles! Priez vos démons pour une place chaude en enfer!","Vous auriez dû être pendu il y a longtemps, oiseaux de la potence ! Eh bien, il semble que je vais devoir tacher mon sabre de votre sang !"),RandPhraseSimple("Et qu'est-ce qui te fait penser que je te donnerai mon argent?","Et n'as-tu pas remarqué que je suis bien armé et que je ne suis pas venu ici pour une simple promenade?"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("Et pourquoi devrais-je m'inquiéter de votre patrouille? Je les paie. Alors, donnez-moi votre bourse et arrêtez de jacasser.","Tu penses pouvoir me faire peur? Je suis moi-même 'la patrouille' pour ceux comme toi dans cette jungle. Personne encore n'est parti sans payer un droit de passage!");
-					Link.l1 = "Sacré bleu, canaille ! Je n'ai que "+int(int(Pchar.money)/20)*10+" pesos.";
+					Link.l1 = "Sacré bleu, canaille ! Je n'ai que "+iMoney+" pesos.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("He-h, je ne vais pas obéir aux ordres d'un gringalet comme toi.","Je vais te faire quelques nouveaux trous dans le crâne à cause de tant d'impudence ! Juste pour aérer un peu ton cerveau.","Une telle impudence ne restera pas impunie!"),"Tu n'aurais pas dû faire ça...");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("D'accord! Donne-le moi et dégage!","Pas grand chose, mais toujours mieux que rien. C'est bon de traiter avec une personne intelligente! Tu es libre d'y aller."),"Maintenant, c'est une histoire différente ! Comme disait mon ami 'il est toujours bon d'écouter quelqu'un qui est intelligent, mais parler avec le fou est beaucoup mieux' ! He-he !","En échange de votre or, je vous donnerai un conseil, vous ne devriez pas vous promener dans la jungle, si vous êtes "+GetSexPhrase("un tel froussard. Bois ton rhum à la taverne, afin que toi et ta bourse restiez en sécurité!","une demoiselle. Être volé n'est pas le pire qui aurait pu vous arriver.")+".");

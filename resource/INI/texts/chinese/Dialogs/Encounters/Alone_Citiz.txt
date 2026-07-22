@@ -1,0 +1,25 @@
+Alone_Citiz_First_time_text_1 {$rand(你好|嗨|向你致意|日安), $rand(陌生人|旅人|过路人)! $rand(说实话，你可把我$rand(吓了一跳|吓得不轻)。|没想到会在这儿见到人。|也来这儿散散心？这就对了。) 我叫$npcName。 $rand(我能帮你点什么吗？|有什么能效劳的？|你是想找我做什么？|有何贵干？)}
+Alone_Citiz_First_time_l0 {$rand(在这片丛林里，没人会听见你的惨叫，$npcName。|我正在为海岸兄弟会征收自愿且强制的捐款。|你不知道走这条小路是要收费的吗，$npcName？|你以为能就这么随便在我的地盘上走来走去？|你没听说新税吗？最近正好开始对愚蠢的独自丛林行程征税了。) $rand(来，把口袋翻出来。|把你的家当交出来。|趁我还算好说话，把值钱的东西交出来。|让我看看你兜里有什么在响。|乖乖交出响当当的硬币，不然脑袋就别想要了。)(几率 $ctx(Chance)%)}
+Alone_Citiz_First_time_l1 {我只是过来打个招呼，$npcName。祝你一切顺利。}
+Alone_Citiz_First_time_text_2 {Yet hello again. Did you want something? I think we've already discussed everything.}
+Alone_Citiz_First_time_l0_a {$rand(有，确实有。|差点忘了……|你这么一说，还真有！|没错，是有！) $rand(在这片丛林里，没人会听见你的惨叫，$npcName。|我正在为海岸兄弟会征收自愿且强制的捐款。|你不知道走这条小路是要收费的吗，$npcName？|你以为能就这么随便在我的地盘上走来走去？|你没听说新税吗？最近正好开始对愚蠢的独自丛林行程征税了。) $rand(来，把口袋翻出来。|把你的家当交出来。|趁我还算好说话，把值钱的东西交出来。|让我看看你兜里有什么在响。|乖乖交出响当当的硬币，不然脑袋就别想要了。 (几率 $ctx(Chance)%)}
+Alone_Citiz_First_time_l0_b {我只是随便走走，$npcName，您别多想。}
+Alone_Citiz_Bullying_Fail {勒索失败}
+Alone_Citiz_Bullying_Success {勒索成功}
+Alone_Citiz_Robbery_text_1 {$rand(你这恶棍，愿你遭天谴！我什么都不会给你！|你以为你是我遇到的第一个混账吗？做梦去吧！)}
+Alone_Citiz_Robbery_text_2 {$rand(这就是我的全部了。|你这是连我最后一点都不放过。好吧，老天会记着这笔账的。|这世道到底怎么了，连一步路都走不安生。|这是什么世道，人人都想骗你、抢你，没要你的命都算客气了。) $rand(拿上快滚吧，恶棍。|这就是我的全部。|拿去吧。我再没有别的了。|就这些了。拿走，别再烦我。)}
+Alone_Citiz_Robbery_l1 {$rand(那就只能从你的尸体上扒东西了。|答错了。|好吧，接下来就是不太愉快的部分了。|那也好。抢死人可容易多了。)}
+Alone_Citiz_Robbery_l2 {这就对了。可别耍花样。}
+Alone_Citiz_AfterRobbery_text_1 {你已经把我搜刮得一干二净了，混蛋，你还想要什么？！}
+Alone_Citiz_AfterRobbery_l1 {我看看是不是还有什么漏掉的。}
+Alone_Citiz_ToRumours_first {$rand(不如告诉我，这家酒馆里都流传着什么传闻。|不如告诉我，这一带有什么新鲜事。|不如跟我说说，朋友，岸上的日子过得怎样？)}
+Alone_Citiz_ToRumours_second {$rand(这家酒馆里都流传着什么传闻？|这一带有什么新鲜事？|岸上的日子过得怎样？)}
+Alone_Citiz_Rumours_posrep_1 {$rand(事情就是这样……|也许这能让您觉得有趣。)}
+Alone_Citiz_Rumours_answ_1 {$swear 你说的这些事很有意思，$npcName。你还知道别的吗？}
+Alone_Citiz_Rumours_posrep_2 {$rand(事情就是这样……|也许这能让您觉得有趣。)}
+Alone_Citiz_Rumours_answ_2 {$swear 这可真有意思！还有别的消息吗？}
+Alone_Citiz_Rumours_posrep_3 {~ 那您呢，船长，有什么消息吗？}
+Alone_Citiz_Rumours_answ_3 {$rand(世上什么事都有可能发生，可惜我没有什么消息。|我有点赶时间，改天再说吧。)}
+Alone_Citiz_Rumours_Block {$rand(很遗憾，我知道的就这么多了。请让我走吧。|您的追问让我有些疲惫了。请原谅，我还有事要办。)}
+Alone_Citiz_Rumours_Block_Ok {那就告辞了。}
+Alone_Citiz_Rumours_Bye {$rand(谢谢，我该告辞了。|一切顺利。)}

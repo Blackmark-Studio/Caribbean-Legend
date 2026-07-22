@@ -105,9 +105,9 @@ void ProcessDialogEvent()
 		}
 		if (int(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0) > 10)
 		{
-			iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0);
+            iTotalTemp = GetMayorIndulgenceSumm(NPChar);
 			dialog.text = "¡Oh, mira quién está ahí! Es" + GetSexPhrase("", "") + " " + GetFullName(pchar) + ". Sabes, hace poco envié cazadores de piratas para traerte de vuelta aquí. Si hubiera sabido que vendrías a mi puerta, me habría ahorrado el dinero.";
-			if (int(pchar.Money) >= iTotalTemp * 6000)
+			if (int(pchar.Money) >= iTotalTemp)
 			{
 				link.l1 = "Estaba a punto de saldar nuestras cuentas.";
 				link.l1.go = "arestFree_1";
@@ -2323,20 +2323,22 @@ void ProcessDialogEvent()
 
 	case "arestFree_1":
 		dialog.text = "¿Asentarme? ¿Y cómo imaginas eso?";
-		link.l1 = "Creo que una suma de " + iTotalTemp * 6000 + " pesos aún pueden salvarme, ¿no es así?";
+		link.l1 = "Creo que una suma de " + iTotalTemp + " pesos aún pueden salvarme, ¿no es así?";
 		link.l1.go = "arestFree_2";
 		link.l2 = "No. Y es hora de que me vaya. Mis mejores deseos.";
 		link.l2.go = "arest_1";
 		break;
 
 	case "arestFree_2":
-		if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= hrand(7) && iTotalTemp < 21)
+        i = wdmGetNationThreat(int(NPChar.Nation));
+        if (i < 3)
 		{
 			dialog.text = "Supongo que podríamos resolver nuestro incidente de esa manera. Aún no has llegado tan lejos como para hacer la situación irreparable.";
 			link.l1 = "Excelente. Estoy muy contento. Por favor, acepte mi donación.";
 			link.l1.go = "Exit";
-			AddMoneyToCharacter(pchar, -iTotalTemp * 6000);
-			ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", -iTotalTemp);
+            AddMoneyToCharacter(pchar, -iTotalTemp);
+            i = ChangeCharacterNationReputation(Pchar, int(NPChar.nation), 0);
+            ChangeCharacterNationReputation(Pchar, int(NPChar.nation), -i);
 			AddCharacterExpToSkill(pchar, "Fortune", 100);
 		}
 		else

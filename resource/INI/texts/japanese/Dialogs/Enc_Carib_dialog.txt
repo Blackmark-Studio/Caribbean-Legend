@@ -1,0 +1,90 @@
+Enc_Carib_dialog_First_time_text_1 {おめでとう！これはバグだ。ジェイソンに連絡して、どこでどうやって見つけたか伝えてくれ。じゃあな！}
+Enc_Carib_dialog_First_time_l1_1 {すぐにやるぜ！}
+Enc_Carib_dialog_war_indian_text_1 {$rand(海の息子よ、ようこそ！お前のことは聞いているぜ。俺たちの土地を自由に歩いていいぞ。|$npcName 蒼白い顔の兄弟よ、歓迎するぞ。お前が我々の客として来てくれて嬉しい。|「勇敢な色白の戦士よ、挨拶するぞ！」 $npcName インディアンの友人に会えて嬉しい。安らかに行きなさい！)}
+Enc_Carib_dialog_war_indian_l1_1 {$rand(「やあ、赤い肌の兄弟よ！狩りがうまくいくよう祈ってるぜ！」|ごきげんよう、勇敢な戦士よ！神々があなたとご家族を祝福されますように！)}
+Enc_Carib_dialog_war_indian_l2_1 {$rand(赤い肌の兄弟よ、興味がありそうなものがあるんだ。取引しないか？|勇敢な戦士よ、面白い品を売ってやれるぜ。取引するかい？)}
+Enc_Carib_dialog_war_indian_text_2 {$rand(止まれ、色白野郎！何の権利があって俺の土地を歩いているんだ？|止まれ、白人！ここは俺の祖先の土地であり、俺の土地だ！|止まれ、色白野郎！ここは俺の土地だ、お前の居場所じゃねえ)}
+Enc_Carib_dialog_war_indian_l1_2 {$rand(「お前の土地だと？消え失せろ、この赤ら顔のクズ野郎！」|あいつを見ろよ――しゃべる猿じゃねえか！さっさと失せろ！)}
+Enc_Carib_dialog_war_indian_l2_2 {$rand(俺は和平のために来たんだ、赤い肌の戦士よ。無駄に争うべきじゃねえ。|俺はお前やお前の土地の敵じゃねえ、戦士よ。平和のために来たんだ。)}
+Enc_Carib_dialog_war_indian_l3_1 {$rand(俺は取引に来たんだ、戦うためじゃねえ。|俺はインディアンとは戦わねえ。取引するんだ。)}
+Enc_Carib_dialog_war_indian_1_text_1 {$rand(生まれてきたことを後悔させてやるぜ、この色白の野郎……お前の心臓をえぐり出して火で焼いてやる！|石でも食わせてやるぜ、この青白い犬野郎！死を乞いながらひざまずくお前を、俺たちは笑って見ててやるぜ、 この白い雑種め！)}
+Enc_Carib_dialog_war_indian_1_l1_1 {$rand(まだその汚ねえ口を閉じられねえのか、この化け物め！てめえが這い出てきたジャングルに叩き返してやるぜ！|俺様を脅すつもりか、このクズ野郎が！？よし、てめえは今すぐ木に登り直しやがれ！)}
+Enc_Carib_dialog_war_indian_2_1_text_1 {$rand(お前の声は誠実だと聞いた。この日は斧をお前に向けたりはしねえ。平和のうちに行け、色白の奴。|青白い顔の者はめったに平和をもたらさぬが、お前の目を見れば嘘は言っていないと分かる。さあ、行け。)}
+Enc_Carib_dialog_war_indian_2_1_l1_1 {$rand(賢明な判断だな、戦士よ。幸運を祈るぞ。|理解し合えて嬉しいぞ、戦士よ。)}
+Enc_Carib_dialog_war_indian_2_2_text_1 {$rand(嘘をつくな、色白の野郎め！インディアンを殺しに来たんだろう！\n戦う覚悟はできてるか、色白野郎！？|お前はインディアンを殺す。白人の舌は嘘つきの舌だ。俺はそれを切り取って火で焼いてやる！)}
+Enc_Carib_dialog_war_indian_2_2_l1_1 {$rand(まあ、相棒、だったら俺を責めるなよ。神のみぞ知るが、俺は避けようとしたんだぜ…|「望んだのはお前だろう、戦士。」)}
+Enc_Carib_dialog_war_indian_3_1_text_1 {取引か？俺たちは白人の武器が必要だ。あの青白い顔の者どもの片手で使う火の武器だ！ それと引き換えに俺たちの品を渡すぜ！火の武器、取引できるか？}
+Enc_Carib_dialog_war_indian_3_1_l1_1 {ふむ。あるぜ。それで、見返りに何をくれるんだ？}
+Enc_Carib_dialog_war_indian_3_1_l2_1 {この野郎め！それで俺のピストルで植民者たちを撃つつもりか？そんなことはさせねえ！そしてお前らジャッカルども、 今ここで全員ぶった斬ってやる……}
+Enc_Carib_dialog_war_indian_3_1_text_2 {お前は俺たちの欲しいものを持っていないな、色白野郎……お前は俺たちの戦利品になるんだ！}
+Enc_Carib_dialog_war_indian_3_1_l1_2 {やれるもんならやってみろよ、かかし野郎……}
+Enc_Carib_dialog_war_indian_3_2_text_1 {$rand(俺たちは白い顔の犬どもとは取引しねえ。殺して奪うだけだ！|俺たちは汚ねえミスキートやアラワクじゃねえ、白顔どもと取引なんかしねえ！あいつらを殺して戦利品を奪うのさ！)}
+Enc_Carib_dialog_war_indian_3_2_l1_1 {$rand(なら、俺から奪ってみろ、このろくでなし！|まずは俺のサーベルを奪ってみろ、このクズ野郎！)}
+Enc_Carib_dialog_war_indian_trade_text_1 {お前が持ち物を見せてくれりゃ、俺たちがいくら出すか言うぜ。}
+Enc_Carib_dialog_war_indian_trade_link_dyn_1 {Offer $ctx(valueText).}
+Enc_Carib_dialog_gun_1_gun_1 {pistol1}
+Enc_Carib_dialog_gun_1_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_1_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_1_text_1 {おう！それに対して俺たちが払ってやるぜ $ctx(offerText).}
+Enc_Carib_dialog_gun_1_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_1_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_gun_2_gun_1 {pistol2}
+Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_2_text_1 {おう！なかなかの武器じゃねえか……それに見合うもんをやるぜ $ctx(offerText).}
+Enc_Carib_dialog_gun_2_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_2_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_gun_3_gun_1 {pistol3}
+Enc_Carib_dialog_gun_3_item_1 {jewelry5$ctx(qty)}
+Enc_Carib_dialog_gun_3_stext_1 {$ctx(qtyText) this beautiful pearl}
+Enc_Carib_dialog_gun_3_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_3_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_3_text_1 {おうよ！すげえ武器だぜ！たくさんの敵をぶっ殺せる！それと引き換えにお前にやる $ctx(offerText).}
+Enc_Carib_dialog_gun_3_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_3_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_gun_4_gun_1 {pistol4}
+Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_2 {this amulet}
+Enc_Carib_dialog_gun_4_text_1 {おう！すげえ武器じゃねえか……それと引き換えにこれをやるぜ $ctx(offerText).}
+Enc_Carib_dialog_gun_4_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_4_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_gun_5_gun_1 {pistol5}
+Enc_Carib_dialog_gun_5_item_1 {jewelry7}
+Enc_Carib_dialog_gun_5_item_2 {jewelry8}
+Enc_Carib_dialog_gun_5_item_3 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_1 {$ctx(qtyText) this beautiful and precious petrified tar}
+Enc_Carib_dialog_gun_5_item_4 {indian_$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_2 {this amulet}
+Enc_Carib_dialog_gun_5_text_1 {おう！美しくて強力な武器だな！こいつで何人もの敵を倒したぜ！その武器と引き換えに渡すぞ $ctx(offerText).}
+Enc_Carib_dialog_gun_5_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_5_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_gun_6_gun_1 {pistol6}
+Enc_Carib_dialog_gun_6_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_6_item_2 {amulet_$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_2 {this amulet}
+Enc_Carib_dialog_gun_6_text_1 {おう！いい武器じゃねえか……その礼はちゃんとするぜ $ctx(offerText).}
+Enc_Carib_dialog_gun_6_l1_1 {「取引成立だ！」}
+Enc_Carib_dialog_gun_6_l2_1 {いや。ありえねえ。}
+Enc_Carib_dialog_war_indian_trade_agree_text_1 {よし。これがあんたの品だ。もう取引はしねえ。後でまた来な。もっといい火薬武器を持ってくりゃ、もっと渡してやる。 さあ、行け！}
+Enc_Carib_dialog_war_indian_trade_agree_l1_1 {さらばだ、赤き肌の戦士よ。}
+Enc_Carib_dialog_war_indian_trade_agree_text_2 {よし。これがあんたの品だ。もっと火薬武器を取引したいのか？}
+Enc_Carib_dialog_war_indian_trade_agree_l1_2 {持ってるぜ。買うか？}
+Enc_Carib_dialog_war_indian_trade_agree_l2_1 {いいや。次はもっと持ってくる。}
+Enc_Carib_dialog_war_indian_trade_exit_text_1 {持ってこい。もっといい火薬武器を持ってきたら、もっと払ってやるぜ。さあ、行け！}
+Enc_Carib_dialog_war_indian_trade_exit_l1_1 {じゃあな、戦士よ……}
+Enc_Carib_dialog_war_indian_trade_bad_text_1 {「だったら全部タダでもらうぜ、色白野郎！」}
+Enc_Carib_dialog_war_indian_trade_bad_l1_1 {試してみてもいいぜ…}
+Enc_Carib_dialog_peace_indian_text_1 {$rand(よう、白人よ。俺たちのジャングルで何の用だ？|俺たちのジャングルはとても危険だぜ。ここで何してるんだ？|「何の用だ、勇敢な白人よ？」)}
+Enc_Carib_dialog_peace_indian_l1_1 {$rand(俺はただ通りかかっただけだぜ、赤い肌の友よ。この道は俺たち二人が通るには十分な広さがあると思うが？|よう、ジャングルの息子よ！俺は用事で来ただけだ、インディアンとは戦わねえ。)}
+Enc_Carib_dialog_peace_indian_l2_1 {$rand(「なんでお前に教えなきゃなんねえんだ？自分の道を行け、余計なことに首を突っ込むな！」|自分の道を行け、赤い肌の者よ。俺はお前と話している暇はねえ。)}
+Enc_Carib_dialog_peace_indian_1_text_1 {$rand(我々は平和な民だ。白人と敵対してはいない。行くがよい、だが我々の土地では気をつけるのだぞ！|インディアンの蒼白い顔の友人に会えて嬉しいぞ。安らかに行け、海の息子よ！)}
+Enc_Carib_dialog_peace_indian_1_l1_1 {$rand(お前にも幸運を、森の息子よ……|さらばだ、赤い肌の友よ。)}
+Enc_Carib_dialog_peace_indian_2_text_1 {$rand(俺たちは平和な狩人だ。だが、この土地でそんな口をきく白人どもは許さねえぞ！|俺たちは白人とは戦わねえ。だが、白人が俺たちを侮辱すりゃ、先祖から教わった通りに応えるだけだ！)}
+Enc_Carib_dialog_peace_indian_2_l1_1 {$rand(まだその汚ねえ口を閉じられねえのか、この化粧したカカシめ！てめえが這い出てきたジャングルに叩き返してやるぜ！|俺に脅しをかけるつもりか、このクズ野郎！？今すぐてめえが降りてきた木に這い上がるんだな！)}

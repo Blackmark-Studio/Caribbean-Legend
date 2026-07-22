@@ -1,0 +1,90 @@
+Enc_Carib_dialog_First_time_text_1 {Glückwunsch! Das ist ein Fehler. Kontaktiere Jason und sag ihm, wie und wo du diesen gefunden hast. Frieden!}
+Enc_Carib_dialog_First_time_l1_1 {Ich werde es sofort tun!}
+Enc_Carib_dialog_war_indian_text_1 {$rand(Sei gegrüßt, Sohn des Meeres! Ich habe von dir gehört. Du kannst ruhig auf unserem Land gehen.|$npcName begrüßt Sie, bleichgesichtiger Bruder. Wir freuen uns, Sie als unseren Gast zu sehen.|Ich grüße dich, tapferer bleichgesichtiger Krieger! $npcName freut sich, einen Freund der Indianer zu treffen. Geh in Frieden!)}
+Enc_Carib_dialog_war_indian_l1_1 {$rand(Und sei gegrüßt, rothäutiger Bruder! Wünsche dir eine gute Jagd!|Grüße, tapferer Krieger! Mögen die Götter dich und deine Familie segnen!)}
+Enc_Carib_dialog_war_indian_l2_1 {$rand(Ich habe etwas, was für dich interessant sein könnte, rothäutiger Bruder. Lust zu handeln?|Ich kann Ihnen anbieten, etwas Interessantes zu kaufen, tapferer Krieger. Möchtest du handeln?)}
+Enc_Carib_dialog_war_indian_text_2 {$rand(Halt, bleichgesicht! Mit welchem Recht gehst du auf meinem Land?|Halt, weißer Mann! Du bist auf dem Land meiner Vorfahren und meinem Land!|Halt, bleichgesicht! Du gehörst nicht zu meinem Land)}
+Enc_Carib_dialog_war_indian_l1_2 {$rand(Dein Land? Verzieh dich, du rotgesichtiger Abschaum!|Schau ihn dir an - ein sprechender Affe! Verschwinde jetzt!)}
+Enc_Carib_dialog_war_indian_l2_2 {$rand(Ich komme in Frieden, rotgehäuteter Krieger. Wir sollten nicht umsonst kämpfen.|Ich bin kein Feind für dich und dein Land, Krieger. Ich bin in Frieden gekommen.)}
+Enc_Carib_dialog_war_indian_l3_1 {$rand(Ich bin gekommen, um mit dir zu handeln, nicht um zu kämpfen.|Ich kämpfe nicht mit Indianern. Ich handle mit ihnen.)}
+Enc_Carib_dialog_war_indian_1_text_1 {$rand(Du bedauerst es, geboren zu sein, bleichgesichtiger Hund... Ich schneide dein Herz heraus und brate es am Feuer!|Ich zwinge dich Steine zu fressen, bleichgesichtiger Hund! Wir lachen, während du auf deinen Knien um den Tod bettelst, weißer Tölpel!)}
+Enc_Carib_dialog_war_indian_1_l1_1 {$rand(Du kannst immer noch nicht dein stinkendes Maul halten, bemalter Vogelscheuche? Ich werde dich zurück in den Dschungel treiben, aus dem du gekommen bist!|Du wagst es, mir zu drohen, Abschaum?! Nun, jetzt wirst du wieder auf den Baum klettern, von dem du gerade heruntergekommen bist!)}
+Enc_Carib_dialog_war_indian_2_1_text_1 {$rand(Ich höre, deine Stimme spricht die Wahrheit. Wir ziehen unsere Äxte nicht gegen dich an diesem Tag. Geh in Frieden, Bleichgesicht.|Bleichgesicht bringt selten Frieden, aber ich sehe in deinen Augen, dass du die Wahrheit sprichst. Geh jetzt.)}
+Enc_Carib_dialog_war_indian_2_1_l1_1 {$rand(Eine weise Entscheidung, Krieger. Viel Glück für dich.|Ich bin froh, dass wir zu einem Verständnis gekommen sind, Krieger.)}
+Enc_Carib_dialog_war_indian_2_2_text_1 {$rand(Du lügst, bleichgesichtiger Hund! Du bist hierher gekommen um Indianer zu töten! Bist du bereit für den Kampf, bleichgesicht?!|Du tötest Indianer. Weiße Zunge ist lügende Zunge. Ich schneide sie ab und brate sie über dem Feuer!)}
+Enc_Carib_dialog_war_indian_2_2_l1_1 {$rand(Nun, Kumpel, mach mir dann keine Vorwürfe. Gott weiß, ich habe versucht, es zu vermeiden...|Nun, du hast danach gefragt, Krieger.)}
+Enc_Carib_dialog_war_indian_3_1_text_1 {Handel? Wir brauchen Waffe des weißen Mannes. Eine Hand feurige Waffe des bleichgesichts! Für sie tauschen wir unsere Waren! Hast du feurige Waffe zum Tausch?}
+Enc_Carib_dialog_war_indian_3_1_l1_1 {Hmm. Ich mache. Und was wirst du mir im Austausch geben?}
+Enc_Carib_dialog_war_indian_3_1_l2_1 {Du Schuft! Und dann schießt du mit meinen Pistolen auf die Kolonisten? Nein, das wird nicht passieren! Was euch, Schakale, betrifft, ich werde euch jetzt alle niederhauen...}
+Enc_Carib_dialog_war_indian_3_1_text_2 {Du hast nicht, was wir wollen, bleichgesicht... Du wirst unsere Kriegstrophäe sein!}
+Enc_Carib_dialog_war_indian_3_1_l1_2 {Versuche es, wenn du dich traust, Vogelscheuche...}
+Enc_Carib_dialog_war_indian_3_2_text_1 {$rand(Wir handeln nicht mit bleichgesichtigen Hunden. Wir töten und nehmen!|Wir sind keine dreckigen Miskito oder Arawaks, wir handeln nicht mit Bleichgesichtern! Wir töten sie und holen uns Kriegstrophäen!)}
+Enc_Carib_dialog_war_indian_3_2_l1_1 {$rand(Nun, dann versuche mich auszurauben, Schurke!|Zuerst musst du mir mein Säbel abnehmen, du Abschaum!)}
+Enc_Carib_dialog_war_indian_trade_text_1 {Du zeigst, was du hast, und wir sagen, was wir dafür geben.}
+Enc_Carib_dialog_war_indian_trade_link_dyn_1 {Offer $ctx(valueText).}
+Enc_Carib_dialog_gun_1_gun_1 {pistol1}
+Enc_Carib_dialog_gun_1_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_1_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_1_text_1 {He, ho! Wir geben dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_1_l1_1 {Abgemacht!}
+Enc_Carib_dialog_gun_1_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_gun_2_gun_1 {pistol2}
+Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_2_text_1 {He-ho! Listige Waffe... Wir geben sie dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_2_l1_1 {Abgemacht!}
+Enc_Carib_dialog_gun_2_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_gun_3_gun_1 {pistol3}
+Enc_Carib_dialog_gun_3_item_1 {jewelry5$ctx(qty)}
+Enc_Carib_dialog_gun_3_stext_1 {$ctx(qtyText) this beautiful pearl}
+Enc_Carib_dialog_gun_3_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_3_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_3_text_1 {He, ho! Mächtige Waffe! Viele-viele Feinde töten! Wir geben sie dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_3_l1_1 {Abgemacht!}
+Enc_Carib_dialog_gun_3_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_gun_4_gun_1 {pistol4}
+Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_2 {this amulet}
+Enc_Carib_dialog_gun_4_text_1 {Heu-ho! Furchterregende Waffe... Wir geben dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_4_l1_1 {Abgemacht!}
+Enc_Carib_dialog_gun_4_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_gun_5_gun_1 {pistol5}
+Enc_Carib_dialog_gun_5_item_1 {jewelry7}
+Enc_Carib_dialog_gun_5_item_2 {jewelry8}
+Enc_Carib_dialog_gun_5_item_3 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_1 {$ctx(qtyText) this beautiful and precious petrified tar}
+Enc_Carib_dialog_gun_5_item_4 {indian_$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_2 {this amulet}
+Enc_Carib_dialog_gun_5_text_1 {Hey-ho! Schöne und mächtige Waffe! Viele-viele Feinde töten! Wir geben sie dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_5_l1_1 {Abgemacht!}
+Enc_Carib_dialog_gun_5_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_gun_6_gun_1 {pistol6}
+Enc_Carib_dialog_gun_6_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_6_item_2 {amulet_$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_2 {this amulet}
+Enc_Carib_dialog_gun_6_text_1 {Heu-ho! Praktische Waffe... Wir geben dir dafür $ctx(offerText).}
+Enc_Carib_dialog_gun_6_l1_1 {Handel!}
+Enc_Carib_dialog_gun_6_l2_1 {Nein. Auf keinen Fall.}
+Enc_Carib_dialog_war_indian_trade_agree_text_1 {Gut. Hier deine Waren. Wir handeln nicht mehr. Komm später. Bessere feurige Waffe, mehr geben wir dafür. Jetzt geh!}
+Enc_Carib_dialog_war_indian_trade_agree_l1_1 {Auf Wiedersehen, rothäutiger Krieger.}
+Enc_Carib_dialog_war_indian_trade_agree_text_2 {Gut. Hier sind deine Waren. Hast du noch mehr feurige Waffen zum Handeln?}
+Enc_Carib_dialog_war_indian_trade_agree_l1_2 {Ich habe. Wirst du kaufen?}
+Enc_Carib_dialog_war_indian_trade_agree_l2_1 {Nein. Das nächste Mal bringe ich mehr.}
+Enc_Carib_dialog_war_indian_trade_exit_text_1 {Bring. Bessere feurige Waffe mehr geben wir dafür. Jetzt geh!}
+Enc_Carib_dialog_war_indian_trade_exit_l1_1 {Auf Wiedersehen, Krieger...}
+Enc_Carib_dialog_war_indian_trade_bad_text_1 {Dann nehmen wir alles kostenlos, Bleichgesicht!}
+Enc_Carib_dialog_war_indian_trade_bad_l1_1 {Du kannst es versuchen...}
+Enc_Carib_dialog_peace_indian_text_1 {$rand(Heil, weißer Mann. Was brauchst du in unserem Dschungel?|Unser Dschungel ist sehr gefährlich. Was machst du hier?|Was bringt dich hierher, tapferes Bleichgesicht?)}
+Enc_Carib_dialog_peace_indian_l1_1 {$rand(Ich bin nur vorbeigekommen, mein rotgesichtiger Freund. Ich glaube, auf diesem Weg ist genug Platz für uns beide?|Grüße, Sohn des Dschungels! Ich bin geschäftlich hier und kämpfe nicht gegen Indianer.)}
+Enc_Carib_dialog_peace_indian_l2_1 {$rand(Und warum müssen Sie das wissen? Geh deinen eigenen Weg und halte dich von Ärger fern!|Geh deinen eigenen Weg, Rothäutiger. Ich habe keine Zeit, mit dir zu sprechen.)}
+Enc_Carib_dialog_peace_indian_1_text_1 {$rand(Wir friedliche Leute. Wir nicht Feinde mit weißen Männern. Geh, aber sei vorsichtig auf unserem Land!|Ich freue mich, bleichgesichtigen Freund der Indianer zu treffen. Geh in Frieden, Sohn des Meeres!)}
+Enc_Carib_dialog_peace_indian_1_l1_1 {$rand(Viel Glück auch dir, Sohn des Dschungels...|Auf Wiedersehen, rothäutiger Freund.)}
+Enc_Carib_dialog_peace_indian_2_text_1 {$rand(Wir friedliche Jäger. Aber wir dulden es nicht, wenn Bleichgesichter so auf unserem Land reden!|Wir kämpfen nicht mit weißen Männern, aber wenn weiße Männer uns beleidigen, antworten wir wie unsere Vorfahren es uns gelehrt haben!)}
+Enc_Carib_dialog_peace_indian_2_l1_1 {$rand(Du kannst immer noch nicht dein stinkendes Maul halten, bemalter Vogelscheuche? Ich werde dich zurück in den Dschungel treiben, aus dem du gekommen bist!|Du wagst es, mir zu drohen, Abschaum?! Jetzt wirst du den Baum wieder hochklettern, von dem du gerade heruntergekommen bist!)}

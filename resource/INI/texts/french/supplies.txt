@@ -1,0 +1,22 @@
+weapon_0 {aucun}
+weapon_1 {insuffisant}
+weapon_2 {suffisant}
+weapon_3 {excédentaire}
+weapon_tooltip {Pour réussir un abordage, il faut disposer de plus d’armes que de matelots. Dans le cas contraire, l’équipage subira de terribles malus et des pertes considérables.}
+bortFire_tooltip {Une salve nécessite $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {Le stock total suffira pour $decl($ctx(mineQty)|mine|mines|mines)}
+food_tooltip {Consommation actuelle : $decl($ctx(foodconsumption)|paquet|paquets|paquets) par jour}
+food_approximation_tooltip {Avec un équipage au complet, le navire aura besoin de $decl($ctx(approximation.foodconsumption)|paquet|paquets|paquets)}
+medicament_tooltip {Consommation actuelle : $decl($ctx(medicamentconsumption)|paquet|paquets|paquets) par jour}
+medicament_approximation_tooltip {Avec un équipage au complet, le navire aura besoin de $decl($ctx(approximation.medicamentconsumption)|paquet|paquets|paquets)}
+rum_tooltip {Consommation actuelle : $decl($ctx(rumconsumption)|tonnelet|tonnelets|tonnelets) par jour}
+rum_approximation_tooltip {Avec un équipage au complet, le navire aura besoin de $decl($ctx(approximation.rumconsumption)|tonnelet|tonnelets|tonnelets)}
+spareCannons {$ctx(qty) de rechange}
+money {Pas assez d’argent}
+goods {Pas assez de marchandises}
+cooldown {Vous devez vous reposer}
+raiseMoraleText {Pour remonter le moral de l’équipage, vous devez lui distribuer :$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Pour entraîner l’équipage, vous devez lui distribuer :$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Réparation : $percent($ctx(hullPerDay)) par jour, consommation de $decl($ctx(planksPerDay)|planche|planches|planches)}
+sailcloth_tooltip {Réparation : $percent($ctx(sailsPerDay)) par jour, consommation de $decl($ctx(sailClothesPerDay)|toile à voile|toile à voile|toile à voile)}
+spareCannons_tooltip {Seuls les canons du calibre principal sont considérés comme des canons de réserve. Les canons de chasse et de retraite ne sont pas pris en compte dans ces calculs.}

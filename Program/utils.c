@@ -808,21 +808,6 @@ void DumpAttributesAref(ref rObject, string attributeName)
 	trace("============== ↑ DUMP ATTRIBUTE: " + attributeName + " ↑ ===============");
 }
 
-void ShuffleArray(ref rArray)
-{
-    int j;
-    int size = GetArraySize(rArray);
-    SetArraySize(rArray, size + 1);
-    for (int i = size-1; i > 0; i--)
-    {
-        j = rand(i);
-        rArray[size] = rArray[i];
-        rArray[i] = rArray[j];
-        rArray[j] = rArray[size];
-    }
-    SetArraySize(rArray, size);
-}
-
 // Обрезаем строчку по длине и добавляем в конец многоточие или что-нибудь другое
 string Truncate(string text, int maxLength, string omnission)
 {
@@ -857,10 +842,10 @@ int FindIndexOf(ref array, ref el, int arraySize = -1)
 	return -1;
 }
 
-// Округление вверх, JOKERTODO: лучше бы подтянуть нативное
+// Округление вверх + приведение к int
 int ceil(float num)
 {
-	return int(num+0.999);
+	return int(ceilf(num));
 }
 
 // Проверяем, есть ли файл

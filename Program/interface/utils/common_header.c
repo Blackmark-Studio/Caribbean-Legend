@@ -2,17 +2,17 @@
 void SetCommonHeaderInfo()
 {
 	string sIni = "resource\ini\interfaces\components\header.ini";
-	XI_MakeNode(sIni, "FORMATEDTEXT", "MONEY", 100);
-	XI_MakeNode(sIni, "FORMATEDTEXT", "Dublon", 100);
-	XI_MakeNode(sIni, "IMAGECOLLECTION", "MONEY_ICON", 100);
-	XI_MakeNode(sIni, "IMAGECOLLECTION", "WEIGHT_ICON", 100);
-	XI_MakeNode(sIni, "PICTURE", "SEASON_ICON_BG", 100);
-	XI_MakeNode(sIni, "PICTURE", "SEASON_ICON", 100);
+	XI_MakeNode(sIni, "FORMATEDTEXT", "MONEY", 90);
+	XI_MakeNode(sIni, "FORMATEDTEXT", "Dublon", 90);
+	XI_MakeNode(sIni, "IMAGECOLLECTION", "MONEY_ICON", 90);
+	XI_MakeNode(sIni, "IMAGECOLLECTION", "WEIGHT_ICON", 90);
+	XI_MakeNode(sIni, "PICTURE", "SEASON_ICON_BG", 90);
+	XI_MakeNode(sIni, "PICTURE", "SEASON_ICON", 90);
 	SetNewGroupPicture("SEASON_ICON", "SEASONS_ICONS", SZN_GetCurrentSeasonName());
 	
 	if (CurrentInterface != INTERFACE_QUESTBOOK)
 	{
-		XI_MakeNode(sIni, "FORMATEDTEXT", "WEIGHT", 100);
+		XI_MakeNode(sIni, "FORMATEDTEXT", "WEIGHT", 90);
 		SetFormatedText("Weight", FloatToString(GetItemsWeight(&xi_refCharacter), 1) + " / " + GetMaxItemsWeight(&xi_refCharacter));
 	}
 	else

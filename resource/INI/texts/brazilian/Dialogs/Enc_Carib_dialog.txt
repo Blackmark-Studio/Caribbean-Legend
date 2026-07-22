@@ -1,0 +1,90 @@
+Enc_Carib_dialog_First_time_text_1 {Parabéns! Isso é um bug. Entre em contato com o Jason e conte como e onde você encontrou isso. Valeu!}
+Enc_Carib_dialog_First_time_l1_1 {Vou fazer isso imediatamente!}
+Enc_Carib_dialog_war_indian_text_1 {$rand(Saudações, filho do mar! Já ouvi falar de você. Pode andar livremente por nossas terras.|$npcName saúda você, irmão de rosto pálido. Ficamos felizes em tê-lo como nosso convidado.|Saúdo você, bravo guerreiro de rosto pálido! $npcName está feliz em conhecer um amigo dos índios. Vá em paz!)}
+Enc_Carib_dialog_war_indian_l1_1 {$rand(E saudações para você, irmão de pele vermelha! Que tenha uma boa caçada!|Saudações, bravo guerreiro! Que os deuses abençoem você e sua família!)}
+Enc_Carib_dialog_war_indian_l2_1 {$rand(Tenho algo que pode te interessar, irmão de pele vermelha. Quer negociar?|Posso te oferecer algo interessante para comprar, bravo guerreiro. Quer negociar?)}
+Enc_Carib_dialog_war_indian_text_2 {$rand(Pare, cara-pálida! Com que direito você pisa na minha terra?|Pare, homem branco! Você está na terra dos meus antepassados e na minha terra!|Pare, cara-pálida! Você não pertence à minha terra)}
+Enc_Carib_dialog_war_indian_l1_2 {$rand(Terra sua? Cai fora, seu desgraçado de cara vermelha!|Olha pra ele – um macaco falante! Cai fora, vai!)}
+Enc_Carib_dialog_war_indian_l2_2 {$rand(Vim em paz, guerreiro de pele vermelha. Não devemos lutar à toa.|Não sou inimigo seu nem da sua terra, guerreiro. Vim em paz.)}
+Enc_Carib_dialog_war_indian_l3_1 {$rand(Vim negociar com você, não lutar.|Eu não luto com índios. Eu faço comércio com eles.)}
+Enc_Carib_dialog_war_indian_1_text_1 {$rand(Você vai se arrepender do dia em que nasceu, cachorro de cara pálida... Vou arrancar seu coração e assá-lo na fogueira!|Vou te fazer comer pedras, cachorro de cara pálida! Vamos rir enquanto você implora pela morte de joelhos, vira-lata branco!)}
+Enc_Carib_dialog_war_indian_1_l1_1 {$rand(Você ainda não consegue calar essa boca imunda, seu espantalho enfeitado? Vou te mandar de volta pra selva de onde você rastejou!|Você ousa me ameaçar, seu verme?! Pois agora vai voltar correndo pro buraco de onde saiu!)}
+Enc_Carib_dialog_war_indian_2_1_text_1 {$rand(Ouço que sua voz fala a verdade. Não vamos erguer nossos machados contra você hoje. Vá em paz, cara-pálida.|Rosto pálido raramente traz paz, mas vejo nos seus olhos que fala a verdade. Vá agora.)}
+Enc_Carib_dialog_war_indian_2_1_l1_1 {$rand(Uma decisão sábia, guerreiro. Boa sorte pra você.|Fico feliz que tenhamos chegado a um entendimento, guerreiro.)}
+Enc_Carib_dialog_war_indian_2_2_text_1 {$rand(Mentiroso, cachorro de cara pálida! Você veio aqui para matar índios! Pronto para a luta, cara pálida?!|Você mata índios. Língua branca é língua mentirosa. Eu corto ela fora e frito na fogueira!)}
+Enc_Carib_dialog_war_indian_2_2_l1_1 {$rand(Bem, camarada, então não me culpe. Deus sabe que eu tentei evitar isso...|Bem, você que pediu, guerreiro.)}
+Enc_Carib_dialog_war_indian_3_1_text_1 {Troca? Precisamos da arma do homem branco. Aquela arma de fogo de uma mão só dos rostos-pálidos! Por isso, trocaremos nossas mercadorias! Você tem uma arma de fogo para trocar?}
+Enc_Carib_dialog_war_indian_3_1_l1_1 {Hmm. Eu tenho. E o que você vai me dar em troca?}
+Enc_Carib_dialog_war_indian_3_1_l2_1 {Seu canalha! E depois vai atirar nos colonos com as minhas pistolas? Não, isso não vai acontecer! Quanto a vocês, chacais, vou acabar com todos agora...}
+Enc_Carib_dialog_war_indian_3_1_text_2 {Você não tem o que queremos, cara-pálida... Você será nosso troféu de guerra!}
+Enc_Carib_dialog_war_indian_3_1_l1_2 {Tente se tiver coragem, espantalho...}
+Enc_Carib_dialog_war_indian_3_2_text_1 {$rand(Não negociamos com cães de cara-pálida. Matamos e tomamos!|Não somos imundos Miskitos ou Arawaks, não negociamos com caras-pálidas! Nós os matamos e pegamos seus troféus de guerra!)}
+Enc_Carib_dialog_war_indian_3_2_l1_1 {$rand(Então tente me roubar, canalha!|Primeiro, você vai ter que tirar meu sabre de mim, seu verme!)}
+Enc_Carib_dialog_war_indian_trade_text_1 {Você mostra o que tem, e a gente diz o que oferece por isso.}
+Enc_Carib_dialog_war_indian_trade_link_dyn_1 {Offer $ctx(valueText).}
+Enc_Carib_dialog_gun_1_gun_1 {pistol1}
+Enc_Carib_dialog_gun_1_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_1_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_1_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_1_text_1 {Ei, ei! Nós vamos te pagar por isso $ctx(offerText).}
+Enc_Carib_dialog_gun_1_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_1_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_gun_2_gun_1 {pistol2}
+Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) vial of good curative potion}
+Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_2_text_1 {Ei, que arma astuta... Vamos te dar algo por ela $ctx(offerText).}
+Enc_Carib_dialog_gun_2_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_2_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_gun_3_gun_1 {pistol3}
+Enc_Carib_dialog_gun_3_item_1 {jewelry5$ctx(qty)}
+Enc_Carib_dialog_gun_3_stext_1 {$ctx(qtyText) this beautiful pearl}
+Enc_Carib_dialog_gun_3_item_2 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_3_stext_2 {$ctx(qtyText) this beautiful stone}
+Enc_Carib_dialog_gun_3_text_1 {Ei-ho! Arma poderosa! Mata muitos, muitos inimigos! A gente te dá por ela $ctx(offerText).}
+Enc_Carib_dialog_gun_3_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_3_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_gun_4_gun_1 {pistol4}
+Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
+Enc_Carib_dialog_gun_4_stext_2 {this amulet}
+Enc_Carib_dialog_gun_4_text_1 {Ei! Uma arma assustadora... Vamos te dar isto em troca $ctx(offerText).}
+Enc_Carib_dialog_gun_4_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_4_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_gun_5_gun_1 {pistol5}
+Enc_Carib_dialog_gun_5_item_1 {jewelry7}
+Enc_Carib_dialog_gun_5_item_2 {jewelry8}
+Enc_Carib_dialog_gun_5_item_3 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_1 {$ctx(qtyText) this beautiful and precious petrified tar}
+Enc_Carib_dialog_gun_5_item_4 {indian_$ctx(valueText)}
+Enc_Carib_dialog_gun_5_stext_2 {this amulet}
+Enc_Carib_dialog_gun_5_text_1 {Ei! Que arma linda e poderosa! Já matou muitos, muitos inimigos! Nós te damos por ela $ctx(offerText).}
+Enc_Carib_dialog_gun_5_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_5_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_gun_6_gun_1 {pistol6}
+Enc_Carib_dialog_gun_6_item_1 {jewelry$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
+Enc_Carib_dialog_gun_6_item_2 {amulet_$ctx(valueText)}
+Enc_Carib_dialog_gun_6_stext_2 {this amulet}
+Enc_Carib_dialog_gun_6_text_1 {Ei, bela arma... Podemos te dar algo por ela $ctx(offerText).}
+Enc_Carib_dialog_gun_6_l1_1 {Fechado!}
+Enc_Carib_dialog_gun_6_l2_1 {Não. De jeito nenhum.}
+Enc_Carib_dialog_war_indian_trade_agree_text_1 {Ótimo. Aqui estão suas mercadorias. Não vamos negociar mais. Volte depois. Pagamos mais por uma arma de fogo melhor. Agora vá!}
+Enc_Carib_dialog_war_indian_trade_agree_l1_1 {Até logo, guerreiro de pele vermelha.}
+Enc_Carib_dialog_war_indian_trade_agree_text_2 {Certo. Aqui estão suas mercadorias. Tem mais armas de fogo para trocar?}
+Enc_Carib_dialog_war_indian_trade_agree_l1_2 {Tenho sim. Vai querer comprar?}
+Enc_Carib_dialog_war_indian_trade_agree_l2_1 {Não. Da próxima vez eu trago mais.}
+Enc_Carib_dialog_war_indian_trade_exit_text_1 {Traga. Traga uma arma de fogo melhor e nós pagaremos mais por ela. Agora vá!}
+Enc_Carib_dialog_war_indian_trade_exit_l1_1 {Até logo, guerreiro...}
+Enc_Carib_dialog_war_indian_trade_bad_text_1 {Então a gente pega tudo de graça, cara-pálida!}
+Enc_Carib_dialog_war_indian_trade_bad_l1_1 {Pode tentar...}
+Enc_Carib_dialog_peace_indian_text_1 {$rand(Saudações, homem branco. O que você procura em nossa selva?|A nossa selva é muito perigosa. O que você está fazendo aqui?|O que traz você aqui, bravo rosto-pálido?)}
+Enc_Carib_dialog_peace_indian_l1_1 {$rand(Eu só estava de passagem, meu amigo de pele vermelha. Acho que tem espaço suficiente nesse caminho para nós dois?|Saudações, filho da selva! Estou aqui a negócios, e não luto contra índios.)}
+Enc_Carib_dialog_peace_indian_l2_1 {$rand(E por que você precisa saber? Cuide da sua vida e não se meta em encrenca!|Siga seu caminho, pele-vermelha. Não tenho tempo para conversar com você.)}
+Enc_Carib_dialog_peace_indian_1_text_1 {$rand(Somos um povo pacífico. Não somos inimigos dos homens brancos. Vá, mas tenha cuidado em nossa terra!|Fico feliz em conhecer o amigo de rosto pálido dos índios. Vá em paz, filho do mar!)}
+Enc_Carib_dialog_peace_indian_1_l1_1 {$rand(Boa sorte pra você também, filho da selva...|Adeus, amigo de pele vermelha.)}
+Enc_Carib_dialog_peace_indian_2_text_1 {$rand(Somos caçadores pacíficos. Mas não vamos tolerar rostos-pálidos falando assim em nossas terras!|Não lutamos contra homens brancos, mas se homens brancos nos ofendem, respondemos como nossos antepassados nos ensinaram!)}
+Enc_Carib_dialog_peace_indian_2_l1_1 {$rand(Você ainda não consegue calar essa boca imunda, seu espantalho pintado? Vou te mandar de volta pra selva de onde você rastejou!|Você ousa me ameaçar, seu verme?! Agora vai subir de volta na árvore de onde acabou de descer!)}

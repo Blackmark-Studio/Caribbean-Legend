@@ -1,0 +1,16 @@
+Alone_Soldier_First_time_text_1 {$rand(Selam|Merhaba|Esenlikler|İyi vakitler), $rand(yabancı|yolcu|seyyah)! $rand(Bana birini hatırlatıyorsun... Hadi rahatla, ha-ha!|Yüzün bir yerden tanıdık geliyor... Yakaladım seni, ha-ha. Gerilme, şaka yapıyorum.|Yoksa üç gündür aradığımız adam sen misin... ha! Suratını görmeliydin!|Dur hele... bizim karakolda asılı duran resim senin değil mi yoksa? Vayyy... betin benzin attı, ha-ha! Rahat ol.|Bir dakika... kaçakçılara rastladığımızda ormana kaçan sen değil miydin yoksa? Ha-ha-ha, gözlerin faltaşı gibi açıldı... sakin ol!) Bu ormanlarda can sıkıntısından geberiyorum doğrusu! Hava sıcak, üniforma sıkıyor, ortalıkta tek canlı ruh yok, ben de biraz takılayım dedim. Canlı bir insan görmek artık bana mucize gibi geliyor, şöyle düzgün bir içkiden ise rüyamda bile söz edemem. Eee, ne istiyordun?}
+Alone_Soldier_GiveRum {(Rom) Tam da sana biraz rom ısmarlayacaktım zaten. Al, çekinme. Asker içer, nöbet yürür - sen de bilirsin.}
+Alone_Soldier_GiveWine {(Şarap) Kadehi bir şekilde kendin bulursun artık ama güzel bir şarabı paylaşabilirim. Al. Bana öyle bakma - gözümde değil. Önemli iş yapıyorsun.}
+Alone_Soldier_Bye {Bir şey yok, sadece selam vermek istedim.}
+Alone_Soldier_First_time_text_2 {Ne oldu? Şüpheli bir şey mi fark ettin? Yoksa içki dolu bir zula mı gördün? Ah... şimdi bir kadeh olsa ne giderdi... Öhöm, ee, ne istemiştin?}
+Alone_Soldier_Bye_2 {Sadece nöbette uyuyup kalmadın mı diye bakıyordum, ha-ha! Hoşça kal.}
+Alone_Soldier_Thanks_Rum {Oooh! İşte bu oldu. Hadi, senin sağlığına. Brrr, ne de sertmiş. Çok teşekkürler dostum. Yoksa sen de askerliğin içinden mi çıktın? Duruşun asker gibi, bakışın da keskin. Daha çok yol alırsın. Neyse, ben yine patikaları adımlamaya gideyim, ama seni ömrümce unutmam!}
+Alone_Soldier_Thanks_Wine {Vay canına, bugün bayram falan mı? Yoksa sıcaktan olmayan şeyleri görmeye mi başladım? Ne hoş şarapmış, teşekkür ederim. Daha ilk bakışta belli ki insanlara adam gibi davranmasını biliyorsun; ben senin iyi kalbini elli kademeden görmüştüm zaten. Ne kadar harika biri olduğunu herkese anlatacağım!}
+Alone_Soldier_Rum_End {Benim de artık gitmem gerek. Neyse, sana iyi nöbetler.}
+Alone_Soldier_Wine_End {Bundan hiç şüphem yok. Asker milleti basit olur; onlara nasıl gelirsen, onlar da sana... şey... işte aynı şekilde... hah, iyice karıştırdım. Neyse, esenlikler. Hoşça kal.}
+Alone_Soldier_NoBlade_0 {Elde silahla koşarken köşelerde daha dikkatli ol. Ben de birden gerilebilirim...}
+Alone_Soldier_NoBlade_1 {İnsanların önümde silahını hazır tutarak dolaşmasından hoşlanmam. Sok şu demiri tekrar kınına, dostum.}
+Alone_Soldier_NoBlade_Ok_0 {Anlaşıldı.}
+Alone_Soldier_NoBlade_Ok_1 {Kınına sokuyorum.}
+Alone_Soldier_Boozy {$rand(H-hıçk! Sana tekrar teşekkür ederim, dostum! Oturup birkaç hikâye anlatmaz mısın?|Hıçk... Evet, artık görev tereyağı gibi kayıyor! Sen ne diyorsun, bir kadeh yuvarlamak istemez misin?|Ah... güzel içkiymiş. Umarım sonra bunun için tepeme binmezler. Benimle içer misin? İki kişiyi kesin... hıçk... yakalayamazlar!)}
+Alone_Soldier_Boozy_Ok {$rand(Seninle içerdim, ama işler bekliyor.|Hayır dostum, sanırım bensiz de idare edersin.)}

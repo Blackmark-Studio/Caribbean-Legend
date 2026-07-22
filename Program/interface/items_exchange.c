@@ -7,6 +7,8 @@
 #include "interface\utils\common_exchange.c"
 #include "interface\utils\items\descriptors.c"
 #include "interface\utils\modifiers.c"
+#include "interface\utils\universal_input.c"
+
 
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по вкладкам
 #event_handler("Control Activation","TakeAllHotkey"); // Отдельно взять всё
@@ -186,12 +188,22 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
 	SetEventHandler("frame","ProcessFrame",1);
 	SetEventHandler("eTabControlPress", "procTabChange", 0);
+
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("TABLE_LIST", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("TABLE_LIST2", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	
+	XI_SetClickInputHandler("TABLE_ADD_BUTTON", "TABLE_REMOVE_BUTTON", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("TABLE_ADD_BUTTON2", "TABLE_REMOVE_BUTTON2", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+
+
+	XI_SetArrowsInputHandler("QTY_OK_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_CANCEL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_EDIT", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("QTY_REMOVE_BUTTON", "QTY_ADD_BUTTON", &REMOVE_BUTTON, &ADD_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetUniversalInputTooltip("QTY_EDIT", "QTY_WINDOW", XI_UNIVERSAL_INPUT_ITEMS);
 
 	SetFormatedText("STORECAPTION", XI_ConvertString(sGetInterfaceTypeStr("titleExchangeItems", "titleItemsBox", "titleDeadItems","titleBarrel")));
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
@@ -539,10 +551,8 @@ void IDoExit(int exitCode)
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	XI_ExitUniversalInput();
+
 	DelEventHandler("eTabControlPress", "procTabChange");
 	
 	interfaceResultCommand = exitCode;
@@ -559,154 +569,6 @@ void ProcCommand()
 
 	switch(nodName)
 	{
-		case "TABLE_REMOVE_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				onTableRemoveBtnClick();
-			}
-			if (comName=="rclick") onTableRemoveAllBtnClick();
-		break;
-
-		// case "TABLE_REMOVE_ALL_BUTTON":
-		// 	if(comName == "activate" || comName == "click")
-		// 	{
-		// 		if(bShowChangeWin) REMOVE_ALL_BUTTON();
-		// 		else onTableRemoveAllBtnClick();
-		// 	}
-		// break;
-
-		// case "TABLE_ADD_ALL_BUTTON":
-		// 	if(comName == "activate" || comName == "click")
-		// 	{
-		// 		if(bShowChangeWin) ADD_ALL_BUTTON();
-		// 		else onTableAddAllBtnClick();
-		// 	}
-		// break;
-
-		case "TABLE_ADD_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				onTableAddBtnClick();
-			}
-			if (comName=="rclick") onTableAddAllBtnClick();
-		break;
-		
-		case "TABLE_LIST":
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-			 onTableRemoveBtnClick();
-			}
-			if(comName=="speedright")
-			{
-				onTableRemoveAllBtnClick();
-			}
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-				onTableAddBtnClick();
-			}
-			if(comName=="speedleft")
-			{
-				onTableAddAllBtnClick();
-			}
-			if(comName=="click")
-			{
-				validLineClicked = false; // убираем валидность клика для подсказок, если нажали ЛКМ
-			}
-		break;
-
-		case "TABLE_REMOVE_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				onTableRemoveBtnClick();
-			}
-			if (comName=="rclick") onTableRemoveAllBtnClick();
-		break;
-
-		// case "TABLE_REMOVE_ALL_BUTTON2":
-		// 	if(comName == "activate" || comName == "click")
-		// 	{
-		// 		if(bShowChangeWin) REMOVE_ALL_BUTTON();
-		// 		else onTableRemoveAllBtnClick();
-		// 	}
-		// break;
-
-		// case "TABLE_ADD_ALL_BUTTON2":
-		// 	if(comName == "activate" || comName == "click")
-		// 	{
-		// 		if(bShowChangeWin) ADD_ALL_BUTTON();
-		// 		else onTableAddAllBtnClick();
-		// 	}
-		// break;
-
-		case "TABLE_ADD_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				onTableAddBtnClick();
-			}
-			if (comName=="rclick") onTableAddAllBtnClick();
-		break;
-		
-		case "TABLE_LIST2":
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-				onTableRemoveBtnClick();
-			}
-			if(comName=="speedright")
-			{
-				onTableRemoveAllBtnClick();
-			}
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-				onTableAddBtnClick();
-			}
-			if(comName=="speedleft")
-			{
-				onTableAddAllBtnClick();
-			}
-			if(comName=="click")
-			{
-				validLineClicked = false;
-			}
-		break;
-		
-		case "QTY_OK_BUTTON":
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "QTY_CANCEL_BUTTON":
-			if(comName=="leftstep" || comName=="ctrlleft")
-			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep" || comName=="ctrlright")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
-			}
-		break;
-
 		case "GET_BUTTON":
 			if(comName == "activate" || comName == "click")
 			{
@@ -1284,6 +1146,7 @@ void ShowInfoWindow()
 		sText3 = "";
 	}
 
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
 	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
 	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false, false);
@@ -1525,11 +1388,9 @@ void onGetAllBtnClick()
 	// <-- Warship fix 10.06.09
 }
 // Нажали на табличной стрелочке "взять 1 ед. предмета одного типа"
-void onTableAddBtnClick()
+void onTableAddBtnClick(int targetValue = 1)
 {
-	int targetValue = 1;
-	if (XI_IsKeyPressed("control")) targetValue = 10;
-	if (XI_IsKeyPressed("shift"))
+	if (targetValue > 100)
 	{
 		onTableAddAllBtnClick();
 		return;
@@ -1626,11 +1487,9 @@ void onTableRemoveAllBtnClick()
 }
 
 // Нажали на табличной стрелочке "отдать 1 ед. предмета одного типа"
-void onTableRemoveBtnClick()
+void onTableRemoveBtnClick(int targetValue = 1)
 {
-	int targetValue = 1;
-	if (XI_IsKeyPressed("control")) targetValue = 10;
-	if (XI_IsKeyPressed("shift"))
+	if (targetValue > 100)
 	{
 		onTableRemoveAllBtnClick();
 		return;

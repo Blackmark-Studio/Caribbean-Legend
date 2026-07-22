@@ -1113,6 +1113,18 @@ void Blood_InBody()
 	GetCharacterPos(chr, &x, &y, &z);
     CreateParticleSystem("blood", x, y + 1.0, z, 0.0, 1.0, 0.0, 0);
     SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
+    if ("ev_first_hit" !in chr)
+    {
+        chr.ev_first_hit = "";
+        int id = Play3DSound("BlockBreak", x, y, z);
+        Sound_SetVolume(id, 1.2);
+    }
+    else
+    {
+        DeleteAttribute(chr, "ev_first_hit");
+        int id = Play3DSound("manhit", x, y, z);
+        Sound_SetVolume(id, 1.2);
+    }
 }
 
 #event_handler("Animation_hit_stab_2", "Blood_InNeck");
@@ -1127,4 +1139,6 @@ void Blood_InNeck()
     RotateAroundY(&off_x, &off_z, cos(ay), sin(ay));
     CreateParticleSystem("blood_fire2", x - off_x, y + 1.42, z - off_z, -Pid2*0.33, ay-Pid2, 0.0, 0);
     SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
+    int id = Play3DSound("manhit", x, y, z);
+    Sound_SetVolume(id, 1.2);
 }

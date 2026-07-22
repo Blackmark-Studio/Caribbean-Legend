@@ -17,7 +17,7 @@ bool LAi_IsHitCritical(ref attacker, ref table, string weaponType, string strike
 		SetAttribute(attacker, "chr_ai.crit_counter", func_min(0, -strikeConter)); // обнуляем или бахаем штраф, если каунтер был положительный
 		return true; // кританули
 	}
-
+	
 	AddToAttributeInt(attacker, "chr_ai.crit_counter", 1); // не кританули, записываем +1
 	return false;
 }
@@ -388,53 +388,6 @@ float LAi_NPC_GetActionEnergy()
 	return npc_return_tmp;
 }
 
-#event_handler("Npc_GetCurHP","LAi_NPC_GetCurHP");
-float LAi_NPC_GetCurHP()
-{
-	aref chr = GetEventData();
-	npc_return_tmp = LAi_GetCharacterHP(chr);
-	return npc_return_tmp;
-}
-
-#event_handler("Npc_GetMaxHP","LAi_NPC_GetMaxHP");
-float LAi_NPC_GetMaxHP()
-{
-	aref chr = GetEventData();
-	npc_return_tmp = LAi_GetCharacterMaxHP(chr);
-	return npc_return_tmp;
-}
-
-#event_handler("Npc_GetRelHeal","LAi_NPC_GetRelHeal");
-float LAi_NPC_GetRelHeal()
-{
-	aref chr = GetEventData();
-	if(!CheckAttribute(chr, "chr_ai.hp_bottle"))
-		return -1.0;
-	float heal = LAi_GetCharacterHP(chr) + float(chr.chr_ai.hp_bottle);
-	float maxhp = LAi_GetCharacterMaxHP(chr);
-	if(heal > maxhp)
-		heal = maxhp;
-	npc_return_tmp = heal / maxhp;
-	return npc_return_tmp;
-}
-
-#event_handler("Npc_IsPoisoned","LAi_NPC_IsPoisoned");
-bool LAi_NPC_IsPoisoned()
-{
-	aref chr = GetEventData();
-	if(LAi_IsPoison(chr))
-		return true;
-	if(CheckAttribute(chr, "quest.indianpoisoned"))
-		return true;
-	return false;
-}
-
-#event_handler("Npc_GetSerifWidth","Npc_GetSerifWidth");
-float Npc_GetSerifWidth()
-{
-	return ENEMY_BARS_SERIF_WIDTH;
-}
-
 //Необходимо вернуть максимально быстро нормализованое значение жизни
 #event_handler("NpcEvtHP", "LAi_NPC_EvtGetHP");
 float LAi_NPC_EvtGetHP()
@@ -452,6 +405,80 @@ float LAi_NPC_EvtGetEny()
 	npc_return_tmp = LAi_GetCharacterRelEnergy(chr);
 	return npc_return_tmp;
 }
+
+// бары -->
+
+#event_handler("Character_GetCurHP", "Character_GetCurHP");
+float Character_GetCurHP()
+{
+	aref chr = GetEventData();
+	npc_return_tmp = LAi_GetCharacterHP(chr);
+	return npc_return_tmp;
+}
+
+#event_handler("Character_GetMaxHP", "Character_GetMaxHP");
+float Character_GetMaxHP()
+{
+	aref chr = GetEventData();
+	npc_return_tmp = LAi_GetCharacterMaxHP(chr);
+	return npc_return_tmp;
+}
+
+#event_handler("Character_GetHPSerifWidth", "Character_GetHPSerifWidth");
+float Character_GetHPSerifWidth()
+{
+	return ENEMY_BARS_HP_SERIF_WIDTH;
+}
+
+#event_handler("Character_GetRelHeal", "Character_GetRelHeal");
+float Character_GetRelHeal()
+{
+	aref chr = GetEventData();
+	if(!CheckAttribute(chr, "chr_ai.hp_bottle"))
+		return -1.0;
+	float heal = LAi_GetCharacterHP(chr) + float(chr.chr_ai.hp_bottle);
+	float maxhp = LAi_GetCharacterMaxHP(chr);
+	if(heal > maxhp)
+		heal = maxhp;
+	npc_return_tmp = heal / maxhp;
+	return npc_return_tmp;
+}
+
+#event_handler("Character_IsPoisoned", "Character_IsPoisoned");
+bool Character_IsPoisoned()
+{
+	aref chr = GetEventData();
+	if(LAi_IsPoison(chr))
+		return true;
+	if(CheckAttribute(chr, "quest.indianpoisoned"))
+		return true;
+	return false;
+}
+
+#event_handler("Character_GetCurEnergy", "Character_GetCurEnergy");
+float Character_GetCurEnergy()
+{
+	aref chr = GetEventData();
+	if(CheckAttribute(chr, "chr_ai.energy"))
+		return float(chr.chr_ai.energy);
+	return 0.0;
+}
+
+#event_handler("Character_GetMaxEnergy", "Character_GetMaxEnergy");
+float Character_GetMaxEnergy()
+{
+	aref chr = GetEventData();
+	npc_return_tmp = LAi_GetCharacterMaxEnergy(chr);
+	return npc_return_tmp;
+}
+
+#event_handler("Character_GetEnergySerifWidth", "Character_GetEnergySerifWidth");
+float Character_GetEnergySerifWidth()
+{
+	return ENEMY_BARS_ENERGY_SERIF_WIDTH;
+}
+
+// бары <--
 
 float SprintStartEnergyReq = 15.0;
 

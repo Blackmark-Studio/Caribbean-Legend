@@ -1,3 +1,6 @@
+
+#include "interface\utils\universal_input.c"
+
 ////    boal 31/03/06 STORE
 string totalInfo = "";
 int  TableSelect = 0;
@@ -74,7 +77,6 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
-	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
 	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
 	SetEventHandler("HideInfoWindow", "HideInfoWindow", 0);
@@ -82,11 +84,6 @@ void InitInterface_R(string iniName, ref pStore)
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
 
 	SetEventHandler("SellGoods", "SellGoods", 0);
 	SetEventHandler("SellAll", "SellAll", 0);
@@ -106,6 +103,18 @@ void InitInterface_R(string iniName, ref pStore)
 	{
 		SetNewPicture("OTHER_PICTURE", "interfaces\le\portraits\256\face_" + string(refShipChar.FaceId) + ".tga");
 	}
+
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("TABLE_LIST", &AddOrRemove, &RemoveGoods);
+	XI_SetArrowsInputHandler("QTY_EDIT", &AddOrRemove, &RemoveGoods);
+	XI_SetArrowsInputHandler("QTY_BUYSELL_BUTTON", &AddOrRemove, &RemoveGoods);
+	XI_SetClickInputHandler("QTY_ADD_BUTTON", "QTY_REMOVE_BUTTON", &AddOrRemove, &RemoveGoods);
+	XI_SetUniversalInputTooltip("QTY_EDIT");
+}
+
+void RemoveGoods(int value)
+{
+	AddOrRemove(-value);
 }
 
 void ProcessBreakExit()
@@ -132,7 +141,6 @@ void IDoExit(int exitCode)
 
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
-	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
 	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
 	DelEventHandler("HideInfoWindow", "HideInfoWindow");
@@ -141,12 +149,9 @@ void IDoExit(int exitCode)
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
 	DelEventHandler("SellGoods", "SellGoods");
 	DelEventHandler("SellAll", "SellAll");
+	XI_ExitUniversalInput();
 
 	//DelEventHandler("RefreshTable","RefreshTable");
     // boal 27.02.05 -->
@@ -168,54 +173,6 @@ void ProcCommand()
 	string comName = GetEventData();
 	string nodName = GetEventData();
 
-	switch(nodName)
-	{
-		case "QTY_BUYSELL_BUTTON":
-			if(comName=="leftstep")
-			{
-	            AddOrRemove(1);	//ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            AddOrRemove(-1);	//REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-			if(comName == "ctrlleft")
-				AddOrRemove(10);
-			if(comName == "ctrlright")
-				AddOrRemove(-10);
-		break;
-
-		case "TABLE_LIST":
-			if(comName=="leftstep")
-			{
-	            AddOrRemove(1);	//ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            AddOrRemove(-1);	//REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-			if(comName == "ctrlleft")
-				AddOrRemove(10);
-			if(comName == "ctrlright")
-				AddOrRemove(-10);
-		break;
-	}
 }
 
 void DoPostExit()
@@ -391,7 +348,9 @@ void ShowHelpHint()
 	// sText2 = XI_ConvertString("GoodsColor2");
 	// sText3 = XI_ConvertString("GoodsColor3");
 	// sText4 = XI_ConvertString("GoodsColor4");
-		
+	
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
+
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, 64, 64, false, false);
 }
 
@@ -887,52 +846,6 @@ void ChangeQTY_EDIT()
 	fStoreWeight = fStoreWeight - BuyOrSell * iWeight;
     SetVariable();
     ShowFoodInfo();
-}
-
-void REMOVE_ALL_BUTTON()  // продать все
-{
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = -iShipQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_ALL_BUTTON()  // купить все
-{
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = iStoreQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_BUTTON()  // продать
-{
-	if(XI_IsKeyPressed("shift"))
-		REMOVE_ALL_BUTTON();
-	int n = -1;
-	if(XI_IsKeyPressed("control"))
-		n = -10;
-	AddOrRemove(n);
-}
-
-void ADD_BUTTON()  // купить
-{
-	if(XI_IsKeyPressed("shift"))
-		ADD_ALL_BUTTON();
-	int n = 1;
-	if(XI_IsKeyPressed("control"))
-		n = 10;
-	AddOrRemove(n);
 }
 
 void AddOrRemove(int n)	// > 0 - Add, < 0 - Remove

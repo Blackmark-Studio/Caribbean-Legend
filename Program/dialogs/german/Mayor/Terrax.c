@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
             dialog.text = "Während wir uns unterhalten, segelt das Schiff rasch von Kuba nach Philipsburg. Es muss jetzt um Tortuga herum sein oder etwas östlich davon. Also lichtet die Anker und segelt nach Saint Martin, fangt den 'Torero' nicht weit von der Insel, lasst nur nicht Barbazons Männer den Kampf sehen, sonst ist mein Plan ruiniert.";
 			link.l1 = "Sofort!";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(IsCharacterPerkOn(pchar,"FlagSpa")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

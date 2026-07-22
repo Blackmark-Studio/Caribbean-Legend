@@ -3,14 +3,14 @@
 // 20.00 → 20
 // 20.50 → 20.5
 // 20.76 → 20.76
-string ToHumanNumber(ref number_string)
+string ToHumanNumber(ref number_string, int maxDotNum = 2)
 {
 	string str = "error";
 	switch (typeid(number_string))
 	{
 		case typeid(int): return string(number_string); break;
-		case typeid(string): str = FloatToString(float(number_string), 2); break;
-		case typeid(float):  str = FloatToString(number_string, 2);      break;
+		case typeid(string): str = FloatToString(float(number_string), maxDotNum); break;
+		case typeid(float):  str = FloatToString(number_string, maxDotNum);      break;
 	}
 
 	if (str == "error")
@@ -21,7 +21,7 @@ string ToHumanNumber(ref number_string)
 
 	int dotPos = FindSubStr(str, ".", 0);
 	string result = strcut(str, 0, dotPos-1);
-	int floatPart = int(strright(str, 2));
+	int floatPart = int(strright(str, maxDotNum));
 	if (floatPart == 0) return result;
 
 	if (floatPart % 10 > 0) return result + "." + floatPart;

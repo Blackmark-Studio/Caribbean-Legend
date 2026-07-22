@@ -105,9 +105,9 @@ void ProcessDialogEvent()
             }
 			if (int(NPChar.nation) != PIRATE && ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0) > 10)
             {
-				iTotalTemp = ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", 0);
+				iTotalTemp = GetMayorIndulgenceSumm(NPChar);
                 dialog.text = "오, 저기 누가 있나! 바로"+GetSexPhrase("","")+" "+GetFullName(pchar)+". 있소, 사실 얼마 전에 자네를 잡아오라고 해적 사냥꾼들을 보냈었지. 자네가 이렇게 내 방에 느긋하게 들어올 줄 알았다면, 돈을 아꼈을 텐데.";
-                if (int(pchar.Money) >= iTotalTemp*6000)
+                if (int(pchar.Money) >= iTotalTemp)
                 {
                     link.l1 = "막 우리 계산을 정산하려던 참이었소.";
 				    link.l1.go = "arestFree_1";
@@ -2316,20 +2316,22 @@ void ProcessDialogEvent()
 		
 		case "arestFree_1":
 			dialog.text = "정착하라고? 그게 어떻게 가능하다고 생각하는 거지?";
-            link.l1 = "내 생각에는 "+iTotalTemp*6000+" 페소만 있으면 아직도 내가 구원받을 수 있지, 안 그래?";
+            link.l1 = "내 생각에는 "+iTotalTemp+" 페소만 있으면 아직도 내가 구원받을 수 있지, 안 그래?";
 			link.l1.go = "arestFree_2";
 			link.l2 = "아니. 이제 나는 가봐야겠군. 안녕히 계십시오.";
 			link.l2.go = "arest_1";
 		break;
 
 		case "arestFree_2":
-            if (GetCharacterSkillToOld(PChar, SKILL_FORTUNE) >= hrand(7) && iTotalTemp < 21)
+            i = wdmGetNationThreat(int(NPChar.Nation));
+            if (i < 3)
             {
     			dialog.text = "이런 방식으로 우리 사건을 해결할 수도 있겠군. 아직 사태를 돌이킬 수 없을 만큼 망쳐 놓지는 않았으니.";
     		    link.l1 = "훌륭하오. 매우 기쁘오. 부디, 내 기부금을 받아주시오.";
     		    link.l1.go = "Exit";
-    		    AddMoneyToCharacter(pchar, -iTotalTemp*6000);
-    		    ChangeCharacterHunterScore(Pchar, NationShortName(int(NPChar.nation)) + "hunter", -iTotalTemp);
+    		    AddMoneyToCharacter(pchar, -iTotalTemp);
+                i = ChangeCharacterNationReputation(Pchar, int(NPChar.nation), 0);
+    		    ChangeCharacterNationReputation(Pchar, int(NPChar.nation), -i);
     		    AddCharacterExpToSkill(pchar, "Fortune", 100);
             }
             else

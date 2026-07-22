@@ -28,7 +28,7 @@ string GetGoodsNameAlt(int iIdx)
 string GetGoodDescr(ref ref_Id_Idx)
 {
 	ref refGood = FindGood_VT(&ref_Id_Idx);
-	return GetConvertStr(refGood.name + "_descr", "GoodsDescribe.txt");
+	return DLG_Convert(refGood.name + "_descr", "GoodsDescribe.txt", refGood);
 }
 
 string GetGoodImageGroup(ref refGood)

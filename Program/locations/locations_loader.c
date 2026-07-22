@@ -3,6 +3,7 @@
 
 #define EVENT_LOCATION_LOAD		"EventLoadLocation"
 #define EVENT_LOCATION_UNLOAD	"EventUnloadLocation"
+#define EVENT_PREPARE_SHIPS     "EventPrepareShips"
 
 #define MAX_SHIPS_IN_LOCATION	32
 #define MAX_SHIPS_LOAD_FROM_WDM	16
@@ -316,7 +317,6 @@ bool LoadLocation(ref loc)
 
 	ReloadProgressUpdate();
 
-	
 	//--> проверяем наличие контры для установки нужного патча
 	string smg = "";
 	if (loc.type == "seashore" || loc.type == "mayak") 
@@ -330,12 +330,12 @@ bool LoadLocation(ref loc)
 			if(st.(sat) == "smg")
 			{
 				smg = "smg";
-                                break;
+                break;
 			}
-		}			
+		}
 	}
 	//<-- проверяем наличие контры для установки нужного патча
-	
+
 	//Loading day/night models=============================================================
 	if (Whr_IsDay() != 0)	//Day
 	{
@@ -403,7 +403,7 @@ bool LoadLocation(ref loc)
                 ReloadProgressUpdate();
 			}
 		}
-		
+
 		//Loading patches
 		if (CheckAttribute(loc, "models.night.charactersPatch") != 0)
 		{
@@ -426,7 +426,7 @@ bool LoadLocation(ref loc)
 			SendMessage(loc, "ls", MSG_LOCATION_SET_JMP_PATCH, loc.models.night.jumpPatch);
 		}
 	}
-	
+
 	//Entry models=========================================================================
 	if(LocIsEntryLocation(loc) == true)
 	{
@@ -494,6 +494,7 @@ bool LoadLocation(ref loc)
 	//Particles============================================================================
 	CreateParticles(loc);
 	//Ships================================================================================
+    Event(EVENT_PREPARE_SHIPS, "e", loc);
 	if (isNoBoarding && loc.environment.sea == "true") 
 	{
 		LocLoadShips(loc); // boal fix!!!!!!!!
@@ -1053,7 +1054,7 @@ void LocationSubstituteGeometry(ref loc)
 					SendMessage(loc, "lss", MSG_LOCATION_EX_MSG, "DeleteLocationModel",loc.(sat2));
 				}
 				LocLoadModel(loc, sat1, "");
-			}				
+			}
 		}
 		SendMessage(loc, "l", MSG_LOCATION_UPDATELOCATORS);	
 	}
@@ -1084,7 +1085,7 @@ bool UnloadLocation(ref loc)
 	}
     else mainCharacter.lastFightMode = "0";
 
-	Event(EVENT_LOCATION_UNLOAD,"");
+	Event(EVENT_LOCATION_UNLOAD);
 
 	int n;
 
@@ -1092,16 +1093,16 @@ bool UnloadLocation(ref loc)
 
 	bool isNoBoarding = true;
 	bool isFort = false;
-	if(CheckAttribute(loc, "boarding") == true)
+	if (CheckAttribute(loc, "boarding"))
 	{
-		if(loc.boarding == "true") isNoBoarding = false;
-		if(loc.boarding == "fort")
+		if (loc.boarding == "true") isNoBoarding = false;
+		if (loc.boarding == "fort")
 		{
 			isNoBoarding = false;
 			isFort = true;
 		}
 	}
-	if(isNoBoarding)
+	if (isNoBoarding)
 	{
 		DeleteParticles();
 		//DeleteClass(&Island);
@@ -1117,7 +1118,7 @@ bool UnloadLocation(ref loc)
         //DeleteParticles();  // фикс костров
 		SendMessage(&Particles,"l", PS_CLEAR_CAPTURED);
 	}
-	if(isFort)
+	if (isFort)
 	{
 		DeleteSea();
 		DeleteWeather();
@@ -1403,7 +1404,7 @@ void LocLoadShips(ref Location)
 
 	int iMCI = GetMainCharacterIndex();
 
-	if(IslamonaCreateShips(Location)) return;
+	if (IslamonaCreateShips(Location)) return;
 
 	if (!CheckAttribute(Location, "locators.ships"))
 	{

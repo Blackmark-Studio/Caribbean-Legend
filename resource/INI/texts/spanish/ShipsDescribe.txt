@@ -5,7 +5,7 @@ Barque {Un bergantín es ideal para viajes largos. Con una bodega espaciosa y bu
 Battleship {Los barcos de línea de tercera clase son muy numerosos y los más equilibrados en cualidades de combate, diseñados para la batalla en línea. Tienen suficiente potencia de fuego para desafiar incluso a los leviatanes de 100 cañones. Al mismo tiempo, los superan notablemente en velocidad y maniobrabilidad.}
 Brig {Las bricbarcas se utilizan ampliamente en la marina para el reconocimiento. Poco calado, líneas de casco afiladas y un aparejo avanzado hacen de la bricbarca uno de los barcos más rápidos, y sus cañones de calibre decente la convierten en un oponente muy peligroso.}
 Brigantine {Un tipo legendario de velero. Rápida y maniobrable como una golondrina, la bergantina es especialmente valorada por piratas y aventureros de todo tipo. Su exitoso diseño la hace adecuada para cualquier tarea, desde el combate hasta el comercio.}
-CannonType {Tipo de cañón: muestra el tipo (cañones o culebrinas), el calibre actual y el número de cañones instalados}
+CannonType {Aquí se muestran la cantidad actual y máxima de cañones del barco, así como su tipo y características. Si la cantidad actual coincide con la máxima, solo se muestra un valor.}
 Capacity
 {
 Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.
@@ -16,12 +16,7 @@ Corvette {Las corbetas están diseñadas para el reconocimiento, el servicio de 
 CORVETTE_QUEST {Un barco único, obra maestra de los constructores navales franceses. La profunda modernización del diseño de la corbeta ha mejorado casi todas sus características sin sacrificar la velocidad. El aumento de la superficie vélica y el calibre de los cañones requieren una tripulación más experimentada y numerosa, pero si las pruebas en el Caribe tienen éxito, las tecnologías aplicadas aquí pueden suponer un verdadero avance en la construcción naval.}
 Crew {Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.}
 Crew_Exp {Experiencia de la tripulación}
-Crew_Exp_hint
-{
-La experiencia de la tripulación se divide en tres categorías: marinería (afecta el manejo del barco), artillería (velocidad de recarga y precisión de puntería) y abordaje (eficacia de la tripulación en combate cuerpo a cuerpo).
-Una tripulación experimentada en menor número puede ser más eficaz que un barco sobrecargado de novatos.
-La experiencia en las tres categorías se adquiere durante la realización de las acciones correspondientes (maniobras, disparos, abordajes), pero también se pierde si las habilidades adquiridas no se practican durante mucho tiempo.
-}
+Crew_Exp_hint {La vida a bordo se organiza en guardias, y cada marinero debe saber manejar tanto el aparejo como las cureñas. La experiencia de la tripulación influye en todas las características del barco, desde la velocidad de manejo de las velas hasta el tiempo de recarga de los cañones. $br()La experiencia aumenta con el tiempo, pero disminuye por las bajas o al contratar novatos en la taberna. Conservar una tripulación experimentada resulta mucho más rentable que contratar novatos y entrenarlos desde cero.}
 EastIndiaMan {Los barcos de la Compañía de las Indias Orientales reunieron las mejores cualidades de las pinazas y eliminaron sus defectos, convirtiéndose en barcos universales casi perfectos. Con cañones de gran calibre, pueden competir con barcos de guerra de tamaño comparable, y su espaciosa bodega permite utilizarlos eficazmente para el comercio.}
 Ecliaton {Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.}
 Elcasador {Un brillante ejemplo de barco de guerra diseñado para operaciones especiales en mar abierto. Este galeón fue construido por encargo de la Casa de Contratación para destruir a los piratas más peligrosos que representan una amenaza real para el comercio en la región y los intereses de la Corona española.}
@@ -35,11 +30,15 @@ Galeon_l {El galeón fue creado a principios del siglo XVI sobre la base de la c
 Galeon_sm {Un símbolo del poder y la ambición españoles. Las cubiertas brillan con adornos dorados y en la popa se alza la imagen de la Virgen de la Misericordia, patrona del barco. Para algunos, 'Santa Misericordia' es la encarnación del orden, para otros, un temido símbolo de la opresión real. Y algunos incluso ven en ella la verdadera Providencia Divina.}
 GoodsKeys_hint
 {
-Las teclas de flecha "Izquierda" y "Derecha" en el teclado mueven las mercancías en la fila seleccionada de la tabla por un lote. Si mantiene presionada la tecla Shift, las mercancías se moverán por completo.
-Al hacer clic derecho en las flechas de la fila con la mercancía en la interfaz, se transfieren diez lotes a la vez.
+Las teclas de flecha Izquierda y Derecha desplazan las mercancías de la fila seleccionada de la tabla de una en una.
+Al combinar las flechas con teclas modificadoras, cambia la cantidad:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — mover todo
+Clic derecho en una flecha — mover todo
 }
 Himera {Un barco obra maestra, creado especialmente para las necesidades de la inteligencia naval británica. Por sus características es comparable a los barcos de guerra de tercera clase, manteniendo la facilidad de manejo de los de cuarta clase.}
-Hull {Casco: muestra la cantidad actual y máxima de daño que puede soportar el casco del barco.}
+Hull {El casco muestra la resistencia actual y máxima del barco. Por debajo del 10%, el barco empieza a hundirse lentamente.}
 LadyBeth
 {
 Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio de patrulla independiente en aguas peligrosas. Esta shniava tiene excelentes cualidades de navegación y un armamento impresionante para su tamaño, lo que le permite competir con barcos de clases superiores.
@@ -52,7 +51,27 @@ El lugre es un pequeño velero que muchos marineros, especialmente contrabandist
 A pesar de su pequeño tamaño, los lugres tienen buena navegabilidad y pueden realizar largos viajes.
 }
 LuggerQuest {El lugre de mensajería fue construido especialmente para las necesidades del servicio de mensajería. Excelentes cualidades de navegación, gran rendimiento contra el viento y un armamento bastante fuerte garantizan la entrega fiable de despachos importantes y pequeñas cargas valiosas.}
-Maneuver {Maniobrabilidad: muestra la maniobrabilidad del barco en este momento, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la maniobrabilidad máxima alcanzable.}
+Maneuver
+{
+La maniobrabilidad determina la velocidad de giro del barco. Cuanto mayor sea el valor, mejor responderá el barco al timón. Disminuye debido a los daños, la inexperiencia de la tripulación y la sobrecarga de la bodega. Las velas de combate proporcionan la máxima maniobrabilidad.
+~
+Maniobrabilidad máxima del barco: $number($ctx(turnrateMax))
+~
+Valores aproximados:$br
+_$key(human_turn_rate_1) – hasta $kstringTemp(HUMAN_TURN_RATE_STEP_1)
+_$key(human_turn_rate_2) – hasta $kstringTemp(HUMAN_TURN_RATE_STEP_2)
+_$key(human_turn_rate_3) – hasta $kstringTemp(HUMAN_TURN_RATE_STEP_3)
+_$key(human_turn_rate_4) – hasta $kstringTemp(HUMAN_TURN_RATE_STEP_4)
+_$key(human_turn_rate_5) – hasta $kstringTemp(HUMAN_TURN_RATE_STEP_5)
+_$key(human_turn_rate_6) – cualquier valor superior
+}
+ManeuverCurrent
+{
+~
+Maniobrabilidad actual, teniendo en cuenta las habilidades del capitán y el estado del barco:
+$number($ctx(turnrate)) — $percent($ctx(turnratePercent)) del máximo.
+~
+}
 Manowar {Los barcos de línea de segunda clase son la columna vertebral del poder naval de cualquier nación. Junto con los barcos de tercera clase, forman una flota que combina fuerza y maniobrabilidad. Y en ausencia de barcos de primera clase en el escuadrón, algunos de ellos sirven como buques insignia.}
 Manowar_e {Un barco de línea de primera clase es una verdadera fortaleza flotante. Gracias a su aterradora potencia de fuego, puede enviar al fondo a cualquier oponente con solo unos pocos disparos precisos. Pero incluso las mayores potencias navales no tienen muchos de estos barcos, y se utilizan como buques insignia en las grandes batallas navales.}
 MayFang
@@ -83,7 +102,7 @@ Mejorar el aparejo puede potenciar las virtudes o suavizar las carencias de dete
 }
 Sails {Velas: muestran el daño actual y máximo que pueden soportar las velas del barco.}
 Santisima {Este barco fue botado en el famoso astillero de La Habana. Su casco es un poco más ligero y débil que el de otros barcos de primera clase, pero esto se compensa con creces con mejores cualidades de navegación.}
-sCannons {Muestra el calibre máximo permitido y el número máximo posible de cañones en el barco.}
+sCannons {El calibre actual y máximo de los cañones que se pueden instalar en este barco. Si el calibre actual coincide con el máximo, solo se muestra un valor.}
 Schooner {Buenas cualidades de navegación, una bodega espaciosa, poco calado y un armamento decente han hecho del bergantín goleta uno de los barcos más populares de las clases pequeñas. Es igualmente adecuado para el comercio, la navegación costera y el combate.}
 Schooner_W {Los marineros del Nuevo Mundo fueron los primeros en apreciar las goletas y comenzaron a utilizarlas con fines militares. Para ello, fue necesario modificar un poco el casco, reducir el espacio útil de la bodega y añadir cañones, pero el resultado valió la pena. Bien armada, rápida y maniobrable, la goleta de guerra es una seria amenaza para cualquier barco mercante.}
 Shipyard_hint
@@ -93,12 +112,31 @@ El héroe no puede vender su barco si tiene compañeros. Tampoco puedes comprar 
 Para cambiar el barco del héroe o del compañero, manteniendo todo el contenido de la bodega y la tripulación, seleccione en la lista de barcos del escuadrón del héroe (en la parte izquierda de la interfaz) el barco que se va a reemplazar por uno nuevo, y en la lista de barcos a la venta en el astillero (en la parte derecha de la interfaz) el deseado, luego haga clic en el botón "Comprar".
 Para comprar un barco nuevo (asignar un nuevo compañero), primero seleccione una ranura vacía en la lista de la izquierda antes de comprar.
 }
+ShipyardCannons_hint {En el astillero se puede comerciar con cañones, pero no todos los calibres están disponibles para la venta. Aquí no encontrarás bombardas ni culebrinas enteras. Los cañones vendidos por el astillero siempre están en perfecto estado. Al vender cañones, primero se reparan y el coste de la reparación se descuenta del importe de la transacción.}
 Shnyava {La shniava y la bergantina fueron los predecesores del bergantín. Gracias a su exitoso diseño de casco, buena velocidad y capacidad para llevar cañones pesados, estos barcos se hicieron muy populares tanto en el Caribe como en Europa. A menudo se utilizan para escoltar convoyes mercantes de clases pequeñas.}
 Sloop {Con buena velocidad y maniobrabilidad y un armamento sólido para su tamaño, la balandra es un barco patrullero fiable, también adecuado para el reconocimiento.}
-Speed {Velocidad: muestra la velocidad máxima actual del barco, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la velocidad máxima alcanzable.}
+Speed {La velocidad máxima que puede alcanzar el barco en las condiciones actuales y con el viento a plena fuerza. Depende de las aptitudes y habilidades del capitán y del Navegante, los amuletos, la carga del barco, el desgaste de las velas y la experiencia de la tripulación.}
+MaxSpeed {La velocidad máxima que puede alcanzar el barco en condiciones ideales y con el viento a plena fuerza. Las embarcaciones más ligeras y con un aparejo bien desarrollado suelen ser más rápidas, pero lo compensan con un casco menos resistente y una bodega más pequeña.}
 TakeAllGoods_hint {El botón "Transferir todas las mercancías" transfiere mercancías al barco del personaje según su valor específico promedio. Primero se transfieren las mercancías más valiosas, luego las menos valiosas, y así sucesivamente hasta que no quede espacio libre en la bodega.}
 Tartane {Una barca de pesca no es el mejor barco para un capitán que brilla en la alta sociedad. Pero si el destino te ha privado de tu barco favorito, esta triste embarcación es bastante adecuada para un viaje rápido entre islas, aunque debes recordarte a ti mismo: ¡esto es solo temporal!}
 Valciria {Un excelente bergantín inglés. Gran velocidad y maniobrabilidad, buen rendimiento contra el viento y dos docenas de cañones en cubierta hacen de este velero un sueño.}
 Warship {Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.}
 WarTartane {Las tartanas son las mismas barcas de pesca adaptadas apresuradamente para trabajos costeros en las peligrosas aguas del Caribe. Su modesto armamento y construcción improvisada no inspiran respeto, pero son capaces de ahuyentar a un pirata inexperto o a un contrabandista pobre. Una solución temporal cuando no hay muchas opciones.}
 XebekVML {El xebec es el tipo de barco mediterráneo más famoso. Su casco estrecho y sus grandes velas latinas en todos los mástiles le permiten navegar en ángulos extremos al viento, lo que lo convierte en un oponente muy molesto. Desafortunadamente, la baja velocidad con viento de popa limita el uso del xebec principalmente a la piratería y el contrabando.}
+ShipPower {La potencia del barco refleja lo amenazante que parece la nave a ojos de un observador externo. Su valor actual depende de la clase y especialización del barco, la cantidad y el estado de los cañones, el número y la preparación de la tripulación, el estado del casco y las velas, y las habilidades del capitán. Todos preferirán mantenerse alejados de una pinaza comandada por un matón conocido en todo el Caribe, mientras que una fragata dañada en manos de un jovencito inexperto no tardará en atraer problemas. $br$red La potencia de cada barco de la escuadra se suma para determinar la potencia total de la escuadra, que influye en el comportamiento de las escuadras hostiles y los piratas en el mapa global. Este valor puede consultarse en la pantalla «Naciones».}
+Cannon_DamageMultiply_header {Multiplicador de daño de los cañones}
+Cannon_DamageMultiply_text {Valor por el que se multiplica el daño del proyectil.}
+Cannon_firerange_header {Alcance}
+Cannon_firerange_text {La distancia máxima a la que el cañón puede alcanzar un objetivo. La munición elegida, las habilidades, los amuletos e incluso el balanceo del barco pueden afectar al alcance final.}
+Cannon_reloadtime_header {Tiempo de recarga}
+Cannon_reloadtime_text {El tiempo necesario para recargar por completo los cañones. Depende del número y la experiencia de la tripulación, así como de las habilidades del capitán y el artillero.}
+Cannon_hp_header {Resistencia máxima}
+Cannon_hp_text {Este valor determina cuántos disparos puede efectuar un cañón antes de quedar completamente destruido. Cuanto más alto sea, con menor frecuencia habrá que reparar el cañón. Cada tipo de cañón posee su propia resistencia máxima, que suele aumentar con el calibre.}
+Cannon_weight_header {Peso del cañón}
+Cannon_weight_text {Los cañones ocupan mucho espacio a bordo; en los buques de guerra, la batería de artillería puede consumir hasta la mitad de la capacidad de carga. El peso aumenta con el calibre y la potencia de fuego, y las culebrinas pesan más que los cañones del mismo calibre.}
+Cannon_health_0 {Destruidos}
+Cannon_health_1 {Desgastados}
+Cannon_health_2 {En orden}
+Cannon_health_3 {Ajustados}
+Cannon_weight_in_stock {Esto supone aproximadamente$br() el $percent($ctx(weightPercent)) del peso muerto}
+Cannon_health_on_ship {Estado de los cañones en la bodega del «$ctx(ShipName)»: $ctx(health)}

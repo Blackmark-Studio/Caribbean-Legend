@@ -112,7 +112,7 @@ Débloque la possibilité de choisir le mode de bordée.
 }
 perkBladeDancer {L’attaque de groupe avec des armes courbées inflige $percent($perkBaseValue(BladeDancer|1))  de dégâts en plus.}
 perkBoardingPrepare {L’équipe d’abordage reçoit des potions pendant l’abordage.}
-perkBombardier {La durabilité des canons est augmentée.}
+perkBombardier {Le bonus accordé par le bon état des canons augmente de $percent($perkBaseValue(Bombardier|1)). Cet effet est cumulable.}
 perkBruteForce {Des soldats lourdement armés avec haches et armures remplacent certains de vos marins lors d’un abordage.}
 perkBuilder {La consommation de planches et de toile lors des réparations est réduite de 25 %.}
 perkByWorker {Un personnage peut occuper deux postes d’officier à la fois}

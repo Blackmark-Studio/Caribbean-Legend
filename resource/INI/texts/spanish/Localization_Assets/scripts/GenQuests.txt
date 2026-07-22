@@ -107,3 +107,11 @@ GenQuests_96 {¿Escuchaste cómo la banda local de @<pchar.GenQuest.(Gun).name> 
 GenQuests_97 {¿Oíste hablar del asesinato de @<pchar.GenQuest.EncGirl.name>? Pobre chica, la mataron en la jungla hace poco. ¡Deberían encontrar al asesino y colgarlo!}
 GenQuests_98 {¿Sabes, capitán @<GetFullName(pchar)>, que alguien asesinó a una pobre chica llamada @<pchar.GenQuest.EncGirl.name>? Una lástima, era una chica realmente agradable...}
 GenQuests_99 {Su nombre era @<pchar.GenQuest.EncGirl.name>, y murió en la jungla. Nada sorprendente, te diré, no es un lugar seguro...}
+Alone_Citiz_Death_0 {Dicen que a @<Name> lo apuñalaron unos bandidos en la jungla. Mirad a qué tiempos hemos llegado, $Name: hoy un hombre sale por las puertas y ya puede no volver.}
+Alone_Citiz_Death_1 {¿Lo habéis oído? @<Name> entregó el alma a Dios en la jungla. Dicen que fue obra de bandidos, y en tiempos así la gente honrada cada vez tiene menos posibilidades de llegar con vida al anochecer.}
+Alone_Citiz_RobberyFail_0 {Dicen que a algún harapiento se le ocurrió intentar robar a @<Name>. Se han desmandado del todo, $Name: antes al menos temían a la guardia, y ahora se lanzan con cuchillo a plena luz del día.}
+Alone_Citiz_RobberyFail_1 {Hace poco @<Name> volvió a la ciudad huyendo de unos ladrones. Así están los tiempos, $Name: ya no es el hombre quien elige el camino, sino el camino quien decide si volverá con vida o no.}
+Alone_Citiz_RobberySuccess_0 {Robaron a @<Name>, ¿os lo imagináis? Se lo llevaron todo, y fue un milagro que lo dejaran con vida. Al parecer, incluso los ladrones tienen conciencia en estos tiempos malditos.}
+Alone_Citiz_RobberySuccess_1 {Dicen que @<Name> entregó a los bandidos hasta la última moneda. Qué se le va a hacer, $Name: de otro modo quizá no habría vuelto a casa.}
+JungInjured_SoldHeal_0 {Dicen, $Name, que fuisteis vos quien salvó a nuestro soldado en la jungla. En tiempos así, pocos se arriesgan por la vida de otro, y por eso toda la ciudad lo comenta.}
+JungInjured_SoldHeal_1 {@<Name> volvió de la jungla apenas con vida. En la ciudad se murmura, $Name, que fuisteis vos quien lo sacó de las puertas de la muerte, y hoy en día una buena acción así vale mucho. Sois una buena persona.}

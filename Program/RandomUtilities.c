@@ -2,17 +2,19 @@
 
 float frand(float _x)
 {
-	return rand(32768) / 32768.0 * _x;
+	return frnd() * _x;
 }
 
+// [[deprecated]]
 float frandSmall(float _x)
 {
-	return rand(32) / 32.0 * _x;
+    // return rand(32) / 32.0 * _x;
+	return frnd() * _x;
 }
 
 float uniform(float x, float y)
 {
-  return x + frand(y - x);
+  return x + frnd() * (y - x);
 }
 
 float uniform_angle(float left, float right) 
@@ -288,7 +290,7 @@ bool PercentChance(int chance)
 // Бросок с шансом n
 bool fPercentChance(float chance)
 {
-  return chance > frandSmall(0.99);
+    return chance >= 1.0 || chance > frnd();
 }
 
 // Берем два числа из диапазона по принципу если первое число больше половины, тогда 

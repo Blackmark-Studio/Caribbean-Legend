@@ -70,7 +70,7 @@ void test__array()
 
     // Working with array cells inside a function
     int arr5[] = {1, 2, 3, 4, 5};
-    ShuffleArray(&arr5);
+    ArrayShuffle(&arr5);
 
     // Passing array literals to the function
     assert(__CheckFive(&arr5));

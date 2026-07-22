@@ -957,7 +957,7 @@ void SeaLogin(ref Login)
 				rFantom.WatchFort = true; //следить за фортом
 				rFantom.AnalizeShips = true; //анализить враждебные корабли сразу же с загрузки и далее
                 if (iEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
-                    SetCaptanModelByEncType(rFantom, "war"); // принудительно для военных корабли снабжения
+                    SetCaptanModelByEncType(rFantom, "war"); // принудительно для военных кораблей снабжения
 				else if (CheckAttribute(rFantom, "Ship.Mode"))
                 	SetCaptanModelByEncType(rFantom, rFantom.Ship.Mode);
                 else

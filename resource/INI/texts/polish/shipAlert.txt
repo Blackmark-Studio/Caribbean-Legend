@@ -1,0 +1,16 @@
+quest_companion_header {Zadaniowy}
+quest_companion_text {Ten towarzysz podróżuje z tobą w ramach zadania. Nie możesz wchodzić w interakcję z jego statkiem.}
+where_is_my_ship_sea_header {Położenie statku}
+where_is_my_ship_sea_text {$rand(Otwarte morze|Między niebem a ziemią|W rejsie|Siedem stóp pod kilem)}
+where_is_my_ship_header {Położenie statku}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Działa w złym stanie}
+cannons_broken_text {Działa trzeba pilnie naprawić w stoczni lub wymienić!}
+bad_captain_header {Niewystarczająca umiejętność}
+bad_captain_text {Ten towarzysz nie może dowodzić statkiem na otwartym morzu, ponieważ brakuje mu umiejętności „Kapitan”.}
+low_morale_header {Ryzyko buntu}
+low_morale_text {Załoga jest niezadowolona. Trzeba pilnie podnieść morale!}
+low_food_header {Mało żywności}
+low_food_text {Marynarze wkrótce zaczną umierać z głodu. Trzeba pilnie uzupełnić zapasy!}
+low_medicament_header {Mało lekarstw}
+low_medicament_text {Marynarze wkrótce zaczną umierać z powodu chorób. Trzeba pilnie uzupełnić zapasy!}

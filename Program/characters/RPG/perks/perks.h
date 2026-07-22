@@ -79,6 +79,8 @@
 #define PERK_VALUE2_MULE 0.5               // процент снижения штрафа от тяжёлого оружия и брони у ГГ
 #define PERK_VALUE2_TIE_FIT 0.3            // процент снижения штрафа от оружия и брони у НПС
 #define PERK_VALUE_TIRELESS 0.15           // увеличивает скорость восстановления энергии
+#define PERK_VALUE_BOMBARDIER 0.05         // бонус к максимальному бафу от целых орудий
+
 
 // дальше корабельные
 #define PERK_VALUE_LONG_RANGE_SHOOT 1.10   // 
@@ -222,6 +224,7 @@ string PerkBaseValue(string valueName, string prefix)
 		case "value_2Mule": return VarTypeToString(PERK_VALUE2_MULE); break;
 		case "value_2TieFit": return VarTypeToString(PERK_VALUE2_TIE_FIT); break;
 		case "value_Tireless": return VarTypeToString(PERK_VALUE_TIRELESS); break;
+		case "value_Bombardier": return VarTypeToString(PERK_VALUE_BOMBARDIER); break;
 	}
 
 	return "Error";

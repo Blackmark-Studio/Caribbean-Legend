@@ -8,7 +8,8 @@
 #include "Loc_ai\LAi_types.c"
 #include "Loc_ai\LAi_groups.c"
 #include "Loc_ai\LAi_boarding.c"
-#include "Loc_ai\LAi_monsters.c"
+#include "Loc_ai\LAi_environment.c"
+#include "Loc_ai\LAi_encounters.c"
 #include "Loc_ai\LAi_location.c"
 #include "Loc_ai\LAi_equip.c"
 #include "Loc_ai\LAi_sounds.c"
@@ -146,7 +147,7 @@ void LocAi_Release()
 	for(int i = 0; i < LAi_numloginedcharacters; i++)
 	{
 		int idx = LAi_loginedcharacters[i];
-		if(idx >= 0)
+		if (idx >= 0)
 		{
 			LAi_CharacterLogoff(&Characters[idx]);
 		}
@@ -173,14 +174,13 @@ void LocAi_Release()
 	DelEventHandler("Location_CharacterItemAction", "LAi_CharacterItemAction");
 }
 
-
 void LocAi_PostInit(ref loc)
 {
-	if(!LAi_IsBoarding) LAi_CharacterPostLogin(loc);
+	if (!LAi_IsBoarding) LAi_CharacterPostLogin(loc);
 	for(int i = 0; i < LAi_numloginedcharacters; i++)
 	{
 		int idx = LAi_loginedcharacters[i];
-		if(idx >= 0)
+		if (idx >= 0)
 		{
 			LAi_PostLoginInit(&Characters[idx]);
 		}

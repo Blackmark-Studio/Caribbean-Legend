@@ -120,7 +120,7 @@
 #define M_WORLD_SHIPS_CREW_MTP "worldShipsCrewMtp"              // Множитель заполненности команд у фантомов
 #define M_WORLD_SHIPS_HULL_MTP "worldShipsHullMtp"              // Множитель целостности корпуса у фантомов
 #define M_STORM_DAMAGE_MTP "stormDamageMtp"                     // Множитель урона штормов
-#define M_AMMO_GOODS_COST "ammoGoodsCost"                       // Запасы аммуниции в магазинах
-#define M_AMMO_GOODS_STOCK "ammoGoodsStock"                     // Стоимость аммуниции в магазинах
+#define M_AMMO_GOODS_COST "ammoGoodsCost"                       // Стоимость аммуниции в магазинах 
+#define M_AMMO_GOODS_STOCK "ammoGoodsStock"                     // Запасы аммуниции в магазинах
 #define M_SHIP_SPEED_DYNAMIC "shipSpeedDynamic"                 // Множитель динамики набора скорости
 #define M_CREW_MORALE_DEBUFF_MTP "crewMoraleDebuffMtp"          // Множитель мощности дебаффа на мораль от перегруза, голода и болезней

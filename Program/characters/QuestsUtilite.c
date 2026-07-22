@@ -5494,9 +5494,7 @@ void Tortuga_SetShipGuard(string qName)
 		sld.AlwaysSandbankManeuver = true;
 		sld.MultiFighter = 2.5; // мультифайтер
 		sld.ship.Crew.Morale = 100;
-		sld.Ship.Crew.Exp.Sailors = 100;
-		sld.Ship.Crew.Exp.Cannoners = 100;
-		sld.Ship.Crew.Exp.Soldiers = 100;
+		SetCrewExp(sld, 100.0);
 		Group_AddCharacter("Tortuga_Guard", "TortugaGuardCap_"+i);
 	}
 	Group_SetGroupCommander("Tortuga_Guard", "TortugaGuardCap_1");
@@ -5573,9 +5571,7 @@ void Tortuga_BranderGo(string qName) // 2015
 		sld.AlwaysEnemy = true;
 		sld.MultiFighter = 2.5; // мультифайтер
 		sld.ship.Crew.Morale = 100;
-		sld.Ship.Crew.Exp.Sailors = 100;
-		sld.Ship.Crew.Exp.Cannoners = 100;
-		sld.Ship.Crew.Exp.Soldiers = 100;
+		SetCrewExp(sld, 100.0);
 		Group_AddCharacter("Tortuga_GuardAdd", "TortugaGuardCapAdd_"+i);
 	}
 	Group_SetGroupCommander("Tortuga_GuardAdd", "TortugaGuardCapAdd_1");

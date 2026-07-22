@@ -74,7 +74,6 @@ string GetLoyalityName(int iLoyality)
 	return "";
 }
 
-
 int ChangeCharacterNationReputation(ref chref, int _Nation, int incr)
 {
 	return -ChangeCharacterHunterScore(chref, NationShortName(_Nation) + "hunter", -incr); // все наоборот, - это хорошо, + есть НЗГ
@@ -82,7 +81,7 @@ int ChangeCharacterNationReputation(ref chref, int _Nation, int incr)
 
 string GetNationReputation(ref chref, int _Nation)
 {
-		return GetNationReputationName(_Nation, ChangeCharacterNationReputation(chref, _Nation, 0));
+    return GetNationReputationName(_Nation, ChangeCharacterNationReputation(chref, _Nation, 0));
 }
 
 string GetNationReputationName(int _Nation, int i)

@@ -299,7 +299,7 @@ void ProcessDialogEvent()
 			dialog.text = "... ¿crees que tienes agallas? Je, ni siquiera voy a discutir contigo, ¿viste cómo disparé a ese cornudo desde el faro? ¡De un solo tiro! Tampoco hay regateos, si es eso lo que piensas. Tienes que demostrar que puedes permitirte un profesional como yo.";
 			if (PCharDublonsTotal() >= 150)
 			{
-				link.l1 = "¡Sí, puedo! Quinientas piezas de oro. Aquí tienes.";
+				link.l1 = "¡Sí, puedo! Ciento cincuenta piezas de oro. Aquí tienes.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "Tuviste suerte con ese disparo. Y ahora estás intentando inflar tu valor con fanfarronerías. Puedo prescindir de un profesional como tú. Es demasiado honor y demasiado dinero.";

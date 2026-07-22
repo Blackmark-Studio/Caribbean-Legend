@@ -44,10 +44,10 @@ Node0_d_b_action {しかるべく執り行おう}
 Node0_d_b_success {$attr($context.officerName) はあなたの _$attr($context.officerJob) であって、ただの水夫ではない。それは彼に一定の特権を $rand(与える|意味する)。あなたは士官室で $rand(正式な追悼式|規律に則った追悼式) を執り行うよう命じる。$attr($context.officerName) は $rand(やや気まずそうに|気まずそうに) 見えるが、その感情はすぐに $rand(感謝へと変わっていく|感謝に変わる)。}
 Node0_d_b_success_action {忠実な仲間には最上を}
 Node0_d_c_action {神はそんなものがなくとも聞いている}
-Node0_d_c_success {あなたは、心からの祈りであれば儀式などなくとも届くのだと士官に言い聞かせる。$br$red$attr($context.officerName)もどうやら納得したようだ。自分の言葉が彼の心を少し軽くしたことに、あなたは静かな誇りを覚える。}
+Node0_d_c_success {あなたは、心からの祈りであれば儀式などなくとも届くのだと士官に言い聞かせる。$br()$red $attr($context.officerName)もどうやら納得したようだ。自分の言葉が彼の心を少し軽くしたことに、あなたは静かな誇りを覚える。}
 Node0_d_c_success_action {お前なら乗り越えられる}
 Node0_d_c_fail {あなたの言葉はどうにも空々しく響き、$attr($context.officerName)は落胆した様子を見せる。どうやら彼は、あなたをけちな冷笑家と見なしただけらしい。}
 Node0_d_c_fail_action {待て、惜しいわけじゃない}
 Node0_d_d_action {船の司祭が力になってくれる}
-Node0_d_d_success {$attr($context.officerName)が船に本物の司祭がいることを失念していたのは奇妙に思えるが、あなたはそれを目もくらむような悲しみのせいだと考える。$br$redあなたは司祭を船室へ呼び、事情を話して導きを求める。$attr($context.officerName)はまだ上の空のようだが、聖職者の言葉はたちまち彼を現実へ引き戻す。}
+Node0_d_d_success {$attr($context.officerName)が船に本物の司祭がいることを失念していたのは奇妙に思えるが、あなたはそれを目もくらむような悲しみのせいだと考える。$br()$red あなたは司祭を船室へ呼び、事情を話して導きを求める。$attr($context.officerName)はまだ上の空のようだが、聖職者の言葉はたちまち彼を現実へ引き戻す。}
 Node0_d_d_success_action {神は我らの声を聞き届けた}

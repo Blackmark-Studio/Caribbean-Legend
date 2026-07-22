@@ -44,10 +44,10 @@ Node0_d_b_action {Vamos fazer isso como deve ser}
 Node0_d_b_success {$attr($context.officerName) é seu _$attr($context.officerJob), não um marinheiro comum. Isso $rand(lhe dá|significa) certos privilégios. Você ordena que seja realizada $rand(uma cerimônia oficial|uma cerimônia conforme o regulamento) na sala comum. $attr($context.officerName) parece $rand(um pouco constrangido|constrangido), mas logo isso $rand(dá lugar à gratidão|se transforma em gratidão).}
 Node0_d_b_success_action {O melhor para companheiros leais}
 Node0_d_c_action {Deus o ouve mesmo assim}
-Node0_d_c_success {Você convence o oficial de que uma oração sincera será ouvida mesmo sem ritos.$br$red$attr($context.officerName) parece concordar. Você sente orgulho ao perceber que suas palavras lhe trouxeram algum alívio.}
+Node0_d_c_success {Você convence o oficial de que uma oração sincera será ouvida mesmo sem ritos.$br()$red $attr($context.officerName) parece concordar. Você sente orgulho ao perceber que suas palavras lhe trouxeram algum alívio.}
 Node0_d_c_success_action {Você vai superar isso}
 Node0_d_c_fail {Suas palavras soam pouco convincentes, e $attr($context.officerName) parece abatido. Ao que tudo indica, ele simplesmente o tomou por alguém mesquinho e cínico.}
 Node0_d_c_fail_action {Espera, isso não me custa nada}
 Node0_d_d_action {O capelão do navio vai ajudar}
-Node0_d_d_success {Vocês acham estranho que $attr($context.officerName) tenha se esquecido do verdadeiro capelão a bordo, mas atribuem isso ao luto cegante.$br$redChamam o capelão à cabine, explicam o problema e pedem uma orientação. $attr($context.officerName) parece alheio a tudo, mas as palavras do religioso logo o trazem de volta a si.}
+Node0_d_d_success {Vocês acham estranho que $attr($context.officerName) tenha se esquecido do verdadeiro capelão a bordo, mas atribuem isso ao luto cegante.$br()$red Chamam o capelão à cabine, explicam o problema e pedem uma orientação. $attr($context.officerName) parece alheio a tudo, mas as palavras do religioso logo o trazem de volta a si.}
 Node0_d_d_success_action {Deus nos ouviu}

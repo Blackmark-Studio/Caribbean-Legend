@@ -107,3 +107,11 @@ GenQuests_96 {Hai sentito come la banda locale @<pchar.GenQuest.(Gun).name> ha c
 GenQuests_97 {Hai saputo di un omicidio @<pchar.GenQuest.EncGirl.name>? Povera ragazza, è stata uccisa nella giungla di recente. Dovrebbero trovare l'assassino e impiccarlo!}
 GenQuests_98 {Sai, capitano @<GetFullName(pchar)>, qualcuno ha ucciso una povera ragazza @<pchar.GenQuest.EncGirl.name>? Peccato, era davvero una brava ragazza...}
 GenQuests_99 {Si chiamava @<pchar.GenQuest.EncGirl.name>, e lei è morta nella giungla. Non c'è niente di sorprendente, ve lo dico, non è sicuro là fuori...}
+Alone_Citiz_Death_0 {Dicono che @<Name> sia stato accoltellato dai banditi nella giungla. Ecco a che punto siamo arrivati, $Name: oggi un uomo esce dalle porte e rischia di non tornare più.}
+Alone_Citiz_Death_1 {Avete sentito? @<Name> ha reso l’anima a Dio nella giungla. Dicono che siano stati i banditi, e di questi tempi la brava gente ha sempre meno possibilità di arrivare a sera.}
+Alone_Citiz_RobberyFail_0 {Dicono che qualche straccione abbia pensato bene di derubare @<Name>. Ormai sono del tutto fuori controllo, $Name: una volta almeno temevano le guardie, adesso ti saltano addosso col coltello in pieno giorno.}
+Alone_Citiz_RobberyFail_1 {Di recente @<Name> è tornato in città fuggendo dai briganti. Questi sono i tempi, $Name: non è l’uomo a scegliere la strada, è la strada a decidere se tornerà vivo oppure no.}
+Alone_Citiz_RobberySuccess_0 {@<Name> è stato derubato, ve lo immaginate? Gli hanno preso tutto, ed è già un miracolo che l’abbiano lasciato vivo. A quanto pare, persino i briganti hanno ancora una coscienza in questi tempi maledetti.}
+Alone_Citiz_RobberySuccess_1 {Dicono che @<Name> abbia consegnato ai banditi tutto fino all’ultima moneta. Che farci, $Name: altrimenti forse non sarebbe mai tornato a casa.}
+JungInjured_SoldHeal_0 {Dicono, $Name, che siate stato voi a salvare il nostro soldato nella giungla. Di questi tempi sono pochi quelli pronti a rischiare per la vita di un altro, perciò tutta la città ne parla.}
+JungInjured_SoldHeal_1 {@<Name> è tornato dalla giungla appena vivo. In città dicono, $Name, che siate stato proprio voi a strapparlo alla morte, e di questi tempi un gesto così buono vale molto. Siete una brava persona.}

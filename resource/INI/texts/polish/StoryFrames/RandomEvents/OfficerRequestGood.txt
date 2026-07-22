@@ -44,10 +44,10 @@ Node0_d_b_action {Zrobimy to jak należy}
 Node0_d_b_success {$attr($context.officerName) jest waszym _$attr($context.officerJob), a nie zwykłym marynarzem. To $rand(daje mu|oznacza) pewne przywileje. Każecie urządzić w mesie $rand(oficjalne nabożeństwo żałobne|nabożeństwo żałobne zgodne z regulaminem). $attr($context.officerName) wygląda na $rand(nieco speszonego|speszonego), ale szybko $rand(ustępuje to wdzięczności|przechodzi to w wdzięczność).}
 Node0_d_b_success_action {Wiernym towarzyszom — to, co najlepsze}
 Node0_d_c_action {Bóg i tak cię usłyszy}
-Node0_d_c_success {Przekonujecie oficera, że szczera modlitwa zostanie wysłuchana nawet bez obrzędu.$br$red$attr($context.officerName) zdaje się z tym zgadzać. Czujecie dumę, że wasze słowa przyniosły mu choć odrobinę ulgi.}
+Node0_d_c_success {Przekonujecie oficera, że szczera modlitwa zostanie wysłuchana nawet bez obrzędu.$br()$red $attr($context.officerName) zdaje się z tym zgadzać. Czujecie dumę, że wasze słowa przyniosły mu choć odrobinę ulgi.}
 Node0_d_c_success_action {Poradzisz sobie}
 Node0_d_c_fail {Wasze słowa brzmią mało przekonująco, a $attr($context.officerName) wygląda na przygnębionego. Najwyraźniej uznał was po prostu za skąpca i cynika.}
 Node0_d_c_fail_action {Czekaj, nie szkoda mi tego}
 Node0_d_d_action {Kapelan okrętowy pomoże}
-Node0_d_d_success {Wydaje się wam dziwne, że $attr($context.officerName) zapomniał o prawdziwym kapelanie na waszym statku, ale składacie to na karb oślepiającej żałoby.$br$redWzywacie kapelana do kajuty, opowiadacie mu o sprawie i prosicie o słowo pouczenia. $attr($context.officerName) wygląda na nieobecnego duchem, lecz słowa duchownego szybko przywracają mu jasność myśli.}
+Node0_d_d_success {Wydaje się wam dziwne, że $attr($context.officerName) zapomniał o prawdziwym kapelanie na waszym statku, ale składacie to na karb oślepiającej żałoby.$br()$red Wzywacie kapelana do kajuty, opowiadacie mu o sprawie i prosicie o słowo pouczenia. $attr($context.officerName) wygląda na nieobecnego duchem, lecz słowa duchownego szybko przywracają mu jasność myśli.}
 Node0_d_d_success_action {Bóg nas usłyszał}

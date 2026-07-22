@@ -112,7 +112,7 @@ Yanal salvo modunu seçme olanağını açar.
 }
 perkBladeDancer {Eğri silahlarla yapılan grup saldırısı $percent($perkBaseValue(BladeDancer|1)) daha fazla hasar verir.}
 perkBoardingPrepare {Alo ekibi, borda sırasında iksir alır.}
-perkBombardier {Topların dayanıklılığı artar.}
+perkBombardier {Topların iyi durumda olmasından gelen bonus $percent($perkBaseValue(Bombardier|1)) artar. Bu etki birikebilir.}
 perkBruteForce {Bazı sıradan tayfaların yerine, borda sırasında baltalı ve zırhlı ağır silahlı askerler geçer.}
 perkBuilder {Onarım sırasında tahta ve yelken bezi tüketimi %25 azalır.}
 perkByWorker {Bir karakter aynı anda iki subay pozisyonu alabilir}

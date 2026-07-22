@@ -1,0 +1,16 @@
+quest_companion_header {퀘스트 동행}
+quest_companion_text {이 동료는 퀘스트 때문에 함께하고 있습니다. 동료의 함선과 상호작용할 수 없습니다.}
+where_is_my_ship_sea_header {함선 위치}
+where_is_my_ship_sea_text {$rand(망망대해|하늘과 땅 사이|항해 중|용골 아래 일곱 피트)}
+where_is_my_ship_header {함선 위치}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {함포 상태 불량}
+cannons_broken_text {조선소에서 함포를 즉시 수리하거나 교체해야 합니다!}
+bad_captain_header {기술 부족}
+bad_captain_text {이 동료는 ‘선장’ 기술이 부족하여 외해에서 함선을 지휘할 수 없습니다.}
+low_morale_header {반란 위험}
+low_morale_text {선원들이 불만에 차 있습니다. 즉시 사기를 높여야 합니다!}
+low_food_header {식량 부족}
+low_food_text {곧 선원들이 굶어 죽기 시작합니다. 즉시 식량을 보충해야 합니다!}
+low_medicament_header {의약품 부족}
+low_medicament_text {곧 선원들이 질병으로 죽기 시작합니다. 즉시 의약품을 보충해야 합니다!}

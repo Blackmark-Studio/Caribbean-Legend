@@ -112,7 +112,7 @@ Desbloquea la posibilidad de elegir el modo de andanada de costado.
 }
 perkBladeDancer {El ataque de grupo con armas curvadas inflige un $percent($perkBaseValue(BladeDancer|1)) más de daño.}
 perkBoardingPrepare {La partida de abordaje recibe pociones durante el abordaje.}
-perkBombardier {La durabilidad de los cañones aumenta.}
+perkBombardier {La bonificación por mantener los cañones en buen estado aumenta un $percent($perkBaseValue(Bombardier|1)). Este efecto se acumula.}
 perkBruteForce {Soldados fuertemente armados con hachas y armadura reemplazan a algunos marineros normales durante un abordaje.}
 perkBuilder {El consumo de tablones y lonas durante las reparaciones se reduce un 25%.}
 perkByWorker {Un personaje puede ocupar dos cargos de oficial a la vez}

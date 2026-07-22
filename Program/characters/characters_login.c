@@ -1,14 +1,13 @@
 
+object LoginConditions;
 
 void LoginCharactersInLocation(ref loc)
 {
-    // boal 01.02.2004 -->
 	SetTimeScale(1.0);
     TimeScaleCounter = 0;
-//     DelPerkFromActiveList("TimeSpeed");
-	TimeScale_Info("");				
-	// boal 01.02.2004 <--
+	TimeScale_Info("");
 	LocAi_Init(loc);
+    DeleteAttribute(&LoginConditions, "");
 	string locID = loc.id;
 	for(int i = 0; i < MAX_CHARACTERS; i++)
 	{
@@ -24,15 +23,18 @@ void LoginCharactersInLocation(ref loc)
 
 void LoginCharacter(ref chr, string locID)
 {
-	if(CheckAttribute(chr, "OfficerImmortal") && chr.OfficerImmortal == "Injury") return;
-	if(LAi_CharacterLogin(chr, locID))
+	if (chr.OfficerImmortal$string("") == "Injury")
+        return;
+	if (LAi_CharacterLogin(chr, locID))
 	{
 		bool isNoCreated = true;
-		if(CreateCharacter(chr))
+		if (CreateCharacter(chr))
 		{
 			CheckAutolevel(chr);
-			isNoCreated = false;			
-			if(TeleportCharacterToLocator(chr, chr.location.group, chr.location.locator)==0)
+			isNoCreated = false;
+            if ("RandomPlace" in chr)
+                chr.location.locator = LAi_FindRandomLocator(chr.location.group);
+			if (TeleportCharacterToLocator(chr, chr.location.group, chr.location.locator) == 0)
 			{
 				if((CheckAttribute(chr, "index") != false) && (GetMainCharacterIndex() == int(chr.index)))
 				{
@@ -51,10 +53,12 @@ void LoginCharacter(ref chr, string locID)
 					Trace("Delete character <" + chr.id + "> , error teleportation by location: " + chr.location + " on locator: " + chr.location.group + "::" + chr.location.locator);
 				}
 			}
-		}else{
+		}
+        else
+        {
 			Trace("Can't create character: " + chr.id);
 		}
-		if(isNoCreated)
+		if (isNoCreated)
 		{
 			LAi_CharacterLogoff(chr);
 		}
@@ -70,7 +74,6 @@ void LogoffCharacter(ref chr)
 		CharacterExitFromLocation(chr);
 	}
 }
-
 
 bool ChangeCharacterAddress(ref character, string location_id, string locator)
 {
@@ -166,12 +169,10 @@ bool ChangeCharacterAddressGroup(ref character, string location_id, string group
 	character.location.group = group;
 	character.location.locator = locator;
 	//Если локация загруженна, то логинемся
-	if(IsEntity(&Locations[lindex]))
+	if (IsEntity(&Locations[lindex]))
 	{
 		LoginCharacter(character, Locations[lindex].id);
 		LAi_PostLoginInit(character);
 	}
 	return true;
 }
-
-

@@ -2649,10 +2649,6 @@ void EncGirl_SpeakTavernKeeper(string qName)
 	DeleteAttribute(pchar, "GenQuest.EncGirl");
 }
 
-void EncGerl_deleteisjangly(string qName) // лесник квест снова доступен
-{
-	DeleteAttribute(pchar, "GenQuest.EncGirl");
-}
 void EncGirl_GenQuest_GetBag(string qName)
 {
 	ref sld = CharacterFromID("CangGirl");
@@ -6258,7 +6254,7 @@ void WaitressFack_inRoom(string qName)
 
 void WaitressFack_Enter(string qName)
 {	
-	LAi_group_Delete("EnemyFight"); 
+	LAi_group_Delete("EnemyFight");
 	LAi_SetFightMode(pchar, false);
 	LAi_LockFightMode(pchar, true);
 	if (pchar.questTemp.different.FackWaitress.Kick == "0")
@@ -6288,28 +6284,12 @@ void WaitressFack_Enter(string qName)
 
 void WaitressFack_outRoom()
 {
-	// ==> Забираем клинки, пистоли и деньги.
-	RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
-	RemoveCharacterEquip(pchar, GUN_ITEM_TYPE);
-	RemoveCharacterEquip(pchar, MUSKET_ITEM_TYPE);
-    while (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) != "")
-    {
-        TakeItemFromCharacter(pchar, FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE));
-    }
-    while (FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE) != "")
-    {             
-        TakeItemFromCharacter(pchar, FindCharacterItemByGroup(pchar, GUN_ITEM_TYPE));
-    }
-	while (FindCharacterItemByGroup(pchar, MUSKET_ITEM_TYPE) != "")
-    {             
-        TakeItemFromCharacter(pchar, FindCharacterItemByGroup(pchar, MUSKET_ITEM_TYPE));
-    }
-    pchar.money = 0;
-    // <== Забираем клинки, пистоли и деньги.
-	AddCharacterExpToSkill(pchar, "Pistol", 100);
+    LAi_LockFightMode(PChar, true);
+    AddMoneyToCharacter(PChar, -5000);
+	AddCharacterExpToSkill(PChar, "Pistol", 100);
 	LAi_SetActorType(sld);
 	LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "OpenTheDoors", -1.0);
-	pchar.questTemp.different = "FackWaitress_noMoney"; //флаг ограбили
+	PChar.questTemp.different = "FackWaitress_noMoney"; //флаг ограбили
 }
 
 void WaitressFack_fight()
@@ -8862,11 +8842,11 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 				LAi_RemoveCheckMinHP(sld);
 				sld.lifeDay = 0;
 			}
-		 SetFunctionTimerCondition("EncGerl_deleteisjangly", 0, 0, 30, false);	// лесник 30 дней не давать квест.					
+            DeleteAttribute(pchar, "GenQuest.EncGirl");				
 		}
 		else
 		{
-			if (sGlobalTemp == "Saved_CangGirl") // спасли тетку
+			if (sGlobalTemp == "Saved_CangGirl") // спасли тетку ~!~ TO_DO: del sGlobalTemp !!!!
 			{
 				if(pchar.GenQuest.EncGirl == "close") // .. и послали её куда подальше
 				{
@@ -8874,25 +8854,25 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 					DeleteAttribute(pchar, "GenQuest.EncGirl");
 				}
 				else
-				{		
+				{
 					if(!CheckAttribute(pchar, "GenQuest.EncGirl.Ransom")) 
 					{
 						ChangeCharacterComplexReputation(pchar,"nobility", 5);
 						AddSimpleRumour(LinkRandPhrase(StringFromKey("GenQuests_100", pchar.GenQuest.EncGirl.name), 
 							StringFromKey("GenQuests_101", GetFullName(pchar), pchar.GenQuest.EncGirl.name), 
 							StringFromKey("GenQuests_102", pchar.GenQuest.EncGirl.name, GetMainCharacterNameGen())), int(pchar.GenQuest.EncGirl.nation), 3, 1);
-					}		
-				}	
+					}
+				}
 			}
 			else // оставил на растерзание бандитам
-			{	
+			{
 				for(i = 1; i <= 3; i++)
 				{
 					if (GetCharacterIndex("GangMan_" + i) == -1) continue;
 					sld = CharacterFromID("GangMan_" + i);
 					LAi_RemoveCheckMinHP(sld);
 					sld.lifeDay = 0;
-				}		
+				}
 				characters[GetCharacterIndex("CangGirl")].lifeDay = 0;
 				if(pchar.GenQuest.EncGirl == "Begin_11")
 				{
@@ -8910,8 +8890,8 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 					StringFromKey("GenQuests_104", pchar.GenQuest.EncGirl.name)), int(pchar.GenQuest.EncGirl.nation), 5, 1);
 				DeleteAttribute(pchar, "GenQuest.EncGirl"); //трем нацию и имя	
 			}
-		}			
-	}		
+		}
+	}
 	//------------------- девка просит помочь подруге -------------------------
 	else if (sQuestName == "Enc_FriendGirl_after") { //если выстрел до диалога
 		ChangeCharacterComplexReputation(pchar,"nobility", -(rand(4)+1));

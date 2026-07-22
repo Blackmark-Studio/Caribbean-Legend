@@ -1,0 +1,16 @@
+quest_companion_header {Lié à une quête}
+quest_companion_text {Ce compagnon vous accompagne dans le cadre d’une quête. Vous ne pouvez pas interagir avec son navire.}
+where_is_my_ship_sea_header {Position du navire}
+where_is_my_ship_sea_text {$rand(Haute mer|Entre ciel et terre|En mer|Sept pieds sous la quille)}
+where_is_my_ship_header {Position du navire}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Canons en mauvais état}
+cannons_broken_text {Les canons doivent être réparés au chantier naval ou remplacés de toute urgence !}
+bad_captain_header {Compétence insuffisante}
+bad_captain_text {Ce compagnon ne peut pas commander un navire en haute mer, car sa compétence « Capitaine » est insuffisante.}
+low_morale_header {Risque de mutinerie}
+low_morale_text {L’équipage est mécontent. Il faut remonter son moral de toute urgence !}
+low_food_header {Vivres insuffisants}
+low_food_text {Les matelots vont bientôt mourir de faim. Il faut reconstituer les réserves de toute urgence !}
+low_medicament_header {Médicaments insuffisants}
+low_medicament_text {Les matelots vont bientôt mourir de maladie. Il faut reconstituer les réserves de toute urgence !}

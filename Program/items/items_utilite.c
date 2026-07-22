@@ -1613,6 +1613,11 @@ void AddMapPart()
         GiveItem2Character(PChar, "map_part2");
 }
 
+bool CheckMapParts()
+{
+    return !GetCharacterItem(PChar, "map_part1") || (!GetCharacterItem(PChar, "map_full") && !GetCharacterItem(PChar, "map_part2"));
+}
+
 float GetWeightMtp(int weaponType, float weight)
 {
 	switch (weaponType)

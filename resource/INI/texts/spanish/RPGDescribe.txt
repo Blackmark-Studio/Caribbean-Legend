@@ -54,14 +54,14 @@ Estadísticas básicas de Protección contra daño. Reducen todo el daño recibi
 }
 Charisma
 {
-Autoridad: una mezcla de rostro curtido y lleno de cicatrices y una lengua de plata.
-Útil en cualquier ambiente y en cualquier negociación: tras un líder nato los seguidores talentosos van con facilidad, y cualquier trato se cierra a su favor.
+Liderazgo: una combinación de rostro varonil cubierto de cicatrices y una lengua bien afilada.
+Resulta útil en cualquier compañía y negociación: los seguidores de talento acudirán fácilmente a un líder nato y cualquier trato se cerrará a su favor.
 ~
-Afecta a las habilidades “Leadership” y “Comercio”.
+Afecta a las habilidades «Liderazgo» y «Comercio».
 Establece el límite de oficiales (A*2).
-Aumenta el descuento de mantenimiento de los oficiales y el porcentaje de experiencia transferida a oficiales y compañeros.
+Aumenta la proporción de experiencia transferida a oficiales y compañeros.
 ~
-Bono actual: $percent($LVL_GetCurrentLeadershipBonusMtp( )) de $percent($LVL_GetMAXLeadershipBonusMtp( ))
+Bonificación actual: $percent($LVL_GetCurrentLeadershipBonusMtp( )) de $percent($LVL_GetMAXLeadershipBonusMtp( ))
 }
 Commerce
 {
@@ -162,6 +162,7 @@ Usa la barra deslizante a la derecha de la lista para desplazarte por ella.
 ~
 Presione la tecla 'Enter' o haga doble clic en un objeto de la lista para ver la descripción del producto, arrojar una cantidad innecesaria por la borda o dejar caer una mina de pólvora.
 }
+GoodsCannons_hint {Los cañones son imprescindibles en las peligrosas aguas del mar Caribe. Bombardas pesadas, medios cañones ligeros o culebrinas de largo alcance: cada capitán elige el armamento según sus posibilidades y preferencias. El diseño del barco limita el número máximo y el calibre de los cañones. Los cañones se desgastan y, cuando están en mal estado, sufren graves penalizaciones, por lo que deben mantenerse en buenas condiciones.}
 Grappling
 {
 Alinear el barco con el buque enemigo, lanzar los garfios para abordar al tembloroso adversario, limpiar las cubiertas y tomar el barco como premio merecido — todo esto requiere gran agilidad y experiencia, pero el botín sin duda compensará todo el esfuerzo.
@@ -419,3 +420,4 @@ Este modo deja al jugador completar una de las misiones de un imperio, pero a su
 ~
 El mundo real vuelve a la acción una vez que se ha completado la misión.
 }
+cannons_managment_hint {Los cañones navales se desgastan rápidamente debido a las limitaciones de la metalurgia. Cada disparo causa daños internos en el cañón y la cureña, lo que con el tiempo dificulta su mantenimiento y reduce la precisión. Visita el astillero con frecuencia para mantener los cañones en perfecto estado y efectuar salvas letales perfectamente coordinadas.}

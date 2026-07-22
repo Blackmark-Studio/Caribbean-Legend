@@ -1837,9 +1837,7 @@ void Caleuche_CreateGhostshipKhalRoa(string qName)//подгружаем в мо
 	if (MOD_SKILL_ENEMY_RATE == 10) SetCrewQuantityOverMax(sld, 666);
 	else SetCrewQuantityOverMax(sld, 466);
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+	SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 	AddCharacterGoods(sld, GOOD_BALLS, 3300);
 	AddCharacterGoods(sld, GOOD_GRAPES, 500);
 	AddCharacterGoods(sld, GOOD_KNIPPELS, 700);

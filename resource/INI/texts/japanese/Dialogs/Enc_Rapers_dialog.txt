@@ -1,0 +1,69 @@
+Enc_Rapers_dialog_First_time_text_1 {$rand(「自分の道を行け」 $manWoman(相棒|娘)。最終的には彼女も俺たちに感謝するさ、わかるだろう。|失せろ！旦那方に楽しく過ごさせてやれ。|「お前には関係ねえことだ」 $manWoman(見知らぬ者|娘)。ちょっと楽しむだけさ、それだけだぜ！)}
+Enc_Rapers_dialog_First_time_l1_1 {$rand(俺はこんなこと許さねえぞ！|今すぐその悪だくみをやめろ！|俺はどんな暴力も許さねえぞ！)}
+Enc_Rapers_dialog_First_time_l2_1 {$rand(わかった、もう行くよ。邪魔して悪かったな。|もう二度とお邪魔しません。ご迷惑をおかけしてすみませんでした。)}
+Enc_Rapers_dialog_First_time_text_2 {$rand(「自分の道を行け」 $manWoman(相棒|娘)。最終的には彼女も俺たちに感謝するさ、わかるだろう。|消え失せろ！旦那たちに楽しく過ごさせてやれ。|「お前には関係ねえことだ」 $manWoman(見知らぬ者|娘)。ちょっと楽しむだけだ、それだけさ！！)}
+Enc_Rapers_dialog_First_time_l1_2 {$rand(俺はこんなこと許さねえぞ！|今すぐその悪だくみをやめろ！|俺はどんな暴力も絶対に許さねえぞ！)}
+Enc_Rapers_dialog_First_time_l2_2 {$rand(わかった、もう行くよ。邪魔して悪かったな。|もう二度とお邪魔しません。ご迷惑をおかけしてすみませんでした。)}
+Enc_Rapers_dialog_First_time_text_3 {$rand(「おい、」 $manWoman(見知らぬ者|お嬢さん)、なんで揉め事を探してるんだ？この娘はうちの居住地で「有名」な存在だ。俺たちはもう彼女に金を払ったが、 あんたに気づいて金を持って逃げることにしたんだ。|「おい、」 $manWoman(相棒|娘)、さっさと自分の道を行け、俺たちのことに首を突っ込むな。この娘はサイコロ勝負で手に入れたんだが、 ちょっと素早すぎて逃げ出しやがった。もう一時間もこのジャングルで追いかけてるんだぜ。)}
+Enc_Rapers_dialog_First_time_l1_3 {俺は気にしねえ、あいつに手出しはさせねえぞ！}
+Enc_Rapers_dialog_First_time_l2_3 {$rand(ああ、そうか！あやうくあの女の言葉を信じるところだったぜ！あんなあばずれめ……|ああ、そういうことなら話は別だな。じゃあ、楽しんでくれよ、みんな！)}
+Enc_Rapers_dialog_First_time_text_4 {「自分の道を行け」 $manWoman(いい男|お嬢さん)。お前がいなくても俺たちで何とかするさ。}
+Enc_Rapers_dialog_First_time_l1_4 {俺は暴力は絶対に許さねえぞ！}
+Enc_Rapers_dialog_First_time_text_5 {$rand(「おい、」 $manWoman(見知らぬ者|お嬢さん)「なあ、なんで揉め事を起こそうとしてるんだ？この娘はうちの居住地じゃ“有名人”なんだぜ。もう金は払ったんだが、あんたに気づいて俺たちの金を持って逃げることにしたんだ。」|「おい、」 $manWoman(相棒|娘)、さっさと自分の道を行け、俺たちのことに首を突っ込むな。こいつはサイコロ勝負で手に入れた娘だが、 逃げ足が速くてな、もう一時間も追いかけてるんだ。)}
+Enc_Rapers_dialog_First_time_l1_5 {俺はどうでもいいが、あいつには指一本触れさせねえぞ！}
+Enc_Rapers_dialog_First_time_l2_4 {$rand(ああ、そういうことか！あやうくあの女の言葉を信じるところだったぜ！とんだあばずれめ……|ああ、そういうことなら話は別だな。じゃあ、楽しんでくれよ、みんな！)}
+Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(「まあ、散歩にはまさにうってつけの時を選んだな……」|そうか、英雄になるつもりか？) 「奴を片付けろ」$manWoman(俺|「えー」)「野郎ども！」|You $manWoman(スライム|汚物)！俺たちの邪魔をするつもりか？！斬り捨ててやる$manWoman(俺|「えー」)!)}
+Enc_Rapers_dialog_Node_Fight_l1_1 {もっと怖そうな奴らを見たことがあるぜ！}
+Enc_Rapers_dialog_Node_3_text_1 {あんたも知っておくべきだが、あの女はかなり金がかかったんだぜ！もしあんたがそんなに高貴なお方なら、 あの女をあんたに渡してやってもいいぜ $ctx(price) ペソ。$manWoman( 彼女と一緒なら楽しい時間を過ごせるぜ、へへ……|)}
+Enc_Rapers_dialog_Node_3_l1_1 {$rand(ほら、金だ。あの女は俺が連れていく。|歯を食いしばるのはやめろ。俺はこの娘を連れていくぜ。ほら、金だ。)}
+Enc_Rapers_dialog_Node_3_l2_1 {$rand(つまり、金が欲しいのか？それとも冷たい刃の方がいいか？|それが面白いと思ってるのか、この娘を見ろ、この馬鹿野郎！怯えてるじゃねえか！|誰を騙そうってんだ、このろくでなしめ！)}
+Enc_Rapers_dialog_Node_5_text_1 {そもそも、なぜあいつの言うことを信じるんだ？どんな暴力だって？あいつは家出しただけで、 俺たちは親分に頼まれて探しに来ただけだぜ。}
+Enc_Rapers_dialog_Node_5_l1_1 {$rand(なるほど、それなら話は別だな。行け、逃げた奴を追いかけろ。|ああ、なるほど。じゃあ、その娘を追い続けな。……俺には片付けなきゃならねえ用事があるんだ。)}
+Enc_Rapers_dialog_Node_5_l2_1 {$rand(そんなおとぎ話は、自分の孫ができるまで長生きしたら聞かせてやれよ！|誰を騙そうってんだ、この野郎！？)}
+Enc_Rapers_dialog_Node_5_l3_1 {面倒を避けるために、俺が自分で彼女を家まで送るぜ。彼女の親は誰だ？}
+Enc_Rapers_dialog_Node_6_text_1 {死にたいのか？それがお前の選択だな……}
+Enc_Rapers_dialog_Node_6_l1_1 {「どの口が言うんだ。」}
+Enc_Rapers_dialog_Node_7_fatherNom_1 {is a store owner}
+Enc_Rapers_dialog_Node_7_fatherGen_1 {of a store owner}
+Enc_Rapers_dialog_Node_7_fatherNom_2 {serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherGen_2 {who serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherNom_3 {serves as the prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherGen_3 {of a prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherNom_4 {is a shipyard owner}
+Enc_Rapers_dialog_Node_7_fatherGen_4 {of a shipyard owner}
+Enc_Rapers_dialog_Node_7_text_1 {彼女の父 $ctx(fatherName)、居住地で $ctx(cityName)。しかし、どうか私たちを裏切らないでください、あの人は冗談の通じる相手じゃありません、 全員生きたまま皮を剥がされますよ……}
+Enc_Rapers_dialog_Node_7_l1_1 {心配するな。俺が彼のもとへ彼女を届けてやる。}
+Enc_Rapers_dialog_Node_8_text_1 {また会ったな。お前の仲間はどこだ？まあ、いいさ。お前がいれば、あの女はいらねえよ。}
+Enc_Rapers_dialog_Node_8_l1_1 {諸君、もう十分な金を受け取っただろうから、その娘にはもう手を出すな。}
+Enc_Rapers_dialog_Node_9_sTemp_1 {a leg}
+Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
+Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
+Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
+Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
+Enc_Rapers_dialog_Node_9_text_1 {お前の金など、の財宝に比べれば何でもない $ctx(pirateName)? あいつはケチでな、自分の娘さえ嫁にやりたがらなかったんだ、余計な出費を避けたくてな……\nだが、俺たちの取り分はしっかり自分の箱にしまい込んでやがる！ $ctx(pirateName2) 白兵戦で敗北した $ctx(tempText)！それと、お前は代わりに何を持ってるんだ？ 「哀れな銀貨のひと握りだと？」 $ctx(pirateName2) いつも戦利品を全部自分の隠し場所に持っていきやがった。\nだが今度は俺たちは引き下がらねえ！奴の宝箱がどこにあるか教えろ！}
+Enc_Rapers_dialog_Node_9_l1_1 {まあ、俺はあんたの船長の宝を守るために雇われたわけじゃねえが、場所を教えることはできねえ……なぜなら、俺もどこにあるのか知らねえからだ。}
+Enc_Rapers_dialog_Node_10_text_1 {嘘をついてやがるな！！！この洞窟から金の匂いがぷんぷんするぜ！死にたくなけりゃ場所を教えろ！}
+Enc_Rapers_dialog_Node_10_l1_1 {私の言葉ではあなたを納得させられなかったようだな。\nならば、この剣で語るとしようか？}
+Enc_Rapers_dialog_Node_11_text_1 {You $manWoman(野良犬|汚物)「どけ、邪魔だ！」}
+Enc_Rapers_dialog_Node_11_l1_1 {「アルグ！」}
+Enc_Rapers_dialog_EncGirl_Berglar_text_1 {こんにちは、良い $manWoman(男|ご婦人)。お前について苦情が届いているぞ。}
+Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {誰からの文句だ？あの売女からか？}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {言葉に気をつけろ、いいな？俺の妹を侮辱するのは許さねえ！最初はジャングルで彼女を襲い、 それからここに連れてきたんだ $manWoman(さらなる不品行のために|そして俺を襲って奪った).}
+Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {おい相棒、俺は本当に全部聞かなきゃいけねえのか？}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {いいや。わずかな額でたった $ctx(moneyAmount) ペソがあんたをすべての面倒から救ってくれるぜ。}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {まあ、最近は高貴な行いも結構金がかかるもんだな。よし、持っていけ…}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_1 {お前の腹に穴を開けて、出口への邪魔をさせない方が安上がりだと思うぜ。}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_2 {いやだ。だが、お前もポケットの中身を全部出せ、さもねえと刺すぞ！}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_2 {よし、持っていけ、この野郎！だが、ただじゃ済まさねえぞ……}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_2 {お前の腹に穴を開けて、出口への邪魔をさせねえ方が楽だと思うぜ。}
+Enc_Rapers_dialog_EncGirl_Berglar3_text_1 {とてもいい。せいせいしたぜ。}
+Enc_Rapers_dialog_EncGirl_Berglar3_l1_1 {幸運を祈る。}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {もちろんしないさ、もちろん……さて、それじゃあ、さようならだ、 $manWoman(相棒|娘).$manWoman( それと覚えておけよ、お前はそんなにイケてる顔じゃねえから、女が一目見てすぐ惚れるなんてことはねえんだぜ。 これが俺からの教訓だ。|)}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(それは間違いねえぜ！..|さっさと失せろ！)}
+Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {「～のように見える」 $manWoman(「そんな高貴な男」|「とても上品に育てられたご婦人」)、なんだその汚い言葉遣いは？}
+Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {俺にはこれが一番合ってるんだ…}
+Enc_Rapers_dialog_Node_2_text_1 {さあ、望みどおりだぜ！くすぐってやるか？$manWoman(俺|「えー」) 鉄でいくか、野郎ども？}
+Enc_Rapers_dialog_Node_2_l1_1 {死ぬ前に祈れ！}
+Enc_Rapers_dialog_OnceAgain_text_1 {それで、参加したいのか、したくないのか？ $manWoman(消えろ、みんなに行き渡るほど残ってねえんだ|消え失せな、こっちは女は一人で十分だぜ)!}
+Enc_Rapers_dialog_OnceAgain_l1_1 {それでは、お邪魔はしません。}
+Enc_Rapers_dialog_OnceAgain_l2_1 {俺は絶対に暴力を許さねえぞ！}

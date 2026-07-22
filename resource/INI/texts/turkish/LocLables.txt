@@ -143,6 +143,7 @@ LosTeques Town {Los-Teques madeni}
 LosTeques_town {Los-Teques madeni}
 LostShipsCity {Loco-Riferte}
 LostShipsCity Town {Loco-Riferte}
+LostShipsCity_Town {Loco-Riferte}
 Loxly_house {Albert Locksley'in Ofisi}
 LSC North {Ölü Gemiler Adası - Kuzey}
 LSC South {Ölü Gemiler Adası - Güney}

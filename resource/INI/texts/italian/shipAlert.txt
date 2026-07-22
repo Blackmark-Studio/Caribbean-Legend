@@ -1,0 +1,16 @@
+quest_companion_header {Legato a una missione}
+quest_companion_text {Questo compagno ti accompagna per una missione. Non puoi interagire con la sua nave.}
+where_is_my_ship_sea_header {Posizione della nave}
+where_is_my_ship_sea_text {$rand(Mare aperto|Tra cielo e terra|In navigazione|Sette piedi sotto la chiglia)}
+where_is_my_ship_header {Posizione della nave}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Cannoni in cattive condizioni}
+cannons_broken_text {I cannoni devono essere riparati al cantiere navale o sostituiti immediatamente!}
+bad_captain_header {Abilità insufficiente}
+bad_captain_text {Questo compagno non può comandare una nave in mare aperto perché non possiede l’abilità «Capitano».}
+low_morale_header {Rischio di ammutinamento}
+low_morale_text {L’equipaggio è scontento. Bisogna risollevare subito il morale!}
+low_food_header {Scorte di cibo scarse}
+low_food_text {I marinai inizieranno presto a morire di fame. Bisogna rifornire immediatamente le scorte!}
+low_medicament_header {Scorte di medicinali scarse}
+low_medicament_text {I marinai inizieranno presto a morire di malattia. Bisogna rifornire immediatamente le scorte!}

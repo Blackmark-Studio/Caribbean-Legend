@@ -1,0 +1,25 @@
+Alone_Citiz_First_time_text_1 {$rand(Hallo|He, hallo|Seid gegrüßt|Guten Tag), $rand(Fremder|Reisender|Wanderer)! $rand(Ehrlich gesagt, Ihr habt mir ganz schön $rand(einen Schrecken eingejagt|Angst gemacht).|Ich hätte nicht erwartet, hier jemandem zu begegnen.|Auch auf dem Weg, den Kopf freizubekommen? Das ist richtig so.) Mein Name ist $npcName. $rand(Kann ich Euch irgendwie helfen?|Womit kann ich dienen?|Wolltet Ihr etwas?|Was verschafft mir die Ehre?)}
+Alone_Citiz_First_time_l0 {$rand(Im Dschungel wird niemand deine Schreie hören, $npcName.|Ich sammle freiwillig-verpflichtende Spenden für die Bedürfnisse der Bruderschaft der Küste.|Wusstest du etwa nicht, dass der Weg über diesen Pfad gebührenpflichtig ist, $npcName?|Dachtest du, du könntest einfach so durch mein Gebiet spazieren?|Hast du etwa nichts von der neuen Steuer gehört? Gerade erst hat man dumme Alleingänge in den Dschungel damit belegt.) $rand(Leere schon deine Taschen aus.|Rück deine Habseligkeiten heraus.|Rück deine Wertsachen raus, solange ich noch freundlich bin.|Zeig mal, was da in deinen Taschen klimpert.|Rück die klingende Münze raus, solange du deinen Kopf noch behalten willst.)(Chance $ctx(Chance)%)}
+Alone_Citiz_First_time_l1 {Ich bin nur hergekommen, um Hallo zu sagen, $npcName. Alles Gute.}
+Alone_Citiz_First_time_text_2 {Da seid Ihr ja wieder. Wolltet Ihr etwas? Ich glaube, wir haben schon alles besprochen.}
+Alone_Citiz_First_time_l0_a {$rand(Ja, da ist noch etwas.|Hätte ich beinahe vergessen...|Tatsächlich, ja, ich wollte etwas!|Stimmt, ich wollte etwas!) $rand(Im Dschungel wird niemand deine Schreie hören, $npcName.|Ich sammle freiwillig-verpflichtende Spenden für die Bedürfnisse der Bruderschaft der Küste.|Wusstest du etwa nicht, dass der Weg über diesen Pfad gebührenpflichtig ist, $npcName?|Dachtest du, du könntest einfach so durch mein Gebiet spazieren?|Hast du etwa nichts von der neuen Steuer gehört? Gerade erst hat man dumme Alleingänge in den Dschungel damit belegt.) $rand(Leere schon deine Taschen aus.|Rück deine Habseligkeiten heraus.|Rück deine Wertsachen raus, solange ich noch freundlich bin.|Zeig mal, was da in deinen Taschen klimpert.|Rück die klingende Münze raus, solange du deinen Kopf noch behalten willst. (Chance $ctx(Chance)%)}
+Alone_Citiz_First_time_l0_b {Ich gehe nur spazieren, $npcName, denkt Euch nichts dabei.}
+Alone_Citiz_Bullying_Fail {Erpressung fehlgeschlagen}
+Alone_Citiz_Bullying_Success {Erpressung gelungen}
+Alone_Citiz_Robbery_text_1 {$rand(Verflucht seist du, Schurke! Ich gebe dir gar nichts!|Glaubst du, du bist der erste Halunke, dem ich begegne? Von wegen!)}
+Alone_Citiz_Robbery_text_2 {$rand(Das ist alles, was ich habe.|Ihr nehmt mir auch noch das Letzte. Nun gut, der Himmel wird es Euch anrechnen.|Wo soll das noch hinführen, man kann keinen Schritt mehr in Ruhe tun.|Was für Zeiten sind das, jeder will einen betrügen und ausrauben, solange er einem nur nicht gleich das Leben nimmt.) $rand(Nimm es und verschwinde, du Halunke.|Das ist alles, was ich habe.|Nehmt es. Mehr habe ich nicht.|Das ist alles, was da ist. Nehmt es und lasst mich in Ruhe.)}
+Alone_Citiz_Robbery_l1 {$rand(Nun gut, dann werde ich dir deine Sachen wohl von der Leiche nehmen müssen.|Falsche Antwort.|Na schön, jetzt kommt der unangenehme Teil.|Nur recht. Tote Menschen lassen sich viel leichter ausrauben.)}
+Alone_Citiz_Robbery_l2 {Na also. Und jetzt keine Dummheiten.}
+Alone_Citiz_AfterRobbery_text_1 {Du hast mich schon bis aufs Hemd ausgezogen, du Schurke, was willst du noch?!}
+Alone_Citiz_AfterRobbery_l1 {Ich sehe nach, ob ich etwas vergessen habe.}
+Alone_Citiz_ToRumours_first {$rand(Erzähl mir lieber, welche Geschichten in dieser Taverne die Runde machen.|Sag mir lieber, was es hier in der Gegend Neues gibt.|Erzähl mir lieber, Freund, wie das Leben an Land so läuft.)}
+Alone_Citiz_ToRumours_second {$rand(Welche Geschichten machen in dieser Taverne die Runde?|Was gibt es hier in der Gegend Neues?|Wie läuft das Leben an Land?)}
+Alone_Citiz_Rumours_posrep_1 {$rand(So steht es also...|Vielleicht amüsiert Euch das.)}
+Alone_Citiz_Rumours_answ_1 {$swear Interessante Dinge erzählst du da, $npcName. Weißt du noch irgendetwas?}
+Alone_Citiz_Rumours_posrep_2 {$rand(So steht es also...|Vielleicht amüsiert Euch das.)}
+Alone_Citiz_Rumours_answ_2 {$swear Das ist sehr interessant! Gibt es weitere Neuigkeiten?}
+Alone_Citiz_Rumours_posrep_3 {~ Und Ihr, Kapitän, habt Ihr irgendwelche Neuigkeiten?}
+Alone_Citiz_Rumours_answ_3 {$rand(Was in der Welt nicht alles geschieht, doch leider habe ich keine Neuigkeiten.|Ich habe es etwas eilig, also ein andermal.)}
+Alone_Citiz_Rumours_Block {$rand(Leider weiß ich nichts weiter. Erlaubt mir zu gehen.|Ihr habt mich mit Euren Fragen ermüdet. Verzeiht, aber meine Geschäfte warten.)}
+Alone_Citiz_Rumours_Block_Ok {In diesem Fall, leb wohl.}
+Alone_Citiz_Rumours_Bye {$rand(Danke, ich muss mich verabschieden.|Alles Gute.)}

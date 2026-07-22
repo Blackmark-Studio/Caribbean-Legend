@@ -49,10 +49,10 @@ void DailyCheckIfQuartermaster(ref rchar)
 }
 
 // Квартирмейстер
-int GetBonusCrewQuartermaster(ref rchar, int optCrew, int maxCrew)
+int GetBonusCrewQuartermaster(ref rchar, int maxCrew)
 {
-	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return int(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
-	else if (HasPerk(rchar, "Quartermaster")) return int(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
+	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return int(maxCrew + maxCrew * PERK_VALUE_QUARTERMASTER);
+	else if (HasPerk(rchar, "Quartermaster")) return int(maxCrew + maxCrew * PERK_VALUE_QUARTERMASTER);
 	return maxCrew;
 }
 

@@ -44,10 +44,10 @@ Node0_d_b_action {Faremo tutto come si deve}
 Node0_d_b_success {$attr($context.officerName) è il vostro _$attr($context.officerJob), non un semplice marinaio. Questo $rand(gli dà|comporta) certi privilegi. Ordinate di organizzare $rand(una commemorazione ufficiale|una commemorazione secondo regolamento) nella sala comune. $attr($context.officerName) appare $rand(un po' imbarazzato|imbarazzato), ma presto $rand(ciò lascia spazio alla gratitudine|si trasforma in gratitudine).}
 Node0_d_b_success_action {Il meglio per i compagni fedeli}
 Node0_d_c_action {Dio ti ascolta anche senza tutto questo}
-Node0_d_c_success {Convincete l'ufficiale che una preghiera sincera verrà ascoltata anche senza riti.$br$red$attr($context.officerName) sembra esserne convinto. Provate una certa fierezza nel vedere che le vostre parole gli portano sollievo.}
+Node0_d_c_success {Convincete l'ufficiale che una preghiera sincera verrà ascoltata anche senza riti.$br()$red $attr($context.officerName) sembra esserne convinto. Provate una certa fierezza nel vedere che le vostre parole gli portano sollievo.}
 Node0_d_c_success_action {Ti rialzerai}
 Node0_d_c_fail {Le vostre parole suonano poco convincenti, e $attr($context.officerName) appare abbattuto. A quanto pare vi ha presi semplicemente per un avaro cinico.}
 Node0_d_c_fail_action {Aspetta, non mi pesa}
 Node0_d_d_action {Il cappellano di bordo saprà aiutare}
-Node0_d_d_success {Vi sembra strano che $attr($context.officerName) si sia dimenticato del vero cappellano di bordo, ma lo attribuite a un dolore accecante.$br$redFate chiamare il cappellano in cabina, gli spiegate la situazione e gli chiedete una parola di conforto. $attr($context.officerName) appare assorto e lontano, ma le parole del religioso lo riportano presto in sé.}
+Node0_d_d_success {Vi sembra strano che $attr($context.officerName) si sia dimenticato del vero cappellano di bordo, ma lo attribuite a un dolore accecante.$br()$red Fate chiamare il cappellano in cabina, gli spiegate la situazione e gli chiedete una parola di conforto. $attr($context.officerName) appare assorto e lontano, ma le parole del religioso lo riportano presto in sé.}
 Node0_d_d_success_action {Dio ci ha ascoltati}

@@ -1,2 +1,3 @@
 smuggling_1 {Smugglers approve (}
 smuggling_2 {Smugglers disapprove (}
+smuggling_3 {I’ve changed my mind. Prepare to fight, soldier boy.}

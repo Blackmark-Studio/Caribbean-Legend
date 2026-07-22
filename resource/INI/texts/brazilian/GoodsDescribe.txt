@@ -23,78 +23,33 @@ Blocos e telhas de terracota, amplamente usados na construção das cidades, já
 Devido aos incêndios frequentes, as autoridades incentivam o uso de tijolos, tornando esse produto sempre procurado.
 }
 Cannon_12 {Demi-canhões de 12 libras}
-Cannon_12_descr
-{
-Um calibre comum entre pequenos navios de guerra. Para seu tamanho e peso, oferece poder de fogo impressionante, mas exige tripulação completa nos canhões, aumentando o número de tripulantes a bordo.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_12_descr {Um calibre comum entre pequenos navios de guerra. Para seu tamanho e peso, oferece poder de fogo impressionante, mas exige tripulação completa nos canhões, aumentando o número de tripulantes a bordo.}
 Cannon_16 {Demi-canhões de 16 libras}
-Cannon_16_descr
-{
-Canhões modernos do tipo francês. Graças ao design avançado, oferecem excelente alcance, confiabilidade e poder de fogo. Um calibre muito comum em navios de patrulha e reconhecimento.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_16_descr {Canhões modernos do tipo francês. Graças ao design avançado, oferecem excelente alcance, confiabilidade e poder de fogo. Um calibre muito comum em navios de patrulha e reconhecimento.}
 Cannon_18 {Demi-canhões de 18 libras}
-Cannon_18_descr
-{
-Canhões universais potentes, frequentemente usados em navios de guerra no passado. Ainda comuns no arquipélago e valorizados por sua simplicidade e confiabilidade, embora o design antigo limite um pouco seu alcance.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
-}
+Cannon_18_descr {Canhões universais potentes, frequentemente usados em navios de guerra no passado. Ainda comuns no arquipélago e valorizados por sua simplicidade e confiabilidade, embora o design antigo limite um pouco seu alcance.}
 Cannon_20 {Canhões de 20 libras}
-Cannon_20_descr
-{
-Canhões de artilharia de cano longo usados em cruzadores e navios auxiliares de comboios militares. Exigem trabalho coordenado da equipe para disparos eficazes.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
-}
+Cannon_20_descr {Canhões de artilharia de cano longo usados em cruzadores e navios auxiliares de comboios militares. Exigem trabalho coordenado da equipe para disparos eficazes.}
 Cannon_24 {Canhões de 24 libras}
-Cannon_24_descr
-{
-O calibre principal dos navios de guerra, ápice da evolução da artilharia naval. Equilibram alcance e poder de fogo, e seu projeto robusto permite suportar longas batalhas no mar sem sofrer danos críticos.  
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
-}
+Cannon_24_descr {O calibre principal dos navios de guerra, ápice da evolução da artilharia naval. Equilibram alcance e poder de fogo, e seu projeto robusto permite suportar longas batalhas no mar sem sofrer danos críticos.}
 Cannon_3 {Falconetes}
 Cannon_3_descr
 {
 Canhões de convés equipados com torre. Possuem a maior mobilidade e, devido ao tamanho reduzido, menor potência e alcance.
 Frequentemente contam com culatra substituível, permitindo recarga rápida.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Cannon_32 {Canhões de 32 libras}
-Cannon_32_descr
-{
-Canhões pesados de grande calibre que causam dano massivo e são ideais para bombardear fortes. Devido ao limite de resistência dos materiais, usam carga de pólvora reduzida, o que limita o alcance.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_32_descr {Canhões pesados de grande calibre que causam dano massivo e são ideais para bombardear fortes. Devido ao limite de resistência dos materiais, usam carga de pólvora reduzida, o que limita o alcance.}
 Cannon_36 {Canhões de 36 libras}
-Cannon_36_descr
-{
-Canhões de cano longo, raros no convés de armas. Sua recarga lenta e alcance limitado são compensados pelo dano devastador causado por suas balas pesadas de voo lento. Exigem grandes equipes de artilheiros.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_36_descr {Canhões de cano longo, raros no convés de armas. Sua recarga lenta e alcance limitado são compensados pelo dano devastador causado por suas balas pesadas de voo lento. Exigem grandes equipes de artilheiros.}
 Cannon_42 {Bombardas de 42 libras}
-Cannon_42_descr
-{
-Canhões formidáveis, auge do poder naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e experiente.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# s.
-}
+Cannon_42_descr {Canhões formidáveis, auge do poder naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e experiente.}
 Cannon_48 {Bombardas de 48 libras}
-Cannon_48_descr
-{
-Canhões formidáveis, auge do poder de fogo naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e bem treinada.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_48_descr {Canhões formidáveis, auge do poder de fogo naval. Usados apenas em navios de linha, fortes e grandes batalhas europeias. Exigem uma tripulação numerosa e bem treinada.}
 Cannon_6 {Demi-canhões de 6 libras}
-Cannon_6_descr
-{
-Canhões pequenos, muito usados em navios-correio e mercantes por serem leves, baratos e duráveis. Fáceis de manter e não exigem tripulação experiente.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_6_descr {Canhões pequenos, muito usados em navios-correio e mercantes por serem leves, baratos e duráveis. Fáceis de manter e não exigem tripulação experiente.}
 Cannon_8 {Demi-canhões de 8 libras}
-Cannon_8_descr
-{
-Um dos calibres mais populares em navios pequenos, presente tanto em mercantes quanto em patrulhas. Valorizado pela excelente combinação de tamanho, peso e poder de fogo.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
-}
+Cannon_8_descr {Um dos calibres mais populares em navios pequenos, presente tanto em mercantes quanto em patrulhas. Valorizado pela excelente combinação de tamanho, peso e poder de fogo.}
 Chocolate {Cacau}
 Chocolate_descr
 {
@@ -132,20 +87,18 @@ O algodão amadurece tarde e a colheita nas plantações das ilhas do Caribe é 
 Esse trabalho exige uma plantação relativamente grande e pelo menos 20 escravos para operá-la.
 }
 Culverine_18 {Culverins}
-Culverine_18_descr {Canhões médios de 18 libras com alcance aumentado, adequados para navios relativamente pequenos. Apesar do alcance impressionante, são extremamente pesados e demoram para recarregar. Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.}
+Culverine_18_descr {Canhões médios de 18 libras com alcance aumentado, adequados para navios relativamente pequenos. Apesar do alcance impressionante, são extremamente pesados e demoram para recarregar.}
 Culverine_36 {Culverinas completas}
 Culverine_36_descr
 {
 Canhões de 36 libras de fortaleza projetados para fogo de brecha: vence quem atira primeiro!
 Devido ao grande comprimento, só podem ser instalados em portos para canhões de 42 libras.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Culverine_8 {Demi-culverins}
 Culverine_8_descr
 {
 Canhões de 8 libras de cano longo em carro especial com suporte reforçado e rodas de madeira maciça.
 Possuem alcance de tiro ampliado. Usados com frequência para fogo de barragem.
-Alcance - #dFireRange#, dano - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
 Ebony {Ébano}
 Ebony_descr
@@ -201,8 +154,10 @@ Móveis de mogno são símbolo de luxo clássico, bom gosto e prosperidade de se
 Medicament {Medicamentos}
 Medicament_descr
 {
-Conjunto de remédios e instrumentos para tratar doenças comuns e prestar primeiros socorros a feridos e acidentados.
-Ter medicamentos a bordo ajuda a salvar feridos, reduzir baixas em abordagens e cuidar dos doentes durante a viagem.
+Um conjunto de medicamentos, remédios e instrumentos para tratar os ferimentos, traumas e doenças mais comuns. Sem medicamentos, os tripulantes começarão a morrer de doenças e as baixas durante abordagens aumentarão.
+~
+Consumo diário:
+1/$number($kstringTemp(MEDICAMENT_BY_CREW)) unidade de mercadoria por pessoa.
 }
 newline
 {
@@ -240,8 +195,10 @@ As cordas mais renomadas e cobiçadas são fabricadas no Tsarado da Rússia.
 Rum {Rum}
 Rum_descr
 {
-Uma bebida alcoólica forte destilada do caldo fermentado da cana-de-açúcar, com um sabor marcante e levemente exótico. É uma mercadoria valiosa, sempre vendida com lucro, mas também eleva o moral dos marinheiros enquanto houver estoque. O rum também é misturado à água potável do navio para fazer grogue, desinfetando e melhorando o sabor da água. 
-A falta de rum a bordo pode causar insatisfação entre os marinheiros e até provocar um motim.
+Uma bebida alcoólica forte, de sabor e aroma característicos, produzida no Caribe com matérias-primas locais. É indispensável para manter o moral a bordo e desinfetar a água potável.
+~
+Consumo diário:
+1/$number($kstringTemp(RUM_BY_CREW)) unidade de mercadoria por pessoa.
 }
 Sailcloth {Lona de vela}
 Sailcloth_descr

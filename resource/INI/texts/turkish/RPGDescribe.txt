@@ -41,12 +41,12 @@ Bu değerler kişisel Yetenekler ve ekipmandan etkilenir.
 }
 Charisma
 {
-Otorite: yara izleriyle sertleşmiş bir yüz ile düzgün lafın birleşimi.
-Her ortamda ve her pazarlıkta işe yarar—doğuştan bir liderin peşinden yetenekli takipçiler kolayca gider, her anlaşma da onun lehine kapanır.
+Liderlik: yaralarla kaplı, mert bir yüz ile etkileyici bir hitabetin birleşimidir.
+Her ortamda ve her pazarlıkta işe yarar; doğuştan bir liderin peşinden yetenekli kişiler kolayca gider ve her anlaşma onun lehine sonuçlanır.
 ~
-‘Leadership’ ve ‘Ticaret’ yeteneklerini etkiler.
-Subay limitini belirler (A*2).
-Subay bakım indirimi ile subaylara ve yoldaşlara aktarılan deneyim yüzdesini artırır.
+‘Liderlik’ ve ‘Ticaret’ becerilerini etkiler.
+Subay sınırını belirler (A*2).
+Subaylara ve yoldaşlara aktarılan deneyim oranını artırır.
 ~
 Mevcut bonus: $percent($LVL_GetCurrentLeadershipBonusMtp( )) / $percent($LVL_GetMAXLeadershipBonusMtp( ))
 }
@@ -149,6 +149,7 @@ Pencereye sığmayan öğeleri görmek için listenin sağındaki kaydırıcıy�
 ~
 Bir ürünün açıklamasını görmek, istenmeyen miktarı denize atmak veya bir mayın bırakmak için 'Enter' tuşuna basın ya da listedeki öğeye çift tıklayın.
 }
+GoodsCannons_hint {Toplar, Karayip Denizi'nin tehlikeli sularında vazgeçilmezdir. Ağır bombardalar, hafif yarım toplar veya uzun menzilli kulverinler—her kaptan silahlarını imkânlarına ve tercihlerine göre seçer. Geminin yapısı, taşınabilecek topların azami sayısını ve kalibresini sınırlar. Toplar zamanla aşınır ve kötü durumdayken ağır cezalar getirir, bu yüzden bakımları düzenli yapılmalıdır.}
 Grappling
 {
 Düşman gemisine yanaşıp kancaları fırlatmak, titreyen düşmana çıkarma yapmak, güverteleri süpürüp gemiyi hak edilmiş bir ganimet olarak ele geçirmek — tüm bunlar büyük çeviklik ve deneyim ister, fakat ganimet tüm çabayı fazlasıyla karşılar.
@@ -391,3 +392,4 @@ Bu mod, Uluslar için senaryo görevlerinden birini oynamanı sağlar, ancak bit
 ~
 Canlı dünya, yalnızca senaryo tamamlandıktan sonra etkinleşir.
 }
+cannons_managment_hint {Gemi topları, metalürjinin yetersizliği nedeniyle hızla yıpranır. Her atış namluya ve top arabasına gizli hasar vererek zamanla bakımı zorlaştırır ve isabetliliği azaltır. Toplarınızı kusursuz durumda tutmak ve ölümcül, mükemmel uyumlu salvolar ateşlemek için tersaneye sık sık uğrayın.}

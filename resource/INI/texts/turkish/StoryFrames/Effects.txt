@@ -7,7 +7,7 @@ CrewMorale_pchar_0 {Mürettebat morali $MoraleStrDiff($ctx(value))}
 CrewMorale_pchar_1 {Mürettebat morali $MoraleStrDiff($ctx(value))}
 Reputation_pchar_0 {İtibar düştü}
 Reputation_pchar_1 {İtibar arttı}
-CrewExp_pchar_1 {$key($ctx(p1)) deneyim kazandı}
+CrewExp_pchar_1 {Mürettebat deneyim kazandı}
 Money_pchar_1 {$money($ctx(value)) aldınız}
 Money_pchar_0 {$abs($money($ctx(value))) ödediniz}
 Goods_pchar_1 {_$key($goodI($ctx(p1))Acc) alındı: $number($ctx(value))}

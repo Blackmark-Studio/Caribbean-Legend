@@ -1,4 +1,4 @@
-
+#include "scripts/cannons_health.c"
 #define REAL_SHIPS_QUANTITY 900
 
 object	RealShips[REAL_SHIPS_QUANTITY];
@@ -9,6 +9,12 @@ object	RealShips[REAL_SHIPS_QUANTITY];
 #define HULL_COST_PERCENT 25
 #define HULL_REPAIR_EXP_MTP 8.0
 #define SAIL_REPAIR_EXP_MTP 11.0
+
+#define HUMAN_TURN_RATE_STEP_1 30.0
+#define HUMAN_TURN_RATE_STEP_2 35.0
+#define HUMAN_TURN_RATE_STEP_3 45.0
+#define HUMAN_TURN_RATE_STEP_4 50.0
+#define HUMAN_TURN_RATE_STEP_5 65.0
 
 string GetShipDescr(ref refRealShip)
 {
@@ -106,19 +112,10 @@ int GenerateShip(int iBaseType, bool isLock)
 		rRealShip.HP = int(fTemp);
 	}
     rRealShip.Capacity        = int(rRealShip.Capacity) + rand(int(int(rRealShip.Capacity)/4)) - int(int(rRealShip.Capacity)/8);
-    rRealShip.OptCrew         = int(int(rRealShip.OptCrew) + rand(int(int(rRealShip.OptCrew)/3)) - int(int(rRealShip.OptCrew)/6));
-    rRealShip.MaxCrew         = int(int(rRealShip.OptCrew) * 1.25 + 0.5);  // 25% перегруза
+		rRealShip.MaxCrew         = int(int(rRealShip.MaxCrew) + rand(int(int(rRealShip.MaxCrew)/3)) - int(int(rRealShip.MaxCrew)/6));
     rRealShip.MinCrew         = int(int(rRealShip.MinCrew) + rand(int(int(rRealShip.MinCrew)/3)) - int(int(rRealShip.MinCrew)/6));
 
 	rRealShip.Weight		  = int(rRealShip.Weight) + rand(int(rRealShip.Weight)/20) - rand(int(rRealShip.Weight)/20);
-	
-	// to_do del -->
-	rRealShip.BoardingCrew    = 0;
-	rRealShip.GunnerCrew      = 0;
-	rRealShip.CannonerCrew    = 0;
-	rRealShip.SailorCrew      = int(rRealShip.OptCrew);
-    // to_do del <--
-    
 	int iDiffWeight			= int(rRealShip.Weight) - int(rBaseShip.Weight);
 	int iDiffCapacity		= int(rRealShip.Capacity) - int(rBaseShip.Capacity);
 	int iDiffMaxCrew		= int(rRealShip.MaxCrew) - int(rBaseShip.MaxCrew);
@@ -294,18 +291,10 @@ int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 	if(!CheckAttribute(rRealShip, "QuestShip"))
 	{
 		rRealShip.Capacity        = int(rRealShip.Capacity) + int(Кdckyrd * (rand(int(int(rRealShip.Capacity)/4)) - int(int(rRealShip.Capacity)/8)));
-		rRealShip.OptCrew         = int(int(rRealShip.OptCrew) + Кdckyrd * (rand(int(int(rRealShip.OptCrew)/3)) - int(int(rRealShip.OptCrew)/6)));
-		rRealShip.MaxCrew         = int(int(rRealShip.OptCrew) * 1.25 + 0.5);  // 25% перегруза
+		rRealShip.MaxCrew         = int(int(rRealShip.MaxCrew) + Кdckyrd * (rand(int(int(rRealShip.MaxCrew)/3)) - int(int(rRealShip.MaxCrew)/6)));
 		rRealShip.MinCrew         = int(int(rRealShip.MinCrew) + Кdckyrd * (rand(int(int(rRealShip.MinCrew)/3)) - int(int(rRealShip.MinCrew)/6)));
 		rRealShip.Weight		  = int(rRealShip.Weight) + int(Кdckyrd * (rand(int(rRealShip.Weight)/20) - rand(int(rRealShip.Weight)/20)));
 	}	
-
-	// to_do del -->
-	rRealShip.BoardingCrew    = 0;
-	rRealShip.GunnerCrew      = 0;
-	rRealShip.CannonerCrew    = 0;
-	rRealShip.SailorCrew      = int(rRealShip.OptCrew);
-	// to_do del <--
 
 	if(!CheckAttribute(rRealShip, "QuestShip"))
 	{
@@ -373,8 +362,7 @@ void SetMaxShipStats(ref chr)
 	rRealShip.TurnRate         	= float(rBaseShip.TurnRate) + (float(rBaseShip.TurnRate) / 10.0);
 	rRealShip.HP               	= int(rBaseShip.HP) + int(int(rBaseShip.HP)/10);
 	rRealShip.Capacity        	= int(rBaseShip.Capacity) + int(int(rBaseShip.Capacity)/8);
-	rRealShip.OptCrew         	= int(rBaseShip.OptCrew) + int(int(rBaseShip.OptCrew)/6);
-	rRealShip.MaxCrew         	= int(int(rBaseShip.OptCrew) * 1.25 + 0.5);  // 25% перегруза
+	rRealShip.MaxCrew         	= int(rBaseShip.MaxCrew);
 	rRealShip.MinCrew         	= int(rBaseShip.MinCrew) + int(int(rBaseShip.MinCrew)/6);
 	
 	rRealShip.Capacity  = int(rRealShip.Capacity) + int(rRealShip.Bonus_Capacity);
@@ -403,7 +391,7 @@ int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr,
 	rRealShip.HP = hp;
     rRealShip.Capacity = cp;
     rRealShip.OptCrew = cr;
-    rRealShip.MaxCrew = int(int(rRealShip.OptCrew) * 1.25 + 0.5);
+    rRealShip.MaxCrew = int(rBaseShip.MaxCrew);
     rRealShip.MinCrew = int(int(rRealShip.MinCrew) + int(int(rRealShip.MinCrew)/4)) - int(int(rRealShip.MinCrew)/7);
 	rRealShip.Weight = int(rRealShip.Weight) + int(rRealShip.Weight)/20 - int(rRealShip.Weight)/20;
 	rRealShip.Price	= pr;
@@ -420,13 +408,6 @@ int GenerateShipHand(ref chr, int iType, int cc, int cp, int cr, int hp, int pr,
 	rRealShip.CannonsQuantity 		= int(rRealShip.Cannons);
 	refShip.Cannons 				= int(rRealShip.Cannons);
 	
-	// to_do del -->
-	rRealShip.BoardingCrew    = 0;
-	rRealShip.GunnerCrew      = 0;
-	rRealShip.CannonerCrew    = 0;
-	rRealShip.SailorCrew      = int(rRealShip.OptCrew);
-    // to_do del <--
-
 	if (int(rRealShip.Price) <= 0) rRealShip.Price = 100;
 	
 	rRealShip.Stolen = false;
@@ -690,14 +671,10 @@ float FindShipSpeed(ref refCharacter)
 
 	// от команды
 	float fCrewMax = float(rShip.MaxCrew);
-	float fCrewOpt = float(rShip.OptCrew);
-	float fCrewCur = float(refCharacter.Ship.Crew.Quantity);
-	if (fCrewCur > fCrewMax)
-	{
-		fCrewCur = fCrewMax;
-	}
+	float fCrewCur = func_fmin(fCrewMax, float(refCharacter.Ship.Crew.Quantity));
+
 	float  fTRFromPeople;
-	fTRFromPeople = 0.85 + ((GetCrewExp(refCharacter, "Sailors") * fCrewCur) / (fCrewOpt * GetCrewExpRate())) * 0.15;
+	fTRFromPeople = 0.85 + ((GetCrewExp(refCharacter, "Sailors") * fCrewCur) / (fCrewMax * GetCrewExpRate())) * 0.15;
 	if (fTRFromPeople > 1) fTRFromPeople = 1;
 	
 	if(HasShipTrait(refCharacter, "trait04"))
@@ -807,7 +784,6 @@ float FindShipTurnRate(ref refCharacter)
 	// от команды
 	//float fCrewMin = float(rShip.MinCrew);
 	float fCrewMax = float(rShip.MaxCrew);
-	float fCrewOpt = float(rShip.OptCrew);
 	float fCrewCur = float(refCharacter.Ship.Crew.Quantity);
 	if (fCrewCur > fCrewMax)
 	{
@@ -815,7 +791,7 @@ float FindShipTurnRate(ref refCharacter)
 	}
 	float  fTRFromPeople;
 	
-	fTRFromPeople = 0.35 + ((GetCrewExp(refCharacter, "Sailors") * fCrewCur) / (fCrewOpt * GetCrewExpRate())) * 0.65;
+	fTRFromPeople = 0.35 + ((GetCrewExp(refCharacter, "Sailors") * fCrewCur) / (fCrewMax * GetCrewExpRate())) * 0.65;
 	
 	if (fTRFromPeople > 1) fTRFromPeople = 1;
 	
@@ -1560,39 +1536,87 @@ void AddMementoShipBonus(int deadCrew)
 	rShip.DeadSailors.RecruitSlaveBonus = float(rShip.DeadSailors.RecruitPiratesBonus); // 0.0...0.2
 }
 
+// Получить товар (индекс) пушек на борту корабля персонажа
+int GetCannonGoodIdxByBort(ref chr, string bortName)
+{
+	return GetCannonGoodsIdxByType(GetCannonTypeByBort(chr, bortName));
+}
+
+// Используется ли тип орудий на корабле персонажа на любом борту
+bool IsUsingCannon(ref chr, int cannonType)
+{
+	int defaultType = chr.Ship.Cannons.Type$int(CANNON_TYPE_NONECANNON);
+	if (chr.Ship.Cannons.cannonl.Type$int(defaultType) == cannonType) return true;
+	if (chr.Ship.Cannons.cannonf.Type$int(defaultType) == cannonType) return true;
+	if (chr.Ship.Cannons.cannonb.Type$int(defaultType) == cannonType) return true;
+	return false;
+}
+
+// Получить тип (индекс) пушек на борту корабля персонажа
+int GetCannonTypeByBort(ref chr, string bortName)
+{
+	int defaultCannonType = chr.Ship.Cannons.Type$int(CANNON_TYPE_NONECANNON);
+	return chr.Ship.Cannons.(bortName).Type$int(defaultCannonType);
+}
+
+// Получить абстрактную пушку на борту
+ref GetCannonOnBort(ref chr, string bortName)
+{
+	int type = GetCannonTypeByBort(chr, bortName);
+	if (type == CANNON_TYPE_NONECANNON) return nullptr; 
+	return GetCannonByType(type);
+}
+
 /// установить орудия по борту (сперва расчитать дельту было стало - лишнее в запасы)
 void SetCannonsToBort(ref chr, string sBort, int iQty)
 {
 	int     curQty = GetBortCannonsQty(chr, sBort);
 	int     maxQty = GetBortCannonsQtyMax(chr, sBort);
+	int     idx = GetCannonGoodIdxByBort(chr, sBort);
+	int     goodsQty = GetCargoGoods(chr, idx);
 	int     i, delta;
 	string  attr;
 	int     center, left, right; // счетчики орудий для распределения
 	bool    bLeft; // направление хода
 	float	ax = 0.0;
 	float 	az = 0.0;
-		
+
 	if (iQty > maxQty) iQty = maxQty; 
 	if (iQty < 0) iQty = 0;
-	
-	int idx = GetCannonGoodsIdxByType(int(chr.Ship.Cannons.Type));
-    delta = iQty - curQty;
-    if (delta > 0)
-    {
-    	if (GetCargoGoods(chr, idx) < delta) iQty = curQty + GetCargoGoods(chr, idx);
-    }
+
+	object info = CAN_GetFullInfo(chr, strright(sBort,1));
+	aref bortInfo = GetAref(&info, strright(sBort,1));
+	float health = bortInfo.averageHealth$float(1.0);
+	delta = iQty - curQty;
+	if (delta > 0)
+	{
+		if (goodsQty < delta) iQty = curQty + goodsQty;
+	}
+
 	if (iQty > curQty)
-	{ // списать со склада
-		RemoveCharacterGoodsSelf(chr, idx, (iQty - curQty));
+	{
+		// списать со склада
+		int cannonsFromStockQty = iQty - curQty;
+		float stockHealth = CAN_GetCannonsStockHealth(chr, Goods[idx].name);
+		health = health * bortInfo.goodCannons$int(0);
+		health += stockHealth * cannonsFromStockQty;
+		health = health / iQty; // усредняем хп из трюма и хп на борту
+
+		RemoveCharacterGoodsSelf(chr, idx, cannonsFromStockQty);
+		CAN_UpdateDamageInStock(chr, &Goods[idx]);
 	}
 	else
 	{
 		if (iQty < curQty)
-		{// лишние на склад
-			SetCharacterGoods(chr, idx, GetCargoGoods(chr, idx) + (curQty - iQty)); // этот метод, тк перегруз может быть, а  AddCharacterGoodsSimple режет перегруз
+		{
+			// лишние на склад
+			int cannonsRemoved = curQty - iQty;
+			SetCharacterGoods(chr, idx, goodsQty + cannonsRemoved); // этот метод, тк перегруз может быть, а  AddCharacterGoodsSimple режет перегруз
+			CAN_AddDamageInStock(chr, Goods[idx], (1.0-health)*cannonsRemoved);
 		}
 	}
 	// нулим колво пушек на борту и распределяем заново от центра (как они на модели по номерам не знаю, допуск, что подряд)
+	DeleteAttribute(chr, "Ship.Cannons.borts." + sBort + ".damages");
 	for (i = 0; i < maxQty; i++)
 	{
 		attr = "c" + i;
@@ -1636,7 +1660,7 @@ void SetCannonsToBort(ref chr, string sBort, int iQty)
 				}
 				if (left >= 0) bLeft = true;
 			}				
-			chr.Ship.Cannons.borts.(sBort).damages.(attr) = 0.0; // новая, не битая
+			chr.Ship.Cannons.borts.(sBort).damages.(attr) = 1.0-health;
 			i++;
 		}	
 	}

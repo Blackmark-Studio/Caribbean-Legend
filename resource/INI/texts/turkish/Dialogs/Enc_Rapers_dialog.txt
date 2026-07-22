@@ -1,0 +1,69 @@
+Enc_Rapers_dialog_First_time_text_1 {$rand(Kendi yoluna git, $manWoman(ahbap|kız). Sonunda bize teşekkür edecek, biliyorsun.|Defol git! Bırak beyefendiler keyfine baksın.|Bu seni ilgilendirmez, $manWoman(yabancı|kız). Sadece biraz eğleneceğiz, hepsi bu!)}
+Enc_Rapers_dialog_First_time_l1_1 {$rand(Buna izin vermem!|Kötü planlarından hemen vazgeç!|Herhangi bir şiddete asla tahammül etmeyeceğim!)}
+Enc_Rapers_dialog_First_time_l2_1 {$rand(Anladım, gidiyorum. Rahatsız ettiğim için özür dilerim.|Bir daha sizi rahatsız etmeye cesaret edemem. Rahatsız ettiğim için özür dilerim.)}
+Enc_Rapers_dialog_First_time_text_2 {$rand(Kendi yoluna git, $manWoman(ahbap|kız). Sonunda bize teşekkür edecek, biliyorsun.|Defol! Bırak beyefendiler keyfine baksın.|Bu seni ilgilendirmez, $manWoman(yabancı|kız). Sadece biraz eğleneceğiz, hepsi bu!!)}
+Enc_Rapers_dialog_First_time_l1_2 {$rand(Buna izin vermeyeceğim!|Kötü planlarından hemen vazgeç!|Herhangi bir şiddete asla tahammül etmeyeceğim!)}
+Enc_Rapers_dialog_First_time_l2_2 {$rand(Anladım, gidiyorum. Rahatsız ettiğim için üzgünüm.|Bir daha sizi rahatsız etmeye cesaret edemem. Rahatsız ettiğim için üzgünüm.)}
+Enc_Rapers_dialog_First_time_text_3 {$rand(Hey, $manWoman(yabancı|genç hanım), neden bela arıyorsun? Bu kız yerleşkemizde 'tanınmış' biridir. Biz ona zaten parasını verdik, ama seni fark etti ve paramızla kaçmaya karar verdi.|Hey, $manWoman(dostum|kız), kendi yoluna git ve işlerimize karışma. Bu kızı zar oyununda kazandık ama biraz hızlı davrandı ve kaçtı, bir saattir bu ormanda peşindeyiz.)}
+Enc_Rapers_dialog_First_time_l1_3 {Umurumda değil, ona zarar vermene izin vermeyeceğim!}
+Enc_Rapers_dialog_First_time_l2_3 {$rand(Ah, anladım! Az kalsın ona inanacaktım! Ne kadın ama...|Ha, peki, o zaman mesele başka. Neyse, iyi eğlenceler, dostlar!)}
+Enc_Rapers_dialog_First_time_text_4 {Kendi yoluna git, $manWoman(iyi adam|genç hanımefendi). Sensiz de hallederiz.}
+Enc_Rapers_dialog_First_time_l1_4 {Herhangi bir şiddete asla tahammül etmeyeceğim!}
+Enc_Rapers_dialog_First_time_text_5 {$rand(Hey, $manWoman(yabancı|genç hanımefendi), neden bela arıyorsun? Bu kız yerleşkemizde 'tanınmış' biri. Biz ona zaten parasını ödedik, ama seni fark etti ve paramızla kaçmaya karar verdi.|Hey, $manWoman(dostum|kız), kendi yoluna git ve bizim işimize karışma. Bu kızı zar oyununda kazandık, ama kaçmakta biraz fazla hızlıydı, bir saattir peşindeyiz.)}
+Enc_Rapers_dialog_First_time_l1_5 {Umurumda değil - ona zarar vermene izin vermem!}
+Enc_Rapers_dialog_First_time_l2_4 {$rand(Ah, anladım! Az kalsın ona inanacaktım! Ne kadın ama...|Ah, peki, o zaman mesele başka. Hadi bakalım, iyi eğlenceler çocuklar!)}
+Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(Eh, yürüyüş için kesinlikle doğru zamanı seçmişsin...|Demek kahraman olmaya karar verdin?) Hallet $manWoman(im|er), çocuklar!|Sen $manWoman(pislik|pislik)! Bizim yolumuza çıkmaya cüret mi ediyorsun?! Kes h$manWoman(im|er)!)}
+Enc_Rapers_dialog_Node_Fight_l1_1 {Ben daha tehditkâr insanlarla karşılaştım!}
+Enc_Rapers_dialog_Node_3_text_1 {Bilmelisin ki o bize epey pahalıya patladı! Eğer bu kadar asil olduğunu düşünüyorsan, onu alabilirsin $ctx(price) pesos.$manWoman( Onunla iyi vakit geçireceksin, he-he...|)}
+Enc_Rapers_dialog_Node_3_l1_1 {$rand(Al paran burada. Onu yanıma alıyorum.|Dişlerini sıkmayı bırak. Kızı yanıma alıyorum. Al paran burada.)}
+Enc_Rapers_dialog_Node_3_l2_1 {$rand(Yani, istediğin para mı? Yoksa soğuk çeliği mi tercih edersin?|Komik mi bu, kıza bak, ahmak! Korkmuş!|Kimi kandırmaya çalışıyorsun, ahlaksız herif!)}
+Enc_Rapers_dialog_Node_5_text_1 {Öncelikle ona neden inanıyorsun? Hangi şiddet? O evden kaçtı, biz de patronumuz tarafından onu bulmamız için gönderildik.}
+Enc_Rapers_dialog_Node_5_l1_1 {$rand(Pekâlâ, o zaman bu başka bir hikaye. Git, kaçak olanını kovala.|Anladım. O zaman peşinden koşmaya devam et... benim de halletmem gereken işlerim var.)}
+Enc_Rapers_dialog_Node_5_l2_1 {$rand(Bu masalları torunlarına anlatırsın, eğer bir gün onları görecek kadar yaşarsan!|Kimi kandırmaya çalışıyorsun, seni alçak?!)}
+Enc_Rapers_dialog_Node_5_l3_1 {Onu kendim eve götüreceğim, sorun çıkmasın diye. Ebeveynleri kim?}
+Enc_Rapers_dialog_Node_6_text_1 {Ölmek mi istiyorsun? Bu senin seçimin...}
+Enc_Rapers_dialog_Node_6_l1_1 {Konuşan kişiye bak.}
+Enc_Rapers_dialog_Node_7_fatherNom_1 {is a store owner}
+Enc_Rapers_dialog_Node_7_fatherGen_1 {of a store owner}
+Enc_Rapers_dialog_Node_7_fatherNom_2 {serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherGen_2 {who serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherNom_3 {serves as the prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherGen_3 {of a prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherNom_4 {is a shipyard owner}
+Enc_Rapers_dialog_Node_7_fatherGen_4 {of a shipyard owner}
+Enc_Rapers_dialog_Node_7_text_1 {Babası $ctx(fatherName), yerleşiminde $ctx(cityName). Ama lütfen, bizi yüzüstü bırakma, çünkü onunla oyun olmaz, hepimizin derisini yüzer...}
+Enc_Rapers_dialog_Node_7_l1_1 {Merak etme. Onu ona teslim edeceğim.}
+Enc_Rapers_dialog_Node_8_text_1 {Ve yine karşılaştık. Arkadaşın nerede? Aslında, sen buradayken ona ihtiyacım yok.}
+Enc_Rapers_dialog_Node_8_l1_1 {Beyler, bence artık genç kızı rahat bırakmanız için yeterince para aldınız.}
+Enc_Rapers_dialog_Node_9_sTemp_1 {a leg}
+Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
+Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
+Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
+Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
+Enc_Rapers_dialog_Node_9_text_1 {Senin paran buradaki hazinelerle nasıl kıyaslanabilir ki $ctx(pirateName)? O kadar açgözlüydü ki, sırf fazladan masraf olmasın diye kendi kızını bile evlendirmek istemedi...\nAma bizim payımızı sandıklarında kilitli tutuyor! $ctx(pirateName2) güverte savaşında kaybetti $ctx(tempText)! Ayrıca, senin elinde ne var peki? Bir avuç zavallı gümüş mü? $ctx(pirateName2) ganimetin hepsini kendi sakladığı yere götürürdü. Ama artık pes etmeyeceğiz! Sandıklarının nerede olduğunu göster bize!}
+Enc_Rapers_dialog_Node_9_l1_1 {Doğrusu, kaptanınızın hazinesini korumak için burada değilim, ama yeri sana gösteremem... Çünkü nerede olduğunu bilmiyorum.}
+Enc_Rapers_dialog_Node_10_text_1 {Yalan söylüyorsun!!! Bu mağaradan altının kokusunu alabiliyorum! Ölmek istemiyorsan bana yeri göster!}
+Enc_Rapers_dialog_Node_10_l1_1 {Sözlerimin seni ikna edemediğini görüyorum. Belki kılıcım daha etkili olur?}
+Enc_Rapers_dialog_Node_11_text_1 {Sen $manWoman(it|pislik)Yolumdan çekil!}
+Enc_Rapers_dialog_Node_11_l1_1 {Argh!}
+Enc_Rapers_dialog_EncGirl_Berglar_text_1 {Merhaba, iyi $manWoman(adam|hanımefendi). Senin hakkında şikayetler aldık.}
+Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {Kimden şikayet var? O fahişeden mi?}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {Diline dikkat et, tamam mı? Kız kardeşime hakaret etmene izin vermem! Önce ormanda ona saldırdın, sonra da buraya getirdin $manWoman(daha fazla edepsizlik için|ve beni soydu).}
+Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {Hey dostum, bunların hepsini gerçekten dinlemek zorunda mıyım?}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {Hayır. Sadece mütevazı bir miktar $ctx(moneyAmount) peso seni tüm dertlerinden kurtaracak.}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {Eh, soylu işler bu devirde biraz pahalıya patlıyor doğrusu. Peki, al bakalım...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_1 {Bence seni yolumdan çekmek için karnında bir delik açmak daha ucuza gelir.}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_2 {Hayır. Ama sen de ceplerini ters çevir, yoksa seni bıçaklarım!}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_2 {Pekâlâ, al bakalım, seni alçak! Ama bununla paçayı sıyıramayacaksın...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_2 {Çıkış yolumda duracağına, karnında bir delik açmak daha kolay olurdu bence.}
+Enc_Rapers_dialog_EncGirl_Berglar3_text_1 {Çok iyi. Kurtulmamız iyi oldu.}
+Enc_Rapers_dialog_EncGirl_Berglar3_l1_1 {İyi şanslar.}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {Elbette yapmam, elbette... Peki, sana hoşça kal, $manWoman(dostum|kız).$manWoman( Ve unutma, öyle yakışıklı değilsin ki herhangi bir kız seni görür görmez sana vurulsun. Sana vereceğim ders bu olsun.|)}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(Kesinlikle öyle!..|Defol git artık!)}
+Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {Sen görünüyorsun $manWoman(böylesine asil bir adam|böylesine iyi yetişmiş bir hanımefendi), neden bu kadar kaba konuşuyorsun?}
+Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {Bana en çok bu yakışıyor...}
+Enc_Rapers_dialog_Node_2_text_1 {Peki, sen istedin! Gıdıklayalım mı h$manWoman(im|er) çelikle, çocuklar?}
+Enc_Rapers_dialog_Node_2_l1_1 {Ölmeden önce dua et!}
+Enc_Rapers_dialog_OnceAgain_text_1 {Yani, katılmak istiyor musun yoksa istemiyor musun? $manWoman(Defol, burada hepimize yetecek kadar yok|Defol git, bir kız bize yeter)!}
+Enc_Rapers_dialog_OnceAgain_l1_1 {O halde, seni rahatsız etmeyeyim.}
+Enc_Rapers_dialog_OnceAgain_l2_1 {Burada hiçbir şiddete izin vermem!}

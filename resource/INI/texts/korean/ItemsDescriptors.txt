@@ -108,7 +108,7 @@ descriptor_Exotic {이국적}
 descriptor_Fancy {화려한}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {취약}
-descriptor_GoodFit {평범}
+descriptor_GoodFit {잘 맞음}
 descriptor_GrapeAmmo {산탄}
 descriptor_HealPotion {치유}
 descriptor_HeartDefence {강화}

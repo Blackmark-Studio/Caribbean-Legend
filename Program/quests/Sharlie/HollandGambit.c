@@ -1117,9 +1117,7 @@ void HWICSilverConvoyInWorld()//создаем серебряный конвой
 		sld.skill.Accuracy = iScl+rand(10);
 		sld.skill.Cannons = iScl+rand(10);
 		sld.Ship.Crew.Morale = iScl+10;
-		sld.Ship.Crew.Exp.Sailors = iScl;
-		sld.Ship.Crew.Exp.Cannoners = iScl;
-		sld.Ship.Crew.Exp.Soldiers = iScl;
+		SetCrewExp(sld, float(iScl));
 		SetCharacterPerk(sld, "HullDamageUp");
 		SetCharacterPerk(sld, "SailsDamageUp");
 		SetCharacterPerk(sld, "CrewDamageUp");
@@ -1634,9 +1632,7 @@ void CreateLucasOnMeifeng(string qName)//создадим Лукаса на Ме
 	if (GetCompanionQuantity(pchar) > 1) sld.Abordage.Enable = false;//теперь попробуй взять компаньоном
 	SetCharacterPerk(sld, "MusketsShoot");
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	Group_AddCharacter("Lucas_Attack", "Lucas");
 	Group_SetGroupCommander("Lucas_Attack", "Lucas");
 	Group_SetTaskAttack("Lucas_Attack", PLAYER_GROUP);
@@ -2071,9 +2067,7 @@ void HollandGambit_NewShipTwilight()
 	else pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
 	SetCrewQuantityFull(pchar);
 	pchar.Ship.Crew.Morale = 80;
-	pchar.Ship.Crew.Exp.Sailors = 90;
-	pchar.Ship.Crew.Exp.Cannoners = 70;
-	pchar.Ship.Crew.Exp.Soldiers = 70;
+	SetCrewExp(pchar, 90.0);
 	SetCharacterGoods(pchar, GOOD_BALLS, 100);
 	SetCharacterGoods(pchar, GOOD_GRAPES, 100);
 	SetCharacterGoods(pchar, GOOD_KNIPPELS, 100);
@@ -2568,9 +2562,7 @@ void CreateHWICCureerOnMap(string qName)//энкаунтер курьера на
 	sld.AnalizeShips = true;
 	sld.Coastal_Captain = true; //не ссорить нации
 	sld.Ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*10;
-	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*10;
+	SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*10));
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "Rig");
@@ -3173,9 +3165,7 @@ void CreateVanbergInSea(string qName)//Якоб ван Берг у остров�
 	SetShipSailsFromFile(sld, "ships/parus_torn.tga");
 	SetSailsColor(sld, 8);//черный рваный парус
 	sld.ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("Mirage", "JacobBerg");
 	Group_SetGroupCommander("Mirage", "JacobBerg");

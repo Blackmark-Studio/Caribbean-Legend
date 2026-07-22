@@ -19,6 +19,9 @@
 #define COLOR_NORMAL	4294967295
 #define COLOR_MONEY		4292915296
 #define COLOR_RED		4294901760
+#define COLOR_LIGHT_GREEN 4290838464
+#define COLOR_LIGHT_RED 4294952132
+#define COLOR_LIGHT_YELLOW 4294967232
 
 #define BLIND_MIN	4282400832 //argb(255,96,96,96)
 #define BLIND_MAX	4286611584 //argb(255,128,128,128)
@@ -3055,6 +3058,11 @@ void ImageCollection_ChangeTextureGroup(string sControl, string sNewTextureGroup
 void ImageCollection_SetColor(string sControl, int iCIndex, int Color)
 {
 	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, sControl, 3, iCIndex, Color);
+}
+
+void ImageCollection_ChangePicture(string sControl, int iCIndex, string pictureName)
+{
+	SendMessage(&GameInterface, "lslls", MSG_INTERFACE_MSG_TO_NODE, sControl, 4, iCIndex, pictureName);
 }
 
 void ScrollImage_SetPosition(string sControl, int iPosition)

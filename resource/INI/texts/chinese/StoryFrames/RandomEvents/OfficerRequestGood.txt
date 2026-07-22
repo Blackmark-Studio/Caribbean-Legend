@@ -44,10 +44,10 @@ Node0_d_b_action {我们按规矩来}
 Node0_d_b_success {$attr($context.officerName)是你的_$attr($context.officerJob)，不是普通水手。这样的身份$rand(赋予了他|意味着他享有)一些特殊待遇。你下令在军官餐厅举行$rand(正式的追思仪式|按规矩办的追思仪式)。$attr($context.officerName)起初看上去$rand(有些不好意思|颇为窘迫)，但很快$rand(这种窘意就被感激取代了|便只剩下感激了)。}
 Node0_d_b_success_action {忠诚的同伴，理应得到最好的}
 Node0_d_c_action {就算没有这些，上帝也会听见你的}
-Node0_d_c_success {你让军官相信，真诚的祈祷即便没有仪式也会被听见。$br$red$attr($context.officerName)看起来像是接受了。你也不由生出一丝自豪，因为你的话确实让他轻松了些。}
+Node0_d_c_success {你让军官相信，真诚的祈祷即便没有仪式也会被听见。$br()$red $attr($context.officerName)看起来像是接受了。你也不由生出一丝自豪，因为你的话确实让他轻松了些。}
 Node0_d_c_success_action {你会撑过去的}
 Node0_d_c_fail {你的话听起来毫无说服力，$attr($context.officerName)也显得十分失落。看样子，他只是把你当成了个吝啬又刻薄的人。}
 Node0_d_c_fail_action {等等，我又不是舍不得}
 Node0_d_d_action {船上的随船神父会帮你}
-Node0_d_d_success {你觉得奇怪，$attr($context.officerName)竟然把船上真正的随船神父给忘了，但你还是把这归结于悲痛过甚。$br$red你把神父请进船长室，向他说明情况，请他出言开导。$attr($context.officerName)起初神情恍惚，但神职人员的话很快就让他回过了神。}
+Node0_d_d_success {你觉得奇怪，$attr($context.officerName)竟然把船上真正的随船神父给忘了，但你还是把这归结于悲痛过甚。$br()$red 你把神父请进船长室，向他说明情况，请他出言开导。$attr($context.officerName)起初神情恍惚，但神职人员的话很快就让他回过了神。}
 Node0_d_d_success_action {上帝听见了我们的祈祷}

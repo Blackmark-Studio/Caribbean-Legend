@@ -1,0 +1,44 @@
+Native_First_time_1 {Ahh... pale-face. $rand(Wild beast wound me on hunt... What I say in my village?|Your tribe wound me and leave me to die... You come finish their work?|Bandits want $rand(my tears of the gods|my yellow stone|my amulets), but $npcName warrior! Now they dead, and I die too...) Or you want help me?}
+Native_First_time_2 {What you want? $npcName wounded, can't you see?}
+Native_Bye_1 {$rand(No, I don't want to get involved.|There's nothing I can do for you.) Farewell.}
+Native_Bye_2 {$rand(Nothing. Farewell.|Just checking whether you're still alive. Farewell.|Uh... get well, I suppose?)}
+Native_ThanksPotion {Thank you, pale-face! Now I make it to village... just need rest...}
+Native_ThanksElixir {Thank you, pale-face! $npcName good as new. I tell everyone in village of your $rand(kindness|help), you know that!}
+Native_ThanksMixture {You gave me precious medicine only our shaman can brew. You true friend to my people, pale-face. $npcName remember you and give thanks.}
+Native_Bye_3 {$rand(You're welcome.|We're all human.|Just don't tell anyone, all right?)}
+Marginal_First_time_1 {$swear $rand(I can feel my strength fading...|So this is where my running ends...|I reckon I won't live till morning...) Don't pass me by, $rand(traveler|wanderer|friend)! Help a poor wretch in distress - can't you see $rand(what the natives did to me|how the bandits worked me over|how walks in the jungle end|what angry clients are capable of)? I swear, I won't stay in your debt - I've earned a bit from $rand(my little dealings|my trade|some not quite legal transport work|business that wasn't entirely honest).}
+Marginal_First_time_2 {What do you want now? Come to enjoy my suffering?}
+Marginal_Bye_1 {I can't help you.}
+Marginal_Bye_2 {I haven't decided what to do with you yet.}
+Marginal_ThanksPotion {Thanks even for that. Now I’ll definitely make it back to my people.}
+Marginal_ThanksElixir {Ugh... vile stuff, but it got me back on my feet in no time. Thanks, friend. I’ll put in a good word for you.}
+Marginal_ThanksMixture {Hm... I thought it would taste much worse. What did you put in this? Next time, ipecac is better fresh, not dried. Ah yes, thanks for the help. Your name will definitely be known among our people now. Well... you know which people I mean.}
+Marginal_Bye_3 {All the best.}
+Bandit_First_time_1 {$swear $rand(So this is where death takes me.|Looks like the old crone with the scythe's come for me.|Looks like I've run my last mile.|Won't be seeing any more dockside whores.) What the hell are you gawking at? Can't you see $rand(how those red-skinned monkeys carved me up|how the patrol beat the piss out of me|how our fine Brethren of the Coast sliced me open|how strolls through the jungle end)? Either piss off while you still can, or help me - I won't stay in your debt.}
+Bandit_First_time_2 {What the hell do you want now? Either help me or let me die in peace. $swear}
+Bandit_Bye_1 {Can't help you. And truth be told, I don't much want to. Get lost.}
+Bandit_Bye_2 {If you'd had some manners, maybe you wouldn't be in this mess. Farewell.}
+Bandit_ThanksPotion {Ugh... nasty stuff! Thanks for that at least. Might just make it to the bay now.}
+Bandit_ThanksElixir {What foul swill, ptui! But I can feel it easing up. Thanks, mate - without you, I wouldn't have made it till morning.}
+Bandit_ThanksMixture {Merciful God, what vile muck! What did you put in there, slime scraped from under the cobbles? All right, all right, it's not all bad. Had me back on my feet in no time, damn me. Thanks, mate - I'll be sure to put in a word for you with our lot. Well then, no hard feelings!}
+Bandit_Bye_3 {Farewell.}
+Soldier_First_time_1 {Hey there, hold it! Help a soldier in distress. Can't you see $rand(what $rand(those damned redskins|those bandits|the smugglers|the locals) did to me|what shape I'm in? Why, not long ago I was fit as a fiddle, and then bang - took a bullet in the knee)! Helping me is the duty of every loyal subject of our homeland, and I'll repay your compassion in full.}
+Soldier_First_time_2 {What is it, you rogue, mocking me now? What do you want? I'll bleed out any minute.}
+Soldier_Bye_1 {Alas, I can't help you. I hope someone else can get you back on your feet, soldier.}
+Soldier_Bye_2 {Well now, listen to you talk. Whatever happened to all that charm and grace? Why don't you lie there a while longer and we'll see where this leads.}
+Soldier_ThanksPotion {Have you nothing stronger? Still, thanks for that. The captain will hear of your kindness.}
+Soldier_ThanksElixir {God, what foul stuff! Just like my mother's porridge... What am I saying? Thank you, sir. I'll make it home for certain now. I won't forget this.}
+Soldier_ThanksMixture {And this is quite safe, is it? Though I have no choice, so hand over your brew. Oh... I really do feel better. More than that, I'm as good as new! Thank you. The governor will most certainly hear of this.}
+Soldier_Bye_3 {Think nothing of it. Be more careful next time.}
+EnemySoldier_First_time_1 {What, come to gloat over me? Or finish me off? You're too late, I've already been $rand(hacked up by your patrols|waylaid by redskins|worked over by bandit scum). But mark me - I won't yield without a fight. Or is there a shred of mercy in you?}
+EnemySoldier_First_time_2 {What more do you want? Why torment me further? $swear}
+EnemySoldier_Bye_1 {Mercy is denied. Farewell.}
+EnemySoldier_Bye_2 {Quite right, watching you is a real pleasure.}
+EnemySoldier_ThanksPotion {What? Thank you... perhaps I misjudged you. I'll make for my people before your patrols find me.}
+EnemySoldier_ThanksElixir {It's not poisoned, is it? Well, my choices are few. Ah... I truly do feel better. Thank you. It seems not all of your kind are bastards and godless heathens.}
+EnemySoldier_ThanksMixture {Truly, I did not expect this. I genuinely feel better. Ahem... well then. Under other circumstances, our meeting would have ended in bloodshed, and yet see what turn fate has taken... Thank you, friend. Let all know that there are worthy people among your kind as well.}
+EnemySoldier_Bye_3 {I am an enemy of your country, but no monster. Go in peace; I hope we never meet upon the field of battle.}
+InjuredGuy_Give_Potion {(Healing Potion) Here. It’s not much, but it should get you back on your feet.}
+InjuredGuy_Give_Elixir {(Elixir) Here, take this remedy. It’s peculiar stuff, but it heals even horrific wounds.}
+InjuredGuy_Give_Mixture {(Mixture) I’ll give you a very rare and powerful draught. It tastes foul, but you’ll be right as rain — I promise.}
+InjuredGuy_Kill {(Kill) Very well, I’ll finish what they started.}

@@ -2976,9 +2976,7 @@ void WildRose_Test()
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
 	SetCrewQuantityFull(pchar);
 	pchar.Ship.Crew.Morale = 100;
-	pchar.Ship.Crew.Exp.Sailors = 100;
-	pchar.Ship.Crew.Exp.Cannoners = 100;
-	pchar.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(pchar, 100.0);
 	UpgradeShipParameter(pchar, "SpeedRate"); //апгрейдить скорость
 	UpgradeShipParameter(pchar, "TurnRate");  //маневренность
 	UpgradeShipParameter(pchar, "HP");        //корпус

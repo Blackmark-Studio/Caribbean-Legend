@@ -1,0 +1,16 @@
+quest_companion_header {Questgebunden}
+quest_companion_text {Dieser Gefährte begleitet Euch aufgrund einer Quest. Mit seinem Schiff könnt Ihr nicht interagieren.}
+where_is_my_ship_sea_header {Schiffsposition}
+where_is_my_ship_sea_text {$rand(Offene See|Zwischen Himmel und Erde|Auf See|Sieben Fuß unter dem Kiel)}
+where_is_my_ship_header {Schiffsposition}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Geschütze in schlechtem Zustand}
+cannons_broken_text {Die Geschütze müssen dringend in der Werft repariert oder ersetzt werden!}
+bad_captain_header {Fertigkeit unzureichend}
+bad_captain_text {Dieser Gefährte kann ein Schiff auf offener See nicht führen, da ihm die Fertigkeit „Kapitän“ fehlt.}
+low_morale_header {Meuterei möglich}
+low_morale_text {Die Mannschaft ist unzufrieden. Ihre Moral muss dringend gesteigert werden!}
+low_food_header {Nahrung knapp}
+low_food_text {Die Matrosen werden bald verhungern. Die Vorräte müssen dringend aufgefüllt werden!}
+low_medicament_header {Medikamente knapp}
+low_medicament_text {Die Matrosen werden bald an Krankheiten sterben. Die Vorräte müssen dringend aufgefüllt werden!}

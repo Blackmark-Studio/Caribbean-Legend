@@ -130,9 +130,7 @@ void CreateFalseTraceGaleonOnMap(string qName)//энкаунтер галеон�
 	sld.AnalizeShips = true;
 	sld.Coastal_Captain = true; //не ссорить нации
 	sld.Ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*10-10;
-	sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*10-10;
-	sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*10-10;
-	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*10-10;
+	SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*10-10));
 	if (MOD_SKILL_ENEMY_RATE > 4) TakeNItems(sld, "potion2", 2);
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "SailsDamageUp");
@@ -529,9 +527,7 @@ void CreateFalseTraceGoldShipOnMap(string qName)//создаем корабль 
 		sld.skill.Accuracy = iScl;
 		sld.skill.Cannons = iScl+rand(10);
 		sld.Ship.Crew.Morale = iScl;
-		sld.Ship.Crew.Exp.Sailors = iScl;
-		sld.Ship.Crew.Exp.Cannoners = iScl;
-		sld.Ship.Crew.Exp.Soldiers = iScl;
+		SetCrewExp(sld, float(iScl));
 		SetCharacterPerk(sld, "HullDamageUp");
 		SetCharacterPerk(sld, "SailsDamageUp");
 		SetCharacterPerk(sld, "CrewDamageUp");

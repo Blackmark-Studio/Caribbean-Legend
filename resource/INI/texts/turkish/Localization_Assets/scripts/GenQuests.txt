@@ -107,3 +107,11 @@ GenQuests_96 {Yerel @<pchar.GenQuest.(Gun).name> çetesinin, @<GetFullName(pchar
 GenQuests_97 {@<pchar.GenQuest.EncGirl.name>'in öldürüldüğünü duydun mu? Zavallı kız, yakın zamanda ormanda öldürülmüş. Katili bulup asmalılar!}
 GenQuests_98 {Biliyor musunuz kaptan @<GetFullName(pchar)>, @<pchar.GenQuest.EncGirl.name> adında zavallı bir kızı biri öldürmüş. Yazık, gerçekten iyi bir kızdı...}
 GenQuests_99 {Adı @<pchar.GenQuest.EncGirl.name>'di ve ormanda öldü. Şaşılacak bir şey yok, oralarda güvenli değil...}
+Alone_Citiz_Death_0 {Söylentiye göre @<Name> ormanda haydutlar tarafından bıçaklanmış. Zamanlar işte bu hâle geldi, $Name: bugün biri kapılardan dışarı çıkar, bir daha geri dönmeyebilir.}
+Alone_Citiz_Death_1 {Duydunuz mu? @<Name> ormanda ruhunu Tanrı’ya teslim etmiş. Haydutların işiymiş diyorlar; böyle zamanlarda dürüst insanların akşama sağ çıkma şansı giderek azalıyor.}
+Alone_Citiz_RobberyFail_0 {Söylentiye göre paçavracının biri @<Name>’ı soymaya kalkmış. İyice azıttılar, $Name: eskiden en azından muhafızlardan korkarlardı, şimdi güpegündüz bıçakla saldırıyorlar.}
+Alone_Citiz_RobberyFail_1 {Geçenlerde @<Name>, soygunculardan kaçarak şehre dönmüş. Zamanlar böyle işte, $Name: artık yolu insan seçmiyor, insanın sağ dönüp dönmeyeceğine yol karar veriyor.}
+Alone_Citiz_RobberySuccess_0 {@<Name> soyulmuş, düşünebiliyor musunuz? Her şeyini almışlar; sağ bırakmaları bile mucize. Demek ki bu lanet zamanlarda haydutlarda bile biraz vicdan kalmış.}
+Alone_Citiz_RobberySuccess_1 {Söylentiye göre @<Name> haydutlara son parasına kadar her şeyi vermiş. Ne yaparsınız, $Name: yoksa eve dönemeyebilirdi.}
+JungInjured_SoldHeal_0 {Diyorlar ki $Name, ormanda askerimizi siz kurtarmışsınız. Böyle zamanlarda pek az kişi başkasının canı için öne çıkar; bu yüzden bütün şehir bunu konuşuyor.}
+JungInjured_SoldHeal_1 {@<Name> ormandan zar zor sağ dönmüş. Şehirde, $Name, onu öte dünyanın kapısından sizin çekip çıkardığınızı söylüyorlar; böyle zamanlarda böyle bir iyilik çok değerlidir. İyi bir insansınız.}

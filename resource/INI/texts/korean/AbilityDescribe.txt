@@ -112,7 +112,7 @@ perkBeneathWaterline
 }
 perkBladeDancer {곡도 광역 공격 시 피해 $percent($perkBaseValue(BladeDancer|1)) 증가.}
 perkBoardingPrepare {접현대가 접현 중에 물약을 받습니다.}
-perkBombardier {함포 내구도가 증가합니다.}
+perkBombardier {함포의 상태가 좋을 때 받는 보너스가 $percent($perkBaseValue(Bombardier|1))만큼 증가합니다. 이 효과는 중첩됩니다.}
 perkBruteForce {도끼와 갑옷으로 무장한 병사들이 접현 중 일부 일반 선원을 대체합니다.}
 perkBuilder {수리 시 판자와 돛감 소모량이 25% 감소합니다.}
 perkByWorker {캐릭터는 동시에 두 개의 장교 직책을 맡을 수 있습니다}

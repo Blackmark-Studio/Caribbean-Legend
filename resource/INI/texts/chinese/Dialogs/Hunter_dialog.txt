@@ -1,0 +1,58 @@
+Hunter_dialog_First_time_text_1 {$fullName! 我们追踪你很久了, 终于抓到你了。}
+Hunter_dialog_First_time_l1_1 {你们是谁, 想从我这里得到什么?}
+Hunter_dialog_meeting_text_1 {$ctx(valueText)为你的人头悬赏了一笔可观的奖金, 我们必须把你送到它的任何一个殖民地, 不管你是死是活, 我们都会得到报酬。}
+Hunter_dialog_meeting_l1_1 {听着, 如果你放过我, 我会付钱给你。}
+Hunter_dialog_meeting_l2_1 {$manWoman(对不起, 但你们一定搞错了。 我是$ctx(personName) - 这片土地上著名的商人。 |对不起, 但你们一定搞错了。 我只是一个普通的女孩, 我父亲是$ctx(personName) - 这片土地上著名的商人。 )。}
+Hunter_dialog_meeting_l3_1 {好吧, 如果你们愿意, 可以试试运气。}
+Hunter_dialog_lier_text_1 {哦! 我们可能确实搞错了。 请原谅我们, $sir。}
+Hunter_dialog_lier_l1_1 {没关系, 别担心...}
+Hunter_dialog_lier_text_2 {我认为你在撒谎!}
+Hunter_dialog_lier_l1_2 {听着, 如果你放过我, 我会付钱给你。}
+Hunter_dialog_lier_l2_1 {好吧, 如果你们愿意, 可以试试运气。}
+Hunter_dialog_Cost_Head_text_1 {我认为$ctx(hunterCost)比索对我们来说很合适。}
+Hunter_dialog_Cost_Head_l1_1 {但我没有这么多钱。}
+Hunter_dialog_Cost_Head_l1_2 {这是你的钱, 拿了就滚。}
+Hunter_dialog_Cost_Head_l2_1 {给像你们这样的无赖这么多钱... 我想我宁愿在这里把你们都干掉!}
+Hunter_dialog_NoMoney_text_1 {那样的话我们的谈话就结束了!}
+Hunter_dialog_NoMoney_l1_1 {你们永远抓不到活的我。}
+Hunter_dialog_TreasureHunter_text_1 {等等, $manWoman(伙计|姑娘)... 我觉得你身上有有趣的东西。 朋友之间应该分享找到的宝藏, 你不觉得吗?}
+Hunter_dialog_TreasureHunter_l1_1 {听着, 如果你放过我, 我会付钱给你。}
+Hunter_dialog_TreasureHunter_l2_1 {$manWoman(对不起, 但你们一定搞错了。 我是$ctx(personName) - 这片土地上的知名公民, 但肯定不是寻宝者。 |对不起, 但你们一定搞错了。 我只是一个普通女孩, 不是寻宝者。 我父亲是$ctx(personName) - 这片土地上的知名公民)!}
+Hunter_dialog_TreasureHunter_l3_1 {好吧, 看来是时候让你们身首异处了。}
+Hunter_dialog_TreasureHunterLier_text_1 {哦! 那我们可能确实搞错了。 请原谅我们, $sir。}
+Hunter_dialog_TreasureHunterLier_l1_1 {没关系, 别担心...}
+Hunter_dialog_TreasureHunterLier_text_2 {我认为你在撒谎!}
+Hunter_dialog_TreasureHunterLier_l1_2 {那就听听我刀刃的歌声吧。}
+Hunter_dialog_TreasureCaptain_text_1 {$rand(所以你就是那个拿了我藏宝图的人! 我想, 伙计, 是时候交出你拿走的所有东西了... |哦, 一个竞争对手! 你走不远的, 你被我的宝藏压得走不动了... |哼, 终于追上你了! 这个洞穴里的所有宝藏都属于我, 明白吗? 现在, 把口袋掏空, 朋友! )}
+Hunter_dialog_TreasureCaptain_l1_1 {$rand(是时候让你见识我的刀刃了, 伙计! |你的宝藏? 你是说它们曾经是你的, 因为现在它们是我的了! |我宁愿用刀刃掏空你的肚子, 朋友。 )}
+Hunter_dialog_TreasureOfficer_text_1 {$rand(所以, 上校是对的, 宝藏藏在这个山洞里... 把口袋掏空, 水手! |经过在这片该死的丛林中穿过荆棘和沼泽的追踪, 我们终于追上你了。 现在, 混蛋, 你要把所有东西都给我们... |嘿, 水手! 那个海盗的宝藏属于我们, 所以把你的脏手从上面拿开! )}
+Hunter_dialog_TreasureOfficer_l1_1 {$rand(当然, 我没料到一个军官会这样! 但无论如何, 我会给你一个教训... |看看他, 一个穿着军官制服的海盗... |如今士兵和海盗确实没什么不同... )}
+Hunter_dialog_ReasonToFast_THunter_1_text_1 {我们的金子来了。 至少我们的等待没有白费。}
+Hunter_dialog_ReasonToFast_THunter_1_l1_1 {$rand(你们在说什么, 先生们? 我是荷兰西印度公司的代表, 只是路过这里! 我停下来欣赏海岸的景色! |恐怕你们认错人了。 我是$manWoman(弗朗库瓦.玛丽.帕加内尔, |玛丽-特蕾莎, )一位博物学家。 我在这里收集当地植物的样本。 想看看我的丝兰叶收藏吗? 我有几个非常有趣的! )}
+Hunter_dialog_ReasonToFast_THunter_1_l2_1 {你们想要什么? ! 别挡我的路!}
+Hunter_dialog_ReasonToFast_THunter_2_text_1 {哦不, $manWoman(我亲爱的朋友|我漂亮的女孩)。 那没用。 我们确定你拥有$ctx(mapOwnerName)的地图。 他是个守财奴, 他的箱子都被钱撑破了。 所以我们不会空手而归。}
+Hunter_dialog_ReasonToFast_THunter_2_l1_1 {你说得对。 箱子确实装满了。 但你们得不到它们。 你们可以去那个洞穴看看, 应该还剩下几个破桶。}
+Hunter_dialog_ReasonToFast_THunter_2_l2_1 {你说得对。 你可以拥有你的宝藏。 记住, 它不会让你快乐, 因为它沾满了鲜血。}
+Hunter_dialog_ReasonToFast_THunter_3_text_1 {$manWoman(呵呵, 船长, 你还太年轻, 不想死吧... |呵呵, 姑娘, 你还太年轻, 不想死吧... )...}
+Hunter_dialog_ReasonToFast_THunter_3_l1_1 {实际上, 我不打算死!}
+Hunter_dialog_ReasonToFast_THunter_4_text_1 {这才是理智的人说的话!}
+Hunter_dialog_ReasonToFast_THunter_4_l1_1 {诅咒你和所有那些宝藏...}
+Hunter_dialog_ReasonToFast_HunterShore1_text_1 {嘿, $manWoman(伙计|姑娘)! $ctx(contactName)说你有东西给我们。}
+Hunter_dialog_ReasonToFast_HunterShore1_l1_1 {你是什么意思?}
+Hunter_dialog_ReasonToFast_HunterShore11_text_1 {一张$ctx(mapOwnerName)的地图。}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_1 {拿去吧, 向$ctx(contactName)问好。 告诉他我们很快会见面...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_1 {$ctx(contactName)如果认为我会为他火中取栗, 那就大错特错了。}
+Hunter_dialog_ReasonToFast_HunterShore11_text_2 {你从总督那里偷来的珠宝。}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_2 {拿去吧, 向$ctx(contactName)问好。 告诉他我们很快会见面...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_2 {$ctx(contactName)如果认为我会为他火中取栗, 那就大错特错了。}
+Hunter_dialog_ReasonToFast_HunterShore2_text_1 {嘿, $manWoman(伙计|姑娘)! $ctx(contactName)有几个问题要问你。}
+Hunter_dialog_ReasonToFast_HunterShore2_l1_1 {为什么他不自己问?}
+Hunter_dialog_ReasonToFast_HunterShore21_text_1 {根据他的身份不能。 你破坏了我们的行动, 因为你我们损失了$ctx(moneyAmount)比索。 所以现在你有债务要偿还。}
+Hunter_dialog_ReasonToFast_HunterShore21_l1_1 {拿去吧, 向$ctx(contactName)问好。 告诉他我们很快会见面...}
+Hunter_dialog_ReasonToFast_HunterShore21_l2_1 {$ctx(contactName)如果认为我会为他火中取栗, 那就大错特错了。}
+Hunter_dialog_ReasonToFast_HunterShore22_text_1 {哦, 你没有这么多钱! 好吧, 你已经做出了选择...}
+Hunter_dialog_ReasonToFast_HunterShore22_l1_1 {很久以前...}
+Hunter_dialog_ReasonToFast_HunterShore23_text_1 {好吧, 你已经做出了选择...}
+Hunter_dialog_ReasonToFast_HunterShore23_l1_1 {很久以前...}
+Hunter_dialog_GetLocHunterName_island_1 {island of}
+Hunter_dialog_GetLocHunterName_mainland_1 {mainland of}

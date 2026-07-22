@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Spiel nicht den Narren! Bargeld auf den Nagel und vielleicht lasse ich dich dann gehen!","Hast du noch nicht von der Reisezahlung gehört? Wenn du dich nicht von deinem Gold trennst, wirst du dich von einem Kopf trennen!","Heh, dieses gewöhnliche Abenteuer wird dich einen Geldbeutel kosten... wenn ich nicht wütend werde."),RandPhraseSimple("Es ist ganz einfach. Du gibst uns all dein Gold und dann bist du frei zu gehen, oder du bleibst hier, und wir nehmen trotzdem all dein Gold. Aber ich denke, das Letztere ist nicht das, was du möchtest, he-he.","Tun Sie nicht so, als ob Sie nicht verstehen! Geben Sie mir Ihre Geldbörse, wenn Sie nicht wollen, dass ich sie von Ihrem toten Körper nehme!"),"Ich erkläre es, wenn du so schwer von Begriff bist. Du gibst mir all dein Geld, wenn dir dein Leben lieb ist.");
-			Link.l1 = "Verdammter Schurke! Ich habe nur "+int(int(Pchar.money)/20)*10+" Pesos.";
+			Link.l1 = "Verdammter Schurke! Ich habe nur "+iMoney+" Pesos.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Du willst mein Geld? Komm und hol es dir, und ich werde sehen, wie viel du wert bist!","Wie wagst du es, Tölpel! Ich werde dir eine Lektion in gutem Benehmen erteilen!","Welch ein Selbstvertrauen! Nun, lass uns sehen, wie du gegen einen echten "+GetSexPhrase("Seewolf","Seelöwin")+"!"),LinkRandPhrase("Du solltest für solche Empörung ausgepeitscht werden!","Ihr Schurken! Betet zu euren Teufeln um einen warmen Platz in der Hölle!","Du hättest schon lange gehängt werden sollen, Galgenvögel! Nun, es scheint, dass ich meinen Säbel mit eurem Blut beflecken muss!"),RandPhraseSimple("Und was bringt dich dazu zu denken, dass ich dir mein Geld geben werde?","Und hast du nicht bemerkt, dass ich gut bewaffnet bin und nicht nur zum Spazierengehen hierher gekommen bin?"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("Und warum sollte ich mich um deine Patrouille kümmern? Ich bezahle sie. Also, gib mir deine Geldbörse und hör auf, dein Maul zu zerreißen.","Du denkst, du kannst mir Angst machen? Ich bin selbst 'die Patrouille' für solche wie dich in diesem Dschungel. Noch niemand hat ohne Gebühr verlassen!");
-					Link.l1 = "Verdammt, Schurke! Ich habe nur "+int(int(Pchar.money)/20)*10+" Pesos.";
+					Link.l1 = "Verdammt, Schurke! Ich habe nur "+iMoney+" Pesos.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("He-h, ich werde doch keine Befehle von so einem Schwächling wie dir befolgen.","Ich werde ein paar neue Löcher in deinen Schädel bohren wegen solcher Frechheit! Nur um dein Gehirn ein bisschen zu belüften.","Solche Frechheit wird nicht ungestraft bleiben!"),"Du hättest das nicht tun sollen...");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("In Ordnung! Gib es mir und verschwinde!","Nicht viel, aber immer noch besser als nichts. Es ist gut, mit einer klugen Person zu verhandeln! Du kannst gehen."),"Das ist eine andere Geschichte! Wie mein Freund immer sagt: 'Es ist immer gut, jemandem zuzuhören, der klug ist, aber mit dem Narren zu sprechen ist viel besser'! He-he!","Im Austausch für dein Gold gebe ich dir einen Rat, du solltest nicht im Dschungel spazieren gehen, wenn du bist "+GetSexPhrase("so ein Weichei. Trink deinen Rum in der Taverne, damit du und deine Geldbörse sicher bleiben!","ein Mädchen. Ausgeraubt zu werden ist nicht das Schlimmste, was dir hätte passieren können.")+".");

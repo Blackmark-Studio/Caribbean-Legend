@@ -1,0 +1,58 @@
+Hunter_dialog_First_time_text_1 {$fullName! Wir haben dich schon lange verfolgt, und endlich gehörst du uns.}
+Hunter_dialog_First_time_l1_1 {Wer bist du und was willst du von mir?}
+Hunter_dialog_meeting_text_1 {$ctx(valueText) hat ein anständiges Kopfgeld für deinen Kopf ausgesetzt, wir müssen dich in eine seiner Kolonien liefern und wir werden bezahlt, egal ob du tot oder lebendig bist.}
+Hunter_dialog_meeting_l1_1 {Hör zu, ich werde dich bezahlen, wenn du mich in Ruhe lässt.}
+Hunter_dialog_meeting_l2_1 {$manWoman(Entschuldigung, aber Sie müssen sich irren. Ich bin $ctx(personName) - ein bekannter Kaufmann in diesen Gegenden.|Entschuldigung, aber Sie müssen sich irren. Ich bin nur ein einfaches Mädchen und mein Vater ist $ctx(personName) - ein bekannter Kaufmann in diesen Landen.).}
+Hunter_dialog_meeting_l3_1 {Gut, du kannst dein Glück versuchen, wenn du es so wünschst.}
+Hunter_dialog_lier_text_1 {Oh! Wir könnten uns tatsächlich irren. Bitte, verzeih uns, $sir.}
+Hunter_dialog_lier_l1_1 {Es passiert, mach dir keine Sorgen darüber...}
+Hunter_dialog_lier_text_2 {Ich glaube, du lügst!}
+Hunter_dialog_lier_l1_2 {Hör zu, ich werde dich bezahlen, wenn du mich in Ruhe lässt.}
+Hunter_dialog_lier_l2_1 {Gut, du kannst dein Glück versuchen, wenn du es wünschst.}
+Hunter_dialog_Cost_Head_text_1 {Ich denke, dass $ctx(hunterCost) Pesos werden uns gut passen.}
+Hunter_dialog_Cost_Head_l1_1 {Aber ich habe solches Geld nicht.}
+Hunter_dialog_Cost_Head_l1_2 {Hier ist dein Geld, nimm es und verschwinde.}
+Hunter_dialog_Cost_Head_l2_1 {So eine Summe an Halunken wie euch zu geben... Ich glaube, ich würde euch lieber alle gleich hier aufschlitzen!}
+Hunter_dialog_NoMoney_text_1 {In diesem Fall ist unser Gespräch vorbei!}
+Hunter_dialog_NoMoney_l1_1 {Du wirst mich nie lebendig kriegen.}
+Hunter_dialog_TreasureHunter_text_1 {Halte an, $manWoman(Kumpel|Fräulein)... Ich denke, du hast etwas Interessantes bei dir. Freunde sollten die gefundenen Schätze miteinander teilen, meinst du nicht auch?}
+Hunter_dialog_TreasureHunter_l1_1 {Hör zu, ich werde dich bezahlen, wenn du mich in Ruhe lässt.}
+Hunter_dialog_TreasureHunter_l2_1 {$manWoman(Entschuldigen Sie, aber Sie müssen sich irren. Ich bin $ctx(personName) - ein bekannter Bürger in diesen Landen, aber sicherlich kein Schatzsucher.|Entschuldigen Sie, aber Sie müssen sich irren. Ich bin nur ein einfaches Mädchen und kein Schatzsucher. Und mein Vater ist $ctx(personName) - ein bekannter Bürger in diesen Landen)!}
+Hunter_dialog_TreasureHunter_l3_1 {Nun, es scheint, dass es Zeit ist, dass eure Köpfe sich von ihren Körpern trennen.}
+Hunter_dialog_TreasureHunterLier_text_1 {Oh! Dann könnten wir uns tatsächlich geirrt haben. Bitte verzeih uns, $sir.}
+Hunter_dialog_TreasureHunterLier_l1_1 {Es passiert, mach dir keine Sorgen...}
+Hunter_dialog_TreasureHunterLier_text_2 {Ich glaube, dass du lügst!}
+Hunter_dialog_TreasureHunterLier_l1_2 {Dann hör auf das Lied meiner Klinge.}
+Hunter_dialog_TreasureCaptain_text_1 {$rand(Also bist du derjenige, der meine Schatzkarte genommen hat! Ich denke, Kumpel, es ist Zeit, alles zurückzugeben, was du genommen hast...|Oh, ein Rivale! Du wirst nicht weit kommen, du wirst durch das Gewicht meiner Schätze verlangsamt...|Huh, endlich habe ich dich eingeholt! Alle Schätze in dieser Höhle gehören mir, kapierst du das? Jetzt leere deine Taschen, Kumpel!)}
+Hunter_dialog_TreasureCaptain_l1_1 {$rand(Es ist Zeit für dich, meine Klinge zu treffen, Kumpel!|Deine Schätze? Du meintest, sie waren deine, denn jetzt sind sie mein!|Ich würde lieber deinen Magen mit meiner Klinge leeren, Kumpel.)}
+Hunter_dialog_TreasureOfficer_text_1 {$rand(Also, der Oberst hatte recht, der Schatz war in dieser Höhle versteckt... Leere deine Taschen, Seemann!|Also haben wir dich endlich erwischt, nachdem wir dich durch all diese verfluchten Dschungel, Dornen und Sümpfe verfolgt haben. Jetzt, du Bastard, wirst du uns alles geben...|He, Seemann! Die Schätze dieses Piraten gehören uns, also nimm deine schmutzigen Hände davon weg!)}
+Hunter_dialog_TreasureOfficer_l1_1 {$rand(Nun, das habe ich nicht von einem Armeeoffizier erwartet! Aber gut, ich werde dir trotzdem eine Lektion erteilen...|Schau ihn an, ein Pirat in einer Offiziersuniform...|Tatsächlich sind Soldaten und Piraten heutzutage nicht mehr so unterschiedlich...)}
+Hunter_dialog_ReasonToFast_THunter_1_text_1 {Und hier kommt unser Gold. Zumindest war unser Warten nicht umsonst.}
+Hunter_dialog_ReasonToFast_THunter_1_l1_1 {$rand(Wovon reden Sie, Herren? Ich bin ein Vertreter der Niederländischen Westindien-Kompanie und bin nur auf der Durchreise hier! Ich habe angehalten, um die Aussicht auf die Küste zu bewundern!|Ich fürchte, Sie haben mich mit jemand anderem verwechselt. Ich bin $manWoman(Francua Marie Paganel, |Maria-Theresa, )ein Naturforscher. Ich sammle hier Proben der einheimischen Flora. Möchtest du dir meine Sammlung von Yucca-Blättern ansehen? Ich habe einige sehr interessante!)}
+Hunter_dialog_ReasonToFast_THunter_1_l2_1 {Was willst du?! Bleib mir aus dem Weg!}
+Hunter_dialog_ReasonToFast_THunter_2_text_1 {Ach nein, $manWoman(mein lieber Freund|mein hübsches Mädchen). Das wird nicht funktionieren. Wir wissen mit Sicherheit, dass du die Karte besessen hast von $ctx(mapOwnerName). Und er war so ein Geizhals, dass seine Truhen von innen voller Geld platzten. Also werden wir nicht mit leeren Händen gehen.}
+Hunter_dialog_ReasonToFast_THunter_2_l1_1 {Du hast recht. Die Truhen waren tatsächlich voll. Aber du wirst sie nicht bekommen. Du kannst versuchen, diese Höhle zu besuchen, ein paar löchrige Eimer sollten noch dort sein.}
+Hunter_dialog_ReasonToFast_THunter_2_l2_1 {Du hast recht. Du kannst deinen Schatz haben. Behalte nur im Hinterkopf, dass er dich nicht glücklich machen wird, da er mit Blut befleckt ist.}
+Hunter_dialog_ReasonToFast_THunter_3_text_1 {$manWoman(Heh, Kapitän, du bist zu jung zum Sterben, oder...|Heh, Mädchen, du bist zu jung zum Sterben, nicht wahr...)..., Freund.}
+Hunter_dialog_ReasonToFast_THunter_3_l1_1 {Eigentlich werde ich nicht sterben!}
+Hunter_dialog_ReasonToFast_THunter_4_text_1 {Nun, das sind die Worte eines vernünftigen Menschen!}
+Hunter_dialog_ReasonToFast_THunter_4_l1_1 {Verflucht bist du und all diese Schätze...}
+Hunter_dialog_ReasonToFast_HunterShore1_text_1 {Hallo,$manWoman(Kumpel|Fräulein)! $ctx(contactName) sagte, dass du etwas für uns hast.}
+Hunter_dialog_ReasonToFast_HunterShore1_l1_1 {Was meinst du?}
+Hunter_dialog_ReasonToFast_HunterShore11_text_1 {Eine Karte von $ctx(mapOwnerName)}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_1 {Nimm es und sag hallo zu $ctx(contactName). Sag ihm, dass wir uns bald treffen werden...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_1 {$ctx(contactName) ist schwer getäuscht, wenn er denkt, dass ich die Kastanien aus dem Feuer für ihn ziehen werde.}
+Hunter_dialog_ReasonToFast_HunterShore11_text_2 {Schmuck, den du dem Gouverneur gestohlen hast.}
+Hunter_dialog_ReasonToFast_HunterShore11_l1_2 {Nimm es und sag hallo zu $ctx(contactName). Sag ihm, dass wir uns bald treffen werden...}
+Hunter_dialog_ReasonToFast_HunterShore11_l2_2 {$ctx(contactName) ist schwer im Irrtum, wenn er denkt, dass ich für ihn die Kastanien aus dem Feuer holen werde.}
+Hunter_dialog_ReasonToFast_HunterShore2_text_1 {Hallo,$manWoman(Kumpel|Fräulein)! $ctx(contactName) hat einige Fragen an Sie.}
+Hunter_dialog_ReasonToFast_HunterShore2_l1_1 {Und warum würde er sie nicht selbst fragen?}
+Hunter_dialog_ReasonToFast_HunterShore21_text_1 {Nicht seinem Rang entsprechend. Sie haben unsere Operation ruiniert und wir haben $ctx(moneyAmount) Pesos verloren wegen dir. Also hast du jetzt eine Schuld zu begleichen.}
+Hunter_dialog_ReasonToFast_HunterShore21_l1_1 {Nimm es und grüße $ctx(contactName). Sag ihm, dass wir uns bald treffen werden...}
+Hunter_dialog_ReasonToFast_HunterShore21_l2_1 {$ctx(contactName) ist schwer getäuscht, wenn er denkt, dass ich für ihn Kastanien aus dem Feuer ziehen werde.}
+Hunter_dialog_ReasonToFast_HunterShore22_text_1 {Oh, du hast nicht so viel Geld! Nun, du hast deine Wahl getroffen...}
+Hunter_dialog_ReasonToFast_HunterShore22_l1_1 {Vor langer Zeit...}
+Hunter_dialog_ReasonToFast_HunterShore23_text_1 {Nun, du hast deine Wahl getroffen...}
+Hunter_dialog_ReasonToFast_HunterShore23_l1_1 {Vor langer Zeit...}
+Hunter_dialog_GetLocHunterName_island_1 {island of}
+Hunter_dialog_GetLocHunterName_mainland_1 {mainland of}

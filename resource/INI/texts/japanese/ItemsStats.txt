@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {船体が2%失われるごとに、砲の速�
 itm_stat_descr_talisman2 {嵐域への突入を回避、 または嵐中の帆と船体の損傷を軽減する。}
 itm_stat_descr_talisman20 {火器の照準速度が15%上昇し、最大照準ダメージが20%増加、リロード速度が10%上昇、ヘッドショットダメージが20%増加する。}
 itm_stat_descr_talisman21 {ランク2までの船で密輸業者と取引できる。}
-itm_stat_descr_talisman3 {大砲の爆発を防ぐ。}
+itm_stat_descr_talisman3 {砲が良好な状態のときに得られるボーナスが$percent(0.05)増加します。この効果は累積します。}
 itm_stat_descr_talisman4 {過積載時の乗組員士気低下を抑え、 乗組員の1日あたりのラム酒消費量を減らす。}
 itm_stat_descr_talisman6 {船の食料消費量を4分の1減らす。}
 itm_stat_descr_talisman7 {船の修理速度が2倍になり、資源を30％節約。帆と船体の損傷を5％軽減。}

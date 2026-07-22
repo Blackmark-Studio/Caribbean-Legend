@@ -52,7 +52,8 @@ descriptor_descr_EmpoweredAmmo {Cette munition améliore les propriétés de l�
 descriptor_descr_EnhancingPotion {Possède un effet de renforcement spécial.}
 descriptor_descr_Exotic
 {
-Cet objet n’a rien à faire entre les mains d’un bon chrétien, et d’effrayantes rumeurs courent aussitôt sur son porteur.Augmente la Puissance de la Flotte de $percent($DescriptorBaseValue(Exotic)) ; effets cumulables.
+Cet objet n’a rien à faire entre les mains d’un bon chrétien, et d’effrayantes rumeurs courent aussitôt sur son porteur.
+Augmente la Puissance de la Flotte de $percent($DescriptorBaseValue(Exotic)) ; effets cumulables.
 }
 descriptor_descr_Fancy {Cet objet se distingue par son aspect cérémoniel, ses incrustations et ses matériaux précieux. Le porter augmente le Leadership de $number($DescriptorBaseValue(Fancy)). Effets cumulables.}
 descriptor_descr_Fighter {L'effet est utile aux Combattants.}
@@ -89,7 +90,8 @@ descriptor_descr_Trinket {Objets raffinés ou moins raffinés, réservés aux ge
 descriptor_descr_TwoHanded {Arme à feu lourde nécessitant les deux mains pour tirer. Demande des compétences particulières.}
 descriptor_descr_Unremarkable
 {
-Tout le monde possède ce genre d’objet. Avec, vous passez inaperçu.Augmente la Furtivité de $number($DescriptorBaseValue(Unremarkable)). Effets cumulables.
+Tout le monde possède ce genre d’objet. Avec, vous passez inaperçu.
+Augmente la Furtivité de $number($DescriptorBaseValue(Unremarkable)). Effets cumulables.
 }
 descriptor_descr_Valuable {A une grande valeur à la revente.}
 descriptor_descr_WeaponCurvature_0 {Cette arme est droite ou à peine courbée, ce qui la rend plus adaptée aux attaques rapides qu’aux attaques tranchantes.}
@@ -106,7 +108,7 @@ descriptor_Exotic {Exotique}
 descriptor_Fancy {Raffiné}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Fragile}
-descriptor_GoodFit {Simple}
+descriptor_GoodFit {Bien ajustée}
 descriptor_GrapeAmmo {Mitraille}
 descriptor_HealPotion {Soin}
 descriptor_HeartDefence {Renforcé}

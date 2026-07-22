@@ -646,9 +646,7 @@ void GoldenGirl_VaskezAttack(string qName) //
 	sld.Coastal_Captain = true;
 	sld.Ship.Mode = "pirate";
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+	SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 	if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 	sld.WatchFort = true;
 	Group_AddCharacter("GG_MorenoGroup", "GG_Moreno");
@@ -689,9 +687,7 @@ void GoldenGirl_BasterSetFrigate(string qName) //
 	sld.Coastal_Captain = true;
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*6;
+	SetCrewExp(sld, float(40+MOD_SKILL_ENEMY_RATE*6));
 	if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 	sld.WatchFort = true;
 	Group_AddCharacter("GG_AngerranGroup", "GG_AngerranCap");

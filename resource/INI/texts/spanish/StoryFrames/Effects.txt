@@ -7,7 +7,7 @@ CrewMorale_pchar_0 {La moral de la tripulación $MoraleStrDiff($ctx(value))}
 CrewMorale_pchar_1 {La moral de la tripulación $MoraleStrDiff($ctx(value))}
 Reputation_pchar_0 {La reputación ha bajado}
 Reputation_pchar_1 {La reputación ha subido}
-CrewExp_pchar_1 {$key($ctx(p1)) obtuvieron experiencia}
+CrewExp_pchar_1 {La tripulación ha ganado experiencia}
 Money_pchar_1 {Has recibido $money($ctx(value))}
 Money_pchar_0 {Has entregado $abs($money($ctx(value)))}
 Goods_pchar_1 {Has recibido _$key($goodI($ctx(p1))Acc): $number($ctx(value))}

@@ -112,7 +112,7 @@ Schaltet die Möglichkeit frei, den Modus der Breitseite zu wählen.
 }
 perkBladeDancer {Rundumschlag mit gekrümmten Waffen verursacht $percent($perkBaseValue(BladeDancer|1))  mehr Schaden.}
 perkBoardingPrepare {Die Entermannschaft erhält Tränke während des Enterns.}
-perkBombardier {Haltbarkeit der Kanonen ist erhöht.}
+perkBombardier {Der Bonus durch Geschütze in gutem Zustand wird um $percent($perkBaseValue(Bombardier|1)) erhöht. Dieser Effekt ist kumulativ.}
 perkBruteForce {Schwer bewaffnete Soldaten mit Äxten und Rüstung ersetzen beim Entern einige deiner normalen Matrosen.}
 perkBuilder {Der Verbrauch von Planken und Segeltuch bei Reparaturen ist um 25 % reduziert.}
 perkByWorker {Eine Figur kann zwei Offiziersposten gleichzeitig innehaben}

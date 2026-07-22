@@ -272,7 +272,7 @@ void LAi_type_warrior_SetWateState(ref chr)
 		if(chr.chr_ai.type.index != "")
 		{
 			int cmd = int(chr.chr_ai.type.index);
-			if(cmd >= 0)
+			if (cmd >= 0 && !LAi_IsDead(&Characters[cmd]))
 			{
 				//Возвращаемся к командиру
 				LAi_tmpl_SetFollow(chr, &Characters[cmd], -1.0);

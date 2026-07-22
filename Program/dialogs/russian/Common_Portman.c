@@ -1518,7 +1518,7 @@ void ProcessDialogEvent()
 			string sTemp;
 	        for (i=1; i<=2; i++)
 	        {
-				ShipType = GetRandomShipType(GetClassFlag(int(RealShips[int(pchar.Ship.Type)].Class)), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
+				ShipType = GetRandomShipType(GetClassFlag(func_max(2, int(RealShips[int(pchar.Ship.Type)].Class))), FLAG_SHIP_TYPE_MERCHANT, FLAG_SHIP_NATION_ANY);
 				Rank = 5 * (6 - int(RealShips[int(pchar.Ship.Type)].Class)) + rand(5);
 				if (i == 1) sTemp = pchar.questTemp.WPU.Escort.ShipName1;
 				if (i == 2) sTemp = pchar.questTemp.WPU.Escort.ShipName2;

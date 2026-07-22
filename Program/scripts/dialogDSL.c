@@ -61,6 +61,18 @@ string DLG_DeclensionString(int num, string form1, string form2, string form5 = 
 	return num + " " + DLG_DeclensionForm(num, form1, form2, form5);
 }
 
+string DLG_DeclensionKeyFloat(float num, string key, int ignoreNums = 1)
+{
+	num = float(FloatToString(num, ignoreNums)); // отбрасываем разряды
+	if (num == float(int(num))) return DLG_DeclensionForm(int(num), xiStr(key + "_dcl1"), xiStr(key + "_dcl3"), xiStr(key + "_dcl5"));
+	return xiStr(key + "_dcl3");
+}
+
+string DLG_DeclensionKey(int num, string key)
+{
+	return DLG_DeclensionForm(num, xiStr(key + "_dcl1"), xiStr(key + "_dcl3"), xiStr(key + "_dcl5"));
+}
+
 string DLG_DeclensionForm(int num, string form1, string form2, string form5 = "")
 {
 	if (form5 == "") form5 = form2;

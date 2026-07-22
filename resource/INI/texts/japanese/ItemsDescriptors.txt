@@ -108,7 +108,7 @@ descriptor_Exotic {異国}
 descriptor_Fancy {華麗}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {脆い}
-descriptor_GoodFit {素朴}
+descriptor_GoodFit {ぴったり}
 descriptor_GrapeAmmo {散弾}
 descriptor_HealPotion {回復}
 descriptor_HeartDefence {強化}

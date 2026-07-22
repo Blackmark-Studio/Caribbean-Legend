@@ -143,6 +143,7 @@ LosTeques Town {рудник Лос-Текес}
 LosTeques_town {рудник Лос-Текес}
 LostShipsCity {Локо-Риферте}
 LostShipsCity Town {Локо-Риферте}
+LostShipsCity_Town {Локо-Риферте}
 Loxly_house {контора Альберта Локсли}
 LSC North {Север Острова погибших кораблей}
 LSC South {Юг Острова погибших кораблей}

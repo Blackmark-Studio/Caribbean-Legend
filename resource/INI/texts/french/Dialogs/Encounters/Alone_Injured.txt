@@ -1,0 +1,44 @@
+Native_First_time_1 {Ahh... pâle visage. $rand(Bête sauvage me blesser à la chasse... Que moi dire à mon village ?|Ton peuple me blesser et me laisser mourir... Tu viens finir leur ouvrage ?|Bandits vouloir $rand(mes larmes des dieux|ma pierre jaune|mes amulettes), mais $npcName guerrier ! Maintenant eux morts, et moi aussi...) Ou toi vouloir m’aider ?}
+Native_First_time_2 {Toi vouloir quoi ? $npcName blessé, tu ne vois pas ?}
+Native_Bye_1 {$rand(Non, je ne veux pas m’en mêler.|Je ne peux rien pour toi.) Adieu.}
+Native_Bye_2 {$rand(Rien. Adieu.|Je vérifiais seulement si tu étais encore en vie. Adieu.|Euh... remets-toi, je suppose ?)}
+Native_ThanksPotion {Merci, pâle visage ! Maintenant moi pouvoir rejoindre village... juste me reposer un peu...}
+Native_ThanksElixir {Merci, pâle visage ! $npcName comme neuf. Moi raconter à tout le village ta $rand(bonté|aide), sache-le !}
+Native_ThanksMixture {Tu m’as donné remède précieux que seul notre chaman sait préparer. Toi vrai ami de mon peuple, pâle visage. $npcName se souvenir de toi et te remercier.}
+Native_Bye_3 {$rand(De rien.|Nous sommes tous des êtres humains.|Seulement, n’en parle à personne, d’accord ?)}
+Marginal_First_time_1 {$swear $rand(Je sens mes forces me quitter...|Eh bien, voilà où ma course s’achève...|Je le sens, je ne tiendrai pas jusqu’au matin...) Ne passe pas ton chemin, $rand(voyageur|errant|ami) ! Aide un malheureux dans le besoin - tu vois bien $rand(comment les indigènes m’ont tailladé|comment les bandits m’ont arrangé|comment finissent les promenades dans la jungle|de quoi des clients mécontents sont capables) ? Je te jure que je saurai te le rendre - j’ai mis de côté quelque chose grâce à $rand(mes petites affaires|mon commerce|quelques transports pas tout à fait légaux|un négoce pas entièrement honnête).}
+Marginal_First_time_2 {Qu’est-ce que tu veux encore ? Tu es venu admirer mes souffrances ?}
+Marginal_Bye_1 {Je ne peux pas t’aider.}
+Marginal_Bye_2 {Je n’ai pas encore décidé quoi faire de toi.}
+Marginal_ThanksPotion {Merci déjà pour ça. Cette fois, je rejoindrai les miens, c’est certain.}
+Marginal_ThanksElixir {Ah... quelle infamie, mais ça m’a remis sur pied en un instant. Merci, l’ami, je saurai dire du bien de toi.}
+Marginal_ThanksMixture {Hm... je pensais que ce serait bien pire au goût. Qu’est-ce que tu as mis là-dedans ? La prochaine fois, mieux vaut de l’ipécacuanha fraîche que sèche. Ah oui, merci pour ton aide. Maintenant, ton nom circulera sûrement parmi les nôtres. Enfin... tu vois bien de qui je parle.}
+Marginal_Bye_3 {Tout de bon.}
+Bandit_First_time_1 {$swear $rand(Voilà donc ma sale fin.|La vieille à la faux est venue me chercher.|On dirait bien que j’ai assez couru.|Je ne reverrai plus les putes du port.) Et qu’est-ce que tu reluques comme ça ? Tu vois pas $rand(comment ces singes à peau rouge m’ont charcuté|comment la patrouille m’a passé à tabac|comment notre belle Fraternité de la Côte m’a tailladé|comment finissent les balades dans la jungle) ? Alors soit tu dégages pendant qu’il en est encore temps, soit tu m’aides - je saurai te le rendre.}
+Bandit_First_time_2 {Qu’est-ce que tu veux encore, bordel ? Ou tu m’aides, ou tu me laisses crever tranquille. $swear}
+Bandit_Bye_1 {Je peux rien pour toi. Et à vrai dire, j’en ai pas très envie. Dégage.}
+Bandit_Bye_2 {Si t’avais eu un peu plus de manières, tu ne te serais peut-être pas retrouvé dans cette merde. Allez, salut.}
+Bandit_ThanksPotion {Ouah... quelle saloperie ! Merci quand même. Avec un peu de chance, j’atteindrai la baie.}
+Bandit_ThanksElixir {Quelle crasse, beurk ! Mais je sens que ça va mieux. Merci, l’ami - sans toi, je n’aurais pas tenu jusqu’au matin.}
+Bandit_ThanksMixture {Bon Dieu, quelle ignominie ! Qu’est-ce que t’as foutu là-dedans, de la vase grattée sous les pavés ? Bon, bon, c’est pas si terrible. Et puis ça m’a remis debout en un rien de temps, faut bien le dire. Merci, l’ami - je glisserai un bon mot pour toi aux nôtres. Allez, sans rancune !}
+Bandit_Bye_3 {Dégage.}
+Soldier_First_time_1 {Hé là, halte ! Venez en aide à un soldat en détresse. Vous voyez bien $rand(ce que $rand(ces maudits peaux-rouges|ces bandits|ces contrebandiers|ces gens du coin) m’ont fait|dans quel état je suis ? Il n’y a pas si longtemps, j’étais encore en parfaite santé, et puis vlan - une balle dans le genou) ! Me venir en aide est le devoir de tout fidèle sujet de notre patrie, et je saurai récompenser pleinement votre compassion.}
+Soldier_First_time_2 {Qu’avez-vous donc, fripon, à vous moquer de moi ? Que me voulez-vous ? Je vais me vider de mon sang d’une minute à l’autre.}
+Soldier_Bye_1 {Hélas, je ne puis rien pour vous. J’espère que quelqu’un d’autre pourra vous remettre sur pied, soldat.}
+Soldier_Bye_2 {Oh, tiens donc, comme vous voilà bavard. Où sont donc passés tout votre charme et vos bonnes manières ? Restez donc allongé encore un moment, voyons jusqu’où cela vous mène.}
+Soldier_ThanksPotion {N’avez-vous rien de plus fort ? Enfin, merci quand même. Le capitaine sera informé de votre bonté.}
+Soldier_ThanksElixir {Mon Dieu, quelle horreur ! On dirait la bouillie de ma mère... Mais qu’est-ce que je raconte ? Merci, monsieur. Cette fois, je rentrerai chez moi pour de bon. Je saurai m’en souvenir.}
+Soldier_ThanksMixture {Et c’est vraiment sans danger, n’est-ce pas ? Enfin, je n’ai pas le choix, alors donnez-moi votre mixture. Oh... Je me sens déjà mieux. Bien mieux que ça, je suis comme neuf ! Merci. Le gouverneur sera assurément mis au courant.}
+Soldier_Bye_3 {Ce n’est rien. Soyez plus prudent la prochaine fois.}
+EnemySoldier_First_time_1 {Alors, tu es venu te payer ma tête ? Ou m’achever ? Tu arrives trop tard, on m’a déjà $rand(charcuté par tes patrouilles|tendu une embuscade par des peaux-rouges|salement arrangé par de la vermine de bandits). Mais sache-le - je ne me rendrai pas sans combattre. À moins qu’il ne te reste une once de miséricorde ?}
+EnemySoldier_First_time_2 {Que voulez-vous encore ? Pourquoi me tourmenter davantage ? $swear}
+EnemySoldier_Bye_1 {La miséricorde vous est refusée. Adieu.}
+EnemySoldier_Bye_2 {En effet, vous observer est un véritable plaisir.}
+EnemySoldier_ThanksPotion {Comment ? Merci... il se peut que je me sois trompé à votre sujet. Je vais rejoindre les miens avant que vos patrouilles ne me trouvent.}
+EnemySoldier_ThanksElixir {Ce n’est pas empoisonné, au moins ? Soit, je n’ai guère le choix. Ah... je me sens réellement mieux. Merci. Il semble que vous ne soyez pas tous des bâtards et des impies.}
+EnemySoldier_ThanksMixture {À vrai dire, je ne m’y attendais pas. Je me sens réellement mieux. Hum... eh bien. En d’autres circonstances, notre rencontre se serait achevée dans le sang, et pourtant voyez quel tour le destin nous a joué... Merci, mon ami. Que tous sachent qu’il se trouve aussi parmi vous des hommes dignes d’estime.}
+EnemySoldier_Bye_3 {Je suis l’ennemi de votre pays, mais non un monstre. Allez en paix ; j’espère que nous ne nous reverrons jamais sur un champ de bataille.}
+InjuredGuy_Give_Potion {(Potion de soin) Tiens. Ce n’est pas grand-chose, mais ça devrait te remettre sur pied.}
+InjuredGuy_Give_Elixir {(Élixir) Tenez, prenez ce remède. Il est particulier, mais soigne même les blessures les plus effroyables.}
+InjuredGuy_Give_Mixture {(Mixture) Je vais vous donner une potion très rare et très puissante. Son goût est infâme, mais vous serez comme neuf — je vous le promets.}
+InjuredGuy_Kill {(Tuer) Très bien, je vais achever ce qu’ils ont commencé.}

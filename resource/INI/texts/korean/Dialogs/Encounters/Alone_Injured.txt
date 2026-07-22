@@ -1,0 +1,44 @@
+Native_First_time_1 {아아... 창백한 얼굴. $rand(사나운 짐승이 사냥 중 나를 다치게 했다... 내가 마을에 가서 뭐라 말하지?|너희 부족이 나를 다치게 하고 죽게 내버려 뒀다... 너도 그들 일을 끝내러 왔나?|도적들이 $rand(내 신들의 눈물|내 노란 돌|내 부적)을 원했다. 하지만 $npcName 전사다! 이제 그들은 죽었고, 나도 죽는다...) 아니면 나를 도우러 왔나?}
+Native_First_time_2 {너 뭐 원하는가? $npcName 다쳤다, 안 보이나?}
+Native_Bye_1 {$rand(아니, 난 끼어들고 싶지 않다.|널 도와줄 게 없다.) 가보겠다.}
+Native_Bye_2 {$rand(아무것도 아니다. 가보겠다.|네가 아직 살아 있는지 보러 왔을 뿐이다. 가보겠다.|어... 회복하길 바란다?)}
+Native_ThanksPotion {고맙다, 창백한 얼굴! 이제 난 마을까지 갈 수 있다... 조금만 쉬면...}
+Native_ThanksElixir {고맙다, 창백한 얼굴! $npcName 이제 새 사람 같다. 네 $rand(친절|도움)을 마을 모두에게 말하겠다, 꼭 알라!}
+Native_ThanksMixture {너는 우리 샤먼만 만들 수 있는 귀한 약을 내게 주었다. 너는 우리 사람들의 진정한 친구다, 창백한 얼굴. $npcName 너를 기억하고 감사할 것이다.}
+Native_Bye_3 {$rand(천만에.|다 같은 사람이지.|대신 아무한테도 말하지 마라, 알겠지?)}
+Marginal_First_time_1 {$swear $rand(기운이 빠져나가는 게 느껴진다...|이제 나도 끝장난 것 같군...|아침까지는 못 버틸 것 같다...) 그냥 지나치지 마라, $rand(나그네|떠돌이|친구)! 곤경에 빠진 사람을 좀 도와줘 - $rand(원주민들이 날 어떻게 만들었는지|도적들이 날 얼마나 두들겨 팼는지|정글 산책이 어떻게 끝나는지|성난 손님들이 무슨 짓을 할 수 있는지) 보이지 않나? 맹세컨대 그냥 갚지 않고 있진 않겠다 - $rand(내 잔잔한 수완으로|내 장사로|완전히 합법적이지는 않은 운송 일로|그리 정직하지는 않은 거래로) 좀 모아둔 게 있다.}
+Marginal_First_time_2 {이제 또 뭘 원하는 거냐? 내 고통 구경이라도 하러 왔나?}
+Marginal_Bye_1 {널 도와줄 수 없다.}
+Marginal_Bye_2 {널 어떻게 할지는 아직 정하지 않았다.}
+Marginal_ThanksPotion {이 정도만으로도 고맙다. 이제는 틀림없이 우리 사람들에게 돌아갈 수 있겠다.}
+Marginal_ThanksElixir {으으... 정말 끔찍한 맛이지만, 순식간에 다시 일으켜 세워 줬군. 고맙다, 친구. 내가 네 얘기 좋게 해주지.}
+Marginal_ThanksMixture {흠... 맛은 훨씬 더 끔찍할 줄 알았는데. 여기에 뭘 넣은 거지? 다음번엔 이페카쿠아나는 마른 것보다 신선한 게 낫다. 아, 맞다. 도와줘서 고맙다. 이제 네 이름은 우리 쪽에서 확실히 알려질 거다. 뭐... 누구 사이에서인지는 알겠지.}
+Marginal_Bye_3 {잘 지내라.}
+Bandit_First_time_1 {$swear $rand(이제 나도 죽는구만.|낫 든 늙은 년이 날 찾아왔군.|이젠 정말 끝까지 내달린 모양이야.|항구 창녀들도 다시는 못 보겠군.) 뭘 그렇게 쳐보고 있어? $rand(저 붉은가죽 원숭이들이 날 어떻게 난도질했는지|순찰대가 날 어떻게 작살냈는지|우리 해안 형제단 놈들이 날 어떻게 베어놨는지|정글 산책이 어떻게 끝나는지) 안 보여? 그러니 썩 꺼지든가, 아니면 날 도와. 빚은 안 지고 갚아주마.}
+Bandit_First_time_2 {이제 또 뭘 원하는 거냐, 젠장? 도와주든가, 아니면 조용히 죽게 내버려 둬라. $swear}
+Bandit_Bye_1 {도와줄 수 없다. 솔직히 그럴 마음도 별로 없고. 잘 가라.}
+Bandit_Bye_2 {네가 좀 더 예의가 있었으면 이런 꼴은 안 났을지도 모르지. 잘 가라.}
+Bandit_ThanksPotion {윽... 개같은 물건이군! 그래도 고맙다. 어쩌면 만까지는 버틸 수 있겠어.}
+Bandit_ThanksElixir {이야, 정말 쓰레기 같은 맛이군, 퉤! 그래도 좀 나아진 것 같다. 고맙다, 친구. 너 없었으면 아침도 못 봤다.}
+Bandit_ThanksMixture {자비로운 하느님, 이게 무슨 개악취 나는 물건이냐! 뭘 처넣은 거야, 길바닥 밑 점액이라도 긁어 왔나? 알았다, 알았어, 아주 최악은 아니군. 젠장, 날 순식간에 일으켜 세운 것도 사실이고. 고맙다, 친구. 우리 쪽 사람들한테 네 얘긴 꼭 좋게 해두지. 자, 너무 악감정은 품지 말라고!}
+Bandit_Bye_3 {잘 가라.}
+Soldier_First_time_1 {Ehi, là! Fermati! Aiuta un soldato in difficoltà. Non vedi $rand(cosa mi hanno fatto $rand(quei dannati pellerossa|quei banditi|i contrabbandieri|la gente del posto)|in che condizioni sono? Fino a poco fa ero sano come un pesce, e poi tac - una pallottola nel ginocchio)! Aiutarmi è dovere di ogni fedele suddito della nostra patria, e saprò ricompensare ampiamente la tua compassione.}
+Soldier_First_time_2 {이 자식아, 날 조롱이라도 하는 거냐? 뭘 원하는 거지? 나는 이제 금방 피를 다 쏟고 죽게 생겼다.}
+Soldier_Bye_1 {유감이지만 난 널 도울 수 없다. 다른 누군가가 널 다시 일으켜 세워 주길 바라지, 병사.}
+Soldier_Bye_2 {이야, 말하는 꼴 좀 보게. 그 매력과 예의는 다 어디로 갔지? 그럼 좀 더 누워 계셔 보시지, 어디까지 가나 한번 보자고.}
+Soldier_ThanksPotion {좀 더 강한 건 없나? 그래도 이만하면 고맙다. 대장은 네 친절을 알게 될 거다.}
+Soldier_ThanksElixir {맙소사, 정말 고약한 맛이군! 꼭 어머니가 끓이던 죽 같아... 내가 지금 무슨 소릴 하는 거지? 감사합니다, 선생. 이제는 틀림없이 집에 도착할 수 있겠습니다. 은혜는 잊지 않겠습니다.}
+Soldier_ThanksMixture {이게 정말 안전한 건가? 하지만 선택의 여지도 없으니, 그 약을 내놔라. 오... 정말로 좋아진 것 같군. 아니, 그 정도가 아니다. 난 완전히 새 사람 같다! 고맙다. 총독도 이 일은 분명 알게 될 거다.}
+Soldier_Bye_3 {별말씀을. 다음엔 좀 더 조심해라.}
+EnemySoldier_First_time_1 {뭐냐, 날 비웃으러 왔나? 아니면 끝장을 내러? 늦었어, 난 이미 $rand(너희 순찰대에게 난도질당했고|붉은가죽 놈들이 매복해 있었고|산적 잡것들에게 두들겨 맞았다). 하지만 명심해라. 난 싸움 없이 항복하진 않는다. 아니면 네 안에도 자비라는 게 조금은 남아 있나?}
+EnemySoldier_First_time_2 {이제 또 뭘 원하나? 왜 날 더 괴롭히는 거지? $swear}
+EnemySoldier_Bye_1 {자비는 베풀지 않겠다. 잘 가라.}
+EnemySoldier_Bye_2 {맞는 말이지, 널 보고 있는 건 꽤 즐거운 일이군.}
+EnemySoldier_ThanksPotion {뭐라고? 고맙다... 아무래도 내가 널 잘못 본 모양이군. 너희 순찰대가 날 찾기 전에 우리 쪽으로 돌아가겠다.}
+EnemySoldier_ThanksElixir {설마 독은 아니겠지? 뭐, 선택의 여지도 별로 없군. 아... 정말 좀 나아졌다. 고맙다. 아무래도 너희가 다 개자식에 무신론자들만은 아닌 모양이군.}
+EnemySoldier_ThanksMixture {정말 뜻밖이군. 확실히 훨씬 나아졌다. 흠... 그렇군. 다른 상황이었다면 우리의 만남은 피바다가 되었을 텐데, 운명이 이런 장난을 치다니... 고맙다, 친구. 너희 쪽에도 достойные 사람들이 있다는 걸 모두가 알게 되길 바란다.}
+EnemySoldier_Bye_3 {나는 네 나라의 적이지만 괴물은 아니다. 무사히 가라. 우리가 전장에서 다시 만나는 일만은 없기를 바란다.}
+InjuredGuy_Give_Potion {(치유 물약) 받아라. 대단한 건 아니지만, 다시 일어설 만큼은 될 거다.}
+InjuredGuy_Give_Elixir {(엘릭서) 자, 이 약을 받아라. 좀 별나긴 해도 끔찍한 상처까지 낫게 한다.}
+InjuredGuy_Give_Mixture {(혼합약) 아주 희귀하고 강력한 약을 주지. 맛은 지독하지만, 새 사람처럼 될 거다. 약속하지.}
+InjuredGuy_Kill {(죽인다) 좋다. 놈들이 시작한 일을 내가 끝내지.}

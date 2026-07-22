@@ -107,3 +107,11 @@ GenQuests_96 {Did you hear how local gang of @<pchar.GenQuest.(Gun).name> tried 
 GenQuests_97 {Did you hear about a murder of @<pchar.GenQuest.EncGirl.name>? Poor girl, she was killed in the jungles recently. They should find the murderer and hang him!}
 GenQuests_98 {You know, captain @<GetFullName(pchar)>, someone murdered a poor girl named @<pchar.GenQuest.EncGirl.name>? Pity, she was a really nice girl...}
 GenQuests_99 {Her name was @<pchar.GenQuest.EncGirl.name>, and she died in the jungles. Nothing striking, I'll tell ya, it is not safe out there...}
+Alone_Citiz_Death_0 {Mówią, że @<Name> został w dżungli zarżnięty przez bandytów. Do takich czasów doszło, $Name: dziś człowiek wyjdzie za bramy i już może nie wrócić.}
+Alone_Citiz_Death_1 {Słyszeliście? @<Name> oddał ducha Bogu w dżungli. Mówią, że to robota bandytów, a w takich czasach uczciwi ludzie mają coraz mniejsze szanse dożyć wieczora.}
+Alone_Citiz_RobberyFail_0 {Mówią, że jakiś obdartus umyślił sobie obrabować @<Name>. Całkiem się rozzuchwalili, $Name: kiedyś chociaż bali się straży, a teraz z nożem rzucają się w biały dzień.}
+Alone_Citiz_RobberyFail_1 {Niedawno @<Name> wrócił do miasta, uciekając przed rabusiami. Takie mamy czasy, $Name: to już nie człowiek wybiera drogę, tylko droga decyduje, czy wróci żywy.}
+Alone_Citiz_RobberySuccess_0 {@<Name> został obrabowany, wyobrażacie sobie? Wszystko zabrali, a cud, że zostawili go przy życiu. Widać nawet zbóje w tych przeklętych czasach mają jeszcze sumienie.}
+Alone_Citiz_RobberySuccess_1 {Mówią, że @<Name> oddał bandytom wszystko, aż do ostatniej monety. Cóż zrobić, $Name: inaczej mógłby i do domu nie wrócić.}
+JungInjured_SoldHeal_0 {Mówią, $Name, że to wy uratowaliście naszego żołnierza w dżungli. W takich czasach mało kto stanie w obronie cudzego życia, więc całe miasto o tym gada.}
+JungInjured_SoldHeal_1 {@<Name> wrócił z dżungli ledwie żywy. W mieście gadają, $Name, że to właśnie wy wyciągnęliście go z tamtego świata, a dziś taki dobry uczynek wiele znaczy. Dobry z was człowiek.}

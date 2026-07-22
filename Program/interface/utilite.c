@@ -1309,7 +1309,7 @@ void InitTips()
         gTipsPerm[i] = i;
         gTips[i] = "Tip" + i;
     }
-    ShuffleArray(&gTipsPerm);
+    ArrayShuffle(&gTipsPerm);
 }
 
 string GetCurTip()
@@ -1326,7 +1326,7 @@ string GetNewTip()
     if (gCurTipNum == gTipsQty)
     {
         int prev = gTipsPerm[gTipsQty - 1];
-        ShuffleArray(&gTipsPerm);
+        ArrayShuffle(&gTipsPerm);
         gCurTipNum = (gTipsPerm[0] == prev) ? 1 : 0;
     }
 	return DLGO(GetConvertStr(gTips[gTipsPerm[gCurTipNum]], "GameTips.txt"), nullptr);
@@ -1337,3 +1337,10 @@ string Tips_GetText() { return GetNewTip(); }
 //////////////////////
 // <-- TIPS
 //////////////////////
+
+// Включаем/выключаем ноду с рефокусом
+void XI_ChangeNodeUsing(string nodeName, bool isUsed, string focusTo = "")
+{
+	SetNodeUsing(nodeName, isUsed);
+	if (focusTo != "") SetCurrentNode(focusTo);
+}

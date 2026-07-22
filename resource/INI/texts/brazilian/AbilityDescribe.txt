@@ -112,7 +112,7 @@ Desbloqueia a possibilidade de escolher o modo de salva lateral.
 }
 perkBladeDancer {Ataque em grupo com arma curvada causa $percent($perkBaseValue(BladeDancer|1)) mais dano.}
 perkBoardingPrepare {A equipe de abordagem recebe poções durante o abordo.}
-perkBombardier {A durabilidade dos canhões é aumentada.}
+perkBombardier {O bônus concedido pelo bom estado dos canhões aumenta em $percent($perkBaseValue(Bombardier|1)). Este efeito é cumulativo.}
 perkBruteForce {Soldados fortemente armados com machados e armaduras substituem alguns marinheiros comuns durante a abordagem.}
 perkBuilder {O consumo de tábuas e lonas durante os reparos é reduzido em 25%.}
 perkByWorker {Um personagem pode ocupar dois cargos de oficial ao mesmo tempo}

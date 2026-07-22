@@ -23,78 +23,33 @@ Düzenli bloklar ve kiremitler, pişmiş topraktan yapılır. Karayipler’in ne
 Sık sık çıkan yangınlar nedeniyle yetkililer tuğla kullanımını teşvik eder; bu yüzden bu mal her zaman talep görür.
 }
 Cannon_12 {12 librelik yarım toplar}
-Cannon_12_descr
-{
-Küçük savaş gemilerinde yaygın bir kalibre. Boyutuna ve ağırlığına göre etkileyici bir ateş gücüne sahiptir, ancak tam topçu ekibi gerektirir ve gemideki mürettebat sayısını artırır.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_12_descr {Küçük savaş gemilerinde yaygın bir kalibre. Boyutuna ve ağırlığına göre etkileyici bir ateş gücüne sahiptir, ancak tam topçu ekibi gerektirir ve gemideki mürettebat sayısını artırır.}
 Cannon_16 {16 librelik Yarım toplar}
-Cannon_16_descr
-{
-Modern Fransız tipi toplar. Gelişmiş tasarımları sayesinde menzili, güvenilirliği ve ateş gücü yüksektir. Devriye ve keşif gemilerinde çok yaygın bir kalibre.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden yükleme - #dReloadTime# sn.
-}
+Cannon_16_descr {Modern Fransız tipi toplar. Gelişmiş tasarımları sayesinde menzili, güvenilirliği ve ateş gücü yüksektir. Devriye ve keşif gemilerinde çok yaygın bir kalibre.}
 Cannon_18 {18 librelik Yarım toplar}
-Cannon_18_descr
-{
-Geçmişte savaş gemilerine sıkça takılan güçlü, çok amaçlı toplar. Takımadada oldukça yaygın olup, basitlikleri ve güvenilirlikleriyle değer görürler; ancak eski tasarımları menzillerini bir miktar sınırlar.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_18_descr {Geçmişte savaş gemilerine sıkça takılan güçlü, çok amaçlı toplar. Takımadada oldukça yaygın olup, basitlikleri ve güvenilirlikleriyle değer görürler; ancak eski tasarımları menzillerini bir miktar sınırlar.}
 Cannon_20 {20 librelik Toplar}
-Cannon_20_descr
-{
-Askeri konvoylardaki kruvazörler ve yardımcı gemilerde kullanılan uzun namlulu topçu silahlarıdır. Etkili atış için topçu ekibinin uyumlu çalışması gerekir.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_20_descr {Askeri konvoylardaki kruvazörler ve yardımcı gemilerde kullanılan uzun namlulu topçu silahlarıdır. Etkili atış için topçu ekibinin uyumlu çalışması gerekir.}
 Cannon_24 {24 librelik Toplar}
-Cannon_24_descr
-{
-Savaş gemilerinin ana kalibresi, deniz topçuluğunun zirvesi. Menzil ve ateş gücünde kusursuz dengeye sahiptir; başarılı tasarımı sayesinde uzun deniz savaşlarında kritik hasar almadan dayanır.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_24_descr {Savaş gemilerinin ana kalibresi, deniz topçuluğunun zirvesi. Menzil ve ateş gücünde kusursuz dengeye sahiptir; başarılı tasarımı sayesinde uzun deniz savaşlarında kritik hasar almadan dayanır.}
 Cannon_3 {Falkonetler}
 Cannon_3_descr
 {
 Taretli güverte topları. En yüksek hareket kabiliyetine sahip olup, küçük boyutları nedeniyle en düşük güç ve menzile sahiptirler.
 Çoğunlukla hızlı doldurma sağlayan değiştirilebilir bir namluya sahiptirler.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
 }
 Cannon_32 {32 librelik Toplar}
-Cannon_32_descr
-{
-Kaleleri bombalamaya uygun, büyük kalibreli ağır toplar; yüksek hasar verir. Malzeme dayanım sınırı nedeniyle barut yükü azaltılmıştır, bu da menzili sınırlar.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_32_descr {Kaleleri bombalamaya uygun, büyük kalibreli ağır toplar; yüksek hasar verir. Malzeme dayanım sınırı nedeniyle barut yükü azaltılmıştır, bu da menzili sınırlar.}
 Cannon_36 {36 librelik Toplar}
-Cannon_36_descr
-{
-Uzun namlulu toplar, güverteye nadiren çıkar. Yavaş doldurulmaları ve sınırlı menzilleri, ağır ve yavaş giden güllelerinin yıkıcı hasarıyla telafi edilir. Büyük topçu ekipleri gerektirir.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_36_descr {Uzun namlulu toplar, güverteye nadiren çıkar. Yavaş doldurulmaları ve sınırlı menzilleri, ağır ve yavaş giden güllelerinin yıkıcı hasarıyla telafi edilir. Büyük topçu ekipleri gerektirir.}
 Cannon_42 {42 librelik Bombardlar}
-Cannon_42_descr
-{
-Muhteşem toplar, deniz ateş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa savaşlarında kullanılır. Kullanımı için büyük ve eğitimli bir mürettebat gerekir.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_42_descr {Muhteşem toplar, deniz ateş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa savaşlarında kullanılır. Kullanımı için büyük ve eğitimli bir mürettebat gerekir.}
 Cannon_48 {48 librelik Bombardlar}
-Cannon_48_descr
-{
-Korkutucu toplar, deniz savaş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa muharebelerinde kullanılır. Kullanımı için büyük ve iyi eğitimli bir mürettebat gerekir.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_48_descr {Korkutucu toplar, deniz savaş gücünün zirvesi. Sadece hat gemilerinde, kalelerde ve büyük Avrupa muharebelerinde kullanılır. Kullanımı için büyük ve iyi eğitimli bir mürettebat gerekir.}
 Cannon_6 {6 librelik yarım toplar}
-Cannon_6_descr
-{
-Hafif, dayanıklı ve uygun fiyatlı oldukları için kurye ve ticaret gemilerinde sıkça kullanılan küçük toplar. Bakımı kolaydır ve deneyimli mürettebat gerektirmez.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_6_descr {Hafif, dayanıklı ve uygun fiyatlı oldukları için kurye ve ticaret gemilerinde sıkça kullanılan küçük toplar. Bakımı kolaydır ve deneyimli mürettebat gerektirmez.}
 Cannon_8 {8 librelik Yarım toplar}
-Cannon_8_descr
-{
-Küçük gemilerde en çok tercih edilen kalibrelerden biri; hem ticaret hem de devriye gemilerinde bulunur. Boyut, ağırlık ve ateş gücü açısından mükemmel bir denge sunar.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
-}
+Cannon_8_descr {Küçük gemilerde en çok tercih edilen kalibrelerden biri; hem ticaret hem de devriye gemilerinde bulunur. Boyut, ağırlık ve ateş gücü açısından mükemmel bir denge sunar.}
 Chocolate {Kakao}
 Chocolate_descr
 {
@@ -132,21 +87,18 @@ Culverine_18_descr
 {
 Artırılmış menzile sahip, nispeten küçük gemilerde kullanılabilen Orta 18 librelik toplar.
 Etkileyici atış mesafelerine rağmen son derece ağırdır ve doldurulmaları uzun sürer.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
 }
 Culverine_36 {Tam Külverinler}
 Culverine_36_descr
 {
 Breach atışı için tasarlanmış kale tipi 36 librelik toplar: önce ateş eden kazanır!
 Uzunlukları nedeniyle yalnızca 42 librelik toplara uygun limanlara kurulabilirler.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
 }
 Culverine_8 {Yarım kalyon topları}
 Culverine_8_descr
 {
 Özel bir kaideye, güçlü bir montaja ve tamamen ahşap tekerleklere sahip uzun namlulu 8 librelik toplar.
 Artırılmış menzile sahiptir. Genellikle baraj ateşi için kullanılır.
-Menzil - #dFireRange#, hasar - x#f.1DamageMultiply#, yeniden doldurma - #dReloadTime# sn.
 }
 Ebony {Abanoz}
 Ebony_descr
@@ -202,8 +154,10 @@ Maun mobilyalar, klasik lüksün, iyi zevkin ve sahibinin refahının bir göste
 Medicament {İlaçlar}
 Medicament_descr
 {
-En yaygın hastalıkların tedavisi ve yaralılara ilk yardım için kullanılan ilaçlar ve tıbbi aletler seti.
-Gemide ilaç bulundurmak, yaralıları kurtarmaya, borda kayıplarını azaltmaya ve denizde hastaları iyileştirmeye yardımcı olur.
+En yaygın yaraları, travmaları ve hastalıkları tedavi etmek için kullanılan ilaç, tedavi malzemesi ve alet takımıdır. İlaç olmadan mürettebat hastalıklardan ölmeye başlayacak ve bordalama kayıpları artacaktır.
+~
+Günlük tüketim:
+Kişi başına 1/$number($kstringTemp(MEDICAMENT_BY_CREW)) birim mal.
 }
 newline
 {
@@ -239,8 +193,10 @@ En kaliteli ve ünlü halatlar Rusya Çarlığı’nda üretilir.
 Rum {Rom}
 Rum_descr
 {
-Fermente şeker kamışı suyundan damıtılan, hafifçe farklı bir tada sahip güçlü bir alkollü içki. Değerli bir ticaret malıdır; her zaman kârlı satılır ve elinizde bulunduğu sürece tayfanın moralini yükseltir. Ayrıca, gemilerdeki tatlı suya eklenerek grog yapılır; bu hem suyu dezenfekte eder hem de tadını iyileştirir. 
-Gemide rom eksikliği, tayfanın huzursuz olmasına ve hatta isyana yol açabilir.
+Karayipler'de yerel ham maddelerden üretilen, kendine özgü tat ve aromaya sahip sert bir alkollü içkidir. Gemide morali korumak ve içme suyunu dezenfekte etmek için son derece gereklidir.
+~
+Günlük tüketim:
+Kişi başına 1/$number($kstringTemp(RUM_BY_CREW)) birim mal.
 }
 Sailcloth {Yelken bezi}
 Sailcloth_descr

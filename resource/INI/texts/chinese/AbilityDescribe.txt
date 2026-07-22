@@ -112,7 +112,7 @@ perkBeneathWaterline
 }
 perkBladeDancer {弯曲武器的群体攻击造成$percent($perkBaseValue(BladeDancer|1))更多伤害。}
 perkBoardingPrepare {登船队在登船时获得药剂。}
-perkBombardier {火炮耐久度提升。}
+perkBombardier {火炮状态良好时获得的加成提高 $percent($perkBaseValue(Bombardier|1))。该效果可以叠加。}
 perkBruteForce {在登船战斗中, 部分普通水手会被装备斧头和护甲 的重装士兵替换。}
 perkBuilder {修理时木板和帆布消耗减少25%。}
 perkByWorker {角色可以同时担任两个军官职位}

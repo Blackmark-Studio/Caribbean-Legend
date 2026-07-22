@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Geminin gövdesinden kaybedilen her %2, top h�
 itm_stat_descr_talisman2 {Fırtına bölgesine girmeyi önler veya fırtına sırasında yelken ve tekneye gelen hasarı azaltır.}
 itm_stat_descr_talisman20 {Ateşli silahlarla nişan alma hızı %15 artar, maksimum nişanlı hasar %20 artar, yeniden doldurma hızı %10 artar ve kafa vuruşu hasarı %20 artar.}
 itm_stat_descr_talisman21 {Rütbe 2 ve altındaki gemilerde kaçakçılarla ticaret yapmanı sağlar.}
-itm_stat_descr_talisman3 {Topların patlamasını önler.}
+itm_stat_descr_talisman3 {Topların iyi durumda olmasından gelen bonus $percent(0.05) artar. Bu etki birikebilir.}
 itm_stat_descr_talisman4 {Aşırı yükte mürettebat moral kaybını azaltır ve günlük rom tüketimini düşürür.}
 itm_stat_descr_talisman6 {Gemide erzak tasarrufu sağlar, tüketim oranını dörtte bir azaltır.}
 itm_stat_descr_talisman7

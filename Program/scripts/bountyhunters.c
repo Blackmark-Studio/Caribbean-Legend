@@ -143,7 +143,7 @@ void SetShipHunter(ref Hunter)
 // ОЗГИ на суше (порт и бухта)
 void LandHunterReactionResult(ref loc)  // отработает после входа в локацию, но после квест_реакшна на вход
 {
-	int    j, i, k;
+	int    j, i, k, iTemp;
 	string typeHunter, sTemp, sCapId;
 	ref    sld;
 	bool   ok;
@@ -217,12 +217,13 @@ void LandHunterReactionResult(ref loc)  // отработает после вх�
 				LAi_SetFightModeForOfficers(false); 
 				if (ok)
 	            {
-	                pchar.HunterCost = abs(ChangeCharacterNationReputation(pchar, j, 0));
-	                PChar.HunterCost = int(PChar.HunterCost)*2000 + rand(5000); //сразу генерим
+                    iTemp = abs(ChangeCharacterNationReputation(pchar, j, 0));
+	                PChar.HunterCost = iTemp * 500; // Cразу генерим
 	                PChar.HunterCost.TempHunterType = typeHunter;
 	                PChar.HunterCost.Qty = i;
 	                //LAi_SetActorType(Pchar);
 	                sld = characterFromID(sCapId + "1");
+                    sld.PayoffIncrRep = iTemp / 8; // Повышение репутации за откуп
 	                LAi_type_actor_Reset(sld);
 	                LAi_ActorDialog(sld, pchar, "", 4.0, 0);
 					//SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
@@ -236,6 +237,13 @@ void LandHunterReactionResult(ref loc)  // отработает после вх�
 	        }
         }
     }
+}
+
+// Повышение репутации за откуп
+void LandHunterIncreaseRep(ref rHunterCap)
+{
+    if ("PayoffIncrRep" !in rHunterCap) return;
+    ChangeCharacterNationReputation(PChar, int(rHunterCap.Nation), int(rHunterCap.PayoffIncrRep));
 }
 
 // Captain Beltrop, 12.09.21, удаление морских ОЗГов

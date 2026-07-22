@@ -1400,8 +1400,8 @@ void QuestComplete(string sQuestName, string qname)
 				{
 					pchar.questTemp.different = "FackWaitress_fackNoMoney";
 					AddCharacterExpToSkill(pchar, "Fortune", 100);
+                    AddMoneyToCharacter(PChar, -5000);
 				}
-				pchar.money = int(pchar.money) / int(pchar.questTemp.different.FackWaitress.Kick);
 				chrDisableReloadToLocation = false;
 			}
 			//квест развода хозяйки борделя
@@ -1533,6 +1533,14 @@ void QuestComplete(string sQuestName, string qname)
 			LAi_SetImmortal(pchar, false);
 			LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 		break;
+
+		case "JungInjuredKillStart":
+            LAi_ActorTurnToCharacter(PChar, CharacterFromID("InjuredGuy"));
+            JungInjuredKillStart();
+            break;
+		case "JungInjuredKillEnd":
+            JungInjuredKillEnd();
+            break;
 
 		default:
 			if(HollandGambit_QuestComplete(sQuestName, qname)) return;

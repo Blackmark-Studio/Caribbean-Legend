@@ -936,13 +936,13 @@ void ChangePirateThreat(int add)
         if (iGPThreat > iCurThreat)
         {
             iGPThreat = iCurThreat;
+            DeleteAttribute(PChar, "Quest.PiratesIncreaseNotif");
             SetFunctionMapEnterCondition("PiratesDecreaseNotif", false);
         }
         return;
     }
 
     // Для повышения достаточно перейти за порог
-    // (но пока что повышений вне ежесуточного апдейтера не предполагается)
     if (iGPThreatRate < THREAT_LVL_1)      iCurThreat = 0;
     else if (iGPThreatRate < THREAT_LVL_2) iCurThreat = 1;
     else if (iGPThreatRate < THREAT_LVL_3) iCurThreat = 2;
@@ -953,6 +953,7 @@ void ChangePirateThreat(int add)
     if (iGPThreat < iCurThreat)
     {
         iGPThreat = iCurThreat;
+        DeleteAttribute(PChar, "Quest.PiratesDecreaseNotif");
         SetFunctionMapEnterCondition("PiratesIncreaseNotif", false);
     }
 }

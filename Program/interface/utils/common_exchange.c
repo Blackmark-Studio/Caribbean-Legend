@@ -30,48 +30,42 @@ void ProcessInterfaceControls()
 	}
 }
 
-void REMOVE_BUTTON()  // продать
+void REMOVE_BUTTON(int value = 1)  // продать
 {
-	int targetValue = 1;
-	if (XI_IsKeyPressed("control")) targetValue = 10;
-
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = -targetValue;
+        GameInterface.qty_edit.str = -value;
     }
     else
     {
 		if (BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + targetValue);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - targetValue);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - value);
 		}
 		BuyOrSell = 0;
 	}
 	ChangeQTY_EDIT();
 }
 
-void ADD_BUTTON()  // купить
+void ADD_BUTTON(int value = 1)  // купить
 {
-	int targetValue = 1;
-	if (XI_IsKeyPressed("control")) targetValue = 10;
-
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = targetValue;
+        GameInterface.qty_edit.str = value;
     }
     else
     {
   		if (BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + targetValue);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - targetValue);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - value);
 		}
 		BuyOrSell = 0;
 	}

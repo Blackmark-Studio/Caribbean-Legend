@@ -2432,9 +2432,7 @@ void Saga_SetPolacreMarlin(string qName) //ставим полакр Марли�
 	sld.AnalizeShips = true;
 	sld.Ship.Mode = "pirate";
 	sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*6+20;
-	sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*6+20;
-	sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*6+20;
-	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*6+40;
+	SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*6+20));
 	sld.Coastal_Captain = true; 
 	sld.DontDeskTalk = true;
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
@@ -2875,9 +2873,7 @@ void Saga_CheckJackmanBermudes(string qName) // Джекман
 		sld.DontDeskTalk = true;
 		SetCharacterRelationBoth(int(sld.index), GetMainCharacterIndex(), RELATION_FRIEND); // тестить
 		sld.ship.Crew.Morale = 50+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Sailors = 50+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Cannoners = 50+MOD_SKILL_ENEMY_RATE*5;
-		sld.Ship.Crew.Exp.Soldiers = 50+MOD_SKILL_ENEMY_RATE*5; // крутизна невероятная
+		SetCrewExp(sld, float(50+MOD_SKILL_ENEMY_RATE*5)); // крутизна невероятная
 		if (MOD_SKILL_ENEMY_RATE > 4) 
 		{
 			SetCharacterPerk(sld, "MusketsShoot");
@@ -4605,9 +4601,7 @@ void SharkGoldFleetToShark(string qName)
 	i = GetMaxCrewQuantity(sld);
 	SetCrewQuantity(sld, i);
 	sld.Ship.Crew.Morale = 100;
-	sld.Ship.Crew.Exp.Sailors = 100;
-	sld.Ship.Crew.Exp.Cannoners = 100;
-	sld.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(sld, 100.0);
 	SetCharacterGoods(sld, GOOD_BALLS, 3500);
 	SetCharacterGoods(sld, GOOD_GRAPES, 2000);
 	SetCharacterGoods(sld, GOOD_KNIPPELS, 1500);
@@ -4725,9 +4719,7 @@ void SGF_CreatGoldFleet(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Sailors = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
+	SetCrewExp(sld, float(60+MOD_SKILL_ENEMY_RATE*4));
 	if(MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	RealShips[int(sld.Ship.Type)].Capacity = 5900;
 	UpgradeShipParameter(sld, "Capacity");
@@ -4759,9 +4751,7 @@ void SGF_CreatGoldFleet(string qName)
 	sld.AlwaysEnemy = true;
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Sailors = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
-	sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
+	SetCrewExp(sld, float(60+MOD_SKILL_ENEMY_RATE*4));
 	if(MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	RealShips[int(sld.Ship.Type)].Capacity = 5800;
 	UpgradeShipParameter(sld, "Capacity");
@@ -4869,9 +4859,7 @@ void SGF_CreatBattleShips(string qName)
 		sld.AlwaysEnemy = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Sailors = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Cannoners = 60+MOD_SKILL_ENEMY_RATE*4;
-		sld.Ship.Crew.Exp.Soldiers = 60+MOD_SKILL_ENEMY_RATE*4;
+		SetCrewExp(sld, float(60+MOD_SKILL_ENEMY_RATE*4));
 		if(MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 		if(pchar.questTemp.SharkGoldFleet != "DifficultVarToShark") 
 		{

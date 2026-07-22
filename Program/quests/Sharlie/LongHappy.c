@@ -500,9 +500,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 	DeleteAttribute(sld, "DontClearDead");
 	sld.AlwaysSandbankManeuver = true;
 	sld.ship.Crew.Morale = 95;
-	sld.Ship.Crew.Exp.Sailors = 95;
-	sld.Ship.Crew.Exp.Cannoners = 95;
-	sld.Ship.Crew.Exp.Soldiers = 95;
+	SetCrewExp(sld, 95.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	Group_AddCharacter("Barons_SeaGroup", "LH_Svenson_sea");
@@ -525,9 +523,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 	DeleteAttribute(sld, "DontClearDead");
 	sld.AlwaysSandbankManeuver = true;
 	sld.ship.Crew.Morale = 95;
-	sld.Ship.Crew.Exp.Sailors = 95;
-	sld.Ship.Crew.Exp.Cannoners = 95;
-	sld.Ship.Crew.Exp.Soldiers = 95;
+	SetCrewExp(sld, 95.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	Group_AddCharacter("Barons_SeaGroup", "LH_Terrax_sea");
@@ -578,9 +574,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 		DeleteAttribute(sld, "DontClearDead");
 		sld.AlwaysSandbankManeuver = true;
 		sld.ship.Crew.Morale = 95;
-		sld.Ship.Crew.Exp.Sailors = 95;
-		sld.Ship.Crew.Exp.Cannoners = 95;
-		sld.Ship.Crew.Exp.Soldiers = 95;
+		SetCrewExp(sld, 95.0);
 		SetCharacterPerk(sld, "MusketsShoot");
 		Group_AddCharacter("Barons_SeaGroup", "LH_Dodson_sea");
 	}
@@ -1276,9 +1270,7 @@ void LongHappy_SeaBattle(string qName) // морская боевка
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
 		sld.ship.Crew.Morale = 70+MOD_SKILL_ENEMY_RATE*3;
-		sld.Ship.Crew.Exp.Sailors = 70+MOD_SKILL_ENEMY_RATE*3;
-		sld.Ship.Crew.Exp.Cannoners = 70+MOD_SKILL_ENEMY_RATE*3;
-		sld.Ship.Crew.Exp.Soldiers = 70+MOD_SKILL_ENEMY_RATE*3;
+		SetCrewExp(sld, float(70+MOD_SKILL_ENEMY_RATE*3));
 		if (MOD_SKILL_ENEMY_RATE > 2) SetCharacterPerk(sld, "MusketsShoot");
 		if (i == 1) 
 		{

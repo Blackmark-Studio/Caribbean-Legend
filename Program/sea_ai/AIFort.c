@@ -302,8 +302,9 @@ int Fort_Damage()
 	x = GetEventData();
 	y = GetEventData();
 	z = GetEventData();
+	int iCannonType = GetEventData();
 	
-	ref rCannon = GetCannonByType(int(rBallCharacter.Ship.Cannons.Type));
+	ref rCannon = GetCannonByType(iCannonType);
 	float fCannonDamageMultiply = float(rCannon.DamageMultiply);
 	
 	ref rBall = GetGoodByType(int(AIBalls.CurrentBallType));
@@ -392,6 +393,8 @@ float Fort_CannonDamage()
 	z = GetEventData();
 	fDistance = GetEventData();	// distance to cannon
 	fDamage = GetEventData();	// current cannon damage 0.0% .. 100.0%
+	
+	int iCannonType = GetEventData();
 
 	if (iBallCharacterIndex == iFortCharacterIndex) { return fDamage; }
 
@@ -402,7 +405,7 @@ float Fort_CannonDamage()
 
 	float fDistanceMul = pow(0.11, fDistance);// pow(0.035, fDistance / MIN_CANNON_DAMAGE_DISTANCE);
 
-	ref rCannon = GetCannonByType(int(rBallCharacter.Ship.Cannons.Type));
+	ref rCannon = GetCannonByType(iCannonType);
 	float fCannonDamageMultiply = float(rCannon.DamageMultiply) * fDistanceMul;
 
 	ref rBall = GetGoodByType(int(AIBalls.CurrentBallType));

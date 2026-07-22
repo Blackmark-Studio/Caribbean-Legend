@@ -2414,9 +2414,7 @@ void LadyBeth_Test_Start_CaimanBitvaStrong()
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 	SetCrewQuantityFull(pchar);
 	pchar.Ship.Crew.Morale = 100;
-	pchar.Ship.Crew.Exp.Sailors = 100;
-	pchar.Ship.Crew.Exp.Cannoners = 100;
-	pchar.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewExp(pchar, 100.0);
 	SetCrewQuantityOverMax(pchar, 170);
 	UpgradeShipParameter(pchar, "SpeedRate"); //апгрейдить скорость
 	UpgradeShipParameter(pchar, "TurnRate");  //маневренность

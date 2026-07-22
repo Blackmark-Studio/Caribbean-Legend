@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_1":
-			dialog.text = "Tak hiszpański jak sam król Felipe, ha! Chciałbym również zaznaczyć, że moje dokumenty są w buen orden. Jestem szlachcicem z Hiszpanii, nie jakimś pirata sucia!";
+			dialog.text = "Tak hiszpański jak sam król Felipe, ha! Chciałbym również zaznaczyć, że moje dokumenty są w buen orden. Jestem szlachcicem z Hiszpanii, nie jakimś pirata socio!";
 			link.l1 = "Don Domingo, najszczersze przeprosiny za ten niefortunny incydent! Proszę, chodź z nami na kilka pytań i butelkę wina do garnizonu. My się wszystkim zajmiemy. A co do "+GetSexPhrase("pana","panią")+"...";
 			link.l1.go = "noble_2";
 		break;

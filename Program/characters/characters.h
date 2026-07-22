@@ -3,6 +3,7 @@
 #define BASE_CHARACTER_TWO 1
 
 #define MORALE_MAX  100
+#define EXP_MAX  100
 #define MORALE_NORMAL   50
 #define MORALE_MIN      0
 #define MORALE_TABLE_SIZE	10

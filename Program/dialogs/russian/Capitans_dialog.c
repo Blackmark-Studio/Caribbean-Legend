@@ -583,12 +583,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "price_2":
+			PlaySound("interface\important_item.wav");
             sld = &Characters[int(pchar.PriceList.ShipStoreIdx)];
 			SetPriceListByStoreMan(&Colonies[FindColony(sld.City)]);
 			Dialog.Text = "Вот такие... (вы получили сводку цен на товары).";
 			Link.l1 = "Большое спасибо!";
 			Link.l1.go = "exit";
-			PlaySound("interface\important_item.wav");
 		break;
 		
         case "Talk_board":

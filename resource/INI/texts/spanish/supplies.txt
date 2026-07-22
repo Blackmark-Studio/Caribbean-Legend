@@ -1,0 +1,22 @@
+weapon_0 {ninguno}
+weapon_1 {insuficiente}
+weapon_2 {suficiente}
+weapon_3 {de sobra}
+weapon_tooltip {Para que el abordaje tenga éxito, debe haber más armas que marineros. De lo contrario, la tripulación sufrirá penalizaciones terribles y enormes bajas.}
+bortFire_tooltip {Una salva requiere $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {Todas las existencias bastarán para $decl($ctx(mineQty)|mina|minas|minas)}
+food_tooltip {Consumo actual: $decl($ctx(foodconsumption)|paquete|paquetes|paquetes) al día}
+food_approximation_tooltip {Con la tripulación al completo, el barco necesitará $decl($ctx(approximation.foodconsumption)|paquete|paquetes|paquetes)}
+medicament_tooltip {Consumo actual: $decl($ctx(medicamentconsumption)|paquete|paquetes|paquetes) al día}
+medicament_approximation_tooltip {Con la tripulación al completo, el barco necesitará $decl($ctx(approximation.medicamentconsumption)|paquete|paquetes|paquetes)}
+rum_tooltip {Consumo actual: $decl($ctx(rumconsumption)|barril|barriles|barriles) al día}
+rum_approximation_tooltip {Con la tripulación al completo, el barco necesitará $decl($ctx(approximation.rumconsumption)|barril|barriles|barriles)}
+spareCannons {$ctx(qty) de repuesto}
+money {No hay suficiente dinero}
+goods {No hay suficientes mercancías}
+cooldown {Necesitas descansar}
+raiseMoraleText {Para subir la moral de la tripulación, debes entregarles:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Para entrenar a la tripulación, debes entregarles:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Reparación: $percent($ctx(hullPerDay)) al día, consumo de $decl($ctx(planksPerDay)|tabla|tablas|tablas)}
+sailcloth_tooltip {Reparación: $percent($ctx(sailsPerDay)) al día, consumo de $decl($ctx(sailClothesPerDay)|lona|lona|lona)}
+spareCannons_tooltip {Solo los cañones del calibre principal se consideran cañones de reserva. Los cañones de proa y popa no se incluyen en estos cálculos.}

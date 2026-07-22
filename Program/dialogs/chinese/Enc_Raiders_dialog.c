@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("听说了吗? 当地强盗" + GetFullName(npchar) + "找到了新目标。 有个船长被吓到了, 花钱消灾。 据说他给了" + FindRussianMoneyString(iMoney) + ", 嘿嘿... ", 
 				"是啊, " +GetFullName(pchar)+ "船长, 我听说你不得不付" + FindRussianMoneyString(iMoney) + "给当地强盗" + GetFullName(npchar) + "。 这可真是倒霉! 哈哈哈! ", 
@@ -125,7 +128,7 @@ void ProcessDialogEvent()
 				RandPhraseSimple("很简单。 把所有的金子给我们, 然后你就可以走了, 否则你就留在这里, 我们照样拿走所有金子。 但我想你不会喜欢后者, 嘿嘿。 ",
 				"别装不懂! 不想从尸体上拿钱包的话, 就把你的钱包给我! "),
 				"如果你这么迟钝, 我就解释一下。 如果你珍惜生命, 就把所有的钱给我。 ");
-			Link.l1 = "该死的, 混蛋! 我只有" + int(int(Pchar.money)/20)*10 + "比索。 ";
+			Link.l1 = "该死的, 混蛋! 我只有" + iMoney + "比索。 ";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("你想要我的钱? 自己来拿, 我倒要看看你有多大本事! ",
 				"你怎么敢, 粗人! 我会教你懂礼貌! ",
@@ -161,7 +164,7 @@ void ProcessDialogEvent()
 				{
 					dialog.text = RandPhraseSimple("我为什么要在乎你的巡逻队? 我在给他们付钱。 所以, 把你的钱包给我, 别再废话了。 ", 
 						"你以为你能吓到我? 在这片丛林里, 我就是你们这种人的'巡逻队'。 还没人能不付费就离开! ");
-					Link.l1 = "该死的, 混蛋! 我只有" + int(int(Pchar.money)/20)*10 + "比索。 ";
+					Link.l1 = "该死的, 混蛋! 我只有" + iMoney + "比索。 ";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("嘿嘿, 我不会听从你这种懦夫的命令。 ", 
 						"我会在你脑袋上开几个新洞, 让你的脑子透透气。 ",
@@ -206,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("好吧! 给我钱, 然后滚! ",

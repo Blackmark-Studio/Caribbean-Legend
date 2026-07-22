@@ -1,0 +1,22 @@
+weapon_0 {yok}
+weapon_1 {yetersiz}
+weapon_2 {yeterli}
+weapon_3 {fazlasıyla}
+weapon_tooltip {Başarılı bir bordalama için silah sayısı denizci sayısından fazla olmalıdır. Aksi hâlde mürettebat ağır cezalara uğrar ve büyük kayıplar verir.}
+bortFire_tooltip {Bir salvo için $ctx(bortFireSize) _$key($ctx(goodName)Gen) gerekir}
+powder_tooltip {Tüm stok $decl($ctx(mineQty)|mayın|mayın|mayın) için yeterlidir}
+food_tooltip {Mevcut tüketim: günde $decl($ctx(foodconsumption)|paket|paket|paket)}
+food_approximation_tooltip {Azami mürettebatla gemi için $decl($ctx(approximation.foodconsumption)|paket|paket|paket) gerekir}
+medicament_tooltip {Mevcut tüketim: günde $decl($ctx(medicamentconsumption)|paket|paket|paket)}
+medicament_approximation_tooltip {Azami mürettebatla gemi için $decl($ctx(approximation.medicamentconsumption)|paket|paket|paket) gerekir}
+rum_tooltip {Mevcut tüketim: günde $decl($ctx(rumconsumption)|fıçı|fıçı|fıçı)}
+rum_approximation_tooltip {Azami mürettebatla gemi için $decl($ctx(approximation.rumconsumption)|fıçı|fıçı|fıçı) gerekir}
+spareCannons {$ctx(qty) yedek}
+money {Yeterli para yok}
+goods {Yeterli mal yok}
+cooldown {Dinlenmeniz gerekiyor}
+raiseMoraleText {Mürettebatın moralini yükseltmek için şunları vermelisiniz:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Mürettebatı eğitmek için şunları vermelisiniz:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Onarım: günde $percent($ctx(hullPerDay)), tüketim: $decl($ctx(planksPerDay)|kalas|kalas|kalas)}
+sailcloth_tooltip {Onarım: günde $percent($ctx(sailsPerDay)), tüketim: $decl($ctx(sailClothesPerDay)|yelken bezi|yelken bezi|yelken bezi)}
+spareCannons_tooltip {Yalnızca ana kalibre topları yedek top sayılır. Pruva ve pupa topları bu hesaplamalara dahil edilmez.}

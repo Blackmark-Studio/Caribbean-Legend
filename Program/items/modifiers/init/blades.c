@@ -151,6 +151,7 @@ bool InitWeaponModifiers(ref item)
 		case "blade_36":
 		{
 			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_STRAIGHT, 0.85, 1.15);
+			AddDescriptor(item, "HighQuality");
 		}
 		break;
 		case "blade_05":
@@ -223,6 +224,7 @@ bool InitWeaponModifiers(ref item)
 		case "blade_29":
 		{
 			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			AddDescriptor(item, "HighQuality");
 		}
 		break;
 		case "khopesh3":

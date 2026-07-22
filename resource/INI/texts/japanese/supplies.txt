@@ -1,0 +1,22 @@
+weapon_0 {なし}
+weapon_1 {不足}
+weapon_2 {十分}
+weapon_3 {余剰}
+weapon_tooltip {移乗攻撃を成功させるには、水兵より多くの武器が必要です。足りなければ乗組員は甚大なペナルティを受け、多大な損害を被ります。}
+bortFire_tooltip {一斉射撃1回につき $ctx(bortFireSize) _$key($ctx(goodName)Gen) が必要です}
+powder_tooltip {全備蓄で $decl($ctx(mineQty)|機雷|機雷|機雷) 分あります}
+food_tooltip {現在の消費量：1日 $decl($ctx(foodconsumption)|包|包|包)}
+food_approximation_tooltip {最大人数の乗組員では、船に $decl($ctx(approximation.foodconsumption)|包|包|包) 必要です}
+medicament_tooltip {現在の消費量：1日 $decl($ctx(medicamentconsumption)|包|包|包)}
+medicament_approximation_tooltip {最大人数の乗組員では、船に $decl($ctx(approximation.medicamentconsumption)|包|包|包) 必要です}
+rum_tooltip {現在の消費量：1日 $decl($ctx(rumconsumption)|小樽|小樽|小樽)}
+rum_approximation_tooltip {最大人数の乗組員では、船に $decl($ctx(approximation.rumconsumption)|小樽|小樽|小樽) 必要です}
+spareCannons {予備 $ctx(qty)}
+money {所持金が足りません}
+goods {物資が足りません}
+cooldown {休息が必要です}
+raiseMoraleText {乗組員の士気を上げるには、次のものを支給する必要があります：$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {乗組員を訓練するには、次のものを支給する必要があります：$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {修理：1日 $percent($ctx(hullPerDay))、消費 $decl($ctx(planksPerDay)|木板|木板|木板)}
+sailcloth_tooltip {修理：1日 $percent($ctx(sailsPerDay))、消費 $decl($ctx(sailClothesPerDay)|帆布|帆布|帆布)}
+spareCannons_tooltip {主口径砲のみが予備砲として扱われます。艦首砲と艦尾砲はこの計算に含まれません。}

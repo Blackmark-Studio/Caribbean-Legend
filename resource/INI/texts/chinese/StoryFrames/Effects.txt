@@ -7,7 +7,7 @@ CrewMorale_pchar_0 {船员士气$MoraleStrDiff($ctx(value))}
 CrewMorale_pchar_1 {船员士气$MoraleStrDiff($ctx(value))}
 Reputation_pchar_0 {声望下降}
 Reputation_pchar_1 {声望上升}
-CrewExp_pchar_1 {$key($ctx(p1))获得经验}
+CrewExp_pchar_1 {船员获得了经验}
 Money_pchar_1 {你获得了$money($ctx(value))}
 Money_pchar_0 {你付出了$abs($money($ctx(value)))}
 Goods_pchar_1 {你获得了_$key($goodI($ctx(p1))Acc)：$number($ctx(value))}

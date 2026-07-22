@@ -107,6 +107,7 @@ void StartBattleLandInterface()
 	SendMessage(&objLandInterface,"ll",MSG_BATTLE_LAND_SHOW_EQUIPMENT, bShowEquipment());
     TW_Init();
     CheckBindsBack();
+	BLI_SetCharacters();
 }
 
 ref BLI_CheckCommand()
@@ -351,7 +352,7 @@ void EndBattleLandInterface()
 	if(!bLandInterfaceStart) return;
 	bLandInterfaceStart = false;
 
-	DeleteAttribute( pchar, "boxname" );
+	DeleteAttribute(PChar, "boxname");
 
 	BLI_DisableShow();
 	SendMessage(&objLandInterface,"l",MSG_BATTLE_LAND_END);
@@ -374,6 +375,20 @@ void EndBattleLandInterface()
 
 	Log_SetActiveAction("Nothing");
     TW_Close();
+}
+
+void BLI_SetCharacters()
+{
+	int n = 0;
+	for (int i = 0; i < 4; i++)
+	{
+		int idx = GetOfficersIndex(pchar, i);
+		if (idx < 0)
+			continue;
+		ref chr = GetCharacter(idx);
+		SendMessage(&objLandInterface, "lli", MSG_BATTLE_LAND_SET_CHARACTER, n, chr);
+		n++;
+	}
 }
 
 void BLI_SetObjectData()
@@ -591,7 +606,7 @@ void BLI_SetObjectData()
 	fTmp = int(128.0 * fHtRatio);
     objLandInterface.ManSign.backmciconsize			= fTmp + "," + fTmp;
 	
-	objLandInterface.ManSign.manstatebacktexturename	= "interfaces\le\battle_interface\CharStateBackIcon.tga.tx";
+	objLandInterface.ManSign.manstatebacktexturename	= "interfaces\le\battle_interface\CharStateBackIcon-no-color.tga";
 	objLandInterface.ManSign.manstatebackcolor		= argb(255,128,128,128);
 	objLandInterface.ManSign.manstatebackuv			= "0.0,0.0,1.0,1.0";
 	fTmp = int(180.0 * fHtRatio);
@@ -603,10 +618,13 @@ void BLI_SetObjectData()
 	//<--
 	
 	//mc states progressbars -->
-	objLandInterface.ManSign.manstatemctexturename	= "interfaces\le\battle_interface\CharStateHorizontal.tga.tx";
+	objLandInterface.ManSign.manstatemctexturename	= "interfaces\le\battle_interface\MainHeroBars.tga";
 	objLandInterface.ManSign.manstatemccolor		= argb(255,128,128,128);
-	objLandInterface.ManSign.manmchpuv				= "0.1953,0.2187,0.9765,0.4687";
-	objLandInterface.ManSign.manmcenegryuv			= "0.1953,0.5937,0.9765,0.7812";
+	objLandInterface.ManSign.manmcbaruv				= "0.0,0.0,1.0,0.0625";
+	objLandInterface.ManSign.manhpserifcolor 		= argb(255, 128, 128, 128);
+	objLandInterface.ManSign.manenergyserifcolor 	= argb(255, 128, 128, 128);
+
+	objLandInterface.ManSign.manmcbarrowheight 		= 0.0625;
 	
 	fTmp = int(202.0 * fHtRatio);
     fTmp2 = int(-10.0 * fHtRatio);
@@ -661,7 +679,7 @@ void BLI_SetObjectData()
 	objLandInterface.ManSign.healthvaluefontid		= "interface_normal";
 	objLandInterface.ManSign.healthvaluefontcolor	= ARGB_Color("white");
 	fTmp = int(200.0 * fHtRatio);
-    fTmp2 = int(-18.0 * fHtRatio);
+    fTmp2 = int(-20.0 * fHtRatio);
 	objLandInterface.ManSign.healthvaluefontscale	= 1.1 * fHtRatio;
 	objLandInterface.ManSign.healthvaluefontoffset  = fTmp + "," + fTmp2;
 
@@ -715,12 +733,27 @@ void BLI_SetObjectData()
     objLandInterface.ManSign.manface0offset			= fTmp + "," + fTmp2;
 	fTmp = int(128.0 * fHtRatio);
     objLandInterface.ManSign.manface0iconsize		= fTmp + "," + fTmp;
-
 	fTmp = int(0 * fHtRatio);
     fTmp2 = int(15 * fRes * fHtRatio);
     objLandInterface.ManSign.manfaceoffset			= fTmp + "," + fTmp2;
 	fTmp = int(128.0 * fRes * fHtRatio);
     objLandInterface.ManSign.manfaceiconsize		= fTmp + "," + fTmp;
+	
+	objLandInterface.ManSign.stuntimer_texturename	= "\LocEfx\stun.tga";
+	objLandInterface.ManSign.stuntimer_color			= argb(255,128,128,128);
+	objLandInterface.ManSign.stuntimer_uv			= "0.0,0.0,1.0,1.0";
+	fTmp = int(330.0 * fHtRatio);
+    fTmp2 = int(0.0 * fHtRatio);
+	objLandInterface.ManSign.stuntimer_mainoffset		= fTmp + "," + fTmp2;
+	fTmp = int(40.0 * fHtRatio);
+    fTmp2 = int(40.0 * fHtRatio);
+	objLandInterface.ManSign.stuntimer_mainiconsize		= fTmp + "," + fTmp2;
+	fTmp = int(65.0 * fHtRatio);
+    fTmp2 = int(-25.0 * fHtRatio);
+	objLandInterface.ManSign.stuntimer_offset		= fTmp + "," + fTmp2;
+	fTmp = int(32.0 * fHtRatio);
+    fTmp2 = int(32.0 * fHtRatio);
+	objLandInterface.ManSign.stuntimer_iconsize		= fTmp + "," + fTmp2;
 	
     objLandInterface.ManSign.commandlistverticaloffset0 = -30 * fHtRatio;
 	objLandInterface.ManSign.commandlistverticaloffset = 30 * fHtRatio;

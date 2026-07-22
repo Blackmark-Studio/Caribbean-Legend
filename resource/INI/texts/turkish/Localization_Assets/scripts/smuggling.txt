@@ -1,2 +1,3 @@
 smuggling_1 {Kaçakçılar daha iyi davranır (}
 smuggling_2 {Kaçakçılar hoşlanmaz (}
+smuggling_3 {Fikrimi değiştirdim. Dövüşe hazırlan, asker bozuntusu.}

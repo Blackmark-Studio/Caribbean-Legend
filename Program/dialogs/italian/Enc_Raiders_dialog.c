@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Have you heard? The local robber " + GetFullName(npchar) + " found a new victim. One captain got scared and bought off. They say, he gave him " + FindRussianMoneyString(iMoney) + ", he-he... ", 
 				"Yeah, captain " + GetFullName(pchar) + ", I already heard that you had to pay " + FindRussianMoneyString(iMoney) + ", to buy off a local bandit, " + GetFullName(npchar) + ". Now that's what I call bad luck! Ha-ha-ha!", 
@@ -101,7 +104,7 @@ void ProcessDialogEvent()
 		
 		case "Node_2":
 			dialog.text = LinkRandPhrase(LinkRandPhrase("Non fare il buffone! Soldi in contanti e forse allora ti lascerò andare!","Non hai sentito parlare del pedaggio di viaggio? Se non ti separi dal tuo oro, ti separerai da una testa!","Eh, questa semplice avventura ti costerà una borsa... se non mi arrabbio."),RandPhraseSimple("È molto semplice. Ci dai tutto il tuo oro e poi sei libero di andare, oppure resti qui, e ci prendiamo tutto il tuo oro, comunque. Ma penso che la seconda opzione non sia di tuo gradimento, he-he.","Non fingere di non capire! Dammi la tua borsa se non vuoi che la prenda dal tuo cadavere!"),"Ti spiego, se sei così tonto. Mi dai tutti i tuoi soldi, se tieni alla tua vita.");
-			Link.l1 = "Maledetto, mascalzone! Ho solo "+int(int(Pchar.money)/20)*10+" pesos.";
+			Link.l1 = "Maledetto, mascalzone! Ho solo "+iMoney+" pesos.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Vuoi i miei soldi? Vieni a prenderli, e vedremo quanto vali!","Come osi, maleducato! Ti insegnerò una lezione di buone maniere!","Che sicurezza in te stesso! Beh, vediamo come ti comporti contro un vero "+GetSexPhrase("lupo di mare","Lupa dei mari")+"!"),LinkRandPhrase("Dovresti essere frustato per un tale oltraggio!","Briganti! Pregate i vostri diavoli per un posto caldo all'inferno!","Dovreste essere stati impiccati molto tempo fa, corvi della forca! Beh, sembra che dovrò macchiare la mia sciabola con il vostro sangue!"),RandPhraseSimple("E cosa ti fa pensare che ti darò i miei soldi?","E non hai notato che sono ben armato e non sono qui per una semplice passeggiata?"));
 			Link.l2.go = "CheckSkills";	
@@ -127,7 +130,7 @@ void ProcessDialogEvent()
 				else
 				{
 					dialog.text = RandPhraseSimple("E perché dovrei preoccuparmi della tua pattuglia? Io li sto pagando. Quindi, dammi la tua borsa e smetti di parlare.","Pensi di potermi spaventare? Io sono 'la pattuglia' per gente come te in questa giungla. Nessuno è ancora partito senza pagare una tassa!");
-					Link.l1 = "Maledetto, canaglia! Ho solo "+int(int(Pchar.money)/20)*10+" pesos.";
+					Link.l1 = "Maledetto, canaglia! Ho solo "+iMoney+" pesos.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("Eh, non obbedirò agli ordini di un codardo come te.","Farò un paio di nuovi buchi nel tuo cranio per via di tale impudenza! Solo per ventilare un po' il tuo cervello.","Un tale impudenza non rimarrà impunita!"),"Non avresti dovuto farlo...");
 					Link.l2.go = "CheckSkills";
@@ -156,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if(iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("Bene! Dammi quello e sparisci!","Non molto, ma comunque meglio di niente. È bello trattare con una persona intelligente! Sei libero di andare."),"Ecco una storia diversa! Come diceva un mio amico 'è sempre buono ascoltare qualcuno che è intelligente, ma parlare con lo sciocco è molto meglio'! He-he!","In cambio del tuo oro ti darò un consiglio, non dovresti camminare nella giungla, se tu sei "+GetSexPhrase("un tale codardo. Bevi il tuo rum alla taverna, così tu e la tua borsa rimanete al sicuro!","una ragazza. Essere derubato non è la peggior cosa che ti potesse succedere.")+".");

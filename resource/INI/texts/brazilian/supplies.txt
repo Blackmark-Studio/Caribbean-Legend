@@ -1,0 +1,22 @@
+weapon_0 {nenhum}
+weapon_1 {insuficiente}
+weapon_2 {suficiente}
+weapon_3 {em excesso}
+weapon_tooltip {Para uma abordagem bem-sucedida, deve haver mais armas do que marinheiros. Caso contrário, a tripulação sofrerá penalidades terríveis e enormes baixas.}
+bortFire_tooltip {Uma salva requer $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {Todo o estoque será suficiente para $decl($ctx(mineQty)|mina|minas|minas)}
+food_tooltip {Consumo atual: $decl($ctx(foodconsumption)|pacote|pacotes|pacotes) por dia}
+food_approximation_tooltip {Com a tripulação máxima, o navio precisará de $decl($ctx(approximation.foodconsumption)|pacote|pacotes|pacotes)}
+medicament_tooltip {Consumo atual: $decl($ctx(medicamentconsumption)|pacote|pacotes|pacotes) por dia}
+medicament_approximation_tooltip {Com a tripulação máxima, o navio precisará de $decl($ctx(approximation.medicamentconsumption)|pacote|pacotes|pacotes)}
+rum_tooltip {Consumo atual: $decl($ctx(rumconsumption)|barril|barris|barris) por dia}
+rum_approximation_tooltip {Com a tripulação máxima, o navio precisará de $decl($ctx(approximation.rumconsumption)|barril|barris|barris)}
+spareCannons {$ctx(qty) sobressalentes}
+money {Dinheiro insuficiente}
+goods {Mercadorias insuficientes}
+cooldown {Você precisa descansar}
+raiseMoraleText {Para elevar o moral da tripulação, você deve entregar:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Para treinar a tripulação, você deve entregar:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Reparo: $percent($ctx(hullPerDay)) por dia, consumo de $decl($ctx(planksPerDay)|tábua|tábuas|tábuas)}
+sailcloth_tooltip {Reparo: $percent($ctx(sailsPerDay)) por dia, consumo de $decl($ctx(sailClothesPerDay)|lona|lona|lona)}
+spareCannons_tooltip {Somente os canhões do calibre principal são considerados canhões de reserva. Os canhões de proa e popa não são incluídos nesses cálculos.}

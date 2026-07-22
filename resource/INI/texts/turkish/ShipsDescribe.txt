@@ -5,7 +5,7 @@ Barque {Bir barque uzun yolculuklar için idealdir. Geniş ambarı ve iyi yelken
 Battleship {Üçüncü sınıf hat gemileri oldukça yaygındır ve savaş özellikleri açısından en dengeli olanlardır; hat savaşları için tasarlanmıştır. 100 topluk devlere bile meydan okuyacak ateş gücüne sahiptirler. Aynı zamanda hız ve manevra kabiliyetinde onlardan belirgin şekilde üstündürler.}
 Brig {Brigler, donanmada keşif için yaygın olarak kullanılır. Sığ su çekimi, keskin gövde hatları ve gelişmiş arma, brigi en hızlı gemilerden biri yapar; iyi kalibre topları ise onu son derece tehlikeli bir rakip haline getirir.}
 Brigantine {Efsanevi bir yelkenli türü. Bir kırlangıç gibi hızlı ve çevik olan brigantin, korsanlar ve maceraperestler tarafından özellikle değer görür. Başarılı tasarımı sayesinde, brigantin her iş için uygundur—savaştan ticarete kadar.}
-CannonType {Silah türü - türü (top veya kulverin), mevcut kalibre ve takılı top sayısını gösterir}
+CannonType {Burada gemideki topların mevcut ve azami sayısının yanı sıra türleri ve özellikleri gösterilir. Mevcut sayı azami sayıya eşitse yalnızca tek bir değer gösterilir.}
 Capacity
 {
 Deadweight - geminin mevcut ve maksimum kapasitesini gösterir. Gemi ne kadar yüklüyse, o kadar hantal ve yavaş olur.
@@ -16,12 +16,7 @@ Corvette {Korvetler keşif, kurye hizmeti ve kruvaziyer operasyonlar için tasar
 CORVETTE_QUEST {Fransız gemi ustalarının elinden çıkma özel yapım bir gemi. Korvet tasarımında yapılan kapsamlı modernizasyon, hızdan ödün vermeden neredeyse tüm özelliklerini geliştirdi. Artan yelken alanı ve top kalibresi, daha deneyimli ve kalabalık bir mürettebat gerektiriyor; ancak Karayipler'deki denemeler başarılı olursa, burada kullanılan teknolojiler gemi yapımında gerçek bir devrim yaratabilir.}
 Crew {Mürettebat - mevcut mürettebat sayısını, ayrıca bu gemi için minimum ve maksimum değerleri gösterir.}
 Crew_Exp {Mürettebat deneyimi}
-Crew_Exp_hint
-{
-Mürettebat deneyimi üç kategoriye ayrılır: denizcilik (gemi yönetimini etkiler), topçuluk (yeniden doldurma hızı ve nişan alma hassasiyeti) ve borda (mürettebatın yakın dövüşteki etkinliği).
-Daha az sayıda deneyimli mürettebat, acemilerle dolu aşırı yüklü bir gemiden daha etkili olabilir.
-Tüm kategorilerde deneyim, mürettebat ilgili eylemleri (manevra, ateş, borda) gerçekleştirirken kazanılır, ancak kazanılan beceriler uzun süre kullanılmazsa kaybedilir.
-}
+Crew_Exp_hint {Gemide yaşam vardiyalar hâlinde düzenlenir ve her denizci hem arma donanımını hem de top arabalarını kullanmayı bilmelidir. Mürettebat deneyimi, yelkenlerin kullanım hızından topların yeniden dolum süresine kadar geminin tüm özelliklerini etkiler. $br()Deneyim zamanla artar; ancak kayıplar verildiğinde veya meyhaneden acemiler tutulduğunda azalır. Deneyimli mürettebatı korumak, acemileri işe alıp sıfırdan eğitmekten çok daha avantajlıdır.}
 EastIndiaMan {Doğu Hindistan gemileri, pinasların en iyi özelliklerini alıp eksiklerinden kurtularak neredeyse kusursuz çok amaçlı gemilere dönüştü. Büyük kalibre toplar taşıdıkları için benzer boyuttaki savaş gemileriyle boy ölçüşebilirler ve geniş ambarları sayesinde ticarette de etkili şekilde kullanılabilirler.}
 Ecliaton {Bu tip gemiler Kardinal Richelieu döneminde inşa edilmiş olup, artık yapısal olarak eskimiştir. Yine de iyi denizcilik özelliklerine sahiptirler ve en ağır topları taşıyabilirler, bu da onları korkutucu bir güç yapar.}
 Elcasador {Açık okyanusta özel operasyonlar için tasarlanmış bir savaş gemisinin parlak bir örneği. Bu kalyon, bölgedeki ticarete ve İspanyol Tacı'nın çıkarlarına gerçek tehdit oluşturan en tehlikeli korsanları yok etmek üzere Casa de Contratación'un emriyle inşa edildi.}
@@ -35,11 +30,15 @@ Galeon_l {Galyon, 16. yüzyılın başlarında karak temelli olarak ve baştan s
 Galeon_sm {İspanyol gücünün ve hırsının bir simgesi. Güverteler altın süslemelerle parıldar, kıçta ise geminin koruyucusu Merhametli Meryem’in tasviri yükselir. Kimileri için 'Santa Misericordia' düzenin vücut bulmuş hali, kimileri için ise kraliyet baskısının korkulan simgesidir. Hatta bazıları onda gerçek İlahi Takdir’i görür.}
 GoodsKeys_hint
 {
-Klavye üzerindeki "Sol" ve "Sağ" ok tuşları, tabloda seçili satırdaki malları bir parti olarak taşır. Ok tuşlarına Shift ile basarsanız, mallar tamamen taşınır.
-Arayüzde mal bulunan satırdaki ok simgelerine sağ tıklamak, malları onar parti halinde aktarır.
+Sol ve Sağ yön tuşları, tablonun seçili satırındaki malları birer birer taşır.
+Yön tuşlarını değiştirici tuşlarla birlikte kullanmak miktarı değiştirir:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — tümünü taşı
+Bir oka sağ tıklama — tümünü taşı
 }
 Himera {İngiliz deniz istihbaratı için özel olarak tasarlanmış bir başyapıt gemi. Özellikleriyle 3. sınıf savaş gemileriyle boy ölçüşürken, 4. sınıf gemilerin kolay manevrasını korur.}
-Hull {Gövde - geminin gövdesinin dayanabileceği mevcut ve maksimum hasarı gösterir.}
+Hull {Gövde, geminin mevcut ve azami dayanıklılığını gösterir. Değer %10'un altına düştüğünde gemi yavaşça batmaya başlar.}
 LadyBeth
 {
 Tehlikeli sularda bağımsız devriye görevi için inşa edilmiş, İngiliz gemi yapımının muhteşem bir örneği. Bu şnyava, boyutuna göre üstün denizcilik özellikleri ve etkileyici bir silahlanmaya sahip; böylece daha üst sınıf gemilerle bile rekabet edebilir.
@@ -52,7 +51,27 @@ Lugger, özellikle kaçakçıların ve denizcilerin manevra kabiliyeti ve çok y
 Küçük boyutlarına rağmen, lugger’lar iyi denizciliğe sahiptir ve uzun yolculuklara çıkabilirler.
 }
 LuggerQuest {Kurye luggeri, haberci servisi ihtiyaçları için özel olarak inşa edildi. Mükemmel yelken performansı, rüzgara karşı üstün seyir kabiliyeti ve oldukça güçlü silahlanması, önemli mesajların ve küçük değerli yüklerin güvenli teslimatını garanti eder.}
-Maneuver {Manevra kabiliyeti - geminin mevcut manevra kabiliyetini, tüm etkenler (yük, kaptanın becerileri, gemi hasarı) dikkate alınarak ve geminin ulaşabileceği en yüksek manevra kabiliyetini gösterir.}
+Maneuver
+{
+Manevra kabiliyeti, geminin dönüş hızını belirler. Değer ne kadar yüksekse gemi dümene o kadar iyi tepki verir. Hasar, deneyimsiz mürettebat ve aşırı yüklü ambar bu değeri düşürür. Savaş yelkenleri azami manevra kabiliyeti sağlar.
+~
+Geminin azami manevra kabiliyeti: $number($ctx(turnrateMax))
+~
+Yaklaşık değerler:$br
+_$key(human_turn_rate_1) – $kstringTemp(HUMAN_TURN_RATE_STEP_1) değerine kadar
+_$key(human_turn_rate_2) – $kstringTemp(HUMAN_TURN_RATE_STEP_2) değerine kadar
+_$key(human_turn_rate_3) – $kstringTemp(HUMAN_TURN_RATE_STEP_3) değerine kadar
+_$key(human_turn_rate_4) – $kstringTemp(HUMAN_TURN_RATE_STEP_4) değerine kadar
+_$key(human_turn_rate_5) – $kstringTemp(HUMAN_TURN_RATE_STEP_5) değerine kadar
+_$key(human_turn_rate_6) – bunun üzerindeki tüm değerler
+}
+ManeuverCurrent
+{
+~
+Kaptanın becerileri ve geminin durumu hesaba katılarak mevcut manevra kabiliyeti:
+$number($ctx(turnrate)) — azami değerin $percent($ctx(turnratePercent)) kadarı.
+~
+}
 Manowar {2. sınıf hat gemileri, her ulusun deniz gücünün bel kemiğidir. 3. sınıf gemilerle birlikte, güç ve manevrayı birleştiren bir filo oluştururlar. Filoda 1. sınıf gemi yoksa, bazıları sancak gemisi olarak görev yapar.}
 Manowar_e {Birinci sınıf bir hat gemisi, gerçek bir yüzen kale gibidir. Korkutucu silahlanması sayesinde birkaç isabetli salvo ile her rakibi suyun dibine gönderebilir. Ancak en büyük deniz güçlerinde bile bu gemilerden pek azı bulunur ve büyük deniz savaşlarında amiral gemisi olarak kullanılırlar.}
 MayFang
@@ -87,7 +106,7 @@ Yelken donanımını geliştirmek, belirli gemi tiplerinin güçlü yanlarını 
 }
 Sails {Yelkenler - geminin yelkenlerinin dayanabileceği mevcut ve maksimum hasarı gösterir.}
 Santisima {Bu gemi, ünlü Havana tersanesinden denize indirildi. Gövdesi diğer 1. sınıf gemilere göre biraz daha hafif ve zayıf, ancak bu eksikliği gelişmiş seyir özellikleri fazlasıyla telafi ediyor.}
-sCannons {Gemide izin verilen en yüksek kalibre ve azami top sayısını gösterir.}
+sCannons {Bu gemiye takılabilecek topların mevcut ve azami kalibresi. Mevcut kalibre azami kalibreye eşitse yalnızca tek bir değer gösterilir.}
 Schooner {İyi denizcilik özellikleri, geniş ambarı, sığ su çekimi ve yeterli silahlanmasıyla, şalopa küçük sınıf gemiler arasında en popülerlerden biri olmuştur. Ticaret, kıyı seferleri ve savaş için eşit derecede uygundur.}
 Schooner_W {Yeni Dünya’daki denizciler, şunları ilk takdir edenler oldu ve askeri amaçlarla kullanmaya başladılar. Bunun için gövdede bazı değişiklikler yapıldı, ambar hacmi azaltıldı ve toplar eklendi, fakat sonuç buna değdi. İyi silahlanmış, hızlı ve çevik olan savaş şilebi, her ticaret gemisi için ciddi bir tehdit oluşturur.}
 Shipyard_hint
@@ -97,12 +116,31 @@ Kahramanın yanında yoldaşları varsa kendi gemisini satamaz. Ayrıca, kahrama
 Kahramanın veya yoldaşın gemisini, ambar ve mürettebatı koruyarak değiştirmek için, sol taraftaki filodaki listeden değiştirilecek gemiyi, sağ taraftaki tersanede satılık gemilerden ise almak istediğinizi seçin ve "Satın Al" butonuna tıklayın.
 Yeni bir gemi almak (yeni bir yoldaş atamak) için, önce soldaki listeden boş bir yuva seçin ve ardından satın alma işlemini yapın.
 }
+ShipyardCannons_hint {Tersanede top ticareti yapabilirsiniz, ancak her kalibre serbestçe satışa sunulmaz. Burada bombarda veya tam kulverin bulamazsınız. Tersanede satılan toplar daima kusursuz durumdadır. Topları sattığınızda önce onarılır ve onarım bedeli işlem tutarından düşülür.}
 Shnyava {Şnyava ve brigantin, brig’in öncülleriydi. Başarılı gövde tasarımları, iyi hızları ve ağır toplar taşıyabilmeleri sayesinde bu gemiler hem Karayipler’de hem de Avrupa’da çok popüler oldu. Genellikle küçük sınıf ticaret konvoylarına eşlik etmek için kullanılırlar.}
 Sloop {İyi hız ve manevra kabiliyetine sahip, boyutuna göre güçlü silahlanmasıyla şalopa güvenilir bir devriye gemisidir; keşif için de uygundur.}
-Speed {Hız - geminin mevcut maksimum hızını, tüm faktörler (yük, kaptanın yetenekleri, gemi hasarı) dikkate alınarak ve geminin ulaşabileceği en yüksek hızı gösterir.}
+Speed {Geminin mevcut koşullarda ve azami rüzgâr gücünde ulaşabileceği en yüksek hızdır. Kaptan ve Seyrüsefercinin yetenekleri ve becerileri, muskalar, geminin yükü, yelkenlerin aşınma durumu ve mürettebat deneyimi bu hızı etkiler.}
+MaxSpeed {Geminin ideal koşullarda ve azami rüzgâr gücünde ulaşabileceği en yüksek hızdır. Gelişmiş yelken donanımına sahip daha hafif gemiler genellikle daha hızlıdır, ancak bunun bedelini daha dayanıksız bir gövde ve daha küçük bir ambarla öderler.}
 TakeAllGoods_hint {"Tüm malları aktar" düğmesi, malları karakterin gemisine ortalama birim değerlerine göre aktarır. Önce en değerli mallar, ardından daha az değerli olanlar aktarılır; ambar dolana kadar bu şekilde devam eder.}
 Tartane {Bir balıkçı barkası, yüksek sosyetede parlayan bir kaptan için en iyi gemi değildir. Ama talihsiz bir şekilde favori geminizden olduysanız, bu kasvetli tekne adalar arasında hızlı bir yolculuk için gayet uygundur—yalnız kendinize hatırlatın, bu sadece geçici!}
 Valciria {Zarif bir İngiliz briki. Yüksek hız ve manevra kabiliyeti, rüzgara karşı iyi performans ve güvertede iki düzine top, bu yelkenliyi gerçek bir hayal gemisi yapıyor.}
 Warship {Bu tip gemiler Kardinal Richelieu döneminde inşa edilmiş olup artık yapısal olarak eskimiştir. Ancak iyi seyir özelliklerine sahipler ve en ağır topları taşıyabildikleri için hâlâ korkutucu bir güç oluştururlar.}
 WarTartane {Tartanlar, Karayipler’in tehlikeli sularında kıyı işleri için aceleyle uyarlanmış balıkçı sandallarının aynısıdır. Mütevazı silahları ve derme çatma yapıları saygı uyandırmaz, ama deneyimsiz bir korsanı ya da yoksul bir kaçakçıyı korkutmaya yeterler. Seçeneğin az olduğu zamanlarda geçici bir çözümdür.}
 XebekVML {Şebek, Akdeniz’in en ünlü gemi tipidir. Dar gövdesi ve tüm direklerdeki büyük latin yelkenleri sayesinde rüzgâra karşı keskin açılarda seyir yapabilir; bu da onu oldukça can sıkıcı bir rakip haline getirir. Ne yazık ki, rüzgârı arkadan aldığında düşük hızı nedeniyle şebek genellikle korsanlık ve kaçakçılıkla sınırlı kalır.}
+ShipPower {Geminin gücü, dışarıdan bakan birine ne kadar tehditkâr göründüğünü gösterir. Mevcut değer; geminin sınıfı ve uzmanlığı, topların sayısı ve durumu, mürettebatın sayısı ve eğitimi, gövde ve yelkenlerin durumu ile kaptanın becerilerinden etkilenir. Karayipler'in dört bir yanında nam salmış bir boğazkesenin komutasındaki pinastan herkes uzak durmayı tercih ederken, toy bir delikanlının elindeki hasarlı bir fırkateyn kısa sürede belayı üzerine çeker. $br$red Filodaki her geminin gücü, filonun toplam gücüne eklenir. Bu değer, dünya haritasındaki düşman filoların ve korsanların davranışlarını etkiler. Bu göstergeyi “Uluslar” ekranında görebilirsiniz.}
+Cannon_DamageMultiply_header {Top hasarı çarpanı}
+Cannon_DamageMultiply_text {Mermi hasarının çarpıldığı değerdir.}
+Cannon_firerange_header {Menzil}
+Cannon_firerange_text {Topun hedefi vurabileceği azami mesafedir. Seçilen mühimmat, beceriler, muskalar ve hatta geminin yalpası nihai menzili etkileyebilir.}
+Cannon_reloadtime_header {Yeniden dolum süresi}
+Cannon_reloadtime_text {Topların tamamen yeniden doldurulması için gereken süredir. Mürettebatın sayısı ve deneyimi ile kaptan ve topçunun becerilerinden etkilenir.}
+Cannon_hp_header {Azami dayanıklılık}
+Cannon_hp_text {Bu değer, bir topun tamamen tahrip olmadan önce kaç atış yapabileceğini belirler. Değer ne kadar yüksekse topun o kadar seyrek onarılması gerekir. Her top türünün kendine özgü bir azami dayanıklılığı vardır ve bu değer genellikle kalibreyle birlikte artar.}
+Cannon_weight_header {Top ağırlığı}
+Cannon_weight_text {Toplar gemide çok yer kaplar; savaş gemilerinde top bataryası taşıma kapasitesinin yarısına kadarını kullanabilir. Ağırlık, kalibre ve ateş gücüyle orantılıdır; kulverinler ise aynı kalibredeki toplardan daha ağırdır.}
+Cannon_health_0 {Tahrip olmuş}
+Cannon_health_1 {Aşınmış}
+Cannon_health_2 {Sağlam}
+Cannon_health_3 {İnce ayarlı}
+Cannon_weight_in_stock {Bu, detveytin yaklaşık$br() $percent($ctx(weightPercent)) kadarıdır}
+Cannon_health_on_ship {$ctx(ShipName)' ambarındaki topların durumu: $ctx(health)}

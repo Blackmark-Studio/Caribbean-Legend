@@ -4,7 +4,7 @@
 #define MUSIC_SILENCE_TIME 180000.0
 #define SOUNDS_FADE_TIME   200
 
-#event_handler ("LoadSceneSound", "LoadSceneSound")
+#event_handler("LoadSceneSound", "LoadSceneSound");
 
 // PLAY
 int Play3DSound(string name, float x, float y, float z)
@@ -12,6 +12,14 @@ int Play3DSound(string name, float x, float y, float z)
 	InitSound();
 	//Trace("Play3DSound : "+name);
 	return int(SendMessage(Sound,"lsllllllfff",MSG_SOUND_PLAY, name, SOUND_WAV_3D, VOLUME_FX, false, false, false, 0, x, y, z));
+}
+
+#event_handler("PlaySoundDelay","PlaySoundDelay");
+void PlaySoundDelay()
+{
+    string name = GetEventData();
+    float x = GetEventData(), y = GetEventData(), z = GetEventData();
+    Play3DSound(name, x, y, z);
 }
 
 int Play3DSoundCached(string name, float x, float y, float z)

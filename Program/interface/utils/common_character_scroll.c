@@ -48,3 +48,52 @@ void FillScrollWithCharacters(ref firstChr, string scrollNodeName, string IsFell
 	}
 	GameInterface.(scrollNodeName).ListSize = m + 2;
 }
+
+// JOKERTODO на 2.0 заменить всё на fref
+void FillScrollWithCharactersFref(string scrollNodeName, fref IsFellowOkToFunc, bool withPchar, ref scrollToNull, int direction, ref firstChr = nullptr)
+{
+	scrollToNull = -1;
+	string attributeName;
+	int m = 0;
+	DeleteAttribute(&GameInterface, scrollNodeName);
+	object fellows;
+
+	// Вывести персонажа первым в карусели
+	if (firstChr != nullptr) 
+	{
+		attributeName = "f" + firstChr.index;
+		fellows.(attributeName) = firstChr.index;
+	}
+
+	// Собираем остальных персонажей
+	AddAllFellows(&fellows, pchar, withPchar);
+	int fellowsQty = GetAttributesNum(&fellows);
+	int inversedI = fellowsQty-1;
+
+	GameInterface.(scrollNodeName).current = 0;
+	GameInterface.(scrollNodeName).NotUsed = 6;
+	GameInterface.(scrollNodeName).ListSize = fellowsQty;
+	GameInterface.(scrollNodeName).ImagesGroup.t0 = "EMPTYFACE";
+	FillFaceList(scrollNodeName +".ImagesGroup", pchar, 0);
+	FillFaceList(scrollNodeName +".ImagesGroup", pchar, 1);
+	FillFaceList(scrollNodeName +".ImagesGroup", pchar, 2);
+	GameInterface.(scrollNodeName).BadTex1 = 0;
+	GameInterface.(scrollNodeName).BadPic1 = "emptyface";
+
+	// Выводим по фильтру
+	for (int i=0; i < fellowsQty; i++)
+	{
+		int pointer = i;
+		if (direction < 0) pointer = inversedI;
+		inversedI --;
+		ref chr = GetCharacter(int(GetAttributeValue(GetAttributeN(&fellows, pointer))));
+		if (!IsFellowOkToFunc(chr)) continue;
+
+		attributeName = "pic" + (m + 1);
+		GameInterface.(scrollNodeName).(attributeName).character = chr.index;
+		GameInterface.(scrollNodeName).(attributeName).img1 = GetFacePicName(chr);
+		GameInterface.(scrollNodeName).(attributeName).tex1 = FindFaceGroupNum(scrollNodeName+".ImagesGroup","FACE128_"+chr.FaceID);
+		m++;
+	}
+	GameInterface.(scrollNodeName).ListSize = m + 2;
+}

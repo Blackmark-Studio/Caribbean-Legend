@@ -1429,7 +1429,7 @@ I truly want to help her.
 HelenDrinking.5
 {
 The hero's return from the Isle of Justice will be remembered for a long time. I must confess, I was caught up in the whirlwind of events and intrigues on that strange island—so much so that I completely forgot about Helen. But she hasn't forgotten me.
-Her unexpected, awkward, yet sincere and genuine kiss caught me completely off guard and shattered the haughty demeanor of Daniel—a man who thought he'd seen it all.
+Her unexpected, awkward, yet sincere and genuine kiss caught me completely off guard and shattered the haughty demeanor of Daniel—a woman who thought she'd seen it all.
 What a wonderful girl! Damn it, how delightful it is to have someone waiting for me at home!
 @<sMary>
 }

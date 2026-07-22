@@ -255,9 +255,7 @@ void FMQG_CreateJuanship(string qName) // ставим корабль дона �
 	RealShips[int(sld.Ship.Type)].ship.upgrades.hull = 1;
 	SetSailsColor(sld, 3);
 	sld.ship.Crew.Morale = MOD_SKILL_ENEMY_RATE*8+20;
-	sld.Ship.Crew.Exp.Sailors = MOD_SKILL_ENEMY_RATE*8+20;
-	sld.Ship.Crew.Exp.Cannoners = MOD_SKILL_ENEMY_RATE*8+20;
-	sld.Ship.Crew.Exp.Soldiers = MOD_SKILL_ENEMY_RATE*8+20;
+	SetCrewExp(sld, float(MOD_SKILL_ENEMY_RATE*8+20));
 	if (MOD_SKILL_ENEMY_RATE > 6) SetCharacterPerk(sld, "MusketsShoot");
 	if(MOD_SKILL_ENEMY_RATE < 9) SetCrewQuantity(sld, GetOptCrewQuantity(sld));
 	Group_AddCharacter("FMQG_shipgroup", "FMQG_Juan");
@@ -712,9 +710,7 @@ void FMQM_ConvoyStart(string qName) // конвой со смолой
 		sld.skill.Accuracy = iScl+rand(5);
 		sld.skill.Cannons = iScl+rand(5);
 		sld.Ship.Crew.Morale = iScl+10;
-		sld.Ship.Crew.Exp.Sailors = iScl+10;
-		sld.Ship.Crew.Exp.Cannoners = iScl+10;
-		sld.Ship.Crew.Exp.Soldiers = iScl+10;
+		SetCrewExp(sld, float(iScl+10));
 		SetCharacterPerk(sld, "HullDamageUp");
 		SetCharacterPerk(sld, "SailsDamageUp");
 		SetCharacterPerk(sld, "CrewDamageUp");
@@ -1382,9 +1378,7 @@ void FMQN_ChooseContinue() // продолжаем квест
 	sld.ShipEnemyDisable  = true;
 	sld.Ship.Mode = "war";
 	sld.ship.Crew.Morale = 90;
-	sld.Ship.Crew.Exp.Sailors = 90;
-	sld.Ship.Crew.Exp.Cannoners = 90;
-	sld.Ship.Crew.Exp.Soldiers = 90;
+	SetCrewExp(sld, 90.0);
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("FMQN_shipgroup", "FMQN_Cap_Zeepard");
 	Group_SetGroupCommander("FMQN_shipgroup", "FMQN_Cap_Zeepard");
@@ -1938,9 +1932,7 @@ void FMQN_EnglandSeaAttack(string qName) // атака в море
 	sld.AlwaysEnemy = true;
 	sld.Coastal_Captain = true;
 	sld.ship.Crew.Morale = 30+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Sailors = 30+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Cannoners = 30+MOD_SKILL_ENEMY_RATE*6;
-	sld.Ship.Crew.Exp.Soldiers = 30+MOD_SKILL_ENEMY_RATE*6;
+	SetCrewExp(sld, float(30+MOD_SKILL_ENEMY_RATE*6));
 	if(int(RealShips[int(pchar.ship.type)].basetype) == SHIP_PINK)
 	{
 		AddCharacterGoods(sld, GOOD_SHIPSILK, 30);
@@ -2944,9 +2936,7 @@ void FMQL_Start() // накручиваем гида и выдаем ему шн
 	SetCrewQuantityOverMax(sld, 100);
 	UpgradeShipParameter(sld, "Capacity");
 	sld.ship.Crew.Morale = 90;
-	sld.Ship.Crew.Exp.Sailors = 90;
-	sld.Ship.Crew.Exp.Cannoners = 60;
-	sld.Ship.Crew.Exp.Soldiers = 60;
+	SetCrewExp(sld, 90.0);
 	NullCharacterGoods(sld);
 	AddCharacterGoods(sld, GOOD_BALLS, 200);
 	AddCharacterGoods(sld, GOOD_GRAPES, 200);

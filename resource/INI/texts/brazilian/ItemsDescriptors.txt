@@ -108,7 +108,7 @@ descriptor_Exotic {Exótico}
 descriptor_Fancy {Elegante}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Frágil}
-descriptor_GoodFit {Simples}
+descriptor_GoodFit {Bem ajustada}
 descriptor_GrapeAmmo {Metralha}
 descriptor_HealPotion {Cura}
 descriptor_HeartDefence {Reforçada}

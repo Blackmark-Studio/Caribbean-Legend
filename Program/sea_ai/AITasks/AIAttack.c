@@ -140,7 +140,8 @@ void AIAttack_CheckTask(string sGroupID)
 	ref rCharacter1 = Group_GetGroupCommanderR(rG1);
 
 	// skip if group is player group
-	if (sGroupID == PLAYER_GROUP) { return; }
+	if (sGroupID == PLAYER_GROUP)
+        return;
 
 	// if group task is lock, check for task complete, if not - continue task
 	float fAng = frnd() * PIm2;
@@ -160,7 +161,7 @@ void AIAttack_CheckTask(string sGroupID)
         // Врагов нет
         if (CheckAttribute(rG1, "Task.Target.Pos.x"))
             Group_SetTaskMove(sGroupID, float(rG1.Task.Target.Pos.x), float(rG1.Task.Target.Pos.z));
-        else if (FindSubStr(sGroupID, "IslandGroup", 0) == 0)
+        else if ("IslandGroup" in rG1)
             Group_SetTaskDrift(sGroupID);
         else
             Group_SetTaskMove(sGroupID, 10000.0 * sin(fAng) , 10000.0 * cos(fAng));

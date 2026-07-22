@@ -1,0 +1,41 @@
+Patrol_Win_Caribs_NoHelp {Te przeklęte czerwonoskóre psy za bardzo się rozzuchwaliły. Tak blisko miasta, pomyśleć tylko! Teraz długo nie wychylą nosa ze swoich dżungli.}
+Patrol_Win_Pirates_NoHelp {Te przeklęte wisielce, niech smażą się w piekle za swoje zbrodnie! No cóż, teraz już nie będzie komu rabować uczciwych ludzi.}
+Patrol_Win_Smugglers_NoHelp {To była zacięta walka. Teraz ta hołota dwa razy się zastanowi, zanim zacznie znów knuć swoje ciemne interesy w pobliżu naszej kolonii.}
+Caribs_Win_Patrol_NoHelp {Idź swoją drogą, bladolica twarzy. My musieć opatrzyć rany. Ci wojownicy dobrze walczyć.}
+Caribs_Win_Pirates_NoHelp {Ci bandyci chcieć obrabować nas, ale my pokazać im prawdziwą siłę naszych wojowników. Oni wszyscy zginąć.}
+Caribs_Win_Smugglers_NoHelp {My znać tych bladolicych... oni przeszkadzać nam zbierać łzy bogów na brzegu. Teraz oni umrzeć, i my móc wrócić.}
+Pirates_Win_Caribs_NoHelp {Przeklęci poganie, nieźle nam dali w kość! Musieliśmy akurat wleźć na tę sforę... A ty czego się gapisz? Zjeżdżaj stąd, póki możesz.}
+Pirates_Win_Patrol_NoHelp {진짜 재수도 없지, 일 끝나기 직전에 순찰대랑 마주치다니... 넌 또 여기서 뭐 어슬렁거리고 있어? 저놈들 편이냐, 아니면 혼자 다니는 거냐? 우리가 아직 좋게 말할 때 썩 꺼지는 게 좋을 거다...}
+Smugglers_Win_Caribs_NoHelp {Tyle razy chodziliśmy tymi ścieżkami, i trzeba było, psiakrew, właśnie teraz - zaraz po interesie, z kieszeniami pełnymi srebra, wleźć prosto w to gniazdo os. Tfu.}
+Smugglers_Win_Patrol_NoHelp {No i czego tu tu węszyć przyszedłeś? Chcesz nas sprzedać? To może tak - ty nic nie widziałeś, my nic nie widzieliśmy, i każdy idzie w swoją stronę. Czy może mamy i ciebie odesłać do praojców?}
+JungFight_Ok {$rand(Jasne|Dobra, to ja się zmywam|Mieliście szczęście).}
+JungFight_Officer_Thanks {Dziękuję za pomoc, trudno ją przecenić. Z pewnością zamelduję gubernatorowi o twoim poświęceniu.}
+JungFight_Patrol_Thanks {Dzięki, bez ciebie byśmy sobie nie poradzili. Nie chciałbyś do nas dołączyć? U nas i jedzenie przednie, i mundur...}
+JungFight_Caribs_Thanks {My dziękować bladolica twarzy za pomoc. A teraz ty odejść. Duchy dżungli gniewać się.}
+JungFight_Pirates_Thanks {Przyjacielu, idź swoją drogą. Dzięki za pomoc, ale... sam rozumiesz.}
+JungFight_Smugglers_Thanks {Dzięki za pomoc, pora nam ruszać. Jak uporamy się z tym bałaganem, zamówimy za tobą słówko. Parę dobrych interesów będziesz miał jak w banku.}
+JungFight_Victory_Ok {$rand(Wszystkiego dobrego.|Uważaj na siebie.|Oby następnym razem nie przyszło nam stanąć po przeciwnych stronach.)}
+JungFight_Officer_Reward_Caribs {Dziękuję za pomoc w samą porę. Gdyby nie ty, ci dzicy dopięliby swego. Należy ci się nagroda. Proszę.}
+JungFight_Officer_Reward_Pirates {Dziękuję, $rand(wędrowcze|podróżniku), kimkolwiek jesteś. Twoja pomoc w tej walce przyszła w samą porę. Ci wisielcy od dawna gnębili spokojnych mieszkańców naszej kolonii - spójrz tylko, jak rozrosła się ich banda. Za twój czyn należy ci się nagroda.}
+JungFight_Officer_Reward_Smugglers {Oddałeś nam wielką przysługę. Gdyby nie ty, ci przemytnicy mogliby ujść bezkarnie. Tylko spójrz, jak byli ubrani i czym uzbrojeni... gdzie też nasz gubernator ma oczy? Ekhm, cóż ja wygaduję. Za okazane męstwo i odwagę należy ci się nagroda, przyjmij ją.}
+JungFight_Patrol_Reward_Caribs {Dziękuję za pomoc, szybko uporaliśmy się z tymi dzikusami. Szkoda tylko, że nasz oficer poległ. Ile teraz będzie męki z jego zastępstwem... Ekhm. Za okazane bohaterstwo i odwagę należy ci się nagroda... chyba. Proszę.}
+JungFight_Patrol_Reward_Pirates {Nieźle nam się dostało... biedna $rand(Bess|Mary|Helen|Lulu|Nora). Nie doczeka się już swego dzielnego oficera. I kto go zabił? Jakaś żałosna hołota? Co za hańba. Wybaczcie. Jesteśmy wdzięczni za pomoc udzieloną w samą porę, należy wam się nagroda.}
+JungFight_Patrol_Reward_Smugglers {Biedny nasz kapitan, został mu zaledwie rok do emerytury... Cóż, wypełnił swój ostatni obowiązek - przestępcy zostali ukarani, a nielegalny towar nie będzie już trafiał do naszej kolonii. Dziękuję za pomoc, nieznajomy. Należy ci się wynagrodzenie.}
+JungFight_Caribs_Reward_Patrol {My dziękować bladolica twarzy za pomoc. Ja nie rozumieć, ty walczyć z wojownikami własnego plemienia? Bogowie gniewać się na takich jak ty, więc weź nasz dar - on pomoże ci przetrwać ten gniew.}
+JungFight_Caribs_Reward_Pirates {Bladolica twarzy, bogowie posłać ciebie do nas z pomocą, kiedy my najbardziej potrzebować. Ci bandyci już nie chodzić po naszych dżunglach. Przyjmij ten dar od naszego plemienia.}
+JungFight_Caribs_Reward_Smugglers {Bladolica twarzy pomagać nam, my pomagać bladolicej twarzy. Ci martwi handlarze z twego plemienia nosić przy sobie wiele rzeczy, rzeczy być cenne dla twego plemienia. Weź je. My dziękować tobie za pomoc.}
+JungFight_Pirates_Reward_Caribs {$swear I dobrze im tak! Przeklęte bezbożne psy! A ty pojawiłeś się w samą porę, przyjacielu. Bez twojej pomocy już karmilibyśmy robaki. Trzymaj, to dla ciebie. Nie odmawiaj - u nas tak się nie robi.}
+JungFight_Pirates_Reward_Patrol {$swear Nieźle przetrzepaliśmy tych soldatesków! A ty też nie jesteś byle kto, chłopie, daleko zajdziesz. Gdybyś nie doskoczył, bujalibyśmy się teraz na szubienicy. Tacy jak my po czymś takim dzielą się działką - trzymaj.}
+JungFight_Smugglers_Reward_Caribs {Dzięki za pomoc, chłopie! Nie wiem, czego chciały te $rand(leśne diabły|czerwonoskóre małpy|pogany), ale jednego jestem pewien - żywi nie mieliśmy wyjść z ich planów. Masz tu nagrodę za fatygę - gdyby nie ty, to byśmy $rand(głów nie donosili!|żywi stamtąd nie wyszli!|wszyscy tam polegli!) Nie bój się, to niczyje...}
+JungFight_Smugglers_Reward_Patrol {Chyba się udało wywinąć. Mówiłem, że tamten typ jest jakiś szemrany, ale nikt mi nie wierzył. A teraz jeszcze trzeba się użerać z patrolem. Dzięki za pomoc - jeszcze minuta, a nie byłoby komu tu gęby otwierać. Masz, weź nagrodę. Spokojnie, nikt się o nią nie upomni.}
+JungFight_Reward_Ok {$rand(Z przyjemnością przyjmę nagrodę.|Cieszę się, że mogłem pomóc.|Nie mogłem stać z boku.|Uważajcie na siebie.)}
+JungFight_Rumour_Caribs_vs_Patrol {Mówią, że za miastem była rzeź: nasz patrol natknął się na plemię czerwonoskórych. Czyżby naprawdę pojawiali się coraz bliżej kolonii?}
+JungFight_Rumour_Caribs_vs_Pirates {Mówią, że jacyś bandyci za miastem natknęli się na plemię Indian i urządzili prawdziwą rzeź. Zawsze dobrze, kiedy śmieci wynoszą się same, nie sądzicie?}
+JungFight_Rumour_Caribs_vs_Smugglers {Wyobrażacie sobie, kapitanie? W dżungli tuż za naszymi bramami plemię Indian natknęło się na przemytników! Nie wiadomo, kto ostatecznie wygrał, ale jedno wiem na pewno: podniosą haracze. Powiedzą coś o ochronie naszego bezpieczeństwa i znów sięgną nam do kieszeni.}
+JungFight_Rumour_Patrol_vs_Pirates {Wyobrażacie sobie, kapitanie? Nasz patrol wpadł prosto w zasadzkę miejscowych bandytów. Wreszcie te darmozjady robią swoją robotę, zamiast zaczepiać uczciwych ludzi na ulicy.}
+JungFight_Rumour_Patrol_vs_Smugglers {Mam świeżą plotkę, kapitanie. Wprost na naszych wodach posypała się duża transakcja: w najgorszym możliwym momencie pojawił się patrol, a łotry uciekły do selwy. Tam nasi chłopcy ich dopadli i wywiązała się bójka. Nareszcie widzę, dokąd idą nasze podatki!}
+JungFight_Rumour_HeroHelp_Patrol_Caribs {Mówią, że pomogliście naszemu patrolowi odeprzeć tych dzikusów. Jesteście bardzo odważnym człowiekiem, $fullName!}
+JungFight_Rumour_HeroHelp_Patrol_Pirates {Kapitanie, wszyscy mówią tylko o tym, jak dzielnie stanęliście w obronie naszych żołnierzy w walce z piratami. Jesteście prawdziwym bohaterem, $Name!}
+JungFight_Rumour_HeroHelp_Patrol_Smugglers {Niedawno nasz patrol wybił przemytników za miastem. Mówią, że wy też braliście udział w tej potyczce, $Name. Jak dobrze, że są wśród nas tak odważni ludzie!}
+JungFight_Rumour_AllDead_Patrol {Nastały smutne czasy, kapitanie $Name. Ktoś wybił nasz patrol za miastem, nie zostawiając nikogo przy życiu. Teraz dwa razy straszniej wychodzić za bramy, a tak lubiłem wieczorne spacery!}
+JungFight_Rumour_AllDead {Dzieje się coś zupełnie strasznego, kapitanie $Name. Niedawno za bramami wydarzyła się okropna tragedia, a najgorsze, że nikt niczego nie rozumie! Wiadomo tylko, że była tam bitwa: krwawa i okrutna, po której nie został przy życiu ani jeden człowiek. Jakaś zwierzęca brutalność - bezbożna i zupełnie bezsensowna!}

@@ -143,6 +143,7 @@ LosTeques Town {Los-Teques mine}
 LosTeques_town {Los-Teques mine}
 LostShipsCity {Loco-Riferte}
 LostShipsCity Town {Loco-Riferte}
+LostShipsCity_Town {Loco-Riferte}
 Loxly_house {アルバート・ロクスリーの事務所}
 LSC North {死者の船の島・北部}
 LSC South {死者の船の島・南部}

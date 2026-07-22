@@ -274,7 +274,7 @@ void SetSpyGlassData()
 	{
 		string CannonTypeName = "";
 		
-		int cannonIdx = int(chref.Ship.Cannons.Type);
+		int cannonIdx = GetCannonTypeByBort(chref, "cannonl");
 		int cannonGoodIdx = GetCannonGoodsIdxByType(cannonIdx);
 		
 		
@@ -369,7 +369,7 @@ void SetSpyGlassData()
 		} 
 		Log_SetStringToLog("Cap_id = " + chref.id +" hp= " + int(chref.chr_ai.hp) + " rank= "+ chref.rank +
 		                           " Moral= " + chref.ship.crew.morale);
-		Log_SetStringToLog("Sailors = " + chref.Ship.Crew.Exp.Sailors +" Cannoners = " + chref.Ship.Crew.Exp.Cannoners + " Soldiers = "+ chref.Ship.Crew.Exp.Soldiers);
+		Log_SetStringToLog("Crew Exp = " + GetCrewExp(chref));
 		Log_SetStringToLog("Ship.MaxCaliber=  " + RealShips[int(chref.Ship.Type)].MaxCaliber +
 		                           " Ship.Capacity =" + GetCargoMaxSpace(chref)  +
 		                           " Ship.MaxCrew= " + RealShips[int(chref.Ship.Type)].MaxCrew);

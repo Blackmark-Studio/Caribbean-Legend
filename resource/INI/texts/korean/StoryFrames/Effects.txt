@@ -7,7 +7,7 @@ CrewMorale_pchar_0 {선원 사기 $MoraleStrDiff($ctx(value))}
 CrewMorale_pchar_1 {선원 사기 $MoraleStrDiff($ctx(value))}
 Reputation_pchar_0 {평판 하락}
 Reputation_pchar_1 {평판 상승}
-CrewExp_pchar_1 {$key($ctx(p1))이 경험치를 획득함}
+CrewExp_pchar_1 {선원이 경험치를 획득했습니다}
 Money_pchar_1 {$money($ctx(value)) 획득}
 Money_pchar_0 {$abs($money($ctx(value))) 지불함}
 Goods_pchar_1 {획득: _$key($goodI($ctx(p1))Acc) $number($ctx(value))}

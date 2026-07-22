@@ -5,8 +5,8 @@ void GetCoordinatedBoardingHP(ref player, ref companion, int playerCrew, int com
 	float baseHP = LAi_GetCharacterMaxHP(player) / 3.0;  // нативное, треть от НР кэпа идет в базу бонуса;
 
 	// опыты
-	float playerExp    = GetCrewExp(player, "Soldiers");
-	float companionExp = GetCrewExp(companion, "Soldiers");
+	float playerExp    = GetCrewExp(player);
+	float companionExp = GetCrewExp(companion);
 	float totalExp = (playerExp * playerCrew + companionExp * companionCrew) / totalCrew;
 
 	// морали
@@ -15,10 +15,10 @@ void GetCoordinatedBoardingHP(ref player, ref companion, int playerCrew, int com
 	int totalMoral = (playerMoral * playerCrew + companionMoral * companionCrew) / totalCrew;
 
 	// игнорируем минимальную команду, оставшуюся у компаньона, этим можно пренебречь
-	player.Ship.Crew.Morale          = totalMoral; 
-	player.Ship.Crew.Exp.Soldiers    = totalExp;
+	player.Ship.Crew.Morale          = totalMoral;
+	SetCrewExp(player, totalExp);
+	SetCrewExp(companion, totalExp);
 	companion.Ship.Crew.Morale       = totalMoral; 
-	companion.Ship.Crew.Exp.Soldiers = totalExp;
 
 	// нативная формула из GetBoardingHP
 	baseHP = baseHP * (totalExp / GetCrewExpRate() - 0.7 + float(totalMoral - MORALE_NORMAL));

@@ -3,6 +3,9 @@
 #include "interface\character_all.h"
 #include "interface\utils\popup_confirmation.c"
 #include "interface\utils\ship_perks.c"
+#include "interface\utils\ship_common.c"
+#include "interface\utils\modifiers.c"
+
 ref refCharacter;
 ref refNPCShipyard;
 int shipIndex;
@@ -76,6 +79,7 @@ void InitInterface_R(string iniName, ref _shipyarder)
 	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("ShowShipPicture","ShowShipPicture",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
+	SetEventHandler("MouseRClickUp","ExitRPGHint",0);
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
@@ -91,8 +95,11 @@ void InitInterface_R(string iniName, ref _shipyarder)
     //////////////////
     SetNewGroupPicture("REPAIR_Money_PIC", "ICONS_CHAR", "Money");
     
-    SetNewGroupPicture("REPAIR_Hull_PIC", "SHIP_STATE_ICONS", "Hull");
-    SetNewGroupPicture("REPAIR_Sails_PIC", "SHIP_STATE_ICONS", "Sails");
+	SetNewGroupPicture("REPAIR_Hull_PIC", "SHIP_STATE_ICONS", "Hull");
+	SetNewGroupPicture("REPAIR_Sails_PIC", "SHIP_STATE_ICONS", "Sails");
+	SetNewGroupPicture("REPAIR_Cannons_PIC", "SHIP_STATE_ICONS", "Cannons");
+	SetNodeUsing("REPAIR_WINDOW_CAPTION", false);
+
 
     FillShipyardTable();
 	
@@ -145,6 +152,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("ShowShipPicture","ShowShipPicture");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("MouseRClickUp","ExitRPGHint");
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
 	DelEventHandler("TableSelectChange", "TableSelectChange");
@@ -222,30 +230,16 @@ void ProcessCommandExecute()
 			}
 		break;
 		
-		case "REPAIR_LEFT_H":
-			if (comName=="click" || comName=="activate")
-			{
-			    ClickRepairArror("hull", -1);
-			}
-			if (comName=="rclick")
-			{
-			    ClickRepairArror("hull", -5);
-			}
-		break;
-		
-		case "REPAIR_RIGHT_H":
-			if (comName=="click" || comName=="activate")
-			{
-			    ClickRepairArror("hull", 1);
-			}
-			if (comName=="rclick")
-			{
-			    ClickRepairArror("hull", 5);
-			}
-		break;
-
 		case "CHECKBOX_SAILS":
 			ClickRepairArror("sails", CheckButton_GetState("CHECKBOX_SAILS", 1) ? 100 : -100);
+		break;
+
+		case "CHECKBOX_HULL":
+			ClickRepairArror("hull", CheckButton_GetState("CHECKBOX_HULL", 1) ? 100 : -100);
+		break;
+
+		case "CHECKBOX_CANNONS":
+			RepairStatShow();
 		break;
 
 		case "REPAIR_OK":
@@ -255,13 +249,6 @@ void ProcessCommandExecute()
 			}
 		break;
 		
-		case "REPAIR_ALL":
-			if (comName=="click" || comName=="activate")
-			{
-			    RepairAll();
-			}
-		break;
-
 		case "BUTTON_PAINT":
 			if (comName=="click" || comName=="activate")
 			{
@@ -501,6 +488,10 @@ void FillShipParam(ref _chr)
 		}
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BUYSELL_PRICE",5);
 		SetNodeUsing("TABLE_OTHER", true);
+		SetNodeUsing("BAR_HP", true);
+		SetNodeUsing("BAR_CREW", true);
+		SetNodeUsing("BAR_SP", true);
+		SetNodeUsing("BAR_CAPACITY", true);
 		SetNodeUsing("SHIP_BIG_PICTURE", true);
 		ShowCannonsMenu();
 		SetShipPerks(_chr, "");
@@ -513,6 +504,10 @@ void FillShipParam(ref _chr)
 		SetFormatedText("INFO_TEXT","");
 		SetFormatedText("BUYSELL_PRICE","");
 		SetNodeUsing("TABLE_OTHER", false);
+		SetNodeUsing("BAR_HP", false);
+		SetNodeUsing("BAR_CREW", false);
+		SetNodeUsing("BAR_SP", false);
+		SetNodeUsing("BAR_CAPACITY", false);
 		HideCannonsMenu();
 		SetShipPerks(&NullObject, "");
 	}
@@ -598,60 +593,10 @@ void ShowInfoWindow()
 				sText1  = GetConvertStr("NoneBoat2", "ShipsDescribe.txt");
 			}
 		break;
-
 		case "TABLE_OTHER":
 			CloseTooltipNew();
-			nChooseNum = int(SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1));
-			sRow = "tr" + nChooseNum;
-			sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
-		    sText1  = GetConvertStr(GameInterface.TABLE_OTHER.(sRow).UserData.ID, "ShipsDescribe.txt");
-		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "CannonType" && int(rChr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
-		    {
-		    	ref Cannon = GetCannonByType(int(rChr.Ship.Cannons.Type));
-		    	sText2 = XI_ConvertString("Type") +": " + XI_ConvertString(GetCannonType(int(rChr.Ship.Cannons.Type)));
-		    	sText2 = sText2 + NewStr() + XI_ConvertString("Caliber") + ": " + XI_ConvertString("caliber" + GetCannonCaliber(int(rChr.Ship.Cannons.Type)));
-		    	sText2 = sText2 + NewStr() + XI_ConvertString("Fire range2") + ": "  + int(Cannon.FireRange);
-		    	sText2 = sText2 + NewStr() + XI_ConvertString("CannonsDamage") + ": x" + FloatToString(float(Cannon.DamageMultiply), 1);
-		    	sText2 = sText2 + NewStr() + XI_ConvertString("CannonsTime") + ": " + int(GetCannonReloadTime(Cannon)) + " " + XI_ConvertString("sec.");
-		    	sText2 = sText2 + NewStr() + XI_ConvertString("Weight") + ": " + int(Cannon.Weight) + " " + XI_ConvertString("cwt");
-
-		    	sGroup = "GOODS";
-				sGroupPicture = GetCannonType(int(rChr.Ship.Cannons.Type)) + "_" + GetCannonCaliber(int(rChr.Ship.Cannons.Type));
-		    }
-		    if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Crew" && int(rChr.ship.type) != SHIP_NOTUSED)
-			{
-				sText2 = XI_ConvertString("other_crew_descr");
-				sText2 = sText2 + NewStr() + XI_ConvertString("other_crew_descr_max") + ": " + GetMaxCrewQuantity(rChr);
-			}
-			// процент ремонта
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Hull" && int(rChr.ship.type) != SHIP_NOTUSED)
-			{
-				sText3 = xiStr("Hull") + ": " + FloatToString(GetHullPercent(rChr), 1)  + " %";
-			}
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Sails" && int(rChr.ship.type) != SHIP_NOTUSED)
-			{
-				sText3 = xiStr("Sails") + ": " + FloatToString(GetSailPercent(rChr), 1) + " %";
-			}
-			// трюм
-			if (GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Capacity" && int(rChr.ship.type) != SHIP_NOTUSED)
-			{
-				sText3 = XI_ConvertString("Used") + ": " + FloatToString((float(GetCargoLoad(rChr))  /  float(GetCargoMaxSpace(rChr))) * 100.0, 1)+ " %";
-			}
-			
-			if(GameInterface.TABLE_OTHER.(sRow).UserData.ID == "Rig")
-			{
-				iShip = int(refCharacter.ship.type);
-			    refBaseShip = GetRealShip(iShip);
-				sText1 = XI_ConvertString(refBaseShip.BaseName) + " '" + refCharacter.ship.name + "'";
-				if(bShipyardOnTop)
-				{
-					iShip = int(refNPCShipyard.ship.type);
-					refBaseShip = GetRealShip(iShip);
-					sText2 = XI_ConvertString(refBaseShip.BaseName) + " '" + refNPCShipyard.ship.name + "'";
-				}
-				sText3  = GetConvertStr(GameInterface.TABLE_OTHER.(sRow).UserData.ID, "ShipsDescribe.txt");
-				bWindRose = true;
-			}
+			refBaseShip = GetRealShip(int(rChr.ship.type));
+			XI_ShipTableTooltip(rChr, refBaseShip, "TABLE_OTHER", &sHeader, &sText1, &sText2, &sText3, &sGroup, &sGroupPicture, &bWindRose);
 		break;
 		case "HELP":
 		    sHeader = XI_Convertstring("Shipyard");
@@ -660,6 +605,14 @@ void ShowInfoWindow()
 		case "CHECKBOX_SAILS":
 			sHeader = XIstr("SetFreshSails");
 			sText1 = XIstr("SetFreshSailsTooltip");
+		break;
+		case "CHECKBOX_CANNONS":
+			sHeader = XIstr("RepairCannons");
+			sText1 = XIstr("RepairCannonsTooltip");
+		break;
+		case "CHECKBOX_HULL":
+		sHeader = XIstr("SetFreshHull");
+		sText1 = XIstr("SetFreshHullTooltip");
 		break;
 	}
 	SetShipPerksTooltip(rChr, &sCurrentNode, &sHeader, &sText1, &sText2, &sText3, &sPicture, &sGroup, &sGroupPicture);
@@ -698,7 +651,6 @@ void ShowShipPicture()
 void HideInfoWindow()
 {
 	CloseTooltipNew();
-	ExitRPGHint();
 	XI_WindowShow("SHIP_ZOOM_WINDOW", false);
 }
 
@@ -1218,9 +1170,16 @@ void RefreshShipLists()
 // Кладём в магазин верфи все пушки с корабля
 void SetCannonsToStore(ref chr, ref colony)
 {
-	int cannonsQty = GetCannonsNum(chr);
-	int cannonGoodsIdx = GetCannonGoodsIdxByType(int(chr.Ship.Cannons.Type));
-	AddStoreGoods(&stores[int(colony.StoreNum)], cannonGoodsIdx, cannonsQty);
+	ref store = &stores[int(colony.StoreNum)];
+	
+	string borts[4] = {"cannonl", "cannonr", "cannonf", "cannonb"};
+	for (int index, ref bortName: borts)
+	{
+		int cannonsQty = GetBortCannonsQty(chr, bortName);
+		int cannonGoodsIdx = GetCannonGoodIdxByBort(chr, bortName);
+		AddStoreGoods(store, cannonGoodsIdx, cannonsQty);
+	}
+
 	RemoveAllCannonsShipyardShip(chr);
 }
 
@@ -1230,18 +1189,14 @@ void ReleaseCrewIfSellShip(ref squadronLeader, ref chr, ref shipyardCity)
 	int crewQty = DistributeCrewFromShipToSquadron(squadronLeader, chr);
 	if (crewQty < 1) return;
 
-	aref cityCrewExp, crewExp, cityCrew, chrCrew;
+	aref cityCrew, chrCrew;
 	makearef(cityCrew, shipyardCity.Ship.Crew);
-	makearef(cityCrewExp, cityCrew.Exp);
 	makearef(chrCrew, chr.Ship.Crew);
-	makearef(crewExp, chrCrew.Exp);
-	int cityCrewQty = GetCrewQuantity(&shipyardCity);
+	int cityCrewQty = GetCrewQuantity(shipyardCity);
 	int resultCrewQty = crewQty + cityCrewQty;
 
-	cityCrewExp.Sailors   = (float(cityCrewExp.Sailors)   * cityCrewQty + float(crewExp.Sailors)   * crewQty) / resultCrewQty;
-	cityCrewExp.Cannoners = (float(cityCrewExp.Cannoners) * cityCrewQty + float(crewExp.Cannoners) * crewQty) / resultCrewQty;
-	cityCrewExp.Soldiers  = (float(cityCrewExp.Soldiers)  * cityCrewQty + float(crewExp.Soldiers)  * crewQty) / resultCrewQty;
-	cityCrew.Morale       = (float(cityCrew.Morale)       * cityCrewQty + float(chrCrew.Morale)    * crewQty) / resultCrewQty;
+	cityCrew.Exp = func_fmin(EXP_MAX, (float(cityCrew.Exp) * cityCrewQty + float(chrCrew.Exp) * crewQty) / resultCrewQty);
+	cityCrew.Morale = func_fmin(MORALE_MIN, (float(cityCrew.Morale) * cityCrewQty + float(chrCrew.Morale) * crewQty) / resultCrewQty);
 
 	cityCrew.Quantity = resultCrewQty;
 	cityCrew.HasExcess = true;
@@ -1390,6 +1345,8 @@ void ExitRepairMenu()
 	SetNodeUsing("BUTTON_SELL",true);
 	SetNodeUsing("BUTTON_REPAIR",true);
 	SetNodeUsing("BUTTON_PAINT",true);
+	SetNodeUsing("BUYSELL_PRICE", true);
+	SetNodeUsing("REPAIR_WINDOW_CAPTION", false);
 
 	SetCurrentNode("SHIPS_SCROLL");
 	sMessageMode = "";
@@ -1404,7 +1361,11 @@ void ShowRepairMenu()
 	SetNodeUsing("BUTTON_SELL",false);
 	SetNodeUsing("BUTTON_REPAIR",false);
 	SetNodeUsing("BUTTON_PAINT",false);
+	SetNodeUsing("BUYSELL_PRICE", false);
+	SetNodeUsing("REPAIR_WINDOW_CAPTION", true);
+	CheckButton_SetState("CHECKBOX_HULL", 1, false);
 	CheckButton_SetState("CHECKBOX_SAILS", 1, false);
+	CheckButton_SetState("CHECKBOX_CANNONS", 1, false);
 
     SetRepairData();
 	SetCurrentNode("REPAIR_CANCEL");
@@ -1419,17 +1380,20 @@ void SetRepairData()
 
 void RepairMoneyShow()
 {
-    int st = GetCharacterShipType(refCharacter);
-    
-	SetFormatedText("REPAIR_MONEY_TEXT", string(GetSailRepairCost(st, RepairSail, refNPCShipyard) + GetHullRepairCost(st, RepairHull, refNPCShipyard)));
+	int st = GetCharacterShipType(refCharacter);
+	int summ = GetSailRepairCost(st, RepairSail, refNPCShipyard);
+	summ += GetHullRepairCost(st, RepairHull, refNPCShipyard);
+	ref rColony = GetColonyByIndex(FindColony(refNPCShipyard.City));
+	ref storeNPC = &stores[int(rColony.StoreNum)];
+
+	if (CheckButton_GetState("CHECKBOX_CANNONS", 1)) summ += GetAllCannonsRepairCost(refCharacter, storeNPC);
+	SetFormatedText("REPAIR_MONEY_TEXT", string(summ));
 }
 
 void RepairStatShow()
 {
-    int hp = int(GetHullPercent(refCharacter));
+	int hp = int(GetHullPercent(refCharacter));
 	int sp = int(GetSailPercent(refCharacter));
-	
-	SetFormatedText("REPAIR_QTY_H", (hp+RepairHull) + "%");
 	RepairMoneyShow();
 }
 
@@ -1444,23 +1408,10 @@ void ClickRepairArror(string _type, int add)
 	{
 		if (add > 0)
 		{
-			if (int(pchar.Money) >= (GetSailRepairCost(st, RepairSail, refNPCShipyard) + GetHullRepairCost(st, RepairHull + add, refNPCShipyard)))
-		    {
-		        RepairHull = RepairHull + add;
-		    }
-		    else
-		    {
-		        i = int(pchar.Money) - (GetSailRepairCost(st, RepairSail, refNPCShipyard) + GetHullRepairCost(st, RepairHull, refNPCShipyard));
-		        i = i / GetHullRepairCost(st, 1, refNPCShipyard); // на сколько хватит
-		        RepairHull = RepairHull + i;
-		    }
-		    if ((RepairHull + hp) > 100)  RepairHull = 100 - hp;
-	    }
-	    else
-	    {
-            RepairHull = RepairHull + add;
-			if (RepairHull < 0)  RepairHull = 0;
-	    }
+			RepairHull = RepairHull + add;
+			if ((RepairHull + hp) > 100)  RepairHull = 100 - hp;
+		}
+		else RepairHull = 0;
 	}
 	else
 	{
@@ -1489,30 +1440,43 @@ void ClickRepairArror(string _type, int add)
 
 void RepairOk()
 {
-    int st = GetCharacterShipType(refCharacter);
-    int hp = int(GetHullPercent(refCharacter));
+	ref rColony = GetColonyByIndex(FindColony(refNPCShipyard.City));
+	ref storeNPC = &stores[int(rColony.StoreNum)];
+	int st = GetCharacterShipType(refCharacter);
+	int hp = int(GetHullPercent(refCharacter));
 	int sp = int(GetSailPercent(refCharacter));
-	float ret;
+
+	int hullRepairCost = 0;
+	int sailsRepairCost = 0;
+	int cannonsRepairCost = 0;
+
+	if (RepairHull > 0) hullRepairCost = GetHullRepairCost(st, RepairHull, refNPCShipyard);
+	if (RepairSail > 0) sailsRepairCost = GetSailRepairCost(st, RepairSail, refNPCShipyard);
+	if (CheckButton_GetState("CHECKBOX_CANNONS", 1)) cannonsRepairCost = GetAllCannonsRepairCost(refCharacter, storeNPC);
+	int summ = hullRepairCost + sailsRepairCost + cannonsRepairCost;
+	if (int(pchar.money) < summ)
+	{
+		PlaySound("interface\knock.wav");
+		return;
+	}
+
+	AddMoneyToCharacter(pchar, -summ);
 	
 	if (RepairHull > 0)
 	{
 		timeHull = timeHull + RepairHull * (9-GetCharacterShipClass(refCharacter));
 		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairHull, "hull"));
-		AddMoneyToCharacter(pchar, -GetHullRepairCost(st, RepairHull, refNPCShipyard));
-
-		ret = ProcessHullRepair(refCharacter, float(RepairHull));
+		ProcessHullRepair(refCharacter, float(RepairHull));
 	}
 	if (RepairSail > 0)
 	{
-	  	timeRig = timeRig + RepairSail * (9-GetCharacterShipClass(refCharacter));
+		timeRig = timeRig + RepairSail * (9-GetCharacterShipClass(refCharacter));
 		AddCharacterExpToSkill(pchar, "Repair", GetExpForRepair(refCharacter, RepairSail, "sails"));
-		AddMoneyToCharacter(pchar,-GetSailRepairCost(st, RepairSail, refNPCShipyard));
-
-		ret = ProcessSailRepair(refCharacter, float(RepairSail));
+		ProcessSailRepair(refCharacter, float(RepairSail));
 	}
 	if ((hp + RepairHull) >= 100)
 	{
-        refCharacter.ship.hp = GetCharacterShipHP(refCharacter);
+		refCharacter.ship.hp = GetCharacterShipHP(refCharacter);
 		DeleteAttribute(refCharacter, "ship.hulls");
 		DeleteAttribute(refCharacter, "ship.blots");		
 	}
@@ -1522,13 +1486,19 @@ void RepairOk()
 		DeleteAttribute(refCharacter, "ship.sails");
 		DeleteAttribute(refCharacter, "ship.masts");
 	}
-	///
+
+	if (CheckButton_GetState("CHECKBOX_CANNONS", 1))
+	{
+		AddCharacterExpToSkill(pchar, SKILL_REPAIR, cannonsRepairCost / 500.0);
+		CAN_RepairAllCannons(refCharacter);
+	}
+
 	ExitRepairMenu();
 	st = int(GameInterface.SHIPS_SCROLL.current);
 	FillShipsScroll();
 	GameInterface.SHIPS_SCROLL.current = st;
 	nCurScrollNum = st;
-   	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"SHIPS_SCROLL",-1);
+	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"SHIPS_SCROLL",-1);
 	SetDescription();
 	SetButtonsAccess();
 	
@@ -1539,13 +1509,6 @@ void RepairOk()
 	}	
 }
 
-void RepairAll()
-{
-	CheckButton_SetState("CHECKBOX_SAILS", 1, true);
-    ClickRepairArror("sails", 100);
-    ClickRepairArror("hull", 100);
-}
-
 void BuyShipEvent()
 {
 	if (GetSelectable("BUTTON_BUY"))
@@ -1553,180 +1516,6 @@ void BuyShipEvent()
 	    ShowMessageInfo();
 	}
 }
-
-
-// функция для table other из interface utils --->
-
-void SetShipOTHERTable2(string _tabName, ref _chr)
-{
-    int     i;
-	string  row;
-	float   fTmp;
-
-    int iShip = int(_chr.ship.type);
-	ref refBaseShip = GetRealShip(iShip);
-		
-    GameInterface.(_tabName).select = 0;
-	GameInterface.(_tabName).hr.td1.str = "";
-	for (i=1; i<=9; i++)
-	{
-	    row = "tr" + i;
-
-	    GameInterface.(_tabName).(row).td1.icon.width = 35;
-    	GameInterface.(_tabName).(row).td1.icon.height = 35;
-    	GameInterface.(_tabName).(row).td1.icon.offset = "0, 2";
-		GameInterface.(_tabName).(row).td2.align = "left";
-		GameInterface.(_tabName).(row).td2.textoffset = "2,0";
-		GameInterface.(_tabName).(row).td3.align = "right";
-	}
-	GameInterface.(_tabName).tr1.UserData.ID = "Hull";
-	GameInterface.(_tabName).tr1.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr1.td1.icon.image = "Hull";
-	GameInterface.(_tabName).tr1.td2.str = XI_ConvertString("Hull");
-	GameInterface.(_tabName).tr1.td3.str = int(_chr.ship.hp) + " / " + int(refBaseShip.hp);
-    if (!CheckAttribute(&RealShips[iShip], "Tuning.HP")) 
-	{
-		GameInterface.(_tabName).tr1.td3.color = ARGB_Color("white");
-	}
-	else 
-	{
-		GameInterface.(_tabName).tr1.td3.color = argb(255,128,255,255);
-	}
-
-	GameInterface.(_tabName).tr2.UserData.ID = "Sails";
-	GameInterface.(_tabName).tr2.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr2.td1.icon.image = "Sails";
-	GameInterface.(_tabName).tr2.td2.str = XI_ConvertString("Sails");
-	GameInterface.(_tabName).tr2.td3.str = int(_chr.ship.sp) + " / " + int(refBaseShip.sp);
-
-    GameInterface.(_tabName).tr4.UserData.ID = "Speed";
-	GameInterface.(_tabName).tr4.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr4.td1.icon.image = "Speed";
-	GameInterface.(_tabName).tr4.td2.str = XI_ConvertString("Speed");
-	if (IsCompanion(_chr))
-	{
-		GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipSpeed(_chr),2) + " / " + FloatToString(FindShipSpeedMax(_chr),2);
-	}
-	else
-	{
-	    GameInterface.(_tabName).tr4.td3.str = FloatToString(FindShipSpeedMax(_chr),2);
-	}
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.SpeedRate")) 
-	{
-		GameInterface.(_tabName).tr4.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr4.td3.color = argb(255,128,255,255);
-	}	
-	
-
-    GameInterface.(_tabName).tr5.UserData.ID = "Maneuver";
-	GameInterface.(_tabName).tr5.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr5.td1.icon.image = "Maneuver";
-	GameInterface.(_tabName).tr5.td2.str = XI_ConvertString("Maneuver");
-	if (IsCompanion(_chr))
-	{
-  		GameInterface.(_tabName).tr5.td3.str = FloatToString((float(refBaseShip.turnrate) * FindShipTurnRate(_chr)), 2) + " / " + FloatToString(FindShipTurnrateMax(_chr),2);
-	}
-	else
-	{
-	    GameInterface.(_tabName).tr5.td3.str = FloatToString(FindShipTurnrateMax(_chr),2);
-	}
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.TurnRate")) 
-	{
-		GameInterface.(_tabName).tr5.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr5.td3.color = argb(255,128,255,255);
-	}
-
-	GameInterface.(_tabName).tr3.UserData.ID = "Rig";
-	GameInterface.(_tabName).tr3.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr3.td1.icon.image = "AgainstWind";
-	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString("Rig");
-	GameInterface.(_tabName).tr3.td3.str = XI_ConvertString(GetRigType(_chr));
-	
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.rig")) 
-	{
-		GameInterface.(_tabName).tr3.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr3.td3.color = argb(255,128,255,255);
-	}
-	
-	
-	RecalculateCargoLoad(_chr);
-	GameInterface.(_tabName).tr6.UserData.ID = "Capacity";
-	GameInterface.(_tabName).tr6.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr6.td1.icon.image = "Capacity";
-	GameInterface.(_tabName).tr6.td2.str = XI_ConvertString("Capacity");
-	GameInterface.(_tabName).tr6.td3.str = GetCargoLoad(_chr) + " / " + GetCargoMaxSpace(_chr);
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.Capacity")) 
-	{
-		GameInterface.(_tabName).tr6.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr6.td3.color = argb(255,128,255,255);
-	}
-	
-	GameInterface.(_tabName).tr7.UserData.ID = "Crew";
-	GameInterface.(_tabName).tr7.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr7.td1.icon.image = "Crew";
-	GameInterface.(_tabName).tr7.td2.str = XI_ConvertString("Crew");
-	GameInterface.(_tabName).tr7.td3.str = GetCrewQuantity(_chr) + " : "+ int(refBaseShip.MinCrew) +" / " + int(refBaseShip.OptCrew);
-	if (!CheckAttribute(&RealShips[iShip], "Tuning.MaxCrew")) 
-	{
-		GameInterface.(_tabName).tr7.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr7.td3.color = argb(255,128,255,255);
-	}
-	
-	GameInterface.(_tabName).tr8.UserData.ID = "sCannons";
-	GameInterface.(_tabName).tr8.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr8.td1.icon.image = "Caliber";
-	GameInterface.(_tabName).tr8.td2.str = XI_ConvertString("sCannons"); //XI_ConvertString("Caliber");
-	GameInterface.(_tabName).tr8.td3.str = XI_ConvertString("caliber" + refBaseShip.MaxCaliber) + " / " + int(refBaseShip.CannonsQuantity);
-	
-	if (int(refBaseShip.CannonsQuantity) < int(refBaseShip.CannonsQuantityMax))//   !CheckAttribute(&RealShips[iShip], "Tuning.Cannon")) 
-	{
-		GameInterface.(_tabName).tr8.td3.color = ARGB_Color("white");
-	}
-	else
-	{
-		GameInterface.(_tabName).tr8.td3.color = argb(255,128,255,255);
-	}
-		
-	GameInterface.(_tabName).tr9.UserData.ID = "CannonType";
-	GameInterface.(_tabName).tr9.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr9.td1.icon.image = "Cannons";
-	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(int(_chr.Ship.Cannons.Type)) + "s2");
-	
-	if (int(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
-	{
-		if(GetCannonsNum(_chr) > 0)
-		{
-		GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(int(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
-	}
-	else
-	{
-			GameInterface.(_tabName).tr9.td3.str = GetCannonsNum(_chr);
-		}	
-	}
-	else
-	{
-	    GameInterface.(_tabName).tr9.td3.str = "";
-	}
-	// прорисовка
-	Table_UpdateWindow(_tabName);
-}
-
-// <---
 
 void ExitShipPaintMenu() {
 	XI_WindowShow("PAINT_WINDOW", false);

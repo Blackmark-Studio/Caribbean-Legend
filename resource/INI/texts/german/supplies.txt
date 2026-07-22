@@ -1,0 +1,22 @@
+weapon_0 {keine}
+weapon_1 {nicht genug}
+weapon_2 {genug}
+weapon_3 {Überschuss}
+weapon_tooltip {Für ein erfolgreiches Entern müssen mehr Waffen als Matrosen vorhanden sein. Andernfalls erleidet die Mannschaft gewaltige Abzüge und enorme Verluste.}
+bortFire_tooltip {Eine Salve benötigt $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {Der gesamte Vorrat reicht für $decl($ctx(mineQty)|Mine|Minen|Minen)}
+food_tooltip {Aktueller Verbrauch: $decl($ctx(foodconsumption)|Packung|Packungen|Packungen) pro Tag}
+food_approximation_tooltip {Bei voller Besatzung benötigt das Schiff $decl($ctx(approximation.foodconsumption)|Packung|Packungen|Packungen)}
+medicament_tooltip {Aktueller Verbrauch: $decl($ctx(medicamentconsumption)|Packung|Packungen|Packungen) pro Tag}
+medicament_approximation_tooltip {Bei voller Besatzung benötigt das Schiff $decl($ctx(approximation.medicamentconsumption)|Packung|Packungen|Packungen)}
+rum_tooltip {Aktueller Verbrauch: $decl($ctx(rumconsumption)|Fässchen|Fässchen|Fässchen) pro Tag}
+rum_approximation_tooltip {Bei voller Besatzung benötigt das Schiff $decl($ctx(approximation.rumconsumption)|Fässchen|Fässchen|Fässchen)}
+spareCannons {$ctx(qty) Ersatz}
+money {Nicht genug Geld}
+goods {Nicht genug Waren}
+cooldown {Ihr müsst Euch ausruhen}
+raiseMoraleText {Um die Moral der Mannschaft zu steigern, müsst Ihr Folgendes ausgeben:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {Um die Mannschaft auszubilden, müsst Ihr Folgendes ausgeben:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Reparatur: $percent($ctx(hullPerDay)) pro Tag, Verbrauch: $decl($ctx(planksPerDay)|Planke|Planken|Planken)}
+sailcloth_tooltip {Reparatur: $percent($ctx(sailsPerDay)) pro Tag, Verbrauch: $decl($ctx(sailClothesPerDay)|Segeltuch|Segeltuch|Segeltuch)}
+spareCannons_tooltip {Nur Geschütze des Hauptkalibers gelten als Reservegeschütze. Bug- und Heckgeschütze werden bei diesen Berechnungen nicht berücksichtigt.}

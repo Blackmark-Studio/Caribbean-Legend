@@ -143,6 +143,7 @@ LosTeques Town {Los-Teques mine}
 LosTeques_town {Los-Teques mine}
 LostShipsCity {Loco-Riferte}
 LostShipsCity Town {Loco-Riferte}
+LostShipsCity_Town {Loco-Riferte}
 Loxly_house {Albert Locksley의 사무실}
 LSC North {죽은 배의 섬 - 북쪽}
 LSC South {죽은 배의 섬 - 남쪽}

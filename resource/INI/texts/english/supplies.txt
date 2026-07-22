@@ -1,0 +1,22 @@
+weapon_0 {none}
+weapon_1 {not enough}
+weapon_2 {enough}
+weapon_3 {surplus}
+weapon_tooltip {For a successful boarding action, there must be more weapons than sailors. Otherwise, the crew will suffer severe penalties and enormous casualties.}
+bortFire_tooltip {One salvo requires $ctx(bortFireSize) _$key($ctx(goodName)Gen)}
+powder_tooltip {The total stock is enough for $decl($ctx(mineQty)|mine|mines|mines)}
+food_tooltip {Current consumption: $decl($ctx(foodconsumption)|pack|packs|packs) per day}
+food_approximation_tooltip {With a full crew, the ship will require $decl($ctx(approximation.foodconsumption)|pack|packs|packs)}
+medicament_tooltip {Current consumption: $decl($ctx(medicamentconsumption)|pack|packs|packs) per day}
+medicament_approximation_tooltip {With a full crew, the ship will require $decl($ctx(approximation.medicamentconsumption)|pack|packs|packs)}
+rum_tooltip {Current consumption: $decl($ctx(rumconsumption)|barrel|barrels|barrels) per day}
+rum_approximation_tooltip {With a full crew, the ship will require $decl($ctx(approximation.rumconsumption)|barrel|barrels|barrels)}
+spareCannons {$ctx(qty) spare}
+money {Not enough money}
+goods {Not enough goods}
+cooldown {You need to rest}
+raiseMoraleText {To raise the crew's morale, you must give them:$br()$ctx(HumanMoney)$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()}
+raiseExpText {To train the crew, you must give them:$br()$key($ctx(good1)) – $ctx(qty1)$br()$key($ctx(good2)) – $ctx(qty2)$br()$key($ctx(good3)) – $ctx(qty2)$br()$key($ctx(good4)) – $ctx(qty3)$br()$key($ctx(good5)) – $ctx(qty3)}
+planks_tooltip {Repairs: $percent($ctx(hullPerDay)) per day, consuming $decl($ctx(planksPerDay)|plank|planks|planks)}
+sailcloth_tooltip {Repairs: $percent($ctx(sailsPerDay)) per day, consuming $decl($ctx(sailClothesPerDay)|sailcloth|sailcloth|sailcloth)}
+spareCannons_tooltip {Only main-caliber cannons are considered spare cannons. Bow and stern chasers are not included in these calculations.}

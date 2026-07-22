@@ -14,6 +14,10 @@ void ProcessDialogEvent()
 	int iTemp = int(npchar.EncQty);
 	string sTemp = "Gang" + locations[FindLocation(npchar.location)].index + "_";
 
+    int iMoney = int(Pchar.Money) / 2;
+    if (iMoney > 5000)
+        iMoney = 5000;
+
 	switch(Dialog.CurrentNode)
 	{
 		case "exit":
@@ -22,7 +26,6 @@ void ProcessDialogEvent()
 		break;
 
 		case "exit_Robbed":
-			int iMoney = int(int(Pchar.money)/20)*10;
 			AddMoneyToCharacter(pchar, -iMoney);
 			AddSimpleRumour(LinkRandPhrase("Вы слышали, у местного грабителя " + GetFullName(npchar) + " появилась очередная жертва. Один капитан струсил и откупился. По слухам отвалил " + FindRussianMoneyString(iMoney) + ", хи-хи... ", 
 				"Да, капитан " + GetFullName(pchar) + ", я уже слышал, что вам пришлось отдать " + FindRussianMoneyString(iMoney) + ", чтобы откупиться от местного бандита " + GetFullName(npchar) + ". Ну, что я могу сказать - не повезло! Ха-ха-ха!", 
@@ -125,7 +128,7 @@ void ProcessDialogEvent()
 				RandPhraseSimple("Всё очень просто - ты добровольно отдаёшь нам золото и уходишь, или ты остаёшься здесь, а мы уходим с твоим золотом, но второй вариант тебе вряд ли понравится, хе-хе.",
 				"А ты будто не смекаешь. Кошель отвязывай! Если не хочешь, чтобы я его с твоего трупа снимал!"),
 				"Поясняю, раз ты так"+ GetSexPhrase("ой","ая") +" непонятлив"+ GetSexPhrase("ый","ая") +" - выкладывай все деньги, если жить хочешь!");
-			Link.l1 = "Проклятье! Мерзавец! У меня с собой только " + int(int(Pchar.money)/20)*10 + " песо.";
+			Link.l1 = "Проклятье! Мерзавец! У меня с собой только " + iMoney + " песо.";
 			Link.l1.go = "CheckMoney";
 			Link.l2 = LinkRandPhrase(LinkRandPhrase("Денег захотел? Так подойди и возьми, а я погляжу, сколько пенсов ты стоишь.",
 				"Да как ты посмел, невежа! Придётся дать тебе урок хороших манер!",
@@ -149,7 +152,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				bOk = int(pchar.reputation.nobility) < 51 && int(pchar.reputation.nobility) > 41; // Captain Beltrop, 23.01.21 - жесть!!! Надо было всего лишь убрать единичку!
+				bOk = int(pchar.reputation.nobility) < 51 && int(pchar.reputation.nobility) > 41; // TO_DO: WTF?
 				if(!bOk || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35)
 				{
 					dialog.text = RandPhraseSimple("А мы тебя тихонько прирежем, даже пикнуть не успеешь.", 
@@ -161,7 +164,7 @@ void ProcessDialogEvent()
 				{
 					dialog.text = RandPhraseSimple("А что мне твой патруль? У меня здесь всё схвачено и за всё заплачено. Так что выворачивай кошель и поменьше языком телипай.", 
 						"Ты кого напугать решил"+ GetSexPhrase("","а") +"?! Я в этом лесу сам патруль для таких, как ты. Ещё ни один без пошлины не ушёл!");
-					Link.l1 = "Проклятье! Мерзавец! У меня с собой только " + int(int(Pchar.money)/20)*10 + " песо.";
+					Link.l1 = "Проклятье! Мерзавец! У меня с собой только " + iMoney + " песо.";
 					Link.l1.go = "CheckMoney";	
 					Link.l2 = RandPhraseSimple(LinkRandPhrase("Хм, не по чину тебе мною командовать.", 
 						"За подобную дерзость я сделаю в твоей башке пару дырок. Чтоб мозги проветрились.",
@@ -206,7 +209,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CheckMoney":
-			if(int(int(Pchar.money)/20)*10 >= int(Pchar.rank)*100)
+			if (iMoney >= int(Pchar.rank)*100)
 			{
 				Diag.TempNode = "OnceAgain";
 				dialog.text = LinkRandPhrase(RandPhraseSimple("Хорошо! Давай их сюда и проваливай!",

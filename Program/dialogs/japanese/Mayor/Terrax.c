@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
             dialog.text = "俺たちがこうして話してる間にも、船はキューバからフィリップスバーグへ一直線に進んでるはずだ。 今ごろトルトゥーガの近くか、もう少し東かもしれねえ。だから錨を上げてサン・マルタンへ向かえ、島の近くで『 トレロ』を捕まえるんだ。ただしバルバゾンの手下どもに戦いを見られるなよ、 そうじゃねえと俺の計画が台無しになるからな。";
 			link.l1 = "すぐに行くぜ！";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(IsCharacterPerkOn(pchar,"FlagSpa")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

@@ -143,6 +143,7 @@ LosTeques Town {Kopalnia Los-Teques}
 LosTeques_town {Kopalnia Los-Teques}
 LostShipsCity {Loco-Riferte}
 LostShipsCity Town {Loco-Riferte}
+LostShipsCity_Town {Loco-Riferte}
 Loxly_house {Biuro Alberta Locksley'a}
 LSC North {Island of Dead Ships - North}
 LSC South {Island of Dead Ships - South}

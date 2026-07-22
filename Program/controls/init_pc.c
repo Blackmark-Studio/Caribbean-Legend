@@ -353,6 +353,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("MainInterface", "InterfaceTabSwitch", CI_GetKeyCode("VK_TAB"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceInfoSwitch", CI_GetKeyCode("KEY_S"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceTakeAll", CI_GetKeyCode("KEY_F"), 0, true);
+	CI_CreateAndSetControls("MainInterface", "RaiseExp", CI_GetKeyCode("KEY_R"), 0, false);
+	CI_CreateAndSetControls("MainInterface", "RaiseMorale", CI_GetKeyCode("KEY_F"), 0, false);
     CI_CreateAndSetControls("MainInterface", "ChangeHint", CI_GetKeyCode("KEY_Z"), 0, false);
 	MapControlToGroup("InterfaceTakeAll","PrimaryLand");
 

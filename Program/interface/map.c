@@ -156,7 +156,7 @@ void ProcCommand()
 			{
                 if (bRollEscape)
                 {
-                    ShuffleArray(&iSubs);
+                    ArrayShuffle(&iSubs);
                     totalInfo = XI_ConvertString("map_maneuvers_" + iSubs[0]);
                     SetFormatedText("INFO_TEXT", totalInfo);
 					SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
@@ -1014,7 +1014,10 @@ void ManeuversResult()
 {
     bRollEscape = false;
     DelEventHandler("MapManeuvers", "ManeuversResult");
-    if (EscapeChance <= rand(99))
+    // °❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･
+    int FinalChance = (EscapeChance < 12) ? 12 : (EscapeChance >= 85 ? 100 : EscapeChance);
+    // °❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･°❀⋆.ೃ࿔*:･
+    if (FinalChance <= rand(99))
     {
         AddCharacterExpToSkill(PChar, SKILL_SNEAK, 7);
         AddCharacterExpToSkill(PChar, SKILL_FORTUNE, 3);

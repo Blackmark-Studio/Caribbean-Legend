@@ -1,0 +1,16 @@
+quest_companion_header {De missão}
+quest_companion_text {Este companheiro acompanha você por causa de uma missão. Não é possível interagir com o navio dele.}
+where_is_my_ship_sea_header {Localização do navio}
+where_is_my_ship_sea_text {$rand(Alto-mar|Entre o céu e a terra|Em navegação|Sete pés sob a quilha)}
+where_is_my_ship_header {Localização do navio}
+where_is_my_ship_text {$ctx(value)}
+cannons_broken_header {Canhões em mau estado}
+cannons_broken_text {É preciso reparar os canhões no estaleiro ou substituí-los imediatamente!}
+bad_captain_header {Habilidade insuficiente}
+bad_captain_text {Este companheiro não pode comandar um navio em alto-mar porque não possui a habilidade “Capitão”.}
+low_morale_header {Risco de motim}
+low_morale_text {A tripulação está descontente. É preciso elevar o moral imediatamente!}
+low_food_header {Pouca comida}
+low_food_text {Os marinheiros logo começarão a morrer de fome. É preciso repor os suprimentos imediatamente!}
+low_medicament_header {Poucos medicamentos}
+low_medicament_text {Os marinheiros logo começarão a morrer de doenças. É preciso repor os suprimentos imediatamente!}

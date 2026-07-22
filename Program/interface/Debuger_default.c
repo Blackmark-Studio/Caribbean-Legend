@@ -497,9 +497,7 @@ void CalculateInfoDataF2()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 80;
-    mc.Ship.Crew.Exp.Sailors = 60;
-    mc.Ship.Crew.Exp.Cannoners = 60;
-    mc.Ship.Crew.Exp.Soldiers = 60;
+    SetCrewExp(mc, 60.0);
 
     SetCharacterGoods(mc, GOOD_BALLS, 500);
     SetCharacterGoods(mc, GOOD_GRAPES, 500);
@@ -814,9 +812,7 @@ void CalculateInfoDataF7()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 50;
-    mc.Ship.Crew.Exp.Sailors = 50;
-    mc.Ship.Crew.Exp.Cannoners = 50;
-    mc.Ship.Crew.Exp.Soldiers = 50;
+    SetCrewExp(mc, 50.0);
 
     SetCharacterGoods(mc, GOOD_BALLS, 300);
     SetCharacterGoods(mc, GOOD_GRAPES, 300);
@@ -1044,9 +1040,7 @@ void CalculateInfoDataF11()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 100;
-    mc.Ship.Crew.Exp.Sailors = 100;
-    mc.Ship.Crew.Exp.Cannoners = 100;
-    mc.Ship.Crew.Exp.Soldiers = 100;
+    SetCrewExp(mc, 100.0);
     UpgradeShipParameter(mc, "SpeedRate"); //апгрейдить скорость
     UpgradeShipParameter(mc, "TurnRate");  //манёвренность
     UpgradeShipParameter(mc, "HP");        //корпус
@@ -1334,9 +1328,7 @@ void CalculateInfoDataF12()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 100;
-    mc.Ship.Crew.Exp.Sailors = 100;
-    mc.Ship.Crew.Exp.Cannoners = 100;
-    mc.Ship.Crew.Exp.Soldiers = 100;
+    SetCrewExp(mc, 100.0);
     UpgradeShipParameter(mc, "SpeedRate"); //апгрейдить скорость
     UpgradeShipParameter(mc, "TurnRate");  //манёвренность
     UpgradeShipParameter(mc, "HP");        //корпус
@@ -1815,9 +1807,7 @@ void CalculateInfoDataF14()
     mc.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS18;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 80;
-    mc.Ship.Crew.Exp.Sailors = 80;
-    mc.Ship.Crew.Exp.Cannoners = 80;
-    mc.Ship.Crew.Exp.Soldiers = 80;
+    SetCrewExp(mc, 80.0);
     UpgradeShipParameter(mc, "SpeedRate"); //апгрейдить скорость
     UpgradeShipParameter(mc, "TurnRate");  //манёвренность
     UpgradeShipParameter(mc, "HP");        //корпус
@@ -2068,9 +2058,7 @@ void CalculateInfoDataF15()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 100;
-    mc.Ship.Crew.Exp.Sailors = 100;
-    mc.Ship.Crew.Exp.Cannoners = 100;
-    mc.Ship.Crew.Exp.Soldiers = 100;
+    SetCrewExp(mc, 100.0);
     UpgradeShipParameter(mc, "SpeedRate"); //апгрейдить скорость
     UpgradeShipParameter(mc, "TurnRate");  //манёвренность
     UpgradeShipParameter(mc, "HP");        //корпус
@@ -2769,9 +2757,7 @@ void CalculateInfoDataF25()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS24;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 100;
-    mc.Ship.Crew.Exp.Sailors = 100;
-    mc.Ship.Crew.Exp.Cannoners = 100;
-    mc.Ship.Crew.Exp.Soldiers = 100;
+    SetCrewExp(mc, 100.0);
     UpgradeShipParameter(mc, "SpeedRate"); //апгрейдить скорость
     UpgradeShipParameter(mc, "TurnRate");  //манёвренность
     UpgradeShipParameter(mc, "HP");        //корпус
@@ -3197,9 +3183,7 @@ void CalculateInfoDataF32()
     mc.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
     SetCrewQuantityFull(mc);
     mc.Ship.Crew.Morale = 80;
-    mc.Ship.Crew.Exp.Sailors = 90;
-    mc.Ship.Crew.Exp.Cannoners = 70;
-    mc.Ship.Crew.Exp.Soldiers = 70;
+    SetCrewExp(mc, 90.0);
     SetCharacterGoods(mc, GOOD_BALLS, 100);
     SetCharacterGoods(mc, GOOD_GRAPES, 100);
     SetCharacterGoods(mc, GOOD_KNIPPELS, 100);

@@ -486,102 +486,7 @@ void SetSPECIALMiniTable(string _tabName, ref _chr)
 // опыт команды нпс _chr
 void SetCrewExpTable(ref _chr, string _tabName, string _bar1, string _bar2, string _bar3)
 {
-    int     i;
-	string  row, skillName, col;
-    int     skillVal;
-
-    GameInterface.(_tabName).select = 0;
-	GameInterface.(_tabName).hr.td1.str = "";
-	for (i=1; i<=3; i++)
-	{
-	    row = "tr" + i;
-
-	    GameInterface.(_tabName).(row).td1.icon.width = 40;
-    	GameInterface.(_tabName).(row).td1.icon.height = 40;
-    	// GameInterface.(_tabName).(row).td1.icon.offset = "0, 2";
-		GameInterface.(_tabName).(row).td2.align = "left";
-		// GameInterface.(_tabName).(row).td2.scale = 0.8;
-		GameInterface.(_tabName).(row).td2.textoffset = "10,0";
-		GameInterface.(_tabName).(row).td3.align = "right";
-		// GameInterface.(_tabName).(row).td3.scale = 0.8;
-	}
-	GameInterface.(_tabName).tr1.UserData.ID = "Sailors";
-	GameInterface.(_tabName).tr1.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr1.td1.icon.image = "sailors exp";
-	GameInterface.(_tabName).tr1.td2.str = XI_ConvertString("Sailors");
-	if (GetCrewQuantity(_chr) > 0)
-    {
-		GameInterface.(_tabName).tr1.td3.str = XI_ConvertString(GetExpName(int(_chr.Ship.Crew.Exp.Sailors)));
-	}
-	else
-	{
-		GameInterface.(_tabName).tr1.td3.str = "";
-	}
-	
-	GameInterface.(_tabName).tr2.UserData.ID = "Cannoners";
-	GameInterface.(_tabName).tr2.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr2.td1.icon.image = "cannoners exp";
-	GameInterface.(_tabName).tr2.td2.str = XI_ConvertString("Cannoners");
-	if (GetCrewQuantity(_chr) > 0)
-    {
-		GameInterface.(_tabName).tr2.td3.str = XI_ConvertString(GetExpName(int(_chr.Ship.Crew.Exp.Cannoners)));
-	}
-		else
-	{
-		GameInterface.(_tabName).tr2.td3.str = "";
-	}
-	
-    GameInterface.(_tabName).tr3.UserData.ID = "Soldiers";
-	GameInterface.(_tabName).tr3.td1.icon.group = "EQUIP_ICONS";
-    GameInterface.(_tabName).tr3.td1.icon.image = "boarders exp";
-	GameInterface.(_tabName).tr3.td2.str = XI_ConvertString("Soldiers");
-	if (GetCrewQuantity(_chr) > 0)
-    {
-		GameInterface.(_tabName).tr3.td3.str = XI_ConvertString(GetExpName(int(_chr.Ship.Crew.Exp.Soldiers)));
-	}
-		else
-	{
-		GameInterface.(_tabName).tr3.td3.str = "";
-	}
-	// прорисовка
-	Table_UpdateWindow(_tabName);
-	
-	///  прогресбары
-	GameInterface.StatusLine.(_bar1).Max   = 100;
-    GameInterface.StatusLine.(_bar1).Min   = 1;
-    if (GetCrewQuantity(_chr) > 0)
-    {
-    	GameInterface.StatusLine.(_bar1).Value = int(_chr.Ship.Crew.Exp.Sailors);
-    }
-    else
-    {
-    	GameInterface.StatusLine.(_bar1).Value = 1;
-    }
-    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, _bar1,0);
-    
-    GameInterface.StatusLine.(_bar2).Max   = 100;
-    GameInterface.StatusLine.(_bar2).Min   = 1;
-    if (GetCrewQuantity(_chr) > 0)
-    {
-    	GameInterface.StatusLine.(_bar2).Value = int(_chr.Ship.Crew.Exp.Cannoners);
-    }
-    else
-    {
-    	GameInterface.StatusLine.(_bar2).Value = 1;
-    }
-    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, _bar2,0);
-    
-    GameInterface.StatusLine.(_bar3).Max   = 100;
-    GameInterface.StatusLine.(_bar3).Min   = 1;
-    if (GetCrewQuantity(_chr) > 0)
-    {
-    	GameInterface.StatusLine.(_bar3).Value = int(_chr.Ship.Crew.Exp.Soldiers);
-    }
-    else
-    {
-    	GameInterface.StatusLine.(_bar3).Value = 1;
-    }
-    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE, _bar3,0);
+	//
 }
 
 void SetShipOTHERTable(string _tabName, ref _chr)
@@ -734,13 +639,14 @@ void SetShipOTHERTable(string _tabName, ref _chr)
 	GameInterface.(_tabName).tr9.UserData.ID = "CannonType";
 	GameInterface.(_tabName).tr9.td1.icon.group = "EQUIP_ICONS";
     GameInterface.(_tabName).tr9.td1.icon.image = "Cannons";
-	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(int(_chr.Ship.Cannons.Type)) + "s2");
+	int cannonType = GetCannonTypeByBort(_chr, "cannonl");
+	GameInterface.(_tabName).tr9.td2.str = XI_ConvertString(GetCannonType(cannonType) + "s2");
 	
-	if (int(_chr.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
+	if (cannonType != CANNON_TYPE_NONECANNON)
 	{
 		if(GetCannonsNum(_chr) > 0)
 		{
-		GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(int(_chr.Ship.Cannons.Type))) + " / " + GetCannonsNum(_chr);
+		GameInterface.(_tabName).tr9.td3.str = XI_ConvertString("caliber" + GetCannonCaliber(cannonType)) + " / " + GetCannonsNum(_chr);
 	}
 	else
 	{
@@ -946,4 +852,10 @@ string GetJobsList(ref chrVT, string divider)
 
 	if (result == "") return XI_ConvertString("passengership");
 	return strleft(&result, strlen(&result) - strlen(&divider));
+}
+
+string XI_GetHumanCurrentMax(ref current, ref maximum, string add1 = "", string add2 = "")
+{
+	if (float(maximum) > float(current)) return current + " / " + maximum + add1;
+	return maximum + add2;
 }

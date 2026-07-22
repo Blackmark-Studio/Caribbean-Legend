@@ -5,7 +5,7 @@ Barque {A barca é ideal para longas viagens. Com porão espaçoso e boa navega�
 Battleship {Navios de linha de 3ª classe são muito numerosos e os mais equilibrados em combate, feitos para batalhas em linha. Têm poder de fogo suficiente para enfrentar até leviatãs de 100 canhões e ainda superam esses gigantes em velocidade e manobrabilidade.}
 Brig {Brigs são amplamente usados na marinha para reconhecimento. Calado raso, linhas de casco afiadas e mastreação avançada fazem do brig um dos navios mais rápidos, e seus canhões de bom calibre o tornam um adversário muito perigoso.}
 Brigantine {Um lendário tipo de navio à vela. Rápida e ágil como uma andorinha, a brigantina é especialmente valorizada por piratas e aventureiros de todos os tipos. Seu projeto bem-sucedido torna a brigantina ideal para qualquer tarefa — do combate ao comércio.}
-CannonType {Tipo de arma - mostra o tipo (canhões ou culverinas), calibre atual e quantidade instalada}
+CannonType {Aqui são exibidas a quantidade atual e máxima de canhões no navio, bem como seu tipo e suas características. Se a quantidade atual for igual à máxima, apenas um valor será exibido.}
 Capacity
 {
 Porão - mostra a capacidade atual e máxima do navio. Quanto mais carregado, mais lento e difícil de manobrar ele fica.
@@ -16,12 +16,7 @@ Corvette {Corvetas são projetadas para reconhecimento, serviço de mensageiro e
 CORVETTE_QUEST {Um navio exclusivo, obra-prima dos construtores navais franceses. Uma profunda modernização do projeto do corveta aprimorou quase todas as suas características sem sacrificar a velocidade. A área de velas ampliada e o calibre dos canhões exigem uma tripulação mais experiente e numerosa, mas, se os testes no Caribe forem bem-sucedidos, as tecnologias empregadas aqui podem representar um verdadeiro avanço na construção naval.}
 Crew {Tripulação - mostra o número atual de tripulantes, além do mínimo e máximo para este navio.}
 Crew_Exp {Experiência da tripulação}
-Crew_Exp_hint
-{
-A experiência da tripulação é dividida em três categorias: marinharia (afeta o manejo do navio), artilharia (velocidade de recarga e precisão de mira) e abordagem (eficácia da tripulação no combate corpo a corpo).
-Uma tripulação experiente, mesmo em menor número, pode ser mais eficaz do que um navio lotado de novatos.
-A experiência em cada categoria é adquirida ao realizar as ações correspondentes (manobrar, disparar, abordar), mas também é perdida se as habilidades não forem praticadas por muito tempo.
-}
+Crew_Exp_hint {A vida a bordo é organizada em turnos de vigia, e todo marinheiro precisa saber lidar tanto com o cordame quanto com as carretas dos canhões. A experiência da tripulação afeta todas as características do navio, da velocidade de manobra das velas ao tempo de recarga dos canhões. $br()A experiência aumenta com o tempo, mas diminui com as baixas ou com a contratação de novatos na taverna. Preservar uma tripulação experiente é muito mais vantajoso do que contratar novatos e treiná-los do zero.}
 EastIndiaMan {Os East Indiamen reuniram as melhores qualidades dos pinnaces e superaram suas limitações, tornando-se navios universais quase perfeitos. Armados com canhões de grande calibre, podem rivalizar com navios de guerra de tamanho semelhante, e seu porão espaçoso permite um uso eficiente no comércio.}
 Ecliaton {Navios desse tipo foram construídos ainda na época do Cardeal Richelieu e hoje estão estruturalmente ultrapassados. Porém, possuem boas qualidades de navegação e podem carregar os canhões mais pesados, tornando-se uma força temível.}
 Elcasador {Um brilhante exemplo de navio de guerra projetado para operações especiais em alto-mar. Este galeão foi construído sob encomenda da Casa de Contratação para destruir os piratas mais perigosos que representam uma verdadeira ameaça ao comércio na região e aos interesses da Coroa Espanhola.}
@@ -35,11 +30,15 @@ Galeon_l {O galeão foi criado no início do século XVI a partir da carraca e j
 Galeon_sm {Um símbolo do poder e da ambição espanhola. Os conveses brilham com decorações douradas, e a popa é coroada pela imagem da Virgem da Misericórdia, padroeira do navio. Para alguns, 'Santa Misericordia' é a personificação da ordem; para outros, um temido símbolo da opressão real. E há quem veja nela a verdadeira Providência Divina.}
 GoodsKeys_hint
 {
-As teclas de seta "Esquerda" e "Direita" no teclado movem as mercadorias na linha selecionada da tabela por um lote. Se você segurar Shift ao pressionar as setas, as mercadorias serão movidas por completo.
-Clicar com o botão direito nas setas da linha de mercadorias transfere dez lotes de uma vez.
+As teclas de seta para a Esquerda e para a Direita movem as mercadorias da linha selecionada da tabela uma unidade por vez.
+Combinar as setas com teclas modificadoras altera a quantidade:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — mover tudo
+Clique com o botão direito em uma seta — mover tudo
 }
 Himera {Um navio de mestre, criado especialmente para as necessidades da inteligência naval britânica. Suas características se comparam às de navios de guerra de 3ª classe, mantendo a facilidade de manobra dos de 4ª classe.}
-Hull {Casco - mostra a quantidade atual e máxima de dano que o casco do navio pode suportar.}
+Hull {O casco mostra a durabilidade atual e máxima do navio. Abaixo de 10%, o navio começa a afundar lentamente.}
 LadyBeth
 {
 Um magnífico exemplo da construção naval inglesa, criado para patrulhas independentes em águas perigosas. Esta shnyava possui excelentes qualidades de navegação e um armamento impressionante para seu porte, permitindo competir com navios de classes superiores.
@@ -48,7 +47,27 @@ Seus anos de serviço militar já ficaram para trás, e a glória de seu antigo 
 LineShip {Navios de linha de 4ª classe não conseguem competir em armamento com seus irmãos mais velhos, então não faz sentido colocá-los na linha de batalha. Seu melhor uso é na escolta de comboios, já que sua velocidade e manobrabilidade os tornam mais eficazes nessa função.}
 Lugger {O lugre é um pequeno veleiro muito apreciado por marinheiros, especialmente contrabandistas, por sua manobrabilidade e versatilidade. Compensa a falta de velocidade com excelentes ângulos de navegação contra o vento. Apesar do tamanho, tem boa navegabilidade e pode realizar longas viagens.}
 LuggerQuest {O lugre de correio foi especialmente construído para atender às necessidades do serviço de mensageiros. Excelentes qualidades de navegação, ótimo desempenho contra o vento e armamento relativamente forte garantem a entrega confiável de despachos importantes e pequenas cargas valiosas.}
-Maneuver {Manobrabilidade - mostra a manobrabilidade atual do navio considerando todos os fatores (carga, habilidades do capitão, danos ao navio) e a manobrabilidade máxima possível.}
+Maneuver
+{
+A manobrabilidade determina a velocidade de giro do navio. Quanto maior o valor, melhor o navio responde ao leme. Ela é reduzida por danos, inexperiência da tripulação e sobrecarga do porão. As velas de combate proporcionam a manobrabilidade máxima.
+~
+Manobrabilidade máxima do navio: $number($ctx(turnrateMax))
+~
+Valores aproximados:$br
+_$key(human_turn_rate_1) – até $kstringTemp(HUMAN_TURN_RATE_STEP_1)
+_$key(human_turn_rate_2) – até $kstringTemp(HUMAN_TURN_RATE_STEP_2)
+_$key(human_turn_rate_3) – até $kstringTemp(HUMAN_TURN_RATE_STEP_3)
+_$key(human_turn_rate_4) – até $kstringTemp(HUMAN_TURN_RATE_STEP_4)
+_$key(human_turn_rate_5) – até $kstringTemp(HUMAN_TURN_RATE_STEP_5)
+_$key(human_turn_rate_6) – qualquer valor acima
+}
+ManeuverCurrent
+{
+~
+Manobrabilidade atual, considerando as habilidades do capitão e o estado do navio:
+$number($ctx(turnrate)) — $percent($ctx(turnratePercent)) do máximo.
+~
+}
 Manowar {Navios de linha de 2ª classe são a base do poder naval de qualquer nação. Junto com os de 3ª classe, formam uma frota que une força e manobrabilidade. Na ausência de navios de 1ª classe no esquadrão, alguns deles servem como capitânia.}
 Manowar_e {Um navio de linha de 1ª classe é uma verdadeira fortaleza flutuante. Graças ao seu poder de fogo aterrorizante, pode afundar qualquer oponente com apenas algumas salvas precisas. Mas mesmo as maiores potências navais possuem poucos desses navios, usados como capitânias em grandes batalhas navais.}
 MayFang
@@ -83,7 +102,7 @@ Melhorar o aparelho vélico pode reforçar os pontos fortes ou suavizar as fraqu
 }
 Sails {Velas - mostra a quantidade atual e máxima de dano que as velas do navio podem suportar.}
 Santisima {Este navio foi lançado no famoso estaleiro de Havana. Seu casco é um pouco mais leve e frágil que o de outros navios de 1ª classe, mas isso é mais do que compensado por qualidades de navegação superiores.}
-sCannons {Mostra o calibre máximo permitido e o número máximo de canhões no navio.}
+sCannons {O calibre atual e máximo dos canhões que podem ser instalados neste navio. Se o calibre atual for igual ao máximo, apenas um valor será exibido.}
 Schooner {Boas qualidades de navegação, porão espaçoso, calado raso e armamento decente fizeram da escuna um dos navios de pequeno porte mais populares. É igualmente adequada para comércio, navegação costeira e combate.}
 Schooner_W {Marinheiros no Novo Mundo foram os primeiros a valorizar as escunas e começaram a usá-las para fins militares. Para isso, foi preciso modificar um pouco o casco, reduzir o espaço útil do porão e adicionar canhões, mas o resultado valeu a pena. Bem armada, rápida e manobrável, a escuna de guerra é uma ameaça séria para qualquer navio mercante.}
 Shipyard_hint
@@ -93,12 +112,31 @@ O herói não pode vender seu navio se tiver companheiros. Também não é poss�
 Para trocar o navio do herói ou de um companheiro mantendo todo o conteúdo do porão e a tripulação, selecione na lista de navios da esquadra do herói (à esquerda da interface) o navio que será substituído e, na lista de navios à venda no estaleiro (à direita da interface), o desejado, depois clique no botão "Comprar".
 Para comprar um novo navio (atribuir um novo companheiro), selecione primeiro um slot vazio na lista à esquerda antes de comprar.
 }
+ShipyardCannons_hint {É possível negociar canhões no estaleiro, mas nem todos os calibres estão disponíveis para venda. Você não encontrará bombardas nem colubrinas inteiras aqui. Os canhões vendidos pelo estaleiro estão sempre em perfeitas condições. Ao vender canhões, eles são reparados primeiro, e o custo do reparo é descontado do valor da transação.}
 Shnyava {A shnyava e a brigantina foram precursoras do brigue. Graças ao design eficiente do casco, boa velocidade e capacidade de carregar canhões pesados, esses navios se tornaram muito populares tanto no Caribe quanto na Europa. São frequentemente usados para escoltar comboios mercantes de pequeno porte.}
 Sloop {Com boa velocidade e manobrabilidade, além de armamento sólido para seu porte, o sloop é um navio de patrulha confiável, também adequado para reconhecimento.}
-Speed {Velocidade - mostra a velocidade máxima atual do navio considerando todos os fatores (carga, habilidades do capitão, danos ao navio) e a velocidade máxima que o navio pode alcançar.}
+Speed {A velocidade máxima que o navio pode alcançar nas condições atuais e com o vento em força máxima. Ela é afetada pelas aptidões e habilidades do capitão e do Navegador, pelos amuletos, pela carga do navio, pelo desgaste das velas e pela experiência da tripulação.}
+MaxSpeed {A velocidade máxima que o navio pode alcançar em condições ideais e com o vento em força máxima. Embarcações mais leves e com velame bem desenvolvido costumam ser mais rápidas, mas pagam por isso com um casco menos resistente e um porão menor.}
 TakeAllGoods_hint {O botão "Transferir todos os bens" move os bens para o navio do personagem de acordo com seu valor específico médio. Os bens mais valiosos são transferidos primeiro, depois os menos valiosos, e assim por diante até não haver mais espaço livre no porão.}
 Tartane {Uma barca de pesca não é o melhor navio para um capitão de destaque na alta sociedade. Mas se o destino tirou seu navio favorito, este barco modesto serve bem para viagens rápidas entre ilhas—só não se esqueça: é só por enquanto!}
 Valciria {Um belo brigue inglês. Alta velocidade e manobrabilidade, bom desempenho contra o vento e duas dezenas de canhões no convés fazem deste veleiro um sonho.}
 Warship {Navios desse tipo foram construídos na época do Cardeal Richelieu e hoje estão estruturalmente ultrapassados. Ainda assim, possuem boas qualidades de navegação e podem carregar os canhões mais pesados, tornando-se uma força formidável.}
 WarTartane {Tartanas são os mesmos barcos de pesca adaptados às pressas para o trabalho costeiro nas perigosas águas do Caribe. Seu armamento modesto e construção improvisada não impressionam, mas conseguem afugentar piratas inexperientes ou contrabandistas pobres. Uma solução temporária quando não há muitas opções.}
 XebekVML {O xebec é o tipo de navio mediterrâneo mais famoso. Seu casco estreito e as grandes velas latinas em todos os mastros permitem navegar em ângulos extremos ao vento, tornando-o um adversário bastante incômodo. Infelizmente, a baixa velocidade com vento favorável limita o xebec principalmente à pirataria e ao contrabando.}
+ShipPower {O poder do navio representa o quanto a embarcação parece ameaçadora para um observador externo. O valor atual é afetado pela classe e especialização do navio, pela quantidade e pelo estado dos canhões, pelo tamanho e treinamento da tripulação, pelo estado do casco e das velas e pelas habilidades do capitão. Todos preferirão manter distância de uma pinaça comandada por um degolador conhecido em todo o Caribe, enquanto uma fragata avariada nas mãos de um jovem inexperiente logo atrairá problemas. $br$red O poder de cada navio da esquadra é somado ao poder total da esquadra, que influencia o comportamento das esquadras hostis e dos piratas no mapa global. Esse valor pode ser consultado na tela “Nações”.}
+Cannon_DamageMultiply_header {Multiplicador de dano dos canhões}
+Cannon_DamageMultiply_text {Valor pelo qual o dano do projétil é multiplicado.}
+Cannon_firerange_header {Alcance}
+Cannon_firerange_text {A distância máxima em que o canhão pode atingir um alvo. A munição escolhida, as habilidades, os amuletos e até o balanço do navio podem afetar o alcance final.}
+Cannon_reloadtime_header {Tempo de recarga}
+Cannon_reloadtime_text {O tempo necessário para recarregar completamente os canhões. É afetado pelo tamanho e pela experiência da tripulação, além das habilidades do capitão e do artilheiro.}
+Cannon_hp_header {Durabilidade máxima}
+Cannon_hp_text {Este valor determina quantos disparos um canhão pode efetuar antes de ser completamente destruído. Quanto maior ele for, menos vezes será necessário reparar o canhão. Cada tipo de canhão possui sua própria durabilidade máxima, que geralmente aumenta conforme o calibre.}
+Cannon_weight_header {Peso do canhão}
+Cannon_weight_text {Os canhões ocupam muito espaço a bordo; em navios de guerra, a bateria de artilharia pode consumir até metade da capacidade de carga. O peso aumenta conforme o calibre e o poder de fogo, enquanto as colubrinas pesam mais que canhões do mesmo calibre.}
+Cannon_health_0 {Destruídos}
+Cannon_health_1 {Desgastados}
+Cannon_health_2 {Em ordem}
+Cannon_health_3 {Bem ajustados}
+Cannon_weight_in_stock {Isto representa aproximadamente$br() $percent($ctx(weightPercent)) do porte bruto}
+Cannon_health_on_ship {Estado dos canhões no porão do “$ctx(ShipName)”: $ctx(health)}

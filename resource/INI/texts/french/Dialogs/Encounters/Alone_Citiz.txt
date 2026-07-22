@@ -1,0 +1,25 @@
+Alone_Citiz_First_time_text_1 {$rand(Bonjour|Salut|Mes salutations|Bonne journée), $rand(inconnu|voyageur|errant)! $rand(À vrai dire, vous m’avez plutôt $rand(fait peur|flanqué une belle frayeur).|Je ne m’attendais pas à voir quelqu’un ici.|Vous aussi, vous êtes venu vous changer les idées ? C’est une bonne chose.) Je m’appelle $npcName. $rand(Puis-je vous aider en quelque chose ?|Que puis-je faire pour vous ?|Vous vouliez quelque chose ?|Que me vaut votre visite ?)}
+Alone_Citiz_First_time_l0 {$rand(Dans la jungle, personne n’entendra tes cris, $npcName.|Je collecte des dons volontaires-obligatoires pour les besoins des Frères de la Côte.|Tu ne savais donc pas que le passage sur ce sentier est payant, $npcName ?|Tu croyais pouvoir te promener comme ça sur mon territoire ?|Tu n’as donc pas entendu parler de la nouvelle taxe ? On vient justement d’en frapper les stupides escapades solitaires dans la jungle.) $rand(Vide-moi donc tes poches.|Allez, donne-moi tes affaires.|Partage tes biens de valeur tant que je suis encore de bonne humeur.|Montre-moi ce qui tinte dans tes poches.|Donne-moi ta monnaie tant que tu tiens encore à ta tête.)(Chance $ctx(Chance)%)}
+Alone_Citiz_First_time_l1 {Je suis simplement venu vous saluer, $npcName. Tout de bon.}
+Alone_Citiz_First_time_text_2 {Nous revoilà. Vous vouliez quelque chose ? Il me semble que nous avons déjà tout réglé.}
+Alone_Citiz_First_time_l0_a {$rand(Oui, il y a bien quelque chose.|J’allais oublier...|À bien y réfléchir, oui !|En effet, je voulais quelque chose !) $rand(Dans la jungle, personne n’entendra tes cris, $npcName.|Je collecte des dons volontaires-obligatoires pour les besoins des Frères de la Côte.|Tu ne savais donc pas que le passage sur ce sentier est payant, $npcName ?|Tu croyais pouvoir te promener comme ça sur mon territoire ?|Tu n’as donc pas entendu parler de la nouvelle taxe ? On vient justement d’en frapper les stupides escapades solitaires dans la jungle.) $rand(Vide-moi donc tes poches.|Allez, donne-moi tes affaires.|Partage tes biens de valeur tant que je suis encore de bonne humeur.|Montre-moi ce qui tinte dans tes poches.|Donne-moi ta monnaie tant que tu tiens encore à ta tête. (Chance $ctx(Chance)%)}
+Alone_Citiz_First_time_l0_b {Je me promène simplement, $npcName, n’allez pas vous faire des idées.}
+Alone_Citiz_Bullying_Fail {Extorsion échouée}
+Alone_Citiz_Bullying_Success {Extorsion réussie}
+Alone_Citiz_Robbery_text_1 {$rand(Sois maudit, canaille ! Je ne te donnerai rien !|Tu crois que tu es le premier vaurien que je rencontre ? Tu peux toujours courir !)}
+Alone_Citiz_Robbery_text_2 {$rand(C’est tout ce que j’ai.|Vous me prenez jusqu’au dernier sou. Soit, le Ciel vous le rendra.|Où va donc le monde, on ne peut plus faire un pas en paix.|Quelle époque, chacun cherche à vous rouler, à vous dépouiller, pour peu qu’il ne vous prenne pas la vie.) $rand(Prends ça et va-t’en, misérable.|Voilà tout ce que j’ai.|Prenez-le. Je n’ai plus rien.|C’est tout ce qu’il me reste. Prenez-le et laissez-moi.)}
+Alone_Citiz_Robbery_l1 {$rand(Eh bien, il va falloir prendre tes affaires sur ton cadavre.|Mauvaise réponse.|Très bien, voici maintenant la partie désagréable.|Parfait. C’est bien plus simple de détrousser les morts.)}
+Alone_Citiz_Robbery_l2 {Voilà qui est mieux. Et pas de sottises.}
+Alone_Citiz_AfterRobbery_text_1 {Tu m’as déjà laissé sans un sou, misérable, qu’est-ce que tu veux encore ?!}
+Alone_Citiz_AfterRobbery_l1 {Je regarde si je n’ai rien oublié.}
+Alone_Citiz_ToRumours_first {$rand(Raconte-moi plutôt quelles histoires circulent dans cette taverne.|Dis-moi plutôt ce qu’il y a de neuf dans les environs.|Raconte-moi plutôt, l’ami, comment va la vie à terre.)}
+Alone_Citiz_ToRumours_second {$rand(Quelles histoires circulent dans cette taverne ?|Quoi de neuf dans les environs ?|Comment va la vie à terre ?)}
+Alone_Citiz_Rumours_posrep_1 {$rand(Voilà où nous en sommes...|Peut-être que cela vous amusera.)}
+Alone_Citiz_Rumours_answ_1 {$swear Tu me racontes des choses intéressantes, $npcName. Tu sais autre chose ?}
+Alone_Citiz_Rumours_posrep_2 {$rand(Voilà où nous en sommes...|Peut-être que cela vous amusera.)}
+Alone_Citiz_Rumours_answ_2 {$swear C’est très intéressant ! D’autres nouvelles ?}
+Alone_Citiz_Rumours_posrep_3 {~ Et vous, capitaine, avez-vous des nouvelles ?}
+Alone_Citiz_Rumours_answ_3 {$rand(Il se passe de tout en ce monde, mais hélas, je n’ai aucune nouvelle.|Je suis un peu pressé, alors une autre fois.)}
+Alone_Citiz_Rumours_Block {$rand(Malheureusement, je n’en sais pas davantage. Permettez-moi de partir.|Vous m’avez lassé avec vos questions. Pardonnez-moi, mais des affaires m’attendent.)}
+Alone_Citiz_Rumours_Block_Ok {Dans ce cas, adieu.}
+Alone_Citiz_Rumours_Bye {$rand(Merci, je dois prendre congé.|Tout de bon.)}

@@ -1,0 +1,69 @@
+Enc_Rapers_dialog_First_time_text_1 {$rand(Va' per la tua strada, $manWoman(compagno|ragazza). Lei ci ringrazierà alla fine, lo sai.|Vattene! Lascia che i signori si divertano un po'.|Non sono affari tuoi, $manWoman(straniero|ragazza). Ci divertiremo solo un po', e tutto qui!)}
+Enc_Rapers_dialog_First_time_l1_1 {$rand(Non lo permetterò!|Abbandona i tuoi piani malvagi in questo istante!|Non tollererò alcuna violenza!)}
+Enc_Rapers_dialog_First_time_l2_1 {$rand(Capito, me ne vado. Scusa per il disturbo.|Non oserò più disturbarvi. Scusate per il disturbo.)}
+Enc_Rapers_dialog_First_time_text_2 {$rand(Vai per la tua strada, $manWoman(compagno|ragazza). Lei ci ringrazierà alla fine, lo sai.|Vattene! Lascia che i signori si divertano un po'.|Non è affar tuo, $manWoman(sconosciuto|ragazza). Ci divertiremo solo un po', e basta!!)}
+Enc_Rapers_dialog_First_time_l1_2 {$rand(Non permetterò questo!|Abbandona i tuoi piani malvagi in questo istante!|Non tollererò alcuna violenza!)}
+Enc_Rapers_dialog_First_time_l2_2 {$rand(Ho capito, me ne vado. Scusa per il disturbo.|Non oserò disturbarti più. Scusa per il disturbo.)}
+Enc_Rapers_dialog_First_time_text_3 {$rand(Ehi, $manWoman(straniero|signorina), perché stai cercando guai? Questa ragazza è un'individua 'ben conosciuta' nel nostro insediamento. L'abbiamo già pagata, ma ti ha notato e ha deciso di scappare con i nostri soldi.|Ehi, $manWoman(compagno|ragazza), vai per la tua strada e non interferire con i nostri affari. Abbiamo vinto questa ragazza a un gioco di dadi, ma è stata un po' troppo veloce e quindi è scappata, la stiamo inseguendo da un'ora in questa giungla.)}
+Enc_Rapers_dialog_First_time_l1_3 {Non mi importa, non ti permetterò di farle del male!}
+Enc_Rapers_dialog_First_time_l2_3 {$rand(Oh, capisco! E quasi le ho creduto! Che svergognata...|Ah, beh, allora è un'altra questione. Divertitevi, ragazzi!)}
+Enc_Rapers_dialog_First_time_text_4 {Vai per la tua strada, $manWoman(bravo uomo|signorina). Ce la faremo senza di te.}
+Enc_Rapers_dialog_First_time_l1_4 {Non tollererò alcuna violenza!}
+Enc_Rapers_dialog_First_time_text_5 {$rand(Ehi, $manWoman(straniero|signorina), perché stai cercando guai? Questa ragazza è un'individuo 'noto', nel nostro insediamento. L'abbiamo già pagata, ma ti ha notato e ha deciso di scappare con i nostri soldi.|Ehi, $manWoman(compagno|ragazza), vai per la tua strada e non interferire con i nostri affari. Abbiamo vinto questa ragazza in un gioco di dadi, ma è stata un po' troppo veloce a scappare, l'abbiamo inseguita per un'ora.)}
+Enc_Rapers_dialog_First_time_l1_5 {Non mi importa - non ti permetterò di farle del male!}
+Enc_Rapers_dialog_First_time_l2_4 {$rand(Oh, capisco! E quasi ci credevo! Che sgualdrina...|Ah, beh, allora è un'altra questione. Divertitevi, ragazzi!)}
+Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(Beh, hai certamente scelto il momento giusto per una passeggiata...|Allora, hai deciso di diventare un eroe?) Occupati di h$manWoman(sono|eh), ragazzi!|Tu $manWoman(melma|sporcizia)! Osate ostacolare la nostra strada?! Taglialo$manWoman(sono|eh)!)}
+Enc_Rapers_dialog_Node_Fight_l1_1 {Ho visto persone più minacciose!}
+Enc_Rapers_dialog_Node_3_text_1 {Dovresti sapere che ci è costata un bel po'! E se sei così nobile, puoi portartela via $ctx(price) pesos.$manWoman( Ti divertirai con lei, he-he...|)}
+Enc_Rapers_dialog_Node_3_l1_1 {$rand(Ecco i tuoi soldi. La porto con me.|Smetti di sgranare i denti. Sto portando la ragazza con me. Ecco i tuoi soldi.)}
+Enc_Rapers_dialog_Node_3_l2_1 {$rand(Allora, vuoi soldi? Che ne dici di freddo acciaio?|Si suppone che sia divertente, guarda la ragazza stupido! È spaventata!|A chi stai cercando di fregare, te degenerato!)}
+Enc_Rapers_dialog_Node_5_text_1 {Perché le credi in primo luogo? Quale violenza? È scappata di casa, e il nostro capo ci ha mandati a trovarla.}
+Enc_Rapers_dialog_Node_5_l1_1 {$rand(Beh, allora è un'altra storia. Vai, insegui il tuo fuggitivo.|Ah, capisco. Beh, continua a inseguirla allora... e ho degli affari da sbrigare.)}
+Enc_Rapers_dialog_Node_5_l2_1 {$rand(Racconta queste favole ai tuoi nipoti, se vivi abbastanza a lungo per averli!|A chi stai cercando di prendere in giro, bastardo?!)}
+Enc_Rapers_dialog_Node_5_l3_1 {La porterò a casa da solo, per evitare guai. Chi sono i suoi genitori?}
+Enc_Rapers_dialog_Node_6_text_1 {Vuoi morire? È la tua scelta...}
+Enc_Rapers_dialog_Node_6_l1_1 {Guarda chi parla.}
+Enc_Rapers_dialog_Node_7_fatherNom_1 {is a store owner}
+Enc_Rapers_dialog_Node_7_fatherGen_1 {of a store owner}
+Enc_Rapers_dialog_Node_7_fatherNom_2 {serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherGen_2 {who serves in the port office}
+Enc_Rapers_dialog_Node_7_fatherNom_3 {serves as the prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherGen_3 {of a prison's commandant}
+Enc_Rapers_dialog_Node_7_fatherNom_4 {is a shipyard owner}
+Enc_Rapers_dialog_Node_7_fatherGen_4 {of a shipyard owner}
+Enc_Rapers_dialog_Node_7_text_1 {Suo padre $ctx(fatherName), nel insediamento di $ctx(cityName). Ma per favore, non deluderci, perché lui non è qualcuno con cui giocare, ci scuoierà tutti vivi...}
+Enc_Rapers_dialog_Node_7_l1_1 {Non preoccuparti. La consegnerò a lui.}
+Enc_Rapers_dialog_Node_8_text_1 {E così ci incontriamo di nuovo. Dove è la tua compagna? Oh, beh, in realtà non ho bisogno di lei, se sei qui.}
+Enc_Rapers_dialog_Node_8_l1_1 {Signori, credo davvero che abbiate già ricevuto abbastanza denaro per lasciare in pace la ragazza.}
+Enc_Rapers_dialog_Node_9_sTemp_1 {a leg}
+Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
+Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
+Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
+Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
+Enc_Rapers_dialog_Node_9_text_1 {Cosa sono i tuoi soldi rispetto ai tesori di $ctx(pirateName)? Era così avido che non voleva sposare sua figlia perché voleva evitare spese extra...\nMa ha la nostra parte nei suoi bauli! $ctx(pirateName2) ha perso nell'abbordaggio $ctx(tempText)! E cosa hai ottenuto invece? Pietosa manciata di argento? $ctx(pirateName2) ha sempre portato tutto il bottino nel suo nascondiglio. Ma ora non ci arrenderemo! Mostraci dove sono i suoi forzieri!}
+Enc_Rapers_dialog_Node_9_l1_1 {Ebbene, certamente non mi sono candidato per proteggere i tesori del tuo capitano, ma non posso mostrarti il posto... Perché non so dove sia questo posto.}
+Enc_Rapers_dialog_Node_10_text_1 {Stai mentendo!!! Posso sentire l'odore dell'oro provenire da questa grotta! Mostrami il posto se non vuoi morire!}
+Enc_Rapers_dialog_Node_10_l1_1 {Vedo che le mie parole non sono riuscite a convincerti. Forse, la mia lama sarà più espressiva?}
+Enc_Rapers_dialog_Node_11_text_1 {Tu $manWoman(canaglia|sporcizia)! Fuori dal mio cammino!}
+Enc_Rapers_dialog_Node_11_l1_1 {Argh!}
+Enc_Rapers_dialog_EncGirl_Berglar_text_1 {Ciao, buon $manWoman(uomo|signora). Abbiamo lamentele su di te.}
+Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {Lamentele da chi? Da quella puttana?}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {Guarda la tua lingua, capito? Non ti permetterò di insultare mia sorella! Prima l'hai molestata nella giungla, poi l'hai portata qui $manWoman(per più indecenza|e mi ha derubato).}
+Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {Ehi compagno, devo davvero ascoltare tutto questo?}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {No. Una somma modesta di solo $ctx(moneyAmount) pesos ti salveranno da tutti i guai.}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {Ebbene, le nobili imprese sono certamente un po' costose al giorno d'oggi. Va bene, prendilo...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_1 {Credo sarebbe più economico farti un buco nella pancia così non mi ostacoleresti la via per l'uscita.}
+Enc_Rapers_dialog_EncGirl_Berglar2_text_2 {No. Ma svuoterai anche le tue tasche, altrimenti ti pugnalerò!}
+Enc_Rapers_dialog_EncGirl_Berglar2_l1_2 {Bene, prendilo, mascalzone! Ma non te la caverai così facilmente...}
+Enc_Rapers_dialog_EncGirl_Berglar2_l2_2 {Credo che sarebbe più facile farti un buco nella pancia così da non ostacolare la mia via verso l'uscita.}
+Enc_Rapers_dialog_EncGirl_Berglar3_text_1 {Molto bene. Buon viaggio.}
+Enc_Rapers_dialog_EncGirl_Berglar3_l1_1 {Buona fortuna.}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {Certo che non lo farò, certo... Beh, addio a te, $manWoman(compagno|ragazza).$manWoman( E ricorda, non sei così affascinante che qualsiasi ragazza si sarebbe innamorata di te al primo sguardo. Questa sarebbe la mia lezione per te.|)}
+Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(Questo è sicuro!..|Vattene già!)}
+Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {Sembreresti come $manWoman(un uomo così nobile|una signora così ben educata), perché le parolacce?}
+Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {Mi si addice di più...}
+Enc_Rapers_dialog_Node_2_text_1 {Ebbene, l'hai chiesto tu! Dovremmo solleticarlo h$manWoman(sono|eh) con acciaio, ragazzi?}
+Enc_Rapers_dialog_Node_2_l1_1 {Prega prima di morire!}
+Enc_Rapers_dialog_OnceAgain_text_1 {Allora, vuoi unirti o no? $manWoman(Vattene, non c'è abbastanza per tutti noi|Sparisci mentre puoi, una ragazza è più che sufficiente per noi)!}
+Enc_Rapers_dialog_OnceAgain_l1_1 {Bene, allora non vi disturberò.}
+Enc_Rapers_dialog_OnceAgain_l2_1 {Non permetterò che accada alcuna violenza!}

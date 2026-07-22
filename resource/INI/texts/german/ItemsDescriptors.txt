@@ -52,7 +52,8 @@ descriptor_descr_EmpoweredAmmo {Diese Munition verbessert die Waffeneigenschafte
 descriptor_descr_EnhancingPotion {Hat einen besonderen Verstärkungseffekt.}
 descriptor_descr_Exotic
 {
-Dieses Objekt gehört nicht in die Hände eines guten Christen, und unheimliche Gerüchte über seinen Träger machen sofort die Runde.Erhöht die Flottenstärke um $percent($DescriptorBaseValue(Exotic)); Effekte stapeln sich.
+Dieses Objekt gehört nicht in die Hände eines guten Christen, und unheimliche Gerüchte über seinen Träger machen sofort die Runde.
+Erhöht die Flottenstärke um $percent($DescriptorBaseValue(Exotic)); Effekte stapeln sich.
 }
 descriptor_descr_Fancy {Dieses Stück besticht durch sein zeremonielles Aussehen, Einlagen und kostbare Materialien. Beim Tragen erhöht es Charisma um $number($DescriptorBaseValue(Fancy)). Effekte stapeln sich.}
 descriptor_descr_Fighter {Der Effekt ist für die Vorhut nützlich.}
@@ -89,7 +90,8 @@ descriptor_descr_Trinket {Ausgefallene und weniger ausgefallene Stücke, die Ken
 descriptor_descr_TwoHanded {Schwere Schusswaffe, die beim Feuern mit beiden Händen gehalten werden muss. Erfordert besondere Fertigkeiten.}
 descriptor_descr_Unremarkable
 {
-Solche Gegenstände hat jeder. Damit fällst du nicht auf und bleibst unbemerkt.Erhöht Tarnung um $number($DescriptorBaseValue(Unremarkable)). Effekte stapeln sich.
+Solche Gegenstände hat jeder. Damit fällst du nicht auf und bleibst unbemerkt.
+Erhöht Tarnung um $number($DescriptorBaseValue(Unremarkable)). Effekte stapeln sich.
 }
 descriptor_descr_Valuable {Hat einen hohen Verkaufswert.}
 descriptor_descr_WeaponCurvature_0 {Diese Waffe ist gerade oder nur leicht gekrümmt und eignet sich daher besser für schnelle Angriffe als für Hieb-Angriffe.}
@@ -106,7 +108,7 @@ descriptor_Exotic {Exotisch}
 descriptor_Fancy {Ausgefallen}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Brüchig}
-descriptor_GoodFit {Schlicht}
+descriptor_GoodFit {Passgenau}
 descriptor_GrapeAmmo {Kartätsche}
 descriptor_HealPotion {Heilung}
 descriptor_HeartDefence {Verstärkt}

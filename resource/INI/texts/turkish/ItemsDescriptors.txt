@@ -108,7 +108,7 @@ descriptor_Exotic {Egzotik}
 descriptor_Fancy {Süslü}
 descriptor_Fighter {$key(Fighter)}
 descriptor_Fragile {Kırılgan}
-descriptor_GoodFit {Sade}
+descriptor_GoodFit {Tam uyumlu}
 descriptor_GrapeAmmo {Saçma}
 descriptor_HealPotion {Şifa}
 descriptor_HeartDefence {Takviyeli}

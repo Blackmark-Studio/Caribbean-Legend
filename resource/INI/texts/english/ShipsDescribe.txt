@@ -5,20 +5,18 @@ Barque {A barque is ideally suited for long voyages. With a spacious hold and go
 Battleship {3rd-rate ships of the line are very numerous and the most balanced in combat qualities, designed for line battles. They have enough firepower to challenge even 100-gun leviathans. At the same time, they noticeably surpass them in speed and maneuverability.}
 Brig {Brigs are widely used in the navy for reconnaissance. Shallow draft, sharp hull lines, and advanced rigging make the brig one of the fastest ships, and its decent caliber guns make it a very dangerous opponent.}
 Brigantine {A legendary type of sailing ship. Fast and maneuverable like a swallow, the brigantine is especially valued by pirates and adventurers of all kinds. Its successful design makes the brigantine well-suited for any task—from combat to trade.}
-CannonType {Gun type - shows the type (cannons or culverins), current caliber, and number of guns installed}
+CannonType {This shows the current and maximum number of cannons aboard the ship, as well as their type and characteristics. If the current number equals the maximum, only one value is shown.}
 Capacity
 {
-Deadweight - shows the current and maximum capacity of the ship. The more loaded the ship, the more sluggish and slow it becomes.The guns installed on the ship are also taken into account when calculating deadweight. They can be removed from the ship, freeing up additional space for cargo. To do this, select the current guns in the ship's parameter list in the "Ship" interface.
+Deadweight - shows the current and maximum capacity of the ship. The more loaded the ship, the more sluggish and slow it becomes.
+The guns installed on the ship are also taken into account when calculating deadweight. They can be removed from the ship, freeing up additional space for cargo. To do this, select the current guns in the ship's parameter list in the "Ship" interface.
 }
 Caravel {The distinctive rigging of the caravel makes it easy to recognize this ship from a great distance. Its outdated design gives the caravel rather mediocre sailing qualities, which prevent it from competing equally with modern ships, despite having enough guns.}
 Corvette {Corvettes are designed for reconnaissance, courier service, and cruising operations. With good speed and maneuverability, a corvette can catch lighter ships and successfully avoid battle with heavier ones.}
 CORVETTE_QUEST {A custom ship, a masterpiece of French shipbuilders. Deep modernization of the corvette's design has improved almost all its characteristics without sacrificing speed. The increased sail area and gun caliber require a more experienced and numerous crew, but if the trials in the Caribbean are successful, the technologies used here may become a real breakthrough in shipbuilding.}
 Crew {Crew - shows the current number of crew members, as well as the minimum and maximum for this ship.}
 Crew_Exp {Crew experience}
-Crew_Exp_hint
-{
-Crew experience is divided into three categories: seamanship (affects ship handling), gunnery (reload speed and aiming accuracy), and boarding (crew effectiveness in melee combat).An experienced crew in smaller numbers can be more effective than an overloaded ship full of greenhands.Experience in all three categories is gained by the crew while performing the corresponding actions (maneuvering, shooting, boarding), but is also lost if the acquired skills are not practiced for a long time.
-}
+Crew_Exp_hint {Life aboard ship is organized into watches, and every sailor must know how to handle both rigging and gun carriages. Crew experience affects every ship characteristic, from sail-handling speed to cannon reload time. $br()Experience grows over time, but falls when crewmen are lost or greenhands are hired from the tavern. Preserving an experienced crew is far more worthwhile than recruiting greenhands and training them from scratch.}
 EastIndiaMan {East Indiamen embodied the best qualities of pinnaces and got rid of their shortcomings, becoming almost perfect universal ships. Carrying large-caliber guns, they can compete with warships of comparable size, and their spacious hold allows them to be used effectively for trade.}
 Ecliaton {Ships of this type were built back in the days of Cardinal Richelieu and are now structurally outdated. But they have decent sailing qualities and can carry the heaviest guns, making them a formidable force.}
 Elcasador {A brilliant example of a warship designed for special operations in the open ocean. This galleon was built by order of the Casa de Contratación to destroy the most dangerous pirates who pose a real threat to trade in the region and the interests of the Spanish Crown.}
@@ -32,30 +30,59 @@ Galeon_l {The galleon was created in the early 16th century based on the carrack
 Galeon_sm {A symbol of Spanish power and ambition. The decks shine with golden decorations, and the stern is crowned by the image of the Virgin of Mercy, the ship's patroness. For some, 'Santa Misericordia' is the embodiment of order, for others—a dreaded symbol of royal oppression. And some even see in it true Divine Providence.}
 GoodsKeys_hint
 {
-The "Left" and "Right" arrow keys on the keyboard move the goods in the selected row of the table by one batch. If you hold the Shift key while pressing the arrow keys, the goods will be moved in full.Right-clicking the arrows on the row with the goods in the interface transfers ten batches of goods at a time.
+The Left and Right arrow keys move goods in the selected table row one unit at a time.
+Combining the arrow keys with modifier keys changes the amount:
+Ctrl — ×10
+Shift — ×100
+Ctrl+Shift — move all
+Right-click an arrow — move all
 }
 Himera {A masterpiece ship, specially created for the needs of British naval intelligence. In its characteristics, it is comparable to 3rd-class warships, while retaining the ease of handling of 4th-class ships.}
-Hull {Hull - shows the current and maximum amount of damage the ship's hull can withstand.}
+Hull {Hull shows the ship's current and maximum structural integrity. Below 10%, the ship begins to sink slowly.}
 LadyBeth
 {
-A magnificent example of English shipbuilding, created for independent patrol service in dangerous waters. This shnyava has excellent sailing qualities and impressive armament for its size, allowing it to compete with higher-class ships.Her years of military service are long past, and the glory of her former owner now attracts antique dealers and treasure map traders more than sea wolves.
+A magnificent example of English shipbuilding, created for independent patrol service in dangerous waters. This shnyava has excellent sailing qualities and impressive armament for its size, allowing it to compete with higher-class ships.
+Her years of military service are long past, and the glory of her former owner now attracts antique dealers and treasure map traders more than sea wolves.
 }
 LineShip {4th-rate ships of the line cannot compete in firepower with their older brothers, so it makes no sense to put them in the battle line. Their best use is convoy protection, as their speed and maneuverability make them most effective for this task.}
 Lugger
 {
-The lugger is a small sailing ship that many sailors, especially smugglers, value for its maneuverability and versatility. Luggers compensate for their lack of speed under full sail with excellent windward angles.Despite their small size, luggers have good seaworthiness and can make long voyages.
+The lugger is a small sailing ship that many sailors, especially smugglers, value for its maneuverability and versatility. Luggers compensate for their lack of speed under full sail with excellent windward angles.
+Despite their small size, luggers have good seaworthiness and can make long voyages.
 }
 LuggerQuest {The courier lugger was specially built for the needs of the messenger service. Excellent sailing qualities, great windward performance, and fairly strong armament guarantee the reliable delivery of important dispatches and small valuable cargoes.}
-Maneuver {Maneuverability - shows the ship's maneuverability at the moment, taking into account all factors (cargo, captain's skills, ship damage), and the ship's maximum achievable maneuverability.}
+Maneuver
+{
+Maneuverability determines how quickly the ship turns. The higher the value, the better the ship responds to the helm. It is reduced by damage, an inexperienced crew, and an overloaded hold. Battle sails provide maximum maneuverability.
+~
+Maximum ship maneuverability: $number($ctx(turnrateMax))
+~
+Approximate values:$br
+_$key(human_turn_rate_1) – up to $kstringTemp(HUMAN_TURN_RATE_STEP_1)
+_$key(human_turn_rate_2) – up to $kstringTemp(HUMAN_TURN_RATE_STEP_2)
+_$key(human_turn_rate_3) – up to $kstringTemp(HUMAN_TURN_RATE_STEP_3)
+_$key(human_turn_rate_4) – up to $kstringTemp(HUMAN_TURN_RATE_STEP_4)
+_$key(human_turn_rate_5) – up to $kstringTemp(HUMAN_TURN_RATE_STEP_5)
+_$key(human_turn_rate_6) – anything higher
+}
+ManeuverCurrent
+{
+~
+Current maneuverability, accounting for the captain’s skills and the ship’s condition:
+$number($ctx(turnrate)) — $percent($ctx(turnratePercent)) of maximum.
+~
+}
 Manowar {2nd-rate ships of the line are the backbone of any nation's naval power. Together with 3rd-rate ships, they form a fleet that combines strength with maneuver. And in the absence of 1st-rate ships in the squadron, some of them serve as flagships.}
 Manowar_e {A 1st-rate ship of the line is a true floating fortress. Thanks to its terrifying firepower, it can send any opponent to the bottom with just a few accurate volleys. But even the greatest naval powers do not have many such ships, and they are used as flagships in major naval battles.}
 MayFang
 {
-This xebec has a lightened hull at the expense of strength, but this made it an unrivaled sailor—there is no other ship in the Caribbean capable of sailing almost directly against the wind!And twenty medium-caliber guns are a strong argument in sea rivalry.
+This xebec has a lightened hull at the expense of strength, but this made it an unrivaled sailor—there is no other ship in the Caribbean capable of sailing almost directly against the wind!
+And twenty medium-caliber guns are a strong argument in sea rivalry.
 }
 Memento
 {
-In this ship, one can hardly discern the outdated design of an English Brig, which compensates for its lack of sailing qualities with impressive firepower and a heavy, sturdy hull. Hanging with native amulets and soaked in death, it frightens not only enemies but also its own crew.
+In this ship, one can hardly discern the outdated design of an English Brig, which compensates for its lack of sailing qualities with impressive firepower and a heavy, sturdy hull. 
+Hanging with native amulets and soaked in death, it frightens not only enemies but also its own crew.
 }
 Mirage {Unlike bomb ketches, privateer ketches do not carry giant mortars designed for bombarding fortresses, but instead have a lighter, streamlined hull, which positively affects their sailing qualities. Even the yachts of princes might envy the speed of this privateer ketch.}
 Navio {Such a ship is affordable only for a truly wealthy merchant. A large and strong hull, a spacious hold, and advanced rigging allow for the longest voyages, and no less than three dozen heavy guns reliably protect it from pirates and privateers.}
@@ -79,19 +106,41 @@ Upgrading the rig can enhance the strengths or smooth out the weaknesses of spec
 }
 Sails {Sails - show the current and maximum amount of damage the ship's sails can withstand.}
 Santisima {This ship was launched from the famous Havana shipyard. Its hull is slightly lighter and weaker than other 1st-rate ships, but this is more than compensated by improved sailing qualities.}
-sCannons {Shows the maximum allowable caliber and the maximum possible number of guns on the ship.}
+sCannons {The current and maximum caliber of cannons that can be mounted on this ship. If the current caliber equals the maximum, only one value is shown.}
 Schooner {Good sailing qualities, a spacious hold, shallow draft, and decent armament have made the schooner one of the most popular small-class ships. It is equally suitable for trade, coastal navigation, and combat.}
 Schooner_W {Sailors in the New World were the first to appreciate schooners and began using them for military purposes. To do this, the hull had to be slightly modified, the useful hold space reduced, and guns added, but the result was worth it. Well-armed, fast, and maneuverable, the war schooner is a serious threat to any merchant ship.}
 Shipyard_hint
 {
-At the shipyard, you can buy, repair, or sell ships.The hero cannot sell his ship if he has companions. You also cannot buy a ship for a companion if the hero does not have his own ship.To change the hero's or companion's ship while keeping all the contents of the hold and crew, select in the hero's squadron ship list (on the left side of the interface) the ship to be replaced with a new one, and in the list of ships for sale at the shipyard (on the right side of the interface) the desired one, then click the "Buy" button.To buy a new ship (assign a new companion), first select an empty slot in the list on the left before purchasing.
+At the shipyard, you can buy, repair, or sell ships.
+The hero cannot sell his ship if he has companions. You also cannot buy a ship for a companion if the hero does not have his own ship.
+To change the hero's or companion's ship while keeping all the contents of the hold and crew, select in the hero's squadron ship list (on the left side of the interface) the ship to be replaced with a new one, and in the list of ships for sale at the shipyard (on the right side of the interface) the desired one, then click the "Buy" button.
+To buy a new ship (assign a new companion), first select an empty slot in the list on the left before purchasing.
 }
+ShipyardCannons_hint {You can trade cannons at the shipyard, but not every caliber is freely available. You will not find bombards or full culverins here. Cannons sold by the shipyard are always in perfect condition. When you sell cannons, they are repaired first, and the repair cost is deducted from the transaction total.}
 Shnyava {The shnyava and brigantine were the predecessors of the brig. Thanks to their successful hull design, good speed, and ability to carry heavy guns, these ships became very popular both in the Caribbean and in Europe. They are often used to escort small-class merchant convoys.}
 Sloop {With good speed and maneuverability and carrying solid armament for its size, the sloop is a reliable patrol ship, also suitable for reconnaissance.}
-Speed {Speed - shows the ship's current maximum speed, taking into account all factors (cargo, captain's skills, ship damage), and the ship's maximum achievable speed.}
+Speed {The ship's maximum attainable speed under current conditions and at maximum wind strength. It is affected by the captain's and Navigator's perks and skills, amulets, ship load, sail wear, and crew experience.}
+MaxSpeed {The ship's maximum speed under ideal conditions and at maximum wind strength. Lighter vessels with well-developed sail plans are generally faster, but pay for this with weaker hulls and smaller holds.}
 TakeAllGoods_hint {The "Transfer all goods" button transfers goods to the character's ship according to their average specific value. The most valuable goods are transferred first, then less valuable ones, and so on until there is no more free space in the hold.}
 Tartane {A fishing barque is not the best vessel for a captain shining in high society. But if ill fate has deprived you of your favorite ship, this dreary boat is quite suitable for a quick trip between islands, though you should remind yourself—this is only temporary!}
 Valciria {A fine English brig. High speed and maneuverability, good windward performance, and two dozen guns on deck make this sailing ship a dream.}
 Warship {Ships of this type were built back in the days of Cardinal Richelieu and are now structurally outdated. But they have decent sailing qualities and can carry the heaviest guns, making them a formidable force.}
 WarTartane {Tartanes are the same fishing barques hastily refitted for coastal work in the dangerous waters of the Caribbean. Their modest armament and makeshift construction do not inspire respect, but they are quite capable of scaring off an inexperienced pirate or a poor smuggler. A temporary solution when there is little choice.}
 XebekVML {The xebec is the most famous type of Mediterranean ship. Its narrow hull and large lateen sails on all masts allow it to sail at extreme wind angles, making it a very annoying opponent. Unfortunately, low speed when running before the wind limits the xebec mainly to piracy and smuggling.}
+ShipPower {Ship power reflects how threatening a vessel appears to an outside observer. Its current value is affected by the ship's class and specialization, the number and condition of its cannons, crew size and training, hull and sail condition, and the captain's skills. A pinnace commanded by a cutthroat notorious throughout the Caribbean will be given a wide berth, while a battered frigate in the hands of a green youngster will quickly invite trouble. $br$red The power of every ship in the squadron is added together to determine the squadron's total power, which affects the behavior of hostile squadrons and pirates on the global map. This value can be viewed on the Nations screen.}
+Cannon_DamageMultiply_header {Cannon damage multiplier}
+Cannon_DamageMultiply_text {The value by which projectile damage is multiplied.}
+Cannon_firerange_header {Range}
+Cannon_firerange_text {The cannon's maximum effective range. The selected ammunition, skills, amulets, and even the ship's rolling can affect the final range.}
+Cannon_reloadtime_header {Reload time}
+Cannon_reloadtime_text {The time required to fully reload the cannons. It is affected by the crew's size and experience, as well as the skills of the captain and gunner.}
+Cannon_hp_header {Maximum durability}
+Cannon_hp_text {This value determines how many shots a cannon can fire before being completely destroyed. The higher it is, the less often the cannon needs repairs. Each cannon type has its own maximum durability, which generally increases with caliber.}
+Cannon_weight_header {Cannon weight}
+Cannon_weight_text {Cannons take up a great deal of space aboard a ship; on warships, the artillery battery may consume up to half of the vessel's cargo capacity. Weight increases with caliber and firepower, while culverins weigh more than cannons of the same caliber.}
+Cannon_health_0 {Destroyed}
+Cannon_health_1 {Worn}
+Cannon_health_2 {Good}
+Cannon_health_3 {Fine-tuned}
+Cannon_weight_in_stock {This is approximately$br() $percent($ctx(weightPercent)) of the hold}
+Cannon_health_on_ship {Condition of the cannons in '$ctx(ShipName)'s hold: $ctx(health)}

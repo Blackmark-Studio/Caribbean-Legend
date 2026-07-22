@@ -8,7 +8,7 @@ void GenerateCrew(ref rCharacter, string sType, ref rDstArray)
 
 	object aSrcArray[1];
 	call sFunc(&aSrcArray, sType);
-	ShuffleArray(&aSrcArray);
+	ArrayShuffle(&aSrcArray);
 	int nSrcArraySize = GetArraySize(&aSrcArray);
 
 	for (int i = 0; i < nDstArraySize; i++)

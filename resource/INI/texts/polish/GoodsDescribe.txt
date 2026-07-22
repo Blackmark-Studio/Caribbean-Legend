@@ -23,78 +23,33 @@ Zadbane bloczki i dachówki wykonane z terakoty. Są one szeroko stosowane w bud
 Ze względu na częste pożary władze zachęcają do stosowania cegieł w budownictwie, dlatego na ten towar zawsze jest zapotrzebowanie.
 }
 Cannon_12 {Półkartauny}
-Cannon_12_descr
-{
-Standardowe, niezwykle niezawodne działa większości flot wojskowych, zdolne do strzelania pod dużym kątem, co znacznie zwiększa efektywny dystans walki.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_12_descr {Standardowe, niezwykle niezawodne działa większości flot wojskowych, zdolne do strzelania pod dużym kątem, co znacznie zwiększa efektywny dystans walki.}
 Cannon_16 {Morskie półkartauny}
-Cannon_16_descr
-{
-Nowoczesne francuskie działa. Dzięki zaawansowanej konstrukcji i nowemu systemowi opracowanemu przez monsieur de Vallière’a, te działa mają większy zasięg i zadają większe obrażenia niż zwykłe półkartauny. Jednak ich ładowanie trwa dłużej, są nieco mniej niezawodne i cięższe.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_16_descr {Nowoczesne francuskie działa. Dzięki zaawansowanej konstrukcji i nowemu systemowi opracowanemu przez monsieur de Vallière’a, te działa mają większy zasięg i zadają większe obrażenia niż zwykłe półkartauny. Jednak ich ładowanie trwa dłużej, są nieco mniej niezawodne i cięższe.}
 Cannon_18 {18-funtowe półdziała}
-Cannon_18_descr
-{
-Mocne uniwersalne działa, które dawniej często montowano na okrętach wojennych. Dość powszechne na archipelagu i cenione za prostotę i niezawodność, choć przestarzała konstrukcja nieco ogranicza ich zasięg.
-Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
-}
+Cannon_18_descr {Mocne uniwersalne działa, które dawniej często montowano na okrętach wojennych. Dość powszechne na archipelagu i cenione za prostotę i niezawodność, choć przestarzała konstrukcja nieco ogranicza ich zasięg.}
 Cannon_20 {Małe działa}
-Cannon_20_descr
-{
-Działa największego kalibru, strzelające wyjątkowo twardymi kulami armatnimi, co zwiększa zadawane obrażenia. Jednak dłuższa lufa znacznie zwiększa ich wagę.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_20_descr {Działa największego kalibru, strzelające wyjątkowo twardymi kulami armatnimi, co zwiększa zadawane obrażenia. Jednak dłuższa lufa znacznie zwiększa ich wagę.}
 Cannon_24 {Działa okrętowe}
-Cannon_24_descr
-{
-Najlepiej zrównoważone działa pod względem parametrów technicznych. Cieszą się dużą popularnością na statkach wojennych i ekspedycyjnych – i to nie bez powodu.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_24_descr {Najlepiej zrównoważone działa pod względem parametrów technicznych. Cieszą się dużą popularnością na statkach wojennych i ekspedycyjnych – i to nie bez powodu.}
 Cannon_3 {Działka}
 Cannon_3_descr
 {
 Działka pokładowe wyposażone w montaż pierścieniowy. Charakteryzują się wysoką mobilnością, ale mają ograniczony zasięg i mniejsze obrażenia ze względu na mały kaliber.
 Często są wyposażone w wymienny zamek, co pozwala na jeszcze szybsze przeładowanie.
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
 }
 Cannon_32 {Działa baterii}
-Cannon_32_descr
-{
-Ciężkie działa dużego kalibru, zdolne do ostrzału struktur obronnych. Zadają ogromne obrażenia kadłubowi.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_32_descr {Ciężkie działa dużego kalibru, zdolne do ostrzału struktur obronnych. Zadają ogromne obrażenia kadłubowi.}
 Cannon_36 {Działa nadbrzeżne}
-Cannon_36_descr
-{
-Długolufowe działa rzadko pojawiają się na pokładach okrętów. Jednak mimo długiego czasu przeładowania, zadają duże obrażenia i mają znaczny zasięg ostrzału.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_36_descr {Długolufowe działa rzadko pojawiają się na pokładach okrętów. Jednak mimo długiego czasu przeładowania, zadają duże obrażenia i mają znaczny zasięg ostrzału.}
 Cannon_42 {Działa oblężnicze}
-Cannon_42_descr
-{
-Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_42_descr {Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.}
 Cannon_48 {Działa oblężnicze}
-Cannon_48_descr
-{
-Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_48_descr {Niemal przestarzałe, ale wciąż potężne działa, doskonale nadające się do montażu na okrętach liniowych.}
 Cannon_6 {Lekkie półkartauny}
-Cannon_6_descr
-{
-Małe działa, cieszące się dużą popularnością na statkach kurierskich i handlowych ze względu na niską wagę i łatwość konserwacji.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Cannon_6_descr {Małe działa, cieszące się dużą popularnością na statkach kurierskich i handlowych ze względu na niską wagę i łatwość konserwacji.}
 Cannon_8 {8-funtowe półdziała}
-Cannon_8_descr
-{
-Jeden z najpopularniejszych kalibrów na małych statkach, spotykany zarówno na handlowych, jak i patrolowych. Cenione za doskonałe połączenie rozmiaru, wagi i siły ognia.
-Zasięg - #dFireRange#, obrażenia - x#f.1DamageMultiply#, przeładowanie - #dReloadTime# sek.
-}
+Cannon_8_descr {Jeden z najpopularniejszych kalibrów na małych statkach, spotykany zarówno na handlowych, jak i patrolowych. Cenione za doskonałe połączenie rozmiaru, wagi i siły ognia.}
 Chocolate {Kakao}
 Chocolate_descr
 {
@@ -132,24 +87,15 @@ Bawełna dojrzewa późno, a plony na plantacjach na wyspach karaibskich są rac
 Ta pracochłonna produkcja wymaga założenia stosunkowo dużej plantacji i pracy na niej co najmniej 20 niewolników.
 }
 Culverine_18 {Kulweryny}
-Culverine_18_descr
-{
-Średnie 18-funtowe działo o długim zasięgu, mierzące 12 stóp długości. Mimo imponującego zasięgu jest bardzo powolne i wymaga długiego czasu przeładowania.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Culverine_18_descr {Średnie 18-funtowe działo o długim zasięgu, mierzące 12 stóp długości. Mimo imponującego zasięgu jest bardzo powolne i wymaga długiego czasu przeładowania.}
 Culverine_36 {Pełne kulweryny}
 Culverine_36_descr
 {
 36-funtowe działo forteczne przeznaczone do ostrzału oblężniczego. Może być również używane w bateriach okrętowych i zadawać znaczne obrażenia wrogowi, pod warunkiem że artylerzysta jest doświadczony, zręczny i celny.  
-Te działa wymagają stanowisk zdolnych pomieścić 42-funtowe armaty ze względu na dłuższe lufy.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
+Te działa wymagają stanowisk zdolnych pomieścić 42-funtowe armaty ze względu na dłuższe lufy.
 }
 Culverine_8 {Półkulweryny}
-Culverine_8_descr
-{
-Długolufowe, 8-funtowe działo na stałym montażu. Charakteryzuje się zwiększonym zasięgiem ostrzału i jest zwykle używane do ognia zaporowego.  
-Zasięg ostrzału – #dFireRange#, obrażenia – x#f.1DamageMultiply#, przeładowanie – #dReloadTime# sek.
-}
+Culverine_8_descr {Długolufowe, 8-funtowe działo na stałym montażu. Charakteryzuje się zwiększonym zasięgiem ostrzału i jest zwykle używane do ognia zaporowego.}
 Ebony {Heban}
 Ebony_descr
 {
@@ -204,8 +150,10 @@ Meble wykonane z mahoniu są przykładem klasycznego luksusu, dobrego smaku i do
 Medicament {Medykamenty}
 Medicament_descr
 {
-Zestaw leków i narzędzi przeznaczonych do leczenia najczęstszych chorób oraz udzielania pierwszej pomocy rannym i poszkodowanym.
-Posiadanie leków na pokładzie pomaga ratować rannych, zmniejszać liczbę ofiar na pokładzie i leczyć chorych na morzu.
+Zestaw medykamentów, lekarstw i narzędzi do leczenia najczęstszych ran, urazów i chorób. Bez lekarstw członkowie załogi zaczną umierać z powodu chorób, a straty podczas abordażu wzrosną.
+~
+Dzienne zużycie:
+1/$number($kstringTemp(MEDICAMENT_BY_CREW)) jednostki towaru na osobę.
 }
 newline
 {
@@ -245,8 +193,10 @@ Najlepsze i najbardziej znane liny produkowane są w carstwie rosyjskim.
 Rum {Rum}
 Rum_descr
 {
-Mocny napój alkoholowy, destylowany z fermentowanego soku z trzciny cukrowej o lekko funkowym smaku i aromacie. To cenny towar, który zawsze można sprzedać z zyskiem, ale tez podnosi morale Twoich marynarzy, o ile ich posiadasz. Rum jest również dodawany do świeżej wody na statkach w celu przygotowania grogu, który zarówno dezynfekuje wodę, jak i poprawia jej smak. 
-Niedobór rumu na statku może wywołać niepokoje wśród marynarzy, a nawet stać się przyczyna buntu.
+Mocny napój alkoholowy o charakterystycznym smaku i aromacie, produkowany na Karaibach z miejscowych surowców. Niezbędny do podtrzymywania morale na statku oraz odkażania wody pitnej.
+~
+Dzienne zużycie:
+1/$number($kstringTemp(RUM_BY_CREW)) jednostki towaru na osobę.
 }
 Sailcloth {Płótno żaglowe}
 Sailcloth_descr

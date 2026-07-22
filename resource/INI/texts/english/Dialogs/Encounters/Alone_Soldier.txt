@@ -1,0 +1,16 @@
+Alone_Soldier_First_time_text_1 {$rand(Hello|Hi|Greetings|Good day), $rand(stranger|traveler|wanderer)! $rand(You remind me of someone... Easy now, ha-ha!|There's something familiar about your face... Got you, ha-ha. Relax, I'm joking.|Say... aren't you the one we've been hunting for three days... ha! Should've seen your face!|Hold on... isn't your portrait hanging in our watch post? Hah... you went pale there, ha-ha! Relax.|Wait a second... weren't you the one who bolted into the jungle when we ran into those smugglers? Ha-ha-ha, your eyes nearly popped out... easy there!) It's so damned dull out here in these jungles I can hardly bear it! Hot as blazes, the uniform pinches, not a living soul around, so I figured I'd have a little fun. Seeing a live human being feels like a miracle by now, and I daren't even dream of a cup of decent liquor. So then, what did you want?}
+Alone_Soldier_GiveRum {(Rum) As a matter of fact, I was just about to treat you to some rum. Here, don't be shy. A soldier drinks, the service goes on - you know how it is.}
+Alone_Soldier_GiveWine {(Wine) Well, you'll have to find a cup for yourself somehow, but I can share some good wine. Here. And don't look at me like that - I don't mind. You're doing important work.}
+Alone_Soldier_Bye {Nothing, just saying hello.}
+Alone_Soldier_First_time_text_2 {What is it? Notice something suspicious? Or maybe you spotted a cache of drink? Ah... what I wouldn't give for a cup right now... Ahem, so what was it you wanted?}
+Alone_Soldier_Bye_2 {Just checking you haven't fallen asleep on duty, ha-ha! Farewell.}
+Alone_Soldier_Thanks_Rum {Oooh! Now that's the thing. Cheers! Brr, that's strong stuff. Thanks a lot, friend. You wouldn't happen to be a man of service yourself, would you? You've got a military bearing and a sharp eye. You'll go far. Well then, back to pacing these trails for me, but I'll never forget you!}
+Alone_Soldier_Thanks_Wine {Well now, is it some kind of holiday today? Or am I seeing things from the heat? Fine wine, thank you. One can tell at once you know how to treat folk proper - I spotted that kind heart of yours from fifty feet away. I'll tell everyone what a splendid person you are!}
+Alone_Soldier_Rum_End {It's about time I moved along as well. Well then, have an easy watch.}
+Alone_Soldier_Wine_End {Oh, of that I've no doubt. Soldiers are simple folk - treat them one way, and they'll... well... answer in kind... ah, blast, I've muddled it. Anyway, all the best. Farewell.}
+Alone_Soldier_NoBlade_0 {Be more careful around corners when you're running with a weapon in your hands. I might get a little jumpy...}
+Alone_Soldier_NoBlade_1 {I don't like it when people walk in front of me with a weapon at the ready. Put that steel back in its sheath, friend.}
+Alone_Soldier_NoBlade_Ok_0 {Understood.}
+Alone_Soldier_NoBlade_Ok_1 {Putting it away.}
+Alone_Soldier_Boozy {$rand(H-hic! Thanks again, friend! Maybe you will sit down and tell me a couple of tales?|Hic... Yes, now the service goes smooth as butter! What about you, fancy a little drink?|Ah... fine drink. Hope I do not get my hide tanned for this later. Maybe you will drink with me? They surely cannot catch two of us... hic... can they!)}
+Alone_Soldier_Boozy_Ok {$rand(I would drink with you, but business awaits.|No, friend, I think you will manage without me.)}

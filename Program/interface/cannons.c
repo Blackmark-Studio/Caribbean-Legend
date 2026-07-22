@@ -1,3 +1,9 @@
+#include "interface\utils\ship_common.c"
+#include "interface\utils\cannons_health.c"
+#include "interface\utils\modifiers.c"
+#include "interface\utils\universal_input.c"
+
+
 ////    boal 31/08/06 Cannons
 string totalInfo = "";
 int  TableSelect = 0;
@@ -29,13 +35,13 @@ void InitInterface_R(string iniName, ref pStore)
 	bGameMenuStart = true; // меню запущено, скрываем landinterface
 	GameInterface.TABLE_LIST.hr.td1.str = XI_ConvertString("In the hold");
 	GameInterface.TABLE_LIST.hr.td1.line_space_modifier = 0.8;
-	GameInterface.TABLE_LIST.hr.td2.str = XI_ConvertString("WeightHold");
-	GameInterface.TABLE_LIST.hr.td3.str = XI_ConvertString("Price sell");
+	GameInterface.TABLE_LIST.hr.td2.str = XI_ConvertString("Price sell");
+	GameInterface.TABLE_LIST.hr.td2.line_space_modifier = 0.8;
+	GameInterface.TABLE_LIST.hr.td3.str = "HP";
+	GameInterface.TABLE_LIST.hr.td3.str = XI_ConvertString("Good name");
 	GameInterface.TABLE_LIST.hr.td3.line_space_modifier = 0.8;
-	GameInterface.TABLE_LIST.hr.td4.str = XI_ConvertString("Good name");
+	GameInterface.TABLE_LIST.hr.td4.str = XI_ConvertString("Price buy");
 	GameInterface.TABLE_LIST.hr.td4.line_space_modifier = 0.8;
-	GameInterface.TABLE_LIST.hr.td5.str = XI_ConvertString("Price buy");
-	GameInterface.TABLE_LIST.hr.td5.line_space_modifier = 0.8;
 	if(refStore.Colony == "none")
 	{
 	    GameInterface.TABLE_LIST.hr.td6.str = XI_ConvertString("In the hold");
@@ -43,20 +49,21 @@ void InitInterface_R(string iniName, ref pStore)
 	}
 	else
 	{
-		GameInterface.TABLE_LIST.hr.td6.str = XI_ConvertString("In the store");
-		GameInterface.TABLE_LIST.hr.td6.line_space_modifier = 0.8;
+		GameInterface.TABLE_LIST.hr.td5.str = XI_ConvertString("In the store");
+		GameInterface.TABLE_LIST.hr.td5.line_space_modifier = 0.8;
 	}
-	GameInterface.TABLE_LIST.hr.td7.str = XI_ConvertString("ItemsWeight");
+
+	GameInterface.TABLE_LIST.hr.td6.str = XI_ConvertString("Distance");
+	GameInterface.TABLE_LIST.hr.td6.line_space_modifier = 0.8;
+
+	GameInterface.TABLE_LIST.hr.td7.str = XI_ConvertString("CannonsDamage");
 	GameInterface.TABLE_LIST.hr.td7.line_space_modifier = 0.8;
-	
-	GameInterface.TABLE_LIST.hr.td8.str = XI_ConvertString("Distance");
+
+	GameInterface.TABLE_LIST.hr.td8.str = XI_ConvertString("CannonsTime");
 	GameInterface.TABLE_LIST.hr.td8.line_space_modifier = 0.8;
 
-	GameInterface.TABLE_LIST.hr.td9.str = XI_ConvertString("CannonsDamage");
+	GameInterface.TABLE_LIST.hr.td9.str = XI_ConvertString("Weight");
 	GameInterface.TABLE_LIST.hr.td9.line_space_modifier = 0.8;
-
-	GameInterface.TABLE_LIST.hr.td10.str = XI_ConvertString("CannonsTime");
-	GameInterface.TABLE_LIST.hr.td10.line_space_modifier = 0.8;	
 
     FillShipsScroll();
 
@@ -76,24 +83,13 @@ void InitInterface_R(string iniName, ref pStore)
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
 	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
-	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
 	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
-
-
 	SetEventHandler("frame","ProcessFrame",1);
-
-	//SetEventHandler("RefreshTable","RefreshTable",0);
-	//PostEvent("RefreshTable", 1000);
 
 
 	if(refStore.Colony == "none")
@@ -109,6 +105,11 @@ void InitInterface_R(string iniName, ref pStore)
 	{
 		SetNewPicture("OTHER_PICTURE", "interfaces\le\portraits\256\face_" + string(refShipChar.FaceId) + ".tga");
 	}
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("TABLE_LIST", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_BUYSELL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("QTY_ADD_BUTTON", "QTY_REMOVE_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetUniversalInputTooltip("QTY_EDIT", "QTY_WINDOW", XI_UNIVERSAL_INPUT_ITEMS);
 }
 
 void ProcessBreakExit()
@@ -137,7 +138,6 @@ void IDoExit(int exitCode)
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
 	DelEventHandler("HideInfoWindow","HideInfoWindow");
-	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
@@ -145,10 +145,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	XI_ExitUniversalInput();
 
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
@@ -161,49 +158,8 @@ void ProcCommand()
 
 	switch(nodName)
 	{
-         case "BUY_SHIPS":
-			if (comName=="click" || comName=="activate")
-			{
-				IDoExit(RC_INTERFACE_TO_SHIPYARD);
-			}
-		break;
-
-		case "QTY_BUYSELL_BUTTON":
-			if(comName=="leftstep")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "TABLE_LIST":
-			if(comName=="leftstep")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
+		case "BUY_SHIPS":
+			if (comName=="click" || comName=="activate") IDoExit(RC_INTERFACE_TO_SHIPYARD);
 		break;
 	}
 }
@@ -230,8 +186,7 @@ void AddToTable()
 	int tradeType, iColor;
 	aref refGoods;
 	n = 1;
-	int maxCaliber = GetMaximumCaliber(&refCharacter);
-	int currentCannonsIdx = int(refCharacter.Ship.Cannons.Type);
+	int maxCaliber = GetMaximumCaliber(refCharacter);
 
 	Table_Clear("TABLE_LIST", false, true, false);
     for (i = 0; i< GetArraySize(&Goods); i++)
@@ -261,46 +216,55 @@ void AddToTable()
 		if (sStoreQ == 0 && sShipQ == 0) continue; // только не нули
 
 		GameInterface.TABLE_LIST.(row).td1.str = sShipQ;
-		GameInterface.TABLE_LIST.(row).td2.str = GetGoodWeightByType(i, int(sShipQ));
-		GameInterface.TABLE_LIST.(row).td7.str = Goods[i].Weight;
-		GameInterface.TABLE_LIST.(row).td8.str = int(Goods[i].FireRange);
-		GameInterface.TABLE_LIST.(row).td9.str = "x" + FloatToString(float(Goods[i].DamageMultiply), 1);
-		GameInterface.TABLE_LIST.(row).td10.str = int(Goods[i].ReloadTime);
+		GameInterface.TABLE_LIST.(row).td2.str = "";
+		if (sShipQ > 0)
+		{
+			GameInterface.TABLE_LIST.(row).td1.icon.group = "CANNONS_MANAGEMENT";
+			GameInterface.TABLE_LIST.(row).td1.icon.image = XI_GetCannonsHealthIconForStock(refCharacter, &Goods[i]);
+			GameInterface.TABLE_LIST.(row).td1.icon.offset = "70, 0";
+			GameInterface.TABLE_LIST.(row).td1.icon.width = 40;
+			GameInterface.TABLE_LIST.(row).td1.icon.height = 40;
+		}
 
-		GameInterface.TABLE_LIST.(row).td6.str = sStoreQ;
+		GameInterface.TABLE_LIST.(row).td5.str = sStoreQ;
+		GameInterface.TABLE_LIST.(row).td6.str = int(Goods[i].FireRange);
+		GameInterface.TABLE_LIST.(row).td7.str = "x" + FloatToString(float(Goods[i].DamageMultiply), 1);
+		GameInterface.TABLE_LIST.(row).td8.str = int(Goods[i].ReloadTime);
+		GameInterface.TABLE_LIST.(row).td9.str = int(Goods[i].weight);
 
 
-		GameInterface.TABLE_LIST.(row).td4.icon.group = "GOODS";
-		GameInterface.TABLE_LIST.(row).td4.icon.image = sGood;
-		GameInterface.TABLE_LIST.(row).td4.icon.offset = "0, 0";
-		GameInterface.TABLE_LIST.(row).td4.icon.width = 40;
-		GameInterface.TABLE_LIST.(row).td4.icon.height = 40;
-		GameInterface.TABLE_LIST.(row).td4.textoffset = "30,0";
-		GameInterface.TABLE_LIST.(row).td4.str = XI_ConvertString(sGood);
+
+		GameInterface.TABLE_LIST.(row).td3.icon.group = "GOODS";
+		GameInterface.TABLE_LIST.(row).td3.icon.image = sGood;
+		GameInterface.TABLE_LIST.(row).td3.icon.offset = "0, 0";
+		GameInterface.TABLE_LIST.(row).td3.icon.width = 40;
+		GameInterface.TABLE_LIST.(row).td3.icon.height = 40;
+		GameInterface.TABLE_LIST.(row).td3.textoffset = "42,0";
+		GameInterface.TABLE_LIST.(row).td3.str = XI_ConvertString(sGood +"_s");
 		GameInterface.TABLE_LIST.(row).index = i;
-		GameInterface.TABLE_LIST.(row).td4.color = GetCannonsStoreColor(Goods[i], currentCannonsIdx, maxCaliber);
+		GameInterface.TABLE_LIST.(row).td3.color = GetCannonsStoreColor(Goods[i], maxCaliber);
 
 		if (tradeType == T_TYPE_CONTRABAND)
 		{
-		    GameInterface.TABLE_LIST.(row).td5.str = "-";
+		    GameInterface.TABLE_LIST.(row).td4.str = "-";
 		}
 		else
 		{
-			GameInterface.TABLE_LIST.(row).td5.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY, pchar, 1);
+			GameInterface.TABLE_LIST.(row).td4.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY, pchar, 1);
 			// в море
 			if (refStore.Colony == "none")
 			{
-			    GameInterface.TABLE_LIST.(row).td5.str = int(int(GameInterface.TABLE_LIST.(row).td5.str) / 2);
-			    if (int(GameInterface.TABLE_LIST.(row).td5.str) < 1) GameInterface.TABLE_LIST.(row).td5.str = 1;
+			    GameInterface.TABLE_LIST.(row).td4.str = int(int(GameInterface.TABLE_LIST.(row).td4.str) / 2);
+			    if (int(GameInterface.TABLE_LIST.(row).td4.str) < 1) GameInterface.TABLE_LIST.(row).td4.str = 1;
 			}
 		}
 		if ((tradeType == T_TYPE_AMMUNITION) && (refStore.Colony == "none"))
 		{
-		    GameInterface.TABLE_LIST.(row).td3.str = "-"; // нельзя купить в море
+		    GameInterface.TABLE_LIST.(row).td2.str = "-"; // нельзя купить в море
 		}
 		else
 		{
-			GameInterface.TABLE_LIST.(row).td3.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
+			GameInterface.TABLE_LIST.(row).td2.str = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
 		}
 		n++;
 	}
@@ -370,10 +334,12 @@ void ShowHelpHint()
 		break;
 		case "HELP":
 			sHeader = XI_Convertstring("Shipyard");
-			sText1  = GetConvertStr("Shipyard_hint", "ShipsDescribe.txt");
+			sText1  = GetConvertStr("ShipyardCannons_hint", "ShipsDescribe.txt");
 		break;
 	}
 
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
+	if (XI_CannonsHealthTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3, GameInterface.CANNONS_HEALTH.userdata.health$float(1.0))) return;
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, bWindRose, false);
 }
 void EndTooltip()
@@ -430,11 +396,6 @@ void RefreshTable()
         ChangePosTable();
     }
 }
-
-// void Log_InfoOwn(string _str)
-// {
-    // SetFormatedText("INFO_TEXT", _str);
-// }
 
 void CS_TableSelectChange()
 {
@@ -624,6 +585,12 @@ void ShowGoodsInfo(int iGoodIndex)
 		iShipPrice = GetStoreGoodsPrice(refStore, iGoodIndex, PRICE_TYPE_BUY, pchar, 1);
 		SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + string(iShipPrice));
 	}
+
+	float health = CAN_GetCannonsStockHealth(refCharacter, GoodName);
+	int level = CAN_HumanCannonsHealthLevel(health);
+	GameInterface.CANNONS_HEALTH.userdata.health = iShipQty > 0 ? health : 1.0;
+	if (iShipQty > 0 && health != CAN_HEALTH_LEVEL_NORMAL) SetFormatedText("CANNONS_HEALTH", xiStr("CannonsHealthTooltipHeader") +": " + XI_HumanCannonsHealth(health));
+	else SetFormatedText("CANNONS_HEALTH", "");
 	ShowFoodInfo();
 }
 
@@ -806,72 +773,46 @@ void ChangeQTY_EDIT()
     ShowFoodInfo();
 }
 
-void REMOVE_ALL_BUTTON()  // продать все
+void REMOVE_BUTTON(int value)  // продать
 {
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = -iShipQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_ALL_BUTTON()  // купить все
-{
-    if (!GetRemovable(refCharacter)) return;
-	if (!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = iStoreQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_BUTTON()  // продать
-{
-    if (!GetRemovable(refCharacter)) return;
+	if (!GetRemovable(refCharacter)) return;
 	if (!bShowChangeWin) return;
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = -iUnits;
+        GameInterface.qty_edit.str = -iUnits * value;
     }
     else
     {
 		if (BuyOrSell == -1)
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + iUnits);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + iUnits*value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - iUnits);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - iUnits*value);
 		}
 		BuyOrSell = 0;
 	}
 	ChangeQTY_EDIT();
 }
 
-void ADD_BUTTON()  // купить
+void ADD_BUTTON(int value)  // купить
 {
-    if (!GetRemovable(refCharacter)) return;
+	if (!GetRemovable(refCharacter)) return;
 	if (!bShowChangeWin) return;
 	if (BuyOrSell == 0)
     {
-        GameInterface.qty_edit.str = iUnits;
+        GameInterface.qty_edit.str = iUnits*value;
     }
     else
     {
   		if (BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + iUnits);
+			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + iUnits*value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - iUnits);
+			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - iUnits*value);
 		}
 		BuyOrSell = 0;
 	}
@@ -892,19 +833,19 @@ void SortCannonsList(int column, bool preserveState, string tableName)
 	string datatype = "integer";
 	switch (column)
 	{
-		case 4: datatype = "index"; break; 
-		case 9: datatype = "floatEnd"; break; 
+		case 3: datatype = "index"; break;
+		case 7: datatype = "floatEnd"; break;
 	}
 
-	if (column == 9) offset = 1;
+	if (column == 7) offset = 1;
 
   QoLSortTable(tableName, column, datatype, preserveState, offset);
 }
 
-int GetCannonsStoreColor(ref good, int currentCannonsIdx, int maxCaliber)
+int GetCannonsStoreColor(ref good, int maxCaliber)
 {
-  if (CheckAttribute(&refCharacter, "ship.cargo.goods." + good.name + ".isquest")) return ARGB_Color("quest"); // по квесту
-  if (currentCannonsIdx == int(good.cannonidx)) return ARGB_Color("gold");                                     // сейчас стоят
-  if (maxCaliber < int(Cannon[int(good.cannonidx)].caliber)) return ARGB_Color("badGrey");                     // нельзя поставить
-  return ARGB_Color("white");                                                                                  // можно поставить
+  if (CheckAttribute(refCharacter, "ship.cargo.goods." + good.name + ".isquest")) return ARGB_Color("quest"); // по квесту
+  if (IsUsingCannon(refCharacter, int(good.cannonidx))) return ARGB_Color("gold");                            // сейчас стоят
+  if (maxCaliber < int(Cannon[int(good.cannonidx)].caliber)) return ARGB_Color("badGrey");                    // нельзя поставить
+  return ARGB_Color("white");                                                                                 // можно поставить
 }

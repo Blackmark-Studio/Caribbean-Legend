@@ -17,6 +17,7 @@ native void LayerAddObject(int iIdx, ref rObj, int iPriority);
 native void LayerDelObject(int iIdx, ref rObj);
 native void LayerFreeze(int iIdx, bool bFreeze);
 native ref abs(float arg);
+native float ceilf(float arg);
 native float sqrt(float arg);
 native float sqr(float arg);
 native float sin(float arg);

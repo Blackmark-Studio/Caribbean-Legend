@@ -83,7 +83,7 @@ void CreateTraders(ref loc)
 					break;
 				}
 			
-				iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, 180, loc);
+				iChar = NPC_GeneratePhantomCharacterForLoc(sType, iNation, iSex, 2, loc);
 
 				chr = &characters[iChar];
 				SetNPCModelUniqForLoc(chr, sType, iSex, loc);
@@ -583,7 +583,7 @@ void CreateCitizens(ref loc)
 				{
 				    LAi_SetSitType(chr);
 					PlaceCharacter(chr, "sit", "random_free");
-					chr.dialog.filename = "Enc_Walker.c";
+					chr.dialog.filename = "Enc_Walker.c"; // ~!~
 					chr.greeting = "citizen_male";
 					chr.nonTable = true;
 					chr.inChurch = true;
@@ -2847,7 +2847,7 @@ void CreateBrothels(ref loc)
 	if (CheckAttribute(loc, "brothel"))
 	{
 		ref location;
-		if (findsubstr(loc.id, "SecBrRoom", 0) != -1)
+		if (FindSubStr(loc.id, "SecBrRoom", 0) != -1)
 		{
 			location = &locations[FindLocation(loc.fastreload + "_Brothel")];
 		}
@@ -2874,10 +2874,9 @@ void CreateBrothels(ref loc)
 			//qtySit = rand(3);
 			qtySit = 1;
 			qtyAll = qtyStay + qtySit;
-			trace("qtyAll " + qtyAll + " qtyStay "+qtyStay+ " qtySit "+qtySit);
+			//trace("qtyAll " + qtyAll + " qtyStay "+qtyStay+ " qtySit "+qtySit);
 			while (qty <= qtyAll)
 			{
-
 				sld = GetCharacter(NPC_GenerateCharacter("HorseGen_"+location.index +"_"+ qty, "women_19", "woman", "woman", 3, iNation, 100, false, "soldier"));
 				sld.model = "";
 				SetNPCModelUniqForLoc(sld, "horse", WOMAN, location);
@@ -2910,7 +2909,7 @@ void CreateBrothels(ref loc)
 				{
 					if(qtySit > 0)
 					{
-						trace(" qtySit ");
+						//trace(" qtySit ");
 						LAi_SetHorseSitType(sld);
 						LAi_group_MoveCharacter(sld, slai_group);
 						ChangeCharacterAddressGroup(sld, location.id, "HorseSit", "HorseSit"+SitLocatorNum);

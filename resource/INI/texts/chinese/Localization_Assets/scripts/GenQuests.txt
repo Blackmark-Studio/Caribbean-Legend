@@ -2,7 +2,9 @@ GenQuests_1 {走私者}
 GenQuests_100 {你听说了吗? 某个船长从强盗手中救出了一个名 叫 @<pchar.GenQuest.EncGirl.name> 的女孩 —简直是从他们手中把她抢了过来! 多么好的人, 是个真正的男人!}
 GenQuests_101
 {
-你知道吗, @<GetFullName(pchar)> 船长在丛林里从强奸犯手中救出了 一个名叫 @<pchar.GenQuest.EncGirl.name> 的女孩... 啊, 那是你! 我印象深刻... GenQuests_102
+你知道吗, @<GetFullName(pchar)> 船长在丛林里从强奸犯手中救出了 一个名叫 @<pchar.GenQuest.EncGirl.name> 的女孩... 啊, 那是你! 我印象深刻... 
+
+GenQuests_102
 }
 GenQuests_102 { }
 GenQuests_103 {嗯, @<GetFullName(pchar)> 船长, 没人会想到你会把一个无助的女人 留在强盗手中任他们玩弄。 可怜的 @<pchar.GenQuest.EncGirl.name> , 要是我有话可说...}
@@ -110,3 +112,11 @@ GenQuests_96 {你听说当地 @<pchar.GenQuest.(Gun).name> 团伙试图抢劫一
 GenQuests_97 {你听说 @<pchar.GenQuest.EncGirl.name> 被谋杀的事了吗? 可怜的女孩, 她最近在丛林里被杀了。 应该找到凶手并绞死他!}
 GenQuests_98 {你知道吗, @<GetFullName(pchar)> 船长, 有人谋杀了一个名叫 @<pchar.GenQuest.EncGirl.name> 的可怜女孩? 真可惜, 她是个非常好的女孩...}
 GenQuests_99 {她的名字叫 @<pchar.GenQuest.EncGirl.name> , 死在丛林里。 我告诉你, 那里并不安全...}
+Alone_Citiz_Death_0 {听说@<Name>在丛林里被强盗捅死了。世道竟坏到这个地步了，$Name：如今一个人走出城门，就未必还能回来。}
+Alone_Citiz_Death_1 {听说了吗？@<Name>在丛林里把灵魂交给了上帝。都说是强盗下的手，而这样的世道里，老实人活到晚上都越来越难了。}
+Alone_Citiz_RobberyFail_0 {听说有个破衣烂衫的家伙竟想抢@<Name>。他们真是无法无天了，$Name：从前还怕守卫，如今大白天就敢拿刀扑上来。}
+Alone_Citiz_RobberyFail_1 {最近@<Name>逃过劫匪，回到了城里。如今就是这样的世道，$Name：不是人选择道路，而是道路决定他能不能活着回来。}
+Alone_Citiz_RobberySuccess_0 {@<Name>被抢了，您能想象吗？东西全被拿走了，能活下来都算奇迹。看来在这该死的世道里，就连强盗也还剩点良心。}
+Alone_Citiz_RobberySuccess_1 {听说@<Name>把最后一枚钱都交给了强盗。能怎么办呢，$Name：不然他可能连家都回不去了。}
+JungInjured_SoldHeal_0 {听说，$Name，是您在丛林里救了我们的士兵。这样的世道里，很少有人会为别人的性命挺身而出，所以全城都在议论这件事。}
+JungInjured_SoldHeal_1 {@<Name>从丛林里回来时几乎只剩一口气。城里都在传，$Name，是您把他从鬼门关拉了回来，而如今这样的善举可贵得很。您是个好人。}

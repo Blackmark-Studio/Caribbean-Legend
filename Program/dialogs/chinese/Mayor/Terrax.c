@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour传奇版本: 如果没有, 则给予荷兰西印度公司旗帜和许可证 -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -1006,7 +1006,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour传奇版本: 若缺少则给予荷兰西印度公司旗帜和许可证 -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1663,7 +1663,7 @@ void ProcessDialogEvent()
             dialog.text = "我们说话间, 这艘船正从古巴迅速驶向菲利普斯堡。 现在应该在托尔图加附近或其稍东的位置。 所以起锚驶向圣马丁岛, 在离岛不远的地方抓住'斗牛士'号, 只是别让巴尔巴松的人看到战斗, 否则我的计划就泡汤了。 ";
 			link.l1 = "马上出发! ";
 			// belamour传奇版 西班牙旗帜发放条件 -->
-			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND)) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

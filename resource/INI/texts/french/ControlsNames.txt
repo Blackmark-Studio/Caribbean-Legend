@@ -202,3 +202,13 @@ WMapTurnH {Rotation de la caméra autour du navire (carte du monde)}
 WMapTurnV {Hauteur de la caméra (carte du monde)}
 WorldMapControls {Carte du monde}
 Rest {Repos}
+InputTooltip_header {Mode de saisie}
+InputTooltip_text
+{
+Clic droit sur une flèche — tout transférer.
+~
+Maintenez ces touches pour transférer plusieurs objets à la fois :
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — tout transférer
+}

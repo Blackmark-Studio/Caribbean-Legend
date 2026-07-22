@@ -202,3 +202,13 @@ WMapTurnH {Rotate camera around ship (in map mode)}
 WMapTurnV {Camera height (in map mode)}
 WorldMapControls {World map}
 Rest {Rest}
+InputTooltip_header {Input Mode}
+InputTooltip_text
+{
+Right-click an arrow — transfer all.
+~
+Hold these keys to transfer multiple items at once:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — transfer all
+}

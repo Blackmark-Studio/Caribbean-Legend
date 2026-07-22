@@ -202,3 +202,13 @@ WMapTurnH {Cambiar cámara (vista del mapa)}
 WMapTurnV {Ajustar la altura de la cámara (Vista del mapa)}
 WorldMapControls {Mapa del Mundo}
 Rest {Descanso}
+InputTooltip_header {Modo de entrada}
+InputTooltip_text
+{
+Clic derecho en una flecha — transferir todo.
+~
+Mantén pulsadas estas teclas para transferir varios objetos a la vez:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — transferir todo
+}

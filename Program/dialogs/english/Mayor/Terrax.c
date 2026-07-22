@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
             dialog.text = "While we are having this chat, the ship is swiftly sailing straight to Philipsburg from Cuba. Must be near Tortuga now, or a bit to the east of it. So raise anchor and sail to Saint Martin, intercept the 'Torero' not far from the island, just don't let Barbazon's men see the fight, otherwise my plan will be ruined.";
 			link.l1 = "Right away!";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND)) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

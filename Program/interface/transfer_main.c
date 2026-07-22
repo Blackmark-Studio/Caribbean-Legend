@@ -2566,7 +2566,7 @@ void ProcessInterfaceControls()
 	bool IsMainWindowEnabled = XI_IsWindowEnable("MAIN_WINDOW");
 	if (controlName == "InterfaceTabSwitch")
 	{
-		if (!IsMainWindowEnabled) return;
+		if (!XI_IsWindowEnable("GOODS_WINDOW")) return;
 		goodsMode = !goodsMode;
 		SetControlsTabMode(goodsMode);
 		XI_TransferSelectGoodsTable(goodsMode == 0 ? "TABLE_LIST" : "TABLE_LIST_CANNONS");

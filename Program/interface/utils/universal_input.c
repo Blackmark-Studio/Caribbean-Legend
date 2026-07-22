@@ -33,7 +33,7 @@ void XI_SetUniversalInputTooltip(string inputNodeName, string windowName = "MAIN
 	SetTriggerFramePosition(zoneName,x1,y1,x2,y2);
 	SetUseTrigger(zoneName, true);
 	SetTriggerFrameType(zoneName, 1);
-	XI_WindowAddNode(windowName, zoneName);
+	if (windowName != "") XI_WindowAddNode(windowName, zoneName);
 	GameInterface.(zoneName).tooltipdata.mode = mode;
 }
 

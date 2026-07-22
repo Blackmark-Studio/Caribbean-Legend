@@ -202,3 +202,13 @@ WMapTurnH {Harita modunda kamerayı geminin etrafında döndür}
 WMapTurnV {Kamera yüksekliği (harita modunda)}
 WorldMapControls {Dünya haritası}
 Rest {Dinlenme}
+InputTooltip_header {Giriş modu}
+InputTooltip_text
+{
+Bir oka sağ tıklama — tümünü aktar.
+~
+Aynı anda birden fazla eşya aktarmak için bu tuşları basılı tut:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — tümünü aktar
+}

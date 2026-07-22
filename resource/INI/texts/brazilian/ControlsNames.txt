@@ -202,3 +202,13 @@ WMapTurnH {Girar câmera ao redor do navio (no modo mapa)}
 WMapTurnV {Altura da câmera (no modo mapa)}
 WorldMapControls {Mapa-múndi}
 Rest {Descanso}
+InputTooltip_header {Modo de entrada}
+InputTooltip_text
+{
+Clique com o botão direito em uma seta — transferir tudo.
+~
+Mantenha estas teclas pressionadas para transferir vários itens de uma vez:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — transferir tudo
+}

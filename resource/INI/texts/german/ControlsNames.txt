@@ -202,3 +202,13 @@ WMapTurnH {Kamera um das Schiff drehen (im Kartenmodus)}
 WMapTurnV {Kamerahöhe (im Kartenmodus)}
 WorldMapControls {Weltkarte}
 Rest {Rast}
+InputTooltip_header {Eingabemodus}
+InputTooltip_text
+{
+Rechtsklick auf einen Pfeil — alles übertragen.
+~
+Haltet diese Tasten gedrückt, um mehrere Gegenstände gleichzeitig zu übertragen:
+Strg — ×$ctx(i1)
+Umschalt — ×$ctx(i2)
+Strg+Umschalt — alles übertragen
+}

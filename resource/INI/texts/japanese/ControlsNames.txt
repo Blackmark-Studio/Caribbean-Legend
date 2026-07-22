@@ -202,3 +202,13 @@ WMapTurnH {マップモードで船の周囲をカメラ回転}
 WMapTurnV {カメラの高さ（マップモード）}
 WorldMapControls {ワールドマップ}
 Rest {休息}
+InputTooltip_header {入力モード}
+InputTooltip_text
+{
+矢印を右クリック — すべて移動。
+~
+複数のアイテムをまとめて移動するには、次のキーを押し続けてください：
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — すべて移動
+}

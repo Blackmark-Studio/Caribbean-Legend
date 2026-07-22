@@ -202,3 +202,13 @@ WMapTurnH {지도 모드에서 선박 주변 카메라 회전}
 WMapTurnV {카메라 높이 (지도 모드)}
 WorldMapControls {세계 지도}
 Rest {휴식}
+InputTooltip_header {입력 모드}
+InputTooltip_text
+{
+화살표를 마우스 오른쪽 버튼으로 클릭 — 모두 옮기기.
+~
+여러 물품을 한 번에 옮기려면 다음 키를 누르십시오:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — 모두 옮기기
+}

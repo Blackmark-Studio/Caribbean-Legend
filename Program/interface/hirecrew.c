@@ -54,7 +54,7 @@ void InitInterface(string iniName)
 	XI_SetClickInputHandler("QTY_REMOVE_BUTTON", "QTY_ADD_BUTTON", &REMOVE_BUTTON, &ADD_BUTTON);
 	
 	SetNewGroupPicture("QTY_CREW_PICTURE", "SHIP_STATE_ICONS", "Crew");
-	XI_SetUniversalInputTooltip("QTY_EDIT", "MAIN_WINDOW");
+	XI_SetUniversalInputTooltip("QTY_EDIT", "");
 	SetBackupQty();
 	SetCurrentNode("SHIPS_SCROLL");
 	GameInterface.qty_edit.str = 0;

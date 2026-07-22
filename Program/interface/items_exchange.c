@@ -203,7 +203,7 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	XI_SetArrowsInputHandler("QTY_CANCEL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
 	XI_SetArrowsInputHandler("QTY_EDIT", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
 	XI_SetClickInputHandler("QTY_REMOVE_BUTTON", "QTY_ADD_BUTTON", &REMOVE_BUTTON, &ADD_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
-	XI_SetUniversalInputTooltip("QTY_EDIT", "QTY_WINDOW", XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetUniversalInputTooltip("QTY_EDIT", "INFO_WINDOW", XI_UNIVERSAL_INPUT_ITEMS);
 
 	SetFormatedText("STORECAPTION", XI_ConvertString(sGetInterfaceTypeStr("titleExchangeItems", "titleItemsBox", "titleDeadItems","titleBarrel")));
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
@@ -1582,7 +1582,7 @@ void TransactionOK()
 	EndTooltip();
 	ShowGoodsInfo(iCurGoodsIdx);
 	ShowItemInfo();
-	SetCurrentNode("TABLE_LIST");
+	SetCurrentNode(CurTable);
 }
 
 void confirmChangeQTY_EDIT()

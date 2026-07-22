@@ -202,3 +202,13 @@ WMapTurnH {Ruota la telecamera attorno alla nave (in modalità mappa)}
 WMapTurnV {Altezza della telecamera (in modalità mappa)}
 WorldMapControls {Mappa del mondo}
 Rest {Riposo}
+InputTooltip_header {Modalità di inserimento}
+InputTooltip_text
+{
+Clic destro su una freccia — trasferisci tutto.
+~
+Tieni premuti questi tasti per trasferire più oggetti alla volta:
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — trasferisci tutto
+}

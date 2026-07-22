@@ -202,3 +202,13 @@ WMapTurnH {绕船只旋转镜头 (地图模式)}
 WMapTurnV {镜头高度 (地图模式)}
 WorldMapControls {世界地图}
 Rest {休息}
+InputTooltip_header {输入模式}
+InputTooltip_text
+{
+右键单击箭头——全部转移。
+~
+按住以下按键可一次转移多个物品：
+Ctrl — ×$ctx(i1)
+Shift — ×$ctx(i2)
+Ctrl+Shift — 全部转移
+}

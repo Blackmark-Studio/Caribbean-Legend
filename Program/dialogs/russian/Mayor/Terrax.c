@@ -745,7 +745,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -1006,7 +1006,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1663,7 +1663,7 @@ void ProcessDialogEvent()
             dialog.text = "Пока мы тут с тобой распинаемся, он уже летит на всех парусах к Филипсбургу с Кубы. Сейчас должен быть где-то около Тортуги или дальше на восток. Так что не теряй ни минуты - выбирай якоря и дуй со всей силы к Синт-Маартену - лови его на подходе к острову, но не слишком близко! Если люди Барбазона увидят, что ты напал на 'Тореро' - сам понимаешь, плакал мой хитрый план.";
 			link.l1 = "Всё ясно. Выхожу в море!";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND)) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

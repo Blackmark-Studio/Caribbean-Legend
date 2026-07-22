@@ -735,7 +735,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_5":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 60 && bOk) sTemp = ".";
 			else 
 			{
@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_24":
 			// belamour legendary edition даем флаг и лизензию ГВИК если отсутствует -->
-			bOk = STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol");
+			bOk = STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND);
 			if(CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 40 && bOk) sTemp = ".";
 			else 
 			{
@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
             dialog.text = "俺たちがこうして話してる間にも、船はキューバからフィリップスバーグへ一直線に進んでるはずだ。 今ごろトルトゥーガの近くか、もう少し東かもしれねえ。だから錨を上げてサン・マルタンへ向かえ、島の近くで『 トレロ』を捕まえるんだ。ただしバルバゾンの手下どもに戦いを見られるなよ、 そうじゃねえと俺の計画が台無しになるからな。";
 			link.l1 = "すぐに行くぜ！";
 			// belamour legendary edition испанский флаг к выдаче -->
-			if(STH_CanUseFlag("FlagSpa") || STH_CanUseFlag("FlagHol")) link.l1.go = "mtraxx_86";
+			if(STH_CanUseFlag(SPAIN) || STH_CanUseFlag(HOLLAND)) link.l1.go = "mtraxx_86";
 			else link.l1.go = "mtraxx_85f";
 		break;
 		

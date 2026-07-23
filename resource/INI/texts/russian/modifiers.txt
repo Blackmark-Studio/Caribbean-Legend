@@ -10,8 +10,8 @@ contrabandTradeStatus_1 {Сделки с контрабандистами нев
 contrabandTradeStatus_2 {Сделки с контрабандистами осложнены}
 convenienceGoodsCost {Стоимость товаров повседневного спроса}
 convenienceGoodsStock {Запасы товаров повседневного спроса}
-ammoGoodsStock {Запасы аммуниции}
-ammoGoodsCost {Стоимость аммуниции}
+ammoGoodsStock {Запасы амуниции}
+ammoGoodsCost {Стоимость амуниции}
 crewExpMtp {Скорость набора опыта экипажа}
 crewHireCost {Стоимость найма матросов}
 crewHireMoraleMtp {Мораль наёмного экипажа}
@@ -61,4 +61,4 @@ uniqueGoodsAvailable_0 {Стратегические товары не прод�
 uniqueGoodsAvailable_1 {Стратегические товары есть в продаже}
 uniqueGoodsStock {Запасы стратегических товаров}
 SquadronPower {Мощь эскадры}
-crewMoraleDebuffMtp {Снижение эффекта голода и болезней на мораль команды}
+crewMoraleDebuffMtp {Снижение влияния голода и болезней на мораль команды}

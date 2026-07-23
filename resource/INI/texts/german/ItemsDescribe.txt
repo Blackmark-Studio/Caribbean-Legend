@@ -226,7 +226,7 @@ itmdescr_hat8 {Dieser Hut jagt Händlern – besonders Spaniern – mehr Angst e
 itmdescr_hat9 {Dieser Hut ist in jeder Ecke der Karibik bekannt und überall denkt man mit Schauder an ihn. Nur ein Wahnsinniger würde das Schiff seines Besitzers angreifen, und wer ihm persönlich begegnet, vergisst vor Angst, wie man Schwert oder Pistole hält. Und denk daran: Der Weg ins Jenseits ist leicht. Der Rückweg ist das Schwierige.}
 itmdescr_HolTradeLicence {Erlaubt es Ihnen, Städte und Häfen aller Kolonien zu besuchen, um Handel zu treiben oder andere friedliche Zwecke zu verfolgen. Ausgestellt am #sAction_date# und ist gültig für #sValidity#.}
 itmdescr_howdah {Doppelläufige Großkaliberpistole – der beste Begleiter für Jäger im afrikanischen Busch oder indischen Dschungel. Legt zuverlässig Wildschweine, Tiger und feindselige Eingeborene um.}
-itmdescr_icollection {Eine Reihe von teuren Goldgegenständen mit Edelsteinen, wertvoll für jeden Mann.}
+itmdescr_icollection {Eine vielfältige Auswahl an Gegenständen aus Gold und Edelsteinen, kostbar für Herz und Geldbeutel.}
 itmdescr_ignasio_book {Schiffslogbuch von Ignacio Marco.}
 itmdescr_indian_1
 {
@@ -1469,6 +1469,7 @@ mushket parameters {Schaden: #ddmg_min#-#ddmg_max#}
 mushket parameters equipped {Schaden: #ddmgmin#-#ddmgmax#, Nachladezeit: #dchargespeed# sek.}
 new_string
 {
+
 }
 Potion parameters {Menge}
 talisman17_quests {Aufträge der Kirche: #dQBonus# / 5}

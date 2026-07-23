@@ -14,3 +14,7 @@ low_food_header {Vivres insuffisants}
 low_food_text {Les matelots vont bientôt mourir de faim. Il faut reconstituer les réserves de toute urgence !}
 low_medicament_header {Médicaments insuffisants}
 low_medicament_text {Les matelots vont bientôt mourir de maladie. Il faut reconstituer les réserves de toute urgence !}
+overload_header {Navire surchargé}
+overload_text {Vous ne pouvez pas accéder à la carte globale avec un navire surchargé. Jetez des marchandises de la cale ou transférez-les vers d’autres navires de l’escadre.}
+salary_debt_header {Dette envers l’équipage}
+salary_debt_text {Vous devez de l’argent à l’équipage à la suite du partage du butin ou de salaires impayés. Les nouveaux marins hésiteront à rejoindre votre navire et, avec le temps, l’équipage pourrait se mutiner.}

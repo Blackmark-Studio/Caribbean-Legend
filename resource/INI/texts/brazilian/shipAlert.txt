@@ -14,3 +14,7 @@ low_food_header {Pouca comida}
 low_food_text {Os marinheiros logo começarão a morrer de fome. É preciso repor os suprimentos imediatamente!}
 low_medicament_header {Poucos medicamentos}
 low_medicament_text {Os marinheiros logo começarão a morrer de doenças. É preciso repor os suprimentos imediatamente!}
+overload_header {Navio sobrecarregado}
+overload_text {Não é possível acessar o mapa global com um navio sobrecarregado. Descarte mercadorias do porão ou transfira-as para outros navios da esquadra.}
+salary_debt_header {Dívida com a tripulação}
+salary_debt_text {Você deve dinheiro à tripulação devido à divisão dos espólios ou a salários não pagos. Novos marinheiros ficarão relutantes em se juntar ao seu navio e, com o tempo, a tripulação poderá se amotinar.}

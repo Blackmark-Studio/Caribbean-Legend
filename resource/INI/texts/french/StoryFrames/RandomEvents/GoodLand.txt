@@ -10,7 +10,7 @@ Node0_a_b_success {Vous décidez d'employer une méthode utilisée lors des abor
 Node0_a_b_success_action {Il fait bon être capitaine}
 Node0_a_c_action {Mieux vaut ne pas risquer cela}
 Node0_a_c_success {Vous décidez qu'il ne vaut pas le risque d'aborder un rivage aussi dangereux, et que le pillage n'est de toute façon pas très honorable aux yeux de votre équipage. Vous laissez le lieu du naufrage derrière votre poupe.}
-Node0_a_c_success_action {L'essentiel est de ne pas s'y joindre}
+Node0_a_c_success_action {L’essentiel est de ne pas les rejoindre}
 Node0_a_b {En longeant les côtes de $key($ctx(islandName)Gen), vous apercevez dans la jungle des lueurs à peine visibles. Cela ne ressemble pas du tout à des feux de camp ni à des torches, et cela attire aussitôt votre attention.$br()$red En vous approchant, vous distinguez sur l'eau une chaloupe chargée de ballots, amarrée au rivage dans une obscurité totale. Vous ne voyez personne, mais il est évident qu'ils sont là.}
 Node0_b_a_action {Voler la chaloupe}
 Node0_b_a_success {Vous parvenez à vous glisser jusqu'au rivage avec un petit détachement et vous vous emparez de la chaloupe. Un rapide examen révèle que les ballots contiennent du café, du tabac et un peu de soie de marine. Vous avez manifestement fait capoter l'affaire des contrebandiers.}
@@ -22,7 +22,7 @@ Node0_b_b_success {Vous ordonnez d'ouvrir le feu avec les canons du navire afin 
 Node0_b_b_success_action {Butin facile}
 Node0_b_c_action {Passer son chemin}
 Node0_b_c_success {Vous décidez de ne pas tenter le sort et poursuivez votre route, laissant les contrebandiers derrière votre poupe.}
-Node0_b_c_success_action {C'est mieux ainsi}
+Node0_b_c_success_action {C’est mieux ainsi}
 Node0_a_c {Vous avez tant de fois croisé au large de $key($ctx(islandName)Gen) que ces côtes vous semblent presque familières. D'autant plus étrange, donc, est cette fumée qui tourbillonne au-dessus de la jungle - épaisse, régulière, et montant de plusieurs foyers distincts.$br()$red Le long du rivage, vous voyez des barques de pêche, des lignes, quantité de traces de pas et des marques laissées par quelque chose de lourd qu'on a traîné. À mesure que vous approchez, l'odeur de poisson et de viande fumés se fait plus nette, au point de faire aussitôt gargouiller votre ventre.}
 Node0_c_a_action {Un peu de provisions ne ferait pas de mal}
 Node0_c_a_action_tooltip_bad {Pour cela, il faudra de l'argent...}

@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {战略物资不出售}
 uniqueGoodsAvailable_1 {有战略物资出售}
 uniqueGoodsStock {战略物资库存}
 SquadronPower {舰队战力}
+ammoGoodsStock {弹药储备}
+ammoGoodsCost {弹药费用}
+crewMoraleDebuffMtp {降低饥饿和疾病对船员士气的影响}

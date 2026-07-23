@@ -32,7 +32,7 @@ Node0_c_b_success {당신은 포로를 풀어 주고, 가장 가까운 도시까
 Node0_c_b_success_action {이건 예외일 뿐, 원칙이 아니다}
 Node0_c_c_action {그렇다면 네가 직접 몸값을 치러라}
 Node0_c_c_success {당신은 공정한 거래를 제안합니다. 장교가 자신의 급료를 당겨서 지금 당장 $attr($context.prisonerName)을 몸값으로 사들이는 것입니다. 그러면 어떤 규칙도 어길 필요가 없고, 누구도 빚진 기분을 느낄 일도 없습니다. $attr($context.officerName)은 한동안 망설이지만, 결국 당신의 조건에 동의합니다.}
-Node0_c_c_success_action {Uczciwy układ}
+Node0_c_c_success_action {공정한 거래}
 Node0_c_d_action {선장의 결정은 논의 대상이 아니다}
 Node0_c_d_success {당신은 장교의 부탁을 거절합니다. 포로가 누구이든 그는 항복했고 이제 당신의 손안에 있습니다. 그를 어떻게 처리할지는 오직 당신이 결정할 일입니다. 한 번만 약한 모습을 보이면, 자신의 사적인 문제를 선장 희생으로 해결하려는 자들이 끝없이 몰려들 것입니다. $attr($context.officerName)은 실망한 표정이지만, 당신은 조금도 개의치 않습니다.}
 Node0_c_d_success_action {법은 곧 나다}

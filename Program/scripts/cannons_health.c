@@ -144,7 +144,7 @@ void CAN_RepairAllCannons(ref chr)
 		DeleteAttribute(chr, "Ship.Cargo.Goods." + good.name + ".cannonsqty");
 	}
 
-	SetShipCannonsDamagesNull(chr);
+	SetShipCannonsDamagesNull(chr, false);
 }
 
 // Получить цену на ремонт N орудий с учётом их состояния

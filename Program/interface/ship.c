@@ -692,21 +692,31 @@ void OnShipScrollChange()
 	currentCannonGoodIdx = GetCannonGoodIdxByBort(xi_refCharacter, "cannonl");
 }
 
-bool XI_SetShipAlert(bool check, string type, string groupName, string picName, bool useBG, bool useMark, fref onClick = fref(nullptr))
+bool XI_SetShipAlert(bool check, string type, string groupName, string picName, bool useBG, bool useMark, int size = 62, fref onClick = fref(nullptr))
 {
 	if (check) return false;
-	if ("SHIP_ALERT_PICTURE2.userdata" in &GameInterface) return true; // уже есть оба алерта
+	if ("SHIP_ALERT_PICTURE_BG2.userdata" in &GameInterface) return true; // уже есть оба алерта
 
 	string postfix = "";
-	if ("SHIP_ALERT_PICTURE.userdata" in &GameInterface) postfix = "2"; // уже есть первый алерт
+	if ("SHIP_ALERT_PICTURE_BG.userdata" in &GameInterface) postfix = "2"; // уже есть первый алерт
 
 	string mainEl = "SHIP_ALERT_PICTURE" + postfix;
-	GameInterface.(mainEl).userdata.alertType = type;
+	GameInterface.("SHIP_ALERT_PICTURE_BG" + postfix).userdata.alertType = type;
 	SetNodeUsing(mainEl, true);
-	SetNodeUsing("SHIP_ALERT_PICTURE_BG" + postfix, useBG);
+	SetNewGroupPicture("SHIP_ALERT_PICTURE_BG" + postfix, "PERKS_ENABLE", useBG ? "base_self" : "");
+	SetNodeUsing("SHIP_ALERT_PICTURE_BG" + postfix, true);
 	SetNodeUsing("SHIP_ALERT_PICTURE_MARK" + postfix, useMark);
+
+	if (size < 0) size = 62;
+	int x1,y1,x2,y2;
+	x1 = 596;
+	x2 = 658;
+	y1 = postfix == "2" ? 246 : 164;
+	y2 = postfix == "2" ? 308 : 226;
+	int diff = int((62 - size) * 0.5);
+	SetNodePosition(mainEl, x1+diff, y1+diff, x2-diff, y2-diff);
 	SetNewGroupPicture(mainEl, groupName, picName);
-	if (onClick != fref(nullptr)) XI_SetClickHandler(mainEl, onClick);
+	if (onClick != fref(nullptr)) XI_SetClickHandler("SHIP_ALERT_PICTURE_BG" + postfix, onClick);
 	return true;
 }	
 
@@ -718,16 +728,16 @@ void SetAlertLocationPicture()
 	string groupName = "LAND_TARGET";
 	if (IsEntity(&worldMap) || bSeaActive)
 	{
-		GameInterface.SHIP_ALERT_PICTURE.userdata.alertType = "where_is_my_ship_sea";
+		GameInterface.SHIP_ALERT_PICTURE_BG.userdata.alertType = "where_is_my_ship_sea";
 		groupName = "LAND_COMMANDS";
 		picName = "sea";
 	}
 	else
 	{
-		GameInterface.SHIP_ALERT_PICTURE.userdata.alertType = "where_is_my_ship";
+		GameInterface.SHIP_ALERT_PICTURE_BG.userdata.alertType = "where_is_my_ship";
 		ref location = FindLocationById(pchar.location.from_sea);
 		string name = GetLocationNameByRef(location);
-		GameInterface.SHIP_ALERT_PICTURE.userdata.value = name != "" ? name : GetLocationLabelByRef(location);
+		GameInterface.SHIP_ALERT_PICTURE_BG.userdata.value = name != "" ? name : GetLocationLabelByRef(location);
 		switch (location.type)
 		{
 			case "town":
@@ -740,6 +750,7 @@ void SetAlertLocationPicture()
 		}
 	}
 
+	SetNodeUsing("SHIP_ALERT_PICTURE_BG", true);
 	SetNewGroupPicture("SHIP_ALERT_PICTURE", groupName, picName);
 	SetNodeUsing("SHIP_ALERT_PICTURE", true);
 }
@@ -752,8 +763,8 @@ void SetAlertPictures(ref ship, int crewQty)
 	SetNodeUsing("SHIP_ALERT_PICTURE_BG2", false);
 	SetNodeUsing("SHIP_ALERT_PICTURE_MARK2", false);
 	SetNodeUsing("SHIP_ALERT_PICTURE2", false);
-	DeleteAttribute(&GameInterface, "SHIP_ALERT_PICTURE.userdata");
-	DeleteAttribute(&GameInterface, "SHIP_ALERT_PICTURE2.userdata");
+	DeleteAttribute(&GameInterface, "SHIP_ALERT_PICTURE_BG.userdata");
+	DeleteAttribute(&GameInterface, "SHIP_ALERT_PICTURE_BG2.userdata");
 
 	SetAlertLocationPicture();
 	// квестовый, больше ничего не показываем
@@ -761,16 +772,21 @@ void SetAlertPictures(ref ship, int crewQty)
 	
 	bool hasCrew = crewQty > 0;
 	string cannonPic = Goods[GetCannonGoodIdxByBort(xi_refCharacter, "cannonl")].name;
+	aref shipUserdata = GameInterface.TABLE_OTHER.userdata$aref;
 	// бунт
-	XI_SetShipAlert(GetCharacterCrewMorale(xi_refCharacter) > MORALE_MIN + 5, "low_morale", "MORALE", "medium morale", true, true, IsMainCharacter(xi_refCharacter) ? &ShowPartitionWindow : &XI_ShowRaiseMoralePopup);
-	// Мало еды
+	XI_SetShipAlert(GetCharacterCrewMorale(xi_refCharacter) > MORALE_MIN + 5, "low_morale", "MORALE", "medium morale", true, true, -1, IsMainCharacter(xi_refCharacter) ? &ShowPartitionWindow : &XI_ShowRaiseMoralePopup);
+	// есть долг перед командой
+	if (IsMainCharacter(xi_refCharacter)) XI_SetShipAlert(GetPartitionAmount("CrewPayment") <= 0, "salary_debt", "LAND_TARGET2", "usurer", true, true, 56, &ShowPartitionWindow);
+	// мало еды
 	XI_SetShipAlert(CalculateShipFood(xi_refCharacter) > 5 || !hasCrew, "low_food", "GOODS", "food", true, true);
-	// Мало медикаментов
+	// мало медикаментов
 	XI_SetShipAlert(CalculateShipMedicament(xi_refCharacter) > 5 || !hasCrew, "low_medicament", "GOODS", "medicament", true, true);
 	// сломанные пушки
-	XI_SetShipAlert(CAN_GetMostDamagedBortHealth(xi_refCharacter) > CAN_DEBUFF_LEVEL || int(ship.CannonsQuantity) < 1, "cannons_broken", "GOODS", cannonPic, true, true, &ShowCannonsMenu);
+	XI_SetShipAlert(CAN_GetMostDamagedBortHealth(xi_refCharacter) > CAN_DEBUFF_LEVEL || int(ship.CannonsQuantity) < 1, "cannons_broken", "GOODS", cannonPic, true, true, -1, &ShowCannonsMenu);
 	// нет капитанского навыка
-	XI_SetShipAlert(CanBeCaptain(xi_refCharacter), "bad_captain", "PERKS_ENABLE", "captain", true, true, &XI_ShipChangeCaptainShow);
+	XI_SetShipAlert(CanBeCaptain(xi_refCharacter), "bad_captain", "PERKS_ENABLE", "captain", true, true, -1, &XI_ShipChangeCaptainShow);
+	// корабль перегружен
+	XI_SetShipAlert(!bool(shipUserdata.overload), "overload", "EQUIP_ICONS", "capacity", true, true, 48, &XI_ShipForceGoodsTab);
 }
 
 void confirmShipChangeName()
@@ -875,7 +891,7 @@ void ShowInfoWindow()
 
 bool XI_ShipAlertTooltip(ref chr, string currentNode, ref header, ref text, ref goodText, ref badText)
 {
-	if (currentNode != "SHIP_ALERT_PICTURE" && currentNode != "SHIP_ALERT_PICTURE2") return false;
+	if (currentNode != "SHIP_ALERT_PICTURE_BG" && currentNode != "SHIP_ALERT_PICTURE_BG2") return false;
 
 	aref userdata = GameInterface.(currentNode).userdata$aref;
 	header = DLG_Convert(userdata.alerttype + "_header", "ShipAlert.txt");
@@ -1818,4 +1834,11 @@ void XI_ShipChangeCaptainConfirm()
 
 	SeaAI_SetOfficer2ShipAfterAbordage(newCap, oldCap);
 	if (IsEntity(&worldMap)) BI_UpdateWmInterface();
+}
+
+void XI_ShipForceGoodsTab()
+{
+	goodsMode = 1;
+	SetControlsTabMode(goodsMode);
+	FillSuppliesTable(goodsMode, xi_refCharacter);
 }

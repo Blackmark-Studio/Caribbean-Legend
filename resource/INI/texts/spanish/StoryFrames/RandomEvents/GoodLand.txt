@@ -10,7 +10,7 @@ Node0_a_b_success {Decidís emplear una táctica usada en abordajes y asedios de
 Node0_a_b_success_action {Da gusto ser el capitán}
 Node0_a_c_action {Mejor no arriesgar}
 Node0_a_c_success {Decidís que intentar atracar en una costa tan peligrosa no compensa el riesgo, y además el saqueo no goza de honra entre vuestra tripulación. Dejáis el lugar del naufragio a popa.}
-Node0_a_c_success_action {Önemli olan ona katılmamak}
+Node0_a_c_success_action {Lo importante es no unirse a ellos}
 Node0_a_b {Pasando frente a las costas de $key($ctx(islandName)Gen), divisáis en la selva unas luces apenas perceptibles. No se parecen en nada al resplandor de hogueras ni antorchas, y enseguida llaman vuestra atención.$br()$red Al acercaros, distinguís sobre el agua una chalupa cargada de fardos, amarrada a la orilla en plena oscuridad. No veis a nadie, pero está claro que hay gente aquí.}
 Node0_b_a_action {Llevarse la chalupa}
 Node0_b_a_success {Lográis acercaros en silencio a la orilla con un pequeño destacamento y os lleváis la chalupa. Un vistazo rápido revela que los fardos contienen café, tabaco y algo de seda naval. Está claro que acabáis de arruinar el trato de unos contrabandistas.}
@@ -22,7 +22,7 @@ Node0_b_b_success {Ordenas abrir fuego con la artillería del barco para obligar
 Node0_b_b_success_action {Botín fácil}
 Node0_b_c_action {Seguir de largo}
 Node0_b_c_success {Decides no tentar a la suerte y seguir navegando, dejando a los contrabandistas a popa.}
-Node0_b_c_success_action {Worse?}
+Node0_b_c_success_action {Es lo mejor}
 Node0_a_c {Has pasado tantas veces frente a las costas de $key($ctx(islandName)Gen) que ya te parecen casi familiares. Por eso resulta aún más extraño ese humo que se arremolina sobre la selva: denso, uniforme y levantándose desde varios puntos a la vez.$br()$red A lo largo de la orilla ves barcas de pesca, cañas, multitud de huellas y rastros de algo pesado arrastrado por el suelo. Cuanto más os acercáis, más claro se vuelve en el aire el aroma de pescado y carne ahumados, hasta haceros rugir el estómago al instante.}
 Node0_c_a_action {No nos vendrían mal unas provisiones}
 Node0_c_a_action_tooltip_bad {Para eso hará falta dinero...}

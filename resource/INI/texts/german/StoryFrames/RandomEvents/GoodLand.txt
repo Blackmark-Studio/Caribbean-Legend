@@ -22,7 +22,7 @@ Node0_b_b_success {Ihr befehlt, das Feuer mit den Schiffsgeschützen zu eröffne
 Node0_b_b_success_action {Leichte Beute}
 Node0_b_c_action {Weitersegeln}
 Node0_b_c_success {Ihr beschließt, das Schicksal nicht herauszufordern, und segelt weiter, während ihr die Schmuggler achteraus zurücklasst.}
-Node0_b_c_success_action {Das ist besser so}
+Node0_b_c_success_action {So ist es besser}
 Node0_a_c {Ihr seid schon so oft an den Küsten von $key($ctx(islandName)Gen) vorbeigekommen, dass sie euch beinahe vertraut erscheinen. Umso seltsamer wirkt der Rauch, der über dem Dschungel aufsteigt - dicht, gleichmäßig und aus mehreren Quellen zugleich.$br()$red Am Ufer erkennt ihr Fischerboote und Angelruten, unzählige Fußspuren und Schleifspuren von etwas Schwerem. Je näher ihr kommt, desto deutlicher liegt der Duft von geräuchertem Fisch und Fleisch in der Luft, und sofort beginnt euch der Magen zu knurren.}
 Node0_c_a_action {Etwas Proviant käme uns gerade recht}
 Node0_c_a_action_tooltip_bad {Dafür wird Geld nötig sein...}

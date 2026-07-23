@@ -16,7 +16,7 @@ Node0_b_a_action {Zararı sen karşılayacaksın}
 Node0_b_a_success {Subaya, denizcinin zararını kendi maaşından karşılamasını emrediyorsunuz. $ctx(officerName) size itiraz etmeye kalkıyor, ama kaptanın tek bir sert bakışı onu susturmaya yetiyor. Tayfalar tatmin oluyor ve dağılıyor. Adaletle itaat arasındaki seçimin yükü içinizi kemiriyor, ama Alonso doğru olanı yaptığınızı söylüyor. Siz de ona inanıyorsunuz.}
 Node0_b_a_success_action {Böylesi adil olur}
 Node0_b_a_fail {Subaya, denizcinin zararını kendi maaşından karşılamasını emrediyorsunuz, ama o gemi nizamının arkasına sığınıp bunu reddediyor. Bedensel cezalar ve bunların şiddetini belirleme yetkisi gerçekten de subayın alanına giriyor; size de bunu kabul etmekten başka bir şey kalmıyor. Bu durum tayfalar arasında sert bir tepki doğuruyor, ama Alonso onları yatıştırıyor. Görünüşe bakılırsa gemideki herkesin gözünde biraz saygınlık kaybettiniz.}
-Node0_b_a_fail_action { }
+Node0_b_a_fail_action {Bunu unutalım}
 Node0_b_b_action {Çarkçı kendi hakkı içinde}
 Node0_b_b_success {Subayın hem cezanın şeklini hem de ağırlığını belirleme hakkını onaylıyorsunuz. Denizcinin ne düşündüğü önemli değil — onun görevi emirlere uymak. $attr($context.officerName) kararınızdan memnun, ama mürettebatın bundan hoşnut olmadığı açık.}
 Node0_b_b_success_action {Kimse onlara fikirlerini sormadı}

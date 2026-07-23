@@ -2,4 +2,4 @@ reaction_functions_1 {Overdose di pozione Mangarosa!}
 reaction_functions_2 {Sei stato avvelenato}
 reaction_functions_3 {Pozione speciale di Mangarosa usata!}
 reaction_functions_4 {L'effetto della pozione Mangarosa è terminato}
-reaction_functions_5 { }
+reaction_functions_5 {Una giornata fortunata per gli affari: le stive sono state rifornite! +}

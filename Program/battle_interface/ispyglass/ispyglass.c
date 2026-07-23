@@ -284,7 +284,7 @@ void SetSpyGlassData()
 			
 			if (int(Cannon[cannonIdx].type) != CANNON_NAME_CULVERINE)
 			{
-				cannonString = cannonString + "s";
+				cannonString = cannonString + "_s";
 			}
 			
 			CannonTypeName = XI_ConvertString(cannonString);

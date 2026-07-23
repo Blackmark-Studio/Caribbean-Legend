@@ -70,6 +70,9 @@ void SetShipOTHERTable2(string tabName, ref chr, string iconCell = "td1", string
 	RecalculateCargoLoad(chr);
 	int currentCapacity = GetCargoLoad(chr);
 	int maxCapacity = GetCargoMaxSpace(chr);
+	table.("userdata" + userdataPostfix).currentCapacity = currentCapacity;
+	table.("userdata" + userdataPostfix).maxCapacity = maxCapacity;
+	table.("userdata" + userdataPostfix).overload = currentCapacity > maxCapacity;
 	table.tr4.UserData.ID = "Capacity";
 	table.tr4.(iconCell).icon.image = "Capacity";
 	table.tr4.(titleCell).str = XI_ConvertString("Capacity");
@@ -111,7 +114,7 @@ void XI_FillBar(string barName, int min, int max, int value)
 }
 
 
-void XI_ShipTableTooltip(ref chr, ref refBaseShip, string tabName, ref header, ref text, ref goodText, ref badText, ref sGroup, ref sGroupPicture, ref windRose, ref secondChr = nullptr, string userdataPostfix = "")
+void XI_ShipTableTooltip(ref chr, ref refBaseShip, string tabName, ref header, ref text, ref badText, ref goodText, ref sGroup, ref sGroupPicture, ref windRose, ref secondChr = nullptr, string userdataPostfix = "")
 {
 	aref table = GetAref(&GameInterface, tabName);
 	int nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
@@ -138,22 +141,24 @@ void XI_ShipTableTooltip(ref chr, ref refBaseShip, string tabName, ref header, r
 	// трюм
 	if (table.(sRow).UserData.ID == "Capacity" && sti(chr.ship.type) != SHIP_NOTUSED)
 	{
-		badText = XI_ConvertString("Used") + ": " + FloatToString((stf(GetCargoLoad(chr))  /  stf(GetCargoMaxSpace(chr))) * 100.0, 1)+ " %";
+		float overloadPercent = float(ceil(float(userdata.currentCapacity) / float(userdata.maxCapacity) * 100) * 0.01);
+		goodText = XI_ConvertString("Used") + ": " + ToHumanPercent(overloadPercent);
+		if (bool(userdata.overload)) badText += GetConvertStr("SourceOverload", "RPGDescribe.txt");
 	}
 
-	if (table.(sRow).UserData.ID == "Speed") SetModifiersStatText(chr, &tuning, M_SHIP_SPEED, &badText, "ToHumanModifierPercent", 0.0);
+	if (table.(sRow).UserData.ID == "Speed") SetModifiersStatText(chr, &tuning, M_SHIP_SPEED, &goodText, "ToHumanModifierPercent", 0.0);
 	if (table.(sRow).UserData.ID == "Maneuver") 
 	{
-		if (CurrentInterface != INTERFACE_SHIPYARD)	badText += DLG_Convert("ManeuverCurrent", "ShipsDescribe.txt", &userdata);
-		SetModifiersStatText(chr, &tuning, M_SHIP_TURNRATE, &badText, "ToHumanModifierPercent", 0.0);
+		if (CurrentInterface != INTERFACE_SHIPYARD)	goodText += DLG_Convert("ManeuverCurrent", "ShipsDescribe.txt", &userdata);
+		SetModifiersStatText(chr, &tuning, M_SHIP_TURNRATE, &goodText, "ToHumanModifierPercent", 0.0);
 	}
-	if (table.(sRow).UserData.ID == "Crew") SetModifiersStatText(chr, &tuning, M_SHIP_MAXCREW, &badText, "ToHumanModifierPercent", 0.0);
-	if (table.(sRow).UserData.ID == "Capacity") SetModifiersStatText(chr, &tuning, M_SHIP_CAPACITY, &badText, "ToHumanModifierPercent", 0.0);
+	if (table.(sRow).UserData.ID == "Crew") SetModifiersStatText(chr, &tuning, M_SHIP_MAXCREW, &goodText, "ToHumanModifierPercent", 0.0);
+	if (table.(sRow).UserData.ID == "Capacity") SetModifiersStatText(chr, &tuning, M_SHIP_CAPACITY, &goodText, "ToHumanModifierPercent", 0.0);
 	
 	if (table.(sRow).UserData.ID == "Rig")
 	{
 		text = "";
-		badText = GetConvertStr(table.(sRow).UserData.ID, "ShipsDescribe.txt");
+		goodText = GetConvertStr(table.(sRow).UserData.ID, "ShipsDescribe.txt");
 		windRose = true;
 		if (secondChr == nullptr) return;
 		

@@ -10,7 +10,7 @@ Node0_a_b_success {Postanawiacie skorzystać ze sposobu stosowanego przy aborda�
 Node0_a_b_success_action {Dobrze być kapitanem}
 Node0_a_c_action {Nie ryzykujmy}
 Node0_a_c_success {Dochodzicie do wniosku, że próba dobicia do tak niebezpiecznego brzegu nie jest warta ryzyka, a i szabrownictwo nie przynosi zaszczytu wśród waszej załogi. Zostawiacie miejsce katastrofy za rufą.}
-Node0_a_c_success_action {Lo importante es no acabar ahí}
+Node0_a_c_success_action {Najważniejsze, żeby do nich nie dołączyć}
 Node0_a_b {Płynąc u wybrzeży $key($ctx(islandName)Gen), dostrzegacie w dżungli ledwie widoczne światła. Wcale nie przypominają blasku ognisk ani pochodni, i od razu przyciągają waszą uwagę.$br()$red Gdy podpływacie bliżej, na wodzie zarysowuje się szalupa obładowana belami, przywiązana do brzegu w zupełnych ciemnościach. Nie widzicie ludzi, ale wyraźnie tu są.}
 Node0_b_a_action {Ukraść szalupę}
 Node0_b_a_success {Udaje się wam podkraść do brzegu z małym oddziałem i uprowadzić szalupę. Szybki ogląd pokazuje, że bele to kawa, tytoń i trochę okrętowego jedwabiu. Najwyraźniej popsuliście interes przemytnikom.}
@@ -22,7 +22,7 @@ Node0_b_b_success {Każecie otworzyć ogień z dział okrętowych, by zmusić lu
 Node0_b_b_success_action {Łatwy łup}
 Node0_b_c_action {Odpłynąć}
 Node0_b_c_success {Postanawiacie nie kusić losu i odpływacie, zostawiając przemytników za rufą.}
-Node0_b_c_success_action {To lepiej}
+Node0_b_c_success_action {Tak będzie lepiej}
 Node0_a_c {Tyle razy bywaliście u wybrzeży $key($ctx(islandName)Gen), że wydają się wam już niemal swojskie. Tym dziwniej wygląda dym kłębiący się nad selwą - równy, gęsty i zbierający się z kilku źródeł.$br()$red Wzdłuż brzegu widzicie rybackie łodzie i wędki, mnóstwo śladów stóp oraz ślady po czymś ciężkim ciągniętym po ziemi. Im bardziej się zbliżacie, tym wyraźniejszy staje się w powietrzu aromat wędzonej ryby i mięsa, od którego od razu burczy wam w brzuchu.}
 Node0_c_a_action {Przydałyby się nam jakieś zapasy}
 Node0_c_a_action_tooltip_bad {Na to trzeba będzie pieniędzy...}

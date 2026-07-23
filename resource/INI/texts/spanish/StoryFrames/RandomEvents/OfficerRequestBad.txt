@@ -16,7 +16,7 @@ Node0_b_a_action {Vas a resarcir el daño}
 Node0_b_a_success {Ordenas al oficial que compense al marinero con cargo a su propio sueldo. $ctx(officerName) intenta replicarte, pero basta una sola mirada dura del capitán para hacerle callar. Los marineros quedan satisfechos y se retiran. Te siguen mordiendo las dudas entre la justicia y la subordinación, pero Alonso dice que has hecho lo correcto. Le crees.}
 Node0_b_a_success_action {Así será justo}
 Node0_b_a_fail {Ordenas al oficial que compense al marinero con cargo a su propio sueldo, pero él se niega, escudándose en el reglamento del barco. Los castigos corporales y la elección de su intensidad corresponden, en efecto, al oficial, y no te queda más remedio que ceder. Esto provoca una reacción airada entre los marineros, aunque Alonso logra calmarlos. Parece que has perdido una pizca del respeto de todos los que viajan a bordo.}
-Node0_b_a_fail_action { }
+Node0_b_a_fail_action {Olvidemos esto}
 Node0_b_b_action {El contramaestre está en su derecho}
 Node0_b_b_success {Respaldas el derecho del oficial a decidir tanto la forma del castigo como su severidad. Lo que piense el marinero no importa: su deber es obedecer órdenes. $attr($context.officerName) recibe tu decisión con satisfacción, pero la tripulación está lejos de compartirla.}
 Node0_b_b_success_action {Nadie les ha pedido su opinión}

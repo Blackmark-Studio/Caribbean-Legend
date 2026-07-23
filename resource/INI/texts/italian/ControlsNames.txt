@@ -178,9 +178,9 @@ ShipCamera_Turn_H {Movimento orizzontale della Camera che segue la nave}
 ShipCamera_Turn_V {Movimento verticale della Camera che segue la nave}
 ShipState {Navi}
 SwitchCameraOffset {Vista Camera}
-TelescopeMode { }
-TelescopeZoomIn { }
-TelescopeZoomOut { }
+TelescopeMode {Attiva/disattiva cannocchiale}
+TelescopeZoomIn {Cannocchiale (ingrandisci)}
+TelescopeZoomOut {Cannocchiale (riduci)}
 TimeScale {Time speed up/slow down}
 TimeScaleFasterBA {Time speed up}
 TimeScaleOff {Disattiva accelerazione}

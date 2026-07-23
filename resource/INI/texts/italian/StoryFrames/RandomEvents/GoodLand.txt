@@ -10,7 +10,7 @@ Node0_a_b_success {Decidete di ricorrere a un metodo impiegato negli abbordaggi 
 Node0_a_b_success_action {È bello essere il capitano}
 Node0_a_c_action {Non rischiamo}
 Node0_a_c_success {Decidete che tentare di accostare a una costa tanto pericolosa non valga il rischio, e del resto il saccheggio non è tenuto in gran conto dal vostro equipaggio. Lasciate il luogo del naufragio dietro la vostra poppa.}
-Node0_a_c_success_action {L'importante è non andarci a finire anche noi}
+Node0_a_c_success_action {L’importante è non unirsi a loro}
 Node0_a_b {Costeggiando $key($ctx(islandName)Gen), notate nella giungla luci appena distinguibili. Non assomigliano affatto al bagliore di fuochi o torce, e attirano subito la vostra attenzione.$br()$red Avvicinandovi, scorgete sull'acqua una scialuppa carica di balle, ormeggiata alla riva nella più completa oscurità. Non vedete nessuno, ma è chiaro che sono qui.}
 Node0_b_a_action {Rubare la scialuppa}
 Node0_b_a_success {Riuscite ad avvicinarvi di nascosto alla riva con un piccolo drappello e vi impadronite della scialuppa. A un rapido controllo, scoprite che le balle contengono caffè, tabacco e un po' di seta da nave. Avete chiaramente mandato a monte l'affare dei contrabbandieri.}

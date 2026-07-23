@@ -10,7 +10,7 @@ Node0_a_b_success {Abordajlarda ve koloni kuşatmalarında kullanılan usule ba�
 Node0_a_b_success_action {Güzel şey kaptan olmak}
 Node0_a_c_action {Hiç riske girmeyelim}
 Node0_a_c_success {Böylesine tehlikeli bir kıyıya yanaşma girişiminin riske değmeyeceğine karar veriyorsunuz; hem zaten yağmacılık da mürettebatınız arasında şeref sayılmaz. Batık yerini kıçınızın gerisinde bırakıp geçiyorsunuz.}
-Node0_a_c_success_action {O importante é não ir junto}
+Node0_a_c_success_action {Önemli olan onlara katılmamak}
 Node0_a_b {$key($ctx(islandName)Gen) kıyılarından geçerken cangılda zar zor seçilen ışıklar fark ediyorsunuz. Bunlar kamp ateşi ya da meşale parıltısına hiç benzemiyor ve hemen dikkatinizi çekiyor.$br()$red Yaklaştığınızda, suda balyalarla yüklü bir filikanın zifiri karanlıkta kıyıya bağlanmış olduğu seçiliyor. İnsan görmüyorsunuz, ama burada oldukları belli.}
 Node0_b_a_action {Filikayı çalmak}
 Node0_b_a_success {Küçük bir birlikle kıyıya gizlice sokulmayı başarıyor ve filikayı kaçırıyorsunuz. Hızlı bir göz atınca üzerindeki balyaların kahve, tütün ve biraz da gemi ipeği olduğu anlaşılıyor. Belli ki kaçakçıların anlaşmasını bozmuş bulunuyorsunuz.}
@@ -22,7 +22,7 @@ Node0_b_b_success {Adamları cangıla kaçırmak için gemi toplarının ateş a
 Node0_b_b_success_action {Kolay av}
 Node0_b_c_action {Uzaklaşmak}
 Node0_b_c_success {Kaderi zorlamamaya karar verip uzaklaşıyor, kaçakçıları kıçınızın gerisinde bırakıyorsunuz.}
-Node0_b_c_success_action { }
+Node0_b_c_success_action {Böylesi daha iyi}
 Node0_a_c {$key($ctx(islandName)Gen) kıyılarına o kadar çok geldiniz ki artık size neredeyse memleket gibi geliyor. Bu yüzden, cangılın üzerinde kıvrıla kıvrıla yükselen duman daha da tuhaf görünüyor - yoğun, düzgün ve birkaç ayrı kaynaktan toplanıyor.$br()$red Kıyı boyunca balıkçı kayıkları ve oltalar, sayısız ayak izi ve ağır bir şeyin sürüklendiğine dair izler görüyorsunuz. Yaklaştıkça, havadaki tütsülenmiş balık ve et kokusu iyice belirginleşiyor; mideniz de buna hemen karşılık veriyor.}
 Node0_c_a_action {Biraz erzak hiç fena olmazdı}
 Node0_c_a_action_tooltip_bad {Bunun için para gerekecek...}

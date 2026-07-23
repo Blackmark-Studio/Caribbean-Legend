@@ -178,9 +178,9 @@ ShipCamera_Turn_H {Horizontale Bewegung der Kamera bei der Verfolgung des Schiff
 ShipCamera_Turn_V {Vertikale Bewegung der Kamera bei der Verfolgung des Schiffes}
 ShipState {Flotte}
 SwitchCameraOffset {Kameraansicht}
-TelescopeMode { }
-TelescopeZoomIn {Fernrohr (Hereinzoomen)}
-TelescopeZoomOut {Fernrohr (Herauszoomen)}
+TelescopeMode {Fernrohr umschalten}
+TelescopeZoomIn {Fernrohr (vergrößern)}
+TelescopeZoomOut {Fernrohr (verkleinern)}
 TimeScale {Zeit beschleunigen/verlangsamen}
 TimeScaleFasterBA {Zeit beschleunigen}
 TimeScaleOff {Beschleunigung deaktivieren}

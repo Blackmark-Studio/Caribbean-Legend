@@ -26,7 +26,7 @@ Node0_c_d_reaction {El oro es la mejor inversión}
 Node0_c_d_reaction_log {Sabes lo que valen los doblones y convencerás fácilmente a cualquier usurero de que los depósitos en oro son mucho más fiables tanto para ellos como para ti.}
 Node0_c_e {Tras largas disputas en la corte francesa, se decidió revisar los aranceles coloniales. Parte de las mercancías fue retirada oficialmente de la lista de artículos prohibidos, y las antiguas sanciones quedaron suspendidas temporalmente. Las potencias rivales del Louvre respondieron de la misma manera, y ahora en los puertos de todo el archipiélago caribeño se puede comerciar con plata y oro, mientras que lo que antes se consideraba contrabando ahora es legal.}
 Node0_c_e_reaction {¿Y qué hay de la mercancía viva?}
-Node0_c_e_reaction_log { }
+Node0_c_e_reaction_log {Los nuevos aranceles no durarán para siempre y la oportunidad de comerciar con contrabando pronto desaparecerá. Sin embargo, la trata de esclavos promete beneficios a largo plazo, y decides convencer de ello a los negociantes del Caribe.}
 Node0_d_a {Con la llegada de la primavera, las aguas costeras cobran vida. En los bajos abundan la caballa y la sardina, el atún se acerca a los arrecifes y junto a las playas de arena se capturan tortugas marinas. Los marineros echan redes directamente desde los botes, ahúman pescado en la orilla y llenan barriles con agua dulce de arroyos costeros en cada parada.}
 Node0_d_a_reaction {Una dieta variada ayuda}
 Node0_d_a_reaction_log {Decides preparar una ración marinera variada y completa, complementando las habituales galletas y la carne salada con pescado y carne frescos. Un menú bien compuesto bajo la supervisión del médico de a bordo ayudará a reducir el riesgo de brotes de epidemias y de escorbuto.}

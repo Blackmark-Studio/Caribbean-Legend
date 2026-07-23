@@ -47,7 +47,7 @@ seg_Sandal {아이언우드}
 seg_ShipSilk {선박견}
 seg_Silver {은화}
 seg_Slaves {노예}
-seg_Sugar { }
+seg_Sugar {설탕의}
 seg_Tobacco {담배}
 seg_Weapon {무기}
 seg_Wheat {밀}

@@ -32,7 +32,7 @@ Node0_c_b_success {あなたは捕虜を放し、いちばん近い町に着く�
 Node0_c_b_success_action {これは例外であって、決まりではない}
 Node0_c_c_action {それなら自分で身請けしろ}
 Node0_c_c_success {あなたは筋の通った取引を持ちかける――士官が自分の給金から払って、今すぐ $attr($context.prisonerName) を身請けすればいい。そうすれば規則を破る必要はなく、誰も借りを作らずに済む。$attr($context.officerName) はしばらく迷うが、やがてあなたの条件を受け入れる。}
-Node0_c_c_success_action { }
+Node0_c_c_success_action {公正な取引}
 Node0_c_d_action {船長の決定に口は出させない}
 Node0_c_d_success {あなたは士官の願いを退ける。捕虜が誰であろうと、降伏した以上、今はあなたの手の内にある。どう扱うかを決めるのは、あなただけだ。一度でも甘い顔を見せれば、自分の私事を船長の肩代わりで片づけたがる連中が後を絶たなくなる。$attr($context.officerName) は落胆しているようだが、あなたは気にも留めない。}
 Node0_c_d_success_action {法はこの私だ}

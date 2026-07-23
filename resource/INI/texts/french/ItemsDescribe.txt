@@ -227,7 +227,7 @@ itmdescr_hat8 {Ce chapeau effraie les marchands—surtout les Espagnols—plus q
 itmdescr_hat9 {Ce chapeau est célèbre dans tout le Caraïbe, et partout on s’en souvient avec effroi. Seul un fou oserait attaquer le navire de son porteur, et face à lui, la peur vous ferait oublier comment tenir une épée ou un pistolet. Souvenez-vous : passer de l’autre côté est facile. Revenir, c’est là le vrai défi.}
 itmdescr_HolTradeLicence {Vous permet de visiter les villes et les ports de toutes les colonies à des fins commerciales et pacifiques. Délivré le #sAction_date# et valable pour #sValidity#.}
 itmdescr_howdah {Pistolet gros calibre à double canon, le meilleur allié du chasseur dans la brousse africaine ou la jungle indienne. Abat sans faillir sangliers, tigres et indigènes hostiles.}
-itmdescr_icollection {Un ensemble varié d'objets en or coûteux avec des pierres précieuses, précieux pour tout homme.}
+itmdescr_icollection {Un assortiment varié d’objets en or et en pierres précieuses, chers au cœur comme à la bourse.}
 itmdescr_ignasio_book {Journal de bord d'Ignacio Marco.}
 itmdescr_indian_1
 {

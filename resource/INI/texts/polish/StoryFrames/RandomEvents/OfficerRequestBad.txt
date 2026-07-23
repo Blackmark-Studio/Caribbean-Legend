@@ -16,7 +16,7 @@ Node0_b_a_action {Pokryjesz szkody}
 Node0_b_a_success {Każecie oficerowi wyrównać marynarzowi szkodę z własnego żołdu. $ctx(officerName) próbuje wam się sprzeciwić, lecz jedno groźne spojrzenie kapitana wystarcza, by umilkł. Marynarze są usatysfakcjonowani i odchodzą. Wciąż dręczy was ciężar wyboru między sprawiedliwością a subordynacją, ale Alonso mówi, że postąpiliście właściwie. Wierzycie mu.}
 Node0_b_a_success_action {Tak będzie sprawiedliwie}
 Node0_b_a_fail {Każecie oficerowi wyrównać marynarzowi szkodę z własnego żołdu, lecz on odmawia, zasłaniając się regulaminem okrętowym. Kary cielesne i wybór ich surowości rzeczywiście należą do kompetencji oficera, więc nie pozostaje wam nic innego, jak się z tym pogodzić. Wywołuje to gwałtowną reakcję wśród marynarzy, ale Alonso ich uspokaja. Wygląda na to, że straciliście odrobinę szacunku w oczach wszystkich na statku.}
-Node0_b_a_fail_action { }
+Node0_b_a_fail_action {Zapomnijmy o tym}
 Node0_b_b_action {Bosman miał do tego prawo}
 Node0_b_b_success {Potwierdzasz prawo oficera do decydowania zarówno o formie kary, jak i o jej surowości. To, co myśli marynarz, nie ma znaczenia — jego obowiązkiem jest wykonywać rozkazy. $attr($context.officerName) jest zadowolony z twojego wyroku, ale załoga wyraźnie nie podziela tego entuzjazmu.}
 Node0_b_b_success_action {Nikt ich o zdanie nie pytał}

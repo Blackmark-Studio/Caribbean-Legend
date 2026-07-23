@@ -856,6 +856,6 @@ string GetJobsList(ref chrVT, string divider)
 
 string XI_GetHumanCurrentMax(ref current, ref maximum, string add1 = "", string add2 = "")
 {
-	if (float(maximum) > float(current)) return current + " / " + maximum + add1;
+	if (float(maximum) != float(current)) return current + " / " + maximum + add1;
 	return maximum + add2;
 }

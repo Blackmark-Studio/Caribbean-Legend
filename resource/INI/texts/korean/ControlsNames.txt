@@ -179,8 +179,8 @@ ShipCamera_Turn_V {선박을 따라가는 카메라의 수직 이동}
 ShipState {함대}
 SwitchCameraOffset {카메라 시점}
 TelescopeMode {망원경 전환}
-TelescopeZoomIn {망원경 (확대)}
-TelescopeZoomOut {망원경 (축소)}
+TelescopeZoomIn {망원경(확대)}
+TelescopeZoomOut {망원경(축소)}
 TimeScale {시간 가속/감속}
 TimeScaleFasterBA {시간 가속}
 TimeScaleOff {가속 비활성화}

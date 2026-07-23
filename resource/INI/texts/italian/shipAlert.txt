@@ -14,3 +14,7 @@ low_food_header {Scorte di cibo scarse}
 low_food_text {I marinai inizieranno presto a morire di fame. Bisogna rifornire immediatamente le scorte!}
 low_medicament_header {Scorte di medicinali scarse}
 low_medicament_text {I marinai inizieranno presto a morire di malattia. Bisogna rifornire immediatamente le scorte!}
+overload_header {Nave sovraccarica}
+overload_text {Non puoi accedere alla mappa globale con una nave sovraccarica. Getta parte delle merci dalla stiva oppure trasferiscile su altre navi della squadra.}
+salary_debt_header {Debito verso l’equipaggio}
+salary_debt_text {Devi del denaro all’equipaggio a causa della spartizione del bottino o di paghe arretrate. I nuovi marinai saranno restii ad arruolarsi sulla tua nave e, col tempo, l’equipaggio potrebbe ammutinarsi.}

@@ -47,7 +47,7 @@ seg_Sandal {ironwood}
 seg_ShipSilk {shipsilk}
 seg_Silver {silver}
 seg_Slaves {slaves}
-seg_Sugar { }
+seg_Sugar {Of sugar}
 seg_Tobacco {tobacco}
 seg_Weapon {weapons}
 seg_Wheat {wheat}

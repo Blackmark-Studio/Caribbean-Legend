@@ -14,3 +14,7 @@ low_food_header {식량 부족}
 low_food_text {곧 선원들이 굶어 죽기 시작합니다. 즉시 식량을 보충해야 합니다!}
 low_medicament_header {의약품 부족}
 low_medicament_text {곧 선원들이 질병으로 죽기 시작합니다. 즉시 의약품을 보충해야 합니다!}
+overload_header {함선 과적}
+overload_text {함선이 과적된 상태에서는 글로벌 맵으로 나갈 수 없습니다. 선창의 물품을 버리거나 함대의 다른 함선으로 옮기십시오.}
+salary_debt_header {선원에게 진 빚}
+salary_debt_text {전리품 분배나 임금 체불로 선원들에게 돈을 빚지고 있습니다. 새로운 선원들은 당신의 함선에 승선하기를 꺼리며, 시간이 지나면 선원들이 반란을 일으킬 수도 있습니다.}

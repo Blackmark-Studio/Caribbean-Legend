@@ -329,3 +329,5 @@ QuestsUtilite_96 {Axel}
 QuestsUtilite_97 {Yost}
 QuestsUtilite_98 {Sancho}
 QuestsUtilite_99 {Carpentero}
+QuestsUtilite_332 {Zagrożenie ze strony piratów zmniejszone}
+QuestsUtilite_333 {Co za bezczelność!}

@@ -329,3 +329,5 @@ QuestsUtilite_96 {Axel}
 QuestsUtilite_97 {Yost}
 QuestsUtilite_98 {Sancho}
 QuestsUtilite_99 {Carpentero}
+QuestsUtilite_332 {해적 위협 감소}
+QuestsUtilite_333 {무례하기 짝이 없군!}

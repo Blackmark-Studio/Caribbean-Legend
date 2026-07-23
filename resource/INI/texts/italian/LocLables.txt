@@ -1,5 +1,5 @@
 ????? {?????}
-Сhapel {Cappella}
+Сhapel {cappella}
 Abby_House {Abigail Shneur's House}
 Alcove {Santuario}
 ammo {Armeria}

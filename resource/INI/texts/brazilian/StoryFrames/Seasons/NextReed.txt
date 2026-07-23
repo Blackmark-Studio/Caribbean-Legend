@@ -26,7 +26,7 @@ Node0_c_d_reaction {O ouro é o melhor investimento}
 Node0_c_d_reaction_log {Você conhece o valor dos dobrões e convencerá com facilidade qualquer agiota de que depósitos em ouro são muito mais seguros, tanto para eles quanto para você.}
 Node0_c_e {Depois de longas disputas na corte francesa, decidiram rever as tarifas coloniais. Parte das mercadorias foi oficialmente retirada da lista de itens proibidos, e as antigas penalidades foram suspensas temporariamente. As potências rivais do Louvre responderam da mesma forma, e agora é possível comerciar prata e ouro nos portos de todo o arquipélago do Caribe, enquanto aquilo que antes era considerado contrabando agora é legal.}
 Node0_c_e_reaction {E quanto à mercadoria viva?}
-Node0_c_e_reaction_log { }
+Node0_c_e_reaction_log {As novas tarifas não durarão para sempre, e a oportunidade de negociar contrabando logo acabará. Porém, o tráfico de escravos promete lucros duradouros, e você decide convencer os negociantes do Caribe justamente disso.}
 Node0_d_a {Com a chegada da primavera, as águas costeiras ganham vida. Cavalas e sardinhas aparecem nos baixios, o atum se aproxima dos recifes, e tartarugas marinhas são pescadas junto às praias de areia. Os marinheiros lançam redes direto dos botes, defumam peixe na praia e enchem barris com água doce de riachos costeiros em qualquer parada.}
 Node0_d_a_reaction {Uma dieta variada ajuda}
 Node0_d_a_reaction_log {Você decide montar uma ração marítima variada e completa, complementando os tradicionais biscoitos e a carne salgada com peixe e carne frescos. Um cardápio bem planejado, sob a supervisão do médico de bordo, ajudará a reduzir o risco de surtos de epidemias e escorbuto.}

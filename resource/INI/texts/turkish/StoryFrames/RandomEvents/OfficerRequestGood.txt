@@ -32,7 +32,7 @@ Node0_c_b_success {Tutsağın serbest bırakılmasını ve en yakın şehre vara
 Node0_c_b_success_action {Bu bir istisna, kural değil}
 Node0_c_c_action {O zaman kendin fidyesini öde}
 Node0_c_c_success {Dürüst bir teklif sunuyorsunuz - subay, $attr($context.prisonerName)'ı kendi maaşından düşülmek üzere hemen şimdi fidyeyle kurtarabilir. Böylece hiçbir kural çiğnenmez ve kimse kendini borçlu hissetmez. $attr($context.officerName) bir süre kararsız kalıyor, ama sonunda şartlarınızı kabul ediyor.}
-Node0_c_c_success_action {Acordo justo}
+Node0_c_c_success_action {Adil anlaşma}
 Node0_c_d_action {Kaptanın kararları tartışılmaz}
 Node0_c_d_success {Subayın isteğini geri çeviriyorsunuz. Tutsak kim olursa olsun teslim oldu ve artık sizin elinizde; onunla ne yapılacağına karar verecek olan da sizsiniz. Bir kez yumuşaklık gösterirseniz, kendi kişisel meselelerini kaptanın sırtından çözmek isteyenlerin arkası kesilmez. $attr($context.officerName) keyifsiz görünüyor, ama bu sizin umurunuzda değil.}
 Node0_c_d_success_action {Kanun benim}

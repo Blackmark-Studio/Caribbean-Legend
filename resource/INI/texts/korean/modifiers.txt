@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {전략 물자는 판매되지 않음}
 uniqueGoodsAvailable_1 {전략 물자 판매 중}
 uniqueGoodsStock {전략 물자 재고}
 SquadronPower {함대 전력}
+ammoGoodsStock {탄약 비축량}
+ammoGoodsCost {탄약 비용}
+crewMoraleDebuffMtp {굶주림과 질병이 선원 사기에 미치는 영향 감소}

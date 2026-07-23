@@ -229,7 +229,7 @@ itmdescr_hat8 {Este sombrero asusta a los mercaderes—sobre todo a los español
 itmdescr_hat9 {Este sombrero es famoso en todos los rincones del Caribe, y en todas partes se le recuerda con escalofríos. Solo un loco se atrevería a atacar el barco de su dueño, y al encontrarse cara a cara, el miedo hará que olvides cómo empuñar espada o pistola. Y recuerda: cruzar al otro lado es fácil. Lo difícil es volver.}
 itmdescr_HolTradeLicence {Permite visitar ciudades y puertos con fines comerciales. Emitida con fecha: #sAction_date#, válida para #sValidity#.}
 itmdescr_howdah {Pistola de gran calibre con dos cañones, la mejor aliada para el cazador en la sabana africana o la jungla india. Derriba jabalíes, tigres y nativos hostiles con total fiabilidad.}
-itmdescr_icollection {Un conjunto de diversos artículos caros de oro y gemas, deseados por cualquier hombre.}
+itmdescr_icollection {Un variado conjunto de objetos de oro y piedras preciosas, valiosos tanto para el corazón como para el bolsillo.}
 itmdescr_ignasio_book {Registro de embarque de Ignacio Marco.}
 itmdescr_indian_1
 {

@@ -179,8 +179,8 @@ ShipCamera_Turn_V {船を追うカメラの垂直移動}
 ShipState {艦隊}
 SwitchCameraOffset {カメラ視点}
 TelescopeMode {望遠鏡を切り替え}
-TelescopeZoomIn {望遠鏡（ズームイン）}
-TelescopeZoomOut {望遠鏡（ズームアウト）}
+TelescopeZoomIn {望遠鏡（拡大）}
+TelescopeZoomOut {望遠鏡（縮小）}
 TimeScale {時間の加速／減速}
 TimeScaleFasterBA {時間加速}
 TimeScaleOff {加速を無効にする}

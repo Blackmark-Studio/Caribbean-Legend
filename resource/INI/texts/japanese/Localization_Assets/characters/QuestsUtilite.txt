@@ -329,3 +329,5 @@ QuestsUtilite_96 {Axel}
 QuestsUtilite_97 {Yost}
 QuestsUtilite_98 {Sancho}
 QuestsUtilite_99 {Carpentero}
+QuestsUtilite_332 {海賊の脅威が低下}
+QuestsUtilite_333 {なんという無礼だ！}

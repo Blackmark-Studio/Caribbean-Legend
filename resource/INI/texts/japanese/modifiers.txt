@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {戦略物資は販売されない}
 uniqueGoodsAvailable_1 {戦略物資が販売中}
 uniqueGoodsStock {戦略物資の在庫}
 SquadronPower {艦隊戦力}
+ammoGoodsStock {弾薬備蓄}
+ammoGoodsCost {弾薬費}
+crewMoraleDebuffMtp {飢えと病気が乗組員の士気に与える影響を軽減}

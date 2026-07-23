@@ -47,7 +47,7 @@ seg_Sandal {Eisenholz}
 seg_ShipSilk {Schiffsseide}
 seg_Silver {Silber}
 seg_Slaves {Sklaven}
-seg_Sugar { }
+seg_Sugar {Zuckers}
 seg_Tobacco {Tabak}
 seg_Weapon {Waffen}
 seg_Wheat {Weizen}

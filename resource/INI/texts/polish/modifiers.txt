@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {Towary strategiczne nie są sprzedawane}
 uniqueGoodsAvailable_1 {Towary strategiczne są w sprzedaży}
 uniqueGoodsStock {Zapasy towarów strategicznych}
 SquadronPower {Siła eskadry}
+ammoGoodsStock {Zapas amunicji}
+ammoGoodsCost {Koszt amunicji}
+crewMoraleDebuffMtp {Zmniejszenie wpływu głodu i chorób na morale załogi}

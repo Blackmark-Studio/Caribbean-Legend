@@ -226,7 +226,7 @@ itmdescr_hat8 {This hat frightens merchants—especially Spanish ones—more tha
 itmdescr_hat9 {This hat is known in every corner of the Caribbean, and everywhere it is remembered with a shudder. Only a madman would dare attack the ship of its owner, and meeting them in person, fear will make you forget how to hold sword or pistol. And remember: it’s easy to cross to the other side. Coming back is the hard part.}
 itmdescr_HolTradeLicence {Allows you to visit towns and ports of all colonies for trading and other peaceful purposes. Issued on #sAction_date# and is good for #sValidity#.}
 itmdescr_howdah {Double-barreled large-caliber pistol, the best companion for a hunter in the African bush or Indian jungle. Reliably fells boars, tigers, and hostile natives.}
-itmdescr_icollection {A diverse set of expensive gold items with gems, precious to any man.}
+itmdescr_icollection {A varied assortment of gold and gemstone items, precious to both heart and purse.}
 itmdescr_ignasio_book {Ship log of Ignacio Marco.}
 itmdescr_indian_1
 {
@@ -1473,6 +1473,7 @@ mushket parameters {Damage: #ddmg_min#-#ddmg_max#}
 mushket parameters equipped {Damage: #ddmgmin#-#ddmgmax#, reload time: #dchargespeed# sec.}
 new_string
 {
+
 }
 Potion parameters {Volume}
 talisman17_quests {Church Quests: #dQBonus# / 5}

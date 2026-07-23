@@ -401,7 +401,7 @@ Tente encontrar algo para aumentar seu limite de carga — talvez com o contrame
 }
 Prologue_TimeScale {Controle do Tempo}
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
-Prologue_TimeScale_controlsimg2 {Escala de tempo}
+Prologue_TimeScale_controlsimg2 {TimeScale}
 Prologue_TimeScale_descr
 {
 Muitas coisas no jogo acontecem devagar — como mudar o modo das velas ou recarregar os canhões.

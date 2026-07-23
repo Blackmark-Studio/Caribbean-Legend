@@ -403,7 +403,7 @@ Maksimum taşıma kapasitenizi artıracak bir şey bulmayı deneyin—belki mür
 }
 Prologue_TimeScale {Zaman Kontrolü}
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
-Prologue_TimeScale_controlsimg2 {Zaman Ölçeği}
+Prologue_TimeScale_controlsimg2 {TimeScale}
 Prologue_TimeScale_descr
 {
 Oyunda birçok şey yavaş gerçekleşir—örneğin yelken modunu değiştirmek veya topları yeniden doldurmak gibi.

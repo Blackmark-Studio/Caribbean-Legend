@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {Le merci strategiche non sono in vendita}
 uniqueGoodsAvailable_1 {Le merci strategiche sono in vendita}
 uniqueGoodsStock {Scorte delle merci strategiche}
 SquadronPower {Potenza della squadra}
+ammoGoodsStock {Scorte di munizioni}
+ammoGoodsCost {Costo delle munizioni}
+crewMoraleDebuffMtp {Riduce l’impatto della fame e delle malattie sul morale dell’equipaggio}

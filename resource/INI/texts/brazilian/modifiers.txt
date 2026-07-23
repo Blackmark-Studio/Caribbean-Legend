@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {Bens estratégicos não são vendidos}
 uniqueGoodsAvailable_1 {Bens estratégicos estão à venda}
 uniqueGoodsStock {Estoque de bens estratégicos}
 SquadronPower {Poder da esquadra}
+ammoGoodsStock {Estoque de munição}
+ammoGoodsCost {Custo da munição}
+crewMoraleDebuffMtp {Reduz o impacto da fome e das doenças no moral da tripulação}

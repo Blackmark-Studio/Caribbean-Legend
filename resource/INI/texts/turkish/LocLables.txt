@@ -1,5 +1,5 @@
 ????? {?????}
-Сhapel {Şapel}
+Сhapel {şapel}
 Abby_House {Abigail Shneur'un Evi}
 Alcove {Kutsal Alan}
 ammo {Silahhane}

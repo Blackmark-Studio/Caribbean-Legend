@@ -10,7 +10,7 @@ Node0_a_b_success {你决定采用接舷战和攻打殖民地时常用的手段�
 Node0_a_b_success_action {当船长真不错}
 Node0_a_c_action {还是别冒险了}
 Node0_a_c_success {你觉得，试图在这种危险海岸靠岸实在不值这个险，而且你的船员也并不以趁火打劫为荣。你把这处沉船地抛在了船尾后方。}
-Node0_a_c_success_action {别把自己也搭进去}
+Node0_a_c_success_action {最重要的是别加入他们}
 Node0_a_b {驶过$key($ctx(islandName)Gen)沿岸时，你发现丛林里有些几乎难以分辨的光点。这看起来完全不像篝火或火把的反光，一下子就吸引了你的注意。$br()$red 等你靠近些，水面上便显出一只装满货包的小艇，正拴在漆黑一片的岸边。你看不见人影，但他们显然就在附近。}
 Node0_b_a_action {把小艇偷走}
 Node0_b_a_success {你带着一小队人悄悄摸上岸，顺利把那只小艇偷走了。匆匆查看之后发现，船上的货包里装的是咖啡、烟草，还有少量船用丝绸。你显然搅黄了一笔走私买卖。}
@@ -22,7 +22,7 @@ Node0_b_b_success {你下令动用船炮开火，好把那些人逼回丛林里�
 Node0_b_b_success_action {轻轻松松的战利品}
 Node0_b_c_action {离开此地}
 Node0_b_c_success {你决定不去招惹命运，径直离开，把那帮走私贩抛在船尾后方。}
-Node0_b_c_success_action {这样反而更好}
+Node0_b_c_success_action {这样更好}
 Node0_a_c {你已经无数次来到$key($ctx(islandName)Gen)附近的海岸，几乎觉得这里像自家门前一般熟悉。也正因如此，那片在丛林上空翻滚的烟雾才显得格外古怪——浓密、平稳，而且分明来自好几处火源。$br()$red 沿着海岸，你看见渔船、钓竿、密密麻麻的脚印，还有拖拽重物留下的痕迹。随着你越靠越近，空气里熏鱼和熏肉的香气也越发清晰，闻得人肚子立刻咕咕叫起来。}
 Node0_c_a_action {我们也该补点给养了}
 Node0_c_a_action_tooltip_bad {那可得花点钱……}

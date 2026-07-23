@@ -14,3 +14,7 @@ low_food_header {食料不足}
 low_food_text {まもなく水兵たちが餓死し始めます。至急、食料を補充してください！}
 low_medicament_header {医薬品不足}
 low_medicament_text {まもなく水兵たちが病死し始めます。至急、医薬品を補充してください！}
+overload_header {船が過積載です}
+overload_text {過積載の船ではグローバルマップへ移動できません。船倉の物資を捨てるか、艦隊のほかの船へ移してください。}
+salary_debt_header {乗組員への未払い}
+salary_debt_text {戦利品の分配や給与の未払いにより、乗組員に借金があります。新しい船員は乗船を渋るようになり、やがて乗組員が反乱を起こす可能性があります。}

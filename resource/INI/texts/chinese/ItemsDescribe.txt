@@ -226,7 +226,7 @@ itmdescr_hat8 {这顶帽子比骷髅旗还要让商人—尤其是西班牙人�
 itmdescr_hat9 {这顶帽子在加勒比每个角落都声名 远扬, 人人谈之色变。只有疯子才敢袭击 它主人的船, 若是亲眼见到本人, 恐惧会让你忘了如何握剑持枪。记 住: 去往彼岸很容易, 难的是归来。}
 itmdescr_HolTradeLicence {允许您访问所有殖民地的城镇和港 口以进行贸易及其他和平目的。 于#sAction_date#签发, 有效期为#sValidity#。}
 itmdescr_howdah {双管大口径手枪, 是非洲丛林或印度密林猎人的最佳 伙伴。 能可靠地击倒野猪、老虎和敌对土 著。}
-itmdescr_icollection {一套多样的昂贵金器, 镶嵌着宝石, 对任何人来说都很珍贵。}
+itmdescr_icollection {各式各样由黄金和宝石制成的珍贵物品，既悦目又价值不菲。}
 itmdescr_ignasio_book {Ignacio Marco 的航海日志。}
 itmdescr_indian_1
 {
@@ -1342,7 +1342,7 @@ itmname_Reserve_item_01 {密封信}
 itmname_Reserve_item_01_1 {厚账簿}
 itmname_RingCapBook {'圣卢西亚'号航海日志}
 itmname_saber {骑兵剑}
-itmname_sand_clock { }
+itmname_sand_clock {沙漏}
 itmname_sant_anna_key {精致钥匙}
 itmname_sextant1 {六分仪}
 itmname_sextant2 {工作六分仪}
@@ -1464,6 +1464,7 @@ mushket parameters {伤害: #ddmg_min#-#ddmg_max#}
 mushket parameters equipped {伤害: #ddmgmin#-#ddmgmax#, 装填时间: #dchargespeed# 秒}
 new_string
 {
+
 }
 Potion parameters {容量}
 talisman17_quests {教堂任务: #dQBonus# / 5}

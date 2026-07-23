@@ -10,7 +10,7 @@ Node0_a_b_success {You decide to employ a method used in boardings and assaults 
 Node0_a_b_success_action {Good to be the captain}
 Node0_a_c_action {Let us not risk it}
 Node0_a_c_success {You decide that trying to land on such a treacherous shore is not worth the risk, and besides, plundering wrecks is not held in honor among your crew. You leave the place of wreck behind your stern.}
-Node0_a_c_success_action {The main thing is not to join it}
+Node0_a_c_success_action {The important thing is not to join them}
 Node0_a_b {Sailing past the shores of $key($ctx(islandName)Gen), you notice faint lights deep in the jungle. They look nothing like the glow of campfires or torches, which at once catches your attention.$br()$red As you draw nearer, a boat laden with bales comes into view on the water, tied up to the shore in pitch darkness. You do not see any people, but they are clearly here.}
 Node0_b_a_action {Steal the boat}
 Node0_b_a_success {You manage to creep ashore with a small party and make off with the boat. A quick inspection shows the bales to be coffee, tobacco, and a little ship's silk. You have quite plainly spoiled a smugglers' bargain.}
@@ -22,7 +22,7 @@ Node0_b_b_success {You order the ship's guns to open fire, to drive the men back
 Node0_b_b_success_action {Easy pickings}
 Node0_b_c_action {Sail on}
 Node0_b_c_success {You decide not to tempt fate and sail on, leaving the smugglers astern.}
-Node0_b_c_success_action {That is for the best}
+Node0_b_c_success_action {That’s for the best}
 Node0_a_c {You have passed the shores of $key($ctx(islandName)Gen) so many times that they already feel almost like home. All the stranger, then, is the smoke rising over the jungle - thick, steady, and coming from several different fires.$br()$red Along the shore you spot fishing boats and rods, countless footprints, and drag marks where something heavy was hauled across the ground. As you draw nearer, the smell of smoked fish and meat grows stronger in the air, and your stomach answers at once.}
 Node0_c_a_action {Fresh provisions would not go amiss}
 Node0_c_a_action_tooltip_bad {That will take coin...}

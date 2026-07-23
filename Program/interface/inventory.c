@@ -8,6 +8,8 @@
 #include "interface\utils\items\stats.c"
 #include "interface\utils\character_stats.c"
 #include "interface\utils\items\descriptors.c"
+#include "interface\utils\universal_input.c"
+
 int currentTab = 0;
 int currentScrollTab = 1;
 int sMode;
@@ -66,10 +68,12 @@ void InitInterface(string iniName)
 	SetEventHandler("GoodsExitCancel", "GoodsExitCancel", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);	
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("QTY_EDIT", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetArrowsInputHandler("QTY_OK_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetArrowsInputHandler("QTY_CANCEL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetClickInputHandler("QTY_ADD_BUTTON", "QTY_REMOVE_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON);
+	XI_SetUniversalInputTooltip("QTY_EDIT", "QTY_WINDOW");
 	//
 	XI_RegistryExitKey("IExit_F2");
 	
@@ -114,7 +118,7 @@ void ProcessInterfaceControls()
 			currentScrollTab = currentScrollTab % 2 + 1;
 			SetControlsScrollTabMode(currentScrollTab);
 		}
-		else
+		else if (XI_IsWindowEnable("MAIN_WINDOW"))
 		{
 			currentTab = (currentTab + 1) % 5;
 			SetControlsTabMode(currentTab + 1);
@@ -188,10 +192,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("GoodsExitCancel", "GoodsExitCancel");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	XI_ExitUniversalInput();
 	DelEventHandler("OpenExchange", "OpenExchange");
 	DelEventHandler("OnHeaderClick","OnHeaderClick");
 	//
@@ -254,41 +255,10 @@ void ProcessCommandExecute()
 				validLineClicked = false;
 				if(XI_IsKeyPressed("control")) ShowBoxMove();
 			}
-		break;
-		case "QTY_OK_BUTTON":
-			if(comName=="leftstep")
+			if (comName=="activate")
 			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
-			}
-		break;
-		case "QTY_CANCEL_BUTTON":
-			if(comName=="leftstep")
-			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
+				validLineClicked = false;
+				ShowBoxMove();
 			}
 		break;
 		/////////////////////// menu ///////////////
@@ -754,7 +724,7 @@ void ShowInfoWindow()
 	int	picH = 128;
 	
 	string sRow;
-
+	if (XI_ShowUniversalInputTooltip(sCurrentNode)) return;
 	sPicture = "-1";
 	int nChooseNum = -1;
 	switch (sCurrentNode)
@@ -1999,7 +1969,7 @@ void ShowBoxMove()
 			XI_WindowDisable("QTY_WINDOW_S", false);
 			XI_WindowShow("QTY_WINDOW_S", true);
 			XI_WindowDisable("MAIN_WINDOW", true);
-			SetCurrentNode("QTY_CANCEL_BUTTON_S");
+			SetEventHandler("frame", "_XI_InventoryDelaySelectDropSingle", 0);
 			GameInterface.qty_edit.str = 1;
 			ChangeQTY_EDIT();
 		}
@@ -2009,11 +1979,23 @@ void ShowBoxMove()
 			XI_WindowDisable("QTY_WINDOW", false);
 			XI_WindowShow("QTY_WINDOW", true);
 			XI_WindowDisable("MAIN_WINDOW", true);
-			SetCurrentNode("QTY_CANCEL_BUTTON");
+			SetEventHandler("frame", "_XI_InventoryDelaySelectDrop", 0);
 			GameInterface.qty_edit.str = 0;
 			ChangeQTY_EDIT();
 		}
 	}
+}
+
+void _XI_InventoryDelaySelectDrop()
+{
+	DelEventHandler("frame", "_XI_InventoryDelaySelectDrop");
+	SetCurrentNode("QTY_EDIT");
+}
+
+void _XI_InventoryDelaySelectDropSingle()
+{
+	DelEventHandler("frame", "_XI_InventoryDelaySelectDropSingle");
+	SetCurrentNode("QTY_DROP_TEXT_S");
 }
 
 void GoodsExitCancel()
@@ -2049,7 +2031,8 @@ void TransactionOK()
 void confirmChangeQTY_EDIT()
 {
 	ChangeQTY_EDIT();
-    SetCurrentNode("QTY_OK_BUTTON");
+	if (GetSelectable("QTY_OK_BUTTON")) SetCurrentNode("QTY_OK_BUTTON");
+	else SetCurrentNode("QTY_CANCEL_BUTTON");
 }
 
 void ChangeQTY_EDIT()
@@ -2081,15 +2064,9 @@ void ChangeQTY_EDIT()
 	Table_UpdateWindow("TABLE_OTHER");
 }
 
-void ADD_ALL_BUTTON()  // сбросить
+void ADD_BUTTON(int value = 1)  // вернуть
 {
-	GameInterface.qty_edit.str = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_BUTTON()  // вернуть
-{
-	GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - 1);
+	GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - value);
 
 	if(int(GameInterface.qty_edit.str) < 0)
 	{
@@ -2098,22 +2075,16 @@ void ADD_BUTTON()  // вернуть
 	ChangeQTY_EDIT();
 }
 
-void REMOVE_BUTTON()  // выкинуть
+void REMOVE_BUTTON(int value = 1)  // выкинуть
 {
 	if(iCharQty >= 1)
 	{
-		GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + 1);
+		GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + value);
 	}
 	if(int(GameInterface.qty_edit.str) > iCharQty)
 	{
 		GameInterface.qty_edit.str = iCharQty;
 	}
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_ALL_BUTTON()  // выкинуть все
-{
-	GameInterface.qty_edit.str = iCharQty;
 	ChangeQTY_EDIT();
 }
 

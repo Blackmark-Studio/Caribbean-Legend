@@ -14,3 +14,7 @@ low_food_header {食物不足}
 low_food_text {水手很快就会开始饿死，必须立即补充储备！}
 low_medicament_header {药品不足}
 low_medicament_text {水手很快就会开始病死，必须立即补充储备！}
+overload_header {船只超载}
+overload_text {船只超载时无法进入全局地图。请丢弃货舱中的货物，或将其转移到舰队中的其他船只上。}
+salary_debt_header {拖欠船员款项}
+salary_debt_text {由于战利品分配或拖欠薪饷，你欠船员一笔钱。新水手将不愿加入你的船，久而久之，船员甚至可能发动叛乱。}

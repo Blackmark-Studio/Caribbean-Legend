@@ -47,7 +47,7 @@ seg_Sandal {demir ağacı}
 seg_ShipSilk {Gemi ipeği}
 seg_Silver {gümüş}
 seg_Slaves {Köleler}
-seg_Sugar { }
+seg_Sugar {Şekerin}
 seg_Tobacco {Tütün}
 seg_Weapon {Silahlar}
 seg_Wheat {buğday}

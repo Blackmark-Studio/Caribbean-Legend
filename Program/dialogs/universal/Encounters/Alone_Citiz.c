@@ -115,9 +115,9 @@ void ProcessDialogEvent()
             // Затереть по выходу с локации
             NPChar.LifeDay = 0;
             // Добыча
-            TakeNItems(PChar, "jewelry"+(36 + hrand(14)), 1 + hrand(1));
-            TakeNItems(PChar, "jewelry"+(36 + hrand(14)), hrand(1));
-            TakeNItems(PChar, "jewelry"+(36 + hrand(14)), hrand(1));
+            TakeNItems(PChar, "jewelry"+(40 + hrand(10)), 1 + hrand(1));
+            TakeNItems(PChar, "jewelry"+(40 + hrand(10)), hrand(1));
+            TakeNItems(PChar, "jewelry"+(40 + hrand(10)), hrand(1));
             // Для слухов о грабеже, если не будет убит
             string QuestName = "Quest.Alone_Citiz_" + NPChar.id;
             QuestName += (QuestName + "_Clear" in PChar) ? "_Clear" : "_DelayClear";

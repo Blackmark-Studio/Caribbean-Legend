@@ -10,7 +10,7 @@ Node0_a_b_success {Vocês decidem usar um expediente empregado em abordagens e c
 Node0_a_b_success_action {É bom ser capitão}
 Node0_a_c_action {Melhor não arriscar}
 Node0_a_c_success {Vocês decidem que tentar atracar numa costa tão perigosa não vale o risco, e pilhagem também não é motivo de honra entre sua tripulação. Vocês deixam o local do naufrágio para trás, a popa.}
-Node0_a_c_success_action {肝心なのは仲間入りしないこと}
+Node0_a_c_success_action {O importante é não se juntar a eles}
 Node0_a_b {Ao passar ao largo de $key($ctx(islandName)Gen), vocês avistam na selva luzes quase imperceptíveis. Não parecem em nada reflexos de fogueiras ou tochas, e isso logo chama sua atenção.$br()$red Quando se aproximam, uma chalupa carregada de fardos se torna visível sobre a água, presa à margem em plena escuridão. Vocês não veem ninguém, mas é claro que eles estão por aqui.}
 Node0_b_a_action {Roubar a chalupa}
 Node0_b_a_success {Vocês conseguem se aproximar da praia às escondidas com um pequeno destacamento e roubam a chalupa. Numa inspeção rápida, descobrem que os fardos contêm café, tabaco e um pouco de seda naval. Está claro que vocês estragaram o negócio dos contrabandistas.}
@@ -22,7 +22,7 @@ Node0_b_b_success {Vocês mandam abrir fogo com os canhões do navio para obriga
 Node0_b_b_success_action {Fácil demais}
 Node0_b_c_action {Seguir viagem}
 Node0_b_c_success {Vocês decidem não desafiar a sorte e seguem viagem, deixando os contrabandistas para trás, a popa.}
-Node0_b_c_success_action { }
+Node0_b_c_success_action {É melhor assim}
 Node0_a_c {Vocês já passaram tantas vezes pelas costas de $key($ctx(islandName)Gen) que elas quase lhes parecem familiares. Por isso mesmo, a fumaça que se enrosca sobre a selva soa ainda mais estranha - espessa, constante e vinda de vários focos ao mesmo tempo.$br()$red Ao longo da praia, vocês veem barcos de pesca e varas, um sem-número de pegadas e marcas de algo pesado sendo arrastado. Quanto mais se aproximam, mais nítido fica no ar o aroma de peixe e carne defumados, e o estômago responde na mesma hora.}
 Node0_c_a_action {Umas provisões cairiam muito bem}
 Node0_c_a_action_tooltip_bad {Para isso vai ser preciso dinheiro...}

@@ -14,3 +14,7 @@ low_food_header {Poca comida}
 low_food_text {Los marineros pronto empezarán a morir de hambre. ¡Hay que reponer las provisiones de inmediato!}
 low_medicament_header {Pocos medicamentos}
 low_medicament_text {Los marineros pronto empezarán a morir de enfermedades. ¡Hay que reponer las provisiones de inmediato!}
+overload_header {Barco sobrecargado}
+overload_text {No puedes acceder al mapa global con un barco sobrecargado. Desecha mercancías de la bodega o transfiérelas a otros barcos de la escuadra.}
+salary_debt_header {Deuda con la tripulación}
+salary_debt_text {Debes dinero a la tripulación por el reparto del botín o por salarios impagados. Los nuevos marineros serán reacios a unirse a tu barco y, con el tiempo, la tripulación podría amotinarse.}

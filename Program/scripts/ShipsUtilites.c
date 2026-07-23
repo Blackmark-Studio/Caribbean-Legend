@@ -476,7 +476,7 @@ void ResetShipCannonsDamages(ref refCharacter)
 	if (CheckAttribute(refShip, "Cannons.Borts.cannonr.damages")) { DeleteAttribute(refShip, "Cannons.Borts.cannonr.damages"); }
 }
 
-void SetShipCannonsDamagesNull(ref refCharacter)
+void SetShipCannonsDamagesNull(ref refCharacter, bool repairEvenEmpty = true)
 {
 	int i;
 	aref refShip;
@@ -494,26 +494,54 @@ void SetShipCannonsDamagesNull(ref refCharacter)
 	refShip.CannonsQuantityMax 	= int(rRealShip.CannonsQuantity);
 	refShip.CannonsQuantityMin 	= int(rRealShip.CannonsQuantityMin);
 	refShip.CannonDiff 			= 0;
-				
+
+	float health;
 	for (i = 0; i < int(rRealShip.cannonr); i++)
 	{
 		attr = "c" + i;
-		refShip.Cannons.Borts.cannonr.damages.(attr) = 0.0; 				
+		if (repairEvenEmpty)
+		{
+			refShip.Cannons.Borts.cannonr.damages.(attr) = 0.0;
+			continue;
+		}
+		
+		health = float(refShip.Cannons.Borts.cannonr.damages.(attr));
+		if (health < 1.0) refShip.Cannons.Borts.cannonr.damages.(attr) = 0.0;
 	}	
 	for (i = 0; i < int(rRealShip.cannonl); i++)
 	{
 		attr = "c" + i;
-		refShip.Cannons.Borts.cannonl.damages.(attr) = 0.0; 			
+		if (repairEvenEmpty)
+		{
+			refShip.Cannons.Borts.cannonl.damages.(attr) = 0.0;
+			continue;
+		}
+
+		health = float(refShip.Cannons.Borts.cannonl.damages.(attr));
+		if (health < 1.0) refShip.Cannons.Borts.cannonl.damages.(attr) = 0.0;
 	}	
 	for (i = 0; i < int(rRealShip.cannonf); i++)
 	{
 		attr = "c" + i;			
-		refShip.Cannons.borts.cannonf.damages.(attr) = 0.0; 
+		if (repairEvenEmpty)
+		{
+			refShip.Cannons.Borts.cannonf.damages.(attr) = 0.0;
+			continue;
+		}
+		
+		health = float(refShip.Cannons.Borts.cannonf.damages.(attr));
+		if (health < 1.0) refShip.Cannons.Borts.cannonf.damages.(attr) = 0.0;
 	}		
 	for (i = 0; i < int(rRealShip.cannonb); i++)
 	{
 		attr = "c" + i;
-		refShip.Cannons.borts.cannonb.damages.(attr) = 0.0; 
+		if (repairEvenEmpty)
+		{
+			refShip.Cannons.Borts.cannonb.damages.(attr) = 0.0;
+			continue;
+		}
+		health = float(refShip.Cannons.Borts.cannonb.damages.(attr));
+		if (health < 1.0) refShip.Cannons.Borts.cannonb.damages.(attr) = 0.0;
 	}			
 			
 

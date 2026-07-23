@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {Stratejik mallar satılmıyor}
 uniqueGoodsAvailable_1 {Stratejik mallar satışta}
 uniqueGoodsStock {Stratejik mallar stoğu}
 SquadronPower {Filo Gücü}
+ammoGoodsStock {Cephane stoku}
+ammoGoodsCost {Cephane maliyeti}
+crewMoraleDebuffMtp {Açlık ve hastalıkların mürettebat morali üzerindeki etkisini azaltır}

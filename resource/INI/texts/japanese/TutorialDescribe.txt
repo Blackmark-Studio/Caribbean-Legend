@@ -401,7 +401,7 @@ Prologue_Overload_descr
 }
 Prologue_TimeScale {時間操作}
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
-Prologue_TimeScale_controlsimg2 {タイムスケール}
+Prologue_TimeScale_controlsimg2 {TimeScale}
 Prologue_TimeScale_descr
 {
 ゲーム内の多くの動作はゆっくり進みます――帆の切り替えや大砲の再装填などです。

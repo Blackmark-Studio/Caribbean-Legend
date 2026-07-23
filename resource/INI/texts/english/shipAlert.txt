@@ -6,11 +6,15 @@ where_is_my_ship_header {Ship location}
 where_is_my_ship_text {$ctx(value)}
 cannons_broken_header {Cannons in poor condition}
 cannons_broken_text {The cannons must be repaired at a shipyard or replaced immediately!}
-bad_captain_header {Insufficient skill}
-bad_captain_text {This companion cannot command a ship on the open sea because they lack the Captain skill.}
+bad_captain_header {Insufficient perk}
+bad_captain_text {This companion cannot command a ship on the open sea because they lack the Captain perk.}
 low_morale_header {Mutiny risk}
 low_morale_text {The crew is discontented. Raise morale immediately!}
 low_food_header {Low on food}
 low_food_text {The sailors will soon begin to starve to death. Replenish your supplies immediately!}
 low_medicament_header {Low on medicine}
 low_medicament_text {The sailors will soon begin to die from disease. Replenish your supplies immediately!}
+overload_header {Ship overloaded}
+overload_text {You cannot enter the global map with an overloaded ship. Discard goods from the hold or transfer them to other ships in the squadron.}
+salary_debt_header {Debt owed to crew}
+salary_debt_text {You owe the crew money from the division of spoils or unpaid wages. New sailors will be reluctant to join your ship, and the crew may eventually mutiny.}

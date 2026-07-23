@@ -52,7 +52,7 @@ Dionisio {Dionisio}
 do Mussack {do Mussack}
 Doily {Doily}
 Dolores {Dolores}
-du Parquet { }
+du Parquet {du Parquet}
 Duran {Durand}
 Edward {Edward}
 Ernesto {Ernesto}

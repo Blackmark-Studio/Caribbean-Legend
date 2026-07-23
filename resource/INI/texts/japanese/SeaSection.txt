@@ -47,7 +47,7 @@ seg_Sandal {アイアンウッド}
 seg_ShipSilk {船絹}
 seg_Silver {銀}
 seg_Slaves {奴隷}
-seg_Sugar { }
+seg_Sugar {砂糖の}
 seg_Tobacco {タバコ}
 seg_Weapon {武器}
 seg_Wheat {小麦}

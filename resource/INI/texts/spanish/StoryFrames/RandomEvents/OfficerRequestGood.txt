@@ -32,7 +32,7 @@ Node0_c_b_success {Ordenas que el prisionero sea liberado y que se le dé un sit
 Node0_c_b_success_action {Esto es una excepción, no la norma}
 Node0_c_c_action {Entonces rescátalo tú mismo}
 Node0_c_c_success {Propones un trato justo: el oficial puede rescatar a $attr($context.prisonerName) ahora mismo a cuenta de su propia paga. Así no habrá que romper ninguna regla y nadie tendrá que sentirse en deuda. $attr($context.officerName) vacila un momento, pero al final acepta tus condiciones.}
-Node0_c_c_success_action {Adil bir anlaşma}
+Node0_c_c_success_action {Trato justo}
 Node0_c_d_action {Las decisiones del capitán no se discuten}
 Node0_c_d_success {Le niegas al oficial su petición. Sea quien sea el prisionero, se rindió y ahora está en tu poder, y eres tú quien decide qué hacer con él. Si aflojas una sola vez, no faltarán quienes quieran resolver sus asuntos personales a costa del capitán. $attr($context.officerName) parece abatido, pero no te importa.}
 Node0_c_d_success_action {La ley soy yo}

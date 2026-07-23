@@ -218,7 +218,7 @@ itmdescr_hat8 {Ten kapelusz przeraża kupców—zwłaszcza hiszpańskich—bardz
 itmdescr_hat9 {Ten kapelusz znany jest w każdym zakątku Karaibów i wszędzie wspominany z dreszczem. Tylko szaleniec zaatakuje statek jego właściciela, a spotkanie twarzą w twarz sprawi, że strach odbierze ci pamięć o szabli i pistolecie. Pamiętaj: łatwo przejść na tamtą stronę. Powrót to prawdziwe wyzwanie.}
 itmdescr_HolTradeLicence {Umożliwia odwiedzanie wszystkich miast i portów w celach handlowych i innych pokojowych celach. Podpisany #sAction_date# trwa aż #sValidity#.}
 itmdescr_howdah {Dwulufowy pistolet dużego kalibru, najlepszy towarzysz myśliwego w afrykańskim buszu lub indyjskiej dżungli. Skutecznie powala dziki, tygrysy i wrogich tubylców.}
-itmdescr_icollection {Zróżnicowany zestaw drogich, złotych przedmiotów z domieszką klejnotów, cennych dla każdego mężczyzny.}
+itmdescr_icollection {Różnorodny zestaw przedmiotów ze złota i kamieni szlachetnych, drogich sercu i sakiewce.}
 itmdescr_ignasio_book {Dziennik Pokładowy Ignacio Marco.}
 itmdescr_indian_1
 {

@@ -210,7 +210,7 @@ itmdescr_hat8 {Questo cappello terrorizza i mercanti—soprattutto gli spagnoli�
 itmdescr_hat9 {Questo cappello è famoso in ogni angolo dei Caraibi, e ovunque viene ricordato con un brivido. Solo un folle oserebbe attaccare la nave del suo proprietario, e incontrarlo di persona fa dimenticare come si impugna una spada o una pistola. Ricorda: passare oltre è facile. Tornare indietro è la vera sfida.}
 itmdescr_HolTradeLicence {Ti permette di visitare città e porti di tutte le colonie per il commercio e altri scopi pacifici. Rilasciato #sAction_date# ed è valido fino a #sValidity#.}
 itmdescr_howdah {Pistola a doppia canna di grosso calibro, il miglior compagno per un cacciatore nella savana africana o nella giungla indiana. Abbatte senza fallo cinghiali, tigri e nativi ostili.}
-itmdescr_icollection { }
+itmdescr_icollection {Un assortimento vario di oggetti d’oro e pietre preziose, cari al cuore e al portafoglio.}
 itmdescr_ignasio_book {Diario di bordo di Ignacio Marco.}
 itmdescr_indian_1
 {
@@ -1013,7 +1013,7 @@ itmname_hat8 {Charlie Prince’s Tricorn}
 itmname_hat9 {Cappello di Grim}
 itmname_HolTradeLicence {Licenza Compagnia olandese Indie occidentali}
 itmname_howdah {Howdah}
-itmname_icollection { }
+itmname_icollection {Tesori}
 itmname_indian_1 {Amuleto 'Bambola Voodoo'}
 itmname_indian_10 {Amuleto 'Cascavella'}
 itmname_indian_11 {Amuleto 'Maschera Ngombo'}
@@ -1453,6 +1453,7 @@ mushket parameters {Danno: #ddmg_min#-#ddmg_max#}
 mushket parameters equipped {Danno: #ddmgmin#-#ddmgmax#, tempo ricarica: #dchargespeed# sec.}
 new_string
 {
+
 }
 Potion parameters {Volume}
 talisman17_quests {Church Quests: #dQBonus# / 5}

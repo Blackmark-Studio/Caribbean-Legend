@@ -32,7 +32,7 @@ Node0_c_b_success {Rozkazujesz wypuścić jeńca i przydzielić mu miejsce przy 
 Node0_c_b_success_action {To wyjątek, nie zasada}
 Node0_c_c_action {W takim razie sam go wykup}
 Node0_c_c_success {Proponujesz uczciwy układ - oficer może już teraz wykupić $attr($context.prisonerName) z własnego żołdu. Wtedy nie trzeba będzie łamać żadnych zasad i nikt nie będzie czuł się niczyim dłużnikiem. $attr($context.officerName) przez chwilę się waha, lecz ostatecznie przystaje na twoje warunki.}
-Node0_c_c_success_action {Trato justo}
+Node0_c_c_success_action {Uczciwy układ}
 Node0_c_d_action {Decyzji kapitana się nie dyskutuje}
 Node0_c_d_success {Odmawiasz oficerowi. Kimkolwiek jest jeniec, poddał się i znajduje się teraz w twojej władzy, a to do ciebie należy decyzja, co z nim zrobić. Raz okażesz słabość - i nie będzie końca chętnym do załatwiania własnych spraw kosztem kapitana. $attr($context.officerName) wygląda na przygnębionego, ale niewiele cię to obchodzi.}
 Node0_c_d_success_action {Prawo to ja}

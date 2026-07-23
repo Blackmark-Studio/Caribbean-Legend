@@ -14,3 +14,7 @@ low_food_header {Mało żywności}
 low_food_text {Marynarze wkrótce zaczną umierać z głodu. Trzeba pilnie uzupełnić zapasy!}
 low_medicament_header {Mało lekarstw}
 low_medicament_text {Marynarze wkrótce zaczną umierać z powodu chorób. Trzeba pilnie uzupełnić zapasy!}
+overload_header {Statek przeciążony}
+overload_text {Nie możesz przejść na mapę globalną przeciążonym statkiem. Wyrzuć towary z ładowni lub przenieś je na inne statki w eskadrze.}
+salary_debt_header {Dług wobec załogi}
+salary_debt_text {Jesteś winien załodze pieniądze z podziału łupów lub zaległego żołdu. Nowi marynarze niechętnie dołączą do twojego statku, a z czasem załoga może się zbuntować.}

@@ -226,7 +226,7 @@ itmdescr_hat8 {Este chapéu assusta mercadores—especialmente os espanhóis—a
 itmdescr_hat9 {Este chapéu é famoso em todos os cantos do Caribe, sempre lembrado com um arrepio. Só um louco ousaria atacar o navio de seu dono, e ao encontrá-lo pessoalmente, o medo faz até esquecer como segurar espada ou pistola. E lembre-se: cruzar para o outro lado é fácil. Difícil é voltar.}
 itmdescr_HolTradeLicence {Permite visitar cidades e portos de todas as colônias para comércio e outros fins pacíficos. Emitido em #sAction_date# e válido por #sValidity#.}
 itmdescr_howdah {Pistola de cano duplo e grosso calibre, a melhor companheira do caçador no mato africano ou na selva indiana. Derruba javalis, tigres e nativos hostis com confiança.}
-itmdescr_icollection {Um conjunto variado de itens de ouro com gemas, valiosos para qualquer pessoa.}
+itmdescr_icollection {Um conjunto variado de objetos de ouro e pedras preciosas, valiosos para o coração e para o bolso.}
 itmdescr_ignasio_book {Diário de bordo de Ignacio Marco.}
 itmdescr_indian_1
 {

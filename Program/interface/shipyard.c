@@ -938,11 +938,8 @@ void SetButtonsAccess()
     else
     {
         SetSelectable("BUTTON_BUY", false);
+				SetSelectable("BUTTON_REPAIR", true);
 
-        if (GetHullPercent(refCharacter) < 100 || GetSailPercent(refCharacter) < 100)
-        {
-            SetSelectable("BUTTON_REPAIR", true);
-        }
         if (shipIndex == -1)
         {
             SetSelectable("BUTTON_SELL", false);

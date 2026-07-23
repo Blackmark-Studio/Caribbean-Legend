@@ -32,7 +32,7 @@ Node0_c_b_success {Ihr gebt den Befehl, den Gefangenen freizulassen und ihm bis 
 Node0_c_b_success_action {Das ist eine Ausnahme, keine Regel}
 Node0_c_c_action {Dann kauf ihn selbst frei}
 Node0_c_c_success {Ihr schlagt einen fairen Handel vor - der Offizier kann $attr($context.prisonerName) sofort von seinem eigenen Sold freikaufen. So muss keine Regel gebrochen werden, und niemand muss sich verschuldet fühlen. $attr($context.officerName) zögert eine Weile, willigt dann aber in eure Bedingungen ein.}
-Node0_c_c_success_action {Fairer Handel}
+Node0_c_c_success_action {Faires Geschäft}
 Node0_c_d_action {Die Entscheidungen des Kapitäns stehen nicht zur Debatte}
 Node0_c_d_success {Ihr verweigert dem Offizier seine Bitte. Wer der Gefangene auch sein mag - er hat sich ergeben und befindet sich nun in eurer Gewalt, und allein ihr entscheidet, was mit ihm geschieht. Zeigt ihr einmal Schwäche, wird es kein Ende mit denen geben, die ihre persönlichen Probleme auf Kosten des Kapitäns lösen wollen. $attr($context.officerName) wirkt niedergeschlagen, doch das kümmert euch nicht.}
 Node0_c_d_success_action {Ich bin das Gesetz}

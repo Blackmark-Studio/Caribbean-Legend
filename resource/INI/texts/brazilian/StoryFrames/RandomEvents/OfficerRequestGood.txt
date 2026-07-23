@@ -32,7 +32,7 @@ Node0_c_b_success {Você ordena que o prisioneiro seja solto e receba um lugar n
 Node0_c_b_success_action {Isso é exceção, não regra}
 Node0_c_c_action {Então compre a liberdade dele você mesmo}
 Node0_c_c_success {Você propõe um acordo justo - o oficial pode resgatar $attr($context.prisonerName) agora mesmo, descontando o valor do próprio soldo. Assim, não será preciso quebrar regra nenhuma e ninguém ficará em dívida com ninguém. $attr($context.officerName) hesita por algum tempo, mas no fim aceita suas condições.}
-Node0_c_c_success_action {筋の通った取引}
+Node0_c_c_success_action {Acordo justo}
 Node0_c_d_action {As decisões do capitão não se discutem}
 Node0_c_d_success {Você recusa o pedido do oficial. Seja quem for o prisioneiro, ele se rendeu e agora está sob seu poder, e cabe a você decidir o que será feito. Basta ceder uma vez, e nunca mais vai faltar gente querendo resolver seus problemas pessoais às custas do capitão. $attr($context.officerName) parece abatido, mas isso não lhe importa.}
 Node0_c_d_success_action {Eu sou a lei}

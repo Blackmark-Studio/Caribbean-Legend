@@ -14,3 +14,7 @@ low_food_header {Yiyecek az}
 low_food_text {Denizciler yakında açlıktan ölmeye başlayacak. Erzakı acilen yenilemelisiniz!}
 low_medicament_header {İlaç az}
 low_medicament_text {Denizciler yakında hastalıktan ölmeye başlayacak. Stokları acilen yenilemelisiniz!}
+overload_header {Gemi aşırı yüklü}
+overload_text {Aşırı yüklü bir gemiyle küresel haritaya çıkamazsın. Ambardaki malları at veya filodaki diğer gemilere aktar.}
+salary_debt_header {Mürettebata borç}
+salary_debt_text {Ganimet paylaşımı veya ödenmeyen ücretler nedeniyle mürettebata borçlusun. Yeni denizciler gemine katılmaya isteksiz olacak ve zamanla mürettebat isyan edebilir.}

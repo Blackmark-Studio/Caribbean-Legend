@@ -179,7 +179,7 @@ ShipCamera_Turn_V {Movimiento vertical de la cámara que sigue al barco}
 ShipState {Barcos}
 SwitchCameraOffset {Vista de cámara}
 TelescopeMode {Alternar catalejo}
-TelescopeZoomIn {Catalejo (ampliar)}
+TelescopeZoomIn {Catalejo (acercar)}
 TelescopeZoomOut {Catalejo (alejar)}
 TimeScale {Acelerar/ralentizar el tiempo}
 TimeScaleFasterBA {Acelerar el tiempo}

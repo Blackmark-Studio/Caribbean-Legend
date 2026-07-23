@@ -520,6 +520,7 @@ void JungFightAllDead(string sGroup) { TEV.JungFightRumour = "AllDead"; }
 void JungFightNoHonor(ref attack, ref hit)
 {
     TEV.JungFightRumour = "Fight";
+    LAi_group_FightGroups(hit.chr_ai.group, LAI_GROUP_PLAYER, false);
     JungFightChangeRelation(hit, false);
 }
 

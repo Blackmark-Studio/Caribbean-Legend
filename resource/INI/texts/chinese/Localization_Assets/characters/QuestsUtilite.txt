@@ -329,3 +329,5 @@ QuestsUtilite_96 {Axel}
 QuestsUtilite_97 {Yost}
 QuestsUtilite_98 {Sancho}
 QuestsUtilite_99 {Carpentero}
+QuestsUtilite_332 {海盗威胁降低}
+QuestsUtilite_333 {真是放肆！}

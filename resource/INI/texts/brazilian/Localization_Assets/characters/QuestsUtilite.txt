@@ -329,3 +329,5 @@ QuestsUtilite_96 {Axel}
 QuestsUtilite_97 {Yost}
 QuestsUtilite_98 {Sancho}
 QuestsUtilite_99 {Carpentero}
+QuestsUtilite_332 {Ameaça pirata reduzida}
+QuestsUtilite_333 {Que insolência!}

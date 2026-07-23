@@ -226,7 +226,7 @@ itmdescr_hat8 {Bu şapka, tüccarları—özellikle de İspanyolları—Jolly Ro
 itmdescr_hat9 {Bu şapka Karayipler’in her köşesinde bilinir ve her yerde ürpertiyle anılır. Onun sahibinin gemisine saldırmaya yalnızca bir deli cesaret edebilir; kendisiyle karşılaşınca ise korkudan kılıcı ya da tabancayı nasıl tutacağını unutursun. Unutma: Öte tarafa geçmek kolaydır. Zor olan geri dönmektir.}
 itmdescr_HolTradeLicence {Tüm kolonilerin kasaba ve limanlarını ticaret ve diğer barışçıl amaçlarla ziyaret etmenizi sağlar. #sAction_date# tarihinde verilmiştir ve #sValidity# süreyle geçerlidir.}
 itmdescr_howdah {Çift namlulu, büyük kalibreli tabanca; Afrika çalısında ya da Hint ormanında avcıya en iyi yoldaş. Domuzları, kaplanları ve saldırgan yerlileri güvenle indirir.}
-itmdescr_icollection {Her erkeğin gözünde değerli, mücevherli pahalı altın eşyalardan oluşan çeşitli bir set.}
+itmdescr_icollection {Altın ve değerli taşlardan yapılmış, hem gönül hem de kese için kıymetli çeşitli eşyalar.}
 itmdescr_ignasio_book {Ignacio Marco'nun gemi günlüğü.}
 itmdescr_indian_1
 {

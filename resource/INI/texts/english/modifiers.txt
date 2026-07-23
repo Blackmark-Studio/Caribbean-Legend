@@ -59,3 +59,6 @@ uniqueGoodsAvailable_0 {Strategic goods are not sold}
 uniqueGoodsAvailable_1 {Strategic goods are available}
 uniqueGoodsStock {Strategic goods stock}
 SquadronPower {Squadron power}
+ammoGoodsStock {Ammunition stock}
+ammoGoodsCost {Ammunition cost}
+crewMoraleDebuffMtp {Reduced impact of hunger and disease on crew morale}

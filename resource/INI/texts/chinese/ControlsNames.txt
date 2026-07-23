@@ -179,8 +179,8 @@ ShipCamera_Turn_V {跟随船只的镜头垂直移动}
 ShipState {舰队}
 SwitchCameraOffset {镜头视角}
 TelescopeMode {切换望远镜}
-TelescopeZoomIn {望远镜 (拉近)}
-TelescopeZoomOut {望远镜 (拉远)}
+TelescopeZoomIn {望远镜（放大）}
+TelescopeZoomOut {望远镜（缩小）}
 TimeScale {时间加速/减速}
 TimeScaleFasterBA {时间加速}
 TimeScaleOff {关闭加速}

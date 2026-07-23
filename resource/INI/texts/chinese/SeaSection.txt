@@ -47,7 +47,7 @@ seg_Sandal {铁梨木}
 seg_ShipSilk {船用丝绸}
 seg_Silver {白银}
 seg_Slaves {奴隶}
-seg_Sugar { }
+seg_Sugar {糖的}
 seg_Tobacco {烟草}
 seg_Weapon {武器}
 seg_Wheat {小麦}

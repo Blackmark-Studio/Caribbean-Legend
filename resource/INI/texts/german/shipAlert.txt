@@ -14,3 +14,7 @@ low_food_header {Nahrung knapp}
 low_food_text {Die Matrosen werden bald verhungern. Die Vorräte müssen dringend aufgefüllt werden!}
 low_medicament_header {Medikamente knapp}
 low_medicament_text {Die Matrosen werden bald an Krankheiten sterben. Die Vorräte müssen dringend aufgefüllt werden!}
+overload_header {Schiff überladen}
+overload_text {Mit einem überladenen Schiff könnt Ihr die globale Karte nicht betreten. Werft Waren aus dem Laderaum oder übertragt sie auf andere Schiffe des Geschwaders.}
+salary_debt_header {Schulden bei der Mannschaft}
+salary_debt_text {Ihr schuldet der Mannschaft Geld aus der Beuteverteilung oder wegen ausstehender Heuer. Neue Matrosen werden nur ungern auf Eurem Schiff anheuern, und mit der Zeit könnte die Mannschaft meutern.}

@@ -26,7 +26,7 @@ Node0_c_d_reaction {Altın en iyi yatırımdır}
 Node0_c_d_reaction_log {Dublonların değerini biliyorsun ve herhangi bir tefeciyi, altın mevduatın hem onlar hem de senin için çok daha güvenilir olduğuna kolayca ikna edebilirsin.}
 Node0_c_e {Fransız sarayındaki uzun tartışmaların ardından sömürge vergilerini yeniden gözden geçirmeye karar verildi. Malların bir kısmı resmen yasaklılar listesinden çıkarıldı ve eski cezalar geçici olarak askıya alındı. Louvre'la rekabet eden devletler de aynı şekilde karşılık verdi; artık Karayip takımadalarının dört bir yanındaki limanlarda gümüş ve altın ticareti yapılabiliyor, eskiden kaçakçılık sayılan şeyler ise şimdi yasal.}
 Node0_c_e_reaction {Ya canlı mal ne olacak?}
-Node0_c_e_reaction_log { }
+Node0_c_e_reaction_log {Yeni vergiler sonsuza dek sürmeyecek ve kaçak mal ticareti fırsatı yakında sona erecek. Ancak köle ticareti uzun vadeli kazanç vadediyor ve Karayip tüccarlarını tam da buna ikna etmeye karar veriyorsun.}
 Node0_d_a {Baharın gelmesiyle kıyı suları canlanır. Sığlıklarda uskumru ve sardalya görülür, resiflere ton balığı yaklaşır, kumlu kıyılarda ise deniz kaplumbağaları avlanır. Denizciler ağları doğrudan sandallardan serer, kıyıda balık tütsüler ve her durakta kıyı derelerinden tatlı suyla fıçılarını doldurur.}
 Node0_d_a_reaction {Çeşitli beslenme faydalıdır}
 Node0_d_a_reaction_log {Normal peksimet ve tuzlu eti taze balık ve etle zenginleştirerek çeşitli ve doyurucu bir deniz tayını hazırlamaya karar veriyorsun. Gemi doktorunun gözetiminde doğru hazırlanmış bir menü, salgın ve iskorbüt riskini azaltmaya yardımcı olacaktır.}

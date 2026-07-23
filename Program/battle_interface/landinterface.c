@@ -101,13 +101,14 @@ void StartBattleLandInterface()
 	SetEventHandler("Location_CharacterExitFromLocator", "BLI_ChrExitFromLocation", 0);
 	SetEventHandler("evntPerkAgainUsable","BLI_RefreshCommandMenu",0);
 	SetEventHandler("Control Activation","LI_ProcessControlPress",0);
+	SetEventHandler("Event_BLISetCharacters", "BLI_SetCharacters", 0);
 	CreateILogAndActions(LOG_FOR_LAND);
 	Event("evntBLI_Update");
 	Event("evntFindDialogChar");
+	PostEvent("Event_BLISetCharacters", 1);
 	SendMessage(&objLandInterface,"ll",MSG_BATTLE_LAND_SHOW_EQUIPMENT, bShowEquipment());
     TW_Init();
     CheckBindsBack();
-	BLI_SetCharacters();
 }
 
 ref BLI_CheckCommand()
@@ -372,6 +373,7 @@ void EndBattleLandInterface()
 	DelEventHandler("Location_CharacterExitFromLocator", "BLI_ChrExitFromLocation");
 	DelEventHandler("evntPerkAgainUsable","BLI_RefreshCommandMenu");
 	DelEventHandler("Control Activation","LI_ProcessControlPress");
+	DelEventHandler("Event_BLISetCharacters", "BLI_SetCharacters");
 
 	Log_SetActiveAction("Nothing");
     TW_Close();
@@ -1818,6 +1820,7 @@ void LI_CareUpdateCommandList()
 
 void SetCharacterIconData(int chrindex, aref arData)
 {
+	BLI_SetCharacters();
 	ref chref = GetCharacter(chrindex);
 	arData.chrindex = chrindex;
 	arData.health = LAi_GetCharacterRelHP(chref);

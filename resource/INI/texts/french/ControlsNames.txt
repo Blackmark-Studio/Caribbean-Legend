@@ -178,9 +178,9 @@ ShipCamera_Turn_H {Mouvement horizontal de la caméra du navire}
 ShipCamera_Turn_V {Mouvement vertical de la caméra du navire}
 ShipState {Flotte}
 SwitchCameraOffset {Vue de la caméra}
-TelescopeMode {Activer la longue-vue}
-TelescopeZoomIn {Zoomer avec la longue-vue}
-TelescopeZoomOut {Dézoomer avec la longue-vue}
+TelescopeMode {Activer ou désactiver la longue-vue}
+TelescopeZoomIn {Longue-vue (zoomer)}
+TelescopeZoomOut {Longue-vue (dézoomer)}
 TimeScale {Le temps s'accélère/ralentit}
 TimeScaleFasterBA {Le temps s'accélère}
 TimeScaleOff {Désactiver l’accélération}

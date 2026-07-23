@@ -16,7 +16,7 @@ Node0_b_a_action {You'll make restitution}
 Node0_b_a_success {You order the officer to compensate the sailor out of his wages. $ctx(officerName) tries to object, but a single hard look from his captain is enough to silence him. The sailors are satisfied and disperse. The strain of choosing between justice and discipline gnaws at you, but Alonso says you did the right thing. You believe him.}
 Node0_b_a_success_action {That would be fair}
 Node0_b_a_fail {You order the officer to compensate the sailor from his wages, but he refuses, sheltering behind the ship's articles. Corporal punishment - and the choice of how severe it should be - truly does lie within an officer's authority, and you are left with no choice but to concede the point. The sailors react furiously, but Alonso calms them. It seems you have lost a measure of respect in the eyes of everyone aboard.}
-Node0_b_a_fail_action {Let's forget about it}
+Node0_b_a_fail_action {Let’s forget about it}
 Node0_b_b_action {The boatswain had every right}
 Node0_b_b_success {You back the officer’s right to decide both the form of punishment and how harsh it should be. What the sailor thinks does not matter — his place is to obey orders. $attr($context.officerName) is pleased with your ruling, but the crew is clearly unhappy.}
 Node0_b_b_success_action {No one asked them}

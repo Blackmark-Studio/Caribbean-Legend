@@ -26,7 +26,7 @@ Node0_c_d_reaction {Złoto to najlepsza inwestycja}
 Node0_c_d_reaction_log {Znasz wartość dublonów i bez trudu przekonasz każdego bankiera, że lokaty w złocie są znacznie pewniejsze zarówno dla nich, jak i dla ciebie.}
 Node0_c_e {Po długich sporach na dworze francuskim postanowiono zrewidować cła kolonialne. Część towarów oficjalnie wykreślono z listy zakazanych, a stare kary tymczasowo zawieszono. Rywalizujące z Luwrem państwa odpowiedziały tym samym i teraz w portach całego archipelagu karaibskiego można handlować srebrem i złotem, a to, co wcześniej uchodziło za przemyt, jest już legalne.}
 Node0_c_e_reaction {A co z żywym towarem?}
-Node0_c_e_reaction_log { }
+Node0_c_e_reaction_log {Nowe cła nie będą obowiązywać wiecznie, a okazja do handlu kontrabandą wkrótce przeminie. Handel niewolnikami obiecuje jednak długoterminowe zyski, więc postanawiasz przekonać do tego karaibskich negocjantów.}
 Node0_d_a {Wraz z nadejściem wiosny ożywają przybrzeżne wody. Przy mieliznach idą makrele i sardynki, do raf podpływa tuńczyk, a przy piaszczystych plażach łapie się żółwie morskie. Marynarze stawiają sieci prosto z szalup, wędzą ryby na brzegu i podczas każdego postoju napełniają beczki słodką wodą z przybrzeżnych strumieni.}
 Node0_d_a_reaction {Zróżnicowana dieta pomaga}
 Node0_d_a_reaction_log {Postanawiasz ułożyć zróżnicowaną i pełnowartościową morską rację żywnościową, uzupełniając zwykłe suchary i solone mięso świeżą rybą oraz mięsem. Dobrze opracowane menu pod nadzorem lekarza okrętowego pozwoli zmniejszyć ryzyko wybuchu epidemii i szkorbutu.}

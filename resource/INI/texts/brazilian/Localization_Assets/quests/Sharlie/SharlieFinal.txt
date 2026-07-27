@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {Um dia se passou...@<NewStr()>A baunilha foi carregada na carraca...}
+SharlieFinal_35 {Passou-se um dia...@<NewStr()>A baunilha foi transferida para a brigantina...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Padre Vincento}

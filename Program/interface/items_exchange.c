@@ -1186,23 +1186,6 @@ void CS_TableSelectChange()
 	// Warship 26.04.09 fix - при прокрутке можно вылазить за экран, неправильно определялась текущая линия
 	int iSelLine = iSelected;
 	
-	if(CheckAttribute(&GameInterface, "TABLE_LIST.top"))
-	{
-		iSelLine = iSelected - int(GameInterface.TABLE_LIST.top);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY + 50 * (iSelLine - 1), iTableAddAllBtnX + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 50 * (iSelLine - 1), iTableAddBtnX + 30, iTableAddBtnY + 50 * (iSelLine - 1) + 45, 0);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY + 50 * (iSelLine - 1), iTableRemoveBtnX + 30, iTableRemoveBtnY + 50 * (iSelLine - 1) + 45, 0);		
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON", 0, iTableRemoveAllBtnX, iTableRemoveAllBtnY + 50 * (iSelLine - 1), iTableRemoveAllBtnX + 35, iTableRemoveAllBtnY + 50 * (iSelLine - 1) + 45, 0);
-	}
-	if(CheckAttribute(&GameInterface, "TABLE_LIST2.top"))
-	{
-		iSelLine = iSelected - int(GameInterface.TABLE_LIST2.top);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2 + 50 * (iSelLine - 1), iTableAddAllBtnX2 + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2 + 50 * (iSelLine - 1), iTableAddBtnX2 + 30, iTableAddBtnY2 + 50 * (iSelLine - 1) + 45, 0);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2 + 50 * (iSelLine - 1), iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 50 * (iSelLine - 1) + 45, 0);		
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON2", 0, iTableRemoveAllBtnX2, iTableRemoveAllBtnY2 + 50 * (iSelLine - 1), iTableRemoveAllBtnX2 + 35, iTableRemoveAllBtnY2 + 50 * (iSelLine - 1) + 45, 0);
-	}
-	
 	String sList = "tr" + iSelected;
 	CurRow = sList;
 	SetCharWeight();
@@ -1211,6 +1194,20 @@ void CS_TableSelectChange()
 
 	sortedGoodIndex = int(GameInterface.(CurTable).(sList).index);
 	ShowGoodsInfo(sortedGoodIndex);
+	int offset = 3*strlen(GameInterface.(CurTable).(sList).td3.str);
+
+	if(CheckAttribute(&GameInterface, "TABLE_LIST.top"))
+	{
+		iSelLine = iSelected - int(GameInterface.TABLE_LIST.top);
+		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX - offset, iTableAddBtnY + 50 * (iSelLine - 1), iTableAddBtnX + 30 - offset, iTableAddBtnY + 50 * (iSelLine - 1) + 45, 0);
+		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX + offset, iTableRemoveBtnY + 50 * (iSelLine - 1), iTableRemoveBtnX + 30 + offset, iTableRemoveBtnY + 50 * (iSelLine - 1) + 45, 0);		
+	}
+	if(CheckAttribute(&GameInterface, "TABLE_LIST2.top"))
+	{
+		iSelLine = iSelected - int(GameInterface.TABLE_LIST2.top);
+		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2 - offset, iTableAddBtnY2 + 50 * (iSelLine - 1), iTableAddBtnX2 + 30 - offset, iTableAddBtnY2 + 50 * (iSelLine - 1) + 45, 0);
+		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2 + offset, iTableRemoveBtnY2 + 50 * (iSelLine - 1), iTableRemoveBtnX2 + 30 + offset, iTableRemoveBtnY2 + 50 * (iSelLine - 1) + 45, 0);		
+	}
 	ShowItemInfo();
 }
 

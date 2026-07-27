@@ -257,7 +257,7 @@ void ProcessDialogEvent()
 }
 
 // Метод из Capitans_dialog.c
-int FindPriceStoreMan()
+int FindPriceStoreMan(ref NPChar)
 {
 	int i, storeArray[40], howStore = 0;
 	for(i = 0; i < MAX_CHARACTERS; i++)

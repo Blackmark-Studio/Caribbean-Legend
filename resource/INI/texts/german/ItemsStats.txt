@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Alle 2% verlorene Schiffshülle erhöhen die G
 itm_stat_descr_talisman2 {Hilft, Sturmgebiete zu meiden oder verringert den Schaden an Segeln und Rumpf während eines Sturms.}
 itm_stat_descr_talisman20 {Zielgeschwindigkeit mit Schusswaffen steigt um 15 %, maximaler Zielschaden um 20 %, Nachladegeschwindigkeit um 10 % und Kopfschussschaden um 20 %.}
 itm_stat_descr_talisman21 {Ermöglicht Handel mit Schmugglern auf Schiffen bis einschließlich Rang 2.}
-itm_stat_descr_talisman3 {Der Bonus durch Geschütze in gutem Zustand wird um $percent(0.05) erhöht. Dieser Effekt ist kumulativ.}
+itm_stat_descr_talisman3 {Erhöht die maximale Haltbarkeit der Geschütze um $percent(0.30) und den Bonus für Geschütze in gutem Zustand um $percent(0.10). Der Effekt ist kumulativ.}
 itm_stat_descr_talisman4 {Verringert den Moralverlust der Mannschaft bei Überladung und senkt die tägliche Rumration der Crew.}
 itm_stat_descr_talisman6 {Hilft, Vorräte an Bord zu sparen und senkt ihren Verbrauch um ein Viertel.}
 itm_stat_descr_talisman7

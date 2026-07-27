@@ -107,11 +107,11 @@ GenQuests_96 {Você ouviu falar que a gangue local do @<pchar.GenQuest.(Gun).nam
 GenQuests_97 {Você ouviu sobre o assassinato de @<pchar.GenQuest.EncGirl.name>? Coitada, foi morta na selva recentemente. Deviam encontrar o assassino e enforcá-lo!}
 GenQuests_98 {Sabe, capitão @<GetFullName(pchar)>, alguém matou uma pobre moça chamada @<pchar.GenQuest.EncGirl.name>? Que pena, ela era uma garota tão boa...}
 GenQuests_99 {O nome dela era @<pchar.GenQuest.EncGirl.name>, e ela morreu na selva. Nada surpreendente, vou te dizer, lá fora não é seguro...}
-Alone_Citiz_Death_0 {Dizem que @<Name> foi esfaqueado por bandidos na selva. Veja a que ponto chegamos, $Name: hoje em dia a pessoa sai pelos portões e talvez já nem volte.}
+Alone_Citiz_Death_0 {Dizem que @<Name> foi esfaqueado por bandidos na selva. Veja a que ponto chegamos, @<HeroName>: hoje em dia a pessoa sai pelos portões e talvez já nem volte.}
 Alone_Citiz_Death_1 {Ouviu? @<Name> entregou a alma a Deus na selva. Dizem que foram os bandidos, e em tempos assim o povo honesto tem cada vez menos chance de chegar vivo ao anoitecer.}
-Alone_Citiz_RobberyFail_0 {Dizem que algum esfarrapado resolveu tentar roubar @<Name>. Perderam completamente a vergonha, $Name: antes pelo menos tinham medo da guarda, agora avançam com faca em plena luz do dia.}
-Alone_Citiz_RobberyFail_1 {Recentemente @<Name> voltou para a cidade fugindo de ladrões. São tempos assim, $Name: já não é a pessoa que escolhe a estrada, é a estrada que decide se ela volta viva ou não.}
+Alone_Citiz_RobberyFail_0 {Dizem que algum esfarrapado resolveu tentar roubar @<Name>. Perderam completamente a vergonha, @<HeroName>: antes pelo menos tinham medo da guarda, agora avançam com faca em plena luz do dia.}
+Alone_Citiz_RobberyFail_1 {Recentemente @<Name> voltou para a cidade fugindo de ladrões. São tempos assim, @<HeroName>: já não é a pessoa que escolhe a estrada, é a estrada que decide se ela volta viva ou não.}
 Alone_Citiz_RobberySuccess_0 {@<Name> foi assaltado, imagina? Levaram tudo, e foi um milagre terem deixado ele vivo. Pelo visto, até os ladrões ainda têm consciência nestes tempos malditos.}
-Alone_Citiz_RobberySuccess_1 {Dizem que @<Name> entregou aos bandidos tudo até a última moeda. Fazer o quê, $Name: do contrário, talvez nem tivesse voltado para casa.}
-JungInjured_SoldHeal_0 {Dizem, $Name, que foi você quem salvou nosso soldado na selva. Em tempos assim, pouca gente se mete para defender a vida de outro, e por isso a cidade inteira está falando disso.}
-JungInjured_SoldHeal_1 {@<Name> voltou da selva quase morto. Na cidade comentam, $Name, que foi você quem o arrancou das portas da morte, e hoje em dia uma boa ação dessas vale muito. Você é uma boa pessoa.}
+Alone_Citiz_RobberySuccess_1 {Dizem que @<Name> entregou aos bandidos tudo até a última moeda. Fazer o quê, @<HeroName>: do contrário, talvez nem tivesse voltado para casa.}
+JungInjured_SoldHeal_0 {Dizem, @<HeroName>, que foi você quem salvou nosso soldado na selva. Em tempos assim, pouca gente se mete para defender a vida de outro, e por isso a cidade inteira está falando disso.}
+JungInjured_SoldHeal_1 {@<Name> voltou da selva quase morto. Na cidade comentam, @<HeroName>, que foi você quem o arrancou das portas da morte, e hoje em dia uma boa ação dessas vale muito. Você é uma boa pessoa.}

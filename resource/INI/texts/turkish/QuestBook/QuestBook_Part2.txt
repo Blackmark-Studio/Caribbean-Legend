@@ -3508,7 +3508,7 @@ Roger_5.21
 
 Roger_5.3
 {
-Hedefimiz, Lake Maracaibo’nun güneyindeki Cape of Delusive Hopes. Kaybedecek vakit yok!
+Hedefimiz, Lake Maracaibo’nun güneyindeki Cape of Disappointed Hopes. Kaybedecek vakit yok!
 }
 
 Roger_5.4

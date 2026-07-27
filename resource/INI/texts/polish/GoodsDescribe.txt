@@ -105,9 +105,11 @@ Każdy rodzaj hebanu ma swój własny, niepowtarzalny kolor - od zielonkawo-brą
 Food {Jedzenie}
 Food_descr
 {
-Standardowy zestaw konserwowanych racji żywnościowych i świeżej wody, niezbędny do wyżywienia załogi i niewolników podczas rejsu.
-Brak żywności na pokładzie prowadzi do głodu, śmierci i spadku morale. 
-Dzienne spożycie: marynarze - 0.1 jednostki, niewolnicy - 0.05 jednostki.
+Suchary, solone mięso, skromny wybór suszonych warzyw i zapas świeżej wody, niezbędne na statku podczas rejsu.
+Brak prowiantu na pokładzie prowadzi do głodu, śmierci i gwałtownego spadku morale.
+~
+Dzienne zużycie:
+marynarze — 1/$number($kstringTemp(FOOD_BY_CREW)), niewolnicy — 1/$number($kstringTemp(FOOD_BY_SLAVES)) jednostki towaru.
 }
 Fruits {Owoce}
 Fruits_descr

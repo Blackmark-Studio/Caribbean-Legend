@@ -166,7 +166,7 @@ void XI_ShipTableTooltip(ref chr, ref refBaseShip, string tabName, ref header, r
 		text = XI_ConvertString(GetRealShip(int(pchar.ship.type)).BaseName) + " '" + pchar.ship.name + "'";
 		if (!IsMainCharacter(chr)) secondChr = chr; 
 		refBaseShip = GetRealShip(int(secondChr.ship.type));
-		goodText = XI_ConvertString(refBaseShip.BaseName) + " '" + secondChr.ship.name + "'";
+		badText = XI_ConvertString(refBaseShip.BaseName) + " '" + secondChr.ship.name + "'";
 	}
 }
 

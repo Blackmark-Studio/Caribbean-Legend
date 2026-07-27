@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Chaque perte de 2% de la coque du navire augme
 itm_stat_descr_talisman2 {Permet d’éviter une zone de tempête ou réduit les dégâts aux voiles et à la coque pendant l’orage.}
 itm_stat_descr_talisman20 {La vitesse de visée avec les armes à feu augmente de 15 %, les dégâts maximum en visée de 20 %, la vitesse de rechargement de 10 % et les dégâts de tir à la tête de 20 %.}
 itm_stat_descr_talisman21 {Permet de commercer avec les contrebandiers sur des navires jusqu’au rang 2 inclus.}
-itm_stat_descr_talisman3 {Le bonus accordé par le bon état des canons augmente de $percent(0.05). Cet effet est cumulable.}
+itm_stat_descr_talisman3 {Augmente la solidité maximale des canons de $percent(0.30) et le bonus accordé par leur bon état de $percent(0.10). L’effet est cumulable.}
 itm_stat_descr_talisman4 {Réduit la perte de moral due à la surcharge et diminue la ration quotidienne de rhum de l’équipage.}
 itm_stat_descr_talisman6 {Permet d’économiser les vivres à bord, réduisant leur consommation d’un quart.}
 itm_stat_descr_talisman7

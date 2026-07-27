@@ -1479,6 +1479,7 @@ void HideCannonsMenu()
 	SetCurrentNode("TABLE_OTHER");
 	sMessageMode = "";
 	currentCannonsMode = 0;
+	Ship_ResearchCannons(xi_refCharacter);
 }
 
 void FillCannonsTable()

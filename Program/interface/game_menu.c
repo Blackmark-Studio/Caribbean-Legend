@@ -83,6 +83,10 @@ void InitInterface_gm(string iniName)
 	{ // обновлений нет
 		SetSelectable("MB_UPDATES", false);
 	}
+
+	object itemsInfo[2];
+	bool hasMods = GetOverlaysInfo(&itemsInfo) > 0;
+	XI_WindowShow("MODS_WARNING_WINDOW", hasMods);
 }
 
 void ProcessCancelExit()
@@ -130,6 +134,12 @@ void ProcessCommandExecute()
 				IDoExit(RC_INTERFACE_DO_SAVE_GAME, true);
 			}
 		break;		
+		case "MODS_WARNING_BUTTON":
+			if (!GetSteamEnabled()) return;
+			if (comName == "click" || comName == "activate"){
+				GameOverlayToWebPage("https://steamcommunity.com/profiles/" + GetSteamID() + "/myworkshopfiles?appid=" + GetAppID() + "&browsefilter=mysubscriptions");
+			}
+		break;
 
 		case "MB_LOAD":
 			if (comName == "click" || comName == "activate"){

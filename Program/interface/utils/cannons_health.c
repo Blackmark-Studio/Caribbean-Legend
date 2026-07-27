@@ -25,7 +25,7 @@ bool XI_CannonsHealthTooltip(ref chr, string currentNode, ref header, ref text, 
 	}
 
 	header = xiStr("CannonsHealthTooltipHeader");
-	text = xiStr("CannonsHealthTooltipText");
+	text = DLGO(xiStr("CannonsHealthTooltipText"));
 	string bonusText = xiStr("CannonsDamage") + " " + ToHumanModifierPercent(damageMtp) + "\n";
 	bonusText += xiStr("CannonsTime") + " " + ToHumanModifierPercent(-reloadMtp);
 

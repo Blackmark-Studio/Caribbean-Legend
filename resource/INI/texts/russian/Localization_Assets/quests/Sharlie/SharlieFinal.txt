@@ -26,7 +26,7 @@ SharlieFinal_31 {Карлос}
 SharlieFinal_32 {Геварра}
 SharlieFinal_33 {Гай}
 SharlieFinal_34 {Марше}
-SharlieFinal_35 {Прошёл день...@<NewStr()>Ваниль была перегружена на каракку...}
+SharlieFinal_35 {Прошёл день...@<NewStr()>Ваниль была перегружена на бригантину...}
 SharlieFinal_36 {Барти}
 SharlieFinal_37 {Живодёр}
 SharlieFinal_38 {отец Винсенто}

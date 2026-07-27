@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Every 2% of the ship’s hull lost increases c
 itm_stat_descr_talisman2 {Helps avoid entering a storm zone or reduces damage to sails and hull during a storm.}
 itm_stat_descr_talisman20 {Aiming speed with firearms increases by 15%, maximum aimed damage increases by 20%, reload speed increases by 10%, and headshot damage increases by 20%.}
 itm_stat_descr_talisman21 {Allows trading with smugglers on ships up to and including rank 2.}
-itm_stat_descr_talisman3 {The bonus from cannons in good condition is increased by $percent(0.05). This effect stacks.}
+itm_stat_descr_talisman3 {Increases maximum cannon durability by $percent(0.30) and the bonus from cannons in good condition by $percent(0.10). The effect stacks.}
 itm_stat_descr_talisman4 {Reduces crew morale loss from overloading and lowers the daily rum ration consumed by the crew.}
 itm_stat_descr_talisman6 {Helps save provisions on the ship, reducing their consumption rate by a quarter.}
 itm_stat_descr_talisman7

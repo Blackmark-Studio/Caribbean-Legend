@@ -8,13 +8,13 @@ Brigantine {Un tipo leggendario di nave a vela. Veloce e manovrabile come una ro
 CannonType {Qui sono indicati il numero attuale e massimo di cannoni a bordo, nonché il loro tipo e le loro caratteristiche. Se il numero attuale coincide con quello massimo, viene mostrato un solo valore.}
 Capacity
 {
-Portata: mostra la capacità attuale e massima della nave. Più la nave è carica, più diventa lenta e poco manovrabile.
-I cannoni installati sulla nave sono anch'essi presi in considerazione nel calcolo della portata. Possono essere rimossi dalla nave per liberare spazio aggiuntivo per il carico. Per farlo, selezionare i cannoni attuali nell'elenco dei parametri della nave nell'interfaccia "Nave".
+La portata indica la capacità di carico attuale e massima della nave. Più la nave è carica, meno è manovrabile e più diventa lenta.
+Anche i cannoni vengono conteggiati nel calcolo della portata. Possono essere rimossi dalla nave per liberare ulteriore spazio per il carico. Per farlo, apri l’interfaccia "Nave" e premi "$key(Cannons_managment)".
 }
 Caravel {L'armo caratteristico della caravella permette di riconoscere facilmente questa nave da lontano. Il suo design obsoleto le conferisce qualità di navigazione piuttosto mediocri, che le impediscono di competere alla pari con le navi moderne, nonostante abbia abbastanza cannoni.}
 Corvette {Le corvette sono progettate per il riconoscimento, il servizio di corriere e le operazioni di crociera. Con buona velocità e manovrabilità, una corvetta può raggiungere navi più leggere ed evitare con successo il combattimento con navi più pesanti.}
 CORVETTE_QUEST {Una nave unica, capolavoro dei costruttori navali francesi. L'ampia modernizzazione del design della corvetta ha migliorato quasi tutte le sue caratteristiche senza sacrificare la velocità. L'aumento della superficie velica e il calibro dei cannoni richiedono un equipaggio più esperto e numeroso, ma se le prove nei Caraibi avranno successo, le tecnologie applicate qui potrebbero rappresentare un vero progresso nella costruzione navale.}
-Crew {Equipaggio: mostra il numero attuale di membri dell'equipaggio, nonché il minimo e il massimo per questa nave.}
+Crew {I marinai indicano il numero attuale di uomini e l’equipaggio massimo della nave.$br()Equipaggio minimo necessario per prendere il largo: $decl($ctx(minCrew)|persona|persone|persone).}
 Crew_Exp {Esperienza dell'equipaggio}
 Crew_Exp_hint {La vita a bordo è organizzata in turni di guardia e ogni marinaio deve sapersela cavare sia con il sartiame sia con gli affusti. L’esperienza dell’equipaggio influisce su tutte le caratteristiche della nave, dalla velocità di manovra delle vele al tempo di ricarica dei cannoni. $br()L’esperienza aumenta col tempo, ma diminuisce in seguito alle perdite o quando si reclutano pivelli in taverna. Preservare un equipaggio esperto è molto più conveniente che reclutare pivelli e addestrarli da zero.}
 EastIndiaMan {Le navi della Compagnia delle Indie Orientali hanno riunito le migliori qualità delle pinacce e si sono liberate dei loro difetti, diventando navi universali quasi perfette. Dotate di cannoni di grosso calibro, possono competere con navi da guerra di dimensioni comparabili, e la loro stiva spaziosa consente di utilizzarle efficacemente per il commercio.}
@@ -134,7 +134,7 @@ Cannon_hp_header {Integrità massima}
 Cannon_hp_text {Questo valore determina quanti colpi può sparare un cannone prima di essere completamente distrutto. Più è alto, meno spesso il cannone deve essere riparato. Ogni tipo di cannone possiede una propria integrità massima, che generalmente aumenta con il calibro.}
 Cannon_weight_header {Peso del cannone}
 Cannon_weight_text {I cannoni occupano molto spazio a bordo; sulle navi da guerra, la batteria d’artiglieria può assorbire fino a metà della capacità di carico. Il peso aumenta con il calibro e la potenza di fuoco, mentre le colubrine pesano più dei cannoni dello stesso calibro.}
-Cannon_health_0 {Distrutti}
+Cannon_health_0 {Quasi distrutti}
 Cannon_health_1 {Usurati}
 Cannon_health_2 {In ordine}
 Cannon_health_3 {Ben tarati}

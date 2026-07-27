@@ -8,13 +8,13 @@ Brigantine {Um lendário tipo de navio à vela. Rápida e ágil como uma andorin
 CannonType {Aqui são exibidas a quantidade atual e máxima de canhões no navio, bem como seu tipo e suas características. Se a quantidade atual for igual à máxima, apenas um valor será exibido.}
 Capacity
 {
-Porão - mostra a capacidade atual e máxima do navio. Quanto mais carregado, mais lento e difícil de manobrar ele fica.
-Os canhões instalados também contam no cálculo do porão. Eles podem ser removidos para liberar espaço extra para carga. Para isso, selecione os canhões atuais na lista de parâmetros do navio na interface "Navio".
+O porte bruto mostra a capacidade de carga atual e máxima do navio. Quanto mais carregado estiver, menos manobrável e mais lento ele se torna.
+Os canhões também são considerados no cálculo do porte bruto. Eles podem ser removidos do navio para liberar espaço adicional para carga. Para isso, abra a interface "Navio" e clique em "$key(Cannons_managment)".
 }
 Caravel {O velame característico da caravela permite reconhecê-la de longe. Seu projeto ultrapassado resulta em qualidades de navegação medianas, impedindo-a de competir de igual para igual com navios modernos, mesmo contando com armamento suficiente.}
 Corvette {Corvetas são projetadas para reconhecimento, serviço de mensageiro e operações de cruzeiro. Com boa velocidade e manobrabilidade, uma corveta pode alcançar navios mais leves e evitar combates com embarcações mais pesadas.}
 CORVETTE_QUEST {Um navio exclusivo, obra-prima dos construtores navais franceses. Uma profunda modernização do projeto do corveta aprimorou quase todas as suas características sem sacrificar a velocidade. A área de velas ampliada e o calibre dos canhões exigem uma tripulação mais experiente e numerosa, mas, se os testes no Caribe forem bem-sucedidos, as tecnologias empregadas aqui podem representar um verdadeiro avanço na construção naval.}
-Crew {Tripulação - mostra o número atual de tripulantes, além do mínimo e máximo para este navio.}
+Crew {Os marinheiros mostram o número atual de tripulantes e a tripulação máxima deste navio.$br()Tripulação mínima necessária para navegar em mar aberto: $decl($ctx(minCrew)|pessoa|pessoas|pessoas).}
 Crew_Exp {Experiência da tripulação}
 Crew_Exp_hint {A vida a bordo é organizada em turnos de vigia, e todo marinheiro precisa saber lidar tanto com o cordame quanto com as carretas dos canhões. A experiência da tripulação afeta todas as características do navio, da velocidade de manobra das velas ao tempo de recarga dos canhões. $br()A experiência aumenta com o tempo, mas diminui com as baixas ou com a contratação de novatos na taverna. Preservar uma tripulação experiente é muito mais vantajoso do que contratar novatos e treiná-los do zero.}
 EastIndiaMan {Os East Indiamen reuniram as melhores qualidades dos pinnaces e superaram suas limitações, tornando-se navios universais quase perfeitos. Armados com canhões de grande calibre, podem rivalizar com navios de guerra de tamanho semelhante, e seu porão espaçoso permite um uso eficiente no comércio.}
@@ -134,7 +134,7 @@ Cannon_hp_header {Durabilidade máxima}
 Cannon_hp_text {Este valor determina quantos disparos um canhão pode efetuar antes de ser completamente destruído. Quanto maior ele for, menos vezes será necessário reparar o canhão. Cada tipo de canhão possui sua própria durabilidade máxima, que geralmente aumenta conforme o calibre.}
 Cannon_weight_header {Peso do canhão}
 Cannon_weight_text {Os canhões ocupam muito espaço a bordo; em navios de guerra, a bateria de artilharia pode consumir até metade da capacidade de carga. O peso aumenta conforme o calibre e o poder de fogo, enquanto as colubrinas pesam mais que canhões do mesmo calibre.}
-Cannon_health_0 {Destruídos}
+Cannon_health_0 {Quase destruídos}
 Cannon_health_1 {Desgastados}
 Cannon_health_2 {Em ordem}
 Cannon_health_3 {Bem ajustados}

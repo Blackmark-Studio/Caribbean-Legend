@@ -3508,7 +3508,7 @@ I was too slow, so Leprechaun and Jean decided they could manage without me. Pro
 
 Roger_5.3
 {
-Our destination is Cape of Delusive Hopes, south of Lake Maracaibo. There's no time to waste!
+Our destination is Cape of Disappointed Hopes, south of Lake Maracaibo. There's no time to waste!
 }
 
 Roger_5.4

@@ -8,13 +8,13 @@ Brigantine {Legendarny typ żaglowca. Szybka i zwrotna jak jaskółka, brygantyn
 CannonType {Tutaj przedstawiono bieżącą i maksymalną liczbę dział na statku, a także ich typ i parametry. Jeśli bieżąca liczba jest równa maksymalnej, wyświetlana jest tylko jedna wartość.}
 Capacity
 {
-Nośność – pokazuje aktualną i maksymalną pojemność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.
-Działa zamontowane na statku również są brane pod uwagę przy obliczaniu nośności. Można je zdjąć, aby zwolnić dodatkowe miejsce na ładunek. W tym celu należy w interfejsie "Statek" wybrać aktualne działa w liście parametrów statku.
+Nośność pokazuje aktualną i maksymalną ładowność statku. Im bardziej statek jest załadowany, tym staje się mniej zwrotny i wolniejszy.
+Działa również są uwzględniane przy obliczaniu nośności. Można je zdjąć ze statku, aby zwolnić dodatkowe miejsce na ładunek. W tym celu otwórz interfejs "Statek" i kliknij "$key(Cannons_managment)".
 }
 Caravel {Charakterystyczne ożaglowanie karaweli pozwala łatwo rozpoznać ten statek z daleka. Przestarzała konstrukcja sprawia, że właściwości żeglugowe karaweli są dość przeciętne, co uniemożliwia jej równą walkę ze współczesnymi statkami, mimo wystarczającej liczby dział.}
 Corvette {Korwety są przeznaczone do rozpoznania, służby kurierskiej i operacji krążowniczych. Dobra prędkość i zwrotność pozwalają korwecie dogonić lżejsze jednostki i skutecznie unikać walki z cięższymi.}
 CORVETTE_QUEST {Jednostkowy statek, arcydzieło francuskich szkutników. Głęboka modernizacja konstrukcji korwety poprawiła prawie wszystkie jej cechy bez utraty prędkości. Zwiększona powierzchnia żagli i kaliber dział wymagają bardziej doświadczonej i liczniejszej załogi, ale jeśli próby na Karaibach się powiodą, zastosowane tu technologie mogą być prawdziwym przełomem w szkutnictwie.}
-Crew {Załoga – pokazuje aktualną liczbę członków załogi, a także minimalną i maksymalną dla tego statku.}
+Crew {Marynarze pokazują aktualną liczbę członków załogi oraz maksymalną załogę tego statku.$br()Minimalna załoga wymagana do wypłynięcia na otwarte morze: $decl($ctx(minCrew)|człowiek|ludzi|ludzi).}
 Crew_Exp {Doświadczenie załogi}
 Crew_Exp_hint {Życie na pokładzie jest zorganizowane w wachty, a każdy marynarz musi umieć radzić sobie zarówno z takielunkiem, jak i lawetami. Doświadczenie załogi wpływa na wszystkie parametry statku — od szybkości obsługi żagli po czas przeładowania dział. $br()Doświadczenie rośnie z czasem, lecz spada wskutek strat lub zatrudniania żółtodziobów w tawernie. O wiele bardziej opłaca się chronić doświadczoną załogę, niż zatrudniać nowicjuszy i szkolić ich od podstaw.}
 EastIndiaMan {Statki Kompanii Wschodnioindyjskiej połączyły najlepsze cechy pinas i pozbyły się ich wad, stając się niemal doskonałymi uniwersalnymi jednostkami. Dzięki ciężkim działom mogą konkurować z okrętami wojennymi o podobnych rozmiarach, a przestronna ładownia pozwala efektywnie wykorzystywać je do handlu.}
@@ -134,7 +134,7 @@ Cannon_hp_header {Maksymalna wytrzymałość}
 Cannon_hp_text {Ten parametr określa, ile strzałów działo może oddać, zanim zostanie całkowicie zniszczone. Im jest wyższy, tym rzadziej trzeba naprawiać działo. Każdy typ działa ma własną maksymalną wytrzymałość, która zazwyczaj rośnie wraz z kalibrem.}
 Cannon_weight_header {Masa działa}
 Cannon_weight_text {Działa zajmują na statku dużo miejsca; na okrętach wojennych bateria artyleryjska może pochłaniać nawet połowę ładowności. Masa rośnie wraz z kalibrem i siłą ognia, a kolubryny ważą więcej niż działa tego samego kalibru.}
-Cannon_health_0 {Zniszczone}
+Cannon_health_0 {Prawie zniszczone}
 Cannon_health_1 {Zużyte}
 Cannon_health_2 {Sprawne}
 Cannon_health_3 {Wyregulowane}

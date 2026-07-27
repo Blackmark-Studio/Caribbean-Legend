@@ -214,7 +214,9 @@ void CAN_CashCannonsHealth(ref chr, bool forceUpdate = false)
 
 	object cannonsInfo = CAN_GetFullInfo(chr);
 	float bonus = CheckOfficersPerk(chr, "Bombardier") ? PERK_VALUE_BOMBARDIER : 0.0;
-	if (IsCharacterEquippedArtefact(chr, "talisman3")) bonus += 0.05;
+	cash.talisman = IsCharacterEquippedArtefact(chr, "talisman3");
+	if (bool(cash.talisman)) bonus += 0.10;
+	cash.cannonsSkillMtp = 1-(0.3*pow(GetSkillAfterPenalty(chr, SKILL_CANNONS)*0.01, 0.7));
 
 	float health = float(cannonsInfo.R.averageHealth);
 	cash.cannonR.level = int(cannonsInfo.R.goodcannons) > 0 ? CAN_HumanCannonsHealthLevel(health) : CAN_HEALTH_LEVEL_NORMAL;
@@ -222,7 +224,7 @@ void CAN_CashCannonsHealth(ref chr, bool forceUpdate = false)
 	cash.cannonR.reloadMtp = CAN_GetReloadMtpForHealth(health, bonus);
 
 	health = float(cannonsInfo.L.averageHealth);
-	cash.cannonL.level = int(cannonsInfo.R.goodcannons) > 0 ? CAN_HumanCannonsHealthLevel(health) : CAN_HEALTH_LEVEL_NORMAL;
+	cash.cannonL.level = int(cannonsInfo.L.goodcannons) > 0 ? CAN_HumanCannonsHealthLevel(health) : CAN_HEALTH_LEVEL_NORMAL;
 	cash.cannonL.damageMtp = CAN_GetDamageMtpForHealth(health, bonus);
 	cash.cannonL.reloadMtp = CAN_GetReloadMtpForHealth(health, bonus);
 

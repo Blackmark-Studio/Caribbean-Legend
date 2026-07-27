@@ -91,10 +91,20 @@ void Cannon_RecalculateParameters(int iCharacterIndex)
 	}
 	RangeBonusMtp += GetAttributeFloat(realShip, "tuning.modifiers." + M_SHIP_FIRE_DISTANCE);
 	
+	ref rCannon;
+	if ("fort" in rCharacter)
+	{
+		rCannon = GetCannonOnBort(rCharacter, "cannonl");
+		rCharacter.Ship.Cannons.SpeedV0 = float(rCannon.SpeedV0) * vSpeedMtp * RangeBonusMtp;
+		rCharacter.Ship.Cannons.FireAngMax = rCannon.FireAngMax;
+		rCharacter.Ship.Cannons.FireAngMin = rCannon.FireAngMin;
+		return;
+	}
+
 	string borts[4] = {"cannonl", "cannonr", "cannonf", "cannonb"};
 	for (int _i, ref bortName: borts)
 	{
-		ref	rCannon = GetCannonOnBort(rCharacter, bortName);
+		rCannon = GetCannonOnBort(rCharacter, bortName);
 		if (rCannon == nullptr) return;
 
 		rCharacter.Ship.Cannons.(bortName).SpeedV0 = float(rCannon.SpeedV0) * vSpeedMtp * RangeBonusMtp;
@@ -175,10 +185,10 @@ float Cannon_GetRechargeTime()
 	}
 	
 	ref refBaseShip = GetRealShip(int(aCharacter.ship.Type));
-	fMultiply -= GetAttributeFloat(refBaseShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED);
-	fMultiply -= CAN_GetHealthReloadMtp(aCharacter, bortName);
 	if (int(refBaseShip.BaseType) != SHIP_FORT)
 	{
+		fMultiply -= GetAttributeFloat(refBaseShip, "tuning.modifiers." + M_SHIP_RELOAD_SPEED);
+		fMultiply -= CAN_GetHealthReloadMtp(aCharacter, bortName);
 		if (!IsMainCharacter(aCharacter))
 		{
 			fReloadTime -= MOD_SKILL_ENEMY_RATE; // -10c на невозможном
@@ -331,10 +341,12 @@ float Cannon_DamageEvent()
 	
 	ref	rCannon = GetCannonOnBort(aCharacter, sBort);
 	float fMaxCHP = float(rCannon.hp);
-	//fCurDamage = (fCurDamage * fMaxCHP + fBallDamage * (1.0 - fDistance / MAX_CANNON_DAMAGE_DISTANCE)) / fMaxCHP;
-    //Log_TestInfo("fBallDamage "  + fBallDamage + " fCurDamage " +fCurDamage + " fMaxCHP " + fMaxCHP + " fDistance " +fDistance);
-    fBallDamage *= 0.1 / fDistance;
-    fCurDamage =  fCurDamage  + fBallDamage / fMaxCHP;  // TO_DO 
+	aref cash = CAN_GetHealthCash(aCharacter.id);
+	if (cash.talisman$bool(false)) fMaxCHP *= 1.3;    //Log_TestInfo("fBallDamage "  + fBallDamage + " fCurDamage " +fCurDamage + " fMaxCHP " + fMaxCHP + " fDistance " +fDistance);
+
+	fBallDamage *= 0.1 / fDistance;
+	fBallDamage *= cash.cannonsSkillMtp$float(1.0);
+	fCurDamage += fBallDamage / fMaxCHP;
 	if (fCurDamage < 1.0) return fCurDamage;
 
 	CreateBlast(x,y,z);

@@ -598,7 +598,9 @@ void ProcessDialogEvent()
 		break;		
 		
 		case "GirlEnc_12End":
-			pchar.money = int(pchar.money) - int(int(pchar.money)/20);
+            iTemp = int(PChar.money);
+            iTemp -= iTemp >= 100000 ? 5000 : iTemp / 20;
+			PChar.money = iTemp;
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			sld = CharacterFromID("CangGirl");
 			LAi_SetActorType(sld);
@@ -623,8 +625,7 @@ void ProcessDialogEvent()
 			LAi_SetActorType(sld);
 			LAi_ActorStay(sld);
 			LAi_CharacterDisableDialog(sld);
-			sld.lifeDay = 0;	
-			ChangeCharacterComplexReputation(pchar,"nobility", -2);
+			sld.lifeDay = 0;
 			AddQuestRecord("JungleGirl", "11");	
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("",""));	
 			CloseQuestHeader("JungleGirl");

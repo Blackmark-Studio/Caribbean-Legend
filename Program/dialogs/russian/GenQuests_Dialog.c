@@ -1242,7 +1242,6 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.GenQuest.Convict = "close";
 			chrDisableReloadToLocation = false;
-			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			AddDialogExitQuestFunction("Convict_DialogDisable");
 		break;
 		
@@ -1285,7 +1284,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_12":
-			dialog.text = "Не до рому нам нынче. Мы, почитай, неделю, как с " + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Dat")) + " бежали, теперь вот по джунглям прячемся, с голоду бы не помереть...";
+			dialog.text = "Не до рому нам нынче. Мы, почитай, неделю, как с " + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Gen")) + " бежали, теперь вот по джунглям прячемся, с голоду бы не помереть...";
 			if(int(pchar.money) >= 3000)
 			{
 				link.l1 = "Ну положим, дам я вам денег, а дальше-то что? Так и будете прятаться, пока патруль не нагрянет?";

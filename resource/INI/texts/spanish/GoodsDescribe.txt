@@ -113,9 +113,11 @@ Cada variedad tiene un tono especial, que va desde verdoso y marrón hasta un ne
 Food {Comida}
 Food_descr
 {
-Un conjunto estándar de alimentos militares y provisiones de agua dulce necesarias para alimentar a la tripulación durante la navegación.
-La falta de provisiones a bordo provoca hambre, muerte y una fuerte caída de la moral.
-Cada día en el mar consume 1 unidad de comida para 10 marineros o 20 esclavos.
+Galletas marineras, carne salada, una escasa selección de verduras secas y una reserva de agua dulce, necesarias a bordo durante la travesía.
+La falta de provisiones a bordo provoca hambre, muertes y una brusca caída de la moral.
+~
+Consumo diario:
+marineros — 1/$number($kstringTemp(FOOD_BY_CREW)), esclavos — 1/$number($kstringTemp(FOOD_BY_SLAVES)) unidades de mercancía.
 }
 Fruits {Fruta}
 Fruits_descr

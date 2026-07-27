@@ -8,13 +8,13 @@ Brigantine {Ein legendärer Typ von Segelschiff. Schnell und wendig wie eine Sch
 CannonType {Hier werden die aktuelle und maximale Anzahl der Geschütze an Bord sowie ihr Typ und ihre Eigenschaften angezeigt. Entspricht die aktuelle Anzahl dem Maximum, wird nur ein Wert angezeigt.}
 Capacity
 {
-Tragfähigkeit – zeigt die aktuelle und maximale Kapazität des Schiffs. Je mehr das Schiff beladen ist, desto träger und langsamer wird es.
-Die auf dem Schiff installierten Geschütze werden bei der Berechnung der Tragfähigkeit ebenfalls berücksichtigt. Sie können vom Schiff entfernt werden, um zusätzlichen Platz für Ladung zu schaffen. Wählen Sie dazu im Schiffsparameter-Menü im Interface "Schiff" die aktuellen Geschütze aus.
+Die Tragfähigkeit zeigt die aktuelle und maximale Ladekapazität des Schiffes an. Je stärker das Schiff beladen ist, desto schwerfälliger und langsamer wird es.
+Geschütze werden bei der Berechnung der Tragfähigkeit ebenfalls berücksichtigt. Sie können vom Schiff entfernt werden, um zusätzlichen Frachtraum freizugeben. Öffnet dazu die Oberfläche "Schiff" und klickt auf "$key(Cannons_managment)".
 }
 Caravel {Die charakteristische Takelage der Karavelle macht es leicht, dieses Schiff aus großer Entfernung zu erkennen. Die veraltete Konstruktion verleiht der Karavelle eher mittelmäßige Segeleigenschaften, was sie trotz ausreichender Bewaffnung daran hindert, mit modernen Schiffen gleichzuziehen.}
 Corvette {Korvetten sind für Aufklärung, Kurierdienste und Kreuzfahrteinsätze konzipiert. Mit guter Geschwindigkeit und Wendigkeit kann eine Korvette leichtere Schiffe einholen und erfolgreich Kämpfen mit schwereren Schiffen ausweichen.}
 CORVETTE_QUEST {Ein Einzelstück, ein Meisterwerk französischer Schiffbauer. Die umfassende Modernisierung der Korvettenkonstruktion hat fast alle Eigenschaften verbessert, ohne die Geschwindigkeit zu beeinträchtigen. Die vergrößerte Segelfläche und das größere Kaliber der Geschütze erfordern eine erfahrenere und zahlreichere Besatzung, aber wenn die Tests in der Karibik erfolgreich verlaufen, könnten die hier eingesetzten Technologien einen echten Durchbruch im Schiffbau bedeuten.}
-Crew {Besatzung – zeigt die aktuelle Anzahl der Besatzungsmitglieder sowie die minimale und maximale Anzahl für dieses Schiff.}
+Crew {Die Matrosen zeigen die aktuelle und die maximale Besatzungsstärke dieses Schiffes an.$br()Mindestbesatzung für die Fahrt auf die offene See: $decl($ctx(minCrew)|Mann|Männer|Männer).}
 Crew_Exp {Besatzungserfahrung}
 Crew_Exp_hint {Das Leben an Bord ist in Wachen organisiert, und jeder Matrose muss sowohl mit der Takelage als auch mit den Lafetten umgehen können. Die Erfahrung der Mannschaft beeinflusst sämtliche Schiffswerte – von der Geschwindigkeit der Segelmanöver bis zur Nachladezeit der Geschütze. $br()Die Erfahrung wächst mit der Zeit, sinkt jedoch bei Verlusten oder wenn Grünschnäbel in der Taverne angeheuert werden. Eine erfahrene Mannschaft zu schützen ist weitaus vorteilhafter, als Neulinge anzuheuern und von Grund auf auszubilden.}
 EastIndiaMan {Ostindienfahrer vereinten die besten Eigenschaften der Pinassen und beseitigten deren Schwächen, wodurch sie zu nahezu perfekten Universalschiffen wurden. Mit großkalibrigen Geschützen können sie mit Kriegsschiffen vergleichbarer Größe konkurrieren, und ihr geräumiger Laderaum ermöglicht einen effektiven Einsatz im Handel.}
@@ -134,7 +134,7 @@ Cannon_hp_header {Maximale Haltbarkeit}
 Cannon_hp_text {Dieser Wert bestimmt, wie viele Schüsse ein Geschütz abfeuern kann, bevor es vollständig zerstört wird. Je höher er ist, desto seltener muss das Geschütz repariert werden. Jeder Geschütztyp besitzt eine eigene maximale Haltbarkeit, die gewöhnlich mit dem Kaliber zunimmt.}
 Cannon_weight_header {Geschützgewicht}
 Cannon_weight_text {Geschütze beanspruchen viel Platz an Bord; auf Kriegsschiffen kann die Artilleriebatterie bis zur Hälfte der Nutzlast ausmachen. Das Gewicht steigt mit Kaliber und Feuerkraft, wobei Kartaunen gleichen Kalibers leichter als die längeren Feldschlangen sind.}
-Cannon_health_0 {Zerstört}
+Cannon_health_0 {Fast zerstört}
 Cannon_health_1 {Verschlissen}
 Cannon_health_2 {Intakt}
 Cannon_health_3 {Feinjustiert}

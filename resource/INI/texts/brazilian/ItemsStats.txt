@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {A cada 2% de casco perdido, a velocidade e o d
 itm_stat_descr_talisman2 {Ajuda a evitar zonas de tempestade ou reduz o dano às velas e ao casco durante a tempestade.}
 itm_stat_descr_talisman20 {A velocidade de mira com armas de fogo aumenta em 15%, o dano máximo ao mirar aumenta em 20%, a velocidade de recarga aumenta em 10% e o dano de tiro na cabeça aumenta em 20%.}
 itm_stat_descr_talisman21 {Permite negociar com contrabandistas em navios de até rank 2.}
-itm_stat_descr_talisman3 {O bônus concedido pelo bom estado dos canhões aumenta em $percent(0.05). Este efeito é cumulativo.}
+itm_stat_descr_talisman3 {Aumenta a durabilidade máxima dos canhões em $percent(0.30) e o bônus por estarem em boas condições em $percent(0.10). O efeito é cumulativo.}
 itm_stat_descr_talisman4 {Reduz a perda de moral da tripulação por sobrecarga e diminui a dose diária de rum consumida pela tripulação.}
 itm_stat_descr_talisman6 {Ajuda a economizar provisões no navio, reduzindo o consumo em um quarto.}
 itm_stat_descr_talisman7

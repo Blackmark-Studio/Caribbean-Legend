@@ -222,8 +222,7 @@ void JungFight_Clear(string qName)
     string text, sCity = TEV.JungFightRumour.City;
     string Winners = TEV.JungFightRumour.Winners$string("");
     string Losers  = TEV.JungFightRumour.Losers$string("");
-    string sTypes[2];
-    sTypes[0] = TEV.JungFightRumour.g1, sTypes[1] = TEV.JungFightRumour.g2;
+    string sTypes[2] = {string(TEV.JungFightRumour.g1), string(TEV.JungFightRumour.g2)};
     ArraySort(&sTypes); // for "_vs_" keys lexicographic order
     switch(TEV.JungFightRumour)
     {
@@ -678,17 +677,19 @@ void JungleEncGenerate_Bandits(ref loc, string sAreal, string sCity, int iNation
 {
     // Кол-во человек в банде
     bool bFireSit = ("locators.fire" !in loc) ? false : rand(1) == 1;
-    int num = bFireSit ? 4 - rand(2) : @grp - rand(2);
+    int num, iPlayerRank = PChar.Rank;
+    if (iPlayerRank <= 5) num = 1 + rand(1);
+    else num = bFireSit ? 4 - rand(2) : @grp - rand(2);
     if (num <= 0) num = 1; // Если @grp меньше трёх
 
     // Ранг
     int iRank;
-    if (int(PChar.Rank) > 6)
+    if (iPlayerRank > 6)
     {
-        if (int(PChar.Rank) > 20) iRank = int(PChar.Rank) + int(MOD_SKILL_ENEMY_RATE * 2.5 / num);
-        else iRank = int(PChar.Rank) + int(MOD_SKILL_ENEMY_RATE * 1.6 / num);
+        if (iPlayerRank > 20) iRank = iPlayerRank + int(MOD_SKILL_ENEMY_RATE * 2.5 / num);
+        else iRank = iPlayerRank + int(MOD_SKILL_ENEMY_RATE * 1.6 / num);
     }
-    else iRank = int(PChar.Rank);
+    else iRank = iPlayerRank;
 
     // Модельки
     string model[] = {"citiz_41", "citiz_42", "citiz_43", "citiz_44", "citiz_45", "citiz_46", "citiz_47", "citiz_48", "citiz_49", "citiz_50"};
@@ -1078,7 +1079,9 @@ void JungleEncClear_Alone_Citiz(string sQuestAttr)
         DeleteAttribute(PChar, "Quest.Alone_Citiz_" + info.Character + "_Death");
         if (int(info.RobberySuccess) != 0 && rand(2) == 0)
         {
-            string text = StringFromKey("Alone_Citiz_RobberySuccess_" + rand(1), info.FullName);
+            string text;
+            if (rand(1)) text = StringFromKey("Alone_Citiz_RobberySuccess_0", info.FullName);
+            else text = StringFromKey("Alone_Citiz_RobberySuccess_1", info.FullName, PChar.Name);
             AddSimpleRumourCity(text, info.City, 5, 1, "");  // ~!~ cases _0
         }
     }
@@ -1109,7 +1112,9 @@ void JungleEncDeath_Alone_Citiz(string sQuestAttr)
     // Rumour
     if (rand(4) > 2)
     {
-        string text = StringFromKey("Alone_Citiz_Death_" + rand(1), info.FullName); // ~!~ cases _0
+        string text;
+        if (rand(1)) text = StringFromKey("Alone_Citiz_Death_0", info.FullName, PChar.Name); // ~!~ cases _0
+        else text = StringFromKey("Alone_Citiz_Death_1", info.FullName);
         AddSimpleRumourCity(text, info.City, 5, 1, "");
     }
 }
@@ -1155,7 +1160,7 @@ void JungWalker_EscapeEnd(string sQuestAttr)
     // Обработчик побега не был удалён в обработчике смерти, значит NPC ушёл успешно
     if (int(info.RobberyFail) != 0)
     {
-        string text = StringFromKey("Alone_Citiz_RobberyFail_" + rand(1), info.FullName);
+        string text = StringFromKey("Alone_Citiz_RobberyFail_" + rand(1), info.FullName, PChar.Name);
         AddSimpleRumourCity(text, info.city, 5, 1, ""); // ~!~ cases _0
     }
 }
@@ -1308,15 +1313,15 @@ void JungleEncGenerate_Alone_Injured(ref loc, string sAreal, string sCity, int i
     for(int i = 0; i < 5; i++)
         LaunchBlood(chr, 0.05, true, "fight");
 
+    PChar.Quest.InjuredGuyClear.win_condition.l1           = "ExitFromLocation";
+    PChar.Quest.InjuredGuyClear.win_condition.l1.location  = PChar.location;
+    PChar.Quest.InjuredGuyClear.function                   = "JungInjuredExit";
+
     PChar.Quest.InjuredGuyDeath.win_condition.l1           = "NPC_Death";
     PChar.Quest.InjuredGuyDeath.win_condition.l1.character = chr.id;
     PChar.Quest.InjuredGuyDeath.function                   = "JungInjuredDeath";
     PChar.Quest.InjuredGuyDeath.CharType                   = sType;
     PChar.Quest.InjuredGuyDeath.Nation                     = iNation;
-
-    PChar.Quest.InjuredGuyClear.win_condition.l1           = "ExitFromLocation";
-    PChar.Quest.InjuredGuyClear.win_condition.l1.location  = PChar.location;
-    PChar.Quest.InjuredGuyClear.function                   = "JungInjuredExit";
 }
 
 void JungInjuredExit(string qName) { DeleteAttribute(PChar, "Quest.InjuredGuyDeath"); }
@@ -1336,6 +1341,7 @@ void JungInjuredDeath(string qName)
 
 void JungInjuredHeal()
 {
+    DeleteAttribute(PChar, "Quest.InjuredGuyDeath");
     ref chr = CharacterFromId("InjuredGuy");
     int add = int(chr.RepIncr);
     switch(chr.DialogFlag)
@@ -1346,8 +1352,8 @@ void JungInjuredHeal()
             if (rand(2) != 0)
             {
                 string text;
-                if (rand(1)) text = StringFromKey("JungInjured_SoldHeal_0");
-                else text = StringFromKey("JungInjured_SoldHeal_1", GetFullName(chr));
+                if (rand(1)) text = StringFromKey("JungInjured_SoldHeal_0", PChar.Name);
+                else text = StringFromKey("JungInjured_SoldHeal_1", GetFullName(chr), PChar.Name);
                 AddSimpleRumourCity(text, chr.city, 5, 1, "");
             }
             ChangeCharacterNationReputation(PChar, int(chr.Nation), add);

@@ -252,8 +252,9 @@ void BRD_SetCrewSurrendered()
 		ref chr = &Characters[idx];
 		if (!CheckAttribute(chr, "chr_ai.group") || chr.chr_ai.group != LAI_GROUP_BRDENEMY) continue;
 
-		LAi_group_MoveCharacter(chr, LAI_GROUP_DEFAULT);
+		LAi_group_MoveCharacter(chr, LAI_GROUP_PEACE);
 		SetSurrenderedType(chr);
+		LAi_SetImmortal(chr, true);
 	}
 }
 

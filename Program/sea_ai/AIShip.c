@@ -2785,6 +2785,7 @@ void Ship_HullHitEvent()
 	// Cannon damage multiply
 	ref rCannon = GetCannonByType(iCannonType);
 	float fCannonDamageMultiply = float(rCannon.DamageMultiply);
+	fCannonDamageMultiply += CAN_GetHealthDamageMtp(rBallCharacter, AIBalls.frombort);
 	if (GetMainCharacterIndex() == iBallCharacterIndex && !SeaCameras_isCameraOutside())
 	{
 		fCannonDamageMultiply += isEquippedArtefactUse(rBallCharacter, "totem_08", 0.0, 0.1); // Повелитель огня для прицельной у ГГ
@@ -2982,11 +2983,11 @@ void Ship_HullHitEvent()
 	}
 	if(!CheckAttribute(pchar, "questTemp.SantaMisericordia.AttackFromMap") && !CheckAttribute(pchar, "questTemp.SantaMisericordia.SpainReputation") && rOurCharacter.id == "SantaMisericordia_cap")
 	{
-		SantaMisericordia_SpainReputation();
+		if (IsCompanion(rBallCharacter)) SantaMisericordia_SpainReputation();
 	}
 	if(rOurCharacter.id == "Memento_cap" && !CheckAttribute(rOurCharacter, "PlayerAttack"))
 	{
-		Memento_PlayerAttack();
+		if (IsCompanion(rBallCharacter)) Memento_PlayerAttack();
 	}
     // boal 290704 раз в минуту проверяем обиду на гл героя, если жухлит через желтый прицел <--int(AIBalls.CurrentBallType)
 }

@@ -3508,7 +3508,7 @@ Roger_5.21
 
 Roger_5.3
 {
-우리의 목적지는 마라카이보 호수 남쪽에 있는 Cape of Delusive Hopes다. 지체할 시간이 없다!
+우리의 목적지는 마라카이보 호수 남쪽에 있는 Cape of Disappointed Hopes다. 지체할 시간이 없다!
 }
 
 Roger_5.4

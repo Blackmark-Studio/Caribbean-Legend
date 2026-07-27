@@ -8,13 +8,13 @@ Brigantine {Efsanevi bir yelkenli türü. Bir kırlangıç gibi hızlı ve çevi
 CannonType {Burada gemideki topların mevcut ve azami sayısının yanı sıra türleri ve özellikleri gösterilir. Mevcut sayı azami sayıya eşitse yalnızca tek bir değer gösterilir.}
 Capacity
 {
-Deadweight - geminin mevcut ve maksimum kapasitesini gösterir. Gemi ne kadar yüklüyse, o kadar hantal ve yavaş olur.
-Gemide takılı olan toplar da deadweight hesabına dahildir. Toplar çıkarılarak ek yük alanı açılabilir. Bunu yapmak için "Gemi" arayüzünde, gemi parametreleri listesinden mevcut topları seçin.
+Taşıma kapasitesi, geminin mevcut ve azami yük kapasitesini gösterir. Gemi ne kadar fazla yüklenirse o kadar hantal ve yavaş olur.
+Toplar da taşıma kapasitesi hesaplanırken dikkate alınır. İlave yük alanı açmak için gemiden sökülebilirler. Bunun için "Gemi" arayüzünü açıp "$key(Cannons_managment)" düğmesine basın.
 }
 Caravel {Karavelanın kendine özgü arma düzeni, bu gemiyi uzaktan kolayca tanımayı sağlar. Ancak eski tasarımı, karavelanın denizdeki performansını oldukça vasat kılar; yeterli topa sahip olsa da modern gemilerle eşit şekilde rekabet edemez.}
 Corvette {Korvetler keşif, kurye hizmeti ve kruvaziyer operasyonlar için tasarlanmıştır. İyi hız ve manevra kabiliyetiyle, bir korvet daha hafif gemileri yakalayabilir ve daha ağırlarla çatışmadan kaçınabilir.}
 CORVETTE_QUEST {Fransız gemi ustalarının elinden çıkma özel yapım bir gemi. Korvet tasarımında yapılan kapsamlı modernizasyon, hızdan ödün vermeden neredeyse tüm özelliklerini geliştirdi. Artan yelken alanı ve top kalibresi, daha deneyimli ve kalabalık bir mürettebat gerektiriyor; ancak Karayipler'deki denemeler başarılı olursa, burada kullanılan teknolojiler gemi yapımında gerçek bir devrim yaratabilir.}
-Crew {Mürettebat - mevcut mürettebat sayısını, ayrıca bu gemi için minimum ve maksimum değerleri gösterir.}
+Crew {Denizciler, mevcut denizci sayısını ve bu geminin azami mürettebat kapasitesini gösterir.$br()Açık denize çıkmak için gereken asgari mürettebat: $decl($ctx(minCrew)|kişi|kişi|kişi).}
 Crew_Exp {Mürettebat deneyimi}
 Crew_Exp_hint {Gemide yaşam vardiyalar hâlinde düzenlenir ve her denizci hem arma donanımını hem de top arabalarını kullanmayı bilmelidir. Mürettebat deneyimi, yelkenlerin kullanım hızından topların yeniden dolum süresine kadar geminin tüm özelliklerini etkiler. $br()Deneyim zamanla artar; ancak kayıplar verildiğinde veya meyhaneden acemiler tutulduğunda azalır. Deneyimli mürettebatı korumak, acemileri işe alıp sıfırdan eğitmekten çok daha avantajlıdır.}
 EastIndiaMan {Doğu Hindistan gemileri, pinasların en iyi özelliklerini alıp eksiklerinden kurtularak neredeyse kusursuz çok amaçlı gemilere dönüştü. Büyük kalibre toplar taşıdıkları için benzer boyuttaki savaş gemileriyle boy ölçüşebilirler ve geniş ambarları sayesinde ticarette de etkili şekilde kullanılabilirler.}
@@ -138,7 +138,7 @@ Cannon_hp_header {Azami dayanıklılık}
 Cannon_hp_text {Bu değer, bir topun tamamen tahrip olmadan önce kaç atış yapabileceğini belirler. Değer ne kadar yüksekse topun o kadar seyrek onarılması gerekir. Her top türünün kendine özgü bir azami dayanıklılığı vardır ve bu değer genellikle kalibreyle birlikte artar.}
 Cannon_weight_header {Top ağırlığı}
 Cannon_weight_text {Toplar gemide çok yer kaplar; savaş gemilerinde top bataryası taşıma kapasitesinin yarısına kadarını kullanabilir. Ağırlık, kalibre ve ateş gücüyle orantılıdır; kulverinler ise aynı kalibredeki toplardan daha ağırdır.}
-Cannon_health_0 {Tahrip olmuş}
+Cannon_health_0 {Neredeyse yok olmuş}
 Cannon_health_1 {Aşınmış}
 Cannon_health_2 {Sağlam}
 Cannon_health_3 {İnce ayarlı}

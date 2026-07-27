@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {Minął dzień...@<NewStr()>Wanilia została załadowana na karake...}
+SharlieFinal_35 {Minął dzień...@<NewStr()>Wanilia została przeładowana na brygantynę...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Ojciec Vincento}

@@ -3510,7 +3510,7 @@ Roger_5.21
 
 Roger_5.3
 {
-目的地は、Lake Maracaiboの南にあるCape of Delusive Hopesだ。ぐずぐずしている暇はない！
+目的地は、Lake Maracaiboの南にあるCape of Disappointed Hopesだ。ぐずぐずしている暇はない！
 }
 
 Roger_5.4

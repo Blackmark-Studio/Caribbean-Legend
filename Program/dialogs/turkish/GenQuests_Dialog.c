@@ -1226,7 +1226,6 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.GenQuest.Convict = "close";
 			chrDisableReloadToLocation = false;
-			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			AddDialogExitQuestFunction("Convict_DialogDisable");
 		break;
 		

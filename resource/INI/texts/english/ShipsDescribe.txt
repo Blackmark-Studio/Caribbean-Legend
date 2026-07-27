@@ -8,13 +8,13 @@ Brigantine {A legendary type of sailing ship. Fast and maneuverable like a swall
 CannonType {This shows the current and maximum number of cannons aboard the ship, as well as their type and characteristics. If the current number equals the maximum, only one value is shown.}
 Capacity
 {
-Deadweight - shows the current and maximum capacity of the ship. The more loaded the ship, the more sluggish and slow it becomes.
-The guns installed on the ship are also taken into account when calculating deadweight. They can be removed from the ship, freeing up additional space for cargo. To do this, select the current guns in the ship's parameter list in the "Ship" interface.
+Deadweight shows the ship’s current and maximum carrying capacity. The more heavily the ship is loaded, the less maneuverable and slower it becomes.
+Cannons also count toward deadweight. They can be removed from the ship to free up additional cargo space. To do so, open the "Ship" interface and click "$key(Cannons_managment)".
 }
 Caravel {The distinctive rigging of the caravel makes it easy to recognize this ship from a great distance. Its outdated design gives the caravel rather mediocre sailing qualities, which prevent it from competing equally with modern ships, despite having enough guns.}
 Corvette {Corvettes are designed for reconnaissance, courier service, and cruising operations. With good speed and maneuverability, a corvette can catch lighter ships and successfully avoid battle with heavier ones.}
 CORVETTE_QUEST {A custom ship, a masterpiece of French shipbuilders. Deep modernization of the corvette's design has improved almost all its characteristics without sacrificing speed. The increased sail area and gun caliber require a more experienced and numerous crew, but if the trials in the Caribbean are successful, the technologies used here may become a real breakthrough in shipbuilding.}
-Crew {Crew - shows the current number of crew members, as well as the minimum and maximum for this ship.}
+Crew {Sailors show the current number of sailors and the maximum crew for this ship.$br()Minimum crew required to sail into the open sea: $decl($ctx(minCrew)|person|people|people).}
 Crew_Exp {Crew experience}
 Crew_Exp_hint {Life aboard ship is organized into watches, and every sailor must know how to handle both rigging and gun carriages. Crew experience affects every ship characteristic, from sail-handling speed to cannon reload time. $br()Experience grows over time, but falls when crewmen are lost or greenhands are hired from the tavern. Preserving an experienced crew is far more worthwhile than recruiting greenhands and training them from scratch.}
 EastIndiaMan {East Indiamen embodied the best qualities of pinnaces and got rid of their shortcomings, becoming almost perfect universal ships. Carrying large-caliber guns, they can compete with warships of comparable size, and their spacious hold allows them to be used effectively for trade.}
@@ -138,7 +138,7 @@ Cannon_hp_header {Maximum durability}
 Cannon_hp_text {This value determines how many shots a cannon can fire before being completely destroyed. The higher it is, the less often the cannon needs repairs. Each cannon type has its own maximum durability, which generally increases with caliber.}
 Cannon_weight_header {Cannon weight}
 Cannon_weight_text {Cannons take up a great deal of space aboard a ship; on warships, the artillery battery may consume up to half of the vessel's cargo capacity. Weight increases with caliber and firepower, while culverins weigh more than cannons of the same caliber.}
-Cannon_health_0 {Destroyed}
+Cannon_health_0 {Almost destroyed}
 Cannon_health_1 {Worn}
 Cannon_health_2 {Good}
 Cannon_health_3 {Fine-tuned}

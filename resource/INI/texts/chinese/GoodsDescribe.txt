@@ -113,9 +113,11 @@ Ebony_descr
 Food {食物}
 Food_descr
 {
-一套标准的腌制口粮和淡水, 用于在航行期间供给船员和奴隶食 用。 
-船上缺乏食物会导致饥荒。 死亡和士气下降。 
-每日消耗: 水手 - 0.1 单位, 奴隶 - 0.05 单位。
+航行期间船上必需的硬饼、咸肉、少量干蔬菜和淡水储备。
+船上缺少粮食会导致饥饿、死亡和士气大幅下降。
+~
+每日消耗：
+水手——1/$number($kstringTemp(FOOD_BY_CREW))，奴隶——1/$number($kstringTemp(FOOD_BY_SLAVES))单位货物。
 }
 Fruits {水果}
 Fruits_descr

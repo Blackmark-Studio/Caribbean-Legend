@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {선체가 2%씩 손실될 때마다 함포 속
 itm_stat_descr_talisman2 {폭풍 지역 진입을 피하거나, 폭풍 중 돛과 선체 피해를 줄여줍니다.}
 itm_stat_descr_talisman20 {화기 조준 속도 15% 증가, 최대 조준 피해 20% 증가, 재장전 속도 10% 증가, 헤드샷 피해 20% 증가.}
 itm_stat_descr_talisman21 {2등급까지의 선박에서 밀수업자와 거래할 수 있습니다.}
-itm_stat_descr_talisman3 {함포의 상태가 좋을 때 받는 보너스가 $percent(0.05)만큼 증가합니다. 이 효과는 중첩됩니다.}
+itm_stat_descr_talisman3 {함포의 최대 내구도가 $percent(0.30), 양호한 상태에서 받는 보너스가 $percent(0.10) 증가합니다. 효과는 중첩됩니다.}
 itm_stat_descr_talisman4 {과적 시 선원 사기 저하를 줄이고, 하루 럼 소모량을 감소시킵니다.}
 itm_stat_descr_talisman6 {선상 식량 소비량이 25% 감소합니다.}
 itm_stat_descr_talisman7

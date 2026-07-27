@@ -74,12 +74,12 @@ void CapVisitors_Exit(ref chr)
     }
     // Ищем подходящий локатор для выхода
     aref locatorsGroup = &loadedLocation.locators.reload;
-    string locator = "reload1_back"; // По умолчанию должен быть таким
+    string locator = "reload1"; // По умолчанию должен быть таким
     if (locator !in locatorsGroup)
     {   // Если почему-то не оказалось
-        if ("reload1" in locatorsGroup)
+        if ("reload1_back" in locatorsGroup)
         {
-            locator = "reload1";
+            locator = "reload1_back";
         }
         else
         {

@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {Ogni 2% di scafo perso aumenta la velocità e 
 itm_stat_descr_talisman2 {Aiuta a evitare le zone di tempesta o riduce i danni a vele e scafo durante una tempesta.}
 itm_stat_descr_talisman20 {La velocità di mira con le armi da fuoco aumenta del 15%, il danno massimo mirato del 20%, la velocità di ricarica del 10% e il danno ai colpi alla testa del 20%.}
 itm_stat_descr_talisman21 {Permette di commerciare con i contrabbandieri su navi fino al grado 2 incluso.}
-itm_stat_descr_talisman3 {Il bonus conferito dai cannoni in buone condizioni aumenta del $percent(0.05). Questo effetto è cumulabile.}
+itm_stat_descr_talisman3 {Aumenta l’integrità massima dei cannoni del $percent(0.30) e il bonus derivante dalle buone condizioni dei cannoni del $percent(0.10). L’effetto è cumulabile.}
 itm_stat_descr_talisman4 {Riduce la perdita di morale dell’equipaggio per sovraccarico e abbassa la razione giornaliera di rum consumata.}
 itm_stat_descr_talisman6 {Aiuta a risparmiare provviste a bordo, riducendo il consumo di un quarto.}
 itm_stat_descr_talisman7

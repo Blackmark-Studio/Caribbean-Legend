@@ -2402,9 +2402,17 @@ void SetParameterData()
 
 	BattleInterface.ShipIcon.shipnamefontidmc		= "interface_normal";
 	BattleInterface.ShipIcon.shipnamefontcolormc	= argb(255,255,255,255);
-	BattleInterface.ShipIcon.shipnamefontscalemc	= 1.4 * fHtRatio;	
-	fTmp = int(180.0 * fHtRatio);
-    fTmp2 = int(-30.0 * fHtRatio);
+	BattleInterface.ShipIcon.shipnamefontscalemc	= 1.4 * fHtRatio;
+	if (bShowExtInfo())
+	{
+		fTmp = int(180.0 * fHtRatio);
+		fTmp2 = int(-30.0 * fHtRatio);
+	}
+	else
+	{
+		fTmp = 0;
+		fTmp2 = int(60.0 * fHtRatio);
+	}
     BattleInterface.ShipIcon.shipnamefontoffsetmc   = fTmp + "," + fTmp2;
 
 	BattleInterface.ShipIcon.shipnamefontid			= "interface_normal";
@@ -2515,7 +2523,7 @@ void SetParameterData()
     fTmp3 = fTmp;
     fTmp2 = int(130.0 * fHtRatio);
     BattleInterface.ShipIcon.iconoffset1 = fTmp + "," + fTmp;
-    fTmp3 += fTmp2;
+    fTmp3 += fTmp2 + (12.0 * fHtRatio);
     BattleInterface.ShipIcon.iconoffset2 = fTmp + "," + fTmp3;
     fTmp3 += fTmp2;
     BattleInterface.ShipIcon.iconoffset3 = fTmp + "," + fTmp3;

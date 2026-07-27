@@ -1,13 +1,18 @@
-key {d23.06.2026}
-News {Das 1.8.2 Performance Update ist jetzt verfügbar!}
+key {d23.07.2026}
+News {Das Ship Shape Update 1.9.0 ist jetzt verfügbar!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoi!   ***************************
 -------------------------------------------------------------------------------------------------
-— Patch 1.8.2 Performance Update ist verfügbar
-— Kein neues Spiel erforderlich
-— Die Leistung ist um 40 % gestiegen
-— Dem Spiel wurde eine neue Community-Belohnung hinzugefügt
-— Die ausführliche Liste der Änderungen und Neuigkeiten zu Patch 2.0 findet ihr über die Schaltfläche unten in den News
+– Großes Update 1.9 — jetzt verfügbar
+– Keine neue Spielversion erforderlich
+– Der Schiffbildschirm — komplett neu aufgebaut
+– Seitenwaffen, Bug und Heck — jeweils mit eigenem Kaliber
+– Kanonenverschleiß und Reparaturen — nicht mehr versteckt
+– Die Crew — viel wertvoller
+– Landkampf — schneller und flüssiger
+– Die Dschungel — lebendiger und abwechslungsreicher
+– Du bist nicht mehr der einzige Besucher in den Stadtgebäuden
+– Hier kannst du eine detaillierte Liste der Änderungen in den Neuigkeiten finden, indem du auf den Button unten klickst
 }

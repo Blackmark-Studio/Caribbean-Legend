@@ -166,7 +166,7 @@ itm_stat_descr_talisman19_InSlot {每损失2%的船体会分别使炮弹速度�
 itm_stat_descr_talisman2 {可帮助避开风暴区, 或在风暴中减少风帆与船体的损伤。}
 itm_stat_descr_talisman20 {火器瞄准速度提升15%, 最大瞄准伤害提升20%, 装填速度提升10%, 爆头伤害提升20%。}
 itm_stat_descr_talisman21 {允许在最高2级的船只上与走私商进行交易。}
-itm_stat_descr_talisman3 {火炮状态良好时获得的加成提高 $percent(0.05)。该效果可以叠加。}
+itm_stat_descr_talisman3 {火炮的最大耐久度提高$percent(0.30)，良好状态提供的加成提高$percent(0.10)。效果可叠加。}
 itm_stat_descr_talisman4 {减少超载时船员士气损失, 并降低每日朗姆酒消耗。}
 itm_stat_descr_talisman6 {帮助节省船上口粮, 将消耗速度降低四分之一。}
 itm_stat_descr_talisman7 {船只修理速度翻倍, 资源消耗减少30%。帆和船体受损降低5%。}

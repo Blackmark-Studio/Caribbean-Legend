@@ -8,13 +8,13 @@ Brigantine {Un type de voilier légendaire. Rapide et maniable comme une hironde
 CannonType {Vous trouverez ici le nombre actuel et maximal de canons à bord du navire, ainsi que leur type et leurs caractéristiques. Si le nombre actuel est égal au maximum, une seule valeur est affichée.}
 Capacity
 {
-Port en lourd : indique la capacité actuelle et maximale du navire. Plus le navire est chargé, plus il devient lent et peu maniable.
-Les canons installés sur le navire sont également pris en compte dans le calcul du port en lourd. Ils peuvent être retirés du navire pour libérer de l'espace supplémentaire pour la cargaison. Pour cela, sélectionnez les canons actuels dans la liste des paramètres du navire dans l'interface "Navire".
+Le port en lourd indique la capacité de charge actuelle et maximale du navire. Plus le navire est chargé, moins il est maniable et plus il est lent.
+Les canons sont également pris en compte dans le calcul du port en lourd. Ils peuvent être retirés du navire afin de libérer de l’espace supplémentaire pour la cargaison. Pour cela, ouvrez l’interface "Navire" et cliquez sur "$key(Cannons_managment)".
 }
 Caravel {Le gréement caractéristique de la caravelle permet de reconnaître facilement ce navire de loin. Sa conception obsolète lui confère des qualités de navigation assez médiocres, ce qui l'empêche de rivaliser à armes égales avec les navires modernes, malgré un nombre suffisant de canons.}
 Corvette {Les corvettes sont conçues pour la reconnaissance, le service de messagerie et les opérations de croisière. Avec une bonne vitesse et maniabilité, une corvette peut rattraper des navires plus légers et éviter avec succès le combat avec des navires plus lourds.}
 CORVETTE_QUEST {Un navire unique, chef-d'œuvre des constructeurs navals français. La modernisation en profondeur de la conception de la corvette a amélioré presque toutes ses caractéristiques sans sacrifier la vitesse. L'augmentation de la surface de voile et du calibre des canons nécessite un équipage plus expérimenté et plus nombreux, mais si les essais dans les Caraïbes sont concluants, les technologies appliquées ici pourraient représenter une véritable avancée dans la construction navale.}
-Crew {Équipage : indique le nombre actuel de membres d'équipage, ainsi que le minimum et le maximum pour ce navire.}
+Crew {Les matelots indiquent le nombre actuel de marins ainsi que l’effectif maximal de ce navire.$br()Équipage minimal requis pour prendre la haute mer : $decl($ctx(minCrew)|homme|hommes|hommes).}
 Crew_Exp {Expérience de l'équipage}
 Crew_Exp_hint {La vie à bord est organisée en quarts, et chaque matelot doit savoir manier aussi bien le gréement que les affûts. L’expérience de l’équipage influe sur toutes les caractéristiques du navire, de la vitesse de manœuvre des voiles au temps de rechargement des canons. $br()L’expérience augmente avec le temps, mais diminue en cas de pertes ou lors du recrutement de novices à la taverne. Il est bien plus avantageux de préserver un équipage expérimenté que de recruter des novices et de les former depuis le début.}
 EastIndiaMan {Les navires de la Compagnie des Indes orientales ont réuni les meilleures qualités des pinasses et se sont débarrassés de leurs défauts, devenant ainsi des navires universels presque parfaits. Dotés de canons de gros calibre, ils peuvent rivaliser avec des navires de guerre de taille comparable, et leur cale spacieuse permet de les utiliser efficacement pour le commerce.}
@@ -136,7 +136,7 @@ Cannon_hp_header {Solidité maximale}
 Cannon_hp_text {Cette valeur détermine le nombre de tirs qu’un canon peut effectuer avant d’être entièrement détruit. Plus elle est élevée, moins le canon doit être réparé souvent. Chaque type de canon possède sa propre solidité maximale, qui augmente généralement avec le calibre.}
 Cannon_weight_header {Poids du canon}
 Cannon_weight_text {Les canons occupent beaucoup de place à bord ; sur les navires de guerre, la batterie d’artillerie peut mobiliser jusqu’à la moitié de la capacité de charge. Leur poids augmente avec le calibre et la puissance de feu, tandis que les couleuvrines sont plus lourdes que les canons de même calibre.}
-Cannon_health_0 {Détruits}
+Cannon_health_0 {Presque détruits}
 Cannon_health_1 {Usés}
 Cannon_health_2 {En état}
 Cannon_health_3 {Réglés}

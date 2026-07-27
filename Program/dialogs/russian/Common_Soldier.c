@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 1)
 						{
 							dialog.text = "О-о, какие лица! Сама " + pchar.GenQuest.EncGirl.name + " к нам пожаловала собственной персоной! И как это ты отважилась? А мы тебя обыскались уже! Пожалуйте в каземат, ваша камера давно приготовлена и только вас дожидается. ";
-							link.l1 = "Чего вы несёте?! Вы обознались! Мы с "+ GetSexPhrase("кавалером","подругой") +" в джунглях гуляли, цветы собирали. Отвяжитесь! Что за манеры у этих солдафонов?! Как только увидят симпатичную девушку, сразу находят повод прицепиться! "+ GetSexPhrase("Милый, скажи этим болванам, чтоб валили и не приставали к честной даме","Дорогая, ну скажи же этим болванам...") +"!";
+							link.l1 = "Чего вы несёте?! Вы обознались! Мы с "+ GetSexPhrase("кавалером","подругой") +" в джунглях гуляли, цветы собирали. Отвяжитесь! Что за манеры у этих солдафонов?! Как только увидят симпатичную девушку, сразу находят повод прицепиться! "+ GetSexPhrase("Милый, скажи этим болванам, чтоб валили и не приставали к честной даме!","Дорогая, ну скажи же этим болванам...");
 							link.l1.go = "GirlEnc_1";
 						}
 						if(int(pchar.GenQuest.EncGirl.MeetSoldiers) == 2)
@@ -604,14 +604,16 @@ void ProcessDialogEvent()
 		break;		
 		
 		case "GirlEnc_12End":
-			pchar.money = int(pchar.money) - int(int(pchar.money)/20);
+            iTemp = int(PChar.money);
+            iTemp -= iTemp >= 100000 ? 5000 : iTemp / 20;
+			PChar.money = iTemp;
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			sld = CharacterFromID("CangGirl");
 			LAi_SetActorType(sld);
 			LAi_ActorStay(sld);
 			LAi_CharacterDisableDialog(sld);
 			sld.lifeDay = 0;
-			DeleteAttribute(pchar, "GenQuest.EncGirl");
+			DeleteAttribute(PChar, "GenQuest.EncGirl");
 			DialogExit();
 		break;
 		
@@ -630,7 +632,6 @@ void ProcessDialogEvent()
 			LAi_ActorStay(sld);
 			LAi_CharacterDisableDialog(sld);
 			sld.lifeDay = 0;	
-			ChangeCharacterComplexReputation(pchar,"nobility", -2);
 			AddQuestRecord("JungleGirl", "11");	
 			AddQuestUserData("JungleGirl", "sSex", GetSexPhrase("","а"));	
 			CloseQuestHeader("JungleGirl");

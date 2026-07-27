@@ -20,8 +20,8 @@ void FillUpCannonStats(ref cannonItem, ref chr)
 	stats.reloadtime.humanValue = int(stats.reloadtime) + " " + xiStr("sec.");
 	stats.hp.iconGroup = "EQUIP_ICONS";
 	stats.hp.iconName = "life";
-	stats.hp.humanValue = int(cannonItem.hp);
-	stats.hp = cannonItem.hp;
+	stats.hp = IsCharacterEquippedArtefact(chr, "talisman3") ? float(cannonItem.hp) * 1.3 : cannonItem.hp;
+	stats.hp.humanValue = int(stats.hp);
 	SetFormatedText("CANNON_WEIGHT_VALUE", FloatToString(cannonItem.weight, 1));
 
 	int colIndex = 1;
@@ -52,6 +52,7 @@ void FillUpCannonStats(ref cannonItem, ref chr)
 
 bool XI_CannonStatsTooltip (ref chr, string currentNode, ref header, ref text, ref badText, ref goodText)
 {
+	CloseTooltipNew();
 	if (currentNode == "CANNON_WEIGHT_VALUE")
 	{
 		header = DLG_Convert("Cannon_weight_header", "ShipsDescribe.txt", &userdata);
@@ -68,6 +69,7 @@ bool XI_CannonStatsTooltip (ref chr, string currentNode, ref header, ref text, r
 	string statName = GameInterface.(currentNode).("tr" + row).("td" + col).statName;
 	header = DLG_Convert("Cannon_" + statName + "_header", "ShipsDescribe.txt", &userdata);
 	text = DLG_Convert("Cannon_" + statName + "_text", "ShipsDescribe.txt", &userdata);
+	if (statName == "hp" && IsCharacterEquippedArtefact(chr, "talisman3")) goodText = GetItemName("talisman3") +": +" + ToHumanPercent(0.30);
 	CreateTooltipNew(currentNode, header, text, badText, goodText, "", "", "", "", 0, 0, false, false);
 	return true;
 }

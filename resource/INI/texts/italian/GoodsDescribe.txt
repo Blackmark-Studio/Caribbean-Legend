@@ -113,9 +113,11 @@ Ogni tipo di ebano ha un colore unico, che va dal marrone-verdastro al nero vell
 Food {Cibo}
 Food_descr
 {
-Un set standard di razioni conservate e acqua dolce, richiesto per nutrire l'equipaggio e gli schiavi durante un viaggio.
-La mancanza di cibo a bordo porta a carestia, morti e caduta del morale.
-Consumo giornaliero: marinai - 0,1 unità, schiavi - 0,05 unità.
+Gallette, carne salata, una scarsa selezione di verdure essiccate e una riserva d’acqua dolce, necessari a bordo durante la navigazione.
+La mancanza di provviste a bordo causa fame, morti e un drastico calo del morale.
+~
+Consumo giornaliero:
+marinai — 1/$number($kstringTemp(FOOD_BY_CREW)), schiavi — 1/$number($kstringTemp(FOOD_BY_SLAVES)) unità di merce.
 }
 Fruits {Frutta}
 Fruits_descr

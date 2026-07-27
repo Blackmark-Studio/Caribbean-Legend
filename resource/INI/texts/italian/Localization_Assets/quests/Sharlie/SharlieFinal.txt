@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {Un giorno passato...@<NewStr()>La vaniglia è caricata sul carrack...}
+SharlieFinal_35 {È trascorso un giorno...@<NewStr()>La vaniglia è stata trasferita sulla brigantina...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Father Vincento}

@@ -192,8 +192,8 @@ int SetShipMaintenanceInfo(ref chr, ref shipInfo = nullptr, int mode = 0)
 		float rumConsumption = float(crewQty) / RUM_BY_CREW;
 		rumConsumption *= isEquippedArtefactUse(chr, "talisman4", 1.0, 0.2);
 		rumConsumption *= GetBartenderMtp(chr);
-		int iRumConsumption = func_max(1, ceil(rumConsumption));              // не меньше 1, округляем в большую
-		int rumDaysLeft = crewQty != 0 ? int(rumStock / iRumConsumption) : 0; // дни округляем в меньшую
+		int iRumConsumption = func_max(1, ceil(rumConsumption)); // не меньше 1, округляем в большую
+		int rumDaysLeft = int(rumStock / iRumConsumption);       // дни округляем в меньшую
 		if (mode == MAINTENANCE_MOD_RUM_LEFT) return rumDaysLeft;
 
 		shipInfo.rumStock = rumStock;

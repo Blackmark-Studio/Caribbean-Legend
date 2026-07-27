@@ -718,6 +718,7 @@ void ProcessDialogEvent()
 		pchar.quest.FMQG_SailMoskitos.win_condition.l1.location = "Shore47";
 		pchar.quest.FMQG_SailMoskitos.function = "FMQG_ArriveMoskitos";
 		pchar.questTemp.FMQG = "to_moskitos";
+		pchar.quest.FMQG_Juansail.over = "yes";
 		AddMapQuestMarkShore("Shore47", true);
 		bDisableMapEnter = false; // Rebbebion, теперь можно
 		break;

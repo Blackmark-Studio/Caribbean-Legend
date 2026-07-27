@@ -102,6 +102,7 @@ native int ResetStats(int bAchievementsToo);
 native bool IsVerified();
 native bool Verify();
 native string GetPersonaName();
+native int GetSteamID();
 native int GetAppID();
 native bool IsSteamDeck();
 native bool IsVirtualKeyboardShowing();

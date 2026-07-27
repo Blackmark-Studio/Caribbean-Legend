@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {하루가 지났다...@<NewStr()>바닐라가 캐랙에 실렸다...}
+SharlieFinal_35 {하루가 지났습니다...@<NewStr()>바닐라가 브리간틴으로 옮겨졌습니다...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Father Vincento}

@@ -168,5 +168,5 @@ void XI_SetUniversalInputMode(ref result, int mode = XI_UNIVERSAL_INPUT_DEFAULT)
 		result.i2 = 20;
 	}
 	else assert(false, "Wrong input mode: " + mode);
-	result.i3 = 9000;
+	result.i3 = 9999999999;
 }

@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {Ein Tag verging...@<NewStr()>Vanille wurde auf die Karacke verladen...}
+SharlieFinal_35 {Ein Tag ist vergangen...@<NewStr()>Die Vanille wurde auf die Brigantine umgeladen...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Vater Vincento}

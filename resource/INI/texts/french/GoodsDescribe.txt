@@ -113,9 +113,11 @@ Chaque espèce d'ébène a sa propre couleur, qui va du brun verdâtre au noir v
 Food {Nourriture}
 Food_descr
 {
-Ensemble standard de rations conservées et d'eau douce, nécessaire pour nourrir l'équipage et les esclaves au cours d'un voyage.
-Le manque de nourriture à bord entraîne la disette, des décès et une baisse du moral.
-Consommation quotidienne : marins - 0,1 unite, esclaves - 0,05 unite.
+Biscuits de mer, viande salée, maigre assortiment de légumes séchés et réserve d’eau douce nécessaires à bord pendant la navigation.
+L’absence de provisions à bord entraîne la famine, des décès et une forte baisse du moral.
+~
+Consommation quotidienne :
+matelots — 1/$number($kstringTemp(FOOD_BY_CREW)), esclaves — 1/$number($kstringTemp(FOOD_BY_SLAVES)) unité de marchandise.
 }
 Fruits {Fruits}
 Fruits_descr

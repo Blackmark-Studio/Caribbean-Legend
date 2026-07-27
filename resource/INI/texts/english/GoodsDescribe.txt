@@ -113,9 +113,11 @@ Every sort of ebony has its own unique huge - ranging from greenish-brown to vel
 Food {Food}
 Food_descr
 {
-A standard set of preserved rations and fresh water, required for feeding crew and slaves during a voyage.
-The lack of food on board leads to famine, deaths, and drop of morale. 
-Daily consumption: sailors - 0.1 unit, slaves - 0.05 unit.
+Ship’s biscuits, salt meat, a meager selection of dried vegetables, and a supply of fresh water needed during a voyage.
+Having no provisions aboard leads to starvation, deaths, and a sharp drop in morale.
+~
+Daily consumption:
+sailors — 1/$number($kstringTemp(FOOD_BY_CREW)), slaves — 1/$number($kstringTemp(FOOD_BY_SLAVES)) units of goods.
 }
 Fruits {Fruits}
 Fruits_descr

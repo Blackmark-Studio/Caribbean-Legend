@@ -109,9 +109,11 @@ Her abanoz türünün kendine has bir tonu vardır – yeşilimsi kahverengiden 
 Food {Erzak}
 Food_descr
 {
-Mürettebat ve kölelerin yolculuk sırasında beslenmesi için gereken standart kuru erzak ve tatlı su seti.
-Gemide yiyecek eksikliği açlığa, ölümlere ve moral kaybına yol açar.
-Günlük tüketim: denizciler - 0,1 birim, köleler - 0,05 birim.
+Deniz yolculuğu sırasında gemide gerekli olan peksimet, tuzlanmış et, az miktarda kurutulmuş sebze ve tatlı su stoğu.
+Gemide erzak bulunmaması açlığa, ölümlere ve moralin hızla düşmesine yol açar.
+~
+Günlük tüketim:
+denizciler — 1/$number($kstringTemp(FOOD_BY_CREW)), köleler — 1/$number($kstringTemp(FOOD_BY_SLAVES)) birim mal.
 }
 Fruits {Meyveler}
 Fruits_descr

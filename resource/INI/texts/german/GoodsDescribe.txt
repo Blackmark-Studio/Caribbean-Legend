@@ -113,9 +113,11 @@ Jede Ebenholzsorte hat ihre eigene Farbe, die von grünlich-braun bis samtig sch
 Food {Nahrungsmittel}
 Food_descr
 {
-Ein Standardsatz an konservierten Rationen und frischem Wasser, der für die Verpflegung von Crew und Sklaven während einer Reise benötigt wird.
-Der Mangel an Lebensmitteln an Bord führt zu Hungersnöten, Todesfällen und einem Rückgang der Moral. 
-Täglicher Verbrauch: Matrosen - 0.1 Einheiten, Sklaven - 0.05 Einheiten.
+Schiffszwieback, Pökelfleisch, eine karge Auswahl an Trockengemüse und ein Vorrat an Frischwasser, die während einer Seereise benötigt werden.
+Fehlender Proviant an Bord führt zu Hunger, Todesfällen und einem starken Moralverlust.
+~
+Täglicher Verbrauch:
+Matrosen – 1/$number($kstringTemp(FOOD_BY_CREW)), Sklaven – 1/$number($kstringTemp(FOOD_BY_SLAVES)) Wareneinheiten.
 }
 Fruits {Früchte}
 Fruits_descr

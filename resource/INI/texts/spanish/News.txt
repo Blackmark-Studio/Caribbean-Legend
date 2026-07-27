@@ -1,13 +1,18 @@
-key {d23.06.2026}
-News {¡La actualización 1.8.2 Performance Update ya está disponible!}
+key {d23.07.2026}
+News {¡La actualización Ship Shape 1.9.0 ya está disponible!}
 News_Attention { }
 News_descr
 {
 ***************************   ¡Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Ya está disponible el parche 1.8.2 Performance Update
-— No hace falta empezar una nueva partida
-— El rendimiento ha aumentado un 40%
-— Se ha añadido al juego una nueva recompensa para la comunidad
-— Podéis encontrar la lista detallada de cambios y las noticias sobre el parche 2.0 en las noticias mediante el botón de abajo
+– Actualización importante 1.9 — ya disponible
+– No se requiere un juego nuevo
+– La pantalla del barco — completamente reconstruida
+– Costados, proa y popa — cada uno con su propio calibre
+– Desgaste y reparaciones de cañones — ya no ocultos
+– La tripulación — mucho más valiosa
+– Combate en tierra — más rápido y suave
+– Las junglas — más vívidas y variadas
+– Ya no eres el único visitante en los edificios de la ciudad
+– Puedes encontrar una lista detallada de cambios en las noticias haciendo clic en el botón de abajo
 }

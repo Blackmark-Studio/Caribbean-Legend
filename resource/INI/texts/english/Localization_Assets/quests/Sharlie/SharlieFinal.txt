@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {A day passed...@<NewStr()>Vanilla was loaded on the carrack...}
+SharlieFinal_35 {A day passed...@<NewStr()>The vanilla was transferred to the brigantine...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Father Vincento}

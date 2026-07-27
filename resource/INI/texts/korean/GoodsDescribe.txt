@@ -109,9 +109,11 @@ Ebony_descr
 Food {식량}
 Food_descr
 {
-항해 중 선원과 노예의 식사를 위해 필요한 기본 식량과 식수입니다.
-식량이 부족하면 기아, 사망, 사기 저하가 발생합니다.
-일일 소비량: 선원 0.1단위, 노예 0.05단위.
+항해 중 함선에 필요한 건빵, 염장육, 소량의 말린 채소와 식수입니다.
+함선에 식량이 없으면 굶주림과 사망자가 발생하며 사기가 급격히 떨어집니다.
+~
+일일 소모량:
+선원 — 상품 1/$number($kstringTemp(FOOD_BY_CREW))개, 노예 — 상품 1/$number($kstringTemp(FOOD_BY_SLAVES))개.
 }
 Fruits {과일}
 Fruits_descr

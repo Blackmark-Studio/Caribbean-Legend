@@ -1,13 +1,18 @@
-key {d23.06.2026}
-News {1.8.2 Performance Update artık hazır!}
+key {d23.07.2026}
+News {Ship Shape Güncellemesi 1.9.0 artık mevcut!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— 1.8.2 Performance Update yaması artık mevcut
-— Yeni oyun başlatmanız gerekmiyor
-— Performans %40 arttı
-— Oyuna topluluk için yeni bir ödül eklendi
-— Ayrıntılı değişiklik listesini ve 2.0 yamasıyla ilgili haberleri aşağıdaki düğmeyle haberlerde bulabilirsiniz
+– Büyük Güncelleme 1.9 — şu anda mevcut
+– Yeni bir oyun gerek yok
+– Gemi ekranı — tamamen yeniden inşa edildi
+– Çift taraflı toplar, burun ve kıç — her biri kendi kalibresine sahip
+– Top aşınması ve tamirleri — artık gizlenmiyor
+– Mürettebat — çok daha değerli
+– Kara savaşları — daha hızlı ve akıcı
+– Ormanlar — daha canlı ve çeşitli
+– Artık şehir binalarında tek ziyaretçi değilsiniz
+– Değişikliklerin detaylı listesini aşağıdaki butona tıklayarak bulabilirsin
 }

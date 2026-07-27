@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {一日が過ぎた…@<NewStr()>バニラがキャラック船に積み込まれた…}
+SharlieFinal_35 {一日が経過した……@<NewStr()>バニラはブリガンティンへ積み替えられた……}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {神父ヴィンセント}

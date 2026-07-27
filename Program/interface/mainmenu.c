@@ -133,7 +133,9 @@ void InitInterface(string iniName)
 
 	// belamour ачивка за установленный мод
 	object itemsInfo[2];
-	if(!GetAchievement("ach_CL_153") && GetOverlaysInfo(&itemsInfo) > 0) Achievment_Set("ach_CL_153");
+	bool hasMods = GetOverlaysInfo(&itemsInfo) > 0;
+	XI_WindowShow("MODS_WARNING_WINDOW", hasMods);
+	if(!GetAchievement("ach_CL_153") && hasMods) Achievment_Set("ach_CL_153");
 
 	// ВВОД СВОИХ СХЕМ В ЗАВИСИМОСТИ ОТ ПОГОДЫ (BY LOKK)
 	if(Whr_IsRain())
@@ -317,7 +319,12 @@ void ProcessCommandExecute()
 				LoadLastSave();
 			}
 		break;
-
+		case "MODS_WARNING_BUTTON":
+			if (!GetSteamEnabled()) return;
+			if (comName == "click" || comName == "activate"){
+				GameOverlayToWebPage("https://steamcommunity.com/profiles/" + GetSteamID() + "/myworkshopfiles?appid=" + GetAppID() + "&browsefilter=mysubscriptions");
+			}
+		break;
 		case "NEW_GAME":
 			if(comName == "click" || comName == "activate"){
 				IDoExit( RC_INTERFACE_DO_NEW_GAME, false );

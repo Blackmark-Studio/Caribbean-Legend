@@ -1,13 +1,18 @@
-key {d23.06.2026}
-News {1.8.2 Performance Update is now available!}
+key {d23.07.2026}
+News {1.9.0 Ship Shape Update is now available!}
 News_Attention { }
 News_descr
 {
 ***************************   Ahoy!   ***************************
 -------------------------------------------------------------------------------------------------
-— Patch 1.8.2 Performance Update is available
-— No new game required
-— Performance has increased by 40%
-— A new community reward has been added to the game
-— You can find the full list of changes and news about patch 2.0 in the news via the button below
+– Major Update 1.9 — out now
+– No new game required
+– The ship screen — completely rebuilt
+– Broadsides, bow, and stern — each with its own caliber
+– Cannon wear and repairs — no longer hidden
+– Crew — far more valuable
+– Land combat — faster and smoother
+– The jungles — livelier and more varied
+– You are no longer the only visitor in city buildings
+– You can find a detailed list of changes in the news by clicking the button below
 }

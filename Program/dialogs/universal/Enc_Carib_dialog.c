@@ -333,7 +333,7 @@ void ProcessDialogEvent()
 			//Log_Info("Вы отдали "+XI_ConvertString(npchar.quest.gun)+"");
 			//Log_Info("Вы получили "+XI_ConvertString(npchar.quest.item)+" в количестве "+FindRussianQtyString(iTotalTemp)+"");
 			PlaySound("interface\important_item.wav");
-			if (int(npchar.quest.count) > 3+hrand(2));
+			if (int(npchar.quest.count) > 3+hrand(2))
 			{
 				dialog.text = DLG_Convert("Enc_Carib_dialog_war_indian_trade_agree_text_1", "Dialogs\Enc_Carib_dialog.txt");
 				link.l1 = DLG_Convert("Enc_Carib_dialog_war_indian_trade_agree_l1_1", "Dialogs\Enc_Carib_dialog.txt");

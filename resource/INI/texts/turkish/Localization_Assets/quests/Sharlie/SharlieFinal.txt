@@ -26,7 +26,7 @@ SharlieFinal_31 {Carlos}
 SharlieFinal_32 {Gevarra}
 SharlieFinal_33 {Guy}
 SharlieFinal_34 {Marshe}
-SharlieFinal_35 {Bir gün geçti...@<NewStr()>Vanilya kalyona yüklendi...}
+SharlieFinal_35 {Bir gün geçti...@<NewStr()>Vanilya brikantinaya aktarıldı...}
 SharlieFinal_36 {Barty}
 SharlieFinal_37 {Flayer}
 SharlieFinal_38 {Peder Vincento}

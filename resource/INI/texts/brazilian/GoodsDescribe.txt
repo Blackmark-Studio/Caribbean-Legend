@@ -109,9 +109,11 @@ Cada tipo de ébano possui uma cor própria — do marrom esverdeado ao preto av
 Food {Provisões}
 Food_descr
 {
-Um conjunto padrão de rações preservadas e água potável, essenciais para alimentar a tripulação e os escravizados durante a viagem.
-A falta de comida a bordo causa fome, mortes e queda de moral.
-Consumo diário: marinheiros - 0,1 unidade, escravizados - 0,05 unidade.
+Biscoitos de marinheiro, carne salgada, uma seleção escassa de legumes secos e uma reserva de água doce, necessários a bordo durante a viagem.
+A falta de provisões a bordo causa fome, mortes e uma queda brusca no moral.
+~
+Consumo diário:
+marinheiros — 1/$number($kstringTemp(FOOD_BY_CREW)), escravos — 1/$number($kstringTemp(FOOD_BY_SLAVES)) unidades de mercadoria.
 }
 Fruits {Frutas}
 Fruits_descr

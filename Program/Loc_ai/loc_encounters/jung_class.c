@@ -28,6 +28,12 @@ aref JEL_GetRandomEnc(ref loc)
         Weights[i] = aData[i].CurWeight;
         Summ += Weights[i];
 	}
+    if (Summ == -1)
+    {
+        assert(false, "ERROR: JungleEncList corrupted!");
+        Log_Info("ERROR: JungleEncList corrupted!");
+        return &JungleEncList.Data.None;
+    }
 
     int n = rand(Summ);
     for (int i = 0; n >= 0; i++)

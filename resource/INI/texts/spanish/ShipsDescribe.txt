@@ -8,13 +8,13 @@ Brigantine {Un tipo legendario de velero. Rápida y maniobrable como una golondr
 CannonType {Aquí se muestran la cantidad actual y máxima de cañones del barco, así como su tipo y características. Si la cantidad actual coincide con la máxima, solo se muestra un valor.}
 Capacity
 {
-Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.
-Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
+El peso muerto muestra la capacidad de carga actual y máxima del barco. Cuanto más cargado esté, menos maniobrable y más lento será.
+Los cañones también cuentan para calcular el peso muerto. Pueden retirarse del barco para liberar espacio adicional para la carga. Para ello, abre la interfaz "Barco" y pulsa "$key(Cannons_managment)".
 }
 Caravel {El aparejo característico de la carabela permite reconocer fácilmente este barco desde lejos. Su diseño anticuado le da cualidades de navegación bastante mediocres, lo que le impide competir en igualdad de condiciones con los barcos modernos, a pesar de tener suficientes cañones.}
 Corvette {Las corbetas están diseñadas para el reconocimiento, el servicio de mensajería y las operaciones de crucero. Con buena velocidad y maniobrabilidad, una corbeta puede alcanzar barcos más ligeros y evitar con éxito el combate con barcos más pesados.}
 CORVETTE_QUEST {Un barco único, obra maestra de los constructores navales franceses. La profunda modernización del diseño de la corbeta ha mejorado casi todas sus características sin sacrificar la velocidad. El aumento de la superficie vélica y el calibre de los cañones requieren una tripulación más experimentada y numerosa, pero si las pruebas en el Caribe tienen éxito, las tecnologías aplicadas aquí pueden suponer un verdadero avance en la construcción naval.}
-Crew {Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.}
+Crew {Los marineros muestran el número actual de tripulantes y la tripulación máxima de este barco.$br()Tripulación mínima necesaria para salir a mar abierto: $decl($ctx(minCrew)|persona|personas|personas).}
 Crew_Exp {Experiencia de la tripulación}
 Crew_Exp_hint {La vida a bordo se organiza en guardias, y cada marinero debe saber manejar tanto el aparejo como las cureñas. La experiencia de la tripulación influye en todas las características del barco, desde la velocidad de manejo de las velas hasta el tiempo de recarga de los cañones. $br()La experiencia aumenta con el tiempo, pero disminuye por las bajas o al contratar novatos en la taberna. Conservar una tripulación experimentada resulta mucho más rentable que contratar novatos y entrenarlos desde cero.}
 EastIndiaMan {Los barcos de la Compañía de las Indias Orientales reunieron las mejores cualidades de las pinazas y eliminaron sus defectos, convirtiéndose en barcos universales casi perfectos. Con cañones de gran calibre, pueden competir con barcos de guerra de tamaño comparable, y su espaciosa bodega permite utilizarlos eficazmente para el comercio.}
@@ -134,7 +134,7 @@ Cannon_hp_header {Resistencia máxima}
 Cannon_hp_text {Este valor determina cuántos disparos puede efectuar un cañón antes de quedar completamente destruido. Cuanto más alto sea, con menor frecuencia habrá que reparar el cañón. Cada tipo de cañón posee su propia resistencia máxima, que suele aumentar con el calibre.}
 Cannon_weight_header {Peso del cañón}
 Cannon_weight_text {Los cañones ocupan mucho espacio a bordo; en los buques de guerra, la batería de artillería puede consumir hasta la mitad de la capacidad de carga. El peso aumenta con el calibre y la potencia de fuego, y las culebrinas pesan más que los cañones del mismo calibre.}
-Cannon_health_0 {Destruidos}
+Cannon_health_0 {Casi destruidos}
 Cannon_health_1 {Desgastados}
 Cannon_health_2 {En orden}
 Cannon_health_3 {Ajustados}

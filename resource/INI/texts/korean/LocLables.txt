@@ -275,7 +275,7 @@ Shipyard {조선소}
 Shore_mask {Guardian's Grotto}
 Shore_ship1 {Sabo-Matila Cove}
 Shore_ship2 {Bay of Peril}
-Shore_ship3 {Cape of Delusive Hopes}
+Shore_ship3 {Cape of Disappointed Hopes}
 Shore_ship4 {Cursed Cove}
 Shore1 {Cape Boon}
 Shore10 {Caratasca Lagoon}

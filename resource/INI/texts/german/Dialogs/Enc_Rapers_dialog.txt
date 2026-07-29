@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {Was ist dein Geld im Vergleich zu den Schätzen von $ctx(pirateName)? Er war so gierig, dass er seine eigene Tochter nicht heiraten wollte, weil er zusätzliche Ausgaben vermeiden wollte...\nAber er hat unseren Anteil in seinen Truhen!$ctx(pirateName2) hat beim Entern verloren $ctx(tempText)! Also was haben wir stattdessen? Jämmerliche Handvoll Silber? $ctx(pirateName2) hat immer die ganze Beute zu seinem Versteck gebracht. Aber jetzt geben wir nicht auf! Zeige uns, wo seine Truhen sind!}
+Enc_Rapers_dialog_Node_9_text_1 {Was ist dein Geld im Vergleich zu den Schätzen von $ctx(pirateName)? Er war so gierig, dass er seine eigene Tochter nicht heiraten wollte, weil er zusätzliche Ausgaben vermeiden wollte...$br Aber er hat unseren Anteil in seinen Truhen!$ctx(pirateName2) hat beim Entern verloren $ctx(tempText)! Also was haben wir stattdessen? Jämmerliche Handvoll Silber? $ctx(pirateName2) hat immer die ganze Beute zu seinem Versteck gebracht. Aber jetzt geben wir nicht auf! Zeige uns, wo seine Truhen sind!}
 Enc_Rapers_dialog_Node_9_l1_1 {Nun, ich habe sicherlich nicht darum gebeten, die Schätze Ihres Kapitäns zu bewachen, aber ich kann Ihnen den Ort nicht zeigen... Weil ich nicht weiß, wo dieser Ort ist.}
 Enc_Rapers_dialog_Node_10_text_1 {Du lügst!!! Ich kann den Duft von Gold riechen, der aus dieser Höhle kommt! Zeige mir den Ort, wenn du nicht sterben willst!}
 Enc_Rapers_dialog_Node_10_l1_1 {Ich sehe, dass meine Worte dich nicht überzeugt haben. Vielleicht wird mein Schwert aussagekräftiger sein?}

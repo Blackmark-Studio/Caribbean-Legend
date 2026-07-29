@@ -271,7 +271,7 @@ perkStormProfessional {Dano de tempestade reduzido em 30%.}
 perkStrychnine {Golpes e disparos têm 9% de chance de envenenar o alvo. Acumula com bônus de Amuleto.}
 perkTannedLeather {Armadura leve protege 50% melhor e gasta 30% menos energia ao recuar.}
 perkThrift {Reduz o impacto dos danos às velas na velocidade e manobrabilidade em 10%.}
-perkTiefit {O bônus de habilidade de itens Comum e Elegante é aumentado em $number($perkBaseValue(Tiefit|1)).}
+perkTiefit {O bônus de habilidade dos itens $key(descriptor_Unremarkable|ItemsDescriptors.txt) e $key(descriptor_Fancy|ItemsDescriptors.txt) aumenta em $number($perkBaseValue(Tiefit|1)).}
 perkTireless {A velocidade de recuperação de energia aumenta em $percent($perkBaseValue(Tireless|1)).}
 perkTradeConnections {As listas de preços são atualizadas automaticamente ao visitar uma colônia.}
 perkTrainedEye {Permite estimar o valor dos tesouros em um navio ao observá-lo com a luneta.}

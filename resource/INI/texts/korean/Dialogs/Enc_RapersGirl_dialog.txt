@@ -26,10 +26,10 @@ Enc_RapersGirl_dialog_ThanksForHelp_text_5 {무슨 짓을 한 거야, $manWoman(
 Enc_RapersGirl_dialog_ThanksForHelp_l1_5 {이거야말로 소식이네! 그런데 도대체 무슨 생각으로 산적들에게 쫓긴다고 소리쳤던 거야?!}
 Enc_RapersGirl_dialog_Node_11_text_1 {제가 돈이 좀 있습니다. 부디 감사의 표시로 받아주십시오. 이제 모두에게 알리겠습니다, $manWoman(정말 훌륭하고 고귀한 분이시군요|당신은 참으로 훌륭하고 고귀한 여인이로군).}
 Enc_RapersGirl_dialog_Node_11_l1_1 {물론 그렇게 할 거야. 고마워... 이제 그냥 집에 가.}
-Enc_RapersGirl_dialog_Node_12_text_1 {아직 정신을 못 차리겠어. 혹시 가져다줄 수 있겠나\n $manWoman(숙녀|나) 정착지로 $ctx(valueText)? 있잖아, 이제는 덤불마다 강간범이 숨어 있는 것 같아 보여.}
+Enc_RapersGirl_dialog_Node_12_text_1 {아직 정신을 못 차리겠어. 혹시 가져다줄 수 있겠나$br  $manWoman(숙녀|나) 정착지로 $ctx(valueText)? 있잖아, 이제는 덤불마다 강간범이 숨어 있는 것 같아 보여.}
 Enc_RapersGirl_dialog_Node_12_l1_1 {$rand(그렇게 걱정하지 마, 진짜로... 좋아, 가자.|넌 정말 겁쟁이구나, 안 그래? 좋아, 내가 데려다줄게.)}
 Enc_RapersGirl_dialog_Node_12_l2_1 {미안해, 자기야, 하지만 지금은 정말 시간이 없어. 너무 바빠서 그래.}
-Enc_RapersGirl_dialog_Node_22_text_1 {난 네가 그냥 놈들을 쫓아버릴 줄 알았는데! 이제 나를 그 정착지의 선술집으로 데려가야 하네\n $ctx(valueText), 너 말고는 도와줄 사람이 없어.}
+Enc_RapersGirl_dialog_Node_22_text_1 {난 네가 그냥 놈들을 쫓아버릴 줄 알았는데! 이제 나를 그 정착지의 선술집으로 데려가야 하네$br  $ctx(valueText), 너 말고는 도와줄 사람이 없어.}
 Enc_RapersGirl_dialog_Node_22_l1_1 {아, 젠장! 좋아, 가자. 하지만 뒤처지지 마.}
 Enc_RapersGirl_dialog_Node_22_l2_1 {아니, 그게 다야, $manWoman(아름다움|친애하는)! 오늘은 놀랄 일은 충분히 겪었어. 다른 사람한테 가서 도와달라고 해.}
 Enc_RapersGirl_dialog_Node_31_text_1 {그럼 내가 어쩌라고?! 아버지는 나보고 고리대금업자 아들, 그 겁쟁이랑 결혼하래... 그냥 그 아버지가 돈이 많다는 이유로! 하지만 난 다른 남자를 사랑해! 제발, 그 사람에게 데려다줘...}
@@ -59,11 +59,11 @@ Enc_RapersGirl_dialog_Node_131_text_1 {그 목걸이는 엄선된 진주로 만�
 Enc_RapersGirl_dialog_Node_131_l1_1 {분명 이 일은 쉽지 않을 거야... 뭐, 네 주인 아가씨가 명령을 내렸다면 어쩔 수 없지. 진주를 찾아봐. 행운을 빈다.}
 Enc_RapersGirl_dialog_Node_131_l2_1 {소용없어. 이 빽빽한 풀밭에서 진주를 찾는 것보다 건초더미에서 바늘을 찾는 게 더 쉬울 거야. 게다가 진주를 잃어버린 장소조차 네가 모르잖아...}
 Enc_RapersGirl_dialog_Node_132_mapOwner_1 {l$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_132_text_1 {내 아버지가 그 지도에 자기 보물을 숨긴 장소를 표시해 두셨어. 그 유명한 해적에 대해 들어본 적 있나\n $ctx(pirateName)?}
+Enc_RapersGirl_dialog_Node_132_text_1 {내 아버지가 그 지도에 자기 보물을 숨긴 장소를 표시해 두셨어. 그 유명한 해적에 대해 들어본 적 있나$br  $ctx(pirateName)?}
 Enc_RapersGirl_dialog_Node_132_l1_1 {아니, 그 사람에 대해서는 들어본 적 없어.}
 Enc_RapersGirl_dialog_Node_132_1_text_1 {음, $ctx(pirateName) 내 아버지였지. 모두가 그분을 두려워했고, 감히 한마디도 못 했어. 지금은 물론 뻔뻔해졌지. 내가 지도를 팔지 않겠다고 하자, 자기들도 보물의 몫을 받아야 한다고 우겼어. 나는 지도를 숨기려고 했지만, 결국 놈들이 날 찾아냈지...}
 Enc_RapersGirl_dialog_Node_132_1_l1_1 {애초에 왜 그걸 숨겼겠어? 배를 빌려 타고 가서, 네 보물을 찾아라. 네 아버지가 괜히 그걸 숨겼을 리 없지.}
-Enc_RapersGirl_dialog_Node_132_2_text_1 {말처럼 쉽지 않지. 배를 빌릴 돈도 없고... 그리고 두렵기도 해... 그 많은 걸 어떻게 다 파내서 배까지 옮기란 말이야... 그리고 그 보물을 나중에 어디로 가져가야 하지? 가는 길에 누구든 나를 쉽게 노릴 수 있을 텐데...\n}
+Enc_RapersGirl_dialog_Node_132_2_text_1 {말처럼 쉽지 않지. 배를 빌릴 돈도 없고... 그리고 두렵기도 해... 그 많은 걸 어떻게 다 파내서 배까지 옮기란 말이야... 그리고 그 보물을 나중에 어디로 가져가야 하지? 가는 길에 누구든 나를 쉽게 노릴 수 있을 텐데...$br }
 Enc_RapersGirl_dialog_Node_132_2_l1_1 {좋은 말이야... 좋아, 그럼 지도를 숨겨도 돼. 하지만 잘 숨겨두는 거 잊지 마라.}
 Enc_RapersGirl_dialog_Node_132_2_l2_1 {흠... 아마 맞는 말이군. 그러니 더더욱 그걸 팔았어야지.}
 Enc_RapersGirl_dialog_Node_132_2_l3_1 {동료를 찾아보았나?}
@@ -78,7 +78,7 @@ Enc_RapersGirl_dialog_Node_132_5_text_2 {아니, $manWoman(선장|아가씨). �
 Enc_RapersGirl_dialog_Node_132_5_l1_2 {글쎄, 그건 네가 결정할 일이야. 네 종이쪼가리는 어차피 더 이상 아무 가치도 없어.}
 Enc_RapersGirl_dialog_Node_132_8_text_1 {그럼 어디서 그들을 찾을 수 있지? 젊은 녀석들은 믿을 수 없고, 보물보다는 딴 것에 더 관심이 많아. 그리고 나이 든 녀석들은 두렵기까지 해, 다들 우리 아버지 친구들을 떠올리게 하거든. 얼마나 교활하고 간사한지, 무슨 짓을 할지 전혀 알 수가 없어.}
 Enc_RapersGirl_dialog_Node_132_8_l1_1 {하하하... 좋아, 그런데 나도 데려가 줄 거야?}
-Enc_RapersGirl_dialog_Node_132_9_text_1 {너? 네가 간다고? 하지만 그러면 날 다시 여기, 이 정착지로 데려와야 할 텐데\n $ctx(valueText), 알겠지?}
+Enc_RapersGirl_dialog_Node_132_9_text_1 {너? 네가 간다고? 하지만 그러면 날 다시 여기, 이 정착지로 데려와야 할 텐데$br  $ctx(valueText), 알겠지?}
 Enc_RapersGirl_dialog_Node_132_9_l1_1 {좋아, 약속하지. 길만 알려줘.}
 Enc_RapersGirl_dialog_Node_132_10_text_1 {보물은 동굴 안에 숨겨져 있어 $ctx(valueText), 우리는 상륙해야 해 $ctx(valueText2), 내가 모습을 드러낼 곳이지... 하지만 잊지 마, 절반만 가져갈 거야!}
 Enc_RapersGirl_dialog_Node_132_10_l1_1 {좋아, 너한테 바람 안 피울게, 약속해. 따라와, 뒤처지지 말고.}
@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {오, 이런, 무슨 소리야? 저 악당
 Enc_RapersGirl_dialog_Node_201_l1_1 {그리고 네 아버지는 무슨 사연이 있는데?}
 Enc_RapersGirl_dialog_Node_202_text_1 {그는 한때 해적선의 선장이었지. 최근에 죽었어... 장례식 때는 모두가 그렇게 예의를 차렸는데, 시간이 지나자 그를 잊었고, 곧 명예와 정직함도 잊었지. 내가 그놈들을 눈여겨본 게 다행이야. 보물의 위치를 알게 되는 순간, 내 꼴은 끝장이야.}
 Enc_RapersGirl_dialog_Node_202_l1_1 {그거 참 안타까운 이야기군. 그래서, 계속 그들한테서 숨어 지낼 생각이야?}
-Enc_RapersGirl_dialog_Node_203_text_1 {나는 집에 보석을 둘 수 없어, 나를 지켜줄 사람이 없거든. 그래서 돈이 떨어지면 밤에 동굴로 가는 거야...\n제발 나를 동굴로 데려다줘, 그러면 내가 그들에게 준 돈을 당신에게 줄게... 당신이 함께 있으면 해적들도 우리를 따라올 엄두를 못 낼 거라 생각해.}
+Enc_RapersGirl_dialog_Node_203_text_1 {나는 집에 보석을 둘 수 없어, 나를 지켜줄 사람이 없거든. 그래서 돈이 떨어지면 밤에 동굴로 가는 거야...$br 제발 나를 동굴로 데려다줘, 그러면 내가 그들에게 준 돈을 당신에게 줄게... 당신이 함께 있으면 해적들도 우리를 따라올 엄두를 못 낼 거라 생각해.}
 Enc_RapersGirl_dialog_Node_203_l1_1 {미안해, 자기야, 하지만 난 다른 계획이 있어. 보물은 다음에 챙기도록 해.}
 Enc_RapersGirl_dialog_Node_203_l2_1 {좋아, 가자. 나를 두려워하지 않는다면 말이지.}
 Enc_RapersGirl_dialog_Node_204_text_1 {있잖아, 왠지 나는...}
@@ -147,7 +147,7 @@ Enc_RapersGirl_dialog_Node_210_text_1 {흠, $manWoman(선장|아가씨), 네 비
 Enc_RapersGirl_dialog_Node_210_l1_1 {이제 가도 돼, $manWoman(아름다움|친애하는). 그리고 그들이 다시 쫓아오기 전에 어서 마을로 가는 게 좋을 거요.}
 Enc_RapersGirl_dialog_Node_211_text_1 {정말 불안했어요! 저를 그 정착지의 선술집으로 데려다주실 수 있나요? $ctx(valueText)아니면, 또 나를 쫓아올까 봐 두렵소.}
 Enc_RapersGirl_dialog_Node_211_l1_1 {어쩌면 네 말이 맞을지도 모르지. 가자...}
-Enc_RapersGirl_dialog_Node_220_text_1 {아이고, 선장님, 그건 긴 이야기라서 선장님께서 흥미로워하실지 모르겠군요. 하지만... 지금은 선장님의 도움이 없으면 할 수 없을 것 같습니다. 혹시 저를 그 정착지의 선술집까지 데려다주실 수 있겠습니까\n $ctx(valueText)? 놈들이 나를 그냥 두질 않더군.}
+Enc_RapersGirl_dialog_Node_220_text_1 {아이고, 선장님, 그건 긴 이야기라서 선장님께서 흥미로워하실지 모르겠군요. 하지만... 지금은 선장님의 도움이 없으면 할 수 없을 것 같습니다. 혹시 저를 그 정착지의 선술집까지 데려다주실 수 있겠습니까$br  $ctx(valueText)? 놈들이 나를 그냥 두질 않더군.}
 Enc_RapersGirl_dialog_Node_220_l1_1 {미안해, 자기야, 지금 그럴 시간 없어. 할 일이 있거든.}
 Enc_RapersGirl_dialog_Node_220_l2_1 {왜 그렇게 비밀스럽게 구는 거야?}
 Enc_RapersGirl_dialog_Node_222_text_1 {모두가 내 불행을 이용해 이득을 보려 드는데, 내가 어찌 비밀스럽지 않을 수 있겠소?}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {그래서, 아직도 내 이야기를 듣고 싶어?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {흠... 이제 내가 가야 할 때인 것 같군. 잘 있어!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {그래, 얼른 말해 봐.}
-Enc_RapersGirl_dialog_Node_228_text_2 {오, 나의 고귀한 구원자님, 드디어 여인으로서 할 수 있는 유일한 방식으로 당신께 감사를 전할 수 있게 되었어요\n정글에서 당신을 보았을 때, 제 안의 모든 것이 변했어요. 저를 해치려던 자들과 뺨을 할퀴던 날카로운 야자수 잎도 모두 잊었어요. 어디로 도망쳐야 하는지, 왜 도망쳐야 하는지도 잊었죠... 오직 당신만 보였어요. 그리고 오직 당신만을 원했어요... 그리고 당신이 저를 위해 해주신 일 이후로는...}
+Enc_RapersGirl_dialog_Node_228_text_2 {오, 나의 고귀한 구원자님, 드디어 여인으로서 할 수 있는 유일한 방식으로 당신께 감사를 전할 수 있게 되었어요$br 정글에서 당신을 보았을 때, 제 안의 모든 것이 변했어요. 저를 해치려던 자들과 뺨을 할퀴던 날카로운 야자수 잎도 모두 잊었어요. 어디로 도망쳐야 하는지, 왜 도망쳐야 하는지도 잊었죠... 오직 당신만 보였어요. 그리고 오직 당신만을 원했어요... 그리고 당신이 저를 위해 해주신 일 이후로는...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {이런 젠장! 성질 한번 고약하군! 널 쫓는 놈들이 누구를 쫓아야 할지 제대로 알았던 모양이야...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {이봐, 미인아, 네 마음은 충분히 이해하겠어. 하지만 제발, 화는 좀 참아줘.}
 Enc_RapersGirl_dialog_Node_229_text_1 {지금 내게로 와요, 나의 영웅...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {나는 이런 말을 누구에게서도 �
 Enc_RapersGirl_dialog_Node_231_l1_1 {얼른 가라니까, 알았지? 그리고 좀 정신 차려, 또 구출당하고 싶지 않으면...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {내 가족은 정착지에 살고 있어 $ctx(valueText). 나는 우연히 여기 오게 되었어요. 약혼자가 저를 그의 부모님께 데려가려고 배에 태웠는데, 그 배가 해적들에게 붙잡혔어요. 배는 빼앗겼고, 승객들은 이곳에서 멀지 않은 만에 상륙시켰죠. 약혼자는 배에 해적들이 들이닥칠 때 죽었고, 저는 정글을 건너다가 심하게 병이 들었어요\n이 지역 사창가의 마담이 저를 간호해서 건강을 되찾게 해줬지만, 제가 일어설 수 있게 되자 치료비를 갚으라며 일을 시켰어요. 저는 창녀가 되었지만 마담의 마음에 들지 못해서, 그녀는 치료비라도 건지려고 저를 산적들에게 팔아넘겼어요. 그 뒤 이야기는 이미 아시잖아요.}
+Enc_RapersGirl_dialog_Node_233_text_1 {내 가족은 정착지에 살고 있어 $ctx(valueText). 나는 우연히 여기 오게 되었어요. 약혼자가 저를 그의 부모님께 데려가려고 배에 태웠는데, 그 배가 해적들에게 붙잡혔어요. 배는 빼앗겼고, 승객들은 이곳에서 멀지 않은 만에 상륙시켰죠. 약혼자는 배에 해적들이 들이닥칠 때 죽었고, 저는 정글을 건너다가 심하게 병이 들었어요$br 이 지역 사창가의 마담이 저를 간호해서 건강을 되찾게 해줬지만, 제가 일어설 수 있게 되자 치료비를 갚으라며 일을 시켰어요. 저는 창녀가 되었지만 마담의 마음에 들지 못해서, 그녀는 치료비라도 건지려고 저를 산적들에게 팔아넘겼어요. 그 뒤 이야기는 이미 아시잖아요.}
 Enc_RapersGirl_dialog_Node_233_l1_1 {그냥 그만두고 집에 가! 왜 놈들한테 노예처럼 당하고 있어?!}
 Enc_RapersGirl_dialog_Node_234_text_1 {안 돼! 내 모든 소지품들, 멀쩡한 옷, 돈, 서류... 전부 사창가에 있어, 내 여행 가방 안에. 데이트 방에 숨겨 놨어. 그리고 지금 이런 꼴로 입고 있으면, 항구에 있는 선원들이 전부 나를 쫓아올 거야. 서류나 돈도 없이 누가 나를 배에 태워 주겠어? 이제는 마을에 얼굴도 못 비추겠어, 나가면 감옥에 처넣을 테니까...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {문제없을 거야. 가자. 내가 직접 집까지 데려다줄게.}

@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {Ah hayır, ne diyorsun? Bu alçakları ç
 Enc_RapersGirl_dialog_Node_201_l1_1 {Peki ya babanla ne işin var?}
 Enc_RapersGirl_dialog_Node_202_text_1 {Eskiden bir korsan gemisinin kaptanıydı. Yakın zamanda öldü... Cenazede hepsi çok saygılıydı, ama zaman geçtikçe onu unuttular, ardından da onurlarını ve dürüstlüklerini kaybettiler. İyi ki onları fark ettim. Hazineyi nerede bulacaklarını öğrenir öğrenmez, benim işim biter.}
 Enc_RapersGirl_dialog_Node_202_l1_1 {Bu üzücü bir hikaye. Peki, onlardan saklanmaya devam mı edeceksin?}
-Enc_RapersGirl_dialog_Node_203_text_1 {Evde mücevher saklayamam, beni koruyacak kimsem yok. Bu yüzden geceleri mağaraya gidiyorum, param bitince...\nLütfen beni mağaraya götür, sana verdiğim parayı geri vereceğim... Sanırım sen yanımdayken korsanlar peşimize düşmeye cesaret edemezler.}
+Enc_RapersGirl_dialog_Node_203_text_1 {Evde mücevher saklayamam, beni koruyacak kimsem yok. Bu yüzden geceleri mağaraya gidiyorum, param bitince...$br Lütfen beni mağaraya götür, sana verdiğim parayı geri vereceğim... Sanırım sen yanımdayken korsanlar peşimize düşmeye cesaret edemezler.}
 Enc_RapersGirl_dialog_Node_203_l1_1 {Üzgünüm canım, ama başka planlarım var. Hazineni başka bir zaman toplarsın.}
 Enc_RapersGirl_dialog_Node_203_l2_1 {Pekala, hadi gidelim, eğer benden korkmuyorsan.}
 Enc_RapersGirl_dialog_Node_204_text_1 {Biliyor musun, nedense ben...}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {Hâlâ hikayemi dinlemek istiyor musun?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... Sanırım gitme vakti geldi. Hoşça kal!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {Pekâlâ, söyle bakalım, o zaman.}
-Enc_RapersGirl_dialog_Node_228_text_2 {Ah, asil kurtarıcım, sonunda sana bir kadının teşekkür edebileceği tek şekilde teşekkür edebilirim\nSeni ormanda gördüğümde, içimde her şey değişti. Tecavüzcüleri ve yanaklarımı kamçılayan keskin palmiye yapraklarını unuttum. Nereye kaçacağımı, neden kaçacağımı unuttum ... Sadece seni gördüm. Ve sadece seni istedim ... Ve benim için yaptıklarından sonra...}
+Enc_RapersGirl_dialog_Node_228_text_2 {Ah, asil kurtarıcım, sonunda sana bir kadının teşekkür edebileceği tek şekilde teşekkür edebilirim$br Seni ormanda gördüğümde, içimde her şey değişti. Tecavüzcüleri ve yanaklarımı kamçılayan keskin palmiye yapraklarını unuttum. Nereye kaçacağımı, neden kaçacağımı unuttum ... Sadece seni gördüm. Ve sadece seni istedim ... Ve benim için yaptıklarından sonra...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {Vay canına! Ne öfke ama! Peşindekiler kimi kovalayacaklarını iyi biliyormuş...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {Dinle güzelim, bunu gayet iyi anlıyorum ama lütfen, öfkeni kendine sakla.}
 Enc_RapersGirl_dialog_Node_229_text_1 {Şimdi gel bana, kahramanım...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {Böyle sözleri daha önce hiç kimseden 
 Enc_RapersGirl_dialog_Node_231_l1_1 {Hadi artık, tamam mı? Biraz toparlan kendini, yoksa yine kurtarılmak mı istiyorsun...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {Ailem yerleşim yerinde yaşıyor $ctx(valueText)Tesadüfen buraya geldim, nişanlımın beni ailesiyle tanıştırmak için götürdüğü gemideydim ama gemiye korsanlar saldırdı. Gemi ele geçirildi ve yolcular buradan çok uzakta olmayan bir koyda karaya bırakıldı. Nişanlım baskın sırasında öldürüldü, ben ise ormanı geçerken ağır hastalandım.\nYerel genelevin patroniçesi beni iyileştirdi, ama ayağa kalkar kalkmaz tedavime harcadığı parayı çalışarak ödememi istedi. Fahişe oldum, ama patroniçenin hoşuna gitmedim, bu yüzden en azından parasının bir kısmını geri almak için beni bazı haydutlara sattı. Geri kalanını zaten biliyorsun.}
+Enc_RapersGirl_dialog_Node_233_text_1 {Ailem yerleşim yerinde yaşıyor $ctx(valueText)Tesadüfen buraya geldim, nişanlımın beni ailesiyle tanıştırmak için götürdüğü gemideydim ama gemiye korsanlar saldırdı. Gemi ele geçirildi ve yolcular buradan çok uzakta olmayan bir koyda karaya bırakıldı. Nişanlım baskın sırasında öldürüldü, ben ise ormanı geçerken ağır hastalandım.$br Yerel genelevin patroniçesi beni iyileştirdi, ama ayağa kalkar kalkmaz tedavime harcadığı parayı çalışarak ödememi istedi. Fahişe oldum, ama patroniçenin hoşuna gitmedim, bu yüzden en azından parasının bir kısmını geri almak için beni bazı haydutlara sattı. Geri kalanını zaten biliyorsun.}
 Enc_RapersGirl_dialog_Node_233_l1_1 {O zaman bırak işi, eve git! Neden sana köleymişsin gibi davranmalarına izin veriyorsun?!}
 Enc_RapersGirl_dialog_Node_234_text_1 {Yapamam! Bütün eşyalarım: düzgün kıyafetlerim, param, belgelerim... Hepsi genelevde, seyahat çantamda. Onu buluşma odasında sakladım. Ve ben bu haldeyken, limandaki her denizci peşimden koşar. Belgelerim ya da param olmadan kim beni gemisine alır ki? Şimdi ise şehirde yüzümü bile gösteremem, yoksa hapsi boylarım...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {Sorun olmaz. Hadi gidelim. Seni bizzat ben eve götüreceğim.}

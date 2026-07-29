@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {一只胳膊}
 Enc_Rapers_dialog_Node_9_sTemp_3 {一只耳朵}
 Enc_Rapers_dialog_Node_9_sTemp_4 {一个鼻子}
 Enc_Rapers_dialog_Node_9_sTemp_5 {一只眼睛}
-Enc_Rapers_dialog_Node_9_text_1 {你的钱与$ctx(pirateName)的宝藏相比算什么? 他太贪婪了, 甚至不想娶自己的女儿, 因为想避免额外的开销... \n但他的箱子里有我们的份额! $ctx(pirateName2)在登船时失去了$ctx(tempText)! 我们得到了什么? 可怜的一把银子? $ctx(pirateName2)总是把所有战利品都藏起来。 但现在我们不会放弃! 告诉我们他的箱子在哪里!}
+Enc_Rapers_dialog_Node_9_text_1 {你的钱与$ctx(pirateName)的宝藏相比算什么? 他太贪婪了, 甚至不想娶自己的女儿, 因为想避免额外的开销... $br 但他的箱子里有我们的份额! $ctx(pirateName2)在登船时失去了$ctx(tempText)! 我们得到了什么? 可怜的一把银子? $ctx(pirateName2)总是把所有战利品都藏起来。 但现在我们不会放弃! 告诉我们他的箱子在哪里!}
 Enc_Rapers_dialog_Node_9_l1_1 {好吧, 我当然没有申请守护你们船长的宝藏, 但我不能告诉你们地点... 因为我不知道那个地方在哪里。}
 Enc_Rapers_dialog_Node_10_text_1 {你在撒谎! 我能闻到从这个山洞里传来的金子的味道! 如果你不想死, 就告诉我们地点!}
 Enc_Rapers_dialog_Node_10_l1_1 {我看我的话没能说服你。 也许我的刀刃会更有说服力?}

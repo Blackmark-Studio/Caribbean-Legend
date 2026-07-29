@@ -88,7 +88,13 @@ void SantaMisericordia_init()
 	PChar.quest.SantaMisericordia_ZapisiJurnala.win_condition.l1 = "item";
 	PChar.quest.SantaMisericordia_ZapisiJurnala.win_condition.l1.item = "Reserve_item_02";
 	PChar.quest.SantaMisericordia_ZapisiJurnala.function = "SantaMisericordia_ZapisiJurnala";
-	
+
+	// если забыл обыскать сундук
+	pchar.quest.SantaMisericordia_Capture.win_condition.l1 = "Character_Capture";
+	pchar.quest.SantaMisericordia_Capture.win_condition.l1.character = "SantaMisericordia_cap";
+	pchar.quest.SantaMisericordia_Capture.function = "SantaMisericordia_Captured";
+	pchar.quest.SantaMisericordia_Capture.CapId = "SantaMisericordia_cap";
+
 	// победа, чистим всё и возвращаем всё на место
 	PChar.quest.SantaMisericordia_PobedaAchivka.win_condition.l1 = "NPC_Death";
 	PChar.quest.SantaMisericordia_PobedaAchivka.win_condition.l1.character = "SantaMisericordia_cap";
@@ -96,6 +102,22 @@ void SantaMisericordia_init()
 	
 	// слухи о местонахождении галеона Милосердии
 	SetTimerCondition("SantaMisericordia_Sluhi", 0, 4, 0, false);
+}
+
+void SantaMisericordia_Captured(string sQuest = "")
+{
+	bool journal = false;
+	bool note = false;
+	if ("quest.SantaMisericordia_HavanaCrypt" !in pchar && !CheckCharacterItem(pchar, "Reserve_item_02"))
+	{
+		TakeNItems(pchar, "Reserve_item_02", 1, false);
+		notification(xiStr("YouFindQuestItem") + " " + GetItemName("Reserve_item_02"), "Document");
+	}
+	if (!CheckCharacterItem(pchar, "Reserve_item_03"))
+	{
+		TakeNItems(pchar, "Reserve_item_03", 1, false);
+		notification(xiStr("YouFindQuestItem") + " " + GetItemName("Reserve_item_03"), "Document");
+	}
 }
 
 string SantaMisericordia_findColony(int stage);

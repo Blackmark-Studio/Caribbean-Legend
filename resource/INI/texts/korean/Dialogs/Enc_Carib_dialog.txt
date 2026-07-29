@@ -35,7 +35,7 @@ Enc_Carib_dialog_gun_2_item_1 {potion$ctx(valueText)}
 Enc_Carib_dialog_gun_2_stext_1 {$ctx(qtyText) vial of good curative potion}
 Enc_Carib_dialog_gun_2_item_2 {jewelry$ctx(valueText)}
 Enc_Carib_dialog_gun_2_stext_2 {$ctx(qtyText) this beautiful stone}
-Enc_Carib_dialog_gun_2_text_1 {이봐! 영리한 무기구만... 우리가 그걸로 뭔가 줄게\n $ctx(offerText).}
+Enc_Carib_dialog_gun_2_text_1 {이봐! 영리한 무기구만... 우리가 그걸로 뭔가 줄게$br  $ctx(offerText).}
 Enc_Carib_dialog_gun_2_l1_1 {거래 성사!}
 Enc_Carib_dialog_gun_2_l2_1 {아니. 절대 안 돼.}
 Enc_Carib_dialog_gun_3_gun_1 {pistol3}
@@ -51,7 +51,7 @@ Enc_Carib_dialog_gun_4_item_1 {jewelry$ctx(valueText)}
 Enc_Carib_dialog_gun_4_stext_1 {$ctx(qtyText) piece of metal which paleface loves more than life}
 Enc_Carib_dialog_gun_4_item_2 {obereg_$ctx(valueText)}
 Enc_Carib_dialog_gun_4_stext_2 {this amulet}
-Enc_Carib_dialog_gun_4_text_1 {이봐! 무시무시한 무기군... 그걸 주면 이걸 주지\n $ctx(offerText).}
+Enc_Carib_dialog_gun_4_text_1 {이봐! 무시무시한 무기군... 그걸 주면 이걸 주지$br  $ctx(offerText).}
 Enc_Carib_dialog_gun_4_l1_1 {거래 성사!}
 Enc_Carib_dialog_gun_4_l2_1 {아니. 절대 안 돼.}
 Enc_Carib_dialog_gun_5_gun_1 {pistol5}

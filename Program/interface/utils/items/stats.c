@@ -227,7 +227,7 @@ void SetUIAttributesGun(ref item, ref result, ref chr)
 	result.reloadTime.value = ToHumanNumber(result.reloadTime.rawValue) + " " + xiStr("sec.");
 }
 
-void FillUpStats(ref item, ref chr)
+int FillUpStats(ref item, ref chr)
 {
 	aref statTable;
 	makearef(statTable, GameInterface.TABLE_ITEM_STATS);
@@ -257,6 +257,7 @@ void FillUpStats(ref item, ref chr)
 	}
 
 	Table_UpdateWindow("TABLE_ITEM_STATS");
+	return statsQty;
 	// CropTableColsFrameByElementsQty("TABLE_ITEM_STATS", statsQty, 100);
 }
 

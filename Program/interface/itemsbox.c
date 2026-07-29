@@ -2,7 +2,10 @@
 // Большая часть интерфейса - это интерфейс покупки/продажи предметов
 // Sith переделка
 #include "interface\character_all.h"
+#include "interface\utils\common_exchange.c"
+#include "interface\utils\universal_input.c"
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по вкладкам
+#event_handler("Control Activation","TakeAllHotkey"); // Отдельно взять всё
 #define INTERFACETYPE_EXCHANGE_ITEMS		"ExchangeItems"
 #define INTERFACETYPE_CHEST					"Chest"
 #define INTERFACETYPE_DEADMAN				"Deadman"
@@ -177,12 +180,16 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
 	SetEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT", 0);
-	SetEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON", 0);
-	SetEventHandler("ADD_BUTTON","ADD_BUTTON",0);
-	SetEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON", 0);
-	SetEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON", 0);
 	SetEventHandler("frame","ProcessFrame",1);
 	SetEventHandler("eTabControlPress", "procTabChange", 0);
+
+	XI_InitUniversalInput();
+	XI_SetArrowsInputHandler("TABLE_LIST", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("TABLE_LIST2", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("TABLE_ADD_BUTTON", "TABLE_REMOVE_BUTTON", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetClickInputHandler("TABLE_ADD_BUTTON2", "TABLE_REMOVE_BUTTON2", &onTableAddBtnClick, &onTableRemoveBtnClick, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_OK_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
+	XI_SetArrowsInputHandler("QTY_CANCEL_BUTTON", &ADD_BUTTON, &REMOVE_BUTTON, XI_UNIVERSAL_INPUT_ITEMS);
 
 	SetFormatedText("STORECAPTION", XI_ConvertString(sGetInterfaceTypeStr("titleExchangeItems", "titleItemsBox", "titleDeadItems","titleBarrel")));
 	SetFormatedText("OTHER_TABLE_CAPTION", OtherTableCaption);
@@ -192,28 +199,17 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 	}
 }
 
-// метод переключает вкладки таблицы
-void ProcessInterfaceControls() 
+void TakeAllHotkey()
 {
 	string controlName = GetEventData();
-	if (controlName == "InterfaceGoRight") {
-		currentTab = currentTab % 5;
-		SetControlsTabMode(currentTab + 1);
-	}
-	if (controlName == "InterfaceGoLeft") {
-		currentTab = (5 + currentTab - 2) % 5;
-		SetControlsTabMode(currentTab + 1);
-	}
-	
-	if (controlName == "InterfaceTakeAll")
+	if (controlName != "InterfaceTakeAll") return;
+
+	onGetAllBtnClick();
+	string sInterfaceType = sGetInterfaceType();
+	if(sInterfaceType == INTERFACETYPE_DEADMAN && !CheckLastItemOnDead())
 	{
-		onGetAllBtnClick();
-		string sInterfaceType = sGetInterfaceType();
-		if(sInterfaceType == INTERFACETYPE_DEADMAN && !CheckLastItemOnDead())
-		{
-			Dead_DelLoginedCharacter(refToChar);
-			IDoExit(RC_INTERFACE_FOOD_INFO_EXIT);
-		}
+		Dead_DelLoginedCharacter(refToChar);
+		IDoExit(RC_INTERFACE_FOOD_INFO_EXIT);
 	}
 }
 
@@ -267,21 +263,13 @@ void InterfaceInitButtons(ref _refCharacter)
 void SetTableArrowsInit()
 {
 	SetNodeUsing("TABLE_REMOVE_BUTTON",false);
-	SetNodeUsing("TABLE_REMOVE_ALL_BUTTON",false);
 	SetNodeUsing("TABLE_ADD_BUTTON",false);
-	SetNodeUsing("TABLE_ADD_ALL_BUTTON",false);
 	SetNodeUsing("TABLE_REMOVE_BUTTON2",false);
-	SetNodeUsing("TABLE_REMOVE_ALL_BUTTON2",false);
 	SetNodeUsing("TABLE_ADD_BUTTON2",false);
-	SetNodeUsing("TABLE_ADD_ALL_BUTTON2",false);
-	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY, iTableAddAllBtnX + 35, iTableAddAllBtnY + 45, 0);
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY, iTableAddBtnX + 30, iTableAddBtnY + 45, 0);
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY, iTableRemoveBtnX + 30, iTableRemoveBtnY + 45, 0);
-	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON", 0, iTableRemoveAllBtnX, iTableRemoveAllBtnY, iTableRemoveAllBtnX + 35, iTableRemoveAllBtnY + 45, 0);	
-	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2, iTableAddAllBtnX2 + 35, iTableAddAllBtnY2 + 45, 0);
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2, iTableAddBtnX2 + 30, iTableAddBtnY2 + 45, 0);
 	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2, iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 45, 0);
-	SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON2", 0, iTableRemoveAllBtnX2, iTableRemoveAllBtnY2, iTableRemoveAllBtnX2 + 35, iTableRemoveAllBtnY2 + 45, 0);
 }
 
 void SetCharacterMoneyToGold(aref rChar) // В интерфейсе оперируем с деньгами как с предметом "gold"
@@ -547,12 +535,9 @@ void IDoExit(int exitCode)
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
 	DelEventHandler("confirmChangeQTY_EDIT", "confirmChangeQTY_EDIT");
-	DelEventHandler("ADD_ALL_BUTTON", "ADD_ALL_BUTTON");
-	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
-	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
-	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
 	DelEventHandler("eTabControlPress", "procTabChange");
-	
+	XI_ExitUniversalInput();
+
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
 	
@@ -567,162 +552,6 @@ void ProcCommand()
 
 	switch(nodName)
 	{
-		case "TABLE_REMOVE_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) REMOVE_BUTTON();
-				else onTableRemoveBtnClick();
-			}
-		break;
-
-		case "TABLE_REMOVE_ALL_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) REMOVE_ALL_BUTTON();
-				else onTableRemoveAllBtnClick();
-			}
-		break;
-
-		case "TABLE_ADD_ALL_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) ADD_ALL_BUTTON();
-				else onTableAddAllBtnClick();
-			}
-		break;
-
-		case "TABLE_ADD_BUTTON":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) ADD_BUTTON();
-				else onTableAddBtnClick();
-			}
-		break;
-		
-		case "TABLE_LIST":
-			if(comName=="rightstep")
-			{
-				if(bShowChangeWin) REMOVE_BUTTON();
-				else onTableRemoveBtnClick();
-			}
-			if(comName=="speedright")
-			{
-				if(bShowChangeWin) REMOVE_ALL_BUTTON();
-				else onTableRemoveAllBtnClick();
-			}
-			if(comName=="leftstep")
-			{
-				if(bShowChangeWin) ADD_BUTTON();
-				else onTableAddBtnClick();
-			}
-			if(comName=="speedleft")
-			{
-				if(bShowChangeWin) ADD_ALL_BUTTON();
-				else onTableAddAllBtnClick();
-			}
-			if(comName=="click")
-			{
-				validLineClicked = false; // убираем валидность клика для подсказок, если нажали ЛКМ
-			}
-		break;
-
-		case "TABLE_REMOVE_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) REMOVE_BUTTON();
-				else onTableRemoveBtnClick();
-			}
-		break;
-
-		case "TABLE_REMOVE_ALL_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) REMOVE_ALL_BUTTON();
-				else onTableRemoveAllBtnClick();
-			}
-		break;
-
-		case "TABLE_ADD_ALL_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) ADD_ALL_BUTTON();
-				else onTableAddAllBtnClick();
-			}
-		break;
-
-		case "TABLE_ADD_BUTTON2":
-			if(comName == "activate" || comName == "click")
-			{
-				if(bShowChangeWin) ADD_BUTTON();
-				else onTableAddBtnClick();
-			}
-		break;
-		
-		case "TABLE_LIST2":
-			if(comName=="rightstep")
-			{
-				if(bShowChangeWin) REMOVE_BUTTON();
-				else onTableRemoveBtnClick();
-			}
-			if(comName=="speedright")
-			{
-				if(bShowChangeWin) REMOVE_ALL_BUTTON();
-				else onTableRemoveAllBtnClick();
-			}
-			if(comName=="leftstep")
-			{
-				if(bShowChangeWin) ADD_BUTTON();
-				else onTableAddBtnClick();
-			}
-			if(comName=="speedleft")
-			{
-				if(bShowChangeWin) ADD_ALL_BUTTON();
-				else onTableAddAllBtnClick();
-			}
-			if(comName=="click")
-			{
-				validLineClicked = false;
-			}
-		break;
-		
-		case "QTY_OK_BUTTON":
-			if(comName=="leftstep")
-			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
-			}
-		break;
-
-		case "QTY_CANCEL_BUTTON":
-			if(comName=="leftstep")
-			{
-				ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-				REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-				ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-				REMOVE_ALL_BUTTON();
-			}
-		break;
-
 		case "GET_BUTTON":
 			if(comName == "activate" || comName == "click")
 			{
@@ -1139,10 +968,8 @@ void AddToTable(ref rChar)
 				sList = "tr" + targetSelect;
 
 				targetButtonsLine = targetSelect - 1 - int(GameInterface.TABLE_LIST.top);
-				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY + 50 * targetButtonsLine, iTableAddAllBtnX + 35, iTableAddAllBtnY + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 50 * targetButtonsLine, iTableAddBtnX + 30, iTableAddBtnY + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY + 50 * targetButtonsLine, iTableRemoveBtnX + 30, iTableRemoveBtnY + 50 * targetButtonsLine + 45, 0);
-				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON", 0, iTableRemoveAllBtnX, iTableRemoveAllBtnY + 50 * targetButtonsLine, iTableRemoveAllBtnX + 35, iTableRemoveAllBtnY + 50 * targetButtonsLine + 45, 0);
 			}
 			else
 			{
@@ -1160,10 +987,8 @@ void AddToTable(ref rChar)
 	}
 	else 
 	{
-		SetNodeUsing ("TABLE_ADD_ALL_BUTTON", false);
 		SetNodeUsing ("TABLE_ADD_BUTTON", false);
 		SetNodeUsing ("TABLE_REMOVE_BUTTON", false);
-		SetNodeUsing ("TABLE_REMOVE_ALL_BUTTON", false);
 	}
 	// На случай если количество предметов изменилось в сундуке
 	if(iLinesCount2 > 1)
@@ -1178,10 +1003,8 @@ void AddToTable(ref rChar)
 				sList2 = "tr" + targetSelect;
 
 				targetButtonsLine = targetSelect - 1 - int(GameInterface.TABLE_LIST2.top);
-				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2 + 50 * targetButtonsLine, iTableAddAllBtnX2 + 35, iTableAddAllBtnY2 + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2 + 50 * targetButtonsLine, iTableAddBtnX2 + 30, iTableAddBtnY2 + 50 * targetButtonsLine + 45, 0);
 				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2 + 50 * targetButtonsLine, iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 50 * targetButtonsLine + 45, 0);
-				SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON2", 0, iTableRemoveAllBtnX2, iTableRemoveAllBtnY2 + 50 * targetButtonsLine, iTableRemoveAllBtnX2 + 35, iTableRemoveAllBtnY2 + 50 * targetButtonsLine + 45, 0);
 			}
 			else
 			{
@@ -1199,10 +1022,8 @@ void AddToTable(ref rChar)
 	} 
 	else 
 	{
-		SetNodeUsing ("TABLE_ADD_ALL_BUTTON2", false);
 		SetNodeUsing ("TABLE_ADD_BUTTON2", false);
 		SetNodeUsing ("TABLE_REMOVE_BUTTON2", false);
-		SetNodeUsing ("TABLE_REMOVE_ALL_BUTTON2", false);
 	}
 	SetEventHandler("frame", "RefreshTableByFrameEvent", 0);
 
@@ -1374,18 +1195,14 @@ void CS_TableSelectChange()
 	if(CheckAttribute(&GameInterface, "TABLE_LIST.top"))
 	{
 		iSelLine = iSelected - int(GameInterface.TABLE_LIST.top);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON", 0, iTableAddAllBtnX, iTableAddAllBtnY + 50 * (iSelLine - 1), iTableAddAllBtnX + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON", 0, iTableAddBtnX, iTableAddBtnY + 50 * (iSelLine - 1), iTableAddBtnX + 30, iTableAddBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON", 0, iTableRemoveBtnX, iTableRemoveBtnY + 50 * (iSelLine - 1), iTableRemoveBtnX + 30, iTableRemoveBtnY + 50 * (iSelLine - 1) + 45, 0);		
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON", 0, iTableRemoveAllBtnX, iTableRemoveAllBtnY + 50 * (iSelLine - 1), iTableRemoveAllBtnX + 35, iTableRemoveAllBtnY + 50 * (iSelLine - 1) + 45, 0);
 	}
 	if(CheckAttribute(&GameInterface, "TABLE_LIST2.top"))
 	{
 		iSelLine = iSelected - int(GameInterface.TABLE_LIST2.top);
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_ALL_BUTTON2", 0, iTableAddAllBtnX2, iTableAddAllBtnY2 + 50 * (iSelLine - 1), iTableAddAllBtnX2 + 35, iTableAddAllBtnY + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_ADD_BUTTON2", 0, iTableAddBtnX2, iTableAddBtnY2 + 50 * (iSelLine - 1), iTableAddBtnX2 + 30, iTableAddBtnY2 + 50 * (iSelLine - 1) + 45, 0);
 		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_BUTTON2", 0, iTableRemoveBtnX2, iTableRemoveBtnY2 + 50 * (iSelLine - 1), iTableRemoveBtnX2 + 30, iTableRemoveBtnY2 + 50 * (iSelLine - 1) + 45, 0);		
-		SendMessage(&GameInterface,"lsllllll", MSG_INTERFACE_MSG_TO_NODE, "TABLE_REMOVE_ALL_BUTTON2", 0, iTableRemoveAllBtnX2, iTableRemoveAllBtnY2 + 50 * (iSelLine - 1), iTableRemoveAllBtnX2 + 35, iTableRemoveAllBtnY2 + 50 * (iSelLine - 1) + 45, 0);
 	}
 	
 	String sList = "tr" + iSelected;
@@ -1406,23 +1223,15 @@ void NullSelectTableBox(string sControl)
 	    Table_UpdateWindow(sControl);
 		if (CurTable != "TABLE_LIST")
 		{
-			SetNodeUsing("TABLE_ADD_ALL_BUTTON",false);
 			SetNodeUsing("TABLE_ADD_BUTTON",false);
 			SetNodeUsing("TABLE_REMOVE_BUTTON",false);
-			SetNodeUsing("TABLE_REMOVE_ALL_BUTTON",false);
-			SetNodeUsing("TABLE_ADD_ALL_BUTTON2",true);
 			SetNodeUsing("TABLE_ADD_BUTTON2",true);
 			SetNodeUsing("TABLE_REMOVE_BUTTON2",true);
-			SetNodeUsing("TABLE_REMOVE_ALL_BUTTON2",true);
 		} else {
-			SetNodeUsing("TABLE_ADD_ALL_BUTTON",true);
 			SetNodeUsing("TABLE_ADD_BUTTON",true);
 			SetNodeUsing("TABLE_REMOVE_BUTTON",true);
-			SetNodeUsing("TABLE_REMOVE_ALL_BUTTON",true);
-			SetNodeUsing("TABLE_ADD_ALL_BUTTON2",false);
 			SetNodeUsing("TABLE_ADD_BUTTON2",false);
 			SetNodeUsing("TABLE_REMOVE_BUTTON2",false);
-			SetNodeUsing("TABLE_REMOVE_ALL_BUTTON2",false);
 		}
 	}
 }
@@ -1604,15 +1413,21 @@ void onGetAllBtnClick()
 	// <-- Warship fix 10.06.09
 }
 // Нажали на табличной стрелочке "взять 1 ед. предмета одного типа"
-void onTableAddBtnClick()
+void onTableAddBtnClick(int targetValue = 1)
 {
+	if (targetValue > 100)
+	{
+		onTableAddAllBtnClick();
+		return;
+	}
+
 	string item = Items[iCurGoodsIdx].id;
 	int iItemsQty = GetCharacterFreeItem(refToChar, item);
 	
 	// Учет перегруза
 	int maxItemsToAdd = GetMaxItemsToTake(true, item);
 	if(maxItemsToAdd < iItemsQty) iItemsQty = maxItemsToAdd;
-	if (iItemsQty > 1) iItemsQty = 1;// лок на 1 ед.	
+	if (iItemsQty > targetValue) iItemsQty = targetValue;
 	if(iItemsQty > 0) // fix
 	{
 		RemoveItems(refToChar, item, iItemsQty);
@@ -1697,8 +1512,14 @@ void onTableRemoveAllBtnClick()
 }
 
 // Нажали на табличной стрелочке "отдать 1 ед. предмета одного типа"
-void onTableRemoveBtnClick()
+void onTableRemoveBtnClick(int targetValue = 1)
 {
+	if (targetValue > 100)
+	{
+		onTableRemoveAllBtnClick();
+		return;
+	}
+
 	String item = Items[iCurGoodsIdx].id;
 	int iItemsQty = GetCharacterFreeItem(refCharacter, item);
 	
@@ -1708,7 +1529,7 @@ void onTableRemoveBtnClick()
 	int maxItemsToAdd = GetMaxItemsToTake(false, item);
 	
 	if(maxItemsToAdd < iItemsQty) iItemsQty = maxItemsToAdd;
-	if (iItemsQty > 1) iItemsQty = 1;// лок на 1 ед.	
+	if (iItemsQty > targetValue) iItemsQty = targetValue;
 	if(iItemsQty > 0) // fix
 	{
 		RemoveItems(refCharacter, item, iItemsQty);
@@ -1896,82 +1717,6 @@ void ChangeQTY_EDIT()
     fCharWeight  = fCharWeight  + BuyOrSell * iWeight;
 	fStoreWeight = fStoreWeight - BuyOrSell * iWeight;
     SetVariable();
-}
-
-void REMOVE_ALL_BUTTON()  // продать все
-{
-	if(!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = -iCharQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void ADD_ALL_BUTTON()  // купить все
-{
-	if(!bShowChangeWin)
-	{
-	    ShowItemInfo();
-	}
-	
-	ShowGoodsInfo(iCurGoodsIdx);
-	GameInterface.qty_edit.str = iStoreQty;
-	BuyOrSell = 0;
-	ChangeQTY_EDIT();
-}
-
-void REMOVE_BUTTON()  // продать
-{
-	if(!bShowChangeWin) return;
-	
-	if(BuyOrSell == 0)
-	{
-		GameInterface.qty_edit.str = -1;
-	}
-	else
-	{
-		if(BuyOrSell == -1)
-		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) + 1);
-		}
-		else
-		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) - 1);
-		}
-		
-		BuyOrSell = 0;
-	}
-	
-	ChangeQTY_EDIT();
-}
-
-void ADD_BUTTON()  // купить
-{
-	if(!bShowChangeWin) return;
-	
-	if(BuyOrSell == 0)
-	{
-		GameInterface.qty_edit.str = 1;
-	}
-	else
-	{
-		if(BuyOrSell == 1)
-		{
-			GameInterface.qty_edit.str = (int(GameInterface.qty_edit.str) + 1);
-		}
-		else
-		{
-			GameInterface.qty_edit.str = -(int(GameInterface.qty_edit.str) - 1);
-		}
-		
-		BuyOrSell = 0;
-	}
-	
-	ChangeQTY_EDIT();
 }
 
 // Сколько ещё могет утащить указанного предмета, в штуках

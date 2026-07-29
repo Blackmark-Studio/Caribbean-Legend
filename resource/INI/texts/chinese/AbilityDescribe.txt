@@ -267,7 +267,7 @@ perkStormProfessional {风暴伤害降低30%。}
 perkStrychnine {攻击和射击有9%几率使目标中毒。可与护身符加成 叠加。}
 perkTannedLeather {轻甲防护提升50%, 快速回退时能量消耗减少30%。}
 perkThrift {使帆损伤对速度和机动性的影响降 低10%。}
-perkTiefit {普通和华丽物品的技能加成提高$number($perkBaseValue(Tiefit|1))点。}
+perkTiefit {来自$key(descriptor_Unremarkable|ItemsDescriptors.txt)和$key(descriptor_Fancy|ItemsDescriptors.txt)物品的技能加成提高$number($perkBaseValue(Tiefit|1))。}
 perkTireless {能量恢复速度提高$percent($perkBaseValue(Tireless|1))。}
 perkTradeConnections {价格列表在访问殖民地时会自动更 新。}
 perkTrainedEye {使用望远镜勘察时, 可大致估算船上贵重物品的数量。}

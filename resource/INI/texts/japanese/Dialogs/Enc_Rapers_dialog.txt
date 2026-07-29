@@ -40,10 +40,10 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {お前の金など、の財宝に比べれば何でもない $ctx(pirateName)? あいつはケチでな、自分の娘さえ嫁にやりたがらなかったんだ、余計な出費を避けたくてな……\nだが、俺たちの取り分はしっかり自分の箱にしまい込んでやがる！ $ctx(pirateName2) 白兵戦で敗北した $ctx(tempText)！それと、お前は代わりに何を持ってるんだ？ 「哀れな銀貨のひと握りだと？」 $ctx(pirateName2) いつも戦利品を全部自分の隠し場所に持っていきやがった。\nだが今度は俺たちは引き下がらねえ！奴の宝箱がどこにあるか教えろ！}
+Enc_Rapers_dialog_Node_9_text_1 {お前の金など、の財宝に比べれば何でもない $ctx(pirateName)? あいつはケチでな、自分の娘さえ嫁にやりたがらなかったんだ、余計な出費を避けたくてな……$br だが、俺たちの取り分はしっかり自分の箱にしまい込んでやがる！ $ctx(pirateName2) 白兵戦で敗北した $ctx(tempText)！それと、お前は代わりに何を持ってるんだ？ 「哀れな銀貨のひと握りだと？」 $ctx(pirateName2) いつも戦利品を全部自分の隠し場所に持っていきやがった。$br だが今度は俺たちは引き下がらねえ！奴の宝箱がどこにあるか教えろ！}
 Enc_Rapers_dialog_Node_9_l1_1 {まあ、俺はあんたの船長の宝を守るために雇われたわけじゃねえが、場所を教えることはできねえ……なぜなら、俺もどこにあるのか知らねえからだ。}
 Enc_Rapers_dialog_Node_10_text_1 {嘘をついてやがるな！！！この洞窟から金の匂いがぷんぷんするぜ！死にたくなけりゃ場所を教えろ！}
-Enc_Rapers_dialog_Node_10_l1_1 {私の言葉ではあなたを納得させられなかったようだな。\nならば、この剣で語るとしようか？}
+Enc_Rapers_dialog_Node_10_l1_1 {私の言葉ではあなたを納得させられなかったようだな。$br ならば、この剣で語るとしようか？}
 Enc_Rapers_dialog_Node_11_text_1 {You $manWoman(野良犬|汚物)「どけ、邪魔だ！」}
 Enc_Rapers_dialog_Node_11_l1_1 {「アルグ！」}
 Enc_Rapers_dialog_EncGirl_Berglar_text_1 {こんにちは、良い $manWoman(男|ご婦人)。お前について苦情が届いているぞ。}

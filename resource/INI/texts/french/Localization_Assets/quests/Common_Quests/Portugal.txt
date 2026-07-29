@@ -1,16 +1,16 @@
 Portugal_1 {Bartolomeo}
 Portugal_10 {Albatross}
-Portugal_11 {Bart the Portuguese has left your ship!}
+Portugal_11 {Bart le Portugais a quitté votre navire !}
 Portugal_12 {Ernando}
 Portugal_13 {Vaskez}
-Portugal_14 {One hour has passed...@<NewStr()>The Portuguese was carried into the house}
-Portugal_15 {Two hours passed...}
-Portugal_16 {You have discovered the treasures of Bart the Portuguese!}
+Portugal_14 {Une heure s’est écoulée...@<NewStr()>Le Portugais a été transporté dans la maison}
+Portugal_15 {Deux heures se sont écoulées...}
+Portugal_16 {Vous avez découvert les trésors de Bart le Portugais !}
 Portugal_2 {Portuguese}
 Portugal_3 {Piter}
 Portugal_4 {van Stahl}
 Portugal_5 {Leo}
 Portugal_6 {Cord}
-Portugal_7 {Two days later@<NewStr()>nemy's vessel was not seen}
+Portugal_7 {Deux jours plus tard@<NewStr()>Le navire ennemi n’a pas été aperçu}
 Portugal_8 {Frants}
 Portugal_9 {Garke}

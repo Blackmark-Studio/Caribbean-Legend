@@ -299,8 +299,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Guardoftruth", "43");
 			pchar.questTemp.Guardoftruth.Trinidad = "end";
-			pchar.quest.GuardOT_setSpaOfficer.win_condition.l1 = "ExitFromLocation";
-			pchar.quest.GuardOT_setSpaOfficer.win_condition.l1.location = pchar.location;
+			pchar.quest.GuardOT_setSpaOfficer.win_condition.l1 = "location";
+			pchar.quest.GuardOT_setSpaOfficer.win_condition.l1.location = "Santiago_town";
 			pchar.quest.GuardOT_setSpaOfficer.function = "GuardOT_SetSpaOfficerInTown";
 			NextDiag.CurrentNode = "guardoftruth_wait";
 		break;

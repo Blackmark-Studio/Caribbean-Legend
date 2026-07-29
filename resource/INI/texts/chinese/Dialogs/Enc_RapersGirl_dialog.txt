@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {哦不, 你在说什么? 我太了解这�
 Enc_RapersGirl_dialog_Node_201_l1_1 {那你父亲是做什么的?}
 Enc_RapersGirl_dialog_Node_202_text_1 {他曾经是一艘海盗船的船长。 最近他去世了...他们在葬礼上都很有礼貌, 但随着时间的推移, 他们忘记了他, 不久之后他们的荣誉和诚实也消失了。 幸好我注意到了他们。 一旦他们知道宝藏在哪里, 我就完了。}
 Enc_RapersGirl_dialog_Node_202_l1_1 {这是一个悲伤的故事。 那么, 你打算继续躲避他们吗?}
-Enc_RapersGirl_dialog_Node_203_text_1 {我不能把珠宝放在家里, 我没有人保护我。 所以当钱用完的时候, 我晚上就去山洞...\n请带我去山洞, 我会把你给他们的钱还给你...我想, 有你在, 海盗们不敢跟着我们。}
+Enc_RapersGirl_dialog_Node_203_text_1 {我不能把珠宝放在家里, 我没有人保护我。 所以当钱用完的时候, 我晚上就去山洞...$br 请带我去山洞, 我会把你给他们的钱还给你...我想, 有你在, 海盗们不敢跟着我们。}
 Enc_RapersGirl_dialog_Node_203_l1_1 {对不起, 亲爱的, 但我有不同的计划。 你可以下次再去收集你的宝藏。}
 Enc_RapersGirl_dialog_Node_203_l2_1 {好吧, 我们走, 如果你不怕我的话。}
 Enc_RapersGirl_dialog_Node_204_text_1 {你知道, 不知为什么, 我不...}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {那么你仍然想听我的故事吗?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {嗯...我想, 我该走了。 再见!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {好吧, 那就说吧。}
-Enc_RapersGirl_dialog_Node_228_text_2 {哦, 我高贵的救世主, 终于我可以用一个女人唯一能感谢的方式来充分感谢你了\n当我在丛林中看到你时, 我内心的一切都改变了。 我忘记了强奸犯和抽打我脸颊的锋利棕榈叶。 忘记了要跑去哪里, 为什么要跑...我只看到了你。 并且只想要你...在你为我所做的一切之后...}
+Enc_RapersGirl_dialog_Node_228_text_2 {哦, 我高贵的救世主, 终于我可以用一个女人唯一能感谢的方式来充分感谢你了$br 当我在丛林中看到你时, 我内心的一切都改变了。 我忘记了强奸犯和抽打我脸颊的锋利棕榈叶。 忘记了要跑去哪里, 为什么要跑...我只看到了你。 并且只想要你...在你为我所做的一切之后...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {哇! 这脾气! 你的追捕者肯定知道该追谁...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {听着, 美女, 我完全能理解, 但请控制一下你的脾气。}
 Enc_RapersGirl_dialog_Node_229_text_1 {现在到我这里来, 我的英雄...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {我以前从未听过这样的话! 我不
 Enc_RapersGirl_dialog_Node_231_l1_1 {好了, 走吧? 试着让自己精神点, 除非你想再被救一次...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {我的家人住在$ctx(valueText)的定居点。 我是偶然来到这里的, 在我新郎带我去见他父母的船上, 但船被海盗劫持了。 船被夺走了, 乘客们被安置在离这里不远的海湾。 我的新郎在登船时被杀了, 我在穿越丛林的途中病得很重\n当地妓院的夫人治疗了我, 当我站起来时, 她要求我工作来支付治疗费用。 我是个妓女, 但我没有让夫人满意, 所以夫人把我卖给了一些土匪, 至少赚了一些钱。 故事的另一部分你知道。}
+Enc_RapersGirl_dialog_Node_233_text_1 {我的家人住在$ctx(valueText)的定居点。 我是偶然来到这里的, 在我新郎带我去见他父母的船上, 但船被海盗劫持了。 船被夺走了, 乘客们被安置在离这里不远的海湾。 我的新郎在登船时被杀了, 我在穿越丛林的途中病得很重$br 当地妓院的夫人治疗了我, 当我站起来时, 她要求我工作来支付治疗费用。 我是个妓女, 但我没有让夫人满意, 所以夫人把我卖给了一些土匪, 至少赚了一些钱。 故事的另一部分你知道。}
 Enc_RapersGirl_dialog_Node_233_l1_1 {那就辞职回家! 你为什么允许他们像对待奴隶一样对待你? !}
 Enc_RapersGirl_dialog_Node_234_text_1 {我不能! 我所有的东西: 体面的衣服。 钱。 文件...都在妓院里我的旅行袋里。 我把它藏在约会室里了。 而当我穿着这样的衣服时, 港口所有的水手都会追着我跑。 没有文件或钱, 谁会让我上船? 现在我甚至不能在镇上露面, 否则会被关进监狱...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {应该不是问题。 我们走。 我亲自送你回家。}

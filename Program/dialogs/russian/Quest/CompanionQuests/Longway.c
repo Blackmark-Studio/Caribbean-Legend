@@ -4024,7 +4024,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Mayfang.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4150,7 +4150,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.SchoonerW.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4171,7 +4171,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Brig.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4192,7 +4192,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Corvette.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4213,7 +4213,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.Polacre.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4234,7 +4234,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Xebek.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4255,7 +4255,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Brigantine.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4292,7 +4292,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Mayfang.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4342,7 +4342,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.Torero.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}
@@ -4383,7 +4383,7 @@ void ProcessDialogEvent()
 							//sld = GetCharacter(int(pchar.questTemp.PZ.ElCasador.CompanionIndex));
 							SeaAI_SwapShipsAttributes(sld, CharacterFromID("PZ_ShipStasis"));
 							RemoveCharacterCompanion(PChar, sld);
-							AddPassenger(PChar, sld, false);
+							if (sld.id != "Longway") AddPassenger(PChar, sld, false);
 						}
 					}
 				}

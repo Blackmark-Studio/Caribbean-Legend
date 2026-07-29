@@ -173,7 +173,18 @@ void InitBattleInterface()
 	procLoadIntoNew(); // Проинитим таблицу активных перков
 	SetEventHandler("Control Activation","BI_ProcessControlPress",0);
 	BI_ShowExtInfo();
-	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_SHIP_STATES, bShowShipStates());
+	bool showShipStates = bShowShipStates();
+
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	aref flgagmanName = touchattr(BattleInterface.dynamic.texts.flagmanName);
+	flgagmanName.font = "interface_normal";
+	flgagmanName.scale = 1.4 * fHtRatio;
+	flgagmanName.color = argb(255,255,255,255);
+	flgagmanName.align = "center";
+	flgagmanName.text = pchar.ship.name$string("");
+	BI_ShowFlagmanName(showShipStates, fHtRatio);
+
+	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_SHIP_STATES, showShipStates);
 	CreateILogAndActions(LOG_FOR_SEA);
 	ControlsDesc();	
 	Log_SetActiveAction("Nothing");
@@ -1596,7 +1607,10 @@ ref GetCurrentCharge()
 		BattleInterface.textinfo.KnippelsKey.text = "";
 		BattleInterface.textinfo.BombsKey.text = "";
 	}
-	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_SHIP_STATES, bShowShipStates());
+	bool showShipStates = bShowShipStates();
+	float fHtRatio = float(Render.screen_y) / iHudScale;
+	BI_ShowFlagmanName(showShipStates, fHtRatio);
+	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_SHIP_STATES, showShipStates);
 	
 	if (int(pchar.ship.cargo.goods.balls) > 0) BattleInterface.textinfo.Balls.color = fColor;
 	else BattleInterface.textinfo.Balls.color = eColor;
@@ -2400,20 +2414,7 @@ void SetParameterData()
     fTmp2 = int(39.0 * fRes * fHtRatio);
     BattleInterface.ShipIcon.sailorfontoffset       = fTmp + "," + fTmp2;
 
-	BattleInterface.ShipIcon.shipnamefontidmc		= "interface_normal";
-	BattleInterface.ShipIcon.shipnamefontcolormc	= argb(255,255,255,255);
-	BattleInterface.ShipIcon.shipnamefontscalemc	= 1.4 * fHtRatio;
-	if (bShowExtInfo())
-	{
-		fTmp = int(180.0 * fHtRatio);
-		fTmp2 = int(-30.0 * fHtRatio);
-	}
-	else
-	{
-		fTmp = 0;
-		fTmp2 = int(60.0 * fHtRatio);
-	}
-    BattleInterface.ShipIcon.shipnamefontoffsetmc   = fTmp + "," + fTmp2;
+  BattleInterface.ShipIcon.shipnamefontoffsetmc   = -999 + "," + fTmp2; // заменили на динамическое в BI_ShowFlagmanName()
 
 	BattleInterface.ShipIcon.shipnamefontid			= "interface_normal";
 	BattleInterface.ShipIcon.shipnamefontcolor		= argb(255,255,255,255);
@@ -4350,6 +4351,21 @@ void BI_ShowExtInfo()
 	SendMessage(&BattleInterface,"ll",BI_MSG_SHOW_EXT_INFO, bShowExtInfo());
 	BI_SetFireModeArrows();
 	BI_SetCannonHealth();
+}
+
+void BI_ShowFlagmanName(bool fullMode, float fHtRatio)
+{
+	aref flgagmanName = touchattr(BattleInterface.dynamic.texts.flagmanName);
+	if (fullMode)
+	{
+		flgagmanName.pos.x = int(256 * fHtRatio);
+		flgagmanName.pos.y = int(46.0 * fHtRatio);
+	}
+	else
+	{
+		flgagmanName.pos.x = int(76* fHtRatio);
+		flgagmanName.pos.y = int(135.0 * fHtRatio);
+	}
 }
 
 void BI_SetCannonHealth()

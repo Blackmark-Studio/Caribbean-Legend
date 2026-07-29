@@ -271,7 +271,7 @@ perkStormProfessional {폭풍 피해 30% 감소.}
 perkStrychnine {공격과 사격 시 9% 확률로 대상에게 중독 효과를 부여합니다. 부적 보너스와 중첩됩니다.}
 perkTannedLeather {경갑은 방어력이 50% 증가하고 후퇴 시 에너지 소모가 30% 감소합니다.}
 perkThrift {돛 손상으로 인한 속도와 기동성 감소 효과가 10% 줄어듭니다.}
-perkTiefit {일상과 화려한 아이템의 기술 보너스가 $number($perkBaseValue(Tiefit|1)) 증가합니다.}
+perkTiefit {$key(descriptor_Unremarkable|ItemsDescriptors.txt) 및 $key(descriptor_Fancy|ItemsDescriptors.txt) 아이템의 기술 보너스가 $number($perkBaseValue(Tiefit|1)) 증가합니다.}
 perkTireless {에너지 회복 속도가 $percent($perkBaseValue(Tireless|1)) 증가합니다.}
 perkTradeConnections {식민지 방문 시 가격 목록이 자동으로 갱신됩니다.}
 perkTrainedEye {망원경으로 관측 시 선박의 귀중품 대략 추정 가능}

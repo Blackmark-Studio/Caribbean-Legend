@@ -1106,28 +1106,47 @@ void ShowItemInfo()
 	string sCaption = "";
 	string describeStr = "";
 
-	if (iCurGoodsIdx > 0)
-	{
-		ref arItm = &Items[iCurGoodsIdx];
-		currentItem = arItm;
+	if (iCurGoodsIdx < 1) return;
 
-		describeStr += GetItemDescr(iCurGoodsIdx);
-		AddRecipeKnownMarker(&Items[iCurGoodsIdx], &describeStr);
-		AddMapKnownMarker(&Items[iCurGoodsIdx], &describeStr);
-		SetNewGroupPicture("INFO_ITEMS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
-		sCaption = GetItemName(&Items[iCurGoodsIdx]);
-		SetFormatedText("INFO_CAPTION", sCaption);
-		SetFormatedText("INFO_ITEMS_TEXT", describeStr);
-		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_ITEMS_TEXT", 5 );
-		SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_CAPTION", 5 );
-		XI_WindowDisable("INFO_WINDOW", false);
-		XI_WindowShow("INFO_WINDOW", true);
-		validLineClicked = false;
-		FillUpDescriptors(arItm);
-		FillUpStats(arItm, &NullCharacter);
-		ChangeQTY_EDIT();
-		InterfaceInitButtons(refCharacter);
+	ref arItm = &Items[iCurGoodsIdx];
+	currentItem = arItm;
+
+	describeStr += GetItemDescr(iCurGoodsIdx);
+	AddRecipeKnownMarker(&Items[iCurGoodsIdx], &describeStr);
+	AddMapKnownMarker(&Items[iCurGoodsIdx], &describeStr);
+	SetNewGroupPicture("INFO_ITEMS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
+	sCaption = GetItemName(&Items[iCurGoodsIdx]);
+	SetFormatedText("INFO_CAPTION", sCaption);
+	SetFormatedText("INFO_ITEMS_TEXT", describeStr);
+
+	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_ITEMS_TEXT", 5 );
+	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_CAPTION", 5 );
+	XI_WindowDisable("INFO_WINDOW", false);
+	XI_WindowShow("INFO_WINDOW", true);
+	validLineClicked = false;
+	bool hasStats = FillUpStats(arItm, &NullCharacter) > 0;
+
+	// привязываемся к фиксированной координате из-за странной работы разрешений
+	int y1;
+	if ("INFO_ITEMS_TEXT_INIT_Y" !in &GameInterface)
+	{
+		GetNodePosition("INFO_ITEMS_TEXT",0,&y1,0,0);
+		GameInterface.INFO_ITEMS_TEXT_INIT_Y = y1;
 	}
+	else y1 = int(GameInterface.INFO_ITEMS_TEXT_INIT_Y);
+
+	bool scroller = GetNumberOfStringsInFormatedText("INFO_ITEMS_TEXT", describeStr) > (hasStats ? 5 : 8);
+	if (hasStats) SetNodePosition("INFO_ITEMS_TEXT", 758, y1, scroller ? 1151 : 1170, y1+127);
+	else SetNodePosition("INFO_ITEMS_TEXT", 758, y1, scroller ? 1151 : 1170, y1+200);
+	if (scroller) SetNodePosition("SCROLLER_INFO_TEXT", 1150, y1, 1175, y1 + (hasStats ? 120 : 200));
+
+	SetFormatedText("INFO_ITEMS_TEXT", describeStr);
+	SetNodeUsing("SCROLLER_INFO_TEXT", scroller);
+	SetSelectable("INFO_ITEMS_TEXT", scroller);
+
+	FillUpDescriptors(arItm);
+	ChangeQTY_EDIT();
+	InterfaceInitButtons(refCharacter);
 }
 
 void ShowInfoWindow()

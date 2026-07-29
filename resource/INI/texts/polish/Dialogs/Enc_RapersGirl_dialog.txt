@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {O nie, co ty mówisz? Znam tych łotrów 
 Enc_RapersGirl_dialog_Node_201_l1_1 {A co z twoim ojcem?}
 Enc_RapersGirl_dialog_Node_202_text_1 {Był kiedyś kapitanem pirackiego statku. Ostatnio zmarł... Wszyscy byli tak uprzejmi podczas pogrzebu, ale z czasem zapomnieli o nim, a niedługo potem o swojej honorowości i uczciwości. Dobrze, że ich zauważyłam. Jak tylko dowiedzą się, gdzie są skarby, jestem skończona.}
 Enc_RapersGirl_dialog_Node_202_l1_1 {To smutna historia. Więc, planujesz nadal się przed nimi ukrywać?}
-Enc_RapersGirl_dialog_Node_203_text_1 {Nie mogę trzymać klejnotów w domu, nie mam nikogo kto by mnie chronił. Więc idę w nocy do jaskini, kiedy kończą mi się pieniądze...\nZabierz mnie, proszę, do jaskini, a oddam ci pieniądze, które dałeś im... Myślę, że piraci nie zaryzykowaliby podążania za nami, kiedy ty jesteś ze mną.}
+Enc_RapersGirl_dialog_Node_203_text_1 {Nie mogę trzymać klejnotów w domu, nie mam nikogo kto by mnie chronił. Więc idę w nocy do jaskini, kiedy kończą mi się pieniądze...$br Zabierz mnie, proszę, do jaskini, a oddam ci pieniądze, które dałeś im... Myślę, że piraci nie zaryzykowaliby podążania za nami, kiedy ty jesteś ze mną.}
 Enc_RapersGirl_dialog_Node_203_l1_1 {Przykro mi, kochanie, ale mam inne plany. Zbierzesz swój skarb innym razem.}
 Enc_RapersGirl_dialog_Node_203_l2_1 {Dobrze, chodźmy, jeśli mnie się nie boisz.}
 Enc_RapersGirl_dialog_Node_204_text_1 {Wiesz, z jakiegoś powodu, ja nie...}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {Czy nadal chcesz wysłuchać mojej historii?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... Chyba, to czas dla mnie na wyjście. Do widzenia!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {No, wypluj to, potem.}
-Enc_RapersGirl_dialog_Node_228_text_2 {Och, mój szlachetny wybawco, wreszcie mogę Ci podziękować w sposób, jaki tylko kobieta może podziękować\nGdy zobaczyłam Cię w dżungli, wszystko we mnie się zmieniło. Zapomniałam o gwałcicielach i ostrych liściach palm, które chłostały moje policzki. Zapomniałam, dokąd biegłam, dlaczego uciekałam... Widziałam tylko Ciebie. I tylko Ciebie pragnęłam... A po tym, co dla mnie zrobiłeś...}
+Enc_RapersGirl_dialog_Node_228_text_2 {Och, mój szlachetny wybawco, wreszcie mogę Ci podziękować w sposób, jaki tylko kobieta może podziękować$br Gdy zobaczyłam Cię w dżungli, wszystko we mnie się zmieniło. Zapomniałam o gwałcicielach i ostrych liściach palm, które chłostały moje policzki. Zapomniałam, dokąd biegłam, dlaczego uciekałam... Widziałam tylko Ciebie. I tylko Ciebie pragnęłam... A po tym, co dla mnie zrobiłeś...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {O rety! Co za temperament! Twoi prześladowcy na pewno wiedzieli, kogo gonić...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {Słuchaj, piękności, doskonale to rozumiem, ale proszę, zachowaj swoje humory dla siebie.}
 Enc_RapersGirl_dialog_Node_229_text_1 {Przyjdź do mnie teraz, mój bohaterze...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {Nigdy wcześniej nie słyszałem takich s
 Enc_RapersGirl_dialog_Node_231_l1_1 {Idź już, dobrze? I spróbuj się odświeżyć, chyba że znowu chcesz być ratowana...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {Moja rodzina mieszka w osadzie $ctx(valueText). Trafiłam tutaj przypadkowo, na statku, na którym mój narzeczony zabierał mnie do swoich rodziców, ale został on zdobyty przez piratów. Statek został im odebrany, a pasażerowie zostali wylądowani w zatoce niedaleko stąd. Mój narzeczony został zabity podczas abordażu statku, a ja byłam poważnie chora podczas przejścia przez dżunglę\nPani z lokalnego domu publicznego mnie leczyła, a kiedy stanęłam na nogi, zażądała, żebym pracowała na pieniądze wydane na leczenie. Byłam prostytutką, ale nie podobałam się Madame, więc Pani sprzedała mnie bandytom, żeby zarobić przynajmniej trochę pieniędzy. Resztę historii znasz.}
+Enc_RapersGirl_dialog_Node_233_text_1 {Moja rodzina mieszka w osadzie $ctx(valueText). Trafiłam tutaj przypadkowo, na statku, na którym mój narzeczony zabierał mnie do swoich rodziców, ale został on zdobyty przez piratów. Statek został im odebrany, a pasażerowie zostali wylądowani w zatoce niedaleko stąd. Mój narzeczony został zabity podczas abordażu statku, a ja byłam poważnie chora podczas przejścia przez dżunglę$br Pani z lokalnego domu publicznego mnie leczyła, a kiedy stanęłam na nogi, zażądała, żebym pracowała na pieniądze wydane na leczenie. Byłam prostytutką, ale nie podobałam się Madame, więc Pani sprzedała mnie bandytom, żeby zarobić przynajmniej trochę pieniędzy. Resztę historii znasz.}
 Enc_RapersGirl_dialog_Node_233_l1_1 {Więc po prostu zrezygnuj i wróć do domu! Dlaczego pozwalasz im traktować cię jak niewolnika?!}
 Enc_RapersGirl_dialog_Node_234_text_1 {Nie mogę! Wszystko co mam: porządne ubrania, pieniądze, dokumenty... Wszystko jest w burdelu w mojej torbie podróżnej. Schowałem to w pokoju randkowym. A gdy jestem tak ubrana, wszyscy marynarze w porcie będą za mną biegać. A kto mnie weźmie na pokład bez dokumentów czy pieniędzy? A teraz nawet nie mogę pokazać twarzy w mieście, bo zostanę wrzucona za kratki...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {Nie powinno być problemu. Chodźmy. Osobiście cię odwiozę do domu.}

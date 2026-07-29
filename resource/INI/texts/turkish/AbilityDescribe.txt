@@ -271,7 +271,7 @@ perkStormProfessional {Fırtına hasarı %30 azalır.}
 perkStrychnine {Saldırı ve atışların %9 zehirleme şansı vardır. Muska bonuslarıyla birleşir.}
 perkTannedLeather {Hafif zırh %50 daha iyi koruma sağlar ve Geri çekilmede %30 daha az enerji harcar.}
 perkThrift {Yelken hasarının hız ve manevra kabiliyeti üzerindeki etkisini %10 azaltır.}
-perkTiefit {Sıradan ve süslü eşyalardan gelen yetenek bonusu $number($perkBaseValue(Tiefit|1)) artar.}
+perkTiefit {$key(descriptor_Unremarkable|ItemsDescriptors.txt) ve $key(descriptor_Fancy|ItemsDescriptors.txt) eşyalarının beceri bonusu $number($perkBaseValue(Tiefit|1)) artar.}
 perkTireless {Enerji yenilenme hızı $percent($perkBaseValue(Tireless|1)) artar.}
 perkTradeConnections {Fiyat listeleri bir koloniyi ziyaret ettiğinizde otomatik olarak güncellenir.}
 perkTrainedEye {Bir gemiyi dürbünle incelerken üzerindeki değerli eşyaları kabaca tahmin etmeni sağlar.}

@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {Senin paran buradaki hazinelerle nasıl kıyaslanabilir ki $ctx(pirateName)? O kadar açgözlüydü ki, sırf fazladan masraf olmasın diye kendi kızını bile evlendirmek istemedi...\nAma bizim payımızı sandıklarında kilitli tutuyor! $ctx(pirateName2) güverte savaşında kaybetti $ctx(tempText)! Ayrıca, senin elinde ne var peki? Bir avuç zavallı gümüş mü? $ctx(pirateName2) ganimetin hepsini kendi sakladığı yere götürürdü. Ama artık pes etmeyeceğiz! Sandıklarının nerede olduğunu göster bize!}
+Enc_Rapers_dialog_Node_9_text_1 {Senin paran buradaki hazinelerle nasıl kıyaslanabilir ki $ctx(pirateName)? O kadar açgözlüydü ki, sırf fazladan masraf olmasın diye kendi kızını bile evlendirmek istemedi...$br Ama bizim payımızı sandıklarında kilitli tutuyor! $ctx(pirateName2) güverte savaşında kaybetti $ctx(tempText)! Ayrıca, senin elinde ne var peki? Bir avuç zavallı gümüş mü? $ctx(pirateName2) ganimetin hepsini kendi sakladığı yere götürürdü. Ama artık pes etmeyeceğiz! Sandıklarının nerede olduğunu göster bize!}
 Enc_Rapers_dialog_Node_9_l1_1 {Doğrusu, kaptanınızın hazinesini korumak için burada değilim, ama yeri sana gösteremem... Çünkü nerede olduğunu bilmiyorum.}
 Enc_Rapers_dialog_Node_10_text_1 {Yalan söylüyorsun!!! Bu mağaradan altının kokusunu alabiliyorum! Ölmek istemiyorsan bana yeri göster!}
 Enc_Rapers_dialog_Node_10_l1_1 {Sözlerimin seni ikna edemediğini görüyorum. Belki kılıcım daha etkili olur?}

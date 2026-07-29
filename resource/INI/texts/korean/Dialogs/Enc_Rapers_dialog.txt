@@ -14,7 +14,7 @@ Enc_Rapers_dialog_First_time_l1_5 {신경 안 써 - 그녀를 해치게 두지 �
 Enc_Rapers_dialog_First_time_l2_4 {$rand(아, 그렇군! 나 그 여자 말을 거의 믿을 뻔했잖아! 저런 계집이라니...|아, 그렇다면 또 다른 이야기군. 자, 신나게 놀아라, 이 녀석들아!)}
 Enc_Rapers_dialog_Node_Fight_text_1 {$rand($manWoman(그래, 산책하기엔 정말 딱 좋은 때를 골랐군...|그래서, 영웅이 되기로 한 거야?) 그놈을 처리해$manWoman(im|er), 얘들아!|You $manWoman(점액|오물)! 우리 길을 막으려 들어?! 베어버려라$manWoman(임|er)!)}
 Enc_Rapers_dialog_Node_Fight_l1_1 {나는 더 위협적인 사람들도 봤어!}
-Enc_Rapers_dialog_Node_3_text_1 {그녀 때문에 우리 꽤나 돈 썼다는 걸 알아둬! 그렇게 고귀하다면, 네가 그녀를 데려가도 돼\n $ctx(price) 페소입니다.$manWoman( 그 여자랑 재미있게 놀 거야, 헤헤...|)}
+Enc_Rapers_dialog_Node_3_text_1 {그녀 때문에 우리 꽤나 돈 썼다는 걸 알아둬! 그렇게 고귀하다면, 네가 그녀를 데려가도 돼$br  $ctx(price) 페소입니다.$manWoman( 그 여자랑 재미있게 놀 거야, 헤헤...|)}
 Enc_Rapers_dialog_Node_3_l1_1 {$rand(여기 돈이다. 나는 그녀를 데려가겠다.|이 악물지 마라. 그 아가씨는 내가 데려간다. 여기 네 돈이다.)}
 Enc_Rapers_dialog_Node_3_l2_1 {$rand(그래, 돈이 필요한 거냐? 아니면 차가운 칼날이 더 좋겠어?|그게 웃기다는 거냐, 이 바보야, 저 여자애 좀 봐! 겁먹었잖아!|누구를 속이려는 거냐, 이 타락한 놈아!)}
 Enc_Rapers_dialog_Node_5_text_1 {애초에 왜 그녀 말을 믿는 거지? 무슨 폭력? 걔가 집에서 도망친 거고, 우리는 우리 두목이 시켜서 걔를 찾으러 온 거야.}
@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {네 돈이 무슨 대수냐, 그 보물에 비하면 $ctx(pirateName)? 그자는 너무 욕심이 많아서 자기 딸을 시집보내는 것조차 추가 지출이 싫어서 꺼렸지...\n그런데 우리 몫은 자기 금고에 꼭꼭 숨겨두고 있단 말이야! $ctx(pirateName2) 승선 전투에서 패배함 $ctx(tempText)! 그리고 대신 뭘 가지고 있지? 한심한 은화 몇 닢이냐? $ctx(pirateName2) 항상 전리품을 전부 자기 은닉처로 가져갔지. 하지만 이제는 포기하지 않을 거야! 그의 상자가 어디 있는지 보여 줘!}
+Enc_Rapers_dialog_Node_9_text_1 {네 돈이 무슨 대수냐, 그 보물에 비하면 $ctx(pirateName)? 그자는 너무 욕심이 많아서 자기 딸을 시집보내는 것조차 추가 지출이 싫어서 꺼렸지...$br 그런데 우리 몫은 자기 금고에 꼭꼭 숨겨두고 있단 말이야! $ctx(pirateName2) 승선 전투에서 패배함 $ctx(tempText)! 그리고 대신 뭘 가지고 있지? 한심한 은화 몇 닢이냐? $ctx(pirateName2) 항상 전리품을 전부 자기 은닉처로 가져갔지. 하지만 이제는 포기하지 않을 거야! 그의 상자가 어디 있는지 보여 줘!}
 Enc_Rapers_dialog_Node_9_l1_1 {음, 난 분명히 네 선장의 보물을 지키려고 온 건 아니지만, 그 장소를 보여줄 수는 없어... 왜냐하면 나도 어디 있는지 모르거든.}
 Enc_Rapers_dialog_Node_10_text_1 {거짓말하지 마!!! 이 동굴에서 금 냄새가 나는 걸 내가 맡았어! 죽기 싫으면 어서 그곳을 보여 줘!}
 Enc_Rapers_dialog_Node_10_l1_1 {내 말로는 설득이 안 되는 모양이군. 내 칼이 더 설득력 있을지도 모르지?}
@@ -48,7 +48,7 @@ Enc_Rapers_dialog_Node_11_text_1 {You $manWoman(똥개|오물)! 비켜!}
 Enc_Rapers_dialog_Node_11_l1_1 {아르그!}
 Enc_Rapers_dialog_EncGirl_Berglar_text_1 {안녕, 좋아 $manWoman(남자|아가씨). 당신에 대한 불만이 접수되었습니다.}
 Enc_Rapers_dialog_EncGirl_Berglar_l1_1 {누가 불평한다고? 그 창녀가?}
-Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {입 조심해, 알겠어? 내 여동생을 모욕하는 건 절대 용납 못 해! 처음엔 정글에서 그녀를 공격하더니, 이제 여기까지 데려왔잖아\n $manWoman(더한 추태를 위해\n|그리고 나를 털어갔어).}
+Enc_Rapers_dialog_EncGirl_Berglar1_text_1 {입 조심해, 알겠어? 내 여동생을 모욕하는 건 절대 용납 못 해! 처음엔 정글에서 그녀를 공격하더니, 이제 여기까지 데려왔잖아$br  $manWoman(더한 추태를 위해$br |그리고 나를 털어갔어).}
 Enc_Rapers_dialog_EncGirl_Berglar1_l1_1 {이봐, 친구, 내가 그 얘기 전부 다 들어야 해?}
 Enc_Rapers_dialog_EncGirl_Berglar2_text_1 {아니. 단지 소박한 금액인 $ctx(moneyAmount) 페소만 있으면 모든 곤란에서 벗어날 수 있지.}
 Enc_Rapers_dialog_EncGirl_Berglar2_l1_1 {음, 고귀한 행동이 요즘은 좀 값이 나가긴 하지. 좋아, 가져가라...}
@@ -62,8 +62,8 @@ Enc_Rapers_dialog_EncGirl_Berglar3_1_text_1 {물론 안 하지, 물론이지... 
 Enc_Rapers_dialog_EncGirl_Berglar3_1_l1_1 {$manWoman(그건 확실하지!..|꺼져 버려라!)}
 Enc_Rapers_dialog_EncGirl_Berglar4_text_1 {너는 ~처럼 보여 $manWoman(그렇게 고귀한 분|이렇게 교양 있는 숙녀), 왜 그렇게 입이 험해?}
 Enc_Rapers_dialog_EncGirl_Berglar4_l1_1 {그게 나한테 제일 잘 맞지...}
-Enc_Rapers_dialog_Node_2_text_1 {자, 네가 원한 거잖아! 간질여 줄까\n$manWoman(임|er) 칼로 할래, 얘들아?}
+Enc_Rapers_dialog_Node_2_text_1 {자, 네가 원한 거잖아! 간질여 줄까$br $manWoman(임|er) 칼로 할래, 얘들아?}
 Enc_Rapers_dialog_Node_2_l1_1 {죽기 전에 기도나 해라!}
-Enc_Rapers_dialog_OnceAgain_text_1 {그래서, 합류할 거야, 말 거야? $manWoman(꺼져, 우리 모두 먹을 만큼 충분하지 않아|꺼져라, 우리한텐 아가씨 한 명이면 충분하니까\n)!}
+Enc_Rapers_dialog_OnceAgain_text_1 {그래서, 합류할 거야, 말 거야? $manWoman(꺼져, 우리 모두 먹을 만큼 충분하지 않아|꺼져라, 우리한텐 아가씨 한 명이면 충분하니까$br )!}
 Enc_Rapers_dialog_OnceAgain_l1_1 {그렇다면 더 이상 방해하지 않겠소.}
 Enc_Rapers_dialog_OnceAgain_l2_1 {나는 어떤 폭력도 용납하지 않겠다!}

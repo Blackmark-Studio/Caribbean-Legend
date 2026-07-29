@@ -2,7 +2,7 @@ Hunter_dialog_First_time_text_1 {$fullName! 우리는 꽤 오랫동안 너를 �
 Hunter_dialog_First_time_l1_1 {너 누구야, 그리고 나한테 뭘 원하는 거지?}
 Hunter_dialog_meeting_text_1 {$ctx(valueText) 네 머리에 꽤 괜찮은 현상금이 걸렸으니, 너를 그들의 식민지 아무 데나 넘기기만 하면 살아 있든 죽어 있든 우리는 돈을 받게 된다.}
 Hunter_dialog_meeting_l1_1 {이봐, 나 좀 내버려두면 돈을 줄게.}
-Hunter_dialog_meeting_l2_1 {$manWoman(실례지만, 뭔가 착각하신 것 같군요. 나는 $ctx(personName) - 이 땅에서 잘 알려진 상인이오.|실례지만, 착각하신 것 같아요. 저는 그냥 평범한 소녀일 뿐이고, 제 아버지는\n $ctx(personName) - 이 땅에서 잘 알려진 상인이오.).}
+Hunter_dialog_meeting_l2_1 {$manWoman(실례지만, 뭔가 착각하신 것 같군요. 나는 $ctx(personName) - 이 땅에서 잘 알려진 상인이오.|실례지만, 착각하신 것 같아요. 저는 그냥 평범한 소녀일 뿐이고, 제 아버지는$br  $ctx(personName) - 이 땅에서 잘 알려진 상인이오.).}
 Hunter_dialog_meeting_l3_1 {좋아, 원한다면 운을 시험해 봐라.}
 Hunter_dialog_lier_text_1 {오! 우리가 정말로 착각했을 수도 있겠군. 부디, 용서해 주시오, $sir.}
 Hunter_dialog_lier_l1_1 {그럴 수도 있지, 신경 쓰지 마...}
@@ -17,7 +17,7 @@ Hunter_dialog_NoMoney_text_1 {그렇다면, 우리의 대화는 끝이오!}
 Hunter_dialog_NoMoney_l1_1 {넌 날 절대 산 채로 잡지 못할 거다.}
 Hunter_dialog_TreasureHunter_text_1 {잠깐만, $manWoman(동료|아가씨)... 네가 뭔가 흥미로운 걸 가지고 있는 것 같은데. 친구라면 서로 발견한 보물을 나눠야 하지 않겠어?}
 Hunter_dialog_TreasureHunter_l1_1 {이봐, 날 그냥 두면 돈을 줄게.}
-Hunter_dialog_TreasureHunter_l2_1 {$manWoman(실례합니다만, 착각하신 것 같군요. 저는 $ctx(personName) - 이 땅에서 유명한 시민이지만, 보물 사냥꾼은 아니지.|실례지만, 착각하신 것 같아요. 저는 그냥 평범한 소녀일 뿐이고, 보물 사냥꾼이 아니에요. 그리고 제 아버지는\n $ctx(personName) - 이 일대에서 잘 알려진 시민)!}
+Hunter_dialog_TreasureHunter_l2_1 {$manWoman(실례합니다만, 착각하신 것 같군요. 저는 $ctx(personName) - 이 땅에서 유명한 시민이지만, 보물 사냥꾼은 아니지.|실례지만, 착각하신 것 같아요. 저는 그냥 평범한 소녀일 뿐이고, 보물 사냥꾼이 아니에요. 그리고 제 아버지는$br  $ctx(personName) - 이 일대에서 잘 알려진 시민)!}
 Hunter_dialog_TreasureHunter_l3_1 {이제 네 놈들 목이 몸에서 떨어질 시간이 된 것 같군.}
 Hunter_dialog_TreasureHunterLier_text_1 {오! 그럼 정말 우리가 착각한 것일지도 모르겠군. 부디 용서해 주시오, $sir.}
 Hunter_dialog_TreasureHunterLier_l1_1 {그럴 수도 있지, 신경 쓰지 마...}

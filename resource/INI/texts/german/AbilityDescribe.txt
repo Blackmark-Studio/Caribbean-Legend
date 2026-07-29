@@ -271,7 +271,7 @@ perkStormProfessional {Sturmschaden um 30 % verringert.}
 perkStrychnine {Schläge und Schüsse haben eine 9% Chance, das Ziel zu vergiften. Stapelt sich mit Amulett-Boni.}
 perkTannedLeather {Leichte Rüstung schützt 50 % besser und verbraucht 30 % weniger Energie beim Rückstoß.}
 perkThrift {Verringert den Einfluss von Segelschäden auf Geschwindigkeit und Manövrierbarkeit um 10 %.}
-perkTiefit {Der Fertigkeitsbonus von Alltäglich- und Schmuck-Gegenständen ist um $number($perkBaseValue(Tiefit|1)) erhöht.}
+perkTiefit {Der Fertigkeitsbonus von Gegenständen mit den Eigenschaften $key(descriptor_Unremarkable|ItemsDescriptors.txt) und $key(descriptor_Fancy|ItemsDescriptors.txt) wird um $number($perkBaseValue(Tiefit|1)) erhöht.}
 perkTireless {Energieerholungsgeschwindigkeit steigt um $percent($perkBaseValue(Tireless|1)) .}
 perkTradeConnections {Preislisten werden beim Besuch einer Kolonie automatisch aktualisiert.}
 perkTrainedEye {Ermöglicht eine grobe Schätzung der Wertgegenstände auf einem Schiff beim Beobachten mit dem Fernrohr.}

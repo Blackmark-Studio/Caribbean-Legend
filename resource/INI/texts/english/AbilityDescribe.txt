@@ -271,7 +271,7 @@ perkStormProfessional {Storm damage decreased by 30%.}
 perkStrychnine {Strikes and shots have a 9% chance to poison the target. Stacks with Amulet bonuses.}
 perkTannedLeather {Light armor protects 50% better and spends 30% less energy on Snapping Back.}
 perkThrift {Reduces the impact of sail damage on speed and maneuverability by 10%.}
-perkTiefit {The skill bonus from Mundane and Fancy items is increased by $number($perkBaseValue(Tiefit|1)).}
+perkTiefit {The skill bonus from $key(descriptor_Unremarkable|ItemsDescriptors.txt) and $key(descriptor_Fancy|ItemsDescriptors.txt) items is increased by $number($perkBaseValue(Tiefit|1)).}
 perkTireless {Energy recovery speed increases by $percent($perkBaseValue(Tireless|1)).}
 perkTradeConnections {Price lists are automatically updated when visiting a colony.}
 perkTrainedEye {Allows you to roughly estimate the amount of valuables on a ship when surveying it with a spyglass.}

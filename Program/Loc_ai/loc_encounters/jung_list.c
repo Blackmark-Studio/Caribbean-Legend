@@ -7,7 +7,7 @@ void JungleEncGenerate_None(ref loc, string sAreal, string sCity, int iNation, a
 bool JungleEncCheck_Bitch(ref loc, aref grp)
 {
     if ("GenQuest.EncGirl" in PChar)
-        return false;		
+        return false;
     if ("questTemp.Sharlie.DefendSP" in PChar)
         return false;
     if ("locators.reload.reloadW_back" in loc)

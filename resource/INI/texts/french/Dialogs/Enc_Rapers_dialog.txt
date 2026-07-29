@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {Qu'est-ce que votre argent comparé aux trésors de $ctx(pirateName)? Il était si avare qu'il ne voulait pas marier sa propre fille parce qu'il voulait éviter des dépenses supplémentaires...\nMais il a notre part dans ses coffres ! $ctx(pirateName2) a perdu lors de l'abordage $ctx(tempText)! Alors qu'avez-vous à la place ? Pitoyable poignée d'argent ? $ctx(pirateName2) a toujours pris tout le butin pour sa cachette. Mais maintenant, nous ne renoncerons pas! Montrez-nous où sont ses coffres!}
+Enc_Rapers_dialog_Node_9_text_1 {Qu'est-ce que votre argent comparé aux trésors de $ctx(pirateName)? Il était si avare qu'il ne voulait pas marier sa propre fille parce qu'il voulait éviter des dépenses supplémentaires...$br Mais il a notre part dans ses coffres ! $ctx(pirateName2) a perdu lors de l'abordage $ctx(tempText)! Alors qu'avez-vous à la place ? Pitoyable poignée d'argent ? $ctx(pirateName2) a toujours pris tout le butin pour sa cachette. Mais maintenant, nous ne renoncerons pas! Montrez-nous où sont ses coffres!}
 Enc_Rapers_dialog_Node_9_l1_1 {Eh bien, je n'ai certainement pas postulé pour garder les trésors de votre capitaine, mais je ne peux pas vous montrer l'endroit... Parce que je ne sais pas où se trouve cet endroit.}
 Enc_Rapers_dialog_Node_10_text_1 {Tu mens!!! Je peux sentir l'odeur de l'or qui sort de cette grotte! Montre-moi l'endroit si tu ne veux pas mourir!}
 Enc_Rapers_dialog_Node_10_l1_1 {Je vois que mes mots n'ont pas réussi à vous convaincre. Peut-être, mon épée sera plus expressive ?}

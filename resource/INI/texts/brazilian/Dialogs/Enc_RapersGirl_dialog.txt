@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {Ah não, o que você está dizendo? Eu co
 Enc_RapersGirl_dialog_Node_201_l1_1 {E o que tem o seu pai?}
 Enc_RapersGirl_dialog_Node_202_text_1 {Ele já foi capitão de um navio pirata. Morreu há pouco tempo... Todos foram tão respeitosos no enterro, mas com o tempo, esqueceram dele, e logo depois, também perderam a honra e a honestidade. Ainda bem que percebi isso. Assim que descobrirem onde está o tesouro, estou perdido.}
 Enc_RapersGirl_dialog_Node_202_l1_1 {Que história triste. Então, você pretende continuar se escondendo deles?}
-Enc_RapersGirl_dialog_Node_203_text_1 {Não posso guardar joias em casa, não tenho ninguém para me proteger. Então, quando fico sem dinheiro, vou à noite até a caverna...\nMe leve, por favor, até a caverna, e eu te devolvo o dinheiro que você deu para eles... Acho que os piratas não teriam coragem de nos seguir enquanto você estiver comigo.}
+Enc_RapersGirl_dialog_Node_203_text_1 {Não posso guardar joias em casa, não tenho ninguém para me proteger. Então, quando fico sem dinheiro, vou à noite até a caverna...$br Me leve, por favor, até a caverna, e eu te devolvo o dinheiro que você deu para eles... Acho que os piratas não teriam coragem de nos seguir enquanto você estiver comigo.}
 Enc_RapersGirl_dialog_Node_203_l1_1 {Desculpe, querido, mas tenho outros planos. Você vai buscar seu tesouro outra hora.}
 Enc_RapersGirl_dialog_Node_203_l2_1 {Certo, vamos lá, se você não tem medo de mim.}
 Enc_RapersGirl_dialog_Node_204_text_1 {Sabe, por algum motivo, eu não estou...}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {Então, ainda quer ouvir minha história?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... Acho que está na hora de eu ir. Adeus!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {Então, desembucha logo.}
-Enc_RapersGirl_dialog_Node_228_text_2 {Oh, meu nobre salvador, finalmente posso te agradecer da única forma que uma mulher pode\nQuando te vi na selva, tudo mudou dentro de mim. Esqueci dos estupradores e das folhas de palmeira afiadas que cortavam meu rosto. Esqueci para onde correr, por que correr ... Eu só via você. E só queria você ... E depois do que você fez por mim...}
+Enc_RapersGirl_dialog_Node_228_text_2 {Oh, meu nobre salvador, finalmente posso te agradecer da única forma que uma mulher pode$br Quando te vi na selva, tudo mudou dentro de mim. Esqueci dos estupradores e das folhas de palmeira afiadas que cortavam meu rosto. Esqueci para onde correr, por que correr ... Eu só via você. E só queria você ... E depois do que você fez por mim...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {Vixe Maria! Que gênio forte! Seus perseguidores com certeza sabiam muito bem quem estavam caçando...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {Escute, bela, eu entendo perfeitamente, mas por favor, guarde seu mau humor para você.}
 Enc_RapersGirl_dialog_Node_229_text_1 {Venha até mim agora, meu herói...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {Eu nunca ouvi tais palavras de ninguém a
 Enc_RapersGirl_dialog_Node_231_l1_1 {Vai logo, tá bom? E tenta se recompor, a menos que queira ser resgatado de novo...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {Minha família vive no povoado de $ctx(valueText). Acabei vindo parar aqui por acaso, no navio em que meu noivo me levava para conhecer os pais dele, mas fomos capturados por piratas. O navio foi tomado e os passageiros deixados numa baía não muito longe daqui. Meu noivo foi morto durante o ataque, e eu adoeci gravemente atravessando a selva\nA dona do bordel local cuidou de mim até eu melhorar, mas quando consegui ficar de pé, ela exigiu que eu trabalhasse para pagar o dinheiro gasto no meu tratamento. Virei prostituta, mas não agradava a dona, então ela me vendeu para uns bandidos para recuperar pelo menos parte do dinheiro dela. O resto da história você já sabe.}
+Enc_RapersGirl_dialog_Node_233_text_1 {Minha família vive no povoado de $ctx(valueText). Acabei vindo parar aqui por acaso, no navio em que meu noivo me levava para conhecer os pais dele, mas fomos capturados por piratas. O navio foi tomado e os passageiros deixados numa baía não muito longe daqui. Meu noivo foi morto durante o ataque, e eu adoeci gravemente atravessando a selva$br A dona do bordel local cuidou de mim até eu melhorar, mas quando consegui ficar de pé, ela exigiu que eu trabalhasse para pagar o dinheiro gasto no meu tratamento. Virei prostituta, mas não agradava a dona, então ela me vendeu para uns bandidos para recuperar pelo menos parte do dinheiro dela. O resto da história você já sabe.}
 Enc_RapersGirl_dialog_Node_233_l1_1 {Então simplesmente desista e vá pra casa! Por que você deixa eles te tratarem como um escravo?!}
 Enc_RapersGirl_dialog_Node_234_text_1 {Eu não posso! Todas as minhas coisas: roupas decentes, dinheiro, documentos... Está tudo no bordel, na minha bolsa de viagem. Eu escondi ela no quarto de encontros. E vestida assim, todo marinheiro do porto vai vir atrás de mim. E quem vai me aceitar a bordo sem documentos ou dinheiro? Agora nem posso aparecer na cidade, senão vou acabar atrás das grades...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {Não deve ser um problema. Vamos lá. Eu mesmo vou te levar para casa.}

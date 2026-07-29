@@ -131,7 +131,7 @@ Enc_RapersGirl_dialog_Node_201_text_1 {Oh no, what are you saying? I know these 
 Enc_RapersGirl_dialog_Node_201_l1_1 {And what's the deal with your father?}
 Enc_RapersGirl_dialog_Node_202_text_1 {He used to be the captain of a pirate ship. Recently he died... They were all so courteous during the burial, but as time passed, they forgot him, and soon after, their honour and honesty as well. It's good that I noticed them. As soon as they learn where the treasure is, I am done for.}
 Enc_RapersGirl_dialog_Node_202_l1_1 {That's a sad story. So, are you planning to keep hiding from them?}
-Enc_RapersGirl_dialog_Node_203_text_1 {I cannot keep jewels at home, I have no one to protect me. So I go at night to the cave, when money runs out...\nTake me, please, to the cave, and I'll give you the money you've given to them... I think the pirates would not risk following us while you're with me.}
+Enc_RapersGirl_dialog_Node_203_text_1 {I cannot keep jewels at home, I have no one to protect me. So I go at night to the cave, when money runs out...$br Take me, please, to the cave, and I'll give you the money you've given to them... I think the pirates would not risk following us while you're with me.}
 Enc_RapersGirl_dialog_Node_203_l1_1 {Sorry, darling, but I have other plans. You'll collect your treasure some other time.}
 Enc_RapersGirl_dialog_Node_203_l2_1 {Alright, let's go, if you're not afraid of me.}
 Enc_RapersGirl_dialog_Node_204_text_1 {You know, for some reason, I am not...}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {So, do you still want to hear my story?}
 Enc_RapersGirl_dialog_Node_228_l1_1 {Hmm... I suppose it's time for me to go. Goodbye!}
 Enc_RapersGirl_dialog_Node_228_l2_1 {Well, spit it out, then.}
-Enc_RapersGirl_dialog_Node_228_text_2 {Oh, my noble saviour, at last I can thank you in the only way a woman can\nWhen I saw you in the jungle, everything changed inside me. I forgot about the rapists and the sharp palm leaves that whipped my cheeks. Forgot where to run, why to run ... I saw only you. And I wanted only you ... And after what you've done for me...}
+Enc_RapersGirl_dialog_Node_228_text_2 {Oh, my noble saviour, at last I can thank you in the only way a woman can$br When I saw you in the jungle, everything changed inside me. I forgot about the rapists and the sharp palm leaves that whipped my cheeks. Forgot where to run, why to run ... I saw only you. And I wanted only you ... And after what you've done for me...}
 Enc_RapersGirl_dialog_Node_228_l1_2 {Shiver me timbers! What a temper! Your pursuers surely knew whom to chase...}
 Enc_RapersGirl_dialog_Node_228_l2_2 {Listen, beauty, I can perfectly understand it, but please, keep your temper to yourself.}
 Enc_RapersGirl_dialog_Node_229_text_1 {Come to me now, my hero...}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {I've never heard such words from anyone b
 Enc_RapersGirl_dialog_Node_231_l1_1 {Go on already, alright? And try to freshen yourself up, unless you want to be rescued again...}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {My family lives in the settlement of $ctx(valueText). I ended up here by chance, on the ship my fiancé was taking me on to meet his parents, but it was captured by pirates. The ship was taken, and the passengers were put ashore at a bay not far from here. My fiancé was killed during the boarding, and I fell seriously ill while crossing the jungle\nThe madam of the local brothel nursed me back to health, but when I was able to stand, she demanded I work off the money spent on my treatment. I became a whore, but I didn't please the madam, so she sold me to some bandits to recover at least some of her money. The rest of the story you know.}
+Enc_RapersGirl_dialog_Node_233_text_1 {My family lives in the settlement of $ctx(valueText). I ended up here by chance, on the ship my fiancé was taking me on to meet his parents, but it was captured by pirates. The ship was taken, and the passengers were put ashore at a bay not far from here. My fiancé was killed during the boarding, and I fell seriously ill while crossing the jungle$br The madam of the local brothel nursed me back to health, but when I was able to stand, she demanded I work off the money spent on my treatment. I became a whore, but I didn't please the madam, so she sold me to some bandits to recover at least some of her money. The rest of the story you know.}
 Enc_RapersGirl_dialog_Node_233_l1_1 {So just quit and go home! Why are you letting them treat you like a slave?!}
 Enc_RapersGirl_dialog_Node_234_text_1 {I can't! All of my belongings: decent clothing, money, documents... They're all in the brothel, in my travelling bag. I've hidden it in the dating room. And while I'm dressed like this, every sailor in the port will be chasing after me. And who will take me on board without documents or money? And now I can't even show my face in town, or I'll be thrown behind bars...}
 Enc_RapersGirl_dialog_Node_234_l1_1 {Shouldn't be a problem. Let's go. I'll take you home myself.}

@@ -27,7 +27,7 @@ Enc_RapersGirl_dialog_ThanksForHelp_l1_5 {それは驚きだぜ！で、どう�
 Enc_RapersGirl_dialog_Node_11_text_1 {少しばかりですがお金があります。どうか感謝の印として受け取ってください。これから皆に伝えます。 $manWoman(なんて立派で高貴な方なんでしょう|なんて立派で気高い女性なんだ).}
 Enc_RapersGirl_dialog_Node_11_l1_1 {もちろんだろう。ありがとう……さあ、もう帰りな。}
 Enc_RapersGirl_dialog_Node_12_text_1 {まだ気持ちが落ち着かないんだ。どうか持ってきてくれないか $manWoman(貴婦人|俺) 「入植地」へ $ctx(valueText)？なあ、今じゃ茂みの陰にはどこにでも強姦魔が隠れてるような気がしてきたぜ。}
-Enc_RapersGirl_dialog_Node_12_l1_1 {$rand(そんなに心配するなって、本当に……よし、行こうぜ。|お前は本当に臆病者だな、そうじゃねえか？\nよし、俺がそこまで連れてってやるよ。)}
+Enc_RapersGirl_dialog_Node_12_l1_1 {$rand(そんなに心配するなって、本当に……よし、行こうぜ。|お前は本当に臆病者だな、そうじゃねえか？$br よし、俺がそこまで連れてってやるよ。)}
 Enc_RapersGirl_dialog_Node_12_l2_1 {ごめんなさいね、あなた。でも、どうしても時間がないの。とても忙しいのよ。}
 Enc_RapersGirl_dialog_Node_22_text_1 {奴らを脅して追い払ってくれるだけだと思ってたのに！今すぐ私をその居住地の酒場まで連れて行きなさい $ctx(valueText)、他に頼れるのはあなただけなんだ。}
 Enc_RapersGirl_dialog_Node_22_l1_1 {「くそっ！よし、行くぞ。ただし、遅れるんじゃねえぞ。」}
@@ -49,7 +49,7 @@ Enc_RapersGirl_dialog_Node_3Final_text_1 {$rand(気が変わったのか？|船�
 Enc_RapersGirl_dialog_Node_3Final_l1_1 {$rand(いやいや、あたしは遠慮しておくわ。|…無駄な期待はするな…)}
 Enc_RapersGirl_dialog_Node_13_text_1 {きっと笑われるかもしれませんが……実は恋の媚薬の材料を集めていたんです……。ある魔女が、心の悩みに効く根っこがあると教えてくれたんです。}
 Enc_RapersGirl_dialog_Node_13_l1_1 {なんてこった！何が $manWoman(この女たちは何を考えているんだ|考えていたのか)！？どうやら、かなり集めたようだな。お前を追いかける求婚者が大勢いて、全部追い払うのは大変だったぜ。ハハハハ……じゃあな。}
-Enc_RapersGirl_dialog_Node_13_text_2 {ちょっと散歩に出て薬草を集めたり、新鮮な空気を吸ったりしていただけなんだ。\nどうやら、散歩には最悪のタイミングだったみたいだな。}
+Enc_RapersGirl_dialog_Node_13_text_2 {ちょっと散歩に出て薬草を集めたり、新鮮な空気を吸ったりしていただけなんだ。$br どうやら、散歩には最悪のタイミングだったみたいだな。}
 Enc_RapersGirl_dialog_Node_13_l1_2 {なんて不注意なんだ！間一髪で俺が来てよかったぜ。まあ、幸運を祈るぜ。}
 Enc_RapersGirl_dialog_Node_13_text_3 {ご主人様が散歩中に、このあたりで首飾りの真珠を落とされたんです。家に戻られたとき、私を怒鳴りつけて 「全部見つけるまで戻ってくるな！」と命じられました。でも、正確な場所なんて分かりませんし、 こんなに草が生い茂っている中でどうやって探せばいいんでしょう？真珠はとても小さいし……だから、どうしたらいいのか全然分からなくて、ただここをうろうろしているだけなんです……}
 Enc_RapersGirl_dialog_Node_13_l1_3 {それで、どんな首飾りだったんだ？ジャングルをさまようより、新しいのを買ったほうが早いんじゃねえか？ お前の旦那様は真珠をいくつなくしたんだ？}
@@ -57,7 +57,7 @@ Enc_RapersGirl_dialog_Node_13_text_4 {亡き父が地図を遺してくれたん
 Enc_RapersGirl_dialog_Node_13_l1_4 {「じゃあ、なぜそれをただ売らなかったんだ？その地図の何がそんなに特別で、海賊どもが探し回ってるんだ？」}
 Enc_RapersGirl_dialog_Node_131_text_1 {あの首飾りは選び抜かれた真珠で作られていたんだ、そんなものは安くは手に入らねえ。あれには $ctx(bigCoins) 大きな真珠や $ctx(smallCoins) 小粒のものさ。もしその真珠が見つかれば、あのネックレスのようなものをもう一つ作らせることもできるだろう。}
 Enc_RapersGirl_dialog_Node_131_l1_1 {きっとこれは簡単な仕事じゃねえだろうな……まあ、ご主人様に命令されたんなら、仕方ねえさ。真珠を探してみな。幸運を祈るぜ。}
-Enc_RapersGirl_dialog_Node_131_l2_1 {無駄だぜ。この深い草むらで真珠を探すなんて、干し草の山から針を見つける方がまだ簡単だ。\nましてや、お前は真珠をなくした場所すら知らねえんだろう……}
+Enc_RapersGirl_dialog_Node_131_l2_1 {無駄だぜ。この深い草むらで真珠を探すなんて、干し草の山から針を見つける方がまだ簡単だ。$br ましてや、お前は真珠をなくした場所すら知らねえんだろう……}
 Enc_RapersGirl_dialog_Node_132_mapOwner_1 {l$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_132_text_1 {父がその地図に財宝を隠した場所を記してくれたんだ。あの有名な海賊のことを聞いたことがあるか？ $ctx(pirateName)?}
 Enc_RapersGirl_dialog_Node_132_l1_1 {いや、そんな奴は聞いたことねえな。}
@@ -90,7 +90,7 @@ Enc_RapersGirl_dialog_Node_132_12_text_1 {ここだ！見つけたぞ！親父�
 Enc_RapersGirl_dialog_Node_132_12_l1_1 {ほら？そんなに難しくなかっただろう、だから怖がることなんてなかったんだ。}
 Enc_RapersGirl_dialog_Node_132_13_text_1 {ハハハ！これで俺は金持ちだぜ！お前も今、取り分を受け取るか？}
 Enc_RapersGirl_dialog_Node_132_13_l1_1 {そうだな。}
-Enc_RapersGirl_dialog_Node_132_15_text_1 {それじゃあ、これを持っていって、それから全部の荷物を船まで運ぶのを手伝ってくれ。\nまだ私を家まで連れて帰るって約束、覚えてる？}
+Enc_RapersGirl_dialog_Node_132_15_text_1 {それじゃあ、これを持っていって、それから全部の荷物を船まで運ぶのを手伝ってくれ。$br まだ私を家まで連れて帰るって約束、覚えてる？}
 Enc_RapersGirl_dialog_Node_132_15_l1_1 {忘れてないさ！もちろん、連れて行くぜ。}
 Enc_RapersGirl_dialog_Node_132_17_text_1 {金持ちになるって本当に素晴らしいわ！今はまるで別人の気分よ。}
 Enc_RapersGirl_dialog_Node_132_17_l1_1 {あなたのことを嬉しく思うよ。}
@@ -129,9 +129,9 @@ Enc_RapersGirl_dialog_Node_200_l1_2 {家に帰れよ、あいつらはお前に�
 Enc_RapersGirl_dialog_Node_200_l2_2 {$rand(そんなに心配するなって、本当に……よし、行こうぜ。|お前は本当に臆病者だな？まあいい、俺がそこまで連れてってやるよ。。)}
 Enc_RapersGirl_dialog_Node_201_text_1 {おいおい、何を言ってるんだ？俺はあいつら悪党どもをよく知ってるんだぜ。やつらは親父の昔の仲間だったんだ。 親父が財宝を隠した場所を探そうとしてるんだよ。}
 Enc_RapersGirl_dialog_Node_201_l1_1 {「それで、お前の親父はどうしたんだ？」}
-Enc_RapersGirl_dialog_Node_202_text_1 {彼はかつて海賊船の船長だった。最近亡くなったんだ……埋葬の時はみんな礼儀正しかったが、時が経つにつれて彼のことも忘れ、やがて誇りや誠実さまでも失ってしまった。\nあいつらに気づいてよかったよ。宝のありかを知られたら、俺は終わりだ。}
+Enc_RapersGirl_dialog_Node_202_text_1 {彼はかつて海賊船の船長だった。最近亡くなったんだ……埋葬の時はみんな礼儀正しかったが、時が経つにつれて彼のことも忘れ、やがて誇りや誠実さまでも失ってしまった。$br あいつらに気づいてよかったよ。宝のありかを知られたら、俺は終わりだ。}
 Enc_RapersGirl_dialog_Node_202_l1_1 {それは悲しい話だな。で、これからも奴らから隠れ続けるつもりか？}
-Enc_RapersGirl_dialog_Node_203_text_1 {家に宝石を置いておけないの、私を守ってくれる人がいないから。だから夜になると洞窟へ行くの、 お金がなくなった時に……\nお願い、私を洞窟まで連れて行って。そしたら、あなたがあの人たちに渡したお金を返すわ……あなたが一緒なら、海賊たちも私たちを追う勇気はないと思うの。}
+Enc_RapersGirl_dialog_Node_203_text_1 {家に宝石を置いておけないの、私を守ってくれる人がいないから。だから夜になると洞窟へ行くの、 お金がなくなった時に……$br お願い、私を洞窟まで連れて行って。そしたら、あなたがあの人たちに渡したお金を返すわ……あなたが一緒なら、海賊たちも私たちを追う勇気はないと思うの。}
 Enc_RapersGirl_dialog_Node_203_l1_1 {悪いね、坊や。でも他に用事があるんだ。お宝はまた今度にしてくれよ。}
 Enc_RapersGirl_dialog_Node_203_l2_1 {よし、行くぞ。俺が怖くねえならな。}
 Enc_RapersGirl_dialog_Node_204_text_1 {なあ、どういうわけか、俺は……}
@@ -147,21 +147,21 @@ Enc_RapersGirl_dialog_Node_210_text_1 {ふむ、 $manWoman(船長|お嬢さん)�
 Enc_RapersGirl_dialog_Node_210_l1_1 {「もう行っていいぜ。」 $manWoman(美しさ|親愛なる)。 それと、また追われる前に急いで町へ行ったほうがいいぜ。}
 Enc_RapersGirl_dialog_Node_211_text_1 {私はとても動揺していました！どうかその入植地の酒場まで連れて行っていただけませんか $ctx(valueText)「そうでなければ、また奴らに追いかけられちまうぜ。」}
 Enc_RapersGirl_dialog_Node_211_l1_1 {もしかしたらお前の言う通りかもしれねえ。行こう……}
-Enc_RapersGirl_dialog_Node_220_text_1 {ああ、船長、それは長い話でして、あなたが興味を持つかどうかも分かりません。ですが……今となってはあなたの助けなしでは無理でしょう。どうか、この集落の酒場まで連れて行ってもらえませんか\n $ctx(valueText)「？あいつらがどうしても俺を放してくれなかったんだ。」}
+Enc_RapersGirl_dialog_Node_220_text_1 {ああ、船長、それは長い話でして、あなたが興味を持つかどうかも分かりません。ですが……今となってはあなたの助けなしでは無理でしょう。どうか、この集落の酒場まで連れて行ってもらえませんか$br  $ctx(valueText)「？あいつらがどうしても俺を放してくれなかったんだ。」}
 Enc_RapersGirl_dialog_Node_220_l1_1 {悪いね、あんた、今はそんな暇ないんだ。やることがあるんでね。}
 Enc_RapersGirl_dialog_Node_220_l2_1 {なんでそんなに秘密主義なんだ？}
 Enc_RapersGirl_dialog_Node_222_text_1 {「みんなが俺の不幸から一儲けしようとしているのに、どうして俺が秘密主義にならずにいられるんだ？」}
 Enc_RapersGirl_dialog_Node_222_l1_1 {よし、それじゃあ…}
 Enc_RapersGirl_dialog_Node_224_text_1 {船長、あんたは俺をその居住地の酒場に連れて行くって約束したじゃねえか $ctx(valueText).}
 Enc_RapersGirl_dialog_Node_224_l1_1 {$rand(覚えている。|心配するな、俺がちゃんとそこに行くからな。)}
-Enc_RapersGirl_dialog_Node_225_text_1 {あそこは人が多すぎる。\n個室へ行こう。\n話したいことがあるんだ。}
+Enc_RapersGirl_dialog_Node_225_text_1 {あそこは人が多すぎる。$br 個室へ行こう。$br 話したいことがあるんだ。}
 Enc_RapersGirl_dialog_Node_225_l1_1 {$rand(もうお前には十分すぎるほど尽くしたぜ、だからこれでお別れだ。|私の好意を悪用しないでくれよ。またな、ダーリン。|これからはお前の話なんて必要ねえ、自分で全部考えろよ。)}
 Enc_RapersGirl_dialog_Node_225_l2_1 {ふむ、わかった。じゃあ酒場の主人から鍵をもらってくるぜ。}
 Enc_RapersGirl_dialog_Node_225_text_2 {ご協力いただき、本当にありがとうございます、船長。決して忘れません。}
 Enc_RapersGirl_dialog_Node_225_l1_2 {ああ、気にしなくていいよ。これからはもっと気をつけてくれ。}
 Enc_RapersGirl_dialog_Node_225_text_3 {ご協力いただき、本当にありがとうございます、船長。決して忘れません。}
 Enc_RapersGirl_dialog_Node_225_l1_3 {ああ、気にしないでくれ。これからはもっと気をつけてくれよ。}
-Enc_RapersGirl_dialog_Node_225_text_4 {あそこは人が多すぎる。\n個室に行こう。\n話したいことがあるんだ。}
+Enc_RapersGirl_dialog_Node_225_text_4 {あそこは人が多すぎる。$br 個室に行こう。$br 話したいことがあるんだ。}
 Enc_RapersGirl_dialog_Node_225_l1_4 {$rand(もうお前には十分すぎるほどしてやったからな、これでお別れだ。|私の好意につけ込むべきじゃないよ。じゃあね、ダーリン。|これからはお前の話なんて必要ねえ、自分で全部考えろよ。)}
 Enc_RapersGirl_dialog_Node_225_l2_2 {ふむ、わかった。じゃあ酒場の主人から鍵をもらってくるぜ。}
 Enc_RapersGirl_dialog_Node_226_stemp_1 {$ctx(valueText)}
@@ -169,7 +169,7 @@ Enc_RapersGirl_dialog_Node_226_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_228_text_1 {それで、まだ俺の話を聞きたいのか？}
 Enc_RapersGirl_dialog_Node_228_l1_1 {ふむ……そろそろ行く時間だな。じゃあな！}
 Enc_RapersGirl_dialog_Node_228_l2_1 {さあ、早く言えよ。}
-Enc_RapersGirl_dialog_Node_228_text_2 {ああ、私の高貴な救い主様、ついに女としてできる唯一の方法でお礼ができますわ\nあなたをジャングルで見かけたとき、私の中のすべてが変わりましたの。暴漢たちや、 頬を打つ鋭いヤシの葉のことも忘れてしまいました。どこに逃げるか、なぜ逃げるかも忘れて……私にはあなただけが見えていました。そして、欲しかったのはあなただけ……あなたが私のためにしてくださったことの後では……}
+Enc_RapersGirl_dialog_Node_228_text_2 {ああ、私の高貴な救い主様、ついに女としてできる唯一の方法でお礼ができますわ$br あなたをジャングルで見かけたとき、私の中のすべてが変わりましたの。暴漢たちや、 頬を打つ鋭いヤシの葉のことも忘れてしまいました。どこに逃げるか、なぜ逃げるかも忘れて……私にはあなただけが見えていました。そして、欲しかったのはあなただけ……あなたが私のためにしてくださったことの後では……}
 Enc_RapersGirl_dialog_Node_228_l1_2 {うわぁ、びっくりしたぜ！なんて気性だ！お前を追っかけてた連中は、相手が誰かちゃんと分かってたんだろうな…}
 Enc_RapersGirl_dialog_Node_228_l2_2 {聞いてくれ、美人さん、俺にはよくわかるが、頼むから自分の怒りは抑えてくれよ。}
 Enc_RapersGirl_dialog_Node_229_text_1 {今すぐ私のもとへ来て、私の英雄よ…}
@@ -180,7 +180,7 @@ Enc_RapersGirl_dialog_Node_231_text_1 {こんな言葉、今まで誰からも�
 Enc_RapersGirl_dialog_Node_231_l1_1 {もう行けよ、いいな？それと、また助けられたくなけりゃ、少しはしゃきっとしろよ……}
 Enc_RapersGirl_dialog_Node_231_1_stemp_1 {$ctx(valueText)}
 Enc_RapersGirl_dialog_Node_232_stemp_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_233_text_1 {私の家族は、植民地の町に住んでいる $ctx(valueText)。私は偶然ここに来ることになりました。婚約者が両親に会わせるために連れて行ってくれる船に乗っていたのですが、 その船が海賊に襲われてしまったのです。船は奪われ、乗客たちはこの近くの入り江に上陸させられました。 乗り込まれたときに婚約者は殺され、私はジャングルを抜ける途中で重い病にかかりました\n地元の娼館の女主人が私を看病してくれて回復しましたが、立てるようになった途端、 治療にかかったお金を働いて返せと要求されました。私は娼婦になりましたが、女主人の気に入らず、 せめて少しでも金を取り戻そうと盗賊たちに売られてしまいました。あとの話はご存じの通りです。}
+Enc_RapersGirl_dialog_Node_233_text_1 {私の家族は、植民地の町に住んでいる $ctx(valueText)。私は偶然ここに来ることになりました。婚約者が両親に会わせるために連れて行ってくれる船に乗っていたのですが、 その船が海賊に襲われてしまったのです。船は奪われ、乗客たちはこの近くの入り江に上陸させられました。 乗り込まれたときに婚約者は殺され、私はジャングルを抜ける途中で重い病にかかりました$br 地元の娼館の女主人が私を看病してくれて回復しましたが、立てるようになった途端、 治療にかかったお金を働いて返せと要求されました。私は娼婦になりましたが、女主人の気に入らず、 せめて少しでも金を取り戻そうと盗賊たちに売られてしまいました。あとの話はご存じの通りです。}
 Enc_RapersGirl_dialog_Node_233_l1_1 {だからもうやめて家に帰れよ！なんであいつらに奴隷みたいに扱われてるんだ！？}
 Enc_RapersGirl_dialog_Node_234_text_1 {できないんだ！持ち物は全部――まともな服も、金も、書類も……全部売春宿にあるんだ、旅行鞄の中に。あのデート部屋に隠してあるんだよ。こんな格好じゃ、 港の水夫どもがみんな俺を追いかけてくるさ。それに、書類も金もなけりゃ、誰が俺を船に乗せてくれる？ 今じゃ町にも顔を出せない、出たら牢屋にぶち込まれるだけだ……}
 Enc_RapersGirl_dialog_Node_234_l1_1 {問題ないさ。行こう。俺が自分でお前を家まで送ってやる。}
@@ -215,9 +215,9 @@ Enc_RapersGirl_dialog_Node_237_3_text_1 {ありがとうございます。 $manW
 Enc_RapersGirl_dialog_Node_237_3_l1_1 {では、良い航海を。さらば……}
 Enc_RapersGirl_dialog_Node_238_rumour_1 {$rand(Have you heard? A whore was trying to sneak on board of a ship without documents, but she was caught and taken back to the brothel. They say she owed the madam quite a sum.|Have you heard? A whore without documents was caught at the port. They say she had cleaned out madam's coffers before attempting to flee from the brothel. I say, that source of filth and thievery must have been closed off long ago. Our kids are even seeing this and what can they learn from such an example?)}
 Enc_RapersGirl_dialog_Node_250_text_1 {俺の人生を台無しにしないでくれ、船長！父さんは俺に高利貸しの息子――あの汚らしい甘ったれ――と結婚させたがってるんだ…ただあいつの親父が金庫に財産を持ってるって理由だけでさ！だったら、 俺はむしろジャングルに残って野獣に食われる方が、あいつと一生を過ごすよりマシだ！}
-Enc_RapersGirl_dialog_Node_250_l1_1 {「お前たちの結婚にどんな問題があるんだ」 $manWoman(美しさ|おちびさん)？お前に結婚を申し込む奴をしっかり捕まえて、幸せになるんだ。\n時が経てば、その青二才と結婚できてよかったと思うかもしれねえが、その時にはもう遅いかもしれねえぞ……}
+Enc_RapersGirl_dialog_Node_250_l1_1 {「お前たちの結婚にどんな問題があるんだ」 $manWoman(美しさ|おちびさん)？お前に結婚を申し込む奴をしっかり捕まえて、幸せになるんだ。$br 時が経てば、その青二才と結婚できてよかったと思うかもしれねえが、その時にはもう遅いかもしれねえぞ……}
 Enc_RapersGirl_dialog_Node_251_sLoverId_1 {$ctx(valueText)}
-Enc_RapersGirl_dialog_Node_251_text_1 {いやだ！いやだ、船長、俺は愛してる $ctx(loverName) 他の男とは絶対に結婚しないわ！それにお父様は何も聞きたくないって！お父様はこう言っているのよ\n $ctx(valueText) ここではただの訪問者にすぎないから、決して仕事なんて見つからないし、貧困のうちに死ぬ運命なのよ、私も一緒に！ それでも彼のそばにいるためなら、世界の果てまでもついていくわ！お願い、彼のところへ連れて行って！}
+Enc_RapersGirl_dialog_Node_251_text_1 {いやだ！いやだ、船長、俺は愛してる $ctx(loverName) 他の男とは絶対に結婚しないわ！それにお父様は何も聞きたくないって！お父様はこう言っているのよ$br  $ctx(valueText) ここではただの訪問者にすぎないから、決して仕事なんて見つからないし、貧困のうちに死ぬ運命なのよ、私も一緒に！ それでも彼のそばにいるためなら、世界の果てまでもついていくわ！お願い、彼のところへ連れて行って！}
 Enc_RapersGirl_dialog_Node_251_l1_1 {よし、行くぞ。さて、お前をどうするか考えるとするか…}
 Enc_RapersGirl_dialog_Node_253_text_1 {船長、私をその居留地まで連れて行くと約束したじゃないか $ctx(valueText).}
 Enc_RapersGirl_dialog_Node_253_l1_1 {$rand(覚えている。|心配するな、俺がそこまで連れて行ってやる。)}

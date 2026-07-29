@@ -44,17 +44,17 @@ void ProcessDialogEvent()
             }
             else if ("questTemp.Patria.GenGovernor" in PChar && NPCNation == FRANCE)
             {   // Генерал-губернатор
-                Dialog.text = DLG_Convert("VisitorCap_Hello_GenGovernor" + type, file, &dlgContext);
+                Dialog.text = DLG_Convert("VisitorCap_Hello_GenGovernor", file, &dlgContext);
                 bKnow = true;
             }
             else if (bWar && IsMainCharacterPatented() && int(Items[int(PChar.EquipedPatentId)].TitulCur) > 4 && int(Items[int(PChar.EquipedPatentId)].Nation) == NPCNation)
             {   // Вице-адмирал
-                Dialog.text = DLG_Convert("VisitorCap_Hello_War_ViceAdmiral" + type, file, &dlgContext);
+                Dialog.text = DLG_Convert("VisitorCap_Hello_War_ViceAdmiral", file, &dlgContext);
                 bKnow = true;
             }
-            if (bWar && IsOfficerFullEquip() && int(Items[int(PChar.EquipedPatentId)].Nation) == NPCNation)
+            else if (bWar && IsOfficerFullEquip() && int(Items[int(PChar.EquipedPatentId)].Nation) == NPCNation)
             {   // Офицер с патентом
-                Dialog.text = DLG_Convert("VisitorCap_Hello_War_Officer" + type, file, &dlgContext);
+                Dialog.text = DLG_Convert("VisitorCap_Hello_War_Officer", file, &dlgContext);
             }
             else
             {

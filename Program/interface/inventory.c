@@ -99,6 +99,7 @@ void InitInterface(string iniName)
 	SetControlsScrollTabMode(currentScrollTab);
 	CreateString(true, "CharJob", "", FONT_NORMAL, COLOR_NORMAL, 960, 290, SCRIPT_ALIGN_CENTER, 1.4);
 	GameInterface.strings.CharJob = "";
+	SetNodeUsing("SCROLLER_INFO_TEXT", false);
 }
 
 // гуляем по меню кнопками Q и E, TAB переключает вкладки таблицы
@@ -3139,8 +3140,7 @@ void SetItemInfo(int iGoodIndex)
 			describeStr += newStr() + GetSimpleItemKey("talisman18_NoBonus") + newStr();
 		}
 	}
-	SetFormatedText("INFO_TEXT", describeStr);
-	
+
 	SetNewGroupPicture("INFO_PIC", Items[iGoodIndex].picTexture, "itm" + Items[iGoodIndex].picIndex);
 
 	if (IsAtlasMap(&arItm))
@@ -3172,8 +3172,24 @@ void SetItemInfo(int iGoodIndex)
 		SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(&Items[iGoodIndex]));
 	}
 
-	FillUpDescriptors(&arItm);
+	bool hasDescriptors = FillUpDescriptors(&arItm) > 0;
 	FillUpStats(&arItm, xi_refCharacter);
+
+	// привязываемся к фиксированной координате из-за странной работы разрешений
+	int initY;
+	if ("INFO_PIC_Y" !in &GameInterface)
+	{
+		GetNodePosition("INFO_PIC",0,&initY,0,0);
+		GameInterface.INFO_PIC_Y = initY;
+	}
+	else initY = int(GameInterface.INFO_PIC_Y);
+
+	bool scroller = GetNumberOfStringsInFormatedText("INFO_TEXT", describeStr) > (hasDescriptors ? 4 : 6);
+	SetFormatedText("INFO_TEXT", describeStr);
+	SetNodePosition("INFO_TEXT", 964, initY+(hasDescriptors ? 51 : 10), 1757, initY+165);
+	SetNodeUsing("SCROLLER_INFO_TEXT", scroller);
+	SetSelectable("INFO_TEXT", scroller);
+	SetNodePosition("SCROLLER_INFO_TEXT", 1752, initY+30, 1777, initY+168);
 }
 
 void PopupIsShown()

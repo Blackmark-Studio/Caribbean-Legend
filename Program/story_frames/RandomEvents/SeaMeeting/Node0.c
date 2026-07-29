@@ -53,9 +53,10 @@ void SeaMeeting_Node0()
 			action = SF_AddAction("c_d", "", "", SF_Icon("story", "forward"));
 		break;
 		case "d":
+			string perkRequired = MOD_SKILL_ENEMY_RATE < 9 ? "InstantRepair" : "builder";
 			action = SF_AddAction("d_a", "", "", SF_Icon("story", "forward"));
-			action = SF_AddAction("d_b", "", "", SF_Icon("perk", "InstantRepair"));
-			SF_AddCondition(&action, CheckOfficersPerkEnable("InstantRepair"), SF_CONDITION_PERK, "InstantRepair");
+			action = SF_AddAction("d_b", "", "", SF_Icon("perk", perkRequired));
+			SF_AddCondition(&action, CheckOfficersPerkEnable(perkRequired), SF_CONDITION_PERK, perkRequired);
 			action = SF_AddAction("d_c", "", "", SF_Icon("story", "forward"));
 		break;
 		case "e":

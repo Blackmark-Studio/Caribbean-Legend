@@ -271,7 +271,7 @@ perkStormProfessional {嵐によるダメージが30%減少。}
 perkStrychnine {攻撃と射撃は9%の確率で対象を毒状態にする。 護符の効果と重複。}
 perkTannedLeather {軽装防具は防御力が50%上昇し、 後退時の消費エネルギーが30%減少する。}
 perkThrift {帆の損傷による速度と機動性への影響を10%軽減する。}
-perkTiefit {日用と華麗なアイテムのスキルボーナスが$number($perkBaseValue(Tiefit|1))増加する。}
+perkTiefit {$key(descriptor_Unremarkable|ItemsDescriptors.txt)および$key(descriptor_Fancy|ItemsDescriptors.txt)のアイテムによるスキルボーナスが$number($perkBaseValue(Tiefit|1))増加します。}
 perkTireless {エネルギー回復速度が$percent($perkBaseValue(Tireless|1))上昇}
 perkTradeConnections {植民地を訪れると価格表が自動で更新されます。}
 perkTrainedEye {望遠鏡で船を観察する際、 おおよその財宝の量を見積もれるようになる。}

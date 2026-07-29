@@ -272,7 +272,7 @@ perkStormProfessional {Obrażenia od burzy zmniejszone o 30%.}
 perkStrychnine {Ciosy i strzały mają 9% szans na otrucie celu. Sumuje się z bonusami Amuletu.}
 perkTannedLeather {Lekka zbroja chroni o 50% lepiej i zużywa o 30% mniej energii podczas cofnięcia się.}
 perkThrift {Zmniejsza wpływ uszkodzeń żagli na prędkość i zwrotność o 10%.}
-perkTiefit {Premia do umiejętności z przedmiotów zwyczajnych i ozdobnych zwiększona o $number($perkBaseValue(Tiefit|1)).}
+perkTiefit {Premia do umiejętności zapewniana przez przedmioty $key(descriptor_Unremarkable|ItemsDescriptors.txt) i $key(descriptor_Fancy|ItemsDescriptors.txt) zostaje zwiększona o $number($perkBaseValue(Tiefit|1)).}
 perkTireless {Szybkość regeneracji energii zwiększa się o $percent($perkBaseValue(Tireless|1)).}
 perkTradeConnections {Cenniki są automatycznie aktualizowane podczas wizyty w kolonii.}
 perkTrainedEye {Pozwala w przybliżeniu oszacować ilość kosztowności na statku podczas obserwacji lunetą.}

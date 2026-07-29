@@ -5048,7 +5048,7 @@ I've decided to keep my distance from Vincento. His duplicity has shattered my t
 
 Sharlie.43
 {
-Cumpri a missão pela qual vim ao Caribe, além de ter encontrado tesouros indígenas — agora, não passo necessidade de dinheiro. Tive que passar de passageiro a, sem exagero, um verdadeiro lobo do mar — e que eu seja amaldiçoado se não gosto disso. No entanto, durante todo esse tempo, não escrevi uma palavra sequer ao meu pai sobre minhas andanças... Acho que está na hora de visitar o abade e mandar um recado para a França por meio dele.
+I have completed the task that brought me to the Caribbean, discovered the treasures of the Indians, and no longer want for money. I have gone from a mere passenger to, without exaggeration, a true sea dog—and may I be damned if I do not relish it.
 }
 
 Sharlie.44

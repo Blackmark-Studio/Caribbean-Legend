@@ -5404,8 +5404,8 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Guardoftruth", "44");
 		pchar.GenQuest.Hunter2Pause = true; // ОЗГи на паузу
 		// гопота, чтобы весело жилось
-		pchar.quest.GuardOT_setbandos.win_condition.l1 = "ExitFromLocation";
-		pchar.quest.GuardOT_setbandos.win_condition.l1.location = pchar.location;
+		pchar.quest.GuardOT_setbandos.win_condition.l1 = "location";
+		pchar.quest.GuardOT_setbandos.win_condition.l1.location = "Santiago_town";
 		pchar.quest.GuardOT_setbandos.function = "GuardOT_SetBandosInTown"; 
 		// на Гавану
 		pchar.quest.GuardOT_Cuba2.win_condition.l1 = "location";

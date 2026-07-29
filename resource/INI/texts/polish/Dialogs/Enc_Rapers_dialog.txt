@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {ręke}
 Enc_Rapers_dialog_Node_9_sTemp_3 {ucho}
 Enc_Rapers_dialog_Node_9_sTemp_4 {nos}
 Enc_Rapers_dialog_Node_9_sTemp_5 {oko}
-Enc_Rapers_dialog_Node_9_text_1 {Co te twoje pieniądze znaczą w porównaniu do skarbów $ctx(pirateName)? . Był takim sknerą, że nie chciał wydać za mąż własnej córki, bo chciał uniknąć dodatkowych wydatków... \nOn naszą część w swoich skrzyniach! .$ctx(pirateName2) stracił podczas abordażu $ctx(tempText)! I co zamiast tego ma? Żałosną garść srebra? $ctx(pirateName2) zawsze zabierał cały łup do swojej kryjówki. I teraz nie zamierzamy się poddawać! Pokaż nam, gdzie są jego skrzynie!}
+Enc_Rapers_dialog_Node_9_text_1 {Co te twoje pieniądze znaczą w porównaniu do skarbów $ctx(pirateName)? . Był takim sknerą, że nie chciał wydać za mąż własnej córki, bo chciał uniknąć dodatkowych wydatków... $br On naszą część w swoich skrzyniach! .$ctx(pirateName2) stracił podczas abordażu $ctx(tempText)! I co zamiast tego ma? Żałosną garść srebra? $ctx(pirateName2) zawsze zabierał cały łup do swojej kryjówki. I teraz nie zamierzamy się poddawać! Pokaż nam, gdzie są jego skrzynie!}
 Enc_Rapers_dialog_Node_9_l1_1 {Cóż, na pewno nie zgłosiłem się do strzeżenia skarbów twojego kapitana, ale nie mogę ci pokazać miejsca... Ponieważ nie wiem, gdzie to miejsce jest.}
 Enc_Rapers_dialog_Node_10_text_1 {Kłamiesz!!! Czuję zapach złota wydobywający się z tej jaskini! Pokaż mi to miejsce, jeśli nie chcesz umrzeć!}
 Enc_Rapers_dialog_Node_10_l1_1 {Widzę, że moje słowa nie przekonały cię. Może mój sztylet będzie bardziej wyrazisty?}

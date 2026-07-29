@@ -40,7 +40,7 @@ Enc_Rapers_dialog_Node_9_sTemp_2 {an arm}
 Enc_Rapers_dialog_Node_9_sTemp_3 {an ear}
 Enc_Rapers_dialog_Node_9_sTemp_4 {a nose}
 Enc_Rapers_dialog_Node_9_sTemp_5 {an eye}
-Enc_Rapers_dialog_Node_9_text_1 {Cosa sono i tuoi soldi rispetto ai tesori di $ctx(pirateName)? Era così avido che non voleva sposare sua figlia perché voleva evitare spese extra...\nMa ha la nostra parte nei suoi bauli! $ctx(pirateName2) ha perso nell'abbordaggio $ctx(tempText)! E cosa hai ottenuto invece? Pietosa manciata di argento? $ctx(pirateName2) ha sempre portato tutto il bottino nel suo nascondiglio. Ma ora non ci arrenderemo! Mostraci dove sono i suoi forzieri!}
+Enc_Rapers_dialog_Node_9_text_1 {Cosa sono i tuoi soldi rispetto ai tesori di $ctx(pirateName)? Era così avido che non voleva sposare sua figlia perché voleva evitare spese extra...$br Ma ha la nostra parte nei suoi bauli! $ctx(pirateName2) ha perso nell'abbordaggio $ctx(tempText)! E cosa hai ottenuto invece? Pietosa manciata di argento? $ctx(pirateName2) ha sempre portato tutto il bottino nel suo nascondiglio. Ma ora non ci arrenderemo! Mostraci dove sono i suoi forzieri!}
 Enc_Rapers_dialog_Node_9_l1_1 {Ebbene, certamente non mi sono candidato per proteggere i tesori del tuo capitano, ma non posso mostrarti il posto... Perché non so dove sia questo posto.}
 Enc_Rapers_dialog_Node_10_text_1 {Stai mentendo!!! Posso sentire l'odore dell'oro provenire da questa grotta! Mostrami il posto se non vuoi morire!}
 Enc_Rapers_dialog_Node_10_l1_1 {Vedo che le mie parole non sono riuscite a convincerti. Forse, la mia lama sarà più espressiva?}

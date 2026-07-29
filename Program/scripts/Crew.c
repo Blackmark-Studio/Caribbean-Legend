@@ -7,10 +7,10 @@ int  Part_Officer               = 10;
 
 
 // месячная базовая ставка одного матроса до модификаторов
-#define CREW_SAILOR_MONTHLY_SALARY        365.0
+#define CREW_SAILOR_MONTHLY_SALARY        165.0
 
 // разовый аванс при найме матроса в таверне: полтора месячного жалования
-#define CREW_HIRE_ADVANCE_MTP             1.5
+#define CREW_HIRE_ADVANCE_MTP             1.7
 
 // опыт экипажа влияет мягко: средний опыт 0..100 даёт множитель 0.75..1.25
 #define CREW_EXP_SALARY_MTP_MIN           0.75
@@ -22,13 +22,13 @@ int  Part_Officer               = 10;
 
 // Торговля и Харизма вместе могут снизить зарплату матросов максимум на 15%
 // SKILL_LEADERSHIP в проекте соответствует русской Харизме
-#define CREW_SKILL_SALARY_DISCOUNT_MAX    0.15
+#define CREW_SKILL_SALARY_DISCOUNT_MAX    0.20
 
 // базовая месячная ставка офицера за сам факт службы
-#define OFFICER_BASE_MONTHLY_SALARY      3500.0
+#define OFFICER_BASE_MONTHLY_SALARY      2500.0
 
 // стоимость одного очка умения офицера; сумма 14 навыков 1..100 даёт примерно 2к..50к
-#define OFFICER_SKILL_POINT_COST         15.0
+#define OFFICER_SKILL_POINT_COST         9.0
 
 // сложность мягко влияет на зарплату офицеров: каждый шаг от 6 даёт +/-5%
 // MOD_SKILL_ENEMY_RATE идёт 2/4/6/8/10, поэтому делим разницу на 2

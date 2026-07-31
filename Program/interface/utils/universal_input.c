@@ -22,6 +22,7 @@ void XI_SetUniversalInputTooltip(string inputNodeName, string windowName = "MAIN
 	XI_MakeNode("", "PICTURE", zoneName, 30000);
 
 	int x1,y1,x2,y2;
+	if (windowName != "") XI_WindowAddNode(windowName, zoneName);
 	GetNodePosition(inputNodeName, &x1, &y1, &x2, &y2);
 	SetNodePosition(zoneName, x1,y1,x2,y2);
 	int xOffset = 30;
@@ -33,7 +34,6 @@ void XI_SetUniversalInputTooltip(string inputNodeName, string windowName = "MAIN
 	SetTriggerFramePosition(zoneName,x1,y1,x2,y2);
 	SetUseTrigger(zoneName, true);
 	SetTriggerFrameType(zoneName, 1);
-	if (windowName != "") XI_WindowAddNode(windowName, zoneName);
 	GameInterface.(zoneName).tooltipdata.mode = mode;
 }
 

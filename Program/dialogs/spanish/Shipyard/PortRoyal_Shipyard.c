@@ -97,20 +97,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }
 
-bool HelenCanUpgrade()
-{
+bool HelenCanUpgrade() {
 	int shipIndex = GetCharacterShipType(pchar);
-	if (shipIndex == SHIP_NOTUSED)
-	{
+	if (shipIndex == SHIP_NOTUSED) {
 		return false;
 	}
-
-	sld = GetRealShip(shipIndex);
-	if (int(sld.class) == 6)
-	{
+	
+	ref sld = GetRealShip(shipIndex);
+	if (int(sld.class) >= 6) {
 		return false;
 	}
-
+	
 	int cost = (6 - int(sld.class)) * 1000;
 	return (PCharDublonsTotal() >= cost);
 }
+

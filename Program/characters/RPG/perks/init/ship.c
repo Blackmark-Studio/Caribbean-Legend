@@ -129,6 +129,7 @@ void initShipPerks(ref list)
 	perks.Bombardier.cost = -1; // стрелок(ht4)
 	perks.Bombardier.PlayerOnly = true;
 	perks.Bombardier.HeroType = "HT4";
+	perks.Bombardier.OfficerType = "cannoner";
 
 	//================================================================
 	/////////////////////////////////////////////////////////////

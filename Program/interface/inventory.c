@@ -20,6 +20,8 @@ bool bQuestItem;
 bool isMusketLoadPress = false;
 bool bShowTabOfficers = true;
 ref currentItem;
+int inventoryInitY = -1;
+int inventoryInitX = -1;
 
 void InitInterface(string iniName)
 {
@@ -3176,20 +3178,14 @@ void SetItemInfo(int iGoodIndex)
 	FillUpStats(&arItm, xi_refCharacter);
 
 	// привязываемся к фиксированной координате из-за странной работы разрешений
-	int initY;
-	if ("INFO_PIC_Y" !in &GameInterface)
-	{
-		GetNodePosition("INFO_PIC",0,&initY,0,0);
-		GameInterface.INFO_PIC_Y = initY;
-	}
-	else initY = int(GameInterface.INFO_PIC_Y);
+	if (inventoryInitY == -1) GetNodePosition("INFO_PIC",&inventoryInitX,&inventoryInitY,0,0);
 
 	bool scroller = GetNumberOfStringsInFormatedText("INFO_TEXT", describeStr) > (hasDescriptors ? 4 : 6);
 	SetFormatedText("INFO_TEXT", describeStr);
-	SetNodePosition("INFO_TEXT", 964, initY+(hasDescriptors ? 51 : 10), 1757, initY+165);
+	SetNodePosition("INFO_TEXT", inventoryInitX+194, inventoryInitY+(hasDescriptors ? 51 : 10), inventoryInitX+987, inventoryInitY+165);
 	SetNodeUsing("SCROLLER_INFO_TEXT", scroller);
 	SetSelectable("INFO_TEXT", scroller);
-	SetNodePosition("SCROLLER_INFO_TEXT", 1752, initY+30, 1777, initY+168);
+	SetNodePosition("SCROLLER_INFO_TEXT", inventoryInitX+990, inventoryInitY+30, inventoryInitX+1015, inventoryInitY+168);
 }
 
 void PopupIsShown()

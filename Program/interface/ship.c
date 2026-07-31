@@ -708,18 +708,24 @@ bool XI_SetShipAlert(bool check, string type, string groupName, string picName, 
 	SetNodeUsing("SHIP_ALERT_PICTURE_MARK" + postfix, useMark);
 
 	// привязываемся к фиксированной координате из-за странной работы разрешений
-	int initY;
+	int initY, initX;
 	if ("MAIN_CHARACTER_PICTURE_Y" !in &GameInterface)
 	{
-		GetNodePosition("MAIN_CHARACTER_PICTURE",0,&initY,0,0);
+		GetNodePosition("MAIN_CHARACTER_PICTURE",&initX,&initY,0,0);
+		initX+=464;
 		GameInterface.MAIN_CHARACTER_PICTURE_Y = initY;
+		GameInterface.MAIN_CHARACTER_PICTURE_X = initX;
 	}
-	else initY = int(GameInterface.MAIN_CHARACTER_PICTURE_Y);
+	else 
+	{
+		initY = int(GameInterface.MAIN_CHARACTER_PICTURE_Y);
+		initX = int(GameInterface.MAIN_CHARACTER_PICTURE_X);
+	}
 
 	if (size < 0) size = 62;
 	int x1,y1,x2,y2;
-	x1 = 596;
-	x2 = 658;
+	x1 = initX;
+	x2 = initX+64;
 	y1 = postfix == "2" ? initY+82 : initY;
 	y2 = postfix == "2" ? initY+146 : initY+64;
 	int diff = int((62 - size) * 0.5);

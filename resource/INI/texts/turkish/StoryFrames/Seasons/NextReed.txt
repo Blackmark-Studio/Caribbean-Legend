@@ -29,7 +29,7 @@ Node0_c_e_reaction {Ya canlı mal ne olacak?}
 Node0_c_e_reaction_log {Yeni vergiler sonsuza dek sürmeyecek ve kaçak mal ticareti fırsatı yakında sona erecek. Ancak köle ticareti uzun vadeli kazanç vadediyor ve Karayip tüccarlarını tam da buna ikna etmeye karar veriyorsun.}
 Node0_d_a {Baharın gelmesiyle kıyı suları canlanır. Sığlıklarda uskumru ve sardalya görülür, resiflere ton balığı yaklaşır, kumlu kıyılarda ise deniz kaplumbağaları avlanır. Denizciler ağları doğrudan sandallardan serer, kıyıda balık tütsüler ve her durakta kıyı derelerinden tatlı suyla fıçılarını doldurur.}
 Node0_d_a_reaction {Çeşitli beslenme faydalıdır}
-Node0_d_a_reaction_log {Normal peksimet ve tuzlu eti taze balık ve etle zenginleştirerek çeşitli ve doyurucu bir deniz tayını hazırlamaya karar veriyorsun. Gemi doktorunun gözetiminde doğru hazırlanmış bir menü, salgın ve iskorbüt riskini azaltmaya yardımcı olacaktır.}
+Node0_d_a_reaction_log {Her zamanki peksimet ve tuzlanmış eti taze balık ve etle destekleyerek çeşitli ve dengeli bir denizci beslenme düzeni oluşturmaya karar veriyorsun. Gemi hekiminin gözetiminde hazırlanan doğru bir menü, salgın hastalık ve iskorbüt riskini azaltacaktır.}
 Node0_d_b {Bu bahar deniz hiç olmadığı kadar cömert. Elverişli hava ve bol yiyecek, balıkların ve av hayvanlarının ölçüsüzce çoğalmasına izin verdi. Ton sürüleri saymakla bitmiyor, lagünler ıstakoz ve yengeç kaynıyor. Kısa bir mola bile ambarları taze et ve balıkla doldurmaya yetiyor; stoklanan tuzlu erzak ise el değmeden kalıyor.}
 Node0_d_b_reaction {Elde ne varsa toplamak}
 Node0_d_b_reaction_log {En çevik denizcileri yalnızca iaşe toplamaya ayrılmış özel bir birliğe seçmeye karar veriyorsun. Denizle karanın cömertliğinden, hâlâ mümkünken yararlanmak gerek.}

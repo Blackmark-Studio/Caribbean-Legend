@@ -235,12 +235,12 @@ void AddTakeAllHint()
 
 	string key = objControlsState.keygroups.primaryland.InterfaceTakeAll;
 	key = FindStringAfterChar(key, "_");
-	int y2;
-	GetNodePosition("KEY_STRS", 0, 0, 0, &y2); // цепляемся за существующий элемент, чтобы не ехать от разрешения
+	int x1,y2;
+	GetNodePosition("KEY_STRS", &x1, 0, 0, &y2); // цепляемся за существующий элемент, чтобы не ехать от разрешения
 	int base = y2-60;
-	SendMessage(&GameInterface,"lslslllll",MSG_INTERFACE_MSG_TO_NODE,"KEY_BTNS", 0, key, argb(200,128,128,128), 876,base, 916,base+40);
+	SendMessage(&GameInterface,"lslslllll",MSG_INTERFACE_MSG_TO_NODE,"KEY_BTNS", 0, key, argb(200,128,128,128), x1+876,base, x1+916,base+40);
 	SendMessage(&GameInterface,"lslsssllllllfl", MSG_INTERFACE_MSG_TO_NODE,"KEY_STRS",0,
-		"getAll", GetConvertStr("InterfaceTakeAll", "ControlsNames.txt"), FONT_NORMAL, 936, base+4, argb(200,255,255,255),0, 
+		"getAll", GetConvertStr("InterfaceTakeAll", "ControlsNames.txt"), FONT_NORMAL, x1+936, base+4, argb(200,255,255,255),0, 
 		SCRIPT_ALIGN_LEFT, false, 1.5, 420);
 }
 
@@ -1127,18 +1127,23 @@ void ShowItemInfo()
 	bool hasStats = FillUpStats(arItm, &NullCharacter) > 0;
 
 	// привязываемся к фиксированной координате из-за странной работы разрешений
-	int y1;
+	int y1, x1;
 	if ("INFO_ITEMS_TEXT_INIT_Y" !in &GameInterface)
 	{
-		GetNodePosition("INFO_ITEMS_TEXT",0,&y1,0,0);
+		GetNodePosition("INFO_ITEMS_TEXT",&x1,&y1,0,0);
 		GameInterface.INFO_ITEMS_TEXT_INIT_Y = y1;
+		GameInterface.INFO_ITEMS_TEXT_INIT_X = x1;
 	}
-	else y1 = int(GameInterface.INFO_ITEMS_TEXT_INIT_Y);
+	else
+	{
+		y1 = int(GameInterface.INFO_ITEMS_TEXT_INIT_Y);
+		x1 = int(GameInterface.INFO_ITEMS_TEXT_INIT_X);
+	} 
 
 	bool scroller = GetNumberOfStringsInFormatedText("INFO_ITEMS_TEXT", describeStr) > (hasStats ? 5 : 8);
-	if (hasStats) SetNodePosition("INFO_ITEMS_TEXT", 758, y1, scroller ? 1151 : 1170, y1+127);
-	else SetNodePosition("INFO_ITEMS_TEXT", 758, y1, scroller ? 1151 : 1170, y1+200);
-	if (scroller) SetNodePosition("SCROLLER_INFO_TEXT", 1150, y1, 1175, y1 + (hasStats ? 120 : 200));
+	if (hasStats) SetNodePosition("INFO_ITEMS_TEXT", x1+20, y1, scroller ? x1+393 : x1+412, y1+127);
+	else SetNodePosition("INFO_ITEMS_TEXT", x1+20, y1, scroller ? x1+393 : x1+412, y1+200);
+	if (scroller) SetNodePosition("SCROLLER_INFO_TEXT", x1+392, y1, x1+417, y1 + (hasStats ? 120 : 200));
 
 	SetFormatedText("INFO_ITEMS_TEXT", describeStr);
 	SetNodeUsing("SCROLLER_INFO_TEXT", scroller);

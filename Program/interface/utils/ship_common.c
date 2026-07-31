@@ -307,7 +307,7 @@ void XI_FillSupplies(ref chr)
 	aref approximation = touchattr(userdata.approximation);
 	SetCrewQuantityFull(chr);
 	SetShipMaintenanceInfo(chr, &approximation); // апроксимация для фулл-команды
-	SetCrewQuantity(chr, currentCrew);
+	SetCrewQuantityOverMax(chr, currentCrew);
 
 	SetShipMaintenanceInfo(chr, &userdata);
 

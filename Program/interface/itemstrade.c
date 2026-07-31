@@ -829,6 +829,32 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetNewGroupPicture("QTY_GOODS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
     SetFormatedText("QTY_CAPTION", sHeader);
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_CAPTION", 5 );
+
+	bool hasStats = FillUpStats(&arItm, &NullCharacter) > 0;
+	// привязываемся к фиксированной координате из-за странной работы разрешений
+	int y1, x1;
+	if ("QTY_GOODS_INFO_INIT_Y" !in &GameInterface)
+	{
+		GetNodePosition("QTY_GOODS_INFO",&x1,&y1,0,0);
+		GameInterface.QTY_GOODS_INFO_INIT_Y = y1;
+		GameInterface.QTY_GOODS_INFO_INIT_X = x1;
+	}
+	else
+	{
+		y1 = int(GameInterface.QTY_GOODS_INFO_INIT_Y);
+		x1 = int(GameInterface.QTY_GOODS_INFO_INIT_X);
+	}
+
+	bool scroller = GetNumberOfStringsInFormatedText("QTY_GOODS_INFO", describeStr) > (hasStats ? 5 : 8);
+	if (hasStats) SetNodePosition("QTY_GOODS_INFO", x1+10, y1, scroller ? x1+383 : x1+402, y1+127);
+	else SetNodePosition("QTY_GOODS_INFO", x1+10, y1, scroller ? x1+383 : x1+402, y1+200);
+	if (scroller) SetNodePosition("SCROLLER_INFO_TEXT", x1+392, y1, x1+417, y1 + (hasStats ? 120 : 200));
+
+	SetFormatedText("QTY_GOODS_INFO", describeStr);
+	SetNodeUsing("SCROLLER_INFO_TEXT", scroller);
+	SetSelectable("QTY_GOODS_INFO", scroller);
+
+
     SetFormatedText("QTY_GOODS_INFO", describeStr);
 	SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"QTY_GOODS_INFO", 5 );
 
@@ -865,7 +891,6 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + string(iCharPrice));
 
 	FillUpDescriptors(&arItm, !XI_IsWindowEnable("QTY_WINDOW"));
-	FillUpStats(&arItm, &NullCharacter);
 }
 
 // Returns false if no correct good can be shown.

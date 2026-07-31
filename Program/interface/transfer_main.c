@@ -1929,8 +1929,8 @@ void XI_TransferCrew(ref fromChr, ref toChr, int amount)
 	toChr.Ship.Crew.Exp = (GetCrewExp(toChr)*toCurrentCommand + GetCrewExp(fromChr)*amount) / fTemp;
 	toChr.Ship.Crew.morale = (GetCharacterCrewMorale(toChr)*toCurrentCommand + GetCharacterCrewMorale(fromChr)*amount) / fTemp;
 
-	SetCrewQuantity(toChr, toCurrentCommand + amount);
-	SetCrewQuantity(fromChr, fromCurrentCommand - amount);
+	SetCrewQuantityOverMax(toChr, toCurrentCommand + amount);
+	SetCrewQuantityOverMax(fromChr, fromCurrentCommand - amount);
 	ShowShipInfo(pchar, "");
 	ShowShipInfo(IsMainCharacter(fromChr) ? toChr : fromChr, "2");
 	SetCrewVariable();
@@ -2472,7 +2472,9 @@ void TakeCannonsOff()
 // Если на корабле осталась команда, не топим её
 void SaveCrewFromSunkenShip(ref captain)
 {
-	AddCharacterCrew(pchar, GetCrewQuantity(captain));
+	int currentCrew = GetCrewQuantity(pchar);
+	int limit = func_max(GetMaxCrewQuantity(pchar), currentCrew); // либо макс, либо есть избыток, оставляем его
+	SetCrewQuantityOverMax(pchar, func_min(limit, currentCrew+GetCrewQuantity(captain)));
 }
 
 void SetWindRosePoints()

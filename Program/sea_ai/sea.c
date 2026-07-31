@@ -439,7 +439,7 @@ void Sea_MapLoad()
 	            }
 			}
 			
-            if (GetMaxCrewQuantity(chref) < GetCrewQuantity(chref))
+            if (GetMaxCrewQuantity(chref) * 2 < GetCrewQuantity(chref))
             {
                 ok = false;
                 Log_SetStringToLog(XI_ConvertString("ShipLoad31") +  chref.Ship.Name + XI_ConvertString("ShipLoad32"));
